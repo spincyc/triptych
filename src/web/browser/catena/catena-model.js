@@ -143,6 +143,67 @@
   }
 
   /**
+   * THE OWN DATA VALUE OF ONE PROPERTY, or undefined.
+   *
+   * V11, the V10 review: `bag()` asks whether a record arrived, and property
+   * lookup then answers from the prototype chain, so
+   * `Object.create({stated: false, trail: ''})` presented itself as this
+   * route's own absence and opened the carried door, and an inherited
+   * `{stated: true, trail: 'structure/catena/text/…'}` composed a request the
+   * page never derived. A value a record does not itself carry states nothing
+   * about that record.
+   *
+   * The descriptor, not the lookup, for two reasons. It answers only from the
+   * record's own table, so nothing inherited crosses. And it hands back the
+   * stored value WITHOUT invoking anything: an own accessor — `get stated()`,
+   * a getter with a side effect, a getter that answers differently on the
+   * second read — has no `value` on its descriptor, so it reads as undefined
+   * and IS NEVER CALLED. That is stronger than reading it once and trusting
+   * the answer, and it is why every semantic member below is asked this way.
+   *
+   * Not exported. `Object.getOwnPropertyDescriptor` throws on `null` and on a
+   * name that will not become a property key, and this file's contract is
+   * that no export throws on a hostile argument. Every caller here hands it a
+   * `bag()`-guarded record and a literal name, so it cannot throw where it
+   * stands; and what the boundary owes a reviewer is proof that `fragmentRow`
+   * calls no getter, which is asked of `fragmentRow`.
+   */
+  function ownData(record, name) {
+    const spot = Object.getOwnPropertyDescriptor(record, name);
+    return spot && Object.hasOwn(spot, 'value') ? spot.value : undefined;
+  }
+
+  /**
+   * IS THIS RECORD'S CONTRACT ITS OWN? — no member of `names` reachable
+   * above it, and no prototype of its own.
+   *
+   * `ownData` alone makes an inherited member INVISIBLE, which closes every
+   * way a prototype could OPEN something: nothing inherited creates a
+   * request, composes an address, or reopens the carried door. It leaves one
+   * case open in the other direction. A claim carrying its own valid
+   * statement and an inherited refusal marker is a record whose semantic
+   * contract is partly written somewhere this page did not derive, and
+   * answering it as though the prototype were not there would be this page
+   * deciding which half of a contradiction to believe.
+   *
+   * So the small, fixed contract is asked once, whole: a claim is honoured
+   * only when its three members are its own and nothing above it names one.
+   * A contradiction fails closed rather than being adjudicated. This is
+   * asked of the CLAIM alone — three names on a record this page derives
+   * itself — and not of the fragment or the edition, whose wide contracts
+   * are validated field by field and cannot open an address that the
+   * fragment's own id and own path did not compose.
+   */
+  function ownContract(record, names) {
+    const above = Object.getPrototypeOf(record);
+    if (above !== null && above !== Object.prototype) return false;
+    return above === null || !names.some((name) => name in above);
+  }
+
+  /** The prefix statement's whole contract, asked as one. */
+  const CLAIM_MEMBERS = ['stated', 'said', 'trail'];
+
+  /**
    * A number AS THE DATA CARRIES IT, or nothing.
    *
    * Not `Number(value)`: that coercion accepts `"1"` and, worse, accepts `[1]`,
@@ -326,14 +387,40 @@
    * absence and told the reader the fragment "carries no text file" — false
    * of a fragment whose spine stated a reference this page declined to use.
    * The sentence lives here, beside the projection that decides the refusal,
-   * because the page's own file has ninety-nine gzipped bytes of ceiling and
-   * this one has none. It says only what is established: a reference was
-   * stated, it is not usable as written, and no text is shown. It does not
-   * say the corpus lacks the text, the file is missing, a request failed, or
-   * anything was blocked — none of which the refusal establishes.
+   * because the page's own file is at its gzipped ceiling and this one has
+   * none. It says only what is established: a reference was supplied, it is
+   * not usable as written, and no text is shown. It does not say the corpus
+   * lacks the text, the file is missing, a request failed, or anything was
+   * blocked — none of which the refusal establishes.
+   *
+   * V11 narrows what may say it. This sentence makes two claims of its own —
+   * that a text reference WAS SUPPLIED, and that it is unusable AS WRITTEN —
+   * and both need a supplied written value to be true of. Only a claim
+   * carrying a non-empty own textual value may use it.
    */
   const TEXT_REFUSED = 'A text reference was supplied for this fragment, '
     + 'but it cannot be used as written, so no text is shown.';
+
+  /**
+   * THE UNESTABLISHED REFERENCE, SAID NO FURTHER. V11, the V10 review: every
+   * malformed claim was given the sentence above, so a spine whose
+   * `text_prefix` was `null`, a record, a list, a number, a flag, '' or
+   * whitespace — and a direct claim that was bare, contradictory, inherited
+   * or accessor-backed — each told the reader a text reference "was supplied"
+   * and was unusable "as written". None of those establishes that any textual
+   * reference value was ever supplied, and none establishes how it was
+   * written. The page was asserting the two facts its own state had failed to
+   * establish.
+   *
+   * So the weaker state gets the weaker sentence. It claims only that no text
+   * reference is established here and that no text is shown. It does not say
+   * a reference was supplied, does not say anything was written, does not
+   * name a reference or a file, does not say the corpus lacks the text, does
+   * not say a request failed, and blames nothing. It is what is left when the
+   * state cannot truthfully say more.
+   */
+  const TEXT_UNESTABLISHED = 'No text reference is established for this '
+    + 'fragment, so no text is shown.';
 
   /**
    * The members of a list that are RECORDS, and only those.
@@ -503,22 +590,29 @@
     // `chapterFragments`; inside, `records()` has already asked.
     const own = bag(fragment);
     const held = bag(sources);
-    const key = own.source;
+    const key = ownData(own, 'source');
     const shared = typeof key === 'string' && Object.hasOwn(held, key)
-      ? bag(held[key])
+      ? bag(ownData(held, key))
       : {};
     // The fragment's own statement wins over its edition's, as the fold
     // intends — and only a field the fold actually shares may be inherited.
+    //
+    // "Inherited" here means inherited FROM ITS EDITION, along the one seam
+    // the fold writes — never along a JavaScript prototype chain. V11: every
+    // read below is `ownData`, so a field a record does not itself carry is
+    // not that record's statement, and an own accessor is never invoked. The
+    // `Object.hasOwn` guards were already right about presence; the lookups
+    // after them were not right about value.
     const said = (name) =>
-      Object.hasOwn(own, name) ? own[name]
+      Object.hasOwn(own, name) ? ownData(own, name)
         : SHARED_WITH_EDITION.includes(name) && Object.hasOwn(shared, name)
-          ? shared[name] : undefined;
+          ? ownData(shared, name) : undefined;
 
     // THE ID BECOMES A FETCHED PATH AND A LINK. A truthy test let a record
     // through and composed `…/[object Object].json`, which the page then
     // requested; sound text alone still let arbitrary prose and a path-like
     // string through. Read off the fragment ALONE, never off its edition.
-    const id = ident(own.id);
+    const id = ident(ownData(own, 'id'));
     const author = sound(said('author'));
     const work = sound(said('work'));
     // THE LEAST A FRAGMENT MUST SAY. Not "is an object": a fragment row is the
@@ -550,10 +644,34 @@
     // closed. Every shape that is neither that one absence nor a valid
     // statement now projects as REFUSED: no text resolves, and the row says
     // why. Fail closed means classified closed, not merely unresolved.
+    //
+    // V11, the V10 review: the shapes were re-asked and the MEMBERS were not.
+    // `bag()` established that a record arrived, and `claim.stated` then
+    // answered from wherever property lookup found it, so
+    // `Object.create({stated: false, trail: ''})` — a record carrying no
+    // semantic member of its own — presented as this route's own absence and
+    // opened the carried door, while an inherited `{stated: true, trail:
+    // <valid>}` composed an address. Each member is now read once, as own
+    // data, through `ownData`: nothing inherited is seen, no accessor is
+    // invoked, and a second read cannot observe a different answer than the
+    // first. A claim whose members are not its own resolves the way a claim
+    // with no members resolves — closed.
     const claim = bag(prefix);
-    const stated = claim.stated;
-    const head = textTrail(claim.trail);
-    const absent = claim.stated === false && claim.trail === '';
+    const clean = ownContract(claim, CLAIM_MEMBERS);
+    const stated = ownData(claim, 'stated');
+    const written = ownData(claim, 'said');
+    const trail = ownData(claim, 'trail');
+    const head = textTrail(trail);
+    const absent = clean && stated === false && trail === '';
+    // WHAT THE STATE MAY TRUTHFULLY SAY. `absent` and `head` decide whether
+    // text resolves; this decides which sentence the reader is owed when it
+    // does not. `said` is the claim's own record that a NON-EMPTY TEXTUAL
+    // value was supplied — the one fact the refusal sentence asserts and the
+    // validated trail cannot hold, because a refused string and a value that
+    // was never a string both validate to ''. Only a claim that carries it
+    // may say a reference was supplied and say how it was written.
+    const supplied = clean && written === true;
+    const refused = !absent && !(clean && stated === true && head !== '');
     return {
       id: id,
       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
@@ -572,11 +690,15 @@
       // and let the carried file stand in for a statement the page had just
       // declined to request against. Only genuine absence opens the carried
       // door; refusal resolves no text at all.
+      // V11: the carried path is own data too. It is a fallback ADDRESS —
+      // the one field of the fragment that becomes a request without being
+      // composed — so a prototype could otherwise hand this route a path it
+      // never derived, which is the same finding one field over.
       text_path: id
-        ? (stated === true && head !== '' ? head + id + '.json'
+        ? (clean && stated === true && head !== '' ? head + id + '.json'
           : absent
-            && textLeaf(own.text_path).endsWith('/' + id + '.json')
-              ? textLeaf(own.text_path)
+            && textLeaf(ownData(own, 'text_path')).endsWith('/' + id + '.json')
+              ? textLeaf(ownData(own, 'text_path'))
               : '')
         : '',
       // THE REFUSAL, KEPT. The row is the only channel across the page
@@ -586,7 +708,17 @@
       // that is not the one absence shape and not a valid statement is
       // refused — the stated-and-declined prefix, and every contradictory
       // or malformed claim alike.
-      text_refused: !absent && !(stated === true && head !== ''),
+      text_refused: refused,
+      // WHICH REFUSAL IT IS. Both resolve no text and neither asks anything;
+      // they differ only in what the page may truthfully tell the reader, and
+      // that difference is decided here rather than re-derived at the sink.
+      text_unestablished: refused && !supplied,
+      // THE SENTENCE, CHOSEN WHERE THE STATE IS KNOWN. The page holds one
+      // branch and prints what the row hands it. V11 put the choice here for
+      // the reason V10 put the wording here: `catena.js` is at its gzipped
+      // ceiling and this file has none, and the model already knows which of
+      // the two facts it is entitled to assert. '' when text resolves.
+      text_note: refused ? (supplied ? TEXT_REFUSED : TEXT_UNESTABLISHED) : '',
       author: author,
       work: work,
       date: say(said('date')),
@@ -599,11 +731,11 @@
       // The same four numbers the locus is printed from and the chapter
       // membership is decided by, asked once so the two cannot disagree.
       extent: {
-        token: bookToken(extent.token),
-        first_chapter: whole(extent.first_chapter),
-        last_chapter: whole(extent.last_chapter),
-        first_verse: whole(extent.first_verse),
-        last_verse: whole(extent.last_verse)
+        token: bookToken(ownData(extent, 'token')),
+        first_chapter: whole(ownData(extent, 'first_chapter')),
+        last_chapter: whole(ownData(extent, 'last_chapter')),
+        first_verse: whole(ownData(extent, 'first_verse')),
+        last_verse: whole(ownData(extent, 'last_verse'))
       },
       locator: sound(said('locator')),
       edition: sound(said('edition')),
@@ -697,9 +829,21 @@
     // statement this page refused, never an absence. `textTrail`, not
     // `trail`: the prefix is the head of a URL this page requests, and only
     // the route's own namespace may head one.
+    //
+    // V11 asks the spine record the same way `fragmentRow` asks the claim:
+    // `ownData`, once. An inherited `text_prefix` is not this file's
+    // statement — it resolves exactly as no statement resolves, which is the
+    // point — and an own accessor is never invoked to find out. `said` is the
+    // third fact the trail cannot hold: whether a NON-EMPTY TEXTUAL value was
+    // supplied at all. `textTrail` answers '' both for a string this page
+    // refused and for a value that was never a string, and only the first of
+    // those may be told to the reader as a reference supplied and unusable as
+    // written.
+    const value = ownData(record, 'text_prefix');
     const prefix = {
       stated: Object.hasOwn(record, 'text_prefix'),
-      trail: textTrail(record.text_prefix)
+      said: sound(value) !== '',
+      trail: textTrail(value)
     };
     const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
@@ -1911,6 +2055,7 @@
     leaf: leaf,
     TEXT_HOME: TEXT_HOME,
     TEXT_REFUSED: TEXT_REFUSED,
+    TEXT_UNESTABLISHED: TEXT_UNESTABLISHED,
     textTrail: textTrail,
     textLeaf: textLeaf,
     records: records,

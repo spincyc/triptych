@@ -285,7 +285,7 @@
       // carried, cached or late — may answer a claim the page declined.
       if (fragment.text_refused) {
         text.className = 'fragment-text missing';
-        text.textContent = M.TEXT_REFUSED;
+        text.textContent = fragment.text_note;
         return;
       }
       fragmentText(fragment.text_path).then(

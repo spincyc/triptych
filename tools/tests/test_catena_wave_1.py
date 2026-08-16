@@ -183,7 +183,7 @@ NODE = shutil.which("node")
 # projects as refused — while the page consumes `text_refused` BEFORE the
 # request sink, so a refused row renders the refused sentence and can be
 # answered by no path, carried, cached, or late.
-MODEL_SHA256 = "08eeba7201313940e5026e2e05283a0b83f5bc7279e35a6fbce8c8c57fca1dfd"
+MODEL_SHA256 = "b4250ce672628ebee898c0c0c34a84ea3230ccbbf3256180657c3c607712ac7a"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -600,9 +600,55 @@ SEVERIAN_BASIS = SEVERIAN_EDITION["artifacts"][0]["rights_basis"]
 # a fragment whose spine stated a reference. The refused sentence is pinned
 # here byte-exactly against `M.TEXT_REFUSED`, the model's own export, so the
 # page and the suite cannot drift apart.
+#
+# V11, the V10 review: there are THREE no-text claims, not two. The refused
+# sentence asserts that a reference WAS SUPPLIED and is unusable AS WRITTEN,
+# and the V10 lane gave that sentence to every malformed state — a spine whose
+# `text_prefix` was `null`, a record, a list, a number, a flag, '' or
+# whitespace, and a direct claim that was bare, contradictory, inherited or
+# accessor-backed. None of those establishes either fact. The third sentence
+# is what is left when the state cannot truthfully say more.
 NO_TEXT_SAID = "This fragment carries no text file, so nothing of it can be shown."
 REFUSED_SAID = ("A text reference was supplied for this fragment, "
                 "but it cannot be used as written, so no text is shown.")
+UNESTABLISHED_SAID = ("No text reference is established for this fragment, "
+                      "so no text is shown.")
+
+
+# THE OWNED REQUEST JOURNAL, WRITTEN FROM THIS SIDE. V11, the V10 review:
+# the live harness recorded ownership and the packaged dump kept only the
+# flat path list, so the ownership claim could not be reproduced from the
+# package. A journal row is now the five facts a reader needs without the
+# harness — WHICH request, WHERE it went, WHAT KIND of record it asks for,
+# WHOSE step issued it, and WHAT BECAME of it — and this is the expected
+# side of the same rule the replay's `kindOf` states in JavaScript.
+def _request_kind(path):
+    if path == "bibles.json":
+        return "editions"
+    if path == "structure/catena/index.json":
+        return "catena-index"
+    if path == "structure/paragraphs/index.json":
+        return "paragraph-index"
+    if path.startswith("structure/catena/text/"):
+        return "text"
+    if path.startswith("structure/catena/"):
+        return "spine"
+    if path.startswith("structure/paragraphs/"):
+        return "paragraphs"
+    return "scripture"
+
+
+def request_journal(entries):
+    """Expected journal rows from `(path, phase)` or `(path, phase, outcome)`.
+
+    `completed` is the ordinary outcome; a parked request reads `held` until
+    it is let go and `released` afterwards, so a snapshot taken either side
+    of a release says which one it is.
+    """
+    return [{"seq": seq, "path": entry[0], "kind": _request_kind(entry[0]),
+             "phase": entry[1],
+             "outcome": entry[2] if len(entry) > 2 else "completed"}
+            for seq, entry in enumerate(entries)]
 
 GEN1 = "#book=Gen&chapter=1&bible=douay-rheims"
 GEN2 = "#book=Gen&chapter=2&bible=douay-rheims"
@@ -1246,6 +1292,42 @@ V9_PLANTED_FALLBACK = _fixture({
 V9_COMPOSED_DEEPER = _fixture({
     "id": "fallback-owned",
     "text": "Composed from the stated prefix and the fragment's own id."})
+
+# ==========================================================================
+# V11 §2 — the malformed prefix, said no further than it is established
+#
+# The V10 review: every one of these states was given the sentence "A text
+# reference was supplied for this fragment, but it cannot be used as
+# written". None of them establishes that any textual reference value was
+# supplied, and none establishes how it was written; the page was asserting
+# the two facts its own state had failed to establish. The V10 neutrality
+# test inspected the constant and never drove one of these to a sink.
+#
+# Each carries the SAME valid same-stem carried path and the same planted
+# body as the V9 family, so the wording claim and the request claim are
+# measured on one page at once. Every value here is an ADVERSARIAL TEST
+# INPUT; the tracked corpus states exactly one prefix, and it is a string.
+V11_UNESTABLISHED_PREFIXES = {
+    "null": None,
+    "record": {"trail": "structure/catena/text/"},
+    "list": ["structure/catena/text/"],
+    "number": 5,
+    "flag": True,
+    "empty": "",
+    "whitespace": "   ",
+}
+
+# The two that ARE supplied written references, refused under the namespace
+# contract: the reader is owed the stronger, still-neutral sentence for
+# these and only these. `v9-refused-prefix-carried` and
+# `v9-padded-prefix-carried` above are those two scenarios.
+V11_SUPPLIED_BUT_REFUSED = ("v9-refused-prefix-carried",
+                            "v9-padded-prefix-carried")
+
+
+def _unestablished_spine(value):
+    """The V9 refused spine with its prefix replaced by a malformed value."""
+    return _fixture(dict(V9_REFUSED_PREFIX_WITH_CARRIED, text_prefix=value))
 
 # ==========================================================================
 # V7 §6 — a fragment that can name NOTHING of itself
@@ -2342,6 +2424,43 @@ SCENARIOS = [
           "label": "a-late"},
      ]},
 
+    # ============================================================== V11 §2
+    # Every unestablished prefix, driven to the VISIBLE and the REQUEST
+    # sink — the two places the V10 review found the wording claim was
+    # never tested.
+    *[{"name": "v11-unestablished-" + key, "hash": GEN1,
+       "files": {"structure/catena/01-gen/001.json":
+                     _unestablished_spine(value),
+                 "structure/catena/text/fallback-owned.json":
+                     V9_PLANTED_FALLBACK},
+       "steps": [{"do": "openEveryFragment", "label": "opened"}]}
+      for key, value in V11_UNESTABLISHED_PREFIXES.items()],
+
+    # ============================================================== V11 §3
+    # THE PAGE'S ORDER, ASKED WITHOUT THE MODEL. A normalized row the model
+    # never emits — refused, and carrying a usable, plantable address. The
+    # spine is the genuinely absent one, so without `forceRow` this exact
+    # page fetches that address and renders the planted body; with it, a
+    # page that consulted the sink before the refusal would do the same.
+    {"name": "v11-renderer-order", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "forceRow": {"text_refused": True,
+                  "text_unestablished": False,
+                  "text_note": REFUSED_SAID,
+                  "text_path": "structure/catena/text/fallback-owned.json"},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # The same page WITHOUT the override, so the pin above is not vacuous:
+    # this one must fetch the carried address and render the planted body.
+    {"name": "v11-renderer-order-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
     # =============================================================== V7 §6
     # The same six members in both orders. A member's fate may not depend on
     # where it stands, and neither may the page's.
@@ -3046,7 +3165,8 @@ function inspect(page, document, location, fetched, hashWrites, replaced, status
      * sequence and the step in force when it was made — 'start' is the
      * bootstrap, before any step ran. */
     requests: (requests || []).map(
-      (one) => ({ seq: one.seq, path: one.path, phase: one.phase })),
+      (one) => ({ seq: one.seq, path: one.path, kind: one.kind,
+                  phase: one.phase, outcome: one.outcome })),
     fetched: fetched.slice()
   };
 }
@@ -3121,10 +3241,30 @@ async function run(scenario) {
   global.window = window;
   global.document = document;
   global.location = location;
+  /* WHAT KIND OF REQUEST IT WAS. V11: the packaged journal has to be
+   * readable without the harness, so the type each address stands for is
+   * recorded beside it rather than inferred from a prefix by whoever reads
+   * the log. Derived from the address alone — no request may name its own
+   * kind. */
+  const kindOf = (path) =>
+    path === 'bibles.json' ? 'editions'
+      : path === 'structure/catena/index.json' ? 'catena-index'
+        : path === 'structure/paragraphs/index.json' ? 'paragraph-index'
+          : path.startsWith('structure/catena/text/') ? 'text'
+            : path.startsWith('structure/catena/') ? 'spine'
+              : path.startsWith('structure/paragraphs/') ? 'paragraphs'
+                : 'scripture';
   global.fetch = async (url) => {
     const path = String(url).replace(/^\.\.\/browse\//, '');
     fetched.push(path);
-    requests.push({ seq: requests.length, path: path, phase: phase.now });
+    /* The journal entry is MUTABLE ON PURPOSE: `outcome` is the one field
+     * that moves after the request is made, so a snapshot taken while a
+     * request is parked says `held` and the same entry says `released`
+     * once it is let go. That is what makes a genuinely-late proof
+     * readable from the journal alone. */
+    const record = { seq: requests.length, path: path, kind: kindOf(path),
+                     phase: phase.now, outcome: 'completed' };
+    requests.push(record);
     const has = Object.prototype.hasOwnProperty.call(overrides, path);
     const body = has ? overrides[path] : corpusFile(path);
     const extra = (scenario.patch || {})[path];
@@ -3142,9 +3282,13 @@ async function run(scenario) {
         ? { ok: false, status: 404, json: async () => null }
         : { ok: true, status: 200, json: async () => body };
     if ((scenario.defer || []).some((piece) => path.includes(piece))) {
+      record.outcome = 'held';
       return new Promise((resolve, reject) => {
         if (!parked.has(path)) parked.set(path, []);
-        parked.get(path).push({ resolve: () => resolve(response), reject: reject });
+        parked.get(path).push({
+          resolve: () => { record.outcome = 'released'; resolve(response); },
+          reject: (error) => { record.outcome = 'failed'; reject(error); }
+        });
       });
     }
     return response;
@@ -3154,6 +3298,24 @@ async function run(scenario) {
     const source = fs.readFileSync(pathlib.join(BROWSER, file), 'utf8');
     new Function('window', 'self', 'document', 'fetch', 'location', source)(
       window, window, document, global.fetch, location);
+  }
+  /* THE RENDERER'S ORDER, PINNED WITHOUT THE MODEL'S HELP. V11, the V10
+   * review: every refused row the model can build carries an empty
+   * `text_path`, so a mutation moving the page's refusal check BELOW
+   * `fragmentText()` altered no journal and the whole wave stayed green —
+   * the ordering promise was not regression-pinned at all. A scenario
+   * naming `forceRow` rewrites the projected rows after the model has built
+   * them, into the normalized `{text_refused: true, text_path: <usable>}`
+   * shape the model itself never emits. A page that consulted the cache or
+   * the network before the refusal would now fetch a real, plantable
+   * address, and the owned journal would name it. This overrides only the
+   * page's own entry point; `spineUnreadable` keeps the model's binding, so
+   * readability is still decided by the production projection. */
+  if (scenario.forceRow) {
+    const model = window.CatenaModel;
+    const projected = model.chapterFragments;
+    model.chapterFragments = (file) => projected(file).map(
+      (row) => Object.assign(row, scenario.forceRow));
   }
   // Every spoken line, in order — the single announcement channel, so
   // duplicate or missing announcements are visible, not just the last one.
@@ -8660,9 +8822,10 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
         # The OWNED journal a snapshot must hold, entire: each request's
         # path beside the step that owns it, in sequence — V10, the V9
         # review: ownership was inferred from counts, and a substitute
-        # request could hide inside an equal count.
-        return [{"seq": seq, "path": path, "phase": phase}
-                for seq, (path, phase) in enumerate(pairs)]
+        # request could hide inside an equal count. V11 adds the kind each
+        # address asks for and what became of the request, so the packaged
+        # journal reproduces the ownership claim without the harness.
+        return request_journal(pairs)
 
     @classmethod
     def owned(cls, tail):
@@ -8816,20 +8979,61 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
         self.assertEqual(asked, [self.FALLBACK])
         self.assertEqual(held["fragmentTexts"][0], "Loading…")
 
-    def expected_b_terminal(self):
-        # B'S TERMINAL BASELINE, AS EXPECTED VALUES. The V9 late guard
-        # compared b-opened to a-late and could not see a sink identically
-        # wrong on both sides; every material B sink is stated here once and
-        # asserted at BOTH ends of the release.
+    def expected_b_terminal(self, fallback="held"):
+        # B'S WHOLE TERMINAL VECTOR, AS EXPECTED VALUES.
+        #
+        # `fallback` is what has become of A's parked request at the moment
+        # of the snapshot — `held` before the release, `released` after. It
+        # is the ONE fact the release is permitted to change, and pinning it
+        # explicitly at both ends is how the proof shows the release really
+        # happened while every other sink stood still.
+        #
+        # V11, the V10 review: the V10 lane pinned seventeen keys of which
+        # only thirteen were guarded, so twenty-three of the thirty-six
+        # guarded projections — the reference line, the selects, the
+        # headings, the data states, the refusal and absence sinks, the
+        # paragraph note, the counts, the verse numbers, the leads, the
+        # blocked list, the voice and its labels, the step buttons, the
+        # class vocabulary, the language attributes, the acknowledgements
+        # and the author groups — were held by `before == after` alone and
+        # could have been IDENTICALLY WRONG at both ends of the release.
+        #
+        # Every one of the thirty-six now has its expected value here, and
+        # `test_every_guarded_field_has_an_expected_value` fails the moment
+        # a field is added to the guard without being pinned here too. Four
+        # more keys are pinned beside them — `fetched`, `requests`,
+        # `replacedStates` and `historyState` — which the guard does not
+        # carry and the proof needs.
         return {
+            # --- the request sinks -------------------------------------
             "fetched": self.BOOTSTRAP + [self.FALLBACK] + self.GEN2_ARRIVAL,
             "requests": self.owned(
-                [(self.FALLBACK, "a-held")]
+                [(self.FALLBACK, "a-held", fallback)]
                 + [(path, "b-settled") for path in self.GEN2_ARRIVAL]),
+            # --- the row, and what it says -----------------------------
             "fragmentCount": 1,
             "fragmentIds": ["fallback-owned"],
             "fragmentTexts": [self.REFUSED],
+            "sectionHeadings": ["One fragment held here"],
+            "dataStates": ["held"],
+            "authorGroups": [{"author": "Author 1", "date": "301",
+                              "count": "1 fragment", "open": True,
+                              "hidden": False}],
+            "acknowledgements": [],
+            # --- the chapter around it ---------------------------------
+            "referenceText": "Genesis 2",
             "tallyText": "1 fragment held",
+            "chapterCounts": ["31 verses", "3 paragraphs"],
+            "verseNumbers": [str(number) for number in range(1, 32)],
+            "paragraphNote": ("Paragraphs: 2 are projected from the "
+                              "witnesses that concur, and marked."),
+            # --- the controls ------------------------------------------
+            "selectValues": {"book": "Gen", "chapter": "2",
+                             "bible": "douay-rheims"},
+            "voice": "",
+            "voiceLabels": ["Everything held", "The author’s own language"],
+            "stepButtons": [False, False],
+            # --- announcement, busy, route, focus ----------------------
             "statusWrites": [self.GEN1_SPOKEN, self.GEN2_SPOKEN],
             "statusText": self.GEN2_SPOKEN,
             "busy": "false",
@@ -8839,9 +9043,53 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
             "replacedStates": [],
             "historyState": None,
             "activeElement": "chapter-select",
+            # --- every sink that must stay EMPTY -----------------------
             "errorSections": [],
             "failureText": None,
+            "notices": [],
+            "asideNotes": [],
+            "leads": [],
+            "blocked": [],
+            "refusalCount": 0,
+            "refusal": None,
+            "absenceSummary": None,
+            "absenceReasons": [],
+            "absencePartials": [],
+            # --- the rendered vocabulary -------------------------------
+            # The whole class set, so a substituted, duplicated or dropped
+            # node is visible as a vocabulary change rather than only as a
+            # count. `fragment-text missing` is the refused row's own hook.
+            "classes": [
+                "author", "author-body", "author-count", "author-date",
+                "author-fragments", "author-head", "author-name", "chain",
+                "chain-column", "chapter", "chapter-body", "chapter-count",
+                "chapter-head", "chapter-name", "fragment",
+                "fragment-apparatus", "fragment-author", "fragment-body",
+                "fragment-date", "fragment-extent", "fragment-head",
+                "fragment-language", "fragment-length", "fragment-source",
+                "fragment-text missing", "fragment-whole", "fragment-work",
+                "paragraph-note", "passage", "passage-paragraph",
+                "passage-paragraph projected", "section-heading", "sep",
+                "verse", "verse-num"],
+            "langAttributes": ["passage=en", "fragment-text missing=la"],
         }
+
+    def test_every_guarded_field_has_an_expected_value(self):
+        # THE COVERAGE PIN ITSELF. The V10 defect was not a wrong value; it
+        # was twenty-three fields with no expected value at all, invisible
+        # because the guard only compared. This asserts the arithmetic the
+        # review had to do by hand, so a later lane cannot widen the guard
+        # without widening the proof.
+        guarded = set(GenuinelyLateStaleWorkTest.GUARDED)
+        pinned = set(self.expected_b_terminal())
+        self.assertEqual(len(guarded), 36)
+        self.assertEqual(
+            sorted(guarded - pinned), [],
+            "guarded fields left to before/after equality alone")
+        # And the four the proof adds beyond the guard are really beyond it.
+        self.assertEqual(sorted(pinned - guarded),
+                         ["fetched", "historyState", "replacedStates",
+                          "requests"])
 
     def test_a_late_fallback_cannot_touch_the_refused_terminal_state(self):
         # B settled terminal with its rows open; A completes late. Every
@@ -8858,16 +9106,24 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
         after = self.snapshot("v9-late-fallback", "a-late")
         for key in GenuinelyLateStaleWorkTest.GUARDED:
             self.assertEqual(after[key], before[key], f"{key} moved late")
-        terminal = self.expected_b_terminal()
-        for label, snap in (("b-opened", before), ("a-late", after)):
+        for label, snap, fallback in (("b-opened", before, "held"),
+                                      ("a-late", after, "released")):
             with self.subTest(snapshot=label):
-                for key, value in terminal.items():
+                for key, value in self.expected_b_terminal(fallback).items():
                     self.assertEqual(snap[key], value, f"{label}: {key}")
                 self.assertNotIn(self.NO_TEXT, snap["fragmentTexts"])
+                self.assertNotIn(UNESTABLISHED_SAID, snap["fragmentTexts"])
                 for said in snap["fragmentTexts"]:
                     self.assertNotIn("PLANTED", said)
+        # THE RELEASE, PINNED EXACTLY. Zero let go while B settled, one
+        # afterwards — and the journal names WHICH request moved and to
+        # what, so "something late happened" is not taken on the count.
         self.assertEqual(before["released"], 0)
         self.assertEqual(after["released"], 1)
+        moved = [(one["seq"], one["path"], one["outcome"])
+                 for one, then in zip(after["requests"], before["requests"])
+                 if one != then]
+        self.assertEqual(moved, [(6, self.FALLBACK, "released")])
 
 
 class V9PrefixStateClassificationTest(unittest.TestCase):
@@ -9032,6 +9288,433 @@ class V10RefusedPresentationTest(ReplayTest):
         # The sentence the page renders IS the model's own export — pinned
         # byte-exactly so the suite and the production copy cannot drift.
         self.assertEqual(told["said"], REFUSED_SAID)
+
+
+class V11InheritedClaimBoundaryTest(ReplayTest):
+    """V11 §1 — a value a record does not carry states nothing about it.
+
+    The V10 review closed the shapes and left the MEMBERS open. `bag()`
+    established that a record arrived and ordinary property lookup then
+    answered from wherever it found an answer, so at the exported boundary:
+
+        Object.create({stated: false, trail: ''})   opened the carried door
+        Object.create({stated: true,  trail: <ok>}) composed a request
+
+    — neither claim carrying one own semantic member, both projecting as
+    this route's own derivation. The committed matrix was eight plain object
+    literals and probed no inherited, hybrid or accessor claim at all.
+
+    Every semantic member is now read once, as own data, through the
+    descriptor. Nothing inherited is seen; an own accessor is NEVER INVOKED,
+    which is stronger than reading it once and trusting the answer; and a
+    getter that answers differently on a second read has no second read to
+    answer. The disposition of a claim whose members are not its own is the
+    disposition of a claim with no members: closed, and said conservatively.
+    """
+
+    CARRIED = "structure/catena/text/fallback-owned.json"
+    VALID = "structure/catena/text/deeper/"
+    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
+
+    # The disposition every inherited or accessor-backed claim must reach:
+    # no path, refused, and — because no own textual value was supplied —
+    # the conservative sentence rather than the supplied-reference one.
+    CLOSED = {"path": "", "refused": True, "unestablished": True,
+              "note": UNESTABLISHED_SAID}
+
+    def drive(self, body):
+        """Run one node probe against the production model, return its JSON."""
+        script = ("const M = require(%r);\n"
+                  "const CARRIED = %r;\n"
+                  "const VALID = %r;\n"
+                  "const sources = {\"1\": {author: \"A\", work: \"W\"}};\n"
+                  "const base = {id: \"fallback-owned\", source: \"1\",\n"
+                  "              text_path: CARRIED};\n"
+                  "let calls = 0;\n"
+                  "const getter = (answer) => ({\n"
+                  "  get() { calls += 1; return answer(); },\n"
+                  "  enumerable: true, configurable: true});\n"
+                  "const accessors = (spec) => {\n"
+                  "  const made = {};\n"
+                  "  for (const name of Object.keys(spec)) {\n"
+                  "    Object.defineProperty(made, name, spec[name]);\n"
+                  "  }\n"
+                  "  return made;\n"
+                  "};\n"
+                  "const under = (proto, ownFields) =>\n"
+                  "  Object.assign(Object.create(proto), ownFields || {});\n"
+                  "const shot = (fragment, claim) => {\n"
+                  "  const one = M.fragmentRow(fragment, sources, claim);\n"
+                  "  return {path: one.text_path, refused: one.text_refused,\n"
+                  "          unestablished: one.text_unestablished,\n"
+                  "          note: one.text_note};\n"
+                  "};\n"
+                  "const row = (claim) => shot(base, claim);\n"
+                  + body) % (str(CATENA / "catena-model.js"),
+                             self.CARRIED, self.VALID)
+        done = subprocess.run(["node", "-e", script],
+                              capture_output=True, text=True, check=True)
+        return json.loads(done.stdout)
+
+    def test_no_inherited_or_accessor_claim_member_reopens_anything(self):
+        # THE MATRIX THE V10 MATRIX LACKED. Every claim here would have been
+        # answered by property lookup and is answered by no own member. Each
+        # must fail closed identically: no request composed, no fallback
+        # reopened, no body, and one truthful conservative sentence.
+        told = self.drive("""
+        const cases = {
+          "inherited-stated": row(Object.create({stated: true})),
+          "inherited-trail": row(Object.create({trail: VALID})),
+          "inherited-trail-is-a-file": row(Object.create({trail: CARRIED})),
+          "inherited-both": row(Object.create({stated: true, trail: VALID})),
+          "inherited-absence-shape":
+            row(Object.create({stated: false, trail: ""})),
+          "own-false-inherited-valid-trail":
+            row(under({trail: VALID}, {stated: false})),
+          "own-junk-trail-inherited-valid-trail":
+            row(under({trail: VALID}, {stated: true, trail: "junk"})),
+          "own-absence-inherited-refusal-marker":
+            row(under({text_refused: true}, {stated: false, trail: ""})),
+          "inherited-supplied-marker":
+            row(under({said: true}, {stated: true, trail: "junk"})),
+          "getter-stated": row(accessors({
+            stated: getter(() => true),
+            trail: {value: VALID, enumerable: true}})),
+          "getter-trail": row(accessors({
+            stated: {value: true, enumerable: true},
+            trail: getter(() => VALID)})),
+          "getter-both": row(accessors({
+            stated: getter(() => true), trail: getter(() => VALID)})),
+          "getter-throws": row(accessors({
+            stated: getter(() => { throw new Error("a getter ran"); }),
+            trail: getter(() => { throw new Error("a getter ran"); })})),
+          "getter-drifts": (() => {
+            let turn = 0;
+            return row(accessors({
+              stated: getter(() => (turn += 1) > 1),
+              trail: getter(() => ((turn += 1) > 1 ? VALID : ""))}));
+          })(),
+          "inherited-carried-path": shot(
+            under({text_path: CARRIED}, {id: "fallback-owned", source: "1"}),
+            {stated: false, said: false, trail: ""}),
+          "accessor-carried-path": shot(
+            Object.assign(accessors({
+              text_path: getter(() => CARRIED)}),
+              {id: "fallback-owned", source: "1"}),
+            {stated: false, said: false, trail: ""}),
+          "inherited-id": shot(
+            under({id: "fallback-owned"}, {source: "1"}),
+            {stated: true, said: true, trail: VALID})};
+        console.log(JSON.stringify({cases: cases, calls: calls}));
+        """)
+        cases = told["cases"]
+
+        # THE ACCESSORS WERE NEVER CALLED AT ALL. Not "called once and
+        # ignored" — the semantic boundary reads descriptors, so a getter
+        # with a side effect never runs, and the drifting getter has no
+        # second read to disagree with its first.
+        self.assertEqual(told["calls"], 0,
+                         "the projection invoked an accessor on a raw claim")
+
+        # Eleven claims whose members are inherited or accessor-backed.
+        for name in ("inherited-stated", "inherited-trail",
+                     "inherited-trail-is-a-file", "inherited-both",
+                     "inherited-absence-shape",
+                     "own-false-inherited-valid-trail",
+                     "own-junk-trail-inherited-valid-trail",
+                     "own-absence-inherited-refusal-marker",
+                     "inherited-supplied-marker", "getter-stated",
+                     "getter-trail", "getter-both", "getter-throws",
+                     "getter-drifts"):
+            self.assertEqual(cases[name], self.CLOSED, name)
+
+        # A path or an identity the fragment does not carry composes nothing
+        # either. `inherited-carried-path` and `accessor-carried-path` are
+        # GENUINE ABSENCE at the claim — the door the contract does open —
+        # and they still resolve no address, because the stem they would be
+        # matched against is not the fragment's own.
+        for name in ("inherited-carried-path", "accessor-carried-path"):
+            self.assertEqual(
+                cases[name],
+                {"path": "", "refused": False, "unestablished": False,
+                 "note": ""}, name)
+        # A valid statement composes from the fragment's OWN id or from
+        # nothing; an inherited id addresses no fragment.
+        self.assertEqual(
+            cases["inherited-id"],
+            {"path": "", "refused": False, "unestablished": False,
+             "note": ""})
+
+    def test_the_ordinary_claims_the_boundary_does_honour_are_unchanged(self):
+        # THE POSITIVE CONTROLS, so the closure above is not vacuous. The
+        # three ordinary dispositions V10 established still hold exactly.
+        told = self.drive("""
+        console.log(JSON.stringify({
+          absent: row({stated: false, said: false, trail: ""}),
+          valid: row({stated: true, said: true, trail: VALID}),
+          refused: row({stated: true, said: true, trail: ""})}));
+        """)
+        self.assertEqual(
+            told["absent"],
+            {"path": self.CARRIED, "refused": False,
+             "unestablished": False, "note": ""})
+        self.assertEqual(
+            told["valid"],
+            {"path": self.COMPOSED, "refused": False,
+             "unestablished": False, "note": ""})
+        self.assertEqual(
+            told["refused"],
+            {"path": "", "refused": True, "unestablished": False,
+             "note": REFUSED_SAID})
+
+    def test_the_spine_is_asked_for_its_own_prefix_too(self):
+        # `chapterFragments` derives the claim the page actually uses, and
+        # it read `record.text_prefix` by lookup. An inherited prefix is not
+        # this file's statement: it must resolve exactly as no statement
+        # resolves — which is what makes it invisible rather than trusted —
+        # and an own accessor must not be invoked to find out.
+        told = self.drive("""
+        let spineCalls = 0;
+        const spine = (extra) => Object.assign({
+          fragments: [{id: "fallback-owned", source: "1",
+                       text_path: CARRIED}],
+          sources: sources}, extra || {});
+        const only = (file) => {
+          const rows = M.chapterFragments(file);
+          return {path: rows[0].text_path, refused: rows[0].text_refused,
+                  unestablished: rows[0].text_unestablished,
+                  note: rows[0].text_note};
+        };
+        const inherited = Object.assign(
+          Object.create({text_prefix: VALID}), spine());
+        const accessed = spine();
+        Object.defineProperty(accessed, "text_prefix", {
+          get() { spineCalls += 1; return VALID; },
+          enumerable: true, configurable: true});
+        console.log(JSON.stringify({
+          stated: only(spine({text_prefix: VALID})),
+          absent: only(spine()),
+          inherited: only(inherited),
+          accessor: only(accessed),
+          refused: only(spine({text_prefix: "structure/paragraphs/"})),
+          empty: only(spine({text_prefix: ""})),
+          spineCalls: spineCalls}));
+        """)
+        self.assertEqual(told["spineCalls"], 0,
+                         "the spine's own accessor was invoked")
+        # An own valid prefix composes; genuine absence opens the own-stem
+        # carried door. Both unchanged.
+        self.assertEqual(
+            told["stated"],
+            {"path": self.COMPOSED, "refused": False,
+             "unestablished": False, "note": ""})
+        self.assertEqual(
+            told["absent"],
+            {"path": self.CARRIED, "refused": False,
+             "unestablished": False, "note": ""})
+        # AN INHERITED PREFIX RESOLVES AS NO PREFIX. It composes nothing of
+        # its own, and it does not alter the absence the record itself
+        # states — so the carried door stands or falls on the record's own
+        # bytes, exactly as if the prototype were not there.
+        self.assertEqual(told["inherited"], told["absent"])
+        self.assertEqual(told["accessor"],
+                         {"path": "", "refused": True,
+                          "unestablished": True, "note": UNESTABLISHED_SAID})
+        # A supplied string this page declines keeps the supplied sentence;
+        # a supplied empty string establishes no reference to speak of.
+        self.assertEqual(
+            told["refused"],
+            {"path": "", "refused": True, "unestablished": False,
+             "note": REFUSED_SAID})
+        self.assertEqual(
+            told["empty"],
+            {"path": "", "refused": True, "unestablished": True,
+             "note": UNESTABLISHED_SAID})
+
+    def test_the_projection_carries_only_own_data_properties(self):
+        # V11 §6 — what leaves the model is a trusted projection, and the
+        # renderer must never have to ask whether a field it reads is really
+        # there. Every semantic member is an own DATA property: no accessor
+        # to invoke, nothing reached through a prototype.
+        told = self.drive("""
+        const one = M.fragmentRow(base, sources,
+                                  {stated: true, said: true, trail: VALID});
+        const shape = {};
+        for (const name of Object.keys(one)) {
+          const spot = Object.getOwnPropertyDescriptor(one, name);
+          shape[name] = Object.hasOwn(spot, "value") ? "data" : "accessor";
+        }
+        console.log(JSON.stringify({
+          shape: shape,
+          proto: Object.getPrototypeOf(one) === Object.prototype,
+          extentShape: Object.keys(one.extent).every((name) => Object.hasOwn(
+            Object.getOwnPropertyDescriptor(one.extent, name), "value"))}));
+        """)
+        self.assertTrue(told["proto"])
+        self.assertTrue(told["extentShape"])
+        self.assertEqual(sorted(set(told["shape"].values())), ["data"])
+        # The three fields the request and the reader turn on are present by
+        # name, so a renderer reading them cannot be reading undefined.
+        for name in ("text_path", "text_refused", "text_unestablished",
+                     "text_note"):
+            self.assertIn(name, told["shape"], name)
+
+
+class V11UnestablishedPresentationTest(ReplayTest):
+    """V11 §2 — the page says no more than its own state established.
+
+    The refused sentence asserts two facts of its own: that a text reference
+    WAS SUPPLIED, and that it cannot be used AS WRITTEN. The V10 lane gave
+    it to every state that resolved no text, so a spine whose `text_prefix`
+    was `null`, a record, a list, a number, a flag, '' or whitespace told
+    the reader both — and neither is established by any of them. The V10
+    neutrality test blacklisted nine phrases inside the constant and never
+    drove one malformed state to the visible or the request sink, so nothing
+    caught it.
+
+    Three states now, three claims:
+
+        ABSENT         — no text reference was supplied;
+        REFUSED        — one was supplied, written so it cannot be used;
+        UNESTABLISHED  — no text reference is established at all.
+
+    Every scenario below carries the same valid same-stem carried path and
+    the same planted body as the V9 family, so the wording and the request
+    are asked on one page at once: a page that said the weaker sentence and
+    then fetched would be caught by the journal, and a page that fetched and
+    rendered would be caught by the body.
+    """
+
+    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
+    CARRIED = "structure/catena/text/fallback-owned.json"
+    PLANTED = ("PLANTED FALLBACK BODY — "
+               "reachable only through genuine absence.")
+
+    def owned(self, tail=()):
+        return request_journal(
+            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
+
+    def assert_no_text_was_asked_or_leaked(self, said, where):
+        # The three sinks a wrong answer would show in: the owned journal,
+        # the rendered body, and the flat path list.
+        self.assertEqual(said["requests"], self.owned(), where)
+        self.assertEqual(said["fetched"], self.BOOTSTRAP, where)
+        self.assertNotIn(self.CARRIED, said["fetched"], where)
+        for body in said["fragmentTexts"]:
+            self.assertNotIn("PLANTED", body, where)
+
+    def test_every_unestablished_prefix_says_only_that(self):
+        # SEVEN STATES, ONE TRUTHFUL SENTENCE. Each establishes neither a
+        # supplied reference nor a written form, so neither is claimed.
+        for key in V11_UNESTABLISHED_PREFIXES:
+            where = "v11-unestablished-" + key
+            said = self.snapshot(where, "opened")
+            self.assertEqual(said["fragmentTexts"], [UNESTABLISHED_SAID],
+                             where)
+            # Not the sentence that would assert what was never supplied,
+            # and not the sentence that would deny the corpus holds it.
+            self.assertNotIn(REFUSED_SAID, said["fragmentTexts"], where)
+            self.assertNotIn(NO_TEXT_SAID, said["fragmentTexts"], where)
+            self.assert_no_text_was_asked_or_leaked(said, where)
+            # One terminal state, and it is quiet: no error, no failure, no
+            # retry offered for a request that was never made.
+            self.assertEqual(said["errorSections"], [], where)
+            self.assertIsNone(said["failureText"], where)
+            self.assertEqual(said["busy"], "false", where)
+            self.assertEqual(said["tallyText"], "1 fragment held", where)
+
+    def test_a_supplied_reference_still_says_it_was_supplied(self):
+        # THE POSITIVE CONTROL. The distinction is only worth drawing if the
+        # stronger sentence survives where it is true: a spine that really
+        # did state `structure/paragraphs/`, and one that stated the right
+        # namespace wrapped in whitespace, each supplied a written textual
+        # reference this page declined — and each still says so.
+        for name in V11_SUPPLIED_BUT_REFUSED:
+            said = self.snapshot(name, "opened")
+            self.assertEqual(said["fragmentTexts"], [REFUSED_SAID], name)
+            self.assertNotIn(UNESTABLISHED_SAID, said["fragmentTexts"], name)
+            self.assert_no_text_was_asked_or_leaked(said, name)
+
+    def test_the_three_no_text_sentences_are_three_distinct_claims(self):
+        # None may stand in for another, on the page or in this suite.
+        said = [NO_TEXT_SAID, REFUSED_SAID, UNESTABLISHED_SAID]
+        self.assertEqual(len(set(said)), 3)
+        for one in said:
+            for other in said:
+                if one is not other:
+                    self.assertNotIn(one, other)
+
+    def test_the_unestablished_sentence_states_only_what_is_established(self):
+        # It may not convert "this page established nothing" into a holdings
+        # negative, a missing file, a transport fault or a block — the nine
+        # claims the V10 sweep already forbids — AND it may not make the two
+        # claims the refused sentence is entitled to make and it is not.
+        for claim in ("carries no text file", "no text file", "not published",
+                      "could not be loaded", "cannot read", "does not exist",
+                      "blocked", "failed", "missing",
+                      "was supplied", "supplied", "written",
+                      "the reference", "the file"):
+            self.assertNotIn(claim, UNESTABLISHED_SAID, claim)
+
+    def test_the_model_and_the_page_cannot_drift_apart(self):
+        # The sentence the page renders IS the model's own export, pinned
+        # byte-exactly in both directions.
+        script = ("const M = require(%r);\n"
+                  "console.log(JSON.stringify({"
+                  "refused: M.TEXT_REFUSED,"
+                  "unestablished: M.TEXT_UNESTABLISHED}));"
+                  % str(CATENA / "catena-model.js"))
+        done = subprocess.run(["node", "-e", script],
+                              capture_output=True, text=True, check=True)
+        told = json.loads(done.stdout)
+        self.assertEqual(told["refused"], REFUSED_SAID)
+        self.assertEqual(told["unestablished"], UNESTABLISHED_SAID)
+
+
+class V11RendererOrderTest(ReplayTest):
+    """V11 §3 — the refusal is consumed BEFORE the sink, pinned as such.
+
+    The V10 review: `catena.js` does return on `text_refused` before
+    `fragmentText()`, but nothing pinned it there. Every refused row the
+    model can build carries an empty `text_path`, so moving the check below
+    the request sink changed no journal, leaked no body, and left all 466
+    wave-1 methods green. The ordering promise was carried entirely by
+    reading the file.
+
+    `forceRow` rewrites the projected rows into the normalized shape the
+    model never emits — refused, and carrying a usable, plantable address —
+    on the one spine whose page really does fetch that address. The control
+    scenario is the same page without the override, so the pin cannot pass
+    by the address being unreachable.
+    """
+
+    BOOTSTRAP = V7TextPathRequestSinkTest.BOOTSTRAP
+    CARRIED = "structure/catena/text/fallback-owned.json"
+
+    def test_a_refused_row_with_a_usable_path_asks_nothing(self):
+        said = self.snapshot("v11-renderer-order", "opened")
+        # THE SINK, UNTOUCHED. Not one request beyond the bootstrap, and in
+        # particular not the address the row is carrying.
+        self.assertEqual(said["fetched"], self.BOOTSTRAP)
+        self.assertNotIn(self.CARRIED, said["fetched"])
+        # The reader gets the refusal, not the body waiting at that address.
+        self.assertEqual(said["fragmentTexts"], [REFUSED_SAID])
+        for body in said["fragmentTexts"]:
+            self.assertNotIn("PLANTED", body)
+        self.assertEqual(said["errorSections"], [])
+        self.assertIsNone(said["failureText"])
+        self.assertEqual(said["busy"], "false")
+
+    def test_the_same_page_without_the_override_really_does_fetch(self):
+        # NON-VACUITY. Identical spine, identical planted body, no override:
+        # this page asks the carried address and renders what it finds. So
+        # the assertion above is about the ORDER of the two statements in
+        # `catena.js` and nothing else.
+        said = self.snapshot("v11-renderer-order-control", "opened")
+        self.assertEqual(said["fetched"], self.BOOTSTRAP + [self.CARRIED])
+        self.assertEqual(len(said["fragmentTexts"]), 1)
+        self.assertIn("PLANTED", said["fragmentTexts"][0])
+        self.assertNotIn(REFUSED_SAID, said["fragmentTexts"])
 
 
 class V7HollowFragmentMemberTest(ReplayTest):
