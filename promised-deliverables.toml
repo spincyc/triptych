@@ -1241,6 +1241,78 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-16 E1 Catena V10 independent review (f7cad8b02 on review/catena-wave-1-e1-corrections-v10-independent, CHANGES REQUIRED at ea15d16d2) with exactly its stated next action: require own non-accessor claim members so no inherited, prototype or accessor-backed value can reopen a carried or composed text request, distinguish a genuinely supplied-and-refused reference from a malformed or unestablished state and give the second truthful conservative wording, add the inherited, hybrid, accessor, production-malformed, cache, visible-sink and request-sink regressions, state an expected value for every material field of the 36-field late guard, carry request ownership into the packaged journal, correct the package protocol defects — a genuinely read-only non-executing P8 that rehashes the ZIP after every check, contemporaneous per-command clean/dirty provenance, unique attempt-scoped logs with a mechanical index and explicit discard markers, ZIP metadata that discloses no builder offset, and a sanitizer that removes the workspace and lane-evidence identity by convention — issue one immutable exact-head V11 handoff with all ten required contents and the required screenshots, record every other blocker open and untouched, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "own-claim-members-only"
+  criterion = "No inherited, prototype or accessor-backed property may create a request, reopen the carried fallback, compose a text path, change the refusal or absence state, render body text or alter request ownership. Every semantic member of the prefix claim, the spine's own text_prefix, the fragment's carried text_path, id and source, the edition join and the extent members is read once as an own DATA property through its descriptor, so an own accessor is never invoked and a getter that answers differently on a second read has no second read; a claim whose three-member contract is reachable above it fails closed rather than being adjudicated. An adversarial matrix covers inherited stated, inherited trail, both inherited, own-false-with-inherited-valid-trail, own-invalid-with-inherited-valid-trail, getters for each member, a throwing getter, a drifting getter, an inherited supplied marker, an inherited refusal marker, and inherited carried path and id — each pinned closed, with the accessor invocation count asserted at zero and the ordinary absent, valid and refused dispositions asserted beside them as positive controls."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "malformed-state-said-truthfully"
+  criterion = "The refused sentence, which asserts that a text reference was supplied and that it cannot be used as written, is used only where the normalized projection establishes both — a non-empty textual value supplied as an own property and rejected under the path and namespace contract. Every other no-text state that is not genuine absence — a text_prefix that is null, a record, a list, a number, a flag, empty text or whitespace, and every bare, contradictory, inherited or accessor-backed direct claim — receives a distinct conservative sentence that makes no holdings claim, no file-existence claim, no request-failure claim and no accusation, and does not assert that a reference was supplied or how it was written. The three no-text sentences are pinned as three distinct claims, and each malformed state is driven to the visible AND request sinks against a planted carried body, not merely inspected as a constant."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "complete-late-vector-expected-values"
+  criterion = "The genuinely-late terminal vector states an exact expected value for every one of the 36 guarded fields, asserted at both ends of the release rather than by before/after equality alone, and a coverage test fails if a field joins the guard without joining the expected-value table. The release is proved genuinely late — A issued and held with its row still loading, zero released while B settles, exactly one released afterwards — and is pinned as the only thing permitted to move, named by sequence and address. The renderer's before-the-sink ordering is independently pinned with a normalized refused row carrying a usable, plantable path that the model never emits, against a control on the same spine that really does fetch that address."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "request-ownership-in-packaged-evidence"
+  criterion = "The packaged request journal is human- and machine-readable and sufficient to reproduce every ownership claim without rerunning the harness: each row states its sequence number, the requested path, the kind of record that address holds, the owning action or step, and whether the request completed, was held, was released or failed. The dump no longer drops the harness fields it records — requests, fragmentIds, historyState and replacedStates are all carried — and a field the harness stops emitting is a hard failure rather than a silent null. No private or session data is exposed."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "read-only-p8-with-final-rehash"
+  criterion = "P8 imports and executes no Python extracted from the reviewed ZIP. Shared verification logic runs from a trusted copy outside the sealed artifact whose exact path and SHA-256 are recorded beside the archive's shipped copy, with divergence a hard failure rather than silent trust, and the archive's copies are read as bytes only. After all checks complete the ZIP byte size and SHA-256 are recomputed and compared with the values captured before them, and the transcript states pre-check size and hash, the checks performed, post-check size and hash, and the equality verdict. The transcript binds itself to one archive by basename, exact size, exact SHA-256, the V11 head, the package identity, the verifier's own identity and each check result, and its unsafe-layout refusal is a typed signal rather than a substring match on prose."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "truthful-provenance-and-unique-attempts"
+  criterion = "Clean and dirty tree state is captured contemporaneously for each command rather than inherited from one preflight, so a step that dirties the tree is recorded dirty on its own row. Every authoritative execution attempt has a unique log identity that a rerun cannot reproduce, a log index is derived mechanically, the final assembly writes an outer invocation log, the gate comparison is a recorded step, and every discarded attempt is self-marked non-authoritative with exactly one reason so that no attempt reads as both authoritative and discarded. A compact attempt ledger records attempt id, exact SHA, parent and head, sanitized cwd identity, command or phase, start, end and order, exit or result, disposition, reason if discarded, and log path."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "workspace-and-builder-privacy"
+  criterion = "The workspace and lane-evidence identity is removed by a reusable rule matching the naming convention rather than a lane-specific literal, applied to member bodies, member names, logs, metadata and packaged content, and backed by a matching detection rule so the scan cannot report clean while the identity survives. ZIP member metadata discloses no builder timezone, offset, umask or platform: entries carry a fixed timestamp and derived mode bits, verified by a test that inspects the archive metadata directly. Local-offset timestamps in packaged records are normalized so ordering and elapsed time survive while the offset does not. The final scan covers package members, member names, ZIP metadata, sidecars, the P8 transcript, screenshot metadata, logs and provenance, and records the scanner rules and version."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "handoff-complete-and-evidenced"
+  criterion = "HANDOFF.md contains all ten required contents of guidance/external-review-handoffs.md as CONTENT — with known limitations and unresolved decisions stated inline rather than delegated to sibling files — and its artifact inventory names every package member and every package sibling including the evidence index, the ZIP, its SHA-256 sidecar and the P8 transcript, with a stated reason for any omitted conditional class. A machine-checkable handoff-section inventory verifies this and reproduces the V10 eight-of-ten finding against the V10 package unaided. The required screenshots for this correction-evidence class are produced from real headless Chromium with before and after pairs for the state whose copy changed, each labelled with route, state, viewport, adversarial-or-real-corpus provenance, originating commit, hash and capture tool, disclosing no local or session identifiers, and pairs that are identical by design are reported as identical rather than described as different."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "guidance/corpus-browser-master-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "passed-behaviour-preserved"
+  criterion = "Nothing the V10 review passed is regressed: ordinary normalized refusal consumption before the cache and request sink, genuine absence against ordinary refusal, the V9 request closure, the cold, present-valid and prewarmed terminal vectors, the representative primitive namespace matrix, exact voices, language normalization, the neutral umbrella, padded verses, null termination, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v11-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V11 head, its parent ea15d16d2, the review addressed f7cad8b02, the mechanically derived commit list and diff, the inherited and accessor adversarial matrix, the own-property normalization evidence, the malformed and unestablished wording evidence, the contradictory-claim closure, the exact 36-field late-vector expected-value table, the packaged request-ownership journal, the cold, present-valid and prewarmed preservation evidence, the attempt and log ledger, contemporaneous parent and head tree-state provenance, the read-only P8 verifier identity with pre and post ZIP hashes, the discarded-attempt ledger, the complete handoff-section inventory, the required screenshots with metadata and hashes, the sanitizer and ZIP-metadata privacy tests, the final privacy scan, fresh validation figures, budgets, release status, the open blockers, a byte and control scan, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V11 head and its new immutable package records a durable disposition, scoped to inherited and accessor semantic closure, truthful malformed-state presentation, complete late-vector proof, and package, provenance and privacy correctness. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v10-2026-08-16"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-16 E1 Catena V9 independent review (55df5c236 on review/catena-wave-1-e1-corrections-v9-independent, published head 4f00e04bd, CHANGES REQUIRED at 3c5b78249) with exactly its stated next action: preserve the V9 request-layer closure, carry the projected text_refused state into the renderer as a distinct neutral refused-prefix presentation while genuine absence keeps its own truthful state, fail every contradictory prefix claim closed at the exported model boundary, exact-pin the complete cold, present-valid, prewarmed and genuinely-late request/terminal vectors with explicit request ownership and history.state capture, correct the V9 package protocol defects — unique non-overwriting logs, contemporaneous exact-SHA/clean/cwd provenance, P8 transcript bound to the exact ZIP identity with duplicate-row and final-byte reporting, accurate method/failure labels, complete handoff and review-request structure, refusal of reused timestamps — record every other blocker open and untouched, issue one immutable exact-head V10 handoff, and return that head for fresh independent review."
@@ -1249,19 +1321,19 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "refused-prefix-rendered-distinct"
   criterion = "The renderer consumes the normalized text_refused projection before the request sink, never inferring refusal from raw input: a present-invalid text prefix renders one compact neutral sentence stating that a supplied text reference cannot be used as written — never the absence sentence, and never wording implying the corpus lacks the text, the file is missing, a request failed, or content is blocked — while a genuinely absent reference keeps the absence sentence, a valid prefix renders its composed body with neither sentence, and the two no-text states are pinned as visibly distinct claims with a positive control each way."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "contradictory-prefix-claims-fail-closed"
   criterion = "Absence at the exported fragmentRow claim boundary is exactly one shape — stated false with an empty trail — and every contradictory or malformed direct claim, the review's stated-false-beside-a-valid-trail included, resolves no text and projects as refused; the page reads the refusal before handing any path to the request sink, so no contradictory pairing of text_refused with a usable-looking path can compose a request, substitute a cached body, or leak body text."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "exact-terminal-vectors-with-ownership"
   criterion = "The cold, present-valid, prewarmed, and genuinely-late scenarios are each pinned to expected values — not equality between snapshots — at every material sink: the whole request journal with each request's owning step recorded by the harness, row identity and count, the rendered refused or composed body with the absence sentence proven absent where refusal stands, tally, the announcement journal and the standing statusText, aria-busy, URL, hash and history journals and the captured history.state, focus, error and failure sinks, and replacement state; the late vector pins B's complete terminal baseline both before and after the release, retains the full 36-field guarded comparison, and pins the release itself at exactly zero-then-one."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1291,7 +1363,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V10 head and its new immutable package records a durable disposition, scoped to refused-prefix presentation truthfulness, exact terminal vectors, request-closure preservation, and package protocol correctness. This lane does not review its own work and records no acceptance."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]

@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-08.
+Last reconciled: 2026-08-16.
 
 ## Standing public-alpha authority
 
@@ -1138,6 +1138,178 @@ weakened or expect-marked.
 Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
+
+### E1 Catena route-owned correction lane, V11
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v11-2026-08-16 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`ea15d16d22d7ceaed989ed9907c236f967738a03`, recorded by the independent
+review `f7cad8b0219de8343a0b2cce95e89558ded6946e` on branch
+`review/catena-wave-1-e1-corrections-v10-independent`, which independently
+inspected evidence `ff49c83e4f26570bd4c07d8fc8703f94c331d92a` and verified
+package `build/agent-handoffs/20260816T111714Z-catena-e1-corrections-v10`
+with ZIP SHA-256
+`4c71d1c15bd1f1992bf29a1d84342f11a8b671b5b5bd6bdcc4341de091e23e2f`. That
+review is a sibling of this line at the reviewed head and is **not merged
+in**; this record states its disposition rather than importing its commits.
+Current `origin/main` is `e7f468e842727a817631d12f0854f8249556a8ff`, and
+this lane is not integrated with it.
+
+The review passed what V10 got right and did not reopen it: ordinary
+normalized refusal consumption before the cache and request sink, genuine
+absence distinguished from ordinary refusal, the V9 request closure, the
+cold, present-valid and prewarmed terminal vectors, the representative
+primitive namespace matrix, the production ownership boundaries, and the
+existing CSS and JavaScript ceilings. It found five things, and this lane
+answers those five and nothing else.
+
+**The exported claim boundary closed only its shapes.** `bag()` established
+that a record arrived; ordinary property lookup then answered from wherever
+it found an answer. So `Object.create({stated: false, trail: ''})`
+presented itself as this route's own absence and opened the carried
+fallback door with `text_refused: false`, and an inherited
+`{stated: true, trail: 'structure/catena/text/deeper/'}` composed a usable
+text address the page never derived. Mixed own-and-inherited forms did the
+same and an accessor could throw. The committed matrix was eight plain
+object literals and probed no inherited, hybrid or accessor claim at all.
+Every semantic member is now read once, as own data, through its property
+descriptor: nothing inherited is seen, and an own accessor is **never
+invoked** — so a getter with a side effect does not run, and a getter that
+would answer differently on a second read has no second read to disagree
+with. Where the claim's own three-member contract is partly written above
+it — a valid own statement beside an inherited refusal marker — the claim
+fails closed rather than being adjudicated, because deciding which half of
+a contradiction to believe is not this page's to do. The same own-data
+reading now applies to the spine's own `text_prefix`, the carried
+`text_path`, the fragment's `id` and `source`, the edition join, and the
+extent members. This is a boundary correction, not a security rewrite: the
+wide fragment and edition contracts are still validated field by field, and
+that limit is stated in the handoff.
+
+**One sentence was doing the work of two.** `A text reference was supplied
+for this fragment, but it cannot be used as written` asserts two facts of
+its own — that a reference was supplied, and that it was written unusably —
+and V10 gave it to every state that resolved no text. A spine whose
+`text_prefix` was `null`, a record, a list, a number, a flag, `''` or
+whitespace establishes neither; nor does a bare, contradictory, inherited or
+accessor-backed direct claim. The projected claim now carries `said` —
+whether a non-empty textual value was supplied at all — and the weaker
+state gets the weaker sentence: `No text reference is established for this
+fragment, so no text is shown.` It makes no holdings claim, no
+file-existence claim, no request-failure claim and no accusation; it does
+not say a reference was supplied, and it does not say how anything was
+written. The two supplied-and-refused states — a real `structure/paragraphs/`
+prefix, and the right namespace wrapped in whitespace — keep the stronger
+sentence, because for them it is true. The model chooses and the row
+carries the result, because `catena.js` stood at 13 gzipped bytes of
+ceiling and this file has none; the page's whole diff is one line, and its
+whole-file headroom improves to 20 bytes.
+
+**The proof had three holes, and they are pinned shut.** A fourteen-case
+inherited and accessor matrix drives the exported boundary and pins that no
+such claim creates a request, reopens the carried door, composes a text
+path, changes the refusal or absence state, renders body text or alters
+ownership — and asserts the planted accessors were invoked **zero** times,
+which is stronger than reading them once and trusting the answer. The
+ordinary absent, valid and refused dispositions are asserted beside it as
+positive controls, and the projection is asserted to carry only own data
+properties. Every unestablished prefix is driven to the **visible and the
+request sink**, against the same planted carried body the V9 family uses:
+the V10 neutrality test blacklisted nine phrases inside the constant and
+drove no state anywhere. The genuinely-late terminal vector now states an
+expected value for **all 36** guarded fields rather than 13 of them, at
+both ends of the release, and a coverage test fails the moment a field
+joins the guard without joining the proof; the release is pinned as the one
+thing permitted to move, named by sequence and address. A `forceRow` hook
+pins the renderer's before-the-sink ordering with the normalized
+`{text_refused: true, text_path: <usable>}` row the model never emits,
+against a control that really does fetch — the V10 review's point being
+that moving the check below `fragmentText()` changed no journal and left
+all 466 wave-1 methods green.
+
+**The packaged evidence could not reproduce its own ownership claim.** The
+live harness recorded it and the dump threw it away: a fourteen-name
+whitelist kept the flat path list and dropped `requests`, `fragmentIds`,
+`historyState` and `replacedStates`. The journal row is now the five facts
+a reader needs without the harness — sequence, address, the kind of record
+that address holds, the step that owned the request, and what became of it:
+completed, held while parked, released once let go, or failed — printed as
+a human-readable table beside the JSON, and a name the harness stops
+emitting is now a hard failure instead of a silent `null`.
+
+**The package protocol was corrected where the review found it false.** The
+P8 verifier no longer imports or executes any Python extracted from the
+reviewed ZIP; it runs three tools from a trusted out-of-archive anchor,
+records each tool's trusted and shipped SHA-256, and fails hard on
+divergence rather than trusting the archive to audit itself. It recomputes
+the ZIP size and SHA-256 after every check and states pre-check and
+post-check values with an explicit equality verdict, closing the V10
+finding that P8 performed no final rehash; its escaping-path refusal is now
+a typed signal rather than a substring match on English prose. Provenance
+is read per command rather than once per battery, so a step that dirties
+the tree is recorded dirty on its own row instead of inheriting a
+preflight's `clean`. Log identity is allocated from an append-only attempt
+ledger outside the log directory, so a rerun cannot reproduce a previous
+attempt's filenames; a log index is derived mechanically; the final
+assembly writes an outer invocation log; the gate comparison is a recorded
+step; and every failure path marks the abandoned attempt non-authoritative
+with exactly one reason, so one attempt is one disposition. ZIP entries are
+written with a fixed DOS-epoch timestamp and suffix-derived mode bits, so
+the archive no longer discloses the builder's UTC offset or umask. The
+sanitizer gained rules for the workspace and lane-evidence path
+conventions — a reusable shape, not a V11-specific literal — and rewrites a
+local-offset timestamp to its UTC instant so ordering and elapsed time
+survive while the offset does not; one prior test that pinned the leak as
+correct behaviour is corrected and says so. A new handoff-inventory tool
+checks `HANDOFF.md` against the ten required contents of
+`guidance/external-review-handoffs.md` and reproduces the review's finding
+against the V10 package unaided.
+
+Fresh validation at this head. Focused Catena is **534** green, up from
+522. `scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73
+canon entries. Full discovery is **1,885** tests with the inherited 14
+failures / 13 errors / 11 skips and the same 27-entry identity set, none of
+them a Catena identity. The browser gate is 2,290 assertions, 1,836 / 226 /
+228 across 171 pages and 19 routes — identical to the V10 report.
+`make -k check` exits 2 on **the same four targets at the parent and at
+this head** — `check-web-editions-current`, `check-release-bindings`,
+`check-tool-registry` and `check-examples` — measured at both endpoints;
+all four are inherited, and the V10 package's claim that the web-edition
+target was additional at its head was wrong and is not repeated here.
+Budgets unraised: `catena.css` byte-identical at 7,629/8,000 whole and
+2,676/2,700 stripped; `catena.js` **12,980**/13,000 whole and 7,554/8,800
+stripped — the page's code got smaller, not larger. The unbudgeted model
+grows 29,741 to 32,406 gzipped whole and 7,664 to 7,973 stripped;
+disclosed, not presented as unchanged load, and the standing question of
+whether the model and the combined route payload need a governed ceiling
+remains the budget owner's. Four stale release bindings remain fail-closed
+and unsigned, none re-signed; `src/web/data/` has zero changes.
+
+One measurement caution is recorded because it nearly became a false
+figure: running full discovery concurrently with `make -k check` reports
+250 errors rather than 13, because the make target builds and then removes
+`build/.web-current` and the public site underneath the tests. The batteries
+run them in sequence; the 1,885 / 14 / 13 / 11 figure above is from an
+isolated run, and the raced run is not used for any claim.
+
+Every other blocker remains open and untouched, as the V10 review left it:
+projection not yet the sole semantic source beyond this inherited-claim
+boundary; orphan raw sources; source-only fragments still counting; scalar
+and nested translator coercion; malformed and padded absence findings;
+refusal verse validation; the broader partial-selection ordering defects;
+unreadable roots and the unreadable `bibles.json` prose; the broader
+terminal and corrected-oracle proofs outside this lane's vectors; the
+CLI/web duplicated semantic model; the uncapped combined and model payload
+question, answered here only by accurate disclosure; and the historical
+data-seam contradiction. Release bindings, the common gate, B0/shared
+shell, real-device and assistive-technology evidence, protected Liturgy and
+PDFs remain separately owned. E1 is not integrated.
+
+Status: **awaiting fresh independent review** of the exact V11 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v11-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
 
 ### E1 Catena route-owned correction lane, V10
 
