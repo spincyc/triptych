@@ -702,8 +702,8 @@
       // ONE typed truth beside the chapter: every tally, empty, blocked
       // and voice claim derives from these counts — held-but-unrenderable
       // is HELD, never "nothing".
-      const blocked = M.blockedRows(file && file.blocked);
-      const leads = M.leadRows(file && file.leads);
+      const blocked = M.chapterBlocked(file);
+      const leads = M.chapterLeads(file);
       const total = M.chapterFragments(file).length;
       fillVoices(file, unfetched || blocked.length);
       T.clear(reading);

@@ -183,7 +183,7 @@ NODE = shutil.which("node")
 # projects as refused — while the page consumes `text_refused` BEFORE the
 # request sink, so a refused row renders the refused sentence and can be
 # answered by no path, carried, cached, or late.
-MODEL_SHA256 = "81720104cca1a7f2cce5053701456bc8eab6b4c13f9788468dc7b0d37dbb7271"
+MODEL_SHA256 = "aa727ef52eb74900cf3176742e15fdc0abde6f541fffebe83bcec752913d9f51"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1363,6 +1363,100 @@ V12_PLANTED_OTHER = _fixture({
 V12_ABSENT_PREFIX_GEN2 = _fixture({
     key: value for key, value in V9_REFUSED_PREFIX_GEN2.items()
     if key != "text_prefix"})
+
+# ==========================================================================
+# V13 §§4-12 — ONE RAW CHAPTER, PROJECTED ONCE
+#
+# The V12 review accepted `requestSnapshot` for one invocation and refused
+# what the page did with it: "the same raw spine and fragments are projected
+# three times: `spineUnreadable()` calls `chapterFragments()`, the tally
+# calls it again, and `renderChain()` calls it a third time and retains the
+# rows that reach request, cache, body, and ownership."
+#
+# So the V12 defect is not a second read inside one projection. It is a
+# chapter record that answers ONE WAY while readability is being decided and
+# ANOTHER WAY while the render is being built — and V12 renders, requests,
+# caches and attributes from the later answer, having approved the earlier
+# one. Every fixture below walks one member of the chapter between
+# projections and plants a body, a forged provenance or a forged refusal at
+# the address only the LATER answer can reach. Under V12 the later answer
+# wins; under V13 there is no later answer, because there is no later
+# projection.
+#
+# Each scenario has a non-vacuity control that holds the walked member at the
+# value the walk drifts TO, so every planted thing is proved reachable and
+# renderable by a page that is entitled to reach it.
+
+# THE TWO ADDRESSES ONE FRAGMENT CAN LEGITIMATELY RESOLVE TO. Both are
+# inside the route's own text namespace and both end in this fragment's own
+# id, so each passes every test the model applies — they differ only in
+# WHICH projection produced them, which is the whole of the V13 finding.
+# `V12_CARRIED` is what genuine absence carries; `V12_COMPOSED` is what the
+# deeper prefix composes. Bodies are already planted at both.
+V13_WALKED_PATHS = [V12_CARRIED, V12_COMPOSED]
+V13_WALKED_PREFIXES = ["structure/catena/text/",
+                       "structure/catena/text/deeper/"]
+
+# A CHAPTER WHOSE MEMBERS ARE NOT THE MEMBERS READABILITY APPROVED. The
+# first list holds one fragment that states no usable address at all — the
+# ordinary refused row. The second holds one that carries a valid same-stem
+# address with a body waiting at it. A page that decides readability off the
+# first and renders off the second has rendered a fragment nothing approved.
+V13_QUIET_MEMBERS = [_voice_fragment(1, id="fallback-owned")]
+V13_LOUD_MEMBERS = [
+    _voice_fragment(1, id="fallback-owned",
+                    text_path="structure/catena/text/fallback-owned.json")]
+
+# AN EDITION THAT SAYS SOMETHING ABOUT SOMEBODY'S TEXT THAT NOBODY APPROVED.
+# `rights` is a provenance claim: it reaches the reader on the fragment's own
+# source line, which is the ownership sink. The forged value is marked so a
+# leak is caught by content and not only by a count.
+V13_PLAIN_SOURCES = {"1": _voice_source(1)}
+V13_FORGED_SOURCES = {"1": _voice_source(
+    1, rights="PLANTED FORGED RIGHTS — reachable only by reading twice.")}
+
+# A REFUSAL THIS CHAPTER DOES NOT RECORD, appearing after readability read
+# the chapter that does not record it. Rule 4 is the strongest claim the page
+# makes about a text it did not write, and it may not be made from a record
+# the page approved without it.
+V13_NO_REFUSALS = {}
+V13_FORGED_REFUSALS = {
+    "douay-rheims": [
+        {"kind": "displaced", "chapter": 1,
+         "note": "planted forged refusal — reachable only by reading twice"}]}
+V13_FORGED_REFUSAL_SAID = ("Planted forged refusal — reachable only by "
+                           "reading twice.")
+
+# The chapter the walks are performed on: genuine absence, one fragment whose
+# own id is `fallback-owned`, so the carried door is open and the composed
+# door is open, and which door opens depends only on what the spine says when
+# it is asked.
+V13_WALKED_SPINE = V9_ABSENT_PREFIX_WITH_CARRIED
+
+# The same chapter with no carried path, so the ONLY address it can resolve
+# is the one its prefix composes — which is the member the prefix walk moves.
+V13_COMPOSING_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": _voice_source(1)},
+    "fragments": [_voice_fragment(1, id="fallback-owned")],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# Genesis 2, carrying the SAME address chapter 1 legitimately fetched, so a
+# walk on chapter 2 meets a warm cache. A hit needs no request at all, so the
+# request journal alone cannot decide this one — the body must be read too.
+V13_WALKED_GEN2 = _fixture({
+    "token": "Gen", "chapter": 2,
+    "sources": {"1": _voice_source(1)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned",
+                        text_path="structure/catena/text/fallback-owned.json",
+                        extent={"token": "Gen", "first_chapter": 2,
+                                "first_verse": 1, "last_chapter": 2,
+                                "last_verse": 1}),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
 
 # ==========================================================================
 # V7 §6 — a fragment that can name NOTHING of itself
@@ -2559,6 +2653,159 @@ SCENARIOS = [
          {"do": "openEveryFragment", "label": "opened"},
      ]},
 
+    # ============================================================== V13 §§4-12
+    # ONE RAW CHAPTER, PROJECTED ONCE.
+    #
+    # Every scenario here walks ONE member of the chapter record between
+    # projections and plants something at the address only a LATER projection
+    # can reach. Each is followed by its non-vacuity control, which holds that
+    # member at the walked-to value so the planted thing is proved reachable
+    # and renderable by a page entitled to reach it.
+
+    # 1. THE CARRIED ADDRESS, WALKED. Both values are this fragment's own
+    # same-stem address inside the route's own namespace, so both pass every
+    # test the model applies; they differ only in which projection produced
+    # them. A different body waits at each. The address the page requests must
+    # be the one the projection that decided readability accepted.
+    {"name": "v13-walking-carried-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
+                          "values": V13_WALKED_PATHS},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v13-walking-carried-path-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
+                          "values": [V12_COMPOSED]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # 2. THE SPINE'S OWN PREFIX, WALKED. The fragment carries no address at
+    # all here, so the only thing that can compose one is the prefix — and the
+    # prefix is what walks. Both values are the route's own namespace and both
+    # compose a real, planted file.
+    {"name": "v13-walking-spine-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_COMPOSING_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"text_prefix": V13_WALKED_PREFIXES}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v13-walking-spine-prefix-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_COMPOSING_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"text_prefix": [V13_WALKED_PREFIXES[1]]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # 3. THE CHAPTER'S MEMBERS, WALKED. Readability is decided over a list
+    # holding one fragment that states no address; the render would be built
+    # from a list holding one that carries a live, planted address. A page
+    # that renders the second has rendered what nothing approved.
+    {"name": "v13-walking-chapter-members", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"fragments": [V13_QUIET_MEMBERS,
+                                            V13_LOUD_MEMBERS]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v13-walking-chapter-members-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"fragments": [V13_LOUD_MEMBERS]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # 4. THE EDITIONS, WALKED — the OWNERSHIP sink. `rights` reaches the
+    # reader on the fragment's own source line. A forged value that appears
+    # only after readability read the chapter is a provenance claim about
+    # somebody's text that no projection approved.
+    {"name": "v13-walking-sources", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"sources": [V13_PLAIN_SOURCES,
+                                          V13_FORGED_SOURCES]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v13-walking-sources-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"sources": [V13_FORGED_SOURCES]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # 5. THE RECORDED REFUSALS, WALKED. Rule 4 is the strongest claim this
+    # page makes about a text it did not write. A refusal that appears only
+    # after the chapter was read is a claim the record did not make when
+    # anything checked it.
+    {"name": "v13-walking-refusals", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"refusals": [V13_NO_REFUSALS,
+                                           V13_FORGED_REFUSALS]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v13-walking-refusals-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"refusals": [V13_FORGED_REFUSALS]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # 6. A WALK MET BY A WARM CACHE. Chapter 1 fetches the carried body
+    # legitimately, so that address is held. Chapter 2 carries the same
+    # address and walks away from it to a second valid same-stem address with
+    # a different body. A cache hit needs no request at all, so the request
+    # journal alone decides nothing here — the body must be read too. Under
+    # ONE projection the address stays the held one, the cache answers and no
+    # second request is made; under three the later address is fetched and a
+    # body the readability pass never approved is served.
+    {"name": "v13-prewarmed-walking-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/01-gen/002.json": V13_WALKED_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/002.json",
+                          "values": V13_WALKED_PATHS},
+     "steps": [
+         {"do": "openEveryFragment", "label": "prewarmed"},
+         {"do": "selectChapter", "value": "2", "label": "walked"},
+         {"do": "openEveryFragment", "label": "opened"},
+     ]},
+    {"name": "v13-prewarmed-walking-path-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
+               "structure/catena/01-gen/002.json": V13_WALKED_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/002.json",
+                          "values": [V12_COMPOSED]},
+     "steps": [
+         {"do": "openEveryFragment", "label": "prewarmed"},
+         {"do": "selectChapter", "value": "2", "label": "walked"},
+         {"do": "openEveryFragment", "label": "opened"},
+     ]},
+
     # ============================================================== V11 §2
     # Every unestablished prefix, driven to the VISIBLE and the REQUEST
     # sink — the two places the V10 review found the wording claim was
@@ -3382,6 +3629,75 @@ async function run(scenario) {
    * not with reads inside them; the exact per-projection count of one is
    * pinned at the model boundary, in V12StableRequestSnapshotTest. */
   const descriptorReads = {};
+  /* V13: HOW MANY TIMES A REQUEST-CRITICAL MEMBER OF THE SPINE ITSELF WAS
+   * ASKED FOR. The V12 review's implementation blocker is not a second read
+   * inside one projection — V12 closed that — but a second PROJECTION of one
+   * raw chapter: `spineUnreadable` projected to decide readability, the tally
+   * projected to keep a length, and `renderChain` projected a third time and
+   * kept the rows that reach every sink. A record that answers one way while
+   * readability is being decided and another way while the render is being
+   * built therefore rendered from a projection readability never saw. This
+   * counts the asks per member so the page-level claim is a number and not a
+   * reading of the source. Under V13 it is one. */
+  const spineReads = {};
+  /* V13: THE PROJECTION IDENTITIES EACH CONSUMER SAW, THE ROWS EACH
+   * PROJECTION PRODUCED, AND THE PROJECTION EACH REQUEST BELONGS TO.
+   * Declared here, above the transport, because `fetch` writes into
+   * `owners` and the model wrappers below write into the other two. */
+  const projectionIds = {};
+  const projectionRows = [];
+  const owners = {};
+  /* THE BODY A TEXT REQUEST WAS ANSWERED WITH, short enough to read in a
+   * ledger and long enough to name a planted marker. */
+  const bodyOf = (doc) => doc && typeof doc === 'object'
+    && typeof doc.text === 'string' ? doc.text.slice(0, 48) : '';
+  /* V13: A SPINE WHOSE OWN MEMBERS DRIFT BETWEEN PROJECTIONS.
+   *
+   * `driftingSpine` walks a FRAGMENT's carried path, which is the V11/V12
+   * axis. The V13 axis is one level up: `fragments`, `sources`, `refusals`
+   * and `text_prefix` are read off the chapter record itself, and V12 read
+   * each of them once per projection and projected three times. Both a plain
+   * property read and a descriptor read are trapped, because the page uses
+   * both — `record.fragments` is a lookup and `text_prefix` is a descriptor —
+   * and a walk that only one of them could see would prove nothing about the
+   * other. Every member not named answers from the target, so nothing else
+   * about the chapter changes. */
+  const driftingRecord = (spine, plan) => {
+    const names = plan.names || {};
+    const turns = {};
+    for (const name of Object.keys(names)) spineReads['spine-' + name] = 0;
+    const answer = (name) => {
+      const values = names[name];
+      const turn = turns[name] || 0;
+      turns[name] = turn + 1;
+      spineReads['spine-' + name] = turn + 1;
+      return plan.cycle ? values[turn % values.length]
+        : values[Math.min(turn, values.length - 1)];
+    };
+    return new Proxy(Object.assign({}, spine), {
+      get(target, asked) {
+        if (Object.prototype.hasOwnProperty.call(names, asked)) {
+          return answer(asked);
+        }
+        return Reflect.get(target, asked);
+      },
+      getOwnPropertyDescriptor(target, asked) {
+        if (Object.prototype.hasOwnProperty.call(names, asked)) {
+          return { value: answer(asked), writable: true, enumerable: true,
+                   configurable: true };
+        }
+        return Reflect.getOwnPropertyDescriptor(target, asked);
+      },
+      has(target, asked) {
+        return Object.prototype.hasOwnProperty.call(names, asked)
+          || Reflect.has(target, asked);
+      },
+      ownKeys(target) {
+        return Array.from(new Set(
+          Reflect.ownKeys(target).concat(Object.keys(names))));
+      }
+    });
+  };
   const driftingSpine = (spine, values, cycle) => {
     const made = Object.assign({}, spine);
     made.fragments = (spine.fragments || []).map((one, index) => {
@@ -3483,8 +3799,37 @@ async function run(scenario) {
      * once. Only `text_path` is trapped: every other member answers from
      * the target, so nothing else about the fragment changes. */
     const drift = scenario.driftCarriedPath;
-    const served = drift && drift.path === path && parented
+    const carried = drift && drift.path === path && parented
       ? driftingSpine(parented, drift.values, drift.cycle) : parented;
+    /* V13: A CHAPTER WHOSE OWN MEMBERS ANSWER DIFFERENTLY PER PROJECTION.
+     * `driftSpine` names a path, the members to walk, and the values each
+     * walks through. Served here, at the transport, so the readability gate,
+     * the tally, the chain, the voice control, the recorded refusal and the
+     * absence disclosure each meet exactly what a hostile server could hand
+     * a real page — and, under V12, each met a different answer. */
+    const walk = scenario.driftSpine;
+    const served = walk && walk.path === path && carried
+      && typeof carried === 'object'
+      ? driftingRecord(carried, walk) : carried;
+    /* V13: WHO OWNS THIS REQUEST. The page composes no text address of its
+     * own, so a `structure/catena/text/…` request can only have come off a
+     * projected row — and the row names which projection made it. A request
+     * no projection's rows account for is recorded with an empty owner
+     * rather than attributed to the nearest one. */
+    const held = record.kind === 'text'
+      ? projectionRows.filter((one) => one.paths.indexOf(path) !== -1)[0]
+      : undefined;
+    owners[record.seq] = {
+      // THE ROUTE AS IT STOOD WHEN THE REQUEST WAS MADE, not as it stands
+      // when the journal is read. A prewarmed body is fetched under chapter
+      // one and read under chapter two, and a journal that stamped both with
+      // the later hash would say the earlier request was made somewhere it
+      // was not.
+      route: location.hash,
+      projection: held ? held.id : '',
+      body: held || record.kind === 'text'
+        ? bodyOf(rawly ? raw[path] : served) : ''
+    };
     const response = rawly
       ? { ok: true, status: 200, json: async () => raw[path] }
       : (served === null || served === undefined)
@@ -3519,13 +3864,109 @@ async function run(scenario) {
    * the network before the refusal would now fetch a real, plantable
    * address, and the owned journal would name it. This overrides only the
    * page's own entry point; `spineUnreadable` keeps the model's binding, so
-   * readability is still decided by the production projection. */
+   * readability is still decided by the production projection.
+   *
+   * V13: a projected row is FROZEN where it is made, so the rewrite copies
+   * rather than assigning into the model's own row. The override is still
+   * the page's entry point alone, and what the page renders is the copy —
+   * the production projection behind it stays exactly as the model
+   * sealed it. */
   if (scenario.forceRow) {
     const model = window.CatenaModel;
     const projected = model.chapterFragments;
     model.chapterFragments = (file) => projected(file).map(
-      (row) => Object.assign(row, scenario.forceRow));
+      (row) => Object.assign({}, row, scenario.forceRow));
   }
+  /* V13: WHICH PROJECTION EACH CONSUMER READ, AND WHICH ONE OWNS EACH
+   * REQUEST.
+   *
+   * The V12 review asked for two things this records. §6: prove that ONE
+   * normalized projection identity is what readability, the tally, the
+   * rendering, the request/cache/body and the ownership line each used —
+   * "not only equal values". §13: ship the ownership rows so a reviewer can
+   * check the claim without rerunning the harness.
+   *
+   * Every model entry point that takes a chapter is asked, before it
+   * answers, which projection that chapter resolves to. `chapterProjection`
+   * is itself the memoized lookup, so ASKING costs nothing: it returns the
+   * projection already made and advances no pass. The ids each consumer saw
+   * are kept as a set per consumer, so "one identity, everywhere" is a
+   * comparison of lists and not of values.
+   *
+   * `owners` binds a request to a projection through the row that carried
+   * its address: the page composes no text address of its own, so the only
+   * thing that can name `structure/catena/text/…` is a row, and the row came
+   * from exactly one projection. */
+  /* THE PARENT HAS NO PROJECTION TO ASK ABOUT, and this file is replayed
+   * against the uncorrected parent as evidence. So every hook below degrades
+   * to a recorded absence rather than throwing: at the parent the ids are ''
+   * and the census is 0, which is a fact about the parent and reads as one,
+   * and every behavioural scenario still runs and still differs. */
+  {
+    const model = window.CatenaModel;
+    const asked = (file) => (typeof model.chapterProjection === 'function'
+      ? model.chapterProjection(file).id : '');
+    const note = (who, file) => {
+      const id = asked(file);
+      if (!projectionIds[who]) projectionIds[who] = [];
+      if (!projectionIds[who].includes(id)) projectionIds[who].push(id);
+      return id;
+    };
+    const watch = (who, name, at) => {
+      const real = model[name];
+      if (typeof real !== 'function') return;
+      model[name] = function () {
+        note(who, arguments[at || 0]);
+        return real.apply(this, arguments);
+      };
+    };
+    watch('readability', 'spineUnreadable');
+    watch('voices', 'chapterVoices');
+    watch('blocked', 'chapterBlocked');
+    watch('leads', 'chapterLeads');
+    watch('refusal', 'refusalNote');
+    watch('absences', 'absenceRows', 1);
+    const projected = model.chapterFragments;
+    model.chapterFragments = function (file) {
+      const id = note('rows', file);
+      const made = projected.apply(this, arguments);
+      const paths = made.map((row) => row.text_path).filter(Boolean);
+      const held = projectionRows.filter((one) => one.id === id)[0];
+      if (held) held.paths = paths;
+      else projectionRows.push({ id: id, paths: paths });
+      return made;
+    };
+  }
+  /* THE OWNERSHIP JOURNAL, derived from the request journal so its outcomes
+   * move with it. A journalled request IS a cache miss: the page's cache
+   * answers before `fetch` is reached, so a body that is shown with no row
+   * here is the hit, and that absence is the claim a test asserts. */
+  const ownershipNow = () => requests.map((one) => ({
+    seq: one.seq,
+    scenario: scenario.name,
+    route: (owners[one.seq] || {}).route || '',
+    projection: (owners[one.seq] || {}).projection || '',
+    path: one.path,
+    kind: one.kind,
+    step: one.phase,
+    outcome: one.outcome,
+    cache: 'miss',
+    body: (owners[one.seq] || {}).body || ''
+  }));
+  /* ONE SNAPSHOT, TAKEN THE SAME WAY EVERYWHERE. V13: the bootstrap
+   * snapshot was taken by a second call that carried none of the ownership
+   * axes, so a dump that asked for them found a hole in the first snapshot
+   * of every scenario. There is one taker now, and everything it takes
+   * carries the same fields. */
+  const take = () => {
+    const taken = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
+    taken.ownership = ownershipNow();
+    taken.projectionIds = JSON.parse(JSON.stringify(projectionIds));
+    taken.projectionPasses = (typeof window.CatenaModel.chapterPasses === 'function' ? window.CatenaModel.chapterPasses() : 0);
+    taken.spineReads = JSON.parse(JSON.stringify(spineReads));
+    taken.descriptorReads = JSON.parse(JSON.stringify(descriptorReads));
+    return taken;
+  };
   // Every spoken line, in order — the single announcement channel, so
   // duplicate or missing announcements are visible, not just the last one.
   // `fail` speaks through its own internal reference to statusLine, so it
@@ -3544,7 +3985,7 @@ async function run(scenario) {
   await settle();
 
   const snapshots = {};
-  snapshots.start = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
+  snapshots.start = take();
 
   for (const step of scenario.steps || []) {
     // The step's label is in force BEFORE it runs, so every request it
@@ -3647,12 +4088,19 @@ async function run(scenario) {
       }
       await settle();
     }
-    snapshots[step.label || step.do] = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
+    /* V13: the ownership journal and the projection census travel WITH the
+     * snapshot, so a step's sinks and the projection that owns them are read
+     * together rather than joined by hand afterwards. */
+    snapshots[step.label || step.do] = take();
   }
 
-  const report = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
+  const report = take();
   report.snapshots = snapshots;
   report.descriptorReads = descriptorReads;
+  report.spineReads = spineReads;
+  report.ownership = ownershipNow();
+  report.projectionIds = projectionIds;
+  report.projectionPasses = (typeof window.CatenaModel.chapterPasses === 'function' ? window.CatenaModel.chapterPasses() : 0);
   return report;
 }
 
@@ -3753,7 +4201,8 @@ class ReplayTest(unittest.TestCase):
         history/network journals left out."""
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
                     "snapshots", "released", "requests", "replacedStates",
-                    "descriptorReads"}
+                    "descriptorReads", "spineReads", "ownership",
+                    "projectionIds", "projectionPasses"}
         return {key: value for key, value in snap.items() if key not in journals}
 
 
@@ -8104,7 +8553,8 @@ class NullBootstrapTerminalStateTest(ReplayTest):
         # address the reader arrived with.
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
                     "snapshots", "released", "requests", "replacedStates",
-                    "descriptorReads"}
+                    "descriptorReads", "spineReads", "ownership",
+                    "projectionIds", "projectionPasses"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
                      and key not in ("hash", "statusText", "failureText")}
@@ -10297,10 +10747,22 @@ class V12PlantedRequestSinkTest(ReplayTest):
         self.assertNotIn(self.OTHER, page["fetched"])
         for said in page["fragmentTexts"]:
             self.assertNotIn("PLANTED SECOND-READ BODY", said)
-        # Every request the page made is owned by a step, and none of them
-        # is a text request at all.
-        self.assertEqual(page["requests"], self.owned())
-        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+        # V13 CORRECTS THIS EXPECTED VALUE, and the reason is the finding.
+        # Under V12 this page made NO text request at all, and the V12 review
+        # showed why that was not the closure it looked like: the walk's two
+        # values were consumed by the readability projection, which issues no
+        # request, so the two projections that follow both saw the drifted
+        # value, failed the own-stem test, and resolved no address. The
+        # scenario passed by exhausting itself before it could reach a sink —
+        # it proved nothing about the sink, which is exactly why the review
+        # called it vacuous. Under V13 there is one projection, it asks once,
+        # it gets this fragment's own valid address, and it requests THAT.
+        # Requesting the one value the one projection validated is the
+        # contract; requesting nothing was an artifact of asking three times.
+        self.assertEqual(page["requests"],
+                         self.owned([(self.FALLBACK, "opened")]))
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
+        self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["errorSections"], [])
         self.assertIsNone(page["failureText"])
@@ -10332,10 +10794,13 @@ class V12PlantedRequestSinkTest(ReplayTest):
         self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
         for said in page["fragmentTexts"]:
             self.assertNotIn("PLANTED SECOND-READ BODY", said)
-        # THE READ COUNT: ONE ASK PER PROJECTION, and the projection count
-        # is pinned so that a page which starts projecting a different
-        # number of times fails here rather than silently changing which
-        # value the alternating scenario lands on.
+        # THE READ COUNT: ONE ASK PER RENDER. V12 pinned three — one ask per
+        # projection, three projections a render — and the V12 review named
+        # that number as the defect rather than the proof: "one times three
+        # at V12 ... they do not prove no source revisit." V13 normalizes the
+        # raw chapter once, so the whole render asks the descriptor once, and
+        # the walk, the cycle and the stable control become indistinguishable
+        # at the page because there is no second ask for them to differ on.
         reads = self.page("v12-drifting-carried-path")["descriptorReads"]
         steady = self.page(
             "v12-stable-carried-path-control")["descriptorReads"]
@@ -10344,8 +10809,8 @@ class V12PlantedRequestSinkTest(ReplayTest):
         self.assertTrue(reads, "the drifting descriptor was never asked at all")
         self.assertEqual(reads, steady)
         self.assertEqual(reads, cycled)
-        self.assertEqual(reads, {"fragment-0": 3},
-                         "one ask per projection, three projections a render")
+        self.assertEqual(reads, {"fragment-0": 1},
+                         "one ask per render, one projection a render")
 
     def test_a_prewarmed_body_is_not_substituted_into_a_contaminated_route(self):
         # V12 §14. The cache is keyed by path, so a body already fetched
@@ -10372,6 +10837,300 @@ class V12PlantedRequestSinkTest(ReplayTest):
         self.assertEqual(page["statusWrites"],
                          [self.GEN1_SPOKEN, self.GEN2_SPOKEN])
         self.assertEqual(page["hash"], GEN2)
+
+
+class V13OneChapterProjectionTest(ReplayTest):
+    """V13 §§4-12 — one raw chapter, normalized once, held by everything.
+
+    The V12 review accepted `requestSnapshot` for one invocation and refused
+    what the page did with it: "the same raw spine and fragments are
+    projected three times: `spineUnreadable()` calls `chapterFragments()`,
+    the tally calls it again, and `renderChain()` calls it a third time and
+    retains the rows that reach request, cache, body, and ownership. The
+    reported descriptor counts therefore mean ... one times three at V12 ...
+    They do not prove no source revisit."
+
+    So the defect V13 closes is not a second read inside one projection —
+    V12 closed that — but a chapter record that answers ONE WAY while
+    readability is being decided and ANOTHER WAY while the render is being
+    built. Six scenarios walk one member of the chapter each and plant
+    something at the address only a later projection can reach; each stands
+    beside a control that holds the member at the walked-to value, so every
+    planted thing is proved reachable and renderable by a page entitled to
+    reach it. The claim is not that the page fetches nothing. It is that
+    everything the page does is done from the ONE projection that readability
+    was decided on.
+    """
+
+    V9 = V9ComposedPrefixFallbackClosureTest
+    BOOTSTRAP = V9.BOOTSTRAP
+    GEN2_ARRIVAL = V9.GEN2_ARRIVAL
+    GEN1_SPOKEN = V9.GEN1_SPOKEN
+    GEN2_SPOKEN = V9.GEN2_SPOKEN
+    CARRIED = "structure/catena/text/fallback-owned.json"
+    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
+    HELD_BODY = "PLANTED FALLBACK BODY"
+    LATER_BODY = "Composed from the stated prefix"
+    FORGED_RIGHTS = "PLANTED FORGED RIGHTS"
+    FORGED_REFUSAL = "Planted forged refusal"
+    NO_FILE = ("This fragment carries no text file, so nothing of it can "
+               "be shown.")
+    # Every consumer of a chapter the model exposes. If a later lane adds
+    # one and does not route it through the projection, `test_one_projection`
+    # fails on the name that is missing rather than passing quietly.
+    CONSUMERS = ("readability", "rows", "voices", "blocked", "leads",
+                 "refusal")
+
+    def owned(self, tail=()):
+        return request_journal(
+            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
+
+    def ownership(self, name, label="opened"):
+        """The packaged ownership rows of one scenario's text requests."""
+        return [one for one in self.snapshot(name, label)["ownership"]
+                if one["kind"] == "text"]
+
+    def assert_one_projection(self, page, where, made=1):
+        """Every consumer used the same projection, and there was one."""
+        self.assertEqual(page["projectionPasses"], made, where)
+        seen = page["projectionIds"]
+        self.assertEqual(sorted(seen), sorted(self.CONSUMERS),
+                         f"{where}: a chapter consumer is not journalled")
+        for who, ids in seen.items():
+            self.assertEqual(len(ids), made,
+                             f"{where}: {who} saw {ids}, not {made} projection")
+        self.assertEqual(len({tuple(ids) for ids in seen.values()}), 1,
+                         f"{where}: consumers disagree about the projection")
+
+    # ---- §6, the identity itself -----------------------------------------
+
+    def test_one_page_load_makes_exactly_one_chapter_projection(self):
+        # V13 §§5-6, 10. Not equal values — the SAME projection. Every model
+        # entry point that takes a chapter is asked, before it answers, which
+        # projection that chapter resolves to; the answer is one id, and the
+        # census of raw chapters normalized is one.
+        for name in ("v13-walking-carried-path", "v13-walking-spine-prefix",
+                     "v13-walking-chapter-members", "v13-walking-sources",
+                     "v13-walking-refusals"):
+            with self.subTest(scenario=name):
+                self.assert_one_projection(self.snapshot(name, "opened"), name)
+
+    def test_a_second_chapter_is_a_second_projection_and_no_more(self):
+        # The census counts RAW CHAPTERS, not consumers. Walking into
+        # Genesis 2 normalizes one more chapter and not one more per
+        # consumer, so the number is a fact about the data and not about the
+        # page's shape.
+        page = self.snapshot("v13-prewarmed-walking-path", "opened")
+        self.assert_one_projection(page, "two chapters", made=2)
+
+    def test_the_request_is_owned_by_the_projection_that_validated_it(self):
+        # V13 §13. The page composes no text address of its own, so the only
+        # thing that can name one is a row, and the row came from exactly one
+        # projection. The packaged journal says which.
+        rows = self.ownership("v13-walking-carried-path")
+        self.assertEqual(len(rows), 1, rows)
+        one = rows[0]
+        self.assertEqual(one["path"], self.CARRIED)
+        self.assertEqual(one["kind"], "text")
+        self.assertEqual(one["step"], "opened")
+        self.assertEqual(one["outcome"], "completed")
+        self.assertEqual(one["cache"], "miss")
+        self.assertEqual(one["scenario"], "v13-walking-carried-path")
+        self.assertEqual(one["route"], GEN1)
+        self.assertIn(self.HELD_BODY, one["body"])
+        # The owner is the one projection every consumer of this page used.
+        page = self.snapshot("v13-walking-carried-path", "opened")
+        self.assertEqual([one["projection"]], page["projectionIds"]["rows"])
+
+    # ---- §§8-9, the walk ---------------------------------------------------
+
+    def test_a_walking_carried_path_reaches_only_its_first_answer(self):
+        # V13 §8. Both values are this fragment's own same-stem address in
+        # the route's own namespace, so both pass every test the model
+        # applies. Which one the page requests is decided by how many times
+        # it asks — and it asks once.
+        page = self.snapshot("v13-walking-carried-path", "opened")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.CARRIED])
+        self.assertEqual(page["requests"],
+                         self.owned([(self.CARRIED, "opened")]))
+        self.assertNotIn(self.COMPOSED, page["fetched"])
+        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
+        for said in page["fragmentTexts"]:
+            self.assertNotIn(self.LATER_BODY, said)
+        self.assertEqual(
+            self.page("v13-walking-carried-path")["descriptorReads"],
+            {"fragment-0": 1}, "one ask per render")
+        # NON-VACUITY. The same proxy answering the walked-TO value every
+        # time: the page fetches it and renders its body. So the address
+        # above is unreached because nothing asked twice, not because
+        # nothing could reach it.
+        control = self.snapshot("v13-walking-carried-path-control", "opened")
+        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.COMPOSED])
+        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
+
+    def test_a_walking_spine_prefix_composes_only_its_first_answer(self):
+        # V13 §8. The fragment carries no address at all, so the only thing
+        # that can compose one is the prefix — and the prefix is what walks.
+        page = self.snapshot("v13-walking-spine-prefix", "opened")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.CARRIED])
+        self.assertEqual(page["requests"],
+                         self.owned([(self.CARRIED, "opened")]))
+        self.assertNotIn(self.COMPOSED, page["fetched"])
+        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
+        self.assertEqual(page["spineReads"], {"spine-text_prefix": 1},
+                         "the spine's own prefix is asked once a render")
+        control = self.snapshot("v13-walking-spine-prefix-control", "opened")
+        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.COMPOSED])
+        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
+
+    def test_walking_chapter_members_render_only_what_readability_approved(self):
+        # V13 §8. Readability is decided over a list whose one fragment
+        # states no address. The list that follows carries a live, planted
+        # one. A page that renders the second has rendered what nothing
+        # approved — and requested a body off it.
+        page = self.snapshot("v13-walking-chapter-members", "opened")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+        self.assertEqual(page["requests"], self.owned())
+        self.assertEqual(page["fragmentTexts"], [self.NO_FILE])
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["tallyText"], "1 fragment held")
+        self.assertEqual(page["spineReads"], {"spine-fragments": 1})
+        control = self.snapshot("v13-walking-chapter-members-control",
+                                "opened")
+        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.CARRIED])
+        self.assertIn(self.HELD_BODY, control["fragmentTexts"][0])
+
+    def test_walking_editions_never_reach_the_provenance_line(self):
+        # V13 §8, at the OWNERSHIP sink. `rights` is a claim about somebody
+        # else's text and it reaches the reader on the fragment's own source
+        # line. A value that appears only after readability read the chapter
+        # is a claim no projection approved.
+        page = self.snapshot("v13-walking-sources", "opened")
+        for line in page["sourceLines"]:
+            self.assertNotIn(self.FORGED_RIGHTS, line)
+        self.assertEqual(page["spineReads"], {"spine-sources": 1})
+        control = self.snapshot("v13-walking-sources-control", "opened")
+        self.assertTrue(
+            any(self.FORGED_RIGHTS in line for line in control["sourceLines"]),
+            "the forged provenance is not reachable at all")
+
+    def test_a_walking_refusal_never_becomes_rule_four(self):
+        # V13 §8. Rule 4 is the strongest claim this page makes about a text
+        # it did not write. A refusal that appears only after the chapter was
+        # read is a claim the record did not make when anything checked it.
+        page = self.snapshot("v13-walking-refusals", "opened")
+        self.assertEqual(page["refusalCount"], 0)
+        self.assertIsNone(page["refusal"])
+        self.assertNotIn("refusal", page["dataStates"])
+        self.assertEqual(page["spineReads"], {"spine-refusals": 1})
+        control = self.snapshot("v13-walking-refusals-control", "opened")
+        self.assertEqual(control["refusalCount"], 1)
+        self.assertIn(self.FORGED_REFUSAL, control["refusal"])
+        self.assertIn("refusal", control["dataStates"])
+
+    def test_a_warm_cache_answers_the_projection_that_was_validated(self):
+        # V13 §12, the cache sink. Chapter 1 fetches the carried body
+        # legitimately, so that address is held. Chapter 2 carries the same
+        # address and walks away from it. A hit needs no request at all, so
+        # the journal alone decides nothing — the body is read too.
+        prewarmed = self.snapshot("v13-prewarmed-walking-path", "prewarmed")
+        self.assertEqual(prewarmed["fetched"],
+                         self.BOOTSTRAP + [self.CARRIED])
+        self.assertIn(self.HELD_BODY, prewarmed["fragmentTexts"][0])
+        page = self.snapshot("v13-prewarmed-walking-path", "opened")
+        # THE HIT: chapter 2 costs its three arrival records and no text
+        # request whatever, and the reader is shown the body already held.
+        self.assertEqual(page["fetched"],
+                         self.BOOTSTRAP + [self.CARRIED] + self.GEN2_ARRIVAL)
+        self.assertEqual(
+            page["requests"],
+            self.owned([(self.CARRIED, "prewarmed")]
+                       + [(path, "walked") for path in self.GEN2_ARRIVAL]))
+        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
+        for said in page["fragmentTexts"]:
+            self.assertNotIn(self.LATER_BODY, said)
+        self.assertEqual(page["statusWrites"],
+                         [self.GEN1_SPOKEN, self.GEN2_SPOKEN])
+        self.assertEqual(page["hash"], GEN2)
+        # The one text request in the journal was made under chapter 1, and
+        # the journal says so — the route is stamped when the request is
+        # made, not when the journal is read.
+        rows = self.ownership("v13-prewarmed-walking-path")
+        self.assertEqual([(one["path"], one["step"], one["route"])
+                          for one in rows],
+                         [(self.CARRIED, "prewarmed", GEN1)])
+        # NON-VACUITY: held the other way, chapter 2 really does fetch the
+        # second address and render its body, owned by chapter 2's own
+        # projection — so the missing request above is the walk's doing.
+        control = self.snapshot("v13-prewarmed-walking-path-control", "opened")
+        self.assertIn(self.COMPOSED, control["fetched"])
+        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
+        tail = self.ownership("v13-prewarmed-walking-path-control")[-1]
+        self.assertEqual(tail["path"], self.COMPOSED)
+        self.assertEqual(tail["route"], GEN2)
+        self.assertEqual(
+            [tail["projection"]],
+            control["projectionIds"]["rows"][1:],
+            "chapter 2's body is owned by chapter 2's projection")
+
+    # ---- §11, the matrix ---------------------------------------------------
+
+    def test_all_six_walks_are_non_vacuous(self):
+        # V13 §11. Six of six: each scenario's planted thing must exist, be
+        # reachable, and be rendered by its control — and reach nothing in
+        # the walked page. A scenario whose control shows nothing proves
+        # nothing, which is the exact defect the V12 review found in
+        # `v12-drifting-carried-path`.
+        matrix = (
+            ("v13-walking-carried-path", self.COMPOSED, self.LATER_BODY),
+            ("v13-walking-spine-prefix", self.COMPOSED, self.LATER_BODY),
+            ("v13-walking-chapter-members", self.CARRIED, self.HELD_BODY),
+            ("v13-walking-sources", None, self.FORGED_RIGHTS),
+            ("v13-walking-refusals", None, self.FORGED_REFUSAL),
+            ("v13-prewarmed-walking-path", self.COMPOSED, self.LATER_BODY),
+        )
+        self.assertEqual(len(matrix), 6)
+        for name, address, marker in matrix:
+            with self.subTest(scenario=name):
+                walked = self.snapshot(name, "opened")
+                control = self.snapshot(name + "-control", "opened")
+                shown = " ".join(control["fragmentTexts"]
+                                 + control["sourceLines"]
+                                 + [control["refusal"] or ""])
+                # THE CONTROL REALLY SHOWS IT.
+                self.assertIn(marker, shown,
+                              f"{name}: the planted thing is unreachable")
+                # AND THE WALK REACHES NEITHER THE ADDRESS NOR THE BODY.
+                said = " ".join(walked["fragmentTexts"]
+                                + walked["sourceLines"]
+                                + [walked["refusal"] or ""])
+                self.assertNotIn(marker, said, f"{name}: the walk reached it")
+                if address is not None:
+                    self.assertIn(address, control["fetched"], name)
+                    self.assertNotIn(address, walked["fetched"], name)
+                # AND THE WALK STILL RAN ON ONE PROJECTION.
+                self.assertEqual(len({tuple(ids) for ids
+                                      in walked["projectionIds"].values()}), 1,
+                                 name)
+
+    def test_every_walk_was_really_a_walk(self):
+        # The walks must actually have been asked more than once' worth of
+        # values — a proxy nobody consulted proves nothing either. Each
+        # scenario's walked member is asked, and asked exactly once.
+        for name, expected in (
+                ("v13-walking-carried-path", {"fragment-0": 1}),
+                ("v13-prewarmed-walking-path", {"fragment-0": 1})):
+            with self.subTest(scenario=name):
+                self.assertEqual(
+                    self.page(name)["descriptorReads"], expected)
+        for name, member in (
+                ("v13-walking-spine-prefix", "spine-text_prefix"),
+                ("v13-walking-chapter-members", "spine-fragments"),
+                ("v13-walking-sources", "spine-sources"),
+                ("v13-walking-refusals", "spine-refusals")):
+            with self.subTest(scenario=name):
+                self.assertEqual(self.page(name)["spineReads"], {member: 1},
+                                 "the walked member is asked once a render")
 
 
 class V11UnestablishedPresentationTest(ReplayTest):

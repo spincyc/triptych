@@ -882,41 +882,124 @@
    * do. `REVIEW_REQUEST.md` asks about the one whose copy is imprecise.
    */
   function spineUnreadable(file) {
-    const record = bag(file);
-    if (record !== file) return true;
-    if (!Array.isArray(record.fragments)) return true;
-    if (record.sources !== undefined && bag(record.sources) !== record.sources) return true;
-    if (record.refusals !== undefined && bag(record.refusals) !== record.refusals) return true;
-    // A SPINE DOES NOT CARRY THE ROUTE'S OWN WORD FOR A RECORD THAT WOULD NOT
-    // COME. `unfetched` is how `chapterFile` says a request failed, and the
-    // contract's twelve keys do not include it — so a 200 carrying one was a
-    // payload forging the page's own failure, and its string was printed to a
-    // reader inside the broken-record sentence.
-    if (record.unfetched !== undefined) return true;
-    // EVERY SOURCE, not just the container. `chapterVoices` and the join both
-    // do `bag(sources[key])` per member, so a member that is not a record
-    // counted as no voice, no author, no work and no rights — and the voice
-    // control then said "none here" of a chapter that holds nine Latin
-    // fragments. The container was guarded and its members were not, which is
-    // the whole of what the V6 review was about.
-    const sources = bag(record.sources);
-    for (const key in sources) {
-      if (Object.hasOwn(sources, key) && bag(sources[key]) !== sources[key]) return true;
-    }
-    // AND A LIST OF MEMBERS NONE OF WHICH IS ONE. `fragments: []` is a real
-    // recorded emptiness and 512 of the 562 tracked spines carry it. A
-    // NON-EMPTY list that yields no fragment is a record that tried to say
-    // something and said nothing this page can read — and answering it with
-    // "Nothing held here" turns an over-claim into a manufactured negative,
-    // which is the trade this correction exists to refuse.
-    if (record.fragments.length && !chapterFragments(record).length) return true;
-    return false;
+    return chapterProjection(file).unreadable;
   }
 
   /** Every fragment of one chapter file that can be one, in the order given. */
   function chapterFragments(file) {
+    return chapterProjection(file).rows;
+  }
+
+  /** The held-and-blocked rows of one chapter, off its projection. */
+  function chapterBlocked(file) {
+    return chapterProjection(file).blocked;
+  }
+
+  /** The lead rows of one chapter, off its projection. */
+  function chapterLeads(file) {
+    return chapterProjection(file).leads;
+  }
+
+  /**
+   * THE PROJECTION OF A PAYLOAD THAT IS NOT A CHAPTER SPINE AT ALL.
+   *
+   * One frozen value, shared: `null`, a list, a string and a number are not
+   * four different chapters and must not become four different projections.
+   * Its `pass` is 0 because no raw chapter was normalized to reach it.
+   */
+  const NO_CHAPTER = Object.freeze({
+    id: 'chapter-projection-none',
+    pass: 0,
+    unreadable: true,
+    prefix: Object.freeze({ stated: false, said: false, trail: '' }),
+    rows: Object.freeze([]),
+    voices: Object.freeze([]),
+    editions: Object.freeze([]),
+    refusals: Object.freeze(Object.create(null)),
+    blocked: Object.freeze([]),
+    leads: Object.freeze([])
+  });
+
+  /**
+   * THE ONE NORMALIZED CHAPTER, MADE ONCE PER RAW SPINE AND HELD.
+   *
+   * V13, the V12 review. V12 took each record's request-critical state once
+   * INSIDE a projection and proved the value validated was the value used —
+   * and then the page ran that projection three times over one raw chapter.
+   * `spineUnreadable` projected to ask whether a non-empty fragment list
+   * yielded a readable row and threw the rows away; the tally projected again
+   * to keep a length; `renderChain` projected a third time and kept the rows
+   * that reach request, cache, body and ownership. Three passes over one
+   * record are three observations of it, so a `text_path` that answers
+   * `fallback-owned.json` while readability is being decided and `other.json`
+   * while the render is being built passed a test in one projection and
+   * reached `fetch` from another. The V12 counts — parent 6, V12 3 — were one
+   * descriptor read per projection times three, and one-per-projection is not
+   * one.
+   *
+   * So the raw chapter is normalized HERE, once, and every consumer is handed
+   * what this returned. Readability, the tally, the rendered chain, the
+   * request and its cache and body, the voice control, the recorded refusal,
+   * the absence disclosure and the provenance each read the same frozen
+   * projection — the same instance, not an equal value — and none of them
+   * reaches past it to the raw record again. `WeakMap` rather than a field on
+   * the payload: the raw chapter is a document this page received and does
+   * not own, the cache in `catena.js` holds it for the life of the page, and
+   * a voice change or an arrow step must reuse the chapter that was read
+   * rather than read it again.
+   *
+   * `pass` is the count this projection was, and it is the whole of the
+   * page-level observation claim: one raw chapter load advances it by one,
+   * however many consumers ask.
+   */
+  const chapterProjections = new WeakMap();
+  let passes = 0;
+
+  /**
+   * HOW MANY RAW CHAPTERS THIS PAGE HAS NORMALIZED, ever.
+   *
+   * The page-level observation claim in one number: a reviewer takes it
+   * before a render and after, and the difference is the count of raw
+   * chapters read — not the count of consumers that asked.
+   */
+  function chapterPasses() {
+    return passes;
+  }
+
+  function chapterProjection(file) {
     const record = bag(file);
-    const sources = bag(record.sources);
+    // A payload that is not a record is not a chapter this page can hold one
+    // projection of, and `WeakMap` will not key on it.
+    if (record !== file) return NO_CHAPTER;
+    const held = chapterProjections.get(record);
+    if (held !== undefined) return held;
+    const made = normalizeChapter(record);
+    chapterProjections.set(record, made);
+    return made;
+  }
+
+  /**
+   * ONE RAW CHAPTER, READ ONCE INTO STABLE VALUES.
+   *
+   * Every request-critical member of the spine is taken here and nowhere
+   * else. Each raw property is read into a local ONCE — `fragments`,
+   * `sources`, `refusals`, `unfetched`, `blocked`, `leads` — because a record
+   * that answers a second read differently is exactly the state this exists
+   * to refuse, and because two reads of one name are two observations of it.
+   * What comes back is frozen own data, with no accessor of its own and no
+   * inherited semantic value, so a later mutation of the raw chapter cannot
+   * reach a consumer that already has it.
+   */
+  function normalizeChapter(record) {
+    const pass = ++passes;
+    // THE SIX RAW MEMBERS, ONE READ EACH.
+    const listed = record.fragments;
+    const carried = record.sources;
+    const refused = record.refusals;
+    const stopped = record.unfetched;
+    const barred = record.blocked;
+    const leading = record.leads;
+    const sources = bag(carried);
     // THE PREFIX HAS THREE STATES, and `textTrail` alone carries two. V9, the
     // V8 finding: a prefix the file never stated and a prefix the file stated
     // and this page refused both left `textTrail` as '', and `fragmentRow`
@@ -949,13 +1032,13 @@
     // survives. That resolves unestablished — no request, no carried door.
     const spine = requestSnapshot(record, ['text_prefix']);
     const value = spine.value.text_prefix;
-    const prefix = spine.sound
+    const prefix = Object.freeze(spine.sound
       ? {
         stated: spine.stated.text_prefix,
         said: sound(value) !== '',
         trail: textTrail(value)
       }
-      : { stated: true, said: false, trail: '' };
+      : { stated: true, said: false, trail: '' });
     const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
     // is a record or a string is a broken record, and mapping over it threw out
@@ -963,11 +1046,115 @@
     // announcement. Its MEMBERS are asked the same question, because a `null`
     // among them threw on the very next line and took every valid sibling with
     // it, and a scalar among them became a blank row that was still counted.
-    for (const fragment of records(bag(file).fragments)) {
+    for (const fragment of records(listed)) {
       const row = fragmentRow(fragment, sources, prefix);
-      if (row) rows.push(row);
+      // FROZEN WHERE IT IS MADE. The row is the only channel across the page
+      // boundary and it is now made once for the whole render, so it is
+      // sealed here rather than trusted to every hand it passes through.
+      if (row) rows.push(freezeRow(row));
     }
-    return rows;
+    // EVERY SOURCE, ONCE. `chapterVoices`, the absence disclosure and the
+    // readability question each walked `sources` and each asked its members
+    // again; they are all answered from this one walk. A member that is not a
+    // record contributes nothing and says so — the V6 finding — and the walk
+    // that finds it is the walk that decides readability.
+    let members = false;
+    const voices = new Map();
+    const editions = [];
+    for (const key in sources) {
+      if (!Object.hasOwn(sources, key)) continue;
+      const source = sources[key];
+      const one = bag(source);
+      if (one !== source) members = true;
+      const wanted = voiceKey(one);
+      if (wanted && !voices.has(wanted)) {
+        voices.set(wanted, Object.freeze({
+          key: wanted,
+          voice: sound(one.voice),
+          // Named for a translation and deliberately blank for an original.
+          // The reader asking for the author's own language is asking one
+          // question, not one per language: a chapter holding Ambrose's Latin
+          // beside Severian's Greek holds both authors' own words, and
+          // offering them separately would put the reader back on the axis
+          // this replaced.
+          language: sound(one.voice) === TRANSLATION
+            ? voiceLanguage(one.language) : ''
+        }));
+      }
+      // The three members the absence disclosure reads, taken here so that no
+      // later mutation of an edition record can change which works this
+      // chapter is said to stand for.
+      editions.push(Object.freeze({
+        work_id: ident(one.work_id),
+        author: sound(one.author),
+        work: sound(one.work)
+      }));
+    }
+    // A SPINE DOES NOT CARRY THE ROUTE'S OWN WORD FOR A RECORD THAT WOULD NOT
+    // COME. `unfetched` is how `chapterFile` says a request failed, and the
+    // contract's twelve keys do not include it — so a 200 carrying one was a
+    // payload forging the page's own failure, and its string was printed to a
+    // reader inside the broken-record sentence.
+    //
+    // AND A LIST OF MEMBERS NONE OF WHICH IS ONE. `fragments: []` is a real
+    // recorded emptiness and 512 of the 562 tracked spines carry it. A
+    // NON-EMPTY list that yields no fragment is a record that tried to say
+    // something and said nothing this page can read — and answering it with
+    // "Nothing held here" turns an over-claim into a manufactured negative,
+    // which is the trade this correction exists to refuse.
+    const unreadable = !Array.isArray(listed)
+      || (carried !== undefined && sources !== carried)
+      || (refused !== undefined && bag(refused) !== refused)
+      || stopped !== undefined
+      || members
+      || (listed.length > 0 && rows.length === 0);
+    const made = Object.create(null);
+    made.id = 'chapter-projection-' + pass;
+    made.pass = pass;
+    made.unreadable = unreadable;
+    made.prefix = prefix;
+    made.rows = Object.freeze(rows);
+    made.voices = Object.freeze(Array.from(voices.values()).sort(byVoice));
+    made.editions = Object.freeze(editions);
+    made.refusals = normalizeRefusals(refused);
+    made.blocked = Object.freeze(blockedRows(barred));
+    made.leads = Object.freeze(leadRows(leading));
+    return Object.freeze(made);
+  }
+
+  /** One projected fragment row, sealed with the two members that are not scalar. */
+  function freezeRow(row) {
+    Object.freeze(row.extent);
+    Object.freeze(row.translators);
+    return Object.freeze(row);
+  }
+
+  /**
+   * ONE CHAPTER'S RECORDED REFUSALS, normalized once.
+   *
+   * `refusalNote` is asked per edition and per chapter as the reader moves,
+   * so it cannot be answered at projection time — but what it reads can be
+   * taken here. A null-prototype map of frozen `{kind, chapter, note}` rows
+   * keyed by edition: nothing inherited answers the edition lookup, and a
+   * refusal member mutated after the chapter was read cannot change the
+   * strongest claim this page makes.
+   */
+  function normalizeRefusals(value) {
+    const held = bag(value);
+    const kept = Object.create(null);
+    for (const key in held) {
+      if (!Object.hasOwn(held, key)) continue;
+      const rows = [];
+      for (const one of records(held[key])) {
+        rows.push(Object.freeze({
+          kind: sound(one.kind),
+          chapter: whole(one.chapter),
+          note: sound(one.note)
+        }));
+      }
+      kept[key] = Object.freeze(rows);
+    }
+    return Object.freeze(kept);
   }
 
   /**
@@ -1429,17 +1616,19 @@
   function absenceRows(index, file, language) {
     const wanted = tongue(language);
     const recorded = bag(bag(index).absences);
-    const sources = bag(bag(file).sources);
+    // V13: the chapter's editions, as its one projection took them. `ident`
+    // and `sound` were applied there, once, so a source record mutated after
+    // the chapter was read cannot change which works this page says an
+    // absence about.
+    const editions = chapterProjection(file).editions;
     const named = [];
     const rows = [];
     if (!wanted) return rows;
-    for (const key in sources) {
-      if (!Object.hasOwn(sources, key)) continue;
-      const source = bag(sources[key]);
-      // `ident` and `hasOwn`: the work id is a property lookup into the
-      // recorded absences, and a lookup answers for the prototype as readily
-      // as for the record.
-      const workId = ident(source.work_id);
+    for (const source of editions) {
+      // `hasOwn`: the work id is a property lookup into the recorded
+      // absences, and a lookup answers for the prototype as readily as for
+      // the record.
+      const workId = source.work_id;
       if (!workId || named.includes(workId) || !Object.hasOwn(recorded, workId)) continue;
       // THE SOURCE IS VALIDATED BEFORE IT CLAIMS THE SLOT. V6 deduplicated on
       // `work_id` first and read the author and the work afterwards, so a
@@ -1447,8 +1636,8 @@
       // blank — an absence note about a work the page could not name — while
       // the valid sibling standing behind it, carrying the same work id and
       // both its names, was skipped as a duplicate.
-      const author = sound(source.author);
-      const work = sound(source.work);
+      const author = source.author;
+      const work = source.work;
       if (!author && !work) continue;
       // TWO QUESTIONS, NOT ONE. `same` is the members that are about this
       // work in this language at all — the ground for the row existing. `said`
@@ -1791,14 +1980,17 @@
    */
   function refusalNote(file, edition, chapter) {
     const key = ident(edition);
-    const held = bag(bag(file).refusals);
+    // V13: off the chapter's one projection, which took every recorded
+    // refusal when the chapter was read. The reader moves between editions
+    // and chapters, so WHICH refusal is asked for is a question of the
+    // moment; what the record said is not, and is no longer re-read here.
+    const held = chapterProjection(file).refusals;
     const here = whole(chapter);
     if (!key || here === null || !Object.hasOwn(held, key)) return '';
-    for (const one of records(held[key])) {
-      if (!REFUSAL_KINDS.includes(sound(one.kind))) continue;
-      if (whole(one.chapter) !== here) continue;
-      const note = sound(one.note);
-      if (note) return note.charAt(0).toUpperCase() + note.slice(1) + '.';
+    for (const one of held[key]) {
+      if (!REFUSAL_KINDS.includes(one.kind)) continue;
+      if (one.chapter !== here) continue;
+      if (one.note) return one.note.charAt(0).toUpperCase() + one.note.slice(1) + '.';
     }
     return '';
   }
@@ -1854,28 +2046,17 @@
    * outward from the author.
    */
   function chapterVoices(file) {
-    const sources = bag(file && file.sources);
-    const found = new Map();
-    for (const key in sources) {
-      if (!Object.hasOwn(sources, key)) continue;
-      const source = bag(sources[key]);
-      const wanted = voiceKey(source);
-      if (!wanted || found.has(wanted)) continue;
-      found.set(wanted, {
-        key: wanted,
-        voice: sound(source.voice),
-        // Named for a translation and deliberately blank for an original. The
-        // reader asking for the author's own language is asking one question,
-        // not one per language: a chapter holding Ambrose's Latin beside
-        // Severian's Greek holds both authors' own words, and offering them
-        // separately would put the reader back on the axis this replaced.
-        language: sound(source.voice) === TRANSLATION ? voiceLanguage(source.language) : ''
-      });
-    }
-    return Array.from(found.values()).sort(function (a, b) {
-      if (a.voice !== b.voice) return a.voice === ORIGINAL ? -1 : 1;
-      return a.language < b.language ? -1 : a.language > b.language ? 1 : 0;
-    });
+    return chapterProjection(file).voices;
+  }
+
+  /**
+   * Originals first, then translations by language, so the control reads
+   * outward from the author. Named beside `normalizeChapter`, which is the
+   * one place a chapter's voices are gathered.
+   */
+  function byVoice(a, b) {
+    if (a.voice !== b.voice) return a.voice === ORIGINAL ? -1 : 1;
+    return a.language < b.language ? -1 : a.language > b.language ? 1 : 0;
   }
 
   /**
@@ -2106,6 +2287,10 @@
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
     chapterFragments: chapterFragments,
+    chapterProjection: chapterProjection,
+    chapterBlocked: chapterBlocked,
+    chapterLeads: chapterLeads,
+    chapterPasses: chapterPasses,
     fragmentRow: fragmentRow,
     textPayload: textPayload,
     formatExtent: formatExtent,
