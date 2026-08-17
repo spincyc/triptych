@@ -204,6 +204,84 @@
   const CLAIM_MEMBERS = ['stated', 'said', 'trail'];
 
   /**
+   * THE NAMES NO PROTOTYPE MAY CONTRIBUTE TO A REQUEST.
+   *
+   * V12, the V11 review. `ownData` made an inherited member INVISIBLE, and
+   * invisible is not the same as refused. `text_prefix` is the case that
+   * proves the difference: a spine under
+   * `Object.create({text_prefix: 'structure/catena/text/…'})` carries no own
+   * property, so presence read false, the value read undefined, and the claim
+   * that came out was bit-identical to the one a spine that never mentioned a
+   * prefix produces — genuine absence, which is the one state that OPENS the
+   * carried fallback door. A record whose semantic contract is partly written
+   * above it was read as a record that said nothing, and saying nothing is a
+   * meaningful thing to say here. `text_refused` is the same finding from the
+   * other side: V11 asked `Object.prototype` about `stated`, `said` and
+   * `trail` and about nothing else, so `Object.prototype.text_refused = true`
+   * sat beside an own-valid claim and the claim still composed its request.
+   *
+   * These are the five names that decide whether a request happens, where it
+   * goes, and who owns the answer. Contamination in any of them is not
+   * absence and not an ordinary refusal: it is a contract this page did not
+   * derive, and the page declines the whole request-critical claim rather
+   * than adjudicating which half of it to believe.
+   */
+  const REQUEST_MEMBERS = [
+    'text_prefix', 'text_path', 'text_refused', 'stated', 'trail'];
+
+  /**
+   * THE REQUEST-CRITICAL STATE OF ONE RECORD, TAKEN ONCE AND HELD.
+   *
+   * V12, the V11 review: the carried `text_path` descriptor was read twice —
+   * once to test that its stem was this fragment's own id, and again for the
+   * value that became the request. Two reads are two observations, and a
+   * `getOwnPropertyDescriptor` trap that answers `fallback-owned.json` first
+   * and `other.json` second therefore passed validation with one path and
+   * handed `fetch` another. No amount of validation fixes that, because the
+   * thing validated was never the thing used.
+   *
+   * So the raw record is inspected ONCE, here, and every later question is
+   * put to what this returned. Each requested name costs exactly one
+   * descriptor read; the prototype is asked exactly once; and what comes back
+   * is a null-prototype record of frozen own data properties, so nothing
+   * downstream can be handed a second answer by anything — a trap, a getter,
+   * a later mutation of the source, or a prototype. `stated` and `value` are
+   * separated because presence and value are two facts and V11 read them off
+   * the raw record separately: `ownData` for the value, `Object.hasOwn` for
+   * the presence, one observation each.
+   *
+   * `sound` is the whole contract's verdict, and it is false when the record
+   * has a prototype of its own, when anything above it names a request-
+   * critical member, or when a requested name is an own ACCESSOR. The
+   * accessor case is declined rather than called: V11 proved an ordinary
+   * accessor need never be invoked, and this keeps that property while
+   * refusing to read the absence of a `value` on the descriptor as the
+   * absence of a statement — which is exactly the mistake one field over.
+   */
+  function requestSnapshot(record, names) {
+    const source = bag(record);
+    const above = Object.getPrototypeOf(source);
+    const stated = Object.create(null);
+    const value = Object.create(null);
+    let sound = above === null || above === Object.prototype;
+    for (const name of names) {
+      const spot = Object.getOwnPropertyDescriptor(source, name);
+      const data = spot !== undefined && Object.hasOwn(spot, 'value');
+      if (spot !== undefined && !data) sound = false;
+      stated[name] = spot !== undefined;
+      value[name] = data ? spot.value : undefined;
+    }
+    if (sound && above !== null) {
+      sound = !REQUEST_MEMBERS.some((name) => name in above);
+    }
+    const taken = Object.create(null);
+    taken.sound = sound;
+    taken.stated = Object.freeze(stated);
+    taken.value = Object.freeze(value);
+    return Object.freeze(taken);
+  }
+
+  /**
    * A number AS THE DATA CARRIES IT, or nothing.
    *
    * Not `Number(value)`: that coercion accepts `"1"` and, worse, accepts `[1]`,
@@ -589,6 +667,13 @@
     // `bag`, because this is an exported entry point and a caller is not
     // `chapterFragments`; inside, `records()` has already asked.
     const own = bag(fragment);
+    // THE REQUEST-CRITICAL STATE OF THIS FRAGMENT, TAKEN ONCE AND FOR ALL.
+    // Its two members are the only fields of a fragment that choose an
+    // address: the id every composed path is built from, and the carried path
+    // that becomes a request without being composed. V12: they are read here,
+    // one descriptor each, and every question below is put to `carried` — so
+    // the value validated and the value requested cannot be two values.
+    const carried = requestSnapshot(own, ['text_path', 'id']);
     const held = bag(sources);
     const key = ownData(own, 'source');
     const shared = typeof key === 'string' && Object.hasOwn(held, key)
@@ -612,7 +697,7 @@
     // through and composed `…/[object Object].json`, which the page then
     // requested; sound text alone still let arbitrary prose and a path-like
     // string through. Read off the fragment ALONE, never off its edition.
-    const id = ident(ownData(own, 'id'));
+    const id = ident(carried.value.id);
     const author = sound(said('author'));
     const work = sound(said('work'));
     // THE LEAST A FRAGMENT MUST SAY. Not "is an object": a fragment row is the
@@ -656,8 +741,17 @@
     // invoked, and a second read cannot observe a different answer than the
     // first. A claim whose members are not its own resolves the way a claim
     // with no members resolves — closed.
+    //
+    // V12, the V11 review: `ownContract` asked `Object.prototype` about the
+    // claim's three members and about nothing else, so
+    // `Object.prototype.text_refused = true` stood beside an own-valid claim
+    // and the claim composed its request anyway — the page answering a
+    // contract half-written above it, which is the case this gate exists to
+    // refuse. The fragment's own snapshot carries that verdict for all five
+    // request-critical names, so a contaminated record resolves the way a
+    // claim with no members resolves: closed, and said conservatively.
     const claim = bag(prefix);
-    const clean = ownContract(claim, CLAIM_MEMBERS);
+    const clean = ownContract(claim, CLAIM_MEMBERS) && carried.sound;
     const stated = ownData(claim, 'stated');
     const written = ownData(claim, 'said');
     const trail = ownData(claim, 'trail');
@@ -672,6 +766,9 @@
     // may say a reference was supplied and say how it was written.
     const supplied = clean && written === true;
     const refused = !absent && !(clean && stated === true && head !== '');
+    // THE CARRIED ADDRESS, VALIDATED ONCE, off the snapshot and never off the
+    // record again.
+    const fallback = textLeaf(carried.value.text_path);
     return {
       id: id,
       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
@@ -694,12 +791,15 @@
       // the one field of the fragment that becomes a request without being
       // composed — so a prototype could otherwise hand this route a path it
       // never derived, which is the same finding one field over.
+      // V12, the V11 review: this arm read the carried descriptor TWICE —
+      // once for the stem test and once for the value — so a drifting
+      // descriptor validated `fallback-owned.json` and projected `other.json`,
+      // and the address that reached `fetch` had passed no test at all. The
+      // snapshot above holds the one value; `fallback` validates it once, and
+      // the same string is tested and projected.
       text_path: id
         ? (clean && stated === true && head !== '' ? head + id + '.json'
-          : absent
-            && textLeaf(ownData(own, 'text_path')).endsWith('/' + id + '.json')
-              ? textLeaf(ownData(own, 'text_path'))
-              : '')
+          : absent && fallback.endsWith('/' + id + '.json') ? fallback : '')
         : '',
       // THE REFUSAL, KEPT. The row is the only channel across the page
       // boundary, and '' alone reads "the record states no text location"
@@ -831,20 +931,31 @@
     // the route's own namespace may head one.
     //
     // V11 asks the spine record the same way `fragmentRow` asks the claim:
-    // `ownData`, once. An inherited `text_prefix` is not this file's
-    // statement — it resolves exactly as no statement resolves, which is the
-    // point — and an own accessor is never invoked to find out. `said` is the
-    // third fact the trail cannot hold: whether a NON-EMPTY TEXTUAL value was
-    // supplied at all. `textTrail` answers '' both for a string this page
-    // refused and for a value that was never a string, and only the first of
-    // those may be told to the reader as a reference supplied and unusable as
-    // written.
-    const value = ownData(record, 'text_prefix');
-    const prefix = {
-      stated: Object.hasOwn(record, 'text_prefix'),
-      said: sound(value) !== '',
-      trail: textTrail(value)
-    };
+    // own data, once, so nothing inherited is seen and an own accessor is
+    // never invoked to find out. `said` is the third fact the trail cannot
+    // hold: whether a NON-EMPTY TEXTUAL value was supplied at all. `textTrail`
+    // answers '' both for a string this page refused and for a value that was
+    // never a string, and only the first of those may be told to the reader
+    // as a reference supplied and unusable as written.
+    //
+    // V12, the V11 review: reading an inherited prefix as no prefix produced
+    // the ONE claim that opens the carried door. Presence and value were also
+    // two separate observations of the raw spine — `Object.hasOwn` after
+    // `ownData` — so a record could report the property present at the second
+    // read having yielded nothing at the first. Both are taken once now, from
+    // one snapshot, and a contaminated spine states the shape that is neither
+    // this route's absence nor a statement it derived: something was said
+    // here, this page cannot say a textual value was supplied, and no trail
+    // survives. That resolves unestablished — no request, no carried door.
+    const spine = requestSnapshot(record, ['text_prefix']);
+    const value = spine.value.text_prefix;
+    const prefix = spine.sound
+      ? {
+        stated: spine.stated.text_prefix,
+        said: sound(value) !== '',
+        trail: textTrail(value)
+      }
+      : { stated: true, said: false, trail: '' };
     const rows = [];
     // `records` rather than `file.fragments || []`: a spine whose `fragments`
     // is a record or a string is a broken record, and mapping over it threw out

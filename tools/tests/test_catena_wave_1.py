@@ -183,7 +183,7 @@ NODE = shutil.which("node")
 # projects as refused — while the page consumes `text_refused` BEFORE the
 # request sink, so a refused row renders the refused sentence and can be
 # answered by no path, carried, cached, or late.
-MODEL_SHA256 = "b4250ce672628ebee898c0c0c34a84ea3230ccbbf3256180657c3c607712ac7a"
+MODEL_SHA256 = "81720104cca1a7f2cce5053701456bc8eab6b4c13f9788468dc7b0d37dbb7271"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1330,6 +1330,41 @@ def _unestablished_spine(value):
     return _fixture(dict(V9_REFUSED_PREFIX_WITH_CARRIED, text_prefix=value))
 
 # ==========================================================================
+# V12 §§5-9 — request-critical state this page did not derive
+#
+# The V11 review proved three inputs reached the production request sink
+# that no record's own bytes had stated: an inherited spine prefix read as
+# genuine absence, an inherited refusal marker beside an own-valid claim,
+# and a carried-path descriptor read twice. None of the three is a document,
+# so none can be planted with `files` or `raw`: a prototype and a drifting
+# descriptor are facts about a JavaScript object, and the scenario keys
+# `contaminate`, `polluteObjectPrototype` and `driftCarriedPath` exist to
+# put them where a real page would meet them — behind `T.loadJSON`.
+#
+# Every one of these plants a body at EVERY address the defect could reach,
+# so a leak succeeds visibly rather than merely failing to be forbidden.
+
+V12_INHERITED_PREFIX = {"text_prefix": "structure/catena/text/deeper/"}
+V12_INHERITED_REFUSAL = {"text_refused": True}
+V12_CARRIED = "structure/catena/text/fallback-owned.json"
+V12_OTHER = "structure/catena/text/other.json"
+V12_COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
+
+# The SECOND value a drifting descriptor would hand the sink. Its stem is
+# not this fragment's, so nothing may compose it and nothing may carry it;
+# a body sits here so that "nothing requested it" is proved by content as
+# well as by the journal.
+V12_PLANTED_OTHER = _fixture({
+    "id": "other",
+    "text": "PLANTED SECOND-READ BODY — reachable only by reading twice."})
+
+# The same refused spine on Genesis 2, but with NO own prefix, so an
+# inherited one is the whole of what the record would be read as stating.
+V12_ABSENT_PREFIX_GEN2 = _fixture({
+    key: value for key, value in V9_REFUSED_PREFIX_GEN2.items()
+    if key != "text_prefix"})
+
+# ==========================================================================
 # V7 §6 — a fragment that can name NOTHING of itself
 #
 # `{}` rendered an `<li class="fragment">` with an empty author, an empty
@@ -2424,6 +2459,106 @@ SCENARIOS = [
           "label": "a-late"},
      ]},
 
+    # ============================================================== V12 §13
+    # The three request-critical contaminations, driven to the production
+    # request, cache, body and ownership sinks with a body planted at every
+    # address each defect could reach.
+    #
+    # INHERITED PREFIX. The record's own bytes are `v9-absent-prefix-carried`
+    # exactly — the one state whose carried door legitimately opens — and a
+    # valid prefix sits above it. V11 read that as the absence below it and
+    # fetched the carried body; V12 must ask for neither address.
+    {"name": "v12-inherited-prefix-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER},
+     "contaminate": {"structure/catena/01-gen/001.json":
+                         V12_INHERITED_PREFIX},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # INHERITED REFUSAL MARKER beside an own-valid prefix. The spine is
+    # `v9-valid-prefix-carried` byte for byte — a page that renders its
+    # composed body is doing exactly what it should — under a polluted
+    # `Object.prototype.text_refused`. V11 composed the request anyway.
+    {"name": "v12-inherited-refusal-valid-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_VALID_PREFIX_WITH_CARRIED,
+               "structure/catena/text/deeper/fallback-owned.json":
+                   V9_COMPOSED_DEEPER,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "polluteObjectPrototype": V12_INHERITED_REFUSAL,
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # The same pollution over genuine absence and an own valid carried
+    # path: the carried door is closed by the contamination too.
+    {"name": "v12-inherited-refusal-carried", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "polluteObjectPrototype": V12_INHERITED_REFUSAL,
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # DRIFTING CARRIED PATH. The first ask answers the fragment's own valid
+    # same-stem address; every later ask answers a different, plantable
+    # file. A body waits at both. The second value must reach nothing.
+    {"name": "v12-drifting-carried-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/other.json": V12_PLANTED_OTHER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
+                          "values": [V12_CARRIED, V12_OTHER]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # ALTERNATING OWNERSHIP AND BODY IDENTITY. The same two addresses, but
+    # answered round and round rather than once each — so a reader that
+    # asks TWICE PER PROJECTION lands its validating ask on the valid
+    # address and its projecting ask on the other one, every time. This is
+    # the shape whose leak is a served, rendered body rather than a count.
+    {"name": "v12-alternating-carried-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/other.json": V12_PLANTED_OTHER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
+                          "values": [V12_CARRIED, V12_OTHER],
+                          "cycle": True},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # ITS NON-VACUITY CONTROL. The same proxy, answering the same address
+    # every time it is asked: the page must fetch it and render its body,
+    # so the drifting scenario's silence is the drift's doing and not the
+    # proxy's.
+    {"name": "v12-stable-carried-path-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK,
+               "structure/catena/text/other.json": V12_PLANTED_OTHER},
+     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
+                          "values": [V12_CARRIED]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # PREWARMED, THEN CONTAMINATED. Chapter 1 fetches the carried body
+    # legitimately under genuine absence; chapter 2 carries the same
+    # address under an inherited prefix. The cache is keyed by path, so a
+    # substitution needs no request at all — the sink absence alone would
+    # not catch it.
+    {"name": "v12-prewarmed-inherited-prefix", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json":
+                   V9_ABSENT_PREFIX_WITH_CARRIED,
+               "structure/catena/01-gen/002.json": V12_ABSENT_PREFIX_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "contaminate": {"structure/catena/01-gen/002.json":
+                         V12_INHERITED_PREFIX},
+     "steps": [
+         {"do": "openEveryFragment", "label": "prewarmed"},
+         {"do": "selectChapter", "value": "2", "label": "contaminated"},
+         {"do": "openEveryFragment", "label": "opened"},
+     ]},
+
     # ============================================================== V11 §2
     # Every unestablished prefix, driven to the VISIBLE and the REQUEST
     # sink — the two places the V10 review found the wording claim was
@@ -3238,6 +3373,53 @@ async function run(scenario) {
    * late really happened. */
   const released = { count: 0 };
 
+  /* V12: HOW MANY TIMES A REQUEST-CRITICAL DESCRIPTOR WAS ASKED FOR, per
+   * fragment, across the whole scenario. The read-once contract is a claim
+   * about ONE PROJECTION — and this page projects one spine more than once
+   * per render (the readability gate, the tally and the chain each ask) —
+   * so the page-level number is a multiple of the projection count, not
+   * one. What it proves here is that the count MOVES with projections and
+   * not with reads inside them; the exact per-projection count of one is
+   * pinned at the model boundary, in V12StableRequestSnapshotTest. */
+  const descriptorReads = {};
+  const driftingSpine = (spine, values, cycle) => {
+    const made = Object.assign({}, spine);
+    made.fragments = (spine.fragments || []).map((one, index) => {
+      const label = 'fragment-' + index;
+      let turn = 0;
+      descriptorReads[label] = 0;
+      return new Proxy(Object.assign({}, one), {
+        getOwnPropertyDescriptor(target, asked) {
+          if (asked !== 'text_path') {
+            return Reflect.getOwnPropertyDescriptor(target, asked);
+          }
+          descriptorReads[label] += 1;
+          /* Two shapes. WALKING answers each value once and then holds the
+           * last — the plain "it drifted and stayed drifted" case. CYCLING
+           * answers them round and round, which is the shape that catches a
+           * reader that asks TWICE PER PROJECTION: its first ask lands on
+           * the value that passes validation and its second on the value it
+           * then hands to `fetch`, every time, so the leak is the rendered
+           * page and not merely a count. */
+          const value = cycle
+            ? values[turn % values.length]
+            : values[Math.min(turn, values.length - 1)];
+          turn += 1;
+          return { value: value, writable: true, enumerable: true,
+                   configurable: true };
+        },
+        has(target, asked) {
+          return asked === 'text_path' || Reflect.has(target, asked);
+        },
+        ownKeys(target) {
+          return Array.from(
+            new Set(Reflect.ownKeys(target).concat(['text_path'])));
+        }
+      });
+    });
+    return made;
+  };
+
   global.window = window;
   global.document = document;
   global.location = location;
@@ -3276,11 +3458,38 @@ async function run(scenario) {
      * threw past the request catch and left the page loading for ever. */
     const raw = scenario.raw || {};
     const rawly = Object.prototype.hasOwnProperty.call(raw, path);
+    /* V12: A RECORD WHOSE CONTRACT IS PARTLY WRITTEN ABOVE IT. A prototype
+     * is not a thing JSON can express, so `files` and `raw` cannot reach
+     * the defect the V11 review proved at the production sinks: a spine
+     * carrying an inherited `text_prefix` read as genuine absence and
+     * reopened the carried door. `contaminate` names a path and the record
+     * to sit ABOVE the body served for it — the served document's own
+     * bytes are unchanged, and only its ancestry differs. It is applied
+     * here, at the transport, so everything downstream of `T.loadJSON` —
+     * the readability gate, the projection, the cache and the renderer —
+     * meets exactly what a hostile server could hand a real page. */
+    const above = (scenario.contaminate || {})[path];
+    const parented = above && body && typeof body === 'object'
+      ? Object.assign(Object.create(above), body)
+      : body;
+    /* V12: A DESCRIPTOR THAT ANSWERS DIFFERENTLY THE SECOND TIME. The V11
+     * review's third finding is not expressible as a document either: it
+     * needs a record whose `getOwnPropertyDescriptor` drifts. A scenario
+     * naming `driftCarriedPath` wraps every fragment of the served spine in
+     * a proxy that answers `text_path` from a list, advancing one place per
+     * ask, and counts the asks. Under V11 one projection asked twice, so
+     * the value that passed the own-stem test and the value handed to
+     * `fetch` were two different strings; under V12 one projection asks
+     * once. Only `text_path` is trapped: every other member answers from
+     * the target, so nothing else about the fragment changes. */
+    const drift = scenario.driftCarriedPath;
+    const served = drift && drift.path === path && parented
+      ? driftingSpine(parented, drift.values, drift.cycle) : parented;
     const response = rawly
       ? { ok: true, status: 200, json: async () => raw[path] }
-      : (body === null || body === undefined)
+      : (served === null || served === undefined)
         ? { ok: false, status: 404, json: async () => null }
-        : { ok: true, status: 200, json: async () => body };
+        : { ok: true, status: 200, json: async () => served };
     if ((scenario.defer || []).some((piece) => path.includes(piece))) {
       record.outcome = 'held';
       return new Promise((resolve, reject) => {
@@ -3443,16 +3652,34 @@ async function run(scenario) {
 
   const report = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
   report.snapshots = snapshots;
+  report.descriptorReads = descriptorReads;
   return report;
 }
 
 (async () => {
   const report = {};
   for (const scenario of PLAN) {
+    /* V12: THE POLLUTED REALM, HELD FOR ONE SCENARIO AND NO LONGER.
+     * `Object.prototype.text_refused = true` is a property of the whole
+     * JavaScript realm, not of one record, so it is installed around a
+     * single scenario and removed in a `finally` — every scenario, whether
+     * it passed, failed or threw. A leak here would silently contaminate
+     * every scenario after it, which is precisely the failure this hook
+     * exists to catch. Non-enumerable, because a real pollution rarely
+     * announces itself to `for...in`. */
+    const polluted = scenario.polluteObjectPrototype || {};
+    const names = Object.keys(polluted);
+    for (const name of names) {
+      Object.defineProperty(Object.prototype, name, {
+        value: polluted[name], writable: true,
+        configurable: true, enumerable: false });
+    }
     try {
       report[scenario.name] = await run(scenario);
     } catch (error) {
       report[scenario.name] = { error: String((error && error.stack) || error) };
+    } finally {
+      for (const name of names) delete Object.prototype[name];
     }
   }
   process.stdout.write(JSON.stringify(report));
@@ -3525,7 +3752,8 @@ class ReplayTest(unittest.TestCase):
         for one URL + data whatever the arrival path — with the per-session
         history/network journals left out."""
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
-                    "snapshots", "released", "requests", "replacedStates"}
+                    "snapshots", "released", "requests", "replacedStates",
+                    "descriptorReads"}
         return {key: value for key, value in snap.items() if key not in journals}
 
 
@@ -7875,7 +8103,8 @@ class NullBootstrapTerminalStateTest(ReplayTest):
         # failures, one shell, differing ONLY in the reason given and in the
         # address the reader arrived with.
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
-                    "snapshots", "released", "requests", "replacedStates"}
+                    "snapshots", "released", "requests", "replacedStates",
+                    "descriptorReads"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
                      and key not in ("hash", "statusText", "failureText")}
@@ -9429,21 +9658,18 @@ class V11InheritedClaimBoundaryTest(ReplayTest):
             self.assertEqual(cases[name], self.CLOSED, name)
 
         # A path or an identity the fragment does not carry composes nothing
-        # either. `inherited-carried-path` and `accessor-carried-path` are
-        # GENUINE ABSENCE at the claim — the door the contract does open —
-        # and they still resolve no address, because the stem they would be
-        # matched against is not the fragment's own.
-        for name in ("inherited-carried-path", "accessor-carried-path"):
-            self.assertEqual(
-                cases[name],
-                {"path": "", "refused": False, "unestablished": False,
-                 "note": ""}, name)
-        # A valid statement composes from the fragment's OWN id or from
-        # nothing; an inherited id addresses no fragment.
-        self.assertEqual(
-            cases["inherited-id"],
-            {"path": "", "refused": False, "unestablished": False,
-             "note": ""})
+        # either — and V12 corrects WHICH nothing. Under V11 these three
+        # reached no address but read as ordinary states: `refused: false`,
+        # `unestablished: false`, the row of a fragment that simply carries no
+        # text. That is the same misreading the spine's inherited prefix made
+        # one level up. A fragment whose id or carried address is written
+        # above it, or answered by an accessor, is a record whose
+        # request-critical contract this page did not derive; it fails closed
+        # and says the conservative sentence, like every other contaminated
+        # claim in this matrix.
+        for name in ("inherited-carried-path", "accessor-carried-path",
+                     "inherited-id"):
+            self.assertEqual(cases[name], self.CLOSED, name)
 
     def test_the_ordinary_claims_the_boundary_does_honour_are_unchanged(self):
         # THE POSITIVE CONTROLS, so the closure above is not vacuous. The
@@ -9512,11 +9738,17 @@ class V11InheritedClaimBoundaryTest(ReplayTest):
             told["absent"],
             {"path": self.CARRIED, "refused": False,
              "unestablished": False, "note": ""})
-        # AN INHERITED PREFIX RESOLVES AS NO PREFIX. It composes nothing of
-        # its own, and it does not alter the absence the record itself
-        # states — so the carried door stands or falls on the record's own
-        # bytes, exactly as if the prototype were not there.
-        self.assertEqual(told["inherited"], told["absent"])
+        # AN INHERITED PREFIX IS NOT AN ABSENT ONE. V12, the V11 review: this
+        # assertion required the wrong equality and the model obliged it.
+        # Reading the inherited prefix as no prefix produced the ONE claim
+        # shape that opens the carried door, so the spine's polluted record
+        # reached `fragmentText`, the cache and `T.loadJSON` with a live
+        # address. Genuine absence is a fact about the record's own bytes;
+        # a contract written above the record is not that fact, and it is not
+        # this page's to complete. It fails closed, exactly as the accessor
+        # case beside it does.
+        self.assertEqual(told["inherited"], self.CLOSED)
+        self.assertNotEqual(told["inherited"], told["absent"])
         self.assertEqual(told["accessor"],
                          {"path": "", "refused": True,
                           "unestablished": True, "note": UNESTABLISHED_SAID})
@@ -9558,6 +9790,588 @@ class V11InheritedClaimBoundaryTest(ReplayTest):
         for name in ("text_path", "text_refused", "text_unestablished",
                      "text_note"):
             self.assertIn(name, told["shape"], name)
+
+
+class V12StableRequestSnapshotTest(ReplayTest):
+    """V12 §§4-12 — the request-critical state is taken once, and then held.
+
+    The V11 review accepted the fail-closed policy and proved V11 applied it
+    to some of the ways in and not to others. Three doors were open, and all
+    three are the same door:
+
+        Object.create({text_prefix: <valid>})  read as GENUINE ABSENCE,
+                                               which is the one state that
+                                               reopens the carried fallback
+
+        Object.prototype.text_refused = true   read as nothing at all, so an
+                                               own-valid claim beside it
+                                               still composed its request
+
+        ownData(own, 'text_path') twice        one value validated, another
+                                               projected, because two reads
+                                               are two observations
+
+    So the record is inspected ONCE. `requestSnapshot` takes one descriptor
+    per request-critical name and asks the prototype once, and hands back a
+    null-prototype record of frozen own data. Everything downstream — the
+    fallback decision, the composed address, the carried address, the
+    refusal, the ownership journal, the renderer's row — is answered from
+    that, and the raw record is never asked again.
+
+    THE CONTRACT THIS FILE PINS, stated so a reviewer need not infer it:
+
+      * A request-critical field answered by an ACCESSOR is declined without
+        being called. Invocation count is ZERO, not one.
+      * A request-critical field answered by a DATA descriptor is read
+        EXACTLY ONCE. Never twice — and the value validated is, by
+        construction, the value projected and requested.
+      * Contamination — a prototype of the record's own, anything above it
+        naming a request-critical member, or an own accessor on one — is not
+        absence and not an ordinary refusal. It resolves to the single
+        conservative malformed/unestablished state.
+    """
+
+    CARRIED = "structure/catena/text/fallback-owned.json"
+    OTHER = "structure/catena/text/other.json"
+    ESCAPE = "structure/paragraphs/escape.json"
+    VALID = "structure/catena/text/deeper/"
+    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
+
+    CLOSED = {"path": "", "refused": True, "unestablished": True,
+              "note": UNESTABLISHED_SAID}
+
+    def drive(self, body):
+        """One node probe against the production model, as JSON."""
+        script = ("const M = require(%r);\n"
+                  "const CARRIED = %r;\n"
+                  "const OTHER = %r;\n"
+                  "const ESCAPE = %r;\n"
+                  "const VALID = %r;\n"
+                  "const sources = {\"1\": {author: \"A\", work: \"W\"}};\n"
+                  "const base = () => ({id: \"fallback-owned\",\n"
+                  "                     source: \"1\", text_path: CARRIED});\n"
+                  "const spine = (extra) => Object.assign({\n"
+                  "  fragments: [base()], sources: sources}, extra || {});\n"
+                  "const shot = (fragment, claim) => {\n"
+                  "  const one = M.fragmentRow(fragment, sources, claim);\n"
+                  "  return one === null ? null\n"
+                  "    : {path: one.text_path, refused: one.text_refused,\n"
+                  "       unestablished: one.text_unestablished,\n"
+                  "       note: one.text_note};\n"
+                  "};\n"
+                  "const only = (file) => {\n"
+                  "  const rows = M.chapterFragments(file);\n"
+                  "  return rows.length === 0 ? null\n"
+                  "    : {path: rows[0].text_path, refused: rows[0].text_refused,\n"
+                  "       unestablished: rows[0].text_unestablished,\n"
+                  "       note: rows[0].text_note};\n"
+                  "};\n"
+                  + body) % (str(CATENA / "catena-model.js"), self.CARRIED,
+                             self.OTHER, self.ESCAPE, self.VALID)
+        done = subprocess.run(["node", "-e", script],
+                              capture_output=True, text=True, check=True)
+        return json.loads(done.stdout)
+
+    def test_an_inherited_valid_spine_prefix_never_becomes_absence(self):
+        # V12 §6 — THE REVIEW'S EXACT REPRODUCTION. An inherited valid spine
+        # prefix must not be classified as the absence that reopens the
+        # carried door, and must not be classified as an ordinary supplied
+        # statement either. One conservative state, and no address.
+        told = self.drive("""
+        const inheritedValid = Object.assign(
+          Object.create({text_prefix: VALID}), spine());
+        const inheritedRefusedNamespace = Object.assign(
+          Object.create({text_prefix: "structure/paragraphs/"}), spine());
+        const inheritedJunk = Object.assign(
+          Object.create({text_prefix: 5}), spine());
+        const inheritedBeneathOwnValid = Object.assign(
+          Object.create({text_prefix: VALID}), spine({text_prefix: VALID}));
+        const deep = Object.assign(
+          Object.create(Object.create({text_prefix: VALID})), spine());
+        console.log(JSON.stringify({
+          absent: only(spine()),
+          statedValid: only(spine({text_prefix: VALID})),
+          inheritedValid: only(inheritedValid),
+          inheritedRefusedNamespace: only(inheritedRefusedNamespace),
+          inheritedJunk: only(inheritedJunk),
+          inheritedBeneathOwnValid: only(inheritedBeneathOwnValid),
+          deep: only(deep)}));
+        """)
+        # The two controls, so the closure is not vacuous: genuine absence
+        # still opens the carried door, an own valid prefix still composes.
+        self.assertEqual(
+            told["absent"],
+            {"path": self.CARRIED, "refused": False, "unestablished": False,
+             "note": ""})
+        self.assertEqual(
+            told["statedValid"],
+            {"path": self.COMPOSED, "refused": False, "unestablished": False,
+             "note": ""})
+        # Every inherited prefix fails closed — including the one whose own
+        # record ALSO carries a valid prefix, because a contract written in
+        # two places is not a contract this page derived.
+        for name in ("inheritedValid", "inheritedRefusedNamespace",
+                     "inheritedJunk", "inheritedBeneathOwnValid", "deep"):
+            self.assertEqual(told[name], self.CLOSED, name)
+        # And the point the V11 assertion got backwards, said directly.
+        self.assertNotEqual(told["inheritedValid"], told["absent"])
+        self.assertNotEqual(told["inheritedValid"], told["statedValid"])
+
+    def test_an_inherited_refusal_marker_closes_an_own_valid_claim(self):
+        # V12 §7 — `Object.prototype.text_refused = true` beside an
+        # otherwise own-valid claim. V11 composed the request anyway,
+        # because `ownContract` asked about three names and this is a
+        # fourth. Every combination the review named is driven here, and
+        # the pollution is removed between cases so no case inherits the
+        # one before it.
+        told = self.drive("""
+        const polluted = (value, run) => {
+          Object.defineProperty(Object.prototype, "text_refused", {
+            value: value, writable: true, configurable: true,
+            enumerable: false});
+          try { return run(); }
+          finally { delete Object.prototype.text_refused; }
+        };
+        const gettered = (run) => {
+          Object.defineProperty(Object.prototype, "text_refused", {
+            get() { return true; }, configurable: true, enumerable: false});
+          try { return run(); }
+          finally { delete Object.prototype.text_refused; }
+        };
+        const valid = {stated: true, said: true, trail: VALID};
+        const gone = {stated: false, said: false, trail: ""};
+        console.log(JSON.stringify({
+          control: shot(base(), valid),
+          controlCarried: shot(base(), gone),
+          refusedTrue: polluted(true, () => shot(base(), valid)),
+          refusedFalse: polluted(false, () => shot(base(), valid)),
+          refusedGetter: gettered(() => shot(base(), valid)),
+          refusedWithCarried: polluted(true, () => shot(base(), gone)),
+          refusedWithPrefixRequest: polluted(true, () => shot(base(), valid)),
+          refusedAtTheSpine: polluted(true, () => only(spine({
+            text_prefix: VALID}))),
+          prefixPolluted: polluted(true, () => only(spine())),
+          statedPolluted: (() => {
+            Object.defineProperty(Object.prototype, "stated", {
+              value: true, writable: true, configurable: true,
+              enumerable: false});
+            try { return shot(base(), valid); }
+            finally { delete Object.prototype.stated; }
+          })(),
+          trailPolluted: (() => {
+            Object.defineProperty(Object.prototype, "trail", {
+              value: VALID, writable: true, configurable: true,
+              enumerable: false});
+            try { return shot(base(), gone); }
+            finally { delete Object.prototype.trail; }
+          })(),
+          pathPolluted: (() => {
+            Object.defineProperty(Object.prototype, "text_path", {
+              value: CARRIED, writable: true, configurable: true,
+              enumerable: false});
+            try { return shot(base(), gone); }
+            finally { delete Object.prototype.text_path; }
+          })()}));
+        """)
+        # THE CONTROLS FIRST. Unpolluted, both ordinary routes work — so
+        # every closure below is the pollution's doing and nothing else.
+        self.assertEqual(
+            told["control"],
+            {"path": self.COMPOSED, "refused": False, "unestablished": False,
+             "note": ""})
+        self.assertEqual(
+            told["controlCarried"],
+            {"path": self.CARRIED, "refused": False, "unestablished": False,
+             "note": ""})
+        # `false` closes as surely as `true`: the fault is that the contract
+        # is written above the record, not which way it happens to read.
+        for name in ("refusedTrue", "refusedFalse", "refusedGetter",
+                     "refusedWithCarried", "refusedWithPrefixRequest",
+                     "refusedAtTheSpine", "prefixPolluted", "statedPolluted",
+                     "trailPolluted", "pathPolluted"):
+            self.assertEqual(told[name], self.CLOSED, name)
+
+    def test_a_polluted_id_composes_nothing_though_it_does_not_contaminate(self):
+        # THE ONE ASYMMETRY IN `REQUEST_MEMBERS`, PINNED RATHER THAN
+        # ASSERTED. `id` is snapshotted — it is read once, off the same
+        # descriptor pass as the carried path, because it chooses the
+        # composed address — but it is deliberately NOT one of the five
+        # names whose presence above a record contaminates it. Adding it
+        # would reopen a disposition the V11 review passed, and it is
+        # unnecessary: the snapshot reads own data, so an id written on
+        # `Object.prototype` is never the id this page composes with. A
+        # fragment carrying no own id composes no address at all, and a
+        # fragment carrying its own id behaves exactly as it does in an
+        # unpolluted realm. Both are asserted, so the asymmetry is proved
+        # harmless rather than argued to be.
+        told = self.drive("""
+        const polluted = (run) => {
+          Object.defineProperty(Object.prototype, "id", {
+            value: "fallback-owned", writable: true, configurable: true,
+            enumerable: false});
+          try { return run(); }
+          finally { delete Object.prototype.id; }
+        };
+        const valid = {stated: true, said: true, trail: VALID};
+        const gone = {stated: false, said: false, trail: ""};
+        console.log(JSON.stringify({
+          noOwnId: polluted(() => shot({source: "1"}, valid)),
+          ownId: polluted(() => shot(base(), gone)),
+          control: shot(base(), gone)}));
+        """)
+        # A record whose only id is the realm's composes nothing.
+        self.assertEqual(
+            told["noOwnId"],
+            {"path": "", "refused": False, "unestablished": False,
+             "note": ""})
+        # And a record with its own id is untouched by the pollution.
+        self.assertEqual(told["ownId"], told["control"])
+        self.assertEqual(
+            told["control"],
+            {"path": self.CARRIED, "refused": False, "unestablished": False,
+             "note": ""})
+
+    def test_a_carried_path_descriptor_is_read_once_and_never_twice(self):
+        # V12 §§8-9 — THE DOUBLE-READ MATRIX. Every descriptor here answers
+        # differently the second time it is asked. Under V11 the first
+        # answer passed validation and the second reached `fetch`; under
+        # V12 there is no second ask, so the second answer exists nowhere.
+        told = self.drive("""
+        const counts = {};
+        const drifting = (answers) => {
+          const target = {id: "fallback-owned", source: "1"};
+          let turn = 0;
+          const name = "text_path";
+          counts[answers.label] = 0;
+          return new Proxy(target, {
+            getOwnPropertyDescriptor(one, asked) {
+              if (asked === name) {
+                counts[answers.label] += 1;
+                const value = answers.values[
+                  Math.min(turn, answers.values.length - 1)];
+                turn += 1;
+                if (value === "THROW") throw new Error("a second read ran");
+                return {value: value, writable: true, enumerable: true,
+                        configurable: true};
+              }
+              return Reflect.getOwnPropertyDescriptor(one, asked);
+            },
+            has(one, asked) { return asked === name || Reflect.has(one, asked); },
+            ownKeys(one) {
+              return Array.from(new Set(Reflect.ownKeys(one).concat([name])));
+            }
+          });
+        };
+        const gone = {stated: false, said: false, trail: ""};
+        const counted = {calls: 0};
+        const accessorFragment = Object.assign(
+          {id: "fallback-owned", source: "1"}, {});
+        Object.defineProperty(accessorFragment, "text_path", {
+          get() { counted.calls += 1; return CARRIED; },
+          enumerable: true, configurable: true});
+        const drift = (label, values) =>
+          shot(drifting({label: label, values: values}), gone);
+        console.log(JSON.stringify({
+          driftingGetter: drift("driftingGetter", [CARRIED, OTHER]),
+          wrongNamespace: drift("wrongNamespace", [CARRIED, ESCAPE]),
+          traversal: drift("traversal", [CARRIED, "../../etc/passwd"]),
+          counter: drift("counter", [CARRIED, CARRIED, CARRIED]),
+          throwsOnSecond: drift("throwsOnSecond", [CARRIED, "THROW"]),
+          alternating: drift("alternating", [CARRIED, OTHER, CARRIED]),
+          invalidFirst: drift("invalidFirst", [ESCAPE, CARRIED]),
+          counts: counts,
+          accessor: shot(accessorFragment, gone),
+          accessorCalls: counted.calls}));
+        """)
+        # EVERY REQUEST-CRITICAL DESCRIPTOR IS ASKED EXACTLY ONCE. Not
+        # "asked twice and reconciled" — asked once, so there is no second
+        # answer to reconcile with.
+        for label, count in told["counts"].items():
+            self.assertEqual(count, 1, f"{label} read the descriptor {count}x")
+        # The value the FIRST read yielded is the value validated and the
+        # value projected. The second answer reaches nothing.
+        for name in ("driftingGetter", "wrongNamespace", "traversal",
+                     "counter", "throwsOnSecond", "alternating"):
+            self.assertEqual(
+                told[name],
+                {"path": self.CARRIED, "refused": False,
+                 "unestablished": False, "note": ""}, name)
+        # And a first read this page refuses composes nothing, whatever the
+        # second read would have offered.
+        self.assertEqual(
+            told["invalidFirst"],
+            {"path": "", "refused": False, "unestablished": False, "note": ""})
+        # No projected path is ever one of the second answers.
+        for name, one in told.items():
+            if isinstance(one, dict) and "path" in one:
+                self.assertNotEqual(one["path"], self.OTHER, name)
+                self.assertNotEqual(one["path"], self.ESCAPE, name)
+        # AN ACCESSOR IS DECLINED WITHOUT BEING CALLED — zero, not one.
+        self.assertEqual(told["accessorCalls"], 0,
+                         "the snapshot invoked a request-critical accessor")
+        self.assertEqual(told["accessor"], self.CLOSED)
+
+    def test_the_snapshot_is_the_only_thing_downstream_reads(self):
+        # V12 §§11-12 — the projection cannot be moved by anything that
+        # happens to the source record after the snapshot is taken, and the
+        # row it produces carries only own data.
+        told = self.drive("""
+        const one = {id: "fallback-owned", source: "1", text_path: CARRIED};
+        const gone = {stated: false, said: false, trail: ""};
+        const before = shot(one, gone);
+        one.text_path = OTHER;
+        const afterMutation = shot(one, gone);
+        const row = M.fragmentRow(
+          {id: "fallback-owned", source: "1", text_path: CARRIED},
+          sources, gone);
+        const shape = {};
+        for (const name of Object.keys(row)) {
+          const spot = Object.getOwnPropertyDescriptor(row, name);
+          shape[name] = Object.hasOwn(spot, "value") ? "data" : "accessor";
+        }
+        console.log(JSON.stringify({
+          before: before,
+          afterMutation: afterMutation,
+          shapes: sorted(shape),
+          proto: Object.getPrototypeOf(row) === Object.prototype}));
+        function sorted(made) {
+          return Array.from(new Set(Object.keys(made).map((k) => made[k])));
+        }
+        """)
+        # One projection reads one record once. A later mutation of the
+        # source is a different record and is projected as one — here it
+        # loses the carried address, because `other.json` is not this
+        # fragment's own stem. What is refused is a SINGLE projection
+        # seeing two values, not two projections seeing what is there.
+        self.assertEqual(
+            told["before"],
+            {"path": self.CARRIED, "refused": False, "unestablished": False,
+             "note": ""})
+        self.assertEqual(
+            told["afterMutation"],
+            {"path": "", "refused": False, "unestablished": False,
+             "note": ""})
+        self.assertEqual(told["shapes"], ["data"])
+        self.assertTrue(told["proto"])
+
+    def test_the_source_names_a_request_critical_field_only_at_the_snapshot(self):
+        # V12 §12 — THE STATIC PIN. A behavioural test proves what the code
+        # does today; this proves there is no second place for it to be
+        # done from tomorrow. In the whole model, with comments removed,
+        # the four request-critical property names are written in exactly
+        # three lines: the list that declares them, and the two calls that
+        # take a snapshot. A later lane that reaches for one of them off a
+        # raw record fails here, at the line it writes.
+        source = without_comments(held(CATENA / "catena-model.js"),
+                                  script=True)
+        naming = [line.strip() for line in source.splitlines()
+                  if any(name in line for name in
+                         ("'text_prefix'", "'text_path'", "'text_refused'",
+                          "'id'"))]
+        self.assertEqual(
+            naming,
+            ["'text_prefix', 'text_path', 'text_refused', 'stated', 'trail'];",
+             "const carried = requestSnapshot(own, ['text_path', 'id']);",
+             "const spine = requestSnapshot(record, ['text_prefix']);"],
+            "a request-critical field is named outside the snapshot")
+        # TWO DESCRIPTOR READERS, AND NO MORE: `ownData`, which the claim's
+        # three members are asked through, and `requestSnapshot`. A third
+        # would be a second place a raw record could be observed.
+        self.assertEqual(source.count("Object.getOwnPropertyDescriptor"), 2)
+        self.assertEqual(source.count("Object.getPrototypeOf"), 2)
+
+
+class V12PlantedRequestSinkTest(ReplayTest):
+    """V12 §§13-16 — the three contaminations, at the production sinks.
+
+    The model boundary is proved beside this, in
+    `V12StableRequestSnapshotTest`. This drives the same three inputs
+    through `T.loadJSON`, the readability gate, the projection, the page's
+    cache and the renderer, with a deterministic body planted at EVERY
+    address each defect could reach — so a leak is a served, rendered page
+    caught by the journal and by the words alike, not merely an absence
+    nobody forbade.
+
+    Four sinks are asserted for every scenario: the flat request list, the
+    owned journal, the rendered body, and the terminal page state.
+    """
+
+    V9 = V9ComposedPrefixFallbackClosureTest
+    BOOTSTRAP = V9.BOOTSTRAP
+    GEN2_ARRIVAL = V9.GEN2_ARRIVAL
+    GEN1_SPOKEN = V9.GEN1_SPOKEN
+    GEN2_SPOKEN = V9.GEN2_SPOKEN
+    FALLBACK = "structure/catena/text/fallback-owned.json"
+    OTHER = "structure/catena/text/other.json"
+    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
+
+    NO_TEXT = NO_TEXT_SAID
+    REFUSED = REFUSED_SAID
+    UNESTABLISHED = UNESTABLISHED_SAID
+
+    PLANTED = ("PLANTED FALLBACK BODY", "PLANTED SECOND-READ BODY",
+               "Composed from the stated prefix")
+
+    def opened(self, name):
+        return self.snapshot(name, "opened")
+
+    def owned(self, tail=()):
+        return request_journal(
+            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
+
+    def assert_nothing_planted_was_served(self, page, where):
+        # THE BODY SINK. A planted body is the only thing at any of these
+        # addresses, so its absence from every rendered container is the
+        # proof no substitution, repair or stale answer served one.
+        for said in page["fragmentTexts"]:
+            for marker in self.PLANTED:
+                self.assertNotIn(marker, said, where)
+        for one in page["fetched"]:
+            self.assertNotEqual(one, self.OTHER, where)
+
+    def assert_closed_terminal(self, page, where):
+        # The whole terminal vector of a page that asked nothing: one row,
+        # the conservative sentence, no error, no failure, settled.
+        self.assertEqual(page["fragmentCount"], 1, where)
+        self.assertEqual(page["fragmentIds"], ["fallback-owned"], where)
+        self.assertEqual(page["fragmentTexts"], [self.UNESTABLISHED], where)
+        self.assertNotIn(self.NO_TEXT, page["fragmentTexts"], where)
+        self.assertNotIn(self.REFUSED, page["fragmentTexts"], where)
+        self.assertEqual(page["tallyText"], "1 fragment held", where)
+        self.assertEqual(page["busy"], "false", where)
+        self.assertEqual(page["errorSections"], [], where)
+        self.assertIsNone(page["failureText"], where)
+        self.assertEqual(page["replaced"], [], where)
+        self.assertEqual(page["replacedStates"], [], where)
+        self.assertIsNone(page["historyState"], where)
+
+    def test_an_inherited_spine_prefix_reaches_no_request_cache_or_body(self):
+        # V12 §6 AT THE SINKS. The record's own bytes are the absence
+        # scenario exactly, and `v9-absent-prefix-carried` beside it proves
+        # those same bytes DO fetch the carried body — so the difference
+        # here is the prototype and nothing else.
+        page = self.opened("v12-inherited-prefix-carried")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+        self.assertEqual(page["requests"], self.owned())
+        self.assert_closed_terminal(page, "inherited prefix")
+        self.assert_nothing_planted_was_served(page, "inherited prefix")
+        self.assertEqual(page["statusWrites"], [self.GEN1_SPOKEN])
+        # THE CONTROL, so this is not a page that fetches nothing anyway.
+        control = self.snapshot("v9-absent-prefix-carried", "opened")
+        self.assertEqual(control["fetched"],
+                         self.BOOTSTRAP + [self.FALLBACK])
+        self.assertIn("PLANTED FALLBACK BODY", control["fragmentTexts"][0])
+
+    def test_an_inherited_refusal_marker_reaches_no_request_or_body(self):
+        # V12 §7 AT THE SINKS, both ways in: the own-valid prefix that
+        # would compose an address, and the genuine absence that would open
+        # the carried door. `Object.prototype.text_refused` closes both.
+        for name, control in (
+                ("v12-inherited-refusal-valid-prefix",
+                 "v9-valid-prefix-carried"),
+                ("v12-inherited-refusal-carried",
+                 "v9-absent-prefix-carried")):
+            with self.subTest(scenario=name):
+                page = self.opened(name)
+                self.assertEqual(page["fetched"], self.BOOTSTRAP)
+                self.assertEqual(page["requests"], self.owned())
+                self.assert_closed_terminal(page, name)
+                self.assert_nothing_planted_was_served(page, name)
+                # The same spine, unpolluted, really does render a body.
+                said = self.snapshot(control, "opened")
+                self.assertEqual(len(said["fetched"]),
+                                 len(self.BOOTSTRAP) + 1, control)
+                self.assertTrue(
+                    any(marker in said["fragmentTexts"][0]
+                        for marker in self.PLANTED), control)
+
+    def test_a_drifting_carried_descriptor_never_reaches_its_second_value(self):
+        # V12 §§8-9 AT THE SINKS. The first ask answers this fragment's own
+        # valid same-stem address; every later ask answers `other.json`,
+        # where a second body waits. Under V11 one projection asked twice,
+        # so the address that passed the own-stem test and the address
+        # handed to `fetch` were different strings and the second body
+        # rendered. Under V12 each projection asks once, so no projection
+        # ever holds two values — and `other.json` is requested by nothing.
+        page = self.opened("v12-drifting-carried-path")
+        self.assertNotIn(self.OTHER, page["fetched"])
+        for said in page["fragmentTexts"]:
+            self.assertNotIn("PLANTED SECOND-READ BODY", said)
+        # Every request the page made is owned by a step, and none of them
+        # is a text request at all.
+        self.assertEqual(page["requests"], self.owned())
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+        self.assertIsNone(page["failureText"])
+        # THE NON-VACUITY CONTROL. The same proxy, answering one address
+        # every time: the page fetches it and renders its planted body, so
+        # the silence above is the drift's doing and not the proxy's.
+        control = self.opened("v12-stable-carried-path-control")
+        self.assertEqual(control["fetched"],
+                         self.BOOTSTRAP + [self.FALLBACK])
+        self.assertEqual(control["requests"],
+                         self.owned([(self.FALLBACK, "opened")]))
+        self.assertIn("PLANTED FALLBACK BODY", control["fragmentTexts"][0])
+        self.assertNotIn(self.OTHER, control["fetched"])
+        # THE READ COUNT MOVES WITH PROJECTIONS, NOT WITH READS INSIDE THEM.
+        # This page projects one spine three times per render — the
+        # readability gate, the tally and the chain — so the page-level
+        # count is the projection count. Under V11 it was twice that.
+        # ALTERNATING. Answered round and round, the two addresses land on
+        # a twice-reading projection as validate-this / request-that, every
+        # projection — so at the uncorrected parent this scenario FETCHES
+        # `other.json` and renders its planted body. Here one ask per
+        # projection means the rendered row is the validated address, and
+        # the page asks for it exactly once.
+        page = self.opened("v12-alternating-carried-path")
+        self.assertNotIn(self.OTHER, page["fetched"])
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
+        self.assertEqual(page["requests"],
+                         self.owned([(self.FALLBACK, "opened")]))
+        self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
+        for said in page["fragmentTexts"]:
+            self.assertNotIn("PLANTED SECOND-READ BODY", said)
+        # THE READ COUNT: ONE ASK PER PROJECTION, and the projection count
+        # is pinned so that a page which starts projecting a different
+        # number of times fails here rather than silently changing which
+        # value the alternating scenario lands on.
+        reads = self.page("v12-drifting-carried-path")["descriptorReads"]
+        steady = self.page(
+            "v12-stable-carried-path-control")["descriptorReads"]
+        cycled = self.page(
+            "v12-alternating-carried-path")["descriptorReads"]
+        self.assertTrue(reads, "the drifting descriptor was never asked at all")
+        self.assertEqual(reads, steady)
+        self.assertEqual(reads, cycled)
+        self.assertEqual(reads, {"fragment-0": 3},
+                         "one ask per projection, three projections a render")
+
+    def test_a_prewarmed_body_is_not_substituted_into_a_contaminated_route(self):
+        # V12 §14. The cache is keyed by path, so a body already fetched
+        # under genuine absence could be served to the contaminated route
+        # WITHOUT any request — request absence alone would not catch it.
+        prewarmed = self.snapshot("v12-prewarmed-inherited-prefix",
+                                  "prewarmed")
+        self.assertEqual(prewarmed["fetched"],
+                         self.BOOTSTRAP + [self.FALLBACK])
+        self.assertIn("PLANTED FALLBACK BODY", prewarmed["fragmentTexts"][0])
+        page = self.opened("v12-prewarmed-inherited-prefix")
+        # Walking into chapter 2 costs its three arrival records and no
+        # text request whatever.
+        self.assertEqual(page["fetched"],
+                         self.BOOTSTRAP + [self.FALLBACK] + self.GEN2_ARRIVAL)
+        self.assertEqual(
+            page["requests"],
+            self.owned([(self.FALLBACK, "prewarmed")]
+                       + [(path, "contaminated")
+                          for path in self.GEN2_ARRIVAL]))
+        self.assert_closed_terminal(page, "prewarmed then contaminated")
+        self.assert_nothing_planted_was_served(page,
+                                               "prewarmed then contaminated")
+        self.assertEqual(page["statusWrites"],
+                         [self.GEN1_SPOKEN, self.GEN2_SPOKEN])
+        self.assertEqual(page["hash"], GEN2)
 
 
 class V11UnestablishedPresentationTest(ReplayTest):
