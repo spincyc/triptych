@@ -1249,7 +1249,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "request-critical-state-snapshotted-once"
   criterion = "The request-critical semantic state is derived from the source object exactly once, into a normalized snapshot holding only trusted own data properties with no accessor, no prototype-derived value and no retained dependency on the raw object. After that snapshot exists, no request, fallback, cache, renderer or ownership logic consults the raw object again for a request-critical field: text_prefix, the carried text_path, text_refused, the stated and trail representations that distinguish absent from valid from invalid, and any field that can reopen carried fallback, choose the request address, or change request ownership or refused/absence routing. A static pin holds the request-critical property names to the lines that take the snapshot, so a later reach for one off a raw record fails at the line it is written."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1273,25 +1273,25 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "planted-request-cache-body-ownership-proof"
   criterion = "Each of the three defects is driven through the production sinks with a deterministic body planted at every address it could reach, so a leak is a served and rendered page rather than an absence nobody forbade. The flat request list and the owned journal are pinned entire, the rendered body container is asserted to carry no planted text, no previous body, no fallback body, no prefix body and no second-getter body, prewarmed scenarios prove no cached substitution and no stale body while the malformed state stays visible, and the ownership journal records sequence, path, kind, owner and outcome with no request owner, no fallback owner and no stale body owner for a failed-closed claim. Every scenario stands beside a non-vacuity control that really does fetch and render, and the whole file is run against the uncorrected parent and its failing identities recorded."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "one-authoritative-attempt"
   criterion = "The final package has exactly one authoritative attempt and its ledger says so without prose reinterpreting it. Attempt states and their legal transitions are explicit, a completed validation battery and a sealing package attempt are distinct states so the authoritative count cannot be inflated, and no attempt is simultaneously authoritative and superseded, unresolved and final, or discarded and authoritative. A coherence check run before publication fails if the authoritative attempt count is not one, if the authoritative package or head is not this package or this head, if a superseded attempt is still authoritative, if an unresolved attempt is described as final, or if the outer invocation log or the package prose disagrees with the ledger."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
   id = "unique-attempt-root-logs"
   criterion = "Every attempt writes into its own root log namespace, so no log filename, provenance path, root or command-output file is reused across attempts and a failed attempt's logs stay with that attempt. Package validation rejects an unexplained zero-byte authoritative log, a missing log, a log claimed by two attempts, a log referenced by no attempt, and an attempt referencing a log outside its own root, and focused protocol tests exercise each rejection."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
   id = "passed-v11-behaviour-preserved"
   criterion = "Nothing the V11 review passed is regressed: ordinary accessor non-invocation, own-property projection for ordinary rows and extents, the ordinary refused wording, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, the late vector with all 36 guarded fields exact-pinned and its genuinely-late timing and zero-then-one release, packaged request ownership, the read-only non-executing P8 with its identity binding and final rehash, the ten handoff contents, privacy and ZIP metadata, the UTF-8 and control-byte scan, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
 
   [[deliverables.requirements]]
@@ -1303,8 +1303,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V12 head and its new immutable package records a durable disposition, scoped to stable request-critical normalization, inherited and accessor request closure, descriptor read-once behaviour, planted request, cache, body and ownership proof, and authoritative package-ledger coherence. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"

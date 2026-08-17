@@ -1139,6 +1139,216 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V12 independent review
+
+Disposition: **CHANGES REQUIRED** for exact V12 candidate
+`d312786dd2b23926aa88e29ea15647dfcc7e7e6e`. The directions' comparison
+parent is `0255b84996e1dc24da3ce75ac318c4f774b7957c`; the literal Git parent of
+the V12 record head is `79a306fe50a98e8315d96bb9386c6fe4cacf6e89`, whose parent is the
+comparison parent. This review addresses V11 independent review
+`22b9bdad5e71920a103e3ec3bcf2f79bba50cebb`, inspects
+`evidence/catena-e1-corrections-v12-handoff` at
+`05306fcfe221c1b0456501463e02323047635607`, and binds package
+`build/agent-handoffs/20260817T194757Z-catena-e1-corrections-v12` and its
+1,842,342-byte, 81-member ZIP with SHA-256
+`fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890`.
+Current `origin/main` is `549bf0790503bd873dd8ce6ea0a64cc34f91271d`.
+The review branch is
+`review/catena-wave-1-e1-corrections-v12-independent`.
+
+The exact comparison range is two linear commits and six paths, 1,285
+insertions / 50 deletions. Four paths are durable records, one is the Catena
+test, and `src/web/browser/catena/catena-model.js` is the sole production
+change. `src/web/data/`, release bindings, the common gate, shared shell,
+Liturgy, PDFs, CLI implementation, CSS, and budget ceilings are unchanged.
+Main has not moved from the producer-reported SHA and has no Catena-path
+overlap with this range; only `PROJECT-WORK.md` and
+`promised-deliverables.toml` overlap, without a merge-tree conflict.
+
+`requestSnapshot(record, names)` is correct **for one invocation**. It takes
+one `Object.getPrototypeOf`, one descriptor per requested name, invokes no
+accessor, and returns frozen null-prototype `stated` and `value` records beside
+the frozen `sound` verdict. Within a single `fragmentRow()` or
+`chapterFragments()` projection, the captured `text_path`, `id`, and
+`text_prefix` values alone drive validation and projection. An inherited valid
+prefix and inherited `text_refused` true, false, or getter-backed marker close
+to the conservative malformed/unestablished state; own accessors remain at zero
+invocations. The carried-path valid/alternate, wrong-namespace, traversal,
+counter, throw-on-second-read, and alternating cases establish one descriptor
+read per projection, so V11's validate-one/project-another defect is closed
+inside that projection.
+
+The required stable request-critical snapshot is nevertheless **not one
+stable snapshot for a page render**. The same raw spine and fragments are
+projected three times: `spineUnreadable()` calls `chapterFragments()`, the
+tally calls it again, and `renderChain()` calls it a third time and retains the
+rows that reach request, cache, body, and ownership. The reported descriptor
+counts therefore mean two raw `text_path` reads per projection times three at
+the parent, and one times three at V12: parent 6, V12 3. They do not prove no
+source revisit. Walking invalid-to-valid `text_path`, `text_prefix`, and
+prototype states reproduce a final usable fallback row after an earlier
+different snapshot. The static source pin detects another lexical property
+site but cannot detect repeated execution of the same site. This contradicts
+the required raw-object -> one snapshot -> all request/cache/body/ownership
+flow and is an implementation blocker.
+
+The broader page-wide fail-closed policy for request-critical prototype
+contamination is **accepted**. Only the five semantic contamination names are
+checked, irrelevant prototype pollution leaves ordinary rows unchanged, all
+affected records share the polluted realm, and one deterministic conservative
+state is more truthful than selecting which rows may ignore the same
+contradiction. Ordinary unpolluted corpus rows are unaffected.
+
+The planted request/cache/body/ownership implementation assertions pass at
+V12, and the inherited prefix, both inherited-refusal request doors, the
+alternating descriptor, and the prewarmed cache substitution are non-vacuous
+at the parent. The claimed six-of-six request proof does not pass: the
+noncycling `v12-drifting-carried-path` parent scenario consumes its valid then
+alternate pair in an early projection and reaches no text request or planted
+body; only the alternating sibling leaks `other.json`. In addition,
+`logs/journal-dump.py` stops at V11, so the head and parent packaged journal
+logs are byte-identical and carry no V12 scenario. Exact V12 ownership is
+asserted by passing test source, but the immutable package does not expose the
+new sequence/path/kind/owner/outcome rows without rerunning the harness.
+
+Ordinary behavior passes: genuine absence still requests and renders only a
+valid own-stem carried fallback; an own present-valid prefix composes its
+address; an own present-invalid prefix makes zero requests and retains the
+ordinary supplied-and-refused sentence; malformed/unestablished wording,
+cold/present-valid/prewarmed controls, and primitive namespace closure remain
+exact. The V11 late proof also passes unchanged: all 36 guarded fields are
+exact-pinned and coverage-enforced, the held request releases exactly
+`0 -> 1`, and only the named ownership row changes.
+
+The shipped head/parent results are valid for their actual runs. Each records
+the exact SHA and clean tree before and after; the parent-only head-test
+substitution is explicit and restored to zero porcelain entries. Focused
+Catena is 544/544 at V12 and 534/534 at the parent; the V12 file replayed
+against the parent reports 11 failures plus one error across eleven methods.
+The general tooling is weaker than claimed: `battery.sh` has no expected-SHA
+input, so a clean wrong commit can be labelled `parent`, and it does not make a
+dirty postflight terminally fail when the SHA stays fixed. Thus the final
+evidence is correctly attributed, but clean wrong-endpoint and dirty-end
+negative fixtures remain required.
+
+Validation finds no V12-caused regression. Full discovery is 1,895 at V12 and
+1,885 at the parent, both with the same 14 failure identities, 13 error
+identities, and 11 skipped count, with no Catena failure/error identity. The
+browser gate is identical at both endpoints: 2,290 assertions, 1,836 pass, 226
+fail, 228 skip across 171 pages / 19 routes. `make -k check` is red on the same
+four inherited targets at each endpoint: `check-web-editions-current`,
+`check-release-bindings`, `check-tool-registry`, and `check-examples`. The
+promise ledger validates at 37 tracked / 19 complete. The Catena structural
+check is identical and green at 1,351 fragments / 1 book / 73 canon entries.
+The same four Catena release bindings remain stale and unsigned.
+
+Budgets remain unraised. `catena.css` is byte-identical at 7,629/8,000 whole
+and 2,676/2,700 stripped; `catena.js` is byte-identical at 12,980/13,000 whole
+and 7,554/8,800 stripped. The uncapped model grows from 32,406 to 34,367 whole
+and 7,973 to 8,258 stripped. No governing model ceiling exists, so that
+disclosed growth remains broader budget-owner work rather than this
+disposition's cause.
+
+The current truncated package ledger has one effective authoritative attempt,
+`package-20260817T194757Z-05q7ksvh`, bound to the exact package and V12 head;
+the two other shipped package attempts resolve superseded. That happy-path
+count does not close package authority. Four earlier discarded package
+attempts (`190420`, `190608`, `190839`, `190959`) and the four earlier battery
+cohorts are absent from the sealed ledger/evidence branch despite provenance
+claiming every attempt and its retained ledger is present. The earlier epoch's
+ordinals were reused. Battery rows described as set aside remain `complete`
+with empty reasons, and one partial battery has no terminal disposition. The
+frozen ledger also places attempt 04's 19:46 supersession inside attempt 05's
+purported 19:45:30 P5 copy and gives the final attempt a later embedded
+timestamp than the evidence commit, leaving chronology internally untruthful
+or unexplained.
+
+Marking the package authoritative before P7/P8 is **not acceptable in this
+implementation**. The repository protocol does not itself prohibit a sealed
+candidate at P5, but a later P7/P8 failure writes best-effort sibling markers
+and an external superseding row while the package and ZIP keep their internal
+authoritative row. `authority-coherence.py` does not consume the ZIP, sidecar,
+P8 transcript, external complete ledger, or sibling discard marker, and its
+positive fixture passes without a ZIP or P8 result. A durable false-authority
+state therefore needs external reinterpretation, which the review explicitly
+forbids.
+
+The authority checker returns `PASS (0 problems)` for the actual happy path,
+but its negative coverage is incomplete. It accepts a second authoritative
+state row, an authoritative winner followed by a discarded state, multiline or
+uppercase contradictory authority prose, a wrong package on the authoritative
+outer-log line, and prose that omits the winner. The final preflight dirty tree
+is mechanically refused, but a clean wrong endpoint is not. Consequently the
+package does not mechanically reject all authority and endpoint contradictions
+required by the review.
+
+P8 itself passes without regression: archive code is never executed, trusted
+external verifier/auditor copies operate read-only, and the exact ZIP remains
+1,842,342 bytes with SHA-256
+`fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890`
+before and after. The ZIP has one safe root, 81 unique regular members, 80
+manifest rows covering every other member, valid CRCs, exact local/central/EOCD
+arithmetic, fixed metadata, and no trailing bytes. An independent final scan
+finds 69 UTF-8 text members plus 12 PNGs, with zero NUL, carriage-return,
+forbidden-control, or decoding failures. The producer's `70 file(s)` count is
+a mixed pre-final scan, not a count of final text members.
+
+The shipped-tool byte claim is only partly established. All 15 tools currently
+match byte-for-byte between the preserved external anchor, package directory,
+and ZIP. Contemporaneous executed-to-shipped digest evidence exists directly
+for only the verifier, renderer, and two auditors; the other executed helpers
+have no executed-byte digest, and `test-authority-coherence.py` has no producer
+transcript. Present equality with a mutable, unversioned anchor does not prove
+which historical bytes ran.
+
+The lexical handoff section checker reports 10/10, but substantive completeness
+fails. `HANDOFF.md` says eleven limitations while twelve exist; the closure
+record says the parent fails ten ways across nine methods while derived claims
+say twelve across eleven; the artifact inventory omits the tracked
+`.handoff-inventory.log`; and `checks.txt` claims every command while expressly
+omitting seal, sanitize, derive, and audit commands. The package's dedicated
+V12 journal is absent as noted above.
+
+Privacy is a blocker. The tracked outer assembly/P8 logs expose
+`/home/ksh/git/worktrees/triptych/e1-catena-v3`, the account name, and the
+`.agents/v12-pkgtools` anchor on twelve lines. The package and ZIP retain a
+generic `/tmp/tmp.tyNWBMUvrj` root and the flattened workspace slug in
+`checks.txt`, order ledgers, and `attempts.json`. This directly contradicts
+`PRIVACY-AUDIT.md`'s claimed outer-log/P8/member coverage and the repository's
+machine-specific-path boundary. PNG metadata and ZIP entry metadata themselves
+are clean.
+
+The evidence ref is the direct child of the unchanged V12 candidate and adds
+only the named handoff artifacts. The V12 implementation ref did not move after
+seal, both V11 packages remain untouched, and `origin/main` did not move or
+overlap a V12 Catena path. These identity and ownership facts pass but do not
+repair the implementation and package defects above.
+
+The broader E1 blockers remain open and are not reasons for this disposition:
+sole semantic projection beyond the request snapshot; orphan sources;
+source-only fragments; scalar/nested translator coercion; malformed/padded
+absence; broader selection/order; whole refusal and five verse shapes;
+unreadable roots and `bibles.json`; broader terminal and corrected-oracle proof;
+CLI/web duplication; model/combined budget governance; the historical data
+seam; four release bindings; common gate; B0/shared shell; real-device/AT;
+protected Liturgy; PDFs; and cumulative-history reconciliation. The additional
+three-projections-per-render finding belongs to the same stable-snapshot
+correction and is not deferred as a broader blocker.
+
+Exact next action: start one bounded V13 from exact V12 head
+`d312786dd2b23926aa88e29ea15647dfcc7e7e6e`. Normalize each loaded chapter's
+request-critical spine and fragment state once, retain that trusted projection,
+and pass it unchanged through readability, tally, request/cache/body, and
+ownership consumers. Add walking invalid-to-valid prefix/path/prototype tests
+that assert one total observation per loaded record, and make all six planted
+parent scenarios non-vacuous while shipping their exact V12 ownership journals.
+Then issue a fresh immutable package with one complete append-only lane ledger,
+no ordinal reuse, truthful terminal reasons/times, post-P8 publication authority
+bound to the ZIP hash/size/P8 result, full negative authority and endpoint
+fixtures, executed/shipped digests for every claimed tool, substantive handoff
+inventory, and privacy scanning of every member and outer artifact. Do not
+enter another E1 blocker, integrate, merge, re-sign, deploy, or cut over.
+
 ### E1 Catena route-owned correction lane, V12
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v12-2026-08-17 -->
