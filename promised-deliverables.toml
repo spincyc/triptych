@@ -1241,6 +1241,72 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v12-2026-08-17"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-17 E1 Catena V11 independent review (22b9bdad5 on review/catena-wave-1-e1-corrections-v11-independent, CHANGES REQUIRED at 0255b8499) with exactly its stated next action: normalize the request-critical semantic state exactly once into a stable trusted snapshot of own data properties, treat an inherited spine text_prefix and an inherited text_refused marker as contaminated state that fails closed rather than as absence or as nothing at all, read a carried text_path descriptor once so the value validated is the value projected and requested, add planted request, cache, body and ownership regressions for all three at the production sinks, issue one immutable exact-head V12 handoff whose ledger carries exactly one terminal authoritative attempt with unique attempt-root logs and a mechanical check that rejects cross-record authority disagreement, record every other blocker open and untouched, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "request-critical-state-snapshotted-once"
+  criterion = "The request-critical semantic state is derived from the source object exactly once, into a normalized snapshot holding only trusted own data properties with no accessor, no prototype-derived value and no retained dependency on the raw object. After that snapshot exists, no request, fallback, cache, renderer or ownership logic consults the raw object again for a request-critical field: text_prefix, the carried text_path, text_refused, the stated and trail representations that distinguish absent from valid from invalid, and any field that can reopen carried fallback, choose the request address, or change request ownership or refused/absence routing. A static pin holds the request-critical property names to the lines that take the snapshot, so a later reach for one off a raw record fails at the line it is written."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "inherited-prefix-is-not-absence"
+  criterion = "An inherited valid spine text_prefix is not classified as genuine absence and is not classified as an ordinary supplied statement. It fails closed to one conservative malformed/unestablished state: no carried fallback, no prefix request, no body, no cache substitution and no ownership reassignment. Genuine absence still opens a validated own-stem carried path and an own present-valid prefix still composes its own address, both asserted beside it as positive controls."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "inherited-refusal-closes-an-own-valid-claim"
+  criterion = "An inherited or prototype-written text_refused marker closes an otherwise own-valid claim rather than being ignored. Own valid text_prefix with inherited text_refused true, with inherited text_refused false, with a getter-backed inherited marker, with an own valid carried text_path beside it, and with an own valid prefix-derived request each resolve to one conservative malformed/unestablished state: no request, no fallback, no body, and no ordinary valid or refused claim chosen from contaminated state. Prototype contamination of stated, trail and the carried text_path closes the claim on the same rule."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "carried-path-descriptor-read-once"
+  criterion = "A carried text_path descriptor is read once per projection and never twice, and that one captured value is what validation, projection, the request decision, the ownership journal and the renderer state all use, with no second source-object property read. Request-critical accessors are not invoked at all, so the accessor invocation count is asserted at zero rather than at one, and an accessor-backed request-critical field is classified malformed/unestablished by descriptor inspection. A deterministic descriptor matrix covers a drifting getter, valid-then-wrong-namespace, valid-then-traversal, a counter, throw-on-second-read and alternating body identity; the projected address equals the exact snapshotted validated value and no second value reaches projection, request, body or ownership."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "planted-request-cache-body-ownership-proof"
+  criterion = "Each of the three defects is driven through the production sinks with a deterministic body planted at every address it could reach, so a leak is a served and rendered page rather than an absence nobody forbade. The flat request list and the owned journal are pinned entire, the rendered body container is asserted to carry no planted text, no previous body, no fallback body, no prefix body and no second-getter body, prewarmed scenarios prove no cached substitution and no stale body while the malformed state stays visible, and the ownership journal records sequence, path, kind, owner and outcome with no request owner, no fallback owner and no stale body owner for a failed-closed claim. Every scenario stands beside a non-vacuity control that really does fetch and render, and the whole file is run against the uncorrected parent and its failing identities recorded."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "one-authoritative-attempt"
+  criterion = "The final package has exactly one authoritative attempt and its ledger says so without prose reinterpreting it. Attempt states and their legal transitions are explicit, a completed validation battery and a sealing package attempt are distinct states so the authoritative count cannot be inflated, and no attempt is simultaneously authoritative and superseded, unresolved and final, or discarded and authoritative. A coherence check run before publication fails if the authoritative attempt count is not one, if the authoritative package or head is not this package or this head, if a superseded attempt is still authoritative, if an unresolved attempt is described as final, or if the outer invocation log or the package prose disagrees with the ledger."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "unique-attempt-root-logs"
+  criterion = "Every attempt writes into its own root log namespace, so no log filename, provenance path, root or command-output file is reused across attempts and a failed attempt's logs stay with that attempt. Package validation rejects an unexplained zero-byte authoritative log, a missing log, a log claimed by two attempts, a log referenced by no attempt, and an attempt referencing a log outside its own root, and focused protocol tests exercise each rejection."
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "passed-v11-behaviour-preserved"
+  criterion = "Nothing the V11 review passed is regressed: ordinary accessor non-invocation, own-property projection for ordinary rows and extents, the ordinary refused wording, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, the late vector with all 36 guarded fields exact-pinned and its genuinely-late timing and zero-then-one release, packaged request ownership, the read-only non-executing P8 with its identity binding and final rehash, the ten handoff contents, privacy and ZIP metadata, the UTF-8 and control-byte scan, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v12-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V12 head, its parent 0255b8499, the review addressed 22b9bdad5, the mechanically derived commit list and diff, the stable request-snapshot contract, the inherited text_prefix, inherited text_refused and carried text_path descriptor evidence, the planted request, cache, body and ownership evidence, the ordinary request regressions, the V11 late-vector regression result, the authoritative attempt state machine, the unique attempt-root log index, the one-authoritative-attempt coherence result, the outer-log and ledger consistency result, the empty and reused log rejection tests, the P8 regression, package arithmetic, the required screenshots, the privacy scan, the byte and control scan, fresh validation figures, budgets, release status, the open blockers, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V12 head and its new immutable package records a durable disposition, scoped to stable request-critical normalization, inherited and accessor request closure, descriptor read-once behaviour, planted request, cache, body and ownership proof, and authoritative package-ledger coherence. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-16 E1 Catena V10 independent review (f7cad8b02 on review/catena-wave-1-e1-corrections-v10-independent, CHANGES REQUIRED at ea15d16d2) with exactly its stated next action: require own non-accessor claim members so no inherited, prototype or accessor-backed value can reopen a carried or composed text request, distinguish a genuinely supplied-and-refused reference from a malformed or unestablished state and give the second truthful conservative wording, add the inherited, hybrid, accessor, production-malformed, cache, visible-sink and request-sink regressions, state an expected value for every material field of the 36-field late guard, carry request ownership into the packaged journal, correct the package protocol defects — a genuinely read-only non-executing P8 that rehashes the ZIP after every check, contemporaneous per-command clean/dirty provenance, unique attempt-scoped logs with a mechanical index and explicit discard markers, ZIP metadata that discloses no builder offset, and a sanitizer that removes the workspace and lane-evidence identity by convention — issue one immutable exact-head V11 handoff with all ten required contents and the required screenshots, record every other blocker open and untouched, and return that head for fresh independent review."
@@ -1249,7 +1315,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "own-claim-members-only"
   criterion = "No inherited, prototype or accessor-backed property may create a request, reopen the carried fallback, compose a text path, change the refusal or absence state, render body text or alter request ownership. Every semantic member of the prefix claim, the spine's own text_prefix, the fragment's carried text_path, id and source, the edition join and the extent members is read once as an own DATA property through its descriptor, so an own accessor is never invoked and a getter that answers differently on a second read has no second read; a claim whose three-member contract is reachable above it fails closed rather than being adjudicated. An adversarial matrix covers inherited stated, inherited trail, both inherited, own-false-with-inherited-valid-trail, own-invalid-with-inherited-valid-trail, getters for each member, a throwing getter, a drifting getter, an inherited supplied marker, an inherited refusal marker, and inherited carried path and id — each pinned closed, with the accessor invocation count asserted at zero and the ordinary absent, valid and refused dispositions asserted beside them as positive controls."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1279,7 +1345,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "truthful-provenance-and-unique-attempts"
   criterion = "Clean and dirty tree state is captured contemporaneously for each command rather than inherited from one preflight, so a step that dirties the tree is recorded dirty on its own row. Every authoritative execution attempt has a unique log identity that a rerun cannot reproduce, a log index is derived mechanically, the final assembly writes an outer invocation log, the gate comparison is a recorded step, and every discarded attempt is self-marked non-authoritative with exactly one reason so that no attempt reads as both authoritative and discarded. A compact attempt ledger records attempt id, exact SHA, parent and head, sanitized cwd identity, command or phase, start, end and order, exit or result, disposition, reason if discarded, and log path."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
@@ -1309,7 +1375,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V11 head and its new immutable package records a durable disposition, scoped to inherited and accessor semantic closure, truthful malformed-state presentation, complete late-vector proof, and package, provenance and privacy correctness. This lane does not review its own work and records no acceptance."
-  status = "open"
+  status = "pass"
   evidence = ["guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]

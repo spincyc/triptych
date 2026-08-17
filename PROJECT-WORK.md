@@ -1139,6 +1139,166 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V12
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v12-2026-08-17 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`0255b84996e1dc24da3ce75ac318c4f774b7957c`, recorded by the independent
+review `22b9bdad5e71920a103e3ec3bcf2f79bba50cebb` on branch
+`review/catena-wave-1-e1-corrections-v11-independent`, which independently
+inspected evidence `0ec8cae646f0e3e60c76635b88e51439c7146796` and verified
+package `build/agent-handoffs/20260816T172726Z-catena-e1-corrections-v11`
+with ZIP SHA-256
+`00e93c0f539a7928281912038f135b44666aebb84af4249cb906f54238cae257`. That
+review is a sibling of this line at the reviewed head and is **not merged
+in**; this record states its disposition rather than importing its commits.
+Current `origin/main` is `549bf0790503bd873dd8ce6ea0a64cc34f91271d`, and
+this lane is not integrated with it.
+
+The review passed what V11 got right and did not reopen it: ordinary
+accessor non-invocation, own-property projection for ordinary rows and
+extents, the ordinary refused and the malformed/unestablished wording, the
+cold, present-valid and prewarmed controls, the late vector with all 36
+guarded fields exact-pinned and its genuinely-late timing, packaged request
+ownership, P8 non-execution and read-only with its identity binding and
+rehash, the ten handoff contents, the screenshots this lane's protocol
+requires, privacy and ZIP metadata, the UTF-8 and control-byte scan,
+production ownership boundaries and the existing CSS and JavaScript
+ceilings. It accepted the fail-closed prototype-pollution policy as a
+**design** and found V11 applies it incompletely. It found four things, and
+this lane answers those four and nothing else.
+
+**Three doors, and behind them one defect: the record was observed more
+than once, and the observations were allowed to disagree.** `ownData` made
+an inherited member invisible, and invisible is not the same as refused. An
+inherited valid spine `text_prefix` therefore produced a claim bit-identical
+to the one a spine that never mentioned a prefix produces — genuine
+absence, the single state that reopens the carried fallback — so a polluted
+record reached `fragmentText`, the cache and `T.loadJSON` with a live
+address. `ownContract` asked `Object.prototype` about `stated`, `said` and
+`trail` and about nothing else, so `Object.prototype.text_refused = true`
+stood beside an own-valid claim and the claim still composed its request.
+And the carried `text_path` descriptor was read twice, once for the
+own-stem test and once for the value, so a drifting descriptor validated
+one address and handed `fetch` another; the address that reached the
+network had passed no test at all.
+
+**The request-critical state is now taken once and held.**
+`requestSnapshot` inspects one record with one descriptor read per
+requested name and one question to its prototype, and returns a
+null-prototype record of frozen own data. `REQUEST_MEMBERS` names the five
+fields that decide whether a request happens, where it goes, and who owns
+the answer — `text_prefix`, the carried `text_path`, `text_refused`,
+`stated` and `trail` — and contamination in any of them is neither absence
+nor an ordinary refusal but the one conservative malformed/unestablished
+state. The contract is stated rather than left to be inferred: a
+request-critical field answered by an accessor is **declined without being
+called**, so the invocation count stays zero rather than becoming one; a
+field answered by a data descriptor is read **exactly once**, so the value
+validated is by construction the value projected and requested. The
+fallback decision, the composed address, the carried address, the refusal,
+the ownership journal and the renderer's row are all answered from the
+snapshot. `catena.js` is untouched: the row it consumes is already a
+trusted projection of own data properties, so the snapshot boundary did not
+need to cross into rendering, and the page stood at 20 gzipped bytes of
+ceiling.
+
+**Two committed assertions required the wrong answer, and are corrected
+with their reasons.** The spine's inherited prefix was pinned **equal to
+genuine absence** — the review named that assertion — and an inherited
+carried path, an accessor carried path and an inherited id were pinned as
+ordinary no-text rows rather than as contaminated ones. Each now reaches
+the same conservative state as every other contaminated claim. These are
+the only expected values this lane changes, and both changes make a closure
+stricter rather than looser.
+
+**The proof is planted, and it fires at the parent.** A model matrix drives
+the review's exact reproductions, ten `Object.prototype` and inherited
+combinations including a getter-backed marker and each of `stated`, `trail`
+and `text_path` polluted, and six drifting descriptors — drifting getter,
+valid-then-wrong-namespace, valid-then-traversal, counter,
+throw-on-second-read and alternating body identity — asserting one
+descriptor ask per projection, **zero** accessor invocations, and that no
+second value reaches projection, request, body or ownership. Six replay
+scenarios drive the same three inputs through `T.loadJSON`, the page's
+cache and the renderer, with a deterministic body planted at every address
+each defect could reach and a non-vacuity control beside each that really
+does fetch and render. Two new harness hooks exist because a prototype and
+a drifting descriptor are not documents and neither `files` nor `raw` can
+express one: a served record may be given an ancestor, and `Object.prototype`
+may be polluted for exactly one scenario and is removed in a `finally`.
+Replayed against the uncorrected parent, the file fails **twelve ways
+across eleven methods** — eleven identities across ten methods behavioural,
+plus the model digest pin. The alternating descriptor **fetches and
+renders** `structure/catena/text/other.json`; the inherited refusal marker
+fetches both the composed and the carried address; the prewarmed
+contaminated route serves the planted fallback body to the reader; and the
+throw-on-second-read descriptor throws, because under V11 there is a second
+read for it to throw on. A static pin asserts the four request-critical
+property names are written in exactly three lines of the model — the list
+that declares them and the two calls that snapshot — so a later lane that
+reaches for one off a raw record fails at the line it writes.
+
+**The package could not say which package it was.** The V11 ledger called
+the superseded attempt authoritative and the shipped attempt unresolved,
+and only prose repaired it. Two things were conflated: a battery that
+completed its validation and a package attempt that became the one to
+review were both written `authoritative`, so the count could never be one.
+The states are now separated and their legal transitions defined; only a
+package attempt may be authoritative, exactly one may be, and a coherence
+check run before publication fails on a second authoritative attempt, on an
+authoritative attempt that is not this package or not this head, on an
+attempt that is both authoritative and discarded or superseded, on an
+unresolved attempt described as final, and on any disagreement between the
+ledger, the outer invocation log and the package's own prose. Every attempt
+now writes into its own log root, so a failed attempt's logs stay with that
+attempt; the V11 package had one log claimed by six attempts and another by
+five. Package validation rejects an unexplained zero-byte claimed log, a
+missing log, a log claimed by two attempts, a log referenced by no attempt,
+and an attempt referencing a log outside its own root.
+
+Fresh validation, measured at **both endpoints** — this head and the exact
+reviewed parent — because an exit code cannot tell an inherited failure from
+a caused one. Focused Catena is **544** green at this head, up from 534 at
+the parent. `scripts/_catena.py check` passes at 1,351 fragments / 1 book /
+73 canon entries. Full discovery is **1,895** tests at this head and 1,885
+at the parent, with the identical inherited 14 failures / 13 errors / 11
+skips at both. `make -k check` exits 2 on **the same four targets at both
+endpoints** — `check-web-editions-current`, `check-release-bindings`,
+`check-tool-registry` and `check-examples` — all inherited. The browser gate
+is 2,290 assertions, 1,836 / 226 / 228 across 171 pages and 19 routes,
+identical at both endpoints and identical to the V10 and V11 reports. The
+promise ledger validates at 37 tracked / 19 complete. Budgets unraised, and
+both capped files are byte-identical at both endpoints: `catena.css`
+7,629/8,000 whole and 2,676/2,700 stripped; `catena.js` 12,980/13,000 whole
+and 7,554/8,800 stripped. The
+unbudgeted model grows 32,406 to 34,367 gzipped whole and 7,973 to 8,258
+stripped; disclosed, not presented as unchanged load, and the standing
+question of whether the model and the combined route payload need a
+governed ceiling remains the budget owner's. `src/web/data/` has zero
+changes: every adversarial fixture lives in the test file and is served by
+the replay harness's own stub network. Four stale release bindings remain
+fail-closed and unsigned, none re-signed.
+
+Every other blocker remains open and untouched, as the V11 review left it:
+projection not yet the sole semantic source beyond this request-critical
+snapshot; orphan raw sources; source-only fragments still counting; scalar
+and nested translator coercion; malformed and padded absence findings;
+refusal verse validation; the broader partial-selection ordering defects;
+unreadable roots and the unreadable `bibles.json` prose; the broader
+terminal and corrected-oracle proofs outside this lane's vectors; the
+CLI/web duplicated semantic model; the uncapped combined and model payload
+question, answered here only by accurate disclosure; and the historical
+data-seam contradiction. Release bindings, the common gate, B0/shared
+shell, real-device and assistive-technology evidence, protected Liturgy and
+PDFs remain separately owned. E1 is not integrated.
+
+Status: **awaiting fresh independent review** of the exact V12 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v12-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ### E1 Catena route-owned correction lane, V11
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v11-2026-08-16 -->
