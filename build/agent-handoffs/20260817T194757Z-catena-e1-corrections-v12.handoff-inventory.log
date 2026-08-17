@@ -1,0 +1,58 @@
+handoff inventory: the ten required contents of HANDOFF.md
+
+  #   REQUIRED CONTENT                                                              VERDICT
+  --  ----------------------------------------------------------------------------  -------
+  1   task and intended outcome                                                     PRESENT
+  2   current branch, or `detached HEAD` when applicable                            PRESENT
+  3   current commit SHA and the task's base commit when known                      PRESENT
+  4   whether the reviewed state includes uncommitted changes                       PRESENT
+  5   focused files changed                                                         PRESENT
+  6   preview URLs or exact startup commands, including required route state        PRESENT
+  7   implementation summary                                                        PRESENT
+  8   known limitations                                                             PRESENT
+  9   unresolved decisions                                                          PRESENT
+  10  artifact inventory, including why any conditional artifact class was omitted  PRESENT
+
+required core files
+  FILE               STATE    NOTE
+  -----------------  -------  ----
+  HANDOFF.md         PRESENT
+  REVIEW_REQUEST.md  PRESENT
+  changes.patch      PRESENT
+  checks.txt         PRESENT
+
+artifact inventory against the package's real artifacts
+  ARTIFACT                                                            WHERE           INVENTORY
+  ------------------------------------------------------------------  --------------  ---------
+  CLAIM-CLOSURE.md                                                    in package      NAMED
+  DERIVED-CLAIMS.md                                                   in package      NAMED
+  EVIDENCE-INDEX.md                                                   in package      NAMED
+  HANDOFF.md                                                          in package      NAMED
+  LIMITATIONS.md                                                      in package      NAMED
+  MANIFEST.sha256                                                     in package      NAMED
+  PRIVACY-AUDIT.md                                                    in package      NAMED
+  PROVENANCE.md                                                       in package      NAMED
+  REVIEW_REQUEST.md                                                   in package      NAMED
+  UNRESOLVED-BLOCKERS.md                                              in package      NAMED
+  changed-files.txt                                                   in package      NAMED
+  changes.patch                                                       in package      NAMED
+  checks.txt                                                          in package      NAMED
+  claims.json                                                         in package      NAMED
+  commits.txt                                                         in package      NAMED
+  logs/                                                               in package      NAMED
+  screenshots/                                                        in package      NAMED
+  20260817T194757Z-catena-e1-corrections-v12.zip                      beside package  NAMED
+  20260817T194757Z-catena-e1-corrections-v12.zip.sha256               beside package  NAMED
+  20260817T194757Z-catena-e1-corrections-v12.assemble.log             beside package  NAMED
+  20260817T194757Z-catena-e1-corrections-v12.verify-final.log         beside package  NAMED
+  20260817T194757Z-catena-e1-corrections-v12.authority-coherence.log  beside package  NAMED
+
+conditional artifact classes
+  CLASS         STATE                   NOTE
+  ------------  ----------------------  ----
+  screenshots/  PRESENT
+  logs/         PRESENT
+  sources.md    OMITTED, REASON STATED
+
+problems: 0
+handoff inventory: COMPLETE

@@ -1,0 +1,126 @@
+PREFLIGHT battery=head
+2026-08-17T19:11:10Z
+attempt=head-20260817T191110Z-01x4g2mm
+attempt-no=1
+sha=d312786dd2b23926aa88e29ea15647dfcc7e7e6e
+porcelain=clean
+cwd=$REPO
+log-prefix=01
+log-root=logs/attempt-01
+log-naming=every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+tree-state=read before AND after every command, not once at preflight
+2026-08-17T19:11:10Z
+START focused-catena
+ORDER: 1
+LOG: logs/attempt-01/focused-catena-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:11:14Z
+END focused-catena
+2026-08-17T19:11:14Z
+START catena-check
+ORDER: 2
+LOG: logs/attempt-01/catena-check-head.log
+TREE-BEFORE: clean
+CMD: python3 scripts/_catena.py check
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:11:17Z
+END catena-check
+2026-08-17T19:11:17Z
+START promised
+ORDER: 3
+LOG: logs/attempt-01/promised-head.log
+TREE-BEFORE: clean
+CMD: tools/tpt check-promised-deliverables
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:11:17Z
+END promised
+2026-08-17T19:11:17Z
+START full-discovery
+ORDER: 4
+LOG: logs/attempt-01/full-discovery-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+TREE-AFTER: clean
+2026-08-17T19:19:19Z
+END full-discovery
+2026-08-17T19:19:19Z
+START make-check
+ORDER: 5
+LOG: logs/attempt-01/make-check-head.log
+TREE-BEFORE: clean
+CMD: make -k check
+exit=2
+TREE-AFTER: clean
+2026-08-17T19:24:11Z
+END make-check
+2026-08-17T19:24:11Z
+START release-bindings
+ORDER: 6
+LOG: logs/attempt-01/release-bindings-head.log
+TREE-BEFORE: clean
+CMD: make check-release-bindings
+exit=2
+TREE-AFTER: clean
+2026-08-17T19:24:12Z
+END release-bindings
+2026-08-17T19:24:12Z
+START public-site
+ORDER: 7
+LOG: logs/attempt-01/public-site-head.log
+TREE-BEFORE: clean
+CMD: make public-site
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:24:17Z
+END public-site
+2026-08-17T19:24:17Z
+START browser-gate
+ORDER: 8
+LOG: logs/attempt-01/browser-gate-head.log
+TREE-BEFORE: clean
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/stage/logs/attempt-01/browser-gate-head.json' > /dev/null; gate=$?; python3 '$WORKSPACE/$EVIDENCE/gate-summary.py' '$SCRATCH/-home-<user>-git-worktrees-triptych-e1-catena-v3/<uuid>/scratchpad/stage/logs/attempt-01/browser-gate-head.json'; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same JSON to stdout; discarded so the report ships once)'; exit $gate
+exit=1
+TREE-AFTER: clean
+2026-08-17T19:25:54Z
+END browser-gate
+2026-08-17T19:25:54Z
+START browser-static
+ORDER: 9
+LOG: logs/attempt-01/browser-static-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:25:55Z
+END browser-static
+2026-08-17T19:25:55Z
+START gzip-sizes
+ORDER: 10
+LOG: logs/attempt-01/gzip-sizes-head.log
+TREE-BEFORE: clean
+CMD: python3 '$WORKSPACE/$EVIDENCE/gzip-sizes.py' src/web/browser/catena
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:25:55Z
+END gzip-sizes
+2026-08-17T19:25:55Z
+START request-journals
+ORDER: 11
+LOG: logs/attempt-01/request-journals-head.log
+TREE-BEFORE: clean
+CMD: python3 '$WORKSPACE/$EVIDENCE/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+TREE-AFTER: clean
+2026-08-17T19:25:57Z
+END request-journals
+POSTFLIGHT battery=head
+2026-08-17T19:25:57Z
+sha=d312786dd2b23926aa88e29ea15647dfcc7e7e6e
+porcelain=clean
+sha-drift=none

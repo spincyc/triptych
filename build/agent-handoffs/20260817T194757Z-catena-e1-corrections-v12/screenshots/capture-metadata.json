@@ -1,0 +1,1531 @@
+{
+  "artifact": "screenshots/ for the V12 Catena request-critical-state correction",
+  "head": {
+    "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e"
+  },
+  "parent": {
+    "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c"
+  },
+  "privacy": "No absolute filesystem path, account name, hostname, port, local timestamp or session identifier appears in this file, in any filename, or in any image. `$REPO` is the checkout root, `$SCRATCH` the session scratchpad and `$CHROMIUM` the browser binary. Every PNG was parsed chunk by chunk and carries only IHDR, IDAT and IEND — no tEXt, iTXt, zTXt, eXIf, tIME or iCCP. No file under `src/web/data/` was read, written or altered, in either checkout.",
+  "counts": {
+    "images": 12,
+    "real_corpus": 0,
+    "adversarial": 12,
+    "pairs": 6
+  },
+  "pairs": [
+    {
+      "pair": "catena--inherited-prefix--1440x900",
+      "before": "before--catena--inherited-prefix--1440x900.png",
+      "after": "after--catena--inherited-prefix--1440x900.png",
+      "before_sha256": "1d9f1df05c29aa119c2a5d8693ded9db3d1ce72cec28f59fe7076e8b6cfc18b3",
+      "after_sha256": "53170bbe7d65ab4eb9a53632d218d5d72141b6f15335b559d0508cc9719f3ae3",
+      "identical_bytes": false,
+      "pixels_differing": 10068,
+      "of_total": 1296000,
+      "bbox": {
+        "x": [
+          838,
+          1371
+        ],
+        "y": [
+          70,
+          899
+        ]
+      },
+      "pixels_by_row_band": {
+        "50": 1,
+        "750": 2066,
+        "800": 4388,
+        "850": 3613
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "after_text": "No text reference is established for this fragment, so no text is shown."
+    },
+    {
+      "pair": "catena--inherited-prefix--393x852",
+      "before": "before--catena--inherited-prefix--393x852.png",
+      "after": "after--catena--inherited-prefix--393x852.png",
+      "before_sha256": "c31f56d5f2236c632cb750875285f55754a4aa7f9b4274446d8ca89168971a2b",
+      "after_sha256": "417de8389ea3d04d945701cd1141a39a264279ead9ccf30313a6670ee65cae59",
+      "identical_bytes": false,
+      "pixels_differing": 64525,
+      "of_total": 334836,
+      "bbox": {
+        "x": [
+          16,
+          376
+        ],
+        "y": [
+          218,
+          851
+        ]
+      },
+      "pixels_by_row_band": {
+        "200": 3236,
+        "250": 3774,
+        "300": 4623,
+        "350": 2859,
+        "400": 1258,
+        "450": 3656,
+        "500": 6563,
+        "550": 6665,
+        "600": 6239,
+        "650": 6293,
+        "700": 6429,
+        "750": 6264,
+        "800": 6228,
+        "850": 438
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "after_text": "No text reference is established for this fragment, so no text is shown."
+    },
+    {
+      "pair": "catena--inherited-refusal--1440x900",
+      "before": "before--catena--inherited-refusal--1440x900.png",
+      "after": "after--catena--inherited-refusal--1440x900.png",
+      "before_sha256": "cfc5623575e67ff74ce778ea7197c63a2148cc8f6fd9ec68fb3eab8754a50fea",
+      "after_sha256": "53170bbe7d65ab4eb9a53632d218d5d72141b6f15335b559d0508cc9719f3ae3",
+      "identical_bytes": false,
+      "pixels_differing": 10217,
+      "of_total": 1296000,
+      "bbox": {
+        "x": [
+          838,
+          1371
+        ],
+        "y": [
+          70,
+          899
+        ]
+      },
+      "pixels_by_row_band": {
+        "50": 1,
+        "100": 1,
+        "750": 2066,
+        "800": 4477,
+        "850": 3672
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED COMPOSED BODY, planted at the address an own valid text_prefix composes.",
+      "after_text": "No text reference is established for this fragment, so no text is shown."
+    },
+    {
+      "pair": "catena--inherited-refusal--393x852",
+      "before": "before--catena--inherited-refusal--393x852.png",
+      "after": "after--catena--inherited-refusal--393x852.png",
+      "before_sha256": "0260902f01fae1783586a7bdb0e1484fdcc3e76d3d752f3766d0e0f999fd691f",
+      "after_sha256": "417de8389ea3d04d945701cd1141a39a264279ead9ccf30313a6670ee65cae59",
+      "identical_bytes": false,
+      "pixels_differing": 64816,
+      "of_total": 334836,
+      "bbox": {
+        "x": [
+          16,
+          376
+        ],
+        "y": [
+          218,
+          851
+        ]
+      },
+      "pixels_by_row_band": {
+        "200": 3236,
+        "250": 3839,
+        "300": 4849,
+        "350": 2859,
+        "400": 1258,
+        "450": 3656,
+        "500": 6563,
+        "550": 6665,
+        "600": 6239,
+        "650": 6293,
+        "700": 6429,
+        "750": 6264,
+        "800": 6228,
+        "850": 438
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED COMPOSED BODY, planted at the address an own valid text_prefix composes.",
+      "after_text": "No text reference is established for this fragment, so no text is shown."
+    },
+    {
+      "pair": "catena--drifting-path--1440x900",
+      "before": "before--catena--drifting-path--1440x900.png",
+      "after": "after--catena--drifting-path--1440x900.png",
+      "before_sha256": "7880c49362ac19cbde8e43bdb8af4b4d21b662f4868cdb6496367f7922c65edc",
+      "after_sha256": "1d9f1df05c29aa119c2a5d8693ded9db3d1ce72cec28f59fe7076e8b6cfc18b3",
+      "identical_bytes": false,
+      "pixels_differing": 4707,
+      "of_total": 1296000,
+      "bbox": {
+        "x": [
+          838,
+          1132
+        ],
+        "y": [
+          137,
+          899
+        ]
+      },
+      "pixels_by_row_band": {
+        "100": 1,
+        "800": 1430,
+        "850": 3276
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED SECOND-READ BODY, planted at the address a drifting descriptor hands over on its second ask.",
+      "after_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address."
+    },
+    {
+      "pair": "catena--drifting-path--393x852",
+      "before": "before--catena--drifting-path--393x852.png",
+      "after": "after--catena--drifting-path--393x852.png",
+      "before_sha256": "70619a5ec33aa8bc3d1b6583f28c79959154c6b9d71672430e411a32a05969c5",
+      "after_sha256": "c31f56d5f2236c632cb750875285f55754a4aa7f9b4274446d8ca89168971a2b",
+      "identical_bytes": false,
+      "pixels_differing": 55397,
+      "of_total": 334836,
+      "bbox": {
+        "x": [
+          16,
+          376
+        ],
+        "y": [
+          271,
+          851
+        ]
+      },
+      "pixels_by_row_band": {
+        "250": 2516,
+        "300": 3224,
+        "350": 4860,
+        "400": 2763,
+        "450": 721,
+        "500": 3822,
+        "550": 6479,
+        "600": 6190,
+        "650": 7062,
+        "700": 5391,
+        "750": 5589,
+        "800": 6263,
+        "850": 517
+      },
+      "before_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED SECOND-READ BODY, planted at the address a drifting descriptor hands over on its second ask.",
+      "after_text": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address."
+    }
+  ],
+  "images_sharing_a_digest": [
+    {
+      "sha256": "1d9f1df05c29aa119c2a5d8693ded9db3d1ce72cec28f59fe7076e8b6cfc18b3",
+      "files": [
+        "after--catena--drifting-path--1440x900.png",
+        "before--catena--inherited-prefix--1440x900.png"
+      ]
+    },
+    {
+      "sha256": "c31f56d5f2236c632cb750875285f55754a4aa7f9b4274446d8ca89168971a2b",
+      "files": [
+        "after--catena--drifting-path--393x852.png",
+        "before--catena--inherited-prefix--393x852.png"
+      ]
+    },
+    {
+      "sha256": "53170bbe7d65ab4eb9a53632d218d5d72141b6f15335b559d0508cc9719f3ae3",
+      "files": [
+        "after--catena--inherited-prefix--1440x900.png",
+        "after--catena--inherited-refusal--1440x900.png"
+      ]
+    },
+    {
+      "sha256": "417de8389ea3d04d945701cd1141a39a264279ead9ccf30313a6670ee65cae59",
+      "files": [
+        "after--catena--inherited-prefix--393x852.png",
+        "after--catena--inherited-refusal--393x852.png"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "filename": "after--catena--drifting-path--1440x900.png",
+      "bytes": 170634,
+      "sha256": "1d9f1df05c29aa119c2a5d8693ded9db3d1ce72cec28f59fe7076e8b6cfc18b3",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "drifting-path",
+      "scenario_title": "a carried path descriptor that answers twice over",
+      "mirrors_test_scenario": "v12-alternating-carried-path",
+      "adversarial_input": "A fragment whose `text_path` descriptor answers one valid same-stem address on the first ask and a different plantable address on every later ask, round and round. A body is planted at both addresses.",
+      "state_description": "CLOSED. The request-critical state is taken once and held, so the value validated is the value requested; the second address is asked for by nothing and its body never appears.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "rendered_sentence_class": "BODY-TEXT (VALIDATED ADDRESS)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1491,
+      "text_requests_made": [
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {
+        "fragment-0": 3
+      },
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph, and WHICH planted body is in it. At the parent it is the body at the drifting descriptor's SECOND address — an address nothing validated; at the head it is the body at the validated first address, and the second address is fetched by nothing.",
+      "pair_partner": "before--catena--drifting-path--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 4707,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1132
+          ],
+          "y": [
+            137,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "100": 1,
+          "800": 1430,
+          "850": 3276
+        }
+      }
+    },
+    {
+      "filename": "after--catena--drifting-path--393x852.png",
+      "bytes": 81807,
+      "sha256": "c31f56d5f2236c632cb750875285f55754a4aa7f9b4274446d8ca89168971a2b",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "drifting-path",
+      "scenario_title": "a carried path descriptor that answers twice over",
+      "mirrors_test_scenario": "v12-alternating-carried-path",
+      "adversarial_input": "A fragment whose `text_path` descriptor answers one valid same-stem address on the first ask and a different plantable address on every later ask, round and round. A body is planted at both addresses.",
+      "state_description": "CLOSED. The request-critical state is taken once and held, so the value validated is the value requested; the second address is asked for by nothing and its body never appears.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "rendered_sentence_class": "BODY-TEXT (VALIDATED ADDRESS)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1804,
+      "text_requests_made": [
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {
+        "fragment-0": 3
+      },
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph, and WHICH planted body is in it. At the parent it is the body at the drifting descriptor's SECOND address — an address nothing validated; at the head it is the body at the validated first address, and the second address is fetched by nothing.",
+      "pair_partner": "before--catena--drifting-path--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 55397,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            271,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "250": 2516,
+          "300": 3224,
+          "350": 4860,
+          "400": 2763,
+          "450": 721,
+          "500": 3822,
+          "550": 6479,
+          "600": 6190,
+          "650": 7062,
+          "700": 5391,
+          "750": 5589,
+          "800": 6263,
+          "850": 517
+        }
+      }
+    },
+    {
+      "filename": "after--catena--inherited-prefix--1440x900.png",
+      "bytes": 171983,
+      "sha256": "53170bbe7d65ab4eb9a53632d218d5d72141b6f15335b559d0508cc9719f3ae3",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-prefix",
+      "scenario_title": "inherited spine prefix, beside a valid carried path",
+      "mirrors_test_scenario": "v12-inherited-prefix-carried",
+      "adversarial_input": "A chapter spine served with NO own `text_prefix` and a valid one on its PROTOTYPE, beside a fragment carrying a valid same-stem `text_path`. A body is planted at the carried address and at the address the inherited prefix composes.",
+      "state_description": "CLOSED. A contract written above the record is neither this route’s absence nor a statement the page derived, so no request is made and the reader is told only what is established.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "No text reference is established for this fragment, so no text is shown.",
+      "rendered_sentence_class": "UNESTABLISHED",
+      "rendered_text_paragraph_class": "fragment-text missing",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1433,
+      "text_requests_made": [],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the fragment carried, fetched because an inherited prefix read as genuine absence; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "before--catena--inherited-prefix--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 10068,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1371
+          ],
+          "y": [
+            70,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "50": 1,
+          "750": 2066,
+          "800": 4388,
+          "850": 3613
+        }
+      }
+    },
+    {
+      "filename": "after--catena--inherited-prefix--393x852.png",
+      "bytes": 81523,
+      "sha256": "417de8389ea3d04d945701cd1141a39a264279ead9ccf30313a6670ee65cae59",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-prefix",
+      "scenario_title": "inherited spine prefix, beside a valid carried path",
+      "mirrors_test_scenario": "v12-inherited-prefix-carried",
+      "adversarial_input": "A chapter spine served with NO own `text_prefix` and a valid one on its PROTOTYPE, beside a fragment carrying a valid same-stem `text_path`. A body is planted at the carried address and at the address the inherited prefix composes.",
+      "state_description": "CLOSED. A contract written above the record is neither this route’s absence nor a statement the page derived, so no request is made and the reader is told only what is established.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "No text reference is established for this fragment, so no text is shown.",
+      "rendered_sentence_class": "UNESTABLISHED",
+      "rendered_text_paragraph_class": "fragment-text missing",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1746,
+      "text_requests_made": [],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the fragment carried, fetched because an inherited prefix read as genuine absence; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "before--catena--inherited-prefix--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 64525,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            218,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "200": 3236,
+          "250": 3774,
+          "300": 4623,
+          "350": 2859,
+          "400": 1258,
+          "450": 3656,
+          "500": 6563,
+          "550": 6665,
+          "600": 6239,
+          "650": 6293,
+          "700": 6429,
+          "750": 6264,
+          "800": 6228,
+          "850": 438
+        }
+      }
+    },
+    {
+      "filename": "after--catena--inherited-refusal--1440x900.png",
+      "bytes": 171983,
+      "sha256": "53170bbe7d65ab4eb9a53632d218d5d72141b6f15335b559d0508cc9719f3ae3",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-refusal",
+      "scenario_title": "inherited refusal marker, beside an own valid prefix",
+      "mirrors_test_scenario": "v12-inherited-refusal-valid-prefix",
+      "adversarial_input": "A spine with an OWN valid `text_prefix`, served while `Object.prototype.text_refused === true`. A body is planted at the composed address and at the carried one.",
+      "state_description": "CLOSED. `text_refused` is one of the five request-critical names, so a prototype naming it fails the whole claim; nothing is composed, nothing is requested, and the conservative sentence stands.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "No text reference is established for this fragment, so no text is shown.",
+      "rendered_sentence_class": "UNESTABLISHED",
+      "rendered_text_paragraph_class": "fragment-text missing",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1433,
+      "text_requests_made": [],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the own valid prefix composed, composed while `Object.prototype.text_refused` was true; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "before--catena--inherited-refusal--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 10217,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1371
+          ],
+          "y": [
+            70,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "50": 1,
+          "100": 1,
+          "750": 2066,
+          "800": 4477,
+          "850": 3672
+        }
+      }
+    },
+    {
+      "filename": "after--catena--inherited-refusal--393x852.png",
+      "bytes": 81523,
+      "sha256": "417de8389ea3d04d945701cd1141a39a264279ead9ccf30313a6670ee65cae59",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-refusal",
+      "scenario_title": "inherited refusal marker, beside an own valid prefix",
+      "mirrors_test_scenario": "v12-inherited-refusal-valid-prefix",
+      "adversarial_input": "A spine with an OWN valid `text_prefix`, served while `Object.prototype.text_refused === true`. A body is planted at the composed address and at the carried one.",
+      "state_description": "CLOSED. `text_refused` is one of the five request-critical names, so a prototype naming it fails the whole claim; nothing is composed, nothing is requested, and the conservative sentence stands.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "HEAD (V12)",
+      "commit": "d312786dd2b23926aa88e29ea15647dfcc7e7e6e",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix after --viewports 1440x900,393x852   # ($REPO = the corrected head checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "No text reference is established for this fragment, so no text is shown.",
+      "rendered_sentence_class": "UNESTABLISHED",
+      "rendered_text_paragraph_class": "fragment-text missing",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1746,
+      "text_requests_made": [],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the own valid prefix composed, composed while `Object.prototype.text_refused` was true; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "before--catena--inherited-refusal--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 64816,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            218,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "200": 3236,
+          "250": 3839,
+          "300": 4849,
+          "350": 2859,
+          "400": 1258,
+          "450": 3656,
+          "500": 6563,
+          "550": 6665,
+          "600": 6239,
+          "650": 6293,
+          "700": 6429,
+          "750": 6264,
+          "800": 6228,
+          "850": 438
+        }
+      }
+    },
+    {
+      "filename": "before--catena--drifting-path--1440x900.png",
+      "bytes": 172565,
+      "sha256": "7880c49362ac19cbde8e43bdb8af4b4d21b662f4868cdb6496367f7922c65edc",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "drifting-path",
+      "scenario_title": "a carried path descriptor that answers twice over",
+      "mirrors_test_scenario": "v12-alternating-carried-path",
+      "adversarial_input": "A fragment whose `text_path` descriptor answers one valid same-stem address on the first ask and a different plantable address on every later ask, round and round. A body is planted at both addresses.",
+      "state_description": "THE LEAK. The parent reads the carried descriptor twice in one projection, so the address that passed the own-stem test and the address handed to `fetch` are two different strings; the body at the second address is fetched and rendered.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED SECOND-READ BODY, planted at the address a drifting descriptor hands over on its second ask.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1516,
+      "text_requests_made": [
+        "structure/catena/text/other.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/other.json"
+      ],
+      "carried_descriptor_reads": {
+        "fragment-0": 6
+      },
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph, and WHICH planted body is in it. At the parent it is the body at the drifting descriptor's SECOND address — an address nothing validated; at the head it is the body at the validated first address, and the second address is fetched by nothing.",
+      "pair_partner": "after--catena--drifting-path--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 4707,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1132
+          ],
+          "y": [
+            137,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "100": 1,
+          "800": 1430,
+          "850": 3276
+        }
+      }
+    },
+    {
+      "filename": "before--catena--drifting-path--393x852.png",
+      "bytes": 80641,
+      "sha256": "70619a5ec33aa8bc3d1b6583f28c79959154c6b9d71672430e411a32a05969c5",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "drifting-path",
+      "scenario_title": "a carried path descriptor that answers twice over",
+      "mirrors_test_scenario": "v12-alternating-carried-path",
+      "adversarial_input": "A fragment whose `text_path` descriptor answers one valid same-stem address on the first ask and a different plantable address on every later ask, round and round. A body is planted at both addresses.",
+      "state_description": "THE LEAK. The parent reads the carried descriptor twice in one projection, so the address that passed the own-stem test and the address handed to `fetch` are two different strings; the body at the second address is fetched and rendered.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED SECOND-READ BODY, planted at the address a drifting descriptor hands over on its second ask.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1829,
+      "text_requests_made": [
+        "structure/catena/text/other.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/other.json"
+      ],
+      "carried_descriptor_reads": {
+        "fragment-0": 6
+      },
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph, and WHICH planted body is in it. At the parent it is the body at the drifting descriptor's SECOND address — an address nothing validated; at the head it is the body at the validated first address, and the second address is fetched by nothing.",
+      "pair_partner": "after--catena--drifting-path--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 55397,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            271,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "250": 2516,
+          "300": 3224,
+          "350": 4860,
+          "400": 2763,
+          "450": 721,
+          "500": 3822,
+          "550": 6479,
+          "600": 6190,
+          "650": 7062,
+          "700": 5391,
+          "750": 5589,
+          "800": 6263,
+          "850": 517
+        }
+      }
+    },
+    {
+      "filename": "before--catena--inherited-prefix--1440x900.png",
+      "bytes": 170634,
+      "sha256": "1d9f1df05c29aa119c2a5d8693ded9db3d1ce72cec28f59fe7076e8b6cfc18b3",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-prefix",
+      "scenario_title": "inherited spine prefix, beside a valid carried path",
+      "mirrors_test_scenario": "v12-inherited-prefix-carried",
+      "adversarial_input": "A chapter spine served with NO own `text_prefix` and a valid one on its PROTOTYPE, beside a fragment carrying a valid same-stem `text_path`. A body is planted at the carried address and at the address the inherited prefix composes.",
+      "state_description": "THE LEAK. The inherited prefix is invisible to the parent, so the spine reads as genuine absence — the one state that opens the carried door — and the fragment’s carried body is fetched and rendered as an ordinary success.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1491,
+      "text_requests_made": [
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the fragment carried, fetched because an inherited prefix read as genuine absence; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "after--catena--inherited-prefix--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 10068,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1371
+          ],
+          "y": [
+            70,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "50": 1,
+          "750": 2066,
+          "800": 4388,
+          "850": 3613
+        }
+      }
+    },
+    {
+      "filename": "before--catena--inherited-prefix--393x852.png",
+      "bytes": 81807,
+      "sha256": "c31f56d5f2236c632cb750875285f55754a4aa7f9b4274446d8ca89168971a2b",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-prefix",
+      "scenario_title": "inherited spine prefix, beside a valid carried path",
+      "mirrors_test_scenario": "v12-inherited-prefix-carried",
+      "adversarial_input": "A chapter spine served with NO own `text_prefix` and a valid one on its PROTOTYPE, beside a fragment carrying a valid same-stem `text_path`. A body is planted at the carried address and at the address the inherited prefix composes.",
+      "state_description": "THE LEAK. The inherited prefix is invisible to the parent, so the spine reads as genuine absence — the one state that opens the carried door — and the fragment’s carried body is fetched and rendered as an ordinary success.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED FALLBACK BODY, planted at the fragment's own carried address.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1804,
+      "text_requests_made": [
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the fragment carried, fetched because an inherited prefix read as genuine absence; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "after--catena--inherited-prefix--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 64525,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            218,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "200": 3236,
+          "250": 3774,
+          "300": 4623,
+          "350": 2859,
+          "400": 1258,
+          "450": 3656,
+          "500": 6563,
+          "550": 6665,
+          "600": 6239,
+          "650": 6293,
+          "700": 6429,
+          "750": 6264,
+          "800": 6228,
+          "850": 438
+        }
+      }
+    },
+    {
+      "filename": "before--catena--inherited-refusal--1440x900.png",
+      "bytes": 171440,
+      "sha256": "cfc5623575e67ff74ce778ea7197c63a2148cc8f6fd9ec68fb3eab8754a50fea",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-refusal",
+      "scenario_title": "inherited refusal marker, beside an own valid prefix",
+      "mirrors_test_scenario": "v12-inherited-refusal-valid-prefix",
+      "adversarial_input": "A spine with an OWN valid `text_prefix`, served while `Object.prototype.text_refused === true`. A body is planted at the composed address and at the carried one.",
+      "state_description": "THE LEAK. The parent asks the prototype about three claim members and about nothing else, so an inherited refusal marker stands beside an own-valid claim and the claim composes its request anyway; the composed body renders.",
+      "viewport": "1440x900",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED COMPOSED BODY, planted at the address an own valid text_prefix composes.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 0,
+      "scroll_rule": "page-top",
+      "document_height": 1516,
+      "text_requests_made": [
+        "structure/catena/text/deeper/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/deeper/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the own valid prefix composed, composed while `Object.prototype.text_refused` was true; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "after--catena--inherited-refusal--1440x900.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 10217,
+        "of_total": 1296000,
+        "bbox": {
+          "x": [
+            838,
+            1371
+          ],
+          "y": [
+            70,
+            899
+          ]
+        },
+        "pixels_by_row_band": {
+          "50": 1,
+          "100": 1,
+          "750": 2066,
+          "800": 4477,
+          "850": 3672
+        }
+      }
+    },
+    {
+      "filename": "before--catena--inherited-refusal--393x852.png",
+      "bytes": 82199,
+      "sha256": "0260902f01fae1783586a7bdb0e1484fdcc3e76d3d752f3766d0e0f999fd691f",
+      "route": "/src/web/browser/catena/index.html (repository copy, served read-only)",
+      "surface": "Catena",
+      "scenario": "inherited-refusal",
+      "scenario_title": "inherited refusal marker, beside an own valid prefix",
+      "mirrors_test_scenario": "v12-inherited-refusal-valid-prefix",
+      "adversarial_input": "A spine with an OWN valid `text_prefix`, served while `Object.prototype.text_refused === true`. A body is planted at the composed address and at the carried one.",
+      "state_description": "THE LEAK. The parent asks the prototype about three claim members and about nothing else, so an inherited refusal marker stands beside an own-valid claim and the claim composes its request anyway; the composed body renders.",
+      "viewport": "393x852",
+      "corpus": "adversarial",
+      "corpus_note": "Scratchpad fixture corpus, built by `$SCRATCH/make_fixture.py` and reached through the page's own `?data=` parameter (`src/web/browser/shared/browser-core.js`, `resolveDataRoot`). No file under `src/web/data/` was read, written or altered, in either checkout: the capture driver's static server refuses every path outside `src/web/browser/catena/`, `src/web/browser/shared/` and the scratchpad fixture root. Every fixture record carries the literal string ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA, and the page renders it in the fragment author line, in the edition apparatus, in the translation control and in every verse.",
+      "checkout": "PARENT (uncorrected)",
+      "commit": "0255b84996e1dc24da3ce75ac318c4f774b7957c",
+      "branch": "(detached)",
+      "capture_tool": "$SCRATCH/capture.mjs (single-purpose CDP driver written for this capture; serves the checkout's browser sources read-only beside a scratchpad fixture corpus, installs the scenario's one contamination behind `window.fetch` before any page script runs, opens the fragment disclosure, reads the rendered sentence back out of the DOM, checks it against what the image is for, and only then screenshots)",
+      "capture_command": "python3 $SCRATCH/make_fixture.py $SCRATCH/fixture && node $SCRATCH/capture.mjs --browser $CHROMIUM --checkout $REPO --fixture $SCRATCH/fixture --out $SCRATCH --prefix before --viewports 1440x900,393x852   # ($REPO = the uncorrected parent checkout)",
+      "disclosure_opened_before_capture": true,
+      "disclosure_state_before_opening": "opened",
+      "rendered_text_read_from_dom": "ADVERSARIAL TEST FIXTURE — NOT REAL CORPUS DATA — PLANTED COMPOSED BODY, planted at the address an own valid text_prefix composes.",
+      "rendered_sentence_class": "BODY-TEXT (LEAKED)",
+      "rendered_text_paragraph_class": "fragment-text",
+      "rendered_text_fully_within_viewport": true,
+      "scrolled_to": 739,
+      "scroll_rule": "fragment-card-anchored",
+      "document_height": 1804,
+      "text_requests_made": [
+        "structure/catena/text/deeper/fallback-owned.json"
+      ],
+      "all_requests_made": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/catena/text/deeper/fallback-owned.json"
+      ],
+      "carried_descriptor_reads": {},
+      "console_errors": [],
+      "page_errors": [],
+      "png_chunks": [
+        "IHDR",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IDAT",
+        "IEND"
+      ],
+      "png_ancillary_chunks": [],
+      "inspect": "The fragment text paragraph. At the parent it holds the planted body of the address the own valid prefix composed, composed while `Object.prototype.text_refused` was true; at the head it holds the unestablished sentence and no request was made.",
+      "pair_partner": "after--catena--inherited-refusal--393x852.png",
+      "pair_identical_bytes": false,
+      "pair_pixel_comparison": {
+        "count": 64816,
+        "of_total": 334836,
+        "bbox": {
+          "x": [
+            16,
+            376
+          ],
+          "y": [
+            218,
+            851
+          ]
+        },
+        "pixels_by_row_band": {
+          "200": 3236,
+          "250": 3839,
+          "300": 4849,
+          "350": 2859,
+          "400": 1258,
+          "450": 3656,
+          "500": 6563,
+          "550": 6665,
+          "600": 6239,
+          "650": 6293,
+          "700": 6429,
+          "750": 6264,
+          "800": 6228,
+          "850": 438
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4313 @@
+OWNED REQUEST JOURNAL — seq | kind | outcome | phase (owning step) | path
+Every request the page made, in the order it made it. `phase` is the step in
+force when the request was issued; `start` is the bootstrap, before any step ran.
+`outcome` is what became of it: completed, held (parked in flight), released
+(let go by a later step), or failed.
+
+== v8-wrong-namespace-prefix
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v8-padded-prefix
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v8-wrong-namespace-carried
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/ns-valid.json
+
+== v7-text-path
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/path-valid.json
+        7 | text            | completed | opened       | structure/catena/text/path-object.json
+        8 | text            | completed | opened       | structure/catena/text/path-array.json
+        9 | text            | completed | opened       | structure/catena/text/path-number.json
+       10 | text            | completed | opened       | structure/catena/text/path-null.json
+       11 | text            | completed | opened       | structure/catena/text/path-empty.json
+       12 | text            | completed | opened       | structure/catena/text/path-space.json
+       13 | text            | completed | opened       | structure/catena/text/path-traversal.json
+       14 | text            | completed | opened       | structure/catena/text/path-absolute.json
+       15 | text            | completed | opened       | structure/catena/text/path-encoded.json
+       16 | text            | completed | opened       | structure/catena/text/path-boolean.json
+
+== v7-text-path-no-prefix
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/carried-valid.json
+
+== v9-refused-prefix-carried
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v9-padded-prefix-carried
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v9-absent-prefix-carried
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/fallback-owned.json
+
+== v9-valid-prefix-carried
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/deeper/fallback-owned.json
+
+== v9-prewarmed-fallback
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: prewarmed
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | prewarmed    | structure/catena/text/fallback-owned.json
+   -- snapshot: refused
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | prewarmed    | structure/catena/text/fallback-owned.json
+        7 | spine           | completed | refused      | structure/catena/01-gen/002.json
+        8 | scripture       | completed | refused      | douay-rheims/chapters/Gen/2.json
+        9 | paragraphs      | completed | refused      | structure/paragraphs/douay-rheims/01-gen/002.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | prewarmed    | structure/catena/text/fallback-owned.json
+        7 | spine           | completed | refused      | structure/catena/01-gen/002.json
+        8 | scripture       | completed | refused      | douay-rheims/chapters/Gen/2.json
+        9 | paragraphs      | completed | refused      | structure/paragraphs/douay-rheims/01-gen/002.json
+
+== v9-late-fallback
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: a-held
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | held      | a-held       | structure/catena/text/fallback-owned.json
+   -- snapshot: b-settled
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | held      | a-held       | structure/catena/text/fallback-owned.json
+        7 | spine           | completed | b-settled    | structure/catena/01-gen/002.json
+        8 | scripture       | completed | b-settled    | douay-rheims/chapters/Gen/2.json
+        9 | paragraphs      | completed | b-settled    | structure/paragraphs/douay-rheims/01-gen/002.json
+   -- snapshot: b-opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | held      | a-held       | structure/catena/text/fallback-owned.json
+        7 | spine           | completed | b-settled    | structure/catena/01-gen/002.json
+        8 | scripture       | completed | b-settled    | douay-rheims/chapters/Gen/2.json
+        9 | paragraphs      | completed | b-settled    | structure/paragraphs/douay-rheims/01-gen/002.json
+   -- snapshot: a-late
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | released  | a-held       | structure/catena/text/fallback-owned.json
+        7 | spine           | completed | b-settled    | structure/catena/01-gen/002.json
+        8 | scripture       | completed | b-settled    | douay-rheims/chapters/Gen/2.json
+        9 | paragraphs      | completed | b-settled    | structure/paragraphs/douay-rheims/01-gen/002.json
+
+== v11-unestablished-null
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-record
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-list
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-number
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-flag
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-empty
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-unestablished-whitespace
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-renderer-order
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+
+== v11-renderer-order-control
+   -- snapshot: start
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+   -- snapshot: opened
+        0 | catena-index    | completed | start        | structure/catena/index.json
+        1 | editions        | completed | start        | bibles.json
+        2 | paragraph-index | completed | start        | structure/paragraphs/index.json
+        3 | spine           | completed | start        | structure/catena/01-gen/001.json
+        4 | scripture       | completed | start        | douay-rheims/chapters/Gen/1.json
+        5 | paragraphs      | completed | start        | structure/paragraphs/douay-rheims/01-gen/001.json
+        6 | text            | completed | opened       | structure/catena/text/fallback-owned.json
+
+
+{
+  "v8-wrong-namespace-prefix": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 3,
+      "fragmentIds": [
+        "same-stem-1",
+        "same-stem-2",
+        "same-stem-3"
+      ],
+      "tallyText": "3 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 3 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 3,
+      "fragmentIds": [
+        "same-stem-1",
+        "same-stem-2",
+        "same-stem-3"
+      ],
+      "tallyText": "3 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 3 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown.",
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown.",
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v8-padded-prefix": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 3,
+      "fragmentIds": [
+        "same-stem-1",
+        "same-stem-2",
+        "same-stem-3"
+      ],
+      "tallyText": "3 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 3 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 3,
+      "fragmentIds": [
+        "same-stem-1",
+        "same-stem-2",
+        "same-stem-3"
+      ],
+      "tallyText": "3 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 3 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 3 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown.",
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown.",
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v8-wrong-namespace-carried": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 10,
+      "fragmentIds": [
+        "ns-valid",
+        "ns-paragraphs-text",
+        "ns-paragraphs",
+        "ns-parent",
+        "ns-root",
+        "ns-sibling",
+        "ns-traversal-in",
+        "ns-absolute",
+        "ns-boundary",
+        "ns-padded"
+      ],
+      "tallyText": "10 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 10 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/ns-valid.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/ns-valid.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 10,
+      "fragmentIds": [
+        "ns-valid",
+        "ns-paragraphs-text",
+        "ns-paragraphs",
+        "ns-parent",
+        "ns-root",
+        "ns-sibling",
+        "ns-traversal-in",
+        "ns-absolute",
+        "ns-boundary",
+        "ns-padded"
+      ],
+      "tallyText": "10 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 10 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "The text of this fragment was not published beside the page.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown."
+      ]
+    }
+  },
+  "v7-text-path": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 12,
+      "fragmentIds": [
+        "path-valid",
+        "path-object",
+        "path-array",
+        "path-number",
+        "path-null",
+        "path-empty",
+        "path-space",
+        "path-traversal",
+        "path-absolute",
+        "path-encoded",
+        "path-boolean",
+        null
+      ],
+      "tallyText": "12 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 12 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 12 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/path-valid.json",
+        "structure/catena/text/path-object.json",
+        "structure/catena/text/path-array.json",
+        "structure/catena/text/path-number.json",
+        "structure/catena/text/path-null.json",
+        "structure/catena/text/path-empty.json",
+        "structure/catena/text/path-space.json",
+        "structure/catena/text/path-traversal.json",
+        "structure/catena/text/path-absolute.json",
+        "structure/catena/text/path-encoded.json",
+        "structure/catena/text/path-boolean.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/path-valid.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/text/path-object.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "structure/catena/text/path-array.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/catena/text/path-number.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 10,
+          "path": "structure/catena/text/path-null.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 11,
+          "path": "structure/catena/text/path-empty.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 12,
+          "path": "structure/catena/text/path-space.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 13,
+          "path": "structure/catena/text/path-traversal.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 14,
+          "path": "structure/catena/text/path-absolute.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 15,
+          "path": "structure/catena/text/path-encoded.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        },
+        {
+          "seq": 16,
+          "path": "structure/catena/text/path-boolean.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 12,
+      "fragmentIds": [
+        "path-valid",
+        "path-object",
+        "path-array",
+        "path-number",
+        "path-null",
+        "path-empty",
+        "path-space",
+        "path-traversal",
+        "path-absolute",
+        "path-encoded",
+        "path-boolean",
+        null
+      ],
+      "tallyText": "12 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 12 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 12 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment was not published beside the page.",
+        "This fragment carries no text file, so nothing of it can be shown."
+      ]
+    }
+  },
+  "v7-text-path-no-prefix": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 10,
+      "fragmentIds": [
+        "carried-valid",
+        "carried-other",
+        "carried-object",
+        "carried-array",
+        "carried-number",
+        "carried-traversal",
+        "carried-absolute",
+        "carried-encoded",
+        "carried-space",
+        "carried-dir"
+      ],
+      "tallyText": "10 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 10 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026",
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/carried-valid.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/carried-valid.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 10,
+      "fragmentIds": [
+        "carried-valid",
+        "carried-other",
+        "carried-object",
+        "carried-array",
+        "carried-number",
+        "carried-traversal",
+        "carried-absolute",
+        "carried-encoded",
+        "carried-space",
+        "carried-dir"
+      ],
+      "tallyText": "10 fragments held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 10 fragments held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 10 fragments held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "The text of this fragment was not published beside the page.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown.",
+        "This fragment carries no text file, so nothing of it can be shown."
+      ]
+    }
+  },
+  "v9-refused-prefix-carried": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v9-padded-prefix-carried": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v9-absent-prefix-carried": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "PLANTED FALLBACK BODY \u2014 reachable only through genuine absence."
+      ]
+    }
+  },
+  "v9-valid-prefix-carried": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/deeper/fallback-owned.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/deeper/fallback-owned.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Composed from the stated prefix and the fragment's own id."
+      ]
+    }
+  },
+  "v9-prewarmed-fallback": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "prewarmed": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "prewarmed",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "PLANTED FALLBACK BODY \u2014 reachable only through genuine absence."
+      ]
+    },
+    "refused": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json",
+        "structure/catena/01-gen/002.json",
+        "douay-rheims/chapters/Gen/2.json",
+        "structure/paragraphs/douay-rheims/01-gen/002.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "prewarmed",
+          "outcome": "completed"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/01-gen/002.json",
+          "kind": "spine",
+          "phase": "refused",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "douay-rheims/chapters/Gen/2.json",
+          "kind": "scripture",
+          "phase": "refused",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/paragraphs/douay-rheims/01-gen/002.json",
+          "kind": "paragraphs",
+          "phase": "refused",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+        "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "chapter-select",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+      "hashWrites": [
+        "#book=Gen&chapter=2&bible=douay-rheims"
+      ],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json",
+        "structure/catena/01-gen/002.json",
+        "douay-rheims/chapters/Gen/2.json",
+        "structure/paragraphs/douay-rheims/01-gen/002.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "prewarmed",
+          "outcome": "completed"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/01-gen/002.json",
+          "kind": "spine",
+          "phase": "refused",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "douay-rheims/chapters/Gen/2.json",
+          "kind": "scripture",
+          "phase": "refused",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/paragraphs/douay-rheims/01-gen/002.json",
+          "kind": "paragraphs",
+          "phase": "refused",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+        "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "chapter-select",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+      "hashWrites": [
+        "#book=Gen&chapter=2&bible=douay-rheims"
+      ],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v9-late-fallback": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "a-held": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "a-held",
+          "outcome": "held"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "b-settled": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json",
+        "structure/catena/01-gen/002.json",
+        "douay-rheims/chapters/Gen/2.json",
+        "structure/paragraphs/douay-rheims/01-gen/002.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "a-held",
+          "outcome": "held"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/01-gen/002.json",
+          "kind": "spine",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "douay-rheims/chapters/Gen/2.json",
+          "kind": "scripture",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/paragraphs/douay-rheims/01-gen/002.json",
+          "kind": "paragraphs",
+          "phase": "b-settled",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+        "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "chapter-select",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+      "hashWrites": [
+        "#book=Gen&chapter=2&bible=douay-rheims"
+      ],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "b-opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json",
+        "structure/catena/01-gen/002.json",
+        "douay-rheims/chapters/Gen/2.json",
+        "structure/paragraphs/douay-rheims/01-gen/002.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "a-held",
+          "outcome": "held"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/01-gen/002.json",
+          "kind": "spine",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "douay-rheims/chapters/Gen/2.json",
+          "kind": "scripture",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/paragraphs/douay-rheims/01-gen/002.json",
+          "kind": "paragraphs",
+          "phase": "b-settled",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+        "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "chapter-select",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+      "hashWrites": [
+        "#book=Gen&chapter=2&bible=douay-rheims"
+      ],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    },
+    "a-late": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json",
+        "structure/catena/01-gen/002.json",
+        "douay-rheims/chapters/Gen/2.json",
+        "structure/paragraphs/douay-rheims/01-gen/002.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "a-held",
+          "outcome": "released"
+        },
+        {
+          "seq": 7,
+          "path": "structure/catena/01-gen/002.json",
+          "kind": "spine",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 8,
+          "path": "douay-rheims/chapters/Gen/2.json",
+          "kind": "scripture",
+          "phase": "b-settled",
+          "outcome": "completed"
+        },
+        {
+          "seq": 9,
+          "path": "structure/paragraphs/douay-rheims/01-gen/002.json",
+          "kind": "paragraphs",
+          "phase": "b-settled",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+        "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "chapter-select",
+      "released": 1,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=2&bible=douay-rheims",
+      "hashWrites": [
+        "#book=Gen&chapter=2&bible=douay-rheims"
+      ],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-null": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-record": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-list": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-number": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-flag": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-empty": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-unestablished-whitespace": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "No text reference is established for this fragment, so no text is shown."
+      ]
+    }
+  },
+  "v11-renderer-order": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "A text reference was supplied for this fragment, but it cannot be used as written, so no text is shown."
+      ]
+    }
+  },
+  "v11-renderer-order-control": {
+    "start": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "Loading\u2026"
+      ]
+    },
+    "opened": {
+      "fetched": [
+        "structure/catena/index.json",
+        "bibles.json",
+        "structure/paragraphs/index.json",
+        "structure/catena/01-gen/001.json",
+        "douay-rheims/chapters/Gen/1.json",
+        "structure/paragraphs/douay-rheims/01-gen/001.json",
+        "structure/catena/text/fallback-owned.json"
+      ],
+      "requests": [
+        {
+          "seq": 0,
+          "path": "structure/catena/index.json",
+          "kind": "catena-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 1,
+          "path": "bibles.json",
+          "kind": "editions",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 2,
+          "path": "structure/paragraphs/index.json",
+          "kind": "paragraph-index",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 3,
+          "path": "structure/catena/01-gen/001.json",
+          "kind": "spine",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 4,
+          "path": "douay-rheims/chapters/Gen/1.json",
+          "kind": "scripture",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 5,
+          "path": "structure/paragraphs/douay-rheims/01-gen/001.json",
+          "kind": "paragraphs",
+          "phase": "start",
+          "outcome": "completed"
+        },
+        {
+          "seq": 6,
+          "path": "structure/catena/text/fallback-owned.json",
+          "kind": "text",
+          "phase": "opened",
+          "outcome": "completed"
+        }
+      ],
+      "fragmentCount": 1,
+      "fragmentIds": [
+        "fallback-owned"
+      ],
+      "tallyText": "1 fragment held",
+      "statusWrites": [
+        "Genesis 1, Douay-Rheims (Challoner), 1 fragment held."
+      ],
+      "statusText": "Genesis 1, Douay-Rheims (Challoner), 1 fragment held.",
+      "busy": "false",
+      "activeElement": "body",
+      "released": 0,
+      "errorSections": [],
+      "hash": "#book=Gen&chapter=1&bible=douay-rheims",
+      "hashWrites": [],
+      "replaced": [],
+      "replacedStates": [],
+      "historyState": null,
+      "failureText": null,
+      "fragmentTexts": [
+        "PLANTED FALLBACK BODY \u2014 reachable only through genuine absence."
+      ]
+    }
+  }
+}

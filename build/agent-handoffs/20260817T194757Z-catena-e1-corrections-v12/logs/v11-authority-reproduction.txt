@@ -1,0 +1,14 @@
+--- authority coherence
+    package : 20260816T172726Z-catena-e1-corrections-v11
+    head    : 0255b84996e1dc24da3ce75ac318c4f774b7957c
+    outer   : 20260816T172726Z-catena-e1-corrections-v11.assemble.log
+    problem : package-20260816T172726Z-08vvjhkw: unresolved in the shipped ledger -- 'unresolved: the ledger carries no terminal row for this attempt'
+    problem : package-20260816T172726Z-08vvjhkw: no terminal row
+    problem : package-20260816T172726Z-08vvjhkw: in the summary, but no row resolves it
+    problem : head-20260816T163721Z-01p59qj3: a head battery may not be 'authoritative'
+    problem : head-20260816T163721Z-01p59qj3: a validation battery is not an authoritative package
+    problem : parent-20260816T165256Z-02whnw23: a parent battery may not be 'authoritative'
+    problem : parent-20260816T165256Z-02whnw23: a validation battery is not an authoritative package
+    problem : authoritative attempts: 3, not 1 (head-20260816T163721Z-01p59qj3, package-20260816T172114Z-07835xnr, parent-20260816T165256Z-02whnw23)
+authority coherence: FAIL (8 problem(s))
+EXIT=1
