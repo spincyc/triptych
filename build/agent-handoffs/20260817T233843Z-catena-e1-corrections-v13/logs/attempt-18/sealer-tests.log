@@ -1,0 +1,199 @@
+test_a_battery_is_never_a_package_word (__main__.AttemptAuthority.test_a_battery_is_never_a_package_word)
+"This battery ran to completion" and "this is the package to ... ok
+test_a_post_terminal_word_may_not_be_a_disposition (__main__.AttemptAuthority.test_a_post_terminal_word_may_not_be_a_disposition)
+The mirror of the rule above: `superseded` resolves an attempt but ... ok
+test_a_predecessor_still_holding_authority_is_refused (__main__.AttemptAuthority.test_a_predecessor_still_holding_authority_is_refused)
+Separate from the by-name refusal: what is caught here is an ... ok
+test_an_attempt_gets_exactly_one_disposition (__main__.AttemptAuthority.test_an_attempt_gets_exactly_one_disposition) ... ok
+test_authoritative_is_never_a_terminal_row_in_either_scope (__main__.AttemptAuthority.test_authoritative_is_never_a_terminal_row_in_either_scope)
+It arrives AFTER the attempt terminated `sealed`, so it cannot be ... ok
+test_discarded_then_authoritative_is_an_illegal_transition (__main__.AttemptAuthority.test_discarded_then_authoritative_is_an_illegal_transition) ... ok
+test_every_unsuccessful_end_says_why_in_words (__main__.AttemptAuthority.test_every_unsuccessful_end_says_why_in_words)
+V12 shipped all five `attempts[]` reasons empty, two of them ... ok
+test_in_package_scope_refuses_a_held_claim_of_authority (__main__.AttemptAuthority.test_in_package_scope_refuses_a_held_claim_of_authority)
+THE REVIEW'S FINDING. Not a vocabulary preference: these bytes are ... ok
+test_in_package_scope_ships_a_superseded_predecessors_history (__main__.AttemptAuthority.test_in_package_scope_ships_a_superseded_predecessors_history)
+V13: the word may appear in shipped bytes as HISTORY. ... ok
+test_one_authoritative_and_one_superseded_is_accepted (__main__.AttemptAuthority.test_one_authoritative_and_one_superseded_is_accepted)
+Superseding is what makes room for the next package attempt. ... ok
+test_sealed_is_the_package_terminal_word_in_both_scopes (__main__.AttemptAuthority.test_sealed_is_the_package_terminal_word_in_both_scopes)
+`sealed` is what an attempt may say about itself: the directory is ... ok
+test_the_external_ledger_is_the_one_place_authoritative_is_legal (__main__.AttemptAuthority.test_the_external_ledger_is_the_one_place_authoritative_is_legal)
+Post-terminal, on a record=state row, after P8 passed. ... ok
+test_the_seal_ledger_write_refuses_a_wrong_package_name (__main__.AttemptAuthority.test_the_seal_ledger_write_refuses_a_wrong_package_name)
+Everything else about this ledger is legal, so the name is the ... ok
+test_the_sealing_attempt_may_not_claim_authoritative (__main__.AttemptAuthority.test_the_sealing_attempt_may_not_claim_authoritative)
+The refusal an operator is most likely to reach for out of habit, ... ok
+test_the_shipped_ledger_names_this_package_and_this_head (__main__.AttemptAuthority.test_the_shipped_ledger_names_this_package_and_this_head)
+The row is terminal, it is in the member, and it says which package ... ok
+test_two_authoritative_package_attempts_are_rejected (__main__.AttemptAuthority.test_two_authoritative_package_attempts_are_rejected) ... ok
+test_a_flat_log_path_is_rejected_as_the_old_convention (__main__.AttemptLogRoots.test_a_flat_log_path_is_rejected_as_the_old_convention) ... ok
+test_a_log_no_attempt_references_is_rejected (__main__.AttemptLogRoots.test_a_log_no_attempt_references_is_rejected) ... ok
+test_a_log_outside_its_own_attempts_root_is_rejected (__main__.AttemptLogRoots.test_a_log_outside_its_own_attempts_root_is_rejected) ... ok
+test_a_log_under_its_own_attempt_root_is_accepted (__main__.AttemptLogRoots.test_a_log_under_its_own_attempt_root_is_accepted) ... ok
+test_a_report_beside_a_claimed_log_is_accounted_for (__main__.AttemptLogRoots.test_a_report_beside_a_claimed_log_is_accounted_for)
+The gate's JSON report is not a transcript and no row names it. ... ok
+test_a_zero_byte_log_is_rejected_unless_explained (__main__.AttemptLogRoots.test_a_zero_byte_log_is_rejected_unless_explained) ... ok
+test_the_reference_and_index_check_accept_an_attempt_root_path (__main__.AttemptLogRoots.test_the_reference_and_index_check_accept_an_attempt_root_path)
+The sealer's index check resolves the nested path, and the ... ok
+test_two_attempts_cannot_write_the_same_log_path (__main__.AttemptLogRoots.test_two_attempts_cannot_write_the_same_log_path) ... ok
+test_a_battery_terminates_complete_and_never_authoritative (__main__.BatteryLedger.test_a_battery_terminates_complete_and_never_authoritative)
+V12: `authoritative` is a package attempt's word. ... ok
+test_a_second_battery_run_gets_a_new_root_and_refuses_the_old_one (__main__.BatteryLedger.test_a_second_battery_run_gets_a_new_root_and_refuses_the_old_one)
+V12: two attempts cannot write one log path. ... ok
+test_battery_writes_provenance_and_unique_indexed_logs (__main__.BatteryLedger.test_battery_writes_provenance_and_unique_indexed_logs) ... ok
+test_header_carries_name_bytes_digest_root_and_utc_time (__main__.BindingHeader.test_header_carries_name_bytes_digest_root_and_utc_time) ... ok
+test_the_transcript_opens_with_the_header (__main__.BindingHeader.test_the_transcript_opens_with_the_header) ... ok
+test_a_duplicate_claims_row_is_caught (__main__.DuplicateRows.test_a_duplicate_claims_row_is_caught) ... ok
+test_a_duplicate_manifest_row_is_caught (__main__.DuplicateRows.test_a_duplicate_manifest_row_is_caught) ... ok
+test_unduplicated_rows_raise_no_duplicate_problem (__main__.DuplicateRows.test_unduplicated_rows_raise_no_duplicate_problem) ... ok
+test_a_probe_package_full_of_coordinates_seals (__main__.FalsePositives.test_a_probe_package_full_of_coordinates_seals) ... ok
+test_benign_data_is_not_flagged (__main__.FalsePositives.test_benign_data_is_not_flagged) ... ok
+test_benign_data_is_not_rewritten (__main__.FalsePositives.test_benign_data_is_not_rewritten) ... ok
+test_a_correct_sidecar_passes (__main__.FinalVerifier.test_a_correct_sidecar_passes) ... ok
+test_a_member_in_both_rows_and_derived_is_caught (__main__.FinalVerifier.test_a_member_in_both_rows_and_derived_is_caught) ... ok
+test_a_member_in_neither_rows_nor_derived_is_caught (__main__.FinalVerifier.test_a_member_in_neither_rows_nor_derived_is_caught) ... ok
+test_a_sidecar_without_a_size_is_caught (__main__.FinalVerifier.test_a_sidecar_without_a_size_is_caught) ... ok
+test_a_sized_derived_member_is_caught_by_the_verifier_too (__main__.FinalVerifier.test_a_sized_derived_member_is_caught_by_the_verifier_too) ... ok
+test_a_stale_claims_row_is_caught (__main__.FinalVerifier.test_a_stale_claims_row_is_caught) ... ok
+test_a_wrong_sidecar_size_is_caught (__main__.FinalVerifier.test_a_wrong_sidecar_size_is_caught) ... ok
+test_an_exact_partition_passes (__main__.FinalVerifier.test_an_exact_partition_passes) ... ok
+test_evidence_sums_are_checked (__main__.FinalVerifier.test_evidence_sums_are_checked) ... ok
+test_layout_catches_duplicates_wrong_roots_and_escapes (__main__.FinalVerifier.test_layout_catches_duplicates_wrong_roots_and_escapes) ... ok
+test_a_package_carrying_both_new_shapes_normalizes_and_seals (__main__.FlattenedWorkspace.test_a_package_carrying_both_new_shapes_normalizes_and_seals) ... ok
+test_a_residual_flattened_slug_is_caught_by_the_scanner (__main__.FlattenedWorkspace.test_a_residual_flattened_slug_is_caught_by_the_scanner) ... ok
+test_benign_hyphenated_text_is_neither_flagged_nor_rewritten (__main__.FlattenedWorkspace.test_benign_hyphenated_text_is_neither_flagged_nor_rewritten) ... ok
+test_normalizing_twice_produces_the_same_bytes (__main__.FlattenedWorkspace.test_normalizing_twice_produces_the_same_bytes)
+THE FIXPOINT. Every V13 placeholder is fixed text, so a second pass ... ok
+test_the_flattened_form_is_flagged_and_collapses (__main__.FlattenedWorkspace.test_the_flattened_form_is_flagged_and_collapses) ... ok
+test_the_scratch_tail_no_longer_carries_the_workspace (__main__.FlattenedWorkspace.test_the_scratch_tail_no_longer_carries_the_workspace)
+The second half of the defect. `_scratch()` kept its tail ... ok
+test_an_exact_partition_raises_no_problem (__main__.FreezeAndPartition.test_an_exact_partition_raises_no_problem) ... ok
+test_derived_members_carry_only_a_path_and_a_reason (__main__.FreezeAndPartition.test_derived_members_carry_only_a_path_and_a_reason) ... ok
+test_freeze_rows_snapshot_the_current_bytes (__main__.FreezeAndPartition.test_freeze_rows_snapshot_the_current_bytes) ... ok
+test_package_section_sums_only_the_frozen_rows (__main__.FreezeAndPartition.test_package_section_sums_only_the_frozen_rows) ... ok
+test_partition_problems_flags_a_member_in_both_sets (__main__.FreezeAndPartition.test_partition_problems_flags_a_member_in_both_sets) ... ok
+test_partition_problems_flags_a_member_in_neither_set (__main__.FreezeAndPartition.test_partition_problems_flags_a_member_in_neither_set) ... ok
+test_partition_problems_flags_a_vanished_row (__main__.FreezeAndPartition.test_partition_problems_flags_a_vanished_row) ... ok
+test_a_derived_member_carrying_bytes_is_refused (__main__.FrozenDriftAudit.test_a_derived_member_carrying_bytes_is_refused) ... ok
+test_an_undeclared_late_write_is_a_hard_failure (__main__.FrozenDriftAudit.test_an_undeclared_late_write_is_a_hard_failure) ... ok
+test_declared_residue_passes (__main__.FrozenDriftAudit.test_declared_residue_passes) ... ok
+test_frozen_drift_is_a_hard_failure (__main__.FrozenDriftAudit.test_frozen_drift_is_a_hard_failure) ... ok
+test_pending_permits_only_a_declared_absence (__main__.FrozenDriftAudit.test_pending_permits_only_a_declared_absence) ... ok
+test_a_document_may_name_the_manifest_this_tool_writes (__main__.IndexCheck.test_a_document_may_name_the_manifest_this_tool_writes)
+The manifest is written AFTER the index check, by this tool. ... ok
+test_external_references_are_not_package_members (__main__.IndexCheck.test_external_references_are_not_package_members) ... ok
+test_missing_top_level_artifact_is_detected (__main__.IndexCheck.test_missing_top_level_artifact_is_detected) ... ok
+test_unreferenced_members_are_reported_as_data (__main__.IndexCheck.test_unreferenced_members_are_reported_as_data) ... ok
+test_wrong_directory_reference_does_not_pass (__main__.IndexCheck.test_wrong_directory_reference_does_not_pass) ... ok
+test_manifest_lists_every_member (__main__.ManifestCoverage.test_manifest_lists_every_member) ... ok
+test_a_follow_up_scan_of_the_sanitized_file_exits_zero (__main__.OutsideFiles.test_a_follow_up_scan_of_the_sanitized_file_exits_zero) ... ok
+test_a_path_that_is_not_a_file_is_refused (__main__.OutsideFiles.test_a_path_that_is_not_a_file_is_refused)
+Not skipped. The caller named it because it believes that file ... ok
+test_a_residual_outer_file_exits_non_zero (__main__.OutsideFiles.test_a_residual_outer_file_exits_non_zero) ... ok
+test_no_manifest_is_written_beside_an_outer_file (__main__.OutsideFiles.test_no_manifest_is_written_beside_an_outer_file) ... ok
+test_sanitize_files_asks_the_fixpoint_question_itself (__main__.OutsideFiles.test_sanitize_files_asks_the_fixpoint_question_itself)
+One invocation is the whole treatment for these files -- there is ... ok
+test_sanitize_files_repairs_the_file_in_place (__main__.OutsideFiles.test_sanitize_files_repairs_the_file_in_place) ... ok
+test_several_files_are_taken_at_once (__main__.OutsideFiles.test_several_files_are_taken_at_once) ... ok
+test_the_current_tool_directory_name_also_reduces (__main__.OutsideFiles.test_the_current_tool_directory_name_also_reduces)
+Asserted, not assumed: `EVIDENCE_DIR` is a two-segment pattern, so ... ok
+test_the_file_modes_take_no_package_directory (__main__.OutsideFiles.test_the_file_modes_take_no_package_directory) ... ok
+test_the_other_modes_still_require_one (__main__.OutsideFiles.test_the_other_modes_still_require_one) ... ok
+test_a_deferred_reference_may_be_absent (__main__.PipelineModes.test_a_deferred_reference_may_be_absent) ... ok
+test_check_only_fails_a_tree_the_table_would_still_touch (__main__.PipelineModes.test_check_only_fails_a_tree_the_table_would_still_touch) ... ok
+test_check_only_reports_zero_would_be_on_a_clean_tree (__main__.PipelineModes.test_check_only_reports_zero_would_be_on_a_clean_tree) ... ok
+test_manifest_only_never_rewrites_a_member (__main__.PipelineModes.test_manifest_only_never_rewrites_a_member) ... ok
+test_manifest_only_refuses_a_drifted_frozen_row (__main__.PipelineModes.test_manifest_only_refuses_a_drifted_frozen_row) ... ok
+test_manifest_only_seals_a_held_freeze (__main__.PipelineModes.test_manifest_only_seals_a_held_freeze) ... ok
+test_normalize_only_normalizes_and_writes_no_manifest (__main__.PipelineModes.test_normalize_only_normalizes_and_writes_no_manifest) ... ok
+test_a_leaky_package_is_refused (__main__.PreservedDetections.test_a_leaky_package_is_refused) ... ok
+test_private_tokens_are_still_flagged (__main__.PreservedDetections.test_private_tokens_are_still_flagged) ... ok
+test_private_tokens_are_still_repaired (__main__.PreservedDetections.test_private_tokens_are_still_repaired) ... ok
+test_public_addresses_stay_exempt (__main__.PreservedDetections.test_public_addresses_stay_exempt) ... ok
+test_assemble_refuses_an_existing_archive (__main__.ProtocolRefusals.test_assemble_refuses_an_existing_archive) ... ok
+test_assemble_refuses_an_existing_package_directory (__main__.ProtocolRefusals.test_assemble_refuses_an_existing_package_directory) ... ok
+test_battery_refuses_an_existing_ledger (__main__.ProtocolRefusals.test_battery_refuses_an_existing_ledger) ... ok
+test_omitting_the_override_keeps_the_previous_behaviour (__main__.RepoRootDeterminism.test_omitting_the_override_keeps_the_previous_behaviour) ... ok
+test_the_declared_root_reduces_to_the_repo_placeholder (__main__.RepoRootDeterminism.test_the_declared_root_reduces_to_the_repo_placeholder) ... ok
+test_the_probe_moves_with_the_caller_and_the_override_does_not (__main__.RepoRootDeterminism.test_the_probe_moves_with_the_caller_and_the_override_does_not) ... ok
+test_a_file_that_decodes_only_at_the_head_does_not_abort_the_run (__main__.Robustness.test_a_file_that_decodes_only_at_the_head_does_not_abort_the_run) ... ok
+test_is_text_sniffs_only_the_head (__main__.Robustness.test_is_text_sniffs_only_the_head) ... ok
+test_short_reporting_says_nothing_extra (__main__.Robustness.test_short_reporting_says_nothing_extra) ... ok
+test_truncated_reporting_says_it_is_truncated (__main__.Robustness.test_truncated_reporting_says_it_is_truncated) ... ok
+test_differing_pair_with_a_difference_claim_passes (__main__.ScreenshotPairs.test_differing_pair_with_a_difference_claim_passes) ... ok
+test_identical_pair_with_a_difference_claim_fails (__main__.ScreenshotPairs.test_identical_pair_with_a_difference_claim_fails) ... ok
+test_identical_pair_with_an_accurate_description_passes (__main__.ScreenshotPairs.test_identical_pair_with_an_accurate_description_passes) ... ok
+test_pair_detection_finds_the_pair (__main__.ScreenshotPairs.test_pair_detection_finds_the_pair) ... ok
+test_pairs_are_reported_as_data (__main__.ScreenshotPairs.test_pairs_are_reported_as_data) ... ok
+test_a_private_value_written_as_a_literal_is_refused (__main__.SelfBlindness.test_a_private_value_written_as_a_literal_is_refused) ... ok
+test_clean_identities_pass_the_self_check (__main__.SelfBlindness.test_clean_identities_pass_the_self_check) ... ok
+test_the_sealer_seals_a_package_containing_itself (__main__.SelfBlindness.test_the_sealer_seals_a_package_containing_itself) ... ok
+test_the_shipped_pair_seals_together (__main__.SelfBlindness.test_the_shipped_pair_seals_together) ... ok
+test_the_test_module_is_itself_sealable (__main__.SelfBlindness.test_the_test_module_is_itself_sealable)
+THE PIN. Every adversarial fixture in this file is composed at ... ok
+test_a_failing_verify_removes_nothing_either (__main__.StaleManifest.test_a_failing_verify_removes_nothing_either) ... ok
+test_failing_check_only_keeps_the_manifest_it_promised_not_to_touch (__main__.StaleManifest.test_failing_check_only_keeps_the_manifest_it_promised_not_to_touch)
+CORRECTED ORACLE (V7), and the V6 review found it. ... ok
+test_failing_seal_removes_the_previous_manifest (__main__.StaleManifest.test_failing_seal_removes_the_previous_manifest) ... ok
+test_successful_seal_writes_a_fresh_manifest (__main__.StaleManifest.test_successful_seal_writes_a_fresh_manifest) ... ok
+test_a_bare_mktemp_path_left_behind_is_caught_by_the_scanner (__main__.TemporaryDirectoryPaths.test_a_bare_mktemp_path_left_behind_is_caught_by_the_scanner)
+THE V12 FAILURE, END TO END. `--check-only` never rewrites, so the ... ok
+test_benign_text_is_neither_flagged_nor_rewritten (__main__.TemporaryDirectoryPaths.test_benign_text_is_neither_flagged_nor_rewritten) ... ok
+test_every_temporary_root_is_flagged (__main__.TemporaryDirectoryPaths.test_every_temporary_root_is_flagged) ... ok
+test_every_temporary_root_is_rewritten_and_leaves_nothing (__main__.TemporaryDirectoryPaths.test_every_temporary_root_is_rewritten_and_leaves_nothing) ... ok
+test_the_artifact_tail_still_survives (__main__.TemporaryDirectoryPaths.test_the_artifact_tail_still_survives)
+Sanitizing must not cost evidence: the path still names its file. ... ok
+test_the_same_package_seals_once_it_is_normalized (__main__.TemporaryDirectoryPaths.test_the_same_package_seals_once_it_is_normalized) ... ok
+test_known_forms_are_still_caught (__main__.TimezoneAreas.test_known_forms_are_still_caught) ... ok
+test_previously_escaping_forms_are_flagged (__main__.TimezoneAreas.test_previously_escaping_forms_are_flagged) ... ok
+test_previously_escaping_forms_are_normalized (__main__.TimezoneAreas.test_previously_escaping_forms_are_normalized) ... ok
+test_bare_names_in_context_are_flagged_and_repaired (__main__.TimezoneBareNames.test_bare_names_in_context_are_flagged_and_repaired) ... ok
+test_bare_names_out_of_context_are_left_alone (__main__.TimezoneBareNames.test_bare_names_out_of_context_are_left_alone) ... ok
+test_a_local_timestamp_becomes_its_utc_equivalent (__main__.UtcNormalization.test_a_local_timestamp_becomes_its_utc_equivalent) ... ok
+test_a_sealed_ledger_still_reads_in_order (__main__.UtcNormalization.test_a_sealed_ledger_still_reads_in_order) ... ok
+test_a_shift_crossing_midnight_moves_the_date (__main__.UtcNormalization.test_a_shift_crossing_midnight_moves_the_date) ... ok
+test_a_time_with_no_date_wraps_within_the_day (__main__.UtcNormalization.test_a_time_with_no_date_wraps_within_the_day) ... ok
+test_neither_the_offset_nor_the_local_clock_survives (__main__.UtcNormalization.test_neither_the_offset_nor_the_local_clock_survives) ... ok
+test_ordering_and_elapsed_time_survive_the_shift (__main__.UtcNormalization.test_ordering_and_elapsed_time_survive_the_shift) ... ok
+test_the_previous_versions_residue_is_flagged_and_dropped (__main__.UtcNormalization.test_the_previous_versions_residue_is_flagged_and_dropped)
+The V10 output shape, met as input. The instant cannot be recovered ... ok
+test_the_written_shape_survives_the_shift (__main__.UtcNormalization.test_the_written_shape_survives_the_shift) ... ok
+test_every_shared_pattern_backs_both_a_rule_and_a_check (__main__.UtcOffsetSymmetry.test_every_shared_pattern_backs_both_a_rule_and_a_check) ... ok
+test_offsets_are_flagged_and_repaired (__main__.UtcOffsetSymmetry.test_offsets_are_flagged_and_repaired)
+CORRECTED ORACLE (V11), and the V10 review found it. ... ok
+test_rule_and_check_agree_on_every_sample (__main__.UtcOffsetSymmetry.test_rule_and_check_agree_on_every_sample) ... ok
+test_time_ranges_are_neither_flagged_nor_rewritten (__main__.UtcOffsetSymmetry.test_time_ranges_are_neither_flagged_nor_rewritten) ... ok
+test_a_changed_file_at_the_repository_root_is_not_a_package_reference (__main__.VerifyMode.test_a_changed_file_at_the_repository_root_is_not_a_package_reference)
+V7. `EXTERNAL_REFERENCE` knows a repository's directory prefixes and ... ok
+test_a_dangling_reference_is_still_caught_beside_one (__main__.VerifyMode.test_a_dangling_reference_is_still_caught_beside_one) ... ok
+test_verify_checks_the_archive_digest (__main__.VerifyMode.test_verify_checks_the_archive_digest) ... ok
+test_verify_fails_on_a_removed_or_added_member (__main__.VerifyMode.test_verify_fails_on_a_removed_or_added_member) ... ok
+test_verify_fails_on_a_tampered_member (__main__.VerifyMode.test_verify_fails_on_a_tampered_member) ... ok
+test_verify_fails_on_a_wrong_archive_digest (__main__.VerifyMode.test_verify_fails_on_a_wrong_archive_digest) ... ok
+test_verify_names_a_member_the_archive_carries_and_the_seal_does_not (__main__.VerifyMode.test_verify_names_a_member_the_archive_carries_and_the_seal_does_not) ... ok
+test_verify_names_a_member_the_archive_omits (__main__.VerifyMode.test_verify_names_a_member_the_archive_omits) ... ok
+test_verify_needs_a_manifest (__main__.VerifyMode.test_verify_needs_a_manifest) ... ok
+test_verify_passes_on_a_sealed_package (__main__.VerifyMode.test_verify_passes_on_a_sealed_package) ... ok
+test_verify_proves_every_archive_member_against_the_manifest (__main__.VerifyMode.test_verify_proves_every_archive_member_against_the_manifest)
+V7. The ZIP is what a reviewer receives, and V6 never opened it. ... ok
+test_verify_refuses_an_archive_that_is_not_rooted_at_the_package (__main__.VerifyMode.test_verify_refuses_an_archive_that_is_not_rooted_at_the_package)
+The layout the protocol requires, asserted rather than assumed. ... ok
+test_verify_writes_nothing (__main__.VerifyMode.test_verify_writes_nothing) ... ok
+test_a_differently_named_workspace_is_the_same_rule (__main__.WorkspaceIdentity.test_a_differently_named_workspace_is_the_same_rule)
+The rule is the CONVENTION, not one project and one slug. ... ok
+test_a_whole_evidence_path_collapses_to_two_tokens_and_a_tail (__main__.WorkspaceIdentity.test_a_whole_evidence_path_collapses_to_two_tokens_and_a_tail)
+And the TAIL survives, for the reason `_scratch` survives its tail: ... ok
+test_benign_text_is_neither_flagged_nor_rewritten (__main__.WorkspaceIdentity.test_benign_text_is_neither_flagged_nor_rewritten) ... ok
+test_both_the_raw_and_the_already_tokenized_prefix_collapse (__main__.WorkspaceIdentity.test_both_the_raw_and_the_already_tokenized_prefix_collapse)
+Ordering must not decide the outcome. ... ok
+test_occurrences_in_a_log_body_and_in_metadata_are_repaired (__main__.WorkspaceIdentity.test_occurrences_in_a_log_body_and_in_metadata_are_repaired) ... ok
+test_the_identity_in_a_member_name_is_a_hard_hit (__main__.WorkspaceIdentity.test_the_identity_in_a_member_name_is_a_hard_hit)
+A NAME cannot be rewritten -- normalize() moves bytes, not paths -- ... ok
+test_the_lane_evidence_directory_is_flagged_and_collapsed (__main__.WorkspaceIdentity.test_the_lane_evidence_directory_is_flagged_and_collapsed) ... ok
+
+----------------------------------------------------------------------
+Ran 157 tests in 2.685s
+
+OK
+EXIT=0

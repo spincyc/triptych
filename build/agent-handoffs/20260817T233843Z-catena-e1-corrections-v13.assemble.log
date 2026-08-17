@@ -1,0 +1,205 @@
+== P0 preflight passed: no handoff target for 20260817T233843Z existed, and the
+   invocation log was allocated, not opened over anything
+== attempt package-20260817T233843Z-18once13 (invocation log: 20260817T233843Z-catena-e1-corrections-v13.assemble.log)
+== P1 evidence staging: 20260817T233843Z-catena-e1-corrections-v13 at 6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3
+== P1 git-derived members
+== P1 gate comparison: the two reports, object for object
+whole report identical under the named volatile exclusions (browser, durationMs, generatedAt, root): True
+EXIT=0
+== P1 composing checks.txt from the batteries' own ledgers
+checks.txt composed: 480 lines
+logs/LOG-INDEX.md derived from the ledgers and the directory
+logs/attempts.json is declared here and written at P5, by --seal-ledger, once this attempt has a disposition
+== P1 the sealer's own tests
+
+OK
+EXIT=0
+== P2 normalize to a fixpoint (no manifest is written here)
+   fixpoint reached at pass 3
+== P3 THE FREEZE: the snapshot that IS the inventory
+freeze written: freeze.json (63 member(s), 15554009 bytes)
+== P4 derive once, from the freeze, pre-normalized
+claims written: claims.json (43079 bytes)
+rendering written: DERIVED-CLAIMS.md (11236 bytes)
+== P5 consistency audit: undeclared drift is a hard failure
+head consistency: 38 text member(s) scanned
+  entitled SHAs: 42959f4c9ff3 (commit in range), e82b78c1dd34 (declared: A superseded head of this same lane. A head battery ran green against it and was SET ASIDE rather than deleted when one paragraph of PROJECT-WORK.md was corrected afterwards and the head moved. It appears only in the append-only attempt ledger's set-aside row and its reason, which is where a cohort that ran and was not used belongs.), 549bf0790503 (declared: Current origin/main at the time of this lane, recorded so a reviewer can see this candidate is not integrated with it and does not overlap it on any Catena path. Named in HANDOFF.md and in the V13 durable records, and therefore in changes.patch.), fa43918166b2 (declared: Not a commit: the V12 package's ZIP SHA-256, quoted so the reviewed artifact this lane answers is identified by its bytes rather than by its name alone.), 05306fcfe221 (declared: The V12 evidence commit that review independently inspected, on evidence/catena-e1-corrections-v12-handoff. Named so the chain from the reviewed package to this correction is followable without the reviewer reconstructing it.), 6cc85e1a1dea (head), d312786dd2b2 (parent), 728c3e3b3d0d (review addressed)
+  package members: 67; referenced: 67; unreferenced: 0
+  frozen rows in claims.json: 63; declared derived members: 6; pending: 2
+  residue (present without a frozen row): 4 (DERIVED-CLAIMS.md, claims.json, logs/attempt-18/derive-claims.log, logs/attempt-18/head-consistency.log) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+EXIT=0
+== P5 attempt-log audit: every transcript under the attempt that wrote it
+attempt-log audit: 3 attempt(s) accounted for head-20260817T231658Z-13qy8np4, package-20260817T233843Z-18once13, parent-20260817T222221Z-02zgy3qx
+  problems: 0
+== P5 the SEALED terminal row, then the ledger member, then nothing
+authority audit: 18 attempt(s) in the ledger
+  head-20260817T220612Z-01hyxqv7: set-aside
+  head-20260817T223809Z-03t6kmm4: failed
+  head-20260817T223911Z-04nkm6h7: set-aside
+  head-20260817T231658Z-13qy8np4: complete
+  package-20260817T225450Z-05wr9p7j: discarded
+  package-20260817T225642Z-06548kyv: discarded
+  package-20260817T225952Z-078y43xy: superseded
+  package-20260817T230146Z-08497d59: discarded
+  package-20260817T230322Z-09once13: superseded
+  package-20260817T230626Z-10once13: discarded
+  package-20260817T230743Z-11once13: superseded
+  package-20260817T231343Z-12once13: superseded
+  package-20260817T233304Z-14once13: discarded
+  package-20260817T233355Z-15once13: discarded
+  package-20260817T233512Z-16once13: superseded
+  package-20260817T233637Z-17once13: superseded
+  package-20260817T233843Z-18once13: sealed
+  parent-20260817T222221Z-02zgy3qx: complete
+  problems: 0
+logs/attempts.json composed from the ledger outside the package, pre-normalized, carrying this attempt's own terminal row
+  frozen_at 2026-08-17T23:39:34.609257Z; the phases that run after this instant are declared in it by name (P6, P7, P8), not silently omitted
+== P6 manifest: prove the freeze held, then write the seal once
+sanitization scan: 0 private-token hit(s)
+freeze audit: 63 frozen row(s) re-hashed, 0 drifted
+MANIFEST.sha256 written: 68 file(s) covered
+== P7 archive
+archive: 20260817T233843Z-catena-e1-corrections-v13.zip (1306976 bytes)
+0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7  20260817T233843Z-catena-e1-corrections-v13.zip
+1306976 bytes  20260817T233843Z-catena-e1-corrections-v13.zip
+manifest verify: 68 member(s) listed, 0 problem(s)
+archive verify: 20260817T233843Z-catena-e1-corrections-v13.zip matches 20260817T233843Z-catena-e1-corrections-v13.zip.sha256
+archive members: 69 proved against the manifest, 0 problem(s)
+== P8 final verification, from the ZIP alone, read-only
+   trust anchor: $EVIDENCE (out-of-package, lane V13)
+executed-tools: 13 shipped-executed, 14 shipped-not-executed
+== P8 final verification, bound to the exact archive
+   archive : 20260817T233843Z-catena-e1-corrections-v13.zip
+   bytes   : 1306976
+   sha256  : 0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7
+   root    : 20260817T233843Z-catena-e1-corrections-v13
+   verified: 2026-08-17T23:39:38Z (UTC)
+   verifier        : $WORKSPACE/$EVIDENCE/verify-final-package.py
+   verifier sha256 : 88544182292c645641de853ed1b6d7e5e00a168d26f3870a0742affb8c4f0e79
+   tools           : $WORKSPACE/$EVIDENCE
+   tools at        : 444dae6d436f75c298f9307441b5d603a4a470ee
+   anchor          : versioned and clean at 444dae6d436f75c298f9307441b5d603a4a470ee
+   executed        : $REPO/build/agent-handoffs/20260817T233843Z-catena-e1-corrections-v13.executed-tools.json (27 run row(s), attempt package-20260817T233843Z-18once13, anchor $EVIDENCE)
+   head            : 6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3
+   parent          : d312786dd2b23926aa88e29ea15647dfcc7e7e6e
+   review          : 728c3e3b3d0d6e899f0da33e06a08a116375896f
+   lane            : V13 (claims tool: derive-claims.py)
+   claims          : 63 frozen row(s), 15554009 byte(s), 6 derived member(s), as claims.json declares
+   pre-check bytes : 1306976
+   pre-check sha256: 0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7
+[0 trust anchor] ok
+[1 sidecar] ok
+[2 layout] ok
+--- archive byte span accounting
+    file size          : 1306976 bytes
+    first local header : offset 0
+    central directory  : offset 1298913, 8041 byte(s), 69 entry(ies) walked
+    EOCD record        : offset 1306954, comment 0 byte(s), ends at 1306976
+    EOCD claims        : central directory at offset 1298913, 8041 byte(s), 69 entry(ies)
+    zipfile decoded    : 69 entry(ies)
+    span               : bytes 0..1306976 of 1306976; prefix 0, trailing 0
+    accounted          : every byte from 0 to the end of the EOCD record belongs to a member, the central directory, or the EOCD itself
+[3 structure] ok
+[4 crc] ok
+[5 extraction] ok
+[6 manifest] ok
+[7 claims rows] ok
+[8 partition] ok
+--- final bytes, derived from the archive alone
+    members            : 69
+    frozen rows        : 63 row(s), 15554009 bytes
+    derived claims.json: 43079 bytes
+    derived DERIVED-CLAIMS.md: 11236 bytes
+    derived logs/attempts.json: 163255 bytes
+    derived logs/attempt-18/derive-claims.log: 93 bytes
+    derived logs/attempt-18/head-consistency.log: 1613 bytes
+    derived MANIFEST.sha256: 6441 bytes
+    derived members    : 6 member(s), 225717 bytes
+    total uncompressed : 15779726 bytes across 69 member(s) (= frozen 15554009 + derived 225717)
+--- check 9 trust anchor
+    tool derive-claims.py
+      trusted : $WORKSPACE/$EVIDENCE/derive-claims.py
+      trusted sha256: 8db838810ad33761f01d02d53e597e7f54b81e1e563b3798376ac9981b73a1d4
+      shipped : logs/derive-claims.py (read as bytes, never run)
+      shipped sha256: 8db838810ad33761f01d02d53e597e7f54b81e1e563b3798376ac9981b73a1d4
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+[9 rendering] ok
+--- check 10 trust anchors
+    tool head-consistency.py
+      trusted : $WORKSPACE/$EVIDENCE/head-consistency.py
+      trusted sha256: 23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e
+      shipped : logs/head-consistency.py (read as bytes, never run)
+      shipped sha256: 23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+    tool sanitize-and-seal.py
+      trusted : $WORKSPACE/$EVIDENCE/sanitize-and-seal.py
+      trusted sha256: f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561
+      shipped : logs/sanitize-and-seal.py (read as bytes, never run)
+      shipped sha256: f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+--- head-consistency.py (trusted copy) over the extraction (exit 0)
+head consistency: 40 text member(s) scanned
+  entitled SHAs: 42959f4c9ff3 (commit in range), e82b78c1dd34 (declared: A superseded head of this same lane. A head battery ran green against it and was SET ASIDE rather than deleted when one paragraph of PROJECT-WORK.md was corrected afterwards and the head moved. It appears only in the append-only attempt ledger's set-aside row and its reason, which is where a cohort that ran and was not used belongs.), 549bf0790503 (declared: Current origin/main at the time of this lane, recorded so a reviewer can see this candidate is not integrated with it and does not overlap it on any Catena path. Named in HANDOFF.md and in the V13 durable records, and therefore in changes.patch.), fa43918166b2 (declared: Not a commit: the V12 package's ZIP SHA-256, quoted so the reviewed artifact this lane answers is identified by its bytes rather than by its name alone.), 05306fcfe221 (declared: The V12 evidence commit that review independently inspected, on evidence/catena-e1-corrections-v12-handoff. Named so the chain from the reviewed package to this correction is followable without the reviewer reconstructing it.), 6cc85e1a1dea (head), d312786dd2b2 (parent), 728c3e3b3d0d (review addressed)
+  package members: 69; referenced: 69; unreferenced: 0
+  frozen rows in claims.json: 63; declared derived members: 6; pending: 0
+  residue (present without a frozen row): 6 (DERIVED-CLAIMS.md, MANIFEST.sha256, claims.json, logs/attempt-18/derive-claims.log, logs/attempt-18/head-consistency.log, logs/attempts.json) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+--- sanitize-and-seal.py (trusted copy) over the extraction (exit 0)
+check-only: 0 file(s) would change, 0 would-be substitution(s)
+sanitization scan: 0 private-token hit(s)
+evidence-index check: 0 missing reference(s), 0 unreferenced member(s), 0 deferred reference(s)
+screenshot pair audit: 0 before/after pair(s), 0 byte-identical, 0 differing
+[10 shipped audits] ok
+--- check 11 tool bytes, three ways (executed / trusted / shipped)
+    execution record : attempt package-20260817T233843Z-18once13, anchor $EVIDENCE, 27 run row(s) over 18 tool(s)
+    EXECUTED-BYTE CLAIM: PROVED where an executed digest is present and equal to the trusted and shipped bytes
+    tool                          class                 ran        equal    executed/trusted/shipped
+    assemble.sh                   shipped-not-executed  no         yes      9cc0f587/9cc0f587/9cc0f587  package-20260817T233843Z-18once13
+    authority-coherence.py        shipped-not-executed  no         yes      6a7734a4/6a7734a4/6a7734a4  package-20260817T233843Z-18once13
+    battery.sh                    shipped-not-executed  no         yes      e330dcd2/e330dcd2/e330dcd2  package-20260817T233843Z-18once13
+    checks.py                     shipped-executed      yes        yes      dbd8f7b0/dbd8f7b0/dbd8f7b0  package-20260817T233843Z-18once13
+    compare-gate.py               shipped-not-executed  no         yes      448b0de8/448b0de8/448b0de8  package-20260817T233843Z-18once13
+    derive-claims.py              shipped-executed      yes        yes      8db83881/8db83881/8db83881  package-20260817T233843Z-18once13
+    gate-summary.py               shipped-not-executed  no         yes      0f3834b9/0f3834b9/0f3834b9  package-20260817T233843Z-18once13
+    gzip-sizes.py                 shipped-not-executed  no         yes      c8f54536/c8f54536/c8f54536  package-20260817T233843Z-18once13
+    handoff-inventory.py          shipped-not-executed  no         yes      ab165952/ab165952/ab165952  package-20260817T233843Z-18once13
+    head-consistency.py           shipped-executed      yes        yes      23f3f497/23f3f497/23f3f497  package-20260817T233843Z-18once13
+    journal-dump.py               shipped-not-executed  no         yes      e5ca3443/e5ca3443/e5ca3443  package-20260817T233843Z-18once13
+    sanitize-and-seal.py          shipped-executed      yes        yes      f783c739/f783c739/f783c739  package-20260817T233843Z-18once13
+    test-attempt-history.py       shipped-not-executed  no         yes      4f59df2f/4f59df2f/4f59df2f  package-20260817T233843Z-18once13
+    test-authority-coherence.py   shipped-not-executed  no         yes      da9b6371/da9b6371/da9b6371  package-20260817T233843Z-18once13
+    test-handoff-inventory.py     shipped-not-executed  no         yes      4a55f5c3/4a55f5c3/4a55f5c3  package-20260817T233843Z-18once13
+    test-sanitize-and-seal.py     shipped-not-executed  no         yes      58485b50/58485b50/58485b50  package-20260817T233843Z-18once13
+    test-verify-final-package.py  shipped-not-executed  no         yes      5b877a20/5b877a20/5b877a20  package-20260817T233843Z-18once13
+    verify-final-package.py       shipped-not-executed  no         yes      88544182/88544182/88544182  package-20260817T233843Z-18once13
+    classes          : shipped-executed 4, shipped-not-executed 14
+[11 tool bytes] ok
+--- tool byte table written to $REPO/build/agent-handoffs/20260817T233843Z-catena-e1-corrections-v13.tool-bytes.json (18 row(s), schema catena-tool-byte-table/1)
+--- post-verification rehash of the archive bytes
+    checks performed : 0 trust anchor, 1 sidecar, 2 layout, 3 structure, 4 crc, 5 extraction, 6 manifest, 7 claims rows, 8 partition, 9 rendering, 10 shipped audits, 11 tool bytes
+    checks skipped   : (none)
+    pre-check bytes  : 1306976
+    pre-check sha256 : 0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7
+    post-check bytes : 1306976
+    post-check sha256: 0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7
+    result           : UNCHANGED -- every check above read the archive named in the header
+P8 verification: PASS (0 problem(s))
+== P9: the archive's own bytes, the P8 verdict, and the record they bind
+authority record: 20260817T233843Z-catena-e1-corrections-v13.zip is 1306976 bytes, 0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7
+                 P8 PASS, rehash UNCHANGED, established 2026-08-17T23:39:46Z
+per-package ledger: 225 row(s) for 15 attempt(s), copied from the lane ledger in its own order
+
+== FINAL AUTHORITY: attempt package-20260817T233843Z-18once13 is the authoritative package attempt for 20260817T233843Z-catena-e1-corrections-v13
+   established after P8 passed, bound to the archive's own bytes by
+   20260817T233843Z-catena-e1-corrections-v13.authority.json; the shipped logs/attempts.json says
+   sealed, which is all a member written before P8 may say.
+
+== P10 the gates V12 ran by hand, run here
+   authority coherence: exit 0 (20260817T233843Z-catena-e1-corrections-v13.authority-coherence.log)
+   handoff inventory : exit 0 (20260817T233843Z-catena-e1-corrections-v13.handoff-inventory.log)
+executed-tools: 16 shipped-executed, 11 shipped-not-executed
+== P10 complete. P11 sanitizes the outer siblings from the outer stage,
+   after tee has closed this log; its transcripts are beside the package.

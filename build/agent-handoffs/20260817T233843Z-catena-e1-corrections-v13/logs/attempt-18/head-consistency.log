@@ -1,0 +1,8 @@
+head consistency: 38 text member(s) scanned
+  entitled SHAs: 42959f4c9ff3 (commit in range), e82b78c1dd34 (declared: A superseded head of this same lane. A head battery ran green against it and was SET ASIDE rather than deleted when one paragraph of PROJECT-WORK.md was corrected afterwards and the head moved. It appears only in the append-only attempt ledger's set-aside row and its reason, which is where a cohort that ran and was not used belongs.), 549bf0790503 (declared: Current origin/main at the time of this lane, recorded so a reviewer can see this candidate is not integrated with it and does not overlap it on any Catena path. Named in HANDOFF.md and in the V13 durable records, and therefore in changes.patch.), fa43918166b2 (declared: Not a commit: the V12 package's ZIP SHA-256, quoted so the reviewed artifact this lane answers is identified by its bytes rather than by its name alone.), 05306fcfe221 (declared: The V12 evidence commit that review independently inspected, on evidence/catena-e1-corrections-v12-handoff. Named so the chain from the reviewed package to this correction is followable without the reviewer reconstructing it.), 6cc85e1a1dea (head), d312786dd2b2 (parent), 728c3e3b3d0d (review addressed)
+  package members: 67; referenced: 67; unreferenced: 0
+  frozen rows in claims.json: 63; declared derived members: 6; pending: 2
+  residue (present without a frozen row): 4 (DERIVED-CLAIMS.md, claims.json, logs/attempt-18/derive-claims.log, logs/attempt-18/head-consistency.log) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+EXIT=0

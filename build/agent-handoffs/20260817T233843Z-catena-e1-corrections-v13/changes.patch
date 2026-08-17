@@ -1,0 +1,1870 @@
+diff --git a/PROJECT-WORK.md b/PROJECT-WORK.md
+index ec0819c50..58aec38f1 100644
+--- a/PROJECT-WORK.md
++++ b/PROJECT-WORK.md
+@@ -1139,6 +1139,225 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
+ of its own work, marks no separately owned prerequisite complete, and does not
+ review itself.
+ 
++### E1 Catena route-owned correction lane, V13
++
++<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v13-2026-08-17 -->
++
++The disposition answered is **CHANGES REQUIRED** at exact candidate
++`d312786dd2b23926aa88e29ea15647dfcc7e7e6e`, recorded by the independent
++review `728c3e3b3d0d6e899f0da33e06a08a116375896f` on branch
++`review/catena-wave-1-e1-corrections-v12-independent`, which independently
++inspected evidence `05306fcfe221c1b0456501463e02323047635607` and verified
++package `build/agent-handoffs/20260817T194757Z-catena-e1-corrections-v12`,
++1,842,342 bytes across 81 members, with ZIP SHA-256
++`fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890`. That
++review is a sibling of this line at the reviewed head and is **not merged
++in**; this record states its disposition rather than importing its commits.
++Current `origin/main` is `549bf0790503bd873dd8ce6ea0a64cc34f91271d`, and this
++lane is not integrated with it.
++
++The review passed what V12 got right and does not reopen it: `requestSnapshot`
++is correct for one invocation, taking one `Object.getPrototypeOf`, one
++descriptor per requested name and no accessor invocation; the inherited
++`text_prefix` and the inherited `text_refused` marker close locally; the
++carried `text_path` is read once per projection, so V11's
++validate-one/project-another defect is closed inside a projection; the
++page-wide fail-closed contamination policy is accepted as a design; ordinary
++request behaviour, the malformed and unestablished wording, the cold,
++present-valid and prewarmed controls and primitive namespace closure are
++exact; the 36-field late vector and its `0 -> 1` release pass unchanged; P8
++executes no archive code, is read-only, and its pre and post digests are
++equal; the ZIP's arithmetic, CRCs, manifest, central directory and absence of
++trailing bytes are correct; earlier packages were not mutated; and ownership
++boundaries hold. It found nine things, and this lane answers those nine and
++nothing else.
++
++**One raw chapter was projected three times, and three projections are three
++observations.** V12 took each record's request-critical state once inside a
++projection and then ran that projection three times over one chapter:
++`spineUnreadable` projected to decide whether a non-empty fragment list
++yielded a readable row and threw the rows away, the tally projected again to
++keep a length, and `renderChain` projected a third time and kept the rows that
++reach request, cache, body and ownership. The counts V12 reported — parent 6,
++V12 3 — were one descriptor read per projection times three, and the review
++was exact about what that does not prove: "They do not prove no source
++revisit." A record that answers one way while readability is being decided and
++another way while the render is being built therefore rendered, requested,
++cached and attributed from an answer nothing had approved.
++
++**The chapter is now normalized once and held.** `normalizeChapter` reads each
++request-critical member of the spine into a local exactly once —
++`fragments`, `sources`, `refusals`, `unfetched`, `blocked`, `leads`, and
++`text_prefix` through the V12 snapshot — projects the rows, freezes each with
++its extent and translators, gathers every edition in a single walk, and
++decides readability from that same walk rather than from a second one. The
++result is a frozen null-prototype projection of own data properties, with no
++accessor and no inherited semantic value, held against the raw record in a
++`WeakMap`, so a chapter read once stays read once across a voice change, an
++arrow step or a re-render. `spineUnreadable`, `chapterFragments`,
++`chapterVoices`, `chapterBlocked`, `chapterLeads`, `refusalNote` and
++`absenceRows` all answer from it and reach past it to the raw chapter nowhere.
++`catena.js` changes by two lines — `M.blockedRows(file && file.blocked)` and
++its sibling become `M.chapterBlocked(file)` and `M.chapterLeads(file)`, which
++were the page's last reads of raw chapter state — and it gets smaller.
++
++**Identity is made observable rather than argued.** The review required proof
++of the same normalized instance and not of equal values. `chapterProjection`
++is exported and returns the held projection; `chapterPasses` returns how many
++raw chapters this page has normalized; and the replay harness asks every model
++entry point that takes a chapter which projection it resolved to before it
++answers, so "one identity, everywhere" is a comparison of recorded lists. A
++consumer that is not routed through the projection fails the identity test by
++the name that is missing rather than passing quietly. A request is bound to
++the projection that produced the row carrying its address, because the page
++composes no text address of its own.
++
++**Six of six are non-vacuous, and each fires at a different sink.** The review
++found `v12-drifting-carried-path` vacuous: it consumed its valid-then-alternate
++pair inside the readability projection, which issues no request, so it passed
++by never reaching a sink. The six V13 scenarios each walk one member of the
++chapter between projections and plant something at the address only a later
++projection can reach, and each stands beside a control holding that member at
++the walked-to value, so every planted thing is proved reachable and
++renderable. At the reviewed parent the walked carried path fetches and renders
++`structure/catena/text/deeper/fallback-owned.json`; the walked spine prefix
++composes and fetches the same; the walked member list renders and fetches a
++body off members readability never approved; the walked editions put a forged
++rights claim on the reader's own provenance line; the walked refusals print a
++Rule 4 boundary the record never stated; and the prewarmed walk misses a warm
++cache to fetch a second body. The parent asks the walked member 3, 3, 5, 8, 4
++and 3 times for one render; this head asks each exactly once. Replayed against
++the uncorrected parent the file fails **twenty-seven ways across thirteen
++methods**.
++
++**One committed assertion required the wrong answer, and is corrected with its
++reason.** `v12-drifting-carried-path` was pinned to make no text request at
++all. That was the scenario exhausting its two values in a projection that
++cannot request, not a closure, and it now requests the one address the one
++projection validated. The page-level descriptor pin moves from three to one
++for the same reason: V12 pinned "one ask per projection, three projections a
++render", and the review named that number as the defect rather than the proof.
++
++**The package could not show its own ownership.** `journal-dump.py` enumerated
++scenarios from a hand-maintained list that stopped at `v11-renderer-order-control`,
++so the head and parent packaged journals were byte-identical, carried no V12
++scenario, and supported none of the closures the package claimed — while
++`EVIDENCE-INDEX.md` said they did. That is the same omission the V11 review
++found one whitelist over. A hand-maintained enumeration of what to prove falls
++behind whatever is proved next, so there is no longer one: the roster is
++derived from the test file itself, every declared scenario is journalled, and
++each row carries its sequence, scenario, the route as it stood when the request
++was made, the owning projection, path, kind, step, outcome, cache disposition
++and body.
++
++**Authority is established only after P8, and it binds the final ZIP.** V12
++wrote the terminal `authoritative` row before the manifest, so a later P7 or P8
++failure could write only best-effort sibling markers while the sealed bytes
++kept their claim. The progression is now attempt started, package sealed,
++P7/P8 verification, post-P8 size and hash confirmed, then final authority
++established. An in-package row may claim at most `sealed`; final authority is a
++structured sidecar outside the archive naming the attempt, the exact head, the
++ZIP's basename, size and SHA-256, the P8 result and the post-P8 rehash result,
++each recomputed from the archive rather than carried forward. The binding runs
++one way and the archive carries no such record, so there is no self-reference.
++If P8 fails, the attempt stays non-authoritative.
++
++**The authority gate accepted six contradictions it should have refused.** It
++consumed only the shipped ledger and the outer log — never the archive, the
++sidecar, the P8 transcript, the external ledger or the sibling markers — and
++its positive fixture passed without a ZIP or a P8 result. It accepted a second
++authoritative state row, an authoritative winner followed by a discarded state,
++multiline and uppercase contradictory prose, a wrong package on the
++authoritative outer-log line, and prose that never named the winner. All six
++are closed, the gate now consumes every post-P8 artifact, and its negative
++roster grows from an all-structured set to one covering each required
++contradiction. Run against the V12 package it refuses it with five
++problems, naming the two in-package rows that claim final authority, the
++missing authority record, the authoritative count of two, and the sibling
++supersession marker the winner carries.
++
++**The history was not append-only in practice.** Four discarded package
++attempts and four set-aside battery cohorts are absent from every surviving
++ledger while three package members assert they are present; ordinals 03, 04 and
++05 were reissued after a ledger was restarted, contradicting the claim that an
++ordinal is allocated once for the lane; every summary reason is empty,
++including two supersessions; ten rows name log roots the package does not
++contain; one attempt's embedded timestamp postdates its own last row and the
++evidence commit; and a supersession is stamped inside a file that claims to
++have been frozen thirty seconds earlier. The ledger identity is now pinned to
++the lane and refuses a foreign or restarted one, ordinals are monotonic and
++never reused, every terminal state carries its reason, a battery may be
++recorded set aside rather than forced to `complete`, chronology is checked, and
++the complete ledger ships beside the package rather than deferring to a record
++the reviewer cannot reach.
++
++**The 10/10 inventory was lexical.** It computed every verdict from
++`HANDOFF.md`'s text alone: no file existence, no counts, no digests, no git,
++and its artifact cross-check never fed the verdict it was documented to feed.
++It took siblings from command-line arguments and never discovered or stat'd
++one, which is exactly how the package came to omit its own inventory log while
++scoring ten of ten, and it accepted "eleven limitations" over a file with
++twelve. It now resolves every referenced path, recomputes every quoted digest,
++discovers and stats every sibling including its own output, counts members,
++logs, journals, tools, attempt rows, battery rows and manifest rows
++mechanically, and distinguishes a setup failure from a finding.
++
++**Privacy was a blocker in two different ways.** The tracked outer assembly and
++P8 logs exposed the absolute workspace path, the account name and the tool
++anchor on twelve lines, because the sanitizer's walk root is the package and
++those siblings are written after the manifest. Inside the archive, a generic
++`/tmp` root and a dash-flattened workspace slug survived in `checks.txt`, both
++order ledgers and `attempts.json`, because the scratch rule required a literal
++substring no ordinary temporary directory carries and the flattened form could
++not match a path-separated pattern. Both pattern gaps are closed, the sanitizer
++gains a mode for non-member files, and every outer sibling is sanitized and
++re-scanned before it is committed.
++
++**The executed-byte claim covered four tools of fifteen.** The mechanism was
++right and its coverage was hard-coded to a renderer and two auditors plus the
++verifier hashing itself, and it ran at P8, which proves shipped against trusted
++and not executed against shipped — while the package asserted it recorded each
++tool's digests. `assemble.sh` and `checks.py`, the two tools that write the
++records under review, had none. Every tool invocation now records the SHA-256
++of the exact bytes immediately before it runs, the table distinguishes shipped
++and executed from shipped and not executed, external system tool and
++reviewer-only helper, and P8 compares executed against trusted against shipped.
++
++Fresh validation, measured at **both endpoints** — this head and the exact
++reviewed parent — because an exit code cannot tell an inherited failure from a
++caused one. Focused Catena is **555** green at this head, up from 544 at the
++parent. `scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73
++canon entries. Full discovery is **1,906** tests at this head and 1,895 at the parent, with the identical inherited 14 failures / 13 errors / 11 skips at both and the same 27-entry failure and error identity set, none of which is a Catena identity. `make -k check` exits 2 on **the same four targets at both endpoints** — `check-web-editions-current`, `check-release-bindings`, `check-tool-registry` and `check-examples` — all inherited. The browser gate is 2,290 assertions, 1,836 / 226 / 228 across 171 pages and 19 routes, identical at both endpoints and identical to the V10, V11 and V12 reports. The promise ledger validates at 38
++tracked / 19 complete. Budgets unraised, and `catena.css` is byte-identical at
++both endpoints at 7,629/8,000 whole and 2,676/2,700 stripped; `catena.js` is
++**smaller at both measures**, 12,974/13,000 whole and 7,546/8,800 stripped
++against the parent's 12,980 and 7,554, so the page's whole-file headroom
++improves from 20 to 26 gzipped bytes. The unbudgeted model grows 34,367 to
++36,679 gzipped whole and 8,258 to 8,873 stripped; disclosed, not presented as
++unchanged load, and the standing question of whether the model and the combined
++route payload need a governed ceiling remains the budget owner's.
++`src/web/data/` has zero changes: every adversarial fixture lives in the test
++file and is served by the replay harness's own stub network. Four stale release
++bindings remain fail-closed and unsigned, none re-signed.
++
++Every other blocker remains open and untouched, as the V12 review left it: full
++sole-source semantic projection beyond this bounded chapter projection; orphan
++raw sources; source-only fragments still counting; scalar and nested translator
++coercion; malformed and padded absence rows; the broader selection and ordering
++defects; refusal verse typing; unreadable roots and the unreadable
++`bibles.json` prose; the broader terminal and corrected-oracle proofs outside
++this lane's vectors; the CLI/web duplicated semantic model; model and combined
++budget governance, answered here only by accurate disclosure; the historical
++data seam; and cumulative-history reconciliation beyond this lane's own attempt
++and battery evidence. Release bindings, the common gate, B0/shared shell,
++real-device and assistive-technology evidence, protected Liturgy and PDFs
++remain separately owned. E1 is not integrated.
++
++Status: **awaiting fresh independent review** of the exact V13 head and its
++immutable handoff archived on `evidence/catena-e1-corrections-v13-handoff`.
++This lane records no acceptance of its own work, marks no separately owned
++prerequisite complete, and does not review itself.
++
+ ### E1 Catena route-owned correction lane, V12
+ 
+ <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v12-2026-08-17 -->
+diff --git a/guidance/corpus-browser-master-plan.md b/guidance/corpus-browser-master-plan.md
+index bd9d62836..847c82348 100644
+--- a/guidance/corpus-browser-master-plan.md
++++ b/guidance/corpus-browser-master-plan.md
+@@ -299,7 +299,7 @@ them; it cannot close them.
+ | B0/B1 shared foundation and neutral browser gates | Authorized implementation work | One global owner; ingest the shell correction only after independent acceptance; do not enter protected Liturgy or invent surface composition. |
+ | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
+ | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
+-| E1 Catena implementation | **Changes required** at V11 head `0255b84996e1dc24da3ce75ac318c4f774b7957c` (independent review `22b9bdad5e71920a103e3ec3bcf2f79bba50cebb` on `review/catena-wave-1-e1-corrections-v11-independent`, 2026-08-17); V12 correction candidate `impl/catena-wave-1-e1-corrections-v12` awaiting fresh independent review | The fail-closed prototype-pollution policy is accepted as a design, and ordinary accessor non-invocation, own-property projection, the refused and unestablished wording, the cold, present-valid and prewarmed controls, the 36-field late vector, packaged request ownership, the read-only non-executing P8, the handoff contents, screenshots, privacy, ZIP metadata, the byte scan, ownership boundaries and the existing CSS/JS ceilings pass and are not reopened. The policy was applied incompletely: an inherited spine prefix was read as absence and reopened carried fallback, an inherited `text_refused` did not close an own-valid claim, and a twice-read carried-path descriptor could validate one path and project another. The package separately failed authority coherence, calling a superseded attempt authoritative and the shipped attempt unresolved while reusing log names across attempts. V12 corrects only those four findings: request-critical state is snapshotted once into trusted own data, contamination fails closed, the carried path is read once, planted request/cache/body/ownership regressions prove each at the production sinks, and the package carries one authoritative attempt with unique attempt-root logs and a mechanical coherence check. Projection/orphan-source, source-only-fragment, translator, absence, selection, refusal-typing, unreadable-root, broader-terminal/oracle, CLI/web, model-budget, data-seam, release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and PDF blockers remain open or separately owned. E1 stays off main; no merge, re-sign, deploy, or cutover is authorized. |
++| E1 Catena implementation | **Changes required** at V12 head `d312786dd2b23926aa88e29ea15647dfcc7e7e6e` (independent review `728c3e3b3d0d6e899f0da33e06a08a116375896f` on `review/catena-wave-1-e1-corrections-v12-independent`, 2026-08-17); V13 correction candidate `impl/catena-wave-1-e1-corrections-v13` awaiting fresh independent review | `requestSnapshot` is accepted as correct for one invocation, and the inherited `text_prefix` closure, the inherited `text_refused` closure, the carried `text_path` read-once behaviour within a projection, the fail-closed prototype-contamination policy, ordinary request behaviour, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, primitive namespace closure, the 36-field late vector and its `0 -> 1` release, the read-only non-executing P8 with its pre and post rehash, ZIP arithmetic, CRC, manifest and central-directory correctness, candidate immutability and ownership boundaries all pass and are not reopened. The stable snapshot was nevertheless not stable for a page RENDER: the same raw spine and fragments were projected three times — by `spineUnreadable`, by the tally and by `renderChain` — so one descriptor read per projection times three proved no source revisit, and a record answering differently between projections rendered, requested, cached and attributed from an answer nothing had approved. Beside it one of six planted scenarios was vacuous, the packaged ownership journals stopped at the previous lane, the sealed bytes claimed final authority before P8, the authority gate accepted six contradictions, four discarded attempts and four set-aside batteries were absent from every surviving ledger while ordinals were reused, the handoff inventory was lexical and structurally blind to its own output, machine-specific paths leaked in twelve tracked outer-log lines and in two in-archive residues, and contemporaneous executed-byte proof existed for four tools of fifteen. V13 corrects only those findings: each raw chapter is normalized exactly once into one stable page-level projection that readability, tally, rendering, request, cache, body and ownership all read and none reaches past; walking raw-state tests assert one observation per loaded record and prove one projection identity; all six planted scenarios are non-vacuous with their ownership journals shipped; and the package carries one complete append-only ledger with no ordinal reuse, truthful reasons and times, publication authority established only after P8 and bound to the final ZIP, full negative authority and endpoint fixtures, executed and shipped digests for every tool claimed executed, a substantively verified inventory, and privacy scanning of every member and every outer artifact. Projection/orphan-source, source-only-fragment, translator, absence, selection, refusal-typing, unreadable-root, broader-terminal/oracle, CLI/web, model-budget, data-seam, release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and PDF blockers remain open or separately owned. E1 stays off main; no merge, re-sign, deploy, or cutover is authorized. |
+ | F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
+ | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |
+diff --git a/guidance/corpus-browser-roadmap.md b/guidance/corpus-browser-roadmap.md
+index 3f733bf5b..526915d90 100644
+--- a/guidance/corpus-browser-roadmap.md
++++ b/guidance/corpus-browser-roadmap.md
+@@ -728,6 +728,116 @@ Catena generator alone, and `catena.js` is smaller than V6 left it in both
+ measures. The `src/web/data/` contradiction is **preserved untouched** and
+ remains a separate owner's adjudication.
+ 
++### E1 Catena correction V13 — 2026-08-17
++
++Answers the fresh independent review `728c3e3b3d0d6e899f0da33e06a08a116375896f`
++on `review/catena-wave-1-e1-corrections-v12-independent` — **CHANGES
++REQUIRED** at exact V12 head `d312786dd2b23926aa88e29ea15647dfcc7e7e6e`,
++which independently verified evidence
++`05306fcfe221c1b0456501463e02323047635607` and ZIP SHA-256
++`fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890` at
++1,842,342 bytes across 81 members — with exactly its stated next action and
++nothing else. Current `origin/main` is
++`549bf0790503bd873dd8ce6ea0a64cc34f91271d`.
++
++The review closed nothing it had passed: `requestSnapshot` is correct for one
++invocation, the inherited prefix and the inherited refusal close locally, the
++carried path is read once per projection, the fail-closed contamination policy
++is accepted as a design, ordinary request behaviour and the malformed and
++unestablished wording are exact, the 36-field late vector and its `0 -> 1`
++release pass unchanged, P8 executes no archive code and rehashes equal before
++and after, the ZIP's arithmetic and CRCs are correct, and ownership boundaries
++hold. It found nine things.
++
++One raw chapter was projected three times per render, and three projections
++are three observations of it. `spineUnreadable` projected to decide
++readability and discarded the rows, the tally projected to keep a length, and
++`renderChain` projected a third time and kept the rows that reach every sink,
++so a record answering differently between them rendered and requested from an
++answer nothing had approved. The chapter is now normalized once —
++each of its request-critical members read into a local exactly once, the rows
++frozen where they are made, the editions gathered in a single walk, and
++readability decided from that same walk — into a frozen null-prototype
++projection held against the raw record, which every consumer reads and none
++reaches past. `catena.js` changes by two lines and gets smaller.
++
++Identity is observable rather than argued: the projection is exported, the
++count of raw chapters normalized is exported, and every model entry point that
++takes a chapter is asked which projection it resolved to before it answers, so
++one identity across readability, tally, render, request, cache, body and
++ownership is a comparison of recorded lists. A request is bound to the
++projection that produced the row carrying its address.
++
++Six of six are non-vacuous, each at a different sink. The review found
++`v12-drifting-carried-path` vacuous — it consumed its pair inside the
++readability projection, which issues no request, so it passed by never
++reaching a sink. Each V13 scenario walks one chapter member between
++projections and plants at the address only a later projection reaches, beside
++a control holding that member at the walked-to value. At the parent the walked
++carried path and the walked prefix each fetch and render a deeper composed
++body; the walked member list renders and fetches off members readability never
++approved; the walked editions put a forged rights claim on the reader's
++provenance line; the walked refusals print a Rule 4 boundary the record never
++stated; and the prewarmed walk misses a warm cache to fetch a second body. The
++parent asks the walked member 3, 3, 5, 8, 4 and 3 times for one render; this
++head asks each once. Replayed against the uncorrected parent the file fails
++twenty-seven ways across thirteen methods. One committed assertion required the
++wrong answer and is corrected with its reason, and the page-level descriptor
++pin moves from three to one because three was the defect the review named.
++
++The package can now show its own ownership, and can only claim authority after
++it is verified. `journal-dump.py` enumerated scenarios from a hand-maintained
++list that stopped at V11, so both packaged journals were byte-identical and
++carried no V12 scenario; the roster is derived from the test file now, and each
++row carries its sequence, scenario, request-time route, owning projection,
++path, kind, step, outcome, cache disposition and body. The terminal
++`authoritative` row was written before the manifest, so a later failure could
++only write sibling markers while the sealed bytes kept the claim; an in-package
++row may now claim at most `sealed`, and final authority is a structured sidecar
++outside the archive naming the attempt, head, ZIP basename, size, digest, P8
++result and post-P8 rehash, recomputed from the archive, binding one way. The
++authority gate accepted six contradictions — a second authoritative state row,
++a winner later discarded, multiline and uppercase contradictory prose, a wrong
++package on the authoritative line, and prose that never named the winner — and
++consumed neither archive, sidecar, P8 transcript, external ledger nor sibling
++markers; all six are closed and run against the V12 package it refuses it.
++
++Provenance, inventory and privacy are closed on the same terms. Four discarded
++attempts and four set-aside battery cohorts were absent from every surviving
++ledger while three package members claimed them present; ordinals were reused
++after a ledger restart; every summary reason was empty; ten rows named log
++roots the package lacked; and one attempt's embedded timestamp postdated the
++evidence commit. The ledger identity is pinned to the lane, ordinals are
++monotonic and never reused, a battery may be recorded set aside rather than
++forced to `complete`, chronology is checked, and the complete ledger ships
++beside the package. The 10/10 inventory computed every verdict from prose and
++never stat'd a sibling, which is how the package omitted its own inventory log
++while scoring ten of ten; it now resolves paths, recomputes digests, discovers
++siblings including its own output, and counts members, logs, journals, tools
++and rows mechanically. Twelve tracked outer-log lines exposed the workspace
++path, account and tool anchor because the sanitizer's walk root was the
++package, and a generic temp root and a dash-flattened workspace slug survived
++inside the archive because one rule required a literal substring and another
++could not match a flattened path; both gaps are closed and every outer sibling
++is sanitized and re-scanned before it is committed. The executed-byte claim
++covered four tools of fifteen and ran at P8, proving shipped against trusted
++rather than executed against shipped; every invocation now digests its exact
++bytes immediately before running, and the table distinguishes shipped and
++executed from shipped and not executed, external system tool and reviewer-only
++helper.
++
++Fresh checks, measured at both endpoints: focused Catena 555 green at this head
++and 544 at the parent; catena check 1,351/1/73; full discovery 1,906 here and 1,895 there with the identical inherited 14/13/11 and the same 27 identities at both, none of them Catena; `make -k check` red on the same four inherited targets at both; browser gate 2,290 at 1,836/226/228 over 171 pages and 19 routes, identical at both and identical to V12; promise
++ledger 38 tracked / 19 complete; budgets unraised with `catena.css`
++byte-identical at 7,629/8,000 and 2,676/2,700 and `catena.js` smaller at both
++measures, 12,974/13,000 and 7,546/8,800 against the parent's 12,980 and 7,554.
++The unbudgeted model grows 34,367 to 36,679 whole and 8,258 to 8,873 stripped;
++disclosed, and its governance remains the budget owner's. `src/web/data/` has
++zero changes and four stale bindings stay fail-closed and unsigned.
++
++All other blockers remain open and untouched, and E1 is not integrated. No
++merge, re-signing, deployment or cutover is authorized.
++
+ ### E1 Catena correction V12 — 2026-08-17
+ 
+ Answers the fresh independent review `22b9bdad5e71920a103e3ec3bcf2f79bba50cebb`
+@@ -1006,7 +1116,7 @@ fresh independent review.
+ | --- | --- | --- |
+ | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
+ | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
+-| E1 Catena production implementation | Thirteenth correction candidate (V12) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at exact V11 head `0255b8499` (independent review `22b9bdad5` on `review/catena-wave-1-e1-corrections-v11-independent`, 2026-08-17) | That review passed the fail-closed prototype policy as a design, ordinary accessor non-invocation, own-property projection, the refused and unestablished wording, the cold, present-valid and prewarmed controls, the 36-field late vector and its timing, packaged request ownership, the read-only non-executing P8 with its identity binding and rehash, the ten handoff contents, screenshots, privacy, ZIP metadata, the byte scan, ownership boundaries and the existing ceilings — and found the policy applied to some of the ways in and not to others. An inherited valid spine `text_prefix` was read as genuine absence and reopened the carried fallback; `Object.prototype.text_refused = true` did not contaminate an own-valid claim, because `ownContract` checked three names; and the carried `text_path` descriptor was read twice, so a drifting descriptor validated one address and projected another. Beside them the package failed authority coherence: its ledger called the superseded attempt authoritative and the shipped attempt unresolved, two browser logs were empty, and repeated assemblies reused log names. Its exact next action: make an inherited spine prefix and an inherited refusal marker fail closed, snapshot the carried path once, add planted request/cache/body/ownership regressions, and return the corrected head with a fresh package carrying one terminal authoritative attempt, unique attempt-root logs, and mechanical rejection of cross-record authority disagreement. V12 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V11 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
++| E1 Catena production implementation | Fourteenth correction candidate (V13) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at exact V12 head `d312786dd` (independent review `728c3e3b3` on `review/catena-wave-1-e1-corrections-v12-independent`, 2026-08-17) | That review passed `requestSnapshot` for one invocation, the inherited prefix and inherited refusal closing locally, the carried path read once per projection, the fail-closed prototype policy as a design, ordinary request behaviour, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, primitive namespace closure, the 36-field late vector and its `0 -> 1` release, the read-only non-executing P8 with its rehash, ZIP arithmetic and CRCs, candidate immutability and ownership boundaries — and found the stable snapshot was not stable for a page RENDER. The same raw spine and fragments were projected three times, by `spineUnreadable`, by the tally and by `renderChain`, so one descriptor read per projection times three proved no source revisit and a record answering differently between projections rendered and requested from an answer nothing approved. Beside it one of six planted scenarios was vacuous, the packaged journals stopped at V11 and carried no scenario of the lane they shipped for, the sealed bytes claimed authority before P8, the authority gate accepted six contradictions, four discarded attempts and four set-aside batteries were absent from every ledger while ordinals were reused, the 10/10 inventory was lexical and blind to its own output log, twelve tracked outer-log lines and two in-archive residues leaked machine-specific paths, and the executed-byte proof covered four tools of fifteen. Its exact next action: normalize each loaded chapter exactly once into one stable page-level projection and pass it unchanged through readability, tally, request, cache, body and ownership; add walking raw-state tests asserting one observation per loaded record; make all six planted scenarios non-vacuous and ship their ownership journals; and issue a fresh package with one complete append-only ledger, no ordinal reuse, truthful reasons and times, post-P8 authority bound to the ZIP, full negative fixtures, executed and shipped digests for every claimed tool, a substantive inventory, and privacy scanning of every member and outer artifact. V13 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V12 correction. The exact Catena data seam is authorized but transfers no broader ownership; release, common-gate, B0/shared-shell, Day-reader guard, real-device/AT, protected Liturgy and PDF prerequisites remain separate. E1 stays off main. No merge, re-sign, deploy or cutover. |
+ | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
+ | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
+ | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
+@@ -1033,6 +1143,7 @@ fresh independent review.
+ | 2026-08-15 | E1 Catena correction V7 | Answered independent review `f183ed1b0` (**CHANGES REQUIRED** at `4639b139f`) by replacing raw fragment copying with an explicit typed projection. `chapterFragments` had shallow-copied every own property and cleared `text_path` only when a composed form could be built, so a fragment whose id or whose file's prefix was unreadable kept the record's own `text_path` and the page requested it; `text_path` is now composed, and a carried one is accepted only where its stem is that fragment's own validated id, which is what keeps the sample corpus working. Hollow fragment, absence and refusal members make no row, tally or claim; an absence source is validated before it claims a work's row, so a hollow source no longer renders blank and masks the valid sibling behind it; a refusal needs the closed kind and the chapter matched against the chapter being read, which stops a chapter-1 record establishing chapter 2's boundary; a contradiction contributes no rights prose, where V6 declined the finding and then printed one side's reason chosen by length; `partial` stops being coerced in `scripts/_catena.py`, where `str(row.get("partial") or "")` turned a mapping into prose; and holdings, canon, voices, the edition manifest, the paragraph layer, the verses container and the chapter spine each distinguish a corpus read and found empty from a corpus state that could not be established. Ten oracles that blessed those defects are corrected with their reasons recorded, and the late-work guard grew from thirteen sinks to thirty-six after the review found it compared the announcement journal rather than the live region a stale write could replace. This lane attacked its own change twice: the first pass found five further defects, one introduced by the correction, all fixed with regressions, and one confirmed finding is recorded unfixed rather than settled by a lane that cannot settle it. Package claims are machine-derived from one pass and a checker refuses prose that disagrees with them; the sealer no longer deletes the manifest in its read-only mode and now proves every archive member against it. `catena.css`, `index.html` and all of `src/web/data/` byte-identical; no ceiling raised, and `catena.js` smaller than V6 left it in both measures. **Every figure is derived at the sealed head and recorded in the package's own claim record rather than restated here, which is the direct answer to the five counts this review found wrong.** | Branch `impl/catena-wave-1-e1-corrections-v7`; parent `4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`; review addressed `f183ed1b0afc6f14574a3507f6eaf3102dc999fa`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-15 | E1 Catena correction V8 | Answered independent review `d9ad5ec1a` (**CHANGES REQUIRED** at `e876b29e5`) with exactly its stated first bounded commit: the byte-exact `structure/catena/text/` namespace closure at the request sink, and nothing else. `trail` and `leaf` stated what a path of this data root looks like and nothing stated which directory the route owns, so `structure/paragraphs/` composed a request, a carried same-stem `structure/paragraphs/text/<id>.json` fetched a real Sources text sharing that id, and whitespace-wrapped paths were trimmed into validity. The model now states the namespace once — `TEXT_HOME` — and `textTrail`/`textLeaf` require it byte-exactly at a directory boundary with no whitespace repair, for the composed and the carried form alike, before projection completes; `catena.js` is untouched. Three adversarial replay scenarios plant a real body at the wrong-namespace address, pin the entire fetched journal, assert the planted words reach no sink, and hold the terminal state. Focused suite 510 green, up from 505; catena check 1,351/1/73 with all 1,356 real and 47 fixture paths unchanged; browser gate 2,290 assertions with the inherited 1,836/226/228 and 117/82/27 identity; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +514 gzipped whole. All other V7 findings recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v8`; parent `e876b29e5797edcc6e86422daa807f4b1104ec81`; review addressed `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-16 | E1 Catena correction V9 | Answered independent review `611b5eed8` (**CHANGES REQUIRED** at `7e4df42a2`) with exactly its stated next action: the composed prefix/fallback closure and a truthful final-byte package, and nothing else. `textTrail` collapsed a prefix the file never stated and a prefix the file stated and the page refused into the same `''`, and `fragmentRow`'s truthy test read that `''` as leave to consult the carried `text_path`, so the reviewer's refused `structure/paragraphs/` prefix still fetched a valid same-stem carried file and rendered its planted body. The prefix is now the statement `{stated, trail}`: absence is property absence on the spine record, every carried shape is a statement, a refused statement is terminal and kept on the row as `text_refused`, and the carried door opens only on genuine absence with a byte-exact own-stem path; `catena.js` is untouched. The regressions pin the exact vector cold, prewarmed and genuinely late at the production sinks — whole journal, body, rows, announcement journal and standing `statusText`, tally, busy, hash, history, focus — and fail nine ways at the uncorrected parent; a model-level matrix classifies thirteen refused shapes beside the absent and valid states. The handoff pipeline freezes its inventory before derivation, names derived members unsized, and verifies its claims read-only against the final ZIP, with the retained parent run and the discarded `/tmp` run ledgered. Focused suite 519 green, up from 510; catena check 1,351/1/73; browser gate 2,290 with the inherited 1,836/226/228 and 117/82/27 identity, whole report identical; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +833 gzipped whole. All other V7 blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v9`; parent `7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`; review addressed `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
++| 2026-08-17 | E1 Catena correction V13 | Answered independent review `728c3e3b3` (**CHANGES REQUIRED** at `d312786dd`) with exactly its stated next action and nothing else. V12 took each record's request-critical state once inside a projection and then ran that projection three times over one raw chapter: `spineUnreadable` projected to decide readability and threw the rows away, the tally projected to keep a length, and `renderChain` projected a third time and kept the rows that reach request, cache, body and ownership — so a record answering one way while readability was decided and another while the render was built rendered, requested, cached and attributed from an answer nothing had approved. The chapter is normalized ONCE now, each request-critical member read into a local exactly once, the rows frozen where they are made, the editions gathered in one walk and readability decided from that same walk, into a frozen null-prototype projection held against the raw record that every consumer reads and none reaches past; `catena.js` changes by two lines and gets smaller. Identity is observable rather than argued, and a request is bound to the projection that produced the row carrying its address. Six of six planted scenarios are non-vacuous, each at a different sink: at the parent the walked carried path and the walked prefix each fetch and render a deeper composed body, the walked member list renders and fetches off members readability never approved, the walked editions put a forged rights claim on the reader's provenance line, the walked refusals print a Rule 4 boundary the record never stated, and the prewarmed walk misses a warm cache to fetch a second body; the parent asks the walked member 3, 3, 5, 8, 4 and 3 times for one render and this head asks each once. Replayed against the uncorrected parent the file fails twenty-seven ways across thirteen methods; one committed assertion required the wrong answer and is corrected with its reason. On the package: the journal roster is derived from the test file rather than hand-maintained, an in-package row may claim at most `sealed` and final authority is a post-P8 sidecar bound to the ZIP's basename, size, digest and P8 result, the authority gate's six accepted contradictions are closed and it now consumes the archive, sidecar, P8 transcript, external ledger and sibling markers, ordinals are monotonic and never reused with a reason on every non-authoritative terminal state, the inventory is verified substantively rather than lexically, every outer sibling is sanitized before it is committed, and every tool invocation digests its exact bytes immediately before it runs. Measured at both endpoints: focused Catena 555 green here and 544 at the parent; catena check 1,351/1/73; full discovery 1,906 here and 1,895 there with the identical inherited 14/13/11 and the same 27 identities at both; `make -k check` red on the same four inherited targets at both; browser gate 2,290 at 1,836/226/228, identical at both; promise ledger 38 tracked / 19 complete; budgets unraised with `catena.css` byte-identical and `catena.js` smaller at both measures; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v13`; parent `d312786dd2b23926aa88e29ea15647dfcc7e7e6e`; review addressed `728c3e3b3d0d6e899f0da33e06a08a116375896f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-17 | E1 Catena correction V12 | Answered independent review `22b9bdad5` (**CHANGES REQUIRED** at `0255b8499`) with exactly its stated next action and nothing else. Three inputs reached the production request sink that no record's own bytes had stated, and they are one defect: the raw record was observed more than once and the observations were allowed to disagree. An inherited valid spine `text_prefix` was invisible to `ownData` and so produced the claim that means genuine absence, the one state that reopens the carried fallback; `ownContract` asked `Object.prototype` about three names, so an inherited refusal marker left an own-valid claim composing its request; and the carried `text_path` descriptor was read twice, so the address handed to `fetch` had passed no test. The request-critical state is now taken once — one descriptor read per requested name, one question to the prototype, a null-prototype record of frozen own data — and contamination in any of the five named fields is neither absence nor an ordinary refusal but one conservative malformed state; an accessor is declined without being called, so the invocation count stays zero rather than becoming one. `catena.js` is untouched. A model matrix drives the review's exact reproductions, ten prototype and inherited combinations and six drifting descriptors; six replay scenarios drive the same inputs through `T.loadJSON`, the cache and the renderer with a body planted at every reachable address and a control beside each that really does fetch. Replayed against the uncorrected parent the file fails twelve ways across eleven methods, and the alternating descriptor fetches and renders the second address outright. A static pin holds the request-critical names to the three lines that snapshot them, and two committed assertions that required the wrong answer are corrected with their reasons. On the package: a completed battery and a sealing package attempt were both written authoritative, so the count could never be one; the states are separated, only a package attempt may be authoritative, exactly one may be, every attempt writes into its own log root, and a coherence check run before publication fails on a second authoritative attempt, a wrong package or head, an attempt both authoritative and superseded, an unresolved attempt called final, an unexplained empty or reused or unclaimed log, and any ledger/outer-log/prose disagreement. Measured at both endpoints: focused Catena 544 green here and 534 at the parent; catena check 1,351/1/73; full discovery 1,895 here and 1,885 there with the identical inherited 14/13/11 at both; `make -k check` red on the same four inherited targets at both; browser gate 2,290 at 1,836/226/228, identical at both; promise ledger 37 tracked / 19 complete; budgets unraised with both capped files byte-identical; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v12`; parent `0255b84996e1dc24da3ce75ac318c4f774b7957c`; review addressed `22b9bdad5e71920a103e3ec3bcf2f79bba50cebb`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-16 | E1 Catena correction V11 | Answered independent review `f7cad8b02` (**CHANGES REQUIRED** at `ea15d16d2`) with exactly its stated next action: the inherited/accessor claim closure, truthful malformed-state presentation, the complete late vector, and package/provenance/privacy correctness, and nothing else. `bag()` proved a record had arrived and property lookup then answered from the prototype, so `Object.create({stated: false, trail: ''})` opened the carried door as this route's own absence and an inherited valid statement composed an address; every semantic member is now read once as own data through its descriptor, an own accessor is never invoked, and a claim whose contract is partly written above it fails closed. The refused sentence asserted a supplied, written reference for states establishing neither, so the claim now carries whether a non-empty textual value was supplied and the weaker state says only that no text reference is established. A fourteen-case inherited and accessor matrix pins zero requests, zero fallback, zero body leak and zero accessor invocations; every unestablished prefix is driven to the visible and request sinks; the late vector states an expected value for all 36 guarded fields at both ends with a coverage test that fails if the guard widens without the proof; and a harness hook pins the renderer's before-the-sink order with the refused-plus-usable-path row the model never emits. The packaged journal gains each request's kind, owning step and outcome; P8 executes no archive code and rehashes the ZIP after every check; provenance is read per command; log identity comes from an append-only attempt ledger with mechanical index, an outer invocation log and explicit discard markers; ZIP entries carry a fixed epoch and derived modes; the sanitizer gained convention-shaped workspace and lane-evidence rules and rewrites local timestamps to UTC; a new handoff-inventory tool reproduces the review's eight-of-ten finding unaided. Focused suite 534 green, up from 522; catena check 1,351/1/73; full discovery 1,885 with the inherited 14/13/11 and the same 27-entry name set; browser gate 2,290 at 1,836/226/228, identical to V10; `make -k check` red on the same four targets at parent and head, all inherited; budgets unraised with `catena.css` byte-identical and `catena.js` 12,980/13,000 whole and 7,554/8,800 stripped; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v11`; parent `ea15d16d22d7ceaed989ed9907c236f967738a03`; review addressed `f7cad8b0219de8343a0b2cce95e89558ded6946e`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+ | 2026-08-16 | E1 Catena correction V10 | Answered independent review `55df5c236` (**CHANGES REQUIRED** at `3c5b78249`, published head `4f00e04bd`) with exactly its stated next action: the refused-prefix presentation closure, the exact terminal vectors, and a protocol-correct package, and nothing else. The page now consumes `text_refused` before the request sink, so a present-invalid prefix renders one neutral model-stated sentence — a supplied text reference cannot be used as written — instead of the false `carries no text file`; genuine absence keeps its own sentence and the two claims are pinned visibly distinct with a positive control each way; absence at the exported claim boundary is the one shape `{stated: false, trail: ''}` and every contradictory direct claim projects as refused with no request, substitution, or body leak. The replay journals each request's owning step and captures `history.state`; cold, present-valid, prewarmed, and late are pinned to expected values at every material sink, the late vector pinning B's full terminal baseline before and after a release pinned at exactly zero-then-one over the retained 36-field guard. Against the uncorrected parent the V10 file yields nine failing subtest identities across seven behavioral methods while the neutrality sweep and the present-valid, genuine-absence, and late-non-vacuity controls pass. Focused suite 522 green, up from 519; catena check 1,351/1/73; full discovery 1,873 with the inherited 14/13/11 and the same 27-entry name set; browser gate 2,290 at 1,836/226/228; promise ledger 35 tracked / 19 complete; budgets unraised with `catena.css` byte-identical and `catena.js` 12,987/13,000 whole and 7,565/8,800 stripped; the unbudgeted model's growth disclosed at +562 gzipped whole. The package pipeline gains unique refusing logs, contemporaneous exact-SHA/clean/cwd provenance, a P8 transcript bound to the exact ZIP with duplicate-row checks and derived final-byte totals, a timestamp-refusing assembler, and accurate lane labels. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v10`; parent `3c5b78249193df065c4e1c2ee5a98e5989c6e582`; review addressed `55df5c236a1dfda12bb974efdbb9f46d0aeb3436`; published review head `4f00e04bdd1fd63702a51bfdafef256b468bef77`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+diff --git a/promised-deliverables.toml b/promised-deliverables.toml
+index aa9ecd341..aa6a89664 100644
+--- a/promised-deliverables.toml
++++ b/promised-deliverables.toml
+@@ -1240,6 +1240,102 @@ state = "complete"
+   status = "pass"
+   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+ 
++[[deliverables]]
++id = "corpus-browser-catena-e1-corrections-v13-2026-08-17"
++owner = "src/web/browser/catena"
++promise = "Answer the 2026-08-17 E1 Catena V12 independent review (728c3e3b3 on review/catena-wave-1-e1-corrections-v12-independent, CHANGES REQUIRED at d312786dd) with exactly its stated next action: normalize each loaded chapter's request-critical spine and fragment state exactly once into one stable page-level projection and pass that projection unchanged through readability, tally, rendering, request, cache, body and ownership, so that no covered consumer re-reads the raw chapter after it exists; add walking raw-state tests that assert one total observation per loaded record and prove the projection identity is the same instance everywhere; make all six planted parent scenarios non-vacuous and ship their exact ownership journals in the package; and issue one immutable exact-head V13 handoff with one complete append-only lane ledger, no ordinal reuse, truthful terminal reasons and times, publication authority established only after P8 and bound to the final ZIP's basename, size, digest and P8 result, full negative authority and endpoint fixtures, contemporaneous executed and shipped digests for every tool claimed executed, a substantively verified handoff inventory, and privacy scanning of every member and every outer artifact. Record every other blocker open and untouched, and return that head for fresh independent review."
++state = "in_progress"
++
++  [[deliverables.requirements]]
++  id = "one-page-level-chapter-projection"
++  criterion = "Each raw chapter is normalized exactly once per load or route resolution into one bounded internal projection holding own data properties only, with no accessors, no inherited semantic values, stable values, and no retained dependency on the raw chapter for any covered consumer. Readability, the tally, the rendered chain, the request decision, the cache decision, the body projection and the ownership journal all read that one projection. The page-level count of raw chapter normalizations is pinned at exactly one per loaded chapter, and the V12 local guarantees are preserved: one getPrototypeOf per normalized source object, one descriptor read per requested name, zero accessor invocation, inherited prefix and inherited refusal failing closed, and a carried text_path that cannot drift within the projection."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "one-projection-identity-proved"
++  criterion = "The projection's identity is observable and is proved to be the SAME normalized instance, not merely an equal value, across readability, tally, rendering, request, cache, body and ownership for one page load. A second loaded chapter advances the count by exactly one, so the number is a fact about the data rather than about the page's shape. A model chapter consumer that is not routed through the projection fails the identity test by name rather than passing quietly."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "no-raw-reread-after-projection"
++  criterion = "After the chapter projection exists, no covered consumer re-reads request-critical raw chapter state: text_prefix, the carried text_path, text_refused, stated, trail, the chapter's member list and order, its editions, and its recorded refusals. Every later raw read capable of changing readability, tally inclusion, request, render, cache, body or ownership is removed, and the page's own last reads of raw chapter state are routed through the projection."
++  status = "pass"
++  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js"]
++
++  [[deliverables.requirements]]
++  id = "walking-raw-state-cannot-move-the-page"
++  criterion = "Page-level adversarial tests mutate request-critical raw chapter state after normalization — a walking carried path, a walking spine prefix, a walking member list, walking editions and walking recorded refusals — and readability, tally, rendering, request, cache, body and ownership all remain based on the original projection. Each walked member is observed exactly once per render, and a deterministic trace records the initial raw state, the single normalization, the projection identity, the mutation, and each consumer's result."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "six-of-six-non-vacuous"
++  criterion = "All six planted parent scenarios are non-vacuous: each plants a forbidden endpoint or body, each stands beside a positive control proving that planted thing is reachable and renderable by a page entitled to reach it, the reviewed parent actually exhibits the intended defect at a production sink, and this lane closes it. A matrix records, per scenario, the scenario id, the planted endpoint or body, the positive control, the parent request, body and cache result, this lane's request, body and cache result, and the ownership result. Request count alone proves nothing: the exact request journal, the cache hit or miss, the rendered body, the fallback and alternate bodies, and the final visible state are each asserted."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "packaged-ownership-journals"
++  criterion = "The package ships machine-readable ownership journals covering this lane's own scenarios, so a reviewer can verify every ownership claim without rerunning the harness. Each row states its sequence, the scenario and the route as it stood when the request was made, the projection that owns it, the request path, the request kind, the owning step, the outcome, and the cache and body association. The journal's scenario roster is derived from the test file rather than hand-maintained, so a later lane cannot ship a journal that stops before its own work."
++  status = "open"
++  evidence = ["tools/tests/test_catena_wave_1.py"]
++
++  [[deliverables.requirements]]
++  id = "authority-only-after-p8"
++  criterion = "No sealed package bytes claim final authority before P8. The state progression is attempt started, package sealed, P7 and P8 verification, post-P8 ZIP size and hash confirmed, then final authority established. An in-package attempt row may claim at most sealed. The final authoritative record is a cryptographically bound structured sidecar outside the archive naming the attempt id, the exact head, the exact ZIP basename, size and SHA-256, the P8 result, the post-P8 rehash result and a terminal authoritative status, recomputed from the archive itself rather than carried forward; the binding runs one way and the archive contains no such record. If P8 fails the attempt remains non-authoritative."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "complete-append-only-history"
++  criterion = "The attempt and battery history is append-only and complete for every package attempt and every authoritative battery run used in a claim, with no ordinal reused across the lane, no prior row rewritten, a terminal disposition and a non-empty reason for every non-authoritative terminal state, and internally truthful chronology. Batteries separately record the endpoint SHA, the tree state before and after, the tool identity, the exact command, the counts and results, the log root and the terminal reason; a battery is mechanically prevented from being attributed to a dirty tree or to a commit it did not run at. The complete ledger ships beside the package rather than being deferred to a record the reviewer cannot reach."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "authority-negative-fixtures"
++  criterion = "The authority gate refuses, with a dedicated fixture each, two authoritative attempts, an authoritative attempt later superseded or discarded, a ZIP hash mismatch, a ZIP basename mismatch, a head mismatch, a missing final ZIP identity, a missing authoritative attempt or winner identity, multiline prose claiming a different winner, an uppercase or lowercase variant conflict, an unresolved attempt described as final, and an outer log that disagrees with the structured ledger. Structured data is the authority source; prose scanning is a backstop and never the source. The gate consumes the archive, the digest sidecar, the P8 transcript, the external complete ledger and the sibling discard markers, and its positive fixture cannot pass without them."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "substantive-handoff-inventory"
++  criterion = "The handoff inventory is verified substantively rather than lexically: every referenced file exists, every count claimed in the handoff matches the package's actual contents, every sibling beside the package is discovered and named by its exact filename including the inventory tool's own output, every quoted digest is recomputed and compared, and no count is carried stale from a prior package. Package members, logs, ownership journals, screenshots where present, tools, attempt rows, battery rows and manifest rows are each counted mechanically."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "privacy-closure-inside-and-outside"
++  criterion = "No absolute workspace path, account or user name, home path, temp root, tool-anchor absolute path, session suffix, hostname or absolute build path appears in the archive's names or contents, in any sidecar, in any tracked outer log, in the attempt or battery history, in the executed-tool table, in the P8 transcript, in screenshots or their metadata, or in ZIP metadata. Outer logs are sanitized before they are committed, not only package members. The final scan is taken at the fixpoint, after every sidecar, log and authority record is complete, and requires zero findings alongside valid UTF-8, no NUL and no forbidden control bytes."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "executed-tool-byte-identity"
++  criterion = "For every tool claimed as executed, the SHA-256 of the exact bytes is captured contemporaneously at or immediately before execution, the logical tool identity is recorded, the execution is linked to that digest, a copy is shipped, and the shipped digest is compared to the executed digest. The proof covers every executed tool rather than a subset, and distinguishes shipped and executed, shipped and not executed, external system tool, and reviewer-only helper. A machine-readable table records the tool id, the logical path, the run or attempt id, the executed SHA-256, the shipped SHA-256, their equality, whether it executed, and the evidence log."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "passed-v12-behaviour-preserved"
++  criterion = "Nothing the V12 review passed is regressed: one stable snapshot per projection, the inherited text_prefix local closure, the inherited text_refused local closure, the carried text_path local read-once behaviour, the fail-closed prototype-contamination policy, ordinary request behaviour for genuine absence, own present-valid and own present-invalid prefixes, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, primitive namespace closure, the 36-field late vector and its zero-to-one release, P8 non-execution and read-only operation with pre and post rehash, ZIP arithmetic, CRC, manifest and final rehash correctness, candidate immutability, ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
++  status = "pass"
++  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
++
++  [[deliverables.requirements]]
++  id = "immutable-v13-handoff"
++  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V13 head, its parent d312786dd, the review addressed 728c3e3b3, the mechanically derived commit list and diff, the chapter-projection architecture, the one-projection identity proof, the raw-reread audit, the walking-state trace, the page-level observation counts, the six-of-six non-vacuity matrix, the request, cache, body and ownership proof, the packaged ownership journals, the ordinary and late regression evidence, the append-only attempt and battery history with its ordinal, chronology and terminal-reason checks, the authority negative-fixture results, the post-P8 final authority record and its ZIP binding, the substantive inventory and count checks, the privacy evidence, the executed-tool byte table, the P8 result, package arithmetic, fresh validation figures, budgets, release status, the open blockers, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
++  status = "open"
++  evidence = ["guidance/external-review-handoffs.md"]
++
++  [[deliverables.requirements]]
++  id = "fresh-independent-review"
++  criterion = "A fresh independent review of the exact V13 head and its new immutable package records a durable disposition, scoped to one page-level normalized chapter projection, walking-state stability, six-of-six non-vacuity, packaged ownership evidence, post-P8 final authority, append-only provenance, privacy, and complete executed-tool byte identity. This lane does not review its own work and records no acceptance."
++  status = "open"
++  evidence = ["guidance/corpus-browser-roadmap.md"]
++
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v12-2026-08-17"
+ owner = "src/web/browser/catena"
+@@ -1249,7 +1345,7 @@ state = "in_progress"
+   [[deliverables.requirements]]
+   id = "request-critical-state-snapshotted-once"
+   criterion = "The request-critical semantic state is derived from the source object exactly once, into a normalized snapshot holding only trusted own data properties with no accessor, no prototype-derived value and no retained dependency on the raw object. After that snapshot exists, no request, fallback, cache, renderer or ownership logic consults the raw object again for a request-critical field: text_prefix, the carried text_path, text_refused, the stated and trail representations that distinguish absent from valid from invalid, and any field that can reopen carried fallback, choose the request address, or change request ownership or refused/absence routing. A static pin holds the request-critical property names to the lines that take the snapshot, so a later reach for one off a raw record fails at the line it is written."
+-  status = "pass"
++  status = "open"
+   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+ 
+   [[deliverables.requirements]]
+@@ -1273,25 +1369,25 @@ state = "in_progress"
+   [[deliverables.requirements]]
+   id = "planted-request-cache-body-ownership-proof"
+   criterion = "Each of the three defects is driven through the production sinks with a deterministic body planted at every address it could reach, so a leak is a served and rendered page rather than an absence nobody forbade. The flat request list and the owned journal are pinned entire, the rendered body container is asserted to carry no planted text, no previous body, no fallback body, no prefix body and no second-getter body, prewarmed scenarios prove no cached substitution and no stale body while the malformed state stays visible, and the ownership journal records sequence, path, kind, owner and outcome with no request owner, no fallback owner and no stale body owner for a failed-closed claim. Every scenario stands beside a non-vacuity control that really does fetch and render, and the whole file is run against the uncorrected parent and its failing identities recorded."
+-  status = "pass"
++  status = "open"
+   evidence = ["tools/tests/test_catena_wave_1.py"]
+ 
+   [[deliverables.requirements]]
+   id = "one-authoritative-attempt"
+   criterion = "The final package has exactly one authoritative attempt and its ledger says so without prose reinterpreting it. Attempt states and their legal transitions are explicit, a completed validation battery and a sealing package attempt are distinct states so the authoritative count cannot be inflated, and no attempt is simultaneously authoritative and superseded, unresolved and final, or discarded and authoritative. A coherence check run before publication fails if the authoritative attempt count is not one, if the authoritative package or head is not this package or this head, if a superseded attempt is still authoritative, if an unresolved attempt is described as final, or if the outer invocation log or the package prose disagrees with the ledger."
+-  status = "pass"
++  status = "open"
+   evidence = ["guidance/external-review-handoffs.md"]
+ 
+   [[deliverables.requirements]]
+   id = "unique-attempt-root-logs"
+   criterion = "Every attempt writes into its own root log namespace, so no log filename, provenance path, root or command-output file is reused across attempts and a failed attempt's logs stay with that attempt. Package validation rejects an unexplained zero-byte authoritative log, a missing log, a log claimed by two attempts, a log referenced by no attempt, and an attempt referencing a log outside its own root, and focused protocol tests exercise each rejection."
+-  status = "pass"
++  status = "open"
+   evidence = ["guidance/external-review-handoffs.md"]
+ 
+   [[deliverables.requirements]]
+   id = "passed-v11-behaviour-preserved"
+   criterion = "Nothing the V11 review passed is regressed: ordinary accessor non-invocation, own-property projection for ordinary rows and extents, the ordinary refused wording, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, the late vector with all 36 guarded fields exact-pinned and its genuinely-late timing and zero-then-one release, packaged request ownership, the read-only non-executing P8 with its identity binding and final rehash, the ten handoff contents, privacy and ZIP metadata, the UTF-8 and control-byte scan, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
+-  status = "pass"
++  status = "open"
+   evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
+ 
+   [[deliverables.requirements]]
+@@ -1303,8 +1399,8 @@ state = "in_progress"
+   [[deliverables.requirements]]
+   id = "fresh-independent-review"
+   criterion = "A fresh independent review of the exact V12 head and its new immutable package records a durable disposition, scoped to stable request-critical normalization, inherited and accessor request closure, descriptor read-once behaviour, planted request, cache, body and ownership proof, and authoritative package-ledger coherence. This lane does not review its own work and records no acceptance."
+-  status = "open"
+-  evidence = ["guidance/corpus-browser-roadmap.md"]
++  status = "pass"
++  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+ 
+ [[deliverables]]
+ id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"
+diff --git a/src/web/browser/catena/catena-model.js b/src/web/browser/catena/catena-model.js
+index 07c5c74b1..3157f2831 100644
+--- a/src/web/browser/catena/catena-model.js
++++ b/src/web/browser/catena/catena-model.js
+@@ -882,41 +882,124 @@
+    * do. `REVIEW_REQUEST.md` asks about the one whose copy is imprecise.
+    */
+   function spineUnreadable(file) {
+-    const record = bag(file);
+-    if (record !== file) return true;
+-    if (!Array.isArray(record.fragments)) return true;
+-    if (record.sources !== undefined && bag(record.sources) !== record.sources) return true;
+-    if (record.refusals !== undefined && bag(record.refusals) !== record.refusals) return true;
+-    // A SPINE DOES NOT CARRY THE ROUTE'S OWN WORD FOR A RECORD THAT WOULD NOT
+-    // COME. `unfetched` is how `chapterFile` says a request failed, and the
+-    // contract's twelve keys do not include it — so a 200 carrying one was a
+-    // payload forging the page's own failure, and its string was printed to a
+-    // reader inside the broken-record sentence.
+-    if (record.unfetched !== undefined) return true;
+-    // EVERY SOURCE, not just the container. `chapterVoices` and the join both
+-    // do `bag(sources[key])` per member, so a member that is not a record
+-    // counted as no voice, no author, no work and no rights — and the voice
+-    // control then said "none here" of a chapter that holds nine Latin
+-    // fragments. The container was guarded and its members were not, which is
+-    // the whole of what the V6 review was about.
+-    const sources = bag(record.sources);
+-    for (const key in sources) {
+-      if (Object.hasOwn(sources, key) && bag(sources[key]) !== sources[key]) return true;
+-    }
+-    // AND A LIST OF MEMBERS NONE OF WHICH IS ONE. `fragments: []` is a real
+-    // recorded emptiness and 512 of the 562 tracked spines carry it. A
+-    // NON-EMPTY list that yields no fragment is a record that tried to say
+-    // something and said nothing this page can read — and answering it with
+-    // "Nothing held here" turns an over-claim into a manufactured negative,
+-    // which is the trade this correction exists to refuse.
+-    if (record.fragments.length && !chapterFragments(record).length) return true;
+-    return false;
++    return chapterProjection(file).unreadable;
+   }
+ 
+   /** Every fragment of one chapter file that can be one, in the order given. */
+   function chapterFragments(file) {
++    return chapterProjection(file).rows;
++  }
++
++  /** The held-and-blocked rows of one chapter, off its projection. */
++  function chapterBlocked(file) {
++    return chapterProjection(file).blocked;
++  }
++
++  /** The lead rows of one chapter, off its projection. */
++  function chapterLeads(file) {
++    return chapterProjection(file).leads;
++  }
++
++  /**
++   * THE PROJECTION OF A PAYLOAD THAT IS NOT A CHAPTER SPINE AT ALL.
++   *
++   * One frozen value, shared: `null`, a list, a string and a number are not
++   * four different chapters and must not become four different projections.
++   * Its `pass` is 0 because no raw chapter was normalized to reach it.
++   */
++  const NO_CHAPTER = Object.freeze({
++    id: 'chapter-projection-none',
++    pass: 0,
++    unreadable: true,
++    prefix: Object.freeze({ stated: false, said: false, trail: '' }),
++    rows: Object.freeze([]),
++    voices: Object.freeze([]),
++    editions: Object.freeze([]),
++    refusals: Object.freeze(Object.create(null)),
++    blocked: Object.freeze([]),
++    leads: Object.freeze([])
++  });
++
++  /**
++   * THE ONE NORMALIZED CHAPTER, MADE ONCE PER RAW SPINE AND HELD.
++   *
++   * V13, the V12 review. V12 took each record's request-critical state once
++   * INSIDE a projection and proved the value validated was the value used —
++   * and then the page ran that projection three times over one raw chapter.
++   * `spineUnreadable` projected to ask whether a non-empty fragment list
++   * yielded a readable row and threw the rows away; the tally projected again
++   * to keep a length; `renderChain` projected a third time and kept the rows
++   * that reach request, cache, body and ownership. Three passes over one
++   * record are three observations of it, so a `text_path` that answers
++   * `fallback-owned.json` while readability is being decided and `other.json`
++   * while the render is being built passed a test in one projection and
++   * reached `fetch` from another. The V12 counts — parent 6, V12 3 — were one
++   * descriptor read per projection times three, and one-per-projection is not
++   * one.
++   *
++   * So the raw chapter is normalized HERE, once, and every consumer is handed
++   * what this returned. Readability, the tally, the rendered chain, the
++   * request and its cache and body, the voice control, the recorded refusal,
++   * the absence disclosure and the provenance each read the same frozen
++   * projection — the same instance, not an equal value — and none of them
++   * reaches past it to the raw record again. `WeakMap` rather than a field on
++   * the payload: the raw chapter is a document this page received and does
++   * not own, the cache in `catena.js` holds it for the life of the page, and
++   * a voice change or an arrow step must reuse the chapter that was read
++   * rather than read it again.
++   *
++   * `pass` is the count this projection was, and it is the whole of the
++   * page-level observation claim: one raw chapter load advances it by one,
++   * however many consumers ask.
++   */
++  const chapterProjections = new WeakMap();
++  let passes = 0;
++
++  /**
++   * HOW MANY RAW CHAPTERS THIS PAGE HAS NORMALIZED, ever.
++   *
++   * The page-level observation claim in one number: a reviewer takes it
++   * before a render and after, and the difference is the count of raw
++   * chapters read — not the count of consumers that asked.
++   */
++  function chapterPasses() {
++    return passes;
++  }
++
++  function chapterProjection(file) {
+     const record = bag(file);
+-    const sources = bag(record.sources);
++    // A payload that is not a record is not a chapter this page can hold one
++    // projection of, and `WeakMap` will not key on it.
++    if (record !== file) return NO_CHAPTER;
++    const held = chapterProjections.get(record);
++    if (held !== undefined) return held;
++    const made = normalizeChapter(record);
++    chapterProjections.set(record, made);
++    return made;
++  }
++
++  /**
++   * ONE RAW CHAPTER, READ ONCE INTO STABLE VALUES.
++   *
++   * Every request-critical member of the spine is taken here and nowhere
++   * else. Each raw property is read into a local ONCE — `fragments`,
++   * `sources`, `refusals`, `unfetched`, `blocked`, `leads` — because a record
++   * that answers a second read differently is exactly the state this exists
++   * to refuse, and because two reads of one name are two observations of it.
++   * What comes back is frozen own data, with no accessor of its own and no
++   * inherited semantic value, so a later mutation of the raw chapter cannot
++   * reach a consumer that already has it.
++   */
++  function normalizeChapter(record) {
++    const pass = ++passes;
++    // THE SIX RAW MEMBERS, ONE READ EACH.
++    const listed = record.fragments;
++    const carried = record.sources;
++    const refused = record.refusals;
++    const stopped = record.unfetched;
++    const barred = record.blocked;
++    const leading = record.leads;
++    const sources = bag(carried);
+     // THE PREFIX HAS THREE STATES, and `textTrail` alone carries two. V9, the
+     // V8 finding: a prefix the file never stated and a prefix the file stated
+     // and this page refused both left `textTrail` as '', and `fragmentRow`
+@@ -949,13 +1032,13 @@
+     // survives. That resolves unestablished — no request, no carried door.
+     const spine = requestSnapshot(record, ['text_prefix']);
+     const value = spine.value.text_prefix;
+-    const prefix = spine.sound
++    const prefix = Object.freeze(spine.sound
+       ? {
+         stated: spine.stated.text_prefix,
+         said: sound(value) !== '',
+         trail: textTrail(value)
+       }
+-      : { stated: true, said: false, trail: '' };
++      : { stated: true, said: false, trail: '' });
+     const rows = [];
+     // `records` rather than `file.fragments || []`: a spine whose `fragments`
+     // is a record or a string is a broken record, and mapping over it threw out
+@@ -963,11 +1046,115 @@
+     // announcement. Its MEMBERS are asked the same question, because a `null`
+     // among them threw on the very next line and took every valid sibling with
+     // it, and a scalar among them became a blank row that was still counted.
+-    for (const fragment of records(bag(file).fragments)) {
++    for (const fragment of records(listed)) {
+       const row = fragmentRow(fragment, sources, prefix);
+-      if (row) rows.push(row);
++      // FROZEN WHERE IT IS MADE. The row is the only channel across the page
++      // boundary and it is now made once for the whole render, so it is
++      // sealed here rather than trusted to every hand it passes through.
++      if (row) rows.push(freezeRow(row));
+     }
+-    return rows;
++    // EVERY SOURCE, ONCE. `chapterVoices`, the absence disclosure and the
++    // readability question each walked `sources` and each asked its members
++    // again; they are all answered from this one walk. A member that is not a
++    // record contributes nothing and says so — the V6 finding — and the walk
++    // that finds it is the walk that decides readability.
++    let members = false;
++    const voices = new Map();
++    const editions = [];
++    for (const key in sources) {
++      if (!Object.hasOwn(sources, key)) continue;
++      const source = sources[key];
++      const one = bag(source);
++      if (one !== source) members = true;
++      const wanted = voiceKey(one);
++      if (wanted && !voices.has(wanted)) {
++        voices.set(wanted, Object.freeze({
++          key: wanted,
++          voice: sound(one.voice),
++          // Named for a translation and deliberately blank for an original.
++          // The reader asking for the author's own language is asking one
++          // question, not one per language: a chapter holding Ambrose's Latin
++          // beside Severian's Greek holds both authors' own words, and
++          // offering them separately would put the reader back on the axis
++          // this replaced.
++          language: sound(one.voice) === TRANSLATION
++            ? voiceLanguage(one.language) : ''
++        }));
++      }
++      // The three members the absence disclosure reads, taken here so that no
++      // later mutation of an edition record can change which works this
++      // chapter is said to stand for.
++      editions.push(Object.freeze({
++        work_id: ident(one.work_id),
++        author: sound(one.author),
++        work: sound(one.work)
++      }));
++    }
++    // A SPINE DOES NOT CARRY THE ROUTE'S OWN WORD FOR A RECORD THAT WOULD NOT
++    // COME. `unfetched` is how `chapterFile` says a request failed, and the
++    // contract's twelve keys do not include it — so a 200 carrying one was a
++    // payload forging the page's own failure, and its string was printed to a
++    // reader inside the broken-record sentence.
++    //
++    // AND A LIST OF MEMBERS NONE OF WHICH IS ONE. `fragments: []` is a real
++    // recorded emptiness and 512 of the 562 tracked spines carry it. A
++    // NON-EMPTY list that yields no fragment is a record that tried to say
++    // something and said nothing this page can read — and answering it with
++    // "Nothing held here" turns an over-claim into a manufactured negative,
++    // which is the trade this correction exists to refuse.
++    const unreadable = !Array.isArray(listed)
++      || (carried !== undefined && sources !== carried)
++      || (refused !== undefined && bag(refused) !== refused)
++      || stopped !== undefined
++      || members
++      || (listed.length > 0 && rows.length === 0);
++    const made = Object.create(null);
++    made.id = 'chapter-projection-' + pass;
++    made.pass = pass;
++    made.unreadable = unreadable;
++    made.prefix = prefix;
++    made.rows = Object.freeze(rows);
++    made.voices = Object.freeze(Array.from(voices.values()).sort(byVoice));
++    made.editions = Object.freeze(editions);
++    made.refusals = normalizeRefusals(refused);
++    made.blocked = Object.freeze(blockedRows(barred));
++    made.leads = Object.freeze(leadRows(leading));
++    return Object.freeze(made);
++  }
++
++  /** One projected fragment row, sealed with the two members that are not scalar. */
++  function freezeRow(row) {
++    Object.freeze(row.extent);
++    Object.freeze(row.translators);
++    return Object.freeze(row);
++  }
++
++  /**
++   * ONE CHAPTER'S RECORDED REFUSALS, normalized once.
++   *
++   * `refusalNote` is asked per edition and per chapter as the reader moves,
++   * so it cannot be answered at projection time — but what it reads can be
++   * taken here. A null-prototype map of frozen `{kind, chapter, note}` rows
++   * keyed by edition: nothing inherited answers the edition lookup, and a
++   * refusal member mutated after the chapter was read cannot change the
++   * strongest claim this page makes.
++   */
++  function normalizeRefusals(value) {
++    const held = bag(value);
++    const kept = Object.create(null);
++    for (const key in held) {
++      if (!Object.hasOwn(held, key)) continue;
++      const rows = [];
++      for (const one of records(held[key])) {
++        rows.push(Object.freeze({
++          kind: sound(one.kind),
++          chapter: whole(one.chapter),
++          note: sound(one.note)
++        }));
++      }
++      kept[key] = Object.freeze(rows);
++    }
++    return Object.freeze(kept);
+   }
+ 
+   /**
+@@ -1429,17 +1616,19 @@
+   function absenceRows(index, file, language) {
+     const wanted = tongue(language);
+     const recorded = bag(bag(index).absences);
+-    const sources = bag(bag(file).sources);
++    // V13: the chapter's editions, as its one projection took them. `ident`
++    // and `sound` were applied there, once, so a source record mutated after
++    // the chapter was read cannot change which works this page says an
++    // absence about.
++    const editions = chapterProjection(file).editions;
+     const named = [];
+     const rows = [];
+     if (!wanted) return rows;
+-    for (const key in sources) {
+-      if (!Object.hasOwn(sources, key)) continue;
+-      const source = bag(sources[key]);
+-      // `ident` and `hasOwn`: the work id is a property lookup into the
+-      // recorded absences, and a lookup answers for the prototype as readily
+-      // as for the record.
+-      const workId = ident(source.work_id);
++    for (const source of editions) {
++      // `hasOwn`: the work id is a property lookup into the recorded
++      // absences, and a lookup answers for the prototype as readily as for
++      // the record.
++      const workId = source.work_id;
+       if (!workId || named.includes(workId) || !Object.hasOwn(recorded, workId)) continue;
+       // THE SOURCE IS VALIDATED BEFORE IT CLAIMS THE SLOT. V6 deduplicated on
+       // `work_id` first and read the author and the work afterwards, so a
+@@ -1447,8 +1636,8 @@
+       // blank — an absence note about a work the page could not name — while
+       // the valid sibling standing behind it, carrying the same work id and
+       // both its names, was skipped as a duplicate.
+-      const author = sound(source.author);
+-      const work = sound(source.work);
++      const author = source.author;
++      const work = source.work;
+       if (!author && !work) continue;
+       // TWO QUESTIONS, NOT ONE. `same` is the members that are about this
+       // work in this language at all — the ground for the row existing. `said`
+@@ -1791,14 +1980,17 @@
+    */
+   function refusalNote(file, edition, chapter) {
+     const key = ident(edition);
+-    const held = bag(bag(file).refusals);
++    // V13: off the chapter's one projection, which took every recorded
++    // refusal when the chapter was read. The reader moves between editions
++    // and chapters, so WHICH refusal is asked for is a question of the
++    // moment; what the record said is not, and is no longer re-read here.
++    const held = chapterProjection(file).refusals;
+     const here = whole(chapter);
+     if (!key || here === null || !Object.hasOwn(held, key)) return '';
+-    for (const one of records(held[key])) {
+-      if (!REFUSAL_KINDS.includes(sound(one.kind))) continue;
+-      if (whole(one.chapter) !== here) continue;
+-      const note = sound(one.note);
+-      if (note) return note.charAt(0).toUpperCase() + note.slice(1) + '.';
++    for (const one of held[key]) {
++      if (!REFUSAL_KINDS.includes(one.kind)) continue;
++      if (one.chapter !== here) continue;
++      if (one.note) return one.note.charAt(0).toUpperCase() + one.note.slice(1) + '.';
+     }
+     return '';
+   }
+@@ -1854,28 +2046,17 @@
+    * outward from the author.
+    */
+   function chapterVoices(file) {
+-    const sources = bag(file && file.sources);
+-    const found = new Map();
+-    for (const key in sources) {
+-      if (!Object.hasOwn(sources, key)) continue;
+-      const source = bag(sources[key]);
+-      const wanted = voiceKey(source);
+-      if (!wanted || found.has(wanted)) continue;
+-      found.set(wanted, {
+-        key: wanted,
+-        voice: sound(source.voice),
+-        // Named for a translation and deliberately blank for an original. The
+-        // reader asking for the author's own language is asking one question,
+-        // not one per language: a chapter holding Ambrose's Latin beside
+-        // Severian's Greek holds both authors' own words, and offering them
+-        // separately would put the reader back on the axis this replaced.
+-        language: sound(source.voice) === TRANSLATION ? voiceLanguage(source.language) : ''
+-      });
+-    }
+-    return Array.from(found.values()).sort(function (a, b) {
+-      if (a.voice !== b.voice) return a.voice === ORIGINAL ? -1 : 1;
+-      return a.language < b.language ? -1 : a.language > b.language ? 1 : 0;
+-    });
++    return chapterProjection(file).voices;
++  }
++
++  /**
++   * Originals first, then translations by language, so the control reads
++   * outward from the author. Named beside `normalizeChapter`, which is the
++   * one place a chapter's voices are gathered.
++   */
++  function byVoice(a, b) {
++    if (a.voice !== b.voice) return a.voice === ORIGINAL ? -1 : 1;
++    return a.language < b.language ? -1 : a.language > b.language ? 1 : 0;
+   }
+ 
+   /**
+@@ -2106,6 +2287,10 @@
+     touchesChapter: touchesChapter,
+     fragmentsOnChapter: fragmentsOnChapter,
+     chapterFragments: chapterFragments,
++    chapterProjection: chapterProjection,
++    chapterBlocked: chapterBlocked,
++    chapterLeads: chapterLeads,
++    chapterPasses: chapterPasses,
+     fragmentRow: fragmentRow,
+     textPayload: textPayload,
+     formatExtent: formatExtent,
+diff --git a/src/web/browser/catena/catena.js b/src/web/browser/catena/catena.js
+index a87052938..14fa051f7 100644
+--- a/src/web/browser/catena/catena.js
++++ b/src/web/browser/catena/catena.js
+@@ -702,8 +702,8 @@
+       // ONE typed truth beside the chapter: every tally, empty, blocked
+       // and voice claim derives from these counts — held-but-unrenderable
+       // is HELD, never "nothing".
+-      const blocked = M.blockedRows(file && file.blocked);
+-      const leads = M.leadRows(file && file.leads);
++      const blocked = M.chapterBlocked(file);
++      const leads = M.chapterLeads(file);
+       const total = M.chapterFragments(file).length;
+       fillVoices(file, unfetched || blocked.length);
+       T.clear(reading);
+diff --git a/tools/tests/test_catena_wave_1.py b/tools/tests/test_catena_wave_1.py
+index bfa76a29e..2cb5aaf62 100644
+--- a/tools/tests/test_catena_wave_1.py
++++ b/tools/tests/test_catena_wave_1.py
+@@ -183,7 +183,7 @@ NODE = shutil.which("node")
+ # projects as refused — while the page consumes `text_refused` BEFORE the
+ # request sink, so a refused row renders the refused sentence and can be
+ # answered by no path, carried, cached, or late.
+-MODEL_SHA256 = "81720104cca1a7f2cce5053701456bc8eab6b4c13f9788468dc7b0d37dbb7271"
++MODEL_SHA256 = "aa727ef52eb74900cf3176742e15fdc0abde6f541fffebe83bcec752913d9f51"
+ 
+ # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
+ # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
+@@ -1364,6 +1364,100 @@ V12_ABSENT_PREFIX_GEN2 = _fixture({
+     key: value for key, value in V9_REFUSED_PREFIX_GEN2.items()
+     if key != "text_prefix"})
+ 
++# ==========================================================================
++# V13 §§4-12 — ONE RAW CHAPTER, PROJECTED ONCE
++#
++# The V12 review accepted `requestSnapshot` for one invocation and refused
++# what the page did with it: "the same raw spine and fragments are projected
++# three times: `spineUnreadable()` calls `chapterFragments()`, the tally
++# calls it again, and `renderChain()` calls it a third time and retains the
++# rows that reach request, cache, body, and ownership."
++#
++# So the V12 defect is not a second read inside one projection. It is a
++# chapter record that answers ONE WAY while readability is being decided and
++# ANOTHER WAY while the render is being built — and V12 renders, requests,
++# caches and attributes from the later answer, having approved the earlier
++# one. Every fixture below walks one member of the chapter between
++# projections and plants a body, a forged provenance or a forged refusal at
++# the address only the LATER answer can reach. Under V12 the later answer
++# wins; under V13 there is no later answer, because there is no later
++# projection.
++#
++# Each scenario has a non-vacuity control that holds the walked member at the
++# value the walk drifts TO, so every planted thing is proved reachable and
++# renderable by a page that is entitled to reach it.
++
++# THE TWO ADDRESSES ONE FRAGMENT CAN LEGITIMATELY RESOLVE TO. Both are
++# inside the route's own text namespace and both end in this fragment's own
++# id, so each passes every test the model applies — they differ only in
++# WHICH projection produced them, which is the whole of the V13 finding.
++# `V12_CARRIED` is what genuine absence carries; `V12_COMPOSED` is what the
++# deeper prefix composes. Bodies are already planted at both.
++V13_WALKED_PATHS = [V12_CARRIED, V12_COMPOSED]
++V13_WALKED_PREFIXES = ["structure/catena/text/",
++                       "structure/catena/text/deeper/"]
++
++# A CHAPTER WHOSE MEMBERS ARE NOT THE MEMBERS READABILITY APPROVED. The
++# first list holds one fragment that states no usable address at all — the
++# ordinary refused row. The second holds one that carries a valid same-stem
++# address with a body waiting at it. A page that decides readability off the
++# first and renders off the second has rendered a fragment nothing approved.
++V13_QUIET_MEMBERS = [_voice_fragment(1, id="fallback-owned")]
++V13_LOUD_MEMBERS = [
++    _voice_fragment(1, id="fallback-owned",
++                    text_path="structure/catena/text/fallback-owned.json")]
++
++# AN EDITION THAT SAYS SOMETHING ABOUT SOMEBODY'S TEXT THAT NOBODY APPROVED.
++# `rights` is a provenance claim: it reaches the reader on the fragment's own
++# source line, which is the ownership sink. The forged value is marked so a
++# leak is caught by content and not only by a count.
++V13_PLAIN_SOURCES = {"1": _voice_source(1)}
++V13_FORGED_SOURCES = {"1": _voice_source(
++    1, rights="PLANTED FORGED RIGHTS — reachable only by reading twice.")}
++
++# A REFUSAL THIS CHAPTER DOES NOT RECORD, appearing after readability read
++# the chapter that does not record it. Rule 4 is the strongest claim the page
++# makes about a text it did not write, and it may not be made from a record
++# the page approved without it.
++V13_NO_REFUSALS = {}
++V13_FORGED_REFUSALS = {
++    "douay-rheims": [
++        {"kind": "displaced", "chapter": 1,
++         "note": "planted forged refusal — reachable only by reading twice"}]}
++V13_FORGED_REFUSAL_SAID = ("Planted forged refusal — reachable only by "
++                           "reading twice.")
++
++# The chapter the walks are performed on: genuine absence, one fragment whose
++# own id is `fallback-owned`, so the carried door is open and the composed
++# door is open, and which door opens depends only on what the spine says when
++# it is asked.
++V13_WALKED_SPINE = V9_ABSENT_PREFIX_WITH_CARRIED
++
++# The same chapter with no carried path, so the ONLY address it can resolve
++# is the one its prefix composes — which is the member the prefix walk moves.
++V13_COMPOSING_SPINE = _fixture({
++    "token": "Gen", "chapter": 1,
++    "sources": {"1": _voice_source(1)},
++    "fragments": [_voice_fragment(1, id="fallback-owned")],
++    "leads": [], "blocked": [], "refusals": {},
++})
++
++# Genesis 2, carrying the SAME address chapter 1 legitimately fetched, so a
++# walk on chapter 2 meets a warm cache. A hit needs no request at all, so the
++# request journal alone cannot decide this one — the body must be read too.
++V13_WALKED_GEN2 = _fixture({
++    "token": "Gen", "chapter": 2,
++    "sources": {"1": _voice_source(1)},
++    "fragments": [
++        _voice_fragment(1, id="fallback-owned",
++                        text_path="structure/catena/text/fallback-owned.json",
++                        extent={"token": "Gen", "first_chapter": 2,
++                                "first_verse": 1, "last_chapter": 2,
++                                "last_verse": 1}),
++    ],
++    "leads": [], "blocked": [], "refusals": {},
++})
++
+ # ==========================================================================
+ # V7 §6 — a fragment that can name NOTHING of itself
+ #
+@@ -2559,6 +2653,159 @@ SCENARIOS = [
+          {"do": "openEveryFragment", "label": "opened"},
+      ]},
+ 
++    # ============================================================== V13 §§4-12
++    # ONE RAW CHAPTER, PROJECTED ONCE.
++    #
++    # Every scenario here walks ONE member of the chapter record between
++    # projections and plants something at the address only a LATER projection
++    # can reach. Each is followed by its non-vacuity control, which holds that
++    # member at the walked-to value so the planted thing is proved reachable
++    # and renderable by a page entitled to reach it.
++
++    # 1. THE CARRIED ADDRESS, WALKED. Both values are this fragment's own
++    # same-stem address inside the route's own namespace, so both pass every
++    # test the model applies; they differ only in which projection produced
++    # them. A different body waits at each. The address the page requests must
++    # be the one the projection that decided readability accepted.
++    {"name": "v13-walking-carried-path", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
++                          "values": V13_WALKED_PATHS},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v13-walking-carried-path-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftCarriedPath": {"path": "structure/catena/01-gen/001.json",
++                          "values": [V12_COMPOSED]},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
++    # 2. THE SPINE'S OWN PREFIX, WALKED. The fragment carries no address at
++    # all here, so the only thing that can compose one is the prefix — and the
++    # prefix is what walks. Both values are the route's own namespace and both
++    # compose a real, planted file.
++    {"name": "v13-walking-spine-prefix", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_COMPOSING_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"text_prefix": V13_WALKED_PREFIXES}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v13-walking-spine-prefix-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_COMPOSING_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"text_prefix": [V13_WALKED_PREFIXES[1]]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
++    # 3. THE CHAPTER'S MEMBERS, WALKED. Readability is decided over a list
++    # holding one fragment that states no address; the render would be built
++    # from a list holding one that carries a live, planted address. A page
++    # that renders the second has rendered what nothing approved.
++    {"name": "v13-walking-chapter-members", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"fragments": [V13_QUIET_MEMBERS,
++                                            V13_LOUD_MEMBERS]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v13-walking-chapter-members-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"fragments": [V13_LOUD_MEMBERS]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
++    # 4. THE EDITIONS, WALKED — the OWNERSHIP sink. `rights` reaches the
++    # reader on the fragment's own source line. A forged value that appears
++    # only after readability read the chapter is a provenance claim about
++    # somebody's text that no projection approved.
++    {"name": "v13-walking-sources", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"sources": [V13_PLAIN_SOURCES,
++                                          V13_FORGED_SOURCES]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v13-walking-sources-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"sources": [V13_FORGED_SOURCES]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
++    # 5. THE RECORDED REFUSALS, WALKED. Rule 4 is the strongest claim this
++    # page makes about a text it did not write. A refusal that appears only
++    # after the chapter was read is a claim the record did not make when
++    # anything checked it.
++    {"name": "v13-walking-refusals", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"refusals": [V13_NO_REFUSALS,
++                                           V13_FORGED_REFUSALS]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++    {"name": "v13-walking-refusals-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK},
++     "driftSpine": {"path": "structure/catena/01-gen/001.json",
++                    "names": {"refusals": [V13_FORGED_REFUSALS]}},
++     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
++
++    # 6. A WALK MET BY A WARM CACHE. Chapter 1 fetches the carried body
++    # legitimately, so that address is held. Chapter 2 carries the same
++    # address and walks away from it to a second valid same-stem address with
++    # a different body. A cache hit needs no request at all, so the request
++    # journal alone decides nothing here — the body must be read too. Under
++    # ONE projection the address stays the held one, the cache answers and no
++    # second request is made; under three the later address is fetched and a
++    # body the readability pass never approved is served.
++    {"name": "v13-prewarmed-walking-path", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/01-gen/002.json": V13_WALKED_GEN2,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftCarriedPath": {"path": "structure/catena/01-gen/002.json",
++                          "values": V13_WALKED_PATHS},
++     "steps": [
++         {"do": "openEveryFragment", "label": "prewarmed"},
++         {"do": "selectChapter", "value": "2", "label": "walked"},
++         {"do": "openEveryFragment", "label": "opened"},
++     ]},
++    {"name": "v13-prewarmed-walking-path-control", "hash": GEN1,
++     "files": {"structure/catena/01-gen/001.json": V13_WALKED_SPINE,
++               "structure/catena/01-gen/002.json": V13_WALKED_GEN2,
++               "structure/catena/text/fallback-owned.json":
++                   V9_PLANTED_FALLBACK,
++               "structure/catena/text/deeper/fallback-owned.json":
++                   V9_COMPOSED_DEEPER},
++     "driftCarriedPath": {"path": "structure/catena/01-gen/002.json",
++                          "values": [V12_COMPOSED]},
++     "steps": [
++         {"do": "openEveryFragment", "label": "prewarmed"},
++         {"do": "selectChapter", "value": "2", "label": "walked"},
++         {"do": "openEveryFragment", "label": "opened"},
++     ]},
++
+     # ============================================================== V11 §2
+     # Every unestablished prefix, driven to the VISIBLE and the REQUEST
+     # sink — the two places the V10 review found the wording claim was
+@@ -3382,6 +3629,75 @@ async function run(scenario) {
+    * not with reads inside them; the exact per-projection count of one is
+    * pinned at the model boundary, in V12StableRequestSnapshotTest. */
+   const descriptorReads = {};
++  /* V13: HOW MANY TIMES A REQUEST-CRITICAL MEMBER OF THE SPINE ITSELF WAS
++   * ASKED FOR. The V12 review's implementation blocker is not a second read
++   * inside one projection — V12 closed that — but a second PROJECTION of one
++   * raw chapter: `spineUnreadable` projected to decide readability, the tally
++   * projected to keep a length, and `renderChain` projected a third time and
++   * kept the rows that reach every sink. A record that answers one way while
++   * readability is being decided and another way while the render is being
++   * built therefore rendered from a projection readability never saw. This
++   * counts the asks per member so the page-level claim is a number and not a
++   * reading of the source. Under V13 it is one. */
++  const spineReads = {};
++  /* V13: THE PROJECTION IDENTITIES EACH CONSUMER SAW, THE ROWS EACH
++   * PROJECTION PRODUCED, AND THE PROJECTION EACH REQUEST BELONGS TO.
++   * Declared here, above the transport, because `fetch` writes into
++   * `owners` and the model wrappers below write into the other two. */
++  const projectionIds = {};
++  const projectionRows = [];
++  const owners = {};
++  /* THE BODY A TEXT REQUEST WAS ANSWERED WITH, short enough to read in a
++   * ledger and long enough to name a planted marker. */
++  const bodyOf = (doc) => doc && typeof doc === 'object'
++    && typeof doc.text === 'string' ? doc.text.slice(0, 48) : '';
++  /* V13: A SPINE WHOSE OWN MEMBERS DRIFT BETWEEN PROJECTIONS.
++   *
++   * `driftingSpine` walks a FRAGMENT's carried path, which is the V11/V12
++   * axis. The V13 axis is one level up: `fragments`, `sources`, `refusals`
++   * and `text_prefix` are read off the chapter record itself, and V12 read
++   * each of them once per projection and projected three times. Both a plain
++   * property read and a descriptor read are trapped, because the page uses
++   * both — `record.fragments` is a lookup and `text_prefix` is a descriptor —
++   * and a walk that only one of them could see would prove nothing about the
++   * other. Every member not named answers from the target, so nothing else
++   * about the chapter changes. */
++  const driftingRecord = (spine, plan) => {
++    const names = plan.names || {};
++    const turns = {};
++    for (const name of Object.keys(names)) spineReads['spine-' + name] = 0;
++    const answer = (name) => {
++      const values = names[name];
++      const turn = turns[name] || 0;
++      turns[name] = turn + 1;
++      spineReads['spine-' + name] = turn + 1;
++      return plan.cycle ? values[turn % values.length]
++        : values[Math.min(turn, values.length - 1)];
++    };
++    return new Proxy(Object.assign({}, spine), {
++      get(target, asked) {
++        if (Object.prototype.hasOwnProperty.call(names, asked)) {
++          return answer(asked);
++        }
++        return Reflect.get(target, asked);
++      },
++      getOwnPropertyDescriptor(target, asked) {
++        if (Object.prototype.hasOwnProperty.call(names, asked)) {
++          return { value: answer(asked), writable: true, enumerable: true,
++                   configurable: true };
++        }
++        return Reflect.getOwnPropertyDescriptor(target, asked);
++      },
++      has(target, asked) {
++        return Object.prototype.hasOwnProperty.call(names, asked)
++          || Reflect.has(target, asked);
++      },
++      ownKeys(target) {
++        return Array.from(new Set(
++          Reflect.ownKeys(target).concat(Object.keys(names))));
++      }
++    });
++  };
+   const driftingSpine = (spine, values, cycle) => {
+     const made = Object.assign({}, spine);
+     made.fragments = (spine.fragments || []).map((one, index) => {
+@@ -3483,8 +3799,37 @@ async function run(scenario) {
+      * once. Only `text_path` is trapped: every other member answers from
+      * the target, so nothing else about the fragment changes. */
+     const drift = scenario.driftCarriedPath;
+-    const served = drift && drift.path === path && parented
++    const carried = drift && drift.path === path && parented
+       ? driftingSpine(parented, drift.values, drift.cycle) : parented;
++    /* V13: A CHAPTER WHOSE OWN MEMBERS ANSWER DIFFERENTLY PER PROJECTION.
++     * `driftSpine` names a path, the members to walk, and the values each
++     * walks through. Served here, at the transport, so the readability gate,
++     * the tally, the chain, the voice control, the recorded refusal and the
++     * absence disclosure each meet exactly what a hostile server could hand
++     * a real page — and, under V12, each met a different answer. */
++    const walk = scenario.driftSpine;
++    const served = walk && walk.path === path && carried
++      && typeof carried === 'object'
++      ? driftingRecord(carried, walk) : carried;
++    /* V13: WHO OWNS THIS REQUEST. The page composes no text address of its
++     * own, so a `structure/catena/text/…` request can only have come off a
++     * projected row — and the row names which projection made it. A request
++     * no projection's rows account for is recorded with an empty owner
++     * rather than attributed to the nearest one. */
++    const held = record.kind === 'text'
++      ? projectionRows.filter((one) => one.paths.indexOf(path) !== -1)[0]
++      : undefined;
++    owners[record.seq] = {
++      // THE ROUTE AS IT STOOD WHEN THE REQUEST WAS MADE, not as it stands
++      // when the journal is read. A prewarmed body is fetched under chapter
++      // one and read under chapter two, and a journal that stamped both with
++      // the later hash would say the earlier request was made somewhere it
++      // was not.
++      route: location.hash,
++      projection: held ? held.id : '',
++      body: held || record.kind === 'text'
++        ? bodyOf(rawly ? raw[path] : served) : ''
++    };
+     const response = rawly
+       ? { ok: true, status: 200, json: async () => raw[path] }
+       : (served === null || served === undefined)
+@@ -3519,13 +3864,109 @@ async function run(scenario) {
+    * the network before the refusal would now fetch a real, plantable
+    * address, and the owned journal would name it. This overrides only the
+    * page's own entry point; `spineUnreadable` keeps the model's binding, so
+-   * readability is still decided by the production projection. */
++   * readability is still decided by the production projection.
++   *
++   * V13: a projected row is FROZEN where it is made, so the rewrite copies
++   * rather than assigning into the model's own row. The override is still
++   * the page's entry point alone, and what the page renders is the copy —
++   * the production projection behind it stays exactly as the model
++   * sealed it. */
+   if (scenario.forceRow) {
+     const model = window.CatenaModel;
+     const projected = model.chapterFragments;
+     model.chapterFragments = (file) => projected(file).map(
+-      (row) => Object.assign(row, scenario.forceRow));
++      (row) => Object.assign({}, row, scenario.forceRow));
++  }
++  /* V13: WHICH PROJECTION EACH CONSUMER READ, AND WHICH ONE OWNS EACH
++   * REQUEST.
++   *
++   * The V12 review asked for two things this records. §6: prove that ONE
++   * normalized projection identity is what readability, the tally, the
++   * rendering, the request/cache/body and the ownership line each used —
++   * "not only equal values". §13: ship the ownership rows so a reviewer can
++   * check the claim without rerunning the harness.
++   *
++   * Every model entry point that takes a chapter is asked, before it
++   * answers, which projection that chapter resolves to. `chapterProjection`
++   * is itself the memoized lookup, so ASKING costs nothing: it returns the
++   * projection already made and advances no pass. The ids each consumer saw
++   * are kept as a set per consumer, so "one identity, everywhere" is a
++   * comparison of lists and not of values.
++   *
++   * `owners` binds a request to a projection through the row that carried
++   * its address: the page composes no text address of its own, so the only
++   * thing that can name `structure/catena/text/…` is a row, and the row came
++   * from exactly one projection. */
++  /* THE PARENT HAS NO PROJECTION TO ASK ABOUT, and this file is replayed
++   * against the uncorrected parent as evidence. So every hook below degrades
++   * to a recorded absence rather than throwing: at the parent the ids are ''
++   * and the census is 0, which is a fact about the parent and reads as one,
++   * and every behavioural scenario still runs and still differs. */
++  {
++    const model = window.CatenaModel;
++    const asked = (file) => (typeof model.chapterProjection === 'function'
++      ? model.chapterProjection(file).id : '');
++    const note = (who, file) => {
++      const id = asked(file);
++      if (!projectionIds[who]) projectionIds[who] = [];
++      if (!projectionIds[who].includes(id)) projectionIds[who].push(id);
++      return id;
++    };
++    const watch = (who, name, at) => {
++      const real = model[name];
++      if (typeof real !== 'function') return;
++      model[name] = function () {
++        note(who, arguments[at || 0]);
++        return real.apply(this, arguments);
++      };
++    };
++    watch('readability', 'spineUnreadable');
++    watch('voices', 'chapterVoices');
++    watch('blocked', 'chapterBlocked');
++    watch('leads', 'chapterLeads');
++    watch('refusal', 'refusalNote');
++    watch('absences', 'absenceRows', 1);
++    const projected = model.chapterFragments;
++    model.chapterFragments = function (file) {
++      const id = note('rows', file);
++      const made = projected.apply(this, arguments);
++      const paths = made.map((row) => row.text_path).filter(Boolean);
++      const held = projectionRows.filter((one) => one.id === id)[0];
++      if (held) held.paths = paths;
++      else projectionRows.push({ id: id, paths: paths });
++      return made;
++    };
+   }
++  /* THE OWNERSHIP JOURNAL, derived from the request journal so its outcomes
++   * move with it. A journalled request IS a cache miss: the page's cache
++   * answers before `fetch` is reached, so a body that is shown with no row
++   * here is the hit, and that absence is the claim a test asserts. */
++  const ownershipNow = () => requests.map((one) => ({
++    seq: one.seq,
++    scenario: scenario.name,
++    route: (owners[one.seq] || {}).route || '',
++    projection: (owners[one.seq] || {}).projection || '',
++    path: one.path,
++    kind: one.kind,
++    step: one.phase,
++    outcome: one.outcome,
++    cache: 'miss',
++    body: (owners[one.seq] || {}).body || ''
++  }));
++  /* ONE SNAPSHOT, TAKEN THE SAME WAY EVERYWHERE. V13: the bootstrap
++   * snapshot was taken by a second call that carried none of the ownership
++   * axes, so a dump that asked for them found a hole in the first snapshot
++   * of every scenario. There is one taker now, and everything it takes
++   * carries the same fields. */
++  const take = () => {
++    const taken = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
++    taken.ownership = ownershipNow();
++    taken.projectionIds = JSON.parse(JSON.stringify(projectionIds));
++    taken.projectionPasses = (typeof window.CatenaModel.chapterPasses === 'function' ? window.CatenaModel.chapterPasses() : 0);
++    taken.spineReads = JSON.parse(JSON.stringify(spineReads));
++    taken.descriptorReads = JSON.parse(JSON.stringify(descriptorReads));
++    return taken;
++  };
+   // Every spoken line, in order — the single announcement channel, so
+   // duplicate or missing announcements are visible, not just the last one.
+   // `fail` speaks through its own internal reference to statusLine, so it
+@@ -3544,7 +3985,7 @@ async function run(scenario) {
+   await settle();
+ 
+   const snapshots = {};
+-  snapshots.start = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
++  snapshots.start = take();
+ 
+   for (const step of scenario.steps || []) {
+     // The step's label is in force BEFORE it runs, so every request it
+@@ -3647,12 +4088,19 @@ async function run(scenario) {
+       }
+       await settle();
+     }
+-    snapshots[step.label || step.do] = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
++    /* V13: the ownership journal and the projection census travel WITH the
++     * snapshot, so a step's sinks and the projection that owns them are read
++     * together rather than joined by hand afterwards. */
++    snapshots[step.label || step.do] = take();
+   }
+ 
+-  const report = inspect(page, document, location, fetched, hashWrites, replaced, statusWrites, released, requests, replacedStates, window.history);
++  const report = take();
+   report.snapshots = snapshots;
+   report.descriptorReads = descriptorReads;
++  report.spineReads = spineReads;
++  report.ownership = ownershipNow();
++  report.projectionIds = projectionIds;
++  report.projectionPasses = (typeof window.CatenaModel.chapterPasses === 'function' ? window.CatenaModel.chapterPasses() : 0);
+   return report;
+ }
+ 
+@@ -3753,7 +4201,8 @@ class ReplayTest(unittest.TestCase):
+         history/network journals left out."""
+         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
+                     "snapshots", "released", "requests", "replacedStates",
+-                    "descriptorReads"}
++                    "descriptorReads", "spineReads", "ownership",
++                    "projectionIds", "projectionPasses"}
+         return {key: value for key, value in snap.items() if key not in journals}
+ 
+ 
+@@ -8104,7 +8553,8 @@ class NullBootstrapTerminalStateTest(ReplayTest):
+         # address the reader arrived with.
+         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
+                     "snapshots", "released", "requests", "replacedStates",
+-                    "descriptorReads"}
++                    "descriptorReads", "spineReads", "ownership",
++                    "projectionIds", "projectionPasses"}
+         base = {key: value for key, value in self.page("null-index").items()
+                 if key not in journals
+                      and key not in ("hash", "statusText", "failureText")}
+@@ -10297,10 +10747,22 @@ class V12PlantedRequestSinkTest(ReplayTest):
+         self.assertNotIn(self.OTHER, page["fetched"])
+         for said in page["fragmentTexts"]:
+             self.assertNotIn("PLANTED SECOND-READ BODY", said)
+-        # Every request the page made is owned by a step, and none of them
+-        # is a text request at all.
+-        self.assertEqual(page["requests"], self.owned())
+-        self.assertEqual(page["fetched"], self.BOOTSTRAP)
++        # V13 CORRECTS THIS EXPECTED VALUE, and the reason is the finding.
++        # Under V12 this page made NO text request at all, and the V12 review
++        # showed why that was not the closure it looked like: the walk's two
++        # values were consumed by the readability projection, which issues no
++        # request, so the two projections that follow both saw the drifted
++        # value, failed the own-stem test, and resolved no address. The
++        # scenario passed by exhausting itself before it could reach a sink —
++        # it proved nothing about the sink, which is exactly why the review
++        # called it vacuous. Under V13 there is one projection, it asks once,
++        # it gets this fragment's own valid address, and it requests THAT.
++        # Requesting the one value the one projection validated is the
++        # contract; requesting nothing was an artifact of asking three times.
++        self.assertEqual(page["requests"],
++                         self.owned([(self.FALLBACK, "opened")]))
++        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.FALLBACK])
++        self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
+         self.assertEqual(page["busy"], "false")
+         self.assertEqual(page["errorSections"], [])
+         self.assertIsNone(page["failureText"])
+@@ -10332,10 +10794,13 @@ class V12PlantedRequestSinkTest(ReplayTest):
+         self.assertIn("PLANTED FALLBACK BODY", page["fragmentTexts"][0])
+         for said in page["fragmentTexts"]:
+             self.assertNotIn("PLANTED SECOND-READ BODY", said)
+-        # THE READ COUNT: ONE ASK PER PROJECTION, and the projection count
+-        # is pinned so that a page which starts projecting a different
+-        # number of times fails here rather than silently changing which
+-        # value the alternating scenario lands on.
++        # THE READ COUNT: ONE ASK PER RENDER. V12 pinned three — one ask per
++        # projection, three projections a render — and the V12 review named
++        # that number as the defect rather than the proof: "one times three
++        # at V12 ... they do not prove no source revisit." V13 normalizes the
++        # raw chapter once, so the whole render asks the descriptor once, and
++        # the walk, the cycle and the stable control become indistinguishable
++        # at the page because there is no second ask for them to differ on.
+         reads = self.page("v12-drifting-carried-path")["descriptorReads"]
+         steady = self.page(
+             "v12-stable-carried-path-control")["descriptorReads"]
+@@ -10344,8 +10809,8 @@ class V12PlantedRequestSinkTest(ReplayTest):
+         self.assertTrue(reads, "the drifting descriptor was never asked at all")
+         self.assertEqual(reads, steady)
+         self.assertEqual(reads, cycled)
+-        self.assertEqual(reads, {"fragment-0": 3},
+-                         "one ask per projection, three projections a render")
++        self.assertEqual(reads, {"fragment-0": 1},
++                         "one ask per render, one projection a render")
+ 
+     def test_a_prewarmed_body_is_not_substituted_into_a_contaminated_route(self):
+         # V12 §14. The cache is keyed by path, so a body already fetched
+@@ -10374,6 +10839,300 @@ class V12PlantedRequestSinkTest(ReplayTest):
+         self.assertEqual(page["hash"], GEN2)
+ 
+ 
++class V13OneChapterProjectionTest(ReplayTest):
++    """V13 §§4-12 — one raw chapter, normalized once, held by everything.
++
++    The V12 review accepted `requestSnapshot` for one invocation and refused
++    what the page did with it: "the same raw spine and fragments are
++    projected three times: `spineUnreadable()` calls `chapterFragments()`,
++    the tally calls it again, and `renderChain()` calls it a third time and
++    retains the rows that reach request, cache, body, and ownership. The
++    reported descriptor counts therefore mean ... one times three at V12 ...
++    They do not prove no source revisit."
++
++    So the defect V13 closes is not a second read inside one projection —
++    V12 closed that — but a chapter record that answers ONE WAY while
++    readability is being decided and ANOTHER WAY while the render is being
++    built. Six scenarios walk one member of the chapter each and plant
++    something at the address only a later projection can reach; each stands
++    beside a control that holds the member at the walked-to value, so every
++    planted thing is proved reachable and renderable by a page entitled to
++    reach it. The claim is not that the page fetches nothing. It is that
++    everything the page does is done from the ONE projection that readability
++    was decided on.
++    """
++
++    V9 = V9ComposedPrefixFallbackClosureTest
++    BOOTSTRAP = V9.BOOTSTRAP
++    GEN2_ARRIVAL = V9.GEN2_ARRIVAL
++    GEN1_SPOKEN = V9.GEN1_SPOKEN
++    GEN2_SPOKEN = V9.GEN2_SPOKEN
++    CARRIED = "structure/catena/text/fallback-owned.json"
++    COMPOSED = "structure/catena/text/deeper/fallback-owned.json"
++    HELD_BODY = "PLANTED FALLBACK BODY"
++    LATER_BODY = "Composed from the stated prefix"
++    FORGED_RIGHTS = "PLANTED FORGED RIGHTS"
++    FORGED_REFUSAL = "Planted forged refusal"
++    NO_FILE = ("This fragment carries no text file, so nothing of it can "
++               "be shown.")
++    # Every consumer of a chapter the model exposes. If a later lane adds
++    # one and does not route it through the projection, `test_one_projection`
++    # fails on the name that is missing rather than passing quietly.
++    CONSUMERS = ("readability", "rows", "voices", "blocked", "leads",
++                 "refusal")
++
++    def owned(self, tail=()):
++        return request_journal(
++            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
++
++    def ownership(self, name, label="opened"):
++        """The packaged ownership rows of one scenario's text requests."""
++        return [one for one in self.snapshot(name, label)["ownership"]
++                if one["kind"] == "text"]
++
++    def assert_one_projection(self, page, where, made=1):
++        """Every consumer used the same projection, and there was one."""
++        self.assertEqual(page["projectionPasses"], made, where)
++        seen = page["projectionIds"]
++        self.assertEqual(sorted(seen), sorted(self.CONSUMERS),
++                         f"{where}: a chapter consumer is not journalled")
++        for who, ids in seen.items():
++            self.assertEqual(len(ids), made,
++                             f"{where}: {who} saw {ids}, not {made} projection")
++        self.assertEqual(len({tuple(ids) for ids in seen.values()}), 1,
++                         f"{where}: consumers disagree about the projection")
++
++    # ---- §6, the identity itself -----------------------------------------
++
++    def test_one_page_load_makes_exactly_one_chapter_projection(self):
++        # V13 §§5-6, 10. Not equal values — the SAME projection. Every model
++        # entry point that takes a chapter is asked, before it answers, which
++        # projection that chapter resolves to; the answer is one id, and the
++        # census of raw chapters normalized is one.
++        for name in ("v13-walking-carried-path", "v13-walking-spine-prefix",
++                     "v13-walking-chapter-members", "v13-walking-sources",
++                     "v13-walking-refusals"):
++            with self.subTest(scenario=name):
++                self.assert_one_projection(self.snapshot(name, "opened"), name)
++
++    def test_a_second_chapter_is_a_second_projection_and_no_more(self):
++        # The census counts RAW CHAPTERS, not consumers. Walking into
++        # Genesis 2 normalizes one more chapter and not one more per
++        # consumer, so the number is a fact about the data and not about the
++        # page's shape.
++        page = self.snapshot("v13-prewarmed-walking-path", "opened")
++        self.assert_one_projection(page, "two chapters", made=2)
++
++    def test_the_request_is_owned_by_the_projection_that_validated_it(self):
++        # V13 §13. The page composes no text address of its own, so the only
++        # thing that can name one is a row, and the row came from exactly one
++        # projection. The packaged journal says which.
++        rows = self.ownership("v13-walking-carried-path")
++        self.assertEqual(len(rows), 1, rows)
++        one = rows[0]
++        self.assertEqual(one["path"], self.CARRIED)
++        self.assertEqual(one["kind"], "text")
++        self.assertEqual(one["step"], "opened")
++        self.assertEqual(one["outcome"], "completed")
++        self.assertEqual(one["cache"], "miss")
++        self.assertEqual(one["scenario"], "v13-walking-carried-path")
++        self.assertEqual(one["route"], GEN1)
++        self.assertIn(self.HELD_BODY, one["body"])
++        # The owner is the one projection every consumer of this page used.
++        page = self.snapshot("v13-walking-carried-path", "opened")
++        self.assertEqual([one["projection"]], page["projectionIds"]["rows"])
++
++    # ---- §§8-9, the walk ---------------------------------------------------
++
++    def test_a_walking_carried_path_reaches_only_its_first_answer(self):
++        # V13 §8. Both values are this fragment's own same-stem address in
++        # the route's own namespace, so both pass every test the model
++        # applies. Which one the page requests is decided by how many times
++        # it asks — and it asks once.
++        page = self.snapshot("v13-walking-carried-path", "opened")
++        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.CARRIED])
++        self.assertEqual(page["requests"],
++                         self.owned([(self.CARRIED, "opened")]))
++        self.assertNotIn(self.COMPOSED, page["fetched"])
++        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
++        for said in page["fragmentTexts"]:
++            self.assertNotIn(self.LATER_BODY, said)
++        self.assertEqual(
++            self.page("v13-walking-carried-path")["descriptorReads"],
++            {"fragment-0": 1}, "one ask per render")
++        # NON-VACUITY. The same proxy answering the walked-TO value every
++        # time: the page fetches it and renders its body. So the address
++        # above is unreached because nothing asked twice, not because
++        # nothing could reach it.
++        control = self.snapshot("v13-walking-carried-path-control", "opened")
++        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.COMPOSED])
++        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
++
++    def test_a_walking_spine_prefix_composes_only_its_first_answer(self):
++        # V13 §8. The fragment carries no address at all, so the only thing
++        # that can compose one is the prefix — and the prefix is what walks.
++        page = self.snapshot("v13-walking-spine-prefix", "opened")
++        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.CARRIED])
++        self.assertEqual(page["requests"],
++                         self.owned([(self.CARRIED, "opened")]))
++        self.assertNotIn(self.COMPOSED, page["fetched"])
++        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
++        self.assertEqual(page["spineReads"], {"spine-text_prefix": 1},
++                         "the spine's own prefix is asked once a render")
++        control = self.snapshot("v13-walking-spine-prefix-control", "opened")
++        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.COMPOSED])
++        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
++
++    def test_walking_chapter_members_render_only_what_readability_approved(self):
++        # V13 §8. Readability is decided over a list whose one fragment
++        # states no address. The list that follows carries a live, planted
++        # one. A page that renders the second has rendered what nothing
++        # approved — and requested a body off it.
++        page = self.snapshot("v13-walking-chapter-members", "opened")
++        self.assertEqual(page["fetched"], self.BOOTSTRAP)
++        self.assertEqual(page["requests"], self.owned())
++        self.assertEqual(page["fragmentTexts"], [self.NO_FILE])
++        self.assertEqual(page["fragmentCount"], 1)
++        self.assertEqual(page["tallyText"], "1 fragment held")
++        self.assertEqual(page["spineReads"], {"spine-fragments": 1})
++        control = self.snapshot("v13-walking-chapter-members-control",
++                                "opened")
++        self.assertEqual(control["fetched"], self.BOOTSTRAP + [self.CARRIED])
++        self.assertIn(self.HELD_BODY, control["fragmentTexts"][0])
++
++    def test_walking_editions_never_reach_the_provenance_line(self):
++        # V13 §8, at the OWNERSHIP sink. `rights` is a claim about somebody
++        # else's text and it reaches the reader on the fragment's own source
++        # line. A value that appears only after readability read the chapter
++        # is a claim no projection approved.
++        page = self.snapshot("v13-walking-sources", "opened")
++        for line in page["sourceLines"]:
++            self.assertNotIn(self.FORGED_RIGHTS, line)
++        self.assertEqual(page["spineReads"], {"spine-sources": 1})
++        control = self.snapshot("v13-walking-sources-control", "opened")
++        self.assertTrue(
++            any(self.FORGED_RIGHTS in line for line in control["sourceLines"]),
++            "the forged provenance is not reachable at all")
++
++    def test_a_walking_refusal_never_becomes_rule_four(self):
++        # V13 §8. Rule 4 is the strongest claim this page makes about a text
++        # it did not write. A refusal that appears only after the chapter was
++        # read is a claim the record did not make when anything checked it.
++        page = self.snapshot("v13-walking-refusals", "opened")
++        self.assertEqual(page["refusalCount"], 0)
++        self.assertIsNone(page["refusal"])
++        self.assertNotIn("refusal", page["dataStates"])
++        self.assertEqual(page["spineReads"], {"spine-refusals": 1})
++        control = self.snapshot("v13-walking-refusals-control", "opened")
++        self.assertEqual(control["refusalCount"], 1)
++        self.assertIn(self.FORGED_REFUSAL, control["refusal"])
++        self.assertIn("refusal", control["dataStates"])
++
++    def test_a_warm_cache_answers_the_projection_that_was_validated(self):
++        # V13 §12, the cache sink. Chapter 1 fetches the carried body
++        # legitimately, so that address is held. Chapter 2 carries the same
++        # address and walks away from it. A hit needs no request at all, so
++        # the journal alone decides nothing — the body is read too.
++        prewarmed = self.snapshot("v13-prewarmed-walking-path", "prewarmed")
++        self.assertEqual(prewarmed["fetched"],
++                         self.BOOTSTRAP + [self.CARRIED])
++        self.assertIn(self.HELD_BODY, prewarmed["fragmentTexts"][0])
++        page = self.snapshot("v13-prewarmed-walking-path", "opened")
++        # THE HIT: chapter 2 costs its three arrival records and no text
++        # request whatever, and the reader is shown the body already held.
++        self.assertEqual(page["fetched"],
++                         self.BOOTSTRAP + [self.CARRIED] + self.GEN2_ARRIVAL)
++        self.assertEqual(
++            page["requests"],
++            self.owned([(self.CARRIED, "prewarmed")]
++                       + [(path, "walked") for path in self.GEN2_ARRIVAL]))
++        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
++        for said in page["fragmentTexts"]:
++            self.assertNotIn(self.LATER_BODY, said)
++        self.assertEqual(page["statusWrites"],
++                         [self.GEN1_SPOKEN, self.GEN2_SPOKEN])
++        self.assertEqual(page["hash"], GEN2)
++        # The one text request in the journal was made under chapter 1, and
++        # the journal says so — the route is stamped when the request is
++        # made, not when the journal is read.
++        rows = self.ownership("v13-prewarmed-walking-path")
++        self.assertEqual([(one["path"], one["step"], one["route"])
++                          for one in rows],
++                         [(self.CARRIED, "prewarmed", GEN1)])
++        # NON-VACUITY: held the other way, chapter 2 really does fetch the
++        # second address and render its body, owned by chapter 2's own
++        # projection — so the missing request above is the walk's doing.
++        control = self.snapshot("v13-prewarmed-walking-path-control", "opened")
++        self.assertIn(self.COMPOSED, control["fetched"])
++        self.assertIn(self.LATER_BODY, control["fragmentTexts"][0])
++        tail = self.ownership("v13-prewarmed-walking-path-control")[-1]
++        self.assertEqual(tail["path"], self.COMPOSED)
++        self.assertEqual(tail["route"], GEN2)
++        self.assertEqual(
++            [tail["projection"]],
++            control["projectionIds"]["rows"][1:],
++            "chapter 2's body is owned by chapter 2's projection")
++
++    # ---- §11, the matrix ---------------------------------------------------
++
++    def test_all_six_walks_are_non_vacuous(self):
++        # V13 §11. Six of six: each scenario's planted thing must exist, be
++        # reachable, and be rendered by its control — and reach nothing in
++        # the walked page. A scenario whose control shows nothing proves
++        # nothing, which is the exact defect the V12 review found in
++        # `v12-drifting-carried-path`.
++        matrix = (
++            ("v13-walking-carried-path", self.COMPOSED, self.LATER_BODY),
++            ("v13-walking-spine-prefix", self.COMPOSED, self.LATER_BODY),
++            ("v13-walking-chapter-members", self.CARRIED, self.HELD_BODY),
++            ("v13-walking-sources", None, self.FORGED_RIGHTS),
++            ("v13-walking-refusals", None, self.FORGED_REFUSAL),
++            ("v13-prewarmed-walking-path", self.COMPOSED, self.LATER_BODY),
++        )
++        self.assertEqual(len(matrix), 6)
++        for name, address, marker in matrix:
++            with self.subTest(scenario=name):
++                walked = self.snapshot(name, "opened")
++                control = self.snapshot(name + "-control", "opened")
++                shown = " ".join(control["fragmentTexts"]
++                                 + control["sourceLines"]
++                                 + [control["refusal"] or ""])
++                # THE CONTROL REALLY SHOWS IT.
++                self.assertIn(marker, shown,
++                              f"{name}: the planted thing is unreachable")
++                # AND THE WALK REACHES NEITHER THE ADDRESS NOR THE BODY.
++                said = " ".join(walked["fragmentTexts"]
++                                + walked["sourceLines"]
++                                + [walked["refusal"] or ""])
++                self.assertNotIn(marker, said, f"{name}: the walk reached it")
++                if address is not None:
++                    self.assertIn(address, control["fetched"], name)
++                    self.assertNotIn(address, walked["fetched"], name)
++                # AND THE WALK STILL RAN ON ONE PROJECTION.
++                self.assertEqual(len({tuple(ids) for ids
++                                      in walked["projectionIds"].values()}), 1,
++                                 name)
++
++    def test_every_walk_was_really_a_walk(self):
++        # The walks must actually have been asked more than once' worth of
++        # values — a proxy nobody consulted proves nothing either. Each
++        # scenario's walked member is asked, and asked exactly once.
++        for name, expected in (
++                ("v13-walking-carried-path", {"fragment-0": 1}),
++                ("v13-prewarmed-walking-path", {"fragment-0": 1})):
++            with self.subTest(scenario=name):
++                self.assertEqual(
++                    self.page(name)["descriptorReads"], expected)
++        for name, member in (
++                ("v13-walking-spine-prefix", "spine-text_prefix"),
++                ("v13-walking-chapter-members", "spine-fragments"),
++                ("v13-walking-sources", "spine-sources"),
++                ("v13-walking-refusals", "spine-refusals")):
++            with self.subTest(scenario=name):
++                self.assertEqual(self.page(name)["spineReads"], {member: 1},
++                                 "the walked member is asked once a render")
++
++
+ class V11UnestablishedPresentationTest(ReplayTest):
+     """V11 §2 — the page says no more than its own state established.
+ 

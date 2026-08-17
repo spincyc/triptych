@@ -1,0 +1,277 @@
+{
+  "anchor": "$EVIDENCE",
+  "attempt": "package-20260817T233843Z-18once13",
+  "runs": [
+    {
+      "at": "2026-08-17T23:38:46Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 1)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:38:54Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 1)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:02Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 2)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:10Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 2)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:17Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 3)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:25Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 3)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:33Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "(the freeze is taken outside the package; the invocation log is the transcript)",
+      "path": "logs/derive-claims.py",
+      "phase": "P3 the freeze",
+      "sha256": "8db838810ad33761f01d02d53e597e7f54b81e1e563b3798376ac9981b73a1d4",
+      "tool": "derive-claims.py"
+    },
+    {
+      "at": "2026-08-17T23:39:33Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/derive-claims.log",
+      "path": "logs/derive-claims.py",
+      "phase": "P4 derive once",
+      "sha256": "8db838810ad33761f01d02d53e597e7f54b81e1e563b3798376ac9981b73a1d4",
+      "tool": "derive-claims.py"
+    },
+    {
+      "at": "2026-08-17T23:39:34Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "logs/attempt-18/head-consistency.log",
+      "path": "logs/head-consistency.py",
+      "phase": "P5 consistency audit",
+      "sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e",
+      "tool": "head-consistency.py"
+    },
+    {
+      "at": "2026-08-17T23:39:34Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "(the audit writes no member; the invocation log is the transcript)",
+      "path": "logs/checks.py",
+      "phase": "P5 attempt-log audit",
+      "sha256": "dbd8f7b011237c1b5d7631fcb09a6933d1e2124247d31d79092d4aac15027672",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-17T23:39:34Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "(this step writes the member logs/attempts.json, not a transcript; the invocation log is the transcript)",
+      "path": "logs/checks.py",
+      "phase": "P5 the sealed row and the shipped ledger",
+      "sha256": "dbd8f7b011237c1b5d7631fcb09a6933d1e2124247d31d79092d4aac15027672",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-17T23:39:34Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "MANIFEST.sha256",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P6 manifest",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:38Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "(--verify writes nothing; the invocation log is the transcript)",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P7 archive (seal verification)",
+      "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:38Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.verify-final.log",
+      "path": "logs/verify-final-package.py",
+      "phase": "P8 final verification",
+      "sha256": "88544182292c645641de853ed1b6d7e5e00a168d26f3870a0742affb8c4f0e79",
+      "tool": "verify-final-package.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.authority-coherence.log",
+      "path": "logs/authority-coherence.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa",
+      "tool": "authority-coherence.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.handoff-inventory.log",
+      "path": "logs/handoff-inventory.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "ab165952ec87e865e331d306d5ce293c20507a73a89a78aead4a49858173a6fc",
+      "tool": "handoff-inventory.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/assemble.sh",
+      "phase": "P10 the post-seal gates",
+      "sha256": "9cc0f587951b6dfdeae14657a4f6d54d0113c5b1e5bfd59a2c563bb06d8a8d61",
+      "tool": "assemble.sh"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/battery.sh",
+      "phase": "P10 the post-seal gates",
+      "sha256": "e330dcd26a96253b93d90fa6f091a24f1032ab3333bfb9525451c3cc994bce91",
+      "tool": "battery.sh"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/compare-gate.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92",
+      "tool": "compare-gate.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/gate-summary.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+      "tool": "gate-summary.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/gzip-sizes.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+      "tool": "gzip-sizes.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/journal-dump.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+      "tool": "journal-dump.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/test-attempt-history.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62",
+      "tool": "test-attempt-history.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/test-authority-coherence.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5",
+      "tool": "test-authority-coherence.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/test-handoff-inventory.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "4a55f5c3f2531e566cd4c516322885c469f0e7e1bdde253a77c5c393260c0137",
+      "tool": "test-handoff-inventory.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/test-sanitize-and-seal.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "58485b50f25b804a4e750250ff049db748e04586eeefac73a7d149fabf804d15",
+      "tool": "test-sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-17T23:39:47Z",
+      "attempt": "package-20260817T233843Z-18once13",
+      "class": "shipped-not-executed",
+      "log": "20260817T233843Z-catena-e1-corrections-v13.assemble.log",
+      "path": "logs/test-verify-final-package.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "5b877a2019f1220a6d126bcfa28dd68cf7d0dfd4e6ce10b5cd167ed5d4b27498",
+      "tool": "test-verify-final-package.py"
+    }
+  ],
+  "schema": "catena-executed-tools/1"
+}

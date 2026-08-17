@@ -1,0 +1,10 @@
+{
+  "_why": "Commits this package legitimately DISCUSSES but was not produced from. head-consistency.py refuses any other SHA in a claim-bearing member, so a stale head from a superseded round cannot appear silently. Every entry here is a deliberate mention with its reason. The head, the parent and the commits between them are not listed: they are what this package IS, and they are derived rather than named.",
+  "commits": {
+    "05306fcfe221c1b0456501463e02323047635607": "The V12 evidence commit that review independently inspected, on evidence/catena-e1-corrections-v12-handoff. Named so the chain from the reviewed package to this correction is followable without the reviewer reconstructing it.",
+    "549bf0790503bd873dd8ce6ea0a64cc34f91271d": "Current origin/main at the time of this lane, recorded so a reviewer can see this candidate is not integrated with it and does not overlap it on any Catena path. Named in HANDOFF.md and in the V13 durable records, and therefore in changes.patch.",
+    "728c3e3b3d0d6e899f0da33e06a08a116375896f": "The independent review this lane answers, on review/catena-wave-1-e1-corrections-v12-independent, disposition CHANGES REQUIRED at the parent. A sibling of this line at the reviewed head; not merged in, and its commits are not imported.",
+    "e82b78c1dd344b64cba619d4755ec852d1877afa": "A superseded head of this same lane. A head battery ran green against it and was SET ASIDE rather than deleted when one paragraph of PROJECT-WORK.md was corrected afterwards and the head moved. It appears only in the append-only attempt ledger's set-aside row and its reason, which is where a cohort that ran and was not used belongs.",
+    "fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890": "Not a commit: the V12 package's ZIP SHA-256, quoted so the reviewed artifact this lane answers is identified by its bytes rather than by its name alone."
+  }
+}

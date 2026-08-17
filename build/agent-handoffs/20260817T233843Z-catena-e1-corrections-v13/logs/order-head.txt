@@ -1,0 +1,129 @@
+PREFLIGHT battery=head
+2026-08-17T23:16:58Z
+attempt=head-20260817T231658Z-13qy8np4
+attempt-no=13
+lane=V13
+expect-sha=6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3
+sha=6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3
+sha-matches-expected=yes
+porcelain=clean
+cwd=$REPO
+log-prefix=13
+log-root=logs/attempt-13
+log-naming=every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+tree-state=read before AND after every command, not once at preflight
+2026-08-17T23:16:58Z
+START focused-catena
+ORDER: 1
+LOG: logs/attempt-13/focused-catena-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:17:02Z
+END focused-catena
+2026-08-17T23:17:02Z
+START catena-check
+ORDER: 2
+LOG: logs/attempt-13/catena-check-head.log
+TREE-BEFORE: clean
+CMD: python3 scripts/_catena.py check
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:17:05Z
+END catena-check
+2026-08-17T23:17:05Z
+START promised
+ORDER: 3
+LOG: logs/attempt-13/promised-head.log
+TREE-BEFORE: clean
+CMD: tools/tpt check-promised-deliverables
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:17:05Z
+END promised
+2026-08-17T23:17:05Z
+START full-discovery
+ORDER: 4
+LOG: logs/attempt-13/full-discovery-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+TREE-AFTER: clean
+2026-08-17T23:25:10Z
+END full-discovery
+2026-08-17T23:25:10Z
+START make-check
+ORDER: 5
+LOG: logs/attempt-13/make-check-head.log
+TREE-BEFORE: clean
+CMD: make -k check
+exit=2
+TREE-AFTER: clean
+2026-08-17T23:30:03Z
+END make-check
+2026-08-17T23:30:03Z
+START release-bindings
+ORDER: 6
+LOG: logs/attempt-13/release-bindings-head.log
+TREE-BEFORE: clean
+CMD: make check-release-bindings
+exit=2
+TREE-AFTER: clean
+2026-08-17T23:30:04Z
+END release-bindings
+2026-08-17T23:30:04Z
+START public-site
+ORDER: 7
+LOG: logs/attempt-13/public-site-head.log
+TREE-BEFORE: clean
+CMD: make public-site
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:30:09Z
+END public-site
+2026-08-17T23:30:09Z
+START browser-gate
+ORDER: 8
+LOG: logs/attempt-13/browser-gate-head.log
+TREE-BEFORE: clean
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out '$WORKSPACE/$EVIDENCE/logs/attempt-13/browser-gate-head.json' > /dev/null; gate=$?; python3 '$WORKSPACE/$EVIDENCE/gate-summary.py' '$WORKSPACE/$EVIDENCE/logs/attempt-13/browser-gate-head.json'; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same JSON to stdout; discarded so the report ships once)'; exit $gate
+exit=1
+TREE-AFTER: clean
+2026-08-17T23:31:46Z
+END browser-gate
+2026-08-17T23:31:46Z
+START browser-static
+ORDER: 9
+LOG: logs/attempt-13/browser-static-head.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_browser_static.py'
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:31:47Z
+END browser-static
+2026-08-17T23:31:47Z
+START gzip-sizes
+ORDER: 10
+LOG: logs/attempt-13/gzip-sizes-head.log
+TREE-BEFORE: clean
+CMD: python3 '$WORKSPACE/$EVIDENCE/gzip-sizes.py' src/web/browser/catena
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:31:47Z
+END gzip-sizes
+2026-08-17T23:31:47Z
+START request-journals
+ORDER: 11
+LOG: logs/attempt-13/request-journals-head.log
+TREE-BEFORE: clean
+CMD: python3 '$WORKSPACE/$EVIDENCE/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+TREE-AFTER: clean
+2026-08-17T23:31:49Z
+END request-journals
+POSTFLIGHT battery=head
+2026-08-17T23:31:49Z
+sha=6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3
+porcelain=clean
+sha-drift=none
