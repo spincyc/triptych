@@ -1249,7 +1249,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "own-claim-members-only"
   criterion = "No inherited, prototype or accessor-backed property may create a request, reopen the carried fallback, compose a text path, change the refusal or absence state, render body text or alter request ownership. Every semantic member of the prefix claim, the spine's own text_prefix, the fragment's carried text_path, id and source, the edition join and the extent members is read once as an own DATA property through its descriptor, so an own accessor is never invoked and a getter that answers differently on a second read has no second read; a claim whose three-member contract is reachable above it fails closed rather than being adjudicated. An adversarial matrix covers inherited stated, inherited trail, both inherited, own-false-with-inherited-valid-trail, own-invalid-with-inherited-valid-trail, getters for each member, a throwing getter, a drifting getter, an inherited supplied marker, an inherited refusal marker, and inherited carried path and id — each pinned closed, with the accessor invocation count asserted at zero and the ordinary absent, valid and refused dispositions asserted beside them as positive controls."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1279,7 +1279,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "truthful-provenance-and-unique-attempts"
   criterion = "Clean and dirty tree state is captured contemporaneously for each command rather than inherited from one preflight, so a step that dirties the tree is recorded dirty on its own row. Every authoritative execution attempt has a unique log identity that a rerun cannot reproduce, a log index is derived mechanically, the final assembly writes an outer invocation log, the gate comparison is a recorded step, and every discarded attempt is self-marked non-authoritative with exactly one reason so that no attempt reads as both authoritative and discarded. A compact attempt ledger records attempt id, exact SHA, parent and head, sanitized cwd identity, command or phase, start, end and order, exit or result, disposition, reason if discarded, and log path."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
@@ -1309,8 +1309,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V11 head and its new immutable package records a durable disposition, scoped to inherited and accessor semantic closure, truthful malformed-state presentation, complete late-vector proof, and package, provenance and privacy correctness. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v10-2026-08-16"
