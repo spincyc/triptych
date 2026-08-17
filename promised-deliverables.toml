@@ -1241,6 +1241,102 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v13-2026-08-17"
+owner = "src/web/browser/catena"
+promise = "Answer the 2026-08-17 E1 Catena V12 independent review (728c3e3b3 on review/catena-wave-1-e1-corrections-v12-independent, CHANGES REQUIRED at d312786dd) with exactly its stated next action: normalize each loaded chapter's request-critical spine and fragment state exactly once into one stable page-level projection and pass that projection unchanged through readability, tally, rendering, request, cache, body and ownership, so that no covered consumer re-reads the raw chapter after it exists; add walking raw-state tests that assert one total observation per loaded record and prove the projection identity is the same instance everywhere; make all six planted parent scenarios non-vacuous and ship their exact ownership journals in the package; and issue one immutable exact-head V13 handoff with one complete append-only lane ledger, no ordinal reuse, truthful terminal reasons and times, publication authority established only after P8 and bound to the final ZIP's basename, size, digest and P8 result, full negative authority and endpoint fixtures, contemporaneous executed and shipped digests for every tool claimed executed, a substantively verified handoff inventory, and privacy scanning of every member and every outer artifact. Record every other blocker open and untouched, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "one-page-level-chapter-projection"
+  criterion = "Each raw chapter is normalized exactly once per load or route resolution into one bounded internal projection holding own data properties only, with no accessors, no inherited semantic values, stable values, and no retained dependency on the raw chapter for any covered consumer. Readability, the tally, the rendered chain, the request decision, the cache decision, the body projection and the ownership journal all read that one projection. The page-level count of raw chapter normalizations is pinned at exactly one per loaded chapter, and the V12 local guarantees are preserved: one getPrototypeOf per normalized source object, one descriptor read per requested name, zero accessor invocation, inherited prefix and inherited refusal failing closed, and a carried text_path that cannot drift within the projection."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "one-projection-identity-proved"
+  criterion = "The projection's identity is observable and is proved to be the SAME normalized instance, not merely an equal value, across readability, tally, rendering, request, cache, body and ownership for one page load. A second loaded chapter advances the count by exactly one, so the number is a fact about the data rather than about the page's shape. A model chapter consumer that is not routed through the projection fails the identity test by name rather than passing quietly."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "no-raw-reread-after-projection"
+  criterion = "After the chapter projection exists, no covered consumer re-reads request-critical raw chapter state: text_prefix, the carried text_path, text_refused, stated, trail, the chapter's member list and order, its editions, and its recorded refusals. Every later raw read capable of changing readability, tally inclusion, request, render, cache, body or ownership is removed, and the page's own last reads of raw chapter state are routed through the projection."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js"]
+
+  [[deliverables.requirements]]
+  id = "walking-raw-state-cannot-move-the-page"
+  criterion = "Page-level adversarial tests mutate request-critical raw chapter state after normalization — a walking carried path, a walking spine prefix, a walking member list, walking editions and walking recorded refusals — and readability, tally, rendering, request, cache, body and ownership all remain based on the original projection. Each walked member is observed exactly once per render, and a deterministic trace records the initial raw state, the single normalization, the projection identity, the mutation, and each consumer's result."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "six-of-six-non-vacuous"
+  criterion = "All six planted parent scenarios are non-vacuous: each plants a forbidden endpoint or body, each stands beside a positive control proving that planted thing is reachable and renderable by a page entitled to reach it, the reviewed parent actually exhibits the intended defect at a production sink, and this lane closes it. A matrix records, per scenario, the scenario id, the planted endpoint or body, the positive control, the parent request, body and cache result, this lane's request, body and cache result, and the ownership result. Request count alone proves nothing: the exact request journal, the cache hit or miss, the rendered body, the fallback and alternate bodies, and the final visible state are each asserted."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "packaged-ownership-journals"
+  criterion = "The package ships machine-readable ownership journals covering this lane's own scenarios, so a reviewer can verify every ownership claim without rerunning the harness. Each row states its sequence, the scenario and the route as it stood when the request was made, the projection that owns it, the request path, the request kind, the owning step, the outcome, and the cache and body association. The journal's scenario roster is derived from the test file rather than hand-maintained, so a later lane cannot ship a journal that stops before its own work."
+  status = "open"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "authority-only-after-p8"
+  criterion = "No sealed package bytes claim final authority before P8. The state progression is attempt started, package sealed, P7 and P8 verification, post-P8 ZIP size and hash confirmed, then final authority established. An in-package attempt row may claim at most sealed. The final authoritative record is a cryptographically bound structured sidecar outside the archive naming the attempt id, the exact head, the exact ZIP basename, size and SHA-256, the P8 result, the post-P8 rehash result and a terminal authoritative status, recomputed from the archive itself rather than carried forward; the binding runs one way and the archive contains no such record. If P8 fails the attempt remains non-authoritative."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "complete-append-only-history"
+  criterion = "The attempt and battery history is append-only and complete for every package attempt and every authoritative battery run used in a claim, with no ordinal reused across the lane, no prior row rewritten, a terminal disposition and a non-empty reason for every non-authoritative terminal state, and internally truthful chronology. Batteries separately record the endpoint SHA, the tree state before and after, the tool identity, the exact command, the counts and results, the log root and the terminal reason; a battery is mechanically prevented from being attributed to a dirty tree or to a commit it did not run at. The complete ledger ships beside the package rather than being deferred to a record the reviewer cannot reach."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "authority-negative-fixtures"
+  criterion = "The authority gate refuses, with a dedicated fixture each, two authoritative attempts, an authoritative attempt later superseded or discarded, a ZIP hash mismatch, a ZIP basename mismatch, a head mismatch, a missing final ZIP identity, a missing authoritative attempt or winner identity, multiline prose claiming a different winner, an uppercase or lowercase variant conflict, an unresolved attempt described as final, and an outer log that disagrees with the structured ledger. Structured data is the authority source; prose scanning is a backstop and never the source. The gate consumes the archive, the digest sidecar, the P8 transcript, the external complete ledger and the sibling discard markers, and its positive fixture cannot pass without them."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "substantive-handoff-inventory"
+  criterion = "The handoff inventory is verified substantively rather than lexically: every referenced file exists, every count claimed in the handoff matches the package's actual contents, every sibling beside the package is discovered and named by its exact filename including the inventory tool's own output, every quoted digest is recomputed and compared, and no count is carried stale from a prior package. Package members, logs, ownership journals, screenshots where present, tools, attempt rows, battery rows and manifest rows are each counted mechanically."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "privacy-closure-inside-and-outside"
+  criterion = "No absolute workspace path, account or user name, home path, temp root, tool-anchor absolute path, session suffix, hostname or absolute build path appears in the archive's names or contents, in any sidecar, in any tracked outer log, in the attempt or battery history, in the executed-tool table, in the P8 transcript, in screenshots or their metadata, or in ZIP metadata. Outer logs are sanitized before they are committed, not only package members. The final scan is taken at the fixpoint, after every sidecar, log and authority record is complete, and requires zero findings alongside valid UTF-8, no NUL and no forbidden control bytes."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "executed-tool-byte-identity"
+  criterion = "For every tool claimed as executed, the SHA-256 of the exact bytes is captured contemporaneously at or immediately before execution, the logical tool identity is recorded, the execution is linked to that digest, a copy is shipped, and the shipped digest is compared to the executed digest. The proof covers every executed tool rather than a subset, and distinguishes shipped and executed, shipped and not executed, external system tool, and reviewer-only helper. A machine-readable table records the tool id, the logical path, the run or attempt id, the executed SHA-256, the shipped SHA-256, their equality, whether it executed, and the evidence log."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "passed-v12-behaviour-preserved"
+  criterion = "Nothing the V12 review passed is regressed: one stable snapshot per projection, the inherited text_prefix local closure, the inherited text_refused local closure, the carried text_path local read-once behaviour, the fail-closed prototype-contamination policy, ordinary request behaviour for genuine absence, own present-valid and own present-invalid prefixes, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, primitive namespace closure, the 36-field late vector and its zero-to-one release, P8 non-execution and read-only operation with pre and post rehash, ZIP arithmetic, CRC, manifest and final rehash correctness, candidate immutability, ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v13-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V13 head, its parent d312786dd, the review addressed 728c3e3b3, the mechanically derived commit list and diff, the chapter-projection architecture, the one-projection identity proof, the raw-reread audit, the walking-state trace, the page-level observation counts, the six-of-six non-vacuity matrix, the request, cache, body and ownership proof, the packaged ownership journals, the ordinary and late regression evidence, the append-only attempt and battery history with its ordinal, chronology and terminal-reason checks, the authority negative-fixture results, the post-P8 final authority record and its ZIP binding, the substantive inventory and count checks, the privacy evidence, the executed-tool byte table, the P8 result, package arithmetic, fresh validation figures, budgets, release status, the open blockers, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V13 head and its new immutable package records a durable disposition, scoped to one page-level normalized chapter projection, walking-state stability, six-of-six non-vacuity, packaged ownership evidence, post-P8 final authority, append-only provenance, privacy, and complete executed-tool byte identity. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v12-2026-08-17"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-17 E1 Catena V11 independent review (22b9bdad5 on review/catena-wave-1-e1-corrections-v11-independent, CHANGES REQUIRED at 0255b8499) with exactly its stated next action: normalize the request-critical semantic state exactly once into a stable trusted snapshot of own data properties, treat an inherited spine text_prefix and an inherited text_refused marker as contaminated state that fails closed rather than as absence or as nothing at all, read a carried text_path descriptor once so the value validated is the value projected and requested, add planted request, cache, body and ownership regressions for all three at the production sinks, issue one immutable exact-head V12 handoff whose ledger carries exactly one terminal authoritative attempt with unique attempt-root logs and a mechanical check that rejects cross-record authority disagreement, record every other blocker open and untouched, and return that head for fresh independent review."
@@ -1249,7 +1345,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "request-critical-state-snapshotted-once"
   criterion = "The request-critical semantic state is derived from the source object exactly once, into a normalized snapshot holding only trusted own data properties with no accessor, no prototype-derived value and no retained dependency on the raw object. After that snapshot exists, no request, fallback, cache, renderer or ownership logic consults the raw object again for a request-critical field: text_prefix, the carried text_path, text_refused, the stated and trail representations that distinguish absent from valid from invalid, and any field that can reopen carried fallback, choose the request address, or change request ownership or refused/absence routing. A static pin holds the request-critical property names to the lines that take the snapshot, so a later reach for one off a raw record fails at the line it is written."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1273,25 +1369,25 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "planted-request-cache-body-ownership-proof"
   criterion = "Each of the three defects is driven through the production sinks with a deterministic body planted at every address it could reach, so a leak is a served and rendered page rather than an absence nobody forbade. The flat request list and the owned journal are pinned entire, the rendered body container is asserted to carry no planted text, no previous body, no fallback body, no prefix body and no second-getter body, prewarmed scenarios prove no cached substitution and no stale body while the malformed state stays visible, and the ownership journal records sequence, path, kind, owner and outcome with no request owner, no fallback owner and no stale body owner for a failed-closed claim. Every scenario stands beside a non-vacuity control that really does fetch and render, and the whole file is run against the uncorrected parent and its failing identities recorded."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "one-authoritative-attempt"
   criterion = "The final package has exactly one authoritative attempt and its ledger says so without prose reinterpreting it. Attempt states and their legal transitions are explicit, a completed validation battery and a sealing package attempt are distinct states so the authoritative count cannot be inflated, and no attempt is simultaneously authoritative and superseded, unresolved and final, or discarded and authoritative. A coherence check run before publication fails if the authoritative attempt count is not one, if the authoritative package or head is not this package or this head, if a superseded attempt is still authoritative, if an unresolved attempt is described as final, or if the outer invocation log or the package prose disagrees with the ledger."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
   id = "unique-attempt-root-logs"
   criterion = "Every attempt writes into its own root log namespace, so no log filename, provenance path, root or command-output file is reused across attempts and a failed attempt's logs stay with that attempt. Package validation rejects an unexplained zero-byte authoritative log, a missing log, a log claimed by two attempts, a log referenced by no attempt, and an attempt referencing a log outside its own root, and focused protocol tests exercise each rejection."
-  status = "pass"
+  status = "open"
   evidence = ["guidance/external-review-handoffs.md"]
 
   [[deliverables.requirements]]
   id = "passed-v11-behaviour-preserved"
   criterion = "Nothing the V11 review passed is regressed: ordinary accessor non-invocation, own-property projection for ordinary rows and extents, the ordinary refused wording, the malformed and unestablished wording, the cold, present-valid and prewarmed controls, the late vector with all 36 guarded fields exact-pinned and its genuinely-late timing and zero-then-one release, packaged request ownership, the read-only non-executing P8 with its identity binding and final rehash, the ten handoff contents, privacy and ZIP metadata, the UTF-8 and control-byte scan, production ownership boundaries, and the CSS and JavaScript ceilings, which are not raised."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.css"]
 
   [[deliverables.requirements]]
@@ -1303,8 +1399,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V12 head and its new immutable package records a durable disposition, scoped to stable request-critical normalization, inherited and accessor request closure, descriptor read-once behaviour, planted request, cache, body and ownership proof, and authoritative package-ledger coherence. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v11-2026-08-16"

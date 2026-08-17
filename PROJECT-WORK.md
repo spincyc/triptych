@@ -1139,6 +1139,225 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V13
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v13-2026-08-17 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`d312786dd2b23926aa88e29ea15647dfcc7e7e6e`, recorded by the independent
+review `728c3e3b3d0d6e899f0da33e06a08a116375896f` on branch
+`review/catena-wave-1-e1-corrections-v12-independent`, which independently
+inspected evidence `05306fcfe221c1b0456501463e02323047635607` and verified
+package `build/agent-handoffs/20260817T194757Z-catena-e1-corrections-v12`,
+1,842,342 bytes across 81 members, with ZIP SHA-256
+`fa43918166b2d708c7911e3604834499260884d8433b9cd665bd7fc0ccf40890`. That
+review is a sibling of this line at the reviewed head and is **not merged
+in**; this record states its disposition rather than importing its commits.
+Current `origin/main` is `549bf0790503bd873dd8ce6ea0a64cc34f91271d`, and this
+lane is not integrated with it.
+
+The review passed what V12 got right and does not reopen it: `requestSnapshot`
+is correct for one invocation, taking one `Object.getPrototypeOf`, one
+descriptor per requested name and no accessor invocation; the inherited
+`text_prefix` and the inherited `text_refused` marker close locally; the
+carried `text_path` is read once per projection, so V11's
+validate-one/project-another defect is closed inside a projection; the
+page-wide fail-closed contamination policy is accepted as a design; ordinary
+request behaviour, the malformed and unestablished wording, the cold,
+present-valid and prewarmed controls and primitive namespace closure are
+exact; the 36-field late vector and its `0 -> 1` release pass unchanged; P8
+executes no archive code, is read-only, and its pre and post digests are
+equal; the ZIP's arithmetic, CRCs, manifest, central directory and absence of
+trailing bytes are correct; earlier packages were not mutated; and ownership
+boundaries hold. It found nine things, and this lane answers those nine and
+nothing else.
+
+**One raw chapter was projected three times, and three projections are three
+observations.** V12 took each record's request-critical state once inside a
+projection and then ran that projection three times over one chapter:
+`spineUnreadable` projected to decide whether a non-empty fragment list
+yielded a readable row and threw the rows away, the tally projected again to
+keep a length, and `renderChain` projected a third time and kept the rows that
+reach request, cache, body and ownership. The counts V12 reported — parent 6,
+V12 3 — were one descriptor read per projection times three, and the review
+was exact about what that does not prove: "They do not prove no source
+revisit." A record that answers one way while readability is being decided and
+another way while the render is being built therefore rendered, requested,
+cached and attributed from an answer nothing had approved.
+
+**The chapter is now normalized once and held.** `normalizeChapter` reads each
+request-critical member of the spine into a local exactly once —
+`fragments`, `sources`, `refusals`, `unfetched`, `blocked`, `leads`, and
+`text_prefix` through the V12 snapshot — projects the rows, freezes each with
+its extent and translators, gathers every edition in a single walk, and
+decides readability from that same walk rather than from a second one. The
+result is a frozen null-prototype projection of own data properties, with no
+accessor and no inherited semantic value, held against the raw record in a
+`WeakMap`, so a chapter read once stays read once across a voice change, an
+arrow step or a re-render. `spineUnreadable`, `chapterFragments`,
+`chapterVoices`, `chapterBlocked`, `chapterLeads`, `refusalNote` and
+`absenceRows` all answer from it and reach past it to the raw chapter nowhere.
+`catena.js` changes by two lines — `M.blockedRows(file && file.blocked)` and
+its sibling become `M.chapterBlocked(file)` and `M.chapterLeads(file)`, which
+were the page's last reads of raw chapter state — and it gets smaller.
+
+**Identity is made observable rather than argued.** The review required proof
+of the same normalized instance and not of equal values. `chapterProjection`
+is exported and returns the held projection; `chapterPasses` returns how many
+raw chapters this page has normalized; and the replay harness asks every model
+entry point that takes a chapter which projection it resolved to before it
+answers, so "one identity, everywhere" is a comparison of recorded lists. A
+consumer that is not routed through the projection fails the identity test by
+the name that is missing rather than passing quietly. A request is bound to
+the projection that produced the row carrying its address, because the page
+composes no text address of its own.
+
+**Six of six are non-vacuous, and each fires at a different sink.** The review
+found `v12-drifting-carried-path` vacuous: it consumed its valid-then-alternate
+pair inside the readability projection, which issues no request, so it passed
+by never reaching a sink. The six V13 scenarios each walk one member of the
+chapter between projections and plant something at the address only a later
+projection can reach, and each stands beside a control holding that member at
+the walked-to value, so every planted thing is proved reachable and
+renderable. At the reviewed parent the walked carried path fetches and renders
+`structure/catena/text/deeper/fallback-owned.json`; the walked spine prefix
+composes and fetches the same; the walked member list renders and fetches a
+body off members readability never approved; the walked editions put a forged
+rights claim on the reader's own provenance line; the walked refusals print a
+Rule 4 boundary the record never stated; and the prewarmed walk misses a warm
+cache to fetch a second body. The parent asks the walked member 3, 3, 5, 8, 4
+and 3 times for one render; this head asks each exactly once. Replayed against
+the uncorrected parent the file fails **twenty-seven ways across thirteen
+methods**.
+
+**One committed assertion required the wrong answer, and is corrected with its
+reason.** `v12-drifting-carried-path` was pinned to make no text request at
+all. That was the scenario exhausting its two values in a projection that
+cannot request, not a closure, and it now requests the one address the one
+projection validated. The page-level descriptor pin moves from three to one
+for the same reason: V12 pinned "one ask per projection, three projections a
+render", and the review named that number as the defect rather than the proof.
+
+**The package could not show its own ownership.** `journal-dump.py` enumerated
+scenarios from a hand-maintained list that stopped at `v11-renderer-order-control`,
+so the head and parent packaged journals were byte-identical, carried no V12
+scenario, and supported none of the closures the package claimed — while
+`EVIDENCE-INDEX.md` said they did. That is the same omission the V11 review
+found one whitelist over. A hand-maintained enumeration of what to prove falls
+behind whatever is proved next, so there is no longer one: the roster is
+derived from the test file itself, every declared scenario is journalled, and
+each row carries its sequence, scenario, the route as it stood when the request
+was made, the owning projection, path, kind, step, outcome, cache disposition
+and body.
+
+**Authority is established only after P8, and it binds the final ZIP.** V12
+wrote the terminal `authoritative` row before the manifest, so a later P7 or P8
+failure could write only best-effort sibling markers while the sealed bytes
+kept their claim. The progression is now attempt started, package sealed,
+P7/P8 verification, post-P8 size and hash confirmed, then final authority
+established. An in-package row may claim at most `sealed`; final authority is a
+structured sidecar outside the archive naming the attempt, the exact head, the
+ZIP's basename, size and SHA-256, the P8 result and the post-P8 rehash result,
+each recomputed from the archive rather than carried forward. The binding runs
+one way and the archive carries no such record, so there is no self-reference.
+If P8 fails, the attempt stays non-authoritative.
+
+**The authority gate accepted six contradictions it should have refused.** It
+consumed only the shipped ledger and the outer log — never the archive, the
+sidecar, the P8 transcript, the external ledger or the sibling markers — and
+its positive fixture passed without a ZIP or a P8 result. It accepted a second
+authoritative state row, an authoritative winner followed by a discarded state,
+multiline and uppercase contradictory prose, a wrong package on the
+authoritative outer-log line, and prose that never named the winner. All six
+are closed, the gate now consumes every post-P8 artifact, and its negative
+roster grows from an all-structured set to one covering each required
+contradiction. Run against the V12 package it refuses it with five
+problems, naming the two in-package rows that claim final authority, the
+missing authority record, the authoritative count of two, and the sibling
+supersession marker the winner carries.
+
+**The history was not append-only in practice.** Four discarded package
+attempts and four set-aside battery cohorts are absent from every surviving
+ledger while three package members assert they are present; ordinals 03, 04 and
+05 were reissued after a ledger was restarted, contradicting the claim that an
+ordinal is allocated once for the lane; every summary reason is empty,
+including two supersessions; ten rows name log roots the package does not
+contain; one attempt's embedded timestamp postdates its own last row and the
+evidence commit; and a supersession is stamped inside a file that claims to
+have been frozen thirty seconds earlier. The ledger identity is now pinned to
+the lane and refuses a foreign or restarted one, ordinals are monotonic and
+never reused, every terminal state carries its reason, a battery may be
+recorded set aside rather than forced to `complete`, chronology is checked, and
+the complete ledger ships beside the package rather than deferring to a record
+the reviewer cannot reach.
+
+**The 10/10 inventory was lexical.** It computed every verdict from
+`HANDOFF.md`'s text alone: no file existence, no counts, no digests, no git,
+and its artifact cross-check never fed the verdict it was documented to feed.
+It took siblings from command-line arguments and never discovered or stat'd
+one, which is exactly how the package came to omit its own inventory log while
+scoring ten of ten, and it accepted "eleven limitations" over a file with
+twelve. It now resolves every referenced path, recomputes every quoted digest,
+discovers and stats every sibling including its own output, counts members,
+logs, journals, tools, attempt rows, battery rows and manifest rows
+mechanically, and distinguishes a setup failure from a finding.
+
+**Privacy was a blocker in two different ways.** The tracked outer assembly and
+P8 logs exposed the absolute workspace path, the account name and the tool
+anchor on twelve lines, because the sanitizer's walk root is the package and
+those siblings are written after the manifest. Inside the archive, a generic
+`/tmp` root and a dash-flattened workspace slug survived in `checks.txt`, both
+order ledgers and `attempts.json`, because the scratch rule required a literal
+substring no ordinary temporary directory carries and the flattened form could
+not match a path-separated pattern. Both pattern gaps are closed, the sanitizer
+gains a mode for non-member files, and every outer sibling is sanitized and
+re-scanned before it is committed.
+
+**The executed-byte claim covered four tools of fifteen.** The mechanism was
+right and its coverage was hard-coded to a renderer and two auditors plus the
+verifier hashing itself, and it ran at P8, which proves shipped against trusted
+and not executed against shipped — while the package asserted it recorded each
+tool's digests. `assemble.sh` and `checks.py`, the two tools that write the
+records under review, had none. Every tool invocation now records the SHA-256
+of the exact bytes immediately before it runs, the table distinguishes shipped
+and executed from shipped and not executed, external system tool and
+reviewer-only helper, and P8 compares executed against trusted against shipped.
+
+Fresh validation, measured at **both endpoints** — this head and the exact
+reviewed parent — because an exit code cannot tell an inherited failure from a
+caused one. Focused Catena is **555** green at this head, up from 544 at the
+parent. `scripts/_catena.py check` passes at 1,351 fragments / 1 book / 73
+canon entries. Full discovery is **1,906** tests at this head and 1,895 at the parent, with the identical inherited 14 failures / 13 errors / 11 skips at both and the same 27-entry failure and error identity set, none of which is a Catena identity. `make -k check` exits 2 on **the same four targets at both endpoints** — `check-web-editions-current`, `check-release-bindings`, `check-tool-registry` and `check-examples` — all inherited. The browser gate is 2,290 assertions, 1,836 / 226 / 228 across 171 pages and 19 routes, identical at both endpoints and identical to the V10, V11 and V12 reports. The promise ledger validates at 38
+tracked / 19 complete. Budgets unraised, and `catena.css` is byte-identical at
+both endpoints at 7,629/8,000 whole and 2,676/2,700 stripped; `catena.js` is
+**smaller at both measures**, 12,974/13,000 whole and 7,546/8,800 stripped
+against the parent's 12,980 and 7,554, so the page's whole-file headroom
+improves from 20 to 26 gzipped bytes. The unbudgeted model grows 34,367 to
+36,679 gzipped whole and 8,258 to 8,873 stripped; disclosed, not presented as
+unchanged load, and the standing question of whether the model and the combined
+route payload need a governed ceiling remains the budget owner's.
+`src/web/data/` has zero changes: every adversarial fixture lives in the test
+file and is served by the replay harness's own stub network. Four stale release
+bindings remain fail-closed and unsigned, none re-signed.
+
+Every other blocker remains open and untouched, as the V12 review left it: full
+sole-source semantic projection beyond this bounded chapter projection; orphan
+raw sources; source-only fragments still counting; scalar and nested translator
+coercion; malformed and padded absence rows; the broader selection and ordering
+defects; refusal verse typing; unreadable roots and the unreadable
+`bibles.json` prose; the broader terminal and corrected-oracle proofs outside
+this lane's vectors; the CLI/web duplicated semantic model; model and combined
+budget governance, answered here only by accurate disclosure; the historical
+data seam; and cumulative-history reconciliation beyond this lane's own attempt
+and battery evidence. Release bindings, the common gate, B0/shared shell,
+real-device and assistive-technology evidence, protected Liturgy and PDFs
+remain separately owned. E1 is not integrated.
+
+Status: **awaiting fresh independent review** of the exact V13 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v13-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ### E1 Catena route-owned correction lane, V12
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v12-2026-08-17 -->
