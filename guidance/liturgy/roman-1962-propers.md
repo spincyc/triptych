@@ -8,9 +8,11 @@ Each guide is a hand-missal companion, not an official liturgical text, critical
 
 **This collection is closed.** The maintainer bounded it at the set already
 published on 2026-07-25; the identities below stay complete and permanent, but
-an identity with no guide is the normal state and not a target. See
-[the production plan](propers-production-plan.md) for the boundary and for how
-to derive what each provider has actually published.
+an identity with no guide is the normal state and not a target. On 2026-08-19
+the maintainer reopened the boundary for the Claude `25`–`27` targets alone;
+[the production plan](propers-production-plan.md) records that decision, owns
+the boundary, and states how to derive what each provider has actually
+published.
 
 - The temporal series uses 52 Sunday identities in a stable Lent-first repository order: `01` is the First Sunday of Lent and `52` is Quinquagesima. These IDs are catalog identities, not the occurrence schedule of a civil year.
 - `46R` through `49R` identify the resumed Third through Sixth Sundays after Epiphany. Each is a separately sourced formulary variant under its shared ordinal because it combines the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.

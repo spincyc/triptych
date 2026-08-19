@@ -1335,3 +1335,45 @@ state = "complete"
   criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
   status = "pass"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "claude-eleventh-thirteenth-after-pentecost-2026-08-19"
+owner = "src/claude/liturgy/roman-rite/1962/propers/temporal"
+promise = "Author and publish componentized Claude proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 25-27) with deep and broad patristic reception research, shared-corpus enrichment, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows, under the maintainer's 2026-08-19 reopening of the closed temporal boundary for exactly these three targets."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "three-claude-leaves"
+  criterion = "Three componentized Claude leaves 25-27 exist with facsimile-collated verified.md, retrieved.txt, complete research/scope.md reception matrices, and schema-2 source bindings."
+  status = "open"
+  evidence = ["guidance/liturgy/roman-1962-propers.md"]
+
+  [[deliverables.requirements]]
+  id = "broad-and-deep-reception-evidence"
+  criterion = "Each leaf's research records document a broad documented search across the major relevant Greek and Latin patristic and later saintly corpora for every appointed passage, deep comparative treatment of checked witnesses at work and locus, and material negative results."
+  status = "open"
+  evidence = ["guidance/liturgy/roman-1962-propers.md"]
+
+  [[deliverables.requirements]]
+  id = "shared-corpus-enrichment"
+  criterion = "Reception research verified for these guides is recorded in the provider-neutral source library as work, edition, or passage records and schema-2 bindings rather than remaining publication-local."
+  status = "open"
+  evidence = ["guidance/sources.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-publications-verified"
+  criterion = "All three Full and Synthesis PDFs are rebuilt, gate-checked, visually inspected page by page, and installed, and each canonical web edition is generated, reviewed against the installed PDF, and installed."
+  status = "open"
+  evidence = ["guidance/repository.md"]
+
+  [[deliverables.requirements]]
+  id = "catalog-and-release-links"
+  criterion = "Rows 25-27 of the Sunday calendar link the installed Claude Synthesis PDFs and web editions with stable publication markers, six release records exist, and release bindings are refreshed."
+  status = "open"
+  evidence = ["library/traditional-latin-mass.md"]
+
+  [[deliverables.requirements]]
+  id = "gpt-boundary"
+  criterion = "No GPT publication receives a material source, PDF, web, catalog, release, or baseline change from this work."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]

@@ -1591,3 +1591,29 @@ move release hash records and every smoke-test filename together.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.
+
+## Claude Eleventh through Thirteenth Sundays after Pentecost
+
+<!-- promised-deliverable: claude-eleventh-thirteenth-after-pentecost-2026-08-19 -->
+
+On 2026-08-19 the maintainer reopened the closed 1962 temporal propers
+boundary for exactly three targets: the Claude guides `25`–`27`, the Eleventh
+through Thirteenth Sundays after Pentecost, authored to the current
+componentized profile with deep and broad patristic reception research. The
+production plan records the boundary decision; this section records the work
+authority. The collection remains otherwise closed, and no GPT publication
+receives a material change under this work.
+
+For this work the maintainer authorized, in the 2026-08-19 session: full
+publication — commit to `main`, the deploy gates
+(`make check-deployment-sources`, `make public-site`,
+`public-alpha verify --deployment-target github-pages`), and a push to
+`origin/main` with its automatic Pages deployment. This supersedes, for this
+work only, the 2026-07-27 boundary that reserved integration and push to the
+maintainer acting outside a session.
+
+Research verified for these guides enriches the provider-neutral source
+library (works, editions, passages, schema-2 bindings) rather than remaining
+publication-local; the mass-commentary corpus blocks for `pentecost-11`,
+`-12`, and `-13` are the L1 lead lists, and every retained witness is checked
+at its work and locus before publication.
