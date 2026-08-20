@@ -26,6 +26,15 @@ and where the Missal prints such a prayer unchanged, the words on its page are
 the ancient words, in which nobody holds a right. Those may be translated and
 published. Where the reform composed or substantially rewrote a prayer, they may
 not, and this repository says so and shows the gap.
+
+That premise has a second consequence, drawn later and recorded in
+`the_antecedent_route`. If the words on the Missal's page are the older words,
+then a public-domain English already made for the older prayer is an English of
+those same words, and it may be carried as the ANTECEDENT prayer's English. What
+the repository publishes is therefore of two kinds: its own new translations of
+ancient Latin, and quoted public-domain English of the antecedent oration. It
+publishes no English of the Missale Romanum 2002 by any route, and neither kind
+may be presented as that book's text.
 """
 
 [the_latin]
@@ -211,14 +220,30 @@ case a witness to the 1962 books, not to the postconciliar Missal.
 The pre-1930 English hand missals, of which this repository already carries one:
 the 1861 Cummiskey. These are genuinely in the public domain and are already
 used, for the roman-1962 calendar, where 153 orations carry their English. They
-cannot serve the postconciliar calendar, because they translate the Tridentine
-Latin. Where the reform kept a prayer unchanged the old English does render the
-same words; but the reform edited a great many of the prayers it kept, and the
-divergences are exactly the kind that read correctly and say something else.
-This route was tested mechanically against the 1962 index in this repository on
-2026-08-01: of 215 postconciliar orations, only four are word-for-word identical
-to a 1962 formulary under a normalising comparison, and ten more reach 0.95
-similarity. It is a small yield bought at a high risk, and it was not taken.
+cannot serve the postconciliar calendar AS A TRANSLATION OF IT, because they
+translate the Tridentine Latin. Where the reform kept a prayer unchanged the old
+English does render the same words; but the reform edited a great many of the
+prayers it kept, and the divergences are exactly the kind that read correctly and
+say something else. The MECHANICAL route was tested against the 1962 index in
+this repository on 2026-08-01: of 215 postconciliar orations, only four are
+word-for-word identical to a 1962 formulary under a normalising comparison, and
+ten more reach 0.95 similarity. A similarity score is not an identity, and
+transferring an English on one would attach one prayer's English to another's
+Latin, which is this repository's governing defect. That route was refused and
+stays refused. Nothing in this repository may carry a hand missal's English onto
+a postconciliar oration on the strength of a coverage figure.
+
+What was NOT refused, and what this paragraph did not distinguish until
+2026-08-20, is the ANTECEDENT route, argued one prayer at a time. Where this
+project's own record of a postconciliar oration's Latin reproduces an older
+oration that a public-domain book translated, the old book's English may be
+carried as the English OF THAT OLDER PRAYER, provided the entry names the
+antecedent, states the Latin identity it rests on, and enumerates every
+difference the two Latin texts show. That is a determination on two texts, made
+and shown entry by entry; it is not a threshold and no score licenses it. See
+`the_antecedent_route` below, which states what it does and does not establish.
+The two must not be conflated: the first would publish an English because two
+prayers resemble each other, the second because one prayer is the other.
 
 National conferences' own vernacular texts, for territories outside ICEL's
 membership. Every one of them is a conference's property under Liturgiam
@@ -304,4 +329,65 @@ approved, as liturgical, or as ICEL's; the Latin stands beside it; and it must
 not be used for recitation. See
 src/sources/inventories/postconciliar-proper-translations-v1.toml for the
 entries, the witnesses, the divergences and the count.
+
+That is what THIS route publishes. It is no longer the only English the
+postconciliar calendar carries, and a reader who stops here will misdescribe the
+repository. `the_antecedent_route` below states the second, which publishes no
+new English and quotes a public-domain book's English of the older prayer.
+"""
+
+[the_antecedent_route]
+question = "May a public-domain book's English of an OLDER oration be carried where the Missal prints that same older oration?"
+answer = "Yes, one prayer at a time, on a shown identity of the two Latin texts, and never as the Missal's own English."
+reasoning = """
+This is the second route, opened after the first and resting on the same
+premise as `the_route_that_works`: copyright protects original expression, and a
+verbatim reproduction of a pre-existing text is not original, so where the Missal
+prints a prayer its editors did not write, the words on its page are the older
+words and carry no right of the reform's.
+
+The first route draws the consequence for the LATIN and translates it afresh.
+This one draws the consequence for an ENGLISH that already exists. If the prayer
+on the Missal's page is the older prayer, then a public-domain English of the
+older prayer is an English of those same words, and it may be carried. What is
+published is the antecedent's English. It is never the Missal's English, and the
+distinction is not a formality: the two would be the same claim only if the
+reform's translators and the 1861 translator had produced the same sentences,
+which they did not and which nothing here asserts.
+
+The book actually used is the 1861 Cummiskey, on the public-domain basis stated
+in `other_freely_granted_corpora` and in THIRD_PARTY.md. The act history holds it
+on a date bound at si-quid-est-1634, which places it a century before
+sacrosanctum-concilium-1963 and missale-romanum-1969. That bound is what makes
+the route safe rather than what makes it awkward: a book that cannot be
+witnessing the current Missal cannot be mistaken for a witness to it.
+"""
+what_it_does_not_establish = """
+Three things, each stated because each has been assumed somewhere in this
+repository and each was wrong.
+
+It does not establish that the Missale Romanum 2002's oration IS the antecedent.
+That is an editorial determination made on the Latin, entry by entry, and shown
+in full in each entry's witness_note. The 2002 Missal is in copyright and is not
+held here, so no per-oration match against the printed book is possible and none
+is claimed.
+
+It does not license a transfer on similarity. The route refused in
+`other_freely_granted_corpora` -- moving a hand missal's English onto a
+postconciliar oration because a normalising comparison scores high -- stays
+refused, and no coverage figure, however high, substitutes for a named antecedent
+and an enumerated difference list.
+
+It does not put the wording under CC BY 4.0, and it originates no right in this
+project. The English is the 1861 book's; Triptych claims no exclusive right in it
+and adds none by carrying it.
+"""
+where_it_is_recorded = """
+56 entries in src/sources/inventories/postconciliar-proper-translations-v1.toml,
+63 translation rows between them, each marked witness_relation = "antecedent",
+each naming a declared [[sources]] row of that file, each carrying
+rights = "public-domain" and the source_id of the printing the words were read
+out of. That file's `what_is_published_by_the_antecedent_route` states the test
+applied and the standing of each reading; its [[sources]] rows carry the label
+and the caution the browser shows beside the offer.
 """
