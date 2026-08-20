@@ -1727,7 +1727,7 @@ release attachment, announcement, or promotion.
 | `library/novus-ordo-liturgy.md` | `1ee4283e83bb4971ef934e7da646b6fc23dde4992e877ea9d88e3ffc4a4a65cd` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `11683ff4c4ac3212be6fb8089cfe467789df6ac0ce195797a2da5db0870f0c24` |
+| `library/traditional-latin-mass.md` | `37413cc387ad457002b09568f54e24b3b9f830c0ab58581ba1483224d4198245` |
 | `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117` |
 | `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4` |
 | `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259` |
@@ -2003,6 +2003,9 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `ae9986af5c6a32270d9b6cbe0a9c9a93628b6d6005c2d047efd26c28f184bfce` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `814de2b52fe148bf9cb2f555639892f5820b878d08c24835ef5c28cf121928e5` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `858b0cc980b6185c8d5387a3e9cb472082837b2193111c5b335a94f364298cf8` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.md` | `435d8ad0cb58d72d67c9b4459e4842e4b4c5166da2177543e0ce06e33d8fc2bf` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.md` | `e08f04b607bf66a3c03dc2619069823dbee4c5ab89a2b41f2b6e491802b84738` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.md` | `016f136407eade54de046044e348ddd7edb55015f1350870e3477228a14b94a2` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `1f66021138967318b2574c636b0486a15af13cc32b77bb7eaf0459f44f5d7f37` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `04dc4a29dc8e4edb554aaefb017bf6f01b0d3602749d6b9e1ee2c5d788d6b4a0` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `1c657ac2ad531ce52d4e33816a9052820916f30158442d5af885e8d0668ce351` |

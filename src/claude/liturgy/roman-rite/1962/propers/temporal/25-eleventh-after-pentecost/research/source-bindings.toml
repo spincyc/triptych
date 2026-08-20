@@ -1,0 +1,173 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
+
+# Claude edition. Every bound record's locus grammar was checked against its
+# work record before being written here; the Missale Romanum work record
+# declares no locus_pattern, so its loci are free-form printed-page
+# descriptions.
+#
+# Claim-level detail, search bounds, and limits are in research/scope.md; the
+# complete collated text is in propers/verified.md.
+#
+# This file covers both outputs from the canonical guide. The bare identity is
+# the complete research edition; the mechanical -synthesis PDF is compiled
+# from the manifest-authorized components and keeps no separate records.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica XI post Pentecosten, complete formulary, printed pp. 390-392 = artifact PDF pp. 471-473, marginal nos. 1542-1551",
+  "formulary boundaries: Postcommunion of the Tenth Sunday (no. 1541) and the heading DOMINICA DUODECIMA post Pentecosten (no. 1552)",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The staged facsimile bytes were hashed and their SHA-256 matched against this artifact record before any reading was taken. All three printed pages were rendered at 300 dpi for the whole-page reading and at 600 dpi for the disputed letters and accents, with the Gospel's unaccented opening line read again at 1200 dpi, and all ten appointed elements, their headings, references, accentuation, punctuation, the II classis rank, the Credo rubric, the Trinity Preface rubric and both formulary boundaries were read on those images. This artifact controls every Latin form published in the guide."
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = [
+  "Dominica XI post Pentecosten, complete formulary, printed pp. 385-386 = item leaves n461-n462",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "Page images of a second, materially distinct 1962 edition, read to test the Vatican typical readings. Ten differences were found and are published as edition differences rather than as doubtful readings: the printed antiphon-repetition cue Deus. after the Introit's Gloria Patri, a comma after virtutem in the Introit, the Antiphona-ad heading style, the dropped comma after qui in the Collect, adiicias against the typical edition's adicias, the Collect's abbreviated conclusion cue, the Epistle-heading and Gradual run-in typography, the Credo rubric set on its own line, and the dropped comma after ut in the Postcommunion. Nothing was blended and no Benziger form was substituted. Acquisition of the exact registered DjVu bytes is deliberately not claimed: individual JPEG page images were fetched from the same Internet Archive item, not the hashed DjVu derivative."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = [
+  "physical lines 58,880-59,058 of the whole file, covering Benziger printed pp. 385-386 with the head of 387",
+]
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete OCR file was downloaded and its SHA-256 matched this record before use. It was used only to locate the formulary in the Benziger item; a focused excerpt with its recognition failures intact is kept at propers/retrieved.txt as an unedited finding aid. It controls no published wording, and no inspection or verification state is claimed for it."
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = [
+  "Dominica XI. post Pentecosten, printed pp. 332-334, text-layer lines 49611-49785",
+]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "Read for the preexisting-material check that supports the 17 U.S.C. 103(b) basis recorded in propers/verified.md: all ten appointed elements of this formulary stand under the 1862 heading at the same scriptural references, including unanimes in the Introit, the Epistle's mid-verse ending at vacua non fuit, the Gradual's ne discedas a me, Ephphetha, and suspiciens. The check was made at the level of element, reference and incipit against an uncorrected OCR text layer; nothing is quoted from it and no reading in the guide rests on it."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
+loci = [
+  "Dominica xj. post Pentecosten: Introit and Collect at text-layer lines 50565-50592",
+  "Epistle through Postcommunion at text-layer lines 52571-52712",
+]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
+context = "Read for the same preexisting-material check. All ten elements were located in the degraded text layer, whose page ordering is scrambled across folios, which is why the formulary appears in two line ranges. The 1570 Introit already reads unanimes and the 1570 Epistle already ends at vacua non fuit; the 1570 Secret reads ad nostram servitutem, that edition's own reading, which is recorded and not blended. Nothing is quoted from this witness."
+
+
+# --- English of the appointed text -------------------------------------------
+# Under the profile's published-text-and-English rule the guide composes,
+# translates and paraphrases nothing. Scriptural propers take the
+# Douay-Rheims (Challoner), which is the English of the Clementine Vulgate the
+# missal prints; the orations take a registered public-domain hand missal,
+# addressed by 1962 formulary rather than by the missal's own heading.
+#
+# Both works declare a locus_pattern, so every locus below is a bare token in
+# that grammar. Loci are omitted for the three reference tables, whose rows are
+# not verse loci; what was read in them is stated in their context.
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.67.2", "Ps.67.6-7", "Ps.67.36", "Ps.27.1", "Ps.27.7", "Ps.80.2-3", "Ps.29.2-3"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Source of the published English of the four psalm chants: Ps. 67:6-7 and 36 are the Introit's centonised antiphon with Ps. 67:2 its psalm verse, Ps. 27:7 and 1 the Gradual, Ps. 80:2-3 the Alleluia verse, and Ps. 29:2-3 the Offertory. Every locus was read in the exact tracked verse file with its surrounding verses, and each Missal locus resolves directly because this edition's psalm numbers are the Vulgate/Septuagint numbers the Missal cites. The findings that control the page are recorded in verified.md: the Douay renders unius moris at Ps. 67:7 (of one manner) and so cannot be quoted for the chant's unanimes, which is declared and left in Latin; the Douay's Ps. 27:1 renders clamabo (will I cry) and has no counterpart for the chant's ne discedas a me; the Douay's Ps. 29:3 carries the Deus meus the Offertory drops; and the Introit and Alleluia are centonisations, so their Douay verses are printed whole with the sung fragments marked rather than stitched into project-made joins."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.7.31-37", "Mark.7.30"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+context = "Source of the published English of the Gospel; v. 30 was read for the boundary. The file witnesses two of the guide's declared gaps: the Douay begins v. 31 'And again going out of the coasts of Tyre' with no named subject, so the missal's liturgical incipit In illo tempore: Exiens Iesus supplies a name the evangelist does not have here and drops the iterum the Douay's 'again' renders; and the Douay prints Ephpheta at v. 34 where the missal prints Ephphetha, a transliteration difference that is declared rather than harmonised."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.15.1-10", "1Cor.15.11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+context = "Source of the published English of the Epistle; v. 11 was read for the boundary. The New Testament chapter and verse numbers of this edition agree with the modern ones here, so no conversion applies. The file witnesses the lesson's two boundary facts: the Douay's v. 1 opens 'Now I make known unto you, brethren' - the Clementine's Notum autem vobis facio, fratres - which is what the missal's liturgical Fratres: rearranges, and the Douay's v. 10 continues past the lesson's end into 'but I have laboured more abundantly than all they', so the English printed in the guide stops at 'And his grace in me hath not been void' and the remainder of the verse is described rather than printed."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-22-proverbs-e8c05f66"
+loci = ["Prov.3.9-10"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:483bdfb997b52fe6fb5c5a8fe17893eca7b6ee57a54ae75da6c25b001a3b670c"
+context = "Source of the published English of the Communion antiphon. The Douay renders the Clementine's full verses - 'give him of the first of all thy fruits' - where the antiphon drops omnium and the imperative da ei, so the two Douay verses are printed whole with the sung fragments marked and the compression is declared rather than smoothed into a project-made join."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da9e5e9f9e1cf2c72dfc65a0405dd3897912f471a484c7f34933ccaf9d369f47"
+context = "The rows for Ps, Prov, Mark and 1Cor were read to resolve each Missal abbreviation to the right verse file before any English was quoted. The Psalms row's own note confirms that the verse file's psalm numbers are Vulgate/Septuagint numbers throughout, which is why every psalm locus of this Mass resolves without conversion."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The rows for Vulgate Psalms 67, 27, 80 and 29 were read to fix the psalm citations on the page-2 dossier sheet. All four are marked english_offset_uniform = yes. Three carry the one-verse English offset because English Bibles leave the inscription unnumbered: Ps. 67:2, 6-7, 36 Vulg. = Heb. 68 = Eng. 68:1, 5-6, 35; Ps. 80:2-3 = Heb. 81 = Eng. 81:1-2; Ps. 29:2-3 = Heb. 30 = Eng. 30:1-2. Ps. 27 has no offset: Ps. 27:1, 7 Vulg. = Heb. 28 = Eng. 28:1, 7. The guide publishes the Vulgate and English-convention series on the dossier sheet and the Masoretic series in the scope appendix."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:012886622a701436750b0a29c5909617731c6d2a83a40ee7ca0bd0b63c6e9df7"
+context = "The complete seven-row table was read before quoting, to establish that none of this formulary's loci is one of the places where this edition merges a verse the Clementine numbers separately. None of Ps. 67:2, 6-7, 36, Ps. 27:1, 7, Ps. 80:2-3, Ps. 29:2-3, Prov. 3:9-10, Mark 7:31-37 or 1 Cor. 15:1-10 appears in it, so every Missal locus of this Mass resolves directly. The table's own limit is recorded with it and is not overstated here: it is complete against the engDRA comparison, not a proof that no further divergence exists."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+loci = [
+  "Ps.67.2", "Ps.67.6-7", "Ps.67.36", "Ps.27.1", "Ps.27.7", "Ps.80.2-3",
+  "Ps.29.2-3", "Prov.3.9-10", "Mark.7.31-37", "1Cor.15.1-10",
+  "1Cor.15.6", "Prov.3.14", "Prov.3.15", "Prov.3.28", "1Cor.15.32",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa7e3d0c2f9121d818e1c4bc123ade5bbd1b5ac049dc18480aa4cf125e7aab36"
+context = "Consulted for every verse this guide quotes, as the artifact's own note requires of a consumer that must match a reader's printed Bible. Result: two of the quoted loci are listed and both are disclosed in the guide. At Ps. 27:1 the vendored text reads 'lest if thou be silent to me' where the 1899 American edition reads 'lest thou be silent to me' - the difference falls in the clause the chant does not sing, but the guide prints the verse whole, so it is declared. At 1 Cor. 15:6 the vendored 'Then was he seen' stands against the American 'Then he was seen'. Every other quoted locus of this Mass is unlisted, so the printed American Douay-Rheims agrees word for word with the text published here at all of them, and the guide says so in its references. The four further rows named above are the remaining divergences the table carries within the quoted books, all outside the appointed verses."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = [
+  "post-pentecosten-11/collect",
+  "post-pentecosten-11/secret",
+  "post-pentecosten-11/postcommunion",
+  "post-pentecosten-10",
+  "post-pentecosten-12",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:cce6b5473906365bb5f402f0f1aa8403a135408cc439a43ff50c5a36ffc05d21"
+context = "Source of the published English of the Collect (printed p. 418), Secret and Postcommunion (both printed p. 420). The transcription is addressed by 1962 formulary rather than by the 1861 book's own heading, and the identification was confirmed on the printed incipits where the book gives them: the collect row's incipit Omnipotens answers Omnipotens sempiterne Deus and the postcommunion row's Sentiamus answers Sentiamus, quaesumus. The Secret's incipit field is empty, so that oration was confirmed by matching its English clause for clause against the appointed Latin - 'Look down, O Lord, we beseech thee, on our homage' against Respice, Domine, quaesumus, nostram propitius servitutem, 'a help to our weakness' against nostrae fragilitatis subsidium - and the six orations of the tenth and twelfth Sundays were read to prove that the filing does not slip by one. All three orations occur once and only once in the whole file, so no competing rendering of the same Latin under another formulary could have been quoted by mistake. Three divergences between the English and its Latin are published at the point of use: the Collect's 'we dare not presume to ask' makes the petitioners the subject where quod oratio non praesumit makes the prayer itself the thing that does not presume; the Postcommunion inverts mentis et corporis to 'body and mind'; and its 'enjoy the full effect' stands where gloriemur says 'may we glory'. The printing's abbreviated conclusion Thro'. is reproduced as printed and not expanded."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-11"
+loci = ["post-pentecosten-11"]
+role = "translation-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:7dc43c4ac5002e467bb2039a5dba1f01351f999b7c98de3c4065ed3bc2c3028b"
+context = "The registered passage record for this formulary's three orations. Its three physical lines (143-145) were read and agree with the artifact rows bound above. Its own note records that the correspondence to the 1962 formulary was established against the CMAA facsimile's embedded text layer rather than by page-image collation; this guide's own collation of the Latin is the page-image collation recorded in propers/verified.md, and the English remains quoted as a hand-missal witness."

@@ -1340,40 +1340,67 @@ state = "complete"
 id = "claude-eleventh-thirteenth-after-pentecost-2026-08-19"
 owner = "src/claude/liturgy/roman-rite/1962/propers/temporal"
 promise = "Author and publish componentized Claude proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 25-27) with deep and broad patristic reception research, shared-corpus enrichment, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows, under the maintainer's 2026-08-19 reopening of the closed temporal boundary for exactly these three targets."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "three-claude-leaves"
   criterion = "Three componentized Claude leaves 25-27 exist with facsimile-collated verified.md, retrieved.txt, complete research/scope.md reception matrices, and schema-2 source bindings."
-  status = "open"
-  evidence = ["guidance/liturgy/roman-1962-propers.md"]
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/scope.md",
+  ]
 
   [[deliverables.requirements]]
   id = "broad-and-deep-reception-evidence"
   criterion = "Each leaf's research records document a broad documented search across the major relevant Greek and Latin patristic and later saintly corpora for every appointed passage, deep comparative treatment of checked witnesses at work and locus, and material negative results."
-  status = "open"
-  evidence = ["guidance/liturgy/roman-1962-propers.md"]
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research",
+  ]
 
   [[deliverables.requirements]]
   id = "shared-corpus-enrichment"
   criterion = "Reception research verified for these guides is recorded in the provider-neutral source library as work, edition, or passage records and schema-2 bindings rather than remaining publication-local."
-  status = "open"
-  evidence = ["guidance/sources.md"]
+  status = "pass"
+  evidence = [
+    "src/sources/works/theodoret-of-cyrus/interpretatio-in-psalmos/editions/migne-pg80-paris-1860/passages",
+    "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/osullivan-duffy-1866/passages",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages",
+    "src/sources/inventories/source-family-migration-v1.toml",
+  ]
 
   [[deliverables.requirements]]
   id = "claude-publications-verified"
   criterion = "All three Full and Synthesis PDFs are rebuilt, gate-checked, visually inspected page by page, and installed, and each canonical web edition is generated, reviewed against the installed PDF, and installed."
-  status = "open"
-  evidence = ["guidance/repository.md"]
+  status = "pass"
+  evidence = [
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.pdf",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.md",
+  ]
 
   [[deliverables.requirements]]
   id = "catalog-and-release-links"
   criterion = "Rows 25-27 of the Sunday calendar link the installed Claude Synthesis PDFs and web editions with stable publication markers, six release records exist, and release bindings are refreshed."
-  status = "open"
-  evidence = ["library/traditional-latin-mass.md"]
+  status = "pass"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.json",
+  ]
 
   [[deliverables.requirements]]
   id = "gpt-boundary"
   criterion = "No GPT publication receives a material source, PDF, web, catalog, release, or baseline change from this work."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+  ]

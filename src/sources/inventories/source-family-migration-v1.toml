@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-08-16"
+audited_on = "2026-08-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:1c7ec7c85212467354f1b1e187c736d1031eaef98c226f0035d2ffb79d3e428e"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:6f0eaaa5f8da040978483ad4a82e63aaa18ffaadd92708f04d9fd2ff79887beb"
-canonical_catalog_snapshot = "sha256:d80e84722421afc0b8218af2fca0589b29d022a70b3310ce86a1fc691c78a9b8"
+canonical_catalog_snapshot = "sha256:de3ac0dd2e9852dd3998db5915ce8dd0d3db5c3faa074472aa8baee1e38c771d"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:d34701b451c828430a70c0a275b1d71efbb94cef9bad8a600d5f6444cf57ef27"
+snapshot = "sha256:535d5fcd5e149948102b21c5ce60608b5287ed9101ab054673204255d40c2f46"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1243,9 +1243,9 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b", "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca", "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12", "work.bede.in-lucae-evangelium-expositio"]
+canonical_ids = ["artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b", "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca", "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.iii-lk-10.23-37", "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12", "work.bede.in-lucae-evangelium-expositio"]
 trace_patterns = ["bede\\.in-lucae-evangelium-expositio"]
-reviewed_on = "2026-07-31"
+reviewed_on = "2026-08-20"
 membership_snapshot = "sha256:08a0c1f309a534c820c34c90ff49fc931cd0a9f521af59ff53a7f4135799c2f0"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
@@ -1537,9 +1537,9 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "artifact-pin"
 disposition = "bind-existing"
 priority = "p2"
-canonical_ids = ["artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ia-djvu-ocr-lelibermozarabic06cath", "artifact.catholic-church.missale-bobbiense.lowe-1917.ia-djvu-ocr-bobbiomissalgall01cath", "artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath", "corpus.catholic-church.ancient-sacramentaries-2026-08-01", "edition.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912", "edition.catholic-church.missale-bobbiense.lowe-1917", "edition.catholic-church.missale-gothicum.bannister-1917", "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894", "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915", "edition.catholic-church.sacramentarium-veronense.feltoe-1896", "work.catholic-church.liber-mozarabicus-sacramentorum", "work.catholic-church.missale-bobbiense", "work.catholic-church.missale-gothicum", "work.catholic-church.sacramentarium-gelasianum-vetus", "work.catholic-church.sacramentarium-gregorianum-hadrianum", "work.catholic-church.sacramentarium-veronense"]
+canonical_ids = ["artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ia-djvu-ocr-lelibermozarabic06cath", "artifact.catholic-church.missale-bobbiense.lowe-1917.ia-djvu-ocr-bobbiomissalgall01cath", "artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath", "corpus.catholic-church.ancient-sacramentaries-2026-08-01", "edition.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912", "edition.catholic-church.missale-bobbiense.lowe-1917", "edition.catholic-church.missale-gothicum.bannister-1917", "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894", "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915", "edition.catholic-church.sacramentarium-veronense.feltoe-1896", "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.book-3-vii-item-alia-missa", "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.dominica-xii-post-pentecosten", "work.catholic-church.liber-mozarabicus-sacramentorum", "work.catholic-church.missale-bobbiense", "work.catholic-church.missale-gothicum", "work.catholic-church.sacramentarium-gelasianum-vetus", "work.catholic-church.sacramentarium-gregorianum-hadrianum", "work.catholic-church.sacramentarium-veronense"]
 trace_patterns = ["Bobbio [Mm]issal", "Gelasian(um)? [Ss]acramentar", "Hadrianum", "Liber mozarabicus", "Missale Gothicum", "Sacramentarium (Veronense|Leonianum|Gregorianum)", "catholic-church\\.liber-mozarabicus", "catholic-church\\.missale-(gothicum|bobbiense)", "catholic-church\\.sacramentarium-"]
-reviewed_on = "2026-08-01"
+reviewed_on = "2026-08-20"
 membership_snapshot = "sha256:77f2575a042a36b151bccd9eb61488488a98914c779f6a1eab991040794ee550"
 notes = "A new family entered on 2026-08-01, and new because nothing in this repository previously held the sources of the Roman orations themselves. Six works, six editions, eight artifacts: the Veronense in Feltoe 1896 and the Old Gelasian in Wilson 1894, each in two independent optical text layers so the two readings can be compared, the Hadrianum in Wilson 1915, and the Mozarabic, Gothic and Bobbio books as the declared boundary of a negative result. It is deliberately NOT filed under any Roman Missal family: these are the ancestors of the Missal and not printings of it, and the point of the family is that a prayer standing here is a prayer nobody owns. Every artifact is remote with rights_status unresolved, because the underlying printings are public domain by date while the Internet Archive optical layers carry no established distribution grant; the digests pin the bytes so a reader can refetch and check. The evidence ceiling is artifact-pin and it is a real ceiling: no page image has been collated, and every match drawn from this family is a lead. The corpus record is the versioned search boundary the postconciliar translations inventory measures its census against."
 
@@ -6850,9 +6850,9 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4", "edition.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-16", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-24", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-50", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-54", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-64", "work.robert-bellarmine.commentary-on-the-book-of-psalms"]
+canonical_ids = ["artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4", "edition.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-103", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-16", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-24", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-33", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-50", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-54", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-64", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-69", "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-87", "work.robert-bellarmine.commentary-on-the-book-of-psalms"]
 trace_patterns = ["(?:(?:Bellarmine)[^\\n]{0,100}(?:Explanatio in Psalmos|Commentary on (?:the )?(?:Book of )?Psalms)|(?:Explanatio in Psalmos|Commentary on (?:the )?(?:Book of )?Psalms)[^\\n]{0,100}Bellarmine)", "robert\\-bellarmine\\.commentary\\-on\\-the\\-book\\-of\\-psalms"]
-reviewed_on = "2026-07-31"
+reviewed_on = "2026-08-20"
 membership_snapshot = "sha256:532a0d223e7dc985eab597560a95db7ca2065ed04109f8fb2abeae645dd61bd2"
 notes = "Reviewed as the distinct source family for Explanatio in Psalmos. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
 
@@ -7564,9 +7564,9 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714", "edition.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-16-cols-968-969", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-24-cols-1033-1037", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-50-cols-1252-1256", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-54-cols-1277-1284", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-64-cols-1345-1349", "work.theodoret-of-cyrus.interpretatio-in-psalmos"]
+canonical_ids = ["artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714", "edition.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-103-cols-1693-1707", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-16-cols-968-969", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-24-cols-1033-1037", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-33-cols-1101-1109", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-50-cols-1252-1256", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-54-cols-1277-1284", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-64-cols-1345-1349", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-69-cols-1415-1418", "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-87-cols-1567-1573", "work.theodoret-of-cyrus.interpretatio-in-psalmos"]
 trace_patterns = ["theodoret\\-of\\-cyrus\\.interpretatio\\-in\\-psalmos"]
-reviewed_on = "2026-07-31"
+reviewed_on = "2026-08-20"
 membership_snapshot = "sha256:e469a20da3e45a39ed20dd0eb6b032c788dc7e1cec47c483b2eb90fd75e94baa"
 notes = "Reviewed as the distinct source family for Interpretatio in Psalmos. Registered editions, artifacts, segments, and passages remain bounded members of this family and do not absorb related works or containers."
 

@@ -1,0 +1,299 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
+
+# Publication-local record of how this guide used the reusable source library.
+# It supplements and does not replace `propers/verified.md`, which is the text
+# control for every appointed form, or `research/scope.md`, which owns the
+# reception matrix, the audits, and the material negative results.
+#
+# Three limits govern the whole file. First, `states` describe what this
+# publication actually did with the record, not what the record could support;
+# where a source was read in an electronic transmission rather than collated
+# against a page image, the context says so. Second, several witnesses this
+# guide cites are not in the library at all - among them Jerome and
+# Ambrosiaster on Galatians, Marius Victorinus, Augustine's Quaestiones
+# Evangeliorum and Sermo 176, Bruno of Segni, the pseudo-Augustinian De vera
+# et falsa poenitentia, Rabanus Maurus, the Glossa ordinaria on Galatians and on
+# the Psalter, Cassiodorus, Jerome on the Psalms, and Theodoret on Galatians -
+# and they are cited in the guide's References with their own loci rather than
+# bound here. Third, no `negative-search` binding appears below:
+# the bounded negatives this guide publishes were established by reading
+# printed editions, and the relevant artifacts are not registered as
+# indexable, so no replayable literal-search receipt exists for them.
+
+# --- Text control: the appointed Latin ---
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica Decima Tertia post Pentecosten, complete formulary, printed pp. 393-394 = artifact PDF pp. 474-475, marginal nos. 1562-1571",
+  "printed p. 393 right column, Postcommunion of the Twelfth Sunday, marginal no. 1561, read for the opening boundary",
+  "printed p. 394 right column, heading DOMINICA DECIMA QUARTA post Pentecosten, marginal no. 1572, read for the closing boundary",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, scriptural reference, accent, punctuation mark, marginal number, rank and rubric published in this guide, and both formulary boundaries. The two PDF pages were rendered at 300 dpi for the whole-page reading and at 600 dpi for every disputed letter; no transcription, embedded text layer or web text was allowed to supply a reading. The retained copy used for the collation was hashed and matched this artifact's registered digest before any reading was taken from it. Three words of the Gospel on printed p. 394 are touched by ink loss in this scan and were resolved against the second 1962 edition bound below; the damage is in the scan and not in the text. Green is not printed on these pages and is recorded in verified.md as an inference from the 1960 general rubrics, not as a reading of this artifact."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = [
+  "leaves n464-n465 = printed pp. 388-389, Dominica Decima Tertia post Pentecosten, complete formulary",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "Page images of a second, independently published 1962 edition, read as an edition witness and not as a second photograph of the Vatican typical edition. Every element was compared against the typical edition and the nine differences found are tabulated in the guide's commentary as edition differences rather than doubtful readings; nothing was blended and no Benziger form was substituted for a Vatican typical form. This witness also resolved the three scan-damaged Gospel words letter by letter. One Benziger reading is recorded as an apparent misprint in that edition: misirere for miserere at Lk. 17:13, read twice at magnification. The scan bears a third-party footer watermark on every leaf; no page image from it is reproduced in this guide."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = ["the formulary's own text-layer block for Dominica XIII post Pentecosten"]
+role = "lead"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+context = "Uncorrected optical text used only to locate the formulary in the image item and to prepare the focused finding aid kept as propers/retrieved.txt. It controls no published wording, and no reading of the guide rests on it."
+
+# --- Rights: the preexisting-material check under 17 U.S.C. 103(b) ---
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = [
+  "Dominica XIII. post Pentecosten, printed pp. 335-337, text-layer lines 49975-50148",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "Read as a finding aid for the preexisting-material check that grounds this guide's 17 U.S.C. 103(b) basis for printing the appointed Latin. All ten elements of the 1962 formulary appear here in the same order at the same scriptural references, and so do five of the chant readings that diverge from the Clementine - derelinquas, quaerentium te, opprobrii servorum tuorum, et progenie, tempora mea. The check was made at the level of element, printed reference and incipit against an uncorrected text layer and is not a word-level collation; nothing is quoted from this artifact anywhere in the guide. This 1862 printing is a commercial hand-format Missal conformed to the Roman text and not a typical edition, and no claim about the history of the rite is inferred from it."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
+loci = ["the Sunday series, text-layer lines 53003-53169"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
+context = "Second finding aid for the same preexisting-material check. All ten elements were identified by incipit and order under a running head whose optical form is a corruption of Dominica xiij. Two apparent wording differences in that degraded text layer - an inserted quaesumus in the Secret, and a generatione in generatione in the Alleluia - are recorded in verified.md rather than harmonised, and are explicitly not claimed as 1570 readings, because no page-image collation of the 1570 book was made for this guide. An apparent reading in a degraded text layer is evidence about the text layer."
+
+# --- Translation control: the English this guide quotes ---
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-13"
+loci = ["post-pentecosten-13", "post-pentecosten-13/collect", "post-pentecosten-13/secret", "post-pentecosten-13/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:763ef02ac9d618b2aa532e287de705d4190c95d6e6dc0657fae67e79ca4dcb5e"
+context = "The sole source of the published English of the Collect, Secret and Postcommunion, quoted from the three lines this passage carries, with the 1861 book's own spelling and its abbreviated conclusion. What was verified is the correspondence: each of the three lines was matched clause for clause against the Latin of the 1962 formulary in the CMAA facsimile. The Collect and Postcommunion are additionally secured by their printed Latin incipits; the 1861 book prints no incipit for the Secret, so its identification rests on the clause-for-clause correspondence alone and the guide says so at the element. What was not done, here or in the passage record, is a page-image collation of the 1861 printing: the comparison used the transcription and the facsimile's embedded text layer as locating aids. Three places where this English does not answer the Latin are declared in the guide and not filled in - assequi collapsed in the Collect, the second propitiare paraphrased in the Secret, and both augmentum and the verb proficiamus dropped from the Postcommunion - and every argument that turns on those words is conducted on the Latin. This is a historical private translation, not an official liturgical English and not the text of the 1962 books."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.30.15-16", "Ps.30.6", "Ps.73.1", "Ps.73.19-20", "Ps.73.22-23", "Ps.89.1", "Ps.88.51", "Ps.77.24"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Source of the published English of the four psalm chants, read in the exact tracked verse file with surrounding verses. This edition carries the Vulgate/Septuagint psalm numbers the missal cites, so every locus resolves without conversion. The file is also the witness for five of the guide's declared English gaps. At Ps. 73:19 it reads 'forget not', the Clementine's obliviscaris, where the Introit sings derelinquas; at Ps. 73:22 it reads 'Arise, O God', where both chants sing exsurge, Domine; at Ps. 73:23 it reads 'the voices of thy enemies', where the Introit sings voces quaerentium te; at Ps. 89:1 it reads 'from generation to generation', where the Alleluia sings a generatione et progenie; and at Ps. 30:16 it reads 'My lots are in thy hands', where the Offertory sings in manibus tuis tempora mea. None of these gaps is filled: the Douay verses are printed whole with the antiphons' fragments marked, and no English of a chant's own form is supplied anywhere. Ps. 88:51 was read because the Gradual verse's second clause is verbally identical with it, minus the vocative, rather than with the Ps. 73:22b the missal's printed reference names; it is quoted in the guide only as apparatus. Ps. 30:6 was read because it is the commendation verse of the Offertory's own psalm, and Ps. 77:24 because the Communion antiphon's verb dedisti is that verse's and not Wisdom's."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-25-wisdom-2fe4073b"
+loci = ["Wis.16.20", "Wis.16.21"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:ba6486854e8c3bfd51466a3a0992b72fe10788c371c5839b92799410b5cd21f7"
+context = "Source of the published English behind the Communion antiphon; v. 21 was read because it explains the every-taste clause the antiphon takes. The antiphon is an adaptation rather than a quotation - third person becomes first-person-plural address, a vocative is added, the verb is that of Ps. 77:24, and the two closing phrases are recast - so the guide prints this verse whole with the reworked phrases marked and supplies no English of the antiphon's own form. The chapter's verse numbering here is the Clementine's, so the missal's reference Sap. 16, 20 resolves to this file's 16:20 without conversion."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Gal.3.16-22", "Gal.3.15", "Gal.3.23-25", "Gal.3.6-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+context = "Source of the published English of the Epistle. Verses 6-14 were read for the argument the lesson is cut from, v. 15 because the missal's liturgical Fratres: borrows Paul's address from a verse outside the lesson, and vv. 23-25 because the law-as-pedagogue image lies outside the appointed pericope and almost every checked ancient witness runs on into it. The New Testament numbering of this edition agrees with the modern one here, so no conversion applies, and the appointed Latin matches the Clementine word for word across the whole lesson."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.17.11-19", "Luke.17.5-10", "Luke.17.20"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "Source of the published English of the Gospel; vv. 5-10 were read because the apostles' request for an increase of faith and the parable of the unprofitable servant immediately precede the pericope, and v. 20 for the closing boundary. The file also witnesses the guide's twelfth collation divergence: v. 11 begins 'And it came to pass, as he was going to Jerusalem', with no subject named, so the missal's In illo tempore: Dum iret Iesus in Ierusalem supplies a subject the evangelist carries over from the preceding narrative. That incipit is the missal's own and is not translated in the guide. After it the appointed Latin matches the Clementine word for word."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The registered concordance supplied every Vulgate/English/Hebrew psalm conversion printed in the page-2 dossiers and in the terminal appendix - Ps. 30 to 31, Ps. 73 to 74, Ps. 89 to 90, and Ps. 88 to 89 for the one apparatus citation. The guide computed no conversion of its own."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.deuterocanon-numbering-68ea757a"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2db4c4001873ca78b188acae18ded613467b29a7cdb3e5b789aa5ecae5532f15"
+context = "Read to confirm that the missal's reference Sap. 16, 20 resolves to this edition's Wisdom 16:20 without a deuterocanonical numbering shift."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da9e5e9f9e1cf2c72dfc65a0405dd3897912f471a484c7f34933ccaf9d369f47"
+context = "Used to resolve the edition's own book tokens - Ps, Wis, Gal, Luke - so that the loci recorded above address the tracked verse files exactly."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:012886622a701436750b0a29c5909617731c6d2a83a40ee7ca0bd0b63c6e9df7"
+context = "Consulted for the verse-boundary aliases of the appointed pericopes, so that a locus recorded here means the same verses a reader of the missal's reference would expect."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa7e3d0c2f9121d818e1c4bc123ade5bbd1b5ac049dc18480aa4cf125e7aab36"
+context = "Checked against every verse quoted in this guide. None of them appears in the registered collation, so the printed American Douay-Rheims agrees with the text quoted here at each locus."
+
+# --- Direct witnesses to the appointed Gospel ---
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+loci = ["5", "Lc.17.11", "Lc.17.19"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+context = "The chapter read is liber V on Lk. 17:11-19; the embedded Migne markers bound it at PL 92, 542B-544D, with the 17:20 section beginning at 545A. The principal Latin witness on the appointed Gospel, and the source of the guide's central distinction that the ten were cleansed while the one was saved, and that faith's working rather than its bare acknowledgement is what saves. The passage was re-retrieved for this guide and the retrieved byte size matched this artifact's registered extent exactly. Two findings are published from it. First, the chapter is a proven mosaic: the leprosy-as-false-doctrine blocks, the Paul-and-Cornelius material, the custos etymology and the number theology match Augustine's Quaestiones Evangeliorum II.40 line for line, and one sentence is verbatim Gregory, Moralia V.11 n. 28. Second, Bede drops Augustine's sentence declaring that the nine, being Jews, had lost the kingdom by pride - a sentence Aquinas's Catena aurea later restores. Bede has no comment on the route clause, which is recorded as a negative within the witness. The column bounds above are the transcription's embedded markers; no column-bearing scan was opened, and this artifact is a normalised text and not a facsimile."
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-oxford-1859.tertullian-sermons-110-123-html"
+loci = ["the catena fragments printed at pp. 539-541 under the lemmata Lk. 17:12 and 17:14"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:a9afb98ab105429203477b5f6e9b5f1cf1a567beeefcb066bc073027d5182888"
+context = "The only ancient witness located that comments on the pericope's route clause, 'in the middle of Samaria and Galilee', which he reads as marking the thankful man's foreign descent. He also supplies the evidential reading of the sending to the priests. A bound is published with him: the Syriac of the sermons covering this pericope is lost, and what survives here is catena matter under two verse lemmata, so the guide cites fragments and never an integral sermon on the ten lepers. The retrieved byte size matched this artifact's registered extent. Payne Smith's 1859 English is public domain and is quoted; Cyril's supersessionist sentence in the same fragments is reported and attributed to him."
+
+# --- Direct witnesses to the appointed psalmody ---
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.89.1-17"
+loci = ["89.1-17", "89.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:16ac7d35f9c67b7c26bcb3a5079a878420a6bbe862a462a944f44e0f59e4f6d9"
+context = "The registered public-domain English of Augustine's exposition of the Alleluia's psalm, read at the appointed verse. Two published claims come from it. First, Augustine denies outright that Moses composed the psalm - the name is used for the sake of an intimation - which is the patristic precedent for the distinction this guide's page-2 dossier has to draw between traditional ascription and authorship. Second, he offers two senses of the verse's repeated noun, either every generation or two of them, old and new, because Moses was minister of the one covenant and prophet of the other; on that reading the Alleluia states the Epistle's thesis in one line. The Latin behind both was read separately at a text site and the PL 37 columns were not read from a scan, so none is asserted. New Advent heads the page by the Hebrew number 90 while Augustine's own references are Vulgate, as the passage record notes; the guide cites the Vulgate number the missal prints."
+
+[[bindings]]
+source_id = "edition.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866"
+loci = ["Psalm 30, printed p. 78", "Psalm 73, printed pp. 223-226", "Psalm 89, printed pp. 277-279"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Recorded so the relation between the library's holding and the copies read is visible. This guide quotes O'Sullivan's public-domain English at the three psalms and quotes Bellarmine's 1611 Rome Latin wherever a textual point is at stake, because the English announces that it omits whatever is purely philological or concerns the reconciliation of texts and versions, and substitutes the Douay headings for Bellarmine's own prefaces. Three published claims depend on the Latin the English cut: his rejection of Augustine's causam meam at Ps. 73:22; his judgment that the Greek reading behind the Introit's quaerentium te is a corruption at Ps. 73:23; and, at Ps. 30:16, his conjecture that the Greek word for lots should be read as the word for times, with the Office of the Mass and the Psalter of the Church of St Peter at Rome named as his witnesses. Neither copy read is pinned here. The 1611 Latin folio is not in the library at all; and the English was read in the Internet Archive item commentaryonpsal0000bell, whereas the library's registered facsimile for this edition is a Commons copy of a different Internet Archive item whose printed pagination that record describes as damaged, so the printed page numbers cited above have not been reconciled against the registered artifact's page ranges. The library's edition record also corrects the imprint this lane was briefed with: Dublin and London, James Duffy, 1866."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Ps. 73 at coll. 1453-1465", "Ps. 89 at coll. 1597-1601", "Ps. 30 at coll. 1081-1084"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Recorded so the difference between the library's witness and the one read is visible. The library holds this Migne volume as a remote facsimile PDF whose extracted optical text is expressly not textual control. Theodoret's Greek was read for this guide in two other, independent digitisations of the same Migne text, which agree letter for letter at every passage used, and the running heads at four column anchors were read from the page images of a further scan in a parallel pass. No fingerprint is pinned because the library's exact artifact was not the witness reviewed for this publication. Three findings rest on those readings and are published: that Theodoret argues the Roman destruction by eliminating Antiochus and Babylon; that his lemma at Ps. 73:20 is corrupt and he glosses the covenant not at all; and that at Ps. 73:22 he makes the chant's causam tuam the point of his whole note. His modern English translation is in copyright, so he is summarised and never quoted."
+
+# --- Direct witnesses to the composed orations ---
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog"
+loci = ["printed p. 76, MENSE IULIO, section XXXIII 'Item alia'"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:6623704aeaca455637ddcd70c06744575aa985c206c44ed3c60dc048aaf0fe42"
+context = "The earliest surviving witness to this Sunday's Collect, in the collection's compressed abbreviations and with the spelling adsequi, in a votive series carrying no Sunday assignment at all - which is the evidence for the guide's statement that the prayer entered the Roman books before there was a Thirteenth Sunday to put it on. Two bounded negatives rest on the same edition and are published as bounded: the Secret is not here, all thirteen occurrences of propitiare having been inspected, the nearest verbal parallel being a different prayer in a bishop's own Mass; and the Postcommunion is not here either, variant searches having been negative. Those negatives were established by reading the printed edition, not by a replayable literal search: this artifact is not registered as indexable, and the guide phrases the results as bounded and correctable. No Deshusses or Mohlberg numbering is claimed anywhere, because those editions are protected and were not inspected; Feltoe's printed page is the locator."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
+loci = [
+  "printed p. 229, Book III sect. IX 'Item alia Missa' - the Collect and the Postcommunion in one Mass",
+  "printed p. 247, Book III sect. XXVI 'Orationes pro Caritate' - the Deus qui recension of the Collect",
+  "printed p. 249, Book III sect. XXX 'Item alia Missa' - the Secret",
+  "printed p. 354, appendix, Hebd. xv post Pentecosten",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:8386191bf9d4c1f090c5a3089fd3434c0d93b22562341c308199f7c13b2fa747"
+context = "The witness for three published claims about the orations. First, the Collect and the Postcommunion already stand in one Mass at p. 229, among sixteen unnumbered Sunday Masses, so the pair is older than any Sunday number attached to it. Second, Wilson's apparatus at p. 249 shows that the Secret's received doubled imperative - propitiare, Domine, populo tuo, propitiare muneribus - is the Rheinau and S. Gallen reading, while the Vatican manuscript has one imperative and a participle. Third, the Postcommunion's proficiamus, which the 1962 book prints and on which the guide's argument about who advances depends, is the reading of a second S. Gallen hand, Gerbert and Pamelius, and of the Vatican manuscript at the prayer's two Book II reuses. Wilson's notes are also the source of the Sunday-number drift reported for the Rheinau, S. Gallen, Pamelius and Menard witnesses, which were not themselves opened. The guide claims no GeV numbering; Wilson's printed pages are the locators. A sibling publication has registered a passage record in this edition for a different Mass; nothing here duplicates it."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath"
+loci = [
+  "printed p. 173 (fo. 167v-168), section CXXII. DOMINICA .XIIII. POST PENTECOSTEN - Collect, Super oblata, Ad complendum",
+  "printed p. 173 note - the marginal antiphonary cues of Vat. Reg. 337",
+  "Introduction pp. xxx-xxxi and xli-xliii",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:4855350f9f1325dd4c257e7d6b2f61a924cd036b4a7d4a23013671fb55b91ba8"
+context = "The witness that carries all three of this Sunday's orations together on one numbered Sunday, and the source of the guide's most striking chronological claim: Wilson's note prints Vat. Reg. 337's marginal antiphonary cues at this Mass - Ant. Respice domine in testamentum, Resp. Respice domine, Off. In te speraui domine, Com. Panem de caelo - which his Introduction dates, with the manuscript's text, to the first half of the ninth century. Introit, Gradual, Offertory and Communion of the 1962 formulary are therefore attached to the same Mass as its three orations in a ninth-century witness. That these numbered Sunday sections belong to the supplement and not to the Hadrianum proper is explicit in the same Introduction. The attribution of the supplement itself is deliberately not settled in the guide: Wilson-era scholarship credits Alcuin, and the modern revision of that attribution rests on protected literature that was not consulted. A sibling publication has registered a passage record in this edition for the Twelfth Sunday; nothing here duplicates it."
+
+# --- Liturgical and devotional reception ---
+
+[[bindings]]
+source_id = "artifact.catholic-church.rituale-romanum.latin-ratisbon-1872.internet-archive-pdf-b21a0f45"
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:7d3a606a9f1e42eebafbc9b7b8fe1e625eb9133a210ccde6b067c84f30274bb3"
+context = "Read at printed pp. 75-76 (the after-Communion devotion), p. 81 (Communion of the sick) and pp. 261-262 (the Corpus Christi procession); no locus token is recorded because this work's registered locus grammar addresses titles and chapters and the printed pages of the 1872 Ratisbon printing were not resolved to it for this guide. The witness for the other liturgical life of Wisdom 16:20. The same verse that this Sunday's Communion adapts is, in this book, the versicle and response of Benediction of the Blessed Sacrament, is used in the singular at the Communion of the sick, and follows the Tantum ergo in the Corpus Christi procession under a rubric extending it to all processions with the Sacrament. The guide uses this to make a distinction it would otherwise be easy to lose: the wording most Catholics have heard is praestitisti eis, the Rituale's form, and not the missal Communion's adapted dedisti nobis. It is also what identifies the route of the Joyce entry in the quotation gallery, which quotes the Benediction versicle and not the antiphon."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+loci = [
+  "vol-xi-p-307", "vol-xi-p-315", "vol-xi-p-316",
+  "vol-xi-p-322", "vol-xi-p-324", "vol-xi-p-325", "vol-xi-p-326",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:0c284a75a9d4ba61141e669e20bac150113946f19b1240b58607e61bec7164ad"
+context = "The guide's principal witness to liturgical reception, and the only commentator located who binds this Sunday's chants to its Epistle and this Sunday's Gospel to the preceding Sunday's. Both bindings come through Rupert of Deutz as Guéranger excerpts him, and both are published under that limitation: Rupert's De divinis officiis was not opened, so he is an unverified lead and is never cited as though he had been read. Guéranger is also the witness for the sacramental reading of the cure on the road. His supersessionist framings are harsher than any patristic witness in this dossier and are attributed to him by name wherever cited, and the guide records that he ends the chapter in a Romans 11 key. Material negative: heading searches over the optical text of the neighbouring volumes of this English set were empty, so this Sunday's chapter exists in volume 11 alone. This edition supplies no English printed as the text of any appointed element."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["printed pp. 132-135, 'Tertia post Sancti Laurentii'"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+context = "Twentieth-century liturgical commentary, used for the analysis of the Collect's two movements, the Secret's order of petitions, and the every-taste clause of the Communion, and quoted in short compass with attribution. His chapter title documents the older naming of these Sundays from the feast of St Laurence. His sentence about the apostles driven out by Judea is his own and is quoted as his own. Two limits: his cross-reference of this Postcommunion to the Monday after the Fourth Sunday in Lent is reported as his statement and was not independently collated in a missal scan; and the work is public domain in the United States but may remain protected in life-plus-seventy jurisdictions, which is why the quotations are brief."
+
+[[bindings]]
+source_id = "passage.ambrose.de-mysteriis.english-npnf2-10-1896.47-49"
+loci = ["47-49"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:5bcecfea8fd4594e34c4d62e98243bcb8f158c3f666b870f844e431337f75556"
+context = "The classic patristic manna-and-Eucharist passage, read to test whether it is a witness to this Sunday's Communion antiphon. It is not, and the guide publishes the negative: Ambrose builds the typology on Ps. 77:24-25, and the wording of Wis. 16:20 - omne delectamentum - does not occur in the treatise. He is therefore cited as theological background to the antiphon and expressly not as a witness to its text."
+
+# --- Magisterial text: bibliographic only ---
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+loci = ["sessio-6-decretum-10-11"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Recorded so that a later reader can find the library's holding of the work this guide quotes, and so that the difference is visible rather than hidden. The guide's quotation of Session VI chapter 10 - the decree's one liturgical citation in that chapter, which is this Sunday's Collect - was read in the 1863 Tauchnitz printing, together with that printing's own footnote 'Dominica XIII. post Pentecosten'. The library holds an 1887 Tauchnitz printing, which is a different printing of the same edition and was not the copy read; no locus in this guide rests on the library's copy, and no fingerprint is pinned because no exact witness held here was reviewed for this publication. The English quoted in the guide is Waterworth's 1848 translation, of which the library holds an undated reprint that was likewise not the copy read."
+
+# --- Search boundary for the sacramentary negatives ---
+
+[[bindings]]
+source_id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
+role = "corpus-boundary"
+states = ["cataloged"]
+context = "Declares the boundary within which this guide's negative statements about the orations should be read. The two published negatives - that the Secret and the Postcommunion are not in Feltoe's Verona collection - were established by reading the printed edition bound above and not by a replayable literal search: the members of this corpus are optical transcriptions that are not registered as indexable, and an attempt to run the repository's raw-line search over the Veronense artifact is refused for that reason. The results are therefore phrased in the guide as bounded and correctable, and no negative-search binding is claimed anywhere in this file."

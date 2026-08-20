@@ -1617,3 +1617,36 @@ library (works, editions, passages, schema-2 bindings) rather than remaining
 publication-local; the mass-commentary corpus blocks for `pentecost-11`,
 `-12`, and `-13` are the L1 lead lists, and every retained witness is checked
 at its work and locus before publication.
+
+**Delivered 2026-08-20.** All three guides are published: Full editions of 34,
+36 and 43 pages with Synthesis companions of 17, 19 and 19, each installed from
+a page-by-page visual review with installed bytes matching the reviewed build,
+and each with an installed web edition. Eleven new passage records entered the
+source library (Bede on Luke, the Gelasian and Gregorian sacramentaries in
+Wilson's editions, four Bellarmine psalms, four Theodoret psalms) and were
+reviewed into their existing families; the classification review resolved the
+three new publications to the same eight source strata as the Ninth Sunday.
+
+Three findings are worth recording because they correct or constrain what the
+series may claim. The Eleventh Sunday's Introit sings `unanimes`, which is
+Cassiodorus's own lemma rather than the Clementine reading — a patristic gloss
+that became the chant text — while its Gradual's `ne discedas a me` has no
+patristic lemma at all; and its Epistle stops one clause short of the words on
+which the whole Augustine–Gregory–Aquinas grace argument turns, which the
+commentary reckons with rather than eliding. The Thirteenth Sunday's psalmody
+sweep found that `Respice in testamentum tuum` has four rival answers, not one,
+and that two of twelve collation divergences are Septuagint or Roman-psalter
+transmission rather than chant liberty — which forced an interpretive proposal
+resting on the contrary assumption to be rewritten.
+
+Two matters are left for the maintainer rather than settled here. The 1962
+proper-guide profile's "full research sequence" sentence and its Reader-Facing
+Order list can be read to place the complete appointed formulary differently,
+and the three lanes initially resolved it three ways; all three now follow the
+`24-tenth-after-pentecost` exemplar, which prints the formulary before the
+element-by-element sweep and satisfies both statements, but the profile prose
+that invited the divergence is unchanged and should be clarified. Separately,
+`TLM text / reference` is a column header in the shared `properstable` macro in
+`src/common/preamble.tex`, which `guidance/editorial.md` forbids as apparatus
+wording; it appears in every published proper guide and needs one
+repository-wide fix rather than a per-leaf fork.

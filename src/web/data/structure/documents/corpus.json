@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 180,
-  "issues": 188,
-  "pages": 5786,
+  "documents": 183,
+  "issues": 194,
+  "pages": 5899,
   "titles_unrecorded": 0,
-  "works": 134
+  "works": 137
  },
  "models": [
   {
@@ -17,17 +17,17 @@
    "id": "gpt-5.6-sol"
   },
   {
-   "documents": 24,
+   "documents": 27,
    "id": "claude-fable-5"
   },
   {
-   "documents": 24,
+   "documents": 27,
    "id": "claude-opus-5[1m]"
   }
  ],
  "providers": [
   {
-   "documents": 46,
+   "documents": 49,
    "id": "claude",
    "label": "Claude"
   },
@@ -61,7 +61,7 @@
   },
   {
    "id": "liturgy",
-   "works": 42
+   "works": 45
   },
   {
    "id": "theology",
@@ -4839,6 +4839,147 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 17,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost-synthesis.pdf",
+       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted in favour of an integrated cross-proper commentary",
+       "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-fable-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (facsimile collation of the appointed text against the Vatican typical and Benziger 1962 editions, Clementine divergence verification, English sourcing from the registered Douay-Rheims and Cummiskey corpora, reception research, drafting, typesetting, and page-by-page review); Claude Code CLI 2.1.235; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (completion of the componentized guide from the verified research dossiers: propers map and four-senses table, page-2 scriptural date and location dossiers, two-page thematic movement, the full element-by-element detailed commentary with its collation tables and bounded negative results, the integrated cross-proper commentary of the synthesis edition, source-grounded synthesis, notable-and-quotable gallery, interpretive possibilities, terminal scope appendix and references; reader-order restructuring of both entrypoints, manifest reconciliation, build, page-by-page visual review and installation, and the web edition); Claude Code CLI 2.1.235; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-fable-5",
+      "claude-opus-5[1m]"
+     ],
+     "pages": 34,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.pdf",
+     "provider": "claude",
+     "reviewed": "2026-08-19",
+     "revised": "2026-08-20T09:27:01Z",
+     "status": "alpha",
+     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+     "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 19,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost-synthesis.pdf",
+       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
+       "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-fable-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (facsimile collation of the 1962 Vatican typical and Benziger editions against the Clementine Vulgate, source-library binding and passage registration, and the initial drafting of the propers map, the page-2 dossier sheet, the appointed-text component, the thematic movement, the element-by-element commentary and the quotation gallery); Claude Code CLI 2.1.235; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (completion of the guide: source-grounded synthesis, integrated synthesis commentary, interpretive proposals with their precedent audit, terminal scope appendix and references, reception-matrix and audit completion in the research records, reader-order correction, build, page-by-page visual review of both editions, and the web edition); Claude Code CLI 2.1.235; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-fable-5",
+      "claude-opus-5[1m]"
+     ],
+     "pages": 36,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.pdf",
+     "provider": "claude",
+     "reviewed": "2026-08-20",
+     "revised": "2026-08-20T09:36:28Z",
+     "status": "alpha",
+     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+     "title": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 19,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost-synthesis.pdf",
+       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
+       "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "claude-fable-5",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (facsimile collation of the appointed text against the 1962 Vatican typical and Benziger editions and against the Clementine Vulgate, English sourcing from the registered Douay-Rheims and Cummiskey corpora, reception research on the Epistle, the Gospel, the three orations and the Communion antiphon, the cultural-afterlife hunt, and the initial drafting of the propers map, the page-2 dossier sheet, the appointed-text component, the thematic movement, the quotation gallery and the interpretive proposals); Claude Code CLI 2.1.235; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (completion of the guide: psalmody reception research, the element-by-element detailed commentary, the source-grounded synthesis, the integrated synthesis commentary, the terminal scope appendix and references, the research scope record with its reception matrix and its notable-and-quotable and interpretive-proposal audits, the source-binding record, build, page-by-page visual review of both editions, and the web edition); Claude Code CLI 2.1.237; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-fable-5",
+      "claude-opus-5[1m]"
+     ],
+     "pages": 43,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.pdf",
+     "provider": "claude",
+     "reviewed": "2026-08-20",
+     "revised": "2026-08-20T09:54:07Z",
+     "status": "alpha",
+     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+     "title": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex",
+     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost",
    "section": "liturgy"
   },
   {
