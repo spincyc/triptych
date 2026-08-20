@@ -52,14 +52,36 @@
     const slots = file.slots || [];
     const at = [];
     const byName = new Map();
+    // The names a slot claims through a qualifier, and only for a slot whose
+    // inventory entry asks for them. `Collect (Altera oratio)` is this
+    // project's way of writing a further oration of the Collect's kind, and
+    // that it stands in the Collect's place is the inventory's claim, made on
+    // its own locus. The parenthesis is a naming convention and no rubric
+    // authorises it, so nothing here may claim a name the data did not ask
+    // for: a calendar whose inventory sets no flag is unaffected.
+    const qualified = new Map();
     slots.forEach((slot, ordinal) => {
       const anchor = where.get(slot.anchor);
       // An unresolvable anchor loses the seat, never the proper.
       if (anchor === undefined) return;
       at[ordinal] = anchor + (slot.where === 'after' ? 1 : 0);
-      for (const name of slot.propers || []) byName.set(name, ordinal);
+      for (const name of slot.propers || []) {
+        byName.set(name, ordinal);
+        if (slot.qualified) qualified.set(name, ordinal);
+      }
     });
-    return { slots: slots, at: at, byName: byName };
+    return { slots: slots, at: at, byName: byName, qualified: qualified };
+  }
+
+  const QUALIFIER = /^(.+?) \(.+\)$/;
+
+  /** The slot a proper name resolves to, or -1 for a name no slot claims. */
+  function slotOf(seating, name) {
+    if (seating.byName.has(name)) return seating.byName.get(name);
+    const held = seating.qualified || new Map();
+    const family = QUALIFIER.exec(name);
+    if (family && held.has(family[1])) return held.get(family[1]);
+    return -1;
   }
 
   function seatPropers(propers, seating, isPlaceholder) {
@@ -72,7 +94,7 @@
     for (const proper of propers) {
       if (isPlaceholder && isPlaceholder(proper)) continue;
       if (broke) { after.push({ proper: proper, seat: null }); continue; }
-      const ordinal = seating.byName.has(proper.name) ? seating.byName.get(proper.name) : -1;
+      const ordinal = slotOf(seating, proper.name);
       if (ordinal < 0) { (riding || before).push({ proper: proper, seat: null }); continue; }
       if (ordinal < reached) { broke = true; after.push({ proper: proper, seat: null }); continue; }
       reached = ordinal;
@@ -115,6 +137,7 @@
     elementShows: elementShows,
     shownElements: shownElements,
     seats: seats,
+    slotOf: slotOf,
     seatPropers: seatPropers,
     massEvents: massEvents
   };

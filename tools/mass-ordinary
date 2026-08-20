@@ -499,6 +499,7 @@ def slot_table(source: dict, sections: list[dict], name: str) -> list[dict]:
                 "anchor": anchor,
                 "where": side,
                 "propers": list(propers),
+                "qualified": bool(entry.get("qualified")),
                 "locus": entry["locus"],
             }
         )
