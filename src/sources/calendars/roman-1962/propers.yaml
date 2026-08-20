@@ -1492,6 +1492,11 @@ sections:
               chapter: 8
               verse: 2
           ref: Psalms 8:2
+      - name: Collect
+        incipit: Deus, qui Unigenitum
+        source: composed
+        text: |
+          Deus, qui Unigenitum Filium tuum constituisti humani generis Salvatorem, et Jesum vocari jussisti: concede propitius; ut, cujus sanctum nomen veneramur in terris, ejus quoque aspectu perfruamur in coelis. Per eumdem Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -1597,6 +1602,11 @@ sections:
               chapter: 85
               verse: 5
           ref: Psalms 85:12,5
+      - name: Secret
+        incipit: Benedictio tua, clementissime
+        source: composed
+        text: |
+          Benedictio tua, clementissime Deus, qua omnis viget creatura, sanctificet, quaesumus, hoc sacrificium nostrum, quod ad gloriam nominis Filii tui Domini nostri Jesu Christi offerimus tibi: ut majestati tuae placere possit ad laudem, et nobis proficere ad salutem. Per eumdem Dominum.
       - name: Communion
         source: scripture
         verses:
@@ -1609,6 +1619,11 @@ sections:
               chapter: 85
               verse: 10
           ref: Psalms 85:9-10
+      - name: Postcommunion
+        incipit: Omnipotens aeterne Deus
+        source: composed
+        text: |
+          Omnipotens aeterne Deus, qui creasti, et redemisti nos, respice propitius vota nostra: et sacrificium salutaris hostiae, quod in honorem nominis Filii tui Domini nostri Jesu Christi, majestati tuae obtulimus, placido et benigno vultu suscipere digneris; ut gratia tua nobis infusa, sub glorioso nomine Jesu, aeternae praedestinationis titulo gaudeamus nomina nostra scripta esse in coelis. Per eumdem Dominum nostrum.
     - key: holy-family
       name: First Sunday after the Epiphany (Feast of the Holy Family)
       registry: '44'
@@ -19306,11 +19321,11 @@ sections:
       rank: Comm.
       kind: marian
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui per
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Deus, qui per gloriosissimam Filii tui Matrem ad liberandos Christifideles a potestate Paganorum, nova Ecclesiam tuam prole amplificare dignatus es: praesta, quaesumus; ut, quam pie veneramur tanti operis institutricem, ejus pariter meritis et intercessione a peccatis omnibus, et captivitate daemonis liberemur. Per eumdem Dominum.
       takes_from:
         mass: commune-festorum-bmv
         citation: Commune Sanctorum [41]
@@ -19495,11 +19510,16 @@ sections:
           ejusdem Spiritus sancti Deus.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Tua, Domine, propitiatione
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Tua, Domine, propitiatione, et beatae Mariae semper Virginis intercessione, ad perpetuam atque praesentem haec oblatio nobis proficiat prosperitatem et pacem. Per Dominum.
+      - name: Postcommunion
+        incipit: Sumptis, Domine, salutis
+        source: composed
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae semper Virginis patrociniis nos ubique protegi, in cujus veneratione haec tuae obtulimus majestati. Per Dominum.
       takes_from:
         mass: commune-festorum-bmv
         citation: Commune Sanctorum [41]
@@ -20770,11 +20790,16 @@ sections:
           concede propitius; ut, cujus natalitia colimus, de ejusdem etiam protectione gaudeamus.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Munera tibi, Domine, dicata sanctifica
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Munera tibi, Domine, dicata sanctifica: et intercedente beato Telesphoro, Martyre tuo atque Pontifice, per eadem nos placatus intende.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris sacri
+        source: composed
+        text: |
+          Refecti participatione muneris sacri, quaesumus Domine Deus noster: ut cujus exequimur cultum, intercedente beato Telesphoro, Martyre tuo atque Pontifice, sentiamus effectum.
       takes_from:
         mass: commune-summorum-pontificum
         citation: Commune Sanctorum [1]
@@ -20800,11 +20825,16 @@ sections:
           beati Hygini Martyris tui atque Pontificis intercessio gloriosa nos protegat. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Hostias tibi, Domine, beati Hygini
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Hostias tibi, Domine, beati Hygini Martyris tui, atque Pontificis, dicatas meritis, benignus assume: et ad perpetuum nobis tribue provenire subsidium. Per Dominum.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris sacri
+        source: composed
+        text: |
+          Refecti participatione muneris sacri, quaesumus Domine Deus noster: ut, cujus exequimur cultum, intercedente beato Hygino Martyre tuo atque Pontifice, sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-summorum-pontificum
         citation: Commune Sanctorum [1]
@@ -25955,11 +25985,16 @@ sections:
           Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Super has hostias, quaesumus Domine
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Super has hostias, quaesumus Domine, benedictio copiosa descendat: quae et sanctificationem nobis clementer operetur, et de Sanctorum nos solemnitate laetificet. Per Dominum.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris sacri
+        source: composed
+        text: |
+          Refecti participatione muneris sacri, quaesumus Domine Deus noster: ut, cujus exequimur cultum, intercedentibus Sanctis tuis Alexandro, Eventio, Theodulo, et Juvenale sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-martyrum-tempore-paschali-2
         citation: Commune Sanctorum [17]
@@ -26767,11 +26802,16 @@ sections:
           apud te intercessionibus adjuvemur. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Muneribus nostris, quaesumus Domine
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Muneribus nostris, quaesumus Domine, precibusque susceptis, et coelestibus nos munda mysteriis, et clementer exaudi. Per Dominum.
+      - name: Postcommunion
+        incipit: Refecti participatione muneris sacri
+        source: composed
+        text: |
+          Refecti participatione muneris sacri, quaesumus Domine Deus noster: ut, cujus exequimur cultum, intercedente beato Bonifacio Martyre tuo, sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-martyrum-tempore-paschali-1
         citation: Commune Sanctorum [15]
@@ -26896,11 +26936,6 @@ sections:
           Per Dominum.
       
           '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
       takes_from:
         mass: commune-confessoris-pontificis-1
         citation: Commune Sanctorum [19]
@@ -26934,11 +26969,6 @@ sections:
           mysteria dilectione decorasti: concede propitius; ut, quam ille ex hoc divino convivio spiritus
           percepit pinguedinem; eamdem et nos percipere mereamur. Qui vivis et regnas cum Deo Patre, in
           unitate Spiritus sancti Deus etc.
-      
-          '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
       
           '
       takes_from:
@@ -27938,11 +27968,6 @@ sections:
         text: 'Deus, qui beatum Norbertum Confessorem tuum, atque Pontificem, verbi tui praeconem eximium
           effecisti, et per eum Ecclesiam tuam nova prole fecundasti: praesta, quaesumus; ut, ejusdem suffragantibus
           meritis, quod ore simul et opere docuit, te adjuvante exercere valeamus. Per Dominum.
-      
-          '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
       
           '
       takes_from:
@@ -29762,11 +29787,21 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beato Petro Apostolo tuo
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beato Petro Apostolo tuo, collatis clavibus regni coelestis, ligandi, atque solvendi Pontificium tradidisti: concede; ut intercessionis ejus auxilio, a peccatorum nostrorum nexibus liberemur.
+      - name: Secret
+        incipit: Ecclesiae tuae, quaesumus Domine
+        source: composed
+        text: |
+          Ecclesiae tuae, quaesumus Domine, preces et hostias beati Petri Apostoli commendet oratio: ut quod pro illius gloria celebramus, nobis prosit ad veniam.
+      - name: Postcommunion
+        incipit: Laetificet nos, Domine, munus oblatum
+        source: composed
+        text: |
+          Laetificet nos, Domine, munus oblatum: ut sicut in Apostolo tuo Petro te mirabilem praedicamus, sic per illum tuae sumamus indulgentiae largitatem.
     - key: comm-ss-processi-martiniani-martyrum
       name: Comm. Ss. Processi et Martiniani Martyrum
       registry: '1962-07-02-comm'
@@ -30873,11 +30908,21 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui nos concedis sanctorum Martyrum tuorum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum Symphorosae, et Filiorum ejus natalitia colere: da nobis in aeterna beatitudine de eorum societate gaudere. Per Dominum.
+      - name: Secret
+        incipit: Munera tibi, Domine, nostrae devotionis offerimus
+        source: composed
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per Dominum.
+      - name: Postcommunion
+        incipit: Praesta nobis, quaesumus Domine
+        source: composed
+        text: |
+          Praesta nobis, quaesumus Domine, intercedentibus sanctis Martyribus tuis Symphorosa et filiis ejus: ut quod ore contingimus, pura mente capiamus. Per Dominum.
     - key: s-vincentii-a-paulo-confessoris
       name: S. Vincentii a Paulo Confessoris
       registry: '1962-07-19'
@@ -33176,11 +33221,16 @@ sections:
           solemnitas, et devotionem nobis augeat, et salutem. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Respice, Domine, munera populi tui
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Respice, Domine, munera populi tui, Sanctorum festivitate votiva: et tuae testificatio veritatis nobis proficiat ad salutem. Per Dominum.
+      - name: Postcommunion
+        incipit: Sacramentorum tuorum, Domine, communio
+        source: composed
+        text: |
+          Sacramentorum tuorum, Domine, communio sumpta nos salvet, et in tuae veritatis luce confirmet. Per Dominum nostrum.
       takes_from:
         mass: commune-plurimorum-martyrum-3
         citation: Commune Sanctorum [12]
@@ -33200,11 +33250,11 @@ sections:
       rank: Comm.
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui nos beati Eusebii Confessoris tui
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui nos beati Eusebii Confessoris tui annua solemnitate laetificas: concede propitius; ut cujus natalitia colimus, per ejus ad te exempla gradiamur. Per Dominum.
     - key: s-ioachim-patris-beatae-mariae-virginis
       name: S. Ioachim, Patris Beatae Mariae Virginis, Confessoris
       registry: '1962-08-16'
@@ -33797,11 +33847,6 @@ sections:
           gaudemus meritis, instruamur exemplis. Per Dominum.
       
           '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
       takes_from:
         mass: commune-summorum-pontificum
         citation: Commune Sanctorum [1]
@@ -34011,11 +34056,16 @@ sections:
           Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Sacrificium tibi, Domine, laudis offerimus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Sacrificium tibi, Domine, laudis offerimus in tuorum commemoratione sanctorum: da, quaesumus, ut, quod illis contulit gloriam, nobis prosit ad salutem. Per Dominum.
+      - name: Postcommunion
+        incipit: Repleti, Domine, benedictione coelesti
+        source: composed
+        text: |
+          Repleti, Domine, benedictione coelesti, quaesumus clementiam tuam: ut, intercedente beato Hermete Martyre tuo, quae humiliter gerimus, salubriter sentiamus. Per Dominum.
       takes_from:
         mass: commune-unius-martyris-4
         citation: Commune Sanctorum [8]
@@ -34719,11 +34769,16 @@ sections:
           gaudere.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Grata tibi sit, Domine, nostrae servitutis oblatio
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Grata tibi sit, Domine, nostrae servitutis oblatio, pro qua sanctus Gorgonius Martyr interventor existat.
+      - name: Postcommunion
+        incipit: Familiam tuam, Deus, suavitas aeterna
+        source: composed
+        text: |
+          Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quae in Martyre tuo Gorgonio Christi Filii tui bono jugiter odore pascatur.
       takes_from:
         mass: commune-unius-martyris-4
         citation: Commune Sanctorum [8]
@@ -34770,11 +34825,16 @@ sections:
           jugiter intercessio tueatur.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Pro sanctorum Martyrum tuorum Proti et Hyacinthi
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Pro sanctorum Martyrum tuorum Proti et Hyacinthi commemoratione, munera tibi, Domine, quae debemus, exsolvimus: praesta, quaesumus; ut remedium nobis perpetuae salutis operentur.
+      - name: Postcommunion
+        incipit: Ut percepta nos, Domine, tua sancta purificent
+        source: composed
+        text: |
+          Ut percepta nos, Domine, tua sancta purificent, beatorum Martyrum tuorum Proti et Hyacinthi, quaesumus, imploret oratio.
       takes_from:
         mass: commune-plurimorum-martyrum-3
         citation: Commune Sanctorum [12]
@@ -35307,11 +35367,6 @@ sections:
           effundas. Per Dominum.
       
           '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
       takes_from:
         mass: commune-confessoris-pontificis-2
         citation: Commune Sanctorum [20]
@@ -35429,11 +35484,16 @@ sections:
           desinis propitius intueri, quos talibus auxiliis concesseris adjuvari. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Munera tibi, Domine, nostrae devotionis offerimus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per Dominum.
+      - name: Postcommunion
+        incipit: Praesta nobis, quaesumus Domine
+        source: composed
+        text: |
+          Praesta nobis, quaesumus Domine, intercedentibus sanctis Martyribus tuis Cypriano et Justina: ut, quod ore contingimus, pura mente capiamus. Per Dominum.
       takes_from:
         mass: commune-plurimorum-martyrum-3
         citation: Commune Sanctorum [12]
@@ -36060,11 +36120,16 @@ sections:
           da nobis in aeterna beatitudine de eorum societate gaudere. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Munera tibi, Domine, nostrae devotionis offerimus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per Dominum.
+      - name: Postcommunion
+        incipit: Praesta nobis, quaesumus Domine
+        source: composed
+        text: |
+          Praesta nobis, quaesumus Domine, intercedentibus sanctis Martyribus tuis Placido et Sociis ejus: ut quod ore contingimus, pura mente capiamus. Per Dominum.
       takes_from:
         mass: commune-plurimorum-martyrum-3
         citation: Commune Sanctorum [12]
@@ -37415,12 +37480,6 @@ sections:
       date: 10-26
       rank: Comm.
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
       takes_from:
         mass: commune-summorum-pontificum
         citation: Commune Sanctorum [1]
@@ -38125,11 +38184,6 @@ sections:
         text: 'Ecclesiam tuam, Domine, sancti Caroli Confessoris tui atque Pontificis, continua protectione
           custodi: ut sicut illum pastoralis solicitudo gloriosum reddidit, ita nos ejus intercessio in
           tuo semper faciat amore ferventes. Per Dominum.
-      
-          '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
       
           '
       takes_from:
@@ -38936,11 +38990,6 @@ sections:
           Per Dominum.
       
           '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
       takes_from:
         mass: commune-virginum-3
         citation: Commune Sanctorum [32]
@@ -39555,11 +39604,16 @@ sections:
           adjuvari. Per Dominum.
       
           '
-      - name: Placeholder
+      - name: Secret
+        incipit: Munera, Domine, tibi dicata sanctifica
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+        text: |
+          Munera, Domine, tibi dicata sanctifica: et, intercedente beato Saturnino Martyre tuo, per haec eadem nos placatus intende. Per Dominum.
+      - name: Postcommunion
+        incipit: Sanctificet nos, quaesumus Domine
+        source: composed
+        text: |
+          Sanctificet nos, quaesumus Domine, tui perceptio sacramenti, et intercessione Sanctorum tuorum tibi reddat acceptos. Per Dominum.
       takes_from:
         mass: commune-unius-martyris-4
         citation: Commune Sanctorum [8]
@@ -39939,11 +39993,6 @@ sections:
         source: composed
         text: 'Intercessio nos, quaesumus Domine, beati Sabbae Abbatis commendet: ut quod nostris meritis
           non valemus, ejus patrocinio assequamur. Per Dominum.
-      
-          '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
       
           '
       takes_from:
