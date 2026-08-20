@@ -142,6 +142,39 @@ citation it cannot encode without guessing rather than writing a wrong range.
 - A proper whose text varies by Lectionary cycle carries a `cycles` mapping
   keyed `A`, `B`, `C`. Where the cycles differ in kind, `source` moves inside
   each cycle; otherwise it stays on the proper.
+- A proper whose text varies by the **weekday** cycle carries a
+  `weekday_cycles` mapping keyed `'I'` and `'II'`, quoted, with the same inner
+  contract as `cycles`: each key holds `verses`, `text`, or both under the
+  proper's `source`, or carries a `source` of its own where the cycles differ in
+  kind; the mapping excludes top-level `verses` and `text`.
+
+  ```yaml
+  - name: First Reading
+    source: scripture
+    weekday_cycles:
+      'I': {verses: [...]}
+      'II': {verses: [...]}
+  ```
+
+  **`A`/`B`/`C` and `I`/`II` are two different cycles and must never be poured
+  into one key.** The Sunday course runs on three years and the ferial course of
+  Ordinary Time on two, and neither ever determines the other;
+  `guidance/liturgy/calendar-computation.md` owns that arithmetic and is the
+  only place it is stated. What the schema owes it is two keys: a numeral
+  written as a letter, or a letter as a numeral, is a year of readings served on
+  the wrong day. `check-calendar-masses` refuses both of them on one
+  proper — one slot reads on one course. It also refuses `weekday_cycles` in any
+  calendar but `postconciliar`, which is the only one with a two-year course at
+  all, and on any mass whose `season` is not `ordinary-time`, because the
+  General Introduction confines the two-year course to the ferias of Ordinary
+  Time; a `I`/`II` numeral outside it is a category error, not a fact.
+
+  Known limitation, stated here so no later wave discovers it by landing on it:
+  the translation overlay is keyed `(mass, form, proper name)` and cannot see
+  inside `weekday_cycles` any more than it can inside `cycles`. That is harmless
+  while these propers are pure scripture, whose English is a bible's; the moment
+  an English text is recorded for a cycle-varying slot, one row would answer
+  both cycles and attach one year's words to the other's reading.
 - `notes` records a structural fact — a conditional element, an appointed
   alternative, a long and short form — in one short sentence.
 - `takes_from` says where a text is printed instead of printing it again. See
@@ -186,8 +219,9 @@ is the evidence that the reference is the book's and not the reader's.
 - A mass carrying `takes_from` may not also carry `forms`; a reference into a
   mass that *is* printed in forms must name which form.
 - A proper carrying `takes_from` carries nothing else — no `source`, `text`,
-  `verses`, `cycles`, `incipit` or `translations`. All of those come from the
-  resolved proper, and a second copy here is the restatement the key removes.
+  `verses`, `cycles`, `weekday_cycles`, `incipit` or `translations`. All of
+  those come from the resolved proper, and a second copy here is the restatement
+  the key removes.
 - References may chain. A cycle, a self-reference, a missing mass and a missing
   proper are each refused by `check-calendar-masses`.
 - The resolution is `resolve_propers` in `scripts/_calendars.py`, read by the

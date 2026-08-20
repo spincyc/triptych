@@ -474,6 +474,172 @@ fi
 run_tool census --write --doc-root docroot >/dev/null
 run_tool census --check --doc-root docroot >/dev/null
 
+# --- the weekday reading course -------------------------------------------
+# The reformed Lectionary reads Sundays on a three-year course lettered A/B/C
+# and the weekdays of Ordinary Time on a two-year course numbered I/II, carried
+# in `weekday_cycles` beside `cycles`. Every walk this tool makes over one
+# course must make the same walk over the other, or a whole year of readings
+# reaches no page, no citation count and no psalm conversion.
+mkdir -p weekdays/two-year
+cat >weekdays/two-year/propers.yaml <<'YAML'
+schema: triptych-calendar-masses/v1
+calendar: postconciliar
+edition: Demo Missal
+series: demo
+ordering: demo
+registry: demo
+orthography: demo
+citation_convention: demo
+verification: demo
+psalm_numbering: hebrew
+sections:
+  '01':
+    kind: seasonal
+    masses:
+    - key: ot-17-monday
+      name: Monday of the Seventeenth Week in Ordinary Time
+      registry: 'pc-T-ot-17-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Exodus
+              ranges:
+              - begin: {chapter: 32, verse: 15}
+                end: {chapter: 32, verse: 24}
+              ref: Exodus 32:15-24
+          'II':
+            verses:
+            - book: Jeremiah
+              ranges:
+              - begin: {chapter: 13, verse: 1}
+                end: {chapter: 13, verse: 11}
+              ref: Jeremiah 13:1-11
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            psalm_numbering: vulgate
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 24, verse: 1}
+                end: {chapter: 24, verse: 3}
+              ref: Psalm 24:1-3
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 2}
+              ref: Psalm 1:1-2
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 13, verse: 31}
+            end: {chapter: 13, verse: 35}
+          ref: Matthew 13:31-35
+YAML
+
+# The reading view labels each year of the course by its own cycle key, so a
+# reader sees `I:` and `II:` where the weekday year decides. What must never
+# happen is a letter and a numeral printed as alternatives of the same kind.
+ferial="$(run_tool --root weekdays --calendar two-year --mass ot-17-monday)"
+for want in "I: Exodus 32:15-24" "II: Jeremiah 13:1-11" "Matthew 13:31-35"; do
+	case "$ferial" in
+	*"$want"*) ;;
+	*) echo "the reading view did not print $want" >&2; exit 1 ;;
+	esac
+done
+
+run_tool structure --root weekdays --calendar two-year --out weekday-out >/dev/null
+python3 - weekday-out/structure/propers/two-year.json <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+propers = {proper["name"]: proper for proper in document["masses"][0]["propers"]}
+
+# Each year's citations are kept apart, exactly as the Sunday course's are: a
+# page that merged them would offer this year's reader last year's reading.
+reading = propers["First Reading"]
+assert sorted(reading["weekday_cycles"]) == ["I", "II"], reading["weekday_cycles"]
+assert reading["weekday_cycles"]["I"]["citations"][0]["ref"] == "Exodus 32:15-24", reading
+assert reading["weekday_cycles"]["II"]["citations"][0]["ref"] == "Jeremiah 13:1-11", reading
+# Resolved to explicit loci like every other citation, so no numbering logic
+# reaches the page.
+assert reading["weekday_cycles"]["I"]["citations"][0]["loci"], reading
+# The two courses are separate keys and the Sunday one is not filled in from
+# the weekday one.
+assert reading["cycles"] == {}, reading["cycles"]
+
+# A proper that reads on no course carries the key at all: an empty mapping on
+# every proper of every calendar would rewrite the tracked structure files to
+# say that nothing varies by a course nothing yet reads.
+assert "weekday_cycles" not in propers["Gospel"], propers["Gospel"]
+assert propers["Gospel"]["citations"][0]["ref"] == "Matthew 13:31-35"
+PY
+
+# The census counts a cycle-varying proper ONCE -- it is one slot of one Mass,
+# and only one of its years is ever said -- and reports the two courses apart,
+# because they are two different cycles.
+block="$(run_tool census --root weekdays)"
+case "$block" in
+*'| Propers | 3 |'*) ;;
+*) echo "a weekday-cycle proper must count once, got: $block" >&2; exit 1 ;;
+esac
+case "$block" in
+*'| — carrying a `weekday_cycles` mapping | 2 |'*) ;;
+*) echo "the census did not count the weekday course, got: $block" >&2; exit 1 ;;
+esac
+case "$block" in
+*'| — carrying a `cycles` mapping | 0 |'*) ;;
+*) echo "the Sunday course row must stand beside it, got: $block" >&2; exit 1 ;;
+esac
+# Scripture-bearing is read from the cycles where the proper declares no source
+# of its own, on either course.
+case "$block" in
+*'| — of those, scripture-bearing | 3 |'*) ;;
+*) echo "weekday readings must count as scripture-bearing, got: $block" >&2; exit 1 ;;
+esac
+
+# The weekday row is printed only where a calendar carries one. The block is
+# tracked in two documents and compared byte for byte, so a row of zeroes added
+# on the day the KEY landed would have made both documents stale before any
+# data existed to report.
+if run_tool census --root witness | grep -q 'weekday_cycles'; then
+	echo "a calendar carrying no weekday course must not print the row" >&2
+	exit 1
+fi
+
+# Psalm numbering is inherited through both courses alike. A proper takes its
+# calendar's system unless it declares its own, and each cycle may declare again
+# -- which is how eleven antiphons carrying a Vulgate number inside a
+# Hebrew-declaring file are held apart from the Lectionary's own numbering.
+python3 - "$repo" weekdays/two-year/propers.yaml <<'PY'
+import sys
+from importlib.machinery import SourceFileLoader
+
+propers = SourceFileLoader("under_test", f"{sys.argv[1]}/tools/mass-propers").load_module()
+import yaml
+
+document = yaml.safe_load(open(sys.argv[2], encoding="utf-8"))
+mass = document["sections"]["01"]["masses"][0]
+found = {entry["ref"]: numbering for entry, numbering in propers.numbered_entries(mass, "hebrew")}
+assert found == {
+    "Exodus 32:15-24": "hebrew",
+    "Jeremiah 13:1-11": "hebrew",
+    # The cycle's own declaration wins over the file's.
+    "Psalm 24:1-3": "vulgate",
+    "Psalm 1:1-2": "hebrew",
+    "Matthew 13:31-35": "hebrew",
+}, found
+PY
+
 # A document carrying no markers is refused rather than appended to.
 printf 'no markers here\n' >docroot/docs/the-mass.md
 if run_tool census --check --doc-root docroot >/dev/null 2>&1; then

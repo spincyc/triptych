@@ -229,6 +229,33 @@ def propers_of(mass: dict) -> list[tuple[str, dict]]:
     return out
 
 
+# The reformed Lectionary reads on two courses, and a proper varying by either
+# holds its readings under one of these keys: `cycles` for the Sunday course
+# lettered A/B/C, `weekday_cycles` for the two-year ferial course of Ordinary
+# Time numbered I/II. They are separate keys because they are separate cycles —
+# `src/sources/calendars/README.md` owns that rule — and every walk over one of
+# them here walks both, so that a course this tool did not know about could not
+# be silently dropped from a citation count, a psalm conversion or a page.
+CYCLES_KEY = "cycles"
+WEEKDAY_CYCLES_KEY = "weekday_cycles"
+CYCLE_KEYS = (CYCLES_KEY, WEEKDAY_CYCLES_KEY)
+
+
+def cycle_owners(proper: dict) -> list[tuple[str, str, dict]]:
+    """Every (course key, cycle, owner) one proper's reading courses hold.
+
+    One proper reads on at most one course — the calendar-mass check refuses
+    both keys together — so the list is a single course's cycles in practice,
+    and reading it as a list is what keeps that fact from being restated here.
+    """
+    return [
+        (key, str(cycle), owner)
+        for key in CYCLE_KEYS
+        for cycle, owner in (proper.get(key) or {}).items()
+        if isinstance(owner, dict)
+    ]
+
+
 def appointed_propers(document: dict, mass: dict) -> list[tuple[str, dict, dict | None]]:
     """The propers a mass actually appoints, references followed.
 
@@ -424,14 +451,16 @@ def numbered_entries(mass: dict, default: str | None):
     Missal while its responsorial psalms take the Lectionary's, which is what
     the recovered citation_convention says and why eleven antiphons resolved to
     verses that do not exist. A proper may therefore declare its own, and its
-    cycles may differ again; what it does not declare it inherits.
+    cycles may differ again; what it does not declare it inherits. Both reading
+    courses inherit alike: a weekday-cycle reading is as much a Lectionary
+    citation as a Sunday-cycle one, and the numbering it is read under is the
+    proper's unless the cycle itself says otherwise.
     """
     for _, proper in propers_of(mass):
         inherited = proper.get("psalm_numbering") or default
         owners = [(proper, inherited)] + [
             (owner, owner.get("psalm_numbering") or inherited)
-            for owner in (proper.get("cycles") or {}).values()
-            if isinstance(owner, dict)
+            for _, _, owner in cycle_owners(proper)
         ]
         for owner, numbering in owners:
             for entry in owner.get("verses") or []:
@@ -705,11 +734,25 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
             # A cycle may vary in kind as well as in text: an acclamation
             # composed one year and scriptural the next, so each year carries
             # both its citations and its own words.
-            cycles = {
-                year: (cited(owner), owner)
-                for year, owner in (proper.get("cycles") or {}).items()
-                if isinstance(owner, dict)
-            }
+            def course(wanted: str) -> dict:
+                """One reading course's cycles, citations and own words kept."""
+                built = {}
+                for name, cycle, owner in cycle_owners(proper):
+                    if name != wanted:
+                        continue
+                    rows = cited(owner)
+                    if rows or owner.get("text"):
+                        built[cycle] = {"citations": rows, "text": owner.get("text")}
+                return built
+
+            # The Sunday course is emitted always, empty mapping and all,
+            # because the browser has read that key since the first structure
+            # file. The weekday course is emitted only where a proper carries
+            # one: an empty mapping on every proper of every calendar would
+            # rewrite three tracked structure files to say that nothing varies
+            # by a course nothing yet reads, and `structure --check` measures
+            # those bytes. The key appears with the first entry that carries it.
+            weekday_cycles = course(WEEKDAY_CYCLES_KEY)
             propers.append(
                 {
                     "name": proper.get("name"),
@@ -727,11 +770,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dic
                     # deliberately left without English.
                     "untranslated": key in untranslated or None,
                     "citations": cited(proper),
-                    "cycles": {
-                        year: {"citations": rows, "text": owner.get("text")}
-                        for year, (rows, owner) in cycles.items()
-                        if rows or owner.get("text")
-                    },
+                    "cycles": course(CYCLES_KEY),
+                    **({WEEKDAY_CYCLES_KEY: weekday_cycles} if weekday_cycles else {}),
                     # Where the Missal prints this text, when it is not printed
                     # here. A page that showed a borrowed Collect as though the
                     # day printed it would be asserting something the book does
@@ -853,7 +893,11 @@ def run_structure(arguments: argparse.Namespace) -> dict:
             for proper in mass["propers"]
             for rows in [
                 proper["citations"],
-                *(cycle["citations"] for cycle in proper["cycles"].values()),
+                *(
+                    cycle["citations"]
+                    for key in CYCLE_KEYS
+                    for cycle in (proper.get(key) or {}).values()
+                ),
             ]
             for citation in rows
         ]
@@ -1040,14 +1084,19 @@ def ordered(names: list[str], preferred: tuple[str, ...]) -> list[str]:
 
 
 def proper_sources(proper: dict) -> set[str]:
-    """A proper's `source`, or its cycles' where the kind varies by year."""
+    """A proper's `source`, or its cycles' where the kind varies by year.
+
+    Either course: a weekday reading is scripture-bearing on the same terms a
+    Sunday reading is, and a course this function did not look at would have its
+    propers counted as carrying no source at all.
+    """
     declared = proper.get("source")
     if declared:
         return {str(declared)}
     return {
-        str(cycle["source"])
-        for cycle in (proper.get("cycles") or {}).values()
-        if isinstance(cycle, dict) and cycle.get("source")
+        str(owner["source"])
+        for _, _, owner in cycle_owners(proper)
+        if owner.get("source")
     }
 
 
@@ -1139,7 +1188,15 @@ def census_of(document: dict) -> dict:
             1 for _, proper in every if proper.get("name") == PLACEHOLDER
         ),
         "propers_in_forms": sum(1 for form, _ in every if form),
-        "cycle_propers": sum(1 for _, proper in every if proper.get("cycles")),
+        # A proper varying by cycle is ONE proper, not three or two: it is one
+        # slot of one Mass, and only one of its cycles is ever said. The two
+        # courses are counted apart because they are two different cycles, and a
+        # single row would answer neither "how much of this file varies by the
+        # Sunday year" nor "how much by the weekday year".
+        "cycle_propers": sum(1 for _, proper in every if proper.get(CYCLES_KEY)),
+        "weekday_cycle_propers": sum(
+            1 for _, proper in every if proper.get(WEEKDAY_CYCLES_KEY)
+        ),
         "placeholder_only_masses": sum(row["placeholder_only_masses"] for row in rows),
         "substantive_propers": len(substantive),
         "scripture_bearing_propers": sum(
@@ -1339,6 +1396,7 @@ CENSUS_MEASURES = (
     ("— named `Placeholder`", "placeholder_propers"),
     ("— inside a `forms` block", "propers_in_forms"),
     ("— carrying a `cycles` mapping", "cycle_propers"),
+    ("— carrying a `weekday_cycles` mapping", "weekday_cycle_propers"),
     ("Masses holding only placeholders", "placeholder_only_masses"),
     ("Masses taking a formulary from another entry", "masses_taking_a_formulary"),
     ("Propers taking their text from another entry", "propers_taken_by_reference"),
@@ -1348,6 +1406,15 @@ CENSUS_MEASURES = (
     ("Distinct books cited", "books"),
     ("Distinct slot names", "slot_names"),
 )
+# Measures printed only where some calendar carries one. The block is tracked in
+# two documents and compared byte for byte by `census --check`, so a row for a
+# measure no file yet holds would put both documents into a stale state on the
+# day the KEY was added rather than on the day the first DATA arrives — a red
+# gate reporting nothing but zeroes, cleared by a `--write` that says nothing.
+# Every row of the table as it stands is nonzero in at least one calendar, so
+# this omits nothing a reader can see today; the row appears with the first
+# entry that carries the key, in the wave that runs `--write` anyway.
+CENSUS_MEASURES_WHEN_CARRIED = frozenset({"weekday_cycle_propers"})
 
 
 def render_census(counted: dict[str, dict]) -> str:
@@ -1374,8 +1441,11 @@ def render_census(counted: dict[str, dict]) -> str:
     lines.append("| Measure | " + " | ".join(names) + " |")
     lines.append("| --- |" + " ---: |" * len(names))
     for label, key in CENSUS_MEASURES:
+        values = [counted[name].get(key, 0) for name in names]
+        if key in CENSUS_MEASURES_WHEN_CARRIED and not any(values):
+            continue
         lines.append(
-            f"| {label} | " + " | ".join(str(counted[name][key]) for name in names) + " |"
+            f"| {label} | " + " | ".join(str(value) for value in values) + " |"
         )
     lines.append("")
     lines.extend(textwrap.wrap(CENSUS_KEYS, WIDTH))
@@ -1588,7 +1658,13 @@ def render_reading(
                 print(f"  {entry['ref']}" + (f"  ({note})" if note else ""))
                 if found.get("text"):
                     print("\n".join(wrap(str(found["text"]), "    ")))
-        for cycle, owner in sorted((proper.get("cycles") or {}).items()):
+        # Both reading courses, each labelled by its own cycle key, so a reader
+        # sees `A:`/`B:`/`C:` where the Sunday year decides and `I:`/`II:` where
+        # the weekday year does. Sorted within a course and the courses in their
+        # declared order: what must never happen is the two being merged into
+        # one list, where a letter and a numeral would read as alternatives of
+        # the same kind.
+        for _, cycle, owner in sorted(cycle_owners(proper), key=lambda row: row[:2]):
             refs = [
                 v["ref"]
                 for v in (owner.get("verses") or [])

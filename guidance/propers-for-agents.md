@@ -64,7 +64,8 @@ A proper requires `name` and a `source`, unless it carries `takes_from`:
 | `composed` | `text` | `verses` |
 | `mixed` | both | — |
 
-Optional on a proper: `incipit`, `notes`, `psalm_numbering`, `cycles`.
+Optional on a proper: `incipit`, `notes`, `psalm_numbering`, `cycles`,
+`weekday_cycles`.
 
 **The English is not in `propers.yaml`.** No proper in either calendar carries a
 `translations` key; the schema allows one and nothing uses it. Translations live
@@ -79,6 +80,16 @@ went unvalidated. Look in the overlay before concluding a text is missing.
 `cycles` is keyed `A`/`B`/`C` and excludes top-level `verses` and `text`. Where
 cycles differ in kind, `source` moves inside each cycle; otherwise it stays on
 the proper. Postconciliar only — a 1962 proper must never carry one.
+
+`weekday_cycles` is the Lectionary's **other** cycle, keyed `'I'`/`'II'` and
+quoted, with the same inner contract. The two are not one scale and must never
+be poured into one key: `check-calendar-masses` refuses a letter under
+`weekday_cycles`, a numeral under `cycles`, both keys on one proper, the key in
+any calendar but the postconciliar, and the key on a proper whose mass is not
+`ordinary-time` — the General Introduction confines I/II to the Ordinary Time
+ferial course, and a numeral outside it is a category error, not a fact.
+`src/sources/calendars/README.md` owns the shape;
+`guidance/liturgy/calendar-computation.md` owns which cycle a year is in.
 
 `forms` is a list, each with `name` and `propers`. Used for the Nativity's four
 Masses, the Vigil/Day pairs of Epiphany, Ascension and Pentecost, and the 1962

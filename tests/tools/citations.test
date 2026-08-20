@@ -112,6 +112,11 @@ sections:
         cycles:
           A: {verses: ["Isaiah 2:1-5"]}
           B: {verses: ["Philemon 9-10"]}
+      - name: Ferial Reading
+        source: scripture
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+          'II': {verses: ["Jeremiah 13:1-11"]}
 YAML
 
 run_tool encode --root calendars >/dev/null
@@ -125,15 +130,19 @@ if [ "$first" != "$second" ]; then
 	exit 1
 fi
 
-# The encoded form reports no bare strings left, and counts the passages.
+# The encoded form reports no bare strings left, and counts the passages. Six,
+# not four: the two courses a proper may read on are both walked, so a weekday
+# reading is encoded and counted like any other. A course this tool did not walk
+# would leave its citations bare -- and `check` refuses a bare string, which is
+# how the second course proves it was reached rather than skipped.
 out="$(run_tool check --root calendars --json)"
 case "$out" in
 *'"status":"ok"'*) ;;
 *) echo "expected ok after encode, got: $out" >&2; exit 1 ;;
 esac
 case "$out" in
-*'"passages":4'*) ;;
-*) echo "expected 4 passages, got: $out" >&2; exit 1 ;;
+*'"passages":6'*) ;;
+*) echo "expected 6 passages, got: $out" >&2; exit 1 ;;
 esac
 
 # check rejects a bare string that was never encoded.

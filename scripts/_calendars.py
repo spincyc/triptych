@@ -68,7 +68,9 @@ REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note")
 # A proper that takes its text from elsewhere holds no text of its own. Naming
 # the slot twice is the restatement this key exists to remove, so the incipit
 # comes from the resolved proper and may not be retyped beside the reference.
-REFERENCE_EXCLUDES = ("source", "text", "verses", "cycles", "incipit", "translations")
+REFERENCE_EXCLUDES = (
+    "source", "text", "verses", "cycles", "weekday_cycles", "incipit", "translations",
+)
 
 # --------------------------------------------------------------- recensions
 #

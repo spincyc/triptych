@@ -493,12 +493,20 @@ def each_proper(document: object):
                     yield f"{label}/{proper.get('name', '?')}", proper
 
 
+# The two reading courses a proper may vary on: Sundays on the three-year
+# course lettered A/B/C, the weekdays of Ordinary Time on the two-year course
+# numbered I/II. Both are walked, because a citation validated on one course and
+# not the other would be a whole year of readings nothing ever read.
+CYCLE_KEYS = ("cycles", "weekday_cycles")
+
+
 def verse_lists(proper: dict) -> list[tuple[str, dict, str]]:
     """Every (label-suffix, owner, key) holding a verses list on one proper."""
     owners = [("", proper, "verses")]
-    for cycle, value in (proper.get("cycles") or {}).items():
-        if isinstance(value, dict):
-            owners.append((f"/{cycle}", value, "verses"))
+    for cycles in CYCLE_KEYS:
+        for cycle, value in (proper.get(cycles) or {}).items():
+            if isinstance(value, dict):
+                owners.append((f"/{cycle}", value, "verses"))
     return [(suffix, owner, key) for suffix, owner, key in owners if key in owner]
 
 

@@ -146,6 +146,268 @@ if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# --- the weekday course --------------------------------------------------
+# The reformed Lectionary reads Sundays on a three-year course lettered A/B/C
+# and the weekdays of Ordinary Time on a two-year course numbered I/II. They are
+# two cycles, not one, and `weekday_cycles` is the second key.
+#
+# The fixture declares `calendar: postconciliar`, which is where a calendar
+# states its identity, while staying in the `test` directory: a directory named
+# for a real calendar would drag that calendar's spine and sidecar in, and this
+# is a test about one key.
+weekday() { # $1 = calendar, $2 = the placement line(s); propers on stdin
+	rm -rf src/sources/calendars/test
+	mkdir -p src/sources/calendars/test
+	{
+		cat <<YAML
+schema: triptych-calendar-masses/v1
+edition: test edition
+calendar: $1
+series: test series
+ordering: test ordering
+registry: test registry
+psalm_numbering: vulgate
+citation_convention: test convention
+orthography: test orthography
+verification: unverified test fixture
+sections:
+ seasonal:
+  kind: seasonal
+  label: Seasonal
+  masses:
+  - key: ot-17-monday
+    name: Monday of the Seventeenth Week in Ordinary Time
+    registry: "pc-T-ot-17-monday"
+    $2
+    propers:
+YAML
+		cat
+	} >src/sources/calendars/test/propers.yaml
+	encode
+}
+
+# A ferial reading course keyed I/II, on a postconciliar Ordinary Time weekday,
+# is accepted -- and `encode` reaches inside it, so the citations are encoded
+# rather than left as the bare strings `citations check` refuses.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+          'II': {verses: ["Jeremiah 13:1-11"]}
+      - name: Gospel
+        source: scripture
+        verses: ["Matthew 13:31-35"]
+YAML
+if ! out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "a weekday-cycle proper of an Ordinary Time weekday should validate: $out" >&2
+	exit 1
+fi
+if grep -q 'weekday_cycles:$' src/sources/calendars/test/propers.yaml &&
+	grep -q 'Exodus 32:15-24' src/sources/calendars/test/propers.yaml &&
+	! grep -q 'ranges:' src/sources/calendars/test/propers.yaml; then
+	echo "encode did not reach the readings inside weekday_cycles" >&2
+	exit 1
+fi
+
+# The two courses are not one key wearing two names. A letter is not a weekday
+# cycle and a numeral is not a Sunday cycle, and each mapping is held to its own
+# keys: the whole point of the second key is that neither can pass as the other.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          A: {verses: ["Exodus 32:15-24"]}
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for a Sunday cycle letter under weekday_cycles" >&2
+	exit 1
+fi
+case "$out" in
+*"unknown weekday cycle key 'A'"*) ;;
+*) echo "expected the letter to be refused by name, got: $out" >&2; exit 1 ;;
+esac
+
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for a weekday cycle numeral under cycles" >&2
+	exit 1
+fi
+case "$out" in
+*"unknown cycle key 'I'"*) ;;
+*) echo "expected the numeral to be refused by name, got: $out" >&2; exit 1 ;;
+esac
+
+# One proper reads on one course; carrying both says a slot varies by the Sunday
+# year AND by the weekday year, which no day of either Missal does.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        cycles:
+          A: {verses: ["Isaiah 2:1-5"]}
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for a proper carrying both reading courses" >&2
+	exit 1
+fi
+case "$out" in
+*"one proper reads on one of them"*) ;;
+*) echo "expected the two courses to be named in the refusal, got: $out" >&2; exit 1 ;;
+esac
+
+# The inner contract is the Sunday course's: a scripture cycle carries verses, a
+# composed one carries text, and a cycle declaring no source falls back to the
+# proper's or is refused.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+YAML
+if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "expected failure for a weekday cycle with no source anywhere" >&2
+	exit 1
+fi
+
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I': {text: "not a reading"}
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for a scripture weekday cycle with no verses" >&2
+	exit 1
+fi
+case "$out" in
+*"scripture weekday cycle has no verses"*) ;;
+*) echo "expected the empty scripture cycle to be named, got: $out" >&2; exit 1 ;;
+esac
+
+# A course varying in kind between its years may say so per cycle, exactly as
+# the Sunday course may.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: Gospel Acclamation
+        weekday_cycles:
+          'I': {source: composed, text: "Semen est verbum Dei.\n"}
+          'II': {source: scripture, verses: ["Luke 4:18"]}
+YAML
+if ! out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "a weekday course may differ in kind between its years: $out" >&2
+	exit 1
+fi
+
+# The readings are inside the mapping, so the proper may not also print its own.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        verses: ["Exodus 32:15-24"]
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+          'II': {verses: ["Jeremiah 13:1-11"]}
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for weekday_cycles beside top-level verses" >&2
+	exit 1
+fi
+case "$out" in
+*"weekday_cycles excludes top-level verses and text"*) ;;
+*) echo "expected the top-level readings to be refused, got: $out" >&2; exit 1 ;;
+esac
+
+# A proper that says where its text is printed carries none of its own, and a
+# reading course is text: it would be a second copy of a course already written
+# somewhere else, free to disagree with it.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        takes_from: {mass: ot-17-monday, proper: Gospel}
+        weekday_cycles:
+          'I': {source: scripture, verses: ["Exodus 32:15-24"]}
+      - name: Gospel
+        source: scripture
+        verses: ["Matthew 13:31-35"]
+YAML
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for weekday_cycles beside takes_from" >&2
+	exit 1
+fi
+case "$out" in
+*"must not also carry weekday_cycles"*) ;;
+*) echo "expected the reference to refuse the course, got: $out" >&2; exit 1 ;;
+esac
+
+# Only the reformed Lectionary has a two-year weekday course at all. A cycle
+# numeral does not travel between calendars: invariant 4 of
+# guidance/propers-for-agents.md forbids an I or II in a 1962 record outright.
+for calendar in roman-1962 roman-pre-1955 test; do
+	weekday "$calendar" "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+          'II': {verses: ["Jeremiah 13:1-11"]}
+YAML
+	if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+		echo "expected failure for weekday_cycles in calendar $calendar" >&2
+		exit 1
+	fi
+	case "$out" in
+	*"does not keep one"*) ;;
+	*) echo "expected the calendar to be named in the refusal, got: $out" >&2; exit 1 ;;
+	esac
+done
+
+# And within that calendar the course runs on the ferias of Ordinary Time, the
+# one kind of day the Missal prints no formulary for. A season that reads its
+# own annual course, and a mass placed by date with no season at all, are both
+# refused: a I/II numeral there is a category error, not a fact.
+for placement in "season: lent" "season: advent" \
+	'date: "08-15"
+    rank: I
+    kind: marian'; do
+	weekday postconciliar "$placement" <<'YAML'
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I': {verses: ["Exodus 32:15-24"]}
+          'II': {verses: ["Jeremiah 13:1-11"]}
+YAML
+	if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+		echo "expected failure for weekday_cycles on $placement" >&2
+		exit 1
+	fi
+	case "$out" in
+	*"category error"*) ;;
+	*) echo "expected the season refusal, got: $out" >&2; exit 1 ;;
+	esac
+done
+
+# The Sunday course is untouched by all of this: A/B/C still validates in the
+# same file, and is still counted as one proper.
+weekday postconciliar "season: ordinary-time" <<'YAML'
+      - name: First Reading
+        source: scripture
+        cycles:
+          A: {verses: ["Isaiah 2:1-5"]}
+          B: {verses: ["Jeremiah 33:14-16"]}
+          C: {verses: ["Micah 5:1-4"]}
+YAML
+out="$("$tpt" "$tool" --root src/sources/calendars --json)"
+case "$out" in
+*'"status":"ok"'*'"propers":1'*|*'"propers":1'*'"status":"ok"'*) ;;
+*) echo "the Sunday course must still validate and count once, got: $out" >&2; exit 1 ;;
+esac
+
+# Back to the ordinary fixture header for what follows.
+rm -rf src/sources/calendars/test
+mkdir -p src/sources/calendars/test
+
 # A scripture proper carrying text is rejected.
 {
 	header
