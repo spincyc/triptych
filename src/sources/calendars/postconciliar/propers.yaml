@@ -107,6 +107,34 @@ conventions:
   cycle entries, except where the alternative is genuinely cycle-linked
 - the invariant Ordinary is out of scope; prefaces are not recorded
 open_collation_items:
+- 'eighteen placeholder Masses were given ANTECEDENT Latin on 2026-08-20, read from the page
+  images of the Pustet Ratisbon 1862 Missale Romanum, Internet Archive item bub_gb_E7sPAAAAIAAJ.
+  That printing attests its own Tridentine recension and does NOT attest the Missale Romanum,
+  editio typica tertia, which is in copyright and not held here. Each mass''s own notes name the
+  leaf, the folio, the day heading read, and the divergence between the witness''s day and this
+  calendar''s. Nine further fragments the same lane transcribed were deliberately NOT landed,
+  because in each the witness''s words are not the ancestor of the prayer this calendar prints:
+  the Sacred Heart''s Miserebitur formulary was replaced in 1929 and the Solemnity descends from
+  the replacement; Catherine of Alexandria''s Collect is built on the legend of the angels
+  bearing her body to Sinai, which the 2002 Missal does not carry; the Masses of Fabian, of
+  Nereus and Achilleus, and of Basil and Gregory Nazianzen name saints this calendar separates
+  or does not join, so every oration would have to be rewritten to fit; and those of Denis and
+  of Clement are flagged as likely 2002 revisions. Landing an antecedent is not a claim that the
+  2002 Missal prints it'
+- 'eight of the eighteen antecedent Masses are filed under an entry whose name joins TWO optional
+  memorials -- Jerome Emiliani with Josephine Bakhita, George with Adalbert, Paulinus of Nola
+  with Fisher and More, Sixtus II with Cajetan, Louis with Joseph Calasanz, Wenceslaus with
+  Lawrence Ruiz, Hedwig with Margaret Mary Alacoque, Margaret of Scotland with Gertrude -- and
+  the antecedent answers only the FIRST celebration, which its note names by the witness''s own
+  day heading. The index records such a join only in the entry''s name, so there is nowhere yet
+  to file the second celebration''s oration; a reader must not take the oration shown as
+  answering both'
+- 'the antecedent Masses carry the 1862 printing''s orthography, not this file''s declared
+  convention: jussisti, cujus, coelis where this calendar otherwise sets i for j and ae for oe.
+  The transcriptions are left exactly as the page prints them, because normalizing a witness''s
+  spelling to a convention the witness does not follow would destroy the evidence that they are
+  that book''s words and not this book''s. Settle it at collation against the controlling
+  edition, never by uniformity'
 - 'antiphon psalm numbering is not yet uniform, because some entries kept the Missal''s
   printed Vulgate or Neo-Vulgate number while others were converted to Hebrew numbering;
   normalize to the printed cue at collation'
@@ -14653,11 +14681,24 @@ sections:
       rank: Solemnity
       kind: marian
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui salutis aeternae
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui salutis aeternae, beatae Mariae virginitate fecunda, humano generi praemia praestitisti: tribue, quaesumus; ut ipsam pro nobis intercedere sentiamus, per quam meruimus auctorem vitae suscipere, Dominum nostrum Jesum Christum Filium tuum. Qui tecum vivit et regnat.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n115, n116 (printed 30, 31) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
+        1862 printing of the Missale Romanum, at the day heading In Circumcisione Domini et Octava
+        Nativitatis, and not from any optical text layer. That printing attests its own 1862 Tridentine
+        body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this
+        file declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items. The 1862 keeps 1 January as the
+        Circumcision of the Lord and the Octave of the Nativity, with the Marian Collect below; the
+        postconciliar calendar keeps it as the Solemnity of Mary, the Holy Mother of God. The Collect
+        survives the change of title; the two Prayers do not obviously belong to the same Mass and are
+        given here only as this witness prints them.'
     - key: our-lady-lourdes
       name: Our Lady of Lourdes
       registry: pc-02-11
@@ -15334,11 +15375,30 @@ sections:
       rank: Optional memorial
       kind: marian
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatae Mariae Virginis domum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatae Mariae Virginis domum per incarnati Verbi mysterium misericorditer consecrasti, eamque in sinu Ecclesiae tuae mirabiliter collocasti: concede; ut segregati a tabernaculis peccatorum, digni efficiamur habitatores domus sanctae tuae. Per eumdem Dominum.
+      - name: Prayer over the Offerings
+        incipit: Accipe, quaesumus Domine
+        source: composed
+        text: |
+          Accipe, quaesumus Domine, munera in hac sacra domo dignanter oblata: et, beatae Mariae Virginis suffragantibus meritis, ad nostrae salutis auxilium pervenire concede. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Quaesumus Domine Deus noster
+        source: composed
+        text: |
+          Quaesumus Domine Deus noster: ut sacrosancta mysteria, quae pro reparationis nostrae munimine contulisti, intercedente beata Maria semper virgine, et praesens nobis remedium esse facias, et futurum. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n782, n783 (printed [113], [114]) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die x. In Festo Translationis
+        Almae Domus B. M. V., and not from any optical text layer. That printing attests its own 1862 `pro
+        aliquibus locis` appendix recension. It does not attest the Missale Romanum, editio typica tertia
+        2002/2008, which this file declares as its edition, which is in copyright and is not held here.
+        Whether the 2002 Missal appoints this same prayer on this day is an editorial determination that
+        has NOT been made. Accents and ae/oe ligatures are normalized to this file''s declared
+        orthography. Nothing here has been collated; the entry stands in open_collation_items.'
     - key: our-lady-guadalupe
       name: Our Lady of Guadalupe
       registry: pc-12-12
@@ -15362,11 +15422,33 @@ sections:
       rank: Optional memorial
       kind: christological
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui Unigenitum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui Unigenitum Filium tuum constituisti humani generis Salvatorem, et Jesum vocari jussisti: concede propitius; ut, cujus sanctum nomen veneramur in terris, ejus quoque aspectu perfruamur in coelis. Per eumdem Dominum nostrum.
+      - name: Prayer over the Offerings
+        incipit: Benedictio tua
+        source: composed
+        text: |
+          Benedictio tua, clementissime Deus, qua omnis viget creatura, sanctificet, quaesumus, hoc sacrificium nostrum, quod ad gloriam nominis Filii tui Domini nostri Jesu Christi offerimus tibi: ut majestati tuae placere possit ad laudem, et nobis proficere ad salutem. Per eumdem Dominum.
+      - name: Prayer after Communion
+        incipit: Omnipotens aeterne Deus
+        source: composed
+        text: |
+          Omnipotens aeterne Deus, qui creasti, et redemisti nos, respice propitius vota nostra: et sacrificium salutaris hostiae, quod in honorem nominis Filii tui Domini nostri Jesu Christi, majestati tuae obtulimus, placido et benigno vultu suscipere digneris; ut gratia tua nobis infusa, sub glorioso nomine Jesu, aeternae praedestinationis titulo gaudeamus nomina nostra scripta esse in coelis. Per eumdem Dominum nostrum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n463, n464 (printed 378, 379) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading In Festo SS. Nominis Jesu, and
+        not from any optical text layer. That printing attests its own 1862 Tridentine body recension. It
+        does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as
+        its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this
+        same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items. The 1862 keeps this feast on the SUNDAY between the
+        Circumcision and the Epiphany (the running head of leaf n463 reads `Dominica II. post Epiphaniam`
+        for the neighbouring Mass and the feast is set among the January Sundays); the postconciliar
+        calendar keeps it on 3 January as an Optional memorial. The day is not the same day.'
     - key: epiphany-lord
       name: The Epiphany of the Lord
       registry: pc-01-06
@@ -15374,11 +15456,30 @@ sections:
       rank: Solemnity
       kind: christological
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui hodierna die
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui hodierna die Unigenitum tuum gentibus stella duce revelasti: concede propitius; ut, qui jam te ex fide cognovimus, usque ad contemplandam speciem tuae celsitudinis perducamur. Per eumdem Dominum.
+      - name: Prayer over the Offerings
+        incipit: Ecclesiae tuae
+        source: composed
+        text: |
+          Ecclesiae tuae, quaesumus Domine, dona propitius intuere: quibus non jam aurum, thus, et myrrha profertur; sed quod eisdem muneribus declaratur, immolatur et sumitur, Jesus Christus Filius tuus Dominus noster. Qui tecum vivit.
+      - name: Prayer after Communion
+        incipit: Praesta, quaesumus omnipotens Deus
+        source: composed
+        text: |
+          Praesta, quaesumus omnipotens Deus: ut, quae solemni celebramus officio, purificatae mentis intelligentia consequamur. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n118, n119 (printed 33, 34) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
+        1862 printing of the Missale Romanum, at the day heading In Epiphania Domini, and not from any
+        optical text layer. That printing attests its own 1862 Tridentine body recension. It does not
+        attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as its
+        edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this same
+        prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items.'
     - key: presentation-lord
       name: The Presentation of the Lord
       registry: pc-02-02
@@ -15697,11 +15798,25 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatum Raymundum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatum Raymundum poenitentiae sacramenti insignem ministrum elegisti, et per maris undas mirabiliter traduxisti: concede; ut ejus intercessione dignos poenitentiae fructus facere, et ad aeternae salutis portum venire valeamus. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n476 (printed 391) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
+        printing of the Missale Romanum, at the day heading Die xxiii. S. Raymundi de Pennafort,
+        Confessoris., and not from any optical text layer. That printing attests its own 1862 Tridentine
+        body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this
+        file declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items. 23 January in the 1862; 7 January in the
+        postconciliar calendar. The day prints ONE proper oration and takes everything else from the
+        Common: `Missa. Os justi, ut in Comm. Conf. non Pont. [22]`. There is no proper Prayer over the
+        Offerings and no proper Prayer after Communion to harvest, and their absence is the witness''s
+        own, not a failure to read. The bracketed [22] is the 1862''s number and MUST NOT be carried into
+        any other edition.'
     - key: saint-hilary-bishop-doctor-church
       name: Saint Hilary, Bishop and Doctor of the Church
       registry: pc-01-13
@@ -15709,11 +15824,31 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui populo tuo
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui populo tuo aeternae salutis beatum Hilarium ministrum tribuisti: praesta, quaesumus; ut, quem Doctorem vitae habuimus in terris, intercessorem habere mereamur in coelis. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Sancti tui Hilarii
+        source: composed
+        text: |
+          Sancti tui Hilarii nobis, Domine, pia non desit oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper obtineat. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Ut nobis, Domine, tua sacrificia
+        source: composed
+        text: |
+          Ut nobis, Domine, tua sacrificia dent salutem: beatus Hilarius Confessor tuus, et Doctor egregius, precator accedat. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n465 (printed 380) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
+        printing of the Missale Romanum, at the day heading Die xiv. S. Hilarii Episcopi, Conf. et Eccl.
+        Doctoris., and not from any optical text layer. That printing attests its own 1862 Tridentine body
+        recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file
+        declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items. 14 January in the 1862; 13 January in the
+        postconciliar calendar.'
     - key: saint-anthony-abbot
       name: Saint Anthony, Abbot
       registry: pc-01-17
@@ -15721,11 +15856,30 @@ sections:
       rank: Memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Intercessio nos
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Intercessio nos, quaesumus Domine, beati Antonii Abbatis commendet: ut, quod nostris meritis non valemus, ejus patrocinio assequamur. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Sacris altaribus
+        source: composed
+        text: |
+          Sacris altaribus, Domine, hostias superpositas sanctus Antonius Abbas, quaesumus, in salutem nobis provenire deposcat. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Protegat nos, Domine
+        source: composed
+        text: |
+          Protegat nos, Domine, cum tui perceptione sacramenti, beatus Antonius Abbas, pro nobis intercedendo: ut et conversationis ejus experiamur insignia, et intercessionis percipiamus suffragia. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n469, n470 (printed 384, 385) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xvii. S. Antonii, Abbatis.,
+        and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
+        It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares
+        as its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this
+        same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items.'
     - key: saint-fabian-pope-martyr
       name: Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr
       registry: pc-01-20
@@ -16356,11 +16510,31 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus misericordiarum Pater
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus misericordiarum Pater, per merita et intercessionem beati Hieronymi, quem orphanis adjutorem et patrem esse voluisti: concede; ut spiritum adoptionis, quo filii tui nominamur et sumus, fideliter custodiamus. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Clementissime Deus
+        source: composed
+        text: |
+          Clementissime Deus, qui veteri homine consumpto, novum secundum te in beato Hieronymo creare dignatus es: da per merita ipsius; ut nos pariter renovati, hanc placationis hostiam in odorem tibi suavissimum offeramus. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Angelorum pane refecti
+        source: composed
+        text: |
+          Angelorum pane refecti te, Domine, suppliciter deprecamur: ut qui annuam beati Hieronymi Confessoris tui memoriam celebrare gaudemus; ejusdem etiam et exemplum imitemur, et amplissimum in regno tuo praemium obtinere valeamus. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n578, n579 (printed 493, 494) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xx. S. Hieronymi Aemiliani,
+        Confessoris., and not from any optical text layer. That printing attests its own 1862 Tridentine
+        body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this
+        file declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items. 20 July in the 1862; 8 February in the
+        postconciliar calendar.'
     - key: saint-scholastica-virgin
       name: Saint Scholastica, Virgin
       registry: pc-02-10
@@ -17680,11 +17854,30 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui nos beati Georgii
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui nos beati Georgii Martyris tui meritis et intercessione laetificas: concede propitius; ut qui tua per eum beneficia poscimus, dono tuae gratiae consequamur. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Munera, Domine, oblata sanctifica
+        source: composed
+        text: |
+          Munera, Domine, oblata sanctifica, et intercedente beato Georgio Martyre tuo, nos per haec a peccatorum nostrorum maculis emunda. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Supplices te rogamus
+        source: composed
+        text: |
+          Supplices te rogamus, omnipotens Deus: ut, quos tuis reficis sacramentis, intercedente beato Georgio Martyre tuo, tibi etiam placitis moribus dignanter tribuas servire. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n513, n514 (printed 428, 429) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xxiii. S. Georgii,
+        Martyris., and not from any optical text layer. That printing attests its own 1862 Tridentine body
+        recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file
+        declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items.'
     - key: saint-fidelis-sigmaringen-priest-martyr
       name: Saint Fidelis of Sigmaringen, Priest and Martyr
       registry: pc-04-24
@@ -19086,11 +19279,30 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Da quaesumus omnipotens Deus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Da quaesumus omnipotens Deus: ut beati Paulini Confessoris tui, atque Pontificis veneranda solemnitas, et devotionem nobis augeat, et salutem. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Sancti tui, quaesumus Domine
+        source: composed
+        text: |
+          Sancti tui, quaesumus Domine, nos ubique laetificent: ut dum eorum merita recolimus, patrocinia sentiamus. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Praesta, quaesumus omnipotens Deus
+        source: composed
+        text: |
+          Praesta, quaesumus omnipotens Deus: ut de perceptis muneribus gratias exhibentes, intercedente beato Paulino Confessore tuo, atque Pontifice, beneficia potiora sumamus. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n550, n551 (printed 465, 466) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xxii. S. Paulini, Episcopi
+        et Confessoris., and not from any optical text layer. That printing attests its own 1862
+        Tridentine body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008,
+        which this file declares as its edition, which is in copyright and is not held here. Whether the
+        2002 Missal appoints this same prayer on this day is an editorial determination that has NOT been
+        made. Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing
+        here has been collated; the entry stands in open_collation_items.'
     - key: nativity-saint-john-baptist
       name: The Nativity of Saint John the Baptist
       registry: pc-06-24
@@ -19984,11 +20196,31 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, fidelium remunerator animarum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, fidelium remunerator animarum, qui hunc diem beati Apollinaris Sacerdotis tui Martyrio consecrasti: tribue nobis, quaesumus, famulis tuis; ut cujus venerandam celebramus festivitatem, precibus ejus indulgentiam consequamur. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Respice, Domine, propitius
+        source: composed
+        text: |
+          Respice, Domine, propitius super haec munera, quae pro beati Sacerdotis et Martyris tui Apollinaris commemoratione deferimus, et pro nostris offensionibus immolamus. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Tua sancta sumentes
+        source: composed
+        text: |
+          Tua sancta sumentes, quaesumus Domine, ut beati Apollinaris nos foveant continuata praesidia: quia non desinis propitius intueri, quos talibus auxiliis concesseris adjuvari. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n581, n582 (printed 496, 497) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xxiii. S. Apollinaris,
+        Episc. et Martyris., and not from any optical text layer. That printing attests its own 1862
+        Tridentine body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008,
+        which this file declares as its edition, which is in copyright and is not held here. Whether the
+        2002 Missal appoints this same prayer on this day is an editorial determination that has NOT been
+        made. Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing
+        here has been collated; the entry stands in open_collation_items. 23 July in the 1862; 20 July in
+        the postconciliar calendar.'
     - key: saint-lawrence-brindisi-priest-doctor-church
       name: Saint Lawrence of Brindisi, Priest and Doctor of the Church
       registry: pc-07-21
@@ -20659,11 +20891,36 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui nos concedis
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui nos concedis sanctorum Martyrum tuorum Xysti, Felicissimi, et Agapiti natalitia colere: da nobis in aeterna beatitudine de eorum societate gaudere. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Munera tibi, Domine
+        source: composed
+        text: |
+          Munera tibi, Domine, nostrae devotionis offerimus: quae et pro tuorum tibi grata sint honore justorum, et nobis salutaria, te miserante, reddantur. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Praesta nobis, quaesumus Domine
+        source: composed
+        text: |
+          Praesta nobis, quaesumus Domine, intercedentibus sanctis Martyribus tuis Xysto, Felicissimo, et Agapito: ut quod ore contingimus, pura mente capiamus. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n595, n596 (printed 510, 511) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Festa Augusti. (6.) Pro
+        commemorat. Ss. Mart. Xysti, Felicissimi, et Agapiti; Eadem Die. Ss. Martyrum Xysti et Sociorum.,
+        and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
+        It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares
+        as its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this
+        same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items. 6 August in the 1862, where the day belongs to the
+        Transfiguration and Xystus, Felicissimus and Agapitus are kept as a COMMEMORATION inside it; 7
+        August in the postconciliar calendar. The three texts below are the commemoration''s Collect,
+        Secret and Postcommunion, which the 1862 prints within the Transfiguration Mass and also appoints
+        for the separate Mass of the Martyrs it allows on the same day (`Missa. Sapientiam. de Communi
+        [14], cum Orationibus sub hac die`).'
     - key: saint-dominic-priest
       name: Saint Dominic, Priest
       registry: pc-08-08
@@ -21340,11 +21597,30 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatum Ludovicum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatum Ludovicum Confessorem tuum, de terreno regno ad coelestis regni gloriam transtulisti: ejus, quaesumus, meritis et intercessione, Regis regum Jesu Christi Filii tui facias nos esse consortes. Qui tecum vivit.
+      - name: Prayer over the Offerings
+        incipit: Praesta, quaesumus omnipotens Deus
+        source: composed
+        text: |
+          Praesta, quaesumus omnipotens Deus: ut sicut beatus Ludovicus Confessor tuus, spretis mundi oblectamentis, soli Regi Christo placere studuit, ita ejus oratio nos tibi reddat acceptos. Per eumdem Dominum.
+      - name: Prayer after Communion
+        incipit: Deus, qui beatum Confessorem tuum
+        source: composed
+        text: |
+          Deus, qui beatum Confessorem tuum Ludovicum mirificasti in terris, et gloriosum in coelis fecisti: eumdem, quaesumus, Ecclesiae tuae constitue defensorem. Per Dominum nostrum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n612, n613 (printed 527, 528) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xxv. vel xxvi. S. Ludovici,
+        Confess., and not from any optical text layer. That printing attests its own 1862 Tridentine body
+        recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file
+        declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items.'
     - key: saint-monica
       name: Saint Monica
       registry: pc-08-27
@@ -21611,11 +21887,31 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui miserabilia mancipia
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui miserabilia mancipia ad agnitionem tui nominis vocaturus, beatum Petrum Confessorem tuum mira in eis juvandis sui abnegatione et eximia caritate roborasti: ejus nobis intercessione concede; ut non quae nostra sunt, sed quae Jesu Christi quaerentes, proximos opere et veritate diligere valeamus. Per eumdem Dominum.
+      - name: Prayer over the Offerings
+        incipit: Caritatis victima
+        source: composed
+        text: |
+          Caritatis victima, quam immolantes offerimus, sit nobis, Domine, te miserante, propitiabilis: et beati Petri precibus et meritis, ad obtinendum patientiae et caritatis augmentum, efficax et salutaris. Per Dominum.
+      - name: Prayer after Communion
+        incipit: Crescat in nobis, Domine
+        source: composed
+        text: |
+          Crescat in nobis, Domine, pietatis tuae effectus salutaris: ut coelesti pabulo refecti, ad aeternae salutis portum, te misericorditer protegente, et beato Petro intercedente, feliciter pervenire valeamus. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n885, n886, n887 (printed xxvi, xxvii, xxviii) of Internet Archive item bub_gb_E7sPAAAAIAAJ,
+        the Pustet Ratisbon 1862 printing of the Missale Romanum, at the day heading Appendix Missarum.
+        Festa Septembris. Die ix. B. Petri Claver, Conf. Societatis Jesu., and not from any optical text
+        layer. That printing attests its own 1862 Appendix Missarum, which carries its own 1863-1866
+        imprimaturs recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008,
+        which this file declares as its edition, which is in copyright and is not held here. Whether the
+        2002 Missal appoints this same prayer on this day is an editorial determination that has NOT been
+        made. Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing
+        here has been collated; the entry stands in open_collation_items.'
     - key: most-holy-name-mary
       name: The Most Holy Name of Mary
       registry: pc-09-12
@@ -21623,11 +21919,34 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Concede, quaesumus omnipotens Deus
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Concede, quaesumus omnipotens Deus: ut fideles tui, qui sub sanctissimae virginis Mariae Nomine, et protectione laetantur; ejus pia intercessione, a cunctis malis liberentur in terris, et ad gaudia aeterna pervenire mereantur in coelis. Per Dominum.
+      - name: Prayer over the Offerings
+        incipit: Tua, Domine, propitiatione
+        source: composed
+        text: |
+          Tua, Domine, propitiatione, et beatae Mariae semper virginis intercessione, ad perpetuam, atque praesentem haec oblatio nobis proficiat prosperitatem et pacem. Per Dominum nostrum.
+      - name: Prayer after Communion
+        incipit: Sumptis, Domine, salutis nostrae
+        source: composed
+        text: |
+          Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae semper virginis patrociniis nos ubique protegi; in cujus veneratione haec tuae obtulimus majestati. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n621 (printed 536) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
+        printing of the Missale Romanum, at the day heading Festum Ss. Nominis B. Mariae Virg. (running
+        head of the page carrying the orations), and not from any optical text layer. That printing
+        attests its own 1862 Tridentine body recension. It does not attest the Missale Romanum, editio
+        typica tertia 2002/2008, which this file declares as its edition, which is in copyright and is not
+        held here. Whether the 2002 Missal appoints this same prayer on this day is an editorial
+        determination that has NOT been made. Accents and ae/oe ligatures are normalized to this file''s
+        declared orthography. Nothing here has been collated; the entry stands in open_collation_items.
+        The 1862 keeps this feast on the SUNDAY within the Octave of the Nativity of the Blessed Virgin
+        Mary, not on 12 September: leaves n623 and n624 show the fixed sanctoral running 11 September
+        straight to 14 September with no 12th and no 13th, and the Mass is printed among the Octave
+        material at leaves n620-n621. Pius X fixed the feast at 12 September in 1911, after this printing.'
     - key: saint-john-chrysostom-bishop-doctor-church
       name: Saint John Chrysostom, Bishop and Doctor of the Church
       registry: pc-09-13
@@ -22020,11 +22339,24 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatum Wenceslaum
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatum Wenceslaum per Martyrii palmam a terreno principatu ad coelestem gloriam transtulisti: ejus precibus nos ab omni adversitate custodi, et ejusdem tribue gaudere consortio. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n634, n635 (printed 549, 550) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
+        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die xxviii. S. Wenceslai, Ducis
+        et Martyris., and not from any optical text layer. That printing attests its own 1862 Tridentine
+        body recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this
+        file declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal
+        appoints this same prayer on this day is an editorial determination that has NOT been made.
+        Accents and ae/oe ligatures are normalized to this file''s declared orthography. Nothing here has
+        been collated; the entry stands in open_collation_items. The day prints ONE proper oration and
+        takes the rest of the Mass from a Common: `Missa. In virtute. de Communi unius Martyris [5],
+        praeter Orationem sequentem, et Evangelium.` There is no proper Prayer over the Offerings and no
+        proper Prayer after Communion to harvest. The bracketed [5] is the 1862''s number and must not be
+        carried into another edition.'
     - key: saints-michael-gabriel-raphael-archangels
       name: Saints Michael, Gabriel, and Raphael, Archangels
       registry: pc-09-29
@@ -22546,11 +22878,24 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatam Hedwigem
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatam Hedwigem a saeculi pompa ad humilem tuae crucis sequelam toto corde transire docuisti: concede; ut ejus meritis et exemplo discamus perituras mundi calcare delicias, et in amplexu tuae crucis omnia nobis adversantia superare. Qui vivis et regnas.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n645 (printed 560) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
+        printing of the Missale Romanum, at the day heading Die xvii. S. Hedwigis, Reginae Viduae., and
+        not from any optical text layer. That printing attests its own 1862 Tridentine body recension. It
+        does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as
+        its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this
+        same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items. 17 October in the 1862; 16 October in the postconciliar
+        calendar. The day prints ONE proper oration: `Missa. Cognovi, de Communi nec Virginis nec Mart.
+        [35], praeter Orationem seq.` There is no proper Prayer over the Offerings and no proper Prayer
+        after Communion. The postconciliar entry also carries Margaret Mary Alacoque, whose Mass this
+        witness prints in an appendix and which was NOT read by this lane.'
     - key: saint-ignatius-antioch-bishop-martyr
       name: Saint Ignatius of Antioch, Bishop and Martyr
       registry: pc-10-17
@@ -23377,11 +23722,23 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
+      - name: Collect
+        incipit: Deus, qui beatam Margaritam Reginam
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          Deus, qui beatam Margaritam Reginam eximia in pauperes caritate mirabilem effecisti: da, ut ejus intercessione, et exemplo, tua in cordibus nostris caritas jugiter augeatur. Per Dominum.
+      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
+        leaf n541 (printed 456) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
+        printing of the Missale Romanum, at the day heading Die x. S. Margaritae, Reginae Scotiae., and
+        not from any optical text layer. That printing attests its own 1862 Tridentine body recension. It
+        does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as
+        its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this
+        same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe
+        ligatures are normalized to this file''s declared orthography. Nothing here has been collated; the
+        entry stands in open_collation_items. 10 June in the 1862; 16 November in the postconciliar
+        calendar. The day prints ONE proper oration: `Missa. Cognovi, de Communi nec Virginum nec Martyrum
+        [35], praeter Orationem sequ.` The postconciliar entry also carries Saint Gertrude, whose 1862
+        Mass at leaf n662 was NOT read by this lane.'
     - key: saint-elizabeth-hungary-religious
       name: Saint Elizabeth of Hungary, Religious
       registry: pc-11-17
