@@ -505,6 +505,46 @@ open_collation_items:
   November - the schema can neither repeat it nor point at it. The entry prints it
   once, as the book does, and says so in its notes; settle whether a reference
   should be allowed to name a form of its own mass
+proper_order_exceptions:
+- mass: advent-ember-saturday
+  form: Longer form (forma missae longior)
+  reason: an Ember Saturday prints five Lessons, each with its own oration and
+    Gradual or Tract, before the Epistle, so the Epistle stands behind chants the
+    Ordinary seats earlier. That is the book's own arrangement and not a filing
+    error; the Ordinary's frame has one reading before its chants and this rite
+    has six.
+- mass: advent-ember-saturday
+  form: Shorter form
+  reason: the same rite in its shorter form, and the same reason. The shorter
+    form omits Lessons and keeps the arrangement of the ones it prints.
+- mass: lent-1-ember-saturday
+  form: Longer form (forma missae longior)
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: lent-1-ember-saturday
+  form: Shorter form
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: pentecost-ember-saturday
+  form: Longer form (forma missae longior)
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: pentecost-ember-saturday
+  form: Shorter form
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: september-ember-saturday
+  form: Longer form (forma missae longior)
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: september-ember-saturday
+  form: Shorter form
+  reason: an Ember Saturday, as at advent-ember-saturday.
+- mass: good-friday
+  reason: the Good Friday liturgy is not a Mass and does not run through the
+    Ordinary at all. It prints its lessons, the Passion, the Solemn
+    Intercessions, the Showing of the Cross and the Communion rite in an order
+    that is its own, and its Collect stands among the lessons rather than after
+    an Introit it does not have.
+- mass: easter-vigil
+  reason: the paschal Vigil prints the prophecies, their orations, the blessing
+    of the font and the litanies before the Mass begins, so its orations stand
+    among readings rather than in the Ordinary's frame.
 sections:
   seasonal:
     kind: seasonal

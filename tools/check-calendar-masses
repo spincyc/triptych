@@ -57,7 +57,7 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --json",
             (
-                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+4901 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+5053 chars]",
             ),
         ),
     ),
@@ -82,6 +82,16 @@ EXCEPTIONS = "psalm_numbering_exceptions"
 # yet uses while the file the site actually serves went unvalidated.
 OVERLAY_DIR = Path("src/sources/inventories")
 OVERLAY_SUFFIX = "-proper-translations-v1.toml"
+# Where each proper stands inside the Ordinary, stated once per calendar on the
+# authority of a named rubric, and read here rather than restated.
+ORDO_SUFFIX = "-ordo-missae-v1.toml"
+# A rubrical qualifier is not a slot: `Secret (Altera secreta)` is a Secret, and
+# an alternate oration stands where the oration it alternates with stands.
+SLOT_QUALIFIER = " ("
+# A calendar may carry a ledger of the masses whose propers genuinely leave the
+# Ordinary's frame, so that the rites which do can be told from the data defects
+# which merely look like them.
+ORDER_EXCEPTIONS = "proper_order_exceptions"
 # Which state of the rite each of a sidecar's witnesses attests. The vocabulary
 # is the act history's own -- `attests` names an act, `attests_kind` says on what
 # strength the edge is drawn, `attests_basis` says why -- and it is READ from
@@ -647,6 +657,11 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     # and Pentecost octaves showed no Sequence, and the only statement that one
     # was appointed there was an English sentence in a `notes` string.
     problems.extend(span_problems(paths))
+    # The order the edition prints a formulary in was stated in the schema
+    # README and enforced nowhere, so a wave that appended propers instead of
+    # interleaving them landed green and took 243 masses out of the browser's
+    # Missal mode.
+    problems.extend(order_problems(paths))
     overlay, witnessed = overlay_problems(paths)
     problems.extend(overlay)
     # The index names the book; a companion beside it must not name it again.
@@ -1047,6 +1062,114 @@ def span_problems(paths: list[Path]) -> list[str]:
             seen.add(identifier)
             if _span_shape(where, span, problems):
                 _span_join(where, span, document, index, problems)
+    return problems
+
+
+def slot_ordinals(calendar: str) -> dict[str, int]:
+    """Proper name to its place in the Ordinary, from the Ordo Missae inventory.
+
+    Read rather than transcribed, for the reason the attestation vocabulary is:
+    the inventory states each slot's position on the authority of a named
+    paragraph of the Ritus servandus, and a second copy of that order here would
+    be free to disagree with the book.
+    """
+    import tomllib
+
+    source = Path(__file__).resolve().parents[1] / OVERLAY_DIR / f"{calendar}{ORDO_SUFFIX}"
+    if not source.is_file():
+        return {}
+    try:
+        document = tomllib.loads(source.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError):
+        return {}
+    return {
+        str(name): position
+        for position, slot in enumerate(document.get("slots") or [])
+        if isinstance(slot, dict)
+        for name in slot.get("propers") or []
+    }
+
+
+def order_problems(paths: list[Path]) -> list[str]:
+    """Refuse a mass whose propers do not stand in the order the book prints.
+
+    `src/sources/calendars/README.md` has always said propers stand in the order
+    the edition appoints them, and nothing enforced it. A 2026-08-08 wave
+    appended newly transcribed scripture above the pre-existing orations in 49
+    formularies; every gate stayed green, the census counted correctly, and 243
+    of 491 masses stopped rendering in the browser's Missal mode, because the
+    seating walks the propers in file order and by contract never reorders.
+
+    A qualified name is judged by its family, so `Collect (in plurali)` is a
+    Collect: the alternate stands where the oration it alternates with stands.
+    A name no slot claims is skipped rather than guessed at, and each `forms`
+    block is judged on its own.
+
+    Some rites genuinely leave the frame -- Good Friday, the paschal Vigil, an
+    Ember Saturday's several Lessons -- so a calendar may carry a ledger of
+    them. It is self-cleaning in both directions, like the psalm ledger: an
+    unlisted breach fails, and a listed entry that has stopped breaching fails
+    until it is deleted, so an exception cannot outlive the departure it names.
+    """
+    import yaml
+
+    problems: list[str] = []
+    for path in paths:
+        order = slot_ordinals(path.parent.name)
+        if not order:
+            continue
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError):
+            continue
+        if not isinstance(document, dict):
+            continue
+        allowed = {
+            (str(row.get("mass") or ""), str(row.get("form") or ""))
+            for row in document.get(ORDER_EXCEPTIONS) or []
+            if isinstance(row, dict)
+        }
+        breached: set[tuple[str, str]] = set()
+        for _, mass in iter_masses(document):
+            key = str(mass.get("key") or "")
+            groups = [("", mass.get("propers"))]
+            for form in mass.get("forms") or []:
+                if isinstance(form, dict):
+                    groups.append((str(form.get("name") or ""), form.get("propers")))
+            for label, propers in groups:
+                if not isinstance(propers, list):
+                    continue
+                seen: list[tuple[str, int]] = []
+                for proper in propers:
+                    if not isinstance(proper, dict):
+                        continue
+                    name = str(proper.get("name") or "")
+                    place = order.get(name.split(SLOT_QUALIFIER)[0])
+                    if place is not None:
+                        seen.append((name, place))
+                out_of_place = [
+                    seen[i][0]
+                    for i in range(1, len(seen))
+                    if seen[i][1] < seen[i - 1][1]
+                ]
+                if not out_of_place:
+                    continue
+                breached.add((key, label))
+                if (key, label) in allowed:
+                    continue
+                where = f"{key}/{label}" if label else key
+                problems.append(
+                    f"{path}: {where}: propers do not stand in the order the "
+                    f"edition prints them; {', '.join(out_of_place)} stands "
+                    "behind a proper the Ordinary seats later. Restore the "
+                    f"printed order, or record the departure in {ORDER_EXCEPTIONS}."
+                )
+        for key, label in sorted(allowed - breached):
+            where = f"{key}/{label}" if label else key
+            problems.append(
+                f"{path}: {ORDER_EXCEPTIONS}: {where} no longer departs from the "
+                "printed order; delete the entry."
+            )
     return problems
 
 
