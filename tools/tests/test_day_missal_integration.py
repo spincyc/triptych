@@ -24,7 +24,17 @@ ROOT = Path(__file__).resolve().parents[2]
 # data as it now stands. The acceptance remains a statement about
 # c4c071d6b, which git still holds and this comment still names; the guard
 # below is only the tripwire for drift from here on.
-BASE = "af6c0c8df"
+#
+# Moved again on 2026-08-20, for the same reason and under the same
+# instruction. The propers-and-commons work has now rewritten both pinned trees
+# many times over, and this change also edits `ordinary-seating.js`, which the
+# hash list below protects: a slot may declare `qualified` and claim
+# `<name> (<qualifier>)`, which took Masses refusing Missal mode from 105 to 17.
+# What is NOT claimed, again: nobody has re-accepted the readers against the
+# data or the seating engine as they now stand, and the fail-closed guard in
+# day-reader.js is untouched. See the 2026-08-20 row in
+# guidance/liturgy-browser-roadmap.md.
+BASE = "1e9f44c92"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
 JS = LITURGY / "day-reader.js"
