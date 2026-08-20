@@ -22,11 +22,24 @@ merge = """
 Each entry names one proper by mass key, form label and proper name, and carries
 the `translations` array verbatim into that proper. The array holds exactly the
 keys `check-calendar-masses` validates, so the merge copies a structure and does
-not translate between schemas. Every entry here is `project-created` and names no
-`source_id`, because the project is its own witness; the witness fields beside
-the array (`ancient_witness`, `witness_edition_id`, `witness_artifact_id`,
-`match_coverage`, `relation`, `divergence`, `ancient_reading`) are evidence for
-the entry and are not part of what merges.
+not translate between schemas. Two routes reach this file and an entry states which one it is on.
+
+Most entries are `project-created` and name no `source_id`, because the project
+is its own witness; the witness fields beside the array (`ancient_witness`,
+`witness_edition_id`, `witness_artifact_id`, `match_coverage`, `relation`,
+`divergence`, `ancient_reading`) are evidence for the entry and are not part of
+what merges.
+
+The rest are ANTECEDENT entries, marked by a `witness` of
+`cummiskey-1861-antecedent` and a `witness_note`. The Missale Romanum 2002 is
+in copyright and is not held here, so no entry in this file is a translation of
+it. An antecedent entry prints the English a public-domain book made for the
+OLDER oration whose Latin this calendar's own recorded Latin reproduces, and
+its `witness_note` states that claim and every difference the two Latin texts
+show. The English is the antecedent's, never the reform's, and a page showing
+it must say so. These rows carry `rights = "public-domain"` and the
+`source_id` of the printing the words were read out of, which is the one thing
+the project-created rows never carry.
 
 Check `incipit` against the target proper before merging. An entry whose mass,
 form, proper or incipit no longer answers the target is stale and must be
@@ -1547,6 +1560,443 @@ text = """
 O God, who by the sacrament of this day's feast sanctify your whole Church in every people and nation, pour out the gifts of the Holy Spirit over the whole breadth of the world, and what your divine goodness worked at the very beginnings of the preaching of the Gospel pour out now also through the hearts of believers. Through our Lord.
 """
 
+[[entries]]
+mass = "advent-4"
+form = ""
+proper = "Collect"
+incipit = "Gratiam tuam"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration missa-de-s-maria-in-sabbato-1/Postcommunion (Gratiam tuam, quaesumus), whose Latin is identical to this calendar's recorded Latin modulo orthography and pointing: 1962 `ejus` for `eius`, `infunde: ut` / `cognovimus; per` / `crucem, ad` for the pc commas, and the conclusion cue `Per eundem Dominum nostrum.` where the pc index prints `Per Dominum...`. Note the slot mapping: the pc slot is a Collect, the antecedent slot a Postcommunion of the 1962 Commune's first Saturday Mass of the B.V.M.; the 1861 witness prints the English at the First Sunday of Advent, p. 52 (see the 1962 row's own witness_note and collation record). The 1962 row was collated from the page image on 2026-08-01; this proposal copies its text byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Pour forth, we beseech thee, O Lord, thy grace into our hearts, that we, who, by the message of an angel, have known the incarnation of thy Son, the Christ, may by his passion and cross, come to the glory of his resurrection. Thro'.
+"""
+
+[[entries]]
+mass = "ot-5"
+form = ""
+proper = "Collect"
+incipit = "Familiam tuam"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration epiphany-5/Collect (Familiam tuam), whose Latin is identical to this calendar's recorded Latin modulo pointing (1962 `custodi: ut` for pc `custodi, ut`) and the conclusion cue (`Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Dominum.`). Not to be confused with the 1962 pentecost-21 Collect, which opens with the same four words and then diverges (`ut a cunctis adversitatibus...`). The 1962 row was collated from the page image (p. 101, IA leaf 111) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Preserve, we beseech thee, O Lord, thy family by thy constant mercy, that we, who confide solely in the support of thy heavenly grace, may be always defended by thy protection. Thro’.
+"""
+
+[[entries]]
+mass = "ot-3"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Praesta nobis, quaesumus"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration easter-2/Postcommunion (Praesta nobis, quaesumus) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo pointing (1962 `Deus: ut` for pc `Deus, ut`) and the conclusion cue (`Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Christum.`). The 1962 row was collated from the page image (p. 350, IA leaf 358) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that, receiving from thee the grace of life, we may always glory in thy gift. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant, we beseech thee, O Almighty God, that, receiving from thee the grace of life, we may always glory in thy gift. Thro’.
+"""
+
+[[entries]]
+mass = "ot-2"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Concede nobis, quaesumus"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration pentecost-9/Secret (Concede nobis, quaesumus, Domine), whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus` for pc `huius`), pointing (`mysteria: quia` for `mysteria, quia`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 row was collated from the page image (p. 415, IA leaf 423) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro’.
+"""
+
+[[entries]]
+mass = "mary-mother-of-god"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui salutis aeternae"
+witness = "cummiskey-1861-antecedent"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "missa-de-s-maria-in-sabbato-2"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass missa-de-s-maria-in-sabbato-2, proper Collect; witness prints it at the Circumcision, p. 88, ia_leaf 98)"
+relation = "light"
+verified_on_page = "2026-08-20"
+verified_leaf = 98
+verified_printed_page = "88"
+verified_heading = "THE CIRCUMCISION."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n98_w1400.jpg"
+verified_note = "Read on the image. The witness sets `COLLECT. Deus, qui salutis.` at the head of its Circumcision Mass, immediately under `INTROIT. Isaias. ix.—Puer natus est, p. 76.`, and the English below matches the 1962 overlay row word for word. The page ENDS at `our Lord Jesus Christ thy Son, who,` — the truncation is the printing's, confirmed, not a transcription loss."
+witness_note = "The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/missa-de-s-maria-in-sabbato-2/Collect, whose Latin differs from this calendar's recorded Latin in word order only at the close of the body: the 1962 index reads `per quam meruimus auctorem vitae suscipere, Dominum nostrum Jesum Christum, Filium tuum: Qui tecum...`, this calendar reads `per quam meruimus Filium tuum auctorem vitae suscipere. Qui tecum.` — `Filium tuum` moves before `auctorem vitae` and `Dominum nostrum Jesum Christum` is absorbed into the conclusion cue; every other word of the body is identical modulo orthography and punctuation. The English is the antecedent's and renders the 1962 order (`the Author of Life, our Lord Jesus Christ thy Son`). It ends mid-conclusion `thy Son, who,` because the witness page (p. 88) breaks there and the 1962 row supplied no more; that truncation is the 1962 row's own, carried unaltered."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the fruitful virginity of the blessed Mary, hast given mankind the rewards of eternal salvation: grant, we beseech thee, that we may experience her intercession, through whom we deserved to receive the Author of Life, our Lord Jesus Christ thy Son, who,
+"""
+
+[[entries]]
+mass = "ot-25"
+form = ""
+proper = "Entrance Antiphon"
+incipit = "Salus populi ego sum"
+witness = "cummiskey-1861-antecedent"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "pentecost-19"
+antecedent_proper = "Introit"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass pentecost-19, proper Introit; harvest_note records the witness prints this antiphon twice with two renderings, and the Sunday's own printing is the one recorded)"
+relation = "identical"
+verified_on_page = "2026-08-20"
+verified_leaf = 453
+verified_printed_page = "445-446"
+verified_heading = "XIX. SUNDAY after PENTECOST. / INTROIT. Psalm lxxvii."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n453_w1400.jpg ; https://archive.org/download/romanmissaltran00churgoog/page/n454_w1400.jpg"
+verified_note = "FIRST PAGE READING THIS ROW HAS EVER HAD. The 1962 overlay row carries no `collated` and no `ia_leaf`; it rests on `detector = second-printing-partly-agrees`, `second_printing_coverage = 0.7872` and `ia_text_layer_line = 26087`, and that file's own prose says such a row has never been seen on a page. It has now. The antiphon opens at the FOOT of p. 445 with a drop capital, `I AM the Saviour of my people, saith the`, beside the Latin `SALUS populi ego sum, dicit Dominus: de qua-`, and continues at the top of p. 446, `Lord: in whatever distress they call on me, I will hear them: and will be their Lord for ever. Ps. Attend, O my people, to my law, incline your ears to the words of my mouth. V. Glory.` Joined across the break that is the overlay row's text character for character; the 0.7872 shortfall is the parallel-column setting, as that file predicted. The 1962 row can be promoted to `collated = page-image, 2026-08-20`, `printed_page = 445-446`, `ia_leaf = 453` by the lane that owns it."
+witness_note = "The MR2002 text is not held here; this is the English of the antecedent chant roman-1962/pentecost-19/Introit, whose antiphon Latin is identical to this calendar's recorded Latin modulo punctuation (`dicit Dominus.` for `dicit Dominus:`, `exaudiam eos,` for `exaudiam eos:`). CAUTION ON SCOPE: the antecedent row renders the whole 1962 Introit, so its English carries in addition the psalm verse `Ps. Attend, O my people, to my law, incline your ears to the words of my mouth.` and the cue `V. Glory.`, which this calendar's Entrance Antiphon does not include — the postconciliar slot is the antiphon alone. The text is copied exactly from the 1962 row; whether to trim the psalm verse and Gloria cue is an editorial decision this lane does not make, since trimming would be altering the witness's text."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+I am the Saviour of my people, saith the Lord: in whatever distress they call on me, I will hear them: and will be their Lord for ever. Ps. Attend, O my people, to my law, incline your ears to the words of my mouth. V. Glory.
+"""
+
+[[entries]]
+mass = "ot-6"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Caelestibus, Domine, pasti deliciis"
+witness = "cummiskey-1861-antecedent"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "epiphany-6"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass epiphany-6, proper Postcommunion; collated page-image 2026-08-01, printed_page 104, ia_leaf 114)"
+relation = "identical"
+verified_on_page = "2026-08-20"
+verified_leaf = 114
+verified_printed_page = "101"
+verified_heading = "SEPTUAGESIMA SUNDAY. (running head; the Epiphany-VI Mass closes at the top of this page)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n114_w1400.jpg"
+verified_note = "Read on the image. The oration stands at the top of the page as `P. COMM. Caelestibus.—Being fed, O Lord, with heavenly dainties, we beseech thee, that we may always hunger after them, as they preserve our life. Thro.'`, above the rubric `If there be not VI. Sundays between the Epiphany and Septuagesima, what remains are omitted, ana taken in between the XXIII. and the last Sunday after Pentecost.`, which fixes the Mass as the VI Sunday after the Epiphany. Text matches the overlay row exactly; the printed `Thro.'` is normalised to `Thro'.` by that file's own declared correction, carried through unaltered. DEFECT FOUND IN A TRACKED FILE: the 1962 overlay row records `printed_page = 104` for this leaf. The running head reads 101 (verified at 3x magnification, saved as n114-pagenum.png). The leaf is right, the page number is wrong by three, and the leaf-to-page offset is not constant in this printing (88->n98 is +10, 446->n454 is +8), so the field cannot be repaired by arithmetic. Reported, not fixed."
+witness_note = "The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/epiphany-6/Postcommunion, whose Latin is identical to this calendar's recorded Latin: every word of the body agrees (`Caelestibus, Domine, pasti deliciis, quaesumus, ut semper eadem, per quae veraciter vivimus, appetamus`), the two indexes differing only in punctuation and in the conclusion cue (`Per Christum.` here, `Per Dominum nostrum Jesum Christum...` there)."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being fed, O Lord, with heavenly dainties, we beseech thee, that we may always hunger after them, as they preserve our life. Thro'.
+"""
+
+[[entries]]
+mass = "ot-31"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Augeatur in nobis"
+witness = "cummiskey-1861-antecedent"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "epiphany-2"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass epiphany-2, proper Postcommunion; recorded from the page 2026-08-01, printed_page 97, ia_leaf 107, printed as P. COMM. of the Sunday inside the witness's Mass of the Holy Name)"
+relation = "light"
+verified_on_page = "2026-08-20"
+verified_leaf = 107
+verified_printed_page = "97"
+verified_heading = "THE FEAST OF, &c. (the Mass of the Most Holy Name of Jesus)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n107_w1400.jpg"
+verified_note = "Read on the image. Printed as `P. COMM. of the Sunday. Augeatur.—May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro' thy bounty, be prepared to receive what they promise. Thro'.` — the 1962 row's claim that the witness sets the Sunday's Postcommunion inside the Mass of the Holy Name is confirmed on the page, as is the printed_page/ia_leaf pair. Text matches the overlay row exactly. THIS IS THE LOUDEST DIVERGENCE OF THE FOUR PROPOSALS: the English says `thy divine sacraments` where this calendar's Latin reads `caelestibus`, heavenly. See dispositions.md section 6; demoting this entry costs one proposal and nothing else."
+witness_note = "The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/epiphany-2/Postcommunion, whose Latin differs from this calendar's recorded Latin in one phrase: the 1962 index reads `ut divinis vegetati sacramentis`, this calendar reads `ut, refecti caelestibus sacramentis` — two words substituted (`divinis` -> `caelestibus`, `vegetati` -> `refecti`), every other word of the body identical modulo punctuation. The English is the antecedent's and renders the 1962 reading: `being fed with thy divine sacraments`, where this calendar's Latin says heavenly, not divine. If that divergence is judged too loud to print, this entry falls to a dispositions row; it is proposed because the substitution is two words in one clause and is stated here in full."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro' thy bounty, be prepared to receive what they promise. Thro'.
+"""
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Concede nobis, quaesumus, Domine"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration pentecost-9/Secret (Concede nobis, quaesumus, Domine) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus` for pc `huius`), pointing (`mysteria: quia` for `mysteria, quia`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 Missal's own Holy Thursday Secret is a different prayer (`Ipse tibi, quaesumus, Domine sancte`); the antecedent of this pc slot lives at the Ninth Sunday after Pentecost in that book. The 1962 row was collated from the page image (p. 415, IA leaf 423) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading. The same Latin also stands at pc ot-2/Prayer over the Offerings, proposed by lane pc-antecedents-1 from the same 1962 row.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro’.
+"""
+
+[[entries]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Proficiat nobis ad salutem corporis et animae"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration trinity/Postcommunion (Proficiat nobis ad salutem) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus`/`ejusdemque` for pc `huius`/`eiusdemque`), pointing (`Domine, Deus noster` / `susceptio: et` for the pc's `Domine Deus noster` / `susceptio, et`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 row carries detector = "sibling-agrees" and has never been collated against a page image: two independent scans of two printings render it alike, which is evidence about the scans, not proof about the page. This proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+May the receiving of this sacrament, O Lord our God, avail us to the salvation of body and soul: together with the confession of an everlasting Holy Trinity, and of the undivided unity thereof. Thro’.
+"""
+
+[[entries]]
+mass = "ot-7"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Praesta, quaesumus, omnipotens Deus"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration epiphany-5/Postcommunion (Quaesumus, omnipotens Deus) of the 1962 index, whose Latin differs from this calendar's recorded Latin in exactly two words beside the conclusion cue: the pc opens `Praesta, quaesumus, omnipotens Deus` where the 1962 opens `Quaesumus, omnipotens Deus` (the pc adds `Praesta`), and the 1962 reads `illius salutaris capiamus effectum` where the pc reads `illius capiamus effectum` (the pc drops `salutaris`); the cue is `Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Christum.`. Note that the English's phrase `the effects of that salvation` renders the antecedent's `illius salutaris`, whose noun the MR2002 text does not print. The 1962 row was collated from the page image (p. 102, IA leaf 112) on 2026-07-31, result corrected; this proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro'.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+We beseech thee, O Almighty God, that we may one day receive the effects of that salvation, of which we have received the pledge in these mysteries. Thro’.
+"""
+
+[[entries]]
+mass = "ot-24"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Propitiare, Domine, supplicationibus nostris"
+witness = "cummiskey-1861-antecedent"
+witness_note = """
+the MR2002 text is not held here; this is the English of the antecedent oration pentecost-5/Secret (Propitiare, Domine) of the 1962 index, whose Latin differs from this calendar's recorded Latin in one dropped word, one word order, and the conclusion cue: the 1962 reads `famulorum famularumque tuarum` where the pc reads `famulorum tuorum` (the pc drops `famularumque`, and the possessive inflects `tuarum` to `tuorum` with it); the 1962 orders `quod singuli obtulerunt ad honorem nominis tui` where the pc orders `quod singuli ad honorem tui nominis obtulerunt`, the same words; and the 1962 cue is `Per Dominum.` where the pc index prints `Per Christum.`. The English's `these offerings of thy servants` covers both readings of the first difference without marking it. The 1962 row carries detector = "sibling-agrees" and has never been collated against a page image. This proposal copies its two translation rows byte-exact and adds no new reading.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive these offerings of thy servants: that what each hath offered to the honour of thy name, may avail to the salvation of all.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+text = """
+Be appeased, O Lord, by our humble prayers, and mercifully receive these offerings of thy servants: that what each hath offered to the honour of thy name, may avail to the salvation of all.
+"""
+
+[[entries]]
+mass = "advent-3"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Tuam, Domine, clementiam"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration advent-3/Postcommunion (roman-1962 index, incipit 'Imploramus, Domine'), whose Latin differs: word order only in the opening -- the 1962 reads 'Imploramus, Domine, clementiam tuam' where this calendar's recorded Latin reads 'Tuam, Domine, clementiam imploramus'; every other word of the body is identical after orthographic normalisation. The printed conclusion cues also differ (1962 'Per Dominum...', this calendar 'Per Christum...'). English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 57, ia_leaf 67, collated page-image 2026-07-31, collation_result confirmed. The English renders the 1962 word order ('We implore, O Lord, thy mercy'), which happens to sit closer to this calendar's order than to nothing at all; the reordering is shown, not silently absorbed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We implore, O Lord, thy mercy, that these divine helps having cleansed us from sin, may prepare us for the ensuing solemnity.
+"""
+
+[[entries]]
+mass = "palm-sunday"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, qui humano generi"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration palm-sunday/Collect (roman-1962 index, incipit 'Omnipotens sempiterne Deus'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The printed conclusion cues differ -- the 1962 index prints 'Per eundem Dominum nostrum Jesum Christum...' where this calendar records 'Qui tecum.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 239, ia_leaf 249, collated page-image 2026-07-31, collation_result confirmed. This is a Mass oration of the day, not part of the palm rite; the 1861 witness's Holy Week ceremonies are pre-1955 and are NOT drawn on here."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O almighty and eternal God, who wouldst have our Saviour become man, and suffer on a cross, to give mankind an example of humility: mercifully grant, that we may improve by the example of his patience, and partake of his resurrection. Thro'.
+"""
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Suscipe munera, Domine"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration low-sunday/Secret (roman-1962 index, incipit 'Suscipe munera, Domine'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the two indexes differ only in punctuation). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different Sundays -- the 1962 prints it on Low Sunday, the postconciliar on the Third Sunday of Easter -- and the reuse claims only that it is the same prayer, not the same day. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, detector sibling-agrees (that 1962 row carries no page-image collation keys)."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, we beseech thee, O Lord, the offerings of thy joyful Church: and as thou hast given occasion to this great joy, grant she may receive the fruits of that joy, which will never end. Thro'.
+"""
+
+[[entries]]
+mass = "easter-7"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Suscipe, Domine, fidelium preces"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration easter-5/Secret (roman-1962 index, incipit 'Suscipe, Domine, fidelium preces'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the 1962 index prints 'coelestem' under its declared oe convention where this calendar prints 'caelestem'). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different Sundays -- 1962 the Fifth Sunday after Easter, postconciliar the Seventh Sunday of Easter; the reuse claims the prayer, not the day. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 356, ia_leaf 364, collated page-image 2026-07-31, collation_result confirmed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, the prayers of the faithful, together with these oblations; that by these duties of piety we may obtain eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "ot-28"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Suscipe, Domine, fidelium preces"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration easter-5/Secret (roman-1962 index, incipit 'Suscipe, Domine, fidelium preces'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; 1962 'coelestem' for this calendar's 'caelestem'). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The postconciliar Missal prints this one prayer twice, at easter-7 and at ot-28; both rows in this file reuse the same 1962 English and each says so. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 356, ia_leaf 364, collated page-image 2026-07-31, collation_result confirmed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Receive, O Lord, we beseech thee, the prayers of the faithful, together with these oblations; that by these duties of piety we may obtain eternal life. Thro'.
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nobis sub sacramento mirabili"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Collect (roman-1962 index, incipit 'Deus, qui nobis sub Sacramento mirabili'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the indexes differ in 'iugiter'/'jugiter' under their declared i/j conventions and in the capitalisation of 'sacramento'). The conclusions differ only in how far the cue is expanded -- this calendar prints 'Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti, Deus, per omnia saecula saeculorum' where the 1962 index carries the abbreviated 'Qui vivis et regnas cum Deo Patre in unitate.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 395, ia_leaf 403, collated page-image 2026-08-02, collation_result recorded from the page."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who in this wonderful sacrament, has left us a perpetual memorial of thy Passion; grant us, we beseech thee, so to reverence the sacred mysteries of thy body and blood, that in our souls we may always be sensible of the fruit of the redemption thou hast purchased for us. Who livest.
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Ecclesiae tuae, quaesumus, Domine"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Secret (roman-1962 index, incipit 'Ecclesiae tuae, quaesumus, Domine, unitatis et pacis'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The printed conclusion cues differ (1962 'Per Dominum.', this calendar 'Per Christum.'). English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 398, ia_leaf 406, collated page-image 2026-08-02, collation_result recorded from the page. Read that row's conclusion carefully before re-typing it: it records that the PAGE ends the oration `in these offerings. Thro` and prints neither the apostrophe nor the full stop, while the row's own `text` prints `Thro'` -- the apostrophe supplied under the normalisation that file's `corrections` block declares for the abbreviated conclusion, the full stop deliberately not supplied. The text below is that row's `text` copied byte for byte, so it carries the supplied apostrophe and the absent stop; it is not a fresh reading of the page and must not be reconciled against the collation_result by hand."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully grant thy Church, O Lord, we beseech thee, the gifts of Unity and Peace, which are mystically represented in these offerings. Thro'
+"""
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Fac nos, quaesumus, Domine"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Postcommunion (roman-1962 index, incipit 'Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione repleri'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The conclusions differ only in the cue -- this calendar 'Qui vivis et regnas in saecula saeculorum', the 1962 index 'Qui vivis et regnas cum Deo Patre in unitate.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 398, ia_leaf 406, collated page-image 2026-08-02, collation_result recorded from the page."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant us, O Lord, we beseech thee, the everlasting possession of thyself, as a pledge of which we have received thy body and blood. Who livest.
+"""
+
+[[entries]]
+mass = "ot-33"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Concede, quaesumus, Domine"
+witness = "cummiskey-1861-antecedent"
+witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration palm-sunday/Secret (roman-1962 index, incipit 'Concede, quaesumus, Domine'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; 1962 'majestatis' for this calendar's 'maiestatis' under the declared i/j conventions). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different days -- the 1962 prints it as the Palm Sunday Secret, the postconciliar as the Prayer over the Offerings of the Thirty-third Sunday in Ordinary Time; the reuse claims the prayer, not the day. NOT the near-twin at sunday-within-octave-of-nativity/Secret, which reads 'omnipotens Deus' and 'piae devotionis' where this text reads 'Domine' and 'devotionis'. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 249, ia_leaf 259, collated page-image 2026-07-31, collation_result corrected; that row records that the page ends the oration `blessed eternity. Thro'` with no full stop, and the text below reproduces the row exactly."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, that what hath been offered in the presence of thy divine Majesty may procure us the grace of devotion, and effectually obtain a blessed eternity. Thro'
+"""
+
 [[untranslated]]
 mass = "advent-1"
 form = ""
@@ -1582,18 +2032,6 @@ mass = "advent-3"
 form = ""
 proper = "Collect"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "advent-3"
-form = ""
-proper = "Prayer after Communion"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.88 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "advent-4"
-form = ""
-proper = "Collect"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.84 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "advent-4"
@@ -1708,12 +2146,6 @@ mass = "mary-mother-of-god"
 form = ""
 proper = "Entrance Antiphon (alternative)"
 reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "mary-mother-of-god"
-form = ""
-proper = "Collect"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.89 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "mary-mother-of-god"
@@ -1952,12 +2384,6 @@ reason = "no publishable English: the approved translation is ICEL's, it is in c
 [[untranslated]]
 mass = "palm-sunday"
 form = ""
-proper = "Collect"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.87 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "palm-sunday"
-form = ""
 proper = "Prayer over the Offerings"
 reason = "an ancient ancestor was identified in the Veronense at 0.87 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
@@ -1984,12 +2410,6 @@ mass = "mass-of-the-lords-supper"
 form = ""
 proper = "Antiphon at the Presentation of the Gifts"
 reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.89 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "mass-of-the-lords-supper"
@@ -2306,12 +2726,6 @@ reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.52 wor
 [[untranslated]]
 mass = "easter-3"
 form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.81 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "easter-3"
-form = ""
 proper = "Prayer after Communion"
 reason = "an ancient ancestor was identified in the Hadrianum at 0.50 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
@@ -2394,12 +2808,6 @@ proper = "Collect"
 reason = "an ancient ancestor was identified in the Veronense at 0.70 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
-mass = "easter-7"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.88 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
 mass = "pentecost"
 form = "Vigil Mass"
 proper = "Collect"
@@ -2460,34 +2868,16 @@ proper = "Placeholder"
 reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
 
 [[untranslated]]
-mass = "ot-2"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.89 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
 mass = "ot-3"
 form = ""
 proper = "Prayer over the Offerings"
 reason = "an ancient ancestor was identified in the Hadrianum at 0.50 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
-mass = "ot-3"
-form = ""
-proper = "Prayer after Communion"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.80 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
 mass = "ot-4"
 form = ""
 proper = "Prayer after Communion"
 reason = "an ancient ancestor was identified in the Veronense at 0.87 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "ot-5"
-form = ""
-proper = "Collect"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.84 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "ot-5"
@@ -2512,18 +2902,6 @@ mass = "ot-6"
 form = ""
 proper = "Prayer over the Offerings"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "ot-6"
-form = ""
-proper = "Prayer after Communion"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.85 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "ot-7"
-form = ""
-proper = "Prayer after Communion"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.86 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "ot-8"
@@ -2676,18 +3054,6 @@ proper = "Prayer after Communion"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
 
 [[untranslated]]
-mass = "ot-24"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.87 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
-mass = "ot-25"
-form = ""
-proper = "Entrance Antiphon"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
 mass = "ot-25"
 form = ""
 proper = "Collect"
@@ -2730,12 +3096,6 @@ proper = "Prayer after Communion"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
 
 [[untranslated]]
-mass = "ot-28"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.88 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
 mass = "ot-29"
 form = ""
 proper = "Prayer after Communion"
@@ -2754,12 +3114,6 @@ proper = "Prayer over the Offerings"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
 
 [[untranslated]]
-mass = "ot-31"
-form = ""
-proper = "Prayer after Communion"
-reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.84 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
-
-[[untranslated]]
 mass = "ot-32"
 form = ""
 proper = "Prayer over the Offerings"
@@ -2770,12 +3124,6 @@ mass = "ot-32"
 form = ""
 proper = "Prayer after Communion"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "ot-33"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "an ancient ancestor was identified in the Hadrianum at 0.84 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
 [[untranslated]]
 mass = "ot-33"
@@ -2802,34 +3150,10 @@ proper = "Prayer over the Offerings"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
 
 [[untranslated]]
-mass = "most-holy-trinity"
-form = ""
-proper = "Prayer after Communion"
-reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "corpus-christi"
-form = ""
-proper = "Collect"
-reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
 mass = "corpus-christi"
 form = ""
 proper = "Sequence"
 reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "corpus-christi"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "corpus-christi"
-form = ""
-proper = "Prayer after Communion"
-reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
 
 [[untranslated]]
 mass = "most-sacred-heart-jesus"
@@ -2872,3 +3196,4 @@ mass = "ot-15"
 form = ""
 proper = "Gospel Acclamation"
 reason = "as easter-3 above: Years B and C are scriptural and resolve from the bible, and Year A sets the composed Semen est verbum Dei, sator autem Christus, whose approved English is ICEL's and is not carried here."
+
