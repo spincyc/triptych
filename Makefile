@@ -741,7 +741,8 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-browser-static \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
-	check-mass-ordinary check-catena check-commentary-coverage check-examples
+	check-mass-ordinary check-bible-indexes check-catena \
+	check-commentary-coverage check-examples
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
@@ -843,6 +844,20 @@ check-propers-census:
 # module, so it is a plain failure and never a skip.
 check-mass-ordinary:
 	@$(PYTHON) tools/tpt mass-ordinary check
+
+# An indexed bible is keyed by the reference strings the calendars actually
+# make, so a calendar that gains a citation leaves every index stale, and
+# nothing said so. All seven were stale on 2026-08-20: over two liturgical
+# years the same days that render with 6 scripture absences against a current
+# index showed 128 against the tracked one, and the Commune Confessoris
+# Pontificis' Lesson printed `Sirach 45:3-20` with nothing under it while
+# every source-side gate stayed green. Unresolved references are reported and
+# are not a failure; a stale index is.
+check-bible-indexes:
+	@set -e; for bible in $$(ls src/sources/bibles); do \
+		test -d src/sources/bibles/$$bible || continue; \
+		$(PYTHON) tools/tpt index-bible check --bible $$bible >/dev/null; \
+	done; echo "bible indexes current"
 
 # Validates the scripture edge every catena fragment hangs from, and replays
 # the browser's own chapter derivation over the solved cases. Until this target
