@@ -538,6 +538,111 @@ implied:
     would_be_a_mass_choice: 'Once a base is emitted, the two alternatives IGMR 363
       states are a mass_choices entry and not a collision: the rubric orders them,
       the preceding Sunday first.'
+    # What would cross over from that base, and what would not. Declared on the
+    # rule rather than per date, and declared here because the slots are a fact
+    # about this Missal that no tool may infer.
+    oration_scope:
+      what: >-
+        IGMR 363 lends the ORATIONS of the preceding Sunday - praeter orationes
+        dominicae praecedentis - and nothing else. The other calendar's RGMR 299
+        lends the whole Mass, and reading the two as one borrowing is the error
+        this declaration exists to stop: a base carried unscoped would put the
+        Sunday's First Reading and Gospel on every Ordinary Time weekday of the
+        year, cleanly resolved, well formed and wrong.
+      locus: IGMR 363
+      evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.363
+      slots: [Collect, Prayer over the Offerings, Prayer after Communion]
+      slots_why: >-
+        Nothing else in this file answers which slots are orations. The
+        `orations` block below says how many collects are SAID on a day, never
+        which propers are orations, and reading it as the latter would be the
+        first wrong turn. These three are also the oration slots the bases
+        themselves actually hold: the thirty-two Ordinary Time Sunday
+        formularies this calendar's index carries, ot-2 to ot-33, each hold
+        Collect, Prayer over the Offerings and Prayer after Communion and no
+        other oration. So the scope names slots the base is known to hold rather
+        than slots the Missal is assumed to print.
+      not_slots:
+      - slot: Prayer over the People
+        why: >-
+          Not among them, and no tool may guess it. In this index the slot
+          stands on the five Sundays of Lent, on Palm Sunday and on Good Friday
+          and on no Sunday in Ordinary Time, so a scope naming it would name a
+          slot no base holds.
+      omits:
+        what: >-
+          The readings. IGMR 358 gives every weekday of the year the ferial
+          Lectionary's own readings, which are not the preceding Sunday's, and
+          they do not cross over with the orations.
+        locus: IGMR 358
+        evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.358
+        carried: false
+        why_not: >-
+          This index carries no ferial Lectionary entry for an Ordinary Time
+          weekday, so the omission cannot yet point at the day's own key and has
+          to reach the page as a stated reason instead. A day shown a collect
+          and no gospel, saying nothing, asserts by silence that the Mass has no
+          gospel - the same defect one size smaller. When the ferial entries
+          exist this statement points at the day's own key and stops being a
+          gap.
+      chooses_no_basis: >-
+        This index chooses no oration basis for any Ordinary Time weekday, and
+        nothing here may be read as having chosen one. IGMR 363 gives the
+        orations of the preceding Sunday BESIDE the orations of another Sunday
+        in Ordinary Time and the prayers for various needs, and the Missal's own
+        rubric 3 b before the Masses of Ordinary Time - In feriis vero quaelibet
+        e 34 Missis dici potest, attenta utilitate pastorali fidelium - permits
+        any of the thirty-four. Proximity appoints none of them. No mass in
+        propers.yaml carries a takes_from at an Ordinary Time weekday's oration
+        slots, at mass level or at proper level, and none may: a takes_from
+        citation records the edition's own printed pointer at the day, and what
+        IGMR 363 states is a general rubric. The scope above says which slots
+        would cross over IF a base were emitted. It emits none and prefers none.
+    # The mass_choices entry the sentence above promises was attempted on
+    # 2026-08-20 and is not written, because it cannot be written truthfully in
+    # the shape this repository validates and renders.
+    mass_choice_not_yet_expressible:
+      attempted_on: '2026-08-20'
+      gaps:
+      - what: an arm cannot name a base that varies with the date
+        where: >-
+          tools/calendar-rubrics, check_mass_choices, which requires every arm
+          to declare takes mass with a key this calendar's index carries, or
+          takes office_mass; and src/web/browser/liturgy/assembly-model.js,
+          massChoicesFor, which resolves an arm to option.mass or, for
+          office_mass, to the winner's OWN formulary
+        why_it_blocks: >-
+          The base IGMR 363 names is the preceding Sunday, which is a different
+          key on every date, and the two alternatives it names - another Sunday
+          in Ordinary Time, a prayer for various needs - name no key at all. An
+          implied weekday's formulary is borrowed or absent and never own, so an
+          office_mass arm resolves to null, is dropped, and takes the entry
+          below two options, where the model discards it without a word. Writing
+          the arms as fixed keys would be making the choice the rubric declines
+          to make.
+      - what: a choice cannot be confined to one season
+        where: src/web/browser/liturgy/assembly-model.js, massChoicesFor
+        why_it_blocks: >-
+          `when` gates on weekday, winner_basis and with_candidate. Its
+          when.season test compares the entry's own season field to itself and
+          never to the day's, and the day's season is not passed into the
+          function at all, so a season gate would read as a filter and filter
+          nothing. The only basis available here, place-13-weekday, is equally
+          the basis of the ordinary weekdays of Advent, of Christmas Time and of
+          Easter Time, where neither IGMR 363 nor rubric 3 b applies. An entry
+          written today would offer Ordinary Time's Masses on an Advent weekday.
+      also: >-
+        Enumerating the permission instead is out of reach for a third reason.
+        Rubric 3 b permits any of the thirty-four Ordinary Time Masses and this
+        index carries thirty-two of them, ot-2 to ot-33, the formularies of
+        weeks 1 and 34 having no Sunday to be inscribed at. Thirty-two arms
+        would understate the rubric and say nothing about the understatement.
+      so: >-
+        Nothing is written rather than something wrong. The entry is owed when a
+        base is emitted, and the shape it needs is a takes value naming that
+        emitted base and a `when` that actually tests the day's season. Both are
+        changes to tools shared with the other calendar and neither is made from
+        this source.
 saturday_office:
   locus: NUALC 15
   latin: In sabbatis "per annum", in quibus non occurrat memoria obligatoria, fieri
@@ -762,6 +867,13 @@ unsettled:
 - what: IGMR 54
   why: the article that states the one-oration rule directly has not been read in a
     witness here. The count is stated from NUALC 60 and IGMR 355 a instead.
+- what: the mass choice IGMR 363 leaves open on a weekday in Ordinary Time
+  why: 'it is a real choice and it is not written, because no arm of a mass_choices
+    entry can name a base that changes with the date and no `when` can confine a
+    choice to one season. The attempt, the two gaps and the shape the entry needs
+    are recorded in full at implied ordinary-time-weekday, under
+    mass_choice_not_yet_expressible; the oration scope that entry would need is
+    declared beside it and does not choose a basis either.'
 
 worked_cases:
 - id: assumption-on-a-saturday
