@@ -1426,36 +1426,33 @@ sections:
       date: 12-29
       rank: II
       kind: seasonal
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      takes_from:
+        mass: nativitate-domini-octave
+        form: Ad tertiam Missam in die
+        citation: Missa Puer natus est nobis, ut supra 28
+      notes: 'The Missal prints no formulary for this day: it prints the day, its class and a directive -- Missa Puer natus est nobis, ut supra 28 -- so the day takes the third Mass of the Nativity entire. Read on the page image of the CMAA facsimile of the controlling edition, printed p. 29, marginal no. 206, on 2026-08-20. The same entry appoints a commemoration: Et fit commemoratio S. Thomae Ep. et Mart., e Missa sequenti.'
     - key: sixth-day-within-octave
       name: Sixth day within the octave
       registry: '1962-12-30'
       date: 12-30
       rank: II
       kind: seasonal
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      takes_from:
+        mass: nativitate-domini-octave
+        form: Ad tertiam Missam in die
+        citation: Missa Puer natus est nobis, ut supra 28
+      notes: 'The Missal prints no formulary for this day: it prints the day, its class and a directive -- Missa Puer natus est nobis, ut supra 28 -- so the day takes the third Mass of the Nativity entire. Read on the page image of the CMAA facsimile of the controlling edition, printed p. 31, marginal no. 219A, on 2026-08-20.'
     - key: seventh-day-within-octave
       name: Seventh day within the octave
       registry: '1962-12-31'
       date: 12-31
       rank: II
       kind: seasonal
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      takes_from:
+        mass: nativitate-domini-octave
+        form: Ad tertiam Missam in die
+        citation: Missa Puer natus est nobis, ut supra 28
+      notes: 'The Missal prints no formulary for this day: it prints the day, its class and a directive -- Missa Puer natus est nobis, ut supra 28 -- so the day takes the third Mass of the Nativity entire. Read on the page image of the CMAA facsimile of the controlling edition, printed p. 31, marginal no. 219B, on 2026-08-20. The same entry appoints a commemoration: Et fit commemoratio S. Silvestri I Papae et Conf. e Missa sequenti.'
     - key: most-holy-name-of-jesus
       name: Sanctissimi Nominis Iesu
       registry: 1962-T-most-holy-name-of-jesus

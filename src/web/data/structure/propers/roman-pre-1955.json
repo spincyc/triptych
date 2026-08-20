@@ -134910,14 +134910,284 @@
    "name": "Fifth day within the octave",
    "propers": [
     {
-     "citations": [],
+     "citations": [
+      {
+       "book": "Isaiah",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Isaiah 9:6",
+       "token": "Is",
+       "unresolved": null
+      },
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 1,
+          "last": 1
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 1,
+          "last": 1
+         }
+        ]
+       },
+       "ref": "Psalms 97:1",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
      "cycles": {},
      "form": "",
      "incipit": null,
-     "name": "Placeholder",
-     "source": "composed",
-     "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "name": "Introit",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Introit"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Hebrews",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ]
+       },
+       "ref": "Hebrews 1:1-12",
+       "token": "Heb",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Epistle",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Epistle"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 98,
+          "first": 2,
+          "last": 2
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 97,
+          "first": 2,
+          "last": 2
+         }
+        ]
+       },
+       "ref": "Psalms 97:3-4,2",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gradual",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gradual"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "John",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ]
+       },
+       "ref": "John 1:1-14",
+       "token": "John",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gospel"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 89,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 89,
+          "first": 15,
+          "last": 15
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 88,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 88,
+          "first": 15,
+          "last": 15
+         }
+        ]
+       },
+       "ref": "Psalms 88:12,15",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Offertory",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Offertory"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 3
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 3
+         }
+        ]
+       },
+       "ref": "Psalms 97:3",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Communion",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Communion"
+     },
+     "text": null,
      "translations": null,
      "untranslated": null
     }
@@ -134932,7 +135202,11 @@
    },
    "registry": "1962-12-29",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Puer natus est nobis, ut supra 28",
+    "form": "Ad tertiam Missam in die",
+    "mass": "nativitate-domini-octave"
+   }
   },
   {
    "date": "12-30",
@@ -134941,14 +135215,284 @@
    "name": "Sixth day within the octave",
    "propers": [
     {
-     "citations": [],
+     "citations": [
+      {
+       "book": "Isaiah",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Isaiah 9:6",
+       "token": "Is",
+       "unresolved": null
+      },
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 1,
+          "last": 1
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 1,
+          "last": 1
+         }
+        ]
+       },
+       "ref": "Psalms 97:1",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
      "cycles": {},
      "form": "",
      "incipit": null,
-     "name": "Placeholder",
-     "source": "composed",
-     "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "name": "Introit",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Introit"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Hebrews",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ]
+       },
+       "ref": "Hebrews 1:1-12",
+       "token": "Heb",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Epistle",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Epistle"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 98,
+          "first": 2,
+          "last": 2
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 97,
+          "first": 2,
+          "last": 2
+         }
+        ]
+       },
+       "ref": "Psalms 97:3-4,2",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gradual",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gradual"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "John",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ]
+       },
+       "ref": "John 1:1-14",
+       "token": "John",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gospel"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 89,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 89,
+          "first": 15,
+          "last": 15
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 88,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 88,
+          "first": 15,
+          "last": 15
+         }
+        ]
+       },
+       "ref": "Psalms 88:12,15",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Offertory",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Offertory"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 3
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 3
+         }
+        ]
+       },
+       "ref": "Psalms 97:3",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Communion",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Communion"
+     },
+     "text": null,
      "translations": null,
      "untranslated": null
     }
@@ -134963,7 +135507,11 @@
    },
    "registry": "1962-12-30",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Puer natus est nobis, ut supra 28",
+    "form": "Ad tertiam Missam in die",
+    "mass": "nativitate-domini-octave"
+   }
   },
   {
    "date": "12-31",
@@ -134972,14 +135520,284 @@
    "name": "Seventh day within the octave",
    "propers": [
     {
-     "citations": [],
+     "citations": [
+      {
+       "book": "Isaiah",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 9,
+          "first": 6,
+          "last": 6
+         }
+        ]
+       },
+       "ref": "Isaiah 9:6",
+       "token": "Is",
+       "unresolved": null
+      },
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 1,
+          "last": 1
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 1,
+          "last": 1
+         }
+        ]
+       },
+       "ref": "Psalms 97:1",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
      "cycles": {},
      "form": "",
      "incipit": null,
-     "name": "Placeholder",
-     "source": "composed",
-     "taken_from": null,
-     "text": "This entry is a placeholder pending formula migration and source verification.\n",
+     "name": "Introit",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Introit"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Hebrews",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 12
+         }
+        ]
+       },
+       "ref": "Hebrews 1:1-12",
+       "token": "Heb",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Epistle",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Epistle"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 98,
+          "first": 2,
+          "last": 2
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 4
+         },
+         {
+          "chapter": 97,
+          "first": 2,
+          "last": 2
+         }
+        ]
+       },
+       "ref": "Psalms 97:3-4,2",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gradual",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gradual"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "John",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 1,
+          "first": 1,
+          "last": 14
+         }
+        ]
+       },
+       "ref": "John 1:1-14",
+       "token": "John",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Gospel",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Gospel"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 89,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 89,
+          "first": 15,
+          "last": 15
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 88,
+          "first": 12,
+          "last": 12
+         },
+         {
+          "chapter": 88,
+          "first": 15,
+          "last": 15
+         }
+        ]
+       },
+       "ref": "Psalms 88:12,15",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Offertory",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Offertory"
+     },
+     "text": null,
+     "translations": null,
+     "untranslated": null
+    },
+    {
+     "citations": [
+      {
+       "book": "Psalms",
+       "loci": {
+        "hebrew": [
+         {
+          "chapter": 98,
+          "first": 3,
+          "last": 3
+         }
+        ],
+        "vulgate": [
+         {
+          "chapter": 97,
+          "first": 3,
+          "last": 3
+         }
+        ]
+       },
+       "ref": "Psalms 97:3",
+       "token": "Ps",
+       "unresolved": null
+      }
+     ],
+     "cycles": {},
+     "form": "",
+     "incipit": null,
+     "name": "Communion",
+     "source": "scripture",
+     "taken_from": {
+      "citation": "Missa Puer natus est nobis, ut supra 28",
+      "form": "Ad tertiam Missam in die",
+      "mass": "nativitate-domini-octave",
+      "proper": "Communion"
+     },
+     "text": null,
      "translations": null,
      "untranslated": null
     }
@@ -134994,7 +135812,11 @@
    },
    "registry": "1962-12-31",
    "season": null,
-   "takes_from": null
+   "takes_from": {
+    "citation": "Missa Puer natus est nobis, ut supra 28",
+    "form": "Ad tertiam Missam in die",
+    "mass": "nativitate-domini-octave"
+   }
   },
   {
    "date": null,
