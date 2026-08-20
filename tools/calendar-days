@@ -351,9 +351,62 @@ FERIAL_NOTE = (
 # the two apart is what stops a permission being rendered as an appointment.
 #
 # The declaration's home when someone builds it is the postconciliar rubrics'
-# `ordinary-time-weekday.appointed_mass`, which already carries the loci and
-# the refusal this note answers.
+# `ordinary-time-weekday.appointed_mass`, which now carries the loci, the slot
+# list, the omission statement and the refusal this note answers.
 # ---------------------------------------------------------------------------
+
+# What `governs` records for the postconciliar calendar, and the reason the word
+# is `lists first` and never `appoints`. IGMR 363 gives the orations of the
+# preceding Sunday BESIDE the orations of another Sunday in Ordinary Time and
+# the prayers for various needs, and the Missal's own rubric 3 b before the
+# Masses of Ordinary Time permits any of the thirty-four; the postconciliar
+# rubrics say so at `ordinary-time-weekday.appointed_mass.chooses_no_basis`.
+# Proximity appoints none of them, so this bookkeeping states an ordered
+# permission and the emission that would use it is not built here.
+OT_GOVERNOR_RULE = (
+    "IGMR 363 lists the orations of the preceding Sunday first among those a "
+    "weekday in Ordinary Time may take, and appoints none of them: "
+)
+
+# The two runs whose positions the guidance places and whose KEY GRAMMAR it
+# leaves open. Refused by name in every year rather than keyed by inference,
+# because this tool places a day only where the guidance fixes it and a run
+# whose printed grammar nobody has read is not fixed. Deleting these and minting
+# keys is the one move that would be wrong; the fix is to read the Advent and
+# Christmas Time headings in the Missal's Proper of Time and in the Ordo
+# lectionum Missae, and to state the grammar in the guidance first.
+ADVENT_WEEKDAYS_UNKEYED = (
+    "the two runs are placed by "
+    + GUIDANCE
+    + " -- the Monday after the First Sunday of Advent to 16 December, and 17 "
+    "to 24 December -- but it records that the key grammar those runs are "
+    "printed under is the Missal's and the Ordo lectionum Missae's own "
+    "arrangement, which no witness held here has been read for. The Universal "
+    "Norms band the days at nos. 16 b and 59; they do not head a formulary. So "
+    "the positions are known and nothing is keyed"
+)
+
+CHRISTMAS_WEEKDAYS_UNKEYED = (
+    "the Missal's heading fixes the window -- from 2 January to the Saturday "
+    "before the feast of the Baptism of the Lord -- and not the keys inside "
+    "it, and "
+    + GUIDANCE
+    + " records that no witness held here has been read for them. Where the "
+    "Epiphany has been transferred it records further that no locus read here "
+    "states what the books do with these days at all, and Universal Norms 7 "
+    "forbids computing the transfer, so both branches would have to be emitted "
+    "tagged or the days refused. They are refused"
+)
+
+THIRTIETH_OF_DECEMBER_FAILS_CLOSED = (
+    "25 December is a Sunday, so no Sunday falls within the octave and the "
+    "Holy Family has none to occupy. "
+    + GUIDANCE
+    + " records that Universal Norms 35 a, which is reported to seat it on 30 "
+    "December in such a year, has not been read in a witness for it, so this "
+    "repository does not compute the day's own celebration. A weekday position "
+    "placed there would stand on a date whose celebration has been declined"
+)
 
 
 # ---------------------------------------------------------------- computus
@@ -1012,6 +1065,8 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             f"advent-{n}",
             f"First Sunday of Advent +{7 * (n - 1)}",
         )
+    # Advent's weekdays are placed by nobody. See ADVENT_WEEKDAYS_UNKEYED.
+    year.refuse("the weekdays of Advent", ADVENT_WEEKDAYS_UNKEYED)
     year.put(a.christmas, "nativity", "25 December")
 
     within = sunday_after(a.christmas)
@@ -1028,6 +1083,30 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             + GUIDANCE
             + " states no fallback date",
         )
+
+    # The three weekday positions the Octave of the Nativity contributes.
+    # Universal Norms 35 names them by civil date, so the run is date-keyed in
+    # the article itself and not by inference. The octave's other days are not
+    # weekday positions and are placed elsewhere: 26, 27 and 28 December carry
+    # the feasts the General Roman Calendar inscribes on them, 1 January is the
+    # octave day, and the Sunday within the octave is the Holy Family. Each of
+    # the three is a Sunday, and therefore unheld, in 14 years of the span.
+    for day_of_month in (29, 30, 31):
+        when = date(ending - 1, 12, day_of_month)
+        if when.weekday() == 6:
+            continue
+        if day_of_month == 30 and within > date(ending - 1, 12, 31):
+            year.refuse(
+                "the weekday position of 30 December",
+                THIRTIETH_OF_DECEMBER_FAILS_CLOSED,
+            )
+            continue
+        year.put(
+            when,
+            f"christmas-december-{day_of_month}",
+            f"{day_of_month} December, a day within the Octave of the Nativity",
+        )
+
     year.put(date(ending, 1, 1), "mary-mother-of-god", "1 January")
 
     fixed_option, moved_option = TERRITORIAL_OPTIONS["epiphany"]
@@ -1066,6 +1145,14 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             moved_option,
         )
 
+    # The weekdays between 2 January and the Saturday before the Baptism are
+    # placed by nobody. See CHRISTMAS_WEEKDAYS_UNKEYED.
+    year.refuse(
+        "the weekdays of Christmas Time from 2 January to the Saturday before "
+        "the Baptism of the Lord",
+        CHRISTMAS_WEEKDAYS_UNKEYED,
+    )
+
     # Ordinary Time, anchored at both ends. The Sunday numbering is the same
     # under either Epiphany option, because both put the Second Sunday seven
     # days after the Sunday following 6 January.
@@ -1074,16 +1161,91 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
     last_before_lent = 2 + (sunday_before_lent - second_sunday).days // 7
     resumed = 34 - (a.sunday_before_advent - a.pentecost).days // 7
     for n in range(2, last_before_lent + 1):
+        sunday = second_sunday + timedelta(days=7 * (n - 2))
         year.put(
-            second_sunday + timedelta(days=7 * (n - 2)),
+            sunday,
             f"ot-{n}",
             f"the Sunday of Ordinary Time week {n}, counted from the Baptism",
+        )
+        # Bookkeeping only. Nothing reads `governors` for this calendar: the
+        # postconciliar builder never calls `resolve_ferial`, so no
+        # `ferial_formulary` block is emitted and no weekday is shown a
+        # Sunday's text. See SCOPED BORROWING above for what has to hold first.
+        year.governs(
+            sunday,
+            f"ot-{n}",
+            OT_GOVERNOR_RULE + f"the Sunday of Ordinary Time week {n}",
+        )
+
+    # Week I has no Sunday. Under General Introduction 104.1 its weekdays begin
+    # on the Monday after the Sunday following 6 January, and on the Tuesday
+    # where the Baptism of the Lord is kept on that Monday -- which happens only
+    # where the Epiphany has actually been transferred to a Sunday falling on 7
+    # or 8 January. The transfer is never computed, so the Monday holds under
+    # the 6 January option alone in such a year and the rest of the week holds
+    # under both.
+    week_one_monday = baptism_fixed + timedelta(days=1)
+    year.put(
+        week_one_monday,
+        "ot-1-monday",
+        "the Monday after the Sunday following 6 January, where the Baptism of "
+        "the Lord is not kept on it",
+        fixed_option if baptism_moved != baptism_fixed else None,
+    )
+    for step, name in enumerate(WEEKDAYS[1:], start=1):
+        year.put(
+            week_one_monday + timedelta(days=step),
+            f"ot-1-{name}",
+            f"{name} of Ordinary Time week 1, which has no Sunday",
+        )
+
+    # Weeks II to L, the Monday to the Saturday of each. Week L is cut short by
+    # Ash Wednesday: General Introduction 104.2 suspends its readings after the
+    # Tuesday, so its Wednesday to Saturday positions are never reached in any
+    # year, whatever the week count.
+    for n in range(2, last_before_lent + 1):
+        sunday = second_sunday + timedelta(days=7 * (n - 2))
+        cut = n == last_before_lent
+        for step, name in enumerate(WEEKDAYS[:2] if cut else WEEKDAYS, start=1):
+            year.put(
+                sunday + timedelta(days=step),
+                f"ot-{n}-{name}",
+                f"{name} of Ordinary Time week {n}"
+                + (", which is suspended after the Tuesday" if cut else ""),
+            )
+
+    year.put(a.ash_wednesday, "ash-wednesday", "Easter -46")
+    for offset, name in ((1, "thursday"), (2, "friday"), (3, "saturday")):
+        year.put(
+            a.ash_wednesday + timedelta(days=offset),
+            f"{name}-after-ash-wednesday",
+            f"Ash Wednesday +{offset}",
         )
 
     for week in (1, 2, 3, 4, 5):
         sunday = easter - timedelta(days=42 - 7 * (week - 1))
         year.put(sunday, f"lent-{week}", f"Easter -{(easter - sunday).days}")
+        # The Sunday of Lent week N is the First Sunday of Lent + 7(N-1), so the
+        # week's weekday positions are that Sunday +1 to +6 and the fifth week's
+        # Saturday is Easter -8. Nothing is ever lost: the runs tile the season
+        # exactly and no weekday of Lent can fall on a Sunday.
+        for step, name in enumerate(WEEKDAYS, start=1):
+            year.put(
+                sunday + timedelta(days=step),
+                f"lent-{week}-{name}",
+                f"{name} of week {week} of Lent",
+            )
     year.put(easter - timedelta(days=7), "palm-sunday", "Easter -7")
+    # Monday, Tuesday and Wednesday of Holy Week. Thursday is not a weekday
+    # position: Universal Norms 19 begins the Triduum at the evening Mass of the
+    # Lord's Supper, so the day carries the Chrism Mass and that Mass, both
+    # placed below, and a ferial position there would invent a third.
+    for step, name in ((1, "monday"), (2, "tuesday"), (3, "wednesday")):
+        year.put(
+            easter - timedelta(days=7 - step),
+            f"holy-{name}",
+            f"Palm Sunday +{step}",
+        )
     year.put(easter - timedelta(days=3), "chrism-mass", "Easter -3")
     year.put(easter - timedelta(days=3), "mass-of-the-lords-supper", "Easter -3")
     year.put(easter - timedelta(days=2), "good-friday", "Easter -2")
@@ -1091,6 +1253,25 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
     year.put(easter, "easter-sunday", "Easter")
     for n in (2, 3, 4, 5, 6):
         year.put(easter + timedelta(days=7 * (n - 1)), f"easter-{n}", f"Easter +{7 * (n - 1)}")
+
+    # The Octave of Easter, Easter +1 to +6.
+    for step, name in enumerate(WEEKDAYS, start=1):
+        year.put(easter + timedelta(days=step), f"easter-{name}", f"Easter +{step}")
+    # Weeks 2 to 7, the Monday to the Saturday of each. The Sunday of Easter
+    # week N is Easter + 7(N-1), so this run covers Easter +8 to +48 -- the
+    # Monday after the Octave to the Saturday before Pentecost, which is what
+    # the Norms' own table states independently. The Thursday of week 6 is
+    # Easter +39, where the Ascension stands in its Thursday form; the position
+    # exists under both territorial options and is emitted untagged, the
+    # Ascension itself carrying the tag.
+    for n in (2, 3, 4, 5, 6, 7):
+        sunday = easter + timedelta(days=7 * (n - 1))
+        for step, name in enumerate(WEEKDAYS, start=1):
+            year.put(
+                sunday + timedelta(days=step),
+                f"easter-{n}-{name}",
+                f"{name} of week {n} of Easter Time, Easter +{7 * (n - 1) + step}",
+            )
 
     ascension_thursday, ascension_sunday = TERRITORIAL_OPTIONS["ascension"]
     year.put(a.ascension_thursday, "ascension", "Easter +39", ascension_thursday)
@@ -1107,11 +1288,42 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
         when = a.pentecost + timedelta(days=7 * (n - resumed))
         mark = corpus_thursday if n == resumed + 2 else None
         year.put(when, f"ot-{n}", f"the Sunday of Ordinary Time week {n}", mark)
+        year.governs(when, f"ot-{n}", OT_GOVERNOR_RULE + f"the Sunday of Ordinary Time week {n}")
+
+    # No governor is recorded for weeks 1, R, R+1 and XXXIV, and the silence is
+    # deliberate. Week 1 has no Sunday at all; the Sundays of weeks R and R+1
+    # are Pentecost and the Most Holy Trinity, and week XXXIV's is Christ the
+    # King. Whether "the preceding Sunday" of IGMR 363 means the day that
+    # occurred or the numbered Ordinary Time formulary whose Sunday a solemnity
+    # took is stated by no locus read here -- the 1962 Missal answers the
+    # parallel question in its own book by PRINTING the displaced formulary for
+    # the ferias, which is why `mass-of-the-first-sunday-after-pentecost` exists
+    # in that calendar and why nothing of the sort may be assumed for this one.
+    # So those weeks fail closed rather than being pointed at a solemnity's
+    # orations by proximity.
     year.put(
         a.sunday_before_advent,
         "christ-the-king",
         "Universal Norms 6: the last Sunday in Ordinary Time, which is week 34",
     )
+
+    # Weeks R to XXXIV, whose weekdays are the first to resume on the Monday
+    # after Pentecost. The weeks whose Sundays are Pentecost, the Most Holy
+    # Trinity, a Body and Blood of Christ transferred to Sunday and Christ the
+    # King keep their own numbers and their ferial Lectionary, so their weekdays
+    # are placed like any other week's. Week XXXIV's Saturday is the Saturday
+    # before the First Sunday of Advent, where Ordinary Time and the liturgical
+    # year end. Week L+1 of a thirty-three-week year is omitted entire and its
+    # six positions with it: this run starts at R, so an omitted week is simply
+    # never reached, which is an occurrence result and never a renumbering.
+    for n in range(resumed, 35):
+        sunday = a.pentecost + timedelta(days=7 * (n - resumed))
+        for step, name in enumerate(WEEKDAYS, start=1):
+            year.put(
+                sunday + timedelta(days=step),
+                f"ot-{n}-{name}",
+                f"{name} of Ordinary Time week {n}",
+            )
 
     # Three movables the Universal Norms do not date; the Missal's own temporal
     # cycle assigns them. The Sacred Heart falls at the same Easter offset in

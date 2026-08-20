@@ -206,6 +206,137 @@ assert "2022-12-25" in document["days"]
 assert all("holy-family" not in c["key"] for c in document["days"]["2022-12-25"])
 PY
 
+# The postconciliar weekday series: where each position falls, and which runs
+# are deliberately not keyed at all. The builder is exercised directly with an
+# unrestricted key set, because the index carries no weekday formulary yet and
+# `Year.put` drops a key the calendar does not hold — so the emitted files
+# cannot show these placements until the data waves land, and the arithmetic
+# would otherwise go unchecked for the whole of that interval.
+python3 - "$repo" <<'PY'
+import importlib.machinery, importlib.util, pathlib, sys
+from datetime import date
+
+repo = pathlib.Path(sys.argv[1])
+loader = importlib.machinery.SourceFileLoader("calendar_days", str(repo / "tools/calendar-days"))
+spec = importlib.util.spec_from_loader("calendar_days", loader)
+tool = importlib.util.module_from_spec(spec)
+loader.exec_module(tool)
+
+
+class Everything(set):
+    """Every key, so a placement is not silently dropped for want of a mass."""
+
+    def __contains__(self, item):
+        return True
+
+
+WEEKDAYS = set(tool.WEEKDAYS)
+year = tool.build_postconciliar(2026, Everything())
+placed = {}
+for when, entries in year.placements.items():
+    for entry in entries:
+        placed.setdefault(entry["key"], set()).add(when.isoformat())
+
+# Easter 2026 is 5 April, Ash Wednesday 18 February, Pentecost 24 May, the
+# Baptism 11 January, L = 6, R = 8 and week 7 is omitted — every one of those
+# is a row of the guidance's own worked tables, checked above.
+for key, want in (
+    ("ash-wednesday", "2026-02-18"),
+    ("thursday-after-ash-wednesday", "2026-02-19"),
+    ("lent-1-monday", "2026-02-23"),
+    ("lent-5-saturday", "2026-03-28"),
+    ("holy-monday", "2026-03-30"),
+    ("holy-wednesday", "2026-04-01"),
+    ("easter-monday", "2026-04-06"),
+    ("easter-2-monday", "2026-04-13"),
+    # The Thursday of Easter week 6 is Easter +39, where the Ascension stands
+    # in its Thursday form. The position exists under both territorial options.
+    ("easter-6-thursday", "2026-05-14"),
+    ("easter-7-saturday", "2026-05-23"),
+    # Week I has no Sunday: its weekdays open on the Monday after the Baptism.
+    ("ot-1-monday", "2026-01-12"),
+    ("ot-2-monday", "2026-01-19"),
+    # Week L keeps its Monday and Tuesday and is suspended after them.
+    ("ot-6-tuesday", "2026-02-17"),
+    # The resumed week's weekdays are the first after Pentecost, and week
+    # XXXIV's Saturday is the Saturday before the First Sunday of Advent.
+    ("ot-8-monday", "2026-05-25"),
+    ("ot-34-saturday", "2026-11-28"),
+    # The days within the Octave of the Nativity, named by civil date at
+    # Universal Norms 35. 25 December 2025 is a Thursday, so all three are held.
+    ("christmas-december-29", "2025-12-29"),
+    ("christmas-december-31", "2025-12-31"),
+):
+    assert placed.get(key) == {want}, (key, sorted(placed.get(key) or ()), want)
+
+# A position the year never reaches is unplaced, never renumbered: week L's
+# Wednesday to Saturday are suspended by Ash Wednesday, and 2026 omits week 7
+# entire, its six weekday positions with it.
+for key in ("ot-6-wednesday", "ot-6-saturday", "ot-7-monday", "ot-7-saturday"):
+    assert key not in placed, (key, sorted(placed[key]))
+# Thursday of Holy Week carries the Chrism Mass and the Mass of the Lord's
+# Supper and is not a weekday position; a third mass there would be invented.
+assert "holy-thursday" not in placed, placed.get("holy-thursday")
+
+# Two runs are placed by nobody, and the refusal is the deliverable. The
+# guidance states their positions and states that the key grammar the Missal
+# and the Ordo lectionum Missae print them under has not been read in any
+# witness held here, so nothing may be keyed by inference.
+refused = {row["what"]: row["why"] for row in year.unresolved}
+assert "the weekdays of Advent" in refused, refused
+assert any(w.startswith("the weekdays of Christmas Time") for w in refused), refused
+for why in refused.values():
+    assert why.strip(), refused
+assert not [key for key in placed if key.startswith("advent-") and key != "advent-1"
+            and key.split("-")[-1] in WEEKDAYS], sorted(placed)
+assert not [key for key in placed if "january" in key], sorted(placed)
+
+# `governs` records which Sunday IGMR 363 lists first for the weekdays that
+# follow it, and NOTHING reads it for this calendar: `resolve_ferial` is never
+# called here, so no ferial formulary is emitted and no weekday is shown a
+# Sunday's text. Stage 4 is where that changes, under the scope declared in
+# the postconciliar rubrics.
+assert year.governors, "no Ordinary Time Sunday governs the weekdays after it"
+for sunday, governor in year.governors.items():
+    assert sunday.weekday() == 6, sunday
+    assert governor["key"].startswith("ot-"), governor
+    assert "appoints none" in governor["rule"], governor
+assert year.ferial == {}, year.ferial
+assert year.borrowed == {}, year.borrowed
+
+# Over the whole emitted span: no weekday position stands on a Sunday or
+# outside its own season, a thirty-three-week year never reaches ten of
+# Ordinary Time's 204 positions and a thirty-four-week year never reaches four,
+# and 30 December fails closed in exactly the years in which no Sunday falls
+# within the octave of the Nativity.
+SEASON_OF = {"lent": "lent", "holy": "holy-week", "easter": "easter", "ot": "ordinary-time",
+             "christmas": "christmas"}
+lost = {}
+closed = 0
+for ending in range(tool.FIRST_YEAR, tool.LAST_YEAR + 1):
+    built = tool.build_postconciliar(ending, Everything())
+    reached = set()
+    for when, entries in built.placements.items():
+        for entry in entries:
+            key = entry["key"]
+            if key.split("-")[-1] not in WEEKDAYS and not key.startswith("christmas-december-"):
+                continue
+            if key in ("good-friday",):
+                continue
+            assert when.weekday() != 6, (ending, key, when)
+            assert built.anchors.begins <= when <= built.anchors.last_day, (ending, key, when)
+            season = SEASON_OF.get(key.split("-")[0], "lent")
+            assert built.season_of(when) == season, (ending, key, when, built.season_of(when))
+            if key.startswith("ot-"):
+                reached.add(key)
+    lost.setdefault(built.facts["ordinary_time_weeks"], set()).add(204 - len(reached))
+    if "the weekday position of 30 December" in [row["what"] for row in built.unresolved]:
+        closed += 1
+        assert date(ending - 1, 12, 25).weekday() == 6, ending
+assert lost == {33: {10}, 34: {4}}, lost
+assert closed == 15, closed
+PY
+
 # `day` answers one date and says what it is.
 run_tool day --date 2026-04-05 --calendar roman-1962 --format json >"$sandbox/one.json"
 for want in '"easter-sunday"' 'finding aid'; do
