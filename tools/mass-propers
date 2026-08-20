@@ -51,7 +51,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar postconciliar --format json",
             (
-                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+36056 chars]",
+                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+36159 chars]",
             ),
         ),
     ),
@@ -100,14 +100,14 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --out build/example-propers",
             (
-                "postconciliar: 268 masses, 1144 citations",
-                "roman-1962: 490 masses, 2194 citations",
-                "roman-pre-1955: 490 masses, 2187 citations",
+                "postconciliar: 269 masses, 1721 citations",
+                "roman-1962: 491 masses, 4340 citations",
+                "roman-pre-1955: 491 masses, 4333 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  refused: 14",
+                "  refused: 32",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
         ),
@@ -115,8 +115,8 @@ EXAMPLES = {
             "tools/mass-propers structure --check",
             (
                 "postconciliar: 269 masses, 1721 citations",
-                "roman-1962: 491 masses, 2257 citations",
-                "roman-pre-1955: 491 masses, 2250 citations",
+                "roman-1962: 491 masses, 4340 citations",
+                "roman-pre-1955: 491 masses, 4333 citations",
                 "  4 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. `make check-calendar-masses` runs this",
@@ -126,13 +126,13 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
+                "# roman-1962 English orations: 503 slots appointed, 373 with English, 81 ledgered untranslated, 49 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot",
+                "# postconciliar English orations: 328 slots appointed, 91 with English, 193 ledgered untranslated, 44 unaccounted; 0 composed propers outside the ledger's slots, 3 ledger rows matching no slot",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
                 "| --- | --- | ---: | ---: | ---: |",
-                "| roman-pre-1955 | seasonal | 6 | 6 | 6 |",
-                "| roman-1962 | seasonal | 128 | 1121 | 5 |",
-                "... 49 more lines",
+                "... 88 more lines",
             ),
             "prints the block and writes nothing; two tables, then the keys each row counts by",
         ),
