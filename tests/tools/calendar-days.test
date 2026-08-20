@@ -206,12 +206,12 @@ assert "2022-12-25" in document["days"]
 assert all("holy-family" not in c["key"] for c in document["days"]["2022-12-25"])
 PY
 
-# The postconciliar weekday series: where each position falls, and which runs
-# are deliberately not keyed at all. The builder is exercised directly with an
-# unrestricted key set, because the index carries no weekday formulary yet and
-# `Year.put` drops a key the calendar does not hold — so the emitted files
-# cannot show these placements until the data waves land, and the arithmetic
-# would otherwise go unchecked for the whole of that interval.
+# The postconciliar weekday series: where each position falls, and which day is
+# still refused. The builder is exercised directly with an unrestricted key set,
+# because the index does not yet carry every weekday formulary — Ordinary Time
+# weeks 29 to 34 are still to land — and `Year.put` drops a key the calendar
+# does not hold, so the emitted files cannot show those placements and the
+# arithmetic would otherwise go unchecked for the whole of that interval.
 python3 - "$repo" <<'PY'
 import importlib.machinery, importlib.util, pathlib, sys
 from datetime import date
@@ -233,9 +233,11 @@ class Everything(set):
 WEEKDAYS = set(tool.WEEKDAYS)
 year = tool.build_postconciliar(2026, Everything())
 placed = {}
+tagged = {}
 for when, entries in year.placements.items():
     for entry in entries:
         placed.setdefault(entry["key"], set()).add(when.isoformat())
+        tagged.setdefault(when.isoformat(), {})[entry["key"]] = entry.get("territorial")
 
 # Easter 2026 is 5 April, Ash Wednesday 18 February, Pentecost 24 May, the
 # Baptism 11 January, L = 6, R = 8 and week 7 is omitted — every one of those
@@ -266,6 +268,17 @@ for key, want in (
     # Universal Norms 35. 25 December 2025 is a Thursday, so all three are held.
     ("christmas-december-29", "2025-12-29"),
     ("christmas-december-31", "2025-12-31"),
+    # Advent's week-keyed run opens on the Monday after the First Sunday, which
+    # is 2025-11-30, and stops at 16 December: week 3 keeps its Monday and
+    # Tuesday that year and reaches no further.
+    ("advent-1-monday", "2025-12-01"),
+    ("advent-2-saturday", "2025-12-13"),
+    ("advent-3-tuesday", "2025-12-16"),
+    # The date-keyed run picks the days up on 17 December and runs to the
+    # morning Mass of 24 December.
+    ("advent-december-17", "2025-12-17"),
+    ("advent-december-24", "2025-12-24"),
+    ("christmas-january-2", "2026-01-02"),
 ):
     assert placed.get(key) == {want}, (key, sorted(placed.get(key) or ()), want)
 
@@ -278,18 +291,43 @@ for key in ("ot-6-wednesday", "ot-6-saturday", "ot-7-monday", "ot-7-saturday"):
 # Supper and is not a weekday position; a third mass there would be invented.
 assert "holy-thursday" not in placed, placed.get("holy-thursday")
 
-# Two runs are placed by nobody, and the refusal is the deliverable. The
-# guidance states their positions and states that the key grammar the Missal
-# and the Ordo lectionum Missae print them under has not been read in any
-# witness held here, so nothing may be keyed by inference.
+# The two runs the guidance kept unkeyed until the Order of Readings was read
+# for them. What that reading found is asserted here rather than assumed,
+# because each of these is the book's arrangement and not arithmetic, and each
+# is a way of getting the run wrong.
+#
+# The THIRD WEEK OF ADVENT HAS FIVE WEEKDAYS: the book prints no Saturday there,
+# so no year may place one. The FOURTH WEEK HAS NONE AT ALL, its weekdays lying
+# wholly inside the date-keyed run. And a week-keyed position that would fall
+# after 16 December is not reached — never anticipated, folded or renumbered.
+assert "advent-3-saturday" not in placed, placed.get("advent-3-saturday")
+assert not [key for key in placed if key.startswith("advent-4-")], sorted(placed)
+for key in ("advent-3-wednesday", "advent-3-thursday", "advent-3-friday"):
+    assert key not in placed, (key, sorted(placed[key]))
+# 21 December 2025 is the Fourth Sunday of Advent, so the date-keyed run loses
+# that position: a weekday of Advent never stands on a Sunday.
+assert "advent-december-21" not in placed, placed.get("advent-december-21")
+
+# Neither Epiphany branch is chosen. The Epiphany Sunday of 2026 is 4 January,
+# so 5 January carries the 5 January formulary where the Epiphany keeps its
+# date and the first of the after-Epiphany run where it has been transferred,
+# each tagged with the option it holds under and neither offered untagged.
+assert tagged["2026-01-05"] == {
+    "christmas-january-5": "epiphany-january-6",
+    "christmas-january-7": "epiphany-transferred-to-sunday",
+}, tagged["2026-01-05"]
+# Where the two branches agree the day is emitted once and untagged.
+assert tagged["2026-01-02"] == {"christmas-january-2": None}, tagged["2026-01-02"]
+# The days after the Epiphany run to the Saturday before the Baptism, which is
+# 11 January 2026 under either branch, and no further.
+assert placed.get("christmas-january-12") == {"2026-01-10"}, placed.get("christmas-january-12")
+assert all(stamp < "2026-01-11" for key, stamps in placed.items()
+           if key.startswith("christmas-january-") for stamp in stamps), placed
+
+# Nothing of these runs is refused any more except the one day that fails closed
+# for a reason of its own, and 2026 is not one of its years.
 refused = {row["what"]: row["why"] for row in year.unresolved}
-assert "the weekdays of Advent" in refused, refused
-assert any(w.startswith("the weekdays of Christmas Time") for w in refused), refused
-for why in refused.values():
-    assert why.strip(), refused
-assert not [key for key in placed if key.startswith("advent-") and key != "advent-1"
-            and key.split("-")[-1] in WEEKDAYS], sorted(placed)
-assert not [key for key in placed if "january" in key], sorted(placed)
+assert refused == {}, refused
 
 # `governs` records which Sunday IGMR 363 lists first for the weekdays that
 # follow it, and NOTHING reads it for this calendar: `resolve_ferial` is never
@@ -310,16 +348,24 @@ assert year.borrowed == {}, year.borrowed
 # and 30 December fails closed in exactly the years in which no Sunday falls
 # within the octave of the Nativity.
 SEASON_OF = {"lent": "lent", "holy": "holy-week", "easter": "easter", "ot": "ordinary-time",
-             "christmas": "christmas"}
+             "christmas": "christmas", "advent": "advent"}
+# The date-keyed runs, whose last segment is a day of the month rather than a
+# weekday name and which this loop must cover all the same.
+DATED = ("advent-december-", "christmas-december-", "christmas-january-")
 lost = {}
 closed = 0
+week_keyed = {}
+date_keyed = {}
+years_reached = {}
 for ending in range(tool.FIRST_YEAR, tool.LAST_YEAR + 1):
     built = tool.build_postconciliar(ending, Everything())
     reached = set()
+    advent_weeks = 0
+    advent_dates = 0
     for when, entries in built.placements.items():
         for entry in entries:
             key = entry["key"]
-            if key.split("-")[-1] not in WEEKDAYS and not key.startswith("christmas-december-"):
+            if key.split("-")[-1] not in WEEKDAYS and not key.startswith(DATED):
                 continue
             if key in ("good-friday",):
                 continue
@@ -329,12 +375,34 @@ for ending in range(tool.FIRST_YEAR, tool.LAST_YEAR + 1):
             assert built.season_of(when) == season, (ending, key, when, built.season_of(when))
             if key.startswith("ot-"):
                 reached.add(key)
+            if key.startswith("advent-") and key.split("-")[-1] in WEEKDAYS:
+                advent_weeks += 1
+                assert when <= date(ending - 1, 12, 16), (ending, key, when)
+            if key.startswith("advent-december-"):
+                advent_dates += 1
+            if key.endswith("-transferred-epiphany"):
+                assert entry.get("territorial") == "epiphany-transferred-to-sunday", entry
+            years_reached.setdefault(key, set()).add(ending)
     lost.setdefault(built.facts["ordinary_time_weeks"], set()).add(204 - len(reached))
+    week_keyed[advent_weeks] = week_keyed.get(advent_weeks, 0) + 1
+    date_keyed[advent_dates] = date_keyed.get(advent_dates, 0) + 1
     if "the weekday position of 30 December" in [row["what"] for row in built.unresolved]:
         closed += 1
         assert date(ending - 1, 12, 25).weekday() == 6, ending
 assert lost == {33: {10}, 34: {4}}, lost
 assert closed == 15, closed
+# The two Advent runs against the counts the guidance states from the computus:
+# the week-keyed run holds twelve to seventeen of its seventeen positions, all
+# five of the third week's being lost in the 28 years whose Third Sunday of
+# Advent falls on 16 or 17 December; the date-keyed run holds seven except in
+# the 14 years in which 17 December is itself a Sunday.
+assert week_keyed == {12: 28, 13: 14, 14: 14, 15: 15, 16: 15, 17: 15}, week_keyed
+assert date_keyed == {6: 14, 7: 87}, date_keyed
+# The two entries the Order of Readings restricts by rubric to the regions that
+# keep the Epiphany on a Sunday stand only in the years that rubric names, and
+# each is emitted under the transferred option alone.
+assert len(years_reached["christmas-january-6-transferred-epiphany"]) == 29
+assert len(years_reached["christmas-january-7-transferred-epiphany"]) == 15
 PY
 
 # `day` answers one date and says what it is.

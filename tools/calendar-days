@@ -34,7 +34,12 @@ and says why. Inventing the rule would be worse than the gap. The Ember Days of
 Advent and September, the two Litanies and the Sacred Heart were exactly that
 gap until the guidance grew its "Ember Days, Litanies and the Sacred Heart"
 section, and they are placed here only because that section now states their
-anchors and their loci.
+anchors and their loci. The Advent and Christmas Time weekday runs were the same
+gap one season further on: their positions were fixed but the grammar their
+formularies are printed under was not read, so they were refused by name until
+the guidance recorded a reading of the Ordo lectionum Missae's own arrangement.
+They are keyed here to that arrangement and to nothing else -- the Missal's
+Proper of Time is held in no witness here and remains unread.
 """
 from __future__ import annotations
 
@@ -101,7 +106,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":6735,\"rules_without_a_mass\":[]},\"roman-1962\":{\"place... [+318 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":34734,\"rules_without_a_mass\":[\"ot-29-friday\",\"ot-29-... [+906 chars]",
             ),
         ),
     ),
@@ -121,7 +126,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":136,\"dates_... [+904 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":17,\"dates_r... [+4167 chars]",
             ),
         ),
     ),
@@ -368,36 +373,35 @@ OT_GOVERNOR_RULE = (
     "weekday in Ordinary Time may take, and appoints none of them: "
 )
 
-# The two runs whose positions the guidance places and whose KEY GRAMMAR it
-# leaves open. Refused by name in every year rather than keyed by inference,
-# because this tool places a day only where the guidance fixes it and a run
-# whose printed grammar nobody has read is not fixed. Deleting these and minting
-# keys is the one move that would be wrong; the fix is to read the Advent and
-# Christmas Time headings in the Missal's Proper of Time and in the Ordo
-# lectionum Missae, and to state the grammar in the guidance first.
-ADVENT_WEEKDAYS_UNKEYED = (
-    "the two runs are placed by "
-    + GUIDANCE
-    + " -- the Monday after the First Sunday of Advent to 16 December, and 17 "
-    "to 24 December -- but it records that the key grammar those runs are "
-    "printed under is the Missal's and the Ordo lectionum Missae's own "
-    "arrangement, which no witness held here has been read for. The Universal "
-    "Norms band the days at nos. 16 b and 59; they do not head a formulary. So "
-    "the positions are known and nothing is keyed"
-)
+# The four runs whose KEY GRAMMAR the guidance left open until 20 August 2026,
+# and which it now states, having been read for it in the page images of the
+# Ordo lectionum Missae. Two limits travel with every placement below and are
+# stated here once rather than at each of them.
+#
+#   1. WHAT WAS READ IS THE ORDER OF READINGS, NOT THE MISSAL. The grammar these
+#      keys follow is the one that book prints, which is also all the entries
+#      carry -- Lectionary citations, no oration, antiphon or heading. The
+#      Missal's Proper of Time is held in no witness here, so nothing placed
+#      below states what the Missal heads or appoints on the same day. The
+#      guidance says so in both season sections and in its open points, and the
+#      standing rule it keeps is unchanged: placing entries under a grammar
+#      nobody has read would be inventing the book's arrangement.
+#
+#   2. NEITHER EPIPHANY BRANCH IS CHOSEN. Universal Norms 7 makes the transfer a
+#      decision of the competent authority, so the Christmas Time run is emitted
+#      under both options, each day tagged with the option it holds under and
+#      untagged where the two agree. What the Order of Readings does with the run
+#      under a transfer is not inferred either: it prints two rubrics that say
+#      so, and the guidance carries both.
+#
+# The one number those runs cannot derive: the Order of Readings prints FIVE
+# weekdays in the third week of Advent and not six, its series ending at the
+# Friday, so a sixth would be a day the book does not print. Weeks one and two
+# take the whole of WEEKDAYS.
+ADVENT_THIRD_WEEK_WEEKDAYS = 5
 
-CHRISTMAS_WEEKDAYS_UNKEYED = (
-    "the Missal's heading fixes the window -- from 2 January to the Saturday "
-    "before the feast of the Baptism of the Lord -- and not the keys inside "
-    "it, and "
-    + GUIDANCE
-    + " records that no witness held here has been read for them. Where the "
-    "Epiphany has been transferred it records further that no locus read here "
-    "states what the books do with these days at all, and Universal Norms 7 "
-    "forbids computing the transfer, so both branches would have to be emitted "
-    "tagged or the days refused. They are refused"
-)
-
+# 30 December is the one day of these runs that still fails closed, and not for
+# want of a grammar.
 THIRTIETH_OF_DECEMBER_FAILS_CLOSED = (
     "25 December is a Sunday, so no Sunday falls within the octave and the "
     "Holy Family has none to occupy. "
@@ -1065,8 +1069,46 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             f"advent-{n}",
             f"First Sunday of Advent +{7 * (n - 1)}",
         )
-    # Advent's weekdays are placed by nobody. See ADVENT_WEEKDAYS_UNKEYED.
-    year.refuse("the weekdays of Advent", ADVENT_WEEKDAYS_UNKEYED)
+    # Advent's weekdays, in the two runs the guidance places and under the two
+    # grammars it now states from the Order of Readings. The week-keyed run runs
+    # from the Monday after the First Sunday of Advent to 16 December and the
+    # date-keyed run from 17 to 24 December, which is the same boundary the
+    # Norms band at nos. 16 b and 59 and the same one the book's own acclamation
+    # formulary for the earlier run is headed by.
+    #
+    # Two traps, and both are the book's arrangement rather than arithmetic. The
+    # THIRD WEEK HAS FIVE WEEKDAYS: the Order of Readings prints no Saturday
+    # there, and a sixth would be a day the book does not print. There is NO
+    # FOURTH WEEK: the Fourth Sunday of Advent falls 18 to 24 December, so its
+    # weekdays lie wholly inside the date-keyed run. Every position lost to 16
+    # December is one of the third week's -- no position in 15 years of the span,
+    # all five in 28 -- and a lost position is simply not reached, never
+    # anticipated onto an earlier day and never renumbered.
+    for week in (1, 2, 3):
+        sunday = a.begins + timedelta(days=7 * (week - 1))
+        days = WEEKDAYS[:ADVENT_THIRD_WEEK_WEEKDAYS] if week == 3 else WEEKDAYS
+        for step, name in enumerate(days, start=1):
+            when = sunday + timedelta(days=step)
+            if when > date(ending - 1, 12, 16):
+                continue
+            year.put(
+                when,
+                f"advent-{week}-{name}",
+                f"{name} of week {week} of Advent, the run ending at 16 December",
+            )
+    # 17 to 24 December, keyed by the civil date in the book as in the Norms'
+    # own band. At least one of the eight is a Sunday in every year, the Fourth
+    # Sunday of Advent always falling inside the band, and six are held in the
+    # 14 years of the span in which 17 December is itself a Sunday.
+    for day_of_month in range(17, 25):
+        when = date(ending - 1, 12, day_of_month)
+        if when.weekday() == 6:
+            continue
+        year.put(
+            when,
+            f"advent-december-{day_of_month}",
+            f"{day_of_month} December, a weekday of Advent from 17 to 24 December",
+        )
     year.put(a.christmas, "nativity", "25 December")
 
     within = sunday_after(a.christmas)
@@ -1145,13 +1187,83 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             moved_option,
         )
 
-    # The weekdays between 2 January and the Saturday before the Baptism are
-    # placed by nobody. See CHRISTMAS_WEEKDAYS_UNKEYED.
-    year.refuse(
-        "the weekdays of Christmas Time from 2 January to the Saturday before "
-        "the Baptism of the Lord",
-        CHRISTMAS_WEEKDAYS_UNKEYED,
-    )
+    # The weekdays of Christmas Time from 2 January to the Saturday before the
+    # Baptism of the Lord, whose window is the Missal's own heading and whose
+    # keys are the Order of Readings'. The run is built ONCE PER EPIPHANY OPTION
+    # and then merged, because the two options do not put the same formulary on
+    # the same date and the difference is the book's, not this file's:
+    #
+    #   Under the 6 January form the days are keyed by their own civil date --
+    #   2 to 5 January before the solemnity, 7 to 12 January after it, that
+    #   second run stopping at the Saturday before the Baptism, which is the
+    #   Sunday after 6 January.
+    #
+    #   Under the transferred form the second run hangs from the EPIPHANY SUNDAY
+    #   and not from the date. The Order of Readings directs at 2 January that
+    #   where the Epiphany is kept on the Sunday falling 2 to 8 January the 7 to
+    #   12 January readings are taken after it and the date-headed days that
+    #   would have followed are omitted; and at the head of that run that its six
+    #   entries serve the days following the Epiphany even where it is
+    #   transferred, as far as the following Saturday. So where that Sunday falls
+    #   2 to 6 January the six days after it take the six entries in order, and
+    #   where it falls on 7 or 8 January the Baptism is the next day and the run
+    #   is never reached. For those years the book prints two further date-headed
+    #   days, 6 and 7 January, each restricted by its own rubric to the regions
+    #   in which the Epiphany is kept on that Sunday.
+    #
+    # Neither branch is chosen here. A date the two agree on is emitted untagged;
+    # a date they differ on carries both, each tagged with the option it holds
+    # under, exactly as the Epiphany and the Baptism themselves are.
+    under_january_6: dict[date, tuple[str, str]] = {}
+    under_a_sunday: dict[date, tuple[str, str]] = {}
+    for day_of_month in (2, 3, 4, 5):
+        when = date(ending, 1, day_of_month)
+        entry = (
+            f"christmas-january-{day_of_month}",
+            f"{day_of_month} January, a weekday of Christmas Time",
+        )
+        if when.weekday() != 6:
+            under_january_6[when] = entry
+        # Under the transferred form these days run only as far as the Epiphany
+        # Sunday itself; the book omits the date-headed days that follow it.
+        if when < epiphany_sunday:
+            under_a_sunday[when] = entry
+    for day_of_month in range(7, 13):
+        when = date(ending, 1, day_of_month)
+        if when < baptism_fixed:
+            under_january_6[when] = (
+                f"christmas-january-{day_of_month}",
+                f"{day_of_month} January, a weekday after the Epiphany of 6 January",
+            )
+    if epiphany_sunday <= date(ending, 1, 6):
+        for step in range(1, 7):
+            under_a_sunday[epiphany_sunday + timedelta(days=step)] = (
+                f"christmas-january-{6 + step}",
+                f"the Epiphany kept on a Sunday +{step}, which takes the "
+                f"{6 + step} January formulary",
+            )
+    else:
+        under_a_sunday[date(ending, 1, 6)] = (
+            "christmas-january-6-transferred-epiphany",
+            "6 January, a weekday where the Epiphany is kept on the Sunday "
+            "falling on 7 or 8 January",
+        )
+        if epiphany_sunday == date(ending, 1, 8):
+            under_a_sunday[date(ending, 1, 7)] = (
+                "christmas-january-7-transferred-epiphany",
+                "7 January, a weekday where the Epiphany is kept on the Sunday "
+                "falling on 8 January",
+            )
+    for when in sorted(set(under_january_6) | set(under_a_sunday)):
+        fixed_day = under_january_6.get(when)
+        moved_day = under_a_sunday.get(when)
+        if fixed_day == moved_day:
+            year.put(when, fixed_day[0], fixed_day[1])
+            continue
+        if fixed_day:
+            year.put(when, fixed_day[0], fixed_day[1], fixed_option)
+        if moved_day:
+            year.put(when, moved_day[0], moved_day[1], moved_option)
 
     # Ordinary Time, anchored at both ends. The Sunday numbering is the same
     # under either Epiphany option, because both put the Second Sunday seven
