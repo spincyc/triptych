@@ -117,7 +117,7 @@ EXAMPLES = {
             "tools/mass-ordinary check --out build/example-ordinary",
             (
                 "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "check reads the inventories, joins the artifacts, and reports whether --out is already current; it writes nothing",
@@ -192,7 +192,8 @@ EXAMPLES = {
             (
                 "roman-1962: 195 elements",
                 "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  195 elements  public-domain",
-                "  absent: latin-not-transcribed 195",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  112 elements  public-domain",
+                "  absent: no-facing-latin 83",
             ),
             "the 1962 Ordinary is held whole in English and not at all in Latin; the absence is recorded, not inferred",
         ),
@@ -202,7 +203,7 @@ EXAMPLES = {
             "tools/mass-ordinary check --out build/example-ordinary",
             (
                 "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "read-only first: `check` validates the inventories and reports whether --out is current",
@@ -211,7 +212,7 @@ EXAMPLES = {
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
                 "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
-                "roman-1962: 6 sections, 195 elements, 1 witness, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "wrote 3 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
@@ -344,13 +345,23 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
     world, and a value typed into an inventory beside the text it licenses is
     exactly the copy that drifts.
     """
-    held: dict[str, dict] = {}
+    held: dict[tuple[str, str], dict] = {}
     for entry in source.get("witnesses") or []:
         identifier = entry.get("id")
         if not isinstance(identifier, str) or not identifier:
             raise SourceError(f"{name}: a witness has no id")
-        if identifier in held:
-            raise SourceError(f"{name}: witness {identifier} is declared twice")
+        # Keyed by (id, lang), because one printing may witness two languages:
+        # the 1861 Cummiskey sets Latin and English in facing columns and both
+        # are that edition's own text. `source_id` reaches the page as
+        # attribution and must name the real edition record, so minting a
+        # second id for the Latin would misattribute it.
+        language = entry.get("lang")
+        if not isinstance(language, str) or not language:
+            raise SourceError(f"{name}: witness {identifier} declares no lang")
+        if (identifier, language) in held:
+            raise SourceError(
+                f"{name}: witness {identifier} is declared twice for {language}"
+            )
         rights = entry.get("rights")
         if rights not in PUBLISHABLE_RIGHTS:
             raise SourceError(
@@ -372,7 +383,7 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
                     f"{name}: witness {identifier} declares {rights!r} but "
                     f"{artifact_id} is recorded as {recorded!r} in the source library"
                 )
-        held[identifier] = dict(entry)
+        held[(identifier, language)] = dict(entry)
     if not held:
         raise SourceError(f"{name}: no witness is declared")
     return held
@@ -533,6 +544,56 @@ def absent_pair(holder: dict, fallback: dict, absences: dict, key: str, name: st
     return out
 
 
+
+def latin_side(
+    section: dict, witnesses: dict, library: dict, name: str
+) -> tuple[dict[str, dict], dict | None, str | None]:
+    """The section's Latin rows, keyed by element, or nothing where it has none.
+
+    The 1861 printing sets Latin and English in facing columns, and until this
+    existed only the English column could reach a page: `from_artifact` built an
+    element's text from one column and `absent["latin"]` was always the
+    section's reason, so `--lang la` could print nothing but the absence however
+    much Latin the project held.
+
+    A row with an empty `latin` field is refused rather than skipped. Absence is
+    carried by NOT having a row, so an empty one is a row that should not exist,
+    and letting it pass would turn a transcription gap into a silent blank.
+    """
+    artifact_id = section.get("artifact_latin")
+    if not artifact_id:
+        return {}, None, None
+    witness_id = section.get("witness_latin") or section.get("witness")
+    witness = witnesses.get((witness_id, "la"))
+    if witness is None:
+        raise SourceError(
+            f"{name}: section {section['key']} draws Latin from {witness_id!r}, "
+            "which is not declared as a witness for la"
+        )
+    if artifact_id not in (witness.get("artifacts") or []):
+        raise SourceError(
+            f"{name}: section {section['key']} draws on {artifact_id}, which witness "
+            f"{witness_id} does not list for la; the rights check would not have covered it"
+        )
+    record = library.get(artifact_id)
+    if record is None:
+        raise SourceError(f"{name}: section {section['key']} names unknown artifact {artifact_id}")
+    rows: dict[str, dict] = {}
+    for row in payload_rows(record):
+        key = (row.get("element_key") or "").strip()
+        if not key:
+            raise SourceError(f"{artifact_id}: a row has no element_key")
+        if key in rows:
+            raise SourceError(f"{artifact_id}: element {key} appears twice")
+        if not (row.get("latin") or "").strip():
+            raise SourceError(
+                f"{artifact_id}: row {key} carries no Latin; a section states an "
+                "absence once and an empty row states it nowhere"
+            )
+        rows[key] = {"latin": (row.get("latin") or "").strip()}
+    return rows, witness, witness_id
+
+
 def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict, name: str) -> list[dict]:
     """The elements of a section whose text an artifact holds.
 
@@ -545,14 +606,15 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
     if record is None:
         raise SourceError(f"{name}: section {section['key']} names unknown artifact {artifact_id}")
     witness_id = section.get("witness")
-    if witness_id not in witnesses:
+    witness = witnesses.get((witness_id, "en"))
+    if witness is None:
         raise SourceError(f"{name}: section {section['key']} names undeclared witness {witness_id!r}")
-    witness = witnesses[witness_id]
     if artifact_id not in (witness.get("artifacts") or []):
         raise SourceError(
             f"{name}: section {section['key']} draws on {artifact_id}, which witness "
             f"{witness_id} does not list; the rights check would not have covered it"
         )
+    latin_rows, latin_witness, latin_id = latin_side(section, witnesses, library, name)
 
     elements = []
     for row in payload_rows(record):
@@ -564,6 +626,7 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             raise SourceError(f"{artifact_id}: row {key} has kind {kind!r}")
         english = (row.get("english") or "").strip()
         incipit = (row.get("latin_incipit") or "").strip()
+        latin = (latin_rows.pop(key, {}) or {}).get("latin", "")
         absent = absent_pair({}, section, absences, key, name)
         if english:
             absent["english"] = None
@@ -572,6 +635,8 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
                 f"{artifact_id}: row {key} has no English and its section names no "
                 "reason; a silent gap is the one thing this layer must never emit"
             )
+        if latin:
+            absent["latin"] = None
         elements.append(
             {
                 "key": section["key"] + "/" + key,
@@ -593,9 +658,27 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
                         }
                     ]
                     if english
-                    else None
-                ),
+                    else []
+                )
+                + (
+                    [
+                        {
+                            "lang": latin_witness["lang"],
+                            "source_id": latin_id,
+                            "rights": latin_witness["rights"],
+                            "text": latin,
+                        }
+                    ]
+                    if latin
+                    else []
+                )
+                or None,
             }
+        )
+    if latin_rows:
+        raise SourceError(
+            f"{name}: section {section['key']} carries Latin for "
+            f"{', '.join(sorted(latin_rows))}, which its English artifact does not hold"
         )
     return elements
 
@@ -639,9 +722,9 @@ def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict
         english = entry.get("english")
         if english:
             witness_id = english.get("witness")
-            if witness_id not in witnesses:
+            witness = witnesses.get((witness_id, "en"))
+            if witness is None:
                 raise SourceError(f"{name}: element {key} names undeclared witness {witness_id!r}")
-            witness = witnesses[witness_id]
             artifact_id = english.get("artifact")
             if artifact_id not in (witness.get("artifacts") or []):
                 raise SourceError(
@@ -734,13 +817,14 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
     slots = slot_table(source, sections, name)
 
     total = sum(len(section["elements"]) for section in sections)
-    held: dict[str, int] = {}
+    held: dict[tuple[str, str], int] = {}
     by_lang: dict[str, int] = {}
     absent_counts: dict[str, int] = {}
     for section in sections:
         for element in section["elements"]:
             for translation in element["translations"] or []:
-                held[translation["source_id"]] = held.get(translation["source_id"], 0) + 1
+                reach = (translation["source_id"], translation["lang"])
+                held[reach] = held.get(reach, 0) + 1
                 by_lang[translation["lang"]] = by_lang.get(translation["lang"], 0) + 1
             for reason in element["absent"].values():
                 if reason:
@@ -755,9 +839,9 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 "rights": entry["rights"],
                 "acknowledgement": entry.get("acknowledgement") or None,
                 "caution": entry.get("caution") or None,
-                "held": held.get(identifier, 0),
+                "held": held.get((identifier, entry["lang"]), 0),
             }
-            for identifier, entry in witnesses.items()
+            for (identifier, _), entry in witnesses.items()
         ),
         key=lambda row: (row["lang"], -row["held"], row["source_id"]),
     )

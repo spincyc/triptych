@@ -93,11 +93,26 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
 ]
 
-# ---------------------------------------------------------------- absences
+# The same printing, witnessing its other column. `id` is the edition's real
+# record because `source_id` reaches the page as attribution; a second id
+# minted for the Latin would misattribute it. `witness_table` keys by
+# (id, lang), so the pair is what must be unique.
+[[witnesses]]
+id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+lang = "la"
+label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), the facing Latin column"
+rights = "public-domain"
+caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. No element-by-element collation against the 1962 book is asserted."
+artifacts = [
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+]
 
-[[absences]]
-key = "latin-not-transcribed"
-what = "The 1861 book prints Latin and English in facing columns, and the facing Latin column is now transcribed: 112 of this file's 195 elements have their Latin in the six -la artifacts the sections below name as artifact_latin, read from the page images on 2026-08-20. What is missing is the carrying, not the reading. The reader that builds this Ordinary takes an element's text from one column of one artifact, so no element yet shows the Latin and every one of them still reports this reason; when the reader learns to join the -la row, the 112 stop reporting it and the remaining 83 - blocks the book sets across the full measure in English with no facing Latin at all - move to no-facing-latin below. Nothing is withheld for any rights reason: this printing is public domain entire."
+# ---------------------------------------------------------------- absences
 
 [[absences]]
 key = "no-facing-latin"
@@ -111,7 +126,7 @@ name = "The Priest at the Foot of the Altar"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 [[sections]]
 key = "oblatio"
@@ -119,7 +134,7 @@ name = "The Lessons and the Offertory"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 [[sections]]
 key = "praefatio"
@@ -127,7 +142,7 @@ name = "The Prefaces"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 [[sections]]
 key = "canon"
@@ -135,7 +150,7 @@ name = "The Canon of the Mass"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 [[sections]]
 key = "communio"
@@ -143,7 +158,7 @@ name = "The Communion"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 [[sections]]
 key = "conclusio"
@@ -151,7 +166,7 @@ name = "The Ablutions and the Last Gospel"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en"
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
-absent_latin = "latin-not-transcribed"
+absent_latin = "no-facing-latin"
 
 # ---------------------------------------------------------------- slots
 #

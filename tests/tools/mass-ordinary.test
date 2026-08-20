@@ -176,14 +176,25 @@ case "$withheld" in
 	;;
 esac
 
-# `--lang la` reports the LATIN's reason. Reading the block by ISO code found
-# nothing and fell through to the English one, which reported the postconciliar
-# Latin withheld under ICEL: a real reason, for the other text.
+# `--lang la` prints the Latin, and where the witness has none it reports the
+# LATIN's own reason. Reading the block by ISO code once found nothing and fell
+# through to the English one, which reported the postconciliar Latin withheld
+# under ICEL: a real reason, for the other text. Since the 1861 printing's
+# facing column was transcribed, 112 of the 195 elements carry Latin and the
+# remaining 83 are blocks the book sets across the full measure with no facing
+# Latin at all, so the reason names that and not a transcription gap.
 latin="$(run_tool show --calendar roman-1962 --lang la)"
 case "$latin" in
-*"[absent: latin-not-transcribed]"*) ;;
+*"[absent: no-facing-latin]"*) ;;
 *)
 	echo "--lang la does not report the Latin's own reason" >&2
+	exit 1
+	;;
+esac
+case "$latin" in
+*"IN Nomine Patris, et Filii, et Spiritus Sancti"*) ;;
+*)
+	echo "--lang la printed no Latin from the facing column" >&2
 	exit 1
 	;;
 esac
