@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parents[2]
 # data or the seating engine as they now stand, and the fail-closed guard in
 # day-reader.js is untouched. See the 2026-08-20 row in
 # guidance/liturgy-browser-roadmap.md.
-BASE = "9a3453c81"
+BASE = "5d6c92627"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
 JS = LITURGY / "day-reader.js"
