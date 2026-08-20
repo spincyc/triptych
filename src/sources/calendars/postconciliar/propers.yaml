@@ -312,7 +312,8 @@ psalm_numbering_exceptions:
     sixth. Also a RESPONSORIAL PSALM, and the same open question applies, so settle
     it against the printed page rather than by renumbering
   loci:
-    "Psalm 150:6": ot-23-thursday/Responsorial Psalm, cycle I
+    "Psalm 150:6": ot-23-thursday/Responsorial Psalm, cycle I; ot-33-wednesday/Responsorial
+      Psalm, cycle II
 - psalm: 15
   divergence: Vulgate 15 is Hebrew 16; Hebrew 15 ends at verse 5 and Hebrew 16 runs
     to 11
@@ -570,14 +571,48 @@ citation_divergences:
     "Sirach 27:5-8": "Sirach 27:5-8"
     "Sirach 27:33-28:9": "Sirach 27:33-28:9"
     "Sirach 35:15b-17, 20-22a": "Sirach 35:15b-17, 20-22a"
-- book: Wisdom
-  chapters: [6, 11]
-  divergence: the Vulgate carries a verse the Greek does not at the head of both
-    passages, so Greek 6:n is Vulgate 6:n+1 from 6:12 and Greek 11:n is Vulgate
-    11:n+1 from 11:22, to the end of chapter 11
+- book: 1 Maccabees
+  chapters: [1]
+  divergence: the Vulgate divides the chapter's opening differently and the offset
+    is NOT constant, so no single shift can be written for the book. Collated
+    against the tracked Douay on 2026-08-20 from the printed openings, the Greek
+    1:10-15 is the Vulgate's 1:11-16, 1:41-43 is 1:43-45, 1:54-57 is 1:57-60 and
+    1:62-64 is 1:65-67, the Vulgate's chapter running to 67 where the Greek's runs
+    to 64. Nothing declared this book, so the citation resolved as printed and to
+    other words, which is the failure this list exists to refuse
   numbering:
     hebrew: as-cited
   citations:
+    "1 Maccabees 1:10-15, 41-43, 54-57, 62-64": "1 Maccabees 1:11-16, 43-45, 57-60,
+      65-67"
+- book: Daniel
+  chapters: [6]
+  divergence: the Hebrew and the Nova Vulgata carry the Vulgate's Daniel 5:31 into
+    chapter 6 as its first verse, so this chapter alone stands one number higher
+    than the Vulgate's throughout. Collated against the tracked Douay on 2026-08-20,
+    the cited 6:12-28 is the Vulgate's 6:11-27. Daniel 1, 2, 3, 5 and 7, which this
+    calendar also cites, were read the same way and align; only chapter 6 shifts,
+    which is why the locus is declared by chapter and not by book. Nothing declared
+    it, the Vulgate's chapter runs to 28, and so the citation resolved as printed
+    and to other words
+  numbering:
+    hebrew: as-cited
+  citations:
+    "Daniel 6:12-28": "Daniel 6:11-27"
+- book: Wisdom
+  chapters: [6, 11]
+  divergence: the Vulgate carries a verse the Greek does not at the head of both
+    passages, so Greek 6:n is Vulgate 6:n+1 and Greek 11:n is Vulgate 11:n+1 from
+    11:22, to the end of chapter 11. Chapter 6's offset was recorded here as
+    holding "from 6:12", which was the narrowest reading the citations then
+    carried; collated against the tracked Douay on 2026-08-20 from the printed
+    openings, the Greek 6:1 is already the Vulgate's 6:2, so the extra verse
+    stands at the head of the chapter and the offset holds from 6:1. The two
+    resolutions below are unaffected, both being +1 either way
+  numbering:
+    hebrew: as-cited
+  citations:
+    "Wisdom 6:1-11": "Wisdom 6:2-12"
     "Wisdom 6:12-16": "Wisdom 6:13-17"
     "Wisdom 11:22-12:2": "Wisdom 11:23-12:2"
 proper_order_exceptions:
@@ -34500,6 +34535,2987 @@ sections:
         the Gospel are printed once across both years and carry plain verses. The Ordo prints its
         responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
         tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-29-monday
+      name: Monday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 4, verse: 20}
+                end: {chapter: 4, verse: 25}
+              ref: Romans 4:20-25
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 2, verse: 1}
+                end: {chapter: 2, verse: 10}
+              ref: Ephesians 2:1-10
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Luke
+              ranges:
+              - begin: {chapter: 1, verse: 69}
+                end: {chapter: 1, verse: 70}
+              - begin: {chapter: 1, verse: 71}
+                end: {chapter: 1, verse: 72}
+              - begin: {chapter: 1, verse: 73}
+                end: {chapter: 1, verse: 75}
+              ref: Luke 1:69-70, 71-72, 73-75
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 100, verse: 2}
+                end: {chapter: 100, verse: 2}
+              - begin: {chapter: 100, verse: 3}
+                end: {chapter: 100, verse: 3}
+              - begin: {chapter: 100, verse: 4}
+                end: {chapter: 100, verse: 4}
+              - begin: {chapter: 100, verse: 5}
+                end: {chapter: 100, verse: 5}
+              ref: Psalm 100:2, 3, 4, 5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 3}
+          ref: Matthew 5:3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 13}
+            end: {chapter: 12, verse: 21}
+          ref: Luke 12:13-21
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 303,
+        printed page 249, n. 473. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Monday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of Zechariah in Luke 1 and not a psalm, so nothing in it needed
+        converting out of the Ordo''s Vulgate psalm numbering. Nothing of the book''s wording is carried:
+        its pericope titles, psalm responses and acclamation texts stay in the source, and the alternative
+        Alleluia response some of these psalms print is a response and not a second psalm. The Missal
+        prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded here
+        and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-
+        time-weekday records them, and nothing here chooses one.'
+    - key: ot-29-tuesday
+      name: Tuesday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 5, verse: 12}
+                end: {chapter: 5, verse: 12}
+              - begin: {chapter: 5, verse: 15, part: b}
+                end: {chapter: 5, verse: 15, part: b}
+              - begin: {chapter: 5, verse: 17}
+                end: {chapter: 5, verse: 19}
+              - begin: {chapter: 5, verse: 20, part: b}
+                end: {chapter: 5, verse: 21}
+              ref: Romans 5:12, 15b, 17-19, 20b-21
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 2, verse: 12}
+                end: {chapter: 2, verse: 22}
+              ref: Ephesians 2:12-22
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 40, verse: 7}
+                end: {chapter: 40, verse: 8, part: a}
+              - begin: {chapter: 40, verse: 8, part: b}
+                end: {chapter: 40, verse: 9}
+              - begin: {chapter: 40, verse: 10}
+                end: {chapter: 40, verse: 10}
+              - begin: {chapter: 40, verse: 17}
+                end: {chapter: 40, verse: 17}
+              ref: Psalm 40:7-8a, 8b-9, 10, 17
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 85, verse: 9, part: ab}
+                end: {chapter: 85, verse: 10}
+              - begin: {chapter: 85, verse: 11}
+                end: {chapter: 85, verse: 12}
+              - begin: {chapter: 85, verse: 13}
+                end: {chapter: 85, verse: 14}
+              ref: Psalm 85:9ab-10, 11-12, 13-14
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 36}
+            end: {chapter: 21, verse: 36}
+          ref: Luke 21:36
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 35}
+            end: {chapter: 12, verse: 38}
+          ref: Luke 12:35-38
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 303,
+        printed page 249, n. 474. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Tuesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I first
+        reading is printed with discrete part-verses - 12, 15b, 17-19, 20b-21 - and is carried exactly as
+        enumerated. Nothing of the book''s wording is carried: its pericope titles, psalm responses and
+        acclamation texts stay in the source, and the alternative Alleluia response some of these psalms
+        print is a response and not a second psalm. The Missal prints no formulary for an Ordinary Time
+        weekday, so no oration and no antiphon is recorded here and none is taken from the Sunday; IGMR
+        363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them, and nothing
+        here chooses one.'
+    - key: ot-29-wednesday
+      name: Wednesday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 6, verse: 12}
+                end: {chapter: 6, verse: 18}
+              ref: Romans 6:12-18
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 3, verse: 2}
+                end: {chapter: 3, verse: 12}
+              ref: Ephesians 3:2-12
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 124, verse: 1}
+                end: {chapter: 124, verse: 3}
+              - begin: {chapter: 124, verse: 4}
+                end: {chapter: 124, verse: 6}
+              - begin: {chapter: 124, verse: 7}
+                end: {chapter: 124, verse: 8}
+              ref: Psalm 124:1-3, 4-6, 7-8
+          'II':
+            verses:
+            - book: Isaiah
+              ranges:
+              - begin: {chapter: 12, verse: 2}
+                end: {chapter: 12, verse: 3}
+              - begin: {chapter: 12, verse: 4, part: bcd}
+                end: {chapter: 12, verse: 4, part: bcd}
+              - begin: {chapter: 12, verse: 5}
+                end: {chapter: 12, verse: 6}
+              ref: Isaiah 12:2-3, 4bcd, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 24, verse: 42, part: a}
+            end: {chapter: 24, verse: 42, part: a}
+          - begin: {chapter: 24, verse: 44}
+            end: {chapter: 24, verse: 44}
+          ref: Matthew 24:42a, 44
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 39}
+            end: {chapter: 12, verse: 48}
+          ref: Luke 12:39-48
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 304,
+        printed page 250, n. 475. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Wednesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year II
+        responsorial is the canticle of Isaiah 12 and not a psalm. Nothing of the book''s wording is
+        carried: its pericope titles, psalm responses and acclamation texts stay in the source, and the
+        alternative Alleluia response some of these psalms print is a response and not a second psalm. The
+        Missal prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded
+        here and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml
+        ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-29-thursday
+      name: Thursday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 6, verse: 19}
+                end: {chapter: 6, verse: 23}
+              ref: Romans 6:19-23
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 3, verse: 14}
+                end: {chapter: 3, verse: 21}
+              ref: Ephesians 3:14-21
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 2}
+              - begin: {chapter: 1, verse: 3}
+                end: {chapter: 1, verse: 3}
+              - begin: {chapter: 1, verse: 4}
+                end: {chapter: 1, verse: 4}
+              - begin: {chapter: 1, verse: 6}
+                end: {chapter: 1, verse: 6}
+              ref: Psalm 1:1-2, 3, 4, 6
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 33, verse: 1}
+                end: {chapter: 33, verse: 2}
+              - begin: {chapter: 33, verse: 4}
+                end: {chapter: 33, verse: 5}
+              - begin: {chapter: 33, verse: 11}
+                end: {chapter: 33, verse: 12}
+              - begin: {chapter: 33, verse: 18}
+                end: {chapter: 33, verse: 19}
+              ref: Psalm 33:1-2, 4-5, 11-12, 18-19
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Philippians
+          ranges:
+          - begin: {chapter: 3, verse: 8}
+            end: {chapter: 3, verse: 9}
+          ref: Philippians 3:8-9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 49}
+            end: {chapter: 12, verse: 53}
+          ref: Luke 12:49-53
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 304,
+        printed page 250, n. 476. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Thursday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-29-friday
+      name: Friday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 7, verse: 18}
+                end: {chapter: 7, verse: 25, part: a}
+              ref: Romans 7:18-25a
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 4, verse: 1}
+                end: {chapter: 4, verse: 6}
+              ref: Ephesians 4:1-6
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 119, verse: 66}
+                end: {chapter: 119, verse: 66}
+              - begin: {chapter: 119, verse: 68}
+                end: {chapter: 119, verse: 68}
+              - begin: {chapter: 119, verse: 76}
+                end: {chapter: 119, verse: 76}
+              - begin: {chapter: 119, verse: 77}
+                end: {chapter: 119, verse: 77}
+              - begin: {chapter: 119, verse: 93}
+                end: {chapter: 119, verse: 93}
+              - begin: {chapter: 119, verse: 94}
+                end: {chapter: 119, verse: 94}
+              ref: Psalm 119:66, 68, 76, 77, 93, 94
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 24, verse: 1}
+                end: {chapter: 24, verse: 2}
+              - begin: {chapter: 24, verse: 3}
+                end: {chapter: 24, verse: 4, part: ab}
+              - begin: {chapter: 24, verse: 5}
+                end: {chapter: 24, verse: 6}
+              ref: Psalm 24:1-2, 3-4ab, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 25}
+          ref: Matthew 11:25
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 54}
+            end: {chapter: 12, verse: 59}
+          ref: Luke 12:54-59
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 305,
+        printed page 251, n. 477. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Friday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. Nothing
+        of the book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay
+        in the source, and the alternative Alleluia response some of these psalms print is a response and
+        not a second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and
+        no antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-29-saturday
+      name: Saturday of the Twenty-ninth Week in Ordinary Time
+      registry: 'pc-T-ot-29-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 8, verse: 1}
+                end: {chapter: 8, verse: 11}
+              ref: Romans 8:1-11
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 4, verse: 7}
+                end: {chapter: 4, verse: 16}
+              ref: Ephesians 4:7-16
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 24, verse: 1}
+                end: {chapter: 24, verse: 2}
+              - begin: {chapter: 24, verse: 3}
+                end: {chapter: 24, verse: 4, part: ab}
+              - begin: {chapter: 24, verse: 5}
+                end: {chapter: 24, verse: 6}
+              ref: Psalm 24:1-2, 3-4ab, 5-6
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 122, verse: 1}
+                end: {chapter: 122, verse: 2}
+              - begin: {chapter: 122, verse: 3}
+                end: {chapter: 122, verse: 4, part: a}
+              - begin: {chapter: 122, verse: 4, part: b}
+                end: {chapter: 122, verse: 5}
+              ref: Psalm 122:1-2, 3-4a, 4b-5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 33, verse: 11}
+            end: {chapter: 33, verse: 11}
+          ref: Ezekiel 33:11
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 13, verse: 1}
+            end: {chapter: 13, verse: 9}
+          ref: Luke 13:1-9
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 305,
+        printed page 251, n. 478. The heading read on that image is the twenty-ninth week of the ferial
+        Proper of Time and the day is its Saturday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-30-monday
+      name: Monday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 8, verse: 12}
+                end: {chapter: 8, verse: 17}
+              ref: Romans 8:12-17
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 4, verse: 32}
+                end: {chapter: 5, verse: 8}
+              ref: Ephesians 4:32-5:8
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 68, verse: 2}
+                end: {chapter: 68, verse: 2}
+              - begin: {chapter: 68, verse: 4}
+                end: {chapter: 68, verse: 4}
+              - begin: {chapter: 68, verse: 6}
+                end: {chapter: 68, verse: 7, part: ab}
+              - begin: {chapter: 68, verse: 20}
+                end: {chapter: 68, verse: 21}
+              ref: Psalm 68:2, 4, 6-7ab, 20-21
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 2}
+              - begin: {chapter: 1, verse: 3}
+                end: {chapter: 1, verse: 3}
+              - begin: {chapter: 1, verse: 4}
+                end: {chapter: 1, verse: 4}
+              - begin: {chapter: 1, verse: 6}
+                end: {chapter: 1, verse: 6}
+              ref: Psalm 1:1-2, 3, 4, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 17, verse: 17, part: b}
+            end: {chapter: 17, verse: 17, part: b}
+          - begin: {chapter: 17, verse: 17, part: a}
+            end: {chapter: 17, verse: 17, part: a}
+          ref: John 17:17b, 17a
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 13, verse: 10}
+            end: {chapter: 13, verse: 17}
+          ref: Luke 13:10-17
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 306,
+        printed page 252, n. 479. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Monday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Ordo
+        prints this day''s acclamation reference as verse 17b followed by verse 17a, in that order, and it
+        is carried as printed. Nothing of the book''s wording is carried: its pericope titles, psalm
+        responses and acclamation texts stay in the source, and the alternative Alleluia response some of
+        these psalms print is a response and not a second psalm. The Missal prints no formulary for an
+        Ordinary Time weekday, so no oration and no antiphon is recorded here and none is taken from the
+        Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them,
+        and nothing here chooses one.'
+    - key: ot-30-tuesday
+      name: Tuesday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 8, verse: 18}
+                end: {chapter: 8, verse: 25}
+              ref: Romans 8:18-25
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 5, verse: 21}
+                end: {chapter: 5, verse: 33}
+              ref: Ephesians 5:21-33
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 126, verse: 1}
+                end: {chapter: 126, verse: 2, part: ab}
+              - begin: {chapter: 126, verse: 2, part: cd}
+                end: {chapter: 126, verse: 3}
+              - begin: {chapter: 126, verse: 4}
+                end: {chapter: 126, verse: 5}
+              - begin: {chapter: 126, verse: 6}
+                end: {chapter: 126, verse: 6}
+              ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 128, verse: 1}
+                end: {chapter: 128, verse: 2}
+              - begin: {chapter: 128, verse: 3}
+                end: {chapter: 128, verse: 3}
+              - begin: {chapter: 128, verse: 4}
+                end: {chapter: 128, verse: 5}
+              ref: Psalm 128:1-2, 3, 4-5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 25}
+          ref: Matthew 11:25
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 13, verse: 18}
+            end: {chapter: 13, verse: 21}
+          ref: Luke 13:18-21
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 306,
+        printed page 252, n. 480. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Tuesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. Nothing
+        of the book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay
+        in the source, and the alternative Alleluia response some of these psalms print is a response and
+        not a second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and
+        no antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-30-wednesday
+      name: Wednesday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 8, verse: 26}
+                end: {chapter: 8, verse: 30}
+              ref: Romans 8:26-30
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 6, verse: 1}
+                end: {chapter: 6, verse: 9}
+              ref: Ephesians 6:1-9
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 13, verse: 4}
+                end: {chapter: 13, verse: 5}
+              - begin: {chapter: 13, verse: 6}
+                end: {chapter: 13, verse: 6}
+              ref: Psalm 13:4-5, 6
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 145, verse: 10}
+                end: {chapter: 145, verse: 11}
+              - begin: {chapter: 145, verse: 12}
+                end: {chapter: 145, verse: 13, part: ab}
+              - begin: {chapter: 145, verse: 13, part: cd}
+                end: {chapter: 145, verse: 14}
+              ref: Psalm 145:10-11, 12-13ab, 13cd-14
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 2 Thessalonians
+          ranges:
+          - begin: {chapter: 2, verse: 14}
+            end: {chapter: 2, verse: 14}
+          ref: 2 Thessalonians 2:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 13, verse: 22}
+            end: {chapter: 13, verse: 30}
+          ref: Luke 13:22-30
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 307,
+        printed page 253, n. 481. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Wednesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. Nothing
+        of the book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay
+        in the source, and the alternative Alleluia response some of these psalms print is a response and
+        not a second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and
+        no antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-30-thursday
+      name: Thursday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 8, verse: 31, part: b}
+                end: {chapter: 8, verse: 39}
+              ref: Romans 8:31b-39
+          'II':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 6, verse: 10}
+                end: {chapter: 6, verse: 20}
+              ref: Ephesians 6:10-20
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 109, verse: 21}
+                end: {chapter: 109, verse: 22}
+              - begin: {chapter: 109, verse: 26}
+                end: {chapter: 109, verse: 27}
+              - begin: {chapter: 109, verse: 30}
+                end: {chapter: 109, verse: 31}
+              ref: Psalm 109:21-22, 26-27, 30-31
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 144, verse: 1}
+                end: {chapter: 144, verse: 1}
+              - begin: {chapter: 144, verse: 2}
+                end: {chapter: 144, verse: 2}
+              - begin: {chapter: 144, verse: 9}
+                end: {chapter: 144, verse: 10}
+              ref: Psalm 144:1, 2, 9-10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 19, verse: 38}
+            end: {chapter: 19, verse: 38}
+          - begin: {chapter: 2, verse: 14}
+            end: {chapter: 2, verse: 14}
+          ref: Luke 19:38; 2:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 13, verse: 31}
+            end: {chapter: 13, verse: 35}
+          ref: Luke 13:31-35
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 307,
+        printed page 253, n. 482. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Thursday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Ordo
+        prints this day''s acclamation as two loci in one book and in descending chapter order, Luke 19:38
+        then Luke 2:14; both are carried in the order printed and neither is reordered. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-30-friday
+      name: Friday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 9, verse: 1}
+                end: {chapter: 9, verse: 5}
+              ref: Romans 9:1-5
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 11}
+              ref: Philippians 1:1-11
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 147, verse: 12}
+                end: {chapter: 147, verse: 13}
+              - begin: {chapter: 147, verse: 14}
+                end: {chapter: 147, verse: 15}
+              - begin: {chapter: 147, verse: 19}
+                end: {chapter: 147, verse: 20}
+              ref: Psalm 147:12-13, 14-15, 19-20
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 111, verse: 1}
+                end: {chapter: 111, verse: 2}
+              - begin: {chapter: 111, verse: 3}
+                end: {chapter: 111, verse: 4}
+              - begin: {chapter: 111, verse: 5}
+                end: {chapter: 111, verse: 6}
+              ref: Psalm 111:1-2, 3-4, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 27}
+            end: {chapter: 10, verse: 27}
+          ref: John 10:27
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 14, verse: 1}
+            end: {chapter: 14, verse: 6}
+          ref: Luke 14:1-6
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 308,
+        printed page 254, n. 483. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Friday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-30-saturday
+      name: Saturday of the Thirtieth Week in Ordinary Time
+      registry: 'pc-T-ot-30-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 11, verse: 1}
+                end: {chapter: 11, verse: 2, part: a}
+              - begin: {chapter: 11, verse: 11}
+                end: {chapter: 11, verse: 12}
+              - begin: {chapter: 11, verse: 25}
+                end: {chapter: 11, verse: 29}
+              ref: Romans 11:1-2a, 11-12, 25-29
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 1, verse: 18, part: b}
+                end: {chapter: 1, verse: 26}
+              ref: Philippians 1:18b-26
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 94, verse: 12}
+                end: {chapter: 94, verse: 13, part: a}
+              - begin: {chapter: 94, verse: 14}
+                end: {chapter: 94, verse: 15}
+              - begin: {chapter: 94, verse: 17}
+                end: {chapter: 94, verse: 18}
+              ref: Psalm 94:12-13a, 14-15, 17-18
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 42, verse: 2}
+                end: {chapter: 42, verse: 2}
+              - begin: {chapter: 42, verse: 3}
+                end: {chapter: 42, verse: 3}
+              - begin: {chapter: 42, verse: 5, part: bcd}
+                end: {chapter: 42, verse: 5, part: bcd}
+              ref: Psalm 42:2, 3, 5bcd
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 29, part: ab}
+            end: {chapter: 11, verse: 29, part: ab}
+          ref: Matthew 11:29ab
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 14, verse: 1}
+            end: {chapter: 14, verse: 1}
+          - begin: {chapter: 14, verse: 7}
+            end: {chapter: 14, verse: 11}
+          ref: Luke 14:1, 7-11
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 308,
+        printed page 254, n. 484. The heading read on that image is the thirtieth week of the ferial
+        Proper of Time and the day is its Saturday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-monday
+      name: Monday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 11, verse: 29}
+                end: {chapter: 11, verse: 36}
+              ref: Romans 11:29-36
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 2, verse: 1}
+                end: {chapter: 2, verse: 4}
+              ref: Philippians 2:1-4
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 69, verse: 30}
+                end: {chapter: 69, verse: 31}
+              - begin: {chapter: 69, verse: 33}
+                end: {chapter: 69, verse: 34}
+              - begin: {chapter: 69, verse: 36}
+                end: {chapter: 69, verse: 37}
+              ref: Psalm 69:30-31, 33-34, 36-37
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 131, verse: 1}
+                end: {chapter: 131, verse: 1}
+              - begin: {chapter: 131, verse: 2}
+                end: {chapter: 131, verse: 2}
+              - begin: {chapter: 131, verse: 3}
+                end: {chapter: 131, verse: 3}
+              ref: Psalm 131:1, 2, 3
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 31, part: b}
+            end: {chapter: 8, verse: 32}
+          ref: John 8:31b-32
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 14, verse: 12}
+            end: {chapter: 14, verse: 14}
+          ref: Luke 14:12-14
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 309,
+        printed page 255, n. 485. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Monday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-tuesday
+      name: Tuesday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 12, verse: 5}
+                end: {chapter: 12, verse: 16, part: a}
+              ref: Romans 12:5-16a
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 2, verse: 5}
+                end: {chapter: 2, verse: 11}
+              ref: Philippians 2:5-11
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 131, verse: 1}
+                end: {chapter: 131, verse: 1}
+              - begin: {chapter: 131, verse: 2}
+                end: {chapter: 131, verse: 2}
+              - begin: {chapter: 131, verse: 3}
+                end: {chapter: 131, verse: 3}
+              ref: Psalm 131:1, 2, 3
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 22, verse: 26, part: b}
+                end: {chapter: 22, verse: 27}
+              - begin: {chapter: 22, verse: 28}
+                end: {chapter: 22, verse: 30, part: a}
+              - begin: {chapter: 22, verse: 31}
+                end: {chapter: 22, verse: 32}
+              ref: Psalm 22:26b-27, 28-30a, 31-32
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 28}
+            end: {chapter: 11, verse: 28}
+          ref: Matthew 11:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 14, verse: 15}
+            end: {chapter: 14, verse: 24}
+          ref: Luke 14:15-24
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 309,
+        printed page 255, n. 486. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Tuesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-wednesday
+      name: Wednesday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 13, verse: 8}
+                end: {chapter: 13, verse: 10}
+              ref: Romans 13:8-10
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 2, verse: 12}
+                end: {chapter: 2, verse: 18}
+              ref: Philippians 2:12-18
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 112, verse: 1}
+                end: {chapter: 112, verse: 2}
+              - begin: {chapter: 112, verse: 4}
+                end: {chapter: 112, verse: 5}
+              - begin: {chapter: 112, verse: 9}
+                end: {chapter: 112, verse: 9}
+              ref: Psalm 112:1-2, 4-5, 9
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 27, verse: 1}
+                end: {chapter: 27, verse: 1}
+              - begin: {chapter: 27, verse: 4}
+                end: {chapter: 27, verse: 4}
+              - begin: {chapter: 27, verse: 13}
+                end: {chapter: 27, verse: 14}
+              ref: Psalm 27:1, 4, 13-14
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 4, verse: 14}
+            end: {chapter: 4, verse: 14}
+          ref: 1 Peter 4:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 14, verse: 25}
+            end: {chapter: 14, verse: 33}
+          ref: Luke 14:25-33
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 310,
+        printed page 256, n. 487. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Wednesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-thursday
+      name: Thursday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 14, verse: 7}
+                end: {chapter: 14, verse: 12}
+              ref: Romans 14:7-12
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 3, verse: 3}
+                end: {chapter: 3, verse: 8, part: a}
+              ref: Philippians 3:3-8a
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 27, verse: 1}
+                end: {chapter: 27, verse: 1}
+              - begin: {chapter: 27, verse: 4}
+                end: {chapter: 27, verse: 4}
+              - begin: {chapter: 27, verse: 13}
+                end: {chapter: 27, verse: 14}
+              ref: Psalm 27:1, 4, 13-14
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 105, verse: 2}
+                end: {chapter: 105, verse: 3}
+              - begin: {chapter: 105, verse: 4}
+                end: {chapter: 105, verse: 5}
+              - begin: {chapter: 105, verse: 6}
+                end: {chapter: 105, verse: 7}
+              ref: Psalm 105:2-3, 4-5, 6-7
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 28}
+            end: {chapter: 11, verse: 28}
+          ref: Matthew 11:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 15, verse: 1}
+            end: {chapter: 15, verse: 10}
+          ref: Luke 15:1-10
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 310,
+        printed page 256, n. 488. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Thursday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-friday
+      name: Friday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 15, verse: 14}
+                end: {chapter: 15, verse: 21}
+              ref: Romans 15:14-21
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 3, verse: 17}
+                end: {chapter: 4, verse: 1}
+              ref: Philippians 3:17-4:1
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 98, verse: 1}
+                end: {chapter: 98, verse: 1}
+              - begin: {chapter: 98, verse: 2}
+                end: {chapter: 98, verse: 3, part: ab}
+              - begin: {chapter: 98, verse: 3, part: cd}
+                end: {chapter: 98, verse: 4}
+              ref: Psalm 98:1, 2-3ab, 3cd-4
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 122, verse: 1}
+                end: {chapter: 122, verse: 2}
+              - begin: {chapter: 122, verse: 3}
+                end: {chapter: 122, verse: 4, part: a}
+              - begin: {chapter: 122, verse: 4, part: b}
+                end: {chapter: 122, verse: 5}
+              ref: Psalm 122:1-2, 3-4a, 4b-5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin: {chapter: 2, verse: 5}
+            end: {chapter: 2, verse: 5}
+          ref: 1 John 2:5
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 16, verse: 1}
+            end: {chapter: 16, verse: 8}
+          ref: Luke 16:1-8
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 311,
+        printed page 257, n. 489. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Friday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-31-saturday
+      name: Saturday of the Thirty-first Week in Ordinary Time
+      registry: 'pc-T-ot-31-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 16, verse: 3}
+                end: {chapter: 16, verse: 9}
+              - begin: {chapter: 16, verse: 16}
+                end: {chapter: 16, verse: 16}
+              - begin: {chapter: 16, verse: 22}
+                end: {chapter: 16, verse: 27}
+              ref: Romans 16:3-9, 16, 22-27
+          'II':
+            verses:
+            - book: Philippians
+              ranges:
+              - begin: {chapter: 4, verse: 10}
+                end: {chapter: 4, verse: 19}
+              ref: Philippians 4:10-19
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 145, verse: 2}
+                end: {chapter: 145, verse: 3}
+              - begin: {chapter: 145, verse: 4}
+                end: {chapter: 145, verse: 5}
+              - begin: {chapter: 145, verse: 10}
+                end: {chapter: 145, verse: 11}
+              ref: Psalm 145:2-3, 4-5, 10-11
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 112, verse: 1}
+                end: {chapter: 112, verse: 2}
+              - begin: {chapter: 112, verse: 5}
+                end: {chapter: 112, verse: 6}
+              - begin: {chapter: 112, verse: 8, part: a}
+                end: {chapter: 112, verse: 8, part: a}
+              - begin: {chapter: 112, verse: 9}
+                end: {chapter: 112, verse: 9}
+              ref: Psalm 112:1-2, 5-6, 8a, 9
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 2 Corinthians
+          ranges:
+          - begin: {chapter: 8, verse: 9}
+            end: {chapter: 8, verse: 9}
+          ref: 2 Corinthians 8:9
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 16, verse: 9}
+            end: {chapter: 16, verse: 15}
+          ref: Luke 16:9-15
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 311,
+        printed page 257, n. 490. The heading read on that image is the thirty-first week of the ferial
+        Proper of Time and the day is its Saturday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-32-monday
+      name: Monday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 7}
+              ref: Wisdom 1:1-7
+          'II':
+            verses:
+            - book: Titus
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 9}
+              ref: Titus 1:1-9
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 139, verse: 1}
+                end: {chapter: 139, verse: 3}
+              - begin: {chapter: 139, verse: 4}
+                end: {chapter: 139, verse: 6}
+              - begin: {chapter: 139, verse: 7}
+                end: {chapter: 139, verse: 8}
+              - begin: {chapter: 139, verse: 9}
+                end: {chapter: 139, verse: 10}
+              ref: Psalm 139:1-3, 4-6, 7-8, 9-10
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 24, verse: 1}
+                end: {chapter: 24, verse: 2}
+              - begin: {chapter: 24, verse: 3}
+                end: {chapter: 24, verse: 4, part: ab}
+              - begin: {chapter: 24, verse: 5}
+                end: {chapter: 24, verse: 6}
+              ref: Psalm 24:1-2, 3-4ab, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Philippians
+          ranges:
+          - begin: {chapter: 2, verse: 15, part: d}
+            end: {chapter: 2, verse: 15, part: d}
+          - begin: {chapter: 2, verse: 16, part: a}
+            end: {chapter: 2, verse: 16, part: a}
+          ref: Philippians 2:15d, 16a
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 17, verse: 1}
+            end: {chapter: 17, verse: 6}
+          ref: Luke 17:1-6
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 312,
+        printed page 258, n. 491. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Monday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-32-tuesday
+      name: Tuesday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 2, verse: 23}
+                end: {chapter: 3, verse: 9}
+              ref: Wisdom 2:23-3:9
+          'II':
+            verses:
+            - book: Titus
+              ranges:
+              - begin: {chapter: 2, verse: 1}
+                end: {chapter: 2, verse: 8}
+              - begin: {chapter: 2, verse: 11}
+                end: {chapter: 2, verse: 14}
+              ref: Titus 2:1-8, 11-14
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 34, verse: 2}
+                end: {chapter: 34, verse: 3}
+              - begin: {chapter: 34, verse: 16}
+                end: {chapter: 34, verse: 17}
+              - begin: {chapter: 34, verse: 18}
+                end: {chapter: 34, verse: 19}
+              ref: Psalm 34:2-3, 16-17, 18-19
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 37, verse: 3}
+                end: {chapter: 37, verse: 4}
+              - begin: {chapter: 37, verse: 18}
+                end: {chapter: 37, verse: 18}
+              - begin: {chapter: 37, verse: 23}
+                end: {chapter: 37, verse: 23}
+              - begin: {chapter: 37, verse: 27}
+                end: {chapter: 37, verse: 27}
+              - begin: {chapter: 37, verse: 29}
+                end: {chapter: 37, verse: 29}
+              ref: Psalm 37:3-4, 18, 23, 27, 29
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 14, verse: 23}
+            end: {chapter: 14, verse: 23}
+          ref: John 14:23
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 17, verse: 7}
+            end: {chapter: 17, verse: 10}
+          ref: Luke 17:7-10
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 312,
+        printed page 258, n. 492. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Tuesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-32-wednesday
+      name: Wednesday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 6, verse: 1}
+                end: {chapter: 6, verse: 11}
+              ref: Wisdom 6:1-11
+          'II':
+            verses:
+            - book: Titus
+              ranges:
+              - begin: {chapter: 3, verse: 1}
+                end: {chapter: 3, verse: 7}
+              ref: Titus 3:1-7
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 82, verse: 3}
+                end: {chapter: 82, verse: 4}
+              - begin: {chapter: 82, verse: 6}
+                end: {chapter: 82, verse: 7}
+              ref: Psalm 82:3-4, 6-7
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 23, verse: 1}
+                end: {chapter: 23, verse: 3, part: a}
+              - begin: {chapter: 23, verse: 3, part: b}
+                end: {chapter: 23, verse: 4}
+              - begin: {chapter: 23, verse: 5}
+                end: {chapter: 23, verse: 5}
+              - begin: {chapter: 23, verse: 6}
+                end: {chapter: 23, verse: 6}
+              ref: Psalm 23:1-3a, 3b-4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 1 Thessalonians
+          ranges:
+          - begin: {chapter: 5, verse: 18}
+            end: {chapter: 5, verse: 18}
+          ref: 1 Thessalonians 5:18
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 17, verse: 11}
+            end: {chapter: 17, verse: 19}
+          ref: Luke 17:11-19
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 313,
+        printed page 259, n. 493. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Wednesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I first
+        reading reaches a locus this file already records as divergent. Wisdom 6 is declared in
+        citation_divergences with the note that the Vulgate carries a verse the Greek does not, and the
+        Ordo''s Wisdom 6:1 is the Vulgate''s and the Douay-Rheims'' Wisdom 6:2 - collated against the
+        tracked Douay-Rheims on 2026-08-20 from the pericope''s printed opening. The offset therefore
+        holds from the head of the chapter and not only from 6:12, which is as far as the recorded prose
+        reaches. The citation is carried as the Ordo prints it; a resolution row reading Wisdom 6:1-11 to
+        Wisdom 6:2-12 has to be added before it resolves, and index-bible refuses it until then rather
+        than resolving it wrongly. Nothing of the book''s wording is carried: its pericope titles, psalm
+        responses and acclamation texts stay in the source, and the alternative Alleluia response some of
+        these psalms print is a response and not a second psalm. The Missal prints no formulary for an
+        Ordinary Time weekday, so no oration and no antiphon is recorded here and none is taken from the
+        Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them,
+        and nothing here chooses one.'
+    - key: ot-32-thursday
+      name: Thursday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 7, verse: 22}
+                end: {chapter: 8, verse: 1}
+              ref: Wisdom 7:22-8:1
+          'II':
+            verses:
+            - book: Philemon
+              ranges:
+              - begin: {chapter: 1, verse: 7}
+                end: {chapter: 1, verse: 20}
+              ref: Philemon 7-20
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 119, verse: 89}
+                end: {chapter: 119, verse: 89}
+              - begin: {chapter: 119, verse: 90}
+                end: {chapter: 119, verse: 90}
+              - begin: {chapter: 119, verse: 91}
+                end: {chapter: 119, verse: 91}
+              - begin: {chapter: 119, verse: 130}
+                end: {chapter: 119, verse: 130}
+              - begin: {chapter: 119, verse: 135}
+                end: {chapter: 119, verse: 135}
+              - begin: {chapter: 119, verse: 175}
+                end: {chapter: 119, verse: 175}
+              ref: Psalm 119:89, 90, 91, 130, 135, 175
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 146, verse: 7}
+                end: {chapter: 146, verse: 7}
+              - begin: {chapter: 146, verse: 8}
+                end: {chapter: 146, verse: 9, part: a}
+              - begin: {chapter: 146, verse: 9, part: bc}
+                end: {chapter: 146, verse: 10}
+              ref: Psalm 146:7, 8-9a, 9bc-10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 5}
+            end: {chapter: 15, verse: 5}
+          ref: John 15:5
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 17, verse: 20}
+            end: {chapter: 17, verse: 25}
+          ref: Luke 17:20-25
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 313,
+        printed page 259, n. 494. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Thursday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year II first
+        reading is from Philemon, which has one chapter, so the Ordo prints verse numbers alone and the
+        citation carries no chapter. Nothing of the book''s wording is carried: its pericope titles, psalm
+        responses and acclamation texts stay in the source, and the alternative Alleluia response some of
+        these psalms print is a response and not a second psalm. The Missal prints no formulary for an
+        Ordinary Time weekday, so no oration and no antiphon is recorded here and none is taken from the
+        Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them,
+        and nothing here chooses one.'
+    - key: ot-32-friday
+      name: Friday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 13, verse: 1}
+                end: {chapter: 13, verse: 9}
+              ref: Wisdom 13:1-9
+          'II':
+            verses:
+            - book: 2 John
+              ranges:
+              - begin: {chapter: 1, verse: 4}
+                end: {chapter: 1, verse: 9}
+              ref: 2 John 4-9
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 19, verse: 2}
+                end: {chapter: 19, verse: 3}
+              - begin: {chapter: 19, verse: 4}
+                end: {chapter: 19, verse: 5}
+              ref: Psalm 19:2-3, 4-5
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 119, verse: 1}
+                end: {chapter: 119, verse: 1}
+              - begin: {chapter: 119, verse: 2}
+                end: {chapter: 119, verse: 2}
+              - begin: {chapter: 119, verse: 10}
+                end: {chapter: 119, verse: 10}
+              - begin: {chapter: 119, verse: 11}
+                end: {chapter: 119, verse: 11}
+              - begin: {chapter: 119, verse: 17}
+                end: {chapter: 119, verse: 17}
+              - begin: {chapter: 119, verse: 18}
+                end: {chapter: 119, verse: 18}
+              ref: Psalm 119:1, 2, 10, 11, 17, 18
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 28}
+            end: {chapter: 21, verse: 28}
+          ref: Luke 21:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 17, verse: 26}
+            end: {chapter: 17, verse: 37}
+          ref: Luke 17:26-37
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 314,
+        printed page 260, n. 495. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Friday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year II first
+        reading is from 2 John, which has one chapter, so the Ordo prints verse numbers alone and the
+        citation carries no chapter. Nothing of the book''s wording is carried: its pericope titles, psalm
+        responses and acclamation texts stay in the source, and the alternative Alleluia response some of
+        these psalms print is a response and not a second psalm. The Missal prints no formulary for an
+        Ordinary Time weekday, so no oration and no antiphon is recorded here and none is taken from the
+        Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them,
+        and nothing here chooses one.'
+    - key: ot-32-saturday
+      name: Saturday of the Thirty-second Week in Ordinary Time
+      registry: 'pc-T-ot-32-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Wisdom
+              ranges:
+              - begin: {chapter: 18, verse: 14}
+                end: {chapter: 18, verse: 16}
+              - begin: {chapter: 19, verse: 6}
+                end: {chapter: 19, verse: 9}
+              ref: Wisdom 18:14-16; 19:6-9
+          'II':
+            verses:
+            - book: 3 John
+              ranges:
+              - begin: {chapter: 1, verse: 5}
+                end: {chapter: 1, verse: 8}
+              ref: 3 John 5-8
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 105, verse: 2}
+                end: {chapter: 105, verse: 3}
+              - begin: {chapter: 105, verse: 36}
+                end: {chapter: 105, verse: 37}
+              - begin: {chapter: 105, verse: 42}
+                end: {chapter: 105, verse: 43}
+              ref: Psalm 105:2-3, 36-37, 42-43
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 112, verse: 1}
+                end: {chapter: 112, verse: 2}
+              - begin: {chapter: 112, verse: 3}
+                end: {chapter: 112, verse: 4}
+              - begin: {chapter: 112, verse: 5}
+                end: {chapter: 112, verse: 6}
+              ref: Psalm 112:1-2, 3-4, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 2 Thessalonians
+          ranges:
+          - begin: {chapter: 2, verse: 14}
+            end: {chapter: 2, verse: 14}
+          ref: 2 Thessalonians 2:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 18, verse: 1}
+            end: {chapter: 18, verse: 8}
+          ref: Luke 18:1-8
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 314,
+        printed page 260, n. 496. The heading read on that image is the thirty-second week of the ferial
+        Proper of Time and the day is its Saturday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Year
+        II first reading is from 3 John, which has one chapter, so the Ordo prints verse numbers alone and
+        the citation carries no chapter. The Year I first reading is two discrete passages of Wisdom under
+        one reference and is carried as two ranges. Nothing of the book''s wording is carried: its
+        pericope titles, psalm responses and acclamation texts stay in the source, and the alternative
+        Alleluia response some of these psalms print is a response and not a second psalm. The Missal
+        prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded here
+        and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-
+        time-weekday records them, and nothing here chooses one.'
+    - key: ot-33-monday
+      name: Monday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 1 Maccabees
+              ranges:
+              - begin: {chapter: 1, verse: 10}
+                end: {chapter: 1, verse: 15}
+              - begin: {chapter: 1, verse: 41}
+                end: {chapter: 1, verse: 43}
+              - begin: {chapter: 1, verse: 54}
+                end: {chapter: 1, verse: 57}
+              - begin: {chapter: 1, verse: 62}
+                end: {chapter: 1, verse: 64}
+              ref: 1 Maccabees 1:10-15, 41-43, 54-57, 62-64
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 4}
+              - begin: {chapter: 2, verse: 1}
+                end: {chapter: 2, verse: 5, part: a}
+              ref: Revelation 1:1-4; 2:1-5a
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 119, verse: 53}
+                end: {chapter: 119, verse: 53}
+              - begin: {chapter: 119, verse: 61}
+                end: {chapter: 119, verse: 61}
+              - begin: {chapter: 119, verse: 134}
+                end: {chapter: 119, verse: 134}
+              - begin: {chapter: 119, verse: 150}
+                end: {chapter: 119, verse: 150}
+              - begin: {chapter: 119, verse: 155}
+                end: {chapter: 119, verse: 155}
+              - begin: {chapter: 119, verse: 158}
+                end: {chapter: 119, verse: 158}
+              ref: Psalm 119:53, 61, 134, 150, 155, 158
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 2}
+              - begin: {chapter: 1, verse: 3}
+                end: {chapter: 1, verse: 3}
+              - begin: {chapter: 1, verse: 4}
+                end: {chapter: 1, verse: 4}
+              - begin: {chapter: 1, verse: 6}
+                end: {chapter: 1, verse: 6}
+              ref: Psalm 1:1-2, 3, 4, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 12}
+            end: {chapter: 8, verse: 12}
+          ref: John 8:12
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 18, verse: 35}
+            end: {chapter: 18, verse: 43}
+          ref: Luke 18:35-43
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 315,
+        printed page 261, n. 497. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Monday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year II first
+        reading is two discrete passages of the Apocalypse under one reference, 1:1-4 and 2:1-5a, and is
+        carried as two ranges. THE YEAR I FIRST READING REACHES AN UNDECLARED DIVERGENCE. 1 Maccabees 1 is
+        numbered one to three verses lower in the Ordo than in the Vulgate and the Douay-Rheims, which
+        carry verses the Greek does not: collated against the tracked Douay-Rheims on 2026-08-20 from the
+        printed openings, the Ordo''s 1:10-15 is the Douay''s 1:11-16, its 1:41-43 is the Douay''s
+        1:43-45, its 1:54-57 is the Douay''s 1:57-60, and its 1:62-64 is the Douay''s 1:65-67, the
+        Douay''s chapter running to 67 where the Ordo''s runs to 64. This file''s citation_divergences
+        declares no locus for 1 Maccabees at all, so nothing refuses this citation and it resolves as
+        cited to other words. The citation is carried as the Ordo prints it and the row has to be added
+        before it resolves correctly; it is not renumbered here. Nothing of the book''s wording is
+        carried: its pericope titles, psalm responses and acclamation texts stay in the source, and the
+        alternative Alleluia response some of these psalms print is a response and not a second psalm. The
+        Missal prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded
+        here and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml
+        ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-33-tuesday
+      name: Tuesday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 2 Maccabees
+              ranges:
+              - begin: {chapter: 6, verse: 18}
+                end: {chapter: 6, verse: 31}
+              ref: 2 Maccabees 6:18-31
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 3, verse: 1}
+                end: {chapter: 3, verse: 6}
+              - begin: {chapter: 3, verse: 14}
+                end: {chapter: 3, verse: 22}
+              ref: Revelation 3:1-6, 14-22
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 3, verse: 2}
+                end: {chapter: 3, verse: 3}
+              - begin: {chapter: 3, verse: 4}
+                end: {chapter: 3, verse: 5}
+              - begin: {chapter: 3, verse: 6}
+                end: {chapter: 3, verse: 7}
+              ref: Psalm 3:2-3, 4-5, 6-7
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 15, verse: 2}
+                end: {chapter: 15, verse: 3, part: ab}
+              - begin: {chapter: 15, verse: 3, part: cd}
+                end: {chapter: 15, verse: 4, part: ab}
+              - begin: {chapter: 15, verse: 5}
+                end: {chapter: 15, verse: 5}
+              ref: Psalm 15:2-3ab, 3cd-4ab, 5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin: {chapter: 4, verse: 10, part: b}
+            end: {chapter: 4, verse: 10, part: b}
+          ref: 1 John 4:10b
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 19, verse: 1}
+            end: {chapter: 19, verse: 10}
+          ref: Luke 19:1-10
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 315,
+        printed page 261, n. 498. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Tuesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-33-wednesday
+      name: Wednesday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 2 Maccabees
+              ranges:
+              - begin: {chapter: 7, verse: 1}
+                end: {chapter: 7, verse: 1}
+              - begin: {chapter: 7, verse: 20}
+                end: {chapter: 7, verse: 31}
+              ref: 2 Maccabees 7:1, 20-31
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 4, verse: 1}
+                end: {chapter: 4, verse: 11}
+              ref: Revelation 4:1-11
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 17, verse: 1}
+                end: {chapter: 17, verse: 1}
+              - begin: {chapter: 17, verse: 5}
+                end: {chapter: 17, verse: 6}
+              - begin: {chapter: 17, verse: 8, part: b}
+                end: {chapter: 17, verse: 8, part: b}
+              - begin: {chapter: 17, verse: 15}
+                end: {chapter: 17, verse: 15}
+              ref: Psalm 17:1, 5-6, 8b, 15
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 150, verse: 1}
+                end: {chapter: 150, verse: 2}
+              - begin: {chapter: 150, verse: 3}
+                end: {chapter: 150, verse: 4}
+              - begin: {chapter: 150, verse: 5}
+                end: {chapter: 150, verse: 6}
+              ref: Psalm 150:1-2, 3-4, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 16}
+            end: {chapter: 15, verse: 16}
+          ref: John 15:16
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 19, verse: 11}
+            end: {chapter: 19, verse: 28}
+          ref: Luke 19:11-28
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 316,
+        printed page 262, n. 499. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Wednesday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Year
+        II responsorial reaches Psalm 150:6, which this repository''s tracked psalm concordance does not
+        bound: it ends Psalm 150 at verse 5 under both numberings. The citation is carried as the Ordo
+        prints it, because the endpoint is what the book appoints; it will report against the psalter-
+        bounds gate until the bound or the citation is settled, and it is neither clamped nor renumbered
+        here. Nothing of the book''s wording is carried: its pericope titles, psalm responses and
+        acclamation texts stay in the source, and the alternative Alleluia response some of these psalms
+        print is a response and not a second psalm. The Missal prints no formulary for an Ordinary Time
+        weekday, so no oration and no antiphon is recorded here and none is taken from the Sunday; IGMR
+        363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them, and nothing
+        here chooses one.'
+    - key: ot-33-thursday
+      name: Thursday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 1 Maccabees
+              ranges:
+              - begin: {chapter: 2, verse: 15}
+                end: {chapter: 2, verse: 29}
+              ref: 1 Maccabees 2:15-29
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 5, verse: 1}
+                end: {chapter: 5, verse: 10}
+              ref: Revelation 5:1-10
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 50, verse: 1}
+                end: {chapter: 50, verse: 2}
+              - begin: {chapter: 50, verse: 5}
+                end: {chapter: 50, verse: 6}
+              - begin: {chapter: 50, verse: 14}
+                end: {chapter: 50, verse: 15}
+              ref: Psalm 50:1-2, 5-6, 14-15
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 149, verse: 1}
+                end: {chapter: 149, verse: 2}
+              - begin: {chapter: 149, verse: 3}
+                end: {chapter: 149, verse: 4}
+              - begin: {chapter: 149, verse: 5}
+                end: {chapter: 149, verse: 6, part: a}
+              - begin: {chapter: 149, verse: 9, part: b}
+                end: {chapter: 149, verse: 9, part: b}
+              ref: Psalm 149:1-2, 3-4, 5-6a, 9b
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 95, verse: 8, part: ab}
+            end: {chapter: 95, verse: 8, part: ab}
+          ref: Psalm 95:8ab
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 19, verse: 41}
+            end: {chapter: 19, verse: 44}
+          ref: Luke 19:41-44
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 316,
+        printed page 262, n. 500. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Thursday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. This day''s Gospel
+        Acclamation is itself a psalm verse and is converted with the responsorials. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. Nothing
+        of the book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay
+        in the source, and the alternative Alleluia response some of these psalms print is a response and
+        not a second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and
+        no antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-33-friday
+      name: Friday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 1 Maccabees
+              ranges:
+              - begin: {chapter: 4, verse: 36}
+                end: {chapter: 4, verse: 37}
+              - begin: {chapter: 4, verse: 52}
+                end: {chapter: 4, verse: 59}
+              ref: 1 Maccabees 4:36-37, 52-59
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 10, verse: 8}
+                end: {chapter: 10, verse: 11}
+              ref: Revelation 10:8-11
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 1 Chronicles
+              ranges:
+              - begin: {chapter: 29, verse: 10}
+                end: {chapter: 29, verse: 10}
+              - begin: {chapter: 29, verse: 11, part: abc}
+                end: {chapter: 29, verse: 11, part: abc}
+              - begin: {chapter: 29, verse: 11, part: d}
+                end: {chapter: 29, verse: 12, part: a}
+              - begin: {chapter: 29, verse: 12, part: bcd}
+                end: {chapter: 29, verse: 12, part: bcd}
+              ref: 1 Chronicles 29:10, 11abc, 11d-12a, 12bcd
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 119, verse: 14}
+                end: {chapter: 119, verse: 14}
+              - begin: {chapter: 119, verse: 24}
+                end: {chapter: 119, verse: 24}
+              - begin: {chapter: 119, verse: 72}
+                end: {chapter: 119, verse: 72}
+              - begin: {chapter: 119, verse: 103}
+                end: {chapter: 119, verse: 103}
+              - begin: {chapter: 119, verse: 111}
+                end: {chapter: 119, verse: 111}
+              - begin: {chapter: 119, verse: 131}
+                end: {chapter: 119, verse: 131}
+              ref: Psalm 119:14, 24, 72, 103, 111, 131
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 27}
+            end: {chapter: 10, verse: 27}
+          ref: John 10:27
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 19, verse: 45}
+            end: {chapter: 19, verse: 48}
+          ref: Luke 19:45-48
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 317,
+        printed page 263, n. 501. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Friday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of 1 Chronicles 29 and not a psalm. Nothing of the book''s wording is
+        carried: its pericope titles, psalm responses and acclamation texts stay in the source, and the
+        alternative Alleluia response some of these psalms print is a response and not a second psalm. The
+        Missal prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded
+        here and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml
+        ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-33-saturday
+      name: Saturday of the Thirty-third Week in Ordinary Time
+      registry: 'pc-T-ot-33-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: 1 Maccabees
+              ranges:
+              - begin: {chapter: 6, verse: 1}
+                end: {chapter: 6, verse: 13}
+              ref: 1 Maccabees 6:1-13
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 11, verse: 4}
+                end: {chapter: 11, verse: 12}
+              ref: Revelation 11:4-12
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 9, verse: 2}
+                end: {chapter: 9, verse: 3}
+              - begin: {chapter: 9, verse: 4}
+                end: {chapter: 9, verse: 4}
+              - begin: {chapter: 9, verse: 6}
+                end: {chapter: 9, verse: 6}
+              - begin: {chapter: 9, verse: 16, part: b}
+                end: {chapter: 9, verse: 16, part: b}
+              - begin: {chapter: 9, verse: 19}
+                end: {chapter: 9, verse: 19}
+              ref: Psalm 9:2-3, 4, 6, 16b, 19
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 144, verse: 1}
+                end: {chapter: 144, verse: 1}
+              - begin: {chapter: 144, verse: 2}
+                end: {chapter: 144, verse: 2}
+              - begin: {chapter: 144, verse: 9}
+                end: {chapter: 144, verse: 10}
+              ref: Psalm 144:1, 2, 9-10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 2 Timothy
+          ranges:
+          - begin: {chapter: 1, verse: 10}
+            end: {chapter: 1, verse: 10}
+          ref: 2 Timothy 1:10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 20, verse: 27}
+            end: {chapter: 20, verse: 40}
+          ref: Luke 20:27-40
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 317,
+        printed page 263, n. 502. The heading read on that image is the thirty-third week of the ferial
+        Proper of Time and the day is its Saturday. The first reading and the responsorial psalm are the
+        two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation and
+        the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        day''s acclamation reference under a Cf. cue, which this citation grammar does not carry. The Year
+        I responsorial is Psalm 9 in the Ordo''s numbering. The Vulgate''s Psalm 9 divides in the Hebrew
+        psalter into Psalms 9 and 10, but every verse this citation appoints falls in the first part, so
+        the whole reference lands in one Hebrew psalm and is not split. Nothing of the book''s wording is
+        carried: its pericope titles, psalm responses and acclamation texts stay in the source, and the
+        alternative Alleluia response some of these psalms print is a response and not a second psalm. The
+        Missal prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded
+        here and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml
+        ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-34-monday
+      name: Monday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-monday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 1, verse: 1}
+                end: {chapter: 1, verse: 6}
+              - begin: {chapter: 1, verse: 8}
+                end: {chapter: 1, verse: 20}
+              ref: Daniel 1:1-6, 8-20
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 14, verse: 1}
+                end: {chapter: 14, verse: 3}
+              - begin: {chapter: 14, verse: 4, part: b}
+                end: {chapter: 14, verse: 5}
+              ref: Revelation 14:1-3, 4b-5
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 52}
+                end: {chapter: 3, verse: 52}
+              - begin: {chapter: 3, verse: 53}
+                end: {chapter: 3, verse: 53}
+              - begin: {chapter: 3, verse: 54}
+                end: {chapter: 3, verse: 54}
+              - begin: {chapter: 3, verse: 55}
+                end: {chapter: 3, verse: 55}
+              - begin: {chapter: 3, verse: 56}
+                end: {chapter: 3, verse: 56}
+              ref: Daniel 3:52, 53, 54, 55, 56
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 24, verse: 1}
+                end: {chapter: 24, verse: 2}
+              - begin: {chapter: 24, verse: 3}
+                end: {chapter: 24, verse: 4, part: ab}
+              - begin: {chapter: 24, verse: 5}
+                end: {chapter: 24, verse: 6}
+              ref: Psalm 24:1-2, 3-4ab, 5-6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 24, verse: 42, part: a}
+            end: {chapter: 24, verse: 42, part: a}
+          - begin: {chapter: 24, verse: 44}
+            end: {chapter: 24, verse: 44}
+          ref: Matthew 24:42a, 44
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 1}
+            end: {chapter: 21, verse: 4}
+          ref: Luke 21:1-4
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 318,
+        printed page 264, n. 503. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Monday. That heading marks this week as the last of the ferial
+        course, and it is the last week of Ordinary Time. The first reading and the responsorial psalm are
+        the two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation
+        and the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3 and not a psalm. Those verses
+        stand only in the Greek and Latin Daniel, so the citation addresses the deuterocanonical section
+        of that chapter and not the Hebrew-Aramaic text. Nothing of the book''s wording is carried: its
+        pericope titles, psalm responses and acclamation texts stay in the source, and the alternative
+        Alleluia response some of these psalms print is a response and not a second psalm. The Missal
+        prints no formulary for an Ordinary Time weekday, so no oration and no antiphon is recorded here
+        and none is taken from the Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-
+        time-weekday records them, and nothing here chooses one.'
+    - key: ot-34-tuesday
+      name: Tuesday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-tuesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 2, verse: 31}
+                end: {chapter: 2, verse: 45}
+              ref: Daniel 2:31-45
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 14, verse: 14}
+                end: {chapter: 14, verse: 19}
+              ref: Revelation 14:14-19
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 57}
+                end: {chapter: 3, verse: 57}
+              - begin: {chapter: 3, verse: 58}
+                end: {chapter: 3, verse: 58}
+              - begin: {chapter: 3, verse: 59}
+                end: {chapter: 3, verse: 59}
+              - begin: {chapter: 3, verse: 60}
+                end: {chapter: 3, verse: 60}
+              - begin: {chapter: 3, verse: 61}
+                end: {chapter: 3, verse: 61}
+              ref: Daniel 3:57, 58, 59, 60, 61
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 96, verse: 10}
+                end: {chapter: 96, verse: 10}
+              - begin: {chapter: 96, verse: 11}
+                end: {chapter: 96, verse: 12}
+              - begin: {chapter: 96, verse: 13}
+                end: {chapter: 96, verse: 13}
+              ref: Psalm 96:10, 11-12, 13
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin: {chapter: 2, verse: 10, part: c}
+            end: {chapter: 2, verse: 10, part: c}
+          ref: Revelation 2:10c
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 5}
+            end: {chapter: 21, verse: 11}
+          ref: Luke 21:5-11
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 318,
+        printed page 264, n. 504. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Tuesday. That heading marks this week as the last of the ferial
+        course, and it is the last week of Ordinary Time. The first reading and the responsorial psalm are
+        the two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation
+        and the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3, as on the Monday of this week,
+        and not a psalm. Nothing of the book''s wording is carried: its pericope titles, psalm responses
+        and acclamation texts stay in the source, and the alternative Alleluia response some of these
+        psalms print is a response and not a second psalm. The Missal prints no formulary for an Ordinary
+        Time weekday, so no oration and no antiphon is recorded here and none is taken from the Sunday;
+        IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them, and
+        nothing here chooses one.'
+    - key: ot-34-wednesday
+      name: Wednesday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-wednesday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 5, verse: 1}
+                end: {chapter: 5, verse: 6}
+              - begin: {chapter: 5, verse: 13}
+                end: {chapter: 5, verse: 14}
+              - begin: {chapter: 5, verse: 16}
+                end: {chapter: 5, verse: 17}
+              - begin: {chapter: 5, verse: 23}
+                end: {chapter: 5, verse: 28}
+              ref: Daniel 5:1-6, 13-14, 16-17, 23-28
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 15, verse: 1}
+                end: {chapter: 15, verse: 4}
+              ref: Revelation 15:1-4
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 62}
+                end: {chapter: 3, verse: 62}
+              - begin: {chapter: 3, verse: 63}
+                end: {chapter: 3, verse: 63}
+              - begin: {chapter: 3, verse: 64}
+                end: {chapter: 3, verse: 64}
+              - begin: {chapter: 3, verse: 65}
+                end: {chapter: 3, verse: 65}
+              - begin: {chapter: 3, verse: 66}
+                end: {chapter: 3, verse: 66}
+              - begin: {chapter: 3, verse: 67}
+                end: {chapter: 3, verse: 67}
+              ref: Daniel 3:62, 63, 64, 65, 66, 67
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 98, verse: 1}
+                end: {chapter: 98, verse: 1}
+              - begin: {chapter: 98, verse: 2}
+                end: {chapter: 98, verse: 3, part: ab}
+              - begin: {chapter: 98, verse: 7}
+                end: {chapter: 98, verse: 8}
+              - begin: {chapter: 98, verse: 9}
+                end: {chapter: 98, verse: 9}
+              ref: Psalm 98:1, 2-3ab, 7-8, 9
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin: {chapter: 2, verse: 10, part: c}
+            end: {chapter: 2, verse: 10, part: c}
+          ref: Revelation 2:10c
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 12}
+            end: {chapter: 21, verse: 19}
+          ref: Luke 21:12-19
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 319,
+        printed page 265, n. 505. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Wednesday. That heading marks this week as the last of the
+        ferial course, and it is the last week of Ordinary Time. The first reading and the responsorial
+        psalm are the two-year ferial course and are carried under weekday_cycles I and II; the Gospel
+        Acclamation and the Gospel are printed once across both years and carry plain verses. The Ordo
+        prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms
+        from the tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3 and not a psalm. Nothing of the
+        book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
+        source, and the alternative Alleluia response some of these psalms print is a response and not a
+        second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
+        antiphon is recorded here and none is taken from the Sunday; IGMR 363 lists the permitted bases
+        and rubrics.yaml ordinary-time-weekday records them, and nothing here chooses one.'
+    - key: ot-34-thursday
+      name: Thursday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-thursday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 6, verse: 12}
+                end: {chapter: 6, verse: 28}
+              ref: Daniel 6:12-28
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 18, verse: 1}
+                end: {chapter: 18, verse: 2}
+              - begin: {chapter: 18, verse: 21}
+                end: {chapter: 18, verse: 23}
+              - begin: {chapter: 19, verse: 1}
+                end: {chapter: 19, verse: 3}
+              - begin: {chapter: 19, verse: 9, part: a}
+                end: {chapter: 19, verse: 9, part: a}
+              ref: Revelation 18:1-2, 21-23; 19:1-3, 9a
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 68}
+                end: {chapter: 3, verse: 68}
+              - begin: {chapter: 3, verse: 69}
+                end: {chapter: 3, verse: 69}
+              - begin: {chapter: 3, verse: 70}
+                end: {chapter: 3, verse: 70}
+              - begin: {chapter: 3, verse: 71}
+                end: {chapter: 3, verse: 71}
+              - begin: {chapter: 3, verse: 72}
+                end: {chapter: 3, verse: 72}
+              - begin: {chapter: 3, verse: 73}
+                end: {chapter: 3, verse: 73}
+              - begin: {chapter: 3, verse: 74}
+                end: {chapter: 3, verse: 74}
+              ref: Daniel 3:68, 69, 70, 71, 72, 73, 74
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 100, verse: 2}
+                end: {chapter: 100, verse: 2}
+              - begin: {chapter: 100, verse: 3}
+                end: {chapter: 100, verse: 3}
+              - begin: {chapter: 100, verse: 4}
+                end: {chapter: 100, verse: 4}
+              - begin: {chapter: 100, verse: 5}
+                end: {chapter: 100, verse: 5}
+              ref: Psalm 100:2, 3, 4, 5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 28}
+            end: {chapter: 21, verse: 28}
+          ref: Luke 21:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 20}
+            end: {chapter: 21, verse: 28}
+          ref: Luke 21:20-28
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 319,
+        printed page 265, n. 506. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Thursday. That heading marks this week as the last of the ferial
+        course, and it is the last week of Ordinary Time. The first reading and the responsorial psalm are
+        the two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation
+        and the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3 and not a psalm. The Year II first
+        reading is two discrete passages of the Apocalypse under one reference, 18:1-2, 21-23 and 19:1-3,
+        9a, and is carried as four ranges across two chapters. THE YEAR I FIRST READING REACHES AN
+        UNDECLARED DIVERGENCE. Daniel 6 is numbered one verse lower in the Ordo than in the Vulgate and
+        the Douay-Rheims, because the Hebrew and the Nova Vulgata carry the Vulgate''s Daniel 5:31 into
+        chapter 6 as its first verse: collated against the tracked Douay-Rheims on 2026-08-20 from the
+        pericope''s printed opening, the Ordo''s Daniel 6:12-28 is the Douay''s Daniel 6:11-27. This
+        file''s citation_divergences declares no locus for Daniel at all, and the Douay''s chapter runs to
+        28, so nothing refuses this citation and it resolves as cited to other words. The citation is
+        carried as the Ordo prints it and the row has to be added before it resolves correctly; it is not
+        renumbered here. Daniel 1, 2, 3, 5 and 7, cited elsewhere in this week, were checked the same way
+        and align. Nothing of the book''s wording is carried: its pericope titles, psalm responses and
+        acclamation texts stay in the source, and the alternative Alleluia response some of these psalms
+        print is a response and not a second psalm. The Missal prints no formulary for an Ordinary Time
+        weekday, so no oration and no antiphon is recorded here and none is taken from the Sunday; IGMR
+        363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them, and nothing
+        here chooses one.'
+    - key: ot-34-friday
+      name: Friday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-friday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 7, verse: 2}
+                end: {chapter: 7, verse: 14}
+              ref: Daniel 7:2-14
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 20, verse: 1}
+                end: {chapter: 20, verse: 4}
+              - begin: {chapter: 20, verse: 11}
+                end: {chapter: 21, verse: 2}
+              ref: Revelation 20:1-4, 11-21:2
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 75}
+                end: {chapter: 3, verse: 75}
+              - begin: {chapter: 3, verse: 76}
+                end: {chapter: 3, verse: 76}
+              - begin: {chapter: 3, verse: 77}
+                end: {chapter: 3, verse: 77}
+              - begin: {chapter: 3, verse: 78}
+                end: {chapter: 3, verse: 78}
+              - begin: {chapter: 3, verse: 79}
+                end: {chapter: 3, verse: 79}
+              - begin: {chapter: 3, verse: 80}
+                end: {chapter: 3, verse: 80}
+              - begin: {chapter: 3, verse: 81}
+                end: {chapter: 3, verse: 81}
+              ref: Daniel 3:75, 76, 77, 78, 79, 80, 81
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 84, verse: 3}
+                end: {chapter: 84, verse: 3}
+              - begin: {chapter: 84, verse: 4}
+                end: {chapter: 84, verse: 4}
+              - begin: {chapter: 84, verse: 5}
+                end: {chapter: 84, verse: 6, part: a}
+              - begin: {chapter: 84, verse: 8, part: a}
+                end: {chapter: 84, verse: 8, part: a}
+              ref: Psalm 84:3, 4, 5-6a, 8a
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 28}
+            end: {chapter: 21, verse: 28}
+          ref: Luke 21:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 29}
+            end: {chapter: 21, verse: 33}
+          ref: Luke 21:29-33
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 320,
+        printed page 266, n. 507. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Friday. That heading marks this week as the last of the ferial
+        course, and it is the last week of Ordinary Time. The first reading and the responsorial psalm are
+        the two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation
+        and the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3 and not a psalm. The Year II first
+        reading runs from Apocalypse 20:11 across the chapter division to 21:2 and is carried as a range
+        that spans both chapters. Nothing of the book''s wording is carried: its pericope titles, psalm
+        responses and acclamation texts stay in the source, and the alternative Alleluia response some of
+        these psalms print is a response and not a second psalm. The Missal prints no formulary for an
+        Ordinary Time weekday, so no oration and no antiphon is recorded here and none is taken from the
+        Sunday; IGMR 363 lists the permitted bases and rubrics.yaml ordinary-time-weekday records them,
+        and nothing here chooses one.'
+    - key: ot-34-saturday
+      name: Saturday of the Thirty-fourth Week in Ordinary Time
+      registry: 'pc-T-ot-34-saturday'
+      season: ordinary-time
+      propers:
+      - name: First Reading
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 7, verse: 15}
+                end: {chapter: 7, verse: 27}
+              ref: Daniel 7:15-27
+          'II':
+            verses:
+            - book: Revelation
+              ranges:
+              - begin: {chapter: 22, verse: 1}
+                end: {chapter: 22, verse: 7}
+              ref: Revelation 22:1-7
+      - name: Responsorial Psalm
+        source: scripture
+        weekday_cycles:
+          'I':
+            verses:
+            - book: Daniel
+              ranges:
+              - begin: {chapter: 3, verse: 82}
+                end: {chapter: 3, verse: 82}
+              - begin: {chapter: 3, verse: 83}
+                end: {chapter: 3, verse: 83}
+              - begin: {chapter: 3, verse: 84}
+                end: {chapter: 3, verse: 84}
+              - begin: {chapter: 3, verse: 85}
+                end: {chapter: 3, verse: 85}
+              - begin: {chapter: 3, verse: 86}
+                end: {chapter: 3, verse: 86}
+              - begin: {chapter: 3, verse: 87}
+                end: {chapter: 3, verse: 87}
+              ref: Daniel 3:82, 83, 84, 85, 86, 87
+          'II':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 95, verse: 1}
+                end: {chapter: 95, verse: 2}
+              - begin: {chapter: 95, verse: 3}
+                end: {chapter: 95, verse: 5}
+              - begin: {chapter: 95, verse: 6}
+                end: {chapter: 95, verse: 7}
+              ref: Psalm 95:1-2, 3-5, 6-7
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 36}
+            end: {chapter: 21, verse: 36}
+          ref: Luke 21:36
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 21, verse: 34}
+            end: {chapter: 21, verse: 36}
+          ref: Luke 21:34-36
+      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae,
+        editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 320,
+        printed page 266, n. 508. The heading read on that image is the thirty-fourth week of the ferial
+        Proper of Time and the day is its Saturday. That heading marks this week as the last of the ferial
+        course, and it is the last week of Ordinary Time. The first reading and the responsorial psalm are
+        the two-year ferial course and are carried under weekday_cycles I and II; the Gospel Acclamation
+        and the Gospel are printed once across both years and carry plain verses. The Ordo prints its
+        responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The Year I
+        responsorial is the canticle of the three young men in Daniel 3 and not a psalm. Nothing of the
         book''s wording is carried: its pericope titles, psalm responses and acclamation texts stay in the
         source, and the alternative Alleluia response some of these psalms print is a response and not a
         second psalm. The Missal prints no formulary for an Ordinary Time weekday, so no oration and no
