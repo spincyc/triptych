@@ -1,0 +1,171 @@
+handoff inventory: the ten required contents of HANDOFF.md
+
+  #   REQUIRED CONTENT                                                              VERDICT
+  --  ----------------------------------------------------------------------------  -------
+  1   task and intended outcome                                                     PRESENT
+  2   current branch, or `detached HEAD` when applicable                            PRESENT
+  3   current commit SHA and the task's base commit when known                      PRESENT
+  4   whether the reviewed state includes uncommitted changes                       PRESENT
+  5   focused files changed                                                         PRESENT
+  6   preview URLs or exact startup commands, including required route state        PRESENT
+  7   implementation summary                                                        PRESENT
+  8   known limitations                                                             PRESENT
+  9   unresolved decisions                                                          PRESENT
+  10  artifact inventory, including why any conditional artifact class was omitted  PRESENT
+
+required core files
+  FILE               STATE    NOTE
+  -----------------  -------  ----
+  HANDOFF.md         PRESENT
+  REVIEW_REQUEST.md  PRESENT
+  changes.patch      PRESENT
+  checks.txt         PRESENT
+
+package-relative paths HANDOFF.md names
+  PATH                                                                SECTION                             STATE       NOTE
+  ------------------------------------------------------------------  ----------------------------------  ----------  ------------------
+  logs/derive-claims.py                                               Catena E1 — V14 final projection-a  CHECKED-OK  file
+  DERIVED-CLAIMS.md                                                   Catena E1 — V14 final projection-a  CHECKED-OK  package root
+  claims.json                                                         Catena E1 — V14 final projection-a  CHECKED-OK  package root
+  checks.txt                                                          Catena E1 — V14 final projection-a  CHECKED-OK  package root
+  claims.json                                                         1. Task and intended outcome        CHECKED-OK  package root
+  DERIVED-CLAIMS.md                                                   1. Task and intended outcome        CHECKED-OK  package root
+  REVIEW_REQUEST.md                                                   1. Task and intended outcome        CHECKED-OK  package root
+  UNRESOLVED-BLOCKERS.md                                              1. Task and intended outcome        CHECKED-OK  package root
+  claims.json                                                         3. Current commit and base commit   CHECKED-OK  package root
+  commits.txt                                                         3. Current commit and base commit   CHECKED-OK  package root
+  claims.json                                                         4. Uncommitted changes              CHECKED-OK  package root
+  checks.txt                                                          4. Uncommitted changes              CHECKED-OK  package root
+  CLAIM-CLOSURE.md                                                    7. Implementation summary           CHECKED-OK  package root
+  checks.txt                                                          7. Implementation summary           CHECKED-OK  package root
+  LIMITATIONS.md                                                      8. Known limitations                CHECKED-OK  package root
+  REVIEW_REQUEST.md                                                   9. Unresolved decisions             CHECKED-OK  package root
+  UNRESOLVED-BLOCKERS.md                                              9. Unresolved decisions             CHECKED-OK  package root
+  HANDOFF.md                                                          10. Artifact inventory              CHECKED-OK  package root
+  REVIEW_REQUEST.md                                                   10. Artifact inventory              CHECKED-OK  package root
+  CLAIM-CLOSURE.md                                                    10. Artifact inventory              CHECKED-OK  package root
+  LIMITATIONS.md                                                      10. Artifact inventory              CHECKED-OK  package root
+  UNRESOLVED-BLOCKERS.md                                              10. Artifact inventory              CHECKED-OK  package root
+  PRIVACY-AUDIT.md                                                    10. Artifact inventory              CHECKED-OK  package root
+  PROVENANCE.md                                                       10. Artifact inventory              CHECKED-OK  package root
+  EVIDENCE-INDEX.md                                                   10. Artifact inventory              CHECKED-OK  package root
+  claims.json                                                         10. Artifact inventory              CHECKED-OK  package root
+  DERIVED-CLAIMS.md                                                   10. Artifact inventory              CHECKED-OK  package root
+  checks.txt                                                          10. Artifact inventory              CHECKED-OK  package root
+  commits.txt                                                         10. Artifact inventory              CHECKED-OK  package root
+  changed-files.txt                                                   10. Artifact inventory              CHECKED-OK  package root
+  changes.patch                                                       10. Artifact inventory              CHECKED-OK  package root
+  MANIFEST.sha256                                                     10. Artifact inventory              CHECKED-OK  package root
+  logs/LOG-INDEX.md                                                   10. Artifact inventory              CHECKED-OK  file
+  logs/attempts.json                                                  10. Artifact inventory              CHECKED-OK  file
+  logs/named-commits.json                                             10. Artifact inventory              CHECKED-OK  file
+  logs/order-head.txt                                                 10. Artifact inventory              CHECKED-OK  file
+  logs/order-parent.txt                                               10. Artifact inventory              CHECKED-OK  file
+  20260821T043622Z-catena-e1-corrections-v14.zip                      10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.zip.sha256               10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.assemble.log             10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.verify-final.log         10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.authority.json           10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.executed-tools.json      10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.tool-bytes.json          10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.authority-coherence.log  10. Artifact inventory              CHECKED-OK  beside the package
+  20260821T043622Z-catena-e1-corrections-v14.handoff-inventory.log    10. Artifact inventory              CHECKED-OK  beside the package
+
+count claims against the package's real contents
+  SAID       QUANTITY       VERDICT  GROUND TRUTH
+  ---------  -------------  -------  --------------------------------
+  two        commits        MATCH    commit rows in commits.txt
+  Seven      changed_files  MATCH    status rows in changed-files.txt
+  seventeen  limitations    MATCH    `##` sections in LIMITATIONS.md
+
+SHA-256 digests quoted in HANDOFF.md
+  DIGEST           FILE                     VERDICT    NOTE
+  ---------------  -----------------------  ---------  ---------------------------------
+  0965ca5ed698...  (no filename beside it)  UNCHECKED  no file is named near this digest
+  733e84909e0e...  (no filename beside it)  UNCHECKED  no file is named near this digest
+  7779d1f19ca1...  (no filename beside it)  UNCHECKED  no file is named near this digest
+
+identity claims against the package's own records
+  CLAIM          VALUE            VERDICT    SOURCE
+  -------------  ---------------  ---------  ----------------------------------
+  head commit    69f2575421ba...  MATCH      claims.json
+  parent commit  6cc85e1a1dea...  MATCH      claims.json
+  branch         (unknown)        UNCHECKED  claims.json carries no branch name
+
+derived figures against claims.json
+  DOCUMENT          FIGURE                           SAID  DERIVED  VERDICT
+  ----------------  -------------------------------  ----  -------  -------
+  CLAIM-CLOSURE.md  methods the parent fails across  29    29       MATCH
+
+artifact inventory against the package's real artifacts
+  ARTIFACT                                                            WHERE           INVENTORY
+  ------------------------------------------------------------------  --------------  ---------
+  CLAIM-CLOSURE.md                                                    in package      NAMED
+  DERIVED-CLAIMS.md                                                   in package      NAMED
+  EVIDENCE-INDEX.md                                                   in package      NAMED
+  HANDOFF.md                                                          in package      NAMED
+  LIMITATIONS.md                                                      in package      NAMED
+  MANIFEST.sha256                                                     in package      NAMED
+  PRIVACY-AUDIT.md                                                    in package      NAMED
+  PROVENANCE.md                                                       in package      NAMED
+  REVIEW_REQUEST.md                                                   in package      NAMED
+  UNRESOLVED-BLOCKERS.md                                              in package      NAMED
+  changed-files.txt                                                   in package      NAMED
+  changes.patch                                                       in package      NAMED
+  checks.txt                                                          in package      NAMED
+  claims.json                                                         in package      NAMED
+  commits.txt                                                         in package      NAMED
+  logs/                                                               in package      NAMED
+  20260821T043622Z-catena-e1-corrections-v14.assemble.log             beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.attempts.jsonl           beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.authority-coherence.log  beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.authority.json           beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.executed-tools.json      beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.handoff-inventory.log    beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.tool-bytes.json          beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.verify-final.log         beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.zip                      beside package  NAMED
+  20260821T043622Z-catena-e1-corrections-v14.zip.sha256               beside package  NAMED
+
+command coverage in checks.txt
+  TRANSCRIPT                                     IN CHECKS.TXT
+  ---------------------------------------------  -------------
+  logs/attempt-04/browser-gate-parent.log        RECORDED
+  logs/attempt-04/catena-check-parent.log        RECORDED
+  logs/attempt-04/focused-catena-parent.log      RECORDED
+  logs/attempt-04/full-discovery-parent.log      RECORDED
+  logs/attempt-04/gzip-sizes-parent.log          RECORDED
+  logs/attempt-04/head-tests-against-parent.log  RECORDED
+  logs/attempt-04/make-check-parent.log          RECORDED
+  logs/attempt-04/promised-parent.log            RECORDED
+  logs/attempt-04/public-site-parent.log         RECORDED
+  logs/attempt-04/release-bindings-parent.log    RECORDED
+  logs/attempt-04/request-journals-parent.log    RECORDED
+  logs/attempt-04/restore-parent-tree.log        RECORDED
+  logs/attempt-05/browser-gate-head.log          RECORDED
+  logs/attempt-05/browser-static-head.log        RECORDED
+  logs/attempt-05/catena-check-head.log          RECORDED
+  logs/attempt-05/focused-catena-head.log        RECORDED
+  logs/attempt-05/full-discovery-head.log        RECORDED
+  logs/attempt-05/gzip-sizes-head.log            RECORDED
+  logs/attempt-05/make-check-head.log            RECORDED
+  logs/attempt-05/promised-head.log              RECORDED
+  logs/attempt-05/public-site-head.log           RECORDED
+  logs/attempt-05/release-bindings-head.log      RECORDED
+  logs/attempt-05/request-journals-head.log      RECORDED
+  logs/attempt-13/derive-claims.log              DISCLOSED
+  logs/attempt-13/gate-comparison.log            RECORDED
+  logs/attempt-13/head-consistency.log           DISCLOSED
+  logs/attempt-13/seal-check.log                 DISCLOSED
+  logs/attempt-13/seal.log                       DISCLOSED
+  logs/attempt-13/sealer-tests.log               DISCLOSED
+
+conditional artifact classes
+  CLASS         STATE                   NOTE
+  ------------  ----------------------  ----
+  screenshots/  OMITTED, REASON STATED
+  logs/         PRESENT
+  sources.md    OMITTED, REASON STATED
+
+problems: 0
+handoff inventory: COMPLETE

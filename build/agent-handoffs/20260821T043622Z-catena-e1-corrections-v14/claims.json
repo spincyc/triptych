@@ -1,0 +1,1039 @@
+{
+ "byte_scan": {
+  "clean": true,
+  "findings": [],
+  "scanned": 71
+ },
+ "commit_count": 2,
+ "commits": [
+  {
+   "authored": "2026-08-21T03:02:48Z",
+   "files": [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "tools/tests/test_catena_wave_1.py"
+   ],
+   "sha": "5273bd00c368c461834f4259c495043510aa178b",
+   "subject": "Take the chapter once, and let the row that asked own what it asked for"
+  },
+  {
+   "authored": "2026-08-21T03:24:59Z",
+   "files": [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+    "promised-deliverables.toml"
+   ],
+   "sha": "69f2575421ba976271c936b1abd4b39dbe8b98fd",
+   "subject": "Record the V14 lane: the row that asked owns what it asked for"
+  }
+ ],
+ "diff": {
+  "deletions": 65,
+  "files": 7,
+  "insertions": 2343,
+  "rows": [
+   {
+    "added": 267,
+    "path": "PROJECT-WORK.md",
+    "removed": 0
+   },
+   {
+    "added": 1,
+    "path": "guidance/corpus-browser-master-plan.md",
+    "removed": 1
+   },
+   {
+    "added": 102,
+    "path": "guidance/corpus-browser-roadmap.md",
+    "removed": 1
+   },
+   {
+    "added": 163,
+    "path": "promised-deliverables.toml",
+    "removed": 19
+   },
+   {
+    "added": 232,
+    "path": "src/web/browser/catena/catena-model.js",
+    "removed": 30
+   },
+   {
+    "added": 8,
+    "path": "src/web/browser/catena/catena.js",
+    "removed": 8
+   },
+   {
+    "added": 1570,
+    "path": "tools/tests/test_catena_wave_1.py",
+    "removed": 6
+   }
+  ],
+  "status": {
+   "PROJECT-WORK.md": "M",
+   "guidance/corpus-browser-master-plan.md": "M",
+   "guidance/corpus-browser-roadmap.md": "M",
+   "promised-deliverables.toml": "M",
+   "src/web/browser/catena/catena-model.js": "M",
+   "src/web/browser/catena/catena.js": "M",
+   "tools/tests/test_catena_wave_1.py": "M"
+  }
+ },
+ "gate": {
+  "head": {
+   "browser": "Chrome/151.0.7922.169",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-head.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  },
+  "parent": {
+   "browser": "Chrome/151.0.7922.169",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-parent.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  }
+ },
+ "identity": {
+  "head": "69f2575421ba976271c936b1abd4b39dbe8b98fd",
+  "head_of_branch": "69f2575421ba976271c936b1abd4b39dbe8b98fd",
+  "parent": "6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3",
+  "parent_is_ancestor_of_head": true,
+  "review_addressed": "",
+  "worktree_clean_at_head": true
+ },
+ "inherited_identities": {
+  "count": 27,
+  "identical": false,
+  "mentioning_catena": [],
+  "only_at_head": [],
+  "only_at_parent": [
+   "ERROR: test_repeated_signals_do_not_interrupt_child_cleanup (test_pdf_review.PdfReviewCommandTests.test_repeated_signals_do_not_interrupt_child_cleanup)"
+  ]
+ },
+ "lane": "V14",
+ "oracles": {
+  "against_parent": {
+   "classes": 7,
+   "failing_by_class": {
+    "FrozenContractTest": 1,
+    "V14ConsumerIdentityTest": 5,
+    "V14MemberAuthorityTest": 6,
+    "V14NestedSourceAuthorityTest": 13,
+    "V14ProjectionImmutabilityTest": 7,
+    "V14RequestOwnershipTest": 5,
+    "V14UnfetchedProjectionTest": 6
+   },
+   "failing_method_count": 29,
+   "failing_methods": [
+    "test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical",
+    "test_catena_wave_1.V14ConsumerIdentityTest.test_a_second_chapter_is_a_second_identity_and_no_more",
+    "test_catena_wave_1.V14ConsumerIdentityTest.test_an_unreadable_chapter_is_two_chapters_and_says_so",
+    "test_catena_wave_1.V14ConsumerIdentityTest.test_every_consumer_received_the_object_the_normalization_made",
+    "test_catena_wave_1.V14ConsumerIdentityTest.test_the_roster_names_every_consumer_the_model_has",
+    "test_catena_wave_1.V14ConsumerIdentityTest.test_the_tally_is_a_consumer_of_its_own",
+    "test_catena_wave_1.V14MemberAuthorityTest.test_a_phantom_count_cannot_manufacture_an_unavailable_chapter",
+    "test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once",
+    "test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_detonating_accessor_never_reaches_the_render_tail",
+    "test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_nested_field_accessor_is_declined_by_every_consumer_alike",
+    "test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result",
+    "test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor",
+    "test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page",
+    "test_catena_wave_1.V14ProjectionImmutabilityTest.test_a_row_belongs_to_the_projection_that_made_it",
+    "test_catena_wave_1.V14ProjectionImmutabilityTest.test_every_trusted_structure_is_frozen",
+    "test_catena_wave_1.V14ProjectionImmutabilityTest.test_no_mutation_of_the_authority_survives",
+    "test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_exported_row_builder_seals_what_it_returns",
+    "test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_lead_and_blocked_builders_seal_what_they_return",
+    "test_catena_wave_1.V14RequestOwnershipTest.test_a_genuinely_late_completion_belongs_to_the_row_that_asked",
+    "test_catena_wave_1.V14RequestOwnershipTest.test_a_row_no_projection_made_addresses_nothing",
+    "test_catena_wave_1.V14RequestOwnershipTest.test_one_address_across_two_projections_stays_with_its_own",
+    "test_catena_wave_1.V14RequestOwnershipTest.test_the_journal_names_the_owner_by_object_and_not_by_path",
+    "test_catena_wave_1.V14RequestOwnershipTest.test_two_rows_carrying_one_address_are_two_owners",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_every_raw_chapter_member_is_asked_exactly_once",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_forged_second_answer_reaches_no_sink",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_members_never_move_the_page",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_page_is_the_page_that_was_never_walked",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_record_is_asked_once"
+   ],
+   "identities": 43,
+   "log": "head-tests-against-parent.log",
+   "methods_run": 540,
+   "new_classes_that_do_not_fail": [
+    "V14ProjectionAuthorityBase"
+   ],
+   "new_classes_that_fail": [
+    "V14ConsumerIdentityTest",
+    "V14MemberAuthorityTest",
+    "V14NestedSourceAuthorityTest",
+    "V14ProjectionImmutabilityTest",
+    "V14RequestOwnershipTest",
+    "V14UnfetchedProjectionTest"
+   ],
+   "passing_methods": 511,
+   "pre_existing_classes_that_fail": [
+    "FrozenContractTest"
+   ],
+   "subtest_identities": [
+    "FAIL: test_a_detonating_accessor_never_reaches_the_render_tail (test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_detonating_accessor_never_reaches_the_render_tail)",
+    "FAIL: test_a_genuinely_late_completion_belongs_to_the_row_that_asked (test_catena_wave_1.V14RequestOwnershipTest.test_a_genuinely_late_completion_belongs_to_the_row_that_asked)",
+    "FAIL: test_a_nested_field_accessor_is_declined_by_every_consumer_alike (test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_nested_field_accessor_is_declined_by_every_consumer_alike)",
+    "FAIL: test_a_phantom_count_cannot_manufacture_an_unavailable_chapter (test_catena_wave_1.V14MemberAuthorityTest.test_a_phantom_count_cannot_manufacture_an_unavailable_chapter)",
+    "FAIL: test_a_row_belongs_to_the_projection_that_made_it (test_catena_wave_1.V14ProjectionImmutabilityTest.test_a_row_belongs_to_the_projection_that_made_it)",
+    "FAIL: test_a_row_no_projection_made_addresses_nothing (test_catena_wave_1.V14RequestOwnershipTest.test_a_row_no_projection_made_addresses_nothing)",
+    "FAIL: test_a_second_chapter_is_a_second_identity_and_no_more (test_catena_wave_1.V14ConsumerIdentityTest.test_a_second_chapter_is_a_second_identity_and_no_more)",
+    "FAIL: test_an_unreadable_chapter_is_two_chapters_and_says_so (test_catena_wave_1.V14ConsumerIdentityTest.test_an_unreadable_chapter_is_two_chapters_and_says_so)",
+    "FAIL: test_every_consumer_received_the_object_the_normalization_made (test_catena_wave_1.V14ConsumerIdentityTest.test_every_consumer_received_the_object_the_normalization_made)",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_every_raw_chapter_member_is_asked_exactly_once (test_catena_wave_1.V14UnfetchedProjectionTest.test_every_raw_chapter_member_is_asked_exactly_once) (member='unfetched')",
+    "FAIL: test_every_trusted_structure_is_frozen (test_catena_wave_1.V14ProjectionImmutabilityTest.test_every_trusted_structure_is_frozen) (structure='blocked')",
+    "FAIL: test_every_trusted_structure_is_frozen (test_catena_wave_1.V14ProjectionImmutabilityTest.test_every_trusted_structure_is_frozen) (structure='lead')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_no_mutation_of_the_authority_survives (test_catena_wave_1.V14ProjectionImmutabilityTest.test_no_mutation_of_the_authority_survives) (value='blockedWhy')",
+    "FAIL: test_no_mutation_of_the_authority_survives (test_catena_wave_1.V14ProjectionImmutabilityTest.test_no_mutation_of_the_authority_survives) (value='leadTitle')",
+    "FAIL: test_one_address_across_two_projections_stays_with_its_own (test_catena_wave_1.V14RequestOwnershipTest.test_one_address_across_two_projections_stays_with_its_own)",
+    "FAIL: test_the_exported_row_builder_seals_what_it_returns (test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_exported_row_builder_seals_what_it_returns)",
+    "FAIL: test_the_forged_second_answer_reaches_no_sink (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_forged_second_answer_reaches_no_sink)",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-add')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-phantom')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-remove')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-reorder')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-tally')",
+    "FAIL: test_the_journal_names_the_owner_by_object_and_not_by_path (test_catena_wave_1.V14RequestOwnershipTest.test_the_journal_names_the_owner_by_object_and_not_by_path)",
+    "FAIL: test_the_lead_and_blocked_builders_seal_what_they_return (test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_lead_and_blocked_builders_seal_what_they_return)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_page_reads_no_raw_chapter_member_after_projection (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection)",
+    "FAIL: test_the_roster_names_every_consumer_the_model_has (test_catena_wave_1.V14ConsumerIdentityTest.test_the_roster_names_every_consumer_the_model_has)",
+    "FAIL: test_the_tally_is_a_consumer_of_its_own (test_catena_wave_1.V14ConsumerIdentityTest.test_the_tally_is_a_consumer_of_its_own)",
+    "FAIL: test_the_walked_members_never_move_the_page (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_members_never_move_the_page) (member='unfetched')",
+    "FAIL: test_the_walked_page_is_the_page_that_was_never_walked (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_page_is_the_page_that_was_never_walked)",
+    "FAIL: test_the_walked_record_is_asked_once (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_record_is_asked_once)",
+    "FAIL: test_two_rows_carrying_one_address_are_two_owners (test_catena_wave_1.V14RequestOwnershipTest.test_two_rows_carrying_one_address_are_two_owners)"
+   ]
+  },
+  "classes_added": {
+   "tools/tests/test_catena.py": [],
+   "tools/tests/test_catena_wave_1.py": [
+    "V14ConsumerIdentityTest",
+    "V14MemberAuthorityTest",
+    "V14NestedSourceAuthorityTest",
+    "V14ProjectionAuthorityBase",
+    "V14ProjectionImmutabilityTest",
+    "V14RequestOwnershipTest",
+    "V14UnfetchedProjectionTest"
+   ]
+  },
+  "classes_added_count": 7,
+  "corrected_blocks": 23,
+  "corrected_by_lane": {
+   "?": 1,
+   "V6": 8,
+   "V7": 14
+  },
+  "corrected_classes": [
+   "ActionPartialArrivalTerminalStateTest",
+   "FindingOrderIndependenceTest",
+   "FrozenContractTest",
+   "GenuinelyLateStaleWorkTest",
+   "MalformedLanguageAttributeTest",
+   "MalformedRecordRenderingTest",
+   "MixedCollectionMemberTest",
+   "NumericVerseAndPathTest",
+   "RenderedScriptureTruthTest",
+   "RoutableIdentityTest",
+   "TypedAbsenceFindingTest",
+   "UnsupportedVoiceTest",
+   "UntypedProvenanceTest",
+   "V7UnreadableRootDomainClaimTest"
+  ],
+  "corrected_sites": [
+   {
+    "class": "UnsupportedVoiceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 5685
+   },
+   {
+    "class": "UntypedProvenanceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 6538
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6566
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "?",
+    "line": 6584
+   },
+   {
+    "class": "FrozenContractTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7175
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7470
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7491
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7530
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7555
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7566
+   },
+   {
+    "class": "TypedAbsenceFindingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7633
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7676
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7692
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7715
+   },
+   {
+    "class": "RenderedScriptureTruthTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8344
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8472
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8606
+   },
+   {
+    "class": "GenuinelyLateStaleWorkTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9425
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9650
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9721
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9756
+   },
+   {
+    "class": "RoutableIdentityTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9958
+   },
+   {
+    "class": "V7UnreadableRootDomainClaimTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 13301
+   }
+  ],
+  "marker": "CORRECTED ORACLE"
+ },
+ "package": {
+  "authority": "package totals and final bytes are proved by MANIFEST.sha256, the ZIP and its .zip.sha256 sidecar; this file sizes only members frozen before it was written",
+  "derived_members": [
+   {
+    "path": "claims.json",
+    "reason": "written by this derivation; it cannot inventory its own bytes"
+   },
+   {
+    "path": "DERIVED-CLAIMS.md",
+    "reason": "rendered from claims.json in the same pass that writes it"
+   },
+   {
+    "path": "logs/attempts.json",
+    "reason": "the attempt ledger rows this package was built from, composed after the consistency audit so it can carry this attempt's own terminal row"
+   },
+   {
+    "path": "logs/attempt-13/derive-claims.log",
+    "reason": "transcript of this derivation, written as the derivation prints"
+   },
+   {
+    "path": "logs/attempt-13/head-consistency.log",
+    "reason": "transcript of the consistency audit, which runs after this derivation"
+   },
+   {
+    "path": "MANIFEST.sha256",
+    "reason": "written by the manifest phase, after every other member is frozen"
+   }
+  ],
+  "evidence_bytes": 17769579,
+  "evidence_members": 63,
+  "rows": [
+   {
+    "bytes": 8739,
+    "path": "CLAIM-CLOSURE.md",
+    "sha256": "a91fd35fdd4c910e47652a211ddeac4bbc830bfdce0ee3fe8b153d5ce172522f"
+   },
+   {
+    "bytes": 12582,
+    "path": "EVIDENCE-INDEX.md",
+    "sha256": "6cc258782ee32451ea3e3b8f0e2936ca3db6ec6995247f08b452d5e1c26c2c31"
+   },
+   {
+    "bytes": 18821,
+    "path": "HANDOFF.md",
+    "sha256": "4a8f6698fc6471d7b2bba847ba31b0ee25b15cdcb0557cbdfdd3b4ee2bc54e0f"
+   },
+   {
+    "bytes": 7660,
+    "path": "LIMITATIONS.md",
+    "sha256": "85b66f85970516d877c6a223792012cbcb1839b5bff734e533c15b74fa8f0268"
+   },
+   {
+    "bytes": 8287,
+    "path": "PRIVACY-AUDIT.md",
+    "sha256": "dfb04e7d4b4a350cfc926f23d5b8d04ce43a37df544b8566c469fed5fd2ea513"
+   },
+   {
+    "bytes": 16328,
+    "path": "PROVENANCE.md",
+    "sha256": "43b1492efac3e35428e43a5b45c41b512b3b15a0915b47720610061a78ef0c4d"
+   },
+   {
+    "bytes": 3642,
+    "path": "REVIEW_REQUEST.md",
+    "sha256": "99be80d1fd118f0783de4821e8e094afbb69441b4813ff475e587ac381bd6adf"
+   },
+   {
+    "bytes": 2471,
+    "path": "UNRESOLVED-BLOCKERS.md",
+    "sha256": "0c4d3c7dc16979a880773f8d281a33b12072587e6224883f44eb1684acc6b1ba"
+   },
+   {
+    "bytes": 784,
+    "path": "changed-files.txt",
+    "sha256": "f4af5cd05827c4d470133c78532f9380e4c9ef135ade12ec6ae69ec32f097661"
+   },
+   {
+    "bytes": 201422,
+    "path": "changes.patch",
+    "sha256": "5fb42a0dc6fde9a470c5ddb46a9702b53c4c16b7381a2ce819e95b6059b36fdd"
+   },
+   {
+    "bytes": 22292,
+    "path": "checks.txt",
+    "sha256": "4f77145c73f6b564ae5c59dd160c49a777893f110e4d9691a43d879bdc69b3ce"
+   },
+   {
+    "bytes": 267,
+    "path": "commits.txt",
+    "sha256": "88b25245939306476b1075b79fb3be42fb10726e650d9e6e8d233fa385bdf15b"
+   },
+   {
+    "bytes": 9701,
+    "path": "logs/LOG-INDEX.md",
+    "sha256": "1b70a5576f2dbaf6dde8743f92de2d4a3b6e46f6dbb7f76e3100844005624cc7"
+   },
+   {
+    "bytes": 101781,
+    "path": "logs/assemble.sh",
+    "sha256": "2f8a73c5f24d10f2a792dbc0565bd7104f3dfbb916fd4c8112691a290af9a0ca"
+   },
+   {
+    "bytes": 589998,
+    "path": "logs/attempt-04/browser-gate-parent.json",
+    "sha256": "eab0416562f6fa720bafdcd44da3e6d33e39bc34394a2cee20baaec7fa7bd301"
+   },
+   {
+    "bytes": 282,
+    "path": "logs/attempt-04/browser-gate-parent.log",
+    "sha256": "7e43d35929fe8b51a6a502e3481147a032e94ea62e6d276dcd5ff7b5bbdd917f"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/attempt-04/catena-check-parent.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 89322,
+    "path": "logs/attempt-04/focused-catena-parent.log",
+    "sha256": "7ee4f7f8136c7c9b493436f9bd599be2e95c2ab493aff77460d282114f48170b"
+   },
+   {
+    "bytes": 33902,
+    "path": "logs/attempt-04/full-discovery-parent.log",
+    "sha256": "397bb9ece7a3bbfd784439e397cbfe832a1172b7ebad2706da62fd9476f9bccc"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/attempt-04/gzip-sizes-parent.log",
+    "sha256": "ee36a4ceb57fd662106ad0de5d9c6828bad0b54c54f79b004d5619e81c7737fe"
+   },
+   {
+    "bytes": 156641,
+    "path": "logs/attempt-04/head-tests-against-parent.log",
+    "sha256": "f357e3c5fe749d73e65dbdf76fd3206176c4c2804f977d134bb51dd43d769601"
+   },
+   {
+    "bytes": 51467,
+    "path": "logs/attempt-04/make-check-parent.log",
+    "sha256": "3ab897fef0627a60c57cac05451ae51d28d48092ec083c1dcddbd4e64386a000"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/attempt-04/promised-parent.log",
+    "sha256": "de53f74d9f89ecaa717e5188564929b6f26181dcd8dc78adc6695be75b497a95"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/attempt-04/public-site-parent.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/attempt-04/release-bindings-parent.log",
+    "sha256": "a56f4d3bf5162e159b998e996828bcd4ea8ce424b810df7c03f16e9956422c9e"
+   },
+   {
+    "bytes": 7405253,
+    "path": "logs/attempt-04/request-journals-parent.log",
+    "sha256": "f7428c06a60ee7ba584a84b18e84084aaf3c458e684d920d7c6bb8865a51737f"
+   },
+   {
+    "bytes": 79,
+    "path": "logs/attempt-04/restore-parent-tree.log",
+    "sha256": "c5308cf051f67d7c080fa0b8b8aef38fc2b85d8c1affc3ada5add3ac07a22069"
+   },
+   {
+    "bytes": 589983,
+    "path": "logs/attempt-05/browser-gate-head.json",
+    "sha256": "bba7337300f7834448c7b51f39efd2511ad8e0806baaea910c579609f64175c1"
+   },
+   {
+    "bytes": 280,
+    "path": "logs/attempt-05/browser-gate-head.log",
+    "sha256": "51463e595874b62d7bae332b1cea93e993ec655814b2ceaa26ad5870c7391811"
+   },
+   {
+    "bytes": 103,
+    "path": "logs/attempt-05/browser-static-head.log",
+    "sha256": "18aff025cf6f138ff3bc471face7bdc724a145a2e43c8ff5a7980c731c21dd17"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/attempt-05/catena-check-head.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 95909,
+    "path": "logs/attempt-05/focused-catena-head.log",
+    "sha256": "be89829895da40b8b06cd623ed2ced62d8e7c8d7407c3fa9ff45725e7000801c"
+   },
+   {
+    "bytes": 31749,
+    "path": "logs/attempt-05/full-discovery-head.log",
+    "sha256": "6e24d7c89dfe37a9077c3ebc70448e86d9fa89a451b84602aace49a7b094a380"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/attempt-05/gzip-sizes-head.log",
+    "sha256": "8dfcfb3bf17150c9174a856f315eb30a960352ff6bcc1ba37f3d7a4e225b8eb7"
+   },
+   {
+    "bytes": 51095,
+    "path": "logs/attempt-05/make-check-head.log",
+    "sha256": "d72940e868ee0d548a00e4c4ab28b9990a72980f640bf9d5c5fcc00f993857c0"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/attempt-05/promised-head.log",
+    "sha256": "639af5f50fadb0e76d04f6ce5b7fd14a53f80f1615c269b1eaf202b45db67b72"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/attempt-05/public-site-head.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/attempt-05/release-bindings-head.log",
+    "sha256": "6ba0bae479b04ada91026af2a6a8e9da58ccf712ca19acf762fa78a868e2691b"
+   },
+   {
+    "bytes": 7411859,
+    "path": "logs/attempt-05/request-journals-head.log",
+    "sha256": "7bec3736e78596f8794a64aa6f8c2f286d79790f5e93bd0f5c612cbbd36d0569"
+   },
+   {
+    "bytes": 4314,
+    "path": "logs/attempt-13/gate-comparison.log",
+    "sha256": "bb8a954ab68307532e6c3c2ee110eecfa5040f0788b8c4bfbc5e57d84910ce9d"
+   },
+   {
+    "bytes": 1402,
+    "path": "logs/attempt-13/seal-check.log",
+    "sha256": "24a963c5bef734e2ec58566ab3346781003329b8156246a9b672ef26b4b66af5"
+   },
+   {
+    "bytes": 4817,
+    "path": "logs/attempt-13/seal.log",
+    "sha256": "6fd62044078fba9a7f8c19dfa6a208481bea80ca4d6b5df4a20eef66ce3126fc"
+   },
+   {
+    "bytes": 22714,
+    "path": "logs/attempt-13/sealer-tests.log",
+    "sha256": "67947306633eb8c7858d553989f1c9fbdb329ba40ac7c0b6a7d355049db21f5f"
+   },
+   {
+    "bytes": 53624,
+    "path": "logs/authority-coherence.py",
+    "sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa"
+   },
+   {
+    "bytes": 31664,
+    "path": "logs/battery.sh",
+    "sha256": "e330dcd26a96253b93d90fa6f091a24f1032ab3333bfb9525451c3cc994bce91"
+   },
+   {
+    "bytes": 108415,
+    "path": "logs/checks.py",
+    "sha256": "dbd8f7b011237c1b5d7631fcb09a6933d1e2124247d31d79092d4aac15027672"
+   },
+   {
+    "bytes": 3946,
+    "path": "logs/compare-gate.py",
+    "sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92"
+   },
+   {
+    "bytes": 45939,
+    "path": "logs/derive-claims.py",
+    "sha256": "8db838810ad33761f01d02d53e597e7f54b81e1e563b3798376ac9981b73a1d4"
+   },
+   {
+    "bytes": 1009,
+    "path": "logs/gate-summary.py",
+    "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a"
+   },
+   {
+    "bytes": 1156,
+    "path": "logs/gzip-sizes.py",
+    "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478"
+   },
+   {
+    "bytes": 73986,
+    "path": "logs/handoff-inventory.py",
+    "sha256": "ab165952ec87e865e331d306d5ce293c20507a73a89a78aead4a49858173a6fc"
+   },
+   {
+    "bytes": 14160,
+    "path": "logs/head-consistency.py",
+    "sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e"
+   },
+   {
+    "bytes": 9612,
+    "path": "logs/journal-dump.py",
+    "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9"
+   },
+   {
+    "bytes": 2654,
+    "path": "logs/named-commits.json",
+    "sha256": "ff48a827be4e3ffea523e311b7b7069b46278424d50e293e3fdb93e787c0fb55"
+   },
+   {
+    "bytes": 3917,
+    "path": "logs/order-head.txt",
+    "sha256": "e12e7c16114f2eb9064834943f018114cf081a3fee62fe64ed440ed0dc2d44f1"
+   },
+   {
+    "bytes": 4586,
+    "path": "logs/order-parent.txt",
+    "sha256": "7c2515155459728275f19ed5d8fd7961c5789e7a861a1f7b8134df70541df8f8"
+   },
+   {
+    "bytes": 86382,
+    "path": "logs/sanitize-and-seal.py",
+    "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561"
+   },
+   {
+    "bytes": 39409,
+    "path": "logs/test-attempt-history.py",
+    "sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62"
+   },
+   {
+    "bytes": 45092,
+    "path": "logs/test-authority-coherence.py",
+    "sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5"
+   },
+   {
+    "bytes": 25135,
+    "path": "logs/test-handoff-inventory.py",
+    "sha256": "4a55f5c3f2531e566cd4c516322885c469f0e7e1bdde253a77c5c393260c0137"
+   },
+   {
+    "bytes": 138066,
+    "path": "logs/test-sanitize-and-seal.py",
+    "sha256": "58485b50f25b804a4e750250ff049db748e04586eeefac73a7d149fabf804d15"
+   },
+   {
+    "bytes": 22820,
+    "path": "logs/test-verify-final-package.py",
+    "sha256": "5b877a2019f1220a6d126bcfa28dd68cf7d0dfd4e6ce10b5cd167ed5d4b27498"
+   },
+   {
+    "bytes": 99653,
+    "path": "logs/verify-final-package.py",
+    "sha256": "88544182292c645641de853ed1b6d7e5e00a168d26f3870a0742affb8c4f0e79"
+   }
+  ],
+  "screenshots": {
+   "png_count": 0,
+   "raster_pairs": 0,
+   "unpaired": []
+  }
+ },
+ "payload": {
+  "head": {
+   "_combined": {
+    "one_stream": 51914,
+    "summed": 52696
+   },
+   "catena-model.js": {
+    "comment_share": 0.763,
+    "sha256": "49b74f3daf17d60c9d2aca42bff1970bd646bb03e1c290e67690bb46ee3edc89",
+    "source_bytes": 125299,
+    "stripped": 9396,
+    "stripped_ceiling": null,
+    "whole": 39724,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.418,
+    "sha256": "716d5ea26fd8bd2160422fe8f51e976a394f61e8232b670282bfd49eedf7c640",
+    "source_bytes": 41979,
+    "stripped": 7546,
+    "stripped_ceiling": 8800,
+    "whole": 12972,
+    "whole_ceiling": 13000
+   }
+  },
+  "parent": {
+   "_combined": {
+    "one_stream": 48877,
+    "summed": 49653
+   },
+   "catena-model.js": {
+    "comment_share": 0.758,
+    "sha256": "aa727ef52eb74900cf3176742e15fdc0abde6f541fffebe83bcec752913d9f51",
+    "source_bytes": 115367,
+    "stripped": 8873,
+    "stripped_ceiling": null,
+    "whole": 36679,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.418,
+    "sha256": "da4951df7a1a31b72a58b72422d4cbe5a0017a5b0ba73f7fe236c584ba0cb921",
+    "source_bytes": 42007,
+    "stripped": 7546,
+    "stripped_ceiling": 8800,
+    "whole": 12974,
+    "whole_ceiling": 13000
+   }
+  }
+ },
+ "suites": {
+  "browser_static_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "browser-static-head.log",
+   "seconds": 0.556,
+   "skipped": 0,
+   "tests": 5
+  },
+  "focused_catena_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-head.log",
+   "seconds": 4.159,
+   "skipped": 0,
+   "tests": 596
+  },
+  "focused_catena_parent": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-parent.log",
+   "seconds": 3.875,
+   "skipped": 0,
+   "tests": 555
+  },
+  "full_discovery_head": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "full-discovery-head.log",
+   "seconds": 485.151,
+   "skipped": 11,
+   "tests": 1947
+  },
+  "full_discovery_parent": {
+   "errors": 14,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_repeated_signals_do_not_interrupt_child_cleanup (test_pdf_review.PdfReviewCommandTests.test_repeated_signals_do_not_interrupt_child_cleanup)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 28,
+   "outcome": "FAILED",
+   "path": "full-discovery-parent.log",
+   "seconds": 482.386,
+   "skipped": 11,
+   "tests": 1906
+  },
+  "head_tests_against_parent": {
+   "errors": 0,
+   "failures": 43,
+   "identities": [
+    "FAIL: test_a_detonating_accessor_never_reaches_the_render_tail (test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_detonating_accessor_never_reaches_the_render_tail)",
+    "FAIL: test_a_genuinely_late_completion_belongs_to_the_row_that_asked (test_catena_wave_1.V14RequestOwnershipTest.test_a_genuinely_late_completion_belongs_to_the_row_that_asked)",
+    "FAIL: test_a_nested_field_accessor_is_declined_by_every_consumer_alike (test_catena_wave_1.V14NestedSourceAuthorityTest.test_a_nested_field_accessor_is_declined_by_every_consumer_alike)",
+    "FAIL: test_a_phantom_count_cannot_manufacture_an_unavailable_chapter (test_catena_wave_1.V14MemberAuthorityTest.test_a_phantom_count_cannot_manufacture_an_unavailable_chapter)",
+    "FAIL: test_a_row_belongs_to_the_projection_that_made_it (test_catena_wave_1.V14ProjectionImmutabilityTest.test_a_row_belongs_to_the_projection_that_made_it)",
+    "FAIL: test_a_row_no_projection_made_addresses_nothing (test_catena_wave_1.V14RequestOwnershipTest.test_a_row_no_projection_made_addresses_nothing)",
+    "FAIL: test_a_second_chapter_is_a_second_identity_and_no_more (test_catena_wave_1.V14ConsumerIdentityTest.test_a_second_chapter_is_a_second_identity_and_no_more)",
+    "FAIL: test_an_unreadable_chapter_is_two_chapters_and_says_so (test_catena_wave_1.V14ConsumerIdentityTest.test_an_unreadable_chapter_is_two_chapters_and_says_so)",
+    "FAIL: test_every_consumer_received_the_object_the_normalization_made (test_catena_wave_1.V14ConsumerIdentityTest.test_every_consumer_received_the_object_the_normalization_made)",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_every_nested_accessor_produces_one_coherent_result (test_catena_wave_1.V14NestedSourceAuthorityTest.test_every_nested_accessor_produces_one_coherent_result) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_every_raw_chapter_member_is_asked_exactly_once (test_catena_wave_1.V14UnfetchedProjectionTest.test_every_raw_chapter_member_is_asked_exactly_once) (member='unfetched')",
+    "FAIL: test_every_trusted_structure_is_frozen (test_catena_wave_1.V14ProjectionImmutabilityTest.test_every_trusted_structure_is_frozen) (structure='blocked')",
+    "FAIL: test_every_trusted_structure_is_frozen (test_catena_wave_1.V14ProjectionImmutabilityTest.test_every_trusted_structure_is_frozen) (structure='lead')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_no_consumer_invokes_a_nested_source_accessor (test_catena_wave_1.V14NestedSourceAuthorityTest.test_no_consumer_invokes_a_nested_source_accessor) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_no_mutation_of_the_authority_survives (test_catena_wave_1.V14ProjectionImmutabilityTest.test_no_mutation_of_the_authority_survives) (value='blockedWhy')",
+    "FAIL: test_no_mutation_of_the_authority_survives (test_catena_wave_1.V14ProjectionImmutabilityTest.test_no_mutation_of_the_authority_survives) (value='leadTitle')",
+    "FAIL: test_one_address_across_two_projections_stays_with_its_own (test_catena_wave_1.V14RequestOwnershipTest.test_one_address_across_two_projections_stays_with_its_own)",
+    "FAIL: test_the_exported_row_builder_seals_what_it_returns (test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_exported_row_builder_seals_what_it_returns)",
+    "FAIL: test_the_forged_second_answer_reaches_no_sink (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_forged_second_answer_reaches_no_sink)",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-late')",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-steady')",
+    "FAIL: test_the_four_accessor_shapes_render_one_page (test_catena_wave_1.V14NestedSourceAuthorityTest.test_the_four_accessor_shapes_render_one_page) (scenario='v14-nested-accessor-throws')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-add')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-phantom')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-remove')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-reorder')",
+    "FAIL: test_the_inventory_is_asked_once (test_catena_wave_1.V14MemberAuthorityTest.test_the_inventory_is_asked_once) (scenario='v14-members-tally')",
+    "FAIL: test_the_journal_names_the_owner_by_object_and_not_by_path (test_catena_wave_1.V14RequestOwnershipTest.test_the_journal_names_the_owner_by_object_and_not_by_path)",
+    "FAIL: test_the_lead_and_blocked_builders_seal_what_they_return (test_catena_wave_1.V14ProjectionImmutabilityTest.test_the_lead_and_blocked_builders_seal_what_they_return)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_page_reads_no_raw_chapter_member_after_projection (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection)",
+    "FAIL: test_the_roster_names_every_consumer_the_model_has (test_catena_wave_1.V14ConsumerIdentityTest.test_the_roster_names_every_consumer_the_model_has)",
+    "FAIL: test_the_tally_is_a_consumer_of_its_own (test_catena_wave_1.V14ConsumerIdentityTest.test_the_tally_is_a_consumer_of_its_own)",
+    "FAIL: test_the_walked_members_never_move_the_page (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_members_never_move_the_page) (member='unfetched')",
+    "FAIL: test_the_walked_page_is_the_page_that_was_never_walked (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_page_is_the_page_that_was_never_walked)",
+    "FAIL: test_the_walked_record_is_asked_once (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_walked_record_is_asked_once)",
+    "FAIL: test_two_rows_carrying_one_address_are_two_owners (test_catena_wave_1.V14RequestOwnershipTest.test_two_rows_carrying_one_address_are_two_owners)"
+   ],
+   "identity_count": 43,
+   "outcome": "FAILED",
+   "path": "head-tests-against-parent.log",
+   "seconds": 2.568,
+   "skipped": 0,
+   "tests": 540
+  },
+  "sealer": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "sealer-tests.log",
+   "seconds": 2.609,
+   "skipped": 0,
+   "tests": 157
+  }
+ },
+ "tool": "derive-claims.py"
+}

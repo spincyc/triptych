@@ -1,0 +1,145 @@
+# Evidence index
+
+What each member of this package is, what it supports, and — the column that
+matters — what it does **not** prove. A reviewer who reads only this file
+should be able to tell which claims rest on evidence and which rest on a
+lane's word.
+
+An earlier version of this file said the packaged journals carried ownership
+rows they did not contain. Nothing here claims support a member does not
+carry; where a member's support depends on what a run produced, the mechanism
+that produces it is named instead of the outcome.
+
+**No figure appears in this file.** Every count, size, digest and identity is
+in `claims.json` and its rendering `DERIVED-CLAIMS.md`. Where a number would
+belong here, the member that carries it is named instead.
+
+This file names itself, and it names every member. `MANIFEST.sha256` covers
+every member except itself; the archive digest and byte size live in the
+sidecar beside the archive, never inside it.
+
+## The argument
+
+| Member | State | Supports | Does not prove |
+| --- | --- | --- | --- |
+| `HANDOFF.md` | staged | The ten required contents of the handoff protocol, as content. | Nothing on its own; every claim in it is carried by a member below. |
+| `CLAIM-CLOSURE.md` | staged | The technical argument: what the six findings were, the contract that closes them, how identity is observed rather than recomputed, what the shape costs, why the page changes by four statements, and what proves it. Its last section bounds the claim by naming what already held at the parent. | That the argument is right. It is prose; the vectors are in `changes.patch` and their runs are in the logs. |
+| `REVIEW_REQUEST.md` | staged | Four blocking questions and two optional notes, each naming the acceptance decision it gates — the first being whether a correction answering an **unpublished** review can carry a disposition at all. | Nothing. It asks; it does not answer. |
+| `PROVENANCE.md` | staged | The missing review link and what survives it, the attempt state machine, the post-P8 authority ordering, the ledger rules, the log-root rule, which bytes ran, and the one phase whose rows do not reach the shipped ledger slice. | Its own accuracy — the lane ledger is the authority, and where the two could disagree the ledger is right and this file is a defect. |
+| `LIMITATIONS.md` | staged | The boundaries of what this lane did, stated by the lane that did it. | That the list is complete. A limitation nobody noticed is not in it. |
+| `UNRESOLVED-BLOCKERS.md` | staged | Every blocker left open on purpose, with its owner. | That the enumeration is complete. A blocker nobody noticed is not in it. |
+| `PRIVACY-AUDIT.md` | staged | What the sanitizer looks for, where it looked, and what a reviewer can run to reproduce it. | That these bytes are clean — that is the seal transcript's claim, not this file's. |
+
+## The derived record
+
+| Member | State | Supports | Does not prove |
+| --- | --- | --- | --- |
+| `claims.json` | declared, pending — P4 | Every identity, count, size and digest, derived mechanically from the repository and the frozen member inventory. | Anything about the archive: the ZIP does not exist when this is written. |
+| `DERIVED-CLAIMS.md` | declared, pending — P4 | The same dict, rendered. Byte-reproducible from `claims.json` by the final verification. | Nothing beyond `claims.json`; it is a rendering, not a second source. |
+| `checks.txt` | staged | Every command that ran, with its exit, order, start, end, tree state before and after, attempt, and log. | That a command's *result* was correct — only that it ran, and what it exited with. |
+| `commits.txt` | staged | The exact commit range from the reviewed parent to this head. | That the range is the whole change; `changed-files.txt` and `changes.patch` carry that. |
+| `changed-files.txt` | staged | Every path this range touches, with its status and the diff stat. | Intent. It shows what moved, not why. |
+| `changes.patch` | staged | The complete diff: the projected `unfetched`, the one-read member inventory, `normalizeSources`, the observation seam, the row-to-projection binding and row-resolved addresses, the sealed builders, the four changed page statements, the forty-one new methods with their scenarios and controls, and the replay instrumentation they need. | That the regressions are sufficient. The parent replay is what argues that. |
+| `MANIFEST.sha256` | declared, pending — P6 | A digest for every member except itself. | The archive's own identity, which is in the sidecar. |
+| `EVIDENCE-INDEX.md` | staged | This table. | Anything. It is a map. |
+
+## The runs
+
+Two validation batteries — one at this head, one at the exact reviewed parent
+— and the assembly. Each writes beneath its own log root, named by the ordinal
+the lane ledger allocated to it, so a failed attempt's transcripts stay with
+that attempt and cannot be overwritten by the attempt that replaces it.
+
+**`logs/LOG-INDEX.md` is the correct entry point.** It is derived mechanically
+from what is on disk, with the attempt that owns each log, and it is the
+authority on which log file carries which run. The rows below name logs by
+role rather than by path for that reason.
+
+| Member | State | Supports | Does not prove |
+| --- | --- | --- | --- |
+| `logs/attempts.json` | declared, pending — P5 | This lane's ledger rows, copied as late as the phase contract allows so the sealing attempt's own row is inside it. | That it is the whole ledger. The complete append-only ledger is a sibling; the authority gate reads that one and refuses a package whose copy disagrees with it. |
+| `logs/LOG-INDEX.md` | declared, pending — P1 | Every log in this package, its attempt and its role, derived from what is on disk. | That a log's contents are what its name says. |
+| the focused Catena log, head battery | staged | The focused Catena suite at this head. | Anything about the parent; its own log is the parent battery's. |
+| the head-tests-against-parent log | staged | **The non-vacuity proof of the whole lane**: this head's test file replayed against the uncorrected parent, failing where the correction is absent. | That the corrections are complete — only that they are not vacuous. |
+| the structural-check logs | staged | The generator-side structural check at each endpoint. | Anything about the browser surface. |
+| the promise-ledger logs | staged | The promise ledger validates at each endpoint. | That a promise is *met* — only that the ledger is internally valid. |
+| the full-discovery logs | staged | The whole suite at each endpoint, including the inherited failures, so the failure sets can be compared. | That a failure is inherited, from either log alone. Only the pair can say that. |
+| the `make -k check` logs | staged | Which targets are red at each endpoint. | Which of them this lane caused. The comparison answers that. |
+| the release-bindings logs | staged | The stale release bindings, fail-closed and unsigned. | That they are this lane's to fix. They are not, and none was re-signed. |
+| the public-site build logs | staged | The built artifact the browser gate runs over. | That the artifact is publishable; `public-alpha verify` is a separate gate and was not run. |
+| the browser-gate logs and their JSON reports | staged | That the gate ran, at each endpoint, and the full real-Chromium report it produced. | That headless Chromium is a device or an assistive technology. It is neither. |
+| the browser-static logs | staged | The static browser-surface assertions at each endpoint. | Runtime behaviour. |
+| the gzip-size logs | staged | The measured payloads against their ceilings, at each endpoint. | That the unbudgeted model's growth is acceptable; that question is open and re-asked. |
+| the packaged request-ownership journals | staged | Per request: its sequence, its scenario, the route **as it stood when the request was made**, the owning projection, the path, the kind, the owning step, the outcome, the cache disposition and the body — and, for this lane, the owning **row** and its projection as object identities, taken from the ask that caused the request rather than from a path match. The roster is derived from the test file itself, so every scenario the file declares is journalled. | Anything a journal does not record, and anything about a scenario the test file does not declare. |
+
+## The pipeline, shipped as members
+
+The tools that assembled this package, and the ones that gate it, are shipped
+under `logs/` so a reviewer can read what produced the evidence rather than
+take its word. They are read as bytes by the final verification and are never
+executed from inside the archive.
+
+**The complete enumeration is mechanical, not written here.** The sibling
+tool-bytes record carries every tool with its executed, trusted and shipped
+digest and its disposition — shipped and executed, shipped and not executed,
+external system tool, or reviewer-only helper — and `logs/LOG-INDEX.md`
+indexes their transcripts. Among them are the assembler, the battery driver,
+the checks renderer, the claims deriver, the head-consistency auditor, the
+sanitizer, the final verifier, the inventory tool, the journal dumper and the
+authority gate.
+
+The test suites among them are the ones that prove a refusal fires:
+`logs/test-sanitize-and-seal.py` for the sealer and the log-and-attempt
+protocol, `logs/test-authority-coherence.py` for the authority gate, and
+`logs/test-attempt-history.py` for the ledger's rules and for the battery's
+own endpoint refusals — the wrong clean commit and the dirty postflight. A
+gate that has only ever been run against a package that passes is a gate
+nobody has seen refuse.
+
+## The pictures, and why there are none
+
+There is no `screenshots/` directory and no capture in this package, and no
+empty directory stands in for one. This correction changes no HTML and no CSS —
+`src/web/browser/catena/catena.css` and `src/web/browser/catena/index.html` are
+byte-identical at both endpoints, and `src/web/browser/catena/catena.js`
+changes four statements that swap one model call for another — so the visible
+difference is not a layout but which sentence, which rows, which tally and
+which spoken status line a walking adversarial fixture causes to render. That difference is asserted at the DOM by the replay harness and
+journalled per request in the packaged ownership journals, which record what
+rendered, what address was asked for, which projection owned it and what came
+back. A raster would show the same sentence with less of that around it.
+
+The limit of the substitution is stated rather than hidden: nothing in this
+package shows an adversarial state rendered by a browser engine, and
+`LIMITATIONS.md` says so. `HANDOFF.md` §10 records the omission and its
+reason among the conditional artifact classes.
+
+## The siblings, which are not members
+
+They live beside this directory because none of them can exist until after the
+manifest is taken, and because the archive must not contain the record that
+names its own digest. Each is named by exact filename in `HANDOFF.md` §10: the
+archive, its digest-and-size sidecar, the outer invocation log, the read-only
+P8 transcript, the post-P8 final authority record, the contemporaneous
+executed-tool digests, the P8 tool-byte comparison table, the complete
+append-only attempt ledger, the pre-publication authority gate's transcript,
+and the handoff inventory's transcript.
+
+The outer-sanitization pass's own transcripts are the exception, and
+`HANDOFF.md` §10 states why: that pass runs after the inventory and the
+authority gate, so that it can rewrite and re-scan their transcripts too, and
+its own two records therefore do not exist at the moment the inventory is
+checked. They are described there by their suffixes rather than asserted as
+present.
+
+The inventory tool discovers and stats every one of them, including its own
+output, rather than taking them from arguments — which is how a previous
+package came to omit its own inventory log while scoring ten of ten.
+
+**Two of those siblings are the only in-package record that the post-seal
+phase ran at all.** The per-package ledger slice is derived before the two
+gates run, and unlike the outer-sanitization phase that follows them, that
+phase copies no row back into the slice. So the authority gate's transcript and
+the inventory's transcript, both siblings, are where a reviewer sees that the
+gates ran and what they said; the complete sibling ledger carries their rows.
+`PROVENANCE.md` §6 states the omission and `LIMITATIONS.md` records it.
