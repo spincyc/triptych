@@ -375,7 +375,7 @@ carries the identical block.
 | postconciliar | seasonal | 390 | 2103 | 1 |
 | postconciliar | christological | 7 | 67 | 0 |
 | postconciliar | marian | 14 | 54 | 2 |
-| postconciliar | sanctoral | 181 | 626 | 30 |
+| postconciliar | sanctoral | 181 | 691 | 19 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
@@ -396,17 +396,17 @@ carries the identical block.
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
 | Masses | 6 | 491 | 592 |
-| Propers | 6 | 2744 | 2850 |
-| — named `Placeholder` | 6 | 3 | 35 |
-| — inside a `forms` block | 0 | 147 | 181 |
+| Propers | 6 | 2744 | 2915 |
+| — named `Placeholder` | 6 | 3 | 24 |
+| — inside a `forms` block | 0 | 147 | 241 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
-| Masses holding only placeholders | 6 | 2 | 33 |
+| Masses holding only placeholders | 6 | 2 | 22 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 41 |
-| Propers that are not placeholders | 0 | 2741 | 2815 |
-| — of those, scripture-bearing | 0 | 2192 | 2457 |
-| Encoded passages | 0 | 2598 | 3410 |
+| Propers that are not placeholders | 0 | 2741 | 2891 |
+| — of those, scripture-bearing | 0 | 2192 | 2533 |
+| Encoded passages | 0 | 2598 | 3486 |
 | Distinct books cited | 0 | 57 | 73 |
 | Distinct slot names | 1 | 119 | 93 |
 
