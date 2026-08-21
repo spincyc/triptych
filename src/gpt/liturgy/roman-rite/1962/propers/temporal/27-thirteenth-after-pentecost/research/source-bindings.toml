@@ -1,0 +1,198 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Dominica Decima Tertia post Pentecosten, printed pp. 393-394, marginal nos. 1562-1571"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The checksum-matched page images control the complete Latin formulary, its boundaries, rank, headings, citations, Credo, and Trinity Preface; magnified reading resolves the damaged Gospel letters."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["printed pp. 388-389, leaves n464-n465"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "An independent 1962 publisher edition corroborates the damaged letters and exposes edition differences; it never displaces the Vatican typical reading."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = ["Dominica XIII post Pentecosten text-layer block"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+context = "The uncorrected OCR excerpt in propers/retrieved.txt is a locating aid and preserves errors intentionally."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-13"
+loci = ["post-pentecosten-13", "post-pentecosten-13/collect", "post-pentecosten-13/secret", "post-pentecosten-13/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:763ef02ac9d618b2aa532e287de705d4190c95d6e6dc0657fae67e79ca4dcb5e"
+context = "The registered public-domain hand-missal passage controls the published oration English; the Latin controls every point the old English compresses or recasts."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.30.15-16", "Ps.73.1", "Ps.73.19-20", "Ps.73.22-23", "Ps.77.24", "Ps.88.51", "Ps.89.1"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "These verse rows control all published psalm English and make every Roman/Clementine chant gap visible."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-25-wisdom-2fe4073b"
+loci = ["Wis.16.20-21"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:ba6486854e8c3bfd51466a3a0992b72fe10788c371c5839b92799410b5cd21f7"
+context = "The full public-domain verse controls Communion English and exposes the antiphon's first-person and verbal adaptation."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Gal.3.15-25"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+context = "The appointed verses control Epistle English; adjacent verses identify the borrowed Fratres incipit and the excluded pedagogue boundary."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.17.5-20"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "The complete episode controls Gospel English; immediate context fixes the liturgical incipit and pericope boundary."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The registered concordance controls the published Vulgate-to-modern Psalm 30/31, 73/74, 88/89, and 89/90 mappings."
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+loci = ["5", "Lc.17.11", "Lc.17.19"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+context = "Bede supplies the principal continuous Latin Gospel exposition, including cleansing versus saving faith and his demonstrable Augustine/Gregory reuse."
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-oxford-1859.tertullian-sermons-110-123-html"
+loci = ["fragments under Luke 17:12 and 17:14, printed pp. 539-541"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:a9afb98ab105429203477b5f6e9b5f1cf1a567beeefcb066bc073027d5182888"
+context = "The public-domain fragments control Cyril's route and priestly-witness reception; no integral lost sermon is claimed."
+
+[[bindings]]
+source_id = "passage.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-07-29.89.1-17"
+loci = ["89.1-17", "89.1", "89.2", "89.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:16ac7d35f9c67b7c26bcb3a5079a878420a6bbe862a462a944f44e0f59e4f6d9"
+context = "The passage controls Augustine's denial of Mosaic authorship, old/new generations reading, and eternity-as-refuge synthesis."
+
+[[bindings]]
+source_id = "edition.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866"
+loci = ["Psalm 30, p. 78", "Psalm 73, pp. 223-226", "Psalm 89, pp. 277-279"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The cataloged edition anchors the cited O'Sullivan bibliography. The binding does not claim an acquired or verified repository artifact; philological claims are not assigned to this abridged translation."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Ps.30 cols.1081-1084", "Ps.73 cols.1453-1465", "Ps.89 cols.1597-1601"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The registered Migne volume identifies stable Greek loci; modern protected English was not reproduced."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog"
+loci = ["printed p.76, Mense Iulio, XXXIII Item alia"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:6623704aeaca455637ddcd70c06744575aa985c206c44ed3c60dc048aaf0fe42"
+context = "The earliest checked witness carries the Collect alone and no Sunday assignment."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
+loci = ["Book III ix p.229", "Book III xxvi p.247", "Book III xxx p.249", "appendix p.354"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:8386191bf9d4c1f090c5a3089fd3434c0d93b22562341c308199f7c13b2fa747"
+context = "These loci establish separate and paired transmission of the three orations and the proficiamus/propiciation variants without implying personal authorship."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath"
+loci = ["p.172, Dominica XII and Ottobonianus chant-cue note", "p.173, Dominica XIV, oration set"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:4855350f9f1325dd4c257e7d6b2f61a924cd036b4a7d4a23013671fb55b91ba8"
+context = "Direct page comparison corrects the co-location claim: matching chants belong to Sunday XII while the received three orations stand at Sunday XIV with other cues."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+loci = ["vol-xi-p-307", "vol-xi-p-315", "vol-xi-p-316", "vol-xi-p-322", "vol-xi-p-324", "vol-xi-p-325", "vol-xi-p-326"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-19"
+source_fingerprint = "sha256:0c284a75a9d4ba61141e669e20bac150113946f19b1240b58607e61bec7164ad"
+context = "The Sunday chapter supplies explicit covenant-chant/Epistle reception and later liturgical synthesis; supersessionist claims remain attributed and bounded."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.4"
+loci = ["4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:26f7b79da520af10951ca8153011f4c7309bc60c0e684e6f9a6a69fa99b4670b"
+context = "The official conciliar article governs all treatment of Jewish persons and prevents patristic or later nine-versus-one typology from becoming collective rejection or curse."
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+loci = ["sessio-6-decretum-10-11", "sessio-6-canon-32"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The cataloged Tauchnitz edition anchors the conciliar bibliography and stable Session VI loci; this binding does not claim an acquired or verified repository artifact."
+
+[[bindings]]
+source_id = "artifact.miquel-dels-sants-gros-i-pujol.el-sacramentari-ii-de-gellona.mlc-20-2012.iec-pdf"
+loci = ["no-1118", "no-1119", "no-1120"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:7e01134de4e9cd2e05beacb59ac243b0a59836cb50b6e33379a5fdca21d75a8b"
+context = "Printed p. 155 and manuscript fol. 153v abbreviate the Collect, Secret, and Postcommunion incipits under Dominica XIIII; abbreviation prevents presenting the edition as a complete transcription of the prayers."
+
+[[bindings]]
+source_id = "passage.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi.xvi.20-21"
+loci = ["XVI.20-21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:f2a6183fcd3a40cec0cbfa2429fdf04a17f32f4d43a0dbc3a1a3a3690909b75d"
+context = "The checked Latin passage supplies Bonaventure's explicit mystical reading of Wisdom's manna as Christ in the Sacrament of the altar; it is later Christian reception, not the literal sense of Wisdom or evidence for the antiphon's compilation."
+
+[[bindings]]
+source_id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
+role = "corpus-boundary"
+states = ["cataloged"]
+context = "The corpus record bounds the sacramentary search and prevents unsearched holdings from being represented as negative evidence."

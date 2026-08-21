@@ -1,0 +1,114 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 2363,
+   "id": "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65-68-checked-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The transcription preserves the printing's grammatically unexpected plural 'gratulantur' in IV.65. The polemical account of heretics and coerced confession in IV.68 is recorded as historical source wording, not adopted as repository voice or current Catholic pastoral prescription.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Honorius's medieval Latin as printed by Migne in 1854, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or Migne editorial apparatus.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 10347580,
+   "id": "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.migne-facsimile-pdf-906be8c5",
+   "media_type": "application/pdf",
+   "notes": "Chapter IV.65 begins at PL running column 714 on PDF page 87 and concludes at column 715 on PDF page 88; IV.68 is at column 716 on PDF page 88. The exact file is not retained because the host reserves rights in its electronic edition.",
+   "page_count": 99,
+   "retrieved": "2026-08-20",
+   "rights": "restricted",
+   "rights_basis": "Honorius's medieval Latin and Migne's 1854 printing are public domain by age, but Documenta Catholica Omnia states that rights in its electronic edition are reserved. No permission to redistribute the host's PDF was established, so the exact bytes are identified but not retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "http://www.documentacatholicaomnia.eu/02m/1080-1137%2C_Honorius_Augustodunensis%2C_Gemma_Animae%2C_MLT.pdf",
+   "storage": "restricted"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1854",
+  "editors": [],
+  "id": "edition.honorius-augustodunensis.gemma-animae.1854-migne-pl-172",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The checked chapters are IV.65 at PL 172:714-715 and IV.68 at PL 172:716. Their inherited medieval Sunday-numbering and 'sub lege'/'sub gratia' pairing must remain distinct from the 1962 calendar and formulary.",
+  "publication": "Jacques-Paul Migne, Patrologiae cursus completus, Series Latina, volume 172 (Paris, 1854), columns 541-738",
+  "title": "Gemma animae — Patrologia Latina 172",
+  "translators": [],
+  "year": 1854
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65-68-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "The chapter headed 'Dominica undecima post Pentecosten, Deus in loco, sub lege' reads the Queen of Sheba as a figure of the Church, coordinates the collect and 1 Corinthians 15 with her humility, reads Luke 18's Pharisee and publican through Solomon and the queen, and connects the Offertory and Communion with her praise and gifts.",
+   "id": "passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65",
+   "locus": "IV.65",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Verified against PL 172:714-715. This is a medieval witness to an earlier Sunday arrangement: its numbered Eleventh Sunday has Deus in loco and 1 Corinthians 15 but Luke 18, not Mark 7. It is reception evidence, not proof of the architecture or compiler intent of the 1962 Mass.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Honorius's medieval Latin as printed by Migne in 1854, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or Migne editorial apparatus.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65.json",
+   "verified_on": "2026-08-20",
+   "words": 185
+  },
+  {
+   "artifact_id": "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65-68-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "The 'sub gratia' chapter paired with the preceding medieval Twelfth Sunday associates Deus in adjutorium, 2 Corinthians 3, and Mark 7 with a polemical account of the post-Constantinian Church: the deaf and mute man signifies heretics whom Catholics bring to hearing and confession, and the Communion gives thanks for converts.",
+   "id": "passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.68",
+   "locus": "IV.68",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Verified against PL 172:716. Its pairing with IV.67 and its historically conditioned polemic must be stated: it cannot be silently transferred to the 1962 Sunday numbering, treated as direct evidence of later compiler intent, or repeated as current Catholic pastoral language.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Honorius's medieval Latin as printed by Migne in 1854, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or Migne editorial apparatus.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.68.json",
+   "verified_on": "2026-08-20",
+   "words": 160
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Gemma animae de divinis officiis",
+   "The Jewel of the Soul"
+  ],
+  "author": "Honorius Augustodunensis",
+  "category": "liturgical-commentary",
+  "description": "Honorius Augustodunensis's medieval exposition of divine worship. Book IV coordinates temporal Sundays, their chants, readings, and typological or historical interpretations in paired chapters labeled 'under the law' and 'under grace'.",
+  "id": "work.honorius-augustodunensis.gemma-animae",
+  "languages": [
+   "la"
+  ],
+  "title": "Gemma animae"
+ }
+}

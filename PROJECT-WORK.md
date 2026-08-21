@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-16.
+Last reconciled: 2026-08-20.
 
 ## Standing public-alpha authority
 
@@ -1650,3 +1650,36 @@ that invited the divergence is unchanged and should be clarified. Separately,
 `src/common/preamble.tex`, which `guidance/editorial.md` forbids as apparatus
 wording; it appears in every published proper guide and needs one
 repository-wide fix rather than a per-leaf fork.
+
+## GPT Eleventh through Thirteenth Sundays after Pentecost
+
+<!-- promised-deliverable: gpt-eleventh-thirteenth-after-pentecost-2026-08-20 -->
+
+On 2026-08-20 the maintainer independently reopened the closed 1962 temporal
+propers boundary for the GPT guides `25`–`27`, the Eleventh through Thirteenth
+Sundays after Pentecost. The request requires full source-first research, broad
+and deep patristic and later saintly reception, Catholic-faithful scholarly
+treatment, and enrichment of the provider-neutral shared corpus wherever the
+verified research warrants it. The existing Claude editions are source leads
+and parallel publications, not prose owners; the GPT editions remain
+independently authored and audited.
+
+Each target follows the current componentized profile: one canonical full
+research leaf, one mechanically derived synthesis companion, one canonical web
+edition, source bindings and reception matrices, installed reviewed PDFs,
+catalog links, and provider-qualified release records. This decision changes no
+other 1962 identity and authorizes no material revision of a Claude publication.
+
+**Complete.** The three canonical GPT leaves, their mechanically derived
+synthesis companions, and their web editions were independently content-audited,
+component-checked, built, and visually inspected page by page before the six
+reviewed PDFs and three web editions were installed. The source library now
+includes reusable checked records for Gregory the Great on Mark 7, Bonaventure
+on Wisdom 16, Honorius's relevant whole-proper reception, Anthony of Padua's
+critical Latin sermon text, and the official NABRE introductions and notes used
+by the guides. Source, inventory, family, catalogue, web, metadata, release, and
+deployment gates passed on the integrated tree. GitHub Pages run `32446141366`
+then completed successfully, and the live catalog, all three GPT Reader routes,
+and all three full-PDF routes returned HTTP 200. The outgoing range made no
+material change to a Claude publication; the unrelated local `directions.md`
+remained untracked and outside both commits and deployment.

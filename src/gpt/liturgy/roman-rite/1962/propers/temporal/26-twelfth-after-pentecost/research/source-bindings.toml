@@ -1,0 +1,239 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica XII post Pentecosten, complete formulary, printed pp. 392-393 = artifact PDF pp. 473-474, marginal nos. 1552-1561",
+  "boundaries at marginal nos. 1551 and 1562",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact artifact bytes were hash-matched before page-image review. The two pages control the rank, ten appointed Latin forms, headings and references, accentuation and punctuation, Credo and Trinity Preface rubrics, and both formulary boundaries. OCR was a locating aid only."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Dominica XII post Pentecosten, complete formulary, printed pp. 386-388 = item leaves n462-n464"]
+role = "direct-witness"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "Page images of the exact Benziger 1962 editio iuxta typicam were read as a materially distinct comparison edition. Eight typographic and punctuation differences are recorded in propers/verified.md; no Benziger form was blended into the Vatican typical text. Inspection was of individual page images from the registered Internet Archive item, so acquisition of the registered DjVu bytes is not claimed."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-02-exodus-489219e2"
+loci = ["Ex.32.11-14"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:7e641fe48359b8be0376fa4f9dc1fb52e1310257109b819e0b4e6b3d97d8f9a6"
+context = "The exact tracked Clementine Exodus verses were read line by line against the Offertory. They establish the Vulgate form with Israel, the stars-and-land promise, and placatusque est Dominus, and thus control the bounded statement that the chant is not a continuous Clementine excerpt."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.69.2-4"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:befd68fb907291197b2b4a154a7c6b67bb22eb634b78aaeef0b8c3a956575620"
+context = "The exact tracked Clementine Psalm 69 verses were compared with the Introit. They control the two declared chant-psalter differences: the added inimici mei and cogitant where the Clementine reads volunt."
+
+[[bindings]]
+source_id = "artifact.lancelot-brenton.septuagint-english-translation.ebible-eng-brenton.verse-text-02-exodus-65135709"
+loci = ["Ex.32.11-14"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:329c4cc4c67f301639225743eba251834a3a14599ad04edb8ade68ef20b1a9b6"
+context = "The exact tracked Brenton translation of the Septuagint was read at Exodus 32:11-14. Its Jacob and prevailed-upon close corroborate the guide's carefully limited description of the chant as Septuagint-shaped; an English translation is not represented as a Greek critical edition."
+
+[[bindings]]
+source_id = "artifact.eliran-wong.lxx-rahlfs-1935-dataset.a1b5ff1.github-archive-a1b5ff1-113bbb98"
+loci = ["repository snapshot identity and Rahlfs-1935 derivative provenance"]
+role = "bibliographic"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:ebde3719c168d7c053e0a80704c995d82b6dc71e5f2e9e627f73eb8679458b8e"
+context = "This exact immutable snapshot identifies the Rahlfs-derived dataset and its restricted CATSS rights chain. It is not counted as an independent textual witness or a replayable Greek collation; the direct LXX comparison in this leaf is bounded to the tracked Brenton Exodus text and the identified printed Rahlfs edition."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.69.2-4", "Ps.33.2-3", "Ps.87.2", "Ps.103.13-15"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The exact tracked verses and adjacent context were read for the four psalm chants. The Introit's chant-psalter differences and the Communion's selection, reordering, omitted clause, and inserted vocative are declared; the guide prints the continuous historical English rather than manufacturing a join."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.10.22-38"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "Source of the complete published Gospel English. Verses 22 and 38 control the boundaries, and the v. 23 narrative frame is printed intact with a note that the Missal replaces it by a liturgical incipit."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-54-2-corinthians-f732ea5d"
+loci = ["2Cor.3.3-10"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:d46805368cfb0a0832754b383d0c21f3e10361c941f720df0f6e28be6a1f43d2"
+context = "Source of the complete Epistle English and its immediate boundaries. The publication records that the Missal replaces Paul's connective with Fratres and ends before the comparison continues in verse 10."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879"
+loci = ["Ex.32.9-15"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:2cf6c449848a14ea55e8a13f58e765a62bd457d60ed057db356b06fbf9d35227"
+context = "Source of the Offertory's continuous Vulgate-base English and its context. Because the chant is an Old-Latin adaptation, the guide identifies every material gap and creates no composite translation."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-12"
+loci = ["post-pentecosten-12"]
+role = "translation-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:41f920d366c2661b144cf9b6a2df63f170e6ae9bf5547b75c9f72d7b58927122"
+context = "Registered passage for the three public-domain English orations. Each row was matched clause by clause to the image-collated 1962 Latin and its translation limits are stated."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = ["post-pentecosten-12/collect", "post-pentecosten-12/secret", "post-pentecosten-12/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:cce6b5473906365bb5f402f0f1aa8403a135408cc439a43ff50c5a36ffc05d21"
+context = "Source of the three published oration translations at printed pp. 420, 422 and 423. The single-adverb Collect, agency-recast and clause-reordered Secret, less explicit Postcommunion, and abbreviated conclusion are preserved rather than silently modernized."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog"
+loci = [
+  "printed p. 74, shorter ancestor of the Collect",
+  "printed p. 60, Postcommunion form participatio tui sancta mysterii",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:6623704aeaca455637ddcd70c06744575aa985c206c44ed3c60dc048aaf0fe42"
+context = "The identified Feltoe printing supplies the two separate Veronese ancestors used in the oration history. Their separation and lexical differences establish early prayer material, not the later three-prayer set, a Sunday assignment, authorship, or compiler intent."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
+loci = ["Book III, section VIII, printed pp. 228-229, all three orations"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:8386191bf9d4c1f090c5a3089fd3434c0d93b22562341c308199f7c13b2fa747"
+context = "The exact Wilson Old Gelasian pages were read for the three-oration set, the second Collect form and a promissionibus variant, the Secret's largiaris/largiendo transmission, and the Postcommunion. The witness establishes recurrence and variants, not personal authorship."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath"
+loci = ["printed p. 173, section LXXXI, Dominica XIII post Pentecosten, complete three-oration set"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:4855350f9f1325dd4c257e7d6b2f61a924cd036b4a7d4a23013671fb55b91ba8"
+context = "The exact Wilson Hadrianum printing supplies the later lexical form of all three prayers together, including largiendo. Its thirteenth-Sunday numbering is reported as that witness's arrangement and is not silently converted into the 1962 numbering."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["volume III, printed pp. 128-131, Twelfth Sunday after Pentecost; Secret at p. 131"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+context = "The exact 1927 English volume was read for Schuster's commentary on this formulary. Pages 128-131 belong to this Sunday and p. 131 treats the Secret; p. 132 begins the following Sunday and is excluded. Paraphrases are attributed and no protected-edition claim is made."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The registered concordance controls the explicit modern-English offsets: Vulgate Ps 33:2-3 = modern 34:1-2; Ps 69:2-4 = modern 70:1-3; Ps 87:2 = modern 88:1; Ps 103:13-15 = modern 104:13-15. The guide retains Vulgate loci as primary and labels the modern forms rather than conflating conventions."
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.iii-lk-10.23-37"
+loci = ["Lc.10.23"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:d545269fa6bb0108c6214ce8ee6941bfc9f5e7c310b26a0fc688a14b038bcfa8"
+context = "Bede's complete treatment at PL 92, 467C-470D controls the guide's both-senses rule: every merciful agent becomes neighbour, Christ is neighbour in the fullest sense, and allegory may not attenuate the moral institution of mutual brotherhood."
+
+[[bindings]]
+source_id = "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-69-cols-1415-1418"
+loci = ["Psalm 69, PG 80, columns 1415-1418"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:855e438659ab39a0ad390257183c0bb94b17787ac2bf3eb3417dfadcf67cbce5"
+context = "Direct Greek reception of the Introit's psalm: David's flight from Absalom, remembered sin, and urgent help amid encircling calamity."
+
+[[bindings]]
+source_id = "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-33-cols-1101-1109"
+loci = ["Psalm 33, PG 80, columns 1101-1109"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:1451d568b7ea13bd8b84e909d49c53810c5966b1ffffbefcb98c050c729be377"
+context = "Direct Greek reception of the Gradual: Theodoret's response to the superscription problem and his reading of praise through flight, pursuit, prosperity and adversity."
+
+[[bindings]]
+source_id = "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-87-cols-1567-1573"
+loci = ["Psalm 87, PG 80, columns 1567-1573"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:a3f1145f910a4fe11a4cdbde6cd9822b0e5588b4b8b2ad8c975d092e9659134b"
+context = "Direct Greek counter-reading of the Alleluia psalm through Israel's calamities and fallen humanity rather than the Passion interpretation."
+
+[[bindings]]
+source_id = "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-103-cols-1693-1707"
+loci = ["Psalm 103, PG 80, columns 1693-1707"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:1525900861767ddd7a2ed8eafd290400c94d3a18bf37e7a7dc1f1e8cca1f96e1"
+context = "Direct Greek providential reading of the Communion verses: rain and the created benefits of bread, wine and oil, without a sacramental turn."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-69"
+loci = ["Psalm 69, verse 2", "artifact PDF page 220"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:a241a7a3d36c8ea205947e629644d72723bd006fedb2212e396b63a6f794025f"
+context = "Later saintly reception of the Introit verse through the Divine Office and the Psalm 39 doublet."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-33"
+loci = ["Psalm 33, especially verses 2-3", "artifact PDF pages 100-105"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:80cc5d6060493d0de21d28fdaef5a1bd3d2b8ea31ee16fcb86a0eb26d23b24f7"
+context = "Later saintly reception of continual praise in fitting time, throughout life, and in the Church's worship."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-87"
+loci = ["Psalm 87, especially verse 2", "artifact PDF pages 275-278"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:c0895d7f3047949fda663bc37456a5d23477716ece5325c6feeefdd8ac04c7c2"
+context = "Later saintly Passion reception of the day-and-night cry through Gethsemane and Good Friday."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-103"
+loci = ["Psalm 103, especially verses 13-15", "artifact PDF pages 333-339"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-20"
+source_fingerprint = "sha256:d3cbd8da4425c833efa9e01de8381fdcf2f99b81fa5aadf1e9c4f007671f49be"
+context = "Later saintly providential and moral reception of bread, wine and oil through gratitude, generosity and frugality."

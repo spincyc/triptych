@@ -1,0 +1,102 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 2634,
+   "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20-checked-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The scan confirms 'ei' in 'Adducunt ei surdum', correcting the keyed Wikisource witness's apparent 'ci'. It also confirms the repeated spelling 'exspuens'.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Gregory the Great's sixth-century Latin as printed by Migne in 1849, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 13873379,
+   "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.migne-facsimile-pdf-5b80cc3d",
+   "media_type": "application/pdf",
+   "notes": "Complete 144-page PDF. Book I, homily 10, section 20 begins at the bottom of PL running column 893 and continues through PL column 894, both on PDF page 55. The bold numerals 1270 and 1271 embedded in the body are inherited Maurist-edition page markers, not PL columns; this distinction resolves the otherwise conflicting locator. The file is not retained because the host reserves rights in its electronic edition.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "restricted",
+   "rights_basis": "Gregory's Latin and Migne's 1849 printing are public domain by age, but Documenta Catholica Omnia states that rights in its electronic edition are reserved. No permission to redistribute the host's PDF was established, so the exact bytes are identified but not retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "http://www.documentacatholicaomnia.eu/01p/0590-0604%2C_SS_Gregorius_I_Magnus%2C_Homiliarum_In_Ezechielem_Prophetam_Libri_Duo%2C_MLT.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "wikisource-raw-wikitext",
+   "byte_size": 760356,
+   "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.wikisource-raw-wikitext-16854df0",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The single page contains both books of the work. It is preserved as exact contributor-licensed wikitext, including templates, links, notes, and unusually long physical lines; it is therefore not registered as a raw-line search artifact.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "licensed",
+   "rights_basis": "Gregory's sixth-century Latin and Migne's 1849 printing are public domain. Latin Wikisource makes its contributor text and markup available under Creative Commons Attribution-ShareAlike 4.0; this exact complete revision is retained under that license with its source and attribution recorded here.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=Homiliae_in_Ezechielem_(ed._Migne)&oldid=230781&action=raw",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1849",
+  "editors": [],
+  "id": "edition.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The edition record joins the 1849 Migne print witness to the complete Corpus Corporum keyed transcription of that printing. The checked passage was collated directly to the facsimile, so it is not dependent on the Wikisource reading where the web witness differs or contains markup.",
+  "publication": "Jacques-Paul Migne, Patrologiae cursus completus, Series Latina, volume 76 (Paris, 1849), columns 785-1072; Corpus Corporum electronic transcription republished by Latin Wikisource",
+  "title": "Homiliae in Hiezechihelem prophetam — Patrologia Latina 76",
+  "translators": [],
+  "year": 1849
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "Gregory first insists that the preacher must hear and do God's words before speaking them. He then reads Mark 7:32-35 spiritually: Christ's fingers signify the gifts of the Holy Spirit opening the deaf heart to obedience; saliva signifies wisdom received from Christ's mouth and forms the tongue for preaching; Christ's upward look and sigh teach prayer; and right speech follows obedient action.",
+   "id": "passage.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20",
+   "locus": "I.10.20",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Verified word for word against the page image of Migne's printing, with the keyed web transcription used only as a discovery and comparison witness. The passage is at PL 76:893-894; bold 1270-1271 in the body is Maurist-source pagination and must not be cited as PL columns. This passage supports Gregory's reception of Mark 7 and does not by itself establish the historical intention of any later missal compiler.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Gregory the Great's sixth-century Latin as printed by Migne in 1849, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20.json",
+   "verified_on": "2026-08-20",
+   "words": 396
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Homiliae in Ezechielem prophetam",
+   "Homilies on Ezekiel"
+  ],
+  "author": "Gregory the Great",
+  "category": "homily-collection",
+  "description": "Gregory the Great's two books of homilies on Ezekiel, including the treatment in book I, homily 10, section 20 of Christ's healing of the deaf man in Mark 7:32-35 as an opening of the heart to obedience and of the tongue to preaching.",
+  "id": "work.gregory-the-great.homiliae-in-hiezechihelem-prophetam",
+  "languages": [
+   "la"
+  ],
+  "title": "Homiliae in Hiezechihelem prophetam"
+ }
+}

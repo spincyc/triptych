@@ -1,0 +1,72 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4513999,
+   "id": "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.ia-djvu-ocr-e7f54e11",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected discovery OCR of the complete volume, 108,602 LF-delimited lines. It is searchable but not a verified text; every quotation must be checked against the facsimile or another source-appropriate witness.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "The underlying medieval Latin and 1893 Quaracchi printing are public domain in the United States by age and date of publication. The retained file is Internet Archive's automatically generated plain-text OCR of that public-domain scan and contains no editorial correction or proprietary markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/operaomnia06bona/operaomnia06bona_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 102171194,
+   "id": "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.ia-facsimile-pdf-0347bb64",
+   "media_type": "application/pdf",
+   "notes": "Printed pages 214-215 correspond to PDF pages 258-259. The file is remote only because of its measured size; exact identity, pagination, and a checked focused derivative are retained.",
+   "page_count": 692,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "Bonaventure's medieval Latin and the Quaracchi volume published in 1893 are public domain in the United States by age and date of publication. Internet Archive provides a facsimile of that public-domain volume; the exact 102-megabyte file is not duplicated in this repository because of its size.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/operaomnia06bona/operaomnia06bona.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 3425,
+   "id": "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.wisdom-16.20-21-checked-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The transcription includes the seven numbered correspondences between manna and Christ under the Sacrament of the altar. It deliberately excludes the intervening quaestio, contra, responsio, obiectio, and solutio blocks; consult the facsimile for those discussions and the full apparatus.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Bonaventure's medieval Latin as printed in the 1893 Quaracchi edition, both public domain by age and date. It was made from page images rendered from the exactly hashed facsimile and includes no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": "Collegium S. Bonaventurae",
+  "date": "1893",
+  "editors": [],
+  "id": "edition.bonaventure.opera-omnia-quaracchi.1893-volume-6",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "Volume 6 contains the Commentarius in Ecclesiasten, Commentarius in librum Sapientiae, and works on the Gospel of John. Constituent works retain their own identities through cross-work segments rather than falsely owning the volume artifact.",
+  "publication": "Ad Claras Aquas (Quaracchi), Ex Typographia Collegii S. Bonaventurae, 1893",
+  "title": "Opera omnia, volume 6",
+  "translators": [],
+  "year": 1893
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Bonaventure",
+  "category": "collected-works",
+  "description": "The Quaracchi critical edition of Bonaventure's collected works, represented here by volume 6 as the truthful owner of the complete facsimile and OCR container artifacts that include the Commentary on Wisdom.",
+  "id": "work.bonaventure.opera-omnia-quaracchi",
+  "languages": [
+   "la"
+  ],
+  "title": "Opera omnia (Quaracchi edition)"
+ }
+}

@@ -1,0 +1,20 @@
+\DeclareUnicodeCharacter{2123}{V\kern-0.62em\raisebox{0.12ex}{\scriptsize/}\kern0.28em}
+\DeclareUnicodeCharacter{2720}{\ensuremath{\boldsymbol{+}}}
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\renewenvironment{properstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\textbf{Proper} & \textbf{1962 Missal text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\fulltextelement}[2]{\Needspace{6\baselineskip}\subsection*{#1}\begin{massbox}{#2}\itshape}
+\newcommand{\finishfulltextelement}{\end{massbox}}
+\newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+\newcommand{\fulltextgap}[1]{\par\smallskip\textbf{Witness boundary.} #1\par}
+\newenvironment{dossiertable}
+{\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+\toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
