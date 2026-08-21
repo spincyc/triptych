@@ -68,7 +68,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 269 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
+                "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
                 "solved cases: 29 of 29 verified against the browser's model",
                 "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
@@ -78,7 +78,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":269,... [+426 chars]",
+                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":592,... [+426 chars]",
             ),
         ),
     ),
@@ -97,7 +97,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics assign --calendar postconciliar --json",
             (
-                "{\"assignments\":[{\"calendar\":\"postconciliar\",\"masses\":[{\"basis\":\"place-2-great-day\",\"key\":\"advent... [+35959 chars]",
+                "{\"assignments\":[{\"calendar\":\"postconciliar\",\"masses\":[{\"basis\":\"place-2-great-day\",\"key\":\"advent... [+76425 chars]",
             ),
         ),
     ),
@@ -123,7 +123,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 269 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
+                "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
                 "solved cases: 29 of 29 verified against the browser's model",
                 "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",

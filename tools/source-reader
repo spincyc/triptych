@@ -1278,8 +1278,8 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader check",
             (
-                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
-                "  passages the rights records withhold: 1121",
+                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
+                "  passages the rights records withhold: 1157",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1303,7 +1303,7 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader list --language grc --sort date",
             (
-                "... 12 more lines",
+                "... 18 more lines",
             ),
             "the Greek editions, earliest first",
         ),
@@ -1327,16 +1327,16 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader structure --out build/example-sources",
             (
-                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
-                "  -> build/example-sources/structure/sources (780 files)",
+                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
+                "  -> build/example-sources/structure/sources (2309 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/tpt source-reader structure --check",
             (
-                "479 works, 636 editions, 1427 artifacts, 1264 passages; 143 readable here.",
-                "  src/web/data/structure/sources is current (780 files)",
+                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
+                "  src/web/data/structure/sources is current (2309 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

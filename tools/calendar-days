@@ -106,7 +106,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":34734,\"rules_without_a_mass\":[\"ot-29-friday\",\"ot-29-... [+906 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":38406,\"rules_without_a_mass\":[]},\"roman-1962\":{\"plac... [+319 chars]",
             ),
         ),
     ),
@@ -126,7 +126,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":17,\"dates_r... [+4167 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":0,\"dates_re... [+4147 chars]",
             ),
         ),
     ),

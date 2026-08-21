@@ -58,8 +58,8 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "133 works, 178 documents, 186 issues, 5675 pages.",
-                "  titles derived from source and confirmed against the built PDF: 186",
+                "137 works, 186 documents, 200 issues, 5953 pages.",
+                "  titles derived from source and confirmed against the built PDF: 200",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 0",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
@@ -68,8 +68,8 @@ EXAMPLES = {
         Example(
             "tools/document-library check --provider claude",
             (
-                "45 works, 45 documents, 47 issues, 1437 pages.",
-                "  titles derived from source and confirmed against the built PDF: 47",
+                "49 works, 49 documents, 54 issues, 1615 pages.",
+                "  titles derived from source and confirmed against the built PDF: 54",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 0",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
@@ -95,7 +95,7 @@ EXAMPLES = {
         Example(
             "tools/document-library list --author claude-fable-5 --sort pages",
             (
-                "... 24 more lines",
+                "... 28 more lines",
             ),
             "every document one model contributed to, longest last",
         ),
@@ -133,7 +133,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "133 works, 178 documents, 186 issues, 5675 pages.",
+                "137 works, 186 documents, 200 issues, 5953 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -141,7 +141,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "133 works, 178 documents, 186 issues, 5675 pages.",
+                "137 works, 186 documents, 200 issues, 5953 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",
