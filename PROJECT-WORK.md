@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-16.
+Last reconciled: 2026-08-20.
 
 ## Standing public-alpha authority
 
@@ -1650,3 +1650,30 @@ that invited the divergence is unchanged and should be clarified. Separately,
 `src/common/preamble.tex`, which `guidance/editorial.md` forbids as apparatus
 wording; it appears in every published proper guide and needs one
 repository-wide fix rather than a per-leaf fork.
+
+## GPT Eleventh through Thirteenth Sundays after Pentecost
+
+<!-- promised-deliverable: gpt-eleventh-thirteenth-after-pentecost-2026-08-20 -->
+
+On 2026-08-20 the maintainer independently reopened the closed 1962 temporal
+propers boundary for the GPT guides `25`–`27`, the Eleventh through Thirteenth
+Sundays after Pentecost. The request requires full source-first research, broad
+and deep patristic and later saintly reception, Catholic-faithful scholarly
+treatment, and enrichment of the provider-neutral shared corpus wherever the
+verified research warrants it. The existing Claude editions are source leads
+and parallel publications, not prose owners; the GPT editions remain
+independently authored and audited.
+
+Each target follows the current componentized profile: one canonical full
+research leaf, one mechanically derived synthesis companion, one canonical web
+edition, source bindings and reception matrices, installed reviewed PDFs,
+catalog links, and provider-qualified release records. This decision changes no
+other 1962 identity and authorizes no material revision of a Claude publication.
+
+**In progress.** The guidance boundary and fail-closed promise are recorded.
+Independent research lanes are checking the controlling 1962 formulary, every
+appointed passage in full context, direct Greek and Latin patristic exegesis,
+medieval and later saintly reception, oration history, Catholic doctrinal
+controls, page-2 historical dossiers, notable later reuses, interpretive
+precedent searches, and provider-neutral source-library opportunities. No GPT
+publication artifact has yet been represented as complete.

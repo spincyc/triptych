@@ -1404,3 +1404,69 @@ state = "complete"
   evidence = [
     "PROJECT-WORK.md",
   ]
+
+[[deliverables]]
+id = "gpt-eleventh-thirteenth-after-pentecost-2026-08-20"
+owner = "src/gpt/liturgy/roman-rite/1962/propers/temporal"
+promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 25-27) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "gpt-boundary-recorded"
+  criterion = "The 1962 proper-guide profile and production plan record the new GPT 25-27 exception without reopening any other target."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/roman-1962-propers.md",
+    "guidance/liturgy/propers-production-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "three-gpt-leaves"
+  criterion = "Three componentized GPT leaves 25-27 exist with facsimile-collated verified.md, focused retrieved.txt, complete research/scope.md reception matrices, and validated source bindings."
+  status = "open"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal",
+  ]
+
+  [[deliverables.requirements]]
+  id = "full-patristic-saintly-research"
+  criterion = "Every appointed passage receives documented full-context research and a broad search across the major relevant Greek and Latin patristic, medieval Doctoral, and later saintly corpora, with deep comparative treatment of retained witnesses, exact loci, material disagreements, doctrinal limits, and bounded negative results."
+  status = "open"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal",
+  ]
+
+  [[deliverables.requirements]]
+  id = "shared-corpus-enrichment"
+  criterion = "Verified reusable source identity or passage evidence newly required by the three GPT guides is entered into the provider-neutral source library and bound from each consumer; publication-local interpretation remains local."
+  status = "open"
+  evidence = [
+    "src/sources",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gpt-publications-verified"
+  criterion = "All three Full and Synthesis PDFs are built, gate-checked, visually inspected page by page, and installed from the reviewed builds, and each canonical web edition is generated, reviewed, and installed."
+  status = "open"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "web/gpt/liturgy/roman-rite/1962/propers/temporal",
+  ]
+
+  [[deliverables.requirements]]
+  id = "catalog-release-and-deployment"
+  criterion = "Rows 25-27 link the GPT Synthesis PDFs and web editions, provider-qualified release records are validated, the exact outgoing range is publicly reviewable, and the resulting Pages deployment and affected live routes are verified."
+  status = "open"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "claude-publication-boundary"
+  criterion = "No Claude publication receives a material source, PDF, web, catalog, release, or generation-metadata revision from this GPT work."
+  status = "open"
+  evidence = [
+    "PROJECT-WORK.md",
+  ]

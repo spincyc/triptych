@@ -36,12 +36,14 @@ to the current profile — English, two editions apiece — and authors no furth
 calendar targets. The reference works, ordinaries, and the comparative study are
 outside this boundary and continue.
 
-On 2026-08-19 the maintainer reopened this boundary for exactly three targets:
-the Claude 1962 temporal guides `25`–`27`, the Eleventh through Thirteenth
-Sundays after Pentecost, authored to the current componentized profile. Each is
-a full target — canonical leaf, synthesis companion, web edition, and release
-records. No other identity becomes a target by this decision, and the
-collections otherwise remain closed as recorded above.
+On 2026-08-19 the maintainer reopened this boundary for exactly three Claude
+targets: the 1962 temporal guides `25`–`27`, the Eleventh through Thirteenth
+Sundays after Pentecost, authored to the current componentized profile. On
+2026-08-20 the maintainer independently reopened the same three identities for
+GPT. Each provider target is a full target — canonical leaf, synthesis
+companion, web edition, and release records. No other identity becomes a target
+by either decision, and the collections otherwise remain closed as recorded
+above.
 
 The permanent identities in the registry and the profile remain complete and
 fixed, because an identity may never be reassigned and a future maintainer must
