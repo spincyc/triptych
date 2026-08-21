@@ -183,7 +183,7 @@ NODE = shutil.which("node")
 # projects as refused — while the page consumes `text_refused` BEFORE the
 # request sink, so a refused row renders the refused sentence and can be
 # answered by no path, carried, cached, or late.
-MODEL_SHA256 = "aa727ef52eb74900cf3176742e15fdc0abde6f541fffebe83bcec752913d9f51"
+MODEL_SHA256 = "49b74f3daf17d60c9d2aca42bff1970bd646bb03e1c290e67690bb46ee3edc89"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1457,6 +1457,204 @@ V13_WALKED_GEN2 = _fixture({
     ],
     "leads": [], "blocked": [], "refusals": {},
 })
+
+
+# ==========================================================================
+# V14 §§4-22 — FINAL PROJECTION AUTHORITY
+#
+# The V13 review accepted the one-chapter-one-projection architecture and
+# found six things it does not close. Every fixture below is one of them.
+#
+#  1. `unfetched` was read once by the projection and AGAIN by the page,
+#     which is the one raw chapter member the projection did not carry.
+#  2. Identity was argued from ids, not proved from objects.
+#  3. The tally was recorded as the rows consumer rather than as its own.
+#  4. A request was owned by its path string, so a same-path sibling was
+#     the same owner.
+#  5. `sources["1"]` as an own accessor was invoked by one consumer and
+#     declined by another, out of one projection.
+#  6. The projection was frozen and its rows, leads and blocked entries
+#     were not.
+#
+# Each walking case stands beside a control that supplies the walked-to
+# value from the ACCEPTED FIRST READ, so everything planted is proved
+# reachable and renderable by a page entitled to reach it.
+
+# THE FORGED WORD FOR A RECORD THAT DID COME. `unfetched` is the route's own
+# vocabulary for a request that failed; a payload carrying one is a document
+# forging the page's own failure. The walking form supplies nothing while
+# readability is decided and this afterwards.
+V14_FORGED_UNFETCHED = "FORGED RAW REREAD"
+
+# A RECORDED REFUSAL THIS CHAPTER REALLY MAKES, so the walk can be seen to
+# take it away: Rule 4 is the strongest claim the page makes, and losing it
+# to a manufactured unavailable state is a silent failure open.
+V14_REAL_REFUSALS = {
+    "douay-rheims": [
+        {"kind": "displaced", "chapter": 1,
+         "note": "the numbers agree and the text boundary does not"}]}
+V14_REAL_REFUSAL_SAID = ("The numbers agree and the text boundary does "
+                         "not.")
+
+# The chapter every `unfetched` case is performed on: genuine absence, one
+# fragment whose own id is `fallback-owned` so the carried door is open, a
+# real recorded refusal, one lead and one blocked entry — so a collapse
+# takes something visible from every sink at once.
+V14_UNFETCHED_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": _voice_source(1)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned",
+                        text_path="structure/catena/text/fallback-owned.json")],
+    "leads": [{"author": "Lead Author", "title": "Lead Work", "date": 400}],
+    "blocked": [{"author": "Blocked Author", "work": "Blocked Work",
+                 "reason": "rights not established"}],
+    "refusals": V14_REAL_REFUSALS,
+})
+
+# THE NESTED SOURCE, AS DATA AND AS AN ACCESSOR. The valid record is what
+# every fragment standing under it is entitled to; the forged one carries a
+# rights claim that reaches the reader's own provenance line, so a consumer
+# that accepts the accessor is caught by content and not only by a count.
+V14_NESTED_VALID = _voice_source(1)
+V14_NESTED_FORGED = _voice_source(
+    1, rights="PLANTED NESTED RIGHTS — reachable only through an accessor.",
+    author="Forged Author", work="Forged Work", voice="translation",
+    language="grc")
+V14_NESTED_RIGHTS = "PLANTED NESTED RIGHTS — reachable only through an accessor."
+
+# The chapter the nested-source cases are performed on. Its one fragment
+# names source "1" and states nothing of its own but its identity, so every
+# word on its provenance line comes through the join — which is the seam the
+# accessor sits on.
+V14_NESTED_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": V14_NESTED_VALID},
+    "fragments": [_voice_fragment(1, id="fallback-owned",
+                                  text_path="structure/catena/text/fallback-owned.json")],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# The same chapter with the forged edition supplied AS ORDINARY DATA. This is
+# the positive control for every nested-source case: what the accessor would
+# have said, said by a document, reaches the provenance line and the voice
+# control — so an accessor that reaches neither is declined, not merely
+# unreached.
+V14_NESTED_FORGED_SPINE = _fixture(dict(
+    V14_NESTED_SPINE, sources={"1": V14_NESTED_FORGED}))
+
+# A NESTED SOURCE WHOSE OWN FIELDS ARE ACCESSORS. One level deeper than the
+# entry itself: the record arrives as a record, and its `rights`, `voice` and
+# `author` are getters. `ownData` declines each, so the projection states the
+# absence rather than one consumer's reading of it.
+V14_NESTED_FIELD_KEYS = ("rights", "voice", "author", "language")
+
+# MEMBER INVENTORY. `Array.isArray` is true of a proxy over an array, so the
+# raw `fragments` really can answer "which members" and "how many" with two
+# different answers. The base list is what the accepted first read holds.
+V14_MEMBER_ONE = [
+    _voice_fragment(1, id="fallback-owned",
+                    text_path="structure/catena/text/fallback-owned.json")]
+V14_MEMBER_TWO = V14_MEMBER_ONE + [_voice_fragment(2)]
+V14_MEMBER_THREE = V14_MEMBER_TWO + [_voice_fragment(3)]
+V14_MEMBER_REVERSED = list(reversed(V14_MEMBER_TWO))
+
+
+def _members_spine(members):
+    """One chapter carrying exactly these fragments and nothing else."""
+    return _fixture({
+        "token": "Gen", "chapter": 1,
+        "sources": {"1": _voice_source(1), "2": _voice_source(2),
+                    "3": _voice_source(3)},
+        "fragments": members,
+        "leads": [], "blocked": [], "refusals": {},
+    })
+
+
+V14_MEMBERS_ONE_SPINE = _members_spine(V14_MEMBER_ONE)
+V14_MEMBERS_TWO_SPINE = _members_spine(V14_MEMBER_TWO)
+V14_MEMBERS_THREE_SPINE = _members_spine(V14_MEMBER_THREE)
+V14_MEMBERS_REVERSED_SPINE = _members_spine(V14_MEMBER_REVERSED)
+V14_MEMBERS_NONE_SPINE = _members_spine([])
+
+# TWO ROWS, ONE ADDRESS. Both fragments carry the same own id, so both
+# resolve the same carried address through genuine absence — and they are
+# two different projected row objects standing at two different verses. A
+# request owned by its path cannot tell them apart; a request owned by the
+# row it came off can.
+V14_SAME_PATH_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": _voice_source(1), "2": _voice_source(2)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned", locator="first",
+                        text_path="structure/catena/text/fallback-owned.json"),
+        _voice_fragment(2, id="fallback-owned", locator="second", source="2",
+                        text_path="structure/catena/text/fallback-owned.json",
+                        extent={"token": "Gen", "first_chapter": 1,
+                                "first_verse": 2, "last_chapter": 1,
+                                "last_verse": 2}),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# THE SAME ADDRESS AGAIN, ON ANOTHER CHAPTER. A second chapter is a second
+# projection: the request must stay with the projection and the row that
+# initiated it, and must not collapse onto the address the two share.
+V14_SAME_PATH_GEN2 = _fixture({
+    "token": "Gen", "chapter": 2,
+    "sources": {"1": _voice_source(1)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned", locator="second-chapter",
+                        text_path="structure/catena/text/fallback-owned.json",
+                        extent={"token": "Gen", "first_chapter": 2,
+                                "first_verse": 1, "last_chapter": 2,
+                                "last_verse": 1}),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
+
+# THE WHOLE AUTHORITY GRAPH IN ONE CHAPTER: rows with an extent and
+# translators, two voices, editions, a recorded refusal, a lead and a blocked
+# entry — every structure a consumer downstream trusts as final.
+V14_AUTHORITY_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": _voice_source(1),
+                "2": _voice_source(2, voice="translation", language="grc",
+                                   translators=["Translator One",
+                                                "Translator Two"])},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned",
+                        text_path="structure/catena/text/fallback-owned.json"),
+        _voice_fragment(2, source="2"),
+    ],
+    "leads": [{"author": "Lead Author", "title": "Lead Work", "date": 400}],
+    "blocked": [{"author": "Blocked Author", "work": "Blocked Work",
+                 "reason": "rights not established"}],
+    "refusals": V14_REAL_REFUSALS,
+})
+
+# EVERY RAW CHAPTER MEMBER THIS PAGE READS, and the value each walks to. The
+# authority inventory is a table rather than a sentence: a member missing
+# from it is missing visibly.
+V14_LATE_BLOCKED = {"author": "Late Author", "work": "Late Work",
+                    "reason": "planted late, reachable only by reading twice"}
+V14_LATE_LEAD = {"author": "Late Author", "title": "Late Title", "date": 400}
+V14_LATE_REFUSALS = {
+    "douay-rheims": [
+        {"kind": "unrecorded", "chapter": 1,
+         "note": "planted late refusal, reachable only by reading twice"}]}
+V14_AUTHORITY_MEMBERS = {
+    "fragments": [V14_UNFETCHED_SPINE["fragments"], V14_MEMBER_TWO],
+    "sources": [V14_UNFETCHED_SPINE["sources"], {"1": V14_NESTED_FORGED}],
+    "refusals": [V14_REAL_REFUSALS, V14_LATE_REFUSALS],
+    "unfetched": ["__ABSENT__", V14_FORGED_UNFETCHED],
+    "blocked": [V14_UNFETCHED_SPINE["blocked"],
+                V14_UNFETCHED_SPINE["blocked"] + [V14_LATE_BLOCKED]],
+    "leads": [V14_UNFETCHED_SPINE["leads"],
+              V14_UNFETCHED_SPINE["leads"] + [V14_LATE_LEAD]],
+    "text_prefix": ["__ABSENT__", "structure/catena/text/deeper/"],
+}
+
 
 # ==========================================================================
 # V7 §6 — a fragment that can name NOTHING of itself
@@ -2806,6 +3004,272 @@ SCENARIOS = [
          {"do": "openEveryFragment", "label": "opened"},
      ]},
 
+
+    # ============================================================== V14 §4-6
+    # THE POST-PROJECTION `unfetched` REREAD.
+    #
+    # The record supplies NOTHING while readability is decided and a forged
+    # string afterwards. Under V13 the page read the raw member a second time
+    # and replaced an accepted chapter with a manufactured unavailable state,
+    # printing the payload's own string to the reader. Under V14 the value is
+    # on the projection and the raw member is asked once.
+    {"name": "v14-walking-unfetched", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"unfetched": ["__ABSENT__",
+                                            V14_FORGED_UNFETCHED]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE STEADY POSITIVE CONTROL. The same forged value from the FIRST read.
+    # The chapter really does become unavailable, so the walked case above is
+    # unreached because nothing asked twice — not because nothing could
+    # matter.
+    {"name": "v14-steady-unfetched", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                    "names": {"unfetched": [V14_FORGED_UNFETCHED]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # AND THE UNTOUCHED CHAPTER, so what the walk would take away is on the
+    # record as what the page shows when nothing is walked at all.
+    {"name": "v14-quiet-unfetched", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # ============================================================= V14 §16-19
+    # THE NESTED SOURCE ACCESSOR. `sources["1"]` as an own getter: invoked by
+    # the voices and editions walk under V13, declined by every fragment row,
+    # out of ONE projection.
+    {"name": "v14-nested-accessor", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "values": [V14_NESTED_VALID, V14_NESTED_FORGED]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # The same accessor answering the FORGED record from its first ask.
+    {"name": "v14-nested-accessor-steady", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "values": [V14_NESTED_FORGED]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # Nothing at the first ask and the forged record afterwards.
+    {"name": "v14-nested-accessor-late", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "values": ["__ABSENT__", V14_NESTED_FORGED]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # An accessor that DETONATES. A getter no consumer invokes cannot throw
+    # past the render tail.
+    {"name": "v14-nested-accessor-throws", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "values": ["__THROW__"]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # ONE LEVEL DEEPER: the entry is a record whose edition, rights, voice and
+    # language members are accessors.
+    {"name": "v14-nested-fields", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "fields": {"rights": ["public-domain",
+                                              V14_NESTED_RIGHTS],
+                                   "voice": ["original", "translation"],
+                                   "author": ["Author 1", "Forged Author"],
+                                   "language": ["la", "grc"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-nested-fields-throw", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "fields": {"rights": ["__THROW__"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE POSITIVE CONTROLS. The valid edition as data, and the forged
+    # edition as data: everything an accessor could have said, said by a
+    # document, reaching the provenance line and the voice control.
+    {"name": "v14-nested-data", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-nested-forged-data", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_FORGED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # ============================================================= V14 §14-15
+    # THE MEMBER INVENTORY, ASKED TWICE. A proxy over a real array: `length`
+    # and each index answer independently, so the list really can add a
+    # member, drop one, reorder them, invent one and change the tally between
+    # the answer readability took and the answer the render takes.
+    {"name": "v14-members-add", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_ONE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [1, 2],
+                      "slots": {"1": [V14_MEMBER_TWO[1]]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-add-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_TWO_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-remove", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_TWO_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [2, 1]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-remove-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_ONE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-reorder", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_TWO_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [2],
+                      "slots": {"0": [V14_MEMBER_TWO[0], V14_MEMBER_TWO[1]],
+                                "1": [V14_MEMBER_TWO[1], V14_MEMBER_TWO[0]]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-reorder-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_REVERSED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # A PHANTOM MEMBER AND THE TALLY. The list answers "none" while
+    # readability is decided and "five" when the page asks how many there
+    # were — which turns a recorded emptiness into an unavailable chapter.
+    {"name": "v14-members-phantom", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_NONE_SPINE},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [0, 5]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-phantom-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_NONE_SPINE},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [5]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-empty-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_NONE_SPINE},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-tally", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_THREE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "driftMembers": {"path": "structure/catena/01-gen/001.json",
+                      "length": [3, 1]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    {"name": "v14-members-tally-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_MEMBERS_THREE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # ============================================================= V14 §10-13
+    # TWO ROWS, ONE ADDRESS. Ownership by path string cannot say which of two
+    # projected rows asked; ownership by the row object can.
+    {"name": "v14-same-path-rows", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openFirstFragment", "label": "first"},
+               {"do": "openEveryFragment", "label": "both"}]},
+    # TWO PROJECTIONS, ONE ADDRESS. A second chapter is a second projection
+    # carrying the same text address; the request stays with the projection
+    # and the row that made it.
+    {"name": "v14-two-projections-one-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/01-gen/002.json": V14_SAME_PATH_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openFirstFragment", "label": "first"},
+               {"do": "selectChapter", "value": "2", "label": "second"},
+               {"do": "openEveryFragment", "label": "opened"}]},
+    # A GENUINELY LATE COMPLETION ON A SHARED ADDRESS. Projection A's row
+    # starts the request; the request is held; projection B becomes the page
+    # and carries the same address; then A completes.
+    {"name": "v14-late-same-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/01-gen/002.json": V14_SAME_PATH_GEN2,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "defer": ["structure/catena/text/fallback-owned.json"],
+     "steps": [{"do": "openFirstFragment", "label": "asked"},
+               {"do": "selectChapter", "value": "2", "label": "moved"},
+               {"do": "openEveryFragment", "label": "reopened"},
+               {"do": "release",
+                "path": "structure/catena/text/fallback-owned.json",
+                "label": "late"}]},
+
+    # ============================================================= V14 §20-22
+    # THE WHOLE AUTHORITY GRAPH, so the freeze report has one of everything
+    # to report on.
+    {"name": "v14-authority-graph", "hash": GEN1,
+     "probeAuthority": True,
+     "files": {"structure/catena/01-gen/001.json": V14_AUTHORITY_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
+    # ================================================================ V14 §6
+    # THE AUTHORITY INVENTORY. One scenario per raw chapter member this page
+    # reads, each walking that member alone, so the read count is a table and
+    # not a sentence.
+    *[{"name": "v14-authority-" + member, "hash": GEN1,
+       "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+                 "structure/catena/text/fallback-owned.json":
+                     V9_PLANTED_FALLBACK,
+                 "structure/catena/text/deeper/fallback-owned.json":
+                     V9_COMPOSED_DEEPER},
+       "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                      "names": {member: values}},
+       "steps": [{"do": "openEveryFragment", "label": "opened"}]}
+      for member, values in V14_AUTHORITY_MEMBERS.items()],
+    # THE STEADY FIRST ANSWER. What the page renders when the walked member
+    # holds still at the value the projection accepted — the page the walk
+    # must not move away from.
+    *[{"name": "v14-authority-" + member + "-first", "hash": GEN1,
+       "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+                 "structure/catena/text/fallback-owned.json":
+                     V9_PLANTED_FALLBACK,
+                 "structure/catena/text/deeper/fallback-owned.json":
+                     V9_COMPOSED_DEEPER},
+       "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                      "names": {member: [values[0]]}},
+       "steps": [{"do": "openEveryFragment", "label": "opened"}]}
+      for member, values in V14_AUTHORITY_MEMBERS.items()],
+    # THE STEADY SECOND ANSWER. What the page renders when the walked-TO
+    # value is the one the projection accepts — so every planted thing is
+    # proved reachable, renderable and different.
+    *[{"name": "v14-authority-" + member + "-later", "hash": GEN1,
+       "files": {"structure/catena/01-gen/001.json": V14_UNFETCHED_SPINE,
+                 "structure/catena/text/fallback-owned.json":
+                     V9_PLANTED_FALLBACK,
+                 "structure/catena/text/deeper/fallback-owned.json":
+                     V9_COMPOSED_DEEPER},
+       "driftSpine": {"path": "structure/catena/01-gen/001.json",
+                      "names": {member: [values[1]]}},
+       "steps": [{"do": "openEveryFragment", "label": "opened"}]}
+      for member, values in V14_AUTHORITY_MEMBERS.items()],
+
     # ============================================================== V11 §2
     # Every unestablished prefix, driven to the VISIBLE and the REQUEST
     # sink — the two places the V10 review found the wording claim was
@@ -3647,6 +4111,54 @@ async function run(scenario) {
   const projectionIds = {};
   const projectionRows = [];
   const owners = {};
+  /* V14: THE OBJECT EACH CONSUMER ACTUALLY RECEIVED.
+   *
+   * The V13 review refused V13's identity proof, and was exact about why:
+   * the harness called `chapterProjection(file)` itself, beside the
+   * consumer, and compared `.id` STRINGS. Two equal ids are two equal
+   * strings. What a reviewer is owed is the reference that crossed the
+   * consumer boundary, taken where it crossed it.
+   *
+   * `chapterWitness` is a bounded observation seam in the model: it hands
+   * this recorder the exact object the consumer is about to read, and it
+   * cannot change what the consumer gets. Identity is decided HERE, in the
+   * same realm, by a `Map` keyed on the object — SameValueZero on an object
+   * key IS `===`. The integers below are labels for that decision, not the
+   * decision; two consumers sharing a label shared an object. */
+  const identities = new Map();
+  let identityNext = 0;
+  const refOf = (object) => {
+    if (object === null || typeof object !== 'object') return -1;
+    if (!identities.has(object)) identities.set(object, ++identityNext);
+    return identities.get(object);
+  };
+  const witnessLog = [];
+  const consumerRefs = {};
+  const authoritativeRefs = [];
+  const authoritativeMade = [];
+  const projectionRowRefs = {};
+  /* THE ASK THAT CAUSED THE REQUEST ABOUT TO BE MADE. `fragmentText(row)`
+   * asks the model for the row's address and then reaches the transport in
+   * the same synchronous turn, so the transport consumes the ask that caused
+   * it rather than looking for a projected row whose path string matches.
+   * A cache hit consumes nothing, which is why the next ask clears it. */
+  let pendingAsk = null;
+  const asks = [];
+  /* HOW OFTEN A PLANTED NESTED SOURCE ACCESSOR WAS INVOKED. Under V14 the
+   * answer is zero: the accessor is declined by descriptor, once, and no
+   * consumer reaches it afterwards. */
+  const sourceCalls = {};
+  /* THE LAST CHAPTER SPINE THIS PAGE WAS SERVED. The freeze report below
+   * prefers the object the witness recorded; where there is no witness — the
+   * parent — it projects this one instead. Asking a memoized projection what
+   * shape it is is not the identity question §9 forbids recomputing: it
+   * returns the instance already made, and what is asked of it is whether it
+   * is sealed, never whether it is the same. Reported at both endpoints so a
+   * freeze failure is a fact about freezing. */
+  let lastSpine = null;
+  /* HOW OFTEN A WALKING MEMBER INVENTORY WAS ASKED ITS LENGTH AND ITS
+   * MEMBERS. One `slice` reads each exactly once. */
+  const memberReads = {};
   /* THE BODY A TEXT REQUEST WAS ANSWERED WITH, short enough to read in a
    * ledger and long enough to name a planted marker. */
   const bodyOf = (doc) => doc && typeof doc === 'object'
@@ -3671,8 +4183,13 @@ async function run(scenario) {
       const turn = turns[name] || 0;
       turns[name] = turn + 1;
       spineReads['spine-' + name] = turn + 1;
-      return plan.cycle ? values[turn % values.length]
+      /* '__ABSENT__' is how a plan says "this member is not there this
+       * time": JSON cannot carry `undefined`, and the walking-`unfetched`
+       * case needs exactly that shape — absent while readability is decided,
+       * a forged string afterwards. */
+      const value = plan.cycle ? values[turn % values.length]
         : values[Math.min(turn, values.length - 1)];
+      return value === '__ABSENT__' ? undefined : value;
     };
     return new Proxy(Object.assign({}, spine), {
       get(target, asked) {
@@ -3697,6 +4214,117 @@ async function run(scenario) {
           Reflect.ownKeys(target).concat(Object.keys(names))));
       }
     });
+  };
+  /* V14: A NESTED SOURCE THAT IS AN OWN ACCESSOR.
+   *
+   * The V13 review's sixth finding, exactly: `sources["1"]` written as
+   * `get "1"() {…}` was INVOKED by the voices and editions walk, which reads
+   * it as a plain lookup, and DECLINED by every fragment row, which reads it
+   * by descriptor. One projection then said two incompatible things about
+   * one edition. A getter cannot be expressed as a document, so it is
+   * installed here, at the transport, on the served body's own `sources`.
+   * `values` walks the same way a spine member walks; '__THROW__' detonates,
+   * and '__ABSENT__' answers `undefined`. Every invocation is counted,
+   * because "declined" is a claim about a number. */
+  const accessorSources = (spine, plan) => {
+    const made = Object.assign({}, spine);
+    const raw = Object.assign({}, spine.sources || {});
+    const label = 'source-' + plan.key;
+    let turn = 0;
+    sourceCalls[label] = 0;
+    /* ONE LEVEL DEEPER: the entry IS a record, and its own edition, rights
+     * and voice members are the accessors. The review named this shape
+     * beside the entry itself, because a projection that declines the entry
+     * and invokes its fields is contradictory in exactly the same way. */
+    if (plan.fields) {
+      const record = Object.assign({}, raw[plan.key] || {});
+      for (const name of Object.keys(plan.fields)) {
+        const values = plan.fields[name];
+        const inner = label + '-' + name;
+        let asked = 0;
+        sourceCalls[inner] = 0;
+        Object.defineProperty(record, name, {
+          get() {
+            sourceCalls[inner] += 1;
+            const value = values[Math.min(asked, values.length - 1)];
+            asked += 1;
+            if (value === '__THROW__') {
+              throw new Error('planted nested field accessor');
+            }
+            return value === '__ABSENT__' ? undefined : value;
+          },
+          enumerable: true, configurable: true
+        });
+      }
+      raw[plan.key] = record;
+      made.sources = raw;
+      return made;
+    }
+    Object.defineProperty(raw, plan.key, {
+      get() {
+        sourceCalls[label] += 1;
+        const value = plan.values[Math.min(turn, plan.values.length - 1)];
+        turn += 1;
+        if (value === '__THROW__') {
+          throw new Error('planted nested source accessor');
+        }
+        return value === '__ABSENT__' ? undefined : value;
+      },
+      enumerable: true, configurable: true
+    });
+    made.sources = raw;
+    return made;
+  };
+  /* V14: A MEMBER INVENTORY THAT ANSWERS THE SAME QUESTION TWICE.
+   *
+   * The V13 review found the member-list scenario kept one row before and
+   * after and moved only a `text_path`, which proves nothing about the
+   * inventory itself. A list is asked two different questions — which
+   * members are there, and how many — and a list that answers them
+   * differently can add a member, drop one, reorder them, invent one, or
+   * turn a recorded emptiness into an unavailable chapter. `Array.isArray`
+   * is true of a proxy over an array, so this is what a hostile payload can
+   * really be. `length` and each index walk independently; both are
+   * counted. */
+  const driftingMembers = (spine, plan) => {
+    const made = Object.assign({}, spine);
+    const base = (spine.fragments || []).slice();
+    const lengths = plan.length || [base.length];
+    const slots = plan.slots || {};
+    const turns = {};
+    memberReads['members-length'] = 0;
+    for (const slot of Object.keys(slots)) memberReads['members-' + slot] = 0;
+    const step = (name, values) => {
+      const turn = turns[name] || 0;
+      turns[name] = turn + 1;
+      return values[Math.min(turn, values.length - 1)];
+    };
+    made.fragments = new Proxy(base, {
+      get(target, asked) {
+        if (asked === 'length') {
+          memberReads['members-length'] += 1;
+          return step('length', lengths);
+        }
+        if (Object.prototype.hasOwnProperty.call(slots, asked)) {
+          memberReads['members-' + asked] += 1;
+          const value = step(asked, slots[asked]);
+          return value === '__ABSENT__' ? undefined : value;
+        }
+        return Reflect.get(target, asked);
+      },
+      has(target, asked) {
+        return Object.prototype.hasOwnProperty.call(slots, asked)
+          || Reflect.has(target, asked);
+      },
+      getOwnPropertyDescriptor(target, asked) {
+        if (Object.prototype.hasOwnProperty.call(slots, asked)) {
+          return { value: this.get(target, asked), writable: true,
+                   enumerable: true, configurable: true };
+        }
+        return Reflect.getOwnPropertyDescriptor(target, asked);
+      }
+    });
+    return made;
   };
   const driftingSpine = (spine, values, cycle) => {
     const made = Object.assign({}, spine);
@@ -3808,9 +4436,19 @@ async function run(scenario) {
      * absence disclosure each meet exactly what a hostile server could hand
      * a real page — and, under V12, each met a different answer. */
     const walk = scenario.driftSpine;
-    const served = walk && walk.path === path && carried
+    const walked = walk && walk.path === path && carried
       && typeof carried === 'object'
       ? driftingRecord(carried, walk) : carried;
+    /* V14: the nested source accessor and the walking member inventory,
+     * served the same way and at the same seam. */
+    const nested = scenario.sourceAccessor;
+    const sourced = nested && nested.path === path && walked
+      && typeof walked === 'object'
+      ? accessorSources(walked, nested) : walked;
+    const inventory = scenario.driftMembers;
+    const served = inventory && inventory.path === path && sourced
+      && typeof sourced === 'object'
+      ? driftingMembers(sourced, inventory) : sourced;
     /* V13: WHO OWNS THIS REQUEST. The page composes no text address of its
      * own, so a `structure/catena/text/…` request can only have come off a
      * projected row — and the row names which projection made it. A request
@@ -3819,6 +4457,16 @@ async function run(scenario) {
     const held = record.kind === 'text'
       ? projectionRows.filter((one) => one.paths.indexOf(path) !== -1)[0]
       : undefined;
+    /* V14: THE ASK THAT CAUSED THIS REQUEST, consumed here. The V13 review
+     * found ownership reconstructed by taking the FIRST projected row whose
+     * path string matched, which is ambiguous the moment two rows carry one
+     * path. The model records the row and its projection when the address is
+     * resolved, and the transport takes that record rather than searching
+     * for one. The path match survives only as the parent's answer, where
+     * there is no ask to consume. */
+    if (record.kind === 'spine') lastSpine = served;
+    const caused = record.kind === 'text' ? pendingAsk : null;
+    if (record.kind === 'text') pendingAsk = null;
     owners[record.seq] = {
       // THE ROUTE AS IT STOOD WHEN THE REQUEST WAS MADE, not as it stands
       // when the journal is read. A prewarmed body is fetched under chapter
@@ -3826,7 +4474,13 @@ async function run(scenario) {
       // the later hash would say the earlier request was made somewhere it
       // was not.
       route: location.hash,
-      projection: held ? held.id : '',
+      projection: caused ? caused.id : (held ? held.id : ''),
+      // V14: the owner as an OBJECT, not as a matched string. -1 where the
+      // model exposed no ask, which is the parent.
+      owner: caused ? caused.row : -1,
+      ownerProjection: caused ? caused.projection : -1,
+      ownerPath: caused ? caused.path : '',
+      byPath: held ? held.id : '',
       body: held || record.kind === 'text'
         ? bodyOf(rawly ? raw[path] : served) : ''
     };
@@ -3937,6 +4591,147 @@ async function run(scenario) {
       return made;
     };
   }
+  /* V14: THE WITNESS. Installed on the production seam, never around it.
+   *
+   * The recorder is handed the projection each consumer is about to read,
+   * at the moment the consumer reads it, and — for the request consumer —
+   * the row whose address is being resolved. Nothing here recomputes a
+   * projection: `rowProjection` is a `WeakMap` lookup on the row itself, so
+   * asking it advances no pass and normalizes nothing.
+   *
+   * At the parent there is no `chapterWitness`, so every V14 identity
+   * journal is empty there. That is the parent's answer to the review's
+   * first finding and it reads as one: the parent cannot show which object
+   * any consumer received, because it offers no way to look. */
+  if (typeof window.CatenaModel.chapterWitness === 'function') {
+    const model = window.CatenaModel;
+    model.chapterWitness((consumer, projection, detail) => {
+      const ref = refOf(projection);
+      if (consumer === 'normalize') {
+        if (authoritativeRefs.indexOf(ref) === -1) {
+          authoritativeRefs.push(ref);
+          authoritativeMade.push(projection);
+          projectionRowRefs[ref] = (projection.rows || []).map(refOf);
+        }
+      }
+      if (!consumerRefs[consumer]) consumerRefs[consumer] = [];
+      if (consumerRefs[consumer].indexOf(ref) === -1) {
+        consumerRefs[consumer].push(ref);
+      }
+      const entry = { consumer: consumer, projection: ref, step: phase.now };
+      if (consumer === 'request') {
+        entry.row = refOf(detail);
+        entry.path = detail && typeof detail === 'object'
+          ? String(detail.text_path || '') : '';
+        entry.owned = refOf(model.rowProjection(detail));
+        entry.id = projection.id;
+        asks.push(entry);
+        pendingAsk = { row: entry.row, projection: entry.projection,
+                       id: entry.id, path: entry.path };
+      }
+      witnessLog.push(entry);
+    });
+  }
+  /* V14: WHAT THE AUTHORITY IS MADE OF, AND WHETHER IT HOLDS.
+   *
+   * The V13 review found the top-level projection frozen, the blocked and
+   * leads ARRAYS frozen, and their members not. This reports the freeze and
+   * prototype state of every structure a consumer trusts as final, and then
+   * tries to change each one and reports what the authority says afterwards
+   * — because `Object.isFrozen` is a claim about a mechanism and "the sink
+   * did not move" is a claim about the page. */
+  const immutability = () => {
+    const model = window.CatenaModel;
+    /* The fallback is the PARENT's path and it is guarded: a parent that
+     * invokes a planted accessor to answer this would detonate here and take
+     * the scenario with it, which would be the probe deciding the result. */
+    let made = authoritativeMade.length
+      ? authoritativeMade[authoritativeMade.length - 1] : null;
+    if (!made && lastSpine && typeof model.chapterProjection === 'function') {
+      try { made = model.chapterProjection(lastSpine); }
+      catch (error) { return { normalizationThrew: String(error.message || error) }; }
+    }
+    if (!made || !made.rows) return {};
+    const row = made.rows[0] || null;
+    const voice = made.voices[0] || null;
+    const edition = made.editions[0] || null;
+    const blocked = made.blocked[0] || null;
+    const lead = made.leads[0] || null;
+    const refusalKeys = Object.keys(made.refusals);
+    const refusalRows = refusalKeys.length ? made.refusals[refusalKeys[0]] : null;
+    const refusal = refusalRows && refusalRows.length ? refusalRows[0] : null;
+    const said = {
+      projection: Object.isFrozen(made),
+      projectionPrototype: Object.getPrototypeOf(made) === null,
+      prefix: Object.isFrozen(made.prefix),
+      rowsArray: Object.isFrozen(made.rows),
+      row: row === null ? null : Object.isFrozen(row),
+      rowExtent: row === null ? null : Object.isFrozen(row.extent),
+      rowTranslators: row === null ? null : Object.isFrozen(row.translators),
+      voicesArray: Object.isFrozen(made.voices),
+      voice: voice === null ? null : Object.isFrozen(voice),
+      editionsArray: Object.isFrozen(made.editions),
+      edition: edition === null ? null : Object.isFrozen(edition),
+      blockedArray: Object.isFrozen(made.blocked),
+      blocked: blocked === null ? null : Object.isFrozen(blocked),
+      leadsArray: Object.isFrozen(made.leads),
+      lead: lead === null ? null : Object.isFrozen(lead),
+      refusalsMap: Object.isFrozen(made.refusals),
+      refusalsPrototype: Object.getPrototypeOf(made.refusals) === null,
+      refusalArray: refusalRows === null ? null : Object.isFrozen(refusalRows),
+      refusal: refusal === null ? null : Object.isFrozen(refusal)
+    };
+    /* THE MUTATION HALF RUNS FOR ONE SCENARIO, AND PUTS BACK WHAT IT MOVES.
+     * Where the graph is sealed nothing moves and there is nothing to
+     * restore. Where it is NOT — the parent — the change really does reach
+     * the page, so a probe that ran on every snapshot of every scenario
+     * would be planting its own evidence across the whole file instead of
+     * reporting on one chapter. The read-only half above runs everywhere. */
+    const attempt = (what, change, read, restore) => {
+      if (!scenario.probeAuthority) return;
+      const before = read();
+      try { change(); } catch (error) { said[what + 'Threw'] = true; }
+      const after = read();
+      said[what + 'Held'] = after === before;
+      if (after !== before && restore) { try { restore(before); } catch (e) {} }
+    };
+    if (row) {
+      attempt('rowPath', () => { row.text_path = 'structure/catena/text/FORGED.json'; },
+        () => row.text_path, (was) => { row.text_path = was; });
+      attempt('rowRights', () => { row.rights = 'FORGED RIGHTS'; }, () => row.rights,
+        (was) => { row.rights = was; });
+      attempt('rowRefused', () => { row.text_refused = !row.text_refused; },
+        () => row.text_refused, (was) => { row.text_refused = was; });
+      attempt('rowExtentChapter', () => { row.extent.first_chapter = 9999; },
+        () => row.extent.first_chapter,
+        (was) => { row.extent.first_chapter = was; });
+      attempt('rowTranslator', () => { row.translators.push('FORGED'); },
+        () => row.translators.length, () => { row.translators.pop(); });
+    }
+    attempt('rowsLength', () => { made.rows.push({ id: 'phantom' }); },
+      () => made.rows.length, () => { made.rows.pop(); });
+    attempt('unreadable', () => { made.unreadable = !made.unreadable; },
+      () => made.unreadable, (was) => { made.unreadable = was; });
+    attempt('unfetchedValue', () => { made.unfetched = 'FORGED UNFETCHED'; },
+      () => made.unfetched, (was) => { made.unfetched = was; });
+    if (voice) attempt('voiceKey', () => { voice.key = 'forged'; }, () => voice.key,
+      (was) => { voice.key = was; });
+    if (edition) attempt('editionWork', () => { edition.work = 'FORGED'; },
+      () => edition.work, (was) => { edition.work = was; });
+    if (blocked) attempt('blockedWhy', () => { blocked.why = 'FORGED'; },
+      () => blocked.why, (was) => { blocked.why = was; });
+    if (lead) attempt('leadTitle', () => { lead.title = 'FORGED'; }, () => lead.title,
+      (was) => { lead.title = was; });
+    if (refusal) attempt('refusalNote', () => { refusal.note = 'FORGED'; },
+      () => refusal.note, (was) => { refusal.note = was; });
+    // THE ROW BELONGS TO THE PROJECTION THAT MADE IT, asked by identity.
+    said.rowOwnedByProjection = row === null ? null
+      : (typeof window.CatenaModel.rowProjection === 'function'
+        && window.CatenaModel.rowProjection(row) === made);
+    // AND NOTHING ON THE PROJECTION IS THE RAW `sources` MAP.
+    said.namesNoRawSources = Object.keys(made).indexOf('sources') === -1;
+    return said;
+  };
   /* THE OWNERSHIP JOURNAL, derived from the request journal so its outcomes
    * move with it. A journalled request IS a cache miss: the page's cache
    * answers before `fetch` is reached, so a body that is shown with no row
@@ -3946,6 +4741,14 @@ async function run(scenario) {
     scenario: scenario.name,
     route: (owners[one.seq] || {}).route || '',
     projection: (owners[one.seq] || {}).projection || '',
+    // V14: the owning ROW and its projection, as object labels, beside the
+    // projection id the path match used to be the only source of.
+    owner: (owners[one.seq] || {}).owner === undefined
+      ? -1 : owners[one.seq].owner,
+    ownerProjection: (owners[one.seq] || {}).ownerProjection === undefined
+      ? -1 : owners[one.seq].ownerProjection,
+    ownerPath: (owners[one.seq] || {}).ownerPath || '',
+    byPath: (owners[one.seq] || {}).byPath || '',
     path: one.path,
     kind: one.kind,
     step: one.phase,
@@ -3965,6 +4768,14 @@ async function run(scenario) {
     taken.projectionPasses = (typeof window.CatenaModel.chapterPasses === 'function' ? window.CatenaModel.chapterPasses() : 0);
     taken.spineReads = JSON.parse(JSON.stringify(spineReads));
     taken.descriptorReads = JSON.parse(JSON.stringify(descriptorReads));
+    taken.consumerRefs = JSON.parse(JSON.stringify(consumerRefs));
+    taken.authoritativeRefs = authoritativeRefs.slice();
+    taken.projectionRowRefs = JSON.parse(JSON.stringify(projectionRowRefs));
+    taken.witness = JSON.parse(JSON.stringify(witnessLog));
+    taken.asks = JSON.parse(JSON.stringify(asks));
+    taken.sourceCalls = JSON.parse(JSON.stringify(sourceCalls));
+    taken.memberReads = JSON.parse(JSON.stringify(memberReads));
+    taken.immutability = immutability();
     return taken;
   };
   // Every spoken line, in order — the single announcement channel, so
@@ -4202,7 +5013,13 @@ class ReplayTest(unittest.TestCase):
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
                     "snapshots", "released", "requests", "replacedStates",
                     "descriptorReads", "spineReads", "ownership",
-                    "projectionIds", "projectionPasses"}
+                    "projectionIds", "projectionPasses",
+                    # V14: the identity, ownership, accessor and inventory
+                    # journals are per-session records of HOW the page was
+                    # reached, never of what it rendered.
+                    "consumerRefs", "authoritativeRefs", "projectionRowRefs",
+                    "witness", "asks", "sourceCalls", "memberReads",
+                    "immutability"}
         return {key: value for key, value in snap.items() if key not in journals}
 
 
@@ -8554,7 +9371,13 @@ class NullBootstrapTerminalStateTest(ReplayTest):
         journals = {"fetched", "hashWrites", "replaced", "statusWrites",
                     "snapshots", "released", "requests", "replacedStates",
                     "descriptorReads", "spineReads", "ownership",
-                    "projectionIds", "projectionPasses"}
+                    "projectionIds", "projectionPasses",
+                    # V14: the identity, ownership, accessor and inventory
+                    # journals are per-session records of HOW the page was
+                    # reached, never of what it rendered.
+                    "consumerRefs", "authoritativeRefs", "projectionRowRefs",
+                    "witness", "asks", "sourceCalls", "memberReads",
+                    "immutability"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
                      and key not in ("hash", "statusText", "failureText")}
@@ -11131,6 +11954,747 @@ class V13OneChapterProjectionTest(ReplayTest):
             with self.subTest(scenario=name):
                 self.assertEqual(self.page(name)["spineReads"], {member: 1},
                                  "the walked member is asked once a render")
+
+
+
+class V14ProjectionAuthorityBase(ReplayTest):
+    """Shared vocabulary for the V14 lane."""
+
+    V9 = V9ComposedPrefixFallbackClosureTest
+    BOOTSTRAP = V9.BOOTSTRAP
+    CARRIED = "structure/catena/text/fallback-owned.json"
+    HELD_BODY = "PLANTED FALLBACK BODY"
+    NO_FILE = ("This fragment carries no text file, so nothing of it can "
+               "be shown.")
+    UNAVAILABLE = "The commentary record did not load"
+    UNAVAILABLE_SPOKEN = "commentary record unavailable"
+    HELD_TALLY = ("1 fragment held · 1 work held, not renderable yet · "
+                  "1 lead entry on the acquisition list")
+    # EVERY CONSUMER OF A CHAPTER THIS PAGE HAS. V13 named six and folded the
+    # tally into the rows; the V13 review required the tally recorded
+    # separately, and `unfetched`, the request and the provenance line are
+    # three more the six did not name. A consumer added later that does not
+    # route through the projection fails the roster by the name that is
+    # missing rather than passing quietly.
+    CONSUMERS = ("readability", "unfetched", "tally", "rows", "voices",
+                 "blocked", "leads", "refusal", "request", "provenance")
+    # The consumers a chapter reaches on an ordinary readable render. The
+    # provenance line is drawn only where the reader asks for a translation
+    # that is not held, so it is not on every page.
+    RENDERED_CONSUMERS = ("readability", "unfetched", "tally", "rows",
+                          "voices", "blocked", "leads", "refusal")
+
+    def owned(self, tail=()):
+        return request_journal(
+            [(path, "start") for path in self.BOOTSTRAP] + list(tail))
+
+    def asks(self, name, label="opened"):
+        """Every address this page resolved through a projected row."""
+        return self.snapshot(name, label)["asks"]
+
+    def one_authority(self, name, label="opened"):
+        """The single authoritative projection of a readable chapter."""
+        page = self.snapshot(name, label)
+        self.assertEqual(len(page["authoritativeRefs"]), 1,
+                         "one raw chapter, one normalization")
+        return page, page["authoritativeRefs"][0]
+
+
+class V14UnfetchedProjectionTest(V14ProjectionAuthorityBase):
+    """V14 §§4-6 — the post-projection raw `unfetched` reread, closed.
+
+    The V13 review's central blocker, stated exactly: `catena-model.js` reads
+    raw `record.unfetched` during projection and `catena.js` rereads raw
+    `file.unfetched` afterwards, and the second value can replace the
+    accepted projected chapter with `null` — inventing an unavailable state,
+    removing every row and the recorded refusal, and altering the tally. Its
+    probe answered `undefined` to the first read and a forged string to the
+    second, and observed `unreadable: false`, two reads, and the forged later
+    value.
+
+    The projection now carries the value it always read, normalized the way
+    the page used to normalize it, and the page reads it from there.
+    """
+
+    def test_the_walked_record_is_asked_once(self):
+        # THE READ COUNT IS THE CLAIM. One raw ask for one render, at the
+        # exact member the review's probe walked.
+        page = self.page("v14-walking-unfetched")
+        self.assertEqual(page["spineReads"], {"spine-unfetched": 1},
+                         "the page asked the raw chapter twice")
+
+    def test_the_forged_second_answer_reaches_no_sink(self):
+        # EVERY SINK AT ONCE: rows, the recorded refusal, the tally, the
+        # spoken line, the error section, the request and the rendered body.
+        page = self.page("v14-walking-unfetched")
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["tallyText"], self.HELD_TALLY)
+        self.assertEqual(page["refusalCount"], 1)
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP + [self.CARRIED])
+        self.assertEqual(page["requests"],
+                         self.owned([(self.CARRIED, "opened")]))
+        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
+        for said in page["statusWrites"] + [page["statusText"]]:
+            self.assertNotIn(V14_FORGED_UNFETCHED, said)
+        for section in page["errorSections"]:
+            self.assertNotIn(V14_FORGED_UNFETCHED, json.dumps(section))
+
+    def test_the_walked_page_is_the_page_that_was_never_walked(self):
+        # The whole rendered state, not a chosen field: a walk that reaches
+        # nothing leaves a page byte-identical to the same chapter served
+        # without a proxy at all.
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v14-walking-unfetched",
+                                              "opened")),
+            self.rendered_state(self.snapshot("v14-quiet-unfetched",
+                                              "opened")))
+
+    def test_the_steady_forged_value_really_does_collapse_the_page(self):
+        # NON-VACUITY. The same forged value supplied from the FIRST read —
+        # the read the projection is entitled to accept — produces exactly
+        # the collapse the walked case is asserted not to produce. So the
+        # walked value is unreached because nothing asked twice, not because
+        # nothing could matter.
+        page = self.page("v14-steady-unfetched")
+        self.assertEqual(page["spineReads"], {"spine-unfetched": 1})
+        self.assertEqual(page["fragmentCount"], 0)
+        self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+        self.assertEqual(page["refusalCount"], 0)
+        self.assertIn(self.UNAVAILABLE_SPOKEN, page["statusText"])
+        self.assertTrue(page["errorSections"])
+        self.assertEqual(page["errorSections"][0]["state"], "error")
+        self.assertEqual(page["fetched"], self.BOOTSTRAP)
+        self.assertEqual(page["busy"], "false")
+
+    def test_a_payload_may_not_write_its_string_into_the_readers_sentence(self):
+        # The steady case reaches the unavailable state and the reader is
+        # told the CHAPTER'S OWN ADDRESS could not be read — never the string
+        # the payload supplied. The route's own word for its own failure is
+        # the route's to write.
+        detail = self.page("v14-steady-unfetched")["errorSections"][0][
+            "details"][0]
+        self.assertIn("structure/catena/01-gen/001.json", detail)
+        self.assertNotIn(V14_FORGED_UNFETCHED, detail)
+
+    def test_every_raw_chapter_member_is_asked_exactly_once(self):
+        # V14 §6 — THE AUTHORITY INVENTORY, as a table. V13 claimed six
+        # members read once and its walk matrix omitted `unfetched`, which is
+        # the member that was not. Seven now, each walked in its own
+        # scenario, each asked once, and each page terminating.
+        for member in sorted(V14_AUTHORITY_MEMBERS):
+            with self.subTest(member=member):
+                page = self.page("v14-authority-" + member)
+                self.assertEqual(page["spineReads"], {"spine-" + member: 1},
+                                 "%s was not asked exactly once" % member)
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["errorSections"], [])
+
+    def test_the_walked_members_never_move_the_page(self):
+        # Every one of the seven walks to a value that WOULD change the page
+        # — a second fragment, a forged edition, a later refusal, a
+        # manufactured failure, a blocked entry, a lead entry, a composing
+        # prefix. The walked page is the page the steady FIRST answer
+        # renders, member for member.
+        for member in sorted(V14_AUTHORITY_MEMBERS):
+            with self.subTest(member=member):
+                self.assertEqual(
+                    self.rendered_state(
+                        self.snapshot("v14-authority-" + member, "opened")),
+                    self.rendered_state(
+                        self.snapshot("v14-authority-" + member + "-first",
+                                      "opened")),
+                    "the walked %s reached a sink" % member)
+
+    def test_every_walked_value_would_have_mattered(self):
+        # NON-VACUITY, member by member. The steady SECOND answer renders a
+        # visibly different page in every one of the seven cases, so each
+        # walk is unreached because nothing asked twice.
+        for member in sorted(V14_AUTHORITY_MEMBERS):
+            with self.subTest(member=member):
+                self.assertNotEqual(
+                    self.rendered_state(
+                        self.snapshot("v14-authority-" + member + "-first",
+                                      "opened")),
+                    self.rendered_state(
+                        self.snapshot("v14-authority-" + member + "-later",
+                                      "opened")),
+                    "the walked-to %s changes nothing, so the walk proves "
+                    "nothing" % member)
+
+    def test_the_page_reads_no_raw_chapter_member_after_projection(self):
+        # V14 §24 — THE SOURCE AUDIT. The page holds the raw chapter for the
+        # life of the session in its own cache, so "no consumer rereads it"
+        # is a claim about the source text and is asked of the source text.
+        script = without_comments(held(CATENA / "catena.js"), script=True)
+        self.assertEqual(re.findall(r"\bfile\.\w+", script), [],
+                         "the page reads a member off the raw chapter")
+        self.assertNotIn("bag(file)", script,
+                         "the page reaches around the projection")
+        # Every raw chapter member, asked of every identifier the page could
+        # be holding a chapter in.
+        for holder in ("file", "record", "spine", "chapter", "loaded"):
+            for name in ("fragments", "sources", "refusals", "unfetched",
+                         "blocked", "leads", "text_prefix", "text_path"):
+                with self.subTest(read=holder + "." + name):
+                    self.assertNotIn(holder + "." + name, script,
+                                     "the page reads raw %s" % name)
+        # THE MEMBER ITSELF. Every `unfetched` left in the page is either
+        # the page CONSTRUCTING its own marker — `{ unfetched: … }`, the
+        # route's own word for its own failure — or the local it was handed
+        # by the projection. Not one is a property read off anything.
+        self.assertEqual(
+            re.findall(r"[\w)\]]\.unfetched\b", script), [],
+            "the page reads `unfetched` off a record")
+        self.assertIn("{ unfetched: path }", script)
+        self.assertIn("M.chapterUnfetched(file)", script)
+        # And the model reads it in exactly one place, into a local.
+        model = without_comments(held(CATENA / "catena-model.js"), script=True)
+        self.assertEqual(
+            re.findall(r"\brecord\.unfetched\b", model),
+            ["record.unfetched"])
+
+    def test_the_model_reads_each_chapter_member_once_in_source(self):
+        # The other end of the same audit: exactly one `record.<member>` in
+        # the model, and it is inside the normalization.
+        model = without_comments(held(CATENA / "catena-model.js"), script=True)
+        for name in ("fragments", "sources", "refusals", "unfetched",
+                     "blocked", "leads"):
+            with self.subTest(member=name):
+                self.assertEqual(
+                    len(re.findall(r"\brecord\." + name + r"\b", model)), 1,
+                    "%s is read off the raw chapter more than once" % name)
+
+
+class V14ConsumerIdentityTest(V14ProjectionAuthorityBase):
+    """V14 §§7-9, 23 — the actual object, proved with `===`.
+
+    The V13 review refused V13's identity proof by name: the harness called
+    `chapterProjection(file)` itself, beside each consumer, and compared `.id`
+    strings. That proves two equal strings.
+
+    The model now offers one bounded observation seam, `chapterWitness`, which
+    is handed the exact object each consumer is about to read, at the moment
+    it reads it. Identity is decided in the same realm by a `Map` keyed on the
+    object, which is `===`; the integers below are labels for that decision.
+    Nothing here recomputes a projection: the authoritative reference is the
+    one recorded where the projection was MADE, not the answer to a second
+    question asked around a consumer's back.
+    """
+
+    def test_every_consumer_received_the_object_the_normalization_made(self):
+        page, authority = self.one_authority("v14-authority-graph")
+        for consumer in self.RENDERED_CONSUMERS:
+            with self.subTest(consumer=consumer):
+                self.assertIn(consumer, page["consumerRefs"],
+                              "%s is not routed through the projection"
+                              % consumer)
+                self.assertEqual(
+                    page["consumerRefs"][consumer], [authority],
+                    "%s read an object the normalization did not make"
+                    % consumer)
+
+    def test_the_tally_is_a_consumer_of_its_own(self):
+        # V14 §8. V13 collapsed the tally into the rows: the page read
+        # `chapterFragments(file).length`, so the count the reader is told
+        # and the rows the reader is shown were one recorded consumer. They
+        # are two now, and both are the same object.
+        page, authority = self.one_authority("v14-authority-graph")
+        self.assertIn("tally", page["consumerRefs"])
+        self.assertIn("rows", page["consumerRefs"])
+        self.assertEqual(page["consumerRefs"]["tally"], [authority])
+        self.assertEqual(page["consumerRefs"]["rows"], [authority])
+        seen = [one["consumer"] for one in page["witness"]]
+        self.assertIn("tally", seen)
+        self.assertGreaterEqual(seen.count("rows"), 1)
+
+    def test_the_roster_names_every_consumer_the_model_has(self):
+        # The roster is derived from what the page actually did, so a
+        # consumer this lane forgot shows up as a name the run produced and
+        # the roster does not carry.
+        seen = set()
+        for name, page in replayed().items():
+            if "consumerRefs" not in page:
+                continue
+            seen.update(page["consumerRefs"])
+        self.assertEqual(sorted(seen - {"normalize"}), sorted(self.CONSUMERS))
+
+    def test_an_unreadable_chapter_is_two_chapters_and_says_so(self):
+        # HONESTY ABOUT THE SECOND PROJECTION. When readability refuses the
+        # served record the page holds its OWN marker instead, and that
+        # marker is a different chapter with its own projection. Readability
+        # names the record it refused; every consumer downstream names the
+        # marker. Two identities, each one identity, and neither is the
+        # other's.
+        page = self.snapshot("v14-steady-unfetched", "opened")
+        self.assertEqual(len(page["authoritativeRefs"]), 2)
+        record, marker = page["authoritativeRefs"]
+        self.assertEqual(page["consumerRefs"]["readability"], [record])
+        for consumer in ("unfetched", "tally", "voices", "blocked", "leads",
+                         "refusal"):
+            with self.subTest(consumer=consumer):
+                self.assertEqual(page["consumerRefs"][consumer], [marker])
+
+    def test_a_second_chapter_is_a_second_identity_and_no_more(self):
+        page = self.snapshot("v14-two-projections-one-path", "opened")
+        self.assertEqual(len(page["authoritativeRefs"]), 2)
+        for consumer in self.RENDERED_CONSUMERS:
+            with self.subTest(consumer=consumer):
+                self.assertEqual(sorted(page["consumerRefs"][consumer]),
+                                 sorted(page["authoritativeRefs"]))
+
+    def test_the_witness_changes_nothing(self):
+        # The seam may observe and may not decide. Two scenarios differing in
+        # nothing but their names render the same page, and the ordinary
+        # corpus page is unchanged by the recorder being installed at all —
+        # which is what the whole rest of this file, green, already says.
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v14-nested-data", "opened")),
+            self.rendered_state(self.snapshot("v14-members-remove-control",
+                                              "opened")))
+
+
+class V14RequestOwnershipTest(V14ProjectionAuthorityBase):
+    """V14 §§10-13 — a request is owned by the row that asked for it.
+
+    The V13 review found ownership reconstructed after the fact by taking the
+    first projected row whose path string matched the request path. Two rows
+    carrying one address are then one owner, and a late completion belongs to
+    whichever row a search finds first.
+
+    The page no longer hands a string to the transport. `fragmentText(row)`
+    resolves the address THROUGH the row, and the model records the row
+    object and the projection that made it at the moment the address is
+    resolved. Ownership is an object association from the moment the request
+    exists.
+    """
+
+    def test_a_row_no_projection_made_addresses_nothing(self):
+        # The rule underneath the ownership record: only a row this model
+        # projected may resolve an address at all. A copy of a row is not
+        # that row.
+        told = json.loads(subprocess.run(
+            [NODE, "-e", (
+                "const M = require(process.argv[1]);"
+                "const asked = (row) => (typeof M.textAsked === 'function'"
+                " ? M.textAsked(row) : 'NO ROW-BOUND ADDRESS');"
+                "const owns = (row) => (typeof M.rowProjection === 'function'"
+                " ? M.rowProjection(row) : null);"
+                "const file = {fragments: [{id: 'fallback-owned',"
+                " source: '1', text_path:"
+                " 'structure/catena/text/fallback-owned.json'}],"
+                " sources: {'1': {author: 'A', work: 'W'}}};"
+                "const made = M.chapterProjection(file);"
+                "const row = made.rows[0];"
+                "const copy = Object.assign({}, row);"
+                "console.log(JSON.stringify({"
+                " owned: asked(row),"
+                " copied: asked(copy),"
+                " forged: asked({text_path: row.text_path}),"
+                " scalar: asked('structure/catena/text/x.json'),"
+                " nothing: asked(null),"
+                " sameProjection: owns(row) === made,"
+                " copyProjection: owns(copy) === made}));"),
+             str(CATENA / "catena-model.js")],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertEqual(told["owned"], self.CARRIED)
+        self.assertEqual(told["copied"], "")
+        self.assertEqual(told["forged"], "")
+        self.assertEqual(told["scalar"], "")
+        self.assertEqual(told["nothing"], "")
+        self.assertTrue(told["sameProjection"])
+        self.assertFalse(told["copyProjection"])
+
+    def test_two_rows_carrying_one_address_are_two_owners(self):
+        # V14 §11. Both fragments carry the same own id, so both resolve the
+        # same carried address through genuine absence. One request is made
+        # and the second row is answered from the cache — so the request
+        # journal alone cannot say who asked, and the ask journal can.
+        page = self.snapshot("v14-same-path-rows", "both")
+        asked = page["asks"]
+        self.assertEqual(len(asked), 2, "both rows asked")
+        self.assertEqual([one["path"] for one in asked],
+                         [self.CARRIED, self.CARRIED])
+        self.assertNotEqual(asked[0]["row"], asked[1]["row"],
+                            "a sibling row hijacked the first row's identity")
+        self.assertEqual([one["step"] for one in asked], ["first", "both"])
+        # ONE PROJECTION OWNS BOTH, and each ask says so by the row's own
+        # binding rather than by the path they share.
+        self.assertEqual(len(page["authoritativeRefs"]), 1)
+        authority = page["authoritativeRefs"][0]
+        for one in asked:
+            self.assertEqual(one["projection"], authority)
+            self.assertEqual(one["owned"], authority)
+        # Both rows are this projection's rows, by identity.
+        rows = page["projectionRowRefs"][str(authority)]
+        self.assertEqual(sorted([one["row"] for one in asked]), sorted(rows))
+        # One request, two bodies rendered: the second is the cache.
+        self.assertEqual([one for one in page["fetched"]
+                          if one == self.CARRIED], [self.CARRIED])
+        self.assertEqual(page["fragmentTexts"],
+                         [page["fragmentTexts"][0]] * 2)
+        self.assertIn(self.HELD_BODY, page["fragmentTexts"][0])
+
+    def test_the_journal_names_the_owner_by_object_and_not_by_path(self):
+        rows = [one for one in self.snapshot("v14-same-path-rows",
+                                             "both")["ownership"]
+                if one["kind"] == "text"]
+        self.assertEqual(len(rows), 1, "one request was made")
+        self.assertEqual(rows[0]["path"], self.CARRIED)
+        self.assertNotEqual(rows[0]["owner"], -1,
+                            "the journal could not name an owning row")
+        self.assertNotEqual(rows[0]["ownerProjection"], -1)
+        self.assertEqual(rows[0]["projection"], "chapter-projection-1")
+
+    def test_one_address_across_two_projections_stays_with_its_own(self):
+        # V14 §12. Projection A's row and projection B's row carry the same
+        # text address. The ask records the projection that made the asking
+        # row, so the request does not collapse onto the address.
+        page = self.snapshot("v14-two-projections-one-path", "opened")
+        asked = page["asks"]
+        self.assertEqual(len(asked), 2)
+        self.assertEqual([one["path"] for one in asked],
+                         [self.CARRIED, self.CARRIED])
+        self.assertNotEqual(asked[0]["projection"], asked[1]["projection"],
+                            "one address collapsed two projections into one")
+        self.assertNotEqual(asked[0]["row"], asked[1]["row"])
+        self.assertEqual(asked[0]["id"], "chapter-projection-1")
+        self.assertEqual(asked[1]["id"], "chapter-projection-2")
+        for one in asked:
+            self.assertEqual(one["owned"], one["projection"],
+                             "a row was attributed to a projection that did "
+                             "not make it")
+
+    def test_a_genuinely_late_completion_belongs_to_the_row_that_asked(self):
+        # V14 §13. Projection A's row starts the request; the request is
+        # held; projection B becomes the page carrying the SAME address; the
+        # request is released. A's completion may not apply to B because the
+        # strings match.
+        asked = self.snapshot("v14-late-same-path", "asked")
+        self.assertEqual(len(asked["asks"]), 1)
+        first = asked["asks"][0]
+        self.assertEqual(first["step"], "asked")
+        self.assertEqual(first["path"], self.CARRIED)
+        held = [one for one in asked["requests"]
+                if one["path"] == self.CARRIED]
+        self.assertEqual([one["outcome"] for one in held], ["held"])
+        # B settles while A is still held, and asks as ITSELF.
+        reopened = self.snapshot("v14-late-same-path", "reopened")
+        self.assertEqual(len(reopened["asks"]), 2)
+        second = reopened["asks"][1]
+        self.assertNotEqual(second["row"], first["row"])
+        self.assertNotEqual(second["projection"], first["projection"])
+        self.assertEqual(second["owned"], second["projection"])
+        self.assertEqual(second["step"], "reopened")
+        # A's row and projection are unchanged by B settling — ownership is
+        # recorded, not recomputed.
+        self.assertEqual(reopened["asks"][0], first)
+        late = self.snapshot("v14-late-same-path", "late")
+        self.assertEqual(reopened["asks"][0], late["asks"][0])
+        self.assertEqual([one["outcome"] for one in late["requests"]
+                          if one["path"] == self.CARRIED], ["released"])
+        # And the page the reader is on is B's, showing B's own row.
+        self.assertEqual(late["hash"], GEN2)
+        self.assertEqual(late["fragmentCount"], 1)
+        self.assertIn(self.HELD_BODY, late["fragmentTexts"][0])
+        self.assertEqual(late["sourceLines"][0][:len("second-chapter")],
+                         "second-chapter")
+        self.assertEqual(late["busy"], "false")
+
+
+class V14NestedSourceAuthorityTest(V14ProjectionAuthorityBase):
+    """V14 §§16-19 — one rule for every nested source, and no invocation.
+
+    The V13 review's sixth finding, exactly: `sources["1"]` as an own getter
+    is declined for fragment provenance — `fragmentRow` reads it by
+    descriptor — and INVOKED for the projected voices and editions, which
+    read it as a plain lookup. One projection then said two incompatible
+    things about one edition.
+
+    The nested map is normalized once now, by descriptor, and every consumer
+    reads the normalization. An accessor is never invoked, by anybody; a key
+    whose value is not a plain record makes the chapter unreadable, whole,
+    which is the answer the walk always gave for a member it could not read.
+    """
+
+    ACCESSOR_CASES = ("v14-nested-accessor", "v14-nested-accessor-steady",
+                      "v14-nested-accessor-late", "v14-nested-accessor-throws")
+
+    def test_no_consumer_invokes_a_nested_source_accessor(self):
+        # V14 §19. "Declined" is a claim about a number.
+        for name in self.ACCESSOR_CASES:
+            with self.subTest(scenario=name):
+                self.assertEqual(self.page(name)["sourceCalls"],
+                                 {"source-1": 0})
+
+    def test_every_nested_accessor_produces_one_coherent_result(self):
+        # V14 §§17-18. Valid-then-forged, steady-forged, absent-then-forged
+        # and a getter that detonates are four different hostile shapes and
+        # ONE semantic result: the chapter is a record this page cannot read,
+        # said once, at every sink together.
+        for name in self.ACCESSOR_CASES:
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["fragmentCount"], 0)
+                self.assertEqual(page["sourceLines"], [])
+                self.assertEqual(page["voiceLabels"],
+                                 self.page("v14-nested-accessor")[
+                                     "voiceLabels"])
+                self.assertEqual(page["tallyText"], self.UNAVAILABLE)
+                self.assertIn(self.UNAVAILABLE_SPOKEN, page["statusText"])
+                self.assertEqual(page["refusalCount"], 0)
+                self.assertTrue(page["errorSections"])
+                self.assertEqual(page["busy"], "false")
+                self.assertEqual(page["fetched"], self.BOOTSTRAP)
+                self.assertNotIn(V14_NESTED_RIGHTS, json.dumps(page))
+
+    def test_a_detonating_accessor_never_reaches_the_render_tail(self):
+        # A getter nobody invokes cannot throw past `aria-busy`, the tally
+        # and the route. The page terminates in its own unavailable state,
+        # not in the transport failure sentence.
+        page = self.page("v14-nested-accessor-throws")
+        self.assertEqual(page["failureText"], None)
+        self.assertNotIn("planted nested source accessor",
+                         json.dumps(page))
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v14-nested-accessor-throws",
+                                              "opened")),
+            self.rendered_state(self.snapshot("v14-nested-accessor",
+                                              "opened")))
+
+    def test_the_four_accessor_shapes_render_one_page(self):
+        base = self.rendered_state(self.snapshot("v14-nested-accessor",
+                                                 "opened"))
+        for name in self.ACCESSOR_CASES[1:]:
+            with self.subTest(scenario=name):
+                self.assertEqual(
+                    self.rendered_state(self.snapshot(name, "opened")), base)
+
+    def test_a_nested_field_accessor_is_declined_by_every_consumer_alike(self):
+        # ONE LEVEL DEEPER. The entry is a record and its rights, voice,
+        # author and language are getters. None is invoked, and the
+        # projection states the absence rather than one consumer's reading of
+        # it: no rights on the provenance line, no voice offered, and the
+        # author the fragment itself could not name is not borrowed.
+        page = self.page("v14-nested-fields")
+        self.assertEqual(page["sourceCalls"],
+                         {"source-1": 0, "source-1-rights": 0,
+                          "source-1-voice": 0, "source-1-author": 0,
+                          "source-1-language": 0})
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertNotIn("public-domain", page["sourceLines"][0])
+        self.assertNotIn(V14_NESTED_RIGHTS, json.dumps(page))
+        self.assertNotIn("Forged Author", json.dumps(page))
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+
+    def test_a_detonating_nested_field_is_never_invoked_either(self):
+        page = self.page("v14-nested-fields-throw")
+        self.assertEqual(page["sourceCalls"],
+                         {"source-1": 0, "source-1-rights": 0})
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["failureText"], None)
+        self.assertEqual(page["busy"], "false")
+
+    def test_the_forged_edition_is_reachable_when_it_is_a_document(self):
+        # NON-VACUITY, twice. Everything the accessor would have said, said
+        # by a document, reaches the reader's own provenance line; and the
+        # valid edition as a document renders the ordinary page the accessor
+        # cases are asserted not to render.
+        forged = self.page("v14-nested-forged-data")
+        self.assertEqual(forged["sourceCalls"], {})
+        self.assertEqual(forged["fragmentCount"], 1)
+        self.assertIn(V14_NESTED_RIGHTS, forged["sourceLines"][0])
+        valid = self.page("v14-nested-data")
+        self.assertEqual(valid["fragmentCount"], 1)
+        self.assertIn("public-domain", valid["sourceLines"][0])
+        self.assertEqual(valid["tallyText"], "1 fragment held")
+        self.assertNotEqual(self.rendered_state(
+            self.snapshot("v14-nested-data", "opened")),
+            self.rendered_state(self.snapshot("v14-nested-accessor",
+                                              "opened")))
+
+
+class V14MemberAuthorityTest(V14ProjectionAuthorityBase):
+    """V14 §§14-15 — the member inventory, taken once as an inventory.
+
+    The V13 review found the member-list scenario kept one row before and
+    after and moved only a `text_path`, which proves nothing about the
+    inventory. `Array.isArray` is true of a proxy over an array, so a raw
+    `fragments` really can answer "which members" and "how many" with two
+    different answers — and a page that acts on both has added a member,
+    dropped one, reordered them, invented one, or changed its tally on an
+    inventory nothing approved whole.
+
+    One `slice` reads the length once and each index once. Every effect below
+    is pinned independently, and each stands beside a steady control
+    supplying the same structure from the accepted first read.
+    """
+
+    def test_the_inventory_is_asked_once(self):
+        for name, counts in (
+                ("v14-members-add", {"members-length": 1, "members-1": 0}),
+                ("v14-members-remove", {"members-length": 1}),
+                ("v14-members-reorder",
+                 {"members-length": 1, "members-0": 1, "members-1": 1}),
+                ("v14-members-phantom", {"members-length": 1}),
+                ("v14-members-tally", {"members-length": 1})):
+            with self.subTest(scenario=name):
+                self.assertEqual(self.page(name)["memberReads"], counts)
+
+    def test_a_member_added_after_the_first_read_is_not_added(self):
+        walked = self.page("v14-members-add")
+        self.assertEqual(walked["fragmentCount"], 1)
+        self.assertEqual(walked["tallyText"], "1 fragment held")
+        self.assertEqual(len(walked["sourceLines"]), 1)
+        # CONTROL: the same second member, supplied as the first answer.
+        control = self.page("v14-members-add-control")
+        self.assertEqual(control["fragmentCount"], 2)
+        self.assertEqual(control["tallyText"], "2 fragments held")
+
+    def test_a_member_removed_after_the_first_read_is_not_removed(self):
+        walked = self.page("v14-members-remove")
+        self.assertEqual(walked["fragmentCount"], 2)
+        self.assertEqual(walked["tallyText"], "2 fragments held")
+        control = self.page("v14-members-remove-control")
+        self.assertEqual(control["fragmentCount"], 1)
+        self.assertEqual(control["tallyText"], "1 fragment held")
+
+    def test_members_reordered_after_the_first_read_are_not_reordered(self):
+        walked = self.page("v14-members-reorder")
+        self.assertIn(self.HELD_BODY, walked["fragmentTexts"][0])
+        self.assertEqual(walked["fragmentTexts"][1], self.NO_FILE)
+        control = self.page("v14-members-reorder-control")
+        self.assertEqual(control["fragmentTexts"][0], self.NO_FILE)
+        self.assertIn(self.HELD_BODY, control["fragmentTexts"][1])
+        self.assertNotEqual(walked["sourceLines"], control["sourceLines"])
+
+    def test_a_phantom_count_cannot_manufacture_an_unavailable_chapter(self):
+        # THE ONE THE PARENT REALLY GETS WRONG. The list says "none" while
+        # readability is decided and "five" when the page asks how many there
+        # were, and a recorded emptiness becomes a chapter that did not load.
+        walked = self.page("v14-members-phantom")
+        self.assertEqual(walked["fragmentCount"], 0)
+        self.assertEqual(walked["tallyText"], "Nothing held here")
+        self.assertEqual(walked["errorSections"], [])
+        self.assertEqual(walked["busy"], "false")
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v14-members-phantom",
+                                              "opened")),
+            self.rendered_state(self.snapshot("v14-members-empty-control",
+                                              "opened")))
+        # CONTROL: the same phantom count from the FIRST read really does
+        # produce the unavailable state, so the walk above is unreached and
+        # not merely inconsequential.
+        control = self.page("v14-members-phantom-control")
+        self.assertEqual(control["tallyText"], self.UNAVAILABLE)
+        self.assertTrue(control["errorSections"])
+        self.assertIn(self.UNAVAILABLE_SPOKEN, control["statusText"])
+
+    def test_the_tally_holds_the_inventory_readability_approved(self):
+        walked = self.page("v14-members-tally")
+        self.assertEqual(walked["fragmentCount"], 3)
+        self.assertEqual(walked["tallyText"], "3 fragments held")
+        self.assertEqual(len(walked["sourceLines"]), 3)
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v14-members-tally", "opened")),
+            self.rendered_state(self.snapshot("v14-members-tally-control",
+                                              "opened")))
+
+
+class V14ProjectionImmutabilityTest(V14ProjectionAuthorityBase):
+    """V14 §§20-22 — the authority graph, frozen as deep as it is trusted.
+
+    The V13 review found the top-level projection frozen, the blocked and
+    leads ARRAYS frozen, and their members not — so a row, a lead or a
+    blocked entry a consumer holds as final could still be rewritten in
+    place. Every structure below is one a downstream consumer trusts: the
+    rows and their extents and translator lists, the voice entries, the
+    edition records, the recorded refusals, and the leads and blocked rows.
+
+    `Object.isFrozen` is a claim about a mechanism. Each is asked, and then
+    the value is changed and the authority is asked again.
+    """
+
+    FROZEN = ("projection", "prefix", "rowsArray", "row", "rowExtent",
+              "rowTranslators", "voicesArray", "voice", "editionsArray",
+              "edition", "blockedArray", "blocked", "leadsArray", "lead",
+              "refusalsMap", "refusalArray", "refusal")
+    HELD = ("rowPath", "rowRights", "rowRefused", "rowExtentChapter",
+            "rowTranslator", "rowsLength", "unreadable", "unfetchedValue",
+            "voiceKey", "editionWork", "blockedWhy", "leadTitle",
+            "refusalNote")
+
+    def told(self):
+        said = self.snapshot("v14-authority-graph", "opened")["immutability"]
+        self.assertTrue(said, "the authority graph was never normalized")
+        return said
+
+    def test_every_trusted_structure_is_frozen(self):
+        said = self.told()
+        for name in self.FROZEN:
+            with self.subTest(structure=name):
+                self.assertIs(said.get(name), True,
+                              "%s is not frozen" % name)
+
+    def test_the_authority_boundary_is_null_prototype_where_it_claims_to_be(self):
+        # V14 §22 — EXACT SCOPE. The projection record itself and the
+        # refusals map are null-prototype; the frozen rows, voices, editions,
+        # leads and blocked entries are ordinary frozen objects, and this
+        # lane claims nothing else about them.
+        said = self.told()
+        self.assertIs(said["projectionPrototype"], True)
+        self.assertIs(said["refusalsPrototype"], True)
+
+    def test_no_mutation_of_the_authority_survives(self):
+        said = self.told()
+        for name in self.HELD:
+            with self.subTest(value=name):
+                self.assertIs(said.get(name + "Threw"), True,
+                              "%s could be assigned" % name)
+                self.assertIs(said.get(name + "Held"), True,
+                              "%s moved" % name)
+
+    def test_a_row_belongs_to_the_projection_that_made_it(self):
+        self.assertIs(self.told()["rowOwnedByProjection"], True)
+
+    def test_the_projection_carries_no_reference_to_the_raw_sources(self):
+        # A frozen graph over a mutable map is not immutable. Nothing on the
+        # projection is the raw nested map, so there is nothing there to
+        # mutate through.
+        self.assertIs(self.told()["namesNoRawSources"], True)
+
+    def test_the_exported_row_builder_seals_what_it_returns(self):
+        # `fragmentRow` is an exported entry point. V13 froze the row in the
+        # normalization, so a caller of the export got a mutable row and the
+        # page got a sealed one — two contracts for one function.
+        told = json.loads(subprocess.run(
+            [NODE, "-e", (
+                "const M = require(process.argv[1]);"
+                "const row = M.fragmentRow({id: 'a', source: '1'},"
+                " {'1': {author: 'A', work: 'W', translators: ['T']}},"
+                " {stated: false, said: false, trail: ''});"
+                "console.log(JSON.stringify({row: Object.isFrozen(row),"
+                " extent: Object.isFrozen(row.extent),"
+                " translators: Object.isFrozen(row.translators)}));"),
+             str(CATENA / "catena-model.js")],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertEqual(told, {"row": True, "extent": True,
+                                "translators": True})
+
+    def test_the_lead_and_blocked_builders_seal_what_they_return(self):
+        told = json.loads(subprocess.run(
+            [NODE, "-e", (
+                "const M = require(process.argv[1]);"
+                "console.log(JSON.stringify({"
+                " lead: Object.isFrozen(M.leadRow("
+                "  {author: 'A', title: 'T', date: 400})),"
+                " blocked: Object.isFrozen(M.blockedRow("
+                "  {author: 'A', work: 'W', reason: 'R'}))}));"),
+             str(CATENA / "catena-model.js")],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertEqual(told, {"lead": True, "blocked": True})
 
 
 class V11UnestablishedPresentationTest(ReplayTest):

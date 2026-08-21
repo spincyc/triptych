@@ -114,7 +114,9 @@
 
   // One fragment's prose — keyed by the path the SPINE gave, never
   // assembled from an id. Even its 404 is evicted: retry is real.
-  function fragmentText(path) {
+  // V14: the ROW asks, so the request is owned where it is made.
+  function fragmentText(row) {
+    const path = M.textAsked(row);
     if (!path) return Promise.resolve(ABSENT);
     return cached(fragmentTexts, path);
   }
@@ -288,7 +290,7 @@
         text.textContent = fragment.text_note;
         return;
       }
-      fragmentText(fragment.text_path).then(
+      fragmentText(fragment).then(
         (loaded) => {
           // A completion for a rebuilt page mutates nothing here.
           if (!reading.contains(details)) return;
@@ -693,18 +695,16 @@
       ]);
       if (!T.isCurrentRender(renderToken)) return;
 
-      // An expected spine that would not come is an error, not an absence.
-      // `sound`: it reaches a reader inside a sentence, and a payload
-      // carrying `unfetched: {…}` printed "[object Object]" there.
-      const unfetched = sound(bag(file).unfetched);
-      if (unfetched) file = null;
+      // An expected spine that would not come is an error, not an absence,
+      // and the PROJECTION says which: read raw, it was asked twice.
+      const unfetched = M.chapterUnfetched(file);
 
       // ONE typed truth beside the chapter: every tally, empty, blocked
       // and voice claim derives from these counts — held-but-unrenderable
       // is HELD, never "nothing".
       const blocked = M.chapterBlocked(file);
       const leads = M.chapterLeads(file);
-      const total = M.chapterFragments(file).length;
+      const total = M.chapterTally(file);
       fillVoices(file, unfetched || blocked.length);
       T.clear(reading);
       let count = 0;

@@ -769,7 +769,8 @@
     // THE CARRIED ADDRESS, VALIDATED ONCE, off the snapshot and never off the
     // record again.
     const fallback = textLeaf(carried.value.text_path);
-    return {
+    const acknowledged = said('acknowledgement');
+    return freezeRow({
       id: id,
       // COMPOSED, NEVER CARRIED. The file states once where its fragment texts
       // live and the fragment states its own identity; the request is built
@@ -849,9 +850,13 @@
       // a note that is sound text, and a note that ARRIVED and is not text.
       // Collapsing them printed nothing where the record had said something
       // unreadable, and the page owes the reader the difference.
-      acknowledgement: sound(said('acknowledgement')),
-      acknowledgement_broken: broken(said('acknowledgement'))
-    };
+      // ONE ASK, TWO FACTS. V14: the note was asked for its text and asked
+      // again for whether something unreadable had arrived, so a record
+      // answering the second descriptor differently printed one state and
+      // reported the other.
+      acknowledgement: sound(acknowledged),
+      acknowledgement_broken: broken(acknowledged)
+    });
   }
 
   /** Was something recorded here that this page cannot read as text? */
@@ -882,22 +887,58 @@
    * do. `REVIEW_REQUEST.md` asks about the one whose copy is imprecise.
    */
   function spineUnreadable(file) {
-    return chapterProjection(file).unreadable;
+    return witnessed('readability', chapterProjection(file)).unreadable;
   }
 
   /** Every fragment of one chapter file that can be one, in the order given. */
   function chapterFragments(file) {
-    return chapterProjection(file).rows;
+    return witnessed('rows', chapterProjection(file)).rows;
+  }
+
+  /**
+   * HOW MANY FRAGMENTS THIS CHAPTER HOLDS, asked as its own question.
+   *
+   * V14, the V13 review: the tally was read as `chapterFragments(file).length`
+   * and so was recorded as the rows consumer rather than as a consumer of its
+   * own. It is not the rows consumer. The rows reach the chain, the request,
+   * the cache and the body; the tally reaches a sentence and a spoken status
+   * line, and a page can state a count it renders nothing of. The two are
+   * separated here so that the consumer roster can show, one identity at a
+   * time, that the number the reader is told and the rows the reader is shown
+   * came off the same projected chapter.
+   */
+  function chapterTally(file) {
+    return witnessed('tally', chapterProjection(file)).rows.length;
+  }
+
+  /**
+   * THE ROUTE'S OWN WORD FOR A CHAPTER RECORD THAT WOULD NOT COME.
+   *
+   * V14, the V13 review. `normalizeChapter` read `unfetched` once and threw
+   * the value away, keeping only its effect on readability — so the page,
+   * which must print the failing address inside a sentence, had nowhere to
+   * read it but the raw record, and read it there a second time. Two plain
+   * reads of one request-critical member are two observations of it, and the
+   * review's probe answered `undefined` to the first and a forged string to
+   * the second: the projection accepted a readable chapter and the page then
+   * replaced it with a manufactured unavailable state, losing every row, the
+   * recorded refusal and the tally on a value nothing had approved.
+   *
+   * The fact now travels on the projection, normalized exactly as the page
+   * used to normalize it, and no consumer reads the raw member again.
+   */
+  function chapterUnfetched(file) {
+    return witnessed('unfetched', chapterProjection(file)).unfetched;
   }
 
   /** The held-and-blocked rows of one chapter, off its projection. */
   function chapterBlocked(file) {
-    return chapterProjection(file).blocked;
+    return witnessed('blocked', chapterProjection(file)).blocked;
   }
 
   /** The lead rows of one chapter, off its projection. */
   function chapterLeads(file) {
-    return chapterProjection(file).leads;
+    return witnessed('leads', chapterProjection(file)).leads;
   }
 
   /**
@@ -911,6 +952,7 @@
     id: 'chapter-projection-none',
     pass: 0,
     unreadable: true,
+    unfetched: '',
     prefix: Object.freeze({ stated: false, said: false, trail: '' }),
     rows: Object.freeze([]),
     voices: Object.freeze([]),
@@ -956,6 +998,74 @@
   let passes = 0;
 
   /**
+   * WHICH PROJECTION MADE THIS ROW.
+   *
+   * V14, the V13 review: a request was owned by the path string it carried,
+   * so two projected rows addressing one text were one owner, and a late
+   * completion belonged to whichever row a path match found first. A row is
+   * an object this file made, and the projection that made it is a fact about
+   * that object rather than about its fields. Held against the row itself, so
+   * ownership survives a same-path sibling, a second projection of the same
+   * chapter and a re-render, and so a row this file did not make owns nothing.
+   */
+  const rowOwners = new WeakMap();
+
+  /**
+   * THE OBSERVATION SEAM, and nothing else.
+   *
+   * V14, the V13 review: the identity claim was argued from ids compared
+   * outside the page, which proves two equal strings and not one object. What
+   * a reviewer is owed is the reference each consumer actually received, taken
+   * where the consumer receives it. `chapterWitness` installs a recorder and
+   * returns the one it replaced; with none installed every call below is a
+   * single `if` on a `null`, so the page's semantics are exactly what they are
+   * without it. The recorder is never given a way to change what is returned.
+   */
+  let witnessing = null;
+
+  function chapterWitness(recorder) {
+    const held = witnessing;
+    witnessing = typeof recorder === 'function' ? recorder : null;
+    return held;
+  }
+
+  function witnessed(consumer, projection, detail) {
+    if (witnessing) witnessing(consumer, projection, detail);
+    return projection;
+  }
+
+  /**
+   * THE PROJECTION ONE ROW BELONGS TO, by the row's own identity.
+   *
+   * `NO_CHAPTER` for anything this file did not project, which is the same
+   * answer it gives for a payload that is not a chapter.
+   */
+  function rowProjection(row) {
+    const held = rowOwners.get(row);
+    return held === undefined ? NO_CHAPTER : held;
+  }
+
+  /**
+   * THE ADDRESS OF ONE PROJECTED ROW, ASKED AS THAT ROW.
+   *
+   * V14, the V13 review: the page took `row.text_path` and handed the string
+   * to the request, after which nothing downstream could say which row had
+   * asked. The address is now resolved through the row, so the request is
+   * created from an object identity and the ownership recorded at creation is
+   * the row that initiated it — not the first projected row whose path string
+   * matches afterwards.
+   *
+   * A row no projection of this file made resolves no address at all. That is
+   * the same fail-closed rule the carried path already obeys one level down:
+   * only a value this file derived may become a request.
+   */
+  function textAsked(row) {
+    const held = rowOwners.get(row);
+    witnessed('request', held === undefined ? NO_CHAPTER : held, row);
+    return held === undefined ? '' : row.text_path;
+  }
+
+  /**
    * HOW MANY RAW CHAPTERS THIS PAGE HAS NORMALIZED, ever.
    *
    * The page-level observation claim in one number: a reviewer takes it
@@ -975,6 +1085,11 @@
     if (held !== undefined) return held;
     const made = normalizeChapter(record);
     chapterProjections.set(record, made);
+    // THE AUTHORITATIVE REFERENCE, RECORDED WHERE IT IS MADE. A reviewer
+    // comparing consumers against this one has compared them against the
+    // object this file created and froze, not against the answer to a second
+    // question asked around a consumer's back.
+    witnessed('normalize', made);
     return made;
   }
 
@@ -999,7 +1114,23 @@
     const stopped = record.unfetched;
     const barred = record.blocked;
     const leading = record.leads;
-    const sources = bag(carried);
+    // THE MEMBER INVENTORY, TAKEN ONCE AS AN INVENTORY.
+    //
+    // V14, the V13 review: the list was read once for its members and again
+    // for its length, and the two answers decided different things — which
+    // members exist, and whether a non-empty list that yielded nothing is a
+    // broken record. A raw list that can answer those two questions
+    // differently can add a member, drop one, reorder them, invent one, or
+    // turn an empty chapter into an unavailable one, and the page would be
+    // acting on an inventory nothing had approved whole. One `slice` reads
+    // the length once and each index once; every question below is put to
+    // the array this file then owns, and the raw list is never asked again.
+    const inventory = Array.isArray(listed)
+      ? Array.prototype.slice.call(listed) : null;
+    const held = bag(carried);
+    // EVERY NESTED SOURCE, NORMALIZED ONCE, UNDER ONE RULE.
+    const carriedSources = normalizeSources(held);
+    const sources = carriedSources.map;
     // THE PREFIX HAS THREE STATES, and `textTrail` alone carries two. V9, the
     // V8 finding: a prefix the file never stated and a prefix the file stated
     // and this page refused both left `textTrail` as '', and `fragmentRow`
@@ -1046,26 +1177,22 @@
     // announcement. Its MEMBERS are asked the same question, because a `null`
     // among them threw on the very next line and took every valid sibling with
     // it, and a scalar among them became a blank row that was still counted.
-    for (const fragment of records(listed)) {
+    for (const fragment of records(inventory)) {
+      // FROZEN WHERE IT IS MADE, which is inside `fragmentRow` since V14: the
+      // row is the only channel across the page boundary, and an exported
+      // entry point that hands a caller a mutable row hands it a different
+      // contract from the one the page holds.
       const row = fragmentRow(fragment, sources, prefix);
-      // FROZEN WHERE IT IS MADE. The row is the only channel across the page
-      // boundary and it is now made once for the whole render, so it is
-      // sealed here rather than trusted to every hand it passes through.
-      if (row) rows.push(freezeRow(row));
+      if (row) rows.push(row);
     }
     // EVERY SOURCE, ONCE. `chapterVoices`, the absence disclosure and the
     // readability question each walked `sources` and each asked its members
     // again; they are all answered from this one walk. A member that is not a
     // record contributes nothing and says so — the V6 finding — and the walk
     // that finds it is the walk that decides readability.
-    let members = false;
     const voices = new Map();
     const editions = [];
-    for (const key in sources) {
-      if (!Object.hasOwn(sources, key)) continue;
-      const source = sources[key];
-      const one = bag(source);
-      if (one !== source) members = true;
+    for (const one of carriedSources.order) {
       const wanted = voiceKey(one);
       if (wanted && !voices.has(wanted)) {
         voices.set(wanted, Object.freeze({
@@ -1102,16 +1229,21 @@
     // something and said nothing this page can read — and answering it with
     // "Nothing held here" turns an over-claim into a manufactured negative,
     // which is the trade this correction exists to refuse.
-    const unreadable = !Array.isArray(listed)
-      || (carried !== undefined && sources !== carried)
+    const unreadable = inventory === null
+      || (carried !== undefined && held !== carried)
       || (refused !== undefined && bag(refused) !== refused)
       || stopped !== undefined
-      || members
-      || (listed.length > 0 && rows.length === 0);
+      || carriedSources.members
+      || (inventory.length > 0 && rows.length === 0);
     const made = Object.create(null);
     made.id = 'chapter-projection-' + pass;
     made.pass = pass;
     made.unreadable = unreadable;
+    // THE VALUE, NOT ONLY ITS EFFECT. V13 folded `unfetched` into readability
+    // and discarded the string the page prints, so the page read the raw
+    // record a second time to get it. It is normalized here, exactly as the
+    // page normalized it, and read from here by everything.
+    made.unfetched = sound(stopped);
     made.prefix = prefix;
     made.rows = Object.freeze(rows);
     made.voices = Object.freeze(Array.from(voices.values()).sort(byVoice));
@@ -1119,7 +1251,69 @@
     made.refusals = normalizeRefusals(refused);
     made.blocked = Object.freeze(blockedRows(barred));
     made.leads = Object.freeze(leadRows(leading));
-    return Object.freeze(made);
+    // `sealed`, not `whole`: this file already has a `whole()` that types a
+    // recorded number, and a const of that name would shadow it for the
+    // length of this function.
+    const sealed = Object.freeze(made);
+    // WHICH PROJECTION MADE THIS ROW, recorded against the row itself. The
+    // request that a row initiates is owned by this projection because the
+    // row is this projection's, and no path string decides that afterwards.
+    for (const row of rows) rowOwners.set(row, sealed);
+    return sealed;
+  }
+
+  /**
+   * EVERY NESTED SOURCE, NORMALIZED ONCE, UNDER ONE RULE.
+   *
+   * V14, the V13 review. `sources` was walked as raw data by two consumers
+   * that disagreed about what a member is. The voices and editions walk read
+   * `sources[key]` as a plain lookup, which INVOKES an own accessor; every
+   * fragment row read the same key through `ownData`, which declines one. So
+   * `sources["1"]` written as `get "1"() {…}` gave a real edition its voice,
+   * its author and its work in the chapter's own claims, and gave every
+   * fragment standing under it nothing — one projection stating two
+   * incompatible things about one edition, and the accessor invoked once per
+   * consumer besides.
+   *
+   * One rule now, and it is the stronger of the two: a source entry is the
+   * OWN DATA at its key, and each of its shared fields is the own data at
+   * that name. An accessor is never invoked — not once, not by anybody — so a
+   * getter that answers differently on a second read, or that throws, or that
+   * mutates the record it is asked about, has no way in. A key whose value is
+   * not a plain record is a member this page cannot read, and it says so the
+   * way the walk always said so: the chapter is unreadable, whole, rather
+   * than partly believed.
+   *
+   * `translators` is normalized here rather than per fragment because it is
+   * the one shared field that is a container: a list read once and frozen
+   * cannot grow a name between the edition that states it and the fragments
+   * that stand under it.
+   */
+  function normalizeSources(held) {
+    const map = Object.create(null);
+    const order = [];
+    let members = false;
+    for (const key in held) {
+      if (!Object.hasOwn(held, key)) continue;
+      const source = ownData(held, key);
+      const one = bag(source);
+      if (one !== source) members = true;
+      const kept = Object.create(null);
+      for (const name of SHARED_WITH_EDITION) {
+        if (!Object.hasOwn(one, name)) continue;
+        const value = ownData(one, name);
+        kept[name] = name === 'translators'
+          ? Object.freeze(list(value).map(sound).filter(Boolean)) : value;
+      }
+      Object.freeze(kept);
+      map[key] = kept;
+      order.push(kept);
+    }
+    const taken = Object.create(null);
+    taken.map = Object.freeze(map);
+    taken.order = Object.freeze(order);
+    taken.members = members;
+    return Object.freeze(taken);
   }
 
   /** One projected fragment row, sealed with the two members that are not scalar. */
@@ -1620,7 +1814,7 @@
     // and `sound` were applied there, once, so a source record mutated after
     // the chapter was read cannot change which works this page says an
     // absence about.
-    const editions = chapterProjection(file).editions;
+    const editions = witnessed('provenance', chapterProjection(file)).editions;
     const named = [];
     const rows = [];
     if (!wanted) return rows;
@@ -1911,7 +2105,10 @@
     const who = sound(record.author);
     const title = sound(record.title);
     if (!who && !title) return null;
-    return { who: who, title: title, when: say(record.date) };
+    // FROZEN LIKE EVERY OTHER ROW THE PAGE RENDERS. V14: the arrays were
+    // sealed and their members were not, so a lead or a blocked entry a
+    // consumer trusts as final could still be rewritten in place.
+    return Object.freeze({ who: who, title: title, when: say(record.date) });
   }
 
   /** The acquisition list, its members alone. */
@@ -1939,7 +2136,7 @@
       .filter(Boolean).join(' — ');
     const why = sound(record.reason);
     if (!named && !why) return null;
-    return { named: named, why: why };
+    return Object.freeze({ named: named, why: why });
   }
 
   /** The held-and-blocked rows, their members alone. */
@@ -1984,7 +2181,7 @@
     // refusal when the chapter was read. The reader moves between editions
     // and chapters, so WHICH refusal is asked for is a question of the
     // moment; what the record said is not, and is no longer re-read here.
-    const held = chapterProjection(file).refusals;
+    const held = witnessed('refusal', chapterProjection(file)).refusals;
     const here = whole(chapter);
     if (!key || here === null || !Object.hasOwn(held, key)) return '';
     for (const one of held[key]) {
@@ -2046,7 +2243,7 @@
    * outward from the author.
    */
   function chapterVoices(file) {
-    return chapterProjection(file).voices;
+    return witnessed('voices', chapterProjection(file)).voices;
   }
 
   /**
@@ -2287,10 +2484,15 @@
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
     chapterFragments: chapterFragments,
+    chapterTally: chapterTally,
+    chapterUnfetched: chapterUnfetched,
     chapterProjection: chapterProjection,
     chapterBlocked: chapterBlocked,
     chapterLeads: chapterLeads,
     chapterPasses: chapterPasses,
+    chapterWitness: chapterWitness,
+    rowProjection: rowProjection,
+    textAsked: textAsked,
     fragmentRow: fragmentRow,
     textPayload: textPayload,
     formatExtent: formatExtent,
