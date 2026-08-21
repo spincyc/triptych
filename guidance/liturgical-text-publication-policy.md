@@ -292,19 +292,23 @@ reaches an ICEL oration: the CCD's governs the readings, the USCCB's governs the
 U.S. adaptations and U.S. propers, and the ICEL line carries "All rights
 reserved" with its terms stated in ICEL's own published policy — which is §3.
 
-**A third consequence, and it is a defect in this project's data model rather
-than in the analysis.** The Grail line is not a footnote. ICEL's own Antiphonary
-names the same three psalms, and on Palm Sunday an ICEL antiphon and a Grail
-psalm verse stand *inside a single slot*: the Entrance Antiphon there is
-"Cf. Jn 12:1, 12-13; Ps 23:9-10", and two Procession Antiphons print Psalms 23
-and 46 entire. **The unit of rights is therefore smaller than the slot**, and
-this repository types rights per proper, which cannot express it. Until it can,
-no Palm Sunday antiphon may land, and any slot whose citation reaches 23(24),
-46(47) or 115(116) must be checked before it does. Two further traps sit with
-it: one ICEL file prints those psalms carrying no Grail notice at all while the
-Antiphonary carries one, so rights may not be inferred from a notice's presence
-on the file in hand; and Psalm 115(116) has not been located in this
-repository's ledger and should be, before any Triduum antiphon is considered.
+**A third consequence, withdrawn.** This page argued on 2026-08-20 that the
+Grail line made the unit of rights smaller than a proper slot, because on Palm
+Sunday an ICEL antiphon and a Grail psalm verse appear together, and that no
+antiphon could land until the model could express it. **That was wrong, and the
+schema already had the answer.** An antiphon slot is `source: mixed`: it carries
+the antiphon's own words as `text` and its scriptural constituents as `verses`,
+which are CITATIONS resolved at render time against whichever bible the reader
+has selected. The 1962 calendar has done this all along — its First Antiphon at
+the Distribution of Palms carries the antiphon's Latin beside `Matthew 21:9` and
+`Psalm 23:1-2, 7-10`, and the psalm's words come from the reader's own edition.
+
+So a Grail rendering is never needed and never wanted. What this project carries
+from ICEL is the antiphon; what it carries for the psalm is the reference. The
+psalms are the psalms, and they are served from the public-domain editions this
+repository already indexes. No slot is blocked by the Grail line, and the three
+psalms it names require nothing of us but that we do not transcribe ICEL's
+particular rendering of them, which we have no reason to.
 
 ### 5.2 What ICEL says it owns
 
@@ -832,9 +836,12 @@ Before any text is written to a tracked file:
    had.
 3. **Determine the actual copyright owner per text**, not per book. Is it ICEL
    universal text? a USCCB national adaptation or U.S. proper? CCD Scripture? a
-   fourth party — the Revised Grail Psalms are the live trap, and one Palm
-   Sunday antiphon in the postconciliar ledger is flagged for exactly this,
-   unresolved. **Check the rights before the text.**
+   fourth party. **Scripture inside a proper is a citation, not a text to
+   acquire**: an antiphon carries its own words and its scriptural constituents
+   as references, and those resolve against the bible the reader selected. That
+   is why the Revised Grail rendering of three psalms, named in the 2011 book
+   and in ICEL's Antiphonary, blocks nothing — this project never wants a
+   particular publisher's psalm wording, only the reference.
 4. **Name the basis** from §1's seven, and record it as a token, not prose.
    Where the basis is a permission, record the policy URL and its retrieval date
    beside the artifact's own source URL: they are different URLs and condition
