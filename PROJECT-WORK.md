@@ -1139,6 +1139,180 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V14 independent review
+
+Disposition: **CHANGES REQUIRED** for exact V14 candidate
+`69f2575421ba976271c936b1abd4b39dbe8b98fd`. The directions' comparison base
+is `6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3`; the candidate's literal Git
+parent is implementation commit `5273bd00c368c461834f4259c495043510aa178b`.
+This review inspected `evidence/catena-e1-corrections-v14-handoff` at
+`f74f8f4d4de44e21afdbef1fc4e9589a9898e986` and binds the 1,366,960-byte,
+69-member `20260821T043622Z-catena-e1-corrections-v14.zip` with SHA-256
+`414f303954d79b966f4d7f0ad6814376c0014fb73f8e2b78a0d4dc2495124bb1`.
+Current `origin/main` is `7a5c99ba5915e786e9ad51635e7deb1fb890fddc`.
+The V13 review identity remains absent: no remote review ref exists and the
+local review branch stands at the reviewed V13 head without a review commit.
+No predecessor SHA is invented. The review branch is
+`review/catena-wave-1-e1-corrections-v14-independent`.
+
+Semantic final-authority disposition: **SEMANTIC CHANGES REQUIRED**.
+Evidence/provenance disposition: **EVIDENCE CHANGES REQUIRED**. Overall V14
+disposition: **CHANGES REQUIRED**.
+
+The `unfetched` and raw-chapter correction passes. The exact seven-member raw
+authority inventory is `fragments`, `sources`, `refusals`, `unfetched`,
+`blocked`, `leads`, and `text_prefix`; the candidate takes each once into the
+memoized projection. The walking `unfetched` case holds rows, refusal, tally,
+route, request and rendered state at the quiet baseline, while the steady
+forged control reaches the unavailable state. The page has no covered
+post-projection raw read of these members. Tally is a separate projection
+consumer, and the member add/remove/reorder/phantom/tally matrix reaches the
+row inventory, order and tally with its stated controls.
+
+The object-keyed witness map does represent JavaScript reference identity, and
+the advertised names are internally consistent: readability, `unfetched`,
+tally, rows, voices, blocked, leads, refusal, request and provenance. It is not
+a complete final-authority proof. Legacy harness wrappers can call
+`chapterProjection(file)` before the real consumer, and the roster is derived
+only from self-reported witness names. Most importantly, `request` observes the
+row/projection only at the address decision; asynchronous body application is
+not a witnessed consumer. Thus the roster cannot detect the lifecycle boundary
+that V14 actually omits.
+
+That omission is a reproduced production defect. `fragmentText(row)` asks the
+model through the exact projected row, but immediately reduces the answer to a
+path and enters the global `fragmentTexts` path-to-Promise cache. A second
+projection B carrying the same path subscribes to projection A's unresolved
+Promise. In `v14-late-same-path`, A starts the sole text transport and is held;
+B becomes active but remains `Loading…`; releasing A changes B to A's planted
+fallback body. Completion is guarded only by containment of B's current DOM
+node. B did not settle before A, and A's completion attached to B solely
+because the paths matched. The test named
+`test_a_genuinely_late_completion_belongs_to_the_row_that_asked` requires this
+leak, so its oracle is inverted. The packaged journal records ask-time owner
+labels but no body/application owner and therefore cannot repair the proof.
+Row-object ownership passes only through address selection; same-path,
+multi-projection and genuinely-late completion authority remain open.
+
+Nested-source entry accessors are never invoked, hostile entry getters fail the
+chapter closed, nested field accessors are declined coherently as absent, and
+all downstream consumers use one frozen memoized projection. Two proof limits
+remain. The matrix omits the promised `edition` field accessor and does not
+assert every field case at all required sinks. In addition, `normalizeSources`
+observes a Proxy source-key descriptor three times (`for…in`, `Object.hasOwn`,
+then `ownData`) and a shared-field descriptor twice. A changing descriptor can
+plant its later value into the frozen projection, although all observations are
+pre-publication and all consumers then agree. This is not a post-projection raw
+reread, but it contradicts the stronger exactly-once claim and must be audited
+and either corrected or narrowed in V15.
+
+The terminal normalized projection graph is structurally sound: the claimed
+17 projection structures are frozen; projected rows, extents, translators,
+voices, editions, blocked/leads rows and refusal structures do not retain the
+raw source map; and the projection and refusal map have the claimed null
+prototype. All 13 assignments throw and preserve the assigned property. The
+packaged probe, however, inspects/rendered state before mutation and does not
+rerun a downstream sink afterwards, so the promised downstream-unchanged claim
+is not directly proved. Exported mutable presentation registries are a bounded
+hardening concern outside the counted projection graph. Deep graph freezing
+passes; the stronger downstream mutation proof remains open.
+
+The preserved V13 carried-path, spine-prefix, fulfilled prewarm with rendered
+body, rights/provenance and refusal-to-DOM cases pass. Focused Catena is
+596/596 at the candidate and 555/555 at the comparison base. Replaying the V14
+test file over exact-base production runs 540 methods: 511 pass and 29 methods
+fail, emitting 43 subtest failure events. The category arithmetic is correct:
+23 semantic adversarial, 2 audit/roster, 1 packaged-provenance, 2 exported
+builder, and 1 hash pin. Of 41 new methods, 28 fail the base and 13 pass both
+endpoints as coverage/control. The package's ten-closure enumeration is not
+truthful because the late-ownership method accepts the defect; method count and
+semantic closure count remain distinct.
+
+Committed full discovery is 1,947 at the candidate with 14 failures, 13 errors
+and 11 skips over 27 failure/error identities, versus 1,906 at the base with
+14/14/11 over those same 27 plus
+`test_pdf_review.PdfReviewCommandTests.test_repeated_signals_do_not_interrupt_child_cleanup`.
+The PDF tool and test blobs are byte-identical and outside the V14 diff; a
+separate committed run at the same base passes that identity. Its empty-JSON
+signal-cleanup traceback is therefore classified as an unrelated timing flake,
+not a V14 regression. Fresh independent full-discovery reruns reproduce
+1,947 with 14/13/11 at the exact candidate and 1,906 with 14/13/11 at the
+exact base; the PDF identity passes in both fresh runs. The browser gate is
+identically red at both endpoints:
+2,290 assertions = 1,836 pass / 226 fail / 228 skip over 171 pages and 19
+routes, with every assertion identity, status and detail equal after the named
+volatile fields are removed.
+
+`make -k check` exits 2 on the same four inherited top-level targets at both
+endpoints: `check-web-editions-current`, `check-release-bindings`,
+`check-tool-registry`, and `check-examples`. The last reports 30 example
+divergences at the base and 28 at the candidate because two ignored
+`mass-ordinary` outputs differ, so exact inner-diagnostic identity is not
+claimed. The promise ledger validates at 39 tracked / 19 complete here and
+38/19 at the base. Catena structure is 1,351 fragments / 1 book / 73 canon
+entries at both. Four release bindings remain stale and none was re-signed.
+
+Budgets are unraised. CSS is byte-identical at 7,629/8,000 whole and
+2,676/2,700 stripped; HTML is byte-identical. `catena.js` moves
+12,974/7,546 to 12,972/7,546 against the 13,000/8,800 ceilings. The uncapped
+model moves 36,679/8,873 to 39,724/9,396; combined route-model payload growth
+and a governing model ceiling remain broader budget-owner work, not an
+invented V14 ceiling.
+
+The ZIP identity, layout and manifest pass independently. P8 rerun from a
+clean versioned evidence checkout passes all 12 checks with zero problems and
+the archive remains the same size and SHA before and after. The package was
+sealed, P8 completed, and the sole surviving authority was established
+afterwards with bindings to the candidate, comparison base, package identity
+and P8 result. The final winner is unambiguous, and privacy scans over the
+package, evidence and outer artifacts are clean.
+
+Evidence closure still fails mandatory protocol. `checks.txt` expressly marks
+both browser commands `ELIDED` and the load-bearing parent replay `PROSE`, so it
+does not supply the exact commands required by the handoff protocol. The final
+executed-tool record also calls `compare-gate.py` not executed although the
+assembly transcript proves it ran; its `16/11` figure mixes invocation rows
+with unique-tool rows, the P8 table predates later executions, and P11 is not
+captured in the final table. The claimed complete ledger omits the set-aside
+head cohort and final-attempt P10 rows, while append-only prose conflicts with
+a disclosed removal/replacement of two malformed rows. `claims.json` does not
+derive every figure that package prose says it derives. The four core handoff
+files and ten lexical `HANDOFF.md` contents are present, but the mechanical
+`COMPLETE` result does not test these substantive failures.
+
+The missing V13 review identity is an acceptable bounded historical-chain
+limitation because it is truthfully empty and the exact comparison base,
+candidate and evidence remain reviewable. The absent literal lines
+`workspace_mode = fresh-clone` and `worktree = false` are a bounded provenance
+condition, not independently blocking: the handoff protocol does not mandate
+those exact fields, and this review independently ran in a standalone full
+clone with a `.git` directory. Both conditions must be carried truthfully; no
+historical topology or review SHA may be invented.
+
+The V14 comparison touches exactly seven paths: four durable records,
+`catena-model.js`, `catena.js`, and `test_catena_wave_1.py`. It does not modify
+`src/web/data/`, release bindings, the common gate, shared shell, Liturgy,
+PDFs, CLI, CSS, HTML, or budget ceilings. Broader E1 blockers remain open and
+are not reasons for this disposition: projection outside this bounded chapter,
+orphan/source-only semantics, translator coercion, malformed and padded
+absences, broader selection/order, refusal typing, unreadable roots and
+`bibles.json`, broader terminal/oracle proof, CLI/web duplication, model and
+combined-budget governance, the historical data seam, cumulative-history
+reconciliation, release bindings, common gate, B0/shared shell, real-device
+and assistive-technology evidence, protected Liturgy, PDFs, and integration.
+
+Exact next action: make the smallest semantic V15 from exact V14 head
+`69f2575421ba976271c936b1abd4b39dbe8b98fd`. Keep pending text work owned by
+the initiating row and projection, or share only fulfilled immutable values;
+hold A, let same-path B settle independently with a distinguishable B body,
+then release A and prove B's body, DOM, row, projection, route and application
+journal are unchanged by actual object identity. Complete the body-application
+consumer roster; audit one-descriptor nested-source normalization and the
+missing edition/deep-mutation sink proofs. Rebuild the evidence in that same
+semantic lane with exact portable commands, complete history, and one final
+coherent invocation/tool-byte record. Do not merge, integrate, re-sign, deploy
+or enter unrelated E1 work.
+
 ### E1 Catena route-owned correction lane, V14
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v14-2026-08-20 -->
