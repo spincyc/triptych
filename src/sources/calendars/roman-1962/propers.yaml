@@ -23061,26 +23061,54 @@ sections:
       date: 02-09
       rank: III
       kind: sanctoral
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Doctorum, pro Doctore Pontifice -- which is unambiguous where the Introit
-        incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S
-        OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets
-        each oration under a drop capital that the text layer renders as wreckage and glues marginal section
-        numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not
-        of publishable quality and is not recorded. The Collect slot therefore holds a placeholder while
-        every other slot is the Common''s, which is what the Missal appoints. Nothing here has been visually
-        collated.'
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+      notes: 'The Missal gives this day the Mass of the Common of Doctors and three
+        orations of its own - the pointer says cum orationibus ut infra, and each of
+        the three is marked P. Read on 2026-08-21 from the page images of the CMAA
+        facsimile of the controlling edition at printed pp. 472-473 (digital pp.
+        553-554), no optical text layer supplying any reading. The three are
+        published as preexisting material under 17 U.S.C. 103(b): the tracked
+        public-domain Lasance New Roman Missal prints all three word for word at
+        printed pp. 914-915 (Internet Archive item fr-lasance-missal-1937, leaves
+        n912 and n913), read on the page image the same day. Three divergences,
+        all of them the witness''s and none substantive: the witness spells
+        Genitricem and Genitrici where 1962 spells Genetricem and Genetrici, writes
+        Per eumdem Dominum where 1962 writes Per eundem Dominum, and abbreviates
+        both later conclusions to Qui tecum where 1962 prints them out. The
+        feast entered the universal calendar in 1882, so its formulary is not new
+        matter of any edition later than that. The commemoration of S. Apollonia
+        printed inside this Mass belongs to the entry beside it and is not carried
+        here.'
       takes_from:
         mass: commune-doctorum-pontificis
-        citation: Commune Doctorum, pro Doctore Pontifice
+        citation: 'Missa In medio, de Communi Doctorum [22], cum orationibus ut infra'
+      propers:
+      - name: Collect
+        incipit: Deus, qui beatum Cyrillum
+        source: composed
+        notes: Printed p. 472, no. 2155, marked P.
+        text: |
+          Deus, qui beatum Cyrillum Confessorem tuum atque Pontificem divinae
+          maternitatis beatissimae Virginis Mariae assertorem invictum effecisti:
+          concede, ipso intercedente; ut, qui vere eam Genetricem Dei credimus,
+          materna ejusdem protectione salvemur. Per eundem Dominum.
+      - name: Secret
+        incipit: Munera nostra, omnipotens
+        source: composed
+        notes: Printed p. 473, no. 2157, marked P.
+        text: |
+          Munera nostra, omnipotens Deus, benignus respice: et, intercedente beato
+          Cyrillo, praesta; ut unigenitum tuum Jesum Christum Dominum nostrum, in
+          tua tecum gloria coaeternum, in cordibus nostris digne suscipere
+          mereamur: Qui tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Divinis, Domine, refecti
+        source: composed
+        notes: Printed p. 473, no. 2159, marked P.
+        text: |
+          Divinis, Domine, refecti mysteriis, te supplices deprecamur: ut, exemplis
+          et meritis beati Cyrilli Pontificis adjuti, sanctissimae Genetrici
+          Unigeniti tui digne famulari valeamus: Qui tecum vivit et regnat in
+          unitate.
     - key: comm-s-apolloniae-virginis-martyris
       name: Comm. S. Apolloniae Virginis et Martyris
       registry: '1962-02-09-comm'
@@ -25563,26 +25591,38 @@ sections:
       date: 04-27
       rank: III
       kind: sanctoral
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Doctorum, pro Doctore Pontifice -- which is unambiguous where the Introit
-        incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S
-        OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets
-        each oration under a drop capital that the text layer renders as wreckage and glues marginal section
-        numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not
-        of publishable quality and is not recorded. The Collect slot therefore holds a placeholder while
-        every other slot is the Common''s, which is what the Missal appoints. Nothing here has been visually
-        collated.'
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+      notes: 'The Missal gives this day the Mass of the Common of Doctors except for
+        the Collect, which the pointer says in terms - praeter orationem sequentem -
+        and which stands under the day marked P. The Secret and the Postcommunion it
+        prints at nos. 2456 and 2457 are marked C 2 and are that Common''s second
+        set, so neither is transcribed here and neither is absent; which set of a
+        Common a day takes is the schema gap this file''s open_collation_items
+        already carries, and this entry does not close it. Read on 2026-08-21 from
+        the page image of the CMAA facsimile at printed p. 512 (digital p. 593), no
+        optical text layer supplying any reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b): the tracked public-domain
+        Lasance New Roman Missal prints it word for word at printed p. 991 (Internet
+        Archive item fr-lasance-missal-1937, leaf n983), read on the page image the
+        same day, differing only in pointing - propitius: ut ejus exemplis et monitis
+        errantes, where 1962 points propitius; ut, eius exemplis et monitis,
+        errantes. The saint was canonised and declared a Doctor in 1925, before the
+        1931 line guidance/missals.md draws for works first published abroad. This
+        supersedes the half-corroboration this file records in its own verification
+        header, where the 1862 Pustet was found to print the opening clause and a
+        different petition after it.'
       takes_from:
         mass: commune-doctorum-pontificis
-        citation: Commune Doctorum, pro Doctore Pontifice
+        citation: 'Missa In medio, de Communi Doctorum [22], praeter orationem sequentem'
+      propers:
+      - name: Collect
+        incipit: Deus, qui ad tuendam
+        source: composed
+        notes: Printed p. 512, no. 2455, marked P.
+        text: |
+          Deus, qui ad tuendam catholicam fidem beatum Petrum Confessorem tuum
+          virtute et doctrina roborasti: concede propitius; ut, ejus exemplis et
+          monitis, errantes ad salutem resipiscant, et fideles in veritatis
+          confessione perseverent. Per Dominum.
     - key: s-pauli-a-cruce-confessoris
       name: S. Pauli a Cruce Confessoris
       registry: '1962-04-28'
@@ -28594,26 +28634,35 @@ sections:
       date: 06-18
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Doctorum, pro Doctore Pontifice -- which is unambiguous where the Introit
-        incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S
-        OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets
-        each oration under a drop capital that the text layer renders as wreckage and glues marginal section
-        numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not
-        of publishable quality and is not recorded. The Collect slot therefore holds a placeholder while
-        every other slot is the Common''s, which is what the Missal appoints. Nothing here has been visually
-        collated.'
+      notes: 'The Missal gives this day the Mass of the Common of Doctors except for
+        the Collect, which the pointer says in terms - praeter orationem sequentem -
+        and which stands under the day marked P. The Secret and the Postcommunion it
+        prints at nos. 2804 and 2806 are marked C 2 and are that Common''s second
+        set, so neither is transcribed here and neither is absent. Read on 2026-08-21
+        from the page image of the CMAA facsimile at printed p. 555 (digital p. 636),
+        no optical text layer supplying any reading. The Collect is published as
+        preexisting material under 17 U.S.C. 103(b): the tracked public-domain
+        Lasance New Roman Missal prints it word for word at printed p. 1052 (Internet
+        Archive item fr-lasance-missal-1937, leaf n1044), read on the page image the
+        same day; the witness abbreviates the conclusion to Per Dominum where 1962
+        prints it out, and the two agree in every other syllable. The saint was
+        declared a Doctor and given this feast in 1920, before the 1931 line. The
+        commemoration of Ss. Marcus and Marcellianus printed inside this Mass belongs
+        to the entry beside it and is not carried here.'
       takes_from:
         mass: commune-doctorum-pontificis
-        citation: Commune Doctorum, pro Doctore Pontifice
+        citation: 'Missa In medio, de Communi Doctorum [22], praeter orationem sequentem'
+      propers:
+      - name: Collect
+        incipit: Deus, qui Ecclesiam tuam
+        source: composed
+        notes: Printed p. 555, no. 2802, marked P.
+        text: |
+          Deus, qui Ecclesiam tuam beati Ephraem Confessoris tui et Doctoris mira
+          eruditione et praeclaris vitae meritis illustrare voluisti: te supplices
+          exoramus; ut, ipso intercedente, eam adversus erroris et pravitatis
+          insidias perenni tua virtute defendas. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
     - key: comm-ss-marci-marcelliani-martyrum
       name: Comm. Ss. Marci et Marcelliani Martyrum
       registry: '1962-06-18-comm'
@@ -32561,26 +32610,39 @@ sections:
       date: 08-08
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Confessoris non Pontificis, Missa I: Os justi meditabitur -- which is unambiguous
-        where the Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`.
-        THE DAY''S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the
-        facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues
-        marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what
-        was read is not of publishable quality and is not recorded. The Collect slot therefore holds a placeholder
-        while every other slot is the Common''s, which is what the Missal appoints. Nothing here has been
-        visually collated.'
+      notes: 'The Missal gives this day the first Mass of the Common of a Confessor
+        not a Bishop except for the Collect, which the pointer says in terms -
+        praeter orationem sequentem - and which stands under the day marked P. Read
+        on 2026-08-21 from the page image of the CMAA facsimile at printed p. 618
+        (digital p. 699), no optical text layer supplying any reading. The Collect is
+        published as preexisting material under 17 U.S.C. 103(b): the tracked
+        public-domain Lasance New Roman Missal prints it at printed p. 1149 (Internet
+        Archive item fr-lasance-missal-1937, leaf n1141), read on the page image the
+        same day, under 9 August, which is where the pre-1960 books keep this feast.
+        THE TWO BOOKS DIFFER IN ONE WORD AND THE READER SHOULD BE TOLD SO: the
+        witness reads qui beatum Joannem Mariam where 1962 reads qui sanctum Ioannem
+        Mariam, and spells poenitentiae where 1962 spells paenitentiae. The 1962
+        reading is what stands below, because this file''s edition is the 1962
+        Missal; the divergence is not a defect of either reading and is recorded
+        rather than harmonised. The saint was canonised in 1925, before the 1931
+        line guidance/missals.md draws for works first published abroad. The
+        commemoration of Ss. Cyriacus, Largus and Smaragdus printed inside this Mass
+        belongs to the entry beside it and is not carried here.'
       takes_from:
         mass: commune-confessoris-non-pontificis-1
-        citation: 'Commune Confessoris non Pontificis, Missa I: Os justi meditabitur'
+        citation: 'Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
+          praeter orationem sequentem'
+      propers:
+      - name: Collect
+        incipit: Omnipotens et misericors Deus
+        source: composed
+        notes: Printed p. 618, no. 3305, marked P.
+        text: |
+          Omnipotens et misericors Deus, qui sanctum Joannem Mariam pastorali studio
+          et jugi orationis ac paenitentiae ardore mirabilem effecisti: da,
+          quaesumus; ut, ejus exemplo et intercessione, animas fratrum lucrari
+          Christo, et cum eis aeternam gloriam consequi valeamus. Per eundem
+          Dominum.
     - key: comm-ss-cyriaci-largi-smaragdi-martyrum
       name: Comm. Ss. Cyriaci, Largi et Smaragdi Martyrum
       registry: '1962-08-08-comm'
@@ -33233,26 +33295,36 @@ sections:
       date: 08-19
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Confessoris non Pontificis, Missa I: Os justi meditabitur -- which is unambiguous
-        where the Introit incipit is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`.
-        THE DAY''S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the
-        facsimile sets each oration under a drop capital that the text layer renders as wreckage and glues
-        marginal section numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what
-        was read is not of publishable quality and is not recorded. The Collect slot therefore holds a placeholder
-        while every other slot is the Common''s, which is what the Missal appoints. Nothing here has been
-        visually collated.'
+      notes: 'The Missal gives this day the first Mass of the Common of a Confessor
+        not a Bishop except for the Collect, which the pointer says in terms -
+        praeter orationem sequentem - and which stands under the day marked P. The
+        Secret and the Postcommunion it prints at nos. 3408 and 3409 are marked C and
+        are that Common''s own, Laudis tibi and Refecti cibo potuque, so neither is
+        transcribed here and neither is absent. Read on 2026-08-21 from the page
+        image of the CMAA facsimile at printed p. 631 (digital p. 712), no optical
+        text layer supplying any reading. The Collect is published as preexisting
+        material under 17 U.S.C. 103(b): the tracked public-domain Lasance New Roman
+        Missal prints it word for word at printed pp. 1166-1167 (Internet Archive
+        item fr-lasance-missal-1937, leaves n1158 and n1159), read on the page image
+        the same day; the witness points quaesumus: ut cujus and closes Per eumdem
+        Dominum where 1962 points quaesumus; ut, cuius and prints the conclusion out.
+        The saint was canonised in 1925, before the 1931 line.'
       takes_from:
         mass: commune-confessoris-non-pontificis-1
-        citation: 'Commune Confessoris non Pontificis, Missa I: Os justi meditabitur'
+        citation: 'Missa Os iusti, de Communi Confessoris non Pontificis I loco [24],
+          praeter orationem sequentem'
+      propers:
+      - name: Collect
+        incipit: Deus, qui beatum Joannem
+        source: composed
+        notes: Printed p. 631, no. 3407, marked P.
+        text: |
+          Deus, qui beatum Joannem, Confessorem tuum, ad cultum sacrorum Cordium
+          Jesu et Mariae rite promovendum, mirabiliter inflammasti, et per eum novas
+          in Ecclesia tua familias congregare voluisti: praesta, quaesumus; ut,
+          cujus pia merita veneramur, virtutum quoque instruamur exemplis. Per
+          eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
     - key: s-bernardi-abbatis-ecclesiae-doctoris
       name: S. Bernardi Abbatis et Ecclesiae Doctoris
       registry: '1962-08-20'
@@ -34660,26 +34732,40 @@ sections:
       date: 09-16
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune plurimorum Martyrum extra tempus paschale, Missa I: Intret in conspectu
-        tuo -- which is unambiguous where the Introit incipit is not, two Commons sharing `Os iusti` and
-        two more sharing `Me exspectaverunt`. THE DAY''S OWN COLLECT IS NOT TRANSCRIBED. The Missal prints
-        one and this pass read it, but the facsimile sets each oration under a drop capital that the text
-        layer renders as wreckage and glues marginal section numbers to the words -- `Cyrilluui`, `quivere
-        earn`, `Ecclesise2517` -- so what was read is not of publishable quality and is not recorded. The
-        Collect slot therefore holds a placeholder while every other slot is the Common''s, which is what
-        the Missal appoints. Nothing here has been visually collated.'
+      notes: 'The Missal gives this day the whole first Mass of the Common of many
+        Martyrs outside Paschaltide, and prints one oration under the day. That
+        oration is MARKED C, not P: it is the Common''s own Collect at no. 4239 with
+        the two names supplied, and the Missal sets the supplied words - eorum
+        commendet oratio veneranda follows Cornelii et Cypriani - in italic to say
+        so. Nothing here is proper to the saints but their names. It is carried as a
+        proper of the day all the same, because what would otherwise resolve through
+        from the Common is that formula''s N. et N., and a Mass of two named martyrs
+        must not be printed with the names left blank. No Secret and no
+        Postcommunion is printed under the day; both are the Common''s and both are
+        appointed, not absent. Read on 2026-08-21 from the page image of the CMAA
+        facsimile of the controlling edition at printed p. 658 (digital p. 739), no
+        optical text layer supplying any reading. The wording is preexisting material
+        under 17 U.S.C. 103(b) on the strength of the Common this file already
+        carries: the two texts agree syllable for syllable outside the names, and
+        the Common''s own reading was corroborated in a public-domain witness before
+        it was published. The Missal abbreviates this printing''s conclusion to Per
+        Dominum where the Common at no. 4239 prints Per Dominum nostrum, and the
+        printed cue is reproduced. The commemoration of Ss. Euphemia, Lucia and
+        Geminianus printed inside this Mass belongs to the entry beside it and is
+        not carried here.'
       takes_from:
         mass: commune-plurimorum-martyrum-1
-        citation: 'Commune plurimorum Martyrum extra tempus paschale, Missa I: Intret in conspectu tuo'
+        citation: 'Missa Intret, de Communi plurimorum Martyrum I loco [10]'
+      propers:
+      - name: Collect
+        incipit: Beatorum Martyrum pariterque
+        source: composed
+        notes: Printed p. 658, no. 3635, marked C; the names are the day's and are
+          set in italic.
+        text: |
+          Beatorum Martyrum pariterque Pontificum Cornelii et Cypriani nos,
+          quaesumus, Domine, festa tueantur: et eorum commendet oratio veneranda.
+          Per Dominum.
     - key: comm-ss-euphemiae-virginis-luciae-geminiani
       name: Comm. Ss. Euphemiae Virginis, Luciae et Geminiani Martyrum
       registry: 1962-09-16-comm
@@ -38048,26 +38134,28 @@ sections:
       date: 11-09
       rank: II
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Dedicationis ecclesiae -- which is unambiguous where the Introit incipit
-        is not, two Commons sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S OWN
-        COLLECT IS NOT TRANSCRIBED. The Missal prints one and this pass read it, but the facsimile sets
-        each oration under a drop capital that the text layer renders as wreckage and glues marginal section
-        numbers to the words -- `Cyrilluui`, `quivere earn`, `Ecclesise2517` -- so what was read is not
-        of publishable quality and is not recorded. The Collect slot therefore holds a placeholder while
-        every other slot is the Common''s, which is what the Missal appoints. Nothing here has been visually
-        collated.'
+      notes: 'The Missal prints no formulary and no oration for this day. It prints a
+        directive and nothing else - Missa Terribilis, de Communi Dedicationis
+        ecclesiae [39]. Et fit commemoratio S. Theodori Mart., ut in Missa sequenti;
+        ac dicitur Credo - and this entry carries the directive. The Collect
+        placeholder this entry used to hold asserted a proper oration the book does
+        not print; it is removed, and its removal is a reading and not an omission.
+        Read on 2026-08-21 from the page image of the CMAA facsimile of the
+        controlling edition at printed p. 713 (digital p. 794), no optical text layer
+        supplying any reading, and corroborated in the tracked public-domain Lasance
+        New Roman Missal at printed p. 1282 (Internet Archive item
+        fr-lasance-missal-1937, leaf n1282), which likewise sends the day to the Mass
+        Terribilis of the Dedication of a Church with a commemoration of S. Theodore
+        and prints no oration of its own. TWO THINGS THIS ENTRY CANNOT SAY. The
+        Common it points at prints two sets - the anniversary set and the set In ipso
+        die Dedicationis - and the directive names neither, so the day resolves with
+        both under it; that is the open item this file already carries about pointing
+        a mass at one of a Common''s sets, and this entry does not close it. And the
+        Credo and the commemoration are rubrics of the day that this schema has
+        nowhere to put.'
       takes_from:
         mass: commune-dedicationis-ecclesiae
-        citation: Commune Dedicationis ecclesiae
+        citation: 'Missa Terribilis, de Communi Dedicationis ecclesiae [39]'
     - key: comm-s-theodori-martyris
       name: Comm. S. Theodori Martyris
       registry: 1962-11-09-comm
@@ -39110,25 +39198,53 @@ sections:
       date: 11-26
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
-      notes: 'The Missal does not print a formulary for this day: it prints a directive, and this entry
-        carries the directive rather than a copy. Read on 2026-08-08 from the embedded text layer of the
-        CMAA facsimile at the day''s own heading, joined to the Common by the BRACKETED NUMBER the Missal
-        itself prints -- Commune Abbatum -- which is unambiguous where the Introit incipit is not, two Commons
-        sharing `Os iusti` and two more sharing `Me exspectaverunt`. THE DAY''S OWN COLLECT IS NOT TRANSCRIBED.
-        The Missal prints one and this pass read it, but the facsimile sets each oration under a drop capital
-        that the text layer renders as wreckage and glues marginal section numbers to the words -- `Cyrilluui`,
-        `quivere earn`, `Ecclesise2517` -- so what was read is not of publishable quality and is not recorded.
-        The Collect slot therefore holds a placeholder while every other slot is the Common''s, which is
-        what the Missal appoints. Nothing here has been visually collated.'
+      notes: 'The Missal gives this day the Mass of the Common of Abbots and three
+        orations of its own - the pointer says cum orationibus ut infra, and each of
+        the three is marked P. Read on 2026-08-21 from the page images of the CMAA
+        facsimile of the controlling edition at printed pp. 726-727 (digital pp.
+        807-808), no optical text layer supplying any reading. The three are
+        published as preexisting material under 17 U.S.C. 103(b): the tracked
+        public-domain Lasance New Roman Missal prints all three word for word at
+        printed pp. 1297-1298 (Internet Archive item fr-lasance-missal-1937, leaves
+        n1297 and n1298), read on the page image the same day. The divergences are
+        the witness''s pointing and capitalisation - vocare, et praeclaris and
+        exoramus ut where 1962 has vocare et praeclaris and exoramus; ut; tribue
+        quaesumus where 1962 has tribue, quaesumus; corpus et sanguinem and cum
+        sanctis where 1962 capitalises Corpus et Sanguinem and Sanctis - and the
+        abbreviation of the Secret''s conclusion to Qui tecum. The feast was extended
+        to the universal Church in 1890, before the 1931 line. The commemoration of
+        S. Petrus Alexandrinus printed inside this Mass belongs to the entry beside
+        it and is not carried here.'
       takes_from:
         mass: commune-abbatum
-        citation: Commune Abbatum
+        citation: 'Missa Os iusti, de Communi Abbatum [27], cum orationibus ut infra'
+      propers:
+      - name: Collect
+        incipit: Clementissime Deus, qui sanctum
+        source: composed
+        notes: Printed pp. 726-727, no. 4169, marked P.
+        text: |
+          Clementissime Deus, qui sanctum Silvestrum Abbatem, saeculi hujus
+          vanitatem in aperto tumulo pie meditantem, ad eremum vocare et praeclaris
+          vitae meritis decorare dignatus es: te supplices exoramus; ut, ejus exemplo
+          terrena despicientes, tui consortio perfruamur aeterno. Per Dominum.
+      - name: Secret
+        incipit: Quaesumus, Domine, ut
+        source: composed
+        notes: Printed p. 727, no. 4171, marked P.
+        text: |
+          Quaesumus, Domine: ut, dum haec munera divinae majestati tuae reverenter
+          offerimus; pia mentis praeparatione et cordis puritate, beati Silvestri
+          Abbatis imitatores effecti, Corpus et Sanguinem Filii tui sancte percipere
+          mereamur: Qui tecum vivit et regnat in unitate.
+      - name: Postcommunion
+        incipit: Divina dape refectis
+        source: composed
+        notes: Printed p. 727, no. 4173, marked P.
+        text: |
+          Divina dape refectis tribue, quaesumus, Domine: sancti Silvestri Abbatis
+          vestigiis ita inhaerere; ut copiosam mercedem in regno gloriae tuae cum
+          Sanctis habeamus. Per Dominum nostrum.
     - key: comm-s-petri-alexandrini-episcopi-martyris
       name: Comm. S. Petri Alexandrini Episcopi et Martyris
       registry: '1962-11-26-comm'
@@ -39798,30 +39914,43 @@ sections:
       date: 12-11
       rank: III
       kind: sanctoral
-      propers:
-      - name: Collect
-        source: composed
-        text: 'Exaudi, Domine, preces nostras, et interveniente beato Damaso Confessore tuo, atque Pontifice,
-          indulgentiam nobis tribue placatus, et pacem. Per Dominum.
-      
-          '
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-      
-          '
+      notes: 'The Missal gives this day the Mass of the Common of one or more Supreme
+        Pontiffs and prints one oration under the day. That oration is MARKED C 1: it
+        is the first of that Common''s two Collects, Gregem tuum, Pastor aeterne, at
+        no. 4176, with the name supplied and the Common''s parenthetical Martyrem
+        tuum atque dropped, this Pontiff being a Confessor. It is carried as a proper
+        of the day because what would otherwise resolve through from the Common is
+        that formula''s N. The Secret and the Postcommunion printed at nos. 1888 and
+        1889 are marked C 1 and are the Common''s own, so neither is transcribed here
+        and neither is absent. Read on 2026-08-21 from the page image of the CMAA
+        facsimile of the controlling edition at printed p. 439 (digital p. 520), no
+        optical text layer supplying any reading, and corroborated word for word in
+        the tracked public-domain Lasance New Roman Missal at printed p. 855
+        (Internet Archive item fr-lasance-missal-1937, leaf n853), read on the page
+        image the same day, which differs only by a comma after Pontificem. THIS
+        REPLACES A WRONG READING. Until 2026-08-21 this entry carried Exaudi, Domine,
+        preces nostras, et interveniente beato Damaso Confessore tuo, atque
+        Pontifice, which was read off the 1862 Pustet page image and is that
+        printing''s Collect for this day. The 1962 does not print it, and neither
+        does the 1945 Lasance; the 1862''s reading is not a variant of this one but a
+        different prayer, and the entry''s own note that the two books were not
+        asserted to agree was carrying the weight of a divergence nobody had
+        measured. The 1862 reading is not reproduced here and belongs, if anywhere,
+        to a pre-1955 recension row. The commemoration of the feria the Missal
+        directs here is not carried.'
       takes_from:
         mass: commune-summorum-pontificum
-        citation: Commune Sanctorum [1]
-      notes: 'Read on 2026-08-08 from the embedded text layer of the CMAA facsimile of the controlling edition,
-        at this day''s own heading, and nothing has been visually collated. Only the printed scripture citations
-        are recorded: the facsimile sets each oration under a drop capital that the text layer renders as
-        wreckage, so the orations the Missal prints here are appointed and not transcribed. Every citation
-        was re-parsed against the repository''s own canonical book list before it was written. The day''s
-        own Collect was read on 2026-08-08 from the PAGE IMAGE of leaf n458 of Internet Archive item bub_gb_E7sPAAAAIAAJ,
-        the Pustet Ratisbon 1862 printing the source library already tracks as public domain, and not from
-        any optical text layer -- that printing''s own OCR corrupts roughly one word in three. The wording
-        is the 1862''s; the 1962 Missal is not quoted for it, and the two books are not asserted to agree.'
+        citation: 'Missa Si diligis me, de Communi unius aut plurium Summorum
+          Pontificum [1]'
+      propers:
+      - name: Collect
+        incipit: Gregem tuum, Pastor
+        source: composed
+        notes: Printed p. 439, no. 1887, marked C 1; the name is the day's.
+        text: |
+          Gregem tuum, Pastor aeterne, placatus intende: et per beatum Damasum
+          Summum Pontificem perpetua protectione custodi; quem totius Ecclesiae
+          praestitisti esse pastorem. Per Dominum.
     - key: s-luciae-virginis-martyris
       name: S. Luciae Virginis et Martyris
       registry: '1962-12-13'
