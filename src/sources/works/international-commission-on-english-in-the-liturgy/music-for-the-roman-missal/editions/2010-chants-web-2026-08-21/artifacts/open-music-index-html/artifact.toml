@@ -1,0 +1,30 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.open-music-index-html"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+artifact_type = "html"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = """
+The index page carries no reuse grant over itself. It is registered because it
+is the page that names the 188 files, gives each its heading and link text, and
+prints the delivery terms those files are offered on -- terms which are NARROWER
+than ICEL's internet clause and which the sibling artifact records must not be
+read as resting on. The exact bytes are identified and hashed; no payload is
+retained.
+"""
+source_url = "https://www.icelweb.org/musicfolder/openmusic.html"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 and hashed. The file listing, headings and link texts recorded in the sibling artifact manifests were parsed locally from these bytes; nothing in the retrieval path passed through a model."
+retrieved = "2026-08-21"
+sha256 = "74af795394c7adc57558db71ff01bd5f323b103f66a1b0c87ccba84461bf0f96"
+byte_size = 43048
+indexable = false
+notes = """
+Links 188 distinct PDF filenames (191 anchors, of which three repeat a target).
+Two of those filenames, 40SacramentD.pdf and 40aSacramentD.pdf, deliver identical
+bytes; one artifact record owns them. Sectioned as: The Proper of Time; The Order
+of Mass; the Prefaces; the Eucharistic Prayers; the Prefaces of the Proper of
+Saints, Commons, Ritual Masses and Various Needs; the simple tones; the
+presidential and reading tones; and a final group of Holy Week and Easter chants.
+"""

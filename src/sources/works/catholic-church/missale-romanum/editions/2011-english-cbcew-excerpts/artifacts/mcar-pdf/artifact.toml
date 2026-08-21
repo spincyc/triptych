@@ -1,0 +1,43 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.mcar-pdf"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpts"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "permission"
+rights_basis = """
+Two layers, and they are different properties.
+
+THE TEXT is ICEL's English of the Roman Missal, approved, recognised and
+promulgated, and therefore within ICEL's standing permission to reproduce such
+texts on a free non-commercial website without written or oral permission, on the
+six conditions of passage
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+Carries "Excerpts from the English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved." beside "Compilation & layout (c) 2011 Catholic Bishops' Conference of England and Wales".
+
+THE FILE is CBCEW's. The Liturgy Office's Missal pages carry "(c) CBCEW" and, on
+the Text page, a grant to reproduce the leaflets "for local parish use" -- a
+bounded permission that does not reach a permanent website -- and condition (4)
+of ICEL's clause independently grants no licence to publish in any other form.
+So these exact bytes are identified and hashed and no payload is retained:
+storage = remote. That disposes of the file and withholds nothing of the ICEL
+text, which is publishable under the clause.
+
+TERRITORY. This is the England-and-Wales publishing state. It witnesses the
+universal ICEL text where the text is universal and it is NOT a witness to a
+United States adaptation, disposition or spelling.
+
+src/sources/inventories/icel-web-permission-rights-v1.toml settles the question
+once for every later lane.
+"""
+source_url = "https://www.liturgyoffice.org.uk/Missal/Text/MCAR.pdf"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL linked on the Liturgy Office page https://www.liturgyoffice.org.uk/Missal/Text/index.shtml, and hashed before any page was read. Nothing in the retrieval path passed through a model; the contents were read locally with pdftotext -layout against the retained bytes."
+retrieved = "2026-08-21"
+sha256 = "eaaab3b4cbc1886fc5b766275420061d98635d30b46b47476b8a376d29b4e3a9"
+byte_size = 99548
+page_count = 2
+indexable = false
+notes = """
+File MCAR.pdf, 2 pp. Listed on Missal/Text/index.shtml as "Order of Mass leaflet, Apostles' Creed, A5 2 colour". Order of Mass leaflet, Apostles' Creed only, A5 in two colours. Carries "Excerpts from the English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved." beside "Compilation & layout (c) 2011 Catholic Bishops' Conference of England and Wales".
+"""

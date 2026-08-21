@@ -1,0 +1,66 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "permission"
+rights_basis = """
+Three layers here, not two, and the third is why this file needs reading before
+it is used.
+
+THE ICEL TEXT. The antiphons are ICEL's English of the Missale Romanum
+2002/2008, under the notice on the file's own copyright page: "The English
+translation of The Roman Missal (c) 2010, International Commission on English in
+the Liturgy Corporation. All rights reserved." Approved, recognised and
+promulgated, so within ICEL's standing permission for a free non-commercial
+website on the six conditions of passage
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+That is the basis of this record's rights_status.
+
+THE REVISED GRAIL CARVE-OUT, and it is exact. The same copyright page reserves
+"the English translation of Psalms 23(24), 46(47), and 115(116) from The Revised
+Grail Psalms (c) 2010 Conception Abbey/The Grail, administered by GIA
+Publications, Inc." A DIFFERENT rightsholder, whom ICEL's grant does not reach
+and who has granted this project nothing. Read at the bytes on 2026-08-21, the
+Antiphonary prints psalm strophes under a "Psalm N" heading in exactly three
+places, and they are exactly those three psalms: Psalm 23 at artifact page 41,
+Psalm 46 at artifact page 42, Psalm 115 at artifact page 242. A fourth locus is
+subtler: at artifact page 44 the Palm Sunday Simple Entrance Antiphon is cited
+"Cf. Jn 12: 1, 12-13; Ps 23: 9-10" and prints those verses INSIDE the antiphon,
+in the same wording as page 41. So the unit of rights is smaller than the slot.
+A psalm CITATION in red -- the Graduale assignments printed throughout -- is not
+Grail text and carries no such problem. PRINTED STROPHES on those pages are
+outside this basis; carry the ICEL antiphon and not the Grail verse, and record
+the split.
+
+THE FILE. The Liturgy Office publishes it free and entire, and its Missal pages
+carry "(c) CBCEW" with a grant limited to local parish use, which does not reach
+a permanent website; condition (4) of ICEL's clause independently grants no
+licence to publish in another form. So the exact bytes are identified and hashed
+and no payload is retained: storage = remote. That disposes of the file. It
+withholds nothing of the ICEL text, which is publishable under the clause above.
+
+src/sources/inventories/icel-web-permission-rights-v1.toml settles the question
+once for every later lane.
+"""
+source_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL linked as \"Antiphonary (pdf)\" on the Liturgy Office page /Missal/Music/Singing.shtml, and hashed before any page was read. Nothing in the retrieval path passed through a model; the contents were read locally with pdftotext -layout against the retained bytes and the Grail loci were located by enumerating every \"Psalm N\" heading in those bytes."
+retrieved = "2026-08-21"
+sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+byte_size = 1120199
+page_count = 265
+indexable = false
+notes = """
+265 pages. Front matter runs i-v over artifact pages 2-7 and the body's printed
+page 1 begins at artifact page 9, so a printed page number is normally eight
+behind the artifact page; every passage record here states the artifact page,
+which is what the bytes support, and gives the printed page beside it.
+The text layer is clean and usable as a finding aid; it is not exact, and
+transcription is from the page images.
+One production defect worth knowing before a page reference is trusted: the
+running head is wrong on parts of Holy Week -- artifact pages 42 and 44 are
+headed LENT while sitting inside PALM SUNDAY OF THE PASSION OF THE LORD, which
+begins at artifact page 40.
+"""

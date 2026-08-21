@@ -1,0 +1,38 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = """
+The booklet is ICEL's own corporate policy document and carries no reuse grant
+over itself. The Global Computer Networks clause it prints at artifact page 26
+reaches "ICEL texts and translations that have been approved by the Conferences
+of Bishops, have received the recognition of the Holy See, and have subsequently
+been promulgated for use" — approved liturgical translations, which this booklet
+is not. So the clause that makes ICEL's liturgical English publishable here says
+nothing about redistributing these particular bytes, and the exact remote bytes
+are identified and hashed while no payload is retained. This is a disposition of
+the file, not of the text the file authorises: the rights record at
+src/sources/inventories/icel-web-permission-rights-v1.toml settles the text.
+"""
+source_url = "https://www.icelweb.org/PubPolicy.PDF"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 and hashed before any page was read. Nothing in the retrieval path passed through a model; the contents were read locally with pdftotext -layout against the retained bytes."
+retrieved = "2026-08-21"
+sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+byte_size = 304444
+page_count = 26
+indexable = false
+notes = """
+26 pages, PDF 1.4, produced by Corel PDF Engine with a creation date of
+2013-06-28. Contents: Part One, ICEL publication policies (nature and purpose of
+ICEL, approval of texts, permissions, copyright, royalties, contracts,
+variations, rubrics, sense lines, ICET/ELLC texts); Part Two, the schedule of
+royalties; Part Three, the copyright acknowledgment; and an appendix carrying a
+specimen ICEL contract and, last, the Global Computer Networks clause.
+The text layer extracts cleanly with hyphenation across line breaks preserved as
+printed; small caps extract with an intervening space ("C OMMITTEE"), so the
+layer is a finding aid and not an exact transcription source.
+"""

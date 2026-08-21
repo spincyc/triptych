@@ -1,0 +1,45 @@
+schema = 2
+record_type = "passage"
+id = "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.sense-lines"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet"
+artifact_id = "artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf"
+artifact_sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+locus = "part-one.sense-lines"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[11, 11]]
+context = """
+Part One, "Sense Lines", read on 2026-08-21 from the retained bytes, artifact
+page 11, printed page 10. Condition (3) of the Global Computer Networks clause
+says the translations "must be followed exactly"; this page is what ICEL means
+by it in the one respect a corpus schema can get wrong silently.
+
+"One important element of style and format is the arrangement in sense lines
+(sometimes called sight lines) of those liturgical texts which by their nature
+are acclamatory or proclamatory: the prayers and most noninstructional
+materials. ... Sense lines are used in the liturgical books issued by the
+Apostolic See, in most vernacular liturgical books, and in publications for
+popular use.
+
+Such sense lines must be respected in the reproduction of texts — as well as in
+paragraphing, division into stanzas, and the like. If only a few lines of a given
+liturgical text are quoted in commentaries and the like, the division into sense
+lines may be indicated, as is done with quoted verses, by the use of a virgule or
+solidus (/)."
+
+The specimen contract in the same booklet states the same requirement as a
+contractual term at artifact page 21, clause 2(a): the publisher "shall adhere
+strictly to the TEXT ... and specifically must follow the wording, spacing, sense
+lines, capitalization, and punctuation of such printed text, with the sole
+exception that spelling may vary (e.g., honor/honour) to accommodate the usage in
+a particular country." That is a licence term and not this project's instrument,
+but it shows what the rightsholder counts as exactness, and the spelling
+exception is the one variance ICEL itself contemplates — which is also why an
+England-and-Wales copy and a United States copy of the same universal text may
+legitimately differ in spelling without either being wrong.
+
+The operative consequence for this repository: a schema that cannot carry line
+structure cannot store an ICEL oration and satisfy condition (3). Line structure
+is not presentation here; it is part of what must be followed exactly.
+"""
+verified_on = "2026-08-21"
+notes = "The USCCB's 2025 publication guidelines carry the same demand in their own words — excerpts verbatim including capitalization and punctuation, with the poetic structure of texts provided in sense lines generally preserved — so the requirement holds from two directions and is recorded here from the rightsholder's own."

@@ -1,0 +1,45 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.solemn-blessing"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "permission"
+rights_basis = """
+Two layers, and they are different properties.
+
+THE TEXT is ICEL's, and this file is the rightsholder's own copy of it: the foot
+of every page carries "The English translation and chants of The Roman Missal (c)
+2010, International Commission on English in the Liturgy Corporation. All rights
+reserved." It is approved, recognised and promulgated ICEL English, so it falls
+within ICEL's standing permission to reproduce such texts on a free
+non-commercial website without written or oral permission, on the six conditions
+of passage
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+Note the acknowledgment form: text taken from this file is reproduced under the
+"English translation AND CHANTS" notice printed on it, not the plain "English
+translation" notice of the Missal at large.
+
+THE FILE is the other layer. The index page that publishes it grants
+reproduction "free of charge IN PRINTED FORM, for non-commercial purposes, in
+publications not for sale, BY PARISHES, DIOCESES, SCHOOLS, AND RELIGIOUS
+COMMUNITIES" -- print, and a named class of user this project is neither in nor
+imitating -- and condition (4) of the clause above grants no licence to publish
+in any other form. So these exact bytes are identified and hashed and no payload
+is retained: storage = remote. That disposes of the file and withholds nothing of
+the text, which is publishable under the clause.
+
+src/sources/inventories/icel-web-permission-rights-v1.toml settles the whole
+question once, including the Revised Grail carve-out and the territorial rule.
+"""
+source_url = "https://www.icelweb.org/musicfolder/SolemnBlessing.pdf"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL published on ICEL's own Music for the Roman Missal index page, and hashed before any page was read. Nothing in the retrieval path passed through a model."
+retrieved = "2026-08-21"
+sha256 = "49c4576e630ec1156e3671acd663dddf11dd28662c4a07e393cfcb187743aaae"
+byte_size = 97180
+page_count = 4
+indexable = false
+notes = """
+File SolemnBlessing.pdf in ICEL's Music for the Roman Missal library, 4 pp. The index page lists it as "Solemn Blessing".
+"""

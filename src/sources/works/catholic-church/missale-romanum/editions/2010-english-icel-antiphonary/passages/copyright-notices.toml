@@ -1,0 +1,42 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.copyright-notices"
+edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+locus = "front-matter.copyright-page"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[2, 2]]
+context = """
+The copyright page, read on 2026-08-21 from the retained bytes, artifact page 2,
+the verso of the title page. Three notices and nothing else on the page:
+
+"Latin text (c) Libreria Editrice Vaticana, Vatican City State, 2008."
+
+"The English translation of The Roman Missal (c) 2010, International Commission
+on English in the Liturgy Corporation. All rights reserved."
+
+"The English translation of Psalms 23(24), 46(47), and 115(116) from The Revised
+Grail Psalms (c) 2010 Conception Abbey/The Grail, administered by GIA
+Publications, Inc., www.giamusic.com. All rights reserved."
+
+THREE THINGS FOLLOW, and all three matter to a later lane.
+
+There is no CBCEW claim on this page. The Liturgy Office hosts the file; the
+document itself claims nothing for England and Wales, and its foreword cites the
+GIRM of the 2011 Roman Missal. It is a witness to the universal ICEL English and
+not to a national adaptation -- neither England and Wales's nor the United
+States's.
+
+The Grail claim is a different rightsholder's and ICEL's grant does not reach it.
+The three psalms named are the same three the 2011 United States Missal's own
+front matter names, per the notices recorded at
+src/sources/inventories/lt-hist-rights-audit-v1.toml, so this is not a
+United-States artefact: it is in the document this project would source from.
+
+The acknowledgment form here is the plain "The English translation of The Roman
+Missal" one, without "and chants". ICEL's own chant files carry the "translation
+and chants" form. The notice travels with the file the words were read out of.
+"""
+verified_on = "2026-08-21"
+notes = "The notice names the psalms as 23(24), 46(47) and 115(116) -- Vulgate numbering first. The document's own psalm numbering chart at artifact page 265 gives the mapping, and its foreword states that its psalm references follow the Vulgate and Septuagint numbering."

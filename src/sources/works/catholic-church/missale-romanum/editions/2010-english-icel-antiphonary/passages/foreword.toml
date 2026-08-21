@@ -1,0 +1,51 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.foreword"
+edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+locus = "front-matter.foreword"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[6, 7]]
+context = """
+The Foreword, read on 2026-08-21 from the retained bytes, artifact pages 6-7,
+printed pages iv-v. It is the document's own statement of what it contains and
+of the conventions a reader must know before citing a page of it.
+
+Its opening sentence is the completeness claim this edition is registered for:
+the Antiphonary "contains the English translation of all the Entrance Antiphons
+and Communion Antiphons and various other hymns, songs, responsories, and
+antiphons in the Missale Romanum, 2002/2008."
+
+Six conventions are then stated, and four bear on how the document may be used
+as a source.
+
+Psalm and canticle assignments were made by the compiler "in order to assist
+composers", for the antiphons "used on Sundays and major feasts and solemnities
+of the liturgical year"; the reference "appears in red within parentheses below
+the antiphon to which it has been assigned" and cites page numbers in the
+Graduale Romanum (Tournai, 1974) and the Graduale Simplex. THESE ARE THE
+COMPILER'S ASSIGNMENTS AND NOT MISSAL TEXT, and must not be carried into a
+corpus as though the Missal had printed them.
+
+Where two Communion Antiphons stand in one proper, "the second is usually from
+one of the Gospels", and preference should usually be given to the one from the
+Mass's own Gospel.
+
+The indexes at printed pages 236-249 and 250-256 "identify those texts that are
+repeated and direct the user to the day or occasion on which these texts are
+sung" -- which is a ready-made map of the antiphons this Missal uses more than
+once, and the right instrument for detecting a duplicate identity rather than
+inferring one.
+
+Psalm references follow "the Vulgate and Septuagint numbering", with a
+Hebrew-Vulgate chart at printed page 257.
+
+Also stated: "Where useful, rubrics from the Missal have been given in place for
+a particular day, liturgical season, occasion, or section in the Missal in order
+to provide a context for the use or selection of an antiphon." So some of what
+this document prints in italic is Missal rubric and some is the compiler's
+apparatus, and the two are not distinguished typographically in every case.
+"""
+verified_on = "2026-08-21"
+notes = "The foreword's footnotes cite the Ordo Cantus Missae (24 June 1974) and the GIRM \"in the Third Typical Edition of The Roman Missal, 2011\". The second is the strongest internal evidence that this document witnesses the universal 2010/2011 English rather than an England-and-Wales state."

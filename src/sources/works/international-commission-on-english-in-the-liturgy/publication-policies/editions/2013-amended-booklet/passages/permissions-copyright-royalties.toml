@@ -1,0 +1,50 @@
+schema = 2
+record_type = "passage"
+id = "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.permissions-copyright-royalties"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet"
+artifact_id = "artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf"
+artifact_sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+locus = "part-one.permissions-icel-copyright-royalties-contracts"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[5, 6]]
+context = """
+Part One, the sections "ICEL Copyright", "Royalties" and "Contracts", read on
+2026-08-21 from the retained bytes, artifact pages 5-6, printed pages 4-5.
+Registered so that the licensing route and the standing web permission are held
+apart, because conflating them is exactly how this repository previously reached
+the wrong answer.
+
+Why ICEL claims copyright at all: "ICEL copyrights its texts in order to maintain
+under the civil law and international conventions the Church's ownership of these
+texts used by Catholics in their worship. The legal safeguard provided by
+copyrighting the texts helps to preserve their literary and liturgical integrity
+under the ecclesiastical authority given to the conferences of bishops by the
+Second Vatican Council and by subsequent instructions of the Apostolic See."
+
+The royalty regime and its one stated free class: "a royalty fee is charged to
+all publishers. ICEL does not charge for the reproduction of its texts when they
+appear in materials produced by individual parishes, schools, religious houses,
+and the like for their private and non-commercial, nonprofit use. Even in such
+cases, however, the requisite acknowledgment and copyright notice should always
+appear."
+
+The contract route: "Except as noted elsewhere, a form of agreement must be
+executed between ICEL and each licensee. A new contract must be executed for each
+new text used". The information a request must supply is enumerated over the
+following page — exact title, purpose, retail price, print run, the complete list
+of ICEL texts by element, the complete list of non-ICEL material.
+
+HOW THIS RELATES TO THE WEB GRANT, stated because the two are easy to run
+together. The free class named here is about materials a parish or school
+produces, and it does not describe a permanently published website; the previous
+reading of ICEL's summary page turned on exactly that and concluded that a
+licence was the only route. The Global Computer Networks clause at artifact page
+26 is a separate provision with its own six conditions, it applies "without
+obtaining written or oral permission", and it is the provision this project
+stands on. The words "Except as noted elsewhere" opening the Contracts section
+are the booklet's own acknowledgment that the contract route is not the whole of
+it. No contract is executed, no licence issues, and no royalty arises, because
+the clause dispenses with the request rather than granting it.
+"""
+verified_on = "2026-08-21"
+notes = "Also relevant to the permission-versus-authentication sequence the USCCB's 2025 guidelines describe, in which ICEL issues a licence after Secretariat authentication: that sequence is the contract route on these pages, and it is never entered when the internet clause applies, because no licence issues at all."

@@ -1,0 +1,30 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.liturgy-office-missal-text-index-html"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpts"
+artifact_type = "html"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = """
+The index page carries no reuse grant over itself; it carries "(c) CBCEW" and a
+bounded grant over the leaflets it links. It is registered because it is the page
+that states the delivery terms of the sibling PDFs, names each file, and
+announces on its own face the 2013 Saint Joseph emendation that three of those
+files predate. The exact bytes are identified and hashed; no payload is retained.
+"""
+source_url = "https://www.liturgyoffice.org.uk/Missal/Text/index.shtml"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 and hashed. The file names, link texts and format descriptions recorded in the sibling artifact manifests were parsed locally from these bytes; nothing in the retrieval path passed through a model."
+retrieved = "2026-08-21"
+sha256 = "79b557c2a731bce83ad399ef2fc454d0aa29fa2e2c47bd587bc222e9e94da4e1"
+byte_size = 10458
+indexable = false
+notes = """
+Links 21 PDFs: the Liturgy of the Word bookmark, Eucharistic Prayers I-IV for
+concelebration, two parallel-text comparisons, twelve Order of Mass leaflets in a
+four-by-three grid of content against format, and the pocket Order of Mass. It
+also links a separate Holy Week and Triduum page. Its Saint Joseph paragraph
+reads: "In 2013 The Congregation for Divine Worship and the Discipline of the
+Sacraments have informed Bishops' Conferences that henceforward St Joseph is to
+be inserted into Eucharistic Prayers II-IV in the Roman Missal."
+"""
