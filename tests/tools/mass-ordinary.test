@@ -199,6 +199,43 @@ case "$latin" in
 	;;
 esac
 
+# Every absence states its KIND, and the three are not interchangeable. The
+# postconciliar Latin is withheld because a rightsholder reserved the use; its
+# English is not withheld at all -- the permission is granted and no exact copy
+# of the words is reachable -- and the 1962's missing Latin is neither, being a
+# block the witness prints in English only. This inventory asserted for a year
+# that ICEL's licence forbade the use, which was false, so the discriminator is
+# checked here rather than left to prose.
+kinds="$(run_tool structure --out "$sandbox/kinds" >/dev/null 2>&1; \
+	python3 -c "import json,sys,pathlib
+seen={}
+for path in sorted(pathlib.Path(sys.argv[1]).rglob('*.json')):
+    if path.name == 'index.json': continue
+    for row in (json.loads(path.read_text()).get('absences') or []):
+        seen[row['key']]=row.get('kind')
+print(' '.join(k+'='+str(v) for k,v in sorted(seen.items())))" "$sandbox/kinds")"
+case "$kinds" in
+*"editio-typica=rights-withheld"*) ;;
+*)
+	echo "the postconciliar Latin absence is not typed as a rights withholding: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"icel=no-exemplar"*) ;;
+*)
+	echo "the ICEL absence is not typed as an exemplar gap: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"no-facing-latin=witness-gap"*) ;;
+*)
+	echo "the 1962 Latin absence is not typed as a witness gap: $kinds" >&2
+	exit 1
+	;;
+esac
+
 # ---- The tiers ------------------------------------------------------------
 run_tool show --calendar roman-1962 --plain >"$sandbox/plain.txt"
 if LC_ALL=C grep -q '[^ -~	]' "$sandbox/plain.txt"; then
