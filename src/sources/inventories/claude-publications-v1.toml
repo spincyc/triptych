@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-08-20"
+audited_on = "2026-08-21"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 49
 source_surface_file_count = 1057
-snapshot = "sha256:cd97ad1448ccfec6864bb925e13abf2ce55aa89101eb5cd160fa25bd7c88b409"
+snapshot = "sha256:90872311c12703badf026c09d57f9cfbafbb900550d97a372f6901a9e007509c"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -414,8 +414,8 @@ id = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
 relationship = "local"
@@ -425,8 +425,8 @@ id = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
 relationship = "local"
@@ -436,8 +436,8 @@ id = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
 relationship = "local"
@@ -4731,7 +4731,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/source-bindings.toml"
-sha256 = "4b1778027f5322e0c9a3243ce90378e348bee4f67fe18c9bae87585a4c2bf35c"
+sha256 = "79abe834856217e203a33caa913110db27767a7fa52c74f898bf086034e4e553"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
 

@@ -114,14 +114,14 @@ context = "Source of the three published oration translations at printed pp. 420
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog"
 loci = [
-  "printed p. 74, shorter ancestor of the Collect",
+  "printed p. 74, shorter cognate form of the Collect",
   "printed p. 60, Postcommunion form participatio tui sancta mysterii",
 ]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:6623704aeaca455637ddcd70c06744575aa985c206c44ed3c60dc048aaf0fe42"
-context = "The identified Feltoe printing supplies the two separate Veronese ancestors used in the oration history. Their separation and lexical differences establish early prayer material, not the later three-prayer set, a Sunday assignment, authorship, or compiler intent."
+context = "The identified Feltoe printing supplies two separate Veronese cognate forms used in the oration history. Their separation and lexical differences establish early prayer material, not a demonstrated line of descent, the later three-prayer set, a Sunday assignment, authorship, or compiler intent."
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
@@ -134,12 +134,57 @@ context = "The exact Wilson Old Gelasian pages were read for the three-oration s
 
 [[bindings]]
 source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath"
-loci = ["printed p. 173, section LXXXI, Dominica XIII post Pentecosten, complete three-oration set"]
+loci = ["printed p. 173, section XXXI, Dominica XIII post Pentecosten, complete three-oration set; Cambrai 164, fol. 167v"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:4855350f9f1325dd4c257e7d6b2f61a924cd036b4a7d4a23013671fb55b91ba8"
 context = "The exact Wilson Hadrianum printing supplies the later lexical form of all three prayers together, including largiendo. Its thirteenth-Sunday numbering is reported as that witness's arrangement and is not silently converted into the 1962 numbering."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.exodus-32-golden-calf-chronology"
+loci = ["Ex.32.1-5"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:4200a4bf8783534a3d692e971105791874a806317659cff962f627e77d41eb88"
+context = "The exact facsimile page controls the page-2 statement that the 2014 Loreto/Feeney edition's uninitialled chronological apparatus at the Exodus 32 golden-calf heading prints AM 2518 and no BC equivalent. It prevents the older online-note lead from attaching AM 2513 to this event. The compiled Jerome memorial note on the same printed page is distinguished from a demonstrated event date."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.exodus-5-pharao-chronology"
+loci = ["Ex.5.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:e8600ad7624ebfd455fa7e614e1439d19d57160675ff761e1f5b8385e9ca6cea"
+context = "The exact facsimile page supplies the separately reported broader Exodus-frame notation AM 2518 / AC 1491 in the edition's uninitialled chronological apparatus. The guide preserves rather than harmonizes the edition's internally inconsistent year labels."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology"
+loci = ["1K.21.1-15"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:03f8280e24c117cf77439fcb27b944cda1e49ae923106239d959c815e1f3d7a0"
+context = "The exact facsimile passage at printed pp. 366, 368-369 / artifact pp. 396, 398-399 controls the uninitialled apparatus's AM 2944 / AC 1060 horizon for David's flight to Achis, while preserving that the year marker belongs to the edition's continuous chronological frame."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology"
+loci = ["2K.15.1-13"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:3c0e0161e6edbf0157696bc386506bbd7f64623d195378a28b111ef87029e86d"
+context = "The exact facsimile passage within printed pp. 400-404 / artifact pp. 430-434 controls the edition's uninitialled AM 2980 / AC 1024 marker for Absalom's decisive move to Hebron, without moving that marker to the chapter heading."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-18-absalom-defeat-chronology"
+loci = ["2K.18.1-7"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:3f5e1e22ab6b35569c2bcaded81daed64060aed3e6f3194090ad884e0c97e4a6"
+context = "The exact facsimile passage within printed pp. 400-404 / artifact pp. 430-434 controls the edition's uninitialled AM 2981 / AC 1023 horizon for Absalom's defeat. Combined with the conspiracy passage, it supports the bounded 1024-1023 BC horizon used for Psalm 69's received setting."
 
 [[bindings]]
 source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
@@ -172,7 +217,7 @@ loci = ["Psalm 69, PG 80, columns 1415-1418"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
-source_fingerprint = "sha256:855e438659ab39a0ad390257183c0bb94b17787ac2bf3eb3417dfadcf67cbce5"
+source_fingerprint = "sha256:e7522dbd416f7dcede798ad4136209d956056790f695df63d6b47264a39c2dfc"
 context = "Direct Greek reception of the Introit's psalm: David's flight from Absalom, remembered sin, and urgent help amid encircling calamity."
 
 [[bindings]]
@@ -181,7 +226,7 @@ loci = ["Psalm 33, PG 80, columns 1101-1109"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
-source_fingerprint = "sha256:1451d568b7ea13bd8b84e909d49c53810c5966b1ffffbefcb98c050c729be377"
+source_fingerprint = "sha256:faaad75cf19941bb403d171762a9ee4adb2b150a997efee3e746166ac003eac7"
 context = "Direct Greek reception of the Gradual: Theodoret's response to the superscription problem and his reading of praise through flight, pursuit, prosperity and adversity."
 
 [[bindings]]
@@ -190,7 +235,7 @@ loci = ["Psalm 87, PG 80, columns 1567-1573"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
-source_fingerprint = "sha256:a3f1145f910a4fe11a4cdbde6cd9822b0e5588b4b8b2ad8c975d092e9659134b"
+source_fingerprint = "sha256:897fc96e8de829953d7ee226787e5daa854b3cc41bcf594c530a15a02317ff56"
 context = "Direct Greek counter-reading of the Alleluia psalm through Israel's calamities and fallen humanity rather than the Passion interpretation."
 
 [[bindings]]
@@ -199,7 +244,7 @@ loci = ["Psalm 103, PG 80, columns 1693-1707"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
-source_fingerprint = "sha256:1525900861767ddd7a2ed8eafd290400c94d3a18bf37e7a7dc1f1e8cca1f96e1"
+source_fingerprint = "sha256:03342654b6a9afd667869d1a91992b524089fb285591f291b1f0f4b9d762bef0"
 context = "Direct Greek providential reading of the Communion verses: rain and the created benefits of bread, wine and oil, without a sacramental turn."
 
 [[bindings]]
@@ -236,4 +281,58 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:d3cbd8da4425c833efa9e01de8381fdcf2f99b81fa5aadf1e9c4f007671f49be"
-context = "Later saintly providential and moral reception of bread, wine and oil through gratitude, generosity and frugality."
+context = "Later saintly providential and moral reception of bread, wine and oil through gratitude, recognition of fatherly providence, and temperance."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-mosaica-authentia-pentateuchi.latin-ass-39-1906.responsa-i-iv"
+loci = ["responsa-i-iv"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:4188796f60e533e17c355c9a58e2186dd56ed4499b1538de92c03d68b7c252cc"
+context = "Official traditional Catholic attribution control for the Pentateuch paragraph on page 2. The guide reports the replies' positive substantial-authenticity judgment together with their express qualifications."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.responsa-i-viii"
+loci = ["responsa-i-viii"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:42e1707054a115ec2cb6b422ebe8096220fb02bf179cc8ef51654dc6877aab6a"
+context = "Official control for foregrounding received Psalm titles, substantial Davidic authorship, and Passion/Messianic reception while recording modern critical alternatives secondarily."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+loci = ["responsa-i-ix"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+context = "Official traditional Catholic authorship and terminus control for the Gospel composition paragraph; the guide gives the modern c. AD 80-90 horizon as a distinct alternative."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine"
+loci = ["article 'Jesus Christ,' III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:d97a818f54b8f1be9ace0133e4478d2ca1191097f40f0213dcbe7b8a0a851e9c"
+context = "A. J. Maas's Catholic harmony supplies the distinct September-December AD 28 Seventh Journey, probable return of the Seventy-two in lower Peraea, and Good Samaritan discourse in the vicinity of Jericho. It is presented alongside, not merged with, Lapide's AD 33 harmony."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
+context = "Modern Catholic comparison control for Psalm numbering, editorial shaping and historical limits; it does not displace the received titles and traditional chronologies foregrounded in the dossier."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.luke-introduction"
+loci = ["Luke introduction"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:6a2c0cc61b80f1fa05d735149e1dd0c61479a54a248f13269392d02580b97ccc"
+context = "Modern Catholic critical comparison for the Gospel's c. AD 80-90 horizon and Luke-Acts setting, stated secondarily to the traditional authorship and chronology controls."

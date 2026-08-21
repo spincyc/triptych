@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.super-hebraeos"
+title = "Super Epistolam B. Pauli ad Hebraeos lectura"
+responsible = "Thomas Aquinas"
+work_type = "biblical-commentary"
+alternate_titles = ["Super Hebraeos", "In Epistolam ad Hebraeos", "Commentary on the Epistle to the Hebrews"]
+languages = ["la"]
+locus_pattern = '(?:pr|[1-9][0-9]?)(?:\.l[1-9][0-9]?)?'
+description = "Aquinas's Latin lectura on the Epistle to the Hebrews, conventionally cited by chapter and lectio. The surviving commentary is transmitted through reported textual states; edition and passage records must identify the exact witness and transmission label used. A locus is the prologue or a chapter, optionally with a lectio."

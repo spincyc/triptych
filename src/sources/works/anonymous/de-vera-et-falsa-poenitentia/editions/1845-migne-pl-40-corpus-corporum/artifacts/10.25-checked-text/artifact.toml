@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25-checked-text"
+edition_id = "edition.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces an anonymous medieval Latin text as printed by Migne in 1845, both public domain by age. It was made from rendered page images of the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated on 2026-08-21 against PL running columns 1122-1123 on PDF pages 5-6, rendered at 200 dots per inch from the exact facsimile identified by the parent artifact."
+retrieved = "2026-08-21"
+sha256 = "785288ac8c9077408f120efbf95f6e126a50884991df2295ea02903b2f210a0d"
+byte_size = 3863
+path = "src/sources/works/anonymous/de-vera-et-falsa-poenitentia/editions/1845-migne-pl-40-corpus-corporum/artifacts/10.25-checked-text/de-vera-et-falsa-poenitentia-10.25.txt"
+derived_from = "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.dco-facsimile-pdf-22f5be8c"
+transformation = "Read the named PL columns as 200-dpi page images; transcribe chapter 10, number 25 with one sentence or closely joined unit per LF-terminated UTF-8 line, prefixed by a braced chapter-number locator; preserve Migne's main-text wording, spelling, capitalization, and punctuation while rejoining line-end hyphenation; omit typeface changes, running heads, column numbers, apparatus markers, and apparatus notes."
+encoding = "utf-8"
+indexable = true
+notes = "The page-image collation confirms 'ad eos pervenirent', correcting the keyed web witness's apparent 'ad cos pervenirent'. The transcription includes all of number 25, including its final sentence at the top of PL column 1123."

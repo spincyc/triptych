@@ -1,0 +1,98 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": 43115488,
+   "id": "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.internet-archive-google-facsimile-pdf-6a83dd45",
+   "media_type": "application/pdf",
+   "notes": "Internet Archive OCR was used only as a navigation aid. The verified states and exact loci rest on direct inspection of the facsimile page images.",
+   "page_count": 577,
+   "retrieved": "2026-08-21",
+   "rights": "public-domain",
+   "rights_basis": "Cornelius a Lapide died in 1637 and the represented printing was published in 1614; the work and edition are in the United States public domain by age. Internet Archive marks the digitized item with the Public Domain Mark.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_Ts9M-QntZYgC/bub_gb_Ts9M-QntZYgC.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1614",
+  "editors": [],
+  "id": "edition.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The exact imprint is read from the represented title page: Antverpiae, apud haeredes Martini Nutii, Ioannem Meursium, M.DC.XIV.",
+  "publication": "Antwerp: heirs of Martinus Nutius and Ioannes Meursius, 1614",
+  "title": "Commentaria in omnes D. Pauli epistolas",
+  "translators": [],
+  "year": 1614
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.internet-archive-google-facsimile-pdf-6a83dd45",
+   "artifact_type": "scan",
+   "context": "A Lapide reports that the Syriac and Greek end-subscriptions, Jerome, Athanasius's Synopsis, Theodoret's Pauline preface, and others assign Galatians to Rome. He immediately reports that Chrysostom and Baronius deny Rome and place it before Romans, at Ephesus or another Greek city; he then concludes that neither the epistle nor other evidence permits a certain determination of its time or place and calls it, in that respect, the most uncertain of Paul's letters.",
+   "id": "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum",
+   "locus": "epistola-ad-galatas-argumentum",
+   "media_type": "application/pdf",
+   "notes": "Read directly on printed p. 457, artifact PDF p. 514. This passage supports a faithful report of the Roman subscription-and-patristic tradition together with a Lapide's preserved countertradition and explicit uncertainty. It does not support 'a Lapide teaches Rome,' a unanimous patristic claim, or independent verification here of each earlier author he names.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Cornelius a Lapide died in 1637 and the represented printing was published in 1614; the work and edition are in the United States public domain by age. Internet Archive marks the digitized item with the Public Domain Mark.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/bub_gb_Ts9M-QntZYgC/bub_gb_Ts9M-QntZYgC.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "storage"
+  },
+  {
+   "artifact_id": "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.internet-archive-google-facsimile-pdf-6a83dd45",
+   "artifact_type": "scan",
+   "context": "Within the general proemium's numbered ordering of Paul's letters, the sixth entry dates Galatians to AD 58. The chronological series concludes by identifying Baronius as its source. This passage therefore controls the statement 'AD 58 in the Baronius-based chronology reproduced by a Lapide,' not an unqualified modern date or a claim that a Lapide independently derived the year.",
+   "id": "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58",
+   "locus": "prooemium",
+   "media_type": "application/pdf",
+   "notes": "Read directly on printed p. 19, artifact PDF p. 31. The sixth entry supplies a year but no place of composition; any place claim requires a distinct source locus.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Cornelius a Lapide died in 1637 and the represented printing was published in 1614; the work and edition are in the United States public domain by age. Internet Archive marks the digitized item with the Public Domain Mark.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://archive.org/download/bub_gb_Ts9M-QntZYgC/bub_gb_Ts9M-QntZYgC.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentaries on all the Epistles of St. Paul",
+   "Commentaria in omnes Divi Pauli Epistolas"
+  ],
+  "author": "Cornelius a Lapide",
+  "category": "biblical-commentary",
+  "description": "Cornelius a Lapide's Catholic commentary on the Pauline epistles. Its general proemium treats Pauline chronology and order; each epistle is introduced by its own argumentum before the verse-by-verse exposition.",
+  "id": "work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas",
+  "languages": [
+   "la"
+  ],
+  "title": "Commentaria in omnes D. Pauli epistolas"
+ }
+}

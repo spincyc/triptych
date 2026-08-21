@@ -18,6 +18,20 @@
   the restricted Greek dataset and edition provenance but is not counted as a
   replayable textual witness. Augustine, *Quaestiones in Heptateuchum* II.143,
   independently transmits the Old-Latin closing construction.
+- **Traditional chronology and attribution:** official Holy See pages for the
+  1906 Pentateuch, 1910 Psalms, and 1912 Mark/Luke PBC responses; the 2014
+  Loreto/Feeney edition's uninitialled chronological apparatus at Exod 5 and
+  32, 1 Kings 21, and 2 Kings 15 and 18; Haydock's attributed notes on Psalms
+  33, 69, 87, and 103;
+  the *Catholic Encyclopedia* on biblical chronology, David, Corinthians, and
+  Luke; and Cornelius a Lapide's *Chronotaxis* and Luke 10:30. These were read
+  directly at the exact loci cited in the references. Exact central passage
+  records bind the three PBC responses, the NABRE Psalms and Luke
+  introductions, A. J. Maas's distinct Catholic Gospel chronology, and the
+  exact edition pages for the calf, Exodus frame, Achis episode, and Absalom
+  chronology. Haydock's Psalm-title notes, other encyclopedia articles,
+  and Lapide remain exact remote citations and are not assigned invented source
+  IDs.
 - **English:** registered public-domain Douay–Rheims/Challoner for Scripture;
   registered anonymous Cummiskey 1861 for Collect, Secret, Postcommunion. No
   project translation or composite English is published.
@@ -48,15 +62,15 @@
 | Proper/passage | Complete canonical context checked | Greek/Eastern patristic reception | Latin patristic reception | Medieval Doctor or commentator | Later saintly, doctrinal, or liturgical control | Result and material negative |
 | --- | --- | --- | --- | --- | --- | --- |
 | Introit, Ps 69:2–4 | Whole Ps 69; Ps 39:14–18 doublet; titles and chant/Clementine differences | Eusebius, *Comm. Ps.*, PG 23, 767–772: ready crisis formula, David/Christ/Church personae; Theodoret, PG 80, 1415–1418: David/Absalom and remembered sin | Augustine, *En. Ps.* 69.1–4, 7: whole Christ and perpetual need; Cassiodorus, PL 70, 493–494 | Cassian, *Conf.* X.10; Benedict, Rule 17–18, 35 (monastic reception, not psalm exegesis) | Bellarmine, Ps 69: Psalm 39 doublet and Office use | Augustine does not explicitly note the doublet in either checked exposition. The formula's Office history does not prove Mass-formulary intent. |
-| Gradual, Ps 33:2–3 | Whole acrostic; title compared with 1 Sam 21 and its name problem | Basil, *Hom. Ps. 33* 1, PG 29; Theodoret, PG 80, 1101–1109 | Augustine, *En. Ps.* 33, sermons 1–2; Cassiodorus | Augustine's Eucharistic title-plus influenced the medieval line; no separate Aquinas claim retained | Bellarmine, Ps 33, on “always” and continuing praise | The Old-Latin `ferebatur in manibus suis` is absent from the appointed text. No modern date is derived from the title. |
+| Gradual, Ps 33:2–3 | Whole acrostic; title compared with 1 Sam 21 and its name problem | Basil, *Hom. Ps. 33* 1, PG 29, 352–357; Eusebius, PG 23, 288–297; Theodoret, PG 80, 1101–1109 | Augustine, *En. Ps.* 33, sermons 1–2; Cassiodorus | Augustine's Eucharistic exposition juxtaposes the Psalm title with his Old-Latin/Septuagint-shaped 1 Sam 21:13 lemma; no separate Aquinas claim retained | Bellarmine, Ps 33, on “always” and continuing praise | `ferebatur in manibus suis` belongs to Augustine's Samuel lemma, not the Psalm title; it is absent from Clementine Samuel and the appointed Gradual. |
 | Alleluia, Ps 87:2 | Whole lament and title | Eusebius, PG 23, 1052–1056: incarnational sequence and continuous oblation; Theodoret, PG 80, 1567–1573: Israel's calamities and human suffering | Augustine, *En. Ps.* 87.1–2: Passion and prosperity/adversity; Cassiodorus, PL 70 | No distinct medieval Doctor was needed beyond transmitted Augustinian reception | Bellarmine, Ps 87: Gethsemane/Good Friday | “Darkest psalm” is a modern description, not a patristic quotation. The Heman of the title is not securely identified with the Levitical singer. |
-| Communion, Ps 103:13–15 | Whole creation hymn, Genesis order, Hebrew/Latin heading difference | Eusebius, PG 23, 1273–1280: providence plus Vine/Logos/oil; Theodoret, PG 80, 1693–1707: natural providence without sacramental turn | Augustine, *En. Ps.* 103, serm. 3.12–14; Cassiodorus, PL 70, explicitly sacramental | Medieval sacramental reception is represented through the liturgical appointment rather than an unchecked Doctoral locus | Bellarmine, Ps 103: gratitude, generosity, frugality; Catechism 1391–1395 controls Eucharistic claims | Eusebius is spiritual but not plainly Eucharistic; liturgical placement does not prove the psalmist's intention. |
-| Epistle, 2 Cor 3:4–9 | Whole ch. 3; Ex 34; Jer 31; Ezek 36; Rom 7–8; appointed end tested | Chrysostom, *Hom. 2 Cor.* 6.2; 7.1, 5; Theodoret, PG 82, 391–394 | Ambrosiaster, PL 17, 176–177; Augustine, *De spiritu et littera* 4.6, 14.23–25, 19.34, 26.42; *De doctr.* III.5.9 as later application | Aquinas, *Super II Cor.* ch. 3, lects. 1–2; *ST* I–II q.106 aa.1–2 | Bernard, *Sermones in Cantica* 7.5 (devotional application); CCC 1961–1974, 1987–2005; *Veritatis splendor* 23–24, 45; *DV* 14–16; *NA* 4; PBC, *Jewish People* 41 | “Letter” principally means external command without inward Spirit, not literal sense. The law remains holy and glorious; no ethnic denigration is admitted. Origen, *Princ.* I.1.2 and *Cels.* VII.20 are applications, not direct exegesis. |
-| Gospel, Luke 10:23–37 | Luke 10:21–42; Deut 6:5; Lev 19:18, 33–34; 2 Chr 28:8–15; journey frame and parable road distinguished | Origen, *Hom. Luke* 34; Clement, *Quis dives* 28–29; Irenaeus III.17.3; Cyril, Sermons 67–68 | Ambrose, *Exp. Luke* VII.69–84; Augustine, *Quaest. evang.* II.19; Bede, *In Lucam* III, PL 92, 467C–470D | Theophylact, PG 123, 843–852; Albert, Borgnet XXIII, 55–70; Bonaventure, Quaracchi VII, 266–272 | John Paul II, *Salvifici doloris* 28–30 and *Dives in misericordia* 3–4; Benedict XVI, *Deus caritas est* 15, 20–25, 31; Francis, *Fratelli tutti* 56–86 | Bede prevents allegory from weakening the moral command. The parable's road does not locate Jesus; motives of priest and Levite are unstated; no ritual-purity or anti-Jewish inference is retained. |
-| Offertory, Ex 32:11–14 adapted | Ex 32:1–35; 33–34; patriarchal promises; Vulgate/chant line-by-line comparison | Theodoret, *Quaest. Oct.* 67–68; 1 Clement 53; Chrysostom, *Priesthood* IV.1 and *Hom. Rom.* 16 | Augustine, *Quaest. Hept.* II.143, 147, 149–151 and *City* XV.25; Tertullian, *Adv. Marc.* II.26; Ambrose, *Off.* II.7.31 | Gregory, *Moralia* IX.16.23; XX.5.14; Aquinas, *ST* I q.19 a.7 ad 1; II–II q.83 a.2 | CCC 2574–2577; Benedict XVI, audience 1 June 2011; John Paul II, *Dives in misericordia* 4 | Augustine's lemma confirms the Old-Latin close. Judgment remains; no divine passion, covenant revocation, or rival to Christ's unique mediation is inferred. |
-| Collect | Complete syntax; Cummiskey translation; Verona, Gelasian, Hadrianum locations | No direct Greek history expected for this Latin oration | Hilary, Ps 118 Daleth 11–12; Augustine, *En. Ps.* 118 XI.1–5 and *Grat. lib.* 16.32–17.33 | Benedict, Prologue; Aquinas, *ST* I–II q.109; Hadrianum no. LXXXI | Trent VI.5–6, 16; CCC 2008–2011 | Doctrine illuminates gift/cooperation; it does not prove compiler intent. No author or single date assigned. |
-| Secret | Complete syntax and punctuation; Cummiskey changes agency and clause order; Gelasian/Hadrianum variants | Justin, *Dial.* 116–117; Irenaeus IV.17.5–18.6; Cyril Jerusalem, *Myst.* V.8–10 | Old Gelasian III.VIII; Augustine, *City* X.5–6, 20 | Hadrianum no. LXXXI (`largiendo`) | Trent XXII.2; Schuster III, 128–131 | `largiendo` grammatically modifies the offerings' giving honor; propitiation is Christ's sacrifice, not purchase by human goods. No verified Gihr use located. |
-| Postcommunion | Complete syntax; `tui`/`huius` history; Cummiskey flattening | Ignatius, *Eph.* 20 | Verona p.60 (`tui`); Old Gelasian III.VIII | Hadrianum no. LXXXI; Aquinas, *ST* III q.79 with disposition controls | CCC 1391–1395 | `pariter` coordinates the fruits but is not made an equality claim. Transmission proves recurrence, not authorship or placement rationale. |
+| Communion, Ps 103:13–15 | Whole creation hymn, Genesis order, Hebrew/Latin heading difference | Eusebius, PG 23, 1273–1280: providence plus Vine/Logos/oil; Theodoret, PG 80, 1693–1707: natural providence without sacramental turn | Augustine, *En. Ps.* 103, serm. 3.12–14; Cassiodorus, PL 70, explicitly sacramental | Medieval sacramental reception is represented through the liturgical appointment rather than an unchecked Doctoral locus | Bellarmine, Ps 103: gratitude, recognition of fatherly providence, and temperance; Catechism 1391–1395 controls Eucharistic claims | Eusebius is spiritual but not plainly Eucharistic; liturgical placement does not prove the psalmist's intention. |
+| Epistle, 2 Cor 3:4–9 | Whole ch. 3; Ex 34; Jer 31; Ezek 36; Rom 7–8; appointed end tested | Chrysostom, *Hom. 2 Cor.* 6.2; 7.1, 5; Theodoret, PG 82, 391–394 | Ambrosiaster, PL 17, 176–177; Augustine, *De spiritu et littera* 4.6, 14.23–25, 19.34, 26.42; *De doctr.* III.5.9 as later application | Aquinas, *Super II Cor.* ch. 3, lects. 1–2; *ST* I–II q.106 aa.1–2 | *DV* 14–16; *NA* 4; PBC, *Jewish People* 41 | “Letter” principally means external command without inward Spirit, not literal sense. The law remains holy and glorious; no ethnic denigration is admitted. |
+| Gospel, Luke 10:23–37 | Luke 10:21–42; Deut 6:5; Lev 19:18, 33–34; journey frame and parable road distinguished | Origen, *Hom. Luke* 34.3, 34.7–9; Clement, *Quis dives* 28–29; Irenaeus III.17.3; Cyril, Sermons 67–68 | Ambrose, *Exp. Luke* VII.69–84; Augustine, *Quaest. evang.* II.19; Bede, *In Lucam* III, PL 92, 467C–470D | Theophylact, PG 123, 843–852; Albert, Borgnet XXIII, 55–70; Bonaventure, Quaracchi VII, 266–272 | John Paul II, *Salvifici doloris* 28–30 and *Dives in misericordia* 3–4; Benedict XVI, *Deus caritas est* 15, 20–25; Francis, *Fratelli tutti* 56–86 | Christ the Neighbor and the literal duty of mercy are received together. Irenaeus gives binding, entrustment to the Spirit, and two denarii, but not oil-as-Spirit. Motives of priest and Levite are unstated; no ritual-purity or anti-Jewish inference is retained. |
+| Offertory, Ex 32:11–14 adapted | Ex 32:1–35; 33–34; patriarchal promises; Vulgate/chant line-by-line comparison | Theodoret, *Quaest. Oct.* 67–68; 1 Clement 53; Chrysostom, *Priesthood* IV.1 and *Hom. Rom.* 16 | Augustine, *Quaest. Hept.* II.143, 147, 149–151 and *City* XV.25; Tertullian, *Adv. Marc.* II.26 | Gregory, *Moralia* IX.16.23; XX.5.14; Aquinas, *ST* I q.19 a.7 ad 1; II–II q.83 a.2 | CCC 2574–2577; Benedict XVI, audience 1 June 2011; John Paul II, *Dives in misericordia* 4 | Augustine's lemma confirms the Old-Latin close. Judgment remains; no divine passion, covenant revocation, or rival to Christ's unique mediation is inferred. |
+| Collect | Complete syntax; Cummiskey translation; Verona, Gelasian, Hadrianum locations | No direct Greek history expected for this Latin oration | Hilary, Ps 118 Daleth 41–42 (Ps 118:32), PL 9, 303–304; Augustine, *En. Ps.* 118 X.5–6, XI.1–6 and *Grat. lib.* 16.32–17.33 | Benedict, Prologue; Aquinas, *ST* I–II q.109 aa.2, 4–5, 9–10; Hadrianum no. XXXI | Trent VI.5–6, 16 | Gift, real service, grace-enabled running, and promised end form one grammatical and doctrinal movement. No author or single date assigned. |
+| Secret | Complete syntax and punctuation; Cummiskey changes agency and clause order; Gelasian/Hadrianum variants | Justin, *Dial.* 116–117; Irenaeus IV.17.5–18.6; Cyril Jerusalem, *Myst.* V.8–10 | Old Gelasian III.VIII; Augustine, *City* X.5–6, 20 | Hadrianum no. XXXI (`largiendo`) | Trent XXII.2; Schuster III, 128–131 | `largiendo` is an ablative gerund and gives the offerings a bold subordinate agency; Trent controls their participation in Christ's one true propitiatory sacrifice. |
+| Postcommunion | Complete syntax; `tui`/`huius` history; Cummiskey flattening | Ignatius, *Eph.* 20 | Verona p.60 (`tui`); Old Gelasian III.VIII | Hadrianum no. XXXI; Aquinas, *ST* III q.79 aa.1–2, 4, 6, 8 | CCC 1391–1395 | Holy participation is the subject of `vivificet` and `tribuat`; life, expiation, and defense unfold sacramental fruit in worthy recipients. |
 
 ## Search coverage and limits
 
@@ -64,7 +78,13 @@ The research searched the appointed Latin and complete biblical contexts in
 the local source library; the CMAA and Benziger Missals; Douay–Rheims verse
 files and numbering aids; PG/PL witnesses; New Advent/NPNF; Augustinus.it;
 Corpus Thomisticum/Aquinas.cc; the Old Gelasian, Hadrianum Gregorian, and
-Verona sacramentaries; Eusebius, Basil, Theodoret, Origen, Chrysostom,
+Verona sacramentaries; the 1906, 1910, and 1912 Pontifical Biblical Commission
+responses; the 2014 Loreto/Feeney edition's uninitialled chronology apparatus
+and Haydock's attributed Psalm-title notes; the
+1908--10 *Catholic Encyclopedia* chronology, David, Corinthian, and Luke
+articles, including A. J. Maas's Seventh Journey chronology; Cornelius a
+Lapide's *Chronotaxis* and Luke 10:30; Eusebius, Basil,
+Theodoret, Origen, Chrysostom,
 Ambrosiaster, Augustine, Ambrose, Cassiodorus, Gregory, Bede, Albert,
 Bonaventure, Aquinas, Cassian, Benedict, Bellarmine, Trent, Vatican II,
 Catechism, John Paul II, Benedict XVI, and Francis; plus targeted legal, literary,
@@ -78,30 +98,45 @@ only as leads until the underlying work and locus were checked.
 
 Material negatives and distinctions:
 
-- no checked witness establishes one author's design for the ten-element
+- none of the explicitly enumerated witnesses establishes one author's design for the ten-element
   formulary;
 - no direct Greek history is expected for the three Latin orations, and no
   Father is assigned their authorship;
-- the psalm titles preserve received attribution but do not establish modern
-  dates or locations;
+- the Psalm titles carry ancient Jewish and Christian attribution and are
+  foregrounded with their traditional Catholic chronologies; later critical
+  alternatives are recorded secondarily;
 - straight patristic exegesis, musical settings, devotional reuse, and bare
   titles were excluded from *Notable and Quotable*;
 - no universal novelty claim is made for an exploratory relation;
-- no source permits “letter kills” to become a rejection of literal sense,
-  Scripture, moral law, Israel, or Jewish persons;
-- no source permits the Good Samaritan's allegory to displace bodily mercy.
+- the synthesis does not use “letter kills” to reject literal sense, Scripture,
+  moral law, Israel, or Jewish persons;
+- allegory remains subordinate to and productive of bodily mercy.
 
 ## Scriptural date/location audit
 
-The page-2 sheet inventories each direct passage once in its dossier order:
-Ex 32; the Introit, Gradual, Alleluia, and Communion psalms; 2 Cor 3; Luke 10.
-It separates
-composition from narrated event. Exodus' mountain/date, each psalm's date,
-Luke's place of composition, and the exact location of Jesus' speech remain
-uncertain. The conventional modern judgment for Luke is c. AD 80–90; 2
-Corinthians is placed in Macedonia, probably autumn c. AD 57 with chronology
-acknowledged as variable. Jerusalem–Jericho is parable geography, not the
-location of the discourse.
+The page-2 sheet inventories each direct passage once in canonical/verse
+order: Ex 32; Psalms 33, 69, 87, and 103; 2 Cor 3;
+Luke 10. It separates composition from narrated event and foregrounds the
+sourced traditional Catholic horizon. The 2014 Loreto/Feeney edition's
+uninitialled chronological apparatus prints AM 2518 at the calf chapter and
+1491 BC elsewhere in its broader Exodus frame; the old edition's two systems
+are reported without harmonization. Its compiled note drawing on Jerome gives
+a memorial fast for the shattered tablets, not a demonstrated date for their
+breaking. The same uninitialled apparatus places the Achis episode in AM 2944 /
+c.1060 BC and Absalom's revolt c.1024–1023 BC. The Davidic and Heman headings supply a Davidic–early
+Solomonic horizon through c.975 BC. The 1908 *Catholic Encyclopedia* gives a
+critical Exodus alternative of c.1277 BC. Second Corinthians is placed at
+Philippi in summer or autumn AD 57. For Luke, the ancient *Argumentum* gives
+Achaia, and Aherne reports that many writers placed composition during Paul's
+Caesarean imprisonment. The 1912 PBC requires Luke to precede Acts and the end
+of Paul's first Roman captivity; Howlett supplies the terminus of about AD 64.
+Lapide's probable harmony places the
+narrated teaching between October and November AD 33; Maas's distinct Seventh
+Journey harmony places it in September–December AD 28, probably after the
+Seventy-two's return in lower Peraea and in the vicinity of Jericho. The
+modern c.AD 80–90 composition judgment is recorded secondarily. Luke leaves
+the speaking place unnamed: Jerusalem–Jericho is the parable road, not by
+itself a location notice.
 
 ## Notable-and-quotable audit
 
@@ -116,25 +151,23 @@ location of the discourse.
 striking self-borrowing and the verse's liturgical register is altered by a
 courtly fanfare, but four stronger, more varied cases already satisfy the
 gallery; it was omitted to keep this proper's Mass/Office boundary from
-requiring disproportionate explanation. Palestrina and Lassus settings of the
-Offertory are documented musical reception but do not by themselves change the
-wording's register. Devotional titles and straight Good Samaritan homilies were
+requiring disproportionate explanation. Devotional titles and straight Good Samaritan homilies were
 excluded. No example was retained merely to reach a quota.
 
 ## Interpretive-proposal audit
 
 | Proposal | Anchors and mechanism | Precedent search/result | Fruit | Strongest limit |
 | --- | --- | --- | --- | --- |
-| Ministry begins where traveller leaves | Epistle fitness + Gospel innkeeper/continuing care + Postcommunion fruits requested for recipients | **Near analogue:** Ambrose VII.82–84, Augustine *QE* II.19, Bede on inn; no three-way relation located | Durable ecclesial mercy | Institution cannot identify itself simply with Christ/Samaritan; `vivificet` and `tribuat` do not encode duration; literal duty governs allegory. |
-| Promise in three modes | Collect destination + Moses' covenant appeal + Samaritan's return/repayment | **Near analogue:** Origen *Hom. Lk.* 34 reports an elder's eschatological return reading; Augustine *QE* II.19 also maps the return; no three-promise conjunction | Hope sustains costly care | Fictional promise is not divine covenant; no compiler intent. |
-| Mercy's longer clock | Gradual always + Alleluia day/night + Gospel next day/return | **Not located in checked corpus:** phrase conjunctions searched in principal reception witnesses | Compassion as perseverance | Different literary units; urgency remains; no schedule inferred. |
-| Bounded `quis`, open `quodcumque` | Gospel's delimiting question + unlimited-form expenditure + Secret `largiendo` | **Near analogue:** Gospel commentators on universal neighbour and further expense; no Secret conjunction | Resist minimum-obligation reading | Prudence, justice, finite stewardship, and vocation remain. |
-| Two directions of mercy | Samaritan toward wounded + Moses before God + Secret pardon | **Near analogue:** Christological readings of Moses and Samaritan; no three-way relation | Holds care, culpability, judgment, intercession | Divine anger is just judgment, not emotional mutation (Augustine, *City* XV.25). |
-| Natural and sacramental medicine | Gospel oil/wine + Communion bread/wine/oil + Postcommunion life/defense | **Near analogue:** Ambrose/Augustine on Samaritan; Augustine/Cassiodorus on Ps 103; exact three-way synthesis editorial | Unite corporal and sacramental care | Created goods and bodily wounds retain literal senses; no Eucharistic collapse. |
+| Ministry begins where traveller leaves | Epistle fitness + Gospel innkeeper/continuing care + Postcommunion fruits requested for recipients | **near analogue located:** Ambrose VII.82–84, Augustine *QE* II.19, Bede on inn; none of these enumerated witnesses makes the three-way relation | Durable ecclesial mercy | Institution cannot identify itself simply with Christ/Samaritan; `vivificet` and `tribuat` do not encode duration; literal duty governs allegory. |
+| Promise in three modes | Collect destination + Moses' covenant appeal + Samaritan's return/repayment | **near analogue located:** Origen *Hom. Lk.* 34.3 reports an elder's eschatological-return reading; Ambrose VII.83 and Bede PL 92, 470D receive the return; these witnesses do not join all three promise forms | Hope sustains costly care | Narrated promise within the parable is not divine covenant; no compiler intent. |
+| Mercy's longer clock | Gradual always + Alleluia day/night + Gospel next day/return | **near analogue located:** Bellarmine treats continuing praise; Eusebius reads day/night as Christ's continuous prayer and oblation; Origen's elder, Ambrose VII.83, and Bede PL 92, 470D receive the return; none of these enumerated witnesses joins all three | Compassion as perseverance | Different literary units; urgency remains; no schedule inferred. |
+| Bounded `quis`, open `quodcumque` | Gospel's delimiting question + unlimited-form expenditure + Secret `largiendo` | **near analogue located:** the enumerated Gospel commentators treat universal neighbour and further expense; none of them joins the Secret | Resist minimum-obligation reading | Prudence, justice, finite stewardship, and vocation remain. |
+| Natural and sacramental medicine | Gospel oil/wine + Communion bread/wine/oil + Postcommunion life/defense | **near analogue located:** Origen *Hom. Lk.* 34.7–9 explicitly cites Ps 103 while reading the Samaritan's oil, wine, day/night care, and inn; Augustine/Cassiodorus receive Ps 103 sacramentally; the Postcommunion conjunction is editorial | Unite corporal and sacramental care | Created goods and bodily wounds retain literal senses; no Eucharistic collapse. |
 
-Targeted searches combined distinctive Latin and English phrases, element
-names, likely whole-formulary commentators, patristic/medieval witnesses, and
-official Catholic reception. “Not located” is bounded to this checked corpus.
+Targeted comparisons combined distinctive Latin and English phrases, element
+names, whole-formulary commentators, patristic/medieval witnesses, and
+official Catholic reception. Negative results above are limited to the
+explicitly enumerated witnesses.
 
 ## Rights and attribution
 
@@ -149,8 +182,12 @@ liturgical wording, historical translations, or third-party quotations.
 
 ## Production state
 
-The source text, bibliography, bindings, claim classifications, component
-manifest, and local web eligibility were audited in this leaf. The full and
-synthesis editions were built through settled passes and their logs checked.
-These are internal source and production facts, not ecclesiastical approval or
-an installed-publication claim.
+The exact Missal text remained frozen while page 2, the two-page thematic
+argument, every detailed element, the integrated companion, and the
+source-grounded synthesis received substantive re-research and rewriting. The
+bibliography, bindings, claim classifications, component manifest, and local
+web eligibility were then re-audited. The full and synthesis editions were
+built through settled passes and visually reviewed page by page; component,
+source, metadata, web, and log gates passed. These are internal source and
+production facts, not ecclesiastical approval or an installed-publication
+claim.

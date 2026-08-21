@@ -162,7 +162,6 @@ abbreviation `Thro'.` is not expanded.
 
 The shared rights inventory leaves the 1962 edition and scan unresolved. The
 guide republishes no facsimile image and treats the focused Latin formulary as
-pre-existing material under the project's recorded 17 U.S.C. §103(b) analysis,
-supported by the presence of the ten-element formulary in public-domain 1862
-and 1570 Missal witnesses. This is a repository rights judgment, not legal
-advice or a grant to third parties.
+pre-existing material under the project's recorded 17 U.S.C. §103(b) analysis.
+This is a repository rights judgment, not legal advice or a grant to third
+parties.

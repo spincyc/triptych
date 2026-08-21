@@ -6,5 +6,5 @@ responsible = "Gratian"
 work_type = "canonical-collection"
 alternate_titles = ["Decretum Gratiani", "Concordia discordantium canonum"]
 languages = ["la"]
-locus_pattern = "d-[1-9][0-9]{0,2}-(?:pr|c-[1-9][0-9]{0,2})"
-description = "The mid-twelfth-century canonical collection whose first-part distinctions open with the taxonomy of law received from Isidore. Loci here address the first part by distinction: d-N-pr for the dictum Gratiani opening a distinction, d-N-c-M for a chapter with any adjoining dicta. The Munich (MDZ) online transcription of Friedberg's 1879 Leipzig edition serves as the accessible public-domain-based witness."
+locus_pattern = "(?:d-[1-9][0-9]{0,2}-(?:pr|c-[1-9][0-9]{0,2})|c-[1-9][0-9]{0,2}-q-[1-9][0-9]{0,2}-de-poenitentia-d-[1-7]-(?:(?:da|dp)-c-[1-9][0-9]{0,2}|c-[1-9][0-9]{0,2})(?:-ss-[1-9][0-9]{0,2}(?:-[1-9][0-9]{0,2})?)?)"
+description = "The mid-twelfth-century canonical collection whose first-part distinctions open with the taxonomy of law received from Isidore and whose second part includes the Tractatus de poenitentia at C.33 q.3. First-part loci use d-N-pr for the dictum Gratiani opening a distinction and d-N-c-M for a chapter with any adjoining dicta. De poenitentia loci retain their full address as c-N-q-N-de-poenitentia-d-N, followed by c-M for a chapter or da-c-M/dp-c-M for a dictum before or after it; -ss-N or -ss-N-M bounds numbered sections. The Munich (MDZ) online transcription and page images of Friedberg's 1879 Leipzig edition serve as the accessible public-domain-based witnesses."

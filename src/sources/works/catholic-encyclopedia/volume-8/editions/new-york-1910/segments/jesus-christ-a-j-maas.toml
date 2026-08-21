@@ -1,0 +1,12 @@
+schema = 2
+record_type = "segment"
+id = "segment.catholic-encyclopedia.volume-8.new-york-1910.jesus-christ-a-j-maas"
+edition_id = "edition.catholic-encyclopedia.volume-8.new-york-1910"
+artifact_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.ia-facsimile-pdf-ac62a7ca"
+artifact_sha256 = "ac62a7caf68e119219ca1d6fc930e7ccfcb4b335b5c26a4ac87ce288350a86a2"
+segment_type = "signed-encyclopedia-article"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "A. J. Maas's signed article 'Jesus Christ' as printed in The Catholic Encyclopedia, volume 8. The article begins after the preceding entry on printed p. 374 and ends at Maas's byline before 'Jesus Mary, Religious of' on printed p. 385."
+artifact_page_ranges = [[426, 439]]
+verified_on = "2026-08-21"
+notes = "The article boundary and A. J. Maas byline were checked on the exact facsimile page images. The inclusive page range necessarily includes the end of the preceding entry on PDF page 426, two intervening unnumbered illustration leaves at PDF pages 437-438, and the beginning of the next entry on PDF page 439; the context states those shared-page limits rather than claiming page-exclusive article bytes."

@@ -182,7 +182,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
-context = "The official Catholic introduction controls broad statements about superscriptions, collections, editorial formation, liturgical use, and the limits of historical dating. It is not used to date a Davidic or Asaphite heading as an autograph."
+context = "The official Catholic introduction controls the secondary modern account of superscriptions, collections, editorial formation, liturgical use, and limits of historical dating. Reader-facing traditional Davidic and Asaphic settings and their older chronological deductions are separately sourced to Scripture, direct commentators, the Catholic Encyclopedia, and the 1910 Biblical Commission response; none is described as a recovered autograph date."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.first-corinthians-introduction"
@@ -191,7 +191,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:84f814b0d0e37e2875145f883c6d01230cef193be38aec57e85f9ed3452c6aef"
-context = "The official Catholic introduction controls the letter's Ephesian setting, Corinthian audience, broad date, and argumentative context. The separate chapter notes are cited for the narrower received-tradition observation."
+context = "The official Catholic introduction controls the current Catholic c. AD 56 estimate, Ephesian setting, Corinthian audience, and argumentative context. The older Easter AD 57 Catholic chronology is separately sourced in the references; the chapter notes control the received-tradition observation."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20.mark-introduction"
@@ -200,7 +200,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:7f0dd9553558c866ebc9e18b3428733a4cf46184fccb3be1bf40ddbb9353753b"
-context = "The official Catholic introduction controls the bounded composition horizon and broad Roman/Syrian setting alternatives for Mark. It does not identify the healed man's ethnicity, a precise Decapolis site, or the date of the narrated event."
+context = "The official Catholic introduction controls the secondary modern around-AD-70 horizon and its Rome-before/Syria-after alternatives. Patristic Petrine/Roman testimony, the 1912 Biblical Commission response, and the two explicitly incompatible traditional event harmonies are separately cited; the binding does not identify the healed man's ethnicity or a precise Decapolis site."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20.proverbs-introduction"
@@ -209,7 +209,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-20"
 source_fingerprint = "sha256:38f3a06a80cb204227cf0f3c477b475808b8f6df2f0bdbe472602ff096fd842b"
-context = "The official Catholic introduction controls the distinction between received Solomonic attribution and the book's multistage collection, including the bounded postexilic or early Second-Temple final collection. It does not warrant an exact final-form century."
+context = "The official Catholic introduction controls the secondary modern account of multistage collection and a postexilic or early Second-Temple final collection. The received Solomonic tenth-century horizon and older Catholic c. 1015-975 BC chronology are separately sourced and are not presented as the date of the final collection."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20.first-corinthians-15.1-11-notes"
@@ -235,3 +235,134 @@ role = "context"
 states = ["cataloged", "inspected"]
 source_fingerprint = "sha256:85c11b5a5cc329885db8a51b7d4fb065a6a1b4a3ce1733dc29b1bdc52e0ae915"
 context = "The Vatican 1604 witness has already dropped ad while retaining the coordinated petition and genitive fragilitatis. It establishes a stage in transmission, not authorial intent or the 1962 formulary's design."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.responsa-i-viii"
+loci = ["responsa-i-viii"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:42e1707054a115ec2cb6b422ebe8096220fb02bf179cc8ef51654dc6877aab6a"
+context = "The Commission's responses control the reader-facing distinction between received title testimony, Davidic authorship, and exact literary allocation. They warrant neither a single-author Psalter claim nor an autograph date for any appointed psalm."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+loci = ["responsa-i-ix"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+context = "The Commission's responses control the received Mark-Peter relation and pre-AD-70 boundary stated on the dossier. The Roman setting and distinct narrated-event harmonies are sourced elsewhere; the harmonies are not combined into a single date range."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine"
+loci = ["article 'Jesus Christ,' III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:d97a818f54b8f1be9ace0133e4478d2ca1191097f40f0213dcbe7b8a0a851e9c"
+context = "Maas controls one explicitly traditional Gospel-event harmony, May-September AD 28. It remains incompatible with a Lapide's approximate May AD 33 harmony and is not merged with it."
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023.1cor-main-2a706bac"
+loci = ["1 Corinthians 15:5"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:5afe986b2df08de80c6149ec4c592301eef727231397a97be748f43fe8d32fff"
+context = "The Greek artifact controls only the comparison that 1 Corinthians 15:5 reads 'the Twelve' where the Missal/Vulgate-appointed text reads eleven. It supplies no English wording."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.4"
+loci = ["4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:26f7b79da520af10951ca8153011f4c7309bc60c0e684e6f9a6a69fa99b4670b"
+context = "Article 4 governs the publication's Jewish-relations boundary. It is distinct from the disability-ethics control and does not erase the direct historical and spiritual reception that the guide renders."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps21-html-5e8fdbbe"
+loci = ["27.n1", "27.n7", "29.n1", "29.n2"]
+role = "reception"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:d7e2f9d87d27ac76392972b00af3983181d6071724944573eae45a7c370b68dd"
+context = "The registered Corpus Thomisticum artifact controls Aquinas's direct Psalm 27 and Psalm 29 readings used for Davidic prayer, Christ's Resurrection, and the dedicated house as Christ and Church."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-27"
+loci = ["Psalm 27, especially verses 1 and 7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:3ca284d5d37214f777ee694ccb4851e3c9d8c06a9181edf24fdc7bece097e656"
+context = "Bellarmine's exact verse exegesis is used for prayer, bodily restoration, and thanksgiving. The O'Sullivan translation is abridged and does not control omitted title or preface arguments."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-29"
+loci = ["Psalm 29, especially Vulgate verses 2-3 (printed text numbers 1-2)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:505e7fe1d115021ac432e6ea63f329bbe6ef0de63ad34b23e5b77d79dc7c88c1"
+context = "Bellarmine's exact verse exegesis is used for the palace-dedication reception and the restored singer. The O'Sullivan translation is abridged and does not control omitted title or preface arguments."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-67"
+loci = ["Psalm 67, especially Vulgate verses 2, 6-7, and 36 (printed text numbers 1, 5-6, and 35)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:c4813c4988488cbc27afe4b831ba17350057534021bb660bbd2c08d6e280de54"
+context = "Bellarmine's exact verse exegesis is used for the Mosaic echo, Resurrection, Church, and eschatological strength. The O'Sullivan translation is abridged and does not control omitted title or preface arguments."
+
+[[bindings]]
+source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-80"
+loci = ["Psalm 80, especially Vulgate verses 2-3 (printed text numbers 1-2)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:fb8e7c4f530c06849d8932f1f942d4a1a5415ee697b2772cab61b5063e51ed5f"
+context = "Bellarmine's exact verse exegesis is used for literal instrumental worship and moral application. The O'Sullivan translation is abridged and does not control omitted title or preface arguments."
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile"
+loci = ["4.18.1-6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:03a2088250e024d9d78d0ab62c87296c4ccc8bdf2d393234842dac6a24f29787"
+context = "The facsimile-checked passage controls Irenaeus's Eucharistic and sacrificial grammar used to interpret the Secret and Postcommunion. It is doctrinal reception, not wording commentary on the Roman orations."
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.2.2-3.ocr"
+loci = ["5.2.2-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c5a2e8e8e0c008e603752947eb28b4d0f955daf9ebba44ec62b85d4da3b6c580"
+context = "The bounded OCR passage supports the received relation between Eucharistic nourishment, embodied salvation, and promised incorruption. The publication paraphrases and does not treat this witness as wording commentary on the Postcommunion."
+
+[[bindings]]
+source_id = "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.newadvent-2708-85587778"
+loci = ["8"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:9f963f5fb627cece3093a5bd4b5f9bc185796d85442abcc8ce4781837f651a1e"
+context = "Jerome chapter 8 supplies a received witness for Mark's Petrine relation and Roman setting. It is used alongside, not as a substitute for, Papias, Clement, Irenaeus, and the 1912 Commission response."
+
+[[bindings]]
+source_id = "artifact.eusebius.ecclesiastical-history.english-mcgiffert-npnf2-1-newadvent-web-2026-07-27.book-6-html"
+loci = ["6.14.6", "6.14.7"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:0a17a04e8795eec09d2d2f4ca74a162b93b3954574a1ab798c52ccd179910af2"
+context = "Eusebius's report of Clement at VI.14.6-7 supports the reader-facing Roman setting and Petrine preaching claim. Book III.39.15 was separately checked at the cited public edition but has no exact reusable central passage."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Psalm 27, PG 80:1057-1060", "Psalm 29, PG 80:1069-1072", "Psalm 67, PG 80:1377-1400", "Psalm 80, PG 80:1517-1521"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "The PG 80 scan controls Theodoret's direct Greek exegesis at all four appointed psalms: historical Davidic restoration, Hezekiah and renewed humanity, the household and divine strength, and literal festival worship."

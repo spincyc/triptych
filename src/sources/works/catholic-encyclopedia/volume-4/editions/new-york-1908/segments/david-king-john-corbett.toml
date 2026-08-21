@@ -1,0 +1,12 @@
+schema = 2
+record_type = "segment"
+id = "segment.catholic-encyclopedia.volume-4.new-york-1908.david-king-john-corbett"
+edition_id = "edition.catholic-encyclopedia.volume-4.new-york-1908"
+artifact_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.ia-facsimile-pdf-d1b059b1"
+artifact_sha256 = "d1b059b1a2130727cc2e32f4b2fda59452f3d68bab05737ab69e8d3d8fd8037f"
+segment_type = "signed-encyclopedia-article"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "John Corbett's signed article 'David, King' as printed in The Catholic Encyclopedia, volume 4. The article begins after W. H. James Weale's article on Gheeraert David on printed p. 642 and ends at Corbett's byline before 'David of Augsburg' on printed p. 644."
+artifact_page_ranges = [[722, 726]]
+verified_on = "2026-08-21"
+notes = "The article boundary, title, and John Corbett byline were checked on the exact facsimile page images. The inclusive range necessarily includes other entries on its shared first and last pages, as well as an inserted illustration leaf and blank verso at PDF pages 723-724; the context states those limits rather than claiming page-exclusive article bytes."

@@ -12,9 +12,11 @@
 \newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
 \newcommand{\fulltextgap}[1]{\par\smallskip\textbf{Witness boundary.} #1\par}
 \newenvironment{dossiertable}
-{\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+{\fontsize{7.35}{7.75}\selectfont\renewcommand{\arraystretch}{0.98}\setlength{\LTpre}{0.1em}\setlength{\LTpost}{0pt}%
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
 \toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
 {\bottomrule\end{longtable}}
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+\providecommand{\TriptychReferenceFont}{\fontsize{6.9}{7.2}\selectfont}
+\providecommand{\TriptychColophonFont}{\fontsize{6.9}{7.3}\selectfont}

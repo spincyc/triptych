@@ -1409,7 +1409,7 @@ state = "complete"
 id = "gpt-eleventh-thirteenth-after-pentecost-2026-08-20"
 owner = "src/gpt/liturgy/roman-rite/1962/propers/temporal"
 promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 25-27) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
-state = "complete"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "gpt-boundary-recorded"
@@ -1463,8 +1463,8 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "catalog-release-and-deployment"
-  criterion = "Rows 25-27 link the GPT Synthesis PDFs and web editions, provider-qualified release records are validated, the exact outgoing range is publicly reviewable, and the resulting Pages deployment and affected live routes are verified."
-  status = "pass"
+  criterion = "Rows 25-27 link the GPT Synthesis PDFs; their stable publication markers own the canonical Full PDFs and web editions; provider-qualified release records are validated; the exact outgoing range is publicly reviewable; and the resulting Pages deployment and affected live routes are verified."
+  status = "open"
   evidence = [
     "library/traditional-latin-mass.md",
     "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal",
@@ -1473,8 +1473,19 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-publication-boundary"
-  criterion = "No Claude publication receives a material source, PDF, web, catalog, release, or generation-metadata revision from this GPT work."
+  criterion = "No Claude publication receives a substantive content, PDF, web, catalog, release, or generation-metadata revision from this GPT work; cross-provider binding-fingerprint refreshes required by corrections to provider-neutral source records remain permitted and inventory-validated."
   status = "pass"
   evidence = [
     "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "traditional-depth-revision"
+  criterion = "All three guides satisfy the maintainer's 2026-08-21 revision: two substantively complete thematic pages, responsibly sourced traditional Catholic dates and attributions in the page-2 summaries, faithful positive synthesis of patristic and saintly thought, and materially deeper intra- and cross-proper exegesis."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/roman-1962-propers.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost",
   ]

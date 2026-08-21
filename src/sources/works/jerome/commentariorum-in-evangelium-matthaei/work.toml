@@ -1,0 +1,15 @@
+schema = 1
+record_type = "work"
+id = "work.jerome.commentariorum-in-evangelium-matthaei"
+title = "Commentariorum in Evangelium Matthaei ad Eusebium libri quattuor"
+responsible = "Jerome"
+work_type = "biblical-commentary"
+composed = "398"
+composed_basis = "Jerome's prefatory circumstances and related letters place the work at Bethlehem in 398; the Vallarsi-Migne editorial preface in the represented 1845 edition states this dating."
+alternate_titles = [
+  "Commentariorum in Matthaeum libri quattuor",
+  "Commentary on Matthew",
+]
+languages = ["la"]
+locus_pattern = '(?:prologus|liber-[1-4](?:\.(?:[1-9]|[1-9][0-9]{1,2}))?)'
+description = "Jerome's four-book commentary on Matthew, preceded by a prologue that situates each canonical evangelist and explains the fourfold Gospel."

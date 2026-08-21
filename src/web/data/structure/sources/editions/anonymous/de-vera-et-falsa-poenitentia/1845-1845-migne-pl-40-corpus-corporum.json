@@ -1,0 +1,103 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "checked-transcription",
+   "byte_size": 3863,
+   "id": "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25-checked-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The page-image collation confirms 'ad eos pervenirent', correcting the keyed web witness's apparent 'ad cos pervenirent'. The transcription includes all of number 25, including its final sentence at the top of PL column 1123.",
+   "page_count": null,
+   "retrieved": "2026-08-21",
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces an anonymous medieval Latin text as printed by Migne in 1845, both public domain by age. It was made from rendered page images of the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 2175117,
+   "id": "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.dco-facsimile-pdf-22f5be8c",
+   "media_type": "application/pdf",
+   "notes": "The retrieved PDF begins at PL columns 1113-1114 and ends at columns 1129-1130, so it is the complete treatise rather than a passage fragment. Number 25 begins in running column 1122 on PDF page 5 and ends at the top of running column 1123 on PDF page 6. Acquisition aliases: De vera et falsa poenitentia; Liber de vera et falsa poenitentia; De vera et falsa poenitentia ad Christi devotam; Pseudo-Augustine; PL 40:1122.",
+   "page_count": null,
+   "retrieved": "2026-08-21",
+   "rights": "restricted",
+   "rights_basis": "The anonymous medieval Latin and Migne's 1845 printing are public domain by age, but Documenta Catholica Omnia states that rights in its electronic edition are reserved. No permission to redistribute the host's PDF was established, so the exact bytes are identified but not retained.",
+   "rights_jurisdiction": "United States",
+   "source_url": "http://www.documentacatholicaomnia.eu/02m/0354-0430,_Augustinus,_De_Vera_Et_Falsa_Poenitentia_Ad_Christum_Devotam,_MLT.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "wikisource-raw-wikitext",
+   "byte_size": 61907,
+   "id": "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.wikisource-raw-wikitext-5ea09bce",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "This mutable web witness is pinned to one immutable revision and was used to navigate and compare the complete text, not to override the page image. Its chapter 10 transcription reads the phrase 'ad cos pervenirent'; direct inspection of PL column 1122 confirms the print's 'ad eos pervenirent'. The page labels the author 'Auctor incertus (Augustinus Hipponensis?)' and thus does not establish Augustinian authorship. Acquisition aliases match those recorded for the facsimile artifact.",
+   "page_count": null,
+   "retrieved": "2026-08-21",
+   "rights": "licensed",
+   "rights_basis": "The anonymous medieval Latin and Migne's nineteenth-century printing are public domain. Latin Wikisource makes its contributor text and markup available under Creative Commons Attribution-ShareAlike 4.0; the exact immutable revision is recorded under that license and left remote because the stable public revision route supplies the complete 61 KB witness without duplicating its contributor markup in this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=De_vera_et_falsa_poenitentia&oldid=230354&action=raw",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1845",
+  "editors": [],
+  "id": "edition.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The facsimile prints the treatise in an appendix to Augustine's works, but neither this edition record nor the neutral work identity adopts Augustinian authorship. The complete Wikisource witness calls the author uncertain and labels its Migne source 1841; the independently checked DCO series index identifies PL 40 as 1845, and the facsimile wording and PL columns, rather than the web header's year, control the verified passage.",
+  "publication": "Jacques-Paul Migne, Patrologiae cursus completus, Series Latina, volume 40 (Paris, 1845), columns 1113-1130; Corpus Corporum electronic transcription republished by Latin Wikisource",
+  "title": "Liber de vera et falsa poenitentia — Patrologia Latina 40",
+  "translators": [],
+  "year": 1845
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "Number 25 begins with penitence, sorrow, and personal confession through a priest. It reads Christ's command to the ten lepers in Luke 17:14 as requiring bodily present, personal disclosure rather than confession by messenger or writing; then it joins priestly binding and loosing to Lazarus and Matthew 18. When a priest is unavailable, the treatise distinguishes confession to a neighbor from priestly absolution, grounds hope in desire for the priest, and reads the lepers' cleansing while they were still going as evidence that God regards the heart when necessity prevents arrival.",
+   "id": "passage.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25",
+   "locus": "10.25",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Verified word for word against the page images of Migne's printing at PL 40:1122-1123. Attribution is limited to the anonymous treatise transmitted under Augustine's name: this passage must not be cited as Augustine's own teaching. It witnesses a medieval sacramental exegesis of Luke 17 and does not by itself establish Luke's historical sense, the treatise's exact composition date or place, the validity of lay absolution, or the complete current discipline of sacramental confession.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces an anonymous medieval Latin text as printed by Migne in 1845, both public domain by age. It was made from rendered page images of the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.10.25.json",
+   "verified_on": "2026-08-21",
+   "words": 546
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Liber de vera et falsa poenitentia",
+   "De vera et falsa poenitentia ad Christi devotam",
+   "Pseudo-Augustine, De vera et falsa poenitentia"
+  ],
+  "author": "Anonymous (transmitted under Augustine of Hippo's name)",
+  "category": "penitential-treatise",
+  "description": "An anonymous Latin treatise on true and false penance transmitted among the works of Augustine. Migne prints it in the Augustinian appendix, while the Corpus Corporum description reproduced by Latin Wikisource labels the author uncertain; this neutral identity does not attribute the work to Augustine.",
+  "id": "work.anonymous.de-vera-et-falsa-poenitentia",
+  "languages": [
+   "la"
+  ],
+  "title": "De vera et falsa poenitentia"
+ }
+}

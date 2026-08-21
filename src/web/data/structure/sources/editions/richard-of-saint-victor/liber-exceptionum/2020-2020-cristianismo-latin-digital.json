@@ -1,0 +1,74 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "digital-transcription-pdf",
+   "byte_size": 974485,
+   "id": "artifact.richard-of-saint-victor.liber-exceptionum.2020-cristianismo-latin-digital.cristianismo-pdf-3daf4224",
+   "media_type": "application/pdf",
+   "notes": "The PDF metadata identifies OpenOffice 4.1.3 and a creation timestamp of 1 June 2020. It gives no editor, publisher, or source statement. Its title, structure, and ten-lepers wording agree with the older Hugh-attributed presentation in PL 175, but that agreement is established only for the inspected chapter, not for the entire PDF.",
+   "page_count": 397,
+   "retrieved": "2026-08-21",
+   "rights": "unresolved",
+   "rights_basis": "Richard's twelfth-century Latin text and Migne's 1854 printing are public domain in the United States. The host supplies no license for this exact 2020 digital typesetting or its presentation, so the complete PDF was acquired and hashed for research but its bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.cristianismo.org.br/HSV-AllegoriaeNoviTestamenti.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2020",
+  "editors": [],
+  "id": "edition.richard-of-saint-victor.liber-exceptionum.2020-cristianismo-latin-digital",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The displayed title attributes the text to 'Hugo a S. Victore'; that is retained as edition history, not accepted as work authorship. The official IRHT Bibale record identifies books I-IX and XI-XIV of the second part, transmitted under Allegoriae in Vetus et Novum Testamentum, as falsely attributed to Hugh. The ten-lepers chapter was checked against Migne, PL 175 (Paris, 1854), col. 823, in the complete Internet Archive facsimile of volume 175 (item patrologiaecurs135migngoog), but this digital edition was not collated work-wide against either Migne or Châtillon.",
+  "publication": "Undated Latin digital typesetting served by Cristianismo.org.br; PDF metadata created 1 June 2020",
+  "title": "Posteriorum excerptionum libri tredecim continentes utriusque Testamenti allegorias, secunda pars: Allegoriae in Novum Testamentum libros novem complectentes",
+  "translators": [],
+  "year": 2020
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.richard-of-saint-victor.liber-exceptionum.2020-cristianismo-latin-digital.cristianismo-pdf-3daf4224",
+   "artifact_type": "digital-transcription-pdf",
+   "context": "Richard reads the ten lepers as those polluted by sins against the Decalogue. Their approach to Jesus is faith; standing afar is humility; their cry is heartfelt penance; going to show themselves to the priests is vocal confession, through which the leprosy of past iniquity is healed. The nine who do not return figure those who keep the Decalogue after remission yet neglect thanksgiving; the one who returns figures the unity of the universal Church, which continually gives thanks for grace.",
+   "id": "passage.richard-of-saint-victor.liber-exceptionum.2020-cristianismo-latin-digital.luke-17-ten-lepers",
+   "locus": "pars II, liber XIV, cap. 4; printed as liber IV, cap. 25 (PL 175:823)",
+   "media_type": "application/pdf",
+   "notes": "Read directly on one-based artifact PDF page 150, visible printed p. 138. The entire chapter was also read in the 1854 Migne facsimile at PL 175:823 and agrees in wording; Migne prints it under Hugh. The Herzog August Bibliothek manuscript catalog supplies the critical crosswalk to Châtillon p. 503 and attributes the witness to Richard. Because Châtillon's edition itself was not acquired, this passage verifies the older printed wording and the modern attribution/locus independently; it must not be cited as a collation of Châtillon's exact text, and it must not be attributed to Hugh.",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_basis": "Richard's twelfth-century Latin text and Migne's 1854 printing are public domain in the United States. The host supplies no license for this exact 2020 digital typesetting or its presentation, so the complete PDF was acquired and hashed for research but its bytes are not redistributed from this repository.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://www.cristianismo.org.br/HSV-AllegoriaeNoviTestamenti.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "rights"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Allegoriae in Vetus et Novum Testamentum",
+   "Liber excerptionum",
+   "Posteriorum excerptionum libri tredecim continentes utriusque Testamenti allegorias"
+  ],
+  "author": "Richard of Saint Victor",
+  "category": "biblical-commentary",
+  "description": "Richard of Saint Victor's instructional and exegetical compilation. Its second part circulated independently as Allegoriae in Vetus et Novum Testamentum and was printed under Hugh of Saint Victor's name. Jean Châtillon's critical edition restored the work to Richard; the IRHT Bibale record expressly calls the Hugh attribution false. The Luke 17 ten-lepers chapter is pars II, liber XIV, caput 4 in Châtillon's structure, but appears as liber IV, caput 25 in the older Hugh-attributed printing. Those locators are crosswalks, not competing authorships.",
+  "id": "work.richard-of-saint-victor.liber-exceptionum",
+  "languages": [
+   "la"
+  ],
+  "title": "Liber exceptionum"
+ }
+}

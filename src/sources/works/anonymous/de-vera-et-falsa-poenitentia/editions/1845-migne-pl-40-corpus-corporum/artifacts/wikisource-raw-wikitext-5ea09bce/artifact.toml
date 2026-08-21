@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum.wikisource-raw-wikitext-5ea09bce"
+edition_id = "edition.anonymous.de-vera-et-falsa-poenitentia.1845-migne-pl-40-corpus-corporum"
+artifact_type = "wikisource-raw-wikitext"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+license = "CC-BY-SA-4.0"
+rights_basis = "The anonymous medieval Latin and Migne's nineteenth-century printing are public domain. Latin Wikisource makes its contributor text and markup available under Creative Commons Attribution-ShareAlike 4.0; the exact immutable revision is recorded under that license and left remote because the stable public revision route supplies the complete 61 KB witness without duplicating its contributor markup in this repository."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/w/index.php?title=De_vera_et_falsa_poenitentia&oldid=230354&action=raw"
+provenance = "Exact raw wikitext of immutable Latin Wikisource revision 230354, downloaded whole in one HTTPS request and hashed locally on 2026-08-21. The single page contains the complete treatise and identifies its source as Philipp Roelli's 2013 Corpus Corporum TEI encoding of Migne PL 40. No model mediated retrieval or transformation."
+retrieved = "2026-08-21"
+sha256 = "5ea09bcea354e0b22364eaef1620d60909e84da22eb22631bdf4c8426bd6ca9c"
+byte_size = 61907
+indexable = false
+notes = "This mutable web witness is pinned to one immutable revision and was used to navigate and compare the complete text, not to override the page image. Its chapter 10 transcription reads the phrase 'ad cos pervenirent'; direct inspection of PL column 1122 confirms the print's 'ad eos pervenirent'. The page labels the author 'Auctor incertus (Augustinus Hipponensis?)' and thus does not establish Augustinian authorship. Acquisition aliases match those recorded for the facsimile artifact."

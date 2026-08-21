@@ -153,6 +153,34 @@
    "rights_jurisdiction": null,
    "source_url": "https://geschichte.digitale-sammlungen.de/decretum-gratiani/kapitel/dc_chapter_0_0071",
    "storage": "restricted"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 2215060,
+   "id": "artifact.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.mdz-leaf-00635-image",
+   "media_type": "image/jpeg",
+   "notes": "One image containing Friedberg columns 1165-1166, headed 'De penitencia Dist. I. c. 29-35.' The dictum Gratiani post C.33 q.3, De poenitentia, D.1 c.34 begins at the foot of column 1165 with the chapter text 'Conuertimini ad me' and runs through column 1166 before c.35. Exact bytes were visually inspected but are not retained because the stable public delivery route serves a 2.2 MB page rendition.",
+   "page_count": 1,
+   "retrieved": "2026-08-21",
+   "rights": "public-domain",
+   "rights_basis": "Mechanical reproduction of one page of an 1879 printing; the underlying publication is in the public domain in the United States by publication date, and the faithful photographic reproduction adds no original authorship.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://geschichte.digitale-sammlungen.de/decretum-gratiani/scans/bsb00009126_00635?resolution=2",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 2347523,
+   "id": "artifact.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.mdz-leaf-00646-image",
+   "media_type": "image/jpeg",
+   "notes": "One image containing Friedberg columns 1187-1188, headed 'Decreti secunda pars Causa XXXIII. Quest. III. c. 87. 88.' C.88 begins at the foot of column 1187 and continues through column 1188; sections 1-2 occupy the middle and lower part of column 1188 before section 3. Exact bytes were visually inspected but are not retained because the stable public delivery route serves a 2.3 MB page rendition.",
+   "page_count": 1,
+   "retrieved": "2026-08-21",
+   "rights": "public-domain",
+   "rights_basis": "Mechanical reproduction of one page of an 1879 printing; the underlying publication is in the public domain in the United States by publication date, and the faithful photographic reproduction adds no original authorship.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://geschichte.digitale-sammlungen.de/decretum-gratiani/scans/bsb00009126_00646?resolution=2",
+   "storage": "remote"
   }
  ],
  "edition": {
@@ -162,13 +190,63 @@
   "id": "edition.gratian.decretum.friedberg-1879-mdz-web-2026-07-25",
   "jurisdiction": null,
   "language": "la",
-  "notes": "A dated delivery state of an electronic transcription of the public-domain 1879 edition. Friedberg's text, not a critical text of Gratian's earliest recension, is what this witness delivers; the transcription's chapter pages include the adjoining dicta Gratiani. No collation against the printed 1879 pages was performed.",
-  "publication": "Muenchener DigitalisierungsZentrum (Bayerische Staatsbibliothek) online edition 'Decretum Gratiani (Kirchenrechtssammlung)', an electronic transcription of Aemilius Friedberg's Corpus iuris canonici, editio Lipsiensis secunda, volume 1 (Leipzig: Tauchnitz, 1879); chapter pages retrieved 2026-07-25",
+  "notes": "A dated delivery state of an electronic transcription and page-image presentation of the public-domain 1879 edition. Friedberg's text, not a critical text of Gratian's earliest recension, is what this witness delivers; the transcription's chapter pages include the adjoining dicta Gratiani. The first-part passages registered on 2026-07-25 were not collated against the printed pages. The two C.33 q.3, De poenitentia, D.1 passages registered on 2026-08-21 were read directly in the MDZ page images and checked against their corresponding chapter transcriptions.",
+  "publication": "Muenchener DigitalisierungsZentrum (Bayerische Staatsbibliothek) online edition 'Decretum Gratiani (Kirchenrechtssammlung)', an electronic transcription and page-image presentation of Aemilius Friedberg's Corpus iuris canonici, editio Lipsiensis secunda, volume 1 (Leipzig: Tauchnitz, 1879); chapter pages retrieved 2026-07-25 and page images for columns 1165-1166 and 1187-1188 retrieved 2026-08-21",
   "title": "Decretum Gratiani, ed. Friedberg (Corpus iuris canonici I, Leipzig 1879) — MDZ online transcription, dated web state",
   "translators": [],
   "year": 2026
  },
  "passages": [
+  {
+   "artifact_id": "artifact.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.mdz-leaf-00646-image",
+   "artifact_type": "page-scan-image",
+   "context": "Read visually in Friedberg I, column 1188, and checked against the exact MDZ c.88 transcription response. Section 1 directs the penitent seeking grace to 'querat sacerdotem scientem ligare et soluere.' Section 2 treats inability to reach a priest: 'si deest sacerdos, confiteatur proximo'; it immediately denies the neighbor the power of loosing and grounds the penitent's worthiness for pardon in 'desiderio sacerdotis.' It then invokes the lepers who were cleansed while going to show themselves to the priests: 'Mundati enim sunt leprosi, dum ibant ostendere ora sacerdotibus ante, quam ad eos peruenirent. Unde patet, Deum ad cor respicere, dum ex necessitate prohibentur ad sacerdotes peruenire.'",
+   "id": "passage.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.c-33-q-3-de-poenitentia-d-1-c-88-ss-1-2",
+   "locus": "c-33-q-3-de-poenitentia-d-1-c-88-ss-1-2",
+   "media_type": "image/jpeg",
+   "notes": "The exact MDZ chapter response for dc_chapter_3_3490 was also acquired on 2026-08-21 (SHA-256 e5c509164dc4e64a6551feeec2309dee351b01adc702ba46c6f3ba0132562c6f, 8,997 bytes); its LF physical lines 65-86 contain sections 1-2. This passage supports personal confession to a priest and a necessity case in which confession to a neighbor manifests desire for the unavailable priest. It does not give the neighbor sacramental power to absolve; the text expressly says he lacks 'potestatem soluendi.' Friedberg's preceding dictum introduces c.88 as an authority of Augustine from a book De penitentia; this record establishes Friedberg's received attribution and wording, not modern critical authorship of that work.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Mechanical reproduction of one page of an 1879 printing; the underlying publication is in the public domain in the United States by publication date, and the faithful photographic reproduction adds no original authorship.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://geschichte.digitale-sammlungen.de/decretum-gratiani/scans/bsb00009126_00646?resolution=2",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "storage"
+  },
+  {
+   "artifact_id": "artifact.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.mdz-leaf-00635-image",
+   "artifact_type": "page-scan-image",
+   "context": "Read visually in Friedberg I, columns 1165-1166, and checked against the exact MDZ c.34 transcription response. The dictum begins '[Gratian.] Conuersio autem dicitur quasi cordis undique uersio.' In section 1 it states: 'Dominus ostenderet, quod non sacerdotali iudicio, sed largitate diuinae gratiae peccator emundatur'; it then distinguishes the acts without suppressing either: 'Leprosus semetipsum sacerdoti representat, dum peccatum suum sacerdoti penitens confitetur. Sacrificium offert ex lege, dum satisfactionem ecclesiae iudicio sibi inpositam factis exequitur. Sed ante, quam ad sacerdotes perueniat, emundatur, dum per contritionem cordis ante confessionem oris peccati uenia indulgetur.' Section 2 continues the resurrection image: one raised by the Lord lives while confessing and has the raiser present and indwelling.",
+   "id": "passage.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.c-33-q-3-de-poenitentia-d-1-dp-c-34",
+   "locus": "c-33-q-3-de-poenitentia-d-1-dp-c-34",
+   "media_type": "image/jpeg",
+   "notes": "The exact MDZ chapter response for dc_chapter_3_3436 was also acquired on 2026-08-21 (SHA-256 e4b376bf6ec4f1103d9db6a89d1bb0960900b04f42c2d0eb1bdfdee8f4edff86, 7,477 bytes); its LF physical lines 24-80 carry the dictum, with the controlling contrast and its confession/satisfaction development at lines 38-54. This passage establishes the argument made at this stage of Gratian's dialectical treatment: cleansing and pardon are attributed to divine grace through inward contrition before oral confession, while personal confession to the priest and satisfaction imposed by ecclesial judgment remain real subsequent acts. It does not by itself establish the final disposition of the whole quaestio; the later dictum post c.87 expressly reinterprets earlier contrition-only authorities.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "Mechanical reproduction of one page of an 1879 printing; the underlying publication is in the public domain in the United States by publication date, and the faithful photographic reproduction adds no original authorship.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://geschichte.digitale-sammlungen.de/decretum-gratiani/scans/bsb00009126_00635?resolution=2",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "storage"
+  },
   {
    "artifact_id": "artifact.gratian.decretum.friedberg-1879-mdz-web-2026-07-25.mdz-chapter-0005-html",
    "artifact_type": "content-html",
@@ -453,7 +531,7 @@
   ],
   "author": "Gratian",
   "category": "canonical-collection",
-  "description": "The mid-twelfth-century canonical collection whose first-part distinctions open with the taxonomy of law received from Isidore. Loci here address the first part by distinction: d-N-pr for the dictum Gratiani opening a distinction, d-N-c-M for a chapter with any adjoining dicta. The Munich (MDZ) online transcription of Friedberg's 1879 Leipzig edition serves as the accessible public-domain-based witness.",
+  "description": "The mid-twelfth-century canonical collection whose first-part distinctions open with the taxonomy of law received from Isidore and whose second part includes the Tractatus de poenitentia at C.33 q.3. First-part loci use d-N-pr for the dictum Gratiani opening a distinction and d-N-c-M for a chapter with any adjoining dicta. De poenitentia loci retain their full address as c-N-q-N-de-poenitentia-d-N, followed by c-M for a chapter or da-c-M/dp-c-M for a dictum before or after it; -ss-N or -ss-N-M bounds numbered sections. The Munich (MDZ) online transcription and page images of Friedberg's 1879 Leipzig edition serve as the accessible public-domain-based witnesses.",
   "id": "work.gratian.decretum",
   "languages": [
    "la"

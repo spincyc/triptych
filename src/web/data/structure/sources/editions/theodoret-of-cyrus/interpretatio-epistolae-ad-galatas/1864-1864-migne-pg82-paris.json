@@ -1,0 +1,78 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile",
+   "byte_size": 112586234,
+   "id": "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e",
+   "media_type": "application/pdf",
+   "notes": "The exact complete facsimile was acquired and hashed but is not retained because its 107.4 MiB size is disproportionate to the bounded Galatians locus. The printed title page dates the volume 1864, correcting Wikimedia Commons metadata that dates it 1860. Artifact pages 233-235, carrying PG 82:479-484, were visually inspected in the facsimile; extracted OCR was used only for navigation.",
+   "page_count": 854,
+   "retrieved": "2026-08-21",
+   "rights": "public-domain",
+   "rights_basis": "The 1864 volume is public domain in the United States and in life-plus-70 jurisdictions; Wikimedia Commons marks the scan public domain.",
+   "rights_jurisdiction": "United States; life-plus-70 jurisdictions",
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Patrologia_Graeca_Vol._082.pdf",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1864",
+  "editors": [
+   "Johann Ludwig Schulze",
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris",
+  "jurisdiction": null,
+  "language": "grc-la",
+  "notes": "The Greek commentary is printed with Hervetus's facing Latin translation. The Galatians commentary begins at PG 82:459; PG column numbers and letters are the stable loci. The scan's OCR is a locating aid only and does not control wording.",
+  "publication": "Paris: J.-P. Migne, 1864",
+  "title": "Theodoreti Cyrensis Episcopi Opera Omnia, tomus III (Patrologia Graeca 82)",
+  "translators": [
+   "Gentianus Hervetus"
+  ],
+  "year": 1864
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e",
+   "artifact_type": "facsimile",
+   "context": "The Greek exposition and facing Latin were read from Galatians 3:16 through 3:22. On verses 16-18 Theodoret identifies Christ as the promised Seed in the proper and unique sense because through him the nations receive Abraham's blessing; other Israelites are Abraham's natural seed but not the Seed who bears that blessing. The later Law cannot add to, subtract from, dissolve, or nullify God's prior promise. On verse 19 he says the Law was added for transgressions and for the care of the people from whom the Seed would spring according to the flesh; angels ministered and Moses served in its giving. On verses 19-20 he explicitly calls Moses the mediator between the people and God, then stresses that the one God both promised to Abraham and gave the Law. On verse 21 he denies that the Law opposes the promise or can itself supply the vivification and righteousness under discussion, while distinguishing necessary moral commands from added ceremonial observances. On verse 22 he glosses Scripture's enclosing all under sin as its conviction of those before the Mosaic Law by natural law and those under it by the Mosaic Law, so that the promised remedy and salvation may be given through faith.",
+   "id": "passage.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.galatians-3-16-22-cols-479-484",
+   "locus": "Galatians 3:16-22, PG 82, columns 479C-484B",
+   "media_type": "application/pdf",
+   "notes": "This passage supports a bounded account of Theodoret's promise, Seed, Law, conviction, and mediator readings. It does not support identifying the mediator here as Christ: Theodoret names Moses. Nor should it support an unqualified claim that every command of the Law is non-vivifying or abrogated; his verse-21 explanation distinguishes necessary commands, which he calls vivifying, from additional ceremonial observances fitted to an immature people. Verification is of the Migne-Schulze witness, not a modern critical Greek text or the independent accuracy of Hervetus's translation.",
+   "readable": false,
+   "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
+   "rights": "public-domain",
+   "rights_basis": "The 1864 volume is public domain in the United States and in life-plus-70 jurisdictions; Wikimedia Commons marks the scan public domain.",
+   "rights_jurisdiction": "United States; life-plus-70 jurisdictions",
+   "segment_id": null,
+   "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Patrologia_Graeca_Vol._082.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-21",
+   "withheld": "storage"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentary on Galatians",
+   "Ἑρμηνεία τῆς πρὸς Γαλάτας ἐπιστολῆς"
+  ],
+  "author": "Theodoret of Cyrus",
+  "category": "biblical-commentary",
+  "description": "Theodoret of Cyrus's continuous Greek interpretation of Paul's Epistle to the Galatians, conventionally addressed by chapter and verse.",
+  "id": "work.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas",
+  "languages": [
+   "grc"
+  ],
+  "title": "Interpretatio Epistolae ad Galatas"
+ }
+}

@@ -43,34 +43,39 @@ summarized, not reproduced.
 
 The passage rows below also delimit the language corpora actually checked.
 For the four psalms, the Latin corpus is the named Hilary, Augustine, Jerome,
-Cassiodorus, Lombard, Aquinas, and Bellarmine works, with Greek Eusebius and
-Theodoret at the identified psalms and Origen at Psalm 67. For the orations,
+Cassiodorus, Lombard (PL 191:277–282, 601–604, 617–618), Aquinas, and
+Bellarmine works, with Greek Eusebius and Theodoret at the identified psalms
+and Origen, *Homilia II in Psalmum 67*, GCS NF 19, pp. 200–224, especially
+222–224. For the orations,
 the corpus is the named Latin sacramentaries, Missals, Aquinas loci, and
-Schuster. For 1 Corinthians 15, Greek Chrysostom, Theodoret, and the named
-early fragments were compared with Irenaeus in his received Latin version and
+Schuster. For 1 Corinthians 15, Greek Chrysostom and Theodoret were compared
+with Irenaeus in his received Latin version and
 with Latin Tertullian, Ambrosiaster, Augustine, Gregory, Orange, Aquinas, and
 Pius XII. For Mark 7, the checked
-Greek corpus is the named catena, Theophylact, and Euthymius material; the
+Greek corpus is the named catena and Theophylact at PG 123:565–568; the
 Latin corpus is Gregory, Augustine, Pseudo-Jerome, Bede, Anthony, Lawrence,
 Bellarmine, and the named later homilists. For Proverbs 3, the Greek corpus is
-the Origen-attributed *Selecta* lemma and the Latin corpus is Bede, Rabanus,
-Salvian, Aquinas, and Lapide. A negative below is bounded to these named
-works and exact lemmata, never to an unversioned universal corpus.
+the catena fragment transmitted under Origen's name, Pseudo-Basil, and
+Pseudo-Chrysostom; the early church-order corpus includes *Apostolic
+Constitutions* IV.9.2; and the Latin corpus is Bede, Salvian, Aquinas, and
+Lapide, Naples 1854, pp. 59–60. The PL 111 Bede duplicate was excluded as an
+independent Rabanus witness. Evidence boundaries below state what the cited
+loci can sustain; no universal negative is inferred from an unversioned corpus.
 
 ## Passage-by-passage reception matrix
 
-| Element / passage | Direct ancient reception checked | Medieval, Doctoral, or later saintly reception checked | Retained use and controlling limits | Material negatives |
+| Element / passage | Direct ancient reception checked | Medieval, Doctoral, or later saintly reception checked | Retained use and controlling limits | Evidence boundaries |
 | --- | --- | --- | --- | --- |
-| **Introit — Ps 67:2, 6–7, 36** | Hilary, *Tract. Ps.* 67.2, 8, 37; Augustine, *Enarr. Ps.* 67.2–3, 7–8, 44; Theodoret, *In Ps.* 67 at vv. 7, 36 | Jerome, *Tract. Ps.* 67; Cassiodorus, *Exp. Ps.* 67; Peter Lombard, *In Ps.* 67; Bellarmine, *In Ps.* 67 | Direct exposition of divine indwelling, concord, Acts 4:32, single-mindedness, Resurrection or patient fidelity. Cassiodorus alone among the checked lemmata has the chant's `unanimes`; no witness is made to expound the complete centonization as one verse. | Aquinas's extant Psalm commentary ends at Ps 54. Augustine does not supply Hilary/Cassiodorus's Acts 4:32 citation at this locus. None of the listed Psalm expositions warrants contemporary targeting through the enemy language. |
-| **Collect — `Omnipotens sempiterne Deus`** | Old Gelasian III.VII; no wording-level patristic commentary located | Hadrianum Gregorian XXX, later Roman witnesses; Aquinas, *ST* II–II, q. 83, aa. 2 and 16; Schuster III, 124–126 | Transmission of the three-prayer set; divine liberality and prayer heard through mercy; later liturgical interpretation of the unpresumed good. Aquinas is doctrinal illumination, not commentary on the oration. | Complete Feltoe/Veronese text searched for the Collect's diagnostic phrases; absent. No early wording commentary located. Modern critical prayer corpora unavailable publicly. |
-| **Epistle — 1 Cor 15:1–10 (ending mid-v. 10)** | Irenaeus, *Adv. haer.* III.18.3; Tertullian, *De res. carnis* 48; Chrysostom, *Hom. in 1 Cor.* 38; Ambrosiaster at 15:1–10; Theodoret, *In 1 Cor.* 15 | Aquinas, *Super I Cor.* XV, lect. 1 and *ST* III, q. 55, a. 3; Augustine, *De gratia et libero arbitrio* 5.12; Gregory, *Moralia* XVI.25; Orange II, canon 6; Pius XII, *Mystici Corporis* 87 | Bodily death and Resurrection, transmission, appearance testimony, humility, several readings of `abortivus`, and transformed persecution. Grace-and-cooperation witnesses are used only as full-canonical reception because they depend on the omitted end of v. 10. Aquinas's commentary is identified as a `reportatio vulgata`. | Tertullian's *Adversus Marcionem* V begins its 1 Cor 15 treatment at v. 12, not this appearance list. Augustine's named grace treatise does not expound `abortivus`. The lection ends before `gratia Dei mecum`; no claim may place it in the appointed text. |
-| **Gradual — Ps 27:7, 1** | Augustine, *Enarr. Ps.* 27.1, 7; Theodoret, *In Ps.* 27 at v. 7 | Jerome, *Commentarioli* at Ps 27; Cassiodorus, *Exp. Ps.* 27; Aquinas, *Super Ps.* 27; Lombard; Bellarmine | Resurrection reading of `refloruit caro mea` compared with Theodoret's historical reading of restored Davidic vigor. Textual order and variants govern the use. | Hilary has no extant tractate on Ps 27. No checked lemma has the entire chant form. `ne discedas a me` is absent at Ps 27:1 but matches Clementine Ps 34:22; this textual relation was not turned into an authorial claim. |
-| **Alleluia — Ps 80:2–3** | Augustine, *Enarr. Ps.* 80.3–5; Theodoret, *In Ps.* 80 at vv. 2–3 | Cassiodorus, *Exp. Ps.* 80; Jerome, *Tract. Ps.* 80; Bellarmine, *In Ps.* 80 | Joy in the true helper; literal festival and instrument context; moral relation of received word, almsgiving, and embodied action. | The chant drops instruments on which Augustine and Cassiodorus comment. No checked patristic lemma has the abbreviation. Jerome treats the title but not vv. 2–3 directly; Aquinas has no Ps 80 commentary. |
-| **Gospel — Mark 7:31–37** | Gregory the Great, *Hom. in Hiez.* I.10.20; Augustine, *De cons. ev.* IV.4.5; anonymous/Pseudo-Jerome Mark commentary; Greek catena/Victor material distinguished from Chrysostom | Bede, *In Marcum* II and Homily II.6/II.19; Theophylact, PG 123:565–568; Aquinas's *Catena* as compiler; Albert, Bonaventure, Anthony of Padua, Denis the Carthusian, Lawrence of Brindisi; Bellarmine on baptism; Newman, Alphonsus, Romero, John Paul II, Leo XIV | Direct gesture exegesis, two-natures and incarnational readings, catechesis, baptismal reception, moral discipline of speech, bodily dignity, communion, and mission. Gregory's paragraph is also the Sunday Office's Matins lesson under the 1960 rubrics. Attribution and liturgical-set differences are stated. | No true synoptic parallel; Matt 15:29–31 is a summary. The man's ethnicity, exact site, route, and date are unknown. Theophylact's demonic diagnosis is his inference, not Mark's. `Ephphatha` is conventionally Aramaic but a Hebrew classification has been argued. Pseudo-Jerome, Pseudo-Chrysostom/Victor, and catena excerpts are not assigned to Jerome or John Chrysostom. Supersessionist disability/Israel allegory is quarantined, not synthesized. |
-| **Offertory — Ps 29:2–3** | Augustine, two *Enarrationes in Ps.* 29; Theodoret at title and vv. 2–3 | Jerome, *Commentarioli* at the title; Cassiodorus; Aquinas, *Super Ps.* 29; Bellarmine | Individual thanksgiving, healing, Christ's risen body, Church under construction, and renewal of human nature. Theodoret's Hezekiah application preserves a literal alternative. | Hilary has no extant tractate on Ps 29. The chant omits `Deus meus`; the checked commentators use the complete verse. Liturgical proximity to Mark is not evidence of original psalmic reference. |
-| **Secret — `Respice, Domine`** | Veronese, October XXXII drought Mass; Old Gelasian III.VII | Hadrianum Gregorian XXX; 1570 and 1604 Missals; Schuster III, 127 | Prayer transmission, `ad`/case/coordination variants, service as liturgy, acceptable offering, and aid for fragility. | No wording commentary occurs in the listed sacramentary/Missal witnesses; Schuster is later reception. The Veronese drought setting does not determine the prayer's later Sunday meaning. |
-| **Communion — Prov 3:9–10** | Origen-attributed *Selecta in Proverbia* at Prov 3:9, PG 13:29–32; Salvian, *Ad Ecclesiam* I | Bede, *In Prov.* I at 3:9–10; Rabanus, *In Prov.* I, PL 111:688–690; Schuster III, 127 | Honestly held substance, almsgiving, crediting works to grace, heavenly reward, and harvest/firstfruits reception. Complete sapiential context controls the promise. | Salonius's selective Proverbs exposition has no treatment at this locus. Cyprian's *De opere et eleemosynis* and *Ad Quirinum* III.1 yield near parallels but not Prov 3:9. The Greek/Vulgate wording difference prevents phrase-level harmonization. No prosperity claim is retained. |
-| **Postcommunion — `Sentiamus`** | Veronese, July XXXVIII; Old Gelasian III.VII | Hadrianum Gregorian XXX; Schuster III, 127–128; Irenaeus, *Adv. haer.* IV.18.5–6 and V.2.2–3; Augustine, *De civitate Dei* X.5–6 | Ancient prayer transmission, mind/body unity, Eucharistic help, heavenly remedy, and final Resurrection. | The listed early sacramentaries transmit wording but no exposition. The prayer does not specify present physical cure or replace medical care. |
+| **Introit — Ps 67:2, 6–7, 36** | Hilary, *Tract. Ps.* 67.2, 8, 37; Augustine, *Enarr. Ps.* 67.2–3, 7–8, 44; Theodoret, *In Ps.* 67 at vv. 7, 36 | Jerome, *Tract. Ps.* 67; Cassiodorus, *Exp. Ps.* 67; Peter Lombard, *In Ps.* 67, PL 191:601–604, 617–618; Bellarmine, *In Ps.* 67 | Direct exposition of divine indwelling, concord, Acts 4:32, single-mindedness, Resurrection or patient fidelity. Cassiodorus alone among the checked lemmata has the chant's `unanimes`; no witness is made to expound the complete centonization as one verse. | Aquinas's extant Psalm commentary ends at Ps 54. The proper's complete cento and its enemy-to-witness development are liturgical syntheses, not assigned to a commentator on one source verse. |
+| **Collect — `Omnipotens sempiterne Deus`** | Old Gelasian III.VII | Hadrianum Gregorian XXX, later Roman witnesses; Aquinas, *ST* II–II, q. 83, aa. 2 and 16; Schuster III, 124–126 | Transmission of the three-prayer set; divine liberality and prayer heard through mercy; later liturgical interpretation of the unpresumed good. Aquinas is doctrinal illumination, not commentary on the oration. | Feltoe's complete Veronese transcription supplies the Secret and Postcommunion ancestors, not this Collect; no patristic wording commentary is relied upon. |
+| **Epistle — 1 Cor 15:1–10 (ending mid-v. 10)** | Irenaeus, *Adv. haer.* III.18.3; Tertullian, *De res. carnis* 48; Chrysostom, *Hom. in 1 Cor.* 38; Ambrosiaster at 15:1–10; Theodoret, *In 1 Cor.* 15 | Aquinas, *Super I Cor.* XV, lect. 1 and *ST* III, q. 55, a. 3; Augustine, *De gratia et libero arbitrio* 5.12; Gregory, *Moralia* XVI.25; Orange II, canon 6; Pius XII, *Mystici Corporis* 87 | Bodily death and Resurrection, transmission, appearance testimony, humility, several readings of `abortivus`, and transformed persecution. Grace-and-cooperation witnesses are used only as full-canonical reception because they depend on the omitted end of v. 10. Aquinas's commentary is identified as a `reportatio vulgata`. | Tertullian's *Adversus Marcionem* V begins its treatment at v. 12 and is not used for this appearance list. The lection ends before `gratia Dei mecum`; no claim places that clause in the appointed text. |
+| **Gradual — Ps 27:7, 1** | Augustine, *Enarr. Ps.* 27.1, 7; Theodoret, *In Ps.* 27 at v. 7 | Jerome, *Commentarioli* at Ps 27; Cassiodorus, *Exp. Ps.* 27; Aquinas, *Super Ps.* 27; Lombard, PL 191:277–282; Bellarmine | Resurrection reading of `refloruit caro mea` compared with Theodoret's historical reading of restored Davidic vigor. Textual order and variants govern the use. | The chant's complete form is not assigned to a checked commentator. Its `ne discedas a me` is absent at Ps 27:1 and matches Clementine Ps 34:22; this is a liturgical textual relation, not a patristic variant. |
+| **Alleluia — Ps 80:2–3** | Augustine, *Enarr. Ps.* 80.3–5; Theodoret, *In Ps.* 80 at vv. 2–3 | Cassiodorus, *Exp. Ps.* 80; Jerome, *Tract. Ps.* 80; Bellarmine, *In Ps.* 80 | Joy in the true helper; literal festival and instrument context; moral relation of received word, almsgiving, and embodied action. | Augustine and Cassiodorus expound the complete source verse's instruments and receive/give pair, not the abbreviated chant; the publication marks that distinction. |
+| **Gospel — Mark 7:31–37** | Gregory the Great, *Hom. in Hiez.* I.10.20; Augustine, *De cons. ev.* IV.4.5; anonymous/Pseudo-Jerome Mark commentary; Greek catena/Victor material distinguished from Chrysostom | Bede, *In Marcum* II, CCSL 120:525–526, and Homily II.6/II.19, CCSL 122:220–224; Theophylact, PG 123:565–568; Aquinas's *Catena* as compiler; Albert, *Super Marcum*, Borgnet XXI:504–507; Bonaventure, *Sermones de tempore*, Dominica XI, Quaracchi IX:395–398; Anthony of Padua, *Dominica XII*, §§3, 8–14; Denis the Carthusian, *Opera omnia* XI:339–340; Lawrence of Brindisi, *Opera omnia* VIII:124–141; Bellarmine, *De baptismo* I.24; Newman, Romero, John Paul II, Leo XIV | Direct gesture exegesis, two-natures and incarnational readings, catechesis, baptismal reception, moral discipline of speech, bodily dignity, communion, and mission. Gregory's paragraph is also the Sunday Office's Matins lesson under the 1960 rubrics. Lawrence's Creator/Isaiah/Spirit/Wisdom interpretation is rendered positively in its own theological register, and its universal spiritual application is received as every soul's need for grace to open hearing and confession. Disability-as-guilt and collective Jewish rejection are excluded by distinct doctrinal controls, without making those exclusions the interpretation's governing voice. | Matthew 15:29–31 is a summary rather than an exact parallel. Mark does not state the man's ethnicity, exact site, or motive for the route; the traditional harmonies give incompatible AD 28 and AD 33 placements. Pseudo-Jerome, Pseudo-Chrysostom/Victor, and catena excerpts retain their transmitted attributions. |
+| **Offertory — Ps 29:2–3** | Augustine, two *Enarrationes in Ps.* 29; Theodoret at title and vv. 2–3 | Jerome, *Commentarioli* at the title; Cassiodorus; Aquinas, *Super Ps.* 29; Bellarmine | Individual thanksgiving, healing, Christ's risen body, Church under construction, and renewal of human nature. Theodoret's Hezekiah application preserves a literal alternative. | The chant omits `Deus meus`; the commentators use the complete verse. Liturgical proximity to Mark permits contemplation of the received sequence, not a claim about the psalm's first reference. |
+| **Secret — `Respice, Domine`** | Veronese, October XXXII drought Mass; Old Gelasian III.VII | Hadrianum Gregorian XXX; 1570 and 1604 Missals; Schuster III, 127 | Prayer transmission, `ad`/case/coordination variants, service as liturgy, acceptable offering, and aid for fragility. | The early witnesses transmit the prayer rather than expound it; Schuster supplies later reception. The Veronese drought setting does not determine the prayer's later Sunday meaning. |
+| **Communion — Prov 3:9–10** | Greek catena fragment transmitted under Origen's name, PG 13:29–32; *Apostolic Constitutions* IV.9.2; Pseudo-Basil, PG 31:1708–1709; Pseudo-Chrysostom, PG 62:747–748; Salvian, *Ad Ecclesiam* I.5–6 | Bede, *In Prov.* I at 3:9–10, CCSL 119B p. 40 ll. 66–94; Aquinas, *ST* II–II, q. 86, aa. 3–4; Schuster III, 127 | Just possession, almsgiving, restitution, crediting works to grace, heavenly reward, and harvest/firstfruits reception. The substantially identical PL 111:693C–694A passage is a misattributed duplicate of Bede, not independent Rabanus. Complete sapiential context controls the promise. | Greek and Vulgate wording are not harmonized phrase by phrase. The interpreters' justice, mercy, and heavenly-harvest readings govern the abundance promise; no prosperity claim is retained. |
+| **Postcommunion — `Sentiamus`** | Veronese, July XXXVIII; Old Gelasian III.VII | Hadrianum Gregorian XXX; Schuster III, 127–128; Irenaeus, *Adv. haer.* IV.18.5–6 and V.2.2–3; Augustine, *De civitate Dei* X.5–6 | Ancient prayer transmission, mind/body unity, Eucharistic help, heavenly remedy, and final Resurrection. | The sacramentaries transmit wording rather than exposition. The prayer asks sacramental help toward heavenly fullness; it does not specify present physical cure. |
 
 ## Gospel attribution and reception controls
 
@@ -98,9 +103,9 @@ works and exact lemmata, never to an unversioned universal corpus.
 
 ## Liturgical transmission controls
 
-- The Veronese collection holds early forms of Secret and Postcommunion in
-  separate Masses. It does not contain the Collect in the complete searchable
-  text checked.
+- The named Veronese loci hold early forms of Secret and Postcommunion in
+  separate Masses. This bounded comparison makes no claim about a Veronese
+  locus for the Collect.
 - Old Gelasian Book III.VII is the earliest checked witness joining all three
   orations; it does not yet fix them to this numbered Sunday.
 - The Hadrianum Gregorian places the set at Sunday XII. Its marginal chant
@@ -113,23 +118,29 @@ works and exact lemmata, never to an unversioned universal corpus.
 ## Scriptural date/location audit
 
 The page-2 order is Psalms 27, 29, 67, and 80; Proverbs 3; Mark 7; and 1
-Corinthians 15. Psalmic superscriptions were treated as received traditional
-orientation, never as recovered `c. 1000 BC` composition dates. Psalm 29's
-later Temple-dedication use in the Maccabean horizon was separated from the
-unknown composition. Proverbs' final form was placed broadly in the early
-Second-Temple period. Mark's common c. 65–75 horizon preserves Roman-before-70
-and Syrian-after-70 alternatives; the narrated event's exact town, route, and
-year remain unknown. First Corinthians was oriented to Ephesus, c. AD 56,
-with a responsible 55–57 range.
+Corinthians 15. Each summary row now foregrounds sourced received Catholic
+attribution and chronology. Psalm 27 is placed in the traditional flight from
+Saul before the older 1055 BC accession; Psalm 29 gives the palace and
+census-altar alternatives within David's 1055–1015 BC reign; Psalm 67 gives
+the Ark-to-Zion setting soon after the older c. 1047 BC Jerusalem horizon;
+Psalm 80 gives Asaph, or David for Asaph, in c. 1047–1015 BC sanctuary service.
+These are declared traditional settings and broad chronological deductions,
+not recovered autograph dates. Proverbs receives its Solomonic tenth-century
+horizon (older Catholic chronology c. 1015–975 BC), with postexilic final
+collection secondarily reported. Mark receives the Petrine/Roman account and
+traditional AD 50–67 range; the Biblical Commission's pre-70 response; and the
+unmerged Maas AD 28 and a Lapide AD 33 event harmonies, followed by NABRE's
+around-70 Rome/Syria comparison. First Corinthians foregrounds the older Easter
+AD 57 chronology and reports the current Catholic c. AD 56 estimate second.
 
 ## Interpretive-proposal audit
 
 | Proposal | Exact anchors and mechanism | Precedent result and searched boundary | Fruit | Strongest limit |
 | --- | --- | --- | --- | --- |
 | Ear governs tongue | Epistle reception/transmission; Alleluia and its psalm's hearing; Gospel opened ears, right speech, secrecy | **Near analogue located:** Anthony §§13–14, Augustine *De cons.* IV.4.5, Honorius IV.68; checked Mark, Sunday, Psalm, Pauline, homiletic, and liturgical syntheses | confession as received obedience | disability is not culpability; secrecy prevents a generic “speak more” rule |
-| Silence answered by groan and one word | Gradual `ne sileas/ne discedas`; Gospel look, groan, `Ephphetha` | **Not located in the named witnesses:** Psalm 27 expositions by Augustine, Jerome, Theodoret, Cassiodorus, Aquinas, Lombard, and Bellarmine; Mark 7 treatments by Gregory, Augustine, Pseudo-Jerome, Bede, Theophylact, Anthony, Lawrence, and the cited modern homilists | prayer need not measure answer by verbal volume | no promise of audible reply; no historical pairing claim |
+| Silence answered by groan and one word | Gradual `ne sileas/ne discedas`; Gospel look, groan, `Ephphetha` | **Editorial liturgical synthesis:** no direct precedent is claimed; the proposal follows the exact juxtaposition after comparison with the named Psalm 27 and Mark 7 treatments | prayer need not measure answer by verbal volume | no promise of audible reply; no historical pairing claim |
 | Grace becomes returnable possession | Collect abundance; Epistle fruitful grace; Secret offered service/help; Communion substance/firstfruits | **Near analogue located:** Honorius IV.65 joins the Collect, Epistle, and Communion, but not this Secret, within an older set; sacramentary and later liturgical commentary checked | stewardship and worship without ownership | older Gospel/Alleluia differ; omitted `gratia mecum` cannot be imported |
-| Enemy becomes witness | Introit `Exsurgat`/enemies; Paul the persecutor shown the risen Christ | **Not located in the named witnesses:** the Psalm 67 and 1 Corinthians 15 expositions listed in the passage matrix, or Honorius's two historical Sunday syntheses | hope for conversion rather than fixed adversarial identity | does not erase judgment, consequences, or every enemy's freedom |
+| Enemy becomes witness | Introit `Exsurgat`/enemies; Collect's unmerited mercy; Paul the persecutor shown the risen Christ | **Partial saintly analogue located:** Romero, 9 September 1979, explicitly joins Mark 7 to 1 Cor 15:9–10 and Christ's remaking of the sinner; the Psalm-to-Paul relation remains this guide's liturgical synthesis | paschal victory disclosed as conversion into witness | does not erase judgment, repair owed, consequences, or freedom |
 | Material signs minister whole person | Gospel fingers/saliva; Secret fragility/help; Postcommunion mind/body remedy | **Near analogue located:** Ambrose baptismal reception, Anthony, Schuster, Roman baptismal rite | sacramental realism and embodied pastoral care | distinct miracle, rite, sacrifice, and sacrament may not be collapsed; no automatic cure |
 | Unvoid grace to fullness | Collect abundance; Epistle `vacua`; Communion filled barns/presses; Postcommunion fullness | **Near analogue located:** Honorius, Bede on Proverbs, Schuster; checked oration, Pauline, sapiential, and liturgical commentaries | eschatological fruitfulness rather than accumulation | prosperity teaching disconfirms the proposal |
 
@@ -144,15 +155,9 @@ No proposal is claimed universally new or authored by a cited authority.
 | Ps 67:2, “Let God arise” | Hodgson, *Original Memoirs* (1806), pp. 147–148; Carlyle, *Letters and Speeches* (1861), II, 332–333; III, 171–172 | Remembered wording controlled by reference note and later transcription | PD. Entrance petition becomes victory-cry and political warrant. Not Cromwell's own dispatch; not Douay wording. |
 | Mark 7:34, `Ephphatha` | *Scranton Tribune*, 14 Nov. 1895, p. 3; *Council Membership Directory 1969*, ERIC ED032704, printed pp. 11, 25 | Documentary self-explanation and institutional records checked | PD newspaper / brief ERIC citation. Miracle word becomes a guild, conference, service, and board name. Church-affiliated institutional register; Scranton source mislabels the word Greek. |
 
-Bounded negative dispositions: in the cited Morris, newspaper, Cromwell, and
-ERIC materials, no secular reuse of `grace of God I am what I am`, ironic use
-of `He hath done all things well`, commercial use of Proverbs 3:9–10, or
-non-devotional use of “setteth the solitary in families” was found. Those
-checks do not establish a universal negative; consequently none of those leads
-was retained. The frequently alleged Popeye connection was likewise excluded
-for want of a checked source. F. W. Farrar's *Ephphatha* is sermon reception,
-not a secular afterlife. Sam Nguyen's 1998 *Ephphatha* title was verified only
-at catalog level and is too close to bare-title reuse.
+Only the four page-located uses above form the publication's gallery. Bare
+title matches, unattributed anecdotes, and links supported only by search
+results were excluded rather than converted into negative claims.
 
 ## Rights, translation, and quotation
 
@@ -174,10 +179,13 @@ at catalog level and is too close to bare-title reuse.
 ## Review state
 
 The canonical and synthesis sources were authored from the checked research
-above. Both variants compiled after source freeze; their AUX-aware component,
-metadata, source-library, web-declaration, and web-conversion gates passed.
-Independent page-by-page visual review of both rendered variants was completed
-on 2026-08-20. The sparse full-edition page 8 found in that review was reflowed
-without moving the fixed page-1 map, page-2 dossier, pages-3--4 synthesis, or
-page-5 detailed-commentary opening, and the final architecture was rechecked.
-No PDF or web output was installed.
+above. Independent content, citation/binding, profile/component, originality,
+and visual audits completed on 2026-08-20 supplied corrections incorporated
+here. After the substantive rewrite, both rendered variants were reviewed
+page by page again on 2026-08-21. The full and synthesis editions retain the
+fixed map on page 1, dossier on page 2, substantive synthesis on pages 3--4,
+and detailed material beginning on page 5; all remaining pages were checked
+for clipping, sparse spill, and unstable flow. Both variants compiled after
+source freeze; their AUX-aware component, metadata, source-library,
+web-declaration, web-conversion, and log gates passed. No PDF or web output was
+installed.

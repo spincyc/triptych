@@ -1683,3 +1683,13 @@ then completed successfully, and the live catalog, all three GPT Reader routes,
 and all three full-PDF routes returned HTTP 200. The outgoing range made no
 material change to a Claude publication; the unrelated local `directions.md`
 remained untracked and outside both commits and deployment.
+
+**Reopened on 2026-08-21.** The maintainer rejected the published editions as
+an insufficient first pass. The revision must make `Themes and Movement` two
+substantively complete pages, replace non-answers in the date/location sheet
+with responsibly sourced traditional Catholic dates and attributions, render
+patristic and saintly interpretations faithfully within their own theological
+grammar rather than organizing the discussion around apology or suspicion,
+and greatly deepen both intra-proper exposition and cross-proper development.
+That superseded public snapshot remains live until this independently reviewed
+substantive revision is redeployed.
