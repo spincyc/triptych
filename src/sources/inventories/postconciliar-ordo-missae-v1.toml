@@ -4,13 +4,23 @@ title = "The Order of Mass"
 
 advisory = """
 A finding aid for the shape of the rite, and never a book to celebrate from. \
-Almost every text of this Order of Mass is withheld here, and the two reasons \
-are kept apart at every element because they are different reasons: the \
-approved English is the International Commission on English in the Liturgy's \
-and this project has no licence to reproduce it, while the Latin editio typica \
-is a post-1929 work of the Holy See for which this project has established no \
-distribution basis at all. What stands in their place is each element's \
-received Latin incipit, which is a reference and not the prayer. \
+Most of this Order of Mass is missing here, and every element says which of its \
+two texts is missing and why, because they are not missing for one reason. The \
+English side has one reason, recorded here as `icel`: the approved English is \
+the International Commission on English in the Liturgy's, and this project holds \
+no exact copy of the words. The Latin side has six, and they run from the \
+reform's own new matter, which is the Holy See's and is withheld, to a rubric \
+that has no words in any book. Where a text is missing what stands in its place \
+is the element's received Latin incipit, which is a reference and not the prayer. \
+THE LATIN THAT IS HERE IS NOT THIS MISSAL'S. Ten elements carry Latin, and at \
+every one of them it is the facing column of an 1861 Philadelphia lay hand \
+missal printing the ancient prayer this Order of Mass received. The Latin of the \
+editio typica itself is in copyright and is not held by this project, in any \
+element, anywhere on this page. Each of the ten says beside its own words which \
+prayer of that older book it is, at which printed page and leaf, which accidents \
+of that printing it carries unnormalised, and whether its identity with the \
+controlling edition has been established by a collation this repository holds or \
+is so far only asserted. Four are established; six are not, and they say so. \
 The English that IS here is the ecumenical text of the English Language \
 Liturgical Consultation, which the rightsholder grants freely and which is NOT \
 what is said at Mass in the dioceses of the United States. Where the two \
@@ -30,7 +40,19 @@ states the boundary this file inherits: the Latin is quoted there where an \
 argument requires it, as evidence and not as text for recitation, and the \
 approved English is not reproduced. The English texts here are drawn from the \
 artifact registered at \
-artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en.
+artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en. \
+The Latin texts here are drawn from a DIFFERENT BOOK, and that is the whole of \
+what has to be understood about them: the six ordinarium, praefationes and \
+canon-missae `-la` artifacts of \
+edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861, which \
+transcribe the facing Latin column of an 1861 Philadelphia lay hand missal from \
+a registered scan at 640 dpi, one physical line per printed block, each row \
+carrying its own printed page, Internet Archive leaf and transcriber's note. \
+Those artifacts are already the Latin of this project's 1962 frame; here they \
+are joined to a second calendar, element by element, because the older book \
+prints the ancient prayer the postconciliar Missal received and for no other \
+reason. Nothing is transcribed afresh for this file and nothing is normalised: \
+the join names artifact rows that already exist and already carry their hash.
 """
 
 slots_derived_from = """
@@ -46,10 +68,12 @@ carries.
 
 not_decided_here = [
   "Which Eucharistic Prayer a priest should use. The Missal offers four and the choice is his; the option this file marks default is simply the first the Missal prints.",
-  "Whether the Latin editio typica may be republished. The question is open and unstarted; until it is settled this file carries incipits and no Latin text.",
+  "Whether the Latin editio typica itself may be republished. That question is open, this file does not answer it, and nothing here depends on the answer. Of the forty-eight elements, twelve are empty in Latin because the reform's own new matter is the Holy See's and is withheld; twenty-six are empty because of a witness or a modelling gap and no rightsholder has refused them; and ten carry Latin that is not the editio typica's at all, but an 1861 lay printing's of the ancient prayer this Order received. No word of the editio typica is reproduced here, in any element.",
   "Whether the ecumenical text may lawfully be used in the liturgy anywhere. The grant recorded here is a copyright licence and nothing else; an imprimatur is not a copyright licence and a copyright licence is not liturgical approval.",
   "The Prefaces, of which the Missal prints fifty; they are proper to the day and belong to the propers layer, not to the invariant frame.",
   "Where a proper stands that this file does not seat. The Sequence, the chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
+  "Whether the six elements carried here at the `uncollated` grade are word-identical with the editio typica. They are carried because this repository's own study of this Order of Mass, made on a direct reading of both books, places them among the texts the postconciliar Order retained with little or no change of wording, and because the words themselves are attested in a public-domain witness this project has read at a named leaf. That is not an established identity and it is not written down as one. No word-level comparison against the controlling edition has been made at any of the six; the study quotes no 2002 Latin at all at five of them; and its own coarse retention list is known to mislead, because at two elements of this very file that list says retained and the words are still not the same words. Each of the six says so beside its own words. Settling it means opening the controlling edition, which this project does not hold and has not opened.",
+  "Whether an antecedent witness's spelling should ever be brought toward the controlling edition's. It is not, anywhere here. The 1861 column prints justum for iustum, Jesu for Iesu, the ae- and oe-ligatures, Et expecto for Et exspecto, and at least one plain misprint - nodie for hodie - and every one of them is carried as printed and named in the element's own note. Smoothing them would manufacture a witness to a book nobody opened; carrying them silently under a heading naming the editio typica would attribute a lay printer's misprints to the Holy See. Naming them is the only honest third option and it is what this file does.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -63,6 +87,40 @@ acknowledgement = "English translations of the Kyrie eleison, Gloria in Excelsis
 caution = "NOT the approved English of the Roman Missal, which is ICEL's and is under copyright. This is the ecumenical text agreed among English-speaking churches, and it differs from the Missal's English in wording a reader will notice. It is offered here because its rightsholder grants free use in terms, and for no other reason. Nothing here may be used for recitation."
 artifacts = ["artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en"]
 
+# The same 1861 Philadelphia printing that witnesses this project's 1962 frame,
+# doing a different job here. Under that frame it is a witness to the rite the
+# frame declares. Under this one it is an ANTECEDENT: an older book printing the
+# ancient prayers this Order of Mass received, standing in for a controlling
+# edition that is in copyright and is not held here at all.
+#
+# That difference is a relation between two texts and not a property of a
+# printing, so it is NOT encoded here. There is no antecedent edition of
+# anything. `id` is the edition's real record, because `source_id` reaches the
+# page as attribution and a second id minted to carry the relation would
+# misattribute the words to a book that does not exist; the propers side did
+# exactly that once and served 63 translations under a dotted id no witness row
+# declared, with no label and no caution. The relation is declared per element,
+# on the element's own `latin` block, with the grade of what has been
+# established about it and a note that says it beside the words.
+#
+# The label leads with the disclaimer and the caution leads with the disclaimer,
+# for one reason: both are option text in narrow browser controls, and a label
+# truncated in a narrow control must lose the bibliography, never the warning.
+[[witnesses]]
+id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+lang = "la"
+label = "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
+rights = "public-domain"
+caution = "NOT the Latin of the Missale Romanum. The postconciliar Missal's Latin is a work of the Holy See, is under copyright, and is not held by this project; nothing served under this witness is that book's text and no element here claims to be. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation."
+artifacts = [
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+]
+
 # ---------------------------------------------------------------- absences
 
 [[absences]]
@@ -70,10 +128,44 @@ key = "icel"
 kind = "no-exemplar"
 what = "The approved English of the Roman Missal for the dioceses of the United States is the International Commission on English in the Liturgy's, © ICEL, and is under copyright until well into the 2060s. It is not reproduced here. Every escape route was tested and each closes: the texts postdate 1929 so no term has expired; the first United States publication of the new Eucharistic Prayers, the 1968 Benziger booklet, carries a facially valid 1909-Act notice, so nothing was forfeited for want of one; registration was never a condition under that Act; and the Copyright Renewal Act of 1992 made renewal automatic for 1964-1977 works. What was written here before -- that ICEL's licence confines free use to worship aids for a single celebration -- was wrong, and the error is instructive. ICEL's Publication Policies carry, at page 25, an express permission to reproduce its approved, recognised and promulgated texts on a non-commercial website without written or oral permission, under six conditions; its summary page does not mention it and directs every reader to the Secretariat, and this project's own record of that book admits the fuller booklet was never retrieved. So the permission is not the reason. Two other reasons are, and both are recorded in guidance/liturgical-text-publication-policy.md: condition (3) requires the text be followed exactly and no reachable authoritative source supplies it, this library holding no witness of the English Missal at all; and condition (4) grants no licence to publish in any other form, while this project ships installed PDFs, a public JSON corpus and a public Git history. Hence `no-exemplar`: the rightsholder permits the use and this project has no exact copy of the words."
 
+# Six reasons stand where one stood, because one key over all 48 elements said a
+# rights refusal thirty-six times where no rightsholder has refused anything.
+# The 48 are classified element by element in .scratch/lanes/ordinary-latin-classify/
+# against this repository's own collated study of this Order of Mass at
+# src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
+# 00-order-of-mass, and each key below covers exactly the elements that earn it.
+# No element gains or loses a word here: the change is to what the file says
+# about why an element is empty, and to nothing else.
+
 [[absences]]
-key = "editio-typica"
+key = "editio-typica-new-matter"
 kind = "rights-withheld"
-what = "The Latin of the postconciliar Missal is a work of the Holy See first published in 1969 and revised in 1975 and 2002, with the emended reprint of 2008. It is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. This repository's own study of this Order of Mass draws the same line, quoting the Latin as evidence for an argument and not as text for recitation. Each element therefore carries its received Latin incipit, which identifies the prayer without reproducing it, and no more. This is the one blocking question for anyone who wants the Latin served here."
+what = "The reform's own new matter, and this is the class for which the rights refusal is the true reason. The Latin of the postconciliar Missal is a work of the Holy See, first published in 1969, revised in 1975 and 2002, with the emended reprint of 2008; it is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. For these twelve elements no public-domain antecedent establishes the wording either, so nothing may be carried from an older book instead. This repository's tracked study of this Order of Mass states, at the loci its endnotes give, that the two Penitential Act forms II and III are new compositions in their present arrangement; that the two Benedictus es prayers over the bread and the chalice are new compositions which replaced the medieval offertory prayers Suscipe sancte Pater and Offerimus tibi Domine; that Prayers II, III and IV are twentieth-century compositions, Prayer II being an adaptation which does not print the ancient anaphora it is built on; and that the acclamation after the consecration is wholly new. Four more are recastings of ancient matter, where the older prayer is public domain and is NOT this element's text: the mingling formula is a shortened form of a Roman Christmas collect and the older witness carries an opening clause and a full conclusion the Missal deleted; the washing of hands prints a shortened verse of a different psalm from the one the older Order recited; the invitation to Communion is the older Ecce Agnus Dei joined to the beatitude of Revelation 19:9, which the study places among the substantially changed; and the two-word Communion formula with the communicant's Amen replaces the longer formula the older Order gave the priest alone. What is refused is the Missal's own composed or recast wording. Nothing here refuses the ancient prayers underneath the recastings, which are public domain and are not what these elements print."
+
+[[absences]]
+key = "antecedent-held-not-carried"
+kind = "witness-gap"
+what = "An ancient text this project holds an antecedent of and does not carry onto this element, and no rightsholder has refused any of it. No witness this project holds prints the Latin of the postconciliar Missal itself; that book is in copyright and is not held here. What IS held is the facing-column Latin of the 1861 Philadelphia Cummiskey hand missal, public domain and transcribed in six tracked artifacts, and ten elements of this file now carry it. These four do not, and each is refused for a reason about itself rather than about anyone's permission. The Kyrie: the witness sets the Greek acclamations as three rows of three, the ninefold form, and this Missal prints six, two to each invocation, a simplification this repository's study names in terms; joining the witness's rows would print nine acclamations under an element of six, and dropping three of them to fit would be an editorial act performed on a witness, which is as much a fabrication as normalising its spelling. The prayer for peace: the study quotes the 2002 Latin entire and its endnote states the prayer is retained from the older Roman Order - and the two strings are still not the same strings. The witness reads ne respicias peccata MEA where the quoted text reads peccata NOSTRA, and the witness carries a conclusion, qui vivis et regnas Deus per omnia saecula saeculorum Amen, that the quoted text does not. Publishing on the strength of the word retained would have put the wrong pronoun into the Rite of Peace on every day of this calendar. The priest's private preparation: the same study names the second of the two prayers Perceptio Corporis et Sanguinis tui and the witness prints Perceptio corporis tui, which does not name the Blood. The alternative Agnus Dei: that element exists only because the ecumenical English witness prints two ENGLISH forms of one invocation, while the Missal prints one Latin text of it, which the element above already carries; giving this one Latin as well would print one Latin text twice under two keys and assert a Latin variant the Missal does not have. The Kyrie becomes reachable when the element or the witness's arrangement is modelled honestly. The two divergent prayers are not reachable from this witness at all, and no older book can supply what they need, because the difference at each is the Missal's own. The alternative Agnus Dei is settled and correct as it stands."
+
+[[absences]]
+key = "no-antecedent-witness"
+kind = "witness-gap"
+what = "An ancient text for which this project holds no Latin witness at all, which is the witness's silence and not a rights question. The Apostles' Creed is not an element of the Tridentine or 1962 Order of Mass, so neither the 1861 Cummiskey nor the 1862 Pustet Ordo prints it, and a search of this repository finds it in no book, in no language column; locating a public-domain Latin witness of the Roman baptismal symbol is a clean acquisition task nobody has opened. The fraction and commingling formula is printed by the 1861 inside an English rubric set across the full measure, with no facing Latin - the same class the 1962 file records as no-facing-latin - and this repository's study places that formula on its retained list, so the text is ancient and the gap is a page nobody here has read. The 1862 Pustet would print it, but that artifact is uncorrected OCR whose own record says to quote from it only through a checked passage, and no passage record stands over it."
+
+[[absences]]
+key = "element-spans-mixed-matter"
+kind = "witness-gap"
+what = "The element models a span of the Missal wider than any one prayer, and the span contains matter this repository's own study places on both sides of its retained-and-changed line, so no witness can be joined to the element as it stands. This is a modelling fact about this file and not a refusal by anyone. Element by element: the Greeting carries four forms, of which the 1861 holds one; the first Penitential Act carries an invitation the witness does not have at all, and its Confiteor is printed there only as Confiteor Deo omnipotenti &c. with the transcriber's own note that the full prayer is not obtainable from it, its other form being the ministers' prayer addressed to the priest; the Gospel dialogue announces Lectio sancti Evangelii where the witness announces Sequentia vel initium, and the witness has no Verbum Domini after the Gospel; the embolism at n. 125 carries with it the people's doxology Quia tuum est regnum, which the study calls ancient in the Greek East and never part of the Roman Mass, a genuine importation, and the witness's own embolism differs in extent at both ends; the Pax carries n. 127, whose versicle and response the witness holds verbatim, together with n. 128 Offerte vobis pacem, for which it holds nothing; the Blessing carries three regimes - simple, solemn or prayer over the people, and the pontifical form - of which the witness supplies none in Latin; and the Dismissal carries the ancient Ite missa est with its answer together with the three formulas the 2008 reprint added, while the witness's own alternative is Benedicamus Domino, which is none of the three. Split any of these at the Missal's own numbering and its ancient half becomes sourceable at once; until then there is no honest single sourcing."
+
+[[absences]]
+key = "canon-not-split"
+kind = "witness-gap"
+what = "This element models the whole Roman Canon as one span, nn. 83-98, Te igitur through Per ipsum with the institution narrative inside it, and that is why nothing can be sourced onto it. The obstacle is the model and not the rights: this repository's study calls the Roman Canon the only one of the four Eucharistic Prayers not composed or assembled in the twentieth century, and the 1861 witness sets it in twenty-one public-domain rows. But the two Canons were established Latin against Latin from hash-verified facsimiles of both books and differ at eleven places, among them both consecratory forms, and every one of those places falls inside this element's extent. Carrying the older Canon here would print the reform's changes as though they were not there. The element must first be split into the received sub-prayers the older book already sets separately - Te igitur, Memento Domine, Communicantes, Hanc igitur, Quam oblationem, Qui pridie, Unde et memores, Supra quae, Supplices, Memento etiam, Nobis quoque, Per quem, Per ipsum - after which the places the reform changed are isolated and the rest are reachable. That split is a larger change than this file, and until it is made this element stays empty."
+
+[[absences]]
+key = "not-a-text"
+kind = "witness-gap"
+what = "These twelve elements carry no words of their own at this layer, so nothing is withheld and nothing is missing; the key exists because calling their emptiness a rights refusal would turn a modelling fact into a claim that the rite omits something. Eight are frame markers for an action or a chant - the entrance and the veneration of the altar, the first and second readings, the responsorial psalm, the Alleluia or Lenten acclamation, the homily, the universal prayer whose n. 20 is one line and no formulary, and the veneration and departure - and six of the twelve carry no Latin incipit at all. Four are propers of the day, whose text belongs to the propers layer and not to this invariant frame: the Collect, the Prayer over the Offerings, the Preface, and the Prayer after Communion. The Prefaces are the one row here with mixed matter underneath: the constitution's own two categories are taken from the more ancient tradition of the Roman Church or newly composed, the two must not be conflated in either direction, and whoever opens that corpus must classify prayer by prayer rather than treat it as one thing."
 
 # ================================================================ A. Ritus initiales
 
@@ -81,7 +173,6 @@ what = "The Latin of the postconciliar Missal is a work of the Holy See first pu
 key = "ritus-initiales"
 name = "The Introductory Rites"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "introitus"
@@ -89,6 +180,7 @@ kind = "rubric"
 name = "Entrance and veneration of the altar"
 latin_incipit = "Populo congregato"
 missal_number = "n. 1"
+absent_latin = "not-a-text"
 note = "The entrance chant, the procession, the veneration of the altar, and the sign of the cross said by priest and people together."
 
 [[sections.elements]]
@@ -98,6 +190,7 @@ speaker = "all"
 name = "The Greeting"
 latin_incipit = "Dominus vobiscum"
 missal_number = "n. 2"
+absent_latin = "element-spans-mixed-matter"
 note = "Three forms; a bishop greets Pax vobis. The people's answer, Et cum spiritu tuo, is the text the 2011 English changed to 'And with your spirit'; the ecumenical text served elsewhere on this page renders the same Latin 'And also with you', and the two must not be confused."
 
 [[sections.elements]]
@@ -107,6 +200,7 @@ speaker = "all"
 name = "Penitential Act, form I"
 latin_incipit = "Confiteor Deo omnipotenti"
 missal_number = "n. 4"
+absent_latin = "element-spans-mixed-matter"
 note = "The Confiteor said by all together, with the striking of the breast, and the priest's absolution. Form I of three; the celebrant chooses."
 
 [[sections.elements]]
@@ -116,6 +210,7 @@ speaker = "all"
 name = "Penitential Act, form II"
 latin_incipit = "Miserere nostri, Domine"
 missal_number = "n. 5"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "actus-paenitentialis-iii"
@@ -124,6 +219,7 @@ speaker = "all"
 name = "Penitential Act, form III"
 latin_incipit = "Qui missus es sanare contritos corde"
 missal_number = "n. 6"
+absent_latin = "editio-typica-new-matter"
 note = "Tropes set before the Kyrie acclamations. Where this form is used the Kyrie that follows is not repeated."
 
 [[sections.elements]]
@@ -133,6 +229,7 @@ speaker = "all"
 name = "Kyrie eleison"
 latin_incipit = "Kyrie, eleison"
 missal_number = "n. 7"
+absent_latin = "antecedent-held-not-carried"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "kyrie" }
 note = "The Missal prints the Kyrie in Greek and in the sixfold form, two acclamations to each invocation, and omits it where the third form of the Penitential Act has been used. The ecumenical text below gives the Greek and an English rendering of it; the Missal's own English is ICEL's and is not here."
 
@@ -146,6 +243,37 @@ missal_number = "n. 8"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "gloria-in-excelsis" }
 note = "Said on Sundays outside Advent and Lent, on solemnities and feasts, and on more solemn celebrations."
 
+# The one element carried as collated on a finding rather than on a comparison
+# of two strings: the study makes an element-level, unqualified statement of
+# identity here and quotes no 2002 Latin to set beside the witness. The note
+# says which of those two things it rests on, because they are not the same
+# thing.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
+elements = ["gloria-in-excelsis"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex:147-151"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Gloria in excelsis, printed \
+page xix, Internet Archive leaf 29, the hymn complete in one block. The Latin of \
+the Missale Romanum, editio typica tertia 2002 with its emended reprint of 2008, \
+is under copyright and is not held by this project; these are the 1861 \
+printing's words and not that book's. Carried as printed and normalised nowhere: \
+the book opens with a two-line drop G followed by LORIA in capitals, given here \
+as GLORIA; it reads bonae voluntatis and Rex coelestis with the ae- and \
+oe-ligatures, Jesu Christe with a J twice, and sets the closing Amen in italic. \
+COLLATED, and on a finding rather than on a comparison of two strings, which is \
+a weaker footing than the three elements that carry both. The cited study's \
+endnote to n. 8 states in terms that the Latin text at n. 8 is unchanged from \
+the older Roman form, and the study's own account of its method states that both \
+books were read directly for that comparison. It quotes no 2002 Latin at this \
+element, so no word-level comparison could be made here and none is claimed.
+"""
+
 [[sections.elements]]
 key = "collecta"
 kind = "prayer"
@@ -153,6 +281,7 @@ speaker = "priest"
 name = "The Collect"
 latin_incipit = "Oremus"
 missal_number = "n. 9"
+absent_latin = "not-a-text"
 note = "Proper to the day; its Latin stands in this project's propers layer, and its approved English does not."
 
 # ================================================================ B. Liturgia verbi
@@ -161,7 +290,6 @@ note = "Proper to the day; its Latin stands in this project's propers layer, and
 key = "liturgia-verbi"
 name = "The Liturgy of the Word"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "lectio-prima"
@@ -169,6 +297,7 @@ kind = "rubric"
 name = "The First Reading"
 latin_incipit = "Verbum Domini"
 missal_number = "n. 10"
+absent_latin = "not-a-text"
 note = "The reading itself is the Lectionary's and is proper to the day; this layer carries only the frame."
 
 [[sections.elements]]
@@ -176,12 +305,14 @@ key = "psalmus-responsorius"
 kind = "rubric"
 name = "The Responsorial Psalm"
 missal_number = "n. 11"
+absent_latin = "not-a-text"
 
 [[sections.elements]]
 key = "lectio-secunda"
 kind = "rubric"
 name = "The Second Reading"
 missal_number = "n. 12"
+absent_latin = "not-a-text"
 note = "On Sundays, solemnities and feasts."
 
 [[sections.elements]]
@@ -190,6 +321,7 @@ kind = "rubric"
 name = "The Alleluia or Lenten acclamation"
 latin_incipit = "Alleluia"
 missal_number = "n. 13"
+absent_latin = "not-a-text"
 
 [[sections.elements]]
 key = "evangelium"
@@ -198,12 +330,14 @@ speaker = "all"
 name = "The Gospel"
 latin_incipit = "Dominus vobiscum. Lectio sancti Evangelii"
 missal_number = "nn. 14-16"
+absent_latin = "element-spans-mixed-matter"
 
 [[sections.elements]]
 key = "homilia"
 kind = "rubric"
 name = "The Homily"
 missal_number = "n. 17"
+absent_latin = "not-a-text"
 
 # ================================================================ C. Symbolum
 
@@ -211,7 +345,6 @@ missal_number = "n. 17"
 key = "symbolum"
 name = "The Creed and the Universal Prayer"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "symbolum-nicaenum"
@@ -223,6 +356,43 @@ missal_number = "n. 18"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "nicene-creed" }
 note = "Said on Sundays and solemnities, with a bow prescribed at et homo factus est. The ecumenical text below opens 'We believe' and brackets 'and the Son', both of which the Roman Missal's English does not; it is the same Creed and not the same translation."
 
+# Three witness rows to one element: the Missal sets the symbol as one text and
+# the older book sets it as three blocks, breaking at Et in unum Dominum and Et
+# in Spiritum Sanctum. The join is stated here rather than worked out anywhere
+# downstream.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+elements = ["credo-in-unum-deum", "et-in-unum-dominum", "et-in-spiritum-sanctum"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Credo, printed pages xxi-xxii, \
+Internet Archive leaves 31-32, joined from that book's own three blocks. The \
+Latin of the Missale Romanum, editio typica tertia 2002 with its emended reprint \
+of 2008, is under copyright and is not held by this project; these are the 1861 \
+printing's words and not that book's. Carried as printed and normalised nowhere: \
+a two-line drop C followed by REDO in capitals, given here as CREDO; the ae- and \
+oe-ligatures at terrae, coeli, coelis, saecula, saeculi; Jesum Christum and \
+judicare with a J; ET HOMO FACTUS EST set in full capitals with the book's own \
+asterisk keying a footnote at the foot of xxii; and Et EXPECTO, not exspecto, the \
+word standing whole and unbroken on its own line. The second block runs over the \
+page break, breaking at ex Maria Vir- / gine, and heavy inking at the head of \
+xxii fills the s and e of sepultus, which the transcriber read from the surviving \
+strokes and did not repair from any other book. The printing carries the \
+Filioque, qui ex Patre Filioque procedit. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass treats n. 18 at \
+00-order-of-mass/sections/30-creed-and-universal-prayer.tex:16-24 and names the \
+Nicene Creed among the texts retained with little or no change of wording at \
+:90-synthesis.tex:47-55, on a comparison for which it states that both books \
+were read directly. It quotes no 2002 Latin of the symbol, so no word-level \
+comparison has been made. The two Latin texts are conventionally taken to be \
+identical and that convention has not been checked here.
+"""
+
 [[sections.elements]]
 key = "symbolum-apostolicum"
 kind = "prayer"
@@ -230,6 +400,7 @@ speaker = "all"
 name = "The Apostles' Creed"
 latin_incipit = "Credo in Deum"
 missal_number = "n. 19"
+absent_latin = "no-antecedent-witness"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "apostles-creed" }
 note = "May be used in place of the Nicene Creed, especially in Lent and Eastertide. The 2008 emended reprint corrected its opening from Credo in unum Deum to Credo in Deum."
 
@@ -239,6 +410,7 @@ kind = "rubric"
 name = "The Universal Prayer"
 latin_incipit = "Oratio universalis, seu oratio fidelium"
 missal_number = "n. 20"
+absent_latin = "not-a-text"
 note = "The intentions are composed locally and no book carries them."
 
 # ================================================================ D. Praeparatio donorum
@@ -247,7 +419,6 @@ note = "The intentions are composed locally and no book carries them."
 key = "praeparatio-donorum"
 name = "The Preparation of the Gifts"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "benedictus-es-panem"
@@ -256,6 +427,7 @@ speaker = "priest"
 name = "Over the bread"
 latin_incipit = "Benedictus es, Domine, Deus universi"
 missal_number = "n. 23"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "commixtio"
@@ -264,6 +436,7 @@ speaker = "priest"
 name = "The mingling"
 latin_incipit = "Per huius aquae et vini mysterium"
 missal_number = "n. 24"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "benedictus-es-vinum"
@@ -272,6 +445,7 @@ speaker = "priest"
 name = "Over the chalice"
 latin_incipit = "Benedictus es, Domine, Deus universi"
 missal_number = "n. 25"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "in-spiritu-humilitatis"
@@ -281,6 +455,38 @@ name = "In spiritu humilitatis"
 latin_incipit = "In spiritu humilitatis"
 missal_number = "n. 26"
 
+# Uncollated, and the reason is exactly where the interest is: the study quotes
+# the 2002 Latin of the first clause only, that clause agrees, and the witness's
+# own misprint stands in the part nobody has compared. Grading this collated
+# would let a reader take `nodie` for the editio typica's reading.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+elements = ["in-spiritu-humilitatis"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its In spiritu humilitatis, \
+printed page xxiv, Internet Archive leaf 34. The Latin of the Missale Romanum, \
+editio typica tertia 2002 with its emended reprint of 2008, is under copyright \
+and is not held by this project; these are the 1861 printing's words and not \
+that book's. THE WITNESS MISPRINTS nodie FOR hodie, and it is carried as printed \
+and not corrected: the letter is an n, with no ascender, read at 200 per cent \
+magnification against the h of hoc on the same page and recorded in the \
+artifact's own transcriber's note. It is that printer's error. Nothing here \
+attributes it to the Missal, and correcting it silently would have manufactured \
+a witness to a book nobody opened. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass states at n. 26, \
+in 00-order-of-mass/sections/40-preparation-of-the-gifts.tex:108-110, that the \
+prayer is taken from the Song of the Three Young Men and is retained from the \
+older Order, and it quotes the 2002 Latin of the opening clause only, as far as \
+suscipiamur a te, Domine. That clause and this witness agree word for word. The \
+rest of the prayer, the misprint among it, has not been compared with anything.
+"""
+
 [[sections.elements]]
 key = "lava-me"
 kind = "prayer"
@@ -288,6 +494,7 @@ speaker = "priest"
 name = "The washing of hands"
 latin_incipit = "Lava me, Domine, ab iniquitate mea"
 missal_number = "n. 28"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "orate-fratres"
@@ -297,12 +504,43 @@ name = "Orate fratres and Suscipiat"
 latin_incipit = "Orate, fratres"
 missal_number = "n. 29"
 
+# The best-evidenced element in this file, and the first that was landed. Two
+# witness rows join to one element because the book sets the priest's summons
+# and the people's answer as separate blocks and the Missal sets them as one.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+elements = ["orate-fratres", "suscipiat-dominus"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts.tex:126-132"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Orate fratres and Suscipiat \
+Dominus, printed page xxvii, Internet Archive leaf 37, joined from the book's \
+own two blocks. The Latin of the Missale Romanum, editio typica tertia 2002 with \
+its emended reprint of 2008, is under copyright and is not held by this project; \
+these are the 1861 printing's words and not that book's. Carried as printed and \
+normalised nowhere: Fratres is capitalised and patrem is not, as the book sets \
+them; the Latin column points a comma after nominis sui where its own facing \
+English points none; there is a comma after nostram; Ecclesiae suae sanctae \
+carries the ae-ligature throughout; and the response's R. mark is the book's, \
+which prefixes the answer in both columns and prefixes the summons in neither. \
+COLLATED. The cited study quotes the 2002 Latin of both texts at n. 29 and its \
+endnote states that both are retained from the older Roman Order without \
+material change; setting that quotation beside these two rows, they agree word \
+for word, the only differences being the capitalisation, the pointing and the \
+ligatures named above.
+"""
+
 [[sections.elements]]
 key = "super-oblata"
 kind = "prayer"
 speaker = "priest"
 name = "The Prayer over the Offerings"
 missal_number = "n. 30"
+absent_latin = "not-a-text"
 note = "Proper to the day."
 
 # ================================================================ E. Prex eucharistica
@@ -311,7 +549,6 @@ note = "Proper to the day."
 key = "prex-eucharistica"
 name = "The Eucharistic Prayer"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "praefationis-dialogus"
@@ -323,6 +560,31 @@ missal_number = "n. 31"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "sursum-corda" }
 note = "The ecumenical text below answers the greeting 'And also with you' and the assent 'It is right to give our thanks and praise'; the Roman Missal's English has 'And with your spirit' and 'It is right and just'."
 
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+elements = ["sursum-corda"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/50-eucharistic-prayer.tex:57-59"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Preface dialogue, printed \
+page xxvii, Internet Archive leaf 37, where the whole dialogue stands as one \
+continuous block in each column with the P. and R. run in, and is the last block \
+on that page. The Latin of the Missale Romanum, editio typica tertia 2002 with \
+its emended reprint of 2008, is under copyright and is not held by this project; \
+these are the 1861 printing's words and not that book's. Carried as printed and \
+normalised nowhere: the book reads Dignum et JUSTUM est, which is its own j-for-i \
+convention and not a variant reading, and its P. and R. marks are its own \
+setting of a dialogue the Missal sets the same way. \
+COLLATED. The cited study quotes the 2002 Latin of the whole dialogue at n. 31, \
+calling it the oldest continuously attested dialogue in the Latin liturgy; set \
+beside this row the two agree word for word, the sole divergence being justum \
+for iustum.
+"""
+
 [[sections.elements]]
 key = "praefatio"
 kind = "prayer"
@@ -330,6 +592,7 @@ speaker = "priest"
 name = "The Preface"
 latin_incipit = "Vere dignum et iustum est"
 missal_number = "nn. 33-82"
+absent_latin = "not-a-text"
 note = "Fifty Prefaces, proper to the day, the season, or the Eucharistic Prayer itself. They are not carried in this layer."
 
 [[sections.elements]]
@@ -341,6 +604,33 @@ latin_incipit = "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth"
 missal_number = "n. 31"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "sanctus-benedictus" }
 
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
+elements = ["sanctus"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Sanctus, printed page xxviii, \
+Internet Archive leaf 38, where that book sets the Sanctus once only, after the \
+Prefaces. The Latin of the Missale Romanum, editio typica tertia 2002 with its \
+emended reprint of 2008, is under copyright and is not held by this project; \
+these are the 1861 printing's words and not that book's. Carried as printed and \
+normalised nowhere: the book capitalises only the first Sanctus of the three, \
+reads coeli with the oe-ligature, and prints no cross glyph before Benedictus in \
+this column. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass names the \
+Sanctus among the texts retained with little or no change of wording, at \
+00-order-of-mass/sections/90-synthesis.tex:47-55, on a comparison for which it \
+states that both books were read directly. It quotes no 2002 Latin at this \
+element, so no word-level comparison has been made; and that same retention list \
+is known to mislead, since at two elements of this file it says retained where \
+the words are not in fact the same words.
+"""
+
 [[sections.elements]]
 key = "prex-eucharistica-i"
 kind = "prayer"
@@ -348,6 +638,7 @@ speaker = "priest"
 name = "Eucharistic Prayer I, the Roman Canon"
 latin_incipit = "Te igitur, clementissime Pater"
 missal_number = "nn. 83-98"
+absent_latin = "canon-not-split"
 variant = "ep-i"
 note = "Te igitur, Memento Domine, Communicantes, Hanc igitur, Quam oblationem, Qui pridie, the Mysterium fidei and the people's acclamation, Unde et memores, Supra quae, Supplices, Memento etiam, Nobis quoque, Per quem haec omnia, Per ipsum. THIS IS NOT THE CANON OF THE 1962 MISSAL, and the English Canon this site serves under that missal is not a translation of this prayer. Established Latin against Latin from hash-verified facsimiles of both books, they differ at eleven places, among them both consecratory forms: this prayer adds quod pro vobis tradetur over the bread, DELETES mysterium fidei from the form over the chalice, replaces Haec quotiescumque feceritis with Hoc facite in meam commemorationem, and adds a Mysterium fidei acclamation the older book has nowhere. The 1962 book prints nineteen signs of the cross over the pages compared; this prayer prints one."
 
@@ -358,6 +649,7 @@ speaker = "priest"
 name = "Eucharistic Prayer II"
 latin_incipit = "Vere Sanctus es, Domine, fons omnis sanctitatis"
 missal_number = "nn. 99-106"
+absent_latin = "editio-typica-new-matter"
 variant = "ep-ii"
 note = "With a preface of its own, which may be replaced. Its shape is drawn from the anaphora of the so-called Apostolic Tradition; the drafting history is not established here."
 
@@ -368,6 +660,7 @@ speaker = "priest"
 name = "Eucharistic Prayer III"
 latin_incipit = "Vere Sanctus es, Domine, et merito te laudat"
 missal_number = "nn. 107-115"
+absent_latin = "editio-typica-new-matter"
 variant = "ep-iii"
 note = "Has no preface of its own and takes the day's. A formula for the dead stands at n. 115."
 
@@ -378,6 +671,7 @@ speaker = "priest"
 name = "Eucharistic Prayer IV"
 latin_incipit = "Confitemur tibi, Pater sancte"
 missal_number = "nn. 116-123"
+absent_latin = "editio-typica-new-matter"
 variant = "ep-iv"
 note = "Its preface is fixed and may not be replaced, so it is excluded whenever a proper Preface is appointed."
 
@@ -388,6 +682,7 @@ speaker = "all"
 name = "The acclamation after the consecration"
 latin_incipit = "Mysterium fidei"
 missal_number = "n. 91"
+absent_latin = "editio-typica-new-matter"
 note = "Three alternative acclamations. This element has no counterpart in the 1962 Missal, where mysterium fidei stands inside the form over the chalice instead."
 
 [[sections.elements]]
@@ -399,13 +694,55 @@ latin_incipit = "Per ipsum, et cum ipso, et in ipso"
 missal_number = "n. 98"
 note = "The people's Amen closes it. Here per omnia saecula saeculorum is part of the doxology itself; in the 1962 book it follows as a separate versicle of priest and minister."
 
+# Two witness rows, and the second is where this element's own note above
+# becomes visible in the words: the older book sets Per omnia saecula saeculorum
+# as a separate versicle of priest and minister, and this Missal makes it the
+# end of the doxology, answered by the people. The witness's P. and R. marks are
+# left standing so that the difference can be seen rather than described.
+#
+# Eucharistic Prayer I stays empty and must: it models the whole Canon as one
+# span, and every place the reform changed the Canon falls inside that span.
+# This element is not part of it. The doxology is common to all four prayers,
+# the Missal prints it as its own numbered element, and the study places Per
+# ipsum inside the stretch it calls substantially identical.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
+elements = ["per-ipsum", "per-omnia-saecula"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Per ipsum and the versicle \
+that closes its Canon, printed pages xxxviii-xxxix, Internet Archive leaves \
+48-49, joined from that book's own two blocks. The Latin of the Missale Romanum, \
+editio typica tertia 2002 with its emended reprint of 2008, is under copyright \
+and is not held by this project; these are the 1861 printing's words and not \
+that book's. Carried as printed and normalised nowhere: the book prints no cross \
+signs in this block, which the older Roman rite marks five times; it reads \
+saecula saeculorum with the ae-ligature, set unbroken here where the same \
+versicle at the foot of xxvii prints a full stop after saecula; and it sets \
+the Amen in italic. THE SHAPE DIFFERS AND THE MARKS SHOW IT: the witness's \
+P. and R. divide the closing versicle between priest and minister, which is the \
+older Order, where this Missal makes per omnia saecula saeculorum the end of the \
+doxology itself and the people's Amen answers the whole. The marks are the \
+witness's and are not this Missal's rubric. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass records at \
+00-order-of-mass/sections/55-roman-canon.tex:114 that the prayer text is \
+substantially identical from Te igitur to Per ipsum apart from the changes to \
+the dominical words, which fall elsewhere in the Canon and not in this element. \
+It quotes no 2002 Latin of the doxology, so no word-level comparison has been \
+made.
+"""
+
 # ================================================================ F. Ritus communionis
 
 [[sections]]
 key = "ritus-communionis"
 name = "The Communion Rite"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "pater-noster"
@@ -417,6 +754,44 @@ missal_number = "n. 124"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "lords-prayer" }
 note = "The ecumenical text is given whole, as the Consultation prints it, which is how its licence requires it to be reproduced. The Roman Rite does not say it continuously: the last two lines are the doxology Quia tuum est regnum, and the embolism Libera nos stands between them and the rest."
 
+# Two witness rows to one element, and the witness's own speaker marks are left
+# standing inside the second. They record the older Order, where the priest said
+# the prayer and the ministers answered the last petition; this Missal has all
+# say it together. That is a change of speaker and not of words, and deleting
+# the marks would have hidden the one difference there is to see.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+elements = ["praeceptis-salutaribus", "pater-noster"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Praeceptis salutaribus and \
+Pater noster, printed page xxxix, Internet Archive leaf 49, joined from that \
+book's own two blocks. The Latin of the Missale Romanum, editio typica tertia \
+2002 with its emended reprint of 2008, is under copyright and is not held by \
+this project; these are the 1861 printing's words and not that book's. Carried \
+as printed and normalised nowhere: the invitation opens with a two-line drop P \
+followed by Raeceptis, a capital R and the rest lower-case, with the \
+ae-ligature, given here as printed; the prayer reads coelis and coelo with the \
+oe-ligature and quotidianum for cotidianum; and the book runs the response R. \
+Sed libera nos a malo and the priest's italic P. Amen. into the same block, \
+which is the older Order's division of the prayer between priest and ministers \
+and not this Missal's. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass quotes the 2002 \
+Latin of the INVITATION at n. 124, in \
+00-order-of-mass/sections/70-communion-rite.tex:19-23, and that quotation and \
+this witness's first row agree word for word. It quotes no 2002 Latin of the \
+Our Father itself, which is the larger half of this element and has been \
+compared with nothing. The study names the Pater noster with its introduction \
+among the texts retained with little or no change of wording, and records the \
+change that is real: the people now say it with the priest, where in the older \
+Roman Order the priest said it and the ministers answered the last petition.
+"""
+
 [[sections.elements]]
 key = "libera-nos"
 kind = "prayer"
@@ -424,6 +799,7 @@ speaker = "priest"
 name = "The embolism"
 latin_incipit = "Libera nos, quaesumus, Domine, ab omnibus malis"
 missal_number = "n. 125"
+absent_latin = "element-spans-mixed-matter"
 
 [[sections.elements]]
 key = "domine-iesu-christe-qui-dixisti"
@@ -432,6 +808,7 @@ speaker = "priest"
 name = "The prayer for peace"
 latin_incipit = "Domine Iesu Christe, qui dixisti Apostolis tuis"
 missal_number = "n. 126"
+absent_latin = "antecedent-held-not-carried"
 
 [[sections.elements]]
 key = "pax-domini"
@@ -440,6 +817,7 @@ speaker = "all"
 name = "The Pax and the sign of peace"
 latin_incipit = "Pax Domini sit semper vobiscum"
 missal_number = "nn. 127-128"
+absent_latin = "element-spans-mixed-matter"
 note = "The exchange itself is pro opportunitate."
 
 [[sections.elements]]
@@ -449,6 +827,7 @@ speaker = "priest"
 name = "The fraction and commingling"
 latin_incipit = "Haec commixtio Corporis et Sanguinis"
 missal_number = "n. 129"
+absent_latin = "no-antecedent-witness"
 
 [[sections.elements]]
 key = "agnus-dei"
@@ -460,6 +839,38 @@ missal_number = "n. 130"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "agnus-dei" }
 note = "The Consultation's own form, which names Jesus and unfolds tollis in two ways. Repeatable as long as the fraction lasts."
 
+# The Latin of the Agnus Dei is carried here and NOWHERE ELSE in this file. The
+# element below it exists only because the ecumenical witness prints two ENGLISH
+# forms of one invocation; the Missal prints one Latin text, and printing it
+# twice under two keys would assert a Latin variant that does not exist.
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
+elements = ["agnus-dei"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Agnus Dei, printed page xl, \
+Internet Archive leaf 50. The Latin of the Missale Romanum, editio typica tertia \
+2002 with its emended reprint of 2008, is under copyright and is not held by \
+this project; these are the 1861 printing's words and not that book's. Carried \
+as printed and normalised nowhere: the book does not write the invocation out \
+three times. It sets three asterisks at the head of three short lines, \
+* miserere nobis, twice and then * dona nobis pacem., the asterisk marking where \
+Agnus Dei, qui tollis peccata mundi is resumed, and they are run in here as the \
+sibling English row runs them. A reader must expand them as the book intends and \
+not read four clauses where the rite has three invocations. \
+UNCOLLATED: the identity of this text with the controlling edition's is not \
+established here. This repository's study of this Order of Mass describes n. 130 \
+at 00-order-of-mass/sections/70-communion-rite.tex:86-91 and names the Agnus Dei \
+among the texts retained with little or no change of wording, on a comparison \
+for which it states that both books were read directly; it quotes the 2002 Latin \
+of the ending dona nobis pacem only, which this witness matches. The invocation \
+itself has been compared with nothing.
+"""
+
 [[sections.elements]]
 key = "agnus-dei-forma-altera"
 kind = "prayer"
@@ -467,6 +878,7 @@ speaker = "all"
 name = "Agnus Dei, the alternative form"
 latin_incipit = "Agnus Dei, qui tollis peccata mundi"
 missal_number = "n. 130"
+absent_latin = "antecedent-held-not-carried"
 english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "agnus-dei-alternative" }
 note = "The more traditional of the two forms the Consultation prints. Both are given because the choice between them is the reader's and not this project's."
 
@@ -477,6 +889,7 @@ speaker = "priest"
 name = "The priest's private preparation"
 latin_incipit = "Domine Iesu Christe, Fili Dei vivi"
 missal_number = "n. 131"
+absent_latin = "antecedent-held-not-carried"
 note = "Two forms; the priest chooses one and says it inaudibly."
 
 [[sections.elements]]
@@ -486,6 +899,7 @@ speaker = "all"
 name = "The invitation to Communion"
 latin_incipit = "Ecce Agnus Dei"
 missal_number = "n. 132"
+absent_latin = "editio-typica-new-matter"
 note = "The people answer Domine, non sum dignus, once, with the priest."
 
 [[sections.elements]]
@@ -495,6 +909,7 @@ speaker = "all"
 name = "The Communion"
 latin_incipit = "Corpus Christi"
 missal_number = "nn. 133-136"
+absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
 key = "purificatio"
@@ -504,12 +919,35 @@ name = "The purification"
 latin_incipit = "Quod ore sumpsimus, Domine"
 missal_number = "n. 137"
 
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
+elements = ["quod-ore-sumpsimus"]
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/70-communion-rite.tex:167-169"
+note = """
+ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
+the 1861 Philadelphia Cummiskey hand missal at its Quod ore sumpsimus, printed \
+pages xlii-xliii, Internet Archive leaves 52-53, the block running over the page \
+break at fiat nobis re- / medium. The Latin of the Missale Romanum, editio \
+typica tertia 2002 with its emended reprint of 2008, is under copyright and is \
+not held by this project; these are the 1861 printing's words and not that \
+book's. Carried as printed and normalised nowhere: the book points a comma after \
+temporali which the study's quotation of the 2002 text does not. \
+COLLATED. The cited study quotes the 2002 Latin of this prayer entire at n. 137 \
+and calls it a post-Communion prayer of great antiquity, retained; set beside \
+this row the two agree word for word, the sole divergence being that comma.
+"""
+
 [[sections.elements]]
 key = "post-communionem"
 kind = "prayer"
 speaker = "priest"
 name = "The Prayer after Communion"
 missal_number = "n. 139"
+absent_latin = "not-a-text"
 note = "Proper to the day."
 
 # ================================================================ G. Ritus conclusionis
@@ -518,7 +956,6 @@ note = "Proper to the day."
 key = "ritus-conclusionis"
 name = "The Concluding Rites"
 absent_english = "icel"
-absent_latin = "editio-typica"
 
 [[sections.elements]]
 key = "benedictio"
@@ -527,6 +964,7 @@ speaker = "priest"
 name = "The Blessing"
 latin_incipit = "Benedicat vos omnipotens Deus"
 missal_number = "nn. 141-143"
+absent_latin = "element-spans-mixed-matter"
 note = "A simple blessing; or a solemn blessing or prayer over the people, introduced by Inclinate vos ad benedictionem; or, for a bishop, the pontifical form with Sit nomen Domini benedictum and Adiutorium nostrum."
 
 [[sections.elements]]
@@ -536,6 +974,7 @@ speaker = "all"
 name = "The Dismissal"
 latin_incipit = "Ite, missa est"
 missal_number = "n. 144"
+absent_latin = "element-spans-mixed-matter"
 note = "The 2008 emended reprint added three alternative formulas to Ite, missa est."
 
 [[sections.elements]]
@@ -543,6 +982,7 @@ key = "recessus"
 kind = "rubric"
 name = "The veneration of the altar and departure"
 missal_number = "nn. 145-146"
+absent_latin = "not-a-text"
 note = "Omitted where another liturgical action follows immediately."
 
 # ---------------------------------------------------------------- slots

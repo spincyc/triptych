@@ -1,0 +1,38 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.palm-sunday-simple-entrance-antiphon"
+edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+locus = "proper-of-time.palm-sunday.third-form-the-simple-entrance.entrance-antiphon"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[44, 44]]
+context = """
+Palm Sunday of the Passion of the Lord, Third Form: The Simple Entrance, the
+Entrance Antiphon. Read on 2026-08-21 from the retained bytes, artifact page 44,
+printed page 36. No liturgical text is transcribed into this record.
+
+THE HARDER CASE OF THE GRAIL CARVE-OUT, and the reason the carve-out cannot be
+handled by refusing a page. The antiphon is cited on its own line as
+"Cf. Jn 12: 1, 12-13; Ps 23: 9-10", and it runs thirteen lines, of which the
+first six are the Johannine antiphon proper and the next five are Psalm 23:9-10
+-- word for word the same rendering printed under the "Psalm 23" heading at
+artifact page 41, where the file's copyright page assigns it to The Revised
+Grail Psalms. The psalm verses are not appended beneath the antiphon here; they
+are inside it, between two repetitions of its refrain.
+
+So the unit of rights is smaller than the slot, and on this slot it is smaller
+than the sentence. Nothing here says what the answer is. It says that the
+question is live on this antiphon, that it is not answerable by a per-proper
+token, and that the antiphon must not land until it can be answered. The
+alternative danger is symmetrical and just as real: withholding the whole slot
+would withhold ICEL text that ICEL permits, on account of five lines that are
+somebody else's.
+
+The same page also carries the Second Form: The Solemn Entrance, which prints no
+text of its own and directs the reader to the antiphon Hosanna and the responsory
+As the Lord entered -- a cross-reference, and an example of a slot that must be
+modelled as a reference rather than recorded as an absence.
+"""
+verified_on = "2026-08-21"
+notes = "One of four Palm Sunday loci in this file touching the Grail psalms; the other three are the two procession antiphons at artifact pages 41-42 and, distinct from them, nothing else. Psalm 115(116), the third reserved psalm, is printed entire only at artifact page 242, in the Rite of Blessing a Chalice and a Paten -- see the sibling passage. Everywhere else in this document Psalm 115 appears as a red Graduale assignment or as the ICEL antiphon at Ps 115:15 and Ps 115:12-13, which are Missal antiphons and ICEL's."

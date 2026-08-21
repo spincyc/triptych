@@ -1,0 +1,43 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.ep2-a4-pdf"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpts"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "permission"
+rights_basis = """
+Two layers, and they are different properties.
+
+THE TEXT is ICEL's English of the Roman Missal, approved, recognised and
+promulgated, and therefore within ICEL's standing permission to reproduce such
+texts on a free non-commercial website without written or oral permission, on the
+six conditions of passage
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+CARRIES NO COPYRIGHT ACKNOWLEDGMENT ANYWHERE IN ITS BYTES. Condition (2) of ICEL's clause requires the appropriate acknowledgment and this file cannot supply it; take the wording from ICEL's copyright page and from the sibling files that do carry it.
+
+THE FILE is CBCEW's. The Liturgy Office's Missal pages carry "(c) CBCEW" and, on
+the Text page, a grant to reproduce the leaflets "for local parish use" -- a
+bounded permission that does not reach a permanent website -- and condition (4)
+of ICEL's clause independently grants no licence to publish in any other form.
+So these exact bytes are identified and hashed and no payload is retained:
+storage = remote. That disposes of the file and withholds nothing of the ICEL
+text, which is publishable under the clause.
+
+TERRITORY. This is the England-and-Wales publishing state. It witnesses the
+universal ICEL text where the text is universal and it is NOT a witness to a
+United States adaptation, disposition or spelling.
+
+src/sources/inventories/icel-web-permission-rights-v1.toml settles the question
+once for every later lane.
+"""
+source_url = "https://www.liturgyoffice.org.uk/Missal/Text/EP2-A4.pdf"
+provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL linked on the Liturgy Office page https://www.liturgyoffice.org.uk/Missal/Text/index.shtml, and hashed before any page was read. Nothing in the retrieval path passed through a model; the contents were read locally with pdftotext -layout against the retained bytes."
+retrieved = "2026-08-21"
+sha256 = "c9b844154abf60a6fca6cc4dcde9621e400deec8f4d4a2ba53218364c6441171"
+byte_size = 186064
+page_count = 4
+indexable = false
+notes = """
+File EP2-A4.pdf, 4 pp. Listed on Missal/Text/index.shtml as "Eucharistic Prayer II". Eucharistic Prayer II set for concelebration. PRODUCED 1 SEPTEMBER 2011 AND WITHOUT THE NAME OF SAINT JOSEPH, whose insertion into Eucharistic Prayers II-IV the Congregation for Divine Worship directed in 2013. An accurate witness to the 2011 state and a wrong witness to the present one. CARRIES NO COPYRIGHT ACKNOWLEDGMENT ANYWHERE IN ITS BYTES. Condition (2) of ICEL's clause requires the appropriate acknowledgment and this file cannot supply it; take the wording from ICEL's copyright page and from the sibling files that do carry it.
+"""

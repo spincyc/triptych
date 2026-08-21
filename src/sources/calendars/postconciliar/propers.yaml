@@ -20708,11 +20708,155 @@ sections:
         registry's Sunday spine, which is why it carries a synthetic registry id. Nothing
         of its formulary has been read.
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Deuteronomy
+              ranges:
+              - begin: {chapter: 7, verse: 6}
+                end: {chapter: 7, verse: 11}
+              ref: Deuteronomy 7:6-11
+          'B':
+            verses:
+            - book: Hosea
+              ranges:
+              - begin: {chapter: 11, verse: 1}
+                end: {chapter: 11, verse: 1}
+              - begin: {chapter: 11, verse: 3}
+                end: {chapter: 11, verse: 4}
+              - begin: {chapter: 11, verse: 8, part: c}
+                end: {chapter: 11, verse: 9}
+              ref: Hosea 11:1, 3-4, 8c-9
+          'C':
+            verses:
+            - book: Ezekiel
+              ranges:
+              - begin: {chapter: 34, verse: 11}
+                end: {chapter: 34, verse: 16}
+              ref: Ezekiel 34:11-16
+      - name: Responsorial Psalm
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 103, verse: 1}
+                end: {chapter: 103, verse: 2}
+              - begin: {chapter: 103, verse: 3}
+                end: {chapter: 103, verse: 4}
+              - begin: {chapter: 103, verse: 6}
+                end: {chapter: 103, verse: 7}
+              - begin: {chapter: 103, verse: 8}
+                end: {chapter: 103, verse: 8}
+              - begin: {chapter: 103, verse: 10}
+                end: {chapter: 103, verse: 10}
+              ref: Psalm 103:1-2, 3-4, 6-7, 8, 10
+          'B':
+            verses:
+            - book: Isaiah
+              ranges:
+              - begin: {chapter: 12, verse: 2}
+                end: {chapter: 12, verse: 3}
+              - begin: {chapter: 12, verse: 4, part: bcd}
+                end: {chapter: 12, verse: 4, part: bcd}
+              - begin: {chapter: 12, verse: 5}
+                end: {chapter: 12, verse: 6}
+              ref: Isaiah 12:2-3, 4bcd, 5-6
+          'C':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 23, verse: 1}
+                end: {chapter: 23, verse: 3, part: a}
+              - begin: {chapter: 23, verse: 3, part: b}
+                end: {chapter: 23, verse: 4}
+              - begin: {chapter: 23, verse: 5}
+                end: {chapter: 23, verse: 5}
+              - begin: {chapter: 23, verse: 6}
+                end: {chapter: 23, verse: 6}
+              ref: Psalm 23:1-3a, 3b-4, 5, 6
+      - name: Second Reading
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: 1 John
+              ranges:
+              - begin: {chapter: 4, verse: 7}
+                end: {chapter: 4, verse: 16}
+              ref: 1 John 4:7-16
+          'B':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 3, verse: 8}
+                end: {chapter: 3, verse: 12}
+              - begin: {chapter: 3, verse: 14}
+                end: {chapter: 3, verse: 19}
+              ref: Ephesians 3:8-12, 14-19
+          'C':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 5, verse: 5, part: b}
+                end: {chapter: 5, verse: 11}
+              ref: Romans 5:5b-11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 29, part: ab}
+            end: {chapter: 11, verse: 29, part: ab}
+          ref: Matthew 11:29ab
+        notes: 'The Ordo prints this verse once, at n. 170, and sends Years B and C back to it rather than
+          reprinting it, so this is the one slot of this Mass that does not vary by year.'
+      - name: Gospel Acclamation (alternative)
+        source: scripture
+        cycles:
+          'B':
+            verses:
+            - book: 1 John
+              ranges:
+              - begin: {chapter: 4, verse: 10, part: b}
+                end: {chapter: 4, verse: 10, part: b}
+              ref: 1 John 4:10b
+          'C':
+            verses:
+            - book: John
+              ranges:
+              - begin: {chapter: 10, verse: 14}
+                end: {chapter: 10, verse: 14}
+              ref: John 10:14
+        notes: 'The Ordo prints this under Vel as an alternative to the preceding Gospel Acclamation, in Years B
+          and C only.'
+      - name: Gospel
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Matthew
+              ranges:
+              - begin: {chapter: 11, verse: 25}
+                end: {chapter: 11, verse: 30}
+              ref: Matthew 11:25-30
+          'B':
+            verses:
+            - book: John
+              ranges:
+              - begin: {chapter: 19, verse: 31}
+                end: {chapter: 19, verse: 37}
+              ref: John 19:31-37
+          'C':
+            verses:
+            - book: Luke
+              ranges:
+              - begin: {chapter: 15, verse: 3}
+                end: {chapter: 15, verse: 7}
+              ref: Luke 15:3-7
     - key: immaculate-heart-blessed-virgin-mary
       name: The Immaculate Heart of the Blessed Virgin Mary
       registry: pc-T-immaculate-heart-blessed-virgin-mary
@@ -38796,16 +38940,253 @@ sections:
           ref: John 3:13-17
     - key: nativity-lord
       name: The Nativity of the Lord
-      registry: pc-12-25
+      registry: 'pc-12-25'
       date: 12-25
       rank: Solemnity
       kind: christological
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Vigil Mass
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Prayer after Communion
+      - name: Mass during the Night
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Entrance Antiphon
+        - name: Entrance Antiphon (alternative)
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Entrance Antiphon (alternative)
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Prayer after Communion
+      - name: Mass at Dawn
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Prayer after Communion
+      - name: Mass during the Day
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Prayer after Communion
+      notes: 'This entry is the one the calendar spine reaches on 25 December and it printed nothing: the index
+        already carries the Nativity''s four Masses in full under the seasonal key nativity, registry
+        pc-s05, while this christological entry, registry pc-12-25, held a placeholder, so the greatest
+        solemnity of the year after Easter rendered no text on its own date. The four formularies are NOT
+        written again here. Every proper below names where its text is printed through takes_from, which
+        src/sources/calendars/README.md makes the only sanctioned way to carry a mass that takes
+        another''s formulary, and which is what stops one day entered twice becoming two copies free to
+        disagree; the underlying question of whether one celebration should hold two entries at all is a
+        maintainer''s and is not decided here. The Lectionary side of the borrowed formularies was
+        collated on this pass against the page images of the Ordo lectionum Missae, editio typica altera
+        1981, artifact internet-archive-scan-pdf-ed4bc14e, read at 200 dpi at artifact pages 65 and 66,
+        printed pages 11 and 12, the day heading verified on those images as 25 December, In Nativitate
+        Domini, with four Masses at nn. 13, 14, 15 and 16 headed in vigilia, in nocte, in aurora and in
+        die: every First Reading, Responsorial Psalm, Second Reading and Gospel that nativity carries
+        agrees with the book, psalm numbering included, and so does the Gospel Acclamation of the Mass
+        during the Night and of the Mass at Dawn. Against Alleluia in the Vigil Mass and in the Mass
+        during the Day the Ordo prints a chant text and no scriptural reference at all, so those two slots
+        hold no citation for this lane to collate and none was taken; what nativity carries in them is
+        that entry''s own record. Two readings the book prints are still absent from nativity - the Ordo
+        prints the Vigil Gospel and the Gospel of the Mass during the Day each in a longer form and a
+        shorter one, and only the longer of each is carried - and that is reported to the entry which owns
+        them rather than added from here. The Ordo also prints, at the foot of n. 13, a rubric permitting
+        the Masses celebrated on the day of the Nativity to take more suitable reading texts from any of
+        the three; it governs which text may be used and not what is appointed, and its wording is not
+        carried. This entry adds no oration and no antiphon: the Missale Romanum 2002 prints them, the
+        Ordo does not, that book is in copyright and is not held here, and whatever nativity carries in
+        those slots is that entry''s own record and is neither restated nor vouched for here. Nothing of
+        the Ordo''s wording - no pericope title, psalm response, acclamation text, rubric or printed
+        heading - is reproduced.'
   sanctoral:
     kind: sanctoral
     label: Saints
@@ -38818,11 +39199,48 @@ sections:
       rank: Memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 4, verse: 1}
+            end: {chapter: 4, verse: 7}
+          - begin: {chapter: 4, verse: 11}
+            end: {chapter: 4, verse: 13}
+          ref: Ephesians 4:1-7, 11-13
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 3}
+          - begin: {chapter: 23, verse: 4}
+            end: {chapter: 23, verse: 4}
+          - begin: {chapter: 23, verse: 5}
+            end: {chapter: 23, verse: 5}
+          - begin: {chapter: 23, verse: 6}
+            end: {chapter: 23, verse: 6}
+          ref: Psalm 23:1-3, 4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 23, verse: 9, part: b}
+            end: {chapter: 23, verse: 9, part: b}
+          - begin: {chapter: 23, verse: 10, part: b}
+            end: {chapter: 23, verse: 10, part: b}
+          ref: Matthew 23:9b, 10b
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 23, verse: 8}
+            end: {chapter: 23, verse: 12}
+          ref: Matthew 23:8-12
     - key: saint-raymond-penyafort-priest
       name: Saint Raymond of Penyafort, Priest
       registry: pc-01-07
@@ -38918,12 +39336,89 @@ sections:
       date: 01-20
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saint Fabian, Pope and Martyr
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Peter
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 4}
+            ref: 1 Peter 5:1-4
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 40, verse: 2}
+              end: {chapter: 40, verse: 2}
+            - begin: {chapter: 40, verse: 4, part: ab}
+              end: {chapter: 40, verse: 4, part: ab}
+            - begin: {chapter: 40, verse: 7}
+              end: {chapter: 40, verse: 8, part: a}
+            - begin: {chapter: 40, verse: 8, part: b}
+              end: {chapter: 40, verse: 9}
+            - begin: {chapter: 40, verse: 10}
+              end: {chapter: 40, verse: 10}
+            ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 10, verse: 14}
+              end: {chapter: 10, verse: 14}
+            ref: John 10:14
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 21, verse: 15}
+              end: {chapter: 21, verse: 17}
+            ref: John 21:15-17
+      - name: Saint Sebastian, Martyr
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Peter
+            ranges:
+            - begin: {chapter: 3, verse: 14}
+              end: {chapter: 3, verse: 17}
+            ref: 1 Peter 3:14-17
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 34, verse: 2}
+              end: {chapter: 34, verse: 3}
+            - begin: {chapter: 34, verse: 4}
+              end: {chapter: 34, verse: 5}
+            - begin: {chapter: 34, verse: 6}
+              end: {chapter: 34, verse: 7}
+            - begin: {chapter: 34, verse: 8}
+              end: {chapter: 34, verse: 9}
+            ref: Psalm 34:2-3, 4-5, 6-7, 8-9
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: James
+            ranges:
+            - begin: {chapter: 1, verse: 12}
+              end: {chapter: 1, verse: 12}
+            ref: James 1:12
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 10, verse: 28}
+              end: {chapter: 10, verse: 33}
+            ref: Matthew 10:28-33
     - key: saint-agnes-virgin-martyr
       name: Saint Agnes, Virgin and Martyr
       registry: pc-01-21
@@ -39409,12 +39904,85 @@ sections:
       date: 02-03
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saint Blaise, Bishop and Martyr
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 5}
+            ref: Romans 5:1-5
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 117, verse: 1}
+              end: {chapter: 117, verse: 1}
+            - begin: {chapter: 117, verse: 2}
+              end: {chapter: 117, verse: 2}
+            ref: Psalm 117:1, 2
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 28, verse: 19, part: a}
+              end: {chapter: 28, verse: 19, part: a}
+            - begin: {chapter: 28, verse: 20, part: b}
+              end: {chapter: 28, verse: 20, part: b}
+            ref: Matthew 28:19a, 20b
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 16, verse: 15}
+              end: {chapter: 16, verse: 20}
+            ref: Mark 16:15-20
+      - name: Saint Ansgar, Bishop
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 52, verse: 7}
+              end: {chapter: 52, verse: 10}
+            ref: Isaiah 52:7-10
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 96, verse: 1}
+              end: {chapter: 96, verse: 2, part: a}
+            - begin: {chapter: 96, verse: 2, part: b}
+              end: {chapter: 96, verse: 3}
+            - begin: {chapter: 96, verse: 7}
+              end: {chapter: 96, verse: 8, part: a}
+            - begin: {chapter: 96, verse: 10}
+              end: {chapter: 96, verse: 10}
+            ref: Psalm 96:1-2a, 2b-3, 7-8a, 10
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 17}
+            ref: Mark 1:17
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 1, verse: 14}
+              end: {chapter: 1, verse: 20}
+            ref: Mark 1:14-20
     - key: saint-agatha-virgin-martyr
       name: Saint Agatha, Virgin and Martyr
       registry: pc-02-05
@@ -41029,11 +41597,40 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 1, verse: 18}
+            end: {chapter: 1, verse: 25}
+          ref: 1 Corinthians 1:18-25
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 117, verse: 1}
+            end: {chapter: 117, verse: 1}
+          - begin: {chapter: 117, verse: 2}
+            end: {chapter: 117, verse: 2}
+          ref: Psalm 117:1, 2
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 1, verse: 17}
+            end: {chapter: 1, verse: 17}
+          ref: Mark 1:17
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 1, verse: 14}
+            end: {chapter: 1, verse: 20}
+          ref: Mark 1:14-20
     - key: saint-catherine-siena-virgin-doctor-church
       name: Saint Catherine of Siena, Virgin and Doctor of the Church
       registry: pc-04-29
@@ -41364,12 +41961,89 @@ sections:
       date: 05-12
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saints Nereus and Achilleus, Martyrs
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Revelation
+            ranges:
+            - begin: {chapter: 7, verse: 9}
+              end: {chapter: 7, verse: 17}
+            ref: Revelation 7:9-17
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 124, verse: 2}
+              end: {chapter: 124, verse: 3}
+            - begin: {chapter: 124, verse: 4}
+              end: {chapter: 124, verse: 5}
+            - begin: {chapter: 124, verse: 7, part: b}
+              end: {chapter: 124, verse: 8}
+            ref: Psalm 124:2-3, 4-5, 7b-8
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 5, verse: 10}
+              end: {chapter: 5, verse: 10}
+            ref: Matthew 5:10
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 10, verse: 17}
+              end: {chapter: 10, verse: 22}
+            ref: Matthew 10:17-22
+      - name: Saint Pancras, Martyr
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Revelation
+            ranges:
+            - begin: {chapter: 19, verse: 1}
+              end: {chapter: 19, verse: 1}
+            - begin: {chapter: 19, verse: 5}
+              end: {chapter: 19, verse: 9, part: a}
+            ref: Revelation 19:1, 5-9a
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 103, verse: 1}
+              end: {chapter: 103, verse: 2}
+            - begin: {chapter: 103, verse: 3}
+              end: {chapter: 103, verse: 4}
+            - begin: {chapter: 103, verse: 8}
+              end: {chapter: 103, verse: 9}
+            - begin: {chapter: 103, verse: 13}
+              end: {chapter: 103, verse: 14}
+            - begin: {chapter: 103, verse: 17}
+              end: {chapter: 103, verse: 18, part: a}
+            ref: Psalm 103:1-2, 3-4, 8-9, 13-14, 17-18a
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 11, verse: 25}
+              end: {chapter: 11, verse: 25}
+            ref: Matthew 11:25
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 11, verse: 25}
+              end: {chapter: 11, verse: 30}
+            ref: Matthew 11:25-30
     - key: saint-matthias-apostle
       name: Saint Matthias, Apostle
       registry: pc-05-14
@@ -41581,12 +42255,135 @@ sections:
       date: 05-25
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saint Bede the Venerable, Priest and Doctor of the Church
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Corinthians
+            ranges:
+            - begin: {chapter: 2, verse: 10, part: b}
+              end: {chapter: 2, verse: 16}
+            ref: 1 Corinthians 2:10b-16
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 119, verse: 9}
+              end: {chapter: 119, verse: 9}
+            - begin: {chapter: 119, verse: 10}
+              end: {chapter: 119, verse: 10}
+            - begin: {chapter: 119, verse: 11}
+              end: {chapter: 119, verse: 11}
+            - begin: {chapter: 119, verse: 12}
+              end: {chapter: 119, verse: 12}
+            - begin: {chapter: 119, verse: 13}
+              end: {chapter: 119, verse: 13}
+            - begin: {chapter: 119, verse: 14}
+              end: {chapter: 119, verse: 14}
+            ref: Psalm 119:9, 10, 11, 12, 13, 14
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 6, verse: 63, part: c}
+              end: {chapter: 6, verse: 63, part: c}
+            - begin: {chapter: 6, verse: 68, part: c}
+              end: {chapter: 6, verse: 68, part: c}
+            ref: John 6:63c, 68c
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 7, verse: 21}
+              end: {chapter: 7, verse: 29}
+            ref: Matthew 7:21-29
+      - name: Saint Gregory VII, Pope
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Acts
+            ranges:
+            - begin: {chapter: 20, verse: 17}
+              end: {chapter: 20, verse: 18, part: a}
+            - begin: {chapter: 20, verse: 28}
+              end: {chapter: 20, verse: 32}
+            - begin: {chapter: 20, verse: 36}
+              end: {chapter: 20, verse: 36}
+            ref: Acts 20:17-18a, 28-32, 36
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 110, verse: 1}
+              end: {chapter: 110, verse: 1}
+            - begin: {chapter: 110, verse: 2}
+              end: {chapter: 110, verse: 2}
+            - begin: {chapter: 110, verse: 3}
+              end: {chapter: 110, verse: 3}
+            - begin: {chapter: 110, verse: 4}
+              end: {chapter: 110, verse: 4}
+            ref: Psalm 110:1, 2, 3, 4
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 17}
+            ref: Mark 1:17
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 16, verse: 13}
+              end: {chapter: 16, verse: 19}
+            ref: Matthew 16:13-19
+      - name: Saint Mary Magdalene de' Pazzi, Virgin
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Corinthians
+            ranges:
+            - begin: {chapter: 7, verse: 25}
+              end: {chapter: 7, verse: 35}
+            ref: 1 Corinthians 7:25-35
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 148, verse: 1}
+              end: {chapter: 148, verse: 2}
+            - begin: {chapter: 148, verse: 11}
+              end: {chapter: 148, verse: 13, part: a}
+            - begin: {chapter: 148, verse: 13, part: c}
+              end: {chapter: 148, verse: 14}
+            ref: Psalm 148:1-2, 11-13a, 13c-14
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 8, verse: 31, part: b}
+              end: {chapter: 8, verse: 32}
+            ref: John 8:31b-32
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 3, verse: 31}
+              end: {chapter: 3, verse: 35}
+            ref: Mark 3:31-35
     - key: saint-philip-neri-priest
       name: Saint Philip Neri, Priest
       registry: pc-05-26
@@ -43810,11 +44607,46 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 John
+          ranges:
+          - begin: {chapter: 5, verse: 1}
+            end: {chapter: 5, verse: 5}
+          ref: 1 John 5:1-5
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 89, verse: 2}
+            end: {chapter: 89, verse: 3}
+          - begin: {chapter: 89, verse: 4}
+            end: {chapter: 89, verse: 5}
+          - begin: {chapter: 89, verse: 21}
+            end: {chapter: 89, verse: 22}
+          - begin: {chapter: 89, verse: 25}
+            end: {chapter: 89, verse: 25}
+          - begin: {chapter: 89, verse: 27}
+            end: {chapter: 89, verse: 27}
+          ref: Psalm 89:2-3, 4-5, 21-22, 25, 27
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 3}
+          ref: Matthew 5:3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 1}
+            end: {chapter: 5, verse: 12, part: a}
+          ref: Matthew 5:1-12a
     - key: saint-john-vianney-priest
       name: Saint John Vianney, Priest
       registry: pc-08-04
@@ -45119,11 +45951,48 @@ sections:
       rank: Optional memorials
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 7, verse: 7}
+            end: {chapter: 7, verse: 10}
+          - begin: {chapter: 7, verse: 15}
+            end: {chapter: 7, verse: 16}
+          ref: Wisdom 7:7-10, 15-16
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 19, verse: 8}
+            end: {chapter: 19, verse: 8}
+          - begin: {chapter: 19, verse: 9}
+            end: {chapter: 19, verse: 9}
+          - begin: {chapter: 19, verse: 10}
+            end: {chapter: 19, verse: 10}
+          - begin: {chapter: 19, verse: 11}
+            end: {chapter: 19, verse: 11}
+          ref: Psalm 19:8, 9, 10, 11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 63, part: c}
+            end: {chapter: 6, verse: 63, part: c}
+          - begin: {chapter: 6, verse: 68, part: c}
+            end: {chapter: 6, verse: 68, part: c}
+          ref: John 6:63c, 68c
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 7, verse: 21}
+            end: {chapter: 7, verse: 29}
+          ref: Matthew 7:21-29
     - key: saint-januarius-bishop-martyr
       name: Saint Januarius, Bishop and Martyr
       registry: pc-09-19
@@ -45766,12 +46635,89 @@ sections:
       date: 10-09
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saints Denis, Bishop, and Companions, Martyrs
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 2 Corinthians
+            ranges:
+            - begin: {chapter: 6, verse: 4}
+              end: {chapter: 6, verse: 10}
+            ref: 2 Corinthians 6:4-10
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 126, verse: 1}
+              end: {chapter: 126, verse: 2, part: ab}
+            - begin: {chapter: 126, verse: 2, part: cd}
+              end: {chapter: 126, verse: 3}
+            - begin: {chapter: 126, verse: 4}
+              end: {chapter: 126, verse: 5}
+            - begin: {chapter: 126, verse: 6}
+              end: {chapter: 126, verse: 6}
+            ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 8, verse: 12}
+              end: {chapter: 8, verse: 12}
+            ref: John 8:12
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 5, verse: 13}
+              end: {chapter: 5, verse: 16}
+            ref: Matthew 5:13-16
+      - name: Saint John Leonardi, Priest
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 2 Corinthians
+            ranges:
+            - begin: {chapter: 4, verse: 1}
+              end: {chapter: 4, verse: 2}
+            - begin: {chapter: 4, verse: 5}
+              end: {chapter: 4, verse: 7}
+            ref: 2 Corinthians 4:1-2, 5-7
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 96, verse: 1}
+              end: {chapter: 96, verse: 2, part: a}
+            - begin: {chapter: 96, verse: 2, part: b}
+              end: {chapter: 96, verse: 3}
+            - begin: {chapter: 96, verse: 7}
+              end: {chapter: 96, verse: 8, part: a}
+            - begin: {chapter: 96, verse: 10}
+              end: {chapter: 96, verse: 10}
+            ref: Psalm 96:1-2a, 2b-3, 7-8a, 10
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 17}
+            ref: Mark 1:17
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 11}
+            ref: Luke 5:1-11
     - key: saint-john-xxiii-pope
       name: Saint John XXIII, Pope
       registry: pc-10-11
@@ -46045,12 +46991,85 @@ sections:
       date: 10-19
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 2 Corinthians
+            ranges:
+            - begin: {chapter: 4, verse: 7}
+              end: {chapter: 4, verse: 15}
+            ref: 2 Corinthians 4:7-15
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 126, verse: 1}
+              end: {chapter: 126, verse: 2, part: ab}
+            - begin: {chapter: 126, verse: 2, part: cd}
+              end: {chapter: 126, verse: 3}
+            - begin: {chapter: 126, verse: 4}
+              end: {chapter: 126, verse: 5}
+            - begin: {chapter: 126, verse: 6}
+              end: {chapter: 126, verse: 6}
+            ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 28, verse: 19, part: a}
+              end: {chapter: 28, verse: 19, part: a}
+            - begin: {chapter: 28, verse: 20, part: b}
+              end: {chapter: 28, verse: 20, part: b}
+            ref: Matthew 28:19a, 20b
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 28, verse: 16}
+              end: {chapter: 28, verse: 20}
+            ref: Matthew 28:16-20
+      - name: Saint Paul of the Cross, Priest
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Corinthians
+            ranges:
+            - begin: {chapter: 1, verse: 18}
+              end: {chapter: 1, verse: 25}
+            ref: 1 Corinthians 1:18-25
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 117, verse: 1}
+              end: {chapter: 117, verse: 1}
+            - begin: {chapter: 117, verse: 2}
+              end: {chapter: 117, verse: 2}
+            ref: Psalm 117:1, 2
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 5, verse: 6}
+              end: {chapter: 5, verse: 6}
+            ref: Matthew 5:6
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 16, verse: 24}
+              end: {chapter: 16, verse: 27}
+            ref: Matthew 16:24-27
     - key: saint-john-paul-ii-pope
       name: Saint John Paul II, Pope
       registry: pc-10-22
@@ -46308,26 +47327,25 @@ sections:
         read.
       forms:
       - name: First formulary
+      forms:
+      - name: First formulary
         propers:
         - name: Placeholder
           source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+          text: |
+            This entry is a placeholder pending formula migration and source verification.
       - name: Second formulary
         propers:
         - name: Placeholder
           source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+          text: |
+            This entry is a placeholder pending formula migration and source verification.
       - name: Third formulary
         propers:
         - name: Placeholder
           source: composed
-          text: 'This entry is a placeholder pending formula migration and source verification.
-
-            '
+          text: |
+            This entry is a placeholder pending formula migration and source verification.
     - key: saint-martin-porres-religious
       name: Saint Martin de Porres, Religious
       registry: pc-11-03
@@ -46954,12 +47972,89 @@ sections:
       date: 11-23
       rank: Optional memorials
       kind: sanctoral
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Saint Clement I, Pope and Martyr
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: 1 Peter
+            ranges:
+            - begin: {chapter: 5, verse: 1}
+              end: {chapter: 5, verse: 4}
+            ref: 1 Peter 5:1-4
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 89, verse: 2}
+              end: {chapter: 89, verse: 3}
+            - begin: {chapter: 89, verse: 4}
+              end: {chapter: 89, verse: 5}
+            - begin: {chapter: 89, verse: 21}
+              end: {chapter: 89, verse: 22}
+            - begin: {chapter: 89, verse: 25}
+              end: {chapter: 89, verse: 25}
+            - begin: {chapter: 89, verse: 27}
+              end: {chapter: 89, verse: 27}
+            ref: Psalm 89:2-3, 4-5, 21-22, 25, 27
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: Mark
+            ranges:
+            - begin: {chapter: 1, verse: 17}
+              end: {chapter: 1, verse: 17}
+            ref: Mark 1:17
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 16, verse: 13}
+              end: {chapter: 16, verse: 19}
+            ref: Matthew 16:13-19
+      - name: Saint Columban, Abbot
+        propers:
+        - name: First Reading
+          source: scripture
+          verses:
+          - book: Isaiah
+            ranges:
+            - begin: {chapter: 52, verse: 7}
+              end: {chapter: 52, verse: 10}
+            ref: Isaiah 52:7-10
+        - name: Responsorial Psalm
+          source: scripture
+          verses:
+          - book: Psalms
+            ranges:
+            - begin: {chapter: 96, verse: 1}
+              end: {chapter: 96, verse: 2, part: a}
+            - begin: {chapter: 96, verse: 2, part: b}
+              end: {chapter: 96, verse: 3}
+            - begin: {chapter: 96, verse: 7}
+              end: {chapter: 96, verse: 8, part: a}
+            - begin: {chapter: 96, verse: 10}
+              end: {chapter: 96, verse: 10}
+            ref: Psalm 96:1-2a, 2b-3, 7-8a, 10
+        - name: Gospel Acclamation
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 8, verse: 12}
+              end: {chapter: 8, verse: 12}
+            ref: John 8:12
+        - name: Gospel
+          source: scripture
+          verses:
+          - book: Luke
+            ranges:
+            - begin: {chapter: 9, verse: 57}
+              end: {chapter: 9, verse: 62}
+            ref: Luke 9:57-62
     - key: saints-andrew-dung-lac-priest-companions
       name: Saints Andrew Dung-Lac, Priest, and Companions, Martyrs
       registry: pc-11-24

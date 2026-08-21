@@ -1,0 +1,42 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2011-english-cbcew-excerpts.local-parish-use-grant"
+edition_id = "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpts"
+artifact_id = "artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.liturgy-office-missal-text-index-html"
+artifact_sha256 = "79b557c2a731bce83ad399ef2fc454d0aa29fa2e2c47bd587bc222e9e94da4e1"
+locus = "order-of-mass-leaflets.reproduction-terms"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = """
+The Liturgy Office's own terms over the files it publishes, read on 2026-08-21
+from the retained bytes. Immediately above the table of Order of Mass leaflets:
+
+"The following leaflets may be reproduced for local parish use."
+
+and at the foot of the page, as on every Missal page of the site:
+
+"(c) CBCEW"
+
+RECORDED SO THAT THE TWO LAYERS ARE NOT RUN TOGETHER. This is the delivery
+publisher's grant over its own compilation and typography, and it is bounded to
+local parish use. It does not reach a permanent website, it is not the basis on
+which ICEL text appears on this project's pages, and it is the reason the
+sibling artifacts are stored remote with no payload retained. The basis for
+publishing the ICEL text those files carry is ICEL's own Global Computer
+Networks clause, recorded at
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+
+The same page states the intent behind the leaflets -- "the Order of Mass in a
+format which can be copied and used as a participation aid" -- which is worth
+noticing for a different reason. A participation aid is a regulated publication
+category under the USCCB's 2025 guidelines and its equivalents; this project is
+not one and must not become one by imitating these leaflets' function.
+
+The page's own Saint Joseph paragraph is the dated correction that its
+Eucharistic Prayer files do not carry: "In 2013 The Congregation for Divine
+Worship and the Discipline of the Sacraments have informed Bishops' Conferences
+that henceforward St Joseph is to be inserted into Eucharistic Prayers II-IV in
+the Roman Missal." EP2-A4.pdf, EP3-A4.pdf and EP4-A4.pdf were produced on 1
+September 2011 and contain no occurrence of the name.
+"""
+verified_on = "2026-08-21"
+notes = "The parallel Holy Week page, /Missal/Text/Triduum.shtml, describes its excerpts as \"intended for printing and insertion in a worthy folder for use in the liturgy\" -- the same bounded, print-and-parish sense of the grant."

@@ -1,0 +1,43 @@
+schema = 2
+record_type = "passage"
+id = "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.icet-ellc-texts"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet"
+artifact_id = "artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf"
+artifact_sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+locus = "part-one.icet-ellc-texts"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[11, 12]]
+context = """
+Part One, "ICET/ELLC Texts", read on 2026-08-21 from the retained bytes, artifact
+pages 11-12, printed pages 10-11. Registered because this repository already
+publishes nine of these texts, on the English Language Liturgical Consultation's
+own grant, and here the position is corroborated by the other party.
+
+The booklet lists the texts: the Lord's Prayer, Apostles' Creed, Nicene Creed,
+Kyrie, Gloria in Excelsis, Sursum Corda, Sanctus/Benedictus, Agnus Dei, Gloria
+Patri, Benedictus (Canticle of Zechariah), Te Deum, Magnificat (Canticle of
+Mary), Nunc Dimittis (Canticle of Simeon). Then:
+
+"The texts, whether in their original form (1975) or as revised by ELLC (1988),
+are in the public domain and as such do not require permission for reproduction.
+It is sufficient to acknowledge the source of the text, for example: English
+translation of the [insert title] by the International Consultation on English
+Texts or the English Language Liturgical Consultation."
+
+ICEL adds a format request that is not a rights condition: "ICET/ELLC texts
+employ not only sense lines but also special indentations, all of which were
+worked out after extensive discussion and agreement by the representatives of the
+various church bodies. ICEL cannot be a party to any violation of the integral
+texts agreed to in good faith by the participants in ICET/ELLC. Except in the
+case of musical setting of the ICET/ELLC texts, ICEL strongly recommends that the
+special format of the texts prepared by the participants in ICET/ELLC be
+followed."
+
+Two limits, both of which this repository already observes. These are the
+ecumenical common texts and nothing else: not one is a proper, and no oration is
+within reach of them. And an ELLC text is not the approved English of the Roman
+Rite — ELLC reads "And also with you" where the 2011 Missal reads "And with your
+spirit" — so an ELLC text must never be served as a Roman Missal text.
+"""
+verified_on = "2026-08-21"
+notes = "Corroborates [the_ellc_grant] in src/sources/inventories/liturgical-english-rights-v1.toml from a second and independent party. That entry rests on ELLC's own permissions page; this is the ICEL side saying the same thing, and it is stronger than a grant because it is a statement that no grant is needed."

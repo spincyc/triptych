@@ -111,13 +111,13 @@ EXAMPLES = {
                 "      Ad te levavi…",
                 "",
                 "    Collect",
-                "      Excita, quaesumus, Domine, potentiam tuam, et veni: ut ab imminentibus peccatorum",
-                "      nostrorum periculis, te mereamur protegente eripi, te liberante salvari: Qui",
-                "      vivis...",
-                "",
-                "    Epistle — Romans 13:11-14",
-                "",
-                "... 51 more lines",
+                "      [edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861]",
+                "      Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may",
+                "      be freed from the imminent dangers of our sins, and be saved by thy mercy, who",
+                "      liveth and reigneth, &c.",
+                "      [artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en]",
+                "      Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may",
+                "... 67 more lines",
             ),
             "read-only; with no --date it resolves today. Two Masses fall on this "
             "date and both are listed",
@@ -798,11 +798,28 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 if refs:
                     head += f" — {'; '.join(refs)}"
                 print(f"\n    {head}")
-                if proper.get("incipit") and not proper.get("text"):
+                # Through the SAME selector the expanded view and
+                # `mass-propers show` use. This printed `proper["text"]`
+                # directly, which is the tracked Latin whatever `--lang` said,
+                # so the day view answered a reader in Latin over an English
+                # translation the same repository was publishing on the site.
+                # That is the defect the failure register records as "the
+                # English reaching the site and not the terminal", and it
+                # recurred here because a third reader of one file grew its own
+                # rule instead of calling the one that exists.
+                shown = _calendars.texts_of(
+                    proper, arguments.lang, getattr(arguments, "witness", None)
+                )
+                if proper.get("incipit") and not any(text for text, _, _ in shown):
                     print(f"      {proper['incipit']}…")
-                if proper.get("text"):
-                    for line in wrap(proper["text"], "      "):
-                        print(line)
+                for text, attribution, note in shown:
+                    if text:
+                        if attribution:
+                            print(f"      [{attribution}]")
+                        for line in wrap(text, "      "):
+                            print(line)
+                    if note:
+                        print(f"      ({note})")
             if mass["placeholders"]:
                 count = mass["placeholders"]
                 print(

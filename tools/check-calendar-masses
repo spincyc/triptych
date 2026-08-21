@@ -57,7 +57,7 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --json",
             (
-                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+5053 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+5515 chars]",
             ),
         ),
     ),
@@ -67,7 +67,17 @@ DEFAULT_ROOT = Path("src/sources/calendars")
 SCHEMA = "triptych-calendar-masses/v1"
 # A translation is carried on exactly one of these bases; project-created
 # work is CC BY 4.0 only when its authorship is identified as such.
-TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created"}
+# `permission` is a rightsholder's own standing grant, made in advance and in
+# writing to anyone whose use meets its terms — as ICEL's Publication Policies
+# grant the reproduction of its promulgated texts on a non-commercial website.
+# It is distinct from `licensed`, which is a grant to THIS project and carries
+# the notice its licensor requires, and from `public-domain`, where nobody's
+# permission is needed at all. All three name a source_id; the two that rest on
+# somebody's grant must also carry the acknowledgment that grant is conditioned
+# on, because publishing without it is publishing outside the permission.
+TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created", "permission"}
+# The bases whose grant is conditioned on a notice travelling with the words.
+RIGHTS_NEEDING_NOTICE = ("licensed", "permission")
 # Vulgate and Hebrew psalm numbering diverge across most of the psalter,
 # so a reference is only resolvable against a bible in the same system.
 PSALM_NUMBERING = {"vulgate", "hebrew"}
@@ -459,10 +469,13 @@ def check_translation_list(where: str, payload: object, problems: list[str]) -> 
                 f"{label}: rights must be one of {sorted(TRANSLATION_RIGHTS)}, got {rights!r}"
             )
         source_id = entry.get("source_id")
-        if rights in {"licensed", "public-domain"} and not source_id:
+        if rights in {"licensed", "public-domain", "permission"} and not source_id:
             problems.append(f"{label}: {rights} translation must name its source_id")
-        if rights == "licensed" and not entry.get("notice"):
-            problems.append(f"{label}: licensed translation must carry its required notice")
+        if rights in RIGHTS_NEEDING_NOTICE and not entry.get("notice"):
+            problems.append(
+                f"{label}: {rights} translation must carry its required notice; "
+                "the grant it publishes under is conditioned on one"
+            )
         if source_id is not None and not isinstance(source_id, str):
             problems.append(f"{label}: source_id must be a string, got {source_id!r}")
             source_id = None

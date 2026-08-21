@@ -30,6 +30,16 @@ the date travel together everywhere in this file.
 
 ---
 
+## 0. Where this came from
+
+The maintainer wrote `guidance/liturgical-corpus-brief-2026-08-21.md` and
+confirmed it as the project's governing instruction. This page is that brief's
+standing policy, implemented and verified against sources opened at execution
+time; the brief itself asks for exactly that verification, and where the two
+differ this page governs. The brief's work-order half — its repository sweep,
+phase sequence and report format — was addressed to the agents who executed it
+and is spent.
+
 ## 1. The presumption, and the priority order
 
 > **Publish unless a copyright holder has affirmatively reserved the particular
@@ -205,29 +215,44 @@ not permission.
 
 Condition (3) requires the texts be followed exactly. Brief §14.3 and §15, and
 `sources.md`, forbid sourcing them from blogs, unofficial missal sites, scraped
-parish PDFs, unverified OCR, or generation. A survey on 2026-08-20 of every
-reachable route found that **no reachable authoritative source supplies the
-exact ICEL English of 183 of the 202 ledgered slots** [verified]. ICEL grants the
-permission and publishes no exemplar: its own site has seven pages, catalogues
-the books it has translated, and offers no text and no download.
+parish PDFs, unverified OCR, or generation.
 
-What is reachable is narrower and real:
+**A first survey on 2026-08-20 got this substantially wrong, and the correction
+is instructive enough to keep rather than overwrite.** It reported that no
+reachable authoritative source supplies the exact English of 183 of the 202
+ledgered slots, and that "ICEL grants the permission and publishes no exemplar:
+its own site has seven pages, catalogues the books it has translated, and offers
+no text and no download". The second sentence is false. Re-scored the same day
+against files actually opened at the bytes, **48 of the 202 have an official,
+free, whole, reachable source and 154 do not**.
 
-| Route | Slots it could reach | Status |
-| --- | ---: | --- |
-| CBCEW Liturgy Office Holy Week and Triduum excerpts, five free whole PDFs | ~19, unverified | best candidate; each PDF must be opened and its contents recorded before any of it counts |
-| USCCB Our Lady of Loreto supplement | 3 | candidate; `usccb.org` refuses this environment (§16), so unreachable by a compliant route today |
-| everything else — 180 Sunday and seasonal orations and antiphons, Good Friday, the Mass of the Lord's Supper | 0 | no candidate passes |
+What that survey missed, and what any later one should look for first:
 
-Separately and outside those slots, the CBCEW Liturgy Office publishes the
-**whole Order of Mass and all four Eucharistic Prayers**, free and entire. That
-is the largest reader-visible gap now closable, since
-`postconciliar-ordo-missae-v1.toml` withholds the whole Order of Mass under
-`absences.icel` and serves in its place ELLC text that its own advisory warns is
-not what is said at Mass in the dioceses of the United States. The England-and-
-Wales text must be verified element by element against the U.S. state before it
-lands: the universal ICEL text is common to ICEL territories, national
-adaptations are not.
+| Source | What it publishes | Reaches |
+| --- | --- | ---: |
+| ICEL's own open music folder, linked from its News page | 188 free PDFs of the Missal's chanted texts: every Preface, the sung Order of Mass, Eucharistic Prayers I–IV, and the Holy Week ritual chants including all ten Good Friday Solemn Intercessions | the bulk of the Holy Week ritual slots |
+| The ICEL Antiphonary, hosted by the CBCEW Liturgy Office | 265 pp: the English of ALL Entrance and Communion Antiphons of the Missale Romanum 2002/2008, Proper of Time, Saints, Commons, Ritual, Various Needs, Votive and Dead | every antiphon slot, 13 of them |
+| CBCEW Liturgy Office | the whole Order of Mass and all four Eucharistic Prayers, free and entire | the Order of Mass |
+| USCCB, `/resources/` PDFs | the Committee on Divine Worship Newsletter archive and the post-2011 Mass formularies, several carrying the full English formulary with both Roman decrees | new celebrations |
+
+Two facts about the Antiphonary matter beyond its coverage: its hosting page
+states that **a Word version is available on request**, which is close to the
+machine-readable reference copy the narrow ask below describes; and its own
+copyright block names Psalms 23(24), 46(47) and 115(116) as Revised Grail,
+which is GIA's and not ICEL's — see §5.4.
+
+The 154 that remain have no official source for a STRUCTURAL reason, not an
+accidental one, and no further searching among conferences will change it: a
+conference publishes what its people do not already own — the Order of Mass, the
+GIRM, new celebrations, Holy Week — and never the Proper of Time's orations,
+because every priest owns the book. 124 of the 154 are exactly those orations.
+
+The England-and-Wales text must be verified element by element against the U.S.
+state before it lands: the universal ICEL text is common to ICEL territories,
+national adaptations are not. And an authoritative publisher establishes WHO
+says so, not AS OF WHEN: ICEL's own presidential-tones file prints the Advent 1
+Collect with the ending superseded after Cardinal Sarah's letter of May 2020,
+which each conference implemented on its own date.
 
 So the reason a slot is empty must now be recorded truly. It is no longer
 *"nobody may publish"*, and it is no longer *"the two bodies that would have to
@@ -276,6 +301,24 @@ governs the readings. Second, neither express prohibition printed in that book
 reaches an ICEL oration: the CCD's governs the readings, the USCCB's governs the
 U.S. adaptations and U.S. propers, and the ICEL line carries "All rights
 reserved" with its terms stated in ICEL's own published policy — which is §3.
+
+**A third consequence, withdrawn.** This page argued on 2026-08-20 that the
+Grail line made the unit of rights smaller than a proper slot, because on Palm
+Sunday an ICEL antiphon and a Grail psalm verse appear together, and that no
+antiphon could land until the model could express it. **That was wrong, and the
+schema already had the answer.** An antiphon slot is `source: mixed`: it carries
+the antiphon's own words as `text` and its scriptural constituents as `verses`,
+which are CITATIONS resolved at render time against whichever bible the reader
+has selected. The 1962 calendar has done this all along — its First Antiphon at
+the Distribution of Palms carries the antiphon's Latin beside `Matthew 21:9` and
+`Psalm 23:1-2, 7-10`, and the psalm's words come from the reader's own edition.
+
+So a Grail rendering is never needed and never wanted. What this project carries
+from ICEL is the antiphon; what it carries for the psalm is the reference. The
+psalms are the psalms, and they are served from the public-domain editions this
+repository already indexes. No slot is blocked by the Grail line, and the three
+psalms it names require nothing of us but that we do not transcribe ICEL's
+particular rendering of them, which we have no reason to.
 
 ### 5.2 What ICEL says it owns
 
@@ -803,9 +846,12 @@ Before any text is written to a tracked file:
    had.
 3. **Determine the actual copyright owner per text**, not per book. Is it ICEL
    universal text? a USCCB national adaptation or U.S. proper? CCD Scripture? a
-   fourth party — the Revised Grail Psalms are the live trap, and one Palm
-   Sunday antiphon in the postconciliar ledger is flagged for exactly this,
-   unresolved. **Check the rights before the text.**
+   fourth party. **Scripture inside a proper is a citation, not a text to
+   acquire**: an antiphon carries its own words and its scriptural constituents
+   as references, and those resolve against the bible the reader selected. That
+   is why the Revised Grail rendering of three psalms, named in the 2011 book
+   and in ICEL's Antiphonary, blocks nothing — this project never wants a
+   particular publisher's psalm wording, only the reference.
 4. **Name the basis** from §1's seven, and record it as a token, not prose.
    Where the basis is a permission, record the policy URL and its retrieval date
    beside the artifact's own source URL: they are different URLs and condition
@@ -857,6 +903,29 @@ Before any text is written to a tracked file:
 ---
 
 ## 15. What this supersedes, and what still stands
+
+### 15.0 Claims this page itself made and had to withdraw
+
+A guidance page is a set of assertions, and an assertion that was true when
+written and is false now fails in the way this project's own `the-shape.md`
+calls the governing defect: it resolves, plausibly and wrongly. Nothing detects
+that mechanically. So the withdrawals are kept here with their dates, and the
+wrong wording is quoted rather than quietly replaced, because a reader who finds
+only the corrected claim learns nothing about how the error was reached.
+
+| Withdrawn | This page had said | What is true | Corrected |
+| --- | --- | --- | --- |
+| ICEL publishes no exemplar | "its own site has seven pages, catalogues the books it has translated, and offers no text and no download" | ICEL's News page links an open music folder of 188 free PDFs — every Preface, the sung Order of Mass, Eucharistic Prayers I–IV, the Holy Week chants including all ten Good Friday Solemn Intercessions — and the ICEL Antiphonary is published free and entire at 265 pages. 48 of the 202 ledgered slots have an official reachable source, not 19. | 2026-08-21, §4 |
+| The Grail makes the rights unit smaller than a slot | "the unit of rights is therefore smaller than the slot, and this repository types rights per proper, which cannot express it. Until it can, no Palm Sunday antiphon may land" | A psalm inside a proper is a CITATION, not a text to acquire. An antiphon is `source: mixed`: its own words as `text`, its scriptural constituents as `verses`, resolved at render time against the reader's chosen bible. The 1962 calendar has done this since before the objection was written. No slot is blocked. | 2026-08-21, §5.1 |
+| The postconciliar Latin is refused entire | carried in the data rather than this page: one `editio-typica` absence asserted a rights refusal over all 48 elements of the Order of Mass | True of 12. The other 36 are twelve slots holding no words, eight modelled too coarsely to source, and sixteen ancient texts no rightsholder has refused. Now six typed keys. | 2026-08-21 |
+| The postconciliar English is wholly this project's own | carried in `THIRD_PARTY.md` and `liturgical-english-rights-v1.toml` | 63 rows are public-domain 1861 Cummiskey English carried as the antecedent of the prayer. | 2026-08-20 |
+
+**Who found them matters more than the list.** Three of the four were overturned
+by the maintainer, not by a tool or a review: he said the text is online
+everywhere, and he said the psalms are the psalms. A page like this one is
+written from what its author could reach, and its most consequential errors will
+usually be the ones only somebody who knows the subject can see. Contradiction
+from such a reader is the intended failure path, not an interruption of it.
 
 ### 15.1 The root cause, in the repository's own record
 

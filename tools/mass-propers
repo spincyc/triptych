@@ -51,7 +51,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar postconciliar --format json",
             (
-                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+36159 chars]",
+                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+81769 chars]",
             ),
         ),
     ),
@@ -100,7 +100,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --out build/example-propers",
             (
-                "postconciliar: 269 masses, 1721 citations",
+                "postconciliar: 592 masses, 3514 citations",
                 "roman-1962: 491 masses, 4340 citations",
                 "roman-pre-1955: 491 masses, 4333 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
@@ -114,7 +114,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --check",
             (
-                "postconciliar: 269 masses, 1721 citations",
+                "postconciliar: 592 masses, 3514 citations",
                 "roman-1962: 491 masses, 4340 citations",
                 "roman-pre-1955: 491 masses, 4333 citations",
                 "  4 tracked file(s) are current",
@@ -126,13 +126,13 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-1962 English orations: 503 slots appointed, 373 with English, 81 ledgered untranslated, 49 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot",
-                "# postconciliar English orations: 328 slots appointed, 91 with English, 193 ledgered untranslated, 44 unaccounted; 0 composed propers outside the ledger's slots, 3 ledger rows matching no slot",
+                "# roman-1962 English orations: 503 slots appointed, 407 with English, 96 ledgered untranslated, 0 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot",
+                "# postconciliar English orations: 328 slots appointed, 126 with English, 202 ledgered untranslated, 0 unaccounted; 0 composed propers outside the ledger's slots, 3 ledger rows matching no slot",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
                 "| --- | --- | ---: | ---: | ---: |",
-                "... 88 more lines",
+                "... 89 more lines",
             ),
             "prints the block and writes nothing; two tables, then the keys each row counts by",
         ),
@@ -320,7 +320,17 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
 # `licensed` is tracked deliberately — the schema carries the notice a licensor
 # requires — but it is withheld unless a grant is recorded, which is the same
 # line the Knox bible sits on.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created", "permission")
+# The bases whose grant is conditioned on a notice appearing with the words.
+# ICEL's standing permission for its promulgated texts on a non-commercial
+# website is granted "subject to the following conditions", and the second of
+# them is that the copyright acknowledgment appear where the text is displayed.
+# So an acknowledgment is not decoration here: it is the term on which the
+# permission was given, and a row that publishes without one is publishing
+# outside the grant it claims. `witness_acknowledgement_problems` refuses that
+# rather than emitting it, for the same reason `check_translation_list` refuses
+# a licensed text that names no notice.
+NEEDS_ACKNOWLEDGEMENT = ("permission", "licensed")
 
 
 def publishable_translations(proper: dict):
@@ -430,6 +440,11 @@ def translation_manifest(masses: list[dict], witnesses: dict) -> list[dict]:
                 # pre-1955 hand missal is not an approved liturgical
                 # translation, and the caution travels with the offer.
                 "caution": witness.get("caution"),
+                # The notice a rightsholder's grant is conditioned on. It rides
+                # on the witness row, beside the label and the caution, so it
+                # cannot be separated from the words it covers by any renderer
+                # that shows one and not the other.
+                "acknowledgement": witness.get("acknowledgement"),
                 "held": count,
                 "composed": composed,
             }

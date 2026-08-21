@@ -1,0 +1,50 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.palm-sunday-procession-antiphons"
+edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+locus = "proper-of-time.palm-sunday.commemoration-of-the-lords-entrance.procession-antiphons"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[41, 42]]
+context = """
+Palm Sunday of the Passion of the Lord, the Commemoration of the Lord's Entrance
+into Jerusalem, First Form: The Procession -- Antiphon 1 with its psalm and
+Antiphon 2 with its psalm. Read on 2026-08-21 from the retained bytes, artifact
+pages 41-42, printed pages 33-34. No liturgical text is transcribed into this
+record; see the note below.
+
+THIS IS THE EVIDENCE FOR THE REVISED GRAIL CARVE-OUT, seen rather than inferred.
+Each of these two loci is one slot containing two rightsholders' property.
+
+Antiphon 1, artifact page 41, is an ICEL antiphon of the Missal, four sense
+lines, followed by the red assignment "(Psalm 23[24]: GR, p. 139)", the rubric
+"If appropriate, this antiphon is repeated between the strophes of the following
+Psalm", and then the heading "Psalm 23" with the whole psalm printed in five
+strophes, each followed by "(The antiphon is repeated)".
+
+Antiphon 2, artifact page 42, has the same construction: an ICEL antiphon of
+three sense lines, the assignment "(Psalm 46[47]: GR, p. 140)", the same rubric,
+the heading "Psalm 46", and the whole psalm in four strophes.
+
+Psalms 23(24) and 46(47) are two of the three the file's own copyright page
+reserves to The Revised Grail Psalms, Conception Abbey/The Grail, administered
+by GIA Publications. ICEL's standing web permission does not reach them and this
+project holds nothing from GIA. So the ICEL antiphon on each page may be
+published and the psalm strophes beneath it may not, and no schema that assigns
+one rights token per proper can say that. Carry the antiphon, leave the psalm,
+record the split.
+
+TWO TRAPS SIT WITH THIS ONE. The red assignment in parentheses is a CITATION and
+carries no Grail text; it is the compiler's Graduale reference and is not the
+thing at issue. And a second official document prints these very psalms with no
+Grail notice at all -- the CBCEW Liturgy Office's Lords-Entrance.pdf, registered
+at
+artifact.catholic-church.missale-romanum.2011-english-cbcew-excerpts.lords-entrance-pdf,
+carries only ICEL and Revised Standard Version notices while printing Psalm 23
+and Psalm 46 entire. Two conference-published documents, the same psalms,
+different attribution. A rights position may not be inferred from whether a
+notice appears on the file in hand.
+"""
+verified_on = "2026-08-21"
+notes = "Located by enumerating every line matching a centred \"Psalm N\" heading across all 265 pages of the retained bytes: there are exactly three, at artifact pages 41, 42 and 242, and they are exactly the three psalms the copyright page reserves. No liturgical text is transcribed here, because guidance/liturgical-text-publication-policy.md section 3.4 keeps site display and corpus data apart and no per-text, per-surface rights token yet exists on this repository's corpus path; the Grail strophes are additionally identified by reference only and never by their words."

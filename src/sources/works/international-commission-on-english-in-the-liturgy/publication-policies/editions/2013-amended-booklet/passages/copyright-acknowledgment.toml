@@ -1,0 +1,55 @@
+schema = 2
+record_type = "passage"
+id = "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.copyright-acknowledgment"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet"
+artifact_id = "artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf"
+artifact_sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+locus = "part-three.the-copyright-acknowledgment"
+states = ["cataloged", "acquired", "inspected", "verified"]
+artifact_page_ranges = [[19, 20]]
+context = """
+Part Three, "The Copyright Acknowledgment", read on 2026-08-21 from the retained
+bytes, artifact pages 19-20, printed pages 18-19. This is the content behind
+condition (2) of the Global Computer Networks clause, and it is what an
+attribution mechanism generated from metadata has to be able to produce.
+
+The booklet opens by saying that "the required form of acknowledgment of ICEL
+materials in a specific work will always be given in the contract or letter of
+permission sent by ICEL", which is the licensing route and not this project's;
+what remains generally applicable is the list of elements and the specimen
+forms.
+
+"ELEMENTS OF ACKNOWLEDGMENT. The acknowledgment of ICEL materials should always
+include: 1. name of the ICEL copyrighted work being reproduced, printed in
+italics or underlined; 2. the symbol (c), or the word "Copyright," or the
+abbreviation "Copr."; 3. the year of original publication of the copyrighted
+work; 4. ICEL's corporate title in full as below: International Committee on
+English in the Liturgy, Inc. (In successive references within a single
+acknowledgment, the references after the first may be abbreviated: ICEL.) 5. The
+phrase "All rights reserved" at the end of the acknowledgment."
+
+Under ACKNOWLEDGMENT OF AN ENTIRE WORK the specimen is "The English translation
+of the Rite of Marriage (c) 1969, International Committee on English in the
+Liturgy, Inc. All rights reserved." Where several sources are quoted, "the
+primary source should be named first" and the remaining ICEL texts follow "in
+chronological order".
+
+Under ACKNOWLEDGMENT OF EXCERPTS: "In acknowledging excerpts of ICEL texts it is
+preferable to name the element(s) or the specific rite(s) being reproduced",
+with two specimens of the form "The English translation of the [named elements]
+from [Work] (c) [year], International Committee on English in the Liturgy, Inc.
+All rights reserved."
+
+THE CORPORATE TITLE HERE IS THE OLDER ONE AND MUST NOT BE COPIED. This booklet
+says "International Committee on English in the Liturgy, Inc." throughout.
+ICEL's current copyright page, and the notice ICEL itself prints at the foot of
+every page of its own free Missal chant files, both read "International
+Commission on English in the Liturgy Corporation". Condition (2) sends the
+reader to the web page for the appropriate acknowledgment, so the current form
+governs. The element list above is what survives from this page: name the work,
+carry the symbol, carry the year of original publication, give the corporate
+title in full, end with "All rights reserved" — and, for an excerpt, name what
+was excerpted.
+"""
+verified_on = "2026-08-21"
+notes = "Element 3, the year of original publication, is why one acknowledgment cannot be generated for the whole corpus: the Roman Missal English is 2010, the Lectionary for Mass 1969/1981/1997, Eucharistic Prayers for Masses with Children 1975. The year travels with the text, from metadata."

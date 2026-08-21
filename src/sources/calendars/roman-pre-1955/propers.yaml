@@ -152,6 +152,23 @@ open_collation_items:
   here, and settling it needs the restricted 1956 Ordo. Anyone reading this file
   as a record of the middle state is reading it wrongly; see
   guidance/recensions.md Rule 5, which is exactly this hazard.
+- >-
+  FOUR ACTS PRODUCE THIS DELTA, NOT ONE, AND THE FILE'S LABEL NAMES ONLY THE
+  SECOND. The distance from the state this file holds to `roman-1962` was made
+  by `de-rubricis-simpliciorem-1955` of 23 March 1955, which owns the octaves,
+  the vigils and the `semiduplex` vocabulary and is answerable for ZERO of the
+  rows below; `maxima-redemptionis-1955` of 16 November 1955, which owns the
+  Holy Week order and 36 of the departures the act history records;
+  `codex-rubricarum-1960`, which owns 2; and `editio-typica-1962`, which owns 4.
+  `stands_before` is a scalar and names the second of them, so a reader who
+  takes this file as the 1962 book minus one reform charges the 1960 code's work
+  to Pius XII, which is precisely the blending of states this project forbids.
+  Two mechanical fixes are open and neither is made here: whether
+  `stands_before` should name the EARLIEST act a state stands before or admit a
+  list of act ids, which is a schema decision for the maintainer; and whether a
+  departure row should carry an optional `act`, so each row says which act made
+  it instead of the file attributing all of them to one. Until the second lands,
+  the apportionment above is the only place the difference is written down.
 - The 1955 simplification of the rubrics (de-rubricis-simpliciorem, 23 March
   1955) removed most octaves and vigils and changed the ranking vocabulary.
   Those are calendar-wide departures — probably the largest set this recension

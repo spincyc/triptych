@@ -214,10 +214,23 @@ for path in sorted(pathlib.Path(sys.argv[1]).rglob('*.json')):
     for row in (json.loads(path.read_text()).get('absences') or []):
         seen[row['key']]=row.get('kind')
 print(' '.join(k+'='+str(v) for k,v in sorted(seen.items())))" "$sandbox/kinds")"
+# The rights refusal is now scoped to the reform's OWN new matter. The single
+# `editio-typica` key it replaced asserted that refusal over all 48 elements,
+# which was true of twelve and false of thirty-six -- twelve slots holding no
+# words, eight modelled too coarsely to source, and sixteen ancient texts that
+# no rightsholder has refused. A key that says "rights-withheld" must name only
+# what is actually withheld, which is what this asserts.
 case "$kinds" in
-*"editio-typica=rights-withheld"*) ;;
+*"editio-typica-new-matter=rights-withheld"*) ;;
 *)
-	echo "the postconciliar Latin absence is not typed as a rights withholding: $kinds" >&2
+	echo "the reform's new matter is not typed as a rights withholding: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"antecedent-held-not-carried=witness-gap"*) ;;
+*)
+	echo "an unsourced ancient text is not typed as a witness gap: $kinds" >&2
 	exit 1
 	;;
 esac
@@ -235,6 +248,159 @@ case "$kinds" in
 	exit 1
 	;;
 esac
+
+# ---- The antecedent Latin, and the claim it must never make ---------------
+#
+# Ten elements of the postconciliar frame now carry Latin, and NOT ONE OF THEM
+# IS THE LATIN OF THE BOOK THAT PAGE IS HEADED WITH. Every one is the facing
+# column of an 1861 Philadelphia lay hand missal, printing the ancient prayer
+# the postconciliar Order received; the editio typica is in copyright and is
+# held nowhere in this project.
+#
+# A reader looking at a page headed `Missale Romanum, editio typica tertia` and
+# seeing Latin under an element will take it for that book's Latin unless told
+# otherwise AT THAT ELEMENT. So the relation, its grade, and a note saying both
+# ride on the translation row itself, beside the words, and this asserts they
+# are there rather than trusting that they are.
+#
+# The two grades must not look alike, and that is the assertion with teeth. The
+# study's own coarse `Retained` list names `Domine Iesu Christe, qui dixisti`
+# among the texts carried over -- and the 2002 reads `ne respicias peccata
+# NOSTRA` where the 1861 reads `peccata MEA`. Landing on the strength of the
+# summary would have put the wrong pronoun into the Rite of Peace on every day
+# of this calendar. `collated` therefore costs a cited finding, `uncollated`
+# says in terms that the identity is not established, and the elements where a
+# comparison found a divergence carry nothing at all.
+python3 - "$root" <<'PY'
+import json, pathlib, sys
+
+root = pathlib.Path(sys.argv[1])
+pc = json.loads((root / "postconciliar.json").read_text(encoding="utf-8"))
+old = json.loads((root / "roman-1962.json").read_text(encoding="utf-8"))
+
+def by_key(payload):
+    return {element["key"]: element
+            for section in payload["sections"]
+            for element in section["elements"]}
+
+def side(element, lang):
+    return [one for one in (element["translations"] or []) if one["lang"] == lang]
+
+elements = by_key(pc)
+latin = {key: side(element, "la")[0]
+         for key, element in elements.items() if side(element, "la")}
+assert len(latin) == 10, sorted(latin)
+
+# The English side is untouched by the Latin landing. Nine elements, the
+# ecumenical text, and no relation on any of them.
+english = [key for key, element in elements.items() if side(element, "en")]
+assert len(english) == 9, sorted(english)
+
+for key, row in latin.items():
+    # The relation is on the row, not on the witness: a book cannot be an
+    # antecedent of anything, and a relation encoded in a witness id resolves
+    # nowhere. The propers side served 63 translations that way once.
+    assert row["relation"] == "antecedent", (key, row.get("relation"))
+    assert row["rights"] == "public-domain", (key, row["rights"])
+    note = row.get("note") or ""
+    assert "NOT THE CONTROLLING EDITION" in note, key
+    assert "not held by this project" in note, key
+    # The grade, and what each grade costs.
+    if row["collation"] == "collated":
+        assert (row.get("collation_finding") or "").strip(), key
+    elif row["collation"] == "uncollated":
+        assert not row.get("collation_finding"), key
+        assert "UNCOLLATED" in note, key
+    else:
+        raise AssertionError((key, row["collation"]))
+
+graded = sorted(row["collation"] for row in latin.values())
+assert graded.count("collated") == 4, graded
+assert graded.count("uncollated") == 6, graded
+
+# The 1962 frame joins two facing columns of ONE printing, so its Latin is that
+# frame's own book and declares no relation. If this ever grew one, the two
+# calendars would have been conflated.
+for element in by_key(old).values():
+    for row in side(element, "la"):
+        assert "relation" not in row, element["key"]
+
+# Where a comparison of the two Latins found a divergence, NOTHING is carried,
+# and the file still says why. These are the elements the summary would have
+# waved through.
+for key in ("ritus-communionis/domine-iesu-christe-qui-dixisti",
+            "ritus-communionis/praeparatio-sacerdotis",
+            "ritus-initiales/kyrie",
+            "ritus-communionis/agnus-dei-forma-altera"):
+    assert not side(elements[key], "la"), key
+    assert elements[key]["absent"]["latin"] == "antecedent-held-not-carried", key
+
+# The Roman Canon is modelled as one span and every place the reform changed it
+# falls inside that span, so Prayer I carries nothing in either language. The
+# doxology is a separate element of the Missal's own numbering and does carry
+# Latin; the two must not be confused.
+prayer_one = [one for one in elements.values() if one["variant"] == "ep-i"]
+assert len(prayer_one) == 1 and prayer_one[0]["translations"] is None
+assert prayer_one[0]["absent"]["latin"] == "canon-not-split"
+
+# The witness's own accidents are carried and never smoothed toward the target's
+# orthography. Normalising them would manufacture a witness to a book nobody
+# opened; the notes name them instead.
+dialogue = latin["prex-eucharistica/praefationis-dialogus"]["text"]
+assert "Dignum et justum est" in dialogue and "iustum" not in dialogue
+humility = latin["praeparatio-donorum/in-spiritu-humilitatis"]
+assert "nodie" in humility["text"] and "hodie" not in humility["text"]
+assert "nodie" in humility["note"], "the misprint is carried and not explained"
+
+# The witness reaches the page under the edition's real id, with a caution that
+# leads with the disclaimer rather than the bibliography: both are option text
+# in narrow controls, and a truncated label must lose the bibliography.
+manifest = {(one["source_id"], one["lang"]): one for one in pc["translations"]}
+witness = manifest[
+    ("edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", "la")]
+assert witness["held"] == 10, witness
+assert witness["label"].startswith("Antecedent Latin (NOT"), witness["label"]
+assert witness["caution"].startswith("NOT the Latin of the Missale Romanum"), witness
+PY
+
+# The refusals that make the grades mean anything, taken against the tool's own
+# rule rather than against a fixture that could drift from it.
+python3 - "$repo" <<'PY'
+import importlib.machinery, importlib.util, pathlib, sys
+
+# The tool carries no .py suffix, so the loader is named rather than guessed.
+path = pathlib.Path(sys.argv[1]) / "tools" / "mass-ordinary"
+loader = importlib.machinery.SourceFileLoader("mass_ordinary", str(path))
+spec = importlib.util.spec_from_loader(loader.name, loader)
+tool = importlib.util.module_from_spec(spec)
+loader.exec_module(tool)
+
+def refused(block):
+    try:
+        tool.relation_of(block, "an-element", "la", "a-file")
+    except tool.SourceError:
+        return True
+    return False
+
+ok = {"relation": "antecedent", "collation": "uncollated", "note": "whose words these are"}
+assert tool.relation_of(ok, "k", "la", "f")["collation"] == "uncollated"
+
+# A relation nobody can check is a claim nobody made.
+assert refused({"relation": "antecedent", "collation": "uncollated"})
+# An established identity and an unestablished one must not look the same.
+assert refused({"relation": "antecedent", "note": "n"})
+assert refused({"relation": "antecedent", "collation": "maybe", "note": "n"})
+# A collated grade with no finding is the assertion the other grade exists to
+# be distinguished from.
+assert refused({"relation": "antecedent", "collation": "collated", "note": "n"})
+# A citation on an uncollated row invites the reader to read it as the
+# collation that was not made.
+assert refused(ok | {"collation_finding": "somewhere.tex:1"})
+# And an unknown relation is refused rather than passed through.
+assert refused({"relation": "descendant"})
+# No relation at all is the 1962 case and stays silent.
+assert tool.relation_of({}, "k", "la", "f") == {}
+PY
 
 # ---- The tiers ------------------------------------------------------------
 run_tool show --calendar roman-1962 --plain >"$sandbox/plain.txt"

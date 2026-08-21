@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1558,
-  "editions": 708,
-  "passages": 2857,
+  "artifacts": 1777,
+  "editions": 712,
+  "passages": 2869,
   "readable": 1635,
-  "works": 530
+  "works": 531
  },
  "facets": {
   "authors": [
@@ -567,7 +567,7 @@
    },
    {
     "id": "International Commission on English in the Liturgy Corporation",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Irenaeus of Lyons",
@@ -1868,6 +1868,10 @@
     "works": 1
    },
    {
+    "id": "liturgical-chant-collection",
+    "works": 1
+   },
+   {
     "id": "liturgical-common-texts",
     "works": 1
    },
@@ -2266,7 +2270,7 @@
   ],
   "languages": [
    {
-    "editions": 344,
+    "editions": 348,
     "id": "en"
    },
    {
@@ -2402,7 +2406,7 @@
     "label": "20th century"
    },
    {
-    "editions": 376,
+    "editions": 380,
     "id": "2000",
     "label": "21st century"
    }
@@ -2417,7 +2421,11 @@
     "id": "restricted"
    },
    {
-    "artifacts": 92,
+    "artifacts": 216,
+    "id": "permission"
+   },
+   {
+    "artifacts": 95,
     "id": "unresolved"
    },
    {
@@ -5520,6 +5528,31 @@
      "readable": 0,
      "rights": [],
      "year": 2008
+    },
+    {
+     "date": "2010",
+     "file": "2010-2010-english-icel-antiphonary.json",
+     "id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+     "language": "en",
+     "passages": 5,
+     "readable": 0,
+     "rights": [
+      "permission"
+     ],
+     "year": 2010
+    },
+    {
+     "date": "2011",
+     "file": "2011-2011-english-cbcew-excerpts.json",
+     "id": "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpts",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "permission",
+      "unresolved"
+     ],
+     "year": 2011
     }
    ],
    "id": "work.catholic-church.missale-romanum",
@@ -9931,6 +9964,18 @@
    "directory": "editions/international-commission-on-english-in-the-liturgy/publication-policies/",
    "editions": [
     {
+     "date": "2013",
+     "file": "2013-2013-amended-booklet.json",
+     "id": "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet",
+     "language": "en",
+     "passages": 5,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "year": 2013
+    },
+    {
      "date": "2026-08-01",
      "file": "2026-web-2026-08-01.json",
      "id": "edition.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01",
@@ -9948,6 +9993,37 @@
     "en"
    ],
    "title": "ICEL publication and copyright policies"
+  },
+  {
+   "alternate_titles": [
+    "ICEL chants of the Roman Missal",
+    "Chants of The Roman Missal",
+    "ICEL open music"
+   ],
+   "author": "International Commission on English in the Liturgy Corporation",
+   "category": "liturgical-chant-collection",
+   "directory": "editions/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/",
+   "editions": [
+    {
+     "date": "2026-08-21",
+     "file": "2026-2010-chants-web-2026-08-21.json",
+     "id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "permission",
+      "unresolved"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "title": "Music for the Roman Missal"
   },
   {
    "alternate_titles": [
