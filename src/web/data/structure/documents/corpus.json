@@ -1,15 +1,15 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 183,
-  "issues": 194,
-  "pages": 5899,
+  "documents": 186,
+  "issues": 200,
+  "pages": 5953,
   "titles_unrecorded": 0,
   "works": 137
  },
  "models": [
   {
-   "documents": 130,
+   "documents": 133,
    "id": "GPT-5-based Codex agent"
   },
   {
@@ -32,7 +32,7 @@
    "label": "Claude"
   },
   {
-   "documents": 134,
+   "documents": 137,
    "id": "gpt",
    "label": "GPT"
   }
@@ -4883,6 +4883,39 @@
      "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.html"
+    },
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 11,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost-synthesis.pdf",
+       "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
+       "title": "Eleventh Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agents (1962 Missal and historical translation control; scriptural, patristic, medieval, saintly, doctrinal, liturgical, historical, and cultural-reception research; source audit; component architecture; drafting and synthesis; build and production review); Codex CLI 0.148.0; API workspace; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-5-based Codex agent"
+     ],
+     "pages": 17,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-08-20",
+     "revised": "2026-08-21T03:50:01Z",
+     "status": "alpha",
+     "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+     "title": "Eleventh Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost",
@@ -4930,6 +4963,39 @@
      "title": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.html"
+    },
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 9,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost-synthesis.pdf",
+       "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
+       "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agents (facsimile and translation control; biblical, patristic, medieval, saintly, liturgical, doctrinal, and cultural-reception research; document architecture and drafting; source audit and build preparation); Codex CLI 0.148.0; API workspace; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-5-based Codex agent"
+     ],
+     "pages": 17,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-08-20",
+     "revised": "2026-08-21T03:40:13Z",
+     "status": "alpha",
+     "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+     "title": "Twelfth Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost",
@@ -4977,6 +5043,39 @@
      "title": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.html"
+    },
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 11,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost-synthesis.pdf",
+       "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
+       "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agents (Missal and hand-missal collation, patristic and later reception research, liturgical history, cultural-afterlife audit, source reconciliation, document architecture, drafting, and production review); Codex CLI 0.148.0; API workspace; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-5-based Codex agent"
+     ],
+     "pages": 20,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-08-20",
+     "revised": "2026-08-21T03:37:25Z",
+     "status": "alpha",
+     "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+     "title": "Thirteenth Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost",

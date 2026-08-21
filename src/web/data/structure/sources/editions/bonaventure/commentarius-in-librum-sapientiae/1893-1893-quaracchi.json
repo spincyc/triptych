@@ -1,0 +1,59 @@
+{
+ "artifacts": [],
+ "edition": {
+  "authority": "Collegium S. Bonaventurae",
+  "date": "1893",
+  "editors": [],
+  "id": "edition.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi",
+  "jurisdiction": null,
+  "language": "la",
+  "notes": "The commentary is a constituent work of the complete volume. Its verified focused text is linked through a schema-version-2 segment to the separately and truthfully owned volume artifact.",
+  "publication": "Opera omnia S. Bonaventurae, volume 6 (Quaracchi: Ex Typographia Collegii S. Bonaventurae, 1893)",
+  "title": "Commentarius in librum Sapientiae — Quaracchi edition",
+  "translators": [],
+  "year": 1893
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.wisdom-16.20-21-checked-text",
+   "artifact_type": "checked-transcription",
+   "context": "Bonaventure explains Wisdom's manna as angelic food that accommodated each eater, then reads it mystically as Christ in the Sacrament of the altar: bread of angels or priests, heavenly confection, nourishment according to devotion, descent with the dew of grace, white appearance under a cloud, sacramental reception during the six days of the present age before the future Sabbath of vision, and food sustaining the Church until the end of the world.",
+   "id": "passage.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi.xvi.20-21",
+   "locus": "XVI.20-21",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Verified against printed pages 214-215 rendered from the exact facsimile. The checked passage covers the main verse exposition and sevenfold mystical synthesis but excludes the intervening objection-and-response blocks and the critical/source apparatus, which remain available in the full facsimile and OCR.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "This focused transcription reproduces Bonaventure's medieval Latin as printed in the 1893 Quaracchi edition, both public domain by age and date. It was made from page images rendered from the exactly hashed facsimile and includes no Internet Archive markup.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi.xvi.20-21-checked-text",
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi.xvi.20-21.json",
+   "verified_on": "2026-08-20",
+   "words": 506
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentarius in Sapientiam",
+   "Commentary on the Book of Wisdom"
+  ],
+  "author": "Bonaventure",
+  "category": "biblical-commentary",
+  "description": "Bonaventure's commentary on the Book of Wisdom. At Wisdom 16:20-21 it treats manna as angelic food and then gives a sevenfold mystical interpretation of it as a figure of Christ in the Sacrament of the altar.",
+  "id": "work.bonaventure.commentarius-in-librum-sapientiae",
+  "languages": [
+   "la"
+  ],
+  "title": "Commentarius in librum Sapientiae"
+ }
+}

@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1485,
-  "editions": 664,
-  "passages": 2762,
-  "readable": 1630,
-  "works": 498
+  "artifacts": 1503,
+  "editions": 670,
+  "passages": 2771,
+  "readable": 1634,
+  "works": 502
  },
  "facets": {
   "authors": [
@@ -200,6 +200,10 @@
    {
     "id": "Bertrand-Severe Laurence, Bishop of Tarbes",
     "works": 1
+   },
+   {
+    "id": "Bonaventure",
+    "works": 2
    },
    {
     "id": "Brooke Foss Westcott",
@@ -487,7 +491,7 @@
    },
    {
     "id": "Gregory the Great",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Heinrich Denzinger and successive editors",
@@ -531,6 +535,10 @@
    },
    {
     "id": "Holy See liturgical dicastery",
+    "works": 1
+   },
+   {
+    "id": "Honorius Augustodunensis",
     "works": 1
    },
    {
@@ -1149,7 +1157,7 @@
   "categories": [
    {
     "id": "biblical-commentary",
-    "works": 28
+    "works": 29
    },
    {
     "id": "patristic-translation-anthology",
@@ -1296,6 +1304,10 @@
     "works": 3
    },
    {
+    "id": "liturgical-commentary",
+    "works": 3
+   },
+   {
     "id": "manufacturer-catalog",
     "works": 3
    },
@@ -1372,15 +1384,15 @@
     "works": 2
    },
    {
+    "id": "homily-collection",
+    "works": 2
+   },
+   {
     "id": "instruction",
     "works": 2
    },
    {
     "id": "journal-article",
-    "works": 2
-   },
-   {
-    "id": "liturgical-commentary",
     "works": 2
    },
    {
@@ -1509,6 +1521,10 @@
    },
    {
     "id": "collected-volume",
+    "works": 1
+   },
+   {
+    "id": "collected-works",
     "works": 1
    },
    {
@@ -1745,10 +1761,6 @@
    },
    {
     "id": "homilies",
-    "works": 1
-   },
-   {
-    "id": "homily-collection",
     "works": 1
    },
    {
@@ -2170,11 +2182,11 @@
   ],
   "languages": [
    {
-    "editions": 333,
+    "editions": 334,
     "id": "en"
    },
    {
-    "editions": 202,
+    "editions": 207,
     "id": "la"
    },
    {
@@ -2296,7 +2308,7 @@
     "label": "18th century"
    },
    {
-    "editions": 114,
+    "editions": 118,
     "id": "1800",
     "label": "19th century"
    },
@@ -2306,18 +2318,18 @@
     "label": "20th century"
    },
    {
-    "editions": 354,
+    "editions": 356,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 965,
+    "artifacts": 976,
     "id": "public-domain"
    },
    {
-    "artifacts": 361,
+    "artifacts": 367,
     "id": "restricted"
    },
    {
@@ -2325,7 +2337,7 @@
     "id": "unresolved"
    },
    {
-    "artifacts": 55,
+    "artifacts": 56,
     "id": "licensed"
    },
    {
@@ -3749,6 +3761,18 @@
    "directory": "editions/anthony-of-padua/sermons-for-sundays-and-festivals/",
    "editions": [
     {
+     "date": "2021",
+     "file": "2021-2021-centro-studi-latin-critical-apparatus.json",
+     "id": "edition.anthony-of-padua.sermons-for-sundays-and-festivals.2021-centro-studi-latin-critical-apparatus",
+     "language": "la",
+     "passages": 2,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2021
+    },
+    {
      "date": "2026",
      "file": "2026-basilica-web-english-2026-07-28.json",
      "id": "edition.anthony-of-padua.sermons-for-sundays-and-festivals.basilica-web-english-2026-07-28",
@@ -4614,6 +4638,57 @@
     "fr"
    ],
    "title": "Mandement de Mgr l'Eveque de Tarbes, portant jugement sur l'Apparition qui a eu lieu a la Grotte de Lourdes"
+  },
+  {
+   "alternate_titles": [
+    "Commentarius in Sapientiam",
+    "Commentary on the Book of Wisdom"
+   ],
+   "author": "Bonaventure",
+   "category": "biblical-commentary",
+   "directory": "editions/bonaventure/commentarius-in-librum-sapientiae/",
+   "editions": [
+    {
+     "date": "1893",
+     "file": "1893-1893-quaracchi.json",
+     "id": "edition.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [],
+     "year": 1893
+    }
+   ],
+   "id": "work.bonaventure.commentarius-in-librum-sapientiae",
+   "languages": [
+    "la"
+   ],
+   "title": "Commentarius in librum Sapientiae"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Bonaventure",
+   "category": "collected-works",
+   "directory": "editions/bonaventure/opera-omnia-quaracchi/",
+   "editions": [
+    {
+     "date": "1893",
+     "file": "1893-1893-volume-6.json",
+     "id": "edition.bonaventure.opera-omnia-quaracchi.1893-volume-6",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1893
+    }
+   ],
+   "id": "work.bonaventure.opera-omnia-quaracchi",
+   "languages": [
+    "la"
+   ],
+   "title": "Opera omnia (Quaracchi edition)"
   },
   {
    "alternate_titles": [
@@ -8551,6 +8626,36 @@
   },
   {
    "alternate_titles": [
+    "Homiliae in Ezechielem prophetam",
+    "Homilies on Ezekiel"
+   ],
+   "author": "Gregory the Great",
+   "category": "homily-collection",
+   "directory": "editions/gregory-the-great/homiliae-in-hiezechihelem-prophetam/",
+   "editions": [
+    {
+     "date": "1849",
+     "file": "1849-1849-migne-pl-76-corpus-corporum.json",
+     "id": "edition.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum",
+     "language": "la",
+     "passages": 1,
+     "readable": 1,
+     "rights": [
+      "licensed",
+      "public-domain",
+      "restricted"
+     ],
+     "year": 1849
+    }
+   ],
+   "id": "work.gregory-the-great.homiliae-in-hiezechihelem-prophetam",
+   "languages": [
+    "la"
+   ],
+   "title": "Homiliae in Hiezechihelem prophetam"
+  },
+  {
+   "alternate_titles": [
     "Denzinger",
     "The Sources of Catholic Dogma"
    ],
@@ -9278,6 +9383,35 @@
    "id": "work.holy-see.notitiae",
    "languages": [],
    "title": "Notitiae"
+  },
+  {
+   "alternate_titles": [
+    "Gemma animae de divinis officiis",
+    "The Jewel of the Soul"
+   ],
+   "author": "Honorius Augustodunensis",
+   "category": "liturgical-commentary",
+   "directory": "editions/honorius-augustodunensis/gemma-animae/",
+   "editions": [
+    {
+     "date": "1854",
+     "file": "1854-1854-migne-pl-172.json",
+     "id": "edition.honorius-augustodunensis.gemma-animae.1854-migne-pl-172",
+     "language": "la",
+     "passages": 2,
+     "readable": 2,
+     "rights": [
+      "public-domain",
+      "restricted"
+     ],
+     "year": 1854
+    }
+   ],
+   "id": "work.honorius-augustodunensis.gemma-animae",
+   "languages": [
+    "la"
+   ],
+   "title": "Gemma animae"
   },
   {
    "alternate_titles": [
@@ -17081,6 +17215,18 @@
      "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28",
      "language": "en",
      "passages": 7,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2026
+    },
+    {
+     "date": "2026-08-20",
+     "file": "2026-english-usccb-web-2026-08-20.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20",
+     "language": "en",
+     "passages": 3,
      "readable": 0,
      "rights": [
       "restricted"

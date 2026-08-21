@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.iv.65-68-checked-text"
+edition_id = "edition.honorius-augustodunensis.gemma-animae.1854-migne-pl-172"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Honorius's medieval Latin as printed by Migne in 1854, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or Migne editorial apparatus."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated on 2026-08-20 against PL columns 714-716 on PDF pages 87-88, rendered as page images from the exact facsimile identified by the parent artifact."
+retrieved = "2026-08-20"
+sha256 = "f79ab8a895b7f785d4fd90ddc0d232d59c62d547638b653879ea27e90fc6059e"
+byte_size = 2363
+path = "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1854-migne-pl-172/artifacts/iv.65-68-checked-text/honorius-gemma-animae-iv-65-68.txt"
+derived_from = "artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.migne-facsimile-pdf-906be8c5"
+transformation = "Read the named printed columns as page images rendered from the hashed facsimile; transcribe the prose of chapters IV.65 and IV.68 with one sentence per LF-terminated UTF-8 line, prefixed by a braced book-and-chapter locator; preserve Migne's wording, capitalization, and punctuation while rejoining line-end hyphenation; omit chapter headings, typeface changes, running heads, column letters and numbers, and editorial footnotes."
+encoding = "utf-8"
+indexable = true
+notes = "The transcription preserves the printing's grammatically unexpected plural 'gratulantur' in IV.65. The polemical account of heretics and coerced confession in IV.68 is recorded as historical source wording, not adopted as repository voice or current Catholic pastoral prescription."

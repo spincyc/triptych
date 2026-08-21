@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.wisdom-16.20-21-checked-text"
+edition_id = "edition.bonaventure.opera-omnia-quaracchi.1893-volume-6"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Bonaventure's medieval Latin as printed in the 1893 Quaracchi edition, both public domain by age and date. It was made from page images rendered from the exactly hashed facsimile and includes no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated on 2026-08-20 against printed pages 214-215, rendered as PDF pages 258-259 from the exact Internet Archive facsimile identified by the parent artifact."
+retrieved = "2026-08-20"
+sha256 = "a506e1b741b3d696a173ae0a61ed5a251f8eb1a34f73588c0d3fddb2113376bd"
+byte_size = 3425
+path = "src/sources/works/bonaventure/opera-omnia-quaracchi/editions/1893-volume-6/artifacts/wisdom-16.20-21-checked-text/bonaventure-commentarius-in-sapientiam-16-20-21.txt"
+derived_from = "artifact.bonaventure.opera-omnia-quaracchi.1893-volume-6.ia-facsimile-pdf-0347bb64"
+transformation = "Read printed pages 214-215 as page images rendered from the hashed facsimile; transcribe the continuous expository units on Wisdom 16:20-21 and the complete sevenfold mystical exposition of manna, with one sense unit per LF-terminated UTF-8 line prefixed by a braced verse locator; preserve wording and punctuation, rejoin line-end hyphenation, and omit typography, marginal labels, footnote markers and texts, running heads, and the intervening objection-and-response discussions not used by this focused passage."
+encoding = "utf-8"
+indexable = true
+notes = "The transcription includes the seven numbered correspondences between manna and Christ under the Sacrament of the altar. It deliberately excludes the intervening quaestio, contra, responsio, obiectio, and solutio blocks; consult the facsimile for those discussions and the full apparatus."

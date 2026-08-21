@@ -1,0 +1,27 @@
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\DeclareUnicodeCharacter{01FC}{\'{\AE}}
+\DeclareUnicodeCharacter{2123}{V\kern-0.62em\raisebox{0.12ex}{\scriptsize/}\kern0.28em}
+\DeclareUnicodeCharacter{2720}{\ensuremath{\boldsymbol{+}}}
+\setlength{\emergencystretch}{2.5em}
+\widowpenalty=10000
+\clubpenalty=10000
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
+\newcommand{\elementguard}{\Needspace{11\baselineskip}}
+\newenvironment{appointedlatin}[1]{\begin{massbox}{#1}\itshape}{\end{massbox}}
+\newenvironment{namedtranslation}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+\newenvironment{witnessnote}{\begin{studyframe}\small}{\end{studyframe}}
+\newenvironment{proposal}[1]{\begin{massbox}{Exploratory proposal --- #1}\small}{\end{massbox}}
+\newenvironment{afterlife}[1]{\begin{massbox}{#1}\small}{\end{massbox}}
+\newcommand{\pfield}[2]{\par\textbf{#1:} #2}
+\newenvironment{dossiertable}
+{\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+\toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+\newenvironment{receptiontable}
+{\footnotesize\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}>{\raggedright\arraybackslash}p{0.43\linewidth}@{}}\toprule
+\textbf{Witness} & \textbf{Exact locus} & \textbf{Interpretive move}\\\midrule\endhead}
+{\bottomrule\end{longtable}}

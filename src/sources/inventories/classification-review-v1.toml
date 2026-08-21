@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-08-15"
-publication_snapshot = "sha256:3474662a956356f8495f1e28c79c911a8cb22d70250060f4232d975c5b20d4e6"
-classification_snapshot = "sha256:6f0eaaa5f8da040978483ad4a82e63aaa18ffaadd92708f04d9fd2ff79887beb"
+audited_on = "2026-08-20"
+publication_snapshot = "sha256:47d677834fae70ff23f4735f2f91040eaaf186bea51342ae99fa4b4df6d1b248"
+classification_snapshot = "sha256:f6b2a20fe0c584d62d3d5612e641f6f21d81df9e50242e01e2f266981d394e18"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -355,6 +355,18 @@ source_categories = ["finding-aid", "historical-primary", "liturgical", "magiste
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/24-tenth-after-pentecost"
 source_categories = ["historical-primary", "liturgical", "scripture"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"

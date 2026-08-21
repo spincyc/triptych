@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20-checked-text"
+edition_id = "edition.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Gregory the Great's sixth-century Latin as printed by Migne in 1849, both public domain by age. It was made from page images rendered from the exactly hashed facsimile and includes no host markup or newly copyrighted apparatus."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated on 2026-08-20 against printed columns 893-894 on PDF page 55, rendered at 240 dots per inch from the exact facsimile identified by the parent artifact."
+retrieved = "2026-08-20"
+sha256 = "6c396be390ea6c11e09245384023e19333935abf1bda42c6b45d0f34c65066c8"
+byte_size = 2634
+path = "src/sources/works/gregory-the-great/homiliae-in-hiezechihelem-prophetam/editions/1849-migne-pl-76-corpus-corporum/artifacts/i.10.20-checked-text/gregory-homiliae-in-hiezechihelem-i-10-20.txt"
+derived_from = "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.migne-facsimile-pdf-5b80cc3d"
+transformation = "Read the named printed columns as a 240-dpi page image; transcribe section 20 with one sentence or closely joined quotation unit per LF-terminated UTF-8 line, prefixed by a braced book-homily-section locator; preserve Migne's wording, spelling, capitalization, and punctuation while rejoining line-end hyphenation; omit typeface changes, column letters and numbers, running heads, and three apparatus notes attached to this section."
+encoding = "utf-8"
+indexable = true
+notes = "The scan confirms 'ei' in 'Adducunt ei surdum', correcting the keyed Wikisource witness's apparent 'ci'. It also confirms the repeated spelling 'exspuens'."
