@@ -13635,12 +13635,6 @@ sections:
       registry: pc-T-blessed-virgin-mary-mother-church
       season: ordinary-time
       rank: Memorial
-      notes: An obligatory memorial added to the General Roman Calendar after the 2002
-        printing and inscribed on the Monday after Pentecost, Easter plus 50 days, so
-        it always falls on the first weekday of the resumed Ordinary Time. It appears
-        in no month of the printed calendar, which is why it carries a synthetic registry
-        id rather than one of the postconciliar registry's own. Nothing of its formulary
-        has been read.
       propers:
       - name: Entrance Antiphon
         source: scripture
@@ -13682,8 +13676,8 @@ sections:
           - begin: {chapter: 87, verse: 6}
             end: {chapter: 87, verse: 7}
           ref: Psalm 87:1-2, 3, 5, 6-7
-        notes: 'Both witnesses print the second stanza as one group, ''3 and 5'' / ''3 et 5''; the extents are
-          unchanged.'
+        notes: Both witnesses print the second stanza as one group, '3 and 5' / '3 et 5'; the extents
+          are unchanged.
       - name: Gospel
         source: scripture
         verses:
@@ -13702,7 +13696,28 @@ sections:
           - begin: {chapter: 2, verse: 11}
             end: {chapter: 2, verse: 11}
           ref: John 2:1, 11
-        notes: 'The Missal prints a second Communion Antiphon, John 19:26-27, as an alternative.'
+        notes: The Missal prints a second Communion Antiphon, John 19:26-27, as an alternative.
+      notes: 'An obligatory memorial added to the General Roman Calendar after the 2002 printing and inscribed
+        on the Monday after Pentecost, Easter plus 50 days, so it always falls on the first weekday of
+        the resumed Ordinary Time. It appears in no month of the printed calendar, which is why it carries
+        a synthetic registry id rather than one of the postconciliar registry''s own. SOURCED 2026-08-21.
+        The Missal''s disposition was read in the Congregation for Divine Worship''s own annex to the
+        decree of 11 February 2018, Prot. N. 10/18, Additiones in Libris liturgicis Ritus Romani de memoria
+        B. Mariae Virginis Ecclesiae Matris, published by the Liturgy Office of the Bishops'' Conference
+        of England and Wales at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/May/MMC-texts.pdf,
+        an image-only scan read at 150 dpi page images, page 1: IN MISSALE ROMANUM, Feria II post Pentecosten,
+        ''Sumitur Missa de Beata Maria Ecclesiae Matre (p. 1172).'' The memorial therefore takes the votive
+        Mass the Missal already prints at its page 1172; its two antiphons are the ones the ICEL Antiphonary
+        prints under Votive Masses 10. THE BLESSED VIRGIN MARY, B, ''Our Lady, Mother of the Church'',
+        PDF page 227, printed page 219, and they are carried here. The Lectionary citations are the same
+        annex''s IN ORDINEM LECTIONUM MISSAE, n. 572 bis, cross-checked against the USCCB Secretariat
+        of Divine Worship''s English sheet for n. 572A at https://www.usccb.org/resources/mother-of-the-church-readings.pdf,
+        fetched 2026-08-21; the two agree on all four slots. The annex''s psalm is cited ''Ps 86 (87)''
+        and is carried in the hebrew numbering this file declares, converted through scripts/_psalms,
+        which moves the chapter and no verse. The Gospel Acclamation is proper and NON-SCRIPTURAL (''O
+        felix Virgo, quae Dominum genuisti...''), so it has no citation to carry and no slot is written
+        for it rather than a slot with an invented reference. No antiphon text and no oration is carried:
+        the whole formulary is printed in the Missale Romanum, which is in copyright and not held here.'
     - key: ot-2
       name: Second Sunday in Ordinary Time
       registry: pc-s28
@@ -38097,8 +38112,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 111, printed page 103, in
+        the Proper of Saints: "From the Common of the Blessed Virgin Mary (p. 148)." The Antiphonary prints
+        no proper Entrance or Communion Antiphon for this day, which is what that heading means: every
+        text of the Mass except the Collect comes from the Common named. This is the MISSAL''s own heading,
+        not the Ordo lectionum''s, and it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md
+        3) said had to be read before any day-to-Common pointer could be landed. No `takes_from` is written
+        here because this file still carries no `common` section for the pointer to resolve to. The proper
+        Collect is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: visitation-blessed-virgin-mary
       name: The Visitation of the Blessed Virgin Mary
       registry: pc-05-31
@@ -38741,8 +38769,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 149, printed page 141, in
+        the Proper of Saints: "From the Common of the Blessed Virgin Mary (p. 148)." The Antiphonary prints
+        no proper Entrance or Communion Antiphon for this day, which is what that heading means: every
+        text of the Mass except the Collect comes from the Common named. This is the MISSAL''s own heading,
+        not the Ordo lectionum''s, and it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md
+        3) said had to be read before any day-to-Common pointer could be landed. No `takes_from` is written
+        here because this file still carries no `common` section for the pointer to resolve to. The proper
+        Collect is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
   christological:
     kind: christological
     label: Christological
@@ -40688,6 +40729,24 @@ sections:
           - begin: {chapter: 7, verse: 21}
             end: {chapter: 7, verse: 29}
           ref: Matthew 7:21-29
+      notes: 'SOURCED 2026-08-21 from the Congregation for Divine Worship''s own annex to the decree of
+        25 January 2021, Prot. N. 40/21, Additiones in Libris liturgicis Ritus Romani de memoria ad libitum
+        sancti Gregorii Narecensis, abbatis et Ecclesiae doctoris, published by the Liturgy Office of
+        the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/February/Doctors-CDW-Texts-Lat.pdf,
+        an image-only scan read at 150 dpi page images, PDF page 1. IN MISSALE ROMANUM, die 27 februarii:
+        ''De Communi doctorum Ecclesiae (p. 943), vel sanctorum: pro abbate (p. 958).'' That heading is
+        the MISSAL''s and it carries the Missale Romanum''s own printed page numbers; two Commons are
+        named as alternatives, so no single `takes_from` can express it. IN ORDINEM LECTIONUM MISSAE,
+        n. 536bis: ''De Communi doctorum Ecclesiae, vel sanctorum [pro religiosis]'', with the four citations
+        carried here. The annex cites the psalm as ''Ps 36'' in Vulgate numbering; it is carried as Psalm
+        37 in the hebrew numbering this file declares, converted through scripts/_psalms, which moves
+        the chapter and no verse, and the England-and-Wales sanctoral page for 27 February confirms the
+        reading as ''Psalm 37(36)''. That page numbers the Lectionary entry 536a where the Roman annex
+        numbers it 536bis; the divergence is recorded, not harmonized. The proper Collect (incipit ''Omnipotens
+        sempiterne Deus, qui sanctum Gregorium'') is printed in the annex in Latin; it is a 2021 composition
+        of the Apostolic See, not an ancient text reached through a public-domain witness, so it is not
+        carried here, and the England-and-Wales page states its English translation is still ''being prepared
+        by ICEL''. No antiphon is carried: the Missal''s antiphons for this day come from the Common.'
     - key: saint-casimir
       name: Saint Casimir
       registry: pc-03-04
@@ -42179,6 +42238,20 @@ sections:
           - begin: {chapter: 5, verse: 13}
             end: {chapter: 5, verse: 19}
           ref: Matthew 5:13-19
+      notes: 'SOURCED 2026-08-21 from the same Congregation for Divine Worship annex to the decree of
+        25 January 2021, Prot. N. 40/21, at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/February/Doctors-CDW-Texts-Lat.pdf,
+        read at 150 dpi page images, PDF page 4. IN MISSALE ROMANUM, die 10 maii: ''De Communi pastorum:
+        pro uno pastore (p. 933), vel de Communi doctorum Ecclesiae (p. 943).'' IN ORDINEM LECTIONUM MISSAE,
+        n. 561bis: ''De Communi pastorum vel doctorum Ecclesiae'', with the four citations carried here.
+        The annex cites the psalm as ''Ps 22, 1b-3. 4. 5. 6'' in Vulgate numbering; it is carried as Psalm
+        23 in the hebrew numbering this file declares, converted through scripts/_psalms, which moves
+        the chapter and no verse. TWO DIVERGENCES ARE RECORDED AND NOT HARMONIZED: the England-and-Wales
+        sanctoral page for 10 May numbers the Lectionary entry 561c, not 561bis; and it prints the Gospel
+        as Matthew 5:13-16 where the Roman annex prints Matthew 5:13-19. The Roman annex is the promulgating
+        document and is followed here. The proper Collect (incipit ''Deus, qui sanctum Ioannem De Avila'')
+        is printed in the annex in Latin; it is a 2012 composition of the Apostolic See, not an ancient
+        text reached through a public-domain witness, so it is not carried, and the England-and-Wales
+        page states its English translation is still ''being prepared by ICEL''.'
     - key: saints-nereus-achilleus-martyrs
       name: Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr
       registry: pc-05-12
@@ -42457,8 +42530,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 112, printed page 104, in
+        the Proper of Saints: "From the Common of Martyrs: For Several Martyrs (p. 152 or, during Easter
+        Time, p. 155)." The Antiphonary prints no proper Entrance or Communion Antiphon for this day,
+        which is what that heading means: every text of the Mass except the Collect comes from the Common
+        named. This is the MISSAL''s own heading, not the Ordo lectionum''s, and it is the warrant the
+        Commons lane (.scratch/lanes/commons-structure/structure.md 3) said had to be read before any
+        day-to-Common pointer could be landed. No `takes_from` is written here because this file still
+        carries no `common` section for the pointer to resolve to. The proper Collect is printed in the
+        Missale Romanum, which is in copyright and not held here, so the placeholder stands.'
     - key: saint-rita-cascia-religious
       name: Saint Rita of Cascia, Religious
       registry: pc-05-22
@@ -42468,8 +42554,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 112, printed page 104, in
+        the Proper of Saints: "From the Common of Holy Men and Women: For Religious (p. 171)." The Antiphonary
+        prints no proper Entrance or Communion Antiphon for this day, which is what that heading means:
+        every text of the Mass except the Collect comes from the Common named. This is the MISSAL''s own
+        heading, not the Ordo lectionum''s, and it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md
+        3) said had to be read before any day-to-Common pointer could be landed. No `takes_from` is written
+        here because this file still carries no `common` section for the pointer to resolve to. The proper
+        Collect is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-bede-venerable-priest-doctor-church
       name: Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory
         VII, Pope; Saint Mary Magdalene de' Pazzi, Virgin
@@ -42780,6 +42879,21 @@ sections:
           - begin: {chapter: 16, verse: 13}
             end: {chapter: 16, verse: 19}
           ref: Matthew 16:13-19
+      notes: 'SOURCED 2026-08-21 from the Congregation for Divine Worship''s own annex to the decree of
+        25 January 2019, Prot. N. 29/19, Additiones in Libris liturgicis Ritus Romani de memoria ad libitum
+        sancti Pauli VI, papae, published by the Liturgy Office of the Bishops'' Conference of England
+        and Wales at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/May/May29-LatinText.pdf, read
+        from the PDF''s own text layer and confirmed against the page image, page 1. IN MISSALE ROMANUM,
+        die 29 maii: ''De Communi pastorum: pro papa.'' IN ORDINEM LECTIONUM MISSAE, n. 571a: ''De Communi
+        pastorum [pro papa]'', with the four citations carried here. The annex cites the psalm as ''Ps
+        95 (96)''; it is carried as Psalm 96 in the hebrew numbering this file declares. The England-and-Wales
+        sanctoral page for 29 May agrees on all four readings and adds the Missal''s own page reference,
+        ''Common of Pastors: For a Pope (RM 1130)''. The proper Collect (incipit ''Deus, qui Ecclesiam
+        tuam regendam'') is printed in the annex in Latin; it is a 2019 composition of the Apostolic See
+        and is not carried. An English translation was confirmed for the United States by the Dicastery
+        for Divine Worship on 29 May 2023 and stands on the USCCB''s page for Saint Paul VI; it is ICEL''s,
+        publishable under guidance/liturgical-text-publication-policy.md 3, and unlandable in this schema
+        for want of a Latin `text` to hang a translation row on.'
     - key: saint-justin-martyr
       name: Saint Justin, Martyr
       registry: pc-06-01
@@ -44039,8 +44153,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 119, printed page 111, in
+        the Proper of Saints: "From the Common of Martyrs: For Several Martyrs (p. 152)." The Antiphonary
+        prints no proper Entrance or Communion Antiphon for this day, which is what that heading means:
+        every text of the Mass except the Collect comes from the Common named. This is the MISSAL''s own
+        heading, not the Ordo lectionum''s, and it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md
+        3) said had to be read before any day-to-Common pointer could be landed. No `takes_from` is written
+        here because this file still carries no `common` section for the pointer to resolve to. The proper
+        Collect is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-benedict-abbot
       name: Saint Benedict, Abbot
       registry: pc-07-11
@@ -44503,8 +44630,22 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 121, printed page 113, in
+        the Proper of Saints: "From the Common of Pastors: For One Pastor (p. 161), or from the Common
+        of Holy Men and Women: For a Monk (p. 170)." The Antiphonary prints no proper Entrance or Communion
+        Antiphon for this day, which is what that heading means: every text of the Mass except the Collect
+        comes from the Common named. This is the MISSAL''s own heading, not the Ordo lectionum''s, and
+        it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md 3) said had
+        to be read before any day-to-Common pointer could be landed. No `takes_from` is written here because
+        this file still carries no `common` section for the pointer to resolve to. The proper Collect
+        is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-james-apostle
       name: Saint James, Apostle
       registry: pc-07-25
@@ -45116,8 +45257,22 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 125, printed page 117, in
+        the Proper of Saints: "From the Common of Martyrs: For a Virgin Martyr (p. 157), or from the Common
+        of Virgins: For One Virgin (p. 166)." The Antiphonary prints no proper Entrance or Communion Antiphon
+        for this day, which is what that heading means: every text of the Mass except the Collect comes
+        from the Common named. This is the MISSAL''s own heading, not the Ordo lectionum''s, and it is
+        the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md 3) said had to be
+        read before any day-to-Common pointer could be landed. No `takes_from` is written here because
+        this file still carries no `common` section for the pointer to resolve to. The proper Collect
+        is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-lawrence-deacon-martyr
       name: Saint Lawrence, Deacon and Martyr
       registry: pc-08-10
@@ -45371,6 +45526,22 @@ sections:
           - begin: {chapter: 15, verse: 13}
             end: {chapter: 15, verse: 13}
           ref: John 15:13
+      notes: 'SOURCED 2026-08-21. This Mass has PROPER antiphons, and both were read in the ICEL Antiphonary,
+        ANTIPHONARY EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical
+        edition, 2010, published free by the Liturgy Office of the Bishops'' Conference of England and
+        Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf (265 pp), fetched to this
+        machine and read on 2026-08-21: the Entrance Antiphon at PDF page 126, printed page 118, under
+        14 August, cited ''Mt 25: 34, 40''; the Communion Antiphon at PDF page 127, printed page 119,
+        cited ''Cf. Jn 15: 13''. The Antiphonary prints no Common heading for this day, which is what
+        a proper formulary looks like there. The Antiphonary carries only the two antiphons: it prints
+        no oration, so the Collect, Prayer over the Offerings and Prayer after Communion of this Mass
+        remain absent. Their Latin is the Missale Romanum, editio typica tertia 2002/2008, which this
+        file declares as its edition and which is in copyright and not held here; their English is ICEL''s
+        and may be published under guidance/liturgical-text-publication-policy.md 3, but a translation
+        row in this schema hangs off a Latin `text` that does not exist, so nothing is landed and nothing
+        is invented. The Lectionary slots stay absent: the Ordo lectionum Missae 1981 prints no dated
+        entry under 14 August, as .scratch/lanes/sanctoral-placeholder-readings established at artifact
+        page 355.'
     - key: saint-stephen-hungary
       name: Saint Stephen of Hungary
       registry: pc-08-16
@@ -46054,6 +46225,24 @@ sections:
           - begin: {chapter: 25, verse: 31}
             end: {chapter: 25, verse: 40}
           ref: Matthew 25:31-40
+      notes: 'SOURCED 2026-08-21 from the United States Conference of Catholic Bishops'' page ''Saint
+        Teresa of Calcutta'', https://www.usccb.org/prayer-worship/liturgical-year/saint-teresa-of-calcutta,
+        fetched to this machine on 2026-08-21 and read from the HTML bytes. The page records that Pope
+        Francis ordered the inscription on 24 December 2024 and that the Dicastery for Divine Worship
+        confirmed the English on 24 June 2025. Roman Missal: ''From the Common of Virgins: For One Virgin,
+        or the Common of Holy Men and Women: For Those Who Practiced Works of Mercy.'' Lectionary entry
+        635A, with the four citations carried here; the page states these readings are ''recommended by
+        the Holy See'' and ''will appear in a future edition of the Lectionary for Mass'', so they are
+        the appointed provision but not yet printed in any Lectionary this project could collate against,
+        and that qualification travels with them. The psalm is cited in the page''s own numbering, which
+        is the hebrew numbering this file declares. The Gospel''s long and short forms are carried as
+        two slots on this file''s own convention. The proper Collect is on that page in ICEL''s English
+        under the notice ''Excerpts from the English translation of Liturgical Texts for Saint Teresa
+        of Calcutta (c) 2025 International Commission on English in the Liturgy Corporation. All rights
+        reserved.''; it is publishable under guidance/liturgical-text-publication-policy.md 3 and is not
+        landed here, because a translation row in this schema requires a Latin `text` that this project
+        does not hold. No antiphon is carried: the Missal sends them to the Common. This celebration is
+        not in the England-and-Wales sanctoral calendar.'
     - key: saint-peter-claver-priest
       name: Saint Peter Claver, Priest
       registry: pc-09-09
@@ -46374,6 +46563,23 @@ sections:
           - begin: {chapter: 10, verse: 32}
             end: {chapter: 10, verse: 32}
           ref: Matthew 10:32
+      notes: 'SOURCED 2026-08-21. This Mass has PROPER antiphons, read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21 at PDF page 134, printed page 126, under
+        20 September. Only the Communion Antiphon is carried: the Antiphonary prints it with the citation
+        ''Mt 10: 32''. THE ENTRANCE ANTIPHON IS PROPER AND NON-SCRIPTURAL - the Antiphonary prints it
+        with no reference at all (''The blood of the holy Martyrs was poured out for Christ upon the earth...'')
+        - so it has no citation to carry, its Latin is the Missale Romanum''s and is not held here, and
+        no slot is written for it rather than a slot with an invented reference. The Antiphonary carries
+        only the two antiphons: it prints no oration, so the Collect, Prayer over the Offerings and Prayer
+        after Communion of this Mass remain absent. Their Latin is the Missale Romanum, editio typica
+        tertia 2002/2008, which this file declares as its edition and which is in copyright and not held
+        here; their English is ICEL''s and may be published under guidance/liturgical-text-publication-policy.md
+        3, but a translation row in this schema hangs off a Latin `text` that does not exist, so nothing
+        is landed and nothing is invented. The Lectionary slots stay absent: the Ordo lectionum Missae
+        1981 prints no dated entry under 20 September, as .scratch/lanes/sanctoral-placeholder-readings
+        established at artifact page 361.'
     - key: saint-matthew-apostle-evangelist
       name: Saint Matthew, Apostle and Evangelist
       registry: pc-09-21
@@ -46430,8 +46636,22 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 134, printed page 126, in
+        the Proper of Saints: "From the Common of Pastors: For One Pastor (p. 161), or from the Common
+        of Holy Men and Women: For Religious (p. 171)." The Antiphonary prints no proper Entrance or Communion
+        Antiphon for this day, which is what that heading means: every text of the Mass except the Collect
+        comes from the Common named. This is the MISSAL''s own heading, not the Ordo lectionum''s, and
+        it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md 3) said had
+        to be read before any day-to-Common pointer could be landed. No `takes_from` is written here because
+        this file still carries no `common` section for the pointer to resolve to. The proper Collect
+        is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saints-cosmas-damian-martyrs
       name: Saints Cosmas and Damian, Martyrs
       registry: pc-09-26
@@ -46917,6 +47137,21 @@ sections:
           - begin: {chapter: 11, verse: 25}
             end: {chapter: 11, verse: 30}
           ref: Matthew 11:25-30
+      notes: 'SOURCED 2026-08-21 from the Congregation for Divine Worship''s own annex to the decree of
+        18 May 2020, Prot. N. 229/20, Additiones in Libris liturgicis Ritus Romani de memoria ad libitum
+        sanctae Faustinae Kowalska, virginis, published by the Liturgy Office of the Bishops'' Conference
+        of England and Wales at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/October/Oct5-CDW-Texts-Lat.pdf,
+        read from the PDF''s own text layer and confirmed against the page image. IN MISSALE ROMANUM,
+        die 5 octobris: ''De Communi virginum: pro una virgine vel de Communi sanctarum: pro religiosis.''
+        IN ORDINEM LECTIONUM MISSAE, n. 651a: ''De Communi virginum vel sanctarum'', with the four citations
+        carried here. The annex cites the psalm as ''Ps 102 (103)''; it is carried as Psalm 103 in the
+        hebrew numbering this file declares. The England-and-Wales sanctoral page for 5 October agrees
+        on all four readings and on the entry number 651a. The proper Collect (incipit ''Deus, qui sanctae
+        Faustinae munus tribuisti'') is printed in the annex in Latin; it is a 2020 composition of the
+        Apostolic See and is not carried. An English translation was confirmed for the United States by
+        the Dicastery for Divine Worship on 2 October 2023 and stands on the USCCB''s page for Saint Faustina
+        Kowalska; it is ICEL''s, publishable under guidance/liturgical-text-publication-policy.md 3, and
+        unlandable in this schema for want of a Latin `text` to hang a translation row on.'
     - key: saint-bruno-priest
       name: Saint Bruno, Priest
       registry: pc-10-06
@@ -47110,6 +47345,22 @@ sections:
           - begin: {chapter: 21, verse: 15}
             end: {chapter: 21, verse: 17}
           ref: John 21:15-17
+      notes: 'SOURCED 2026-08-21 from ''Saint John XXIII, Pope / Saint John Paul II, Pope'', the England-and-Wales
+        Missal and Lectionary texts published by the Liturgy Office of the Bishops'' Conference of England
+        and Wales at https://www.liturgyoffice.org.uk/Calendar/Sanctoral/October/Oct11&22-Missal-English.pdf,
+        fetched to this machine and read from its text layer on 2026-08-21, PDF page 5. The file reprints
+        entire the Congregation for Divine Worship''s decree of 29 May 2014, Prot. N. 309/14, inscribing
+        both memorials in the General Roman Calendar; the Congregation''s confirmation of the English,
+        22 July 2021, Prot. n. 354/19; and the Conference''s own Decree of Publication of 26 July 2021.
+        THE ROMAN MISSAL, 11 October: ''From the Common of Pastors: For a Pope.'' LECTIONARY, ''From the
+        Common of Pastors: For a Pope'', with the four citations carried here, each carrying its England-and-Wales
+        Lectionary number (1480, 1481, 1500, 1500). The psalm is printed ''Psalm 22 (23)'' and is carried
+        as Psalm 23 in the hebrew numbering this file declares. The proper Collect (''Almighty ever-living
+        God, who in Pope Saint John the Twenty-Third...'') is printed there in ICEL''s English under the
+        Conference''s own authority and is publishable under guidance/liturgical-text-publication-policy.md
+        3; it is NOT landed, because a translation row in this schema requires a Latin `text` to translate
+        and the Missale Romanum''s Latin of this 2014 formulary is not held here. This is the single clearest
+        case in the lane of a text that may be published and cannot be recorded.'
     - key: saint-callistus-i-pope-martyr
       name: Saint Callistus I, Pope and Martyr
       registry: pc-10-14
@@ -47495,6 +47746,16 @@ sections:
           - begin: {chapter: 21, verse: 15}
             end: {chapter: 21, verse: 17}
           ref: John 21:15-17
+      notes: 'SOURCED 2026-08-21 from the same England-and-Wales file, https://www.liturgyoffice.org.uk/Calendar/Sanctoral/October/Oct11&22-Missal-English.pdf,
+        PDF page 8. THE ROMAN MISSAL, 22 October: ''From the Common of Pastors: For a Pope.'' LECTIONARY,
+        ''From the Common of Pastors: For a Pope'', with the four citations carried here and their England-and-Wales
+        Lectionary numbers (1476, 1477, 1500, 1500). The psalm is printed ''Psalm 95 (96)'' and is carried
+        as Psalm 96 in the hebrew numbering this file declares. The decree of 29 May 2014 reprinted in
+        that file records that this saint''s liturgical texts are those attached to the Congregation''s
+        earlier decree of 2 April 2011, Prot. N. 118/11/L, and are maintained unchanged. The proper Collect
+        (''O God, rich in mercy, who willed that Saint John Paul the Second...'') is printed there in
+        ICEL''s English and is publishable under guidance/liturgical-text-publication-policy.md 3; it
+        is NOT landed, for the same reason as 11 October.'
     - key: saint-john-capistrano-priest
       name: Saint John of Capistrano, Priest
       registry: pc-10-23
@@ -47733,15 +47994,6 @@ sections:
       date: 11-02
       rank: All Souls commemoration
       kind: sanctoral
-      notes: The Missal prints three distinct formularies for this day, which the postconciliar
-        proper registry fixes as the three FORMULARY targets of PC-R08. The numbering
-        identifies the printed formularies only and prescribes no order of celebration,
-        no intention and no pairing with a reading branch. None of the three has been
-        read.
-      forms:
-      - name: First formulary
-      forms:
-      - name: First formulary
       forms:
       - name: First formulary
         propers:
@@ -47804,6 +48056,27 @@ sections:
             - begin: {chapter: 3, verse: 20}
               end: {chapter: 3, verse: 21}
             ref: Philippians 3:20-21
+      notes: 'The Missal prints three distinct formularies for this day, which the postconciliar proper
+        registry fixes as the three FORMULARY targets of PC-R08. The numbering identifies the printed
+        formularies only and prescribes no order of celebration, no intention and no pairing with a reading
+        branch. SOURCED 2026-08-21: the six antiphons of the three formularies were read in the ICEL Antiphonary,
+        ANTIPHONARY EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical
+        edition, 2010, published free by the Liturgy Office of the Bishops'' Conference of England and
+        Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf (265 pp), fetched to this
+        machine and read on 2026-08-21, at PDF pages 142 and 143, printed pages 134 and 135, under 2 November,
+        where the Antiphonary prints the three Masses in the Missal''s own order under the bare numerals
+        1, 2 and 3 and heads them ''The Masses that follow may be used at the discretion of the celebrant.''
+        Each formulary''s Entrance and Communion Antiphon carries a scriptural reference and all six are
+        carried here; the citation ''Cf. 4 Esdr 2: 35, 34'' on the second formulary''s Communion Antiphon
+        is preserved in the printed order the Missal gives it. The Antiphonary also prints, in parentheses,
+        Graduale Romanum and Graduale Simplex psalm assignments for each antiphon; those belong to the
+        chant books, not to the Missal, and are not carried. No oration is carried: the nine orations
+        of the three formularies are printed in the Missale Romanum, which is in copyright and not held
+        here. NO READING PROPER IS CARRIED, and the reason is not the same one: the Ordo lectionum Missae
+        1981, artifact internet-archive-scan-pdf-ed4bc14e, artifact page 367, printed page 313, n. 668,
+        prints no reading in any slot for this day but a single cross-reference to the Masses for the
+        Dead at nn. 1011 to 1015, each of which is a numbered list of interchangeable options. A pool
+        of options is not an appointed text, so no citation answers the slot and none is manufactured.'
     - key: saint-martin-porres-religious
       name: Saint Martin de Porres, Religious
       registry: pc-11-03
@@ -48541,6 +48814,23 @@ sections:
           - begin: {chapter: 5, verse: 10}
             end: {chapter: 5, verse: 10}
           ref: Matthew 5:10
+      notes: 'SOURCED 2026-08-21. This Mass has PROPER antiphons, both read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21 at PDF page 147, printed page 139, under
+        24 November: the Entrance Antiphon cited ''Cf. Gal 6: 14; cf. 1 Cor 1: 18'' and the Communion
+        Antiphon cited ''Mt 5: 10''. The Antiphonary prints no Common heading for this day. Both antiphons
+        are also the ones the Antiphonary prints in the Common of Martyrs, III. For Missionary Martyrs,
+        A. For Several Missionary Martyrs, at printed page 157, which is a fact about the two printings
+        and not a `takes_from`: the Missal prints them here in full, so this entry carries them and does
+        not point anywhere. The Antiphonary carries only the two antiphons: it prints no oration, so the
+        Collect, Prayer over the Offerings and Prayer after Communion of this Mass remain absent. Their
+        Latin is the Missale Romanum, editio typica tertia 2002/2008, which this file declares as its
+        edition and which is in copyright and not held here; their English is ICEL''s and may be published
+        under guidance/liturgical-text-publication-policy.md 3, but a translation row in this schema hangs
+        off a Latin `text` that does not exist, so nothing is landed and nothing is invented. The Lectionary
+        slots stay absent: the Ordo lectionum Missae 1981 prints no dated entry under 24 November, as
+        .scratch/lanes/sanctoral-placeholder-readings established at artifact page 370.'
     - key: saint-catherine-alexandria-virgin-martyr
       name: Saint Catherine of Alexandria, Virgin and Martyr
       registry: pc-11-25
@@ -48550,8 +48840,22 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 147, printed page 139, in
+        the Proper of Saints: "From the Common of Martyrs: For a Virgin Martyr (p. 157), or from the Common
+        of Virgins: For One Virgin (p. 166)." The Antiphonary prints no proper Entrance or Communion Antiphon
+        for this day, which is what that heading means: every text of the Mass except the Collect comes
+        from the Common named. This is the MISSAL''s own heading, not the Ordo lectionum''s, and it is
+        the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md 3) said had to be
+        read before any day-to-Common pointer could be landed. No `takes_from` is written here because
+        this file still carries no `common` section for the pointer to resolve to. The proper Collect
+        is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-andrew-apostle
       name: Saint Andrew, Apostle
       registry: pc-11-30
@@ -48842,8 +49146,21 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: |
-          This entry is a placeholder pending formula migration and source verification.
+        text: 'This entry is a placeholder pending formula migration and source verification.
+
+          '
+      notes: 'The Missal''s own Common heading for this day was read in the ICEL Antiphonary, ANTIPHONARY
+        EXCERPTED FROM THE ROMAN MISSAL, English translation according to the third typical edition, 2010,
+        published free by the Liturgy Office of the Bishops'' Conference of England and Wales at https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf
+        (265 pp), fetched to this machine and read on 2026-08-21, at PDF page 149, printed page 141, in
+        the Proper of Saints: "From the Common of Holy Men and Women: For One Saint (p. 169)." The Antiphonary
+        prints no proper Entrance or Communion Antiphon for this day, which is what that heading means:
+        every text of the Mass except the Collect comes from the Common named. This is the MISSAL''s own
+        heading, not the Ordo lectionum''s, and it is the warrant the Commons lane (.scratch/lanes/commons-structure/structure.md
+        3) said had to be read before any day-to-Common pointer could be landed. No `takes_from` is written
+        here because this file still carries no `common` section for the pointer to resolve to. The proper
+        Collect is printed in the Missale Romanum, which is in copyright and not held here, so the placeholder
+        stands.'
     - key: saint-damasus-i-pope
       name: Saint Damasus I, Pope
       registry: pc-12-11

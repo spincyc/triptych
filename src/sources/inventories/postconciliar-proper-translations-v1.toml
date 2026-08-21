@@ -510,6 +510,146 @@ case and against the same document's own second printing in the other.
 # manifest and a reader is shown it beside the offer.
 caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; it is presented here for prayer, study and reference and this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL. It was read in the ICEL Antiphonary, an excerpt-compilation of the Missal's antiphons made to assist composers, which carries the universal ICEL text and no national adaptation."
 
+[[sources]]
+id = "icel-chants-2010"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.presidential-tones"
+# The browser shows this string as the option text of the witness select.
+label = "The approved English of The Roman Missal (ICEL, 2010), read in ICEL's own PresidentialTones.pdf chant sheet"
+attests = "reimpressio-emendata-2008"
+attests_kind = "title-page-statement"
+attests_basis = """
+The chant sheet states on its own pages what it carries: the notice printed at
+the foot of every page reads "The English translation and chants of The Roman
+Missal (c) 2010, International Commission on English in the Liturgy
+Corporation. All rights reserved." That is the rightsholder's own statement that
+these are the words of the Roman Missal, and the act history carries the Latin
+state those words translate as `reimpressio-emendata-2008`, the 2008 emended
+reprinting of the third typical edition. The edge is drawn on the document's
+own page statement and on nothing else, which is why `attests_kind` is
+`title-page-statement` and not the printing itself: this is a tone sheet, not a
+typical edition.
+
+WHAT IT DOES NOT ATTEST. PresidentialTones.pdf is a tone sheet for cantors and
+celebrants, not a missal and not an excerpt of the Proper of Time. It prints
+three orations in the whole file and prints them as pointing examples. It must
+never be cited as the Missal, and it establishes who says so and not as of
+when: it is the 2010-2012 state, and one of its three orations ends with the
+superseded "one God, for ever and ever".
+"""
+rights = "permission"
+rights_jurisdiction = "United States"
+rights_basis = """
+ICEL's own standing grant, on the same basis and the same six conditions as the
+`icel-antiphonary-2010` row above. The publisher here is the rightsholder, which
+is why this is the highest tier of exemplar available for the text it carries:
+nothing establishes that these are the promulgated words better than the owner's
+own copy of them. The grant is settled once, with its citations, at
+src/sources/inventories/icel-web-permission-rights-v1.toml; cite that record
+rather than reasoning from a web page again. The artifact record is
+storage = remote and no bytes are retained here.
+"""
+acknowledgement = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+role = """
+THE APPROVED TRANSLATION, read in the rightsholder's own copy. Three orations of
+the Proper of Time stand on this row, each read on the page image of
+PresidentialTones.pdf and each carrying `exemplar_tier = "icel-published"`: the
+Collect and the Prayer over the Offerings of the First Sunday of Advent, and
+the Prayer over the Offerings of the Epiphany of the Lord at the Mass during the
+Day. Two of the three are printed twice in the file, once under each tone, and
+the two settings were collated word by word. The text is de-syllabified -- chant
+pointing hyphenates across neumes and adds graves and acutes that are
+performance marks, not orthography -- and each entry states exactly which marks
+were removed at which words. Nothing else was altered, and no line break was
+invented.
+"""
+caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; it is presented here for prayer, study and reference and this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL. It was read in a tone sheet (PresidentialTones.pdf), not in the Missal, and it is the 2010-2012 state: one Collect carries the conclusion since superseded after the Prefect's letter of May 2020."
+
+[[sources]]
+id = "fdlc-mystagogy-2016"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+label = "The approved English of The Roman Missal (ICEL, 2010), read in the FDLC's 2016 Mystagogical Reflections on the Collect and Prayer after Communion"
+attests = "reimpressio-emendata-2008"
+attests_kind = "title-page-statement"
+attests_basis = """
+Every page of these FDLC leaflets carries the acknowledgment "Excerpt from The
+Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of the
+Committee on Divine Worship, United States Conference of Catholic Bishops."
+That is a statement on the document of what it reprints -- the English of the
+Roman Missal, Third Edition -- and the act history carries the Latin state that
+English translates as `reimpressio-emendata-2008`, the 2008 emended reprinting of
+the third typical edition. The edge is drawn on the document's own page
+statement; the FDLC is the reprinter and not the rightsholder, so this is a
+second-tier exemplar, accepted by the maintainer, and it needs collating rather
+than trusting (see the caution).
+"""
+rights = "permission"
+rights_jurisdiction = "United States"
+rights_basis = """
+The English on every page is ICEL's approved translation of the Missale Romanum
+2002/2008, reprinted by the FDLC under ICEL's standing permission for a free
+non-commercial website and with the approval of the USCCB's Committee on Divine
+Worship. The grant is the same ICEL standing grant recorded once, with its
+citations, at src/sources/inventories/icel-web-permission-rights-v1.toml; the
+FDLC is the delivery route and not the authority. The FDLC's own bytes are not
+retained: the PDFs are remote and storage = remote.
+"""
+acknowledgement = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+role = """
+THE APPROVED TRANSLATION, read in a reprint the maintainer has accepted as an
+acceptable exemplar. Forty orations stand across this row and the
+`fdlc-mystagogy-2012` row; the thirty on THIS row are the Collect and the Prayer
+after Communion of Sundays and Solemnities from the Most Holy Trinity through
+Christ the King, read on the page images of the FDLC's 2016 ComboColPaC leaflets.
+Each entry carries `exemplar_tier = "fdlc-reprint"` and states the page, the
+printed page, the heading and the URL it was read from. The exemplar sets the
+prayer in sense lines; the text is carried as one flowing paragraph, as every
+oration already in this file is, and no line break was invented.
+"""
+caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL or the FDLC. It was read in the FDLC's Mystagogical Reflections, a reprint and not the Missal, and it is the 2010-2016 state: the Collects end 'one God, for ever and ever', the conclusion since superseded after the Prefect's letter of May 2020."
+
+[[sources]]
+id = "fdlc-mystagogy-2012"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+label = "The approved English of The Roman Missal (ICEL, 2010), read in the FDLC's 2012-2013 Mystagogical Reflections on the Collects"
+attests = "reimpressio-emendata-2008"
+attests_kind = "title-page-statement"
+attests_basis = """
+Every page of these FDLC leaflets carries the acknowledgment "Excerpt from The
+Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of the
+Committee on Divine Worship, United States Conference of Catholic Bishops."
+That is a statement on the document of what it reprints -- the English of the
+Roman Missal, Third Edition -- and the act history carries the Latin state that
+English translates as `reimpressio-emendata-2008`, the 2008 emended reprinting of
+the third typical edition. The edge is drawn on the document's own page
+statement; the FDLC is the reprinter and not the rightsholder, so this is a
+second-tier exemplar, accepted by the maintainer, on the same standing as the
+sibling `fdlc-mystagogy-2016` row.
+"""
+rights = "permission"
+rights_jurisdiction = "United States"
+rights_basis = """
+The English on every page is ICEL's approved translation of the Missale Romanum
+2002/2008, reprinted by the FDLC under ICEL's standing permission for a free
+non-commercial website and with the approval of the USCCB's Committee on Divine
+Worship. The grant is the same ICEL standing grant recorded once, with its
+citations, at src/sources/inventories/icel-web-permission-rights-v1.toml; the
+FDLC is the delivery route and not the authority. The FDLC's own bytes are not
+retained: the PDFs are remote and storage = remote.
+"""
+acknowledgement = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+role = """
+THE APPROVED TRANSLATION, read in a reprint the maintainer has accepted as an
+acceptable exemplar. The ten orations on THIS row are the Collects of the
+Sundays and Solemnities from the Second Sunday of Advent through the Sixth
+Sunday of Easter, read on the page images of the FDLC's 2012-2013
+collect_mystogogy leaflets. Each entry carries `exemplar_tier = "fdlc-reprint"`
+and states the page, the heading and the URL it was read from. This series
+prints the Collect only; the Prayer over the Offerings and Prayer after
+Communion are not carried in it.
+"""
+caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL or the FDLC. It was read in the FDLC's Mystagogical Reflections, a reprint and not the Missal, and it is the 2010-2012 state: the Collects end 'one God, for ever and ever', the conclusion since superseded after the Prefect's letter of May 2020."
+
 # ---------------------------------------------------------------------------
 # ENTRIES. Eighteen slots, in the order the liturgical year takes them.
 #
@@ -4168,6 +4308,1365 @@ and the Only Begotten Son of God,
 and also the Holy Spirit,
 for he has shown us his merciful love.
 """
+
+# ---------------------------------------------------------------------------
+# ICEL-ORATIONS HARVEST, 2026-08-21. Forty-three orations of the postconciliar
+# Roman Missal in the approved ICEL English, read on the page images of two
+# witnesses and landed under ICEL's standing web permission. Three (the
+# First Sunday of Advent's Collect and Prayer over the Offerings, and the
+# Epiphany's Prayer over the Offerings at the Mass during the Day) were read in
+# ICEL's own PresidentialTones.pdf -- the rightsholder's own copy, the highest
+# tier of exemplar, `exemplar_tier = "icel-published"`, witness
+# `icel-chants-2010`. Forty were read in the Federation of Diocesan Liturgical
+# Commissions' "Mystagogical Reflections on Texts of the Roman Missal", which
+# reprints them under the acknowledgment "Excerpt from The Roman Missal, Third
+# Edition (c) 2010, ICEL. Reprinted with approval of the Committee on Divine
+# Worship, United States Conference of Catholic Bishops" -- a second-tier
+# exemplar the maintainer has accepted, `exemplar_tier = "fdlc-reprint"`,
+# witness `fdlc-mystagogy-2016` or `fdlc-mystagogy-2012`. The de-syllabification
+# of the chant entries is an editorial transformation each entry states; the
+# FDLC entries are carried as printed. Every Collect ending "one God, for ever
+# and ever" records that superseded reading where it falls; the correction
+# belongs to the emendation apparatus and not to a transcriber's hand. See
+# .scratch/lanes/icel-orations/report.md for the full lane record.
+# ---------------------------------------------------------------------------
+
+[[entries]]
+mass = "advent-1"
+form = ""
+proper = "Collect"
+incipit = "Da, quaesumus, omnipotens Deus"
+witness = "icel-chants-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 2
+verified_heading = "Tones for the Presidential Prayers / Solemn Tone / Collect (First Sunday of Advent)"
+verified_url = "https://www.icelweb.org/musicfolder/PresidentialTones.pdf"
+superseded_reading = """
+The conclusion is printed here as "one God, for ever and ever". "One" has since
+been struck: the Prefect of the Congregation for Divine Worship wrote to the
+Anglophone conferences in May 2020 that it has no warrant in the Latin, and the
+conferences implemented the correction on their own dates. So this is the
+approved English of 2010 and not the text in force in any territory today. The
+word stands in the transcription because the rightsholder's page has it and
+because exactness is a condition of the grant; the correction belongs to
+whatever emendation apparatus the ledger grows, not to a transcriber's hand.
+"""
+witness_note = """
+The approved ICEL English of this slot, read on the page image of ICEL's own
+PresidentialTones.pdf, where it is printed whole as a pointing example for the
+solemn tone. It is printed a second time on artifact page 5 under "Simple Tone",
+and the two settings were collated word by word: they agree at every locus,
+including the superseded "one God". The file carries no printed pagination, so
+no `verified_printed_page` is recorded; the artifact page is the PDF page.
+
+The Latin this answers is the calendar's own recorded text, "Da, quaesumus,
+omnipotens Deus, hanc tuis fidelibus voluntatem, ut, Christo tuo venienti iustis
+operibus occurrentes, eius dexterae sociati, regnum mereantur possidere
+caeleste. Per Dominum...", and the English matches it clause for clause.
+
+EDITORIAL TRANSFORMATION, stated because the licence demands exactness. The
+chant syllabifies across neumes and points the cadences. Removed: the hyphens at
+"com-ing", "heav-en-ly" and "ev-er and ev-er", and the grave and acute accents
+at "com-ìng", "heav-èn-ly" and "Kíngdom", which mark where the voice descends to
+G and rises to A and are not orthography. The capital in "Kingdom" is the
+Missal's and is kept. The people's "R. Amen." is a response and is not carried
+into the oration's text. Nothing else was altered.
+
+WHAT THIS WITNESS IS NOT. PresidentialTones.pdf is a tone sheet for cantors and
+celebrants, not a missal and not an excerpt of the Proper of Time. It prints
+three orations in the whole file and prints them as examples of pointing. It
+must never be cited as the Missal, and it establishes who says so and not as of
+when -- see `superseded_reading`.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant your faithful, we pray, almighty God, the resolve to run forth to meet your Christ with righteous deeds at his coming, so that, gathered at his right hand, they may be worthy to possess the heavenly Kingdom. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "advent-1"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Suscipe, quaesumus, Domine"
+witness = "icel-chants-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_heading = "Tones for the Presidential Prayers / Simple Tone / Prayer over the Offerings (The First Sunday of Advent)"
+verified_url = "https://www.icelweb.org/musicfolder/PresidentialTones.pdf"
+witness_note = """
+The approved ICEL English of this slot, read on the page image of ICEL's own
+PresidentialTones.pdf, where it is printed whole as a pointing example for the
+simple tone. Unlike the Collect and the Epiphany Prayer over the Offerings, this
+one is printed ONCE in the file: the solemn-tone section carries the Collect and
+the Epiphany prayer only, so there is no second setting to collate it against
+and it stands on a single reading. The file carries no printed pagination, so no
+`verified_printed_page` is recorded.
+
+The Latin this answers is the calendar's own recorded text, "Suscipe,
+quaesumus, Domine, munera quae de tuis offerimus collata beneficiis, et, quod
+nostrae devotioni concedis effici temporali, tuae nobis fiat praemium
+redemptionis aeternae. Per Christum...", and the English matches it clause for
+clause; the conclusion printed with the chant, "Through Christ our Lord", is the
+one the Latin's "Per Christum" abbreviates.
+
+EDITORIAL TRANSFORMATION. Removed: the hyphen and grave at "redemp-tiòn", the
+grave at "hère", and the flex sign set above the vowel of "us". Nothing else was
+altered. The people's "R. Amen." is not carried.
+
+Its conclusion is a short one and carries no "one God", so the May 2020
+correction that reaches the Collect above does not reach this prayer.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Accept, we pray, O Lord, these offerings we make, gathered from among your gifts to us, and may what you grant us to celebrate devoutly here below gain for us the prize of eternal redemption. Through Christ our Lord."
+
+[[entries]]
+mass = "epiphany"
+form = "Mass during the Day"
+proper = "Prayer over the Offerings"
+incipit = "Ecclesiae tuae, quaesumus, Domine"
+witness = "icel-chants-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 2
+verified_heading = "Tones for the Presidential Prayers / Solemn Tone / Prayer over the Offerings (The Epiphany of the Lord, The Mass during the Day)"
+verified_url = "https://www.icelweb.org/musicfolder/PresidentialTones.pdf"
+witness_note = """
+The approved ICEL English of this slot, read on the page image of ICEL's own
+PresidentialTones.pdf. The prayer begins on artifact page 2 under "Solemn Tone"
+and its last two lines run over to artifact page 3; it is printed a second time
+entire on artifact page 6 under "Simple Tone", and the two settings were
+collated word by word and agree at every locus. The file carries no printed
+pagination, so no `verified_printed_page` is recorded.
+
+THIS SLOT IS THE LANE'S ONE NEW FINDING. The earlier survey in
+.scratch/lanes/icel-official-sources/sources.md scored this file as covering two
+slots, both of the First Sunday of Advent, and its sect. 3 and sect. 4 tables are
+built on that count. The file in fact prints three orations, and the third is
+this one. The 154-with-no-official-source figure in that document is therefore
+153, and its "Collect 1 / Prayer over the Offerings 1" row should read 1 and 2.
+
+The Latin this answers is the calendar's own recorded text, "Ecclesiae tuae,
+quaesumus, Domine, dona propitius intuere, quibus non iam aurum, thus et myrrha
+profertur, sed quod eisdem muneribus declaratur, immolatur et sumitur, Iesus
+Christus. Qui vivit et regnat in saecula saeculorum." The English matches it
+clause for clause, and its conclusion "Who lives and reigns for ever and ever"
+is the proper conclusion the Latin's "Qui vivit et regnat" requires, not the
+common "Per Christum" -- which is a second, independent check that the chant was
+matched to the right slot.
+
+The heading names the form as well as the day, "The Mass during the Day", so the
+Vigil Mass's own Prayer over the Offerings ("Suscipe, quaesumus, Domine, munera
+nostra pro apparitione") is untouched by this entry and remains ledgered.
+
+EDITORIAL TRANSFORMATION. Removed: the hyphen and grave at "frankin-cènse", the
+grave at "Chùrch", the double grave above the vowel of "Christ", and the
+syllable break at "ev-er". Nothing else was altered. The people's "R. Amen." is
+not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Look with favor, Lord, we pray, on these gifts of your Church, in which are offered now not gold or frankincense or myrrh, but he who by them is proclaimed, sacrificed and received, Jesus Christ. Who lives and reigns for ever and ever."
+
+[[entries]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Collect"
+incipit = "Deus Pater, qui, Verbum veritatis"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 4
+verified_printed_page = "4"
+verified_heading = "First Sunday after Pentecost / THE MOST HOLY TRINITY, Solemnity / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 4 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "God our Father, who by sending into the world the Word of truth and the Spirit of sanctification made known to the human race your wondrous mystery, grant us, we pray, that in professing the true faith, we may acknowledge the Trinity of eternal glory and adore your Unity, powerful in majesty. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-11"
+form = ""
+proper = "Collect"
+incipit = "Deus, in te sperantium fortitudo"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 14
+verified_printed_page = "14"
+verified_heading = "ELEVENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 14 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, strength of those who hope in you, graciously hear our pleas, and, since without you mortal frailty can do nothing, grant us always the help of your grace, that in following your commands we may please you by our resolve and our deeds. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-11"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Haec tua, Domine, sumpta sacra communio"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 15
+verified_printed_page = "15"
+verified_heading = "ELEVENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 15 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "As this reception of your Holy Communion, O Lord, foreshadows the union of the faithful in you, so may it bring about unity in your Church. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-12"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Sacri Corporis et Sanguinis pretiosi alimonia"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 17
+verified_printed_page = "17"
+verified_heading = "TWELFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 17 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Renewed and nourished by the Sacred Body and Precious Blood of your Son, we ask of your mercy, O Lord, that what we celebrate with constant devotion may be our sure pledge of redemption. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-13"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui per adoptionem gratiae"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 18
+verified_printed_page = "18"
+verified_heading = "THIRTEENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 18 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who through the grace of adoption chose us to be children of light, grant, we pray, that we may not be wrapped in the darkness of error but always be seen to stand in the bright light of truth. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-13"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Vivificet nos, quaesumus, Domine"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 19
+verified_printed_page = "19"
+verified_heading = "THIRTEENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 19 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "May this divine sacrifice we have offered and received fill us with life, O Lord, we pray, so that, bound to you in lasting charity, we may bear fruit that lasts for ever. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-14"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui in Filii tui humilitate"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 4
+verified_printed_page = "4"
+verified_heading = "FOURTEENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 4 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who in the abasement of your Son have raised up a fallen world, fill your faithful with holy joy, for on those you have rescued from slavery to sin you bestow eternal gladness. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-16"
+form = ""
+proper = "Collect"
+incipit = "Propitiare, Domine, famulis tuis"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 8
+verified_printed_page = "8"
+verified_heading = "SIXTEENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 8 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Show favor, O Lord, to your servants and mercifully increase the gifts of your grace, that, made fervent in hope, faith and charity, they may be ever watchful in keeping your commands. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-16"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Populo tuo, quaesumus, Domine, adesto propitius"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 9
+verified_printed_page = "9"
+verified_heading = "SIXTEENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 9 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Graciously be present to your people, we pray, O Lord, and lead those you have imbued with heavenly mysteries to pass from former ways to newness of life. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-17"
+form = ""
+proper = "Collect"
+incipit = "Protector in te sperantium, Deus"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 10
+verified_printed_page = "10"
+verified_heading = "SEVENTEENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 10 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, protector of those who hope in you, without whom nothing has firm foundation, nothing is holy, bestow in abundance your mercy upon us and grant that, with you as our ruler and guide, we may use the good things that pass in such a way as to hold fast even now to those that ever endure. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-17"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Sumpsimus, Domine, divinum sacramentum"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 11
+verified_printed_page = "11"
+verified_heading = "SEVENTEENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 11 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "We have consumed, O Lord, this divine Sacrament, the perpetual memorial of the Passion of your Son; grant, we pray, that this gift, which he himself gave us with love beyond all telling, may profit us for salvation. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-18"
+form = ""
+proper = "Collect"
+incipit = "Adesto, Domine, famulis tuis"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 12
+verified_printed_page = "12"
+verified_heading = "EIGHTEENTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 12 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Draw near to your servants, O Lord, and answer their prayers with unceasing kindness, that, for those who glory in you as their Creator and guide, you may restore what you have created and keep safe what you have restored. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-20"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Per haec sacramenta, Domine, Christi participes effecti"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 17
+verified_printed_page = "17"
+verified_heading = "TWENTIETH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 17 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Made partakers of Christ through these Sacraments, we humbly implore your mercy, Lord, that, conformed to his image on earth, we may merit also to be his coheirs in heaven. Who lives and reigns for ever and ever."
+
+[[entries]]
+mass = "ot-21"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Plenum, quaesumus, Domine, in nobis remedium"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 23
+verified_printed_page = "23"
+verified_heading = "TWENTY-FIRST SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 23 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Complete within us, O Lord, we pray, the healing work of your mercy and graciously perfect and sustain us, so that in all things we may please you. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-22"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Pane mensae caelestis refecti"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 25
+verified_printed_page = "25"
+verified_heading = "TWENTY-SECOND SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 25 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Renewed by this bread from the heavenly table, we beseech you, Lord, that, being the food of charity, it may confirm our hearts and stir us to serve you in our neighbor. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-23"
+form = ""
+proper = "Collect"
+incipit = "Deus, per quem nobis et redemptio venit"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 26
+verified_printed_page = "26"
+verified_heading = "TWENTY-THIRD SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 26 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, by whom we are redeemed and receive adoption, look graciously upon your beloved sons and daughters, that those who believe in Christ may receive true freedom and an everlasting inheritance. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-23"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Da fidelibus tuis, Domine"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 27
+verified_printed_page = "27"
+verified_heading = "TWENTY-THIRD SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 27 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant that your faithful, O Lord, whom you nourish and endow with life through the food of your Word and heavenly Sacrament, may so benefit from your beloved Son’s great gifts that we may merit an eternal share in his life. Who lives and reigns for ever and ever."
+
+[[entries]]
+mass = "ot-25"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui sacrae legis omnia constituta"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_printed_page = "6"
+verified_heading = "TWENTY-FIFTH SUNDAY IN ORDINARY TIME / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 6 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who founded all the commands of your sacred Law upon love of you and of our neighbor, grant that, by keeping your precepts, we may merit to attain eternal life. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "ot-25"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Quos tuis, Domine, reficis sacramentis"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 7
+verified_printed_page = "7"
+verified_heading = "TWENTY-FIFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 7 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Graciously raise up, O Lord, those you renew with this Sacrament, that we may come to possess your redemption both in mystery and in the manner of our life. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-26"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Sit nobis, Domine, reparatio"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 11
+verified_printed_page = "11"
+verified_heading = "TWENTY-SIXTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 11 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "May this heavenly mystery, O Lord, restore us in mind and body, that we may be coheirs in glory with Christ, to whose suffering we are united whenever we proclaim his Death. Who lives and reigns for ever and ever."
+
+[[entries]]
+mass = "ot-27"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Concede nobis, omnipotens Deus"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 13
+verified_printed_page = "13"
+verified_heading = "TWENTY-SEVENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 13 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant us, almighty God, that we may be refreshed and nourished by the Sacrament which we have received, so as to be transformed into what we consume. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-29"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Fac nos, quaesumus, Domine"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 17
+verified_printed_page = "17"
+verified_heading = "TWENTY-NINTH SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78d_ORDINARY_24-30_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 17 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant, O Lord, we pray, that, benefiting from participation in heavenly things, we may be helped by what you give in this present age and prepared for the gifts that are eternal. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-32"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Gratias tibi, Domine, referimus"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 9
+verified_printed_page = "9"
+verified_heading = "THIRTY-SECOND SUNDAY IN ORDINARY TIME / Prayer after Communion"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78e_ORDINARY_31-CTK_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 9 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Nourished by this sacred gift, O Lord, we give you thanks and beseech your mercy, that, by the pouring forth of your Spirit, the grace of integrity may endure in those your heavenly power has entered. Through Christ our Lord."
+
+[[entries]]
+mass = "ot-33"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Sumpsimus, Domine, sacri dona mysterii"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 11
+verified_printed_page = "11"
+verified_heading = "THIRTY-THIRD SUNDAY IN ORDINARY TIME / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78e_ORDINARY_31-CTK_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 11 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "We have partaken of the gifts of this sacred mystery, humbly imploring, O Lord, that what your Son commanded us to do in memory of him may bring us growth in charity. Through Christ our Lord."
+
+[[entries]]
+mass = "christ-the-king"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, qui in dilecto Filio tuo"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 12
+verified_printed_page = "12"
+verified_heading = "Last Sunday in Ordinary Time / OUR LORD JESUS CHRIST, KING OF THE UNIVERSE, Solemnity / Collect:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78e_ORDINARY_31-CTK_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 12 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Almighty, ever-living God, whose will is to restore all things in your beloved Son, the King of the universe, grant, we pray, that the whole creation, set free from slavery, may render your majesty service and ceaselessly proclaim your praise. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "christ-the-king"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Immortalitatis alimoniam consecuti"
+witness = "fdlc-mystagogy-2016"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 13
+verified_printed_page = "13"
+verified_heading = "Last Sunday in Ordinary Time / OUR LORD JESUS CHRIST, KING OF THE UNIVERSE, Solemnity / Prayer after Communion:"
+verified_url = "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78e_ORDINARY_31-CTK_SPI2016.pdf"
+witness_note = """
+Read on the page image of PDF page 13 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Having received the food of immortality, we ask, O Lord, that, glorying in obedience to the commands of Christ, the King of the universe, we may live with him eternally in his heavenly Kingdom. Who lives and reigns for ever and ever."
+
+[[entries]]
+mass = "advent-2"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens et misericors Deus"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 4
+verified_heading = "SECOND SUNDAY OF ADVENT / December 9, 2012 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.advent.pdf"
+witness_note = """
+Read on the page image of PDF page 4 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Almighty and merciful God, may no earthly undertaking hinder those who set out in haste to meet your Son, but may our learning of heavenly wisdom gain us admittance to his company. Who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "advent-3"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui conspicis"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_heading = "THIRD SUNDAY OF ADVENT / December 16, 2012 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.advent.pdf"
+witness_note = """
+Read on the page image of PDF page 6 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who see how your people faithfully await the feast of the Lord’s Nativity, enable us, we pray, to attain the joys of so great a salvation and to celebrate them always with solemn worship and glad rejoicing. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "holy-family"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui praeclara nobis"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 3
+verified_heading = "THE HOLY FAMILY OF JESUS, MARY AND JOSEPH, Feast / The Sunday within the Octave of the Nativity of the Lord [Christmas] / December 29, 2012 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.christmas.pdf"
+witness_note = """
+Read on the page image of PDF page 3 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who were pleased to give us the shining example of the Holy Family, graciously grant that we may imitate them in practicing the virtues of family life and in the bonds of charity, and so, in the joy of your house, delight one day in eternal rewards. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "baptism-of-the-lord"
+form = ""
+proper = "Collect"
+incipit = "Deus, cuius Unigenitus in substantia nostrae carnis apparuit"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_heading = "THE BAPTISM OF THE LORD, Feast / January 13, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.christmas.pdf"
+witness_note = """
+Read on the page image of PDF page 6 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Almighty ever-living God, who, when Christ had been baptized in the River Jordan and as the Holy Spirit descended upon him, solemnly declared him your beloved Son, grant that your children by adoption, reborn of water and the Holy Spirit, may always be well pleasing to you. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "lent-1"
+form = ""
+proper = "Collect"
+incipit = "Concede nobis, omnipotens Deus"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 2
+verified_heading = "FIRST SUNDAY OF LENT / FEBRUARY 17, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
+witness_note = """
+Read on the page image of PDF page 2 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant, almighty God, through the yearly observances of holy Lent, that we may grow in understanding of the riches hidden in Christ and by worthy conduct pursue their effects. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "lent-2"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nobis dilectum Filium tuum"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 3
+verified_heading = "SECOND SUNDAY OF LENT / February 24, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
+witness_note = """
+Read on the page image of PDF page 3 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who have commanded us to listen to your beloved Son, be pleased, we pray, to nourish us inwardly by your word, that, with spiritual sight made pure, we may rejoice to behold your glory. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "lent-3"
+form = ""
+proper = "Collect"
+incipit = "Deus, omnium misericordiarum"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 4
+verified_heading = "THIRD SUNDAY OF LENT / March 3, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
+witness_note = """
+Read on the page image of PDF page 4 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, author of every mercy and of all goodness, who in fasting, prayer and almsgiving have shown us a remedy for sin, look graciously on this confession of our lowliness, that we, who are bowed down by our conscience, may always be lifted up by your mercy. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "lent-4"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui per Verbum tuum"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 5
+verified_heading = "FOURTH SUNDAY OF LENT / [Laetare Sunday] / March 10, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
+witness_note = """
+Read on the page image of PDF page 5 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who through your Word reconcile the human race to yourself in a wonderful way, grant, we pray, that with prompt devotion and eager faith the Christian people may hasten toward the solemn celebrations to come. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "lent-5"
+form = ""
+proper = "Collect"
+incipit = "Quaesumus, Domine Deus noster"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_heading = "FIFTH SUNDAY OF LENT / March 17, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
+witness_note = """
+Read on the page image of PDF page 6 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "By your help, we beseech you, Lord our God, may we walk eagerly in that same charity with which, out of love for the world, your Son handed himself over to death. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui hodierna die"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 2
+verified_heading = "EASTER SUNDAY / March 31, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf"
+witness_note = """
+Read on the page image of PDF page 2 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "O God, who on this day, through your Only Begotten Son, have conquered death and unlocked for us the path to eternity, grant, we pray, that we who keep the solemnity of the Lord’s Resurrection may, through the renewal brought by your Spirit, rise up in the light of life. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "easter-2"
+form = ""
+proper = "Collect"
+incipit = "Deus misericordiae sempiternae"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 3
+verified_heading = "SECOND SUNDAY OF EASTER (OR OF DIVINE MERCY) / April 7, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf"
+witness_note = """
+Read on the page image of PDF page 3 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "God of everlasting mercy, who in the very recurrence of the paschal feast kindle the faith of the people you have made your own, increase, we pray, the grace you have bestowed, that all may grasp and rightly understand in what font they have been washed, by whose Spirit they have been reborn, by whose Blood they have been redeemed. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Collect"
+incipit = "Semper exsultet populus tuus"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 4
+verified_heading = "THIRD SUNDAY OF EASTER / April 14, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf"
+witness_note = """
+Read on the page image of PDF page 4 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "May your people exult for ever, O God, in renewed youthfulness of spirit, so that, rejoicing now in the restored glory of our adoption, we may look forward in confident hope to the rejoicing of the day of resurrection. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "easter-5"
+form = ""
+proper = "Collect"
+incipit = "Omnipotens sempiterne Deus, semper in nobis"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 6
+verified_heading = "FIFTH SUNDAY OF EASTER / April 28, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf"
+witness_note = """
+Read on the page image of PDF page 6 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Almighty ever-living God, constantly accomplish the Paschal Mystery within us, that those you were pleased to make new in Holy Baptism may, under your protective care, bear much fruit and come to the joys of life eternal. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
+[[entries]]
+mass = "easter-6"
+form = ""
+proper = "Collect"
+incipit = "Fac nos, omnipotens Deus"
+witness = "fdlc-mystagogy-2012"
+exemplar_tier = "fdlc-reprint"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-21"
+verified_artifact_page = 7
+verified_heading = "SIXTH SUNDAY OF EASTER / MAY 5, 2013 / COLLECT"
+verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf"
+witness_note = """
+Read on the page image of PDF page 7 of the FDLC file named in `verified_url`,
+under the heading recorded above. The page carries the acknowledgment "Excerpt
+from The Roman Missal, Third Edition (c) 2010, ICEL. Reprinted with approval of
+the Committee on Divine Worship, United States Conference of Catholic Bishops."
+The text layer of the file was used only to find the page; the words were taken
+from the image. The exemplar sets the prayer in sense lines; it is carried here
+as one flowing paragraph, as every oration already in this file is, and no line
+break was invented. The people's "Amen" is a response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+notice = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = "Grant, almighty God, that we may celebrate with heartfelt devotion these days of joy, which we keep in honor of the risen Lord, and that what we relive in remembrance we may always hold to in what we do. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, one God, for ever and ever."
+
 
 # ---------------------------------------------------------------------------
 # LEFT. Slots this lane opened, read at the bytes, and did not fill.
