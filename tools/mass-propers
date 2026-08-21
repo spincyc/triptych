@@ -631,7 +631,22 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
         / f"{calendar}-proper-translations-v1.toml"
     )
     if not path.is_file():
-        return {}, set(), [], {}
+        # A recension with no translation file of its own falls back to its
+        # base calendar's overlay. The pre-1955 recension inherits its text
+        # from roman-1962, and its translations should too; the incipit
+        # check in carry_translations refuses any that no longer match.
+        base_doc = _calendars.load_document(DEFAULT_ROOT, calendar, effective=False)
+        base = base_doc.get(_calendars.RECENSION_BASE)
+        if base and base != calendar:
+            path = (
+                ROOT
+                / "src"
+                / "sources"
+                / TRANSLATIONS_DIR
+                / f"{base}-proper-translations-v1.toml"
+            )
+        if not path.is_file():
+            return {}, set(), [], {}
     document = tomllib.loads(path.read_text(encoding="utf-8"))
     overlay, stale = {}, []
     for entry in document.get("entries") or []:
