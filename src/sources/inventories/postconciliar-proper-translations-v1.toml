@@ -9,8 +9,16 @@
 # Missal prints one of them unaltered, the words on its page are words in which
 # nobody holds a right.
 #
-# 70 orations are therefore translated here, and 219 propers are not. Both
-# numbers are data. Read `census` before reading anything else.
+# 70 orations are therefore translated here by that route, and `census` below
+# counts what it left. A second route was opened later and is not a variant of
+# the first: 56 further entries publish no new English at all but carry the
+# English a public-domain 1861 book made for the ANTECEDENT of the prayer, where
+# this calendar's own recorded Latin reproduces the older oration that book
+# translated. Those entries are `public-domain`, not `project-created`; they are
+# never the Missale Romanum 2002's text, which is in copyright and not held
+# here; and `merge` below states what marks them. Every count in `census` was
+# measured before that second route existed and is scoped to the first. Read
+# `census` before reading anything else, and read its date beside it.
 
 translations_schema = 1
 record_type = "calendar-proper-translations"
@@ -30,16 +38,30 @@ is its own witness; the witness fields beside the array (`ancient_witness`,
 `divergence`, `ancient_reading`) are evidence for the entry and are not part of
 what merges.
 
-The rest are ANTECEDENT entries, marked by a `witness` of
-`cummiskey-1861-antecedent` and a `witness_note`. The Missale Romanum 2002 is
-in copyright and is not held here, so no entry in this file is a translation of
-it. An antecedent entry prints the English a public-domain book made for the
-OLDER oration whose Latin this calendar's own recorded Latin reproduces, and
-its `witness_note` states that claim and every difference the two Latin texts
-show. The English is the antecedent's, never the reform's, and a page showing
-it must say so. These rows carry `rights = "public-domain"` and the
+The rest are ANTECEDENT entries, marked by `witness_relation = "antecedent"`, a
+`witness` naming a declared `[[sources]]` row, and a `witness_note`. The Missale
+Romanum 2002 is in copyright and is not held here, so no entry in this file is a
+translation of it. An antecedent entry prints the English a public-domain book
+made for the OLDER oration whose Latin this calendar's own recorded Latin
+reproduces, and its `witness_note` states that claim and every difference the two
+Latin texts show. The English is the antecedent's, never the reform's, and a page
+showing it must say so. These rows carry `rights = "public-domain"` and the
 `source_id` of the printing the words were read out of, which is the one thing
 the project-created rows never carry.
+
+Two ids and what each one is for, because conflating them is how this file
+served 63 translations with no attribution and no caution for the length of a
+branch. `witness` names a `[[sources]]` row of THIS file by its `id`; the row is
+a BOOK, and `source_attestation_problems` in check-calendar-masses holds it to
+the act history by that id. `witness_relation` says what the entry is doing with
+that book, and `antecedent` is a relation between two Latin texts, not a
+printing -- there is no antecedent edition of anything. The two were once run
+together as a single invented witness id, `cummiskey-1861-antecedent`, which no
+`[[sources]]` row declared and which therefore resolved nowhere: the act-history
+cross-check never engaged, and the browser's witness manifest, which keys these
+rows by `source_id`, found no row and printed a bare dotted id in place of a
+label with `caution` left null. Never encode a relation in a witness id. Declare
+the book and state the relation beside it.
 
 Check `incipit` against the target proper before merging. An entry whose mass,
 form, proper or incipit no longer answers the target is stale and must be
@@ -53,11 +75,20 @@ answer.
 """
 
 scope = """
-The seasonal section only. The marian, christological and sanctoral sections of
-this calendar are still a placeholder skeleton whose `text` fields say
-"Placeholder"; there is nothing there to translate and nothing here about them.
-When those sections are filled the same census must be run over them, and this
-file's counts will change.
+The project-created route is the seasonal section only, and every count in
+`census` is scoped to it. When it was measured on 2026-08-01 the marian,
+christological and sanctoral sections were a placeholder skeleton whose `text`
+fields said "Placeholder", so there was nothing there to translate; as those
+sections fill, the same census must be run over them and this file's counts will
+change.
+
+The antecedent route is not so bounded, because it goes where the older prayer
+survives rather than where a section boundary falls. Its 56 entries stand 21 in
+the seasonal section, 28 in the sanctoral, 6 in the christological and 1 in the
+marian, and 55 of them are orations while 1 is an Entrance Antiphon. Those
+figures were counted from this file's own entries against
+src/sources/calendars/postconciliar/propers.yaml on 2026-08-20; they are not
+part of the `census` block below and must not be read into it.
 """
 
 census = """
@@ -141,9 +172,15 @@ claimed for no entry in this file.
 """
 
 what_is_published = """
-An English is published for an oration only where the missal's Latin adds
-nothing to its ancient witness that could be anyone's authorship. Three
-relations qualify, and each entry says which it is.
+Two routes publish English here and their tests are different. This section
+states the first; `what_is_published_by_the_antecedent_route` states the second.
+Nothing on either route is, or is presented as, the text of the Missale Romanum
+2002, whose English is ICEL's, is in copyright, and is not held in this
+repository in whole or in part.
+
+THE PROJECT-CREATED ROUTE. An English is published for an oration only where the
+missal's Latin adds nothing to its ancient witness that could be anyone's
+authorship. Three relations qualify, and each entry says which it is.
 
 `verbatim` -- the two texts differ only in orthography, punctuation, word order,
 or demonstrable optical damage. The English renders both.
@@ -167,18 +204,66 @@ it is shown in full; a reader who disagrees with any single entry can see
 precisely what was judged and reach their own answer.
 """
 
+what_is_published_by_the_antecedent_route = """
+THE ANTECEDENT ROUTE writes no English at all. It carries, unaltered, the English
+a public-domain nineteenth-century book already made for a DIFFERENT and older
+oration, and it carries it only where this calendar's own recorded Latin
+reproduces that older oration. 56 entries take this route, 63 translation rows
+between them, and every one is `rights = "public-domain"` naming the printing the
+words were read out of.
+
+What is published is therefore the ANTECEDENT prayer's English. It is not a
+translation of the Missale Romanum 2002, it is not offered as one, and it must
+never be presented as one; the 2002 Missal is in copyright, is not held here, and
+its approved English is ICEL's. The two Latin texts standing in an identity
+relation is what licenses the quotation, and that relation is argued in each
+entry's `witness_note` from both texts, with every difference the two show set
+out down to orthography and pointing. Where the Latin diverges beyond that, the
+entry is not written.
+
+Three things this route does NOT establish, said here because each has been
+assumed elsewhere in this repository and each was wrong. It does not establish
+that the 2002 Missal's oration is the antecedent -- that is an editorial
+determination on the Latin, made entry by entry. It does not make the 1861 book a
+witness to this calendar: `[[sources]]` holds it on a date bound at
+si-quid-est-1634, which places it a century before the reform, and that bound is
+the reason it can be quoted, not an exception to it. And it does not put the
+wording under CC BY 4.0; this project claims no exclusive right in it and
+originates none by carrying it.
+
+The general refusal recorded in
+src/sources/inventories/liturgical-english-rights-v1.toml stands and is not
+weakened by this route. That record refuses the transfer of a pre-1930 hand
+missal's English onto a postconciliar oration on a similarity score, because a
+loose match attaches one prayer's English to another's Latin. Nothing here rests
+on a score. Each entry rests on a named antecedent, a stated Latin identity and
+an enumerated difference list, and 25 of the 56 were additionally read on the
+1861 page images on 2026-08-20.
+"""
+
 caution = """
 Nothing in this file is an approved liturgical translation, and nothing in it may
-be used for recitation. It is study English, made by this project from the
-ancient Latin, published under CC BY 4.0 with the project's authorship
-identified at the point of use. The approved English of the Roman Missal is the
+be used for recitation. The approved English of the Roman Missal is the
 International Commission on English in the Liturgy's, it is not reproduced here
-in whole or in part, and no wording here was derived from it.
+in whole or in part, and no wording here was derived from it. Beyond that the two
+routes must be weighed differently, and a reader who takes the file as one thing
+will misweigh both.
 
-It is also unreviewed. It was drafted by a language model working from the Latin
-in an editorial role, checked against the ancient witness for sense, and read by
-no human being before it was committed. Treat every entry as a lead of the same
-standing as the Latin beside it.
+The 70 project-created entries are study English, made by this project from the
+ancient Latin and published under CC BY 4.0 with the project's authorship
+identified at the point of use. They are also unreviewed: drafted by a language
+model working from the Latin in an editorial role, checked against the ancient
+witness for sense, and read by no human being before they were committed. Treat
+every one as a lead of the same standing as the Latin beside it.
+
+The 56 antecedent entries are not this project's English and are not under CC BY
+4.0. They are the English of a pre-1955 lay hand missal, in the public domain in
+the United States by publication date, quoted for the ANTECEDENT of the prayer
+and never as the Missale Romanum 2002's text. This project claims no exclusive
+right in that wording. Its book's rubrics, calendar and sanctoral are not this
+calendar's, its English is nineteenth-century devotional English, and the
+identity that licenses each quotation is a judgement on two Latin texts shown in
+the entry rather than asserted.
 """
 
 [[sources]]
@@ -197,6 +282,129 @@ English of the Roman Missal.
 """
 caution = "Not an approved translation and never a liturgical text. It is study English written by this project from the ancient Latin and reviewed by no human being; the approved English is ICEL's and is not carried here. Nothing in it may be used for recitation."
 
+[[sources]]
+id = "cummiskey-1861"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-djvu-ocr"
+# The qualifier stands first because this string is the option text of the
+# browser's witness select and is the only field of this row a reader is shown.
+# A label truncated in a narrow control must lose the bibliography, never the
+# disclaimer.
+label = "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+The book names no Latin exemplar. It does carry an approbation: its title matter
+reads PUBLISHED WITH THE APPROBATION OF THE RIGHT REV. THE BISHOP OF
+PHILADELPHIA, which the edition record under
+src/sources/works/eugene-cummiskey/roman-missal-english-laity/ quotes in full.
+That is a diocesan leave to print, not a promulgation. It revises nothing and
+names no printing, so it makes this book no station in the descent of the rite
+and tells nobody which Latin printing was on the translator's desk.
+
+The edge therefore rests on the date alone: 1861 falls after Urban VIII's
+revision of 1634 and before Divino afflatu of 1911, and the state it can be
+translating is the one si-quid-est-1634 left. That is a weak edge and is
+labelled as such. The act history holds this same book on these same two values,
+and `source_attestation_problems` in check-calendar-masses refuses a source row
+that contradicts the act history about a witness both files hold, so this is a
+checked restatement of that record and not a second opinion. The sibling row in
+roman-1962-proper-translations-v1.toml states the same edge in the same terms
+and for the same reason.
+
+What that edge settles is the one thing THIS calendar needed settled, and it is
+the whole reason a row for this book can stand in a postconciliar file at all. A
+date bound at si-quid-est-1634 places this book's English a century before
+sacrosanctum-concilium-1963 and missale-romanum-1969, so it attests a state of
+the rite the reform had not yet touched, and it follows that no word quoted from
+it is a word of the Missale Romanum 2002. That is the converse of an ordinary
+witness claim: this book is cited here BECAUSE it cannot be witnessing the
+current Missal. What it can and cannot supply for a given prayer is argued entry
+by entry in `witness_note` from the two Latin texts, never from this row.
+"""
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Published in the United States in 1861, so in the public domain there by publication date: every United States work published before 1930 has entered the public domain and no renewal question arises for an 1861 imprint. The translator is unnamed and no proprietor survives. The basis is a United States one and is recorded as such, because a public-domain claim does not travel of itself; a reader outside the United States must establish the position in their own jurisdiction. That basis covers the 1861 book's own English, which is what the entries resting on this row carry. It does not cover the Internet Archive text layer some of that English was read out of: `artifact_id` names a remote, unretained artifact whose own rights the source library records as unresolved, those exact bytes being a Google-produced derivative carrying Google's front matter for which no distribution grant was established. The artifact record pins the bytes by sha256 and byte count and gives the URL, so a reader can fetch the same file and check any entry against it; this repository does not redistribute them. Nothing on this row is offered under CC BY 4.0 and this project claims no exclusive right in the wording."
+role = """
+NOT a witness to this calendar's Missal, and it must never be read as one. The
+Missale Romanum 2002 is in copyright and is not held in this repository, so no
+entry in this file reproduces its English or claims to.
+
+What the 56 entries resting on this row publish is the English this book made
+for the ANTECEDENT oration: the older prayer whose Latin this calendar's own
+recorded Latin reproduces. Each such entry's `witness_note` names that
+antecedent, states the Latin identity the quotation rests on, and lists every
+difference the two Latin texts show, down to orthography and pointing. The
+relation is a property of the entry, not of the book -- a book cannot be an
+antecedent of anything -- which is why it is recorded on each entry as
+`witness_relation` and not smuggled into this row's `id`. Until 2026-08-20 it
+was smuggled: every one of these entries named a witness `cummiskey-1861-antecedent`
+that no row declared, so the browser's witness manifest, which keys these rows by
+`source_id`, found no row at all and served 63 translations under a bare dotted
+id with no label and no caution.
+
+Standing of the readings, which is not uniform, and a reader must not average
+it. 25 of the 56 entries were read on the 1861 page images on 2026-08-20 and
+carry `verified_on_page` with the leaf, the printed page, the heading read there
+and the URL. The other 31 introduce no reading of this book at all: their
+English is the corresponding row of roman-1962-proper-translations-v1.toml
+copied character for character, checked mechanically on 2026-08-20 against that
+file (all 31 matched), so their standing is that row's standing and no better.
+That file's own `verification` says which of its rows have been seen on a page
+and which have not, and some have not.
+
+This row answers for the ENGLISH and for nothing else. The Latin identity that
+licenses each quotation is argued in the entry, and some entries argue it partly
+from a third book -- the 1862 Pustet Latin printing, for the days where it is
+what shows the older oration standing on that day. That book is evidence about
+Latin. It supplies no word of English here and is not a witness on this row.
+"""
+# One line, unlike the prose above it, because `mass-propers` copies `caution`
+# into the browser's witness manifest and a reader is shown it beside the offer.
+caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book, and under this calendar it stands further off still: what it prints is the English of the ANTECEDENT prayer, not of the Missale Romanum 2002, whose English is the International Commission on English in the Liturgy's and is not carried here in whole or in part. It is offered only where this calendar's recorded Latin reproduces the older prayer this book translated, and each entry states every difference between the two. Its rubrics, its calendar and its sanctoral are not this calendar's, and nothing here may be used for recitation."
+
+[[sources]]
+id = "cummiskey-1861-transcription"
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+label = "Antecedent English (not the Missale Romanum 2002's text): The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), in this project's transcription of its temporal orations"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = """
+The same book as cummiskey-1861 above and therefore the same edge, drawn on the
+same date bound and no stronger. A transcription attests what the printing it
+transcribes attests and not one thing more: this row exists because the reading
+is a second and independent one, not because the object read is a second book.
+
+One limit, stated rather than left to be discovered, and it is the same limit
+the sibling row in roman-1962-proper-translations-v1.toml records. The act
+history carries this witness under the id `cummiskey-1861`, and
+check-calendar-masses binds a source row to the act history by that id, so it is
+the row above and not this one that the cross-check actually holds. This row is
+given a distinct id because it names a different artifact of the same printing
+and a reader has to be able to tell the two rows apart; the values are copied
+from the row the check does hold, and if they ever drift the drift will be
+visible here rather than caught there.
+"""
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The 1861 printing's own English, on the same United States publication-date basis as the edition row above, and with the same caveat for a reader elsewhere. What differs is the bytes: this row's `artifact_id` names a file this repository TRACKS, a project-made tab-separated transcription carrying only the printing's own wording, where the edition row's names a remote Google-produced text layer whose rights the source library records as unresolved. A faithful transcription of a public-domain text originates no new copyright, so nothing here is the project's to license and none of it is offered under CC BY 4.0; the artifact record states the same and pins the file by sha256."
+role = """
+Second reading, attached beside the edition reading and never instead of it.
+`witness` on every entry names cummiskey-1861, as it does in the 1962 file,
+because that is the reading this corpus collated and corrected; this row's
+wording is carried as a second `[[entries.translations]]` on the 7 antecedent
+entries it reaches, keyed `(lang, source_id)` so the two stand side by side.
+
+The point of carrying it is the detector, not the coverage. Where the two
+independent readings of this printing differ, the difference is the sharpest
+error signal this corpus has, and check-calendar-masses derives the comparison
+on every run and refuses a divergence no `disagreement` answers. At all 7 loci
+here the two readings agree: one is byte-identical and six differ only in the
+apostrophe glyph, which is a property of the two optical layers and not of the
+page.
+"""
+caution = "The same antecedent caution as the printing it transcribes -- this is the English of the older prayer and never the Missale Romanum 2002's text -- and one that belongs to this row alone: it is uncorrected. Ten of its readings elsewhere in the corpus are contradicted by the 1861 page images, and the artifact has not been amended because its bytes are pinned by sha256 in its own artifact record and in tracked prose. It is offered rather than served: the edition witness above reaches more of this calendar and is the default at every proper."
 
 [[entries]]
 mass = "advent-2"
@@ -1565,7 +1773,8 @@ mass = "advent-4"
 form = ""
 proper = "Collect"
 incipit = "Gratiam tuam"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration missa-de-s-maria-in-sabbato-1/Postcommunion (Gratiam tuam, quaesumus), whose Latin is identical to this calendar's recorded Latin modulo orthography and pointing: 1962 `ejus` for `eius`, `infunde: ut` / `cognovimus; per` / `crucem, ad` for the pc commas, and the conclusion cue `Per eundem Dominum nostrum.` where the pc index prints `Per Dominum...`. Note the slot mapping: the pc slot is a Collect, the antecedent slot a Postcommunion of the 1962 Commune's first Saturday Mass of the B.V.M.; the 1861 witness prints the English at the First Sunday of Advent, p. 52 (see the 1962 row's own witness_note and collation record). The 1962 row was collated from the page image on 2026-08-01; this proposal copies its text byte-exact and adds no new reading.
 """
@@ -1582,7 +1791,8 @@ mass = "ot-5"
 form = ""
 proper = "Collect"
 incipit = "Familiam tuam"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration epiphany-5/Collect (Familiam tuam), whose Latin is identical to this calendar's recorded Latin modulo pointing (1962 `custodi: ut` for pc `custodi, ut`) and the conclusion cue (`Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Dominum.`). Not to be confused with the 1962 pentecost-21 Collect, which opens with the same four words and then diverges (`ut a cunctis adversitatibus...`). The 1962 row was collated from the page image (p. 101, IA leaf 111) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1606,7 +1816,8 @@ mass = "ot-3"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Praesta nobis, quaesumus"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration easter-2/Postcommunion (Praesta nobis, quaesumus) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo pointing (1962 `Deus: ut` for pc `Deus, ut`) and the conclusion cue (`Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Christum.`). The 1962 row was collated from the page image (p. 350, IA leaf 358) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1630,7 +1841,8 @@ mass = "ot-2"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Concede nobis, quaesumus"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration pentecost-9/Secret (Concede nobis, quaesumus, Domine), whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus` for pc `huius`), pointing (`mysteria: quia` for `mysteria, quia`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 row was collated from the page image (p. 415, IA leaf 423) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1654,7 +1866,8 @@ mass = "mary-mother-of-god"
 form = ""
 proper = "Collect"
 incipit = "Deus, qui salutis aeternae"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 antecedent_calendar = "roman-1962"
 antecedent_mass = "missa-de-s-maria-in-sabbato-2"
 antecedent_proper = "Collect"
@@ -1681,7 +1894,8 @@ mass = "ot-25"
 form = ""
 proper = "Entrance Antiphon"
 incipit = "Salus populi ego sum"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 antecedent_calendar = "roman-1962"
 antecedent_mass = "pentecost-19"
 antecedent_proper = "Introit"
@@ -1708,7 +1922,8 @@ mass = "ot-6"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Caelestibus, Domine, pasti deliciis"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 antecedent_calendar = "roman-1962"
 antecedent_mass = "epiphany-6"
 antecedent_proper = "Postcommunion"
@@ -1735,7 +1950,8 @@ mass = "ot-31"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Augeatur in nobis"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 antecedent_calendar = "roman-1962"
 antecedent_mass = "epiphany-2"
 antecedent_proper = "Postcommunion"
@@ -1762,7 +1978,8 @@ mass = "mass-of-the-lords-supper"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Concede nobis, quaesumus, Domine"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration pentecost-9/Secret (Concede nobis, quaesumus, Domine) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus` for pc `huius`), pointing (`mysteria: quia` for `mysteria, quia`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 Missal's own Holy Thursday Secret is a different prayer (`Ipse tibi, quaesumus, Domine sancte`); the antecedent of this pc slot lives at the Ninth Sunday after Pentecost in that book. The 1962 row was collated from the page image (p. 415, IA leaf 423) on 2026-07-31, result confirmed; this proposal copies its two translation rows byte-exact and adds no new reading. The same Latin also stands at pc ot-2/Prayer over the Offerings, proposed by lane pc-antecedents-1 from the same 1962 row.
 """
@@ -1786,7 +2003,8 @@ mass = "most-holy-trinity"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Proficiat nobis ad salutem corporis et animae"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration trinity/Postcommunion (Proficiat nobis ad salutem) of the 1962 index, whose Latin is identical to this calendar's recorded Latin modulo orthography (1962 `hujus`/`ejusdemque` for pc `huius`/`eiusdemque`), pointing (`Domine, Deus noster` / `susceptio: et` for the pc's `Domine Deus noster` / `susceptio, et`), and the conclusion cue (`Per Dominum.` where the pc index prints `Per Christum.`). The 1962 row carries detector = "sibling-agrees" and has never been collated against a page image: two independent scans of two printings render it alike, which is evidence about the scans, not proof about the page. This proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1810,7 +2028,8 @@ mass = "ot-7"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Praesta, quaesumus, omnipotens Deus"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration epiphany-5/Postcommunion (Quaesumus, omnipotens Deus) of the 1962 index, whose Latin differs from this calendar's recorded Latin in exactly two words beside the conclusion cue: the pc opens `Praesta, quaesumus, omnipotens Deus` where the 1962 opens `Quaesumus, omnipotens Deus` (the pc adds `Praesta`), and the 1962 reads `illius salutaris capiamus effectum` where the pc reads `illius capiamus effectum` (the pc drops `salutaris`); the cue is `Per Dominum nostrum Jesum Christum...` where the pc index prints `Per Christum.`. Note that the English's phrase `the effects of that salvation` renders the antecedent's `illius salutaris`, whose noun the MR2002 text does not print. The 1962 row was collated from the page image (p. 102, IA leaf 112) on 2026-07-31, result corrected; this proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1834,7 +2053,8 @@ mass = "ot-24"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Propitiare, Domine, supplicationibus nostris"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = """
 the MR2002 text is not held here; this is the English of the antecedent oration pentecost-5/Secret (Propitiare, Domine) of the 1962 index, whose Latin differs from this calendar's recorded Latin in one dropped word, one word order, and the conclusion cue: the 1962 reads `famulorum famularumque tuarum` where the pc reads `famulorum tuorum` (the pc drops `famularumque`, and the possessive inflects `tuarum` to `tuorum` with it); the 1962 orders `quod singuli obtulerunt ad honorem nominis tui` where the pc orders `quod singuli ad honorem tui nominis obtulerunt`, the same words; and the 1962 cue is `Per Dominum.` where the pc index prints `Per Christum.`. The English's `these offerings of thy servants` covers both readings of the first difference without marking it. The 1962 row carries detector = "sibling-agrees" and has never been collated against a page image. This proposal copies its two translation rows byte-exact and adds no new reading.
 """
@@ -1858,7 +2078,8 @@ mass = "advent-3"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Tuam, Domine, clementiam"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration advent-3/Postcommunion (roman-1962 index, incipit 'Imploramus, Domine'), whose Latin differs: word order only in the opening -- the 1962 reads 'Imploramus, Domine, clementiam tuam' where this calendar's recorded Latin reads 'Tuam, Domine, clementiam imploramus'; every other word of the body is identical after orthographic normalisation. The printed conclusion cues also differ (1962 'Per Dominum...', this calendar 'Per Christum...'). English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 57, ia_leaf 67, collated page-image 2026-07-31, collation_result confirmed. The English renders the 1962 word order ('We implore, O Lord, thy mercy'), which happens to sit closer to this calendar's order than to nothing at all; the reordering is shown, not silently absorbed."
 
 [[entries.translations]]
@@ -1874,7 +2095,8 @@ mass = "palm-sunday"
 form = ""
 proper = "Collect"
 incipit = "Omnipotens sempiterne Deus, qui humano generi"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration palm-sunday/Collect (roman-1962 index, incipit 'Omnipotens sempiterne Deus'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The printed conclusion cues differ -- the 1962 index prints 'Per eundem Dominum nostrum Jesum Christum...' where this calendar records 'Qui tecum.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 239, ia_leaf 249, collated page-image 2026-07-31, collation_result confirmed. This is a Mass oration of the day, not part of the palm rite; the 1861 witness's Holy Week ceremonies are pre-1955 and are NOT drawn on here."
 
 [[entries.translations]]
@@ -1890,7 +2112,8 @@ mass = "easter-3"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Suscipe munera, Domine"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration low-sunday/Secret (roman-1962 index, incipit 'Suscipe munera, Domine'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the two indexes differ only in punctuation). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different Sundays -- the 1962 prints it on Low Sunday, the postconciliar on the Third Sunday of Easter -- and the reuse claims only that it is the same prayer, not the same day. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, detector sibling-agrees (that 1962 row carries no page-image collation keys)."
 
 [[entries.translations]]
@@ -1906,7 +2129,8 @@ mass = "easter-7"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Suscipe, Domine, fidelium preces"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration easter-5/Secret (roman-1962 index, incipit 'Suscipe, Domine, fidelium preces'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the 1962 index prints 'coelestem' under its declared oe convention where this calendar prints 'caelestem'). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different Sundays -- 1962 the Fifth Sunday after Easter, postconciliar the Seventh Sunday of Easter; the reuse claims the prayer, not the day. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 356, ia_leaf 364, collated page-image 2026-07-31, collation_result confirmed."
 
 [[entries.translations]]
@@ -1922,7 +2146,8 @@ mass = "ot-28"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Suscipe, Domine, fidelium preces"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration easter-5/Secret (roman-1962 index, incipit 'Suscipe, Domine, fidelium preces'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; 1962 'coelestem' for this calendar's 'caelestem'). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The postconciliar Missal prints this one prayer twice, at easter-7 and at ot-28; both rows in this file reuse the same 1962 English and each says so. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 356, ia_leaf 364, collated page-image 2026-07-31, collation_result confirmed."
 
 [[entries.translations]]
@@ -1938,7 +2163,8 @@ mass = "corpus-christi"
 form = ""
 proper = "Collect"
 incipit = "Deus, qui nobis sub sacramento mirabili"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Collect (roman-1962 index, incipit 'Deus, qui nobis sub Sacramento mirabili'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; the indexes differ in 'iugiter'/'jugiter' under their declared i/j conventions and in the capitalisation of 'sacramento'). The conclusions differ only in how far the cue is expanded -- this calendar prints 'Qui vivis et regnas cum Deo Patre in unitate Spiritus Sancti, Deus, per omnia saecula saeculorum' where the 1962 index carries the abbreviated 'Qui vivis et regnas cum Deo Patre in unitate.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 395, ia_leaf 403, collated page-image 2026-08-02, collation_result recorded from the page."
 
 [[entries.translations]]
@@ -1954,7 +2180,8 @@ mass = "corpus-christi"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Ecclesiae tuae, quaesumus, Domine"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Secret (roman-1962 index, incipit 'Ecclesiae tuae, quaesumus, Domine, unitatis et pacis'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The printed conclusion cues differ (1962 'Per Dominum.', this calendar 'Per Christum.'). English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 398, ia_leaf 406, collated page-image 2026-08-02, collation_result recorded from the page. Read that row's conclusion carefully before re-typing it: it records that the PAGE ends the oration `in these offerings. Thro` and prints neither the apostrophe nor the full stop, while the row's own `text` prints `Thro'` -- the apostrophe supplied under the normalisation that file's `corrections` block declares for the abbreviated conclusion, the full stop deliberately not supplied. The text below is that row's `text` copied byte for byte, so it carries the supplied apostrophe and the absent stop; it is not a fresh reading of the page and must not be reconciled against the collation_result by hand."
 
 [[entries.translations]]
@@ -1970,7 +2197,8 @@ mass = "corpus-christi"
 form = ""
 proper = "Prayer after Communion"
 incipit = "Fac nos, quaesumus, Domine"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration corpus-christi/Postcommunion (roman-1962 index, incipit 'Fac nos, quaesumus, Domine, divinitatis tuae sempiterna fruitione repleri'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences). The conclusions differ only in the cue -- this calendar 'Qui vivis et regnas in saecula saeculorum', the 1962 index 'Qui vivis et regnas cum Deo Patre in unitate.' English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 398, ia_leaf 406, collated page-image 2026-08-02, collation_result recorded from the page."
 
 [[entries.translations]]
@@ -1986,7 +2214,8 @@ mass = "ot-33"
 form = ""
 proper = "Prayer over the Offerings"
 incipit = "Concede, quaesumus, Domine"
-witness = "cummiskey-1861-antecedent"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
 witness_note = "the MR2002 text is not held here; this is the English of the antecedent oration palm-sunday/Secret (roman-1962 index, incipit 'Concede, quaesumus, Domine'), whose Latin is identical to this calendar's recorded Latin after orthographic normalisation (word-level diff, body compared with the conclusion cue removed: no differences; 1962 'majestatis' for this calendar's 'maiestatis' under the declared i/j conventions). The printed conclusion cues differ (1962 'Per Dominum nostrum Jesum Christum...', this calendar 'Per Christum.'). The two calendars appoint the prayer to different days -- the 1962 prints it as the Palm Sunday Secret, the postconciliar as the Prayer over the Offerings of the Thirty-third Sunday in Ordinary Time; the reuse claims the prayer, not the day. NOT the near-twin at sunday-within-octave-of-nativity/Secret, which reads 'omnipotens Deus' and 'piae devotionis' where this text reads 'Domine' and 'devotionis'. English from roman-1962-proper-translations-v1.toml, witness cummiskey-1861, printed_page 249, ia_leaf 259, collated page-image 2026-07-31, collation_result corrected; that row records that the page ends the oration `blessed eternity. Thro'` with no full stop, and the text below reproduces the row exactly."
 
 [[entries.translations]]
@@ -1995,6 +2224,1097 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Grant, we beseech thee, O Lord, that what hath been offered in the presence of thy divine Majesty may procure us the grace of devotion, and effectually obtain a blessed eternity. Thro'
+"""
+
+[[entries]]
+mass = "most-holy-name-jesus"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui Unigenitum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "most-holy-name-of-jesus"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Collect; printed p. 95 = leaf n105, collated page-image 2026-08-20)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 95 = leaf n105, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. The 1861 keeps this feast on the SECOND SUNDAY AFTER EPIPHANY, not on 3 January: leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` The postconciliar calendar keeps it on 3 January as an Optional memorial. The day is not the same day; the prayer is.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst appoint thy only begotten Son the Saviour of mankind, and commandest that his name should be called JESUS: mercifully grant, that we who venerate his holy name on earth, may also enjoy his sight in heaven. Thro'.
+"""
+
+[[entries]]
+mass = "most-holy-name-jesus"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Benedictio tua"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "most-holy-name-of-jesus"
+antecedent_proper = "Secret"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Secret; printed p. 96 = leaf n106, collated page-image 2026-08-20)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 96 = leaf n106, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same feast and same caution as the Collect above. The 1962 row records that the page sets no Latin cue before this Secret and sets a second `SECRET of the Sunday` after it; the text carried here is the first, the Mass's own.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May thy blessing, O most merciful God, by which every creature is enlivened and subsists, sanctify this our sacrifice, which we offer thee in honour of the name of thy Son, our Lord Jesus Christ: that it may be acceptable to the praise of thy majesty, and available to our salvation. Thro' the same.
+"""
+
+[[entries]]
+mass = "most-holy-name-jesus"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Omnipotens aeterne Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "most-holy-name-of-jesus"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Postcommunion; printed pp. 96-97 = leaves n106-n107, collated page-image 2026-08-20)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed pp. 96-97 = leaves n106-n107, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same feast and same caution as the Collect above. The 1962 row records that the page spells `honor` here and `honour` in the Secret; both are left as printed.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O almighty and eternal God, who didst both create and redeem us, mercifully hear our prayers, and vouchsafe, with a pleasing and kind countenance, to receive the sacrifice of this victim of our salvation, which we have offered to thy divine majesty, in honor of the name of thy Son, our Lord Jesus Christ; that thy grace being poured on us, thro' the glorious name of Jesus, as a pledge of our eternal predestination, we may rejoice that our names are written in heaven. Thro' the same.
+"""
+
+[[entries]]
+mass = "mary-holy-mother-god"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui salutis aeternae"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "missa-de-s-maria-in-sabbato-2"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass missa-de-s-maria-in-sabbato-2, proper Collect; printed p. 88 = leaf n98, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `Christum` / 1962 `Christum,`; pc `tuum.` / 1962 `tuum:`; pc `regnat.` / 1962 `regnat in unitate.`
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/missa-de-s-maria-in-sabbato-2/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 88 = leaf n98, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. The witness prints this Collect at the Circumcision, p. 88, which is where its Christmas-to-Candlemas Mass of the Blessed Virgin at p. 510 sends the reader. The English ENDS mid-conclusion at `our Lord Jesus Christ thy Son, who,` because the page breaks there and the printing carries no more; that truncation is the 1962 row's own and is carried unaltered. DUPLICATE MASS: this calendar carries the same 1 January celebration twice -- `mary-holy-mother-god` (marian, dated) and `mary-mother-of-god` (seasonal, christmas, registry pc-s07) -- and the postconciliar overlay ALREADY holds an antecedent row for the second under this same incipit. This row exists because the marian slot is real and unaccounted; it should not survive the two masses being reconciled.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the fruitful virginity of the blessed Mary, hast given mankind the rewards of eternal salvation: grant, we beseech thee, that we may experience her intercession, through whom we deserved to receive the Author of Life, our Lord Jesus Christ thy Son, who,
+"""
+
+[[entries]]
+mass = "saint-raymond-penyafort-priest"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatum Raymundum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "s-raymundi-penafort-confessoris"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass s-raymundi-penafort-confessoris, proper Collect; printed p. 543 = leaf n551, collated page-image 2026-08-02)"
+relation = "light"
+latin_diff = """
+pc `poenitentiae` / 1962 `paenitentiae`; pc `poenitentiae` / 1962 `paenitentiae`; pc `venire` / 1962 `pervenire`
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/s-raymundi-penafort-confessoris/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 543 = leaf n551, collated page-image 2026-08-02; this proposal copies its translation rows BYTE-EXACT and adds no new reading. 23 January in both the 1862 and the 1962; 7 January in the postconciliar calendar. The witness prints `XXIII. St. RAYMOND of PENNAFORT, c.` under the directive `All as in Mass XIII. p. 488, except`, which is its Mass of a Confessor not a Bishop, the same Common the 1862 sends the day to.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst make blessed Raymond an excellent minister of the sacrament of penance, and didst miraculously conduct him through the waves of the sea; grant, by his intercession, that we may bring forth worthy fruits of penance, and be enabled to arrive at the port of eternal salvation. Thro'
+"""
+
+[[entries]]
+mass = "saint-anthony-abbot"
+form = ""
+proper = "Collect"
+incipit = "Intercessio nos"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-abbatum"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-abbatum, proper Collect; printed p. 491 = leaf n499, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `quaesumus` / 1962 `quaesumus,`; pc `Antonii` / 1962 `N.`; pc `Dominum.` / 1962 `Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.`
+"""
+name_gap = true
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-abbatum/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 491 = leaf n499, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n545 (printed p. 537) ends the Mass of 15 January and gives `XVI. S. MARCELLUS, p. m.`, and leaf n546 (printed p. 538, running head `18th JANUARY.`) carries that Mass's end and then `XVIII. St. PETER's CHAIR at ROME`. There is no 17 January formulary between them; the book's Kalendar at leaf n774 sends `S. Anthony, ab.` to `Mass xv`, its Common of Abbots at p. 491. So the English below is the Common's, and the Common prints `N.` where this calendar's Latin prints the saint's name. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the intercession, O Lord, of the blessed Abbot N, recommend us to thee: that what we cannot hope for through our own merits, we may obtain by his prayers. Thro'.
+"""
+
+[[entries]]
+mass = "saint-anthony-abbot"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Sacris altaribus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-abbatum"
+antecedent_proper = "Secret"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-abbatum, proper Secret; printed p. 492 = leaf n500, read on the page image by this lane on 2026-08-20)"
+relation = "light"
+latin_diff = """
+pc `Antonius` / 1962 `N.`; pc `Dominum.` / 1962 `Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.`
+"""
+name_gap = true
+verified_on_page = "2026-08-20"
+verified_leaf = 500
+verified_printed_page = "492"
+verified_heading = "MASS XV. * OS JUSTI, OF ABBOTS."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n500_w1400.jpg"
+verified_note = """
+FIRST PAGE READING THIS TEXT HAS HAD. The 1962 row for commune-abbatum/Secret carries `printed_page = 492` and `collated = page-image, 2026-08-01`; this lane re-opened the leaf and read `SECRET.--May blessed N. the Abbot intercede for us, O Lord, that the offerings we have laid on thy altars, may avail us unto salvation. Thro'.` The 1962 row's text answers the page word for word.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-abbatum/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 492 = leaf n500, read on the page image by this lane on 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same absence and same Common as the Collect above. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May blessed N. the Abbot intercede for us, O Lord, that the offerings we have laid on thy altars, may avail us unto salvation. Thro'.
+"""
+
+[[entries]]
+mass = "saint-anthony-abbot"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Protegat nos, Domine"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-abbatum"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-abbatum, proper Postcommunion; printed p. 492 = leaf n500, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `sacramenti,` / 1962 `sacramenti`; pc `Antonius` / 1962 `N.`
+"""
+name_gap = true
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-abbatum/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 492 = leaf n500, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same absence and same Common as the Collect above. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May the receiving of this sacrament, and the intercession of blessed N. the Abbot, protect us, O Lord; that we may both copy after the virtues of his life, and experience the help of his intercession. Thro'.
+"""
+
+[[entries]]
+mass = "saint-paulinus-nola-bishop"
+form = ""
+proper = "Collect"
+incipit = "Da quaesumus omnipotens Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-confessoris-pontificis-1"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-confessoris-pontificis-1, proper Collect; printed p. 482 = leaf n490, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `Da quaesumus` / 1962 `Da, quaesumus,`; pc `Paulini` / 1962 `N.`; pc `tui,` / 1962 `tui`; pc `Dominum.` / 1962 `Dominum nostrum.`
+"""
+name_gap = true
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-confessoris-pontificis-1/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 482 = leaf n490, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. THE WITNESS DOES NOT PRINT THIS DAY'S OWN MASS. Read on the 1861 page image on 2026-08-20: leaf n606, printed p. 598, running head `22d AND 23d JUNE.`, gives `XXII St. ALBAN, Protomartyr of England.` for 22 June, with Alban's own Collect, Secret and Postcommunion; Paulinus appears in the Kalendar only, as a commemoration. So the English below is the Common of a Confessor and Bishop's -- the 1861's MASS X, Statuit, p. 482, the same Common the 1862 gives this day -- and it prints `N.` where this calendar's Latin prints the saint's name. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that the venerable solemnity of blessed N. thy Confessor and Bishop, may improve our devotion, and strengthen in us the hopes of salvation. Thro'.
+"""
+
+[[entries]]
+mass = "saint-paulinus-nola-bishop"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Sancti tui, quaesumus Domine"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-confessoris-pontificis-1"
+antecedent_proper = "Secret"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-confessoris-pontificis-1, proper Secret; printed p. 483 = leaf n491, read on the page image by this lane on 2026-08-20)"
+relation = "light"
+latin_diff = """
+pc `quaesumus` / 1962 `quaesumus,`; pc `ut` / 1962 `ut,`
+"""
+verified_on_page = "2026-08-20"
+verified_leaf = 491
+verified_printed_page = "483"
+verified_heading = "OF A CONFESSOR AND BISHOP."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n491_w1400.jpg"
+verified_note = """
+FIRST PAGE READING THIS TEXT HAS HAD. The 1962 row for commune-confessoris-pontificis-1/Secret rests on `detector = second-printing-agrees` and had never been seen on a page. It has now: leaf n491, printed p. 483, running head `OF A CONFESSOR AND BISHOP.`, prints `SECRET.--May thy saints, O Lord, we beseech thee, cause joy to all thy people : that while we celebrate their merits, we may experience their patronage. Thro'.` The 1962 row's text answers it word for word; the page sets a space before the colon and the 1962 row does not, which is that file's own normalisation and is left alone. The 1962 row can be promoted to `collated = page-image, 2026-08-20`, `ia_leaf = 491` by the lane that owns it.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-confessoris-pontificis-1/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 483 = leaf n491, read on the page image by this lane on 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same absence as the Collect above. This oration names no saint, in either book, so the English answers this calendar's Latin entire.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May thy saints, O Lord, we beseech thee, cause joy to all thy people: that while we celebrate their merits, we may experience their patronage. Thro'.
+"""
+
+[[entries]]
+mass = "saint-paulinus-nola-bishop"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Praesta, quaesumus omnipotens Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-confessoris-pontificis-1"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-confessoris-pontificis-1, proper Postcommunion; printed p. 483 = leaf n491, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `quaesumus` / 1962 `quaesumus,`; pc `ut` / 1962 `ut,`; pc `Paulino` / 1962 `N.`; pc `tuo,` / 1962 `tuo`
+"""
+name_gap = true
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-confessoris-pontificis-1/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 483 = leaf n491, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same absence and same Common as the Collect above. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that while we return thee thanks for what we have partaken of, we may, by the intercession of blessed N. thy Confessor and Bishop, receive still greater favours. Thro'.
+"""
+
+[[entries]]
+mass = "saints-sixtus-ii-pope-companions-martyrs"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos concedis"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-plurimorum-martyrum-2"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-plurimorum-martyrum-2, proper Collect; printed p. 478 = leaf n486, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `Xysti, Felicissimi,` / 1962 `N.`; pc `Agapiti natalitia` / 1962 `N. natalicia`
+"""
+name_gap = true
+verified_on_page = "2026-08-20"
+verified_leaf = 642
+verified_printed_page = "634"
+verified_heading = "6th AUGUST. / VI. TRANSFIGURATION of our LORD."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n642_w1400.jpg"
+verified_note = """
+Read by this lane on 2026-08-20. The witness prints NO proper oration for this commemoration: inside its Transfiguration Mass, leaf n642, printed p. 634, it prints `Commem. of St. XYSTUS, &c. mm. by the Collect. Secret and P. Comm. of Mass VI. p. 473.` -- a pointer, and the pointer is to its MASS VI, `Sancti tui, of MANY MARTYRS`. That Mass was opened too: leaf n481, printed p. 473, prints `COLLECT. Deus, qui.--Of Martyrs only. O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant we may enjoy their fellowship in eternal bliss. Thro'.` The 1962 row below carries the book's OTHER printing of the same oration, at Mass VIII, p. 478, and the two printings differ: p. 478 reads `grant that we may enjoy`, p. 473 reads `grant we may enjoy`. This row carries the 1962 row's text unaltered rather than substituting the p. 473 reading, and states the difference instead of silently choosing.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-plurimorum-martyrum-2/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 478 = leaf n486, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. 6 August in the 1862 and the 1861, where the day is the Transfiguration and Xystus, Felicissimus and Agapitus are a commemoration inside it; 7 August in the postconciliar calendar. The Latin decides which of the Common's alternative orations is meant: this calendar's text is the `Of Martyrs [not Bishops]` form, not the `Beatorum` form for Martyrs and Bishops. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, by whose favour we celebrate the festival of thy holy Martyrs N. and N. grant that we may enjoy their fellowship in eternal bliss. Thro'.
+"""
+
+[[entries]]
+mass = "saints-sixtus-ii-pope-companions-martyrs"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Munera tibi, Domine"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-plurimorum-martyrum-2"
+antecedent_proper = "Secret"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-plurimorum-martyrum-2, proper Secret; printed p. 479 = leaf n487, detector second-printing-agrees)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+verified_on_page = "2026-08-20"
+verified_leaf = 482
+verified_printed_page = "474"
+verified_heading = "MASS VI. SANCTI TUI, &c."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n482_w1400.jpg"
+verified_note = """
+FIRST PAGE READING THIS TEXT HAS HAD. The 1962 row for commune-plurimorum-martyrum-2/Secret rests on `detector = second-printing-agrees` and names printed p. 479. This lane read the OTHER printing, the one the day's own pointer names: leaf n482, printed p. 474, `SECRET. Of Martyrs not Bishops.--We bring thee, O Lord, the offerings of our devotion ; and may they be acceptable to thee in honour of thy saints, and available to our salvation. Thro'.` That is the 1962 row's text character for character, spaced semicolon included. Two printings of one oration in one book now agree on the page.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-plurimorum-martyrum-2/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 479 = leaf n487, detector second-printing-agrees; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same commemoration as the Collect above. This oration names no saint, in either book, so the English answers this calendar's Latin entire.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We bring thee, O Lord, the offerings of our devotion ; and may they be acceptable to thee in honour of thy saints, and, by thy mercy, available to our salvation. Thro'.
+"""
+
+[[entries]]
+mass = "saints-sixtus-ii-pope-companions-martyrs"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Praesta nobis, quaesumus Domine"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-plurimorum-martyrum-2"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-plurimorum-martyrum-2, proper Postcommunion; printed p. 479 = leaf n487, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `quaesumus Domine,` / 1962 `quaesumus, Domine:`; pc `Xysto, Felicissimo,` / 1962 `N.`; pc `Agapito: ut` / 1962 `N.; ut,`; pc `Dominum.` / 1962 `Dominum nostrum.`
+"""
+name_gap = true
+verified_on_page = "2026-08-20"
+verified_leaf = 483
+verified_printed_page = "475"
+verified_heading = "MASS VII. INTRET, &c. (running head; the Mass VI orations close at the top of this page)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n483_w1400.jpg"
+verified_note = """
+Read by this lane on 2026-08-20 at the printing the day's own pointer names: leaf n483, printed p. 475, `P. COMM. Praesta nobis.--Of Martyrs not Bishops. Grant, we beseech thee, O Lord, by the intercession of thy Holy Martyrs N. and N. that what we have taken with our mouths, we may receive with a pure soul. Thro'.` The 1962 row carries the p. 479 printing and differs from it in two points: `holy` for `Holy`, and no comma after `mouths`. This row carries the 1962 row's text unaltered and states the difference.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-plurimorum-martyrum-2/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 479 = leaf n487, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same commemoration and same Common as the Collect above. NAME GAP: nothing has been filled in, so the English published here carries the blank the book carries; writing the saint's name into it would be altering the witness's text, which this file does not do. The alternative is to refuse the slot outright. This lane proposes the English and states the gap rather than deciding it silently, and either way the slot is accounted for.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Lord, by the intercession of thy holy Martyrs N. and N. that what we have taken with our mouths we may receive with a pure soul. Thro'.
+"""
+
+[[entries]]
+mass = "most-holy-name-mary"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Tua, Domine, propitiatione"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-festorum-bmv"
+antecedent_proper = "Secret"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-festorum-bmv, proper Secret; printed p. 508 = leaf n516, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `virginis` / 1962 `Virginis`; pc `perpetuam,` / 1962 `perpetuam`; pc `nostrum.` / 1962 `nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.`
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-festorum-bmv/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 508 = leaf n516, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. THE WITNESS SENDS THIS DAY HERE ITSELF. Read by this lane on 2026-08-20: leaf n664, printed p. 656, prints `FEAST of the NAME of the B. V. MARY.` and, after its Collect and Lesson, `Offertory Secret, Comm. and P. Comm. as in the Votive Mass, p. 507.` p. 507 is the 1861's Votive Mass of the Blessed Virgin, which is where the 1962 row below was read. The join is the book's own directive, not a similarity judgement.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+May, O Lord, by thy own mercy, and the intercession of blessed Mary, ever a Virgin. this oblation procure us peace and happiness both in this life, and in that which is to come. Thro'.
+"""
+
+[[entries]]
+mass = "most-holy-name-mary"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Sumptis, Domine, salutis nostrae"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "commune-festorum-bmv"
+antecedent_proper = "Postcommunion"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-festorum-bmv, proper Postcommunion; printed p. 509 = leaf n517, collated page-image 2026-08-01)"
+relation = "light"
+latin_diff = """
+pc `virginis` / 1962 `Virginis`; pc `majestati.` / 1962 `maiestati.`; pc `Dominum.` / 1962 `Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.`
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-festorum-bmv/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 509 = leaf n517, collated page-image 2026-08-01; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same directive as the Prayer over the Offerings above.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received, O Lord, what is to advance our salvation; grant we may always be protected by the patronage of blessed Mary, ever a Virgin, in whose honour we have offered this sacrifice to thy Majesty. Thro'.
+"""
+
+[[entries]]
+mass = "saint-wenceslaus-martyr"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatum Wenceslaum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "s-wenceslai-ducis-martyris"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass s-wenceslai-ducis-martyris, proper Collect; printed pp. 665-666 = leaves n673-n674, collated page-image 2026-08-19)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/s-wenceslai-ducis-martyris/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed pp. 665-666 = leaves n673-n674, collated page-image 2026-08-19; this proposal copies its translation rows BYTE-EXACT and adds no new reading. 28 September in the 1862, the 1962 and the postconciliar calendar alike. The witness prints `XXVIII. St. WENCESLAUS, m.` with the Latin cue `Deus, qui.` and sends the rest of the Mass to its Mass III, p. 466.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by a glorious martyrdom, was pleased to remove blessed Wenceslaus from an earthly government to the kingdom of heaven: grant, that by his prayers, we may be preserved from all adversity, and at length admitted to partake of the same glory. Thro'.
+"""
+
+[[entries]]
+mass = "saint-hedwig-religious"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatam Hedwigem"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "s-hedwigis-viduae"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass s-hedwigis-viduae, proper Collect; printed pp. 676-677 = leaves n684-n685, collated page-image 2026-08-19)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/s-hedwigis-viduae/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed pp. 676-677 = leaves n684-n685, collated page-image 2026-08-19; this proposal copies its translation rows BYTE-EXACT and adds no new reading. 17 October in the 1862 and the 1861; 16 October in the postconciliar calendar. The witness prints `XVII. St. HEDWIGES, w.` above `All as in Mass XXI. p. 502, except`. The postconciliar entry also carries Saint Margaret Mary Alacoque, whose Mass this lane did not read and whose orations this row does not answer.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst teach blessed Hedwiges to fly from the pomps of the world and with her whole heart to embrace the humility of the cross: grant, by her merits and example, that we also may learn to tread under our feet the fading pleasures of this world, and to overcome all that standeth in the way of our salvation, by embracing thy cross. Who livest.
+"""
+
+[[entries]]
+mass = "saint-margaret-scotland"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatam Margaritam Reginam"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "overlay-reuse"
+antecedent_calendar = "roman-1962"
+antecedent_mass = "s-margaritae-reginae-viduae"
+antecedent_proper = "Collect"
+antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass s-margaritae-reginae-viduae, proper Collect; printed p. 590 = leaf n598, collated page-image 2026-08-19)"
+relation = "identical"
+latin_diff = """
+none: the two texts are identical word for word and point for point.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/s-margaritae-reginae-viduae/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside this calendar's recorded Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 590 = leaf n598, collated page-image 2026-08-19; this proposal copies its translation rows BYTE-EXACT and adds no new reading. 10 June in the 1862 and the 1861; 16 November in the postconciliar calendar. The 1962 row records a cue mismatch in form -- the page prints the cue `Deus, qui beatum.` (masculine) over an English that is unmistakably this Queen's -- and that caution travels with the text. The postconciliar entry also carries Saint Gertrude, whose Mass this lane did not read and whose orations this row does not answer.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst render blessed Margaret Queen of the Scots, truly wonderful for her charities towards the poor: grant by her prayers and example, that thy charity may continually increase in our hearts. Thro'.
+"""
+
+[[entries]]
+mass = "epiphany-lord"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui hodierna die"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 100
+verified_printed_page = "90"
+verified_heading = "THE EPIPHANY, (running head; the Mass is headed `THE EPIPHANY.` on leaf n99, printed p. 89)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n100_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, not on any text layer. The page sets `COLL. Deus, qui hodierna.` before the English, which answers this calendar's incipit. DUPLICATE MASS: this calendar already carries the Epiphany as the seasonal mass `epiphany` (registry pc-s09) with a `Mass during the Day` form holding the 2002 Latin of this same oration, and the postconciliar overlay already holds a project-created English for it. This row answers the christological `epiphany-lord` slot, which is a second entry for one day.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, qui hodierna.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `epiphania-domini`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus, qui hodierna die Unigenitum tuum gentibus stella duce revelasti: concede propitius; ut, qui jam te ex fide cognovimus, usque ad contemplandam speciem tuae celsitudinis perducamur. Per eumdem Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the direction of a star didst this day manifest thy only Son to the Gentiles; mercifully grant that we, who now know thee by faith, may come at length to see the glory of thy Majesty. Thro' the same.
+"""
+
+[[entries]]
+mass = "epiphany-lord"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Ecclesiae tuae"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 102
+verified_printed_page = "92"
+verified_heading = "I. SUNDAY AFTER EPIPHANY. (running head; the Epiphany Mass closes on this page and the next Mass opens below it)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n102_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image. The page sets no Latin cue before this Secret. The running head is the following Sunday's, because the Epiphany's Secret, Communicantes, Communion and Postcommunion stand at the head of p. 92 and `I. SUNDAY after EPIPHANY.` begins halfway down it; the Mass this oration belongs to is headed on leaf n99. The same wording answers the seasonal mass `epiphany`, `Mass during the Day`, Prayer over the Offerings, which the postconciliar overlay currently ledgers untranslated.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `epiphania-domini`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Ecclesiae tuae, quaesumus Domine, dona propitius intuere: quibus non jam aurum, thus, et myrrha profertur; sed quod eisdem muneribus declaratur, immolatur et sumitur, Jesus Christus Filius tuus Dominus noster. Qui tecum vivit.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Mercifully look down, O Lord, we beseech thee, on the offerings of thy church: among which gold, frankincense, and myrrh are no longer offered; but what was signified by those offerings is sacrificed and received, Jesus Christ, thy Son our Lord. Who liveth.
+"""
+
+[[entries]]
+mass = "epiphany-lord"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Praesta, quaesumus omnipotens Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 102
+verified_printed_page = "92"
+verified_heading = "I. SUNDAY AFTER EPIPHANY. (running head; see the Prayer over the Offerings above)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n102_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image; the page sets the cue `P. COMM. Praesta, quaesumus.` NOT THE 2002 PRAYER. The seasonal `epiphany` mass's `Mass during the Day` Prayer after Communion in this file reads `Caelesti lumine, quaesumus, Domine, semper et ubique nos praeveni`, which is a different oration; the reform changed this slot, and this English answers only the antecedent Latin the christological entry carries.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Praesta, quaesumus.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `epiphania-domini`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Praesta, quaesumus omnipotens Deus: ut, quae solemni celebramus officio, purificatae mentis intelligentia consequamur. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that our minds may be so purified, as to understand what we celebrate on this great solemnity. Thro'.
+"""
+
+[[entries]]
+mass = "saint-george-martyr"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui nos beati Georgii"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 578
+verified_printed_page = "570"
+verified_heading = "23d APRIL. / XXIII. S. GEORGE, m. Patron of England."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n578_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, under the directive `All as in Mass V. p. 470, except`. The page prints NO point after `joy`, where the Latin has a colon; the sort is either damaged or absent and the reading is recorded as printed rather than repaired. The postconciliar entry also carries Saint Adalbert, whose orations this row does not answer.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, qui nos beati.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `comm-s-georgii-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus, qui nos beati Georgii Martyris tui meritis et intercessione laetificas: concede propitius; ut qui tua per eum beneficia poscimus, dono tuae gratiae consequamur. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who by the merits and prayers of blessed George, thy Martyr, fillest the hearts of thy people with joy mercifully grant, through his intercession, that the blessing we ask, we may happily obtain by means of thy grace. Thro'.
+"""
+
+[[entries]]
+mass = "saint-george-martyr"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Munera, Domine, oblata sanctifica"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 578
+verified_printed_page = "570"
+verified_heading = "23d APRIL. / XXIII. S. GEORGE, m. Patron of England."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n578_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, four lines below the Collect, with no Latin cue set before it.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `comm-s-georgii-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Munera, Domine, oblata sanctifica, et intercedente beato Georgio Martyre tuo, nos per haec a peccatorum nostrorum maculis emunda. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Sanctify, O Lord, the offerings we have made; and, through the intercession of blessed George, thy Martyr, by them cleanse us from the stains of our sins. Thro'.
+"""
+
+[[entries]]
+mass = "saint-george-martyr"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Supplices te rogamus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 579
+verified_printed_page = "571"
+verified_heading = "24th AND 25th APRIL. (running head; the George Mass closes at the top of this page)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n579_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image and the doubtful words again at 400: the page prints `beseeeh` for `beseech`, a damaged sort, recorded here as `beseech`; and it prints `by a life`, not `hy a life` as the item's optical text layer has it. The running head is the following days'; the Mass itself is headed on leaf n578.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Supplices.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `comm-s-georgii-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Supplices te rogamus, omnipotens Deus: ut, quos tuis reficis sacramentis, intercedente beato Georgio Martyre tuo, tibi etiam placitis moribus dignanter tribuas servire. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+We humbly beseech thee, O Almighty God, that those whom thou hast refreshed with thy sacraments, may, by the intercession of blessed George, thy Martyr, by a life well-pleasing to thee, worthily serve thee. Thro'.
+"""
+
+[[entries]]
+mass = "saint-jerome-emiliani"
+form = ""
+proper = "Collect"
+incipit = "Deus misericordiarum Pater"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 629
+verified_printed_page = "621"
+verified_heading = "20th JULY. (running head; the Mass is headed `XX. St. JEROME EMILIAN, c.` on leaf n628, printed p. 620)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n629_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image. The 1861 prints this day a FULL proper Mass, not a pointer into a Common. The page prints no point after `children`; recorded as printed. 20 July in the 1861 and the 1862; 8 February in the postconciliar calendar. The postconciliar entry also carries Saint Josephine Bakhita, canonised in 2000, whom no printing of this date can reach and whose orations this row does not answer.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, misericordiarum.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-hieronymi-aemiliani-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus misericordiarum Pater, per merita et intercessionem beati Hieronymi, quem orphanis adjutorem et patrem esse voluisti: concede; ut spiritum adoptionis, quo filii tui nominamur et sumus, fideliter custodiamus. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, the Father of mercies: grant, by the merits and intercession of blessed Jerome, whom thou wast pleased to make a helper and father to poor orphans, that we may faithfully preserve the spirit of adoption, by which we are called, and are in reality thy children Thro'.
+"""
+
+[[entries]]
+mass = "saint-jerome-emiliani"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Clementissime Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 630
+verified_printed_page = "622"
+verified_heading = "20th JULY. (running head, printed `90th JULY` in a damaged sort)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n630_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, below the Offertory of the same Mass, with no Latin cue set before it.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-hieronymi-aemiliani-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Clementissime Deus, qui veteri homine consumpto, novum secundum te in beato Hieronymo creare dignatus es: da per merita ipsius; ut nos pariter renovati, hanc placationis hostiam in odorem tibi suavissimum offeramus. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Most merciful God, who destroying the old man, didst vouchsafe to form a new one in blessed Jerome: grant, by his merits, that we also, putting on the new man, may offer thee this sacrifice of propitiation as a most sweet odour. Thro'.
+"""
+
+[[entries]]
+mass = "saint-jerome-emiliani"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Angelorum pane refecti"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 630
+verified_printed_page = "622-623"
+verified_heading = "20th JULY. (the oration runs over the leaf and ends on leaf n631, printed p. 623, running head `21st AND 22d JULY.`)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n630_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page images of both leaves, and the last line again at 400 dpi: the page prints `heaven` and then `Thro'.` with no point between them. The page also prints `beseeeh`, a damaged sort, recorded here as `beseech`. This calendar's Latin reads `amplissimum in regno tuo praemium`, `an ample reward in thy kingdom`; the witness renders it `an ample reward in heaven`.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Angelorum.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-hieronymi-aemiliani-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Angelorum pane refecti te, Domine, suppliciter deprecamur: ut qui annuam beati Hieronymi Confessoris tui memoriam celebrare gaudemus; ejusdem etiam et exemplum imitemur, et amplissimum in regno tuo praemium obtinere valeamus. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Being refreshed with the bread of angels, we humbly beseech thee, O Lord, that we who rejoice on the solemnity of blessed Jerome, thy Confessor, may also follow his example, and thereby obtain an ample reward in heaven Thro'.
+"""
+
+[[entries]]
+mass = "saint-apollinaris-bishop-martyr"
+form = ""
+proper = "Collect"
+incipit = "Deus, fidelium remunerator animarum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 632
+verified_printed_page = "624"
+verified_heading = "23d JULY. / XXIII. St. APOLINARIS, bp. m."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n632_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, under the directive `All as in Mass II. p. 464, except`. The witness spells the saint `Apolinaris`, with one l. THE SCAN IS CLIPPED AT THE OUTER MARGIN of this page: the last letters of `consecrated`, `thy` and `all` run into the trimmed edge and are read from what survives of them, and each is confirmed by the independent optical text layer. 23 July in the 1861 and the 1862; 20 July in the postconciliar calendar. The English renders `Sacerdotis` as `thy Bishop`.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, fidelium.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-apollinaris-episcopi-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus, fidelium remunerator animarum, qui hunc diem beati Apollinaris Sacerdotis tui Martyrio consecrasti: tribue nobis, quaesumus, famulis tuis; ut cujus venerandam celebramus festivitatem, precibus ejus indulgentiam consequamur. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, the rewarder of thy faithful servants, who hast consecrated this day by the martyrdom of blessed Apolinaris, thy Bishop: grant we may obtain entire pardon for all our offences, by his prayers, whose memory we celebrate on this present festival. Thro'.
+"""
+
+[[entries]]
+mass = "saint-apollinaris-bishop-martyr"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Respice, Domine, propitius"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 634
+verified_printed_page = "626"
+verified_heading = "24th JULY. (running head; the Apolinaris Mass closes on this page)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n634_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image. This calendar's Latin reads `beati Sacerdotis et Martyris tui Apollinaris`; the witness renders it `blessed Apolinaris thy bishop and martyr`, so `Sacerdotis` is rendered `bishop` here as in the Collect. The running head is the following day's; the Mass is headed on leaf n632.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-apollinaris-episcopi-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Respice, Domine, propitius super haec munera, quae pro beati Sacerdotis et Martyris tui Apollinaris commemoratione deferimus, et pro nostris offensionibus immolamus. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Look favourably, O Lord, on these gifts which we offer in commemoration of blessed Apolinaris thy bishop and martyr, and for the expiation of our offences. Thro'.
+"""
+
+[[entries]]
+mass = "saint-apollinaris-bishop-martyr"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Tua sancta sumentes"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 634
+verified_printed_page = "626"
+verified_heading = "24th JULY. (running head; see the Prayer over the Offerings above)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n634_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image; the page sets the cue `P. COMM, Tua Sancta.`, with a comma for the point after `COMM`.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Tua sancta.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-apollinaris-episcopi-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Tua sancta sumentes, quaesumus Domine, ut beati Apollinaris nos foveant continuata praesidia: quia non desinis propitius intueri, quos talibus auxiliis concesseris adjuvari. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Having received thy holy mysteries, we beseech thee, O Lord, that we may enjoy the continual protection of blessed Apolinaris, because thou never ceasest propitiously to regard those to whom thou hast granted the favour of such protection. Thro'.
+"""
+
+[[entries]]
+mass = "saint-louis"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui beatum Ludovicum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 657
+verified_printed_page = "649"
+verified_heading = "25th AUGUST. / XXV. St. LEWIS, King and c."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n657_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, under the directive `All as in Mass XIII. p. 488, except`. The witness anglicises the name to LEWIS. The conclusion is printed `Who.` and is left as printed. The postconciliar entry also carries Saint Joseph Calasanz, whom the witness prints separately at `XXVII. St. JOSEPH CALASANCTIUS, c.`, leaf n659, and whose orations this row does not answer.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, qui.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-ludovici-regis-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus, qui beatum Ludovicum Confessorem tuum, de terreno regno ad coelestis regni gloriam transtulisti: ejus, quaesumus, meritis et intercessione, Regis regum Jesu Christi Filii tui facias nos esse consortes. Qui tecum vivit.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who removedst blessed Lewis thy confessor, from an earthly kingdom to the glory of an heavenly crown: grant, we beseech thee, by his virtues and prayers, that we may be received into the company of the King of kings, Jesus Christ thy only Son. Who.
+"""
+
+[[entries]]
+mass = "saint-louis"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Praesta, quaesumus omnipotens Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 659
+verified_printed_page = "651"
+verified_heading = "26th AND 27th AUGUST. (running head; the Lewis Mass closes at the top of this page)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n659_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image. The running head is the following days'; the Mass is headed on leaf n657.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-ludovici-regis-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Praesta, quaesumus omnipotens Deus: ut sicut beatus Ludovicus Confessor tuus, spretis mundi oblectamentis, soli Regi Christo placere studuit, ita ejus oratio nos tibi reddat acceptos. Per eumdem Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that as thy Confessor, blessed Lewis, despising all the delights of the world, studied only to please Christ his King; so also his prayers may render us acceptable to thee. Thro'.
+"""
+
+[[entries]]
+mass = "saint-louis"
+form = ""
+proper = "Prayer after Communion"
+incipit = "Deus, qui beatum Confessorem tuum"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 659
+verified_printed_page = "651"
+verified_heading = "26th AND 27th AUGUST. (running head; see the Prayer over the Offerings above)"
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n659_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image, immediately below the Secret.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Deus, qui.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-ludovici-regis-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Deus, qui beatum Confessorem tuum Ludovicum mirificasti in terris, et gloriosum in coelis fecisti: eumdem, quaesumus, Ecclesiae tuae constitue defensorem. Per Dominum nostrum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+O God, who didst render blessed Lewis, thy Confessor, illustrious on earth, and now glorious in heaven: appoint him, we beseech thee, the defender of thy church. Thro'.
+"""
+
+[[entries]]
+mass = "most-holy-name-mary"
+form = ""
+proper = "Collect"
+incipit = "Concede, quaesumus omnipotens Deus"
+witness = "cummiskey-1861"
+witness_relation = "antecedent"
+route = "page-harvest"
+relation = "antecedent-printing"
+verified_on_page = "2026-08-20"
+verified_leaf = 664
+verified_printed_page = "656"
+verified_heading = "8th SEPTEMBER. (running head) / FEAST of the NAME of the B. V. MARY."
+verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n664_w1400.jpg"
+verified_note = """
+Read at 200 dpi on the page image. The witness keeps this feast where the 1862 keeps it, on the SUNDAY within the octave of the Nativity of the Blessed Virgin, and prints the rubric governing its transfer immediately above the heading; Pius X fixed it at 12 September in 1911, after both printings. The same page directs the rest of the Mass to the Votive Mass at p. 507, which is where the two orations reused in this file were read.
+"""
+witness_note = """
+The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because this calendar's recorded Latin at this slot is that oration. Latin cue on the page: Concede.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `sanctissimi-nominis-beatae-mariae-virginis`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
+"""
+antecedent_latin_here = """
+Concede, quaesumus omnipotens Deus: ut fideles tui, qui sub sanctissimae virginis Mariae Nomine, et protectione laetantur; ejus pia intercessione, a cunctis malis liberentur in terris, et ad gaudia aeterna pervenire mereantur in coelis. Per Dominum.
+"""
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = """
+Grant, we beseech thee, O Almighty God, that thy faithful, who rejoice under the name and protection of the most blessed Virgin Mary, may, by her pious intercession, be delivered from all evils here on earth, and be brought to the eternal joys of heaven. Thro'.
 """
 
 [[untranslated]]
@@ -3196,4 +4516,76 @@ mass = "ot-15"
 form = ""
 proper = "Gospel Acclamation"
 reason = "as easter-3 above: Years B and C are scriptural and resolve from the bible, and Year A sets the composed Semen est verbum Dei, sator autem Christus, whose approved English is ICEL's and is not carried here."
+
+[[untranslated]]
+mass = "saint-hilary-bishop-doctor-church"
+form = ""
+proper = "Collect"
+reason = """
+The witness reaches this day and reaches it by reference. Read on the 1861 page image on 2026-08-20: leaf n543, printed p. 535, running head `13th AND 14th JANUARY.`, prints `XIV. St. HILARY, bp. c... All as in Mass XII. p. 485, with a Commem. of St. Felix, by the following Collect, &c.` The only oration printed under that heading is FELIX's commemoration (`COLLECT. Concede.--Grant, we beseech thee, O Almighty God, that the examples of thy saints may excite us to the amendment of our lives`), which is not this prayer. Mass XII is the witness's Mass of Doctors, whose orations print `N.` and, in the Secret and Postcommunion, name a Confessor where this calendar's Latin names a Bishop and Doctor. The roman-1962 overlay refused the same three slots on the same evidence on 2026-08-02 and this lane confirms it rather than reversing it. Nothing is carried. Incipit of the Latin refused here: `Deus, qui populo tuo`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n543_w1400.jpg (leaf n543, printed p. 535, heading `13th AND 14th JANUARY. / XIV. St. HILARY, bp. c.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "saint-hilary-bishop-doctor-church"
+form = ""
+proper = "Prayer over the Offerings"
+reason = """
+The witness reaches this day and reaches it by reference. Read on the 1861 page image on 2026-08-20: leaf n543, printed p. 535, running head `13th AND 14th JANUARY.`, prints `XIV. St. HILARY, bp. c... All as in Mass XII. p. 485, with a Commem. of St. Felix, by the following Collect, &c.` The only oration printed under that heading is FELIX's commemoration (`COLLECT. Concede.--Grant, we beseech thee, O Almighty God, that the examples of thy saints may excite us to the amendment of our lives`), which is not this prayer. Mass XII is the witness's Mass of Doctors, whose orations print `N.` and, in the Secret and Postcommunion, name a Confessor where this calendar's Latin names a Bishop and Doctor. The roman-1962 overlay refused the same three slots on the same evidence on 2026-08-02 and this lane confirms it rather than reversing it. Nothing is carried. Incipit of the Latin refused here: `Sancti tui Hilarii`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n543_w1400.jpg (leaf n543, printed p. 535, heading `13th AND 14th JANUARY. / XIV. St. HILARY, bp. c.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "saint-hilary-bishop-doctor-church"
+form = ""
+proper = "Prayer after Communion"
+reason = """
+The witness reaches this day and reaches it by reference. Read on the 1861 page image on 2026-08-20: leaf n543, printed p. 535, running head `13th AND 14th JANUARY.`, prints `XIV. St. HILARY, bp. c... All as in Mass XII. p. 485, with a Commem. of St. Felix, by the following Collect, &c.` The only oration printed under that heading is FELIX's commemoration (`COLLECT. Concede.--Grant, we beseech thee, O Almighty God, that the examples of thy saints may excite us to the amendment of our lives`), which is not this prayer. Mass XII is the witness's Mass of Doctors, whose orations print `N.` and, in the Secret and Postcommunion, name a Confessor where this calendar's Latin names a Bishop and Doctor. The roman-1962 overlay refused the same three slots on the same evidence on 2026-08-02 and this lane confirms it rather than reversing it. Nothing is carried. Incipit of the Latin refused here: `Ut nobis, Domine, tua sacrificia`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n543_w1400.jpg (leaf n543, printed p. 535, heading `13th AND 14th JANUARY. / XIV. St. HILARY, bp. c.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "our-lady-loreto"
+form = ""
+proper = "Collect"
+reason = """
+THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Deus, qui beatae Mariae Virginis domum`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "our-lady-loreto"
+form = ""
+proper = "Prayer over the Offerings"
+reason = """
+THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Accipe, quaesumus Domine`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "our-lady-loreto"
+form = ""
+proper = "Prayer after Communion"
+reason = """
+THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. One near miss was tested and refused: the 1962 index's low-sunday Postcommunion is the same oration MINUS the clause `intercedente beata Maria semper virgine`, which this calendar's Latin has. Carrying that English would be publishing a rendering that drops the only Marian words in the prayer, on a Marian day. Refused. Incipit of the Latin refused here: `Quaesumus Domine Deus noster`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "saint-peter-claver-priest"
+form = ""
+proper = "Collect"
+reason = """
+THE WITNESS DOES NOT PRINT THIS SAINT. Read on the 1861 page image on 2026-08-20: leaf n665, printed p. 657, running head `9th AND 11th SEPTEMBER.`, gives 9 September as `IX. COMMEM. of St. GORGONIUS, m.` and passes to `XI. COMMEM. of SS. PROTUS, &c. mm.` Peter Claver was beatified in 1851 and canonised in 1888; the 1862 prints him only in its Appendix Missarum, under the later imprimaturs of 1863-1866, which is where this calendar's Latin was read and which the 1861 lay missal predates and does not carry. Nothing is carried. Incipit of the Latin refused here: `Deus, qui miserabilia mancipia`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n665_w1400.jpg (leaf n665, printed p. 657, heading `9th AND 11th SEPTEMBER. / IX. COMMEM. of St. GORGONIUS, m.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "saint-peter-claver-priest"
+form = ""
+proper = "Prayer over the Offerings"
+reason = """
+THE WITNESS DOES NOT PRINT THIS SAINT. Read on the 1861 page image on 2026-08-20: leaf n665, printed p. 657, running head `9th AND 11th SEPTEMBER.`, gives 9 September as `IX. COMMEM. of St. GORGONIUS, m.` and passes to `XI. COMMEM. of SS. PROTUS, &c. mm.` Peter Claver was beatified in 1851 and canonised in 1888; the 1862 prints him only in its Appendix Missarum, under the later imprimaturs of 1863-1866, which is where this calendar's Latin was read and which the 1861 lay missal predates and does not carry. Nothing is carried. Incipit of the Latin refused here: `Caritatis victima`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n665_w1400.jpg (leaf n665, printed p. 657, heading `9th AND 11th SEPTEMBER. / IX. COMMEM. of St. GORGONIUS, m.`) by lane pc-antecedent-english on 2026-08-20.
+"""
+
+[[untranslated]]
+mass = "saint-peter-claver-priest"
+form = ""
+proper = "Prayer after Communion"
+reason = """
+THE WITNESS DOES NOT PRINT THIS SAINT. Read on the 1861 page image on 2026-08-20: leaf n665, printed p. 657, running head `9th AND 11th SEPTEMBER.`, gives 9 September as `IX. COMMEM. of St. GORGONIUS, m.` and passes to `XI. COMMEM. of SS. PROTUS, &c. mm.` Peter Claver was beatified in 1851 and canonised in 1888; the 1862 prints him only in its Appendix Missarum, under the later imprimaturs of 1863-1866, which is where this calendar's Latin was read and which the 1861 lay missal predates and does not carry. Nothing is carried. Incipit of the Latin refused here: `Crescat in nobis, Domine`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n665_w1400.jpg (leaf n665, printed p. 657, heading `9th AND 11th SEPTEMBER. / IX. COMMEM. of St. GORGONIUS, m.`) by lane pc-antecedent-english on 2026-08-20.
+"""
 

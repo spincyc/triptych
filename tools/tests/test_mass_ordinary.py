@@ -420,19 +420,42 @@ class OrdinaryPage(unittest.TestCase):
     def test_a_language_nobody_holds_is_offered_and_says_why(self) -> None:
         """The control's whole purpose, and the failure it must not have.
 
-        Neither missal's Latin is here, and both are still offered: a reader who
-        asks for the Latin must be told at every element under which recorded
-        reason it is silent, not handed a page that has quietly gone blank. The
-        two reasons are different reasons and must not be interchangeable —
-        `latin-not-transcribed` is work nobody has done and `editio-typica` is a
-        rights question nobody has settled.
+        A language is offered whether or not a given element holds it, and a
+        reader who asks for it must be told, at every element that is silent,
+        under which recorded reason — never handed a page that has quietly gone
+        blank. The reasons are different reasons and must not be
+        interchangeable.
+
+        SUPERSEDES the reading of 2026-08-01, which held that NEITHER missal's
+        Latin was here and that the 1962's whole absence was
+        `latin-not-transcribed`, work nobody had done. The 1861 witness's facing
+        Latin column has since been transcribed and is carried, so 112 of that
+        file's 195 elements now hold their Latin and the Te igitur — the example
+        this test used for the absent case — is one of them. What remains absent
+        there is absent for a different reason, `no-facing-latin`: the book sets
+        those blocks across the full measure in English and prints no Latin at
+        all, which is the witness's own silence and not a gap in anyone's work.
+        So the absent case is now taken on an element that really is absent, and
+        the held case is asserted beside it, because a control that offers a
+        language must be tested on both.
+
+        The two reasons still in play remain incomparable and are asserted not
+        to leak into each other: `no-facing-latin` is a fact about one
+        printing's pages, and `editio-typica` is a rights question nobody has
+        settled about the postconciliar Missal, whose Latin is held nowhere.
         """
         report = self.run_harness()
         self.assertEqual(
             [one["lang"] for one in report["languages"]["postconciliar"]], ["en", "la"])
         self.assertEqual(
             [one["held"] for one in report["languages"]["postconciliar"]], [9, 0])
-        self.assertEqual([one["held"] for one in report["languages"]["roman-1962"]], [195, 0])
+        self.assertEqual(
+            [one["held"] for one in report["languages"]["roman-1962"]], [195, 112])
+        # The Latin the 1962 file does not hold is exactly the elements the
+        # preamble's one reason covers; the next test asserts that count from
+        # the other side.
+        elements = report["languages"]["roman-1962"][1]["elements"]
+        self.assertEqual(elements - 112, 83)
 
         pater = report["kyrie_in_each"]
         self.assertIn("Our Father in heaven", pater["en"])
@@ -440,28 +463,50 @@ class OrdinaryPage(unittest.TestCase):
         self.assertIn("Not shown: its Latin.", pater["la"])
         self.assertIn("editio-typica", pater["la"])
 
+        # Held: the facing column was read, so the Latin stands in its own right
+        # and no reason is offered for a silence there is not.
         canon = report["te_igitur_in_each"]
         self.assertIn("WE therefore, humbly pray", canon["en"])
         self.assertNotIn("WE therefore, humbly pray", canon["la"])
-        self.assertIn("Not shown: its Latin.", canon["la"])
-        self.assertIn("latin-not-transcribed", canon["la"])
-        self.assertNotIn("editio-typica", canon["la"])
+        self.assertIn("TE igitur, clementissime Pater", canon["la"])
+        self.assertNotIn("Not shown: its Latin.", canon["la"])
+        self.assertNotIn("no-facing-latin", canon["la"])
+
+        # Absent: this offertory prayer is one of the 83 the book sets to the
+        # full measure in English, so the Latin side names its reason and only
+        # its reason.
+        accendat = report["accendat_in_each"]
+        self.assertIn("May the Lord enkindle", accendat["en"])
+        self.assertNotIn("May the Lord enkindle", accendat["la"])
+        self.assertIn("Not shown: its Latin.", accendat["la"])
+        self.assertIn("no-facing-latin", accendat["la"])
+        self.assertNotIn("editio-typica", accendat["la"])
 
     def test_the_reason_is_stated_once_and_referred_to_after_that(self) -> None:
         """Two copies of a reason are two reasons waiting to disagree.
 
         Printed in full at every element it covers, the 1861 Latin reason ran to
-        195 copies of the same 400 characters the moment a reader asked for the
-        Latin. It is stated in the preamble, with how far it reaches, and the
-        elements name it.
+        one copy of the same 400 characters per element the moment a reader
+        asked for the Latin. It is stated in the preamble, with how far it
+        reaches, and the elements name it.
+
+        The reach is what moved on 2026-08-20, not the rule: the reason used to
+        be `latin-not-transcribed` over all 195 elements, and now the facing
+        column is carried, so it is `no-facing-latin` over the 83 blocks the
+        book prints in English alone. The preamble must still state it once and
+        say how far it goes, the covered elements must still refer to it without
+        repeating it, and — new with the transcription — an element that holds
+        its Latin must not carry the reason at all.
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
-        self.assertIn("latin-not-transcribed", preamble)
-        self.assertIn("195 of 195 elements", preamble)
-        self.assertIn("transcribed the English column only", preamble)
-        self.assertNotIn("transcribed the English column only",
-                         report["te_igitur_in_each"]["la"])
+        self.assertIn("no-facing-latin", preamble)
+        self.assertIn("83 of 195 elements", preamble)
+        self.assertIn("prints no Latin text for it", preamble)
+        self.assertNotIn("prints no Latin text for it",
+                         report["accendat_in_each"]["la"])
+        self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
+        self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])
 
     def test_the_speaker_is_named_and_a_name_is_not_a_mark(self) -> None:
         """Who is speaking, in words, and never a ℣ standing over a response.
@@ -769,9 +814,21 @@ class ProperPlacementNotesPage(unittest.TestCase):
 
         formulary = FORMULARY_HTML.read_text(encoding="utf-8")
         self.assertNotIn("proper-placement-notes", formulary)
+        # The two pins are a tripwire, not the assertion: they say the formulary
+        # page and its script have not moved without someone re-reading the line
+        # above, which is the thing actually guarded. Re-pinned once, on
+        # 2026-08-20. The page's bytes had moved and the pin had not, so the
+        # tripwire was reporting a change nobody had looked at. It was then
+        # looked at: `git diff` over the whole interval since the pin was set
+        # shows one hunk, the six lines that wrap the existing reader-place
+        # breadcrumb around a hidden `data-reader-locus` span. It adds no
+        # script tag, names no placement-notes module, and changes no load
+        # order, so the guarded proposition is untouched and the pin is moved
+        # rather than the assertion weakened. `liturgy.js` had not moved at all
+        # and its pin is the original.
         self.assertEqual(
             hashlib.sha256(FORMULARY_HTML.read_bytes()).hexdigest(),
-            "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
+            "61593982117969b8673a936117ae8c331aca91c20283f613bd9c289424c83164",
         )
         self.assertEqual(
             hashlib.sha256(FORMULARY_JS.read_bytes()).hexdigest(),
@@ -977,6 +1034,7 @@ process.stdout.write(JSON.stringify({
   languages: { postconciliar: pc.languages, 'roman-1962': tlm.languages },
   kyrie_in_each: inEach(pc, 'ritus-communionis/pater-noster'),
   te_igitur_in_each: inEach(tlm, 'canon/te-igitur'),
+  accendat_in_each: inEach(tlm, 'oblatio/accendat-in-nobis'),
   preamble_1962: P.ordinaryPreamble(tlm).text(),
   versicles_1861: P.renderElement(
     all(tlm).find((e) => e.key === 'praeparatio/dominus-vobiscum'), tlm).text(),

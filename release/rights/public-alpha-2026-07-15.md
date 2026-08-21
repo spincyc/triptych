@@ -1708,10 +1708,10 @@ release attachment, announcement, or promotion.
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `34f935c869fb50db51926eeceaec81335467ad179f8a04964a885b42238c359d` |
-| `THIRD_PARTY.md` | `1818c4b31dcfeb1a6c5abf2542540713f8c49c670f1814ceeea1da1b1e871505` |
+| `THIRD_PARTY.md` | `853d246dff358c1880f08ed1c32310797cee95ec6681ac1eda2876eb09fa6f39` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `895bdf80a5c4b85fdd4e0dddc531a41aa3efa03f6ce2510dd407d975a9044d37` |
+| `docs/the-mass.md` | `ad2429a13b3dac00fab6e41e4d8d66d44ef243460c7a35ae2144f5b153a570d3` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |

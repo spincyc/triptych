@@ -389,6 +389,20 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
     return held
 
 
+# Why a text is not here, as a value a renderer can read rather than prose it
+# would have to parse. The three are genuinely different states and a reader
+# owes the difference to whoever is looking at the empty place:
+#   witness-gap     the source this project holds does not print it
+#   rights-withheld a rightsholder has reserved this use
+#   no-exemplar     the use is permitted and no exact copy of the words is
+#                   reachable, so the gap is an acquisition and not a refusal
+# The distinction is not academic. This inventory said for a year that ICEL's
+# licence forbade the use; it does not, and the true reason was always that
+# nobody here has the book. One of those is answered by asking permission and
+# the other by finding a copy.
+ABSENCE_KINDS = ("witness-gap", "rights-withheld", "no-exemplar")
+
+
 def absence_table(source: dict, name: str) -> dict[str, dict]:
     held: dict[str, dict] = {}
     for entry in source.get("absences") or []:
@@ -397,6 +411,12 @@ def absence_table(source: dict, name: str) -> dict[str, dict]:
             raise SourceError(f"{name}: an absence has no key")
         if not entry.get("what"):
             raise SourceError(f"{name}: absence {key} says nothing about why")
+        kind = entry.get("kind")
+        if kind not in ABSENCE_KINDS:
+            raise SourceError(
+                f"{name}: absence {key} declares kind {kind!r}; "
+                f"one of {', '.join(ABSENCE_KINDS)} is required"
+            )
         held[key] = dict(entry)
     return held
 

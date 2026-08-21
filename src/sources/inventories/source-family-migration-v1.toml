@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-20"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:70c7b7a0d11519d27759acc0d681b74f10b478f8f9929c494bb38687f5ba2dc5"
+inventory_snapshot = "sha256:efc58eec720b745a2c68a05489e749f14ea1f2b22d45bb298333358a3bf64774"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:f6b2a20fe0c584d62d3d5612e641f6f21d81df9e50242e01e2f266981d394e18"
-canonical_catalog_snapshot = "sha256:458b01d0d289d7035dce9612b375f3647577300b4ceb1802f55ebf77ecd6ad41"
+canonical_catalog_snapshot = "sha256:23c3adc5a38913fda0585af1beaa2560b03751284c56cd7e0605fcd5ee9eb765"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:fc53ada421c17336886ed0ee31c60b5dc88fc01dbfd5b2e3e04129d876a90fc3"
+snapshot = "sha256:a65ce6c08b3f7dcc3e01ecca1baa7717054e6131c80852c0abf0a4745fb29fb1"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1663,9 +1663,9 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p1"
-canonical_ids = ["artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13", "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e", "edition.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25", "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981", "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-65-69", "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-74-77", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.decretum-de-editione-typica-altera-1981", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.decretum-promulgationis-1969", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-103", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-104", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-65", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-66", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-69", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-76", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-77", "work.catholic-church.ordo-lectionum-missae"]
+canonical_ids = ["artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13", "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e", "edition.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25", "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981", "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-65-69", "passage.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.praenotanda-74-77", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.decretum-de-editione-typica-altera-1981", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.decretum-promulgationis-1969", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-adventus-175-201", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-per-annum-305-509", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-quadragesimae-219-256", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-temporis-nativitatis-202-218", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-temporis-nativitatis-205", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-temporis-nativitatis-212", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.feriae-temporis-paschalis-261-304", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.hebdomada-sancta-257-259", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-103", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-104", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-65", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-66", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-69", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-76", "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-77", "work.catholic-church.ordo-lectionum-missae"]
 trace_patterns = ["\\bOrdo\\s+Lectionum\\s+Missae\\b", "catholic-church\\.ordo-lectionum-missae"]
-reviewed_on = "2026-07-31"
+reviewed_on = "2026-08-20"
 membership_snapshot = "sha256:46706305a920fe142f7eb955af217c0d74ed8fbd8c83145e5eee609720015fd1"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
 
@@ -11534,7 +11534,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
-surface_snapshot = "sha256:58100dd972a6b42fe9871f8257da8c08aa7557906298158f437233447d128384"
+surface_snapshot = "sha256:b58e25d0f0c318945aaabbf521d34b495bb9b8f4bb679435f25a8caff08b8524"
 review_state = "pending"
 
 [[review_units]]

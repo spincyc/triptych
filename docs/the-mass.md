@@ -315,9 +315,9 @@ the calendars, and nothing else on this page states a figure it gives.
 | roman-1962 | seasonal | 128 | 1152 | 0 |
 | roman-1962 | christological | 8 | 66 | 0 |
 | roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1200 | 2 |
+| roman-1962 | sanctoral | 307 | 1104 | 2 |
 | roman-1962 | common | 30 | 334 | 0 |
-| postconciliar | seasonal | 67 | 832 | 2 |
+| postconciliar | seasonal | 390 | 2098 | 2 |
 | postconciliar | christological | 7 | 27 | 1 |
 | postconciliar | marian | 14 | 54 | 2 |
 | postconciliar | sanctoral | 181 | 626 | 30 |
@@ -330,7 +330,7 @@ the calendars, and nothing else on this page states a figure it gives.
 | roman-1962 | I | 37 | 37 |
 | roman-1962 | II | 46 | 47 |
 | roman-1962 | III | 211 | 211 |
-| postconciliar | (no rank) | 64 | 64 |
+| postconciliar | (no rank) | 387 | 387 |
 | postconciliar | All Souls commemoration | 1 | 1 |
 | postconciliar | Feast | 24 | 24 |
 | postconciliar | Memorial | 69 | 69 |
@@ -340,19 +340,20 @@ the calendars, and nothing else on this page states a figure it gives.
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 269 |
-| Propers | 6 | 2840 | 1539 |
+| Masses | 6 | 491 | 592 |
+| Propers | 6 | 2744 | 2805 |
 | — named `Placeholder` | 6 | 3 | 37 |
 | — inside a `forms` block | 0 | 147 | 140 |
 | — carrying a `cycles` mapping | 0 | 0 | 253 |
+| — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
 | Masses holding only placeholders | 6 | 2 | 35 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 0 |
-| Propers that are not placeholders | 0 | 2837 | 1502 |
-| — of those, scripture-bearing | 0 | 2192 | 1185 |
-| Encoded passages | 0 | 2598 | 1721 |
-| Distinct books cited | 0 | 57 | 63 |
-| Distinct slot names | 1 | 119 | 89 |
+| Propers that are not placeholders | 0 | 2741 | 2768 |
+| — of those, scripture-bearing | 0 | 2192 | 2451 |
+| Encoded passages | 0 | 2598 | 3395 |
+| Distinct books cited | 0 | 57 | 73 |
+| Distinct slot names | 1 | 119 | 92 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the

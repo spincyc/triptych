@@ -38,6 +38,7 @@ largely a register of how that data has already gone wrong:
 | a verse or chapter numbering question across editions | `guidance/versification.md` |
 | commentary fragments, the harvest, or the catena page | `guidance/catena.md`, `guidance/reading-plan-for-agents.md` |
 | a liturgical act history or its stations and lines | `guidance/act-histories.md`, `guidance/time-machine.md` |
+| whether a liturgical text may be published here, whose right it is, or under what basis — in any language, on any surface | `guidance/liturgical-text-publication-policy.md` |
 | a missal witness, its rights, or its acquisition state | `guidance/missals.md` |
 | a calendar recension and its departures from a base | `guidance/recensions.md` |
 | whether a publication's research has gone stale | `guidance/staleness.md` |

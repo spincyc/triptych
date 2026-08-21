@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.hebdomada-sancta-257-259"
+edition_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+locus = "hebdomada-sancta-257-259"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Holy Week weekdays of the Proper of Time, marginal nn. 257-259, complete on one artifact page. What is established here is their arrangement, not any of their words. Holy Week takes a section heading of its own, distinct from the Lenten weekday run that ends at n. 256, and under it stand three numbered days headed by the weekday within the week: n. 257 the Monday, n. 258 the Tuesday and n. 259 the Wednesday. Each carries four Lectionary slots, and the verse before the Gospel at n. 259 is given by reference to nn. 257-258 rather than printed again. The three days are the whole of the numbered weekday sequence on this page; the Paschal Triduum is not part of it and this record makes no claim about where the book provides for the Triduum."
+artifact_page_ranges = [[194, 194]]
+verified_on = "2026-08-20"
+notes = "Read on 2026-08-20 in a rendering of the artifact's page image at 200 dpi, never in its optical text layer. Artifact page 194 is printed page 140 and was read entire: it opens with the Holy Week section heading and ends with n. 259, and no further weekday number stands on it. Printed pagination runs 54 behind the artifact pages throughout this part of the book. The controlling artifact is storage = \"restricted\" and rights_status = \"restricted\", and its own rights basis states that public availability from a third-party archive establishes no permission to redistribute either the underlying official text or the scan. This record therefore reproduces none of the book's readings, pericope titles, psalm responses, acclamation texts, rubrics or headings, and carries no text and no transcription_segments. No schema state requires a quotation, and for this artifact the schema forbids one: the artifact is indexable = false, so the validator refuses text, transcription_segments and physical_line_ranges on any passage it controls, and artifact_page_ranges is the only locator this passage can carry."

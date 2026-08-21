@@ -134,15 +134,35 @@ In particular:
   that record's `seeking_a_licence` before writing one in even if a grant
   arrives, because this repository cannot yet express a text that is licensed
   and not publishable; and
-- the English orations recorded in
-  `src/sources/inventories/postconciliar-proper-translations-v1.toml` are this
-  project's own work, offered under CC BY 4.0 with the project's authorship
-  identified at the point of use. They translate prayers of the ancient Roman
-  sacramentaries — the Veronense, the Old Gelasian, the Hadrianum — which are
-  out of copyright everywhere, and each entry names its witness and states
-  every difference between that witness and the Missal's own text. They are not
-  an approved liturgical translation, they are not derived from ICEL's, and
-  nothing in them may be used for recitation; and
+- the English recorded in
+  `src/sources/inventories/postconciliar-proper-translations-v1.toml` reaches
+  that file by two routes with different rights positions, and the file marks
+  each entry with which. **Neither route carries the text of the *Missale
+  Romanum*, third typical edition (2002), whose approved English is ICEL's, is
+  in copyright, and is not held in this repository in whole or in part.**
+
+  70 entries are `project-created`: this project's own work, offered under
+  CC BY 4.0 with the project's authorship identified at the point of use. They
+  translate prayers of the ancient Roman sacramentaries — the Veronense, the
+  Old Gelasian, the Hadrianum — which are out of copyright everywhere, and each
+  entry names its ancient witness and states every difference between that
+  witness and the Missal's own text.
+
+  56 entries, carrying 63 translation rows, are `public-domain` and are not
+  this project's work. They carry, unaltered, the English of *The Roman Missal
+  translated into the English language for the use of the laity*, first revised
+  edition (Philadelphia: Eugene Cummiskey, 1861), made for the **antecedent** of
+  the prayer — the older oration whose Latin this calendar's own recorded Latin
+  reproduces. Each entry names that antecedent and enumerates every difference
+  the two Latin texts show. That 1861 translation is in the public domain in the
+  United States by publication date; Triptych claims no exclusive right in the
+  wording and does not offer it under CC BY 4.0. It is a nineteenth-century lay
+  hand missal, a century older than the reform, and it is never presented as the
+  2002 Missal's text.
+
+  Nothing on either route is an approved liturgical translation, nothing on
+  either is derived from ICEL's, and nothing in the file may be used for
+  recitation; and
 - the English orations recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
   transcription of the same book vendored at
@@ -158,7 +178,10 @@ In particular:
   registered as a remote artifact of that same edition and is not vendored:
   those exact bytes are a Google-produced derivative carrying Google's own
   front matter, no distribution grant for it was established, and the record
-  keeps its rights status unresolved.
+  keeps its rights status unresolved. The same 1861 book is also quoted, on the
+  same public-domain basis, by the 56 antecedent entries of the postconciliar
+  file described in the bullet above; the rights position is identical and only
+  the relation to the prayer differs.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution
