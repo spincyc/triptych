@@ -1670,10 +1670,16 @@ edition, source bindings and reception matrices, installed reviewed PDFs,
 catalog links, and provider-qualified release records. This decision changes no
 other 1962 identity and authorizes no material revision of a Claude publication.
 
-**In progress.** The guidance boundary and fail-closed promise are recorded.
-Independent research lanes are checking the controlling 1962 formulary, every
-appointed passage in full context, direct Greek and Latin patristic exegesis,
-medieval and later saintly reception, oration history, Catholic doctrinal
-controls, page-2 historical dossiers, notable later reuses, interpretive
-precedent searches, and provider-neutral source-library opportunities. No GPT
-publication artifact has yet been represented as complete.
+**Complete.** The three canonical GPT leaves, their mechanically derived
+synthesis companions, and their web editions were independently content-audited,
+component-checked, built, and visually inspected page by page before the six
+reviewed PDFs and three web editions were installed. The source library now
+includes reusable checked records for Gregory the Great on Mark 7, Bonaventure
+on Wisdom 16, Honorius's relevant whole-proper reception, Anthony of Padua's
+critical Latin sermon text, and the official NABRE introductions and notes used
+by the guides. Source, inventory, family, catalogue, web, metadata, release, and
+deployment gates passed on the integrated tree. GitHub Pages run `32446141366`
+then completed successfully, and the live catalog, all three GPT Reader routes,
+and all three full-PDF routes returned HTTP 200. The outgoing range made no
+material change to a Claude publication; the unrelated local `directions.md`
+remained untracked and outside both commits and deployment.
