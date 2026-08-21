@@ -25,12 +25,68 @@ lesson the propers side learned expensively: a hand-typed second copy of an
 artifact drifted from it at 45 loci, and every error the site served sat inside
 those 45.
 
-Where a rite has no transcribable text at all --- the postconciliar one, whose
-English is ICEL's and whose Latin editio typica this project has established no
-distribution basis for --- the inventory carries the element skeleton itself,
-with each element's received Latin incipit as its identity and an `absent` key
-naming the reason. An incipit is a reference, and a reference is a fact. The
-prayer is not reproduced.
+Where a rite has no transcribable text held here --- the postconciliar one,
+whose approved English is ICEL's and whose Latin editio typica this project does
+not hold --- the inventory carries the element skeleton itself, with each
+element's received Latin incipit as its identity and an `absent` key naming the
+reason. An incipit is a reference, and a reference is a fact. The prayer is not
+reproduced.
+
+Those reasons are not one reason, and the Latin side of that file now names six
+rather than one: the reform's own new matter, which is the Holy See's and is
+withheld; an ancient text whose public-domain antecedent this project holds and
+has not yet carried; an ancient text no witness here prints at all; an element
+whose extent spans retained and changed matter together; the Roman Canon, which
+is modelled as one span and must be split before any of it is reachable; and the
+rubric or propers slot that has no words in any book. One key over all of them
+said a rights refusal where no rightsholder had refused anything.
+
+Two languages, one rule, and the relation that keeps them honest
+---------------------------------------------------------------
+An element of an inventory-declared section may name a text in either language,
+and `english` and `latin` are the same object under two names: a witness, an
+artifact that witness lists, one or more of that artifact's elements, and the
+column they stand in. `side_text` resolves both, once, so that the two sides
+cannot drift into two rules --- which is exactly what had already happened
+between `from_artifact` and `from_inventory`, and is why the postconciliar Latin
+could not be reached at all however much of it this project held.
+
+The second language is not a second column of one book. The 1962 frame joins two
+facing columns of ONE printing, and `from_artifact` may therefore assume a shared
+key space and a shared edition. Here the English is the ecumenical text of 1998
+and the Latin, where any is carried, is an 1861 Philadelphia lay printing's
+facing column --- a different book, a different rightsholder, a different
+century, joined element by element because the older book prints the ANCIENT
+prayer the postconciliar Missal received, and for no other reason.
+
+That difference is a claim about identity, and an unlabelled claim is the failure
+this layer exists to prevent. A reader looking at a page headed `Missale Romanum,
+editio typica tertia` and seeing Latin under an element will take it for that
+book's Latin unless told otherwise AT THAT ELEMENT. So a block that draws on a
+book other than the one the frame names must declare `relation = "antecedent"`,
+and then two further things are required of it and refused without:
+
+  `collation`  --- `collated` where this repository holds a finding, cited, that
+                   states the relationship between this element's text and the
+                   controlling edition's; `uncollated` where it does not. Both
+                   may be carried and they must not look the same. The propers
+                   side learned the cost of running them together.
+  `note`       --- one paragraph, per element, carried onto the translation row
+                   and therefore beside the words rather than at the foot of a
+                   page: whose words these are, at which leaf and printed page,
+                   which accidents of that printing they carry, and the sentence
+                   that the controlling edition's text is not held here and this
+                   is not it. A relation nobody can check is a claim nobody made.
+
+`collation = "collated"` additionally requires `collation_finding`, a citation to
+the tracked finding. Without it the grade is an assertion, and the whole point of
+having two grades is that one of them is not.
+
+What is NOT modelled here, deliberately: the witness's own spelling is never
+normalised toward the target's. The 1861 column prints `justum`, `coelis`,
+`Jesu`, the ae- and oe-ligatures, and its own misprints --- `nodie` for `hodie`
+at In spiritu humilitatis. Normalising them would manufacture a witness to a book
+nobody opened; the note names them instead.
 
 The third rights state
 ----------------------
@@ -183,7 +239,7 @@ EXAMPLES = {
             (
                 "postconciliar: 48 elements",
                 "  en  edition.english-language-liturgical-consultation.praying-together.1998  9 elements  licensed-free",
-                "  absent: editio-typica 48, icel 39",
+                "  absent: antecedent-held-not-carried 14, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 39, no-antecedent-witness 2, not-a-text 12",
             ),
             "read-only: what each witness reaches, and what is absent under which recorded reason",
         ),
@@ -265,6 +321,35 @@ LANGUAGES = (
 )
 
 ABSENT_SIDES = tuple(one["absent"] for one in LANGUAGES)
+
+# The inventory table an element names its text in, per language. It is derived
+# from LANGUAGES rather than written out again, and deliberately: `english` and
+# `latin` name the two sides of ONE fact --- which text, and if it is missing,
+# why --- so the block a text arrives in and the side its absence is recorded on
+# cannot be given different names and drift apart. One name per language and no
+# more: a general `texts = [...]` array keyed by arbitrary language would invite
+# a third language that the two-sided `absent` table above has no reason to
+# offer for, and an element could then carry words nothing could say the absence
+# of.
+SIDE_BLOCKS = {one["lang"]: one["absent"] for one in LANGUAGES}
+
+# What an element's use of a book is, and what has been established about it.
+# Two fields because they are two facts, and collapsing them is how a page comes
+# to say `this is the Missal's Latin` on the strength of a resemblance.
+#
+#   relation  own         the witness IS the edition this frame declares
+#             antecedent  the witness prints an older text this frame's book
+#                         received; the frame's own edition is not held here
+#   collation collated    a finding in this repository states the relationship
+#                         between this element's text and the controlling
+#                         edition, and `collation_finding` cites it
+#             uncollated  no such finding; the note must say so in those words
+#
+# `relation` absent means `own`, so the 1962 file needs no back-fill and the
+# facing-column join it makes is unchanged.
+RELATIONS = ("own", "antecedent")
+COLLATIONS = ("collated", "uncollated")
+NEEDS_RELATION_NOTE = ("antecedent",)
 
 
 class SourceError(ValueError):
@@ -703,18 +788,140 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
     return elements
 
 
-def artifact_text(library: dict, artifact_id: str, element: str, name: str) -> str:
+def artifact_text(library: dict, artifact_id: str, element: str, name: str,
+                  column: str = "text") -> str:
+    """One artifact element's words, out of the column that holds them.
+
+    The column is named because the library does not use one name. The ELLC
+    common texts carry `text`; the 1861 facing-column artifacts carry `latin`,
+    beside the `seq`, `part`, `printed_page`, `ia_leaf` and `notes` that make
+    the row checkable against the leaf. Guessing `text` on those raised nothing
+    useful --- it raised KeyError from inside a dict comprehension --- so the
+    column is declared by the block that draws on the artifact and refused here
+    when the artifact does not have it.
+
+    An empty cell is refused rather than joined. Absence is carried by NOT
+    having a row, so an empty one is a row that should not exist, and letting it
+    through would turn a transcription gap into a silent blank under a heading
+    that names a missal.
+    """
     record = library.get(artifact_id)
     if record is None:
         raise SourceError(f"{name}: unknown artifact {artifact_id}")
-    lines = [
-        row["text"]
-        for row in payload_rows(record)
-        if (row.get("element_key") or "").strip() == element
-    ]
+    lines = []
+    for row in payload_rows(record):
+        if (row.get("element_key") or "").strip() != element:
+            continue
+        if column not in row:
+            raise SourceError(
+                f"{name}: {artifact_id} has no column {column!r}; it carries "
+                f"{', '.join(sorted(one for one in row if one))}"
+            )
+        line = (row[column] or "").strip()
+        if not line:
+            raise SourceError(
+                f"{name}: {artifact_id} row {element!r} carries nothing in "
+                f"{column!r}; an absence is stated once and an empty cell states it nowhere"
+            )
+        lines.append(line)
     if not lines:
         raise SourceError(f"{name}: {artifact_id} holds no element {element!r}")
     return "\n".join(lines)
+
+
+def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
+    """What this element is doing with that book, and what has been established.
+
+    Declared per element and never on the witness, because it is a relation
+    between two texts and not a property of a printing --- there is no
+    antecedent edition of anything. The propers file records what happened when
+    the two were run together into one invented witness id: it resolved nowhere,
+    and 63 translations served under a bare dotted id with no label and no
+    caution.
+    """
+    relation = block.get("relation")
+    if relation is None:
+        return {}
+    if relation not in RELATIONS:
+        raise SourceError(
+            f"{name}: element {key} declares relation {relation!r} for {lang}; "
+            f"one of {', '.join(RELATIONS)} is required"
+        )
+    if relation not in NEEDS_RELATION_NOTE:
+        return {"relation": relation}
+    collation = block.get("collation")
+    if collation not in COLLATIONS:
+        raise SourceError(
+            f"{name}: element {key} is {relation} for {lang} and declares "
+            f"collation {collation!r}; one of {', '.join(COLLATIONS)} is required, "
+            "because an established identity and an unestablished one must not look the same"
+        )
+    note = (block.get("note") or "").strip()
+    if not note:
+        raise SourceError(
+            f"{name}: element {key} is {relation} for {lang} and states no note; "
+            "a relation nobody can check is a claim nobody made"
+        )
+    out = {"relation": relation, "collation": collation, "note": note}
+    finding = (block.get("collation_finding") or "").strip()
+    if collation == "collated":
+        if not finding:
+            raise SourceError(
+                f"{name}: element {key} claims a collated identity for {lang} and "
+                "cites no finding; the grade would be an assertion, which is the "
+                "one thing the other grade exists to be distinguished from"
+            )
+        out["collation_finding"] = finding
+    elif finding:
+        raise SourceError(
+            f"{name}: element {key} is uncollated for {lang} and cites "
+            f"{finding!r}; a citation on an uncollated row invites the reader to "
+            "read it as the collation that was not made"
+        )
+    return out
+
+
+def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
+              key: str, name: str) -> dict | None:
+    """One element's text in one language, from whichever edition holds it.
+
+    Resolved identically for both languages. What differs between them is
+    declared in the block --- the witness, the artifact, which of its elements,
+    and the column --- and never inferred from which language is being asked
+    for, so that adding the Latin could not quietly change what the English did.
+    """
+    block = entry.get(SIDE_BLOCKS[lang])
+    if not block:
+        return None
+    witness_id = block.get("witness")
+    witness = witnesses.get((witness_id, lang))
+    if witness is None:
+        raise SourceError(
+            f"{name}: element {key} names undeclared witness {witness_id!r} for {lang}"
+        )
+    artifact_id = block.get("artifact")
+    if artifact_id not in (witness.get("artifacts") or []):
+        raise SourceError(
+            f"{name}: element {key} draws on {artifact_id}, which witness "
+            f"{witness_id} does not list for {lang}; the rights check would not "
+            "have covered it"
+        )
+    # A list, because the granularity of a book is not the granularity of an
+    # element. The Missal sets the Creed as one text where the 1861 sets it as
+    # three, and the join has to be stated in the file rather than worked out by
+    # anything downstream.
+    named = block.get("elements") or ([block["element"]] if block.get("element") else [])
+    if not named:
+        raise SourceError(f"{name}: element {key} names no artifact element for {lang}")
+    column = block.get("column") or "text"
+    return {
+        "lang": lang,
+        "source_id": witness_id,
+        "rights": witness["rights"],
+        "text": "\n".join(
+            artifact_text(library, artifact_id, one, name, column) for one in named
+        ),
+    } | relation_of(block, key, lang, name)
 
 
 def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict,
@@ -738,36 +945,32 @@ def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict
         if variant is not None and variant not in options:
             raise SourceError(f"{name}: element {key} names option {variant!r}, which no variant group offers")
 
-        translations = None
-        english = entry.get("english")
-        if english:
-            witness_id = english.get("witness")
-            witness = witnesses.get((witness_id, "en"))
-            if witness is None:
-                raise SourceError(f"{name}: element {key} names undeclared witness {witness_id!r}")
-            artifact_id = english.get("artifact")
-            if artifact_id not in (witness.get("artifacts") or []):
-                raise SourceError(
-                    f"{name}: element {key} draws on {artifact_id}, which witness "
-                    f"{witness_id} does not list"
-                )
-            translations = [
-                {
-                    "lang": witness["lang"],
-                    "source_id": witness_id,
-                    "rights": witness["rights"],
-                    "text": artifact_text(library, artifact_id, english["element"], name),
-                }
-            ]
+        held = [
+            row
+            for row in (
+                side_text(entry, language["lang"], witnesses, library, key, name)
+                for language in LANGUAGES
+            )
+            if row
+        ]
+        translations = held or None
 
         absent = absent_pair(entry, section, absences, key, name)
-        if translations is not None:
-            absent["english"] = None
-        elif absent["english"] is None:
-            raise SourceError(
-                f"{name}: element {key} carries no text and names no absence; "
-                "a silent gap is the one thing this layer must never emit"
-            )
+        # Per language, not per element. The refusal below used to be checked
+        # for English alone, which was right while English was the only side an
+        # element could carry: an element with a Latin text and no English and
+        # no reason would have passed it silently, and a silent gap under a
+        # heading naming a missal reads as a rite that omits the prayer.
+        for language in LANGUAGES:
+            reached = any(row["lang"] == language["lang"] for row in held)
+            if reached:
+                absent[language["absent"]] = None
+            elif absent[language["absent"]] is None:
+                raise SourceError(
+                    f"{name}: element {key} carries no {language['lang']} text and "
+                    "names no absence; a silent gap is the one thing this layer "
+                    "must never emit"
+                )
 
         elements.append(
             {

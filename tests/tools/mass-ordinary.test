@@ -214,10 +214,23 @@ for path in sorted(pathlib.Path(sys.argv[1]).rglob('*.json')):
     for row in (json.loads(path.read_text()).get('absences') or []):
         seen[row['key']]=row.get('kind')
 print(' '.join(k+'='+str(v) for k,v in sorted(seen.items())))" "$sandbox/kinds")"
+# The rights refusal is now scoped to the reform's OWN new matter. The single
+# `editio-typica` key it replaced asserted that refusal over all 48 elements,
+# which was true of twelve and false of thirty-six -- twelve slots holding no
+# words, eight modelled too coarsely to source, and sixteen ancient texts that
+# no rightsholder has refused. A key that says "rights-withheld" must name only
+# what is actually withheld, which is what this asserts.
 case "$kinds" in
-*"editio-typica=rights-withheld"*) ;;
+*"editio-typica-new-matter=rights-withheld"*) ;;
 *)
-	echo "the postconciliar Latin absence is not typed as a rights withholding: $kinds" >&2
+	echo "the reform's new matter is not typed as a rights withholding: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"antecedent-held-not-carried=witness-gap"*) ;;
+*)
+	echo "an unsourced ancient text is not typed as a witness gap: $kinds" >&2
 	exit 1
 	;;
 esac
