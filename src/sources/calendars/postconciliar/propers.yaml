@@ -410,211 +410,313 @@ psalm_numbering_exceptions:
 #              edition. It refuses there and the citation goes unindexed.
 citation_divergences:
 - book: Joel
-  divergence: the Nova Vulgata divides Joel into four chapters where the Vulgate has
-    three; Nova Vulgata 3 is Vulgate 2:28-32 and Nova Vulgata 4 is Vulgate 3
+  divergence: the Nova Vulgata divides Joel into four chapters where the Vulgate has three;
+    Nova Vulgata 3 is Vulgate 2:28-32 and Nova Vulgata 4 is Vulgate 3
   numbering:
     hebrew: resolved
   citations:
-    "Joel 2:12-13": "Joel 2:12-13"
-    "Joel 3:1-5": "Joel 2:28-32"
+    Joel 1:13-15; 2:1-2: Joel 1:13-15; 2:1-2
+    Joel 2:12-13: Joel 2:12-13
+    Joel 2:12-18: Joel 2:12-18
+    Joel 3:1-5: Joel 2:28-32
+    Joel 4:12-21: Joel 3:12-21
 - book: Malachi
-  divergence: the Vulgate divides Malachi into four chapters where the Nova Vulgata
-    has three; Nova Vulgata 3:19-24 is Vulgate 4:1-6
+  divergence: the Vulgate divides Malachi into four chapters where the Nova Vulgata has three;
+    Nova Vulgata 3:19-24 is Vulgate 4:1-6
   numbering:
     hebrew: resolved
   citations:
-    "Malachi 1:14b-2:2b, 8-10": "Malachi 1:14b-2:2b, 8-10"
-    "Malachi 3:1": "Malachi 3:1"
-    "Malachi 3:19-20a": "Malachi 4:1-2a"
+    Malachi 1:14b-2:2b, 8-10: Malachi 1:14b-2:2b, 8-10
+    Malachi 3:1: Malachi 3:1
+    Malachi 3:1-4: Malachi 3:1-4
+    Malachi 3:1-4, 23-24: Malachi 3:1-4; 4:5-6
+    Malachi 3:13-20a: Malachi 3:13-18; 4:1-2a
+    Malachi 3:19-20a: Malachi 4:1-2a
 - book: Isaiah
-  chapters: [9, 64]
-  divergence: the Vulgate opens chapter 9 one verse earlier than the Nova Vulgata
-    and chapter 64 one verse later, so Nova Vulgata 8:23 is Vulgate 9:1, the rest
-    of chapter 9 runs one verse ahead, Nova Vulgata 63:19b is Vulgate 64:1, and the
-    rest of chapter 64 runs one verse behind
+  chapters:
+  - 9
+  - 64
+  divergence: the Vulgate opens chapter 9 one verse earlier than the Nova Vulgata and chapter
+    64 one verse later, so Nova Vulgata 8:23 is Vulgate 9:1, the rest of chapter 9 runs one
+    verse ahead, Nova Vulgata 63:19b is Vulgate 64:1, and the rest of chapter 64 runs one
+    verse behind
   numbering:
     hebrew: resolved
   citations:
-    "Isaiah 8:23b-9:3": "Isaiah 9:1b-4"
-    "Isaiah 9:1": "Isaiah 9:2"
-    "Isaiah 9:1-6": "Isaiah 9:2-7"
-    "Isaiah 9:5": "Isaiah 9:6"
-    "Isaiah 63:16b-17, 19b; 64:2-7": "Isaiah 63:16b-17; 64:1, 3-8"
+    Isaiah 8:23b-9:3: Isaiah 9:1b-4
+    Isaiah 9:1: Isaiah 9:2
+    Isaiah 9:1-6: Isaiah 9:2-7
+    Isaiah 9:5: Isaiah 9:6
+    Isaiah 63:16b-17, 19b; 64:2-7: Isaiah 63:16b-17; 64:1, 3-8
 - book: Micah
-  chapters: [5]
-  divergence: the Vulgate opens chapter 5 one verse earlier than the Nova Vulgata,
-    so Nova Vulgata 4:14 is Vulgate 5:1 and the rest of chapter 5 runs one verse
-    ahead
+  chapters:
+  - 5
+  divergence: the Vulgate opens chapter 5 one verse earlier than the Nova Vulgata, so Nova
+    Vulgata 4:14 is Vulgate 5:1 and the rest of chapter 5 runs one verse ahead
   numbering:
     hebrew: resolved
   citations:
-    "Micah 5:1-4a": "Micah 5:2-5a"
+    Micah 5:1-4a: Micah 5:2-5a
 - book: Acts
-  chapters: [7, 14]
-  divergence: the Vulgate joins the two verses of Stephen's vision into one, so its
-    chapter 7 ends at 59 where the Greek ends at 60 and everything from 7:56 stands
-    one verse lower; and it joins Acts 14:6-7, so from 14:20 its chapter 14 runs one
-    verse behind and ends at 27 where the Greek ends at 28
+  chapters:
+  - 7
+  - 14
+  divergence: the Vulgate joins the two verses of Stephen's vision into one, so its chapter
+    7 ends at 59 where the Greek ends at 60 and everything from 7:56 stands one verse lower;
+    its 7:59 also carries the Greek's 8:1a, Saul consenting to Stephen's death, so a citation
+    running to 8:1a ends inside the Vulgate's chapter 7. And it joins Acts 14:6-7, so from
+    14:8 its chapter 14 runs one verse behind and ends at 27 where the Greek ends at 28. This
+    entry said "from 14:20" until 2026-08-21, which contradicted the join it named in the
+    same sentence; collated against the tracked Douay from the printed openings, the Vulgate's
+    14:6 already ends "and were there preaching the gospel", which is the Greek's 14:7, so
+    the Greek's 14:8 is the Vulgate's 14:7 and the offset holds from 14:8. The resolution
+    recorded before is unaffected, lying wholly past that point
   numbering:
     hebrew: as-cited
   citations:
-    "Acts 6:8-10; 7:54-59": "Acts 6:8-10; 7:54-58"
-    "Acts 7:55-60": "Acts 7:55-59"
-    "Acts 14:21b-27": "Acts 14:20b-26"
+    Acts 6:8-10; 7:54-59: Acts 6:8-10; 7:54-58
+    Acts 7:51-8:1a: Acts 7:51-59
+    Acts 7:55-60: Acts 7:55-59
+    Acts 14:5-18: Acts 14:5-17
+    Acts 14:19-28: Acts 14:18-27
+    Acts 14:21b-27: Acts 14:20b-26
 - book: Esther
-  chapters: [4]
-  divergence: the Nova Vulgata keeps the Greek additions where the Greek has them
-    and numbers Mardochai's prayer at 4:17, while the Vulgate gathers the additions
-    into chapters 10-16 and prints that prayer at 13:8-18; the Vulgate's own Esther
-    4:17 is Mardochai going away to do as Esther asked, which is what this antiphon
-    was resolving to
+  chapters:
+  - 4
+  divergence: the Nova Vulgata keeps the Greek additions where the Greek has them and numbers
+    Mardochai's prayer at 4:17, while the Vulgate gathers the additions into chapters 10-16
+    and prints that prayer at 13:8-18; the Vulgate's own Esther 4:17 is Mardochai going away
+    to do as Esther asked, which is what this antiphon was resolving to
   numbering:
     hebrew: unrecorded
   citations:
-    "Esther 4:17": "Esther 13:9-11"
+    Esther 4:17: Esther 13:9-11
 - book: Exodus
-  chapters: [22]
-  divergence: the Nova Vulgata numbers Exodus 22 from the Hebrew, which opens the
-    chapter at the Vulgate's 21:37, so Nova Vulgata 22:n is Vulgate 22:n+1 through
-    the chapter
+  chapters:
+  - 22
+  divergence: the Nova Vulgata numbers Exodus 22 from the Hebrew, which opens the chapter
+    at the Vulgate's 21:37, so Nova Vulgata 22:n is Vulgate 22:n+1 through the chapter
   numbering:
     hebrew: resolved
   citations:
-    "Exodus 22:20-26": "Exodus 22:21-27"
+    Exodus 22:20-26: Exodus 22:21-27
 - book: Hosea
-  chapters: [2]
-  divergence: the Nova Vulgata numbers Hosea from the Hebrew, which carries the
-    Vulgate's 1:10-11 into chapter 2, so Nova Vulgata 2:n is Vulgate 2:n-2 through
-    the chapter
+  chapters:
+  - 2
+  divergence: the Nova Vulgata numbers Hosea from the Hebrew, which carries the Vulgate's
+    1:10-11 into chapter 2, so Nova Vulgata 2:n is Vulgate 2:n-2 through the chapter
   numbering:
     hebrew: resolved
   citations:
-    "Hosea 2:16b, 17b, 21-22": "Hosea 2:14b, 15b, 19-20"
+    Hosea 2:16, 17b-18, 21-22: Hosea 2:14, 15b-16, 19-20
+    Hosea 2:16b, 17b, 21-22: Hosea 2:14b, 15b, 19-20
 - book: John
-  chapters: [6]
-  divergence: the Vulgate divides John 6:51 in two, so from 6:52 its numbering runs
-    one verse ahead of the Greek to the end of the chapter and the chapter ends at
-    72 where the Greek ends at 71. This section's John 6 citations do not all speak
-    one system, which is why several resolve to themselves. The Communion antiphons
-    reproduce the number the Vulgate prints and are already right, while the
-    readings and Gospel acclamations beside them carry the Lectionary's. The Ordo
-    lectionum does not speak one system here either, and the sanctoral now attests
-    it inside one book on one page-spread. The Alleluia of the Common of Doctors,
-    n. 729,3, is printed at n. 552 as Io 6, 64b et 69b and at n. 567 as Io 6, 63c.
-    68c - the Vulgate's numbering at the first and the Greek's at the second, with
-    different part letters as well. Both were read at 400 dpi on artifact pages 338
-    and 342. Each is recorded as printed; only n. 552 is carried, n. 567 belonging
-    to a joined key this file cannot land
+  chapters:
+  - 6
+  divergence: the Vulgate divides John 6:51 in two, so from 6:52 its numbering runs one verse
+    ahead of the Greek to the end of the chapter and the chapter ends at 72 where the Greek
+    ends at 71. This section's John 6 citations do not all speak one system, which is why
+    several resolve to themselves. The Communion antiphons reproduce the number the Vulgate
+    prints and are already right, while the readings and Gospel acclamations beside them carry
+    the Lectionary's. The Ordo lectionum does not speak one system here either, and the sanctoral
+    now attests it inside one book on one page-spread. The Alleluia of the Common of Doctors,
+    n. 729,3, is printed at n. 552 as Io 6, 64b et 69b and at n. 567 as Io 6, 63c. 68c - the
+    Vulgate's numbering at the first and the Greek's at the second, with different part letters
+    as well. Both were read at 400 dpi on artifact pages 338 and 342. Each is recorded as
+    printed; only n. 552 is carried, n. 567 belonging to a joined key this file cannot land
   numbering:
     hebrew: unrecorded
   citations:
-    "John 6:1-15": "John 6:1-15"
-    "John 6:24-35": "John 6:24-35"
-    "John 6:35": "John 6:35"
-    "John 6:41-51": "John 6:41-52"
-    "John 6:51": "John 6:51-52"
-    "John 6:51-52": "John 6:51-52"
-    "John 6:51-58": "John 6:51-59"
-    "John 6:55": "John 6:55"
-    "John 6:56": "John 6:57"
-    "John 6:57": "John 6:57"
-    "John 6:58": "John 6:58"
-    "John 6:60-69": "John 6:61-70"
-    "John 6:63c, 68c": "John 6:64c, 69"
-    "John 6:64b, 69b": "John 6:64b, 69b"
-    "John 6:68c": "John 6:69"
+    John 6:1-15: John 6:1-15
+    John 6:16-21: John 6:16-21
+    John 6:22-29: John 6:22-29
+    John 6:24-35: John 6:24-35
+    John 6:30-35: John 6:30-35
+    John 6:35: John 6:35
+    John 6:35-40: John 6:35-40
+    John 6:35ab: John 6:35ab
+    John 6:40: John 6:40
+    John 6:41-51: John 6:41-52
+    John 6:44-51: John 6:44-52
+    John 6:51: John 6:51-52
+    John 6:51-52: John 6:51-52
+    John 6:51-58: John 6:51-59
+    John 6:52-59: John 6:53-60
+    John 6:55: John 6:55
+    John 6:56: John 6:57
+    John 6:57: John 6:57
+    John 6:58: John 6:58
+    John 6:60-69: John 6:61-70
+    John 6:63c, 68c: John 6:64c, 69
+    John 6:64b, 69b: John 6:64b, 69b
+    John 6:68c: John 6:69
 - book: Mark
-  chapters: [4, 9]
-  divergence: the Vulgate joins Mark 4:40-41 into one verse, so its chapter 4 ends
-    at 40 where the Greek ends at 41; and it opens chapter 9 at the Transfiguration,
-    which the Greek numbers 9:2, so its whole chapter 9 runs one verse behind and
-    ends at 49 where the Greek ends at 50. The Ordo lectionum does not speak one
-    system here either, and this is not this file's doing - it prints the
-    Transfiguration Gospel at Mc 9, 2-10 in Greek numbering (n. 26, artifact page
-    74) and the Baptism's Alleluia at Cf. Mc 9, 6 in the Vulgate's (n. 21,
-    artifact page 69), and both were read in the page images. Each is recorded as
-    printed, so 9:6 resolves to itself and 9:2-10 is corrected
+  chapters:
+  - 4
+  - 9
+  divergence: the Vulgate joins Mark 4:40-41 into one verse, so its chapter 4 ends at 40 where
+    the Greek ends at 41; and it opens chapter 9 at the Transfiguration, which the Greek numbers
+    9:2, so its whole chapter 9 runs one verse behind and ends at 49 where the Greek ends
+    at 50. The Greek's 9:1 therefore stands in the Vulgate's chapter 8, as its 8:39, and a
+    citation running from chapter 8 to the Greek's 9:1 ends inside the Vulgate's chapter 8.
+    The Ordo lectionum does not speak one system here either, and this is not this file's
+    doing - it prints the Transfiguration Gospel at Mc 9, 2-10 in Greek numbering (n. 26,
+    artifact page 74) and the Baptism's Alleluia at Cf. Mc 9, 6 in the Vulgate's (n. 21, artifact
+    page 69), and both were read in the page images. Each is recorded as printed, so 9:6 resolves
+    to itself and 9:2-10 is corrected
   numbering:
     hebrew: as-cited
   citations:
-    "Mark 4:1-9": "Mark 4:1-9"
-    "Mark 4:1-10, 13-20": "Mark 4:1-10, 13-20"
-    "Mark 4:26-34": "Mark 4:26-34"
-    "Mark 4:35-41": "Mark 4:35-40"
-    "Mark 9:2-10": "Mark 9:1-9"
-    "Mark 9:6": "Mark 9:6"
-    "Mark 9:30-37": "Mark 9:29-36"
-    "Mark 9:38-43, 45, 47-48": "Mark 9:37-42, 44, 46-47"
+    Mark 4:1-9: Mark 4:1-9
+    Mark 4:1-10, 13-20: Mark 4:1-10, 13-20
+    Mark 4:1-20: Mark 4:1-20
+    Mark 4:21-25: Mark 4:21-25
+    Mark 4:26-34: Mark 4:26-34
+    Mark 4:35-41: Mark 4:35-40
+    Mark 8:34-9:1: Mark 8:34-39
+    Mark 9:2-10: Mark 9:1-9
+    Mark 9:2-13: Mark 9:1-12
+    Mark 9:6: Mark 9:6
+    Mark 9:14-29: Mark 9:13-28
+    Mark 9:30-37: Mark 9:29-36
+    Mark 9:34-37: Mark 9:33-36
+    Mark 9:38-40: Mark 9:37-39
+    Mark 9:38-43, 45, 47-48: Mark 9:37-42, 44, 46-47
+    Mark 9:41-50: Mark 9:40-49
 - book: Sirach
-  chapters: [3, 26, 27, 28, 35]
-  divergence: the Vulgate carries verses the Greek does not, so its numbering runs
-    ahead of the Greek by one in chapter 3, by up to five in chapter 26, by one in
-    chapter 27 rising to three across 27-28, and by up to four in chapter 35. This
-    section's Sirach citations used to mix the two systems; they no longer do. The
-    Ordo lectionum prints the LATIN number and glosses the Greek one in parentheses
-    - Sir 15, 16-21 (gr. 15-20) at artifact page 104, Sir 3, 19-21. 30-31 (gr.
-    17-18. 20. 28-29) at 123, Sir 35, 15b-17. 20-22a (gr. 12-14. 16-18) at 136, and
-    Sir 26, 1-4. 16-21 (gr. 1-4. 13-16) at 358 - and every Sirach citation in this
-    file was read there and now carries the Latin number the book prints. Each
-    therefore resolves to itself against a Vulgate-numbered edition. The rows are
-    kept rather than deleted because a Greek-numbered edition still needs a ruling,
-    and the unrecorded stance below refuses rather than guesses. Chapter 26 was
-    added on 2026-08-01 by the sanctoral's fourth reading, at n. 632, Saint Monica,
-    whose gloss says the Latin 16-21 is the Greek 13-16, so a Greek-numbered edition
-    asked for the Latin numbers would return other words entirely and report nothing
+  chapters:
+  - 3
+  - 26
+  - 27
+  - 28
+  - 35
+  divergence: the Vulgate carries verses the Greek does not, so its numbering runs ahead of
+    the Greek by one in chapter 3, by up to five in chapter 26, by one in chapter 27 rising
+    to three across 27-28, and by up to four in chapter 35. This section's Sirach citations
+    used to mix the two systems; they no longer do. The Ordo lectionum prints the LATIN number
+    and glosses the Greek one in parentheses - Sir 15, 16-21 (gr. 15-20) at artifact page
+    104, Sir 3, 19-21. 30-31 (gr. 17-18. 20. 28-29) at 123, Sir 35, 15b-17. 20-22a (gr. 12-14.
+    16-18) at 136, and Sir 26, 1-4. 16-21 (gr. 1-4. 13-16) at 358 - and every Sirach citation
+    in this file was read there and now carries the Latin number the book prints. Each therefore
+    resolves to itself against a Vulgate-numbered edition. The rows are kept rather than deleted
+    because a Greek-numbered edition still needs a ruling, and the unrecorded stance below
+    refuses rather than guesses. Chapter 26 was added on 2026-08-01 by the sanctoral's fourth
+    reading, at n. 632, Saint Monica, whose gloss says the Latin 16-21 is the Greek 13-16,
+    so a Greek-numbered edition asked for the Latin numbers would return other words entirely
+    and report nothing
   numbering:
     hebrew: unrecorded
   citations:
-    "Sirach 3:3-7, 14-17a": "Sirach 3:3-7, 14-17a"
-    "Sirach 3:19-21, 30-31": "Sirach 3:19-21, 30-31"
-    "Sirach 26:1-4, 16-21": "Sirach 26:1-4, 16-21"
-    "Sirach 27:5-8": "Sirach 27:5-8"
-    "Sirach 27:33-28:9": "Sirach 27:33-28:9"
-    "Sirach 35:15b-17, 20-22a": "Sirach 35:15b-17, 20-22a"
+    Sirach 3:3-7, 14-17a: Sirach 3:3-7, 14-17a
+    Sirach 3:19-21, 30-31: Sirach 3:19-21, 30-31
+    Sirach 26:1-4, 16-21: Sirach 26:1-4, 16-21
+    Sirach 27:5-8: Sirach 27:5-8
+    Sirach 27:33-28:9: Sirach 27:33-28:9
+    Sirach 35:1-15: Sirach 35:1-15
+    Sirach 35:15b-17, 20-22a: Sirach 35:15b-17, 20-22a
 - book: 1 Maccabees
-  chapters: [1]
-  divergence: the Vulgate divides the chapter's opening differently and the offset
-    is NOT constant, so no single shift can be written for the book. Collated
-    against the tracked Douay on 2026-08-20 from the printed openings, the Greek
-    1:10-15 is the Vulgate's 1:11-16, 1:41-43 is 1:43-45, 1:54-57 is 1:57-60 and
-    1:62-64 is 1:65-67, the Vulgate's chapter running to 67 where the Greek's runs
-    to 64. Nothing declared this book, so the citation resolved as printed and to
-    other words, which is the failure this list exists to refuse
+  chapters:
+  - 1
+  divergence: the Vulgate divides the chapter's opening differently and the offset is NOT
+    constant, so no single shift can be written for the book. Collated against the tracked
+    Douay on 2026-08-20 from the printed openings, the Greek 1:10-15 is the Vulgate's 1:11-16,
+    1:41-43 is 1:43-45, 1:54-57 is 1:57-60 and 1:62-64 is 1:65-67, the Vulgate's chapter running
+    to 67 where the Greek's runs to 64. Nothing declared this book, so the citation resolved
+    as printed and to other words, which is the failure this list exists to refuse
   numbering:
     hebrew: as-cited
   citations:
-    "1 Maccabees 1:10-15, 41-43, 54-57, 62-64": "1 Maccabees 1:11-16, 43-45, 57-60,
-      65-67"
+    1 Maccabees 1:10-15, 41-43, 54-57, 62-64: 1 Maccabees 1:11-16, 43-45, 57-60, 65-67
 - book: Daniel
-  chapters: [6]
-  divergence: the Hebrew and the Nova Vulgata carry the Vulgate's Daniel 5:31 into
-    chapter 6 as its first verse, so this chapter alone stands one number higher
-    than the Vulgate's throughout. Collated against the tracked Douay on 2026-08-20,
-    the cited 6:12-28 is the Vulgate's 6:11-27. Daniel 1, 2, 3, 5 and 7, which this
-    calendar also cites, were read the same way and align; only chapter 6 shifts,
-    which is why the locus is declared by chapter and not by book. Nothing declared
-    it, the Vulgate's chapter runs to 28, and so the citation resolved as printed
-    and to other words
+  chapters:
+  - 6
+  divergence: the Hebrew and the Nova Vulgata carry the Vulgate's Daniel 5:31 into chapter
+    6 as its first verse, so this chapter alone stands one number higher than the Vulgate's
+    throughout. Collated against the tracked Douay on 2026-08-20, the cited 6:12-28 is the
+    Vulgate's 6:11-27. Daniel 1, 2, 3, 5 and 7, which this calendar also cites, were read
+    the same way and align; only chapter 6 shifts, which is why the locus is declared by chapter
+    and not by book. Nothing declared it, the Vulgate's chapter runs to 28, and so the citation
+    resolved as printed and to other words
   numbering:
     hebrew: as-cited
   citations:
-    "Daniel 6:12-28": "Daniel 6:11-27"
+    Daniel 6:12-28: Daniel 6:11-27
 - book: Wisdom
-  chapters: [6, 11]
-  divergence: the Vulgate carries a verse the Greek does not at the head of both
-    passages, so Greek 6:n is Vulgate 6:n+1 and Greek 11:n is Vulgate 11:n+1 from
-    11:22, to the end of chapter 11. Chapter 6's offset was recorded here as
-    holding "from 6:12", which was the narrowest reading the citations then
-    carried; collated against the tracked Douay on 2026-08-20 from the printed
-    openings, the Greek 6:1 is already the Vulgate's 6:2, so the extra verse
-    stands at the head of the chapter and the offset holds from 6:1. The two
-    resolutions below are unaffected, both being +1 either way
+  chapters:
+  - 6
+  - 11
+  divergence: the Vulgate carries a verse the Greek does not at the head of both passages,
+    so Greek 6:n is Vulgate 6:n+1 and Greek 11:n is Vulgate 11:n+1 from 11:22, to the end
+    of chapter 11. Chapter 6's offset was recorded here as holding "from 6:12", which was
+    the narrowest reading the citations then carried; collated against the tracked Douay on
+    2026-08-20 from the printed openings, the Greek 6:1 is already the Vulgate's 6:2, so the
+    extra verse stands at the head of the chapter and the offset holds from 6:1. The two resolutions
+    below are unaffected, both being +1 either way
   numbering:
     hebrew: as-cited
   citations:
-    "Wisdom 6:1-11": "Wisdom 6:2-12"
-    "Wisdom 6:12-16": "Wisdom 6:13-17"
-    "Wisdom 11:22-12:2": "Wisdom 11:23-12:2"
+    Wisdom 6:1-11: Wisdom 6:2-12
+    Wisdom 6:12-16: Wisdom 6:13-17
+    Wisdom 11:22-12:2: Wisdom 11:23-12:2
+- book: Exodus
+  chapters:
+  - 40
+  divergence: the Vulgate compresses the Hebrew's 40:13-15, Aaron's vesting and the clothing
+    and anointing of his sons, into its own 40:13, so Hebrew 40:n is Vulgate 40:n-2 from 40:16
+    to the end and the chapter ends at 36 where the Hebrew ends at 38. This is a different
+    displacement from the one chapter 22 carries and stands on its own locus because the two
+    want opposite rulings for a Hebrew-numbered edition
+  numbering:
+    hebrew: as-cited
+  citations:
+    Exodus 40:16-21, 34-38: Exodus 40:14-19, 32-36
+- book: Genesis
+  chapters:
+  - 49
+  - 50
+  divergence: the Vulgate gives the Hebrew's 49:32, the purchase of the field and the cave
+    from the children of Heth, no verse of its own, absorbing it into its 49:30, so the Hebrew's
+    49:29-31 are the Vulgate's 49:29-31, the Hebrew's 49:32 has no separate number there,
+    and the Hebrew's 49:33 is the Vulgate's 49:32; the chapter ends at 32 where the Hebrew
+    ends at 33. In chapter 50 the Vulgate carries the whole of the Hebrew's 50:23 inside its
+    own 50:22, so the Hebrew's 50:n is the Vulgate's 50:n-1 from 50:24 and that chapter ends
+    at 25 where the Hebrew ends at 26. Genesis 49:1-31 and 50:1-22 align verse for verse,
+    which is why the other citation below resolves to itself
+  numbering:
+    hebrew: as-cited
+  citations:
+    Genesis 49:2, 8-10: Genesis 49:2, 8-10
+    Genesis 49:29-32; 50:15-26a: Genesis 49:29-31; 50:15-25a
+- book: Matthew
+  chapters:
+  - 17
+  divergence: the Vulgate joins Matthew 17:14-15 into one verse, the father kneeling and his
+    plea for his lunatic son standing together as its 17:14, so from 17:15 its chapter 17
+    runs one verse behind the Greek and ends at 26 where the Greek ends at 27. Verses 1-14
+    align, which is why four of the six citations below resolve to themselves
+  numbering:
+    hebrew: as-cited
+  citations:
+    Matthew 17:1-9: Matthew 17:1-9
+    Matthew 17:5: Matthew 17:5
+    Matthew 17:5c: Matthew 17:5c
+    Matthew 17:10-13: Matthew 17:10-13
+    Matthew 17:14-20: Matthew 17:14-19
+    Matthew 17:22-27: Matthew 17:21-26
+- book: Zechariah
+  chapters:
+  - 2
+  divergence: the Nova Vulgata numbers Zechariah from the Hebrew, which opens chapter 2 at
+    the vision of the four horns; the Vulgate prints that vision as 1:18-21 and opens its
+    chapter 2 at the man with the measuring line, so Nova Vulgata 2:n is Vulgate 2:n-4 through
+    the chapter and the chapter ends at 13 where the Nova Vulgata ends at 17. The tracked
+    English Bibles keep the Vulgate's division here, printing the four horns at 1:18-21 and
+    a chapter 2 of thirteen verses, so the resolution corrects them too
+  numbering:
+    hebrew: resolved
+  citations:
+    Zechariah 2:5-9, 14-15a: Zechariah 2:1-5, 10-11a
+    Zechariah 2:14-17: Zechariah 2:10-13
 proper_order_exceptions:
 - mass: easter-vigil
   reason: the Vigil prints seven Old Testament readings, each followed by its own
@@ -13540,11 +13642,67 @@ sections:
         id rather than one of the postconciliar registry's own. Nothing of its formulary
         has been read.
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Entrance Antiphon
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 1, verse: 14}
+            end: {chapter: 1, verse: 14}
+          ref: Acts 1:14
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Genesis
+          ranges:
+          - begin: {chapter: 3, verse: 9}
+            end: {chapter: 3, verse: 15}
+          - begin: {chapter: 3, verse: 20}
+            end: {chapter: 3, verse: 20}
+          ref: Genesis 3:9-15, 20
+      - name: First Reading (alternative)
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 1, verse: 12}
+            end: {chapter: 1, verse: 14}
+          ref: Acts 1:12-14
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 87, verse: 1}
+            end: {chapter: 87, verse: 2}
+          - begin: {chapter: 87, verse: 3}
+            end: {chapter: 87, verse: 3}
+          - begin: {chapter: 87, verse: 5}
+            end: {chapter: 87, verse: 5}
+          - begin: {chapter: 87, verse: 6}
+            end: {chapter: 87, verse: 7}
+          ref: Psalm 87:1-2, 3, 5, 6-7
+        notes: 'Both witnesses print the second stanza as one group, ''3 and 5'' / ''3 et 5''; the extents are
+          unchanged.'
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 19, verse: 25}
+            end: {chapter: 19, verse: 34}
+          ref: John 19:25-34
+      - name: Communion Antiphon
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 2, verse: 1}
+            end: {chapter: 2, verse: 1}
+          - begin: {chapter: 2, verse: 11}
+            end: {chapter: 2, verse: 11}
+          ref: John 2:1, 11
+        notes: 'The Missal prints a second Communion Antiphon, John 19:26-27, as an alternative.'
     - key: ot-2
       name: Second Sunday in Ordinary Time
       registry: pc-s28
@@ -37939,9 +38097,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: visitation-blessed-virgin-mary
       name: The Visitation of the Blessed Virgin Mary
       registry: pc-05-31
@@ -38584,9 +38741,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
   christological:
     kind: christological
     label: Christological
@@ -40492,11 +40648,46 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Wisdom
+          ranges:
+          - begin: {chapter: 7, verse: 7}
+            end: {chapter: 7, verse: 10}
+          - begin: {chapter: 7, verse: 15}
+            end: {chapter: 7, verse: 16}
+          ref: Wisdom 7:7-10, 15-16
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 37, verse: 3}
+            end: {chapter: 37, verse: 4}
+          - begin: {chapter: 37, verse: 5}
+            end: {chapter: 37, verse: 6}
+          - begin: {chapter: 37, verse: 30}
+            end: {chapter: 37, verse: 31}
+          ref: Psalm 37:3-4, 5-6, 30-31
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 6, verse: 63, part: c}
+            end: {chapter: 6, verse: 63, part: c}
+          - begin: {chapter: 6, verse: 68, part: c}
+            end: {chapter: 6, verse: 68, part: c}
+          ref: John 6:63c, 68c
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 7, verse: 21}
+            end: {chapter: 7, verse: 29}
+          ref: Matthew 7:21-29
     - key: saint-casimir
       name: Saint Casimir
       registry: pc-03-04
@@ -41950,11 +42141,44 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Acts
+          ranges:
+          - begin: {chapter: 13, verse: 46}
+            end: {chapter: 13, verse: 49}
+          ref: Acts 13:46-49
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 1, part: b}
+            end: {chapter: 23, verse: 3}
+          - begin: {chapter: 23, verse: 4}
+            end: {chapter: 23, verse: 4}
+          - begin: {chapter: 23, verse: 5}
+            end: {chapter: 23, verse: 5}
+          - begin: {chapter: 23, verse: 6}
+            end: {chapter: 23, verse: 6}
+          ref: Psalm 23:1b-3, 4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 16}
+            end: {chapter: 5, verse: 16}
+          ref: Matthew 5:16
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 13}
+            end: {chapter: 5, verse: 19}
+          ref: Matthew 5:13-19
     - key: saints-nereus-achilleus-martyrs
       name: Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr
       registry: pc-05-12
@@ -42233,9 +42457,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-rita-cascia-religious
       name: Saint Rita of Cascia, Religious
       registry: pc-05-22
@@ -42245,9 +42468,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-bede-venerable-priest-doctor-church
       name: Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory
         VII, Pope; Saint Mary Magdalene de' Pazzi, Virgin
@@ -42518,11 +42740,46 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 9, verse: 16}
+            end: {chapter: 9, verse: 19}
+          - begin: {chapter: 9, verse: 22}
+            end: {chapter: 9, verse: 23}
+          ref: 1 Corinthians 9:16-19, 22-23
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 96, verse: 1}
+            end: {chapter: 96, verse: 2, part: a}
+          - begin: {chapter: 96, verse: 2, part: b}
+            end: {chapter: 96, verse: 3}
+          - begin: {chapter: 96, verse: 7}
+            end: {chapter: 96, verse: 8, part: a}
+          - begin: {chapter: 96, verse: 10}
+            end: {chapter: 96, verse: 10}
+          ref: Psalm 96:1-2a, 2b-3, 7-8a, 10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 1, verse: 17}
+            end: {chapter: 1, verse: 17}
+          ref: Mark 1:17
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 16, verse: 13}
+            end: {chapter: 16, verse: 19}
+          ref: Matthew 16:13-19
     - key: saint-justin-martyr
       name: Saint Justin, Martyr
       registry: pc-06-01
@@ -43782,9 +44039,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-benedict-abbot
       name: Saint Benedict, Abbot
       registry: pc-07-11
@@ -44247,9 +44503,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-james-apostle
       name: Saint James, Apostle
       registry: pc-07-25
@@ -44861,9 +45116,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-lawrence-deacon-martyr
       name: Saint Lawrence, Deacon and Martyr
       registry: pc-08-10
@@ -45099,11 +45353,24 @@ sections:
       rank: Memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Entrance Antiphon
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 34}
+            end: {chapter: 25, verse: 34}
+          - begin: {chapter: 25, verse: 40}
+            end: {chapter: 25, verse: 40}
+          ref: Matthew 25:34, 40
+      - name: Communion Antiphon
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 13}
+            end: {chapter: 15, verse: 13}
+          ref: John 15:13
     - key: saint-stephen-hungary
       name: Saint Stephen of Hungary
       registry: pc-08-16
@@ -45739,11 +46006,54 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 58, verse: 6}
+            end: {chapter: 58, verse: 11}
+          ref: Isaiah 58:6-11
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 2}
+            end: {chapter: 34, verse: 3}
+          - begin: {chapter: 34, verse: 4}
+            end: {chapter: 34, verse: 5}
+          - begin: {chapter: 34, verse: 6}
+            end: {chapter: 34, verse: 7}
+          - begin: {chapter: 34, verse: 8}
+            end: {chapter: 34, verse: 9}
+          - begin: {chapter: 34, verse: 10}
+            end: {chapter: 34, verse: 11}
+          ref: Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 25}
+          ref: Matthew 11:25
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 31}
+            end: {chapter: 25, verse: 46}
+          ref: Matthew 25:31-46
+      - name: Gospel (shorter form)
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 25, verse: 31}
+            end: {chapter: 25, verse: 40}
+          ref: Matthew 25:31-40
     - key: saint-peter-claver-priest
       name: Saint Peter Claver, Priest
       registry: pc-09-09
@@ -46056,11 +46366,14 @@ sections:
       rank: Memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Communion Antiphon
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 10, verse: 32}
+            end: {chapter: 10, verse: 32}
+          ref: Matthew 10:32
     - key: saint-matthew-apostle-evangelist
       name: Saint Matthew, Apostle and Evangelist
       registry: pc-09-21
@@ -46117,9 +46430,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saints-cosmas-damian-martyrs
       name: Saints Cosmas and Damian, Martyrs
       registry: pc-09-26
@@ -46565,11 +46877,46 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 3, verse: 14}
+            end: {chapter: 3, verse: 19}
+          ref: Ephesians 3:14-19
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 103, verse: 1}
+            end: {chapter: 103, verse: 2}
+          - begin: {chapter: 103, verse: 3}
+            end: {chapter: 103, verse: 4}
+          - begin: {chapter: 103, verse: 8}
+            end: {chapter: 103, verse: 9}
+          - begin: {chapter: 103, verse: 13}
+            end: {chapter: 103, verse: 14}
+          - begin: {chapter: 103, verse: 17}
+            end: {chapter: 103, verse: 18, part: a}
+          ref: Psalm 103:1-2, 3-4, 8-9, 13-14, 17-18a
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 28}
+            end: {chapter: 11, verse: 28}
+          ref: Matthew 11:28
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 30}
+          ref: Matthew 11:25-30
     - key: saint-bruno-priest
       name: Saint Bruno, Priest
       registry: pc-10-06
@@ -46725,11 +47072,44 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Ezekiel
+          ranges:
+          - begin: {chapter: 34, verse: 11}
+            end: {chapter: 34, verse: 16}
+          ref: Ezekiel 34:11-16
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 3}
+          - begin: {chapter: 23, verse: 4}
+            end: {chapter: 23, verse: 4}
+          - begin: {chapter: 23, verse: 5}
+            end: {chapter: 23, verse: 5}
+          - begin: {chapter: 23, verse: 6}
+            end: {chapter: 23, verse: 6}
+          ref: Psalm 23:1-3, 4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 14}
+            end: {chapter: 10, verse: 14}
+          ref: John 10:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 21, verse: 15}
+            end: {chapter: 21, verse: 17}
+          ref: John 21:15-17
     - key: saint-callistus-i-pope-martyr
       name: Saint Callistus I, Pope and Martyr
       registry: pc-10-14
@@ -47077,11 +47457,44 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 52, verse: 7}
+            end: {chapter: 52, verse: 10}
+          ref: Isaiah 52:7-10
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 96, verse: 1}
+            end: {chapter: 96, verse: 2, part: a}
+          - begin: {chapter: 96, verse: 2, part: b}
+            end: {chapter: 96, verse: 3}
+          - begin: {chapter: 96, verse: 7}
+            end: {chapter: 96, verse: 8, part: a}
+          - begin: {chapter: 96, verse: 10}
+            end: {chapter: 96, verse: 10}
+          ref: Psalm 96:1-2a, 2b-3, 7-8a, 10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 10, verse: 14}
+            end: {chapter: 10, verse: 14}
+          ref: John 10:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 21, verse: 15}
+            end: {chapter: 21, verse: 17}
+          ref: John 21:15-17
     - key: saint-john-capistrano-priest
       name: Saint John of Capistrano, Priest
       registry: pc-10-23
@@ -47329,23 +47742,68 @@ sections:
       - name: First formulary
       forms:
       - name: First formulary
+      forms:
+      - name: First formulary
         propers:
-        - name: Placeholder
-          source: composed
-          text: |
-            This entry is a placeholder pending formula migration and source verification.
+        - name: Entrance Antiphon
+          source: scripture
+          verses:
+          - book: 1 Thessalonians
+            ranges:
+            - begin: {chapter: 4, verse: 14}
+              end: {chapter: 4, verse: 14}
+            ref: 1 Thessalonians 4:14
+          - book: 1 Corinthians
+            ranges:
+            - begin: {chapter: 15, verse: 22}
+              end: {chapter: 15, verse: 22}
+            ref: 1 Corinthians 15:22
+        - name: Communion Antiphon
+          source: scripture
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 11, verse: 25}
+              end: {chapter: 11, verse: 26}
+            ref: John 11:25-26
       - name: Second formulary
         propers:
-        - name: Placeholder
-          source: composed
-          text: |
-            This entry is a placeholder pending formula migration and source verification.
+        - name: Entrance Antiphon
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 35}
+            ref: 4 Esdras 2:34-35
+        - name: Communion Antiphon
+          source: scripture
+          verses:
+          - book: 4 Esdras
+            ranges:
+            - begin: {chapter: 2, verse: 35}
+              end: {chapter: 2, verse: 35}
+            - begin: {chapter: 2, verse: 34}
+              end: {chapter: 2, verse: 34}
+            ref: 4 Esdras 2:35, 34
       - name: Third formulary
         propers:
-        - name: Placeholder
-          source: composed
-          text: |
-            This entry is a placeholder pending formula migration and source verification.
+        - name: Entrance Antiphon
+          source: scripture
+          verses:
+          - book: Romans
+            ranges:
+            - begin: {chapter: 8, verse: 11}
+              end: {chapter: 8, verse: 11}
+            ref: Romans 8:11
+        - name: Communion Antiphon
+          source: scripture
+          verses:
+          - book: Philippians
+            ranges:
+            - begin: {chapter: 3, verse: 20}
+              end: {chapter: 3, verse: 21}
+            ref: Philippians 3:20-21
     - key: saint-martin-porres-religious
       name: Saint Martin de Porres, Religious
       registry: pc-11-03
@@ -48062,11 +48520,27 @@ sections:
       rank: Memorial
       kind: sanctoral
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: Entrance Antiphon
+        source: scripture
+        verses:
+        - book: Galatians
+          ranges:
+          - begin: {chapter: 6, verse: 14}
+            end: {chapter: 6, verse: 14}
+          ref: Galatians 6:14
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 1, verse: 18}
+            end: {chapter: 1, verse: 18}
+          ref: 1 Corinthians 1:18
+      - name: Communion Antiphon
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 10}
+            end: {chapter: 5, verse: 10}
+          ref: Matthew 5:10
     - key: saint-catherine-alexandria-virgin-martyr
       name: Saint Catherine of Alexandria, Virgin and Martyr
       registry: pc-11-25
@@ -48076,9 +48550,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-andrew-apostle
       name: Saint Andrew, Apostle
       registry: pc-11-30
@@ -48369,9 +48842,8 @@ sections:
       propers:
       - name: Placeholder
         source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+        text: |
+          This entry is a placeholder pending formula migration and source verification.
     - key: saint-damasus-i-pope
       name: Saint Damasus I, Pope
       registry: pc-12-11
