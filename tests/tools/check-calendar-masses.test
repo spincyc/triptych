@@ -992,7 +992,27 @@ if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
 	exit 1
 fi
 
-for bad in "rights: vibes" "rights: licensed"; do
+# A rightsholder's own standing grant publishes, and publishes on its terms.
+# `permission` is ICEL's case: the reproduction of its promulgated texts on a
+# non-commercial website is granted in advance to anyone, subject to conditions,
+# and the second condition is that the copyright acknowledgment appear with the
+# text. So a permitted translation validates WITH its notice and is refused
+# without one -- publishing bare would be publishing outside the grant claimed.
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: permission
+        source_id: $missal_en
+        notice: "The English translation of The Roman Missal (c) 2010, ICEL."
+        text: "Stir up thy power."
+YAML
+if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "a permitted translation carrying its notice should validate" >&2
+	exit 1
+fi
+
+for bad in "rights: vibes" "rights: licensed" "rights: permission"; do
 	translated <<YAML
 $base
       translations:
