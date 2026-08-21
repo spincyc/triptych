@@ -172,7 +172,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
@@ -239,7 +239,8 @@ EXAMPLES = {
             (
                 "postconciliar: 48 elements",
                 "  en  edition.english-language-liturgical-consultation.praying-together.1998  9 elements  licensed-free",
-                "  absent: antecedent-held-not-carried 14, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 39, no-antecedent-witness 2, not-a-text 12",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  10 elements  public-domain",
+                "  absent: antecedent-held-not-carried 4, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 39, no-antecedent-witness 2, not-a-text 12",
             ),
             "read-only: what each witness reaches, and what is absent under which recorded reason",
         ),
@@ -258,7 +259,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
@@ -267,7 +268,7 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 1 witness, 1 variants, 11 slots; 9 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "wrote 3 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
