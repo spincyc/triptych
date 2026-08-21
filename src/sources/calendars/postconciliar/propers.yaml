@@ -20708,11 +20708,155 @@ sections:
         registry's Sunday spine, which is why it carries a synthetic registry id. Nothing
         of its formulary has been read.
       propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      - name: First Reading
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Deuteronomy
+              ranges:
+              - begin: {chapter: 7, verse: 6}
+                end: {chapter: 7, verse: 11}
+              ref: Deuteronomy 7:6-11
+          'B':
+            verses:
+            - book: Hosea
+              ranges:
+              - begin: {chapter: 11, verse: 1}
+                end: {chapter: 11, verse: 1}
+              - begin: {chapter: 11, verse: 3}
+                end: {chapter: 11, verse: 4}
+              - begin: {chapter: 11, verse: 8, part: c}
+                end: {chapter: 11, verse: 9}
+              ref: Hosea 11:1, 3-4, 8c-9
+          'C':
+            verses:
+            - book: Ezekiel
+              ranges:
+              - begin: {chapter: 34, verse: 11}
+                end: {chapter: 34, verse: 16}
+              ref: Ezekiel 34:11-16
+      - name: Responsorial Psalm
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 103, verse: 1}
+                end: {chapter: 103, verse: 2}
+              - begin: {chapter: 103, verse: 3}
+                end: {chapter: 103, verse: 4}
+              - begin: {chapter: 103, verse: 6}
+                end: {chapter: 103, verse: 7}
+              - begin: {chapter: 103, verse: 8}
+                end: {chapter: 103, verse: 8}
+              - begin: {chapter: 103, verse: 10}
+                end: {chapter: 103, verse: 10}
+              ref: Psalm 103:1-2, 3-4, 6-7, 8, 10
+          'B':
+            verses:
+            - book: Isaiah
+              ranges:
+              - begin: {chapter: 12, verse: 2}
+                end: {chapter: 12, verse: 3}
+              - begin: {chapter: 12, verse: 4, part: bcd}
+                end: {chapter: 12, verse: 4, part: bcd}
+              - begin: {chapter: 12, verse: 5}
+                end: {chapter: 12, verse: 6}
+              ref: Isaiah 12:2-3, 4bcd, 5-6
+          'C':
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 23, verse: 1}
+                end: {chapter: 23, verse: 3, part: a}
+              - begin: {chapter: 23, verse: 3, part: b}
+                end: {chapter: 23, verse: 4}
+              - begin: {chapter: 23, verse: 5}
+                end: {chapter: 23, verse: 5}
+              - begin: {chapter: 23, verse: 6}
+                end: {chapter: 23, verse: 6}
+              ref: Psalm 23:1-3a, 3b-4, 5, 6
+      - name: Second Reading
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: 1 John
+              ranges:
+              - begin: {chapter: 4, verse: 7}
+                end: {chapter: 4, verse: 16}
+              ref: 1 John 4:7-16
+          'B':
+            verses:
+            - book: Ephesians
+              ranges:
+              - begin: {chapter: 3, verse: 8}
+                end: {chapter: 3, verse: 12}
+              - begin: {chapter: 3, verse: 14}
+                end: {chapter: 3, verse: 19}
+              ref: Ephesians 3:8-12, 14-19
+          'C':
+            verses:
+            - book: Romans
+              ranges:
+              - begin: {chapter: 5, verse: 5, part: b}
+                end: {chapter: 5, verse: 11}
+              ref: Romans 5:5b-11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 29, part: ab}
+            end: {chapter: 11, verse: 29, part: ab}
+          ref: Matthew 11:29ab
+        notes: 'The Ordo prints this verse once, at n. 170, and sends Years B and C back to it rather than
+          reprinting it, so this is the one slot of this Mass that does not vary by year.'
+      - name: Gospel Acclamation (alternative)
+        source: scripture
+        cycles:
+          'B':
+            verses:
+            - book: 1 John
+              ranges:
+              - begin: {chapter: 4, verse: 10, part: b}
+                end: {chapter: 4, verse: 10, part: b}
+              ref: 1 John 4:10b
+          'C':
+            verses:
+            - book: John
+              ranges:
+              - begin: {chapter: 10, verse: 14}
+                end: {chapter: 10, verse: 14}
+              ref: John 10:14
+        notes: 'The Ordo prints this under Vel as an alternative to the preceding Gospel Acclamation, in Years B
+          and C only.'
+      - name: Gospel
+        source: scripture
+        cycles:
+          'A':
+            verses:
+            - book: Matthew
+              ranges:
+              - begin: {chapter: 11, verse: 25}
+                end: {chapter: 11, verse: 30}
+              ref: Matthew 11:25-30
+          'B':
+            verses:
+            - book: John
+              ranges:
+              - begin: {chapter: 19, verse: 31}
+                end: {chapter: 19, verse: 37}
+              ref: John 19:31-37
+          'C':
+            verses:
+            - book: Luke
+              ranges:
+              - begin: {chapter: 15, verse: 3}
+                end: {chapter: 15, verse: 7}
+              ref: Luke 15:3-7
     - key: immaculate-heart-blessed-virgin-mary
       name: The Immaculate Heart of the Blessed Virgin Mary
       registry: pc-T-immaculate-heart-blessed-virgin-mary
@@ -38796,16 +38940,253 @@ sections:
           ref: John 3:13-17
     - key: nativity-lord
       name: The Nativity of the Lord
-      registry: pc-12-25
+      registry: 'pc-12-25'
       date: 12-25
       rank: Solemnity
       kind: christological
-      propers:
-      - name: Placeholder
-        source: composed
-        text: 'This entry is a placeholder pending formula migration and source verification.
-
-          '
+      forms:
+      - name: Vigil Mass
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Prayer after Communion
+      - name: Mass during the Night
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Entrance Antiphon
+        - name: Entrance Antiphon (alternative)
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Entrance Antiphon (alternative)
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass during the Night
+            proper: Prayer after Communion
+      - name: Mass at Dawn
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass at Dawn
+            proper: Prayer after Communion
+      - name: Mass during the Day
+        propers:
+        - name: Entrance Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Entrance Antiphon
+        - name: Collect
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Collect
+        - name: First Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: First Reading
+        - name: Responsorial Psalm
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Responsorial Psalm
+        - name: Second Reading
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Second Reading
+        - name: Gospel Acclamation
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Gospel Acclamation
+        - name: Gospel
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Gospel
+        - name: Prayer over the Offerings
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Prayer over the Offerings
+        - name: Communion Antiphon
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Communion Antiphon
+        - name: Prayer after Communion
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Prayer after Communion
+      notes: 'This entry is the one the calendar spine reaches on 25 December and it printed nothing: the index
+        already carries the Nativity''s four Masses in full under the seasonal key nativity, registry
+        pc-s05, while this christological entry, registry pc-12-25, held a placeholder, so the greatest
+        solemnity of the year after Easter rendered no text on its own date. The four formularies are NOT
+        written again here. Every proper below names where its text is printed through takes_from, which
+        src/sources/calendars/README.md makes the only sanctioned way to carry a mass that takes
+        another''s formulary, and which is what stops one day entered twice becoming two copies free to
+        disagree; the underlying question of whether one celebration should hold two entries at all is a
+        maintainer''s and is not decided here. The Lectionary side of the borrowed formularies was
+        collated on this pass against the page images of the Ordo lectionum Missae, editio typica altera
+        1981, artifact internet-archive-scan-pdf-ed4bc14e, read at 200 dpi at artifact pages 65 and 66,
+        printed pages 11 and 12, the day heading verified on those images as 25 December, In Nativitate
+        Domini, with four Masses at nn. 13, 14, 15 and 16 headed in vigilia, in nocte, in aurora and in
+        die: every First Reading, Responsorial Psalm, Second Reading and Gospel that nativity carries
+        agrees with the book, psalm numbering included, and so does the Gospel Acclamation of the Mass
+        during the Night and of the Mass at Dawn. Against Alleluia in the Vigil Mass and in the Mass
+        during the Day the Ordo prints a chant text and no scriptural reference at all, so those two slots
+        hold no citation for this lane to collate and none was taken; what nativity carries in them is
+        that entry''s own record. Two readings the book prints are still absent from nativity - the Ordo
+        prints the Vigil Gospel and the Gospel of the Mass during the Day each in a longer form and a
+        shorter one, and only the longer of each is carried - and that is reported to the entry which owns
+        them rather than added from here. The Ordo also prints, at the foot of n. 13, a rubric permitting
+        the Masses celebrated on the day of the Nativity to take more suitable reading texts from any of
+        the three; it governs which text may be used and not what is appointed, and its wording is not
+        carried. This entry adds no oration and no antiphon: the Missale Romanum 2002 prints them, the
+        Ordo does not, that book is in copyright and is not held here, and whatever nativity carries in
+        those slots is that entry''s own record and is neither restated nor vouched for here. Nothing of
+        the Ordo''s wording - no pericope title, psalm response, acclamation text, rubric or printed
+        heading - is reproduced.'
   sanctoral:
     kind: sanctoral
     label: Saints
