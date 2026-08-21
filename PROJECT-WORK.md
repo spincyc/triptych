@@ -1693,3 +1693,15 @@ grammar rather than organizing the discussion around apology or suspicion,
 and greatly deepen both intra-proper exposition and cross-proper development.
 That superseded public snapshot remains live until this independently reviewed
 substantive revision is redeployed.
+
+**Revised editions deployed on 2026-08-21.** The expanded source-first revision
+was independently audited for content, citations, traditional Catholic
+chronology and attribution, and every rendered page. The reviewed Full and
+Synthesis PDFs and canonical web editions were installed with the page-2
+chronology dossier, two complete `Themes and Movement` pages, and detailed
+commentary beginning on page 5. Commit `2810f6aba` reached `origin/main`; GitHub
+Pages run `32498704134` completed successfully. The live catalog and all three
+GPT Reader routes returned the revised timestamps, and all six live PDF routes
+matched the reviewed SHA-256 hashes exactly. The unrelated local
+`directions.md` and `-.png` remained untracked and outside the commits and
+deployment.

@@ -1409,7 +1409,7 @@ state = "complete"
 id = "gpt-eleventh-thirteenth-after-pentecost-2026-08-20"
 owner = "src/gpt/liturgy/roman-rite/1962/propers/temporal"
 promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 25-27) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-boundary-recorded"
@@ -1464,7 +1464,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "catalog-release-and-deployment"
   criterion = "Rows 25-27 link the GPT Synthesis PDFs; their stable publication markers own the canonical Full PDFs and web editions; provider-qualified release records are validated; the exact outgoing range is publicly reviewable; and the resulting Pages deployment and affected live routes are verified."
-  status = "open"
+  status = "pass"
   evidence = [
     "library/traditional-latin-mass.md",
     "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal",
