@@ -1241,6 +1241,150 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v14-2026-08-20"
+owner = "src/web/browser/catena"
+promise = "Answer the E1 Catena V13 independent review (CHANGES REQUIRED at exact head 6cc85e1a1; the review carries no published branch or commit, and that gap is recorded rather than filled) with exactly its stated next action and nothing else: eliminate the remaining post-projection raw file.unfetched reread and prove it with a walking-unfetched production-DOM case beside a steady positive control; prove with === that every covered consumer receives the actual projection object, observed at the production consumer boundary rather than recomputed beside it; record the tally as a consumer of its own and publish a covered-consumer roster that makes an omission obvious; bind every text request to the actual projected row object that initiated it, including same-path siblings, same-path multi-projection and genuinely-late completion; make the member-list adversarial case structural over add, remove, reorder, phantom and tally with a steady control for each; normalize nested source entries and their edition, rights and voice members exactly once under one authority rule so no consumer invokes a nested accessor and the projection states one coherent result; freeze the projection graph as deeply as downstream consumers trust it and assert the freeze, the prototype scope and a real mutation attempt directly; audit the sources for post-projection raw chapter access; and issue one immutable exact-head V14 handoff whose claims inventory distinguishes semantic methods, positive controls, pins, oracle corrections and packaging checks rather than presenting one total. Record every other blocker open and untouched, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "post-projection-unfetched-closed"
+  criterion = "After the chapter projection exists, no covered consumer reads raw `unfetched` off the chapter record. The projection carries the normalized value, the page reads it from there, and the second read is removed rather than memoized. A source audit confirms `catena.js` performs no property read of `unfetched`, `fragments`, `sources`, `refusals`, `blocked`, `leads`, `text_prefix` or `text_path` off any chapter-holding identifier, and the model reads each raw chapter member in exactly one place."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "walking-unfetched-production-proof"
+  criterion = "A production-DOM adversarial case supplies nothing for raw `unfetched` on the first read and a forged string on later reads, and asserts at the actual production sinks: the raw read count, the projected unreadable and unfetched state, row presence and count, refusal presence, the tally, the request journal, the rendered body, the status and unavailable state, and the route. The reviewed parent fails it; this head passes it; and a steady-forged positive control proves the forged value produces the unavailable state when it arrives on the accepted first read."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "authority-inventory-complete"
+  criterion = "The read-once authority inventory explicitly enumerates every raw chapter member the page reads, `unfetched` among them, and each is walked in its own scenario with its parent read count, its candidate read count, its consumer, its adversarial value and its expected result recorded. Each walked member stands beside a steady control at the accepted first value and a steady control at the walked-to value, so every walk is proved both non-vacuous and unreached. No claim that all request-critical members are read once is made except over this enumerated and completely tested list."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "actual-projection-identity"
+  criterion = "For every covered consumer, the actual projection object reference the consumer receives is recorded at the production consumer boundary and compared to the authoritative projection with reference identity. The authoritative reference is the one recorded where the projection is made, not one obtained by calling the projection again around a consumer. Identity is not substituted by id equality, serialized equality, same fields or same chapter key. Any test-only hook used to record identity is bounded and alters no production semantics."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "tally-independent-consumer"
+  criterion = "The tally is recorded as a consumer distinct from the rows: the page asks the model for the count through its own entry point rather than taking the length of the rows, and the consumer roster distinguishes readability, tally, rows, voices, blocked, leads and refusal, each with its actual projection reference asserted equal to the authoritative one."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "covered-consumer-roster"
+  criterion = "A test-derived roster names every covered consumer — readability, unfetched, tally, rows, voices, blocked, leads, refusal, the request and path decision, and provenance and rights — with, for each, its actual projection reference and its expected same-instance relation. The roster is checked against every consumer name the replay actually produced, so an omission or a later unrouted consumer fails by the name that is missing rather than passing quietly. Where readability refuses the served record and the page substitutes its own marker, the record states that this is a second chapter with its own projection rather than claiming one identity across two."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "row-object-request-ownership"
+  criterion = "A text request is bound to the actual projected row object whose address initiated it. The page resolves the address through the row rather than handing a path string to the transport, the model records the owning row and the owning projection when the address is resolved, and a row no projection produced resolves no address at all. Row identity is preserved from the projected row through the address decision, request creation, completion and the rendered body, and ownership is never inferred afterwards from path strings."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "same-path-row-ownership"
+  criterion = "A non-vacuous case carries at least two projected rows with the same text path and proves the request owner is the exact initiating row, that the sibling row with the identical path cannot take that ownership, that completion applies only to the correct row, and that the packaged journal identifies the owner through actual row and projection association rather than path matching."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "multi-projection-same-path"
+  criterion = "A case carries one text path across two projections and their two rows, and proves the request does not collapse onto the shared path: each ask names the projection that made its row, and each row is bound by identity to that projection and to no other."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "late-completion-row-identity"
+  criterion = "A genuinely-late case starts a request from projection A's row, holds it, lets projection B settle carrying the same path, then releases A. Actual projected row identity and projection identity are asserted before and after the release, A's recorded ownership is unchanged, B asks as itself, and no completion applies to a row merely because path strings match. The proof does not rest on generation counters alone."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "member-structural-authority"
+  criterion = "The member-list adversarial case is structural: raw member inventory that answers differently on a second reading cannot add a member, remove one, reorder them, create a phantom member or alter the tally. Each effect is pinned independently, the inventory's read counts are asserted per scenario, and the reviewed parent's higher count is recorded beside this head's."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "member-structural-controls"
+  criterion = "Every structural member mutation this lane claims to close stands beside a steady positive control supplying the same structure from the accepted first read: a steady extra member produces an extra row and tally, a steady missing member a reduced row and tally, a steady reorder a changed row order, and a steady phantom count the unavailable state that the walked case is asserted not to produce."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "nested-source-accessor-closure"
+  criterion = "Nested source entries are normalized exactly once under one authority rule, so a member declined for fragment provenance cannot be accepted for projected voices or editions. The adversarial matrix covers an own getter at a nested source key returning a valid source first and a forged source later, returning nothing first and a forged source later, a steady forged source, a getter that throws, a getter that changes edition, rights and voice fields, and a nested source record whose own edition, rights, voice and language members are accessors."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "nested-source-coherence"
+  criterion = "For every nested source adversarial case the projection produces one internally coherent semantic result, asserted together across the fragment provenance line, edition identity, rights and licence text, the voice list, the blocked and refused state, the unreadable state and the request and body behaviour. No consumer accepts a getter another consumer declines, and both positive controls stand beside the matrix: the forged edition supplied as a document reaches the provenance line, and the valid edition as a document renders the ordinary page."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "getter-invocation-count"
+  criterion = "Getter invocation counts are recorded for every covered nested source value and every covered nested field. Each resolves through one normalization read or one deterministic refusal path, a throwing or mutating getter is not invoked independently by multiple consumers, and the reviewed parent's non-zero counts are recorded beside this head's zeroes."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "projection-graph-immutability"
+  criterion = "Every nested structure downstream consumers trust as final authority is frozen or otherwise proved unreachable for mutation: projected rows, row address and path state, row extents and translator lists, provenance, edition and rights records, refusal state at all three levels, voice entries, blocked and lead entries, and nested source projections. The exported row, lead and blocked builders seal what they return, so an exported caller and the page hold one contract. Nothing on the projection is a reference to the raw nested source map. Unrelated structures are not deep-frozen for completeness."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "deep-immutability-assertions"
+  criterion = "Immutability is asserted directly rather than argued: Object.isFrozen for each trusted structure, and, for each of the request-critical and presentation-critical values, an actual mutation attempt whose assignment throws and whose authoritative value is unchanged afterwards, with the downstream sink unchanged. The probe restores anything it moves and runs its mutating half for one scenario only, so it reports on the graph rather than planting evidence elsewhere."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "null-prototype-scope"
+  criterion = "Where null-prototype records form part of the authority boundary, Object.getPrototypeOf is asserted null for the actual authoritative objects, and the claim is made at its exact scope — the projection record itself and the refusals map — rather than over the whole graph."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "raw-reread-audit"
+  criterion = "A direct source audit covers post-projection raw chapter and member access for file.unfetched, sources, nested sources, member lists, the carried path, the spine prefix, editions, rights, refusal, cache and prewarm decisions, request builders and tally and readability decisions. Any intentionally raw diagnostic access is documented and proved incapable of affecting request or presentation semantics."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py", "src/web/browser/catena/catena.js"]
+
+  [[deliverables.requirements]]
+  id = "v13-planted-regressions-preserved"
+  criterion = "The six planted V13 scenarios the review judged useful — carried path, spine prefix, member and source walk, prewarmed cache, rights and provenance, refusal — are retained with their request, body and DOM assertions undiminished. The prewarmed-cache proof keeps both request absence and the actual rendered cached body, and the rights and refusal proofs keep their visible DOM assertions rather than being replaced by model-only checks."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "truthful-method-inventory"
+  criterion = "The evidence records distinguish semantic adversarial methods, positive controls, hash and identity pins, inherited oracle corrections and packaging or provenance checks, and never present auxiliary pins or oracles as independent semantic closures. A single total count is not offered as the claim; the independent semantic closures are enumerated separately, methods that pass at both endpoints are recorded as coverage rather than closure, and the parent replay records per closure the parent's expected and actual failure, its exact sink, and the candidate's expected and actual pass."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v14-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V14 head, its parent 6cc85e1a1, the absence of a published V13 review ref, the mechanically derived commit list and diff, the unfetched closure and its walking proof, the authority inventory, the === consumer identity roster, the tally-independent identity, the row-object ownership proof with its same-path, multi-projection and late cases, the member structural matrix and controls, the nested source accessor matrix, coherence and invocation counts, the immutability assertions, the raw-reread audit, the preserved V13 regressions, the truthful method inventory, fresh validation figures at both endpoints, budgets, release status, open blockers, limitations, a SHA-256 manifest and a package digest — sealed, verified read-only at P8 with equal pre and post digests, with final authority established only afterwards and bound one way to the archive's own bytes, and without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V14 head and its immutable handoff records a durable disposition, scoped to final projection authority: no post-projection unfetched escape, actual === projection identity, actual row-instance request ownership, structural member-list authority, nested source accessor closure, and sufficient projection-graph immutability. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v13-2026-08-17"
 owner = "src/web/browser/catena"
 promise = "Answer the 2026-08-17 E1 Catena V12 independent review (728c3e3b3 on review/catena-wave-1-e1-corrections-v12-independent, CHANGES REQUIRED at d312786dd) with exactly its stated next action: normalize each loaded chapter's request-critical spine and fragment state exactly once into one stable page-level projection and pass that projection unchanged through readability, tally, rendering, request, cache, body and ownership, so that no covered consumer re-reads the raw chapter after it exists; add walking raw-state tests that assert one total observation per loaded record and prove the projection identity is the same instance everywhere; make all six planted parent scenarios non-vacuous and ship their exact ownership journals in the package; and issue one immutable exact-head V13 handoff with one complete append-only lane ledger, no ordinal reuse, truthful terminal reasons and times, publication authority established only after P8 and bound to the final ZIP's basename, size, digest and P8 result, full negative authority and endpoint fixtures, contemporaneous executed and shipped digests for every tool claimed executed, a substantively verified handoff inventory, and privacy scanning of every member and every outer artifact. Record every other blocker open and untouched, and return that head for fresh independent review."
@@ -1249,25 +1393,25 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "one-page-level-chapter-projection"
   criterion = "Each raw chapter is normalized exactly once per load or route resolution into one bounded internal projection holding own data properties only, with no accessors, no inherited semantic values, stable values, and no retained dependency on the raw chapter for any covered consumer. Readability, the tally, the rendered chain, the request decision, the cache decision, the body projection and the ownership journal all read that one projection. The page-level count of raw chapter normalizations is pinned at exactly one per loaded chapter, and the V12 local guarantees are preserved: one getPrototypeOf per normalized source object, one descriptor read per requested name, zero accessor invocation, inherited prefix and inherited refusal failing closed, and a carried text_path that cannot drift within the projection."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "one-projection-identity-proved"
   criterion = "The projection's identity is observable and is proved to be the SAME normalized instance, not merely an equal value, across readability, tally, rendering, request, cache, body and ownership for one page load. A second loaded chapter advances the count by exactly one, so the number is a fact about the data rather than about the page's shape. A model chapter consumer that is not routed through the projection fails the identity test by name rather than passing quietly."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "no-raw-reread-after-projection"
   criterion = "After the chapter projection exists, no covered consumer re-reads request-critical raw chapter state: text_prefix, the carried text_path, text_refused, stated, trail, the chapter's member list and order, its editions, and its recorded refusals. Every later raw read capable of changing readability, tally inclusion, request, render, cache, body or ownership is removed, and the page's own last reads of raw chapter state are routed through the projection."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js", "src/web/browser/catena/catena.js"]
 
   [[deliverables.requirements]]
   id = "walking-raw-state-cannot-move-the-page"
   criterion = "Page-level adversarial tests mutate request-critical raw chapter state after normalization — a walking carried path, a walking spine prefix, a walking member list, walking editions and walking recorded refusals — and readability, tally, rendering, request, cache, body and ownership all remain based on the original projection. Each walked member is observed exactly once per render, and a deterministic trace records the initial raw state, the single normalization, the projection identity, the mutation, and each consumer's result."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1279,20 +1423,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "packaged-ownership-journals"
   criterion = "The package ships machine-readable ownership journals covering this lane's own scenarios, so a reviewer can verify every ownership claim without rerunning the harness. Each row states its sequence, the scenario and the route as it stood when the request was made, the projection that owns it, the request path, the request kind, the owning step, the outcome, and the cache and body association. The journal's scenario roster is derived from the test file rather than hand-maintained, so a later lane cannot ship a journal that stops before its own work."
-  status = "open"
+  status = "pass"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
   id = "authority-only-after-p8"
   criterion = "No sealed package bytes claim final authority before P8. The state progression is attempt started, package sealed, P7 and P8 verification, post-P8 ZIP size and hash confirmed, then final authority established. An in-package attempt row may claim at most sealed. The final authoritative record is a cryptographically bound structured sidecar outside the archive naming the attempt id, the exact head, the exact ZIP basename, size and SHA-256, the P8 result, the post-P8 rehash result and a terminal authoritative status, recomputed from the archive itself rather than carried forward; the binding runs one way and the archive contains no such record. If P8 fails the attempt remains non-authoritative."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "complete-append-only-history"
   criterion = "The attempt and battery history is append-only and complete for every package attempt and every authoritative battery run used in a claim, with no ordinal reused across the lane, no prior row rewritten, a terminal disposition and a non-empty reason for every non-authoritative terminal state, and internally truthful chronology. Batteries separately record the endpoint SHA, the tree state before and after, the tool identity, the exact command, the counts and results, the log root and the terminal reason; a battery is mechanically prevented from being attributed to a dirty tree or to a commit it did not run at. The complete ledger ships beside the package rather than being deferred to a record the reviewer cannot reach."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "authority-negative-fixtures"
@@ -1303,20 +1447,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "substantive-handoff-inventory"
   criterion = "The handoff inventory is verified substantively rather than lexically: every referenced file exists, every count claimed in the handoff matches the package's actual contents, every sibling beside the package is discovered and named by its exact filename including the inventory tool's own output, every quoted digest is recomputed and compared, and no count is carried stale from a prior package. Package members, logs, ownership journals, screenshots where present, tools, attempt rows, battery rows and manifest rows are each counted mechanically."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "privacy-closure-inside-and-outside"
   criterion = "No absolute workspace path, account or user name, home path, temp root, tool-anchor absolute path, session suffix, hostname or absolute build path appears in the archive's names or contents, in any sidecar, in any tracked outer log, in the attempt or battery history, in the executed-tool table, in the P8 transcript, in screenshots or their metadata, or in ZIP metadata. Outer logs are sanitized before they are committed, not only package members. The final scan is taken at the fixpoint, after every sidecar, log and authority record is complete, and requires zero findings alongside valid UTF-8, no NUL and no forbidden control bytes."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "executed-tool-byte-identity"
   criterion = "For every tool claimed as executed, the SHA-256 of the exact bytes is captured contemporaneously at or immediately before execution, the logical tool identity is recorded, the execution is linked to that digest, a copy is shipped, and the shipped digest is compared to the executed digest. The proof covers every executed tool rather than a subset, and distinguishes shipped and executed, shipped and not executed, external system tool, and reviewer-only helper. A machine-readable table records the tool id, the logical path, the run or attempt id, the executed SHA-256, the shipped SHA-256, their equality, whether it executed, and the evidence log."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "passed-v12-behaviour-preserved"
@@ -1327,14 +1471,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "immutable-v13-handoff"
   criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V13 head, its parent d312786dd, the review addressed 728c3e3b3, the mechanically derived commit list and diff, the chapter-projection architecture, the one-projection identity proof, the raw-reread audit, the walking-state trace, the page-level observation counts, the six-of-six non-vacuity matrix, the request, cache, body and ownership proof, the packaged ownership journals, the ordinary and late regression evidence, the append-only attempt and battery history with its ordinal, chronology and terminal-reason checks, the authority negative-fixture results, the post-P8 final authority record and its ZIP binding, the substantive inventory and count checks, the privacy evidence, the executed-tool byte table, the P8 result, package arithmetic, fresh validation figures, budgets, release status, the open blockers, limitations, a SHA-256 manifest and a package digest — without mutating any earlier sealed package."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V13 head and its new immutable package records a durable disposition, scoped to one page-level normalized chapter projection, walking-state stability, six-of-six non-vacuity, packaged ownership evidence, post-P8 final authority, append-only provenance, privacy, and complete executed-tool byte identity. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["guidance/corpus-browser-roadmap.md", "PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v12-2026-08-17"

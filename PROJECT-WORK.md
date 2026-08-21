@@ -1139,6 +1139,273 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena route-owned correction lane, V14
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v14-2026-08-20 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3`, the V13 head, whose immutable
+handoff is archived on `evidence/catena-e1-corrections-v13-handoff` at
+`fd5a1579d724069a06adca39b0a363064a212b1b` and whose sealed package
+`build/agent-handoffs/20260817T233843Z-catena-e1-corrections-v13.zip` this lane
+re-verified at 1,306,976 bytes with ZIP SHA-256
+`0965ca5ed6982a570427ae00e14a5bb7b38143bd36aaa90741fadd9eb93322b7`, equal to
+the digest its own post-P8 authority record carries. Current `origin/main` is
+`ac4b9d608f52e23f199c4b3149c73e5fb14c3d59`, and this lane is not integrated
+with it.
+
+**The V13 review has no published ref, and this record says so rather than
+inventing one.** `git ls-remote origin` carries no
+`review/catena-wave-1-e1-corrections-v13-independent`; the branch exists only
+in a local reviewer checkout, where it stands at the reviewed head
+`6cc85e1a1` with no review commit on it. So the disposition, its findings and
+its exact next action reach this lane through its brief and not through a
+fetched commit, and no review SHA is recorded for V14. That is a gap in the
+provenance chain every earlier lane in this series had, it is stated here so
+the fresh reviewer can weigh it, and it is not closed by this lane, which
+cannot publish another lane's review.
+
+The review passed what V13 got right and this lane does not reopen it: one raw
+chapter is normalized once and held in a `WeakMap`, so a voice change, an arrow
+step or a re-render reuses the chapter that was read; `requestSnapshot` remains
+correct for one invocation; the inherited `text_prefix` and inherited
+`text_refused` closures hold; the carried `text_path` is read once; the
+page-wide fail-closed contamination policy stands as a design; the six planted
+scenarios — carried path, spine prefix, member and source walk, prewarmed
+cache, rights and provenance, refusal — are useful and are retained here with
+their request, body and DOM assertions undiminished; and the package protocol
+V13 built — an immutable sealed package, a read-only P8 whose pre and post
+digests are equal, one-way authority established only after P8, a complete
+attempt ledger with unique ordinals, executed-tool byte evidence, privacy
+sanitization, a substantive handoff inventory and an outer scan — is preserved
+rather than regressed. It found six things, and this lane answers those six and
+nothing else.
+
+**One raw chapter member was still read twice, and it was the one that can
+manufacture a failure.** `normalizeChapter` read `record.unfetched` once and
+kept only its effect on readability, discarding the value; `catena.js` then had
+nowhere to read the string it prints but the raw record, and read it there a
+second time. Two plain reads of one request-critical name are two observations
+of it. The reviewer's probe answered `undefined` to the first and a forged
+string to the second, and observed `unreadable: false`, two reads, and the
+forged later value accepted — which replaced a chapter the projection had
+approved with `null`, took its rows, its recorded refusal and its tally with
+it, and printed the payload's own words to a reader inside the broken-record
+sentence. Replayed here, the uncorrected parent asks the member **twice** and
+renders *"its record (FORGED RAW REREAD) could not be read"* over a chapter
+holding a fragment, a lead, a blocked entry and a Rule 4 refusal; this head
+asks it **once**, and the walked page is byte-for-byte the page the same
+chapter renders with no proxy on it at all. The value now travels on the
+projection, normalized exactly as the page normalized it, and the steady
+control proves the collapse is real when the forged value arrives on the first
+read — while the sentence the reader is shown still names the chapter's own
+address, never the payload's string. `unfetched` is in the authority inventory
+now rather than missing from it: seven raw chapter members, each walked in its
+own scenario, each asked once, each beside a steady control at the accepted
+value and a steady control at the walked-to value, so every walk is proved to
+matter and proved not to land.
+
+**Identity was argued and is now proved.** The review was exact: the V13
+harness called `chapterProjection(file)` itself, beside each consumer, and
+compared `.id` strings — which proves two equal strings and not one object.
+`chapterWitness` is a bounded observation seam in the model. It is handed the
+exact object each consumer is about to read, at the moment it reads it, and it
+cannot change what the consumer gets; with no recorder installed every call is
+one `if` on a `null`, so the page's semantics are what they are without it. The
+authoritative reference is the one recorded where the projection is **made**,
+not the answer to a second question asked around a consumer's back, and
+identity is decided in the same realm by a `Map` keyed on the object, which is
+`===`. The roster grows from six consumers to ten — readability, `unfetched`,
+tally, rows, voices, blocked, leads, refusal, request and provenance — and it
+is checked against every consumer name the whole replay actually produced, so a
+consumer a later lane forgets to route through the projection fails the roster
+by the name that is missing. **The tally is a consumer of its own.** V13 read
+it as `chapterFragments(file).length`, which recorded the number the reader is
+told and the rows the reader is shown as one consumer; they are two now, and
+both are the same object. Where readability refuses the served record the page
+holds its own marker instead, and that marker is a different chapter: this
+record states that plainly rather than claiming one identity across two, and
+the test asserts readability names the record it refused while every consumer
+downstream names the marker.
+
+**A request is owned by the row that asked for it.** V13 reconstructed
+ownership afterwards by taking the first projected row whose path string
+matched, which is ambiguous the moment two rows carry one address. The page no
+longer hands a string to the transport: `fragmentText(row)` resolves the
+address **through** the row, and the model records the row object and the
+projection that made it at that moment. A row no projection of this file made
+resolves no address at all — a copy of a projected row, a literal carrying a
+valid path, a bare string and `null` each address nothing — which is the same
+fail-closed rule the carried path already obeys one level down. Two rows
+carrying one path are two owners with two row identities and one owning
+projection; two projections carrying one path stay apart, each ask naming the
+projection that made its row; and in the genuinely-late case projection A's row
+starts the request, the request is held, projection B becomes the page carrying
+the same address, B asks as itself, and A's recorded ownership is unchanged
+before and after the release. The packaged journal names the owner by object
+association; the path match survives only as the parent's answer, where there
+is no ask to consume.
+
+**Nested sources were read by two consumers under two rules.** `sources["1"]`
+written as an own getter was **invoked** by the voices and editions walk, which
+read it as a plain lookup, and **declined** by every fragment row, which read it
+by descriptor — so one projection stated two incompatible things about one
+edition. At the parent that is visible: a fragment whose provenance line is
+empty, standing under an edition whose voice the control offers and whose
+identity the absence disclosure names. The nested map is normalized once now,
+by descriptor, under one rule, and every consumer reads the normalization. A
+key whose value is not a plain record makes the chapter unreadable, whole,
+which is the answer the walk always gave for a member it could not read. Four
+hostile shapes — valid then forged, steady forged, absent then forged, and a
+getter that detonates — produce one semantic result at every sink together, and
+one level deeper an entry that IS a record whose `rights`, `voice`, `author`
+and `language` are getters has each of them declined alike, so no rights reach
+the provenance line and no voice is offered on a reading one consumer took and
+another did not. The invocation count carries the claim: at the parent the
+entry accessor is invoked once, three times where it throws, and its fields
+three, one and one times; here every one of those counts is **zero**, and a
+getter nobody invokes cannot throw past `aria-busy`, the tally and the route.
+Both controls stand beside it — the forged edition supplied as a document
+reaches the reader's provenance line, and the valid edition as a document
+renders the ordinary page.
+
+**The member list was tested as a row and not as an inventory.** The review was
+right that keeping one row before and after and moving only a `text_path`
+proves nothing about the inventory. `Array.isArray` is true of a proxy over a
+real array, so a raw `fragments` can answer "which members" and "how many"
+independently, and the parent asks the length **twice**. Each structural effect
+is pinned on its own and each stands beside a steady control that supplies the
+same structure from the accepted first read: a member added after the first
+read is not added, and the control shows two rows and a tally of two; a member
+removed is not removed, and the control shows one; a reorder does not reorder,
+and the control renders the bodies and the provenance lines in the other order;
+a count that says "none" and then "five" leaves a recorded emptiness saying
+*"Nothing held here"*, while the same count from the first read really does
+produce *"The commentary record did not load"*; and the tally holds the
+inventory readability approved. One `slice` reads the length once and each
+index once, and the counts are asserted per scenario.
+
+**The graph was frozen where it was cheap and not where it was trusted.** The
+review found the top-level projection frozen, the blocked and leads *arrays*
+frozen, and their members not. Seventeen structures a downstream consumer
+trusts as final are now asserted frozen directly — the projection, the prefix,
+the rows array and each row, each row's extent and translator list, the voices
+array and each voice, the editions array and each edition, the blocked and
+leads arrays and each of their rows, the refusals map, each edition's refusal
+array and each refusal — and `Object.isFrozen` is treated as a claim about a
+mechanism rather than about the page, so thirteen values are then actually
+assigned to and the authority is asked again: every assignment throws and every
+value holds. The null-prototype claim is stated at its exact scope — the
+projection record itself and the refusals map, and nothing else — rather than
+asserted of the whole graph. The exported `fragmentRow` seals what it returns,
+so a caller of the export and the page hold one contract rather than two, and
+`leadRow` and `blockedRow` seal theirs. Nothing on the projection is the raw
+nested map, so a frozen graph does not stand over a mutable one. At the parent
+the same probe reports the leads and blocked entries unfrozen and their values
+moved; here they are frozen and held.
+
+**The method count is stated as what it is.** V13 reported "13 parent-failing
+methods", which was arithmetically true and read as thirteen independent
+semantic closures. This lane adds **41** methods, and neither 41 nor the number
+that fails at the parent is a count of closures. Replayed against the exact
+reviewed parent the file fails **43 ways across 29 methods**: 28 of the 41 new
+ones plus the inherited candidate-hash pin. Those 29 are **23 semantic
+adversarial methods**, **2 source-audit and roster-completeness methods**, **1
+packaged-provenance method**, **2 exported-builder contract methods** and **1
+candidate-hash pin** — and even the 23 are not 23 closures, because several
+assert one closure at different sinks. The **ten independent semantic
+closures** are: the post-projection `unfetched` reread; actual `===` projection
+identity; tally-independent identity; actual row-object request ownership;
+same-path row ownership; late same-path ownership; member structural authority;
+nested source accessor closure; nested source semantic coherence; and
+projection nested immutability.
+
+The remaining **13** new methods pass at **both** endpoints and are recorded as
+coverage and control rather than as closure: seven positive controls and
+non-vacuity sweeps — the steady forged `unfetched`, the per-member
+walked-to sweep, the forged edition supplied as a document, the four
+member-structure controls — and six assertions of behaviour V13 already had and
+this lane pins rather than changes: the reader's sentence naming the chapter's
+own address, the model's single source-level read of each chapter member, the
+witness changing nothing, a detonating nested *field* never invoked at either
+endpoint, the null-prototype scope, and the projection holding no reference to
+the raw nested map. Six of the seven walked chapter members already held at the
+parent; only `unfetched` moved the page there, and this record says which
+rather than counting seven closures.
+
+**V13's own ledger is reconciled fail-closed against the review it received.**
+The four criteria that review contradicted are reopened —
+`one-page-level-chapter-projection`, because a nested accessor invoked by one
+consumer and declined by another is not one internally coherent normalization;
+`one-projection-identity-proved`, because equal ids are not one instance;
+`no-raw-reread-after-projection`, because `unfetched` was reread; and
+`walking-raw-state-cannot-move-the-page`, because the member scenario was not
+structural and `unfetched` was not walked at all. The eight the review
+preserved are marked passed with the sealed V13 package as their evidence, and
+its `fresh-independent-review` requirement is marked passed because that review
+happened. `authority-negative-fixtures` is deliberately left **open**: the
+disposition as this lane received it does not name the authority gate's
+negative roster either way, and marking it passed would be this lane deciding a
+question the review did not answer.
+
+Fresh validation, measured at **both endpoints** — this head and the exact
+reviewed parent `6cc85e1a1` — because an exit code cannot tell an inherited
+failure from a caused one. Focused Catena is **596** green at this head, up
+from 555 at the parent. `scripts/_catena.py check` passes at 1,351 fragments /
+1 book / 73 canon entries at both. Full discovery is **1,947** tests at this
+head and 1,906 at the parent — the whole difference is this lane's 41 new
+Catena methods. This head is **14 failures / 13 errors / 11 skips** over a
+27-entry failure and error identity set; the parent is 14 / **14** / 11 over
+28, and the head's set is a strict subset of the parent's. The one extra
+identity at the parent is
+`test_pdf_review.PdfReviewCommandTests.test_repeated_signals_do_not_interrupt_child_cleanup`,
+a signal-and-child-cleanup timing test that an earlier independent full
+discovery at the same parent commit did not produce, so it is recorded as
+flaky at the parent rather than as a difference this lane caused. Not one
+identity in either set is a Catena identity, and nothing this lane touches is
+reachable from that test. `make -k check` exits 2 on **the same four
+targets at both endpoints** — `check-web-editions-current`,
+`check-release-bindings`, `check-tool-registry` and `check-examples` — all
+inherited. The browser gate is 2,290 assertions, 1,836 / 226 / 228 across 171
+pages and 19 routes, identical at both endpoints, identical in its 117 / 82 /
+27 failure breakdown, and identical to the V10, V11, V12 and V13 reports. The
+promise ledger validates at 39 tracked / 19 complete here and 38 / 19 at the
+parent, the difference being this lane's own deliverable. Budgets unraised:
+`catena.css` is byte-identical at both endpoints at 7,629/8,000 whole and
+2,676/2,700 stripped, and `index.html` is byte-identical too; `catena.js` is
+**smaller at the whole measure and identical at the stripped one**,
+12,972/13,000 and 7,546/8,800 against the parent's 12,974 and 7,546, so the
+page's whole-file headroom improves from 26 to 28 gzipped bytes. The unbudgeted
+model grows 36,679 to 39,724 gzipped whole and 8,873 to 9,396 stripped;
+disclosed, not presented as unchanged load, and the standing question of
+whether the model and the combined route payload need a governed ceiling
+remains the budget owner's. `src/web/data/` has zero changes: every adversarial
+fixture lives in the test file and is served by the replay harness's own stub
+network. Four stale release bindings remain fail-closed and unsigned at both
+endpoints, none re-signed.
+
+Every other blocker remains open and untouched, as the V12 and V13 reviews left
+it: full sole-source semantic projection beyond this bounded chapter
+projection; orphan raw sources; source-only fragments still counting; scalar
+and nested translator coercion beyond the edition list normalized here;
+malformed and padded absence rows; the broader selection and ordering defects;
+refusal verse typing; unreadable roots and the unreadable `bibles.json` prose;
+the broader terminal and corrected-oracle proofs outside this lane's vectors;
+the CLI/web duplicated semantic model; model and combined budget governance,
+answered here only by accurate disclosure; the historical data seam; and
+cumulative-history reconciliation beyond this lane's own attempt and battery
+evidence. Release bindings, the common gate, B0/shared shell, real-device and
+assistive-technology evidence, protected Liturgy and PDFs remain separately
+owned. E1 is not integrated.
+
+Status: **awaiting fresh independent review** of the exact V14 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v14-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself. The one provenance gap it
+cannot close is stated above: the V13 independent review it answers has no
+published branch or commit, so a reviewer wanting to check this lane's account
+of that disposition against the review itself has nothing to fetch.
+
 ### E1 Catena route-owned correction lane, V13
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v13-2026-08-17 -->
