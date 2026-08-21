@@ -521,6 +521,46 @@ formulary those days actually use is still absent from the file, along with
 *D. N. Iesu Christi Regis* and *Sanctissimi Nominis Iesu*. All three are movable
 or shared, so nothing in the fixed-date spine reports them missing.
 
+## The corpus targets, and what each still owes
+
+The maintainer's brief at `guidance/liturgical-corpus-brief-2026-08-21.md` asks
+for three missal states to be measured and completed. Its sections 7 to 9 are
+the target list; this section is where they live, because this file owns the
+data they describe. Read the counts from `mass-propers census`, never from here.
+
+**1962.** The most complete state, because its witnesses are public domain: the
+1862 Pustet printing and the 1861 Cummiskey English are tracked, and the CMAA
+facsimile of the controlling edition is reachable under the 103(b) analysis at
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`. What it
+still owes is named in the open items below and in the Ordinary's own absence
+keys.
+
+**Postconciliar.** Its ceiling is different in kind and worth stating plainly so
+nobody re-derives it as a defect. The Missale Romanum 2002 is in copyright and
+this project holds only a restricted artifact of it, so the calendar carries:
+Lectionary ASSIGNMENTS in full, which are facts about what is appointed and are
+free; the ancient Latin of the Order of Mass, recovered from public-domain
+witnesses and marked as antecedent; ICEL's English, under the standing web
+permission at `guidance/liturgical-text-publication-policy.md` §3; and for the
+reform's own compositions, a typed refusal. The Commons are not carried at all —
+the index has no `common` section, which is why most sanctoral days hold no
+oration, and until one exists the sanctoral cannot be completed however much
+text is sourced. Even with it, the Commons' own antiphons and orations stay
+refused: the Latin is the Holy See's and the English is ICEL's, so what the
+structure buys is a checkable pointer, not prayers on the page.
+
+**Pre-1955.** A RECENSION and not a corpus: `roman-pre-1955` holds departures
+from the 1962 base and inherits everything it does not state, which is all but
+a handful of its masses — read the figure from `calendar-days coverage` and the
+census, not from here. The brief's estimate that the state is 80–90 per cent the
+same as 1962 is right and the repository already banks far more than that. Two
+cautions own the rest. What that inheritance measures is what has been
+ESTABLISHED, not how far the books stand apart — where anyone has looked, the Triduum, 20 of 38 modelled units do
+not survive. And the delta was made by FOUR acts, not the one the file's
+`stands_before` names; `guidance/recensions.md` and that file's own
+`open_collation_items` own the apportionment, and a row added without it charges
+the 1960 code's work to Pius XII.
+
 ## Open items — name them, do not decide them
 
 | Item | Recorded in |

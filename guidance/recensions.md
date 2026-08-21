@@ -381,6 +381,30 @@ which is the right way round.
 
 ---
 
+## 8.5 One label, four acts
+
+`roman-pre-1955` declares `stands_before: maxima-redemptionis-1955`, and the
+distance it holds was not made by that act alone. Four made it: the
+simplification of the rubrics of March 1955, which owns the octaves, the vigils
+and the `semiduplex` vocabulary and is answerable for none of the file's rows;
+*Maxima Redemptionis* of November 1955, which owns the Holy Week order and most
+of what is recorded; the 1960 code; and the 1962 typical edition.
+
+So a reader who takes the file as the 1962 book minus one reform charges the
+1960 code's work to Pius XII, which is the blending of states this document
+exists to prevent. The apportionment is written in that file's own
+`open_collation_items`, and two mechanical fixes stay open because both are
+schema decisions: whether `stands_before` should name the EARLIEST act a state
+stands before or admit a list of act ids, and whether a departure row should
+carry an optional `act` so each row says which act made it rather than the file
+attributing all of them to one.
+
+There are also at least two states here worth carrying and not one. The state
+this file targets stands before both acts of 1955; the 1956–1960 middle state,
+whose book this project does not hold, is a separate recension and is section
+8.2's open item. A third, the ten weeks between the March decree taking effect
+and the new Holy Week, is a rounding error in time: name it, do not build it.
+
 ## 9. One derivation, and the tool that was not using it
 
 Added 2026-08-01, after section 8, in the same spirit: what section 8 recorded as
