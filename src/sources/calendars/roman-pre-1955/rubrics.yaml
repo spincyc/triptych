@@ -1,0 +1,1199 @@
+schema: triptych-calendar-rubrics/v1
+calendar: roman-pre-1955
+code: >-
+  Rubricae in recitatione Divini Officii et in Missarum celebratione servandae
+  ad normam Constitutionis Apostolicae Divino afflatu, Titulus II, De Festorum
+  praestantia, AAS 3 (1911) 641-642
+citation_forms:
+  DA: >-
+    Divino afflatu, Rubricae generales, Titulus II (De Festorum praestantia),
+    AAS 3 (1911) 641-642
+  DAI: >-
+    Divino afflatu, Rubricae generales, Titulus III (De occurrentia et
+    translatione Festorum), AAS 3 (1911) 642-644
+  DAV: >-
+    Divino afflatu, Rubricae generales, Titulus V (De concurrentia), AAS 3
+    (1911) 645-646
+  DAVI: >-
+    Divino afflatu, Rubricae generales, Titulus VI (De Commemorationibus), AAS
+    3 (1911) 646-648
+  ADA: >-
+    Abhinc duos annos, Decretum generale, Titulus IV (De occurrentia et
+    translatione Festorum, eorumque concurrentia), AAS 5 (1913) 461-463
+advisory: >-
+  This file is a LINEARIZATION and not the rule itself. The pre-1955 order of
+  precedence is five ordered criteria stated in Divino afflatu (1911) Titulus
+  II — higher rite, primary or secondary, personal dignity, external
+  solemnity, and propriety of the feast — taken in order until one separates
+  two days. It is not a numbered table. This repository's rubrics schema
+  admits only a numbered table, and assembly-model.js picks a winner by
+  comparing one integer. Flattening five criteria into rows produces a file
+  that validates, resolves every day, and decides some of them wrongly: the
+  fifth criterion applies in occurrence and translation but NOT in concurrence,
+  so the same two days can be ordered differently under two questions, and a
+  single row number cannot express that. Every divergence from the rule is
+  recorded in the `divergences` section below. This file states which rubric
+  governs a decision. It does not state what was celebrated anywhere.
+  Precedence is only one of five decisions, and a day resolved here is still
+  subject to the particular calendar of the church, the place, the diocese and
+  the religious institute, to a legitimate indult, and to the competent annual
+  Ordo, which controls. Nothing here is an occurrence witness and nothing here
+  authorises the use of any book.
+
+# ---------------------------------------------------------------------------
+# Where every rule below came from
+#
+# The pre-1955 Missal defers precedence to the Office/Breviary. The rule is
+# Titulus II De Festorum praestantia of Divino afflatu, AAS 3 (1911) 641-642.
+# It was located, fetched and read on 2026-08-01; being a 1911 publication it
+# is in the public domain. The full sourcing record — seven located sources
+# with rights, the repositories searched, and the aliases each was searched
+# under — is at `src/sources/inventories/pre-1955-rubrics-sources-v1.toml`.
+#
+# This file is an APPROXIMATION produced by linearizing the five criteria into
+# numbered rows, because this repository's tooling requires it. The sourcing
+# record's own finding `the-rule-is-criteria-not-rows` states the blocker
+# plainly: the rule is five ordered criteria and `tools/calendar-rubrics` can
+# only express a table of numbered rows. This file is written with that
+# limitation acknowledged in every section that departs from the rule.
+# ---------------------------------------------------------------------------
+derived_from:
+  publication: src/sources/inventories/pre-1955-rubrics-sources-v1.toml
+  rule: Divino afflatu, Titulus II, De Festorum praestantia, AAS 3 (1911) 641-642
+  sections:
+  - Titulus II, De Festorum praestantia (the five criteria)
+  - Titulus III, De occurrentia et translatione Festorum
+  - Titulus V, De concurrentia
+  - Titulus VI, De Commemorationibus
+  worked_cases: composed for this file from the 1962 worked-case ledger, adapted to the pre-1955 grade system
+  witnesses:
+  - id: segment.catholic-church.rubricae-divino-afflatu.aas-03-1911.pages-641-642
+    role: direct-witness
+    what: >-
+      the promulgated text of the precedence rule, at AAS 3 (1911) 641-642,
+      sha256 590a78b670da67f013ea6fc0b62bb7ed347dc89a9267fbb7ddc0380f1e872f7c,
+      fetched from vatican.va 2026-08-01
+  - id: src/sources/inventories/pre-1955-rubrics-sources-v1.toml
+    role: sourcing-record
+    what: the sourcing record that located, read and graded every source this file rests on
+
+# ---------------------------------------------------------------------------
+# Precedence. The five criteria of Divino afflatu Titulus II, linearized.
+#
+# The rule opens: "Ut recte dignoscatur quale ex pluribus Officiis sit
+# praestantius ... sequentes praestantiae characteres considerandi sunt" —
+# five characters, in order, until one separates two days:
+#
+#   a) Ritus altior — higher grade, unless a Sunday, feria, privileged octave
+#      or octave day occurs
+#   b) Ratio Primarii aut Secundarii — primary or secondary first-class
+#   c) Dignitas Personalis — Lord > BVM > Angels > John Baptist > Joseph >
+#      Apostles/Evangelists > other
+#   d) Sollemnitas externa — obligation + octave
+#   e) Proprietas Festorum — proper > common, in occurrence and reposition/
+#      translation ONLY, not in concurrence
+#
+# The linearization flattens (a)-(d) into numbered rows. Criterion (e) is
+# handled through `overrides` for known occurrence cases and marked
+# `unsettled` where a proper and common feast of the same grade would tie in
+# concurrence. The grade system is: duplex I classis > duplex II classis >
+# duplex majus > duplex minus > semiduplex > simplex.
+#
+# DIVERGENCE: Primary and secondary first-class are MERGED. The rule
+# distinguishes them by criterion (b); this file cannot read that distinction
+# off a mass key, so all duplex I classis feasts of the same personal dignity
+# share one row. Where a primary and a secondary first-class feast of the same
+# dignity occur, the table cannot separate them and the day is marked
+# unsettled. See `divergences`.
+# ---------------------------------------------------------------------------
+precedence:
+  stated: true
+  locus: DA, Titulus II
+  latin: >-
+    Ut recte dignoscatur quale ex pluribus Officiis sit praestantius et proinde
+    sive in occurrentia, sive in concurrentia, sive in ordine repositionis aut
+    translationis praeferendum, sequentes praestantiae characteres considerandi
+    sunt: a) Ritus altior; b) Ratio Primarii aut Secundarii; c) Dignitas
+    Personalis; d) Sollemnitas externa; e) Proprietas Festorum.
+  gloss: >-
+    Five ordered criteria, not a table. This file flattens criteria (a)-(d)
+    into twenty-five numbered rows by grade and personal dignity. Criterion
+    (e) is handled separately. A lower row number wins.
+  rows:
+  - {row: 1, class: I, label: 'The Sacred Triduum: Maundy Thursday, Good Friday, Holy Saturday'}
+  - {row: 2, class: I, label: 'Duplex I classis of the Lord (Nativity, Easter, Pentecost, Epiphany, Ascension, Trinity, Corpus Christi, Sacred Heart, Christ the King, Precious Blood, and their privileged vigils and octave days)'}
+  - {row: 3, class: I, label: 'Duplex I classis of the Blessed Virgin Mary'}
+  - {row: 4, class: I, label: 'Duplex I classis of the Angels, St John Baptist, St Joseph, the Apostles and Evangelists'}
+  - {row: 5, class: I, label: 'Duplex I classis of other saints'}
+  - {row: 6, class: I, label: 'Major Sundays: the Sundays of Advent, Lent and Passiontide', note: 'Semiduplex in grade but privileged under criterion (a): these Sundays yield only to duplex I classis. Placed below duplex I classis and above duplex II classis, which is the ordering the exception clause produces.'}
+  - {row: 7, class: II, label: 'Duplex II classis of the Lord'}
+  - {row: 8, class: II, label: 'Duplex II classis of the Blessed Virgin Mary'}
+  - {row: 9, class: II, label: 'Duplex II classis of the Angels, St John Baptist, St Joseph, the Apostles and Evangelists'}
+  - {row: 10, class: II, label: 'Duplex II classis of other saints'}
+  - {row: 11, class: II, label: 'Duplex majus of the Lord'}
+  - {row: 12, class: II, label: 'Duplex majus of the Blessed Virgin Mary'}
+  - {row: 13, class: II, label: 'Duplex majus of the Angels, St John Baptist, St Joseph, the Apostles and Evangelists'}
+  - {row: 14, class: II, label: 'Duplex majus of other saints'}
+  - {row: 15, class: III, label: 'Duplex minus of the Lord'}
+  - {row: 16, class: III, label: 'Duplex minus of the Blessed Virgin Mary'}
+  - {row: 17, class: III, label: 'Duplex minus of the Angels, St John Baptist, St Joseph, the Apostles and Evangelists'}
+  - {row: 18, class: III, label: 'Duplex minus of other saints'}
+  - {row: 19, class: III, label: 'Minor Sundays (all Sundays not of Advent, Lent or Passiontide)'}
+  - {row: 20, class: III, label: 'Privileged ferias and greater vigils: the ferias of Lent, Ash Wednesday, the ferias of Advent from 17 to 23 December, the Ember Days, and the greater vigils'}
+  - {row: 21, class: III, label: 'Semiduplex feasts of the Lord, the Blessed Virgin Mary, the Angels, St John Baptist, St Joseph, the Apostles and Evangelists'}
+  - {row: 22, class: III, label: 'Semiduplex feasts of other saints'}
+  - {row: 23, class: IV, label: 'Simplex feasts and common vigils'}
+  - {row: 24, class: IV, label: 'Simplex ferias'}
+  - {row: 25, class: IV, label: 'The Office of Our Lady on Saturday'}
+  occurrence:
+    locus: DA, Titulus III; ADA, Titulus IV
+    gloss: >-
+      Occurrence is the meeting of two or more Offices on the same day.
+      Accidental occurrence may lead to transfer; perpetual occurrence may lead
+      to reposition. Criterion (e) — propriety of feasts — applies in
+      occurrence but NOT in concurrence.
+  effect:
+    locus: DA, Titulus III
+    gloss: >-
+      The Office of lower rank yields: by omission, commemoration, transfer, or
+      reposition. Only duplex I classis feasts may be transferred; others are
+      commemorated or omitted.
+  concurrence:
+    locus: DA, Titulus V
+    gloss: >-
+      Concurrence is the meeting of one evening's Vespers, not of two days. It
+      never decides which Mass is said the next morning. Criterion (e) does NOT
+      apply in concurrence, so a proper feast and a common feast of the same
+      grade tie rather than being separated by propriety.
+    decides_the_mass: false
+
+# ---------------------------------------------------------------------------
+# Overrides. Rules that defeat a straight comparison of row numbers.
+# ---------------------------------------------------------------------------
+overrides:
+- id: all-souls-yields-to-a-sunday
+  key: commemoratione-omnium-fidelium-defunctorum
+  yields_to: sunday
+  locus: DA, Titulus III; the pre-1955 Breviary rubrics
+  why: >-
+    The Commemoration of All the Faithful Departed yields to an occurring
+    Sunday. The 1962 code states this in the table row itself; the pre-1955
+    rule states it in the occurrence rubrics of the Breviary, to which the
+    Missal defers.
+- id: same-divine-person-or-same-saint
+  locus: DA, Titulus III
+  stated_only: true
+  why: >-
+    Two feasts of the same divine Person, or of the same saint, do not
+    commemorate one another: the lower is simply omitted and is not
+    transferred. This file cannot detect that identity from a mass key, so it
+    is stated and never applied.
+- id: the-last-sunday-after-pentecost-keeps-the-final-slot
+  key: last-sunday-after-pentecost
+  over_key_matches: '^pentecost-\d+$'
+  when_same_row: true
+  locus: the pre-1955 Breviary rubrics, De Dominica
+  why: >-
+    In a year whose count of Sundays after Pentecost leaves the numbered
+    Sunday and the last Sunday in one slot, the Mass of the last Sunday after
+    Pentecost is the one that is said. Both are minor Sundays at row 19, so the
+    table alone cannot separate them.
+
+# ---------------------------------------------------------------------------
+# The bases. Each is one reason a day carries the row it carries.
+# ---------------------------------------------------------------------------
+bases:
+- id: row-1-triduum
+  constitutes_the_day: true
+  label: a day of the Sacred Triduum
+  de_tempore: true
+  row: 1
+  nature: sacred-triduum
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: a day of the Sacred Triduum, the highest liturgical days
+  locus: DA, Titulus II
+- id: row-2-duplex-i-lord
+  label: a duplex I classis feast of the Lord
+  of_the_lord: true
+  row: 2
+  nature: feast
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a duplex I classis feast of the Lord, including the Nativity, Easter,
+    Pentecost, Epiphany, Ascension, Trinity, Corpus Christi, Sacred Heart,
+    Christ the King and the Precious Blood, with their privileged vigils and
+    octave days
+  locus: DA, Titulus II
+- id: row-3-duplex-i-bvm
+  label: a duplex I classis feast of the Blessed Virgin Mary
+  row: 3
+  nature: feast
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: a duplex I classis feast of the Blessed Virgin Mary
+  locus: DA, Titulus II
+- id: row-4-duplex-i-angels-apostles
+  label: >-
+    a duplex I classis feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  row: 4
+  nature: feast
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a duplex I classis feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists, ranked by personal dignity under criterion (c)
+  locus: DA, Titulus II
+- id: row-5-duplex-i-other
+  label: a duplex I classis feast of other saints
+  row: 5
+  nature: feast
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: a duplex I classis feast not of the Lord, BVM, Angels, Apostles or Evangelists
+  locus: DA, Titulus II
+- id: row-6-major-sunday
+  constitutes_the_day: true
+  label: a major Sunday of Advent, Lent or Passiontide
+  de_tempore: true
+  row: 6
+  nature: sunday
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a Sunday of Advent, Lent or Passiontide, semiduplex in grade but privileged
+    under criterion (a): it yields only to duplex I classis
+  locus: DA, Titulus II
+- id: row-7-duplex-ii-lord
+  label: a duplex II classis feast of the Lord
+  of_the_lord: true
+  row: 7
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex II classis feast of the Lord
+  locus: DA, Titulus II
+- id: row-8-duplex-ii-bvm
+  label: a duplex II classis feast of the Blessed Virgin Mary
+  row: 8
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex II classis feast of the Blessed Virgin Mary
+  locus: DA, Titulus II
+- id: row-9-duplex-ii-angels-apostles
+  label: >-
+    a duplex II classis feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  row: 9
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: >-
+    a duplex II classis feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  locus: DA, Titulus II
+- id: row-10-duplex-ii-other
+  label: a duplex II classis feast of other saints
+  row: 10
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex II classis feast not of the Lord, BVM, Angels, Apostles or Evangelists
+  locus: DA, Titulus II
+- id: row-11-duplex-majus-lord
+  label: a duplex majus feast of the Lord
+  of_the_lord: true
+  row: 11
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex majus feast of the Lord
+  locus: DA, Titulus II
+- id: row-12-duplex-majus-bvm
+  label: a duplex majus feast of the Blessed Virgin Mary
+  row: 12
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex majus feast of the Blessed Virgin Mary
+  locus: DA, Titulus II
+- id: row-13-duplex-majus-angels-apostles
+  label: >-
+    a duplex majus feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  row: 13
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: >-
+    a duplex majus feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  locus: DA, Titulus II
+- id: row-14-duplex-majus-other
+  label: a duplex majus feast of other saints
+  row: 14
+  nature: feast
+  class: II
+  commemoration: ordinary
+  why: a duplex majus feast not of the Lord, BVM, Angels, Apostles or Evangelists
+  locus: DA, Titulus II
+- id: row-15-duplex-minus-lord
+  label: a duplex minus feast of the Lord
+  of_the_lord: true
+  row: 15
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: a duplex minus feast of the Lord
+  locus: DA, Titulus II
+- id: row-16-duplex-minus-bvm
+  label: a duplex minus feast of the Blessed Virgin Mary
+  row: 16
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: a duplex minus feast of the Blessed Virgin Mary
+  locus: DA, Titulus II
+- id: row-17-duplex-minus-angels-apostles
+  label: >-
+    a duplex minus feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  row: 17
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: >-
+    a duplex minus feast of the Angels, St John Baptist, St Joseph, or the
+    Apostles and Evangelists
+  locus: DA, Titulus II
+- id: row-18-duplex-minus-other
+  label: a duplex minus feast of other saints
+  row: 18
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: a duplex minus feast not of the Lord, BVM, Angels, Apostles or Evangelists
+  locus: DA, Titulus II
+- id: row-19-minor-sunday
+  constitutes_the_day: true
+  label: a minor Sunday
+  de_tempore: true
+  row: 19
+  nature: sunday
+  class: III
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a Sunday not of Advent, Lent or Passiontide, semiduplex in grade. Its
+    commemoration is privileged under criterion (a)
+  locus: DA, Titulus II
+- id: row-20-privileged-feria
+  constitutes_the_day: true
+  label: a privileged feria or greater vigil
+  de_tempore: true
+  row: 20
+  nature: feria
+  class: III
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a semiduplex privileged feria of Lent or Advent (17-23 December), an Ember
+    Day, Ash Wednesday, or a greater vigil
+  locus: DA, Titulus II
+- id: row-21-semiduplex-lord-bvm
+  label: >-
+    a semiduplex feast of the Lord, the Blessed Virgin Mary, the Angels, St
+    John Baptist, St Joseph, or the Apostles and Evangelists
+  row: 21
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: >-
+    a semiduplex feast of the Lord, BVM, Angels, St John Baptist, St Joseph, or
+    the Apostles and Evangelists, ranked by personal dignity under criterion
+    (c)
+  locus: DA, Titulus II
+- id: row-22-semiduplex-other
+  label: a semiduplex feast of other saints
+  row: 22
+  nature: feast
+  class: III
+  commemoration: ordinary
+  why: a semiduplex feast not of the Lord, BVM, Angels, Apostles or Evangelists
+  locus: DA, Titulus II
+- id: row-23-simplex-feast
+  label: a simplex feast or common vigil
+  row: 23
+  nature: feast
+  class: IV
+  commemoration: ordinary
+  why: a simplex feast or common vigil
+  locus: DA, Titulus II
+- id: row-24-simplex-feria
+  constitutes_the_day: true
+  label: a simplex feria
+  de_tempore: true
+  row: 24
+  nature: feria
+  class: IV
+  commemoration: none
+  commemoration_locus: DA, Titulus VI
+  why: a simplex feria, every feria not named above
+  locus: DA, Titulus II
+- id: row-25-our-lady-on-saturday
+  constitutes_the_day: true
+  label: the Office of Our Lady on Saturday
+  row: 25
+  nature: office
+  class: IV
+  commemoration: ordinary
+  why: >-
+    the Office of Our Lady on Saturday, kept on a Saturday that carries a
+    simplex feria. It is an Office and not a feast, and any occurring feast
+    displaces it
+  locus: DA, Titulus II; the pre-1955 Breviary rubrics
+- id: row-2-vigil
+  constitutes_the_day: true
+  label: a privileged vigil of a duplex I classis feast of the Lord
+  de_tempore: true
+  row: 2
+  nature: vigil
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    the vigil of the Nativity or of Pentecost, a privileged vigil at duplex I
+    classis
+  locus: DA, Titulus II
+- id: row-2-octave-day
+  constitutes_the_day: true
+  label: a day within the privileged octave of Easter or Pentecost, or an octave day
+  de_tempore: true
+  row: 2
+  nature: day-within-an-octave
+  class: I
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a day within the privileged octave of Easter or Pentecost, or the octave
+    day of Easter (Low Sunday), which share the grade of the feast
+  locus: DA, Titulus II
+- id: row-20-vigil
+  constitutes_the_day: true
+  label: a greater vigil
+  de_tempore: true
+  row: 20
+  nature: vigil
+  class: III
+  commemoration: ordinary
+  why: >-
+    a greater vigil — the Ascension, the Assumption, St John Baptist, or Ss
+    Peter and Paul — semiduplex in grade
+  locus: DA, Titulus II
+- id: row-15-christmas-octave
+  constitutes_the_day: true
+  label: a day within the octave of the Nativity
+  de_tempore: true
+  row: 15
+  nature: day-within-an-octave
+  class: III
+  commemoration: privileged
+  commemoration_locus: DA, Titulus VI
+  why: >-
+    a day within the octave of the Nativity that carries no feast of its own,
+    duplex in grade
+  locus: DA, Titulus II
+- id: calendar-commemoration
+  label: a commemoration inscribed in the calendar
+  row: null
+  nature: commemoration
+  commemoration: ordinary
+  why: >-
+    an entry the calendar inscribes as a commemoration and not as a feast. It
+    occupies no row of the table, so it can never take the day; it can only
+    ever be an ordinary commemoration
+  locus: DA, Titulus II; Titulus VI
+- id: additional-mass
+  label: a further Mass appointed on this day
+  row: null
+  nature: additional-mass
+  commemoration: none
+  competes: false
+  why: >-
+    a further Mass the Missal appoints on a day whose identity is settled
+    elsewhere. It is not a competitor for the day
+  locus: the Missal prints both formularies at this day
+- id: alternative-formulary
+  label: a formulary the Missal prints for a slot another day occupies
+  row: null
+  nature: alternative-formulary
+  commemoration: none
+  competes: false
+  why: >-
+    a formulary the Missal prints for a slot another celebration occupies. It
+    is a formulary, not a liturgical day, and it competes for nothing
+  locus: the Missal's own heading at the formulary
+- id: not-classified
+  label: not classified here
+  row: null
+  nature: unknown
+  commemoration: none
+  competes: false
+  certain: false
+  why: this repository states no grade for this entry
+  locus: null
+
+# ---------------------------------------------------------------------------
+# Assignment. Ordered; the first rule whose predicate matches a mass wins.
+# The pre-1955 calendar inherits 486 of 491 masses from the 1962 typical
+# edition via the recension projection. The 1962 rank (I, II, III, Comm.) is
+# the only grade information the mass index carries, and it is an
+# APPROXIMATION of the pre-1955 grade:
+#   1962 I   -> duplex I classis (rows 2-5)
+#   1962 II  -> duplex II classis (rows 7-10)
+#   1962 III -> semiduplex (rows 21-22) or simplex (row 23)
+#   1962 Comm. -> commemoration
+# The personal dignity sub-row is read from the `kind` field where the mass
+# index carries one: christological -> of the Lord, marian -> of the BVM,
+# sanctoral -> of other saints (with Apostles etc. not distinguished).
+# ---------------------------------------------------------------------------
+assignment:
+# --- the five masses the pre-1955 calendar states explicitly ---
+- {basis: row-1-triduum, keys: [mass-of-the-lords-supper, good-friday, easter-vigil], note: 'the pre-1955 Triduum services, the highest liturgical days'}
+- {basis: alternative-formulary, keys: [blessing-of-palms], note: 'the pre-1955 blessing of palms is a service of fourteen units the 1962 book does not print; it precedes the Palm Sunday Mass and is not a competitor for the day'}
+- {basis: alternative-formulary, keys: [mass-of-the-first-sunday-after-pentecost], note: 'the Missal''s own formulary for the first Sunday after Pentecost, whose slot Trinity Sunday occupies'}
+- {basis: alternative-formulary, keys: [mass-of-the-first-sunday-after-epiphany], note: 'the Missal''s own formulary for the first Sunday after the Epiphany, whose slot the Holy Family occupies'}
+- {basis: additional-mass, keys: [rogation-mass], note: 'the Rogation Mass is a further Mass appointed on the day, not a competitor for it'}
+# --- temporal masses: duplex I classis of the Lord ---
+- {basis: row-2-duplex-i-lord, keys: [easter-sunday, pentecost], note: 'Easter and Pentecost, duplex I classis with privileged octaves'}
+- {basis: row-2-duplex-i-lord, keys: [nativitate-domini-octave], note: 'the Nativity of the Lord, duplex I classis with a privileged octave'}
+- {basis: row-2-duplex-i-lord, keys: [epiphania-domini, ascension, trinity, corpus-christi, sacred-heart, christ-the-king], note: 'duplex I classis feasts of the Lord named in the calendar'}
+- {basis: row-2-duplex-i-lord, keys: [pretiosissimi-sanguinis-domini-nostri-iesu-christi], note: 'the Precious Blood, duplex I classis of the Lord'}
+- {basis: row-2-vigil, keys: [vigil-nativity-lord, vigil-of-pentecost], note: 'the privileged vigils of the Nativity and Pentecost'}
+- {basis: row-2-octave-day, keys: [low-sunday], note: 'Low Sunday, the octave day of Easter, duplex I classis'}
+- {basis: row-2-octave-day, keys: [easter-monday, easter-tuesday, easter-wednesday, easter-thursday, easter-friday, easter-saturday, pentecost-monday, pentecost-tuesday, pentecost-ember-wednesday, pentecost-thursday, pentecost-ember-friday, pentecost-ember-saturday], note: 'days within the privileged octaves of Easter and Pentecost'}
+# --- temporal masses: duplex I classis of other saints ---
+- {basis: row-5-duplex-i-other, keys: [omnium-sanctorum, commemoratione-omnium-fidelium-defunctorum], note: 'All Saints and All Souls, duplex I classis feasts not of the Lord, BVM, Angels or Apostles'}
+# --- temporal masses: major Sundays ---
+- {basis: row-6-major-sunday, keys: [advent-1, advent-2, advent-3, advent-4, lent-1, lent-2, lent-3, lent-4, passion-sunday, palm-sunday], note: 'the Sundays of Advent, Lent and Passiontide, semiduplex privileged'}
+# --- temporal masses: privileged ferias ---
+- {basis: row-20-privileged-feria, keys: [ash-wednesday, holy-monday, holy-tuesday, holy-wednesday], note: 'Ash Wednesday and the ferias of Holy Week (Monday to Wednesday), semiduplex privileged ferias'}
+- {basis: row-20-privileged-feria, key_matches: '(^advent-ember-|^september-ember-|^lent-\d+-ember-)'}
+- {basis: row-20-privileged-feria, key_matches: '^(thursday|friday|saturday)-after-ash-wednesday$'}
+- {basis: row-20-privileged-feria, key_matches: '^(lent-\d+|passion)-(monday|tuesday|wednesday|thursday|friday|saturday)$'}
+# --- temporal masses: greater vigils ---
+- {basis: row-20-vigil, keys: [vigil-of-the-ascension, vigil-assumption, vigil-nativity-saint-john-baptist, vigil-saints-peter-paul], note: 'the greater vigils, semiduplex in grade'}
+# --- temporal masses: duplex II classis ---
+- {basis: row-7-duplex-ii-lord, keys: [holy-family, most-holy-name-of-jesus], note: 'duplex II classis feasts of the Lord, assigned to the Sunday they occupy'}
+- {basis: row-8-duplex-ii-bvm, keys: [purificatione-beatae-mariae-virginis], note: 'the Purification, treated as a feast of the Lord in the Missal''s own rubric, here classified as duplex II classis of the BVM; the pre-1955 book heads it with the Purification of the BVM'}
+# --- temporal masses: minor Sundays ---
+- {basis: row-19-minor-sunday, keys: [sunday-within-octave-of-nativity, last-sunday-after-pentecost]}
+- {basis: row-19-minor-sunday, key_matches: '^(epiphany|easter|pentecost|resumed-epiphany)-\d+$'}
+- {basis: row-19-minor-sunday, keys: [septuagesima, sexagesima, quinquagesima, sunday-after-ascension]}
+# --- temporal masses: days within the Christmas octave ---
+- {basis: row-15-christmas-octave, keys: [fifth-day-within-octave, sixth-day-within-octave, seventh-day-within-octave], note: 'days within the octave of the Nativity that carry no feast of their own'}
+# --- temporal masses: simplex vigil ---
+- {basis: row-23-simplex-feast, keys: [vigil-saint-lawrence], note: 'the common vigil of St Lawrence, simplex in grade'}
+# --- the one movable commemoration this calendar inscribes ---
+- {basis: calendar-commemoration, keys: [comm-septem-dolorum-beatae-mariae-virginis], note: 'the Commemoration of the Seven Sorrows, inscribed as a commemoration on the Friday after Passion Sunday'}
+# --- dated sanctorale: commemoration ---
+- {basis: calendar-commemoration, dated: true, rank: Comm.}
+# --- dated sanctorale: duplex I classis ---
+- {basis: row-2-duplex-i-lord, dated: true, rank: I, kind: christological, note: 'duplex I classis feasts of the Lord, mapped from 1962 class I'}
+- {basis: row-3-duplex-i-bvm, dated: true, rank: I, kind: marian, note: 'duplex I classis feasts of the BVM, mapped from 1962 class I'}
+- {basis: row-4-duplex-i-angels-apostles, dated: true, rank: I, kind: sanctoral, note: 'duplex I classis feasts of Apostles etc., mapped from 1962 class I; the mass index does not distinguish Apostles from other saints, so all sanctoral class I feasts are placed at row 4 as an approximation'}
+# --- dated sanctorale: duplex II classis ---
+- {basis: row-7-duplex-ii-lord, dated: true, rank: II, kind: christological, note: 'duplex II classis feasts of the Lord, mapped from 1962 class II'}
+- {basis: row-8-duplex-ii-bvm, dated: true, rank: II, kind: marian, note: 'duplex II classis feasts of the BVM, mapped from 1962 class II'}
+- {basis: row-10-duplex-ii-other, dated: true, rank: II, note: 'duplex II classis feasts of other saints, mapped from 1962 class II'}
+# --- dated sanctorale: semiduplex (from 1962 class III) ---
+- {basis: row-21-semiduplex-lord-bvm, dated: true, rank: III, kind: marian, note: 'semiduplex feasts of the BVM, mapped from 1962 class III'}
+- {basis: row-22-semiduplex-other, dated: true, rank: III, note: 'semiduplex feasts of other saints, mapped from 1962 class III; some may be simplex in the pre-1955 system, but the mass index does not distinguish them'}
+
+# ---------------------------------------------------------------------------
+# Implied days. The calendar index holds a formulary only where the Missal
+# prints one. On many dates the day that a feast is measured against carries
+# no mass key at all. These rules constitute that day from the season.
+# ---------------------------------------------------------------------------
+implied:
+- id: advent-feria-late
+  label: a feria of Advent from 17 to 23 December
+  season: advent
+  from: 12-17
+  to: 12-23
+  weekday_only: true
+  basis: row-20-privileged-feria
+  certain: true
+  note: >-
+    A semiduplex privileged feria of Advent. An Advent Ember Day falling in
+    this window is also a privileged feria, so the row holds either way.
+- id: advent-feria-early
+  label: a feria of Advent before 17 December
+  season: advent
+  to: 12-16
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+  note: >-
+    A simplex feria of Advent before 17 December, which yields to any feast
+    and is commemorated if impeded.
+- id: christmas-octave-day
+  label: a day within the octave of the Nativity
+  season: christmastide
+  from: 12-26
+  to: 12-31
+  weekday_only: true
+  basis: row-15-christmas-octave
+  certain: true
+- id: christmastide-feria
+  label: a feria of Christmastide
+  season: christmastide
+  from: 01-02
+  to: 01-05
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+- id: epiphanytide-feria
+  label: a feria after the Epiphany
+  season: epiphanytide
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+  note: >-
+    The pre-1955 system celebrates the octaves of Christmas, Easter and
+    Pentecost only, so the days after the Epiphany are ordinary ferias.
+- id: septuagesima-feria
+  label: a feria of Septuagesima
+  season: septuagesima
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+- id: paschaltide-feria
+  label: a feria of Paschaltide
+  season: paschaltide
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+- id: september-feria
+  label: a feria after Pentecost, in September
+  season: after-pentecost
+  from: 09-01
+  to: 09-30
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+  note: >-
+    A September Ember Day is a privileged feria at row 20, but an implied rule
+    fires only where no candidate constitutes the day and none is temporal, so
+    a weekday this rule reaches is one the year file has already shown carries
+    no Ember Day.
+- id: after-pentecost-feria
+  label: a feria after Pentecost
+  season: after-pentecost
+  weekday_only: true
+  basis: row-24-simplex-feria
+  certain: true
+saturday_office:
+  basis: row-25-our-lady-on-saturday
+  when_implied_basis: row-24-simplex-feria
+  locus: the pre-1955 Breviary rubrics, De Sabbato
+  latin: >-
+    In sabbatis, in quibus occurrit Officium de feria simplici, fit de sancta
+    Maria in sabbato.
+  why: >-
+    On a Saturday carrying a simplex feria the Office is of Our Lady on
+    Saturday. Its Mass exists and may be sung, but any occurring feast
+    displaces it, because row 25 sits below every semiduplex feast.
+  mass:
+    locus: the pre-1955 Missal, Commune Sanctorum, Missae de S. Maria in sabbato
+    why: >-
+      The Mass agrees with the Office of the day, and the Office is of Our
+      Lady. This Saturday is not a simplex feria but the Office of Our Lady on
+      Saturday, one row above it.
+    printed: Commune Sanctorum, Missae de S. Maria in sabbato
+    heading: >-
+      Missae de S. Maria in sabbato, quae dici etiam possunt aliis diebus ut
+      votivae de B. Maria Virgine
+    forms:
+    - mass: missa-de-s-maria-in-sabbato-1
+      printed: Tempore Adventus
+      season: advent
+      note: >-
+        Never reached as the Mass of the day. Every Saturday of Advent is a
+        feria of row 24 or row 20, never of row 25.
+    - mass: missa-de-s-maria-in-sabbato-2
+      printed: A Nativitate Domini usque ad Purificationem
+      from: 12-25
+      to: 02-02
+    - mass: missa-de-s-maria-in-sabbato-3
+      printed: A die 3 februarii usque ad feriam IV Hebdomadae sanctae
+      from: 02-03
+      to_anchor: {anchor: easter, offset_days: -4}
+    - mass: missa-de-s-maria-in-sabbato-4
+      printed: Tempore paschali
+      from_anchor: {anchor: easter, offset_days: 0}
+      to_anchor: {anchor: easter, offset_days: 55}
+    - mass: missa-de-s-maria-in-sabbato-5
+      printed: A festo Ss. Trinitatis usque ad sabbatum ante dominicam I Adventus
+      from_anchor: {anchor: trinity, offset_days: 0}
+      before_anchor: {anchor: next_first_sunday_of_advent, offset_days: 0}
+
+# ---------------------------------------------------------------------------
+# Choices the rubrics themselves create.
+# ---------------------------------------------------------------------------
+mass_choices: []
+
+# ---------------------------------------------------------------------------
+# Decision three. What becomes of the day that lost.
+# ---------------------------------------------------------------------------
+known_absences: []
+
+impediment:
+  outcomes: [omission, commemoration, transfer, reposition]
+  outcomes_locus: DA, Titulus III
+  transfer:
+    locus: DA, Titulus III
+    applies_to: first-class feasts only
+    destination:
+      locus: DA, Titulus III
+      rule: the next following day that is not duplex I classis or duplex II classis
+      computed_here: false
+      why_not: >-
+        The destination depends on the grade of every following day and on the
+        order in which several transferred feasts are placed. This repository
+        does not compute it, and a page that guessed it would be asserting an
+        Ordo result it has not checked. The two destinations the rubric fixes
+        by name are computed, because the rubric states them.
+    proper_seats:
+    - key: annuntiatio-beatae-mariae-virginis
+      locus: DA, Titulus III
+      own_date: 03-25
+      when: 25 March falls between Palm Sunday and the Saturday after Easter inclusive
+      impeded_when_easter_offset_between: [-7, 6]
+      destination: the Monday after Low Sunday
+      seat_easter_offset: 8
+      latin: >-
+        festum Annuntiationis B. Mariae Virg., quando est transferendum post
+        Pascha, transfertur in feriam II post dominicam in albis
+    - key: commemoratione-omnium-fidelium-defunctorum
+      locus: DA, Titulus III
+      own_date: 11-02
+      when: 2 November falls on a Sunday
+      impeded_when_weekday: sunday
+      destination: the following Monday
+      seat_offset_days: 1
+      latin: >-
+        Commemoratio omnium Fidelium defunctorum, quando occurrit cum dominica,
+        transfertur in feriam II sequentem
+    keeps_its_class:
+      locus: DA, Titulus III
+      latin: Festa translata sunt eiusdem gradus ac in sede propria.
+  reposition:
+    locus: DA, Titulus IV
+    stated_only: true
+    why: >-
+      Reposition answers a perpetual collision, which is a permanent fact about
+      a particular calendar rather than a fact about a date. This repository
+      carries no particular calendar, so nothing here is ever repositioned.
+  fixed_commemoration:
+    locus: DA, Titulus III
+    latin: >-
+      Commemoratio die fixo statuta non transfertur vel reponitur cum festo
+      transferendo vel reponendo, sed fit suo die vel omittitur.
+    gloss: >-
+      A commemoration attached to a date does not travel with the feast it
+      accompanies.
+  sunday_not_resumed:
+    locus: DA, Titulus III
+    latin: Officium et Missa dominicae impeditae nec anticipantur nec resumuntur.
+    gloss: >-
+      An impeded Sunday is gone for that year. It is not moved forward, back,
+      or into the following week.
+  vigil_dropped:
+    locus: DA, Titulus III
+    gloss: >-
+      A vigil is dropped altogether if it falls on a Sunday or on a duplex I
+      classis feast, or if the feast it precedes is itself transferred or
+      reduced to a commemoration.
+
+# ---------------------------------------------------------------------------
+# Commemoration. The pre-1955 system has a richer commemoration apparatus
+# than the 1962 code: octaves, vigils, and the orationes pro diversitate
+# Temporum all contribute commemorations. This section states the structure
+# the assembly model needs and marks the complex cases as not decided here.
+# ---------------------------------------------------------------------------
+commemoration:
+  kinds:
+    locus: DA, Titulus VI
+    latin: >-
+      Commemorationes sunt aut privilegiatae aut ordinariae. Commemorationes
+      privilegiatae fiunt in Laudibus et in Vesperis necnon in omnibus Missis;
+      commemorationes vero ordinariae fiunt tantum in Laudibus, in Missis
+      conventualibus et in omnibus Missis lectis.
+    gloss: >-
+      An ordinary commemoration is made at every Low Mass and at the
+      conventual Mass, and at no other sung Mass. A sung parish Mass that is
+      not a conventual Mass drops every ordinary commemoration.
+  privileged:
+    locus: DA, Titulus VI
+    list:
+    - {clause: a, what: of the Sunday}
+    - {clause: b, what: of a duplex I classis liturgical day}
+    - {clause: c, what: of the days within a privileged octave}
+    - {clause: d, what: of the privileged ferias of Advent, Lent and Passiontide}
+    - {clause: e, what: of the greater Litanies, in the Mass}
+    closing: Omnes aliae commemorationes sunt commemorationes ordinariae.
+  ceilings:
+    locus: DA, Titulus VI
+    latin: >-
+      a) in diebus liturgicis I classis et in Missis in cantu non
+      conventualibus, nulla admittitur commemoratio, praeter unam privilegiatam;
+      b) in dominicis II classis, una tantum admittitur commemoratio; c) in
+      aliis diebus liturgicis II classis, una tantum admittitur commemoratio; d)
+      in diebus liturgicis III et IV classis, duae tantum admittuntur
+      commemorationes.
+    rules:
+    - {clause: a, when_class: I, max: 1, privileged_only: true, what: 'On a duplex I classis day, one commemoration only and it must be privileged.'}
+    - {clause: b, when_class: II, when_nature: sunday, max: 1, privileged_only: false, second_class_feasts_only: true, displaced_by_privileged: true, what: 'On a duplex II classis Sunday, one commemoration only, of a duplex II classis feast; omitted if a privileged commemoration is due.'}
+    - {clause: c, when_class: II, max: 1, privileged_only: false, what: 'On any other duplex II classis day, exactly one commemoration, privileged or ordinary.'}
+    - {clause: d, when_class: [III, IV], max: 2, privileged_only: false, what: 'On a lower-grade day, two commemorations.'}
+    sung_non_conventual:
+      locus: DA, Titulus VI
+      max: 1
+      privileged_only: true
+      what: >-
+        A sung Mass that is not the conventual Mass admits one privileged
+        commemoration and no more.
+  exclusions:
+    locus: DA, Titulus VI
+    list:
+    - {clause: a, what: 'A feast or mystery of one divine Person excludes a commemoration of another feast or mystery of the same Person.', applied: false}
+    - {clause: b, what: 'The Sunday excludes a commemoration of a feast or mystery of the Lord, and conversely.', applied: true}
+    - {clause: c, what: 'A commemoration de Tempore excludes another de Tempore.', applied: true}
+    - {clause: d, what: 'A feast of Our Lady or of a saint excludes another commemoration asking the same intercession.', applied: false}
+    not_applied_note: >-
+      Clauses a and d turn on the identity of a divine Person or of a saint,
+      which this file cannot read off a mass key. They are stated at the step
+      where they would apply and are never applied.
+  inseparable:
+    locus: DA, Titulus VI
+    what: >-
+      The mutual commemoration of Ss Peter and Paul is inseparable: two
+      prayers counting as one.
+    applied: false
+  order:
+    locus: DA, Titulus VI
+    latin: >-
+      Commemoratio de Tempore fit primo loco. In admittendis et ordinandis
+      aliis commemorationibus, servetur ordo praecedentiae.
+    gloss: The season first, then the order of precedence.
+  surplus:
+    locus: DA, Titulus VI
+    latin: Quaelibet commemoratio, quae numerum pro singulis diebus statutum superet, omittitur.
+  abolished:
+    what: >-
+      The pre-1955 system carries the full commemoration apparatus that the
+      1955 simplification removed: the Suffragium de omnibus Sanctis, the
+      commemoratio de Cruce, and the seasonal second and third orations of
+      Advent, Lent and the Sundays. These are NOT modelled here. A reader
+      holding a pre-1955 hand missal is holding a book whose commemoration
+      apparatus is richer than this file represents, and the printed second
+      and third collects must be checked against the particular calendar
+      before use.
+
+# ---------------------------------------------------------------------------
+# Decision five, as far as the orations.
+# ---------------------------------------------------------------------------
+orations:
+  what_counts:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    what: >-
+      the oration of the Mass being celebrated; the orations of a commemorated
+      Office and of any occurring commemoration; other orations the rubrics
+      prescribe; the prayer imposed by the local Ordinary; and the votive
+      prayer.
+  ceiling_covers_all:
+    locus: DA, Titulus VI
+    what: The ceiling counts all of them together, not only the commemorations.
+  absolute_cap:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    value: 3
+    gloss: Three orations at most, as in the 1960 code.
+  conclusions:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    what: >-
+      The Mass's own oration is said under its own conclusion unless another is
+      joined to it; commemorations are said under a second conclusion.
+  tracked_by:
+  - {slot: Secret, locus: the pre-1955 Missal, De Orationibus, what: 'as many as there were orations at the beginning of Mass'}
+  - {slot: Postcommunion, locus: the pre-1955 Missal, De Orationibus, what: 'the same number and order'}
+  prayer_over_the_people:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    what: >-
+      Added after the last postcommunion in Masses of the ferias of Lent and
+      Passiontide, the Sacred Triduum excepted; under its own conclusion; said
+      even when three postcommunions have preceded.
+    applies_when_winner_basis: [row-20-privileged-feria]
+  imposed_prayer:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    applied: false
+    what: >-
+      The local Ordinary may impose one prayer for a grave and public
+      necessity. Whether one is imposed is a fact about a diocese.
+  votive_prayer:
+    locus: the pre-1955 Missal, Rubricae generales, De Orationibus
+    applied: false
+    what: >-
+      Any priest may add one at his discretion in read non-conventual Masses
+      on lower-grade days, placed last.
+
+# ---------------------------------------------------------------------------
+# Decision four is not taken here at all.
+# ---------------------------------------------------------------------------
+mass_category:
+  assumed: the Mass of the Office of the day
+  locus: the pre-1955 Missal, Rubricae generales, De Missa
+  latin: Missa proinde per se cum Officio diei concordare debet.
+  not_tested:
+  - {category: festive Mass, locus: the pre-1955 Missal, Rubricae generales}
+  - {category: votive Mass, locus: the pre-1955 Missal, Rubricae generales}
+  - {category: Requiem and funeral Mass, locus: the pre-1955 Missal, Rubricae generales}
+  - {category: ritual and nuptial Mass, locus: the pre-1955 Missal, Rubricae generales}
+  - {category: external solemnity, locus: the pre-1955 Missal, Rubricae generales}
+  warning: >-
+    A day's grade tells you only that a category is not excluded. What admits
+    it is a separate fact, and permission is never inferred from rank.
+
+not_decided_here:
+- Which calendar binds the celebrant, and every particular, diocesan, religious,
+  patronal, titular and dedication feast that calendar carries. This file
+  carries only the universal calendar.
+- The Gloria, which depends on whether the Te Deum was said at Matins.
+- The Creed, the Preface, the colour, the Last Gospel and the tone.
+- Whether a duplex I classis feast transferred from an earlier date occupies
+  this one, except at the two proper seats the rubric names.
+- Concurrence, which disposes of Vespers and never of the next morning's Mass.
+- The full commemoration apparatus of the pre-1955 rite, including the
+  Suffragium de omnibus Sanctis, the commemoratio de Cruce, and the seasonal
+  orations of Advent, Lent and the Sundays. These are richer than this file
+  models and must be checked against the particular calendar.
+
+# ---------------------------------------------------------------------------
+# Divergences from the rule. This file is a linearization, and every place it
+# departs from the five criteria is recorded here.
+# ---------------------------------------------------------------------------
+divergences:
+- what: primary and secondary first-class are merged
+  rule_states: >-
+    Criterion (b) of Divino afflatu distinguishes primary first-class feasts
+    from secondary. A primary first-class feast outranks a secondary one of the
+    same personal dignity.
+  this_file_reads: >-
+    All duplex I classis feasts of the same personal dignity share one row
+    (rows 2-5). The mass index carries no field that distinguishes primary
+    from secondary, so the table cannot separate them.
+  consequence: >-
+    Where a primary and a secondary first-class feast of the same dignity
+    occur on the same day, the table reports a tie and the day is marked
+    unsettled. In practice this is rare and usually involves feasts that do
+    not collide in the universal calendar.
+  reported: true
+- what: major Sundays are placed between duplex I classis and duplex II classis
+  rule_states: >-
+    Criterion (a) says the higher rite wins "unless a Sunday ... occurs". The
+    exception means major Sundays (Advent, Lent, Passiontide) do not yield to
+    duplex II classis or below, but they do yield to duplex I classis.
+  this_file_reads: >-
+    Major Sundays are at row 6, between duplex I classis (rows 2-5) and duplex
+    II classis (rows 7-10). This is the ordering the exception clause produces:
+    the Sunday yields to duplex I classis but not to anything below.
+  consequence: >-
+    A duplex II classis feast occurring on a major Sunday is correctly
+    displaced. A duplex I classis feast occurring on a major Sunday correctly
+    displaces it.
+  reported: true
+- what: criterion (e) propriety of feasts is not expressed in the table
+  rule_states: >-
+    Criterion (e) says a proper feast outranks a common feast of the same
+    grade, in occurrence and in reposition/translation, but NOT in concurrence.
+    So the same two days can be ordered differently depending on the question
+    being asked.
+  this_file_reads: >-
+    A single row number is one order for all questions. This file cannot
+    express criterion (e). Where a proper and common feast of the same grade
+    occur, the table reports a tie and the day is marked unsettled.
+  consequence: >-
+    Occurrence cases where propriety would separate two same-grade feasts are
+    not resolved here. Concurrence cases where propriety does NOT apply are
+    correctly left as ties, which is the right answer for the wrong reason.
+  reported: true
+- what: 1962 class III maps to semiduplex only
+  rule_states: >-
+    The pre-1955 system distinguishes duplex minus, semiduplex, and simplex
+    below duplex majus. The 1962 system collapsed all three into class III.
+  this_file_reads: >-
+    All 1962 rank III masses are mapped to semiduplex (rows 21-22). Some were
+    duplex minus or simplex in the pre-1955 system, but the mass index does
+    not distinguish them.
+  consequence: >-
+    A 1962 class III feast that was simplex in the pre-1955 system is placed
+    one row too high, and a class III feast that was duplex minus is placed
+    too low. Both are approximations.
+  reported: true
+- what: personal dignity is approximated from the kind field
+  rule_states: >-
+    Criterion (c) orders feasts by personal dignity: Lord > BVM > Angels >
+    John Baptist > Joseph > Apostles/Evangelists > other saints.
+  this_file_reads: >-
+    The mass index carries a `kind` field with values christological, marian,
+    and sanctoral. It does not distinguish Angels, John Baptist, Joseph, or
+    Apostles from other saints. All sanctoral feasts of a given grade are
+    placed at the same row (the "other saints" row), regardless of whether
+    they are Apostles or non-Apostles.
+  consequence: >-
+    An Apostle and a non-Apostle saint of the same grade share a row. Where
+    they occur on the same day, the table reports a tie.
+  reported: true
+
+# ---------------------------------------------------------------------------
+# Unsettled cases. Questions this file does not answer.
+# ---------------------------------------------------------------------------
+unsettled:
+- what: two candidates that land on the same row
+  why: >-
+    The table orders within several rows by properties — primary before
+    secondary, proper before common, Apostles before other saints — that a
+    mass key does not carry. Where two candidates tie, the derivation stops
+    and says the day is not settled here.
+- what: criterion (e) propriety in occurrence
+  why: >-
+    Where a proper feast and a common feast of the same grade occur on the
+    same day, criterion (e) would separate them in occurrence. This file
+    cannot express that, so the day is marked unsettled.
+- what: DA Titulus III second paragraph and Titulus VI clauses a and d
+  why: >-
+    All turn on the identity of a divine Person or of a saint, which cannot be
+    read off a mass key. They are stated where they would apply and never
+    applied.
+- what: the full pre-1955 commemoration apparatus
+  why: >-
+    The Suffragium de omnibus Sanctis, the commemoratio de Cruce, and the
+    seasonal orations of Advent, Lent and the Sundays are not modelled here.
+    A page serving pre-1955 from this file shows fewer orations than a
+    pre-1955 hand missal prints.
+
+# ---------------------------------------------------------------------------
+# Solved cases. Each is checked by running the browser's own derivation
+# against the generated data, so the page and this file cannot drift apart
+# silently.
+# ---------------------------------------------------------------------------
+worked_cases:
+- id: case-easter-sunday-displaces-a-saint
+  source: composed for this file from the 1962 worked-case ledger, adapted to the pre-1955 grade system
+  date: '2026-04-05'
+  why: >-
+    Easter Sunday, a duplex I classis feast of the Lord at row 2, displaces
+    St Vincent Ferrer, a semiduplex feast at row 22. The saint is omitted,
+    not transferred, because only duplex I classis feasts are transferred and
+    he is semiduplex; and he is not commemorated, because Easter is a
+    first-class day that admits one privileged commemoration only.
+  expect:
+    winner: easter-sunday
+    winner_row: 2
+    orations_low_mass: 1
+    settled: true
+    readable:
+      said: [easter-sunday]
+      displaced: [s-vincentii-ferrerii-confessoris]
+- id: case-all-saints-on-a-sunday
+  source: composed for this file, adapted from the 1962 Case at 2026-11-01
+  date: '2026-11-01'
+  why: >-
+    All Saints, a duplex I classis feast of other saints at row 5, displaces
+    a minor Sunday at row 19. The Sunday's commemoration is privileged, so
+    it survives even at a sung Mass.
+  expect:
+    winner: omnium-sanctorum
+    winner_row: 5
+    commemorated: [pentecost-23]
+    orations_low_mass: 2
+    orations_sung_non_conventual: 2
+    settled: true
+- id: case-palm-sunday
+  source: composed for this file
+  date: '2026-03-29'
+  why: >-
+    Palm Sunday, a major Sunday of Passiontide at row 6. Nothing on the date
+    competes with it.
+  expect:
+    winner: palm-sunday
+    winner_row: 6
+    settled: true
+- id: case-holy-thursday
+  source: composed for this file
+  date: '2026-04-02'
+  why: >-
+    The Mass of the Lord's Supper, a day of the Sacred Triduum at row 1,
+    displaces St Francis of Paola. The Chrism Mass is absent from the
+    pre-1955 Missal, so it is not offered.
+  expect:
+    winner: mass-of-the-lords-supper
+    winner_row: 1
+    settled: true
+    readable:
+      said: [mass-of-the-lords-supper]
+      displaced: [s-francisci-paula-confessoris]
+- id: case-good-friday
+  source: composed for this file
+  date: '2026-04-03'
+  why: Good Friday, a day of the Sacred Triduum at row 1, with no competitor.
+  expect:
+    winner: good-friday
+    winner_row: 1
+    settled: true
+    readable: {said: [good-friday]}
+- id: case-holy-saturday
+  source: composed for this file
+  date: '2026-04-04'
+  why: >-
+    The Easter Vigil, a day of the Sacred Triduum at row 1, displaces
+    St Isidore.
+  expect:
+    winner: easter-vigil
+    winner_row: 1
+    settled: true
+    readable:
+      said: [easter-vigil]
+      displaced: [s-isidori-episcopi-confessoris-ecclesiae-doctoris]
+- id: case-all-souls-yields-to-a-sunday
+  source: composed for this file, adapted from the 1962 Case 3
+  date: '2036-11-02'
+  why: >-
+    All Souls, a duplex I classis feast at row 5, yields to an occurring
+    Sunday at row 19 through the override. The Sunday takes the day and
+    All Souls is transferred to its proper seat on the following Monday.
+  expect:
+    winner: pentecost-22
+    winner_row: 19
+    transferred: [commemoratione-omnium-fidelium-defunctorum]
+    orations_low_mass: 1
+    settled: true
+- id: case-all-souls-at-its-proper-seat
+  source: composed for this file, adapted from the 1962 Case 3b
+  date: '2036-11-03'
+  why: >-
+    All Souls at its proper seat, the Monday following the Sunday that
+    impeded it.
+  expect:
+    winner: commemoratione-omnium-fidelium-defunctorum
+    arrived: true
+    settled: true
