@@ -61,8 +61,8 @@ editions or says `Planned`.
 | **PC-S23 · Ascension of the Lord** | Planned | Planned | Planned |
 | **PC-S24 · Seventh Sunday of Easter** | Planned | Planned | Planned |
 | **PC-S25 · Pentecost Sunday** | Planned | Planned | Planned |
-| **PC-S26 · Most Holy Trinity** | [GPT PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.html) | Planned | Planned |
-| **PC-S27 · Most Holy Body and Blood of Christ** | [GPT PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf) · [Read](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.html) | Planned | Planned |
+| **PC-S26 · Most Holy Trinity** | [GPT PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf) | Planned | Planned |
+| **PC-S27 · Most Holy Body and Blood of Christ** | [GPT PDF](../pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf) | Planned | Planned |
 | **PC-S28 · Second Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S29 · Third Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **PC-S30 · Fourth Sunday in Ordinary Time** | Planned | Planned | Planned |
