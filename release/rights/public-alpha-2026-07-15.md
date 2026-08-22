@@ -1724,7 +1724,7 @@ release attachment, announcement, or promotion.
 | `library/law-and-church-discipline.md` | `23c168cb77e2efd6735778a57500f1b1b287f785c1bc7baf57a461dd96a7a744` |
 | `library/liturgy.md` | `ceddcd0f3e4c3c164917299ad7fc4fcedea6552d835687f55747787dc338a334` |
 | `library/mariology.md` | `01b55285b49898753023f97480dd32577bed1174684bc257fbfdc84f1c73362e` |
-| `library/novus-ordo-liturgy.md` | `5d652fe8aa4003a25b29a5637678b920429060b89d9cfcab8b38571178cb282d` |
+| `library/novus-ordo-liturgy.md` | `35704b5b52d63fba27c7c075cae16f0ad9de51c0cc7a51b774cd6f3db105d852` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
 | `library/traditional-latin-mass.md` | `f769d80e64550391c8e0a70a4d1ee9b0716bf9218d6783e161cc97e3459cafa8` |
@@ -1938,7 +1938,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/liturgy/day.js` | `0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae` |
 | `src/web/browser/liturgy/index.html` | `61593982117969b8673a936117ae8c331aca91c20283f613bd9c289424c83164` |
 | `src/web/browser/liturgy/liturgy.css` | `5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6` |
-| `src/web/browser/liturgy/liturgy.js` | `7e1def40d8ed150d181926e312b2faa24aa4bf85f24bfe14dd9edf832150f73d` |
+| `src/web/browser/liturgy/liturgy.js` | `b6a2ca7e2bf3b5966855312569092a3b6c3f32435cf73e4d04cf14fc801feabf` |
 | `src/web/browser/liturgy/ordinary-seating.js` | `030cfd5c9f982ddcdbeac0667c89985bb92337dad1e46be73bfa21ed45ca3af0` |
 | `src/web/browser/liturgy/proper-placement-notes.js` | `dd02a28ab4a922adbac69b26e53566e0dde23610f09359cd4377893b37f5fe6b` |
 | `src/web/browser/liturgy/propers-reader.css` | `93651fe00f97beaa55c581bb5066da0467a0245fd06bb02f7a5988b059e92ae9` |

@@ -590,7 +590,7 @@
           name: 'First Sunday of Advent',
           season: 'advent',
           kind: 'seasonal',
-          registry: '39',
+          registry: '01',
           propers: [
             {
               name: 'Introit',

@@ -84,8 +84,11 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     parents = re.findall(
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
     )
-    rows = re.findall(r"^\| \*\*(PC-S\d{2}) ·", landing, re.MULTILINE)
-    rows.sort(key=lambda value: int(value.removeprefix("PC-S")))
+    rows = re.findall(
+      r"^\| \*\*(.+?)\*\* \|.*\|.*\|.*\|$",
+      landing.split("## Sunday Propers Calendar")[1].split("### Sacred Triduum")[0],
+      re.MULTILINE,
+    )
     counts = [
       int(value)
       for value in re.findall(
@@ -95,7 +98,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       )
     ]
     self.assertEqual(parents, [f"PC-S{n:02d}" for n in range(1, 61)])
-    self.assertEqual(rows, parents)
+    self.assertEqual(len(rows), 60)
     self.assertEqual(sum(counts), 184)
     self.assertIn(
       "| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | "
@@ -133,7 +136,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     # The production plan no longer restates the registry's counts, so there
     # is no totals table to assert on; the registry above is the one source.
     self.assertIn(
-      "| **PC-S05 · Nativity of the Lord** | Planned | Planned | Planned |",
+      "| **Nativity of the Lord** | Planned | Planned | Planned |",
       landing,
     )
     self.assertNotRegex(landing, r"\b\d+ planned\b")
@@ -196,13 +199,22 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertIn("| 35 | **Pentecost Sunday** | Planned | Planned |", traditional)
 
     postconciliar = (ROOT / "library/novus-ordo-liturgy.md").read_text()
-    for proper_id in (37, 38, 39, 40, 41, 42, 26, 27):
+    for name in (
+      "Most Holy Trinity",
+      "Eleventh Sunday in Ordinary Time",
+      "Twelfth Sunday in Ordinary Time",
+      "Thirteenth Sunday in Ordinary Time",
+      "Fourteenth Sunday in Ordinary Time",
+      "Fifteenth Sunday in Ordinary Time",
+      "Sixteenth Sunday in Ordinary Time",
+      "Most Holy Body and Blood of Christ",
+    ):
       row = re.search(
-        rf"^\| \*\*PC-S{proper_id:02d} ·.*$", postconciliar, re.MULTILINE
+        rf"^\| \*\*{re.escape(name)}\*\* \|.*$", postconciliar, re.MULTILINE
       )
-      self.assertIsNotNone(row)
+      self.assertIsNotNone(row, f"Row not found for: {name}")
       self.assertIn("../pdf/gpt/", row.group())
-      if proper_id == 42:
+      if name == "Sixteenth Sunday in Ordinary Time":
         self.assertIn("../pdf/claude/", row.group())
 
 
