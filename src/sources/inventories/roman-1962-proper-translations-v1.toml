@@ -929,6 +929,47 @@ covers 261 entries to this one's 156 -- so the corrected reading is the default
 at every proper and this one is an offered alternative under the `caution` above.
 """
 
+[[sources]]
+id = "lasance-1945"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-deb5d167"
+label = "The New Roman Missal in Latin and English, revised edition, by F. X. Lasance and Francis Augustine Walsh (New York: Benziger Brothers, 1945), in the printing of about 1955-56 scanned as Internet Archive item fr-lasance-missal-1937"
+attests = "editio-typica-1920"
+attests_kind = "date-bound"
+attests_basis = """
+The book names no Latin exemplar on any page opened for this lane. Its own
+edition record in this repository states that the Latin it prints in the left
+column is the Missale Romanum as revised through Benedict XV, and the pages read
+here bear that out negatively rather than positively: the body carries the
+pre-1955 Holy Week, the Assumption still has its octave, and no page read here
+cites a typical edition or a decree. So the edge is a date bound and nothing
+stronger. The base text is the 1945 revision, which falls after the typical
+edition of 1920 and before maxima-redemptionis-1955, and editio-typica-1920 is
+the state it can be translating.
+
+What that bound settles is the same thing it settles for the two Cummiskey
+printings this file already carries: every English word quoted from this book is
+PRE-1955 English. It witnesses nothing about the restored Holy Week, and the
+nineteen Holy Week rows in `untranslated` are beyond its reach for that reason
+and not for want of looking.
+
+The act history does not carry this witness. `check-calendar-masses` binds a
+source row to the act history only where both files hold the same id, so this
+row states its edge on its own account. If the act history later takes the book
+up, the two must be held to agree, as the Cummiskey rows already are.
+
+ONE THING THE HELD ARTIFACT IS NOT. The scanned printing is of about 1955-56,
+not of 1945, and it carries matter added after 1945. Which matter, and what
+follows for the entries below, is set out in the lane report under "the lettered
+pages"; the short of it is that six entries below stand on pages numbered 1302a
+to 1302d, which are inserted leaves the rights record for this book never named.
+"""
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Public domain in the United States by failure to renew, on the affirmative registration-number record established at src/sources/inventories/lasance-new-roman-missal-rights-v1.toml: A 110108, copyright 15 July 1937, renewal window closed 15 July 1965; A 192159, copyright 1 November 1945, renewal window closed 1 November 1973. That holding is the repository's own and is recorded there with its citations, its controls, and what would overturn it; nothing here re-argues it. It does not cover the appendix at printed pages 1298a-1298n, which that record expressly excludes as post-1954 new matter, and no entry below quotes those pages. It is not established for the other lettered insert pages of the same printing; see the lane report."
+caution = "A lay hand missal of the 1945 revision, printed about 1955-56, not an approved liturgical translation and never an altar book. Its Holy Week is the pre-1955 rite, its sanctoral is not the 1962 sanctoral, and its second and third orations are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
+role = "Second English witness alongside cummiskey-1861, and independent of it in every way that matters: a different translator, a different publisher, a different century, and a book that keeps feasts and Commons the 1861 printing is older than. Where the two witnesses cover the same slot the 1861 entry stands and this one is not added; every entry below is for a slot that had no English at all."
+
 [[entries]]
 mass = "advent-1"
 form = ""
@@ -8079,6 +8120,508 @@ text = """
 O God, who didst render blessed Margaret Queen of the Scots, truly wonderful for her charities towards the poor: grant by her prayers and example, that thy charity may continually increase in our hearts. Thro'.
 """
 
+# --- lasance-1945 entries, spliced 2026-08-21 --------------------------------
+#
+# Twenty-four mergeable English renderings read from the page images of the
+# Lasance 1945 revised missal (Internet Archive item fr-lasance-missal-1937),
+# witness `lasance-1945` above. Every row below is for a slot that had no
+# English at all under the Cummiskey 1861 witness: the corresponding
+# `[[untranslated]]` rows have been removed. The seven HELD rows from the same
+# lane are NOT spliced here, because the 1962 slot's own Latin is still a
+# placeholder; see the lane report.
+
+# --- Holy Family (3) --------------------------------------------------------
+
+[[entries]]
+mass = "holy-family"
+form = ""
+proper = "Collect"
+incipit = "Domine Jesu Christe, qui, Mariae"
+witness = "lasance-1945"
+printed_page = "179"
+ia_leaf = 179
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n179, printed p. 179, running head `HOLY FAMILY`, under the heading `Prayer` inside the Mass headed `Holy Family` at pp. 178-182. The Latin column prints `Domine Jesu Christe, qui Mariae et Joseph subditus, domesticam vitam ineffabilibus virtutibus consecrasti: fac nos, utriusque auxilio, Familiae sanctae tuae exemplis instrui; et consortium consequi sempiternum: Qui vivis.`, which is the 1962 slot's text; the witness prints `Qui vivis` where the 1962 prints `Qui vivis et regnas`, a conclusion cue and not a variant."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O Lord Jesus Christ, Who, in the days of Thy subjection to Mary and Joseph, didst consecrate home life by ineffable acts of virtue; by the intercession of Thy holy Mother and of Thy foster-Father, make us so to profit by the example they with Thee have set us, that we may be counted members of Thy household for evermore. Who livest.
+"""
+
+[[entries]]
+mass = "holy-family"
+form = ""
+proper = "Secret"
+incipit = "Placationis hostiam"
+witness = "lasance-1945"
+printed_page = "181"
+ia_leaf = 181
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n181, printed p. 181, running head `HOLY FAMILY`, under `Secret`. The Latin column reads `Placationis hostiam offerimus tibi, Domine, suppliciter deprecantes: ut, per intercessionem Deiparae Virginis cum beato Joseph, familias nostras, in pace et gratia tua firmiter constituas. Per eumdem Dominum.` The 1962 slot has `suppliciter ut` where the witness has `suppliciter deprecantes: ut`; the English renders the witness's reading, `humbly beseeching Thee that`."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+To appease Thee, O Lord, we offer the Victim of Salvation, humbly beseeching Thee that, through the prayers of the Virgin Mother of God and of St. Joseph, Thou wouldst establish our households in Thy peace and favor. Through the same.
+"""
+
+[[entries]]
+mass = "holy-family"
+form = ""
+proper = "Postcommunion"
+incipit = "Quos coelestibus reficis"
+witness = "lasance-1945"
+printed_page = "181-182"
+ia_leaf = 181
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Begins on leaf n181, printed p. 181, under `Postcommunion`, and finishes on leaf n182, printed p. 182, running head `SUNDAY WITHIN THE OCTAVE`. Both leaves were opened. The Latin runs `Quos caelestibus reficis sacramentis, fac, Domine, Jesu sanctae Familiae tuae exempla jugiter imitari: ut, in hora mortis nostrae, occurrente gloriosa Virgine Matre tua cum beato Joseph; per te in aeterna tabernacula recipi mereamur: Qui vivis.` -- the 1962 slot's text, the witness's comma after `Domine` being the only difference."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Do Thou, O Lord, bring us whom Thou hast refreshed with heavenly mysteries to imitate the example of Thy holy Family, that at the hour of our death, with the Virgin Mother and blessed Joseph at hand, we may be received by Thee into our everlasting home. Who livest.
+"""
+
+# --- Commune Doctorum (3) ---------------------------------------------------
+
+[[entries]]
+mass = "commune-doctorum-pontificis"
+form = ""
+proper = "Secret"
+incipit = "Sancti N. Pontificis"
+witness = "lasance-1945"
+printed_page = "1347-1348"
+ia_leaf = 1365
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Begins on leaf n1365, printed p. 1347, running head `COMMON OF A DOCTOR OF THE CHURCH`, under `Secret`, and finishes on leaf n1366, printed p. 1348. Both leaves were opened. The Latin column prints ONE Secret, `Sancti N. Pontificis (vel Confessoris) tui atque Doctoris nobis, Domine, pia non desit oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper obtineat. Per Dominum.`, and the English column carries the same alternative as `Thy bishop (or confessor)`. This slot's 1962 Latin is the Pontificis branch of that alternative, word for word outside the parenthesis, so the entry answers it; the parenthesis is left standing because resolving it would be an editorial act the witness did not perform. The same text is entered on commune-doctorum-non-pontificis for the other branch, and it is one reading of one page, not two."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+May the loving prayers of N., Thy bishop (or confessor), not be wanting to us, O Lord, to commend our gifts and ever to obtain pardon for us. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-doctorum-non-pontificis"
+form = ""
+proper = "Secret"
+incipit = "Sancti N. Confessoris"
+witness = "lasance-1945"
+printed_page = "1347-1348"
+ia_leaf = 1365
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "The same one Secret on the same two leaves as the row above, taken here on its `(vel Confessoris)` / `(or confessor)` branch, which is this slot's 1962 Latin outside the parenthesis. One reading of one page serves both 1962 forms because the witness prints the alternative rather than the split."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+May the loving prayers of N., Thy bishop (or confessor), not be wanting to us, O Lord, to commend our gifts and ever to obtain pardon for us. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-doctorum-pontificis"
+form = ""
+proper = "Postcommunion"
+incipit = "Ut nobis, Domine"
+witness = "lasance-1945"
+printed_page = "1348"
+ia_leaf = 1366
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1366, printed p. 1348, running head `COMMON OF A DOCTOR OF THE CHURCH`, under `Postcommunion`. The Latin column prints `Ut nobis, Domine, tua sacrificia dent salutem: beatus N. Pontifex (vel Confessor) tuus et Doctor egregius, quaesumus, precator accedat. Per Dominum.` The 1861 witness had only a Confessor here, which is why this slot stood untranslated; this witness prints the Pontifex branch first and the entry answers it. The target file's existing commune-doctorum-non-pontificis Postcommunion entry, from cummiskey-1861, is left where it is: this row does not displace it."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+That Thy sacrifices may give us health, O Lord, may blessed N., Thy bishop (or confessor) and illustrious doctor, we beseech Thee, act as our intercessor. Through our Lord.
+"""
+
+# --- Comm. S. Canuti Regis, Martyris, 19 January (3) ------------------------
+
+[[entries]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui ad illustrandam"
+witness = "lasance-1945"
+printed_page = "874"
+ia_leaf = 872
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n872, printed p. 874, running head `JAN. 19-STS. MARIUS AND COMPANIONS`, under the rubric `Commemoration of St. Canute.` and the heading `Prayer`. The Latin column prints the 1962 slot's text entire, with `Dominicae` misprinted `Domincae`: `Deus, qui ad illustrandam Ecclesiam tuam, beatum Canutum regem martyrii palma et gloriosis miraculis decorare dignatus es: concede propitius: ut, sicut ipse Domin[i]cae passionis imitator fuit, ita nos per ejus vestigia gradientes, ad gaudia sempiterna pervenire mereamur. Per eumdem Dominum.` The name is printed, not an N., so nothing is substituted."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who for the enlightenment of Thy Church didst vouchsafe to distinguish blessed King Canute with the palm of martyrdom and with glorious miracles, mercifully grant, that as he was an imitator of the Lord's passion, so we, walking in his footsteps, may deserve to enter into everlasting joys. Through our Lord.
+"""
+
+[[entries]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Secret"
+incipit = "Accepta sit in conspectu"
+witness = "lasance-1945"
+printed_page = "876"
+ia_leaf = 874
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n874, printed p. 876, same running head, under a second `Commemoration of St. Canute.` and `Secret`. Latin as the 1962 slot: `Accepta sit in conspectu tuo, Domine, nostra devotio: et ejus nobis fiat supplicatione salutaris, pro cujus solemnitate defertur. Per Dominum.` The prayer names no saint in either column, so the English is the Common's wording and the day's alike; that is the book's, not this file's, and it is why the English says `the holy martyr` where the heading says Canute."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+May our devout offerings, O Lord, be acceptable in Thy sight; and by the intercession of the holy martyr on whose festival they are laid before Thee, may they profit us unto salvation. Through our Lord.
+"""
+
+[[entries]]
+mass = "comm-s-canuti-regis-martyris"
+form = ""
+proper = "Postcommunion"
+incipit = "Refecti participatione muneris"
+witness = "lasance-1945"
+printed_page = "877"
+ia_leaf = 875
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n875, printed p. 877, running head `JAN. 20-STS. FABIAN AND SEBASTIAN`, under a third `Commemoration of St. Canute.` and `Postcommunion`. The Latin column reads `Refecti participatione muneris sacris` where the 1962 prints `muneris sacri`; `sacris` for `sacri` is a compositor's slip in this printing and does not reach the English. Everything else is the 1962 slot's text, with the name printed: `intercedente beato Canuto Martyre tuo`."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Our strength renewed from having shared in Thy sacred gift, we beseech Thee, O Lord our God, that, by the intercession of blessed Canute Thy martyr, we may ever feel the mighty power of the Sacrament we worship. Through our Lord.
+"""
+
+# --- Commune Summorum Pontificum (6 of 9) ------------------------------------
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect"
+incipit = "Gregem tuum, Pastor"
+witness = "lasance-1945"
+printed_page = "1302"
+ia_leaf = 1316
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1316, printed p. 1302 -- an ordinary numbered page, not a lettered insert -- under the black-letter heading `Common of One or More Supreme Pontiffs (Si diligis me)` and the sub-heading `Prayer`. The Latin column prints the 1962 slot's text with its parenthesis intact: `Gregem tuum, Pastor aeterne, placatus intende: et per beatum N. (Martyrem tuum atque) Summum Pontificem, perpetua protectione custodi; quem totius Ecclesiae praestitisti esse pastorem. Per Dominum.` CORROBORATED ON A SECOND ORDINARY PAGE: the same English, with `Sylvester` for `N. (Thy Martyr and)`, stands at leaf n163, printed p. 164, running head `DEC. 31-ST. SYLVESTER`, in the temporal -- so this translation is not confined to the inserted leaves."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O eternal Shepherd, do Thou look favorably upon Thy flock, which we beseech Thee to guard and keep for evermore through the Blessed N. (Thy Martyr and) Supreme Pontiff, whom Thou didst choose to be the chief shepherd of the whole Church. Through Our Lord.
+"""
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Collect (Altera oratio)"
+incipit = "Deus, qui Ecclesiam"
+witness = "lasance-1945"
+printed_page = "1302a"
+ia_leaf = 1317
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1317, printed p. 1302a -- A LETTERED INSERT LEAF -- running head `COMMON OF A SUPREME PONTIFF`, under the rubric `If a Commemoration is to be made of another Supreme Pontiff, the following prayer is said:` and the heading `Prayer`. Latin as the 1962 slot: `Deus, qui Ecclesiam tuam in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus, ut intercedente beato N. (Martyre tuo atque) Summo Pontifice, in tua veritate persistens; continua securitate muniatur. Per Dominum.` CORROBORATED ON AN ORDINARY PAGE: the same English, with `Urban` for `N. (Thy Martyr and)`, stands at leaf n1017, printed p. 1025, running head `MAY 25-ST. GREGORY VII, POPE`, as the commemoration of St Urban I."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who didst establish Thy church upon the most firm foundation of an apostolic rock in order to deliver her from the dreadful powers of hell, grant her, we beseech Thee, that through the intercession of the blessed N. (Thy Martyr and) Supreme Pontiff, she may adhere always to Thy truth so as to enjoy at all times a sure defence. Through Our Lord.
+"""
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Secret"
+incipit = "Oblatis muneribus, quaesumus"
+witness = "lasance-1945"
+printed_page = "1302c"
+ia_leaf = 1319
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1319, printed p. 1302c -- A LETTERED INSERT LEAF -- running head `COMMON OF A SUPREME PONTIFF`, under `Secret`. Latin as the 1962 slot: `Oblatis muneribus, quaesumus Domine, Ecclesiam tuam benignus illumina: ut, et gregis tui proficiat ubique successus, et grati fiant nomini tuo, te gubernante, pastores. Per Dominum.` The prayer names no saint, so no substitution arises."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+In Thy loving kindness, we beseech Thee, Lord, be moved by the offering of our gifts and enlighten Thy Church: that Thy flock may prosper everywhere and the shepherds, under Thy guidance, may be rendered acceptable to Thee. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Secret (Altera secreta)"
+incipit = "Munera, quae tibi"
+witness = "lasance-1945"
+printed_page = "1302c"
+ia_leaf = 1319
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Same leaf n1319, printed p. 1302c, under the heading `Another Secret as above`. Latin: `Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et praesta: ut intercedente beato N., Ecclesia tua et fidei integritate laetetur, et temporum tranquillitate semper exultet. Per Dominum.` The 1962 slot adds the plural alternative `(intercedentibus beatis N. et N.)`, which this witness does not print; the singular is word for word. CORROBORATED ON AN ORDINARY PAGE: the same English, with `Urban` for `N.`, at leaf n1017, printed p. 1025."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Receive, O Lord, in Thy loving kindness the joyful offering of our gifts, and through the intercession of blessed N., grant that Thy Church may enjoy integrity of faith and rejoice in the tranquillity of peaceful times.
+"""
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Postcommunion"
+incipit = "Refectione sancta enutritam"
+witness = "lasance-1945"
+printed_page = "1302d"
+ia_leaf = 1320
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1320, printed p. 1302d -- A LETTERED INSERT LEAF -- running head `COMMON OF A MARTYR-BISHOP` (the next Common begins lower on the same page), under `Postcommunion`. Latin as the 1962 slot: `Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus Ecclesiam: ut potenti moderatione directa, et incrementa libertatis accipiat et in religionis integritate persistat. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Since Thy Church has been nourished by the sacred repast, govern her in Thy clemency, we beseech Thee, O Lord, so that under the guidance of Thy mighty rule she may enjoy greater freedom and abiding integrity of religion. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-summorum-pontificum"
+form = ""
+proper = "Postcommunion (Altera postcommunio)"
+incipit = "Multiplica, quaesumus, Domine"
+witness = "lasance-1945"
+printed_page = "1302d"
+ia_leaf = 1320
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Same leaf n1320, printed p. 1302d, under `Another Postcommunion as above`. Latin as the 1962 slot, parenthesis and all: `Multiplica, quaesumus Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut beati N. (Martyris tui atque) Summi Pontificis deprecatione, nec pastori obedientia gregis nec gregi desit cura pastoris. Per Dominum.` CORROBORATED ON AN ORDINARY PAGE: the same prayer, with `Urban` for `N.`, begins at leaf n1017, printed p. 1025, and runs over to p. 1026."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Increase, we beseech Thee, O Lord, in Thy Church the spirit of grace Thou hast given her: that through the prayers of the blessed N. (Thy Martyr and) Supreme Pontiff, the flock may never fail in obedience to their shepherd nor the shepherd in the faithful care of his flock. Through our Lord.
+"""
+
+# --- Commune Dedicationis ecclesiae (4 of 4) --------------------------------
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Collect (In ipso die Dedicationis)"
+incipit = "Deus, qui invisibiliter"
+witness = "lasance-1945"
+printed_page = "1389"
+ia_leaf = 1407
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1407, printed p. 1389, running head `COMMON OF DEDICATION OF A CHURCH`. The anniversary Prayer `Deus, qui nobis per singulos annos` stands first; then the rubric `On the actual day of Dedication and during its Octave, the following Prayer is said, otherwise it is omitted.`; then this one. That rubric is what identifies the slot: it is the witness's own name for `In ipso die Dedicationis`. Latin as the 1962 slot, with `illustrat` for `illustra`: `Deus, qui invisibiliter omnia contines, et tamen pro salute generis humani signa tuae potentiae visibiliter ostendis: templum hoc potentia tuae inhabitationis illustrat, et concede; ut omnes, qui huc deprecaturi conveniunt, ex quacumque tribulatione ad te clamaverint, consolationis tuae beneficia consequantur. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who dost invisibly contain all things, and yet dost visibly show the signs of Thy power for the salvation of mankind, illumine this temple by the virtue of Thine indwelling, and grant that all who assemble here to pray, from whatsoever tribulation they shall call upon Thee, may obtain the blessings of Thy consolation. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Secret (Extra ecclesiam ipsam dedicatam)"
+incipit = "Annue, quaesumus, Domine"
+witness = "lasance-1945"
+printed_page = "1392"
+ia_leaf = 1410
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1410, printed p. 1392, running head `COMMON OF DEDICATION OF A CHURCH`, under `Secret`, preceded by the rubric `The words within parentheses in the following Secret are said only when the Mass is offered within the very walls of the church, the feast of whose dedication is being celebrated.` The 1962 prints the two cases as two Secrets and this witness prints them as one text with a bracket; the bracketed words ARE the difference between them, so the 1962's Extra ecclesiam form is this text with the parenthesis omitted, on the book's own instruction. The parenthesis is left standing in the entry rather than resolved -- see the lane report, question Q1, which is the same question as the Doctors' `(or confessor)`. Latin: `Annue, quaesumus, Domine, precibus nostris: (ut quicumque intra templi hujus, cujus anniversarium dedicationis diem celebramus, ambitum continemur, plena tibi, atque perfecta corporis et animae devotione placeamus) ut, dum haec vota praesentia reddimus, ad aeterna praemia, te adjuvante, pervenire mereamur. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Bow down to our prayers, O Lord, we beseech Thee (that all of us who are within the precincts of this temple, the anniversary of whose dedication we celebrate, may please thee with full and perfect devotion of body and soul) that, while we pay our vows here below, we may, by Thine assistance, be worthy to attain unto everlasting rewards. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Secret (In ipso die Dedicationis)"
+incipit = "Deus, qui sacrandorum"
+witness = "lasance-1945"
+printed_page = "1392"
+ia_leaf = 1410
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Same leaf n1410, printed p. 1392, the second `Secret` on the page, introduced by `On the actual day of Dedication and during its Octave the following Secret is said, otherwise it is omitted.` Latin as the 1962 slot: `Deus, qui sacrandorum tibi auctor es munerum, effunde super hanc orationis domum benedictionem tuam: ut ab omnibus in ea invocantibus nomen tuum, defensionis tuae auxilium sentiatur. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who art the author of the gifts that are to be consecrated to Thee, pour forth Thy blessing upon this house of prayer, that the help of Thy defence may be felt by all who here invoke Thy name. Through our Lord.
+"""
+
+[[entries]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Postcommunion (In ipso die Dedicationis)"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "lasance-1945"
+printed_page = "1393"
+ia_leaf = 1411
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1411, printed p. 1393, running head `COMMON OF DEDICATION OF A CHURCH`, the second `Postcommunion` on the page, introduced by `On the actual day of Dedication and during its Octave the following Postcommunion is said, otherwise it is omitted.` Latin as the 1962 slot: `Quaesumus omnipotens Deus: ut in hoc loco, quem nomini tuo indigni dedicavimus; cunctis petentibus aures tuae pietatis accomodes. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+We pray Thee, O almighty God, that in this place, which we, unworthy, have dedicated to Thy name, the ears of Thy loving-kindness may be inclined unto all who make their petitions. Through our Lord.
+"""
+
+# --- sanctoral singles printed in full, name in both columns (5) ------------
+
+[[entries]]
+mass = "ss-perpetuae-felicitatis-martyrum"
+form = ""
+proper = "Postcommunion"
+incipit = "Mysticis, Domine, repleti"
+witness = "lasance-1945"
+printed_page = "938"
+ia_leaf = 936
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n936, printed p. 938, running head `MARCH 7-ST. THOMAS AQUINAS` (the day before's Mass ends at the head of the page), under `Postcommunion` of the Mass headed `March 6-Sts. Perpetua and Felicitas, Martyrs`. Latin as the 1962 slot: `Mysticis, Domine, repleti sumus votis et gaudiis: praesta, quaesumus; ut intercessionibus sanctarum Martyrum tuarum Perpetuae et Felicitatis, quae temporaliter agimus, spiritualiter consequamur. Per Dominum.` The names are printed in both columns."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+Thou hast filled us, O Lord, with mystic graces and joys: grant, we beseech Thee, that through the prayers of Thy holy Martyrs, Perpetua and Felicitas, we may profit eternally from having in this our time ministered to Thee. Through our Lord.
+"""
+
+[[entries]]
+mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui Ecclesiam tuam"
+witness = "lasance-1945"
+printed_page = "1028-1029"
+ia_leaf = 1020
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Begins on leaf n1020, printed p. 1028, running head `MAY 27-ST. BEDE`, under the heading `May 27-St. Bede, Confessor, Doctor of the Church (White) / Double / Mass, In medio, page 1344, except Prayer as below:` and then `Prayer`; finishes on leaf n1021, printed p. 1029. Both leaves were opened. Latin as the 1962 slot: `Deus, qui Ecclesiam tuam beati Bedae Confessoris tui atque Doctoris eruditione clarificas: concede propitius famulis tuis; ejus semper illustrari sapientia et meritis adjuvari. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who dost enlighten Thy Church with the learning of blessed Bede, Thy confessor and doctor, mercifully grant Thy servants ever to be illuminated by his wisdom and assisted by his merits. Through our Lord.
+"""
+
+[[entries]]
+mass = "comm-s-romani-martyris"
+form = ""
+proper = "Postcommunion"
+incipit = "Quaesumus, omnipotens Deus"
+witness = "lasance-1945"
+printed_page = "1151"
+ia_leaf = 1143
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1143, printed p. 1151, running head `AUG. 10-ST. LAWRENCE`, under the rubric `Commemoration of St. Romanus.` and the heading `Postcommunion`, inside the Mass of the Vigil of St Lawrence. Latin as the 1962 slot with the name printed: `Quaesumus, omnipotens Deus: ut, qui caelestia alimenta percepimus, intercedente beato Romano Martyre tuo, per haec contra omnia adversa muniamur. Per Dominum.` This is why the row is closable and its Secret's twin was not: the witness's own Common of a Confessor prints the same formula with `beato N. Confessore tuo`, but the sanctoral prints it out again for the day with `Romano Martyre`, so no substitution is needed."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+We beseech Thee, almighty God, that we who have partaken of the food of heaven may, by the intercession of blessed Romanus, Thy martyr, be strengthened by it against all harm. Through our Lord.
+"""
+
+[[entries]]
+mass = "s-gregorii-vii-papae-confessoris"
+form = ""
+proper = "Collect"
+incipit = "Deus in te sperantium fortitudo"
+witness = "lasance-1945"
+printed_page = "1025"
+ia_leaf = 1017
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1017, printed p. 1025, running head `MAY 25-ST. GREGORY VII, POPE`, under the heading `May 25-St. Gregory VII, Pope, Conf. (White) / Double / St. Urban I, Pope, Martyr (White) / Mass, Si diligis me, page 1302, except:` and then `Prayer`. The 1861 witness keeps this saint on 28 May and by pointer alone; this one keeps him on the 1962's own 25 May and prints the oration in full. Latin as the 1962 slot: `Deus, in te sperantium fortitudo, qui beatum Gregorium, Confessorem tuum atque Pontificem, pro tuenda Ecclesiae libertate, virtute constantiae roborasti: da nobis, ejus exemplo et intercessione, omnia adversantia fortiter superare. Per Dominum.`"
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, the strength of them that trust in Thee, Who didst fortify blessed Gregory, Thy Confessor and Pontiff, with the virtue of constancy, for the defense of the liberty of the Church, grant us by his example and intercession courageously to overcome all adversities. Through our Lord.
+"""
+
+[[entries]]
+mass = "s-angelae-mericiae-virginis"
+form = ""
+proper = "Collect"
+incipit = "Deus, qui novum per beatam Angelam"
+witness = "lasance-1945"
+printed_page = "1031"
+ia_leaf = 1023
+collated = "page-image, 2026-08-21"
+collation_result = "read-from-page"
+witness_note = "Leaf n1023, printed p. 1031, running head `JUNE 1 - ST. ANGELA MERICI`, under the heading `June 1-St. Angela Merici, Virgin (White) / Double / Mass, Dilexisti, Page 1370, except:` and then `Prayer`. Latin as the 1962 slot: `Deus, qui novum per beatam Angelam sacrarum virginum collegium in Ecclesia tua florescere voluisti; da nobis, ejus intercessione, angelicis moribus vivere; ut, terrenis omnibus abdicatis, gaudiis perfrui mereamur aeternis. Per Dominum.` THE BOOK PRINTS THIS PRAYER TWICE AND NOT IDENTICALLY: at leaf n1586, in the section of Masses for particular places, the same prayer is set with `should blossom in Thy Church` where this page has `should flourish in Thy Church`. This entry takes the 1 June setting because that is the day the 1962 keeps and the place the witness's own sanctoral prints it; the other setting is recorded here so the difference is not discovered as an error."
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+text = """
+O God, Who hast willed that, through blessed Angela, a new family of consecrated virgins should flourish in Thy Church, grant us, through her intercession, to lead an angelic life, that, putting aside all earthly joys, we may deserve to attain those that are eternal. Through our Lord.
+"""
+
 # --- proposed untranslated ledger rows ---------------------------------------
 
 [[entries]]
@@ -9967,42 +10510,6 @@ May the receiving of this thy sacrament, O Lord, we beseech thee, sanctify us: a
 """
 
 [[untranslated]]
-mass = "commune-doctorum-pontificis"
-form = ""
-proper = "Secret"
-reason = "the witness prints one Secret for the Mass of Doctors and renders it `the pious prayers of thy holy servant N.`, which answers neither of the two Latin forms the 1962 typica prints -- Sancti N. Pontificis tui atque Doctoris and Sancti N. Confessoris tui atque Doctoris. The 1861 book is a pre-1955 witness to a different Latin here, and attaching its one English to either form would be a guess that reads perfectly"
-
-[[untranslated]]
-mass = "commune-doctorum-non-pontificis"
-form = ""
-proper = "Secret"
-reason = "the same one Secret, and the same reason. See the row above"
-
-[[untranslated]]
-mass = "commune-doctorum-pontificis"
-form = ""
-proper = "Postcommunion"
-reason = "the witness prints one Postcommunion and it names a Confessor, which answers the non Pontifice form; nothing here renders beatus N. Pontifex tuus et Doctor egregius"
-
-[[untranslated]]
-mass = "holy-family"
-form = ""
-proper = "Collect"
-reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
-
-[[untranslated]]
-mass = "holy-family"
-form = ""
-proper = "Secret"
-reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
-
-[[untranslated]]
-mass = "holy-family"
-form = ""
-proper = "Postcommunion"
-reason = "the feast did not exist in 1861 and its orations were composed in the twentieth century, so this witness has no counterpart to it"
-
-[[untranslated]]
 mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Collect"
@@ -10021,24 +10528,6 @@ proper = "Postcommunion"
 reason = "the same reference and the same refusal, and again a second reason: the witness's one Postcommunion for Doctors names a Confessor, `thy Confessor and great Doctor`, where this day's Latin reads beatus Hilarius Pontifex tuus et Doctor egregius. It answers the non Pontifice form of the Common, not this one"
 
 [[untranslated]]
-mass = "comm-s-canuti-regis-martyris"
-form = ""
-proper = "Collect"
-reason = "the witness does not keep this day. Its 19 January is XIX. St. WOLSTAN, Bishop of Worcester, printed at p. 540 = leaf n548 with a commemoration of St Marius, and its own Roman Calendar for the United States says the same at p. 766 = leaf n774 -- `S. Wolstan, c. bp. d. Com. of SS. Marius`, referred to p. 540. Both pages were read at 200 dpi and again at 400 on 2026-08-02, and neither carries a Mass, a commemoration or a calendar line for St Canute. A search of the item's text layer over the whole volume returns the name nowhere either; that is a lead and not a reading, and it is recorded as the weaker half of this row, but the two pages that would have to carry him are the two that were opened. This Collect is proper to the day and names him -- Deus, qui ad illustrandam Ecclesiam tuam beatum Canutum regem martyrii palma -- so there is nothing here that could answer it under any alignment. This is an absence established by reading the day and the book's own calendar, not by failing to find a match"
-
-[[untranslated]]
-mass = "comm-s-canuti-regis-martyris"
-form = ""
-proper = "Secret"
-reason = "the same absence of the day as the Collect above, and one thing more that has to be said plainly so this row is not read as a false absence of the text. The prayer the 1962 appoints here the witness does print: Accepta sit in conspectu tuo, Domine, nostra devotio is the Secret of its MASS IV, Laetabitur, at p. 469, it names no saint there any more than the 1962 does here, and its English is recorded in this file at commune-unius-martyris-4. So no name would have to be supplied and no wording composed. What is missing is the day. The 1962 appoints that prayer at a Mass of St Canute; the witness keeps no such Mass and never sends its MASS IV to 19 January, so attaching its English here would make this pre-1955 book a witness to a formulary it does not celebrate. That is a reader's alignment and not the books', and every other sanctoral row in this file rests on a join the two books make themselves -- a heading, a Latin cue, or a cross-reference the 1861 prints. Recorded as a decision, with the evidence for reversing it named in it"
-
-[[untranslated]]
-mass = "comm-s-canuti-regis-martyris"
-form = ""
-proper = "Postcommunion"
-reason = "the same absence of the day, and the placeholder on top of it. The witness's setting of Refecti participatione muneris, again at its MASS IV p. 469, reads `by the intercession of blessed N. thy Martyr, whose feast we celebrate` where this day's Latin reads intercedente beato Canuto Martyre tuo. So even if the day were reached, attaching this English would mean writing the saint's name into a prayer the witness does not write it into, which is the refusal already recorded three times at s-hilarii. Two reasons, either sufficient"
-
-[[untranslated]]
 mass = "s-petri-nolasci-confessoris"
 form = ""
 proper = "Secret"
@@ -10053,56 +10542,20 @@ reason = "the same appointment and the same refusal as the Secret above. The wit
 [[untranslated]]
 mass = "commune-summorum-pontificum"
 form = ""
-proper = "Collect"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
 proper = "Collect (in plurali)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
-proper = "Collect (Altera oratio)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+reason = "the 1861 witness has no Common of Summorum Pontifices, and the Lasance 1945 witness prints no plural form of any of this Common's orations. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. The singular Collect is recorded above from lasance-1945, but no English reaches this plural slot. This is an absence established by reading the witness through, not by failing to find a match"
 
 [[untranslated]]
 mass = "commune-summorum-pontificum"
 form = ""
 proper = "Collect (Altera oratio, in plurali)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
-proper = "Secret"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
-proper = "Secret (Altera secreta)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
-proper = "Postcommunion"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
-
-[[untranslated]]
-mass = "commune-summorum-pontificum"
-form = ""
-proper = "Postcommunion (Altera postcommunio)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+reason = "the 1861 witness has no Common of Summorum Pontifices, and the Lasance 1945 witness prints no plural form of any of this Common's orations. The singular Altera oratio is recorded above from lasance-1945, but no English reaches this plural slot. This is an absence established by reading the witness through, not by failing to find a match"
 
 [[untranslated]]
 mass = "commune-summorum-pontificum"
 form = ""
 proper = "Postcommunion (in plurali)"
-reason = "the 1861 witness has no Common of Summorum Pontifices. Its whole Common of Saints was read, twenty-one numbered Masses and four unnumbered, and it carries no Mass of one or more Supreme Pontiffs; that Common is later than this book. This is an absence established by reading the witness through, not by failing to find a match"
+reason = "the 1861 witness has no Common of Summorum Pontifices, and the Lasance 1945 witness prints no plural form of any of this Common's orations. The singular Postcommunion is recorded above from lasance-1945, but no English reaches this plural slot. This is an absence established by reading the witness through, not by failing to find a match"
 
 [[untranslated]]
 mass = "commune-non-virginum-1"
@@ -10133,30 +10586,6 @@ mass = "commune-non-virginum-1"
 form = ""
 proper = "Secret (Pro pluribus Martyribus quae non sint Virgines)"
 reason = "the witness's Common of Saints has no Mass of a Martyr who is not a Virgin. Its only non-Virgin Mass is MASS XXI, Cognovi, of Holy Women, which answers the second Mass of this Common and is recorded there. The 1962 first Mass has no pre-1955 counterpart"
-
-[[untranslated]]
-mass = "commune-dedicationis-ecclesiae"
-form = ""
-proper = "Collect (In ipso die Dedicationis)"
-reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
-
-[[untranslated]]
-mass = "commune-dedicationis-ecclesiae"
-form = ""
-proper = "Secret (Extra ecclesiam ipsam dedicatam)"
-reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
-
-[[untranslated]]
-mass = "commune-dedicationis-ecclesiae"
-form = ""
-proper = "Secret (In ipso die Dedicationis)"
-reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
-
-[[untranslated]]
-mass = "commune-dedicationis-ecclesiae"
-form = ""
-proper = "Postcommunion (In ipso die Dedicationis)"
-reason = "the witness prints one Mass of the Dedication, the anniversary, whose orations are recorded here. The 1962 Missal prints a second set for the day of the dedication itself, and a second Secret for the anniversary said outside the dedicated church; the witness has no counterpart to either and its one Secret does not say which case it answers"
 
 [[untranslated]]
 mass = "palm-sunday"
@@ -10303,24 +10732,6 @@ proper = "Sequence"
 reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
 
 [[untranslated]]
-mass = "ss-perpetuae-felicitatis-martyrum"
-form = ""
-proper = "Postcommunion"
-reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
-
-[[untranslated]]
-mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
-form = ""
-proper = "Collect"
-reason = "the witness does not keep this day. Its Proper of Saints has no heading for it and its APPENDIX, which carries the feasts added between 1843 and 1861, does not add it. There is therefore no Mass here whose English could answer this oration, and nothing was found by searching the text layer either; the absence is recorded from the two places that would have to carry it."
-
-[[untranslated]]
-mass = "comm-s-romani-martyris"
-form = ""
-proper = "Postcommunion"
-reason = "the witness does not keep this commemoration, and unlike its Secret this Postcommunion has no twin already carrying the witness's English: Quaesumus, omnipotens Deus occurs at no other locus in this index whose English is recorded. The mechanical comparison of every composed Latin text in this file against every other was run on 2026-08-07 and returned nothing for this slot, which is a search and not a reading, so the absence is recorded as the weaker kind."
-
-[[untranslated]]
 mass = "commemoratione-omnium-fidelium-defunctorum"
 form = "First Mass (Ad primam Missam)"
 proper = "Sequence"
@@ -10385,18 +10796,6 @@ mass = "s-petri-canisii-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Collect"
 reason = "the witness does not keep this day. Its Kalendar (p. 769 = leaf n777, read on the page image 2026-08-19) leaves 27 April empty, and its Proper of Saints steps from XXVI. SS. CLETUS & MARCELLINE (26 April) directly to XXIX. St. PETER, m., on p. 573 = leaf n581 (read the same day), with no 27 April entry. St Peter Canisius was canonized and declared a Doctor in 1925; no 1861 printing can carry him. The 1962 mass's own Collect slot is itself a placeholder whose Latin the calendar has not yet transcribed. This is an absence established by reading the day, not by failing to find a match"
-
-[[untranslated]]
-mass = "s-gregorii-vii-papae-confessoris"
-form = ""
-proper = "Collect"
-reason = "the witness keeps St Gregory VII -- on 28 May, not the 1962's 25 May -- and keeps him by pointer alone. Its Kalendar (p. 770 = leaf n778) reads `S. Gregory VII., p. c. d. Mass xi. 484`, sending the whole day to its MASS XI. Sacerdotes tui, and its Proper of Saints prints no entry for the day at all: pp. 586-588 = leaves n594, n595 and n596 step 21st, 25th May (n594), 26th, 27th May (n595) and then June II and III (n596), with no 28 May anywhere between. The Mass the Kalendar sends the day to was then opened at p. 484 = leaf n492, and its Collect prints `COLLECT. Exaudi.--Hear, O Lord, we beseech thee, the prayers we offer on this solemnity of blessed N. thy Confessor and Bishop: and by his intercession, who worthily served thee, deliver us from all our sins. Thro'.` That is a different prayer from the 1962's proper Collect Deus in te sperantium fortitudo, and it prints N. besides. So the witness prints no English that answers this day's own Collect under any alignment. Every leaf named here was read on the page image, n778, n594, n595 and n596 on 2026-08-19 and n492 on 2026-08-20, all four re-read on 2026-08-20. The same English is already recorded at commune-confessoris-pontificis-2, where the witness prints it and where the Latin still reads N."
-
-[[untranslated]]
-mass = "s-angelae-mericiae-virginis"
-form = ""
-proper = "Collect"
-reason = "the witness does not keep this day. Its Kalendar for June (p. 771 = leaf n779) leaves 1 June empty -- the month's first entry is St Mary Magdalen of Pazzi on the 3d -- and its Kalendar for May (p. 770 = leaf n778) leaves 29 May empty and gives 30 and 31 May to St Felix and St Petronilla, so neither date the feast could fall on carries her; the Kalendar marks its appendix feasts with App. and neither of these two pages carries such an entry for her (the remaining ten Kalendar months were not opened, so this is a statement about the two dates in question and not about the whole book). Its Proper of Saints steps from XXVII. St. PHILIP NERIUS (27 May, p. 587 = leaf n595) to June II. OCTAVE of St. AUGUSTIN and III. St. MARY MAGDALEN of PAZZI (p. 588 = leaf n596) with no 1 June entry. Her feast was extended to the universal church only in 1861, the year of this printing, which carries no Mass of her at either date. Every leaf named here was read on the page image on 2026-08-19 and re-read on 2026-08-20. This is an absence established by reading the day and the book's own calendar, not by failing to find a match"
 
 [[untranslated]]
 mass = "comm-s-sabinae-martyris"
