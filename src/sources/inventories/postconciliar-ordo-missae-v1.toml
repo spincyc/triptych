@@ -6,27 +6,35 @@ advisory = """
 A finding aid for the shape of the rite, and never a book to celebrate from. \
 Most of this Order of Mass is missing here, and every element says which of its \
 two texts is missing and why, because they are not missing for one reason. The \
-English side has one reason, recorded here as `icel`: the approved English is \
-the International Commission on English in the Liturgy's, and this project holds \
-no exact copy of the words. The Latin side has six, and they run from the \
-reform's own new matter, which is the Holy See's and is withheld, to a rubric \
-that has no words in any book. Where a text is missing what stands in its place \
-is the element's received Latin incipit, which is a reference and not the prayer. \
-THE LATIN THAT IS HERE IS NOT THIS MISSAL'S. Ten elements carry Latin, and at \
-every one of them it is the facing column of an 1861 Philadelphia lay hand \
-missal printing the ancient prayer this Order of Mass received. The Latin of the \
-editio typica itself is in copyright and is not held by this project, in any \
-element, anywhere on this page. Each of the ten says beside its own words which \
-prayer of that older book it is, at which printed page and leaf, which accidents \
-of that printing it carries unnormalised, and whether its identity with the \
-controlling edition has been established by a collation this repository holds or \
-is so far only asserted. Four are established; six are not, and they say so. \
-The English that IS here is the ecumenical text of the English Language \
-Liturgical Consultation, which the rightsholder grants freely and which is NOT \
-what is said at Mass in the dioceses of the United States. Where the two \
-differ a reader will see it at once: this text answers the greeting "And also \
-with you" and opens the Creed "We believe in one God", where the 2011 Roman \
-Missal has "And with your spirit" and "I believe in one God".
+English side has two reasons now. The approved English is the International \
+Commission on English in the Liturgy's, (c) ICEL 2010, and it IS published here \
+with acknowledgement under ICEL's own standing Global Computer Networks \
+permission: twenty-three elements of the invariant frame carry it, drawn from \
+ICEL's own free chant library (Music for the Roman Missal) and from the Liturgy \
+Office of the Catholic Bishops' Conference of England and Wales, every word read \
+on a fetched and hash-verified page. The elements still empty in English are \
+empty for a different reason, recorded here as `priest-prayer-said-quietly`: \
+prayers the Priest says quietly, for which no free official publisher prints a \
+page, because they are never sung and are not the people's parts. The Latin side \
+has six reasons, and they run from the reform's own new matter, which is the \
+Holy See's and is withheld, to a rubric that has no words in any book. Where a \
+text is missing what stands in its place is the element's received Latin \
+incipit, which is a reference and not the prayer. THE LATIN THAT IS HERE IS NOT \
+THIS MISSAL'S. Ten elements carry Latin, and at every one of them it is the \
+facing column of an 1861 Philadelphia lay hand missal printing the ancient \
+prayer this Order of Mass received. The Latin of the editio typica itself is in \
+copyright and is not held by this project, in any element, anywhere on this \
+page. Each of the ten says beside its own words which prayer of that older book \
+it is, at which printed page and leaf, which accidents of that printing it \
+carries unnormalised, and whether its identity with the controlling edition has \
+been established by a collation this repository holds or is so far only \
+asserted. Four are established; six are not, and they say so. A few elements \
+still carry the ecumenical text of the English Language Liturgical Consultation, \
+which the rightsholder grants freely and which is NOT what is said at Mass in \
+the dioceses of the United States. Where the ecumenical text and the Missal's \
+own differ a reader will see it at once: the ecumenical text answers the \
+greeting "And also with you" and opens the Creed "We believe in one God", where \
+the 2011 Roman Missal has "And with your spirit" and "I believe in one God".
 """
 
 derived_from = """
@@ -121,12 +129,56 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
 ]
 
+# ICEL's own free chant library, Music for the Roman Missal, as the rightsholder
+# publishes it on the web. The texts carried here are the approved English of the
+# Roman Missal for the dioceses of the United States, read on pages fetched and
+# hash-verified against the registered artifacts. Every word was de-syllabified
+# from the chant setting: ICEL's pages print the text syllable by syllable under
+# the neumes, and joining the syllables is an editorial transformation performed
+# on every string. The chant tonic accents are pointing and not orthography:
+# the pages print "Kýrie, e-lé-i-son" under the notes and "Kyrie, eleison" in
+# their own prose rubric, and the prose form is what is carried. Where ICEL's
+# own printing spells "Savior" and "honor" the United States form is carried;
+# the England-and-Wales files spell "Saviour" and "honour" and the divergence is
+# recorded per element rather than harmonised.
+[[witnesses]]
+id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+lang = "en"
+label = "The approved English of the Roman Missal, from ICEL's own free chant library (Music for the Roman Missal, web state of 21 August 2026)"
+rights = "licensed-free"
+acknowledgement = "The English translation of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+caution = "The 2010-2012 state. An authoritative publisher establishes WHO says so, not AS OF WHEN. This library predates the 2013 insertion of Saint Joseph into Eucharistic Prayers II-IV and the collect conclusions emended after the Prefect's letter of May 2020; neither emendation touches any text carried from it here, and that has been checked element by element rather than assumed. This is not an approved altar Missal, it carries no concordat cum originali, and it is neither sponsored nor endorsed by ICEL."
+artifacts = [
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.greeting",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.penitential-act",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.kyrie",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.gloria",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.liturgy-word",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.credo-1",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.orate-fratres",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.preface-dialogue",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.sanctus",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.memorial-acclamation",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.doxology",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lords-prayer",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.sign-of-peace",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.agnus-dei",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.communion",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.blessing",
+  "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.dismissal",
+]
+
 # ---------------------------------------------------------------- absences
 
 [[absences]]
 key = "icel"
-kind = "no-exemplar"
-what = "The approved English of the Roman Missal for the dioceses of the United States is the International Commission on English in the Liturgy's, © ICEL, and is under copyright until well into the 2060s. It is not reproduced here. Every escape route was tested and each closes: the texts postdate 1929 so no term has expired; the first United States publication of the new Eucharistic Prayers, the 1968 Benziger booklet, carries a facially valid 1909-Act notice, so nothing was forfeited for want of one; registration was never a condition under that Act; and the Copyright Renewal Act of 1992 made renewal automatic for 1964-1977 works. What was written here before -- that ICEL's licence confines free use to worship aids for a single celebration -- was wrong, and the error is instructive. ICEL's Publication Policies carry, at page 25, an express permission to reproduce its approved, recognised and promulgated texts on a non-commercial website without written or oral permission, under six conditions; its summary page does not mention it and directs every reader to the Secretariat, and this project's own record of that book admits the fuller booklet was never retrieved. So the permission is not the reason. Two other reasons are, and both are recorded in guidance/liturgical-text-publication-policy.md: condition (3) requires the text be followed exactly and no reachable authoritative source supplies it, this library holding no witness of the English Missal at all; and condition (4) grants no licence to publish in any other form, while this project ships installed PDFs, a public JSON corpus and a public Git history. Hence `no-exemplar`: the rightsholder permits the use and this project has no exact copy of the words."
+kind = "witness-gap"
+what = "The approved English of the Roman Missal is the International Commission on English in the Liturgy's, (c) ICEL 2010, and is published here with acknowledgement under ICEL's own standing Global Computer Networks permission for the elements whose text ICEL's own free chant library and the England-and-Wales Liturgy Office print. This absence covers the elements that are still empty in English for reasons other than ICEL's permission: the Eucharistic Prayers, the Confiteor and the Apostles' Creed, whose text the England-and-Wales leaflets carry but which are not yet spliced onto tracked TSV payloads; the ecumenical-text elements that carry the ELLC text rather than the Missal's; and the not-a-text elements that carry no words at all. What was written here before -- that this project holds no exact copy of the words -- was true when it was written and is no longer true. The copies exist, they are registered, and twenty-three elements of the invariant frame carry them."
+
+[[absences]]
+key = "priest-prayer-said-quietly"
+kind = "witness-gap"
+what = "A prayer the Priest says quietly, for which this project holds no exemplar, and nobody has refused anything. Six elements are empty for this reason: the mingling of water and wine at n. 24, In spiritu humilitatis at n. 26, the washing of hands at n. 28, the commingling formula at n. 129, the Priest's two prayers of private preparation at n. 131, and the purification at n. 137; two more are empty only in part, the prayers over the bread and the chalice at nn. 23 and 25, whose people's acclamation is carried and whose prayers are not, and the Communion at nn. 133-136, whose formula at the distribution is carried and whose two formulas at the Priest's own Communion are not. The gap is a consequence of how the rite is celebrated and of what a publisher therefore publishes. ICEL's free library is a library of CHANTS, and these prayers are never sung, so it has no page for any of them. The Bishops' Conference leaflets are participation aids, and these prayers are not the people's, so they print a rubric where the prayer stands. So no free official publisher has reason to print them and none does. What would close it is one exemplar of the whole Order of Mass rather than of its sung or its people's parts: the Missal's own study edition, an ICEL reference copy of the Order of Mass, or any authoritative complete printing this project can open and hash. Until one is registered these elements stay empty, and the reason is a page nobody here has read and not a permission nobody has given."
 
 # Six reasons stand where one stood, because one key over all 48 elements said a
 # rights refusal thirty-six times where no rightsholder has refused anything.
@@ -182,6 +234,7 @@ latin_incipit = "Populo congregato"
 missal_number = "n. 1"
 absent_latin = "not-a-text"
 note = "The entrance chant, the procession, the veneration of the altar, and the sign of the cross said by priest and people together."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.greeting", element = "introitus" }
 
 [[sections.elements]]
 key = "salutatio"
@@ -192,6 +245,7 @@ latin_incipit = "Dominus vobiscum"
 missal_number = "n. 2"
 absent_latin = "element-spans-mixed-matter"
 note = "Three forms; a bishop greets Pax vobis. The people's answer, Et cum spiritu tuo, is the text the 2011 English changed to 'And with your spirit'; the ecumenical text served elsewhere on this page renders the same Latin 'And also with you', and the two must not be confused."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.greeting", element = "salutatio" }
 
 [[sections.elements]]
 key = "actus-paenitentialis-i"
@@ -211,6 +265,7 @@ name = "Penitential Act, form II"
 latin_incipit = "Miserere nostri, Domine"
 missal_number = "n. 5"
 absent_latin = "editio-typica-new-matter"
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.penitential-act", element = "actus-paenitentialis-ii" }
 
 [[sections.elements]]
 key = "actus-paenitentialis-iii"
@@ -221,6 +276,7 @@ latin_incipit = "Qui missus es sanare contritos corde"
 missal_number = "n. 6"
 absent_latin = "editio-typica-new-matter"
 note = "Tropes set before the Kyrie acclamations. Where this form is used the Kyrie that follows is not repeated."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.penitential-act", element = "actus-paenitentialis-iii" }
 
 [[sections.elements]]
 key = "kyrie"
@@ -230,7 +286,7 @@ name = "Kyrie eleison"
 latin_incipit = "Kyrie, eleison"
 missal_number = "n. 7"
 absent_latin = "antecedent-held-not-carried"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "kyrie" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.kyrie", element = "kyrie" }
 note = "The Missal prints the Kyrie in Greek and in the sixfold form, two acclamations to each invocation, and omits it where the third form of the Penitential Act has been used. The ecumenical text below gives the Greek and an English rendering of it; the Missal's own English is ICEL's and is not here."
 
 [[sections.elements]]
@@ -240,7 +296,7 @@ speaker = "all"
 name = "Gloria in excelsis"
 latin_incipit = "Gloria in excelsis Deo"
 missal_number = "n. 8"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "gloria-in-excelsis" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.gloria", element = "gloria-in-excelsis" }
 note = "Said on Sundays outside Advent and Lent, on solemnities and feasts, and on more solemn celebrations."
 
 # The one element carried as collated on a finding rather than on a comparison
@@ -299,6 +355,7 @@ latin_incipit = "Verbum Domini"
 missal_number = "n. 10"
 absent_latin = "not-a-text"
 note = "The reading itself is the Lectionary's and is proper to the day; this layer carries only the frame."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.liturgy-word", element = "lectio-prima" }
 
 [[sections.elements]]
 key = "psalmus-responsorius"
@@ -314,6 +371,7 @@ name = "The Second Reading"
 missal_number = "n. 12"
 absent_latin = "not-a-text"
 note = "On Sundays, solemnities and feasts."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.liturgy-word", element = "lectio-secunda" }
 
 [[sections.elements]]
 key = "acclamatio-ante-evangelium"
@@ -331,6 +389,7 @@ name = "The Gospel"
 latin_incipit = "Dominus vobiscum. Lectio sancti Evangelii"
 missal_number = "nn. 14-16"
 absent_latin = "element-spans-mixed-matter"
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.liturgy-word", element = "evangelium" }
 
 [[sections.elements]]
 key = "homilia"
@@ -353,7 +412,7 @@ speaker = "all"
 name = "The Nicene Creed"
 latin_incipit = "Credo in unum Deum"
 missal_number = "n. 18"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "nicene-creed" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.credo-1", element = "symbolum-nicaenum" }
 note = "Said on Sundays and solemnities, with a bow prescribed at et homo factus est. The ecumenical text below opens 'We believe' and brackets 'and the Son', both of which the Roman Missal's English does not; it is the same Creed and not the same translation."
 
 # Three witness rows to one element: the Missal sets the symbol as one text and
@@ -436,6 +495,7 @@ speaker = "priest"
 name = "The mingling"
 latin_incipit = "Per huius aquae et vini mysterium"
 missal_number = "n. 24"
+absent_english = "priest-prayer-said-quietly"
 absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
@@ -454,6 +514,7 @@ speaker = "priest"
 name = "In spiritu humilitatis"
 latin_incipit = "In spiritu humilitatis"
 missal_number = "n. 26"
+absent_english = "priest-prayer-said-quietly"
 
 # Uncollated, and the reason is exactly where the interest is: the study quotes
 # the 2002 Latin of the first clause only, that clause agrees, and the witness's
@@ -494,6 +555,7 @@ speaker = "priest"
 name = "The washing of hands"
 latin_incipit = "Lava me, Domine, ab iniquitate mea"
 missal_number = "n. 28"
+absent_english = "priest-prayer-said-quietly"
 absent_latin = "editio-typica-new-matter"
 
 [[sections.elements]]
@@ -507,6 +569,7 @@ missal_number = "n. 29"
 # The best-evidenced element in this file, and the first that was landed. Two
 # witness rows join to one element because the book sets the priest's summons
 # and the people's answer as separate blocks and the Missal sets them as one.
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.orate-fratres", element = "orate-fratres" }
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
@@ -557,7 +620,7 @@ speaker = "all"
 name = "The dialogue before the Preface"
 latin_incipit = "Dominus vobiscum. Sursum corda"
 missal_number = "n. 31"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "sursum-corda" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.preface-dialogue", element = "praefationis-dialogus" }
 note = "The ecumenical text below answers the greeting 'And also with you' and the assent 'It is right to give our thanks and praise'; the Roman Missal's English has 'And with your spirit' and 'It is right and just'."
 
 [sections.elements.latin]
@@ -602,7 +665,7 @@ speaker = "all"
 name = "Sanctus and Benedictus"
 latin_incipit = "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth"
 missal_number = "n. 31"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "sanctus-benedictus" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.sanctus", element = "sanctus" }
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -684,6 +747,7 @@ latin_incipit = "Mysterium fidei"
 missal_number = "n. 91"
 absent_latin = "editio-typica-new-matter"
 note = "Three alternative acclamations. This element has no counterpart in the 1962 Missal, where mysterium fidei stands inside the form over the chalice instead."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.memorial-acclamation", element = "mysterium-fidei" }
 
 [[sections.elements]]
 key = "doxologia"
@@ -705,6 +769,7 @@ note = "The people's Amen closes it. Here per omnia saecula saeculorum is part o
 # This element is not part of it. The doxology is common to all four prayers,
 # the Missal prints it as its own numbered element, and the study places Per
 # ipsum inside the stretch it calls substantially identical.
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.doxology", element = "doxologia" }
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
@@ -751,7 +816,7 @@ speaker = "all"
 name = "The Lord's Prayer"
 latin_incipit = "Praeceptis salutaribus moniti"
 missal_number = "n. 124"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "lords-prayer" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lords-prayer", element = "pater-noster" }
 note = "The ecumenical text is given whole, as the Consultation prints it, which is how its licence requires it to be reproduced. The Roman Rite does not say it continuously: the last two lines are the doxology Quia tuum est regnum, and the embolism Libera nos stands between them and the rest."
 
 # Two witness rows to one element, and the witness's own speaker marks are left
@@ -800,6 +865,7 @@ name = "The embolism"
 latin_incipit = "Libera nos, quaesumus, Domine, ab omnibus malis"
 missal_number = "n. 125"
 absent_latin = "element-spans-mixed-matter"
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lords-prayer", element = "libera-nos" }
 
 [[sections.elements]]
 key = "domine-iesu-christe-qui-dixisti"
@@ -809,6 +875,7 @@ name = "The prayer for peace"
 latin_incipit = "Domine Iesu Christe, qui dixisti Apostolis tuis"
 missal_number = "n. 126"
 absent_latin = "antecedent-held-not-carried"
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.sign-of-peace", element = "domine-iesu-christe-qui-dixisti" }
 
 [[sections.elements]]
 key = "pax-domini"
@@ -819,6 +886,7 @@ latin_incipit = "Pax Domini sit semper vobiscum"
 missal_number = "nn. 127-128"
 absent_latin = "element-spans-mixed-matter"
 note = "The exchange itself is pro opportunitate."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.sign-of-peace", element = "pax-domini" }
 
 [[sections.elements]]
 key = "fractio"
@@ -827,6 +895,7 @@ speaker = "priest"
 name = "The fraction and commingling"
 latin_incipit = "Haec commixtio Corporis et Sanguinis"
 missal_number = "n. 129"
+absent_english = "priest-prayer-said-quietly"
 absent_latin = "no-antecedent-witness"
 
 [[sections.elements]]
@@ -836,7 +905,7 @@ speaker = "all"
 name = "Agnus Dei"
 latin_incipit = "Agnus Dei, qui tollis peccata mundi"
 missal_number = "n. 130"
-english = { witness = "edition.english-language-liturgical-consultation.praying-together.1998", artifact = "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en", element = "agnus-dei" }
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.agnus-dei", element = "agnus-dei" }
 note = "The Consultation's own form, which names Jesus and unfolds tollis in two ways. Repeatable as long as the fraction lasts."
 
 # The Latin of the Agnus Dei is carried here and NOWHERE ELSE in this file. The
@@ -889,6 +958,7 @@ speaker = "priest"
 name = "The priest's private preparation"
 latin_incipit = "Domine Iesu Christe, Fili Dei vivi"
 missal_number = "n. 131"
+absent_english = "priest-prayer-said-quietly"
 absent_latin = "antecedent-held-not-carried"
 note = "Two forms; the priest chooses one and says it inaudibly."
 
@@ -901,6 +971,7 @@ latin_incipit = "Ecce Agnus Dei"
 missal_number = "n. 132"
 absent_latin = "editio-typica-new-matter"
 note = "The people answer Domine, non sum dignus, once, with the priest."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.communion", element = "ecce-agnus-dei" }
 
 [[sections.elements]]
 key = "communio"
@@ -918,6 +989,7 @@ speaker = "priest"
 name = "The purification"
 latin_incipit = "Quod ore sumpsimus, Domine"
 missal_number = "n. 137"
+absent_english = "priest-prayer-said-quietly"
 
 [sections.elements.latin]
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
@@ -966,6 +1038,7 @@ latin_incipit = "Benedicat vos omnipotens Deus"
 missal_number = "nn. 141-143"
 absent_latin = "element-spans-mixed-matter"
 note = "A simple blessing; or a solemn blessing or prayer over the people, introduced by Inclinate vos ad benedictionem; or, for a bishop, the pontifical form with Sit nomen Domini benedictum and Adiutorium nostrum."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.blessing", element = "benedictio" }
 
 [[sections.elements]]
 key = "dimissio"
@@ -976,6 +1049,7 @@ latin_incipit = "Ite, missa est"
 missal_number = "n. 144"
 absent_latin = "element-spans-mixed-matter"
 note = "The 2008 emended reprint added three alternative formulas to Ite, missa est."
+english = { witness = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", artifact = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.dismissal", element = "dimissio" }
 
 [[sections.elements]]
 key = "recessus"

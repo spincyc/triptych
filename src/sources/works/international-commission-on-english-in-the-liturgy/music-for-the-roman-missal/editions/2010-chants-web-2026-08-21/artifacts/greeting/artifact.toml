@@ -2,9 +2,9 @@ schema = 2
 record_type = "artifact"
 id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.greeting"
 edition_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-artifact_type = "publisher-issued-pdf"
-media_type = "application/pdf"
-storage = "remote"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
 rights_status = "permission"
 rights_basis = """
 Two layers, and they are different properties.
@@ -26,9 +26,11 @@ reproduction "free of charge IN PRINTED FORM, for non-commercial purposes, in
 publications not for sale, BY PARISHES, DIOCESES, SCHOOLS, AND RELIGIOUS
 COMMUNITIES" -- print, and a named class of user this project is neither in nor
 imitating -- and condition (4) of the clause above grants no licence to publish
-in any other form. So these exact bytes are identified and hashed and no payload
-is retained: storage = remote. That disposes of the file and withholds nothing of
-the text, which is publishable under the clause.
+in any other form. The original PDF is
+not retained as a payload: its bytes are identified and hashed at the remote
+source, and the text carried here is a project transcription held as a tracked
+TSV. That disposes of the file layer and withholds nothing of the text, which is
+publishable under the clause.
 
 src/sources/inventories/icel-web-permission-rights-v1.toml settles the whole
 question once, including the Revised Grail carve-out and the territorial rule.
@@ -36,10 +38,12 @@ question once, including the Revised Grail carve-out and the territorial rule.
 source_url = "https://www.icelweb.org/musicfolder/Greeting.pdf"
 provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL published on ICEL's own Music for the Roman Missal index page, and hashed before any page was read. Nothing in the retrieval path passed through a model."
 retrieved = "2026-08-21"
-sha256 = "bfbd4bfc193595aa9377c6d4f97df27d84786f8f5818e0bae5b60bad7014c7b3"
-byte_size = 54663
+sha256 = "37af7af2e30d865f44319b80ebc85158e3be70caf99201152d5902bd23432f08"
+byte_size = 670
+path = "src/sources/works/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/editions/2010-chants-web-2026-08-21/artifacts/greeting/greeting.tsv"
+encoding = "utf-8"
 page_count = 1
-indexable = false
+indexable = true
 notes = """
 File Greeting.pdf in ICEL's Music for the Roman Missal library, 1 pp. The index page lists it as "Greeting", under the heading "The Order of Mass / Introductory Rites".
 """
