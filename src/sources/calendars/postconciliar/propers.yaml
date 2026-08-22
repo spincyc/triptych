@@ -276,6 +276,17 @@ open_collation_items:
   exchange the meek and those who mourn. Both resolve to real beatitudes either way
   and the recorded incipit is too short to tell which was meant, so neither is corrected
   here; settle them against the printed antiphon'
+- 'the Commune Sanctorum section added 2026-08-21 carries seven Commons minted as
+  pc-C-<slug>, by the 1962 precedent of 1962-C-<slug>. The registry
+  guidance/liturgy/postconciliar-propers-registry.md does not yet carry a Commons
+  namespace; pc-C is minted in the index beside the existing pc-T-<key> precedent
+  and a registry revision is open in parallel. Each Common is a placeholder:
+  its antiphons and orations are printed in the Missale Romanum 2002, which is
+  held under restricted storage, and the Ordo lectionum Missae Communia are
+  option lists, not formularies. No takes_from from a dated mass to a Common
+  is landed until the Missal''s own heading for that day has been read, because
+  the Ordo''s heading appoints readings and the Missal''s heading appoints
+  prayers, and the two need not agree.'
 # The psalm loci this file carries that its own numbering cannot hold. The
 # calendar declares Hebrew numbering, and eleven antiphons reproduce the number
 # their missal prints, which is the Vulgate's across most of the psalter; the
@@ -49721,3 +49732,118 @@ sections:
           - begin: {chapter: 16, verse: 13}
             end: {chapter: 16, verse: 19}
           ref: Matthew 16:13-19
+
+  common:
+    kind: common
+    label: Commune Sanctorum
+    masses:
+    - key: commune-dedicationis-ecclesiae
+      name: Commune Dedicationis ecclesiae
+      registry: pc-C-dedicationis-ecclesiae
+      notes: >-
+        The Common of the Dedication of a church. Named from the De Communi
+        heading of the Ordo lectionum Missae 1981, which the acquisition record
+        read at page images (artifact pages 375-398, nn. 701-742). Its antiphons,
+        orations and readings are printed in the Missale Romanum 2002, which
+        this project holds under restricted storage and may not publish from.
+        The Ordo's own Communia are lists of interchangeable options and are not
+        a formulary. The Missal's subdivisions within this Common are not yet
+        established. Absent, not omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-beatae-mariae-virginis
+      name: Commune Beatae Mariae Virginis
+      registry: pc-C-beatae-mariae-virginis
+      notes: >-
+        The Common of the Blessed Virgin Mary. Named from the De Communi heading
+        of the Ordo lectionum Missae 1981. Its antiphons, orations and readings
+        are printed in the Missale Romanum 2002, which this project holds under
+        restricted storage and may not publish from. The Ordo's own Communia are
+        lists of interchangeable options and are not a formulary. The Missal's
+        subdivisions within this Common are not yet established. Absent, not
+        omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-martyrum
+      name: Commune Martyrum
+      registry: pc-C-martyrum
+      notes: >-
+        The Common of Martyrs. Named from the De Communi heading of the Ordo
+        lectionum Missae 1981. Its antiphons, orations and readings are printed
+        in the Missale Romanum 2002, which this project holds under restricted
+        storage and may not publish from. The Ordo's own Communia are lists of
+        interchangeable options and are not a formulary. The Missal's
+        subdivisions within this Common are not yet established. Absent, not
+        omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-pastorum
+      name: Commune Pastorum
+      registry: pc-C-pastorum
+      notes: >-
+        The Common of Pastors. Named from the De Communi heading of the Ordo
+        lectionum Missae 1981, which records sub-selections including [pro papa],
+        [pro religiosis], [pro missionariis], [pro educatoribus], and [pro iis
+        qui opera misericordiae exercuerunt]. Its antiphons, orations and
+        readings are printed in the Missale Romanum 2002, which this project
+        holds under restricted storage and may not publish from. The Ordo's own
+        Communia are lists of interchangeable options and are not a formulary.
+        The Missal's subdivisions within this Common are not yet established.
+        Absent, not omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-doctorum-ecclesiae
+      name: Commune Doctorum Ecclesiae
+      registry: pc-C-doctorum-ecclesiae
+      notes: >-
+        The Common of Doctors of the Church. Named from the De Communi heading
+        of the Ordo lectionum Missae 1981. Its antiphons, orations and readings
+        are printed in the Missale Romanum 2002, which this project holds under
+        restricted storage and may not publish from. The Ordo's own Communia
+        are lists of interchangeable options and are not a formulary. The
+        Missal's subdivisions within this Common are not yet established.
+        Absent, not omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-virginum
+      name: Commune Virginum
+      registry: pc-C-virginum
+      notes: >-
+        The Common of Virgins. Named from the De Communi heading of the Ordo
+        lectionum Missae 1981. Its antiphons, orations and readings are printed
+        in the Missale Romanum 2002, which this project holds under restricted
+        storage and may not publish from. The Ordo's own Communia are lists of
+        interchangeable options and are not a formulary. The Missal's
+        subdivisions within this Common are not yet established. Absent, not
+        omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.
+    - key: commune-sanctorum
+      name: Commune Sanctorum et Sanctarum
+      registry: pc-C-sanctorum
+      notes: >-
+        The Common of Saints and holy women (men and women who are neither
+        martyrs, pastors, doctors, nor virgins). Named from the De Communi
+        heading of the Ordo lectionum Missae 1981, which records sub-selections
+        including sanctorum virorum and sanctarum mulierum. Its antiphons,
+        orations and readings are printed in the Missale Romanum 2002, which
+        this project holds under restricted storage and may not publish from.
+        The Ordo's own Communia are lists of interchangeable options and are
+        not a formulary. The Missal's subdivisions within this Common are not
+        yet established. Absent, not omitted.
+      propers:
+      - name: Placeholder
+        source: composed
+        text: This entry is a placeholder pending formula migration and source verification.

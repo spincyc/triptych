@@ -376,6 +376,7 @@ carries the identical block.
 | postconciliar | christological | 7 | 67 | 0 |
 | postconciliar | marian | 14 | 54 | 2 |
 | postconciliar | sanctoral | 181 | 718 | 8 |
+| postconciliar | common | 7 | 7 | 7 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
@@ -385,7 +386,7 @@ carries the identical block.
 | roman-1962 | I | 37 | 37 |
 | roman-1962 | II | 46 | 47 |
 | roman-1962 | III | 211 | 211 |
-| postconciliar | (no rank) | 387 | 387 |
+| postconciliar | (no rank) | 394 | 394 |
 | postconciliar | All Souls commemoration | 1 | 1 |
 | postconciliar | Feast | 24 | 24 |
 | postconciliar | Memorial | 69 | 69 |
@@ -395,13 +396,13 @@ carries the identical block.
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 592 |
-| Propers | 6 | 2746 | 2947 |
-| — named `Placeholder` | 6 | 2 | 10 |
+| Masses | 6 | 491 | 599 |
+| Propers | 6 | 2746 | 2954 |
+| — named `Placeholder` | 6 | 2 | 17 |
 | — inside a `forms` block | 0 | 147 | 244 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
-| Masses holding only placeholders | 6 | 2 | 10 |
+| Masses holding only placeholders | 6 | 2 | 17 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
 | Propers taking their text from another entry | 0 | 53 | 41 |
 | Propers that are not placeholders | 0 | 2744 | 2937 |
