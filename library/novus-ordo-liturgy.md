@@ -52,6 +52,9 @@ editions or says `Planned`.
 | **Fourth Sunday of Lent** | Planned | Planned | Planned |
 | **Fifth Sunday of Lent** | Planned | Planned | Planned |
 | **Palm Sunday of the Passion of the Lord** | Planned | Planned | Planned |
+| **Evening Mass of the Lord's Supper** | Planned | Planned | Planned |
+| **Celebration of the Lord's Passion** | Planned | Planned | Planned |
+| **Easter Vigil** | Planned with Easter Sunday | Planned with Easter Sunday | Planned with Easter Sunday |
 | **Easter Sunday of the Resurrection of the Lord** | Planned | Planned | Planned |
 | **Second Sunday of Easter** | Planned | Planned | Planned |
 | **Third Sunday of Easter** | Planned | Planned | Planned |
@@ -96,20 +99,6 @@ editions or says `Planned`.
 | **Thirty-second Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **Thirty-third Sunday in Ordinary Time** | Planned | Planned | Planned |
 | **Our Lord Jesus Christ, King of the Universe, the Last Sunday in Ordinary Time** | Planned | Planned | Planned |
-
-### Sacred Triduum
-
-These edition-specific celebrations are planned separately from the Sunday
-spine. The Evening Mass of the Lord's Supper and the Celebration of the
-Lord's Passion each use one cycle-invariant plan. Easter Vigil coverage is
-already included with Easter Sunday, so it is shown here for completeness
-rather than counted as another planned work.
-
-| Celebration | Status |
-| --- | --- |
-| **Evening Mass of the Lord's Supper** | Planned |
-| **Celebration of the Lord's Passion** | Planned |
-| **Easter Vigil** | Planned with Easter Sunday |
 
 ### Sunday replacements
 

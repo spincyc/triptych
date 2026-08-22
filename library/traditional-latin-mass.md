@@ -98,6 +98,9 @@ editions are shown as `Planned`.
 | 24 | **Fourth Sunday of Lent** | Planned | Planned |
 | 25 | **First Sunday of the Passion (Passion Sunday)** | Planned | Planned |
 | 26 | **Second Sunday of the Passion (Palm Sunday)** | Planned | Planned |
+| — | **Mass of the Lord's Supper** | Planned | Planned |
+| — | **Solemn Liturgical Action of the Passion and Death of the Lord** | Planned | Planned |
+| — | **Easter Vigil** | Planned | Planned |
 | 27 | **Easter Sunday** | Planned | Planned |
 | 28 | **Low Sunday (First Sunday after Easter)** | Planned | Planned |
 | 29 | **Second Sunday after Easter** | Planned | Planned |
@@ -137,17 +140,6 @@ editions are shown as `Planned`.
 | 63 | **Resumed Fifth Sunday after the Epiphany** | Planned | Planned |
 | 64 | **Resumed Sixth Sunday after the Epiphany** | Planned | Planned |
 | 65 | **Twenty-fourth and Last Sunday after Pentecost** | Planned | Planned |
-
-### Sacred Triduum
-
-These 1962 edition-specific celebrations are planned outside the numbered
-Sunday spine.
-
-| Celebration | ChatGPT | Claude |
-| --- | --- | --- |
-| **Mass of the Lord's Supper** | Planned | Planned |
-| **Solemn Liturgical Action of the Passion and Death of the Lord** | Planned | Planned |
-| **Easter Vigil** | Planned | Planned |
 
 ### Feasts Replacing a Sunday
 

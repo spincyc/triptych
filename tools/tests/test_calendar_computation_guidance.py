@@ -86,7 +86,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     )
     rows = re.findall(
       r"^\| \*\*(.+?)\*\* \|.*\|.*\|.*\|$",
-      landing.split("## Sunday Propers Calendar")[1].split("### Sacred Triduum")[0],
+      landing.split("## Sunday Propers Calendar")[1].split("### Sunday replacements")[0],
       re.MULTILINE,
     )
     counts = [
@@ -98,7 +98,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       )
     ]
     self.assertEqual(parents, [f"PC-S{n:02d}" for n in range(1, 61)])
-    self.assertEqual(len(rows), 60)
+    self.assertEqual(len(rows), 63)
     self.assertEqual(sum(counts), 184)
     self.assertIn(
       "| PC-T01 | `pc-t01-evening-mass-of-the-lords-supper` | "
@@ -116,23 +116,35 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       "`PC-S17-C-VIGIL` |",
       registry,
     )
-    triduum = landing.split("### Sacred Triduum", 1)[1].split(
+    # The Triduum entries are now inline in the Sunday Propers Calendar,
+    # ordered between Palm Sunday and Easter Sunday.
+    calendar = landing.split("## Sunday Propers Calendar", 1)[1].split(
       "### Sunday replacements", 1
     )[0]
-    self.assertIn("| Celebration | Status |", triduum)
     self.assertIn(
-      "| **Evening Mass of the Lord's Supper** | Planned |", triduum
+      "| **Evening Mass of the Lord's Supper** | Planned | Planned | Planned |",
+      calendar,
     )
     self.assertIn(
-      "| **Celebration of the Lord's Passion** | Planned |", triduum
+      "| **Celebration of the Lord's Passion** | Planned | Planned | Planned |",
+      calendar,
     )
     self.assertIn(
-      "| **Easter Vigil** | Planned with Easter Sunday |", triduum
+      "| **Easter Vigil** | Planned with Easter Sunday | "
+      "Planned with Easter Sunday | Planned with Easter Sunday |",
+      calendar,
     )
-    self.assertIn("one cycle-invariant plan", triduum)
-    self.assertIn("rather than counted as another planned work", triduum)
-    self.assertNotRegex(triduum, r"\|\s*A\s*\|\s*B\s*\|\s*C\s*\|")
-    self.assertNotRegex(triduum, r"\bPC-[A-Z0-9-]+\b")
+    # Verify Triduum ordering: Palm Sunday < Supper < Passion < Vigil < Easter
+    palm = calendar.index("**Palm Sunday of the Passion of the Lord**")
+    supper = calendar.index("**Evening Mass of the Lord's Supper**")
+    passion = calendar.index("**Celebration of the Lord's Passion**")
+    vigil = calendar.index("**Easter Vigil**")
+    easter = calendar.index("**Easter Sunday of the Resurrection of the Lord**")
+    self.assertLess(palm, supper)
+    self.assertLess(supper, passion)
+    self.assertLess(passion, vigil)
+    self.assertLess(vigil, easter)
+    self.assertNotRegex(calendar, r"\bPC-[A-Z0-9-]+\b")
     # The production plan no longer restates the registry's counts, so there
     # is no totals table to assert on; the registry above is the one source.
     self.assertIn(
