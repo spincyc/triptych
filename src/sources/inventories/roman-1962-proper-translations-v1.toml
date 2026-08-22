@@ -970,6 +970,119 @@ rights_basis = "Public domain in the United States by failure to renew, on the a
 caution = "A lay hand missal of the 1945 revision, printed about 1955-56, not an approved liturgical translation and never an altar book. Its Holy Week is the pre-1955 rite, its sanctoral is not the 1962 sanctoral, and its second and third orations are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation."
 role = "Second English witness alongside cummiskey-1861, and independent of it in every way that matters: a different translator, a different publisher, a different century, and a book that keeps feasts and Commons the 1861 printing is older than. Where the two witnesses cover the same slot the 1861 entry stands and this one is not added; every entry below is for a slot that had no English at all."
 
+[[sources]]
+id = "caswall-1849"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+label = "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources, translated by Edward Caswall (London: James Burns, 1849)"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = '''
+THIS IS NOT A MISSAL AND WITNESSES NO PRINTING OF ONE. It is a verse translation
+of the hymns and sequences of the Roman Breviary and Missal, published at London
+in 1849 with no imprimatur, no approbation and no decree in the front matter read
+here. It names no Latin exemplar and it prints no Latin beside the English, so it
+cannot say which book was on the translator's desk, and its English never had and
+does not now have any liturgical standing.
+
+The edge therefore rests on the date alone, which is the weakest kind and is
+labelled as such, on the same footing as roman-missal-laity-1806, cummiskey-1843
+and cummiskey-1861 in roman-holy-week-acts-v1.toml. 1849 falls after Urban VIII's
+revision of 1634 and before Divino afflatu of 1911, so the state of the Roman
+books it can be translating is the one si-quid-est-1634 left. It is drawn only
+because a date bound is a real bound.
+
+WHAT THE DATE BOUND IS WORTH FOR THESE FIVE TEXTS, and it is worth more here than
+it would be for an oration: no act between 1634 and 1962 altered the words of
+Victimae paschali laudes, Veni Sancte Spiritus, Lauda Sion Salvatorem or Dies
+irae, and the Stabat Mater was appointed as a sequence in 1727, more than a
+century before this book. The strophe-for-strophe correspondence against the
+Latin this repository carries was counted for each of the five and is recorded in
+the transcription artifact. So the recension question that governs the 1861
+witness's Holy Week does not arise for this material -- which is a statement
+about these five texts and must not be generalised to anything else in this book.
+'''
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = '''
+Published at London in 1849, so out of United States copyright on the pre-1931
+line, AS DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on 1 January
+2027 the line becomes before 1932 and a later reader must re-derive it rather
+than quote this sentence. This is a foreign publication, so the term cannot be
+followed to its end from a domestic registration; the age line is the whole of
+the case and is stated as such. Restoration under 17 U.S.C. 104A reaches only
+works still protected in the source country on 1 January 1996, and United Kingdom
+protection for Edward Caswall, who died in 1878, ended in 1948, so nothing was
+restored. The basis is a United States one and a reader elsewhere must establish
+the position in their own jurisdiction.
+
+That covers the 1849 book's own English, which is what this file carries. The
+`artifact_id` names a project transcription made from the item's page images and
+holding nothing but that English; the item's OCR text layer is registered
+separately, was used as a finding aid only, and supplied no word recorded here.
+NOT RELIED ON: that the Internet Archive item is available, that the download
+succeeded, or that the item carries a Public Domain Mark 1.0 licence URL, which
+it does.
+'''
+caution = '''
+A LITERARY TRANSLATION, CHOSEN AS A VOICE. Caswall, Neale, Aylward and Bute
+differ materially over these five texts, and guidance/propers-for-agents.md
+reserves the choice among them to the maintainer. This row records that the
+maintainer named Caswall; it does not argue that Caswall is right.
+
+The English is metrical verse and is not a clause-for-clause rendering. Where the
+Latin sets a short strophe Caswall may fold two into one six-line stanza, and the
+stanza divisions in the text recorded here are his and not the Missal's. He
+renders no Amen and no Alleluia anywhere: every one of these five propers ends in
+the Latin with an acclamation that the English simply does not have.
+'''
+
+[[sources]]
+id = "hymns-ancient-and-modern-1890"
+source_id = "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890"
+artifact_id = "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en"
+label = "Hymns Ancient and Modern, Complete Edition with accompanying tunes (London: printed for the proprietors by William Clowes and Sons), hymn 398, W. J. Irons's English of the Dies irae"
+attests = "unestablished"
+attests_kind = "date-bound"
+attests_basis = '''
+AN ANGLICAN HYMN BOOK AND NO WITNESS TO A ROMAN PRINTING AT ALL. It is carried
+for one text, hymn 398, and that text is a literary translation with no
+liturgical standing in the Roman rite. Where the companion volume of 1889 prints
+the Latin this hymn is set against, the Latin is a SARUM recension -- its first
+strophe reads `Crucis expandens vexilla` where the Roman books read `Teste David
+cum Sibylla` -- so the compilers were not even working from the Roman text at
+that point. `attests` is written `unestablished` because no act of the Roman
+books stands behind this printing in any degree; the kind is recorded as
+`date-bound` because the only bound this witness offers is that it is a
+nineteenth-century printing, and the vocabulary admits no weaker word.
+'''
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = '''
+The text is W. J. Irons's English of the Dies irae, dated 1853 by the 1889
+Historical Companion, by an author who died in 1883, printed here in a
+nineteenth-century London imprint catalogued 1890 and undated on its own title
+leaf. It is out of United States copyright on the pre-1931 line as derived for
+calendar year 2026; 17 U.S.C. 104A restoration is unavailable because United
+Kingdom protection expired in 1953. The proprietors' copyright notice printed at
+p. iv of the book was read on the page image and is quoted in the edition record;
+it is a live claim of its own day over a compilation now long past publication.
+NOT RELIED ON: availability, successful download, or any host mark.
+'''
+caution = '''
+THIS IS HYMNS ANCIENT AND MODERN'S TEXT OF IRONS AND NOT DEMONSTRABLY IRONS'S
+OWN. That book's compilers are widely said to have altered what they received;
+this lane established no instance of alteration in this hymn and ran no collation
+against a printing of Irons's own, because none was located. The claim that this
+is Irons's translation rests on the 1889 Historical Companion's attribution, read
+on its page image; the claim that it is UNALTERED rests on nothing and is not
+made.
+
+Most of the hymn is set under vocal score in this printing, so 22 of its 58 lines
+were read syllable by syllable from under the staves. That is the weakest point
+of the transcription.
+'''
+
 [[entries]]
 mass = "advent-1"
 form = ""
@@ -10509,6 +10622,1038 @@ text = """
 May the receiving of this thy sacrament, O Lord, we beseech thee, sanctify us: and by the intercession of thy saints, make us acceptable to thee.
 """
 
+[[entries]]
+mass = "commemoratione-omnium-fidelium-defunctorum"
+form = "First Mass (Ad primam Missam)"
+proper = "Sequence"
+incipit = "Dies irae, dies illa"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''Read at printed pp. 241-244 = leaves n278-n281, under `Sequence, Mass for the Dead.` and the incipit `Dies irae dies illa.` Nineteen stanzas against the Missal's nineteen strophes, one for one; the closing `Amen.` is not rendered. THIS CONTRADICTS THE PREMISE OF THE LANE BRIEF AND OF guidance/propers-for-agents.md, both of which record that the Dies irae is outside Lyra Catholica's scope because it is a Requiem sequence. The London 1849 prints it, in its Missal section, between the Lauda Sion and the cross-reference to the Stabat Mater. An independent English of this sequence is therefore not needed for coverage; the alternative Irons text below is offered as a choice of voice, not as a gap-filler. The existing untranslated row for this slot refuses the 1861 witness's own English as a verse paraphrase in the manner of Roscommon; that refusal stands and is not disturbed by this row, which comes from a different book.'''
+
+disagreement = '''
+Two independent metrical translations of this sequence are carried side by side
+by maintainer choice under guidance/propers-for-agents.md, which reserves the
+choice of voice to the maintainer. Caswall 1849 is the through-line across all
+five Missal sequences; Irons 1890 (Hymns Ancient and Modern, Complete Edition,
+hymn 398) is offered as the alternative for this one slot, and is the version
+that renders the closing Amen that Caswall omits. This is a choice of voice and
+not a correction: neither reading is in error, neither is settled against the
+other, and both are served. The two source rows `caswall-1849` and
+`hymns-ancient-and-modern-1890` are declared among the [[sources]] above.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Nigher still, and still more nigh
+Draws the Day of Prophecy,
+Doom’d to melt the earth and sky.
+
+Oh, what trembling there shall be,
+When the world its Judge shall see,
+Coming in dread majesty!
+
+Hark! the trump, with thrilling tone,
+From sepulchral regions lone,
+Summons all before the throne:
+
+Time and Death it doth appal,
+To see the buried ages all
+Rise to answer at the call.
+
+Now the books are open spread;
+Now the writing must be read,
+Which condemns the quick and dead:
+
+Now, before the Judge severe
+Hidden things must all appear;
+Nought can pass unpunish’d here.
+
+What shall guilty I then plead?
+Who for me will intercede,
+When the Saints shall comfort need?
+
+King of dreadful Majesty!
+Who dost freely justify!
+Fount of Pity, save Thou me!
+
+Recollect, O Love divine!
+’Twas for this lost sheep of thine
+Thou thy glory didst resign:
+
+Satest wearied seeking me;
+Sufferedst upon the Tree:
+Let not vain thy labour be.
+
+Judge of Justice, hear my prayer!
+Spare me, Lord, in mercy spare!
+Ere the Reckoning-day appear.
+
+Lo! thy gracious face I seek;
+Shame and grief are on my cheek;
+Sighs and tears my sorrow speak.
+
+Thou didst Mary’s guilt forgive;
+Didst the dying thief receive;
+Hence doth hope within me live.
+
+Worthless are my prayers, I know;
+Yet, oh, cause me not to go
+Into everlasting woe.
+
+Sever’d from the guilty band,
+Make me with thy sheep to stand,
+Placing me on thy right hand.
+
+When the curs’d in anguish flee
+Into flames of misery;
+With the Blest then call Thou me.
+
+Suppliant in the dust I lie;
+My heart a cinder, crush’d and dry;
+Help me, Lord, when death is nigh!
+
+Full of tears, and full of dread,
+Is the day that wakes the dead,
+Calling all, with solemn blast,
+From the ashes of the past.
+
+Lord of mercy! Jesu blest!
+Grant the Faithful light and rest.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Nigher still, and still more nigh
+Draws the Day of Prophecy,
+Doom’d to melt the earth and sky.
+
+Oh, what trembling there shall be,
+When the world its Judge shall see,
+Coming in dread majesty!
+
+Hark! the trump, with thrilling tone,
+From sepulchral regions lone,
+Summons all before the throne:
+
+Time and Death it doth appal,
+To see the buried ages all
+Rise to answer at the call.
+
+Now the books are open spread;
+Now the writing must be read,
+Which condemns the quick and dead:
+
+Now, before the Judge severe
+Hidden things must all appear;
+Nought can pass unpunish’d here.
+
+What shall guilty I then plead?
+Who for me will intercede,
+When the Saints shall comfort need?
+
+King of dreadful Majesty!
+Who dost freely justify!
+Fount of Pity, save Thou me!
+
+Recollect, O Love divine!
+’Twas for this lost sheep of thine
+Thou thy glory didst resign:
+
+Satest wearied seeking me;
+Sufferedst upon the Tree:
+Let not vain thy labour be.
+
+Judge of Justice, hear my prayer!
+Spare me, Lord, in mercy spare!
+Ere the Reckoning-day appear.
+
+Lo! thy gracious face I seek;
+Shame and grief are on my cheek;
+Sighs and tears my sorrow speak.
+
+Thou didst Mary’s guilt forgive;
+Didst the dying thief receive;
+Hence doth hope within me live.
+
+Worthless are my prayers, I know;
+Yet, oh, cause me not to go
+Into everlasting woe.
+
+Sever’d from the guilty band,
+Make me with thy sheep to stand,
+Placing me on thy right hand.
+
+When the curs’d in anguish flee
+Into flames of misery;
+With the Blest then call Thou me.
+
+Suppliant in the dust I lie;
+My heart a cinder, crush’d and dry;
+Help me, Lord, when death is nigh!
+
+Full of tears, and full of dread,
+Is the day that wakes the dead,
+Calling all, with solemn blast,
+From the ashes of the past.
+
+Lord of mercy! Jesu blest!
+Grant the Faithful light and rest.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890"
+text = '''
+Day of Wrath! O day of mourning!
+See fulfill’d the prophets’ warning!
+Heav’n and earth in ashes burning!
+Oh, what fear man’s bosom rendeth
+When from Heav’n the Judge descendeth,
+On Whose sentence all dependeth!
+
+Wondrous sound the trumpet flingeth,
+Through earth’s sepulchres it ringeth,
+All before the Throne it bringeth.
+Death is struck, and nature quaking,
+All creation is awaking,
+To its Judge an answer making.
+
+Lo! the Book exactly worded,
+Wherein all hath been recorded;
+Thence shall judgment be awarded.
+When the Judge His seat attaineth,
+And each hidden deed arraigneth,
+Nothing unavenged remaineth.
+
+What shall I, frail man, be pleading,
+Who for me be interceding,
+When the just are mercy needing?
+King of Majesty tremendous,
+Who dost free salvation send us,
+Fount of pity, then befriend us!
+
+Think, good Jesu, my salvation
+Caused Thy wondrous Incarnation;
+Leave me not to reprobation.
+Faint and weary Thou hast sought me,
+On the Cross of suffering bought me;
+Shall such grace be vainly brought me?
+
+Righteous Judge! for sin’s pollution
+Grant Thy gift of absolution,
+Ere that day of retribution.
+Guilty, now I pour my moaning,
+All my shame with anguish owning;
+Spare, O God, Thy suppliant groaning.
+
+Thou the sinful woman savedst;
+Thou the dying thief forgavest;
+And to me a hope vouchsafest.
+Worthless are my prayers and sighing;
+Yet, good Lord, in grace complying,
+Rescue me from fires undying.
+
+With Thy favour’d sheep O place me,
+Nor among the goats abase me,
+But to Thy right hand upraise me.
+While the wicked are confounded,
+Doom’d to flames of woe unbounded,
+Call me with Thy Saints surrounded.
+
+Low I kneel, with heart submission,
+See, like ashes, my contrition;
+Help me in my last condition.
+
+Ah! that day of tears and mourning!
+From the dust of earth returning
+Man for judgment must prepare him:
+Spare, O God, in mercy spare him!
+Lord, all-pitying, Jesu Blest,
+Grant them Thine eternal rest.
+Amen.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en"
+text = '''
+Day of Wrath! O day of mourning!
+See fulfill’d the prophets’ warning!
+Heav’n and earth in ashes burning!
+Oh, what fear man’s bosom rendeth
+When from Heav’n the Judge descendeth,
+On Whose sentence all dependeth!
+
+Wondrous sound the trumpet flingeth,
+Through earth’s sepulchres it ringeth,
+All before the Throne it bringeth.
+Death is struck, and nature quaking,
+All creation is awaking,
+To its Judge an answer making.
+
+Lo! the Book exactly worded,
+Wherein all hath been recorded;
+Thence shall judgment be awarded.
+When the Judge His seat attaineth,
+And each hidden deed arraigneth,
+Nothing unavenged remaineth.
+
+What shall I, frail man, be pleading,
+Who for me be interceding,
+When the just are mercy needing?
+King of Majesty tremendous,
+Who dost free salvation send us,
+Fount of pity, then befriend us!
+
+Think, good Jesu, my salvation
+Caused Thy wondrous Incarnation;
+Leave me not to reprobation.
+Faint and weary Thou hast sought me,
+On the Cross of suffering bought me;
+Shall such grace be vainly brought me?
+
+Righteous Judge! for sin’s pollution
+Grant Thy gift of absolution,
+Ere that day of retribution.
+Guilty, now I pour my moaning,
+All my shame with anguish owning;
+Spare, O God, Thy suppliant groaning.
+
+Thou the sinful woman savedst;
+Thou the dying thief forgavest;
+And to me a hope vouchsafest.
+Worthless are my prayers and sighing;
+Yet, good Lord, in grace complying,
+Rescue me from fires undying.
+
+With Thy favour’d sheep O place me,
+Nor among the goats abase me,
+But to Thy right hand upraise me.
+While the wicked are confounded,
+Doom’d to flames of woe unbounded,
+Call me with Thy Saints surrounded.
+
+Low I kneel, with heart submission,
+See, like ashes, my contrition;
+Help me in my last condition.
+
+Ah! that day of tears and mourning!
+From the dust of earth returning
+Man for judgment must prepare him:
+Spare, O God, in mercy spare him!
+Lord, all-pitying, Jesu Blest,
+Grant them Thine eternal rest.
+Amen.
+'''
+
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Sequence"
+incipit = "Victimae paschali laudes"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''Read at Internet Archive item LyraCatholica1849, printed pp. 233-234 = leaves n270-n271, under the heading `Sequence, Easter-Sunday.` and the Latin incipit `Victimae Paschali laudes.` Six English stanzas answer the Missal's eight strophes, the fifth stanza carrying `Sepulcrum Christi viventis` and `Angelicos testes` together. The Missal's closing `Amen. Alleluja.` is not rendered; Caswall prints no acclamation.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Forth to the paschal Victim, Christians, bring
+Your sacrifice of praise:
+
+The Lamb redeems the sheep;
+And Christ, the Sinless One,
+Hath to the Father sinners reconcil’d.
+
+Together, Death and Life
+In a strange conflict strove;
+The Prince of Life, who died,
+Now lives and reigns.
+
+What thou sawest, Mary, say,
+As thou wentest on the way.
+
+I saw the tomb wherein the Living One had lain;
+I saw his glory as He rose again;
+Napkin and linen clothes, and Angels twain:
+Yea, Christ is risen, my hope, and He
+Will go before you into Galilee.
+
+We know that Christ indeed has risen from the grave:
+Hail, thou King of Victory!
+Have mercy, Lord, and save.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Forth to the paschal Victim, Christians, bring
+Your sacrifice of praise:
+
+The Lamb redeems the sheep;
+And Christ, the Sinless One,
+Hath to the Father sinners reconcil’d.
+
+Together, Death and Life
+In a strange conflict strove;
+The Prince of Life, who died,
+Now lives and reigns.
+
+What thou sawest, Mary, say,
+As thou wentest on the way.
+
+I saw the tomb wherein the Living One had lain;
+I saw his glory as He rose again;
+Napkin and linen clothes, and Angels twain:
+Yea, Christ is risen, my hope, and He
+Will go before you into Galilee.
+
+We know that Christ indeed has risen from the grave:
+Hail, thou King of Victory!
+Have mercy, Lord, and save.
+'''
+
+[[entries]]
+mass = "pentecost"
+form = ""
+proper = "Sequence"
+incipit = "Veni, Sancte Spiritus"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''Read at printed pp. 234-236 = leaves n271-n273, under `Sequence, Whit-Sunday.` and the incipit `Veni Sancte Spiritus.` Ten stanzas against the Missal's ten strophes, one for one. The Missal's closing `Amen. Alleluja.` is not rendered.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Holy Spirit! Lord of light!
+From thy clear celestial height,
+Thy pure beaming radiance give:
+
+Come, Thou Father of the poor!
+Come, with treasures which endure!
+Come, Thou Light of all that live!
+
+Thou, of all consolers best,
+Visiting the troubled breast,
+Dost refreshing peace bestow;
+
+Thou in toil art comfort sweet;
+Pleasant coolness in the heat;
+Solace in the midst of woe.
+
+Light immortal! light divine!
+Visit Thou these hearts of thine,
+And our inmost being fill:
+
+If Thou take thy grace away,
+Nothing pure in man will stay;
+All his good is turn’d to ill.
+
+Heal our wounds — our strength renew;
+On our dryness pour thy dew;
+Wash the stains of guilt away:
+
+Bend the stubborn heart and will;
+Melt the frozen, warm the chill;
+Guide the steps that go astray.
+
+Thou, on those who evermore
+Thee confess and Thee adore,
+In thy sevenfold gifts, descend:
+
+Give them comfort when they die;
+Give them life with Thee on high;
+Give them joys which never end.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Holy Spirit! Lord of light!
+From thy clear celestial height,
+Thy pure beaming radiance give:
+
+Come, Thou Father of the poor!
+Come, with treasures which endure!
+Come, Thou Light of all that live!
+
+Thou, of all consolers best,
+Visiting the troubled breast,
+Dost refreshing peace bestow;
+
+Thou in toil art comfort sweet;
+Pleasant coolness in the heat;
+Solace in the midst of woe.
+
+Light immortal! light divine!
+Visit Thou these hearts of thine,
+And our inmost being fill:
+
+If Thou take thy grace away,
+Nothing pure in man will stay;
+All his good is turn’d to ill.
+
+Heal our wounds — our strength renew;
+On our dryness pour thy dew;
+Wash the stains of guilt away:
+
+Bend the stubborn heart and will;
+Melt the frozen, warm the chill;
+Guide the steps that go astray.
+
+Thou, on those who evermore
+Thee confess and Thee adore,
+In thy sevenfold gifts, descend:
+
+Give them comfort when they die;
+Give them life with Thee on high;
+Give them joys which never end.
+'''
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Sequence"
+incipit = "Lauda, Sion, Salvatorem"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''Read at printed pp. 236-240 = leaves n273-n277, under `Sequence, Solemnity of Corpus Christi.` and the incipit `Lauda Sion Salvatorem.` Twelve stanzas against the Missal's twenty-four strophes, two for one throughout. The printing sets the bracketed marker `[Ecce panis angelorum.]` at the head of the eleventh stanza, which is the strophe at which the postconciliar shorter form begins. The Missal's closing `Amen. Alleluja.` is not rendered.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Sion, lift thy voice, and sing;
+Praise thy Saviour and thy King;
+Praise with hymns thy Shepherd true:
+Strive thy best to praise Him well;
+Yet doth He all praise excel;
+None can ever reach His due.
+
+See to-day before us laid
+The living and life-giving Bread!
+Theme for praise and joy profound!
+The same which at the sacred board
+Was, by our Incarnate Lord,
+Giv’n to his Apostles round.
+
+Let the praise be loud and high;
+Sweet and tranquil be the joy
+Felt to-day in every breast;
+On this Festival divine,
+Which records the origin
+Of the glorious Eucharist.
+
+On this Table of the King,
+Our new Paschal offering
+Brings to end the olden rite;
+Here, for empty shadows fled,
+Is Reality instead;
+Here, instead of darkness, Light.
+
+His own act, at supper seated,
+Christ ordain’d to be repeated,
+In His Memory divine;
+Wherefore now, with adoration,
+We the Host of our salvation
+Consecrate from bread and wine.
+
+Hear what holy Church maintaineth,
+That the bread its substance changeth
+Into Flesh, the wine to Blood.
+Doth it pass thy comprehending?
+Faith, the law of sight transcending,
+Leaps to things not understood.
+
+Here, beneath these signs, are hidden
+Priceless things, to sense forbidden;
+Signs, not things, are all we see;—
+Flesh from bread, and Blood from wine;
+Yet is Christ, in either sign,
+All entire, confess’d to be.
+
+They too, who of Him partake,
+Sever not, nor rend, nor break,
+But entire, their Lord receive.
+Whether one or thousands eat,
+All receive the self-same meat,
+Nor the less for others leave.
+
+Both the wicked and the good
+Eat of this celestial Food;
+But with ends how opposite!
+Here ’tis life; and there ’tis death;
+The same, yet issuing to each
+In a difference infinite.
+
+Nor a single doubt retain,
+When they break the Host in twain,
+But that in each part remains
+What was in the whole before;
+Since the simple sign alone
+Suffers change in state or form,
+The Signified remaining One
+And the Same for evermore.
+
+Lo! upon the Altar lies,
+Hidden deep from human eyes,
+Bread of Angels from the skies,
+Made the food of mortal man:
+Children’s meat to dogs denied;
+In old types foresignified;
+In the manna Heav’n-supplied,
+Isaac, and the Paschal Lamb.
+
+Jesu! Shepherd of the sheep!
+Thou thy flock in safety keep.
+Living Bread! thy life supply;
+Strengthen us, or else we die;
+Fill us with celestial grace:
+Thou, who feedest us below!
+Source of all we have or know!
+Grant that with thy Saints above,
+Sitting at the feast of love,
+We may see Thee face to face.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Sion, lift thy voice, and sing;
+Praise thy Saviour and thy King;
+Praise with hymns thy Shepherd true:
+Strive thy best to praise Him well;
+Yet doth He all praise excel;
+None can ever reach His due.
+
+See to-day before us laid
+The living and life-giving Bread!
+Theme for praise and joy profound!
+The same which at the sacred board
+Was, by our Incarnate Lord,
+Giv’n to his Apostles round.
+
+Let the praise be loud and high;
+Sweet and tranquil be the joy
+Felt to-day in every breast;
+On this Festival divine,
+Which records the origin
+Of the glorious Eucharist.
+
+On this Table of the King,
+Our new Paschal offering
+Brings to end the olden rite;
+Here, for empty shadows fled,
+Is Reality instead;
+Here, instead of darkness, Light.
+
+His own act, at supper seated,
+Christ ordain’d to be repeated,
+In His Memory divine;
+Wherefore now, with adoration,
+We the Host of our salvation
+Consecrate from bread and wine.
+
+Hear what holy Church maintaineth,
+That the bread its substance changeth
+Into Flesh, the wine to Blood.
+Doth it pass thy comprehending?
+Faith, the law of sight transcending,
+Leaps to things not understood.
+
+Here, beneath these signs, are hidden
+Priceless things, to sense forbidden;
+Signs, not things, are all we see;—
+Flesh from bread, and Blood from wine;
+Yet is Christ, in either sign,
+All entire, confess’d to be.
+
+They too, who of Him partake,
+Sever not, nor rend, nor break,
+But entire, their Lord receive.
+Whether one or thousands eat,
+All receive the self-same meat,
+Nor the less for others leave.
+
+Both the wicked and the good
+Eat of this celestial Food;
+But with ends how opposite!
+Here ’tis life; and there ’tis death;
+The same, yet issuing to each
+In a difference infinite.
+
+Nor a single doubt retain,
+When they break the Host in twain,
+But that in each part remains
+What was in the whole before;
+Since the simple sign alone
+Suffers change in state or form,
+The Signified remaining One
+And the Same for evermore.
+
+Lo! upon the Altar lies,
+Hidden deep from human eyes,
+Bread of Angels from the skies,
+Made the food of mortal man:
+Children’s meat to dogs denied;
+In old types foresignified;
+In the manna Heav’n-supplied,
+Isaac, and the Paschal Lamb.
+
+Jesu! Shepherd of the sheep!
+Thou thy flock in safety keep.
+Living Bread! thy life supply;
+Strengthen us, or else we die;
+Fill us with celestial grace:
+Thou, who feedest us below!
+Source of all we have or know!
+Grant that with thy Saints above,
+Sitting at the feast of love,
+We may see Thee face to face.
+'''
+
+[[entries]]
+mass = "comm-septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Sequence"
+incipit = "Stabat Mater dolorosa"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''Read at printed pp. 138-142 = leaves n175-n179. The book's Missal section does not reprint this sequence: printed p. 244 directs `For Stabat Mater dolorosa, see page 138.`, and p. 138 heads it `Friday after Passion-Sunday. FEAST OF THE SEVEN DOLOURS OF THE BLESSED VIRGIN MARY. VESPERS.` with the incipit `Stabat Mater dolorosa.`, continued under `MATINS (The same continued.)` at p. 140 and `LAUDS (The same continued.)` at p. 141. The three hours together carry the twenty strophes of the Missal sequence with no doxology added at any break, and the last stanza renders both `Christe, cum sit hinc exire` and `Quando corpus morietur`, which is the Missal's ending and not the Breviary hymn's. Ten stanzas against twenty strophes, two for one. The Missal's closing `Amen.` is not rendered.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+At the Cross her station keeping,
+Stood the mournful Mother weeping,
+Close to Jesus to the last:
+Through her heart, his sorrow sharing,
+All his bitter anguish bearing,
+Now at length the sword had pass’d.
+
+Oh, how sad and sore distress’d
+Was that Mother highly blest
+Of the sole-begotten One!
+Christ above in torment hangs;
+She beneath beholds the pangs
+Of her dying glorious Son.
+
+Is there one who would not weep,
+Whelm’d in miseries so deep
+Christ’s dear Mother to behold?
+Can the human heart refrain
+From partaking in her pain,
+In that Mother’s pain untold?
+
+Bruis’d, derided, curs’d, defil’d,
+She beheld her tender Child
+All with bloody scourges rent;
+For the sins of his own nation,
+Saw Him hang in desolation,
+Till his Spirit forth He sent.
+
+O thou Mother! fount of love!
+Touch my spirit from above,
+Make my heart with thine accord:
+Make me feel as thou hast felt;
+Make my soul to glow and melt
+With the love of Christ my Lord.
+
+Holy Mother! pierce me through;
+In my heart each wound renew
+Of my Saviour crucified:
+Let me share with thee His pain,
+Who for all my sins was slain,
+Who for me in torments died.
+
+Let me mingle tears with thee,
+Mourning Him who mourn’d for me,
+All the days that I may live:
+By the Cross with thee to stay;
+There with thee to weep and pray;
+Is all I ask of thee to give.
+
+Virgin of all virgins best!
+Listen to my fond request:
+Let me share thy grief divine;
+Let me, to my latest breath,
+In my body bear the death
+Of that dying Son of thine.
+
+Wounded with his every wound,
+Steep my soul till it hath swoon’d
+In his very blood away;
+Be to me, O Virgin, nigh,
+Lest in flames I burn and die,
+In his awful Judgment day.
+
+Christ, when Thou shalt call me hence,
+Be thy Mother my defence,
+Be thy Cross my victory;
+While my body here decays,
+May my soul thy goodness praise,
+Safe in Paradise with Thee.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+At the Cross her station keeping,
+Stood the mournful Mother weeping,
+Close to Jesus to the last:
+Through her heart, his sorrow sharing,
+All his bitter anguish bearing,
+Now at length the sword had pass’d.
+
+Oh, how sad and sore distress’d
+Was that Mother highly blest
+Of the sole-begotten One!
+Christ above in torment hangs;
+She beneath beholds the pangs
+Of her dying glorious Son.
+
+Is there one who would not weep,
+Whelm’d in miseries so deep
+Christ’s dear Mother to behold?
+Can the human heart refrain
+From partaking in her pain,
+In that Mother’s pain untold?
+
+Bruis’d, derided, curs’d, defil’d,
+She beheld her tender Child
+All with bloody scourges rent;
+For the sins of his own nation,
+Saw Him hang in desolation,
+Till his Spirit forth He sent.
+
+O thou Mother! fount of love!
+Touch my spirit from above,
+Make my heart with thine accord:
+Make me feel as thou hast felt;
+Make my soul to glow and melt
+With the love of Christ my Lord.
+
+Holy Mother! pierce me through;
+In my heart each wound renew
+Of my Saviour crucified:
+Let me share with thee His pain,
+Who for all my sins was slain,
+Who for me in torments died.
+
+Let me mingle tears with thee,
+Mourning Him who mourn’d for me,
+All the days that I may live:
+By the Cross with thee to stay;
+There with thee to weep and pray;
+Is all I ask of thee to give.
+
+Virgin of all virgins best!
+Listen to my fond request:
+Let me share thy grief divine;
+Let me, to my latest breath,
+In my body bear the death
+Of that dying Son of thine.
+
+Wounded with his every wound,
+Steep my soul till it hath swoon’d
+In his very blood away;
+Be to me, O Virgin, nigh,
+Lest in flames I burn and die,
+In his awful Judgment day.
+
+Christ, when Thou shalt call me hence,
+Be thy Mother my defence,
+Be thy Cross my victory;
+While my body here decays,
+May my soul thy goodness praise,
+Safe in Paradise with Thee.
+'''
+
+[[entries]]
+mass = "septem-dolorum-beatae-mariae-virginis"
+form = ""
+proper = "Sequence"
+incipit = "Stabat Mater dolorosa"
+witness = "caswall-1849"
+detector = "read-on-page-images"
+harvest_note = '''The same transcription as the Friday-after-Passion-Sunday commemoration above, and this index reprints the Latin twice rather than referencing it once, so the English is recorded twice with it. The 15 September setting differs from the March one in the Latin -- a comma after `fleret` and after `stare`, and the ending `Paradisi gloria. Amen. Alleluia.` against `Paradisi gloria. Amen.` -- and NOT in anything the English renders; Caswall renders neither the Amen nor the Alleluia. If the two masses are ever joined by a `takes_from`, this row is the one to drop.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+At the Cross her station keeping,
+Stood the mournful Mother weeping,
+Close to Jesus to the last:
+Through her heart, his sorrow sharing,
+All his bitter anguish bearing,
+Now at length the sword had pass’d.
+
+Oh, how sad and sore distress’d
+Was that Mother highly blest
+Of the sole-begotten One!
+Christ above in torment hangs;
+She beneath beholds the pangs
+Of her dying glorious Son.
+
+Is there one who would not weep,
+Whelm’d in miseries so deep
+Christ’s dear Mother to behold?
+Can the human heart refrain
+From partaking in her pain,
+In that Mother’s pain untold?
+
+Bruis’d, derided, curs’d, defil’d,
+She beheld her tender Child
+All with bloody scourges rent;
+For the sins of his own nation,
+Saw Him hang in desolation,
+Till his Spirit forth He sent.
+
+O thou Mother! fount of love!
+Touch my spirit from above,
+Make my heart with thine accord:
+Make me feel as thou hast felt;
+Make my soul to glow and melt
+With the love of Christ my Lord.
+
+Holy Mother! pierce me through;
+In my heart each wound renew
+Of my Saviour crucified:
+Let me share with thee His pain,
+Who for all my sins was slain,
+Who for me in torments died.
+
+Let me mingle tears with thee,
+Mourning Him who mourn’d for me,
+All the days that I may live:
+By the Cross with thee to stay;
+There with thee to weep and pray;
+Is all I ask of thee to give.
+
+Virgin of all virgins best!
+Listen to my fond request:
+Let me share thy grief divine;
+Let me, to my latest breath,
+In my body bear the death
+Of that dying Son of thine.
+
+Wounded with his every wound,
+Steep my soul till it hath swoon’d
+In his very blood away;
+Be to me, O Virgin, nigh,
+Lest in flames I burn and die,
+In his awful Judgment day.
+
+Christ, when Thou shalt call me hence,
+Be thy Mother my defence,
+Be thy Cross my victory;
+While my body here decays,
+May my soul thy goodness praise,
+Safe in Paradise with Thee.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+At the Cross her station keeping,
+Stood the mournful Mother weeping,
+Close to Jesus to the last:
+Through her heart, his sorrow sharing,
+All his bitter anguish bearing,
+Now at length the sword had pass’d.
+
+Oh, how sad and sore distress’d
+Was that Mother highly blest
+Of the sole-begotten One!
+Christ above in torment hangs;
+She beneath beholds the pangs
+Of her dying glorious Son.
+
+Is there one who would not weep,
+Whelm’d in miseries so deep
+Christ’s dear Mother to behold?
+Can the human heart refrain
+From partaking in her pain,
+In that Mother’s pain untold?
+
+Bruis’d, derided, curs’d, defil’d,
+She beheld her tender Child
+All with bloody scourges rent;
+For the sins of his own nation,
+Saw Him hang in desolation,
+Till his Spirit forth He sent.
+
+O thou Mother! fount of love!
+Touch my spirit from above,
+Make my heart with thine accord:
+Make me feel as thou hast felt;
+Make my soul to glow and melt
+With the love of Christ my Lord.
+
+Holy Mother! pierce me through;
+In my heart each wound renew
+Of my Saviour crucified:
+Let me share with thee His pain,
+Who for all my sins was slain,
+Who for me in torments died.
+
+Let me mingle tears with thee,
+Mourning Him who mourn’d for me,
+All the days that I may live:
+By the Cross with thee to stay;
+There with thee to weep and pray;
+Is all I ask of thee to give.
+
+Virgin of all virgins best!
+Listen to my fond request:
+Let me share thy grief divine;
+Let me, to my latest breath,
+In my body bear the death
+Of that dying Son of thine.
+
+Wounded with his every wound,
+Steep my soul till it hath swoon’d
+In his very blood away;
+Be to me, O Virgin, nigh,
+Lest in flames I burn and die,
+In his awful Judgment day.
+
+Christ, when Thou shalt call me hence,
+Be thy Mother my defence,
+Be thy Cross my victory;
+While my body here decays,
+May my soul thy goodness praise,
+Safe in Paradise with Thee.
+'''
+
 [[untranslated]]
 mass = "s-hilarii-episcopi-confessoris-ecclesiae-doctoris"
 form = ""
@@ -10700,42 +11845,6 @@ mass = "easter-vigil"
 form = ""
 proper = "Litany of the Saints, second part"
 reason = "the 1962 Missal's Holy Week is the Ordo Hebdomadae Sanctae instauratus promulgated under Maxima redemptionis nostrae mysteria in 1955, and this witness is an 1861 printing of the rite that order replaced. Its source row's `caution` already says in terms that its Holy Week is not that of 1962. The two rites do not stand in a one-to-one relation here -- the procession, the afternoon liturgy and the vigil differ in what is said, in what order, and in how many items there are, and the pre-1955 vigil reads twelve prophecies where the 1962 reads four -- so the witness's English cannot be attached to a 1962 slot without a reader deciding which pre-1955 item answers it. That decision is exactly the recension error this repository records having made 176 times, and it is refused. NOT A CLAIM THAT THE WORDS DIFFER: several of these texts, the Exsultet, the Improperia and the Mandatum antiphons among them, were carried into the reformed order substantially unaltered, and a targeted collation against a 1962 altar book would very likely reach them. That collation was run on 2026-08-07 and returned nothing attachable. Each of the 39 was measured against the whole 1861 text layer by word coverage: only the Pange lingua clears 0.85, at 0.886, and the book prints it in Latin with no English beside it. The Exsultet scores 0.052, the Improperia 0.047, the Solemn Intercessions 0.046. Where the book does print English -- the Improperia -- it gives Latin for two verses only, so there is nothing to prove the alignment against. Reaching these slots needs another witness, not another reading of this one."
-
-[[untranslated]]
-mass = "easter-sunday"
-form = ""
-proper = "Sequence"
-reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
-
-[[untranslated]]
-mass = "pentecost"
-form = ""
-proper = "Sequence"
-reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
-
-[[untranslated]]
-mass = "corpus-christi"
-form = ""
-proper = "Sequence"
-reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
-
-[[untranslated]]
-mass = "comm-septem-dolorum-beatae-mariae-virginis"
-form = ""
-proper = "Sequence"
-reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
-
-[[untranslated]]
-mass = "septem-dolorum-beatae-mariae-virginis"
-form = ""
-proper = "Sequence"
-reason = "the witness prints this Sequence in Latin only. It sets the whole text under `The PROSE.` or `The SEQUENCE, or PROSE.` with no English beside it, which is what a lay hand missal of this period does with the sung sequences. There is no English here to record and none is composed. A public-domain English for these four sequences exists in the nineteenth-century hymnal literature -- Caswall, Neale, Aylward -- and folding one of those in is a source acquisition under guidance/sources.md, not a harvest from this book."
-
-[[untranslated]]
-mass = "commemoratione-omnium-fidelium-defunctorum"
-form = "First Mass (Ad primam Missam)"
-proper = "Sequence"
-reason = "the witness prints the Dies irae with an English beside it, and it is a rhymed metrical paraphrase in the manner of Roscommon, set in two narrow parallel columns. Two things make it unusable here. It is a verse paraphrase and not a rendering of the sequence's words, so recording it as this proper's English would put a poem where a translation is read. And the text layer does not preserve the column order: the Latin and the English interleave line by line, so reconstructing the English would mean choosing an order the scan does not give, which is composition. The page images would settle the second objection and not the first."
 
 [[untranslated]]
 mass = "commemoratione-omnium-fidelium-defunctorum"

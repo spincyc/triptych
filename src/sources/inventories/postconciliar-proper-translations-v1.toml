@@ -650,6 +650,73 @@ Communion are not carried in it.
 """
 caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL or the FDLC. It was read in the FDLC's Mystagogical Reflections, a reprint and not the Missal, and it is the 2010-2012 state: the Collects end 'one God, for ever and ever', the conclusion since superseded after the Prefect's letter of May 2020."
 
+[[sources]]
+id = "caswall-1849"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+label = "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources, translated by Edward Caswall (London: James Burns, 1849)"
+attests = "si-quid-est-1634"
+attests_kind = "date-bound"
+attests_basis = '''
+THIS IS NOT A MISSAL AND WITNESSES NO PRINTING OF ONE. It is a verse translation
+of the hymns and sequences of the Roman Breviary and Missal, published at London
+in 1849 with no imprimatur, no approbation and no decree in the front matter read
+here. It names no Latin exemplar and it prints no Latin beside the English, so it
+cannot say which book was on the translator's desk, and its English never had and
+does not now have any liturgical standing.
+
+The edge therefore rests on the date alone, which is the weakest kind and is
+labelled as such, on the same footing as roman-missal-laity-1806, cummiskey-1843
+and cummiskey-1861 in roman-holy-week-acts-v1.toml. 1849 falls after Urban VIII's
+revision of 1634 and before Divino afflatu of 1911, so the state of the Roman
+books it can be translating is the one si-quid-est-1634 left. It is drawn only
+because a date bound is a real bound.
+
+WHAT THE DATE BOUND IS WORTH FOR THESE FIVE TEXTS, and it is worth more here than
+it would be for an oration: no act between 1634 and 1962 altered the words of
+Victimae paschali laudes, Veni Sancte Spiritus, Lauda Sion Salvatorem or Dies
+irae, and the Stabat Mater was appointed as a sequence in 1727, more than a
+century before this book. The strophe-for-strophe correspondence against the
+Latin this repository carries was counted for each of the five and is recorded in
+the transcription artifact. So the recension question that governs the 1861
+witness's Holy Week does not arise for this material -- which is a statement
+about these five texts and must not be generalised to anything else in this book.
+'''
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = '''
+Published at London in 1849, so out of United States copyright on the pre-1931
+line, AS DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule: on 1 January
+2027 the line becomes before 1932 and a later reader must re-derive it rather
+than quote this sentence. This is a foreign publication, so the term cannot be
+followed to its end from a domestic registration; the age line is the whole of
+the case and is stated as such. Restoration under 17 U.S.C. 104A reaches only
+works still protected in the source country on 1 January 1996, and United Kingdom
+protection for Edward Caswall, who died in 1878, ended in 1948, so nothing was
+restored. The basis is a United States one and a reader elsewhere must establish
+the position in their own jurisdiction.
+
+That covers the 1849 book's own English, which is what this file carries. The
+`artifact_id` names a project transcription made from the item's page images and
+holding nothing but that English; the item's OCR text layer is registered
+separately, was used as a finding aid only, and supplied no word recorded here.
+NOT RELIED ON: that the Internet Archive item is available, that the download
+succeeded, or that the item carries a Public Domain Mark 1.0 licence URL, which
+it does.
+'''
+caution = '''
+A LITERARY TRANSLATION, CHOSEN AS A VOICE. Caswall, Neale, Aylward and Bute
+differ materially over these five texts, and guidance/propers-for-agents.md
+reserves the choice among them to the maintainer. This row records that the
+maintainer named Caswall; it does not argue that Caswall is right.
+
+The English is metrical verse and is not a clause-for-clause rendering. Where the
+Latin sets a short strophe Caswall may fold two into one six-line stanza, and the
+stanza divisions in the text recorded here are his and not the Missal's. He
+renders no Amen and no Alleluia anywhere: every one of these five propers ends in
+the Latin with an acclamation that the English simply does not have.
+'''
+
 # ---------------------------------------------------------------------------
 # ENTRIES. Eighteen slots, in the order the liturgical year takes them.
 #
@@ -5674,6 +5741,383 @@ text = "Grant, almighty God, that we may celebrate with heartfelt devotion these
 # reason and a page must not report them as one.
 # ---------------------------------------------------------------------------
 
+[[entries]]
+mass = "easter-sunday"
+form = ""
+proper = "Sequence"
+incipit = "Victimae paschali laudes"
+witness = "caswall-1849"
+witness_relation = "antecedent"
+witness_note = '''Same transcription as the 1962 row. ONE TEXTUAL DIVERGENCE, recorded and not harmonised: the postconciliar Latin reads `praecedet suos in Galilaeam` where the 1962 reads `praecedet vos`, and Caswall renders `Will go before you into Galilee`, which answers `vos`. A reader who needs the reformed reading must alter that line, and altering it makes the text no longer this witness's.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Forth to the paschal Victim, Christians, bring
+Your sacrifice of praise:
+
+The Lamb redeems the sheep;
+And Christ, the Sinless One,
+Hath to the Father sinners reconcil’d.
+
+Together, Death and Life
+In a strange conflict strove;
+The Prince of Life, who died,
+Now lives and reigns.
+
+What thou sawest, Mary, say,
+As thou wentest on the way.
+
+I saw the tomb wherein the Living One had lain;
+I saw his glory as He rose again;
+Napkin and linen clothes, and Angels twain:
+Yea, Christ is risen, my hope, and He
+Will go before you into Galilee.
+
+We know that Christ indeed has risen from the grave:
+Hail, thou King of Victory!
+Have mercy, Lord, and save.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Forth to the paschal Victim, Christians, bring
+Your sacrifice of praise:
+
+The Lamb redeems the sheep;
+And Christ, the Sinless One,
+Hath to the Father sinners reconcil’d.
+
+Together, Death and Life
+In a strange conflict strove;
+The Prince of Life, who died,
+Now lives and reigns.
+
+What thou sawest, Mary, say,
+As thou wentest on the way.
+
+I saw the tomb wherein the Living One had lain;
+I saw his glory as He rose again;
+Napkin and linen clothes, and Angels twain:
+Yea, Christ is risen, my hope, and He
+Will go before you into Galilee.
+
+We know that Christ indeed has risen from the grave:
+Hail, thou King of Victory!
+Have mercy, Lord, and save.
+'''
+
+[[entries]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Sequence"
+incipit = "Veni, Sancte Spiritus"
+witness = "caswall-1849"
+witness_relation = "antecedent"
+witness_note = '''Same transcription as the 1962 row; the two Latin texts are the same ten strophes.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Holy Spirit! Lord of light!
+From thy clear celestial height,
+Thy pure beaming radiance give:
+
+Come, Thou Father of the poor!
+Come, with treasures which endure!
+Come, Thou Light of all that live!
+
+Thou, of all consolers best,
+Visiting the troubled breast,
+Dost refreshing peace bestow;
+
+Thou in toil art comfort sweet;
+Pleasant coolness in the heat;
+Solace in the midst of woe.
+
+Light immortal! light divine!
+Visit Thou these hearts of thine,
+And our inmost being fill:
+
+If Thou take thy grace away,
+Nothing pure in man will stay;
+All his good is turn’d to ill.
+
+Heal our wounds — our strength renew;
+On our dryness pour thy dew;
+Wash the stains of guilt away:
+
+Bend the stubborn heart and will;
+Melt the frozen, warm the chill;
+Guide the steps that go astray.
+
+Thou, on those who evermore
+Thee confess and Thee adore,
+In thy sevenfold gifts, descend:
+
+Give them comfort when they die;
+Give them life with Thee on high;
+Give them joys which never end.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Holy Spirit! Lord of light!
+From thy clear celestial height,
+Thy pure beaming radiance give:
+
+Come, Thou Father of the poor!
+Come, with treasures which endure!
+Come, Thou Light of all that live!
+
+Thou, of all consolers best,
+Visiting the troubled breast,
+Dost refreshing peace bestow;
+
+Thou in toil art comfort sweet;
+Pleasant coolness in the heat;
+Solace in the midst of woe.
+
+Light immortal! light divine!
+Visit Thou these hearts of thine,
+And our inmost being fill:
+
+If Thou take thy grace away,
+Nothing pure in man will stay;
+All his good is turn’d to ill.
+
+Heal our wounds — our strength renew;
+On our dryness pour thy dew;
+Wash the stains of guilt away:
+
+Bend the stubborn heart and will;
+Melt the frozen, warm the chill;
+Guide the steps that go astray.
+
+Thou, on those who evermore
+Thee confess and Thee adore,
+In thy sevenfold gifts, descend:
+
+Give them comfort when they die;
+Give them life with Thee on high;
+Give them joys which never end.
+'''
+
+[[entries]]
+mass = "corpus-christi"
+form = ""
+proper = "Sequence"
+incipit = "Lauda Sion Salvatorem"
+witness = "caswall-1849"
+witness_relation = "antecedent"
+witness_note = '''Same transcription as the 1962 row; the two Latin texts are the same twenty-four strophes. The Missal notes that the Sequence is optional and that the shorter form may begin at `Ecce panis Angelorum`: that strophe is Caswall's eleventh stanza, which this printing marks with the bracketed `[Ecce panis angelorum.]` at its head, so the shorter form is this text's last two stanzas and needs no further reading.'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+text = '''
+Sion, lift thy voice, and sing;
+Praise thy Saviour and thy King;
+Praise with hymns thy Shepherd true:
+Strive thy best to praise Him well;
+Yet doth He all praise excel;
+None can ever reach His due.
+
+See to-day before us laid
+The living and life-giving Bread!
+Theme for praise and joy profound!
+The same which at the sacred board
+Was, by our Incarnate Lord,
+Giv’n to his Apostles round.
+
+Let the praise be loud and high;
+Sweet and tranquil be the joy
+Felt to-day in every breast;
+On this Festival divine,
+Which records the origin
+Of the glorious Eucharist.
+
+On this Table of the King,
+Our new Paschal offering
+Brings to end the olden rite;
+Here, for empty shadows fled,
+Is Reality instead;
+Here, instead of darkness, Light.
+
+His own act, at supper seated,
+Christ ordain’d to be repeated,
+In His Memory divine;
+Wherefore now, with adoration,
+We the Host of our salvation
+Consecrate from bread and wine.
+
+Hear what holy Church maintaineth,
+That the bread its substance changeth
+Into Flesh, the wine to Blood.
+Doth it pass thy comprehending?
+Faith, the law of sight transcending,
+Leaps to things not understood.
+
+Here, beneath these signs, are hidden
+Priceless things, to sense forbidden;
+Signs, not things, are all we see;—
+Flesh from bread, and Blood from wine;
+Yet is Christ, in either sign,
+All entire, confess’d to be.
+
+They too, who of Him partake,
+Sever not, nor rend, nor break,
+But entire, their Lord receive.
+Whether one or thousands eat,
+All receive the self-same meat,
+Nor the less for others leave.
+
+Both the wicked and the good
+Eat of this celestial Food;
+But with ends how opposite!
+Here ’tis life; and there ’tis death;
+The same, yet issuing to each
+In a difference infinite.
+
+Nor a single doubt retain,
+When they break the Host in twain,
+But that in each part remains
+What was in the whole before;
+Since the simple sign alone
+Suffers change in state or form,
+The Signified remaining One
+And the Same for evermore.
+
+Lo! upon the Altar lies,
+Hidden deep from human eyes,
+Bread of Angels from the skies,
+Made the food of mortal man:
+Children’s meat to dogs denied;
+In old types foresignified;
+In the manna Heav’n-supplied,
+Isaac, and the Paschal Lamb.
+
+Jesu! Shepherd of the sheep!
+Thou thy flock in safety keep.
+Living Bread! thy life supply;
+Strengthen us, or else we die;
+Fill us with celestial grace:
+Thou, who feedest us below!
+Source of all we have or know!
+Grant that with thy Saints above,
+Sitting at the feast of love,
+We may see Thee face to face.
+'''
+
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en"
+text = '''
+Sion, lift thy voice, and sing;
+Praise thy Saviour and thy King;
+Praise with hymns thy Shepherd true:
+Strive thy best to praise Him well;
+Yet doth He all praise excel;
+None can ever reach His due.
+
+See to-day before us laid
+The living and life-giving Bread!
+Theme for praise and joy profound!
+The same which at the sacred board
+Was, by our Incarnate Lord,
+Giv’n to his Apostles round.
+
+Let the praise be loud and high;
+Sweet and tranquil be the joy
+Felt to-day in every breast;
+On this Festival divine,
+Which records the origin
+Of the glorious Eucharist.
+
+On this Table of the King,
+Our new Paschal offering
+Brings to end the olden rite;
+Here, for empty shadows fled,
+Is Reality instead;
+Here, instead of darkness, Light.
+
+His own act, at supper seated,
+Christ ordain’d to be repeated,
+In His Memory divine;
+Wherefore now, with adoration,
+We the Host of our salvation
+Consecrate from bread and wine.
+
+Hear what holy Church maintaineth,
+That the bread its substance changeth
+Into Flesh, the wine to Blood.
+Doth it pass thy comprehending?
+Faith, the law of sight transcending,
+Leaps to things not understood.
+
+Here, beneath these signs, are hidden
+Priceless things, to sense forbidden;
+Signs, not things, are all we see;—
+Flesh from bread, and Blood from wine;
+Yet is Christ, in either sign,
+All entire, confess’d to be.
+
+They too, who of Him partake,
+Sever not, nor rend, nor break,
+But entire, their Lord receive.
+Whether one or thousands eat,
+All receive the self-same meat,
+Nor the less for others leave.
+
+Both the wicked and the good
+Eat of this celestial Food;
+But with ends how opposite!
+Here ’tis life; and there ’tis death;
+The same, yet issuing to each
+In a difference infinite.
+
+Nor a single doubt retain,
+When they break the Host in twain,
+But that in each part remains
+What was in the whole before;
+Since the simple sign alone
+Suffers change in state or form,
+The Signified remaining One
+And the Same for evermore.
+
+Lo! upon the Altar lies,
+Hidden deep from human eyes,
+Bread of Angels from the skies,
+Made the food of mortal man:
+Children’s meat to dogs denied;
+In old types foresignified;
+In the manna Heav’n-supplied,
+Isaac, and the Paschal Lamb.
+
+Jesu! Shepherd of the sheep!
+Thou thy flock in safety keep.
+Living Bread! thy life supply;
+Strengthen us, or else we die;
+Fill us with celestial grace:
+Thou, who feedest us below!
+Source of all we have or know!
+Grant that with thy Saints above,
+Sitting at the feast of love,
+We may see Thee face to face.
+'''
+
 [[untranslated]]
 mass = "advent-1"
 form = ""
@@ -6181,12 +6625,6 @@ reason = "no publishable English: the approved translation is ICEL's, it is in c
 [[untranslated]]
 mass = "easter-sunday"
 form = ""
-proper = "Sequence"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "easter-sunday"
-form = ""
 proper = "Prayer over the Offerings"
 reason = "an ancient ancestor was identified in the Gelasianum Vetus at 0.85 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's and is not carried here."
 
@@ -6285,12 +6723,6 @@ mass = "pentecost"
 form = "Vigil Mass"
 proper = "Prayer after Communion"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "pentecost"
-form = "Mass during the Day"
-proper = "Sequence"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
 
 [[untranslated]]
 mass = "pentecost"
@@ -6441,12 +6873,6 @@ mass = "most-holy-trinity"
 form = ""
 proper = "Prayer over the Offerings"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright, and the approved English is ICEL's. Absence within a declared boundary is not proof of absence from the tradition."
-
-[[untranslated]]
-mass = "corpus-christi"
-form = ""
-proper = "Sequence"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
 
 [[untranslated]]
 mass = "christ-the-king"
