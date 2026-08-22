@@ -1,0 +1,101 @@
+schema = 1
+record_type = "proper-components"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+appointed_text_completeness = "rights-limited"
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+
+[outputs]
+research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
+synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis"
+web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
+canonical_label = "Research PDF"
+synthesis_label = "Synthesis PDF"
+
+[[components]]
+key = "orientation"
+kind = "front-matter"
+path = "main.tex"
+modes = ["research", "synthesis"]
+element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+depends_on = []
+references = []
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel"]
+depends_on = []
+references = []
+
+[[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-brief-synthesis.tex"
+modes = ["research", "synthesis"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "collect", "communion-antiphon-a", "communion-antiphon-b"]
+depends_on = ["orientation"]
+references = []
+
+[[components]]
+key = "per-element-sweep"
+kind = "proper-treatment"
+path = "sections/30-each-proper.tex"
+modes = ["research"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "collect", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+depends_on = []
+references = ["research/source-bindings.toml"]
+
+[[components]]
+key = "source-grounded-synthesis"
+kind = "source-grounded-synthesis"
+path = "sections/35-source-grounded-synthesis.tex"
+modes = ["research", "synthesis"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "collect", "prayer-over-offerings", "prayer-after-communion"]
+depends_on = ["brief-synthesis"]
+references = ["research/source-bindings.toml"]
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "sections/40-interpretive-and-notable.tex"
+modes = ["research", "synthesis"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
+depends_on = ["source-grounded-synthesis"]
+references = []
+
+[[components]]
+key = "notable-and-quotable"
+kind = "notable-quotable"
+path = "sections/40-interpretive-and-notable.tex"
+modes = ["research", "synthesis"]
+element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel"]
+depends_on = ["exploratory-synthesis"]
+references = []
+
+[[components]]
+key = "terminal-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research", "synthesis"]
+element_keys = []
+depends_on = ["notable-and-quotable"]
+references = ["research/source-bindings.toml"]
+
+[[relations]]
+key = "mortality-and-false-security"
+element_keys = ["first-reading", "responsorial-psalm", "gospel"]
+evidence = ["textual-observation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "greed-and-hidden-life"
+element_keys = ["second-reading", "gospel"]
+evidence = ["textual-observation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "gift-offering-and-communion"
+element_keys = ["collect", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
+evidence = ["textual-observation", "exploratory-proposal"]

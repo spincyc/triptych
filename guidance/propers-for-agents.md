@@ -37,7 +37,7 @@ rejected. Each section carries `kind` ∈ {`seasonal`, `christological`, `marian
 section still carries exactly one of the two.
 
 A mass requires `key`, `name`, `registry`. `registry` is always a **quoted
-string** — `'39'`, never `39`. It may carry `date`, `rank`, `season`, `kind`,
+string** — `'01'`, never `01`. It may carry `date`, `rank`, `season`, `kind`,
 `notes`; an entry carrying `date` must **also** carry a valid `kind` and the
 edition's printed `rank`. It carries **either** `propers` **or** `forms`, never
 both — `exactly one of propers, forms or takes_from is required` — unless it

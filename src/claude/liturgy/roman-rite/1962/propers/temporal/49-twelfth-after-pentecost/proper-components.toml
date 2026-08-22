@@ -1,0 +1,115 @@
+schema = 1
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost-synthesis"
+web = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+
+[[components]]
+key = "orientation"
+kind = "front-matter"
+path = "sections/00-map.tex"
+modes = ["research", "synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "per-element-sweep"
+kind = "proper-treatment"
+path = "sections/30-commentary.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-themes.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "integrated-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/20-integrated-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "source-grounded-synthesis"
+kind = "source-grounded-synthesis"
+path = "sections/35-source-grounded-synthesis.tex"
+modes = ["research", "synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "sections/50-interpretive.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "notable-and-quotable"
+kind = "notable-quotable"
+path = "sections/40-notable.tex"
+modes = ["research", "synthesis"]
+depends_on = ["exploratory-synthesis"]
+element_keys = ["epistle", "gospel", "introit"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "terminal-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-scope.tex"
+modes = ["research", "synthesis"]
+depends_on = ["notable-and-quotable"]
+element_keys = []
+references = ["sections/99-references.tex"]
+
+[[relations]]
+key = "sufficiency-received-not-self-supplied"
+element_keys = ["collect", "epistle", "introit"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "mercy-answers-the-law-that-cannot-heal"
+element_keys = ["epistle", "gospel"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "intercession-carried-to-the-altar"
+element_keys = ["offertory", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "bread-wine-oil-as-the-samaritans-kit"
+element_keys = ["communion", "gospel", "gradual"]
+evidence = ["exploratory-proposal"]

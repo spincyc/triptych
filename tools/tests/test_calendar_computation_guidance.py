@@ -64,12 +64,10 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     with self.assertRaisesRegex(ValueError, "P=23"):
       nominal_resumed_slots(23)
 
-  def test_1962_reader_calendar_has_52_parents_and_four_resumed_variants(self):
+  def test_1962_reader_calendar_has_65_parents(self):
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()
     parent_ids = re.findall(r"^\| (\d{2}) \| \*\*", landing, re.MULTILINE)
-    resumed_ids = re.findall(r"^\| (4[6-9]R) \| \*\*", landing, re.MULTILINE)
-    self.assertEqual(parent_ids, [f"{n:02d}" for n in range(1, 53)])
-    self.assertEqual(resumed_ids, ["46R", "47R", "48R", "49R"])
+    self.assertEqual(parent_ids, [f"{n:02d}" for n in range(1, 66)])
     self.assertIn("| **Mass of the Lord's Supper** | Planned | Planned |", landing)
     self.assertIn(
       "| **Solemn Liturgical Action of the Passion and Death of the Lord** "
@@ -87,13 +85,6 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       r"^\| (PC-S\d{2}) \| `[^`]+` \| [^|]+ \|$", registry, re.MULTILINE
     )
     rows = re.findall(r"^\| \*\*(PC-S\d{2}) ·", landing, re.MULTILINE)
-    s42_reader_row = re.findall(
-      r"^\| \*\*Eighteenth Sunday in Ordinary Time\*\* \|.*$",
-      landing,
-      re.MULTILINE,
-    )
-    self.assertEqual(len(s42_reader_row), 1)
-    rows.append("PC-S42")
     rows.sort(key=lambda value: int(value.removeprefix("PC-S")))
     counts = [
       int(value)
@@ -155,29 +146,29 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
   def test_sunday_catalog_links_only_installed_publications(self):
     permitted_full_guides = {
       *(f"{number:02d}-{slug}.pdf" for number, slug in (
-        (15, "trinity-sunday"),
-        (16, "second-after-pentecost"),
-        (17, "third-after-pentecost"),
-        (18, "fourth-after-pentecost"),
-        (19, "fifth-after-pentecost"),
-        (20, "sixth-after-pentecost"),
-        (21, "seventh-after-pentecost"),
-        (22, "eighth-after-pentecost"),
-        (24, "tenth-after-pentecost"),
+        (36, "trinity-sunday"),
+        (38, "second-after-pentecost"),
+        (40, "third-after-pentecost"),
+        (41, "fourth-after-pentecost"),
+        (42, "fifth-after-pentecost"),
+        (43, "sixth-after-pentecost"),
+        (44, "seventh-after-pentecost"),
+        (45, "eighth-after-pentecost"),
+        (47, "tenth-after-pentecost"),
       )),
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
-        (35, "eleventh-sunday-in-ordinary-time"),
-        (36, "twelfth-sunday-in-ordinary-time"),
-        (37, "thirteenth-sunday-in-ordinary-time"),
-        (38, "fourteenth-sunday-in-ordinary-time"),
-        (39, "fifteenth-sunday-in-ordinary-time"),
-        (40, "sixteenth-sunday-in-ordinary-time"),
-        (58, "most-holy-trinity"),
-        (59, "most-holy-body-and-blood-of-christ"),
+        (37, "eleventh-sunday-in-ordinary-time"),
+        (38, "twelfth-sunday-in-ordinary-time"),
+        (39, "thirteenth-sunday-in-ordinary-time"),
+        (40, "fourteenth-sunday-in-ordinary-time"),
+        (41, "fifteenth-sunday-in-ordinary-time"),
+        (42, "sixteenth-sunday-in-ordinary-time"),
+        (26, "most-holy-trinity"),
+        (27, "most-holy-body-and-blood-of-christ"),
       )),
-      "pc-s42-eighteenth-sunday-in-ordinary-time-year-a.pdf",
-      "pc-s42-eighteenth-sunday-in-ordinary-time-year-b.pdf",
-      "pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+      "pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+      "pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+      "pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
     }
     for name in ("traditional-latin-mass.md", "novus-ordo-liturgy.md"):
       text = (ROOT / "library" / name).read_text()
@@ -193,25 +184,25 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
 
   def test_approved_alpha_propers_do_not_regress_to_planned(self):
     traditional = (ROOT / "library/traditional-latin-mass.md").read_text()
-    for proper_id in range(15, 23):
-      row = re.search(rf"^\| {proper_id} \|.*$", traditional, re.MULTILINE)
+    for proper_id in (36, 38, 40, 41, 42, 43, 44, 45):
+      row = re.search(rf"^\| {proper_id:02d} \|.*$", traditional, re.MULTILINE)
       self.assertIsNotNone(row)
       self.assertIn("../pdf/gpt/", row.group())
-      if proper_id == 22:
+      if proper_id == 45:
         self.assertIn("../pdf/claude/", row.group())
         self.assertIn("../web/claude/", row.group())
       else:
         self.assertTrue(row.group().endswith("| Planned |"))
-    self.assertIn("| 14 | **Pentecost Sunday** | Planned | Planned |", traditional)
+    self.assertIn("| 35 | **Pentecost Sunday** | Planned | Planned |", traditional)
 
     postconciliar = (ROOT / "library/novus-ordo-liturgy.md").read_text()
-    for proper_id in (35, 36, 37, 38, 39, 40, 58, 59):
+    for proper_id in (37, 38, 39, 40, 41, 42, 26, 27):
       row = re.search(
-        rf"^\| \*\*PC-S{proper_id} ·.*$", postconciliar, re.MULTILINE
+        rf"^\| \*\*PC-S{proper_id:02d} ·.*$", postconciliar, re.MULTILINE
       )
       self.assertIsNotNone(row)
       self.assertIn("../pdf/gpt/", row.group())
-      if proper_id == 40:
+      if proper_id == 42:
         self.assertIn("../pdf/claude/", row.group())
 
 

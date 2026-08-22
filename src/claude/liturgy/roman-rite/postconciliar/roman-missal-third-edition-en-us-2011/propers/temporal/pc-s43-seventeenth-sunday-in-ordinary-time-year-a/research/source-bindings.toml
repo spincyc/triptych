@@ -1,0 +1,107 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvii-per-annum"
+loci = ["Dominica XVII per annum, printed pp. 466-467"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact artifact was re-acquired independently for this publication, its SHA-256 confirmed against the registered value, and the complete Week XVII formulary read at artifact pages 281-282. This binding controls every Latin claim in the guide about the Entrance antiphon's wording, the Collect's petition, the Prayer over the Offerings, both Communion antiphons and the Prayer after Communion. It does not stand in for the 2008 reprint's typography or for any United States English altar book."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:150cabb82b991d0a9953c2171dcc20b78284b2b7758db4422784cbd524c0ed48"
+
+[[bindings]]
+source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read within the registered range of the same exact artifact. Number 5 supplies the precedence rule on which this leaf's occurrence result rests: a Sunday yields its celebration only to Solemnities and Feasts of the Lord. Inspection was of the numbers named here, not of the complete Norms."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:28462ed005480e0805d39996c9a2eb315a79b1da8c25d91e930a32e7978b5fa4"
+
+[[bindings]]
+source_id = "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar"
+loci = ["complete-calendar"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read within the registered range of the same exact artifact. The entry for 26 July assigns Saints Joachim and Anne the rank of obligatory Memorial, which is what the precedence rule above then displaces on this Sunday. Inspection was of the July entries, not of the complete calendar."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:8bef1c29da813d7dccc6aa23be1df3156345cad7ac86e14c1e3df1e7a55f4f6d"
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
+loci = ["tempus-per-annum"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official Dicastery issue was re-acquired for this publication, its SHA-256 confirmed against the registered value, and the complete Tempus per annum subsection read at artifact page 53. It lists changes only at printed Missal pp. 457 and 471, which bracket the Week XVII locus without touching it. This is bounded no-listed-change evidence, not proof of page-level identity."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:dca2fb4e1dce71f98132cc55c9ffce5cb213af57d2732bab908824ea00bb40fb"
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+loci = ["edition-status"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete notice was read at artifact page 49 of the same issue. It establishes three things this guide relies on: the 2008 book is an emended reprint and not a new typical edition; its pagination is unchanged from the 2002 edition except in the concluding matter and indexes, which is what allows a 2002 locus to be reported as a 2008 locus; and page layout was nevertheless improved in rare cases, which is why direct page-image inspection remains outstanding."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:2b6afb5f0ceae280b31d66ef7f53b6520ba156439d7991acb69e6b2d3e1e9f14"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["complete altar-book identity"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "Catalog-only. The 2008 emended reprint is the Latin base of the United States Missal named by this leaf's manifest. No exact 2008 artifact was acquired or inspected, so the binding supplies edition identity and no textual or page-level evidence."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363"
+loci = ["363"]
+role = "official-control"
+states = ["cataloged", "inspected", "verified"]
+context = "Read on the official United States delivery of the same numbered paragraph for this publication's weekday-spillover claim: the orations proper to a Mass are used unless otherwise noted, and Ordinary Time ferial use of another Sunday's orations is a permitted selection rather than an automatic continuation. The registered dated capture supplies the pinned identity; this publication read the live official page rather than those exact bytes, and no protected wording is retained here."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:de05c212c3db5334c1e83f91bc77ec7d05739bcc50f2da214ca38e84ebd0fb42"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b"
+loci = ["365(b)"]
+role = "official-control"
+states = ["cataloged", "inspected", "verified"]
+context = "Read for the guide's coupled-branch statement that Eucharistic Prayer II, though provided with its own Preface, may also be used with other Prefaces. No actual selection is inferred. Same delivery limitation as the preceding binding."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:55ff9568ce6ec9c09c8c9633c8371955dde89062888e95394f91657579a65420"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+loci = ["365(d)"]
+role = "official-control"
+states = ["cataloged", "inspected", "verified"]
+context = "Read for the guide's statement that Eucharistic Prayer IV has an invariable Preface and may be used when a Mass has no Preface of its own and on Sundays in Ordinary Time. Because Week XVII has no proper Preface, this is the rule that makes the Preface and Eucharistic Prayer decisions a coupled branch. Same delivery limitation as above."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice"
+loci = ["online-edition-notice"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Catalog-only. The notice pins the United States General Instruction state, including the 2021 emendations, that this guide's rubrical claims assume. This publication did not itself re-inspect the notice, and it is not a substitute for the outstanding altar-book collation."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-48"
+loci = ["47-48"]
+role = "context"
+states = ["cataloged", "inspected", "verified"]
+context = "Article 47 was read in full and supplies the guide's account of the Prayer after Communion's phrase naming the sacrament a perpetual memorial of the Passion; article 48 supplies the claim that the faithful are asked to learn to offer themselves along with the immaculate victim, which the guide sets beside the Prayer over the Offerings. This publication read the official live delivery rather than the registered dated capture's exact bytes."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:bec78a52c6e85b054a8fcf84eb15815f8880bf0ea87300aac9bbe17074ce0a43"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.16-22"
+loci = ["16-22"]
+role = "context"
+states = ["cataloged", "inspected", "verified"]
+context = "Article 22 was read for the guide's treatment of Romans 8:29: the Christian conformed to the likeness of the Son who is the firstborn of many brothers receives the first-fruits of the Spirit, with the article's own footnote citing Rom 8:29. This is later doctrinal illumination, not direct exegesis of Romans and not evidence of the formulary's selection. This publication read the official live delivery rather than the registered dated capture's exact bytes."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:ec8a9a63b695fa783f7407672d00acb2b0f51aab5295d1a11995087c04425943"

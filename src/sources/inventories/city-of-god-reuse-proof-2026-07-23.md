@@ -36,11 +36,11 @@ The shared source fingerprints are:
 Six publications now bind the same two passage identities:
 
 1. `articles/faith/the-due-return`, the original tracer consumer;
-2. `liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday`;
-3. `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost`;
-4. `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost`;
-5. `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost`; and
-6. `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a`.
+2. `liturgy/roman-rite/1962/propers/temporal/36-trinity-sunday`;
+3. `liturgy/roman-rite/1962/propers/temporal/38-second-after-pentecost`;
+4. `liturgy/roman-rite/1962/propers/temporal/42-fifth-after-pentecost`;
+5. `liturgy/roman-rite/1962/propers/temporal/44-seventh-after-pentecost`; and
+6. `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a`.
 
 The five newly promoted consumers use the passage as bounded doctrinal
 illumination, not as direct commentary on their liturgical formularies. The
@@ -49,7 +49,7 @@ non-need, mercy, bodily and personal offering, the renewed mind, the redeemed
 city, and Christ the High Priest against the exact retained witnesses and
 their complete chapter context.
 
-`liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` retains a
+`liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost` retains a
 catalog-only work binding. Its research scope names 10.5--6 as a broad control,
 but the rendered guide does not rely on that source. It was not promoted merely
 to enlarge the reuse count.

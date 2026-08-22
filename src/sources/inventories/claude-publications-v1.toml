@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-08-21"
+audited_on = "2026-08-22"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 49
 source_surface_file_count = 1057
-snapshot = "sha256:90872311c12703badf026c09d57f9cfbafbb900550d97a372f6901a9e007509c"
+snapshot = "sha256:a728514111e36680efc0793285a1a9e3f55e2a73b1e57217ad9e5323669fc111"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -37,8 +37,8 @@ id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 main = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 relationship = "local"
@@ -48,8 +48,8 @@ id = "articles/canon-law/natural-positive-divine-human-law"
 main = "src/claude/articles/canon-law/natural-positive-divine-human-law/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/canon-law/natural-positive-divine-human-law"
 relationship = "local"
@@ -59,8 +59,8 @@ id = "articles/faith/against-the-instrumentalists"
 main = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["institutional-current", "magisterial", "scholastic", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/against-the-instrumentalists"
 relationship = "local"
@@ -70,8 +70,8 @@ id = "articles/faith/at-the-end-of-every-why"
 main = "src/claude/articles/faith/at-the-end-of-every-why/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/at-the-end-of-every-why"
 relationship = "local"
@@ -81,8 +81,8 @@ id = "articles/faith/council-missal-and-crisis"
 main = "src/claude/articles/faith/council-missal-and-crisis/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/council-missal-and-crisis"
 relationship = "local"
@@ -92,8 +92,8 @@ id = "articles/faith/four-last-things-01-death"
 main = "src/claude/articles/faith/four-last-things-01-death/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-01-death"
 relationship = "local"
@@ -103,8 +103,8 @@ id = "articles/faith/four-last-things-02-judgment"
 main = "src/claude/articles/faith/four-last-things-02-judgment/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["magisterial", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-02-judgment"
 relationship = "local"
@@ -114,8 +114,8 @@ id = "articles/faith/four-last-things-03-hell"
 main = "src/claude/articles/faith/four-last-things-03-hell/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["magisterial", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-03-hell"
 relationship = "local"
@@ -125,8 +125,8 @@ id = "articles/faith/four-last-things-04-heaven"
 main = "src/claude/articles/faith/four-last-things-04-heaven/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["magisterial", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-04-heaven"
 relationship = "local"
@@ -136,8 +136,8 @@ id = "articles/faith/freemasonry-and-the-catholic-church"
 main = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
 relationship = "local"
@@ -147,8 +147,8 @@ id = "articles/faith/in-defense-of-the-particular"
 main = "src/claude/articles/faith/in-defense-of-the-particular/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/in-defense-of-the-particular"
 relationship = "local"
@@ -158,8 +158,8 @@ id = "articles/faith/ontological-vertigo"
 main = "src/claude/articles/faith/ontological-vertigo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/ontological-vertigo"
 relationship = "local"
@@ -169,8 +169,8 @@ id = "articles/faith/the-due-return"
 main = "src/claude/articles/faith/the-due-return/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "magisterial", "patristic", "scholastic", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/the-due-return"
 relationship = "local"
@@ -180,8 +180,8 @@ id = "articles/faith/trustful-surrender-to-divine-providence"
 main = "src/claude/articles/faith/trustful-surrender-to-divine-providence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/trustful-surrender-to-divine-providence"
 relationship = "local"
@@ -191,8 +191,8 @@ id = "articles/scripture/abraham-and-the-daylight-stars"
 main = "src/claude/articles/scripture/abraham-and-the-daylight-stars/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/scripture/abraham-and-the-daylight-stars"
 relationship = "local"
@@ -202,8 +202,8 @@ id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 main = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 relationship = "local"
@@ -213,8 +213,8 @@ id = "biographies/origen"
 main = "src/claude/biographies/origen/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/origen"
 relationship = "local"
@@ -227,8 +227,8 @@ id = "biographies/saint-augustine-of-hippo"
 main = "src/claude/biographies/saint-augustine-of-hippo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-augustine-of-hippo"
 relationship = "local"
@@ -241,8 +241,8 @@ id = "biographies/saint-jerome"
 main = "src/claude/biographies/saint-jerome/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-jerome"
 relationship = "local"
@@ -255,8 +255,8 @@ id = "biographies/saint-paul"
 main = "src/claude/biographies/saint-paul/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-paul"
 relationship = "local"
@@ -269,8 +269,8 @@ id = "biographies/saint-peter"
 main = "src/claude/biographies/saint-peter/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-peter"
 relationship = "local"
@@ -283,8 +283,8 @@ id = "biographies/saint-robert-bellarmine"
 main = "src/claude/biographies/saint-robert-bellarmine/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-robert-bellarmine"
 relationship = "local"
@@ -297,8 +297,8 @@ id = "biographies/saint-thomas-aquinas"
 main = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-thomas-aquinas"
 relationship = "local"
@@ -311,8 +311,8 @@ id = "biographies/tertullian"
 main = "src/claude/biographies/tertullian/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/tertullian"
 relationship = "local"
@@ -325,8 +325,8 @@ id = "history/biblical-translations/01-septuagint"
 main = "src/claude/history/biblical-translations/01-septuagint/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "history/biblical-translations/01-septuagint"
 relationship = "local"
@@ -339,8 +339,8 @@ id = "history/biblical-translations/02-vulgate"
 main = "src/claude/history/biblical-translations/02-vulgate/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "history/biblical-translations/02-vulgate"
 relationship = "local"
@@ -353,8 +353,8 @@ id = "history/traditional-priestly-institutes/01-sspx"
 main = "src/claude/history/traditional-priestly-institutes/01-sspx/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "magisterial", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "history/traditional-priestly-institutes/01-sspx"
 relationship = "local"
@@ -367,8 +367,8 @@ id = "history/traditional-priestly-institutes/02-fssp"
 main = "src/claude/history/traditional-priestly-institutes/02-fssp/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "dataset-survey", "historical-primary", "institutional-current", "magisterial", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "history/traditional-priestly-institutes/02-fssp"
 relationship = "local"
@@ -381,65 +381,65 @@ id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 main = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
+id = "liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
+id = "liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
+id = "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
+id = "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex"
+id = "liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"
+id = "liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex"
+id = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"
+id = "liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex"
+id = "liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"
+id = "liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -447,8 +447,8 @@ id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 main = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "repository-internal"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 relationship = "local"
@@ -458,8 +458,8 @@ id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 main = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 relationship = "local"
@@ -469,8 +469,8 @@ id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 main = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 relationship = "local"
@@ -480,35 +480,35 @@ id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-or
 main = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
-main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"
+main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"
 relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
 relationship = "source-owner"
 
 [[documents]]
-id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
-main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
+main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
 relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
@@ -519,8 +519,8 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/ref
 main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 relationship = "local"
@@ -530,8 +530,8 @@ id = "theology/mariology/ark-of-the-covenant"
 main = "src/claude/theology/mariology/ark-of-the-covenant/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/ark-of-the-covenant"
 relationship = "local"
@@ -541,8 +541,8 @@ id = "theology/mariology/champion"
 main = "src/claude/theology/mariology/champion/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/champion"
 relationship = "local"
@@ -552,8 +552,8 @@ id = "theology/mariology/fatima"
 main = "src/claude/theology/mariology/fatima/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/fatima"
 relationship = "local"
@@ -563,8 +563,8 @@ id = "theology/mariology/guadalupe"
 main = "src/claude/theology/mariology/guadalupe/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/guadalupe"
 relationship = "local"
@@ -574,8 +574,8 @@ id = "theology/mariology/la-salette"
 main = "src/claude/theology/mariology/la-salette/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/la-salette"
 relationship = "local"
@@ -585,8 +585,8 @@ id = "theology/mariology/lourdes"
 main = "src/claude/theology/mariology/lourdes/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/lourdes"
 relationship = "local"
@@ -596,8 +596,8 @@ id = "theology/mariology/marian-dogmas"
 main = "src/claude/theology/mariology/marian-dogmas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/marian-dogmas"
 relationship = "local"
@@ -607,8 +607,8 @@ id = "theology/mariology/rosary"
 main = "src/claude/theology/mariology/rosary/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/rosary"
 relationship = "local"
@@ -4298,676 +4298,676 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/format.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/format.tex"
 sha256 = "d6eed1d8f1d83eb7b956a02490c28cc1d61f5290b096e380998f726d36b5d127"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
-sha256 = "b4b3d13474470d6dcb7e0b1ab0072f16377c5f2813d08ddd89d43a5cfec60b4f"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/main.tex"
+sha256 = "f1cf187df95790614c97ec3108b028f806ebb00ce3c38821ebaa5ba2cc4cb9c0"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/propers/retrieved.txt"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/propers/retrieved.txt"
 sha256 = "95adec9b9f246e98412a52640cc284458141841aff716b1b271e5932fa6ac6ed"
 kind = "local-evidence-payload"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/propers/verified.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/propers/verified.md"
 sha256 = "a5e849cf1e74800cf0f28c44add7d8afc588bb63754c981f7f3330989e0ad6a3"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"
-sha256 = "472f724bdfce1a17d62816d806bb555cc91629e581a60646a7d2a41f7f6dfb7f"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/research/scope.md"
+sha256 = "7ba0ec6d4bd1689d2bc67c375550eca40d4b68d891211ca4bb4fdeea97184591"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-audit.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/research/source-audit.md"
 sha256 = "f081a91d22f7f33fc540227abe20358397c10b1912cf7cb863e011ec3e2de0c9"
 kind = "legacy-source-audit"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-bindings.toml"
-sha256 = "1599c1bc5fddac099707f82fb926a71fcf4879bdeca29e2e9b4553dfae9817c4"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/research/source-bindings.toml"
+sha256 = "86b65259acf7a4bc07703c1df13ed07ffde3943d18193fda57a4bdbb86fe6533"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/staleness-review-2026-07-29.md"
-sha256 = "d094af88d9d116f58928509c8e62e13dee75774882b76790ec36ae64e18309ab"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/research/staleness-review-2026-07-29.md"
+sha256 = "cc9365fd8b3bcad25a51b2ab719a9c2cb67a09d5068242e99c31747d162cc741"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/00-map.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/00-map.tex"
 sha256 = "7c8091834ca683a7f92d1c714ae7340a1855b13f17933b33bf279d6e5e8d2ed1"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/10-date-location.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/10-date-location.tex"
 sha256 = "a1a7ad0dc19ade20655082586a6a1157764c79d8fa488616a2a2e5fadbe541f9"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/20-themes.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/20-themes.tex"
 sha256 = "272c4375c8128fac0dded7a842e683d520ad77d51f87e16978945b2d345a1542"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/30-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/30-commentary.tex"
 sha256 = "10f279287f01e0a3eff57893721de30cfa6d679167afedf7681cfa01d7901379"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/40-notable.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/40-notable.tex"
 sha256 = "fb317c06c9bfc62ed7b3bcbe4fc0c2f78bbada0914dc1c5bc55bb53014a2791a"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/50-possibilities.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/50-possibilities.tex"
 sha256 = "e93097e9d8cedc9f02402017dd0aa83f22fedf51cdc79164b7b04f4d2a51c0be"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/90-scope.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/90-scope.tex"
 sha256 = "fc6c6efd591579bbe78df3c6d520b6280342d692a71c856e15c2e450f3e69b70"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/sections/99-references.tex"
 sha256 = "2e59032aef54e5ba553a4f0587353ecdc36080961b114787043c16bd7f8d4c6f"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/web-edition.toml"
-sha256 = "ed7f2207f9029166909e87bb3676bec034f3e32dd774e24c7161cee66d707f1c"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost/web-edition.toml"
+sha256 = "8cfa5e528fafebeebbbe7e59e15252872c94cd969cb31b20de90edde225b0730"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/format.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/format.tex"
 sha256 = "a3ad438ef61f074c954971170a447596e98d98f89150f2a4bdc5db5f5aca6a65"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
-sha256 = "483b59806e7fbfb403172aaa0ce5c8ea11efa85c8897f30b9792463b2cac0593"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/main.tex"
+sha256 = "6c83abe9abff794c125eba6e1d8dac8234fc7025c3197b94ebcba87ef3ca49be"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/proper-components.toml"
-sha256 = "bdf4b5d5b1def074648919dcd739819c6f684fbd063d0e05741538b0a5af0700"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/proper-components.toml"
+sha256 = "6ba2ec2e39de3e0da0845753a63734536ce62f2bee6bc4998168f332c91a67e3"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/propers/retrieved.txt"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/propers/retrieved.txt"
 sha256 = "59c13dc5d2a82b273233da4ebc8224888680dc8a1fa8b569cd6ef5b059f771c8"
 kind = "local-evidence-payload"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/propers/verified.md"
-sha256 = "d29ba18da31882ed1f72a27b597142eee9375f70ace79f183ce7d2809534932a"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/propers/verified.md"
+sha256 = "a6384cdc7c32c76c0774075e5f1a8aea2699b8d705eebeb00342ef3606b5e0a7"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/research/scope.md"
 sha256 = "88b402180300c292ab74fa4da3bca56d8c59d8e77966040013d347bfc809dc51"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-audit.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/research/source-audit.md"
 sha256 = "fa5c9d6b9071ebb66c0dbfb44cdbae84a82cc0409c71ed16e9a5db96f88fc46b"
 kind = "legacy-source-audit"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "0b15e751f38a3bc0faa325c774642b013d9c7882a6f146d0cca93fc140d483d0"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/research/source-bindings.toml"
+sha256 = "0d3c273dae245de41744f84477e9b1e9170679468d713c28f531663ca8081372"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/staleness-review-2026-07-29.md"
-sha256 = "fab9b864d5795974d543eafa6ea89871d2158b66638422e30ebeeb20aba5605c"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/research/staleness-review-2026-07-29.md"
+sha256 = "b9a1bb24ad02547265547af90e4b7c9af28df755b9adcc1884e2759acbcae533"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/00-map.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/00-map.tex"
 sha256 = "d63998e28b6ac8b6d262d499a93cfcae9d33a808bb716b491cbb6d98ade20919"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/05-appointed-text.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/05-appointed-text.tex"
 sha256 = "d608f5bd44444b58060ad8eb3fc0e4a0d861db752437846902f937771fd26a31"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/10-date-location.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/10-date-location.tex"
 sha256 = "be82fda01948e90a130f216c96983c0fd7e05dc867f1625079e24e7082eaa362"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/20-themes.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/20-themes.tex"
 sha256 = "3f1513d4640e5dac7fe7ca818c3fee8e0c4a2d3906621e88d1942ab31839cc3f"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/30-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/30-commentary.tex"
 sha256 = "7a7be4b270a6ca258f0b9ab643759184787442d192deedffdb86b0fd03672b45"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/35-source-grounded-synthesis.tex"
 sha256 = "16d22bd8a7e0dcb93040706664c6725cb73089b57cac0fdfd2f52d92140fa817"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/40-notable.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/40-notable.tex"
 sha256 = "02e330c0f843dac02c4aaf605404d5b3ab63a0fd5ef65e1c5b15c3717be64545"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/50-interpretive.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/50-interpretive.tex"
 sha256 = "53d21291f38b6a1c1c17cc98050d06f57d9d890afcccbc1a0dbdb55214675ab5"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/90-scope.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/90-scope.tex"
 sha256 = "2d75378c42ca58a58edebcf745ae4fb6c876294bcace3ce063d54811bfefabd8"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/sections/99-references.tex"
 sha256 = "8968856b47e5dc4fe62d5d1caec771132a3b07fcdeeb3f83dd1548c537d36017"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/synthesis.tex"
-sha256 = "b1282c2389d979d8b6a16dd0674b3a3f6d66ef310225192da5c111a3ae6ad8e8"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/synthesis.tex"
+sha256 = "3b4a693f4f9af81c3d3dd27a4bb88a027699978798afaa49ba217a5041821c26"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/web-edition.toml"
-sha256 = "652a2bedc9562a84387088713348bdfbe3abe6d93c9ee34a6535ab42a33be0ba"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/web-edition.toml"
+sha256 = "58e29d6775f5b1f9d414ca8370111a0d5d2f267c132fa57e82d1660b896d15c0"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/format.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/format.tex"
 sha256 = "2c0cd6a27e186bb18821cfe7f2ce7875119882f628163c24390e462a88ed9044"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/main.tex"
-sha256 = "02671bdb6aca206edac868562da286c70605dbf52719af42fda1609dfcc44794"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/main.tex"
+sha256 = "cd5f5101ca74aab888a19521dc21d6d7746001d3bfc299dd7cee8d67275f3291"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/proper-components.toml"
-sha256 = "a859fdd278a2c7d04a1e90896eb672cc97b18ed0a8fd4bfc7c32c9265b324bb0"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/proper-components.toml"
+sha256 = "ce7aa79d3dc05ac2ca434d2a92dfe011758d9bd4c8bb5e22d248a910d02530ca"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/propers/retrieved.txt"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/propers/retrieved.txt"
 sha256 = "e9acfe5489b730faa84cdc2365fca456b0f1dcba807c832013b421b47cb6d39e"
 kind = "local-evidence-payload"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/propers/verified.md"
-sha256 = "2dc3003aa706ee3a3f553c225727603ec4182bb1100adba6f0e8fefa6beeaceb"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/propers/verified.md"
+sha256 = "6f7669a67bcda3b86d803ca68ab98ccc13f3ac8d4e3ae1fc51d84d8138b23339"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/epistle.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/epistle.md"
 sha256 = "09aabdd9b050d46ff5ccd7ef3670804e1d130b213625fc85ccd6d565b6da72aa"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/gospel.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/gospel.md"
 sha256 = "24345cb22da5408db674c1e8ea329cf6cc3a179097c19c5530d8ae4cd2533f7f"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/notable.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/notable.md"
 sha256 = "3eed0e3eedc4a0fccec4322b9bf1a1de8dcc9da3ab46aab29cce3e912cb747e8"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/orations-and-communion.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/orations-and-communion.md"
 sha256 = "f2a3a4890a5fdbe5218d770fc548615479a081a0dfc682fa6950df72353b3531"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/psalm-chants.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/psalm-chants.md"
 sha256 = "76a46bbb279ffdf52c50e68c07940678e4c61db9dfe5d9b1aea1413d7f0b723b"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/scope.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/scope.md"
 sha256 = "0f1593eadb6e8a5009badde2bc691c1e67e79ccae032ff0fdfb83c1801438045"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/research/source-bindings.toml"
-sha256 = "fafef149b8720a55c61d5f1aa25737ef001d3adc8fb2d9abf2c120310c8010d5"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/source-bindings.toml"
+sha256 = "1045aab38d4753a49312a0cb1207e645fe369073bd42176a74a83987ab087156"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/00-map.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/00-map.tex"
 sha256 = "f6232a240d56f2c3808a96be5c6916b03e277d34d80f6761617c7370ca8eced4"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/05-appointed-text.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/05-appointed-text.tex"
 sha256 = "8ce3a51c1fbcf1236341a4d0b042bcd92dbe72be0d2133e60fe5aeb0eec46488"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/10-date-location.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/10-date-location.tex"
 sha256 = "24b087aaeadc76a7fe9876ec591a09ac8fd6ac8487ca2c5f43194c81534eaf10"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/20-themes.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/20-themes.tex"
 sha256 = "46dcea2e3e497a6ded068923650ba68ac7a3e7465a07e26fccb751214f28c01b"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/30-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/30-commentary.tex"
 sha256 = "2c63e67040c48a0c30d4731f347a65f84fe92499fb3750b9d7b2f3ef0a49706b"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/32-integrated-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/32-integrated-commentary.tex"
 sha256 = "3e5b77f495c080eeeecd583241acad93a98af1eca6ea12cf15a16711078e3739"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/35-source-grounded-synthesis.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/35-source-grounded-synthesis.tex"
 sha256 = "5377600517a872057070cf2bbf53c7b12f518ebb8b7a10ca711a81f3aedfee62"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/40-notable.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/40-notable.tex"
 sha256 = "9711d9b10c468c80bf01cbe0bb225254f1fdfd4609f2c38d26e10f630d1dfa10"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/50-interpretive.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/50-interpretive.tex"
 sha256 = "72361a6c5feff7a016f3561fced095e0e0c029bbc9fbcfaea37162784966c05a"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/90-scope.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/90-scope.tex"
 sha256 = "ea576180a4fe84ece95df253395ffb7018ff8524e9a23f0f3515ec277a42210f"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/sections/99-references.tex"
 sha256 = "11fe805fed2e39751258e520f8ab35331c91e6895c5549fe0c16c240c26fe3b8"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/synthesis.tex"
-sha256 = "11dc47c2b48d5ab1b3e2419c7bc053f2b2abfb425447c79c26c7bad479be7638"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/synthesis.tex"
+sha256 = "16331ec5ce5a402f64f21ebf95afb8e44fb8f6e85802e811a76e9c219207fbf6"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost/web-edition.toml"
-sha256 = "910f42428756d3bab87d177a5932110a6075d0bd4923c67d2a864b22c967efc6"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/web-edition.toml"
+sha256 = "97db49e891be57d6187afab20c154fc11733d32cd33b206672c2908c0b106e19"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/25-eleventh-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/format.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/format.tex"
 sha256 = "599c03053e98c8497ef8242bcd7a831557343be3bfca6e78c2e764a59a62ede0"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/main.tex"
-sha256 = "387768d3d8bf3d17e005c3a64a1d5240059280fe8f11c1307e580fb2f067aa62"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/main.tex"
+sha256 = "1f27828280c9ca3670603122a104cd613e5061fbb19a631eeaad9777497baec2"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/proper-components.toml"
-sha256 = "c4f8e1e3b2efef5e125bb31e605cc4ce18e428547e365b87a35fddd1ce629c74"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/proper-components.toml"
+sha256 = "0bcea3998f4f64eeda22369e91b50638c21c682b149e2a9ca38210fcbd5cf697"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/propers/retrieved.txt"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/propers/retrieved.txt"
 sha256 = "133fd0604d02f22aa2193cd6ac6749c58e1a765cf809aeb51e7a6ccf38febde3"
 kind = "local-evidence-payload"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/propers/verified.md"
-sha256 = "9aff0877caaf5ddf69abc70bbd795ff12f120cf17c6bd61daddd992ef735512a"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/propers/verified.md"
+sha256 = "16fff321d476f467ca9f4c00d0517f9e8634ce0b798d27aa40621d4c9aa5bd97"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/epistle-2-corinthians-3.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/epistle-2-corinthians-3.md"
 sha256 = "574416808402486a8480d93e95315747aef2439c4e78c6e743cc0059f5d53f39"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/offertory-and-orations.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/offertory-and-orations.md"
 sha256 = "c9eb9dcb4e28e2d4c2377c256a082f0512b336d0cb953162d1697ce7d7153faa"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/psalm-chants.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/psalm-chants.md"
 sha256 = "8936d1a6e29a39381a244b279c3ccf9abe140e824cf9269a16a9cfb18d21b013"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/scope.md"
-sha256 = "d8cfcb1a5f17842d7deaa60347cf80888aa8cfe13a8c1f42d397fefcae4eb880"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/scope.md"
+sha256 = "b3aab0b57fce3f31acc95092f3963f79612c55f1efea53d00651a34d59d69a90"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/research/source-bindings.toml"
-sha256 = "79abe834856217e203a33caa913110db27767a7fa52c74f898bf086034e4e553"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/source-bindings.toml"
+sha256 = "7b562faa56596c2f52db93551695b71fde34f6cd3fb53f6c16e0a5b80f52215f"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/00-map.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/00-map.tex"
 sha256 = "279af2a2187a2dc14e5a6564e31f85e8c448334797323f667f8f3c850833d525"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/05-appointed-text.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/05-appointed-text.tex"
 sha256 = "c3e1832e8d0e017dd085e187dfaca1ebf95735b1e310b91d6d00e3a4fcb13f7d"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/10-date-location.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/10-date-location.tex"
 sha256 = "bf17f091c0060126531859ebb18d2f1204be0fc6507bcf5cb0d842dc69638b48"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/20-themes.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/20-themes.tex"
 sha256 = "7d78a8c2b490a0f0bac8c3698e80323bda69831b434c3a6213e65a103b61a7c3"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/30-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/30-commentary.tex"
 sha256 = "6caa87c986b2e3fa9402c5baae95cd1856d5e679ba7a8095c3281eee2d905f63"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/35-source-grounded-synthesis.tex"
 sha256 = "08b0d9d35405b1338d64bd15e2fa55f6e5070d88fdfdb563f8aebd3720cc47ca"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/40-notable.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/40-notable.tex"
 sha256 = "6a53c1fc9dc2955f3dfc08a0b82599477a8f74ed5f0dadbcbbae1add0f6211d7"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/50-interpretive.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/50-interpretive.tex"
 sha256 = "95d2288d308cfb8b21af1e7baf6fc183d1310c40d47d6053c0a034be7d40f953"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/90-scope.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/90-scope.tex"
 sha256 = "38f42d902681e2fc178e3141591e731350c3580fef8f9a36748b7a21ccc5d4bc"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/99-references.tex"
 sha256 = "4c2bf7b0e2a76dd7c35f26dbacbc9db43adfd93737b0015863679071d132fbde"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
 sha256 = "9971c668c056190377e8e444ddab0b9f146f3e3d67341e0f37780facca041815"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/synthesis.tex"
-sha256 = "55c88d8f1798edcdcbe042280b229502c41d2b583ced4d8f4640c2022f753982"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/synthesis.tex"
+sha256 = "b7530603f9063f828f9fcd2bfac12193aff2e8e8a7c1fd57e1ad8bfdc9a4c792"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost/web-edition.toml"
-sha256 = "a782a5f6552f6d17ccdf75a4ffdbb7e156d75a4d3356cf27e0709dd27f24eb9b"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/web-edition.toml"
+sha256 = "76aa2acbcfdf9776d818b4af47698e65aa74032a1e2d5e2ae410d76e2695e5d3"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/26-twelfth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/format.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/format.tex"
 sha256 = "ff1380444546b1996339421049174b474dd7698115a06244d81d0477ede0808b"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/main.tex"
-sha256 = "49bd8ae8aa9850308e953f16dd61a5b186a292e772dd2e4449c4e7680839ec76"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/main.tex"
+sha256 = "6da2c721eca70880152a6c6e080c1d104cc1b225b27a8a71675b0909e76afa1f"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/proper-components.toml"
-sha256 = "78e3ec1981477558dea55371325d949f784732997ca3fbdbcf1b93b2affc2bc1"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/proper-components.toml"
+sha256 = "49e182215796a9ca15eaa320d4c43d9fd82f73dfbfc73ef4fa8fa8c89be5a055"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/propers/retrieved.txt"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/propers/retrieved.txt"
 sha256 = "fe9ffb16b3885aab581d3bb3cf5c603fa76ed059745951afd20e7a3efaa8067f"
 kind = "local-evidence-payload"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/propers/verified.md"
-sha256 = "95f0e3eefd4ca2d6071320e7d418d6de95711fe0019dceabdb15a761beb50fbb"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/propers/verified.md"
+sha256 = "2211dc819f9dc8fc736e42a3615a7959fed71d9df94e7a88eb991985d55d8774"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/epistle-galatians-3.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/epistle-galatians-3.md"
 sha256 = "defb3ae95a9e0e42b35e19fb81332ba9586ba186a6f0f20f4c275867ebec0a6e"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/gospel-luke-17.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/gospel-luke-17.md"
 sha256 = "98aa0864fcc9918097f8f448bc073df44be7ef97ed17963eff727e1aa9b771e5"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/notable-quotable-audit.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/notable-quotable-audit.md"
 sha256 = "ce171d68ac204318a5277ce26526878ac5fe49eca67873d0e0a02879603adfeb"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/orations-and-communion.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/orations-and-communion.md"
 sha256 = "2de07378f299a69c1500eb841b6a6be19448f8926f552cdc04dc1dd399b6a9c0"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/page-2-dossier-facts.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/page-2-dossier-facts.md"
 sha256 = "c0d0726482fd648130c020eb332e38aaaf1d2cd9221cd67a1e2d4ba01504062f"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/psalmody.md"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/psalmody.md"
 sha256 = "fae0c9192471cfab22ad79512902d2b0d635d17e4936c6c2992948ab53f1efa1"
 kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/scope.md"
-sha256 = "7eac49254a9ca095358a0826b43676f35adde34524b4c03202865687371bfe40"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/scope.md"
+sha256 = "c5f4310261ad73e706cec88d5e1f63450f573926e62939199f52e81691f3d834"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "779c09a604b8cbe55a697c44d6636c5edd20cf3348277975db5dfb68289a0ef4"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/source-bindings.toml"
+sha256 = "60e3edc66ca888257e91fd59a320215e479e220ee819c94d541cf5e267401a91"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/00-map.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/00-map.tex"
 sha256 = "428294d92342354804930ecb1ee007a7bb6c6f0c81891bb94f7a017ed68cd105"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/05-appointed-text.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/05-appointed-text.tex"
 sha256 = "f727c86e759487c2d3c4ffa3095366ac47b8cf020faa11065d08b329a893cee1"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/10-date-location.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/10-date-location.tex"
 sha256 = "4f64a97db20a01bbd7c6a33f18e016a0be7d9394c1f6022d09a3ed38001a5223"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/20-themes.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/20-themes.tex"
 sha256 = "ebc36e71d47ecf209f6cacd834146efbaeb01019560b327cc0762f37f6d3eb41"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/30-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/30-commentary.tex"
 sha256 = "15e623748e42c70218ff2403870f80e1f90f152ed2f411a9ac4a705de95146d1"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/35-source-grounded-synthesis.tex"
 sha256 = "15161ebb1291a1b73c04b6fc9ce6ca2265b19abf92367fbfd36e9d3cc561a5e9"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/40-notable.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/40-notable.tex"
 sha256 = "7bde62f050e2b8820dc0b278408519ab25ad76cde623d03c22a18d07c1d13ccc"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/50-interpretive.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/50-interpretive.tex"
 sha256 = "29c0b7382f54d5979a7f5eac63bae1edbefb2f6a66202f98d60d000869efb8b0"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/90-scope.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/90-scope.tex"
 sha256 = "1013124f7fb5b02611b71315d76c3313f1cc9fb3dbcb8c4a61a5b10fcc01cc63"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/99-references.tex"
 sha256 = "13cc75bde36d1fc71ae66bf01e9f8d8fe280bb6220ee73c304d8813744ffa529"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
 sha256 = "cd2532d4ce363fd6d2527c4b3e5e0883abb8fd2baeb6ad12c7c96216f1442fd1"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/synthesis.tex"
-sha256 = "cecd56b1d95562d62dbd83d120d31473722801cfec905918c6f2ddca5a7bac5c"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/synthesis.tex"
+sha256 = "8febc615d6a509c60a59ba2fb204f951b1e6b0c2a0fcd5db74a97d8ceae4a0bf"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost/web-edition.toml"
-sha256 = "40209e221d7be1909895e4a6dbb7cabd3c3839de058ca938a9c0f2ef2805e2ab"
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/web-edition.toml"
+sha256 = "dae6d999ac49a4b2b8073b211bce2925e9b893d50540f12fbc48627aa885a5e8"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/27-thirteenth-after-pentecost"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/format.tex"
@@ -5540,256 +5540,256 @@ kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
-sha256 = "50a4181ea4b14484f2148e975b99c4720d8acba33a647033e5b81e0904159d9d"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
+sha256 = "26619cc33c7a7f863f4a0ae94cb9846cefac8d3ef7bf9c3c4941e05692c2d2ab"
 kind = "instance-manifest"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "15e4eba68c6eba38d85c2bae8d3aeab149972bd633bb0829f1e380524da968fb"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
+sha256 = "f3696a5a13f76476a43443b8856a9834b51914763a70814157ec15c873777e5b"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/propers/verified.md"
-sha256 = "847e93eea8062b565123221d054ac5179f4fb71f56127533bc7543077ded332d"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/propers/verified.md"
+sha256 = "ff39b9eab17d48305a0b47dbb53960c5f0ffa98eeefd486f42c1d5853fa44067"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"
 sha256 = "99d97e3ee41559036669851191fd3972f211599c9166b4b497a321237e94aa3e"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/source-audit.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/research/source-audit.md"
 sha256 = "c9d0947c6ed292d440ef67f51ba25a341344aa8573cc0ab92246e832e5209546"
 kind = "legacy-source-audit"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "36b6840e5377669dc5881c85b158b242f68b422caef91d3626c289905e7f76d7"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "e6c094987aa29a1050b77cd33cdb339b06467ec88cdc6eea4e493f81e14e25ca"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
 sha256 = "6f66e0c18f91b4dee437a4108d2fcc70b391c6e05e7981be102c6a050ee42be4"
 kind = "research-record"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/00-inventory.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/00-inventory.tex"
 sha256 = "c2193210255e95d36d8c328ec619494e1cdccd88118109b402321b504c47a252"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location.tex"
 sha256 = "484fc83c8200c113288c6b9aaf6d320056d6a89ed51a974beae249ce1adc9aaa"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement.tex"
 sha256 = "662fdb8782d212d0b44ad0c6ba2495771f2552d320cee8923cbb000fe46b4df2"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/30-detailed-commentary.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/30-detailed-commentary.tex"
 sha256 = "880629eb846c3cecafbefcb1a7d6e4bf7421899e67586e3bbc8604bfa7dc8540"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable.tex"
 sha256 = "f09d55de3761a3606f70885aedde1e3a51201d93c9840e164d009d83f795d577"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities.tex"
 sha256 = "8e47862a7920ae912b3ebfa1aefd2852c9e258962eab3129219847b1b74dcabb"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/80-liturgical-resolution.tex"
-sha256 = "ae0a7da74bc503a7060fe79db2f1fbc9380cd6e676be30a96112d45213daf2d6"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/80-liturgical-resolution.tex"
+sha256 = "b1ce8243b3dc4c455211c5a0d31e6548f121a1761e5e0f0af79f587ad895870f"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/90-scope-and-qualifications.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/90-scope-and-qualifications.tex"
 sha256 = "daeafc8867b8860199602b5d9c9bac7e859c707d043f40d32dcd4a66c6bff8c8"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/sections/99-references.tex"
 sha256 = "93edb797a08e0df54dfd2b7b00e8e5b09c73897f2a966d7bdc8950c7bc9b9616"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/web-edition.toml"
-sha256 = "7d8ff4be0a22e5930e7663821673a91dff53cec638184482d67c7dc3c9b73d73"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a/web-edition.toml"
+sha256 = "e92987a45d723b45707a6270012dc2a8c9846a49dc4c949b05054e30cf76758c"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
-sha256 = "be681e1addd22a718d5dc09bebc8617b6f8dad8a703bd325f4e515af003ae482"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
+sha256 = "30462a19b8adaaa0a39178c4b3150036d202aeffbfcf9d7256214c351c0e0613"
 kind = "instance-manifest"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "59d00da5231665237bb4a2a111d8311edce62dc5f1e4b281e440d53d0207ab2d"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
+sha256 = "2f300559f0c4798b3ecc03ee5a50c17596aa14b7fa98665a4db986e297176da8"
 kind = "publication-main"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/proper-components.toml"
-sha256 = "a5588d43576c492fd81b37e92b2d7fdaba33d084364495460d6738f6522a82f7"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/proper-components.toml"
+sha256 = "6f351e4143b93711b3c131d5d1f39543c397bcd6202e98282d755bbefe0cac34"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/propers/verified.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/propers/verified.md"
 sha256 = "049e7b80f52613ec19b8bcac10c810014240511ab8af96ba049223b2e0847624"
 kind = "proper-verification"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"
 sha256 = "1b7f20199a050d4dda221f26f8fa49b047c610d87607c3d2b27a9dba4b799717"
 kind = "research-scope"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/source-audit.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/research/source-audit.md"
 sha256 = "399dbc77d8a0a99450382538674de64ecdd6130c00d3ad5b9ebb11001bb3841e"
 kind = "legacy-source-audit"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "306f542c843ec411a26ee28f99f8ba1d08b05710866fc308686a7e0a7cda2923"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "7a192e8edc8c25bbeb8311fe23baf9f7e91e9c545a431492ef41d66504dea593"
 kind = "source-binding"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/research/staleness-review-2026-07-29.md"
 sha256 = "7864acf1cbbb1c5bde0e7a612e812fa4d4f71ea9a20c8daa5b0df28cfa260f73"
 kind = "research-record"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/00-inventory.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/00-inventory.tex"
 sha256 = "ad5d6fe148f0a0d0353f173b48d3a2cf9f78ea7c33195cfc8b785df090a6cad7"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text.tex"
 sha256 = "ae11cf449e296f745015a714485c8ffc449ee097e7d7f450c313928a0bee85de"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location.tex"
 sha256 = "1797d020d22d3b88799799c4f9c4a1ef6e6c3775dc2034ef55284c61c5e3cb57"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement.tex"
 sha256 = "9ce45dddbc3f1e3d0286ebad9b4f79b66487d21cc21d5c0bb72c378ac696b9c0"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/30-commentary-entrance-collect.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/30-commentary-entrance-collect.tex"
 sha256 = "9828acf83a7ec13e33194ea9bcdd21ae580d2d46f03195939b87087f7f051b95"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/31-commentary-old-testament.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/31-commentary-old-testament.tex"
 sha256 = "f5c8ca04eb7685c60a922c62f8ad847ddf3b30cc5e28da484a01f0f0222837e6"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/32-commentary-apostle.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/32-commentary-apostle.tex"
 sha256 = "d745729bf1d0c36a685dbc23845f6718a66ca958c1cce82705fe4181784499a5"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/33-commentary-gospel.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/33-commentary-gospel.tex"
 sha256 = "15eff98833136b4f4267fb09710c44407f109e9db616b0a3e24c5da76df3b2f5"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/34-commentary-eucharist.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/34-commentary-eucharist.tex"
 sha256 = "b8599834984e175374124ecd8175fc510c183a09d13707e65cac14c2fd01456b"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis.tex"
 sha256 = "6d8f90ca7719307c864fd7f57d93a09694e44d62c9d897ac94f09f0a269625fc"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable.tex"
 sha256 = "e882ea69522d7eb702588843a00641cf4623ac98ddab75743c53fe8499168b3c"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities.tex"
 sha256 = "40b17877c5bc11df3fc0cfd6cf1237e7bd01f5a4d917aad7951c71004b35bf7e"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/80-liturgical-resolution.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/80-liturgical-resolution.tex"
 sha256 = "4323c85f47897e3f11f12395b8b81ed5aac80e44b531faa0157f26b7e8854d23"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/90-scope-and-qualifications.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/90-scope-and-qualifications.tex"
 sha256 = "5151f7932803b12e3cbd61ced9d4e57c5a34a36a6fc03a26c3a38608c999b96b"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/99-references.tex"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/sections/99-references.tex"
 sha256 = "82d5700997e695248a9508c9b16859462d633d368da0898b3f34510aa09e143d"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/synthesis.tex"
-sha256 = "2c08d66e9049f5db88335a2494fe07148d72561ab72a5ac299dafc70d6fdca8c"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/synthesis.tex"
+sha256 = "bca526647118ec4fbcd87f59d6bdce93aaacc2de3e651af76a36573c6370b798"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/web-edition.toml"
-sha256 = "599e84b4cad68c46b051a5ab13a17cde0913e83e01c57fd2681e10c2326fd36d"
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a/web-edition.toml"
+sha256 = "d30b2965787d20d4a8bc3df4e4d1ca4ae800befbe3a9f0f4f57a6d8ffc9728f7"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/16/propers/verified.md"

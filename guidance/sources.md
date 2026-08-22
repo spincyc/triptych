@@ -271,6 +271,11 @@ as stated above, so date-prefixing a directory must not silently re-key the
 record that lives in it, break a citation, or rename a published artifact. A
 citation still addresses `1 Cor 13:4`. Where an id and a path have been the same
 string, separating them is the work, and it is not done by renaming a directory.
+On 2026-08-22 the maintainer authorized a one-time override of this rule for
+the 1962 and postconciliar proper-guide renumber from Lent-first to Advent-first
+liturgical-year order: all published leaf paths, PDFs, web editions, and release
+records were renamed in that commit. This paragraph records the exception; the
+standing rule remains unchanged for every other case.
 
 **Derive the prefix; never type it beside the fact.** The date is already in the
 edition record and the canonical position is already in the tracked book index.

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/40-third-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Third Sunday after Pentecost formulary, printed pages 380-382, PDF pages 461-463"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Third Sunday after Pentecost formulary, printed pages 374-376, DjVu pages 451-453"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Internet Archive DjVu of the 1962 Benziger edition was compared as a secondary image witness; its variants and distinct pagination do not control the Vatican typical-edition transcription."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"

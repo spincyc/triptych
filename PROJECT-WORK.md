@@ -1597,7 +1597,7 @@ move release hash records and every smoke-test filename together.
 <!-- promised-deliverable: claude-eleventh-thirteenth-after-pentecost-2026-08-19 -->
 
 On 2026-08-19 the maintainer reopened the closed 1962 temporal propers
-boundary for exactly three targets: the Claude guides `25`–`27`, the Eleventh
+boundary for exactly three targets: the Claude guides `48`–`50`, the Eleventh
 through Thirteenth Sundays after Pentecost, authored to the current
 componentized profile with deep and broad patristic reception research. The
 production plan records the boundary decision; this section records the work
@@ -1656,7 +1656,7 @@ repository-wide fix rather than a per-leaf fork.
 <!-- promised-deliverable: gpt-eleventh-thirteenth-after-pentecost-2026-08-20 -->
 
 On 2026-08-20 the maintainer independently reopened the closed 1962 temporal
-propers boundary for the GPT guides `25`–`27`, the Eleventh through Thirteenth
+propers boundary for the GPT guides `48`–`50`, the Eleventh through Thirteenth
 Sundays after Pentecost. The request requires full source-first research, broad
 and deep patristic and later saintly reception, Catholic-faithful scholarly
 treatment, and enrichment of the provider-neutral shared corpus wherever the

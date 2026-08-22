@@ -6,9 +6,11 @@ Treat an uncollated edition difference as unresolved and fail closed. A registry
 
 ## Canonical Sunday-proper production order
 
-The postconciliar Sunday collection uses the following **60 stable Proper-of-Time identities**. This is the firm repository order for planning, identifiers, paths, status tracking, and creation. It follows the section order of the postconciliar Roman Missal—Advent, Christmas Time, Lent and Holy Week, Easter Time, Ordinary Time, and the Sunday-capable Solemnities of the Lord in Ordinary Time—independently of the occurrence pattern of any one civil year.
+The postconciliar Sunday collection uses the following **60 stable Proper-of-Time identities**. This is the firm repository order for planning, identifiers, paths, status tracking, and creation. It follows the liturgical-year order—Advent, Christmas Time, Lent and Holy Week, Easter Time through Pentecost, the Solemnities of the Lord that follow Pentecost (Most Holy Trinity, Most Holy Body and Blood of Christ), the Sundays in Ordinary Time, and Christ the King as the Last Sunday—rather than the Missal's own printed section order, which segregates the Solemnities of the Lord into a separate subsection after Ordinary Time. This is a deliberate departure from the book's arrangement, authorized by the maintainer on 2026-08-22 to put stable feasts of the Lord inline in liturgical-year order.
 
-`PC-S` means the postconciliar Sunday-production series. It does not assert that every identity always occurs on Sunday: the series deliberately retains fixed or transferable Proper-of-Time celebrations that can occupy a Sunday, including the explicitly conditional Second Sunday after the Nativity and Seventh Sunday of Easter. IDs are permanent, may not be reassigned or renumbered, and do not establish liturgical rank or precedence. A document slug begins with the lowercase form shown below; cycle and form suffixes follow the variant rules after the table.
+`PC-S` means the postconciliar Sunday-production series. It does not assert that every identity always occurs on Sunday: the series deliberately retains fixed or transferable Proper-of-Time celebrations that can occupy a Sunday, including the explicitly conditional Second Sunday after the Nativity and Seventh Sunday of Easter. IDs are permanent and do not establish liturgical rank or precedence. A document slug begins with the lowercase form shown below; cycle and form suffixes follow the variant rules after the table.
+
+On 2026-08-22 the maintainer authorized a one-time renumber of this registry from its original Missal-print-order arrangement (which appended Most Holy Trinity, Most Holy Body and Blood of Christ, and Christ the King after the Ordinary Time Sundays) to the current liturgical-year order (which places Trinity and Corpus Christi inline after Pentecost, and Christ the King as the last entry). The `weeks/NN` ownership derivation changed from `parent_number - 24` to `parent_number - 26`, and the Lectionary formula from `64 + 3 * (parent_number - 26)` to `64 + 3 * (parent_number - 28)`. All published leaf paths, PDFs, web editions, and release records were renamed in the same commit. This revision is recorded here per the registry's own requirement that a revision state the exact replacement keys, slugs, canonical positions, counts, and affected edition records.
 
 | ID | Required slug stem | Proper-of-Time identity |
 | --- | --- | --- |
@@ -37,40 +39,40 @@ The postconciliar Sunday collection uses the following **60 stable Proper-of-Tim
 | PC-S23 | `pc-s23-ascension-of-the-lord` | Ascension of the Lord |
 | PC-S24 | `pc-s24-seventh-sunday-of-easter` | Seventh Sunday of Easter |
 | PC-S25 | `pc-s25-pentecost-sunday` | Pentecost Sunday |
-| PC-S26 | `pc-s26-second-sunday-in-ordinary-time` | Second Sunday in Ordinary Time |
-| PC-S27 | `pc-s27-third-sunday-in-ordinary-time` | Third Sunday in Ordinary Time |
-| PC-S28 | `pc-s28-fourth-sunday-in-ordinary-time` | Fourth Sunday in Ordinary Time |
-| PC-S29 | `pc-s29-fifth-sunday-in-ordinary-time` | Fifth Sunday in Ordinary Time |
-| PC-S30 | `pc-s30-sixth-sunday-in-ordinary-time` | Sixth Sunday in Ordinary Time |
-| PC-S31 | `pc-s31-seventh-sunday-in-ordinary-time` | Seventh Sunday in Ordinary Time |
-| PC-S32 | `pc-s32-eighth-sunday-in-ordinary-time` | Eighth Sunday in Ordinary Time |
-| PC-S33 | `pc-s33-ninth-sunday-in-ordinary-time` | Ninth Sunday in Ordinary Time |
-| PC-S34 | `pc-s34-tenth-sunday-in-ordinary-time` | Tenth Sunday in Ordinary Time |
-| PC-S35 | `pc-s35-eleventh-sunday-in-ordinary-time` | Eleventh Sunday in Ordinary Time |
-| PC-S36 | `pc-s36-twelfth-sunday-in-ordinary-time` | Twelfth Sunday in Ordinary Time |
-| PC-S37 | `pc-s37-thirteenth-sunday-in-ordinary-time` | Thirteenth Sunday in Ordinary Time |
-| PC-S38 | `pc-s38-fourteenth-sunday-in-ordinary-time` | Fourteenth Sunday in Ordinary Time |
-| PC-S39 | `pc-s39-fifteenth-sunday-in-ordinary-time` | Fifteenth Sunday in Ordinary Time |
-| PC-S40 | `pc-s40-sixteenth-sunday-in-ordinary-time` | Sixteenth Sunday in Ordinary Time |
-| PC-S41 | `pc-s41-seventeenth-sunday-in-ordinary-time` | Seventeenth Sunday in Ordinary Time |
-| PC-S42 | `pc-s42-eighteenth-sunday-in-ordinary-time` | Eighteenth Sunday in Ordinary Time |
-| PC-S43 | `pc-s43-nineteenth-sunday-in-ordinary-time` | Nineteenth Sunday in Ordinary Time |
-| PC-S44 | `pc-s44-twentieth-sunday-in-ordinary-time` | Twentieth Sunday in Ordinary Time |
-| PC-S45 | `pc-s45-twenty-first-sunday-in-ordinary-time` | Twenty-first Sunday in Ordinary Time |
-| PC-S46 | `pc-s46-twenty-second-sunday-in-ordinary-time` | Twenty-second Sunday in Ordinary Time |
-| PC-S47 | `pc-s47-twenty-third-sunday-in-ordinary-time` | Twenty-third Sunday in Ordinary Time |
-| PC-S48 | `pc-s48-twenty-fourth-sunday-in-ordinary-time` | Twenty-fourth Sunday in Ordinary Time |
-| PC-S49 | `pc-s49-twenty-fifth-sunday-in-ordinary-time` | Twenty-fifth Sunday in Ordinary Time |
-| PC-S50 | `pc-s50-twenty-sixth-sunday-in-ordinary-time` | Twenty-sixth Sunday in Ordinary Time |
-| PC-S51 | `pc-s51-twenty-seventh-sunday-in-ordinary-time` | Twenty-seventh Sunday in Ordinary Time |
-| PC-S52 | `pc-s52-twenty-eighth-sunday-in-ordinary-time` | Twenty-eighth Sunday in Ordinary Time |
-| PC-S53 | `pc-s53-twenty-ninth-sunday-in-ordinary-time` | Twenty-ninth Sunday in Ordinary Time |
-| PC-S54 | `pc-s54-thirtieth-sunday-in-ordinary-time` | Thirtieth Sunday in Ordinary Time |
-| PC-S55 | `pc-s55-thirty-first-sunday-in-ordinary-time` | Thirty-first Sunday in Ordinary Time |
-| PC-S56 | `pc-s56-thirty-second-sunday-in-ordinary-time` | Thirty-second Sunday in Ordinary Time |
-| PC-S57 | `pc-s57-thirty-third-sunday-in-ordinary-time` | Thirty-third Sunday in Ordinary Time |
-| PC-S58 | `pc-s58-most-holy-trinity` | Most Holy Trinity |
-| PC-S59 | `pc-s59-most-holy-body-and-blood-of-christ` | Most Holy Body and Blood of Christ |
+| PC-S26 | `pc-s26-most-holy-trinity` | Most Holy Trinity |
+| PC-S27 | `pc-s27-most-holy-body-and-blood-of-christ` | Most Holy Body and Blood of Christ |
+| PC-S28 | `pc-s28-second-sunday-in-ordinary-time` | Second Sunday in Ordinary Time |
+| PC-S29 | `pc-s29-third-sunday-in-ordinary-time` | Third Sunday in Ordinary Time |
+| PC-S30 | `pc-s30-fourth-sunday-in-ordinary-time` | Fourth Sunday in Ordinary Time |
+| PC-S31 | `pc-s31-fifth-sunday-in-ordinary-time` | Fifth Sunday in Ordinary Time |
+| PC-S32 | `pc-s32-sixth-sunday-in-ordinary-time` | Sixth Sunday in Ordinary Time |
+| PC-S33 | `pc-s33-seventh-sunday-in-ordinary-time` | Seventh Sunday in Ordinary Time |
+| PC-S34 | `pc-s34-eighth-sunday-in-ordinary-time` | Eighth Sunday in Ordinary Time |
+| PC-S35 | `pc-s35-ninth-sunday-in-ordinary-time` | Ninth Sunday in Ordinary Time |
+| PC-S36 | `pc-s36-tenth-sunday-in-ordinary-time` | Tenth Sunday in Ordinary Time |
+| PC-S37 | `pc-s37-eleventh-sunday-in-ordinary-time` | Eleventh Sunday in Ordinary Time |
+| PC-S38 | `pc-s38-twelfth-sunday-in-ordinary-time` | Twelfth Sunday in Ordinary Time |
+| PC-S39 | `pc-s39-thirteenth-sunday-in-ordinary-time` | Thirteenth Sunday in Ordinary Time |
+| PC-S40 | `pc-s40-fourteenth-sunday-in-ordinary-time` | Fourteenth Sunday in Ordinary Time |
+| PC-S41 | `pc-s41-fifteenth-sunday-in-ordinary-time` | Fifteenth Sunday in Ordinary Time |
+| PC-S42 | `pc-s42-sixteenth-sunday-in-ordinary-time` | Sixteenth Sunday in Ordinary Time |
+| PC-S43 | `pc-s43-seventeenth-sunday-in-ordinary-time` | Seventeenth Sunday in Ordinary Time |
+| PC-S44 | `pc-s44-eighteenth-sunday-in-ordinary-time` | Eighteenth Sunday in Ordinary Time |
+| PC-S45 | `pc-s45-nineteenth-sunday-in-ordinary-time` | Nineteenth Sunday in Ordinary Time |
+| PC-S46 | `pc-s46-twentieth-sunday-in-ordinary-time` | Twentieth Sunday in Ordinary Time |
+| PC-S47 | `pc-s47-twenty-first-sunday-in-ordinary-time` | Twenty-first Sunday in Ordinary Time |
+| PC-S48 | `pc-s48-twenty-second-sunday-in-ordinary-time` | Twenty-second Sunday in Ordinary Time |
+| PC-S49 | `pc-s49-twenty-third-sunday-in-ordinary-time` | Twenty-third Sunday in Ordinary Time |
+| PC-S50 | `pc-s50-twenty-fourth-sunday-in-ordinary-time` | Twenty-fourth Sunday in Ordinary Time |
+| PC-S51 | `pc-s51-twenty-fifth-sunday-in-ordinary-time` | Twenty-fifth Sunday in Ordinary Time |
+| PC-S52 | `pc-s52-twenty-sixth-sunday-in-ordinary-time` | Twenty-sixth Sunday in Ordinary Time |
+| PC-S53 | `pc-s53-twenty-seventh-sunday-in-ordinary-time` | Twenty-seventh Sunday in Ordinary Time |
+| PC-S54 | `pc-s54-twenty-eighth-sunday-in-ordinary-time` | Twenty-eighth Sunday in Ordinary Time |
+| PC-S55 | `pc-s55-twenty-ninth-sunday-in-ordinary-time` | Twenty-ninth Sunday in Ordinary Time |
+| PC-S56 | `pc-s56-thirtieth-sunday-in-ordinary-time` | Thirtieth Sunday in Ordinary Time |
+| PC-S57 | `pc-s57-thirty-first-sunday-in-ordinary-time` | Thirty-first Sunday in Ordinary Time |
+| PC-S58 | `pc-s58-thirty-second-sunday-in-ordinary-time` | Thirty-second Sunday in Ordinary Time |
+| PC-S59 | `pc-s59-thirty-third-sunday-in-ordinary-time` | Thirty-third Sunday in Ordinary Time |
 | PC-S60 | `pc-s60-our-lord-jesus-christ-king-of-the-universe` | Our Lord Jesus Christ, King of the Universe, the Last Sunday in Ordinary Time |
 
 There is no `PC-S` identity for a numbered First Sunday in Ordinary Time. Normally the Baptism of the Lord occupies that Sunday and Week I begins on Monday. Where a Sunday-transferred Epiphany falls on January 7 or 8, Epiphany occupies the Sunday, Baptism is celebrated Monday, and Week I begins Tuesday. There is no separate Thirty-fourth Sunday identity: Christ the King occupies the Last Sunday, while the weekdays of Week XXXIV have their own formulary. The Most Sacred Heart of Jesus is assigned to Friday in the General Calendar and therefore is not part of this baseline Sunday spine; any lawful Sunday observance is resolved as an occurrence overlay without renumbering `PC-S`.
@@ -90,7 +92,7 @@ Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<editi
 
 The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above.
 
-Ownership is not optional, and for Ordinary Time it is computable. For `PC-S26`–`PC-S57` the owner is `weeks/NN`, where `NN` is the parent number minus 24 written in two digits: `PC-S26` takes `weeks/02`, `PC-S40` takes `weeks/16`, and `PC-S57` takes `weeks/33`. `PC-S58`, `PC-S59`, and `PC-S60` are Solemnities of the Lord with their own `shared/formularies/<required-slug-stem>/` owners and consume no `weeks/NN`. Create the owner before the first leaf that needs it; a leaf whose owner does not yet exist is not authorized. [Calendar computation](calendar-computation.md) owns this derivation and the annual week arithmetic behind it.
+Ownership is not optional, and for Ordinary Time it is computable. For `PC-S28`–`PC-S59` the owner is `weeks/NN`, where `NN` is the parent number minus 26 written in two digits: `PC-S28` takes `weeks/02`, `PC-S42` takes `weeks/16`, and `PC-S59` takes `weeks/33`. `PC-S26`, `PC-S27`, and `PC-S60` are Solemnities of the Lord with their own `shared/formularies/<required-slug-stem>/` owners and consume no `weeks/NN`. Create the owner before the first leaf that needs it; a leaf whose owner does not yet exist is not authorized. [Calendar computation](calendar-computation.md) owns this derivation and the annual week arithmetic behind it.
 
 A shared owner is a non-publishable source directory:
 
@@ -163,43 +165,43 @@ The following is the canonical creation queue. The formula keys are written out 
 | PC-S23 | `PC-S23-A-VIGIL`, `PC-S23-A-DAY`, `PC-S23-B-VIGIL`, `PC-S23-B-DAY`, `PC-S23-C-VIGIL`, `PC-S23-C-DAY` | 58 | 6 |
 | PC-S24 | `PC-S24-A`, `PC-S24-B`, `PC-S24-C` | 59, 60, 61 | 3 |
 | PC-S25 | `PC-S25-ABC-VIGIL`, `PC-S25-ABC-EXTENDED-VIGIL`, `PC-S25-A-DAY`, `PC-S25-B-DAY`, `PC-S25-C-DAY` | 62, 62a, 63 | 5 |
-| PC-S26 | `PC-S26-A`, `PC-S26-B`, `PC-S26-C` | 64, 65, 66 | 3 |
-| PC-S27 | `PC-S27-A`, `PC-S27-B`, `PC-S27-C` | 67, 68, 69 | 3 |
-| PC-S28 | `PC-S28-A`, `PC-S28-B`, `PC-S28-C` | 70, 71, 72 | 3 |
-| PC-S29 | `PC-S29-A`, `PC-S29-B`, `PC-S29-C` | 73, 74, 75 | 3 |
-| PC-S30 | `PC-S30-A`, `PC-S30-B`, `PC-S30-C` | 76, 77, 78 | 3 |
-| PC-S31 | `PC-S31-A`, `PC-S31-B`, `PC-S31-C` | 79, 80, 81 | 3 |
-| PC-S32 | `PC-S32-A`, `PC-S32-B`, `PC-S32-C` | 82, 83, 84 | 3 |
-| PC-S33 | `PC-S33-A`, `PC-S33-B`, `PC-S33-C` | 85, 86, 87 | 3 |
-| PC-S34 | `PC-S34-A`, `PC-S34-B`, `PC-S34-C` | 88, 89, 90 | 3 |
-| PC-S35 | `PC-S35-A`, `PC-S35-B`, `PC-S35-C` | 91, 92, 93 | 3 |
-| PC-S36 | `PC-S36-A`, `PC-S36-B`, `PC-S36-C` | 94, 95, 96 | 3 |
-| PC-S37 | `PC-S37-A`, `PC-S37-B`, `PC-S37-C` | 97, 98, 99 | 3 |
-| PC-S38 | `PC-S38-A`, `PC-S38-B`, `PC-S38-C` | 100, 101, 102 | 3 |
-| PC-S39 | `PC-S39-A`, `PC-S39-B`, `PC-S39-C` | 103, 104, 105 | 3 |
-| PC-S40 | `PC-S40-A`, `PC-S40-B`, `PC-S40-C` | 106, 107, 108 | 3 |
-| PC-S41 | `PC-S41-A`, `PC-S41-B`, `PC-S41-C` | 109, 110, 111 | 3 |
-| PC-S42 | `PC-S42-A`, `PC-S42-B`, `PC-S42-C` | 112, 113, 114 | 3 |
-| PC-S43 | `PC-S43-A`, `PC-S43-B`, `PC-S43-C` | 115, 116, 117 | 3 |
-| PC-S44 | `PC-S44-A`, `PC-S44-B`, `PC-S44-C` | 118, 119, 120 | 3 |
-| PC-S45 | `PC-S45-A`, `PC-S45-B`, `PC-S45-C` | 121, 122, 123 | 3 |
-| PC-S46 | `PC-S46-A`, `PC-S46-B`, `PC-S46-C` | 124, 125, 126 | 3 |
-| PC-S47 | `PC-S47-A`, `PC-S47-B`, `PC-S47-C` | 127, 128, 129 | 3 |
-| PC-S48 | `PC-S48-A`, `PC-S48-B`, `PC-S48-C` | 130, 131, 132 | 3 |
-| PC-S49 | `PC-S49-A`, `PC-S49-B`, `PC-S49-C` | 133, 134, 135 | 3 |
-| PC-S50 | `PC-S50-A`, `PC-S50-B`, `PC-S50-C` | 136, 137, 138 | 3 |
-| PC-S51 | `PC-S51-A`, `PC-S51-B`, `PC-S51-C` | 139, 140, 141 | 3 |
-| PC-S52 | `PC-S52-A`, `PC-S52-B`, `PC-S52-C` | 142, 143, 144 | 3 |
-| PC-S53 | `PC-S53-A`, `PC-S53-B`, `PC-S53-C` | 145, 146, 147 | 3 |
-| PC-S54 | `PC-S54-A`, `PC-S54-B`, `PC-S54-C` | 148, 149, 150 | 3 |
-| PC-S55 | `PC-S55-A`, `PC-S55-B`, `PC-S55-C` | 151, 152, 153 | 3 |
-| PC-S56 | `PC-S56-A`, `PC-S56-B`, `PC-S56-C` | 154, 155, 156 | 3 |
-| PC-S57 | `PC-S57-A`, `PC-S57-B`, `PC-S57-C` | 157, 158, 159 | 3 |
-| PC-S58 | `PC-S58-A`, `PC-S58-B`, `PC-S58-C` | 164, 165, 166 | 3 |
-| PC-S59 | `PC-S59-A`, `PC-S59-B`, `PC-S59-C` | 167, 168, 169 | 3 |
+| PC-S28 | `PC-S28-A`, `PC-S28-B`, `PC-S28-C` | 64, 65, 66 | 3 |
+| PC-S29 | `PC-S29-A`, `PC-S29-B`, `PC-S29-C` | 67, 68, 69 | 3 |
+| PC-S30 | `PC-S30-A`, `PC-S30-B`, `PC-S30-C` | 70, 71, 72 | 3 |
+| PC-S31 | `PC-S31-A`, `PC-S31-B`, `PC-S31-C` | 73, 74, 75 | 3 |
+| PC-S32 | `PC-S32-A`, `PC-S32-B`, `PC-S32-C` | 76, 77, 78 | 3 |
+| PC-S33 | `PC-S33-A`, `PC-S33-B`, `PC-S33-C` | 79, 80, 81 | 3 |
+| PC-S34 | `PC-S34-A`, `PC-S34-B`, `PC-S34-C` | 82, 83, 84 | 3 |
+| PC-S35 | `PC-S35-A`, `PC-S35-B`, `PC-S35-C` | 85, 86, 87 | 3 |
+| PC-S36 | `PC-S36-A`, `PC-S36-B`, `PC-S36-C` | 88, 89, 90 | 3 |
+| PC-S37 | `PC-S37-A`, `PC-S37-B`, `PC-S37-C` | 91, 92, 93 | 3 |
+| PC-S38 | `PC-S38-A`, `PC-S38-B`, `PC-S38-C` | 94, 95, 96 | 3 |
+| PC-S39 | `PC-S39-A`, `PC-S39-B`, `PC-S39-C` | 97, 98, 99 | 3 |
+| PC-S40 | `PC-S40-A`, `PC-S40-B`, `PC-S40-C` | 100, 101, 102 | 3 |
+| PC-S41 | `PC-S41-A`, `PC-S41-B`, `PC-S41-C` | 103, 104, 105 | 3 |
+| PC-S42 | `PC-S42-A`, `PC-S42-B`, `PC-S42-C` | 106, 107, 108 | 3 |
+| PC-S43 | `PC-S43-A`, `PC-S43-B`, `PC-S43-C` | 109, 110, 111 | 3 |
+| PC-S44 | `PC-S44-A`, `PC-S44-B`, `PC-S44-C` | 112, 113, 114 | 3 |
+| PC-S45 | `PC-S45-A`, `PC-S45-B`, `PC-S45-C` | 115, 116, 117 | 3 |
+| PC-S46 | `PC-S46-A`, `PC-S46-B`, `PC-S46-C` | 118, 119, 120 | 3 |
+| PC-S47 | `PC-S47-A`, `PC-S47-B`, `PC-S47-C` | 121, 122, 123 | 3 |
+| PC-S48 | `PC-S48-A`, `PC-S48-B`, `PC-S48-C` | 124, 125, 126 | 3 |
+| PC-S49 | `PC-S49-A`, `PC-S49-B`, `PC-S49-C` | 127, 128, 129 | 3 |
+| PC-S50 | `PC-S50-A`, `PC-S50-B`, `PC-S50-C` | 130, 131, 132 | 3 |
+| PC-S51 | `PC-S51-A`, `PC-S51-B`, `PC-S51-C` | 133, 134, 135 | 3 |
+| PC-S52 | `PC-S52-A`, `PC-S52-B`, `PC-S52-C` | 136, 137, 138 | 3 |
+| PC-S53 | `PC-S53-A`, `PC-S53-B`, `PC-S53-C` | 139, 140, 141 | 3 |
+| PC-S54 | `PC-S54-A`, `PC-S54-B`, `PC-S54-C` | 142, 143, 144 | 3 |
+| PC-S55 | `PC-S55-A`, `PC-S55-B`, `PC-S55-C` | 145, 146, 147 | 3 |
+| PC-S56 | `PC-S56-A`, `PC-S56-B`, `PC-S56-C` | 148, 149, 150 | 3 |
+| PC-S57 | `PC-S57-A`, `PC-S57-B`, `PC-S57-C` | 151, 152, 153 | 3 |
+| PC-S58 | `PC-S58-A`, `PC-S58-B`, `PC-S58-C` | 154, 155, 156 | 3 |
+| PC-S59 | `PC-S59-A`, `PC-S59-B`, `PC-S59-C` | 157, 158, 159 | 3 |
+| PC-S26 | `PC-S26-A`, `PC-S26-B`, `PC-S26-C` | 164, 165, 166 | 3 |
+| PC-S27 | `PC-S27-A`, `PC-S27-B`, `PC-S27-C` | 167, 168, 169 | 3 |
 | PC-S60 | `PC-S60-A`, `PC-S60-B`, `PC-S60-C` | 160, 161, 162 | 3 |
 
-The registry contains **184 baseline Proper-of-Time targets**: 79 for `PC-S01`–`PC-S25` and 105 for `PC-S26`–`PC-S60`. Each appointed form must cover the three A/B/C occurrence slots exactly once: three cycle-specific keys or one directly collated `ABC` key, never both. For `PC-S26`–`PC-S57`, the Lectionary number is independently checkable as `64 + 3 × (parent number − 26) + cycle offset`, where the offsets for A, B, and C are 0, 1, and 2. The count excludes the separate weekday occurrence targets, General Calendar replacements, and conditional Ritual Masses below.
+The registry contains **184 baseline Proper-of-Time targets**: 79 for `PC-S01`–`PC-S25` and 105 for `PC-S26`–`PC-S60`. Each appointed form must cover the three A/B/C occurrence slots exactly once: three cycle-specific keys or one directly collated `ABC` key, never both. For `PC-S28`–`PC-S59`, the Lectionary number is independently checkable as `64 + 3 × (parent number − 28) + cycle offset`, where the offsets for A, B, and C are 0, 1, and 2. The count excludes the separate weekday occurrence targets, General Calendar replacements, and conditional Ritual Masses below.
 
 ### Sacred Triduum identities
 
