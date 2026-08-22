@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.edward-caswall.lyra-catholica"
+title = "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources"
+responsible = "Edward Caswall, M.A., translator"
+work_type = "hymn-collection"
+alternate_titles = ["Lyra Catholica"]
+languages = ["en", "la"]
+locus_pattern = "[a-z0-9-]+(/[0-9]+)?"
+description = "An English verse translation of the hymns of the Roman Breviary and of the hymns and sequences of the Roman Missal, with further hymns from the Paris and Cluny Breviaries and from the Italian Raccolta. Each piece is headed by the Latin incipit it renders and by the day or hour at which the book's source appoints it; the Latin itself is not printed beside the English. It is a devotional and literary collection, NOT a liturgical book: nothing in it was ever approved for use at the altar, and a reading taken from it attests what Caswall wrote, not what any Missal or Breviary printed. Caswall (1814-1878) made the translation as an Anglican clergyman received into the Catholic Church in 1847; he afterwards entered the Birmingham Oratory. The five sequences the Roman Missal appoints -- Victimae paschali laudes, Veni Sancte Spiritus, Lauda Sion Salvatorem, Dies irae, and Stabat Mater dolorosa -- are all in it, the first four together under a heading HYMNS FROM THE MISSAL and the Stabat Mater at the Friday after Passion Sunday, to which the Missal section cross-refers by page."
+relations = ["work.catholic-church.missale-romanum"]

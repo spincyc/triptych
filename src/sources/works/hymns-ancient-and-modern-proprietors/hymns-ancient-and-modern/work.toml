@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern"
+title = "Hymns Ancient and Modern for use in the services of the Church"
+responsible = "The Proprietors of Hymns Ancient and Modern, through their Committee; musical editorship of William Henry Monk"
+work_type = "hymn-collection"
+alternate_titles = ["Hymns A. & M.", "Hymns, ancient and modern"]
+languages = ["en"]
+locus_pattern = "[0-9]+(/[0-9]+)?"
+description = "The nineteenth-century Church of England hymn book, first published 1861 and repeatedly enlarged, gathering translations from the Latin office and missal hymns beside modern English composition. It is carried in this library for ONE text: hymn 398, `Day of Wrath! O day of mourning`, William Josiah Irons's English of the Dies irae, which the Roman missal witnesses this project holds do not supply. It is an Anglican compilation and no witness whatever to any Roman book: nothing in it was approved for Catholic use, its Latin originals are printed in a Sarum recension where it prints them at all, and its compilers are known to have altered the texts they received -- which is a caution to be tested against another printing, not a finding of this record. `locus_pattern` addresses a hymn by its number in the collection, and a hymn number is EDITION-SPECIFIC and must never be carried between printings."
+relations = ["work.catholic-church.missale-romanum"]
