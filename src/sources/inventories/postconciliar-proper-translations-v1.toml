@@ -717,6 +717,74 @@ renders no Amen and no Alleluia anywhere: every one of these five propers ends i
 the Latin with an acclamation that the English simply does not have.
 '''
 
+[[sources]]
+id = "icel-music-2010"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+# This row covers the chant-sheet artifacts of the ICEL Music for the Roman
+# Missal edition other than PresidentialTones.pdf, which the sibling
+# `icel-chants-2010` row holds. Each entry below names the specific artifact
+# it was read from in `verified_url`; no single `artifact_id` is carried here
+# because the row attests to the edition and not to one file of it.
+label = "The approved English of The Roman Missal (ICEL, 2010), read in ICEL's Music for the Roman Missal chant sheets"
+attests = "reimpressio-emendata-2008"
+attests_kind = "title-page-statement"
+attests_basis = """
+Every chant sheet in ICEL's Music for the Roman Missal library carries at the
+foot of every page the notice "The English translation and chants of The Roman
+Missal (c) 2010, International Commission on English in the Liturgy
+Corporation. All rights reserved." That is the rightsholder's own statement
+that these are the words of the Roman Missal, and the act history carries the
+Latin state those words translate as `reimpressio-emendata-2008`, the 2008
+emended reprinting of the third typical edition. The edge is drawn on each
+document's own page statement and on nothing else, which is why
+`attests_kind` is `title-page-statement` and not the printing itself: these
+are chant sheets, not typical editions.
+
+WHAT THIS ROW DOES NOT ATTEST. The chant sheets are tone settings for cantors
+and celebrants, not a missal and not an excerpt of the Proper of Time in the
+ordinary sense. They carry the English of the ceremonial items they set --
+solemn intercessions, the Showing of the Holy Cross, the Exsultet, the Litany
+of the Saints, blessings of fire and water -- but set to chant, with
+syllabification, neumes, and pointing marks that are performance notation and
+not orthography. They must never be cited as the Missal itself or as a ritual
+edition.
+"""
+rights = "permission"
+rights_jurisdiction = "United States"
+rights_basis = """
+ICEL's own standing grant, on the same basis and the same six conditions as the
+`icel-chants-2010` and `icel-antiphonary-2010` rows above. The publisher here is
+the rightsholder, which is why these are the highest tier of exemplar available
+for the texts they carry: nothing establishes that these are the promulgated
+words better than the owner's own copy of them. The grant is settled once, with
+its citations, at
+src/sources/inventories/icel-web-permission-rights-v1.toml; cite that record
+rather than reasoning from a web page again. The artifact records are
+storage = remote and no bytes are retained here.
+
+Note the acknowledgment form: text taken from these files is reproduced under
+the "English translation AND CHANTS" notice printed on them, not the plain
+"English translation" notice of the Missal at large or of the FDLC reprints.
+"""
+acknowledgement = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+role = """
+THE APPROVED TRANSLATION, read in the rightsholder's own chant sheets. The
+Good Friday Solemn Intercessions I through X, the Showing of the Holy Cross,
+and other ceremonial items of the Easter Triduum stand on this row, each read
+from the text layer of the specific chant sheet named in its `verified_url`
+and de-syllabified -- chant pointing hyphenates across neumes and adds graves
+and acutes that are performance marks, not orthography. Each entry states
+exactly which marks were removed at which words. Nothing else was altered, and
+no line break was invented.
+
+The text is the approved ICEL English of the Roman Missal, 2010, and is
+presented here under ICEL's standing permission for a free non-commercial
+website. It is the 2010-2012 state: the intercession prayers end "Through
+Christ our Lord" and carry no conclusion affected by the Prefect's letter of
+May 2020.
+"""
+caution = "The approved English translation of The Roman Missal, © 2010 International Commission on English in the Liturgy Corporation, reproduced under ICEL's standing permission for a free non-commercial website and subject to its conditions; it is presented here for prayer, study and reference and this site is not an approved liturgical book, not a ritual edition, and neither sponsored nor endorsed by ICEL. It was read in ICEL's Music for the Roman Missal chant sheets, tone settings and not the Missal, and the text was de-syllabified from chant pointing."
+
 # ---------------------------------------------------------------------------
 # ENTRIES. Eighteen slots, in the order the liturgical year takes them.
 #
@@ -6118,6 +6186,352 @@ Sitting at the feast of love,
 We may see Thee face to face.
 '''
 
+# ---------------------------------------------------------------------------
+# Good Friday Solemn Intercessions I-X and the Showing of the Holy Cross,
+# read in ICEL's Music for the Roman Missal chant sheets (icel-music-2010).
+# Each intercession PDF carries one intention's English set to chant; the
+# text was de-syllabified from chant pointing (hyphenation across neumes,
+# graves and acutes as performance marks) and the people's "R. Amen" is not
+# carried, as on every oration row in this file.
+# ---------------------------------------------------------------------------
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession I: For Holy Church"
+incipit = "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / I. For Holy Church"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday1.pdf"
+witness_note = """
+Read from the text layer of GoodFriday1.pdf, under the heading recorded above.
+The text layer interleaves musical notation symbols with the English; the words
+were extracted by discarding all non-language symbols and joining syllabified
+words. Chant pointing hyphenates across neumes -- e.g., 'tranquili-ty',
+'qui-et', 'na-tions', 'mer-cy', 'confess-ing', 'al-might-y', 'Al-might-y',
+'ev-er-liv-ing' -- and adds graves and acutes that are performance marks, not
+orthography; all such marks were removed and no word was altered. The file
+carries no printed pagination, so no `verified_printed_page` is recorded. The
+deacon's invitation and the priest's prayer are carried as one text, separated
+by a blank line, as the Latin proper carries them. The people's "R. Amen" is a
+response and is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray, dearly beloved, for the holy Church of God, that our God and Lord be pleased to give her peace, to guard her and to unite her throughout the whole world and grant that, leading our life in tranquillity and quiet, we may glorify God the Father almighty.
+
+Almighty ever-living God, who in Christ revealed your glory to all the nations, watch over the works of your mercy, that your Church, spread throughout all the world, may persevere with steadfast faith in confessing your name. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession II: For the Pope"
+incipit = "Oremus et pro beatissimo Papa nostro N."
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / II. For the Pope"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday2.pdf"
+witness_note = """
+Read from the text layer of GoodFriday2.pdf, under the heading recorded above.
+De-syllabified as on the row above: 'Or-der', 'Bish-ops', 'ho-ly', 'Peo-ple',
+'Al-might-y', 'ev-er-liv-ing', 'found-ed', 'gov-erned' were joined. The file
+carries no printed pagination. The people's "R. Amen" is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for our most Holy Father Pope N., that our God and Lord, who chose him for the Order of Bishops, may keep him safe and unharmed for the Lord's holy Church, to govern the holy People of God.
+
+Almighty ever-living God, by whose decree all things are founded, look with favor on our prayers and in your kindness protect the Pope chosen for us, that, under him, the Christian people, governed by you their maker, may grow in merit by reason of their faith. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession III: For all orders and degrees of the faithful"
+incipit = "Oremus et pro Episcopo nostro N."
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / III. For all orders and degrees of the faithful"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday3.pdf"
+witness_note = """
+Read from the text layer of GoodFriday3.pdf, under the heading recorded above.
+De-syllabified: 'faith-ful', 'peo-ple', 'Al-might-y', 'ev-er-liv-ing',
+'sanctified', 'gov-erned', 'ministers', 'faithfully' were joined. The file
+carries no printed pagination. The people's "R. Amen" is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for our Bishop N., for all Bishops, Priests, and Deacons of the Church and for the whole of the faithful people.
+
+Almighty ever-living God, by whose Spirit the whole body of the Church is sanctified and governed, hear our humble prayer for your ministers, that, by the gift of your grace, all may serve you faithfully. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession IV: For catechumens"
+incipit = "Oremus et pro catechumenis (nostris)"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IV. For catechumens"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday4.pdf"
+witness_note = """
+Read from the text layer of GoodFriday4.pdf, under the heading recorded above.
+De-syllabified: 'catechumens', 'mer-cy', 'rebirth', 'Jesus', 'Al-might-y',
+'ev-er-liv-ing', 'offspring', 'catechumens', 'adopted', 'children' were joined.
+The ligature in 'offspring' was resolved to 'ff'. The file carries no printed
+pagination. The people's "R. Amen" is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for (our catechumens), that our God and Lord may open wide the ears of their inmost hearts and unlock the gates of his mercy, that, having received forgiveness of all their sins through the waters of rebirth, they, too, may be one with Christ Jesus our Lord.
+
+Almighty ever-living God, who make your Church ever fruitful with new offspring, increase the faith and understanding of (our catechumens), that, reborn in the font of Baptism, they may be added to the number of your adopted children. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession V: For the unity of Christians"
+incipit = "Oremus et pro universis fratribus in Christum credentibus"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / V. For the unity of Christians"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday5.pdf"
+witness_note = """
+Read from the text layer of GoodFriday5.pdf, under the heading recorded above.
+De-syllabified: 'believe', 'together', 'Al-might-y', 'ev-er-liv-ing',
+'scattered', 'gathered', 'flock', 'charity' were joined. The text layer
+rendered 'scattered' as 'scaEered' and 'flock' with a fl ligature; both were
+resolved. The file carries no printed pagination. The people's "R. Amen" is not
+carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for all our brothers and sisters who believe in Christ, that our God and Lord may be pleased, as they live the truth, to gather them together and keep them in his one Church.
+
+Almighty ever-living God, who gather what is scattered and keep together what you have gathered, look kindly on the flock of your Son, that those whom one Baptism has consecrated may be joined together by integrity of faith and united in the bond of charity. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VI: For the Jewish people"
+incipit = "Oremus et pro Iudaeis"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VI. For the Jewish People"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday6.pdf"
+witness_note = """
+Read from the text layer of GoodFriday6.pdf, under the heading recorded above.
+De-syllabified: 'Jewish', 'people', 'covenant', 'Al-might-y', 'ev-er-liv-ing',
+'Abraham', 'descendants', 'graciously', 'redemption' were joined. The text
+layer rendered 'first' with a fi ligature and 'attain' as 'aHain'; both were
+resolved. The file carries no printed pagination. The people's "R. Amen" is not
+carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for the Jewish people, to whom the Lord our God spoke first, that he may grant them to advance in love of his name and in faithfulness to his covenant.
+
+Almighty ever-living God, who bestowed your promises on Abraham and his descendants, graciously hear the prayers of your Church, that the people you first made your own may attain the fullness of redemption. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VII: For those who do not believe in Christ"
+incipit = "Oremus et pro iis qui in Christum non credunt"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VII. For those who do not believe in Christ"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday7.pdf"
+witness_note = """
+Read from the text layer of GoodFriday7.pdf, under the heading recorded above.
+De-syllabified: 'believe', 'Holy', 'Spirit', 'salvation', 'Al-might-y',
+'ev-er-liv-ing', 'find' were joined. The fi ligature in 'find' was resolved.
+The file carries no printed pagination. The people's "R. Amen" is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for those who do not believe in Christ, that, enlightened by the Holy Spirit, they, too, may enter on the way of salvation.
+
+Almighty ever-living God, grant to those who do not confess Christ that, by walking before you with a sincere heart, they may find the truth, and that we ourselves, being constant in mutual love and striving to understand more fully the mystery of your life, may be made more perfect witnesses to your love in the world. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession VIII: For those who do not believe in God"
+incipit = "Oremus et pro iis qui Deum non agnoscunt"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / VIII. For those who do not believe in God"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday8.pdf"
+witness_note = """
+Read from the text layer of GoodFriday8.pdf, under the heading recorded above.
+De-syllabified: 'acknowledge', 'sincerity', 'himself', 'Al-might-y',
+'ev-er-liv-ing', 'always', 'finding' were joined. The fi ligature in 'finding'
+was resolved. The file carries no printed pagination. The people's "R. Amen"
+is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for those who do not acknowledge God, that, following what is right with sincerity of heart, they may find the way to God himself.
+
+Almighty ever-living God, who created all people to seek you always by desiring you and, by finding you, come to rest, grant, we pray, that, despite every harmful obstacle, all may recognize the signs of your fatherly love and the witness of the good works done by those who believe in you, and so in gladness confess you, the one true God and Father of our human race. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession IX: For those in public office"
+incipit = "Oremus et pro omnibus rempublicam moderantibus"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IX. For those in public office"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday9.pdf"
+witness_note = """
+Read from the text layer of GoodFriday9.pdf, under the heading recorded above.
+De-syllabified: 'public', 'office', 'freedom', 'Al-might-y', 'ev-er-liv-ing',
+'peoples', 'over', 'religion', 'secure' were joined. The ff ligature in
+'office' was resolved. The file carries no printed pagination. The people's
+"R. Amen" is not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray also for those in public office, that our God and Lord may direct their minds and hearts according to his will for the true peace and freedom of all.
+
+Almighty ever-living God, in whose hand lies every human heart and the rights of peoples, look with favor, we pray, on those who govern with authority over us, that throughout the whole world, the prosperity of peoples, the assurance of peace, and freedom of religion may through your gift be made secure. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Solemn Intercession X: For those in tribulation"
+incipit = "Oremus, dilectissimi nobis, Deum Patrem omnipotentem"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / X. For those in tribulation"
+verified_url = "https://www.icelweb.org/musicfolder/GoodFriday10.pdf"
+witness_note = """
+Read from the text layer of GoodFriday10.pdf, under the heading recorded above.
+De-syllabified: 'almighty', 'errors', 'banish', 'disease', 'hunger', 'prisons',
+'loosen', 'fetters', 'travelers', 'safety', 'pilgrims', 'return', 'salvation',
+'dying', 'Almighty', 'ever-living', 'mourners', 'before', 'rejoice', 'mercy'
+were joined. The file carries no printed pagination. The people's "R. Amen" is
+not carried.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Let us pray, dearly beloved, to God the Father almighty, that he may cleanse the world of all errors, banish disease, drive out hunger, unlock prisons, loosen fetters, granting to travelers safety, to pilgrims return, health to the sick, and salvation to the dying.
+
+Almighty ever-living God, comfort of mourners, strength of all who toil, may the prayers of those who cry out in any tribulation come before you, that all may rejoice, because in their hour of need your mercy was at hand. Through Christ our Lord.
+"""
+
+[[entries]]
+mass = "good-friday"
+form = ""
+proper = "Showing of the Holy Cross"
+incipit = "Ecce lignum Crucis"
+witness = "icel-music-2010"
+exemplar_tier = "icel-published"
+witness_relation = "approved-translation"
+verified_on_page = "2026-08-22"
+verified_artifact_page = 1
+verified_heading = "The Showing of the Holy Cross"
+verified_url = "https://www.icelweb.org/musicfolder/ShowingCross.pdf"
+witness_note = """
+Read from the text layer of ShowingCross.pdf, under the heading recorded above.
+The sheet prints the chant in three tones (simple, solemn, and an alternative);
+the English text is identical in all three and was taken once. De-syllabified:
+'Ec-ce', 'li-gnum', 'Cru-cis', 'salvation', 'of', 'world', 'Come', 'adore' were
+joined. The Latin chant incipit 'Ecce lignum Crucis' is printed beside the
+English. The response 'R. Come, let us adore' is carried because it is part of
+the antiphonal text the proper carries, not a congregational acclamation like
+'Amen'. The file carries no printed pagination.
+"""
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+notice = "The English translation and chants of The Roman Missal © 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+text = """
+Behold the wood of the Cross, on which hung the salvation of the world. R. Come, let us adore.
+"""
+
 [[untranslated]]
 mass = "advent-1"
 form = ""
@@ -6392,72 +6806,6 @@ reason = "no publishable English: the approved translation is ICEL's, it is in c
 mass = "good-friday"
 form = ""
 proper = "Prayer (alternative)"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession I: For Holy Church"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession II: For the Pope"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession III: For all orders and degrees of the faithful"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession IV: For catechumens"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession V: For the unity of Christians"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession VI: For the Jewish people"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession VII: For those who do not believe in Christ"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession VIII: For those who do not believe in God"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession IX: For those in public office"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Solemn Intercession X: For those in tribulation"
-reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
-
-[[untranslated]]
-mass = "good-friday"
-form = ""
-proper = "Showing of the Holy Cross"
 reason = "no publishable English: the approved translation is ICEL's, it is in copyright, and this project has no permission for it. See src/sources/inventories/liturgical-english-rights-v1.toml."
 
 [[untranslated]]
