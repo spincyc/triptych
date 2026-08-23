@@ -10154,25 +10154,72 @@ Through Christ our Lord.
 """
 
 
+# --- liturgies.net ICEL 2010 orations (Trinity Sunday, 2026-08-22) ---
+
+[[entries]]
+mass = "most-holy-trinity"
+form = ""
+proper = "Prayer over the Offerings"
+incipit = "Sanctifica, quaesumus, Domine Deus noster, per tui nominis invocationem, haec munera"
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-22"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+Sanctify by the invocation of your name,
+we pray, O Lord our God,
+this oblation of our service,
+and by it make of us an eternal offering to you.
+Through Christ our Lord.
+"""
+
+
+# --- liturgies.net ICEL 2010 Gospel Acclamations (round 7) ---
+
+[[entries]]
+mass = "nativity"
+form = ""
+proper = "Gospel Acclamation"
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-22"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+the Savior of the world will reign over us.
+"""
+
+[[entries]]
+mass = "easter-3"
+form = ""
+proper = "Gospel Acclamation"
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-22"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+Surrexit Christus, qui creavit omnia et misertus est humano generi.
+"""
+
+
 [[untranslated]]
 mass = "nativity"
 form = "Vigil Mass"
 proper = "Gospel Acclamation"
 reason = "no publishable English as yet: the approved translation is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text."
-
-
-
-[[untranslated]]
-mass = "nativity"
-form = "Mass during the Day"
-proper = "Gospel Acclamation"
-reason = "no publishable English as yet: the approved translation is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text."
-
-
-
-
-
-
 
 
 
@@ -11399,18 +11446,7 @@ form = ""
 proper = "Prayer over the Offerings"
 reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text. Absence within a declared boundary is not proof of absence from the tradition."
 
-[[untranslated]]
-mass = "most-holy-trinity"
-form = ""
-proper = "Prayer over the Offerings"
-reason = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text. Absence within a declared boundary is not proof of absence from the tradition."
 
-
-[[untranslated]]
-mass = "easter-3"
-form = ""
-proper = "Gospel Acclamation"
-reason = "the acclamation varies by year and only Year C is composed: Years A and B set Luke 24:32 and take their English from the bible, and Year C sets Surrexit Christus, qui creavit omnia, et misertus est humano generi. That one line is the reform's own and its approved English is ICEL's, in copyright and not this project's to publish; the ancient-sacramentary route that reached seventy of this calendar's orations does not reach an acclamation, because the boundary corpus is sacramentaries and holds no lectionary. Recorded here because the census counted this slot as unaccounted -- neither translated nor refused -- once propers carrying a `mixed` or cycle-varying source came into its scope, and an unaccounted slot reads as work outstanding when this one is a rights decision like the two hundred and twelve beside it."
 
 [[untranslated]]
 mass = "ot-15"
