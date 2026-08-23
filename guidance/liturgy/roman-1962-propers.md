@@ -15,8 +15,8 @@ the corresponding GPT `48`–`50` targets on 2026-08-20;
 owns the boundary, and states how to derive what each provider has actually
 published.
 
-- The temporal series uses 65 temporal identities in a stable Advent-first repository order: `01` is the First Sunday of Advent and `65` is the Twenty-fourth and Last Sunday after Pentecost. Stable feasts of the Lord (Nativity, Epiphany, Baptism, Ascension, Corpus Christi, Sacred Heart) are inserted inline at their liturgical-year positions. These IDs are catalog identities, not the occurrence schedule of a civil year.
-- `61` through `64` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
+- The temporal series uses 68 temporal identities in a stable Advent-first repository order: `01` is the First Sunday of Advent and `68` is the Twenty-fourth and Last Sunday after Pentecost. The Sacred Triduum (`27`–`29`) is numbered inline between Palm Sunday (`26`) and Easter Sunday (`30`). Stable feasts of the Lord (Nativity, Epiphany, Baptism, Ascension, Corpus Christi, Sacred Heart) are inserted inline at their liturgical-year positions. These IDs are catalog identities, not the occurrence schedule of a civil year.
+- `64` through `67` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
 - `F` identifies a general-calendar feast assigned to Sunday without a stable temporal ordinal. `F01` is Our Lord Jesus Christ the King, which the Missal prints in the Sanctorale. Verify its printed place and occurrence rule; do not invent a permanent Sunday number for a fixed-date, movable, or local feast.
 - `M` identifies a ritual, votive, or other non-Sunday guide. The prefix does not state rank, permission, or authority to replace an occurring Mass.
 - Identify every work by the 1962 edition, printed formulary heading and rank, place in the book, and governing occurrence or use rule—not by filename or a modern civil date. Do not merge distinct formularies. Record seasonal substitutions, ritual additions, blessings, or alternate conclusions wherever they govern the guide.
@@ -28,13 +28,16 @@ must reproduce this order exactly; neither may infer, rename, or renumber it.
 On 2026-08-22 the maintainer authorized a one-time renumber from the original
 Lent-first order (where `01` was the First Sunday of Lent and `52` was
 Quinquagesima) to the current Advent-first liturgical-year order (where `01`
-is the First Sunday of Advent and `65` is the Last Sunday after Pentecost).
+is the First Sunday of Advent and `68` is the Last Sunday after Pentecost).
 The renumber promoted the four resumed-Sunday R-variants (`46R`–`49R`) to
-full identities (`61`–`64`), inserted stable feasts of the Lord inline at
+full identities (`64`–`67`), inserted stable feasts of the Lord inline at
 their liturgical-year positions, moved Christ the King from a spine number
 to `F01`, and renamed all published leaf paths, PDFs, web editions, and
-release records. This paragraph records the authorization; future changes
-still require explicit maintainer approval.
+release records. A subsequent authorization on 2026-08-22 promoted the
+three Sacred Triduum identities (`T01`–`T03`) to numbered spine positions
+(`27`–`29`) between Palm Sunday and Easter Sunday, shifting entries `27`
+through `65` to `30` through `68`. This paragraph records the authorizations;
+future changes still require explicit maintainer approval.
 
 | IDs | Formularies, in order |
 | --- | --- |
@@ -44,12 +47,13 @@ still require explicit maintainer approval.
 | 13–17 | Second through Sixth Sundays after the Epiphany |
 | 18–20 | Septuagesima; Sexagesima; Quinquagesima |
 | 21–26 | First through Fourth Sundays of Lent; First Sunday of the Passion; Second Sunday of the Passion (Palm Sunday) |
-| 27–35 | Easter Sunday; Low Sunday; Second through Fifth Sundays after Easter; Ascension of the Lord; Sunday after the Ascension; Pentecost Sunday |
-| 36–37 | Trinity Sunday; Corpus Christi |
-| 38–60 | Most Sacred Heart of Jesus; Second through Twenty-third Sundays after Pentecost |
-| 61–65 | Resumed Third through Sixth Sundays after the Epiphany; Twenty-fourth and Last Sunday after Pentecost |
+| 27–29 | Mass of the Lord's Supper; Solemn Liturgical Action of the Passion and Death of the Lord; Easter Vigil |
+| 30–38 | Easter Sunday; Low Sunday; Second through Fifth Sundays after Easter; Ascension of the Lord; Sunday after the Ascension; Pentecost Sunday |
+| 39–40 | Trinity Sunday; Corpus Christi |
+| 41–63 | Most Sacred Heart of Jesus; Second through Twenty-third Sundays after Pentecost |
+| 64–68 | Resumed Third through Sixth Sundays after the Epiphany; Twenty-fourth and Last Sunday after Pentecost |
 
-The resumed Sundays `61` through `64` are full identities, not variants.
+The resumed Sundays `64` through `67` are full identities, not variants.
 Each is a complete, separately sourced formulary that combines the relevant
 Epiphany orations, Epistle, and Gospel with the chants appointed for resumed
 use after Pentecost. Fixed or movable universal feasts that can replace a
@@ -57,24 +61,13 @@ temporal Sunday remain in the `F` series and never renumber this registry.
 `F01` is Our Lord Jesus Christ the King. `M01` and later `M` identities remain
 a separate non-Sunday series.
 
-### Sacred Triduum identities
-
-The stable temporal series remains `01`--`65`. The following permanent
-non-Sunday identities complete the 1962 Sacred Triduum without renumbering or
-reinterpreting that series:
-
-| ID | Required slug stem | 1962 identity |
-| --- | --- | --- |
-| T01 | `t01-mass-of-the-lords-supper` | Mass of the Lord's Supper |
-| T02 | `t02-solemn-liturgical-action-of-the-passion-and-death-of-the-lord` | Solemn Liturgical Action of the Passion and Death of the Lord |
-| T03 | `t03-easter-vigil` | Easter Vigil |
-
-Each is one planned proper-guide target under `propers/temporal/`. These are
-edition-identified English catalog names, not an attempt to impose the
-postconciliar taxonomy on the 1962 books. A source audit retains a collation
-note if the controlling edition's exact printed capitalization differs.
-Reader-facing catalogs print only the celebration names, not the stable `T`
-identifiers.
+The Sacred Triduum entries `27` through `29` (Mass of the Lord's Supper,
+Solemn Liturgical Action of the Passion and Death of the Lord, Easter Vigil)
+were promoted from separate `T`-series identities to numbered spine positions
+on 2026-08-22. They are planned proper-guide targets under
+`propers/temporal/`, ordered between Palm Sunday (`26`) and Easter Sunday
+(`30`). These are edition-identified English catalog names, not an attempt to
+impose the postconciliar taxonomy on the 1962 books.
 
 ## Source Records and Text Control
 

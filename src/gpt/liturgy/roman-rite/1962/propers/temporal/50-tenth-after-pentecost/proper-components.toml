@@ -1,0 +1,115 @@
+schema = 1
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis"
+web = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+
+[[components]]
+key = "orientation"
+kind = "front-matter"
+path = "main.tex"
+modes = ["research", "synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "per-element-sweep"
+kind = "proper-treatment"
+path = "main.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/synthesis/10-themes-and-movement.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "integrated-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/20-integrated-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "source-grounded-synthesis"
+kind = "source-grounded-synthesis"
+path = "sections/35-source-grounded-synthesis.tex"
+modes = ["research", "synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "main.tex"
+modes = ["research", "synthesis"]
+depends_on = ["notable-and-quotable"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "notable-and-quotable"
+kind = "notable-quotable"
+path = "sections/40-notable.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["gospel", "introit"]
+references = []
+
+[[components]]
+key = "terminal-apparatus"
+kind = "terminal-apparatus"
+path = "main.tex"
+modes = ["research", "synthesis"]
+depends_on = ["exploratory-synthesis"]
+element_keys = []
+references = []
+
+[[relations]]
+key = "many-gifts-one-source-common-good"
+element_keys = ["epistle", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "humble-prayer-exalted-by-mercy"
+element_keys = ["collect", "gospel", "offertory"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "protected-vision-equitable-judgment"
+element_keys = ["gradual", "gospel"]
+evidence = ["source-grounded-synthesis"]
+
+[[relations]]
+key = "care-cast-vow-returned"
+element_keys = ["introit", "alleluia", "offertory"]
+evidence = ["exploratory-proposal"]

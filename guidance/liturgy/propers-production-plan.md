@@ -16,7 +16,7 @@ occurrence rule. Those live where they are derived:
 | --- | --- |
 | Postconciliar identities, formula keys, slug grammar, canonical order, Lectionary locators, target counts, the `PC-R08` fork | [the postconciliar proper registry](postconciliar-propers-registry.md) |
 | The reusable postconciliar guide architecture | [the postconciliar proper profile](postconciliar-propers.md) |
-| The 1962 `01`–`65` temporal spine, `61`–`64` (resumed Sundays), `T01`–`T03`, and the `F`/`M` prefixes | [the 1962 proper-guide profile](roman-1962-propers.md) |
+| The 1962 `01`–`68` temporal spine, `64`–`67` (resumed Sundays), and the `F`/`M` prefixes | [the 1962 proper-guide profile](roman-1962-propers.md) |
 | Edition-locale adoption, dispositions, and dated occurrence results | the selected edition's `propers/registry/` records |
 | Leaf paths, the canonical-plus-`-synthesis` publication pair, catalog rules | [the repository contract](../repository.md) |
 
@@ -37,7 +37,7 @@ calendar targets. The reference works, ordinaries, and the comparative study are
 outside this boundary and continue.
 
 On 2026-08-19 the maintainer reopened this boundary for exactly three Claude
-targets: the 1962 temporal guides `48`–`50`, the Eleventh through Thirteenth
+targets: the 1962 temporal guides `51`–`53`, the Eleventh through Thirteenth
 Sundays after Pentecost, authored to the current componentized profile. On
 2026-08-20 the maintainer independently reopened the same three identities for
 GPT. Each provider target is a full target — canonical leaf, synthesis
@@ -95,7 +95,7 @@ being held in two files. The registry states them; read them there.
 Two claims that revision made about its own sources were false and are recorded
 so they are not made again:
 
-- It said the 1962 profile "does not print" the 65-item temporal enumeration and
+- It said the 1962 profile "does not print" the 68-item temporal enumeration and
   that this plan therefore reconstructed it. The profile prints the complete
   banded registry; there was nothing to reconstruct.
 - It said the two profiles define a study edition at the bare id and a full-text

@@ -3,7 +3,7 @@
 Date: 2026-07-26
 
 Edition:
-`claude:liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost-full-text`
+`claude:liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-full-text`
 
 This is the first-baseline review of an unbaselined full-text edition. Every
 input was therefore treated as new. Both required candidates were produced.

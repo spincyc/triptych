@@ -179,7 +179,7 @@ parent’s Catechism bindings.
 |---|---|---|---|
 | `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | 605; 1066–1209; 1322–1419; 1544–1553 | official-control | archive-en; never 1962 textual or rubrical control |
 | `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | core 1601, 1623, 1638–1642, 1652; analogue 1655–1658, 1663, 1666, 2378–2379 | currentness-control and analogue | web-en; keep the proposal-search loci separate from core controls |
-| `liturgy/roman-rite/1962/propers/temporal/45-eighth-after-pentecost` | 1127–1129; 1385; 1391–1395; 1402–1405 | official-control | web-en |
+| `liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost` | 1127–1129; 1385; 1391–1395; 1402–1405 | official-control | web-en |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | 1066–1209; 1322–1419; 1536–1666, especially 1127–1128 and 1362–1381 | official-control | work; the record does not pin language, edition, URL, or date |
 | `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | 185–1065; 1066–1209; 1213–1284; 1322–1419 | official-control | archive-en; bibliography omits matrix-only 185–1065 and 1213–1284 |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a` | 781–786 | context | work |

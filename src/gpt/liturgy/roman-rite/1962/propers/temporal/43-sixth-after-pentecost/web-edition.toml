@@ -1,9 +1,0 @@
-schema = 1
-record_type = "web-edition"
-document = "liturgy/roman-rite/1962/propers/temporal/43-sixth-after-pentecost"
-
-eligibility = "conditional"
-basis = "diagram-dependent"
-blocking_constructs = ["tikzpicture"]
-rationale = "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced."
-reviewed = "2026-07-25"

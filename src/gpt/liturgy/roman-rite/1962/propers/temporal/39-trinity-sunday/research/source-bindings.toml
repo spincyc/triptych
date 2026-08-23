@@ -1,0 +1,44 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday"
+
+[[bindings]]
+source_id = "work.augustine.de-civitate-dei"
+loci = ["10.20"]
+role = "lead"
+states = ["cataloged"]
+context = "The legacy research record also uses City of God 10.20. That locus has not yet been inspected in a canonical passage record, so it remains a catalog-only lead and is not covered by the reviewed 10.5-6 bindings below."
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.10.5-6"
+loci = ["10.5-6"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both complete chapters were read in the exact retained 1871 Dods witness. They support the guide's bounded use of visible and interior sacrifice, mercy, personal offering, the redeemed city, and Christ the High Priest. This witness supplements rather than silently replaces the later NPNF/New Advent English cited by the guide."
+source_fingerprint = "sha256:656887cdeca9dd94a0c1de3e15400368956fa27922c7e981ce60aa90688d671c"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6"
+loci = ["10.5-6"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both complete Latin TEI chapter divisions and their apparatus were read for the same bounded doctrinal use. The CSEL witness controls the underlying Latin without claiming page-image collation, direct commentary on the Secret, or inspection of City of God 10.20."
+source_fingerprint = "sha256:f6e1e889bb4f2198ccebab9d7119d2edb9160c51892a0bc4fc9b8a202ab617b4"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Trinity Sunday formulary, printed pages 372-373, PDF pages 453-454"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Trinity Sunday formulary, printed pages 366-367, DjVu pages 443-444"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Internet Archive DjVu of the 1962 Benziger edition was compared as a secondary image witness; its variants and distinct pagination do not control the Vatican typical-edition transcription."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"

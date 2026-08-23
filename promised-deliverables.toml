@@ -1043,7 +1043,7 @@ state = "complete"
   criterion = "The five authorized GPT leaves receive substantive content redevelopment rather than date-only, layout-only, or quota-driven expansion."
   status = "pass"
   evidence = [
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/47-tenth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c",
@@ -1055,7 +1055,7 @@ state = "complete"
   criterion = "Publication-local audits document broad relevant source-family coverage, deep treatment of the strongest witnesses, material disagreements and limits, and consequential negative results."
   status = "pass"
   evidence = [
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/47-tenth-after-pentecost/research",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/research",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/research",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b/research",
     "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c/research",
@@ -1067,7 +1067,7 @@ state = "complete"
   criterion = "Every affected GPT research and synthesis PDF and canonical web edition is rebuilt, installed from a reviewed build, checked for source and metadata integrity, and visually inspected page by page."
   status = "pass"
   evidence = [
-    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/47-tenth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
     "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
     "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
     "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
@@ -1339,17 +1339,17 @@ state = "complete"
 [[deliverables]]
 id = "claude-eleventh-thirteenth-after-pentecost-2026-08-19"
 owner = "src/claude/liturgy/roman-rite/1962/propers/temporal"
-promise = "Author and publish componentized Claude proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 48-50) with deep and broad patristic reception research, shared-corpus enrichment, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows, under the maintainer's 2026-08-19 reopening of the closed temporal boundary for exactly these three targets."
+promise = "Author and publish componentized Claude proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 51-53) with deep and broad patristic reception research, shared-corpus enrichment, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows, under the maintainer's 2026-08-19 reopening of the closed temporal boundary for exactly these three targets."
 state = "complete"
 
   [[deliverables.requirements]]
   id = "three-claude-leaves"
-  criterion = "Three componentized Claude leaves 48-50 exist with facsimile-collated verified.md, retrieved.txt, complete research/scope.md reception matrices, and schema-2 source bindings."
+  criterion = "Three componentized Claude leaves 51-53 exist with facsimile-collated verified.md, retrieved.txt, complete research/scope.md reception matrices, and schema-2 source bindings."
   status = "pass"
   evidence = [
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/scope.md",
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/scope.md",
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/scope.md",
   ]
 
   [[deliverables.requirements]]
@@ -1357,9 +1357,9 @@ state = "complete"
   criterion = "Each leaf's research records document a broad documented search across the major relevant Greek and Latin patristic and later saintly corpora for every appointed passage, deep comparative treatment of checked witnesses at work and locus, and material negative results."
   status = "pass"
   evidence = [
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research",
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research",
-    "src/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research",
   ]
 
   [[deliverables.requirements]]
@@ -1378,23 +1378,23 @@ state = "complete"
   criterion = "All three Full and Synthesis PDFs are rebuilt, gate-checked, visually inspected page by page, and installed, and each canonical web edition is generated, reviewed against the installed PDF, and installed."
   status = "pass"
   evidence = [
-    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost.pdf",
-    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost.pdf",
-    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost.pdf",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost.md",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost.md",
-    "web/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost.md",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md",
   ]
 
   [[deliverables.requirements]]
   id = "catalog-and-release-links"
-  criterion = "Rows 48-50 of the Sunday calendar link the installed Claude Synthesis PDFs and web editions with stable publication markers, six release records exist, and release bindings are refreshed."
+  criterion = "Rows 51-53 of the Sunday calendar link the installed Claude Synthesis PDFs and web editions with stable publication markers, six release records exist, and release bindings are refreshed."
   status = "pass"
   evidence = [
     "library/traditional-latin-mass.md",
-    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost.json",
-    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost.json",
-    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json",
   ]
 
   [[deliverables.requirements]]
@@ -1408,12 +1408,12 @@ state = "complete"
 [[deliverables]]
 id = "gpt-eleventh-thirteenth-after-pentecost-2026-08-20"
 owner = "src/gpt/liturgy/roman-rite/1962/propers/temporal"
-promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 48-50) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
+promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 51-53) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
 state = "complete"
 
   [[deliverables.requirements]]
   id = "gpt-boundary-recorded"
-  criterion = "The 1962 proper-guide profile and production plan record the new GPT 48-50 exception without reopening any other target."
+  criterion = "The 1962 proper-guide profile and production plan record the new GPT 51-53 exception without reopening any other target."
   status = "pass"
   evidence = [
     "guidance/liturgy/roman-1962-propers.md",
@@ -1422,12 +1422,12 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "three-gpt-leaves"
-  criterion = "Three componentized GPT leaves 48-50 exist with facsimile-collated verified.md, focused retrieved.txt, complete research/scope.md reception matrices, and validated source bindings."
+  criterion = "Three componentized GPT leaves 51-53 exist with facsimile-collated verified.md, focused retrieved.txt, complete research/scope.md reception matrices, and validated source bindings."
   status = "pass"
   evidence = [
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]
 
   [[deliverables.requirements]]
@@ -1435,9 +1435,9 @@ state = "complete"
   criterion = "Every appointed passage receives documented full-context research and a broad search across the major relevant Greek and Latin patristic, medieval Doctoral, and later saintly corpora, with deep comparative treatment of retained witnesses, exact loci, material disagreements, doctrinal limits, and bounded negative results."
   status = "pass"
   evidence = [
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost/research/scope.md",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost/research/scope.md",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/scope.md",
   ]
 
   [[deliverables.requirements]]
@@ -1463,7 +1463,7 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "catalog-release-and-deployment"
-  criterion = "Rows 48-50 link the GPT Synthesis PDFs; their stable publication markers own the canonical Full PDFs and web editions; provider-qualified release records are validated; the exact outgoing range is publicly reviewable; and the resulting Pages deployment and affected live routes are verified."
+  criterion = "Rows 51-53 link the GPT Synthesis PDFs; their stable publication markers own the canonical Full PDFs and web editions; provider-qualified release records are validated; the exact outgoing range is publicly reviewable; and the resulting Pages deployment and affected live routes are verified."
   status = "pass"
   evidence = [
     "library/traditional-latin-mass.md",
@@ -1485,7 +1485,7 @@ state = "complete"
   status = "pass"
   evidence = [
     "guidance/liturgy/roman-1962-propers.md",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eleventh-after-pentecost",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-twelfth-after-pentecost",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-thirteenth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]

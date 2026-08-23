@@ -1,0 +1,28 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.10.5-6"
+loci = ["10.5-6"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both complete chapters were read in the exact retained 1871 Dods witness. They support the guide's bounded use of mercy as sacrifice, bodily and interior offering, the renewed mind, the redeemed city, and Christ the High Priest. This witness supplements rather than silently replaces the later NPNF/New Advent English cited by the guide."
+source_fingerprint = "sha256:656887cdeca9dd94a0c1de3e15400368956fa27922c7e981ce60aa90688d671c"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6"
+loci = ["10.5-6"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both complete Latin TEI chapter divisions and their apparatus were read for the same bounded doctrinal use. The CSEL witness controls the underlying Latin without claiming page-image collation or direct commentary on the Collect or Secret."
+source_fingerprint = "sha256:f6e1e889bb4f2198ccebab9d7119d2edb9160c51892a0bc4fc9b8a202ab617b4"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Fifth Sunday after Pentecost formulary, printed pages 383-384, PDF pages 464-465"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
