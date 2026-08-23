@@ -1,0 +1,8 @@
+{
+  "name": "worker-result",
+  "description": "Structured result from a linear or revision worker stage",
+  "required_fields": ["disposition", "summary"],
+  "valid_dispositions": ["PASS"],
+  "finding_fields": [],
+  "optional_fields": ["artifact_path", "notes"]
+}

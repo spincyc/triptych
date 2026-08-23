@@ -1,0 +1,8 @@
+{
+  "name": "evaluator-result",
+  "description": "Structured result from an evaluator stage (content or visual)",
+  "required_fields": ["disposition", "findings"],
+  "valid_dispositions": ["PASS", "CHANGES_REQUIRED", "BLOCKED"],
+  "finding_fields": ["id", "severity", "location", "problem", "required_result"],
+  "optional_fields": ["summary"]
+}
