@@ -10215,14 +10215,6 @@ Surrexit Christus, qui creavit omnia et misertus est humano generi.
 """
 
 
-[[untranslated]]
-mass = "nativity"
-form = "Vigil Mass"
-proper = "Gospel Acclamation"
-reason = "no publishable English as yet: the approved translation is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text."
-
-
-
 
 [[entries]]
 mass = "palm-sunday"
@@ -11603,6 +11595,27 @@ source_id = "edition.international-commission-on-english-in-the-liturgy.music-fo
 text = """
 Look with favor, we pray, O Lord, upon the sacrificial gifts offered here, that, celebrating in mystery the Passion of your Son, we may honor it with loving devotion. Through Christ our Lord.
 """
+
+# --- liturgies.net ICEL 2010 Gospel Acclamation (round 8, nativity) ---
+
+[[entries]]
+mass = "nativity"
+form = ""
+proper = "Gospel Acclamation"
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-22"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+Tomorrow the wickedness of the earth will be destroyed: /
+the Savior of the world will reign over us.
+"""
+
 
 [[untranslated]]
 mass = "pentecost"
