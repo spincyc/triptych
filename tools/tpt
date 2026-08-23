@@ -3,16 +3,22 @@
 
 Usage:
   tpt <tool> [<tool args>...]
+  tpt <workflow-id> <doc-id> {seed,advance,status,intervene,debt} [options]
+  tpt workflow {list,show <id>}
   tpt --list [--json]
   tpt --info <tool> [--json]
   tpt --path <tool>
   tpt --check
 
 Tool ids never begin with a dash, so the launcher's own options can never be
-shadowed by a registry entry.
+shadowed by a registry entry.  Workflow ids are checked after the tool
+registry, so no existing tool can be shadowed; a startup check rejects any
+workflow id that collides with a registered tool id.
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
 from ``tmt.json`` and dispatches to the implementation at ``tools/<tool>``.
+Workflow dispatch is handled by ``scripts/_workflow.py``, keeping this
+launcher thin.
 """
 
 from __future__ import annotations
@@ -45,6 +51,9 @@ from _tooling import (  # noqa: E402
     Example,
     with_examples,
 )
+from _workflow import WorkflowEngine, WorkflowError  # noqa: E402
+
+WORKFLOWS_DIR = ROOT / "workflows"
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 #
@@ -294,6 +303,182 @@ def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
     return 128 - code if code < 0 else code
 
 
+# ---------------------------------------------------------------------------
+# Workflow dispatch
+# ---------------------------------------------------------------------------
+
+def _workflow_engine() -> WorkflowEngine:
+    """Build a workflow engine rooted at this repository."""
+    return WorkflowEngine(ROOT, WORKFLOWS_DIR)
+
+
+def _workflow_ids() -> set[str]:
+    """Return the set of registered workflow ids."""
+    try:
+        engine = _workflow_engine()
+        return {w["id"] for w in engine.list_workflows()}
+    except Exception:
+        return set()
+
+
+def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
+    """Dispatch a workflow command.
+
+    The grammar is:
+        tpt <workflow-id> <doc-id> {seed,advance,status,intervene,debt} [opts]
+    """
+    engine = _workflow_engine()
+
+    if not rest:
+        raise ToolError(
+            f"workflow {workflow_id}: missing document id and action\n"
+            f"usage: tpt {workflow_id} <doc-id> "
+            f"{{seed,advance,status,intervene,debt}} [options]"
+        )
+
+    doc_id = rest[0]
+    action_args = rest[1:]
+
+    if not action_args:
+        raise ToolError(
+            f"workflow {workflow_id}: missing action\n"
+            f"usage: tpt {workflow_id} {doc_id} "
+            f"{{seed,advance,status,intervene,debt}} [options]"
+        )
+
+    action = action_args[0]
+    opts = action_args[1:]
+
+    if action == "seed":
+        return _workflow_seed(engine, workflow_id, doc_id, opts)
+    if action == "advance":
+        return _workflow_advance(engine, doc_id, opts)
+    if action == "status":
+        return _workflow_status(engine, doc_id, opts)
+    if action == "intervene":
+        return _workflow_intervene(engine, doc_id, opts)
+    if action == "debt":
+        return _workflow_debt(engine, doc_id, opts)
+
+    raise ToolError(
+        f"unknown workflow action: {action}\n"
+        f"actions: seed, advance, status, intervene, debt"
+    )
+
+
+def _workflow_seed(
+    engine: WorkflowEngine, workflow_id: str, doc_id: str, opts: list[str]
+) -> int:
+    provider = "gpt"
+    i = 0
+    while i < len(opts):
+        if opts[i] == "--provider" and i + 1 < len(opts):
+            provider = opts[i + 1]
+            i += 2
+        else:
+            raise ToolError(f"seed: unknown option: {opts[i]}")
+    result = engine.seed(workflow_id, {"proper": doc_id, "provider": provider})
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0
+
+
+def _workflow_advance(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    if not opts:
+        raise ToolError("advance: missing run-id")
+    run_id = opts[0]
+    rest = opts[1:]
+    result_path = None
+    run_gate = False
+    i = 0
+    while i < len(rest):
+        if rest[i] == "--result" and i + 1 < len(rest):
+            result_path = rest[i + 1]
+            i += 2
+        elif rest[i] == "--run-gate":
+            run_gate = True
+            i += 1
+        else:
+            raise ToolError(f"advance: unknown option: {rest[i]}")
+    result = engine.advance(run_id, result_path=result_path, run_gate=run_gate)
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0
+
+
+def _workflow_status(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    if not opts:
+        raise ToolError("status: missing run-id")
+    run_id = opts[0]
+    result = engine.status(run_id)
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0
+
+
+def _workflow_intervene(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    if not opts:
+        raise ToolError("intervene: missing run-id")
+    run_id = opts[0]
+    rest = opts[1:]
+    text = None
+    stage = None
+    i = 0
+    while i < len(rest):
+        if rest[i] == "--text" and i + 1 < len(rest):
+            text = rest[i + 1]
+            i += 2
+        elif rest[i] == "--stage" and i + 1 < len(rest):
+            stage = rest[i + 1]
+            i += 2
+        else:
+            raise ToolError(f"intervene: unknown option: {rest[i]}")
+    if text is None:
+        raise ToolError("intervene: --text is required")
+    result = engine.intervene(run_id, text, stage=stage)
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0
+
+
+def _workflow_debt(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    if not opts:
+        raise ToolError("debt: missing run-id")
+    run_id = opts[0]
+    result = engine.debt(run_id)
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0
+
+
+def dispatch_workflow_meta(rest: list[str]) -> int:
+    """Handle `tpt workflow {list,show <id>}`."""
+    engine = _workflow_engine()
+    if not rest:
+        raise ToolError(
+            "workflow: missing subcommand\n"
+            "usage: tpt workflow {list,show <id>}"
+        )
+    sub = rest[0]
+    if sub == "list":
+        workflows = engine.list_workflows()
+        if not workflows:
+            print("(no workflows registered)")
+            return 0
+        for w in workflows:
+            print(f"  {w['id']:30s} v{w['version']}  {w['description']}")
+        return 0
+    if sub == "show":
+        if len(rest) < 2:
+            raise ToolError("workflow show: missing workflow id")
+        try:
+            data = engine.load_workflow(rest[1])
+        except WorkflowError as error:
+            print(f"tpt: {error}", file=sys.stderr)
+            return 2
+        print(json.dumps(data, sort_keys=True, indent=2))
+        return 0
+    raise ToolError(
+        f"unknown workflow subcommand: {sub}\n"
+        f"subcommands: list, show <id>"
+    )
+
+
 def check_groups(registry: Registry) -> list[str]:
     """The grouping table and the registry must name the same tools.
 
@@ -398,7 +583,24 @@ def dispatch(registry: Registry, raw: list[str]) -> int:
     if raw and not raw[0].startswith("-"):
         if raw[0] in registry:
             return run_tool(registry, raw[0], raw[1:])
-        raise ToolError(f"unknown tool: {raw[0]}\navailable: {', '.join(registry)}")
+        # Workflow meta command: `tpt workflow {list,show <id>}`
+        if raw[0] == "workflow":
+            return dispatch_workflow_meta(raw[1:])
+        # Workflow dispatch: `tpt <workflow-id> <doc-id> <action> [opts]`
+        wf_ids = _workflow_ids()
+        collisions = wf_ids & set(registry)
+        if collisions:
+            raise ToolError(
+                f"workflow id collides with registered tool id: "
+                f"{', '.join(sorted(collisions))}"
+            )
+        if raw[0] in wf_ids:
+            return dispatch_workflow(raw[0], raw[1:])
+        available = sorted(set(registry) | wf_ids | {"workflow"})
+        raise ToolError(
+            f"unknown tool or workflow: {raw[0]}\n"
+            f"available: {', '.join(available)}"
+        )
 
     parser = add_style_flags(build_parser())
     args = parser.parse_args(raw)
@@ -425,7 +627,7 @@ def main(argv: list[str] | None = None) -> int:
     raw = list(sys.argv[1:] if argv is None else argv)
     try:
         return dispatch(load_registry(), raw)
-    except ToolError as error:
+    except (ToolError, WorkflowError) as error:
         print(f"tpt: {error}", file=sys.stderr)
         return 2
 

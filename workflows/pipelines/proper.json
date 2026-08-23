@@ -1,0 +1,135 @@
+{
+  "id": "proper",
+  "version": 1,
+  "description": "1962 propers synthesis production workflow",
+  "argument_schema": {
+    "proper": {
+      "type": "string",
+      "required": true,
+      "description": "Canonical proper leaf id (e.g. liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost)"
+    },
+    "provider": {
+      "type": "string",
+      "required": false,
+      "default": "gpt",
+      "description": "Provider directory (gpt or claude)"
+    }
+  },
+  "stages": [
+    {
+      "id": "seed",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/seed.md"],
+      "result_schema": "worker-result.json",
+      "next": "resolve-context"
+    },
+    {
+      "id": "resolve-context",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/resolve-context.md"],
+      "result_schema": "worker-result.json",
+      "next": "source-audit"
+    },
+    {
+      "id": "source-audit",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/source-audit.md"],
+      "result_schema": "worker-result.json",
+      "next": "research-synthesis"
+    },
+    {
+      "id": "research-synthesis",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/research-synthesis.md"],
+      "result_schema": "worker-result.json",
+      "next": "author-proper"
+    },
+    {
+      "id": "author-proper",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/author-proper.md"],
+      "result_schema": "worker-result.json",
+      "next": "content-evaluation"
+    },
+    {
+      "id": "content-evaluation",
+      "type": "evaluator",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/content-evaluation.md"],
+      "result_schema": "evaluator-result.json",
+      "pass_transition": "build-artifacts",
+      "fail_transition": "content-revision",
+      "max_iterations": 3
+    },
+    {
+      "id": "content-revision",
+      "type": "bounded-revision",
+      "revision_target": "author-proper",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/content-revision.md", "propers/author-proper.md"],
+      "result_schema": "worker-result.json",
+      "next": "content-evaluation"
+    },
+    {
+      "id": "build-artifacts",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/build-artifacts.md"],
+      "result_schema": "worker-result.json",
+      "next": "mechanical-gates"
+    },
+    {
+      "id": "mechanical-gates",
+      "type": "gate",
+      "checks": [
+        {
+          "id": "proper-components",
+          "command": "tools/tpt check-proper-components --provider {provider} --document {proper}",
+          "required_result": "proper-components manifest must be valid"
+        },
+        {
+          "id": "build-canonical",
+          "command": "make doc DOC={proper} PROVIDER={provider}",
+          "required_result": "canonical PDF must build without fatal errors"
+        },
+        {
+          "id": "build-synthesis",
+          "command": "make doc DOC={proper}-synthesis PROVIDER={provider}",
+          "required_result": "synthesis PDF must build without fatal errors"
+        }
+      ],
+      "pass_transition": "visual-evaluation",
+      "fail_transition": "artifact-revision",
+      "max_iterations": 3
+    },
+    {
+      "id": "artifact-revision",
+      "type": "bounded-revision",
+      "revision_target": "build-artifacts",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/artifact-revision.md", "propers/build-artifacts.md"],
+      "result_schema": "worker-result.json",
+      "next": "mechanical-gates"
+    },
+    {
+      "id": "visual-evaluation",
+      "type": "evaluator",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/visual-evaluation.md"],
+      "result_schema": "evaluator-result.json",
+      "pass_transition": "final-acceptance",
+      "fail_transition": "visual-revision",
+      "max_iterations": 3
+    },
+    {
+      "id": "visual-revision",
+      "type": "bounded-revision",
+      "revision_target": "build-artifacts",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/visual-revision.md", "propers/build-artifacts.md"],
+      "result_schema": "worker-result.json",
+      "next": "mechanical-gates"
+    },
+    {
+      "id": "final-acceptance",
+      "type": "linear",
+      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/final-acceptance.md"],
+      "result_schema": "worker-result.json",
+      "next": "ACCEPTED"
+    }
+  ]
+}
