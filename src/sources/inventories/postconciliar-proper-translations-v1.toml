@@ -11617,27 +11617,63 @@ the Savior of the world will reign over us.
 """
 
 
-[[untranslated]]
-mass = "pentecost"
-form = "Vigil Mass"
-proper = "Gospel Acclamation"
-reason = "no publishable English as yet: the approved translation is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text."
 
+# --- Gospel Acclamations from liturgies.net + USCCB (2026-08-23) ---
 
-[[untranslated]]
-mass = "pentecost"
-form = "Mass during the Day"
-proper = "Gospel Acclamation"
-reason = "no publishable English as yet: the approved translation is ICEL's, carried under ICEL's standing web permission (icel-web-permission-rights-v1.toml), but no source exemplar has been acquired for this text."
-
-
-
-
-[[untranslated]]
+[[entries]]
 mass = "ot-15"
 form = ""
 proper = "Gospel Acclamation"
-reason = "as easter-3 above: Years B and C are scriptural and resolve from the bible, and Year A sets the composed Semen est verbum Dei, sator autem Christus, whose approved English is ICEL's and is not carried here."
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-23"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+The seed is the word of God, Christ is the sower;
+all who come to him will have life forever.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = "Mass during the Day"
+proper = "Gospel Acclamation"
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-23"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+Come, Holy Spirit, fill the hearts of your faithful
+and kindle in them the fire of your love.
+"""
+
+[[entries]]
+mass = "pentecost"
+form = "Vigil Mass"
+proper = "Gospel Acclamation"
+incipit = ""
+witness = "icel-web-2010"
+detector = "liturgies-net-2026-08-23"
+
+[[entries.translations]]
+lang = "en"
+rights = "permission"
+notice = "The English translation of The Roman Missal (c) 2010, International Commission on English in the Liturgy Corporation. All rights reserved."
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+text = """
+Come, Holy Spirit, fill the hearts of your faithful
+and kindle in them the fire of your love.
+"""
+
 
 [[untranslated]]
 mass = "saint-hilary-bishop-doctor-church"
