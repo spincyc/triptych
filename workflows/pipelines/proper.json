@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 1,
+  "version": 2,
   "description": "1962 propers synthesis production workflow",
   "argument_schema": {
     "proper": {
@@ -126,10 +126,12 @@
     },
     {
       "id": "final-acceptance",
-      "type": "linear",
+      "type": "evaluator",
       "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/final-acceptance.md"],
-      "result_schema": "worker-result.json",
-      "next": "ACCEPTED"
+      "result_schema": "evaluator-result.json",
+      "pass_transition": "ACCEPTED",
+      "fail_transition": "visual-revision",
+      "max_iterations": 3
     }
   ]
 }

@@ -83,7 +83,15 @@ Written once at seed time. Contains:
 - `workflow_id`, `workflow_version`: workflow definition reference
 - `repo_commit`: repository commit SHA at seed time
 - `normalized_args`: sorted, string-valued argument map
+- `source_digest`: SHA-256 over the pipeline definition and every fragment
+  and schema it references, as they stood at seed time
 - `created_at`: human-readable timestamp (NOT used in packet hashes)
+
+The manifest is load-bearing, not a record. Every `advance` and `replay`
+re-reads it, recomputes `source_digest`, and refuses to continue if the
+guidance source has changed or if `state.json` disagrees with it. A run is
+therefore bound to the exact bytes of guidance it was seeded from; an edited
+fragment cannot reach a run in progress under the same workflow version.
 
 ### state.json (mutable)
 
@@ -91,10 +99,13 @@ Updated after every transition. Contains:
 
 - `current_stage`: stage id or `ACCEPTED` / `BLOCKED`
 - `iteration`: global iteration counter
-- `stage_iterations`: per-stage iteration counts
+- `stage_iterations`: per-stage iteration counts (how often each stage has
+  been entered)
+- `stage_failures`: per-stage consecutive failure counts, reset on a pass;
+  this, not `stage_iterations`, is what bounds a loop
 - `packet_hashes`: list of `{stage, iteration, hash, path}`
 - `result_hashes`: list of `{stage, iteration, hash, path}`
-- `transitions`: list of `{from, to, disposition, timestamp}`
+- `transitions`: list of `{from, to, disposition}`
 - `disposition`: `null` while running, `ACCEPTED` or `BLOCKED` at terminal
 
 ### events.jsonl
@@ -114,7 +125,9 @@ state.
    Read each file from `workflows/fragments/` in the declared order.
 3. **Build header**: a deterministic preamble containing:
    - `WORKFLOW`: workflow id and version
-   - `COMMIT`: repository commit
+   - `COMMIT`: repository commit at seed time
+   - `SOURCE_DIGEST`: digest of the guidance source this packet was
+     compiled from
    - `STAGE`: stage id
    - `ITERATION`: iteration number for this stage
    - `ARGS`: normalized arguments as sorted JSON
@@ -136,18 +149,34 @@ The hash covers the packet bytes only. It does NOT cover:
 The hash DOES cover:
 - workflow id and version
 - repository commit
+- the guidance source digest
 - stage id and iteration
 - normalized arguments
 - forwarded findings (for revision packets)
 - all fragment contents in declared order
+
+## Binding a result to its packet
+
+Every worker and evaluator result must carry `packet_hash`, repeating the hash
+of the packet it answers. `advance` compares it to the hash of the packet
+awaiting an answer and refuses anything else.
+
+This is what removes the last piece of parent-agent discretion over
+successor guidance. Without it, a driver holding results from several stages
+chooses which guidance a stage is treated as having answered, and a stale
+result can be resubmitted after the run has moved on. Gate results are exempt:
+the engine composes them itself and no agent is involved.
 
 ## Transition semantics
 
 ### Linear stage
 
 A linear stage emits a packet, accepts a worker result, and transitions to
-exactly one next stage. The result must have `disposition: "PASS"`. Any other
-disposition fails closed.
+exactly one next stage. The result must have `disposition: "PASS"` to
+advance, or `disposition: "BLOCKED"` to stop the run when the worker cannot
+do the work at all. Any other disposition fails closed. A worker is never
+asked to report success for work it did not do: nothing downstream reads its
+`summary`, so a false `PASS` would advance the run silently.
 
 ### Evaluator stage
 
@@ -181,20 +210,35 @@ Gate commands are run by `tpt` directly, not by an AI worker. The gate
 produces a structured result with blocking findings for each failed check.
 Findings are forwarded verbatim into the revision packet.
 
+Check commands are argv, not shell command lines. The template is tokenized
+before any argument is substituted, and argument values are constrained at
+seed time to a conservative shape, so an argument can only ever become a
+single argv element. No gate check is ever handed to a shell.
+
 ### Terminal states
 
-- `ACCEPTED`: the final stage's result has `disposition: "PASS"`.
-- `BLOCKED`: an evaluator returns `BLOCKED`, or a revision loop reaches its
-  `max_iterations` limit.
+- `ACCEPTED`: the final stage passes. The final stage is an evaluator, so it
+  can also refuse: acceptance is a judgment the workflow can decline, not a
+  formality the pipeline makes unfailable.
+- `BLOCKED`: an evaluator or worker returns `BLOCKED`, or a stage reaches its
+  `max_iterations` in consecutive failures.
 
 ## Iteration tracking
 
-Each stage tracks its own iteration count in `stage_iterations`. A revision
-loop increments the originating evaluator's iteration count. The global
+Each stage tracks how often it has been entered in `stage_iterations`, and
+how many times in a row it has failed in `stage_failures`. The global
 `iteration` counter increments on every packet emission for traceability.
 
-When an evaluator's `stage_iterations` reaches `max_iterations`, the run
-enters `BLOCKED` with a reason of `iteration_limit_exceeded`.
+A loop is bounded by consecutive failures, not by entries. When a stage's
+`stage_failures` reaches its `max_iterations`, the run enters `BLOCKED` and
+the result records a `block_reason` naming the stage and the count. A pass
+clears that stage's count.
+
+The distinction matters where two loops share a stage. `mechanical-gates` is
+re-entered by both `artifact-revision` and `visual-revision`, so counting
+entries would let an unrelated visual loop spend the gate's budget and make
+the gate's first genuine failure block the run under a misattributed
+reason.
 
 ## Downstream gate re-entry
 
@@ -212,10 +256,11 @@ registered workflow identifiers. If it matches, `tpt` dispatches to the
 workflow engine in `scripts/_workflow.py`.
 
 ```
-tpt proper <proper-id> seed [--provider <p>] [--workflow <id>]
+tpt proper <proper-id> seed [--provider <p>]
 tpt proper <proper-id> advance <run-id> --result <path>
 tpt proper <proper-id> advance <run-id> --run-gate
 tpt proper <proper-id> status <run-id>
+tpt proper <proper-id> replay <run-id>
 tpt proper <proper-id> intervene <run-id> --text "..."
 tpt proper <proper-id> debt <run-id>
 tpt workflow list

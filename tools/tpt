@@ -325,7 +325,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
     """Dispatch a workflow command.
 
     The grammar is:
-        tpt <workflow-id> <doc-id> {seed,advance,status,intervene,debt} [opts]
+        tpt <workflow-id> <doc-id> {seed,advance,status,replay,intervene,debt} [opts]
     """
     engine = _workflow_engine()
 
@@ -333,7 +333,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
         raise ToolError(
             f"workflow {workflow_id}: missing document id and action\n"
             f"usage: tpt {workflow_id} <doc-id> "
-            f"{{seed,advance,status,intervene,debt}} [options]"
+            f"{{seed,advance,status,replay,intervene,debt}} [options]"
         )
 
     doc_id = rest[0]
@@ -343,7 +343,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
         raise ToolError(
             f"workflow {workflow_id}: missing action\n"
             f"usage: tpt {workflow_id} {doc_id} "
-            f"{{seed,advance,status,intervene,debt}} [options]"
+            f"{{seed,advance,status,replay,intervene,debt}} [options]"
         )
 
     action = action_args[0]
@@ -355,6 +355,8 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
         return _workflow_advance(engine, doc_id, opts)
     if action == "status":
         return _workflow_status(engine, doc_id, opts)
+    if action == "replay":
+        return _workflow_replay(engine, doc_id, opts)
     if action == "intervene":
         return _workflow_intervene(engine, doc_id, opts)
     if action == "debt":
@@ -362,7 +364,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
 
     raise ToolError(
         f"unknown workflow action: {action}\n"
-        f"actions: seed, advance, status, intervene, debt"
+        f"actions: seed, advance, status, replay, intervene, debt"
     )
 
 
@@ -411,6 +413,14 @@ def _workflow_status(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> in
     result = engine.status(run_id)
     print(json.dumps(result, sort_keys=True, indent=2))
     return 0
+
+
+def _workflow_replay(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    if not opts:
+        raise ToolError("replay: missing run-id")
+    result = engine.replay(opts[0])
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0 if result["deterministic"] else 1
 
 
 def _workflow_intervene(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
@@ -581,12 +591,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def dispatch(registry: Registry, raw: list[str]) -> int:
     if raw and not raw[0].startswith("-"):
-        if raw[0] in registry:
-            return run_tool(registry, raw[0], raw[1:])
-        # Workflow meta command: `tpt workflow {list,show <id>}`
-        if raw[0] == "workflow":
-            return dispatch_workflow_meta(raw[1:])
-        # Workflow dispatch: `tpt <workflow-id> <doc-id> <action> [opts]`
+        # An ambiguous name must be refused, never silently resolved in the
+        # tool's favour: that is the whole point of reserving workflow ids.
+        # The check comes before tool dispatch, because an exact collision is
+        # invisible to anything that runs after it.
         wf_ids = _workflow_ids()
         collisions = wf_ids & set(registry)
         if collisions:
@@ -594,6 +602,12 @@ def dispatch(registry: Registry, raw: list[str]) -> int:
                 f"workflow id collides with registered tool id: "
                 f"{', '.join(sorted(collisions))}"
             )
+        if raw[0] in registry:
+            return run_tool(registry, raw[0], raw[1:])
+        # Workflow meta command: `tpt workflow {list,show <id>}`
+        if raw[0] == "workflow":
+            return dispatch_workflow_meta(raw[1:])
+        # Workflow dispatch: `tpt <workflow-id> <doc-id> <action> [opts]`
         if raw[0] in wf_ids:
             return dispatch_workflow(raw[0], raw[1:])
         available = sorted(set(registry) | wf_ids | {"workflow"})

@@ -164,13 +164,30 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
 
 
 def _write_result(path: Path, disposition: str,
-                  findings: list | None = None, summary: str = "test") -> str:
-    """Write a structured result to a file and return its path."""
+                  findings: list | None = None, summary: str = "test",
+                  packet_hash: str | None = None) -> str:
+    """Write a structured result to a file and return its path.
+
+    A result must name the packet it answers, so `packet_hash` is normally
+    supplied. It is optional only so that a test can deliberately omit it.
+    """
     result = {"disposition": disposition, "summary": summary}
     if findings is not None:
         result["findings"] = findings
+    if packet_hash is not None:
+        result["packet_hash"] = packet_hash
     path.write_text(json.dumps(result), encoding="utf-8")
     return str(path)
+
+
+def _answer(engine, run_id: str, path: Path, disposition: str,
+            findings: list | None = None, summary: str = "test") -> str:
+    """Write a result that answers the packet currently awaiting an answer."""
+    state = engine.load_state(run_id)
+    return _write_result(
+        path, disposition, findings=findings, summary=summary,
+        packet_hash=state["packet_hashes"][-1]["hash"],
+    )
 
 
 class PacketDeterminismTests(unittest.TestCase):
@@ -331,7 +348,7 @@ class TransitionTests(unittest.TestCase):
             if result.get("disposition") in (ACCEPTED, BLOCKED):
                 self.fail(f"reached terminal state before {target_stage}")
             rfile = self.repo / f"result-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
         return run_id
 
@@ -342,7 +359,7 @@ class TransitionTests(unittest.TestCase):
         self.assertEqual(result["stage"], "stage-a")
 
         rfile = self.repo / "r.json"
-        _write_result(rfile, PASS)
+        _answer(self.engine, run_id, rfile, PASS)
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "stage-b",
                          "PASS on stage-a must advance to stage-b")
@@ -351,7 +368,7 @@ class TransitionTests(unittest.TestCase):
         """Test 5b: PASS on an evaluator selects pass_transition."""
         run_id = self._seed_and_advance_to("eval-stage")
         rfile = self.repo / "r.json"
-        _write_result(rfile, PASS, findings=[])
+        _answer(self.engine, run_id, rfile, PASS, findings=[])
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "gate-stage",
                          "PASS on eval-stage must advance to gate-stage")
@@ -360,7 +377,7 @@ class TransitionTests(unittest.TestCase):
         """Test 6: CHANGES_REQUIRED on evaluator selects bounded revision."""
         run_id = self._seed_and_advance_to("eval-stage")
         rfile = self.repo / "r.json"
-        _write_result(rfile, CHANGES_REQUIRED, findings=[
+        _answer(self.engine, run_id, rfile, CHANGES_REQUIRED, findings=[
             {"id": "CON-001", "severity": "blocking", "location": "p1",
              "problem": "bad", "required_result": "fix it"}
         ])
@@ -394,7 +411,7 @@ class RevisionForwardingTests(unittest.TestCase):
         # Advance to eval-stage
         for _ in range(2):
             rfile = self.repo / f"r-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         self.assertEqual(result["stage"], "eval-stage")
@@ -409,7 +426,7 @@ class RevisionForwardingTests(unittest.TestCase):
              "required_result": "Label as exploratory or remove"},
         ]
         rfile = self.repo / "r-eval.json"
-        _write_result(rfile, CHANGES_REQUIRED, findings=findings)
+        _answer(self.engine, run_id, rfile, CHANGES_REQUIRED, findings=findings)
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "revise-stage")
 
@@ -448,7 +465,7 @@ class IterationLimitTests(unittest.TestCase):
         # Advance to eval-stage (2 linear stages)
         for _ in range(2):
             rfile = self.repo / f"r-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         # eval-stage has max_iterations=2
@@ -456,7 +473,7 @@ class IterationLimitTests(unittest.TestCase):
         for i in range(2):
             self.assertEqual(result["stage"], "eval-stage")
             rfile = self.repo / f"r-eval-{i}.json"
-            _write_result(rfile, CHANGES_REQUIRED, findings=[
+            _answer(self.engine, run_id, rfile, CHANGES_REQUIRED, findings=[
                 {"id": "CON-001", "severity": "blocking", "location": "p1",
                  "problem": "bad", "required_result": "fix"}
             ])
@@ -465,7 +482,7 @@ class IterationLimitTests(unittest.TestCase):
                 break
             self.assertEqual(result["stage"], "revise-stage")
             rfile = self.repo / f"r-rev-{i}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         self.assertEqual(result["disposition"], BLOCKED,
@@ -478,12 +495,12 @@ class IterationLimitTests(unittest.TestCase):
 
         for _ in range(2):
             rfile = self.repo / f"r-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         self.assertEqual(result["stage"], "eval-stage")
         rfile = self.repo / "r.json"
-        _write_result(rfile, "BLOCKED", findings=[
+        _answer(self.engine, run_id, rfile, "BLOCKED", findings=[
             {"id": "CON-001", "severity": "blocking", "location": "p1",
              "problem": "impossible", "required_result": "cannot fix"}
         ])
@@ -547,12 +564,12 @@ class DownstreamGateReentryTests(unittest.TestCase):
 
         for _ in range(2):
             rfile = self.repo / f"r-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         # PASS the evaluator → gate-stage
         rfile = self.repo / "r-eval.json"
-        _write_result(rfile, PASS, findings=[])
+        _answer(self.engine, run_id, rfile, PASS, findings=[])
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "gate-stage")
 
@@ -580,11 +597,11 @@ class DownstreamGateReentryTests(unittest.TestCase):
 
         for _ in range(2):
             rfile = self.repo / f"r-{result['stage']}.json"
-            _write_result(rfile, PASS)
+            _answer(self.engine, run_id, rfile, PASS)
             result = self.engine.advance(run_id, result_path=str(rfile))
 
         rfile = self.repo / "r-eval.json"
-        _write_result(rfile, PASS, findings=[])
+        _answer(self.engine, run_id, rfile, PASS, findings=[])
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "gate-stage")
 
@@ -595,7 +612,7 @@ class DownstreamGateReentryTests(unittest.TestCase):
 
         # Complete revision → must re-enter gate
         rfile = self.repo / "r-revise.json"
-        _write_result(rfile, PASS)
+        _answer(self.engine, run_id, rfile, PASS)
         result = self.engine.advance(run_id, result_path=str(rfile))
         self.assertEqual(result["stage"], "gate-stage",
                          "after gate revision, must re-enter gate-stage")

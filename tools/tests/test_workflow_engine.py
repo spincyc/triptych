@@ -124,7 +124,12 @@ class WorkflowMetaTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["id"], "proper")
-        self.assertEqual(data["version"], 1)
+        on_disk = json.loads(
+            (ROOT / "workflows" / "pipelines" / "proper.json").read_text(
+                encoding="utf-8")
+        )
+        self.assertEqual(data["version"], on_disk["version"])
+        self.assertGreaterEqual(data["version"], 1)
 
     def test_workflow_show_unknown(self):
         result = _run("workflow", "show", "no-such-workflow")
@@ -139,19 +144,14 @@ class PropersWorkflowTests(unittest.TestCase):
     """Tests that the propers workflow can compile and advance through
     representative states without requiring a live AI provider."""
 
-    @classmethod
-    def setUpClass(cls):
-        cls.engine = WorkflowEngine(ROOT, ROOT / "workflows")
-
     def setUp(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        # A private runs directory per test. These tests must never touch
+        # build/tpt-runs: that is an operator's live run state.
+        self.runs = Path(tempfile.mkdtemp(prefix="tpt-runs-test-"))
+        self.engine = WorkflowEngine(ROOT, ROOT / "workflows", runs_dir=self.runs)
 
     def tearDown(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        shutil.rmtree(self.runs, ignore_errors=True)
 
     def test_propers_workflow_loads(self):
         """The propers workflow definition loads and validates."""
@@ -219,7 +219,7 @@ class PropersWorkflowTests(unittest.TestCase):
         }
         r1 = self.engine.seed("proper", args)
         h1 = r1["packet_hash"]
-        shutil.rmtree(ROOT / "build" / "tpt-runs" / r1["run_id"])
+        shutil.rmtree(self.runs / r1["run_id"])
 
         r2 = self.engine.seed("proper", args)
         h2 = r2["packet_hash"]
@@ -243,10 +243,12 @@ class PropersWorkflowTests(unittest.TestCase):
             self.assertEqual(result["stage"], expected,
                              f"stage {i} should be {expected}, got {result['stage']}")
             if i < len(expected_stages) - 1:
-                rfile = ROOT / "build" / "tpt-runs" / run_id / f"result-{i}.json"
+                rfile = self.runs / run_id / f"result-{i}.json"
                 rfile.parent.mkdir(parents=True, exist_ok=True)
+                state = self.engine.load_state(run_id)
                 rfile.write_text(json.dumps({
-                    "disposition": "PASS", "summary": "test"
+                    "disposition": "PASS", "summary": "test",
+                    "packet_hash": state["packet_hashes"][-1]["hash"],
                 }), encoding="utf-8")
                 result = self.engine.advance(run_id, result_path=str(rfile))
 
@@ -284,19 +286,14 @@ class PropersWorkflowTests(unittest.TestCase):
 class GateExecutionTests(unittest.TestCase):
     """Tests for gate stage execution."""
 
-    @classmethod
-    def setUpClass(cls):
-        cls.engine = WorkflowEngine(ROOT, ROOT / "workflows")
-
     def setUp(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        # A private runs directory per test. These tests must never touch
+        # build/tpt-runs: that is an operator's live run state.
+        self.runs = Path(tempfile.mkdtemp(prefix="tpt-runs-test-"))
+        self.engine = WorkflowEngine(ROOT, ROOT / "workflows", runs_dir=self.runs)
 
     def tearDown(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        shutil.rmtree(self.runs, ignore_errors=True)
 
     def test_gate_run_directly(self):
         """A gate stage can be run directly via advance(run_gate=True)."""

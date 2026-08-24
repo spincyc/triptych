@@ -34,5 +34,14 @@ installation. Do not install PDFs during this stage.
 
 ## Result
 
-Return a worker result with `disposition: "PASS"` and a summary confirming
-all checks passed, with any advisory findings noted.
+Return an evaluator result.
+
+- `PASS` only when every check above succeeded. The run reaches ACCEPTED.
+- `CHANGES_REQUIRED` when a check failed or an artifact is wrong. Record each
+  problem as a `blocking` finding with a `required_result`; the workflow
+  re-enters revision and the mechanical gates, and your findings are
+  forwarded verbatim to the reviser.
+- `BLOCKED` when the problem cannot be fixed by revision.
+
+Record remaining concerns that do not justify refusing as `advisory`
+findings. Use the `FIN-` prefix for finding ids.

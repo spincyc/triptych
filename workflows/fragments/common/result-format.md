@@ -3,24 +3,40 @@
 Your structured result must be valid JSON. The required schema depends on
 your stage type.
 
+## Say which packet you are answering
+
+Every result must carry `packet_hash`, copied verbatim from the
+`SOURCE_DIGEST`-bearing packet you were given. It is the value `tpt` recorded
+when it issued that packet, and it is how the engine knows your result answers
+the guidance you actually received rather than some earlier packet. A result
+without it, or with the wrong one, is refused and the run does not advance.
+
+You are given the packet's hash by whoever handed you the packet. If you do
+not have it, ask for it; do not guess.
+
 ## Worker (linear or revision) stages
 
 ```json
 {
+  "packet_hash": "<the hash of the packet you were given>",
   "disposition": "PASS",
   "summary": "One or two sentences describing what you did.",
   "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/main.tex"
 }
 ```
 
-`disposition` must be `"PASS"`. If you cannot complete the work, set
-`disposition` to `"PASS"` with a `summary` explaining the partial state.
-The parent driver and workflow engine decide whether to proceed.
+`disposition` must be `"PASS"` when you completed the work. If you cannot
+complete it, set `disposition` to `"BLOCKED"` and explain why in
+`block_reason`; the workflow stops there for an operator to look at. Never
+report `PASS` for work you did not do: nothing downstream reads your
+`summary`, so a false `PASS` advances the run as though the stage had
+succeeded.
 
 ## Evaluator stages
 
 ```json
 {
+  "packet_hash": "<the hash of the packet you were given>",
   "disposition": "PASS" | "CHANGES_REQUIRED" | "BLOCKED",
   "summary": "One or two sentences.",
   "findings": [
@@ -49,8 +65,9 @@ recorded but do not block.
 
 ## Gate stages
 
-Gates are run by `tpt` directly. No AI worker result is needed. The parent
-driver runs `tpt ... advance <run-id> --run-gate`.
+Gates are run by `tpt` directly. No AI worker result is needed, and no
+`packet_hash` is required: the engine composes the gate's result itself. The
+parent driver runs `tpt ... advance <run-id> --run-gate`.
 
 ## Fail closed
 

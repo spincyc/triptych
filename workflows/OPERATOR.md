@@ -45,7 +45,10 @@ first guidance packet. The output includes:
 ### Advance a run
 
 After a fresh AI worker has processed the packet and produced a structured
-JSON result:
+JSON result. The result must repeat the packet's hash in a `packet_hash`
+field, so pass the hash to the worker along with the packet; `tpt` refuses a
+result that answers a different packet, including a stale one resubmitted
+after the run has advanced:
 
 ```bash
 tools/tpt proper <proper-id> advance <run-id> --result <path-to-json>
@@ -65,6 +68,16 @@ terminal disposition (`ACCEPTED` or `BLOCKED`).
 ```bash
 tools/tpt proper <proper-id> status <run-id>
 ```
+
+### Verify a packet by recompilation
+
+```bash
+tools/tpt proper <proper-id> replay <run-id>
+```
+
+This reloads the run state, recompiles the current packet, and compares the
+result to the hash recorded when the packet was issued. It exits non-zero if
+they differ.
 
 ### Record a manual intervention
 
@@ -161,7 +174,7 @@ Each run has a durable state directory:
 
 ```
 build/tpt-runs/<run-id>/
-    manifest.json          # immutable run metadata
+    manifest.json          # immutable run metadata, checked on every advance
     state.json             # mutable run state
     events.jsonl           # append-only event log
     packets/               # compiled guidance packets
@@ -171,19 +184,34 @@ build/tpt-runs/<run-id>/
 ```
 
 The run can be inspected at any time. The state file records the current
-stage, iteration counts, packet hashes, result hashes, transitions, and
-final disposition.
+stage, iteration counts, consecutive failure counts, packet hashes, result
+hashes, transitions, and final disposition.
+
+`manifest.json` is not merely a record. Every `advance` and `replay` re-reads
+it and refuses to continue if `state.json` disagrees with it, or if the
+guidance source (the pipeline definition and every fragment and schema it
+references) has changed since the run was seeded. Editing a fragment during a
+run is therefore not a silent act: the run stops and tells you to bump the
+workflow version and seed a new run.
 
 ## Determinism
 
 Given the same repository commit, workflow version, document type, arguments,
 workflow state, and prior structured results, `tpt` emits the same next
 guidance packet byte-for-byte. The packet SHA-256 is recorded in the run
-state and can be verified by recompilation.
+state; `replay` verifies it by recompilation.
 
-No timestamps, run IDs, or filesystem paths appear in the hashed packet
-material. Only the workflow definition, repository commit, stage, iteration,
-normalized arguments, and forwarded findings determine the packet bytes.
+No timestamps or run IDs appear in the hashed packet material. Only the
+workflow definition, its source digest, the repository commit, the stage,
+the iteration, the normalized arguments, and the forwarded findings determine
+the packet bytes.
+
+One caveat worth knowing: a gate's findings quote the failing command's
+output, and that output can contain absolute paths from the machine that ran
+the gate. Those findings are forwarded into the next revision packet, so a
+revision packet's bytes are reproducible only on a machine whose gate output
+matches. The guidance the engine composes is machine-independent; what a
+failing build says about itself is not.
 
 ## Promoting workflow debt
 
@@ -226,10 +254,16 @@ mechanical-gates (programmatic)
 visual-evaluation (AI)
   ├─ CHANGES_REQUIRED → visual-revision → rebuild → mechanical-gates → visual
   ├─ PASS ↓
-final-acceptance
-  ↓
+final-acceptance (AI)
+  ├─ CHANGES_REQUIRED → visual-revision → rebuild → mechanical-gates → visual
+  ├─ BLOCKED → BLOCKED
+  ├─ PASS ↓
 ACCEPTED
 ```
+
+Final acceptance is an evaluator, not a formality. It can refuse, and a
+refusal re-enters revision and the mechanical gates rather than accepting the
+run.
 
 Mechanical gates use existing Triptych tools:
 - `tools/tpt check-proper-components`

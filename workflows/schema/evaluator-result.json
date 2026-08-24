@@ -1,8 +1,8 @@
 {
   "name": "evaluator-result",
   "description": "Structured result from an evaluator stage (content or visual)",
-  "required_fields": ["disposition", "findings"],
+  "required_fields": ["disposition", "findings", "packet_hash"],
   "valid_dispositions": ["PASS", "CHANGES_REQUIRED", "BLOCKED"],
   "finding_fields": ["id", "severity", "location", "problem", "required_result"],
-  "optional_fields": ["summary"]
+  "optional_fields": ["summary", "block_reason"]
 }
