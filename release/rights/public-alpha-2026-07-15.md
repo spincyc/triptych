@@ -1711,7 +1711,7 @@ release attachment, announcement, or promotion.
 | `THIRD_PARTY.md` | `853d246dff358c1880f08ed1c32310797cee95ec6681ac1eda2876eb09fa6f39` |
 | `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
-| `docs/the-mass.md` | `00178195d18d4f4c62ba4ae50c5be2180ee857866513b150e9379681d41737ea` |
+| `docs/the-mass.md` | `4eb1a356e128b6750c4a3b5d2353e886aa4e965889f3957f6b2dee37455e19ce` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |
 | `library/catholic-exorcism.md` | `cb8dc01280320b0377bd2d48e0013379b8acee3ede3d6255beaa37356c7c63db` |
 | `library/curriculums.md` | `4d6deabc3129f825c1f11677e6ac9f0afcdf62df68fb9965f0e9f2468e95ea32` |
@@ -1971,7 +1971,7 @@ release attachment, announcement, or promotion.
 | `src/web/browser/texts/texts.css` | `edba3a5dbeed923c83993026d2ae7810412fe265eab2209b6d137c76443d378d` |
 | `src/web/browser/texts/texts.js` | `6e65c00435d1e76bf465894486ef805c4d7249b31e2341eea02640cd33315d05` |
 | `src/web/data/bibles.json` | `2833103696cfde54ee1266c7d74909beb433a7951f216c423858868b9d4001d6` |
-| `tools/public-alpha` | `c0124a02797c4ee0e4e0303532b3d722f09f663c04fffcc1e12adee5b2d97199` |
+| `tools/public-alpha` | `70c0569ced82e6c0b5c0fa5833bc4548a1269836d4ec42a940397f6598abf0f4` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `7a82d2ac4232a176381d488d0be7c8a23a15b860428025236b495322ac55281b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
