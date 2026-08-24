@@ -1,7 +1,7 @@
 {
   "name": "gate-result",
   "description": "Structured result from a deterministic program gate",
-  "required_fields": ["disposition", "findings"],
+  "required_fields": ["stage", "iteration", "disposition", "findings"],
   "valid_dispositions": ["PASS", "FAIL"],
   "finding_fields": ["id", "severity", "check", "problem", "required_result"],
   "optional_fields": []

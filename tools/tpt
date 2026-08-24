@@ -3,7 +3,7 @@
 
 Usage:
   tpt <tool> [<tool args>...]
-  tpt <workflow-id> <doc-id> {seed,advance,status,intervene,debt} [options]
+  tpt <workflow-id> <doc-id> {seed,advance,status,replay,intervene,debt} [opts]
   tpt workflow {list,show <id>}
   tpt --list [--json]
   tpt --info <tool> [--json]
@@ -12,8 +12,8 @@ Usage:
 
 Tool ids never begin with a dash, so the launcher's own options can never be
 shadowed by a registry entry.  Workflow ids are checked after the tool
-registry, so no existing tool can be shadowed; a startup check rejects any
-workflow id that collides with a registered tool id.
+registry, so no existing tool can be shadowed; every dispatch, and `--check`,
+first rejects any workflow id that collides with a registered tool id.
 
 `tpt` is the unified entrypoint for repo tools. It loads the tool registry
 from ``tmt.json`` and dispatches to the implementation at ``tools/<tool>``.
@@ -72,13 +72,13 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "... 61 more lines",
+                "... 62 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+9078 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+9536 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -91,7 +91,7 @@ EXAMPLES = {
                 "group: launcher",
                 "reaches: nothing",
                 "purpose: Unified launcher for Triptych tools and tool discovery commands.",
-                "usage: tpt <tool> [<tool args>...] | tpt {--list,--info,--path,--check} [--json]",
+                "usage: tpt <tool> [<tool args>...] | tpt <workflow> <doc> {seed,advance,status,replay,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]",
                 "path: <repo>/tools/tpt",
                 "... 1 more line",
             ),
@@ -99,7 +99,7 @@ EXAMPLES = {
         Example(
             "tools/tpt --info tpt --json",
             (
-                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+237 chars]",
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+383 chars]",
             ),
         ),
     ),
@@ -122,13 +122,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 34 tools",
+                "registry ok: 35 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 34 tools",
+                "registry ok: 35 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),
@@ -144,7 +144,7 @@ EXAMPLES = {
         Example(
             "tools/tpt no-such-tool",
             (
-                "tpt: unknown tool: no-such-tool",
+                "tpt: unknown tool or workflow: no-such-tool",
                 "... 1 more line",
             ),
             "exit 2; the elided line lists every registered id",
@@ -343,7 +343,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
         raise ToolError(
             f"workflow {workflow_id}: missing action\n"
             f"usage: tpt {workflow_id} {doc_id} "
-            f"{{seed,advance,status,intervene,debt}} [options]"
+            f"{{seed,advance,status,replay,intervene,debt}} [options]"
         )
 
     action = action_args[0]
@@ -355,6 +355,8 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
         return _workflow_advance(engine, doc_id, opts)
     if action == "status":
         return _workflow_status(engine, doc_id, opts)
+    if action == "replay":
+        return _workflow_replay(engine, doc_id, opts)
     if action == "intervene":
         return _workflow_intervene(engine, doc_id, opts)
     if action == "debt":
@@ -362,14 +364,14 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
 
     raise ToolError(
         f"unknown workflow action: {action}\n"
-        f"actions: seed, advance, status, intervene, debt"
+        f"actions: seed, advance, status, replay, intervene, debt"
     )
 
 
 def _workflow_seed(
     engine: WorkflowEngine, workflow_id: str, doc_id: str, opts: list[str]
 ) -> int:
-    provider = "gpt"
+    provider = None
     i = 0
     while i < len(opts):
         if opts[i] == "--provider" and i + 1 < len(opts):
@@ -377,7 +379,19 @@ def _workflow_seed(
             i += 2
         else:
             raise ToolError(f"seed: unknown option: {opts[i]}")
-    result = engine.seed(workflow_id, {"proper": doc_id, "provider": provider})
+    workflow = engine.load_workflow(workflow_id)
+    doc_arg = workflow.get("document_argument")
+    if not doc_arg:
+        raise ToolError(
+            f"workflow {workflow_id} declares no document_argument; it cannot "
+            f"be seeded from the command line"
+        )
+    # The workflow's own argument schema owns the defaults; passing one here
+    # would let the launcher and the definition disagree about a run's inputs.
+    args = {doc_arg: doc_id}
+    if provider is not None:
+        args["provider"] = provider
+    result = engine.seed(workflow_id, args)
     print(json.dumps(result, sort_keys=True, indent=2))
     return 0
 
@@ -386,6 +400,7 @@ def _workflow_advance(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> i
     if not opts:
         raise ToolError("advance: missing run-id")
     run_id = opts[0]
+    engine.verify_document(run_id, doc_id)
     rest = opts[1:]
     result_path = None
     run_gate = False
@@ -408,15 +423,28 @@ def _workflow_status(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> in
     if not opts:
         raise ToolError("status: missing run-id")
     run_id = opts[0]
+    engine.verify_document(run_id, doc_id)
     result = engine.status(run_id)
     print(json.dumps(result, sort_keys=True, indent=2))
     return 0
+
+
+def _workflow_replay(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+    """Recompile the current packet from state and report whether it matches."""
+    if not opts:
+        raise ToolError("replay: missing run-id")
+    run_id = opts[0]
+    engine.verify_document(run_id, doc_id)
+    result = engine.replay(run_id)
+    print(json.dumps(result, sort_keys=True, indent=2))
+    return 0 if result.get("deterministic") is not False else 1
 
 
 def _workflow_intervene(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("intervene: missing run-id")
     run_id = opts[0]
+    engine.verify_document(run_id, doc_id)
     rest = opts[1:]
     text = None
     stage = None
@@ -441,6 +469,7 @@ def _workflow_debt(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("debt: missing run-id")
     run_id = opts[0]
+    engine.verify_document(run_id, doc_id)
     result = engine.debt(run_id)
     print(json.dumps(result, sort_keys=True, indent=2))
     return 0
@@ -551,6 +580,10 @@ def check_registry(registry: Registry) -> int:
         if path.name not in registry:
             problems.append(f"{path.name}: implementation has no registry entry")
     problems.extend(check_groups(registry))
+    try:
+        _workflow_engine().check_collisions(set(registry))
+    except WorkflowError as error:
+        problems.append(str(error))
     for problem in problems:
         print(f"tpt: {problem}", file=sys.stderr)
     if problems:
@@ -581,6 +614,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def dispatch(registry: Registry, raw: list[str]) -> int:
     if raw and not raw[0].startswith("-"):
+        # Checked before the registry lookup, not after: a workflow id equal to
+        # a tool id would otherwise run the tool and leave the workflow
+        # unreachable, with nothing said about it.
+        _workflow_engine().check_collisions(set(registry))
         if raw[0] in registry:
             return run_tool(registry, raw[0], raw[1:])
         # Workflow meta command: `tpt workflow {list,show <id>}`
@@ -588,12 +625,6 @@ def dispatch(registry: Registry, raw: list[str]) -> int:
             return dispatch_workflow_meta(raw[1:])
         # Workflow dispatch: `tpt <workflow-id> <doc-id> <action> [opts]`
         wf_ids = _workflow_ids()
-        collisions = wf_ids & set(registry)
-        if collisions:
-            raise ToolError(
-                f"workflow id collides with registered tool id: "
-                f"{', '.join(sorted(collisions))}"
-            )
         if raw[0] in wf_ids:
             return dispatch_workflow(raw[0], raw[1:])
         available = sorted(set(registry) | wf_ids | {"workflow"})

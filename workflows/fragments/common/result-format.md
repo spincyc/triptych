@@ -3,24 +3,45 @@
 Your structured result must be valid JSON. The required schema depends on
 your stage type.
 
+## Name the packet you are answering
+
+Every result must repeat, exactly, the `STAGE` and `ITERATION` values from
+this packet's header:
+
+```json
+{
+  "stage": "<the STAGE line of this packet>",
+  "iteration": <the ITERATION line of this packet, as a number>
+}
+```
+
+The engine rejects a result that names any other packet. That is how it tells
+your work from a result submitted for a different stage, or from an earlier
+result resubmitted.
+
 ## Worker (linear or revision) stages
 
 ```json
 {
+  "stage": "author-proper",
+  "iteration": 0,
   "disposition": "PASS",
   "summary": "One or two sentences describing what you did.",
   "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/main.tex"
 }
 ```
 
-`disposition` must be `"PASS"`. If you cannot complete the work, set
-`disposition` to `"PASS"` with a `summary` explaining the partial state.
-The parent driver and workflow engine decide whether to proceed.
+Use `disposition: "PASS"` when you completed the stage's work. If you could
+not complete it, use `disposition: "BLOCKED"` with a `summary` naming what
+stopped you: the run stops there. Do not report `PASS` for work you did not
+do; the engine has no other way to tell the difference.
 
 ## Evaluator stages
 
 ```json
 {
+  "stage": "content-evaluation",
+  "iteration": 0,
   "disposition": "PASS" | "CHANGES_REQUIRED" | "BLOCKED",
   "summary": "One or two sentences.",
   "findings": [
@@ -54,6 +75,7 @@ driver runs `tpt ... advance <run-id> --run-gate`.
 
 ## Fail closed
 
-A malformed or missing result causes the workflow to stop with an error. No
-transition occurs. The run remains inspectable but cannot advance until a
-valid result is submitted.
+A malformed or missing result, or one naming a different packet, causes the
+workflow to stop with an error. No transition occurs. The run remains
+inspectable but cannot advance until a valid result for the current packet is
+submitted.

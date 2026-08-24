@@ -81,20 +81,30 @@ Written once at seed time. Contains:
 
 - `run_id`: deterministic identifier
 - `workflow_id`, `workflow_version`: workflow definition reference
+- `workflow_digest`: digest of the workflow source the run is bound to
 - `repo_commit`: repository commit SHA at seed time
 - `normalized_args`: sorted, string-valued argument map
 - `created_at`: human-readable timestamp (NOT used in packet hashes)
+
+Every load of `state.json` checks it against this manifest and recomputes the
+run id from the manifest's own inputs. A hand-edited state, a half-written
+state, a run directory renamed or copied under another id, and a missing
+manifest are all errors rather than runs that quietly claim to be something
+else.
 
 ### state.json (mutable)
 
 Updated after every transition. Contains:
 
+- `workflow_id`, `workflow_version`, `workflow_digest`, `repo_commit`,
+  `normalized_args`: copied from the manifest and checked against it
 - `current_stage`: stage id or `ACCEPTED` / `BLOCKED`
 - `iteration`: global iteration counter
-- `stage_iterations`: per-stage iteration counts
+- `stage_iterations`: per-stage packet counts
+- `stage_failures`: consecutive failures per evaluator/gate, reset on a pass
 - `packet_hashes`: list of `{stage, iteration, hash, path}`
-- `result_hashes`: list of `{stage, iteration, hash, path}`
-- `transitions`: list of `{from, to, disposition, timestamp}`
+- `result_hashes`: list of `{stage, iteration, hash, path, disposition}`
+- `transitions`: list of `{from, to, disposition}`
 - `disposition`: `null` while running, `ACCEPTED` or `BLOCKED` at terminal
 
 ### events.jsonl
@@ -111,19 +121,35 @@ state.
 
 1. **Select stage**: look up `current_stage` in the workflow definition.
 2. **Select fragments**: the stage declares an ordered list of fragment paths.
-   Read each file from `workflows/fragments/` in the declared order.
+   Read each file from `workflows/fragments/` in the declared order, and
+   substitute `{argument}` placeholders from the run's normalized arguments.
+   A packet is the whole instruction; nothing in it is left for a worker to
+   interpolate.
 3. **Build header**: a deterministic preamble containing:
    - `WORKFLOW`: workflow id and version
+   - `WORKFLOW_DIGEST`: digest of the workflow source (below)
    - `COMMIT`: repository commit
    - `STAGE`: stage id
    - `ITERATION`: iteration number for this stage
    - `ARGS`: normalized arguments as sorted JSON
    - `PRIOR_FINDINGS`: forwarded findings from the last evaluator/gate result
-     (empty for non-revision stages), serialized as sorted JSON
+     (empty for non-revision stages), serialized as sorted JSON on one line
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
 7. **Write**: to `packets/<stage>-<iteration>.txt`.
+
+### Workflow-source digest
+
+The digest covers the canonicalized pipeline JSON plus the bytes of every
+fragment and schema the pipeline references. It therefore covers the parts of
+the guidance no packet quotes: transitions, iteration limits, gate commands,
+and result contracts.
+
+A run records the digest at seed time, in both the manifest and the state, and
+every `advance` and `replay` recomputes it. If the workflow source has changed
+since the run was seeded, the run fails closed rather than continuing under
+guidance it never started with. A changed workflow means a new run.
 
 ### Hashing boundary
 
@@ -134,20 +160,42 @@ The hash covers the packet bytes only. It does NOT cover:
 - the state file itself (contains timestamps)
 
 The hash DOES cover:
-- workflow id and version
+- workflow id and version, and the workflow-source digest
 - repository commit
 - stage id and iteration
 - normalized arguments
 - forwarded findings (for revision packets)
-- all fragment contents in declared order
+- all fragment contents in declared order, with arguments substituted
+
+Gate findings quote what a check printed, so that output is hashed guidance.
+It is made portable first: the repository root and home directory are replaced
+with `<repo>` and `<home>`, line endings normalized, trailing whitespace
+dropped. The untouched output of every check is kept under the run's
+`gate-logs/`, which nothing hashes.
+
+Host-varying output a check itself emits — a wall-clock time, a random
+temporary path outside the repository — would still reach the packet. Gate
+commands should not print such things.
+
+## Every result answers one packet
+
+A result must repeat the `stage` and `iteration` of the packet the engine last
+emitted. The engine rejects anything else. Without that binding it could not
+tell a fresh result from the previous one resubmitted, from a result produced
+for another stage, or from one written before the run advanced — and each of
+those would move the run without a worker having done the stage's work.
+
+Gate results are produced by the engine and carry the same two fields.
 
 ## Transition semantics
 
 ### Linear stage
 
 A linear stage emits a packet, accepts a worker result, and transitions to
-exactly one next stage. The result must have `disposition: "PASS"`. Any other
-disposition fails closed.
+exactly one next stage. `disposition: "PASS"` advances it. A worker that could
+not do the work reports `disposition: "BLOCKED"`, which is terminal: the engine
+has no other way to tell finished work from unfinished. Any other disposition
+fails closed.
 
 ### Evaluator stage
 
@@ -184,25 +232,30 @@ Findings are forwarded verbatim into the revision packet.
 ### Terminal states
 
 - `ACCEPTED`: the final stage's result has `disposition: "PASS"`.
-- `BLOCKED`: an evaluator returns `BLOCKED`, or a revision loop reaches its
-  `max_iterations` limit.
+- `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, or a
+  revision loop reaches its `max_iterations` limit.
 
 ## Iteration tracking
 
-Each stage tracks its own iteration count in `stage_iterations`. A revision
-loop increments the originating evaluator's iteration count. The global
+Each stage tracks its own packet count in `stage_iterations`; the global
 `iteration` counter increments on every packet emission for traceability.
+Neither bounds a loop.
 
-When an evaluator's `stage_iterations` reaches `max_iterations`, the run
-enters `BLOCKED` with a reason of `iteration_limit_exceeded`.
+`max_iterations` bounds *consecutive failures* of one evaluator or gate,
+recorded in `stage_failures` and reset whenever that stage passes. Counting
+visits instead let a stage spend its own budget on success: a run that
+re-entered `mechanical-gates` three times on its way around the visual
+revision loop was blocked by that gate's first real failure, with no revision
+attempted.
 
 ## Downstream gate re-entry
 
-When a visual revision triggers a rebuild, the workflow returns to
-`build-artifacts` and then re-enters `mechanical-gates` followed by
-`visual-evaluation`. This is encoded in the workflow definition by having the
-visual revision stage's `next` point to `mechanical-gates`, ensuring all
-downstream gates that could have been invalidated are re-run.
+A visual revision's `next` points at `mechanical-gates`, not at
+`visual-evaluation`: every visual change re-enters the mechanical gates, and
+only a passing gate returns to visual evaluation. The reviser rebuilds, and the
+gate's own commands rebuild again and check the result, so no visual change can
+reach acceptance without the mechanical invariants being rechecked on the
+artifacts that changed.
 
 ## CLI integration
 
@@ -212,10 +265,11 @@ registered workflow identifiers. If it matches, `tpt` dispatches to the
 workflow engine in `scripts/_workflow.py`.
 
 ```
-tpt proper <proper-id> seed [--provider <p>] [--workflow <id>]
+tpt proper <proper-id> seed [--provider <p>]
 tpt proper <proper-id> advance <run-id> --result <path>
 tpt proper <proper-id> advance <run-id> --run-gate
 tpt proper <proper-id> status <run-id>
+tpt proper <proper-id> replay <run-id>
 tpt proper <proper-id> intervene <run-id> --text "..."
 tpt proper <proper-id> debt <run-id>
 tpt workflow list
@@ -224,24 +278,31 @@ tpt workflow show <id>
 
 Existing tool dispatch (`tpt <tool> [args]`) is unchanged. Workflow
 identifiers are checked only after the tool registry lookup fails, so no
-existing tool can be shadowed. A startup check rejects any workflow id that
-collides with a registered tool id.
+existing tool can be shadowed.
+
+Every command after the first names the document as well as the run. The
+document is checked against the run's own arguments — the run id alone
+identifies a run, so a stale or mistyped document id used to act on whatever
+run the id pointed at.
 
 ## Identifier collision detection
 
-At engine load time, the set of workflow ids is compared against the set of
-registered tool ids. If any id appears in both, the engine refuses to start
-with an error. This is deterministic and fails closed.
+Before any dispatch, and again under `tpt --check`, the set of workflow ids is
+compared against the set of registered tool ids. If any id appears in both, tpt
+refuses to run rather than silently resolving the name to the tool and leaving
+the workflow unreachable.
 
 ## Schema validation
 
 Results are validated against schemas in `workflows/schema/`. Validation is
 structural and dependency-free:
 
-- Required fields are present.
+- Required fields are present, including the `stage` and `iteration` naming the
+  packet answered.
 - Enum fields have valid values.
 - `findings` is a list of objects with required sub-fields.
-- Malformed or missing results fail closed (exit non-zero, no transition).
+- Malformed, missing, stale, duplicate, and wrong-stage results fail closed
+  (exit non-zero, no transition).
 
 No JSON Schema library is used; the validator is a small Python function that
 checks the required structure. This keeps the engine dependency-free and
