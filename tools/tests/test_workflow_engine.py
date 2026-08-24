@@ -31,6 +31,15 @@ def _run(*argv: str, cwd: Path | None = None) -> subprocess.CompletedProcess:
     )
 
 
+def _private_runs_dir(case: unittest.TestCase) -> Path:
+    """A per-test run directory under the ignored build tree."""
+    name = case.id().rsplit(".", 1)[-1]
+    runs = ROOT / "build" / f"tpt-runs-test-{os.getpid()}-{name}"
+    shutil.rmtree(runs, ignore_errors=True)
+    runs.mkdir(parents=True, exist_ok=True)
+    return runs
+
+
 def _run_json(*argv: str) -> tuple[int, dict | None, str]:
     """Run tpt and parse JSON output. Returns (exit_code, parsed_json, stderr)."""
     result = _run(*argv)
@@ -144,14 +153,13 @@ class PropersWorkflowTests(unittest.TestCase):
         cls.engine = WorkflowEngine(ROOT, ROOT / "workflows")
 
     def setUp(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        # Never touch build/tpt-runs: an operator's live run lives there, and a
+        # test run of the suite would delete it.
+        self.runs = _private_runs_dir(self)
+        self.engine.runs_dir = self.runs
 
     def tearDown(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
+        shutil.rmtree(self.runs, ignore_errors=True)
 
     def test_propers_workflow_loads(self):
         """The propers workflow definition loads and validates."""
@@ -219,7 +227,7 @@ class PropersWorkflowTests(unittest.TestCase):
         }
         r1 = self.engine.seed("proper", args)
         h1 = r1["packet_hash"]
-        shutil.rmtree(ROOT / "build" / "tpt-runs" / r1["run_id"])
+        shutil.rmtree(self.runs / r1["run_id"])
 
         r2 = self.engine.seed("proper", args)
         h2 = r2["packet_hash"]
@@ -243,9 +251,10 @@ class PropersWorkflowTests(unittest.TestCase):
             self.assertEqual(result["stage"], expected,
                              f"stage {i} should be {expected}, got {result['stage']}")
             if i < len(expected_stages) - 1:
-                rfile = ROOT / "build" / "tpt-runs" / run_id / f"result-{i}.json"
+                rfile = self.runs / run_id / f"result-{i}.json"
                 rfile.parent.mkdir(parents=True, exist_ok=True)
                 rfile.write_text(json.dumps({
+                    "stage": expected, "iteration": 0,
                     "disposition": "PASS", "summary": "test"
                 }), encoding="utf-8")
                 result = self.engine.advance(run_id, result_path=str(rfile))
@@ -287,16 +296,6 @@ class GateExecutionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.engine = WorkflowEngine(ROOT, ROOT / "workflows")
-
-    def setUp(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
-
-    def tearDown(self):
-        runs = ROOT / "build" / "tpt-runs"
-        if runs.exists():
-            shutil.rmtree(runs)
 
     def test_gate_run_directly(self):
         """A gate stage can be run directly via advance(run_gate=True)."""

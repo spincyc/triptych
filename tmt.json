@@ -406,7 +406,7 @@
       "purpose": "Unified launcher for Triptych tools and tool discovery commands.",
       "requires": [],
       "stage": "draft",
-      "usage": "tpt <tool> [<tool args>...] | tpt <workflow> <doc> {seed,advance,status,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]"
+      "usage": "tpt <tool> [<tool args>...] | tpt <workflow> <doc> {seed,advance,status,replay,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]"
     },
     "typeset-bible": {
       "idempotent": true,

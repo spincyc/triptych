@@ -60,11 +60,26 @@ tools/tpt proper <proper-id> advance <run-id> --run-gate
 The output includes the next packet (if the workflow continues) or a
 terminal disposition (`ACCEPTED` or `BLOCKED`).
 
+Every command after `seed` names the document as well as the run id, and the
+document is checked against the run. A command naming a different document is
+refused.
+
 ### Check run status
 
 ```bash
 tools/tpt proper <proper-id> status <run-id>
 ```
+
+### Verify the current packet
+
+```bash
+tools/tpt proper <proper-id> replay <run-id>
+```
+
+Recompiles the current packet from the persisted state and compares it with the
+recorded hash, writing nothing. It also reports whether the packet file on disk
+still matches what was recorded. Exit status is non-zero if the recompiled
+bytes differ.
 
 ### Record a manual intervention
 
@@ -101,20 +116,31 @@ For gate stages, step 2 is replaced by `tpt proper <id> advance <run-id>
 
 ## Structured result formats
 
+Every result repeats the `STAGE` and `ITERATION` of the packet it answers. The
+engine rejects a result naming any other packet, which is what makes a
+resubmitted, stale, or wrong-stage result an error instead of a transition.
+
 ### Worker (linear or revision) stages
 
 ```json
 {
-  "disposition": "PASS",
+  "stage": "author-proper",
+  "iteration": 0,
+  "disposition": "PASS | BLOCKED",
   "summary": "What you did, in one or two sentences.",
   "artifact_path": "path/to/main.tex"
 }
 ```
 
+`BLOCKED` is how a worker reports that it could not do the stage's work; the run
+stops there rather than advancing on work that did not happen.
+
 ### Evaluator stages
 
 ```json
 {
+  "stage": "content-evaluation",
+  "iteration": 0,
   "disposition": "PASS | CHANGES_REQUIRED | BLOCKED",
   "summary": "One or two sentences.",
   "findings": [
@@ -142,6 +168,8 @@ produces:
 
 ```json
 {
+  "stage": "mechanical-gates",
+  "iteration": 0,
   "disposition": "PASS | FAIL",
   "findings": [
     {
@@ -155,6 +183,11 @@ produces:
 }
 ```
 
+A finding quotes what the check printed, with the repository root and home
+directory replaced by `<repo>` and `<home>` so the same failure reads the same
+on any machine. The untouched output of every check is kept under the run's
+`gate-logs/`.
+
 ## Run state directory
 
 Each run has a durable state directory:
@@ -165,25 +198,35 @@ build/tpt-runs/<run-id>/
     state.json             # mutable run state
     events.jsonl           # append-only event log
     packets/               # compiled guidance packets
-    results/               # submitted structured results
+    results/               # submitted structured results, named for the packet
+    gate-logs/             # untouched output of every gate check
     artifacts/             # worker-produced artifacts (by reference)
     interventions/         # recorded manual interventions
 ```
 
 The run can be inspected at any time. The state file records the current
 stage, iteration counts, packet hashes, result hashes, transitions, and
-final disposition.
+final disposition. It is checked against the immutable manifest on every load,
+so an edited, truncated, or relocated run reports an error instead of
+advancing.
 
 ## Determinism
 
 Given the same repository commit, workflow version, document type, arguments,
 workflow state, and prior structured results, `tpt` emits the same next
 guidance packet byte-for-byte. The packet SHA-256 is recorded in the run
-state and can be verified by recompilation.
+state and can be verified with `replay`.
 
 No timestamps, run IDs, or filesystem paths appear in the hashed packet
-material. Only the workflow definition, repository commit, stage, iteration,
-normalized arguments, and forwarded findings determine the packet bytes.
+material. Only the workflow source (definition, fragments, schemas), the
+repository commit, the stage, the iteration, the normalized arguments, and the
+forwarded findings determine the packet bytes.
+
+A run is bound to the workflow source it was seeded against. Editing
+`workflows/pipelines/proper.json`, a fragment, or a schema stops every existing
+run with an error; the changed workflow applies to new runs. That is deliberate:
+a run cannot claim continuity with a deterministic sequence it is no longer
+following.
 
 ## Promoting workflow debt
 
@@ -196,8 +239,11 @@ promoting, an operator:
 2. Marks the intervention as `encoded: true` in its JSON file under
    `interventions/`.
 
-The engine never auto-promotes interventions. Promotion is a deliberate
-human act.
+The engine never auto-promotes interventions, and a recorded intervention never
+reaches a packet: nothing in packet compilation reads `interventions/`. An
+intervention is a note about guidance the workflow does not yet give, and it
+changes no packet and no recorded hash. Promotion is a deliberate human act,
+and it applies to runs seeded after it.
 
 ## The propers workflow
 
