@@ -51,7 +51,7 @@ EXAMPLES = {
         Example(
             "tools/mass-propers list --calendar postconciliar --format json",
             (
-                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+81769 chars]",
+                "{\"calendars\":{\"postconciliar\":[{\"key\":\"most-holy-name-jesus\",\"kind\":\"christological\",\"name\":\"The... [+82655 chars]",
             ),
         ),
     ),
@@ -60,7 +60,7 @@ EXAMPLES = {
             "tools/mass-propers show --calendar roman-1962 --mass advent-1",
             (
                 "First Sunday of Advent",
-                "Missale Romanum, editio typica 1962 \u00b7 seasonal \u00b7 39",
+                "Missale Romanum, editio typica 1962 · seasonal · 01",
                 "==============================================================================",
                 "",
                 "Introit",
@@ -81,7 +81,7 @@ EXAMPLES = {
                 "mass:",
                 "  key: advent-1",
                 "  name: First Sunday of Advent",
-                "  registry: '39'",
+                "  registry: '01'",
                 "... 283 more lines",
             ),
         ),
@@ -100,21 +100,21 @@ EXAMPLES = {
         Example(
             "tools/mass-propers structure --out build/example-propers",
             (
-                "postconciliar: 592 masses, 3514 citations",
+                "postconciliar: 599 masses, 3562 citations",
                 "roman-1962: 491 masses, 4340 citations",
                 "roman-pre-1955: 491 masses, 4333 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  refused: 32",
+                "  refused: 34",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
         ),
         Example(
             "tools/mass-propers structure --check",
             (
-                "postconciliar: 592 masses, 3514 citations",
+                "postconciliar: 599 masses, 3562 citations",
                 "roman-1962: 491 masses, 4340 citations",
                 "roman-pre-1955: 491 masses, 4333 citations",
                 "  4 tracked file(s) are current",
@@ -126,13 +126,13 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-1962 English orations: 503 slots appointed, 407 with English, 96 ledgered untranslated, 0 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot",
-                "# postconciliar English orations: 328 slots appointed, 144 with English, 184 ledgered untranslated, 0 unaccounted; 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot",
+                "# roman-pre-1955 English orations: 506 slots appointed, 437 with English, 65 ledgered untranslated, 4 unaccounted; 0 composed propers outside the ledger's slots, 1 ledger rows matching no slot",
+                "# roman-1962 English orations: 506 slots appointed, 437 with English, 65 ledgered untranslated, 4 unaccounted; 0 composed propers outside the ledger's slots, 1 ledger rows matching no slot",
+                "# postconciliar English orations: 324 slots appointed, 307 with English, 0 ledgered untranslated, 17 unaccounted; 0 composed propers outside the ledger's slots, 12 ledger rows matching no slot",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "| Calendar | Section | Masses | Propers | Masses holding only placeholders |",
-                "| --- | --- | ---: | ---: | ---: |",
-                "... 89 more lines",
+                "... 91 more lines",
             ),
             "prints the block and writes nothing; two tables, then the keys each row counts by",
         ),
@@ -602,7 +602,9 @@ def citation_structure(entry: dict, source: str, tokens: dict[str, str]) -> dict
 TRANSLATIONS_DIR = "inventories"
 
 
-def translation_overlay(calendar: str) -> tuple[dict, set, list]:
+def translation_overlay(
+    calendar: str, root: Path = DEFAULT_ROOT
+) -> tuple[dict, set, list, dict]:
     """Translations recorded for a calendar's propers, keyed by proper.
 
     The contract in `src/sources/calendars/README.md` puts `translations` inside
@@ -635,7 +637,12 @@ def translation_overlay(calendar: str) -> tuple[dict, set, list]:
         # base calendar's overlay. The pre-1955 recension inherits its text
         # from roman-1962, and its translations should too; the incipit
         # check in carry_translations refuses any that no longer match.
-        base_doc = _calendars.load_document(DEFAULT_ROOT, calendar, effective=False)
+        # The caller's root, not the repository's. Reading the base from
+        # DEFAULT_ROOT meant any calendar outside `src/sources/calendars` —
+        # every synthetic one a test or an operator points `--root` at — died
+        # here as soon as it had no translations sidecar of its own, which is
+        # the normal case for a calendar that is not this repository's.
+        base_doc = _calendars.load_document(root, calendar, effective=False)
         base = base_doc.get(_calendars.RECENSION_BASE)
         if base and base != calendar:
             path = (
@@ -736,7 +743,7 @@ def carry_translations(
 
 def calendar_structure(root: Path, calendar: str, tokens: dict[str, str]) -> dict:
     document = load_calendar(root, calendar)
-    overlay, untranslated, stale, witnesses = translation_overlay(calendar)
+    overlay, untranslated, stale, witnesses = translation_overlay(calendar, root)
     source = document.get("psalm_numbering")
     if source not in SYSTEMS:
         raise ValueError(f"{calendar} declares unknown psalm numbering {source!r}")
@@ -1338,7 +1345,7 @@ def english_coverage(root: Path, calendar: str) -> dict | None:
     appoints any more. It is reported because such a row is invisible from the
     other side — it translates nothing and it lowers nothing.
     """
-    overlay, untranslated, _, _ = translation_overlay(calendar)
+    overlay, untranslated, _, _ = translation_overlay(calendar, root)
     if not overlay and not untranslated:
         return None
     document = load_calendar(root, calendar)
@@ -1555,7 +1562,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
     # structure file is the published artifact; this verb prints to a terminal
     # over tracked sources, and an operator checking the corpus needs to see
     # the English the site is withholding as much as the English it shows.
-    overlay, untranslated, stale, _ = translation_overlay(arguments.calendar)
+    overlay, untranslated, stale, _ = translation_overlay(
+        arguments.calendar, Path(arguments.root)
+    )
     merged = []
     for form, proper, taken_from in arguments.appointed:
         key = overlay_key(payload["mass"], form, proper, taken_from)
