@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 1,
+  "version": 2,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "argument_schema": {
@@ -127,10 +127,32 @@
     },
     {
       "id": "final-acceptance",
-      "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/final-acceptance.md"],
-      "result_schema": "worker-result.json",
-      "next": "ACCEPTED"
+      "type": "gate",
+      "checks": [
+        {
+          "id": "canonical-pdf",
+          "command": "test -f build/{provider}/{proper}.pdf",
+          "required_result": "the canonical PDF must exist for {proper}"
+        },
+        {
+          "id": "synthesis-pdf",
+          "command": "test -f build/{provider}/{proper}-synthesis.pdf",
+          "required_result": "the synthesis PDF must exist for {proper}"
+        },
+        {
+          "id": "proper-components",
+          "command": "tools/tpt check-proper-components --provider {provider} --document {proper} --aux build/{provider}/{proper}-synthesis.aux",
+          "required_result": "the proper-components manifest must be consistent with the built artifacts, and the brief synthesis must occupy exactly two pages"
+        },
+        {
+          "id": "generation-metadata",
+          "command": "tools/tpt check-generation-metadata --provider {provider} --pdf {proper} build/{provider}/{proper}.pdf",
+          "required_result": "tracked revision timestamps and AI provenance must be valid in source and PDF"
+        }
+      ],
+      "pass_transition": "ACCEPTED",
+      "fail_transition": "artifact-revision",
+      "max_iterations": 3
     }
   ]
 }

@@ -114,6 +114,13 @@ The parent agent (Claude or Codex session) follows this cycle:
 For gate stages, step 2 is replaced by `tpt proper <id> advance <run-id>
 --run-gate` (no AI worker needed).
 
+An `advance` that fails changes nothing: the run stays on the stage it was on,
+and the result it refused is not part of the run. Read the error, fix what it
+names — a malformed result, a full or read-only run directory — and run the
+same command again. Never hand-edit `state.json` to get past one; a run whose
+state or recorded files were edited fails its next command, and cannot be
+accepted.
+
 ## Structured result formats
 
 Every result repeats the `STAGE` and `ITERATION` of the packet it answers. The
@@ -272,8 +279,9 @@ mechanical-gates (programmatic)
 visual-evaluation (AI)
   ├─ CHANGES_REQUIRED → visual-revision → rebuild → mechanical-gates → visual
   ├─ PASS ↓
-final-acceptance
-  ↓
+final-acceptance (programmatic)
+  ├─ FAIL → artifact-revision → rebuild → mechanical-gates → visual → accept
+  ├─ PASS ↓
 ACCEPTED
 ```
 
@@ -284,3 +292,27 @@ Mechanical gates use existing Triptych tools:
 
 Visual evaluation is performed by a fresh AI evaluator who inspects rendered
 page rasters produced by `tools/tpt pdf-review`.
+
+Final acceptance is a gate, not a stage any agent is asked about. Advance it
+with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other gate.
+It rechecks, on the artifacts as they now stand, the four things the stage used
+to ask a worker to confirm:
+
+- `build/{provider}/{proper}.pdf` exists;
+- `build/{provider}/{proper}-synthesis.pdf` exists;
+- `tpt check-proper-components --aux` passes, so the component manifest matches
+  the built artifacts and the brief synthesis occupies exactly two pages; and
+- `tpt check-generation-metadata --pdf` passes, so the tracked revision and AI
+  provenance in the source agree with the rendered PDF.
+
+A failed check sends the run to `artifact-revision` with the check's own output
+as findings, and the revised artifacts come back through the mechanical gates
+and visual evaluation before acceptance is attempted again. That loop is
+bounded: three refusals block the run.
+
+Passing the checks is necessary, not sufficient. Before it records `ACCEPTED`
+the engine audits the run: every evaluator and gate that ran must last have
+recorded `PASS`, every recorded result and packet must still be present and
+hash as recorded, and no stage's latest result may carry a standing blocking
+finding. A run whose files were edited cannot be accepted; it can only be
+reseeded.

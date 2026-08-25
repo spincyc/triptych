@@ -133,7 +133,7 @@ class WorkflowMetaTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["id"], "proper")
-        self.assertEqual(data["version"], 1)
+        self.assertEqual(data["version"], 2)
 
     def test_workflow_show_unknown(self):
         result = _run("workflow", "show", "no-such-workflow")

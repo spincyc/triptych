@@ -17,6 +17,7 @@ bounds, and stop conditions.
 """
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import shlex
@@ -295,8 +296,13 @@ class WorkflowEngine:
             }
 
         # Create run directory structure
-        for subdir in ("packets", "results", "artifacts", "interventions"):
-            (run_dir / subdir).mkdir(parents=True, exist_ok=True)
+        try:
+            for subdir in ("packets", "results", "artifacts", "interventions"):
+                (run_dir / subdir).mkdir(parents=True, exist_ok=True)
+        except OSError as error:
+            raise WorkflowError(
+                f"cannot create the run directory for {run_id}: {error}"
+            ) from error
 
         # Write manifest (immutable)
         digest = self.workflow_source_digest(workflow)
@@ -309,12 +315,19 @@ class WorkflowEngine:
             "normalized_args": args,
             "created_at": _utc_timestamp(),
         }
-        (run_dir / "manifest.json").write_text(
-            json.dumps(manifest, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-        )
+        try:
+            (run_dir / "manifest.json").write_text(
+                json.dumps(manifest, sort_keys=True, indent=2) + "\n",
+                encoding="utf-8",
+            )
+        except OSError as error:
+            raise WorkflowError(
+                f"cannot write the manifest for {run_id}: {error}"
+            ) from error
 
-        # Initialize state
+        # Initialize state. It is not written yet: a run whose state names a
+        # stage with no packet is a run nothing can drive and nothing can
+        # repair, so the first packet has to exist before the state does.
         first_stage = workflow["stages"][0]["id"]
         state = {
             "run_id": run_id,
@@ -332,9 +345,13 @@ class WorkflowEngine:
             "transitions": [],
             "disposition": None,
         }
-        self.save_state(run_id, state)
 
-        # Emit first event
+        # Compile the first packet, then commit packet and state together.
+        stage = self._get_stage(workflow, first_stage)
+        packet = self._compile_packet(workflow, stage, state, run_dir, [])
+        self._stage_packet(state, packet)
+        self._commit(run_id, state, [(packet["path"], packet["bytes"])])
+
         self._emit_event(run_id, {
             "event": "seed",
             "workflow_id": workflow["id"],
@@ -342,14 +359,7 @@ class WorkflowEngine:
             "stage": first_stage,
             "timestamp": _utc_timestamp(),
         })
-
-        # Compile and emit the first packet
-        stage = self._get_stage(workflow, first_stage)
-        prior_findings = []
-        packet = self._compile_packet(
-            workflow, stage, state, run_dir, prior_findings
-        )
-        self._record_packet(run_id, state, packet)
+        self._emit_packet_event(run_id, packet)
 
         return {
             "run_id": run_id,
@@ -370,6 +380,14 @@ class WorkflowEngine:
 
         For linear/evaluator/bounded-revision stages: requires --result <path>.
         For gate stages: requires --run-gate (runs the gate checks directly).
+
+        The whole successor is prepared before any of it is persisted: the
+        result is validated, the transition determined, and the successor
+        packet compiled against a copy of the state. Only then are the result,
+        the packet, and the new state committed, state last. So a submission
+        the engine refuses leaves no authoritative trace, and a run that could
+        not be given its next packet stays at the stage it can still be driven
+        from.
         """
         state = self.load_state(run_id)
         if state["disposition"] is not None:
@@ -399,79 +417,80 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"stage {stage['id']} requires --result <path>"
                 )
-            result = self._load_and_validate_result(
-                result_path, stage, run_id, state
-            )
+            result = self._load_and_validate_result(result_path, stage, state)
 
-        # Record the result
-        self._record_result(run_id, state, result, stage)
-
-        # Determine transition
-        transition = self._determine_transition(
-            workflow, stage, result, state
+        # Everything below builds a candidate successor against a copy of the
+        # state. Nothing durable changes until it is complete.
+        pending = copy.deepcopy(state)
+        transition, block_reason = self._determine_transition(
+            workflow, stage, result, pending
         )
-
-        # Apply transition
-        self._emit_event(run_id, {
-            "event": "result",
-            "stage": stage["id"],
-            "disposition": result["disposition"],
-            "transition": transition,
-            "timestamp": _utc_timestamp(),
-        })
-
         if transition == ACCEPTED:
-            state["disposition"] = ACCEPTED
-            state["current_stage"] = ACCEPTED
-            self.save_state(run_id, state)
-            self._emit_event(run_id, {
-                "event": "accepted",
-                "timestamp": _utc_timestamp(),
-            })
-            return {
-                "run_id": run_id,
-                "disposition": ACCEPTED,
-                "stage": ACCEPTED,
-                "message": "Workflow complete. All stages passed.",
-            }
+            self._verify_final_acceptance(workflow, stage, state)
 
-        if transition == BLOCKED:
-            state["disposition"] = BLOCKED
-            state["current_stage"] = BLOCKED
-            self.save_state(run_id, state)
+        result_write = self._prepare_result(pending, result, stage)
+
+        if transition in (ACCEPTED, BLOCKED):
+            pending["disposition"] = transition
+            pending["current_stage"] = transition
+            # A terminal move is recorded like any other: the transition list is
+            # the run's own account of how it got where it is, and the move that
+            # ended it is the one an auditor asks about first.
+            pending["transitions"].append({
+                "from": stage["id"],
+                "to": transition,
+                "disposition": result["disposition"],
+            })
+            self._commit(run_id, pending, [result_write])
+            self._emit_result_event(run_id, stage, result, transition)
+            if transition == ACCEPTED:
+                self._emit_event(run_id, {
+                    "event": "accepted",
+                    "timestamp": _utc_timestamp(),
+                })
+                return {
+                    "run_id": run_id,
+                    "disposition": ACCEPTED,
+                    "stage": ACCEPTED,
+                    "message": "Workflow complete. All stages passed.",
+                }
             self._emit_event(run_id, {
                 "event": "blocked",
-                "reason": result.get("block_reason", "evaluator returned BLOCKED"),
+                "reason": block_reason or "evaluator returned BLOCKED",
                 "timestamp": _utc_timestamp(),
             })
             return {
                 "run_id": run_id,
                 "disposition": BLOCKED,
                 "stage": BLOCKED,
-                "message": result.get(
-                    "block_reason",
-                    "Workflow blocked. Evaluator returned BLOCKED."
-                ),
+                "message": block_reason or
+                "Workflow blocked. Evaluator returned BLOCKED.",
             }
 
-        # Transition to next stage
+        # Transition to the next stage: compile its packet first, so a run is
+        # never recorded at a stage whose guidance could not be produced.
         next_stage = self._get_stage(workflow, transition)
-        state["current_stage"] = transition
-        state["transitions"].append({
+        pending["current_stage"] = transition
+        pending["transitions"].append({
             "from": stage["id"],
             "to": transition,
             "disposition": result["disposition"],
         })
-        self.save_state(run_id, state)
-
-        # Compile next packet
         prior_findings = self._extract_prior_findings(
             result, stage, next_stage, workflow
         )
         packet = self._compile_packet(
-            workflow, next_stage, state, self.run_dir(run_id), prior_findings
+            workflow, next_stage, pending, self.run_dir(run_id), prior_findings
         )
-        self._record_packet(run_id, state, packet)
+        self._stage_packet(pending, packet)
+        # The packet is written before the result that produced it, so that a
+        # commit which cannot store the successor leaves no record of the
+        # submission either.
+        self._commit(run_id, pending,
+                     [(packet["path"], packet["bytes"]), result_write])
+
+        self._emit_result_event(run_id, stage, result, transition)
+        self._emit_packet_event(run_id, packet)
 
         return {
             "run_id": run_id,
@@ -482,7 +501,7 @@ class WorkflowEngine:
             "packet_abs_path": str(packet["path"]),
             "disposition": None,
             "instructions": self._driver_instructions(
-                workflow, next_stage, state, packet
+                workflow, next_stage, pending, packet
             ),
         }
 
@@ -563,7 +582,7 @@ class WorkflowEngine:
         )
         packet = self._compile_packet(
             workflow, stage, state, self.run_dir(run_id), prior_findings,
-            iteration=iteration, write=False,
+            iteration=iteration,
         )
         report.update({
             "disposition": None,
@@ -694,16 +713,43 @@ class WorkflowEngine:
         return state
 
     def save_state(self, run_id: str, state: dict[str, Any]) -> None:
-        """Save the mutable state for a run."""
+        """Save the mutable state for a run, replacing it atomically."""
         path = self.run_dir(run_id) / "state.json"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        # Write atomically
         tmp = path.with_suffix(".tmp")
-        tmp.write_text(
-            json.dumps(state, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        tmp.replace(path)
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            tmp.write_text(
+                json.dumps(state, sort_keys=True, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            tmp.replace(path)
+        except OSError as error:
+            tmp.unlink(missing_ok=True)
+            raise WorkflowError(
+                f"run {run_id}: cannot save state: {error}"
+            ) from error
+
+    def _commit(
+        self, run_id: str, state: dict[str, Any],
+        writes: list[tuple[Path, bytes]],
+    ) -> None:
+        """Make a prepared transition durable, the state last.
+
+        Every file the new state refers to is written before the state that
+        refers to it, and state.json is replaced atomically. A commit that
+        fails part way therefore leaves the previous authoritative state and
+        some orphaned files under the run directory: nothing points at them,
+        and the retry rewrites them byte for byte.
+        """
+        for path, payload in writes:
+            try:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(payload)
+            except OSError as error:
+                raise WorkflowError(
+                    f"run {run_id}: cannot write {path.name}: {error}"
+                ) from error
+        self.save_state(run_id, state)
 
     # --- Internal: stage lookup ---
 
@@ -728,9 +774,12 @@ class WorkflowEngine:
         run_dir: Path,
         prior_findings: list[dict[str, Any]],
         iteration: int | None = None,
-        write: bool = True,
     ) -> dict[str, Any]:
-        """Deterministically compile a guidance packet.
+        """Deterministically compile a guidance packet, writing nothing.
+
+        The caller decides when the bytes become durable, so that compiling a
+        packet cannot itself advance a run, and replay can recompile the
+        packet it is checking without destroying it.
 
         The packet bytes are assembled from:
         - A deterministic header (workflow, workflow-source digest, commit,
@@ -792,26 +841,21 @@ class WorkflowEngine:
         # Hash
         packet_hash = hashlib.sha256(packet_bytes).hexdigest()
 
-        # Write to packets/
-        packets_dir = run_dir / "packets"
-        filename = f"{stage['id']}-{stage_iteration:04d}.txt"
-        path = packets_dir / filename
-        if write:
-            packets_dir.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(packet_bytes)
+        path = run_dir / "packets" / f"{stage['id']}-{stage_iteration:04d}.txt"
 
         return {
             "hash": packet_hash,
+            "bytes": packet_bytes,
             "path": path,
             "stage": stage["id"],
             "iteration": stage_iteration,
             "size": len(packet_bytes),
         }
 
-    def _record_packet(
-        self, run_id: str, state: dict[str, Any], packet: dict[str, Any]
+    def _stage_packet(
+        self, state: dict[str, Any], packet: dict[str, Any]
     ) -> None:
-        """Record a packet in the run state and emit an event."""
+        """Record a compiled packet in a state dict, persisting nothing."""
         state["packet_hashes"].append({
             "stage": packet["stage"],
             "iteration": packet["iteration"],
@@ -825,7 +869,8 @@ class WorkflowEngine:
         state["stage_iterations"][stage_id] = (
             state["stage_iterations"].get(stage_id, 0) + 1
         )
-        self.save_state(run_id, state)
+
+    def _emit_packet_event(self, run_id: str, packet: dict[str, Any]) -> None:
         self._emit_event(run_id, {
             "event": "packet",
             "stage": packet["stage"],
@@ -835,16 +880,35 @@ class WorkflowEngine:
             "timestamp": _utc_timestamp(),
         })
 
+    def _emit_result_event(
+        self, run_id: str, stage: dict[str, Any],
+        result: dict[str, Any], transition: str,
+    ) -> None:
+        self._emit_event(run_id, {
+            "event": "result",
+            "stage": stage["id"],
+            "disposition": result["disposition"],
+            "transition": transition,
+            "timestamp": _utc_timestamp(),
+        })
+
     # --- Internal: result handling ---
 
     def _load_and_validate_result(
         self,
         result_path: str,
         stage: dict[str, Any],
-        run_id: str,
         state: dict[str, Any],
     ) -> dict[str, Any]:
-        """Load a result file and validate it against the stage's schema."""
+        """Load a submitted result and check it, writing nothing.
+
+        A submission is checked before any of it is kept: an unreadable file,
+        malformed JSON, a shape the stage's schema refuses, and a result naming
+        another packet all fail here, with the run untouched. Only a result the
+        engine has accepted is ever written into the run's history, so a
+        refused one cannot become the stage's result, alter a recorded hash, or
+        reach a later replay.
+        """
         path = Path(result_path)
         if not path.is_file():
             raise WorkflowError(f"result file not found: {result_path}")
@@ -855,21 +919,19 @@ class WorkflowEngine:
             raise WorkflowError(
                 f"result is not valid JSON: {error}"
             ) from error
+        except OSError as error:
+            raise WorkflowError(
+                f"result cannot be read: {error}"
+            ) from error
+        if not isinstance(result, dict):
+            raise WorkflowError(
+                f"result must be a JSON object, not "
+                f"{type(result).__name__}"
+            )
 
         schema = self.load_schema(self.schema_name_for(stage))
         _validate_result(result, schema, stage["type"])
         self._verify_result_answers_packet(result, stage, state)
-
-        # Copy result into the run directory, named for the packet it answers
-        results_dir = self.run_dir(run_id) / "results"
-        results_dir.mkdir(parents=True, exist_ok=True)
-        stage_iter = _current_packet(state, stage["id"])["iteration"]
-        dest = results_dir / f"{stage['id']}-{stage_iter:04d}.json"
-        dest.write_text(
-            json.dumps(result, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        result["_recorded_path"] = str(dest.relative_to(self.repo_root))
         return result
 
     def _verify_result_answers_packet(
@@ -899,28 +961,28 @@ class WorkflowEngine:
                 f"engine last emitted."
             )
 
-    def _record_result(
-        self, run_id: str, state: dict[str, Any],
-        result: dict[str, Any], stage: dict[str, Any]
-    ) -> None:
-        """Record a result hash in the run state."""
-        result_path = result.get("_recorded_path", "")
-        if result_path:
-            path = self.repo_root / result_path
-            result_bytes = path.read_bytes()
-        else:
-            result_bytes = json.dumps(
-                result, sort_keys=True, separators=(",", ":")
-            ).encode("utf-8")
-        result_hash = hashlib.sha256(result_bytes).hexdigest()
+    def _prepare_result(
+        self, state: dict[str, Any],
+        result: dict[str, Any], stage: dict[str, Any],
+    ) -> tuple[Path, bytes]:
+        """Record an accepted result in a state dict; return the file to write.
+
+        The bytes recorded and the bytes hashed are the same bytes, and they
+        are the result as submitted: nothing the engine derives afterwards is
+        folded back into the run's copy of what a worker returned.
+        """
+        stage_iter = _current_packet(state, stage["id"])["iteration"]
+        dest = (self.run_dir(state["run_id"]) / "results"
+                / f"{stage['id']}-{stage_iter:04d}.json")
+        payload = _result_bytes(result)
         state["result_hashes"].append({
             "stage": stage["id"],
-            "iteration": _current_packet(state, stage["id"])["iteration"],
-            "hash": result_hash,
-            "path": result_path,
+            "iteration": stage_iter,
+            "hash": hashlib.sha256(payload).hexdigest(),
+            "path": str(dest.relative_to(self.repo_root)),
             "disposition": result.get("disposition", ""),
         })
-        self.save_state(run_id, state)
+        return dest, payload
 
     # --- Internal: transitions ---
 
@@ -930,35 +992,43 @@ class WorkflowEngine:
         stage: dict[str, Any],
         result: dict[str, Any],
         state: dict[str, Any],
-    ) -> str:
-        """Determine the next stage id based on the stage type and result."""
+    ) -> tuple[str, str | None]:
+        """The next stage id, and the reason if that next state is BLOCKED.
+
+        The reason is returned rather than written into the result: the result
+        is the record of what a worker submitted, and the engine's account of
+        why a run stopped is not part of it.
+
+        Only the failure counters in the state passed here are mutated, and
+        that state is the caller's uncommitted copy.
+        """
         disposition = result.get("disposition", "")
 
         if stage["type"] in (LINEAR, BOUNDED_REVISION):
             if disposition == BLOCKED:
-                result["block_reason"] = (
+                return BLOCKED, (
                     f"worker at stage {stage['id']} returned BLOCKED: "
                     f"{result.get('summary', '(no summary)')}"
                 )
-                return BLOCKED
             if disposition != PASS:
                 kind = "linear" if stage["type"] == LINEAR else "revision"
                 raise WorkflowError(
                     f"{kind} stage {stage['id']} requires disposition PASS or "
                     f"BLOCKED, got {disposition}"
                 )
-            return stage["next"]
+            return stage["next"], None
 
         if stage["type"] == EVALUATOR:
             if disposition == PASS:
                 self._clear_failures(state, stage)
-                return stage["pass_transition"]
+                return stage["pass_transition"], None
             if disposition == CHANGES_REQUIRED:
-                if self._failure_budget_spent(state, stage, result):
-                    return BLOCKED
-                return stage["fail_transition"]
+                spent = self._failure_budget_spent(state, stage)
+                if spent:
+                    return BLOCKED, spent
+                return stage["fail_transition"], None
             if disposition == BLOCKED:
-                return BLOCKED
+                return BLOCKED, None
             raise WorkflowError(
                 f"evaluator {stage['id']} returned invalid disposition: "
                 f"{disposition}"
@@ -967,16 +1037,111 @@ class WorkflowEngine:
         if stage["type"] == GATE:
             if disposition == PASS:
                 self._clear_failures(state, stage)
-                return stage["pass_transition"]
+                return stage["pass_transition"], None
             if disposition == FAIL:
-                if self._failure_budget_spent(state, stage, result):
-                    return BLOCKED
-                return stage["fail_transition"]
+                spent = self._failure_budget_spent(state, stage)
+                if spent:
+                    return BLOCKED, spent
+                return stage["fail_transition"], None
             raise WorkflowError(
                 f"gate {stage['id']} returned invalid disposition: {disposition}"
             )
 
         raise WorkflowError(f"unknown stage type: {stage['type']}")
+
+    def _verify_final_acceptance(
+        self, workflow: dict[str, Any], stage: dict[str, Any],
+        state: dict[str, Any],
+    ) -> None:
+        """The conditions tpt checks itself before a run may become ACCEPTED.
+
+        Acceptance is the one transition no agent may attest. A worker's PASS
+        says that a stage's own work was done; whether the run as a whole may
+        be accepted is a question about the run's recorded state, and tpt
+        answers it from that state rather than from a summary. Judgment stays
+        where judgment belongs, in the evaluator stages upstream; what is
+        machine-checkable is checked here.
+
+        A gate whose commands fail takes its `fail_transition`, which is a
+        bounded revision path. Reaching acceptance with a run whose own record
+        contradicts it is not repairable by revision, so it fails closed.
+        """
+        problems: list[str] = []
+        if stage["type"] != GATE:
+            problems.append(
+                f"stage {stage['id']} is a {stage['type']} stage; only a "
+                f"program gate may accept a run"
+            )
+
+        latest: dict[str, dict[str, Any]] = {}
+        for entry in state["result_hashes"]:
+            latest[entry["stage"]] = entry
+
+        for other in workflow["stages"]:
+            if other["id"] == stage["id"]:
+                continue
+            if other["type"] not in (EVALUATOR, GATE):
+                continue
+            entry = latest.get(other["id"])
+            if entry is None:
+                problems.append(
+                    f"{other['id']} has produced no result; a required check "
+                    f"has not run"
+                )
+            elif entry["disposition"] != PASS:
+                problems.append(
+                    f"{other['id']} last recorded {entry['disposition']}, "
+                    f"not {PASS}"
+                )
+
+        for entry in state["result_hashes"]:
+            path = self.repo_root / entry["path"]
+            if not path.is_file():
+                problems.append(f"recorded result {entry['path']} is missing")
+                continue
+            recorded = path.read_bytes()
+            if hashlib.sha256(recorded).hexdigest() != entry["hash"]:
+                problems.append(
+                    f"recorded result {entry['path']} no longer matches its "
+                    f"recorded hash"
+                )
+                continue
+            if entry is not latest.get(entry["stage"]):
+                continue
+            if entry["stage"] == stage["id"]:
+                # The accepting gate's last recorded result is the refusal that
+                # sent the run round for revision. Its checks have just been
+                # rerun and passed; that run, not the record of the earlier
+                # one, is what acceptance rests on.
+                continue
+            body = json.loads(recorded.decode("utf-8"))
+            unresolved = sorted(
+                str(f.get("id", "(unidentified)"))
+                for f in body.get("findings", [])
+                if f.get("severity") == "blocking"
+            )
+            if unresolved:
+                problems.append(
+                    f"{entry['stage']} still reports blocking findings: "
+                    f"{', '.join(unresolved)}"
+                )
+
+        for entry in state["packet_hashes"]:
+            path = self.repo_root / entry["path"]
+            if (not path.is_file()
+                    or hashlib.sha256(path.read_bytes()).hexdigest()
+                    != entry["hash"]):
+                problems.append(
+                    f"the packet recorded for {entry['stage']} iteration "
+                    f"{entry['iteration']} is missing or altered "
+                    f"({entry['path']})"
+                )
+
+        if problems:
+            raise WorkflowError(
+                f"run {state['run_id']}: final acceptance refused by "
+                f"{stage['id']}:\n  " + "\n  ".join(problems)
+            )
 
     @staticmethod
     def _clear_failures(state: dict[str, Any], stage: dict[str, Any]) -> None:
@@ -985,9 +1150,11 @@ class WorkflowEngine:
 
     @staticmethod
     def _failure_budget_spent(
-        state: dict[str, Any], stage: dict[str, Any], result: dict[str, Any]
-    ) -> bool:
+        state: dict[str, Any], stage: dict[str, Any]
+    ) -> str | None:
         """Count consecutive failures, not visits, against max_iterations.
+
+        Returns the block reason once the budget is spent, otherwise None.
 
         Counting visits let a stage that keeps passing spend its own revision
         budget: a run that re-entered a gate three times on its way through an
@@ -1000,12 +1167,11 @@ class WorkflowEngine:
         max_iter = stage.get("max_iterations", 3)
         if count >= max_iter:
             label = "gate " if stage["type"] == GATE else ""
-            result["block_reason"] = (
+            return (
                 f"iteration limit exceeded for {label}{stage['id']}: "
                 f"{count}/{max_iter} consecutive failures"
             )
-            return True
-        return False
+        return None
 
     def _extract_prior_findings(
         self,
@@ -1076,7 +1242,11 @@ class WorkflowEngine:
         state: dict[str, Any],
         run_id: str,
     ) -> dict[str, Any]:
-        """Run deterministic gate checks and return a structured result."""
+        """Run deterministic gate checks and return a structured result.
+
+        Only the untouched per-check logs are written here. The result itself
+        is persisted with the transition it produces, like any other result.
+        """
         checks = stage.get("checks", [])
         args = state["normalized_args"]
         findings = []
@@ -1148,22 +1318,12 @@ class WorkflowEngine:
                     ),
                 })
 
-        # Record the gate result
-        results_dir = self.run_dir(run_id) / "results"
-        results_dir.mkdir(parents=True, exist_ok=True)
-        result = {
+        return {
             "disposition": PASS if all_passed else FAIL,
             "findings": findings,
             "stage": stage["id"],
             "iteration": stage_iter,
         }
-        dest = results_dir / f"{stage['id']}-{stage_iter:04d}.json"
-        dest.write_text(
-            json.dumps(result, sort_keys=True, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        result["_recorded_path"] = str(dest.relative_to(self.repo_root))
-        return result
 
     def _portable_output(self, text: str) -> str:
         """Strip host-specific detail out of subprocess output.
@@ -1289,6 +1449,7 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
                 raise WorkflowError(f"{path}: {sid}: gate stage requires 'checks' list")
 
     # Validate transitions point to valid stages or terminal states
+    accepting = []
     for stage in data["stages"]:
         sid = stage["id"]
         for tkey in ("next", "pass_transition", "fail_transition"):
@@ -1298,6 +1459,24 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
                     raise WorkflowError(
                         f"{path}: {sid}.{tkey} points to unknown stage: {target}"
                     )
+                if target == ACCEPTED:
+                    accepting.append((sid, tkey, stage["type"]))
+
+    # Acceptance is the one transition no agent may attest. A stage whose
+    # result comes from an AI worker cannot name ACCEPTED, because then the
+    # worker's own PASS would be the whole of the acceptance decision. Only a
+    # program gate, whose result tpt composes from checks it ran itself, may.
+    for sid, tkey, stype in accepting:
+        if stype != GATE:
+            raise WorkflowError(
+                f"{path}: {sid}.{tkey} is {ACCEPTED}, but {sid} is a {stype} "
+                f"stage; only a {GATE} stage may accept a run"
+            )
+    if not accepting:
+        raise WorkflowError(
+            f"{path}: no stage transitions to {ACCEPTED}; the workflow has no "
+            f"way to succeed"
+        )
 
 
 def _validate_result(
@@ -1360,6 +1539,13 @@ def _substitute_args(template: str, args: dict[str, str],
         value = shlex.quote(args[key]) if quote else args[key]
         result = result.replace(f"{{{key}}}", value)
     return result
+
+
+def _result_bytes(result: dict[str, Any]) -> bytes:
+    """The canonical bytes a result is both stored and hashed as."""
+    return (
+        json.dumps(result, sort_keys=True, indent=2) + "\n"
+    ).encode("utf-8")
 
 
 def _read_json(path: Path) -> dict[str, Any]:
