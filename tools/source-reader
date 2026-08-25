@@ -1278,8 +1278,8 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader check",
             (
-                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
-                "  passages the rights records withhold: 1157",
+                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
+                "  passages the rights records withhold: 1234",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1296,14 +1296,14 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader list --author 'Augustine of Hippo'",
             (
-                "Augustine of Hippo       De Genesi ad litteram                  1841       la       12/12  edition.augustine.de-genesi-ad-litteram.migne-pl-34",
-                "... 8 more lines",
+                "Augustine of Hippo       Confessiones                           1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
+                "... 10 more lines",
             ),
         ),
         Example(
             "tools/tpt source-reader list --language grc --sort date",
             (
-                "... 18 more lines",
+                "... 17 more lines",
             ),
             "the Greek editions, earliest first",
         ),
@@ -1327,16 +1327,16 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader structure --out build/example-sources",
             (
-                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
-                "  -> build/example-sources/structure/sources (2309 files)",
+                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
+                "  -> build/example-sources/structure/sources (2352 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/tpt source-reader structure --check",
             (
-                "503 works, 674 editions, 1722 artifacts, 2791 passages; 1634 readable here.",
-                "  src/web/data/structure/sources is current (2309 files)",
+                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
+                "  src/web/data/structure/sources is current (2352 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

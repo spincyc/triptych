@@ -206,10 +206,19 @@ STALE: dict[str, str] = {
         "2026-07-31: 459 masses and 454 reachable recorded; 462 and 455 now. The two new masses are the Commune Sanctorum's, which no date reaches and which are therefore correctly unreachable",
     "tools/check-calendar-masses check --calendar roman-1962":
         "2026-07-31: 459 masses over 1465 propers recorded; 462 over 1472 now",
+    "tools/check-calendar-masses check --json":
+        "2026-08-22: the verb refuses where the transcript shows a report, because "
+        "postconciliar's Ascension vigil cites Psalm 67:33 and the hebrew Psalm 67 "
+        "ends at verse 8. A repository defect the transcript reports honestly, so "
+        "recapturing would record the refusal as the example; correcting the citation "
+        "is the fix",
     "tools/citations encode --root build/example-cal":
         "2026-07-31: roman-1962 propers grew; 1108 already-encoded recorded, 1151 now",
     "tools/citations check":
         "2026-07-31: the transcript ends claiming 25 further lines; the run prints 26",
+    "tools/citations check --json":
+        "2026-08-22: refuses on the same out-of-range Psalm 67:33 citation as "
+        "`check-calendar-masses check --json`, and waits on the same fix",
     "tools/commentary-work-index discover --passage 'Psalm 24:1-3'"
     " --numbering vulgate --max-results 2 --json":
         "2026-07-31: the payload grew; the line was cut at +401 chars, +499 now",
@@ -495,40 +504,96 @@ def prepare(tool: str) -> None:
             run(str(step))
 
 
-def tracked_state() -> str:
-    """What Git sees, so that a replay writing tracked state cannot go unnoticed.
+def tracked_differences() -> set[str]:
+    """Every tracked path that differs from HEAD, staged or not.
 
-    Half of these invocations write. Every one of them was captured against a
-    scratch path under build/, and the two that would rewrite tracked release
-    bindings are in EXEMPT — but that is a claim about the transcripts, and this
-    is the check behind it.
+    `git status --porcelain` also reports the untracked output these examples
+    write under build/, and folds a rename into one line with an arrow in it.
+    This asks the narrower question a mutation guard needs.
     """
-    return subprocess.run(
-        ["git", "status", "--porcelain"],
-        cwd=ROOT, capture_output=True, text=True,
-    ).stdout
+    found: set[str] = set()
+    for staged in ([], ["--cached"]):
+        result = subprocess.run(
+            ["git", "diff", "--name-only", "--no-renames", "-z"] + staged,
+            cwd=ROOT, capture_output=True, text=True,
+        )
+        found.update(name for name in result.stdout.split("\0") if name)
+    return found
+
+
+class TrackedGuard:
+    """Undo, and attribute, a write an example makes to tracked state.
+
+    Half of these invocations write. Every one was captured against a scratch
+    path under build/, and the ones that would rewrite tracked release bindings
+    are in EXEMPT — but that is a claim about the transcripts, and this is what
+    holds it. Checking once at the end of the run named the paths without naming
+    the invocation that wrote them, and left the tree dirty for whoever ran it;
+    it also compared `git status` lines, so a second write to a file that was
+    already modified moved no line and was invisible.
+
+    Asking after every example gives the invocation away and bounds the damage
+    to one of them. The bytes of what is already dirty are recorded up front, so
+    a file carrying someone's uncommitted work is put back as it was rather than
+    reverted to HEAD.
+    """
+
+    def __init__(self) -> None:
+        self.dirty = tracked_differences()
+        self.recorded = {name: self.content(name) for name in self.dirty}
+
+    @staticmethod
+    def content(name: str) -> bytes | None:
+        path = ROOT / name
+        return path.read_bytes() if path.is_file() else None
+
+    def wrote(self) -> list[str]:
+        """The tracked paths written since the last ask, restored to what they were."""
+        touched = sorted(
+            (tracked_differences() - self.dirty)
+            | {name for name in self.dirty if self.content(name) != self.recorded[name]}
+        )
+        for name in touched:
+            if name in self.dirty:
+                path = ROOT / name
+                if self.recorded[name] is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_bytes(self.recorded[name])
+            else:
+                # It matched HEAD before this example ran, so HEAD is what it was.
+                subprocess.run(
+                    ["git", "checkout", "--", name],
+                    cwd=ROOT, capture_output=True,
+                )
+        return touched
 
 
 def replay(names: list[str] | None = None, *, echo: bool = False) -> list[Result]:
-    before = tracked_state()
+    guard = TrackedGuard()
     results: list[Result] = []
     for path in tool_paths():
         if names and path.name not in names:
             continue
         prepare(path.name)
+        written = guard.wrote()
+        if written:
+            raise SystemExit(
+                f"replay-examples: preparing {path.name} wrote tracked state, which "
+                "PREPARE may not do; the writes were undone:\n  " + "\n  ".join(written)
+            )
         for capture in captures_of(path):
-            results.append(replay_one(capture))
+            result = replay_one(capture)
+            written = guard.wrote()
+            if written:
+                result.status = "wrote-tracked"
+                result.problems = tuple(
+                    f"wrote tracked {name} (undone)" for name in written
+                )
+            results.append(result)
             if echo:
                 print(rendered(results[-1]), flush=True)
-    # Only what became dirty: a path that stopped being dirty is someone else
-    # committing while this ran, which is their business and not a divergence.
-    moved = sorted(set(tracked_state().splitlines()) - set(before.splitlines()))
-    if moved:
-        raise SystemExit(
-            "replay-examples: replaying the examples changed tracked state, which no "
-            "capture is allowed to do (or another writer changed the tree while this "
-            "ran):\n  " + "\n  ".join(moved)
-        )
     return results
 
 
@@ -570,6 +635,7 @@ def rendered(result: Result) -> str:
         "recovered": "  FIXED ",
         "exempt": "  exempt",
         "not-run": "  absent",
+        "wrote-tracked": "  WROTE ",
     }[result.status]
     return f"{mark}  {result.capture.command}"
 
@@ -731,7 +797,18 @@ def report(results: list[Result], *, stream=sys.stdout) -> int:
     stale = [r for r in results if r.status == "stale"]
     exempt = [r for r in results if r.status == "exempt"]
     absent = [r for r in results if r.status == "not-run"]
+    wrote = [r for r in results if r.status == "wrote-tracked"]
     volatile = sum(len(lines) for lines in VOLATILE.values())
+
+    if wrote:
+        print(
+            "\nwrote tracked state, which no capture may do; the writes were undone:",
+            file=stream,
+        )
+        for result in wrote:
+            print(f"  $ {result.capture.command}", file=stream)
+            for problem in result.problems:
+                print(f"    {problem}", file=stream)
 
     for result in diverged:
         print(f"\n{result.capture.label}", file=stream)
@@ -766,10 +843,11 @@ def report(results: list[Result], *, stream=sys.stdout) -> int:
         f"{len(results) - len(exempt) - len(absent)} replayed, "
         f"{len(diverged) + len(recovered)} diverged, {len(stale)} known stale, "
         f"{len(exempt)} never run, {len(absent)} unrunnable here, "
+        f"{len(wrote)} wrote tracked state, "
         f"{volatile} volatile line(s) declared",
         file=stream,
     )
-    return 1 if diverged or recovered else 0
+    return 1 if diverged or recovered or wrote else 0
 
 
 def main(argv: list[str] | None = None) -> int:

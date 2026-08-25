@@ -70,15 +70,16 @@ EXAMPLES = {
             (
                 "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
-                "solved cases: 29 of 29 verified against the browser's model",
-                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
+                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 4 questions left open",
+                "solved cases: 37 of 37 verified against the browser's model",
+                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choice, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy. A missing node or model is a failure here, never a skip",
         ),
         Example(
             "tools/calendar-rubrics check --out build/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":592,... [+426 chars]",
+                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":592,... [+533 chars]",
             ),
         ),
     ),
@@ -125,15 +126,16 @@ EXAMPLES = {
             (
                 "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
                 "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
-                "solved cases: 29 of 29 verified against the browser's model",
-                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choi... [+91 chars]",
+                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 4 questions left open",
+                "solved cases: 37 of 37 verified against the browser's model",
+                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choice, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "read-only first: `check` validates the sources and reports whether --out is already current",
         ),
         Example(
             "tools/calendar-rubrics structure --out build/example-web",
             (
-                "wrote 3 files",
+                "wrote 4 files",
                 "  -> build/example-web/structure/rubrics/index.json",
             ),
             "WRITES the browser's rubrics files. --out here is untracked; the default writes tracked src/web/data",

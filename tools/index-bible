@@ -90,7 +90,7 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible clementine-vulgate --json",
             (
-                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2289,\"resolved\":2255},\"roman... [+298 chars]",
+                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2305,\"resolved\":2301},\"roman... [+298 chars]",
             ),
             "one key-sorted object; the elided part carries `projection` with a count per "
             "override kind and `total`, which is the diffable form of the same summary",

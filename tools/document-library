@@ -58,7 +58,7 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "137 works, 186 documents, 200 issues, 5953 pages.",
+                "137 works, 186 documents, 200 issues, 5961 pages.",
                 "  titles derived from source and confirmed against the built PDF: 200",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 0",
@@ -133,7 +133,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "137 works, 186 documents, 200 issues, 5953 pages.",
+                "137 works, 186 documents, 200 issues, 5961 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -141,7 +141,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "137 works, 186 documents, 200 issues, 5953 pages.",
+                "137 works, 186 documents, 200 issues, 5961 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",
