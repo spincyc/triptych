@@ -34,7 +34,6 @@ workflows/
       artifact-revision.md
       visual-evaluation.md
       visual-revision.md
-      final-acceptance.md
   pipelines/                   # machine-readable workflow definitions
     proper.json
   schema/                      # machine-enforced contracts
@@ -48,6 +47,7 @@ tools/
   tests/
     test_workflow_determinism.py
     test_workflow_engine.py
+    test_workflow_adversarial.py
 ```
 
 ## Why workflow files cannot become ambient agent guidance
@@ -137,7 +137,10 @@ state.
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
-7. **Write**: to `packets/<stage>-<iteration>.txt`.
+
+Compilation writes nothing. The compiled bytes are written to
+`packets/<stage>-<iteration>.txt` by the commit that also records the state
+they belong to, so a packet exists if and only if the run reached it.
 
 ### Workflow-source digest
 
@@ -185,6 +188,11 @@ tell a fresh result from the previous one resubmitted, from a result produced
 for another stage, or from one written before the run advanced — and each of
 those would move the run without a worker having done the stage's work.
 
+A result becomes part of the run only when the transition it produced is
+committed. Until then it is a file the operator happens to have on disk: the
+engine reads it, and copies it into `results/` and its hash into
+`result_hashes` only alongside the state that acts on it.
+
 Gate results are produced by the engine and carry the same two fields.
 
 ## Transition semantics
@@ -231,9 +239,66 @@ Findings are forwarded verbatim into the revision packet.
 
 ### Terminal states
 
-- `ACCEPTED`: the final stage's result has `disposition: "PASS"`.
+- `ACCEPTED`: a gate stage whose `pass_transition` is `ACCEPTED` ran its checks
+  and every one of them passed, and the run's own record satisfies the
+  acceptance audit below.
 - `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, or a
   revision loop reaches its `max_iterations` limit.
+
+Both are final: the engine refuses any further `advance` on a terminal run.
+
+## Acceptance
+
+Acceptance is the engine's decision, and only a gate stage may name it.
+`_validate_workflow` rejects a workflow in which a linear or evaluator stage
+transitions to `ACCEPTED`, because such a stage would let an agent's own
+`disposition: "PASS"` end the run — an AI attesting that the work it was asked
+to produce is acceptable. It also rejects a workflow from which `ACCEPTED` is
+unreachable.
+
+Before recording `ACCEPTED`, `_verify_final_acceptance` re-reads the run's
+record and refuses acceptance unless:
+
+- the accepting stage is a gate whose checks all passed just now;
+- every other evaluator and gate stage that ran last recorded `PASS`;
+- every recorded result file is still present and still hashes to the digest
+  recorded when it was accepted;
+- no stage's latest result carries a blocking finding; and
+- every recorded packet file is present and unaltered.
+
+A gate's checks speak only for the artifacts they inspect. The audit is what
+makes acceptance mean the whole run passed, and it reads only files the engine
+itself wrote and hashed, so editing a result or deleting a packet cannot buy an
+acceptance — it prevents one.
+
+## The advance transaction
+
+An `advance` either completes or leaves the run exactly as it was. The engine
+validates the submitted result, decides the transition against a copy of the
+state, and compiles the successor packet, all without writing anything. Only
+then does `_commit` write, in order: the successor packet, the accepted result,
+and last of all the state file, replaced atomically through a temporary file in
+the same directory.
+
+Two properties follow, and the adversarial suite holds them:
+
+- A refused submission leaves no trace. A result that is malformed, answers a
+  packet the run has moved past, names another stage, duplicates one already
+  recorded, or carries a disposition the stage does not admit is never written
+  to `results/` and never hashed into `result_hashes`. Nothing downstream can
+  read it, and `replay` is unaffected.
+- A run never advances past a packet it could not emit. If the successor packet
+  cannot be compiled or written, the stage, iteration counters, transitions,
+  packet and result records, and disposition are all untouched, and the result
+  that was submitted is not authoritative. The operator repairs the cause and
+  submits the same result again; the retry emits the byte-identical packet.
+
+Seeding is the same transaction: the first packet is compiled before any state
+exists, and a seed that cannot emit it leaves no run to resume.
+
+A commit that fails midway can leave a packet file, or a packet and a result
+file, that the state does not reference. Nothing reads a file the state does not
+record, and a successful retry rewrites both byte for byte.
 
 ## Iteration tracking
 

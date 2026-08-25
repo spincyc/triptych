@@ -13,9 +13,11 @@ live AI provider.
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import os
 import shutil
+import stat
 import subprocess
 import sys
 import tempfile
@@ -27,6 +29,7 @@ LAUNCHER = ROOT / "tools" / "tpt"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _workflow import (  # noqa: E402
+    ACCEPTED,
     BLOCKED,
     CHANGES_REQUIRED,
     FAIL,
@@ -79,9 +82,11 @@ WORKFLOW = {
          "revision_target": "stage-b",
          "fragments": ["synthetic/brief.md", "synthetic/revise.md"],
          "result_schema": "worker-result.json", "next": "gate-stage"},
-        {"id": "final", "type": "linear",
-         "fragments": ["synthetic/brief.md"],
-         "result_schema": "worker-result.json", "next": "ACCEPTED"},
+        {"id": "final", "type": "gate",
+         "checks": [{"id": "accept", "command": "test ! -f REFUSE",
+                     "required_result": "the run must be acceptable"}],
+         "pass_transition": "ACCEPTED", "fail_transition": "visual-revise",
+         "max_iterations": 3},
     ],
 }
 
@@ -419,6 +424,259 @@ class ResultBindingTests(EngineCase):
         self.assertEqual(recorded, ["stage-a-0000.json"])
 
 
+class TransactionalAdvanceTests(EngineCase):
+    """A run must never durably advance without its successor packet.
+
+    Persisting the new stage first left a run recorded at a stage no packet
+    was ever emitted for: unreplayable, undrivable, and no longer at the stage
+    it could still be driven from. The successor is now prepared in full before
+    any of it is committed.
+    """
+
+    def state_path(self, run_id: str) -> Path:
+        return self.repo / "build" / "tpt-runs" / run_id / "state.json"
+
+    def _block_packets(self, run_id: str) -> Path:
+        """Make the next packet impossible to write, reversibly.
+
+        A missing fragment cannot be used here: the workflow-source digest
+        catches that before the result is even read. This is the failure the
+        digest cannot see — the packet compiles and then cannot be stored.
+        """
+        packets = self.repo / "build" / "tpt-runs" / run_id / "packets"
+        os.chmod(packets, stat.S_IRUSR | stat.S_IXUSR)
+        self.addCleanup(self._unblock, packets)
+        return packets
+
+    @staticmethod
+    def _unblock(packets: Path) -> None:
+        if packets.is_dir():
+            os.chmod(packets, 0o755)
+
+    def test_failed_successor_packet_leaves_the_run_where_it_was(self):
+        run_id = self.seed()["run_id"]
+        before = self.engine.load_state(run_id)
+        self._block_packets(run_id)
+        with self.assertRaises(WorkflowError) as caught:
+            self.advance(run_id)
+        self.assertIn("cannot write", str(caught.exception))
+        after = self.engine.load_state(run_id)
+        for key in ("current_stage", "transitions", "packet_hashes",
+                    "stage_iterations", "iteration", "disposition"):
+            self.assertEqual(after[key], before[key],
+                             f"a failed advance must not change {key}")
+        self.assertEqual(after["result_hashes"], [],
+                         "the result of a failed advance is not authoritative")
+
+    def test_no_result_is_accepted_for_the_packet_that_never_existed(self):
+        run_id = self.seed()["run_id"]
+        self._block_packets(run_id)
+        with self.assertRaises(WorkflowError):
+            self.advance(run_id)
+        successor = self.repo / "successor.json"
+        successor.write_text(json.dumps({
+            "stage": "stage-b", "iteration": 0, "disposition": PASS,
+            "summary": "answering guidance that was never issued",
+        }), encoding="utf-8")
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, result_path=str(successor))
+        self.assertIn("stage-a", str(caught.exception))
+
+    def test_replay_still_matches_after_a_failed_advance(self):
+        run_id = self.seed()["run_id"]
+        recorded = self.engine.load_state(run_id)["packet_hashes"][-1]["hash"]
+        self._block_packets(run_id)
+        with self.assertRaises(WorkflowError):
+            self.advance(run_id)
+        report = self.engine.replay(run_id)
+        self.assertTrue(report["deterministic"])
+        self.assertEqual(report["recompiled_hash"], recorded)
+
+    def test_retry_after_repair_emits_the_same_successor_packet(self):
+        run_id = self.seed()["run_id"]
+        packets = self._block_packets(run_id)
+        with self.assertRaises(WorkflowError):
+            self.advance(run_id)
+        self._unblock(packets)
+        retried = self.advance(run_id, name="retry.json")
+        self.assertEqual(retried["stage"], "stage-b")
+
+        # The same answer to the same packet, on a run that never failed.
+        shutil.rmtree(self.repo / "build" / "tpt-runs", ignore_errors=True)
+        clean = self.seed()["run_id"]
+        self.assertEqual(self.advance(clean, name="clean.json")["packet_hash"],
+                         retried["packet_hash"],
+                         "a repaired retry must produce the same guidance")
+
+    def test_a_seed_that_cannot_emit_its_packet_leaves_no_run(self):
+        """Seeding is the same transaction: no state without a first packet."""
+        runs = self.repo / "build" / "tpt-runs"
+        runs.mkdir(parents=True, exist_ok=True)
+        os.chmod(runs, stat.S_IRUSR | stat.S_IXUSR)
+        self.addCleanup(self._unblock, runs)
+        with self.assertRaises(WorkflowError):
+            self.seed()
+        self._unblock(runs)
+        self.assertEqual(sorted(p.name for p in runs.iterdir()), [],
+                         "a seed that could not emit a packet leaves no run")
+        seeded = self.seed()
+        self.assertEqual(seeded["stage"], "stage-a")
+        self.assertFalse(seeded["already_exists"],
+                         "the failed seed must not be mistaken for a live run")
+
+
+class RefusedResultTests(EngineCase):
+    """A refused submission leaves the authoritative run exactly as it was.
+
+    A result written or hashed before the engine decided to refuse it stayed
+    in the run: it counted as the stage's result, and the prior-findings scan
+    could pick it up later as though a worker's rejected claim had been
+    accepted.
+    """
+
+    def authoritative(self, run_id: str) -> dict:
+        """Everything about a run that a later packet or replay depends on."""
+        state = self.engine.load_state(run_id)
+        results = self.repo / "build" / "tpt-runs" / run_id / "results"
+        return {
+            "current_stage": state["current_stage"],
+            "disposition": state["disposition"],
+            "packet_hashes": state["packet_hashes"],
+            "result_hashes": state["result_hashes"],
+            "transitions": state["transitions"],
+            "stage_failures": state["stage_failures"],
+            "recorded": sorted(p.name for p in results.iterdir())
+            if results.is_dir() else [],
+        }
+
+    def refuse(self, run_id: str, path: str) -> None:
+        before = self.authoritative(run_id)
+        replay_before = self.engine.replay(run_id)
+        with self.assertRaises(WorkflowError):
+            self.engine.advance(run_id, result_path=path)
+        self.assertEqual(self.authoritative(run_id), before,
+                         "a refused result must leave no authoritative trace")
+        self.assertEqual(self.engine.replay(run_id), replay_before,
+                         "a refused result must not change the next packet")
+
+    def test_a_stale_iteration_is_refused_without_a_trace(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "eval-stage")
+        self.engine.advance(run_id, result_path=self.result(
+            run_id, CHANGES_REQUIRED, findings=[blocking()], name="cr.json"))
+        self.advance(run_id, name="rev.json")  # back to eval-stage iteration 1
+        stale = self.repo / "stale.json"
+        stale.write_text(json.dumps({
+            "stage": "eval-stage", "iteration": 0, "disposition": PASS,
+            "summary": "stale", "findings": [],
+        }), encoding="utf-8")
+        self.refuse(run_id, str(stale))
+
+    def test_a_result_for_another_stage_is_refused_without_a_trace(self):
+        run_id = self.seed()["run_id"]
+        wrong = self.repo / "wrong.json"
+        wrong.write_text(json.dumps({
+            "stage": "stage-b", "iteration": 0, "disposition": PASS,
+            "summary": "wrong stage",
+        }), encoding="utf-8")
+        self.refuse(run_id, str(wrong))
+
+    def test_a_malformed_result_is_refused_without_a_trace(self):
+        run_id = self.seed()["run_id"]
+        bad = self.repo / "bad.json"
+        bad.write_text("{not json at all", encoding="utf-8")
+        self.refuse(run_id, str(bad))
+        bare = self.repo / "bare.json"
+        bare.write_text(json.dumps({"summary": "no disposition"}),
+                        encoding="utf-8")
+        self.refuse(run_id, str(bare))
+        listed = self.repo / "listed.json"
+        listed.write_text(json.dumps([{"disposition": PASS}]),
+                          encoding="utf-8")
+        self.refuse(run_id, str(listed))
+
+    def test_a_duplicate_does_not_replace_the_accepted_result(self):
+        run_id = self.seed()["run_id"]
+        path = self.result(run_id, name="once.json")
+        self.engine.advance(run_id, result_path=path)
+        accepted = self.authoritative(run_id)
+        self.refuse(run_id, path)
+        self.assertEqual(self.authoritative(run_id)["result_hashes"],
+                         accepted["result_hashes"])
+
+    def test_a_gate_result_is_persisted_only_with_its_transition(self):
+        """A gate composes its own result, and it is committed like any other."""
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "gate-stage")
+        results = self.repo / "build" / "tpt-runs" / run_id / "results"
+        before = self.authoritative(run_id)
+        packets = self.repo / "build" / "tpt-runs" / run_id / "packets"
+        os.chmod(packets, stat.S_IRUSR | stat.S_IXUSR)
+        self.addCleanup(os.chmod, packets, 0o755)
+        (self.repo / "BREAK").write_text("x", encoding="utf-8")
+        with self.assertRaises(WorkflowError):
+            self.engine.advance(run_id, run_gate=True)
+        os.chmod(packets, 0o755)
+        self.assertEqual(self.authoritative(run_id), before,
+                         "a gate whose successor could not be stored records "
+                         "no result and does not move")
+        self.assertNotIn("gate-stage-0000.json",
+                         sorted(p.name for p in results.iterdir()))
+
+
+class RefusedDispositionTests(EngineCase):
+    """A result its stage type refuses is refused before it is recorded.
+
+    stage-a here declares the evaluator schema, so CHANGES_REQUIRED passes
+    schema validation and is then refused by the linear stage's own rules —
+    the one case where a result can be well-formed, correctly bound, and still
+    rejected.
+    """
+
+    workflow = copy.deepcopy(WORKFLOW)
+    for _stage in workflow["stages"]:
+        if _stage["id"] == "stage-a":
+            _stage["result_schema"] = "evaluator-result.json"
+    del _stage
+
+    def test_a_refused_disposition_is_not_written_or_hashed(self):
+        run_id = self.seed()["run_id"]
+        path = self.result(run_id, CHANGES_REQUIRED, findings=[
+            blocking("X-1", "a finding from a stage that cannot revise")],
+            name="refused.json")
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, result_path=path)
+        self.assertIn("requires disposition PASS", str(caught.exception))
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["result_hashes"], [],
+                         "a refused result must not be hashed into the run")
+        results = self.repo / "build" / "tpt-runs" / run_id / "results"
+        self.assertFalse(results.is_dir() and any(results.iterdir()),
+                         "a refused result must not be left in results/")
+        self.assertEqual(state["current_stage"], "stage-a")
+
+    def test_a_refused_disposition_cannot_seed_prior_findings(self):
+        """The findings scan must not see a claim the engine threw away."""
+        run_id = self.seed()["run_id"]
+        with self.assertRaises(WorkflowError):
+            self.engine.advance(run_id, result_path=self.result(
+                run_id, CHANGES_REQUIRED,
+                findings=[blocking("X-1", "a finding nobody accepted")],
+                name="refused.json"))
+        # Drive on to a revision whose packet does forward findings.
+        self.engine.advance(run_id, result_path=self.result(
+            run_id, PASS, findings=[], name="a.json"))
+        self.advance(run_id, name="b.json")
+        out = self.engine.advance(run_id, result_path=self.result(
+            run_id, CHANGES_REQUIRED,
+            findings=[blocking("CON-1", "the finding that was accepted")],
+            name="cr.json"))
+        self.assertEqual(out["stage"], "revise-stage")
+        packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
+        self.assertIn("the finding that was accepted", packet)
+        self.assertNotIn("a finding nobody accepted", packet)
+
+
 class StateIntegrityTests(EngineCase):
     """State is checked against the immutable manifest before it is trusted."""
 
@@ -439,15 +697,26 @@ class StateIntegrityTests(EngineCase):
         run_id = self.seed()["run_id"]
         path = self.state_path(run_id)
         state = json.loads(path.read_text())
-        state["current_stage"] = "final"
+        state["current_stage"] = "visual-revise"
         path.write_text(json.dumps(state, sort_keys=True, indent=2))
         result = self.repo / "skip.json"
         result.write_text(json.dumps({
-            "stage": "final", "iteration": 0, "disposition": PASS,
+            "stage": "visual-revise", "iteration": 0, "disposition": PASS,
             "summary": "skipped",
         }), encoding="utf-8")
         with self.assertRaises(WorkflowError) as caught:
             self.engine.advance(run_id, result_path=str(result))
+        self.assertIn("last emitted packet", str(caught.exception))
+
+    def test_hand_set_gate_stage_cannot_be_run(self):
+        """The same protection covers a gate, which needs no result at all."""
+        run_id = self.seed()["run_id"]
+        path = self.state_path(run_id)
+        state = json.loads(path.read_text())
+        state["current_stage"] = "final"
+        path.write_text(json.dumps(state, sort_keys=True, indent=2))
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, run_gate=True)
         self.assertIn("last emitted packet", str(caught.exception))
 
     def test_truncated_state_is_a_workflow_error(self):
@@ -623,6 +892,227 @@ class GateTests(EngineCase):
         out = self.engine.advance(run_id, run_gate=True)
         self.assertEqual(out["stage"], "gate-revise",
                          "the gate's first failure must still get a revision")
+
+
+class FinalAcceptanceTests(EngineCase):
+    """Acceptance is tpt's decision, read from the run's own record.
+
+    A worker asked to confirm machine-checkable things and trusted to say PASS
+    was the whole of the acceptance decision: the engine read no summary and
+    branched on nothing. What can be checked is now checked by the engine.
+    """
+
+    def state_path(self, run_id: str) -> Path:
+        return self.repo / "build" / "tpt-runs" / run_id / "state.json"
+
+    def test_a_worker_stage_may_not_name_accepted(self):
+        workflow = copy.deepcopy(WORKFLOW)
+        for stage in workflow["stages"]:
+            if stage["id"] == "final":
+                stage.clear()
+                stage.update({
+                    "id": "final", "type": "linear",
+                    "fragments": ["synthetic/brief.md"],
+                    "result_schema": "worker-result.json",
+                    "next": ACCEPTED,
+                })
+        repo = make_repo(workflow)
+        self.addCleanup(shutil.rmtree, repo, ignore_errors=True)
+        with self.assertRaises(WorkflowError) as caught:
+            engine_for(repo).load_workflow("adv-wf")
+        self.assertIn("only a gate stage may accept a run",
+                      str(caught.exception))
+
+    def test_the_final_gate_takes_no_worker_result(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        with self.assertRaises(WorkflowError) as caught:
+            self.advance(run_id, name="attested.json")
+        self.assertIn("--run-gate", str(caught.exception))
+        self.assertIsNone(self.engine.load_state(run_id)["disposition"],
+                          "no worker result may make a run terminal")
+
+    def test_the_deterministic_gate_produces_accepted(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        out = self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(out["disposition"], ACCEPTED)
+        self.assertEqual(self.engine.load_state(run_id)["current_stage"],
+                         ACCEPTED)
+
+    def test_accepted_is_terminal(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        self.engine.advance(run_id, run_gate=True)
+        for attempt in (dict(run_gate=True),
+                        dict(result_path=self.result(run_id, name="more.json"))):
+            with self.assertRaises(WorkflowError) as caught:
+                self.engine.advance(run_id, **attempt)
+            self.assertIn(ACCEPTED, str(caught.exception))
+
+    def test_a_failing_gate_cannot_be_overridden_by_a_worker_result(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        (self.repo / "REFUSE").write_text("x", encoding="utf-8")
+        out = self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(out["stage"], "visual-revise",
+                         "a refused acceptance takes its bounded path")
+        forged = self.repo / "forged.json"
+        forged.write_text(json.dumps({
+            "stage": "final", "iteration": 0, "disposition": PASS,
+            "summary": "I checked the artifacts myself",
+        }), encoding="utf-8")
+        with self.assertRaises(WorkflowError):
+            self.engine.advance(run_id, result_path=str(forged))
+        self.assertIsNone(self.engine.load_state(run_id)["disposition"])
+
+    def test_acceptance_is_refused_when_a_required_stage_did_not_pass(self):
+        """The gate's own checks cannot speak for the stages before it."""
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        path = self.state_path(run_id)
+        state = json.loads(path.read_text())
+        for entry in state["result_hashes"]:
+            if entry["stage"] == "gate-stage":
+                entry["disposition"] = FAIL
+        path.write_text(json.dumps(state, sort_keys=True, indent=2))
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, run_gate=True)
+        self.assertIn("gate-stage last recorded FAIL", str(caught.exception))
+        self.assertIsNone(self.engine.load_state(run_id)["disposition"])
+
+    def test_acceptance_is_refused_when_a_recorded_result_was_replaced(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        results = self.repo / "build" / "tpt-runs" / run_id / "results"
+        victim = next(p for p in results.iterdir()
+                      if p.name.startswith("visual-"))
+        body = json.loads(victim.read_text())
+        body["findings"] = [blocking("VIS-009", "a finding nobody reported")]
+        victim.write_text(json.dumps(body, sort_keys=True, indent=2))
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, run_gate=True)
+        self.assertIn("no longer matches", str(caught.exception))
+        self.assertIsNone(self.engine.load_state(run_id)["disposition"])
+
+    def test_acceptance_is_refused_while_a_blocking_finding_stands(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        results = self.repo / "build" / "tpt-runs" / run_id / "results"
+        victim = next(p for p in results.iterdir()
+                      if p.name.startswith("visual-"))
+        body = json.loads(victim.read_text())
+        body["findings"] = [blocking("VIS-009", "still unresolved")]
+        payload = json.dumps(body, sort_keys=True, indent=2) + "\n"
+        victim.write_text(payload, encoding="utf-8")
+        # Re-record the hash, so only the standing finding is at issue.
+        path = self.state_path(run_id)
+        state = json.loads(path.read_text())
+        for entry in state["result_hashes"]:
+            if entry["path"].endswith(victim.name):
+                entry["hash"] = hashlib.sha256(
+                    payload.encode("utf-8")).hexdigest()
+        path.write_text(json.dumps(state, sort_keys=True, indent=2))
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, run_gate=True)
+        self.assertIn("still reports blocking findings", str(caught.exception))
+
+    def test_a_run_is_accepted_after_the_gate_once_refused_it(self):
+        """The audit must not read the gate's own refusal as a standing finding.
+
+        The accepting gate's last recorded result is the refusal that sent the
+        run round for revision, and its findings are blocking by construction.
+        Treating them as unresolved would make one refusal permanent: the run
+        would revise, re-gate, pass every check, and still never be accepted.
+        """
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "final")
+        refuse = self.repo / "REFUSE"
+        refuse.write_text("x", encoding="utf-8")
+        self.assertEqual(self.engine.advance(run_id, run_gate=True)["stage"],
+                         "visual-revise")
+        refuse.unlink()
+        self.advance_to(run_id, "final")
+        self.assertEqual(self.engine.advance(run_id, run_gate=True)
+                         ["disposition"], ACCEPTED)
+
+    def test_visual_revision_returns_through_the_gates_before_acceptance(self):
+        run_id = self.seed()["run_id"]
+        self.advance_to(run_id, "visual")
+        out = self.engine.advance(run_id, result_path=self.result(
+            run_id, CHANGES_REQUIRED, findings=[blocking("VIS-001")],
+            name="vis.json"))
+        self.assertEqual(out["stage"], "visual-revise")
+        self.assertEqual(self.advance(run_id, name="visrev.json")["stage"],
+                         "gate-stage", "revised work is re-gated")
+        self.assertEqual(self.engine.advance(run_id, run_gate=True)["stage"],
+                         "visual", "and re-evaluated")
+        out = self.engine.advance(run_id, result_path=self.result(
+            run_id, PASS, findings=[], name="vis2.json"))
+        self.assertEqual(out["stage"], "final",
+                         "only then may acceptance be attempted")
+
+
+class PropersFinalAcceptanceTests(unittest.TestCase):
+    """The shipped pipeline ends in a gate tpt runs, not a stage it asks for."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.workflow = json.loads(
+            (ROOT / "workflows" / "pipelines" / "proper.json")
+            .read_text(encoding="utf-8"))
+        cls.stages = {s["id"]: s for s in cls.workflow["stages"]}
+
+    def test_only_a_program_gate_accepts(self):
+        accepting = [s for s in self.workflow["stages"]
+                     if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
+        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual(accepting[0]["type"], "gate")
+        self.assertNotIn("fragments", accepting[0],
+                         "a gate gives no instructions to any agent")
+
+    def test_visual_evaluation_passes_into_final_acceptance(self):
+        self.assertEqual(self.stages["visual-evaluation"]["pass_transition"],
+                         "final-acceptance")
+
+    def test_final_acceptance_checks_what_the_fragment_used_to_ask_for(self):
+        """Each step the fragment asked a worker to confirm is now a command."""
+        checks = {c["id"]: c["command"]
+                  for c in self.stages["final-acceptance"]["checks"]}
+        self.assertEqual(sorted(checks), ["canonical-pdf",
+                                          "generation-metadata",
+                                          "proper-components",
+                                          "synthesis-pdf"])
+        self.assertIn("build/{provider}/{proper}.pdf", checks["canonical-pdf"])
+        self.assertIn("build/{provider}/{proper}-synthesis.pdf",
+                      checks["synthesis-pdf"])
+        self.assertIn("check-proper-components", checks["proper-components"])
+        self.assertIn("--aux", checks["proper-components"],
+                      "the two-page brief synthesis gate is one of the steps")
+        self.assertIn("check-generation-metadata", checks["generation-metadata"])
+        for command in checks.values():
+            self.assertIn("{proper}", command)
+            self.assertIn("{provider}", command)
+            self.assertNotIn("{", command.replace("{proper}", "")
+                             .replace("{provider}", ""),
+                             "a gate command takes no argument the run has not "
+                             "normalized")
+
+    def test_a_refused_acceptance_re_enters_the_gates(self):
+        stage = self.stages["final-acceptance"]
+        target = self.stages[stage["fail_transition"]]
+        self.assertEqual(target["next"], "mechanical-gates")
+        self.assertIn("max_iterations", stage,
+                      "a refused acceptance must be bounded")
+
+    def test_no_stage_asks_a_worker_to_attest_acceptance(self):
+        declared = {frag for stage in self.workflow["stages"]
+                    for frag in stage.get("fragments", [])}
+        self.assertNotIn("propers/final-acceptance.md", declared)
+        self.assertFalse(
+            (ROOT / "workflows" / "fragments" / "propers"
+             / "final-acceptance.md").exists(),
+            "the fragment that asked a worker to confirm the checks is gone")
 
 
 class FindingForwardingTests(EngineCase):

@@ -140,10 +140,14 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             },
             {
                 "id": "final",
-                "type": "linear",
-                "fragments": ["synthetic/brief.md", "synthetic/format.md"],
-                "result_schema": "worker-result.json",
-                "next": "ACCEPTED",
+                "type": "gate",
+                "checks": [
+                    {"id": "accept-check", "command": "test ! -f REFUSE",
+                     "required_result": "the run must be acceptable"},
+                ],
+                "pass_transition": "ACCEPTED",
+                "fail_transition": "gate-revise",
+                "max_iterations": 2,
             },
         ],
     }

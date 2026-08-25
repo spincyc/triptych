@@ -79,3 +79,7 @@ A malformed or missing result, or one naming a different packet, causes the
 workflow to stop with an error. No transition occurs. The run remains
 inspectable but cannot advance until a valid result for the current packet is
 submitted.
+
+A refused result is not recorded: it is not copied into the run and its hash
+does not enter the run's state. Nothing later reads it. Correct it and submit
+it again for the same packet.
