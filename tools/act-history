@@ -346,8 +346,60 @@ YEAR_SHIFT = 10000
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
-    "structure": (),
-    "commonality": (),
+    "structure": (
+        Example(
+            "tools/act-history structure --out build/act-history/structure-holy-week",
+            (
+                "12 stations on 2 lines",
+                "  -> build/act-history/structure-holy-week/structure/act-history/roman-holy-week.json",
+                "  -> build/act-history/structure-holy-week/structure/act-history/index.json",
+                "  slices there: roman-holy-week; opens on roman-holy-week",
+            ),
+            note=(
+                "--out keeps this under build/; without it the write lands in the tracked"
+                " data root, the one line of the assembly block in"
+                " `guidance/web-data.md` that needs no --out"
+            ),
+        ),
+        Example(
+            "tools/act-history structure"
+            " --source src/sources/inventories/latin-missal-acts-v1.toml"
+            " --out build/act-history/structure-latin-missal",
+            (
+                "59 stations on 17 lines",
+                "  -> build/act-history/structure-latin-missal/structure/act-history/latin-missal.json",
+                "  -> build/act-history/structure-latin-missal/structure/act-history/index.json",
+                "  slices there: latin-missal; opens on latin-missal",
+            ),
+            note="the manifest names the slices the browser may open, one per source",
+        ),
+    ),
+    "commonality": (
+        Example(
+            "tools/act-history commonality --repo build/act-history/roman-holy-week",
+            (
+                "exempt-uses / typica",
+                "  shared base : quo-primum-1570",
+                "  tips        : quo-primum-exemption-1570 / editio-typica-1962",
+                "  units       : 0 identical, 0 differing, 0 only in exempt-uses, 24 only in typica",
+            ),
+            note=(
+                "omitting the line ids reports every pair; the repository is emitted"
+                " first if build/ does not hold it yet"
+            ),
+        ),
+        Example(
+            "tools/act-history commonality typica exempt-uses"
+            " --repo build/act-history/roman-holy-week --json",
+            (
+                "{\"pairs\":[{\"a\":\"exempt-uses\",\"a_head\":\"quo-primum-exemption-1570\",\"b\":\"typica\",\"b_head\":\"editio-typi... [+1391 chars]",
+            ),
+            note=(
+                "two ids select one pair, and --json carries the unit lists the table"
+                " only counts"
+            ),
+        ),
+    ),
     "plate": (
         Example(
             "tools/act-history plate --source src/sources/inventories/latin-missal-acts-v1.toml"
@@ -388,6 +440,20 @@ EXAMPLES = {
                 "departure kinds used: absent 20, added 1, moved 3, renamed 5, replaced 2, reslotted 8, unrecorded 3",
             ),
         ),
+        Example(
+            "tools/act-history check"
+            " --source src/sources/inventories/latin-missal-acts-v1.toml",
+            (
+                "ok: 59 acts, 17 lines, 43 witnesses, 5 masses, 53 base units, 55 departures",
+                "stations: printed 26, promulgated 33; 15 roots",
+                "edges rest on: act-states-it 23, book-states-it 2, line-order 8, use-continuity 12",
+                "departure kinds used: absent 30, added 1, moved 3, renamed 5, replaced 4, reslotted 8, unrecorded 4",
+            ),
+            note=(
+                "the larger slice is where the printed station and the book's own"
+                " testimony appear; the Holy Week tracer has neither"
+            ),
+        ),
     ),
     "graph": (
         Example(
@@ -407,6 +473,16 @@ EXAMPLES = {
                 "  typica            editio-typica-1962                     1962-06-23  <- maxima-redemptionis-1955... [+42 chars]",
             ),
         ),
+        Example(
+            "tools/act-history graph --json",
+            (
+                "{\"rows\":[{\"act\":\"quo-primum-1570\",\"date\":\"1570-07-14\",\"departures\":[],\"line\":\"typica\",\"parent_kind\":... [+2605 chars]",
+            ),
+            note=(
+                "the same order, with the departure kinds and the editions a station"
+                " passed through unrepresented, which the table elides"
+            ),
+        ),
     ),
     "emit": (
         Example(
@@ -415,6 +491,18 @@ EXAMPLES = {
                 "wrote 12 commits on 2 branches to build/act-history/roman-holy-week",
             ),
             note="writes an untracked Git repository under build/; rerunning replaces it",
+        ),
+        Example(
+            "tools/act-history emit"
+            " --source src/sources/inventories/latin-missal-acts-v1.toml"
+            " --out build/act-history/latin-missal",
+            (
+                "wrote 59 commits on 17 branches to build/act-history/latin-missal",
+            ),
+            note=(
+                "one branch a line and one commit an act, so `git log` on a branch is"
+                " that line's history and `commonality` reads it back"
+            ),
         ),
     ),
 }

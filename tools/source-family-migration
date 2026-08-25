@@ -50,13 +50,13 @@ EXAMPLES = {
     ),
     "bootstrap": (
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-22",
             (
             ),
-            "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched",
+            "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched. The date may not predate the inventory or the classification review, so re-auditing either one lapses this example and the date here has to move with it",
         ),
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-22",
             (
                 "source-family-migration error: <repo>/build/example-migration.toml: already exists; use refresh",
             ),
@@ -72,7 +72,7 @@ EXAMPLES = {
             "read-only first: `check` says what state a refresh would start from",
         ),
         Example(
-            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-08-22",
             (
             ),
             "WRITES the named ledger. With no positional argument it rewrites the tracked one",
