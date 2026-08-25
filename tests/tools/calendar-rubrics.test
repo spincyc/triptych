@@ -31,10 +31,21 @@ repo, root = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
 
 written = sorted(path.name for path in root.glob("*.json"))
 # One file per calendar and none per year: the whole point of deriving the
-# assembly in the browser rather than precomputing a date at a time.
-assert "roman-1962.json" in written, written
-assert "postconciliar.json" in written, written
-assert len(written) <= 3, written
+# assembly in the browser rather than precomputing a date at a time. The set is
+# derived from the calendars that carry a rubrics source rather than counted
+# against a fixed bound, so adding a calendar adds exactly one file and a
+# per-year emission still fails here. A bound went stale the moment the
+# pre-1955 calendar arrived and made the honest count four.
+calendars = sorted(
+    path.parent.name
+    for path in (repo / "src/sources/calendars").glob("*/rubrics.yaml")
+)
+assert "roman-1962" in calendars, calendars
+assert "postconciliar" in calendars, calendars
+assert written == sorted([*(f"{name}.json" for name in calendars), "index.json"]), (
+    written,
+    calendars,
+)
 
 for name in ("roman-1962", "postconciliar"):
     document = json.loads((root / f"{name}.json").read_text(encoding="utf-8"))

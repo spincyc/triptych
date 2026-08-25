@@ -84,8 +84,23 @@ esac
 mkdir -p cal
 cp -R "$repo/src/sources/calendars/roman-1962" cal/
 mkdir -p cal/postconciliar
-sed 's|"Joel 3:1-5": "Joel 2:28-32"|"Joel 3:1-5": "Joel 9:1"|' \
-	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+
+# The edit is confirmed to have landed rather than assumed. Both cases below
+# addressed the override in JSON-quoted form, which the source stopped using;
+# sed then matched nothing, each fixture was a byte copy of a valid calendar,
+# and both negative cases "passed" a build that had been given nothing to
+# refuse. A fixture that stops biting has to say so here.
+edit_fixture() {
+	sed "$1" "$repo/src/sources/calendars/postconciliar/propers.yaml" \
+		>cal/postconciliar/propers.yaml
+	if cmp -s cal/postconciliar/propers.yaml \
+		"$repo/src/sources/calendars/postconciliar/propers.yaml"; then
+		echo "fixture edit matched nothing, so it tests nothing: $1" >&2
+		exit 1
+	fi
+}
+
+edit_fixture 's|Joel 3:1-5: Joel 2:28-32|Joel 3:1-5: Joel 9:1|'
 status=0
 run_tool build --root cal --bible-root "$sandbox/broken" >/dev/null 2>&1 || status=$?
 if [ "$status" -ne 2 ]; then
@@ -94,8 +109,7 @@ if [ "$status" -ne 2 ]; then
 fi
 
 # An override naming a reference the calendar no longer cites is equally dead.
-sed 's|"Joel 3:1-5": "Joel 2:28-32"|"Joel 3:2-6": "Joel 2:28-32"|' \
-	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+edit_fixture 's|Joel 3:1-5: Joel 2:28-32|Joel 3:2-6: Joel 2:28-32|'
 status=0
 run_tool build --root cal --bible-root "$sandbox/dead" >/dev/null 2>&1 || status=$?
 if [ "$status" -ne 2 ]; then
@@ -105,14 +119,18 @@ fi
 
 # A divergent citation with no override refuses: it is reported unresolved and
 # kept out of the index, because a plausible wrong verse is worse than none.
-sed '/"Joel 3:1-5": "Joel 2:28-32"/d' \
-	"$repo/src/sources/calendars/postconciliar/propers.yaml" >cal/postconciliar/propers.yaml
+edit_fixture '/Joel 3:1-5: Joel 2:28-32/d'
 run_tool build --root cal --bible-root "$sandbox/bare" --verbose >bare.txt 2>&1
 if ! grep -q "unresolved postconciliar Joel 3:1-5" bare.txt; then
 	echo "an unrecorded divergent citation was not reported unresolved" >&2
 	exit 1
 fi
-if grep -q "valley of Josaphat" "$sandbox/bare/douay-rheims/index.yaml"; then
+# The refused citation is absent from the index, which is what "kept out" means.
+# Grepping the whole file for a phrase out of Vulgate Joel 3 stopped
+# discriminating once the calendar gained `Joel 4:12-21`, which resolves there
+# correctly and carries the same words: the assertion then fired on a legitimate
+# entry instead of the refusal it was written to catch.
+if grep -q "^  Joel 3:1-5:" "$sandbox/bare/douay-rheims/index.yaml"; then
 	echo "a refused citation still put the wrong verse in the index" >&2
 	exit 1
 fi

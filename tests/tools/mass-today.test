@@ -249,22 +249,31 @@ esac
 #
 # A Mass whose text is not transcribed is counted, and never printed as the
 # prayer it stands in for.
-# 2026-02-09, S. Cyrilli, and not 1 January: the Octave of the Nativity was a
-# placeholder when this was written and was filled on 2026-08-07, so the date
-# stopped exercising the assertion below and the test failed for the one
-# reason a placeholder test should not -- the placeholder went away. Pin it to
-# a day that still holds one, and expect to move it again.
-placeholder="$(run_tool show --date 2026-02-09 --calendar roman-1962 --expanded)"
+# A single pinned date cannot carry this: 1 January was filled on 2026-08-07 and
+# 2026-02-09 (S. Cyrilli) after it, and each time the suite went red for the one
+# reason a placeholder test must not -- the placeholder was transcribed, which is
+# the work succeeding. So walk the days that still hold one and assert against
+# the first. Filling every one of them is the only thing that empties the list,
+# and then the message says to retire the assertion rather than to re-pin it.
+placeholder=""
+for candidate in 2026-06-17 2026-07-21 2026-10-23 2026-11-15; do
+	found="$(run_tool show --date "$candidate" --calendar roman-1962 --expanded)"
+	case "$found" in
+	*"placeholder"*)
+		placeholder="$found"
+		break
+		;;
+	esac
+done
+if [ -z "$placeholder" ]; then
+	echo "no pinned day still holds a placeholder; if the sanctoral is fully" >&2
+	echo "transcribed this assertion has done its job and should be retired," >&2
+	echo "otherwise pin a day that still holds one" >&2
+	exit 1
+fi
 case "$placeholder" in
 *"This entry is a placeholder"*)
 	echo "a placeholder was printed as the prayer" >&2
-	exit 1
-	;;
-esac
-case "$placeholder" in
-*"placeholder"*) ;;
-*)
-	echo "placeholders are not counted" >&2
 	exit 1
 	;;
 esac

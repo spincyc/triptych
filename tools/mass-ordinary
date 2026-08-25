@@ -172,8 +172,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "check reads the inventories, joins the artifacts, and reports whether --out is already current; it writes nothing",
@@ -220,15 +221,15 @@ EXAMPLES = {
                 "----------------------",
                 "",
                 "  Entrance and veneration of the altar",
-                "    [absent: icel]",
-                "    opens Populo congregato",
+                "    [ All make the Sign of the Cross as the Priest says: In the name of the Father, and",
+                "    of the Son, and of the Holy Spirit. Amen. ]",
                 "",
                 "  The Greeting (all)",
-                "    [absent: icel]",
-                "    opens Dominus vobiscum",
-                "",
-                "  Penitential Act, form I (all)",
-                "... 222 more lines",
+                "    The grace of our Lord Jesus Christ, and the love of God, and the communion of the",
+                "    Holy Spirit be with you all. Or: Grace to you and peace from God our Father and the",
+                "    Lord Jesus Christ. Or: The Lord be with you. In this first greeting, a Bishop, in",
+                "    place of The Lord be with you, says: Peace be with you. And with your spirit.",
+                "... 276 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -238,9 +239,10 @@ EXAMPLES = {
             "tools/mass-ordinary coverage --calendar postconciliar",
             (
                 "postconciliar: 48 elements",
-                "  en  edition.english-language-liturgical-consultation.praying-together.1998  9 elements  licensed-free",
+                "  en  edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21  23 elements  licensed-free",
+                "  en  edition.english-language-liturgical-consultation.praying-together.1998  2 elements  licensed-free",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  10 elements  public-domain",
-                "  absent: antecedent-held-not-carried 4, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 39, no-antecedent-witness 2, not-a-text 12",
+                "  absent: antecedent-held-not-carried 4, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 17, no-antecedent-witness 2, not-a-text 12, priest-prayer-said-quietly 6",
             ),
             "read-only: what each witness reaches, and what is absent under which recorded reason",
         ),
@@ -259,8 +261,9 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary check --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
             "read-only first: `check` validates the inventories and reports whether --out is current",
@@ -268,9 +271,10 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 2 witnesses, 1 variants, 11 slots; 13 elements translated, 39 absent",
+                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
-                "wrote 3 files",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "wrote 4 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
             "WRITES the browser's ordinary files. --out here is untracked; the default writes tracked src/web/data",
@@ -483,9 +487,11 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
 #   no-exemplar     the use is permitted and no exact copy of the words is
 #                   reachable, so the gap is an acquisition and not a refusal
 # The distinction is not academic. This inventory said for a year that ICEL's
-# licence forbade the use; it does not, and the true reason was always that
-# nobody here has the book. One of those is answered by asking permission and
-# the other by finding a copy.
+# licence forbade the use; it does not, and the reason then was that nobody here
+# had the book. One of those is answered by asking permission and the other by
+# finding a copy. The ICEL copies have since been registered and the elements
+# they print carry that English, so what is left under the `icel` key is neither:
+# text that no tracked payload prints yet, which is a witness gap.
 ABSENCE_KINDS = ("witness-gap", "rights-withheld", "no-exemplar")
 
 

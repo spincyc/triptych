@@ -234,10 +234,18 @@ case "$kinds" in
 	exit 1
 	;;
 esac
+# The ICEL absence is a witness gap and not an exemplar one. It was
+# `no-exemplar` while this project held no copy of the words; the ICEL chant
+# library and the England-and-Wales leaflets have since been registered and
+# twenty-three elements of the frame carry that English, so what remains empty
+# is text no tracked payload prints yet -- the Eucharistic Prayers, the
+# Confiteor, the Apostles' Creed, the ecumenical elements carrying ELLC text,
+# and the elements that are not texts at all. Nobody has refused anything, so it
+# is not `rights-withheld` either. The inventory's own `what` says as much.
 case "$kinds" in
-*"icel=no-exemplar"*) ;;
+*"icel=witness-gap"*) ;;
 *)
-	echo "the ICEL absence is not typed as an exemplar gap: $kinds" >&2
+	echo "the ICEL absence is not typed as a witness gap: $kinds" >&2
 	exit 1
 	;;
 esac
@@ -291,10 +299,16 @@ latin = {key: side(element, "la")[0]
          for key, element in elements.items() if side(element, "la")}
 assert len(latin) == 10, sorted(latin)
 
-# The English side is untouched by the Latin landing. Nine elements, the
-# ecumenical text, and no relation on any of them.
+# The English side is untouched by the Latin landing: no English row carries a
+# relation, which is the claim, whatever the count happens to be. Counting nine
+# encoded the state before the ICEL chant library was spliced in, so splicing
+# it -- twenty-five elements now -- read here as a regression, and the property
+# that actually matters was never asserted at all.
 english = [key for key, element in elements.items() if side(element, "en")]
-assert len(english) == 9, sorted(english)
+assert english, sorted(elements)
+for key in english:
+    for row in side(elements[key], "en"):
+        assert "relation" not in row, (key, row.get("relation"))
 
 for key, row in latin.items():
     # The relation is on the row, not on the witness: a book cannot be an

@@ -50,11 +50,26 @@ case "$absent" in
 esac
 
 # A proper deliberately left without English says so, rather than reading as a gap.
-deliberate="$(run_tool --calendar postconciliar --mass advent-1 --lang en)"
-case "$deliberate" in
-*"no en recorded, deliberately"*) ;;
-*) echo "ledgered untranslated proper did not say it was deliberate" >&2; exit 1 ;;
-esac
+# Asked of postconciliar/advent-1 until its English was filled in: that calendar's
+# `untranslated` ledger is now empty, so nothing in it can demonstrate the state
+# and the assertion tested the absence of a ledger rather than the note. The
+# 1962 overlay still ledgers 66 slots, and several masses are tried so that
+# translating one of them does not turn this red.
+deliberate=""
+for mass in commemoratione-omnium-fidelium-defunctorum commune-summorum-pontificum \
+	good-friday easter-vigil; do
+	found="$(run_tool --calendar roman-1962 --mass "$mass" --lang en)"
+	case "$found" in
+	*"no en recorded, deliberately"*)
+		deliberate="$found"
+		break
+		;;
+	esac
+done
+if [ -z "$deliberate" ]; then
+	echo "ledgered untranslated proper did not say it was deliberate" >&2
+	exit 1
+fi
 
 # Machine forms carry the record only; rendering options stay off the payload.
 run_tool --calendar roman-1962 --mass advent-1 --format json >one.json
