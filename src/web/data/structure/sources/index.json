@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1777,
-  "editions": 712,
+  "artifacts": 1782,
+  "editions": 716,
   "passages": 2869,
   "readable": 1635,
-  "works": 531
+  "works": 534
  },
  "facets": {
   "authors": [
@@ -378,6 +378,10 @@
     "works": 1
    },
    {
+    "id": "Edward Caswall, M.A., translator",
+    "works": 1
+   },
+   {
     "id": "Eliran Wong",
     "works": 1
    },
@@ -399,6 +403,10 @@
    },
    {
     "id": "Expert commissioned by the Sacred Congregation for the Doctrine of the Faith",
+    "works": 1
+   },
+   {
+    "id": "Federation of Diocesan Liturgical Commissions",
     "works": 1
    },
    {
@@ -1106,6 +1114,10 @@
     "works": 13
    },
    {
+    "id": "The Proprietors of Hymns Ancient and Modern, through their Committee; musical editorship of William Henry Monk",
+    "works": 1
+   },
+   {
     "id": "The translators appointed under James I of England",
     "works": 1
    },
@@ -1445,6 +1457,10 @@
    },
    {
     "id": "homily-collection",
+    "works": 2
+   },
+   {
+    "id": "hymn-collection",
     "works": 2
    },
    {
@@ -1948,6 +1964,10 @@
     "works": 1
    },
    {
+    "id": "mystagogical-reflection",
+    "works": 1
+   },
+   {
     "id": "normative-manual",
     "works": 1
    },
@@ -2270,7 +2290,7 @@
   ],
   "languages": [
    {
-    "editions": 348,
+    "editions": 352,
     "id": "en"
    },
    {
@@ -2396,7 +2416,7 @@
     "label": "18th century"
    },
    {
-    "editions": 126,
+    "editions": 128,
     "id": "1800",
     "label": "19th century"
    },
@@ -2406,14 +2426,14 @@
     "label": "20th century"
    },
    {
-    "editions": 380,
+    "editions": 382,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 999,
+    "artifacts": 1004,
     "id": "public-domain"
    },
    {
@@ -7874,6 +7894,34 @@
    "title": "Destierro de sombras. Luz en el origen de la imagen y culto de Nuestra Señora de Guadalupe del Tepeyac"
   },
   {
+   "alternate_titles": [
+    "Lyra Catholica"
+   ],
+   "author": "Edward Caswall, M.A., translator",
+   "category": "hymn-collection",
+   "directory": "editions/edward-caswall/lyra-catholica/",
+   "editions": [
+    {
+     "date": "1849",
+     "file": "1849-london-1849.json",
+     "id": "edition.edward-caswall.lyra-catholica.london-1849",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1849
+    }
+   ],
+   "id": "work.edward-caswall.lyra-catholica",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "title": "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources"
+  },
+  {
    "alternate_titles": [],
    "author": "Eliran Wong",
    "category": "septuagint-electronic-dataset",
@@ -8114,6 +8162,41 @@
     "fr"
    ],
    "title": "Christian Faith and Demonology"
+  },
+  {
+   "alternate_titles": [
+    "Mystagogical Reflections on the Collects of the Roman Missal"
+   ],
+   "author": "Federation of Diocesan Liturgical Commissions",
+   "category": "mystagogical-reflection",
+   "directory": "editions/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/",
+   "editions": [
+    {
+     "date": "2012",
+     "file": "2012-2012-2013-collects.json",
+     "id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "year": 2012
+    },
+    {
+     "date": "2016",
+     "file": "2016-2016-collect-and-prayer-after-communion.json",
+     "id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "year": 2016
+    }
+   ],
+   "id": "work.federation-of-diocesan-liturgical-commissions.mystagogical-reflections",
+   "languages": [
+    "en"
+   ],
+   "title": "Mystagogical Reflections on Texts of the Roman Missal"
   },
   {
    "alternate_titles": [
@@ -17533,6 +17616,34 @@
     "en"
    ],
    "title": "Tabernacle (The Metropolitan Museum of Art, accession 41.100.184)"
+  },
+  {
+   "alternate_titles": [
+    "Hymns A. & M.",
+    "Hymns, ancient and modern"
+   ],
+   "author": "The Proprietors of Hymns Ancient and Modern, through their Committee; musical editorship of William Henry Monk",
+   "category": "hymn-collection",
+   "directory": "editions/hymns-ancient-and-modern-proprietors/hymns-ancient-and-modern/",
+   "editions": [
+    {
+     "date": "1890",
+     "file": "1890-london-complete-edition-1890.json",
+     "id": "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "year": 1890
+    }
+   ],
+   "id": "work.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern",
+   "languages": [
+    "en"
+   ],
+   "title": "Hymns Ancient and Modern for use in the services of the Church"
   },
   {
    "alternate_titles": [

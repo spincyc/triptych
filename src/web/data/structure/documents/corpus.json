@@ -3,7 +3,7 @@
  "counted": {
   "documents": 186,
   "issues": 200,
-  "pages": 5948,
+  "pages": 5961,
   "titles_unrecorded": 0,
   "works": 137
  },
@@ -4096,11 +4096,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4152,14 +4152,13 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": null,
-     "pdf": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 13,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf",
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Trinity Sunday: In Festo Ssmae Trinitatis",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday/main.tex"
@@ -4169,11 +4168,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4226,7 +4225,7 @@
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:21:47Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Second Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost/main.tex"
@@ -4236,11 +4235,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "gpt-5.6-sol",
@@ -4273,7 +4272,7 @@
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:21:47Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Third Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost/main.tex",
@@ -4284,11 +4283,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "gpt-5.6-sol",
@@ -4341,7 +4340,7 @@
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:00:22Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Fourth Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost/main.tex",
@@ -4352,11 +4351,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4399,7 +4398,7 @@
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:00:22Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Fifth Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost/main.tex"
@@ -4409,11 +4408,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4456,7 +4455,7 @@
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:00:22Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Sixth Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost/main.tex"
@@ -4466,11 +4465,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4523,7 +4522,7 @@
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:00:22Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Seventh Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost/main.tex"
@@ -4533,11 +4532,11 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "claude-opus-5[1m]",
@@ -4559,14 +4558,14 @@
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-08-02T05:22:00Z",
-     "status": null,
+     "status": "alpha",
      "subject": "A source-first companion to the propers of the Eighth Sunday after Pentecost in the 1962 Missale Romanum: the appointed Latin collated against the Vatican typical edition, the formulary's place in the temporal cycle, its themes and movement, detailed commentary on Romans 8:12-17 and the parable of the unjust steward (Luke 16:1-9) with the interpretive tradition's disagreements preserved, documented cultural afterlives, bounded editorial proposals, and terminal scope apparatus",
      "title": "Eighth Sunday after Pentecost: Dominica Octava post Pentecosten",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.html"
     },
     {
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "basis": "diagram-dependent",
      "blocking_constructs": [
       "tikzpicture"
@@ -4629,7 +4628,7 @@
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Source-audited preparation guide to the 1962 Roman Missal propers",
      "title": "Eighth Sunday after Pentecost",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost/main.tex"
@@ -4639,8 +4638,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -4652,7 +4651,7 @@
        "title": "Ninth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "claude-fable-5",
@@ -4691,7 +4690,7 @@
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-08-02T05:22:00Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex",
@@ -4707,7 +4706,7 @@
        "title": "Ninth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "gpt-5.6-sol",
@@ -4770,7 +4769,7 @@
      "provider": "gpt",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T20:01:14Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Ninth Sunday after Pentecost (Full Edition)",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex",
@@ -4781,8 +4780,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -4794,7 +4793,7 @@
        "title": "Tenth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "gpt-5.6-sol",
@@ -4832,7 +4831,7 @@
      "provider": "gpt",
      "reviewed": "2026-07-28",
      "revised": "2026-07-29T20:21:55Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Tenth Sunday after Pentecost (Full Edition)",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/main.tex",
@@ -4843,8 +4842,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -4856,7 +4855,7 @@
        "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "claude-fable-5",
@@ -4879,7 +4878,7 @@
      "provider": "claude",
      "reviewed": "2026-08-19",
      "revised": "2026-08-20T09:27:01Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/main.tex",
@@ -4895,7 +4894,7 @@
        "title": "Eleventh Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "GPT-5-based Codex agent",
@@ -4912,7 +4911,7 @@
      "provider": "gpt",
      "reviewed": "2026-08-20",
      "revised": "2026-08-21T10:49:37Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Eleventh Sunday after Pentecost (Full Edition)",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/main.tex",
@@ -4923,8 +4922,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -4936,7 +4935,7 @@
        "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "claude-fable-5",
@@ -4959,7 +4958,7 @@
      "provider": "claude",
      "reviewed": "2026-08-20",
      "revised": "2026-08-20T09:36:28Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/main.tex",
@@ -4975,7 +4974,7 @@
        "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "GPT-5-based Codex agent",
@@ -4997,7 +4996,7 @@
      "provider": "gpt",
      "reviewed": "2026-08-21",
      "revised": "2026-08-21T11:18:32Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Twelfth Sunday after Pentecost (Full Edition)",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/main.tex",
@@ -5008,8 +5007,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -5021,7 +5020,7 @@
        "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "claude-fable-5",
@@ -5044,7 +5043,7 @@
      "provider": "claude",
      "reviewed": "2026-08-20",
      "revised": "2026-08-20T09:54:07Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/main.tex",
@@ -5060,7 +5059,7 @@
        "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "GPT-5-based Codex agent",
@@ -5077,7 +5076,7 @@
      "provider": "gpt",
      "reviewed": "2026-08-20",
      "revised": "2026-08-21T15:14:44Z",
-     "status": null,
+     "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Thirteenth Sunday after Pentecost (Full Edition)",
      "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/main.tex",

@@ -1,0 +1,61 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 3709,
+   "id": "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header line and 58 data lines: hymn 398 entire, in 10 stanzas, and nothing else from the book. Columns: hymn, hymn_number, printed_page, ia_leaf, stanza, line, set_to_music, english.\n\nATTRIBUTION, READ ON A PAGE IMAGE AND NOT FROM RECALL. This printing names no authors anywhere. The attribution is from A Historical Companion to Hymns Ancient and Modern (Parker and Co., 1889), Internet Archive item ahistoricalcomp00moorgoog, printed p. 314 = leaf n342, read at 1400 px on 2026-08-20, which sets under a running head `Irons. Jenner. Keble.`: \"IRONS, the Rev. W. J. 1812-1883. Of the English Church. Rector of S. Mary, Woolnoth, London. No. 398. Day of Wrath! O day of mourning. 1853. Dies irae dies illa. Thos. of Celano.\" The same volume, printed p. 146, prints the Latin it is set against, and that Latin is a SARUM recension -- its first strophe reads `Dies irae, dies illa, Crucis expandens vexilla, Solvet saeclum in favilla`, with a footnote that the Roman and Sarum Breviaries read `Teste David cum Sibylla` -- so the compilers' Latin is not the Missal's. That page was read in the item's text layer only and is recorded here as a lead, not as a reading.\n\nSTROPHE CORRESPONDENCE AGAINST THE LATIN THIS REPOSITORY CARRIES, counted on 2026-08-20 against the All Souls first Mass sequence in src/sources/calendars/roman-1962/propers.yaml. The Latin has 19 strophes and a closing Amen. This English sets them two to a stanza for the first seven stanzas (14 strophes), then `Inter oves` and `Confutatis` as stanza 8, `Oro supplex` as stanza 9, and the `Lacrimosa`/`Pie Jesu` ending as stanza 10, which also prints the Amen. All 19 are present, one for one, and the Amen is present -- which is a difference from the Caswall version, where it is not. NO CLAIM IS MADE HERE ABOUT FIDELITY OF WORDING.\n\nWHAT IS UNSETTLED AND MUST NOT BE PRESENTED AS SETTLED. This is HYMNS ANCIENT AND MODERN'S text of Irons, not necessarily Irons's own. The compilers of that book are widely said to have altered the texts they took, and this lane established NO instance of alteration here and made no comparison against a printing of Irons's own: no printing of `Day of wrath! O day of mourning` outside a hymnal was located. What the searches did establish is recorded in the lane report. A collation against Irons's own publication would settle it and has not been run.\n\nWHY THIS EDITION AND NOT A WORDS-ONLY ONE. Because no words-only printing of this text was located on the Internet Archive by this lane's searches; the two Hymns Ancient and Modern items examined that carry the hymn both set it under music, and the first stanza and the last three had to be read from under the staves. The syllable-splitting that follows from that is the weakest point of this transcription and is why `set_to_music` is a column rather than a note: 22 of the 58 lines carry it. Anyone re-reading this text should re-read those first.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "The text is W. J. Irons's English of the Dies irae, published in the 1850s by an author who died in 1883, printed here in a nineteenth-century London imprint; it is in the public domain in the United States on the pre-1931 line as derived for calendar year 2026, and no 17 U.S.C. 104A restoration is available. The sibling ia-djvu-ocr record argues the case in full and quotes the proprietors' spent copyright notice. This file contains only the printing's own English wording, transcribed by this project from its page images; a faithful transcription of a public-domain text originates no new copyright, and no music, no Internet Archive markup and no page-image material is reproduced.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 760652,
+   "id": "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.ia-djvu-ocr",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "A LEAD, NOT A SOURCE, and a poor one: this is a music edition, so most of hymn 398 reaches the text layer as syllables broken across the vocal score -- `Day of Wrath! O day of mourn-ing!`, `pro-phets' warn-ing!`, `ash-es burn - ing!` -- and nothing in the transcription artifact was read out of it. It served to establish that this printing carries the hymn at all, and to find the leaf: the item's scandata page map gives printed 306 at leaf 322, from which the hymn was found and the true offset, leaf = printed page + 15, was read off the images.\n\nNO GOOGLE MATTER IS AT ISSUE HERE. This is an Internet Archive Scribe scan, not a Google digitisation: `scanner` reads station58.cebu.archive.org, the item carries no page-foot stamp, and the head of the file is the book's own board and title matter.\n\nA RETRIEVAL CAUTION FOR ANY LATER READER. The item sits in the `internetarchivebooks` collection with `collection_set = printdisabled` and carries acs6/lcp external identifiers, which are the marks of a lending item. The full text derivative and the per-leaf page images were nonetheless served without credentials on 2026-08-20; if a later fetch is refused, that is an access fact about the host and says nothing about the rights position argued above.",
+   "page_count": null,
+   "retrieved": "2026-08-20",
+   "rights": "public-domain",
+   "rights_basis": "THE TEXT THIS LIBRARY TAKES. Irons's English of the Dies irae was published in the 1850s -- the 1889 Historical Companion dates it 1853 -- and its author died in 1883. Any work published before 1931 is out of United States copyright on the line guidance/missals.md records from Cornell's chart, WRITTEN HERE AS DERIVED FOR CALENDAR YEAR 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A reaches only works still protected in the source country on 1 January 1996; United Kingdom protection for an author who died in 1883 ended in 1953, so nothing was restored. THE PRINTING. Catalogued 1890 and undated on its own title leaf; whatever the exact year within the Complete Edition's life, it is a nineteenth-century London imprint and clears the same line. THE PROPRIETORS' NOTICE IN THE BOOK IS SPENT: printed p. iv directs copyright questions to the Committee of Hymns A. & M., which is a live claim of its own day over a compilation now more than a century past publication, and it is quoted in the edition record rather than ignored. THE SCAN ADDS NOTHING: a faithful mechanical reproduction of a public-domain work originates no copyright (Bridgeman), and the item's own metadata names the recogniser as tesseract 5.2.0, a program and not a person. NOT RELIED ON: that the item is on the Internet Archive, that the download succeeded, or that any host marks it.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/hymnsancientmode0000unse_s2j4/hymnsancientmode0000unse_s2j4_djvu.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1890",
+  "editors": [],
+  "id": "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890",
+  "jurisdiction": null,
+  "language": "en",
+  "notes": "THE DATE IS THE CATALOGUE'S AND NOT THE BOOK'S. The title leaf carries NO date; it was read at leaf n4 on 2026-08-20 and the imprint ends at the publishing office address. `date = \"1890\"` is the Internet Archive item's and the holding library's, and it is recorded as such. Two internal bounds agree with it without depending on it: Charles Steggall is named on the title leaf as having revised the supplemental tunes, which is the state of the Complete Edition of the late 1880s; and A Historical Companion to Hymns Ancient and Modern (Parker and Co., 1889, Internet Archive item ahistoricalcomp00moorgoog) describes a collection with the same hymn at the same number, 398. NOTHING IN THE RIGHTS DETERMINATION TURNS ON THE EXACT YEAR: what is out of United States copyright is the TEXT, first published in the 1850s, and the printing only evidences it.\n\nTHE BOOK ASSERTS A COPYRIGHT AND THE ASSERTION WAS READ, NOT INFERRED. Printed page iv, leaf n6, heads the index with: \"Any questions concerning the copyright of these HYMNS should be addressed to the CHAIRMAN OF THE COMMITTEE OF HYMNS A. & M., care of WM. CLOWES & SONS, Limited, 13, Charing Cross, London, S.W. The TUNES marked thus * are copyright of the Compilers, as well as many of the Harmonies of other Tunes.\" That is a live proprietors' claim of the period and it is long spent; see the artifact rights basis. Hymn 398 carries no asterisk on the tune `Dies Irae` at that index line -- it is marked `1.*Dies Irae. 2. Plain-song.` -- but the tunes are not what this library takes from the book.\n\nWHAT IT REACHES, AND HOW IT SETS IT. Hymn 398, `Day of Wrath! O day of mourning`, printed pp. 307-309 under the running head `Burial of the Dead.` and the scriptural motto `\"He cometh to judge the earth.\"` The first stanza is set under the vocal score, the next six are printed as plain text in two columns beneath it, and the last three are set under two further scores on pp. 308-309. Leaf = printed page + 15 across those three leaves. This edition prints no author or translator attributions of any kind; the attribution to Irons is established from the 1889 Historical Companion and is recorded in the transcription artifact.",
+  "publication": "Title leaf transcribed from the page image at Internet Archive item hymnsancientmode0000unse_s2j4, leaf n4: \"HYMNS ANCIENT AND MODERN FOR USE IN THE SERVICES OF THE CHURCH WITH ACCOMPANYING TUNES COMPILED AND ARRANGED UNDER THE MUSICAL EDITORSHIP OF WILLIAM HENRY MONK, MUS. DOC., PROFESSOR OF VOCAL MUSIC IN KING'S COLLEGE, LONDON. THE SUPPLEMENTAL TUNES REVISED BY CHARLES STEGGALL, MUS. DOC. CANTAB. Complete Edition. 'Young men and maidens, old men and children, praise the Name of the LORD.' LONDON: PRINTED FOR THE PROPRIETORS BY WILLIAM CLOWES AND SONS, LIMITED, STAMFORD STREET AND CHARING CROSS. PUBLISHING OFFICE, 13, CHARING CROSS, S.W.\" Copy scanned from the Graduate Theological Union library; OpenLibrary OL20297812M.",
+  "title": "Hymns Ancient and Modern, Complete Edition with accompanying tunes, London printing catalogued as 1890",
+  "translators": [],
+  "year": 1890
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Hymns A. & M.",
+   "Hymns, ancient and modern"
+  ],
+  "author": "The Proprietors of Hymns Ancient and Modern, through their Committee; musical editorship of William Henry Monk",
+  "category": "hymn-collection",
+  "description": "The nineteenth-century Church of England hymn book, first published 1861 and repeatedly enlarged, gathering translations from the Latin office and missal hymns beside modern English composition. It is carried in this library for ONE text: hymn 398, `Day of Wrath! O day of mourning`, William Josiah Irons's English of the Dies irae, which the Roman missal witnesses this project holds do not supply. It is an Anglican compilation and no witness whatever to any Roman book: nothing in it was approved for Catholic use, its Latin originals are printed in a Sarum recension where it prints them at all, and its compilers are known to have altered the texts they received -- which is a caution to be tested against another printing, not a finding of this record. `locus_pattern` addresses a hymn by its number in the collection, and a hymn number is EDITION-SPECIFIC and must never be carried between printings.",
+  "id": "work.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern",
+  "languages": [
+   "en"
+  ],
+  "title": "Hymns Ancient and Modern for use in the services of the Church"
+ }
+}
