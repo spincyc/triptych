@@ -18,6 +18,7 @@ bounds, and stop conditions.
 from __future__ import annotations
 
 import copy
+import difflib
 import fcntl
 import hashlib
 import json
@@ -239,9 +240,41 @@ class WorkflowEngine:
                     f"\nName one of them, or enough of its tail to be unique."
                 )
         raise WorkflowError(
-            f"no {argument} matches {token!r}\n"
-            f"run: tools/tpt {workflow['id']} list"
+            self._unresolved_document(workflow, token, documents, argument)
         )
+
+    @staticmethod
+    def _unresolved_document(
+        workflow: dict[str, Any], token: str, documents: list[str],
+        argument: str,
+    ) -> str:
+        """Say what a bare token could have meant, and what it could not.
+
+        A shorthand resolves against what exists, and a document that does not
+        exist yet is exactly what `seed` is often reached for. Refusing a
+        token without saying so sent a reader looking for a typo in a name
+        that was simply new.
+        """
+        lines = [f"no {argument} matches {token!r}"]
+        near = _nearest_document(token, documents)
+        if near:
+            lines.append("")
+            lines.append(f"  did you mean:  {near}")
+        parents = sorted({document.rsplit("/", 1)[0]
+                          for document in documents if "/" in document})
+        if parents:
+            lines.append("")
+            lines.append(
+                f"  a {argument} that does not exist yet is named in full, so "
+                f"seed it as one of:"
+            )
+            lines.extend(f"    {parent}/{token}" for parent in parents)
+        lines.append("")
+        lines.append(
+            f"  every {argument} that does exist: "
+            f"tools/tpt {workflow['id']} list"
+        )
+        return "\n".join(lines)
 
     def schema_name_for(self, stage: dict[str, Any]) -> str:
         """The result schema a stage's result is validated against."""
@@ -2768,6 +2801,32 @@ def _validate_execution(
                 f"{path}: {sid}: lanes[{index}].fragments must be a list of "
                 f"fragment paths"
             )
+
+
+# A misspelling of an existing name and a new name from the same family score
+# almost alike, because these ids share most of their text. What separates them
+# is how far the best match leads the next one: a typo wins by a distance, a
+# genuinely new name is barely ahead of its neighbours.
+_NEAREST_FLOOR = 0.6
+_NEAREST_MARGIN = 0.1
+
+
+def _nearest_document(token: str, documents: list[str]) -> str | None:
+    """The one document a token is probably a misspelling of, if any."""
+    scored = sorted(
+        (
+            difflib.SequenceMatcher(
+                None, token, document.rsplit("/", 1)[-1]
+            ).ratio(),
+            document,
+        )
+        for document in documents
+    )
+    if not scored or scored[-1][0] < _NEAREST_FLOOR:
+        return None
+    if len(scored) > 1 and scored[-1][0] - scored[-2][0] < _NEAREST_MARGIN:
+        return None
+    return scored[-1][1]
 
 
 def _may_forward(stage: dict[str, Any], disposition: Any) -> bool:

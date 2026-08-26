@@ -173,6 +173,80 @@ class ShorthandTests(unittest.TestCase):
             self.resolve("no-such-proper-anywhere")
         self.assertIn("tools/tpt proper list", str(caught.exception))
 
+    def test_an_unknown_shorthand_says_how_to_name_a_new_document(self):
+        """Seeding a document that does not exist yet is a first-class case.
+
+        The seed stage's own job is to report what a leaf is missing, so a
+        shorthand that resolves only against what exists must say how to name
+        what does not.
+        """
+        with self.assertRaises(WorkflowError) as caught:
+            self.resolve("51-fourteenth-after-pentecost")
+        message = str(caught.exception)
+        self.assertIn("does not exist yet is named in full", message)
+        self.assertIn(
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "51-fourteenth-after-pentecost", message,
+            "the full id is shown ready to copy")
+        for parent in sorted({d.rsplit("/", 1)[0] for d in self.documents}):
+            self.assertIn(f"{parent}/51-fourteenth-after-pentecost", message)
+
+    def test_a_full_id_that_does_not_exist_yet_still_seeds(self):
+        """And the path it points at really works."""
+        runs = ROOT / "build" / "tpt-runs-newdoc-test"
+        shutil.rmtree(runs, ignore_errors=True)
+        self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
+        engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        engine.runs_dir = runs
+        new = ("liturgy/roman-rite/1962/propers/temporal/"
+               "51-fourteenth-after-pentecost")
+        self.assertNotIn(new, self.documents)
+        self.assertEqual(engine.resolve_document(self.workflow, new), new)
+        seeded = json.loads(
+            engine.seed_bytes("proper", {"proper": new, "provider": "gpt"}))
+        self.assertEqual(seeded["normalized_args"]["proper"], new)
+        self.assertEqual(seeded["stage"], "seed")
+
+    def test_a_misspelling_of_an_existing_document_is_named(self):
+        with self.assertRaises(WorkflowError) as caught:
+            self.resolve("46-ninth-after-penecost")
+        message = str(caught.exception)
+        self.assertIn("did you mean:", message)
+        self.assertIn(
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "46-ninth-after-pentecost", message)
+
+    def test_a_new_name_from_the_same_family_suggests_nothing(self):
+        """These ids share most of their text, so similarity alone is noise.
+
+        `51-fourteenth-after-pentecost` scores 0.89 against its nearest
+        neighbour and 0.86 against the next; a real typo leads by an order
+        more. Suggesting on similarity alone offered three wrong answers to
+        someone naming a document that simply did not exist yet.
+        """
+        for token in ("51-fourteenth-after-pentecost",
+                      "51-fourteenth-after-penecost",
+                      "99-something-entirely-else"):
+            with self.subTest(token=token):
+                with self.assertRaises(WorkflowError) as caught:
+                    self.resolve(token)
+                self.assertNotIn("did you mean", str(caught.exception))
+
+    def test_a_decisive_misspelling_is_suggested_across_the_corpus(self):
+        # Not `nuptial-mas`: that is a substring of `m01-nuptial-mass` and
+        # resolves outright, which is the shorthand working rather than a
+        # near miss.
+        for token, expected in (("trinty-sunday", "36-trinity-sunday"),
+                                ("nuptual-mass", "m01-nuptial-mass")):
+            with self.subTest(token=token):
+                with self.assertRaises(WorkflowError) as caught:
+                    self.resolve(token)
+                message = str(caught.exception)
+                self.assertIn("did you mean:", message)
+                self.assertIn(expected, message)
+                self.assertEqual(message.count("did you mean"), 1,
+                                 "one answer, not a list to choose from")
+
     def test_a_path_is_passed_through_untouched(self):
         """Strictly additive: what worked before still works."""
         for token in ("liturgy/roman-rite/1962/propers/temporal/99-invented",

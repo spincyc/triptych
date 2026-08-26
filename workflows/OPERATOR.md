@@ -53,10 +53,16 @@ tools/tpt proper liturgy/roman-rite/1962/propers/temporal/46-ninth-after-penteco
 tools/tpt proper 46-ninth-after-pentecost seed
 ```
 
-A tail matching more than one document is refused with the candidates listed,
-and a tail matching none is refused with a pointer to `list`. Anything
-containing a `/` is taken as a full id and passed through untouched, so a
-command that worked before still works.
+A tail matching more than one document is refused with the candidates listed.
+A tail matching none is refused with the full id it would have to be given as,
+ready to copy — a document that does not exist yet is named in full, and
+seeding one is an ordinary thing to do, since the seed stage's own job is to
+report what a leaf is still missing. If the tail looks instead like a
+misspelling of something that does exist, that one document is named.
+
+Anything containing a `/` is taken as a full id and passed through untouched,
+so a command that worked before still works, and so a leaf that has not been
+created yet can still be seeded.
 
 ### Create or replay a run bootstrap
 
