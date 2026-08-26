@@ -1,0 +1,27 @@
+schema: triptych.mass_pictographic.service_profile
+version: 0.2
+status: structural-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+
+ablutions:
+  sole_server: first_acolyte
+  first:
+    liquid: wine
+    chalice: on_altar
+  second:
+    liquid: water
+    chalice: held_by_priest
+    first_acolyte_vertical_move: down_one_step
+  second_acolyte_role: none
+
+post_ablution_transfer:
+  condition: vessels_cleansed
+  simultaneous:
+    first_acolyte: chalice_cloth_to_gospel_side
+    second_acolyte: missal_to_epistle_side
+  first_crossing_front: second_acolyte
+  priest_then_receives_chalice_cloth: true
+  second_crossing_front: first_acolyte
+  end_state: both_acolytes_kneeling_in_normal_positions

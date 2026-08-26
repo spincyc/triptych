@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-08-26"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
-source_surface_file_count = 2074
-snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
+source_surface_file_count = 2081
+snapshot = "sha256:b377069c146efda0116b50f35f425d69e07b0526b5066af1f7c3fa85bcf95b94"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -41,6 +41,11 @@ roots = ["src/gpt/history/traditional-priestly-institutes"]
 id = "owner.liturgy.roman-rite.1962.altar-server-guides"
 kind = "server-training-source-owner"
 roots = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared"]
+
+[[owners]]
+id = "owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"
+kind = "structural-action-source-owner"
+roots = ["src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary"]
 
 [[owners]]
 id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
@@ -9742,6 +9747,48 @@ path = "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/web-editio
 sha256 = "ce02c8fd771e95e0d1045060f1cbc9fecd9f45bf8df59af54eac6835645e06b6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md"
+sha256 = "aefb4310e5cb4ea78dfc6e0f8498e7ac735761664a113acca0232458872480ae"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/README.md"
+sha256 = "96bf3b859f69c882558527205eb70cad5f3ffd225c138d08b92319c19ba83aed"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/VALIDATION.md"
+sha256 = "ec62cb9afe9f67c5a58fe3d498a67722c37f01d6914f6df57daab308f0c79bbd"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/AGENT-COMMIT-INSTRUCTIONS.md"
+sha256 = "cd7f9f8c49088939ac728a1c991df236e353f4fee124b47c0bd4c1aa6a9454af"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/HANDOFF-SUMMARY.md"
+sha256 = "2f395d467bae48c562ff663bf08beb12988dfe6041bacc3b04f83d9672ef1b95"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/MANIFEST.txt"
+sha256 = "a137ea12a4f758adce1d9afe7c66e558ff4000837fc45cc47d287faf78027504"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/PLAN-OUTLINE.md"
+sha256 = "39cd22cd4eb127a01ae1ce96e7206fbfb0f5b76bd129123eef94a482bdd285ea"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/main.tex"

@@ -1,0 +1,95 @@
+schema: "triptych.mass_pictographic.corpus"
+version: "0.21"
+status: "structural-approved"
+approval: "human-approved"
+rite: "roman-1962"
+form: "low-mass"
+mode: "spoken"
+server_count: 2
+authority: "handoff/HANDOFF-SUMMARY.md"
+transport_archive:
+  name: "mass-pictographic-handoff-v0.21.tar.gz"
+  sha256: "62bd1ce90528025b43c8942b51252cbebe6b1ccf4be22324746c84b7aee9cd13"
+  retained_in_git: false
+  reason: "The archive duplicates the individually retained payloads."
+
+authoritative_sources:
+  - path: "sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml"
+    kind: "service-profile-and-object-state"
+    source_version: "0.2"
+    related_scene_ids: ["LM-136", "LM-137"]
+  - path: "sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
+    kind: "branch-definition"
+    source_version: "0.1"
+    related_scene_ids: ["LM-138", "LM-139", "LM-140"]
+    approval_note: "The v0.21 handoff supersedes the file's embedded structural-review status."
+    serialization_repair:
+      original: "transport-originals/LOW-MASS-END-BRANCHES-1962-v0.1.yaml.transport-invalid"
+      change: "Added the missing ': yes' value to the final mapping key so the supplied YAML parses."
+      choreography_changed: false
+  - path: "sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+    kind: "deterministic-structural-storyboard"
+    source_version: "0.1"
+    scene_ids:
+      - "LM-137A"
+      - "LM-137C"
+      - "LM-138A"
+      - "LM-138B"
+      - "LM-138C"
+      - "LM-138D"
+      - "LM-139A"
+      - "LM-139B"
+      - "LM-140A"
+      - "LM-140B"
+      - "LM-140C"
+
+current_review_projections:
+  - path: "review/current/LM-134-135-priest-communion-storyboard-v0.2.png"
+    kind: "raster-review-projection"
+    scene_ids: ["LM-134A", "LM-134B", "LM-134C", "LM-135A", "LM-135B", "LM-135C"]
+  - path: "review/current/LM-137-140-final-low-mass-storyboard-v0.1.png"
+    kind: "raster-projection-of-svg"
+    source: "sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+    scene_ids:
+      - "LM-137A"
+      - "LM-137C"
+      - "LM-138A"
+      - "LM-138B"
+      - "LM-138C"
+      - "LM-138D"
+      - "LM-139A"
+      - "LM-139B"
+      - "LM-140A"
+      - "LM-140B"
+      - "LM-140C"
+
+historical_review_projections:
+  - path: "review-history/LM-134-135-priest-communion-storyboard-v0.1.png"
+    status: "superseded"
+    superseded_by: "review/current/LM-134-135-priest-communion-storyboard-v0.2.png"
+    reason: "The corrected projection adds Acolyte 1's bell cue at each priestly Domine, non sum dignus."
+  - path: "review-history/LM-136-137-ablutions-communion-antiphon-storyboard-v0.1.png"
+    status: "superseded-contradictory"
+    reason: "It predates the approved Acolyte-1-only ablutions and coordinated crossing sequence."
+
+handoff_records:
+  - "handoff/AGENT-COMMIT-INSTRUCTIONS.md"
+  - "handoff/HANDOFF-SUMMARY.md"
+  - "handoff/MANIFEST.txt"
+  - "handoff/PLAN-OUTLINE.md"
+
+transport_originals:
+  - path: "transport-originals/LOW-MASS-END-BRANCHES-1962-v0.1.yaml.transport-invalid"
+    status: "preserved-invalid-serialization"
+    sha256: "a051546fe366835491575679b38ed2a19a5d4164d62fed79aa34b4633495564c"
+    canonical_repair: "sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
+
+coverage:
+  approval_attestation: "complete spoken 1962 Low Mass structural pass"
+  standalone_detailed_assets: "LM-134 through LM-140 only"
+  earlier_scene_files_present_in_transport: false
+
+next_phase:
+  name: "publication-quality-artistic-rendering"
+  status: "not-started"
+  requires_scene_id_linkage: true

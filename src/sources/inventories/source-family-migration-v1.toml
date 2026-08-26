@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-26"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
+inventory_snapshot = "sha256:b377069c146efda0116b50f35f425d69e07b0526b5066af1f7c3fa85bcf95b94"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
 canonical_catalog_snapshot = "sha256:ddbc6111f0627148a053644ac89f2ea73a5adc8be18991d4028b8cc0caf5854c"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:b2a3f2f217dad015ac79c6129dd340b944783246d480432bb3dc617122c7ab8a"
+snapshot = "sha256:f4d5bd3a49de21360aac29d82944dd18e69f6377f3265c5ca3cb3ddcc351d89a"
 families = []
 
 [[review_units]]
@@ -654,6 +654,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
 surface_snapshot = "sha256:ad3638e19f00dd15ddcbb43c0fc5f840191a2fac40fd1115d662c8be45e53cf7"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"
+surface_snapshot = "sha256:14aed5c3764fa572c454d9178ad193533542db3f3c8a5b793d42c50708c53eb3"
 review_state = "pending"
 
 [[review_units]]

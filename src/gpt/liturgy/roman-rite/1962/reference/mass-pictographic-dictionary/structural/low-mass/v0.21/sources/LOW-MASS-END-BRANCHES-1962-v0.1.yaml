@@ -1,0 +1,31 @@
+schema: triptych.mass_pictographic.branch
+version: 0.1
+status: structural-review
+rite: roman-1962
+form: low-mass
+
+normal_end:
+  dismissal: ite_missa_est
+  blessing: yes
+  last_gospel: normally_john_1_1_14
+
+function_follows_mass:
+  dismissal: benedicamus_domino
+  blessing: no
+  last_gospel: no
+
+requiem:
+  dismissal: requiescant_in_pace
+  blessing: no
+  last_gospel:
+    if_absolution_over_catafalque_follows: no
+    otherwise: yes
+
+last_gospel_specials:
+  palm_sunday_mass_not_following_palms: proper_last_gospel
+  christmas_third_mass: omitted
+  easter_vigil_mass: omitted
+
+leonine_prayers:
+  classification: post_mass_devotion
+  execute_only_when_profile_prescribes_and_no_incompatible_following_function: yes

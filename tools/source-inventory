@@ -175,6 +175,9 @@ BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
 PARISH_HISTORY_OWNER = "owner.history.catholic-parish-histories"
 INSTITUTE_HISTORY_OWNER = "owner.history.traditional-priestly-institutes"
 SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
+MASS_PICTOGRAPHIC_OWNER = (
+    "owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"
+)
 SANCTUARY_DICTIONARY_OWNER = (
     "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
 )
@@ -223,6 +226,13 @@ PROVIDER_NONPUBLICATION_OWNERS = (
             "liturgy/roman-rite/1962/reference/altar-server-guides/shared",
         ],
         "kind": "server-training-source-owner",
+    },
+    {
+        "id": MASS_PICTOGRAPHIC_OWNER,
+        "roots": [
+            "liturgy/roman-rite/1962/reference/mass-pictographic-dictionary",
+        ],
+        "kind": "structural-action-source-owner",
     },
     {
         "id": SANCTUARY_DICTIONARY_OWNER,

@@ -1489,3 +1489,53 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-structural-v0-21"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md"
+promise = "Persist the human-approved v0.21 structural checkpoint for the spoken 1962 Roman Low Mass with two servers as an authoritative, machine-readable source for later pictographic rendering, while preserving review history and leaving artistic rendering and later forms explicitly unstarted."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "approved-boundary"
+  criterion = "Durable documentation records the complete, human-approved v0.21 structural boundary and every locked correction without reinterpreting it."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/HANDOFF-SUMMARY.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "canonical-structured-corpus"
+  criterion = "Every supplied YAML and SVG structural payload is retained, the invalid branch-YAML transport original is distinguished from its one-token canonical serialization repair, and the authoritative v0.21 corpus has exact hashes and coherent scene linkage."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/corpus.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/MANIFEST.sha256",
+  ]
+
+  [[deliverables.requirements]]
+  id = "review-history-separated"
+  criterion = "Useful PNG projections are retained, and superseded or contradictory projections are visibly segregated from current structural inputs."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/README.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/review-history",
+  ]
+
+  [[deliverables.requirements]]
+  id = "structural-validation"
+  criterion = "Every imported YAML parses, every SVG validates, file identities and scene references are coherent, and stale baseline contradictions occur only in explicitly historical material."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/VALIDATION.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "next-lane-boundary"
+  criterion = "The repository explains how a fresh artistic-render agent consumes v0.21 without re-deriving choreography and keeps all publication-quality plates linked to scene IDs and metadata."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/PLAN-OUTLINE.md",
+  ]

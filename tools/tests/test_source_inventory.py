@@ -938,6 +938,39 @@ class SourceInventoryTests(unittest.TestCase):
             document_row["record_owners"],
         )
 
+    def test_bootstrap_owns_mass_pictographic_structural_sources(self) -> None:
+        structural = self.write(
+            "src/gpt/liturgy/roman-rite/1962/reference/"
+            "mass-pictographic-dictionary/structural/low-mass/v0.21/README.md",
+            "# Structural checkpoint\n",
+        )
+
+        self.bootstrap()
+
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        owner_id = (
+            "owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"
+        )
+        owner = next(
+            row for row in inventory["owners"] if row["id"] == owner_id
+        )
+        self.assertEqual(owner["kind"], "structural-action-source-owner")
+        self.assertEqual(
+            owner["roots"],
+            [
+                "src/gpt/liturgy/roman-rite/1962/reference/"
+                "mass-pictographic-dictionary"
+            ],
+        )
+        structural_row = next(
+            row
+            for row in inventory["files"]
+            if row["path"] == structural.relative_to(self.root).as_posix()
+        )
+        self.assertEqual(structural_row["owners"], [owner_id])
+
 
 if __name__ == "__main__":
     unittest.main()

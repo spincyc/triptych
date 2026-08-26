@@ -21,6 +21,23 @@ These guides are training aids. They are not liturgical books, parish
 directives, certificates of competence, or evidence of present authorization
 to celebrate or serve according to the 1962 books.
 
+## Relationship to the pictographic structural checkpoint
+
+The separate Mass pictographic-dictionary lane has a human-approved structural
+checkpoint for the spoken 1962 Low Mass with two servers at
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/`.
+For artwork or derivatives in that lane, its v0.21 handoff summary and
+structured corpus control; do not reconstruct its choreography from these
+altar-server guides.
+
+The existing Low-Mass training-guide source and artwork predate that checkpoint
+and have not been reconciled to it. In particular, their selected elevation
+bell grouping, conditional priestly *Domine, non sum dignus* rings, second
+ablution liquid, and post-ablution transfer object are not alternate inputs for
+the v0.21 pictographic lane. A future reconciliation is separate work requiring
+human review; this preservation checkpoint neither updates nor republishes the
+training guides.
+
 ## Governing priorities
 
 1. Reproduce the selected 1962 text, sequence, speaker, and ceremonial form

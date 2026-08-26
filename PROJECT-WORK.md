@@ -476,6 +476,27 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### Mass pictographic dictionary structural checkpoint v0.21
+
+<!-- promised-deliverable: mass-pictographic-structural-v0-21 -->
+
+**Preserved and validated on 26 August 2026.** The canonical checkpoint now
+lives at
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/`.
+It retains the two machine-readable YAML sources, deterministic SVG, two
+current and two historical PNG review projections, four original handoff
+records, exact hashes, a machine-readable corpus manifest, and a reproducible
+validator. One supplied branch YAML had a missing final `: yes`; its invalid
+transport bytes remain separately checksummed and the canonical copy contains
+only that serialization repair.
+
+The handoff summary controls this pictographic lane. The older altar-server
+guide remains a distinct pre-v0.21 publication and is explicitly fenced from
+new pictographic rendering until a separate human reconciliation. The spoken
+1962 Low Mass structural pass is complete and human-approved through v0.21;
+publication-quality artistic rendering, later forms, object-compendium work,
+and final site/manual integration remain unstarted.
+
 ### Mary as the New Ark: journey, dogmas, and virginal marriage
 
 <!-- promised-deliverable: gpt-mary-new-ark-journey-2026-08-15 -->
