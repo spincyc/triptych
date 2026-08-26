@@ -357,11 +357,19 @@ installed canonical proper whose reader cell is deliberately plain text.
 Title cells remain unlinked bold text.
 
 A componentized proper guide remains one catalog identity. In the complete
-Sunday calendars, link only an installed `Synthesis PDF`; show `Planned` when
-that synthesis is absent. The canonical research/full PDF and web edition
-remain owned by the same row through its stable-publication marker but are not
-repeated on this scan-first landing page. The companion receives no separate
-row.
+Sunday calendars its provider cell links every installed artifact the identity
+owns, in this order and joined by ` · `:
+
+    [Full PDF](../pdf/<provider>/<leaf>.pdf) · [Synthesis PDF](../pdf/<provider>/<leaf>-synthesis.pdf) · [Read](../web/<provider>/<leaf>.html)
+
+Show `Planned` when the identity has no installed artifact for that provider.
+The row still carries its stable-publication marker, which owns the canonical
+identity whether or not the canonical PDF is also linked; the companion
+receives no separate row, and the web edition is the canonical leaf's, never
+the synthesis companion's. Earlier revisions of this rule linked the synthesis
+alone and left the canonical PDF and web edition reachable only through the
+marker. That suppressed installed artifacts a reader had no other route to, so
+the rule now names them.
 The component manifest records `appointed_text_completeness` as `complete` or
 `rights-limited`; its canonical label must correspond, and its synthesis label
 is always `Synthesis PDF`.
