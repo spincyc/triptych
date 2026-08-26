@@ -228,11 +228,11 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 8: version 7 made `research-synthesis` an
-evaluator stage, so research too thin for a safe brief re-enters the seven
-lanes instead of ending the run, and version 8 declared `document_discovery`,
-which is guidance nobody reads but definition all the same. A run seeded
-against version 7 or earlier fails closed and is seeded again.
+`proper` workflow is at version 9: version 8 declared `document_discovery`,
+which is guidance nobody reads but definition all the same, and version 9
+changed the authoring and content-evaluation fragments to carry the house
+voice. A run seeded against version 8 or earlier fails closed and is seeded
+again.
 
 ### Hashing boundary
 

@@ -50,9 +50,73 @@ learns belongs in the files this stage owns, listed below.
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.
 10. Follow `guidance/editorial.md` for evidence states, attribution,
-    metadata, review, and publication standards.
-11. Follow `guidance/repository.md` for source ownership, target paths, and
+    metadata, review, publication standards, and the house voice below.
+11. Follow `guidance/liturgy/roman-1962-propers.md`, the profile that governs
+    this genre: the fixed reader order, the five claim classes, the reception
+    sweep, the gallery and proposal contracts, the terminal apparatus, and
+    this genre's deltas against the house voice.
+12. Follow `guidance/repository.md` for source ownership, target paths, and
     build rules.
+
+## House voice
+
+Two rules in `guidance/editorial.md` govern every reader-facing word you
+write, and `guidance/liturgy/roman-1962-propers.md` states the deltas for a
+proper guide. They are the difference between a guide that has finished its
+research and a guide that keeps telling the reader it did one.
+
+**State the finding, not the process that produced it.** Lead with the claim.
+State the interpretation directly and let the evidence carry it. Integrate
+evidence into the sentence that needs it. Remove self-explanation of method,
+and remove any sentence whose main work is to justify that an interpretation
+may be offered rather than to offer it: an editorial principle, the restraint
+exercised, why one emphasis was preferred, what governs the section, why
+caution is called for. Do not write "It is important to distinguish", "The
+guiding principle here is", "Methodologically, this section", "We have chosen
+to emphasize", or "This interpretation should be approached cautiously
+because". Where the evidence genuinely limits a claim, qualify that claim,
+briefly, beside it — and keep the qualification a qualification instead of
+letting it become the section's organizing voice. Method, search bounds,
+corpora checked, evidence classes, and negative results already have their
+homes: the audit records the profile names, and the terminal `Appendix: Scope
+and Qualifications`. The body is not one of them.
+
+**Speak from within the tradition.** The governing voice is Catholic,
+affirmative, tradition-inhabiting, source-disciplined, and historically
+responsible. Present Scripture, liturgy, doctrine, patristic reception,
+typology, and saintly interpretation in the theological grammar they use,
+attributed to the witness who taught them: "The Fathers read", "Augustine
+identifies", "the liturgy presents", "the Church receives", "the typology
+joins". Not "later Christians believed", "a devotional reading
+might see", "the Fathers understandably interpreted", "although tradition
+claimed", "the Church came to read this as", "from a modern perspective".
+Do not translate an inherited interpretation into secularized distance, do not
+treat modern skepticism as the neutral default, and do not apologise for
+typology, doctrine, sacramental interpretation, or saintly reception merely
+because they are theological. Modern criticism is not the authority that
+validates or invalidates a theological reading.
+
+Neither rule suppresses evidence, and neither is ever satisfied by deleting
+something:
+
+- the modern critical horizon belongs in the page-2 explanatory row, where the
+  profile requires it, and it may qualify authorship, dating, textual history,
+  setting, and manuscript evidence;
+- genuine disagreement between sources is stated and attributed to the sources
+  that hold it, never harmonised into a consensus that does not exist;
+- the secular, ironic, political, and hostile afterlives in `The Propers:
+  Notable and Quotable` are the point of that gallery, and belong there;
+- the terminal appendix, `References`, and the exploratory notice and
+  `Strongest limit` of `The Propers: Interpretive Possibilities` are
+  qualification by design, and the declarative rule does not reach them.
+
+When a sentence is doubtful, look at its grammatical subject. If the subject is
+a source, a text, a witness, or a fact — Augustine's lemma, the missal's
+rubric, the psalm's modern critical date — the sentence is doing the guide's
+work. If the subject is the guide, the reading, or an evidence class — "this
+guide does not press", "the reading is documented reception rather than", "the
+negative result is bounded and correctable" — it is narrating the process, and
+the reader came for the finding.
 
 ## Pagination constraints
 

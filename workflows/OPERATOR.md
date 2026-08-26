@@ -723,7 +723,13 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 8. Version 8 declared
+The `proper` workflow is at version 9. Version 9 put the house voice into
+the fragments a worker is handed: `author-proper` now carries the declarative
+and tradition-inhabiting rules that `guidance/editorial.md` owns,
+`content-evaluation` gained criteria 11 and 12 and rewrote criterion 6 so it
+asks whether a disagreement is present and attributed rather than whether the
+guide says it preserved one, and the two lanes that own those criteria say so.
+It changed no stage, no lane and no transition. Version 8 declared
 `document_discovery`, so `tools/tpt proper list` can name the documents the
 workflow runs and a unique tail of an id stands for the id; it changed no
 stage, no packet and no transition, but the declaration is part of the bound
@@ -736,7 +742,7 @@ commit. Version 6 added the
 returned, and gave `content-evaluation` a result schema of its own and the
 repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
 content and visual evaluation lanes, the gates, and every other `single` stage
-are as they were at version 5. A run seeded against version 7 or any earlier
+are as they were at version 5. A run seeded against version 8 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 

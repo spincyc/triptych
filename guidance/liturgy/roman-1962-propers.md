@@ -186,7 +186,7 @@ Classify substantial claims as follows:
 4. **Source-grounded synthesis:** a restrained conclusion demonstrably supported by the first three classes.
 5. **Exploratory proposal:** a new analogy, symbolic extension, cross-proper connection, compositional inference, application, or theological proposal not established by the evidence.
 
-The first four classes may appear in source-grounded sections. The fifth appears only in `The Propers: Interpretive Possibilities`. An unverified lead supports no published claim. Never put an editorial proposal in a source's mouth, imply consensus by proximity, or use the four-senses table to conceal an unsupported inference.
+The first four classes may appear in source-grounded sections. The fifth appears only in `The Propers: Interpretive Possibilities`. An unverified lead supports no published claim. Never put an editorial proposal in a source's mouth, imply consensus by proximity, or use the four-senses table to conceal an unsupported inference. These are constraints on what may be asserted, and they are satisfied by not asserting it. A guide that has not established a compiler's intention simply does not claim one; it does not tell the reader that its observation does not prove a compiler's intention. Where the boundary is itself worth recording, `research/scope.md` is the record that holds it.
 
 ## Reader-Facing Order
 
@@ -225,7 +225,36 @@ For each passage, distinguish traditional attribution from historical judgment a
 
 `The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies two complete, readable pages. Both pages must be substantively filled by the argument at the settled typesetting size; a forced break followed by conspicuous unused space does not satisfy the requirement. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five developed functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims and must earn its extent through real synthesis rather than repetition, enlarged type, decorative spacing, or displaced apparatus.
 
-`The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. In the full edition, treat every appointed scriptural passage and every composed proper substantively in the element-by-element sweep, developing its literal setting, traditional spiritual senses, principal patristic and saintly reasoning, place in the liturgical action, and concrete relations to the other appointed elements. In the synthesis companion, replace that sweep with the dedicated integrated commentary: organize by three to six cross-proper claims rather than by appointed order, draw each unit from multiple elements and witnesses, and ensure that all appointed elements materially inform the whole even though they do not receive individual headings. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. Represent a patristic, medieval, or saintly interpretation faithfully within its own theological grammar before evaluating or qualifying it. Do not make apology, suspicion, modern correction, or distance from inherited typology the organizing voice; a necessary present doctrinal distinction remains concise and claim-local and does not replace the tradition's positive exposition. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
+`The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. In the full edition, treat every appointed scriptural passage and every composed proper substantively in the element-by-element sweep, developing its literal setting, traditional spiritual senses, principal patristic and saintly reasoning, place in the liturgical action, and concrete relations to the other appointed elements. In the synthesis companion, replace that sweep with the dedicated integrated commentary: organize by three to six cross-proper claims rather than by appointed order, draw each unit from multiple elements and witnesses, and ensure that all appointed elements materially inform the whole even though they do not receive individual headings. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
+
+**The house voice is owned by [`guidance/editorial.md`](../editorial.md),
+"Speaking from within the tradition" and "State the finding, not the process
+that produced it".** Both govern every reader-facing word of a proper guide,
+and both are revised there and not here. Four deltas apply to this genre.
+
+- The substantive body is where the two rules bite: the page-1 four senses,
+  `The Propers: Themes and Movement`, `The Propers: Detailed Commentary`, the
+  synthesis companion's integrated commentary, and `Source-Grounded Synthesis
+  Across the Propers`. Represent a patristic, medieval, or saintly
+  interpretation faithfully within its own theological grammar, state the
+  reading, and attribute it. Do not tell the reader that the reception is
+  documented reception, that a negative result is bounded and correctable,
+  that a difference was retained rather than silently harmonised, or that the
+  guide has declined to press an inference.
+- The page-2 explanatory row is where the principal modern critical horizon
+  belongs, and its presence there is required rather than tolerated. It
+  qualifies authorship, date, place, setting, and text; it does not adjudicate
+  how the liturgy or the Fathers read the passage, and a necessary present
+  doctrinal distinction stays concise and claim-local rather than replacing
+  the tradition's positive exposition.
+- `The Propers: Notable and Quotable` is deliberately outside the guide's own
+  interpretive voice. A secular, ironic, political, or hostile afterlife is
+  the point of an entry there and is never removed for being secular; it stays
+  in that section and never becomes the frame of the commentary.
+- `Appendix: Scope and Qualifications`, `References`, and the exploratory
+  notice and `Strongest limit` field of `The Propers: Interpretive
+  Possibilities` are qualification by design, and the declarative rule does
+  not reach them. What it reaches is their register leaking into the body.
 
 **The two paragraphs on `Notable and Quotable` and the two on `Interpretive Possibilities` below govern proper guides in *both* collections.** [The postconciliar profile](postconciliar-propers.md) carried them verbatim until 2026-08-01 and now states only its option-branch deltas against them; revise them here and nowhere else.
 
@@ -266,5 +295,6 @@ Before publication, verify that:
 - the interpretive section contains four to six non-recapitulatory, multi-element proposals and the research scope records each proposal's anchors, mechanism, targeted precedent result, fruit, and strongest limit without claiming universal novelty;
 - every attribution and historical, doctrinal, or reception claim has an exact source and locus, while source-grounded synthesis and exploratory proposal remain visibly distinct;
 - the guide follows the fixed reader order, keeps the complete date/location sheet alone on physical page 2, begins its two-page thematic movement on page 3 and detailed commentary on page 5, and places all other work-wide bounds, source limits, rights, review status, and qualifications only in the terminal apparatus;
-- a required sacramental summary is imported from the canonical fragment, `References` contains only used sources, and generation metadata is accurate and terminal; and
+- a required sacramental summary is imported from the canonical fragment, `References` contains only used sources, and generation metadata is accurate and terminal;
+- the reader-facing body states its findings rather than the editorial process behind them and speaks from within the Catholic tradition, with the modern critical horizon confined to the page-2 explanatory row and claim-local use, secular afterlives confined to `The Propers: Notable and Quotable`, and work-wide method, search bounds, and qualification confined to the terminal apparatus and `research/scope.md`; and
 - the universal editorial, rights, build, warning, visual-review, installation, and publication gates pass for every affected consumer.

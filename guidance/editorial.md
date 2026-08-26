@@ -30,6 +30,12 @@ it at the time, with the sources. A reader who wants to judge is owed the
 evidence to judge with; they are not owed our judgement wearing the costume of a
 finding.
 
+What the rule constrains is comparison: between rites, recensions, editions,
+uses, and reforms, where the library takes no position on which is better. It
+is not a posture of neutrality toward the Catholic reading of Scripture, and it
+never asks a writer to stand outside the tradition to describe it. The next
+section owns that question.
+
 Three practical consequences, each of which has already decided a question here:
 
 - **Naming is where partisanship enters first.** Terms in live polemical use —
@@ -70,6 +76,58 @@ not part of the current workflow. Any future external-review system is a
 separate project and confers no status until that system is deliberately
 defined and a completed event is recorded.
 
+## Speaking from within the tradition
+
+Scripture, liturgy, doctrine, patristic reception, typology, and saintly
+interpretation are presented from within the Catholic tradition that produced
+them, not from a stance outside it. The governing voice is Catholic,
+affirmative, tradition-inhabiting, source-disciplined, and historically
+responsible: it explains an inherited reading in the theological grammar that
+reading uses, and attributes it to the witness who taught it. Modern
+skepticism is not the neutral default that a theological claim must be
+translated into before it can be written down.
+
+Write "The Fathers read", "Augustine identifies", "the liturgy presents", "the
+Church receives", "the traditional reading sees", "the typology joins", with
+source attribution where the claim needs it. Do not write "later Christians
+believed", "a devotional reading might see", "the Fathers understandably
+interpreted", "although tradition claimed", "the Church came to read this as",
+or "from a modern perspective this is problematic" where straightforward
+attribution says the same thing. Those forms hold an inherited interpretation
+at arm's length by their grammar, whatever the sentence goes on to concede.
+Do not apologise for typology, doctrine, sacramental interpretation, or
+saintly reception merely because they are theological.
+
+Three things this rule does not touch, each of them already required by the
+evidence standard below:
+
+- **Historical-critical fact.** Modern critical judgement may qualify
+  authorship, dating, textual history, historical setting, manuscript
+  evidence, and any other factual claim; where a profile requires both a
+  traditional attribution and a modern critical horizon, report both
+  accurately and tersely. What it may not become is the hermeneutical judge of
+  Catholic theological interpretation. A date is a fact about a text, not a
+  verdict on how the Church reads it.
+- **Genuine disagreement.** Where Catholic or historical sources actually
+  disagree, the disagreement is reported and attributed to the sources that
+  hold it. Unanimity is never manufactured, and a dispute is not resolved by
+  omitting the inconvenient side.
+- **Cultural afterlife.** Secular, ironic, political, literary, hostile, or
+  contesting reuse of scriptural wording is a historical fact about that
+  wording, and belongs wherever a profile provides for it. It is documented
+  rather than purged for being secular, and it is not the governing
+  interpretive voice of the work.
+
+When a sentence is doubtful, look at its grammatical subject. A qualifying
+sentence is legitimate when its subject is a source, a text, a witness, or a
+fact: "Augustine's lemma is not the chant's", "the psalm's modern critical
+date is later than the traditional one", "Theodoret answers differently".
+The same sentence is the defect when its subject is the guide, the reading, or
+an evidence class: "this guide does not press the typology", "the reading is
+documented reception, not a replacement for the literal sense". The first
+tells the reader something about the material; the second tells the reader
+something about the writer.
+
 ## Reader-first structure
 
 After a title page and table of contents, if used, begin with substantive content. Do not make readers cross an evidence key, scope statement, chronology, terminology boundary, legal-assumptions block, or review disclaimer to reach the work.
@@ -94,6 +152,46 @@ for publication, without a temporary status mark that must later be removed.
 A thesis or governing question is substantive and may open the body. Operational facts needed at the point of use—such as the selected liturgical branch, recitation order, or applicable rule—stay there. Safety warnings and legally necessary notices remain immediately visible wherever delayed notice could expose a reader to harm or materially misstate the law; this terminal-apparatus rule never displaces them. A one-line title-page non-authority warning is permitted only for immediate reliance risk and must point to the terminal appendix rather than repeat it.
 
 The appendix never absorbs a qualification that changes a particular claim. Keep disputed attribution, material uncertainty, branch dependence, jurisdictional difference, source status, and other local limits beside the affected claim.
+
+## State the finding, not the process that produced it
+
+Reader-facing prose presents conclusions, arguments, interpretations,
+evidence, and the qualifications a claim needs in order to be accurate. It
+does not narrate the editorial principles behind those conclusions, the
+methodological restraint exercised, the reason one emphasis was preferred to
+another, the internal decision rules followed, the research process
+undertaken, the interpretive policy applied, the boundaries of the production
+workflow, or why the writer is entitled to make the claim at all.
+
+Write "The Introit establishes exile as the formulary's opening condition" and
+"Augustine reads the psalm as the cry of the pilgrim Church". Do not write "It
+is important to distinguish", "The guiding principle here is",
+"Methodologically, this section", "We have chosen to emphasize", or "This
+interpretation should be approached cautiously because", unless a local
+qualification is genuinely required to make the claim accurate.
+
+The carve-out is the paragraph above: a qualification that materially changes
+the truth of a local claim stays beside that claim, briefly. Everything else —
+method, search bounds, evidence classes, corpora checked, negative results,
+and the reasoning that produced an editorial judgement — belongs in the
+terminal apparatus and in the profile's audit records. A work whose prose
+repeatedly explains its own caution machinery has moved the appendix into the
+body.
+
+Naming the discipline is itself the defect. Prose that says a difference was
+retained rather than silently harmonised, that a negative result is bounded
+and correctable, that a reading is documented reception rather than a
+replacement for the literal sense, or that an observation does not prove a
+compiler's intention, is narrating compliance where it should simply be
+compliant. Carry the difference and attribute it; state the negative result;
+attribute the reception; claim no intention. A constraint on what may be
+asserted is satisfied by not asserting it, never by disclaiming it in the
+reader's hearing.
+
+The desired movement is research thoroughly, qualify internally, and then
+state the resulting conclusion directly. It is never research less and assert
+more: this rule governs how a finding is written, and weakens no requirement
+about how it was found.
 
 ## Illustration and page composition
 

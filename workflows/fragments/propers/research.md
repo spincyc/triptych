@@ -27,6 +27,11 @@ until the underlying work and locus are checked. Preserve material
 disagreement and uncertainty rather than manufacturing consensus, and keep
 every negative result bounded and correctable.
 
+That last phrasing belongs to the `notes` field of the findings you return,
+which is an audit record. It describes evidence to the workflow; it is not
+language for the reader. A guide that prints "a bounded negative" has put the
+audit in the body, which `guidance/editorial.md` forbids.
+
 ## Lane scope
 
 This stage is a fan-out stage. The lane fragment that follows names the one

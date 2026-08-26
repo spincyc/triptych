@@ -23,8 +23,14 @@ scholarly content.
    elements and witnesses?
 5. **Exploratory proposals**: Are proposals labeled as exploratory? Does each
    join at least 2 elements?
-6. **Material disagreement**: Are disagreements, uncertainty, and
-   currentness preserved rather than silently harmonized?
+6. **Material disagreement**: Where the sources disagree, is the
+   disagreement present in the prose and attributed to the sources that hold
+   it? Is uncertainty carried where it bears on a claim, and currentness
+   where it bears? Judge what the text contains. Never judge whether the
+   guide announces that it preserved anything: a sentence saying a difference
+   was retained rather than silently harmonized is not evidence of compliance,
+   it is a criterion 12 defect, and asking for it is how a criterion produces
+   the fault it meant to prevent.
 7. **Citations**: Are only sources actually used cited? No invented searches,
    verifications, quotations, attributions, doctrines, laws, or historical
    facts?
@@ -35,6 +41,30 @@ scholarly content.
    and page assignments from the profile?
 10. **Provenance**: Do source records (verified.md, retrieved.txt, scope.md)
     exist and follow the profile's format?
+11. **Interpretive voice**: Does the guide speak from within the Catholic
+    tradition — Scripture, liturgy, doctrine, patristic reception, typology,
+    and saintly interpretation presented in their own theological grammar and
+    attributed to the witnesses who taught them? Or has secular skepticism
+    become the narrator's default stance: inherited interpretation held at
+    arm's length as an object viewed from outside rather than inhabited and
+    explained, typology reflexively distanced from, modern criticism treated
+    as the authority that validates or invalidates a theological reading,
+    "later Christians believed" standing in for straightforward attribution
+    where no historical distinction requires it? Accurate modern dating, a
+    genuine authorship dispute, factual source criticism, historically
+    documented disagreement, and the secular afterlives of `The Propers:
+    Notable and Quotable` in their own section are never findings here: the
+    profile requires them, and a finding that would delete one is wrong.
+12. **Declarative discipline**: Does the prose state its findings, or does it
+    repeatedly tell the reader how the editors reasoned, what principles
+    guided inclusion, why caution was necessary, what methodology governs the
+    section, or why the interpretation is being presented at all, instead of
+    giving the conclusion? A few necessary claim-local qualifications are not
+    a defect; the defect is a recurring rhetorical habit. `Appendix: Scope and
+    Qualifications`, `References`, and the exploratory notice and `Strongest
+    limit` field of `The Propers: Interpretive Possibilities` are
+    qualification by design and out of scope for this criterion, which
+    reaches only their register leaking into the substantive body.
 
 ## Lane scope
 
@@ -71,10 +101,21 @@ an authoring defect reported alongside a research one is simply rediscovered
 by the fresh evaluation. That is intended, not a loss, so report each defect
 against its own owner and let the routing follow.
 
+A criterion 11 or 12 finding is `authoring`. Voice is not an evidence
+defect: the material was researched, the prose is what mishandled it, and
+rewriting the prose is the whole repair. Excessive methodological narration,
+editorial self-justification, secular skeptical framing, and unnecessary
+distancing from patristic interpretation all route that way. The single
+exception is a passage for which the evidence supplies no Catholic reception
+at all — there is then nothing for the guide to speak from, the distance
+belongs to the evidence rather than to the author, and the finding is
+`research`.
+
 Where ownership is genuinely ambiguous, name the earliest authoritative
-owner whose correction is necessary — that is, prefer `research`. There is
-no third value; the engine rejects anything else. Advisory findings do not
-need the field.
+owner whose correction is necessary — that is, prefer `research`. That
+tie-breaker does not reach criteria 11 and 12, whose owner the paragraph
+above already fixes. There is no third value; the engine rejects anything
+else. Advisory findings do not need the field.
 
 ## Result
 
