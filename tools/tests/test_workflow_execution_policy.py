@@ -894,13 +894,18 @@ class LauncherTests(unittest.TestCase):
         shown = self.tpt("workflow", "show", "proper")
         self.assertEqual(shown.returncode, 0, shown.stderr)
         workflow = json.loads(shown.stdout)
-        self.assertEqual(workflow["version"], 3)
+        self.assertEqual(workflow["version"], 4)
         fanout = {
             stage["id"]: [lane["id"] for lane in stage["execution"]["lanes"]]
             for stage in workflow["stages"]
             if stage["execution"]["mode"] == FANOUT
         }
         self.assertEqual(fanout, {
+            "research": [
+                "scripture-context", "patristic-reception",
+                "liturgical-history", "theological-synthesis",
+                "source-citation-coverage",
+            ],
             "content-evaluation": [
                 "evidence-discipline", "reception-sweep",
                 "synthesis-argument", "citation-integrity",

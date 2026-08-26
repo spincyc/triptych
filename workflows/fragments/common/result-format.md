@@ -57,6 +57,42 @@ not complete it, use `disposition: "BLOCKED"` with a `summary` naming what
 stopped you: the run stops there. Do not report `PASS` for work you did not
 do; the engine has no other way to tell the difference.
 
+## Research lane stages
+
+A read-only research lane returns evidence, not prose and not an artifact:
+
+```json
+{
+  "stage": "research",
+  "iteration": 0,
+  "lane": "scripture-context",
+  "lane_packet_hash": "the lane_packet_hash the parent driver gave you",
+  "disposition": "PASS",
+  "summary": "One or two sentences on what you swept and what you found.",
+  "findings": [
+    {
+      "id": "SCR-001",
+      "claim": "What you are asserting, in one sentence.",
+      "evidence": ["Each source named precisely enough to be checked."],
+      "notes": "Uncertainty, disagreement, negative results, evidence state."
+    }
+  ]
+}
+```
+
+Every finding carries all four of `id`, `claim`, `evidence`, and `notes`.
+`evidence` is a list of strings. A sweep that found nothing is itself a
+finding: record the negative result rather than omitting it.
+
+A research lane has only two dispositions. `PASS` means you did your lane's
+sweep and these are its results, whether or not it found much. `BLOCKED` means
+you could not do the sweep at all, and the run stops there. There is no
+`CHANGES_REQUIRED` for a research lane; the engine rejects one.
+
+`tpt` joins the five lanes itself and forwards the joined findings, each
+tagged with the lane that raised it, into the next stage's packet. Do not
+write anything into the repository, and do not answer for another lane.
+
 ## Evaluator stages
 
 ```json

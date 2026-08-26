@@ -6,6 +6,11 @@ Author or revise the canonical proper leaf. The canonical leaf owns the
 prose, research, and audit records. The synthesis artifact is mechanically
 derived from it.
 
+Work from the research brief the `research-synthesis` stage wrote to
+`research/scope.md`, and not from any prose a controller composed for you.
+That stage is the single owner of that file and has already integrated the
+research into the brief recorded there.
+
 ## Steps
 
 1. Create or update `main.tex` with the full research sequence:
@@ -31,7 +36,8 @@ derived from it.
    records.
 6. Create or update `web-edition.toml` with web edition eligibility.
 7. Create or update `propers/verified.md` and `propers/retrieved.txt`.
-8. Create or update `research/scope.md`.
+8. Extend `research/scope.md` with the audit records authoring adds,
+   preserving the research brief already recorded there.
 9. Ensure the brief synthesis markers
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.

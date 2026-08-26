@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 3,
+  "version": 4,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "argument_schema": {
@@ -57,6 +57,54 @@
         "propers/source-audit.md"
       ],
       "result_schema": "worker-result.json",
+      "next": "research"
+    },
+    {
+      "id": "research",
+      "type": "linear",
+      "execution": {
+        "mode": "fanout",
+        "parallelism": "host-max",
+        "join": "strict-union",
+        "lanes": [
+          {
+            "id": "scripture-context",
+            "fragments": [
+              "propers/lanes/research-scripture-context.md"
+            ]
+          },
+          {
+            "id": "patristic-reception",
+            "fragments": [
+              "propers/lanes/research-patristic-reception.md"
+            ]
+          },
+          {
+            "id": "liturgical-history",
+            "fragments": [
+              "propers/lanes/research-liturgical-history.md"
+            ]
+          },
+          {
+            "id": "theological-synthesis",
+            "fragments": [
+              "propers/lanes/research-theological-synthesis.md"
+            ]
+          },
+          {
+            "id": "source-citation-coverage",
+            "fragments": [
+              "propers/lanes/research-source-citation-coverage.md"
+            ]
+          }
+        ]
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/research.md"
+      ],
+      "result_schema": "research-result.json",
       "next": "research-synthesis"
     },
     {
