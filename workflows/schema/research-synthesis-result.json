@@ -1,0 +1,20 @@
+{
+  "name": "research-synthesis-result",
+  "description": "Structured result from the integration stage, whose blocking findings name the research lane that owes the missing work",
+  "required_fields": ["stage", "iteration", "disposition", "findings"],
+  "valid_dispositions": ["PASS", "CHANGES_REQUIRED", "BLOCKED"],
+  "finding_fields": ["id", "severity", "location", "problem", "required_result"],
+  "finding_enums": {
+    "severity": ["blocking", "advisory"],
+    "location": [
+      "scripture-context",
+      "patristic-reception",
+      "liturgical-history",
+      "theological-synthesis",
+      "source-citation-coverage",
+      "cultural-afterlife",
+      "precedent-search"
+    ]
+  },
+  "optional_fields": ["summary", "artifact_path"]
+}

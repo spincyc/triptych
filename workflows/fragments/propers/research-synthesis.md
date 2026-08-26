@@ -5,6 +5,10 @@ PRIOR_FINDINGS in the packet header carry their joined result: every finding
 each lane raised, verbatim, tagged with the `lane` that raised it, in
 canonical lane order. Integrate that result; do not extend it.
 
+If you asked for changes on an earlier iteration, your own findings went back
+through the lanes and the lanes ran again: what you have now is a fresh
+seven-lane join, not a diff against the last one. Integrate it whole.
+
 ## You do no original research
 
 This stage performs no original evidence-gathering at all. You must not:
@@ -66,7 +70,11 @@ Integrate the joined research into one research brief that the
    texts and loci, relationship strength, wording check, context, translation
    and rights status, cultural payoff, limiting qualification, and material
    negative results. You select; you do not go looking.
-9. Write into `research/scope.md`: the passage-by-passage reception matrix,
+9. Settle your disposition before you write anything. Only a `PASS` writes
+   the brief: on `CHANGES_REQUIRED` or `BLOCKED`, leave `research/scope.md`
+   exactly as you found it rather than leaving a partial brief behind for a
+   later pass to mistake for a finished one.
+10. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
    `Notable-and-quotable audit`, the `Interpretive-proposal audit`, and the
@@ -77,16 +85,46 @@ Integrate the joined research into one research brief that the
 
 ## Result
 
-Return a worker result with `disposition: "PASS"`, `artifact_path` pointing
-at `research/scope.md`, and a summary naming the overlaps reconciled, the
-cross-proper claims settled, the exploratory proposals developed, and the
-evidence gaps found.
+Return an evaluator result validated against `evaluator-result.json`,
+carrying `stage`, `iteration`, `disposition`, and `findings`, with a
+`summary` on every result. Three dispositions are available.
 
-Use `disposition: "BLOCKED"` when the joined seven-lane research is
-insufficient for safe synthesis, naming in the summary what is missing and
-which lane owes it: the `cultural-afterlife` lane returned too few
-qualifying candidates, say, or `precedent-search` did not cover a proposal's
-conjunction. Block rather than research around the deficiency, and never
-quietly fill a gap. Blocking here is the right answer to a thin sweep; a
-brief you know to be insufficient is not, because the stage that reads it
-next cannot repair it.
+`PASS` — the joined research supports a brief that can be authored from.
+Return `findings: []`, `artifact_path` pointing at `research/scope.md`, and a
+summary naming the overlaps reconciled, the cross-proper claims settled, the
+exploratory proposals developed, and the evidence gaps found.
+
+`CHANGES_REQUIRED` — the research is insufficient but plausibly recoverable:
+you can name concrete missing or inadequate research the existing seven lanes
+could reasonably supply on another pass. Thin patristic coverage; missing
+Scriptural context; insufficient liturgical-history evidence; weak source or
+citation coverage; too few qualifying cultural-afterlife candidates; a
+proposal's conjunction `precedent-search` did not reach; a
+theological-synthesis candidate the gathered evidence does not support;
+conflicting lane findings needing targeted re-investigation. The seven lanes
+then run again, and this stage runs again on the fresh join.
+
+Such a result must carry at least one `blocking` finding; the engine refuses
+one that names none, because asking for changes while naming none is
+self-contradictory. Each blocking finding names in `location` the lane that
+owes the work — one of the seven lane ids — and in `required_result` what
+that lane must come back with. Use the `SYN-` prefix, stable across
+iterations. `tpt` hands the findings to all seven lanes verbatim; nothing
+summarizes them on the way.
+
+`BLOCKED` — genuinely unrecoverable within this workflow: another pass
+through the same lanes cannot reasonably solve it. A required source is
+unavailable under current repository or source policy; identity or formulary
+uncertainty is irreconcilable and belongs outside this workflow; a required
+authoritative witness cannot be obtained; the workflow or a source is
+corrupt; current Triptych guidance declares the condition terminal. This
+disposition is terminal: the run ends.
+
+Do not block merely because the first sweep was incomplete — that is what
+`CHANGES_REQUIRED` is for. And do not use `CHANGES_REQUIRED` to ask for what
+no lane can supply; that is what `BLOCKED` is for. The retry is bounded: two
+consecutive requests are granted and the third is refused, and the count
+resets whenever you pass. So name what is actually missing and who owes it
+rather than gesturing at thinness. Never research
+around a deficiency, never quietly fill a gap, and never pass a brief you
+know to be insufficient: the stage that reads it next cannot repair it.

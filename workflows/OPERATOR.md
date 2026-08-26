@@ -331,7 +331,8 @@ Only `blocking` findings trigger revision. `advisory` findings are recorded
 but do not block.
 
 Finding IDs must be stable across iterations. Use `CON-` prefix for content
-evaluation and `VIS-` for visual evaluation.
+evaluation and `VIS-` for visual evaluation; `research-synthesis` is an
+evaluator too and has its own prefix, below.
 
 `content-evaluation` also names who repairs each defect. Every blocking finding
 it returns carries `repair_target`, validated against
@@ -359,6 +360,60 @@ gives it. `tpt` writes the joined result to `results/<stage>-<iteration>.json`:
 every lane's findings verbatim, each tagged with the `lane` that raised it, in
 canonical lane order, with the worst disposition any lane returned and a
 `summary` that rolls the lanes' dispositions up in that same order.
+
+### The research-synthesis stage
+
+`research-synthesis` returns the evaluator shape above, validated against
+`workflows/schema/evaluator-result.json`. Its judgment is about the research it
+has just read rather than about a document, so its findings carry no
+`repair_target`, and what you submit differs by disposition:
+
+```json
+{
+  "stage": "research-synthesis",
+  "iteration": 0,
+  "disposition": "CHANGES_REQUIRED",
+  "summary": "One or two sentences.",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "severity": "blocking",
+      "location": "patristic-reception",
+      "problem": "What the joined research lacks.",
+      "required_result": "What that lane must come back with."
+    }
+  ]
+}
+```
+
+`PASS` carries `findings: []` and an `artifact_path` pointing at
+`research/scope.md`. `advance` prints the `author-proper` packet.
+
+`CHANGES_REQUIRED` means the research is insufficient but plausibly
+recoverable: concrete missing or inadequate research that the existing seven
+lanes could reasonably supply on another pass. Every such result must carry at
+least one `blocking` finding, and the engine refuses one that names none. Each
+blocking finding names in `location` the lane that owes the work — one of the
+seven lane ids — and says in `required_result` what that lane must come back
+with. Use the `SYN-` prefix for finding ids, stable across iterations.
+`advance` prints the seven `research` lane packets again, each carrying these
+findings verbatim on its `PRIOR_FINDINGS` line, and you dispatch the seven
+lanes as you did the first time. You summarize nothing into them.
+
+`BLOCKED` means genuinely unrecoverable within this workflow: another pass
+through the same lanes cannot reasonably solve it — a required source
+unavailable under current policy, irreconcilable identity or formulary
+uncertainty, an authoritative witness that cannot be obtained, corruption.
+`advance` prints the terminal `BLOCKED` disposition and the run ends. A thin
+first sweep is not that, and asking for what no lane can supply is not
+`CHANGES_REQUIRED`.
+
+The retry loop is bounded by this stage's own `max_iterations`, counted
+consecutively: two retries are granted, and the third `CHANGES_REQUIRED` in a
+row from this stage blocks the run, which `advance` reports as `iteration limit
+exceeded for research-synthesis: 3/3 consecutive failures`. A `PASS` resets the
+count. The budget is this stage's alone: `content-evaluation` has its own, and
+a run that evaluator sends back to `research` spends nothing here.
 
 ### Gate stages
 
@@ -506,7 +561,9 @@ research (fan-out, seven read-only lanes)
   ├─ precedent-search
   ↓ joined findings forwarded
 research-synthesis
-  ↓
+  ├─ CHANGES_REQUIRED → research → the seven lanes resweep → resynthesize
+  ├─ BLOCKED → run ends
+  ├─ PASS ↓
 author-proper
   ↓
 content-evaluation
@@ -573,10 +630,11 @@ no repository precedent search, and no source acquisition; it hunts no cultural
 afterlives and looks for no new witnesses; and it may not fill a gap from model
 memory. It selects the notable-and-quotable entries and the interpretive
 proposals from what the `cultural-afterlife` and `precedent-search` lanes
-returned rather than finding its own. When the joined seven-lane research will
-not support a safe brief it returns `disposition: "BLOCKED"`, naming what is
-missing and which lane owes it, and because `research-synthesis` is a linear
-stage the run stops there.
+returned rather than finding its own. It is an `evaluator` stage rather than a
+linear one, so it has three answers about whether the joined seven-lane research
+can be authored from: `PASS` sends the brief on, `CHANGES_REQUIRED` sends the
+run back through the seven lanes, and `BLOCKED` ends it. See Structured result
+formats above for what to submit for each.
 
 `author-proper` reads that brief as immutable input and may not repair it. An
 author that finds it insufficient, contradictory, or missing evidence it needs
@@ -619,18 +677,21 @@ lane is told which questions belong to the other six. Both evaluators still
 bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
 before, whichever route those joins took, and `research` has no revision loop
 of its own — a lane that cannot sweep returns `BLOCKED` and the run stops, and
-a re-entry routed from `content-evaluation` is a fresh visit to the stage on
-that evaluator's budget.
+a re-entry, whether routed from `content-evaluation` or sent back by
+`research-synthesis`, is a fresh visit to the stage on the budget of the
+evaluator that sent it.
 
-The `proper` workflow is at version 6. Version 6 added the `cultural-afterlife`
-and `precedent-search` research lanes, made `research-synthesis` a pure
-integrator of what those and the other five lanes returned, and gave
-`content-evaluation` a result schema of its own and the repair routes that let
-a `CHANGES_REQUIRED` evaluation re-enter `research`. The content and visual
-evaluation lanes, the gates, and every `single` stage are as they were at
-version 5. A run seeded against version 5 or any earlier version is bound to
-that source and fails closed rather than continuing under fragments it never
-started with; seed it again.
+The `proper` workflow is at version 7. Version 7 made `research-synthesis` an
+evaluator stage, so research too thin to author a safe brief from re-enters the
+seven lanes instead of ending the run at that commit. Version 6 added the
+`cultural-afterlife` and `precedent-search` research lanes, made
+`research-synthesis` a pure integrator of what those and the other five lanes
+returned, and gave `content-evaluation` a result schema of its own and the
+repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
+content and visual evaluation lanes, the gates, and every other `single` stage
+are as they were at version 5. A run seeded against version 6 or any earlier
+version is bound to that source and fails closed rather than continuing under
+fragments it never started with; seed it again.
 
 Final acceptance is a gate, not a stage any agent is asked about. Advance it
 with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other gate.

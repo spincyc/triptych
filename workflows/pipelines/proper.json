@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 6,
+  "version": 7,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "argument_schema": {
@@ -121,7 +121,7 @@
     },
     {
       "id": "research-synthesis",
-      "type": "linear",
+      "type": "evaluator",
       "execution": {
         "mode": "single"
       },
@@ -130,8 +130,10 @@
         "common/result-format.md",
         "propers/research-synthesis.md"
       ],
-      "result_schema": "worker-result.json",
-      "next": "author-proper"
+      "result_schema": "research-synthesis-result.json",
+      "pass_transition": "author-proper",
+      "fail_transition": "research",
+      "max_iterations": 3
     },
     {
       "id": "author-proper",
