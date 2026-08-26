@@ -41,6 +41,8 @@
   const chapterFiles = new Map();
   const fragmentTexts = new Map();
   const paragraphFiles = new Map();
+  const asking = new WeakMap();
+  const substitutes = new Map();
   let paragraphs = null;
   // Authors switched OFF — exclusions, so they persist across chapters.
   const hiddenAuthors = new Set();
@@ -50,9 +52,8 @@
   let showingError = false;
   // The next render answers an ARRIVING address, not a reader action.
   let arrival = false;
-  // THE 404, AS A VALUE, because `null` cannot be it: JSON `null` is a valid
-  // document. Resolved to `undefined` before the model sees it: a sentinel a
-  // payload could carry would be one a payload could forge.
+  // THE 404, AS A VALUE, because `null` cannot be it; resolved to `undefined`
+  // before the model sees it. `M.paragraphPath` says why it must be.
   const ABSENT = { absent: true };
   const seen = (file) => (file === ABSENT ? undefined : file);
 
@@ -80,20 +81,24 @@
     return pending;
   }
 
+  // ONE substitute per name: a fresh literal each time was a fresh
+  // authority over one chapter, which is what V13 abolished.
+  function gone(path) {
+    let one = substitutes.get(path);
+    if (!one) substitutes.set(path, (one = { unfetched: path }));
+    return one;
+  }
+
   // The spine for one chapter: nothing held means NO FILE, no request.
   // A 404 on a LISTED chapter is a broken record, not emptiness — marked,
   // and so is an index this page cannot read.
   function chapterFile(token, chapter) {
     const path = M.chapterPath(index, token, chapter);
-    if (!path) return Promise.resolve(path === null ? { unfetched: 'the index record' } : null);
-    // A 200 CARRYING A DOCUMENT THAT IS NOT A SPINE IS NOT AN EMPTY CHAPTER.
-    // `null`, a list and a string are all valid JSON, so the request succeeded
-    // and every derivation off the payload then answered nothing — and the
-    // page printed "No commentary on this chapter is held yet" over a chapter
-    // its own index says holds commentary. The same manufactured negative the
-    // index record already had a third answer for.
-    return cached(chapterFiles, path, { unfetched: path })
-      .then((file) => (M.spineUnreadable(file) ? { unfetched: path } : file));
+    if (!path) return Promise.resolve(path === null ? gone('the index record') : null);
+    // A 200 carrying a document that is not a spine is not an empty
+    // chapter; `M.spineUnreadable` says what that cost and why.
+    return cached(chapterFiles, path, gone(path))
+      .then((file) => (M.spineUnreadable(file) ? gone(path) : file));
   }
 
   // Where this edition opens a paragraph. The layer is the EDITION's —
@@ -102,25 +107,34 @@
   function chapterParagraphs(bible, token, chapter) {
     const path = M.paragraphPath(paragraphs, bible.id, bag(canonEntry(token)).path, chapter);
     // `null` is the layer ROOT unreadable, not the 404 that means this
-    // chapter runs on; carried in the route's own `unfetched`.
-    // A layer that would not come is not a chapter that runs on, and the
-    // fetch for an OPTIONAL record may not decide the page: a transport fault
-    // on one paragraph file lost the Scripture and 107 fragments with it.
+    // chapter runs on; `M.paragraphPath` says why neither may decide the page.
     return path === null ? Promise.resolve({ unfetched: true })
       : path ? cached(paragraphFiles, path, ABSENT)
         .then(seen, () => ({ unfetched: true }))
       : Promise.resolve(undefined);
   }
 
-  // One fragment's prose — keyed by the path the SPINE gave, never
-  // assembled from an id. Even its 404 is evicted: retry is real.
-  // V14: the ROW asks, so the request is owned where it is made.
+  // One fragment's prose, asked BY THE ROW and held against it until it
+  // settles; `fragmentTexts` takes the promise from INSIDE the settle, so
+  // what is shared by path is only ever an answer. `M.rowTransport` says why.
   function fragmentText(row) {
     const path = M.textAsked(row);
-    if (!path) return Promise.resolve(ABSENT);
-    return cached(fragmentTexts, path);
+    const owner = path ? M.rowTransport(row) : null;
+    if (!owner) return Promise.resolve(ABSENT);
+    const held = asking.get(owner) || fragmentTexts.get(path);
+    if (held) return held;
+    const asked = T.loadJSON(path).then(
+      (file) => {
+        // FIRST SETTLED ANSWER WINS: a request released late may not replace
+        // the answer a row already has, or displace it for the next asker.
+        if (!fragmentTexts.has(path)) fragmentTexts.set(path, asked);
+        return Object.freeze(file);
+      },
+      (error) => { asking.delete(owner); throw error; }
+    );
+    asking.set(owner, asked);
+    return asked;
   }
-
 
   /* ------------------------------------------------- the chapter */
 
@@ -292,8 +306,10 @@
       }
       fragmentText(fragment).then(
         (loaded) => {
-          // A completion for a rebuilt page mutates nothing here.
-          if (!reading.contains(details)) return;
+          // A completion for a rebuilt page mutates nothing here, and the
+          // ROW THAT ASKED owns the application; containment first, so a
+          // stale completion returns before it records.
+          if (!reading.contains(details) || !M.bodyAsked(fragment, loaded)) return;
           // No file, or a file: a 200 answering `null` is the second.
           if (loaded === ABSENT) {
             text.className = 'fragment-text missing';
@@ -321,7 +337,8 @@
           }
         },
         (error) => {
-          if (!reading.contains(details)) return;
+          // A reported failure is a body applied, and owned as one.
+          if (!reading.contains(details) || !M.bodyAsked(fragment, error)) return;
           asked = false;
           text.className = 'fragment-text missing';
           text.textContent =
@@ -368,14 +385,11 @@
     return item;
   }
 
-  // Why the works standing here miss the asked-for language; unsaid, the
-  // page reads as a load failure. Partly public domain is SOME, counted
-  // apart; the findings themselves are the generator's.
+  // Why the works standing here miss the asked-for language, and what may
+  // be said of it: `M.absenceRows`.
   function renderAbsences(container, file, wanted) {
     const asked = M.parseVoiceKey(wanted);
     if (!asked || asked.voice !== M.TRANSLATION) return;
-    // THE TYPED FINDING DECIDES WHAT MAY BE SAID: dropped, it read
-    // `not-surveyed` as a holdings negative.
     const rows = M.absenceRows(index, file, asked.language);
     // An unreadable absences root is not a corpus with nothing to say.
     if (!rows.length) {
@@ -922,9 +936,7 @@
       [index, manifest, paragraphs] = await Promise.all([
         T.loadJSON('structure/catena/index.json'),
         T.loadBibles(),
-        // Optional: without the paragraph layer, the chapter runs on — and
-        // OPTIONAL MEANS ITS FAILURE IS NOT THE PAGE'S. Unguarded, a transport
-        // fault here took down the whole bootstrap and blamed the catena index.
+        // Optional: OPTIONAL MEANS ITS FAILURE IS NOT THE PAGE'S.
         cached(paragraphFiles, 'structure/paragraphs/index.json', ABSENT)
           .then(seen, () => 'unreadable')
       ]);

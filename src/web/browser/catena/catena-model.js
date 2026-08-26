@@ -886,6 +886,17 @@
    * accepted them, and reversing an accepted decision is not this file's to
    * do. `REVIEW_REQUEST.md` asks about the one whose copy is imprecise.
    */
+  /*
+   * WHY THE PAGE ASKS THIS BEFORE IT RENDERS ANYTHING, kept here because the
+   * page carries a byte ceiling and this file does not.
+   *
+   * A 200 CARRYING A DOCUMENT THAT IS NOT A SPINE IS NOT AN EMPTY CHAPTER.
+   * `null`, a list and a string are all valid JSON, so the request succeeded
+   * and every derivation off the payload then answered nothing — and the page
+   * printed "No commentary on this chapter is held yet" over a chapter its own
+   * index says holds commentary. The same manufactured negative the index
+   * record already had a third answer for.
+   */
   function spineUnreadable(file) {
     return witnessed('readability', chapterProjection(file)).unreadable;
   }
@@ -1063,6 +1074,62 @@
     const held = rowOwners.get(row);
     witnessed('request', held === undefined ? NO_CHAPTER : held, row);
     return held === undefined ? '' : row.text_path;
+  }
+
+  /**
+   * THE TRANSPORT OWNER OF ONE ROW — one object, for the life of the row.
+   *
+   * V15, the V14 review. V14 resolved the ADDRESS through the row, and then
+   * handed the resolved string to a cache keyed on nothing else. A second
+   * row addressing the same text found an unfinished request there and joined
+   * it, so two owners became one owner, and the answer the first row's
+   * request was made for was rendered under the second. The paths matched and
+   * that was taken for ownership; a path string is not an owner.
+   *
+   * What a transport may be held against is an object identity, and this is
+   * it: one frozen owner per projected row, carrying the row, the projection
+   * that made the row, and the address the row asks. It is created once and
+   * held against the row, so the owner of a request is the same object when
+   * the request completes as when it was made, and a same-path sibling, a
+   * second projection of the same chapter and a re-render each own their own.
+   *
+   * `null` for a row no projection of this file made — the same fail-closed
+   * rule `textAsked` obeys, so a row this file did not project may create no
+   * transport at all.
+   */
+  const rowTransports = new WeakMap();
+
+  function rowTransport(row) {
+    const held = rowOwners.get(row);
+    if (held === undefined) return null;
+    let owner = rowTransports.get(row);
+    if (owner === undefined) {
+      owner = Object.freeze({ row: row, projection: held, path: row.text_path });
+      rowTransports.set(row, owner);
+    }
+    witnessed('transport', held, owner);
+    return owner;
+  }
+
+  /**
+   * THE PROJECTION ONE FULFILLED BODY IS BEING APPLIED FOR.
+   *
+   * V14 carried ownership as far as the request and stopped there, so the
+   * identity roster a reviewer could read ended one step before the step that
+   * writes the page: the body was applied by a closure that knew a DOM node
+   * and a path. The row that asked is asked AGAIN here, at the application
+   * itself, and the content being applied travels with it. What is recorded
+   * is the projection, the row and the value, taken where the body is
+   * written — not inferred afterwards from two paths that match.
+   *
+   * `false` for a row no projection of this file made: fail-closed, one step
+   * later than `textAsked`.
+   */
+  function bodyAsked(row, content) {
+    const held = rowOwners.get(row);
+    witnessed('body', held === undefined ? NO_CHAPTER : held,
+      { row: row, content: content });
+    return held !== undefined;
   }
 
   /**
@@ -1542,6 +1609,17 @@
    * — a claim about how an edition sets its text, drawn from a file nobody
    * could read.
    */
+  /*
+   * AND WHY THE PAGE MAY NOT LET THIS RECORD DECIDE IT, kept here for the
+   * ceiling's sake. `null` from this function is the layer ROOT unreadable,
+   * not the 404 that means this chapter runs on, and the route carries it in
+   * its own `unfetched`. A layer that would not come is not a chapter that
+   * runs on, and the fetch for an OPTIONAL record may not decide the page: a
+   * transport fault on one paragraph file lost the Scripture and 107
+   * fragments with it. At startup the same rule governs the layer INDEX —
+   * unguarded, a fault there took down the whole bootstrap and blamed the
+   * catena index.
+   */
   function paragraphPath(layer, edition, bookPath, chapter) {
     // A layer that answered 404 is no layer, and that is the absence the page
     // may speak from. The route marks it, because `null` cannot: JSON `null`
@@ -1807,6 +1885,14 @@
       : '';
   }
 
+  /*
+   * WHAT THE PAGE DRAWS OFF THIS, kept here for the page's ceiling: why the
+   * works standing under a chapter miss the asked-for language. Unsaid, the
+   * page reads as a load failure. Partly public domain is SOME, counted
+   * apart; the findings themselves are the generator's, and the TYPED
+   * finding decides what may be said — dropped, it read `not-surveyed` as a
+   * holdings negative.
+   */
   function absenceRows(index, file, language) {
     const wanted = tongue(language);
     const recorded = bag(bag(index).absences);
@@ -2492,6 +2578,8 @@
     chapterPasses: chapterPasses,
     chapterWitness: chapterWitness,
     rowProjection: rowProjection,
+    rowTransport: rowTransport,
+    bodyAsked: bodyAsked,
     textAsked: textAsked,
     fragmentRow: fragmentRow,
     textPayload: textPayload,

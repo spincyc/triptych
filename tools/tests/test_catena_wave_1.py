@@ -183,7 +183,20 @@ NODE = shutil.which("node")
 # projects as refused — while the page consumes `text_refused` BEFORE the
 # request sink, so a refused row renders the refused sentence and can be
 # answered by no path, carried, cached, or late.
-MODEL_SHA256 = "49b74f3daf17d60c9d2aca42bff1970bd646bb03e1c290e67690bb46ee3edc89"
+# V15 changes the model and the page together, for the transport-ownership
+# closure the V14 review required. The model gains `rowTransport`, the owner
+# object one projected row keeps for the life of that row, and `bodyAsked`,
+# which is asked AT the body application and records the projection, the row
+# and the content being written — the two consumers the V14 roster ended one
+# step short of. It also takes in three paragraphs of the page's own prose:
+# why a 200 that is not a spine is not an empty chapter, why neither the
+# paragraph layer nor its index may decide the page, and what the absence
+# disclosure may say. `catena.js` had TWENTY-EIGHT gzipped bytes under its
+# whole-file ceiling and the correction is not payable out of twenty-eight,
+# so the sentences moved to the file that carries no ceiling and the page
+# kept pointers to them. The page is SMALLER than V14 left it — 12,958
+# against 12,972 whole — while carrying the whole ownership change.
+MODEL_SHA256 = "ef949fb304ee14204989f58174c3f8126ab0544e1bd22f0820331e7501f39506"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1547,7 +1560,22 @@ V14_NESTED_FORGED_SPINE = _fixture(dict(
 # entry itself: the record arrives as a record, and its `rights`, `voice` and
 # `author` are getters. `ownData` declines each, so the projection states the
 # absence rather than one consumer's reading of it.
-V14_NESTED_FIELD_KEYS = ("rights", "voice", "author", "language")
+# V15, the V14 review: the promised matrix named an EDITION accessor and the
+# scenario supplied four other fields, so edition closure was claimed and
+# never asked. `edition` and `edition_published` are added here and to the
+# case below, and the edition axis gets a case of its own.
+V14_NESTED_FIELD_KEYS = ("rights", "voice", "author", "language", "edition",
+                         "edition_published")
+
+# THE EDITION AXIS ALONE. The record arrives as a record; its `edition` and
+# `edition_published` are getters, and nothing else about it is unusual. What
+# the getters would have said is a forged printing that names itself, so a
+# consumer that invokes one is caught by content and not only by a count.
+V15_FORGED_EDITION = "PLANTED FORGED EDITION — reachable only through an accessor."
+V14_NESTED_EDITION_FORGED = _voice_source(
+    1, edition=V15_FORGED_EDITION, edition_published="1499")
+V14_NESTED_EDITION_SPINE = _fixture(dict(
+    V14_NESTED_SPINE, sources={"1": V14_NESTED_EDITION_FORGED}))
 
 # MEMBER INVENTORY. `Array.isArray` is true of a proxy over an array, so the
 # raw `fragments` really can answer "which members" and "how many" with two
@@ -1612,6 +1640,28 @@ V14_SAME_PATH_GEN2 = _fixture({
     ],
     "leads": [], "blocked": [], "refusals": {},
 })
+
+# ================================================================ V15 §§9-11
+# TWO DISTINGUISHABLE ANSWERS AT ONE ADDRESS.
+#
+# The V14 review's decisive finding: the late proof planted ONE body at ONE
+# path, so "B rendered the words it asked for" and "B rendered the words A
+# asked for" were the same sentence, and the green oracle required the leak.
+# Two documents served in turn at one address separate them, and nothing
+# else can: a body is the only thing a reader sees, and a proof that reads
+# only the journal proves only what the journal was told.
+V15_BODY_A = _fixture({
+    "id": "fallback-owned", "language": "la",
+    "text": "PLANTED BODY A — the answer the row in projection A asked for."})
+V15_BODY_B = _fixture({
+    "id": "fallback-owned", "language": "la",
+    "text": "PLANTED BODY B — the answer the row in projection B asked for."})
+
+# A CHAPTER WHOSE SPINE IS A DOCUMENT AND NOT A SPINE, on two chapters, so a
+# reader can walk from one to the other and back. The page substitutes a
+# record of its own for a spine it cannot read; under V14 it minted a fresh
+# literal every time it was asked, and a fresh record is a fresh authority.
+V15_NOT_A_SPINE = ["not", "a", "spine"]
 
 # THE WHOLE AUTHORITY GRAPH IN ONE CHAPTER: rows with an extent and
 # translators, two voices, editions, a recorded refusal, a lead and a blocked
@@ -3087,7 +3137,78 @@ SCENARIOS = [
                                               V14_NESTED_RIGHTS],
                                    "voice": ["original", "translation"],
                                    "author": ["Author 1", "Forged Author"],
-                                   "language": ["la", "grc"]}},
+                                   "language": ["la", "grc"],
+                                   "edition": ["Edition 1", V15_FORGED_EDITION],
+                                   "edition_published": ["1900", "1499"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # ============================================================== V15 §24
+    # THE AUTHORITY GRAPH, MUTATED, AND THEN CONSUMED AGAIN. V14 proved the
+    # freezes and the throwing assignments and stopped there: nothing
+    # downstream was asked a second time afterwards, so "the render is
+    # unchanged" was a claim and not a reading. The snapshot at `probed` runs
+    # the mutation attempts; the step after it re-renders the same chapter
+    # from the same projection, and `rerendered` is what the reader then has.
+    {"name": "v15-authority-rerender", "hash": GEN1,
+     "probeAuthority": True,
+     "files": {"structure/catena/01-gen/001.json": V14_AUTHORITY_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "probed"},
+               {"do": "selectVoice", "value": "", "label": "rerendered"},
+               {"do": "openEveryFragment", "label": "reopened"}]},
+
+    # ============================================================== V15 §23
+    # HOW OFTEN, AND IN WHICH WAY, ONE SOURCES RECORD IS LOOKED AT. The record
+    # is served intact; a Proxy over it reports which trap answered. This is
+    # the case that makes the descriptor claim reportable instead of rounded.
+    {"name": "v15-descriptor-accounting", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "countSources": {"path": "structure/catena/01-gen/001.json"},
+     "steps": [{"do": "openEveryFragment", "label": "opened"},
+               {"do": "selectVoice", "value": "", "label": "again"}]},
+
+    # ============================================================== V15 §22
+    # THE EDITION ACCESSOR, ON ITS OWN. The V14 review found the promised
+    # edition case missing from a matrix that claimed it. One record, one
+    # hostile axis: `edition` and `edition_published` are getters and nothing
+    # else about the entry is unusual, so whatever the page then says about
+    # the edition, the printing, the rights, the voice and the readability of
+    # the chapter has to be one coherent answer about one edition.
+    {"name": "v15-nested-edition", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "fields": {"edition": ["Edition 1", V15_FORGED_EDITION],
+                                   "edition_published": ["1900", "1499"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # A STEADY forged edition behind the accessor, so the decline is not the
+    # drift being declined.
+    {"name": "v15-nested-edition-steady", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "fields": {"edition": [V15_FORGED_EDITION],
+                                   "edition_published": ["1499"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # A DETONATING edition accessor: an entry that throws when its printing
+    # is read may not take the chapter, the tally or the render with it.
+    {"name": "v15-nested-edition-throw", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "sourceAccessor": {"path": "structure/catena/01-gen/001.json", "key": "1",
+                        "fields": {"edition": ["__THROW__"]}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE POSITIVE CONTROL for the edition axis: the same forged printing,
+    # supplied as an ordinary document, reaching the reader's provenance line.
+    {"name": "v15-nested-edition-data", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_NESTED_EDITION_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
      "steps": [{"do": "openEveryFragment", "label": "opened"}]},
     {"name": "v14-nested-fields-throw", "hash": GEN1,
      "files": {"structure/catena/01-gen/001.json": V14_NESTED_SPINE,
@@ -3218,6 +3339,73 @@ SCENARIOS = [
                {"do": "release",
                 "path": "structure/catena/text/fallback-owned.json",
                 "label": "late"}]},
+
+    # =============================================================== V15 §§9-19
+    # A HELD, B SETTLED, A LATE — with two documents at one address, and only
+    # the FIRST ask of that address parked. B's own request goes through while
+    # A's is still in the air. Under V14 there is no second request to let
+    # through: B joins A's unresolved promise, stands at `Loading…` until A is
+    # released, and then renders A's body.
+    {"name": "v15-late-same-path", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/01-gen/002.json": V14_SAME_PATH_GEN2},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "deferTurn": {"structure/catena/text/fallback-owned.json": [0]},
+     "steps": [{"do": "openFirstFragment", "label": "a-held"},
+               {"do": "selectChapter", "value": "2", "label": "moved"},
+               {"do": "openEveryFragment", "label": "b-settled"},
+               {"do": "release",
+                "path": "structure/catena/text/fallback-owned.json",
+                "label": "a-late"}]},
+    # THE SAME SEQUENCE WITH ONE ADDRESS AND ONE BODY, so the discriminator
+    # above is not the two documents doing the work on their own: the route,
+    # the row and the projection move exactly as before.
+    {"name": "v15-late-same-path-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/01-gen/002.json": V14_SAME_PATH_GEN2},
+     "bodies": {"structure/catena/text/fallback-owned.json": [V15_BODY_B]},
+     "deferTurn": {"structure/catena/text/fallback-owned.json": [0]},
+     "steps": [{"do": "openFirstFragment", "label": "a-held"},
+               {"do": "selectChapter", "value": "2", "label": "moved"},
+               {"do": "openEveryFragment", "label": "b-settled"},
+               {"do": "release",
+                "path": "structure/catena/text/fallback-owned.json",
+                "label": "a-late"}]},
+    # TWO ROWS, ONE ADDRESS, ONE TURN. Both ask before either answer arrives,
+    # so neither can be served from a value that has settled: this is the
+    # pending case, and under V14 the second row joined the first's request.
+    {"name": "v15-same-path-together", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "steps": [{"do": "openEveryFragment", "label": "both"}]},
+    # ONE OWNER'S FAILURE IS NOT ANOTHER'S. The first ask of the shared
+    # address is answered 404 and the second a document, in the same turn.
+    # Under a path-keyed pending cache the second row joins the first row's
+    # rejection and reports a text that was never asked for on its behalf.
+    {"name": "v15-same-path-one-fails", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [None, V15_BODY_B]},
+     "steps": [{"do": "openEveryFragment", "label": "both"}]},
+    # THE SETTLED VALUE, SHARED SAFELY. Row one asks and settles; row two
+    # asks afterwards and is answered from what settled, with no request of
+    # its own — and applies it as ITSELF.
+    {"name": "v15-settled-then-shared", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "steps": [{"do": "openFirstFragment", "label": "first"},
+               {"do": "openEveryFragment", "label": "second"}]},
+    # AN UNREADABLE SPINE, RENDERED TWICE. The page substitutes a record for a
+    # spine that is a document and not a spine. Under V14 it made a fresh
+    # literal on every ask, so one unreadable chapter became a new authority
+    # per render and the projection count climbed with the reader's steps.
+    {"name": "v15-unreadable-rerendered", "hash": GEN1,
+     "raw": {"structure/catena/01-gen/001.json": V15_NOT_A_SPINE},
+     "steps": [{"do": "selectChapter", "value": "2", "label": "away"},
+               {"do": "selectChapter", "value": "1", "label": "back"}]},
 
     # ============================================================= V14 §20-22
     # THE WHOLE AUTHORITY GRAPH, so the freeze report has one of everything
@@ -4144,6 +4332,33 @@ async function run(scenario) {
    * A cache hit consumes nothing, which is why the next ask clears it. */
   let pendingAsk = null;
   const asks = [];
+  /* V15: THE TRANSPORT OWNER, AND THE BODY APPLICATION.
+   *
+   * The V14 review found ownership recorded at the address decision and
+   * nowhere afterwards, so the roster ended one step before the step that
+   * writes the page. `transports` is what the page asked the model for when
+   * it created a request — the owner object, the row inside it and the
+   * address — and `applied` is what the page held when it wrote a body: the
+   * row, the projection that row belongs to, and the content itself. Neither
+   * is inferred from a path afterwards. */
+  const transports = [];
+  const applied = [];
+  /* V15 §23: WHAT WAS OBSERVED, AND HOW, COUNTED BY KIND.
+   *
+   * The V14 review found the getter-invocation claim true and the sentence
+   * around it too strong: hostile nested value accessors are never invoked,
+   * and a Proxy over the same record still sees its descriptor asked three
+   * times per source key and twice per shared field. Those are different
+   * observations and one count cannot report both. Four kinds are counted
+   * apart here — a value read that would run an accessor, a descriptor read
+   * that would not, an own-property test, and the key enumeration — so the
+   * package can say exactly what each one is instead of rounding them all to
+   * `one read`. */
+  const observations = {};
+  const observe = (kind, where) => {
+    const at = kind + ':' + where;
+    observations[at] = (observations[at] || 0) + 1;
+  };
   /* HOW OFTEN A PLANTED NESTED SOURCE ACCESSOR WAS INVOKED. Under V14 the
    * answer is zero: the accessor is declined by descriptor, once, and no
    * consumer reaches it afterwards. */
@@ -4326,6 +4541,72 @@ async function run(scenario) {
     });
     return made;
   };
+  /* V15 §23: A SOURCES RECORD THAT COUNTS EVERY WAY IT IS LOOKED AT. The
+   * record is served intact — every value is exactly what the fixture wrote —
+   * and a Proxy over it and over each entry reports which trap answered. A
+   * `value-get` is the read that would invoke an own accessor; a `descriptor`
+   * is the read that would not; `has` is the own-property test; `own-keys` is
+   * the enumeration `for…in` starts with. */
+  const countingSources = (spine) => {
+    const made = Object.assign({}, spine);
+    const raw = spine.sources && typeof spine.sources === 'object'
+      ? spine.sources : {};
+    const entries = {};
+    for (const key of Object.keys(raw)) {
+      const one = raw[key];
+      if (!one || typeof one !== 'object') continue;
+      entries[key] = new Proxy(one, {
+        get(target, name) {
+          observe('value-get', 'field/' + String(name));
+          return target[name];
+        },
+        has(target, name) {
+          observe('has', 'field/' + String(name));
+          return Reflect.has(target, name);
+        },
+        getOwnPropertyDescriptor(target, name) {
+          observe('descriptor', 'field/' + String(name));
+          return Reflect.getOwnPropertyDescriptor(target, name);
+        },
+        ownKeys(target) {
+          observe('own-keys', 'field');
+          return Reflect.ownKeys(target);
+        },
+        getPrototypeOf(target) {
+          observe('prototype', 'field');
+          return Reflect.getPrototypeOf(target);
+        }
+      });
+    }
+    made.sources = new Proxy(raw, {
+      get(target, name) {
+        observe('value-get', 'key/' + String(name));
+        return Object.prototype.hasOwnProperty.call(entries, name)
+          ? entries[name] : target[name];
+      },
+      has(target, name) {
+        observe('has', 'key/' + String(name));
+        return Reflect.has(target, name);
+      },
+      getOwnPropertyDescriptor(target, name) {
+        observe('descriptor', 'key/' + String(name));
+        const spot = Reflect.getOwnPropertyDescriptor(target, name);
+        if (spot && Object.prototype.hasOwnProperty.call(entries, name)) {
+          spot.value = entries[name];
+        }
+        return spot;
+      },
+      ownKeys(target) {
+        observe('own-keys', 'key');
+        return Reflect.ownKeys(target);
+      },
+      getPrototypeOf(target) {
+        observe('prototype', 'key');
+        return Reflect.getPrototypeOf(target);
+      }
+    });
+    return made;
+  };
   const driftingSpine = (spine, values, cycle) => {
     const made = Object.assign({}, spine);
     made.fragments = (spine.fragments || []).map((one, index) => {
@@ -4392,7 +4673,17 @@ async function run(scenario) {
                      phase: phase.now, outcome: 'completed' };
     requests.push(record);
     const has = Object.prototype.hasOwnProperty.call(overrides, path);
-    const body = has ? overrides[path] : corpusFile(path);
+    /* V15: HOW MANY TIMES THIS PATH HAS BEEN ASKED, counting this one. Under
+     * V14 the question could not arise: one path was one request whatever
+     * asked, so one body per path was all a scenario could need. V15 lets two
+     * owners ask one address, and a proof that B rendered B's own answer
+     * needs A's answer and B's to be DIFFERENT DOCUMENTS at the same path.
+     * `bodies` names the answers in order; the last repeats. */
+    const turn = fetched.filter((one) => one === path).length - 1;
+    const takes = (scenario.bodies || {})[path];
+    const body = takes
+      ? JSON.parse(JSON.stringify(takes[Math.min(turn, takes.length - 1)]))
+      : has ? overrides[path] : corpusFile(path);
     const extra = (scenario.patch || {})[path];
     if (extra && body) mergeInto(body, extra);
     /* A SUCCESSFUL FETCH THAT ANSWERS JSON `null`, which `files` cannot
@@ -4446,9 +4737,14 @@ async function run(scenario) {
       && typeof walked === 'object'
       ? accessorSources(walked, nested) : walked;
     const inventory = scenario.driftMembers;
-    const served = inventory && inventory.path === path && sourced
+    const listed = inventory && inventory.path === path && sourced
       && typeof sourced === 'object'
       ? driftingMembers(sourced, inventory) : sourced;
+    /* V15: the observation counter, served the same way and at the same seam
+     * as everything else a hostile record could be. */
+    const counting = scenario.countSources;
+    const served = counting && counting.path === path && listed
+      && typeof listed === 'object' ? countingSources(listed) : listed;
     /* V13: WHO OWNS THIS REQUEST. The page composes no text address of its
      * own, so a `structure/catena/text/…` request can only have come off a
      * projected row — and the row names which projection made it. A request
@@ -4489,7 +4785,18 @@ async function run(scenario) {
       : (served === null || served === undefined)
         ? { ok: false, status: 404, json: async () => null }
         : { ok: true, status: 200, json: async () => served };
-    if ((scenario.defer || []).some((piece) => path.includes(piece))) {
+    /* V15: WHICH ASK OF THIS PATH IS HELD. `defer` parks every request whose
+     * path carries the piece, which is the whole of the V14 axis. `deferTurn`
+     * parks only the listed asks of it, so A's request may be held while B's
+     * request for the same address goes through — the sequence the V14 review
+     * required and V14 could not construct, because there was no second
+     * request to let through. */
+    const turning = scenario.deferTurn || {};
+    const named = Object.keys(turning).filter((piece) => path.includes(piece))[0];
+    const park = named !== undefined
+      ? turning[named].indexOf(turn) !== -1
+      : (scenario.defer || []).some((piece) => path.includes(piece));
+    if (park) {
       record.outcome = 'held';
       return new Promise((resolve, reject) => {
         if (!parked.has(path)) parked.set(path, []);
@@ -4628,6 +4935,28 @@ async function run(scenario) {
         asks.push(entry);
         pendingAsk = { row: entry.row, projection: entry.projection,
                        id: entry.id, path: entry.path };
+      }
+      if (consumer === 'transport') {
+        entry.owner = refOf(detail);
+        entry.row = refOf(detail && detail.row);
+        entry.held = refOf(detail && detail.projection);
+        entry.path = detail ? String(detail.path || '') : '';
+        entry.owned = refOf(model.rowProjection(detail && detail.row));
+        entry.id = projection.id;
+        transports.push(entry);
+      }
+      if (consumer === 'body') {
+        const wrote = detail && detail.row;
+        entry.row = refOf(wrote);
+        entry.owned = refOf(model.rowProjection(wrote));
+        entry.path = wrote && typeof wrote === 'object'
+          ? String(wrote.text_path || '') : '';
+        entry.id = projection.id;
+        entry.body = bodyOf(detail && detail.content);
+        entry.frozen = Boolean(detail && detail.content
+          && typeof detail.content === 'object'
+          && Object.isFrozen(detail.content));
+        applied.push(entry);
       }
       witnessLog.push(entry);
     });
@@ -4773,8 +5102,11 @@ async function run(scenario) {
     taken.projectionRowRefs = JSON.parse(JSON.stringify(projectionRowRefs));
     taken.witness = JSON.parse(JSON.stringify(witnessLog));
     taken.asks = JSON.parse(JSON.stringify(asks));
+    taken.transports = JSON.parse(JSON.stringify(transports));
+    taken.applied = JSON.parse(JSON.stringify(applied));
     taken.sourceCalls = JSON.parse(JSON.stringify(sourceCalls));
     taken.memberReads = JSON.parse(JSON.stringify(memberReads));
+    taken.observations = JSON.parse(JSON.stringify(observations));
     taken.immutability = immutability();
     return taken;
   };
@@ -5019,6 +5351,10 @@ class ReplayTest(unittest.TestCase):
                     # reached, never of what it rendered.
                     "consumerRefs", "authoritativeRefs", "projectionRowRefs",
                     "witness", "asks", "sourceCalls", "memberReads",
+                    # V15: the transport-owner and body-application journals
+                    # are per-session records of WHO asked and who wrote, not
+                    # of what stands on the page.
+                    "transports", "applied", "observations",
                     "immutability"}
         return {key: value for key, value in snap.items() if key not in journals}
 
@@ -9377,6 +9713,10 @@ class NullBootstrapTerminalStateTest(ReplayTest):
                     # reached, never of what it rendered.
                     "consumerRefs", "authoritativeRefs", "projectionRowRefs",
                     "witness", "asks", "sourceCalls", "memberReads",
+                    # V15: the transport-owner and body-application journals
+                    # are per-session records of WHO asked and who wrote, not
+                    # of what stands on the page.
+                    "transports", "applied", "observations",
                     "immutability"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
@@ -11976,8 +12316,14 @@ class V14ProjectionAuthorityBase(ReplayTest):
     # three more the six did not name. A consumer added later that does not
     # route through the projection fails the roster by the name that is
     # missing rather than passing quietly.
+    # V15, the V14 review: `request` observed the row and its projection at
+    # the ADDRESS decision and nothing afterwards, so the roster ended one
+    # step before the step that writes the page. `transport` is the owner
+    # object a request is created against, and `body` is the application
+    # itself — asked as the row, at the sink, carrying the content.
     CONSUMERS = ("readability", "unfetched", "tally", "rows", "voices",
-                 "blocked", "leads", "refusal", "request", "provenance")
+                 "blocked", "leads", "refusal", "request", "transport",
+                 "body", "provenance")
     # The consumers a chapter reaches on an ordinary readable render. The
     # provenance line is drawn only where the reader asks for a translation
     # that is not held, so it is not on every page.
@@ -12392,8 +12738,30 @@ class V14RequestOwnershipTest(V14ProjectionAuthorityBase):
         self.assertEqual(reopened["asks"][0], first)
         late = self.snapshot("v14-late-same-path", "late")
         self.assertEqual(reopened["asks"][0], late["asks"][0])
-        self.assertEqual([one["outcome"] for one in late["requests"]
-                          if one["path"] == self.CARRIED], ["released"])
+        # V15, THE V14 REVIEW'S DECISIVE FINDING, AND THE OLD ORACLE THIS
+        # REPLACES. What stood here was:
+        #
+        #     self.assertEqual([one["outcome"] for one in late["requests"]
+        #                       if one["path"] == self.CARRIED], ["released"])
+        #     self.assertIn(self.HELD_BODY, late["fragmentTexts"][0])
+        #
+        # ONE request for the address across two owners in two projections,
+        # and B's rendered prose taken from it. Both of those are only
+        # satisfiable if B never asked — if B subscribed to A's unresolved
+        # promise and was handed the answer A's request was made for. The
+        # oracle required the leak, which is why it was green over it.
+        #
+        # The correct expectation is that each owner has its own transport.
+        # Both are parked here, because this scenario defers the address
+        # rather than one ask of it, so both are released together; the
+        # decisive sequence — A held while B settles — is
+        # `v15-late-same-path`, below.
+        released = [one for one in late["requests"]
+                    if one["path"] == self.CARRIED]
+        self.assertEqual([one["outcome"] for one in released],
+                         ["released", "released"])
+        self.assertEqual([one["phase"] for one in released],
+                         ["asked", "reopened"])
         # And the page the reader is on is B's, showing B's own row.
         self.assertEqual(late["hash"], GEN2)
         self.assertEqual(late["fragmentCount"], 1)
@@ -12401,6 +12769,419 @@ class V14RequestOwnershipTest(V14ProjectionAuthorityBase):
         self.assertEqual(late["sourceLines"][0][:len("second-chapter")],
                          "second-chapter")
         self.assertEqual(late["busy"], "false")
+        # The body B is showing was applied for B's row, off B's projection.
+        wrote = late["applied"][-1]
+        self.assertEqual(wrote["row"], second["row"])
+        self.assertEqual(wrote["owned"], second["projection"])
+
+
+class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
+    """V15 §§5-19 — ownership through pending transport, completion and body.
+
+    The V14 review found ownership recorded at the ADDRESS decision and
+    discarded one line later. `fragmentText(row)` resolved the address through
+    the row and then entered a module-scope `Map` keyed on the path alone,
+    holding the PROMISE. A second row carrying the same address did not ask:
+    it found an unresolved promise there and joined it, so two owners became
+    one and the answer the first row's request was made for was rendered under
+    the second. The paths matched, and that was taken for ownership.
+
+    A path string is not an owner and a promise keyed by one is not ownership.
+    What is shared by path now is only ever an ANSWER — the promise is entered
+    into `fragmentTexts` from inside its own settle handler, so nothing
+    unresolved is ever reachable through it — and work in flight is held
+    against the owner the model hands out for the row, `M.rowTransport(row)`:
+    one frozen object per projected row, carrying the row, the projection that
+    made it and the address it asks.
+
+    The proofs here are ordered as the failure chain was: two rows in one turn
+    are two transports; one owner's failure is not another's; a settled value
+    may be shared and is still applied as the row that asked; and — the
+    decisive one — A is held, B settles on the same address while A is still
+    in the air, B renders the body B asked for, and A's late release changes
+    nothing about B.
+    """
+
+    A_BODY = "PLANTED BODY A"
+    B_BODY = "PLANTED BODY B"
+    NOT_PUBLISHED = "The text of this fragment was not published beside the page."
+    LATE = "v15-late-same-path"
+
+    def text_requests(self, snap):
+        return [one for one in snap["requests"] if one["path"] == self.CARRIED]
+
+    def ownership(self, name, label):
+        """The packaged ownership rows of one scenario's text requests."""
+        return [one for one in self.snapshot(name, label)["ownership"]
+                if one["kind"] == "text"]
+
+    # ------------------------------------------------------- §§7, 15, 16
+
+    def test_two_rows_in_one_turn_are_two_transports(self):
+        # THE PENDING CASE. Both rows ask before either answer arrives, so
+        # neither can be served from a value that has settled. Under V14
+        # exactly one request left the page and both rows rendered its body.
+        page = self.snapshot("v15-same-path-together", "both")
+        asked = self.text_requests(page)
+        self.assertEqual([one["outcome"] for one in asked],
+                         ["completed", "completed"],
+                         "one owner joined the other's request")
+        # Two transports, two owner objects, two rows — one projection, one
+        # address. The address is not what tells them apart.
+        owners = page["transports"]
+        self.assertEqual(len(owners), 2)
+        self.assertNotEqual(owners[0]["owner"], owners[1]["owner"])
+        self.assertNotEqual(owners[0]["row"], owners[1]["row"])
+        self.assertEqual([one["path"] for one in owners],
+                         [self.CARRIED, self.CARRIED])
+        authority = page["authoritativeRefs"]
+        self.assertEqual(len(authority), 1)
+        for one in owners:
+            self.assertEqual(one["held"], authority[0])
+            self.assertEqual(one["owned"], authority[0])
+            self.assertEqual(one["projection"], authority[0])
+        # And each row rendered the answer ITS OWN request returned.
+        self.assertEqual(len(page["fragmentTexts"]), 2)
+        self.assertIn(self.A_BODY, page["fragmentTexts"][0])
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+        self.assertNotIn(self.B_BODY, page["fragmentTexts"][0])
+        self.assertNotIn(self.A_BODY, page["fragmentTexts"][1])
+
+    def test_one_owners_failure_is_not_another_owners(self):
+        # §21. The first ask of the shared address is answered 404 and the
+        # second a document, in the same turn. A rejection held by path is a
+        # rejection every waiting row receives, and the row that receives it
+        # reports a failure against a request nobody made on its behalf.
+        page = self.snapshot("v15-same-path-one-fails", "both")
+        self.assertEqual(len(self.text_requests(page)), 2)
+        self.assertEqual(page["fragmentTexts"][0], self.NOT_PUBLISHED)
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+        # The failing row's body is applied too, and owned exactly as a
+        # fulfilled one is: a reported failure is a body.
+        wrote = page["applied"]
+        self.assertEqual(len(wrote), 2)
+        rows = page["projectionRowRefs"][str(page["authoritativeRefs"][0])]
+        for one in wrote:
+            self.assertIn(one["row"], rows)
+            self.assertEqual(one["owned"], page["authoritativeRefs"][0])
+
+    # ------------------------------------------------------------ §19
+
+    def test_a_settled_value_is_shared_and_applied_as_the_row_that_asked(self):
+        # THE SAFE-SHARING RULE, PROVED SEPARATELY. Row one asks and settles;
+        # row two asks afterwards, is answered from the value that settled and
+        # makes no request — and applies it AS ITSELF, off its own row, with
+        # its own ownership recorded at the application.
+        first = self.snapshot("v15-settled-then-shared", "first")
+        self.assertEqual(len(self.text_requests(first)), 1)
+        self.assertIn(self.A_BODY, first["fragmentTexts"][0])
+        self.assertEqual(first["fragmentTexts"][1], "Loading…")
+        page = self.snapshot("v15-settled-then-shared", "second")
+        # NO SECOND REQUEST: the sharing is real, and it is by value.
+        self.assertEqual(len(self.text_requests(page)), 1)
+        # Both rows show the settled answer — the one document that path
+        # answered — and the second row never sees the body its own turn of
+        # the scenario would have served, because it never asked.
+        self.assertIn(self.A_BODY, page["fragmentTexts"][0])
+        self.assertIn(self.A_BODY, page["fragmentTexts"][1])
+        self.assertNotIn(self.B_BODY, page["fragmentTexts"][1])
+        # Two transports all the same: sharing a VALUE is not sharing an
+        # owner, and the second row's ownership is recorded at its own ask.
+        owners = page["transports"]
+        self.assertEqual(len(owners), 2)
+        self.assertNotEqual(owners[0]["owner"], owners[1]["owner"])
+        # Two applications, each owned by the row that made it, and the value
+        # applied is frozen — what one row's request settled may carry
+        # nothing of that row into the next.
+        wrote = page["applied"]
+        self.assertEqual(len(wrote), 2)
+        self.assertNotEqual(wrote[0]["row"], wrote[1]["row"])
+        self.assertEqual(wrote[0]["row"], owners[0]["row"])
+        self.assertEqual(wrote[1]["row"], owners[1]["row"])
+        for one in wrote:
+            self.assertEqual(one["owned"], page["authoritativeRefs"][0])
+            self.assertTrue(one["frozen"], "a shared value is not immutable")
+        # NOTHING UNRESOLVED IS EVER SHARED BY PATH. While the first row's
+        # request was still in the air the second row could not have found it:
+        # the held case proves that directly, below.
+
+    # ---------------------------------------------------- §§9, 10, 17, 18
+
+    #: B's terminal state, pinned value by value BEFORE A is released. Every
+    #: field `GenuinelyLateStaleWorkTest.GUARDED` names is here, so the late
+    #: release is compared against expected values and not only against
+    #: whatever the earlier snapshot happened to hold.
+    B_TERMINAL = {
+        "hash": GEN2,
+        "hashWrites": [GEN2],
+        "replaced": [],
+        "replacedStates": [],
+        "historyState": None,
+        "statusWrites": ["Genesis 1, Douay-Rheims (Challoner), 2 fragments held.",
+                         "Genesis 2, Douay-Rheims (Challoner), 1 fragment held."],
+        "statusText": "Genesis 2, Douay-Rheims (Challoner), 1 fragment held.",
+        "tallyText": "1 fragment held",
+        "busy": "false",
+        "activeElement": "chapter-select",
+        "referenceText": "Genesis 2",
+        "selectValues": {"book": "Gen", "chapter": "2", "bible": "douay-rheims"},
+        "fragmentCount": 1,
+        "fragmentIds": ["fallback-owned"],
+        "fragmentTexts": [
+            "PLANTED BODY B — the answer the row in projection B asked for."],
+        "errorSections": [],
+        "sectionHeadings": ["One fragment held here"],
+        "failureText": None,
+        "notices": [],
+        "dataStates": ["held"],
+        "asideNotes": [],
+        "refusalCount": 0,
+        "refusal": None,
+        "absenceSummary": None,
+        "absenceReasons": [],
+        "absencePartials": [],
+        "paragraphNote": ("Paragraphs: 2 are projected from the witnesses "
+                          "that concur, and marked."),
+        "chapterCounts": ["31 verses", "3 paragraphs"],
+        "verseNumbers": [str(number) for number in range(1, 32)],
+        "leads": [],
+        "blocked": [],
+        "voice": "",
+        "voiceLabels": ["Everything held", "The author’s own language"],
+        "stepButtons": [False, False],
+        "classes": [
+            "author", "author-body", "author-count", "author-date",
+            "author-fragments", "author-head", "author-name", "chain",
+            "chain-column", "chapter", "chapter-body", "chapter-count",
+            "chapter-head", "chapter-name", "fragment", "fragment-apparatus",
+            "fragment-author", "fragment-body", "fragment-date",
+            "fragment-extent", "fragment-head", "fragment-language",
+            "fragment-length", "fragment-source", "fragment-text",
+            "fragment-whole", "fragment-work", "paragraph-note", "passage",
+            "passage-paragraph", "passage-paragraph projected",
+            "section-heading", "sep", "verse", "verse-num"],
+        "langAttributes": ["passage=en", "fragment-text=la"],
+        "acknowledgements": [],
+        "authorGroups": [{"author": "Author 1", "date": "301",
+                          "count": "1 fragment", "open": True,
+                          "hidden": False}],
+    }
+
+    def test_every_guarded_field_of_b_is_pinned(self):
+        # The same coverage rule the V9 terminal vector carries: a field left
+        # to before/after equality alone is a field that could move together
+        # at both ends and be called unchanged.
+        guarded = set(GenuinelyLateStaleWorkTest.GUARDED)
+        self.assertEqual(len(guarded), 36)
+        self.assertEqual(sorted(guarded - set(self.B_TERMINAL)), [])
+
+    def test_b_settles_independently_while_a_is_still_held(self):
+        # ★ THE DECISIVE V15 SEQUENCE ★  §§9-10.
+        #
+        # A asks under chapter 1 and its transport is HELD. The reader moves
+        # to chapter 2, whose row carries the same address. B asks — and
+        # settles, with A's request still in the air — and renders the body
+        # B's own request returned. Under V14 there is no second request at
+        # all: B joins A's promise, stands at `Loading…`, and is filled with
+        # A's body when A is released.
+        held = self.snapshot(self.LATE, "a-held")
+        first = self.text_requests(held)
+        self.assertEqual([one["outcome"] for one in first], ["held"])
+        self.assertEqual(first[0]["phase"], "a-held")
+        self.assertEqual(held["fragmentTexts"], ["Loading…", "Loading…"],
+                         "A's page may show nothing while A is held")
+        self.assertEqual(held["applied"], [], "nothing was written yet")
+
+        page = self.snapshot(self.LATE, "b-settled")
+        both = self.text_requests(page)
+        # TWO transports on ONE address, and A's is STILL HELD.
+        self.assertEqual([one["outcome"] for one in both],
+                         ["held", "completed"],
+                         "B did not settle while A was held")
+        self.assertEqual([one["phase"] for one in both], ["a-held", "b-settled"])
+        # B rendered the answer B asked for, and never A's.
+        self.assertEqual(len(page["fragmentTexts"]), 1)
+        self.assertIn(self.B_BODY, page["fragmentTexts"][0])
+        self.assertNotIn(self.A_BODY, page["fragmentTexts"][0])
+        # ONE application so far, and it is B's: B's row, B's projection.
+        self.assertEqual(len(page["applied"]), 1)
+        wrote = page["applied"][0]
+        self.assertIn(self.B_BODY, wrote["body"])
+        owners = page["transports"]
+        self.assertEqual(len(owners), 2)
+        self.assertNotEqual(owners[0]["owner"], owners[1]["owner"])
+        self.assertNotEqual(owners[0]["row"], owners[1]["row"])
+        self.assertNotEqual(owners[0]["held"], owners[1]["held"])
+        self.assertEqual(wrote["row"], owners[1]["row"])
+        self.assertEqual(wrote["owned"], owners[1]["held"])
+        self.assertEqual(wrote["id"], "chapter-projection-2")
+        # THE PATH-MATCH ANSWER IS THE WRONG ONE, and the journal says so in
+        # the same row: searching the rows for a matching address names
+        # chapter one's projection for a request chapter two's row made.
+        tail = self.ownership(self.LATE, "b-settled")[-1]
+        self.assertEqual(tail["path"], self.CARRIED)
+        self.assertEqual(tail["projection"], "chapter-projection-2")
+        self.assertEqual(tail["byPath"], "chapter-projection-1")
+        self.assertEqual(tail["route"], GEN2)
+        # And B's terminal state is exactly this, before anything is released.
+        self.assert_b_terminal(page)
+
+    def test_a_late_release_cannot_change_anything_of_b(self):
+        # §§17-18. A completes after B has settled and after the route it was
+        # made under has been replaced. It may change nothing a reader can
+        # see, nothing the page recorded, and nothing about ownership.
+        before = self.snapshot(self.LATE, "b-settled")
+        after = self.snapshot(self.LATE, "a-late")
+        for key in GenuinelyLateStaleWorkTest.GUARDED:
+            with self.subTest(field=key):
+                self.assertEqual(after[key], before[key], key + " moved late")
+        self.assert_b_terminal(after)
+        # The late release really happened, and it is the ONLY thing that
+        # moved in the whole journal.
+        self.assertEqual(before["released"], 0)
+        self.assertEqual(after["released"], 1)
+        self.assertEqual(after["fetched"], before["fetched"])
+        moved = [(one["seq"], one["path"], one["outcome"])
+                 for one, then in zip(after["requests"], before["requests"])
+                 if one != then]
+        self.assertEqual(moved, [(6, self.CARRIED, "released")])
+        # NO SECOND APPLICATION. A's completion wrote nothing, so it is not
+        # in the application roster at all — the containment check refuses it
+        # before ownership is even recorded.
+        self.assertEqual(after["applied"], before["applied"])
+        self.assertEqual(len(after["applied"]), 1)
+        # A's own ask and transport are unchanged: ownership is recorded, not
+        # recomputed when the answer arrives.
+        self.assertEqual(after["asks"], before["asks"])
+        self.assertEqual(after["transports"], before["transports"])
+
+    def test_the_distinguishable_bodies_are_not_doing_the_work(self):
+        # NON-VACUITY THE OTHER WAY. The same sequence with ONE document at
+        # the address moves the route, the row and the projection exactly as
+        # before, so the discrimination above is the ownership and not the
+        # two planted bodies.
+        page = self.snapshot("v15-late-same-path-control", "b-settled")
+        self.assertEqual([one["outcome"] for one in self.text_requests(page)],
+                         ["held", "completed"])
+        self.assertIn(self.B_BODY, page["fragmentTexts"][0])
+        late = self.snapshot("v15-late-same-path-control", "a-late")
+        self.assertEqual(late["fragmentTexts"], page["fragmentTexts"])
+        self.assertEqual(late["applied"], page["applied"])
+        self.assertEqual(late["released"], 1)
+
+    def assert_b_terminal(self, snap):
+        for key, value in self.B_TERMINAL.items():
+            with self.subTest(field=key):
+                self.assertEqual(snap[key], value)
+
+    # ------------------------------------------------------------ §§12-13
+
+    def test_body_application_is_a_consumer_of_the_authoritative_projection(self):
+        # §13. The roster now reaches the step that writes the page. For every
+        # body this page applied, the projection recorded AT the application
+        # is the object the normalization made, and the row it was applied for
+        # is one of that projection's own rows.
+        for name in ("v14-authority-graph", "v15-same-path-together",
+                     "v15-settled-then-shared"):
+            with self.subTest(scenario=name):
+                page, authority = self.one_authority(
+                    name, "opened" if name.startswith("v14") else
+                    ("both" if name.endswith("together") else "second"))
+                self.assertEqual(page["consumerRefs"]["body"], [authority])
+                self.assertEqual(page["consumerRefs"]["transport"], [authority])
+                rows = page["projectionRowRefs"][str(authority)]
+                self.assertTrue(page["applied"])
+                for one in page["applied"]:
+                    self.assertEqual(one["owned"], authority)
+                    self.assertEqual(one["projection"], authority)
+                    self.assertIn(one["row"], rows)
+
+    def test_the_transport_owner_carries_the_row_and_its_projection(self):
+        # §15. The request is created against an object identity, and that
+        # object holds the row that initiated it and the projection that made
+        # the row. Nothing downstream searches rows for a matching path.
+        page, authority = self.one_authority("v15-same-path-together", "both")
+        rows = page["projectionRowRefs"][str(authority)]
+        for one in page["transports"]:
+            self.assertIn(one["row"], rows)
+            self.assertEqual(one["held"], authority)
+            self.assertEqual(one["owned"], authority)
+            self.assertNotEqual(one["owner"], one["row"],
+                                "the owner is an object of its own")
+        # One owner per row, for the life of the row: the two rows here ask
+        # once each, and the two owner objects are distinct.
+        self.assertEqual(len({one["owner"] for one in page["transports"]}), 2)
+
+    def test_a_row_no_projection_made_owns_no_transport_and_writes_nothing(self):
+        # The fail-closed rule `textAsked` obeys, one and two steps later. A
+        # row this file did not project creates no transport at all, and a
+        # body may not be applied for it.
+        told = json.loads(subprocess.run(
+            [NODE, "-e", """
+            const M = require(process.argv[1]);
+            const raw = JSON.parse(process.argv[2]);
+            const made = M.chapterProjection(raw);
+            const row = made.rows[0];
+            const copy = Object.assign({}, row);
+            const forged = { text_path: 'structure/catena/text/forged.json' };
+            const owner = M.rowTransport(row);
+            console.log(JSON.stringify({
+              owned: owner !== null,
+              same: M.rowTransport(row) === owner,
+              carries: owner && owner.row === row
+                       && owner.projection === made
+                       && owner.path === row.text_path,
+              frozen: owner !== null && Object.isFrozen(owner),
+              copy: M.rowTransport(copy),
+              forged: M.rowTransport(forged),
+              scalar: M.rowTransport('x'),
+              nothing: M.rowTransport(null),
+              wroteOwn: M.bodyAsked(row, { text: 'x' }),
+              wroteCopy: M.bodyAsked(copy, { text: 'x' }),
+              wroteForged: M.bodyAsked(forged, { text: 'x' }),
+              wroteScalar: M.bodyAsked(7, { text: 'x' })
+            }));
+            """, str(CATENA / "catena-model.js"),
+             json.dumps(V14_SAME_PATH_SPINE)],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertTrue(told["owned"])
+        self.assertTrue(told["same"], "one owner per row, held against it")
+        self.assertTrue(told["carries"])
+        self.assertTrue(told["frozen"])
+        self.assertIsNone(told["copy"])
+        self.assertIsNone(told["forged"])
+        self.assertIsNone(told["scalar"])
+        self.assertIsNone(told["nothing"])
+        self.assertTrue(told["wroteOwn"])
+        self.assertFalse(told["wroteCopy"])
+        self.assertFalse(told["wroteForged"])
+        self.assertFalse(told["wroteScalar"])
+
+    # ------------------------------------------------------------ §14
+
+    def test_an_unreadable_spine_is_one_substitute_however_often_it_is_asked(self):
+        # §14, the wrapper ambiguity. The page substitutes a record of its own
+        # for a spine that is a document and not a spine. Under V14 that
+        # record was a fresh literal on every ask, so walking away from an
+        # unreadable chapter and back made a NEW authority over it and the
+        # projection count climbed with the reader's steps.
+        away = self.snapshot("v15-unreadable-rerendered", "away")
+        back = self.snapshot("v15-unreadable-rerendered", "back")
+        self.assertEqual(away["projectionPasses"], back["projectionPasses"])
+        self.assertEqual(away["authoritativeRefs"], back["authoritativeRefs"])
+        self.assertEqual(len(back["authoritativeRefs"]), 2,
+                         "one unreadable chapter and one readable one")
+        # The unreadable chapter still says so, and says it the same way both
+        # times it is rendered — the substitute being reused is not the
+        # chapter quietly rendering as something else.
+        start = self.snapshot("v15-unreadable-rerendered", "start")
+        self.assertEqual(back["fragmentCount"], 0)
+        for key in ("fragmentCount", "fragmentIds", "fragmentTexts",
+                    "sectionHeadings", "tallyText", "notices", "asideNotes",
+                    "errorSections", "dataStates", "refusalCount", "leads",
+                    "blocked", "statusText"):
+            with self.subTest(field=key):
+                self.assertEqual(back[key], start[key])
 
 
 class V14NestedSourceAuthorityTest(V14ProjectionAuthorityBase):
@@ -12478,13 +13259,22 @@ class V14NestedSourceAuthorityTest(V14ProjectionAuthorityBase):
         # it: no rights on the provenance line, no voice offered, and the
         # author the fragment itself could not name is not borrowed.
         page = self.page("v14-nested-fields")
+        # V15 adds the two edition members the promised matrix named and the
+        # V14 scenario omitted, so the whole shared-with-edition axis this
+        # case claims is actually asked.
         self.assertEqual(page["sourceCalls"],
                          {"source-1": 0, "source-1-rights": 0,
                           "source-1-voice": 0, "source-1-author": 0,
-                          "source-1-language": 0})
+                          "source-1-language": 0, "source-1-edition": 0,
+                          "source-1-edition_published": 0})
+        self.assertEqual(sorted(one[len("source-1-"):]
+                                for one in page["sourceCalls"]
+                                if one != "source-1"),
+                         sorted(V14_NESTED_FIELD_KEYS))
         self.assertEqual(page["fragmentCount"], 1)
         self.assertNotIn("public-domain", page["sourceLines"][0])
         self.assertNotIn(V14_NESTED_RIGHTS, json.dumps(page))
+        self.assertNotIn(V15_FORGED_EDITION, json.dumps(page))
         self.assertNotIn("Forged Author", json.dumps(page))
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["errorSections"], [])
@@ -12497,7 +13287,102 @@ class V14NestedSourceAuthorityTest(V14ProjectionAuthorityBase):
         self.assertEqual(page["failureText"], None)
         self.assertEqual(page["busy"], "false")
 
+    # ============================================================== V15 §22
+    #: Every sink one edition speaks through. A hostile accessor on the
+    #: edition axis must move all of these together or none of them.
+    EDITION_SINKS = ("fragmentCount", "sourceLines", "tallyText",
+                     "voiceLabels", "voice", "sectionHeadings", "dataStates",
+                     "notices", "errorSections", "failureText", "statusText",
+                     "busy", "asideNotes", "refusalCount")
+
+    def test_a_hostile_edition_accessor_is_declined_coherently(self):
+        # V15 §22, the V14 review. The promised matrix named an EDITION
+        # accessor and supplied four other fields, so edition closure was
+        # claimed and never asked. Here the entry is a record and its
+        # `edition` and `edition_published` are getters, and nothing else
+        # about it is unusual.
+        #
+        # ONE COHERENT OUTCOME. Neither getter is invoked; the edition and its
+        # printing are absent from the provenance line rather than partly
+        # read; the rights the record states as DATA are unaffected and still
+        # printed; the voice the record states as data is still counted into
+        # the control; and the chapter is READABLE — an entry that declines
+        # one member is not a chapter that cannot be read. Every sink says the
+        # same thing about the same edition.
+        for name in ("v15-nested-edition", "v15-nested-edition-steady"):
+            with self.subTest(scenario=name):
+                page = self.page(name)
+                self.assertEqual(page["sourceCalls"],
+                                 {"source-1": 0, "source-1-edition": 0,
+                                  "source-1-edition_published": 0})
+                said = page["sourceLines"][0]
+                # THE EDITION AND ITS PRINTING: declined, not read.
+                self.assertNotIn(V15_FORGED_EDITION, said)
+                self.assertNotIn("Edition 1", said)
+                self.assertNotIn("1499", said)
+                self.assertNotIn("1900", said)
+                self.assertNotIn(V15_FORGED_EDITION, json.dumps(page))
+                # THE RIGHTS: stated as data, and unaffected.
+                self.assertIn("public-domain", said)
+                # THE VOICE: stated as data, and still counted.
+                self.assertEqual(page["voiceLabels"],
+                                 ["Everything held", "The author’s own language"])
+                # THE READABLE STATE: one held fragment, no manufactured
+                # unavailability anywhere.
+                self.assertEqual(page["fragmentCount"], 1)
+                self.assertEqual(page["tallyText"], "1 fragment held")
+                self.assertEqual(page["sectionHeadings"],
+                                 ["One fragment held here"])
+                self.assertEqual(page["notices"], [])
+                self.assertEqual(page["errorSections"], [])
+                self.assertEqual(page["failureText"], None)
+                self.assertEqual(page["busy"], "false")
+                self.assertNotIn(self.UNAVAILABLE, json.dumps(page))
+        # THE DRIFT CHANGES NOTHING: a getter that would answer differently
+        # the second time and one that answers the forged printing every time
+        # produce the same page, because neither is asked.
+        self.assertEqual(
+            self.rendered_state(self.snapshot("v15-nested-edition", "opened")),
+            self.rendered_state(self.snapshot("v15-nested-edition-steady",
+                                              "opened")))
+
+    def test_a_detonating_edition_accessor_takes_nothing_with_it(self):
+        # The edition axis, fail-closed. `edition` throws; `edition_published`
+        # is ordinary data and still reaches the line, which is what makes
+        # this a decline of one member rather than of the record.
+        page = self.page("v15-nested-edition-throw")
+        self.assertEqual(page["sourceCalls"],
+                         {"source-1": 0, "source-1-edition": 0})
+        said = page["sourceLines"][0]
+        self.assertNotIn("Edition 1", said)
+        self.assertIn("1900", said)
+        self.assertIn("public-domain", said)
+        self.assertEqual(page["fragmentCount"], 1)
+        self.assertEqual(page["failureText"], None)
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+
     def test_the_forged_edition_is_reachable_when_it_is_a_document(self):
+        # NON-VACUITY FOR THE EDITION AXIS. The same forged printing, supplied
+        # as an ordinary document, reaches the reader's own provenance line —
+        # so the accessor cases above are a decline and not an unreached sink.
+        page = self.page("v15-nested-edition-data")
+        self.assertEqual(page["sourceCalls"], {})
+        self.assertIn(V15_FORGED_EDITION, page["sourceLines"][0])
+        self.assertIn("1499", page["sourceLines"][0])
+        self.assertEqual(page["fragmentCount"], 1)
+        # And the two grades of hostility are DIFFERENT and each coherent: a
+        # hostile entry KEY fails the chapter closed, a hostile edition MEMBER
+        # is declined inside a chapter that still reads.
+        entry = self.page("v14-nested-accessor")
+        edition = self.page("v15-nested-edition")
+        self.assertNotEqual([entry[key] for key in self.EDITION_SINKS],
+                            [edition[key] for key in self.EDITION_SINKS])
+        self.assertEqual(edition["voiceLabels"],
+                         ["Everything held", "The author’s own language"])
+        self.assertEqual(entry["voiceLabels"], ["Everything held"])
+
+    def test_the_forged_source_is_reachable_when_it_is_a_document(self):
         # NON-VACUITY, twice. Everything the accessor would have said, said
         # by a document, reaches the reader's own provenance line; and the
         # valid edition as a document renders the ordinary page the accessor
@@ -12601,6 +13486,164 @@ class V14MemberAuthorityTest(V14ProjectionAuthorityBase):
             self.rendered_state(self.snapshot("v14-members-tally", "opened")),
             self.rendered_state(self.snapshot("v14-members-tally-control",
                                               "opened")))
+
+
+class V15ObservationAccountingTest(V14ProjectionAuthorityBase):
+    """V15 §23 — what is observed, and in which way, counted apart.
+
+    The V14 review accepted that hostile nested value accessors are never
+    invoked and refused the sentence built on top of it: a Proxy over the same
+    record sees its descriptor asked three times per source key and twice per
+    shared field, and calling that "one read" reports two different things
+    with one number. A drifting descriptor trap is a real hostile shape, so
+    the count matters and has to be stated as what it is.
+
+    Four kinds are counted apart, and each is named for what it would do to a
+    hostile record:
+
+    * `value-get`   — the read that RUNS an own accessor. This is the one the
+                      closure claim is about, and it is zero.
+    * `descriptor`  — `Object.getOwnPropertyDescriptor`, which runs nothing.
+                      `Object.hasOwn` is `HasOwnProperty` and is therefore
+                      `[[GetOwnProperty]]` as well, so an own-property test
+                      lands in THIS bucket and not in `has`; that is exactly
+                      why the per-key figure is three and not two.
+    * `has`         — the `in` operator's trap. Zero: the model never asks it.
+    * `own-keys`    — the enumeration `for…in` opens with. One.
+
+    The claim this file is entitled to make is therefore: no consumer runs a
+    hostile value accessor, and no consumer reaches past the projection to
+    observe the record again — not that the record is observed once.
+    """
+
+    KEY = "descriptor:key/1"
+    #: The shared-with-edition members `_voice_source` actually writes.
+    PRESENT = ("work_id", "author", "work", "date", "language", "voice",
+               "edition", "edition_published", "translators", "container",
+               "rights")
+    #: The members `SHARED_WITH_EDITION` names and the fixture does not write.
+    ABSENT = ("attribution", "rights_basis", "acknowledgement")
+
+    def observed(self, label="opened"):
+        return self.snapshot("v15-descriptor-accounting", label)["observations"]
+
+    def test_no_value_read_of_a_source_record_happens_at_all(self):
+        # THE CLOSURE CLAIM, and the whole of it. Not one read of a source
+        # key or a shared field goes through the path that would run an own
+        # accessor — which is why a hostile getter at either level is never
+        # invoked, and why this page cannot be made to say two things about
+        # one edition.
+        seen = self.observed()
+        self.assertEqual([at for at in seen if at.startswith("value-get:")], [])
+        self.assertEqual([at for at in seen if at.startswith("has:")], [])
+
+    def test_the_descriptor_count_is_three_per_key_and_two_per_stated_field(self):
+        # THE HONEST NUMBER, stated as the review required. Three per source
+        # key: `for…in` tests the key's enumerability, `Object.hasOwn` tests
+        # ownership, and `ownData` takes the value — all three of which are
+        # `[[GetOwnProperty]]`. Two per field that the record states, one per
+        # field it does not, because the second is the read the first skips.
+        seen = self.observed()
+        self.assertEqual(seen[self.KEY], 3)
+        self.assertEqual(seen["own-keys:key"], 1)
+        for name in self.PRESENT:
+            with self.subTest(field=name):
+                self.assertEqual(seen["descriptor:field/" + name], 2)
+        for name in self.ABSENT:
+            with self.subTest(field=name):
+                self.assertEqual(seen["descriptor:field/" + name], 1)
+        # Nothing else is observed: the buckets above are the whole record.
+        self.assertEqual(
+            sorted(seen),
+            sorted([self.KEY, "own-keys:key", "prototype:key"]
+                   + ["descriptor:field/" + name
+                      for name in self.PRESENT + self.ABSENT]))
+
+    def test_the_observation_is_per_chapter_and_not_per_consumer(self):
+        # WHAT THE COUNT IS ACTUALLY ABOUT. A second render of the same
+        # chapter asks the record NOTHING further — every consumer is handed
+        # the projection already made — so the figures above are the cost of
+        # normalizing one raw chapter and not the cost of one consumer.
+        self.assertEqual(self.observed("again"), self.observed("opened"))
+        self.assertEqual(
+            self.snapshot("v15-descriptor-accounting", "again")["projectionPasses"],
+            1)
+
+
+class V15DownstreamMutationTest(V14ProjectionAuthorityBase):
+    """V15 §24 — the authority is re-consumed AFTER it is attacked.
+
+    V14 proved the graph frozen and all thirteen assignments throwing, and
+    stopped. The reader's page had already been drawn; nothing downstream was
+    asked a second time, so "and the render is unchanged" was a claim about a
+    render that never happened.
+
+    Here the mutation attempts run at `probed`, the reader then changes a
+    control — which rebuilds the chain, the tally, the voice control, the
+    provenance lines, the refusal and the blocked and lead sections off the
+    same projection — and the fragments are opened again so their bodies are
+    applied again. What the reader has at `reopened` is compared field by
+    field with what they had before anything was attempted.
+    """
+
+    #: Everything the second render reproduces. `activeElement` is left out
+    #: on purpose: it moves because the READER moved it, which is the step
+    #: that causes the rerender, not a fact about the authority.
+    SINKS = ("fragmentCount", "fragmentIds", "fragmentTexts", "sourceLines",
+             "sectionHeadings", "dataStates", "authorGroups", "tallyText",
+             "referenceText", "chapterCounts", "verseNumbers", "paragraphNote",
+             "leads", "blocked", "refusalCount", "refusal", "voice",
+             "voiceLabels", "notices", "asideNotes", "errorSections",
+             "failureText", "acknowledgements", "langAttributes", "classes",
+             "statusText", "busy", "absenceSummary", "absenceReasons",
+             "absencePartials", "stepButtons", "selectValues")
+
+    def test_the_attempted_mutations_all_failed_and_the_values_held(self):
+        # The V14 proof, re-taken here so the rerender below is standing on
+        # something: every assignment throws and every value is what it was.
+        probed = self.snapshot("v15-authority-rerender", "probed")
+        said = probed["immutability"]
+        for what in V14ProjectionImmutabilityTest.FROZEN:
+            with self.subTest(structure=what):
+                self.assertTrue(said[what], what + " is not frozen")
+        for what in V14ProjectionImmutabilityTest.HELD:
+            with self.subTest(assignment=what):
+                self.assertTrue(said[what + "Threw"], what + " did not throw")
+                self.assertTrue(said[what + "Held"], what + " did not hold")
+
+    def test_a_downstream_rerender_after_the_mutations_is_unchanged(self):
+        # THE PROOF V14 DID NOT HAVE. The same chapter, drawn again from the
+        # same projection after thirteen attempts to change it, and read again
+        # by every sink: rows, order, bodies, provenance and rights, tally,
+        # voices, refusal, blocked, leads, announcement, paragraph record and
+        # the rendered vocabulary. Not one of them moved.
+        before = self.snapshot("v15-authority-rerender", "probed")
+        after = self.snapshot("v15-authority-rerender", "reopened")
+        for key in self.SINKS:
+            with self.subTest(field=key):
+                self.assertEqual(after[key], before[key], key + " moved")
+        # And the REQUEST behaviour is unchanged too: the rebuilt rows carry
+        # the same addresses, so the reopened bodies come from what settled
+        # and no request is made at all.
+        self.assertEqual(after["fetched"], before["fetched"])
+        self.assertEqual(after["requests"], before["requests"])
+        # One raw chapter, one projection, before and after.
+        self.assertEqual(after["projectionPasses"], 1)
+        self.assertEqual(after["authoritativeRefs"],
+                         before["authoritativeRefs"])
+        # The rerender really happened — the intermediate state is the chain
+        # rebuilt with its fragments closed, which is not the state compared.
+        between = self.snapshot("v15-authority-rerender", "rerendered")
+        self.assertEqual(between["fragmentTexts"], ["Loading…", "Loading…"])
+        self.assertNotEqual(between["fragmentTexts"], before["fragmentTexts"])
+        # …and the body applied on reopening is owned by the row that asked,
+        # off the one authoritative projection.
+        authority = after["authoritativeRefs"][0]
+        rows = after["projectionRowRefs"][str(authority)]
+        self.assertTrue(after["applied"])
+        for one in after["applied"]:
+            self.assertEqual(one["owned"], authority)
+            self.assertIn(one["row"], rows)
 
 
 class V14ProjectionImmutabilityTest(V14ProjectionAuthorityBase):
