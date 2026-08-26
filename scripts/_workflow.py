@@ -183,6 +183,66 @@ class WorkflowEngine:
                     f"may carry needs a route, and every route needs a value"
                 )
 
+    # --- Document discovery ---
+
+    def list_documents(self, workflow: dict[str, Any]) -> list[str]:
+        """Every document id this workflow can be seeded for, sorted.
+
+        A document id is a path with no marker in the filesystem to say so,
+        and until now the only way to obtain one was to go reading `src/`.
+        The workflow declares where its documents live, because the workflow
+        is what knows.
+        """
+        discovery = workflow.get("document_discovery")
+        if not discovery:
+            raise WorkflowError(
+                f"workflow {workflow['id']} declares no 'document_discovery', "
+                f"so it cannot list the documents it can run"
+            )
+        drops = discovery["id_drops_leading"]
+        marker = discovery.get("marker")
+        found: set[str] = set()
+        for path in self.repo_root.glob(discovery["search"]):
+            if not path.is_dir():
+                continue
+            if marker and not (path / marker).is_file():
+                continue
+            parts = path.relative_to(self.repo_root).parts
+            if len(parts) > drops:
+                found.add("/".join(parts[drops:]))
+        return sorted(found)
+
+    def resolve_document(self, workflow: dict[str, Any], token: str) -> str:
+        """Accept a full document id, or an unambiguous shorthand for one.
+
+        Strictly additive: anything that names a path is passed through
+        untouched, so a token that worked before still works and a workflow
+        that declares no discovery is unaffected. Only a bare token — the sort
+        a person types from memory — is resolved, and only when exactly one
+        document matches it.
+        """
+        if "/" in token or not workflow.get("document_discovery"):
+            return token
+        documents = self.list_documents(workflow)
+        argument = workflow.get("document_argument", "document")
+        for candidates in (
+            [d for d in documents if d.rsplit("/", 1)[-1] == token],
+            [d for d in documents if d.endswith("/" + token)],
+            [d for d in documents if token in d],
+        ):
+            if len(candidates) == 1:
+                return candidates[0]
+            if len(candidates) > 1:
+                raise WorkflowError(
+                    f"{argument} {token!r} matches {len(candidates)} "
+                    f"documents:\n  " + "\n  ".join(candidates) +
+                    f"\nName one of them, or enough of its tail to be unique."
+                )
+        raise WorkflowError(
+            f"no {argument} matches {token!r}\n"
+            f"run: tools/tpt {workflow['id']} list"
+        )
+
     def schema_name_for(self, stage: dict[str, Any]) -> str:
         """The result schema a stage's result is validated against."""
         if stage["type"] == GATE:
@@ -2512,6 +2572,19 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
         raise WorkflowError(
             f"{path}: document_argument {doc_arg!r} is not in argument_schema"
         )
+
+    discovery = data.get("document_discovery")
+    if discovery is not None:
+        if not isinstance(discovery, dict) \
+                or set(discovery) - {"search", "marker", "id_drops_leading"} \
+                or not isinstance(discovery.get("search"), str) \
+                or not discovery.get("search") \
+                or type(discovery.get("id_drops_leading")) is not int \
+                or discovery["id_drops_leading"] < 0:
+            raise WorkflowError(
+                f"{path}: 'document_discovery' declares a 'search' glob, an "
+                f"integer 'id_drops_leading', and optionally a 'marker' file"
+            )
 
     stage_ids = set()
     for i, stage in enumerate(data["stages"]):
