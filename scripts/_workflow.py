@@ -2804,10 +2804,14 @@ def _validate_execution(
 
 
 # A misspelling of an existing name and a new name from the same family score
-# almost alike, because these ids share most of their text. What separates them
-# is how far the best match leads the next one: a typo wins by a distance, a
-# genuinely new name is barely ahead of its neighbours.
+# almost alike, because these ids share most of their text. Two things tell
+# them apart, and a token needs only one: a near-certain match stands on its
+# own, and short of that the best match must lead the next by a distance. A
+# one-character slip scores about 0.98 against the name it came from, while a
+# genuinely new name in the same family tops out around 0.89 and is barely
+# ahead of its neighbours.
 _NEAREST_FLOOR = 0.6
+_NEAREST_CERTAIN = 0.9
 _NEAREST_MARGIN = 0.1
 
 
@@ -2824,6 +2828,8 @@ def _nearest_document(token: str, documents: list[str]) -> str | None:
     )
     if not scored or scored[-1][0] < _NEAREST_FLOOR:
         return None
+    if scored[-1][0] >= _NEAREST_CERTAIN:
+        return scored[-1][1]
     if len(scored) > 1 and scored[-1][0] - scored[-2][0] < _NEAREST_MARGIN:
         return None
     return scored[-1][1]

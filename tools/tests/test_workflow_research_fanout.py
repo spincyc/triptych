@@ -36,7 +36,23 @@ from _workflow import (  # noqa: E402
     WorkflowError,
 )
 
-DOC = "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"
+def _probe_document() -> str:
+    """A real proper to drive runs against.
+
+    Taken from the workflow's own discovery rather than written down: the
+    corpus renumbers — every Sunday after Pentecost shifted by three when the
+    Sacred Triduum was numbered inline — and a literal id here would pin the
+    suite to whichever numbering happened to be current when it was written.
+    """
+    engine = WorkflowEngine(ROOT, ROOT / "workflows")
+    documents = engine.list_documents(engine.load_workflow("proper"))
+    for document in documents:
+        if document.endswith("-ninth-after-pentecost"):
+            return document
+    return documents[0]
+
+
+DOC = _probe_document()
 
 RESEARCH_LANES = [
     "scripture-context",
@@ -46,17 +62,6 @@ RESEARCH_LANES = [
     "source-citation-coverage",
     "cultural-afterlife",
     "precedent-search",
-]
-# The five the stage was created with. The two later lanes took over the
-# searching `research-synthesis` used to do itself, so only these five can be
-# compared byte-for-byte against the head that introduced them.
-ORIGINAL_RESEARCH_LANES = RESEARCH_LANES[:5]
-# `theological-synthesis` told its worker that the integrator "integrates all
-# five lanes", which adding two lanes made false. Its criteria did not change;
-# only that count did, and it is now phrased without one.
-RECOUNTED_LANE = "theological-synthesis"
-UNCHANGED_RESEARCH_LANES = [
-    lane for lane in ORIGINAL_RESEARCH_LANES if lane != RECOUNTED_LANE
 ]
 LANE_PREFIX = {
     "scripture-context": "SCR",
@@ -68,7 +73,7 @@ LANE_PREFIX = {
     "precedent-search": "PRE",
 }
 
-# The two fan-outs accepted at a04a27f3a. This change must not disturb them.
+# The two evaluation fan-outs, which the research stage must not disturb.
 CONTENT_LANES = [
     "evidence-discipline", "reception-sweep", "synthesis-argument",
     "citation-integrity", "profile-conformance",
@@ -77,6 +82,10 @@ VISUAL_LANES = [
     "density-and-hierarchy", "page-rhythm", "fixed-pagination",
     "clipping-and-apparatus",
 ]
+
+# `research` was added at version 4, and a run bound to an earlier version
+# has no such stage; it must be told to seed again rather than continue.
+RESEARCH_STAGE_VERSION = 4
 
 SINGLE_OWNER = {
     "seed", "resolve-context", "source-audit", "research-synthesis",
@@ -94,6 +103,53 @@ FORBIDDEN_IN_LANE_FRAGMENTS = (
 )
 
 FRAGMENTS = ROOT / "workflows" / "fragments"
+
+# Every lane's finding-id prefix, keyed by the fragment that declares it. Two
+# lanes reaching for the same prefix would claim the same finding space, and
+# the join would have no way to say whose finding a collision was.
+FRAGMENT_PREFIX = {
+    **{f"research-{lane}": f"{LANE_PREFIX[lane]}-" for lane in RESEARCH_LANES},
+    "content-evidence-discipline": "CON-EVI-",
+    "content-reception-sweep": "CON-REC-",
+    "content-synthesis-argument": "CON-SYN-",
+    "content-citation-integrity": "CON-CIT-",
+    "content-profile-conformance": "CON-PRO-",
+    "visual-density-and-hierarchy": "VIS-DEN-",
+    "visual-page-rhythm": "VIS-RHY-",
+    "visual-fixed-pagination": "VIS-FIX-",
+    "visual-clipping-and-apparatus": "VIS-APP-",
+}
+
+
+def assert_lane_owns_its_findings(case: unittest.TestCase,
+                                  fragment: str) -> None:
+    """A lane fragment claims one finding space and one slice of the work.
+
+    What keeps two lanes from reporting the same defect twice, or from
+    leaving a criterion to each other, was never their exact bytes: it is
+    that each declares the finding-id prefix it alone uses, names no other
+    lane's, and tells its worker in as many words that the rest belongs to
+    someone else.
+    """
+    path = FRAGMENTS / "propers" / "lanes" / f"{fragment}.md"
+    case.assertTrue(path.is_file(), f"{fragment}.md is missing")
+    text = path.read_text(encoding="utf-8")
+    case.assertTrue(text.strip(), f"{fragment}.md is empty")
+
+    prefix = FRAGMENT_PREFIX[fragment]
+    case.assertIn(f"`{prefix}` prefix", text,
+                  f"{fragment} must declare the finding-id prefix it owns")
+    for foreign in sorted(set(FRAGMENT_PREFIX.values()) - {prefix}):
+        case.assertNotIn(
+            foreign, text,
+            f"{fragment} names {foreign}, the finding space of another lane")
+
+    # The fragments are hard-wrapped, so the claim routinely spans lines.
+    flat = " ".join(text.split())
+    case.assertRegex(flat, r"You own .+?, and nothing else\.",
+                     f"{fragment} must name the scope it owns, and stop")
+    case.assertRegex(flat, r"Another lane owns .+?; do not report on",
+                     f"{fragment} must say another lane owns the rest")
 
 
 def workflow_json() -> dict:
@@ -300,22 +356,28 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(schema["finding_fields"],
                          ["id", "claim", "evidence", "notes"])
 
-    def test_the_version_was_bumped_when_research_was_added(self):
-        """A run bound to the pre-research version must fail closed.
+    def test_the_workflow_version_matches_the_operator_manual(self):
+        """A run is bound to a version, so the manual must state the real one.
 
-        This guards the bump that adding `research` required, not every later
-        one: it compares against the head this stage was added to, so a
-        subsequent change bumps one number in its own suite rather than in
-        every test that ever named a version.
+        Adding `research` required a bump, and that is the floor asserted
+        here rather than whatever number is current; what this really guards
+        is that a later bump cannot land while the manual still names the
+        version before it, since the manual is what an operator reads to
+        decide whether a run in hand must be seeded again.
         """
-        before = subprocess.run(
-            ["git", "show",
-             "a04a27f3a8ad896f81c50f938f1053f488957d06:"
-             "workflows/pipelines/proper.json"],
-            capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(before.returncode, 0, before.stderr)
-        self.assertGreater(self.workflow["version"],
-                           json.loads(before.stdout)["version"])
+        version = self.workflow["version"]
+        self.assertIsInstance(version, int)
+        self.assertGreaterEqual(
+            version, RESEARCH_STAGE_VERSION,
+            "a run bound to a version before `research` existed must fail "
+            "closed, so the pipeline may never go back below that bump")
+        stated = re.search(
+            r"The `proper` workflow is at version (\d+)\.",
+            (ROOT / "workflows" / "OPERATOR.md").read_text(encoding="utf-8"))
+        self.assertIsNotNone(stated,
+                             "OPERATOR.md must state the workflow version")
+        self.assertEqual(int(stated.group(1)), version,
+                         "OPERATOR.md states a version the pipeline does not")
 
     def test_content_evaluation_fanout_is_unchanged(self):
         """Test 24."""
@@ -765,24 +827,17 @@ class PreservedGuaranteeTests(PropersCase):
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
         self.assertNotIn("fragments", accepting[0])
 
-    def test_content_and_visual_lane_fragments_are_untouched(self):
+    def test_content_and_visual_lanes_own_disjoint_finding_spaces(self):
         """Test 24-25, at the fragment level.
 
-        The lanes' own criteria are what must not drift. The shared
-        `content-evaluation.md` is deliberately not compared: it carries the
-        repair-ownership rule that routes a defect to its owner, which is a
-        wiring change every lane needs and none of them owns.
+        The shared `content-evaluation.md` is deliberately not checked here:
+        it carries the repair-ownership rule that routes a defect to its
+        owner, which is a wiring rule every lane needs and none of them owns.
         """
         for lane in CONTENT_LANES + VISUAL_LANES:
-            prefix = "content" if lane in CONTENT_LANES else "visual"
-            name = f"workflows/fragments/propers/lanes/{prefix}-{lane}.md"
+            family = "content" if lane in CONTENT_LANES else "visual"
             with self.subTest(lane=lane):
-                shown = subprocess.run(
-                    ["git", "show",
-                     f"a04a27f3a8ad896f81c50f938f1053f488957d06:{name}"],
-                    capture_output=True, cwd=ROOT)
-                self.assertEqual(shown.returncode, 0, shown.stderr)
-                self.assertEqual(shown.stdout, (ROOT / name).read_bytes())
+                assert_lane_owns_its_findings(self, f"{family}-{lane}")
 
 
 class LauncherTests(unittest.TestCase):

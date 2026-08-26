@@ -37,20 +37,27 @@ from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
     DOC,
     FRAGMENTS,
-    RECOUNTED_LANE,
     RESEARCH_LANES,
-    UNCHANGED_RESEARCH_LANES,
     VISUAL_LANES,
     PropersCase,
+    assert_lane_owns_its_findings,
     workflow_json,
 )
 
 BRIEF = "research/scope.md"
 OWNER = "research-synthesis"
 
-# The head this correction was made against, whose `author-proper.md` still
-# carried the second write. The rule below must reject that text.
-DEFECTIVE_HEAD = "e9671e4a308168273a5f9050f129ebc93712a295"
+# The step `author-proper.md` carried before this correction: the second
+# write that left the brief with no single owner. It is quoted here rather
+# than fetched from history so the rule can be held to it in any checkout.
+DUAL_WRITER_STEP = (
+    "8. Extend `research/scope.md` with the audit records authoring\n"
+    "   adds, preserving the research brief already recorded there.\n"
+)
+
+# Giving the brief one writer changed the fragments a run is bound to, so it
+# needed a version bump; the workflow was at 4 before it and 5 after.
+BRIEF_OWNERSHIP_VERSION = 5
 
 MUTATION = re.compile(
     r"\b(creat\w*|updat\w*|extend\w*|append\w*|rewrit\w*|regenerat\w*"
@@ -135,13 +142,8 @@ class BriefOwnershipTests(unittest.TestCase):
     """Enforcement 1-4: exactly one stage is told to write the brief."""
 
     def test_the_rule_catches_the_defect_it_was_written_for(self):
-        """The check has teeth: it rejects the text this change removes."""
-        shown = subprocess.run(
-            ["git", "show",
-             f"{DEFECTIVE_HEAD}:workflows/fragments/propers/author-proper.md"],
-            capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(shown.returncode, 0, shown.stderr)
-        offences = offending_sentences(shown.stdout)
+        """The check has teeth: it rejects the text this change removed."""
+        offences = offending_sentences(DUAL_WRITER_STEP)
         self.assertTrue(
             offences,
             "the rule must fail the dual-writer text it was written against")
@@ -175,8 +177,7 @@ class BriefOwnershipTests(unittest.TestCase):
             "Supplement `research/scope.md` with the audit records authoring "
             "adds.",
             "Run `cat >> research/scope.md` to place the audit records.",
-            "8. Extend `research/scope.md` with the audit records authoring\n"
-            "   adds, preserving the research brief already recorded there.",
+            DUAL_WRITER_STEP,
         ]
         for text in evasions:
             with self.subTest(evasion=text[:60]):
@@ -438,52 +439,47 @@ class PreservedArchitectureTests(unittest.TestCase):
         self.assertEqual(accepting[0]["type"], "gate")
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
 
-    def test_the_lane_fragments_of_both_evaluations_are_byte_identical(self):
+    def test_both_evaluation_fanouts_keep_their_lanes_disjoint(self):
         for lane in CONTENT_LANES + VISUAL_LANES:
-            prefix = "content" if lane in CONTENT_LANES else "visual"
-            name = f"workflows/fragments/propers/lanes/{prefix}-{lane}.md"
+            family = "content" if lane in CONTENT_LANES else "visual"
             with self.subTest(lane=lane):
-                shown = subprocess.run(
-                    ["git", "show", f"{DEFECTIVE_HEAD}:{name}"],
-                    capture_output=True, cwd=ROOT)
-                self.assertEqual(shown.returncode, 0, shown.stderr)
-                self.assertEqual(shown.stdout, (ROOT / name).read_bytes())
+                assert_lane_owns_its_findings(self, f"{family}-{lane}")
 
-    def test_the_recounted_lane_changed_only_its_lane_count(self):
-        """The one original lane fragment that had to move, and how far."""
-        name = (f"workflows/fragments/propers/lanes/"
-                f"research-{RECOUNTED_LANE}.md")
-        shown = subprocess.run(
-            ["git", "show", f"{DEFECTIVE_HEAD}:{name}"],
-            capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(shown.returncode, 0, shown.stderr)
-        was, now = shown.stdout, (ROOT / name).read_text(encoding="utf-8")
-        self.assertNotEqual(was, now)
-        self.assertEqual(was.replace("integrates all five lanes",
-                                     "integrates every lane"), now,
-                         "the only change to this lane is the stale count")
+    def test_the_integrating_lane_states_no_lane_count(self):
+        """A lane fragment that counts the lanes goes stale when one is added.
 
-    def test_the_unchanged_research_lane_fragments_are_byte_identical(self):
-        for lane in UNCHANGED_RESEARCH_LANES:
-            name = f"workflows/fragments/propers/lanes/research-{lane}.md"
+        `theological-synthesis` told its worker the integrator "integrates
+        all five lanes", and two later lanes made that false without anyone
+        touching the fragment. It states the relationship instead.
+        """
+        text = (FRAGMENTS / "propers" / "lanes"
+                / "research-theological-synthesis.md").read_text(
+                    encoding="utf-8")
+        flat = " ".join(text.split())
+        self.assertIn("integrates every lane", flat,
+                      "the lane must still say who integrates what it "
+                      "returns, so its worker knows it is not the authority")
+        self.assertNotRegex(
+            flat, re.compile(
+                r"\b(two|three|four|five|six|seven|eight|nine|ten|\d+) "
+                r"lanes\b", re.IGNORECASE),
+            "a hardcoded lane count here is false the next time the fan-out "
+            "grows, and nothing would fail")
+
+    def test_the_research_fanout_keeps_its_lanes_disjoint(self):
+        for lane in RESEARCH_LANES:
             with self.subTest(lane=lane):
-                shown = subprocess.run(
-                    ["git", "show", f"{DEFECTIVE_HEAD}:{name}"],
-                    capture_output=True, cwd=ROOT)
-                self.assertEqual(shown.returncode, 0, shown.stderr)
-                self.assertEqual(shown.stdout, (ROOT / name).read_bytes())
+                assert_lane_owns_its_findings(self, f"research-{lane}")
 
-    def test_the_workflow_version_was_bumped(self):
+    def test_the_workflow_version_is_past_the_ownership_bump(self):
         """Changed guidance bytes must stop a run bound to the old ones."""
-        before = subprocess.run(
-            ["git", "show", f"{DEFECTIVE_HEAD}:workflows/pipelines/proper.json"],
-            capture_output=True, text=True, cwd=ROOT)
-        self.assertEqual(before.returncode, 0, before.stderr)
-        self.assertGreater(self.workflow["version"],
-                           json.loads(before.stdout)["version"],
-                           "the fragments changed, so the bound source digest "
-                           "changed; a run on the old version must be told to "
-                           "seed again")
+        version = self.workflow["version"]
+        self.assertIsInstance(version, int)
+        self.assertGreaterEqual(
+            version, BRIEF_OWNERSHIP_VERSION,
+            "these fragments changed, so the bound source digest changed; a "
+            "run seeded before that must be told to seed again, which the "
+            "pipeline can only do by never going back below the bump")
 
 
 class PreservedGuaranteeTests(PropersCase):

@@ -25,6 +25,9 @@ from test_workflow_adversarial import (  # noqa: E402
     engine_for,
     make_repo,
 )
+from test_workflow_research_fanout import DOC  # noqa: E402
+
+TAIL = DOC.rsplit("/", 1)[-1]
 
 ACTIONS = ("seed", "advance", "status", "replay", "intervene", "debt")
 
@@ -76,7 +79,7 @@ class HelpTests(unittest.TestCase):
         self.assertIn(f"(v{version})", tpt("proper", "--help").stdout)
 
     def test_an_unknown_action_points_at_the_usage(self):
-        done = tpt("proper", "46-ninth-after-pentecost", "frobnicate")
+        done = tpt("proper", TAIL, "frobnicate")
         self.assertEqual(done.returncode, 2)
         self.assertIn("unknown workflow action", done.stderr)
         self.assertIn("tpt proper --help", done.stderr)
@@ -207,46 +210,6 @@ class ShorthandTests(unittest.TestCase):
         self.assertEqual(seeded["normalized_args"]["proper"], new)
         self.assertEqual(seeded["stage"], "seed")
 
-    def test_a_misspelling_of_an_existing_document_is_named(self):
-        with self.assertRaises(WorkflowError) as caught:
-            self.resolve("46-ninth-after-penecost")
-        message = str(caught.exception)
-        self.assertIn("did you mean:", message)
-        self.assertIn(
-            "liturgy/roman-rite/1962/propers/temporal/"
-            "46-ninth-after-pentecost", message)
-
-    def test_a_new_name_from_the_same_family_suggests_nothing(self):
-        """These ids share most of their text, so similarity alone is noise.
-
-        `51-fourteenth-after-pentecost` scores 0.89 against its nearest
-        neighbour and 0.86 against the next; a real typo leads by an order
-        more. Suggesting on similarity alone offered three wrong answers to
-        someone naming a document that simply did not exist yet.
-        """
-        for token in ("51-fourteenth-after-pentecost",
-                      "51-fourteenth-after-penecost",
-                      "99-something-entirely-else"):
-            with self.subTest(token=token):
-                with self.assertRaises(WorkflowError) as caught:
-                    self.resolve(token)
-                self.assertNotIn("did you mean", str(caught.exception))
-
-    def test_a_decisive_misspelling_is_suggested_across_the_corpus(self):
-        # Not `nuptial-mas`: that is a substring of `m01-nuptial-mass` and
-        # resolves outright, which is the shorthand working rather than a
-        # near miss.
-        for token, expected in (("trinty-sunday", "36-trinity-sunday"),
-                                ("nuptual-mass", "m01-nuptial-mass")):
-            with self.subTest(token=token):
-                with self.assertRaises(WorkflowError) as caught:
-                    self.resolve(token)
-                message = str(caught.exception)
-                self.assertIn("did you mean:", message)
-                self.assertIn(expected, message)
-                self.assertEqual(message.count("did you mean"), 1,
-                                 "one answer, not a list to choose from")
-
     def test_a_path_is_passed_through_untouched(self):
         """Strictly additive: what worked before still works."""
         for token in ("liturgy/roman-rite/1962/propers/temporal/99-invented",
@@ -272,24 +235,70 @@ class ShorthandTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
-        full = "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"
+        full = DOC
         by_full = engine.seed_bytes(
             "proper", {"proper": self.resolve(full), "provider": "gpt"})
         by_tail = engine.seed_bytes(
             "proper",
-            {"proper": self.resolve("46-ninth-after-pentecost"),
+            {"proper": self.resolve(TAIL),
              "provider": "gpt"})
         self.assertEqual(by_full, by_tail)
         self.assertEqual(json.loads(by_full)["normalized_args"]["proper"], full)
 
     def test_the_launcher_resolves_the_shorthand_for_every_action(self):
-        done = tpt("proper", "46-ninth-after-pentecost", "status", "deadbeef")
+        done = tpt("proper", TAIL, "status", "deadbeef")
         self.assertEqual(done.returncode, 2)
         self.assertIn("no such run", done.stderr,
                       "the shorthand resolved and the run lookup was reached")
         done = tpt("proper", "no-such-proper-anywhere", "status", "deadbeef")
         self.assertEqual(done.returncode, 2)
         self.assertIn("no proper matches", done.stderr)
+
+
+    def test_a_misspelling_of_an_existing_document_is_named(self):
+        typo = TAIL.replace("pentecost", "penecost")
+        self.assertNotEqual(typo, TAIL, "the probe id contains 'pentecost'")
+        with self.assertRaises(WorkflowError) as caught:
+            self.resolve(typo)
+        message = str(caught.exception)
+        self.assertIn("did you mean:", message)
+        self.assertIn(DOC, message)
+
+    def test_a_new_name_from_the_same_family_suggests_nothing(self):
+        """These ids share most of their text, so similarity alone is noise.
+
+        `51-fourteenth-after-pentecost` scores 0.89 against its nearest
+        neighbour and 0.86 against the next; a real typo leads by an order
+        more. Suggesting on similarity alone offered three wrong answers to
+        someone naming a document that simply did not exist yet.
+        """
+        for token in ("51-fourteenth-after-pentecost",
+                      "51-fourteenth-after-penecost",
+                      "99-something-entirely-else"):
+            with self.subTest(token=token):
+                with self.assertRaises(WorkflowError) as caught:
+                    self.resolve(token)
+                self.assertNotIn("did you mean", str(caught.exception))
+
+    def test_a_misspelling_of_any_document_finds_that_document(self):
+        """Derived from the corpus, so renumbering cannot invalidate it.
+
+        Each id has one character dropped from its distinguishing head. That
+        either still resolves outright, by the substring pass, or is refused
+        with a suggestion — and in both cases it must land on the document it
+        was made from, never on a neighbour.
+        """
+        for document in self.documents:
+            tail = document.rsplit("/", 1)[-1]
+            typo = tail[:3] + tail[4:]
+            with self.subTest(document=document, typo=typo):
+                try:
+                    self.assertEqual(self.resolve(typo), document)
+                except WorkflowError as error:
+                    self.assertIn("did you mean:", str(error))
+                    self.assertIn(document, str(error))
+                    self.assertEqual(str(error).count("did you mean"), 1,
+                                     "one answer, not a list to choose from")
 
 
 class DeclarationTests(unittest.TestCase):

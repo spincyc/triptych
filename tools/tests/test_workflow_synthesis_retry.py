@@ -43,6 +43,7 @@ from test_workflow_research_fanout import (  # noqa: E402
     RESEARCH_LANES,
     VISUAL_LANES,
     PropersCase,
+    assert_lane_owns_its_findings,
     workflow_json,
 )
 
@@ -420,7 +421,12 @@ class PreservedGuaranteeTests(RetryCase):
         self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
 
-    def test_the_seven_research_lanes_are_unchanged(self):
+    def test_the_seven_research_lanes_are_declared_and_disjoint(self):
+        """Sending the research back is only safe if the lanes still divide.
+
+        A retry re-enters every lane at once, so two lanes sharing a finding
+        space or a question would return the retry twice over.
+        """
         stage = {s["id"]: s for s in workflow_json()["stages"]}[RESEARCH]
         self.assertEqual([l["id"] for l in stage["execution"]["lanes"]],
                          RESEARCH_LANES)
@@ -428,16 +434,7 @@ class PreservedGuaranteeTests(RetryCase):
         self.assertEqual(stage["execution"]["join"], STRICT_UNION)
         for lane in RESEARCH_LANES:
             with self.subTest(lane=lane):
-                shown = subprocess.run(
-                    ["git", "show",
-                     f"ea2ee089ce2bb0c4e4c1cbd18da54d94fd4d3dee:"
-                     f"workflows/fragments/propers/lanes/research-{lane}.md"],
-                    capture_output=True, cwd=ROOT)
-                self.assertEqual(shown.returncode, 0, shown.stderr)
-                self.assertEqual(
-                    shown.stdout,
-                    (FRAGMENTS / "propers" / "lanes"
-                     / f"research-{lane}.md").read_bytes())
+                assert_lane_owns_its_findings(self, f"research-{lane}")
 
     def test_seed_remains_byte_idempotent_across_a_retry(self):
         """Test 21 and 24."""
