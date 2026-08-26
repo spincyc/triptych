@@ -36,6 +36,7 @@ largely a register of how that data has already gone wrong:
 | liturgy browser HTML, CSS, or JavaScript; Day or Propers routes; shared liturgical rendering; modes or navigation; responsive or print presentation; calendar or source apparatus; comparison views; or browser-visible recension coverage | `guidance/liturgy-browser-vision.md`, `guidance/liturgy-browser-roadmap.md` |
 | a bible edition, its index, or its chapter fragments | `guidance/bibles-for-agents.md` |
 | a verse or chapter numbering question across editions | `guidance/versification.md` |
+| when a biblical text was written, when what it narrates happened, or any other biblical date | `guidance/scripture-chronology.md` |
 | commentary fragments, the harvest, or the catena page | `guidance/catena.md`, `guidance/reading-plan-for-agents.md` |
 | a liturgical act history or its stations and lines | `guidance/act-histories.md`, `guidance/time-machine.md` |
 | whether a liturgical text may be published here, whose right it is, or under what basis — in any language, on any surface | `guidance/liturgical-text-publication-policy.md` |

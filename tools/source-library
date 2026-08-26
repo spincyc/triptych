@@ -1936,17 +1936,25 @@ def _validate_source_tree(library: Library) -> None:
         # index-bible writes into this tree and gates: `projection` refuses on a
         # stale row, a missing file or an orphan exactly as `check` does for
         # the index and the fragments, and the tabular form is the shape of the
-        # alias tables it is derived from. Admitted under `bibles` alone,
-        # because that is the only one of these trees whose own validator
-        # writes a table; the next tree that needs it can say so here.
+        # alias tables it is derived from. Admitted under `bibles` and
+        # `chronology`, the two of these trees whose own validator writes a
+        # table; the next tree that needs it can say so here.
+        #
+        # `chronology` is the Scripture chronology corpus. Its authored records
+        # are .yaml and its one derived table, `coverage.tsv`, is gated for
+        # staleness by its own tool exactly as `projection.tsv` is here. It adds
+        # no field to any record this schema owns and moves no
+        # `source_fingerprint`: it names source ids and is read beside the
+        # library, never inside it. guidance/scripture-chronology.md owns it.
         if relative.parts[0] in {
             "bibles",
             "calendars",
+            "chronology",
             "commentary",
             "reading-plans",
         } and (
             entry.suffix in {".json", ".md", ".yaml"}
-            or (relative.parts[0] == "bibles" and entry.suffix == ".tsv")
+            or (relative.parts[0] in {"bibles", "chronology"} and entry.suffix == ".tsv")
         ):
             continue
         if entry.resolve() in library.payload_paths:

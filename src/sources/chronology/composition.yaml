@@ -1,0 +1,12 @@
+# Composition chronology, by textual unit. A unit's scope reaches every verse
+# inside it, so a book-level claim needs no row per verse; the narrowest unit
+# covering a verse wins, and two units of equal width over one verse is a load
+# error rather than a tie this corpus breaks.
+schema: triptych-chronology-composition/v1
+# Every locus below is numbered in the vulgate system, the one
+# scripts/_projection.py projects into. Declared here so that no row's
+# numbering is a thing the reader assumed.
+numbering: vulgate
+updated: '2026-08-26'
+
+units: []

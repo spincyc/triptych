@@ -247,7 +247,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	public-site public-preview \
 	dependencies-arch dependencies-arch-browser install-dependencies-arch \
 	verify-public-site verify-public-preview \
-	check-mass-ordinary \
+	check-mass-ordinary check-scripture-chronology \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
 	check-browser-static check-browser-gate check-browser-harnesses \
@@ -742,7 +742,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-browser-static \
 	check-calendar-masses check-calendar-rubrics check-propers-census \
 	check-mass-ordinary check-bible-indexes check-catena \
-	check-commentary-coverage check-examples
+	check-commentary-coverage check-scripture-chronology check-examples
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
@@ -890,6 +890,28 @@ check-commentary-coverage:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) scripts/_coverage.py; \
 	else echo "PyYAML missing; skipping commentary coverage"; fi
+
+# Two questions, and the second is the one a corpus of dates quietly fails.
+# `validate` asks whether the authored chronology is well-formed: every claim
+# sourced, every referenced event and profile declared, no year zero, no
+# inverted range, no two composition units of the same width over one verse.
+# `check` asks whether the derived coverage table is what a fresh derivation
+# produces, and REFUSES A STALE ONE RATHER THAN REBUILDING IT — a verification
+# that repairs what it was meant to detect reports success either way, and
+# `guidance/the-shape.md` §1 records what this project has already paid for
+# apparatus that is not exempt from the defect it exists to catch.
+#
+# A locus with no date is NOT a failure here. Most of Scripture is
+# research-pending and saying so is the honest report; what fails is a corpus
+# that cannot say it — an assertion citing a source this repository does not
+# hold, a scope naming a verse past its chapter's end, or a gap standing over a
+# verse that carries an assertion. Needs PyYAML; a missing PyYAML skips, and
+# says it skipped, because a silent green line asserts a check that did not run.
+check-scripture-chronology:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt scripture-chronology validate && \
+		$(PYTHON) tools/tpt scripture-chronology check; \
+	else echo "PyYAML missing; skipping scripture chronology check"; fi
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s tools/tests

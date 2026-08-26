@@ -1,0 +1,12 @@
+# Where the corpus knowingly says nothing dated, and why. Only the statuses an
+# author may assert appear here: undated-in-tradition, not-alignable,
+# textually-distinct. A locus reached by none of them and by no assertion is
+# research-pending, which is the honest default and is not authored.
+schema: triptych-chronology-gaps/v1
+# Every locus below is numbered in the vulgate system, the one
+# scripts/_projection.py projects into. Declared here so that no row's
+# numbering is a thing the reader assumed.
+numbering: vulgate
+updated: '2026-08-26'
+
+gaps: []

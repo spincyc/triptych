@@ -1,0 +1,10 @@
+# Scripture locus ranges joined to events by a temporal relation. Compact runs,
+# never one row per verse. A binding carries no date: the event holds it.
+schema: triptych-chronology-bindings/v1
+# Every locus below is numbered in the vulgate system, the one
+# scripts/_projection.py projects into. Declared here so that no row's
+# numbering is a thing the reader assumed.
+numbering: vulgate
+updated: '2026-08-26'
+
+bindings: []

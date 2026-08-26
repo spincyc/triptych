@@ -1705,3 +1705,57 @@ GPT Reader routes returned the revised timestamps, and all six live PDF routes
 matched the reviewed SHA-256 hashes exactly. The unrelated local
 `directions.md` and `-.png` remained untracked and outside the commits and
 deployment.
+
+## Scripture chronology corpus
+
+<!-- promised-deliverable: scripture-chronology-corpus-2026-08-26 -->
+
+On 2026-08-26 the maintainer requested the project's first durable,
+translation-independent Scripture chronology corpus: every Scripture locus this
+repository can address should resolve to a stable, reusable set of zero or more
+typed temporal assertions, so that propers, the Catena, Scripture studies, the
+web reader, the PDFs and every future consumer stop independently re-deriving
+biblical dates.
+
+The chronology is deliberately **traditional Catholic chronology**, preserved on
+its own terms. It is not an attempt to reconcile the biblical and traditional
+reckoning with modern archaeological, Egyptological, Assyriological or
+critical-historical chronologies where those diverge. A modern or critical
+chronology, if ever wanted, is a separate named profile and never a silent
+correction of this one.
+
+**What the corpus is.** It sits behind the existing citation and
+versification/projection machinery and in front of document synthesis. Assertions
+are keyed to canonical Scripture loci in the `vulgate` system — the system
+`scripts/_projection.py` already projects into and both tracked calendars cite in
+— never to any translation's verse strings. One locus resolves to any number of
+typed assertions across eight relations (`composition`, `narrated-event`,
+`utterance`, `historical-setting`, `superscription-setting`,
+`retrospective-event`, `prophecy-given`, `prophetic-referent`). An event is dated
+once in `events.yaml` and bound from every locus that needs it, so the four
+Gospels cannot acquire four Crucifixion dates; a binding carries no date and the
+loader refuses one that tries to. Composition chronology inherits from a textual
+unit to the verses inside it, and two units of equal width over one verse is a
+load error rather than a tie the corpus breaks.
+
+**What it refuses.** No universal verse space: where the psalm or deuterocanon
+concordance refuses, chronology refuses, and says which kind of refusal it is.
+No date without a prose basis and a source-library record behind it. No numeric
+confidence. No harmonising two traditional claims into a third nobody asserted.
+No Anno Mundi converted to B.C., because that requires an epoch no ranked source
+in this repository has been inspected asserting. No bare coverage percentage.
+
+**State on 2026-08-26.** The governing contract, the traditional profile, the
+data model, the loader and its validation, the query, the coverage derivation,
+the gated derived table, the registered tool and the repository gate are in
+place. The corpus itself is being populated from ranked sources; every locus not
+yet reached is `research-pending`, which is the honest report and is what the
+coverage table prints. The deliverable stays `in_progress` until the
+exhaustive-coverage requirement is honestly met; a correct partial corpus is
+acceptable and a falsely complete chronology is not.
+
+**Not in this lane.** Propers, the Catena, the web reader and the PDFs are not
+wired to the corpus, and no proper document was revised. The consumer contract
+that binds them when they are is stated in `guidance/scripture-chronology.md`
+§14: a consumer must read the corpus and must not re-derive, and where the
+corpus is unresolved the consumer preserves that state or omits the date.

@@ -337,6 +337,17 @@
       "stage": "draft",
       "usage": "research-staleness {bootstrap,status,explain,rebaseline}"
     },
+    "scripture-chronology": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Answer when a Scripture locus was written and when what it tells of happened.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "scripture-chronology {validate,query,coverage,build,check} [--json]"
+    },
     "source-family-migration": {
       "idempotent": true,
       "json": false,

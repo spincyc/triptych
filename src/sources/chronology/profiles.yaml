@@ -1,0 +1,128 @@
+# Chronology profiles: what a date in this corpus is a date *under*.
+#
+# A profile is a policy, not a fact. It says which authorities win when they
+# disagree, what "traditional" is being asserted, and what the profile refuses
+# to do. Facts live in events.yaml, composition.yaml and bindings.yaml and name
+# the profile they were authored under.
+#
+# guidance/scripture-chronology.md owns the semantics. Nothing here restates it.
+schema: triptych-chronology-profiles/v1
+
+profiles:
+  - id: catholic-traditional-v1
+    title: Traditional Catholic chronology, first profile
+    intent: >-
+      The chronology a traditional Catholic apparatus states about Scripture:
+      what Scripture says about its own sequence, what the Roman liturgical
+      books assert, what the received Catholic biblical apparatus prints, and
+      what the Fathers and traditional Catholic commentators transmit. It is
+      the default profile for every consumer in this repository.
+    authority:
+      # Read in order. A lower rank is consulted only where every higher rank
+      # is silent, and a higher rank never yields to a lower one merely because
+      # the lower one is more precise. Precision is not authority.
+      - rank: 1
+        name: Scripture's own chronological and relational statements
+        what: >-
+          An interval, regnal year, age, or ordering the sacred text itself
+          states. Read from the tracked editions under src/sources/bibles.
+        holds_in_repository: src/sources/bibles
+      - rank: 2
+        name: Roman liturgical witnesses, where they make a chronological claim
+        what: >-
+          A date the Roman books themselves assert, not a date inferred from
+          the day a feast is kept. Most feasts assert nothing chronological and
+          this rank is therefore silent far more often than it speaks.
+        holds_in_repository: src/sources/calendars
+      - rank: 3
+        name: The received Catholic biblical apparatus, edition-identified
+        what: >-
+          A traditional Catholic annotated Bible or chronological table tied to
+          an identified printing. Haydock's Douay-Rheims commentary is the
+          instance this repository holds.
+        holds_in_repository: src/sources/works/george-leo-haydock
+      - rank: 4
+        name: Patristic and early ecclesiastical chronological testimony
+        what: >-
+          A Father or early ecclesiastical writer stating a date, sequence, or
+          composition circumstance. Eusebius and Jerome are the chronological
+          witnesses proper; others speak where they speak.
+        holds_in_repository: src/sources/works/eusebius, src/sources/works/jerome
+      - rank: 5
+        name: Traditional Catholic commentators and chronologists
+        what: >-
+          A major traditional Catholic commentator reporting or computing a
+          date. Cornelius a Lapide is the instance this repository holds.
+        holds_in_repository: src/sources/works/cornelius-a-lapide
+      - rank: 6
+        name: Later traditional Catholic reference works
+        what: >-
+          A traditional Catholic reference work consulted where every stronger
+          rank is silent. The 1907-1914 Catholic Encyclopedia is the instance
+          this repository holds.
+        holds_in_repository: src/sources/works/catholic-encyclopedia
+      - rank: 7
+        name: Project derivation from the above
+        what: >-
+          A date this project computed from ranked claims by an explicit rule.
+          Permitted only with basis "derived", a named rule, and every input
+          claim identified. A derivation never overwrites a sourced assertion.
+        holds_in_repository: src/sources/chronology
+    non_authorities:
+      # Named because they are the ones that would otherwise arrive silently.
+      - name: Protestant chronologies, Ussher in particular
+        rule: >-
+          May be cited as comparison or corroboration, and may be reported
+          where a ranked Catholic source itself reports it — Haydock prints
+          Usher's Anno Mundi figures and that printing is Haydock's testimony,
+          recorded as such. Ussher is never the source of record for this
+          profile, and no assertion may name him alone.
+      - name: Modern critical, archaeological, Egyptological and Assyriological chronology
+        rule: >-
+          Not consulted, not used to adjust a traditional date, and not treated
+          as a correction. A divergence between this profile and modern
+          scholarship is a profile boundary, not an error in either. A modern
+          chronology, if ever wanted, is a separate profile with its own id.
+      - name: Any model's unsourced recollection
+        rule: >-
+          Never an authority at any rank. A date nobody read is research-pending,
+          which is a status this corpus can hold.
+    conflict:
+      # What happens when ranked sources actually disagree.
+      rule: >-
+        Preserve the disagreement. Every sourced claim is kept with its own
+        provenance and a disposition. Exactly one claim per temporal subject
+        per profile may be "preferred", and only when a higher authority rank
+        settles it or the profile's own note records why. Where nothing settles
+        it, every claim is "disputed" and the query returns them all.
+      dispositions:
+        preferred: >-
+          The claim this profile displays first. Requires either a strictly
+          higher authority rank than every alternate, or an explicit note.
+        alternate: >-
+          A sourced claim this profile does not display first, kept queryable
+          with its provenance.
+        disputed: >-
+          A sourced claim in unsettled disagreement with another. No claim on
+          the subject is preferred while any is disputed.
+      forbidden: >-
+        No numeric confidence, no model score, and no silent harmonisation of
+        two claims into a third nobody asserted.
+    display:
+      rule: >-
+        A source's own printed form is preserved in "label" and is never the
+        machine truth. Anno Mundi figures are recorded in the era they were
+        printed in and are not converted to B.C. by this corpus; a conversion
+        is a derivation and needs its own rule, inputs, and epoch.
+      era_epochs: >-
+        No Anno Mundi epoch is fixed by this profile. Traditional sources use
+        several and this corpus has inspected none of them as an epoch claim.
+    non_goals:
+      - Deciding questions the Church has not defined.
+      - Dating every verse. A verse the sources do not date stays undated and says so.
+      - Reconciling traditional chronology with modern chronology.
+      - Serving as the composition date of any *edition*; guidance/sources.md owns that.
+    versioning: >-
+      The id ends in a version because a change of authority policy is a new
+      profile, not an edit of this one. Correcting a typo or adding a rank's
+      repository instance is an edit; changing what wins is not.
