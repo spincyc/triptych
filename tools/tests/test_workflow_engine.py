@@ -133,7 +133,7 @@ class WorkflowMetaTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["id"], "proper")
-        self.assertEqual(data["version"], 2)
+        self.assertEqual(data["version"], 3)
 
     def test_workflow_show_unknown(self):
         result = _run("workflow", "show", "no-such-workflow")
@@ -327,6 +327,7 @@ class GateExecutionTests(unittest.TestCase):
                 "argument_schema": {"doc": {"required": True, "type": "string"}},
                 "stages": [
                     {"id": "gate", "type": "gate",
+                     "execution": {"mode": "program"},
                      "checks": [{"id": "ok", "command": "true",
                                  "required_result": "must pass"}],
                      "pass_transition": "ACCEPTED",

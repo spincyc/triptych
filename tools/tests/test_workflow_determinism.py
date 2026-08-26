@@ -89,6 +89,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "stage-a",
                 "type": "linear",
+                "execution": {"mode": "single"},
                 "fragments": ["synthetic/brief.md", "synthetic/format.md", "synthetic/work-a.md"],
                 "result_schema": "worker-result.json",
                 "next": "stage-b",
@@ -96,6 +97,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "stage-b",
                 "type": "linear",
+                "execution": {"mode": "single"},
                 "fragments": ["synthetic/brief.md", "synthetic/format.md", "synthetic/work-b.md"],
                 "result_schema": "worker-result.json",
                 "next": "eval-stage",
@@ -103,6 +105,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "eval-stage",
                 "type": "evaluator",
+                "execution": {"mode": "single"},
                 "fragments": ["synthetic/brief.md", "synthetic/format.md", "synthetic/eval.md"],
                 "result_schema": "evaluator-result.json",
                 "pass_transition": "gate-stage",
@@ -112,6 +115,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "revise-stage",
                 "type": "bounded-revision",
+                "execution": {"mode": "single"},
                 "revision_target": "stage-b",
                 "fragments": ["synthetic/brief.md", "synthetic/format.md", "synthetic/revise.md",
                               "synthetic/work-b.md"],
@@ -121,6 +125,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "gate-stage",
                 "type": "gate",
+                "execution": {"mode": "program"},
                 "checks": [
                     {"id": "true-check", "command": "true",
                      "required_result": "must pass"},
@@ -132,6 +137,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "gate-revise",
                 "type": "bounded-revision",
+                "execution": {"mode": "single"},
                 "revision_target": "stage-b",
                 "fragments": ["synthetic/brief.md", "synthetic/format.md", "synthetic/revise.md",
                               "synthetic/work-b.md"],
@@ -141,6 +147,7 @@ def _make_synthetic_repo() -> tuple[Path, Path]:
             {
                 "id": "final",
                 "type": "gate",
+                "execution": {"mode": "program"},
                 "checks": [
                     {"id": "accept-check", "command": "test ! -f REFUSE",
                      "required_result": "the run must be acceptable"},

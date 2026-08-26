@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 2,
+  "version": 3,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "argument_schema": {
@@ -20,42 +20,118 @@
     {
       "id": "seed",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/seed.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/seed.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "resolve-context"
     },
     {
       "id": "resolve-context",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/resolve-context.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/resolve-context.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "source-audit"
     },
     {
       "id": "source-audit",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/source-audit.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/source-audit.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "research-synthesis"
     },
     {
       "id": "research-synthesis",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/research-synthesis.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/research-synthesis.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "author-proper"
     },
     {
       "id": "author-proper",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/author-proper.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/author-proper.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "content-evaluation"
     },
     {
       "id": "content-evaluation",
       "type": "evaluator",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/content-evaluation.md"],
+      "execution": {
+        "mode": "fanout",
+        "parallelism": "host-max",
+        "join": "strict-union",
+        "lanes": [
+          {
+            "id": "evidence-discipline",
+            "fragments": [
+              "propers/lanes/content-evidence-discipline.md"
+            ]
+          },
+          {
+            "id": "reception-sweep",
+            "fragments": [
+              "propers/lanes/content-reception-sweep.md"
+            ]
+          },
+          {
+            "id": "synthesis-argument",
+            "fragments": [
+              "propers/lanes/content-synthesis-argument.md"
+            ]
+          },
+          {
+            "id": "citation-integrity",
+            "fragments": [
+              "propers/lanes/content-citation-integrity.md"
+            ]
+          },
+          {
+            "id": "profile-conformance",
+            "fragments": [
+              "propers/lanes/content-profile-conformance.md"
+            ]
+          }
+        ]
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/content-evaluation.md"
+      ],
       "result_schema": "evaluator-result.json",
       "pass_transition": "build-artifacts",
       "fail_transition": "content-revision",
@@ -64,21 +140,39 @@
     {
       "id": "content-revision",
       "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
       "revision_target": "author-proper",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/content-revision.md", "propers/author-proper.md"],
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/content-revision.md",
+        "propers/author-proper.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "content-evaluation"
     },
     {
       "id": "build-artifacts",
       "type": "linear",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/build-artifacts.md"],
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/build-artifacts.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "mechanical-gates"
     },
     {
       "id": "mechanical-gates",
       "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
       "checks": [
         {
           "id": "proper-components",
@@ -103,15 +197,58 @@
     {
       "id": "artifact-revision",
       "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
       "revision_target": "build-artifacts",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/artifact-revision.md", "propers/build-artifacts.md"],
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/artifact-revision.md",
+        "propers/build-artifacts.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "mechanical-gates"
     },
     {
       "id": "visual-evaluation",
       "type": "evaluator",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/visual-evaluation.md"],
+      "execution": {
+        "mode": "fanout",
+        "parallelism": "host-max",
+        "join": "strict-union",
+        "lanes": [
+          {
+            "id": "density-and-hierarchy",
+            "fragments": [
+              "propers/lanes/visual-density-and-hierarchy.md"
+            ]
+          },
+          {
+            "id": "page-rhythm",
+            "fragments": [
+              "propers/lanes/visual-page-rhythm.md"
+            ]
+          },
+          {
+            "id": "fixed-pagination",
+            "fragments": [
+              "propers/lanes/visual-fixed-pagination.md"
+            ]
+          },
+          {
+            "id": "clipping-and-apparatus",
+            "fragments": [
+              "propers/lanes/visual-clipping-and-apparatus.md"
+            ]
+          }
+        ]
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/visual-evaluation.md"
+      ],
       "result_schema": "evaluator-result.json",
       "pass_transition": "final-acceptance",
       "fail_transition": "visual-revision",
@@ -120,14 +257,25 @@
     {
       "id": "visual-revision",
       "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
       "revision_target": "build-artifacts",
-      "fragments": ["common/agent-brief.md", "common/result-format.md", "propers/visual-revision.md", "propers/build-artifacts.md"],
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/visual-revision.md",
+        "propers/build-artifacts.md"
+      ],
       "result_schema": "worker-result.json",
       "next": "mechanical-gates"
     },
     {
       "id": "final-acceptance",
       "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
       "checks": [
         {
           "id": "canonical-pdf",

@@ -34,6 +34,7 @@ workflows/
       artifact-revision.md
       visual-evaluation.md
       visual-revision.md
+      lanes/                   # one fragment per fan-out evaluation lane
   pipelines/                   # machine-readable workflow definitions
     proper.json
   schema/                      # machine-enforced contracts
@@ -47,6 +48,7 @@ tools/
   tests/
     test_workflow_determinism.py
     test_workflow_engine.py
+    test_workflow_execution_policy.py
     test_workflow_adversarial.py
     test_workflow_seed_idempotency.py
 ```
@@ -128,8 +130,12 @@ Updated after every transition. Contains:
 - `iteration`: global iteration counter
 - `stage_iterations`: per-stage packet counts
 - `stage_failures`: consecutive failures per evaluator/gate, reset on a pass
-- `packet_hashes`: list of `{stage, iteration, hash, path}`
-- `result_hashes`: list of `{stage, iteration, hash, path, disposition}`
+- `packet_hashes`: list of `{stage, iteration, hash, path}`; a fan-out
+  stage's record also carries a `lanes` list of `{lane, index, hash, path}`
+  in canonical lane order
+- `result_hashes`: list of `{stage, iteration, hash, path, disposition}`; a
+  fan-out stage's record also carries a `lanes` list of
+  `{lane, index, hash, path, disposition}` in canonical lane order
 - `transitions`: list of `{from, to, disposition}`
 - `disposition`: `null` while running, `ACCEPTED` or `BLOCKED` at terminal
 
@@ -157,6 +163,12 @@ state.
    - `COMMIT`: repository commit
    - `STAGE`: stage id
    - `ITERATION`: iteration number for this stage
+   - `EXECUTION`: the stage's execution policy — `single`, `program`, or
+     `fanout/host-max`
+   - `LANES`: the stage's lane ids in canonical order as compact JSON, on a
+     fan-out stage's packets only
+   - `LANE`, `LANE_INDEX`: the lane's own id and canonical index, on a lane
+     packet only
    - `ARGS`: normalized arguments as sorted JSON
    - `PRIOR_FINDINGS`: forwarded findings from the last evaluator/gate result
      (empty for non-revision stages), serialized as sorted JSON on one line
@@ -173,7 +185,9 @@ they belong to, so a packet exists if and only if the run reached it.
 The digest covers the canonicalized pipeline JSON plus the bytes of every
 fragment and schema the pipeline references. It therefore covers the parts of
 the guidance no packet quotes: transitions, iteration limits, gate commands,
-and result contracts.
+result contracts, and the parts of an execution policy no single packet
+carries — a fan-out stage's declared join, and the fragments of every lane
+but the one a given lane packet quotes.
 
 A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
@@ -192,6 +206,9 @@ The hash DOES cover:
 - workflow id and version, and the workflow-source digest
 - repository commit
 - stage id and iteration
+- the stage's execution policy, and a fan-out stage's lane roster in
+  canonical order
+- a lane packet's own lane id and canonical index
 - normalized arguments
 - forwarded findings (for revision packets)
 - all fragment contents in declared order, with arguments substituted
@@ -220,6 +237,139 @@ engine reads it, and copies it into `results/` and its hash into
 `result_hashes` only alongside the state that acts on it.
 
 Gate results are produced by the engine and carry the same two fields.
+
+## Execution policy
+
+Every stage declares, as workflow data, how its work is dispatched. The
+`execution` object is required on every stage and validated by
+`_validate_execution`:
+
+- `{"mode": "single"}` — exactly one fresh subagent runs the stage, and the
+  object declares nothing but `mode`.
+- `{"mode": "program"}` — `tpt` runs the stage itself. It is required on every
+  `gate` stage and permitted on no other: a gate whose result the engine
+  composes from checks it ran may not have a subagent standing between it and
+  those checks.
+- `{"mode": "fanout", "parallelism": "host-max", "join": "strict-union",
+  "lanes": [...]}` — exactly those four keys. `parallelism` must be
+  `host-max`, `join` must be `strict-union`, and `lanes` declares at least two
+  lanes, each an object with an `id` and optionally its own `fragments`. Lane
+  ids are nonempty lowercase-kebab strings, unique within the stage. One lane
+  would be a `single` stage, so two is the minimum.
+
+Before this, the host decided whether a stage ran as one subagent or as five of
+its own invention, and nothing in the run recorded which had happened. What
+work is dispatched to whom is the decision the engine exists to own, so it is
+workflow data now: covered by the workflow-source digest and named in every
+packet's `EXECUTION` line. The host's one remaining choice is how many lanes
+run at once.
+
+### Lanes and lane packets
+
+A lane is a workflow-defined share of one stage's work, and canonical lane
+order is declaration order. `_stage_lanes` returns that list, and it is the
+only order anything downstream uses — lane packets, lane results, the join, and
+the successor packet all read it, and nothing reads the order lanes happened to
+finish in.
+
+`_compile_stage_packets` compiles the stage's own packet and then one packet
+per lane, in canonical order, so lane ids, lane ordering, lane packet bytes,
+and lane hashes are all fixed before any agent is launched. A lane packet
+carries the stage's `EXECUTION` and `LANES` header lines plus its own `LANE`
+and `LANE_INDEX`, and its body is the stage's fragments followed by that lane's
+own fragments. Lane packets are written to
+`packets/<stage>-<iteration>-lane-<index>-<lane-id>.txt` and lane results to
+`results/<stage>-<iteration>-lane-<index>-<lane-id>.json`, keyed by lane
+identity rather than by arrival, so an auditor reads which lane produced which
+bytes without knowing when it finished.
+
+Nothing host-varying reaches lane packet bytes: no worker process id, no launch
+or completion timestamp, no scheduler slot, no completion order. Lane identity
+comes from the workflow, so a host that runs every lane at once and a host that
+runs them one at a time compile the same lane packets, byte for byte, and
+record the same hashes.
+
+### Fail-closed lane binding
+
+A fan-out stage is advanced with one `--lane-result <lane-id>=<path>` per
+declared lane. `_load_and_validate_lane_results` refuses, with the run
+untouched: a lane the stage does not declare, a second result for a lane
+already answered, a result whose own `lane` field disagrees with the flag that
+carried it, a `lane_packet_hash` other than the one emitted for that lane, and
+any declared lane left unanswered. Every declared lane is required — the
+controller does not get to judge whether a missing lane was good enough. Each
+lane result is also checked against the stage's schema and must name the packet
+it answers, like any other result.
+
+The flags are not interchangeable. `--result` on a fan-out stage is refused,
+`--lane-result` on a `single` stage or on a gate is refused, and `--run-gate`
+on anything but a gate is refused. The stage's declared policy, not the
+operator's choice of flag, decides how the stage is answered.
+
+### The strict-union join
+
+`_join_lane_results` is the engine's own reduction over the lane results. The
+parent controller is never asked to summarize several lane results into the
+next prompt — a summary is guidance, and guidance is the engine's. The join:
+
+- copies each lane's findings verbatim, adding a `lane` key naming the lane
+  that raised them, and concatenates them in canonical lane order;
+- takes as the joined `disposition` the worst any lane returned, by the fixed
+  rank `PASS` < `CHANGES_REQUIRED` = `FAIL` < `BLOCKED`;
+- writes as the joined `summary` a deterministic roll-call of
+  `lane=disposition` in canonical lane order; and
+- records a `lanes` list of each lane's id, canonical index, disposition, lane
+  packet hash, and lane result hash.
+
+The joined object is the stage's own result. It takes the stage's transition,
+is written to `results/<stage>-<iteration>.json`, and is hashed into
+`result_hashes` like the result of any other stage, with the lane results it
+was built from written and hashed beside it. The engine composes it rather than
+accepting it, so what the stage's schema governs is each lane's submission,
+checked before the join. Blocking findings forwarded into a revision packet
+keep their `lane` key, so the reviser reads which lane raised each one.
+
+Nothing in the join reads completion order, so lanes finishing C, A, D, B join
+exactly as A, B, C, D and the successor packet's bytes are the same either way.
+That is why the join is the engine's: were it the controller's, the order its
+agents happened to return in would be an input to the next packet that no
+recorded state could reproduce, and the run's central invariant would hold only
+by the host's good manners.
+
+### Lane evidence
+
+Lane packets and lane results are part of the run's record, and what reads the
+record reads them too. `_verify_recorded_lane_files` requires every recorded
+lane file to be present, named exactly as its lane id and canonical index
+imply, not a symlink, and still hashing as recorded.
+`_verify_lane_packet_evidence` compares a recorded lane roster against what the
+bound workflow compiles now, so a lane renamed, reordered, added, or dropped
+under a live run is an error rather than a run whose results answer packets
+nobody can recompile; a seed replay checks the initial packet's roster that
+way. `replay` recompiles the lane packets along with the stage's own and
+reports a `lanes` list of
+`{lane, index, last_recorded_hash, recompiled_hash, deterministic}`, and its
+top-level `deterministic` is false if any lane diverges. Acceptance reads the
+same evidence — see the audit conditions below.
+
+### Controller guidance
+
+`_driver_instructions` opens with the stage's policy, stated as `EXECUTION
+POLICY: SINGLE`, `EXECUTION POLICY: FANOUT / HOST-MAX`, or `EXECUTION POLICY:
+PROGRAM GATE`, so a controller is told what to dispatch rather than left to
+infer it. The fan-out form lists every lane in canonical order with its packet
+path and `lane_packet_hash`, gives the exact `advance` command with one
+`--lane-result` flag per lane, and tells the host to run as many lanes at once
+as it supports, up to all of them; where host capacity is lower than the lane
+count, the lanes are taken in canonical order, one batch at the host maximum at
+a time. Batching changes no lane id, no lane order, and no lane packet byte.
+
+The same instructions forbid inventing, omitting, combining, or subdividing
+lanes, and forbid the controller summarizing, merging, reordering, editing, or
+supplementing any lane's work. A lane that cannot do its work returns `BLOCKED`
+in its own structured result, and the workflow decides what that means. For the
+seed stage these instructions are part of the canonical bootstrap bytes, so the
+policy the first controller is given is as fixed as the packet it accompanies.
 
 ## Transition semantics
 
@@ -261,7 +411,10 @@ transitions based on the collective result:
 
 Gate commands are run by `tpt` directly, not by an AI worker. The gate
 produces a structured result with blocking findings for each failed check.
-Findings are forwarded verbatim into the revision packet.
+Findings are forwarded verbatim into the revision packet. A gate declares
+execution mode `program` and may declare no agent mode, and no other stage
+type may declare `program` — the stage type and its execution policy have to
+agree about who runs the work.
 
 ### Terminal states
 
@@ -289,8 +442,10 @@ record and refuses acceptance unless:
 - every other evaluator and gate stage that ran last recorded `PASS`;
 - every recorded result file is still present and still hashes to the digest
   recorded when it was accepted;
-- no stage's latest result carries a blocking finding; and
-- every recorded packet file is present and unaltered.
+- no stage's latest result carries a blocking finding;
+- every recorded packet file is present and unaltered; and
+- every recorded lane packet and lane result file is present and still
+  hashes to what was recorded.
 
 A gate's checks speak only for the artifacts they inspect. The audit is what
 makes acceptance mean the whole run passed, and it reads only files the engine
@@ -302,9 +457,10 @@ acceptance — it prevents one.
 An `advance` either completes or leaves the run exactly as it was. The engine
 validates the submitted result, decides the transition against a copy of the
 state, and compiles the successor packet, all without writing anything. Only
-then does `_commit` write, in order: the successor packet, the accepted result,
-and last of all the state file, replaced atomically through a temporary file in
-the same directory.
+then does `_commit` write, in order: the successor packet and, where the
+successor is a fan-out stage, its lane packets; the accepted result, and the
+lane results a joined one was built from; and last of all the state file,
+replaced atomically through a temporary file in the same directory.
 
 Two properties follow, and the adversarial suite holds them:
 
@@ -312,7 +468,9 @@ Two properties follow, and the adversarial suite holds them:
   packet the run has moved past, names another stage, duplicates one already
   recorded, or carries a disposition the stage does not admit is never written
   to `results/` and never hashed into `result_hashes`. Nothing downstream can
-  read it, and `replay` is unaffected.
+  read it, and `replay` is unaffected. A refused fan-out submission leaves no
+  authoritative trace either, and no lane's result becomes part of the run
+  because another lane's was acceptable.
 - A run never advances past a packet it could not emit. If the successor packet
   cannot be compiled or written, the stage, iteration counters, transitions,
   packet and result records, and disposition are all untouched, and the result
@@ -364,6 +522,7 @@ workflow engine in `scripts/_workflow.py`.
 ```
 tpt proper <proper-id> seed [--provider <p>]
 tpt proper <proper-id> advance <run-id> --result <path>
+tpt proper <proper-id> advance <run-id> --lane-result <lane-id>=<path> ...
 tpt proper <proper-id> advance <run-id> --run-gate
 tpt proper <proper-id> status <run-id>
 tpt proper <proper-id> replay <run-id>

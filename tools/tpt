@@ -399,21 +399,36 @@ def _workflow_advance(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> i
     if not opts:
         raise ToolError("advance: missing run-id")
     run_id = opts[0]
-    engine.verify_document(run_id, doc_id)
     rest = opts[1:]
     result_path = None
     run_gate = False
+    # Lane submissions are kept in the order the flags were given only so a
+    # duplicate can be reported. The engine reorders them into the workflow's
+    # canonical lane order before anything reads them.
+    lane_results: list[tuple[str, str]] = []
     i = 0
     while i < len(rest):
         if rest[i] == "--result" and i + 1 < len(rest):
             result_path = rest[i + 1]
+            i += 2
+        elif rest[i] == "--lane-result" and i + 1 < len(rest):
+            lane_id, separator, lane_path = rest[i + 1].partition("=")
+            if not separator or not lane_id or not lane_path:
+                raise ToolError(
+                    "advance: --lane-result takes <lane-id>=<path>"
+                )
+            lane_results.append((lane_id, lane_path))
             i += 2
         elif rest[i] == "--run-gate":
             run_gate = True
             i += 1
         else:
             raise ToolError(f"advance: unknown option: {rest[i]}")
-    result = engine.advance(run_id, result_path=result_path, run_gate=run_gate)
+    engine.verify_document(run_id, doc_id)
+    result = engine.advance(
+        run_id, result_path=result_path, run_gate=run_gate,
+        lane_results=lane_results,
+    )
     print(json.dumps(result, sort_keys=True, indent=2))
     return 0
 

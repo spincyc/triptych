@@ -36,6 +36,14 @@ scholarly content.
 10. **Provenance**: Do source records (verified.md, retrieved.txt, scope.md)
     exist and follow the profile's format?
 
+## Lane scope
+
+This stage is a fan-out stage: the criteria above are partitioned across
+the workflow's evaluation lanes, and the lane fragment that follows names
+exactly which of them you own. Report findings for your own criteria only.
+Another lane owns each of the others, and tpt joins every lane's findings
+itself.
+
 ## Result
 
 Return an evaluator result:
