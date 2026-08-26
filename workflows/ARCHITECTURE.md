@@ -48,6 +48,7 @@ tools/
     test_workflow_determinism.py
     test_workflow_engine.py
     test_workflow_adversarial.py
+    test_workflow_seed_idempotency.py
 ```
 
 ## Why workflow files cannot become ambient agent guidance
@@ -67,6 +68,7 @@ Each run has a durable state directory:
 ```
 build/tpt-runs/<run-id>/
     manifest.json          # immutable run metadata
+    bootstrap.json         # immutable canonical seed response bytes
     state.json             # mutable run state
     events.jsonl           # append-only event log
     packets/               # compiled guidance packets
@@ -85,12 +87,36 @@ Written once at seed time. Contains:
 - `repo_commit`: repository commit SHA at seed time
 - `normalized_args`: sorted, string-valued argument map
 - `created_at`: human-readable timestamp (NOT used in packet hashes)
+- `bootstrap`: fixed path, format version, and SHA-256 of the exact canonical
+  bootstrap bytes
 
 Every load of `state.json` checks it against this manifest and recomputes the
 run id from the manifest's own inputs. A hand-edited state, a half-written
 state, a run directory renamed or copied under another id, and a missing
 manifest are all errors rather than runs that quietly claim to be something
 else.
+
+### bootstrap.json (immutable)
+
+The first seed stores the exact UTF-8 JSON bytes that the launcher emits. The
+response binds the run id, workflow id/version/source digest, repository
+commit, normalized arguments, original stage and iteration, initial packet
+hash and repository-relative path, and the exact controller instructions. Its
+serialization is canonical and ends in one LF; it contains no timestamp,
+absolute checkout path, hostname, user, process id, or environment-derived
+formatting.
+
+An identical later `seed` loads state and the bound workflow, verifies the
+manifest bootstrap hash, the canonical response, and the recorded initial
+packet, then writes the already-verified bytes directly to stdout. It never
+derives seed output from current mutable state and never writes a packet,
+event, result, transition, counter, or state. Consequently the response remains
+byte-identical after any amount of run progress.
+
+Missing bootstrap evidence is not reconstructed. A pre-fix run remains usable
+through `status`, `replay`, and `advance`, but `seed` reports that the run
+predates replayable bootstrap evidence. Corrupt evidence and workflow-source
+or identity mismatches likewise fail closed.
 
 ### state.json (mutable)
 
@@ -293,8 +319,14 @@ Two properties follow, and the adversarial suite holds them:
   that was submitted is not authoritative. The operator repairs the cause and
   submits the same result again; the retry emits the byte-identical packet.
 
-Seeding is the same transaction: the first packet is compiled before any state
-exists, and a seed that cannot emit it leaves no run to resume.
+Seeding uses `state.json` as its publication marker. One per-run creation lock
+under `build/tpt-seed-locks/` selects a single creator; that creator prepares
+the manifest, initial packet, canonical bootstrap, and initial event evidence
+before writing state last. A seed that fails before state publication removes
+its unpublished directory and leaves no run to resume. A process interruption
+can leave an incomplete, unpublished directory; a later seed fails closed until
+an operator deliberately discards it. Concurrent or later identical callers
+verify and replay the published bootstrap without appending duplicate evidence.
 
 A commit that fails midway can leave a packet file, or a packet and a result
 file, that the state does not reference. Nothing reads a file the state does not

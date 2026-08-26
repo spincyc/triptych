@@ -18,9 +18,12 @@ bounds, and stop conditions.
 from __future__ import annotations
 
 import copy
+import fcntl
 import hashlib
 import json
+import os
 import shlex
+import shutil
 import subprocess
 import time
 from pathlib import Path
@@ -256,11 +259,19 @@ class WorkflowEngine:
         return self.runs_dir / run_id
 
     def seed(self, workflow_id: str, raw_args: dict[str, str]) -> dict[str, Any]:
-        """Create a new run and emit the first packet.
+        """Create or verify a run and return its original bootstrap."""
+        response = json.loads(self.seed_bytes(workflow_id, raw_args))
+        # Internal callers historically use this convenience path. It is not
+        # persisted or emitted by the CLI because an absolute checkout path is
+        # outside the deterministic bootstrap contract.
+        response["packet_abs_path"] = str(
+            self.repo_root / response["packet_path"]
+        )
+        return response
 
-        Returns a dict with run_id, stage, packet_hash, packet_path, and
-        instructions for the parent agent.
-        """
+    def seed_bytes(self, workflow_id: str,
+                   raw_args: dict[str, str]) -> bytes:
+        """Create a run or replay its verified canonical bootstrap bytes."""
         workflow = self.load_workflow(workflow_id)
         commit = self.get_repo_commit()
         args = self.normalize_args(raw_args)
@@ -285,58 +296,103 @@ class WorkflowEngine:
             workflow["id"], workflow["version"], commit, args
         )
         run_dir = self.run_dir(run_id)
+        existing = self._existing_seed_bytes(
+            run_dir, workflow, commit, args, creation_may_be_active=True
+        )
+        if existing is not None:
+            return existing
 
-        # Don't clobber an existing run
-        if run_dir.exists() and (run_dir / "state.json").exists():
-            state = self.load_state(run_id)
-            return {
-                "run_id": run_id,
-                "already_exists": True,
-                "state": state,
-            }
-
-        # Create run directory structure
+        # An atomic per-run creation lock makes simultaneous identical seeds
+        # converge on one creator. Established runs never take this lock: their
+        # replay path is wholly read-only.
+        lock_fd = self._acquire_seed_lock(run_id)
         try:
-            for subdir in ("packets", "results", "artifacts", "interventions"):
-                (run_dir / subdir).mkdir(parents=True, exist_ok=True)
-        except OSError as error:
-            raise WorkflowError(
-                f"cannot create the run directory for {run_id}: {error}"
-            ) from error
-
-        # Write manifest (immutable)
-        digest = self.workflow_source_digest(workflow)
-        manifest = {
-            "run_id": run_id,
-            "workflow_id": workflow["id"],
-            "workflow_version": workflow["version"],
-            "workflow_digest": digest,
-            "repo_commit": commit,
-            "normalized_args": args,
-            "created_at": _utc_timestamp(),
-        }
-        try:
-            (run_dir / "manifest.json").write_text(
-                json.dumps(manifest, sort_keys=True, indent=2) + "\n",
-                encoding="utf-8",
+            existing = self._existing_seed_bytes(
+                run_dir, workflow, commit, args
             )
+            if existing is not None:
+                return existing
+            return self._create_seed_bytes(
+                run_id, run_dir, workflow, commit, args
+            )
+        finally:
+            try:
+                fcntl.flock(lock_fd, fcntl.LOCK_UN)
+            finally:
+                os.close(lock_fd)
+
+    def _existing_seed_bytes(
+        self, run_dir: Path, workflow: dict[str, Any], commit: str,
+        args: dict[str, str], creation_may_be_active: bool = False,
+    ) -> bytes | None:
+        """Return a verified bootstrap for a published run, if one exists."""
+        if run_dir.is_symlink():
+            raise WorkflowError(
+                f"run {run_dir.name}: run directory is a symlink and cannot "
+                f"be trusted"
+            )
+        if not run_dir.exists():
+            return None
+        if not run_dir.is_dir():
+            raise WorkflowError(
+                f"run {run_dir.name}: run path is not a directory"
+            )
+        state_path = run_dir / "state.json"
+        manifest_path = run_dir / "manifest.json"
+        if state_path.is_symlink() or manifest_path.is_symlink():
+            raise WorkflowError(
+                f"run {run_dir.name}: state or manifest is a symlink and "
+                f"cannot be trusted"
+            )
+        if not state_path.is_file():
+            if creation_may_be_active:
+                return None
+            raise WorkflowError(
+                f"run {run_dir.name}: state.json is missing; the run "
+                f"directory is incomplete and cannot be repaired by seed"
+            )
+        state = self.load_state(run_dir.name)
+        return self._load_verified_bootstrap(workflow, commit, args, state)
+
+    def _acquire_seed_lock(self, run_id: str) -> int:
+        """Serialize creation of one deterministic run across processes."""
+        lock_dir = self.repo_root / "build" / "tpt-seed-locks"
+        if lock_dir.is_symlink():
+            raise WorkflowError("seed lock directory is a symlink")
+        try:
+            lock_dir.mkdir(parents=True, exist_ok=True)
         except OSError as error:
             raise WorkflowError(
-                f"cannot write the manifest for {run_id}: {error}"
+                f"cannot create the seed lock directory: {error}"
+            ) from error
+        lock_path = lock_dir / f"{run_id}.lock"
+        flags = os.O_RDWR | os.O_CREAT
+        flags |= getattr(os, "O_NOFOLLOW", 0)
+        try:
+            fd = os.open(lock_path, flags, 0o600)
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            return fd
+        except OSError as error:
+            if "fd" in locals():
+                os.close(fd)
+            raise WorkflowError(
+                f"run {run_id}: cannot acquire seed lock: {error}"
             ) from error
 
-        # Initialize state. It is not written yet: a run whose state names a
-        # stage with no packet is a run nothing can drive and nothing can
-        # repair, so the first packet has to exist before the state does.
-        first_stage = workflow["stages"][0]["id"]
-        state = {
+    @staticmethod
+    def _initial_seed_state(
+        run_id: str, workflow: dict[str, Any], digest: str, commit: str,
+        args: dict[str, str],
+    ) -> dict[str, Any]:
+        """The pristine state against which the first packet is compiled."""
+        return {
             "run_id": run_id,
             "workflow_id": workflow["id"],
             "workflow_version": workflow["version"],
             "workflow_digest": digest,
             "repo_commit": commit,
             "normalized_args": args,
-            "current_stage": first_stage,
+            "current_stage": workflow["stages"][0]["id"],
             "iteration": 0,
             "stage_iterations": {},
             "stage_failures": {},
@@ -346,33 +402,467 @@ class WorkflowEngine:
             "disposition": None,
         }
 
-        # Compile the first packet, then commit packet and state together.
-        stage = self._get_stage(workflow, first_stage)
-        packet = self._compile_packet(workflow, stage, state, run_dir, [])
-        self._stage_packet(state, packet)
-        self._commit(run_id, state, [(packet["path"], packet["bytes"])])
+    def _create_seed_bytes(
+        self, run_id: str, run_dir: Path, workflow: dict[str, Any],
+        commit: str, args: dict[str, str],
+    ) -> bytes:
+        """Prepare and publish a new run, with state.json written last."""
+        claimed = False
+        try:
+            if self.runs_dir.is_symlink():
+                raise WorkflowError("the tpt runs directory is a symlink")
+            self.runs_dir.mkdir(parents=True, exist_ok=True)
+            run_dir.mkdir()
+            claimed = True
+            for subdir in ("packets", "results", "artifacts", "interventions"):
+                (run_dir / subdir).mkdir()
 
-        self._emit_event(run_id, {
-            "event": "seed",
+            digest = self.workflow_source_digest(workflow)
+            first_stage = workflow["stages"][0]["id"]
+            state = self._initial_seed_state(
+                run_id, workflow, digest, commit, args
+            )
+            stage = self._get_stage(workflow, first_stage)
+            packet = self._compile_packet(workflow, stage, state, run_dir, [])
+            # Digesting and compilation read the same sources through separate
+            # paths. Refuse a source edit that overlaps initial compilation.
+            if self.workflow_source_digest(workflow) != digest:
+                raise WorkflowError(
+                    f"workflow source changed while run {run_id} was seeded; "
+                    f"no run was published"
+                )
+            self._stage_packet(state, packet)
+            bootstrap = self._bootstrap_response(
+                workflow, commit, args, state, packet
+            )
+            bootstrap_bytes = _canonical_json_bytes(bootstrap)
+            manifest = {
+                "run_id": run_id,
+                "workflow_id": workflow["id"],
+                "workflow_version": workflow["version"],
+                "workflow_digest": digest,
+                "repo_commit": commit,
+                "normalized_args": args,
+                "created_at": _utc_timestamp(),
+                "bootstrap": {
+                    "version": 1,
+                    "path": "bootstrap.json",
+                    "sha256": hashlib.sha256(bootstrap_bytes).hexdigest(),
+                },
+            }
+            seed_event = {
+                "event": "seed",
+                "workflow_id": workflow["id"],
+                "workflow_version": workflow["version"],
+                "stage": first_stage,
+                "timestamp": _utc_timestamp(),
+            }
+            packet_event = {
+                "event": "packet",
+                "stage": packet["stage"],
+                "iteration": packet["iteration"],
+                "hash": packet["hash"],
+                "size": packet["size"],
+                "timestamp": _utc_timestamp(),
+            }
+            events = (
+                json.dumps(seed_event, sort_keys=True, ensure_ascii=False)
+                + "\n"
+                + json.dumps(packet_event, sort_keys=True, ensure_ascii=False)
+                + "\n"
+            ).encode("utf-8")
+
+            self._write_new_file(
+                run_id, run_dir / "manifest.json",
+                _canonical_json_bytes(manifest),
+            )
+            for path, payload in (
+                (packet["path"], packet["bytes"]),
+                (run_dir / "bootstrap.json", bootstrap_bytes),
+                (run_dir / "events.jsonl", events),
+            ):
+                self._write_new_file(run_id, path, payload)
+            self.save_state(run_id, state)
+            return bootstrap_bytes
+        except OSError as error:
+            raise WorkflowError(
+                f"cannot create the run directory for {run_id}: {error}"
+            ) from error
+        finally:
+            # Before state.json exists this invocation owns only an unpublished
+            # directory. Remove it so a clean retry can create the run. Once
+            # state exists, seed must never repair or rewrite the evidence.
+            if claimed and not (run_dir / "state.json").exists():
+                shutil.rmtree(run_dir, ignore_errors=True)
+
+    def _write_new_file(self, run_id: str, path: Path, payload: bytes) -> None:
+        """Create one seed artifact without following or replacing a path."""
+        flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL
+        flags |= getattr(os, "O_NOFOLLOW", 0)
+        try:
+            fd = os.open(path, flags, 0o666)
+            with os.fdopen(fd, "wb") as stream:
+                stream.write(payload)
+        except OSError as error:
+            raise WorkflowError(
+                f"run {run_id}: cannot write {path.name}: {error}"
+            ) from error
+
+    def _bootstrap_response(
+        self, workflow: dict[str, Any], commit: str, args: dict[str, str],
+        state: dict[str, Any], packet: dict[str, Any],
+    ) -> dict[str, Any]:
+        """Build the portable, canonical original bootstrap response."""
+        stage = self._get_stage(workflow, packet["stage"])
+        return {
+            "bootstrap_version": 1,
+            "run_id": state["run_id"],
             "workflow_id": workflow["id"],
             "workflow_version": workflow["version"],
-            "stage": first_stage,
-            "timestamp": _utc_timestamp(),
-        })
-        self._emit_packet_event(run_id, packet)
-
-        return {
-            "run_id": run_id,
-            "already_exists": False,
-            "stage": first_stage,
-            "iteration": 0,
+            "workflow_digest": state["workflow_digest"],
+            "repo_commit": commit,
+            "normalized_args": args,
+            "stage": packet["stage"],
+            "iteration": packet["iteration"],
             "packet_hash": packet["hash"],
-            "packet_path": str(packet["path"].relative_to(self.repo_root)),
-            "packet_abs_path": str(packet["path"]),
+            "packet_path": packet["path"].relative_to(
+                self.repo_root
+            ).as_posix(),
             "instructions": self._driver_instructions(
-                workflow, stage, state, packet
+                workflow, stage, state, packet, portable_path=True
             ),
         }
+
+    def _load_verified_bootstrap(
+        self, workflow: dict[str, Any], commit: str, args: dict[str, str],
+        state: dict[str, Any],
+    ) -> bytes:
+        """Verify immutable bootstrap and initial-packet evidence once."""
+        run_id = state["run_id"]
+        expected_identity = {
+            "workflow_id": workflow["id"],
+            "workflow_version": workflow["version"],
+            "repo_commit": commit,
+            "normalized_args": args,
+        }
+        for key, expected in expected_identity.items():
+            if state.get(key) != expected:
+                raise WorkflowError(
+                    f"run {run_id}: seed invocation disagrees with the "
+                    f"immutable run identity on {key}"
+                )
+        bound = self.load_bound_workflow(state)
+        self._verify_seed_replay_state(bound, state)
+        run_dir = self.run_dir(run_id)
+        manifest_path = run_dir / "manifest.json"
+        if manifest_path.is_symlink():
+            raise WorkflowError(
+                f"run {run_id}: manifest.json is a symlink and cannot be "
+                f"trusted"
+            )
+        manifest = _read_json(manifest_path)
+        binding = manifest.get("bootstrap")
+        if binding is None:
+            raise WorkflowError(
+                f"run {run_id} predates replayable bootstrap evidence; use "
+                f"status, replay, or advance, or deliberately discard the "
+                f"old run before seeding again"
+            )
+        if not isinstance(binding, dict) \
+                or set(binding) != {"version", "path", "sha256"} \
+                or type(binding.get("version")) is not int \
+                or binding["version"] != 1 \
+                or binding.get("path") != "bootstrap.json" \
+                or not _is_sha256(binding.get("sha256")):
+            raise WorkflowError(
+                f"run {run_id}: manifest has invalid bootstrap evidence"
+            )
+        path = run_dir / "bootstrap.json"
+        if path.is_symlink() or not path.is_file():
+            raise WorkflowError(
+                f"run {run_id}: bootstrap.json is missing or not a regular "
+                f"file; seed cannot reconstruct it"
+            )
+        try:
+            payload = path.read_bytes()
+        except OSError as error:
+            raise WorkflowError(
+                f"run {run_id}: cannot read bootstrap.json: {error}"
+            ) from error
+        if hashlib.sha256(payload).hexdigest() != binding["sha256"]:
+            raise WorkflowError(
+                f"run {run_id}: bootstrap.json disagrees with its immutable "
+                f"manifest hash"
+            )
+
+        records = state.get("packet_hashes")
+        if not isinstance(records, list) or not records:
+            raise WorkflowError(
+                f"run {run_id}: state records no initial packet"
+            )
+        initial = records[0]
+        first_stage = bound["stages"][0]["id"]
+        expected_path = (
+            run_dir / "packets" / f"{first_stage}-0000.txt"
+        ).relative_to(self.repo_root).as_posix()
+        if not isinstance(initial, dict) or initial.get("stage") != first_stage \
+                or initial.get("iteration") != 0 \
+                or initial.get("path") != expected_path \
+                or not isinstance(initial.get("hash"), str):
+            raise WorkflowError(
+                f"run {run_id}: initial packet evidence is invalid"
+            )
+        packet_path = self.repo_root / expected_path
+        if packet_path.is_symlink() or not packet_path.is_file():
+            raise WorkflowError(
+                f"run {run_id}: initial packet is missing or not a regular "
+                f"file"
+            )
+        try:
+            packet_bytes = packet_path.read_bytes()
+        except OSError as error:
+            raise WorkflowError(
+                f"run {run_id}: cannot read the initial packet: {error}"
+            ) from error
+        if hashlib.sha256(packet_bytes).hexdigest() != initial["hash"]:
+            raise WorkflowError(
+                f"run {run_id}: initial packet disagrees with its recorded "
+                f"hash"
+            )
+        pristine = self._initial_seed_state(
+            run_id, bound, state["workflow_digest"], commit, args
+        )
+        compiled = self._compile_packet(
+            bound, self._get_stage(bound, first_stage), pristine,
+            run_dir, [], iteration=0,
+        )
+        if compiled["path"] != packet_path \
+                or compiled["hash"] != initial["hash"] \
+                or compiled["bytes"] != packet_bytes:
+            raise WorkflowError(
+                f"run {run_id}: initial packet does not match the bound "
+                f"workflow and pristine seed state"
+            )
+        packet = {
+            "path": packet_path,
+            "stage": initial["stage"],
+            "iteration": initial["iteration"],
+            "hash": initial["hash"],
+        }
+        expected = _canonical_json_bytes(self._bootstrap_response(
+            bound, commit, args, state, packet
+        ))
+        if payload != expected:
+            raise WorkflowError(
+                f"run {run_id}: bootstrap.json is not the canonical response "
+                f"for the immutable run evidence"
+            )
+        return payload
+
+    def _verify_seed_replay_state(
+        self, workflow: dict[str, Any], state: dict[str, Any]
+    ) -> None:
+        """Reject structurally or historically inconsistent progressed state."""
+        run_id = state["run_id"]
+        stages = {stage["id"]: stage for stage in workflow["stages"]}
+        stage_ids = set(stages)
+        allowed_stages = stage_ids | {ACCEPTED, BLOCKED}
+        packets = state.get("packet_hashes")
+        results = state.get("result_hashes")
+        transitions = state.get("transitions")
+        stage_iterations = state.get("stage_iterations")
+        stage_failures = state.get("stage_failures")
+        if not isinstance(packets, list) or not packets \
+                or not isinstance(results, list) \
+                or not isinstance(transitions, list) \
+                or not isinstance(stage_iterations, dict) \
+                or not isinstance(stage_failures, dict):
+            raise WorkflowError(
+                f"run {run_id}: state history has an invalid structure"
+            )
+        if type(state.get("iteration")) is not int \
+                or state["iteration"] != len(packets):
+            raise WorkflowError(
+                f"run {run_id}: state iteration disagrees with packet history"
+            )
+        if len(results) != len(transitions):
+            raise WorkflowError(
+                f"run {run_id}: result and transition histories disagree"
+            )
+
+        run_dir = self.run_dir(run_id)
+        packets_dir = run_dir / "packets"
+        results_dir = run_dir / "results"
+        if packets_dir.is_symlink() or results_dir.is_symlink():
+            raise WorkflowError(
+                f"run {run_id}: packet or result directory is a symlink"
+            )
+        counts: dict[str, int] = {}
+        for record in packets:
+            if not isinstance(record, dict):
+                raise WorkflowError(
+                    f"run {run_id}: packet history contains a non-object"
+                )
+            stage = record.get("stage")
+            iteration = record.get("iteration")
+            if stage not in stage_ids or type(iteration) is not int \
+                    or iteration != counts.get(stage, 0) \
+                    or not _is_sha256(record.get("hash")):
+                raise WorkflowError(
+                    f"run {run_id}: packet history is inconsistent"
+                )
+            expected_path = (
+                packets_dir / f"{stage}-{iteration:04d}.txt"
+            ).relative_to(self.repo_root).as_posix()
+            if record.get("path") != expected_path:
+                raise WorkflowError(
+                    f"run {run_id}: packet history has an invalid path"
+                )
+            path = self.repo_root / expected_path
+            if path.is_symlink() or not path.is_file():
+                raise WorkflowError(
+                    f"run {run_id}: recorded packet is missing or symlinked"
+                )
+            try:
+                actual = hashlib.sha256(path.read_bytes()).hexdigest()
+            except OSError as error:
+                raise WorkflowError(
+                    f"run {run_id}: cannot read recorded packet: {error}"
+                ) from error
+            if actual != record["hash"]:
+                raise WorkflowError(
+                    f"run {run_id}: recorded packet hash is inconsistent"
+                )
+            counts[stage] = iteration + 1
+        if stage_iterations != counts:
+            raise WorkflowError(
+                f"run {run_id}: stage iteration counts disagree with packets"
+            )
+        for stage, count in stage_failures.items():
+            if stage not in stage_ids or type(count) is not int or count < 0:
+                raise WorkflowError(
+                    f"run {run_id}: stage failure counts are inconsistent"
+                )
+
+        expected_failures: dict[str, int] = {}
+        for index, (result, transition) in enumerate(zip(results, transitions)):
+            packet = packets[index]
+            if not isinstance(result, dict) or not isinstance(transition, dict) \
+                    or result.get("stage") != packet["stage"] \
+                    or result.get("iteration") != packet["iteration"] \
+                    or transition.get("from") != packet["stage"] \
+                    or transition.get("to") not in allowed_stages \
+                    or not _is_sha256(result.get("hash")):
+                raise WorkflowError(
+                    f"run {run_id}: result or transition history is inconsistent"
+                )
+            expected_path = (
+                results_dir
+                / f"{packet['stage']}-{packet['iteration']:04d}.json"
+            ).relative_to(self.repo_root).as_posix()
+            if result.get("path") != expected_path:
+                raise WorkflowError(
+                    f"run {run_id}: result history has an invalid path"
+                )
+            path = self.repo_root / expected_path
+            if path.is_symlink() or not path.is_file():
+                raise WorkflowError(
+                    f"run {run_id}: recorded result is missing or symlinked"
+                )
+            try:
+                actual = hashlib.sha256(path.read_bytes()).hexdigest()
+            except OSError as error:
+                raise WorkflowError(
+                    f"run {run_id}: cannot read recorded result: {error}"
+                ) from error
+            if actual != result["hash"]:
+                raise WorkflowError(
+                    f"run {run_id}: recorded result hash is inconsistent"
+                )
+            body = _read_json(path)
+            stage = stages[packet["stage"]]
+            _validate_result(
+                body, self.load_schema(self.schema_name_for(stage)),
+                stage["type"],
+            )
+            disposition = body.get("disposition")
+            if body.get("stage") != packet["stage"] \
+                    or body.get("iteration") != packet["iteration"] \
+                    or result.get("disposition") != disposition \
+                    or transition.get("disposition") != disposition:
+                raise WorkflowError(
+                    f"run {run_id}: result metadata disagrees with its "
+                    f"recorded JSON"
+                )
+            if stage["type"] in (LINEAR, BOUNDED_REVISION):
+                expected_target = (
+                    stage["next"] if disposition == PASS else BLOCKED
+                )
+            elif stage["type"] == EVALUATOR:
+                if disposition == PASS:
+                    expected_failures[stage["id"]] = 0
+                    expected_target = stage["pass_transition"]
+                elif disposition == CHANGES_REQUIRED:
+                    count = expected_failures.get(stage["id"], 0) + 1
+                    expected_failures[stage["id"]] = count
+                    expected_target = (
+                        BLOCKED if count >= stage.get("max_iterations", 3)
+                        else stage["fail_transition"]
+                    )
+                else:
+                    expected_target = BLOCKED
+            else:
+                if disposition == PASS:
+                    expected_failures[stage["id"]] = 0
+                    expected_target = stage["pass_transition"]
+                else:
+                    count = expected_failures.get(stage["id"], 0) + 1
+                    expected_failures[stage["id"]] = count
+                    expected_target = (
+                        BLOCKED if count >= stage.get("max_iterations", 3)
+                        else stage["fail_transition"]
+                    )
+            target = transition["to"]
+            if target != expected_target:
+                raise WorkflowError(
+                    f"run {run_id}: transition target disagrees with its "
+                    f"recorded result"
+                )
+            if target not in (ACCEPTED, BLOCKED):
+                if index + 1 >= len(packets) \
+                        or packets[index + 1]["stage"] != target:
+                    raise WorkflowError(
+                        f"run {run_id}: transition does not lead to its packet"
+                    )
+            elif index != len(transitions) - 1:
+                raise WorkflowError(
+                    f"run {run_id}: terminal transition is not last"
+                )
+        if stage_failures != expected_failures:
+            raise WorkflowError(
+                f"run {run_id}: stage failure counts disagree with results"
+            )
+
+        first_stage = workflow["stages"][0]["id"]
+        if packets[0]["stage"] != first_stage:
+            raise WorkflowError(
+                f"run {run_id}: packet history does not start at {first_stage}"
+            )
+        expected_current = transitions[-1]["to"] if transitions else first_stage
+        if state.get("current_stage") != expected_current:
+            raise WorkflowError(
+                f"run {run_id}: current stage disagrees with transition history"
+            )
+        terminal = expected_current in (ACCEPTED, BLOCKED)
+        if state.get("disposition") != (expected_current if terminal else None):
+            raise WorkflowError(
+                f"run {run_id}: disposition disagrees with current stage"
+            )
+        expected_packets = len(transitions) if terminal else len(transitions) + 1
+        if len(packets) != expected_packets:
+            raise WorkflowError(
+                f"run {run_id}: packet count disagrees with transition history"
+            )
 
     def advance(self, run_id: str, result_path: str | None = None,
                 run_gate: bool = False) -> dict[str, Any]:
@@ -1345,10 +1835,14 @@ class WorkflowEngine:
     def _driver_instructions(
         self, workflow: dict[str, Any], stage: dict[str, Any],
         state: dict[str, Any], packet: dict[str, Any],
+        portable_path: bool = False,
     ) -> str:
         """The exact next command, so no driver has to choose one."""
         run_id = state["run_id"]
-        packet_path = packet["path"]
+        packet_path = (
+            packet["path"].relative_to(self.repo_root).as_posix()
+            if portable_path else str(packet["path"])
+        )
         doc_arg = workflow.get("document_argument")
         doc = state["normalized_args"].get(doc_arg, "<doc-id>") if doc_arg \
             else "<doc-id>"
@@ -1548,14 +2042,37 @@ def _result_bytes(result: dict[str, Any]) -> bytes:
     ).encode("utf-8")
 
 
+def _canonical_json_bytes(value: dict[str, Any]) -> bytes:
+    """Canonical JSON object bytes used for persisted protocol evidence."""
+    return (
+        json.dumps(
+            value, sort_keys=True, indent=2, ensure_ascii=True,
+            allow_nan=False, separators=(",", ": "),
+        ) + "\n"
+    ).encode("utf-8")
+
+
+def _is_sha256(value: Any) -> bool:
+    """Whether value is one lowercase 64-character SHA-256 hex digest."""
+    return (
+        isinstance(value, str) and len(value) == 64
+        and all(char in "0123456789abcdef" for char in value)
+    )
+
+
 def _read_json(path: Path) -> dict[str, Any]:
     """Read a run's JSON, reporting a half-written file as a workflow error."""
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as error:
         raise WorkflowError(f"{path}: invalid JSON: {error}") from error
     except OSError as error:
         raise WorkflowError(f"{path}: cannot read: {error}") from error
+    if not isinstance(value, dict):
+        raise WorkflowError(
+            f"{path}: expected a JSON object, not {type(value).__name__}"
+        )
+    return value
 
 
 def _lf(text: str) -> str:

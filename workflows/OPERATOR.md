@@ -22,7 +22,7 @@ tools/tpt workflow list
 tools/tpt workflow show proper
 ```
 
-### Seed a new run
+### Create or replay a run bootstrap
 
 ```bash
 tools/tpt proper <proper-id> seed [--provider <gpt|claude>]
@@ -34,13 +34,31 @@ Example:
 tools/tpt proper liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost seed --provider gpt
 ```
 
-This creates a run directory under `build/tpt-runs/<run-id>/` and emits the
-first guidance packet. The output includes:
+The first invocation creates a run directory under
+`build/tpt-runs/<run-id>/`, persists the canonical bootstrap response, and
+emits it. Every later identical invocation verifies the run and emits those
+same stored bytes when the repository commit, workflow identity, and normalized
+arguments are unchanged, even after the run has advanced. A repeated seed
+writes no packet, event, result, transition, counter, or state. The output
+includes:
 
+- `bootstrap_version`: the bootstrap protocol version
 - `run_id`: the deterministic run identifier
+- `workflow_id`, `workflow_version`, `workflow_digest`: the bound workflow
+  identity
+- `repo_commit`, `normalized_args`: the other deterministic run inputs
+- `stage`, `iteration`: the original seed-stage packet identity
 - `packet_hash`: SHA-256 of the compiled packet bytes
-- `packet_path`: path to the packet file
-- `instructions`: the driver instructions for the parent agent
+- `packet_path`: repository-relative path to the original packet file
+- `instructions`: the exact next controller action and command
+
+`seed` is not a status or resume command. Use `status` for current state,
+`replay` to verify and reproduce the current packet, and `advance` to perform a
+transition. A repeated seed fails closed if the workflow source, manifest,
+state, bootstrap, or original packet no longer matches the run. Pre-fix runs
+that lack stored bootstrap evidence cannot replay it; continue them with
+`status`, `replay`, or `advance`, or deliberately discard the old run before
+seeding again.
 
 ### Advance a run
 
@@ -202,6 +220,7 @@ Each run has a durable state directory:
 ```
 build/tpt-runs/<run-id>/
     manifest.json          # immutable run metadata
+    bootstrap.json         # immutable canonical seed response bytes
     state.json             # mutable run state
     events.jsonl           # append-only event log
     packets/               # compiled guidance packets
@@ -314,5 +333,5 @@ Passing the checks is necessary, not sufficient. Before it records `ACCEPTED`
 the engine audits the run: every evaluator and gate that ran must last have
 recorded `PASS`, every recorded result and packet must still be present and
 hash as recorded, and no stage's latest result may carry a standing blocking
-finding. A run whose files were edited cannot be accepted; it can only be
-reseeded.
+finding. A run whose files were edited cannot be accepted; discard it
+deliberately before seeding anew.

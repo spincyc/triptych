@@ -391,8 +391,7 @@ def _workflow_seed(
     args = {doc_arg: doc_id}
     if provider is not None:
         args["provider"] = provider
-    result = engine.seed(workflow_id, args)
-    print(json.dumps(result, sort_keys=True, indent=2))
+    sys.stdout.buffer.write(engine.seed_bytes(workflow_id, args))
     return 0
 
 
