@@ -979,7 +979,50 @@ def load(root: Path | None = None) -> Corpus:
     units = _load_units(where, set(profiles), books)
     bindings = _load_bindings(where, events, books)
     gaps = _load_gaps(where, books)
+    _refuse_dangling_anchors(events, units, where)
     return Corpus(profiles, events, units, bindings, gaps, books)
+
+
+def _refuse_dangling_anchors(
+    events: dict[str, Event], units: dict[str, Unit], where: Path
+) -> None:
+    """A relative date's anchor must be something this corpus holds.
+
+    Found by an author, not by a test: a claim reading "forty years after
+    <event>" loaded cleanly and audited cleanly while naming an event that did
+    not exist, so the date said nothing and said it in well-formed YAML. That
+    is `guidance/the-shape.md` §1 inside the apparatus built to catch it, and
+    it is checked here rather than in the audit because a dangling anchor is a
+    structural defect and not a question about the rest of the repository.
+    """
+    known = set(events) | set(units)
+    for kind, holder in (
+        *(("event", event) for event in events.values()),
+        *(("composition unit", unit) for unit in units.values()),
+    ):
+        for claim in holder.claims:
+            relative = claim.date.relative
+            if not relative:
+                continue
+            anchor = relative.get("of")
+            if anchor not in known:
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} is dated relative to "
+                    f"{anchor!r}, which is neither an event nor a composition "
+                    f"unit this corpus holds; a date measured from nothing "
+                    f"states nothing"
+                )
+            unknown = set(relative) - {"of", "statement", "note"}
+            if unknown:
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} relative date: unknown "
+                    f"key(s) {sorted(unknown)}"
+                )
+            if not relative.get("statement"):
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} is dated relative to "
+                    f"{anchor} without saying what the interval is"
+                )
 
 
 # --- Reaching the corpus from another system --------------------------------

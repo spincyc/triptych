@@ -487,6 +487,60 @@ units:
 """,
         )
 
+    def test_a_relative_date_anchored_to_nothing_is_refused(self) -> None:
+        # Found by an author, not by this suite: a claim reading "forty years
+        # after <event>" loaded cleanly and audited cleanly while naming an
+        # event that did not exist, so it stated nothing and stated it in
+        # well-formed YAML. The first real corpus carried one.
+        refuses(
+            self,
+            "a date measured from nothing states nothing",
+            events="""\
+events:
+  - id: e.anchor
+    title: An anchor
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 900, era: bc}}
+  - id: e.measured
+    title: Measured from something that is not there
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: relative
+          relative: {of: e.no-such-anchor, statement: forty years after}
+""",
+        )
+
+    def test_a_relative_date_must_say_what_the_interval_is(self) -> None:
+        refuses(
+            self,
+            "without saying what the interval is",
+            events="""\
+events:
+  - id: e.anchor
+    title: An anchor
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 900, era: bc}}
+  - id: e.measured
+    title: Measured, but from how far
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: relative
+          relative: {of: e.anchor}
+""",
+        )
+
     def test_a_gap_may_not_claim_a_status_assertions_earn(self) -> None:
         refuses(
             self,
