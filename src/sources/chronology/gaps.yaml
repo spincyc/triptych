@@ -9,4 +9,142 @@ schema: triptych-chronology-gaps/v1
 numbering: vulgate
 updated: '2026-08-26'
 
-gaps: []
+gaps:
+  # === type-the-gaps ===================================================
+  - status: undated-in-tradition
+    scope: [{book: Lev}]
+    reason: >-
+      The received Catholic apparatus dates the writing of Leviticus nowhere.
+      The Catholic Encyclopedia has no article on the book - "Leviticus"
+      (09207a) is a stub that refers the introductory questions to
+      "Pentateuch" - and the "Pentateuch" article, which is where the question
+      is actually treated, states authorship and no time: it reports the
+      Biblical Commission's reply of 27 June 1906 that the critics' arguments
+      do not give the right "to maintain that these books have not Moses as
+      their author", and attaches no year, century or expressible period to
+      the act of writing. Moses is an author, not a date. The Anno Mundi and
+      A.C. figures the Haydock edition prints in Exodus date narrated events
+      and must not be borrowed to fill this. Genesis, Exodus, Numbers and
+      Deuteronomy stand under the same silence about composition, but they
+      carry narrated events that are separately dated, so only Leviticus is
+      recorded here.
+    sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001]
+  - status: undated-in-tradition
+    scope: [{book: Ruth}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Ruth" opens its section on the
+      question by refusing it: "The name of the author of the book of Ruth is
+      unknown, and so is also the precise date of its composition." It offers
+      only the unnumbered bound "most likely written before the Babylonian
+      exile", and says the internal data "remain indecisive with regard to the
+      precise date to which its composition should be referred, as clearly
+      appears from the conflicting inferences which have been drawn from them
+      by recent Catholic scholars." No year of any era is printed for the book
+      or for anything in it, and no other ranked source inspected for this
+      corpus supplies one.
+    sources: [artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13276a-df1b3002]
+  - status: undated-in-tradition
+    scope: [{book: Job}]
+    reason: >-
+      The Catholic Encyclopedia's "Job" states the refusal outright: "The
+      author of the book is unknown, neither can the period in which it was
+      written be exactly determined." What it then offers is bounded by
+      reigns and not by years - not earlier than the reign of Solomon, earlier
+      than Ezechiel - and of the Solomonic dating many Catholic investigators
+      hold it says "The proofs, however, are not very convincing." The book's
+      own patriarchal setting is dated by no source inspected for this corpus
+      either. Nothing here is a year, and nothing here should be made into one.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08413a-56b4c047]
+  - status: undated-in-tradition
+    scope: [{book: Prov}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Proverbs" ascribes the principal
+      collections to Solomon and dates nothing: Catholic writers are "wellnigh
+      unanimous in ascribing them to Solomon", yet the article leaves the
+      book's assembly open "at whatever time - either under Ezechias, or as
+      late as Esdras - all the collections embodied in the Book of Proverbs
+      reached their present form and arrangement." The ascription is also
+      expressly partial, most Catholic scholars being free to treat the Agur,
+      Lamuel and "the wise" collections as non-Solomonic, so it could not be
+      carried across the whole book even if it carried a date. It carries none.
+    sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12505b-04e7ea59]
+  - status: undated-in-tradition
+    scope: [{book: Eccles}]
+    reason: >-
+      The Catholic Encyclopedia's "Ecclesiastes" defends the tradition of
+      Solomonic authorship - "we must listen to the voice of tradition, which
+      has always attributed Ecclesiastes to him" - and prints no year. Its one
+      temporal sentence is conditional and relative: "If Solomon wrote
+      Ecclesiastes towards the end of his life, the sombre tone of the book is
+      easily explained." The same article allows a later editorial layer ("It
+      is possible that Ecclesiastes was received into the canon in some such
+      later edition"), so tradition here settles an author and declines a date.
+    sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05244b-2fe7b66b]
+  - status: undated-in-tradition
+    scope: [{book: Cant}]
+    reason: >-
+      The Catholic Encyclopedia's "Canticle of Canticles" reports that
+      "Tradition, in harmony with the superscription, attributes the song to
+      Solomon" and prints no year for it. The nearest thing to a period on the
+      page is not the encyclopedia's own voice but its quotation of De Wette,
+      "The entire series of pictures and relationships and the freshness of
+      the life connect these songs with the age of Solomon"; and of the rival
+      post-exilic proposals the article says only "for all this there is a
+      lack of clear proof." An author and an ascribed age, with no date in
+      either.
+    sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03302a-0e74e2ad]
+  - status: undated-in-tradition
+    scope: [{book: Lam}]
+    reason: >-
+      The Catholic Encyclopedia has no article on the Lamentations; they are
+      treated inside "Jeremias", which gives them an author and an occasion
+      and no year. What it reports is the Septuagint superscription - "after
+      Israel was carried into captivity, and Jerusalem was desolate, that
+      Jeremias the prophet sat weeping" - and it is careful that this
+      inscription "was not written by the author of Lamentations", so it is
+      evidence of a setting and not a date of writing. The book itself carries
+      no chronological statement, and no source inspected for this corpus
+      dates any part of it.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
+  - status: undated-in-tradition
+    scope: [{book: Bar}]
+    reason: >-
+      The Catholic Encyclopedia's "Baruch" accepts the book's own statement
+      that it "was written by Baruch at Babylon in the fifth year after
+      Jerusalem had been burned by the Chaldeans", and then declines to turn
+      that into a year. The article prints 599 B.C. for the plundering of the
+      temple and 588 B.C. for the fall of the Holy City elsewhere on the same
+      page and never computes the fifth year from either, so no B.C. figure
+      for this book stands in any source inspected for this corpus. Chapter 6,
+      the Epistle of Jeremias, which the article says is "truly distinct from
+      the rest of the work", is given no date of its own either.
+    sources: [artifact.catholic-encyclopedia.volume-2.new-york-1907.newadvent-02319c-ccd7f7e3]
+  - status: undated-in-tradition
+    scope: [{book: Jdt}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Judith" (Hugh Pope, vol. 8, 1910,
+      newadvent.org/cathen/08554a.htm) was read in full for this corpus and
+      has no section on authorship or on the date of composition at all: its
+      headings are History, The text, Historicity and Canonicity. Its
+      conservative position - that "the book is perfectly historical and deals
+      with facts which actually took place" - is a claim about historicity and
+      not about when the book was written, and the only dating language on the
+      page belongs to the view it attributes to "Some few Catholic writers",
+      that the story "was committed to writing at a period long subsequent to
+      the facts." No year is stated for the writing, and none for the events
+      the book narrates. The article is not yet registered in this
+      repository's source library, which is why this row names no record.
+  - status: undated-in-tradition
+    scope: [{book: Amos}]
+    reason: >-
+      The Catholic Encyclopedia's "Amos" upholds the traditional ascription -
+      "all scholars maintain the correctness of the traditional view which
+      refers the book of Amos to the Judean prophet of that name" - and gives
+      the writing no year, saying only that the prophet withdrew to Juda
+      "where at leisure he arranged his oracles in their well-planned
+      disposition." Nor does it date the ministry: "Amos's mission to Israel
+      was but a temporary one. It extended apparently from two years before to
+      a few years after an earthquake, the exact date of which is unknown."
+      The one pair of numerals on the page, "Jeroboam II (c. 781-741 B.C.)",
+      dates a king's reign and must never be read as the date of the book.
+    sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01435a-42725cc2]

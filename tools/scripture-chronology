@@ -313,8 +313,13 @@ def _render_query(payload: dict) -> int:
         return 0
     for item in payload["assertions"]:
         reach = "inherited" if item["inherited"] else "direct"
+        # The source's own words where it left any, because "01-14" is the
+        # machine's reading of "the 14th of Nisan, on a Friday" and only one of
+        # the two is what anybody wrote down. The structured form stays the
+        # truth and stays in --json.
+        shown = item["label"] or item["date"]
         print(
-            f"{item['relation']}\t{item['date']}\t{item['disposition']}"
+            f"{item['relation']}\t{shown}\t{item['disposition']}"
             f"\t{reach}\t{item['subject']}\t{item['title']}"
         )
     return 0

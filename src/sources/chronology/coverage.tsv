@@ -2,31 +2,59 @@
 # One row a maximal run of consecutive verses the corpus answers alike,
 # in canonical vulgate numbering. guidance/scripture-chronology.md §13.
 locus	verses	status	relations	subjects
-Gen.1.1-31	31	research-pending		
-Gen.2.1-25	25	research-pending		
+Gen.1.1-25	25	dated	narrated-event	israel.primeval.creation
+Gen.1.26-31	6	dated	narrated-event	israel.primeval.creation,israel.primeval.creation-of-adam
+Gen.2.1-3	3	dated	narrated-event	israel.primeval.creation
+Gen.2.4-6	3	research-pending		
+Gen.2.7-25	19	dated	narrated-event	israel.primeval.creation-of-adam
 Gen.3.1-24	24	research-pending		
-Gen.4.1-26	26	research-pending		
-Gen.5.1-31	31	research-pending		
-Gen.6.1-22	22	research-pending		
-Gen.7.1-24	24	research-pending		
-Gen.8.1-22	22	research-pending		
+Gen.4.1-24	24	research-pending		
+Gen.4.25-26	2	dated	narrated-event	israel.primeval.birth-of-seth
+Gen.5.1-2	2	research-pending		
+Gen.5.3-4	2	dated	narrated-event	israel.primeval.birth-of-seth
+Gen.5.5	1	dated	narrated-event	israel.primeval.death-of-adam
+Gen.5.6-31	26	research-pending		
+Gen.6.1-2	2	research-pending		
+Gen.6.3	1	dated	narrated-event	israel.primeval.noe-warned
+Gen.6.4-12	9	research-pending		
+Gen.6.13-22	10	dated	narrated-event	israel.primeval.noe-warned
+Gen.7.1-10	10	dated	narrated-event	israel.primeval.deluge
+Gen.7.11	1	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-begins
+Gen.7.12	1	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-rain
+Gen.7.13-16	4	dated	narrated-event	israel.primeval.deluge
+Gen.7.17	1	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-rain
+Gen.7.18-24	7	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-waters-prevail
+Gen.8.1-2	2	dated	narrated-event	israel.primeval.deluge
+Gen.8.3-12	10	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-waters-abate
+Gen.8.13-14	2	dated	narrated-event	israel.primeval.deluge,israel.primeval.deluge-ends
+Gen.8.15-22	8	dated	narrated-event	israel.primeval.deluge
 Gen.9.1-29	29	research-pending		
 Gen.10.1-32	32	research-pending		
-Gen.11.1-32	32	research-pending		
-Gen.12.1-20	20	research-pending		
+Gen.11.1-9	9	research-pending		
+Gen.11.10	1	dated	narrated-event	israel.patriarchs.begetting-of-arphaxad
+Gen.11.11-25	15	research-pending		
+Gen.11.26-27	2	dated	narrated-event	israel.patriarchs.birth-of-abram
+Gen.11.28-32	5	research-pending		
+Gen.12.1-4	4	dated	narrated-event	israel.patriarchs.call-of-abram
+Gen.12.5	1	dated	narrated-event	israel.patriarchs.abram-enters-chanaan,israel.patriarchs.call-of-abram
+Gen.12.6-9	4	dated	narrated-event	israel.patriarchs.abram-enters-chanaan
+Gen.12.10-20	11	research-pending		
 Gen.13.1-18	18	research-pending		
 Gen.14.1-24	24	research-pending		
 Gen.15.1-21	21	research-pending		
 Gen.16.1-16	16	research-pending		
-Gen.17.1-27	27	research-pending		
+Gen.17.1-27	27	dated	narrated-event	israel.patriarchs.covenant-of-circumcision
 Gen.18.1-33	33	research-pending		
 Gen.19.1-38	38	research-pending		
 Gen.20.1-18	18	research-pending		
-Gen.21.1-34	34	research-pending		
+Gen.21.1-8	8	dated	narrated-event	israel.patriarchs.birth-of-isaac
+Gen.21.9-34	26	research-pending		
 Gen.22.1-24	24	research-pending		
 Gen.23.1-20	20	research-pending		
 Gen.24.1-67	67	research-pending		
-Gen.25.1-34	34	research-pending		
+Gen.25.1-18	18	research-pending		
+Gen.25.19-26	8	dated	narrated-event	israel.patriarchs.birth-of-jacob
+Gen.25.27-34	8	research-pending		
 Gen.26.1-35	35	research-pending		
 Gen.27.1-46	46	research-pending		
 Gen.28.1-22	22	research-pending		
@@ -47,35 +75,43 @@ Gen.42.1-38	38	research-pending
 Gen.43.1-34	34	research-pending		
 Gen.44.1-34	34	research-pending		
 Gen.45.1-28	28	research-pending		
-Gen.46.1-34	34	research-pending		
-Gen.47.1-31	31	research-pending		
+Gen.46.1-34	34	dated	narrated-event	israel.egypt.descent
+Gen.47.1-12	12	dated	narrated-event	israel.egypt.descent
+Gen.47.13-31	19	research-pending		
 Gen.48.1-22	22	research-pending		
 Gen.49.1-32	32	research-pending		
 Gen.50.1-25	25	research-pending		
-Ex.1.1-22	22	research-pending		
-Ex.2.1-25	25	research-pending		
-Ex.3.1-22	22	research-pending		
-Ex.4.1-31	31	research-pending		
-Ex.5.1-23	23	research-pending		
+Ex.1.1-22	22	dated	narrated-event	israel.egypt.sojourn
+Ex.2.1-10	10	dated	narrated-event	israel.exodus.birth-of-moses
+Ex.2.11-25	15	research-pending		
+Ex.3.1-22	22	dated	narrated-event	israel.exodus.burning-bush
+Ex.4.1-17	17	dated	narrated-event	israel.exodus.burning-bush
+Ex.4.18-31	14	research-pending		
+Ex.5.1-23	23	dated	narrated-event	israel.exodus.moses-before-pharao
 Ex.6.1-30	30	research-pending		
-Ex.7.1-25	25	research-pending		
+Ex.7.1-5	5	research-pending		
+Ex.7.6-13	8	dated	narrated-event	israel.exodus.moses-before-pharao
+Ex.7.14-25	12	research-pending		
 Ex.8.1-32	32	research-pending		
 Ex.9.1-35	35	research-pending		
 Ex.10.1-29	29	research-pending		
 Ex.11.1-10	10	research-pending		
-Ex.12.1-51	51	research-pending		
-Ex.13.1-22	22	research-pending		
-Ex.14.1-31	31	research-pending		
+Ex.12.1-39	39	dated	narrated-event	israel.exodus.the-exodus
+Ex.12.40-41	2	dated	narrated-event	israel.egypt.sojourn,israel.exodus.the-exodus
+Ex.12.42-51	10	dated	narrated-event	israel.exodus.the-exodus
+Ex.13.1-22	22	dated	narrated-event	israel.exodus.the-exodus
+Ex.14.1-31	31	dated	narrated-event	israel.exodus.the-exodus
 Ex.15.1-27	27	research-pending		
-Ex.16.1-36	36	research-pending		
+Ex.16.1-36	36	dated	narrated-event	israel.wilderness.manna
 Ex.17.1-16	16	research-pending		
 Ex.18.1-27	27	research-pending		
-Ex.19.1-25	25	research-pending		
+Ex.19.1-25	25	dated	narrated-event	israel.wilderness.arrival-at-sinai
 Ex.20.1-26	26	research-pending		
 Ex.21.1-36	36	research-pending		
 Ex.22.1-31	31	research-pending		
 Ex.23.1-33	33	research-pending		
-Ex.24.1-18	18	research-pending		
+Ex.24.1-11	11	research-pending		
+Ex.24.12-18	7	dated	narrated-event	israel.wilderness.forty-days-on-the-mount
 Ex.25.1-40	40	research-pending		
 Ex.26.1-37	37	research-pending		
 Ex.27.1-21	21	research-pending		
@@ -83,42 +119,46 @@ Ex.28.1-43	43	research-pending
 Ex.29.1-46	46	research-pending		
 Ex.30.1-38	38	research-pending		
 Ex.31.1-18	18	research-pending		
-Ex.32.1-35	35	research-pending		
+Ex.32.1-35	35	dated	narrated-event	israel.wilderness.golden-calf
 Ex.33.1-23	23	research-pending		
-Ex.34.1-35	35	research-pending		
+Ex.34.1-26	26	research-pending		
+Ex.34.27-28	2	dated	narrated-event	israel.wilderness.forty-days-on-the-mount
+Ex.34.29-35	7	research-pending		
 Ex.35.1-35	35	research-pending		
 Ex.36.1-38	38	research-pending		
 Ex.37.1-29	29	research-pending		
 Ex.38.1-31	31	research-pending		
 Ex.39.1-43	43	research-pending		
-Ex.40.1-36	36	research-pending		
-Lev.1.1-17	17	research-pending		
-Lev.2.1-16	16	research-pending		
-Lev.3.1-17	17	research-pending		
-Lev.4.1-35	35	research-pending		
-Lev.5.1-19	19	research-pending		
-Lev.6.1-30	30	research-pending		
-Lev.7.1-38	38	research-pending		
-Lev.8.1-36	36	research-pending		
-Lev.9.1-24	24	research-pending		
-Lev.10.1-20	20	research-pending		
-Lev.11.1-47	47	research-pending		
-Lev.12.1-8	8	research-pending		
-Lev.13.1-59	59	research-pending		
-Lev.14.1-57	57	research-pending		
-Lev.15.1-33	33	research-pending		
-Lev.16.1-34	34	research-pending		
-Lev.17.1-16	16	research-pending		
-Lev.18.1-30	30	research-pending		
-Lev.19.1-37	37	research-pending		
-Lev.20.1-27	27	research-pending		
-Lev.21.1-24	24	research-pending		
-Lev.22.1-33	33	research-pending		
-Lev.23.1-44	44	research-pending		
-Lev.24.1-23	23	research-pending		
-Lev.25.1-55	55	research-pending		
-Lev.26.1-45	45	research-pending		
-Lev.27.1-34	34	research-pending		
+Ex.40.1-13	13	research-pending		
+Ex.40.14-33	20	dated	narrated-event	israel.wilderness.erection-of-the-tabernacle
+Ex.40.34-36	3	research-pending		
+Lev.1.1-17	17	undated-in-tradition		
+Lev.2.1-16	16	undated-in-tradition		
+Lev.3.1-17	17	undated-in-tradition		
+Lev.4.1-35	35	undated-in-tradition		
+Lev.5.1-19	19	undated-in-tradition		
+Lev.6.1-30	30	undated-in-tradition		
+Lev.7.1-38	38	undated-in-tradition		
+Lev.8.1-36	36	undated-in-tradition		
+Lev.9.1-24	24	undated-in-tradition		
+Lev.10.1-20	20	undated-in-tradition		
+Lev.11.1-47	47	undated-in-tradition		
+Lev.12.1-8	8	undated-in-tradition		
+Lev.13.1-59	59	undated-in-tradition		
+Lev.14.1-57	57	undated-in-tradition		
+Lev.15.1-33	33	undated-in-tradition		
+Lev.16.1-34	34	undated-in-tradition		
+Lev.17.1-16	16	undated-in-tradition		
+Lev.18.1-30	30	undated-in-tradition		
+Lev.19.1-37	37	undated-in-tradition		
+Lev.20.1-27	27	undated-in-tradition		
+Lev.21.1-24	24	undated-in-tradition		
+Lev.22.1-33	33	undated-in-tradition		
+Lev.23.1-44	44	undated-in-tradition		
+Lev.24.1-23	23	undated-in-tradition		
+Lev.25.1-55	55	undated-in-tradition		
+Lev.26.1-45	45	undated-in-tradition		
+Lev.27.1-34	34	undated-in-tradition		
 Num.1.1-54	54	research-pending		
 Num.2.1-34	34	research-pending		
 Num.3.1-51	51	research-pending		
@@ -138,7 +178,9 @@ Num.16.1-50	50	research-pending
 Num.17.1-13	13	research-pending		
 Num.18.1-32	32	research-pending		
 Num.19.1-22	22	research-pending		
-Num.20.1-30	30	research-pending		
+Num.20.1-21	21	research-pending		
+Num.20.22-29	8	dated	narrated-event	israel.wilderness.death-of-aaron
+Num.20.30	1	research-pending		
 Num.21.1-35	35	research-pending		
 Num.22.1-41	41	research-pending		
 Num.23.1-30	30	research-pending		
@@ -150,20 +192,37 @@ Num.28.1-31	31	research-pending
 Num.29.1-39	39	research-pending		
 Num.30.1-17	17	research-pending		
 Num.31.1-54	54	research-pending		
-Num.32.1-42	42	research-pending		
-Num.33.1-56	56	research-pending		
+Num.32.1-12	12	research-pending		
+Num.32.13	1	dated	narrated-event	israel.wilderness.forty-years-in-the-desert
+Num.32.14-42	29	research-pending		
+Num.33.1-2	2	research-pending		
+Num.33.3-5	3	dated	narrated-event	israel.exodus.the-exodus
+Num.33.6-37	32	research-pending		
+Num.33.38-39	2	dated	narrated-event	israel.wilderness.death-of-aaron
+Num.33.40-56	17	research-pending		
 Num.34.1-29	29	research-pending		
 Num.35.1-34	34	research-pending		
 Num.36.1-13	13	research-pending		
-Deut.1.1-46	46	research-pending		
+Deut.1.1-5	5	dated	narrated-event	israel.wilderness.moses-final-discourse
+Deut.1.6-46	41	research-pending		
 Deut.2.1-37	37	research-pending		
 Deut.3.1-29	29	research-pending		
 Deut.4.1-49	49	research-pending		
 Deut.5.1-33	33	research-pending		
 Deut.6.1-25	25	research-pending		
 Deut.7.1-26	26	research-pending		
-Deut.8.1-20	20	research-pending		
-Deut.9.1-29	29	research-pending		
+Deut.8.1	1	research-pending		
+Deut.8.2	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Deut.8.3	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert,israel.wilderness.manna
+Deut.8.4	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Deut.8.5-20	16	research-pending		
+Deut.9.1-7	7	research-pending		
+Deut.9.8	1	dated	retrospective-event	israel.wilderness.golden-calf
+Deut.9.9-11	3	dated	retrospective-event	israel.wilderness.forty-days-on-the-mount,israel.wilderness.golden-calf
+Deut.9.12-17	6	dated	retrospective-event	israel.wilderness.golden-calf
+Deut.9.18	1	dated	retrospective-event	israel.wilderness.forty-days-on-the-mount,israel.wilderness.golden-calf
+Deut.9.19-21	3	dated	retrospective-event	israel.wilderness.golden-calf
+Deut.9.22-29	8	research-pending		
 Deut.10.1-22	22	research-pending		
 Deut.11.1-32	32	research-pending		
 Deut.12.1-32	32	research-pending		
@@ -183,17 +242,23 @@ Deut.25.1-19	19	research-pending
 Deut.26.1-19	19	research-pending		
 Deut.27.1-26	26	research-pending		
 Deut.28.1-68	68	research-pending		
-Deut.29.1-29	29	research-pending		
+Deut.29.1-4	4	research-pending		
+Deut.29.5	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Deut.29.6-29	24	research-pending		
 Deut.30.1-20	20	research-pending		
 Deut.31.1-30	30	research-pending		
 Deut.32.1-52	52	research-pending		
 Deut.33.1-29	29	research-pending		
-Deut.34.1-12	12	research-pending		
+Deut.34.1-12	12	dated	narrated-event	israel.wilderness.death-of-moses
 Jos.1.1-18	18	research-pending		
 Jos.2.1-24	24	research-pending		
-Jos.3.1-17	17	research-pending		
-Jos.4.1-25	25	research-pending		
-Jos.5.1-16	16	research-pending		
+Jos.3.1-17	17	dated	narrated-event	israel.conquest.crossing-of-the-jordan
+Jos.4.1-25	25	dated	narrated-event	israel.conquest.crossing-of-the-jordan
+Jos.5.1-5	5	research-pending		
+Jos.5.6	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Jos.5.7-9	3	research-pending		
+Jos.5.10-12	3	dated	narrated-event	israel.conquest.first-pasch-in-the-land
+Jos.5.13-16	4	research-pending		
 Jos.6.1-27	27	research-pending		
 Jos.7.1-26	26	research-pending		
 Jos.8.1-35	35	research-pending		
@@ -202,7 +267,8 @@ Jos.10.1-43	43	research-pending
 Jos.11.1-23	23	research-pending		
 Jos.12.1-24	24	research-pending		
 Jos.13.1-33	33	research-pending		
-Jos.14.1-15	15	research-pending		
+Jos.14.1-5	5	research-pending		
+Jos.14.6-15	10	dated	narrated-event	israel.conquest.calebs-inheritance
 Jos.15.1-63	63	research-pending		
 Jos.16.1-10	10	research-pending		
 Jos.17.1-18	18	research-pending		
@@ -212,101 +278,136 @@ Jos.20.1-9	9	research-pending
 Jos.21.1-43	43	research-pending		
 Jos.22.1-34	34	research-pending		
 Jos.23.1-16	16	research-pending		
-Jos.24.1-33	33	research-pending		
+Jos.24.1	1	research-pending		
+Jos.24.2-3	2	dated	retrospective-event	israel.patriarchs.call-of-abram
+Jos.24.4	1	dated	retrospective-event	israel.egypt.descent
+Jos.24.5-10	6	research-pending		
+Jos.24.11	1	dated	retrospective-event	israel.conquest.crossing-of-the-jordan
+Jos.24.12-33	22	research-pending		
 Judg.1.1-36	36	research-pending		
-Judg.2.1-23	23	research-pending		
-Judg.3.1-31	31	research-pending		
-Judg.4.1-24	24	research-pending		
-Judg.5.1-32	32	research-pending		
-Judg.6.1-40	40	research-pending		
-Judg.7.1-25	25	research-pending		
-Judg.8.1-35	35	research-pending		
-Judg.9.1-57	57	research-pending		
-Judg.10.1-18	18	research-pending		
-Judg.11.1-40	40	research-pending		
-Judg.12.1-15	15	research-pending		
-Judg.13.1-25	25	research-pending		
-Judg.14.1-20	20	research-pending		
-Judg.15.1-20	20	research-pending		
-Judg.16.1-31	31	research-pending		
+Judg.2.1-10	10	research-pending		
+Judg.2.11-23	13	dated	narrated-event	israel.judges.period
+Judg.3.1-31	31	dated	narrated-event	israel.judges.period
+Judg.4.1-24	24	dated	narrated-event	israel.judges.period
+Judg.5.1-32	32	dated	narrated-event	israel.judges.period
+Judg.6.1-40	40	dated	narrated-event	israel.judges.period
+Judg.7.1-25	25	dated	narrated-event	israel.judges.period
+Judg.8.1-35	35	dated	narrated-event	israel.judges.period
+Judg.9.1-57	57	dated	narrated-event	israel.judges.period
+Judg.10.1-18	18	dated	narrated-event	israel.judges.period
+Judg.11.1-25	25	dated	narrated-event	israel.judges.period
+Judg.11.26	1	dated	narrated-event,retrospective-event	israel.judges.jephte-three-hundred-years,israel.judges.period
+Judg.11.27-40	14	dated	narrated-event	israel.judges.period
+Judg.12.1-15	15	dated	narrated-event	israel.judges.period
+Judg.13.1-25	25	dated	narrated-event	israel.judges.period
+Judg.14.1-20	20	dated	narrated-event	israel.judges.period
+Judg.15.1-20	20	dated	narrated-event	israel.judges.period
+Judg.16.1-31	31	dated	narrated-event	israel.judges.period
 Judg.17.1-13	13	research-pending		
 Judg.18.1-31	31	research-pending		
 Judg.19.1-30	30	research-pending		
 Judg.20.1-48	48	research-pending		
 Judg.21.1-24	24	research-pending		
-Ruth.1.1-22	22	research-pending		
-Ruth.2.1-23	23	research-pending		
-Ruth.3.1-18	18	research-pending		
-Ruth.4.1-22	22	research-pending		
+Ruth.1.1-22	22	undated-in-tradition		
+Ruth.2.1-23	23	undated-in-tradition		
+Ruth.3.1-18	18	undated-in-tradition		
+Ruth.4.1-22	22	undated-in-tradition		
 1Kings.1.1-28	28	research-pending		
 1Kings.2.1-36	36	research-pending		
 1Kings.3.1-21	21	research-pending		
-1Kings.4.1-22	22	research-pending		
+1Kings.4.1-11	11	research-pending		
+1Kings.4.12-18	7	dated	narrated-event	israel.judges.heli-judgeship
+1Kings.4.19-22	4	research-pending		
 1Kings.5.1-12	12	research-pending		
 1Kings.6.1-21	21	research-pending		
-1Kings.7.1-17	17	research-pending		
+1Kings.7.1-2	2	dated	narrated-event	israel.judges.ark-at-cariathiarim
+1Kings.7.3-14	12	research-pending		
+1Kings.7.15-17	3	dated	narrated-event	israel.judges.period
 1Kings.8.1-22	22	research-pending		
 1Kings.9.1-27	27	research-pending		
-1Kings.10.1-27	27	research-pending		
-1Kings.11.1-15	15	research-pending		
+1Kings.10.1-16	16	research-pending		
+1Kings.10.17-27	11	dated	narrated-event	israel.monarchy.saul-accession
+1Kings.11.1-13	13	research-pending		
+1Kings.11.14-15	2	dated	narrated-event	israel.monarchy.saul-accession
 1Kings.12.1-25	25	research-pending		
-1Kings.13.1-23	23	research-pending		
-1Kings.14.1-52	52	research-pending		
-1Kings.15.1-35	35	research-pending		
-1Kings.16.1-23	23	research-pending		
-1Kings.17.1-58	58	research-pending		
-1Kings.18.1-30	30	research-pending		
-1Kings.19.1-24	24	research-pending		
-1Kings.20.1-43	43	research-pending		
-1Kings.21.1-15	15	research-pending		
-1Kings.22.1-23	23	research-pending		
-1Kings.23.1-28	28	research-pending		
-1Kings.24.1-23	23	research-pending		
-1Kings.25.1-44	44	research-pending		
-1Kings.26.1-25	25	research-pending		
-1Kings.27.1-12	12	research-pending		
-1Kings.28.1-25	25	research-pending		
-1Kings.29.1-11	11	research-pending		
-1Kings.30.1-31	31	research-pending		
-1Kings.31.1-13	13	research-pending		
+1Kings.13.1-23	23	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.14.1-52	52	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.15.1-35	35	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.16.1-23	23	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.17.1-58	58	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.18.1-30	30	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.19.1-24	24	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.20.1-43	43	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.21.1-9	9	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.21.10-15	6	dated	narrated-event	israel.monarchy.david-at-geth,israel.monarchy.saul-reign
+1Kings.22.1-23	23	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.23.1-23	23	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.23.24-28	5	dated	narrated-event	israel.monarchy.david-in-the-desert-of-maon,israel.monarchy.saul-reign
+1Kings.24.1-23	23	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.25.1-42	42	dated	narrated-event	israel.monarchy.nabal-in-the-wilderness-of-maon,israel.monarchy.saul-reign
+1Kings.25.43-44	2	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.26.1-25	25	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.27.1-12	12	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.28.1-25	25	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.29.1-11	11	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.30.1-31	31	dated	narrated-event	israel.monarchy.saul-reign
+1Kings.31.1-13	13	dated	narrated-event	israel.monarchy.saul-reign
 2Kings.1.1-27	27	research-pending		
-2Kings.2.1-32	32	research-pending		
+2Kings.2.1-4	4	dated	narrated-event	israel.monarchy.david-accession
+2Kings.2.5-32	28	research-pending		
 2Kings.3.1-39	39	research-pending		
 2Kings.4.1-12	12	research-pending		
-2Kings.5.1-25	25	research-pending		
-2Kings.6.1-23	23	research-pending		
-2Kings.7.1-29	29	research-pending		
-2Kings.8.1-18	18	research-pending		
-2Kings.9.1-13	13	research-pending		
-2Kings.10.1-19	19	research-pending		
-2Kings.11.1-27	27	research-pending		
-2Kings.12.1-31	31	research-pending		
-2Kings.13.1-39	39	research-pending		
-2Kings.14.1-33	33	research-pending		
-2Kings.15.1-37	37	research-pending		
-2Kings.16.1-23	23	research-pending		
-2Kings.17.1-29	29	research-pending		
-2Kings.18.1-33	33	research-pending		
-2Kings.19.1-43	43	research-pending		
-2Kings.20.1-26	26	research-pending		
-2Kings.21.1-22	22	research-pending		
-2Kings.22.1-51	51	research-pending		
-2Kings.23.1-39	39	research-pending		
-2Kings.24.1-25	25	research-pending		
-3Kings.1.1-53	53	inherited	composition	composition.third-book-of-kings
-3Kings.2.1-46	46	inherited	composition	composition.third-book-of-kings
-3Kings.3.1-28	28	inherited	composition	composition.third-book-of-kings
-3Kings.4.1-34	34	inherited	composition	composition.third-book-of-kings
-3Kings.5.1-18	18	inherited	composition	composition.third-book-of-kings
-3Kings.6.1-38	38	inherited	composition	composition.third-book-of-kings
-3Kings.7.1-51	51	inherited	composition	composition.third-book-of-kings
-3Kings.8.1-66	66	inherited	composition	composition.third-book-of-kings
-3Kings.9.1-28	28	inherited	composition	composition.third-book-of-kings
-3Kings.10.1-29	29	inherited	composition	composition.third-book-of-kings
-3Kings.11.1-43	43	inherited	composition	composition.third-book-of-kings
-3Kings.12.1-33	33	inherited	composition	composition.third-book-of-kings
+2Kings.5.1-5	5	dated	narrated-event	israel.monarchy.david-accession,israel.monarchy.david-reign
+2Kings.5.6-9	4	dated	narrated-event	israel.monarchy.david-capture-of-sion,israel.monarchy.david-reign
+2Kings.5.10-25	16	dated	narrated-event	israel.monarchy.david-reign
+2Kings.6.1-23	23	dated	narrated-event	israel.monarchy.david-reign
+2Kings.7.1-29	29	dated	narrated-event	israel.monarchy.david-reign
+2Kings.8.1-18	18	dated	narrated-event	israel.monarchy.david-reign
+2Kings.9.1-13	13	dated	narrated-event	israel.monarchy.david-reign
+2Kings.10.1-19	19	dated	narrated-event	israel.monarchy.david-reign
+2Kings.11.1-27	27	dated	narrated-event	israel.monarchy.david-reign,israel.monarchy.david-repentance
+2Kings.12.1-25	25	dated	narrated-event	israel.monarchy.david-reign,israel.monarchy.david-repentance
+2Kings.12.26-31	6	dated	narrated-event	israel.monarchy.david-reign
+2Kings.13.1-39	39	dated	narrated-event	israel.monarchy.david-reign
+2Kings.14.1-33	33	dated	narrated-event	israel.monarchy.david-reign
+2Kings.15.1-6	6	dated	narrated-event	israel.monarchy.absalom-preparations,israel.monarchy.david-reign
+2Kings.15.7-12	6	dated	narrated-event	israel.monarchy.absalom-revolt,israel.monarchy.david-reign
+2Kings.15.13-37	25	dated	narrated-event	israel.monarchy.david-flight-from-absalom,israel.monarchy.david-reign
+2Kings.16.1-14	14	dated	narrated-event	israel.monarchy.david-flight-from-absalom,israel.monarchy.david-reign
+2Kings.16.15-23	9	dated	narrated-event	israel.monarchy.david-reign
+2Kings.17.1-29	29	dated	narrated-event	israel.monarchy.david-reign
+2Kings.18.1-18	18	dated	narrated-event	israel.monarchy.absalom-defeat,israel.monarchy.david-reign
+2Kings.18.19-33	15	dated	narrated-event	israel.monarchy.david-reign
+2Kings.19.1-43	43	dated	narrated-event	israel.monarchy.david-reign
+2Kings.20.1-26	26	dated	narrated-event	israel.monarchy.david-reign
+2Kings.21.1-22	22	dated	narrated-event	israel.monarchy.david-reign
+2Kings.22.1-51	51	dated	narrated-event	israel.monarchy.david-reign
+2Kings.23.1-39	39	dated	narrated-event	israel.monarchy.david-reign
+2Kings.24.1-25	25	dated	narrated-event	israel.monarchy.david-reign
+3Kings.1.1-31	31	inherited	composition	composition.third-book-of-kings
+3Kings.1.32-40	9	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-accession
+3Kings.1.41-53	13	inherited	composition	composition.third-book-of-kings
+3Kings.2.1-9	9	inherited	composition	composition.third-book-of-kings
+3Kings.2.10-11	2	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.david-reign
+3Kings.2.12	1	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-accession,israel.monarchy.solomon-reign
+3Kings.2.13-46	34	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.3.1-28	28	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.4.1-34	34	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.5.1-18	18	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.6.1-2	2	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign,israel.monarchy.temple-begun
+3Kings.6.3-36	34	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.6.37-38	2	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign,israel.monarchy.temple-finished
+3Kings.7.1-51	51	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.8.1-66	66	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.9.1-28	28	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.10.1-29	29	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.11.1-43	43	dated	composition,narrated-event	composition.third-book-of-kings,israel.monarchy.solomon-reign
+3Kings.12.1-20	20	dated	composition,narrated-event	composition.third-book-of-kings,israel.divided-kingdom.division
+3Kings.12.21-33	13	inherited	composition	composition.third-book-of-kings
 3Kings.13.1-34	34	inherited	composition	composition.third-book-of-kings
-3Kings.14.1-31	31	inherited	composition	composition.third-book-of-kings
+3Kings.14.1-24	24	inherited	composition	composition.third-book-of-kings
+3Kings.14.25-28	4	dated	composition,narrated-event	composition.third-book-of-kings,israel.divided-kingdom.sesac-invasion
+3Kings.14.29-31	3	inherited	composition	composition.third-book-of-kings
 3Kings.15.1-34	34	inherited	composition	composition.third-book-of-kings
 3Kings.16.1-34	34	inherited	composition	composition.third-book-of-kings
 3Kings.17.1-24	24	inherited	composition	composition.third-book-of-kings
@@ -331,15 +432,29 @@ Ruth.4.1-22	22	research-pending
 4Kings.14.1-29	29	inherited	composition	composition.fourth-book-of-kings
 4Kings.15.1-38	38	inherited	composition	composition.fourth-book-of-kings
 4Kings.16.1-20	20	inherited	composition	composition.fourth-book-of-kings
-4Kings.17.1-41	41	inherited	composition	composition.fourth-book-of-kings
-4Kings.18.1-37	37	inherited	composition	composition.fourth-book-of-kings
-4Kings.19.1-37	37	inherited	composition	composition.fourth-book-of-kings
+4Kings.17.1-6	6	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.fall-of-samaria
+4Kings.17.7-41	35	inherited	composition	composition.fourth-book-of-kings
+4Kings.18.1-3	3	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.ezechias-accession
+4Kings.18.4-8	5	inherited	composition	composition.fourth-book-of-kings
+4Kings.18.9-12	4	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.fall-of-samaria
+4Kings.18.13-37	25	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.sennacherib-invasion
+4Kings.19.1-37	37	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.sennacherib-invasion
 4Kings.20.1-21	21	inherited	composition	composition.fourth-book-of-kings
 4Kings.21.1-26	26	inherited	composition	composition.fourth-book-of-kings
-4Kings.22.1-20	20	inherited	composition	composition.fourth-book-of-kings
-4Kings.23.1-37	37	inherited	composition	composition.fourth-book-of-kings
-4Kings.24.1-20	20	inherited	composition	composition.fourth-book-of-kings
-4Kings.25.1-30	30	inherited	composition	composition.fourth-book-of-kings
+4Kings.22.1-2	2	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.josias-reign
+4Kings.22.3-20	18	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.josias-reform
+4Kings.23.1-25	25	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.divided-kingdom.josias-reform
+4Kings.23.26-33	8	inherited	composition	composition.fourth-book-of-kings
+4Kings.23.34-37	4	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.joakim-accession
+4Kings.24.1-2	2	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.carchemish
+4Kings.24.3-7	5	inherited	composition	composition.fourth-book-of-kings
+4Kings.24.8-16	9	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.second-captivity
+4Kings.24.17-20	4	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.sedecias-reign
+4Kings.25.1-3	3	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.final-siege
+4Kings.25.4-7	4	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.third-captivity
+4Kings.25.8-10	3	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.burning-of-the-temple,israel.exile.third-captivity
+4Kings.25.11-21	11	dated	composition,narrated-event	composition.fourth-book-of-kings,israel.exile.third-captivity
+4Kings.25.22-30	9	inherited	composition	composition.fourth-book-of-kings
 1Par.1.1-54	54	inherited	composition	composition.first-book-of-paralipomenon
 1Par.2.1-55	55	inherited	composition	composition.first-book-of-paralipomenon
 1Par.3.1-24	24	inherited	composition	composition.first-book-of-paralipomenon
@@ -350,7 +465,9 @@ Ruth.4.1-22	22	research-pending
 1Par.8.1-40	40	inherited	composition	composition.first-book-of-paralipomenon
 1Par.9.1-44	44	inherited	composition	composition.first-book-of-paralipomenon
 1Par.10.1-14	14	inherited	composition	composition.first-book-of-paralipomenon
-1Par.11.1-46	46	inherited	composition	composition.first-book-of-paralipomenon
+1Par.11.1-3	3	inherited	composition	composition.first-book-of-paralipomenon
+1Par.11.4-8	5	dated	composition,narrated-event	composition.first-book-of-paralipomenon,israel.monarchy.david-capture-of-sion
+1Par.11.9-46	38	inherited	composition	composition.first-book-of-paralipomenon
 1Par.12.1-40	40	inherited	composition	composition.first-book-of-paralipomenon
 1Par.13.1-14	14	inherited	composition	composition.first-book-of-paralipomenon
 1Par.14.1-17	17	inherited	composition	composition.first-book-of-paralipomenon
@@ -371,16 +488,19 @@ Ruth.4.1-22	22	research-pending
 1Par.29.1-30	30	inherited	composition	composition.first-book-of-paralipomenon
 2Par.1.1-17	17	inherited	composition	composition.second-book-of-paralipomenon
 2Par.2.1-18	18	inherited	composition	composition.second-book-of-paralipomenon
-2Par.3.1-17	17	inherited	composition	composition.second-book-of-paralipomenon
+2Par.3.1-2	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.monarchy.temple-begun
+2Par.3.3-17	15	inherited	composition	composition.second-book-of-paralipomenon
 2Par.4.1-22	22	inherited	composition	composition.second-book-of-paralipomenon
 2Par.5.1-14	14	inherited	composition	composition.second-book-of-paralipomenon
 2Par.6.1-42	42	inherited	composition	composition.second-book-of-paralipomenon
 2Par.7.1-22	22	inherited	composition	composition.second-book-of-paralipomenon
 2Par.8.1-18	18	inherited	composition	composition.second-book-of-paralipomenon
 2Par.9.1-31	31	inherited	composition	composition.second-book-of-paralipomenon
-2Par.10.1-19	19	inherited	composition	composition.second-book-of-paralipomenon
+2Par.10.1-19	19	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.division
 2Par.11.1-23	23	inherited	composition	composition.second-book-of-paralipomenon
-2Par.12.1-16	16	inherited	composition	composition.second-book-of-paralipomenon
+2Par.12.1	1	inherited	composition	composition.second-book-of-paralipomenon
+2Par.12.2-9	8	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.sesac-invasion
+2Par.12.10-16	7	inherited	composition	composition.second-book-of-paralipomenon
 2Par.13.1-22	22	inherited	composition	composition.second-book-of-paralipomenon
 2Par.14.1-15	15	inherited	composition	composition.second-book-of-paralipomenon
 2Par.15.1-19	19	inherited	composition	composition.second-book-of-paralipomenon
@@ -397,37 +517,76 @@ Ruth.4.1-22	22	research-pending
 2Par.26.1-23	23	inherited	composition	composition.second-book-of-paralipomenon
 2Par.27.1-9	9	inherited	composition	composition.second-book-of-paralipomenon
 2Par.28.1-27	27	inherited	composition	composition.second-book-of-paralipomenon
-2Par.29.1-36	36	inherited	composition	composition.second-book-of-paralipomenon
+2Par.29.1-3	3	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.ezechias-accession
+2Par.29.4-36	33	inherited	composition	composition.second-book-of-paralipomenon
 2Par.30.1-27	27	inherited	composition	composition.second-book-of-paralipomenon
 2Par.31.1-21	21	inherited	composition	composition.second-book-of-paralipomenon
-2Par.32.1-33	33	inherited	composition	composition.second-book-of-paralipomenon
+2Par.32.1-22	22	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.sennacherib-invasion
+2Par.32.23-33	11	inherited	composition	composition.second-book-of-paralipomenon
 2Par.33.1-25	25	inherited	composition	composition.second-book-of-paralipomenon
-2Par.34.1-33	33	inherited	composition	composition.second-book-of-paralipomenon
-2Par.35.1-27	27	inherited	composition	composition.second-book-of-paralipomenon
-2Par.36.1-23	23	inherited	composition	composition.second-book-of-paralipomenon
-1Esd.1.1-11	11	research-pending		
+2Par.34.1-2	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.josias-reign
+2Par.34.3-33	31	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.josias-reform
+2Par.35.1-19	19	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.divided-kingdom.josias-reform
+2Par.35.20-27	8	inherited	composition	composition.second-book-of-paralipomenon
+2Par.36.1-3	3	inherited	composition	composition.second-book-of-paralipomenon
+2Par.36.4-5	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.joakim-accession
+2Par.36.6-7	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.first-captivity
+2Par.36.8	1	inherited	composition	composition.second-book-of-paralipomenon
+2Par.36.9-10	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.second-captivity
+2Par.36.11-13	3	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.sedecias-reign
+2Par.36.14-16	3	inherited	composition	composition.second-book-of-paralipomenon
+2Par.36.17-18	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.third-captivity
+2Par.36.19	1	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.burning-of-the-temple,israel.exile.third-captivity
+2Par.36.20	1	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.seventy-years,israel.exile.third-captivity
+2Par.36.21	1	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.exile.seventy-years
+2Par.36.22-23	2	dated	composition,narrated-event	composition.second-book-of-paralipomenon,israel.restoration.decree-of-cyrus
+1Esd.1.1-4	4	dated	narrated-event	israel.restoration.decree-of-cyrus
+1Esd.1.5-11	7	research-pending		
 1Esd.2.1-70	70	research-pending		
-1Esd.3.1-13	13	research-pending		
-1Esd.4.1-24	24	research-pending		
-1Esd.5.1-17	17	research-pending		
-1Esd.6.1-22	22	research-pending		
-1Esd.7.1-28	28	research-pending		
+1Esd.3.1-7	7	research-pending		
+1Esd.3.8-13	6	dated	narrated-event	israel.restoration.temple-raised-by-zorobabel
+1Esd.4.1-23	23	research-pending		
+1Esd.4.24	1	dated	narrated-event	israel.restoration.temple-work-resumed
+1Esd.5.1-2	2	dated	narrated-event	israel.restoration.temple-work-resumed
+1Esd.5.3-17	15	research-pending		
+1Esd.6.1-13	13	research-pending		
+1Esd.6.14-18	5	dated	narrated-event	israel.restoration.second-temple-completed
+1Esd.6.19-22	4	research-pending		
+1Esd.7.1-5	5	research-pending		
+1Esd.7.6-10	5	dated	narrated-event	israel.restoration.esdras-return
+1Esd.7.11-28	18	research-pending		
 1Esd.8.1-36	36	research-pending		
 1Esd.9.1-15	15	research-pending		
 1Esd.10.1-44	44	research-pending		
 2Esd.1.1-11	11	research-pending		
-2Esd.2.1-20	20	research-pending		
+2Esd.2.1-8	8	dated	narrated-event	israel.restoration.nehemias-mission
+2Esd.2.9-20	12	research-pending		
 2Esd.3.1-31	31	research-pending		
 2Esd.4.1-23	23	research-pending		
 2Esd.5.1-19	19	research-pending		
-2Esd.6.1-19	19	research-pending		
+2Esd.6.1-14	14	research-pending		
+2Esd.6.15-16	2	dated	narrated-event	israel.restoration.nehemias-mission
+2Esd.6.17-19	3	research-pending		
 2Esd.7.1-73	73	research-pending		
 2Esd.8.1-18	18	research-pending		
-2Esd.9.1-38	38	research-pending		
+2Esd.9.1-5	5	research-pending		
+2Esd.9.6	1	dated	retrospective-event	israel.primeval.creation
+2Esd.9.7-8	2	dated	retrospective-event	israel.patriarchs.call-of-abram
+2Esd.9.9-12	4	dated	retrospective-event	israel.exodus.the-exodus
+2Esd.9.13-14	2	dated	retrospective-event	israel.wilderness.arrival-at-sinai
+2Esd.9.15	1	dated	retrospective-event	israel.wilderness.manna
+2Esd.9.16-17	2	research-pending		
+2Esd.9.18	1	dated	retrospective-event	israel.wilderness.golden-calf
+2Esd.9.19	1	research-pending		
+2Esd.9.20	1	dated	retrospective-event	israel.wilderness.manna
+2Esd.9.21	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+2Esd.9.22-38	17	research-pending		
 2Esd.10.1-39	39	research-pending		
 2Esd.11.1-36	36	research-pending		
 2Esd.12.1-46	46	research-pending		
-2Esd.13.1-31	31	research-pending		
+2Esd.13.1-5	5	research-pending		
+2Esd.13.6-7	2	dated	narrated-event	israel.restoration.nehemias-second-mission
+2Esd.13.8-31	24	research-pending		
 Tob.1.1-25	25	inherited	composition	composition.book-of-tobias
 Tob.2.1-23	23	inherited	composition	composition.book-of-tobias
 Tob.3.1-25	25	inherited	composition	composition.book-of-tobias
@@ -442,22 +601,22 @@ Tob.11.1-21	21	inherited	composition	composition.book-of-tobias
 Tob.12.1-22	22	inherited	composition	composition.book-of-tobias
 Tob.13.1-23	23	inherited	composition	composition.book-of-tobias
 Tob.14.1-17	17	inherited	composition	composition.book-of-tobias
-Jdt.1.1-12	12	research-pending		
-Jdt.2.1-18	18	research-pending		
-Jdt.3.1-15	15	research-pending		
-Jdt.4.1-17	17	research-pending		
-Jdt.5.1-29	29	research-pending		
-Jdt.6.1-21	21	research-pending		
-Jdt.7.1-25	25	research-pending		
-Jdt.8.1-34	34	research-pending		
-Jdt.9.1-19	19	research-pending		
-Jdt.10.1-20	20	research-pending		
-Jdt.11.1-21	21	research-pending		
-Jdt.12.1-20	20	research-pending		
-Jdt.13.1-31	31	research-pending		
-Jdt.14.1-18	18	research-pending		
-Jdt.15.1-15	15	research-pending		
-Jdt.16.1-31	31	research-pending		
+Jdt.1.1-12	12	undated-in-tradition		
+Jdt.2.1-18	18	undated-in-tradition		
+Jdt.3.1-15	15	undated-in-tradition		
+Jdt.4.1-17	17	undated-in-tradition		
+Jdt.5.1-29	29	undated-in-tradition		
+Jdt.6.1-21	21	undated-in-tradition		
+Jdt.7.1-25	25	undated-in-tradition		
+Jdt.8.1-34	34	undated-in-tradition		
+Jdt.9.1-19	19	undated-in-tradition		
+Jdt.10.1-20	20	undated-in-tradition		
+Jdt.11.1-21	21	undated-in-tradition		
+Jdt.12.1-20	20	undated-in-tradition		
+Jdt.13.1-31	31	undated-in-tradition		
+Jdt.14.1-18	18	undated-in-tradition		
+Jdt.15.1-15	15	undated-in-tradition		
+Jdt.16.1-31	31	undated-in-tradition		
 Esth.1.1-22	22	inherited	composition	composition.book-of-esther
 Esth.2.1-23	23	inherited	composition	composition.book-of-esther
 Esth.3.1-15	15	inherited	composition	composition.book-of-esther
@@ -474,51 +633,51 @@ Esth.13.1-18	18	inherited	composition	composition.book-of-esther
 Esth.14.1-19	19	inherited	composition	composition.book-of-esther
 Esth.15.1-19	19	inherited	composition	composition.book-of-esther
 Esth.16.1-24	24	inherited	composition	composition.book-of-esther
-Job.1.1-22	22	research-pending		
-Job.2.1-13	13	research-pending		
-Job.3.1-26	26	research-pending		
-Job.4.1-21	21	research-pending		
-Job.5.1-27	27	research-pending		
-Job.6.1-30	30	research-pending		
-Job.7.1-21	21	research-pending		
-Job.8.1-22	22	research-pending		
-Job.9.1-35	35	research-pending		
-Job.10.1-22	22	research-pending		
-Job.11.1-20	20	research-pending		
-Job.12.1-25	25	research-pending		
-Job.13.1-28	28	research-pending		
-Job.14.1-22	22	research-pending		
-Job.15.1-35	35	research-pending		
-Job.16.1-23	23	research-pending		
-Job.17.1-16	16	research-pending		
-Job.18.1-21	21	research-pending		
-Job.19.1-29	29	research-pending		
-Job.20.1-29	29	research-pending		
-Job.21.1-34	34	research-pending		
-Job.22.1-30	30	research-pending		
-Job.23.1-17	17	research-pending		
-Job.24.1-25	25	research-pending		
-Job.25.1-6	6	research-pending		
-Job.26.1-14	14	research-pending		
-Job.27.1-23	23	research-pending		
-Job.28.1-28	28	research-pending		
-Job.29.1-25	25	research-pending		
-Job.30.1-31	31	research-pending		
-Job.31.1-40	40	research-pending		
-Job.32.1-22	22	research-pending		
-Job.33.1-33	33	research-pending		
-Job.34.1-37	37	research-pending		
-Job.35.1-16	16	research-pending		
-Job.36.1-33	33	research-pending		
-Job.37.1-24	24	research-pending		
-Job.38.1-41	41	research-pending		
-Job.39.1-35	35	research-pending		
-Job.40.1-28	28	research-pending		
-Job.41.1-25	25	research-pending		
-Job.42.1-16	16	research-pending		
+Job.1.1-22	22	undated-in-tradition		
+Job.2.1-13	13	undated-in-tradition		
+Job.3.1-26	26	undated-in-tradition		
+Job.4.1-21	21	undated-in-tradition		
+Job.5.1-27	27	undated-in-tradition		
+Job.6.1-30	30	undated-in-tradition		
+Job.7.1-21	21	undated-in-tradition		
+Job.8.1-22	22	undated-in-tradition		
+Job.9.1-35	35	undated-in-tradition		
+Job.10.1-22	22	undated-in-tradition		
+Job.11.1-20	20	undated-in-tradition		
+Job.12.1-25	25	undated-in-tradition		
+Job.13.1-28	28	undated-in-tradition		
+Job.14.1-22	22	undated-in-tradition		
+Job.15.1-35	35	undated-in-tradition		
+Job.16.1-23	23	undated-in-tradition		
+Job.17.1-16	16	undated-in-tradition		
+Job.18.1-21	21	undated-in-tradition		
+Job.19.1-29	29	undated-in-tradition		
+Job.20.1-29	29	undated-in-tradition		
+Job.21.1-34	34	undated-in-tradition		
+Job.22.1-30	30	undated-in-tradition		
+Job.23.1-17	17	undated-in-tradition		
+Job.24.1-25	25	undated-in-tradition		
+Job.25.1-6	6	undated-in-tradition		
+Job.26.1-14	14	undated-in-tradition		
+Job.27.1-23	23	undated-in-tradition		
+Job.28.1-28	28	undated-in-tradition		
+Job.29.1-25	25	undated-in-tradition		
+Job.30.1-31	31	undated-in-tradition		
+Job.31.1-40	40	undated-in-tradition		
+Job.32.1-22	22	undated-in-tradition		
+Job.33.1-33	33	undated-in-tradition		
+Job.34.1-37	37	undated-in-tradition		
+Job.35.1-16	16	undated-in-tradition		
+Job.36.1-33	33	undated-in-tradition		
+Job.37.1-24	24	undated-in-tradition		
+Job.38.1-41	41	undated-in-tradition		
+Job.39.1-35	35	undated-in-tradition		
+Job.40.1-28	28	undated-in-tradition		
+Job.41.1-25	25	undated-in-tradition		
+Job.42.1-16	16	undated-in-tradition		
 Ps.1.1-6	6	research-pending		
 Ps.2.1-13	13	research-pending		
-Ps.3.1-9	9	research-pending		
+Ps.3.1-9	9	dated	superscription-setting	israel.monarchy.david-flight-from-absalom
 Ps.4.1-10	10	research-pending		
 Ps.5.1-13	13	research-pending		
 Ps.6.1-11	11	research-pending		
@@ -536,7 +695,9 @@ Ps.17.1-51	51	research-pending
 Ps.18.1-15	15	research-pending		
 Ps.19.1-10	10	research-pending		
 Ps.20.1-14	14	research-pending		
-Ps.21.1-32	32	research-pending		
+Ps.21.1	1	dated	historical-setting,prophetic-referent	israel.monarchy.david-reign,life-of-christ.crucifixion
+Ps.21.2	1	dated	historical-setting,prophetic-referent,utterance	israel.monarchy.david-reign,life-of-christ.crucifixion
+Ps.21.3-32	30	dated	historical-setting,prophetic-referent	israel.monarchy.david-reign,life-of-christ.crucifixion
 Ps.22.1-6	6	research-pending		
 Ps.23.1-10	10	research-pending		
 Ps.24.1-22	22	research-pending		
@@ -545,10 +706,12 @@ Ps.26.1-14	14	research-pending
 Ps.27.1-9	9	research-pending		
 Ps.28.1-11	11	research-pending		
 Ps.29.1-13	13	research-pending		
-Ps.30.1-25	25	research-pending		
+Ps.30.1-5	5	dated	historical-setting	israel.monarchy.david-in-the-desert-of-maon
+Ps.30.6	1	dated	historical-setting,utterance	israel.monarchy.david-in-the-desert-of-maon,life-of-christ.crucifixion
+Ps.30.7-25	19	dated	historical-setting	israel.monarchy.david-in-the-desert-of-maon
 Ps.31.1-11	11	research-pending		
 Ps.32.1-22	22	research-pending		
-Ps.33.1-23	23	research-pending		
+Ps.33.1-23	23	dated	superscription-setting	israel.monarchy.david-at-geth
 Ps.34.1-28	28	research-pending		
 Ps.35.1-13	13	research-pending		
 Ps.36.1-40	40	research-pending		
@@ -565,19 +728,19 @@ Ps.46.1-10	10	research-pending
 Ps.47.1-15	15	research-pending		
 Ps.48.1-21	21	research-pending		
 Ps.49.1-23	23	research-pending		
-Ps.50.1-21	21	research-pending		
+Ps.50.1-21	21	dated	superscription-setting	israel.monarchy.david-repentance
 Ps.51.1-11	11	research-pending		
 Ps.52.1-7	7	research-pending		
-Ps.53.1-9	9	research-pending		
+Ps.53.1-9	9	dated	superscription-setting	israel.monarchy.david-in-the-desert-of-maon
 Ps.54.1-24	24	research-pending		
-Ps.55.1-13	13	research-pending		
+Ps.55.1-13	13	dated	superscription-setting	israel.monarchy.david-at-geth
 Ps.56.1-12	12	research-pending		
 Ps.57.1-12	12	research-pending		
 Ps.58.1-18	18	research-pending		
 Ps.59.1-14	14	research-pending		
 Ps.60.1-9	9	research-pending		
 Ps.61.1-13	13	research-pending		
-Ps.62.1-12	12	research-pending		
+Ps.62.1-12	12	dated	historical-setting	israel.monarchy.david-flight-from-absalom
 Ps.63.1-11	11	research-pending		
 Ps.64.1-14	14	research-pending		
 Ps.65.1-20	20	research-pending		
@@ -585,17 +748,26 @@ Ps.66.1-8	8	research-pending
 Ps.67.1-36	36	research-pending		
 Ps.68.1-37	37	research-pending		
 Ps.69.1-6	6	research-pending		
-Ps.70.1-24	24	research-pending		
+Ps.70.1-24	24	dated	historical-setting,superscription-setting	israel.exile.first-captivity,israel.monarchy.david-flight-from-absalom
 Ps.71.1-20	20	research-pending		
 Ps.72.1-28	28	research-pending		
 Ps.73.1-23	23	research-pending		
 Ps.74.1-11	11	research-pending		
 Ps.75.1-13	13	research-pending		
 Ps.76.1-21	21	research-pending		
-Ps.77.1-72	72	research-pending		
+Ps.77.1-11	11	research-pending		
+Ps.77.12-13	2	dated	retrospective-event	israel.exodus.the-exodus
+Ps.77.14-22	9	research-pending		
+Ps.77.23-25	3	dated	retrospective-event	israel.wilderness.manna
+Ps.77.26-39	14	research-pending		
+Ps.77.40-41	2	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Ps.77.42-53	12	dated	retrospective-event	israel.exodus.the-exodus
+Ps.77.54-72	19	research-pending		
 Ps.78.1-13	13	research-pending		
 Ps.79.1-20	20	research-pending		
-Ps.80.1-17	17	research-pending		
+Ps.80.1-5	5	research-pending		
+Ps.80.6-7	2	dated	retrospective-event	israel.exodus.the-exodus
+Ps.80.8-17	10	research-pending		
 Ps.81.1-8	8	research-pending		
 Ps.82.1-19	19	research-pending		
 Ps.83.1-13	13	research-pending		
@@ -603,14 +775,15 @@ Ps.84.1-14	14	research-pending
 Ps.85.1-17	17	research-pending		
 Ps.86.1-7	7	research-pending		
 Ps.87.1-19	19	research-pending		
-Ps.88.1-53	53	research-pending		
+Ps.88.1-53	53	dated	historical-setting	israel.exile.third-captivity
 Ps.89.1-17	17	research-pending		
 Ps.90.1-16	16	research-pending		
 Ps.91.1-16	16	research-pending		
 Ps.92.1-5	5	research-pending		
 Ps.93.1-23	23	research-pending		
-Ps.94.1-11	11	research-pending		
-Ps.95.1-13	13	research-pending		
+Ps.94.1-8	8	research-pending		
+Ps.94.9-11	3	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Ps.95.1-13	13	dated	superscription-setting	israel.restoration.temple-raised-by-zorobabel
 Ps.96.1-12	12	research-pending		
 Ps.97.1-9	9	research-pending		
 Ps.98.1-9	9	research-pending		
@@ -619,8 +792,23 @@ Ps.100.1-8	8	research-pending
 Ps.101.1-29	29	research-pending		
 Ps.102.1-22	22	research-pending		
 Ps.103.1-35	35	research-pending		
-Ps.104.1-45	45	research-pending		
-Ps.105.1-48	48	research-pending		
+Ps.104.1-22	22	research-pending		
+Ps.104.23	1	dated	retrospective-event	israel.egypt.descent
+Ps.104.24-25	2	dated	retrospective-event	israel.egypt.sojourn
+Ps.104.26-38	13	dated	retrospective-event	israel.exodus.the-exodus
+Ps.104.39	1	research-pending		
+Ps.104.40	1	dated	retrospective-event	israel.wilderness.manna
+Ps.104.41-42	2	research-pending		
+Ps.104.43	1	dated	retrospective-event	israel.exodus.the-exodus
+Ps.104.44-45	2	research-pending		
+Ps.105.1-6	6	research-pending		
+Ps.105.7-12	6	dated	retrospective-event	israel.exodus.the-exodus
+Ps.105.13-18	6	research-pending		
+Ps.105.19-20	2	dated	retrospective-event	israel.wilderness.golden-calf
+Ps.105.21-22	2	dated	retrospective-event	israel.exodus.the-exodus
+Ps.105.23	1	research-pending		
+Ps.105.24-27	4	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Ps.105.28-48	21	research-pending		
 Ps.106.1-43	43	research-pending		
 Ps.107.1-14	14	research-pending		
 Ps.108.1-31	31	research-pending		
@@ -628,7 +816,9 @@ Ps.109.1-7	7	research-pending
 Ps.110.1-10	10	research-pending		
 Ps.111.1-10	10	research-pending		
 Ps.112.1-9	9	research-pending		
-Ps.113.1-26	26	research-pending		
+Ps.113.1-2	2	dated	retrospective-event	israel.exodus.the-exodus
+Ps.113.3-5	3	dated	retrospective-event	israel.conquest.crossing-of-the-jordan,israel.exodus.the-exodus
+Ps.113.6-26	21	research-pending		
 Ps.114.1-9	9	research-pending		
 Ps.115.1-10	10	research-pending		
 Ps.116.1-2	2	research-pending		
@@ -650,14 +840,18 @@ Ps.131.1-18	18	research-pending
 Ps.132.1-3	3	research-pending		
 Ps.133.1-3	3	research-pending		
 Ps.134.1-21	21	research-pending		
-Ps.135.1-26	26	research-pending		
+Ps.135.1-4	4	research-pending		
+Ps.135.5-9	5	dated	retrospective-event	israel.primeval.creation
+Ps.135.10-15	6	dated	retrospective-event	israel.exodus.the-exodus
+Ps.135.16	1	dated	retrospective-event	israel.wilderness.forty-years-in-the-desert
+Ps.135.17-26	10	research-pending		
 Ps.136.1-9	9	research-pending		
 Ps.137.1-8	8	research-pending		
 Ps.138.1-24	24	research-pending		
 Ps.139.1-14	14	research-pending		
 Ps.140.1-10	10	research-pending		
 Ps.141.1-8	8	research-pending		
-Ps.142.1-12	12	research-pending		
+Ps.142.1-12	12	dated	superscription-setting	israel.monarchy.david-flight-from-absalom
 Ps.143.1-15	15	research-pending		
 Ps.144.1-21	21	research-pending		
 Ps.145.1-10	10	research-pending		
@@ -666,57 +860,57 @@ Ps.147.1-9	9	research-pending
 Ps.148.1-14	14	research-pending		
 Ps.149.1-9	9	research-pending		
 Ps.150.1-6	6	research-pending		
-Prov.1.1-33	33	research-pending		
-Prov.2.1-22	22	research-pending		
-Prov.3.1-35	35	research-pending		
-Prov.4.1-27	27	research-pending		
-Prov.5.1-23	23	research-pending		
-Prov.6.1-35	35	research-pending		
-Prov.7.1-27	27	research-pending		
-Prov.8.1-36	36	research-pending		
-Prov.9.1-18	18	research-pending		
-Prov.10.1-32	32	research-pending		
-Prov.11.1-31	31	research-pending		
-Prov.12.1-28	28	research-pending		
-Prov.13.1-25	25	research-pending		
-Prov.14.1-35	35	research-pending		
-Prov.15.1-33	33	research-pending		
-Prov.16.1-33	33	research-pending		
-Prov.17.1-28	28	research-pending		
-Prov.18.1-24	24	research-pending		
-Prov.19.1-29	29	research-pending		
-Prov.20.1-30	30	research-pending		
-Prov.21.1-31	31	research-pending		
-Prov.22.1-29	29	research-pending		
-Prov.23.1-35	35	research-pending		
-Prov.24.1-34	34	research-pending		
-Prov.25.1-28	28	research-pending		
-Prov.26.1-28	28	research-pending		
-Prov.27.1-27	27	research-pending		
-Prov.28.1-28	28	research-pending		
-Prov.29.1-27	27	research-pending		
-Prov.30.1-33	33	research-pending		
-Prov.31.1-31	31	research-pending		
-Eccles.1.1-18	18	research-pending		
-Eccles.2.1-26	26	research-pending		
-Eccles.3.1-22	22	research-pending		
-Eccles.4.1-17	17	research-pending		
-Eccles.5.1-19	19	research-pending		
-Eccles.6.1-11	11	research-pending		
-Eccles.7.1-30	30	research-pending		
-Eccles.8.1-17	17	research-pending		
-Eccles.9.1-18	18	research-pending		
-Eccles.10.1-20	20	research-pending		
-Eccles.11.1-10	10	research-pending		
-Eccles.12.1-14	14	research-pending		
-Cant.1.1-16	16	research-pending		
-Cant.2.1-17	17	research-pending		
-Cant.3.1-11	11	research-pending		
-Cant.4.1-16	16	research-pending		
-Cant.5.1-17	17	research-pending		
-Cant.6.1-12	12	research-pending		
-Cant.7.1-13	13	research-pending		
-Cant.8.1-14	14	research-pending		
+Prov.1.1-33	33	undated-in-tradition		
+Prov.2.1-22	22	undated-in-tradition		
+Prov.3.1-35	35	undated-in-tradition		
+Prov.4.1-27	27	undated-in-tradition		
+Prov.5.1-23	23	undated-in-tradition		
+Prov.6.1-35	35	undated-in-tradition		
+Prov.7.1-27	27	undated-in-tradition		
+Prov.8.1-36	36	undated-in-tradition		
+Prov.9.1-18	18	undated-in-tradition		
+Prov.10.1-32	32	undated-in-tradition		
+Prov.11.1-31	31	undated-in-tradition		
+Prov.12.1-28	28	undated-in-tradition		
+Prov.13.1-25	25	undated-in-tradition		
+Prov.14.1-35	35	undated-in-tradition		
+Prov.15.1-33	33	undated-in-tradition		
+Prov.16.1-33	33	undated-in-tradition		
+Prov.17.1-28	28	undated-in-tradition		
+Prov.18.1-24	24	undated-in-tradition		
+Prov.19.1-29	29	undated-in-tradition		
+Prov.20.1-30	30	undated-in-tradition		
+Prov.21.1-31	31	undated-in-tradition		
+Prov.22.1-29	29	undated-in-tradition		
+Prov.23.1-35	35	undated-in-tradition		
+Prov.24.1-34	34	undated-in-tradition		
+Prov.25.1-28	28	undated-in-tradition		
+Prov.26.1-28	28	undated-in-tradition		
+Prov.27.1-27	27	undated-in-tradition		
+Prov.28.1-28	28	undated-in-tradition		
+Prov.29.1-27	27	undated-in-tradition		
+Prov.30.1-33	33	undated-in-tradition		
+Prov.31.1-31	31	undated-in-tradition		
+Eccles.1.1-18	18	undated-in-tradition		
+Eccles.2.1-26	26	undated-in-tradition		
+Eccles.3.1-22	22	undated-in-tradition		
+Eccles.4.1-17	17	undated-in-tradition		
+Eccles.5.1-19	19	undated-in-tradition		
+Eccles.6.1-11	11	undated-in-tradition		
+Eccles.7.1-30	30	undated-in-tradition		
+Eccles.8.1-17	17	undated-in-tradition		
+Eccles.9.1-18	18	undated-in-tradition		
+Eccles.10.1-20	20	undated-in-tradition		
+Eccles.11.1-10	10	undated-in-tradition		
+Eccles.12.1-14	14	undated-in-tradition		
+Cant.1.1-16	16	undated-in-tradition		
+Cant.2.1-17	17	undated-in-tradition		
+Cant.3.1-11	11	undated-in-tradition		
+Cant.4.1-16	16	undated-in-tradition		
+Cant.5.1-17	17	undated-in-tradition		
+Cant.6.1-12	12	undated-in-tradition		
+Cant.7.1-13	13	undated-in-tradition		
+Cant.8.1-14	14	undated-in-tradition		
 Wis.1.1-16	16	inherited	composition	composition.book-of-wisdom
 Wis.2.1-25	25	inherited	composition	composition.book-of-wisdom
 Wis.3.1-19	19	inherited	composition	composition.book-of-wisdom
@@ -793,7 +987,9 @@ Is.3.1-26	26	inherited	composition	composition.book-of-isaias
 Is.4.1-6	6	inherited	composition	composition.book-of-isaias
 Is.5.1-30	30	inherited	composition	composition.book-of-isaias
 Is.6.1-13	13	inherited	composition	composition.book-of-isaias
-Is.7.1-25	25	inherited	composition	composition.book-of-isaias
+Is.7.1-13	13	inherited	composition	composition.book-of-isaias
+Is.7.14	1	dated	composition,prophetic-referent	composition.book-of-isaias,life-of-christ.nativity
+Is.7.15-25	11	inherited	composition	composition.book-of-isaias
 Is.8.1-22	22	inherited	composition	composition.book-of-isaias
 Is.9.1-21	21	inherited	composition	composition.book-of-isaias
 Is.10.1-34	34	inherited	composition	composition.book-of-isaias
@@ -822,8 +1018,8 @@ Is.32.1-20	20	inherited	composition	composition.book-of-isaias
 Is.33.1-24	24	inherited	composition	composition.book-of-isaias
 Is.34.1-17	17	inherited	composition	composition.book-of-isaias
 Is.35.1-10	10	inherited	composition	composition.book-of-isaias
-Is.36.1-22	22	inherited	composition	composition.book-of-isaias
-Is.37.1-38	38	inherited	composition	composition.book-of-isaias
+Is.36.1-22	22	dated	composition,narrated-event	composition.book-of-isaias,israel.divided-kingdom.sennacherib-invasion
+Is.37.1-38	38	dated	composition,narrated-event	composition.book-of-isaias,israel.divided-kingdom.sennacherib-invasion
 Is.38.1-22	22	inherited	composition	composition.book-of-isaias
 Is.39.1-8	8	inherited	composition	composition.book-of-isaias
 Is.40.1-31	31	inherited	composition	composition.book-of-isaias
@@ -838,8 +1034,9 @@ Is.48.1-22	22	inherited	composition	composition.book-of-isaias
 Is.49.1-26	26	inherited	composition	composition.book-of-isaias
 Is.50.1-11	11	inherited	composition	composition.book-of-isaias
 Is.51.1-23	23	inherited	composition	composition.book-of-isaias
-Is.52.1-15	15	inherited	composition	composition.book-of-isaias
-Is.53.1-12	12	inherited	composition	composition.book-of-isaias
+Is.52.1-12	12	inherited	composition	composition.book-of-isaias
+Is.52.13-15	3	dated	composition,prophetic-referent	composition.book-of-isaias,life-of-christ.crucifixion
+Is.53.1-12	12	dated	composition,prophetic-referent	composition.book-of-isaias,life-of-christ.crucifixion
 Is.54.1-17	17	inherited	composition	composition.book-of-isaias
 Is.55.1-13	13	inherited	composition	composition.book-of-isaias
 Is.56.1-12	12	inherited	composition	composition.book-of-isaias
@@ -891,7 +1088,8 @@ Jer.35.1-19	19	inherited	composition	composition.book-of-jeremias
 Jer.36.1-32	32	inherited	composition	composition.book-of-jeremias
 Jer.37.1-20	20	inherited	composition	composition.book-of-jeremias
 Jer.38.1-28	28	inherited	composition	composition.book-of-jeremias
-Jer.39.1-18	18	inherited	composition	composition.book-of-jeremias
+Jer.39.1-2	2	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.final-siege
+Jer.39.3-18	16	inherited	composition	composition.book-of-jeremias
 Jer.40.1-16	16	inherited	composition	composition.book-of-jeremias
 Jer.41.1-18	18	inherited	composition	composition.book-of-jeremias
 Jer.42.1-22	22	inherited	composition	composition.book-of-jeremias
@@ -904,18 +1102,24 @@ Jer.48.1-47	47	inherited	composition	composition.book-of-jeremias
 Jer.49.1-39	39	inherited	composition	composition.book-of-jeremias
 Jer.50.1-46	46	inherited	composition	composition.book-of-jeremias
 Jer.51.1-64	64	inherited	composition	composition.book-of-jeremias
-Jer.52.1-34	34	inherited	composition	composition.book-of-jeremias
-Lam.1.1-22	22	research-pending		
-Lam.2.1-22	22	research-pending		
-Lam.3.1-66	66	research-pending		
-Lam.4.1-22	22	research-pending		
-Lam.5.1-22	22	research-pending		
-Bar.1.1-22	22	research-pending		
-Bar.2.1-35	35	research-pending		
-Bar.3.1-38	38	research-pending		
-Bar.4.1-37	37	research-pending		
-Bar.5.1-9	9	research-pending		
-Bar.6.1-72	72	research-pending		
+Jer.52.1-3	3	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.sedecias-reign
+Jer.52.4-6	3	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.final-siege
+Jer.52.7-11	5	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.third-captivity
+Jer.52.12-14	3	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.burning-of-the-temple,israel.exile.third-captivity
+Jer.52.15-27	13	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.third-captivity
+Jer.52.28-30	3	dated	composition,narrated-event	composition.book-of-jeremias,israel.exile.deportations-of-nabuchodonosor
+Jer.52.31-34	4	inherited	composition	composition.book-of-jeremias
+Lam.1.1-22	22	undated-in-tradition		
+Lam.2.1-22	22	undated-in-tradition		
+Lam.3.1-66	66	undated-in-tradition		
+Lam.4.1-22	22	undated-in-tradition		
+Lam.5.1-22	22	undated-in-tradition		
+Bar.1.1-22	22	undated-in-tradition		
+Bar.2.1-35	35	undated-in-tradition		
+Bar.3.1-38	38	undated-in-tradition		
+Bar.4.1-37	37	undated-in-tradition		
+Bar.5.1-9	9	undated-in-tradition		
+Bar.6.1-72	72	undated-in-tradition		
 Ezech.1.1-28	28	research-pending		
 Ezech.2.1-9	9	research-pending		
 Ezech.3.1-27	27	research-pending		
@@ -964,20 +1168,24 @@ Ezech.45.1-25	25	research-pending
 Ezech.46.1-24	24	research-pending		
 Ezech.47.1-23	23	research-pending		
 Ezech.48.1-35	35	research-pending		
-Dan.1.1-21	21	inherited	composition	composition.book-of-daniel
-Dan.2.1-49	49	inherited	composition	composition.book-of-daniel
-Dan.3.1-100	100	inherited	composition	composition.book-of-daniel
-Dan.4.1-34	34	inherited	composition	composition.book-of-daniel
-Dan.5.1-31	31	inherited	composition	composition.book-of-daniel
-Dan.6.1-28	28	inherited	composition	composition.book-of-daniel
-Dan.7.1-28	28	inherited	composition	composition.book-of-daniel
-Dan.8.1-27	27	inherited	composition	composition.book-of-daniel
-Dan.9.1-27	27	inherited	composition	composition.book-of-daniel
-Dan.10.1-21	21	inherited	composition	composition.book-of-daniel
-Dan.11.1-45	45	inherited	composition	composition.book-of-daniel
-Dan.12.1-13	13	inherited	composition	composition.book-of-daniel
-Dan.13.1-65	65	inherited	composition	composition.book-of-daniel
-Dan.14.1-42	42	inherited	composition	composition.book-of-daniel
+Dan.1.1-7	7	dated	composition,historical-setting,narrated-event	composition.book-of-daniel,israel.exile.first-captivity
+Dan.1.8-21	14	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.2.1-49	49	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.3.1-100	100	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.4.1-34	34	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.5.1-31	31	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.6.1-28	28	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.7.1-28	28	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.8.1-27	27	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.9.1	1	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.9.2	1	dated	composition,historical-setting,retrospective-event	composition.book-of-daniel,israel.exile.first-captivity,israel.exile.seventy-years
+Dan.9.3-23	21	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.9.24-27	4	dated	composition,historical-setting,prophetic-referent	apostolic-age.destruction-of-jerusalem,composition.book-of-daniel,israel.exile.first-captivity,life-of-christ.crucifixion,life-of-christ.nativity
+Dan.10.1-21	21	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.11.1-45	45	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.12.1-13	13	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.13.1-65	65	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
+Dan.14.1-42	42	dated	composition,historical-setting	composition.book-of-daniel,israel.exile.first-captivity
 Os.1.1-11	11	inherited	composition	composition.book-of-osee
 Os.2.1-24	24	inherited	composition	composition.book-of-osee
 Os.3.1-5	5	inherited	composition	composition.book-of-osee
@@ -995,15 +1203,15 @@ Os.14.1-10	10	inherited	composition	composition.book-of-osee
 Joel.1.1-20	20	inherited	composition	composition.book-of-joel
 Joel.2.1-32	32	inherited	composition	composition.book-of-joel
 Joel.3.1-21	21	inherited	composition	composition.book-of-joel
-Amos.1.1-15	15	research-pending		
-Amos.2.1-16	16	research-pending		
-Amos.3.1-15	15	research-pending		
-Amos.4.1-13	13	research-pending		
-Amos.5.1-27	27	research-pending		
-Amos.6.1-15	15	research-pending		
-Amos.7.1-17	17	research-pending		
-Amos.8.1-14	14	research-pending		
-Amos.9.1-15	15	research-pending		
+Amos.1.1-15	15	undated-in-tradition		
+Amos.2.1-16	16	undated-in-tradition		
+Amos.3.1-15	15	undated-in-tradition		
+Amos.4.1-13	13	undated-in-tradition		
+Amos.5.1-27	27	undated-in-tradition		
+Amos.6.1-15	15	undated-in-tradition		
+Amos.7.1-17	17	undated-in-tradition		
+Amos.8.1-14	14	undated-in-tradition		
+Amos.9.1-15	15	undated-in-tradition		
 Abd.1.1-21	21	inherited	composition	composition.book-of-abdias
 Jon.1.1-16	16	inherited	composition	composition.book-of-jonas
 Jon.2.1-11	11	inherited	composition	composition.book-of-jonas
@@ -1012,8 +1220,10 @@ Jon.4.1-11	11	inherited	composition	composition.book-of-jonas
 Mich.1.1-16	16	inherited	composition	composition.book-of-micheas.chapters-1-3
 Mich.2.1-13	13	inherited	composition	composition.book-of-micheas.chapters-1-3
 Mich.3.1-12	12	inherited	composition	composition.book-of-micheas.chapters-1-3
-Mich.4.1-13	13	research-pending		
-Mich.5.1-14	14	research-pending		
+Mich.4.1-13	13	dated	prophecy-given	israel.divided-kingdom.fall-of-samaria
+Mich.5.1	1	dated	prophecy-given	israel.divided-kingdom.fall-of-samaria
+Mich.5.2	1	dated	prophecy-given,prophetic-referent	israel.divided-kingdom.fall-of-samaria,life-of-christ.nativity
+Mich.5.3-14	12	dated	prophecy-given	israel.divided-kingdom.fall-of-samaria
 Mich.6.1-16	16	research-pending		
 Mich.7.1-20	20	research-pending		
 Nah.1.1-15	15	research-pending		
@@ -1027,14 +1237,14 @@ Soph.2.1-15	15	inherited	composition	composition.book-of-sophonias
 Soph.3.1-20	20	inherited	composition	composition.book-of-sophonias
 Agg.1.1-14	14	inherited	composition	composition.book-of-aggeus
 Agg.2.1-24	24	inherited	composition	composition.book-of-aggeus
-Zach.1.1-21	21	inherited	composition	composition.book-of-zacharias
-Zach.2.1-13	13	inherited	composition	composition.book-of-zacharias
-Zach.3.1-10	10	inherited	composition	composition.book-of-zacharias
-Zach.4.1-14	14	inherited	composition	composition.book-of-zacharias
-Zach.5.1-11	11	inherited	composition	composition.book-of-zacharias
-Zach.6.1-15	15	inherited	composition	composition.book-of-zacharias
-Zach.7.1-14	14	inherited	composition	composition.book-of-zacharias
-Zach.8.1-23	23	inherited	composition	composition.book-of-zacharias
+Zach.1.1-21	21	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.2.1-13	13	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.3.1-10	10	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.4.1-14	14	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.5.1-11	11	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.6.1-15	15	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.7.1-14	14	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
+Zach.8.1-23	23	dated	composition,prophecy-given	composition.book-of-zacharias,israel.restoration.temple-work-resumed
 Zach.9.1-17	17	inherited	composition	composition.book-of-zacharias
 Zach.10.1-12	12	inherited	composition	composition.book-of-zacharias
 Zach.11.1-17	17	inherited	composition	composition.book-of-zacharias
@@ -1045,40 +1255,63 @@ Mal.1.1-14	14	inherited	composition	composition.book-of-malachias
 Mal.2.1-17	17	inherited	composition	composition.book-of-malachias
 Mal.3.1-18	18	inherited	composition	composition.book-of-malachias
 Mal.4.1-6	6	inherited	composition	composition.book-of-malachias
-1Mach.1.1-67	67	inherited	composition	composition.first-book-of-machabees
-1Mach.2.1-70	70	inherited	composition	composition.first-book-of-machabees
-1Mach.3.1-60	60	inherited	composition	composition.first-book-of-machabees
-1Mach.4.1-61	61	inherited	composition	composition.first-book-of-machabees
-1Mach.5.1-68	68	inherited	composition	composition.first-book-of-machabees
-1Mach.6.1-63	63	inherited	composition	composition.first-book-of-machabees
-1Mach.7.1-50	50	inherited	composition	composition.first-book-of-machabees
-1Mach.8.1-32	32	inherited	composition	composition.first-book-of-machabees
-1Mach.9.1-73	73	inherited	composition	composition.first-book-of-machabees
+1Mach.1.1-10	10	inherited	composition	composition.first-book-of-machabees
+1Mach.1.11	1	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.antiochus-accession
+1Mach.1.12-20	9	inherited	composition	composition.first-book-of-machabees
+1Mach.1.21-25	5	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.temple-plundered
+1Mach.1.26-56	31	inherited	composition	composition.first-book-of-machabees
+1Mach.1.57-62	6	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.abomination-of-desolation
+1Mach.1.63-67	5	inherited	composition	composition.first-book-of-machabees
+1Mach.2.1-48	48	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.rising-under-mathathias
+1Mach.2.49-68	20	inherited	composition	composition.first-book-of-machabees
+1Mach.2.69-70	2	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.mathathias-death
+1Mach.3.1-60	60	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.4.1-35	35	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.4.36-58	23	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership,israel.maccabees.temple-rededication
+1Mach.4.59	1	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.feast-of-dedication,israel.maccabees.judas-leadership
+1Mach.4.60-61	2	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.5.1-68	68	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.6.1-63	63	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.7.1-50	50	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.8.1-32	32	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.9.1-22	22	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.judas-leadership
+1Mach.9.23-73	51	inherited	composition	composition.first-book-of-machabees
 1Mach.10.1-89	89	inherited	composition	composition.first-book-of-machabees
 1Mach.11.1-74	74	inherited	composition	composition.first-book-of-machabees
 1Mach.12.1-54	54	inherited	composition	composition.first-book-of-machabees
-1Mach.13.1-54	54	inherited	composition	composition.first-book-of-machabees
-1Mach.14.1-49	49	inherited	composition	composition.first-book-of-machabees
-1Mach.15.1-41	41	inherited	composition	composition.first-book-of-machabees
-1Mach.16.1-24	24	inherited	composition	composition.first-book-of-machabees
+1Mach.13.1-54	54	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.simon-rule
+1Mach.14.1-49	49	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.simon-rule
+1Mach.15.1-41	41	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.simon-rule
+1Mach.16.1-17	17	dated	composition,narrated-event	composition.first-book-of-machabees,israel.maccabees.simon-rule
+1Mach.16.18-24	7	inherited	composition	composition.first-book-of-machabees
 2Mach.1.1-36	36	inherited	composition	composition.second-book-of-machabees
 2Mach.2.1-33	33	inherited	composition	composition.second-book-of-machabees
 2Mach.3.1-40	40	inherited	composition	composition.second-book-of-machabees
 2Mach.4.1-50	50	inherited	composition	composition.second-book-of-machabees
-2Mach.5.1-27	27	inherited	composition	composition.second-book-of-machabees
+2Mach.5.1-14	14	inherited	composition	composition.second-book-of-machabees
+2Mach.5.15-21	7	dated	composition,narrated-event	composition.second-book-of-machabees,israel.maccabees.temple-plundered
+2Mach.5.22-27	6	inherited	composition	composition.second-book-of-machabees
 2Mach.6.1-31	31	inherited	composition	composition.second-book-of-machabees
 2Mach.7.1-42	42	inherited	composition	composition.second-book-of-machabees
 2Mach.8.1-36	36	inherited	composition	composition.second-book-of-machabees
 2Mach.9.1-29	29	inherited	composition	composition.second-book-of-machabees
-2Mach.10.1-38	38	inherited	composition	composition.second-book-of-machabees
+2Mach.10.1-5	5	dated	composition,narrated-event	composition.second-book-of-machabees,israel.maccabees.temple-rededication
+2Mach.10.6-8	3	dated	composition,narrated-event	composition.second-book-of-machabees,israel.maccabees.feast-of-dedication
+2Mach.10.9-38	30	inherited	composition	composition.second-book-of-machabees
 2Mach.11.1-38	38	inherited	composition	composition.second-book-of-machabees
 2Mach.12.1-46	46	inherited	composition	composition.second-book-of-machabees
 2Mach.13.1-26	26	inherited	composition	composition.second-book-of-machabees
 2Mach.14.1-46	46	inherited	composition	composition.second-book-of-machabees
 2Mach.15.1-40	40	inherited	composition	composition.second-book-of-machabees
-Matt.1.1-25	25	inherited	composition	composition.gospel-of-matthew
-Matt.2.1-23	23	inherited	composition	composition.gospel-of-matthew
-Matt.3.1-17	17	inherited	composition	composition.gospel-of-matthew
+Matt.1.1-17	17	inherited	composition	composition.gospel-of-matthew
+Matt.1.18-25	8	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.nativity
+Matt.2.1-12	12	inherited	composition	composition.gospel-of-matthew
+Matt.2.13-15	3	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.flight-into-egypt
+Matt.2.16-18	3	inherited	composition	composition.gospel-of-matthew
+Matt.2.19-20	2	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.death-of-herod
+Matt.2.21-23	3	inherited	composition	composition.gospel-of-matthew
+Matt.3.1-12	12	inherited	composition	composition.gospel-of-matthew
+Matt.3.13-17	5	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.baptism
 Matt.4.1-25	25	inherited	composition	composition.gospel-of-matthew
 Matt.5.1-48	48	inherited	composition	composition.gospel-of-matthew
 Matt.6.1-34	34	inherited	composition	composition.gospel-of-matthew
@@ -1101,10 +1334,17 @@ Matt.22.1-46	46	inherited	composition	composition.gospel-of-matthew
 Matt.23.1-39	39	inherited	composition	composition.gospel-of-matthew
 Matt.24.1-51	51	inherited	composition	composition.gospel-of-matthew
 Matt.25.1-46	46	inherited	composition	composition.gospel-of-matthew
-Matt.26.1-75	75	inherited	composition	composition.gospel-of-matthew
-Matt.27.1-66	66	inherited	composition	composition.gospel-of-matthew
-Matt.28.1-20	20	inherited	composition	composition.gospel-of-matthew
-Mark.1.1-45	45	inherited	composition	composition.gospel-of-mark
+Matt.26.1-19	19	inherited	composition	composition.gospel-of-matthew
+Matt.26.20-29	10	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.last-supper
+Matt.26.30-75	46	inherited	composition	composition.gospel-of-matthew
+Matt.27.1-32	32	inherited	composition	composition.gospel-of-matthew
+Matt.27.33-54	22	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.crucifixion
+Matt.27.55-66	12	inherited	composition	composition.gospel-of-matthew
+Matt.28.1-10	10	dated	composition,narrated-event	composition.gospel-of-matthew,life-of-christ.resurrection
+Matt.28.11-20	10	inherited	composition	composition.gospel-of-matthew
+Mark.1.1-8	8	inherited	composition	composition.gospel-of-mark
+Mark.1.9-11	3	dated	composition,narrated-event	composition.gospel-of-mark,life-of-christ.baptism
+Mark.1.12-45	34	inherited	composition	composition.gospel-of-mark
 Mark.2.1-28	28	inherited	composition	composition.gospel-of-mark
 Mark.3.1-35	35	inherited	composition	composition.gospel-of-mark
 Mark.4.1-40	40	inherited	composition	composition.gospel-of-mark
@@ -1117,12 +1357,26 @@ Mark.10.1-52	52	inherited	composition	composition.gospel-of-mark
 Mark.11.1-33	33	inherited	composition	composition.gospel-of-mark
 Mark.12.1-44	44	inherited	composition	composition.gospel-of-mark
 Mark.13.1-37	37	inherited	composition	composition.gospel-of-mark
-Mark.14.1-72	72	inherited	composition	composition.gospel-of-mark
-Mark.15.1-47	47	inherited	composition	composition.gospel-of-mark
-Mark.16.1-20	20	inherited	composition	composition.gospel-of-mark
+Mark.14.1-16	16	inherited	composition	composition.gospel-of-mark
+Mark.14.17-25	9	dated	composition,narrated-event	composition.gospel-of-mark,life-of-christ.last-supper
+Mark.14.26-72	47	inherited	composition	composition.gospel-of-mark
+Mark.15.1-21	21	inherited	composition	composition.gospel-of-mark
+Mark.15.22-39	18	dated	composition,narrated-event	composition.gospel-of-mark,life-of-christ.crucifixion
+Mark.15.40-47	8	inherited	composition	composition.gospel-of-mark
+Mark.16.1-11	11	dated	composition,narrated-event	composition.gospel-of-mark,life-of-christ.resurrection
+Mark.16.12-18	7	inherited	composition	composition.gospel-of-mark
+Mark.16.19	1	dated	composition,narrated-event	composition.gospel-of-mark,life-of-christ.ascension
+Mark.16.20	1	inherited	composition	composition.gospel-of-mark
 Luke.1.1-80	80	inherited	composition	composition.gospel-of-luke
-Luke.2.1-52	52	inherited	composition	composition.gospel-of-luke
-Luke.3.1-38	38	inherited	composition	composition.gospel-of-luke
+Luke.2.1-20	20	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.nativity
+Luke.2.21	1	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.circumcision
+Luke.2.22-38	17	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.presentation
+Luke.2.39-40	2	inherited	composition	composition.gospel-of-luke
+Luke.2.41-51	11	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.finding-in-the-temple
+Luke.2.52	1	inherited	composition	composition.gospel-of-luke
+Luke.3.1-20	20	inherited	composition	composition.gospel-of-luke
+Luke.3.21-22	2	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.baptism
+Luke.3.23-38	16	inherited	composition	composition.gospel-of-luke
 Luke.4.1-44	44	inherited	composition	composition.gospel-of-luke
 Luke.5.1-39	39	inherited	composition	composition.gospel-of-luke
 Luke.6.1-49	49	inherited	composition	composition.gospel-of-luke
@@ -1141,9 +1395,15 @@ Luke.18.1-43	43	inherited	composition	composition.gospel-of-luke
 Luke.19.1-48	48	inherited	composition	composition.gospel-of-luke
 Luke.20.1-47	47	inherited	composition	composition.gospel-of-luke
 Luke.21.1-38	38	inherited	composition	composition.gospel-of-luke
-Luke.22.1-71	71	inherited	composition	composition.gospel-of-luke
-Luke.23.1-56	56	inherited	composition	composition.gospel-of-luke
-Luke.24.1-53	53	inherited	composition	composition.gospel-of-luke
+Luke.22.1-13	13	inherited	composition	composition.gospel-of-luke
+Luke.22.14-38	25	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.last-supper
+Luke.22.39-71	33	inherited	composition	composition.gospel-of-luke
+Luke.23.1-32	32	inherited	composition	composition.gospel-of-luke
+Luke.23.33-47	15	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.crucifixion
+Luke.23.48-56	9	inherited	composition	composition.gospel-of-luke
+Luke.24.1-12	12	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.resurrection
+Luke.24.13-49	37	inherited	composition	composition.gospel-of-luke
+Luke.24.50-53	4	dated	composition,narrated-event	composition.gospel-of-luke,life-of-christ.ascension
 John.1.1-51	51	inherited	composition	composition.gospel-of-john
 John.2.1-25	25	inherited	composition	composition.gospel-of-john
 John.3.1-36	36	inherited	composition	composition.gospel-of-john
@@ -1156,28 +1416,55 @@ John.9.1-41	41	inherited	composition	composition.gospel-of-john
 John.10.1-42	42	inherited	composition	composition.gospel-of-john
 John.11.1-56	56	inherited	composition	composition.gospel-of-john
 John.12.1-50	50	inherited	composition	composition.gospel-of-john
-John.13.1-38	38	inherited	composition	composition.gospel-of-john
-John.14.1-31	31	inherited	composition	composition.gospel-of-john
-John.15.1-27	27	inherited	composition	composition.gospel-of-john
-John.16.1-33	33	inherited	composition	composition.gospel-of-john
-John.17.1-26	26	inherited	composition	composition.gospel-of-john
+John.13.1-38	38	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.last-supper
+John.14.1-31	31	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.last-supper
+John.15.1-27	27	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.last-supper
+John.16.1-33	33	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.last-supper
+John.17.1-26	26	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.last-supper
 John.18.1-40	40	inherited	composition	composition.gospel-of-john
-John.19.1-42	42	inherited	composition	composition.gospel-of-john
-John.20.1-31	31	inherited	composition	composition.gospel-of-john
+John.19.1-17	17	inherited	composition	composition.gospel-of-john
+John.19.18-37	20	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.crucifixion
+John.19.38-42	5	inherited	composition	composition.gospel-of-john
+John.20.1-18	18	dated	composition,narrated-event	composition.gospel-of-john,life-of-christ.resurrection
+John.20.19-31	13	inherited	composition	composition.gospel-of-john
 John.21.1-25	25	inherited	composition	composition.gospel-of-john
-Acts.1.1-26	26	inherited	composition	composition.acts-of-the-apostles
-Acts.2.1-47	47	inherited	composition	composition.acts-of-the-apostles
+Acts.1.1-8	8	inherited	composition	composition.acts-of-the-apostles
+Acts.1.9-11	3	dated	composition,narrated-event	composition.acts-of-the-apostles,life-of-christ.ascension
+Acts.1.12-26	15	inherited	composition	composition.acts-of-the-apostles
+Acts.2.1-4	4	dated	composition,narrated-event	composition.acts-of-the-apostles,life-of-christ.pentecost
+Acts.2.5-47	43	inherited	composition	composition.acts-of-the-apostles
 Acts.3.1-26	26	inherited	composition	composition.acts-of-the-apostles
 Acts.4.1-37	37	inherited	composition	composition.acts-of-the-apostles
 Acts.5.1-42	42	inherited	composition	composition.acts-of-the-apostles
 Acts.6.1-15	15	inherited	composition	composition.acts-of-the-apostles
-Acts.7.1-59	59	inherited	composition	composition.acts-of-the-apostles
+Acts.7.1	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.2-5	4	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.patriarchs.call-of-abram
+Acts.7.6	1	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.egypt.sojourn
+Acts.7.7	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.8	1	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.patriarchs.covenant-of-circumcision
+Acts.7.9-13	5	inherited	composition	composition.acts-of-the-apostles
+Acts.7.14-15	2	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.egypt.descent
+Acts.7.16	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.17-19	3	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.egypt.sojourn
+Acts.7.20-29	10	inherited	composition	composition.acts-of-the-apostles
+Acts.7.30-34	5	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.exodus.burning-bush
+Acts.7.35	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.36	1	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.exodus.the-exodus
+Acts.7.37	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.38	1	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.wilderness.arrival-at-sinai
+Acts.7.39-41	3	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.wilderness.golden-calf
+Acts.7.42	1	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.wilderness.forty-years-in-the-desert
+Acts.7.43	1	inherited	composition	composition.acts-of-the-apostles
+Acts.7.44-45	2	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.wilderness.erection-of-the-tabernacle
+Acts.7.46-59	14	inherited	composition	composition.acts-of-the-apostles
 Acts.8.1-40	40	inherited	composition	composition.acts-of-the-apostles
 Acts.9.1-43	43	inherited	composition	composition.acts-of-the-apostles
 Acts.10.1-48	48	inherited	composition	composition.acts-of-the-apostles
 Acts.11.1-30	30	inherited	composition	composition.acts-of-the-apostles
 Acts.12.1-25	25	inherited	composition	composition.acts-of-the-apostles
-Acts.13.1-52	52	inherited	composition	composition.acts-of-the-apostles
+Acts.13.1-18	18	inherited	composition	composition.acts-of-the-apostles
+Acts.13.19-20	2	dated	composition,retrospective-event	composition.acts-of-the-apostles,israel.judges.period
+Acts.13.21-52	32	inherited	composition	composition.acts-of-the-apostles
 Acts.14.1-27	27	inherited	composition	composition.acts-of-the-apostles
 Acts.15.1-41	41	inherited	composition	composition.acts-of-the-apostles
 Acts.16.1-40	40	inherited	composition	composition.acts-of-the-apostles
