@@ -1004,5 +1004,169 @@ class ToolTests(unittest.TestCase):
         self.assertEqual(tool._rendered(arguments), tracked)
 
 
+# --- The tracked corpus's hard cases ----------------------------------------
+
+
+class TrackedHardCaseTests(unittest.TestCase):
+    """The cases the corpus was built to survive, asserted against real data.
+
+    These read `src/sources/chronology` rather than a fixture, because a model
+    that only works on data written to suit it is not evidence of anything.
+    They assert SHAPE — which relations reach a locus, which subject they name,
+    which do not appear — and never a particular year, so that adding a
+    sourced claim does not break them and collapsing two relations into one
+    does.
+    """
+
+    def ask(self, locus: str, system: str = "vulgate"):
+        answer = _chronology.chronology(
+            _chronology.parse_locus(locus, "test", system)
+        )
+        self.assertIsInstance(answer, _chronology.Answer, locus)
+        return answer
+
+    def relations(self, locus: str, system: str = "vulgate") -> set[str]:
+        return {item.relation for item in self.ask(locus, system).assertions}
+
+    def test_four_gospels_reach_one_crucifixion_with_one_set_of_claims(self) -> None:
+        seen = []
+        for locus in ("Matt.27.35", "Mark.15.24", "Luke.23.34", "John.19.23"):
+            narrated = [
+                item
+                for item in self.ask(locus).assertions
+                if item.relation == "narrated-event"
+            ]
+            subjects = {item.subject for item in narrated}
+            self.assertEqual(subjects, {"life-of-christ.crucifixion"}, locus)
+            seen.append(sorted(str(item.claim.date) for item in narrated))
+        # One event, dated once. Four different lists here would be the failure
+        # the whole binding shape exists to prevent.
+        self.assertEqual(len(set(map(tuple, seen))), 1)
+        self.assertGreater(len(seen[0]), 1, "the Crucifixion's disagreement is gone")
+
+    def test_each_gospel_keeps_its_own_composition_chronology(self) -> None:
+        units = {}
+        for locus, token in (
+            ("Matt.27.35", "Matt"), ("Mark.15.24", "Mark"),
+            ("Luke.23.34", "Luke"), ("John.19.23", "John"),
+        ):
+            composition = {
+                item.subject
+                for item in self.ask(locus).assertions
+                if item.relation == "composition"
+            }
+            self.assertEqual(len(composition), 1, locus)
+            units[token] = composition.pop()
+        # Four Gospels, four composition units, one Crucifixion.
+        self.assertEqual(len(set(units.values())), 4, units)
+
+    def test_psalm_21_prophesies_the_passion_and_does_not_narrate_it(self) -> None:
+        relations = self.relations("Ps.21.19")
+        self.assertIn("prophetic-referent", relations)
+        self.assertNotIn("narrated-event", relations)
+        referents = {
+            item.subject
+            for item in self.ask("Ps.21.19").assertions
+            if item.relation == "prophetic-referent"
+        }
+        self.assertIn("life-of-christ.crucifixion", referents)
+
+    def test_one_verse_carries_three_relation_types_at_once(self) -> None:
+        # Psalm 21:2 is the setting of David's reign, words spoken from the
+        # Cross, and a text read of the Passion. Three questions, three answers,
+        # none overwriting another.
+        relations = self.relations("Ps.21.2")
+        self.assertGreaterEqual(len(relations), 3, relations)
+        self.assertIn("utterance", relations)
+        self.assertIn("prophetic-referent", relations)
+
+    def test_the_miserere_is_one_psalm_however_it_is_numbered(self) -> None:
+        vulgate = self.ask("Ps.50.3")
+        hebrew = self.ask("Ps.51.3", system="hebrew")
+        self.assertEqual(str(hebrew.locus), str(vulgate.locus))
+        self.assertEqual(
+            [item.subject for item in hebrew.assertions],
+            [item.subject for item in vulgate.assertions],
+        )
+        self.assertIn("superscription-setting", self.relations("Ps.50.3"))
+
+    def test_a_superscription_setting_is_not_promoted_to_a_composition_date(self) -> None:
+        # The Miserere's title names its occasion. No inspected source states
+        # when the psalm was written, and the corpus does not let the first
+        # stand in for the second.
+        relations = self.relations("Ps.50.3")
+        self.assertIn("superscription-setting", relations)
+        self.assertNotIn("composition", relations)
+
+    def test_a_book_level_composition_unit_reaches_every_verse_of_its_book(self) -> None:
+        for locus in ("Matt.1.1", "Matt.14.22", "Matt.28.20"):
+            subjects = {
+                item.subject
+                for item in self.ask(locus).assertions
+                if item.relation == "composition"
+            }
+            self.assertEqual(subjects, {"composition.gospel-of-matthew"}, locus)
+            self.assertTrue(
+                all(
+                    item.inherited
+                    for item in self.ask(locus).assertions
+                    if item.relation == "composition"
+                ),
+                locus,
+            )
+
+    def test_a_traditional_claim_that_diverges_from_modern_chronology_says_so(self) -> None:
+        # The profile boundary, asserted rather than described: at least one
+        # claim records that its traditional figure is not the modern one, and
+        # the modern figure is nowhere authored as the claim.
+        corpus = _chronology.load()
+        boundary = [
+            (holder.id, claim)
+            for holder in (*corpus.units.values(), *corpus.events.values())
+            for claim in holder.claims
+            if "modern" in (claim.note or "").lower()
+            or "critic" in (claim.note or "").lower()
+        ]
+        self.assertTrue(boundary, "no claim records a profile boundary")
+
+    def test_disagreement_survives_where_the_sources_disagree(self) -> None:
+        # The Gospel of St Matthew is the case: the encyclopedia reports several
+        # traditional dates and refuses to choose, so the corpus refuses too.
+        matthew = _chronology.load().units["composition.gospel-of-matthew"]
+        self.assertGreater(len(matthew.claims), 2)
+        self.assertEqual(
+            {claim.disposition for claim in matthew.claims}, {"disputed"}
+        )
+        self.assertEqual(
+            len({claim.sources for claim in matthew.claims}),
+            len({claim.sources for claim in matthew.claims}),
+        )
+
+    def test_anno_mundi_is_recorded_in_the_era_its_source_printed(self) -> None:
+        corpus = _chronology.load()
+        anno_mundi = [
+            (holder.id, claim)
+            for holder in corpus.events.values()
+            for claim in holder.claims
+            if claim.date.begin is not None and claim.date.begin.era == "am"
+        ]
+        self.assertTrue(anno_mundi, "no Anno Mundi figure survived authoring")
+        for identifier, claim in anno_mundi:
+            # Never silently converted, and never mixed with a Christian era.
+            self.assertEqual(claim.date.end.era, "am", identifier)
+            self.assertNotIn("B.C.", claim.date.label, identifier)
+
+    def test_every_verse_of_the_canon_reaches_exactly_one_status(self) -> None:
+        counts = _chronology.coverage()
+        self.assertEqual(counts["total_verses"], 35809)
+        self.assertEqual(sum(counts["by_status"].values()), counts["total_verses"])
+        # And the honest default is still visibly the largest untouched share,
+        # so nothing here is claiming coverage it has not got.
+        self.assertGreater(counts["by_status"]["research-pending"], 0)
+
+    def test_a_gap_and_an_assertion_never_stand_over_one_verse(self) -> None:
+        self.assertEqual(_chronology.audit(), [])
+
+
 if __name__ == "__main__":
     unittest.main()

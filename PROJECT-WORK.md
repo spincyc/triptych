@@ -1748,11 +1748,53 @@ in this repository has been inspected asserting. No bare coverage percentage.
 **State on 2026-08-26.** The governing contract, the traditional profile, the
 data model, the loader and its validation, the query, the coverage derivation,
 the gated derived table, the registered tool and the repository gate are in
-place. The corpus itself is being populated from ranked sources; every locus not
-yet reached is `research-pending`, which is the honest report and is what the
-coverage table prints. The deliverable stays `in_progress` until the
-exhaustive-coverage requirement is honestly met; a correct partial corpus is
-acceptable and a falsely complete chronology is not.
+place, and eleven of the twelve promised requirements pass. The corpus holds 143
+events, 51 composition units, 139 bindings and 10 typed gaps, resting on 109
+newly registered source artifacts — 89 signed Catholic Encyclopedia articles
+across all fifteen volumes, Eusebius's *Church History* I to III, and
+Augustine's *De consensu evangelistarum* III — each acquired over HTTPS,
+hashed, and read for the sentence it is cited for.
+
+Coverage, by category, over the canonical Clementine edition's 35 809 verses:
+
+| Category | Verses |
+| --- | --- |
+| substantive event assertions (`dated`) | 5 109 |
+| inherited composition only | 16 871 |
+| undated in tradition, sources inspected | 4 126 |
+| research-pending | 9 703 |
+| carrying more than one relation type | 2 540 |
+| carrying preserved alternative traditional claims | 9 233 |
+| blocked by Scripture identity or alignment | 0 |
+
+There is deliberately no single percentage. A headline would be true of a corpus
+that had researched nothing, since what it would count is keys in a file.
+
+**The exhaustive-coverage requirement is open, and that is the honest state.**
+9 703 verses have no assertion and no inspected silence behind them; they carry
+`research-pending`, which is a queryable status and not a hole. Nothing was
+authored to move that number. The Psalter is the clearest case: not one
+inspected source states when any psalm was *written*, the Miserere included, so
+the psalms carry their superscription settings, their traditional occasions and
+their prophetic referents, and no composition date at all.
+
+**What the population proved.** The four Gospels reach one Crucifixion, dated
+once and disputed seven ways because the Catholic Encyclopedia declines to
+settle its own question, while each Gospel keeps its own composition
+chronology. Psalm 21 binds to that same Crucifixion under `prophetic-referent`
+and never under `narrated-event`; its second verse carries three relation types
+at once, since the words it holds were also spoken from the Cross. Psalm 50
+takes its setting from its own printed title and answers to Hebrew 51 through
+the existing concordance rather than through a second copy. Sirach refuses in
+the Greek arrangement, because there are two texts and not two numberings.
+Micheas is scoped to chapters 1-3 and Nahum to 2-3, because that is the extent
+the sources date.
+
+**A defect this work found in itself.** An authoring lane reported that a
+`relative` date whose anchor named a nonexistent event loaded clean and audited
+clean — a date that stated nothing, in well-formed YAML, inside the apparatus
+built to catch exactly that. The first real corpus carried two. The loader now
+refuses a relative date whose anchor this corpus does not hold.
 
 **Not in this lane.** Propers, the Catena, the web reader and the PDFs are not
 wired to the corpus, and no proper document was revised. The consumer contract
