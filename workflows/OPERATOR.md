@@ -49,8 +49,8 @@ You do not have to type the whole id. Any unique tail of one stands for it,
 so these are the same command:
 
 ```bash
-tools/tpt proper liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost seed
-tools/tpt proper 46-ninth-after-pentecost seed
+tools/tpt proper liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed
+tools/tpt proper 49-ninth-after-pentecost seed
 ```
 
 A tail matching more than one document is refused with the candidates listed.
@@ -73,7 +73,7 @@ tools/tpt proper <proper-id> seed [--provider <gpt|claude>]
 Example:
 
 ```bash
-tools/tpt proper liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost seed --provider gpt
+tools/tpt proper liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost seed --provider gpt
 ```
 
 The first invocation creates a run directory under

@@ -216,7 +216,7 @@ class PropersWorkflowTests(unittest.TestCase):
     def test_propers_seed_creates_run(self):
         """Seed creates a run with a deterministic first packet."""
         result = self.engine.seed("proper", {
-            "proper": "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost",
+            "proper": "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost",
             "provider": "gpt",
         })
         self.assertFalse(result.get("already_exists", False))
@@ -227,7 +227,7 @@ class PropersWorkflowTests(unittest.TestCase):
     def test_propers_seed_deterministic(self):
         """Two seeds with identical args produce identical packet hashes."""
         args = {
-            "proper": "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost",
+            "proper": "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost",
             "provider": "gpt",
         }
         r1 = self.engine.seed("proper", args)
@@ -255,7 +255,7 @@ class PropersWorkflowTests(unittest.TestCase):
         in test_workflow_scope_and_publication.py.
         """
         result = self.engine.seed("proper", {
-            "proper": "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost",
+            "proper": "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost",
             "provider": "gpt",
         })
         run_id = result["run_id"]

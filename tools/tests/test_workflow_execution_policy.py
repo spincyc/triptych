@@ -429,7 +429,7 @@ class ControllerGuidanceTests(FanoutCase):
         engine.runs_dir = runs
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         doc = ("liturgy/roman-rite/1962/propers/temporal/"
-               "46-ninth-after-pentecost")
+               "49-ninth-after-pentecost")
         seeded = engine.seed("proper", {"proper": doc, "provider": "gpt"})
         workflow = engine.load_workflow("proper")
         state = engine.load_state(seeded["run_id"])

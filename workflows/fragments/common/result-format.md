@@ -48,7 +48,7 @@ workflow declares.
   "iteration": 0,
   "disposition": "PASS",
   "summary": "One or two sentences describing what you did.",
-  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost/main.tex"
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex"
 }
 ```
 

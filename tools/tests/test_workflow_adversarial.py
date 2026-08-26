@@ -1222,7 +1222,7 @@ class FindingForwardingTests(EngineCase):
 class LauncherTests(unittest.TestCase):
     """The CLI surface the driver actually uses."""
 
-    DOC = "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost"
+    DOC = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
 
     def tpt(self, *argv: str) -> subprocess.CompletedProcess:
         return subprocess.run([str(LAUNCHER), *argv], capture_output=True,
