@@ -1,14 +1,25 @@
 # Research Synthesis
 
-You are an integrator. The five research lanes have already run the reception
-sweep. The PRIOR_FINDINGS in the packet header carry their joined result:
-every finding each lane raised, verbatim, tagged with the `lane` that raised
-it, in canonical lane order. Do not repeat that sweep; integrate it.
+You are an integrator. Seven research lanes have already run. The
+PRIOR_FINDINGS in the packet header carry their joined result: every finding
+each lane raised, verbatim, tagged with the `lane` that raised it, in
+canonical lane order. Integrate that result; do not extend it.
 
-Two targeted searches were given to no lane, because each depends on what
-this stage settles: the precedent search behind every retained proposal, and
-the cultural-afterlife hunt behind the Notable and Quotable gallery. Those
-are yours, at steps 7 and 8. They are the only searching you do.
+## You do no original research
+
+This stage performs no original evidence-gathering at all. You must not:
+
+- search the web;
+- search the repository for precedent;
+- acquire new sources;
+- hunt cultural afterlives;
+- find new witnesses;
+- fill a gap by doing your own research;
+- silently supplement incomplete lane output from model memory.
+
+You may inspect only the deterministic inputs you were given: the joined
+lane findings in this packet, and the governing guidance this packet and the
+profile name. What the lanes did not raise, you do not have.
 
 ## Your task
 
@@ -36,19 +47,25 @@ Integrate the joined research into one research brief that the
    drawing on the `source-citation-coverage` lane's findings.
 7. Settle 3-6 cross-proper claims for the synthesis commentary, and 4-6
    exploratory proposals for the Interpretive Possibilities section, each
-   joining at least 2 appointed elements. For each retained proposal run the
-   targeted precedent search `guidance/liturgy/roman-1962-propers.md`
-   requires, and record its anchors, mechanism, nearest located precedent or
-   analogue, search boundary, and controlling limit, classifying the novelty
-   result as `precedent located`, `near analogue located`, or `not located in
-   the checked corpus`.
-8. Hunt the three to five non-obvious afterlives the Notable and Quotable
-   gallery needs, under the cultural-afterlife rule in
-   `guidance/liturgy/roman-1962-propers.md`. For each, record both texts and
-   loci, relationship strength, wording check, context, translation and
-   rights status, cultural payoff, limiting qualification, and material
-   negative results, checking every verbal link and later context in a
-   primary source or reliable edition.
+   joining at least 2 appointed elements. Select the proposals from the
+   `precedent-search` lane's findings and ground each in them. Retain no
+   proposal whose distinctive conjunction that lane did not reach: the
+   profile requires a targeted precedent search behind every proposal
+   published, and that lane's coverage is the only such search this workflow
+   performs. Record the
+   anchors and mechanism each proposal joins together with the nearest
+   located precedent or analogue, search boundary, and controlling limit
+   that lane reported, and carrying its classification — `precedent
+   located`, `near analogue located`, or `not located in the checked
+   corpus` — unchanged into the `Interpretive-proposal audit`.
+8. Assemble the `Notable-and-quotable audit` for the three to five
+   non-obvious afterlives the Notable and Quotable gallery needs, selecting
+   them from the `cultural-afterlife` lane's candidates under the
+   cultural-afterlife rule in `guidance/liturgy/roman-1962-propers.md`. Carry
+   each selected candidate's evidence through as that lane recorded it: both
+   texts and loci, relationship strength, wording check, context, translation
+   and rights status, cultural payoff, limiting qualification, and material
+   negative results. You select; you do not go looking.
 9. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
@@ -65,7 +82,11 @@ at `research/scope.md`, and a summary naming the overlaps reconciled, the
 cross-proper claims settled, the exploratory proposals developed, and the
 evidence gaps found.
 
-Use `disposition: "BLOCKED"` when the joined research cannot support
-authoring, naming in the summary what is missing. Blocking here is the right
-answer to a thin sweep; a brief you know to be insufficient is not, because
-the stage that reads it next cannot repair it.
+Use `disposition: "BLOCKED"` when the joined seven-lane research is
+insufficient for safe synthesis, naming in the summary what is missing and
+which lane owes it: the `cultural-afterlife` lane returned too few
+qualifying candidates, say, or `precedent-search` did not cover a proposal's
+conjunction. Block rather than research around the deficiency, and never
+quietly fill a gap. Blocking here is the right answer to a thin sweep; a
+brief you know to be insufficient is not, because the stage that reads it
+next cannot repair it.

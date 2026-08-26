@@ -16,7 +16,7 @@ Identify and collate:
 - candidate cross-proper arguments worth testing during integration
 
 You are not the synthesis authority. A later single-owner
-`research-synthesis` worker integrates all five lanes, and the author
+`research-synthesis` worker integrates every lane, and the author
 settles what the guide finally says. Everything you return is therefore a
 candidate: label it as a candidate in its `claim`, ground it in appointed
 text or checked reception named in `evidence`, and state in `notes` what

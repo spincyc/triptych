@@ -89,7 +89,7 @@ sweep and these are its results, whether or not it found much. `BLOCKED` means
 you could not do the sweep at all, and the run stops there. There is no
 `CHANGES_REQUIRED` for a research lane; the engine rejects one.
 
-`tpt` joins the five lanes itself and forwards the joined findings, each
+`tpt` joins every lane itself and forwards the joined findings, each
 tagged with the lane that raised it, into the next stage's packet. Do not
 write anything into the repository, and do not answer for another lane.
 
@@ -124,6 +124,28 @@ same issue every time it appears). Use a prefix matching the evaluator type:
 
 Only `blocking` severity findings trigger revision. `advisory` findings are
 recorded but do not block.
+
+## Naming who repairs a blocking finding
+
+Some evaluator stages route a repair by owner. Where the stage's own fragment
+says so, every **blocking** finding must also carry:
+
+```json
+{
+  "repair_target": "research" | "authoring"
+}
+```
+
+- `research`: the defect is in the research evidence or in the research brief.
+- `authoring`: the brief is adequate; the canonical leaf's prose, structure,
+  or use of citations is not.
+
+`tpt` reads the field and chooses the repair route itself, in the order the
+workflow declares its routes, so one blocking finding naming the earlier owner
+sends the whole run that way. You are not choosing the route and neither is
+the driver: you are stating who owns the defect. There is no third value, and
+the engine rejects a blocking finding that omits the field or names anything
+else. Advisory findings do not carry it.
 
 ## Gate stages
 

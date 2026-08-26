@@ -320,7 +320,8 @@ workflow below.
       "severity": "blocking",
       "location": "page 4",
       "problem": "Description of the issue.",
-      "required_result": "What the reviser must produce."
+      "required_result": "What the reviser must produce.",
+      "repair_target": "research | authoring"
     }
   ]
 }
@@ -331,6 +332,25 @@ but do not block.
 
 Finding IDs must be stable across iterations. Use `CON-` prefix for content
 evaluation and `VIS-` for visual evaluation.
+
+`content-evaluation` also names who repairs each defect. Every blocking finding
+it returns carries `repair_target`, validated against
+`workflows/schema/content-evaluation-result.json`: `research` when the defect
+is in the research evidence or in `research/scope.md`, and `authoring` when the
+brief is adequate but the canonical leaf's prose, structure, or use of
+citations is not. There is no third value, a blocking finding that omits the
+field is refused, and advisory findings do not carry it. `visual-evaluation`
+and the gates route no repairs and use no `repair_target`.
+
+`tpt` reads the field and picks the route itself, in the order the workflow
+declares its routes: one blocking finding naming `research`, from any lane,
+sends the run to `research`, and a join whose blocking findings all name
+`authoring` goes to `content-revision`. So a `CHANGES_REQUIRED` content
+evaluation can print `"stage": "research"` as the next stage. That is correct,
+not a bug — the run resweeps, resynthesizes, reauthors, and is evaluated fresh.
+Only the findings that chose the route are forwarded, so the research lane
+packets carry the `research` findings and none of the `authoring` ones. You
+neither choose the route nor summarize anything into it.
 
 A lane of a fan-out evaluator returns this same shape plus `lane` and
 `lane_packet_hash`, and uses its own lane's finding-ID prefix; see Execution
@@ -434,10 +454,12 @@ one — `research` is — and its join passes, `tpt` forwards the joined finding
 into the next stage's packet: every lane's findings verbatim, each tagged with
 the `lane` that raised it, in canonical lane order. The `research-synthesis`
 worker reads the engine's own join on its packet's `PRIOR_FINDINGS` header line,
-and you are never asked to summarize the five lanes into it. `replay` rebuilds
-those same findings from the recorded joined result, and fails closed if that
-file is missing or no longer hashes as recorded, so the packet replays to the
-same bytes.
+and you are never asked to summarize the seven lanes into it. A
+`CHANGES_REQUIRED` content evaluation forwards the blocking findings that own
+the route it took and no others. `replay` rebuilds whatever a packet was
+compiled with by the same rule that forwarded it, reading the recorded result,
+and fails closed if that file is missing or no longer hashes as recorded, so
+the packet replays to the same bytes.
 
 A run is bound to the workflow source it was seeded against. Editing
 `workflows/pipelines/proper.json`, a fragment, or a schema stops every existing
@@ -474,19 +496,22 @@ resolve-context
   ↓
 source-audit
   ↓
-research (fan-out, five read-only lanes)
+research (fan-out, seven read-only lanes)
   ├─ scripture-context
   ├─ patristic-reception
   ├─ liturgical-history
   ├─ theological-synthesis
   ├─ source-citation-coverage
+  ├─ cultural-afterlife
+  ├─ precedent-search
   ↓ joined findings forwarded
 research-synthesis
   ↓
 author-proper
   ↓
 content-evaluation
-  ├─ CHANGES_REQUIRED → content-revision → reevaluate
+  ├─ CHANGES_REQUIRED, a research defect → research → synthesis → author → reevaluate
+  ├─ CHANGES_REQUIRED, authoring defects only → content-revision → reevaluate
   ├─ PASS ↓
 build-artifacts
   ↓
@@ -517,7 +542,7 @@ Each stage declares how it is run:
   `artifact-revision`, `visual-revision`. Every authoring and revision stage
   mutates the canonical leaf, `source-audit` may retrieve and write the
   provenance files, and `research-synthesis` is the sole owner of
-  `research/scope.md` and the only place the five lanes' findings are
+  `research/scope.md` and the only place the seven lanes' findings are
   reconciled, so each of them owns an authoritative artifact that exactly one
   agent may hold.
 - `program`, run by `tpt` itself: `mechanical-gates`, `final-acceptance`.
@@ -526,29 +551,42 @@ Each stage declares how it is run:
   their work is partitioned across lanes that can run at the same time. Nothing
   a lane does can conflict with a sibling's, because no lane writes anything.
 
-`research` declares five lanes, in canonical order:
+`research` declares seven lanes, in canonical order:
 
 1. `scripture-context`, finding IDs `SCR-`
 2. `patristic-reception`, finding IDs `PAT-`
 3. `liturgical-history`, finding IDs `LIT-`
 4. `theological-synthesis`, finding IDs `THE-`
 5. `source-citation-coverage`, finding IDs `COV-`
+6. `cultural-afterlife`, finding IDs `CUL-`
+7. `precedent-search`, finding IDs `PRE-`
 
 A research lane writes nothing in the repository. It does not touch the
 canonical leaf, `propers/verified.md`, `propers/retrieved.txt`,
 `research/scope.md`, or any shared source inventory; it typesets nothing,
 revises no prose, and does not read or merge another lane's findings. Its only
 product is the structured result it returns to `tpt`, and `tpt` forwards the
-join of the five to `research-synthesis`, which owns the integration.
+join of the seven to `research-synthesis`, which owns the integration.
+
+`research-synthesis` integrates and does not research. It runs no web search,
+no repository precedent search, and no source acquisition; it hunts no cultural
+afterlives and looks for no new witnesses; and it may not fill a gap from model
+memory. It selects the notable-and-quotable entries and the interpretive
+proposals from what the `cultural-afterlife` and `precedent-search` lanes
+returned rather than finding its own. When the joined seven-lane research will
+not support a safe brief it returns `disposition: "BLOCKED"`, naming what is
+missing and which lane owes it, and because `research-synthesis` is a linear
+stage the run stops there.
 
 `author-proper` reads that brief as immutable input and may not repair it. An
 author that finds it insufficient, contradictory, or missing evidence it needs
 returns `disposition: "BLOCKED"` naming what the brief lacks, and because
 `author-proper` is a linear stage the run stops there: the `advance` that
 submitted the result prints the terminal disposition, and the author's summary
-is the record of what the research left out. There is no bounded route back
-into `research` — nothing sends the run to another sweep the way an evaluator
-sends it to a revision. Improve the research guidance or the sources it sweeps,
+is the record of what the research left out. The author has no route back into
+`research` of its own: only `content-evaluation` sends a run to another sweep,
+and only for a defect it found in work the author already produced. When the
+run stops here instead, improve the research guidance or the sources it sweeps,
 then seed a new run.
 
 `content-evaluation` declares five lanes, in canonical order:
@@ -558,6 +596,12 @@ then seed a new run.
 3. `synthesis-argument`, finding IDs `CON-SYN-`
 4. `citation-integrity`, finding IDs `CON-CIT-`
 5. `profile-conformance`, finding IDs `CON-PRO-`
+
+`content-evaluation` is also the one stage that routes its own repairs. Each
+blocking finding its lanes raise names `repair_target`, and `tpt` reads that
+field to decide where a `CHANGES_REQUIRED` join sends the run — back to
+`research` if any of them names `research`, and to `content-revision`
+otherwise. See Structured result formats above.
 
 `visual-evaluation` declares four, in canonical order:
 
@@ -571,15 +615,20 @@ lane alone owns and mandates its distinct finding-ID prefix, so the joined
 findings keep stable, non-colliding ids. For the two evaluators the fragments
 partition the numbered criteria of the shared stage fragment, with no criterion
 invented or dropped; for `research` they partition the questions asked, and each
-lane is told which questions belong to the other four. Both evaluators still
+lane is told which questions belong to the other six. Both evaluators still
 bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
-before, and `research` has no revision loop at all — a lane that cannot sweep
-returns `BLOCKED` and the run stops.
+before, whichever route those joins took, and `research` has no revision loop
+of its own — a lane that cannot sweep returns `BLOCKED` and the run stops, and
+a re-entry routed from `content-evaluation` is a fresh visit to the stage on
+that evaluator's budget.
 
-The `proper` workflow is at version 5. Version 5 changed only the
-`research-synthesis` and `author-proper` fragments, to give `research/scope.md`
-a single writer; the topology, the lanes, and the gates are as they were at
-version 4. A run seeded against version 4 or any earlier version is bound to
+The `proper` workflow is at version 6. Version 6 added the `cultural-afterlife`
+and `precedent-search` research lanes, made `research-synthesis` a pure
+integrator of what those and the other five lanes returned, and gave
+`content-evaluation` a result schema of its own and the repair routes that let
+a `CHANGES_REQUIRED` evaluation re-enter `research`. The content and visual
+evaluation lanes, the gates, and every `single` stage are as they were at
+version 5. A run seeded against version 5 or any earlier version is bound to
 that source and fails closed rather than continuing under fragments it never
 started with; seed it again.
 

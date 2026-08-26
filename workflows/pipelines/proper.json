@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 5,
+  "version": 6,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "argument_schema": {
@@ -96,6 +96,18 @@
             "fragments": [
               "propers/lanes/research-source-citation-coverage.md"
             ]
+          },
+          {
+            "id": "cultural-afterlife",
+            "fragments": [
+              "propers/lanes/research-cultural-afterlife.md"
+            ]
+          },
+          {
+            "id": "precedent-search",
+            "fragments": [
+              "propers/lanes/research-precedent-search.md"
+            ]
           }
         ]
       },
@@ -180,9 +192,19 @@
         "common/result-format.md",
         "propers/content-evaluation.md"
       ],
-      "result_schema": "evaluator-result.json",
+      "result_schema": "content-evaluation-result.json",
       "pass_transition": "build-artifacts",
       "fail_transition": "content-revision",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "authoring",
+          "transition": "content-revision"
+        }
+      ],
       "max_iterations": 3
     },
     {

@@ -907,7 +907,8 @@ class LauncherTests(unittest.TestCase):
             "research": [
                 "scripture-context", "patristic-reception",
                 "liturgical-history", "theological-synthesis",
-                "source-citation-coverage",
+                "source-citation-coverage", "cultural-afterlife",
+                "precedent-search",
             ],
             "content-evaluation": [
                 "evidence-discipline", "reception-sweep",

@@ -1,0 +1,40 @@
+{
+  "name": "content-evaluation-result",
+  "description": "Structured result from the content evaluation fan-out, whose blocking findings name the stage that owns their repair",
+  "required_fields": [
+    "stage",
+    "iteration",
+    "disposition",
+    "findings"
+  ],
+  "valid_dispositions": [
+    "PASS",
+    "CHANGES_REQUIRED",
+    "BLOCKED"
+  ],
+  "finding_fields": [
+    "id",
+    "severity",
+    "location",
+    "problem",
+    "required_result"
+  ],
+  "blocking_finding_fields": [
+    "repair_target"
+  ],
+  "finding_enums": {
+    "severity": [
+      "blocking",
+      "advisory"
+    ],
+    "repair_target": [
+      "research",
+      "authoring"
+    ]
+  },
+  "optional_fields": [
+    "summary",
+    "lane",
+    "lane_packet_hash"
+  ]
+}

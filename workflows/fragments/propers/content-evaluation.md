@@ -44,6 +44,38 @@ exactly which of them you own. Report findings for your own criteria only.
 Another lane owns each of the others, and tpt joins every lane's findings
 itself.
 
+## Repair ownership
+
+Every **blocking** finding must name who has to repair it:
+
+```json
+"repair_target": "research" | "authoring"
+```
+
+- `research` — the defect is in the research evidence or in
+  `research/scope.md`: an unsupported or missing research premise, missing
+  reception coverage in the brief, a weak evidence foundation.
+- `authoring` — the brief is adequate, but the canonical proper's prose,
+  structure, or use of citations is defective: prose that ignores an
+  adequate brief, bad organization of the leaf, a citation placement or use
+  problem where the source evidence is already adequate.
+
+`tpt` reads this field and routes the repair itself. If any blocking finding
+from any lane is `research`, the run re-enters the `research` stage, then
+`research-synthesis`, then `author-proper`, then a fresh content evaluation.
+Otherwise it goes to `content-revision`. You do not choose the route and the
+controller does not choose the route: the field decides it.
+
+Because research is corrected first and the whole downstream is regenerated,
+an authoring defect reported alongside a research one is simply rediscovered
+by the fresh evaluation. That is intended, not a loss, so report each defect
+against its own owner and let the routing follow.
+
+Where ownership is genuinely ambiguous, name the earliest authoritative
+owner whose correction is necessary — that is, prefer `research`. There is
+no third value; the engine rejects anything else. Advisory findings do not
+need the field.
+
 ## Result
 
 Return an evaluator result:
