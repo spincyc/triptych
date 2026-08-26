@@ -184,15 +184,15 @@ class ShorthandTests(unittest.TestCase):
         what does not.
         """
         with self.assertRaises(WorkflowError) as caught:
-            self.resolve("51-fourteenth-after-pentecost")
+            self.resolve("55-fifteenth-after-pentecost")
         message = str(caught.exception)
         self.assertIn("does not exist yet is named in full", message)
         self.assertIn(
             "liturgy/roman-rite/1962/propers/temporal/"
-            "51-fourteenth-after-pentecost", message,
+            "55-fifteenth-after-pentecost", message,
             "the full id is shown ready to copy")
         for parent in sorted({d.rsplit("/", 1)[0] for d in self.documents}):
-            self.assertIn(f"{parent}/51-fourteenth-after-pentecost", message)
+            self.assertIn(f"{parent}/55-fifteenth-after-pentecost", message)
 
     def test_a_full_id_that_does_not_exist_yet_still_seeds(self):
         """And the path it points at really works."""
@@ -202,7 +202,7 @@ class ShorthandTests(unittest.TestCase):
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
         new = ("liturgy/roman-rite/1962/propers/temporal/"
-               "51-fourteenth-after-pentecost")
+               "55-fifteenth-after-pentecost")
         self.assertNotIn(new, self.documents)
         self.assertEqual(engine.resolve_document(self.workflow, new), new)
         seeded = json.loads(
@@ -267,13 +267,13 @@ class ShorthandTests(unittest.TestCase):
     def test_a_new_name_from_the_same_family_suggests_nothing(self):
         """These ids share most of their text, so similarity alone is noise.
 
-        `51-fourteenth-after-pentecost` scores 0.89 against its nearest
-        neighbour and 0.86 against the next; a real typo leads by an order
-        more. Suggesting on similarity alone offered three wrong answers to
-        someone naming a document that simply did not exist yet.
+        A new ordinal in an existing series can score highly against its
+        neighbours; a real typo leads by substantially more. Suggesting on
+        similarity alone offered wrong answers to someone naming a document
+        that simply did not exist yet.
         """
-        for token in ("51-fourteenth-after-pentecost",
-                      "51-fourteenth-after-penecost",
+        for token in ("55-fifteenth-after-pentecost",
+                      "55-fifteenth-after-penecost",
                       "99-something-entirely-else"):
             with self.subTest(token=token):
                 with self.assertRaises(WorkflowError) as caught:

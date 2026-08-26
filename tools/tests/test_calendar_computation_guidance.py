@@ -170,6 +170,7 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
         (47, "seventh-after-pentecost"),
         (48, "eighth-after-pentecost"),
         (50, "tenth-after-pentecost"),
+        (54, "fourteenth-after-pentecost"),
       )),
       *(f"pc-s{number}-{slug}-year-a.pdf" for number, slug in (
         (37, "eleventh-sunday-in-ordinary-time"),

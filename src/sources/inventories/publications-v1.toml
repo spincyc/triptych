@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-22"
+audited_on = "2026-08-26"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 137
-source_surface_file_count = 2055
-snapshot = "sha256:b5c0478cfb5e452a39c9025ec6f87b947bc915bf9e8ffe59cad4956a51d58c12"
+publication_count = 138
+source_surface_file_count = 2074
+snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1238,6 +1238,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -9041,6 +9052,120 @@ path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pen
 sha256 = "032791fcd8860519df47d597cb96caca7dd5b4a56293a1334749aff81a111d69"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format.tex"
+sha256 = "55712f267ea5b486f2168afe6181d7b46c433af54bd8f28b2228135b163c9b6c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/main.tex"
+sha256 = "feb5ee56a6552d2d90fc67a875d417bbe4b1de247d90935730d16225abb66fa4"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/proper-components.toml"
+sha256 = "8ded59ba06778b49bc39506738cbedbefebcf39ebaa11adfd185c97883bb135d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/propers/retrieved.txt"
+sha256 = "4980730d3cdcc99044bfddf3a6da72add7d434bea062e2d216258a872c744790"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/propers/verified.md"
+sha256 = "dbd5dc57e01260a18cb834f09348e2600c87baf5e18f30af42c7357c8a00b87b"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/scope.md"
+sha256 = "9c8e3274f84994b58b86cf5796ec45e1c8ae77136caf7a9fe4b5475bf5822350"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/source-bindings.toml"
+sha256 = "faef3ce568f928f23ee5ce5b8252db701bef4661c1f3247ed2e28c3720529ca7"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/05-appointed-text.tex"
+sha256 = "322ecec633312d422062372fb75b2ab6ec1ccc5c4cbc89714a88209818c02e18"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary.tex"
+sha256 = "75f5c752a2b58b38e972efaa9ce6d1805eba556c5cc6c72dd39745e94823a1ea"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+sha256 = "ad3bc8aef56a859f8f84f38b9eb8c42e1dbb01c48b908f9ed0758ab7a76f24a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/40-notable.tex"
+sha256 = "d6a227e082e16bdd03d7f31c7aa0c5ea2ac2a0141e0a7c2bb0ce8c6c36a53453"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/50-interpretive.tex"
+sha256 = "485ec83f13ac37d729288b1c276dc8c9477a0e3cf6d10f46401bc0230d21a148"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/90-scope.tex"
+sha256 = "9f23707f8ae45badc0be4defcb9908f6f991f968c6c37f067d2c48568caf2f46"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/99-references.tex"
+sha256 = "fef9bfd9d89194e87a602903ebe2330a547f7d986b2e16381ca06ec319e401d2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/redevelopment/02-scriptural-date-location.tex"
+sha256 = "4fa78484c2ca9597562a76fb45a04fd8008a05170ad2fc0a2a285d9c82e76afe"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/synthesis/10-themes-and-movement.tex"
+sha256 = "faabbc41959a27d110705d751e78bdbb9da439ebe9adaf1523ee93fe6edc3525"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/synthesis/20-integrated-commentary.tex"
+sha256 = "934d72e388e0fe5f39dbdd6de5547358f8e885a5a203f3b264245d0cc2e999e2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/synthesis.tex"
+sha256 = "a4874c2eb3f00be6b51f19d230a23f27c48ce46517af4f23d5f3fa01345983ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/web-edition.toml"
+sha256 = "48e3858af200e2914ad12d75661e6edd070dab267a3adee0678ffefff1459d48"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"

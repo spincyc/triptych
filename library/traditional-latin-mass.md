@@ -69,6 +69,7 @@ editions are shown as `Planned`.
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -125,7 +126,7 @@ editions are shown as `Planned`.
 | 51 | **Eleventh Sunday after Pentecost** | [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf) | [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf) |
 | 52 | **Twelfth Sunday after Pentecost** | [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf) | [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf) |
 | 53 | **Thirteenth Sunday after Pentecost** | [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf) | [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf) |
-| 54 | **Fourteenth Sunday after Pentecost** | Planned | Planned |
+| 54 | **Fourteenth Sunday after Pentecost** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.html) | Planned |
 | 55 | **Fifteenth Sunday after Pentecost** | Planned | Planned |
 | 56 | **Sixteenth Sunday after Pentecost** | Planned | Planned |
 | 57 | **Seventeenth Sunday after Pentecost** | Planned | Planned |

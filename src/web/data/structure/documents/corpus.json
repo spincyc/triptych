@@ -1,15 +1,15 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
  "counted": {
-  "documents": 186,
-  "issues": 200,
-  "pages": 5961,
+  "documents": 187,
+  "issues": 202,
+  "pages": 5979,
   "titles_unrecorded": 0,
-  "works": 137
+  "works": 138
  },
  "models": [
   {
-   "documents": 133,
+   "documents": 134,
    "id": "GPT-5-based Codex agent"
   },
   {
@@ -32,7 +32,7 @@
    "label": "Claude"
   },
   {
-   "documents": 137,
+   "documents": 138,
    "id": "gpt",
    "label": "GPT"
   }
@@ -61,7 +61,7 @@
   },
   {
    "id": "liturgy",
-   "works": 45
+   "works": 46
   },
   {
    "id": "theology",
@@ -5084,6 +5084,57 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 12,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
+       "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
+       "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (source reconciliation; Greek and Latin reception verification; chronology, attribution, and cultural-afterlife corrections; drafting; and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (blocking visual layout revision and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (catalog-ID correction, synthesis reference reflow, publication integration, and production review); API workspace; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-5-based Codex agent"
+     ],
+     "pages": 18,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
+     "provider": "gpt",
+     "reviewed": "2026-08-26",
+     "revised": "2026-08-26T19:06:19Z",
+     "status": "alpha",
+     "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+     "title": "Fourteenth Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
    "section": "liturgy"
   },
   {

@@ -1,0 +1,117 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Dominica Decima Quarta post Pentecosten, printed pp. 394-396, marginal nos. 1572-1581"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The checksum-matched page images control the complete Latin formulary, rank, headings, references, Creed, Trinity Preface, and both occurrence boundaries."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["printed pp. 389-391, leaves n465-n467"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "An independent 1962 publisher edition corroborates the formulary and exposes punctuation, abbreviation, and accent differences; it never displaces the Vatican typical reading."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = ["Dominica XIV post Pentecosten text-layer block"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+context = "The uncorrected OCR excerpt in propers/retrieved.txt is only a locator and intentionally preserves recognition errors."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-14"
+loci = ["post-pentecosten-14", "post-pentecosten-14/collect", "post-pentecosten-14/secret", "post-pentecosten-14/postcommunion"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:473570a7ce5c276efcc7ab4f5fee9cdeafb0ffbf7e91fda0c39f567100420ccd"
+context = "The registered public-domain passage controls the historical English of the three orations: the Collect is printed on p. 425, while the Secret and Postcommunion begin on p. 427. Published citations use the formulary and oration names; the Latin remains controlling wherever the old translation paraphrases."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.33.1-23", "Ps.83.1-13", "Ps.94.1-11", "Ps.117.1-29"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The appointed rows control all published psalm English; the complete chapters control only explicitly marked scriptural context."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.5.1-7.29", "Matt.6.24-33"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "Matthew 6:24-33 controls Gospel and Communion English; the whole Sermon controls the explicitly identified canonical context and the liturgical-frame boundary."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Gal.4.1-6.18", "Gal.5.16-24"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+context = "The appointed verses control Epistle English; chapters 4-6 control the explicitly identified argumentative context and pericope boundary."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The registered concordance supplies the published Vulgate-to-modern Psalm 33/34, 83/84, 94/95, and 117/118 mappings."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Psalm 83, PG 80 cols. 1537-1544, artifact PDF pp. 817-820", "Psalm 94:1, PG 80 cols. 1639-1640, artifact PDF p. 868", "Psalm 117:8-9, PG 80 cols. 1811-1812, artifact PDF p. 956"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "The complete registered Greek-Latin facsimile was reacquired and matched to SHA-256 72ee87148ebda475ceea8b46b4325358dd20b07562ba0072b6fe06554eacbdd8. Exact page images were visually inspected for Theodoret's church-and-altar and corporate anointed-face reading of Psalm 83, his Josianic and christological reception of Psalm 94:1, and his sharp divine-versus-mortal-helper contrast at Psalm 117:8-9."
+
+[[bindings]]
+source_id = "segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218"
+loci = ["liber-1.6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:b4b4c1532f3ece509e86983d588765108d73d82a8b03954bfa2a409fcf0cc41c"
+context = "The registered PL 26 facsimile was reacquired, checksum-matched, and visually inspected at Matthew 6:24. Jerome distinguishes having riches from serving them; Rabanus's separate compilation marks this same gloss with the Hier. siglum, so the guide attributes it to Jerome."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-21.galatians-introduction"
+loci = ["Galatians introduction"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:91a4807a89663ad7fef6078f6593eaefaa756f66022ef0c3f2596f9c1725accd"
+context = "The official Catholic introduction controls the northern hypothesis of Ephesus about AD 54-55 and the southern hypothesis about AD 48-50; it does not fix a southern writing place."
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58"
+loci = ["prooemium"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:6c0b0df6d6eae8ff00af9b926c3c4e4b0792429a501688689e3778989d573ab5"
+context = "The visually checked proemial chronology dates Galatians to AD 58 and identifies Baronius as its source. It supplies no place and is reported as a received chronology rather than a modern critical conclusion."
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"
+loci = ["epistola-ad-galatas-argumentum"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
+context = "The checked Argumentum reports Syriac and Greek subscriptions and named patristic witnesses for Rome, the contrary Chrysostom-Baronius preference for Ephesus or another Greek city, and a Lapide's express uncertainty. It does not establish unanimity or a certain place or time."

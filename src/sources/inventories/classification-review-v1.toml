@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-08-22"
-publication_snapshot = "sha256:461f6e52035477c8f3d2eb13990690e8e0fd56334ed72e48f972eeb1425a9b78"
-classification_snapshot = "sha256:046f34d3b8b486d37d048115ba03131e5856c835f286e3878e7d93f322e9996c"
+audited_on = "2026-08-26"
+publication_snapshot = "sha256:50cca629226e19037a58bdec51248e986cab5596d3ab80379d298626682999bb"
+classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -366,6 +366,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
