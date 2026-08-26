@@ -33,7 +33,7 @@ This stage is a fan-out stage. The lane fragment that follows names the one
 question you own. Another lane owns each of the others: do not report on
 theirs, do not read or reconcile their findings, and do not merge yours with
 anyone else's. `tpt` joins the lanes itself, and a later single-owner
-`research-synthesis` worker integrates all five.
+`research-synthesis` worker integrates every lane.
 
 ## Result
 

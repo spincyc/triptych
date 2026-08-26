@@ -51,6 +51,11 @@ AGENT_MODES = (SINGLE, FANOUT)
 # set; the host owns only how many of those lanes run at once.
 HOST_MAX = "host-max"
 
+# A repair route names, for one value of a blocking finding's repair target,
+# the stage that owns the repair. Declaration order is priority order.
+REPAIR_ROUTES = "repair_routes"
+REPAIR_TARGET = "repair_target"
+
 # The only join a fan-out stage may request. Every declared lane is required,
 # lane findings are preserved verbatim under their lane identity in the
 # declared lane order, and the disposition is the worst any lane returned.
@@ -142,7 +147,41 @@ class WorkflowEngine:
         except json.JSONDecodeError as error:
             raise WorkflowError(f"{path}: invalid JSON: {error}") from error
         _validate_workflow(data, path)
+        self._validate_repair_route_coverage(data, path)
         return data
+
+    def _validate_repair_route_coverage(
+        self, workflow: dict[str, Any], path: Path
+    ) -> None:
+        """A routed stage's schema and its routes must name the same owners.
+
+        They are two lists in two files, and nothing else keeps them agreed. A
+        target the schema admits but no route names would fall through to
+        `fail_transition` in silence — a defect quietly routed to the wrong
+        owner is exactly what naming the owner exists to prevent — and a route
+        for a target the schema rejects can never fire.
+        """
+        for stage in workflow["stages"]:
+            routes = stage.get(REPAIR_ROUTES)
+            if not routes:
+                continue
+            schema_name = self.schema_name_for(stage)
+            enums = self.load_schema(schema_name).get("finding_enums", {})
+            admitted = enums.get(REPAIR_TARGET)
+            if admitted is None:
+                raise WorkflowError(
+                    f"{path}: {stage['id']} declares {REPAIR_ROUTES}, so its "
+                    f"schema {schema_name} must enumerate the values of "
+                    f"{REPAIR_TARGET} its findings may carry"
+                )
+            declared = {route[REPAIR_TARGET] for route in routes}
+            if set(admitted) != declared:
+                raise WorkflowError(
+                    f"{path}: {stage['id']} routes "
+                    f"{', '.join(sorted(declared))} but {schema_name} admits "
+                    f"{', '.join(sorted(admitted))}; every value a finding "
+                    f"may carry needs a route, and every route needs a value"
+                )
 
     def schema_name_for(self, stage: dict[str, Any]) -> str:
         """The result schema a stage's result is validated against."""
@@ -930,9 +969,11 @@ class WorkflowEngine:
                 elif disposition == CHANGES_REQUIRED:
                     count = expected_failures.get(stage["id"], 0) + 1
                     expected_failures[stage["id"]] = count
+                    route = _repair_route(stage, body)
                     expected_target = (
                         BLOCKED if count >= stage.get("max_iterations", 3)
-                        else stage["fail_transition"]
+                        else (route["transition"] if route is not None
+                              else stage["fail_transition"])
                     )
                 else:
                     expected_target = BLOCKED
@@ -1124,9 +1165,7 @@ class WorkflowEngine:
             "to": transition,
             "disposition": result["disposition"],
         })
-        prior_findings = self._extract_prior_findings(
-            result, stage, next_stage, workflow
-        )
+        prior_findings = self._extract_prior_findings(result, stage)
         packet = self._compile_stage_packets(
             workflow, next_stage, pending, self.run_dir(run_id), prior_findings
         )
@@ -1931,9 +1970,22 @@ class WorkflowEngine:
                 self._clear_failures(state, stage)
                 return stage["pass_transition"], None
             if disposition == CHANGES_REQUIRED:
+                if stage.get(REPAIR_ROUTES) and not any(
+                    finding.get("severity") == "blocking"
+                    for finding in result.get("findings", []) or []
+                ):
+                    raise WorkflowError(
+                        f"evaluator {stage['id']} returned "
+                        f"{CHANGES_REQUIRED} with no blocking finding; on a "
+                        f"stage that routes a repair by owner, that names no "
+                        f"owner and would send a reviser work it cannot see"
+                    )
                 spent = self._failure_budget_spent(state, stage)
                 if spent:
                     return BLOCKED, spent
+                route = _repair_route(stage, result)
+                if route is not None:
+                    return route["transition"], None
                 return stage["fail_transition"], None
             if disposition == BLOCKED:
                 return BLOCKED, None
@@ -2102,8 +2154,6 @@ class WorkflowEngine:
         self,
         result: dict[str, Any],
         stage: dict[str, Any],
-        next_stage_id: str,
-        workflow: dict[str, Any],
     ) -> list[dict[str, Any]]:
         """Extract findings to forward into the next stage's packet.
 
@@ -2112,9 +2162,9 @@ class WorkflowEngine:
 
         For a linear fan-out stage, the joined lane findings are forwarded
         verbatim on PASS. Such a stage's findings are the whole of what it
-        produced: five read-only research lanes write no artifact between
-        them, so the joined result exists only inside the run, and its
-        successor is the only place it can go. Forwarding it is what keeps the
+        produced: read-only research lanes write no artifact between them, so
+        the joined result exists only inside the run, and its successor is the
+        only place it can go. Forwarding it is what keeps the
         integration worker's material the engine's own join rather than
         something a controller retyped. An evaluator's PASS still forwards
         nothing, because there its PASS means there was nothing to report.
@@ -2129,6 +2179,17 @@ class WorkflowEngine:
                     f for f in findings
                     if f.get("severity") == "blocking"
                 ]
+                route = _repair_route(stage, result)
+                if route is not None:
+                    # Only the findings that chose this route travel it. A
+                    # finding for another owner is not carried across the
+                    # regeneration its own route would trigger; the fresh
+                    # evaluation afterwards raises it again if it still holds,
+                    # which is the whole reason the evaluation is fresh.
+                    forwarded = [
+                        f for f in forwarded
+                        if f.get(REPAIR_TARGET) == route[REPAIR_TARGET]
+                    ]
                 return forwarded
         if stage["type"] == LINEAR and _stage_lanes(stage) \
                 and result.get("disposition") == PASS:
@@ -2138,40 +2199,31 @@ class WorkflowEngine:
     def _load_prior_findings_for_current(
         self, run_id: str, state: dict[str, Any], workflow: dict[str, Any]
     ) -> list[dict[str, Any]]:
-        """Load prior findings for the current stage by replaying transitions.
+        """Rebuild the prior findings the current packet was compiled with.
 
         Whatever `_extract_prior_findings` put in the packet has to be
         reconstructible from the record alone, or a replay of that packet would
-        recompile different bytes than the run emitted.
+        recompile different bytes than the run emitted. So this asks that same
+        function the same question, about the transition that produced the
+        current stage: one rule decides what is forwarded, and one rule
+        reproduces it. Two rules that had to agree did not stay agreed.
         """
         current = state["current_stage"]
-        stage = self._get_stage(workflow, current)
-
-        # A linear fan-out stage forwards its joined lane findings on PASS.
         transitions = state.get("transitions") or []
-        if transitions and transitions[-1].get("to") == current:
-            source = self._get_stage(workflow, transitions[-1]["from"])
-            if source["type"] == LINEAR and _stage_lanes(source) \
-                    and transitions[-1].get("disposition") == PASS:
-                result = self._read_recorded_result(
-                    run_id, state["result_hashes"][-1], current
-                )
-                return list(result.get("findings", []) or [])
-
-        # For revision stages, find the evaluator/gate that triggered this
-        # revision and load its findings from the results directory.
-        if stage["type"] != BOUNDED_REVISION:
+        results = state.get("result_hashes") or []
+        if not transitions or not results \
+                or transitions[-1].get("to") != current:
             return []
-
-        # Walk backwards through results to find the triggering evaluator/gate
-        for entry in reversed(state["result_hashes"]):
-            if entry["disposition"] in (CHANGES_REQUIRED, FAIL):
-                result = self._read_recorded_result(run_id, entry, current)
-                return [
-                    f for f in result.get("findings", [])
-                    if f.get("severity") == "blocking"
-                ]
-        return []
+        source = self._get_stage(workflow, transitions[-1]["from"])
+        # Whether anything can be forwarded at all is decided by the stage and
+        # its disposition, before the recorded result is opened. Otherwise a
+        # replay of a stage that forwards nothing fails on a file it would
+        # never have read, and `replay` is the tool an operator reaches for
+        # when a run is already in trouble.
+        if not _may_forward(source, transitions[-1].get("disposition")):
+            return []
+        result = self._read_recorded_result(run_id, results[-1], current)
+        return self._extract_prior_findings(result, source)
 
     def _read_recorded_result(
         self, run_id: str, entry: dict[str, Any], current: str
@@ -2486,20 +2538,28 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
                 raise WorkflowError(f"{path}: {sid}: gate stage requires 'checks' list")
 
         _validate_execution(path, sid, stype, stage)
+        _validate_repair_routes(path, sid, stype, stage)
 
     # Validate transitions point to valid stages or terminal states
     accepting = []
     for stage in data["stages"]:
         sid = stage["id"]
-        for tkey in ("next", "pass_transition", "fail_transition"):
-            if tkey in stage:
-                target = stage[tkey]
-                if target not in stage_ids and target not in (ACCEPTED, BLOCKED):
-                    raise WorkflowError(
-                        f"{path}: {sid}.{tkey} points to unknown stage: {target}"
-                    )
-                if target == ACCEPTED:
-                    accepting.append((sid, tkey, stage["type"]))
+        targets = [
+            (tkey, stage[tkey])
+            for tkey in ("next", "pass_transition", "fail_transition")
+            if tkey in stage
+        ]
+        targets += [
+            (f"{REPAIR_ROUTES}[{index}].transition", route["transition"])
+            for index, route in enumerate(stage.get(REPAIR_ROUTES) or [])
+        ]
+        for tkey, target in targets:
+            if target not in stage_ids and target not in (ACCEPTED, BLOCKED):
+                raise WorkflowError(
+                    f"{path}: {sid}.{tkey} points to unknown stage: {target}"
+                )
+            if target == ACCEPTED:
+                accepting.append((sid, tkey, stage["type"]))
 
     # Acceptance is the one transition no agent may attest. A stage whose
     # result comes from an AI worker cannot name ACCEPTED, because then the
@@ -2619,6 +2679,92 @@ def _validate_execution(
             )
 
 
+def _may_forward(stage: dict[str, Any], disposition: Any) -> bool:
+    """Whether this stage, ending this way, forwards anything to its successor.
+
+    The mirror of the cases `_extract_prior_findings` acts on, decided from
+    the transition record alone.
+    """
+    if stage["type"] in (EVALUATOR, GATE):
+        return disposition in (CHANGES_REQUIRED, FAIL)
+    return (
+        stage["type"] == LINEAR
+        and bool(_stage_lanes(stage))
+        and disposition == PASS
+    )
+
+
+def _repair_route(
+    stage: dict[str, Any], result: dict[str, Any]
+) -> dict[str, Any] | None:
+    """The declared route this result's blocking findings select, or None.
+
+    An evaluator can find two different kinds of defect, and they are not
+    repaired in the same place. Which one a run goes to is read from a field
+    the evaluator set on each blocking finding, not from prose, a filename, a
+    finding-id prefix, or anything a controller decides.
+
+    Declaration order is priority order: the first declared target that any
+    blocking finding names wins, so a result carrying both kinds takes the
+    earlier route. Nothing here reads finding order or completion order, so
+    the same result always selects the same route.
+    """
+    routes = stage.get(REPAIR_ROUTES)
+    if not routes:
+        return None
+    named = {
+        finding.get(REPAIR_TARGET)
+        for finding in result.get("findings", []) or []
+        if finding.get("severity") == "blocking"
+    }
+    for route in routes:
+        if route[REPAIR_TARGET] in named:
+            return route
+    return None
+
+
+def _validate_repair_routes(
+    path: Path, sid: str, stype: str, stage: dict[str, Any]
+) -> None:
+    """Repair ownership is a closed, ordered list, declared by the workflow.
+
+    An evaluator that can find two kinds of defect needs somewhere to send
+    each. Leaving that to a controller reading finding prose would put the
+    one decision the routing exists to make back where it started.
+    """
+    if REPAIR_ROUTES not in stage:
+        return
+    if stype != EVALUATOR:
+        raise WorkflowError(
+            f"{path}: {sid}: only an {EVALUATOR} stage may declare "
+            f"'{REPAIR_ROUTES}'; {sid} is a {stype} stage"
+        )
+    routes = stage[REPAIR_ROUTES]
+    if not isinstance(routes, list) or not routes:
+        raise WorkflowError(
+            f"{path}: {sid}: '{REPAIR_ROUTES}' must be a nonempty list"
+        )
+    seen: set[str] = set()
+    for index, route in enumerate(routes):
+        if not isinstance(route, dict) \
+                or set(route) != {REPAIR_TARGET, "transition"}:
+            raise WorkflowError(
+                f"{path}: {sid}: {REPAIR_ROUTES}[{index}] declares exactly "
+                f"'{REPAIR_TARGET}' and 'transition'"
+            )
+        target = route[REPAIR_TARGET]
+        if not isinstance(target, str) or not target:
+            raise WorkflowError(
+                f"{path}: {sid}: {REPAIR_ROUTES}[{index}].{REPAIR_TARGET} "
+                f"must be a nonempty string"
+            )
+        if target in seen:
+            raise WorkflowError(
+                f"{path}: {sid}: duplicate repair target: {target}"
+            )
+        seen.add(target)
+
+
 def _stage_execution(stage: dict[str, Any]) -> dict[str, Any]:
     """A stage's declared execution policy."""
     execution = stage.get("execution")
@@ -2673,6 +2819,12 @@ def _validate_result(
         if not isinstance(findings, list):
             raise WorkflowError("result.findings must be a list")
         finding_fields = schema.get("finding_fields", [])
+        # A field the engine branches on is required only where it is read.
+        # Demanding it of an advisory finding would reject a legitimate note;
+        # accepting a blocking finding without it would leave the engine to
+        # guess at the one thing it must not guess at.
+        blocking_fields = schema.get("blocking_finding_fields", [])
+        finding_enums = schema.get("finding_enums", {})
         for i, finding in enumerate(findings):
             if not isinstance(finding, dict):
                 raise WorkflowError(f"findings[{i}] must be an object")
@@ -2680,6 +2832,21 @@ def _validate_result(
                 if field not in finding:
                     raise WorkflowError(
                         f"findings[{i}] missing required field: {field}"
+                    )
+            if finding.get("severity") == "blocking":
+                for field in blocking_fields:
+                    if field not in finding:
+                        raise WorkflowError(
+                            f"findings[{i}] is blocking and missing required "
+                            f"field: {field}"
+                        )
+            for field in sorted(finding_enums):
+                if field in finding \
+                        and finding[field] not in finding_enums[field]:
+                    raise WorkflowError(
+                        f"findings[{i}].{field} is {finding[field]!r}; "
+                        f"expected one of: "
+                        f"{', '.join(finding_enums[field])}"
                     )
 
     # Malformed results fail closed: if we got here without raising,

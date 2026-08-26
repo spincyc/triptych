@@ -37,7 +37,9 @@ from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
     DOC,
     FRAGMENTS,
+    RECOUNTED_LANE,
     RESEARCH_LANES,
+    UNCHANGED_RESEARCH_LANES,
     VISUAL_LANES,
     PropersCase,
     workflow_json,
@@ -447,8 +449,22 @@ class PreservedArchitectureTests(unittest.TestCase):
                 self.assertEqual(shown.returncode, 0, shown.stderr)
                 self.assertEqual(shown.stdout, (ROOT / name).read_bytes())
 
-    def test_the_research_lane_fragments_are_byte_identical(self):
-        for lane in RESEARCH_LANES:
+    def test_the_recounted_lane_changed_only_its_lane_count(self):
+        """The one original lane fragment that had to move, and how far."""
+        name = (f"workflows/fragments/propers/lanes/"
+                f"research-{RECOUNTED_LANE}.md")
+        shown = subprocess.run(
+            ["git", "show", f"{DEFECTIVE_HEAD}:{name}"],
+            capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(shown.returncode, 0, shown.stderr)
+        was, now = shown.stdout, (ROOT / name).read_text(encoding="utf-8")
+        self.assertNotEqual(was, now)
+        self.assertEqual(was.replace("integrates all five lanes",
+                                     "integrates every lane"), now,
+                         "the only change to this lane is the stale count")
+
+    def test_the_unchanged_research_lane_fragments_are_byte_identical(self):
+        for lane in UNCHANGED_RESEARCH_LANES:
             name = f"workflows/fragments/propers/lanes/research-{lane}.md"
             with self.subTest(lane=lane):
                 shown = subprocess.run(

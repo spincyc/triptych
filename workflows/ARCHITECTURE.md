@@ -45,6 +45,7 @@ workflows/
     worker-result.json
     research-result.json
     evaluator-result.json
+    content-evaluation-result.json
     gate-result.json
 scripts/
   _workflow.py                 # workflow engine core (shared module)
@@ -57,6 +58,8 @@ tools/
     test_workflow_adversarial.py
     test_workflow_seed_idempotency.py
     test_workflow_research_fanout.py
+    test_workflow_brief_ownership.py
+    test_workflow_repair_routing.py
 ```
 
 ## Why workflow files cannot become ambient agent guidance
@@ -177,9 +180,12 @@ state.
      packet only
    - `ARGS`: normalized arguments as sorted JSON
    - `PRIOR_FINDINGS`: findings forwarded from the preceding stage — an
-     evaluator's or gate's blocking findings into a revision packet, or a
-     linear fan-out stage's joined lane findings into its successor's packet,
-     and empty otherwise — serialized as sorted JSON on one line
+     evaluator's or gate's blocking findings into the packet of the stage that
+     repairs them, filtered to the repair owner that chose the route where the
+     evaluator routes by owner, or a linear fan-out stage's joined lane
+     findings into its successor's packet, and empty otherwise — serialized as
+     sorted JSON on one line. A fan-out successor carries the same line on
+     every one of its lane packets.
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
@@ -201,9 +207,10 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 5: giving `research/scope.md` one writer
-changed the bytes of two bound fragments, so a run seeded against version 4
-fails closed and is seeded again.
+`proper` workflow is at version 6: two research lanes were added,
+`research-synthesis` gave up its own searching, and `content-evaluation` gained
+a result schema of its own and declared repair routes, so a run seeded against
+version 5 fails closed and is seeded again.
 
 ### Hashing boundary
 
@@ -316,10 +323,17 @@ the profile keeps in that file, and the brief, and `author-proper` reads the
 brief without editing, appending to, or regenerating it. Giving the file one
 writer moved work rather than dropping it: the notable-and-quotable and
 interpretive-proposal audits used to reach it through authoring's second write,
-and they are now the owner's. The searches behind them belong to no research
-lane and are not part of the reception sweep, so `research-synthesis` runs
-them itself; its fragment says so rather than leaving a stage told not to
-sweep holding two sweeps.
+and they are now the owner's. The searches behind those audits are two research
+lanes of their own, `cultural-afterlife` and `precedent-search`, and the owner
+of the file selects its entries from what those lanes returned. Writing the
+brief and gathering the evidence it rests on are different jobs, so
+`research-synthesis` does no original research at all: its fragment forbids web
+search, repository precedent search, new source acquisition, afterlife hunting,
+finding new witnesses, and supplementing thin lane output from model memory. A
+stage that may not repair the research it reads may not quietly replace it
+either; when the joined seven-lane research will not support a safe brief the
+integrator returns `disposition: "BLOCKED"`, naming what is missing and which
+lane owes it, and the run stops with the thin sweep on the record.
 Authoring adds no audit record of its own, because the profile keeps
 operational audit in that record and has the Scope and Qualifications appendix
 of `main.tex` point at it rather than repeat it.
@@ -328,6 +342,84 @@ A stage that cannot use what the owner wrote does not repair it:
 `author-proper` returns `disposition: "BLOCKED"` naming what the brief lacks,
 which is terminal on a linear stage, so the deficiency is on the record instead
 of being patched where nothing would record it.
+
+### One repair owner per defect
+
+Execution mode decides how many agents run a stage and ownership decides which
+stage may write a file. The third question is where a defect goes:
+
+```
+independent evidence discovery  -> seven-lane host-max research
+research-synthesis              -> pure integration, no searching
+research/scope.md               -> sole writer is research-synthesis
+authoring                       -> single owner
+content evaluation              -> classifies repair owner
+research defect                 -> research, synthesis, authoring, fresh evaluation
+authoring defect                -> content-revision
+```
+
+`content-evaluation` finds two kinds of defect: research that does not support
+what was written, and prose that does not use research that does. They are
+repaired in different places by different stages, so the evaluator names the
+owner of each defect and the engine routes on the name. The field is the whole
+of the decision: nothing reads a finding's prose, a filename, a finding-id
+prefix, or a controller's judgment, because a route chosen from any of those is
+a route the engine does not own.
+
+`content-evaluation-result.json`, used by that stage alone, requires
+`repair_target` on every blocking finding and admits `research` or `authoring`
+as its values. It declares that through two schema keys the engine now honours
+generally: `blocking_finding_fields` names fields required only of a finding
+whose `severity` is `blocking`, and `finding_enums` names the allowed values of
+a field wherever it appears. A field the engine branches on is required where
+it is read and nowhere else — demanding it of an advisory note would reject a
+legitimate finding, and accepting a blocking one without it would leave the
+engine to guess at the one thing it must not guess at.
+
+The stage declares `repair_routes`, an ordered list of objects carrying exactly
+`repair_target` and `transition`. `_validate_repair_routes` admits the field on
+an evaluator stage only and requires the targets to be unique, and every
+declared transition is checked against the stage ids like any other, including
+the rule that no agent-answered stage may name `ACCEPTED`. Declaration order is
+priority order: `_repair_route` collects the repair targets named by the
+result's blocking findings and returns the first declared route any of them
+names, so a single `research` finding among a dozen `authoring` ones sends the
+whole run to `research`. Defective research makes the prose written on top of
+it unsafe to trust whatever else is also wrong with that prose, so the earlier
+owner is corrected first and everything downstream of it is regenerated.
+`fail_transition` remains the route when the blocking findings name no declared
+target.
+
+Only the findings that chose the route travel it. `_extract_prior_findings`
+filters the forwarded blocking findings to the chosen `repair_target`, so a
+research-owned finding cannot arrive at `content-revision`, which could not
+repair it, and an authoring-owned finding is not carried across a regeneration
+that rewrites the prose it describes. The fresh evaluation afterwards raises it
+again if it still holds, which is what a fresh evaluation is for.
+
+The forwarded findings reach every lane packet of the re-entered `research`
+stage on the ordinary `PRIOR_FINDINGS` header line, so each lane resweeps
+holding the evaluator's own words. Nothing summarizes them on the way, and no
+controller decides which lane needs to see which.
+
+The loop this opens — `content-evaluation`, `research`, `research-synthesis`,
+`author-proper`, and a fresh `content-evaluation` whose packet carries
+`PRIOR_FINDINGS: []` — is bounded like the revision loop, by the evaluator's
+own `max_iterations` counted in `stage_failures`. Three consecutive
+`CHANGES_REQUIRED` results block the run, whichever route they took. The two
+loops share that budget deliberately: it bounds how many times a run may be
+sent back, not how many times each way.
+
+Two things are checked so that the field can be trusted to decide. A routed
+stage's schema and its routes must name the same owners: `load_workflow` reads
+the stage's `finding_enums` for `repair_target` and refuses a workflow where
+the admitted values and the declared routes are not the same set. They are two
+lists in two files, and a value the schema admits with no route would fall
+through to `fail_transition` in silence — a defect quietly sent to the wrong
+owner is the failure that naming the owner exists to prevent. And a routed
+stage may not return `CHANGES_REQUIRED` carrying no blocking finding: that
+result asks for a repair while naming no owner and no defect, and would spend
+an iteration dispatching a reviser with nothing to read.
 
 ### Lanes and lane packets
 
@@ -469,10 +561,13 @@ one back to revise.
 Whatever `_extract_prior_findings` put in a packet has to be rebuildable from
 the record alone, or a replay of that packet would recompile different bytes
 than the run emitted. `_load_prior_findings_for_current`, which `replay` uses,
-rebuilds it: if the last transition came from a linear fan-out stage that
-passed, it re-reads that stage's recorded joined result; if the current stage is
-a bounded revision, it walks back to the evaluator or gate result that triggered
-the revision.
+rebuilds it by asking that same function the same question: it reads the last
+recorded transition and the recorded result that produced it, and calls
+`_extract_prior_findings` on them. It does not re-implement the forwarding
+rule. One rule decides what a packet forwards and the same rule reproduces
+it, so a routed packet — where what is forwarded depends on which repair
+target its findings named — replays to the same bytes. Two rules that had to
+agree would not stay agreed.
 
 Both paths read through `_read_recorded_result`, which fails closed when the
 recorded result file is missing or no longer hashes to what was recorded. A
@@ -485,11 +580,15 @@ An evaluator stage emits a packet (the evaluation criteria), accepts an
 evaluator result, and transitions based on disposition:
 
 - `PASS` → `pass_transition` target
-- `CHANGES_REQUIRED` → `fail_transition` target (a bounded-revision stage)
+- `CHANGES_REQUIRED` → the `repair_routes` target its blocking findings name,
+  and `fail_transition` (a bounded-revision stage) when they name none
 - `BLOCKED` → terminal `BLOCKED` state
 
-The evaluator's blocking findings are forwarded verbatim into the next
-revision packet's `PRIOR_FINDINGS`. The parent agent never paraphrases them.
+The evaluator's blocking findings are forwarded verbatim into the next packet's
+`PRIOR_FINDINGS`, filtered to the repair owner that chose the route where the
+stage routes by owner. The parent agent never paraphrases them. A routed
+`CHANGES_REQUIRED` re-enters an earlier stage rather than a revision stage, and
+spends the same failure budget doing it; see one repair owner per defect above.
 
 ### Bounded revision stage
 
@@ -655,6 +754,9 @@ structural and dependency-free:
   packet answered.
 - Enum fields have valid values.
 - `findings` is a list of objects with required sub-fields.
+- A schema may require a field only of findings at a given `severity`, and may
+  fix the allowed values of a finding field wherever it appears; see one repair
+  owner per defect above.
 - Malformed, missing, stale, duplicate, and wrong-stage results fail closed
   (exit non-zero, no transition).
 

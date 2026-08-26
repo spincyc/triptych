@@ -44,6 +44,19 @@ RESEARCH_LANES = [
     "liturgical-history",
     "theological-synthesis",
     "source-citation-coverage",
+    "cultural-afterlife",
+    "precedent-search",
+]
+# The five the stage was created with. The two later lanes took over the
+# searching `research-synthesis` used to do itself, so only these five can be
+# compared byte-for-byte against the head that introduced them.
+ORIGINAL_RESEARCH_LANES = RESEARCH_LANES[:5]
+# `theological-synthesis` told its worker that the integrator "integrates all
+# five lanes", which adding two lanes made false. Its criteria did not change;
+# only that count did, and it is now phrased without one.
+RECOUNTED_LANE = "theological-synthesis"
+UNCHANGED_RESEARCH_LANES = [
+    lane for lane in ORIGINAL_RESEARCH_LANES if lane != RECOUNTED_LANE
 ]
 LANE_PREFIX = {
     "scripture-context": "SCR",
@@ -51,6 +64,8 @@ LANE_PREFIX = {
     "liturgical-history": "LIT",
     "theological-synthesis": "THE",
     "source-citation-coverage": "COV",
+    "cultural-afterlife": "CUL",
+    "precedent-search": "PRE",
 }
 
 # The two fan-outs accepted at a04a27f3a. This change must not disturb them.
@@ -214,11 +229,11 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(research["execution"]["parallelism"], HOST_MAX)
         self.assertEqual(research["execution"]["join"], STRICT_UNION)
 
-    def test_exactly_five_declared_research_lanes(self):
+    def test_exactly_the_declared_research_lanes(self):
         """Test 2."""
         lanes = self.stages["research"]["execution"]["lanes"]
         self.assertEqual([lane["id"] for lane in lanes], RESEARCH_LANES)
-        self.assertEqual(len(lanes), 5)
+        self.assertEqual(len(lanes), 7)
         for lane in lanes:
             with self.subTest(lane=lane["id"]):
                 self.assertEqual(
@@ -338,7 +353,8 @@ class ResearchLaneTests(PropersCase):
         run_id, _ = self.advance_to("research")
         second = self.emitted_lanes(run_id)
         self.assertEqual([lane["lane"] for lane in first], RESEARCH_LANES)
-        self.assertEqual([lane["index"] for lane in first], list(range(5)))
+        self.assertEqual([lane["index"] for lane in first],
+                         list(range(len(RESEARCH_LANES))))
         self.assertEqual(first, second)
 
     def test_identical_state_produces_byte_identical_lane_packets(self):
@@ -394,10 +410,13 @@ class ResearchLaneTests(PropersCase):
         self.discard_runs()
         # No lane finishes where the workflow declared it.
         scrambled = drive([
-            "liturgical-history", "source-citation-coverage",
+            "precedent-search", "liturgical-history",
+            "source-citation-coverage", "cultural-afterlife",
             "scripture-context", "theological-synthesis",
             "patristic-reception",
         ])
+        self.assertEqual(sorted(scrambled["lane_order"]),
+                         sorted(RESEARCH_LANES))
 
         self.assertEqual(declared["next_stage"], "research-synthesis")
         self.assertEqual(declared, scrambled,
@@ -524,17 +543,21 @@ class ResearchGuidanceTests(PropersCase):
         self.assertIn(
             "Use the maximum concurrent subagent capacity supported by this "
             "host.", self.instructions)
-        self.assertIn("up to all 5 simultaneously", self.instructions)
+        self.assertIn(f"up to all {len(RESEARCH_LANES)} simultaneously",
+                      self.instructions)
 
-    def test_guidance_names_exactly_five_fresh_subagents_and_their_lanes(self):
+    def test_guidance_names_exactly_the_declared_lanes(self):
         """Test 17."""
-        self.assertIn("Start exactly 5 fresh subagents, one per lane listed "
-                      "above and none besides.", self.instructions)
-        self.assertIn("LANES (5, in canonical order):", self.instructions)
+        count = len(RESEARCH_LANES)
+        self.assertIn(f"Start exactly {count} fresh subagents, one per lane "
+                      f"listed above and none besides.", self.instructions)
+        self.assertIn(f"LANES ({count}, in canonical order):",
+                      self.instructions)
         for index, lane in enumerate(RESEARCH_LANES):
             self.assertIn(f"  {index}. {lane}", self.instructions)
             self.assertIn(f"--lane-result {lane}=<path>", self.instructions)
-        self.assertEqual(self.instructions.count("--lane-result"), 5)
+        self.assertEqual(self.instructions.count("--lane-result"),
+                         len(RESEARCH_LANES))
         for emitted in self.emitted_lanes(self.run_id):
             self.assertIn(f"lane_packet_hash: {emitted['hash']}",
                           self.instructions)
@@ -733,16 +756,13 @@ class PreservedGuaranteeTests(PropersCase):
         self.assertNotIn("fragments", accepting[0])
 
     def test_content_and_visual_lane_fragments_are_untouched(self):
-        """Test 24-25, at the fragment level."""
-        head = subprocess.run(
-            ["git", "show",
-             "a04a27f3a8ad896f81c50f938f1053f488957d06:"
-             "workflows/fragments/propers/content-evaluation.md"],
-            capture_output=True, cwd=ROOT)
-        self.assertEqual(head.returncode, 0, head.stderr)
-        self.assertEqual(
-            head.stdout,
-            (FRAGMENTS / "propers" / "content-evaluation.md").read_bytes())
+        """Test 24-25, at the fragment level.
+
+        The lanes' own criteria are what must not drift. The shared
+        `content-evaluation.md` is deliberately not compared: it carries the
+        repair-ownership rule that routes a defect to its owner, which is a
+        wiring change every lane needs and none of them owns.
+        """
         for lane in CONTENT_LANES + VISUAL_LANES:
             prefix = "content" if lane in CONTENT_LANES else "visual"
             name = f"workflows/fragments/propers/lanes/{prefix}-{lane}.md"
