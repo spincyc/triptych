@@ -1146,8 +1146,11 @@ review itself.
 The disposition answered is **CHANGES REQUIRED** at exact candidate
 `69f2575421ba976271c936b1abd4b39dbe8b98fd`, the V14 head, recorded at review
 commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004` on
-`review/catena-wave-1-e1-corrections-v14-independent` — the first review in
-this sequence that has a published commit to cite. The V14 immutable handoff
+`review/catena-wave-1-e1-corrections-v14-independent`. The V13 review that V14
+had to answer was never published — `origin` carried no branch for it, and V14
+recorded that gap rather than filling it — so this is the first lane SINCE that
+gap that can name the review it answers by its commit; every lane from V5 to
+V12 could, and V14 alone could not. The V14 immutable handoff
 is archived on `evidence/catena-e1-corrections-v14-handoff` at
 `f74f8f4d4de44e21afdbef1fc4e9589a9898e986`, and its sealed package
 `build/agent-handoffs/20260821T043622Z-catena-e1-corrections-v14.zip` is
