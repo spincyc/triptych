@@ -16,7 +16,7 @@ owns the boundary, and states how to derive what each provider has actually
 published.
 
 - The temporal series uses 68 temporal identities in a stable Advent-first repository order: `01` is the First Sunday of Advent and `68` is the Twenty-fourth and Last Sunday after Pentecost. The Sacred Triduum (`27`–`29`) is numbered inline between Palm Sunday (`26`) and Easter Sunday (`30`). Stable feasts of the Lord (Nativity, Epiphany, Baptism, Ascension, Corpus Christi, Sacred Heart) are inserted inline at their liturgical-year positions. These IDs are catalog identities, not the occurrence schedule of a civil year.
-- Derive a proper guide's numeric path prefix from this canonical temporal registry, never from a mass entry's `registry` field in `src/sources/calendars/roman-1962/propers.yaml`. The calendar field is a separate internal identifier; for example, the Fourteenth Sunday after Pentecost is catalog identity `54` even though its calendar mass entry carries registry value `51`.
+- A proper guide's numeric path prefix is the identity below, and a mass entry's `registry` field in `src/sources/calendars/roman-1962/propers.yaml` carries that same identity: the Fourteenth Sunday after Pentecost is catalog identity `54`, and its `pentecost-14` mass entry reads `registry: '54'`. The calendar file is therefore the machine-readable read of this registry, and a tool may validate a prefix against it. This profile still owns the series: where the two disagree, the disagreement is a defect to repair here, not a second identity.
 - `64` through `67` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
 - `F` identifies a general-calendar feast assigned to Sunday without a stable temporal ordinal. `F01` is Our Lord Jesus Christ the King, which the Missal prints in the Sanctorale. Verify its printed place and occurrence rule; do not invent a permanent Sunday number for a fixed-date, movable, or local feast.
 - `M` identifies a ritual, votive, or other non-Sunday guide. The prefix does not state rank, permission, or authority to replace an occurring Mass.
@@ -51,7 +51,7 @@ future changes still require explicit maintainer approval.
 | 27–29 | Mass of the Lord's Supper; Solemn Liturgical Action of the Passion and Death of the Lord; Easter Vigil |
 | 30–38 | Easter Sunday; Low Sunday; Second through Fifth Sundays after Easter; Ascension of the Lord; Sunday after the Ascension; Pentecost Sunday |
 | 39–40 | Trinity Sunday; Corpus Christi |
-| 41–63 | Most Sacred Heart of Jesus; Second through Twenty-third Sundays after Pentecost |
+| 41–63 | Second Sunday after Pentecost; Most Sacred Heart of Jesus; Third through Twenty-third Sundays after Pentecost |
 | 64–68 | Resumed Third through Sixth Sundays after the Epiphany; Twenty-fourth and Last Sunday after Pentecost |
 
 The resumed Sundays `64` through `67` are full identities, not variants.
