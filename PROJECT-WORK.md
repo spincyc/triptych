@@ -1139,6 +1139,197 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena transport and completion ownership lane, V15
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v15-2026-08-26 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`69f2575421ba976271c936b1abd4b39dbe8b98fd`, the V14 head, recorded at review
+commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004` on
+`review/catena-wave-1-e1-corrections-v14-independent` — the first review in
+this sequence that has a published commit to cite. The V14 immutable handoff
+is archived on `evidence/catena-e1-corrections-v14-handoff` at
+`f74f8f4d4de44e21afdbef1fc4e9589a9898e986`, and its sealed package
+`build/agent-handoffs/20260821T043622Z-catena-e1-corrections-v14.zip` is
+1,366,960 bytes over 69 members with ZIP SHA-256
+`414f303954d79b966f4d7f0ad6814376c0014fb73f8e2b78a0d4dc2495124bb1`, equal to
+the digest its own post-P8 authority record carries. This lane ran in a fresh
+standalone clone with a real `.git` directory and no worktree. Current
+`origin/main` is `e4085889fc1b3d2e6721b21166394fe5ea2dea9b`, and this lane is
+not integrated with it.
+
+**The decisive V14 defect, and what it actually was.** V14 resolved a text
+address THROUGH the projected row — `fragmentText(row)` asked the model, and
+the model recorded the row and the projection that made it — and then handed
+the resolved string to `cached(fragmentTexts, path)`, a module-scope `Map`
+keyed on the path alone that held the PROMISE. A second row carrying the same
+address did not ask: it found an unresolved promise under that key and joined
+it. Two owners became one owner, and the answer the first row's request was
+made for was rendered under the second. Ownership was recorded at the address
+decision and discarded one line later, which is why the V14 journal could name
+the owner of every ask and still describe a page that had rendered the wrong
+body. The review reproduced it exactly: in `v14-late-same-path`, projection A's
+row started the sole text request and it was held; projection B became the page
+carrying the same address and stood at `Loading…`; releasing A filled B. Both
+of the assertions that made the case green —
+`[one["outcome"] for one in late["requests"] if one["path"] == self.CARRIED] ==
+["released"]` and `assertIn(self.HELD_BODY, late["fragmentTexts"][0])` — are
+satisfiable only if B never asked. The oracle required the leak.
+
+**Reproduced here before anything was changed.** The V15 test file replayed
+against the exact V14 head puts A's request in flight and B's page on screen,
+and at that moment B's rendered prose is `Loading…` with one held request in
+the journal; after A is released B's rendered prose is
+`PLANTED BODY A — the answer the row in projection A asked for.` — the document
+A's request was made for, rendered under B's row, on B's route, in B's
+projection. That is the failure chain the review drew, read off the page.
+
+**Pending work is now owned; settled values are shared.** A path map may hold
+only a settled answer, and it receives the promise from INSIDE that promise's
+own settle handler, so nothing unresolved is ever reachable by path. Work in
+flight is held against the owner the model hands out for the row —
+`M.rowTransport(row)`, one frozen object per projected row carrying the row,
+the projection that made it and the address it asks, created once and held
+against the row itself. Two rows carrying one address in one turn produce two
+transports, two owner objects and two rows under one projection; one owner's
+failure settles nothing at the path and releases only that owner's work; and a
+request released late may not displace an answer another row already has. The
+change is fourteen lines of the page and two exported functions of the model.
+
+**Body application is ownership-bound and on the roster.** V14 carried
+ownership as far as the request and stopped, so the identity roster ended one
+step before the step that writes the page: the body was applied by a closure
+that knew a DOM node and a path. `M.bodyAsked(row, content)` is asked at the
+application itself and records the projection, the row and the value being
+written; a row no projection of the model made applies nothing; and a reported
+transport failure is owned exactly as a fulfilled body is. The covered-consumer
+roster gains `transport` and `body` and is still derived from what the page
+actually did, so a consumer omitted from it fails by the name the run produced.
+
+**Wrapper-created authority.** The page substitutes a record of its own for a
+spine it cannot read. Under V14 that was a fresh object literal on every ask,
+so walking away from an unreadable chapter and back made a NEW authority over
+one chapter and the projection count climbed with the reader's steps. One
+substitute per name is now created and reused, and the chapter renders
+identically both times it is drawn.
+
+**The corrected late oracle.** The inverted expectation is replaced in place
+and the exact former assertions are quoted beside the correction, with why they
+could only pass if the second owner never asked. The decisive sequence is a new
+case: only the FIRST ask of the shared address is parked, and the address
+answers two DIFFERENT documents in turn, so "B rendered the words B asked for"
+and "B rendered the words A asked for" are distinguishable states rather than
+one sentence. B settles and renders `PLANTED BODY B` with A's request still
+held; B never renders `PLANTED BODY A` at any point; and A's late release moves
+exactly one journal row and nothing else. B's terminal state is pinned value by
+value before the release — every field the inherited thirty-six-field late-work
+guard names — and re-asserted after it.
+
+**The nested edition accessor, asked directly.** The V14 matrix promised an
+edition case and supplied four other fields. The entry now arrives as a record
+whose `edition` and `edition_published` are getters: neither is invoked, the
+edition and its printing are absent from the provenance line rather than partly
+read, the rights and voice the record states as data are unaffected and still
+rendered and counted, and the chapter remains readable. A drifting accessor and
+a steady one render the same page, a detonating one takes nothing with it, and
+the same forged printing supplied as an ordinary document reaches the reader's
+provenance line. The two grades of hostility are different and each coherent: a
+hostile entry KEY fails the chapter closed, a hostile edition MEMBER is declined
+inside a chapter that still reads. This closes a proof gap, not a production
+defect — the page already behaved this way at the parent, and the record says
+so rather than counting it as a semantic closure.
+
+**Observation accounting, stated as what it is.** Value reads that would run an
+own accessor, `getOwnPropertyDescriptor` observations, own-property tests and
+key enumeration are counted apart. Over one sources record: **zero** value
+reads and zero `in` tests; **three** descriptor observations per source key;
+**two** per shared field the record states and **one** per field it does not;
+**one** key enumeration. `Object.hasOwn` lands in the descriptor count because
+it is `[[GetOwnProperty]]`, which is exactly why the per-key figure is three
+and not two. A second render of the same chapter observes the record no
+further. The claim this lane is entitled to make is that no consumer runs a
+hostile value accessor and no consumer reaches past the projection to observe
+the record again — not that the record is observed once.
+
+**Downstream rerender after mutation.** V14 proved the graph frozen and all
+thirteen assignments throwing and stopped there. The reader's page had already
+been drawn, so "and the render is unchanged" was a claim about a render that
+never happened. The mutation attempts now run, the reader then changes a
+control — which rebuilds the chain, the tally, the voice control, the
+provenance lines, the refusal and the blocked and lead sections off the same
+projection — and the fragments are opened again so their bodies are applied
+again. Thirty-two rendered fields are compared before and after, request
+behaviour with them, and the intermediate rebuilt state is asserted to differ so
+the comparison is not vacuous.
+
+**Budgets are unraised, and the page is smaller than V14 left it.** `catena.js`
+moves 12,972/13,000 whole and 7,546/8,800 stripped to **12,958/13,000** and
+**7,724/8,800**. The whole-file ceiling had twenty-eight gzipped bytes of
+headroom and the correction is not payable out of twenty-eight, so three
+paragraphs of the page's own prose moved to `catena-model.js`, which carries no
+ceiling — why a 200 that is not a spine is not an empty chapter, why neither the
+paragraph layer nor its index may decide the page, and what the absence
+disclosure may say — and the page kept pointers to them. That is the same
+arithmetic V4 through V7 recorded, and it is disclosed rather than paid for by
+raising a ceiling. `catena.css` is byte-identical at 7,629/8,000 and
+2,676/2,700; HTML is byte-identical. The uncapped model moves 39,724/9,396 to
+41,077/9,536; combined route-model payload growth and a governing model ceiling
+remain broader budget-owner work.
+
+**The exact V15 semantic inventory, and what is not in it.** Ten independent
+semantic closures: an unresolved same-path request is not shared across owners;
+B settles independently while A is held; A's late completion cannot change B;
+body application carries actual row ownership; body application carries actual
+projection identity; a page helper cannot mint a second authority over one
+chapter; same-path multi-projection completion is isolated; a settled immutable
+value may be shared by path and is still applied as the row that asked; one
+owner's failure suppresses no other owner's request; and the mutated authority
+graph survives a downstream rerender. Nineteen methods are new. Replayed against
+the exact parent, fourteen methods fail — eleven of the new ones, plus the
+corrected late oracle, the covered-consumer roster audit, and the model
+byte-identity hash pin. The last of those three is a PIN, not a closure, and the
+roster audit is an audit; they are counted apart. Eight new methods pass at both
+endpoints and are recorded as coverage and controls: the terminal-vector
+coverage check, the mutation-attempt control inherited from V14, the three
+observation-accounting methods, and the three edition-accessor methods — the
+edition axis closes a PROOF gap the review named, not a production defect, and
+this record does not count it as a closure.
+
+**Fresh validation at both endpoints.** Focused Catena is 615/615 at the
+candidate and 596/596 at the parent. `python3 scripts/_catena.py check` reports
+1,351 fragments / 1 book / 73 canon entries at both. The promise ledger
+validates at 40 tracked / 19 complete here and 39/19 at the parent. Committed
+full discovery is 1,966 tests at the candidate with 14 failures, 13 errors and
+11 skips over 27 failure/error identities, against 1,947 tests at the parent
+with 14/13/11 over the SAME 27 identities — the identity sets are equal, and the
+nineteen extra tests are this lane's own. The packaged parent-only PDF signal
+the V14 review classified as an unrelated timing flake did not reproduce at
+either endpoint in these fresh runs; PDF remains a separate owner's and is not
+touched here. `make -k check` exits 2 on the same four inherited top-level
+targets at both endpoints — `check-web-editions-current`,
+`check-release-bindings`, `check-tool-registry` and `check-examples` — and
+`check-examples` reports 30 example divergences at BOTH endpoints, so exact
+inner-diagnostic identity holds this time rather than being disclaimed. Four
+Catena release bindings remain stale, unsigned and correctly fail-closed; none
+was re-signed. The browser gate is identically red at both endpoints: 2,290
+assertions = 1,836 pass / 226 fail / 228 skip over 171 pages and 19 routes, the
+failures entirely in the three inherited classes — 117 nested `main`, 82
+target-size, 27 skip-link — and `logs/compare-gate.py` over the two reports
+answers `identity set equal: True`, `rows with changed status: 0`, `rows with
+changed detail: 0` and `whole report identical under the named volatile
+exclusions (browser, durationMs, generatedAt, root): True`.
+
+**Ownership boundaries.** The comparison touches `src/web/browser/catena/catena.js`,
+`src/web/browser/catena/catena-model.js`, `tools/tests/test_catena_wave_1.py`
+and the durable records. It does not modify `src/web/data/`, release bindings,
+the common browser gate, the shared shell, Liturgy, PDFs, CLI architecture, CSS,
+HTML, or any budget ceiling, and it re-signs nothing.
+
+Status: **awaiting fresh independent review** of the exact V15 head and its
+immutable handoff archived on `evidence/catena-e1-corrections-v15-handoff`.
+This lane records no acceptance of its own work, marks no separately owned
+prerequisite complete, and does not review itself.
+
 ### E1 Catena route-owned correction lane, V14
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v14-2026-08-20 -->

@@ -1241,6 +1241,138 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v15-2026-08-26"
+owner = "src/web/browser/catena"
+promise = "Answer the E1 Catena V14 independent review (CHANGES REQUIRED at exact head 69f2575421ba976271c936b1abd4b39dbe8b98fd, recorded at review commit 0d11766ec232b2b4e46a7d1b0ada56ef22370004 on review/catena-wave-1-e1-corrections-v14-independent) with exactly its stated next action and nothing else: keep pending text work owned by the initiating row and projection through transport, completion and body application, sharing only fulfilled immutable values by path; prove with two distinguishable planted bodies at one address that owner A can be held while owner B settles independently and renders B's own body, and that A's late release changes nothing of B's exact terminal state; bind body application to actual row and projection ownership and add it to the covered-consumer === roster; close the wrapper-created projection ambiguity so an unreadable spine is one substitute however often it is asked; prove one owner's failure does not suppress another owner's request; add the promised nested edition-accessor case with one coherent projected outcome; report descriptor, value-read, own-property and enumeration observations honestly and apart; prove downstream rerender after attempted mutation; and rebuild the evidence with exact portable commands, no ELIDED or PROSE command slots, a mechanically derived executed-tool status, one coherent invocation-and-unique-tool schema, a complete disclosed attempt history that names the set-aside cohort and the P10 rows, truthful history wording where a row was replaced, a handoff checker that tests those substantive failures, and fresh-clone provenance. Record every other blocker open and untouched, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "pending-transport-not-shared-by-path"
+  criterion = "No unresolved request is reachable by path. Work in flight is held against the owner the model hands out for the projected row that asked, and a path-keyed entry receives a promise only from inside that promise's own settle handler, so a second owner asking the same address can never join unfinished work. A source and behavioural proof shows two rows carrying one address in one turn producing two independent transports, two owner objects and two rows, under one projection and one address."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "held-a-independent-b-settle"
+  criterion = "A production-DOM case starts a text request from projection A's row and holds it, moves the reader to projection B carrying the same address, and shows B settling and rendering while A is still held. The two answers at that one address are DIFFERENT documents, so B rendering its own body and B rendering A's body are distinguishable states. B never renders A's body at any point. The reviewed parent fails this case because it makes no second request at all."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "late-a-cannot-change-b"
+  criterion = "B's terminal state is pinned value by value before A is released — route, history and replacement, focus, announcement channel and status text, aria-busy, tally, row inventory and order, body text, section headings, refusal, absence, paragraph record, voice control, rendered class vocabulary, language attributes and author grouping — and every field the inherited late-work guard names is covered by that pin. After A's late release each pinned value is re-asserted, the only journal row that moved is A's own outcome, no second body application exists, and A's recorded ask and transport ownership are unchanged."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "body-application-row-ownership"
+  criterion = "The fulfilled body is applied only where the row that asked still owns the node it is written to. Ownership is asked AT the application through the row itself and recorded there with the projection, the row and the content applied; it is never inferred afterwards from two matching paths. A row no projection of the model made applies nothing, and a reported transport failure is owned exactly as a fulfilled body is."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "body-application-in-consumer-roster"
+  criterion = "The covered-consumer roster includes the request transport owner and the body application, and the roster is derived from what the page actually did so a consumer omitted from it fails by name. For every body the page applied, the projection recorded at the application is the exact object the normalization made, and the row it was applied for is one of that projection's own rows."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "wrapper-projection-identity"
+  criterion = "No page-side helper mints a second valid-looking authority over one chapter. The substitute record the page uses for a spine it cannot read is created once per name and reused, so walking away from an unreadable chapter and back adds no projection and no authoritative reference, and the chapter renders identically both times. The reviewed parent fails this because it built a fresh literal on every ask."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "same-path-multi-projection-completion"
+  criterion = "Two projections carrying one address own their transports, their pending state, their completion and their body application separately. The recorded owner is the row and the projection that initiated the request; the path-match answer is recorded beside it and is demonstrably the wrong one, naming the other projection for a request this row made."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "safe-fulfilled-value-sharing"
+  criterion = "A value that has settled at one address may be shared by path, and is. A second row asking afterwards makes no request, is answered from what settled, and still applies it as itself: its own transport owner, its own row, its own projection recorded at its own application. The shared value is frozen where it becomes shareable, and the first settled answer is not displaced by a request released later."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "cross-owner-failure-isolation"
+  criterion = "One owner's failure suppresses no other owner's request. A case answers the first ask of a shared address 404 and the second a document, in the same turn, and asserts that the failing row reports the failure against itself while the other row renders the document it asked for. The retry path remains real: a failure settles nothing at the path and releases the owner's own held work."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "nested-edition-accessor-case"
+  criterion = "A hostile accessor on the edition axis is asked directly. The entry arrives as a record whose `edition` and `edition_published` are getters; neither is invoked; the edition and its printing are absent from the provenance line rather than partly read; the rights and voice the record states as data are unaffected and still rendered and counted; and the chapter remains readable. A drifting accessor and a steady one render the same page, a detonating one takes nothing with it, and the same forged printing supplied as an ordinary document reaches the reader's provenance line."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "truthful-observation-accounting"
+  criterion = "Value reads that would run an own accessor, `getOwnPropertyDescriptor` observations, own-property tests and key enumeration are counted apart and reported apart. The record states that no value read of a source key or shared field occurs at all, that the descriptor is observed three times per source key and twice per stated shared field and once per absent one, that `Object.hasOwn` lands in the descriptor count because it is `[[GetOwnProperty]]`, and that a second render of the same chapter observes the record no further. No claim of a single observation per record is made."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "downstream-rerender-after-mutation"
+  criterion = "After every assignment against the authority-critical projection graph has been attempted and thrown, the same chapter is rendered again from the same projection and its fragments opened again, and the reader's page is compared field by field with what stood before: rows, order, bodies, provenance and rights, tally, voices, refusal, blocked, leads, announcement, paragraph record, language attributes and rendered class vocabulary. Request behaviour is compared too, and the intermediate rebuilt state is asserted to differ so the comparison is not vacuous."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "corrected-late-oracle"
+  criterion = "The inverted V14 oracle that required the leak is replaced rather than deleted. The exact former expectation is recorded in place beside the corrected one, with why it could only pass if the second owner never asked. The corrected expectation requires one transport per owner and a body applied for the row that asked."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "preserved-v14-closures"
+  criterion = "Everything the V14 review passed is re-run unchanged and still passes: the post-projection `unfetched` closure and its walking case, the seven-member raw authority inventory, the tally as a separate consumer, the raw post-projection audit, the structural member add/remove/reorder/phantom/tally matrix, the top-level and nested hostile source refusals, the seventeen frozen structures and the null-prototype scope, the carried-path and spine-prefix closures, the fulfilled prewarm body proof, and the rights, provenance and refusal DOM cases."
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "exact-portable-commands"
+  criterion = "No authoritative command is recorded as ELIDED, as PROSE, as a paraphrase, or as a shell fragment missing its arguments or environment. Both browser-gate commands and the parent replay command are recorded as exact executable text with repo-relative paths and the exact sanitized environment assignments needed to re-run them, including the steps for checking the parent out in a separate fresh directory."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "coherent-tool-evidence-schema"
+  criterion = "One schema carries tool identity, unique tool count, invocation count, executed yes or no, trusted source identity, shipped in package yes or no, and transcript references, with separately named counts rather than a combined label. Execution state is derived mechanically from the authoritative attempt logs rather than hand-maintained, so a tool the assembly transcript proves ran is labelled executed."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "complete-disclosed-history"
+  criterion = "The authoritative history includes or explicitly references the retired ledger, the fresh ledger, the set-aside cohort with its identity, its reason, its exact commands, whether its results contribute to any final claim and its replacement cohort, the P10 rows, the replaced note rows, the discarded attempts and the authoritative final attempts. Where rows were replaced the record does not call itself append-only, and says instead exactly what it is."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "substantive-handoff-completeness"
+  criterion = "The mechanical handoff-completeness check cannot report COMPLETE merely because filenames and lexical sections exist. It detects a command slot with no invocation, the literal tokens ELIDED and PROSE in command slots, an executed-tool status contradicted by the recorded transcripts, a named cohort with no matching attempt row, and an append-only claim standing beside a disclosed replacement."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-clone-provenance"
+  criterion = "The sanitized provenance records `workspace_mode = fresh-clone`, `worktree = false` and `git_dir_kind = directory` for the lane that produced the package, in both the machine claims record and its rendered table, and exposes no absolute local path, username, hostname, session identifier or clone location."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v15-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V15 head, its parent 69f2575421ba976271c936b1abd4b39dbe8b98fd, the V14 review commit 0d11766ec232b2b4e46a7d1b0ada56ef22370004, the mechanically derived commit list and diff, the old path-keyed pending-Promise defect and the new transport ownership model, the same-path A/B proof and B's exact terminal vector, the body-application ownership evidence, the === roster including body application, the wrapper identity proof, the fulfilled-value sharing proof, the nested edition-accessor proof, the observation accounting, the downstream rerender proof, the preserved V14 regressions, exact portable browser and parent-replay commands, the executed/trusted/shipped tool table, the complete disclosed attempt and cohort history, fresh-clone provenance, fresh validation figures at both endpoints, budgets, privacy, a SHA-256 manifest and a package digest — sealed, verified read-only at P8 with equal pre and post digests, with final authority established only afterwards and bound one way to the archive's own bytes, and without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V15 head and its immutable handoff records a durable disposition, scoped to preservation of row and projection ownership through pending transport, completion and body application; same-path and genuinely-late isolation; safe fulfilled-value sharing; and exact reproducible evidence and provenance. This lane does not review its own work and records no acceptance."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v14-2026-08-20"
 owner = "src/web/browser/catena"
 promise = "Answer the E1 Catena V13 independent review (CHANGES REQUIRED at exact head 6cc85e1a1; the review carries no published branch or commit, and that gap is recorded rather than filled) with exactly its stated next action and nothing else: eliminate the remaining post-projection raw file.unfetched reread and prove it with a walking-unfetched production-DOM case beside a steady positive control; prove with === that every covered consumer receives the actual projection object, observed at the production consumer boundary rather than recomputed beside it; record the tally as a consumer of its own and publish a covered-consumer roster that makes an omission obvious; bind every text request to the actual projected row object that initiated it, including same-path siblings, same-path multi-projection and genuinely-late completion; make the member-list adversarial case structural over add, remove, reorder, phantom and tally with a steady control for each; normalize nested source entries and their edition, rights and voice members exactly once under one authority rule so no consumer invokes a nested accessor and the projection states one coherent result; freeze the projection graph as deeply as downstream consumers trust it and assert the freeze, the prototype scope and a real mutation attempt directly; audit the sources for post-projection raw chapter access; and issue one immutable exact-head V14 handoff whose claims inventory distinguishes semantic methods, positive controls, pins, oracle corrections and packaging checks rather than presenting one total. Record every other blocker open and untouched, and return that head for fresh independent review."
