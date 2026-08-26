@@ -1,8 +1,13 @@
 {
   "id": "proper",
-  "version": 7,
+  "version": 8,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
+  "document_discovery": {
+    "search": "src/*/liturgy/roman-rite/1962/propers/*/*",
+    "marker": "main.tex",
+    "id_drops_leading": 2
+  },
   "argument_schema": {
     "proper": {
       "type": "string",

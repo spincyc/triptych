@@ -22,6 +22,42 @@ tools/tpt workflow list
 tools/tpt workflow show proper
 ```
 
+### Read a workflow's own help
+
+```bash
+tools/tpt proper --help
+```
+
+Prints the workflow's grammar, every action with its flags, and how to name a
+document. `tools/tpt proper` with no arguments prints the same thing.
+
+### Find a document id
+
+```bash
+tools/tpt proper list
+tools/tpt proper list --json
+```
+
+Every document the workflow can be seeded for, one per line and in a stable
+order. The workflow declares where its documents live, in
+`document_discovery`, so the list is what is actually on disk rather than
+something maintained by hand: for `proper`, every leaf under
+`src/<provider>/liturgy/roman-rite/1962/propers/` that has a `main.tex`. A
+leaf without one is not listed, because it cannot be run.
+
+You do not have to type the whole id. Any unique tail of one stands for it,
+so these are the same command:
+
+```bash
+tools/tpt proper liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost seed
+tools/tpt proper 46-ninth-after-pentecost seed
+```
+
+A tail matching more than one document is refused with the candidates listed,
+and a tail matching none is refused with a pointer to `list`. Anything
+containing a `/` is taken as a full id and passed through untouched, so a
+command that worked before still works.
+
 ### Create or replay a run bootstrap
 
 ```bash
@@ -681,15 +717,20 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 7. Version 7 made `research-synthesis` an
-evaluator stage, so research too thin to author a safe brief from re-enters the
-seven lanes instead of ending the run at that commit. Version 6 added the
+The `proper` workflow is at version 8. Version 8 declared
+`document_discovery`, so `tools/tpt proper list` can name the documents the
+workflow runs and a unique tail of an id stands for the id; it changed no
+stage, no packet and no transition, but the declaration is part of the bound
+workflow source like everything else in the definition. Version 7 made
+`research-synthesis` an evaluator stage, so research too thin to author a
+safe brief from re-enters the seven lanes instead of ending the run at that
+commit. Version 6 added the
 `cultural-afterlife` and `precedent-search` research lanes, made
 `research-synthesis` a pure integrator of what those and the other five lanes
 returned, and gave `content-evaluation` a result schema of its own and the
 repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
 content and visual evaluation lanes, the gates, and every other `single` stage
-are as they were at version 5. A run seeded against version 6 or any earlier
+are as they were at version 5. A run seeded against version 7 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 

@@ -195,6 +195,26 @@ Compilation writes nothing. The compiled bytes are written to
 `packets/<stage>-<iteration>.txt` by the commit that also records the state
 they belong to, so a packet exists if and only if the run reached it.
 
+### Document discovery
+
+A workflow may declare `document_discovery`: a repo-relative `search` glob, an
+optional `marker` file, and `id_drops_leading`, the number of leading path
+components an id omits. `list_documents` returns every matching directory that
+holds the marker, with those components dropped, sorted and deduplicated —
+`proper` searches `src/*/liturgy/roman-rite/1962/propers/*/*` for `main.tex`
+and drops `src/<provider>`, so one id covers every provider that holds the
+leaf. `resolve_document` accepts a full id unchanged and resolves a bare token
+against that list, refusing an ambiguous one with its candidates rather than
+guessing.
+
+The workflow declares it because the workflow is what knows where its
+documents live; a launcher that knew would be a launcher with one workflow's
+conventions compiled into it. The declaration is part of the workflow source
+and therefore of its digest, so adding or changing it is a new version, like
+any other change to the definition. That is the price of one binding rule
+rather than two: nothing in the definition is outside what a run is bound to,
+including the parts that only a person reads.
+
 ### Workflow-source digest
 
 The digest covers the canonicalized pipeline JSON plus the bytes of every
@@ -208,10 +228,11 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 7: `research-synthesis` became an evaluator
-stage, so research too thin for a safe brief re-enters the seven lanes instead
-of ending the run, and a run seeded against version 6 fails closed and is seeded
-again.
+`proper` workflow is at version 8: version 7 made `research-synthesis` an
+evaluator stage, so research too thin for a safe brief re-enters the seven
+lanes instead of ending the run, and version 8 declared `document_discovery`,
+which is guidance nobody reads but definition all the same. A run seeded
+against version 7 or earlier fails closed and is seeded again.
 
 ### Hashing boundary
 

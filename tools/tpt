@@ -321,29 +321,116 @@ def _workflow_ids() -> set[str]:
         return set()
 
 
+WORKFLOW_ACTIONS = ("seed", "advance", "status", "replay", "intervene", "debt")
+
+
+def workflow_help(engine: WorkflowEngine, workflow_id: str) -> str:
+    """The help a workflow can give about itself, from its own definition."""
+    workflow = engine.load_workflow(workflow_id)
+    argument = workflow.get("document_argument") or "doc"
+    schema = workflow.get("argument_schema", {}).get(argument, {})
+    described = schema.get("description", "")
+    example = ""
+    if "e.g. " in described:
+        example = described.split("e.g. ", 1)[1].rstrip(")").strip()
+    lines = [
+        f"tpt {workflow_id} \u2014 {workflow.get('description', '')} "
+        f"(v{workflow['version']})",
+        "",
+        "usage:",
+        f"  tpt {workflow_id} list [--json]",
+        f"  tpt {workflow_id} <{argument}> seed [--provider <name>]",
+        f"  tpt {workflow_id} <{argument}> advance <run-id> --result <path>",
+        f"  tpt {workflow_id} <{argument}> advance <run-id> "
+        f"--lane-result <lane>=<path> ...",
+        f"  tpt {workflow_id} <{argument}> advance <run-id> --run-gate",
+        f"  tpt {workflow_id} <{argument}> status <run-id>",
+        f"  tpt {workflow_id} <{argument}> replay <run-id>",
+        f"  tpt {workflow_id} <{argument}> intervene <run-id> --text <text> "
+        f"[--stage <id>]",
+        f"  tpt {workflow_id} <{argument}> debt <run-id>",
+        "",
+    ]
+    if workflow.get("document_discovery"):
+        documents = engine.list_documents(workflow)
+        shown = example if example in documents else (
+            documents[0] if documents else "")
+        lines += [
+            f"the {argument}:",
+            f"  every one this workflow can run ({len(documents)}):"
+            f"  tpt {workflow_id} list",
+        ]
+        if shown:
+            lines += [
+                f"  a full id:                     {shown}",
+                f"  or any unique tail of one:     "
+                f"{shown.rsplit('/', 1)[-1]}",
+            ]
+        lines.append("")
+    elif example:
+        lines += [f"the {argument}, for example:", f"  {example}", ""]
+    lines += [
+        "each command prints the exact next command to run. Follow them",
+        "until the disposition is ACCEPTED or BLOCKED.",
+    ]
+    return "\n".join(lines)
+
+
+def _workflow_list(engine: WorkflowEngine, workflow_id: str,
+                   opts: list[str]) -> int:
+    """Print the document ids this workflow can be seeded for."""
+    as_json = False
+    for opt in opts:
+        if opt == "--json":
+            as_json = True
+        else:
+            raise ToolError(f"list: unknown option: {opt}")
+    workflow = engine.load_workflow(workflow_id)
+    documents = engine.list_documents(workflow)
+    if as_json:
+        print(json.dumps(documents, indent=2))
+        return 0
+    if not documents:
+        print(f"(no {workflow.get('document_argument') or 'document'} found "
+              f"for {workflow_id})")
+        return 0
+    for document in documents:
+        print(document)
+    return 0
+
+
 def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
     """Dispatch a workflow command.
 
     The grammar is:
-        tpt <workflow-id> <doc-id> {seed,advance,status,intervene,debt} [opts]
+        tpt <workflow-id> list [--json]
+        tpt <workflow-id> <doc-id> {seed,advance,status,replay,intervene,debt}
     """
     engine = _workflow_engine()
+    usage = (
+        f"usage: tpt {workflow_id} list [--json]\n"
+        f"       tpt {workflow_id} <doc-id> "
+        f"{{{','.join(WORKFLOW_ACTIONS)}}} [options]\n"
+        f"       tpt {workflow_id} --help"
+    )
 
-    if not rest:
-        raise ToolError(
-            f"workflow {workflow_id}: missing document id and action\n"
-            f"usage: tpt {workflow_id} <doc-id> "
-            f"{{seed,advance,status,intervene,debt}} [options]"
-        )
+    if not rest or rest[0] in ("--help", "-h", "help"):
+        # Without this, `--help` was read as the document id and the run
+        # failed for want of an action, which told the reader nothing.
+        print(workflow_help(engine, workflow_id))
+        return 0
 
-    doc_id = rest[0]
+    if rest[0] == "list":
+        return _workflow_list(engine, workflow_id, rest[1:])
+
+    doc_id = engine.resolve_document(
+        engine.load_workflow(workflow_id), rest[0]
+    )
     action_args = rest[1:]
 
     if not action_args:
         raise ToolError(
-            f"workflow {workflow_id}: missing action\n"
-            f"usage: tpt {workflow_id} {doc_id} "
-            f"{{seed,advance,status,replay,intervene,debt}} [options]"
+            f"workflow {workflow_id}: missing action for {doc_id}\n{usage}"
         )
 
     action = action_args[0]
@@ -364,7 +451,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
 
     raise ToolError(
         f"unknown workflow action: {action}\n"
-        f"actions: seed, advance, status, replay, intervene, debt"
+        f"actions: {', '.join(WORKFLOW_ACTIONS)}\n{usage}"
     )
 
 
