@@ -275,9 +275,22 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(schema["finding_fields"],
                          ["id", "claim", "evidence", "notes"])
 
-    def test_the_workflow_version_was_bumped(self):
-        """A run bound to v3 must fail closed, not continue silently."""
-        self.assertEqual(self.workflow["version"], 4)
+    def test_the_version_was_bumped_when_research_was_added(self):
+        """A run bound to the pre-research version must fail closed.
+
+        This guards the bump that adding `research` required, not every later
+        one: it compares against the head this stage was added to, so a
+        subsequent change bumps one number in its own suite rather than in
+        every test that ever named a version.
+        """
+        before = subprocess.run(
+            ["git", "show",
+             "a04a27f3a8ad896f81c50f938f1053f488957d06:"
+             "workflows/pipelines/proper.json"],
+            capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(before.returncode, 0, before.stderr)
+        self.assertGreater(self.workflow["version"],
+                           json.loads(before.stdout)["version"])
 
     def test_content_evaluation_fanout_is_unchanged(self):
         """Test 24."""
@@ -675,7 +688,8 @@ class PreservedGuaranteeTests(PropersCase):
             "run_id", "stage", "workflow_digest", "workflow_id",
             "workflow_version",
         })
-        self.assertEqual(json.loads(first)["workflow_version"], 4)
+        self.assertEqual(json.loads(first)["workflow_version"],
+                         workflow_json()["version"])
 
     def test_seed_replays_after_the_research_stage_has_been_joined(self):
         args = {"proper": DOC, "provider": "gpt"}
@@ -760,7 +774,7 @@ class LauncherTests(unittest.TestCase):
         shown = self.tpt("workflow", "show", "proper")
         self.assertEqual(shown.returncode, 0, shown.stderr)
         workflow = json.loads(shown.stdout)
-        self.assertEqual(workflow["version"], 4)
+        self.assertEqual(workflow["version"], workflow_json()["version"])
         fanout = {
             stage["id"]: [lane["id"] for lane in stage["execution"]["lanes"]]
             for stage in workflow["stages"]

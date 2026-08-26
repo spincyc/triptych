@@ -8,8 +8,9 @@ derived from it.
 
 Work from the research brief the `research-synthesis` stage wrote to
 `research/scope.md`, and not from any prose a controller composed for you.
-That stage is the single owner of that file and has already integrated the
-research into the brief recorded there.
+`research/scope.md` is immutable input owned by `research-synthesis`. Read
+it; do not edit, overwrite, append to, or regenerate it. Anything authoring
+learns belongs in the files this stage owns, listed below.
 
 ## Steps
 
@@ -22,8 +23,10 @@ research into the brief recorded there.
      pages, both substantively filled)
    - The Propers: Detailed Commentary (begins page 5)
    - The Propers: Notable and Quotable (3-5 non-obvious cultural/literary
-     reuses)
-   - The Propers: Interpretive Possibilities (4-6 exploratory proposals)
+     reuses: exactly the entries the brief's `Notable-and-quotable audit`
+     covers)
+   - The Propers: Interpretive Possibilities (4-6 exploratory proposals:
+     exactly the ones the brief's `Interpretive-proposal audit` covers)
    - Sacramental Appendix (when required)
    - Appendix: Scope and Qualifications
    - References
@@ -36,8 +39,13 @@ research into the brief recorded there.
    records.
 6. Create or update `web-edition.toml` with web edition eligibility.
 7. Create or update `propers/verified.md` and `propers/retrieved.txt`.
-8. Extend `research/scope.md` with the audit records authoring adds,
-   preserving the research brief already recorded there.
+8. Leave `research/scope.md` exactly as you found it. Authoring adds no
+   audit record to it: the profile keeps operational audit in that record and
+   has the Scope and Qualifications appendix point at it rather than repeat
+   it. Publish only what the brief's audits cover. If an audit is missing, if
+   it covers entries you cannot publish, or if the gallery or the proposals
+   you would publish differ from the audited ones, block rather than publish
+   an unaudited entry or amend the audit yourself.
 9. Ensure the brief synthesis markers
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.
@@ -58,3 +66,10 @@ research into the brief recorded there.
 
 Return a worker result with `disposition: "PASS"`, the artifact path
 (pointing to `main.tex`), and a summary of what was authored or revised.
+
+If `research/scope.md` is insufficient, contradictory, missing evidence you
+need, or otherwise unsuitable to author from safely, do not repair it and do
+not author around it. Return `disposition: "BLOCKED"`, naming in the summary
+exactly what the brief lacks. The run stops there, and the deficiency is on
+the record where the workflow can act on it; a brief quietly patched by the
+author would leave no such record.

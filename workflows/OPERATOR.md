@@ -541,6 +541,16 @@ revises no prose, and does not read or merge another lane's findings. Its only
 product is the structured result it returns to `tpt`, and `tpt` forwards the
 join of the five to `research-synthesis`, which owns the integration.
 
+`author-proper` reads that brief as immutable input and may not repair it. An
+author that finds it insufficient, contradictory, or missing evidence it needs
+returns `disposition: "BLOCKED"` naming what the brief lacks, and because
+`author-proper` is a linear stage the run stops there: the `advance` that
+submitted the result prints the terminal disposition, and the author's summary
+is the record of what the research left out. There is no bounded route back
+into `research` — nothing sends the run to another sweep the way an evaluator
+sends it to a revision. Improve the research guidance or the sources it sweeps,
+then seed a new run.
+
 `content-evaluation` declares five lanes, in canonical order:
 
 1. `evidence-discipline`, finding IDs `CON-EVI-`
@@ -566,9 +576,12 @@ bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
 before, and `research` has no revision loop at all — a lane that cannot sweep
 returns `BLOCKED` and the run stops.
 
-The `proper` workflow is at version 4. A run seeded against an earlier version
-is bound to that source and cannot be continued under this topology; seed it
-again.
+The `proper` workflow is at version 5. Version 5 changed only the
+`research-synthesis` and `author-proper` fragments, to give `research/scope.md`
+a single writer; the topology, the lanes, and the gates are as they were at
+version 4. A run seeded against version 4 or any earlier version is bound to
+that source and fails closed rather than continuing under fragments it never
+started with; seed it again.
 
 Final acceptance is a gate, not a stage any agent is asked about. Advance it
 with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other gate.

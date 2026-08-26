@@ -200,7 +200,10 @@ but the one a given lane packet quotes.
 A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
-guidance it never started with. A changed workflow means a new run.
+guidance it never started with. A changed workflow means a new run. The
+`proper` workflow is at version 5: giving `research/scope.md` one writer
+changed the bytes of two bound fragments, so a run seeded against version 4
+fails closed and is seeded again.
 
 ### Hashing boundary
 
@@ -297,6 +300,34 @@ output it hashes into guidance.
 The rule is about the work, not the stage type. `research` is a linear stage
 that fans out and `content-evaluation` is an evaluator that fans out; both are
 read-only, which is why both may.
+
+### One writer per authoritative artifact
+
+`single` decides how many agents run a stage; ownership decides which stage may
+write a given file. Every authoritative intermediate artifact has exactly one
+owning stage: that stage writes it, and every other stage reads it as immutable
+input. Two stages writing one artifact in sequence is the same defect as two
+agents writing it at once, and harder to see — each packet has one writer, so
+nothing in the record shows that the artifact has two.
+
+`research/scope.md` is owned by `research-synthesis`. The `research` lanes
+write nothing, `research-synthesis` writes the reception matrix, the two audits
+the profile keeps in that file, and the brief, and `author-proper` reads the
+brief without editing, appending to, or regenerating it. Giving the file one
+writer moved work rather than dropping it: the notable-and-quotable and
+interpretive-proposal audits used to reach it through authoring's second write,
+and they are now the owner's. The searches behind them belong to no research
+lane and are not part of the reception sweep, so `research-synthesis` runs
+them itself; its fragment says so rather than leaving a stage told not to
+sweep holding two sweeps.
+Authoring adds no audit record of its own, because the profile keeps
+operational audit in that record and has the Scope and Qualifications appendix
+of `main.tex` point at it rather than repeat it.
+
+A stage that cannot use what the owner wrote does not repair it:
+`author-proper` returns `disposition: "BLOCKED"` naming what the brief lacks,
+which is terminal on a linear stage, so the deficiency is on the record instead
+of being patched where nothing would record it.
 
 ### Lanes and lane packets
 
