@@ -1,0 +1,124 @@
+#!/bin/sh
+# Test for `tools/tpt check-proper-identity`: exit 0 = pass (the stable gate).
+# The tool only reads the calendar's mass index and the id it is handed, so
+# every invocation here runs against the repository itself.
+#
+# A scope-gate stage judges this tool by exit code alone, so the refusals below
+# matter as much as the passes: a tool that accepted everything would satisfy
+# every "does it pass" assertion and gate nothing.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="check-proper-identity"
+collection="liturgy/roman-rite/1962/propers"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		fail "expected failure: $*"
+	fi
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# A registered temporal identity, reported against the calendar it was checked
+# in rather than in the abstract.
+line="$(run_tool --document "$collection/temporal/54-fourteenth-after-pentecost")"
+case "$line" in
+"Identity 54 is registered in the roman-1962 calendar: "*) ;;
+*) fail "unexpected success line: $line" ;;
+esac
+
+# The F series: the path spells it f01, the calendar spells it F01.
+case "$(run_tool --document "$collection/temporal/f01-christ-the-king")" in
+"Identity f01 is registered in the roman-1962 calendar: "*) ;;
+*) fail "f01 did not resolve case-insensitively against F01" ;;
+esac
+
+# A ritual identity passes, and the line has to SAY the check was grammar. No
+# mass entry registers an M identity, so a reader who took this for enumeration
+# would be reading a guarantee the calendar cannot give.
+ritual="$(run_tool --document "$collection/ritual/m01-nuptial-mass")"
+case "$ritual" in
+*"grammar only"*"nothing here enumerates them"*) ;;
+*) fail "the ritual pass does not state its ceiling: $ritual" ;;
+esac
+
+# --list is the enumeration the numeric check stands on.
+run_tool --list >"$sandbox/first.txt"
+listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
+[ "$listed" -gt 0 ] || fail "--list printed nothing: the gate would be green over nothing"
+
+# It must agree with the calendar counted independently of the tool, so a
+# root-resolution bug cannot hide behind a plausible-looking nonzero number.
+found="$(grep -c "^      registry: '\(F[0-9][0-9]\|[0-9][0-9]\)'$" \
+	"$repo/src/sources/calendars/roman-1962/propers.yaml")"
+[ "$listed" = "$found" ] ||
+	fail "listed $listed identities but the calendar carries $found"
+
+# Byte-stable and sorted, because a gate reruns and must not move.
+run_tool --list >"$sandbox/second.txt"
+cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
+sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
+
+# Every identity the listing names must be one the tool then accepts.
+while read -r prefix; do
+	case "$prefix" in
+	m*) klass="ritual" ;;
+	*) klass="temporal" ;;
+	esac
+	run_tool --document "$collection/$klass/$prefix-probe" >/dev/null ||
+		fail "listed $prefix but refused $collection/$klass/$prefix-probe"
+done <"$sandbox/first.txt"
+
+# Every proper leaf both providers actually hold. A rule derived from the
+# calendar and a tree published against the profile the calendar transcribes
+# must not disagree; if they ever do, one of the two is wrong.
+leaves=0
+for provider in gpt claude; do
+	for klass in temporal ritual; do
+		[ -d "$repo/src/$provider/$collection/$klass" ] || continue
+		for leaf in "$repo/src/$provider/$collection/$klass"/*/; do
+			[ -d "$leaf" ] || continue
+			slug="$(basename "$leaf")"
+			run_tool --document "$collection/$klass/$slug" >/dev/null ||
+				fail "published leaf refused: src/$provider/$collection/$klass/$slug"
+			leaves=$((leaves + 1))
+		done
+	done
+done
+[ "$leaves" -gt 0 ] || fail "found no published leaves: the regression checked nothing"
+
+# An unregistered numeric identity is the refusal the gate exists for.
+reject --document "$collection/temporal/99-invented-sunday"
+# The path grammar, class by class.
+reject --document "$collection/votive/54-fourteenth-after-pentecost"
+reject --document "propers/temporal/54-fourteenth-after-pentecost"
+reject --document "54-fourteenth-after-pentecost"
+# A slug with no recognisable identity prefix, and one with no remainder.
+reject --document "$collection/temporal/fourteenth-after-pentecost"
+reject --document "$collection/temporal/54"
+# Class and prefix must agree in both directions.
+reject --document "$collection/temporal/m01-nuptial-mass"
+reject --document "$collection/ritual/54-fourteenth-after-pentecost"
+# Asking nothing is not a pass.
+reject
+# A calendar that does not exist is an error, never an empty registry that
+# would refuse every identity for the wrong reason.
+reject --calendar no-such-calendar --document "$collection/temporal/54-fourteenth-after-pentecost"
+# An unknown flag is refused rather than ignored.
+reject --badflag
+
+echo ok

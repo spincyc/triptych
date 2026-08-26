@@ -120,6 +120,17 @@
       "stage": "draft",
       "usage": "check-proper-components [--provider NAME] [--document ID]"
     },
+    "check-proper-identity": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Validate a 1962 proper leaf id against the calendar's registered identities.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-proper-identity [--document ID] [--calendar NAME] [--list]"
+    },
     "check-roman-sanctuary-artwork": {
       "idempotent": true,
       "json": false,

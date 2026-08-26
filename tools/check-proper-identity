@@ -1,0 +1,260 @@
+#!/usr/bin/env python3
+"""Validate a 1962 proper leaf id against the calendar's registered identities."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+import _calendars  # noqa: E402
+from _tooling import Example, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-proper-identity --document "
+            "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+            (
+                "Identity 54 is registered in the roman-1962 calendar: "
+                "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.",
+            ),
+        ),
+        Example(
+            "tools/check-proper-identity --document "
+            "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+            (
+                "Identity m01 is valid by path grammar only: "
+                "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass. Ritual "
+                "identities are registered by no mass entry in the roman-1962 "
+                "calendar, so nothing here enumerates them.",
+            ),
+            "the ritual ceiling, stated in the line rather than left to be assumed",
+        ),
+        Example(
+            "tools/check-proper-identity --document "
+            "liturgy/roman-rite/1962/propers/temporal/99-invented-sunday",
+            (
+                "check-proper-identity error: identity '99' is registered by no mass "
+                "entry in the roman-1962 calendar; run --list for the 69 identities it "
+                "does carry",
+            ),
+            "exits 1; this is the refusal a scope-gate stage is built on",
+        ),
+        Example(
+            "tools/check-proper-identity --list",
+            (
+                "01",
+                "02",
+                "03",
+                "... 66 more lines",
+            ),
+            "prints every identity prefix the calendar registers, one a line",
+        ),
+    ),
+}
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CALENDAR_ROOT = ROOT / "src" / "sources" / "calendars"
+DEFAULT_CALENDAR = "roman-1962"
+ERROR = "check-proper-identity error: "
+
+# The one path shape a 1962 proper guide may have. Both providers publish under
+# it, so the grammar is stated once here rather than per provider: the identity
+# a leaf claims is a property of the collection, not of who wrote the leaf.
+COLLECTION = "liturgy/roman-rite/1962/propers"
+TEMPORAL, RITUAL = "temporal", "ritual"
+CLASSES = (TEMPORAL, RITUAL)
+
+# A slug is an identity prefix, a hyphen, and a kebab-case remainder. Three
+# prefix shapes, and `guidance/liturgy/roman-1962-propers.md` owns what each
+# means: two digits are the temporal spine (01-68), `f` is a general-calendar
+# feast assigned to Sunday without a temporal ordinal, `m` is a ritual, votive
+# or other non-Sunday formulary.
+SLUG_RE = re.compile(r"([0-9]{2}|[fm][0-9]{2})-([a-z0-9]+(?:-[a-z0-9]+)*)")
+
+# Which class of the collection each prefix shape belongs under. A ritual
+# identity filed under temporal/ is the mistake worth catching early: it reads
+# as a Sunday of the year to every tool that sorts the tree by prefix.
+CLASS_OF_PREFIX = {"m": RITUAL, "f": TEMPORAL}
+
+# What a registry value has to look like to be a catalog identity at all. The
+# calendar's `registry` field also carries synthetic ids -- `1962-T-lent-1-monday`
+# for a weekday with no catalog number, `1962-08-15` for a sanctoral date -- and
+# those are deliberately not identities a proper guide may claim.
+REGISTRY_RE = re.compile(r"(?i:[0-9]{2}|f[0-9]{2})")
+
+# --- Why ritual identities stop at the grammar ------------------------------
+#
+# The temporal registry is prose in guidance/liturgy/roman-1962-propers.md, and
+# since that profile stated that a mass entry's `registry` field carries the
+# same catalog identity, a tool can check a numeric or `f` prefix against
+# something a machine reads: src/sources/calendars/roman-1962/propers.yaml holds
+# 01 through 68 and F01, one mass entry apiece.
+#
+# The `M` series has no such second witness. No mass entry in any calendar here
+# carries an `M` registry value, because the calendar transcribes the book's
+# temporal and sanctoral cycles and a nuptial Mass is appointed by a rite rather
+# than by a day. `ritual/m01-nuptial-mass` is a real published leaf all the same.
+#
+# So there are two honest options and one dishonest one. The dishonest one is to
+# hard-code the `M` identities this tool happens to know about, which turns a
+# check into a copy that drifts the first time an `M02` is published. Of the two
+# honest ones -- refuse every `M` identity, or accept it on grammar -- refusing
+# would fail closed against a leaf that exists and is correct.
+#
+# This tool therefore accepts `m` prefixes on the grammar alone, and says so in
+# the line it prints, so that no reader mistakes a grammar pass for enumeration.
+# When the calendar grows a machine-readable ritual index, this is the comment
+# to delete and the branch to tighten.
+
+
+@dataclass(frozen=True)
+class Identity:
+    """A parsed leaf id: which class it sits under, and what it claims to be."""
+
+    document: str
+    klass: str
+    prefix: str
+    remainder: str
+
+
+def parse_identity(document: str) -> Identity:
+    """Split a canonical leaf id into its class and identity prefix."""
+    if not document:
+        raise ValueError("no document id given")
+    head, _, tail = document.rpartition("/")
+    klass_head, _, klass = head.rpartition("/")
+    if klass_head != COLLECTION or klass not in CLASSES:
+        raise ValueError(
+            f"{document!r} is not a 1962 propers leaf id; expected "
+            f"{COLLECTION}/<{'|'.join(CLASSES)}>/<slug>"
+        )
+
+    matched = SLUG_RE.fullmatch(tail)
+    if matched is None:
+        raise ValueError(
+            f"slug {tail!r} must be a two-digit, f- or m-prefixed identity, a "
+            "hyphen, and a nonempty kebab-case remainder"
+        )
+    prefix, remainder = matched.group(1), matched.group(2)
+
+    expected = CLASS_OF_PREFIX.get(prefix[0], TEMPORAL)
+    if expected != klass:
+        raise ValueError(
+            f"identity {prefix!r} belongs under {expected}/, not {klass}/"
+        )
+    return Identity(document, klass, prefix, remainder)
+
+
+def registered_identities(root: Path, calendar: str) -> tuple[str, ...]:
+    """Every catalog identity the named calendar's mass entries register.
+
+    Read through `scripts/_calendars`, so that a recension is resolved the way
+    every other tool resolves it rather than by a second parse of the YAML.
+    Prefixes are lowercased because a path spells the same identity `f01` that
+    the calendar spells `F01`.
+    """
+    document = _calendars.load_document(root, calendar)
+    found = set()
+    for mass in _calendars.mass_index(document).values():
+        value = mass.get("registry")
+        if isinstance(value, str) and REGISTRY_RE.fullmatch(value):
+            found.add(value.lower())
+    return tuple(sorted(found))
+
+
+def verify(identity: Identity, registered: tuple[str, ...], calendar: str) -> str:
+    """The one line this tool prints, or a ValueError naming what failed."""
+    if identity.prefix.startswith("m"):
+        return (
+            f"Identity {identity.prefix} is valid by path grammar only: "
+            f"{identity.document}. Ritual identities are registered by no mass "
+            f"entry in the {calendar} calendar, so nothing here enumerates them."
+        )
+    if identity.prefix not in registered:
+        raise ValueError(
+            f"identity {identity.prefix!r} is registered by no mass entry in the "
+            f"{calendar} calendar; run --list for the {len(registered)} "
+            "identities it does carry"
+        )
+    return (
+        f"Identity {identity.prefix} is registered in the {calendar} calendar: "
+        f"{identity.document}."
+    )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        # with_examples installs RawDescriptionHelpFormatter, so this is wrapped
+        # here rather than by argparse.
+        description=(
+            f"{__doc__.strip()}\n\n"
+            "A numeric or f-prefixed identity is checked against the registry\n"
+            "values of the named calendar's mass entries. An m-prefixed ritual\n"
+            "identity is accepted on the path GRAMMAR ALONE: no calendar entry\n"
+            "registers one, so grammar is the honest ceiling here and not an\n"
+            "enumerated check. Read a passing m-identity as well-formed, never\n"
+            "as attested."
+        ),
+    )
+    parser.add_argument(
+        "--document",
+        help="the canonical leaf id to verify, e.g. "
+        f"{COLLECTION}/temporal/54-fourteenth-after-pentecost",
+    )
+    parser.add_argument(
+        "--calendar",
+        default=DEFAULT_CALENDAR,
+        help=f"calendar whose registry the identity must appear in (default: "
+        f"{DEFAULT_CALENDAR})",
+    )
+    parser.add_argument(
+        "--list",
+        action="store_true",
+        help="print every identity prefix the calendar registers, one a line",
+    )
+    with_examples(parser, EXAMPLES[""])
+    args = parser.parse_args()
+
+    if not args.list and not args.document:
+        print(f"{ERROR}give --document ID, or --list", file=sys.stderr)
+        return 1
+
+    try:
+        registered = registered_identities(CALENDAR_ROOT, args.calendar)
+    except (OSError, ValueError) as exc:
+        print(f"{ERROR}cannot read calendar {args.calendar!r}: {exc}", file=sys.stderr)
+        return 1
+    if not registered:
+        print(
+            f"{ERROR}calendar {args.calendar!r} registers no catalog identity",
+            file=sys.stderr,
+        )
+        return 1
+
+    if args.list:
+        for prefix in registered:
+            print(prefix)
+        return 0
+
+    try:
+        identity = parse_identity(args.document)
+        line = verify(identity, registered, args.calendar)
+    except ValueError as exc:
+        print(f"{ERROR}{exc}", file=sys.stderr)
+        return 1
+
+    print(line)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
