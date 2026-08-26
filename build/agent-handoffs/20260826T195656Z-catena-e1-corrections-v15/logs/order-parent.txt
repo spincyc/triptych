@@ -1,0 +1,139 @@
+PREFLIGHT battery=parent
+2026-08-26T19:09:50Z
+attempt=parent-20260826T190950Z-014jgstx
+attempt-no=1
+lane=V15
+expect-sha=69f2575421ba976271c936b1abd4b39dbe8b98fd
+sha=69f2575421ba976271c936b1abd4b39dbe8b98fd
+sha-matches-expected=yes
+porcelain=clean
+cwd=$REPO
+log-prefix=01
+log-root=logs/attempt-01
+log-naming=every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+tree-state=read before AND after every command, not once at preflight
+2026-08-26T19:09:50Z
+START focused-catena
+ORDER: 1
+LOG: logs/attempt-01/focused-catena-parent.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:09:54Z
+END focused-catena
+2026-08-26T19:09:55Z
+START catena-check
+ORDER: 2
+LOG: logs/attempt-01/catena-check-parent.log
+TREE-BEFORE: clean
+CMD: python3 scripts/_catena.py check
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:09:58Z
+END catena-check
+2026-08-26T19:09:58Z
+START promised
+ORDER: 3
+LOG: logs/attempt-01/promised-parent.log
+TREE-BEFORE: clean
+CMD: tools/tpt check-promised-deliverables
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:09:58Z
+END promised
+2026-08-26T19:09:58Z
+START full-discovery
+ORDER: 4
+LOG: logs/attempt-01/full-discovery-parent.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests
+exit=1
+TREE-AFTER: clean
+2026-08-26T19:18:07Z
+END full-discovery
+2026-08-26T19:18:07Z
+START make-check
+ORDER: 5
+LOG: logs/attempt-01/make-check-parent.log
+TREE-BEFORE: clean
+CMD: make -k check
+exit=2
+TREE-AFTER: clean
+2026-08-26T19:23:05Z
+END make-check
+2026-08-26T19:23:05Z
+START release-bindings
+ORDER: 6
+LOG: logs/attempt-01/release-bindings-parent.log
+TREE-BEFORE: clean
+CMD: make check-release-bindings
+exit=2
+TREE-AFTER: clean
+2026-08-26T19:23:06Z
+END release-bindings
+2026-08-26T19:23:06Z
+START public-site
+ORDER: 7
+LOG: logs/attempt-01/public-site-parent.log
+TREE-BEFORE: clean
+CMD: make public-site
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:23:12Z
+END public-site
+2026-08-26T19:23:12Z
+START browser-gate
+ORDER: 8
+LOG: logs/attempt-01/browser-gate-parent.log
+TREE-BEFORE: clean
+CMD: TRIPTYCH_CHROME='/usr/bin/chromium' node tools/tests/corpus_browser_gate.mjs --json-out '$WORKSPACE/spincyc/v15-package-src/logs/attempt-01/browser-gate-parent.json' > /dev/null; gate=$?; python3 '$WORKSPACE/spincyc/v15-handoff-tools/gate-summary.py' '$WORKSPACE/spincyc/v15-package-src/logs/attempt-01/browser-gate-parent.json'; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+exit=1
+TREE-AFTER: clean
+2026-08-26T19:24:46Z
+END browser-gate
+2026-08-26T19:24:46Z
+START gzip-sizes
+ORDER: 9
+LOG: logs/attempt-01/gzip-sizes-parent.log
+TREE-BEFORE: clean
+CMD: python3 '$WORKSPACE/spincyc/v15-handoff-tools/gzip-sizes.py' src/web/browser/catena
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:24:46Z
+END gzip-sizes
+2026-08-26T19:24:46Z
+START head-tests-against-parent
+ORDER: 10
+LOG: logs/attempt-01/head-tests-against-parent.log
+TREE-BEFORE: clean
+CMD: cp '$REPO/tools/tests/test_catena_wave_1.py' tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+exit=1
+TREE-AFTER: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+2026-08-26T19:24:49Z
+END head-tests-against-parent
+2026-08-26T19:24:49Z
+START request-journals
+ORDER: 11
+LOG: logs/attempt-01/request-journals-parent.log
+TREE-BEFORE: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+CMD: python3 '$WORKSPACE/spincyc/v15-handoff-tools/journal-dump.py' tools/tests/test_catena_wave_1.py
+exit=0
+TREE-AFTER: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+2026-08-26T19:24:52Z
+END request-journals
+2026-08-26T19:24:52Z
+START restore-parent-tree
+ORDER: 12
+LOG: logs/attempt-01/restore-parent-tree.log
+TREE-BEFORE: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+CMD: git checkout -- tools/tests/test_catena_wave_1.py; echo "restored: tools/tests/test_catena_wave_1.py"; git status --porcelain; echo "porcelain entries after restore: $(git status --porcelain | wc -l)"
+exit=0
+TREE-AFTER: clean
+2026-08-26T19:24:52Z
+END restore-parent-tree
+POSTFLIGHT battery=parent
+2026-08-26T19:24:52Z
+sha=69f2575421ba976271c936b1abd4b39dbe8b98fd
+porcelain=clean
+sha-drift=none

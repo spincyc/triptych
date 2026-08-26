@@ -1,0 +1,830 @@
+{
+  "archive": {
+    "bytes": 1400092,
+    "name": "20260826T195656Z-catena-e1-corrections-v15.zip",
+    "sha256": "711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac"
+  },
+  "counts": {
+    "executed_invocations": 24,
+    "executed_tools": 11,
+    "invocations": 33,
+    "invocations_by_class": {
+      "external-system-tool": 2,
+      "shipped-executed": 22,
+      "shipped-not-executed": 9
+    },
+    "tools_by_class": {
+      "external-system-tool": 2,
+      "shipped-executed": 9,
+      "shipped-not-executed": 9
+    },
+    "unique_tools": 20
+  },
+  "executed_anchor": "$EVIDENCE",
+  "executed_attempt": "package-20260826T195656Z-06v11wpe",
+  "executed_input": "$REPO/build/agent-handoffs/20260826T195656Z-catena-e1-corrections-v15.executed-tools.json",
+  "executed_proof": "proved",
+  "generated": "2026-08-26T19:58:11Z",
+  "package": "20260826T195656Z-catena-e1-corrections-v15",
+  "problem_count": 0,
+  "rows": [
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "8d81b74e7085c713520cdbc2d91719edc4d7b4d313c62026caee4ca4d264a226",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/assemble.sh",
+          "phase": "P8 final verification",
+          "sha256": "8d81b74e7085c713520cdbc2d91719edc4d7b4d313c62026caee4ca4d264a226",
+          "tool": "assemble.sh"
+        }
+      ],
+      "logical_path": "logs/assemble.sh",
+      "problems": [],
+      "shipped_sha256": "8d81b74e7085c713520cdbc2d91719edc4d7b4d313c62026caee4ca4d264a226",
+      "tool_id": "assemble.sh",
+      "trusted_sha256": "8d81b74e7085c713520cdbc2d91719edc4d7b4d313c62026caee4ca4d264a226"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/authority-coherence.py",
+          "phase": "P8 final verification",
+          "sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa",
+          "tool": "authority-coherence.py"
+        }
+      ],
+      "logical_path": "logs/authority-coherence.py",
+      "problems": [],
+      "shipped_sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa",
+      "tool_id": "authority-coherence.py",
+      "trusted_sha256": "6a7734a4f566dfebafeaa41a0f710f3bc840f6e2c3969ed5925fe91b219eeffa"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "46c38e0f2cf57d1ad440d2933e94ec3b23cf61b7eaf6e241c334005ff78c9c8f",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/battery.sh",
+          "phase": "P8 final verification",
+          "sha256": "46c38e0f2cf57d1ad440d2933e94ec3b23cf61b7eaf6e241c334005ff78c9c8f",
+          "tool": "battery.sh"
+        }
+      ],
+      "logical_path": "logs/battery.sh",
+      "problems": [],
+      "shipped_sha256": "46c38e0f2cf57d1ad440d2933e94ec3b23cf61b7eaf6e241c334005ff78c9c8f",
+      "tool_id": "battery.sh",
+      "trusted_sha256": "46c38e0f2cf57d1ad440d2933e94ec3b23cf61b7eaf6e241c334005ff78c9c8f"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "(this step writes checks.txt and logs/LOG-INDEX.md, not a transcript; the invocation log is the transcript)",
+        "(the audit writes no member; the invocation log is the transcript)",
+        "(this step writes the member logs/attempts.json, not a transcript; the invocation log is the transcript)"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:56:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "(this step writes checks.txt and logs/LOG-INDEX.md, not a transcript; the invocation log is the transcript)",
+          "path": "logs/checks.py",
+          "phase": "P1 checks.txt, the log index and the packaged attempt rows",
+          "sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39",
+          "tool": "checks.py"
+        },
+        {
+          "at": "2026-08-26T19:57:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "(the audit writes no member; the invocation log is the transcript)",
+          "path": "logs/checks.py",
+          "phase": "P5 attempt-log audit",
+          "sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39",
+          "tool": "checks.py"
+        },
+        {
+          "at": "2026-08-26T19:57:57Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "(this step writes the member logs/attempts.json, not a transcript; the invocation log is the transcript)",
+          "path": "logs/checks.py",
+          "phase": "P5 the sealed row and the shipped ledger",
+          "sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39",
+          "tool": "checks.py"
+        }
+      ],
+      "logical_path": "logs/checks.py",
+      "problems": [],
+      "shipped_sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39",
+      "tool_id": "checks.py",
+      "trusted_sha256": "707d21a34186de1daef838a368bd38b34167453a5f396f28e51b212240be2b39"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": "logs/attempt-06/gate-comparison.log",
+      "evidence_logs": [
+        "logs/attempt-06/gate-comparison.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:56:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/gate-comparison.log",
+          "path": "logs/compare-gate.py",
+          "phase": "P1 gate comparison",
+          "sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92",
+          "tool": "compare-gate.py"
+        }
+      ],
+      "logical_path": "logs/compare-gate.py",
+      "problems": [],
+      "shipped_sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92",
+      "tool_id": "compare-gate.py",
+      "trusted_sha256": "448b0de87f7bf2abf825408cdd528011da06c98da0059719a1aefc93214efb92"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "(the freeze is taken outside the package; the invocation log is the transcript)",
+        "logs/attempt-06/derive-claims.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "3b89252ead170c39cdbb7792870f899b85d65401b60b5d1d77e45e13b51b9652",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:57:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "(the freeze is taken outside the package; the invocation log is the transcript)",
+          "path": "logs/derive-claims.py",
+          "phase": "P3 the freeze",
+          "sha256": "3b89252ead170c39cdbb7792870f899b85d65401b60b5d1d77e45e13b51b9652",
+          "tool": "derive-claims.py"
+        },
+        {
+          "at": "2026-08-26T19:57:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/derive-claims.log",
+          "path": "logs/derive-claims.py",
+          "phase": "P4 derive once",
+          "sha256": "3b89252ead170c39cdbb7792870f899b85d65401b60b5d1d77e45e13b51b9652",
+          "tool": "derive-claims.py"
+        }
+      ],
+      "logical_path": "logs/derive-claims.py",
+      "problems": [],
+      "shipped_sha256": "3b89252ead170c39cdbb7792870f899b85d65401b60b5d1d77e45e13b51b9652",
+      "tool_id": "derive-claims.py",
+      "trusted_sha256": "3b89252ead170c39cdbb7792870f899b85d65401b60b5d1d77e45e13b51b9652"
+    },
+    {
+      "attempt": null,
+      "attempts": [
+        "parent-20260826T190950Z-014jgstx",
+        "head-20260826T192452Z-02kjv34n"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "logs/attempt-01/browser-gate-parent.log",
+        "logs/attempt-02/browser-gate-head.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:23:12Z",
+          "attempt": "parent-20260826T190950Z-014jgstx",
+          "class": "shipped-executed",
+          "log": "logs/attempt-01/browser-gate-parent.log",
+          "path": "logs/gate-summary.py",
+          "phase": "browser-gate",
+          "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+          "tool": "gate-summary.py"
+        },
+        {
+          "at": "2026-08-26T19:39:16Z",
+          "attempt": "head-20260826T192452Z-02kjv34n",
+          "class": "shipped-executed",
+          "log": "logs/attempt-02/browser-gate-head.log",
+          "path": "logs/gate-summary.py",
+          "phase": "browser-gate",
+          "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+          "tool": "gate-summary.py"
+        }
+      ],
+      "logical_path": "logs/gate-summary.py",
+      "problems": [],
+      "shipped_sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+      "tool_id": "gate-summary.py",
+      "trusted_sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "external-system-tool",
+      "equal": null,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "93473c28694fd72bd889364107cd2770514de59780885a6a4aafca4d602e30ad",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:56:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "external-system-tool",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "",
+          "phase": "P0 preflight",
+          "sha256": "93473c28694fd72bd889364107cd2770514de59780885a6a4aafca4d602e30ad",
+          "tool": "git"
+        }
+      ],
+      "logical_path": "(external system tool)",
+      "problems": [],
+      "shipped_sha256": null,
+      "tool_id": "git",
+      "trusted_sha256": null
+    },
+    {
+      "attempt": null,
+      "attempts": [
+        "parent-20260826T190950Z-014jgstx",
+        "head-20260826T192452Z-02kjv34n"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "logs/attempt-01/gzip-sizes-parent.log",
+        "logs/attempt-02/gzip-sizes-head.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:24:46Z",
+          "attempt": "parent-20260826T190950Z-014jgstx",
+          "class": "shipped-executed",
+          "log": "logs/attempt-01/gzip-sizes-parent.log",
+          "path": "logs/gzip-sizes.py",
+          "phase": "gzip-sizes",
+          "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+          "tool": "gzip-sizes.py"
+        },
+        {
+          "at": "2026-08-26T19:40:52Z",
+          "attempt": "head-20260826T192452Z-02kjv34n",
+          "class": "shipped-executed",
+          "log": "logs/attempt-02/gzip-sizes-head.log",
+          "path": "logs/gzip-sizes.py",
+          "phase": "gzip-sizes",
+          "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+          "tool": "gzip-sizes.py"
+        }
+      ],
+      "logical_path": "logs/gzip-sizes.py",
+      "problems": [],
+      "shipped_sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+      "tool_id": "gzip-sizes.py",
+      "trusted_sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "f1519492d61eb5ae800c84276697f700895471bf1335278312da9c69b3b95d35",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/handoff-inventory.py",
+          "phase": "P8 final verification",
+          "sha256": "f1519492d61eb5ae800c84276697f700895471bf1335278312da9c69b3b95d35",
+          "tool": "handoff-inventory.py"
+        }
+      ],
+      "logical_path": "logs/handoff-inventory.py",
+      "problems": [],
+      "shipped_sha256": "f1519492d61eb5ae800c84276697f700895471bf1335278312da9c69b3b95d35",
+      "tool_id": "handoff-inventory.py",
+      "trusted_sha256": "f1519492d61eb5ae800c84276697f700895471bf1335278312da9c69b3b95d35"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": "logs/attempt-06/head-consistency.log",
+      "evidence_logs": [
+        "logs/attempt-06/head-consistency.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:57:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/head-consistency.log",
+          "path": "logs/head-consistency.py",
+          "phase": "P5 consistency audit",
+          "sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e",
+          "tool": "head-consistency.py"
+        }
+      ],
+      "logical_path": "logs/head-consistency.py",
+      "problems": [],
+      "shipped_sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e",
+      "tool_id": "head-consistency.py",
+      "trusted_sha256": "23f3f497c04c2bc0330eb80de55037901d1368913456cc6b0690b4d6d668aa5e"
+    },
+    {
+      "attempt": null,
+      "attempts": [
+        "parent-20260826T190950Z-014jgstx",
+        "head-20260826T192452Z-02kjv34n"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "logs/attempt-01/request-journals-parent.log",
+        "logs/attempt-02/request-journals-head.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:24:49Z",
+          "attempt": "parent-20260826T190950Z-014jgstx",
+          "class": "shipped-executed",
+          "log": "logs/attempt-01/request-journals-parent.log",
+          "path": "logs/journal-dump.py",
+          "phase": "request-journals",
+          "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+          "tool": "journal-dump.py"
+        },
+        {
+          "at": "2026-08-26T19:40:52Z",
+          "attempt": "head-20260826T192452Z-02kjv34n",
+          "class": "shipped-executed",
+          "log": "logs/attempt-02/request-journals-head.log",
+          "path": "logs/journal-dump.py",
+          "phase": "request-journals",
+          "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+          "tool": "journal-dump.py"
+        }
+      ],
+      "logical_path": "logs/journal-dump.py",
+      "problems": [],
+      "shipped_sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+      "tool_id": "journal-dump.py",
+      "trusted_sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "external-system-tool",
+      "equal": null,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:56:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "external-system-tool",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "",
+          "phase": "P0 preflight",
+          "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+          "tool": "python3"
+        }
+      ],
+      "logical_path": "(external system tool)",
+      "problems": [],
+      "shipped_sha256": null,
+      "tool_id": "python3",
+      "trusted_sha256": null
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe",
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": null,
+      "evidence_logs": [
+        "logs/attempt-06/seal.log",
+        "logs/attempt-06/seal-check.log",
+        "logs/attempt-06/seal.log",
+        "logs/attempt-06/seal-check.log",
+        "logs/attempt-06/seal.log",
+        "logs/attempt-06/seal-check.log",
+        "MANIFEST.sha256",
+        "(--verify writes nothing; the invocation log is the transcript)"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:57:00Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (normalize pass 1)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:09Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal-check.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (check pass 1)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:18Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (normalize pass 2)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:28Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal-check.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (check pass 2)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:37Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (normalize pass 3)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:46Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/seal-check.log",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P2 normalize to a fixpoint (check pass 3)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:57:57Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "MANIFEST.sha256",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P6 manifest",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        },
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "(--verify writes nothing; the invocation log is the transcript)",
+          "path": "logs/sanitize-and-seal.py",
+          "phase": "P7 archive (seal verification)",
+          "sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+          "tool": "sanitize-and-seal.py"
+        }
+      ],
+      "logical_path": "logs/sanitize-and-seal.py",
+      "problems": [],
+      "shipped_sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561",
+      "tool_id": "sanitize-and-seal.py",
+      "trusted_sha256": "f783c739aca90b4505f9ef886f7b529e52a1278d1257a33decc81176593cc561"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/test-attempt-history.py",
+          "phase": "P8 final verification",
+          "sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62",
+          "tool": "test-attempt-history.py"
+        }
+      ],
+      "logical_path": "logs/test-attempt-history.py",
+      "problems": [],
+      "shipped_sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62",
+      "tool_id": "test-attempt-history.py",
+      "trusted_sha256": "4f59df2f7eecfd2289db39dcb9cfbd23ace19a318b48702e6206b5d8f0a80a62"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/test-authority-coherence.py",
+          "phase": "P8 final verification",
+          "sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5",
+          "tool": "test-authority-coherence.py"
+        }
+      ],
+      "logical_path": "logs/test-authority-coherence.py",
+      "problems": [],
+      "shipped_sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5",
+      "tool_id": "test-authority-coherence.py",
+      "trusted_sha256": "da9b63713cec56f1bbc182637d635a9fdd853adb69fe5ad5dd2dcc83308992d5"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "4e19dedbb246e1ef872167965329a394a17b6692c380d806b903915cadfb7daf",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/test-handoff-inventory.py",
+          "phase": "P8 final verification",
+          "sha256": "4e19dedbb246e1ef872167965329a394a17b6692c380d806b903915cadfb7daf",
+          "tool": "test-handoff-inventory.py"
+        }
+      ],
+      "logical_path": "logs/test-handoff-inventory.py",
+      "problems": [],
+      "shipped_sha256": "4e19dedbb246e1ef872167965329a394a17b6692c380d806b903915cadfb7daf",
+      "tool_id": "test-handoff-inventory.py",
+      "trusted_sha256": "4e19dedbb246e1ef872167965329a394a17b6692c380d806b903915cadfb7daf"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-executed",
+      "equal": true,
+      "evidence_log": "logs/attempt-06/sealer-tests.log",
+      "evidence_logs": [
+        "logs/attempt-06/sealer-tests.log"
+      ],
+      "executed": true,
+      "executed_recorded": true,
+      "executed_sha256": "c2f7807e02bafc2c9534ddfbc377b3e4894604275b5eb3ff8c6b4a0fbfce0248",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:56:56Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-executed",
+          "log": "logs/attempt-06/sealer-tests.log",
+          "path": "logs/test-sanitize-and-seal.py",
+          "phase": "P1 the sealer's own tests",
+          "sha256": "c2f7807e02bafc2c9534ddfbc377b3e4894604275b5eb3ff8c6b4a0fbfce0248",
+          "tool": "test-sanitize-and-seal.py"
+        }
+      ],
+      "logical_path": "logs/test-sanitize-and-seal.py",
+      "problems": [],
+      "shipped_sha256": "c2f7807e02bafc2c9534ddfbc377b3e4894604275b5eb3ff8c6b4a0fbfce0248",
+      "tool_id": "test-sanitize-and-seal.py",
+      "trusted_sha256": "c2f7807e02bafc2c9534ddfbc377b3e4894604275b5eb3ff8c6b4a0fbfce0248"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "87dbe58084be52b6f468e902167d7adbb5337b3a61e72ff7956fc667eec2c068",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/test-verify-final-package.py",
+          "phase": "P8 final verification",
+          "sha256": "87dbe58084be52b6f468e902167d7adbb5337b3a61e72ff7956fc667eec2c068",
+          "tool": "test-verify-final-package.py"
+        }
+      ],
+      "logical_path": "logs/test-verify-final-package.py",
+      "problems": [],
+      "shipped_sha256": "87dbe58084be52b6f468e902167d7adbb5337b3a61e72ff7956fc667eec2c068",
+      "tool_id": "test-verify-final-package.py",
+      "trusted_sha256": "87dbe58084be52b6f468e902167d7adbb5337b3a61e72ff7956fc667eec2c068"
+    },
+    {
+      "attempt": "package-20260826T195656Z-06v11wpe",
+      "attempts": [
+        "package-20260826T195656Z-06v11wpe"
+      ],
+      "class": "shipped-not-executed",
+      "equal": true,
+      "evidence_log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+      "evidence_logs": [
+        "20260826T195656Z-catena-e1-corrections-v15.assemble.log"
+      ],
+      "executed": false,
+      "executed_recorded": true,
+      "executed_sha256": "5e811e75a45f57583ca051756789eb3f78c165baf284a15b832368f14ab0c515",
+      "invocations": [
+        {
+          "at": "2026-08-26T19:58:01Z",
+          "attempt": "package-20260826T195656Z-06v11wpe",
+          "class": "shipped-not-executed",
+          "log": "20260826T195656Z-catena-e1-corrections-v15.assemble.log",
+          "path": "logs/verify-final-package.py",
+          "phase": "P8 final verification",
+          "sha256": "5e811e75a45f57583ca051756789eb3f78c165baf284a15b832368f14ab0c515",
+          "tool": "verify-final-package.py"
+        }
+      ],
+      "logical_path": "logs/verify-final-package.py",
+      "problems": [],
+      "shipped_sha256": "5e811e75a45f57583ca051756789eb3f78c165baf284a15b832368f14ab0c515",
+      "tool_id": "verify-final-package.py",
+      "trusted_sha256": "5e811e75a45f57583ca051756789eb3f78c165baf284a15b832368f14ab0c515"
+    }
+  ],
+  "schema": "catena-tool-byte-table/1",
+  "trusted_tools": "$WORKSPACE/spincyc/v15-handoff-tools"
+}
