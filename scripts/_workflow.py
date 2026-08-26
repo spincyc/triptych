@@ -39,10 +39,32 @@ GATE = "gate"
 ACCEPTED = "ACCEPTED"
 BLOCKED = "BLOCKED"
 
+# Execution modes. A stage declares exactly one, and the declaration is
+# workflow data: the host that drives a run never decides whether a stage is
+# run by one agent, by a fan-out over lanes, or by tpt itself.
+SINGLE = "single"
+FANOUT = "fanout"
+PROGRAM = "program"
+AGENT_MODES = (SINGLE, FANOUT)
+
+# The only parallelism a fan-out stage may request. The workflow owns the lane
+# set; the host owns only how many of those lanes run at once.
+HOST_MAX = "host-max"
+
+# The only join a fan-out stage may request. Every declared lane is required,
+# lane findings are preserved verbatim under their lane identity in the
+# declared lane order, and the disposition is the worst any lane returned.
+STRICT_UNION = "strict-union"
+
+
 # Dispositions
 PASS = "PASS"
 CHANGES_REQUIRED = "CHANGES_REQUIRED"
 FAIL = "FAIL"
+
+# Worst-first ordering for the strict-union join. Wall-clock completion order
+# never enters this: the reduction reads only dispositions, in lane order.
+_DISPOSITION_RANK = {PASS: 0, CHANGES_REQUIRED: 1, FAIL: 1, BLOCKED: 2}
 
 # Schema names
 SCHEMA_WORKER = "worker-result.json"
@@ -423,7 +445,9 @@ class WorkflowEngine:
                 run_id, workflow, digest, commit, args
             )
             stage = self._get_stage(workflow, first_stage)
-            packet = self._compile_packet(workflow, stage, state, run_dir, [])
+            packet = self._compile_stage_packets(
+                workflow, stage, state, run_dir, []
+            )
             # Digesting and compilation read the same sources through separate
             # paths. Refuse a source edit that overlaps initial compilation.
             if self.workflow_source_digest(workflow) != digest:
@@ -476,11 +500,10 @@ class WorkflowEngine:
                 run_id, run_dir / "manifest.json",
                 _canonical_json_bytes(manifest),
             )
-            for path, payload in (
-                (packet["path"], packet["bytes"]),
+            for path, payload in self._packet_writes(packet) + [
                 (run_dir / "bootstrap.json", bootstrap_bytes),
                 (run_dir / "events.jsonl", events),
-            ):
+            ]:
                 self._write_new_file(run_id, path, payload)
             self.save_state(run_id, state)
             return bootstrap_bytes
@@ -632,7 +655,7 @@ class WorkflowEngine:
         pristine = self._initial_seed_state(
             run_id, bound, state["workflow_digest"], commit, args
         )
-        compiled = self._compile_packet(
+        compiled = self._compile_stage_packets(
             bound, self._get_stage(bound, first_stage), pristine,
             run_dir, [], iteration=0,
         )
@@ -643,11 +666,21 @@ class WorkflowEngine:
                 f"run {run_id}: initial packet does not match the bound "
                 f"workflow and pristine seed state"
             )
+        self._verify_lane_packet_evidence(run_id, compiled, initial)
         packet = {
             "path": packet_path,
             "stage": initial["stage"],
             "iteration": initial["iteration"],
             "hash": initial["hash"],
+            "lanes": [
+                {
+                    "lane": lane["lane"],
+                    "index": lane["index"],
+                    "hash": lane["hash"],
+                    "path": self.repo_root / lane["path"],
+                }
+                for lane in initial.get("lanes", [])
+            ],
         }
         expected = _canonical_json_bytes(self._bootstrap_response(
             bound, commit, args, state, packet
@@ -658,6 +691,91 @@ class WorkflowEngine:
                 f"for the immutable run evidence"
             )
         return payload
+
+    def _verify_recorded_lane_files(
+        self, run_id: str, record: dict[str, Any], directory: Path,
+        stem: str, suffix: str,
+    ) -> None:
+        """Every recorded lane file must be present, named, and unaltered."""
+        lanes = record.get("lanes")
+        if lanes is None:
+            return
+        if not isinstance(lanes, list) or not lanes:
+            raise WorkflowError(
+                f"run {run_id}: {record.get('stage')} records an invalid lane "
+                f"roster"
+            )
+        for index, lane in enumerate(lanes):
+            if not isinstance(lane, dict) or lane.get("index") != index \
+                    or not isinstance(lane.get("lane"), str) \
+                    or not _is_sha256(lane.get("hash")):
+                raise WorkflowError(
+                    f"run {run_id}: {record.get('stage')} lane evidence is "
+                    f"inconsistent"
+                )
+            expected = (
+                directory / f"{stem}-lane-{index:02d}-{lane['lane']}{suffix}"
+            ).relative_to(self.repo_root).as_posix()
+            if lane.get("path") != expected:
+                raise WorkflowError(
+                    f"run {run_id}: {record.get('stage')} lane evidence has an "
+                    f"invalid path"
+                )
+            path = self.repo_root / expected
+            if path.is_symlink() or not path.is_file():
+                raise WorkflowError(
+                    f"run {run_id}: recorded lane file is missing or symlinked"
+                )
+            try:
+                actual = hashlib.sha256(path.read_bytes()).hexdigest()
+            except OSError as error:
+                raise WorkflowError(
+                    f"run {run_id}: cannot read recorded lane file: {error}"
+                ) from error
+            if actual != lane["hash"]:
+                raise WorkflowError(
+                    f"run {run_id}: recorded lane file hash is inconsistent"
+                )
+
+    def _verify_lane_packet_evidence(
+        self, run_id: str, compiled: dict[str, Any], record: dict[str, Any]
+    ) -> None:
+        """A recorded lane roster must match what the workflow compiles now.
+
+        Lane identity is what a lane result is bound to, so a lane roster that
+        the bound workflow no longer produces — a lane renamed, reordered,
+        added, or dropped under a live run — has to be an error rather than a
+        run whose results answer packets nobody can recompile.
+        """
+        recorded = record.get("lanes", [])
+        expected = compiled.get("lanes", [])
+        if not isinstance(recorded, list) or len(recorded) != len(expected):
+            raise WorkflowError(
+                f"run {run_id}: recorded lane roster for {record['stage']} "
+                f"disagrees with the bound workflow"
+            )
+        for index, (entry, lane) in enumerate(zip(recorded, expected)):
+            relative = str(lane["path"].relative_to(self.repo_root))
+            if not isinstance(entry, dict) \
+                    or entry.get("lane") != lane["lane"] \
+                    or entry.get("index") != index \
+                    or entry.get("hash") != lane["hash"] \
+                    or entry.get("path") != relative:
+                raise WorkflowError(
+                    f"run {run_id}: recorded lane evidence for "
+                    f"{record['stage']} lane {index} is inconsistent"
+                )
+            path = self.repo_root / relative
+            if path.is_symlink() or not path.is_file():
+                raise WorkflowError(
+                    f"run {run_id}: lane packet {relative} is missing or "
+                    f"symlinked"
+                )
+            if path.read_bytes() != lane["bytes"]:
+                raise WorkflowError(
+                    f"run {run_id}: lane packet {relative} does not match the "
+                    f"bound workflow and recorded state"
+                )
 
     def _verify_seed_replay_state(
         self, workflow: dict[str, Any], state: dict[str, Any]
@@ -733,6 +851,9 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"run {run_id}: recorded packet hash is inconsistent"
                 )
+            self._verify_recorded_lane_files(
+                run_id, record, packets_dir, f"{stage}-{iteration:04d}", ".txt"
+            )
             counts[stage] = iteration + 1
         if stage_iterations != counts:
             raise WorkflowError(
@@ -779,6 +900,10 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"run {run_id}: recorded result hash is inconsistent"
                 )
+            self._verify_recorded_lane_files(
+                run_id, result, results_dir,
+                f"{packet['stage']}-{packet['iteration']:04d}", ".json",
+            )
             body = _read_json(path)
             stage = stages[packet["stage"]]
             _validate_result(
@@ -865,10 +990,14 @@ class WorkflowEngine:
             )
 
     def advance(self, run_id: str, result_path: str | None = None,
-                run_gate: bool = False) -> dict[str, Any]:
+                run_gate: bool = False,
+                lane_results: list[tuple[str, str]] | None = None,
+                ) -> dict[str, Any]:
         """Validate a result and emit the next packet (or terminal state).
 
-        For linear/evaluator/bounded-revision stages: requires --result <path>.
+        For `single` linear/evaluator/bounded-revision stages: requires
+        --result <path>. For `fanout` stages: requires one --lane-result per
+        workflow-defined lane, and the engine performs the join itself.
         For gate stages: requires --run-gate (runs the gate checks directly).
 
         The whole successor is prepared before any of it is persisted: the
@@ -888,6 +1017,8 @@ class WorkflowEngine:
         workflow = self.load_bound_workflow(state)
         stage = self._get_stage(workflow, state["current_stage"])
 
+        lanes = _stage_lanes(stage)
+        lane_bodies: list[tuple[dict[str, Any], dict[str, Any]]] = []
         if stage["type"] == GATE:
             if not run_gate:
                 raise WorkflowError(
@@ -897,11 +1028,37 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"stage {stage['id']} is a gate; do not pass --result"
                 )
+            if lane_results:
+                raise WorkflowError(
+                    f"stage {stage['id']} is a gate; it has no lanes and takes "
+                    f"no --lane-result"
+                )
             result = self._run_gate(workflow, stage, state, run_id)
+        elif lanes:
+            if run_gate:
+                raise WorkflowError(
+                    f"stage {stage['id']} is not a gate; pass one "
+                    f"--lane-result <lane-id>=<path> per declared lane"
+                )
+            if result_path is not None:
+                raise WorkflowError(
+                    f"stage {stage['id']} is a {FANOUT} stage; pass one "
+                    f"--lane-result <lane-id>=<path> per declared lane, not "
+                    f"--result. The engine joins the lane results itself."
+                )
+            lane_bodies = self._load_and_validate_lane_results(
+                lane_results or [], stage, state
+            )
+            result = self._join_lane_results(stage, state, lane_bodies)
         else:
             if run_gate:
                 raise WorkflowError(
                     f"stage {stage['id']} is not a gate; pass --result <path>"
+                )
+            if lane_results:
+                raise WorkflowError(
+                    f"stage {stage['id']} is a {SINGLE} stage; it declares no "
+                    f"lanes and takes --result <path>, not --lane-result"
                 )
             if result_path is None:
                 raise WorkflowError(
@@ -919,6 +1076,7 @@ class WorkflowEngine:
             self._verify_final_acceptance(workflow, stage, state)
 
         result_write = self._prepare_result(pending, result, stage)
+        lane_writes = self._prepare_lane_results(pending, stage, lane_bodies)
 
         if transition in (ACCEPTED, BLOCKED):
             pending["disposition"] = transition
@@ -931,7 +1089,7 @@ class WorkflowEngine:
                 "to": transition,
                 "disposition": result["disposition"],
             })
-            self._commit(run_id, pending, [result_write])
+            self._commit(run_id, pending, [result_write] + lane_writes)
             self._emit_result_event(run_id, stage, result, transition)
             if transition == ACCEPTED:
                 self._emit_event(run_id, {
@@ -969,15 +1127,17 @@ class WorkflowEngine:
         prior_findings = self._extract_prior_findings(
             result, stage, next_stage, workflow
         )
-        packet = self._compile_packet(
+        packet = self._compile_stage_packets(
             workflow, next_stage, pending, self.run_dir(run_id), prior_findings
         )
         self._stage_packet(pending, packet)
         # The packet is written before the result that produced it, so that a
         # commit which cannot store the successor leaves no record of the
         # submission either.
-        self._commit(run_id, pending,
-                     [(packet["path"], packet["bytes"]), result_write])
+        self._commit(
+            run_id, pending,
+            self._packet_writes(packet) + [result_write] + lane_writes,
+        )
 
         self._emit_result_event(run_id, stage, result, transition)
         self._emit_packet_event(run_id, packet)
@@ -1070,16 +1230,35 @@ class WorkflowEngine:
             if last_pkt and last_pkt["stage"] == state["current_stage"]
             else state["stage_iterations"].get(state["current_stage"], 0)
         )
-        packet = self._compile_packet(
+        packet = self._compile_stage_packets(
             workflow, stage, state, self.run_dir(run_id), prior_findings,
             iteration=iteration,
         )
+        deterministic = (
+            packet["hash"] == last_pkt["hash"] if last_pkt else True
+        )
+        lanes = []
+        if packet.get("lanes"):
+            recorded = {
+                entry["lane"]: entry
+                for entry in (last_pkt or {}).get("lanes", [])
+            }
+            for lane in packet["lanes"]:
+                was = recorded.get(lane["lane"], {}).get("hash")
+                matched = was is None or was == lane["hash"]
+                deterministic = deterministic and matched
+                lanes.append({
+                    "lane": lane["lane"],
+                    "index": lane["lane_index"],
+                    "last_recorded_hash": was,
+                    "recompiled_hash": lane["hash"],
+                    "deterministic": matched,
+                })
         report.update({
             "disposition": None,
             "recompiled_hash": packet["hash"],
-            "deterministic": (
-                packet["hash"] == last_pkt["hash"] if last_pkt else True
-            ),
+            "deterministic": deterministic,
+            "lanes": lanes,
         })
         return report
 
@@ -1264,6 +1443,8 @@ class WorkflowEngine:
         run_dir: Path,
         prior_findings: list[dict[str, Any]],
         iteration: int | None = None,
+        lane: dict[str, Any] | None = None,
+        lane_index: int | None = None,
     ) -> dict[str, Any]:
         """Deterministically compile a guidance packet, writing nothing.
 
@@ -1273,9 +1454,17 @@ class WorkflowEngine:
 
         The packet bytes are assembled from:
         - A deterministic header (workflow, workflow-source digest, commit,
-          stage, iteration, args, prior findings)
+          stage, iteration, execution policy, lane identity, args, prior
+          findings)
         - Fragment contents in the declared order, with argument placeholders
           substituted
+
+        With `lane`, this compiles that lane's own packet: the header names the
+        lane and its canonical index, and the lane's own fragments follow the
+        stage's. Lane identity comes from the workflow, so the same run state
+        yields the same lane packets, byte for byte, however the lanes are
+        scheduled. No worker process id, launch or completion timestamp,
+        scheduler slot, or completion order reaches these bytes.
 
         No timestamps, no run_id, no filesystem paths appear in the hashed
         bytes. The hash is SHA-256 of the exact UTF-8 encoded packet text.
@@ -1293,8 +1482,24 @@ class WorkflowEngine:
             f"COMMIT: {state['repo_commit']}",
             f"STAGE: {stage['id']}",
             f"ITERATION: {stage_iteration}",
-            f"ARGS: {json.dumps(args, sort_keys=True, separators=(',', ':'))}",
+            f"EXECUTION: {_execution_label(stage)}",
         ]
+
+        lanes = _stage_lanes(stage)
+        if lanes:
+            header_lines.append(
+                "LANES: " + json.dumps(
+                    [entry["id"] for entry in lanes],
+                    sort_keys=True, separators=(",", ":"),
+                )
+            )
+        if lane is not None:
+            header_lines.append(f"LANE: {lane['id']}")
+            header_lines.append(f"LANE_INDEX: {lane_index}")
+
+        header_lines.append(
+            f"ARGS: {json.dumps(args, sort_keys=True, separators=(',', ':'))}"
+        )
 
         if prior_findings:
             header_lines.append(
@@ -1308,7 +1513,9 @@ class WorkflowEngine:
         # Load fragments in declared order. Argument placeholders are
         # substituted here so that no worker has to infer what {proper} or
         # {provider} meant; the packet is the whole instruction.
-        fragment_paths = stage.get("fragments", [])
+        fragment_paths = list(stage.get("fragments", []))
+        if lane is not None:
+            fragment_paths += list(lane.get("fragments", []))
         body = ""
         for frag_path in fragment_paths:
             content = _substitute_args(self.load_fragment(frag_path), args)
@@ -1331,9 +1538,12 @@ class WorkflowEngine:
         # Hash
         packet_hash = hashlib.sha256(packet_bytes).hexdigest()
 
-        path = run_dir / "packets" / f"{stage['id']}-{stage_iteration:04d}.txt"
+        name = f"{stage['id']}-{stage_iteration:04d}"
+        if lane is not None:
+            name += f"-lane-{lane_index:02d}-{lane['id']}"
+        path = run_dir / "packets" / f"{name}.txt"
 
-        return {
+        compiled = {
             "hash": packet_hash,
             "bytes": packet_bytes,
             "path": path,
@@ -1341,17 +1551,67 @@ class WorkflowEngine:
             "iteration": stage_iteration,
             "size": len(packet_bytes),
         }
+        if lane is not None:
+            compiled["lane"] = lane["id"]
+            compiled["lane_index"] = lane_index
+        return compiled
+
+    def _compile_stage_packets(
+        self,
+        workflow: dict[str, Any],
+        stage: dict[str, Any],
+        state: dict[str, Any],
+        run_dir: Path,
+        prior_findings: list[dict[str, Any]],
+        iteration: int | None = None,
+    ) -> dict[str, Any]:
+        """Compile a stage's packet and, for a fan-out stage, its lane packets.
+
+        The parent packet is the stage's own record — the one the run's state,
+        replay, and result binding key on. A fan-out stage additionally gets
+        one packet per workflow-defined lane, compiled here in canonical lane
+        order so that lane ids, lane ordering, lane packet bytes, and lane
+        hashes are all fixed before any agent is launched.
+        """
+        packet = self._compile_packet(
+            workflow, stage, state, run_dir, prior_findings, iteration=iteration
+        )
+        packet["lanes"] = [
+            self._compile_packet(
+                workflow, stage, state, run_dir, prior_findings,
+                iteration=packet["iteration"], lane=lane, lane_index=index,
+            )
+            for index, lane in enumerate(_stage_lanes(stage))
+        ]
+        return packet
+
+    def _packet_writes(self, packet: dict[str, Any]) -> list[tuple[Path, bytes]]:
+        """The packet files a transition must store, parent first."""
+        return [(packet["path"], packet["bytes"])] + [
+            (lane["path"], lane["bytes"]) for lane in packet.get("lanes", [])
+        ]
 
     def _stage_packet(
         self, state: dict[str, Any], packet: dict[str, Any]
     ) -> None:
         """Record a compiled packet in a state dict, persisting nothing."""
-        state["packet_hashes"].append({
+        record = {
             "stage": packet["stage"],
             "iteration": packet["iteration"],
             "hash": packet["hash"],
             "path": str(packet["path"].relative_to(self.repo_root)),
-        })
+        }
+        if packet.get("lanes"):
+            record["lanes"] = [
+                {
+                    "lane": lane["lane"],
+                    "index": lane["lane_index"],
+                    "hash": lane["hash"],
+                    "path": str(lane["path"].relative_to(self.repo_root)),
+                }
+                for lane in packet["lanes"]
+            ]
+        state["packet_hashes"].append(record)
         # Increment global iteration
         state["iteration"] += 1
         # Increment stage iteration
@@ -1399,26 +1659,7 @@ class WorkflowEngine:
         refused one cannot become the stage's result, alter a recorded hash, or
         reach a later replay.
         """
-        path = Path(result_path)
-        if not path.is_file():
-            raise WorkflowError(f"result file not found: {result_path}")
-
-        try:
-            result = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as error:
-            raise WorkflowError(
-                f"result is not valid JSON: {error}"
-            ) from error
-        except OSError as error:
-            raise WorkflowError(
-                f"result cannot be read: {error}"
-            ) from error
-        if not isinstance(result, dict):
-            raise WorkflowError(
-                f"result must be a JSON object, not "
-                f"{type(result).__name__}"
-            )
-
+        result = self._read_result_file(result_path)
         schema = self.load_schema(self.schema_name_for(stage))
         _validate_result(result, schema, stage["type"])
         self._verify_result_answers_packet(result, stage, state)
@@ -1450,6 +1691,183 @@ class WorkflowEngine:
                 f"{packet['iteration']}. A result must answer the packet the "
                 f"engine last emitted."
             )
+
+    def _load_and_validate_lane_results(
+        self,
+        submissions: list[tuple[str, str]],
+        stage: dict[str, Any],
+        state: dict[str, Any],
+    ) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+        """Load one result per workflow-defined lane, writing nothing.
+
+        Fail-closed in every direction the host could otherwise decide: an
+        undeclared lane, a second result for a lane already answered, a result
+        whose body names another lane than the flag that carried it, a result
+        naming a lane packet hash the run did not emit, and a missing required
+        lane are all refused here, with the run untouched. The controller does
+        not get to judge whether a missing lane was good enough.
+
+        The returned list is in canonical lane order, never submission order.
+        """
+        lanes = _stage_lanes(stage)
+        declared = {lane["id"]: lane for lane in lanes}
+        packet = _current_packet(state, stage["id"])
+        emitted = {
+            entry["lane"]: entry for entry in packet.get("lanes", [])
+        }
+        schema = self.load_schema(self.schema_name_for(stage))
+        seen: dict[str, dict[str, Any]] = {}
+
+        for lane_id, path_text in submissions:
+            if lane_id not in declared:
+                raise WorkflowError(
+                    f"stage {stage['id']} declares no lane {lane_id!r}; its "
+                    f"lanes are: {', '.join(sorted(declared))}. A host may "
+                    f"not add a lane the workflow did not define."
+                )
+            if lane_id in seen:
+                raise WorkflowError(
+                    f"lane {lane_id} of stage {stage['id']} was submitted "
+                    f"more than once"
+                )
+            body = self._read_result_file(path_text)
+            _validate_result(body, schema, stage["type"])
+            self._verify_result_answers_packet(body, stage, state)
+            if body.get("lane") != lane_id:
+                raise WorkflowError(
+                    f"result submitted for lane {lane_id!r} declares lane "
+                    f"{body.get('lane')!r}; a lane result must name its own "
+                    f"lane"
+                )
+            expected = emitted[lane_id]["hash"]
+            if body.get("lane_packet_hash") != expected:
+                raise WorkflowError(
+                    f"lane {lane_id} of stage {stage['id']} declares packet "
+                    f"hash {body.get('lane_packet_hash')!r}; the emitted lane "
+                    f"packet is {expected}. A lane result must answer the lane "
+                    f"packet the engine emitted."
+                )
+            seen[lane_id] = body
+
+        missing = [lane["id"] for lane in lanes if lane["id"] not in seen]
+        if missing:
+            raise WorkflowError(
+                f"stage {stage['id']} cannot complete: no result for lane(s) "
+                f"{', '.join(missing)}. Every workflow-defined lane is "
+                f"required."
+            )
+        return [(lane, seen[lane["id"]]) for lane in lanes]
+
+    def _join_lane_results(
+        self,
+        stage: dict[str, Any],
+        state: dict[str, Any],
+        ordered: list[tuple[dict[str, Any], dict[str, Any]]],
+    ) -> dict[str, Any]:
+        """The strict-union join: tpt's own reduction over the lane results.
+
+        The parent controller is never asked to summarize several lane results
+        into the next prompt, because a summary is guidance and guidance is the
+        engine's. Each lane's structured findings are preserved verbatim under
+        its lane identity, in canonical lane order, and the disposition is the
+        worst any lane returned. Nothing here reads completion order, so lanes
+        finishing C, A, D, B join exactly as A, B, C, D.
+        """
+        packet = _current_packet(state, stage["id"])
+        emitted = {entry["lane"]: entry for entry in packet.get("lanes", [])}
+        findings: list[dict[str, Any]] = []
+        records: list[dict[str, Any]] = []
+        parts: list[str] = []
+        worst = PASS
+
+        for index, (lane, body) in enumerate(ordered):
+            disposition = body.get("disposition", "")
+            if _DISPOSITION_RANK.get(disposition, 0) > \
+                    _DISPOSITION_RANK.get(worst, 0):
+                worst = disposition
+            parts.append(f"{lane['id']}={disposition}")
+            for finding in body.get("findings", []) or []:
+                tagged = dict(finding)
+                tagged["lane"] = lane["id"]
+                findings.append(tagged)
+            records.append({
+                "lane": lane["id"],
+                "index": index,
+                "disposition": disposition,
+                "packet_hash": emitted[lane["id"]]["hash"],
+                "result_hash": hashlib.sha256(
+                    _result_bytes(body)
+                ).hexdigest(),
+            })
+
+        return {
+            "stage": stage["id"],
+            "iteration": packet["iteration"],
+            "disposition": worst,
+            "summary": (
+                f"{STRICT_UNION} join of {len(ordered)} workflow-defined "
+                f"lanes: " + ", ".join(parts)
+            ),
+            "findings": findings,
+            "lanes": records,
+        }
+
+    def _prepare_lane_results(
+        self,
+        state: dict[str, Any],
+        stage: dict[str, Any],
+        ordered: list[tuple[dict[str, Any], dict[str, Any]]],
+    ) -> list[tuple[Path, bytes]]:
+        """Record each lane result under its lane identity; return its file.
+
+        Keyed by lane, never by arrival: the file name and the state record
+        both carry the lane id and its canonical index, so an auditor can read
+        which lane produced which bytes without knowing when it finished.
+        """
+        if not ordered:
+            return []
+        stage_iter = _current_packet(state, stage["id"])["iteration"]
+        run_dir = self.run_dir(state["run_id"])
+        writes: list[tuple[Path, bytes]] = []
+        records: list[dict[str, Any]] = []
+        for index, (lane, body) in enumerate(ordered):
+            dest = (
+                run_dir / "results"
+                / f"{stage['id']}-{stage_iter:04d}"
+                  f"-lane-{index:02d}-{lane['id']}.json"
+            )
+            payload = _result_bytes(body)
+            writes.append((dest, payload))
+            records.append({
+                "lane": lane["id"],
+                "index": index,
+                "hash": hashlib.sha256(payload).hexdigest(),
+                "path": str(dest.relative_to(self.repo_root)),
+                "disposition": body.get("disposition", ""),
+            })
+        state["result_hashes"][-1]["lanes"] = records
+        return writes
+
+    def _read_result_file(self, result_path: str) -> dict[str, Any]:
+        """Read one submitted result file as a JSON object, or fail closed."""
+        path = Path(result_path)
+        if not path.is_file():
+            raise WorkflowError(f"result file not found: {result_path}")
+        try:
+            body = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as error:
+            raise WorkflowError(
+                f"result is not valid JSON: {error}"
+            ) from error
+        except OSError as error:
+            raise WorkflowError(
+                f"result cannot be read: {error}"
+            ) from error
+        if not isinstance(body, dict):
+            raise WorkflowError(
+                f"result must be a JSON object, not {type(body).__name__}"
+            )
+        return body
 
     def _prepare_result(
         self, state: dict[str, Any],
@@ -1626,6 +2044,23 @@ class WorkflowEngine:
                     f"{entry['iteration']} is missing or altered "
                     f"({entry['path']})"
                 )
+
+        # Lane evidence is part of the run's record, so acceptance rests on it
+        # too: a lane packet or lane result edited after the fact would
+        # otherwise leave a joined result nothing stands behind.
+        for entry in state["packet_hashes"] + state["result_hashes"]:
+            for lane in entry.get("lanes", []):
+                if "path" not in lane or "hash" not in lane:
+                    continue
+                path = self.repo_root / lane["path"]
+                if (not path.is_file()
+                        or hashlib.sha256(path.read_bytes()).hexdigest()
+                        != lane["hash"]):
+                    problems.append(
+                        f"the lane evidence recorded for {entry['stage']} "
+                        f"lane {lane.get('lane')} is missing or altered "
+                        f"({lane['path']})"
+                    )
 
         if problems:
             raise WorkflowError(
@@ -1849,20 +2284,92 @@ class WorkflowEngine:
         prefix = f"tools/tpt {workflow['id']} {shlex.quote(doc)}"
         if stage["type"] == GATE:
             return (
+                f"EXECUTION POLICY: PROGRAM GATE\n"
+                f"\n"
+                f"This stage is run by tpt. Do not start any subagent for it.\n"
+                f"\n"
                 f"1. This stage is a program gate. No AI worker runs it.\n"
                 f"2. Run: {prefix} advance {run_id} --run-gate\n"
                 f"3. Follow the next packet tpt emits.\n"
                 f"4. Stop only at ACCEPTED or BLOCKED."
             )
+
+        lanes = packet.get("lanes") or []
+        if not lanes:
+            return (
+                f"EXECUTION POLICY: SINGLE\n"
+                f"\n"
+                f"Start exactly one fresh subagent.\n"
+                f"Give it exactly the packet specified below.\n"
+                f"Do not launch additional agents for this stage.\n"
+                f"\n"
+                f"1. Start exactly one fresh subagent.\n"
+                f"2. Give it exactly the contents of {packet_path}.\n"
+                f"3. Require its structured result as JSON at a path you "
+                f"choose. The result must carry \"stage\": \"{stage['id']}\" "
+                f"and \"iteration\": {packet['iteration']}.\n"
+                f"4. Run: {prefix} advance {run_id} --result <path>\n"
+                f"5. Follow the next packet tpt emits.\n"
+                f"6. Stop only at ACCEPTED or BLOCKED."
+            )
+
+        count = len(lanes)
+        roster = "\n".join(
+            f"  {lane['lane_index']}. {lane['lane']}\n"
+            f"     packet: {self._packet_display_path(lane, portable_path)}\n"
+            f"     lane_packet_hash: {lane['hash']}"
+            for lane in lanes
+        )
+        flags = " ".join(
+            f"--lane-result {lane['lane']}=<path>" for lane in lanes
+        )
         return (
-            f"1. Start a clean agent.\n"
-            f"2. Give it exactly the contents of {packet_path}.\n"
-            f"3. Require its structured result as JSON at a path you choose. "
-            f"The result must carry \"stage\": \"{stage['id']}\" and "
-            f"\"iteration\": {packet['iteration']}.\n"
-            f"4. Run: {prefix} advance {run_id} --result <path>\n"
+            f"EXECUTION POLICY: FANOUT / HOST-MAX\n"
+            f"\n"
+            f"Launch one fresh subagent for each workflow-defined lane.\n"
+            f"Use the maximum concurrent subagent capacity supported by this "
+            f"host.\n"
+            f"If all lanes cannot run simultaneously, execute them in "
+            f"deterministic batches.\n"
+            f"Do not invent, omit, combine, or subdivide lanes.\n"
+            f"Associate every result with its declared lane id.\n"
+            f"Completion order must not affect result ordering or successor "
+            f"guidance.\n"
+            f"\n"
+            f"LANES ({count}, in canonical order):\n"
+            f"{roster}\n"
+            f"\n"
+            f"1. Start exactly {count} fresh subagents, one per lane listed "
+            f"above and none besides. Give each one exactly the contents of "
+            f"its own lane packet, and nothing else.\n"
+            f"2. Run as many of those lanes at once as this host supports, up "
+            f"to all {count} simultaneously. If this host supports fewer "
+            f"concurrent subagents than there are lanes, take the lanes in the "
+            f"canonical order above, run one batch at the host maximum, then "
+            f"the next batch, until every lane has completed. Batching changes "
+            f"no lane id, no lane order, and no lane packet byte.\n"
+            f"3. Require each lane's structured result as JSON at a path you "
+            f"choose. Each result must carry \"stage\": \"{stage['id']}\", "
+            f"\"iteration\": {packet['iteration']}, \"lane\": its own lane id, "
+            f"and \"lane_packet_hash\": that lane's lane_packet_hash above.\n"
+            f"4. Run: {prefix} advance {run_id} {flags}\n"
             f"5. Follow the next packet tpt emits.\n"
-            f"6. Stop only at ACCEPTED or BLOCKED."
+            f"6. Stop only at ACCEPTED or BLOCKED.\n"
+            f"\n"
+            f"tpt performs the join itself, in the canonical lane order above. "
+            f"Do not summarize, merge, reconcile, reorder, or edit any lane "
+            f"result, and do not supplement a lane's work yourself. A lane "
+            f"that cannot do its work returns BLOCKED in its own structured "
+            f"result; the workflow decides what that means."
+        )
+
+    def _packet_display_path(
+        self, packet: dict[str, Any], portable_path: bool
+    ) -> str:
+        """A packet path as guidance names it: portable for the bootstrap."""
+        return (
+            packet["path"].relative_to(self.repo_root).as_posix()
+            if portable_path else str(packet["path"])
         )
 
     # --- Internal: events ---
@@ -1942,6 +2449,8 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
             if "checks" not in stage or not isinstance(stage["checks"], list):
                 raise WorkflowError(f"{path}: {sid}: gate stage requires 'checks' list")
 
+        _validate_execution(path, sid, stype, stage)
+
     # Validate transitions point to valid stages or terminal states
     accepting = []
     for stage in data["stages"]:
@@ -1971,6 +2480,135 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
             f"{path}: no stage transitions to {ACCEPTED}; the workflow has no "
             f"way to succeed"
         )
+
+
+def _validate_execution(
+    path: Path, sid: str, stype: str, stage: dict[str, Any]
+) -> None:
+    """Every stage declares, as workflow data, who executes it and how many.
+
+    Leaving this to the host left the one decision the engine exists to own —
+    what work is dispatched to whom — outside the deterministic sequence. A
+    host could run an evaluator as one agent or as five of its own invention,
+    and nothing recorded which had happened.
+    """
+    execution = stage.get("execution")
+    if not isinstance(execution, dict):
+        raise WorkflowError(
+            f"{path}: {sid}: stage requires an 'execution' policy object"
+        )
+    mode = execution.get("mode")
+
+    if stype == GATE:
+        # A gate is run by tpt. Letting one name an agent mode would put a
+        # subagent between the engine and a check the engine runs itself.
+        if mode != PROGRAM:
+            raise WorkflowError(
+                f"{path}: {sid}: a {GATE} stage must declare execution mode "
+                f"{PROGRAM!r}, not {mode!r}; a program gate is run by tpt and "
+                f"may not declare an agent execution mode"
+            )
+        if set(execution) != {"mode"}:
+            raise WorkflowError(
+                f"{path}: {sid}: a {PROGRAM} execution policy declares "
+                f"nothing but 'mode'"
+            )
+        return
+
+    if mode == PROGRAM:
+        raise WorkflowError(
+            f"{path}: {sid}: execution mode {PROGRAM!r} is for {GATE} stages "
+            f"only; {sid} is a {stype} stage"
+        )
+    if mode not in AGENT_MODES:
+        raise WorkflowError(
+            f"{path}: {sid}: execution mode must be one of: "
+            f"{', '.join(AGENT_MODES)}"
+        )
+
+    if mode == SINGLE:
+        if set(execution) != {"mode"}:
+            raise WorkflowError(
+                f"{path}: {sid}: a {SINGLE} execution policy declares nothing "
+                f"but 'mode'"
+            )
+        return
+
+    if set(execution) != {"mode", "parallelism", "join", "lanes"}:
+        raise WorkflowError(
+            f"{path}: {sid}: a {FANOUT} execution policy declares exactly "
+            f"'mode', 'parallelism', 'join', and 'lanes'"
+        )
+    if execution["parallelism"] != HOST_MAX:
+        raise WorkflowError(
+            f"{path}: {sid}: fan-out parallelism must be {HOST_MAX!r}"
+        )
+    if execution["join"] != STRICT_UNION:
+        raise WorkflowError(
+            f"{path}: {sid}: fan-out join must be {STRICT_UNION!r}"
+        )
+    lanes = execution["lanes"]
+    if not isinstance(lanes, list) or len(lanes) < 2:
+        raise WorkflowError(
+            f"{path}: {sid}: a {FANOUT} stage declares at least two lanes; "
+            f"one lane is a {SINGLE} stage"
+        )
+    seen: set[str] = set()
+    for index, lane in enumerate(lanes):
+        if not isinstance(lane, dict) or set(lane) - {"id", "fragments"} \
+                or "id" not in lane:
+            raise WorkflowError(
+                f"{path}: {sid}: lanes[{index}] declares an 'id' and "
+                f"optionally 'fragments', and nothing else"
+            )
+        lane_id = lane["id"]
+        if not isinstance(lane_id, str) or not lane_id \
+                or not all(c in _LANE_ID_CHARS for c in lane_id):
+            raise WorkflowError(
+                f"{path}: {sid}: lanes[{index}].id must be a nonempty "
+                f"lowercase-kebab identifier"
+            )
+        if lane_id in seen:
+            raise WorkflowError(
+                f"{path}: {sid}: duplicate lane id: {lane_id}"
+            )
+        seen.add(lane_id)
+        fragments = lane.get("fragments", [])
+        if not isinstance(fragments, list) or not all(
+            isinstance(name, str) and name for name in fragments
+        ):
+            raise WorkflowError(
+                f"{path}: {sid}: lanes[{index}].fragments must be a list of "
+                f"fragment paths"
+            )
+
+
+def _stage_execution(stage: dict[str, Any]) -> dict[str, Any]:
+    """A stage's declared execution policy."""
+    execution = stage.get("execution")
+    return execution if isinstance(execution, dict) else {}
+
+
+def _stage_lanes(stage: dict[str, Any]) -> list[dict[str, Any]]:
+    """The workflow-defined lanes of a fan-out stage, in canonical order.
+
+    Canonical order is declaration order, and it is the only order anything
+    downstream uses: lane packets, lane results, the join, and the successor
+    packet all read this list, never the order lanes happened to finish in.
+    """
+    execution = _stage_execution(stage)
+    if execution.get("mode") != FANOUT:
+        return []
+    return list(execution["lanes"])
+
+
+def _execution_label(stage: dict[str, Any]) -> str:
+    """The execution policy as it appears in hashed packet material."""
+    execution = _stage_execution(stage)
+    mode = execution.get("mode", "")
+    if mode == FANOUT:
+        return f"{FANOUT}/{execution.get('parallelism', '')}"
+    return str(mode)
 
 
 def _validate_result(
@@ -2050,6 +2688,9 @@ def _canonical_json_bytes(value: dict[str, Any]) -> bytes:
             allow_nan=False, separators=(",", ": "),
         ) + "\n"
     ).encode("utf-8")
+
+
+_LANE_ID_CHARS = frozenset("abcdefghijklmnopqrstuvwxyz0123456789-")
 
 
 def _is_sha256(value: Any) -> bool:
