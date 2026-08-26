@@ -1196,6 +1196,17 @@ failure settles nothing at the path and releases only that owner's work; and a
 request released late may not displace an answer another row already has. The
 change is fourteen lines of the page and two exported functions of the model.
 
+**What the change costs, measured rather than waved at.** Two owners asking one
+address concurrently now make two requests where V14 made one. That is the
+correction, not a side effect: the second request is what B's own answer is. On
+any real route it costs nothing, and that is a fact rather than a hope — across
+all 562 chapter spines under `src/web/data/structure/catena/`, holding 1,356
+fragments, **no chapter has two fragments sharing a text address or an id**, so
+no production page has two owners for one address at all. The ordinary
+first-load request count is unchanged and still pinned exactly, and a value that
+has settled is still shared by path, so a second row asking afterwards makes no
+request whatever.
+
 **Body application is ownership-bound and on the roster.** V14 carried
 ownership as far as the request and stopped, so the identity roster ended one
 step before the step that writes the page: the body was applied by a closure

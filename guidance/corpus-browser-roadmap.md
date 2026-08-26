@@ -783,6 +783,13 @@ and A's late release moves exactly one journal row against a thirty-six-field
 terminal vector pinned value by value beforehand. The inverted V14 oracle is
 replaced in place with its former assertions quoted beside the correction.
 
+Two owners asking one address concurrently now make two requests where V14 made
+one; that is the correction rather than a side effect, since the second request
+is what B's own answer is. It costs nothing on a real route: across all 562
+chapter spines under `src/web/data/structure/catena/`, holding 1,356 fragments,
+no chapter has two fragments sharing a text address or an id. A settled value is
+still shared by path, so a row asking afterwards makes no request at all.
+
 **The bounded proof gaps.** The promised nested EDITION accessor case is now
 asked directly and gives one coherent outcome across the edition, the printing,
 the provenance line, the rights, the voices and the readable state — a proof
