@@ -26,6 +26,7 @@ workflows/
       seed.md
       resolve-context.md
       source-audit.md
+      research.md
       research-synthesis.md
       author-proper.md
       content-evaluation.md
@@ -34,11 +35,15 @@ workflows/
       artifact-revision.md
       visual-evaluation.md
       visual-revision.md
-      lanes/                   # one fragment per fan-out evaluation lane
+      lanes/                   # one fragment per fan-out lane
+        research-*.md
+        content-*.md
+        visual-*.md
   pipelines/                   # machine-readable workflow definitions
     proper.json
   schema/                      # machine-enforced contracts
     worker-result.json
+    research-result.json
     evaluator-result.json
     gate-result.json
 scripts/
@@ -51,6 +56,7 @@ tools/
     test_workflow_execution_policy.py
     test_workflow_adversarial.py
     test_workflow_seed_idempotency.py
+    test_workflow_research_fanout.py
 ```
 
 ## Why workflow files cannot become ambient agent guidance
@@ -170,8 +176,10 @@ state.
    - `LANE`, `LANE_INDEX`: the lane's own id and canonical index, on a lane
      packet only
    - `ARGS`: normalized arguments as sorted JSON
-   - `PRIOR_FINDINGS`: forwarded findings from the last evaluator/gate result
-     (empty for non-revision stages), serialized as sorted JSON on one line
+   - `PRIOR_FINDINGS`: findings forwarded from the preceding stage — an
+     evaluator's or gate's blocking findings into a revision packet, or a
+     linear fan-out stage's joined lane findings into its successor's packet,
+     and empty otherwise — serialized as sorted JSON on one line
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
@@ -210,7 +218,8 @@ The hash DOES cover:
   canonical order
 - a lane packet's own lane id and canonical index
 - normalized arguments
-- forwarded findings (for revision packets)
+- forwarded findings, for a revision packet and for the successor of a linear
+  fan-out stage
 - all fragment contents in declared order, with arguments substituted
 
 Gate findings quote what a check printed, so that output is hashed guidance.
@@ -263,6 +272,31 @@ work is dispatched to whom is the decision the engine exists to own, so it is
 workflow data now: covered by the workflow-source digest and named in every
 packet's `EXECUTION` line. The host's one remaining choice is how many lanes
 run at once.
+
+### Which mode a stage gets
+
+What a stage does to the repository decides how it is dispatched:
+
+```
+independent discovery    -> host-max fan-out
+single synthesis owner   -> single
+authoritative mutation   -> single
+independent evaluation   -> host-max fan-out
+programmatic validation  -> program
+```
+
+Fan-out is the mode for work that mutates nothing: lanes that only discover or
+only judge write no artifact a sibling could conflict over, so the only cost of
+running them at once is host capacity. Everything that writes — authoring,
+revision, retrieval, and the one stage that integrates many lanes into one
+brief — is `single`, because an authoritative artifact has exactly one owner at
+a time and a synthesis reconciled by two agents is two syntheses. Checks a
+program can run are `program`, so no agent stands between the engine and the
+output it hashes into guidance.
+
+The rule is about the work, not the stage type. `research` is a linear stage
+that fans out and `content-evaluation` is an evaluator that fans out; both are
+read-only, which is why both may.
 
 ### Lanes and lane packets
 
@@ -380,6 +414,39 @@ exactly one next stage. `disposition: "PASS"` advances it. A worker that could
 not do the work reports `disposition: "BLOCKED"`, which is terminal: the engine
 has no other way to tell finished work from unfinished. Any other disposition
 fails closed.
+
+A linear stage may fan out. When one does and the join's disposition is `PASS`,
+`_extract_prior_findings` forwards the joined lane findings verbatim and in
+full into the successor's `PRIOR_FINDINGS`, in canonical lane order, each
+keeping the `lane` key the join gave it. Those findings are the whole of what
+the stage produced: read-only lanes write no artifact between them, so the
+joined result exists only inside the run, and the successor is the only place
+it can go. Forwarding it is what makes the integrating worker's material the
+engine's own join rather than something a controller retyped. An evaluator's
+`PASS` still forwards nothing, because there `PASS` means there was nothing to
+report.
+
+A fan-out linear stage's lanes answer to the same two dispositions the stage
+itself has. `research-result.json` accepts `PASS` and `BLOCKED` and no third
+value: a lane either did its sweep — recording what it did not find as a finding
+like anything else — or could not, and a linear stage's `BLOCKED` ends the run.
+There is no `CHANGES_REQUIRED` because such a lane judges nothing and sends no
+one back to revise.
+
+### Reconstructing forwarded findings
+
+Whatever `_extract_prior_findings` put in a packet has to be rebuildable from
+the record alone, or a replay of that packet would recompile different bytes
+than the run emitted. `_load_prior_findings_for_current`, which `replay` uses,
+rebuilds it: if the last transition came from a linear fan-out stage that
+passed, it re-reads that stage's recorded joined result; if the current stage is
+a bounded revision, it walks back to the evaluator or gate result that triggered
+the revision.
+
+Both paths read through `_read_recorded_result`, which fails closed when the
+recorded result file is missing or no longer hashes to what was recorded. A
+packet whose forwarded findings cannot be reconstructed is an error, never a
+packet recompiled without them.
 
 ### Evaluator stage
 

@@ -221,6 +221,10 @@ adds two fields binding it to its own lane packet:
 - `lane_packet_hash`: the `lane_packet_hash` the instructions printed for that
   lane
 
+The rest of a lane result follows its own stage's contract: an evaluation lane
+returns the evaluator shape, a `research` lane the research shape, and the
+dispositions each admits differ. See Structured result formats below.
+
 Run as many lanes at once as your host supports, up to all of them. If it
 supports fewer concurrent subagents than there are lanes, take the lanes in the
 canonical order the instructions list them, run one batch at your host's
@@ -264,6 +268,43 @@ resubmitted, stale, or wrong-stage result an error instead of a transition.
 
 `BLOCKED` is how a worker reports that it could not do the stage's work; the run
 stops there rather than advancing on work that did not happen.
+
+### Research lane stages
+
+A lane of the read-only `research` stage returns evidence rather than an
+artifact, and validates against `workflows/schema/research-result.json`:
+
+```json
+{
+  "stage": "research",
+  "iteration": 0,
+  "lane": "scripture-context",
+  "lane_packet_hash": "the lane_packet_hash tpt printed for this lane",
+  "disposition": "PASS | BLOCKED",
+  "summary": "One or two sentences on what was swept and what was found.",
+  "findings": [
+    {
+      "id": "SCR-001",
+      "claim": "What the lane asserts, in one sentence.",
+      "evidence": ["Each source named precisely enough to be checked."],
+      "notes": "Uncertainty, disagreement, negative results, evidence state."
+    }
+  ]
+}
+```
+
+Every finding carries all four of `id`, `claim`, `evidence`, and `notes`, and
+`evidence` is a list of strings. A sweep that found nothing records the negative
+result as a finding rather than omitting it.
+
+There are only two dispositions. `PASS` means the lane did its sweep, whether or
+not it found much; `BLOCKED` means it could not, and because `research` is a
+linear stage the run stops there. There is no `CHANGES_REQUIRED` for a research
+lane and the engine rejects one — a research lane judges nothing and asks no one
+to revise anything.
+
+Finding IDs use the lane's own prefix, listed with the lanes under The propers
+workflow below.
 
 ### Evaluator stages
 
@@ -388,6 +429,16 @@ whatever your host's capacity. `replay` reports each lane's recompiled hash
 beside the one recorded, and calls the run non-deterministic if any lane
 diverges.
 
+Forwarded findings are part of those bytes. When a fan-out stage is a linear
+one — `research` is — and its join passes, `tpt` forwards the joined findings
+into the next stage's packet: every lane's findings verbatim, each tagged with
+the `lane` that raised it, in canonical lane order. The `research-synthesis`
+worker reads the engine's own join on its packet's `PRIOR_FINDINGS` header line,
+and you are never asked to summarize the five lanes into it. `replay` rebuilds
+those same findings from the recorded joined result, and fails closed if that
+file is missing or no longer hashes as recorded, so the packet replays to the
+same bytes.
+
 A run is bound to the workflow source it was seeded against. Editing
 `workflows/pipelines/proper.json`, a fragment, or a schema stops every existing
 run with an error; the changed workflow applies to new runs. That is deliberate:
@@ -423,6 +474,13 @@ resolve-context
   ↓
 source-audit
   ↓
+research (fan-out, five read-only lanes)
+  ├─ scripture-context
+  ├─ patristic-reception
+  ├─ liturgical-history
+  ├─ theological-synthesis
+  ├─ source-citation-coverage
+  ↓ joined findings forwarded
 research-synthesis
   ↓
 author-proper
@@ -457,13 +515,31 @@ Each stage declares how it is run:
 - `single`, one fresh subagent: `seed`, `resolve-context`, `source-audit`,
   `research-synthesis`, `author-proper`, `content-revision`, `build-artifacts`,
   `artifact-revision`, `visual-revision`. Every authoring and revision stage
-  mutates the canonical leaf, and `source-audit` may retrieve and write the
-  provenance files, so each of them owns an authoritative artifact that exactly
-  one agent may hold.
+  mutates the canonical leaf, `source-audit` may retrieve and write the
+  provenance files, and `research-synthesis` is the sole owner of
+  `research/scope.md` and the only place the five lanes' findings are
+  reconciled, so each of them owns an authoritative artifact that exactly one
+  agent may hold.
 - `program`, run by `tpt` itself: `mechanical-gates`, `final-acceptance`.
-- `fanout/host-max`: `content-evaluation` and `visual-evaluation`. Both are
-  read-only judgment stages that mutate no authoritative artifact, so their
-  criteria are partitioned across lanes that can run at the same time.
+- `fanout/host-max`: `research`, `content-evaluation`, and `visual-evaluation`.
+  All three mutate no authoritative artifact — one discovers, two judge — so
+  their work is partitioned across lanes that can run at the same time. Nothing
+  a lane does can conflict with a sibling's, because no lane writes anything.
+
+`research` declares five lanes, in canonical order:
+
+1. `scripture-context`, finding IDs `SCR-`
+2. `patristic-reception`, finding IDs `PAT-`
+3. `liturgical-history`, finding IDs `LIT-`
+4. `theological-synthesis`, finding IDs `THE-`
+5. `source-citation-coverage`, finding IDs `COV-`
+
+A research lane writes nothing in the repository. It does not touch the
+canonical leaf, `propers/verified.md`, `propers/retrieved.txt`,
+`research/scope.md`, or any shared source inventory; it typesets nothing,
+revises no prose, and does not read or merge another lane's findings. Its only
+product is the structured result it returns to `tpt`, and `tpt` forwards the
+join of the five to `research-synthesis`, which owns the integration.
 
 `content-evaluation` declares five lanes, in canonical order:
 
@@ -480,14 +556,19 @@ Each stage declares how it is run:
 3. `fixed-pagination`, finding IDs `VIS-FIX-`
 4. `clipping-and-apparatus`, finding IDs `VIS-APP-`
 
-Each lane's fragment under `workflows/fragments/propers/lanes/` partitions the
-numbered criteria of the shared stage fragment — no criterion was invented or
-dropped — and mandates that lane's distinct finding-ID prefix, so the joined
-findings keep stable, non-colliding ids. Both stages still bound their revision
-loops at three consecutive `CHANGES_REQUIRED` joins, as before.
+Each lane's fragment under `workflows/fragments/propers/lanes/` states what that
+lane alone owns and mandates its distinct finding-ID prefix, so the joined
+findings keep stable, non-colliding ids. For the two evaluators the fragments
+partition the numbered criteria of the shared stage fragment, with no criterion
+invented or dropped; for `research` they partition the questions asked, and each
+lane is told which questions belong to the other four. Both evaluators still
+bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
+before, and `research` has no revision loop at all — a lane that cannot sweep
+returns `BLOCKED` and the run stops.
 
-The `proper` workflow is at version 3. A run seeded against version 2 is bound
-to that source and cannot be continued under this policy; seed it again.
+The `proper` workflow is at version 4. A run seeded against an earlier version
+is bound to that source and cannot be continued under this topology; seed it
+again.
 
 Final acceptance is a gate, not a stage any agent is asked about. Advance it
 with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other gate.

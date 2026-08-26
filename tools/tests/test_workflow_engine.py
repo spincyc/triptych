@@ -133,7 +133,7 @@ class WorkflowMetaTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["id"], "proper")
-        self.assertEqual(data["version"], 3)
+        self.assertEqual(data["version"], 4)
 
     def test_workflow_show_unknown(self):
         result = _run("workflow", "show", "no-such-workflow")
@@ -234,18 +234,22 @@ class PropersWorkflowTests(unittest.TestCase):
         self.assertEqual(h1, h2,
                          "identical seed args must produce identical packet hashes")
 
-    def test_propers_advance_through_linear_stages(self):
-        """The workflow can advance through linear stages with PASS results."""
+    def test_propers_advance_through_single_stages(self):
+        """The workflow advances through its single stages with PASS results.
+
+        The walk stops at `research`, which is a fan-out stage answered with
+        one result per declared lane rather than one for the stage; that path
+        is held by test_workflow_research_fanout.py.
+        """
         result = self.engine.seed("proper", {
             "proper": "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost",
             "provider": "gpt",
         })
         run_id = result["run_id"]
 
-        # Advance through seed → resolve-context → source-audit → research-synthesis → author-proper
+        # Advance through seed → resolve-context → source-audit → research
         expected_stages = [
-            "seed", "resolve-context", "source-audit",
-            "research-synthesis", "author-proper",
+            "seed", "resolve-context", "source-audit", "research",
         ]
         for i, expected in enumerate(expected_stages):
             self.assertEqual(result["stage"], expected,
@@ -258,6 +262,26 @@ class PropersWorkflowTests(unittest.TestCase):
                     "disposition": "PASS", "summary": "test"
                 }), encoding="utf-8")
                 result = self.engine.advance(run_id, result_path=str(rfile))
+
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, result_path=str(rfile))
+        self.assertIn("pass one --lane-result", str(caught.exception),
+                      "a fan-out stage is not answered by one stage result")
+
+    def test_propers_all_lane_fragments_exist(self):
+        """Every lane fragment the workflow declares exists on disk."""
+        wf = self.engine.load_workflow("proper")
+        declared = 0
+        for stage in wf["stages"]:
+            for lane in stage.get("execution", {}).get("lanes", []):
+                for frag in lane.get("fragments", []):
+                    declared += 1
+                    self.assertTrue(
+                        (self.engine.fragments_dir / frag).is_file(),
+                        f"missing lane fragment for {stage['id']}/"
+                        f"{lane['id']}: {frag}")
+        self.assertEqual(declared, 14,
+                         "five research, five content, four visual lanes")
 
     def test_propers_all_fragments_exist(self):
         """Every fragment referenced by the workflow exists on disk."""

@@ -1,0 +1,8 @@
+{
+  "name": "research-result",
+  "description": "Structured result from a read-only research lane, and from the deterministic join of those lanes",
+  "required_fields": ["stage", "iteration", "disposition", "summary", "findings"],
+  "valid_dispositions": ["PASS", "BLOCKED"],
+  "finding_fields": ["id", "claim", "evidence", "notes"],
+  "optional_fields": ["lane", "lane_packet_hash"]
+}

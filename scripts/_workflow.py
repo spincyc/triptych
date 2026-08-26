@@ -2105,11 +2105,21 @@ class WorkflowEngine:
         next_stage_id: str,
         workflow: dict[str, Any],
     ) -> list[dict[str, Any]]:
-        """Extract findings to forward into the next revision packet.
+        """Extract findings to forward into the next stage's packet.
 
         For evaluator/gate stages that trigger a revision, the blocking
-        findings are forwarded verbatim. For all other transitions, no
-        findings are forwarded.
+        findings are forwarded verbatim.
+
+        For a linear fan-out stage, the joined lane findings are forwarded
+        verbatim on PASS. Such a stage's findings are the whole of what it
+        produced: five read-only research lanes write no artifact between
+        them, so the joined result exists only inside the run, and its
+        successor is the only place it can go. Forwarding it is what keeps the
+        integration worker's material the engine's own join rather than
+        something a controller retyped. An evaluator's PASS still forwards
+        nothing, because there its PASS means there was nothing to report.
+
+        For all other transitions, no findings are forwarded.
         """
         if stage["type"] in (EVALUATOR, GATE):
             if result.get("disposition") in (CHANGES_REQUIRED, FAIL):
@@ -2120,43 +2130,69 @@ class WorkflowEngine:
                     if f.get("severity") == "blocking"
                 ]
                 return forwarded
+        if stage["type"] == LINEAR and _stage_lanes(stage) \
+                and result.get("disposition") == PASS:
+            return list(result.get("findings", []) or [])
         return []
 
     def _load_prior_findings_for_current(
         self, run_id: str, state: dict[str, Any], workflow: dict[str, Any]
     ) -> list[dict[str, Any]]:
-        """Load prior findings for the current stage by replaying transitions."""
-        # For revision stages, find the evaluator/gate that triggered this
-        # revision and load its findings from the results directory.
+        """Load prior findings for the current stage by replaying transitions.
+
+        Whatever `_extract_prior_findings` put in the packet has to be
+        reconstructible from the record alone, or a replay of that packet would
+        recompile different bytes than the run emitted.
+        """
         current = state["current_stage"]
         stage = self._get_stage(workflow, current)
+
+        # A linear fan-out stage forwards its joined lane findings on PASS.
+        transitions = state.get("transitions") or []
+        if transitions and transitions[-1].get("to") == current:
+            source = self._get_stage(workflow, transitions[-1]["from"])
+            if source["type"] == LINEAR and _stage_lanes(source) \
+                    and transitions[-1].get("disposition") == PASS:
+                result = self._read_recorded_result(
+                    run_id, state["result_hashes"][-1], current
+                )
+                return list(result.get("findings", []) or [])
+
+        # For revision stages, find the evaluator/gate that triggered this
+        # revision and load its findings from the results directory.
         if stage["type"] != BOUNDED_REVISION:
             return []
 
         # Walk backwards through results to find the triggering evaluator/gate
         for entry in reversed(state["result_hashes"]):
             if entry["disposition"] in (CHANGES_REQUIRED, FAIL):
-                result_path = self.repo_root / entry["path"]
-                if not result_path.is_file():
-                    raise WorkflowError(
-                        f"run {run_id}: the recorded result "
-                        f"{entry['path']} that triggered "
-                        f"{current} is missing; the findings this packet must "
-                        f"forward cannot be reconstructed"
-                    )
-                recorded = result_path.read_bytes()
-                if hashlib.sha256(recorded).hexdigest() != entry["hash"]:
-                    raise WorkflowError(
-                        f"run {run_id}: the recorded result {entry['path']} no "
-                        f"longer matches its recorded hash; it has been "
-                        f"replaced since the run received it"
-                    )
-                result = json.loads(recorded.decode("utf-8"))
+                result = self._read_recorded_result(run_id, entry, current)
                 return [
                     f for f in result.get("findings", [])
                     if f.get("severity") == "blocking"
                 ]
         return []
+
+    def _read_recorded_result(
+        self, run_id: str, entry: dict[str, Any], current: str
+    ) -> dict[str, Any]:
+        """Read a recorded result a packet must forward from, or fail closed."""
+        result_path = self.repo_root / entry["path"]
+        if not result_path.is_file():
+            raise WorkflowError(
+                f"run {run_id}: the recorded result "
+                f"{entry['path']} that triggered "
+                f"{current} is missing; the findings this packet must "
+                f"forward cannot be reconstructed"
+            )
+        recorded = result_path.read_bytes()
+        if hashlib.sha256(recorded).hexdigest() != entry["hash"]:
+            raise WorkflowError(
+                f"run {run_id}: the recorded result {entry['path']} no "
+                f"longer matches its recorded hash; it has been "
+                f"replaced since the run received it"
+            )
+        return json.loads(recorded.decode("utf-8"))
 
     # --- Internal: gates ---
 
