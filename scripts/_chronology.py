@@ -905,6 +905,14 @@ def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) 
             f"{root}/bindings.yaml binding {entry.get('relation')!r} -> "
             f"{entry.get('event')!r}"
         )
+        if "date" in entry or "dates" in entry:
+            # Checked before the key sweep so the message is the reason rather
+            # than "unknown key". This is the one door through which parallel
+            # passages acquire parallel dates.
+            raise ChronologyError(
+                f"{where}: a binding carries no date. The event holds it once, "
+                f"which is what stops parallel passages acquiring parallel dates"
+            )
         _keys(entry, {"relation", "event", "scope", "note", "sources"}, where)
         relation = entry.get("relation")
         if relation not in RELATIONS:
@@ -921,11 +929,6 @@ def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) 
         if event not in events:
             raise ChronologyError(
                 f"{where}: event {event!r} is not declared in events.yaml"
-            )
-        if "date" in entry or "dates" in entry:
-            raise ChronologyError(
-                f"{where}: a binding carries no date. The event holds it once, "
-                f"which is what stops parallel passages acquiring parallel dates"
             )
         bindings.append(
             Binding(
@@ -1008,22 +1011,42 @@ def to_canonical(system: str, token: str, chapter: int, verse: int) -> Locus | U
                 f"{system!r} is not a psalm numbering this repository records",
             )
         try:
-            target, note = _psalms.convert_point(chapter, verse, system, CANONICAL_SYSTEM)
+            moved_chapter, moved_verse, note = _psalms.convert_point(
+                chapter, verse, system, CANONICAL_SYSTEM
+            )
         except _psalms.NumberingError as error:
             return Unresolved("not-alignable", str(error))
-        if target is None:
+        if moved_chapter is None or moved_verse is None:
             return Unresolved("not-alignable", note or "no correspondence recorded")
-        return Locus(CANONICAL_SYSTEM, token, target[0], target[1])
+        return Locus(CANONICAL_SYSTEM, token, moved_chapter, moved_verse)
 
     import _deuterocanon  # noqa: PLC0415
 
     if token in _deuterocanon.BOOKS:
-        return Unresolved(
-            "textually-distinct",
-            f"{token} is arranged differently between traditions; ask in "
-            f"{CANONICAL_SYSTEM!r} or convert through _deuterocanon, which "
-            f"reports what the correspondence actually is",
-        )
+        # Not a blanket refusal. The concordance knows where a correspondence
+        # was established and where one was looked for and not found, and those
+        # are different answers: Ecclesiasticus is `not-recorded` for the whole
+        # book because the Latin and the Greek are independent translations out
+        # of two languages, while Daniel and Esther have real rows in places.
+        # Refusing everything would hide which of the two a caller had hit.
+        try:
+            moved, reason = _deuterocanon.convert_verse(
+                token, chapter, verse, system, CANONICAL_SYSTEM
+            )
+        except _deuterocanon.NumberingError as error:
+            return Unresolved("not-alignable", str(error))
+        if moved is None:
+            return Unresolved("textually-distinct", reason)
+        if moved.first != moved.last:
+            # A run, not a point. Returning its first verse would answer about
+            # one verse of several without saying so.
+            return Unresolved(
+                "textually-distinct",
+                f"{token} {chapter}:{verse} in {system} is "
+                f"{moved.book} {moved.chapter}:{moved.first}-{moved.last} in "
+                f"{CANONICAL_SYSTEM}, which is more than one verse: {reason}",
+            )
+        return Locus(CANONICAL_SYSTEM, moved.book, moved.chapter, moved.first)
     return Unresolved(
         "not-alignable",
         f"no concordance between {system!r} and {CANONICAL_SYSTEM!r} is "
@@ -1345,7 +1368,7 @@ def _alternate_verses(table: list[Run], root: Path | None, profile: str | None) 
 # --- Audit ------------------------------------------------------------------
 
 
-def _known_source_ids(root: Path | None = None) -> set[str]:
+def _known_source_ids(repo: Path | None = None) -> set[str]:
     """Every source-library record id, read from the library's own tree.
 
     Read rather than restated. A list of acceptable ids beside the library
@@ -1354,9 +1377,7 @@ def _known_source_ids(root: Path | None = None) -> set[str]:
     """
     import re as _re  # noqa: PLC0415
 
-    base = (Path(root) if root is not None else ROOT)
-    if base.name == "chronology":
-        base = base.parents[2]
+    base = Path(repo) if repo is not None else ROOT
     works = base / "src" / "sources" / "works"
     found: set[str] = set()
     pattern = _re.compile(r'^id = "([^"]+)"', _re.MULTILINE)
@@ -1367,11 +1388,9 @@ def _known_source_ids(root: Path | None = None) -> set[str]:
     return found
 
 
-def _bible_source_ids(root: Path | None = None) -> set[str]:
+def _bible_source_ids(repo: Path | None = None) -> set[str]:
     """The tracked bible editions, addressable as sources for a rank-1 claim."""
-    base = (Path(root) if root is not None else ROOT)
-    if base.name == "chronology":
-        base = base.parents[2]
+    base = Path(repo) if repo is not None else ROOT
     bibles = base / "src" / "sources" / "bibles"
     if not bibles.is_dir():
         return set()
@@ -1382,7 +1401,7 @@ def _bible_source_ids(root: Path | None = None) -> set[str]:
     }
 
 
-def audit(root: Path | None = None) -> list[str]:
+def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
     """Every problem load-time validation cannot see, collected not raised.
 
     Load refuses malformed data. This asks the questions that need the rest of
@@ -1392,7 +1411,7 @@ def audit(root: Path | None = None) -> list[str]:
     corpus = load(root)
     problems: list[str] = []
 
-    known = _known_source_ids(root) | _bible_source_ids(root)
+    known = _known_source_ids(repo) | _bible_source_ids(repo)
     holders: list[tuple[str, str, tuple[Claim, ...]]] = [
         *(("event", event.id, event.claims) for event in corpus.events.values()),
         *(("unit", unit.id, unit.claims) for unit in corpus.units.values()),

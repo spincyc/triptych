@@ -144,7 +144,7 @@ def validate(arguments: argparse.Namespace) -> dict[str, object]:
         if event.id not in bound
         and not any(other.parent == event.id for other in corpus.events.values())
     )
-    for problem in _chronology.audit(root):
+    for problem in _chronology.audit(root, _root(arguments)):
         problems.append(problem)
     return {
         "status": "error" if problems else "ok",

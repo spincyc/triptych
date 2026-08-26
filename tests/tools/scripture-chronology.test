@@ -1,0 +1,65 @@
+#!/bin/sh
+# Test for `tools/tpt scripture-chronology`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="scripture-chronology"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+run_tool --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+cd "$sandbox"
+
+# The authored corpus loads and the derived table is current. Both are gates
+# the repository runs; a tool that could not answer them here would be a tool
+# whose gate nobody could reproduce.
+run_tool validate >/dev/null
+run_tool check >/dev/null
+
+# `check` must REFUSE a stale table rather than repair it. A verification that
+# rebuilds what it was meant to detect reports success either way.
+cp -R "$repo/src" "$sandbox/src"
+cp -R "$repo/scripts" "$sandbox/scripts" 2>/dev/null || true
+printf 'Gen.1.1-31\t31\tdated\t\t\n' >>"$sandbox/src/sources/chronology/coverage.tsv"
+if run_tool check --root "$sandbox" >/dev/null 2>&1; then
+	echo "check accepted a table with a row nothing derived" >&2
+	exit 1
+fi
+
+# Every derivation of the table from unchanged sources is the same bytes.
+run_tool build --root "$sandbox" >/dev/null
+first="$(cat "$sandbox/src/sources/chronology/coverage.tsv")"
+run_tool build --root "$sandbox" >/dev/null
+second="$(cat "$sandbox/src/sources/chronology/coverage.tsv")"
+if [ "$first" != "$second" ]; then
+	echo "two derivations of the coverage table disagree" >&2
+	exit 1
+fi
+run_tool check --root "$sandbox" >/dev/null
+
+# A locus in a numbering the corpus is not authored in reaches it through the
+# concordance or is refused; it is never resolved by arithmetic.
+run_tool query Ps.50.5 >/dev/null
+run_tool query Ps.51.5 --system hebrew >/dev/null
+if run_tool query Ecclus.35.1 --system greek --json | grep -q '"status":"ok"'; then
+	echo "a Greek-numbered Sirach locus resolved instead of refusing" >&2
+	exit 1
+fi
+# And where the concordance DOES record a row, the answer is the row's, not the
+# same numbers: Susanna is a book of its own in the Greek arrangement.
+run_tool query Sus.1.1 --system greek --json | grep -q '"locus":"Dan.13.1"' || {
+	echo "Susanna 1:1 did not reach Daniel 13:1" >&2
+	exit 1
+}
+
+# Machine output is one key-sorted object and carries its status.
+run_tool coverage --json | grep -q '"total_verses"'
+run_tool validate --json | grep -q '"status":"ok"'
+
+echo ok
