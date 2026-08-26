@@ -34,6 +34,7 @@ from _workflow import (  # noqa: E402
     STRICT_UNION,
     WorkflowEngine,
     WorkflowError,
+    _current_packet,
 )
 
 def _probe_document() -> str:
@@ -88,11 +89,26 @@ VISUAL_LANES = [
 RESEARCH_STAGE_VERSION = 4
 
 SINGLE_OWNER = {
-    "seed", "resolve-context", "source-audit", "research-synthesis",
-    "author-proper", "content-revision", "build-artifacts",
-    "artifact-revision", "visual-revision",
+    "seed", "authorize-target", "resolve-context", "source-audit",
+    "research-synthesis", "author-proper", "content-revision",
+    "build-artifacts", "artifact-revision", "visual-revision",
+    "publish-artifacts", "generate-web", "web-evaluation", "web-revision",
+    "install-publication", "publication-revision",
 }
-PROGRAM_STAGES = {"mechanical-gates", "final-acceptance"}
+PROGRAM_STAGES = {"scope-gate", "mechanical-gates", "final-acceptance",
+                  "publication-gates"}
+
+# The v9 lifecycle, in order: authorize, produce, accept the artifacts,
+# publish, wire the catalog, accept the publication.
+STAGE_ORDER = [
+    "seed", "authorize-target", "scope-gate", "resolve-context",
+    "source-audit", "research", "research-synthesis", "author-proper",
+    "content-evaluation", "content-revision", "build-artifacts",
+    "mechanical-gates", "artifact-revision", "visual-evaluation",
+    "visual-revision", "final-acceptance", "publish-artifacts",
+    "generate-web", "web-evaluation", "web-revision", "install-publication",
+    "publication-gates", "publication-revision",
+]
 
 # Files a research lane may never be told to touch: the canonical leaf's own
 # sources, the built apparatus, and the synthesis brief that the single-owner
@@ -171,6 +187,35 @@ class PropersCase(unittest.TestCase):
         self.engine.runs_dir = self.runs
         self.answers = self.runs / "answers"
         self.answers.mkdir(parents=True, exist_ok=True)
+        self._pass_the_scope_gate()
+
+    def _pass_the_scope_gate(self):
+        """Stand in for the one gate that reads a maintainer's own file.
+
+        `scope-gate` asks whether the maintainer authorized this provider and
+        this identity, and reads the answer out of
+        `guidance/liturgy/propers-production-plan.md`. That file records real
+        decisions about a closed collection; a test may not write an
+        authorization into it to get past the gate, and the probe document
+        here is deliberately not an authorized target. So the gate is
+        answered directly for the stages that are not about it — every test
+        in this class is about lanes, ownership, or determinism — and the
+        gate's own commands are held to their real behaviour against
+        fixtures in test_workflow_scope_and_publication.py.
+
+        Every other gate still runs for real.
+        """
+        real_run_gate = self.engine._run_gate
+
+        def run_gate(workflow, stage, state, run_id):
+            if stage["id"] != "scope-gate":
+                return real_run_gate(workflow, stage, state, run_id)
+            return {
+                "disposition": PASS, "findings": [], "stage": stage["id"],
+                "iteration": _current_packet(state, stage["id"])["iteration"],
+            }
+
+        self.engine._run_gate = run_gate
 
     # --- helpers ---
 
@@ -202,15 +247,30 @@ class PropersCase(unittest.TestCase):
             "artifact_path": "research/scope.md",
         })
 
+    def stage_type(self, stage_id: str) -> str:
+        return {stage["id"]: stage["type"] for stage in
+                self.engine.load_workflow("proper")["stages"]}[stage_id]
+
+    def pass_stage(self, run_id: str, stage_id: str) -> dict:
+        """Advance one waiting stage past a PASS.
+
+        A gate is run as a gate, because that is the only way the engine will
+        advance one; every other single-agent stage is answered with a
+        passing worker result.
+        """
+        if self.stage_type(stage_id) == "gate":
+            return self.engine.advance(run_id, run_gate=True)
+        return self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, stage_id))
+
     def advance_to(self, target: str) -> tuple[str, dict]:
-        """Seed and drive single stages until the run reaches target."""
+        """Seed and drive the run until it reaches target."""
         out = self.seed()
         run_id = out["run_id"]
         for _ in range(12):
             if out["stage"] == target:
                 return run_id, out
-            out = self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, out["stage"]))
+            out = self.pass_stage(run_id, out["stage"])
         self.fail(f"could not reach {target}")
 
     def emitted_lanes(self, run_id: str) -> list[dict]:
@@ -400,14 +460,16 @@ class TopologyTests(unittest.TestCase):
                          VISUAL_LANES)
         self.assertEqual(self.stages["visual-evaluation"]["type"], "evaluator")
 
-    def test_only_the_research_stage_was_added(self):
+    def test_the_stage_list_is_exactly_the_v9_lifecycle(self):
+        """The whole topology, in order, and nothing else.
+
+        Version 9 put an authorization phase in front of the production
+        phase and a publication phase behind it. The list is frozen here so
+        that a stage cannot be added, dropped, or resequenced without the
+        change being stated.
+        """
         self.assertEqual(
-            [stage["id"] for stage in self.workflow["stages"]],
-            ["seed", "resolve-context", "source-audit", "research",
-             "research-synthesis", "author-proper", "content-evaluation",
-             "content-revision", "build-artifacts", "mechanical-gates",
-             "artifact-revision", "visual-evaluation", "visual-revision",
-             "final-acceptance"])
+            [stage["id"] for stage in self.workflow["stages"]], STAGE_ORDER)
 
 
 # ---------------------------------------------------------------------------
@@ -792,8 +854,7 @@ class PreservedGuaranteeTests(PropersCase):
         run_id = json.loads(first)["run_id"]
         out = {"stage": "seed"}
         while out["stage"] != "research":
-            out = self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, out["stage"]))
+            out = self.pass_stage(run_id, out["stage"])
         self.engine.advance(run_id,
                             lane_results=self.lane_submissions(run_id))
         self.assertEqual(self.engine.seed_bytes("proper", args), first)
@@ -818,11 +879,24 @@ class PreservedGuaranteeTests(PropersCase):
         self.assertEqual(retried["stage"], "research-synthesis")
 
     def test_final_acceptance_is_still_a_program_gate(self):
-        """Test 29."""
+        """Test 29, at version 9.
+
+        `final-acceptance` still exists, still runs as a program gate, and
+        still asks no agent anything; what changed is where its pass goes.
+        It accepts the artifacts and hands them to the publication phase, and
+        the gate that accepts the run is now the terminal one.
+        """
         workflow = workflow_json()
+        stages = {s["id"]: s for s in workflow["stages"]}
+        final = stages["final-acceptance"]
+        self.assertEqual(final["type"], "gate")
+        self.assertEqual(final["execution"], {"mode": PROGRAM})
+        self.assertNotIn("fragments", final)
+        self.assertEqual(final["pass_transition"], "publish-artifacts")
+
         accepting = [s for s in workflow["stages"]
                      if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
-        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual([s["id"] for s in accepting], ["publication-gates"])
         self.assertEqual(accepting[0]["type"], "gate")
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
         self.assertNotIn("fragments", accepting[0])

@@ -242,9 +242,17 @@ class PropersWorkflowTests(unittest.TestCase):
     def test_propers_advance_through_single_stages(self):
         """The workflow advances through its single stages with PASS results.
 
-        The walk stops at `research`, which is a fan-out stage answered with
-        one result per declared lane rather than one for the stage; that path
-        is held by test_workflow_research_fanout.py.
+        The walk covers the head of the v9 lifecycle: the seed, the
+        authorization stage, the scope gate that must run as a gate, and the
+        two context stages. It stops at `research`, which is a fan-out stage
+        answered with one result per declared lane rather than one for the
+        stage; that path is held by test_workflow_research_fanout.py.
+
+        `scope-gate` is answered directly rather than run, because its
+        checks read a maintainer's authorization out of
+        `guidance/liturgy/propers-production-plan.md` and no test may write
+        one there. The gate's own commands are held to their real behaviour
+        in test_workflow_scope_and_publication.py.
         """
         result = self.engine.seed("proper", {
             "proper": "liturgy/roman-rite/1962/propers/temporal/46-ninth-after-pentecost",
@@ -252,21 +260,35 @@ class PropersWorkflowTests(unittest.TestCase):
         })
         run_id = result["run_id"]
 
-        # Advance through seed → resolve-context → source-audit → research
+        real_run_gate = self.engine._run_gate
+
+        def run_gate(workflow, stage, state, run_id):
+            if stage["id"] != "scope-gate":
+                return real_run_gate(workflow, stage, state, run_id)
+            return {"disposition": "PASS", "findings": [],
+                    "stage": stage["id"], "iteration": 0}
+
+        self.engine._run_gate = run_gate
+
         expected_stages = [
-            "seed", "resolve-context", "source-audit", "research",
+            "seed", "authorize-target", "scope-gate", "resolve-context",
+            "source-audit", "research",
         ]
         for i, expected in enumerate(expected_stages):
             self.assertEqual(result["stage"], expected,
                              f"stage {i} should be {expected}, got {result['stage']}")
-            if i < len(expected_stages) - 1:
-                rfile = self.runs / run_id / f"result-{i}.json"
-                rfile.parent.mkdir(parents=True, exist_ok=True)
-                rfile.write_text(json.dumps({
-                    "stage": expected, "iteration": 0,
-                    "disposition": "PASS", "summary": "test"
-                }), encoding="utf-8")
-                result = self.engine.advance(run_id, result_path=str(rfile))
+            if i == len(expected_stages) - 1:
+                break
+            if expected == "scope-gate":
+                result = self.engine.advance(run_id, run_gate=True)
+                continue
+            rfile = self.runs / run_id / f"result-{i}.json"
+            rfile.parent.mkdir(parents=True, exist_ok=True)
+            rfile.write_text(json.dumps({
+                "stage": expected, "iteration": 0,
+                "disposition": "PASS", "summary": "test"
+            }), encoding="utf-8")
+            result = self.engine.advance(run_id, result_path=str(rfile))
 
         with self.assertRaises(WorkflowError) as caught:
             self.engine.advance(run_id, result_path=str(rfile))
@@ -307,16 +329,42 @@ class PropersWorkflowTests(unittest.TestCase):
                              f"missing schema for {stage['id']}: {schema_name}")
 
     def test_propers_gate_commands_have_substitutable_args(self):
-        """Gate commands reference {provider} and {proper} placeholders."""
+        """A gate command is parameterized by the run, and by nothing else.
+
+        Every check names at least one of the run's two normalized arguments,
+        so no check is a constant that would pass or fail alike for every
+        target; and no check names a placeholder the run has not normalized,
+        so nothing is left for a host to fill in. A single check may name
+        just one of the two — the identity check asks about the proper and
+        the provider check asks about the provider — but each gate as a whole
+        is bound to both.
+        """
         wf = self.engine.load_workflow("proper")
-        for stage in wf["stages"]:
-            if stage["type"] == "gate":
-                for check in stage.get("checks", []):
-                    cmd = check["command"]
-                    self.assertIn("{provider}", cmd,
-                                  f"gate {stage['id']} check {check['id']} must use {{provider}}")
-                    self.assertIn("{proper}", cmd,
-                                  f"gate {stage['id']} check {check['id']} must use {{proper}}")
+        known = ("{proper}", "{provider}")
+        gates = [stage for stage in wf["stages"] if stage["type"] == "gate"]
+        self.assertTrue(gates)
+        for stage in gates:
+            named = set()
+            for check in stage.get("checks", []):
+                cmd = check["command"]
+                with self.subTest(gate=stage["id"], check=check["id"]):
+                    used = [token for token in known if token in cmd]
+                    self.assertTrue(
+                        used,
+                        f"gate {stage['id']} check {check['id']} names "
+                        f"neither {{proper}} nor {{provider}}")
+                    named.update(used)
+                    residue = cmd
+                    for token in known:
+                        residue = residue.replace(token, "")
+                    self.assertNotIn(
+                        "{", residue,
+                        f"gate {stage['id']} check {check['id']} takes an "
+                        f"argument the run has not normalized")
+            self.assertEqual(
+                named, set(known),
+                f"gate {stage['id']} must be bound to both the proper and "
+                f"the provider across its checks")
 
 
 class GateExecutionTests(unittest.TestCase):

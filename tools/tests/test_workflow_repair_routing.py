@@ -116,8 +116,7 @@ class RoutingCase(PropersCase):
                 self.engine.advance(
                     run_id, lane_results=self.content_submissions(run_id))
             else:
-                self.engine.advance(
-                    run_id, result_path=self.worker_pass(run_id, stage_id))
+                self.pass_stage(run_id, stage_id)
         self.fail(f"could not reach {target}")
 
     def route_for(self, findings_by_lane: dict, order=None) -> dict:
@@ -506,13 +505,15 @@ class PreservedGuaranteeTests(RoutingCase):
     def test_the_gates_are_still_programmatic(self):
         """Test 27 and 28."""
         stages = {s["id"]: s for s in workflow_json()["stages"]}
-        for stage_id in ("mechanical-gates", "final-acceptance"):
+        for stage_id in ("scope-gate", "mechanical-gates", "final-acceptance",
+                         "publication-gates"):
             with self.subTest(stage=stage_id):
+                self.assertEqual(stages[stage_id]["type"], "gate")
                 self.assertEqual(stages[stage_id]["execution"],
                                  {"mode": PROGRAM})
         accepting = [s for s in workflow_json()["stages"]
                      if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
-        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual([s["id"] for s in accepting], ["publication-gates"])
 
     def test_seed_remains_byte_idempotent(self):
         """Test 29 and 32."""
@@ -538,8 +539,7 @@ class PreservedGuaranteeTests(RoutingCase):
                 out = self.engine.advance(
                     run_id, lane_results=self.research_submissions(run_id))
             else:
-                out = self.engine.advance(
-                    run_id, result_path=self.worker_pass(run_id, stage_id))
+                out = self.pass_stage(run_id, stage_id)
         self.engine.advance(run_id, lane_results=self.content_submissions(
             run_id, {"evidence-discipline": [blocking("CON-EVI-001",
                                                       RESEARCH)]}))

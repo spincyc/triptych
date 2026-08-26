@@ -93,8 +93,7 @@ class RetryCase(PropersCase):
                 self.engine.advance(
                     run_id, lane_results=self.lane_submissions(run_id))
             else:
-                self.engine.advance(
-                    run_id, result_path=self.worker_pass(run_id, stage_id))
+                self.pass_stage(run_id, stage_id)
         self.fail("could not reach research-synthesis")
 
     def forwarded(self, packet_text: str) -> list[dict]:
@@ -418,8 +417,12 @@ class PreservedGuaranteeTests(RetryCase):
         self.assertEqual([l["id"] for l in visual["lanes"]], VISUAL_LANES)
         accepting = [s for s in workflow_json()["stages"]
                      if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
-        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual([s["id"] for s in accepting], ["publication-gates"])
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
+        self.assertEqual(stages["visual-evaluation"]["pass_transition"],
+                         "final-acceptance",
+                         "the visual fan-out still passes into artifact "
+                         "acceptance, which now hands on to publication")
 
     def test_the_seven_research_lanes_are_declared_and_disjoint(self):
         """Sending the research back is only safe if the lanes still divide.

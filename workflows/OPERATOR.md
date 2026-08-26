@@ -589,6 +589,11 @@ Its stages are:
 ```
 seed
   ↓
+authorize-target
+  ↓
+scope-gate (programmatic)
+  ├─ FAIL → BLOCKED (the target is not authorized; nothing is produced)
+  ├─ PASS ↓
 resolve-context
   ↓
 source-audit
@@ -620,11 +625,56 @@ mechanical-gates (programmatic)
 visual-evaluation (AI)
   ├─ CHANGES_REQUIRED → visual-revision → rebuild → mechanical-gates → visual
   ├─ PASS ↓
-final-acceptance (programmatic)
+final-acceptance (programmatic; accepts the artifacts)
   ├─ FAIL → artifact-revision → rebuild → mechanical-gates → visual → accept
+  ├─ PASS ↓
+publish-artifacts
+  ↓
+generate-web
+  ↓
+web-evaluation (AI)
+  ├─ CHANGES_REQUIRED → web-revision → generate-web → re-evaluate
+  ├─ PASS ↓
+install-publication
+  ↓
+publication-gates (programmatic; accepts the run)
+  ├─ FAIL → publication-revision → install-publication → re-gate
   ├─ PASS ↓
 ACCEPTED
 ```
+
+### The lifecycle a run completes
+
+A run is not finished when the PDFs build. The lifecycle is:
+
+```
+authorize -> produce -> artifact-accept -> publish -> catalog-wire
+          -> publication-accept
+```
+
+Authorization comes first and is a separate decision from identity. The 1962
+propers collections are closed, and `guidance/liturgy/propers-production-plan.md`
+is the maintainer's record of that closure and of every target since reopened.
+**A valid permanent identity is not authorization.** The registry and the
+profile keep the identities complete and fixed so that a guide, if one is ever
+written, can be placed; an identity with no guide is the normal state of the
+collection, not a queue entry. `scope-gate` therefore asks three questions and
+requires all three: that the identity is one the 1962 calendar registers, that
+the provider is one this repository publishes for, and that the production plan
+carries an authorization for **exactly** that provider and that identity. A
+refusal is terminal — `BLOCKED`, not a revision loop — because a run whose
+target was never authorized has nothing to revise.
+
+Authorization is strictly per provider. Authorizing `gpt` for an identity
+authorizes nothing for `claude`, and neither authorizes a neighbouring
+identity or the series either belongs to. `authorize-target` writes one entry
+per provider-and-identity pair and writes nothing at all when the pair is
+already recorded.
+
+Publication comes last and is gated in its own right. `final-acceptance`
+accepts the *artifacts*; `publication-gates` accepts the *run*, and it is the
+only stage that can produce `ACCEPTED`. What it verifies is set out under
+Final acceptance below.
 
 Mechanical gates use existing Triptych tools:
 - `tools/tpt check-proper-components`
@@ -636,15 +686,22 @@ page rasters produced by `tools/tpt pdf-review`.
 
 Each stage declares how it is run:
 
-- `single`, one fresh subagent: `seed`, `resolve-context`, `source-audit`,
-  `research-synthesis`, `author-proper`, `content-revision`, `build-artifacts`,
-  `artifact-revision`, `visual-revision`. Every authoring and revision stage
-  mutates the canonical leaf, `source-audit` may retrieve and write the
-  provenance files, and `research-synthesis` is the sole owner of
-  `research/scope.md` and the only place the seven lanes' findings are
+- `single`, one fresh subagent: `seed`, `authorize-target`,
+  `resolve-context`, `source-audit`, `research-synthesis`, `author-proper`,
+  `content-revision`, `build-artifacts`, `artifact-revision`,
+  `visual-revision`, `publish-artifacts`, `generate-web`, `web-evaluation`,
+  `web-revision`, `install-publication`, `publication-revision`. Every
+  authoring and revision stage mutates the canonical leaf, `source-audit` may
+  retrieve and write the provenance files, and `research-synthesis` is the sole
+  owner of `research/scope.md` and the only place the seven lanes' findings are
   reconciled, so each of them owns an authoritative artifact that exactly one
-  agent may hold.
-- `program`, run by `tpt` itself: `mechanical-gates`, `final-acceptance`.
+  agent may hold. The publication stages own authoritative artifacts too — the
+  scope entry, the installed PDFs, the generated and the tracked web edition,
+  the release records, and the catalog cell — one owner each.
+  `web-evaluation` is `single` rather than a fan-out because there is one
+  conversion to judge and one edition to judge it against; nothing partitions.
+- `program`, run by `tpt` itself: `scope-gate`, `mechanical-gates`,
+  `final-acceptance`, `publication-gates`.
 - `fanout/host-max`: `research`, `content-evaluation`, and `visual-evaluation`.
   All three mutate no authoritative artifact — one discovers, two judge — so
   their work is partitioned across lanes that can run at the same time. Nothing
@@ -723,7 +780,17 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 8. Version 8 declared
+The `proper` workflow is at version 9. Version 9 gave the workflow the whole
+lifecycle: an `authorize-target` stage and a terminal-on-failure `scope-gate`
+in front of the production phase, and `publish-artifacts`, `generate-web`,
+`web-evaluation` with its `web-revision` loop, `install-publication`, and the
+terminal `publication-gates` with its `publication-revision` loop behind it.
+`final-acceptance` kept its id and its four checks and now passes to
+`publish-artifacts`; the run is accepted by `publication-gates`, because the
+acceptance audit requires every other evaluator and gate to have passed and
+so the accepting gate can only be the last one. Nothing about research,
+authoring, the lanes, the two evaluation fan-outs, or the mechanical gates
+changed. Version 8 declared
 `document_discovery`, so `tools/tpt proper list` can name the documents the
 workflow runs and a unique tail of an id stands for the id; it changed no
 stage, no packet and no transition, but the declaration is part of the bound
@@ -740,10 +807,10 @@ are as they were at version 5. A run seeded against version 7 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
-Final acceptance is a gate, not a stage any agent is asked about. Advance it
-with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other gate.
-It rechecks, on the artifacts as they now stand, the four things the stage used
-to ask a worker to confirm:
+Artifact acceptance is a gate, not a stage any agent is asked about. Advance
+it with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other
+gate. It rechecks, on the artifacts as they now stand, the four things the
+stage used to ask a worker to confirm:
 
 - `build/{provider}/{proper}.pdf` exists;
 - `build/{provider}/{proper}-synthesis.pdf` exists;
@@ -756,6 +823,22 @@ A failed check sends the run to `artifact-revision` with the check's own output
 as findings, and the revised artifacts come back through the mechanical gates
 and visual evaluation before acceptance is attempted again. That loop is
 bounded: three refusals block the run.
+
+`publication-gates` is the terminal gate and the only stage that can produce
+`ACCEPTED`. On the publication as it now stands it verifies that the scope
+authorization still holds; that both PDFs are installed under
+`pdf/<provider>/`; that `check-proper-components --aux` and
+`check-generation-metadata` still pass, the latter against the installed
+canonical PDF rather than the build tree; that the leaf declares a web
+edition and `check-web-edition` accepts it; that the canonical web edition
+exists at `web/<provider>/<proper>.md` and is tracked, not merely generated;
+that no separate `-synthesis` web leaf exists, because the synthesis is a
+derived companion and not a second prose authority; that a per-publication
+release record exists for the canonical publication **and** for the
+synthesis; and that this provider's catalog cell links all three published
+artifacts. A failed check sends the run to `publication-revision`, which
+repairs the wiring at `install-publication` and re-gates, and that loop is
+bounded at three refusals as well.
 
 Passing the checks is necessary, not sufficient. Before it records `ACCEPTED`
 the engine audits the run: every evaluator and gate that ran must last have

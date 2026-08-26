@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 8,
+  "version": 9,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -34,7 +34,48 @@
         "propers/seed.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "resolve-context"
+      "next": "authorize-target"
+    },
+    {
+      "id": "authorize-target",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/authorize-target.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "scope-gate"
+    },
+    {
+      "id": "scope-gate",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "registered-identity",
+          "command": "tools/check-proper-identity --document {proper}",
+          "required_result": "the leaf id must carry a permanent proper identity the 1962 calendar registers; an unregistered identity names no proper to produce"
+        },
+        {
+          "id": "known-provider",
+          "command": "case {provider} in claude|gpt) ;; *) exit 1 ;; esac; test -d src/{provider}",
+          "required_result": "the provider must be one this repository publishes for, claude or gpt, and must have a source root"
+        },
+        {
+          "id": "authorized-scope",
+          "command": "grep -qF -- 'provider `{provider}`, identity `{proper}`' guidance/liturgy/propers-production-plan.md",
+          "required_result": "the production plan must record a maintainer authorization for exactly this provider and this identity; the propers collections are closed, and a registered permanent identity is not itself authorization to produce one"
+        }
+      ],
+      "pass_transition": "resolve-context",
+      "fail_transition": "BLOCKED",
+      "max_iterations": 3
     },
     {
       "id": "resolve-context",
@@ -375,9 +416,171 @@
           "required_result": "tracked revision timestamps and AI provenance must be valid in source and PDF"
         }
       ],
-      "pass_transition": "ACCEPTED",
+      "pass_transition": "publish-artifacts",
       "fail_transition": "artifact-revision",
       "max_iterations": 3
+    },
+    {
+      "id": "publish-artifacts",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/publish-artifacts.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "generate-web"
+    },
+    {
+      "id": "generate-web",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/generate-web.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "web-evaluation"
+    },
+    {
+      "id": "web-evaluation",
+      "type": "evaluator",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/web-evaluation.md"
+      ],
+      "result_schema": "evaluator-result.json",
+      "pass_transition": "install-publication",
+      "fail_transition": "web-revision",
+      "max_iterations": 3
+    },
+    {
+      "id": "web-revision",
+      "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
+      "revision_target": "generate-web",
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/web-revision.md",
+        "propers/generate-web.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "web-evaluation"
+    },
+    {
+      "id": "install-publication",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/install-publication.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "publication-gates"
+    },
+    {
+      "id": "publication-gates",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "authorized-scope",
+          "command": "grep -qF -- 'provider `{provider}`, identity `{proper}`' guidance/liturgy/propers-production-plan.md",
+          "required_result": "the production plan must still authorize exactly this provider and this identity at the moment of publication"
+        },
+        {
+          "id": "canonical-pdf-installed",
+          "command": "test -f pdf/{provider}/{proper}.pdf",
+          "required_result": "the canonical PDF must be installed at pdf/{provider}/{proper}.pdf"
+        },
+        {
+          "id": "synthesis-pdf-installed",
+          "command": "test -f pdf/{provider}/{proper}-synthesis.pdf",
+          "required_result": "the synthesis PDF must be installed at pdf/{provider}/{proper}-synthesis.pdf"
+        },
+        {
+          "id": "proper-components",
+          "command": "tools/tpt check-proper-components --provider {provider} --document {proper} --aux build/{provider}/{proper}-synthesis.aux",
+          "required_result": "the component manifest must still be consistent with the built artifacts, and the brief synthesis must still occupy exactly two pages"
+        },
+        {
+          "id": "generation-metadata",
+          "command": "tools/tpt check-generation-metadata --provider {provider} --pdf {proper} pdf/{provider}/{proper}.pdf",
+          "required_result": "tracked revision timestamps and AI provenance must be valid in the source and in the installed PDF, not only in the build tree"
+        },
+        {
+          "id": "web-edition-declared",
+          "command": "test -f src/{provider}/{proper}/web-edition.toml",
+          "required_result": "the leaf must carry a web-edition declaration; nothing defaults to eligible"
+        },
+        {
+          "id": "web-edition-valid",
+          "command": "tools/tpt check-web-edition --provider {provider} --document {proper}",
+          "required_result": "the web-edition declaration must be valid for this leaf, and a leaf declared eligible must use no blocking construct"
+        },
+        {
+          "id": "web-edition-tracked",
+          "command": "test -f web/{provider}/{proper}.md && git ls-files --error-unmatch web/{provider}/{proper}.md >/dev/null 2>&1",
+          "required_result": "the canonical web edition must exist at web/{provider}/{proper}.md and be tracked, not merely generated into the build tree"
+        },
+        {
+          "id": "no-synthesis-web-edition",
+          "command": "test ! -e web/{provider}/{proper}-synthesis.md && test ! -e src/{provider}/{proper}-synthesis/web-edition.toml",
+          "required_result": "the synthesis is a derived companion of the canonical leaf and has no web edition of its own; a separate -synthesis web leaf is a second prose authority"
+        },
+        {
+          "id": "canonical-release-record",
+          "command": "test -f release/publications/{provider}/{proper}.json",
+          "required_result": "a per-publication release record must exist for the canonical publication"
+        },
+        {
+          "id": "synthesis-release-record",
+          "command": "test -f release/publications/{provider}/{proper}-synthesis.json",
+          "required_result": "a per-publication release record must exist for the synthesis publication; the companion is published in its own right"
+        },
+        {
+          "id": "catalog-links",
+          "command": "grep -qF -- '(../pdf/{provider}/{proper}.pdf)' library/traditional-latin-mass.md && grep -qF -- '(../pdf/{provider}/{proper}-synthesis.pdf)' library/traditional-latin-mass.md && grep -qF -- '(../web/{provider}/{proper}.html)' library/traditional-latin-mass.md",
+          "required_result": "this provider's catalog cell must link all three published artifacts: the full PDF, the synthesis PDF, and the web edition"
+        }
+      ],
+      "pass_transition": "ACCEPTED",
+      "fail_transition": "publication-revision",
+      "max_iterations": 3
+    },
+    {
+      "id": "publication-revision",
+      "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
+      "revision_target": "install-publication",
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/publication-revision.md",
+        "propers/install-publication.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "publication-gates"
     }
   ]
 }

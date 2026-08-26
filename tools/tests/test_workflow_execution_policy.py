@@ -923,13 +923,17 @@ class LauncherTests(unittest.TestCase):
         single = {stage["id"] for stage in workflow["stages"]
                   if stage["execution"]["mode"] == SINGLE}
         self.assertEqual(single, {
-            "seed", "resolve-context", "source-audit", "research-synthesis",
-            "author-proper", "content-revision", "build-artifacts",
-            "artifact-revision", "visual-revision",
-        }, "every stage that mutates the leaf stays single-owner")
+            "seed", "authorize-target", "resolve-context", "source-audit",
+            "research-synthesis", "author-proper", "content-revision",
+            "build-artifacts", "artifact-revision", "visual-revision",
+            "publish-artifacts", "generate-web", "web-evaluation",
+            "web-revision", "install-publication", "publication-revision",
+        }, "every stage that mutates the leaf, the production plan, or the "
+           "publication tree stays single-owner")
         program = {stage["id"] for stage in workflow["stages"]
                    if stage["execution"]["mode"] == PROGRAM}
-        self.assertEqual(program, {"mechanical-gates", "final-acceptance"})
+        self.assertEqual(program, {"scope-gate", "mechanical-gates",
+                                   "final-acceptance", "publication-gates"})
 
 
 if __name__ == "__main__":

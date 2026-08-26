@@ -432,12 +432,16 @@ class PreservedArchitectureTests(unittest.TestCase):
                 self.assertEqual(self.stages[stage_id]["execution"],
                                  {"mode": SINGLE})
 
-    def test_final_acceptance_remains_a_program_gate(self):
+    def test_acceptance_remains_a_program_gate(self):
+        """Only a program gate accepts, and at v9 it is the terminal one."""
         accepting = [s for s in self.workflow["stages"]
                      if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
-        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual([s["id"] for s in accepting], ["publication-gates"])
         self.assertEqual(accepting[0]["type"], "gate")
         self.assertEqual(accepting[0]["execution"], {"mode": PROGRAM})
+        self.assertEqual(self.stages["final-acceptance"]["execution"],
+                         {"mode": PROGRAM},
+                         "artifact acceptance is still a program gate")
 
     def test_both_evaluation_fanouts_keep_their_lanes_disjoint(self):
         for lane in CONTENT_LANES + VISUAL_LANES:

@@ -1064,12 +1064,23 @@ class PropersFinalAcceptanceTests(unittest.TestCase):
         cls.stages = {s["id"]: s for s in cls.workflow["stages"]}
 
     def test_only_a_program_gate_accepts(self):
+        """One stage names ACCEPTED, it is a gate, and it is the last one.
+
+        The engine's acceptance audit requires every other evaluator and gate
+        to have last recorded PASS, so the accepting gate can only be the
+        terminal one. At v9 that is `publication-gates`: artifact acceptance
+        hands on to the publication phase instead of ending the run.
+        """
         accepting = [s for s in self.workflow["stages"]
                      if ACCEPTED in (s.get("next"), s.get("pass_transition"))]
-        self.assertEqual([s["id"] for s in accepting], ["final-acceptance"])
+        self.assertEqual([s["id"] for s in accepting], ["publication-gates"])
         self.assertEqual(accepting[0]["type"], "gate")
         self.assertNotIn("fragments", accepting[0],
                          "a gate gives no instructions to any agent")
+        self.assertEqual(self.workflow["stages"][-1]["id"],
+                         "publication-revision",
+                         "the accepting gate's own revision loop is the tail "
+                         "of the stage list")
 
     def test_visual_evaluation_passes_into_final_acceptance(self):
         self.assertEqual(self.stages["visual-evaluation"]["pass_transition"],
@@ -1104,6 +1115,59 @@ class PropersFinalAcceptanceTests(unittest.TestCase):
         self.assertEqual(target["next"], "mechanical-gates")
         self.assertIn("max_iterations", stage,
                       "a refused acceptance must be bounded")
+
+    def test_a_refused_publication_re_enters_the_publication_gates(self):
+        """The terminal gate has a bounded repair loop of its own.
+
+        A publication defect is a wiring defect — an artifact not installed,
+        a release record not written, a catalog cell not linked — so it is
+        repaired at `install-publication` and re-gated, never sent back
+        through research or authoring.
+        """
+        stage = self.stages["publication-gates"]
+        target = self.stages[stage["fail_transition"]]
+        self.assertEqual(stage["fail_transition"], "publication-revision")
+        self.assertEqual(target["type"], "bounded-revision")
+        self.assertEqual(target["revision_target"], "install-publication")
+        self.assertEqual(target["next"], "publication-gates")
+        self.assertIn("max_iterations", stage,
+                      "a refused publication must be bounded")
+
+    def test_artifact_acceptance_no_longer_ends_the_run(self):
+        """Accepting the PDFs is not accepting the publication.
+
+        Before v9 `final-acceptance` transitioned straight to ACCEPTED, so a
+        run ended with two PDFs in the build tree and nothing published. It
+        now hands on to the publication phase, and only the terminal gate
+        can end the run.
+        """
+        final = self.stages["final-acceptance"]
+        self.assertNotEqual(final["pass_transition"], ACCEPTED)
+        self.assertEqual(final["pass_transition"], "publish-artifacts")
+        self.assertEqual(len(final["checks"]), 4,
+                         "artifact acceptance keeps its own four checks")
+
+    def test_a_web_fidelity_failure_cannot_reach_publication_acceptance(self):
+        """A failing web evaluation has no path to ACCEPTED.
+
+        Its only failure route is its own bounded revision loop, and the
+        engine's acceptance audit independently refuses a run in which any
+        evaluator last recorded anything but PASS.
+        """
+        web = self.stages["web-evaluation"]
+        self.assertEqual(web["type"], "evaluator")
+        self.assertEqual(web["fail_transition"], "web-revision")
+        self.assertNotEqual(web["pass_transition"], ACCEPTED)
+        self.assertEqual(web["pass_transition"], "install-publication")
+        revision = self.stages["web-revision"]
+        self.assertEqual(revision["revision_target"], "generate-web")
+        self.assertEqual(revision["next"], "web-evaluation",
+                         "a regenerated edition is re-evaluated, never "
+                         "installed unreviewed")
+        self.assertNotIn(
+            ACCEPTED,
+            (revision.get("next"), revision.get("pass_transition")),
+            "no revision stage may name ACCEPTED")
 
     def test_no_stage_asks_a_worker_to_attest_acceptance(self):
         declared = {frag for stage in self.workflow["stages"]

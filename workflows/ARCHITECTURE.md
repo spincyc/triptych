@@ -366,6 +366,17 @@ A stage that cannot use what the owner wrote does not repair it:
 which is terminal on a linear stage, so the deficiency is on the record instead
 of being patched where nothing would record it.
 
+The rule extends past the leaf to everything a run writes. The scope entry in
+`guidance/liturgy/propers-production-plan.md` is owned by `authorize-target`;
+the installed PDFs under `pdf/<provider>/` by `publish-artifacts`; the
+generated edition under `build/web/<provider>/` by `generate-web`; and the
+tracked edition under `web/<provider>/`, the per-publication release records,
+and this provider's catalog cell by `install-publication`. Each of those
+stages is `single` for the same reason authoring is: what it writes is
+authoritative, and an authoritative artifact has one owner. A publication
+defect is repaired by `publication-revision` at the owner that installed it,
+never by sending a broken catalog link back through research or authoring.
+
 ### One repair owner per defect
 
 Execution mode decides how many agents run a stage and ownership decides which
@@ -700,8 +711,12 @@ agree about who runs the work.
 - `ACCEPTED`: a gate stage whose `pass_transition` is `ACCEPTED` ran its checks
   and every one of them passed, and the run's own record satisfies the
   acceptance audit below.
-- `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, or an
-  evaluator's revision or re-entry loop reaches its `max_iterations` limit.
+- `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, an
+  evaluator's revision or re-entry loop reaches its `max_iterations` limit, or
+  a gate declares `BLOCKED` as its `fail_transition` and one of its checks
+  fails. The last is for a refusal no revision can repair: a run whose target
+  was never authorized has nothing to revise, and looping it three times would
+  say only that it was refused three times.
 
 Both are final: the engine refuses any further `advance` on a terminal run.
 
@@ -730,6 +745,22 @@ A gate's checks speak only for the artifacts they inspect. The audit is what
 makes acceptance mean the whole run passed, and it reads only files the engine
 itself wrote and hashed, so editing a result or deleting a packet cannot buy an
 acceptance — it prevents one.
+
+### The accepting gate is the last gate
+
+The audit's second clause has a consequence for topology: because every other
+evaluator and gate must already have run and last recorded `PASS`, the stage
+that names `ACCEPTED` can only be the last evaluator or gate in the sequence.
+A phase appended after the accepting gate would make that gate refuse every
+run, saying that the stage after it has produced no result.
+
+So a workflow that grows a phase at the end moves acceptance to the end with
+it. When the propers workflow gained its publication phase, `final-acceptance`
+kept its id and its four checks and became the gate that accepts the
+*artifacts*, passing to the publication phase instead of ending the run, and
+the new terminal `publication-gates` became the gate that accepts the *run*.
+Acceptance did not move because publication mattered more; it moved because
+the audit reads the whole record, and the whole record now runs further.
 
 ## The advance transaction
 
@@ -790,6 +821,12 @@ only a passing gate returns to visual evaluation. The reviser rebuilds, and the
 gate's own commands rebuild again and check the result, so no visual change can
 reach acceptance without the mechanical invariants being rechecked on the
 artifacts that changed.
+
+The publication phase re-enters the same way and for the same reason. A
+`publication-revision` returns to `publication-gates`, and a `web-revision`
+returns to `web-evaluation` by way of `generate-web`, so a regenerated edition
+is judged again rather than installed on the strength of the judgment that the
+edition it replaced received.
 
 ## CLI integration
 
