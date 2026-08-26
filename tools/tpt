@@ -72,7 +72,7 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "... 62 more lines",
+                "... 63 more lines",
             ),
         ),
         Example(
@@ -122,13 +122,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 35 tools",
+                "registry ok: 36 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 35 tools",
+                "registry ok: 36 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),

@@ -1278,7 +1278,7 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader check",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
+                "539 works, 721 editions, 1891 artifacts, 2869 passages; 1635 readable here.",
                 "  passages the rights records withhold: 1234",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
@@ -1297,7 +1297,7 @@ EXAMPLES = {
             "tools/tpt source-reader list --author 'Augustine of Hippo'",
             (
                 "Augustine of Hippo       Confessiones                           1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
-                "... 10 more lines",
+                "... 11 more lines",
             ),
         ),
         Example(
@@ -1327,16 +1327,16 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader structure --out build/example-sources",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
-                "  -> build/example-sources/structure/sources (2352 files)",
+                "539 works, 721 editions, 1891 artifacts, 2869 passages; 1635 readable here.",
+                "  -> build/example-sources/structure/sources (2357 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/tpt source-reader structure --check",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
-                "  src/web/data/structure/sources is current (2352 files)",
+                "539 works, 721 editions, 1891 artifacts, 2869 passages; 1635 readable here.",
+                "  src/web/data/structure/sources is current (2357 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),
