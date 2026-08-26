@@ -894,7 +894,10 @@ class LauncherTests(unittest.TestCase):
         shown = self.tpt("workflow", "show", "proper")
         self.assertEqual(shown.returncode, 0, shown.stderr)
         workflow = json.loads(shown.stdout)
-        self.assertEqual(workflow["version"], 4)
+        on_disk = json.loads(
+            (ROOT / "workflows" / "pipelines" / "proper.json")
+            .read_text(encoding="utf-8"))
+        self.assertEqual(workflow["version"], on_disk["version"])
         fanout = {
             stage["id"]: [lane["id"] for lane in stage["execution"]["lanes"]]
             for stage in workflow["stages"]

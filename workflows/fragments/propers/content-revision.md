@@ -23,3 +23,10 @@ accepted work. Focus on the specific findings forwarded to you.
 
 Return a worker result with `disposition: "PASS"`, the artifact path, and a
 summary listing each finding addressed and what was changed.
+
+Return `disposition: "BLOCKED"` instead when a finding cannot be addressed
+from this stage: a finding against `research/scope.md` is the standing case,
+because `research-synthesis` is that file's sole writer and this stage may
+not touch it. Name the finding and why it is out of reach. Blocking says that
+at once; three revisions that cannot address it say only that revision failed
+three times.

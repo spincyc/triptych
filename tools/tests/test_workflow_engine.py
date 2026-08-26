@@ -133,7 +133,12 @@ class WorkflowMetaTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         data = json.loads(result.stdout)
         self.assertEqual(data["id"], "proper")
-        self.assertEqual(data["version"], 4)
+        # The launcher must report the definition on disk, whatever version
+        # that is; the bump itself is asserted where a bump is the subject.
+        on_disk = json.loads(
+            (ROOT / "workflows" / "pipelines" / "proper.json")
+            .read_text(encoding="utf-8"))
+        self.assertEqual(data["version"], on_disk["version"])
 
     def test_workflow_show_unknown(self):
         result = _run("workflow", "show", "no-such-workflow")
