@@ -58,11 +58,44 @@ HEADER = (
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
-    "validate": (),
-    "query": (),
-    "coverage": (),
-    "build": (),
-    "check": (),
+    "validate": (
+        Example("tools/scripture-chronology validate"),
+        Example("tools/scripture-chronology validate --json"),
+    ),
+    "query": (
+        Example("tools/scripture-chronology query Ps.21.19"),
+        Example(
+            "tools/scripture-chronology query Ecclus.35.1 --system greek",
+            note=(
+                "exit 1: the Latin and the Greek Ecclesiasticus are two texts, "
+                "so the concordance records no correspondence and the query "
+                "refuses rather than returning the same numbers"
+            ),
+        ),
+        Example("tools/scripture-chronology query Sus.1.1 --system greek --json"),
+    ),
+    "coverage": (
+        Example("tools/scripture-chronology coverage"),
+        Example("tools/scripture-chronology coverage --json"),
+    ),
+    "build": (
+        Example(
+            "tools/scripture-chronology build --dry-run",
+            note=(
+                "reads and reports only. Without --dry-run this rewrites the "
+                "tracked src/sources/chronology/coverage.tsv, which is why the "
+                "replayed example is the dry run"
+            ),
+        ),
+        Example(
+            "tools/scripture-chronology build --dry-run --json",
+            note="the same, as the machine contract",
+        ),
+    ),
+    "check": (
+        Example("tools/scripture-chronology check"),
+        Example("tools/scripture-chronology check --json"),
+    ),
 }
 
 

@@ -166,8 +166,8 @@ profile, not an edit**.
 
 Read in order. A lower rank is consulted only where every higher rank is
 silent, and a higher rank never yields to a lower one because the lower one is
-more precise. **Precision is not authority** — this is the same distinction the
-date model draws between `precision` and `basis`, and for the same reason.
+more precise. **Precision is not authority** — the date model keeps `precision`
+apart from the claim's `basis` and its sources for the same reason.
 
 | Rank | Authority | What this repository holds |
 | --- | --- | --- |
@@ -177,7 +177,7 @@ date model draws between `precision` and `basis`, and for the same reason.
 | 4 | Patristic and early ecclesiastical chronological testimony | Eusebius, Jerome |
 | 5 | Traditional Catholic commentators and chronologists | Cornelius a Lapide |
 | 6 | Later traditional Catholic reference works | The 1907–1914 Catholic Encyclopedia |
-| 7 | Project derivation from the above | `basis: derived`, with its rule and inputs |
+| 7 | Project derivation from the above | a claim carrying a `derivation`, with its rule and inputs |
 
 Rank 2 is silent far more often than it speaks. **A feast's date is not a
 chronological claim.** The Roman books keep the Annunciation on 25 March; they
@@ -396,9 +396,12 @@ A date is structured. A display string is carried beside it and is **never the
 machine truth**.
 
 ```yaml
+basis: >-
+  The Catholic Encyclopedia's article on the book states it, and refuses to
+  settle between this and the later date it also reports.
+sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911....]
 date:
-  precision: range
-  basis: source
+  precision: interval
   from: {year: 40, era: ad}
   to:   {year: 45, era: ad}
   label: "between A.D. 40 and 45"
@@ -420,16 +423,31 @@ date:
 Gospel written over five years and a Gospel written at an unknown point in a
 five-year window are not the same statement.
 
-**`precision` is separate from `basis`.** Approximate means the *date* is
+**`precision` is separate from authority.** Approximate means the *date* is
 approximate. It is not a judgement about the source, and a rank-3 source's
 "about A.D. 42" outranks a rank-6 source's exact year.
 
-`basis` is `source` or `derived`. A **sourced** claim must name at least one
-source record — the loader refuses one that does not, because a date with
-nothing behind it cannot be checked and is indistinguishable from an invented
-one. A **derived** claim must carry its `rule` and its `inputs`, and is visibly
-derived wherever it is displayed. A derivation never overwrites a sourced
-assertion.
+`basis` is a required line of **prose beside every claim, saying what grounds
+it** — which work, what it states, and the decisive phrase. It is the same
+pairing the source library already enforces on a work record, whose message says
+it best: *composed requires composed_basis: say what dates the writing, and
+never the printing.* And it is held to the same standard
+`src/sources/commentary/work-extents.yaml` states: **a basis that merely
+restates this repository's own prose is not a basis.** It is not an enum, and it
+is not a confidence.
+
+A claim must also name at least one **source record** — the loader refuses one
+that does not, because a date with nothing behind it cannot be checked and is
+indistinguishable from an invented one. Records are named by their
+source-library id, or, where Scripture is its own witness, as
+`bible:<edition>:<locus>`. The audit refuses an id this repository does not
+hold.
+
+A claim carrying a **`derivation`** is a derived claim; there is no second word
+saying so, because two ways of saying it is one way of disagreeing. A derivation
+must name its `rule` and its `inputs`, each input being an event or composition
+unit this corpus holds, and is visibly derived wherever it is displayed. A
+derivation never overwrites a sourced assertion.
 
 ### 10.1 Eras
 
@@ -463,7 +481,7 @@ things apart, always:
 
 ```text
 the source says X
-the project derives Y from X          basis: derived, with rule and inputs
+the project derives Y from X          a derivation, with its rule and inputs
 the profile prefers Y                 disposition: preferred
 ```
 

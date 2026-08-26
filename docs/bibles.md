@@ -503,6 +503,47 @@ boundary. Only a segment-level table can carry that.
 
 ---
 
+## And then there is *when*
+
+Everything above is about **where** a passage is. A reader who has got that far
+usually wants the next thing, which is **when** — and it turns out to be four
+questions wearing one word.
+
+Ask when Psalm 21 belongs. There are at least three defensible answers: when
+David composed it, what occasion tradition associates it with, and the Passion
+the Church reads in it. Ask when a Gospel passage belongs and there are more:
+when that Gospel was written, when the event it narrates happened, when the
+words it quotes were first spoken, and what earlier event the speaker is
+recalling. A single `date` field forces the first person who needs one to pick,
+and everyone after them inherits the pick without seeing it.
+
+So this repository holds them apart. A locus resolves to any number of **typed
+temporal assertions**, one per question, and the type is part of the answer. The
+type that matters most is the one that separates prophecy from narration:
+binding Psalm 21 to the Crucifixion under `prophetic-referent` says the Church
+reads the psalm of Christ, while binding it under `narrated-event` would say
+David was reporting Calvary as history. Those are different claims and only one
+of them is anybody's.
+
+The same discipline as everywhere else on this page carries over. An event is
+dated **once** and pointed at from every passage that touches it, so the four
+Gospels cannot end up with four Crucifixion dates that drift apart — the failure
+this whole document is a catalogue of, in a new costume. Dates attach to
+canonical Vulgate loci, so no translation gets a date table of its own and the
+Miserere does not acquire one chronology as Psalm 50 and another as Psalm 51.
+And where the concordance refuses — Sirach, where there are two texts and not
+two numberings — the chronology refuses with it, rather than answering about
+words the caller did not ask for.
+
+Most of Scripture is not dated yet, and the corpus says so verse by verse rather
+than reporting coverage it does not have. What a claim rests on, which
+authorities win when traditional sources disagree, why Anno Mundi figures are
+never quietly converted to B.C., and what a consumer may and may not do when the
+answer is *nobody has established this* are all in
+`guidance/scripture-chronology.md`, which owns the whole of it.
+
+---
+
 ## Rights decide where a text may live, not only whether it may be read
 
 Public domain by age is the ordinary basis here, and for most of the library it
