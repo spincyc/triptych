@@ -9,4 +9,1883 @@ schema: triptych-chronology-composition/v1
 numbering: vulgate
 updated: '2026-08-26'
 
-units: []
+units:
+  # --- nt-composition ----------------------------------------------------
+  - id: composition.gospel-of-matthew
+    title: The Gospel of St Matthew
+    scope: {book: Matt}
+    note: >-
+      The Catholic Encyclopedia's article on the First Gospel opens its section
+      on the date by saying that "Ancient ecclesiastical writers are at variance
+      as to the date of the composition of the First Gospel" and closes its
+      survey of modern opinion with "In our day opinion is rather divided". It
+      settles nothing, so every claim below is disputed and none is preferred.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Jacquier's article "Gospel of St. Matthew" in the Catholic
+          Encyclopedia (vol. 10, 1911) reports that "Eusebius (in his
+          Chronicle), Theophylact, and Euthymius Zigabenus are of opinion that
+          the Gospel of Matthew was written eight years, and Nicephorus
+          Callistus fifteen years, after Christ's Ascension --i.e. about A.D.
+          38-45." The article prefaces the whole survey with the statement that
+          the ancient writers "are at variance" and reaches no conclusion.
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        note: >-
+          "About A.D. 38-45" is the encyclopedia's own conversion of the
+          ancients' reckoning in years after the Ascension; the eight-year and
+          fifteen-year figures are what the sources themselves state. The same
+          article warns that "we must not expect from the ancients the
+          precision of our modern chronology".
+        date:
+          precision: interval
+          from: {year: 38, era: ad}
+          to: {year: 45, era: ad}
+          label: "about A.D. 38-45"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article draws a second date from the tradition of the
+          dispersal of the Apostles: "following a certain tradition (admittedly
+          not too reliable), the Apostles separated twelve years after the
+          Ascension, hence the Gospel would have been written about the year
+          40-42". Eusebius is its authority for the peg, since "According to
+          Eusebius, Matthew wrote his Gospel in Hebrew when he left Palestine."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        note: >-
+          The article itself calls the twelve-year tradition "admittedly not
+          too reliable" and immediately offers the alternative reckoning that
+          produces about the year 60-68 from the same peg.
+        date:
+          precision: interval
+          from: {year: 40, era: ad}
+          to: {year: 42, era: ad}
+          label: "about the year 40-42"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article's alternative reading of the same peg: "following
+          Eusebius (Church History III.5.2), it is possible to fix the
+          definitive departure of the Apostles about the year 60, in which
+          event the writing of the Gospel would have taken place about the year
+          60-68." The article presents this beside the 40-42 reckoning without
+          choosing between them.
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        date:
+          precision: interval
+          from: {year: 60, era: ad}
+          to: {year: 68, era: ad}
+          label: "about the year 60-68"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article quotes St Irenaeus, "somewhat more exact concerning
+          the date of the First Gospel": "Matthew produced his Gospel when
+          Peter and Paul were evangelizing and founding the Church of Rome,
+          consequently about the years 64-67."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        note: >-
+          The article at once qualifies the testimony: "However, this text
+          presents difficulties of interpretation which render its meaning
+          uncertain and prevent us from deducing any positive conclusion."
+        date:
+          precision: interval
+          from: {year: 64, era: ad}
+          to: {year: 67, era: ad}
+          label: "about the years 64-67"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          For modern opinion the same article states: "In our day opinion is
+          rather divided. Catholic critics, in general, favour the years
+          40-45". This is the position it attributes to Catholic critics as a
+          body, as against the individual figures it goes on to list.
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        note: >-
+          The same sentence records individual Catholic departures from 40-45 —
+          Patrizi 36-39, Aberle 37, Belser 41-42, Conely 40-50, Schafer 50-51,
+          and Hug, Reuschl, Schanz and Rose 60-67 — which are not authored
+          separately here. The article also fixes its own upper bound: "Matthew
+          must have written his Gospel before the year 70". The long list of
+          Protestant and rationalist figures in the same paragraph (Renan later
+          than 85, Baur about 130-34, and the rest) is reported there in order
+          to be refuted and is no part of this profile.
+        date:
+          precision: interval
+          from: {year: 40, era: ad}
+          to: {year: 45, era: ad}
+          label: "the years 40-45"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) dates the lost Aramaic Matthew instead: "The original
+          text of St. Matthew is certainly prior to the ruin of Jerusalem,
+          there are even reasons for dating it earlier than the Epistles of St.
+          Paul and consequently about the year 50."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          This dates the Aramaic original, not the canonical Greek text: the
+          next sentence says "We know nothing definite of the date of its being
+          rendered into Greek." A consumer that reads it as the date of the
+          Greek Matthew is reading it wrongly.
+        date:
+          precision: approximate-year
+          from: {year: 50, era: ad}
+          label: "about the year 50"
+
+  - id: composition.gospel-of-mark
+    title: The Gospel of St Mark
+    scope: {book: Mark}
+    note: >-
+      MacRory's article on the Second Gospel opens its section on the date with
+      "The date of the Gospel is uncertain. The external evidence is not
+      decisive, and the internal does not assist very much." Nothing in the
+      inspected sources settles the question, so every claim below is disputed.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          MacRory's article "Gospel of Saint Mark" in the Catholic Encyclopedia
+          (vol. 9, 1910) reports that "The subscription of many of the later
+          unical and cursive manuscripts states that it was written in the
+          tenth or twelfth year after the Ascension (A.D. 38-40)."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        note: >-
+          The article does not endorse this figure; it suspects it: "Possibly
+          these early dates may be only a deduction from the tradition that
+          Peter came to Rome in the second year of Claudius, A.D. 42."
+        date:
+          precision: interval
+          from: {year: 38, era: ad}
+          to: {year: 40, era: ad}
+          label: "the tenth or twelfth year after the Ascension (A.D. 38-40)"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article: 'The "Paschal Chronicle" assigns it to A.D. 40.'
+          The figure is reported as the Chronicle's, among the early dates the
+          article lists and then treats with reserve.
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        date:
+          precision: year
+          from: {year: 40, era: ad}
+          label: "A.D. 40"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article: 'the "Chronicle" of Eusebius [assigns it] to the
+          third year of Claudius (A.D. 43).' The parenthetical A.D. year is the
+          encyclopedia's gloss on Eusebius's regnal reckoning.
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        date:
+          precision: year
+          from: {year: 43, era: ad}
+          label: "the third year of Claudius (A.D. 43)"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article's own conclusion: "Taking the external and internal
+          evidence together, we may conclude that the date of the Gospel
+          probably lies somewhere between A.D. 50 and 67." The upper bound is
+          Peter's death, which the article leaves at "A.D. 64 or 67".
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        note: >-
+          The lower bound rests on the article's premise that Mark xvi, 20 is
+          from Mark's own pen. The article also sets aside St Irenaeus, who
+          "seems to place the composition of the Gospel after the death of
+          Peter and Paul", judging that "it seems much more reasonable to
+          believe that Irenaeus was mistaken than that all the other
+          authorities are in error".
+        date:
+          precision: interval
+          from: {year: 50, era: ad}
+          to: {year: 67, era: ad}
+          label: "somewhere between A.D. 50 and 67"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) gives a different window in the same encyclopedia:
+          "Everything seems to indicate the date of the composition of St. Mark
+          as about the time of St. Peter's death, consequently between 60 and
+          70."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          A different contributor from the Mark article, writing two years
+          later; neither supersedes the other and the encyclopedia does not
+          reconcile them.
+        date:
+          precision: interval
+          from: {year: 60, era: ad}
+          to: {year: 70, era: ad}
+          label: "between 60 and 70"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The decisions of the Pontifical Biblical Commission of 26 June 1913,
+          printed in the appendix to Aherne's "Gospel of Saint Luke" (Catholic
+          Encyclopedia vol. 9, 1910), rule that "after Matthew, Mark wrote his
+          Gospel second and Luke third" and that "It is not lawful to put the
+          date of the Gospels of Mark and Luke as late as the destruction of
+          Jerusalem or after the siege had begun." The ruling gives an order
+          and an upper bound and no year.
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9]
+        note: >-
+          A binding ruling reported verbatim, not one contributor's survey, and
+          of a different order of authority from the dated opinions above; it
+          nevertheless fixes no year, and it is recorded here as the relative
+          statement it is. The same decision allows "that the second and third
+          Gospels were composed before the Greek version of the first Gospel".
+        date:
+          precision: relative
+          relative:
+            of: composition.gospel-of-matthew
+            statement: >-
+              second, after Matthew, and not as late as the destruction of
+              Jerusalem or after the siege had begun
+          label: "after Matthew, and not as late as the destruction of Jerusalem"
+
+  - id: composition.gospel-of-luke
+    title: The Gospel of St Luke
+    scope: {book: Luke}
+    note: >-
+      The Catholic Encyclopedia's own Luke article carries no date-of-
+      composition section; its dating material is the appended Biblical
+      Commission decisions, which give bounds and an order but no year. The
+      only year in the inspected sources comes from a different article and is
+      in tension with those bounds, so both claims are disputed.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) asks "What then was the date of his own work?" and
+          answers "About the year 70", adding at once that "we must not expect
+          from the ancients the precision of our modern chronology."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          This sits against the 1913 Biblical Commission ruling recorded in the
+          next claim, which forbids dating Luke as late as the destruction of
+          Jerusalem.
+        date:
+          precision: approximate-year
+          from: {year: 70, era: ad}
+          label: "About the year 70"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The decisions of the Pontifical Biblical Commission of 26 June 1913,
+          printed in the appendix to Aherne's "Gospel of Saint Luke" (Catholic
+          Encyclopedia vol. 9, 1910): "It is not lawful to put the date of the
+          Gospels of Mark and Luke as late as the destruction of Jerusalem or
+          after the siege had begun. The Gospel of Luke preceded his Acts of
+          the Apostles, and was therefore composed before the end of the Roman
+          imprisonment, when the Acts was finished (Acts 28:30-31)."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9]
+        note: >-
+          A binding ruling reported verbatim rather than a contributor's
+          opinion, and of a different order of authority from the survey dates;
+          it states bounds and an order and prints no year, so it is recorded
+          as a relative claim anchored to the composition of Acts.
+        date:
+          precision: relative
+          relative:
+            of: composition.acts-of-the-apostles
+            statement: >-
+              before the Acts of the Apostles, and therefore before the end of
+              the Roman imprisonment, and not as late as the destruction of
+              Jerusalem
+          label: "before the end of the Roman imprisonment, when the Acts was finished"
+
+  - id: composition.gospel-of-john
+    title: The Gospel of St John
+    scope: {book: John}
+    note: >-
+      Fonck's article states at the outset that "As to the date of its
+      composition we possess no certain historical information", and the two
+      Catholic Encyclopedia articles that give figures give differently shaped
+      ones, so neither is preferred here.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Fonck's article "Gospel of St. John" in the Catholic Encyclopedia
+          (vol. 8, 1910): "According to the general opinion, the Gospel is to
+          be referred to the last decade of the first century, or to be still
+          more precise, to 96 or one of the succeeding years." The same
+          sentence is prefaced by the admission that "we possess no certain
+          historical information".
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c]
+        note: >-
+          The same article reaches the same figure by a second route, from the
+          Monarchian Prologue's statement that John wrote the Gospel "after he
+          had composed the Apocalypse on the Island of Patmos", which "would
+          therefore refer the composition of the Gospel to A.D. 96 or one of
+          the years immediately following" — an argument that puts the Gospel
+          later than the Apocalypse.
+        date:
+          precision: approximate-year
+          from: {year: 96, era: ad}
+          label: "96 or one of the succeeding years"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
+          writings belong to the end of the first century, from the year 90 to
+          100 (approximately)."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          The window is asserted of the Johannine writings collectively — the
+          Gospel, the three Epistles and, with a noted exception, the
+          Apocalypse — not of the Fourth Gospel by itself.
+        date:
+          precision: interval
+          from: {year: 90, era: ad}
+          to: {year: 100, era: ad}
+          label: "from the year 90 to 100 (approximately)"
+
+  - id: composition.acts-of-the-apostles
+    title: The Acts of the Apostles
+    scope: {book: Acts}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Breen's article "Acts of the Apostles" in the Catholic Encyclopedia
+          (vol. 1, 1907): "Writers are quite concordant in placing the date of
+          Paul's coming to Rome in the year 62; hence the year 64 is the most
+          probable date for the Acts." The article says of itself that "we may
+          at most assign a probable date for the completion of the book".
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01117a-582c8526]
+        note: >-
+          The figure is the article's own inference from Paul's arrival at Rome
+          in 62 plus the two years of Acts xxviii, 30, not an independently
+          attested date; the same encyclopedia's St. Paul article instead puts
+          the departure for Rome in 59 and the Roman captivity at 60-62, which
+          would move it. Jerome (De viris illustribus 7) ties the book's
+          composition to Rome and to the terminus of its narrative in "the
+          fourth year of Nero", giving no A.D. year; that regnal reckoning is
+          not converted here.
+        date:
+          precision: approximate-year
+          from: {year: 64, era: ad}
+          label: "the year 64 is the most probable date"
+
+  - id: composition.epistle-to-the-romans
+    title: The Epistle to the Romans
+    scope: {book: Rom}
+    note: >-
+      The Catholic Encyclopedia's own Romans article says "The time of
+      composition is thus exactly determined" and then prints no year at all;
+      it places the writing "at the end of the third missionary journey", at
+      Corinth, "shortly before Paul's departure for Macedonia". The two years
+      below come from two other articles of the same encyclopedia and disagree
+      with each other.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the Catholic Encyclopedia (vol. 11,
+          1911) sets out a chronology of the Apostle's life in which the
+          Epistles are placed by year: "third mission, 53-57; (1 and 2
+          Corinthians; Galatians), 56; (Romans), 57".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        note: >-
+          Offered as a reconstruction in which "all certain or probable data
+          seem to be satisfactorily taken into account", not as an attested
+          date.
+        date:
+          precision: year
+          from: {year: 57, era: ad}
+          label: "(Romans), 57"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Ladeuze's article "Epistle to the Ephesians" in the Catholic
+          Encyclopedia (vol. 5, 1909) dates Romans in passing while arguing
+          about the captivity letters: their doctrine "belongs to an epoch
+          subsequent to the composition of the Epistle to the Romans (58)".
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae]
+        note: >-
+          An incidental figure inside another article's argument, and one year
+          later than the St. Paul article's; the encyclopedia never reconciles
+          the two.
+        date:
+          precision: year
+          from: {year: 58, era: ad}
+          label: "the Epistle to the Romans (58)"
+
+  - id: composition.first-epistle-to-the-corinthians
+    title: The First Epistle to the Corinthians
+    scope: {book: 1Cor}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Aherne's article "Epistles to the Corinthians" in the Catholic
+          Encyclopedia (vol. 4, 1908): "St. Paul at once wrote the First
+          Epistle to the Corinthians and sent it by Titus about Easter A.D.
+          57." The same article places the writing "towards the end" of Paul's
+          nearly three years at Ephesus.
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d]
+        note: >-
+          The year is stated flatly; the hedge "about" governs the point within
+          the year, which the article does not fix beyond Easter.
+        date:
+          precision: year
+          from: {year: 57, era: ad}
+          label: "about Easter A.D. 57"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          assigns a different year in its reconstructed chronology: "(1 and 2
+          Corinthians; Galatians), 56".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 56, era: ad}
+          label: "(1 and 2 Corinthians; Galatians), 56"
+
+  - id: composition.second-epistle-to-the-corinthians
+    title: The Second Epistle to the Corinthians
+    scope: {book: 2Cor}
+    note: >-
+      The Catholic Encyclopedia's Corinthians article prints no A.D. year for
+      the Second Epistle at all; it gives only an interval from the First. The
+      St. Paul article's single year for both letters cannot be squared with
+      the Corinthians article's own "about Easter A.D. 57" for the First plus
+      "a few months", so neither claim is preferred.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Aherne's article "Epistles to the Corinthians" in the Catholic
+          Encyclopedia (vol. 4, 1908): "The Second Epistle was written a few
+          months after the First, in which St. Paul had stated that he intended
+          to go round by Macedonia." He "purposely delayed in Macedonia, and
+          sent them this Epistle".
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d]
+        note: >-
+          Recorded as a relative claim because the article states an interval
+          from the First Epistle and no absolute year; the year that follows
+          depends on which date for the First Epistle is taken.
+        date:
+          precision: relative
+          relative:
+            of: composition.first-epistle-to-the-corinthians
+            statement: a few months after the First, from Macedonia
+          label: "a few months after the First"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          assigns both Corinthian letters to one year in its reconstructed
+          chronology: "(1 and 2 Corinthians; Galatians), 56".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 56, era: ad}
+          label: "(1 and 2 Corinthians; Galatians), 56"
+
+  - id: composition.epistle-to-the-galatians
+    title: The Epistle to the Galatians
+    scope: {book: Gal}
+    note: >-
+      Aherne's article sets out three datings, each resting on a different
+      answer to the North- versus South-Galatian question, which the same
+      article treats at length and does not close. It ranks them without
+      deciding, so all four claims here are disputed.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Aherne's article "Epistle to the Galatians" in the Catholic
+          Encyclopedia (vol. 6, 1909), first opinion: "Prof. Sir W. Ramsay ...
+          and a Catholic professor, Dr. Valentin Weber ... maintain that it was
+          written from Antioch, before the council (A.D. 49-50)", Marcion
+          having asserted that it was the first of St Paul's Epistles.
+        sources: [artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398]
+        note: >-
+          Of this earliest dating the article says: "Weber's arguments are very
+          plausible, but not quite convincing."
+        date:
+          precision: interval
+          from: {year: 49, era: ad}
+          to: {year: 50, era: ad}
+          label: "A.D. 49-50"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article, second opinion: "Cornel and the majority of the
+          upholders of the South-Galatian theory suppose, with much greater
+          probability, that it was written about A.D. 53, 54."
+        sources: [artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398]
+        note: >-
+          This is the reading the article rates highest — "with much greater
+          probability" — but it stops short of deciding, and the underlying
+          South-Galatian theory is itself in dispute in the same article.
+        date:
+          precision: interval
+          from: {year: 53, era: ad}
+          to: {year: 54, era: ad}
+          label: "about A.D. 53, 54"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          The same article, third opinion: "Those who defend the
+          North-Galatian theory place it as late as A.D. 57 or 58."
+        sources: [artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398]
+        date:
+          precision: interval
+          from: {year: 57, era: ad}
+          to: {year: 58, era: ad}
+          label: "A.D. 57 or 58"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          gives a fourth figure in its reconstructed chronology, grouping
+          Galatians with the Corinthian letters: "(1 and 2 Corinthians;
+          Galatians), 56".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 56, era: ad}
+          label: "(1 and 2 Corinthians; Galatians), 56"
+
+  - id: composition.epistle-to-the-ephesians
+    title: The Epistle to the Ephesians
+    scope: {book: Eph}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Ladeuze's article "Epistle to the Ephesians" in the Catholic
+          Encyclopedia (vol. 5, 1909): the captivity letters "were not written
+          previously to the captivity in Caesarea (58-60) ... It consequently
+          remains for them to be ascribed to a period between 58 and 63, but
+          whether they were produced in Caesarea or in Rome (61-63) is still a
+          much mooted question."
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae]
+        note: >-
+          The window is asserted of the captivity letters as a group. The
+          article records one dissent, which it does not adopt: "Lisco is the
+          only one nowadays who claims that these letters antedate the great
+          captivity of St. Paul, maintaining that the Apostle must have written
+          them while a prisoner in Ephesus in 57."
+        date:
+          precision: interval
+          from: {year: 58, era: ad}
+          to: {year: 63, era: ad}
+          label: "a period between 58 and 63"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          pins the captivity letters to a single year in its reconstructed
+          chronology: "captivity at Rome, 60-62; (Philemon; Colossians;
+          Ephesians; Philippians), 61".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        note: >-
+          The Roman captivity itself is dated differently in three articles of
+          this encyclopedia — 60-62 here, 61-63 in the Ephesians and Hebrews
+          articles, 62-64 in the Philippians article — and the difference is
+          what drives the disagreement over the captivity letters.
+        date:
+          precision: year
+          from: {year: 61, era: ad}
+          label: "(Philemon; Colossians; Ephesians; Philippians), 61"
+
+  - id: composition.epistle-to-the-philippians
+    title: The Epistle to the Philippians
+    scope: {book: Phil}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Vander Heeren's article "Epistle to the Philippians" in the Catholic
+          Encyclopedia (vol. 12, 1911): "it is certain that it was written not
+          at Caesarea, as some have maintained, but at Rome (A.D. 62-64)."
+        sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824]
+        note: >-
+          Within that window the article leaves the position unsettled:
+          "Critics do not agree as to whether the Epistle was written at the
+          beginning of the sojourn at Rome or at the end, before or after the
+          other three Epistles of the captivity", the writer himself holding
+          for the end.
+        date:
+          precision: interval
+          from: {year: 62, era: ad}
+          to: {year: 64, era: ad}
+          label: "at Rome (A.D. 62-64)"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          gives a single year for the four captivity letters: "(Philemon;
+          Colossians; Ephesians; Philippians), 61" — a year that falls outside
+          the Philippians article's own 62-64 window.
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 61, era: ad}
+          label: "(Philemon; Colossians; Ephesians; Philippians), 61"
+
+  - id: composition.epistle-to-the-colossians
+    title: The Epistle to the Colossians
+    scope: {book: Col}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Aherne's article "Epistle to the Colossians" in the Catholic
+          Encyclopedia (vol. 4, 1908): "It was in such circumstances that these
+          Epistles were written, some time between A.D. 61 and 63."
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04131b-08367306]
+        note: >-
+          "These Epistles" is the captivity group — Colossians with Ephesians
+          and Philemon — so the article establishes the group's window rather
+          than a date for Colossians alone.
+        date:
+          precision: interval
+          from: {year: 61, era: ad}
+          to: {year: 63, era: ad}
+          label: "some time between A.D. 61 and 63"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          assigns a single year to the captivity letters: "(Philemon;
+          Colossians; Ephesians; Philippians), 61", under a Roman captivity it
+          dates 60-62 rather than 61-63.
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 61, era: ad}
+          label: "(Philemon; Colossians; Ephesians; Philippians), 61"
+
+  - id: composition.epistle-to-philemon
+    title: The Epistle to Philemon
+    scope: {book: Philem}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Camerlynck's article "Philemon" in the Catholic Encyclopedia (vol.
+          11, 1911) places it among the captivity letters of the first Roman
+          imprisonment: "Colossians, Ephesians, and Philippians are closely
+          connected, so that the general opinion is that they were written and
+          despatched at the same time, between A.D. 61-63."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11797b-acad9502]
+        note: >-
+          The window is stated of Colossians, Ephesians and Philippians, with
+          Philemon placed beside them as the fourth captivity epistle. The
+          article records a rejected alternative: "Some scholars assign the
+          composition to Caesarea (Acts 23-26: A.D. 59-60), but both tradition
+          and internal evidence are in favour of Rome."
+        date:
+          precision: interval
+          from: {year: 61, era: ad}
+          to: {year: 63, era: ad}
+          label: "between A.D. 61-63"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          gives one year for all four captivity letters: "(Philemon;
+          Colossians; Ephesians; Philippians), 61".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 61, era: ad}
+          label: "(Philemon; Colossians; Ephesians; Philippians), 61"
+
+  - id: composition.first-epistle-to-the-thessalonians
+    title: The First Epistle to the Thessalonians
+    scope: {book: 1Thess}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Drum's article "Epistles to the Thessalonians" in the Catholic
+          Encyclopedia (vol. 14, 1912): "First Thessalonians was written during
+          the eighteen months Paul stayed at Corinth ... in the year 53 or 54
+          according to the commonly received scheme of Pauline chronology."
+          Both Thessalonian letters "are generally considered to be the
+          earliest extant writings of St. Paul."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74]
+        note: >-
+          The same sentence offers a rival figure, "the year 48 or 49,
+          according to the chronology of Harnack", which is not authored here
+          because Harnack is a critic the encyclopedia reports rather than an
+          authority of this profile. The article also notes that "Some few now
+          deem it proved that Paul wrote to the South Galatians even before he
+          wrote to the Thessalonians".
+        date:
+          precision: interval
+          from: {year: 53, era: ad}
+          to: {year: 54, era: ad}
+          label: "in the year 53 or 54 according to the commonly received scheme of Pauline chronology"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          gives a different year for both letters in its reconstructed
+          chronology: "second mission, 50-53; (1 and 2 Thessalonians), 52".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 52, era: ad}
+          label: "(1 and 2 Thessalonians), 52"
+
+  - id: composition.second-epistle-to-the-thessalonians
+    title: The Second Epistle to the Thessalonians
+    scope: {book: 2Thess}
+    note: >-
+      The Thessalonians article prints no year for the Second Epistle; it dates
+      it only by its nearness to the First, whose own year that article leaves
+      at 53 or 54, against the St. Paul article's 52.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Drum's article "Epistles to the Thessalonians" in the Catholic
+          Encyclopedia (vol. 14, 1912): "II Thessalonians was written at
+          Corinth not long after I Thessalonians, for both Timothy and Silas
+          are still with Paul (i, 1)."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74]
+        note: >-
+          Recorded as relative because the article states only an interval from
+          the First Epistle; the article rejects the textus receptus
+          subscription placing the letters at Athens.
+        date:
+          precision: relative
+          relative:
+            of: composition.first-epistle-to-the-thessalonians
+            statement: at Corinth not long after I Thessalonians
+          label: "at Corinth not long after I Thessalonians"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
+          gives one year for both Thessalonian letters in its reconstructed
+          chronology: "(1 and 2 Thessalonians), 52".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        date:
+          precision: year
+          from: {year: 52, era: ad}
+          label: "(1 and 2 Thessalonians), 52"
+
+  - id: composition.first-epistle-to-timothy
+    title: The First Epistle to Timothy
+    scope: {book: 1Tim}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Prat's article "St. Paul" in the Catholic Encyclopedia (vol. 11,
+          1911) places the Pastorals in its chronology of the Apostle's life:
+          "second period of activity, 62-66; (1 Timothy; Titus), second arrest,
+          66; (2 Timothy), martyrdom, 67."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        note: >-
+          The encyclopedia's own article on the Epistles to Timothy and Titus
+          carries no date-of-composition section and prints no year, so this
+          reconstruction is the only figure the inspected sources supply; it
+          groups 1 Timothy with Titus without distinguishing them, and is
+          offered as a scheme in which "all certain or probable data seem to be
+          satisfactorily taken into account".
+        date:
+          precision: year
+          from: {year: 66, era: ad}
+          label: "(1 Timothy; Titus), second arrest, 66"
+
+  - id: composition.epistle-to-titus
+    title: The Epistle to Titus
+    scope: {book: Tit}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Prat's article "St. Paul" in the Catholic Encyclopedia (vol. 11,
+          1911) places Titus with the First Epistle to Timothy at the second
+          arrest: "(1 Timothy; Titus), second arrest, 66".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        note: >-
+          The clause states no year for Titus apart from 1 Timothy, and the
+          encyclopedia's article on the Epistles to Timothy and Titus prints no
+          composition year at all; this is a reconstruction, not an attested
+          date.
+        date:
+          precision: year
+          from: {year: 66, era: ad}
+          label: "(1 Timothy; Titus), second arrest, 66"
+
+  - id: composition.second-epistle-to-timothy
+    title: The Second Epistle to Timothy
+    scope: {book: 2Tim}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Prat's article "St. Paul" in the Catholic Encyclopedia (vol. 11,
+          1911) puts the Second Epistle to Timothy at the end of its
+          chronology of the Apostle's life: "(2 Timothy), martyrdom, 67".
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
+        note: >-
+          A reconstruction: the encyclopedia's article on the Epistles to
+          Timothy and Titus prints no composition year. Jerome, De viris
+          illustribus 5, independently places the letter on the eve of Paul's
+          death — written "at the time when he was about to be put to death
+          dictating his epistle as he did while in chains" — and dates the
+          martyrdom by regnal and post-Passion reckoning, "in the fourteenth
+          year of Nero ... the twenty-seventh year after our Lord's passion",
+          with no A.D. year; that reckoning is not converted here.
+        date:
+          precision: year
+          from: {year: 67, era: ad}
+          label: "(2 Timothy), martyrdom, 67"
+
+  - id: composition.epistle-to-the-hebrews
+    title: The Epistle to the Hebrews
+    scope: {book: Heb}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Fonck's article "Epistle to the Hebrews" in the Catholic Encyclopedia
+          (vol. 7, 1910): "The most probable date for its composition is,
+          therefore, the second half of the year 63 or the beginning of 64, as
+          Paul after his release from imprisonment probably soon undertook the
+          missionary journey 'as far as the boundaries of Western Europe'."
+        sources: [artifact.catholic-encyclopedia.volume-7.new-york-1910.newadvent-07181a-f2f73f92]
+        note: >-
+          The article reaches the figure between bounds it asserts rather than
+          finds attested: after the death of James, Bishop of Jerusalem (62),
+          before the outbreak of the Jewish War (67) and the destruction of
+          Jerusalem (70). It gives the place as Italy, "more precisely Rome".
+          Authorship is separately disputed in the sources: Jerome reports that
+          the Epistle "is not considered his", being reckoned "either according
+          to Tertullian to be the work of Barnabas, or according to others, to
+          be by Luke the Evangelist or Clement".
+        date:
+          precision: interval
+          from: {year: 63, era: ad}
+          to: {year: 64, era: ad}
+          label: "the second half of the year 63 or the beginning of 64"
+
+  - id: composition.epistle-of-st-james
+    title: The Epistle of St James
+    scope: {book: James}
+    note: >-
+      Two articles of the Catholic Encyclopedia take opposite views of when
+      this Epistle was written, and the second says in terms that the grounds
+      for the first "are not entirely convincing", so neither is preferred.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Camerlynck's article "Epistle of St. James" in the Catholic
+          Encyclopedia (vol. 8, 1910): "The Epistle was probably written about
+          A.D. 47. The reference to the persecutions (ii, 6) is in the present
+          tense, and indicates a stage of suffering which has not yet receded
+          into the past of history."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08275b-53821a60]
+        note: >-
+          The article's upper bound is the Council of Jerusalem, which it dates
+          to A.D. 51: "the author could not have written after the Council of
+          Jerusalem (A.D. 51), where James acted as president, without some
+          allusion to his decision."
+        date:
+          precision: approximate-year
+          from: {year: 47, era: ad}
+          label: "probably written about A.D. 47"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Merk's article "Epistle to the Romans" in the Catholic Encyclopedia
+          (vol. 13, 1912) rejects the early dating and proposes a later one:
+          "the grounds for the assigning of this date to the Epistle are not
+          entirely convincing, since the Epistle fits in better with the
+          conditions of the succeeding decades. ... If the Epistle of St. James
+          were composed shortly after the year 60, it might ... have been
+          influenced by the misunderstood views of the teachings of St. Paul."
+        sources: [artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13156a-dd2f7a55]
+        note: >-
+          The article puts the figure conditionally, in the course of arguing
+          that James may answer misunderstandings of St Paul; it is recorded
+          here as the rival Catholic dating the encyclopedia carries, not as a
+          flat assertion. The same passage dismisses the second-century dating
+          of Baur, Hilgenfeld, Holtzmann, von Soden and Julicher as "scarcely
+          intelligible", and those figures are no part of this profile.
+        date:
+          precision: approximate-year
+          from: {year: 60, era: ad}
+          label: "shortly after the year 60"
+
+  - id: composition.first-epistle-of-st-peter
+    title: The First Epistle of St Peter
+    scope: {book: 1Pet}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Vander Heeren's article "Epistles of Saint Peter" in the Catholic
+          Encyclopedia (vol. 11, 1911): "The most probable opinion is that
+          which places it about the end of the year 63 or the beginning of 64;
+          and St. Peter having suffered martyrdom at Rome in 64 (67?) the
+          Epistle could not be subsequent to that date."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11752a-2d7ff54c]
+        note: >-
+          The article leaves the date of Peter's own martyrdom unresolved —
+          "64 (67?)" — and derives its lower bound from Ephesians, "since the
+          Epistle to the Ephesians was written at the end of Paul's first
+          captivity at Rome (61-63)". The 80-160 spread it also reports belongs
+          to "critics who deny the authenticity of the Epistle" and is no part
+          of this profile.
+        date:
+          precision: interval
+          from: {year: 63, era: ad}
+          to: {year: 64, era: ad}
+          label: "about the end of the year 63 or the beginning of 64"
+
+  - id: composition.second-epistle-of-st-peter
+    title: The Second Epistle of St Peter
+    scope: {book: 2Pet}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Vander Heeren's article "Epistles of Saint Peter" in the Catholic
+          Encyclopedia (vol. 11, 1911): "the advocates of its authenticity
+          maintain that it was written after 63-4, the date of the First
+          Epistle, and before 64-5, the date believed to be that of the death
+          of St. Peter (i, 14). Like the First, it was written at Rome."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11752a-2d7ff54c]
+        note: >-
+          The window is wholly derived from two dates the same article leaves
+          unsettled, that of the First Epistle and that of Peter's death; the
+          endpoints recorded here are the outer years the article names. The
+          "about 150" it also reports is expressly the position of those who
+          reject the Epistle's authenticity. Jerome, De viris illustribus 1,
+          records the ancient doubt that the Second Epistle "on account of its
+          difference from the first in style, is considered by many not to be
+          by him".
+        date:
+          precision: interval
+          from: {year: 63, era: ad}
+          to: {year: 65, era: ad}
+          label: "after 63-4, the date of the First Epistle, and before 64-5"
+
+  - id: composition.epistle-of-st-jude
+    title: The Epistle of St Jude
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Camerlynck's article "Epistle of Saint Jude" in the Catholic
+          Encyclopedia (vol. 8, 1910): "we have shown that the Epistle of St.
+          Jude was written before II Peter, which latter was probably written
+          A.D. 64 (65). Therefore St. Jude must have written shortly before 64
+          (65)."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08542b-4e4b3466]
+        note: >-
+          The article opens by saying "It is difficult to state the exact time
+          at which St. Jude wrote his Epistle", and the figure is entirely
+          derivative: it depends on Jude's priority to the Second Epistle of St
+          Peter and on that Epistle's own unsettled date. The article also
+          records a contrary internal signal, that "the doctrines against which
+          he inveighs ... seem to indicate the end of the Apostolic age", and
+          its own upper bound, that "Jude seems to have written before A.D. 70;
+          otherwise in vv. 5-7 he would have spoken of the destruction of
+          Jerusalem".
+        date:
+          precision: approximate-year
+          from: {year: 64, era: ad}
+          label: "shortly before 64 (65)"
+
+  - id: composition.first-epistle-of-st-john
+    title: The First Epistle of St John
+    scope: {book: 1John}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
+          writings belong to the end of the first century, from the year 90 to
+          100 (approximately)."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          The window is asserted of the Johannine writings collectively, not of
+          this Epistle by itself. The encyclopedia's own article on the
+          Epistles of St John prints no year: "Nothing certain can be
+          determined in this matter. The arguments are probable in favour of
+          Ephesus and also for the last few years of the first century."
+        date:
+          precision: interval
+          from: {year: 90, era: ad}
+          to: {year: 100, era: ad}
+          label: "from the year 90 to 100 (approximately)"
+
+  - id: composition.second-epistle-of-st-john
+    title: The Second Epistle of St John
+    scope: {book: 2John}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
+          writings belong to the end of the first century, from the year 90 to
+          100 (approximately)."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          The window is asserted of the Johannine writings collectively. Drum's
+          article on the Epistles of St John gives no year for the two short
+          letters: "Nothing certain is known as to time and place of writing;
+          but it is generally supposed that the two small letters were written
+          by John towards the end of his long life and in Ephesus."
+        date:
+          precision: interval
+          from: {year: 90, era: ad}
+          to: {year: 100, era: ad}
+          label: "from the year 90 to 100 (approximately)"
+
+  - id: composition.third-epistle-of-st-john
+    title: The Third Epistle of St John
+    scope: {book: 3John}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
+          writings belong to the end of the first century, from the year 90 to
+          100 (approximately)."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          The window is asserted of the Johannine writings collectively. Drum's
+          article on the Epistles of St John covers this letter and the Second
+          in one sentence and gives no year: "Nothing certain is known as to
+          time and place of writing; but it is generally supposed that the two
+          small letters were written by John towards the end of his long life
+          and in Ephesus."
+        date:
+          precision: interval
+          from: {year: 90, era: ad}
+          to: {year: 100, era: ad}
+          label: "from the year 90 to 100 (approximately)"
+
+  - id: composition.apocalypse
+    title: The Apocalypse of St John
+    scope: {book: Apoc}
+    note: >-
+      Van den Biesen's article records the tradition and at once records what
+      stands against it — "Tradition assigns the Apocalypse to the reign of
+      Domitian. But according to the computation given above, the Seer himself
+      assigns his work to the reign of Vespasian" — and a second Catholic
+      Encyclopedia article dates the Johannine writings differently, so neither
+      claim is preferred.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Van den Biesen's article "Apocalypse" in the Catholic Encyclopedia
+          (vol. 1, 1907) states that "Tradition assigns the Apocalypse to the
+          reign of Domitian", following Irenaeus, who "places the Seer's exile
+          in Patmos at the end of Domitian's reign", and prints the reign
+          itself as "The Emperor Domitian reigned A.D. 81-96."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01594b-7f47696f]
+        note: >-
+          The endpoints are the article's own years for Domitian's reign, which
+          is the widest window its testimony supports; the sharper pegs it
+          reports are regnal and are not converted here — Eusebius "adds as the
+          year of the Seer's exile the fourteenth of Domitian's reign", and
+          Jerome follows "the same tradition". The dated occasion is the exile
+          to Patmos, which the article treats as the occasion of the book.
+          Epiphanius's rival placing of the banishment "in the reign of
+          Claudius, A.D. 41-54" the article calls "exceedingly improbable", and
+          it is not authored here.
+        date:
+          precision: interval
+          from: {year: 81, era: ad}
+          to: {year: 96, era: ad}
+          label: "the reign of Domitian ... A.D. 81-96"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          Durand's article "The New Testament" in the Catholic Encyclopedia
+          (vol. 14, 1912) includes the Apocalypse in the Johannine corpus it
+          dates "from the year 90 to 100 (approximately)", adding the
+          qualification "except perhaps the Apocalypse, which some modern
+          critics date from about the end of the reign of Nero, A.D. 68".
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        note: >-
+          The A.D. 68 exception is attributed by the article to "some modern
+          critics" and is not authored here; this profile does not treat modern
+          critical chronology as an authority.
+        date:
+          precision: interval
+          from: {year: 90, era: ad}
+          to: {year: 100, era: ad}
+          label: "from the year 90 to 100 (approximately)"
+
+  # --- ot-composition ----------------------------------------------------
+  - id: composition.third-book-of-kings
+    title: The Third Book of Kings
+    scope: {book: 3Kings}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Schets's "Third and Fourth Books of Kings" in the Catholic Encyclopedia
+          states that "The Books of Kings were not completed in their present form
+          before the middle of the Exile," and that on the Talmudic attribution to
+          Jeremias, "If Jeremias be indeed the author, it must be accepted as
+          probable that he wrote the book not long before, or shortly after, the
+          fall of Jerusalem (587 B.C. )". The 587 figure is the only year the
+          article attaches to the writing.
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
+        note: >-
+          The year is CONDITIONAL in the source on Jeremias being the author, which
+          the article reports as an opinion ("Not a few among both older and more
+          recent exegetes consider this probable"), not as settled. The article's own
+          unconditional statement carries no year: the books "were not completed in
+          their present form before the middle of the Exile." It adds that "the last
+          verses (xxv, 27-30) have possibly been added by a different hand"; the 562
+          date in the same passage belongs to Joachim's release from bondage, not to
+          the writing.
+        date:
+          precision: approximate-year
+          from: {year: 587, era: bc}
+          label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
+
+  - id: composition.fourth-book-of-kings
+    title: The Fourth Book of Kings
+    scope: {book: 4Kings}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Schets's "Third and Fourth Books of Kings" in the Catholic Encyclopedia
+          treats the two books as one work and states that "The Books of Kings were
+          not completed in their present form before the middle of the Exile," adding
+          that "If Jeremias be indeed the author, it must be accepted as probable that
+          he wrote the book not long before, or shortly after, the fall of Jerusalem
+          (587 B.C. )".
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
+        note: >-
+          The year is CONDITIONAL in the source on Jeremias being the author, which the
+          article reports as an opinion drawn from the Babylonian Talmud rather than as
+          settled. The article's own unconditional statement carries no year. It adds
+          that "the last verses (xxv, 27-30) have possibly been added by a different
+          hand"; the 562 date in the same passage belongs to Joachim's release from
+          bondage, not to the writing.
+        date:
+          precision: approximate-year
+          from: {year: 587, era: bc}
+          label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
+
+  - id: composition.first-book-of-paralipomenon
+    title: The First Book of Paralipomenon
+    scope: {book: 1Par}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Paralipomenon (Chronicles)" in the Catholic
+          Encyclopedia reports that "The older writers generally attributed the
+          authorship to Esdras" and that "most Catholic authors still adhere to
+          Esdrine authorship, and place the time of composition at the end of the
+          fifth or at the beginning of the fourth century B. C." The article prefaces
+          both views with "The Books of Paralipomenon were undoubtedly written after
+          the Restoration."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11472a-5b13e868]
+        note: >-
+          The source names centuries, not years. The structured bounds are the fifth
+          and fourth centuries B.C. entire, which is wider than the claim: the article
+          places the composition at the TURN of those centuries. The narrowing is in
+          the label and is the machine-readable claim's own limit, not a licence to
+          treat 500 or 301 B.C. as asserted. This is a statement of what "most Catholic
+          authors" hold, not a magisterial determination. PROFILE BOUNDARY: the same
+          paragraph reports that "Most modern non-Catholic scholars attribute the work
+          to an unknown writer and place its date between 300 and 250 B.C." — a modern
+          critical dating this profile does not consult.
+        date:
+          precision: interval
+          from: {year: 500, era: bc}
+          to: {year: 301, era: bc}
+          label: "the end of the fifth or at the beginning of the fourth century B. C."
+
+  - id: composition.second-book-of-paralipomenon
+    title: The Second Book of Paralipomenon
+    scope: {book: 2Par}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Paralipomenon (Chronicles)" in the Catholic
+          Encyclopedia treats the two books as one work, reports that "The older
+          writers generally attributed the authorship to Esdras," and states that
+          "most Catholic authors still adhere to Esdrine authorship, and place the
+          time of composition at the end of the fifth or at the beginning of the
+          fourth century B. C."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11472a-5b13e868]
+        note: >-
+          The source names centuries, not years. The structured bounds are the fifth
+          and fourth centuries B.C. entire, which is wider than the claim: the article
+          places the composition at the TURN of those centuries, as the label records.
+          This is a statement of what "most Catholic authors" hold, not a magisterial
+          determination. PROFILE BOUNDARY: the same paragraph reports that "Most modern
+          non-Catholic scholars attribute the work to an unknown writer and place its
+          date between 300 and 250 B.C." — a modern critical dating this profile does
+          not consult.
+        date:
+          precision: interval
+          from: {year: 500, era: bc}
+          to: {year: 301, era: bc}
+          label: "the end of the fifth or at the beginning of the fourth century B. C."
+
+  - id: composition.book-of-tobias
+    title: The Book of Tobias
+    scope: {book: Tob}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's "Tobias" in the Catholic Encyclopedia concludes that "If we accept the
+          story as fact-narrative, we naturally conclude that it was written originally
+          during the Babylonian Exile , in the early portion of the seventh century
+          B.C.; and that all save the last chapter was the work of the elder and
+          younger Tobias."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14749c-337eb42a]
+        note: >-
+          The claim is conditional in the source on its own premise, "If we accept the
+          story as fact-narrative," which the article defends but does not treat as
+          self-evident. The source names a century, not a year, and narrows within it
+          to "the early portion"; the structured bounds are the seventh century B.C.
+          entire and are therefore wider than the claim. The article adds that "It is
+          likely that the elder Tobias wrote at least that part of the original work in
+          which he uses the first person singular." The article's own placement of the
+          deportation of Nephthali at 734 B.C. sits oddly beside a seventh-century
+          date; the source does not reconcile the two and neither does this corpus.
+          PROFILE BOUNDARY: the same paragraph records the datings it rejects —
+          "Almost all Protestant scholars consider the book post-Exilic. Ewald assigns
+          it to 350 B.C.; Hgen, the bulk to 280 B.C.; Gratz , to A.D. 130; Kohut, to
+          A.D. 226."
+        date:
+          precision: interval
+          from: {year: 700, era: bc}
+          to: {year: 601, era: bc}
+          label: "during the Babylonian Exile, in the early portion of the seventh century B.C."
+
+  - id: composition.book-of-esther
+    title: The Book of Esther
+    scope: {book: Esth}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          McMahon's "Esther" in the Catholic Encyclopedia states that "the absence in
+          the text of allusion to Jerusalem seems to lead to the conclusion that the
+          book was written and published in Persia at the end of the reign of Xerxes I
+          (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)".
+          Those are the only regnal years the article attaches to the writing.
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05549a-ab721ede]
+        note: >-
+          The sentence is concessive: the article states this date and immediately
+          qualifies it, adding that "the text seems to offer several facts which may be
+          adduced with some show of reason in favour of a later date." It opens the same
+          discussion with "As to the authorship of the Book of Esther there is nothing
+          but conjecture," and records that "The Talmud (Baba Bathra 15a) assigns it to
+          the Great Synagogue; St. Clement of Alexandria ascribes it to Mardochai; St.
+          Augustine suggests Esdras as the author." PROFILE BOUNDARY: the same page
+          lists the late datings it declines to adopt — "135 B.C., 167 B.C., 238 B.C.,
+          the beginning of the third century B.C., or the early years of the Greek
+          period which began 332 B.C." — of which "The majority accept the last
+          opinion." Those are the modern critical positions, not this claim.
+        date:
+          precision: interval
+          from: {year: 485, era: bc}
+          to: {year: 425, era: bc}
+          label: "at the end of the reign of Xerxes I (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)"
+
+  - id: composition.book-of-wisdom
+    title: The Book of Wisdom
+    scope: {book: Wis}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Book of Wisdom" in the Catholic Encyclopedia states that "It is
+          universally admitted that when the writer describes a period of moral
+          degradation and persecution under unrighteous rulers who are threatened with
+          heavy judgment, he has in view the time of either Ptolemy IV Philopator
+          (221-204 B.C.), or Ptolemy VII Physicon (145-117 B.C.), for it is only under
+          these depraved princes that the Egyptian Jews had to endure persecution ."
+        sources: [artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07]
+        note: >-
+          The article does not choose between the two reigns — "it is confessedly
+          difficult to decide which of these two monarchs the author of Wisdom had
+          actually in view" — and allows that the work "was published after the demise
+          of those princes," so the structured bounds are the envelope of the two
+          reigns the source prints, not a single stated window. This is the case where
+          the Catholic Encyclopedia's own position DISPLACES the older tradition: it
+          holds that "the fact that the entire Book of Wisdom was composed in Greek
+          rules out its Solomonic authorship" and that "At the present day, it is freely
+          admitted that Solomon is not the writer of the Book of Wisdom." The displaced
+          tradition is recorded and not asserted here: "ecclesiastical writers of the
+          first centuries commonly assumed this authorship on the basis of the title of
+          the book ... But this view of the matter never was unanimous in the Early
+          Christian Church." No Solomonic date for Wisdom stands on this source.
+        date:
+          precision: interval
+          from: {year: 221, era: bc}
+          to: {year: 117, era: bc}
+          label: "the time of either Ptolemy IV Philopator (221-204 B.C.), or Ptolemy VII Physicon (145-117 B.C.)"
+
+  - id: composition.book-of-ecclesiasticus
+    title: Ecclesiasticus
+    scope: {book: Ecclus}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Ecclesiasticus" in the Catholic Encyclopedia computes the date from
+          the translator's prologue: the grandson came to Egypt in "the year 132 B.C.",
+          so "the translator's grandfather, the author of Ecclesiasticus, may be
+          regarded as having lived and written his work between forty and sixty years
+          before (between 190 and 170 B.C.)". The article concludes "that the author of
+          Ecclesiasticus lived about the beginning of the second century B.C."
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05263a-c3fe190d]
+        note: >-
+          Preferred because the article reaches this by its own argument and states
+          that "recent Catholic scholars, in increasing number, prefer this position"
+          over the rival identification of the high priest Simon of Sirach 50 with
+          Simon I. Three dates in this article must not be conflated: the composition
+          of the Hebrew original (190-170 B.C.), the grandson's arrival in Egypt (132
+          B.C.), and the Greek translation made "not long after" that arrival. The
+          article also rejects the Solomonic ascription, citing Augustine that "the more
+          learned ... know full well that it should not be referred" to Solomon.
+        date:
+          precision: interval
+          from: {year: 190, era: bc}
+          to: {year: 170, era: bc}
+          label: "between 190 and 170 B.C."
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article of the Catholic Encyclopedia records a competing Catholic
+          dating turning on which high priest Simon is meant: identifying the Simon of
+          Sirach 50 with Simon I "refers the composition of the book to about a century
+          earlier (about 280 B.C.)".
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05263a-c3fe190d]
+        note: >-
+          Kept because it is a Catholic position the source prints, not a critical one.
+          The article gives it as the view "recent Catholic scholars, in increasing
+          number" prefer the second-century dating TO, and its own argument from Simon
+          II's repairing of the Temple and the persecution under Ptolemy Philopator
+          runs against it. The source's own hedge "about" is preserved.
+        date:
+          precision: approximate-year
+          from: {year: 280, era: bc}
+          label: "about 280 B.C."
+
+  - id: composition.book-of-isaias
+    title: The Book of Isaias
+    scope: {book: Is}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Souvay's "Isaias" in the Catholic Encyclopedia places the prophetical
+          ministry "from the closing year of Ozias, King of Juda," which it gives as
+          the year of that prince's death, "(740 B.C. )", and holds that "since no
+          prophecies appear to be later than 701 B.C. , it is doubtful if Isaias saw the
+          reign of Manasses at all." Of the collection the article says it "might still
+          possibly be attributed to the last years of the Prophet's life or shortly
+          afterwards."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd]
+        note: >-
+          The two years date the PROPHET'S MINISTRY, which is the period the book's
+          prophecies come from; the article assigns no year to the writing or final
+          assembly of the collection and is expressly guarded about it — "The foregoing
+          analysis does not enable us to assert indubitably that this first collection
+          as such is the work of Isaias." 740 is attached by the article to the death of
+          Ozias while reporting Jerome's view of chapter vi, and 701 is the article's own
+          inference ("appear to be"). The traditional position on AUTHORSHIP carries no
+          year and is therefore not a second claim: the Pontifical Biblical Commission,
+          28 June 1908, decided that "There are no solid arguments to the fore, even
+          taken cumulatively, to prove that the book of Isaias is to be attributed not to
+          Isaias himself alone, but to two or rather to many authors". The article
+          concedes that the author of xl-lxvi "does speak from the point of view of the
+          Babylonian Captivity."
+        date:
+          precision: range
+          from: {year: 740, era: bc}
+          to: {year: 701, era: bc}
+          label: "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
+
+  - id: composition.book-of-jeremias
+    title: The Book of Jeremias
+    scope: {book: Jer}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Faulhaber's "Jeremias" in the Catholic Encyclopedia states that "Jeremias is
+          directed to write down, either personally or by his scribe Baruch, the
+          discourses he had given up to the fourth year of Joakim (604 B.C. )," and
+          that "This first authentic recension of the prophecies forms the basis of the
+          present Book of Jeremias."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
+        note: >-
+          604 B.C. dates the FIRST authentic recension, which the article says forms
+          the basis of the present book; it does not date the finished book. The same
+          paragraph records growth after it — "the first transcript was enlarged by
+          various insertions and additions from the pen of Baruch or of a later
+          prophet" — and singles out the last chapter as "an addition of the
+          post-Jeremianic period based on 2 Kings 24:18 - 25:30 , on account of the
+          concluding statement of li: 'Thus far are the words of Jeremias.'" The article
+          arranges the book by reign, from Josias through the period after the
+          destruction of Jerusalem, so parts of it are later than 604 on the article's
+          own showing.
+        date:
+          precision: year
+          from: {year: 604, era: bc}
+          label: "the fourth year of Joakim (604 B.C.)"
+
+  - id: composition.book-of-daniel
+    title: The Book of Daniel
+    scope: {book: Dan}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Book of Daniel" in the Catholic Encyclopedia frames the question as
+          whether the sole writer is "the Prophet Daniel who composed the work during
+          the Exile (586-536 B.C.)", and answers that "The traditional view, in vigour
+          chiefly among Catholics , is to the effect that the whole work, as found in
+          the Hebrew Bible, should be directly referred to Daniel, whose name it bears."
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e]
+        note: >-
+          586-536 B.C. is the article's own gloss on "the Exile", not a computed date
+          of writing. The traditional view as the article states it covers the whole
+          work "as found in the Hebrew Bible" — the deuterocanonical portions are
+          treated in a separate section of the article and are not covered by this
+          claim, although this unit's whole-book scope reaches them by inheritance
+          unless a narrower unit is authored over them. The view "admits, indeed, that
+          numerous alterations have been introduced into the primitive text of the book
+          in the course of ages." PROFILE BOUNDARY: the article argues at length against
+          the rival dating that places an unknown author in the time of Antiochus
+          Epiphanes.
+        date:
+          precision: interval
+          from: {year: 586, era: bc}
+          to: {year: 536, era: bc}
+          label: "during the Exile (586-536 B.C.)"
+
+  - id: composition.book-of-osee
+    title: The Prophecy of Osee
+    scope: {book: Os}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Calès's "Osee" in the Catholic Encyclopedia judges the book's superscription
+          "not quite satisfactory" and concludes that "The era of the Prophet,
+          therefore, if it is to be judged from his writings, ought to be placed about
+          750-735," since "None of the historical allusions with which the prophecy is
+          filled appears to be connected with any event later than the reign of Manahem
+          ( circa 745-735)."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+        note: >-
+          Preferred because the article reaches this from the prophecies themselves and
+          expressly sets the title-derived range aside as unsatisfactory. This dates the
+          era of the PROPHET, which is the period the book's oracles come from; the
+          article does not treat the writing or compilation of the book separately. The
+          source's own hedge "about" is preserved, and it prints the second range
+          without era letters.
+        date:
+          precision: range
+          from: {year: 750, era: bc}
+          to: {year: 735, era: bc}
+          label: "about 750-735"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article reports the range the book's own superscription yields:
+          "According to the title of the book, Osee prophesied during the reign of
+          Jeroboam II in Israel , and in the time of Ozias , Joatham, Achaz , and
+          Ezechias , kings of Juda, hence from about 750 to 725 B.C."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+        note: >-
+          Kept as the range the superscription gives, which the article prints and then
+          declines: "The title, however, is not quite satisfactory and does not seem to
+          be the original one." A title is evidence about a setting, not proof of a year.
+        date:
+          precision: range
+          from: {year: 750, era: bc}
+          to: {year: 725, era: bc}
+          label: "from about 750 to 725 B.C."
+
+  - id: composition.book-of-joel
+    title: The Prophecy of Joel
+    scope: {book: Joel}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Faulhaber's "Joel" in the Catholic Encyclopedia reports the traditional
+          dating: "The early commentators, in agreement with Jerome , placed the era of
+          composition in the eighth century B.C. ; they took Joel, therefore, as a
+          contemporary of Osee and Amos ." Their reasons were the book's place among the
+          twelve between Osee and Amos, and its silence about the Assyrians.
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08419a-c5e20537]
+        note: >-
+          The article REPORTS this dating and endorses no dating at all. It opens "The
+          most difficult problem in the investigation of Joel is the date, and the many
+          hypotheses have not led to any convincing result," undercuts the
+          eighth-century argument in the next sentence — "However, in a book of three
+          chapters not much weight can be attached to an argument from silence" — and
+          closes "None of the chronological hypotheses concerning Joel can claim to
+          possess convincing proof ." Preferred only in the sense that it is the sole
+          claim this profile holds on the subject and it is the position the early
+          commentators and Jerome took; it is not a settled date. The article prints two
+          alternatives without adopting either: the period of King Josias, and, by
+          "Later commentators", the period after the Exile. The source names a century,
+          not a year, so the structured bounds are the eighth century B.C. entire.
+        date:
+          precision: interval
+          from: {year: 800, era: bc}
+          to: {year: 701, era: bc}
+          label: "the eighth century B.C."
+
+  - id: composition.book-of-abdias
+    title: The Prophecy of Abdias
+    scope: {book: Abd}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Abdias" in the Catholic Encyclopedia reports that "Many among them
+          (Keil, Orelli, Vigouroux, Trochon, Lesêtre, etc.) assign its composition to
+          about the reign of Joram (ninth century B.C.)," and that "it is inferred that
+          the prophecy of Abdias originated between the reign of Joram and the time of
+          Joel and Amos , that is, about the middle of the ninth century B.C."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01030b-f708bbb1]
+        note: >-
+          The article does not decide. It opens by saying "there are various reasons,
+          literary and exegetical , which prevents scholars from agreeing upon the date
+          of its composition," and reports rather than endorses this dating ("we are
+          told", "it is inferred", "is said also to be confirmed"). The whole case turns
+          on identifying the capture of Jerusalem in Abdias 11-14 with the sacking under
+          Joram rather than with Nabuchodonosor. The source names a century and narrows
+          within it to "about the middle", so the structured bounds are the ninth
+          century B.C. entire and are wider than the claim. Two further opinions stand
+          in the same section and are not authored here because the source prints no
+          year for either: Meyrick, Jahn, Ackerman and Allioli "refer the composition of
+          the book to about the time of the Babylonian Captivity , some three centuries
+          after King Joram," and "Others again, ascribe the present book of Abdias to a
+          still later date."
+        date:
+          precision: interval
+          from: {year: 900, era: bc}
+          to: {year: 801, era: bc}
+          label: "about the reign of Joram (ninth century B.C.)"
+
+  - id: composition.book-of-jonas
+    title: The Book of Jonas
+    scope: {book: Jon}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Driscoll's "Jonah" in the Catholic Encyclopedia records the traditional
+          authorship and the only period it attaches to it: "Jewish tradition assumed
+          that the Prophet Jonah was the author of the book bearing his name, and the
+          same has been generally maintained by the Christian writers who defend the
+          historical character of the narrative," the Prophet being one "who is supposed
+          to have lived in the eighth century B.C."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08497b-3ef68123]
+        note: >-
+          The eighth-century figure is attached in the source to the PROPHET'S LIFETIME
+          and is hedged as "supposed"; the article gives no date for the writing, and
+          immediately remarks "that nowhere does the book itself claim to have been
+          written by the Prophet". The source names a century, not a year, so the
+          structured bounds are the eighth century B.C. entire. On the events the article
+          says only "It is likely that the incidents took place during the period of
+          Assyrian decadence, i.e., the reign of either Asurdanil or Asurnirar (770-745
+          B.C.)" — a narrated-event statement, not this claim. PROFILE BOUNDARY: the same
+          sentence continues that "most modern scholars, for various reasons, assign the
+          date of the composition to a much later epoch, probably the fifth century
+          B.C." — a modern critical dating this profile does not consult.
+        date:
+          precision: interval
+          from: {year: 800, era: bc}
+          to: {year: 701, era: bc}
+          label: "the eighth century B.C."
+
+  - id: composition.book-of-micheas.chapters-1-3
+    title: The Prophecy of Micheas, chapters 1-3
+    scope: {book: Mich, chapter: 1, through: 3}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Van Hoonacker's "Book of Micheas" in the Catholic Encyclopedia states of the
+          first part that "There is a general consensus of opinion to attribute to the
+          Prophet Micheas the authorship of this part of the book" and that "Chapters
+          1-3 must have been composed shortly before the destruction of the Kingdom of
+          Samaria by the Assyrians (722 B.C.)."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-0de24478]
+        note: >-
+          Scoped to chapters 1-3 because that is exactly what the source dates. The
+          article gives NO year for chapters 4-5 or 6-7: it argues against post-exilic
+          origin for 4-5 without proposing a date, and says of 6-7 that "The opinions of
+          critics are much divided on the composition of these chapters." The article
+          notes "serious doubts have been expressed only concerning 2:11-12". The
+          prophet's ministry is separately placed "under the Kings Joathan (c. 740-735 B.
+          C.), Achaz (735-727?), and Ezechias (727-698?)" — the question marks are the
+          source's own — with the remark "We do not, however, appear to possess any of
+          his addresses prior to the reign of Ezechias."
+        date:
+          precision: approximate-year
+          from: {year: 722, era: bc}
+          label: "shortly before the destruction of the Kingdom of Samaria by the Assyrians (722 B.C.)"
+
+  - id: composition.book-of-nahum.chapters-2-3
+    title: The Prophecy of Nahum, chapters 2-3
+    scope: {book: Nah, chapter: 2, through: 3}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Souvay's "Nahum" in the Catholic Encyclopedia bounds the oracle on Ninive at
+          both ends: "Thebes was captured and destroyed by Assurbanipal in 664-663 B.C.",
+          which fixes the upper limit, and "The lower limit which it is allowable to
+          assign to this part of the book of Nahum is, of course, the fall of Ninive,
+          which a well-known inscription of Nabonidus permits us to fix at 607 or 606
+          B.C."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-2f9e032c]
+        note: >-
+          Scoped to chapters 2-3 because the article's bounding argument is expressly
+          about "this part of the book". It names no year of writing, says the date
+          "cannot be determined to the year", and offers only "a sufficiently accurate
+          approximation"; the structured bounds are the envelope of the years it prints.
+          This is a case where the Catholic Encyclopedia EXPLICITLY DISCARDS an older
+          tradition on Assyriological grounds: Josephus's placing of the prophecy "115
+          years before the fall of Ninive (about 721 B.C.)" and Nicephorus's making
+          Nahum a contemporary of Phacee "ought to be discarded as impossible." It also
+          excludes Eutychius's view that Nahum prophesied five years after the downfall
+          of Jerusalem, "therefore about 583-581". The article opens the same section
+          noting that "Until a recent date, both the unity and authenticity of the Book
+          of Nahum were undisputed."
+        date:
+          precision: interval
+          from: {year: 664, era: bc}
+          to: {year: 606, era: bc}
+          label: "after the capture of Thebes (No-Ammon) in 664-663 B.C. and before the fall of Ninive at 607 or 606 B.C."
+
+  - id: composition.book-of-habacuc
+    title: The Prophecy of Habacuc
+    scope: {book: Hab}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Habacuc (Habakkuk)" in the Catholic Encyclopedia, after surveying the
+          opinions, states that "the view which ascribes the book to 605-600 B.C. 'is
+          best in harmony with the historical circumstances under which the Chaldeans
+          are presented in the prophecy of Habacuc' (Van Hoonacker)."
+        sources: [artifact.catholic-encyclopedia.volume-7.new-york-1910.newadvent-07097a-8ad7be64]
+        note: >-
+          The preference is quoted from Van Hoonacker, not asserted flatly, and the
+          article says only that "these various views do not enjoy the same amount of
+          probability" and that "it is no easy matter to choose among them." A COMPETING
+          TRADITIONAL POSITION stands in the same section and is not authored as a second
+          claim because the source prints no year for it: "Ancient rabbis, whose view is
+          embodied in the Jewish chronicle entitled Seder olam Rabbah , and is still
+          accepted by many Catholic scholars ( Kaulen , Zschokke, Knabenbauer, Schenz,
+          Cornely , etc.), refer the composition of the book to the last years of
+          Manasses's reign." Do not merge the two. The article also prints Clement of
+          Alexandria's "Habacuc still prophesied in the time of Sedecias" (599-588 B.C.),
+          Jerome's ascription to the Babylonian Exile — which it calls "decidedly the
+          least probable" and notes "is now that propounded by many rationalists" — and
+          "Some recent scholars ... place it under Josias (641-610 B.C.)". On chapter iii
+          the article records real doubt about authorship.
+        date:
+          precision: interval
+          from: {year: 605, era: bc}
+          to: {year: 600, era: bc}
+          label: "605-600 B.C."
+
+  - id: composition.book-of-sophonias
+    title: The Prophecy of Sophonias
+    scope: {book: Soph}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Faulhaber's "Sophonias (Zephaniah)" in the Catholic Encyclopedia states that
+          "The date of the Prophet's activity fell in the reign of King Josias (641-11)"
+          and that "Sophonias is one of the few Prophets whose chronology is fixed by a
+          precise date in the introductory verse of the book."
+        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14146a-4ff4aa4c]
+        note: >-
+          The source prints the reign as "(641-11)", an abbreviated form for 641-611
+          with no era letters; the label keeps the source's own printing and the
+          structured endpoints spell out the terminal year. The range dates the
+          PROPHET'S ACTIVITY, not the writing of the book, and the article does not
+          narrow further within the reign, though it places the setting "only a few
+          decades before its downfall (586)."
+        date:
+          precision: interval
+          from: {year: 641, era: bc}
+          to: {year: 611, era: bc}
+          label: "the reign of King Josias (641-11)"
+
+  - id: composition.book-of-aggeus
+    title: The Prophecy of Aggeus
+    scope: {book: Agg}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Aggeus (Haggai)" in the Catholic Encyclopedia states that the
+          passages about the prophet "refer simply to the occasion on which he had to
+          deliver a divine message in Jerusalem , during the second year of the reign of
+          the Persian King, Darius I (520 B.C.)", and that "The book of Aggeus is made up
+          of four prophetical utterances, each one headed by the date on which it was
+          delivered."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01209d-02397b81]
+        note: >-
+          520 B.C. is the year the four utterances the book is made up of were
+          DELIVERED, each internally dated; the article says nothing separately about
+          when the book was compiled. The article is expressly sceptical of the
+          biographical traditions about Aggeus: "Obviously, these and similar traditions
+          deserve but little credence."
+        date:
+          precision: year
+          from: {year: 520, era: bc}
+          label: "the second year of the reign of the Persian King, Darius I (520 B.C.)"
+
+  - id: composition.book-of-zacharias
+    title: The Prophecy of Zacharias
+    scope: {book: Zach}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's "Zacharias" in the Catholic Encyclopedia states that "The author of the
+          entire prophecy is Zacharias. The time of part first is the second and fourth
+          years of the reign of Darius in Babylon (520 and 522 B.C.). The time of part
+          second is probably toward the end of the reign of Darius or the beginning of
+          that of Xerxes (485 B.C.)."
+        sources: [artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15741b-434202d2]
+        note: >-
+          The source prints "(520 and 522 B.C.)" in that order, second year then fourth
+          year, so the numbers are not ascending on the page; the label reproduces the
+          printing and the structured range runs from the earlier year. The second
+          part's date is doubly hedged, "probably" and "toward the end ... or the
+          beginning", and the article's occasion for it is a conjecture: "that of the
+          second part is perhaps the approach of the Prophet's death." The traditional
+          unity of authorship is the article's own ground: "this unanimity shows that
+          both in Judaism and the Church there has never been a serious doubt in the
+          matter of the unity of authorship of Zacharias."
+        date:
+          precision: range
+          from: {year: 522, era: bc}
+          to: {year: 485, era: bc}
+          label: "the second and fourth years of the reign of Darius (520 and 522 B.C.) ... toward the end of the reign of Darius or the beginning of that of Xerxes (485 B.C.)"
+
+  - id: composition.book-of-malachias
+    title: The Prophecy of Malachias
+    scope: {book: Mal}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Van Hoonacker's "Malachias (Malachi)" in the Catholic Encyclopedia states that
+          "Critics are practically agreed in dating the book from about the middle of
+          the fifth century B.C.", and that the proposal placing it in the second
+          century B.C. "has received no support."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09562b-38fb6fcd]
+        note: >-
+          The source is explicit that "The text itself does not furnish any explicit
+          information"; the date rests on inference from the Persian title Peha and from
+          the state of worship, "because not only the Temple exists, but relaxation in
+          the exercise of worship already prevails". It is given as a scholarly consensus
+          ("Critics are practically agreed"), not as a tradition and not as a magisterial
+          determination. The source names a century and narrows within it to "about the
+          middle", so the structured bounds are the fifth century B.C. entire and are
+          wider than the claim.
+        date:
+          precision: interval
+          from: {year: 500, era: bc}
+          to: {year: 401, era: bc}
+          label: "about the middle of the fifth century B.C."
+
+  - id: composition.first-book-of-machabees
+    title: The First Book of Machabees
+    scope: {book: 1Mach}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Machabees" in the Catholic Encyclopedia bounds the
+          first book at both ends: "the book cannot have been written till some time
+          after the beginning of the reign of John Hyrcanus (135-105 B.C.)", and "The
+          latest possible date is generally admitted to be prior to 63 B. C., the year of
+          the occupation of Jerusalem by Pompey", concluding "The date would, therefore,
+          in any case, be within the last years of the second century B.C."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09495a-6afd1136]
+        note: >-
+          The structured bounds are the article's own outer limits; it narrows within
+          them to "the last years of the second century B.C.", as the label records. The
+          author is unknown — "No data can be found either in the book itself or in later
+          writers which would give us a clue as to the person of the author" — and the
+          article says only that he "was a native of Palestine". Whether Hyrcanus was
+          still alive when the book was written is left open: "Many understand it to
+          indicate that Hyrcanus was then still alive, and this seems to be the more
+          natural meaning. Others, however, take it to imply that Hyrcanus was already
+          dead."
+        date:
+          precision: interval
+          from: {year: 135, era: bc}
+          to: {year: 63, era: bc}
+          label: "after the beginning of the reign of John Hyrcanus (135-105 B.C.) ... prior to 63 B. C. ... in any case, within the last years of the second century B.C."
+
+  - id: composition.second-book-of-machabees
+    title: The Second Book of Machabees
+    scope: {book: 2Mach}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Machabees" in the Catholic Encyclopedia states that
+          the second book "is, as has been said, an epitome of a larger work by a certain
+          Jason of Cyrene", that "The epitome cannot have been written earlier than the
+          date of the first letter, that is 124 B.C.", and that "In the very probable
+          supposition that the first letter was sent with a copy of the book, the latter
+          would be of about the same date ."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09495a-6afd1136]
+        note: >-
+          The article adds "As to the exact date there is great divergence," and 124 B.C.
+          is a floor which its "very probable supposition" turns into an approximate date
+          of writing; the approximation is the source's own and is not resolved here.
+          Three distinct compositions must not be collapsed: Jason's lost original, whose
+          author "must have finished his work shortly after the death of Nicanor, and
+          before disaster overtook Judas Machabeus"; this epitome; and the second
+          prefixed letter, "written soon after the death of Antiochus ... therefore about
+          163 B.C." The author of the epitome is unknown.
+        date:
+          precision: approximate-year
+          from: {year: 124, era: bc}
+          label: "not earlier than ... 124 B.C. ... the latter would be of about the same date"
