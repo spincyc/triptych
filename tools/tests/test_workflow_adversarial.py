@@ -521,8 +521,7 @@ class TransactionalAdvanceTests(EngineCase):
                          "a seed that could not emit a packet leaves no run")
         seeded = self.seed()
         self.assertEqual(seeded["stage"], "stage-a")
-        self.assertFalse(seeded["already_exists"],
-                         "the failed seed must not be mistaken for a live run")
+        self.assertEqual(seeded["bootstrap_version"], 1)
 
 
 class RefusedResultTests(EngineCase):
@@ -1165,12 +1164,16 @@ class LauncherTests(unittest.TestCase):
                               text=True, cwd=ROOT)
 
     def seed_real_run(self) -> dict:
+        runs = ROOT / "build" / "tpt-runs"
+        existing = {path.name for path in runs.iterdir()} \
+            if runs.is_dir() else set()
         done = self.tpt("proper", self.DOC, "seed")
         self.assertEqual(done.returncode, 0, done.stderr)
         seeded = json.loads(done.stdout)
-        self.addCleanup(shutil.rmtree,
-                        ROOT / "build" / "tpt-runs" / seeded["run_id"],
-                        ignore_errors=True)
+        if seeded["run_id"] not in existing:
+            self.addCleanup(
+                shutil.rmtree, runs / seeded["run_id"], ignore_errors=True
+            )
         return seeded
 
     def test_document_id_must_match_the_run(self):
@@ -1192,7 +1195,7 @@ class LauncherTests(unittest.TestCase):
 
     def test_propers_packets_carry_no_unsubstituted_placeholders(self):
         seeded = self.seed_real_run()
-        packet = Path(seeded["packet_abs_path"]).read_text(encoding="utf-8")
+        packet = (ROOT / seeded["packet_path"]).read_text(encoding="utf-8")
         self.assertNotIn("{proper}", packet)
         self.assertNotIn("{provider}", packet)
 
