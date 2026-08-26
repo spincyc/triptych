@@ -59,28 +59,108 @@ HEADER = (
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
     "validate": (
-        Example("tools/scripture-chronology validate"),
-        Example("tools/scripture-chronology validate --json"),
+        Example("tools/scripture-chronology validate",
+            (
+                "# no binding reaches event apostolic-age.accession-of-vespasian",
+                "# no binding reaches event apostolic-age.arrest-of-saint-paul-at-jerusalem",
+                "# no binding reaches event apostolic-age.arrival-of-cestius-gallus-at-jerusalem",
+                "# no binding reaches event apostolic-age.arrival-of-saint-peter-at-rome",
+                "# no binding reaches event apostolic-age.burning-of-the-temple",
+                "# no binding reaches event apostolic-age.conversion-of-saint-paul",
+                "# no binding reaches event apostolic-age.council-of-jerusalem",
+                "# no binding reaches event apostolic-age.death-of-herod-agrippa",
+                "# no binding reaches event apostolic-age.death-of-saint-john",
+                "# no binding reaches event apostolic-age.exile-of-saint-john-to-patmos",
+                "# no binding reaches event apostolic-age.fall-of-jerusalem",
+                "# no binding reaches event apostolic-age.famine-under-claudius",
+                "# no binding reaches event apostolic-age.flight-of-the-christians-from-jerusalem",
+                "# no binding reaches event apostolic-age.founding-of-the-south-galatian-churches",
+                "# no binding reaches event apostolic-age.martyrdom-of-saint-paul",
+                "# no binding reaches event apostolic-age.martyrdom-of-saint-peter",
+                "# no binding reaches event apostolic-age.martyrdom-of-saint-stephen",
+                "# no binding reaches event apostolic-age.persecution-by-herod-agrippa",
+                "# no binding reaches event apostolic-age.return-of-saint-john-from-patmos",
+                "# no binding reaches event apostolic-age.saint-paul-apostolate-at-antioch",
+                "# no binding reaches event apostolic-age.saint-paul-at-corinth",
+                "# no binding reaches event apostolic-age.saint-paul-at-ephesus",
+                "# no binding reaches event apostolic-age.saint-paul-first-roman-captivity",
+                "# no binding reaches event apostolic-age.saint-paul-first-visit-to-jerusalem",
+                "# no binding reaches event apostolic-age.saint-paul-fourth-visit-to-jerusalem",
+                "# no binding reaches event apostolic-age.saint-paul-imprisonment-at-caesarea",
+                "# no binding reaches event apostolic-age.saint-paul-second-period-of-activity",
+                "# no binding reaches event apostolic-age.saint-paul-second-visit-to-jerusalem",
+                "# no binding reaches event apostolic-age.saint-paul-sent-to-rome",
+                "# no binding reaches event apostolic-age.saint-paul-sojourn-at-tarsus",
+                "# no binding reaches event apostolic-age.second-arrest-of-saint-paul",
+                "# no binding reaches event apostolic-age.siege-of-jerusalem-begun",
+                "# no binding reaches event apostolic-age.vespasian-invades-galilee",
+                "# no binding reaches event israel.maccabees.seleucid-era",
+                "# no binding reaches event life-of-christ.public-ministry-begins",
+                "chronology corpus valid: 1 profiles, 143 events, 51 composition_units, 139 bindings, 10 gaps, 73 books",
+            ),
+        ),
+        Example("tools/scripture-chronology validate --json",
+            (
+                "{\"counts\":{\"bindings\":139,\"books\":73,\"composition_units\":51,\"events\":143,\"gaps\":10,\"profiles\":1},\"problems\":[]... [+1591 chars]",
+            ),
+        ),
     ),
     "query": (
-        Example("tools/scripture-chronology query Ps.21.19"),
+        Example("tools/scripture-chronology query Ps.21.19",
+            (
+                "Ps.21.19	dated",
+                "historical-setting	David was thirty years old when he began to reign, and he reigned forty years	preferred	inherited	israel.monarchy.david-reign	The reign of David",
+                "prophetic-referent	the 14th of Nisan, on a Friday	disputed	inherited	life-of-christ.crucifixion	The Crucifixion of Our Lord",
+                "prophetic-referent	Friday, the fifteenth day of Nisan	disputed	inherited	life-of-christ.crucifixion	The Crucifixion of Our Lord",
+                "prophetic-referent	A.U.C. 772-90, or A.D. 18-36	disputed	inherited	life-of-christ.crucifixion	The Crucifixion of Our Lord",
+                "prophetic-referent	between A.D. 26 and 36	disputed	inherited	life-of-christ.crucifixion	The Crucifixion of Our Lord",
+                "... 3 more lines",
+            ),
+        ),
         Example(
             "tools/scripture-chronology query Ecclus.35.1 --system greek",
+            (
+                "# greek Ecclus 35:1-20 is not mapped onto vulgate: the Vulgate and the Greek divide Ecclesiasticus differently in all fifty-one ch... [+86 chars]",
+                "Ecclus.35.1	textually-distinct",
+            ),
             note=(
                 "exit 1: the Latin and the Greek Ecclesiasticus are two texts, "
                 "so the concordance records no correspondence and the query "
                 "refuses rather than returning the same numbers"
             ),
         ),
-        Example("tools/scripture-chronology query Sus.1.1 --system greek --json"),
+        Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
+            (
+                "{\"assertions\":[{\"basis\":\"Gigot's \\\"Book of Daniel\\\" in the Catholic Encyclopedia frames the question as whethe... [+3896 chars]",
+            ),
+        ),
     ),
     "coverage": (
-        Example("tools/scripture-chronology coverage"),
-        Example("tools/scripture-chronology coverage --json"),
+        Example("tools/scripture-chronology coverage",
+            (
+                "verses	35809",
+                "runs	1621",
+                "status	dated	5109",
+                "status	inherited	16871",
+                "status	not-alignable	0",
+                "status	research-pending	9703",
+                "status	textually-distinct	0",
+                "status	undated-in-tradition	4126",
+                "... 11 more lines",
+            ),
+        ),
+        Example("tools/scripture-chronology coverage --json",
+            (
+                "{\"by_relation\":{\"composition\":19352,\"historical-setting\":677,\"narrated-event\":4040,\"prophecy-given\":148,\"proph... [+415 chars]",
+            ),
+        ),
     ),
     "build": (
         Example(
             "tools/scripture-chronology build --dry-run",
+            (
+                "dry-run	src/sources/chronology/coverage.tsv	1621 rows	unchanged",
+            ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
                 "tracked src/sources/chronology/coverage.tsv, which is why the "
@@ -89,12 +169,23 @@ EXAMPLES = {
         ),
         Example(
             "tools/scripture-chronology build --dry-run --json",
+            (
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1621,\"status\":\"dry-run\",\"v\":1}",
+            ),
             note="the same, as the machine contract",
         ),
     ),
     "check": (
-        Example("tools/scripture-chronology check"),
-        Example("tools/scripture-chronology check --json"),
+        Example("tools/scripture-chronology check",
+            (
+                "chronology coverage table current: 1621 rows",
+            ),
+        ),
+        Example("tools/scripture-chronology check --json",
+            (
+                "{\"problems\":[],\"rows\":1621,\"status\":\"ok\",\"v\":1}",
+            ),
+        ),
     ),
 }
 
@@ -285,9 +376,13 @@ def check(arguments: argparse.Namespace) -> dict[str, object]:
 
 
 def _render(payload: object, arguments: argparse.Namespace) -> int:
+    # A refusal is a first-class output and prints its reason, but it is still a
+    # refusal: a caller piping this must be able to tell "no" from "here it is"
+    # without parsing prose. Hence 1, the repository's validation-refusal code.
+    refused = isinstance(payload, dict) and payload.get("status") in ("error", "unresolved")
     if getattr(arguments, "json", False):
         print_json(payload if isinstance(payload, dict) else {})
-        return 1 if isinstance(payload, dict) and payload.get("status") == "error" else 0
+        return 1 if refused else 0
     if not isinstance(payload, dict):
         print("scripture-chronology error: invalid payload", file=sys.stderr)
         return 70
@@ -310,7 +405,7 @@ def _render_query(payload: dict) -> int:
     print(f"{payload['locus']}\t{payload['chronology_status']}")
     if not payload["assertions"]:
         print(f"# {payload['reason']}", file=sys.stderr)
-        return 0
+        return 1 if payload["status"] == "unresolved" else 0
     for item in payload["assertions"]:
         reach = "inherited" if item["inherited"] else "direct"
         # The source's own words where it left any, because "01-14" is the

@@ -977,6 +977,15 @@ class ToolTests(unittest.TestCase):
         self.addCleanup(_chronology.load.cache_clear)
         self.assertEqual(tool.main(["check"]), 0)
 
+    def test_a_refused_query_exits_non_zero_and_a_dated_one_does_not(self) -> None:
+        # A refusal prints its reason and is a first-class output, but a caller
+        # piping this must be able to tell "no" from "here it is" without
+        # parsing prose.
+        _chronology.load.cache_clear()
+        self.addCleanup(_chronology.load.cache_clear)
+        self.assertEqual(tool.main(["query", "Ecclus.35.1", "--system", "greek"]), 1)
+        self.assertEqual(tool.main(["query", "Gen.1.1"]), 0)
+
     def test_the_system_chronology_is_authored_in_is_the_one_projections_use(self) -> None:
         # Two names for one choice is one way of finding out later that they
         # had stopped agreeing.
