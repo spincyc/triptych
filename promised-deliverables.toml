@@ -1249,7 +1249,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "pending-transport-not-shared-by-path"
   criterion = "No unresolved request is reachable by path. Work in flight is held against the owner the model hands out for the projected row that asked, and a path-keyed entry receives a promise only from inside that promise's own settle handler, so a second owner asking the same address can never join unfinished work. A source and behavioural proof shows two rows carrying one address in one turn producing two independent transports, two owner objects and two rows, under one projection and one address."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1267,7 +1267,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "body-application-row-ownership"
   criterion = "The fulfilled body is applied only where the row that asked still owns the node it is written to. Ownership is asked AT the application through the row itself and recorded there with the projection, the row and the content applied; it is never inferred afterwards from two matching paths. A row no projection of the model made applies nothing, and a reported transport failure is owned exactly as a fulfilled body is."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1291,7 +1291,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "safe-fulfilled-value-sharing"
   criterion = "A value that has settled at one address may be shared by path, and is. A second row asking afterwards makes no request, is answered from what settled, and still applies it as itself: its own transport owner, its own row, its own projection recorded at its own application. The shared value is frozen where it becomes shareable, and the first settled answer is not displaced by a request released later."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js", "tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1309,7 +1309,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "truthful-observation-accounting"
   criterion = "Value reads that would run an own accessor, `getOwnPropertyDescriptor` observations, own-property tests and key enumeration are counted apart and reported apart. The record states that no value read of a source key or shared field occurs at all, that the descriptor is observed three times per source key and twice per stated shared field and once per absent one, that `Object.hasOwn` lands in the descriptor count because it is `[[GetOwnProperty]]`, and that a second render of the same chapter observes the record no further. No claim of a single observation per record is made."
-  status = "pass"
+  status = "open"
   evidence = ["tools/tests/test_catena_wave_1.py"]
 
   [[deliverables.requirements]]
@@ -1357,8 +1357,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-clone-provenance"
   criterion = "The sanitized provenance records `workspace_mode = fresh-clone`, `worktree = false` and `git_dir_kind = directory` for the lane that produced the package, in both the machine claims record and its rendered table, and exposes no absolute local path, username, hostname, session identifier or clone location."
-  status = "open"
-  evidence = ["guidance/external-review-handoffs.md"]
+  status = "pass"
+  evidence = ["guidance/external-review-handoffs.md", "PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
   [[deliverables.requirements]]
   id = "immutable-v15-handoff"
@@ -1369,8 +1369,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V15 head and its immutable handoff records a durable disposition, scoped to preservation of row and projection ownership through pending transport, completion and body application; same-path and genuinely-late isolation; safe fulfilled-value sharing; and exact reproducible evidence and provenance. This lane does not review its own work and records no acceptance."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v14-2026-08-20"

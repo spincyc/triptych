@@ -1139,6 +1139,243 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena transport and completion ownership lane, V15 independent review
+
+Independent review branch:
+`review/catena-wave-1-e1-corrections-v15-independent`.
+
+Reviewed implementation head:
+`b9202882badbbbc364f1dd3d9057d2710ee47552` on
+`impl/catena-wave-1-e1-corrections-v15`. The V14 comparison endpoint is
+`69f2575421ba976271c936b1abd4b39dbe8b98fd`; it is the four-commit comparison
+base, not V15's literal Git first parent, which is
+`df246f77e1ade1d3af511eb9aec04e4f4d60ecce`. The authoritative V14 review is
+`0d11766ec232b2b4e46a7d1b0ada56ef22370004`. Evidence branch
+`evidence/catena-e1-corrections-v15-handoff` resolves to
+`db5f651e4eb2d10a15d1a594a4286ac7048f612c`. The reviewed ZIP is
+`20260826T195656Z-catena-e1-corrections-v15.zip`: 1,400,092 bytes, 69 members,
+SHA-256
+`711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`.
+Current `origin/main` at review start was
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V15 is not integrated with it.
+
+Semantic transport/final-authority disposition: **SEMANTIC CHANGES REQUIRED**.
+
+Evidence/provenance disposition: **EVIDENCE CHANGES REQUIRED**.
+
+Overall V15 disposition: **CHANGES REQUIRED**.
+
+**Decisive pending-cache defect.** V15 removes the ordinary V14 leak: normal
+pending work is held in `asking`, keyed by the stable per-row transport owner,
+and the A-held/B-independent oracle now behaves correctly. It does not satisfy
+the stronger requirement that no unresolved work be reachable by path at any
+instant. `asked` is the promise returned by `T.loadJSON(path).then(...)`;
+inside that fulfillment handler, `fragmentTexts.set(path, asked)` runs before
+the handler returns `Object.freeze(file)`. A promise returned by `then` cannot
+settle until its handler returns. A direct probe of the exact ordering observed
+the path entry as `Promise { <pending> }` inside the handler and fulfilled only
+in the following microtask. Publication also precedes the freeze. Ordinary
+event-loop work cannot interleave there, which explains the green behavioral
+tests, but a synchronous reentrant operation can retrieve the pending path
+entry; the implementation therefore fails the review's explicit no-interval
+rule and its publication-timing claim.
+
+The path entry's eventual value is a fulfilled promise for the raw parsed JSON
+object, shallow-frozen at the top level. It is not normalized content, a
+response wrapper, a failure value, or an owner-bearing object. Rejections are
+not globally cached. Current Catena text files contain only scalar top-level
+fields, so the ordinary fulfilled-reuse case is owner-independent in the
+present corpus. That is not the promised immutable-value contract: the object
+retains a mutable prototype and `M.textPayload` later reads its fields by
+ordinary prototype-sensitive lookup. A frozen empty object can therefore
+change from unreadable to readable after prototype mutation. The committed
+oracle checks only top-level `Object.isFrozen`; it neither proves
+settled-before-publication nor mutation safety before a later owner uses the
+value.
+
+**Pending owner and row transport.** Apart from the publication interval,
+pending ownership is sound. `M.rowTransport(row)` accepts only an actual
+projected row; returns one stable frozen `{row, projection, path}` object for
+that row; retains the actual authoritative projection; produces distinct
+owners for distinct same-path rows; and rejects copies, literals, scalars and
+`null`. The active render's lexical row and the DOM containment guard provide
+the relevant action/generation fence. Same-path A and B have independent
+requests before settlement, failures release only their own pending entry,
+and retry remains owner-correct.
+
+**Body application is not completion-owned at the boundary.** The production
+closure carries the actual projected row to the success and failure sinks, and
+`bodyAsked` resolves that row to the exact authoritative projection. That
+closes actual-row and projection identity in ordinary execution. But
+`M.bodyAsked(row, content)` authorizes any content whenever `row` occurs in
+`rowOwners`; it receives no transport owner, completion token, promise or
+generation, and does not compare `content` with the request made for that row.
+The direct test intentionally accepts `{text: "x"}` without any owned
+completion. An actual B row therefore accepts arbitrary A content at this
+boundary. The preceding closure currently supplies the association, but the
+required sink-level proof that completion belongs to the row's owned transport
+is absent. The body journal is also recorded before the DOM write rather than
+after a committed application.
+
+**The decisive behavior still closes V14's ordinary leak.** A starts and stays
+held; B asks the same path under a distinct row/projection/transport, settles
+before A releases, and renders exactly `PLANTED BODY B`, never A's body. A's
+late release leaves all 36 guarded B fields unchanged; the exact expectations
+also pin `historyState` and `replacedStates`. The only journal movement is A's
+request sequence 6, outcome `held` to `released`; B's completed sequence 10,
+body application, asks, transports and fetch roster do not move. Exact V14
+fails the corrected oracle for the intended reason: B has only A's held request
+and receives `PLANTED BODY A` after release, not because of the separate model
+hash pin.
+
+**Identity, wrappers, cache behavior and failure isolation.** The actual
+production projection is preserved through readability, unfetched, tally,
+rows, voices, blocked, leads, refusal, request, transport, body and provenance.
+Rows stay exact objects through `renderChain` and `renderFragment`; the
+unreadable-spine substitute is memoized per name; and the harness's path match
+is deliberately diagnostic, naming projection A beside B's correct recorded
+owner. No production decision consumes it. The full name roster passes, though
+the committed equality matrix lacks a provenance-specific `===` assertion;
+source inspection and an independent replay confirm current provenance uses
+the authoritative object. Fulfilled prewarm and later-owner reuse have the
+right request counts and row/projection owners under current scalar payloads.
+Concurrent A-404/B-document behavior and owner-local retry pass; no negative
+fragment result enters the path cache.
+
+**Other semantic proof.** The hostile nested `edition` and
+`edition_published` accessor cases are coherent and non-vacuous. Observation
+counts reproduce: zero value reads, zero `in` checks, three descriptor
+observations per source key, two per stated field, one per absent field and one
+key enumeration. The prose nevertheless omits the `getPrototypeOf` observation
+caused by enumeration and contains conflicting terminology around `has` versus
+own-property testing, so its “four kinds”/“nothing else” description needs
+correction. All thirteen mutations throw and hold; a real downstream rerender
+reconsumes the projection; 32 rendered fields and the request journal remain
+unchanged. The inherited V14 `unfetched`, one-read inventory, structural member,
+raw-reread, rights/provenance, refusal, carried-path, spine-prefix and prewarm
+closures still pass.
+
+**Method accounting.** V15 focused Catena is 615/615 and native V14 is
+596/596. Candidate tests replayed over exact V14 have fourteen failing methods:
+twelve nominal semantic methods, one roster audit and one hash pin. That
+headline needs two qualifications. Only two of the eight genuinely new
+pass-at-both-endpoints methods are new edition-accessor methods; an existing
+misnamed method was repurposed and a source control added. The advertised
+downstream-rerender discriminator fails V14 only because the new body witness
+is absent; all 32 rerender fields already agree there. In `claims.json`, the
+transport-class figure 13 counts failing/error identities, not failing
+methods.
+
+**Validation and budgets.** Independent replay confirmed focused 615/615 and
+596/596. The sealed full-discovery transcripts record 1,966 at V15 and 1,947
+at V14, both at 14 failures, 13 errors and 11 skips over the same 27
+failure/error identities. A fresh reviewer replay reached the same test counts
+but 15 failures, 13 errors and 11 skips at both endpoints: the additional
+common identity is the `pdf-review.test` tool-registry smoke test, which now
+reports that an output outside `build/` was not refused. It is not a Catena
+delta, but the environment-sensitive difference from the sealed count is
+recorded rather than hidden. The browser reports contain 2,290 unique assertion
+rows at each endpoint:
+1,836 pass, 226 fail and 228 skip; complete normalized reports are equal.
+`make -k check` has the same four inherited red targets at both endpoints:
+web editions, release bindings, tool registry and examples. The authoritative
+logs report **28** divergent examples plus two separately declared volatile
+lines, not the durable producer claim of 30 divergences. The promise ledger is
+40 tracked / 19 complete at V15; Catena check is 1,351 unique fragments / one
+book / 73 canon entries; four release bindings remain stale and none was
+re-signed. `catena.js` is 12,958/13,000 whole-gzip and 7,724/8,800 stripped;
+only whole-gzip is smaller than V14. CSS and HTML are unchanged and ceilings
+unraised. Model growth remains disclosed, uncapped broader governance work.
+
+**Archive bytes and protocol facts that pass.** The ZIP's size, member count
+and digest match exactly. Its 68-row manifest covers every other member; all
+digests, names, modes and extracted bytes match; paths are safe; all members
+are strict UTF-8 with no NUL or forbidden controls. P8 ran twelve checks and
+reported PASS / zero problems; the ZIP remained byte-for-byte unchanged.
+Seal, P8, authority and evidence-commit ordering is internally coherent, with
+the parent and V14 review bound transitively through the archive and the final
+evidence commit. Fresh-clone provenance records `workspace_mode = fresh-clone`,
+`worktree = false` and `git_dir_kind = directory`. The authoritative ZIP and
+published siblings pass privacy scans. P8 is read-only toward the ZIP, but it
+does write a temporary extraction, an outer tool table and its transcript; its
+tool table is the pre-P10 view, not the final sidecar.
+
+**Command and tool evidence fails.** `checks.txt` calls all 24 command rows
+`LITERAL`, but seven load-bearing rows contain single-quoted
+`'$WORKSPACE/...'` or `'$REPO/...'` paths. Those anchors cannot expand and no
+assignments are supplied. Parent replay overloads `$REPO` for both the parent
+cwd and the distinct V15 test source, so unquoting alone cannot recover the
+recorded execution. The package-comparison row also omits its required package
+cwd and conflicts with the ledger. Thus only 16 of 24 rows are replayable with
+their recorded context. The browser results and parent semantic transcript are
+credible, but their promised exact executable commands are absent.
+
+The classifier fixes the two V14 examples (`cp` is an allowed head and the
+quoted browser note is lower-case) without generally solving classification:
+prefix matching accepts prose such as `format`, `installing` and `zipcode`,
+and the handoff checker trusts the precomputed `LITERAL` label. Its packaged
+mutation tests do not exercise quoted anchors, ambiguous cwd, `cp`, uppercase
+quoted data or prefix overmatch, and the relevant test modules are classified
+as not executed.
+
+The final `20 unique tools / 33 invocations / 14 executed tools / 27 executed
+invocations` arithmetic follows the record rows, but six supposed invocations
+are manufactured not-executed placeholders, repeated Python/Git uses are
+sampled rather than counted, and both `assemble.sh` and `battery.sh` are marked
+not executed although they drove the build. P8 checked an earlier 11/24 view;
+the final 14/27 sidecar was produced afterward. `compare-gate.py` itself is
+executed and whole-report equality is sound, although its diagnostic collapses
+2,290 rows to 17 names while calling them assertion objects.
+
+**History and completeness fail.** The advertised five refusals followed by
+the authoritative sixth attempt are only one slice. Across three V15 ledgers
+there are nine package attempts: eight resolved non-authoritative attempts and
+the final authority. Ordinals are reused; one retired battery never gets a
+terminal row; completed retired batteries are not classified set-aside; and a
+fresh-ledger attempt briefly reached authority before supersession. The final
+ledger and prose therefore do not provide the promised complete append-only
+history. Retired-ledger byte counts, row counts and digests themselves match,
+and final figures derive from the fresh cohorts, not retired results. The
+review-history statement is corrected: V13 alone lacks a published review;
+V14's review is `0d11766e...`.
+
+The substantive checker contains six useful checks and fourteen passing
+positive/control tests, but the final recorded `COMPLETE` verdict is stale:
+rerunning the shipped checker after P11 finds the outer-sanitize and outer-scan
+siblings unnamed and reports `INCOMPLETE`. It also cannot detect the false
+single-quoted `LITERAL` rows, execution-driver contradictions, full cross-ledger
+history, or the 30-versus-28 numerical conflict. Published privacy and byte
+cleanliness pass; locally retained discarded markers and raw retained ledgers
+are outside that scan and preserve builder-local offsets or absolute paths, so
+no broader all-retained-artifacts privacy claim is accepted.
+
+**Ownership boundaries and remaining blockers.** The comparison changes
+production only in `catena.js` and `catena-model.js`, plus the focused test and
+four durable records. It does not change `src/web/data/`, release-owned
+records, common gate, shared shell, Liturgy, PDFs, CLI, CSS, HTML or ceilings.
+Broader projection/orphan/source-only semantics, translator coercion,
+malformed absence/refusal typing, selection ordering, unreadable roots and
+`bibles.json`, broader terminal/oracle proof, CLI/web duplication, model-budget
+governance, the historical data seam, release bindings, common gate, shared
+shell, device/AT, Liturgy, PDFs and integration remain open. This review does
+not fail V15 merely for those inherited blockers and accepts none of E1.
+
+**Exact next action.** Produce one bounded V16 from exact V15 head. Normalize
+fragment payloads once into an owner-independent, recursively immutable or
+null-prototype scalar record; publish the value only after finalization, never
+the initiating owner's pending promise; and add an inside-settlement/reentrant
+publication oracle plus mutation-before-later-owner coverage. Carry a
+per-caller completion envelope containing the exact row transport owner to the
+body sink, require that owner at application, and add negative A-completion to
+B-row and no-request/arbitrary-content cases. Add the missing provenance
+identity assertion and correct observation/method prose. Then issue a new
+package with executable post-sanitization commands and explicit cwd/env, one
+truthful tool/run schema including its drivers, the complete nine-attempt
+cross-ledger history, corrected 28-example accounting, and a final-state
+completeness check. Return that exact head and package for a fresh independent
+review. Do not integrate E1, merge, re-sign, deploy or broaden into another
+blocker.
+
 ### E1 Catena transport and completion ownership lane, V15
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v15-2026-08-26 -->

@@ -728,6 +728,78 @@ Catena generator alone, and `catena.js` is smaller than V6 left it in both
 measures. The `src/web/data/` contradiction is **preserved untouched** and
 remains a separate owner's adjudication.
 
+### E1 Catena V15 independent transport review — 2026-08-26
+
+Independent review of exact V15 head
+`b9202882badbbbc364f1dd3d9057d2710ee47552`, comparison endpoint
+`69f2575421ba976271c936b1abd4b39dbe8b98fd`, V14 review
+`0d11766ec232b2b4e46a7d1b0ada56ef22370004`, evidence commit
+`db5f651e4eb2d10a15d1a594a4286ac7048f612c` and immutable package
+`20260826T195656Z-catena-e1-corrections-v15.zip` records:
+
+- **Semantic transport/final-authority disposition: SEMANTIC CHANGES
+  REQUIRED.** The ordinary V14 same-path leak is corrected: while A is held,
+  distinct B asks and settles its own planted body, and late A changes only
+  A's journal outcome. But `fragmentTexts.set(path, asked)` publishes the
+  promise returned by `.then()` inside its own fulfillment handler, before
+  that handler returns and therefore before `asked` settles; it also publishes
+  before `Object.freeze(file)`. The promised no-interval and
+  settled-before-publication invariants are false. The eventual cached object
+  is raw shallow-frozen JSON whose mutable prototype is read later by
+  `textPayload`, not an immutable normalized owner-independent value.
+- Body row/projection identity is correct in the production closure, but
+  `M.bodyAsked(row, content)` checks only whether `row` belongs to a
+  projection. It accepts arbitrary or cross-owner content for any actual row
+  and carries no transport/completion token. Completion ownership is therefore
+  not proved at the application boundary. The full consumer names are present;
+  provenance is correct in production but lacks its own committed `===`
+  assertion.
+- `rowTransport` otherwise passes: stable frozen `{row, projection, path}` per
+  actual row, distinct for same-path rows, fail-closed for copies and literals.
+  Cross-owner failure/retry, fulfilled reuse under the current scalar corpus,
+  wrapper identity, diagnostic-only path matching, nested edition accessors,
+  the 36-field B vector, downstream rerender and inherited V14 closures pass.
+  Observation counts reproduce, but the prose omits the enumeration-triggered
+  prototype observation and confuses `has` with own-property testing.
+- **Evidence/provenance disposition: EVIDENCE CHANGES REQUIRED.** ZIP identity
+  passes exactly: 1,400,092 bytes, 69 members, SHA-256
+  `711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`;
+  manifest, UTF-8/control, published privacy, fresh-clone topology, P8 archive
+  rehash and authority ordering pass. The package does not provide the exact
+  reproducible protocol it claims.
+- Seven load-bearing rows called `LITERAL` contain single-quoted `$WORKSPACE`
+  or `$REPO` anchors that cannot expand; the parent replay also overloads one
+  anchor for two checkouts, and the comparison row omits its package cwd. The
+  classifier trusts these labels and accepts prefix-matched prose. The
+  `20/33/14/27` tool arithmetic counts six non-invocation placeholders and
+  marks the executed `assemble.sh` and `battery.sh` drivers unexecuted; P8
+  checked an earlier tool table. Across three V15 ledgers there are nine, not
+  six, package attempts, with reused ordinals, an unterminated battery and
+  undisclosed/set-aside-history defects. A final-state rerun of the shipped
+  inventory reports `INCOMPLETE` because two P11 outer logs are unnamed. The
+  actual endpoint logs report 28 example divergences plus two volatile lines,
+  not 30 divergences.
+- Focused Catena independently replays at 615/615 for V15 and 596/596 for V14.
+  Sealed full discovery is 1,966 versus 1,947 with identical 14 failures, 13
+  errors, 11 skips and 27 failure/error identities. A fresh reviewer replay
+  has the same test counts and a common additional `pdf-review.test` smoke
+  failure at both endpoints (15/13/11), not a Catena delta. Browser reports are equal at
+  `2,290 = 1,836 / 226 / 228`. `make -k check` retains the same four inherited
+  red targets; Catena is 1,351/1/73; the promise ledger is 40/19; four release
+  bindings remain stale and unsigned. `catena.js` is 12,958/13,000 whole and
+  7,724/8,800 stripped; ceilings and CSS/HTML are unchanged.
+
+Overall V15 disposition: **CHANGES REQUIRED**. This does not reject the real
+A-held/B-independent correction and does not accept E1. The exact next action
+is one bounded V16 from V15: publish only a finalized normalized immutable
+value, add an inside-settlement/reentrant and mutation-before-reuse oracle,
+carry the exact per-row transport owner in a completion envelope to a
+post-write body application check, close the provenance/observation proof
+gaps, and issue a new package with executable post-sanitization commands,
+truthful driver/tool accounting, complete nine-attempt history, corrected
+28-example figures and a final-state completeness result. No merge,
+integration, re-signing, deployment or unrelated blocker is authorized.
+
 ### E1 Catena correction V15 — 2026-08-26
 
 Answers the fresh independent review of V14 — **CHANGES REQUIRED** at exact V14
@@ -1310,7 +1382,7 @@ fresh independent review.
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Sixteenth correction candidate (V15) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at exact V14 head `69f2575421ba976271c936b1abd4b39dbe8b98fd`, recorded at review commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004` on `review/catena-wave-1-e1-corrections-v14-independent`, so this lane can name the review it answers; the unpublished V13 review V14 had to answer stays the one gap in the chain, and it is V13's alone | That review passed and did not reopen the post-projection `unfetched` closure, the seven-member raw authority inventory, the tally as a consumer of its own, the raw post-projection audit, the structural member matrix, the hostile nested-source refusals, seventeen frozen structures at their exact null-prototype scope, the carried-path and spine-prefix closures, the fulfilled prewarm proof, the rights, provenance and refusal DOM cases, ordinary ownership through address selection, and the whole package protocol. It found ONE decisive semantic defect: projection and row ownership survived address selection and was then discarded by a global path-keyed pending Promise cache before completion and body application, so a second row carrying one address joined the first row's unresolved request and rendered the answer that request was made for — and the green oracle over that case required the leak. Beside it: body application absent from the actual-object roster, wrappers able to create a second projection, the promised nested EDITION accessor case missing, a descriptor count reported as one read when it is three per source key and two per stated field, deep immutability proved without a downstream rerender, and mandatory evidence defects — two browser commands `ELIDED`, the parent replay `PROSE`, an executed-tool table contradicting its own assembly transcript, an invocation count presented as a tool count, and a history called complete and append-only while omitting a set-aside cohort and the P10 rows and disclosing a row replacement. Its exact next action: keep pending text work owned by the initiating row and projection or share only fulfilled immutable values; hold A, let same-path B settle independently with a distinguishable body, then release A and prove B unchanged by actual object identity; complete the body-application consumer roster; audit the descriptor accounting and close the missing edition and deep-mutation sink proofs; and rebuild the evidence with exact portable commands, complete history and one coherent invocation and tool-byte record. V15 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V14 correction. E1 stays off main. No merge, re-sign, deploy or cutover. |
+| E1 Catena production implementation | **Changes required** at exact V15 head `b9202882badbbbc364f1dd3d9057d2710ee47552`; semantic and evidence sub-dispositions both require changes on `review/catena-wave-1-e1-corrections-v15-independent` | V15 closes the ordinary V14 A-held/B-same-path leak and preserves the exact row/projection owner through normal transport, but it publishes the initiating promise to the path map before that promise settles and before the raw body is frozen; the eventual raw shallow-frozen object is not the promised immutable normalized value. `bodyAsked` proves only that the supplied row was projected, not that the supplied completion belongs to that row's transport. The evidence ZIP's bytes and P8 seal pass, but exact-command, tool-execution, attempt-history, numerical-claim and final completeness claims do not. The only authorized continuation is the bounded V16 correction recorded in the independent review: publish finalized immutable values, carry an exact owner completion to the body sink, close the named proof gaps, and rebuild a truthful executable package. Preserve every sound V2–V15 closure and all broader blockers. E1 stays off main; no merge, integration, re-signing, deployment or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -1322,6 +1394,7 @@ fresh independent review.
 
 | Date | Work | Evidence-backed result | Commit or handoff |
 | --- | --- | --- | --- |
+| 2026-08-26 | E1 Catena V15 independent review | **SEMANTIC CHANGES REQUIRED** and **EVIDENCE CHANGES REQUIRED** at exact head `b9202882badbbbc364f1dd3d9057d2710ee47552`. Ordinary A-held/B-independent transport, exact row/projection identity, late-A immobility, the 36-field terminal vector and the exact ZIP seal pass. The path cache nevertheless receives the owner Promise before that Promise settles and before its raw result is frozen; `bodyAsked` verifies projected-row membership but not completion-to-transport ownership. The package's literal-command, executed-driver, attempt-history, 28-versus-30 make-check, retained-privacy and final-completeness claims are not closed. Overall V15 is **CHANGES REQUIRED**; one bounded V16 must publish only finalized normalized immutable values, carry exact completion ownership to the body sink, add the named negative/reentrant proofs, and rebuild executable truthful evidence without broadening E1. | Review branch `review/catena-wave-1-e1-corrections-v15-independent`; reviewed candidate `b9202882badbbbc364f1dd3d9057d2710ee47552`; V14 baseline `69f2575421ba976271c936b1abd4b39dbe8b98fd`; evidence `db5f651e4eb2d10a15d1a594a4286ac7048f612c`; ZIP SHA-256 `711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`. No merge, integration, re-signing, deployment or cutover is authorized. |
 | 2026-08-08 | A0-A4 foundation | Inventory, research, corpus architecture, three archetypes, isolated synthetic prototype, Menu, bounded Jump, typed Related, responsive behavior, and browser gates were produced from `c27d691`; the coordinator accepted A0/A1, accepted A2/A4 with D1-D20 amendments, and accepted A3 as direction only. | Source roadmap/prototype commit `ac37b6f`; reviewed Codex head `3b5938a`; Claude findings head `af2c961`. |
 | 2026-08-08 | Direct Wave 1 dispatch | Created `ux/corpus-wave-1` directly from current `origin/main` `c27d691`; did not execute or merge the proposed foundation-integration precursor; authorized C0, C1, D0, E0, and F0 real-data visual/product work. | Base `c27d6915319785686d1df6a1401a489aa9921f6f`; branch `ux/corpus-wave-1`; external acceptance open. |
 | 2026-08-09 | Wave 1 Candidate checkpoint | Completed the isolated real-route prototype and 83-case matrix over all five surfaces. The exact browser report records 1,979 assertions, 1,917 passes, 62 disclosed inherited findings, and zero gating failures; 83 main captures and every page of the 236-page print were inspected. Protected Liturgy, PDFs, prose, production browser sources, release bindings, and deployment remain unchanged. | `build/agent-handoffs/20260809T000346Z-corpus-wave-1-design-review/`; exact branch head and ZIP digest are recorded in the handoff; external acceptance remains open. |
