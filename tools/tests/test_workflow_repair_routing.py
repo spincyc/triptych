@@ -226,9 +226,9 @@ class PureSynthesisTests(RoutingCase):
         packet = self.engine.load_state(run_id)["packet_hashes"][-1]
         out = self.engine.advance(run_id, result_path=self.write("thin", {
             "stage": SYNTHESIS, "iteration": packet["iteration"],
-            "disposition": BLOCKED,
-            "summary": "the cultural-afterlife lane returned no qualifying "
-                       "candidate; I will not go looking for one",
+            "disposition": BLOCKED, "findings": [],
+            "summary": "the appointed witness cannot be obtained under "
+                       "current source policy; no further sweep would help",
         }))
         self.assertEqual(out["disposition"], BLOCKED)
         self.assertEqual(self.engine.load_state(run_id)["disposition"],

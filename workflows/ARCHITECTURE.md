@@ -60,6 +60,7 @@ tools/
     test_workflow_research_fanout.py
     test_workflow_brief_ownership.py
     test_workflow_repair_routing.py
+    test_workflow_synthesis_retry.py
 ```
 
 ## Why workflow files cannot become ambient agent guidance
@@ -207,10 +208,10 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 6: two research lanes were added,
-`research-synthesis` gave up its own searching, and `content-evaluation` gained
-a result schema of its own and declared repair routes, so a run seeded against
-version 5 fails closed and is seeded again.
+`proper` workflow is at version 7: `research-synthesis` became an evaluator
+stage, so research too thin for a safe brief re-enters the seven lanes instead
+of ending the run, and a run seeded against version 6 fails closed and is seeded
+again.
 
 ### Hashing boundary
 
@@ -332,8 +333,9 @@ search, repository precedent search, new source acquisition, afterlife hunting,
 finding new witnesses, and supplementing thin lane output from model memory. A
 stage that may not repair the research it reads may not quietly replace it
 either; when the joined seven-lane research will not support a safe brief the
-integrator returns `disposition: "BLOCKED"`, naming what is missing and which
-lane owes it, and the run stops with the thin sweep on the record.
+integrator says so in its own disposition, naming what is missing and which lane
+owes it, and the engine decides from that disposition whether the lanes sweep
+again or the run ends — see the research sufficiency loop below.
 Authoring adds no audit record of its own, because the profile keeps
 operational audit in that record and has the Scope and Qualifications appendix
 of `main.tex` point at it rather than repeat it.
@@ -417,9 +419,57 @@ the admitted values and the declared routes are not the same set. They are two
 lists in two files, and a value the schema admits with no route would fall
 through to `fail_transition` in silence — a defect quietly sent to the wrong
 owner is the failure that naming the owner exists to prevent. And a routed
-stage may not return `CHANGES_REQUIRED` carrying no blocking finding: that
-result asks for a repair while naming no owner and no defect, and would spend
-an iteration dispatching a reviser with nothing to read.
+stage's `CHANGES_REQUIRED` must carry a blocking finding, which the engine now
+requires of every evaluator and which is stated with the evaluator stage below;
+on a routed stage a result carrying none also names no owner.
+
+### The research sufficiency loop
+
+Whether the joined seven-lane research can be authored from is a judgment with
+three answers, so `research-synthesis` is an `evaluator` stage validating
+against `evaluator-result.json`:
+
+```
+research-synthesis PASS             -> author-proper
+research-synthesis CHANGES_REQUIRED -> research
+research-synthesis BLOCKED          -> terminal BLOCKED
+```
+
+`CHANGES_REQUIRED` is a recoverable insufficiency: concrete missing or
+inadequate research the existing seven lanes could reasonably supply on another
+pass — a thin patristic sweep, absent Scriptural context, too few qualifying
+afterlife candidates, conflicting lane findings that need targeted
+re-investigation. `BLOCKED` is what is genuinely unrecoverable within this
+workflow, where another pass through the same lanes cannot reasonably solve it:
+a required source unavailable under current policy, irreconcilable identity or
+formulary uncertainty, an authoritative witness that cannot be obtained,
+corruption. The stage was linear before, so it had only the second answer, and
+an ordinary recoverable thin patch therefore ended the document at that commit
+permanently, with a re-seed handing back the same terminal run. Research was the
+one place in the pipeline that the iterative method used everywhere else could
+not reach.
+
+The correction is a data change, not an engine one: `evaluator` is the type
+that already meant a three-way disposition with a bounded failure loop, so
+making the stage one is a change to `proper.json`. The type names the shape of
+the transition, not a claim that the stage only judges — `research-synthesis`
+remains the sole writer of `research/scope.md` and writes the brief on its
+`PASS`.
+
+The bound is the stage's own `max_iterations`, enforced by
+`_failure_budget_spent` as for any evaluator: two retries are granted and the
+third consecutive `CHANGES_REQUIRED` result from this stage blocks the run with
+an iteration limit exceeded, and a `PASS` resets the count to zero. The budget
+belongs to the stage, so it is separate from `content-evaluation`'s — a run the
+content evaluator sends back to `research` spends nothing here, and a synthesis
+retry spends nothing there.
+
+Forwarding is the ordinary mechanism, unchanged. `_extract_prior_findings`
+forwards the blocking findings verbatim on `CHANGES_REQUIRED`, so they reach
+the `research` packet's `PRIOR_FINDINGS` line and from there every one of the
+seven lane packets. Nothing summarizes them and no controller decides which
+lane reads which: each blocking finding names in `location` the lane that owes
+the work, and carries the `SYN-` id prefix.
 
 ### Lanes and lane packets
 
@@ -581,7 +631,7 @@ evaluator result, and transitions based on disposition:
 
 - `PASS` → `pass_transition` target
 - `CHANGES_REQUIRED` → the `repair_routes` target its blocking findings name,
-  and `fail_transition` (a bounded-revision stage) when they name none
+  and `fail_transition` when they name none
 - `BLOCKED` → terminal `BLOCKED` state
 
 The evaluator's blocking findings are forwarded verbatim into the next packet's
@@ -589,6 +639,17 @@ The evaluator's blocking findings are forwarded verbatim into the next packet's
 stage routes by owner. The parent agent never paraphrases them. A routed
 `CHANGES_REQUIRED` re-enters an earlier stage rather than a revision stage, and
 spends the same failure budget doing it; see one repair owner per defect above.
+
+A `fail_transition` is usually a bounded-revision stage, but the engine requires
+only that it name a declared stage. `research-synthesis` names `research`, so
+its failure path re-enters the fan-out that produced the material it judged
+rather than sending a reviser to an artifact; see the research sufficiency loop
+above. The budget spent is the evaluator's own either way.
+
+A `CHANGES_REQUIRED` carrying no blocking finding is refused at every evaluator.
+Asking for a change while naming none is self-contradictory: it spends an
+iteration of the budget dispatching workers with nothing to read, and on a stage
+that routes a repair by owner it names no owner either.
 
 ### Bounded revision stage
 
@@ -618,8 +679,8 @@ agree about who runs the work.
 - `ACCEPTED`: a gate stage whose `pass_transition` is `ACCEPTED` ran its checks
   and every one of them passed, and the run's own record satisfies the
   acceptance audit below.
-- `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, or a
-  revision loop reaches its `max_iterations` limit.
+- `BLOCKED`: an evaluator returns `BLOCKED`, a worker returns `BLOCKED`, or an
+  evaluator's revision or re-entry loop reaches its `max_iterations` limit.
 
 Both are final: the engine refuses any further `advance` on a terminal run.
 

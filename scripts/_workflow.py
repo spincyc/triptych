@@ -1967,18 +1967,36 @@ class WorkflowEngine:
 
         if stage["type"] == EVALUATOR:
             if disposition == PASS:
+                # A PASS carrying a blocking finding passes the transition and
+                # then fails the acceptance audit, at the one place the run
+                # cannot be repaired from: no revision path re-enters an
+                # upstream evaluator, so the run wedges rather than blocking.
+                # Refuse it here, while the run is still drivable.
+                standing = sorted(
+                    str(finding.get("id", "(unidentified)"))
+                    for finding in result.get("findings", []) or []
+                    if finding.get("severity") == "blocking"
+                )
+                if standing:
+                    raise WorkflowError(
+                        f"evaluator {stage['id']} returned {PASS} while its "
+                        f"own findings still stand as blocking: "
+                        f"{', '.join(standing)}. Resolve them, or return "
+                        f"{CHANGES_REQUIRED}."
+                    )
                 self._clear_failures(state, stage)
                 return stage["pass_transition"], None
             if disposition == CHANGES_REQUIRED:
-                if stage.get(REPAIR_ROUTES) and not any(
+                if not any(
                     finding.get("severity") == "blocking"
                     for finding in result.get("findings", []) or []
                 ):
                     raise WorkflowError(
                         f"evaluator {stage['id']} returned "
-                        f"{CHANGES_REQUIRED} with no blocking finding; on a "
-                        f"stage that routes a repair by owner, that names no "
-                        f"owner and would send a reviser work it cannot see"
+                        f"{CHANGES_REQUIRED} with no blocking finding; asking "
+                        f"for a change while naming none spends an iteration "
+                        f"dispatching a worker with nothing to read, and on a "
+                        f"stage that routes by owner it names no owner either"
                     )
                 spent = self._failure_budget_spent(state, stage)
                 if spent:

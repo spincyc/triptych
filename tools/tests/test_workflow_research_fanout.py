@@ -133,10 +133,16 @@ class PropersCase(unittest.TestCase):
         return str(path)
 
     def worker_pass(self, run_id: str, name: str) -> str:
+        """A passing single-agent result for whatever stage is waiting.
+
+        `findings` is always present: a worker schema ignores it, and an
+        evaluator schema requires it. `research-synthesis` is an evaluator
+        that also writes an artifact, so one shape answers both.
+        """
         packet = self.engine.load_state(run_id)["packet_hashes"][-1]
         return self.write(name, {
             "stage": packet["stage"], "iteration": packet["iteration"],
-            "disposition": PASS, "summary": "probe",
+            "disposition": PASS, "summary": "probe", "findings": [],
             "artifact_path": "research/scope.md",
         })
 
@@ -274,8 +280,12 @@ class TopologyTests(unittest.TestCase):
     def test_the_research_chain_is_wired_in_order(self):
         self.assertEqual(self.stages["source-audit"]["next"], "research")
         self.assertEqual(self.stages["research"]["next"], "research-synthesis")
-        self.assertEqual(self.stages["research-synthesis"]["next"],
+        # research-synthesis is an evaluator now: passing goes on to
+        # authoring, asking for more goes back to research.
+        self.assertEqual(self.stages["research-synthesis"]["pass_transition"],
                          "author-proper")
+        self.assertEqual(self.stages["research-synthesis"]["fail_transition"],
+                         "research")
         self.assertEqual(self.stages["author-proper"]["next"],
                          "content-evaluation")
 

@@ -113,17 +113,26 @@ write anything into the repository, and do not answer for another lane.
 }
 ```
 
-- `PASS`: no blocking findings. The workflow advances.
+- `PASS`: no blocking findings. The workflow advances. A `PASS` that still
+  carries one is refused, because nothing downstream can resolve it.
 - `CHANGES_REQUIRED`: blocking findings present. The workflow enters a
-  bounded revision loop. Findings are forwarded verbatim to the reviser.
+  bounded loop back to the stage that owns the repair — a reviser, or an
+  earlier stage that must run again. Findings are forwarded verbatim to it.
+  A `CHANGES_REQUIRED` carrying no blocking finding is refused: it asks for a
+  change while naming none.
 - `BLOCKED`: a finding cannot be resolved by revision. The workflow stops.
 
 Finding IDs must be stable across iterations (e.g., `VIS-001` refers to the
-same issue every time it appears). Use a prefix matching the evaluator type:
-`CON-` for content, `VIS-` for visual.
+same issue every time it appears). Use the prefix your own stage fragment
+gives you; `CON-` for content evaluation and `VIS-` for visual evaluation are
+two of them, and a stage that names another means it.
 
 Only `blocking` severity findings trigger revision. `advisory` findings are
 recorded but do not block.
+
+A stage that also writes an artifact returns `artifact_path` alongside these
+fields on a `PASS`, exactly as a worker stage does. Its own fragment says so
+where that applies.
 
 ## Naming who repairs a blocking finding
 

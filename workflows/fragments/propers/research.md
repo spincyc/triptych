@@ -35,6 +35,22 @@ theirs, do not read or reconcile their findings, and do not merge yours with
 anyone else's. `tpt` joins the lanes itself, and a later single-owner
 `research-synthesis` worker integrates every lane.
 
+## Prior findings
+
+When the packet's `PRIOR_FINDINGS` line is not empty, you are running again
+because a later stage asked for more research. Do your ordinary sweep in
+full either way, and read the forwarded findings for what they add. They come
+from one of two places, and they are not read the same way.
+
+A finding carrying `repair_target` came from `content-evaluation`: its
+`location` names a place in the document, not a lane, and its `lane` names
+the evaluation lane that raised it. Judge it against your own scope and act
+on it if the research it questions is yours to sweep.
+
+A finding without `repair_target` came from `research-synthesis`: its
+`location` names the research lane that owes the work. Address it if it names
+your lane, and leave it alone if it names another.
+
 ## Result
 
 Return a research result validated against `research-result.json`, carrying
