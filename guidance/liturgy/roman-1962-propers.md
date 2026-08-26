@@ -9,11 +9,11 @@ Each guide is a hand-missal companion, not an official liturgical text, critical
 **This collection is closed.** The maintainer bounded it at the set already
 published on 2026-07-25; the identities below stay complete and permanent, but
 an identity with no guide is the normal state and not a target. The maintainer
-reopened the boundary for the Claude `48`–`50` targets on 2026-08-19 and for
-the corresponding GPT `48`–`50` targets on 2026-08-20;
-[the production plan](propers-production-plan.md) records those decisions,
-owns the boundary, and states how to derive what each provider has actually
-published.
+reopened the boundary for the Claude `51`–`53` targets on 2026-08-19, for the
+corresponding GPT `51`–`53` targets on 2026-08-20, and for `54` on 2026-08-26
+for both providers; [the production plan](propers-production-plan.md) records
+those decisions, owns the boundary, and states how to derive what each provider
+has actually published.
 
 - The temporal series uses 68 temporal identities in a stable Advent-first repository order: `01` is the First Sunday of Advent and `68` is the Twenty-fourth and Last Sunday after Pentecost. The Sacred Triduum (`27`–`29`) is numbered inline between Palm Sunday (`26`) and Easter Sunday (`30`). Stable feasts of the Lord (Nativity, Epiphany, Baptism, Ascension, Corpus Christi, Sacred Heart) are inserted inline at their liturgical-year positions. These IDs are catalog identities, not the occurrence schedule of a civil year.
 - `64` through `67` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
