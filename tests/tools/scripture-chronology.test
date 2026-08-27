@@ -63,9 +63,27 @@ run_tool query Ecclus.44.1 --system greek --json \
 	echo "the Greek Sirach stopped refusing the Vulgate mapping" >&2
 	exit 1
 }
-# And a locus that genuinely has neither still refuses outright.
-if run_tool query EsthGr.1.1 --system greek --json | grep -q '"status":"ok"'; then
-	echo "a locus with no native chronology and no mapping resolved anyway" >&2
+# And a locus that has neither answers on BOTH axes, which is the second half of
+# the same correction. This asserted that such a locus "refuses outright" until
+# 2026-08-27, when the post-audit lane found ten native loci answering
+# `textually-distinct` to the question "is this dated?" - a mapping word standing
+# in the chronology axis, with no route to anything else. The mapping still
+# refuses and still says why; the chronology axis now says what §9 says of any
+# locus nobody has researched. That is the third gate on this branch found
+# asserting a defect rather than a contract.
+run_tool query EsthGr.1.1 --system greek --json \
+	| grep -q '"chronology_status":"research-pending"' || {
+	echo "a native locus answered something other than a chronology status" >&2
+	exit 1
+}
+run_tool query EsthGr.1.1 --system greek --json \
+	| grep -q '"status":"textually-distinct"' || {
+	echo "the mapping refusal stopped being reported on the mapping axis" >&2
+	exit 1
+}
+# It still exits non-zero, because the caller got no chronology.
+if run_tool query EsthGr.1.1 --system greek >/dev/null 2>&1; then
+	echo "a locus with no chronology exited zero" >&2
 	exit 1
 fi
 # And where the concordance DOES record a row, the answer is the row's, not the

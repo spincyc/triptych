@@ -85,22 +85,22 @@ the ten were never loci.
 
 | Vulgate/Clementine primary | at 2330d63a5 | now |
 | --- | --- | --- |
-| total | 35 809 | **35809** |
-| dated | 12 406 | **12541** |
-| composition-only | 16 687 | **16504** |
-| undated-in-tradition | 6 716 | **6764** |
+| total | 35 809 | **35 809** |
+| dated | 12 406 | **12 541** |
+| composition-only | 16 687 | **16 504** |
+| undated-in-tradition | 6 716 | **6 764** |
 | research-pending | 0 | **0** |
-| direct-only / inherited-only / both | 3 646 / 7 354 / 1 406 | **3610 / 7526 / 1405** |
-| multiple relations | 7 944 | **7882** |
-| alternatives | 12 897 | **13776** |
+| direct-only / inherited-only / both | 3 646 / 7 354 / 1 406 | **3 610 / 7 526 / 1 405** |
+| multiple relations | 7 944 | **7 882** |
+| alternatives | 12 897 | **13 776** |
 
 | Additional native | printed | shared | already counted | additional | statuses |
 | --- | --- | --- | --- | --- | --- |
-| `greek` | 2156 | 800 | 0 | **1356** | {'composition-only': 1355, 'research-pending': 1} |
-| `hebrew` | 2528 | 2528 | 0 | **0** | wholly shared |
-| `world-english-catholic` | 2094 | 730 | 1358 | **6** | {'research-pending': 6} |
+| `greek` | 2 156 | 800 | 0 | **1 356** | 1 355 composition-only, 1 research-pending |
+| `hebrew` | 2 528 | 2 528 | 0 | **0** | wholly shared |
+| `world-english-catholic` | 2 094 | 730 | 1 358 | **6** | 6 research-pending |
 
-Declared universe **37171**, down from 37 209 — the figure this
+Declared universe **37 171**, down from 37 209 — and 37 171 is the figure this
 repository already held in `_chronology`'s own docstring and in `composition.yaml`.
 `septuagint`, `nova-vulgata` and `nab` are now reported `enumerable: false`
 rather than omitted, as §9.3 requires. **No locus anywhere answers a mapping
