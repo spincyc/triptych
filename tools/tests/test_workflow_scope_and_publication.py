@@ -46,6 +46,7 @@ from _workflow import (  # noqa: E402
     SINGLE,
     STRICT_UNION,
     WorkflowEngine,
+    _substitute_args,
 )
 from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
@@ -248,7 +249,11 @@ class AuthorizationScopeTests(PlanFixture):
         gate, and the boundary would refuse targets the maintainer opened.
         """
         command = gate_check("scope-gate", "authorized-scope")
-        needle = "grep -qF -- 'provider `{provider}`, identity `{proper}`'"
+        needle = ('index($0, "provider `" p "`, identity `" d "`.") > 0')
+        # The gate matches an authorization LINE, not a mention anywhere in
+        # the file, so prose about a target -- or a line revoking one --
+        # cannot read as an authorization.
+        self.assertIn('index($0, "- Authorized ") == 1', command)
         self.assertIn(needle, command)
         fragment = (FRAGMENTS / "propers" / "authorize-target.md").read_text(
             encoding="utf-8")
@@ -392,10 +397,55 @@ class PublicationAcceptanceTests(unittest.TestCase):
         self.assertIn(
             "release/publications/{provider}/{proper}-synthesis.json",
             checks["synthesis-release-record"])
-        for artifact in ("(../pdf/{provider}/{proper}.pdf)",
-                         "(../pdf/{provider}/{proper}-synthesis.pdf)",
-                         "(../web/{provider}/{proper}.html)"):
+        for artifact in ('"](../pdf/" p "/" d ".pdf)"',
+                         '"](../pdf/" p "/" d "-synthesis.pdf)"',
+                         '"](../web/" p "/" d ".html)"'):
             self.assertIn(artifact, checks["catalog-links"])
+
+    def test_a_hostile_identity_cannot_escape_a_gate_command(self):
+        """A document id is data. It is never a place to continue the command.
+
+        `_substitute_args` shell-quotes every value, but a template that wraps
+        its own placeholder in quotes cancels that: the value's opening quote
+        closes the template's literal and the rest of the id is read as shell.
+        That is not hypothetical. Before this test, `authorized-scope` read
+
+            grep -qF -- 'provider `{provider}`, identity `{proper}`' PLAN
+
+        and an id ending in a backticked command ran it, as the maintainer of
+        this repository confirmed by execution. Assert the property rather than
+        any one template: whatever a check is written as, a hostile id must
+        survive substitution as inert data.
+        """
+        payloads = (
+            "x`touch /tmp/triptych-gate-escape`",
+            "x$(touch /tmp/triptych-gate-escape)",
+            "x; touch /tmp/triptych-gate-escape",
+            "x' ; touch /tmp/triptych-gate-escape ; '",
+        )
+        gates = [stage for stage in workflow_json()["stages"]
+                 if stage["type"] == "gate"]
+        self.assertTrue(gates)
+        for stage in gates:
+            for check in stage.get("checks", []):
+                if "{proper}" not in check["command"]:
+                    continue
+                for payload in payloads:
+                    with self.subTest(gate=stage["id"], check=check["id"],
+                                      payload=payload):
+                        rendered = _substitute_args(
+                            check["command"],
+                            {"proper": payload, "provider": "claude"},
+                            quote=True)
+                        tokens = shlex.split(rendered)
+                        self.assertTrue(
+                            any(payload in token for token in tokens),
+                            f"{stage['id']}/{check['id']}: the id did not "
+                            f"survive substitution as inert data")
+                        self.assertNotIn(
+                            "touch", tokens,
+                            f"{stage['id']}/{check['id']}: the payload split "
+                            f"apart, so part of the id became a shell word")
 
     def test_the_installed_artifacts_are_checked_not_the_built_ones(self):
         """A build-tree check would accept a publication nobody installed."""

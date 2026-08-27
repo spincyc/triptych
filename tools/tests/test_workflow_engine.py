@@ -357,8 +357,11 @@ class PropersWorkflowTests(unittest.TestCase):
                     residue = cmd
                     for token in known:
                         residue = residue.replace(token, "")
-                    self.assertNotIn(
-                        "{", residue,
+                    # A placeholder is `{name}`. A gate command may legitimately
+                    # contain other braces -- an awk program body is all braces --
+                    # so look for the placeholder shape, not for the character.
+                    self.assertNotRegex(
+                        residue, r"\{[A-Za-z_][A-Za-z0-9_]*\}",
                         f"gate {stage['id']} check {check['id']} takes an "
                         f"argument the run has not normalized")
             self.assertEqual(

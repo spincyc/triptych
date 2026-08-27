@@ -69,7 +69,7 @@
         },
         {
           "id": "authorized-scope",
-          "command": "grep -qF -- 'provider `{provider}`, identity `{proper}`' guidance/liturgy/propers-production-plan.md",
+          "command": "awk -v p={provider} -v d={proper} 'index($0, \"- Authorized \") == 1 && index($0, \"provider `\" p \"`, identity `\" d \"`.\") > 0 { found = 1 } END { exit !found }' guidance/liturgy/propers-production-plan.md",
           "required_result": "the production plan must record a maintainer authorization for exactly this provider and this identity; the propers collections are closed, and a registered permanent identity is not itself authorization to produce one"
         }
       ],
@@ -503,7 +503,7 @@
       "checks": [
         {
           "id": "authorized-scope",
-          "command": "grep -qF -- 'provider `{provider}`, identity `{proper}`' guidance/liturgy/propers-production-plan.md",
+          "command": "awk -v p={provider} -v d={proper} 'index($0, \"- Authorized \") == 1 && index($0, \"provider `\" p \"`, identity `\" d \"`.\") > 0 { found = 1 } END { exit !found }' guidance/liturgy/propers-production-plan.md",
           "required_result": "the production plan must still authorize exactly this provider and this identity at the moment of publication"
         },
         {
@@ -558,7 +558,7 @@
         },
         {
           "id": "catalog-links",
-          "command": "grep -qF -- '(../pdf/{provider}/{proper}.pdf)' library/traditional-latin-mass.md && grep -qF -- '(../pdf/{provider}/{proper}-synthesis.pdf)' library/traditional-latin-mass.md && grep -qF -- '(../web/{provider}/{proper}.html)' library/traditional-latin-mass.md",
+          "command": "awk -v p={provider} -v d={proper} 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\")   > 0 { full = 1 } index($0, \"](../pdf/\" p \"/\" d \"-synthesis.pdf)\") > 0 { syn = 1 } index($0, \"](../web/\" p \"/\" d \".html)\") > 0 { web = 1 } END { exit !(full && syn && web) }' library/traditional-latin-mass.md",
           "required_result": "this provider's catalog cell must link all three published artifacts: the full PDF, the synthesis PDF, and the web edition"
         }
       ],

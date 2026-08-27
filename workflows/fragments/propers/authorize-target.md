@@ -43,9 +43,15 @@ is not an authorization record, it is a reopened boundary.
    registers. Do not write an entry for it; return `BLOCKED`.
 3. Confirm the provider is `{provider}` and that it is one this repository
    publishes for: `claude` or `gpt`.
-4. Look for an existing entry for exactly this provider and this identity:
+4. Look for an existing authorization line for exactly this provider and this
+   identity. Match an entry in the list, not a mention anywhere in the file, so
+   that prose discussing a target — or a line revoking one — never reads as an
+   authorization:
    ```
-   grep -qF -- 'provider `{provider}`, identity `{proper}`' \
+   awk -v p='{provider}' -v d='{proper}' \
+       'index($0, "- Authorized ") == 1 &&
+        index($0, "provider `" p "`, identity `" d "`.") > 0 { found = 1 }
+        END { exit !found }' \
        guidance/liturgy/propers-production-plan.md
    ```
    If it is already there, **write nothing**. The target is authorized and
