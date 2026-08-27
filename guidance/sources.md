@@ -336,6 +336,30 @@ or served only in fragments — record the exact bound reached and why, and mark
 the artifact's completeness explicitly. A bounded retrieval, declared, is a
 usable source. A bounded retrieval, undeclared, is a false one.
 
+**A source that publishes two views of itself is two artifacts, and the record
+must say which one it is.** Sites routinely serve an abridged list beside a
+fuller one, a summary beside a full text, a first page beside a complete
+download — at different URLs, often under the same title, and sometimes with
+the short one linking to the long one. Retrieve the fullest view the source
+offers, register that one, and write its extent into the record: how much it
+holds, measured, and against what.
+
+Where a source states its own limitation, quote that statement in the record in
+the source's own words. Where it states none, say that too, and say separately
+whether anything attests completeness — a page that merely omits a disclaimer
+has not claimed to be complete, and a sibling page's link text calling it "the
+full index" is that sibling's claim, not this page's.
+
+**A negative claim may only be as wide as the extent the record states.** An
+absence read off a source is an absence from that source's stated extent and
+nothing more, and the wording must carry the bound: "this list does not carry
+it", never "there is none". A record that asserts an extent its own registered
+bytes deny is the same defect as a citation naming a source that was never
+pinned down, arriving one layer earlier. It has already happened here: two New
+Advent letter-index pages were registered to prove a silence while printing,
+above their first entry, that they list "only a tiny fraction" of the articles
+the site carries.
+
 **Resolve a source's aliases before retrieving it.** A work is rarely catalogued
 once. It carries a Latin title and a vernacular one, an incipit that stands in
 for a title, an author named in Latin, in Greek, in the vernacular and by see or

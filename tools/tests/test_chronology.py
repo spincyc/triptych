@@ -453,6 +453,40 @@ events:
             _chronology.load(root)
         self.assertIn("declares numbering", str(caught.exception))
 
+    def test_a_key_stated_twice_in_one_mapping_is_refused_with_its_line(self) -> None:
+        """PyYAML keeps the last of a repeated key, and every gate then passes.
+
+        Not hypothetical. Edits applied by string replacement left a second
+        `sources:` inside one claim of the tracked `events.yaml` and a second
+        `label:` inside two `date:` mappings of `composition.yaml`. Every
+        duplicated pair was identical, so no answer moved: `validate` reported
+        the corpus valid, `check` reported the coverage table current, and
+        every test here passed over a corpus that is not valid YAML 1.2. The
+        duplicate in this fixture is four mappings deep inside a list, because
+        that is where the real ones were and a check reading only the top of
+        the file would not have seen them. The refusal must name the key and
+        the line, or an author cannot act on it.
+        """
+        refuses(
+            self,
+            "key 'label' is stated twice",
+            events="""\
+events:
+  - id: life-of-christ.crucifixion
+    title: The Crucifixion
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: A test fixture, grounded in nothing.
+        sources: [bible.douay-rheims]
+        date:
+          precision: year
+          from: {year: 33, era: ad}
+          label: the year of the Passion
+          label: the year of the Passion
+""",
+        )
+
     def test_a_system_may_not_name_a_book_it_does_not_number(self) -> None:
         """`hebrew` is a psalter numbering, and names nothing outside it.
 
@@ -593,8 +627,8 @@ units:
         reached by preferring Egyptological synchronisms — the reconstruction
         §4.3 says is "not consulted". Being the only claim on the subject, it
         was what this profile answered for the founding of the monarchy. It
-        could not be withdrawn while every event required a date, because two
-        bindings name this event and four claims are measured from it. So an
+        could not be withdrawn while every event required a date, because
+        bindings name this event and other claims are measured from it. So an
         event may now hold no claim: it asserts nothing and returns nothing.
         """
         corpus(
@@ -1429,6 +1463,36 @@ class TrackedHardCaseTests(unittest.TestCase):
             "israel.patriarchs.birth-of-abram",
             {claim.date.anchor for claim in call.claims},
         )
+
+    def test_a_containing_span_is_not_the_event_an_episode_is_offset_from(self) -> None:
+        """The cold audit's A4-017, and §10.0's "Containment is not offset".
+
+        Ezechiel 24:15 opens with the book's undated revelation formula and
+        24:18 states only a morning-to-evening order; Scripture gives the
+        episode no year, month or day and measures it from nothing. It was
+        stored as `relative` anchored on `israel.exile.ezechiel.ministry`,
+        which is the event's own `parent` — the containing span this corpus
+        measures at "at least twenty-two years" — so `Date.anchor` returned a
+        container as though the episode were counted from its start.
+
+        The rule this guards is NOT "an anchor may not be a parent": five
+        claims anchor on their own parent and each states a real position
+        against it — "in the eighteenth year of king Josias", "the third day",
+        "one hundred and twenty years before it occurred". This one stated
+        nothing about its anchor at all, so there was no offset to encode.
+        """
+        corpus = _chronology.load()
+        episode = corpus.events["israel.exile.ezechiel.death-of-the-prophets-wife"]
+        # Nothing is measured from the container; the containment lives here.
+        self.assertEqual(episode.claims, ())
+        self.assertEqual(episode.parent, "israel.exile.ezechiel.ministry")
+        # And it is still a subject: a binding names it, and the verses that
+        # binding covers are still dated, from the Ezech-scoped claims above.
+        self.assertIn(
+            "israel.exile.ezechiel.death-of-the-prophets-wife",
+            {binding.event for binding in corpus.bindings},
+        )
+        self.assertEqual(self.ask("Ezech.24.18").status, "dated")
 
     def test_a_witness_to_a_different_text_may_date_it_where_it_corresponds(self) -> None:
         """The other half of the same rule, and the reason it is not mappability.

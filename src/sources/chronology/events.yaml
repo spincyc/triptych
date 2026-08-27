@@ -1262,7 +1262,6 @@ events:
           the warning Howlett quotes at its head from Frederick Blass, that of
           the chronology of the Acts of the Apostles "we cannot be certain of our
           dates within a less period than about ten years".
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         date:
           precision: range
           from: {year: 62, era: ad}
@@ -2290,11 +2289,11 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
           The spread between the Hebrew and the Septuagint here is seven hundred
-          and eighty years, wider than the whole antediluvian disagreement, and
-          no ranked source inspected for this corpus settles it. The three are
-          kept as alternates rather than disputed because Genesis 12:4 outranks
-          all three and is not in disagreement with them: it measures the call
-          from the birth, they measure it from the Flood.
+          and eighty years, and no ranked source inspected for this corpus
+          settles it. The three are kept as alternates rather than disputed
+          because Genesis 12:4 outranks all three and is not in disagreement
+          with them: it measures the call from the birth, they measure it from
+          the Flood.
         date:
           precision: relative
           relative:
@@ -3129,12 +3128,12 @@ events:
       modern reconstruction the profile's answer for the founding of the
       monarchy. It is withdrawn.
 
-      This event survives without a date because it is still a subject: two
-      bindings name it and four claims are measured from it, and naming a thing
-      is not the same act as dating it. Scripture states intervals TO and FROM
-      Saul's accession and never dates it, so no rank-1 claim can be authored
-      here either without the derivation guidance 10 would require. A ranked
-      traditional source that dates it would be authored here.
+      This event survives without a date because it is still a subject:
+      bindings name it and other claims are measured from it, and naming a
+      thing is not the same act as dating it. Scripture states intervals TO and
+      FROM Saul's accession and never dates it, so no rank-1 claim can be
+      authored here either without the derivation guidance 10 would require. A
+      ranked traditional source that dates it would be authored here.
   - id: israel.monarchy.saul-reign
     title: The reign of Saul
     dates:
@@ -3163,9 +3162,19 @@ events:
   - id: israel.monarchy.david-accession
     title: David's accession to the throne
     note: >-
-      The three Catholic Encyclopedia figures inspected for this lane are fifty
-      years apart and nothing in the inspected sources settles them, so all
-      three are kept disputed and none is displayed first.
+      The two Catholic Encyclopedia figures this corpus holds are forty-three
+      years apart and nothing in the inspected sources settles them, so both are
+      kept disputed and neither is displayed first.
+
+      A third was inspected and is not held. Howlett's "Biblical Chronology"
+      concludes "the monarchy was founded by Saul, 1020; David mounted the
+      throne, 1002; Solomon in 962, and the Temple was begun, 958 B.C.", and
+      that 1002 is one arithmetical step inside a reconstruction reached on
+      Sayce's Egyptological dates for Ramses II and on Wellhausen's and Stade's
+      treatment of 3 Kings 6:1 as a late insertion. It was withdrawn from this
+      profile on 2026-08-27 with the other figures of the same sentence, because
+      a modern chronology is a separate profile with its own id and is not
+      consulted, adjusted with, or treated as a correction here.
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -3202,21 +3211,6 @@ events:
           precision: approximate-year
           from: {year: 1012, era: bc}
           label: "B.C. 1012"
-      - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          James Howlett's "Biblical Chronology" (Catholic Encyclopedia, New
-          York, 1908) concludes his own reckoning of the period with "David
-          mounted the throne, 1002".
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          Howlett's figure rests on Egyptological and Assyriological
-          synchronisms he prefers to the received reckoning; it is recorded as
-          this Catholic article's testimony, not as the traditional date.
-        date:
-          precision: year
-          from: {year: 1002, era: bc}
-          label: "David mounted the throne, 1002"
 
   - id: israel.monarchy.david-capture-of-sion
     title: David's capture of the castle of Sion
@@ -3230,8 +3224,9 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08344a-e6625662]
         note: >-
           The article's own "about" is kept. This figure stands near the
-          Petavius table's B.C. 1055 for David and far from Howlett's 1002, but
-          it dates the capture of Sion, not the accession.
+          Petavius table's B.C. 1055 for David and far from Sloet's own B.C.
+          1012 - the two accession years this corpus holds - but it dates the
+          capture of Sion, not the accession.
         date:
           precision: approximate-year
           from: {year: 1058, era: bc}
@@ -3495,9 +3490,19 @@ events:
   - id: israel.monarchy.solomon-accession
     title: The accession of Solomon
     note: >-
-      Three Catholic Encyclopedia figures, more than fifty years apart, and
-      nothing inspected settles them. The Catholic Encyclopedia's own article on
-      Solomon carries no B.C. date at all.
+      Two Catholic Encyclopedia figures, forty-three years apart, and nothing
+      inspected settles them. The Catholic Encyclopedia's own article on Solomon
+      carries no B.C. date at all.
+
+      A third was inspected and is not held. Howlett's "Biblical Chronology"
+      concludes "the monarchy was founded by Saul, 1020; David mounted the
+      throne, 1002; Solomon in 962, and the Temple was begun, 958 B.C.", and
+      that 962 is one arithmetical step inside a reconstruction reached on
+      Sayce's Egyptological dates for Ramses II and on Wellhausen's and Stade's
+      treatment of 3 Kings 6:1 as a late insertion. It was withdrawn from this
+      profile on 2026-08-27 with the other figures of the same sentence, because
+      a modern chronology is a separate profile with its own id and is not
+      consulted, adjusted with, or treated as a correction here.
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -3529,21 +3534,6 @@ events:
           precision: approximate-year
           from: {year: 972, era: bc}
           label: "B.C. 972"
-      - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          Howlett's "Biblical Chronology" (Catholic Encyclopedia, New York,
-          1908) concludes "the monarchy was founded by Saul, 1020; David mounted
-          the throne, 1002; Solomon in 962, and the Temple was begun, 958 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          Howlett's own reconstruction from Egyptological and Assyriological
-          synchronisms, recorded as this article's testimony and not as the
-          traditional Catholic date.
-        date:
-          precision: year
-          from: {year: 962, era: bc}
-          label: "Solomon in 962"
 
   - id: israel.monarchy.solomon-reign
     title: The reign of Solomon
@@ -3582,6 +3572,29 @@ events:
       contested figure in this lane: the Catholic Encyclopedia articles
       inspected here print 1012, 1010 (Ussher, reported), 969, 966 and 958 for
       it, and one article prints two of those itself.
+
+      Two of those five are Howlett's own reckoning, and they are recorded here
+      rather than held as claims. His "Biblical Chronology" closes "The Exodus
+      to the building of Solomon's Temple" with "Solomon in 962, and the Temple
+      was begun, 958 B.C." - the terminal figure of a chain that runs from
+      Sayce's Egyptological dates for Ramses II ("he reigned from 1348-1281"),
+      from "Assyriologists and Egyptologists agree" that Palestine was an
+      Egyptian province until 1400 (Driver, "Genesis", p. xxix), and from
+      Wellhausen's and Stade's treatment of 3 Kings 6:1 as a late insertion, and
+      which concedes on the way that "we are left with only about 327 years, as
+      against 480 required by 1 Kings 6:1". In the section immediately following
+      he reaches "about 969" the same way - "bringing to our help the fragment
+      of the Tyrian annals quoted by Josephus, the foundation of the Temple may
+      be fixed, according to Sayce, for about the year 969, which would be very
+      near the date given above" - under Mangenot's demand, which that section
+      quotes at its head, that the chronology of the kings "must be made to
+      accord with the Assyrian chronology". Both were withdrawn from this
+      profile on 2026-08-27, with the Exodus of about 1277 and Saul's 1020 from
+      the same concluding sentence, because a modern chronology is a separate
+      profile with its own id and is not consulted, adjusted with, or treated as
+      a correction here. The 969 this event still holds is Sloet's own table in
+      "Chronology of the Kings", a different article by a different author,
+      which this lane did not rule.
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -3636,10 +3649,13 @@ events:
         note: >-
           This is the Catholic Encyclopedia reporting Ussher, not Ussher as a
           source of record; this profile admits him only as reported by a ranked
-          Catholic source, and never alone. Howlett does not reject the figures
-          where he prints them: he asks "How do these results square with the
-          teaching of science?" and later reaches a different figure of his own,
-          958 B.C., on Egyptological grounds, which is held separately below.
+          Catholic source, and never alone - the express reporting licence of
+          guidance/scripture-chronology.md 4.3, which is granted to Ussher by
+          name and to nothing else. Howlett does not reject the figures where he
+          prints them: he asks "How do these results square with the teaching of
+          science?" and later reaches two figures of his own, 958 B.C. and about
+          969, on Egyptological and Assyriological grounds. Those two are not
+          held under this profile and are recorded in the subject note above.
         date:
           precision: year
           from: {year: 1010, era: bc}
@@ -3658,39 +3674,6 @@ events:
           precision: approximate-year
           from: {year: 969, era: bc}
           label: "B.C. 969"
-      - profile: catholic-traditional-v1
-        disposition: alternate
-        basis: >-
-          Howlett's "Biblical Chronology" summarises the next period thus: "We
-          conclude then that the Temple was built about 969. The secession of
-          the Ten Tribes took place about 937. The fall of Samaria in 722 or
-          721, and the destruction of Jerusalem 536 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          The same article gives "the Temple was begun, 958 B.C." at the close
-          of its preceding section, "The Exodus to the building of Solomon's
-          Temple". Both are recorded; the contradiction is the source's and is
-          not resolved here. Howlett writes "the Temple was built", not
-          "begun", and this corpus holds israel.monarchy.temple-finished as a
-          separate event; the label preserves his wording so a consumer can see
-          the reading.
-        date:
-          precision: approximate-year
-          from: {year: 969, era: bc}
-          label: "the Temple was built about 969"
-      - profile: catholic-traditional-v1
-        disposition: alternate
-        basis: >-
-          Howlett's "Biblical Chronology" closes his reckoning of the previous
-          period with "Solomon in 962, and the Temple was begun, 958 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          Howlett's own reconstruction, not the traditional figure, and
-          contradicted in the next section by the same article's "about 969".
-        date:
-          precision: year
-          from: {year: 958, era: bc}
-          label: "the Temple was begun, 958 B.C."
       - profile: catholic-traditional-v1
         disposition: alternate
         basis: >-
@@ -3742,6 +3725,23 @@ events:
       that "Israel revolted from the house of David, unto this day", and that
       the assembly "made him king over all Israel", so no date is authored from
       that locus.
+
+      Two figures inspected here are recorded and not held. Howlett's "Biblical
+      Chronology" writes "We have fixed roughly the date of the revolt of the
+      Ten Tribes for the year 936 B.C. But the traditional date is 975", and
+      summarises the same reckoning as "The secession of the Ten Tribes took
+      place about 937". Both descend from his "about 969" for the foundation of
+      the Temple, which he takes "according to Sayce" from the Tyrian annals in
+      a section whose stated project, quoted from Mangenot at its head, is that
+      the chronology of the kings "must be made to accord with the Assyrian
+      chronology"; he then derives from it that "Solomon reigned from 973 to
+      936, and David from 1013 to 973. So, to speak roughly, the revolt of the
+      Ten Tribes must have taken place somewhere about the year 936." They were
+      withdrawn from this profile on 2026-08-27, with the 958 and about 969 on
+      israel.monarchy.temple-begun, because a modern chronology is a separate
+      profile with its own id and is not consulted, adjusted with, or treated as
+      a correction here. The traditional 975 that the same sentence names as
+      traditional is kept, and is displayed first.
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -3757,10 +3757,14 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
           Preferred not by authority rank, which every claim here shares, but
-          because the article itself names this figure "the traditional date"
-          while the competing figures are its author's own reconstruction from
-          the Assyrian canon, which this profile does not admit as an authority.
-          The Petavius table independently sets Roboam at B.C. 975.
+          because the article itself names this figure "the traditional date",
+          and because the Petavius table reproduced in Sloet's "Chronology of
+          the Kings" independently sets Roboam at B.C. 975. The only competing
+          figure now held is Sloet's own table at B.C. 933-2, which that article
+          says is drawn up "in conjunction with the data of profane history".
+          The two figures Howlett reached instead from the Assyrian canon, 936
+          and about 937, are recorded in the subject note above and are not held
+          under this profile.
         date:
           precision: year
           from: {year: 975, era: bc}
@@ -3780,34 +3784,6 @@ events:
           precision: year
           from: {year: 975, era: bc}
           label: "B.C. 975"
-      - profile: catholic-traditional-v1
-        disposition: alternate
-        basis: >-
-          The same sentence of Howlett's "Biblical Chronology" states his own
-          conclusion: "We have fixed roughly the date of the revolt of the Ten
-          Tribes for the year 936 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          Howlett's own figure, reached by preferring the Assyrian chronological
-          canon; the same article's summary gives "about 937" instead.
-        date:
-          precision: year
-          from: {year: 936, era: bc}
-          label: "the revolt of the Ten Tribes for the year 936 B.C."
-      - profile: catholic-traditional-v1
-        disposition: alternate
-        basis: >-
-          Howlett's summary of the period reads: "We conclude then that the
-          Temple was built about 969. The secession of the Ten Tribes took place
-          about 937."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          A third figure from the same article, one year from its own 936. The
-          hedge "about" is the article's.
-        date:
-          precision: approximate-year
-          from: {year: 937, era: bc}
-          label: "The secession of the Ten Tribes took place about 937"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis: >-
@@ -6160,53 +6136,51 @@ events:
     title: The death of the wife of Ezechiel, and his forbidden mourning
     parent: israel.exile.ezechiel.ministry
     note: >-
-      Ezechiel 24 carries one dateline, at 24:1, and it belongs to the oracle of
-      the rusty pot, which was uttered on the day the siege of Jerusalem began.
-      The word at 24:15 opens with the book's undated revelation formula, "And
-      the word of the Lord came to me, saying", and Scripture attaches no year,
-      month or day to it. The chapter's dateline is therefore NOT carried onto
-      this event, on the same rule the lane applied at Ezech. 30:1. Schets's
-      "Ezekiel" keeps the two in one group without dating the second: "On the
-      day on which the siege of Jerusalem began, the prophet represents, under
-      the figure of the rusty pot, what was to befall the inhabitants of the
-      city. On the occasion of the death of his wife, God forbids him to mourn
+      NO DATE, AND THAT IS THE ANSWER. Scripture places this episode nowhere in
+      time and measures it from nothing. Ezechiel 24 carries one dateline, at
+      24:1, and it belongs to the oracle of the rusty pot, which was uttered on
+      the day the siege of Jerusalem began. The word at 24:15 opens with the
+      book's undated revelation formula, "And the word of the Lord came to me,
+      saying", and Scripture attaches no year, month or day to it. The
+      chapter's dateline is therefore NOT carried onto this event, on the same
+      rule the lane applied at Ezech. 30:1, and it is deliberately not anchored
+      to israel.exile.final-siege, whose day the chapter's other oracle
+      carries: the text does not say the two fell together, and dating this by
+      the neighbouring dateline would be exactly the borrowing this lane
+      refuses elsewhere.
+
+      The only temporal statement Scripture makes about it is a sequence inside
+      one unnamed day. The Douay-Rheims text of Ezechiel 24:16-18 gives the
+      command and its obedience: "Son of man, behold I take from thee the
+      desire of thy eyes with a stroke, and thou shalt not lament, nor weep;
+      neither shall thy tears run down" (24:16), "Sigh in silence, make no
+      mourning for the dead" (24:17), "So I spoke to the people in the morning,
+      and my wife died in the evening: and I did in the morning as he had
+      commanded me" (24:18). Morning before evening is an order within a day,
+      not a position in time and not a distance from anything.
+
+      A claim stood here until 2026-08-27 with precision relative, anchored on
+      israel.exile.ezechiel.ministry and carrying that sequence as its
+      statement. The anchor was this event's own parent, the containing span
+      the same corpus measures at "at least twenty-two years", so Date.anchor
+      returned a container as though the episode were counted from its start.
+      guidance/scripture-chronology.md 10.0 forbids exactly that: a subject may
+      say what it sits within, and containment is not offset. No offset exists
+      to encode - the withdrawn claim's own note conceded it, "Anchored to the
+      ministry and to nothing narrower, because nothing narrower is stated" -
+      so the claim is withdrawn and the containment is left where it already
+      stands, on parent. The event survives without a date because it is still
+      a subject: the narrated-event binding over Ezech. 24:18-20 names it, and
+      naming a thing is not the same act as dating it. A ranked source that
+      dated the episode would be authored here.
+
+      Schets's "Ezekiel" (Catholic Encyclopedia, New York, 1909) keeps the two
+      words of the chapter in one group without dating the second: "On the day
+      on which the siege of Jerusalem began, the prophet represents, under the
+      figure of the rusty pot, what was to befall the inhabitants of the city.
+      On the occasion of the death of his wife, God forbids him to mourn
       openly, in order to teach the exiles that they should be willing to lose
       that which is dearest to them without grieving over it (xxiv)."
-    dates:
-      - profile: catholic-traditional-v1
-        disposition: preferred
-        basis: >-
-          The Douay-Rheims text of Ezechiel 24:18 narrates the death and its day
-          within the day: "So I spoke to the people in the morning, and my wife
-          died in the evening: and I did in the morning as he had commanded me."
-          The only temporal statement Scripture makes about it is that sequence,
-          and 24:16-17 gives the command it obeys, "thou shalt not lament, nor
-          weep ... make no mourning for the dead".
-        sources:
-          - bible:douay-rheims:Ezech.24.16
-          - bible:douay-rheims:Ezech.24.17
-          - bible:douay-rheims:Ezech.24.18
-          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
-        note: >-
-          Anchored to the ministry and to nothing narrower, because nothing
-          narrower is stated: the death falls inside the prophetic ministry and
-          Scripture places it no more exactly than "in the evening" of the day
-          the prophet had spoken in the morning. It is deliberately not anchored
-          to israel.exile.final-siege, whose day the chapter's other oracle
-          carries: the text does not say the two fell together, and dating this
-          by the neighbouring dateline would be exactly the borrowing this lane
-          refuses elsewhere.
-        date:
-          precision: relative
-          relative:
-            of: israel.exile.ezechiel.ministry
-            statement: >-
-              So I spoke to the people in the morning, and my wife died in the
-              evening
-          label: >-
-            I spoke to the people in the morning, and my wife died in the
-            evening
-
   - id: israel.exile.ezechiel.oracle-against-tyre
     title: The oracle against Tyre, in the eleventh year
     parent: israel.exile.ezechiel.ministry
@@ -8315,11 +8289,13 @@ events:
         note: >-
           The terminus of the reign, on the day of the battle in mount Gelboe.
           No era figure attaches to it in any source inspected for this lane: the
-          Catholic Encyclopedia's article on Saul carries no date at all, and the
-          only figure this corpus holds for the founding of the monarchy is
-          Howlett's 1020 B.C., which it does not display first. The length of the
-          reign is the notorious 1 Kings 13:1, already held apart under the reign
-          itself.
+          Catholic Encyclopedia's article on Saul carries no date at all, and this
+          corpus holds no figure whatever for the founding of the monarchy. The
+          one figure ever inspected for it, Howlett's 1020 B.C., was withdrawn
+          from this profile on 2026-08-27 as part of his Egyptological and
+          Assyriological reconstruction, and israel.monarchy.saul-accession is
+          deliberately claimless; see the note there. The length of the reign is
+          the notorious 1 Kings 13:1, already held apart under the reign itself.
         date:
           precision: relative
           relative:

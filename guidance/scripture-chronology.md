@@ -351,7 +351,8 @@ necessary. Synonyms may not.
 ## 6. Events, held once
 
 An **event** is a reusable temporal subject: an id, a title, an optional
-parent, and one or more dated claims. `src/sources/chronology/events.yaml`.
+parent, and zero or more dated claims (§6.1).
+`src/sources/chronology/events.yaml`.
 
 ```yaml
 - id: life-of-christ.crucifixion
@@ -380,6 +381,38 @@ Good Friday.
 Events may nest (`parent`), for grouping only. The loader refuses a dangling
 parent and refuses a cycle. Do not grow an ontology ahead of a consumer that
 needs one.
+
+### 6.1 A subject may be named without being dated
+
+**An event may hold zero claims.** Naming a subject and dating it are two acts,
+and requiring the second of every event meant the only claim on a subject could
+not be withdrawn without deleting the subject — which cannot be done at all
+where bindings name it and other claims are measured from it. The live cases
+are `israel.monarchy.saul-accession`, whose one claim was a modern
+reconstruction §4.3 excludes, and
+`israel.exile.ezechiel.death-of-the-prophets-wife`, whose one claim encoded
+containment as an offset (§10.0); both claims are withdrawn and both subjects
+stand.
+
+Such an event **asserts nothing and returns nothing**. Omit `dates`; an empty
+list is refused, here as everywhere. A binding may name it — `bindings.yaml`
+asks only that the event is declared — and a `relative` date may be measured
+from it, because an anchor is checked for existence and never computed with
+(§10.0). A binding to it therefore contributes no assertion, so the loci it
+reaches keep whatever else reaches them and nothing moves in coverage: the
+accession verses answer `composition-only` from their book's composition unit.
+**[verified]** `validate` remarks on such an event exactly as it does on any
+event no binding reaches (§16) — a remark, and not an error.
+
+**A composition unit still requires a claim**, and the loader refuses one
+without. A unit exists only to carry a composition date over an extent, so a
+dateless unit would be a scope asserting nothing about the text it names.
+
+**This is not `research-pending`.** That is a status a *locus* has when no
+ranked source has been inspected for it (§9); a claimless event is a *subject*
+this corpus holds and dates nowhere. One corpus carries both at once, and a
+consumer meets them differently — the subject as silence, the locus as a word
+on the verse.
 
 ---
 
@@ -625,7 +658,7 @@ resolves successfully and wrongly.
 The distinction is **structural, not conventional**:
 
 - a `duration` may not carry a `relative` anchor, and may not carry endpoints;
-- a `relative` must name an anchor that exists;
+- a `relative` must name an anchor that exists, dated or not (§6.1);
 - a duration's units are whole and positive — zero is refused, because a span
   of no length is how "the source says nothing about how long" would look if it
   were written down, and that is silence, with `undated-in-tradition` and a gap
@@ -836,7 +869,7 @@ Never fabricate to close a gap. Never promote a superscription to a composition
 date because the composition date is missing. Never let a book-level date be
 authored solely to move a coverage number.
 
-### 15.1 The five ways this corpus has actually been got wrong
+### 15.1 The ways this corpus has actually been got wrong
 
 Not hypotheticals. Each of these passed a lane's own review, loaded clean,
 audited clean, and was caught only when a second reader went back to the
@@ -910,6 +943,13 @@ source. Check for them by name.
     new Scripture.
     **A refusal is evidence about a route until you have checked the route.**
 
+11. **A key stated twice in one mapping.** An edit applied by string
+    replacement left a second `sources:` in one claim and a second `label:` in
+    two `date:` mappings. Every duplicated pair was identical, so no answer
+    moved, and `validate`, the coverage rebuild and 92 tests all passed over a
+    corpus that is not valid YAML.
+    **The loader now refuses a repeated key by file, line and name (§16).**
+
 ---
 
 ## 16. Commands and checks
@@ -924,6 +964,13 @@ source. Check for them by name.
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of
 `make check`. The focused tests are `tools/tests/test_chronology.py`.
+
+The loader refuses a mapping key stated twice, at any depth, before it reads
+anything in the file as a fact, and names the file, the line and the key.
+PyYAML keeps the last of a repeated key silently, so a corpus invalid under
+YAML 1.2 loaded clean and every gate behind the loader called it healthy: that
+is how three duplicated keys survived a `validate`, a coverage rebuild and the
+whole test suite in August 2026.
 
 Because chronology reads `_canon`, `_psalms` and `_deuterocanon`, a change to
 the canonical edition's book index, the psalm concordance or the deuterocanon

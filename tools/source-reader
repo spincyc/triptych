@@ -1278,8 +1278,8 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader check",
             (
-                "540 works, 722 editions, 1918 artifacts, 2869 passages; 1635 readable here.",
-                "  passages the rights records withhold: 1234",
+                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
+                "  passages the rights records withhold: 1238",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1327,7 +1327,7 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader structure --out build/example-sources",
             (
-                "540 works, 722 editions, 1918 artifacts, 2869 passages; 1635 readable here.",
+                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
                 "  -> build/example-sources/structure/sources (2358 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -1335,7 +1335,7 @@ EXAMPLES = {
         Example(
             "tools/tpt source-reader structure --check",
             (
-                "540 works, 722 editions, 1918 artifacts, 2869 passages; 1635 readable here.",
+                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
                 "  src/web/data/structure/sources is current (2358 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",

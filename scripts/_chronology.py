@@ -766,11 +766,93 @@ def _yaml():
     return yaml
 
 
+@lru_cache(maxsize=1)
+def _strict_loader():
+    """A SAFE loader that also records every key stated twice in one mapping.
+
+    PyYAML resolves a repeated key by keeping the last one, silently. A corpus
+    that is invalid under YAML 1.2 therefore loads clean, and every gate
+    standing behind the loader reports it healthy. That is not hypothetical
+    here: edits applied by string replacement left a second `sources:` inside
+    one claim of `events.yaml` and a second `label:` inside two `date:`
+    mappings of `composition.yaml`, and `validate` reported the corpus valid,
+    `check` reported the coverage table current, and the whole test suite
+    passed over it. Every duplicated pair happened to be identical, so no
+    answer moved -- which is exactly why nothing could see it, and exactly the
+    machine-valid-but-wrong shape this apparatus exists to catch.
+
+    The check rides the parse rather than adding a second scan of the bytes,
+    and `construct_mapping` is called for every mapping node the document has,
+    at every depth, so a key doubled four levels down inside a list of claims
+    is seen as readily as one at the top of the file. It is built lazily
+    because PyYAML is an optional dependency this module imports on use.
+    """
+    yaml = _yaml()
+
+    class StrictMappingLoader(yaml.SafeLoader):
+        """SafeLoader in every construction; it only refuses to stay quiet."""
+
+        def __init__(self, stream):
+            super().__init__(stream)
+            self.repeated: list[tuple[Any, int, int]] = []
+
+        def construct_mapping(self, node, deep=False):
+            first: dict[Any, int] = {}
+            for key_node, _ in node.value:
+                key = self.construct_object(key_node, deep=True)
+                line = key_node.start_mark.line + 1
+                try:
+                    seen = first.get(key)
+                except TypeError:
+                    # An unhashable key. Not our refusal to make: the base
+                    # constructor states it, and states it better.
+                    continue
+                if seen is None:
+                    first[key] = line
+                else:
+                    self.repeated.append((key, seen, line))
+            return super().construct_mapping(node, deep=deep)
+
+    return StrictMappingLoader
+
+
+def _read_document(path: Path) -> Any:
+    """Parse one corpus file, refusing a repeated key before anything reads it.
+
+    Every problem in the file is collected before the refusal, because an
+    author fixing authored data wants the list -- the same reason `validate`
+    collects. The refusal is raised rather than accumulated because a mapping
+    with a key stated twice has no defined meaning, and interpreting one is the
+    move this gate exists to prevent.
+    """
+    loader = _strict_loader()(path.read_text(encoding="utf-8"))
+    try:
+        data = loader.get_single_data()
+        repeated = list(loader.repeated)
+    finally:
+        loader.dispose()
+    if repeated:
+        listed = "; ".join(
+            f"{path}:{line}: key {key!r} is stated twice in one mapping "
+            f"(first at line {first})"
+            for key, first, line in repeated
+        )
+        raise ChronologyError(
+            f"{listed}. A repeated key is invalid YAML: PyYAML keeps the last "
+            f"one silently, so the file means whatever its reader assumed. "
+            f"Delete the later occurrence."
+        )
+    return data
+
+
 def _document(name: str, root: Path) -> dict[str, Any]:
     path = root / f"{name}.yaml"
     if not path.exists():
         raise ChronologyError(f"{path}: the chronology corpus is missing {name}.yaml")
-    data = _yaml().safe_load(path.read_text(encoding="utf-8"))
+    # BEFORE the schema check and before any value here is read as a fact: a
+    # repeated key makes the whole file's meaning undefined, so it is not a
+    # thing to interpret and then complain about.
+    data = _read_document(path)
     if not isinstance(data, dict):
         raise ChronologyError(f"{path}: expected a mapping at the top level")
     declared = data.get("schema")
@@ -842,8 +924,8 @@ def _claims(
         # subject was impossible without deleting the subject, and where other
         # claims anchor on it that cannot be done either. The corpus met this
         # at `israel.monarchy.saul-accession`, whose single claim was a modern
-        # reconstruction §4.3 excludes and whose identity four other claims and
-        # two bindings depend on. An event with no `dates` asserts nothing,
+        # reconstruction §4.3 excludes and on whose identity other claims and
+        # bindings depend. An event with no `dates` asserts nothing,
         # returns nothing, and leaves the loci bound to it to whatever else
         # reaches them — which is the honest answer when no ranked source has
         # dated it. A composition unit still requires one: a unit exists only

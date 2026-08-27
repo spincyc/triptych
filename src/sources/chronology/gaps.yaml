@@ -15,7 +15,7 @@ gaps:
     scope: [{book: Lev}]
     reason: >-
       The received Catholic apparatus dates the writing of Leviticus nowhere.
-      The Catholic Encyclopedia has no article on the book - "Leviticus"
+      The Catholic Encyclopedia treats the book nowhere at length - "Leviticus"
       (09207a) is a one-sentence stub that defines the title and stops there,
       "The third book of the Pentateuch, so called because it treats of the
       offices, ministries, rites, and ceremonies of the priests and Levites",
@@ -29,12 +29,16 @@ gaps:
       the act of writing. Moses is an author, not a date. The Anno Mundi and
       A.C. figures the Haydock edition prints in Exodus date narrated events
       and must not be borrowed to fill this. Genesis, Exodus, Numbers and
-      Deuteronomy stand under the same silence about composition, but they
-      carry narrated events that are separately dated, so only Leviticus is
-      recorded here.
+      Deuteronomy stand under the same inspected silence about composition, and
+      each carries its own row in this file. What distinguishes Leviticus is
+      that no verse of it carries a dated assertion of any kind, so this row is
+      the answer a query actually reaches for all 858 of its verses, while
+      theirs are wholly displaced by dated events in Exodus and Deuteronomy and
+      partly displaced in Genesis and Numbers.
     sources:
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
       - artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09207a-e9463bc3
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04761b-babad506
   - status: undated-in-tradition
     scope: [{book: Ruth}]
     reason: >-
@@ -269,11 +273,17 @@ gaps:
     scope: [{book: Gen}]
     reason: >-
       The received Catholic apparatus dates the writing of Genesis nowhere. The
-      Catholic Encyclopedia has no article on the book at all - the New Advent
-      edition's index for G runs "Genealogy (in the Bible)", "Genealogy of
-      Christ", "General Judgment", "Generation", "Genesius", "Genevieve, Saint",
-      carrying nothing for the book at the place between "Generation" and
-      "Genesius" where it would fall, and the encyclopedia's own articles across
+      Catholic Encyclopedia has no article on the book at all - New Advent's
+      full index for G, the unabridged page to which its abridged letter index
+      sends a reader because that one lists, in its own words, "only a tiny
+      fraction of articles available on the New Advent website", runs
+      "Genealogy (in the Bible)", "Genealogy of Christ", "General Judgment",
+      "General Chapter", "Generation", "Genesareth", "Genesius", "Genevieve,
+      Saint", "Genezareth, Land of", carrying nothing for the book at the place
+      between "Genesareth" and "Genesius" where it would fall and no entry
+      reading "Genesis" or "Genesis, Book of" anywhere on the page, which is
+      the form that index gives an article filed under its keyword, and the
+      encyclopedia's own articles across
       that stretch of the alphabet are "General Chapter" (06412b), "Generation"
       (06412c), "Genesareth" (06413a) and "Genesius" (06413c), the article
       number between the last two being unassigned - and the introductory
@@ -358,6 +368,9 @@ gaps:
       - artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13468a-d7d96560
       - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14130a-425447ae
       - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce-5c91a95b
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce
   # === lane numbers ===
   - status: undated-in-tradition
     scope: [{book: Num}]
@@ -365,8 +378,11 @@ gaps:
       Two silences, and this row is honest about which of them it actually
       catches. The first is composition, and it runs the whole book: no source
       inspected for this corpus dates the writing of Numbers. The Catholic
-      Encyclopedia has no article on the book at all - its full index for N
-      carries only "Numbers, Use of, in the Church" (11151a), which is
+      Encyclopedia has no article on the book at all - New Advent's full index
+      for N, the unabridged page to which its abridged letter index sends a
+      reader because that one lists, in its own words, "only a tiny fraction of
+      articles available on the New Advent website", carries only "Numbers, Use
+      of, in the Church" (11151a), which is
       Thurston's article on the symbolism of numbers and not on the book, and
       no neighbouring article number carries one either: 11150a is "Francis
       Nugent", 11152a is "Numismatics", and 11151b is unassigned - so the
@@ -422,6 +438,9 @@ gaps:
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11151a-aaa70339
       - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce-5fd9c5e7
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce
   # === lane psalter-policy ===
   - status: undated-in-tradition
     scope: [{book: Ps}]
