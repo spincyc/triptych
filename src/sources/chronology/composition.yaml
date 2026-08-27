@@ -31,13 +31,17 @@ units:
           Callistus fifteen years, after Christ's Ascension --i.e. about A.D.
           38-45." The article prefaces the whole survey with the statement that
           the ancient writers "are at variance" and reaches no conclusion.
-        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef]
+        sources:
+          - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef
+          - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
         note: >-
           "About A.D. 38-45" is the encyclopedia's own conversion of the
           ancients' reckoning in years after the Ascension; the eight-year and
-          fifteen-year figures are what the sources themselves state. The same
-          article warns that "we must not expect from the ancients the
-          precision of our modern chronology".
+          fifteen-year figures are what the sources themselves state. The caution
+          that "we must not expect from the ancients the precision of our modern
+          chronology" is Durand's, in "The New Testament" (Catholic Encyclopedia,
+          vol. 14, New York, 1912), and not this article's; it is cited here as
+          his.
         date:
           precision: interval
           from: {year: 38, era: ad}
@@ -1623,7 +1627,7 @@ units:
     scope: {book: Abd}
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
+        disposition: disputed
         basis: >-
           Gigot's "Abdias" in the Catholic Encyclopedia reports that "Many among them
           (Keil, Orelli, Vigouroux, Trochon, Lesêtre, etc.) assign its composition to
@@ -1644,44 +1648,20 @@ units:
           year for either: Meyrick, Jahn, Ackerman and Allioli "refer the composition of
           the book to about the time of the Babylonian Captivity , some three centuries
           after King Joram," and "Others again, ascribe the present book of Abdias to a
-          still later date."
+          still later date." The ninth-century date is not this profile's own and is not
+          displayed first: the only ground the article gives for it stands in the voice of
+          "Many among them (Keil, Orelli, Vigouroux, Trochon, Lesêtre, etc.)", and every
+          step of the argument is reported with a distancing verb, so it is a named third
+          party's claim rather than the source's assertion. Two of those five names are
+          not Catholic authorities at all, and the three Catholic commentators are cited
+          without edition identity, so this corpus holds no ranked record standing behind
+          them. The claim is kept, with its provenance, as the unsettled disagreement the
+          article says it is.
         date:
           precision: interval
           from: {year: 900, era: bc}
           to: {year: 801, era: bc}
           label: "about the reign of Joram (ninth century B.C.)"
-
-  - id: composition.book-of-jonas
-    title: The Book of Jonas
-    scope: {book: Jon}
-    dates:
-      - profile: catholic-traditional-v1
-        disposition: preferred
-        basis: >-
-          Driscoll's "Jonah" in the Catholic Encyclopedia records the traditional
-          authorship and the only period it attaches to it: "Jewish tradition assumed
-          that the Prophet Jonah was the author of the book bearing his name, and the
-          same has been generally maintained by the Christian writers who defend the
-          historical character of the narrative," the Prophet being one "who is supposed
-          to have lived in the eighth century B.C."
-        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08497b-3ef68123]
-        note: >-
-          The eighth-century figure is attached in the source to the PROPHET'S LIFETIME
-          and is hedged as "supposed"; the article gives no date for the writing, and
-          immediately remarks "that nowhere does the book itself claim to have been
-          written by the Prophet". The source names a century, not a year, so the
-          structured bounds are the eighth century B.C. entire. On the events the article
-          says only "It is likely that the incidents took place during the period of
-          Assyrian decadence, i.e., the reign of either Asurdanil or Asurnirar (770-745
-          B.C.)" — a narrated-event statement, not this claim. PROFILE BOUNDARY: the same
-          sentence continues that "most modern scholars, for various reasons, assign the
-          date of the composition to a much later epoch, probably the fifth century
-          B.C." — a modern critical dating this profile does not consult.
-        date:
-          precision: interval
-          from: {year: 800, era: bc}
-          to: {year: 701, era: bc}
-          label: "the eighth century B.C."
 
   - id: composition.book-of-micheas.chapters-1-3
     title: The Prophecy of Micheas, chapters 1-3

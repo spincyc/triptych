@@ -1932,7 +1932,7 @@ events:
         note: >-
           Recorded in the era it was printed in and not converted. The same
           passage adds B.C. figures from named modern computers - "the
-          Masoretic text places it in B.C. 2350 (Klaproth) or 2253 (Lueken),
+          Masoretic text places it in B.C. 2350 (Klaproth) or 2253 (Lüken),
           the Samaritan in 2903, the Septuagint in 3134" - which are neither
           the encyclopedia's own voice nor this profile's, and are not
           authored as claims. The section ends "But as we have seen, we must be
@@ -2455,10 +2455,22 @@ events:
     note: >-
       The one subject in this lane where a ranked Catholic source stages the
       traditional and the modern reckoning against each other on a single page,
-      and says which is which.
+      and says which is which. The modern side of that staging is Howlett's own
+      conclusion, "that the date of the Exodus was about 1277", reached on
+      Sayce's Egyptological dates for Ramses II and on Wellhausen's and Stade's
+      treatment of 3 Kings 6:1 as a late insertion, and the article itself says
+      of it: "This is not the traditional date of the Exodus, but as Father
+      Hummelauer (Genesis, p. 29) says, it is the conclusion of most men in
+      these days." It is recorded here and is not held as a claim under this
+      profile, because a modern chronology is a separate profile with its own
+      id and is not consulted, adjusted with, or treated as a correction here.
+      The same article concedes that its own arithmetic will not close - "we
+      are left with only about 327 years, as against 480 required by 1 Kings
+      6:1" - and that for the Catholic "that passage seems to settle the
+      question".
     dates:
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: alternate
         basis: >-
           The Catholic Encyclopedia's "Biblical Chronology" computes the
           traditional date from Scripture and reported regnal years: "the
@@ -2472,38 +2484,22 @@ events:
           builds it on Usher's regnal years - reportable here only because a
           Catholic reference work prints them - then asks "How do these results
           square with the teaching of science?" and answers that they do not,
-          concluding for about 1277 instead. The Haydock edition's Exodus
-          chronology prints "A. C. 1491" at the burning bush and at Moses'
-          approach to Pharao, within a year of this figure and reached
-          independently of it.
+          concluding instead for a modern-critical figure this profile does not
+          hold and which is recorded in the subject note above rather than as a
+          claim. It is held below 3 Kings 6:1 because a rank-6 report of
+          Usher's regnal years never outranks Scripture's own interval. The
+          Haydock edition's Exodus chronology prints "A. C. 1491" at the
+          burning bush and at Moses' approach to Pharao, within a year of this
+          figure; that apparatus is itself an Usher-attributed reckoning, as
+          the claims on israel.exodus.burning-bush and
+          israel.exodus.moses-before-pharao both state, so it is not
+          corroboration reached independently of it.
         date:
           precision: year
           from: {year: 1490, era: bc}
           label: "the year 1490 B.C."
       - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          The same article closes its Exodus section against its own
-          traditional computation: "We conclude, therefore, that the date of
-          the Exodus was about 1277, the monarchy was founded by Saul, 1020;
-          David mounted the throne, 1002; Solomon in 962, and the Temple was
-          begun, 958 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          The profile boundary in the source's own words: "This is not the
-          traditional date of the Exodus, but as Father Hummelauer (Genesis, p.
-          29) says, it is the conclusion of most men in these days." The same
-          article concedes that the arithmetic will not close - "we are left
-          with only about 327 years, as against 480 required by 1 Kings 6:1" -
-          and elsewhere that for the Catholic "that passage seems to settle the
-          question". It is a 1908 encyclopedist following the Egyptologists and
-          is never to be displayed as the tradition's date.
-        date:
-          precision: approximate-year
-          from: {year: 1277, era: bc}
-          label: "about 1277"
-      - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: preferred
         basis: >-
           3 Kings 6:1 in the Douay-Rheims states the interval on which the
           whole traditional reckoning hangs: "in the four hundred and eightieth
@@ -2514,10 +2510,13 @@ events:
         sources: [bible:douay-rheims:3Kings.6.1]
         note: >-
           Scripture's own statement, and the hinge by which everything in this
-          lane is pinned to the kings. It is disputed only because the same
-          number is read differently in the Greek, which the Catholic
-          Encyclopedia prints as 440; the Douay and Clementine Vulgate read
-          four hundred and eighty.
+          lane is pinned to the kings. It is displayed first because a higher
+          rank never yields to a lower one, and because the same verse is
+          already the preferred claim on israel.monarchy.temple-begun, which is
+          the other end of the same interval. The same number is read
+          differently in the Greek, which the Catholic Encyclopedia prints as
+          440 and which is held below as an alternate; the Douay and Clementine
+          Vulgate read four hundred and eighty.
         date:
           precision: relative
           relative:
@@ -2525,7 +2524,7 @@ events:
             statement: "in the four hundred and eightieth year after the children of Israel came out of the land of Egypt, in the fourth year of the reign of Solomon over Israel"
           label: "the four hundred and eightieth year after the children of Israel came out of the land of Egypt"
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: alternate
         basis: >-
           The Catholic Encyclopedia's "Biblical Chronology" prints the Greek
           variant of the same interval: "The Third Book of Kings (vi, 1) states
@@ -2535,7 +2534,11 @@ events:
         note: >-
           Forty years of difference in the one interval every traditional
           computation rests on, printed by a Catholic reference work and left
-          undecided by it.
+          undecided by it. It is held as an alternate to the Douay reading
+          above and not as a rival to it, because a rank-6 report of a Greek
+          variant does not displace the rank-1 verse it varies from; the same
+          variant is reported in a note, and not authored as a claim, on
+          israel.monarchy.temple-begun.
         date:
           precision: relative
           relative:
@@ -2926,12 +2929,20 @@ events:
   - id: israel.judges.period
     title: The period of the Judges
     note: >-
-      Scripture gives the judges no era anchor. The two figures the tracked
-      Douay text carries are both durations: St Paul's "four hundred and fifty
-      years" at Antioch of Pisidia, and Jephte's "three hundred years", which is
-      held separately because it is an argument inside a diplomatic message.
-      The Catholic Encyclopedia article on the Book of Judges carries no
-      chronology at all, so no absolute year is authored here.
+      Scripture gives the judges no era anchor, and neither figure the tracked
+      Douay carries is a length of THIS period. In the Douay's own word order at
+      Acts 13:20 St Paul's "four hundred and fifty years" stands before the
+      judges are mentioned at all - "As it were, after four hundred and fifty
+      years. And after these things, he gave unto them judges, until Samuel the
+      prophet" - so the punctuation attaches it to what PRECEDES them, and it is
+      therefore not carried here as a duration of the judges nor as an offset
+      from anything. Jephte's "three hundred years" IS a duration, and it is
+      held separately on israel.judges.jephte-three-hundred-years, both because
+      it is an argument inside a diplomatic message and because it measures
+      Israelite possession beyond Jordan and not the judgeships. The Catholic
+      Encyclopedia article on the Book of Judges carries no chronology at all,
+      so no absolute year is authored here, and no anchor on the monarchy that
+      closes the period is carried either.
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -2944,17 +2955,28 @@ events:
         sources: [bible:douay-rheims:Acts.13.20]
         note: >-
           The Douay punctuation attaches the four hundred and fifty years to
-          what precedes; other versions attach them to the judges. This is New
-          Testament testimony bearing on an Old Testament interval and must not
-          be used as a hard number.
+          what precedes; other versions attach them to the judges. The statement
+          below therefore carries the whole verse in the Douay's own word order,
+          unreordered: the earlier text stored here ran "he gave unto them
+          judges, until Samuel the prophet, as it were, after four hundred and
+          fifty years", which is a sentence the tracked Douay does not contain
+          and which silently made the four hundred and fifty years a measure of
+          the judges - the very attachment this note denies. Nothing here
+          resolves the ambiguity the punctuation leaves, and the figure is not
+          carried as a length of the judges: what Acts 13:20 states of them is
+          only that they came after the division of the land and ran until
+          Samuel. This is New Testament testimony bearing on an Old Testament
+          interval and must not be used as a hard number.
         date:
           precision: relative
           relative:
-            of: israel.monarchy.saul-accession
+            of: israel.conquest.division-of-the-land
             statement: >-
-              he gave unto them judges, until Samuel the prophet, as it were,
-              after four hundred and fifty years
-          label: "As it were, after four hundred and fifty years"
+              As it were, after four hundred and fifty years. And after these
+              things, he gave unto them judges, until Samuel the prophet
+          label: >-
+            As it were, after four hundred and fifty years. And after these
+            things, he gave unto them judges, until Samuel the prophet
 
   - id: israel.judges.jephte-three-hundred-years
     title: Jephte's three hundred years of Israelite possession beyond Jordan
@@ -2989,8 +3011,7 @@ events:
           death, states its length outright: "And he judged Israel forty years."
         sources: [bible:douay-rheims:1Kings.4.18]
         note: >-
-          A duration, not an anchored date. Some Greek copies read twenty years;
-          the Douay text here reads forty.
+          A duration, not an anchored date. The Douay text here reads forty.
         date:
           precision: duration
           duration:
@@ -3351,16 +3372,37 @@ events:
           move only by an interval: "And after forty years, Absalom said to king
           David: Let me go, and pay my vows which I have vowed to the Lord in
           Hebron."
-        sources: [bible:douay-rheims:2Kings.15.7]
+        sources:
+          - bible:douay-rheims:2Kings.15.7
+          - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology
         note: >-
-          The Haydock edition's commentary on this chapter treats "after forty
-          years" as a manuscript problem and cites Salien and Usher on it. The
+          Scripture states no origin for the forty years, and no source
+          inspected here measures them from the beginning of David's reign;
+          the corpus's own israel.monarchy.david-reign is a duration of forty
+          years from 2 Kings 5:4, so counting from its start put the revolt in
+          the reign's last year, after which the narrative still requires
+          Absalom's defeat, David's return, the numbering of the people and
+          Solomon's accession. The Haydock edition's note on this very verse
+          reports two rival origins, both in named commentators' voices -
+          "Forty, which Vatable dates from the time when the people petitioned
+          for a king; Salien, from the first anointing of David" - and this
+          corpus settles neither and adopts neither, the first anointing of
+          David being an event it does not hold at all. The anchor named here
+          therefore carries the narrative sequence only: the move to Hebron
+          follows Absalom's political preparations at the head of the same
+          chapter, which the same edition separates from it by its own two year
+          markers. The same Haydock note reports the manuscript problem - "It
+          is probable enough that this number has been substituted instead of
+          four, which Josephus, Theodoret, Syr. Arab. and many Latin MSS. read"
+          - and cites Salien and Usher as explaining the larger figure. The
           number must not be presented as settled.
         date:
           precision: relative
           relative:
-            of: israel.monarchy.david-reign
-            statement: after forty years
+            of: israel.monarchy.absalom-preparations
+            statement: >-
+              And after forty years, Absalom said to king David: Let me go, and
+              pay my vows which I have vowed to the Lord in Hebron
           label: "And after forty years"
       - profile: catholic-traditional-v1
         disposition: alternate
@@ -3557,16 +3599,18 @@ events:
       - profile: catholic-traditional-v1
         disposition: alternate
         basis: >-
-          Howlett's "Biblical Chronology" reports Ussher's reckoning before
-          rejecting it: "Ussher dates the reign of King Solomon from 1014-975
+          Howlett's "Biblical Chronology" prints Ussher's reckoning and computes
+          from it: "Ussher dates the reign of King Solomon from 1014-975
           B.C. But as the Temple was begun in the fourth year of that king, or
           in 1010, the Exodus took place in the year 1490 B.C."
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
           This is the Catholic Encyclopedia reporting Ussher, not Ussher as a
           source of record; this profile admits him only as reported by a ranked
-          Catholic source, and never alone. Howlett rejects the figures
-          immediately after printing them.
+          Catholic source, and never alone. Howlett does not reject the figures
+          where he prints them: he asks "How do these results square with the
+          teaching of science?" and later reaches a different figure of his own,
+          958 B.C., on Egyptological grounds, which is held separately below.
         date:
           precision: year
           from: {year: 1010, era: bc}
@@ -3594,9 +3638,13 @@ events:
           721, and the destruction of Jerusalem 536 B.C."
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
-          The same article gives "the Temple was begun, 958 B.C." four
-          paragraphs earlier. Both are recorded; the contradiction is the
-          source's and is not resolved here.
+          The same article gives "the Temple was begun, 958 B.C." at the close
+          of its preceding section, "The Exodus to the building of Solomon's
+          Temple". Both are recorded; the contradiction is the source's and is
+          not resolved here. Howlett writes "the Temple was built", not
+          "begun", and this corpus holds israel.monarchy.temple-finished as a
+          separate event; the label preserves his wording so a consumer can see
+          the reading.
         date:
           precision: approximate-year
           from: {year: 969, era: bc}
@@ -3609,7 +3657,7 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
           Howlett's own reconstruction, not the traditional figure, and
-          contradicted four sections later by the same article's "about 969".
+          contradicted in the next section by the same article's "about 969".
         date:
           precision: year
           from: {year: 958, era: bc}
@@ -4060,10 +4108,10 @@ events:
         basis: >-
           The 2014 Loreto / Feeney Memorial printing of the Douay-Rheims with
           Haydock's commentary, in its note at Psalm 70:1, prints a chronology
-          "explicitly attributed to Usher" which gives the first captivity under
-          Joakim as A.M. 3398, the second under Jechonias as A.M. 3405, and the
-          last, when Jerusalem was destroyed and Sedecias was taken, as A.M.
-          3416.
+          the page attributes to Usher by the siglum standing after the
+          figures: "This first captivity happened under Joakim, A.M. 3398, the
+          second, under Jechonias, 3405, and the last, when the city was
+          destroyed and Sedecias was taken, 3416 Usher"
         sources: [passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology]
         note: >-
           This is the Haydock edition reporting Usher, whose chronology this
@@ -4076,6 +4124,9 @@ events:
           superscription. It is the only absolute figure any inspected source
           attaches to this deportation, but it stands below Scripture's own
           regnal anchor, because precision is not authority in this profile.
+          The retained OCR of artifact PDF page 776 renders "A.M." as "A.M:"
+          and the second figure's leading 3 as an 8; the passage record, read
+          from the page image itself, gives A.M. 3398, 3405 and 3416.
         date:
           precision: year
           from: {year: 3398, era: am}
@@ -4110,23 +4161,64 @@ events:
       is preserved, not resolved. "Jechonias" is the Douay name for Joachin.
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
+        disposition: alternate
         basis: >-
-          The Haydock edition's note at Psalm 70:1 prints a chronology
-          explicitly attributed to Usher which gives "the second under Jechonias
-          as A.M. 3405", between the first captivity at A.M. 3398 and the
-          destruction of Jerusalem at A.M. 3416.
+          The Haydock edition's note at Psalm 70:1 prints a chronology the page
+          attributes to Usher by the siglum standing after the figures: "This
+          first captivity happened under Joakim, A.M. 3398, the second, under
+          Jechonias, 3405, and the last, when the city was destroyed and
+          Sedecias was taken, 3416 Usher."
         sources: [passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology]
         note: >-
           Usher's figure as transmitted by the Haydock edition; it is that
           edition's testimony, not Haydock's own reckoning and not Usher as a
           source of record. Recorded in the era it was printed in and never
           converted; it is not the Anno Mundi equivalent of any B.C. figure held
-          beside it.
+          beside it. It stands below the regnal anchor at 4 Kings 24:12 for the
+          same reason it stands below Daniel 1:1 on
+          israel.exile.first-captivity: a lower rank is consulted only where
+          every higher rank is silent, and precision is not authority in this
+          profile. The retained OCR of artifact PDF page 776 renders "A.M." as
+          "A.M:" and the second figure's leading 3 as an 8; the passage record,
+          read from the page image itself, gives A.M. 3398, 3405 and 3416.
         date:
           precision: year
           from: {year: 3405, era: am}
           label: "A.M. 3405"
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 4 Kings (2 Kings) 24:12 dates the surrender
+          and the carrying away by the Babylonian king's own regnal year: "And
+          Joachin, king of Juda, went out to the king of Babylon, he, and his
+          mother, and his servants, and his nobles, and his eunuchs: and the
+          king of Babylon received him in the eighth year of his reign." The
+          same chapter states Joachin's own reign at 24:8: "Joachin was
+          eighteen years old when he began to reign, and he reigned three
+          months in Jerusalem."
+        sources:
+          - bible:douay-rheims:4Kings.24.12
+          - bible:douay-rheims:4Kings.24.8
+        note: >-
+          Scripture's own regnal anchor, and displayed first for the reason
+          Daniel 1:1 is displayed first on israel.exile.first-captivity: a
+          lower rank is consulted only where every higher rank is silent, and
+          Scripture is not silent here. "The eighth year of his reign" is the
+          king of Babylon's, who is its nearest antecedent and the only one of
+          the two kings the verse names who had an eighth year - 24:8 gives
+          Joachin three months - which is why the anchor is Nabuchodonosor's
+          accession. No year of any era is asserted. 2 Paralipomenon 36:9 in
+          the same Douay text reads "eight years old ... three months and ten
+          days" against 24:8; that divergence is recorded in the subject note
+          and is not resolved here.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.nabuchodonosor-accession
+            statement: >-
+              and the king of Babylon received him in the eighth year of his
+              reign
+          label: "in the eighth year of his reign"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis: >-
@@ -4137,7 +4229,7 @@ events:
           carried captive to Chaldea."
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2]
         note: >-
-          This B.C. figure and the Anno Mundi figure preferred above come from
+          This B.C. figure and the Anno Mundi figure recorded above come from
           different sources on different reckonings and must never be presented
           as one another's conversion.
         date:
@@ -4222,10 +4314,10 @@ events:
       - profile: catholic-traditional-v1
         disposition: preferred
         basis: >-
-          The Haydock edition's note at Psalm 70:1 prints a chronology
-          explicitly attributed to Usher giving "the last, when Jerusalem was
-          destroyed and Sedecias was taken, as A.M. 3416", after the first
-          captivity at A.M. 3398 and the second at A.M. 3405.
+          The Haydock edition's note at Psalm 70:1 prints a chronology the page
+          attributes to Usher by the siglum standing after the figures, giving
+          "the last, when the city was destroyed and Sedecias was taken, 3416",
+          after the first captivity at A.M. 3398 and the second at 3405.
         sources: [passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology]
         note: >-
           Usher's figure as transmitted by the Haydock edition, recorded as that
@@ -5201,6 +5293,39 @@ events:
             sat down in the first day of the tenth month ... made an end ... by
             the first day of the first month
 
+  - id: israel.restoration.reign-of-artaxerxes-i
+    title: The reign of Artaxerxes I
+    note: >-
+      Held only because it is the origin the regnal years of 1 and 2 Esdras are
+      counted from, the way apostolic-age.accession-of-vespasian is held only
+      as the origin of a patristic reckoning. This corpus holds no other
+      Persian regnal chronology and authors none here.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Albin Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia, New
+          York, 1911) prints the reign in his own voice: "Already in the reign
+          of Xerxes (B. C. 485-65), and especially during the first half of the
+          reign of Artaxerxes I (B. C. 465-24), the Jews had attempted, but
+          with only partial success, to rebuild the walls of their capital."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067]
+        note: >-
+          A range: the reign SPANS these years, and its first year is the
+          origin the twentieth year of 2 Esdras 1:1 and 2:1 is counted from.
+          The figures are the article's own and are not reconciled with any
+          other chronology this corpus holds. The article's further sentence
+          that "the first mission of Nehemiah fell in the year B.C. 445" is
+          deliberately NOT carried anywhere in this corpus: the article grounds
+          it on "the opinion of most historians of Israel" and on the
+          Elephantine papyri published by Sachau, which is a reported opinion
+          and a modern-critical ground, and this profile adopts neither.
+        date:
+          precision: range
+          from: {year: 465, era: bc}
+          to: {year: 424, era: bc}
+          label: "Artaxerxes I (B. C. 465-24)"
+
   - id: israel.restoration.nehemias-tidings-of-jerusalem
     title: The tidings of Jerusalem brought to Nehemias at Susa
     parent: israel.restoration.nehemias-mission
@@ -5221,17 +5346,26 @@ events:
           - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
         note: >-
           Casleu is named without a day and the twentieth year is a regnal
-          year, not an era year. This corpus holds no first year of Artaxerxes
-          to count it from, so the tidings are carried relative to the calamity
-          they report -- the forcible stopping of the work under that king's
-          edict, which Van Hoonacker's sentence calls "this calamity" -- and not
-          to the mission they occasion, which stands later in the same twentieth
-          year, "the month of Nisan, in the twentieth year of Artaxerxes the
-          king" (2 Esdras 2:1).
+          year, not an era year, and it is counted from the first year of the
+          king: the anchor is therefore the reign itself, whose first year Van
+          Hoonacker prints as B.C. 465, and no era year is produced here. It
+          was formerly anchored on the calamity the tidings report, the event
+          israel.restoration.walls-forbidden-by-artaxerxes, on the ground that
+          "this corpus holds no first year of Artaxerxes to count it from";
+          that ground was false against the registered source, and the
+          substitution gave the regnal number no determinate origin at all,
+          because that event is an interval of sixty-one years spanning two
+          reigns. The calamity is still what the tidings report -- the forcible
+          stopping of the work under that king's edict, which Van Hoonacker's
+          sentence calls "this calamity" -- and it is named in the basis rather
+          than made the origin of a numbered regnal year. The mission the
+          tidings occasion stands later in the same twentieth year, "the month
+          of Nisan, in the twentieth year of Artaxerxes the king" (2 Esdras
+          2:1).
         date:
           precision: relative
           relative:
-            of: israel.restoration.walls-forbidden-by-artaxerxes
+            of: israel.restoration.reign-of-artaxerxes-i
             statement: >-
               in the month of Casleu, in the twentieth year
           label: "in the month of Casleu, in the twentieth year"
@@ -5453,21 +5587,39 @@ events:
           was now bolled; But the wheat, and other winter corn were not hurt,
           because they were lateward."
         sources:
+          - bible:douay-rheims:Ex.5.1
           - bible:douay-rheims:Ex.7.25
           - bible:douay-rheims:Ex.9.31
+          - bible:douay-rheims:Ex.12.29
         note: >-
           The series runs from the first audience at Exodus 5 to the slaying of
           the firstborn on the night of the departure at Exodus 12:29, which is
-          the tenth plague and belongs also to the Exodus itself. Scripture
-          gives the whole no year and no total length, and the state of the
-          barley and flax is a season and not a month; neither is turned into
-          one here.
+          the tenth plague and belongs also to the Exodus itself; that first
+          audience is the anchor named here and it carries the opening of the
+          series and nothing else. The seven days of Exodus 7:25 are NOT
+          measured from it and are deliberately no longer carried in the date:
+          the verse counts them from the striking of the river, "And seven days
+          were fully ended, after that the Lord struck the river", and between
+          the audience of Exodus 5 and that striking stand Moses's return to
+          Pharao and the rod-and-serpent sign, so anchor plus that clause
+          asserted an interval Scripture does not state. They are an interval
+          INSIDE the series, between the first plague and the second, and this
+          corpus holds no event for the striking of the river to carry them on;
+          the alternate claim below records the Catholic Encyclopedia reading
+          them the same way. Scripture gives the whole no year and no total
+          length, and the state of the barley and flax is a season and not a
+          month; neither is turned into one here.
         date:
           precision: relative
           relative:
             of: israel.exodus.moses-before-pharao
-            statement: "And seven days were fully ended, after that the Lord struck the river"
-          label: "seven days were fully ended, after that the Lord struck the river"
+            statement: >-
+              The series opens at the first audience before Pharao, "Moses and
+              Aaron went in, and said to Pharao: Thus saith the Lord God of
+              Israel: Let my people go", and closes at the slaying of the
+              firstborn, "at midnight, the Lord slew every firstborn in the
+              land of Egypt"
+          label: "from the first audience before Pharao to the slaying of the firstborn"
       - profile: catholic-traditional-v1
         disposition: alternate
         basis: >-
@@ -5490,13 +5642,57 @@ events:
           such rather than as a date for the series. The same article states
           that "The second plague came seven days later", which is the
           encyclopedia reading the seven days of Exodus 7:25 the same way this
-          entry's preferred claim does.
+          entry's preferred claim does. The anchor named here stands at the
+          window's CLOSE and not at its start: the article reaches the bracket
+          by reasoning back from the departure, "the Israelites left on the
+          14th of Nisan, which falls in the latter part of March or the early
+          part of April", so the Exodus is what closes the season, and the
+          statement says the whole of what the article states. The corpus holds
+          no shape for a month-to-month window with no year - precision
+          interval requires years in an era - so the season is carried as the
+          article's own sentence and not as endpoints.
         date:
           precision: relative
           relative:
             of: israel.exodus.the-exodus
             statement: "The last four must have followed in close succession between the beginning of March and the first days of April"
-          label: "between the beginning of March and the first days of April"
+          label: "the last four, between the beginning of March and the first days of April"
+
+  - id: israel.exodus.passage-of-the-red-sea
+    title: The passage of the Red Sea
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 14:21-22 in the Douay-Rheims narrates the crossing: "And when
+          Moses had stretched forth his hand over the sea, the Lord took it away
+          by a strong and burning wind blowing all the night, and turned it into
+          dry ground: and the water was divided. And the children of Israel went
+          in through the midst of the sea dried up; for the water was as a wall
+          on their right hand and on their left." The itinerary of Numbers 33:8
+          enters the same passage: "And departing from Phihahiroth, they passed
+          through the midst of the sea into the wilderness."
+        sources:
+          - bible:douay-rheims:Ex.14.21
+          - bible:douay-rheims:Ex.14.22
+          - bible:douay-rheims:Num.33.8
+        note: >-
+          Held because it is the origin both Exodus 15:22 and Numbers 33:8
+          measure the three days' march to Mara from, and this corpus held no
+          event for it. Scripture gives the passage no year, month or day of any
+          era and none is supplied: Numbers 33:3-7 puts Soccoth, Etham and
+          Phihahiroth between the departure from Ramesses on the fifteenth day
+          of the first month and the sea, and states no interval for any of
+          them, so the anchor below carries the order of the itinerary and no
+          length at all.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: >-
+              And departing from Phihahiroth, they passed through the midst of
+              the sea into the wilderness
+          label: "they passed through the midst of the sea into the wilderness"
 
   # --- The wilderness: the stages of the march to Sinai -----------------------
   - id: israel.wilderness.mara-and-elim
@@ -5515,15 +5711,23 @@ events:
           - bible:douay-rheims:Ex.15.22
           - bible:douay-rheims:Num.33.8
         note: >-
-          The far end of the stretch is fixed by Exodus 16:1, which puts the
-          departure from Elim and the coming into the desert of Sin on the
-          fifteenth day of the second month after the going out; Scripture does
-          not say how long the camp at Elim lasted, and the corpus does not
-          subtract to find out.
+          Both cited verses measure the three days from the passage of the Red
+          Sea and not from the departure out of Egypt - "And Moses brought
+          Israel from the Red Sea ... and they marched three days through the
+          wilderness", "And departing from Phihahiroth, they passed through the
+          midst of the sea into the wilderness: and having marched three days
+          through the desert of Etham, they camped in Mara" - and Numbers
+          33:3-7 puts Soccoth, Etham and Phihahiroth between the departure from
+          Ramesses and the sea, so the departure is not the origin of the three
+          days. The anchor is therefore the passage of the sea. The far end of
+          the stretch is fixed by Exodus 16:1, which puts the departure from
+          Elim and the coming into the desert of Sin on the fifteenth day of
+          the second month after the going out; Scripture does not say how long
+          the camp at Elim lasted, and the corpus does not subtract to find out.
         date:
           precision: relative
           relative:
-            of: israel.exodus.the-exodus
+            of: israel.exodus.passage-of-the-red-sea
             statement: "they marched three days through the wilderness, and found no water"
           label: "three days through the wilderness"
   - id: israel.wilderness.raphidim
@@ -5791,11 +5995,12 @@ events:
             of: israel.exile.second-captivity
             statement: >-
               in the thirtieth year, in the fourth month, on the fifth day of
-              the month, the same was the fifth year of the captivity of king
-              Joachin
+              the month ... the same was the fifth year of the captivity of
+              king Joachin
           label: >-
             in the thirtieth year, in the fourth month, on the fifth day of the
-            month, the same was the fifth year of the captivity of king Joachin
+            month ... the same was the fifth year of the captivity of king
+            Joachin
 
   - id: israel.exile.ezechiel.watchman-charge
     title: The word making Ezechiel watchman to the house of Israel, seven days after the vision
@@ -7243,16 +7448,26 @@ events:
           rested from wars."
         sources: [bible:douay-rheims:Jos.11.18, bible:douay-rheims:Jos.11.23]
         note: >-
-          "A long time" is the sacred text's own phrase and is not a number.
-          The war begins after the passage of the Jordan that Josue 4:19 dates
-          to the tenth day of the first month, which is the anchor named here;
-          how long after, no inspected source says.
+          "A long time" is the sacred text's own phrase and is not a number. It
+          is the war's OWN length, not an interval from the crossing, so it is
+          stated in the basis and is deliberately not carried in the date: a
+          consumer reading it beside this anchor would get "the war began a
+          long time after the crossing", which no source says. It cannot become
+          a duration either, because a duration's units must be whole and
+          positive and "a long time" is neither, so no length is encoded here
+          at all. The war begins after the passage of the Jordan that Josue
+          4:19 dates to the tenth day of the first month, which is the anchor
+          named here, and that anchor carries the order and nothing more; how
+          long after, no inspected source says. Its close is stated at Josue
+          11:23, "And the land rested from wars."
         date:
           precision: relative
           relative:
             of: israel.conquest.crossing-of-the-jordan
-            statement: "Josue made war a long time against these kings"
-          label: "a long time"
+            statement: >-
+              After the passage of the Jordan, and closing when "the land
+              rested from wars"; the text states the order and not an interval
+          label: "after the passage of the Jordan"
 
   - id: israel.conquest.division-of-the-land
     title: The division of the land among the tribes
@@ -7835,8 +8050,7 @@ events:
           The forty years are Heli's, not the ark's, and the text states only
           that the news reached Silo "the same day" and that Heli died on
           hearing it. So the capture closes the forty years; it is not dated to
-          any year of them, and no era figure is asserted here. Some Greek copies
-          read twenty years at 4:18, as the note on the judgeship already records.
+          any year of them, and no era figure is asserted here.
         date:
           precision: relative
           relative:
@@ -7845,7 +8059,7 @@ events:
               And the ark of God was taken ... And when he had named the ark
               of God, he fell from his stool backwards by the door, and broke
               his neck and died
-          label: "he judged Israel forty years"
+          label: "on the day the ark of God was taken, at the close of Heli's judgeship"
 
   - id: israel.judges.ark-among-the-philistines
     title: The seven months of the ark in the land of the Philistines
@@ -8520,17 +8734,24 @@ events:
         note: >-
           The hedge is the encyclopedia's and is kept: "a few months" is not a
           number of months and is not made into one. The article's "later" is
-          measured from the stay at Sinai - the same sentence calls Haseroth
-          "the second station after Mount Sinai", and the paragraph it closes
-          has been at Sinai throughout - so the encampment at Sinai is the
-          anchor. Scripture supplies no interval whatever, and the itinerary of
-          Numbers 33:16-17 confirms only the order, desert of Sinai, graves of
-          lust, Haseroth. Nothing here dates the murmuring and the quails of
-          Numbers 11:1-34, for which no source inspected states any time at all.
+          measured from the END of the stay at Sinai, not from its beginning:
+          the sentence it follows is still at Sinai, on the precepts of
+          Leviticus 16, 17, 21 and 22, and the same sentence calls Haseroth
+          "the second station after Mount Sinai", counting stations from the
+          removal. The anchor is therefore the going forward from Sinai, which
+          Numbers 10:11 dates to the second year, the second month, the
+          twentieth day. It was formerly israel.wilderness.encampment-at-sinai,
+          which this corpus authors as a SPAN beginning in the third month of
+          the first year, so "a few months later" read from the anchor's start
+          placed Haseroth about a year before the itinerary puts it. Scripture
+          supplies no interval whatever, and the itinerary of Numbers 33:16-17
+          confirms only the order, desert of Sinai, graves of lust, Haseroth.
+          Nothing here dates the murmuring and the quails of Numbers 11:1-34,
+          for which no source inspected states any time at all.
         date:
           precision: relative
           relative:
-            of: israel.wilderness.encampment-at-sinai
+            of: israel.wilderness.departure-from-sinai
             statement: "A few months later, when the Hebrews reached Haseroth, the second station after Mount Sinai"
           label: "A few months later"
   # === lane psalms-1-50 ===

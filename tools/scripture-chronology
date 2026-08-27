@@ -104,9 +104,11 @@ EXAMPLES = {
                 "composition\tnot long after ... the year 132 B.C.\tpreferred\tinherited\tcomposition.book-of-ecclesiasticus.greek\tEcclesiasticus, the Greek translation",
             ),
             note=(
-                "exit 1: the Latin and the Greek Ecclesiasticus are two texts, "
-                "so the concordance records no correspondence and the query "
-                "refuses rather than returning the same numbers"
+                "exit 0: the Latin and the Greek Ecclesiasticus are two texts, "
+                "so the concordance records no correspondence and the mapping "
+                "refuses - and the query answers anyway, from chronology "
+                "authored at this locus in its own system. The two are separate "
+                "axes; --json shows the refusal beside the answer"
             ),
         ),
         Example("tools/scripture-chronology query Sus.1.1 --system greek --json",

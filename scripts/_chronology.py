@@ -2023,6 +2023,27 @@ def native_coverage(
 
     out: dict[str, Any] = {}
     counted: list[str] = []
+
+    # NAMED BUT UNENUMERABLE, reported rather than omitted. §9.3: "A system this
+    # repository can name but cannot enumerate is reported as `enumerable:
+    # false` and is a reason the coverage requirement stays open, not a thing to
+    # leave out quietly." `_commentary` declares numbering systems a commentary
+    # row may legally cite, three of which chronology has no concordance for.
+    # Iterating only the systems with machinery left the report implying that
+    # four names were all there were, and made the `enumerable: false` branch
+    # below unreachable for the names it was written for.
+    import _commentary  # noqa: PLC0415
+
+    for system in sorted(getattr(_commentary, "NUMBERING_SYSTEMS", ())):
+        if system == PREFERRED_SYSTEM or system in scripture_systems():
+            continue
+        out[system] = {
+            "enumerable": False,
+            "note": "this repository holds no concordance that enumerates this "
+                    "system's loci, so its native universe cannot be honestly "
+                    "accounted for; chronology may not be authored in it",
+        }
+
     for system in sorted(scripture_systems()):
         if system == PREFERRED_SYSTEM:
             continue
