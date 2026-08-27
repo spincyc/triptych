@@ -5,13 +5,35 @@
 # One row per FACTUAL CLAIM - a subject plus the index of one of its dates -
 # never per binding, so a claim reused by a thousand verses is reviewed once.
 #
-# SELECTION RULE, reproducible from this file alone:
+# SELECTION RULE, reproducible from this header and the tracked corpus:
+#   pool = every authored claim (458 when this file was built) MINUS the
+#     complete-inspection set below. The exclusion needed to reproduce this
+#     file is exactly: precision == 'duration', OR the claim's subject carries
+#     a `relation: historical-setting` binding whose scope is a Psalm in
+#     bindings.yaml, OR a non-null `derivation`, OR a unit scope naming a
+#     non-vulgate system. That removes 57 claims and leaves a pool of 401.
 #   seed = scripture-chronology-cold-audit-2026-08-27
 #   strata = (precision, disposition)
 #   within a stratum, order by sha256(seed + id), then round-robin the
 #   strata in sorted order until 72 claims are taken.
-#   High-risk classes are EXCLUDED here because they are inspected
-#   completely, not sampled; this list adds coverage rather than repeating.
+#   Relative-precision claims are NOT excluded: 12 of the 72 rows below are
+#   `relative`, so "high-risk classes" must never be read as the whole
+#   duration/relative family.
+#
+# COMPLETE-INSPECTION SET, 57 claims, excluded from the sample because they
+# are inspected completely rather than sampled. Each class is an executable
+# predicate over the tracked corpus, and none of its members appears below:
+#   47  precision == 'duration'
+#    9  the subject carries a `relation: historical-setting` binding on a
+#       Psalm scope in bindings.yaml - Ps.30, Ps.62 and Ps.70, Ps.88,
+#       Ps.7 and Ps.17, Ps.141, Ps.136
+#    2  a non-null `derivation` on the claim
+#    1  a unit whose scope names a non-vulgate `system` (the Greek
+#       Ecclesiasticus)
+#   The four class sizes total 59, not 57, because two claims belong to two
+#   classes: israel.monarchy.saul-reign#0 and israel.exile.seventy-years#0 are
+#   `duration` claims AND Psalm historical-settings. The union is 57 distinct
+#   claims, which is the figure PROJECT-WORK.md states.
 #
 # Nothing here was hand-picked. A reviewer can regenerate the identical
 # list, which is the point: a sample an author could steer is not a sample.

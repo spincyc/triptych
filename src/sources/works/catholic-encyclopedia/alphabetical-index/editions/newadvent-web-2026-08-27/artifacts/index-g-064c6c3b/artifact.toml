@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b"
+edition_id = "edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "restricted"
+rights_basis = "The encyclopedia is public domain in the United States by publication date, but New Advent's exact transcription, markup, and presentation carry a site copyright notice and are not assumed redistributable."
+source_url = "https://www.newadvent.org/cathen/g.htm"
+provenance = "Exact New Advent HTML response acquired directly over HTTPS and hashed on 2026-08-27 by the post-audit correction lane. The cold audit found gap rows characterising this index without naming a record for it - a negative claim whose evidence was not retained, which is guidance/scripture-chronology.md 15.1(4)."
+retrieved = "2026-08-27"
+sha256 = "064c6c3b4e1ff67f54711efd795ae465ca2100e58ce731d7a2fd7eb0203ef0ff"
+byte_size = 32272
+indexable = false
+notes = "The Catholic Encyclopedia's index of articles beginning with 'G'. Retained because a chronology gap row rests on what this page does NOT list: the encyclopedia carries no article on the biblical book in question, and only the index can establish that. Remote bytes are not retained."

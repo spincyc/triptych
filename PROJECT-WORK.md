@@ -1951,10 +1951,13 @@ thousand verses is reviewed once — selected by a rule reproducible from the fi
 alone: strata of (precision, disposition), ordered within each by
 `sha256(seed + id)` with the seed recorded, round-robined until 72 are taken.
 Nothing was hand-picked, and a reviewer can regenerate the identical list. Four
-high-risk classes totalling **57** claims are excluded from the sample because
-they are to be inspected **completely**, not sampled: 47 migrated durations,
-9 Psalm historical-settings, 2 derived spans, and the 1 native non-Vulgate
-claim. What the reviewer must verify per claim is in
+high-risk classes are excluded from the sample because they are to be inspected
+**completely**, not sampled: 47 migrated durations, 9 Psalm historical-settings,
+2 derived spans, and the 1 native non-Vulgate claim. Those class sizes total 59
+and the excluded set is **57**, because two claims belong to two classes —
+`israel.monarchy.saul-reign#0` and `israel.exile.seventy-years#0` are durations
+AND Psalm historical-settings. The manifest header now carries the predicate,
+and the post-audit lane verified that it reproduces all 72 rows in order. What the reviewer must verify per claim is in
 `guidance/scripture-chronology.md`; the five source-fidelity failure modes from
 §15.1 and the five new semantic ones are named there so they can be looked for
 by name.

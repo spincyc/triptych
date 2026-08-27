@@ -16,9 +16,13 @@ gaps:
     reason: >-
       The received Catholic apparatus dates the writing of Leviticus nowhere.
       The Catholic Encyclopedia has no article on the book - "Leviticus"
-      (09207a) is a stub that refers the introductory questions to
-      "Pentateuch" - and the "Pentateuch" article, which is where the question
-      is actually treated, states authorship and no time: it reports the
+      (09207a) is a one-sentence stub that defines the title and stops there,
+      "The third book of the Pentateuch, so called because it treats of the
+      offices, ministries, rites, and ceremonies of the priests and Levites",
+      treating the introductory questions nowhere and referring them nowhere,
+      as the parallel "Deuteronomy" stub at least does - and the "Pentateuch"
+      article, which is where the question is actually treated, states
+      authorship and no time: it reports the
       Biblical Commission's reply of 27 June 1906 that the critics' arguments
       do not give the right "to maintain that these books have not Moses as
       their author", and attaches no year, century or expressible period to
@@ -28,7 +32,9 @@ gaps:
       Deuteronomy stand under the same silence about composition, but they
       carry narrated events that are separately dated, so only Leviticus is
       recorded here.
-    sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001]
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
+      - artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09207a-e9463bc3
   - status: undated-in-tradition
     scope: [{book: Ruth}]
     reason: >-
@@ -73,12 +79,25 @@ gaps:
     reason: >-
       The Catholic Encyclopedia's "Ecclesiastes" defends the tradition of
       Solomonic authorship - "we must listen to the voice of tradition, which
-      has always attributed Ecclesiastes to him" - and prints no year. Its one
-      temporal sentence is conditional and relative: "If Solomon wrote
-      Ecclesiastes towards the end of his life, the sombre tone of the book is
-      easily explained." The same article allows a later editorial layer ("It
-      is possible that Ecclesiastes was received into the canon in some such
-      later edition"), so tradition here settles an author and declines a date.
+      has always attributed Ecclesiastes to him" - and attaches no year to the
+      writing. The years the article prints are other men's, not its own. The
+      paragraph that opens "The time of the composition of our book is
+      variously set down by the critics who deny the authorship of Solomon"
+      reports that "Every period from Solomon to 200 has been suggested by
+      them" and that "Grätz thinks that he has discovered clear proof that the
+      book was written under King Herod (40-4 B.C.)", and earlier in the same
+      article, "From ix, 13-15, Hitzig concludes that the author lived about
+      the year 200". Each is a named critic's figure, set down in a survey of
+      incompatible ones the article immediately turns against - "This shows
+      clearly how little likely the linguistic criterion and the other internal
+      arguments are to lead to an agreement of opinion" - so none of them is
+      the encyclopedia's own date, and modern critical chronology is excluded
+      from this profile in any case. In its own voice the article offers only a
+      conditional: "If Solomon wrote Ecclesiastes towards the end of his life,
+      the sombre tone of the book is easily explained". It also allows a later
+      editorial layer ("It is possible that Ecclesiastes was received into the
+      canon in some such later edition"), so tradition here settles an author
+      and declines a date.
     sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05244b-2fe7b66b]
   - status: undated-in-tradition
     scope: [{book: Cant}]
@@ -146,9 +165,17 @@ gaps:
       it reports the Biblical Commission's reply of 27 June 1906 that the
       critics' arguments do not give the right "to maintain that these books
       have not Moses as their author, but are compiled from sources for the
-      greatest part later than the Mosaic age", and prints no year, century or
-      expressible period for the act of composition. Moses is an author, not a
-      date. Deuteronomy 1:3 dates the speaking of the discourses and is bound
+      greatest part later than the Mosaic age", and attaches no year, century
+      or expressible period to the act of composition. The years that article
+      prints are other men's, not its own. Setting out the critical hypothesis
+      it is rebutting, it has the law-book "almost entirely embodied in our
+      actual Book of Deuteronomy, discovered in the temple 621 B.C.", records
+      that "Wellhausen and his adherents do not wish to assign to D1 a higher
+      age than 621 B.C.", and has a redactor combine J and E "after D had been
+      completed in the sixth century B.C." Those are the reconstruction's
+      dates, not the encyclopedia's own dating of this book, and modern
+      critical chronology is excluded from this profile in any case. Moses is
+      an author, not a date. Deuteronomy 1:3 dates the speaking of the discourses and is bound
       as utterance; it is not a composition date and must not be read as one.
       Two further silences are kept rather than smoothed. First, chapter 34
       narrates Moses' own death, and the same article treats that as a distinct
@@ -299,7 +326,8 @@ gaps:
       and thirty years, and he died", and "Sara" retelling her ages, "who though
       sixty-five years of age is very beautiful", "After having been barren till
       the age of ninety", and "Sara lived to the age of one hundred and
-      twenty-seven years". None of the four says anything of the passages listed
+      twenty-seven years". "Sara" does treat Genesis 20 and Genesis 21, but it
+      dates neither, and none of the four dates any of the passages listed
       above. The relative dates this corpus does hold for Genesis reach no era:
       the Anno Mundi figures the encyclopedia prints for the Deluge are totals
       of a genealogy that differs by text-family, and they must not be borrowed
@@ -311,6 +339,10 @@ gaps:
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03142b-1c3293d8
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
       - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04702a-dd9aa535
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412b-bdfebbee
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412c-57ecea11
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413a-88aaf066
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413c-a10d26f7
       - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08175a-b904fd43
       - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08193a-4931095f
       - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08261a-9865c411
@@ -318,6 +350,7 @@ gaps:
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11088a-f05fae40
       - artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13468a-d7d96560
       - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14130a-425447ae
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b
   # === lane numbers ===
   - status: undated-in-tradition
     scope: [{book: Num}]
@@ -326,8 +359,11 @@ gaps:
       catches. The first is composition, and it runs the whole book: no source
       inspected for this corpus dates the writing of Numbers. The Catholic
       Encyclopedia has no article on the book at all - its full index for N
-      carries only "Numbers, Use of, in the Church" (11151a), and the
-      neighbouring article numbers are unassigned - so the question is treated
+      carries only "Numbers, Use of, in the Church" (11151a), which is
+      Thurston's article on the symbolism of numbers and not on the book, and
+      no neighbouring article number carries one either: 11150a is "Francis
+      Nugent", 11152a is "Numismatics", and 11151b is unassigned - so the
+      question is treated
       only inside "Pentateuch", which states an author and no time: it reports
       the Biblical Commission's reply that the critics' arguments do not give
       the right "to maintain that these books have not Moses as their author",
@@ -377,6 +413,8 @@ gaps:
       - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
       - artifact.catholic-encyclopedia.volume-2.new-york-1907.newadvent-02214b-53ac6d68
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11151a-aaa70339
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb
   # === lane psalter-policy ===
   - status: undated-in-tradition
     scope: [{book: Ps}]
