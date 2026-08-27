@@ -1727,7 +1727,7 @@ release attachment, announcement, or promotion.
 | `library/novus-ordo-liturgy.md` | `7815a99b97a19541247e0b9ca4c32443e13cc3c98a5ee2a23dd29666d9f77c7f` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `7149fffafb966a7512d2e3fb5ad4112055aab43c95a6c7bef24d6233c8a1cac5` |
+| `library/traditional-latin-mass.md` | `f80dd9345122b69fbcfd33d27c92a3e97fac3394ecffbed4452b7a1689ea22e9` |
 | `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117` |
 | `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4` |
 | `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259` |
