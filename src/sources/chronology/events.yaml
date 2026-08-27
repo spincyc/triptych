@@ -222,7 +222,7 @@ events:
         sources: [bible:douay-rheims:Luke.2.42]
         note: >-
           An age, not a date. The "after three days, they found him in the
-          Temple" of the following verses is an interval inside the episode, not
+          temple" of the following verses is an interval inside the episode, not
           its date.
         date:
           precision: relative
@@ -1248,7 +1248,20 @@ events:
         basis: >-
           The Catholic Encyclopedia's "Biblical Chronology" (Howlett, vol. 3)
           reckons the same two years from its own later arrival: "In Rome St.
-          Paul remained two years, hence till 64 (Acts 28:30)."
+          Paul remained two years, hence till 64 (Acts 28:30)." The arrival
+          itself, which is this range's begin endpoint, is given hedged and
+          against three reconstructions the article prints and does not adopt:
+          "Harnack places this event in 57, Lightfoot in 61, Ramsay in 60.
+          Perhaps we may say 62, for he was sent to Rome by Festus, shortly after
+          his arrival in Judea ."
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          The begin endpoint carries a hedge the end does not. The two years are
+          firm in the source and come from Acts 28:30; the year they are counted
+          from is Howlett's "Perhaps we may say". The whole section stands under
+          the warning Howlett quotes at its head from Frederick Blass, that of
+          the chronology of the Acts of the Apostles "we cannot be certain of our
+          dates within a less period than about ten years".
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         date:
           precision: range
@@ -1306,9 +1319,20 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8]
         note: >-
           Only this summary table lists the second arrest; no source inspected
-          for this lane discusses its date independently.
+          for this lane discusses its date independently. Recorded as an exact
+          year because the table prints one and prints no "about": Prat
+          introduces the list as the one in which "all certain or probable data
+          seem to be satisfactorily taken into account", and SS10 reserves
+          approximate-year for "one point, the source's own 'about'". The same
+          table string is stored as precision year on
+          unit:composition.first-epistle-to-timothy#0 and
+          unit:composition.epistle-to-titus#0, and this claim now agrees with
+          them. The article's general caution belongs to the events it discusses
+          before the table - "All these events, as far as they may be assigned
+          approximate dates , agree with the Apostle's general chronology but
+          give no precise results" - and is not said of the table itself.
         date:
-          precision: approximate-year
+          precision: year
           from: {year: 66, era: ad}
           label: "second arrest, 66"
 
@@ -3094,32 +3118,23 @@ events:
   - id: israel.monarchy.saul-accession
     title: The founding of the monarchy under Saul
     note: >-
-      The Catholic Encyclopedia has no dated article on Saul; its article on him
-      contains no dates at all. The one figure inspected for this lane is
-      Howlett's, and it is his own reconstruction rather than a traditional
-      reckoning, so this profile does not display it first.
-    dates:
-      - profile: catholic-traditional-v1
-        disposition: alternate
-        basis: >-
-          James Howlett's article "Biblical Chronology" in the Catholic
-          Encyclopedia (New York, 1908) closes its section on the period with
-          his own conclusion: "the monarchy was founded by Saul, 1020; David
-          mounted the throne, 1002; Solomon in 962, and the Temple was begun,
-          958 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          Howlett reaches these figures by preferring Egyptological and
-          Assyriological synchronisms over the received reckoning, and the same
-          article elsewhere names 975 as "the traditional date" for the revolt
-          of the Ten Tribes. This is therefore not offered as the traditional
-          Catholic date, and this profile does not adjust any traditional figure
-          by it.
-        date:
-          precision: year
-          from: {year: 1020, era: bc}
-          label: "the monarchy was founded by Saul, 1020"
+      NO DATE, AND THAT IS THE ANSWER. The Catholic Encyclopedia has no dated
+      article on Saul; its article on him contains no dates at all. The one
+      figure ever inspected for this corpus was Howlett's "the monarchy was
+      founded by Saul, 1020", which he reaches by preferring Egyptological and
+      Assyriological synchronisms over the received reckoning - the same
+      reconstruction whose Exodus figure was withdrawn from this profile on
+      2026-08-27, and which guidance/scripture-chronology.md 4.3 says is "not
+      consulted". It was the only claim on this subject, so leaving it made a
+      modern reconstruction the profile's answer for the founding of the
+      monarchy. It is withdrawn.
 
+      This event survives without a date because it is still a subject: two
+      bindings name it and four claims are measured from it, and naming a thing
+      is not the same act as dating it. Scripture states intervals TO and FROM
+      Saul's accession and never dates it, so no rank-1 claim can be authored
+      here either without the derivation guidance 10 would require. A ranked
+      traditional source that dates it would be authored here.
   - id: israel.monarchy.saul-reign
     title: The reign of Saul
     dates:
@@ -3830,6 +3845,54 @@ events:
             of: israel.divided-kingdom.division
             statement: in the fifth year of the reign of Roboam
           label: "in the fifth year of the reign of Roboam"
+
+  - id: israel.divided-kingdom.osee-ministry
+    title: The prophetic ministry of Osee
+    note: >-
+      Calès's "Osee" dates the prophet, not the book: both claims below stand in
+      its section "Time of his ministry", and the article nowhere treats the
+      writing or compilation of the book. They were held until now as a whole-book
+      composition unit over Osee, which is why no composition unit for Osee exists
+      any more; see the note at that place in composition.yaml.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Calès's "Osee" in the Catholic Encyclopedia judges the book's superscription
+          "not quite satisfactory" and concludes that "The era of the Prophet,
+          therefore, if it is to be judged from his writings, ought to be placed about
+          750-735," since "None of the historical allusions with which the prophecy is
+          filled appears to be connected with any event later than the reign of Manahem
+          ( circa 745-735)."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+        note: >-
+          Preferred because the article reaches this from the prophecies themselves and
+          expressly sets the title-derived range aside as unsatisfactory; both claims
+          come from the same rank-6 article, so this note is what settles the order
+          under SS4.4. The source's own hedge "about" is preserved, and it prints this
+          range without era letters.
+        date:
+          precision: range
+          from: {year: 750, era: bc}
+          to: {year: 735, era: bc}
+          label: "about 750-735"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article reports the range the book's own superscription yields:
+          "According to the title of the book, Osee prophesied during the reign of
+          Jeroboam II in Israel , and in the time of Ozias , Joatham, Achaz , and
+          Ezechias , kings of Juda, hence from about 750 to 725 B.C."
+        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+        note: >-
+          Kept as the range the superscription gives, which the article prints and then
+          declines: "The title, however, is not quite satisfactory and does not seem to
+          be the original one." A title is evidence about a setting, not proof of a year.
+        date:
+          precision: range
+          from: {year: 750, era: bc}
+          to: {year: 725, era: bc}
+          label: "from about 750 to 725 B.C."
 
   - id: israel.divided-kingdom.fall-of-samaria
     title: The fall of Samaria and the deportation of Israel

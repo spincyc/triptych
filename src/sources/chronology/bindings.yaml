@@ -4963,3 +4963,33 @@ bindings:
     sources:
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
       - bible:douay-rheims:Luke.3.23
+  # === lane osee ===
+  # Two relations over one book, and one event holding the dates once. These rows
+  # replace a whole-book composition unit that carried the ministry's range as a
+  # date of writing; see composition.yaml at the osee lane.
+  - relation: prophecy-given
+    event: israel.divided-kingdom.osee-ministry
+    scope:
+      - {book: Os}
+    note: >-
+      The span, not a day. Calès's "Osee" places the era of the prophet "about
+      750-735" and dates no oracle of the book separately, so every oracle is
+      reached by the ministry and by nothing narrower, and is reached with a span
+      and not with a date the chapters do not have.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12
+  - relation: superscription-setting
+    event: israel.divided-kingdom.osee-ministry
+    scope:
+      - {book: Os, chapter: 1, first: 1, last: 1}
+    note: >-
+      The title itself names the reigns. Os 1:1: "The word of the Lord, that came
+      to Osee, the son of Beeri, in the days of Ozias, Joathan, Achaz, and
+      Ezechias, kings of Juda, and in the days of Jeroboam, the son of Joas, king
+      of Israel." Calès's "Osee" reads that title as "from about 750 to 725 B.C."
+      and then declines it - "The title, however, is not quite satisfactory and
+      does not seem to be the original one" - which is why the event carries that
+      range as its alternate. A title asserts an occasion and never a year.
+    sources:
+      - bible:douay-rheims:Os.1.1
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12

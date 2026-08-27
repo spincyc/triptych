@@ -586,6 +586,50 @@ units:
 """,
         )
 
+    def test_an_event_may_be_a_subject_without_being_a_dated_one(self) -> None:
+        """Naming a thing is not the same act as dating it.
+
+        `israel.monarchy.saul-accession` carried one claim, Howlett's 1020 B.C.,
+        reached by preferring Egyptological synchronisms — the reconstruction
+        §4.3 says is "not consulted". Being the only claim on the subject, it
+        was what this profile answered for the founding of the monarchy. It
+        could not be withdrawn while every event required a date, because two
+        bindings name this event and four claims are measured from it. So an
+        event may now hold no claim: it asserts nothing and returns nothing.
+        """
+        corpus(
+            self,
+            events="""\
+events:
+  - id: israel.judges.period
+    title: An anchor nobody has dated
+  - id: israel.monarchy.saul-accession
+    title: Another, measured from the first
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: relative
+          relative: {of: israel.judges.period, statement: "after the judges"}
+""",
+        )
+
+    def test_a_composition_unit_still_needs_a_date(self) -> None:
+        # The relaxation is for events only. A unit exists to carry a
+        # composition date over an extent, so a dateless one would be a scope
+        # asserting nothing about the text it names.
+        refuses(
+            self,
+            "needs a non-empty 'dates' list",
+            composition="""\
+units:
+  - id: composition.jude
+    title: Jude, undated
+    scope: {book: Jude}
+""",
+        )
+
     def test_a_scope_may_not_name_a_chapter_the_book_has_not(self) -> None:
         refuses(
             self,

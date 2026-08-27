@@ -318,9 +318,9 @@ units:
           Fonck's article "Gospel of St. John" in the Catholic Encyclopedia
           (vol. 8, 1910): "According to the general opinion, the Gospel is to
           be referred to the last decade of the first century, or to be still
-          more precise, to 96 or one of the succeeding years." The same
-          sentence is prefaced by the admission that "we possess no certain
-          historical information".
+          more precise, to 96 or one of the succeeding years." The PRECEDING
+          sentence admits that "As to the date of its composition we possess no
+          certain historical information".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c]
         note: >-
           The same article reaches the same figure by a second route, from the
@@ -328,10 +328,17 @@ units:
           had composed the Apocalypse on the Island of Patmos", which "would
           therefore refer the composition of the Gospel to A.D. 96 or one of
           the years immediately following" — an argument that puts the Gospel
-          later than the Apocalypse.
+          later than the Apocalypse. Recorded as an interval and not as an
+          approximate year: the source prints no "about", and both bounds are
+          its own — "the last decade of the first century" caps it and "96 or
+          one of the succeeding years" opens it. The approximate-year encoding
+          this claim carried until now was rendered to consumers as "about 96
+          A.D.", a hedge the source does not print, and it both admitted years
+          the source excludes (94-95) and excluded years it allows (97-100).
         date:
-          precision: approximate-year
+          precision: interval
           from: {year: 96, era: ad}
+          to: {year: 100, era: ad}
           label: "96 or one of the succeeding years"
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -1155,25 +1162,55 @@ units:
         disposition: preferred
         basis: >-
           Schets's "Third and Fourth Books of Kings" in the Catholic Encyclopedia
-          states that "The Books of Kings were not completed in their present form
-          before the middle of the Exile," and that on the Talmudic attribution to
-          Jeremias, "If Jeremias be indeed the author, it must be accepted as
-          probable that he wrote the book not long before, or shortly after, the
-          fall of Jerusalem (587 B.C. )". The 587 figure is the only year the
-          article attaches to the writing.
+          states, without condition and in its own voice, that "The Books of Kings
+          were not completed in their present form before the middle of the
+          Exile," and grounds it on the book's own closing notice, that "2 Kings
+          25:27-30 , relates that Joachim was released from bondage (562)".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
         note: >-
-          The year is CONDITIONAL in the source on Jeremias being the author, which
-          the article reports as an opinion ("Not a few among both older and more
-          recent exegetes consider this probable"), not as settled. The article's own
-          unconditional statement carries no year: the books "were not completed in
-          their present form before the middle of the Exile." It adds that "the last
-          verses (xxv, 27-30) have possibly been added by a different hand"; the 562
-          date in the same passage belongs to Joachim's release from bondage, not to
-          the writing.
+          Displayed first although both claims on this unit rest on the same rank-6
+          article; this note is what SS4.4 requires in place of a rank difference.
+          This is the ONLY statement the article makes about the writing that
+          carries no condition. The 587 B.C. sibling holds only "If Jeremias be
+          indeed the author", an attribution the article reports from the Babylonian
+          Talmud and from exegetes who "consider this probable", and does not settle.
+          No year is put on "the middle of the Exile" and none is supplied here: the
+          562 the article prints belongs to Joachim's release from bondage, is quoted
+          as the article's ground, and is not converted into an endpoint. The anchor
+          is the seventy years of servitude to Babylon, which is the period the
+          article calls the Exile; nothing computes from a relative date.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.seventy-years
+            statement: >-
+              not completed in their present form before the middle of the Exile
+          label: "not completed in their present form before the middle of the Exile"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article adds, on the Talmudic attribution to Jeremias, that "If
+          Jeremias be indeed the author, it must be accepted as probable that he
+          wrote the book not long before, or shortly after, the fall of Jerusalem
+          (587 B.C. )".
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
+        note: >-
+          NO LONGER PREFERRED. The year is CONDITIONAL in the source on Jeremias
+          being the author, which the article reports as an opinion ("Not a few
+          among both older and more recent exegetes consider this probable") rather
+          than settles; SS4.3 and SS15.1(3) keep a figure standing inside a reported
+          antecedent out of the profile's first answer, and that is the failure the
+          two Esdras units were withdrawn for. It is kept as an alternate rather
+          than withdrawn because the year is Schets's own consequence and not a
+          third party's figure. It also stands EARLIER than the article's own
+          unconditional floor - the books were "not completed in their present form
+          before the middle of the Exile," which the article ties to the release of
+          562 - and the two are not reconciled here. The article adds that "the last
+          verses (xxv, 27-30) have possibly been added by a different hand".
         date:
           precision: approximate-year
           from: {year: 587, era: bc}
+          label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
           label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
 
   - id: composition.fourth-book-of-kings
@@ -1184,22 +1221,56 @@ units:
         disposition: preferred
         basis: >-
           Schets's "Third and Fourth Books of Kings" in the Catholic Encyclopedia
-          treats the two books as one work and states that "The Books of Kings were
-          not completed in their present form before the middle of the Exile," adding
-          that "If Jeremias be indeed the author, it must be accepted as probable that
-          he wrote the book not long before, or shortly after, the fall of Jerusalem
+          treats the two books as one work and states, without condition and in
+          its own voice, that "The Books of Kings
+          were not completed in their present form before the middle of the
+          Exile," and grounds it on the book's own closing notice, that "2 Kings
+          25:27-30 , relates that Joachim was released from bondage (562)".
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
+        note: >-
+          Displayed first although both claims on this unit rest on the same rank-6
+          article; this note is what SS4.4 requires in place of a rank difference.
+          This is the ONLY statement the article makes about the writing that
+          carries no condition. The 587 B.C. sibling holds only "If Jeremias be
+          indeed the author", an attribution the article reports from the Babylonian
+          Talmud and from exegetes who "consider this probable", and does not settle.
+          No year is put on "the middle of the Exile" and none is supplied here: the
+          562 the article prints belongs to Joachim's release from bondage, is quoted
+          as the article's ground, and is not converted into an endpoint. The anchor
+          is the seventy years of servitude to Babylon, which is the period the
+          article calls the Exile; nothing computes from a relative date.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.seventy-years
+            statement: >-
+              not completed in their present form before the middle of the Exile
+          label: "not completed in their present form before the middle of the Exile"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article adds, on the Talmudic attribution to Jeremias, that "If
+          Jeremias be indeed the author, it must be accepted as probable that he
+          wrote the book not long before, or shortly after, the fall of Jerusalem
           (587 B.C. )".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f]
         note: >-
-          The year is CONDITIONAL in the source on Jeremias being the author, which the
-          article reports as an opinion drawn from the Babylonian Talmud rather than as
-          settled. The article's own unconditional statement carries no year. It adds
-          that "the last verses (xxv, 27-30) have possibly been added by a different
-          hand"; the 562 date in the same passage belongs to Joachim's release from
-          bondage, not to the writing.
+          NO LONGER PREFERRED. The year is CONDITIONAL in the source on Jeremias
+          being the author, which the article reports as an opinion ("Not a few
+          among both older and more recent exegetes consider this probable") rather
+          than settles; SS4.3 and SS15.1(3) keep a figure standing inside a reported
+          antecedent out of the profile's first answer, and that is the failure the
+          two Esdras units were withdrawn for. It is kept as an alternate rather
+          than withdrawn because the year is Schets's own consequence and not a
+          third party's figure. It also stands EARLIER than the article's own
+          unconditional floor - the books were "not completed in their present form
+          before the middle of the Exile," which the article ties to the release of
+          562 - and the two are not reconciled here. The article adds that "the last
+          verses (xxv, 27-30) have possibly been added by a different hand".
         date:
           precision: approximate-year
           from: {year: 587, era: bc}
+          label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
           label: "not long before, or shortly after, the fall of Jerusalem (587 B.C.)"
 
   - id: composition.first-book-of-paralipomenon
@@ -1542,72 +1613,132 @@ units:
       - profile: catholic-traditional-v1
         disposition: preferred
         basis: >-
-          Gigot's "Book of Daniel" in the Catholic Encyclopedia frames the question as
-          whether the sole writer is "the Prophet Daniel who composed the work during
-          the Exile (586-536 B.C.)", and answers that "The traditional view, in vigour
+          Gigot's "Book of Daniel" in the Catholic Encyclopedia states the traditional
+          view and its date of composition together: "The traditional view, in vigour
           chiefly among Catholics , is to the effect that the whole work, as found in
-          the Hebrew Bible, should be directly referred to Daniel, whose name it bears."
+          the Hebrew Bible, should be directly referred to Daniel, whose name it
+          bears", and calls it, in the same section, "this time-honoured position
+          which ascribes to Daniel the authorship of the book which bears his name,
+          and admits 570-536 B.C. as its date of composition".
         sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e]
         note: >-
-          586-536 B.C. is the article's own gloss on "the Exile", not a computed date
-          of writing. The traditional view as the article states it covers the whole
-          work "as found in the Hebrew Bible" — the deuterocanonical portions are
-          treated in a separate section of the article and are not covered by this
-          claim, although this unit's whole-book scope reaches them by inheritance
-          unless a narrower unit is authored over them. The view "admits, indeed, that
-          numerous alterations have been introduced into the primitive text of the book
-          in the course of ages." PROFILE BOUNDARY: the article argues at length against
-          the rival dating that places an unknown author in the time of Antiochus
-          Epiphanes.
+          570-536 B.C. is the article's own date of composition for the traditional
+          view, printed in that view's own name, and it is what this claim now holds.
+          586-536 B.C. is NOT that: it is the article's parenthetical gloss on "the
+          Exile" inside the question it poses at the head of the section, "Is this
+          sole writer the Prophet Daniel who composed the work during the Exile
+          (586-536 B.C.)". That gloss stood here as the composition interval - wider
+          at its begin endpoint than the source supports - while the article's own
+          interval went unrecorded. The traditional view as the article states it
+          covers the whole work "as found in the Hebrew Bible"; the three
+          deuterocanonical portions are treated in a separate section which dates
+          them differently, and they now carry units of their own, so this claim no
+          longer reaches them by inheritance. The view "admits, indeed, that numerous
+          alterations have been introduced into the primitive text of the book in the
+          course of ages." PROFILE BOUNDARY: against it the article sets out at length
+          "a comparatively recent theory which has been widely accepted by
+          contemporary scholars", placing an unknown author "in the time of Antiochus
+          IV, Epiphanes (175-164 B.C.)"; it is kept out of this profile under 4.1 and
+          not silently corrected, and the article's own verdict is that "Despite the
+          fact that some of these arguments against the Danielic authorship have not
+          yet been fully disproved, Catholic scholars generally abide by the
+          traditional view, although they are not bound to it by any decision of the
+          Church".
         date:
           precision: interval
-          from: {year: 586, era: bc}
+          from: {year: 570, era: bc}
           to: {year: 536, era: bc}
-          label: "during the Exile (586-536 B.C.)"
+          label: "admits 570-536 B.C. as its date of composition"
 
-  - id: composition.book-of-osee
-    title: The Prophecy of Osee
-    scope: {book: Os}
+  - id: composition.book-of-daniel.prayer-of-azarias
+    title: The Prayer of Azarias and the Song of the Three Children (Dan. iii, 24-90)
+    scope: {book: Dan, chapter: 3, first: 24, last: 90}
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
         basis: >-
-          Calès's "Osee" in the Catholic Encyclopedia judges the book's superscription
-          "not quite satisfactory" and concludes that "The era of the Prophet,
-          therefore, if it is to be judged from his writings, ought to be placed about
-          750-735," since "None of the historical allusions with which the prophecy is
-          filled appears to be connected with any event later than the reign of Manahem
-          ( circa 745-735)."
-        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+          Gigot's "Book of Daniel", in its section "Deutero-canonical portions",
+          judges of this fragment: "In reality, there are wellnigh insuperable
+          difficulties to such an early date for Dan ., iii, 24-90, so that this
+          fragment also, like the other two, should most likely be ascribed to some
+          unknown Jewish author who lived long after the Exile."
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e]
         note: >-
-          Preferred because the article reaches this from the prophecies themselves and
-          expressly sets the title-derived range aside as unsatisfactory. This dates the
-          era of the PROPHET, which is the period the book's oracles come from; the
-          article does not treat the writing or compilation of the book separately. The
-          source's own hedge "about" is preserved, and it prints the second range
-          without era letters.
+          The article's own judgment, given against the view it has just reported -
+          "it is maintained by nearly all Catholic writers, that the Prayer of Azarias
+          and the Song of the Three Children cannot be dissociated from the preceding
+          and the following context in Daniel 3 , and that therefore they should be
+          referred to the time of Daniel, if not to that Prophet himself". Both stand
+          in the same rank-6 article, so this note, and not a rank difference, is what
+          settles the order under SS4.4; the reported contrary view is recorded here
+          rather than authored, because the article states it in order to reject it.
+          "Most likely" is the source's hedge and is kept. No year: the article prints
+          none for these fragments, and the anchor is the Exile, which the same
+          article glosses as 586-536 B.C. without attaching that gloss to this
+          fragment. Until this unit existed the whole-book claim reached these verses
+          with "during the Exile", which is what this same article denies of them.
+          Verse bounds read in the tracked Douay: 3:23 is the three men falling bound,
+          3:24 opens "And they walked in the midst of the flame", 3:90 closes the
+          Benedicite and 3:91 resumes Nabuchodonosor.
         date:
-          precision: range
-          from: {year: 750, era: bc}
-          to: {year: 735, era: bc}
-          label: "about 750-735"
+          precision: relative
+          relative:
+            of: israel.exile.seventy-years
+            statement: >-
+              ascribed to some unknown Jewish author who lived long after the Exile
+          label: "most likely long after the Exile"
+
+  - id: composition.book-of-daniel.susanna-and-bel
+    title: The histories of Susanna and of Bel and the dragon (Dan. xiii-xiv)
+    scope:
+      - {book: Dan, chapter: 13}
+      - {book: Dan, chapter: 14}
+    dates:
       - profile: catholic-traditional-v1
-        disposition: alternate
+        disposition: preferred
         basis: >-
-          The same article reports the range the book's own superscription yields:
-          "According to the title of the book, Osee prophesied during the reign of
-          Jeroboam II in Israel , and in the time of Ozias , Joatham, Achaz , and
-          Ezechias , kings of Juda, hence from about 750 to 725 B.C."
-        sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12]
+          Gigot's "Book of Daniel" states of the last two deutero-canonical fragments:
+          "It is readily granted by conservative scholars (Vigouroux, Gilly, etc.)
+          that the last two are probably from a different and later author than the
+          rest of the book", and of all three together that each "should most likely
+          be ascribed to some unknown Jewish author who lived long after the Exile."
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e]
         note: >-
-          Kept as the range the superscription gives, which the article prints and then
-          declines: "The title, however, is not quite satisfactory and does not seem to
-          be the original one." A title is evidence about a setting, not proof of a year.
+          Two chapters, one statement: the article groups them as "the last two" and
+          dates them together, so they are one unit and not two. The concession is
+          granted by named conservative Catholic scholars and reported approvingly,
+          not in the modern critical voice 4.3 excludes. No year is printed and none
+          is supplied; the hedges "probably" and "most likely" are the source's. The
+          article adds that whatever is thought "concerning these literary or
+          historical questions, there cannot be the least doubt that in decreeing the
+          sacred and canonical character of these fragments the Council of Trent
+          proclaimed the ancient and morally unanimous belief of the Church of God ."
+          Sole claim on this subject, so SS4.4 is trivially satisfied.
         date:
-          precision: range
-          from: {year: 750, era: bc}
-          to: {year: 725, era: bc}
-          label: "from about 750 to 725 B.C."
+          precision: relative
+          relative:
+            of: israel.exile.seventy-years
+            statement: >-
+              probably from a different and later author than the rest of the book,
+              who lived long after the Exile
+          label: "most likely long after the Exile"
+
+  # === lane osee ===
+  # NO composition unit is authored for Osee, and the withdrawal is deliberate.
+  # Calès's "Osee" (Catholic Encyclopedia, vol. 11, New York, 1911) dates the
+  # PROPHET and not the book. Both of its ranges stand in the section "Time of
+  # his ministry": the title-derived "from about 750 to 725 B.C.", and, after the
+  # title is set aside as "not quite satisfactory", "The era of the Prophet,
+  # therefore, if it is to be judged from his writings, ought to be placed about
+  # 750-735". Neither is a date of writing, and the article treats the writing or
+  # compilation of the book nowhere -- as the withdrawn unit's own preferred note
+  # conceded. guidance/scripture-chronology.md 5 says a superscription-setting is
+  # not a composition and a title "is evidence about a setting ... not proof of a
+  # year", and 8 admits authorship toward composition only to the degree an
+  # inspected source actually dates or bounds the writing. Both ranges are now
+  # held once, on the event israel.divided-kingdom.osee-ministry, and reached from
+  # Osee by a prophecy-given binding over the book and a superscription-setting
+  # binding over the title verse.
 
   - id: composition.book-of-joel
     title: The Prophecy of Joel
@@ -1663,11 +1794,17 @@ units:
           Joram rather than with Nabuchodonosor. The source names a century and narrows
           within it to "about the middle", so the structured bounds are the ninth
           century B.C. entire and are wider than the claim. Two further opinions stand
-          in the same section and are not authored here because the source prints no
-          year for either: Meyrick, Jahn, Ackerman and Allioli "refer the composition of
-          the book to about the time of the Babylonian Captivity , some three centuries
-          after King Joram," and "Others again, ascribe the present book of Abdias to a
-          still later date." The ninth-century date is not this profile's own and is not
+          in the same section. The second is not the modern critical voice SS4.3
+          excludes and could be authored: Meyrick, Jahn, Ackerman and Allioli "refer
+          the composition of the book to about the time of the Babylonian Captivity ,
+          some three centuries after King Joram," which is a statement of position and
+          not of silence, and Jahn and Allioli are Catholic authors reported by a
+          ranked Catholic source. The third - "Others again, ascribe the present book
+          of Abdias to a still later date" - is NOT authorable here: the article names
+          no author for it, and its whole ground is a dating of Joel, Daniel and
+          Zacharias 9-14 "long after the return from Babylon", which is the modern
+          critical chronology SS4.3 excludes. Neither prints a year, but that is not
+          why the second is left unauthored. The ninth-century date is not this profile's own and is not
           displayed first: the only ground the article gives for it stands in the voice of
           "Many among them (Keil, Orelli, Vigouroux, Trochon, Lesêtre, etc.)", and every
           step of the argument is reported with a distancing verb, so it is a named third
@@ -1913,8 +2050,8 @@ units:
           label: "after the beginning of the reign of John Hyrcanus (135-105 B.C.) ... prior to 63 B. C. ... in any case, within the last years of the second century B.C."
 
   - id: composition.second-book-of-machabees
-    title: The Second Book of Machabees
-    scope: {book: 2Mach}
+    title: The Second Book of Machabees, the book proper (ii, 20-xv, 40)
+    scope: {book: 2Mach, chapter: 2, through: 15, first: 20, last: 40}
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -1930,15 +2067,82 @@ units:
           The article adds "As to the exact date there is great divergence," and 124 B.C.
           is a floor which its "very probable supposition" turns into an approximate date
           of writing; the approximation is the source's own and is not resolved here.
-          Three distinct compositions must not be collapsed: Jason's lost original, whose
-          author "must have finished his work shortly after the death of Nicanor, and
-          before disaster overtook Judas Machabeus"; this epitome; and the second
-          prefixed letter, "written soon after the death of Antiochus ... therefore about
-          163 B.C." The author of the epitome is unknown.
+          Three distinct compositions must not be collapsed, and no longer are:
+          Jason's lost original, whose author "must have finished his work shortly
+          after the death of Nicanor, and before disaster overtook Judas Machabeus";
+          this epitome, whose extent the article gives as "The book proper (ii,
+          20-xv, 40)"; and the two prefixed letters, "(i, 1-ii, 19)", which the same
+          article says "otherwise have no connexion with the book" and which now
+          carry composition units of their own. The author of the epitome is unknown.
         date:
           precision: approximate-year
           from: {year: 124, era: bc}
           label: "not earlier than ... 124 B.C. ... the latter would be of about the same date"
+
+  - id: composition.second-book-of-machabees.first-letter
+    title: The first letter prefixed to II Machabees (i, 1-10a)
+    scope: {book: 2Mach, chapter: 1, first: 1, last: 10}
+    note: >-
+      Bechtel divides the two letters at i, 10a, which falls inside the Douay's
+      verse 1:10: its opening clause, "In the year one hundred and eighty-eight",
+      closes this letter and carries its date, and the remainder of the verse opens
+      the second. A scope cannot split a verse, so 1:10 is held here, with the
+      letter whose date it prints, and the second letter's unit begins at 1:11. The
+      two units deliberately do not overlap: a verse covered by two units of equal
+      width is settled by authoring order, not by the narrowest-wins rule, because
+      Unit.width() ranks whole-book, whole-chapter and verse-range and not verse
+      counts.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Machabees" in the Catholic Encyclopedia states that
+          "The book proper (ii, 20-xv, 40) is preceded by two letters of the Jews of
+          Jerusalem to their Egyptian coreligionists (i, 1-ii, 19)", of which "The
+          first (i, 1-10a), dated in the year 188 of the Seleucid era (i.e. 124
+          B.C.)".
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09495a-6afd1136]
+        note: >-
+          The letter carries its own date, which is why the epitome's floor is taken
+          from it: "The epitome cannot have been written earlier than the date of the
+          first letter, that is 124 B.C." The same article says the two letters
+          "otherwise have no connexion with the book", which is why they are units of
+          their own and not part of the epitome's scope. The Seleucid year is the
+          source's own and so is the B.C. equivalent it prints; no conversion is made
+          here. Sole claim on this subject, so SS4.4 is trivially satisfied.
+        date:
+          precision: year
+          from: {year: 124, era: bc}
+          label: "dated in the year 188 of the Seleucid era (i.e. 124 B.C.)"
+
+  - id: composition.second-book-of-machabees.second-letter
+    title: The second letter prefixed to II Machabees (i, 10b-ii, 19)
+    scope: {book: 2Mach, chapter: 1, through: 2, first: 11, last: 19}
+    note: >-
+      The scope begins at 1:11 and not at 1:10b because a scope cannot split a
+      verse; see the note on the first letter's unit.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Bechtel's "The Books of Machabees" states that "The second (i, 10b-ii, 19),
+          which is undated", and then dates it from its contents: "The second letter
+          must have been written soon after the death of Antiochus, before the exact
+          circumstances concerning it had become known in Jerusalem , therefore about
+          163 B.C."
+        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09495a-6afd1136]
+        note: >-
+          "About" is the source's own and is not resolved. The article dates this
+          letter four decades before the epitome it stands in front of, which is what
+          made the withdrawn whole-book scope over 2Mach false: it answered the whole
+          of this letter, 2Mach.1.11 to 2:19, with the epitome's 124 B.C. The article
+          adds that the Antiochus in question "is Antiochus IV and not Antiochus III,
+          as many Catholic commentators maintain". Sole claim on this subject, so
+          SS4.4 is trivially satisfied.
+        date:
+          precision: approximate-year
+          from: {year: 163, era: bc}
+          label: "therefore about 163 B.C."
   # === lane esdras ===
   # NO composition unit is authored for 1 or 2 Esdras, and the withdrawal is
   # deliberate. The only year either inspected article prints for the writing

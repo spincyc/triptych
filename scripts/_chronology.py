@@ -830,8 +830,26 @@ def _sources(raw: dict[str, Any], where: str, required: bool) -> tuple[str, ...]
     return tuple(value)
 
 
-def _claims(raw: dict[str, Any], where: str, profiles: set[str]) -> tuple[Claim, ...]:
+def _claims(
+    raw: dict[str, Any], where: str, profiles: set[str], required: bool = True
+) -> tuple[Claim, ...]:
     listed = raw.get("dates")
+    if listed is None and not required:
+        # A SUBJECT WITH NO CLAIM IS STILL A SUBJECT. An event exists to be
+        # named — by a binding, or as the anchor another claim is measured
+        # from — and naming one is not the same act as dating it. Requiring a
+        # date of every event meant that withdrawing the only claim on a
+        # subject was impossible without deleting the subject, and where other
+        # claims anchor on it that cannot be done either. The corpus met this
+        # at `israel.monarchy.saul-accession`, whose single claim was a modern
+        # reconstruction §4.3 excludes and whose identity four other claims and
+        # two bindings depend on. An event with no `dates` asserts nothing,
+        # returns nothing, and leaves the loci bound to it to whatever else
+        # reaches them — which is the honest answer when no ranked source has
+        # dated it. A composition unit still requires one: a unit exists only
+        # to carry a composition date, so a dateless one would be a scope
+        # asserting nothing about the text it names.
+        return ()
     if not isinstance(listed, list) or not listed:
         raise ChronologyError(f"{where}: needs a non-empty 'dates' list")
     claims: list[Claim] = []
@@ -1045,7 +1063,7 @@ def _load_events(root: Path, profiles: set[str]) -> dict[str, Event]:
             id=identifier,
             title=_text(entry, "title", where, required=True),
             parent=check_id(entry["parent"], "event", where) if entry.get("parent") else None,
-            claims=_claims(entry, where, profiles),
+            claims=_claims(entry, where, profiles, required=False),
             note=_text(entry, "note", where),
         )
     for event in events.values():
