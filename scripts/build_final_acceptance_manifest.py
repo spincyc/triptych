@@ -285,10 +285,19 @@ def main() -> int:
         "# which fails on any changed case this file omits, any row no diff\n"
         "# supports, and any prior review id no row cites.\n"
     )
-    writer = csv.DictWriter(buffer, fieldnames=COLUMNS, delimiter="\t",
-                            lineterminator="\n", extrasaction="ignore")
-    writer.writeheader()
-    writer.writerows(rows)
+    # HOUSE STYLE, not csv's. Every review TSV in this tree writes a bare `"`
+    # inside a cell rather than wrapping and doubling it, and a reviewer reads
+    # these files as much as a program does. A tab or a newline in a cell would
+    # corrupt the file silently, so refuse one rather than quote around it.
+    def line(values):
+        for column, value in zip(COLUMNS, values):
+            if "\t" in value or "\n" in value:
+                raise SystemExit(f"{column}: a cell may hold no tab or newline")
+        return "\t".join(values) + "\n"
+
+    buffer.write(line(COLUMNS))
+    for row in rows:
+        buffer.write(line([row[c] for c in COLUMNS]))
     text = buffer.getvalue()
 
     if args.check:
