@@ -407,7 +407,14 @@ def _render_query(payload: dict) -> int:
     print(f"{payload['locus']}\t{payload['chronology_status']}")
     if not payload["assertions"]:
         print(f"# {payload['reason']}", file=sys.stderr)
-        return 1 if payload["status"] == "unresolved" else 0
+        # NO ASSERTIONS IS THE "no", whatever produced it. This used to key on
+        # `status == "unresolved"`, which stopped tracking the distinction when
+        # a locus whose mapping refuses began answering `research-pending` on
+        # the chronology axis instead of returning the mapping word as its
+        # answer. A caller piping this asks one question - did I get chronology
+        # - and an empty list is the same "no" whether the corpus refused the
+        # mapping, holds an authored gap, or has simply not been asked yet.
+        return 1
     for item in payload["assertions"]:
         reach = "inherited" if item["inherited"] else "direct"
         # The source's own words where it left any, because "01-14" is the

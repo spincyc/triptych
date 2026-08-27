@@ -916,10 +916,33 @@ def _scope(raw: object, where: str, books: dict[str, int]) -> tuple[Span, ...]:
                 f"{spot}: {system!r} does not number {token!r}; it addresses "
                 f"{sorted(addressable)}"
             )
-        if token not in books:
+        if system == PREFERRED_SYSTEM and token not in books:
             raise ChronologyError(
                 f"{spot}: {token!r} is not a book of the canon; see scripts/_canon.py"
             )
+        # A NATIVE SCOPE IS BOUNDED BY ITS OWN WITNESS, not by the canon. The
+        # canon check refused every scope naming `EsthGr`, which the Greek
+        # witness prints and `scripture_systems()` admits but `_canon` has no
+        # book row for — so a native locus in it could not be given a gap row,
+        # and the ten loci the cold audit found carrying a mapping word where a
+        # chronology status belongs had no route to an authored one. A system's
+        # extent is read from the text that prints it, the same rule
+        # `_system_loci` obeys.
+        limits = books
+        if system != PREFERRED_SYSTEM:
+            printed = _system_loci(system) or []
+            native_chapters: dict[str, int] = {}
+            for there, chapter_number, _verse in printed:
+                native_chapters[there] = max(
+                    native_chapters.get(there, 0), chapter_number
+                )
+            if token not in native_chapters:
+                raise ChronologyError(
+                    f"{spot}: {system!r} prints no {token!r}; it prints "
+                    f"{sorted(native_chapters)}"
+                )
+            limits = native_chapters
+        books = limits
         chapter = entry.get("chapter")
         through = entry.get("through", chapter)
         first, last = entry.get("first"), entry.get("last")
@@ -1206,50 +1229,168 @@ def _refuse_duplicated_native_scopes(
     gaps: tuple[Gap, ...],
     where: Path,
 ) -> None:
-    """Native authoring is allowed only where the concordance actually refuses.
+    """Native authoring is allowed only where it does not restate a shared fact.
 
     This is what keeps "one fact, one place" a GATE rather than a convention.
     Admitting native non-Vulgate loci creates exactly one new way to duplicate:
     author a fact at `{system: greek, book: Ecclus}` that the Vulgate already
-    holds and that the concordance can safely carry between them. So the rule
-    is not "do not do that" — it is that a native scope whose locus SAFELY
-    corresponds to a Vulgate locus is refused at load.
+    holds and that the concordance can safely carry between them.
 
-    The consequence is worth stating plainly: a scope in another system is
-    admissible precisely when sharing is impossible. Where sharing is possible
-    it is mandatory, and it happens through machinery that already exists.
+    TWO THINGS WERE WRONG WITH THE FIRST VERSION OF THIS GATE, and the cold
+    audit of `2330d63a5` found both.
+
+    It probed **one locus** — `span.first or 1`, and verse 1 of chapter 1 for a
+    whole-book scope — so a span whose opening refused was admitted entire,
+    however its interior behaved. A gate that checks the first locus proves
+    something about the first locus.
+
+    And it asked the wrong question of the locus it did check. Mappability was
+    standing in for duplication, and the two come apart at exactly one place in
+    this repository: the concordance carries greek Ecclus 36:16 safely to
+    vulgate Ecclus 36:18, but the fact authored natively there is the date of
+    the GREEK TRANSLATION, which the Vulgate unit does not hold and could not —
+    it dates the Hebrew original and the Latin version. Refusing that scope, or
+    splitting it to exclude the one locus, would have deleted the only
+    assertion true of that verse. Safe correspondence means the two loci carry
+    corresponding text. It does not mean every fact about one is a fact about
+    the other.
+
+    So the gate now walks **every locus the witness prints** inside the span,
+    and refuses a locus that maps safely only when the native subject would
+    restate a claim the preferred locus already holds under the same relation.
+    That is `guidance/the-shape.md` §2 stated as a test — two copies of a fact —
+    rather than a proxy for it.
     """
-    scoped: list[tuple[str, str, tuple[Span, ...]]] = [
-        *(("composition unit", unit.id, unit.scope) for unit in units.values()),
+    import sys as _sys  # noqa: PLC0415
+
+    scripts = str(Path(__file__).resolve().parent)
+    if scripts not in _sys.path:
+        _sys.path.insert(0, scripts)
+    import _psalms  # noqa: PLC0415
+
+    # WHICH KIND OF OTHER SYSTEM THIS IS, asked of the module that owns it.
+    # A psalter numbering is a numbering: hebrew Psalm 51 IS vulgate Psalm 50,
+    # §8 says "one psalm with one chronology", and any fact about one is a fact
+    # about the other. A deuterocanon witness is a WITNESS: §3.2 settles that
+    # for Sirach "there are two texts, not two numberings", so a fact about the
+    # Greek translation is not thereby a fact about the Latin, even at a verse
+    # where the two correspond. The gate must not treat these alike, and asking
+    # the owning module is how the answer stays where the machinery is.
+    renumberings = {name for name in _psalms.SYSTEMS if name != PREFERRED_SYSTEM}
+
+    preferred_units = [
+        unit for unit in units.values()
+        if any(span.system == PREFERRED_SYSTEM for span in unit.scope)
+    ]
+    preferred_bindings = [
+        binding for binding in bindings
+        if any(span.system == PREFERRED_SYSTEM for span in binding.scope)
+    ]
+
+    def already_held(reached: Locus, relation: str) -> set[str]:
+        """Rendered claims of `relation` the preferred locus already carries."""
+        held: set[str] = set()
+        for unit in preferred_units:
+            if relation != "composition":
+                continue
+            if _scope_covers(
+                [s for s in unit.scope if s.system == PREFERRED_SYSTEM],
+                reached.token, reached.chapter, reached.verse,
+            ):
+                held.update(str(claim.date) for claim in unit.claims)
+        for binding in preferred_bindings:
+            if binding.relation != relation:
+                continue
+            if _scope_covers(
+                [s for s in binding.scope if s.system == PREFERRED_SYSTEM],
+                reached.token, reached.chapter, reached.verse,
+            ):
+                held.add(binding.event)
+        return held
+
+    scoped: list[tuple[str, str, str, tuple[Span, ...], tuple[str, ...]]] = [
         *(
-            ("binding", f"{binding.relation} -> {binding.event}", binding.scope)
+            ("composition unit", unit.id, "composition", unit.scope,
+             tuple(str(claim.date) for claim in unit.claims))
+            for unit in units.values()
+        ),
+        *(
+            ("binding", f"{binding.relation} -> {binding.event}",
+             binding.relation, binding.scope, (binding.event,))
             for binding in bindings
         ),
-        *(("gap", f"{gap.status}", gap.scope) for gap in gaps),
+        *(("gap", f"{gap.status}", "", gap.scope, ()) for gap in gaps),
     ]
-    for kind, identifier, scope in scoped:
+    for kind, identifier, relation, scope, mine in scoped:
         for span in scope:
             if span.system == PREFERRED_SYSTEM:
                 continue
-            verse = span.first or 1
-            chapter = span.chapter
-            if chapter is None:
-                # A whole-book native scope is admissible only if the book does
-                # not safely correspond anywhere. Probed at its opening verse,
-                # which is the cheapest honest question to ask of it.
-                chapter = 1
-            reached = to_canonical(span.system, span.token, chapter, verse)
-            if isinstance(reached, Unresolved):
+            shared: list[tuple[str, str]] = []
+            duplicated: list[tuple[str, str, str]] = []
+            for token, chapter, verse in _span_loci(span):
+                reached = to_canonical(span.system, token, chapter, verse)
+                if isinstance(reached, Unresolved):
+                    continue
+                shared.append((f"{token} {chapter}:{verse}", str(reached)))
+                if span.system in renumberings:
+                    # Same text under another number. Nothing further to ask.
+                    duplicated.append(
+                        (f"{token} {chapter}:{verse}", str(reached),
+                         "the same text under another number")
+                    )
+                    continue
+                if not relation:
+                    # A gap row restates nothing; any safe correspondence means
+                    # the status belongs at the preferred locus.
+                    duplicated.append((f"{token} {chapter}:{verse}", str(reached), ""))
+                    continue
+                overlap = already_held(reached, relation) & set(mine)
+                for item in sorted(overlap):
+                    duplicated.append(
+                        (f"{token} {chapter}:{verse}", str(reached), item)
+                    )
+            if not duplicated:
                 continue
+            here, there, what = duplicated[0]
+            spread = (
+                f" {len(shared)} of this scope's loci correspond safely and "
+                f"{len(duplicated)} of those would duplicate; if that is a "
+                f"property of part of the span only, split the span."
+                if len(shared) > 1 else ""
+            )
             raise ChronologyError(
                 f"{where}: {kind} {identifier} authors chronology natively at "
-                f"{span.system} {span.token} {chapter}:{verse}, but the "
-                f"concordance carries that locus safely to {reached}. A fact "
-                f"true of both texts is authored once, at the preferred "
-                f"{PREFERRED_SYSTEM} locus, and reached from here through the "
-                f"concordance. Native scopes are for text the concordance "
-                f"refuses, which is the only case where sharing is impossible"
+                f"{span.system} {here}, the concordance carries that locus "
+                f"safely to {there}, and the preferred locus already holds "
+                f"{what!r} under {relation!r}. A fact true of both texts is "
+                f"authored once, at the preferred {PREFERRED_SYSTEM} locus, and "
+                f"reached from here through the concordance.{spread}"
             )
+
+
+def _span_loci(span: Span) -> list[tuple[str, int, int]]:
+    """Every locus a native span covers, read from the witness that prints it.
+
+    A span is validated over its whole extent or it is not validated. Returning
+    the printed loci rather than an integer range is the same rule `_system_loci`
+    obeys, and for the same reason: a verse number no witness prints is not a
+    locus, and probing one proves nothing about the text.
+    """
+    printed = _system_loci(span.system)
+    if printed is None:
+        return []
+    out = []
+    for token, chapter, verse in printed:
+        if token != span.token:
+            continue
+        if span.chapter is not None and chapter != span.chapter:
+            continue
+        if span.first is not None and verse < span.first:
+            continue
+        if span.last is not None and verse > span.last:
+            continue
+        out.append((token, chapter, verse))
+    return out
 
 
 def _refuse_dangling_anchors(
@@ -1577,9 +1718,42 @@ def chronology(
                 # locus carrying only a composition claim is composition-only
                 # here exactly as it would be there.
                 return Answer(locus, native, _status_of(native), "", mapping, asked)
-            return converted._replace(locus=asked)
+            # A MAPPING WORD IS NOT A CHRONOLOGY STATUS, and returning the
+            # refusal here made it one. §3.0.1 separated the two axes for the
+            # locus that HAS chronology and left the locus that has none still
+            # answering `textually-distinct` to the question "is this dated?".
+            # The cold audit found ten loci in that position with no route to
+            # anything else. The mapping refusal keeps its own axis, and the
+            # chronology axis answers the way every other unresolved locus in
+            # the corpus does — from an authored gap row if one reaches it, and
+            # otherwise from the honest default, which §9 says is not authored.
+            for gap in corpus.gaps:
+                if _scope_covers(
+                    [s for s in gap.scope if s.system == locus.system],
+                    locus.token,
+                    locus.chapter,
+                    locus.verse,
+                ):
+                    return Answer(locus, (), gap.status, gap.reason, mapping, asked)
+            return Answer(
+                locus,
+                (),
+                "research-pending",
+                "no ranked source has been inspected for this locus yet",
+                mapping,
+                asked,
+            )
         mapping = Mapping(locus.system, "shared", str(converted), "")
         locus = converted
+        # A SAFE CORRESPONDENCE IS NOT AN ERASURE. Where the asked locus also
+        # carries chronology authored in its own system, that fact is true of
+        # this text whether or not the concordance can carry the locus, and it
+        # is carried forward to be merged with the shared answer below. The
+        # previous code computed `native` here and then dropped it, so at the
+        # one locus where the Greek Ecclesiasticus corresponds safely to the
+        # Vulgate the Greek translation's own date became unreachable — the
+        # same shape as the refusal-swallows-chronology defect §3.0.1 was
+        # written to end, arriving from the other side.
     if locus.token not in corpus.books:
         return Unresolved(
             "not-alignable",
@@ -1657,6 +1831,12 @@ def chronology(
                 )
             )
 
+    if native:
+        held = {(item.relation, item.subject, str(item.claim.date)) for item in assertions}
+        assertions.extend(
+            item for item in native
+            if (item.relation, item.subject, str(item.claim.date)) not in held
+        )
     assertions.sort(key=lambda item: item.sort_key())
 
     if assertions:
@@ -1813,13 +1993,19 @@ def _system_loci(system: str) -> list[tuple[str, int, int]] | None:
         return out
     if system in _deuterocanon.WITNESSES:
         try:
-            extents = _deuterocanon._extents(system)
+            printed = _deuterocanon._printed(system)
         except Exception:  # noqa: BLE001 - an unmeasurable system is a finding
             return None
-        out = []
-        for (token, chapter), (low, high) in sorted(extents.items()):
-            out.extend((token, chapter, verse) for verse in range(low, high + 1))
-        return out
+        # THE VERSES THE WITNESS PRINTS, not the range they span. This used to
+        # fill each chapter from `_extents`, which keeps only the first and last
+        # number, so every verse number the witness SKIPS was invented back:
+        # 38 in `greek`, 37 in `world-english-catholic`. The 35 invented Greek
+        # Ecclesiasticus loci were exactly the Latin pluses the cited article
+        # calls "foreign not only to the Greek, but also to the Hebrew text",
+        # so the count turned Latin expansions into Greek Scripture and then
+        # reported a date as applying to them. A universe is what a witness
+        # holds, and only reading the witness can say what that is.
+        return sorted(printed)
     return None
 
 

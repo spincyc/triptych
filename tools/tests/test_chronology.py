@@ -519,6 +519,73 @@ units:
 """,
         )
 
+    def test_a_native_span_is_validated_past_its_first_locus(self) -> None:
+        """The gate the cold audit found proving something about verse one.
+
+        It probed `span.first or 1`, so a span whose opening refused the
+        concordance was admitted entire however its interior behaved. This
+        fixture is that exact shape: greek Ecclus 36 opens at a locus the
+        concordance refuses, and its verse 16 carries safely to the Vulgate,
+        where the same composition date is already held. A gate that reads only
+        the first locus admits it.
+        """
+        refuses(
+            self,
+            "Ecclus 36:16",
+            composition="""\
+units:
+  - id: composition.ecclesiasticus
+    title: Ecclesiasticus, at the preferred locus
+    scope: {book: Ecclus}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: interval
+          from: {year: 190, era: bc}
+          to: {year: 170, era: bc}
+          label: "between 190 and 170 B.C."
+  - id: composition.ecclesiasticus-greek-chapter-36
+    title: A native span whose interior restates a shared fact
+    scope: {system: greek, book: Ecclus, chapter: 36}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: interval
+          from: {year: 190, era: bc}
+          to: {year: 170, era: bc}
+          label: "between 190 and 170 B.C."
+""",
+        )
+
+    def test_a_psalter_numbering_may_never_date_a_psalm_natively(self) -> None:
+        """A renumbering is not a witness, and the gate must not confuse them.
+
+        The distinction is asked of the module that owns each name: `_psalms`
+        owns `hebrew`, which is one psalter under two numbers, so a native scope
+        there is the same fact twice whatever value it carries. `_deuterocanon`
+        owns `greek`, which is a different text. Value-blindness is the point -
+        two DIFFERENT dates for one psalm is the worse failure, not the lesser.
+        """
+        refuses(
+            self,
+            "the same text under another number",
+            composition="""\
+units:
+  - id: composition.psalm-51-hebrew-divergent
+    title: Psalm 51, natively, with a date the Vulgate does not hold
+    scope: {system: hebrew, book: Ps, chapter: 51}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 999, era: bc}}
+""",
+        )
+
     def test_a_scope_may_not_name_a_chapter_the_book_has_not(self) -> None:
         refuses(
             self,
@@ -876,9 +943,16 @@ units:
         answer = _chronology.chronology(
             _chronology.parse_locus("Ecclus.35.1", "test", "greek"), root=book.root
         )
-        self.assertIsInstance(answer, _chronology.Unresolved)
-        self.assertEqual(answer.status, "textually-distinct")
-        self.assertIn("Ecclesiasticus", answer.reason)
+        # In this FIXTURE corpus the Greek Ecclesiasticus has no native
+        # chronology, so the two axes separate cleanly: the mapping refuses
+        # with the concordance's own reason, and the chronology axis says only
+        # that nobody has looked. A mapping word must never be the answer to
+        # "is this dated?".
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertEqual(answer.mapping.status, "textually-distinct")
+        self.assertIn("Ecclesiasticus", answer.mapping.note)
+        self.assertEqual(answer.status, "research-pending")
+        self.assertEqual(answer.assertions, ())
 
     def test_a_greek_arrangement_locus_lands_where_the_concordance_says(self) -> None:
         # Not a blanket refusal: the concordance knows where a correspondence
@@ -905,9 +979,15 @@ units:
             _chronology.parse_locus("EsthGr.1.1", "test", "world-english-catholic"),
             root=book.root,
         )
-        self.assertIsInstance(answer, _chronology.Unresolved)
-        self.assertEqual(answer.status, "textually-distinct")
-        self.assertIn("no correspondence is recorded", answer.reason)
+        # BOTH AXES, which is what this used to get wrong. The mapping refuses
+        # and says why; the chronology axis answers the way any unresearched
+        # locus does. Returning the mapping word as the chronology status was
+        # the defect the cold audit found on ten native loci.
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertEqual(answer.mapping.status, "textually-distinct")
+        self.assertIn("no correspondence is recorded", answer.mapping.note)
+        self.assertEqual(answer.status, "research-pending")
+        self.assertEqual(answer.assertions, ())
 
     def test_a_two_hop_edition_is_reached_through_its_hops(self) -> None:
         """This test used to assert the opposite, and the opposite was a bug.
@@ -1110,6 +1190,9 @@ class ToolTests(unittest.TestCase):
         # Ecclesiasticus acquired native chronology and began answering; a
         # mapping refusal is no longer by itself a refusal to answer, which is
         # the whole of Correction A.
+        # An empty answer is the "no", whatever produced it: this locus refuses
+        # the mapping AND has no chronology, so the caller gets a non-zero exit
+        # and the reason on stderr, while a locus that answers exits zero.
         self.assertEqual(tool.main(["query", "EsthGr.1.1", "--system", "greek"]), 1)
         self.assertEqual(tool.main(["query", "Gen.1.1"]), 0)
 
@@ -1302,6 +1385,65 @@ class TrackedHardCaseTests(unittest.TestCase):
             "israel.patriarchs.birth-of-abram",
             {claim.date.anchor for claim in call.claims},
         )
+
+    def test_a_witness_to_a_different_text_may_date_it_where_it_corresponds(self) -> None:
+        """The other half of the same rule, and the reason it is not mappability.
+
+        Safe correspondence says two loci carry corresponding text. It does not
+        say every fact about one is a fact about the other: greek Ecclus 36:16
+        corresponds to vulgate Ecclus 36:18, and the date of the GREEK
+        TRANSLATION is true of the first and false of the second. So the tracked
+        Greek Ecclesiasticus unit, which the concordance carries at exactly that
+        one locus out of 1 356, must load - and its date must still reach the
+        locus, which is the half a successful mapping used to swallow.
+        """
+        answer = self.ask("Ecclus.36.16", system="greek")
+        self.assertEqual(answer.mapping.status, "shared")
+        subjects = {item.subject for item in answer.assertions}
+        self.assertIn("composition.book-of-ecclesiasticus.greek", subjects)
+        self.assertIn("composition.book-of-ecclesiasticus", subjects)
+
+    def test_no_native_locus_answers_a_mapping_word_to_a_chronology_question(self) -> None:
+        """The second architecture defect the cold audit left open.
+
+        Ten native loci answered `textually-distinct` when asked whether they
+        were dated - a MAPPING word standing in the chronology axis - and no
+        route existed to give them anything else. §3.0.1 separated the axes for
+        the locus that HAS chronology; this is the same separation for the locus
+        that has none. Every native locus now answers on both axes, and the
+        chronology axis only ever speaks chronology.
+        """
+        mapping_words = {"textually-distinct", "not-alignable", "shared", "native"}
+        checked = 0
+        for system in sorted(_chronology.scripture_systems()):
+            if system == _chronology.PREFERRED_SYSTEM:
+                continue
+            printed = _chronology._system_loci(system)
+            if printed is None:
+                continue
+            for token, chapter, verse in printed:
+                answer = self.ask(f"{token}.{chapter}.{verse}", system=system)
+                self.assertNotIn(
+                    answer.status, mapping_words,
+                    f"{system} {token}.{chapter}.{verse} answers a mapping word",
+                )
+                self.assertIn(answer.status, _chronology.STATUSES)
+                checked += 1
+        self.assertGreater(checked, 4000, "the native universe went missing")
+
+    def test_a_native_universe_is_the_verses_its_witness_prints(self) -> None:
+        # `_system_loci` filled each chapter from its first verse to its last,
+        # so every number the witness SKIPS was invented back and counted as
+        # Scripture: 38 in greek, 37 in world-english-catholic. The Greek ones
+        # were the Latin pluses the cited article calls "foreign not only to the
+        # Greek, but also to the Hebrew text".
+        import _deuterocanon
+        for system in ("greek", "world-english-catholic"):
+            self.assertEqual(
+                sorted(_chronology._system_loci(system)),
+                sorted(_deuterocanon._printed(system)),
+                system,
+            )
 
     def test_the_miserere_is_one_psalm_however_it_is_numbered(self) -> None:
         vulgate = self.ask("Ps.50.3")
