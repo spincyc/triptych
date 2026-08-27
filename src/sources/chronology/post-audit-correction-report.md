@@ -151,6 +151,44 @@ The re-review manifest is derived, not sampled: it is the diff of the loaded
 corpus at HEAD against the loaded corpus at `2330d63a5`, plus the architecture
 and hard cases named by contract. The next cold reviewer inspects 100% of it.
 
+## Validation, re-measured
+
+| Gate | Result |
+| --- | --- |
+| chronology tests | **92 / 92** (84 at `2330d63a5`) |
+| `scripture-chronology validate` | 1 profile, 279 events, 62 composition units, 375 bindings, 21 gaps |
+| `scripture-chronology check` | coverage table current, 1 882 rows |
+| source-library validate | 540 works, 722 editions, 1 918 artifacts, 2 869 passages |
+| promised-deliverables | ledger valid, 31 tracked |
+| `check-examples` | 4 diverged, the same 4 as at the correction start |
+| `tmt check` | the same 8 undeclared siblings, none chronology |
+| `make -k check` | the same 4 targets fail as at the correction start |
+
+Full suite, comparing **failure names** rather than counts, against the
+correction starting HEAD `9d3dd2fc0`:
+
+```text
+correction start   1 820 tests   36 failures
+HEAD               1 828 tests   36 failures
+
+introduced by this lane   none
+removed by this lane      none
+```
+
+The eight-test difference is the eight chronology regressions this lane added.
+Every one of the 36 failures is inherited and base-identical, including
+`source-family-migration.test`, whose stale pin this lane deliberately did not
+refresh.
+
+Two gates the lane broke and fixed within it, recorded because they were real:
+`check-source-reader` refused after eight new source records were registered and
+was regenerated with the tool's own command; and
+`tests/tools/scripture-chronology.test` required a native locus with no
+chronology to answer `textually-distinct` when asked whether it was dated — the
+very defect §14 required correcting. It now asserts both axes, which is stronger
+than what it replaced, and is the third gate on this branch found asserting a
+defect rather than a contract.
+
 ## What this lane did not do
 
 No new population. No propers, Catena, web or PDF integration. No merge. The two
