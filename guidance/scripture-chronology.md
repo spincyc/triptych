@@ -118,6 +118,31 @@ whose locus the concordance carries safely to the Vulgate is refused. So a
 native scope is admissible *precisely when sharing is impossible*, and where
 sharing is possible it is mandatory.
 
+**The gate holds over the whole scope, not over its first locus.** It walks every
+locus the system's witness prints inside the span. A gate that probed
+`span.first` proved something about `span.first`, and admitted any span whose
+opening happened to refuse — which is what it did until 2026-08-27, when the cold
+audit of `2330d63a5` found it. Where a span's loci do not behave alike, the span
+is refused and the author splits it.
+
+**And what it refuses is a duplicated fact, not a safe correspondence.** The two
+are not the same thing, and they come apart at exactly one locus in this
+repository. The concordance carries greek Ecclus 36:16 safely to vulgate Ecclus
+36:18; the fact authored natively there is the date of the *Greek translation*,
+which the Vulgate unit does not hold and could not, because it dates the Hebrew
+original and the Latin version. Safe correspondence says the two loci carry
+corresponding text. It does not say that every fact about one is a fact about the
+other.
+
+So the gate asks which kind of other system it is looking at, of the module that
+owns the name. A **psalter numbering** — `hebrew`, owned by `_psalms` — is one
+psalter under two numbers: §8, one psalm with one chronology, so a native scope
+there is the same fact twice whatever value it carries, and two *different* dates
+for one psalm is the worse failure rather than the lesser. A **witness to another
+text** — `greek` and `world-english-catholic`, owned by `_deuterocanon` — is
+§3.2's "two texts, not two numberings", and native authorship there is refused
+only where it would restate a claim the preferred locus already holds.
+
 ### 3.0.1 A mapping refusal is not a chronology refusal
 
 The corpus used to return a concordance refusal as its own answer. Those are
@@ -130,8 +155,8 @@ does this locus have chronology at all?                chronology status
 
 They are **separate axes** and an `Answer` carries both. A textually distinct
 text can be dated and unmappable at once, and the standing case is the Greek
-Ecclesiasticus: 1 391 of its loci refuse the Vulgate because there are two
-texts and not two numberings, and Gigot dates the Greek translation to "not
+Ecclesiasticus: 1 355 of its 1 356 printed loci refuse the Vulgate because there
+are two texts and not two numberings, and Gigot dates the Greek translation to "not
 long after" 132 B.C. in its own right. Both are true. Before the correction the
 second was unreachable, and the corpus knew it — `composition.book-of-ecclesiasticus`
 carried a note warning that three dates in that article "must not be conflated",
@@ -175,6 +200,27 @@ mapping axis and it no longer suppresses the answer: where the corpus holds
 chronology authored natively at the asked locus, the query returns it **and**
 the refusal. Refusing to equate two texts is not a reason to say the second one
 is undated.
+
+**Both axes answer, always, and the chronology axis only ever speaks chronology.**
+The first correction separated the axes for the locus that *has* chronology and
+left the locus that has none still answering `textually-distinct` to the question
+"is this dated?" — a mapping word standing in the chronology axis, on ten native
+loci with no route to anything else. A native locus whose mapping refuses now
+reaches an authored gap row scoped in its own system, and otherwise the honest
+default of §9. Two consequences bind:
+
+- **a native scope is bounded by its own witness, not by the canon.** `EsthGr` is
+  a book the Greek witness prints and `scripts/_canon.py` has no row for, and
+  while scopes were checked against the canon no locus in it could be given any
+  status at all;
+- **a mapping word is never a chronology status.** `not-alignable` and
+  `textually-distinct` belong to the mapping axis. They may appear in `gaps.yaml`
+  only where an author is recording what the concordance says, never as an answer
+  to whether a locus is dated.
+
+And a successful mapping does not erase a native fact either: where a locus both
+corresponds safely and carries chronology authored in its own system, the query
+returns both.
 
 ---
 
@@ -482,14 +528,14 @@ unexamined universe is how a corpus claims completeness it has not got.
    therefore additional text rather than the same text renumbered. An alternate
    numbering of a safely corresponding locus is **not** new Scripture and is
    not counted. Neither is a locus already counted under another system: the
-   World English Catholic edition re-divides the Greek, and 2 122 of its 2 131
-   loci reach it, so counting those again would count one text twice.
+   World English Catholic edition re-divides the Greek, and 2 088 of the 2 094
+   loci it prints reach it, so counting those again would count one text twice.
 3. **Cross-system mapping status** — safely shared, textually-distinct,
    not-alignable — reported as its own axis, never as a chronology status.
 
-At the time of writing the corrected universe is 35 809 + 1 391 (`greek`) + 9
+At the time of writing the corrected universe is 35 809 + 1 356 (`greek`) + 6
 (`world-english-catholic`) + 0 (`hebrew`, whose psalter is wholly shared) =
-**37 209**. A system this repository can name but cannot enumerate is reported
+**37 171**. A system this repository can name but cannot enumerate is reported
 as `enumerable: false` and is a reason the coverage requirement stays open, not
 a thing to leave out quietly.
 
@@ -597,6 +643,28 @@ Before 2026-08-27 the corpus had only `relative`, and 47 claims were using it
 for lengths — the whole Judges family among them, each anchored on
 `israel.judges.period` as though counted from its start. Nothing computed with
 them, which is the only reason no wrong date had yet been produced.
+
+### 10.2 An interval lands on the endpoint its source names
+
+A source that states an interval states what it runs to. Attach it there, and
+nowhere else — not to a neighbouring event whose own figure happens to compute,
+and not to the endpoint a section heading names when the arithmetic inside the
+section names a different one.
+
+The instance is the cold audit's one critical finding. The Catholic
+Encyclopedia's Flood-to-Abraham table totals 367 / 1017 / 1147 under a row it
+labels *"Hence, number of years from Flood to Call of Abraham"*, and reaches
+those totals from the row above by *"Add for age of Abraham at time of his call:
+75"*. The section's heading says "birth"; the arithmetic says "call". The corpus
+carried all three on the birth, overstating every one by exactly seventy-five
+years, and read perfectly.
+
+**Arithmetic consistency is not an anchor.** The check that catches this is to
+compute the interval against what the anchor already holds and see which event it
+lands on: the Deluge is held at A.M. 1656, and 1656 + 292 is the traditional year
+of Abraham's birth while 1656 + 367 is his call. Where a corpus holds both events
+and an interval between them — here Genesis 12:4's seventy-five years — the two
+stored statements must be capable of being true together, and these were not.
 
 **`precision` is separate from authority.** Approximate means the *date* is
 approximate. It is not a judgement about the source, and a rank-3 source's

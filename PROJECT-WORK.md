@@ -1846,7 +1846,7 @@ lane may not perform and did not.
 Chronology was authored in `vulgate` alone and returned a concordance refusal as
 its own answer, conflating two questions: whether a locus may be asserted
 equivalent to another, and whether it can carry chronology at all. The Greek
-Ecclesiasticus is the standing case — 1 391 of its loci refuse the Vulgate
+Ecclesiasticus is the standing case — 1 355 of its 1 356 printed loci refuse the Vulgate
 because there are two texts and not two numberings — and the corpus already knew
 it had nowhere to put the fact: `composition.book-of-ecclesiasticus` carried a
 note warning that three dates in Gigot's article "must not be conflated",
@@ -1915,15 +1915,23 @@ evidence about a route until the route has been checked.
 
 | Additional native loci | Printed | Shared | Already counted | Additional |
 | --- | --- | --- | --- | --- |
-| `greek` | 2 194 | 803 | 0 | **1 391** |
+| `greek` | 2 156 | 800 | 0 | **1 356** |
 | `hebrew` | 2 528 | 2 528 | 0 | 0 |
-| `world-english-catholic` | 2 131 | 730 | 1 392 | **9** |
+| `world-english-catholic` | 2 094 | 730 | 1 358 | **6** |
 
-Corrected universe: **37 209**. Ten of the 1 400 additional native loci carry no
-chronology status of their own — one Greek Esther locus and nine World English
-Catholic ones — so the corrected universe is **not** fully accounted for and
-`exhaustive-coverage` stays open. That is the honest reading of the requirement
-as rewritten, and it is the reason it was rewritten.
+Corrected universe: **37 171**, restated on 2026-08-27 after the post-audit
+correction lane found `_system_loci` filling each chapter from its first printed
+verse to its last, which invented 38 `greek` and 37 `world-english-catholic`
+verse numbers no witness prints. The figures above were 2 194 / 1 391 and
+2 131 / 9 against a universe of 37 209.
+
+Every additional native locus now reaches a chronology status of its own: the
+seven that carried a mapping word instead — one Greek Esther locus and six World
+English Catholic ones — answer `research-pending`, on the chronology axis, beside
+the mapping refusal on the mapping axis. Three of the ten the cold audit counted
+were among the invented loci and were never text. `exhaustive-coverage` stays
+open on its own criterion while any locus is `research-pending`, which is the
+honest reading and not a defect.
 
 **The promise is reopened and stays open.** Thirteen requirements now, three of
 them open: `translation-independent-identity` and `exhaustive-coverage`, both
@@ -1995,21 +2003,30 @@ rather than changed; they are named in `.scratch/audit/durations.md` §3.1.
 them chronology: `check-web-editions-current` (one stale tracked web edition),
 `check-sources` (pinned migration snapshots stale), `check-tool-registry` (8
 tools using a sibling without declaring it), `check-examples` (4 diverged on the
-branch, 24 on base).
+branch, 6 on base; this paragraph said 24 and the cold audit re-measured it).
 
-**One branch regression against `origin/main`, and it is not this lane's.**
+**No branch regression against `origin/main`. This paragraph said there was one
+and was wrong; the cold audit re-measured it.**
 `tools/tests/test_tool_registry.py::test_shell_smoke_tests_pass` fails on
 `tests/tools/source-family-migration.test`, which reports that
 `src/sources/inventories/source-family-migration-v1.toml`'s pinned
-`canonical_catalog_snapshot` and `inventory_snapshot` are stale. The cause is
-the population lane of 2026-08-26 registering 128 new source artifacts behind a
-pin that has not been re-reviewed; the same staleness is what makes
-`check-sources` fail on base and branch alike, and the test was already failing
-at `f1bf113` before this correction began. **It has deliberately not been
-refreshed here.** Re-pinning a snapshot is an assertion that the review the pin
-stands for has been performed, and it has not been. It needs a maintainer, or
-the source-family review lane, not a correction lane rewriting a timestamp to
-make a gate green.
+`canonical_catalog_snapshot` and `inventory_snapshot` are stale. That failure is
+**inherited and base-identical**: run in a clean worktree at the merge-base
+`22528396a` it fails with the same two errors, naming the base worktree's own
+path. Comparing failure names rather than counts, the branch introduces none and
+the base carries one the branch does not — `pdf-review.test`, which needs a built
+PDF a fresh worktree has no copy of, an environment difference rather than a code
+one. Full suite: branch 36 failures, base 37, and the 1 820 − 1 736 test-count
+difference is exactly the 84 chronology tests this branch adds.
+
+The staleness itself is real and is what makes `check-sources` fail on base and
+branch alike. Its cause is the population lane of 2026-08-26 registering 128 new
+source artifacts behind a pin that has not been re-reviewed. **It has deliberately
+not been refreshed.** Re-pinning a snapshot asserts that the review the pin stands
+for has been performed, and it has not been — the cold audit reviewed the
+chronology corpus, which is a different question, and so discharges nothing here.
+It needs a maintainer, or the source-family review lane, not a lane rewriting a
+timestamp to make a gate green.
 
 **What the cold reviewer must verify, per claim**: the cited artifact or record
 exists; the cited locus actually supports the claim; quoted wording matches the
