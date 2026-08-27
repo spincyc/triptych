@@ -1,0 +1,666 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "17-ablutions-and-coordinated-transfer"
+  title: "The ablutions and the coordinated transfer"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-136A"
+    order: 182
+    cluster: "LM-136"
+    title: "Quod ore sumpsimus: the first ablution, of wine"
+    kind: action
+    liturgical_moment: "The first ablution of the chalice, with wine"
+    text_cue: "Quod ore sumpsimus..."
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-135C"
+    successor: "LM-136B"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 alone has come up to the Epistle side of the predella with the wine
+        cruet; the chalice stays standing on the altar while he pours. AC2 stays
+        kneeling on the lowest step on the Gospel side and does not assist.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: palm-on-corporal, right: holding-chalice-node}
+        gestures:
+          - purify-chalice
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: chalice
+        hands: {joined: false, left: on-breast, right: holding-cruet}
+        gestures: [pour-ablution]
+        path:
+          from: step-1-epistle
+          to: predella-epistle
+          note: >-
+            AC1 rises from his kneeling place on the lowest step and goes up on
+            the Epistle side to serve the wine. He serves the ablutions alone.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Emptied of the Precious Blood, extended toward the Epistle side for the ablution."
+        state_after: "Standing on the altar throughout, having received the wine of the first ablution, which the priest consumes."
+        handled_by: priest
+      - id: wine-cruet
+        placement: "In AC1's right hand at the Epistle side of the predella."
+        orientation: handle-toward-priest
+        state_before: "On the credence table on the Epistle side."
+        state_after: "In AC1's hand, the wine of the first ablution having been poured into the chalice."
+        handled_by: AC1
+      - id: paten
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying at the centre of the corporal, where the Host had been."
+        state_after: "Lying at the centre of the corporal, where the Host had been."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Gospel side of the altar."
+        state_after: "Open on the Gospel side of the altar; it is not moved until the vessels are cleansed."
+        handled_by: none
+    transitions:
+      - "AC1 alone rises, takes the wine cruet and goes up on the Epistle side of the predella."
+      - "The chalice remains standing on the altar; the priest does not lift it."
+      - "AC1 alone pours the wine of the first ablution into the chalice."
+      - "The priest says \"Quod ore sumpsimus...\" in a low voice and consumes the wine of the ablution."
+      - "AC2 remains kneeling and reverent on the lowest step on the Gospel side and does not assist."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-04
+      - INV-OBJ-01
+      - INV-HAND-01
+    variants: []
+    unresolved:
+      - "The approved material does not fix whether the priest moves toward the Epistle corner of the predella for the ablutions; the corpus keeps him at the centre of the predella with the chalice extended toward the Epistle side."
+      - "The approved material does not fix whether AC1 brings both cruets up together or returns the wine cruet before fetching the water, nor what his free hand does while he pours."
+    notes: >-
+      INV-ROLE-04 governs this scene: the post-Communion ablutions are served by
+      AC1 ALONE. AC2 does not assist and does not supply either liquid. The older
+      AC1-wine / AC2-water split was explicitly corrected and superseded and must
+      not be encoded. This scene agrees field for field with the approved service
+      profile sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml, which fixes
+      `ablutions.sole_server: first_acolyte`, `ablutions.first.liquid: wine`,
+      `ablutions.first.chalice: on_altar` and `ablutions.second_acolyte_role:
+      none`. AC1 stands on the predella on the Epistle side for this first
+      ablution, because geometry.yaml assigns step-3-epistle to the second
+      ablution and the approved correction has him step down exactly one altar
+      step to reach it. INV-HAND-01 is still in force here: the thumb and index
+      fingertips remain joined, and the constraint ends only with the finger
+      ablution of LM-136B.
+
+  - scene_id: "LM-136B"
+    order: 183
+    cluster: "LM-136"
+    title: "The second ablution, of water, with AC1 one step down"
+    kind: action
+    liturgical_moment: "The second ablution, of water, over the priest's fingers"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-136A"
+    successor: "LM-136C"
+    camera:
+      view: nave-front
+      note: >-
+        The vertical relation is the point of the scene: the priest holds the
+        chalice on the predella and AC1, alone, has stepped down exactly one
+        altar step to the Epistle side of the third step to pour the water over
+        his fingers. AC2 is still kneeling on the lowest step on the Gospel side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: holding-chalice-both-hands, right: holding-chalice-both-hands}
+        gestures:
+          - wash-fingertips
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: chalice
+        hands: {joined: false, left: on-breast, right: holding-cruet}
+        gestures: [pour-ablution]
+        path:
+          from: predella-epistle
+          to: step-3-epistle
+          note: >-
+            AC1 steps down exactly one altar step, from the predella to the
+            Epistle side of the third step, to pour the water. He serves this
+            ablution alone.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: "Held by the priest over the altar."
+        orientation: upright
+        state_before: "Standing on the altar after the first ablution."
+        state_after: "Held by the priest while AC1 pours the water over his fingers into the cup; the priest then consumes the ablution."
+        handled_by: priest
+      - id: water-cruet
+        placement: "In AC1's right hand, one altar step below the predella on the Epistle side."
+        orientation: handle-toward-priest
+        state_before: "On the credence table on the Epistle side."
+        state_after: "In AC1's hand, the water of the second ablution having been poured over the priest's fingers into the chalice."
+        handled_by: AC1
+      - id: paten
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying at the centre of the corporal."
+        state_after: "Lying at the centre of the corporal."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Gospel side of the altar."
+        state_after: "Open on the Gospel side of the altar; it is not moved until the vessels are cleansed."
+        handled_by: none
+    transitions:
+      - "The priest takes up the chalice and holds it; unlike the first ablution, the chalice is no longer standing on the altar."
+      - "AC1 alone steps down exactly one altar step, from the predella to the Epistle side of the third step."
+      - "AC1 alone pours the water over the priest's thumbs and index fingers into the cup."
+      - "The priest separates and washes the fingertips that have been joined since the Consecration of the Host, and consumes the ablution."
+      - "AC2 remains kneeling and reverent on the lowest step on the Gospel side and does not assist."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-04
+      - INV-OBJ-01
+      - INV-HAND-01
+    variants: []
+    unresolved:
+      - "The approved material names only \"Quod ore sumpsimus\" among the ablution prayers and does not fix any words said during the second, water ablution."
+    notes: >-
+      INV-HAND-01 ENDS HERE. The post-Consecration thumb and index discipline,
+      in force continuously from the Consecration of the Host and cited on every
+      scene from LM-134A to this one, ends at this finger ablution; from LM-136C
+      onward the priest's thumbs and index fingers are free, and the constraint
+      is no longer cited. INV-ROLE-04 governs this scene: the ablutions are
+      served by AC1 ALONE, and AC2 neither assists nor supplies the water; the
+      superseded AC1-wine / AC2-water split must not be encoded. This scene
+      agrees field for field with the approved service profile
+      sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml, which fixes
+      `ablutions.second.liquid: water`, `ablutions.second.chalice:
+      held_by_priest`, `ablutions.second.first_acolyte_vertical_move:
+      down_one_step` and `ablutions.second_acolyte_role: none`. The downward move
+      is exactly one altar step, predella to step-3-epistle, and must not be
+      drawn as a descent to the floor.
+
+  - scene_id: "LM-136C"
+    order: 184
+    cluster: "LM-136"
+    title: "The first crossing, with AC2 in front"
+    kind: transition
+    liturgical_moment: "The coordinated transfer after the vessels are cleansed"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-136B"
+    successor: "LM-136D"
+    camera:
+      view: nave-front
+      note: >-
+        The two servers are crossing simultaneously in opposite directions and
+        the crossing order is the whole point of the plate: AC2, carrying the
+        Missal from the Gospel side to the Epistle side, passes IN FRONT, nearer
+        the viewer, and AC1, carrying the chalice cloth from the Epistle side to
+        the Gospel side, passes behind him. The actor fields record the moment of
+        the crossing, not the arrival.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-at-mensa-edge, right: joined-at-mensa-edge}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-centre
+        side: gospel
+        depth_rank: 2
+        posture: walking
+        bow: none
+        facing: gospel-side
+        gaze: forward
+        hands: {joined: false, left: holding-chalice-cloth, right: holding-chalice-cloth}
+        gestures: []
+        path:
+          from: step-3-epistle
+          to: step-3-gospel
+          via:
+            - step-1-centre
+          note: >-
+            AC1 carries the chalice cloth to the Gospel side. He crosses BEHIND
+            AC2 on this first crossing; his depth_rank is the larger of the two,
+            further from the viewer.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-centre
+        side: epistle
+        depth_rank: 1
+        posture: walking
+        bow: none
+        facing: epistle-side
+        gaze: forward
+        hands: {joined: false, left: holding-missal, right: holding-missal}
+        gestures: []
+        path:
+          from: step-1-gospel
+          to: predella-epistle-corner
+          via:
+            - predella-gospel-corner
+            - step-1-centre
+          note: >-
+            AC2 goes up on the Gospel side, takes the Missal, and carries it back
+            to the Epistle side. He crosses IN FRONT on this first crossing; his
+            depth_rank is the smaller of the two, nearer the viewer.
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Gospel side of the altar, where it has stood since the Gospel."
+        state_after: "Carried by AC2 to the Epistle corner of the altar and set down there, still oriented so that the priest reading it is turned toward his left."
+        handled_by: AC2
+      - id: chalice-cloth
+        placement: "In AC1's hands, carried to the Gospel side."
+        orientation: folded
+        state_before: "Taken up by AC1 as the transfer begins; the approved material does not fix where it rested before this."
+        state_after: "Carried by AC1 to the Gospel side, ready for the priest to take."
+        handled_by: AC1
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Held by the priest for the second ablution."
+        state_after: "Cleansed and standing on the corporal before the priest."
+        handled_by: priest
+      - id: paten
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying at the centre of the corporal."
+        state_after: "Lying at the centre of the corporal, cleansed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+    transitions:
+      - "The vessels are cleansed; only then does the coordinated transfer begin."
+      - "AC1 takes the chalice cloth and sets out for the Gospel side; AC2 goes up on the Gospel side, takes the Missal and sets out for the Epistle side."
+      - "They move SIMULTANEOUSLY and cross in the middle of the sanctuary."
+      - "On this first crossing AC2 is IN FRONT, nearer the viewer, and AC1 passes behind him."
+      - "AC2 sets the Missal down at the Epistle corner of the altar, still oriented so that the priest reading it is turned toward his left."
+      - "AC1 arrives on the Gospel side holding the chalice cloth."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-03
+      - INV-CROSS-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved material does not fix where AC1 obtains the chalice cloth before carrying it to the Gospel side."
+      - "The approved material fixes only that AC1 carries the chalice cloth to the Gospel side and does not fix the level at which he stands when the priest takes it; the corpus places him at step-3-gospel, one altar step below the predella, mirroring the anchor fixed for the second ablution."
+      - "The approved material does not fix what the priest does with the chalice and the purificator between the second ablution and his receiving the chalice cloth."
+    notes: >-
+      INV-CROSS-01 and INV-ROLE-03 govern this scene, and the crossing order is
+      encoded STRUCTURALLY, not merely in prose: each server carries a `path`
+      with `from` and `to`, and `depth_rank` carries who is in front. On this
+      FIRST crossing AC2 is in front, so AC2 has the SMALLER depth_rank (1,
+      nearer the viewer) and AC1 the larger (2). The object carried is the
+      CHALICE CLOTH, object id `chalice-cloth`; the compressed label of the
+      approved storyboard must not be expanded by inference. AC2, not AC1,
+      carries the Missal at this point, and the Missal keeps
+      `orientation: priest-reads-facing-left` on the Epistle side, per
+      INV-MISSAL-01. This scene agrees field for field with the approved service
+      profile sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml, which fixes
+      `post_ablution_transfer.condition: vessels_cleansed`,
+      `simultaneous.first_acolyte: chalice_cloth_to_gospel_side`,
+      `simultaneous.second_acolyte: missal_to_epistle_side` and
+      `first_crossing_front: second_acolyte`. INV-HAND-01 is no longer cited: the
+      thumb and index discipline ended at the finger ablution in LM-136B.
+
+  - scene_id: "LM-136D"
+    order: 185
+    cluster: "LM-136"
+    title: "The priest receives the chalice cloth"
+    kind: action
+    liturgical_moment: "The priest receives the chalice cloth"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-136C"
+    successor: "LM-136E"
+    camera:
+      view: nave-front
+      note: >-
+        A held moment between the two crossings. AC1 stands on the Gospel side,
+        one altar step below the predella, and gives the chalice cloth up to the
+        priest; AC2 waits at the Epistle corner beside the Missal he has just set
+        down. Neither server is yet back at his kneeling place.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: gospel-side
+        gaze: forward
+        hands: {joined: false, left: on-altar-outside-corporal, right: holding-chalice-cloth}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-gospel
+        side: gospel
+        depth_rank: 1
+        posture: standing
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-chalice-cloth}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-centre
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice-cloth
+        placement: "In the priest's hand at the altar, taken from AC1."
+        orientation: folded
+        state_before: "Held by AC1 on the Gospel side."
+        state_after: "Taken by the priest from AC1."
+        handled_by: priest
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Set down by AC2 at the Epistle corner of the altar."
+        state_after: "Open at the Epistle corner of the altar, oriented so that the priest reading it is turned toward his left."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed and standing on the corporal."
+        state_after: "Cleansed and standing on the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying at the centre of the corporal, cleansed."
+        state_after: "Lying at the centre of the corporal, cleansed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+    transitions:
+      - "AC1, standing on the Gospel side one altar step below the predella, offers up the chalice cloth."
+      - "The priest takes the chalice cloth from AC1."
+      - "AC2 waits at the Epistle corner, beside the Missal he has just set down, until the second crossing begins."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-CROSS-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved material does not fix where the priest stands when he takes the chalice cloth, nor what he does with the cloth once he has it; the corpus keeps him at the centre of the predella, turned toward the Gospel side to receive it."
+    notes: >-
+      This scene is the hinge required by INV-CROSS-01: the priest takes the
+      chalice cloth from AC1 BETWEEN the two crossings, and only then do the
+      servers cross back. The object is the CHALICE CLOTH, object id
+      `chalice-cloth`; the compressed label of the approved storyboard must not
+      be expanded by inference. This scene agrees with the approved service
+      profile sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml, which fixes
+      `post_ablution_transfer.priest_then_receives_chalice_cloth: true`. Neither
+      server has yet resumed his kneeling place. INV-HAND-01 is no longer cited:
+      the thumb and index discipline ended at the finger ablution in LM-136B.
+
+  - scene_id: "LM-136E"
+    order: 186
+    cluster: "LM-136"
+    title: "The second crossing, with AC1 in front"
+    kind: transition
+    liturgical_moment: "The coordinated transfer after the vessels are cleansed"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-136D"
+    successor: "LM-137A"
+    camera:
+      view: nave-front
+      note: >-
+        The mirror of LM-136C, and the reversal is the whole point of the plate:
+        the two servers cross a second time and now AC1, returning from the
+        Gospel side to his own Epistle side, passes IN FRONT, nearer the viewer,
+        while AC2 returns behind him to the Gospel side. The actor fields record
+        the moment of the crossing, not the arrival.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: false, left: on-altar-outside-corporal, right: holding-chalice-cloth}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: walking
+        bow: none
+        facing: epistle-side
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: step-3-gospel
+          to: step-1-epistle
+          via:
+            - step-1-centre
+          note: >-
+            AC1, his hands now empty, returns to his ordinary kneeling place on
+            the Epistle side of the lowest step. He crosses IN FRONT on this
+            second crossing; his depth_rank is the smaller of the two, nearer the
+            viewer.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: walking
+        bow: none
+        facing: gospel-side
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: predella-epistle-corner
+          to: step-1-gospel
+          via:
+            - step-1-centre
+          note: >-
+            AC2, having left the Missal at the Epistle corner, returns to his
+            ordinary kneeling place on the Gospel side of the lowest step. He
+            crosses BEHIND AC1 on this second crossing; his depth_rank is the
+            larger of the two, further from the viewer.
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open at the Epistle corner of the altar."
+        state_after: "Open at the Epistle corner of the altar, oriented so that the priest reading it is turned toward his left, ready for the Communion antiphon."
+        handled_by: none
+      - id: chalice-cloth
+        placement: "In the priest's hand at the altar."
+        orientation: folded
+        state_before: "Taken by the priest from AC1."
+        state_after: "In the priest's hand at the altar."
+        handled_by: priest
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed and standing on the corporal."
+        state_after: "Cleansed and standing on the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying at the centre of the corporal, cleansed."
+        state_after: "Lying at the centre of the corporal, cleansed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+    transitions:
+      - "Once the priest has taken the chalice cloth, the two servers cross a second time, again SIMULTANEOUSLY and in opposite directions."
+      - "On this second crossing AC1 is IN FRONT, nearer the viewer, and AC2 passes behind him."
+      - "AC1 arrives at the Epistle side of the lowest step and AC2 at the Gospel side of the lowest step."
+      - "Both resume their ordinary kneeling positions."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-03
+      - INV-CROSS-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      INV-CROSS-01 governs this scene and the order is REVERSED from LM-136C:
+      the crossing order is encoded STRUCTURALLY, with a `path` carrying `from`
+      and `to` for each server and `depth_rank` carrying who is in front. On this
+      SECOND crossing AC1 is in front, so AC1 has the SMALLER depth_rank (1,
+      nearer the viewer) and AC2 the larger (2). The depth ranks record the
+      moment of the crossing while both are walking; once they have arrived, both
+      kneel on the lowest step at the same depth, and a renderer must not
+      displace the two kneeling figures into a front/back arrangement afterward,
+      per INV-GEO-03. The Missal, carried back by AC2 and not by AC1 per
+      INV-ROLE-03, keeps `orientation: priest-reads-facing-left` at the Epistle
+      corner, per INV-MISSAL-01. This scene agrees field for field with the
+      approved service profile
+      sources/ABLUTIONS-AND-COORDINATED-TRANSFER-v0.2.yaml, which fixes
+      `post_ablution_transfer.second_crossing_front: first_acolyte` and
+      `end_state: both_acolytes_kneeling_in_normal_positions`. INV-HAND-01 is no
+      longer cited: the thumb and index discipline ended at the finger ablution
+      in LM-136B.

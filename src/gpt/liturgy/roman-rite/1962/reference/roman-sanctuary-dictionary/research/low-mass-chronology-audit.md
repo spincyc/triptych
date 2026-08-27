@@ -1,5 +1,16 @@
 # Low-Mass chronology object audit
 
+> **Historical / pre-v0.21.** This record predates the human-approved
+> structural checkpoint for the spoken 1962 Low Mass at
+> `src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/`
+> and has not been reconciled to it. Its elevation bell grouping,
+> conditional `Domine, non sum dignus` rings, second-ablution liquid, and
+> post-ablution transfer object are not inputs for that pictographic lane.
+> See `guidance/liturgy/roman-1962-pictorial-dictionaries.md` and
+> `guidance/liturgy/roman-1962-server-training.md`.
+> Its water-cruet and chalice-veil rows also disagree with the sibling
+> record it cites, so it is not a third authority.
+
 Status: **audited internal slice; canonical-record creation held**
 Audit date: 2026-07-27
 

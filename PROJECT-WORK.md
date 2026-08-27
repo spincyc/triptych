@@ -476,6 +476,44 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### Detailed 1962 Low Mass pictographic scene corpus
+
+<!-- promised-deliverable: mass-pictographic-low-mass-scene-corpus -->
+
+**Recovered and validated on 26 August 2026.** The v0.21 checkpoint preserved the
+approved structural pass, but its standalone detailed assets covered only
+LM-134 through LM-140; every earlier scene existed solely as prose in the
+handoff summary. This work recovers the whole spoken 1962 Low Mass as
+machine-readable scene records under
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/`,
+so a later artistic lane can stage any approved scene without re-deriving
+choreography.
+
+The recovery draws only on the approved handoff summary and the verbatim
+approved choreography preserved under `recovery/`. The older
+`altar-server-guides/` records remain fenced and are not an input. Where the
+approved material deliberately left a cue to the serving profile, the scene
+records it as an unresolved parameter rather than inventing choreography.
+Publication-quality artistic rendering, later forms, object-compendium work,
+and final site and manual integration remain unstarted.
+
+The corpus holds 197 scenes across 125 clusters, `LM-001A` to `LM-140C`,
+implemented by 21 section files against a registry the validator proves they
+implement exactly. It carries 19 declared variants, 85 explicit serving-profile
+parameters left open rather than invented, and a contradiction guard that
+refuses each named stale baseline outright. Twenty-one deterministic structural
+storyboards are generated from the records and proved current. Fifteen
+pre-checkpoint records elsewhere in the repository gained a
+`Historical / pre-v0.21` notice in their own text, additions only; none was
+rewritten or republished, and no PDF was rebuilt.
+
+The reviewed source-family ledger could not be refreshed: `source-family-migration
+refresh` refuses while the pinned canonical catalog snapshot is stale, which it
+already was before this work, and clearing it needs the human ledger review that
+`guidance/sources.md` requires before `--accept-canonical-catalog`. The snapshots
+this change invalidates therefore remain stale, and are recorded in the
+checkpoint's `VALIDATION.md`.
+
 ### Mass pictographic dictionary structural checkpoint v0.21
 
 <!-- promised-deliverable: mass-pictographic-structural-v0-21 -->

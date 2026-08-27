@@ -84,10 +84,56 @@ transport_originals:
     sha256: "a051546fe366835491575679b38ed2a19a5d4164d62fed79aa34b4633495564c"
     canonical_repair: "sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
 
+recovered_scene_corpus:
+  description: >-
+    Repository-authored recovery of the whole approved spoken Low Mass as
+    machine-readable scene records. Derived only from the handoff summary and
+    the preserved approved choreography; never from the sibling
+    altar-server-guides tree. These files are authored here, not transported,
+    and are checksummed separately in MANIFEST-AUTHORED.sha256.
+  provenance: "repository-recovery-from-approved-baseline"
+  registry:
+    - path: "scenes/inventory.yaml"
+      kind: "canonical-scene-registry"
+      role: >-
+        The spine. Every canonical scene exactly once, in reading order, with
+        its cluster, section, implementing file, condition and linkage.
+    - path: "scenes/schema.md"
+      kind: "scene-schema-and-vocabulary"
+    - path: "scenes/geometry.yaml"
+      kind: "sanctuary-coordinate-frame"
+    - path: "scenes/invariants.yaml"
+      kind: "global-invariants-with-scene-ranges"
+    - path: "scenes/conditions.yaml"
+      kind: "branch-conditions"
+    - path: "MANIFEST-AUTHORED.sha256"
+      kind: "authored-corpus-checksums"
+      note: >-
+        Separate from MANIFEST.sha256, which covers the supplied transport
+        payloads. Keeping the two apart preserves the distinction between what
+        was supplied and approved and what was authored here.
+  approved_record:
+    - path: "recovery/approved-choreography-baseline.md"
+      kind: "approved-choreography-record"
+    - path: "recovery/recovery-notes.md"
+      kind: "recovery-provenance-and-open-parameters"
+  generator:
+    - path: "render-storyboards.py"
+      kind: "deterministic-storyboard-generator"
+      note: >-
+        Storyboards under storyboards/ are generated from the scene corpus and
+        are never hand-edited. They are structural review projections carrying
+        labels, not wordless publication plates.
+
 coverage:
   approval_attestation: "complete spoken 1962 Low Mass structural pass"
-  standalone_detailed_assets: "LM-134 through LM-140 only"
+  standalone_detailed_assets_in_transport: "LM-134 through LM-140 only"
   earlier_scene_files_present_in_transport: false
+  detailed_scene_corpus_recovered: true
+  scene_registry: "scenes/inventory.yaml"
+  first_scene: "LM-001A"
+  last_scene: "LM-140C"
+  span: "Prayers at the Foot of the Altar through the Leonine prayers and the recessional"
 
 next_phase:
   name: "publication-quality-artistic-rendering"

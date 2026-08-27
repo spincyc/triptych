@@ -1,0 +1,409 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "21-leonine-prayers-and-recessional"
+  title: "The Leonine prayers and the recessional"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+  - "../../sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+  - "../../sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
+
+# depth_rank convention in this file: plano = 1, lowest altar step = 2,
+# predella = 3. Actors sharing a rank are at the same depth (INV-GEO-03).
+# LM-140C uses depth_rank 0 for the two acolytes because they are genuinely
+# in FRONT of the priest, between him and the nave, leading the recessional;
+# geometry.yaml has no anchor forward of the plano line.
+
+scenes:
+  - scene_id: "LM-140A"
+    order: 195
+    cluster: "LM-140"
+    title: "The Leonine prayers begun in plano"
+    kind: transition
+    liturgical_moment: "The Leonine prayers - a post-Mass devotion, not part of the Mass proper"
+    voice: none
+    condition: "LEONINE-PRESCRIBED"
+    predecessor: "LM-139B"
+    successor: "LM-140B"
+    camera:
+      view: nave-front
+      note: >-
+        A stepped kneeling group toward the Gospel side: the priest kneeling
+        on the lowest altar step, both acolytes kneeling on the sanctuary
+        floor one level below him and slightly behind him.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - descend
+        path:
+          from: predella-gospel-corner
+          to: step-1-gospel
+          note: >-
+            The priest descends only slightly, staying on the Gospel side,
+            and kneels.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: plano-centre
+          to: plano-gospel
+          note: >-
+            AC2 takes the Gospel-side place of the kneeling pair, in plano,
+            one level below the priest and slightly behind him.
+    objects:
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: >-
+          Cleansed, standing on the corporal at the centre of the altar; it is
+          not retrieved until LM-140C.
+        handled_by: none
+      - id: last-gospel-card
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "Standing at the Gospel end of the altar."
+        state_after: "Standing at the Gospel end of the altar."
+        handled_by: none
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side; it is not used for the Leonine prayers."
+        handled_by: none
+    transitions:
+      - "The Mass proper has ended; what follows is a post-Mass appendix."
+      - "The priest descends slightly, toward the Gospel side, and kneels."
+      - "Both acolytes kneel in plano, one level below the priest and slightly behind him."
+      - "No card or book is fetched for these prayers."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether any printed text or card is used for the Leonine prayers, and when it is brought, is not fixed by the approved record beyond the prohibition on fetching one during the Last Gospel."
+      - "The lateral spacing of the two kneeling acolytes behind the priest is not fixed by the approved record, which settles only that both kneel in plano, one level below him and slightly behind him."
+    notes: >-
+      The Leonine prayers are modelled as a POST-MASS APPENDIX - a devotion
+      after Mass, not part of the Mass proper - which is why `condition` is
+      LEONINE-PRESCRIBED and why LM-139B carries `bypass_successor:
+      "LM-140C"` straight to the recessional. This agrees with
+      `sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml`, where
+      `leonine_prayers.classification` is `post_mass_devotion` and they are
+      executed only when the profile prescribes them and no incompatible
+      function follows. NO Leonine-prayer card is fetched during the Last
+      Gospel; the approved record forbids it, and the object vocabulary has
+      no such card in consequence. The acolytes are given `plano-gospel` and
+      `plano-centre` as the nearest listed anchors for a pair kneeling in
+      plano behind the priest. Source: panel LM-140A/B of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.
+
+  - scene_id: "LM-140B"
+    order: 196
+    cluster: "LM-140"
+    title: "The Leonine sequence and the servers' posture"
+    kind: action
+    liturgical_moment: "The Leonine prayers - a post-Mass devotion, not part of the Mass proper"
+    text_cue: "Three Ave Maria - Salve Regina - versicle and response - the prayer for the Church and the conversion of sinners - St Michael - the invocation of the Sacred Heart three times"
+    voice: audible
+    condition: "LEONINE-PRESCRIBED"
+    predecessor: "LM-140A"
+    successor: "LM-140C"
+    camera:
+      view: nave-front
+      note: >-
+        The same stepped kneeling group as LM-140A, held through the whole
+        sequence. No figure bows, kneels further, or changes level at any
+        point in it.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: altar-cross
+        placement: altar-cross
+        orientation: upright
+        state_before: "At the centre of the altar."
+        state_after: "At the centre of the altar."
+        handled_by: none
+    transitions:
+      - "Three Ave Maria."
+      - "The Salve Regina."
+      - "The versicle and its response."
+      - "The prayer for the Church and for the conversion of sinners."
+      - "The prayer to St Michael the Archangel."
+      - "The invocation of the Sacred Heart, said three times."
+      - "The servers lead the responses throughout, kneeling."
+      - "While kneeling with the priest the servers do NOT add the ordinary standing or kneeling word-bows merely because a holy name occurs."
+    responses:
+      - actor: AC1
+        text: "AC1 leads the responses of the whole Leonine sequence, kneeling."
+        voice: audible
+      - actor: AC2
+        text: "AC2 leads the responses of the whole Leonine sequence, kneeling."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The response texts of the Leonine prayers are not fixed by the approved record, which settles the sequence and the servers' leading of the responses but not their words."
+    notes: >-
+      The servers' word-bow suppression is a locked point and must not be
+      rendered away: kneeling with the priest, they make NO bow at a holy
+      name during these prayers, though the same name would draw a bow in the
+      ordinary standing or kneeling posture of the Mass. The `responses`
+      entries therefore carry who leads rather than a reconstructed text; the
+      gap is recorded in `unresolved`. This is a post-Mass appendix, not part
+      of the Mass proper. Source: panel LM-140A/B, "SEQUENCE" and "SERVER
+      POSTURE" of `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.
+
+  - scene_id: "LM-140C"
+    order: 197
+    cluster: "LM-140"
+    title: "The recessional"
+    kind: action
+    liturgical_moment: "The recessional to the sacristy"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-140B"
+    successor: null
+    camera:
+      view: nave-front
+      note: >-
+        The departure formation, seen from the nave: the two acolytes
+        shoulder to shoulder IN FRONT of the priest, leading; the priest
+        behind them carrying the veiled chalice in both hands. The altar
+        behind them is bare of the chalice.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: walking
+        bow: none
+        facing: nave
+        gaze: forward
+        hands: {joined: false, left: holding-chalice-both-hands, right: holding-chalice-both-hands}
+        gestures:
+          - ascend
+          - genuflect
+          - descend
+        path:
+          from: plano-centre
+          to: plano-centre
+          via:
+            - predella-centre
+          note: >-
+            The priest rises, ascends to the altar to retrieve the veiled
+            chalice, descends with it, genuflects at the foot with both
+            servers, and leaves behind them.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 0
+        posture: walking
+        bow: none
+        facing: nave
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - genuflect
+          - turn-inward
+        path:
+          from: plano-centre
+          to: plano-centre
+          note: >-
+            AC1 stands at once, assists the priest's alb at the ascent,
+            retrieves and presents the biretta if one was worn, genuflects at
+            the foot, then turns inward and takes his place shoulder to
+            shoulder with AC2 in front of the priest.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 0
+        posture: walking
+        bow: none
+        facing: nave
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - genuflect
+          - turn-inward
+        path:
+          from: plano-gospel
+          to: plano-centre
+          note: >-
+            AC2 stands at once, assists the priest's alb at the ascent,
+            genuflects at the foot, then turns inward and takes his place
+            shoulder to shoulder with AC1 in front of the priest.
+    objects:
+      - id: chalice
+        placement: "Carried by the priest in both hands, veiled."
+        orientation: upright
+        state_before: >-
+          Standing on the corporal at the centre of the altar and veiled by
+          this point; the approved record fixes only that the priest descends
+          with the veiled chalice.
+        state_after: "Veiled, carried by the priest out to the sacristy."
+        handled_by: priest
+      - id: chalice-veil
+        placement: "Over the chalice in the priest's hands."
+        orientation: not-applicable
+        state_before: "Over the chalice at the centre of the altar."
+        state_after: "Over the chalice the priest carries out."
+        handled_by: priest
+      - id: burse
+        placement: "On the veiled chalice the priest carries out."
+        orientation: not-applicable
+        state_before: "At the centre of the altar with the veiled chalice."
+        state_after: "Carried out with the veiled chalice."
+        handled_by: priest
+      - id: alb
+        placement: "On the priest."
+        orientation: not-applicable
+        state_before: "Falling to the priest's feet as he rises from the Leonine prayers."
+        state_after: >-
+          Lifted clear by BOTH acolytes while the priest ascends to the
+          altar, then released.
+        handled_by: both-acolytes
+      - id: biretta
+        placement: "Presented to the priest by AC1, if one was worn."
+        orientation: not-applicable
+        state_before: "Where it was left at the beginning of Mass, if one was worn."
+        state_after: "In the priest's possession for the recessional, if one was worn."
+        handled_by: AC1
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: >-
+          Left on the Epistle side. The approved record does not say when it
+          is closed or removed.
+        handled_by: none
+    transitions:
+      - "As soon as the Leonine prayers end, both acolytes stand immediately."
+      - "BOTH acolytes assist the priest with his alb as he ascends to retrieve the chalice."
+      - "AC1 retrieves and presents the biretta, if one was worn."
+      - "The priest descends with the veiled chalice."
+      - "All three genuflect together at the foot of the altar."
+      - "The acolytes turn inward, meet shoulder to shoulder in front of the priest, and lead the recessional to the sacristy."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether a biretta is worn at all is a serving-profile parameter; the approved record settles only that AC1 retrieves and presents it if one was worn."
+      - "The priest's exact grip on the veiled chalice during the recessional is not fixed by the approved record."
+      - "When the Missal is closed and removed from the Epistle side after Mass is not fixed by the approved record."
+    notes: >-
+      THIS IS THE RECESSIONAL, and BOTH acolytes assist the priest's alb
+      here. That is deliberate and is NOT a contradiction of the ascent at
+      LM-013B, where only AC1 assists: the single-server ascent assistance
+      rule governs the ascent at the beginning of Mass, and this recessional
+      ascent is a distinct moment with its own approved choreography. No
+      reader should reconcile the two by weakening either. `handled_by`
+      admits one actor only, so the alb names AC1; AC2's equal share is
+      carried by the transitions and by AC2's own `path` note. The two
+      acolytes are given `depth_rank: 0` because they are genuinely in FRONT
+      of the priest on the way out - geometry.yaml has no anchor forward of
+      the plano line, so all three share `plano-centre` and the depth ranks
+      carry the front/back order the approved record fixes. Vocabulary note:
+      `facing` has no value for the nave or the sacristy, so `people` is used
+      for the three figures turned away from the altar and moving out. This
+      scene is reached either from LM-140B or, when the Leonine prayers are
+      not prescribed, directly from LM-139B by its `bypass_successor`. It is
+      the last scene of the spoken 1962 Low Mass profile; `successor` is
+      null.

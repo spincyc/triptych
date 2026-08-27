@@ -1,5 +1,16 @@
 # Staleness review — 2026-07-29
 
+> **Historical / pre-v0.21.** This record predates the human-approved
+> structural checkpoint for the spoken 1962 Low Mass at
+> `src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/`
+> and has not been reconciled to it. Its elevation bell grouping,
+> conditional `Domine, non sum dignus` rings, second-ablution liquid, and
+> post-ablution transfer object are not inputs for that pictographic lane.
+> See `guidance/liturgy/roman-1962-server-training.md`.
+> In this file, a verification of 'no disagreement' means agreement
+> with this guide's own declared teaching model, not with the v0.21
+> pictographic baseline.
+
 ## Trigger and method
 
 `scripts/research-staleness explain gpt

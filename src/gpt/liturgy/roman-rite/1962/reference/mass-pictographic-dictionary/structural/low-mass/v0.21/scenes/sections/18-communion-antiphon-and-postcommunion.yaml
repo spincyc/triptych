@@ -1,0 +1,262 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "18-communion-antiphon-and-postcommunion"
+  title: "The Communion antiphon and the Postcommunion"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+  - "../../sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+
+# depth_rank convention in this file: plano = 1, lowest altar step = 2,
+# predella = 3. Actors sharing a rank are at the same depth (INV-GEO-03).
+# LM-137B is deliberately unassigned; see inventory.yaml. It is not invented
+# here merely to close the letter sequence.
+
+scenes:
+  - scene_id: "LM-137A"
+    order: 187
+    cluster: "LM-137"
+    title: "The Communion antiphon read at the Epistle-side Missal"
+    kind: action
+    liturgical_moment: "The Communion antiphon"
+    text_cue: "The Communion antiphon of the day"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-136E"
+    successor: "LM-137C"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the Epistle corner of the predella at the open
+        Missal; both servers kneel at their ordinary places on the lowest
+        altar step. The cleansed chalice stands on the corporal at the
+        centre of the altar.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: >-
+          Open on the Epistle side. AC2 carried it back there in the
+          coordinated transfer of LM-136; it is not moved again here.
+        state_after: "Open on the Epistle side at the Communion antiphon."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: >-
+          Cleansed and dried after the ablutions, standing on the corporal at
+          the centre of the altar, as at the end of LM-136E.
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar, as since the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar, beneath the chalice."
+        handled_by: none
+      - id: burse
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "At the centre of the altar."
+        state_after: "At the centre of the altar."
+        handled_by: none
+    transitions:
+      - "The priest, already at the Epistle-side Missal, reads the Communion antiphon with his hands joined before his breast."
+      - "Neither server moves; both remain kneeling at their ordinary places on the lowest altar step."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The moment at which the corporal is folded into the burse after the vessels are cleansed is not fixed by the approved record."
+      - "The moment at which the chalice is covered and veiled after the ablutions is not fixed by the approved record, which settles only that the priest descends with the veiled chalice at the recessional (LM-140C)."
+    notes: >-
+      The Missal is oriented so that the priest reading it is turned toward
+      his LEFT (INV-MISSAL-01), on the Epistle side as everywhere else. It
+      reached the Epistle side by AC2's carry in the coordinated transfer of
+      LM-136; it is not re-transferred in this scene and no server handles it
+      here. Panel LM-137A/C line 1 of the approved storyboard
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg` reads: "Priest
+      reads Communion antiphon at Epistle-side missal, hands joined."
+
+  - scene_id: "LM-137C"
+    order: 188
+    cluster: "LM-137"
+    title: "The centre transition and the Postcommunion prayers"
+    kind: action
+    liturgical_moment: "The Postcommunion"
+    text_cue: "Dominus vobiscum - Oremus - the Postcommunion prayer or prayers"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-137A"
+    successor: "LM-138A"
+    camera:
+      view: nave-front
+      note: >-
+        End state: the priest is back at the Epistle-side Missal with his
+        hands extended, reading the Postcommunion. The centre transition -
+        altar kiss, turn right, salutation, turn left - happens within this
+        scene and is carried by the transitions and the priest's path.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: false, left: extended, right: extended}
+        gestures:
+          - altar-kiss
+          - turn-right
+          - turn-left
+          - extend-hands
+          - join-hands
+        path:
+          from: predella-epistle-corner
+          to: predella-epistle-corner
+          via:
+            - predella-centre
+          note: >-
+            The established centre transition: to the centre of the predella
+            for the altar kiss and the salutation, then back to the
+            Epistle-side Missal for the Postcommunion.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Communion antiphon."
+        state_after: "Open on the Epistle side at the Postcommunion."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: altar-cross
+        placement: altar-cross
+        orientation: upright
+        state_before: "At the centre of the altar."
+        state_after: "At the centre of the altar; the priest bows to it at each Oremus."
+        handled_by: none
+    transitions:
+      - "The priest returns from the Missal to the centre of the predella."
+      - "He places his hands on the altar, kisses the altar, and turns to his right toward the people."
+      - "He says 'Dominus vobiscum'; the servers answer 'Et cum spiritu tuo'."
+      - "He turns back to his left to face the altar and returns to the Epistle-side Missal."
+      - "At each 'Oremus' he extends his hands, bows to the cross, joins his hands, and immediately extends them again."
+      - "He reads the Postcommunion prayer or prayers with his hands extended."
+      - "Neither server moves; both remain kneeling on the lowest altar step."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo"
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants:
+      - id: "lenten-ferial-oratio-super-populum"
+        kind: seasonal
+        applies_when: "LENTEN-FERIAL"
+        description: >-
+          On a Lenten ferial day from Ash Wednesday through Wednesday of Holy
+          Week the Postcommunion is followed by 'Oremus - Humiliate capita
+          vestra Deo - Oratio super populum'.
+        baseline: false
+    unresolved:
+      - "The depth of the priest's bow to the cross at each 'Oremus' is not fixed by the approved record."
+    notes: >-
+      This is the established centre transition, recorded here rather than
+      re-paraphrased: return to the centre, hands on the altar, altar kiss,
+      turn right, 'Dominus vobiscum' with the servers' 'Et cum spiritu tuo',
+      turn left back to the altar, return to the Epistle-side Missal. The
+      Oremus gesture cycle - extend, bow to the cross, join, immediately
+      extend again - is performed at EACH 'Oremus', including the Lenten
+      ferial 'Oremus' of the variant. The Lenten ferial Oratio super populum
+      is a variant only; the baseline Postcommunion is not weakened by it.
+      The Missal keeps `priest-reads-facing-left` throughout (INV-MISSAL-01).
+      Source: panel LM-137A/C, lines 2-4, "AT EACH OREMUS" and "LENTEN FERIAL
+      BRANCH" of `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.

@@ -1,0 +1,1555 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "03-introit-kyrie-gloria-collect"
+  title: "Introit, Kyrie, Gloria and Collect"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-018A"
+    order: 27
+    cluster: "LM-018"
+    title: "The Introit: the priest signs himself at the Missal"
+    kind: action
+    liturgical_moment: "The Introit antiphon"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-017A"
+    successor: "LM-018B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest square before the open Missal at the Epistle corner of the
+        predella, right hand tracing the cross upon himself, left hand resting
+        on the breast. Both servers kneel on the lowest step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Introit of the day."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At the beginning of the Introit the priest signs himself with the sign of the cross."
+      - "His left hand rests on his breast while the right hand makes the sign."
+      - "He then reads the Introit antiphon and its psalm verse from the Missal."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      No text_cue is given because the Introit antiphon and its psalm verse are
+      proper to the Mass and their words are not fixed by the approved record.
+      The left hand on the breast during the sign is approved and explicit and
+      must be drawn. The priest's feet are square to the Missal at the Epistle
+      corner and do not move in this scene.
+
+  - scene_id: "LM-018B"
+    order: 28
+    cluster: "LM-018"
+    title: "The servers sign themselves"
+    kind: response
+    liturgical_moment: "The Introit antiphon"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-018A"
+    successor: "LM-019A"
+    camera:
+      view: nave-front
+      note: >-
+        Both kneeling servers sign themselves together on the lowest step while
+        the priest reads on at the Missal. AC1 and AC2 mirror one another and
+        stay at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Both servers also sign themselves at the beginning of the Introit, remaining on their knees."
+      - "The priest continues the Introit at the Missal."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record fixes the left-hand-on-breast detail explicitly for the priest only; for the servers it settles only that both of them sign themselves."
+    notes: >-
+      That both servers sign themselves here is the ordinary spoken Low Mass
+      baseline of the approved record, not a local custom. The servers do not
+      rise, do not change place, and stay level with one another on the lowest
+      step.
+
+  - scene_id: "LM-019A"
+    order: 29
+    cluster: "LM-019"
+    title: "The Introit doxology, Gloria Patri"
+    kind: action
+    liturgical_moment: "Introit doxology — Gloria Patri"
+    text_cue: "Gloria Patri, et Filio, et Spiritui Sancto. Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-018B"
+    successor: "LM-019B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stays at the Epistle-side Missal with his feet unmoved and
+        inclines toward the altar cross at the centre. The bow is of the head
+        only; the body stays at the Missal.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest remains at the Missal and does not move his feet."
+      - "He bows toward the altar cross for the Introit doxology, the Gloria Patri."
+      - "Both servers remain kneeling on the lowest step."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record says only that the priest 'bows toward the cross' at the Introit doxology and does not fix the depth of that bow; head-moderate is drawn here."
+    notes: >-
+      INV-NAME-01 governs this scene. This moment is the Introit doxology,
+      Gloria Patri, and must be labelled as a doxology wherever it is named. It
+      is never to be called simply 'the Gloria'; an unqualified Gloria means
+      the Gloria in excelsis, which comes later at LM-022A to LM-024A and is
+      said at the centre, not here. The priest's feet are fixed at the
+      Epistle-side Missal: he bows toward the cross without moving to the
+      centre.
+
+  - scene_id: "LM-019B"
+    order: 30
+    cluster: "LM-019"
+    title: "The Introit antiphon repeated"
+    kind: action
+    liturgical_moment: "The repetition of the Introit antiphon"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-019A"
+    successor: "LM-020A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest erect again at the Missal, hands joined before the breast,
+        eyes on the book; the servers unchanged on the lowest step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest comes erect from the bow made at the Introit doxology."
+      - "Still at the Missal, he repeats the Introit antiphon."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      No text_cue is given because the Introit antiphon is proper to the Mass.
+      The antiphon repeated here is the same one read at LM-018A; what stands
+      between them is the Introit doxology, the Gloria Patri, and not the
+      Gloria in excelsis.
+
+  - scene_id: "LM-020A"
+    order: 31
+    cluster: "LM-020"
+    title: "Return to the centre of the altar"
+    kind: transition
+    liturgical_moment: "The priest returns to the centre of the altar for the Kyrie"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-019B"
+    successor: "LM-021A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest crossing the predella back to the centre, hands joined, eyes
+        to the cross. No word of the Kyrie has been said yet.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: walking
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: predella-epistle-corner
+          to: predella-centre
+          note: "The priest walks squarely back along the predella from the Missal to the centre of the altar."
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, left open where it lies while the priest is at the centre."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The Introit finished, the priest returns from the Missal to the centre of the altar."
+      - "He stands at the centre of the predella with hands joined before the breast."
+      - "Both servers remain kneeling on the lowest step."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Approved and explicit: the priest returns to the centre FIRST and the
+      Kyrie begins only after he has reached the centre. This scene is the
+      return alone; not one invocation is said in it. The Missal stays open on
+      the Epistle side and no server touches it.
+
+  - scene_id: "LM-021A"
+    order: 32
+    cluster: "LM-021"
+    title: "Kyrie eleison at the centre"
+    kind: branch-point
+    liturgical_moment: "The Kyrie eleison"
+    text_cue: "Kyrie, eleison. Christe, eleison. Kyrie, eleison."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-020A"
+    successor: "LM-022A"
+    bypass_successor: "LM-025A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest standing at the centre of the predella, hands joined before
+        the breast, facing the altar cross; both servers kneeling on the lowest
+        step and answering from their places.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Standing now at the centre, the priest begins the Kyrie."
+      - "The ninefold Kyrie is said alternately between the priest and the servers."
+      - "The servers stay on their knees throughout and do not change place."
+    responses:
+      - actor: AC1
+        text: "Kyrie, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison."
+        voice: audible
+      - actor: AC2
+        text: "Kyrie, eleison. Christe, eleison. Christe, eleison. Kyrie, eleison."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The Kyrie begins only after the priest has reached the centre; the return
+      itself is LM-020A. The two servers say their alternate invocations
+      together from their kneeling places, which is why the same four
+      invocations are recorded for each of them rather than divided between
+      them. This scene is the branch point of the Gloria in excelsis: on the
+      default path the successor is LM-022A, and where the Gloria is not
+      prescribed the order resumes at the bypass_successor LM-025A.
+
+  - scene_id: "LM-022A"
+    order: 33
+    cluster: "LM-022"
+    title: "Gloria in excelsis: the opening gesture"
+    kind: action
+    liturgical_moment: "The Gloria in excelsis"
+    text_cue: "Gloria in excelsis Deo"
+    voice: audible
+    condition: "GLORIA-PRESCRIBED"
+    predecessor: "LM-021A"
+    successor: "LM-022B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest at the CENTRE of the predella, not at the Missal, hands
+        opened and raised at the opening words. The Epistle-side Missal is
+        visible, open and unattended, to make plain that he has not gone to it.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: elevated, right: elevated}
+        gestures:
+          - extend-hands
+          - elevate-hands
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, unattended while the priest says the Gloria at the centre."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Standing at the centre of the altar, the priest begins the Gloria in excelsis."
+      - "At the opening words he extends his hands and raises them."
+      - "Both servers remain kneeling on the lowest step."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-GLORIA-01
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      INV-GLORIA-01 governs the whole Gloria block. The Gloria in excelsis is
+      said STANDING AT THE CENTRE of the altar with the feet fixed there, and
+      never at the Missal. The approved opening gesture is a sequence - extend
+      the hands, elevate them, rejoin them - of which this scene holds the
+      extension and the elevation; the rejoining falls with the bow at 'Deo' in
+      LM-022B. 'Gloria' unqualified is the Gloria in excelsis, this hymn, and
+      not the Introit doxology of LM-019A.
+
+  - scene_id: "LM-022B"
+    order: 34
+    cluster: "LM-022"
+    title: "The head bow at Deo"
+    kind: action
+    liturgical_moment: "The Gloria in excelsis"
+    text_cue: "Deo"
+    voice: audible
+    condition: "GLORIA-PRESCRIBED"
+    predecessor: "LM-022A"
+    successor: "LM-023A"
+    camera:
+      view: nave-front
+      note: >-
+        The hands come back together before the breast as the head inclines to
+        the cross. The feet have not moved from the centre of the predella.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - join-hands
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, unattended."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The raised hands are rejoined before the breast."
+      - "At the word 'Deo' the priest bows his head toward the altar cross."
+      - "His feet remain fixed at the centre of the predella."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-GLORIA-01
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record prescribes a bow at 'Deo' without fixing its depth; head-moderate is drawn here, and the profound head bows the record does name are recorded at LM-023A."
+    notes: >-
+      This completes the approved opening gesture - extend, elevate, rejoin -
+      and pins the bow at 'Deo' to the moment of rejoining. Still at the centre
+      under INV-GLORIA-01, and still not at the Missal.
+
+  - scene_id: "LM-023A"
+    order: 35
+    cluster: "LM-023"
+    title: "Gloria in excelsis: the prescribed bows"
+    kind: action
+    liturgical_moment: "The Gloria in excelsis"
+    voice: audible
+    condition: "GLORIA-PRESCRIBED"
+    predecessor: "LM-022B"
+    successor: "LM-024A"
+    camera:
+      view: nave-front
+      note: >-
+        A profound head bow toward the cross made from a standing position at
+        the centre, hands joined before the breast, with the two servers bowing
+        correspondingly on their knees.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: head-profound
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, unattended."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest continues the Gloria in excelsis at the centre with hands joined."
+      - "At the phrases at which a bow is prescribed he makes a profound head bow toward the cross."
+      - "His feet remain fixed at the centre; he does not go to the Missal for any part of the hymn."
+      - "Both servers bow correspondingly while remaining on their knees."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-GLORIA-01
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record prescribes profound head bows 'at the relevant phrases' of the Gloria in excelsis but does not enumerate which phrases they are."
+      - "The depth of the servers' corresponding bow is not fixed by the approved record; a moderate head bow is drawn here."
+    notes: >-
+      No text_cue is given because the approved record does not enumerate the
+      phrases that carry the bows. This scene is the repeatable bow state: draw
+      it once and apply it at each prescribed phrase. Throughout, hands are
+      joined except where the rubrics require otherwise, the feet stay at the
+      centre under INV-GLORIA-01, and the servers stay kneeling.
+
+  - scene_id: "LM-024A"
+    order: 36
+    cluster: "LM-024"
+    title: "Cum Sancto Spiritu: all three sign themselves"
+    kind: action
+    liturgical_moment: "The conclusion of the Gloria in excelsis"
+    text_cue: "Cum Sancto Spiritu, in gloria Dei Patris. Amen."
+    voice: audible
+    condition: "GLORIA-PRESCRIBED"
+    predecessor: "LM-023A"
+    successor: "LM-025A"
+    camera:
+      view: nave-front
+      note: >-
+        All three figures sign themselves at once: the priest erect at the
+        centre of the predella, AC1 and AC2 kneeling and level with one another
+        on the lowest step. Three right hands trace the cross together.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, waiting for the priest's return at LM-027A."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At 'Cum Sancto Spiritu, in gloria Dei Patris. Amen.' the priest makes the sign of the cross upon himself."
+      - "Both servers make the sign of the cross with him, remaining on their knees."
+      - "The priest's feet are still at the centre of the predella as the Gloria ends."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-GLORIA-01
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record fixes the left-hand-on-breast detail explicitly at the Introit only; here it settles that the priest and both servers all sign themselves."
+    notes: >-
+      Approved and explicit: at 'Cum Sancto Spiritu ... Amen' the priest AND
+      BOTH SERVERS make the sign of the cross. Never draw this as a priest-only
+      sign. The last scene of the Gloria block; the default path continues at
+      LM-025A, which is also where the order resumes when the Gloria is not
+      prescribed.
+
+  - scene_id: "LM-025A"
+    order: 37
+    cluster: "LM-025"
+    title: "The altar kiss at the centre"
+    kind: action
+    liturgical_moment: "The kiss of the altar before Dominus vobiscum"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-024A"
+    successor: "LM-026A"
+    camera:
+      view: over-shoulder
+      note: >-
+        Both palms flat on the mensa outside the unfolded corporal, the priest
+        bent low to kiss the altar at the centre. The kneeling servers are
+        visible below and behind him.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: bowing-low-over-altar
+        bow: body-medium
+        facing: altar
+        gaze: altar
+        hands: {joined: false, left: palm-on-mensa-outside-corporal, right: palm-on-mensa-outside-corporal}
+        gestures:
+          - altar-kiss
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded and untouched; both of the priest's hands rest on the mensa outside it."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Standing at the centre, the priest places both hands on the altar outside the corporal."
+      - "He kisses the altar."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      First of the fixed Gloria-to-Collect sequence: hands on the altar outside
+      the corporal, then the altar kiss, then erect and rejoin and the turn to
+      the people at LM-026A. The hands never rest on the corporal. As at
+      LM-016B the approved record fixes only the low bend and the kiss, so the
+      bow field keeps a medium body bow and the low bend is carried by the
+      posture. On the path where the Gloria in excelsis is not prescribed this
+      scene is entered from LM-021A by its bypass_successor, and the
+      choreography of the scene is identical either way.
+
+  - scene_id: "LM-026A"
+    order: 38
+    cluster: "LM-026"
+    title: "Turn right to the people for Dominus vobiscum"
+    kind: action
+    liturgical_moment: "Dominus vobiscum before the Collect"
+    text_cue: "Dominus vobiscum."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-025A"
+    successor: "LM-027A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest turned out to the nave from the centre of the predella,
+        eyes lowered rather than on the people, hands parted only a little and
+        never raised. The turn is made by his right, toward the Epistle side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: people
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - turn-right
+          - separate-hands
+          - join-hands
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest stands erect from the kiss and rejoins his hands before the breast."
+      - "He turns by his right, toward the Epistle side, until he faces the people."
+      - "At 'Dominus vobiscum' his eyes are downcast; he separates his hands without elevating them and rejoins them as he says the words."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo."
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The direction of the turn is approved and fixed: RIGHT, toward the
+      Epistle side. Two details must not be softened - the eyes stay downcast
+      and are not raised to the people, and the hands separate WITHOUT being
+      elevated and are rejoined during the words. The hand state recorded is
+      the state at the end of the scene, hands rejoined; the parting is carried
+      by the gestures in their listed order. The servers answer from their
+      kneeling places and do not turn.
+
+  - scene_id: "LM-027A"
+    order: 39
+    cluster: "LM-027"
+    title: "Turn left back to the altar and return to the Missal"
+    kind: transition
+    liturgical_moment: "The priest returns to the Missal for the Collect"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-026A"
+    successor: "LM-028A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest turning back by his left to face the altar again and walking
+        squarely to the Epistle corner, where the Missal has lain open since
+        before the Introit.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: walking
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - turn-left
+        path:
+          from: predella-centre
+          to: predella-epistle-corner
+          note: >-
+            The priest turns back by his left to face the altar, then walks
+            squarely along the predella to the Epistle-side Missal. No sideways
+            shuffle.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side at the Collect, the priest standing square before it."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The response finished, the priest turns back by his left to face the altar."
+      - "He returns to the Epistle-side Missal and stands square before it."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The direction is approved and fixed: he turns LEFT back to the altar,
+      completing the circle begun by the right turn at LM-026A. The Missal has
+      not moved and is not moved now; it remains open on the Epistle side, in
+      the orientation in which the priest reads it turned toward his left. No
+      server touches it.
+
+  - scene_id: "LM-028A"
+    order: 40
+    cluster: "LM-028"
+    title: "Oremus with the profound head bow to the cross"
+    kind: action
+    liturgical_moment: "Oremus before the Collect"
+    text_cue: "Oremus."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-027A"
+    successor: "LM-028B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest at the Epistle-side Missal, head bowed profoundly toward the
+        altar cross at the centre, hands rejoined before the breast. His feet
+        stay at the Missal.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: head-profound
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - separate-hands
+          - join-hands
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Collect."
+        state_after: "Open on the Epistle side at the Collect."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At 'Oremus' the priest separates his hands and rejoins them."
+      - "He makes a profound head bow toward the altar cross."
+      - "His feet remain at the Epistle-side Missal; he does not return to the centre to make the bow."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Approved order within the scene - the hands separate and rejoin at
+      'Oremus', and with that a profound head bow is made toward the cross. The
+      hand state recorded is the state at the end, hands rejoined; the parting
+      is carried by the gestures in their listed order.
+
+  - scene_id: "LM-028B"
+    order: 41
+    cluster: "LM-028"
+    title: "The Collect or Collects with hands extended"
+    kind: action
+    liturgical_moment: "The Collect"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-028A"
+    successor: "LM-029A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest at the Epistle-side Missal with hands extended before him in
+        the orans position, eyes on the book; both servers kneeling and level
+        with one another on the lowest step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: false, left: extended, right: extended}
+        gestures:
+          - extend-hands
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Collect."
+        state_after: "Open on the Epistle side; it stays there for the Epistle and is not moved in this section."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest extends his hands and says the Collect from the Missal."
+      - "Where more than one Collect is said, each is said in the same manner with the hands extended."
+      - "The servers answer 'Amen' from their kneeling places at the end of each Collect."
+    responses:
+      - actor: AC1
+        text: "Amen."
+        voice: audible
+      - actor: AC2
+        text: "Amen."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The number of Collects said depends on the commemorations of the day and is not fixed by the approved record."
+    notes: >-
+      No text_cue is given because the Collect is proper to the Mass. The
+      Missal stays open on the Epistle side through this whole section, in the
+      orientation in which the priest reads it turned toward his left; the
+      transfer to the Gospel side belongs to a later section and to AC1 alone.

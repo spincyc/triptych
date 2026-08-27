@@ -11,6 +11,19 @@ The family belongs under
 The owner root is non-publishable. Its independently printable leaves mirror
 under `build/<provider>/` and `pdf/<provider>/`.
 
+## Relationship to the pictographic structural checkpoint
+
+The separate Mass pictographic-dictionary lane has a human-approved structural
+checkpoint for the spoken 1962 Low Mass with two servers at
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/`. For
+that lane, its v0.21 handoff summary and structured corpus control the
+structural baseline; do not reconstruct its choreography from this family's
+records. Records in this family that predate the checkpoint, including the
+Low-Mass chronology audit and the object records it reads, have not been
+reconciled to it and are not alternate inputs for the v0.21 pictographic lane.
+A future reconciliation is separate work requiring human review; this
+preservation checkpoint neither updates nor republishes the dictionaries.
+
 ## Governing priorities
 
 1. Identify an object correctly before explaining, depicting, or classifying

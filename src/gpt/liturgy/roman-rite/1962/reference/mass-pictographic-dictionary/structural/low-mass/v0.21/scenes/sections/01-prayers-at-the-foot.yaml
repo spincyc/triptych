@@ -1,0 +1,1956 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "01-prayers-at-the-foot"
+  title: "Prayers at the Foot of the Altar"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-001A"
+    order: 1
+    cluster: "LM-001"
+    title: "Arrival at the foot and the opening state"
+    kind: state
+    liturgical_moment: "Arrival at the foot of the altar"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: null
+    successor: "LM-001B"
+    camera:
+      view: nave-front
+      note: >-
+        Establishing view. The three altar steps and the predella are fully
+        visible, and the three actors read as one line at one depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side, placed and opened before the priest descends."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar from the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty, veiled, standing on the corporal with the purificator, paten, Host and pall stacked upon it."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest and both servers arrive before the lowest altar step."
+      - "They take a side-to-side line at one depth: AC2 on the Gospel side, the priest at the centre, AC1 on the Epistle side."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The Missal is already open on the Epistle side before the priest
+      descends; the corporal is already unfolded. Neither is placed or opened
+      on camera later.
+
+  - scene_id: "LM-001B"
+    order: 2
+    cluster: "LM-001"
+    title: "Reverence at the foot"
+    kind: action
+    liturgical_moment: "The reverence made at the foot of the altar before the prayers begin"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-001A"
+    successor: "LM-002A"
+    camera:
+      view: nave-front
+      note: >-
+        The whole line is bowed together toward the altar cross. All three
+        remain below the lowest altar step and at one depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "All three, still in their side-to-side line below the lowest step, make a profound bow of the body toward the altar cross."
+      - "The servers then kneel in place, each on the sanctuary floor at his own side, keeping the same depth as the priest."
+      - "The priest does not kneel; he stands at the centre for the whole of the prayers at the foot."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record does not state whether the reverence made at the foot is a profound bow of the body or a genuflection; it is depicted here as a profound bow."
+      - "The approved record does not fix the moment at which the servers kneel. It settles only that they are already kneeling by the priest's Confiteor, so the kneeling is placed at this reverence."
+    notes: >-
+      From this scene to the end of the section the servers kneel on the
+      sanctuary floor below the lowest altar step, never on a step, so that the
+      line at one depth required by INV-POS-01 is preserved.
+
+  - scene_id: "LM-002A"
+    order: 3
+    cluster: "LM-002"
+    title: "Sign of the cross and Introibo ad altare Dei"
+    kind: action
+    liturgical_moment: "The opening sign of the cross and the antiphon of Psalm 42"
+    text_cue: "In nomine Patris, et Filii, et Spiritus Sancti. Amen. Introibo ad altare Dei."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-001B"
+    successor: "LM-003A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the centre with his right hand tracing the cross;
+        a kneeling server flanks him at each side at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest signs himself with a large sign of the cross, his left hand resting on his breast."
+      - "He then says the antiphon of Psalm 42, and the servers answer it from their kneeling places."
+    responses:
+      - actor: AC1
+        text: "Ad Deum qui laetificat juventutem meam."
+        voice: audible
+      - actor: AC2
+        text: "Ad Deum qui laetificat juventutem meam."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record settles only that all three make the sign of the cross at the Indulgentiam. It does not state whether the servers also sign themselves at the opening 'In nomine Patris', so they are drawn here with hands joined."
+    notes: >-
+      The servers say every response of this section together, in one voice,
+      from their kneeling places at either side of the priest.
+
+  - scene_id: "LM-003A"
+    order: 4
+    cluster: "LM-003"
+    title: "Psalm 42, Judica me: the priest's verses"
+    kind: action
+    liturgical_moment: "Psalm 42, Judica me, said alternately at the foot of the altar"
+    text_cue: "Judica me, Deus, et discerne causam meam de gente non sancta: ab homine iniquo et doloso erue me."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-002A"
+    successor: "LM-003B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest speaks; both servers kneel silent at his sides, hands
+        joined, at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest, hands joined before his breast, begins Psalm 42 and says the verses belonging to him."
+      - "The psalm is said alternately, the priest and the servers taking their verses in turn."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      LM-003A and LM-003B together depict the two halves of one alternation
+      running through the whole psalm; they are not two isolated verses.
+
+  - scene_id: "LM-003B"
+    order: 5
+    cluster: "LM-003"
+    title: "Psalm 42, Judica me: the servers' verses"
+    kind: response
+    liturgical_moment: "Psalm 42, Judica me, said alternately at the foot of the altar"
+    text_cue: "Quia tu es, Deus, fortitudo mea: quare me repulisti, et quare tristis incedo, dum affligit me inimicus?"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-003A"
+    successor: "LM-004A"
+    camera:
+      view: nave-front
+      note: >-
+        The servers speak from their kneeling places; the priest stands silent
+        at the centre, hands joined.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Both servers, still kneeling and facing the altar cross, answer with the verses belonging to them."
+      - "The alternation continues in this way to the last verse of the psalm."
+    responses:
+      - actor: AC1
+        text: "Quia tu es, Deus, fortitudo mea: quare me repulisti, et quare tristis incedo, dum affligit me inimicus?"
+        voice: audible
+      - actor: AC2
+        text: "Quia tu es, Deus, fortitudo mea: quare me repulisti, et quare tristis incedo, dum affligit me inimicus?"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The servers do not turn inward for the psalm; they face the altar cross
+      and answer from their kneeling places.
+
+  - scene_id: "LM-004A"
+    order: 6
+    cluster: "LM-004"
+    title: "Psalm doxology, Gloria Patri"
+    kind: action
+    liturgical_moment: "The doxology Gloria Patri at the end of Psalm 42"
+    text_cue: "Gloria Patri, et Filio, et Spiritui Sancto."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-003B"
+    successor: "LM-005A"
+    camera:
+      view: nave-front
+      note: >-
+        Unchanged staging: the priest standing at the centre, a server kneeling
+        at each side at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest says the psalm doxology 'Gloria Patri' after the last verse of Psalm 42."
+      - "The servers answer with the second half of the doxology."
+    responses:
+      - actor: AC1
+        text: "Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen."
+        voice: audible
+      - actor: AC2
+        text: "Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-NAME-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants:
+      - id: "psalm-doxology-omitted"
+        kind: seasonal
+        applies_when: PASSIONTIDE-OR-REQUIEM
+        description: >-
+          In Passiontide and at Requiem Masses this psalm doxology is omitted,
+          and the antiphon "Introibo ad altare Dei" of LM-005A follows the last
+          verse of the psalm directly. This is a departure from the baseline,
+          not an alternative reading of it.
+        baseline: false
+    unresolved:
+      - "The approved record does not state whether the priest bows his head at the psalm doxology; no head bow is asserted here."
+    notes: >-
+      This is the psalm doxology "Gloria Patri", never to be labelled simply a
+      "Gloria"; an unqualified "Gloria" means the Gloria in excelsis, which
+      belongs to a later section.
+
+  - scene_id: "LM-005A"
+    order: 7
+    cluster: "LM-005"
+    title: "Antiphon repeated, Introibo ad altare Dei"
+    kind: action
+    liturgical_moment: "The antiphon of Psalm 42 repeated after the doxology"
+    text_cue: "Introibo ad altare Dei."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-004A"
+    successor: "LM-005B"
+    camera:
+      view: nave-front
+      note: >-
+        Unchanged staging from the doxology; the same line at one depth below
+        the lowest step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest repeats the antiphon that opened the psalm."
+      - "The servers answer it as before."
+    responses:
+      - actor: AC1
+        text: "Ad Deum qui laetificat juventutem meam."
+        voice: audible
+      - actor: AC2
+        text: "Ad Deum qui laetificat juventutem meam."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      When the psalm doxology is omitted under PASSIONTIDE-OR-REQUIEM this
+      scene follows the last verse of the psalm directly; the scene itself is
+      unchanged.
+
+  - scene_id: "LM-005B"
+    order: 8
+    cluster: "LM-005"
+    title: "Adjutorium nostrum with the sign of the cross"
+    kind: action
+    liturgical_moment: "The versicle Adjutorium nostrum in nomine Domini"
+    text_cue: "Adjutorium nostrum in nomine Domini."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-005A"
+    successor: "LM-006A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest's right hand traces the cross again; the servers kneel
+        unchanged at either side at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest says the versicle 'Adjutorium nostrum in nomine Domini' and signs himself, his left hand on his breast."
+      - "The servers answer the versicle."
+    responses:
+      - actor: AC1
+        text: "Qui fecit caelum et terram."
+        voice: audible
+      - actor: AC2
+        text: "Qui fecit caelum et terram."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "As at the opening sign of the cross, the approved record does not state whether the servers sign themselves at 'Adjutorium nostrum'; they are drawn here with hands joined."
+    notes: >-
+      This is the second of the three signs of the cross in this section. The
+      third, at the Indulgentiam, is the one the approved record requires all
+      three actors to make.
+
+  - scene_id: "LM-006A"
+    order: 9
+    cluster: "LM-006"
+    title: "The priest's Confiteor"
+    kind: action
+    liturgical_moment: "The Confiteor said by the priest"
+    text_cue: "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis, fratres, quia peccavi nimis cogitatione, verbo et opere."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-005B"
+    successor: "LM-007A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest's whole body is deeply inclined toward the altar cross while
+        the two servers kneel upright at his sides, all three still at one
+        depth below the lowest step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest, hands joined, makes a profound bow of the body and says the whole of his Confiteor in that posture."
+      - "The servers remain kneeling at either side of him, at the same depth, and do not bow with him."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record fixes only the profound body bow for the priest's Confiteor. It does not state whether the priest's own three breast strikes at 'mea culpa, mea culpa, mea maxima culpa' are to be depicted, so no strike gesture is asserted in this scene."
+    notes: >-
+      The bow is a profound bow of the body, not a bow of the head, and it is
+      held for the whole Confiteor. The priest never kneels during the prayers
+      at the foot.
+
+  - scene_id: "LM-007A"
+    order: 10
+    cluster: "LM-007"
+    title: "The servers' Misereatur tui"
+    kind: response
+    liturgical_moment: "The servers' response to the priest's Confiteor"
+    text_cue: "Misereatur tui omnipotens Deus, et dimissis peccatis tuis, perducat te ad vitam aeternam."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-006A"
+    successor: "LM-008A"
+    camera:
+      view: nave-front
+      note: >-
+        The plate in which the servers' heads are turned inward toward the
+        priest and slightly bowed while he is still profoundly bowed.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Both servers slightly bow their heads and turn them inward toward the priest, and in that posture answer his Confiteor with the Misereatur."
+      - "The priest answers 'Amen' and rises from the profound bow, standing erect for the servers' own Confiteor."
+    responses:
+      - actor: AC1
+        text: "Misereatur tui omnipotens Deus, et dimissis peccatis tuis, perducat te ad vitam aeternam."
+        voice: audible
+      - actor: AC2
+        text: "Misereatur tui omnipotens Deus, et dimissis peccatis tuis, perducat te ad vitam aeternam."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record does not state at which word the priest rises from the profound bow of his Confiteor. It settles only that he stands upright at the Misereatur vestri, so the rising is placed at his 'Amen' here."
+    notes: >-
+      This is the Confiteor response plate. The heads are slightly bowed and
+      turned inward toward the priest; they are not turned toward the people
+      and the servers do not stand.
+
+  - scene_id: "LM-008A"
+    order: 11
+    cluster: "LM-008"
+    title: "The servers' Confiteor begins"
+    kind: response
+    liturgical_moment: "The Confiteor said by the servers"
+    text_cue: "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-007A"
+    successor: "LM-008B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest now stands erect at the centre; both servers kneel with
+        heads bowed, still at his depth on either side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Both servers begin their own Confiteor, kneeling, hands joined, heads bowed."
+      - "The heads stay bowed for the whole of their Confiteor and are only turned, not raised, at the two addresses to the priest."
+    responses:
+      - actor: AC1
+        text: "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis."
+        voice: audible
+      - actor: AC2
+        text: "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record says only that the servers' heads 'remain bowed' during their own Confiteor. It does not fix a degree beyond the slight head bow of their response to the priest's Confiteor, which is what is carried here."
+    notes: >-
+      Both servers say their Confiteor together. The priest stands and does not
+      bow while they say it.
+
+  - scene_id: "LM-008B"
+    order: 12
+    cluster: "LM-008"
+    title: "Heads turned inward at et tibi pater and et te pater"
+    kind: response
+    liturgical_moment: "The servers' Confiteor, at the two addresses to the priest"
+    text_cue: "et tibi, pater ... et te, pater, orare pro me ad Dominum Deum nostrum."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-008A"
+    successor: "LM-008C"
+    camera:
+      view: nave-front
+      note: >-
+        Both servers' heads are turned inward toward the priest and still
+        bowed; the priest stands erect between them at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - turn-inward
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - turn-inward
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At 'et tibi, pater' each server turns his bowed head inward toward the priest, then turns it back toward the altar cross."
+      - "At 'et te, pater' each server turns his bowed head inward toward the priest a second time."
+    responses:
+      - actor: AC1
+        text: "et tibi, pater ... et te, pater, orare pro me ad Dominum Deum nostrum."
+        voice: audible
+      - actor: AC2
+        text: "et tibi, pater ... et te, pater, orare pro me ad Dominum Deum nostrum."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The turn is of the head only. The bodies stay square to the altar, the
+      knees stay in place, and the heads stay bowed through the turn. One scene
+      records both addresses because the posture is identical at each.
+
+  - scene_id: "LM-008C"
+    order: 13
+    cluster: "LM-008"
+    title: "The three mea culpa breast strikes"
+    kind: response
+    liturgical_moment: "The servers' Confiteor, at the three mea culpa phrases"
+    text_cue: "mea culpa, mea culpa, mea maxima culpa."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-008B"
+    successor: "LM-009A"
+    camera:
+      view: nave-front
+      note: >-
+        Each server's right hand is at his breast in the act of striking; the
+        heads are bowed and square to the altar again.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: false, left: on-breast, right: striking-breast}
+        gestures:
+          - strike-breast
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: false, left: on-breast, right: striking-breast}
+        gestures:
+          - strike-breast
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Each server strikes his breast with his right hand three times, once at each of the three 'mea culpa' phrases."
+      - "Between and after the strikes the hands are rejoined and the Confiteor is finished with the heads still bowed."
+    responses:
+      - actor: AC1
+        text: "mea culpa, mea culpa, mea maxima culpa."
+        voice: audible
+      - actor: AC2
+        text: "mea culpa, mea culpa, mea maxima culpa."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Three strikes, one to each phrase, with the right hand; the left hand
+      rests on the breast while the right strikes. The servers stay kneeling
+      and the heads stay bowed throughout.
+
+  - scene_id: "LM-009A"
+    order: 14
+    cluster: "LM-009"
+    title: "The priest's Misereatur vestri"
+    kind: action
+    liturgical_moment: "The priest's Misereatur over the servers"
+    text_cue: "Misereatur vestri omnipotens Deus, et dimissis peccatis vestris, perducat vos ad vitam aeternam."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-008C"
+    successor: "LM-010A"
+    camera:
+      view: nave-front
+      note: >-
+        The contrast is the point of the plate: the priest upright at the
+        centre, both servers still bowed at his sides at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest stands upright, hands joined, and says the Misereatur over the servers."
+      - "The servers remain bowed and answer 'Amen' from that bow."
+    responses:
+      - actor: AC1
+        text: "Amen."
+        voice: audible
+      - actor: AC2
+        text: "Amen."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The approved record fixes this contrast explicitly: at the Misereatur the
+      priest stands upright while the servers remain bowed until the 'Amen'.
+      They become erect only in the following scene.
+
+  - scene_id: "LM-010A"
+    order: 15
+    cluster: "LM-010"
+    title: "Indulgentiam: all three sign themselves"
+    kind: action
+    liturgical_moment: "The Indulgentiam"
+    text_cue: "Indulgentiam, absolutionem, et remissionem peccatorum nostrorum tribuat nobis omnipotens et misericors Dominus."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-009A"
+    successor: "LM-011A"
+    camera:
+      view: nave-front
+      note: >-
+        Three right hands trace the cross at once: the priest standing at the
+        centre and both servers kneeling erect at his sides, all at one depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Both servers come up out of their bow and kneel erect."
+      - "The priest and both servers all make the sign of the cross while the priest says the Indulgentiam."
+      - "The servers answer 'Amen'."
+    responses:
+      - actor: AC1
+        text: "Amen."
+        voice: audible
+      - actor: AC2
+        text: "Amen."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+      - INV-SIGN-01
+    variants: []
+    unresolved: []
+    notes: >-
+      This is never a priest-only sign of the cross. All three sign themselves,
+      and the servers are erect while they do it; the servers' kneeling posture
+      is unchanged, only the bow is gone.
+
+  - scene_id: "LM-011A"
+    order: 16
+    cluster: "LM-011"
+    title: "Deus, tu conversus"
+    kind: action
+    liturgical_moment: "The versicles after the Indulgentiam"
+    text_cue: "Deus, tu conversus vivificabis nos."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-010A"
+    successor: "LM-011B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest's body inclines to a medium bow and both servers bow again;
+        the line and its single depth are unchanged.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-medium
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest makes a medium bow of the body and says the versicle."
+      - "Both servers bow with him and answer."
+      - "This bow of the priest and of the servers is held from here through the 'Oremus' of LM-012A."
+    responses:
+      - actor: AC1
+        text: "Et plebs tua laetabitur in te."
+        voice: audible
+      - actor: AC2
+        text: "Et plebs tua laetabitur in te."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved:
+      - "The approved record states that the servers are bowed from 'Deus, tu conversus' through 'Oremus' but does not fix the degree of their bow; a moderate head bow is used for these four scenes."
+    notes: >-
+      The priest's bow here is a medium bow of the body, distinct from the
+      profound body bow of his Confiteor.
+
+  - scene_id: "LM-011B"
+    order: 17
+    cluster: "LM-011"
+    title: "Ostende nobis and Domine exaudi"
+    kind: action
+    liturgical_moment: "The versicles after the Indulgentiam, continued"
+    text_cue: "Ostende nobis, Domine, misericordiam tuam. ... Domine, exaudi orationem meam."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-011A"
+    successor: "LM-011C"
+    camera:
+      view: nave-front
+      note: >-
+        Posture unchanged from the previous scene: priest in a medium body bow,
+        both servers kneeling and bowed at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-medium
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Still bowed, the priest says 'Ostende nobis, Domine, misericordiam tuam' and the servers answer."
+      - "He then says 'Domine, exaudi orationem meam' and the servers answer again."
+    responses:
+      - actor: AC1
+        text: "Et salutare tuum da nobis."
+        voice: audible
+      - actor: AC2
+        text: "Et salutare tuum da nobis."
+        voice: audible
+      - actor: AC1
+        text: "Et clamor meus ad te veniat."
+        voice: audible
+      - actor: AC2
+        text: "Et clamor meus ad te veniat."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Two versicles share one scene because the staging is identical for both;
+      the responses are listed in the order they are said.
+
+  - scene_id: "LM-011C"
+    order: 18
+    cluster: "LM-011"
+    title: "Dominus vobiscum at the foot"
+    kind: action
+    liturgical_moment: "Dominus vobiscum said at the foot of the altar"
+    text_cue: "Dominus vobiscum."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-011B"
+    successor: "LM-012A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest is still bowed toward the altar cross and is not turned to
+        the people; the servers kneel bowed at his sides at the same depth.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-medium
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest says 'Dominus vobiscum' where he stands at the foot, keeping the medium body bow."
+      - "The servers answer from their bow."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo."
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The approved record keeps the priest's medium body bow from 'Deus, tu
+      conversus' through 'Oremus', so this 'Dominus vobiscum' is drawn bowed
+      toward the altar cross, with no turn toward the people.
+
+  - scene_id: "LM-012A"
+    order: 19
+    cluster: "LM-012"
+    title: "Oremus and the completion of the prayers at the foot"
+    kind: action
+    liturgical_moment: "The Oremus that closes the prayers at the foot of the altar"
+    text_cue: "Oremus."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-011C"
+    successor: "LM-013A"
+    camera:
+      view: nave-front
+      note: >-
+        The last plate of the section. The line of three is intact, all below
+        the lowest altar step at one depth, before any ascent begins.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: standing
+        bow: body-medium
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, untouched throughout the prayers at the foot."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar, untouched throughout the prayers at the foot."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest says 'Oremus', the last word of the prayers at the foot, still in the medium body bow, and the servers are still bowed with him."
+      - "The prayers at the foot are complete; the priest and both servers are still in their side-to-side line at one depth below the lowest altar step."
+      - "Rising from this bow and the ascent to the altar belong to the following scene, LM-013A."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+      - INV-POS-01
+    variants: []
+    unresolved: []
+    notes: >-
+      No object on the altar has been touched during this section. The Missal
+      is still open on the Epistle side and the corporal still unfolded at the
+      centre, exactly as they were before the priest descended.

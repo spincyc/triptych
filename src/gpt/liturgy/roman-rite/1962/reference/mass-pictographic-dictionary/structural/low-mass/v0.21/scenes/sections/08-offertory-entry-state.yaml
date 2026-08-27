@@ -1,0 +1,165 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "08-offertory-entry-state"
+  title: "Offertory entry object state"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-054A"
+    order: 74
+    cluster: "LM-054"
+    title: "The object state at the entry to the Offertory"
+    kind: state
+    liturgical_moment: "Entry to the Offertory"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-053A"
+    successor: "LM-055A"
+    camera:
+      view: over-shoulder
+      note: >-
+        The reference plate for the altar at the entry to the Offertory, taken
+        from behind and above the priest so that the whole mensa and the
+        unfolded corporal read clearly. Nothing is being handled: this is a
+        state, not an action. Reading the mensa from the Gospel side (viewer
+        left) across to the Epistle side (viewer right): the empty burse; the
+        open Missal on its stand near the centre, just left of the corporal;
+        the unfolded corporal at the centre with the veiled chalice stack
+        standing on it. The priest stands at the centre of the predella with
+        his hands joined; AC2 kneels on the lowest step on the Gospel side and
+        AC1 on the Epistle side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "ALREADY UNFOLDED at the centre of the altar, as it has been since the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar. The priest does NOT unfold it at the Offertory; there is no scene in which it is unfolded, because it was never folded on the altar."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, lying on the GOSPEL side of the mensa, viewer left."
+        state_after: "Empty, on the Gospel side. It stays empty and untouched at the entry to the Offertory."
+        handled_by: none
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, standing near the centre of the altar just left of the corporal, where it was moved with its stand after the Gospel, still in the reading orientation priest-reads-facing-left."
+        state_after: "Open, near the centre just left of the corporal, still priest-reads-facing-left. It is not mirrored and it is not moved back to the Epistle side at this point."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre of the altar, just left of the corporal, carrying the open Missal; moved there with the Missal after the Gospel."
+        state_after: "Near the centre, just left of the corporal, carrying the open Missal."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "EMPTY, standing upright at the centre on the corporal, veiled, and carrying the whole stack: purificator, paten with the Host, and pall."
+        state_after: "Empty and veiled, standing at the centre on the corporal. No wine and no water has yet been poured into it."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and everything stacked upon it; the stack is veiled."
+        state_after: "Still covering the chalice and its stack. It is removed in LM-055A, not here."
+        handled_by: none
+      - id: purificator
+        placement: corporal-back-centre
+        orientation: folded
+        state_before: "Folded and laid over the CUP of the chalice, the lowest member of the stack."
+        state_after: "Folded over the cup of the chalice, beneath the paten."
+        handled_by: none
+      - id: paten
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Lying flat ABOVE the purificator, carrying the Host."
+        state_after: "Flat above the purificator, carrying the Host, beneath the pall."
+        handled_by: none
+      - id: host
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Lying on the paten, which rests above the purificator; the Host is not yet on the corporal."
+        state_after: "On the paten, above the purificator, under the pall and the veil."
+        handled_by: none
+      - id: pall
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Lying flat ABOVE the paten, the topmost member of the stack under the veil."
+        state_after: "Flat above the paten, under the chalice veil."
+        handled_by: none
+    transitions:
+      - "No object is handled and no actor moves. This scene fixes the state of the altar at the entry to the Offertory so that every following Offertory scene can be drawn against a settled starting point."
+      - "The stack on the corporal reads from the bottom up: chalice, purificator over the cup, paten with the Host above the purificator, pall above the paten, chalice veil over the whole."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      This scene exists to carry an approved correction, and the correction is
+      INV-OBJ-01: the corporal is ALREADY UNFOLDED at the centre of the altar
+      from the beginning of Mass, and the priest does NOT unfold it at the
+      Offertory. Any plate that shows the priest unfolding the corporal at the
+      Offertory contradicts INV-OBJ-01 and is wrong. The other Offertory-entry
+      facts, all recorded above with their own object entries: the burse is
+      empty and on the GOSPEL side; the Missal stands near the centre, just
+      left of the corporal, where it was moved after the Gospel, and is still
+      in the orientation priest-reads-facing-left per INV-MISSAL-01; the
+      veiled chalice stack stands at the centre ON the corporal, with the
+      purificator over the chalice cup, the paten with the Host above the
+      purificator, the pall above the paten, and the chalice itself empty. The
+      veil comes off in LM-055A, which is the first scene of the Offertory
+      preparation and belongs to the next section.

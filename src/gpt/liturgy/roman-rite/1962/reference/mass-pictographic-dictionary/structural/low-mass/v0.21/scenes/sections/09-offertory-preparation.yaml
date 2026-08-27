@@ -1,0 +1,2494 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "09-offertory-preparation"
+  title: "Offertory preparation"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-055A"
+    order: 75
+    cluster: "LM-055"
+    title: "The chalice veil removed and handed to AC1"
+    kind: action
+    liturgical_moment: "The Offertory: the unveiling of the chalice"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-054A"
+    successor: "LM-056A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the centre of the predella; AC1 has come up on the
+        Epistle side and takes the veil across. AC2 is still kneeling on the
+        Gospel side and has not yet moved.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: epistle-side
+        gaze: hands
+        hands: {joined: false, left: holding-veil, right: holding-veil}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-veil, right: holding-veil}
+        gestures: []
+        path:
+          from: step-1-epistle
+          to: step-3-epistle
+          note: >-
+            AC1 rises from his ordinary kneeling place and approaches the
+            Epistle side of the altar to receive the veil.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice-veil
+        placement: "in the priest's two hands, passing across to AC1 on the Epistle side"
+        orientation: not-applicable
+        state_before: "Covering the whole chalice stack at the centre of the corporal."
+        state_after: "Lifted clear with both hands and given into AC1's two hands; not yet folded."
+        handled_by: priest
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled, standing on the back-centre fold of the corporal under the purificator, paten with the Host, and pall."
+        state_after: "Empty and now unveiled, standing on the back-centre fold of the corporal, still bearing the purificator, the paten with the Host, and the pall."
+        handled_by: none
+      - id: purificator
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, under the paten, now uncovered by the veil."
+        handled_by: none
+      - id: paten
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Resting on the purificator above the chalice cup, bearing the Host."
+        state_after: "Resting on the purificator above the chalice cup, bearing the Host, under the pall."
+        handled_by: none
+      - id: host
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at the top of the chalice stack."
+        state_after: "Lying on the paten at the top of the chalice stack."
+        handled_by: none
+      - id: pall
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat over the paten at the top of the chalice stack."
+        state_after: "Lying flat over the paten, now exposed by the removal of the veil."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar since the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal, where the Offertory antiphon has just been read."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest takes the chalice veil in both hands and lifts it clear of the chalice stack."
+      - "He turns slightly toward the Epistle side and hands the veil across."
+      - "AC1, having risen from his kneeling place, has come up on the Epistle side and receives the veil in both hands."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The exact level at which AC1 stands on the Epistle side to receive the veil is not fixed by the approved record."
+    notes: >-
+      Depth ranks are assigned consistently across this section by anchor
+      depth: predella 1, step-3 2, credence 3, step-1 4, plano 5. The corporal
+      is already unfolded and is not unfolded here or anywhere in the
+      Offertory. The veil is removed with both hands; no single-handed
+      unveiling is depicted.
+
+  - scene_id: "LM-056A"
+    order: 76
+    cluster: "LM-056"
+    title: "AC1 folds the veil and places it at the Epistle side"
+    kind: action
+    liturgical_moment: "The Offertory: disposal of the chalice veil"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-055A"
+    successor: "LM-057A"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 folds the veil at the Epistle end of the altar and lays it down
+        near the Epistle-side Lavabo card. The priest waits at the centre.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: oblations
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: hands
+        hands: {joined: false, left: holding-veil, right: holding-veil}
+        gestures:
+          - fold-veil
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Held unfolded in AC1's two hands."
+        state_after: "Folded by AC1 and laid down at the Epistle end of the altar, near the Epistle-side Lavabo card."
+        handled_by: AC1
+      - id: lavabo-card
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing at the Epistle end of the altar."
+        state_after: "Standing at the Epistle end of the altar, with the folded veil laid near it."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        state_after: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        handled_by: none
+      - id: purificator
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, under the paten."
+        handled_by: none
+      - id: paten
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Resting on the purificator above the chalice cup, bearing the Host, under the pall."
+        state_after: "Resting on the purificator above the chalice cup, bearing the Host, under the pall."
+        handled_by: none
+      - id: host
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at the top of the chalice stack."
+        state_after: "Lying on the paten at the top of the chalice stack."
+        handled_by: none
+      - id: pall
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat over the paten."
+        state_after: "Lying flat over the paten."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "AC1 folds the chalice veil at the Epistle end of the altar."
+      - "He lays the folded veil down near the Epistle-side Lavabo card."
+      - "He then withdraws to his Epistle-side place and stands there."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether the folded veil rests at the Epistle-side Lavabo card itself or at an equivalent approved location is left to the serving profile."
+    notes: >-
+      This panel and the two that follow sequence the two servers' movements
+      for legibility; in celebration AC1's disposal of the veil and AC2's
+      passage to the credence overlap with each other and with the priest's own
+      work at the altar.
+
+  - scene_id: "LM-057A"
+    order: 77
+    cluster: "LM-057"
+    title: "AC2 rises and genuflects at the centre"
+    kind: action
+    liturgical_moment: "The Offertory: AC2 goes to the credence"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-056A"
+    successor: "LM-057B"
+    camera:
+      view: nave-front
+      note: >-
+        AC2 has risen from the Gospel side and genuflects at the centre below
+        the altar steps. AC1 stands at his Epistle-side place; the priest is at
+        the centre of the predella.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: oblations
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: genuflecting
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - genuflect
+        path:
+          from: step-1-gospel
+          to: plano-centre
+          note: >-
+            AC2 rises from his kneeling place on the Gospel side and goes to
+            the centre below the altar steps.
+    objects:
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, laid down near the Epistle-side Lavabo card."
+        state_after: "Folded, laid down near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        state_after: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        handled_by: none
+      - id: purificator
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, under the paten."
+        handled_by: none
+      - id: paten
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Resting on the purificator, bearing the Host, under the pall."
+        state_after: "Resting on the purificator, bearing the Host, under the pall."
+        handled_by: none
+      - id: host
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at the top of the chalice stack."
+        state_after: "Lying on the paten at the top of the chalice stack."
+        handled_by: none
+      - id: pall
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat over the paten."
+        state_after: "Lying flat over the paten."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "AC2 rises from his kneeling place on the Gospel side."
+      - "He goes to the centre below the altar steps and genuflects there."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      AC2's genuflection is made at the centre, below the steps, and not on the
+      Gospel side where he was kneeling. AC1 does not accompany him; the two
+      servers move independently here.
+
+  - scene_id: "LM-057B"
+    order: 78
+    cluster: "LM-057"
+    title: "AC2 at the credence"
+    kind: state
+    liturgical_moment: "The Offertory: AC2 at the credence"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-057A"
+    successor: "LM-058A"
+    camera:
+      view: nave-front
+      note: >-
+        AC2 stands at the Epistle-side credence table, where the two cruets
+        stand ready. AC1 stands at his Epistle-side place; the priest is at the
+        centre of the predella.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: oblations
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: plano-centre
+          to: credence
+          note: "After genuflecting at the centre AC2 proceeds to the Epistle-side credence."
+    objects:
+      - id: credence-table
+        placement: credence
+        orientation: not-applicable
+        state_before: "Standing on the Epistle side, bearing the cruets and the other Offertory requisites."
+        state_after: "Standing on the Epistle side, with AC2 beside it."
+        handled_by: none
+      - id: wine-cruet
+        placement: credence
+        orientation: not-applicable
+        state_before: "Standing on the credence table."
+        state_after: "Standing on the credence table, ready to be brought to the Epistle side of the altar."
+        handled_by: none
+      - id: water-cruet
+        placement: credence
+        orientation: not-applicable
+        state_before: "Standing on the credence table."
+        state_after: "Standing on the credence table, ready to be brought to the Epistle side of the altar."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        state_after: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        handled_by: none
+      - id: purificator
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, under the paten."
+        handled_by: none
+      - id: paten
+        placement: corporal-back-centre
+        orientation: horizontal
+        state_before: "Resting on the purificator, bearing the Host, under the pall."
+        state_after: "Resting on the purificator, bearing the Host, under the pall."
+        handled_by: none
+      - id: host
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at the top of the chalice stack."
+        state_after: "Lying on the paten at the top of the chalice stack."
+        handled_by: none
+      - id: pall
+        placement: corporal-back-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat over the paten."
+        state_after: "Lying flat over the paten."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "AC2 proceeds from the centre to the Epistle-side credence table."
+      - "He stands at the credence where the wine and water cruets are ready."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether AC2 hands the wine cruet to AC1 at the credence or AC1 fetches it himself is not settled by the approved record; the record fixes only that AC1 presents the wine and AC2 the water."
+    notes: >-
+      AC2 is the Gospel-side acolyte and remains so; going to the Epistle-side
+      credence is a phase-specific errand and does not reassign his identity.
+
+  - scene_id: "LM-058A"
+    order: 79
+    cluster: "LM-058"
+    title: "The chalice stack moved off the corporal to the Epistle side"
+    kind: action
+    liturgical_moment: "The Offertory: dismantling of the chalice stack"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-057B"
+    successor: "LM-059A"
+    camera:
+      view: over-shoulder
+      note: >-
+        Seen from behind and above the priest, so that the corporal, the empty
+        back-centre fold and the stack now standing off the corporal toward the
+        Epistle side are all legible.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: on-altar-outside-corporal, right: holding-chalice-node}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Empty and unveiled on the back-centre fold of the corporal, bearing the purificator, the paten with the Host, and the pall."
+        state_after: "Moved bodily off the corporal by the right hand and standing on the mensa toward the Epistle side at arm's length, still bearing the purificator, the paten with the Host, and the pall."
+        handled_by: priest
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, carried with the stack to the Epistle side."
+        handled_by: none
+      - id: paten
+        placement: mensa-epistle
+        orientation: horizontal
+        state_before: "Resting on the purificator, bearing the Host, under the pall."
+        state_after: "Resting on the purificator, bearing the Host, under the pall, carried with the stack to the Epistle side."
+        handled_by: none
+      - id: host
+        placement: mensa-epistle
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at the top of the chalice stack."
+        state_after: "Lying on the paten at the top of the stack, now off the corporal toward the Epistle side."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle
+        orientation: flat-on-mensa
+        state_before: "Lying flat over the paten."
+        state_after: "Lying flat over the paten, carried with the stack to the Epistle side."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar, bearing the chalice stack on its back-centre fold."
+        state_after: "Unfolded at the centre of the altar and now bare; the priest does not unfold or rearrange it."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest places his left hand flat on the altar outside the corporal."
+      - "With his right hand he moves the whole chalice stack off the corporal to the Epistle side, at arm's length."
+      - "The left hand remains on the altar throughout."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The stack is moved intact, still assembled, and only afterwards taken
+      apart. The priest's feet do not move: he remains at the centre of the
+      predella and reaches to the Epistle side at arm's length.
+
+  - scene_id: "LM-059A"
+    order: 80
+    cluster: "LM-059"
+    title: "The pall removed and set against the Epistle altar card"
+    kind: action
+    liturgical_moment: "The Offertory: dismantling of the chalice stack"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-058A"
+    successor: "LM-060A"
+    camera:
+      view: over-shoulder
+      note: >-
+        The left hand is still flat on the altar outside the corporal while the
+        right hand alone lifts the pall away and stands it against the Epistle
+        altar card.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: hands
+        hands: {joined: false, left: on-altar-outside-corporal, right: holding-pall}
+        gestures:
+          - remove-pall
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Lying flat over the paten at the top of the stack, off the corporal toward the Epistle side."
+        state_after: "Taken off with the right hand and stood on edge against the Epistle altar card."
+        handled_by: priest
+      - id: epistle-altar-card
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing at the Epistle end of the altar."
+        state_after: "Standing at the Epistle end of the altar, with the pall leaning against it."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing on the mensa toward the Epistle side, bearing the purificator and the paten with the Host, under the pall."
+        state_after: "Standing on the mensa toward the Epistle side, bearing the purificator and the paten with the Host, now uncovered."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, under the paten."
+        handled_by: none
+      - id: paten
+        placement: mensa-epistle
+        orientation: horizontal
+        state_before: "Resting on the purificator, bearing the Host, under the pall."
+        state_after: "Resting on the purificator, bearing the Host, now uncovered."
+        handled_by: none
+      - id: host
+        placement: mensa-epistle
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten under the pall."
+        state_after: "Lying on the paten, now uncovered."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded and bare at the centre of the altar."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The left hand remains flat on the altar outside the corporal."
+      - "The right hand removes the pall from the top of the stack."
+      - "The pall is placed against the Epistle altar card, standing on edge."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The pall is not laid flat on the mensa and not put on the corporal: it
+      stands against the Epistle altar card and stays there until it is needed
+      to cover the chalice after the offering of the chalice.
+
+  - scene_id: "LM-060A"
+    order: 81
+    cluster: "LM-060"
+    title: "The paten with the Host taken in both hands"
+    kind: action
+    liturgical_moment: "The Offertory: the paten taken up for the offering of the Host"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-059A"
+    successor: "LM-061A"
+    camera:
+      view: over-shoulder
+      note: >-
+        Both of the priest's hands are now on the paten; neither hand is on the
+        altar. The paten is carried from the Epistle side back over the
+        corporal at the centre.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: host
+        hands: {joined: false, left: holding-host-and-paten, right: holding-host-and-paten}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: paten
+        placement: "held in both hands over the corporal at the centre of the altar"
+        orientation: horizontal
+        state_before: "Resting uncovered on the purificator above the chalice cup, toward the Epistle side, bearing the Host."
+        state_after: "Lifted in both hands from the chalice cup and brought over the corporal at the centre, still bearing the Host."
+        handled_by: priest
+      - id: host
+        placement: "on the paten, held in both hands over the corporal"
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten above the chalice cup."
+        state_after: "Lying on the paten, carried over the corporal; the priest does not touch it."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing on the mensa toward the Epistle side, bearing the purificator and the paten with the Host."
+        state_after: "Standing empty on the mensa toward the Epistle side with the purificator over its cup, waiting to be prepared."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup, under the paten."
+        state_after: "Spread over the mouth of the chalice cup, now exposed by the removal of the paten."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded and bare at the centre of the altar, with the paten held above it."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest takes the paten with the Host on it in both hands."
+      - "He brings it from the Epistle side over the corporal at the centre of the altar."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The instruction that the left hand remains on the altar governs the
+      moving of the stack and the removal of the pall only. From this scene
+      both hands are on the paten.
+
+  - scene_id: "LM-061A"
+    order: 82
+    cluster: "LM-061"
+    title: "Suscipe, sancte Pater: eyes raised to the cross and lowered"
+    kind: action
+    liturgical_moment: "The offering of the Host"
+    text_cue: "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-060A"
+    successor: "LM-061B"
+    camera:
+      view: nave-front
+      note: >-
+        The instant of the raised eyes. The head is not thrown back; the eyes
+        alone go to the cross and come down again at once.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: holding-host-and-paten, right: holding-host-and-paten}
+        gestures:
+          - raise-eyes
+          - lower-eyes
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: paten
+        placement: "held in both hands over the corporal at the centre of the altar"
+        orientation: horizontal
+        state_before: "Held in both hands over the corporal, bearing the Host."
+        state_after: "Held in both hands over the corporal, bearing the Host."
+        handled_by: priest
+      - id: host
+        placement: "on the paten, held in both hands over the corporal"
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten."
+        state_after: "Lying on the paten; the priest does not touch it."
+        handled_by: none
+      - id: altar-cross
+        placement: altar-cross
+        orientation: upright
+        state_before: "Standing at the centre of the altar."
+        state_after: "Standing at the centre of the altar; the priest's eyes go to it and come down again at once."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded and bare at the centre of the altar."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "Holding the paten with the Host in both hands, the priest raises his eyes to the cross."
+      - "He lowers them immediately."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The raising and lowering of the eyes is one continuous movement; this
+      panel fixes the upward instant and LM-061B the settled gaze on the Host
+      that follows. The prayer is said in a low voice.
+
+  - scene_id: "LM-061B"
+    order: 83
+    cluster: "LM-061"
+    title: "The paten held at breast height with the gaze on the Host"
+    kind: state
+    liturgical_moment: "The offering of the Host"
+    text_cue: "quam ego indignus famulus tuus offero tibi Deo meo vivo et vero"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-061A"
+    successor: "LM-062A"
+    camera:
+      view: nave-front
+      note: >-
+        The paten is held level at the height of the priest's breast, clear of
+        the mensa, and his eyes rest on the Host for the whole prayer.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: host
+        hands: {joined: false, left: holding-host-and-paten, right: holding-host-and-paten}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: paten
+        placement: "held level in both hands at the height of the priest's breast, above the corporal"
+        orientation: horizontal
+        state_before: "Held in both hands over the corporal, bearing the Host."
+        state_after: "Held level in both hands at breast height, bearing the Host, for the whole of the prayer."
+        handled_by: priest
+      - id: host
+        placement: "on the paten at breast height"
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten."
+        state_after: "Lying on the paten; the priest's eyes rest on it and his fingers do not touch it."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded and bare at the centre of the altar."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest holds the paten at breast height."
+      - "He looks at the Host and recites the prayer of offering in a low voice."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Breast height, not eye height: the raising to eye height belongs to the
+      offering of the chalice, not to the offering of the Host.
+
+  - scene_id: "LM-062A"
+    order: 84
+    cluster: "LM-062"
+    title: "The sign of the cross made with the paten"
+    kind: action
+    liturgical_moment: "The offering of the Host"
+    text_cue: "ut mihi et illis proficiat ad salutem in vitam aeternam. Amen."
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-061B"
+    successor: "LM-063A"
+    camera:
+      view: over-shoulder
+      note: >-
+        The paten has come down to just above the corporal and travels in a
+        horizontal cross over the place where the Host is about to rest. The
+        cross is made in the horizontal plane, not upright in the air.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: paten
+        hands: {joined: false, left: holding-host-and-paten, right: holding-host-and-paten}
+        gestures:
+          - cross-with-paten
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: paten
+        placement: "held in both hands just above the front-centre fold of the corporal"
+        orientation: horizontal
+        state_before: "Held level in both hands at breast height, bearing the Host."
+        state_after: "Lowered to just above the corporal and moved in a horizontal sign of the cross over the place where the Host will rest."
+        handled_by: priest
+      - id: host
+        placement: "on the paten just above the front-centre fold of the corporal"
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten at breast height."
+        state_after: "Lying on the paten, carried through the horizontal cross; untouched by the fingers."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded and bare; the horizontal cross is made over its front-centre fold."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest lowers the paten until it is just above the corporal."
+      - "With the paten itself he makes a horizontal sign of the cross over the place on the corporal where the Host is to rest."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The cross is made with the paten and the Host still on it; the priest's
+      hand makes no separate blessing here.
+
+  - scene_id: "LM-063A"
+    order: 85
+    cluster: "LM-063"
+    title: "The Host slid onto the front-centre fold of the corporal"
+    kind: action
+    liturgical_moment: "The offering of the Host"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-062A"
+    successor: "LM-064A"
+    camera:
+      view: detail-close
+      note: >-
+        Close on the hands and the paten. The paten is tilted and the Host
+        leaves it by the tilt alone; no fingertip touches the Host.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: host
+        hands: {joined: false, left: holding-paten, right: holding-paten}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying on the paten just above the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal, having slid off the tilted paten; not touched directly by the priest's fingers at any point in the slide."
+        handled_by: none
+      - id: paten
+        placement: "held in both hands, tilted just above the front-centre fold of the corporal"
+        orientation: nearly-horizontal
+        state_before: "Held level in both hands just above the corporal, bearing the Host."
+        state_after: "Tilted until the Host slides off onto the corporal, then empty in the priest's hands."
+        handled_by: priest
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded and bare at the centre of the altar."
+        state_after: "Unfolded, with the Host now resting on its front-centre fold."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest tilts the paten over the front-centre fold of the corporal."
+      - "The Host slides off the paten onto the front-centre fold of the corporal."
+      - "The Host is not touched directly by the priest's fingers during the slide."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      This is a close view of the hands, but it is before the Consecration: the
+      post-Consecration thumb and index discipline is not yet in force and must
+      not be drawn as though it were. The one hand rule that does govern this
+      panel is that the fingers never touch the Host; it leaves the paten by
+      the tilt alone.
+
+  - scene_id: "LM-064A"
+    order: 86
+    cluster: "LM-064"
+    title: "The paten placed halfway under the right edge of the corporal"
+    kind: action
+    liturgical_moment: "The offering of the Host"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-063A"
+    successor: "LM-065A"
+    camera:
+      view: over-shoulder
+      note: >-
+        The empty paten is slipped halfway under the right edge of the
+        corporal, that is toward the Epistle side, leaving half of its disc
+        exposed on the mensa.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: paten
+        hands: {joined: false, left: holding-paten, right: holding-paten}
+        gestures: []
+        path:
+          from: predella-centre
+          to: predella-epistle
+          note: >-
+            Having placed the paten, the priest joins his hands and moves along
+            the predella to the Epistle side, where the chalice is standing, to
+            prepare it.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Empty, tilted in the priest's hands above the corporal."
+        state_after: "Laid flat on the mensa and pushed halfway under the right edge of the corporal, toward the Epistle side, with half of its disc left exposed."
+        handled_by: priest
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host on its front-centre fold."
+        state_after: "Unfolded, bearing the Host on its front-centre fold, with the paten half under its right edge."
+        handled_by: none
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup; the priest now comes to it."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest places the empty paten halfway under the right edge of the corporal, on the Epistle side, so that half of it remains exposed."
+      - "He joins his hands and moves along the predella to the Epistle side, where the chalice is standing."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The exposed half of the paten is the half on which the purificator will
+      be laid at the offering of the chalice, so the paten must be drawn only
+      half hidden. The approved record does not give the priest's move to the
+      Epistle side a panel of its own; it is recorded here because the cruet
+      service that follows is served to him at the Epistle side.
+
+  - scene_id: "LM-065A"
+    order: 87
+    cluster: "LM-065"
+    title: "AC1 presents the wine at the Epistle side"
+    kind: action
+    liturgical_moment: "The Offertory: the presentation of the cruets"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-064A"
+    successor: "LM-065B"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 stands at the Epistle side below the priest, the wine cruet held
+        out in his right hand with the handle turned toward the priest. He has
+        kissed the cruet before offering it. AC2 waits at the credence with the
+        water.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures:
+          - kiss-cruet
+        path:
+          from: step-1-epistle
+          via:
+            - credence
+          to: step-1-epistle
+          note: >-
+            AC1 takes up the wine cruet and comes to the Epistle side of the
+            altar to present it.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: credence
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: credence
+        gaze: forward
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures: []
+    objects:
+      - id: wine-cruet
+        placement: "held out in AC1's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Standing on the credence table."
+        state_after: "Kissed by AC1 and presented to the priest in AC1's right hand, handle toward the priest."
+        handled_by: AC1
+      - id: water-cruet
+        placement: "held in AC2's right hand at the credence"
+        orientation: not-applicable
+        state_before: "Standing on the credence table."
+        state_after: "Taken up by AC2, who waits to present it second."
+        handled_by: AC2
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "AC1 takes up the wine cruet and comes to the Epistle side of the altar."
+      - "He kisses the cruet before presenting it."
+      - "He presents it with his right hand, the handle turned toward the priest."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether AC2 hands the wine cruet to AC1 at the credence or AC1 takes it from the credence himself is not settled by the approved record."
+      - "The exact standing place of the servers at the Epistle side for the cruet service, and whether it is on the floor or on an altar step, is left to the serving profile."
+    notes: >-
+      The canonical two-server split is fixed here and is not a custom: AC1
+      presents the wine, AC2 presents the water, wine first and water second,
+      and both serve from the Epistle side. This panel fixes the presentation
+      and the hand discipline; the priest's reception and pouring are shown at
+      LM-066B, where AC1 also receives the cruet back with his left hand and
+      kisses it a second time.
+
+  - scene_id: "LM-065B"
+    order: 88
+    cluster: "LM-065"
+    title: "AC2 presents the water at the Epistle side"
+    kind: action
+    liturgical_moment: "The Offertory: the presentation of the cruets"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-065A"
+    successor: "LM-066A"
+    camera:
+      view: nave-front
+      note: >-
+        Both servers are now at the Epistle side in the order of service: AC1
+        nearer the priest with the wine, AC2 below and behind him with the
+        water, each cruet held out in the right hand with the handle toward the
+        priest. Their different depths are a real queue in the order of
+        service, not an artificial front-and-back offset.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures:
+          - kiss-cruet
+        path:
+          from: credence
+          to: plano-epistle
+          note: >-
+            AC2 leaves the credence with the water cruet and comes to the
+            Epistle side behind AC1, to present the water in his turn.
+    objects:
+      - id: water-cruet
+        placement: "held out in AC2's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Held in AC2's right hand at the credence."
+        state_after: "Kissed by AC2 and held out to the priest in AC2's right hand, handle toward the priest, to be taken after the wine."
+        handled_by: AC2
+      - id: wine-cruet
+        placement: "held out in AC1's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC1's right hand, handle toward the priest."
+        state_after: "Still presented in AC1's right hand, handle toward the priest; the wine is served first."
+        handled_by: AC1
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty toward the Epistle side with the purificator over its cup."
+        state_after: "Standing empty toward the Epistle side with the purificator over its cup."
+        handled_by: none
+      - id: purificator
+        placement: mensa-epistle
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Spread over the mouth of the chalice cup."
+        handled_by: none
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "AC2 comes from the credence to the Epistle side with the water cruet."
+      - "He kisses the cruet before presenting it."
+      - "He holds it out with his right hand, the handle turned toward the priest, to be taken after the wine."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The exact standing place of the servers at the Epistle side for the cruet service, and whether it is on the floor or on an altar step, is left to the serving profile."
+    notes: >-
+      Water is never served before wine and never by AC1. AC2's presence at the
+      Epistle side is a phase-specific errand; he remains the Gospel-side
+      acolyte.
+
+  - scene_id: "LM-066A"
+    order: 89
+    cluster: "LM-066"
+    title: "The cup purified once with the purificator"
+    kind: action
+    liturgical_moment: "The preparation of the chalice"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-065B"
+    successor: "LM-066B"
+    camera:
+      view: over-shoulder
+      note: >-
+        At the Epistle side. The chalice has been drawn toward the priest and
+        the cup is wiped once, not repeatedly. The two servers wait below with
+        their cruets.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: holding-chalice-node, right: holding-purificator}
+        gestures:
+          - purify-chalice
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty on the mensa toward the Epistle side with the purificator over its cup."
+        state_after: "Drawn toward the priest by his left hand and standing empty at the Epistle side, its cup wiped once and now uncovered."
+        handled_by: priest
+      - id: purificator
+        placement: "held at the node of the chalice under the priest's left thumb"
+        orientation: not-applicable
+        state_before: "Spread over the mouth of the chalice cup."
+        state_after: "Taken off the cup, used once to purify it, and then held at the node of the chalice under the priest's left thumb."
+        handled_by: priest
+      - id: wine-cruet
+        placement: "held out in AC1's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC1's right hand."
+        state_after: "Still presented in AC1's right hand, waiting to be taken."
+        handled_by: none
+      - id: water-cruet
+        placement: "held out in AC2's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC2's right hand."
+        state_after: "Still presented in AC2's right hand, waiting its turn after the wine."
+        handled_by: none
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "At the Epistle side the priest places his right hand on the altar and with his left hand draws the chalice toward him."
+      - "He purifies the cup once with the purificator."
+      - "He removes the purificator from the cup."
+      - "The purificator is then held at the node of the chalice by his left thumb, and stays there through the whole preparation."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The cup is purified once only. The opening hand disposition of the
+      preparation is the right hand on the altar and the left hand drawing the
+      chalice; the depicted instant is the wiping itself, with the left hand at
+      the node and the purificator in the right.
+
+  - scene_id: "LM-066B"
+    order: 90
+    cluster: "LM-066"
+    title: "Deus, qui humanae substantiae: the wine poured"
+    kind: action
+    liturgical_moment: "The preparation of the chalice"
+    text_cue: "Deus, qui humanae substantiae dignitatem mirabiliter condidisti, et mirabilius reformasti"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-066A"
+    successor: "LM-066C"
+    camera:
+      view: over-shoulder
+      note: >-
+        The priest's left hand still holds the chalice at the node with the
+        purificator under the thumb, so the wine is taken and poured with the
+        right hand. AC1 has his left hand ready to receive the cruet back.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: holding-chalice-node, right: holding-cruet}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-cruet, right: at-side}
+        gestures:
+          - kiss-cruet
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: at-side, right: holding-cruet}
+        gestures: []
+    objects:
+      - id: wine-cruet
+        placement: "taken back into AC1's left hand at the Epistle side"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC1's right hand, handle toward the priest."
+        state_after: "Taken by the priest in his right hand, poured into the chalice, returned to AC1, who receives it in his left hand and kisses it a second time."
+        handled_by: priest
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing empty at the Epistle side, its cup purified, held at the node by the priest's left hand."
+        state_after: "Standing at the Epistle side with the wine poured into it."
+        handled_by: priest
+      - id: purificator
+        placement: "held at the node of the chalice under the priest's left thumb"
+        orientation: not-applicable
+        state_before: "Held at the node of the chalice under the priest's left thumb."
+        state_after: "Held at the node of the chalice under the priest's left thumb."
+        handled_by: priest
+      - id: water-cruet
+        placement: "held out in AC2's right hand at the Epistle side, the handle turned toward the priest"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC2's right hand."
+        state_after: "Still presented in AC2's right hand, waiting its turn."
+        handled_by: none
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest receives the wine cruet from AC1 and pours the wine into the chalice."
+      - "He returns the cruet to AC1."
+      - "AC1 receives it back with his left hand and kisses it."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record fixes the servers' hands for the cruets but not the priest's; the right hand is shown here because his left hand is occupied at the chalice node with the purificator."
+    notes: >-
+      The prayer over the water begins here and is completed at LM-066C. There
+      is no gesture in the controlled vocabulary for pouring; the pour is
+      carried by the transitions and by the object states.
+
+  - scene_id: "LM-066C"
+    order: 91
+    cluster: "LM-066"
+    title: "The water blessed and a small amount added"
+    kind: action
+    liturgical_moment: "The preparation of the chalice"
+    text_cue: "da nobis per hujus aquae et vini mysterium, ejus divinitatis esse consortes, qui humanitatis nostrae fieri dignatus est particeps"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-066B"
+    successor: "LM-067A"
+    camera:
+      view: over-shoulder
+      note: >-
+        The depicted instant is the blessing of the water in AC2's cruet with
+        the priest's right hand; the reception of the cruet and the adding of a
+        small amount follow within the same scene. AC2 has now come up in AC1's
+        place and AC1 has stepped down.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: chalice
+        hands: {joined: false, left: holding-chalice-node, right: blessing}
+        gestures:
+          - bless-water
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-cruet, right: at-side}
+        gestures: []
+        path:
+          from: step-1-epistle
+          to: plano-epistle
+          note: "Having had the wine cruet back, AC1 steps down and AC2 takes his place for the water."
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-cruet, right: at-side}
+        gestures:
+          - kiss-cruet
+        path:
+          from: plano-epistle
+          to: step-1-epistle
+          note: "AC2 comes up in his turn to hand the water to the priest."
+    objects:
+      - id: water-cruet
+        placement: "taken back into AC2's left hand at the Epistle side"
+        orientation: handle-toward-priest
+        state_before: "Presented in AC2's right hand, handle toward the priest."
+        state_after: "Blessed by the priest with his right hand, taken from AC2, a small amount poured into the chalice, then returned to AC2, who receives it in his left hand and kisses it a second time."
+        handled_by: priest
+      - id: chalice
+        placement: mensa-epistle
+        orientation: upright
+        state_before: "Standing at the Epistle side with the wine poured into it."
+        state_after: "Standing at the Epistle side with the wine and a small amount of water in it."
+        handled_by: priest
+      - id: purificator
+        placement: "held at the node of the chalice under the priest's left thumb"
+        orientation: not-applicable
+        state_before: "Held at the node of the chalice under the priest's left thumb."
+        state_after: "Held at the node of the chalice under the priest's left thumb."
+        handled_by: priest
+      - id: wine-cruet
+        placement: "held in AC1's left hand at the Epistle side"
+        orientation: not-applicable
+        state_before: "Returned to AC1 and kissed by him."
+        state_after: "Held in AC1's left hand; the wine is not served again."
+        handled_by: none
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest blesses the water with his right hand."
+      - "He receives the water cruet from AC2 and adds a small amount to the chalice."
+      - "He returns the cruet to AC2."
+      - "AC2 receives it back with his left hand and kisses it."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants:
+      - id: "requiem-no-water-blessing"
+        kind: requiem
+        applies_when: "REQUIEM"
+        description: >-
+          In a Requiem the blessing of the water is omitted: the priest does not
+          make the blessing with his right hand and the gesture bless-water is
+          not performed. The water is still added to the chalice and the prayer
+          "Deus, qui humanae substantiae..." is still said in full. The prayer
+          is never omitted with the blessing.
+        baseline: false
+    unresolved: []
+    notes: >-
+      The order is fixed: the water is blessed first and only then received and
+      added. Only a small amount of water is added. The exchange of places
+      between the two servers is the ordinary consequence of the wine being
+      served before the water; it is not a second errand.
+
+  - scene_id: "LM-067A"
+    order: 92
+    cluster: "LM-067"
+    title: "The rim wiped and the chalice set toward the centre"
+    kind: action
+    liturgical_moment: "The preparation of the chalice"
+    text_cue: "Jesus Christus, Filius tuus, Dominus noster"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-066C"
+    successor: "LM-068A"
+    camera:
+      view: nave-front
+      note: >-
+        The depicted instant is the head bow at the Holy Name, made with the
+        hands joined at the Epistle side, immediately before the priest returns
+        to the centre. The wiping of the rim and the setting of the chalice
+        toward the centre have just been done.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - join-hands
+        path:
+          from: predella-epistle
+          to: predella-centre
+          note: >-
+            After the bow at the Holy Name the priest returns along the predella
+            to the centre of the altar, where the offering of the chalice
+            follows.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-cruet, right: at-side}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: inward-to-priest
+        gaze: inward-to-priest
+        hands: {joined: false, left: holding-cruet, right: at-side}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: mensa-centre
+        orientation: upright
+        state_before: "Standing at the Epistle side with the wine and a small amount of water in it, drops on its rim."
+        state_after: "Its rim wiped dry with the purificator and set on the mensa toward the centre of the altar; not yet standing on the corporal."
+        handled_by: priest
+      - id: purificator
+        placement: "at the node of the chalice, toward the centre of the altar"
+        orientation: not-applicable
+        state_before: "Held at the node of the chalice under the priest's left thumb."
+        state_after: "Used to wipe the drops from the rim and left at the node of the chalice as the priest joins his hands."
+        handled_by: priest
+      - id: host
+        placement: corporal-front-centre
+        orientation: flat-on-mensa
+        state_before: "Lying flat on the front-centre fold of the corporal."
+        state_after: "Lying flat on the front-centre fold of the corporal."
+        handled_by: none
+      - id: paten
+        placement: corporal-right-edge
+        orientation: flat-on-mensa
+        state_before: "Halfway under the right edge of the corporal, half exposed."
+        state_after: "Halfway under the right edge of the corporal, half exposed, ready to receive the purificator at the offering of the chalice."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded, bearing the Host, with the paten half under its right edge."
+        state_after: "Unfolded, bearing the Host, with the paten half under its right edge; its back-centre fold still bare."
+        handled_by: none
+      - id: wine-cruet
+        placement: "held in AC1's left hand at the Epistle side"
+        orientation: not-applicable
+        state_before: "Held in AC1's left hand."
+        state_after: "Held in AC1's left hand."
+        handled_by: none
+      - id: water-cruet
+        placement: "held in AC2's left hand at the Epistle side"
+        orientation: not-applicable
+        state_before: "Returned to AC2 and kissed by him."
+        state_after: "Held in AC2's left hand."
+        handled_by: none
+      - id: pall
+        placement: mensa-epistle-corner
+        orientation: upright
+        state_before: "Standing on edge against the Epistle altar card."
+        state_after: "Standing on edge against the Epistle altar card, where it stays until the chalice is covered."
+        handled_by: none
+      - id: chalice-veil
+        placement: mensa-epistle-corner
+        orientation: folded
+        state_before: "Folded, near the Epistle-side Lavabo card."
+        state_after: "Folded, near the Epistle-side Lavabo card."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+      - id: missal
+        placement: mensa-gospel
+        orientation: priest-reads-facing-left
+        state_before: "Open near the centre, to the left of the corporal."
+        state_after: "Open near the centre, to the left of the corporal."
+        handled_by: none
+    transitions:
+      - "The priest wipes the drops from the rim of the chalice with the purificator."
+      - "He sets the chalice toward the centre of the altar."
+      - "He joins his hands."
+      - "He bows his head at the Holy Name, Jesus Christus."
+      - "He returns to the centre of the altar."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The magnitude of the bow at Jesus Christus is not fixed by the approved record; it is recorded here as a head bow of moderate depth."
+      - "Whether the purificator is left resting at the node of the chalice or carried by the priest as he joins his hands and returns to the centre is not settled by the approved record."
+      - "Whether the servers return the cruets to the credence between the preparation of the chalice and the Lavabo is not settled by the approved record."
+    notes: >-
+      This scene closes the section with the priest arriving at the centre of
+      the altar, so the offering of the chalice at LM-068A opens there. The
+      chalice stands on the mensa toward the centre and is not yet on the
+      back-centre fold of the corporal; it is set on the corporal only during
+      the offering of the chalice. There is no gesture in the controlled
+      vocabulary for wiping the rim or for setting the chalice along the mensa;
+      both are carried by the transitions and the object states.

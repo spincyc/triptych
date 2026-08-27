@@ -1,0 +1,482 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "19-dismissal-placeat-and-blessing"
+  title: "The dismissal, the Placeat and the blessing"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+  - "../../sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+  - "../../sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
+
+# depth_rank convention in this file: plano = 1, lowest altar step = 2,
+# predella = 3. Actors sharing a rank are at the same depth (INV-GEO-03).
+
+scenes:
+  - scene_id: "LM-138A"
+    order: 189
+    cluster: "LM-138"
+    title: "The final salutation at the centre"
+    kind: action
+    liturgical_moment: "The salutation before the dismissal"
+    text_cue: "Dominus vobiscum"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-137C"
+    successor: "LM-138B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the centre of the predella, turned to his right
+        toward the people, having just kissed the altar. Both servers are
+        still kneeling on the lowest altar step.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: people
+        gaze: people
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - altar-kiss
+          - turn-right
+        path:
+          from: predella-epistle-corner
+          to: predella-centre
+          note: "From the Epistle-side Missal back to the centre of the predella."
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Postcommunion."
+        state_after: "Open on the Epistle side; the priest has left it."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+    transitions:
+      - "The priest returns from the Epistle-side Missal to the centre of the predella."
+      - "He places his hands on the altar and kisses the altar."
+      - "He turns to his right toward the people and says 'Dominus vobiscum'."
+      - "The servers answer 'Et cum spiritu tuo' from their kneeling places."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo"
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Source: panel LM-138A/B, line 1 of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg` - "Priest
+      returns center - altar kiss - turns right - Dominus vobiscum." The
+      priest remains turned to the people for the dismissal that follows in
+      LM-138B on the baseline path.
+
+  - scene_id: "LM-138B"
+    order: 190
+    cluster: "LM-138"
+    title: "The 1962 dismissal"
+    kind: branch-point
+    liturgical_moment: "The dismissal"
+    text_cue: "Ite, missa est"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-138A"
+    successor: "LM-138C"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the centre of the predella facing the people and
+        says the dismissal. Both servers kneel on the lowest altar step and
+        answer. In the two variants he faces the ALTAR instead, not the
+        people.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: people
+        gaze: people
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+    transitions:
+      - "Still turned to the people, the priest says 'Ite, missa est'."
+      - "The servers answer 'Deo gratias' from their kneeling places."
+      - "The priest turns back to his left to the altar for the Placeat."
+    responses:
+      - actor: AC1
+        text: "Deo gratias"
+        voice: audible
+      - actor: AC2
+        text: "Deo gratias"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-NAME-01
+      - INV-END-01
+      - INV-OBJ-01
+    variants:
+      - id: "benedicamus-domino-function-follows"
+        kind: profile-parameter
+        applies_when: "FUNCTION-FOLLOWS"
+        description: >-
+          When a procession or another liturgical function immediately
+          follows the Mass, the priest says 'Benedicamus Domino' facing the
+          ALTAR instead of 'Ite, missa est' facing the people. There is no
+          blessing and no Last Gospel.
+        baseline: false
+      - id: "requiescant-in-pace-requiem"
+        kind: requiem
+        applies_when: "REQUIEM"
+        description: >-
+          At a Requiem the priest says 'Requiescant in pace' facing the
+          ALTAR; the server answers 'Amen'. There is no blessing. The Last
+          Gospel is omitted if the absolution over the catafalque follows,
+          and is otherwise said.
+        baseline: false
+    unresolved: []
+    notes: >-
+      THE 1962 DISMISSAL CORRECTION (INV-END-01). The dismissal is NOT chosen
+      by whether the Gloria in excelsis was said: the pre-1962 shortcut "no
+      Gloria = Benedicamus Domino" is NOT used in this corpus. The baseline
+      for an ordinary 1962 Mass is 'Ite, missa est' facing the people, with
+      the servers' 'Deo gratias'. 'Benedicamus Domino' is reserved to the
+      case where a procession or another function immediately follows, and
+      'Requiescant in pace' to a Requiem; both are recorded as variants with
+      `baseline: false` and neither may be promoted. This record agrees field
+      for field with `sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml`:
+      `normal_end` (dismissal ite_missa_est, blessing yes, last_gospel
+      normally_john_1_1_14), `function_follows_mass` (dismissal
+      benedicamus_domino, blessing no, last_gospel no) and `requiem`
+      (dismissal requiescant_in_pace, blessing no, last_gospel omitted only
+      if the absolution over the catafalque follows). Sources: panel
+      LM-138A/B and the "1962 DISMISSAL SANITY CHECK" block of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`. Vocabulary
+      note: `variant.kind` has no value for a purely circumstantial branch;
+      `profile-parameter` is used for the following-function case as the
+      nearest listed value.
+
+  - scene_id: "LM-138C"
+    order: 191
+    cluster: "LM-138"
+    title: "Placeat tibi and the altar kiss"
+    kind: action
+    liturgical_moment: "The prayer Placeat tibi"
+    text_cue: "Placeat tibi, sancta Trinitas"
+    voice: low
+    condition: "ALWAYS"
+    predecessor: "LM-138B"
+    successor: "LM-138D"
+    camera:
+      view: nave-front
+      note: >-
+        The drawable state is the medium bow of the body over the altar with
+        the joined hands resting on the edge of the mensa. The palms, the
+        kiss and the standing erect follow within the same scene.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: body-medium
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-at-mensa-edge, right: joined-at-mensa-edge}
+        gestures:
+          - altar-kiss
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: altar-cross
+        placement: altar-cross
+        orientation: upright
+        state_before: "At the centre of the altar."
+        state_after: "At the centre of the altar."
+        handled_by: none
+    transitions:
+      - "The priest, facing the altar at the centre of the predella, makes a medium bow of the body."
+      - "His joined hands rest on the edge of the altar and he says 'Placeat tibi, sancta Trinitas' in a low voice."
+      - "He then places his palms on the altar, kisses the altar, and stands erect."
+      - "Neither server moves; both remain kneeling on the lowest altar step."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The low voice is explicit in the approved storyboard - "prayer in low
+      voice" - and distinguishes this prayer from the audible dismissal that
+      precedes it and the audible blessing that follows. Source: panel
+      LM-138C/D, "PLACEAT TIBI" of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.
+
+  - scene_id: "LM-138D"
+    order: 192
+    cluster: "LM-138"
+    title: "Benedicat vos: the last blessing"
+    kind: action
+    liturgical_moment: "The last blessing"
+    text_cue: "Benedicat vos omnipotens Deus, Pater, et Filius, et Spiritus Sanctus"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-138C"
+    successor: "LM-139A"
+    camera:
+      view: nave-front
+      note: >-
+        The drawable state is the blessing itself: the priest turned to his
+        right toward the people, left hand on the breast, right hand tracing
+        a LARGE cross over the people. Both servers are still kneeling, bowed
+        and signing themselves; they rise only at the end of this scene.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: people
+        gaze: people
+        hands: {joined: false, left: on-breast, right: blessing}
+        gestures:
+          - raise-eyes
+          - extend-hands
+          - elevate-hands
+          - join-hands
+          - lower-hands
+          - turn-right
+          - bless-people
+          - turn-right
+        path:
+          from: predella-centre
+          to: predella-gospel-corner
+          note: >-
+            After the blessing the priest completes the circle to his RIGHT,
+            back toward the altar, and goes on to the Gospel side for the
+            Last Gospel. He does not turn back to his left.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: head-slight
+        facing: altar
+        gaze: downcast
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: head-slight
+        facing: altar
+        gaze: downcast
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures:
+          - sign-of-the-cross
+    objects:
+      - id: altar-cross
+        placement: altar-cross
+        orientation: upright
+        state_before: "At the centre of the altar."
+        state_after: >-
+          At the centre of the altar; the priest raised his eyes to it at the
+          beginning of the blessing.
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side; it is not carried to the Gospel side."
+        handled_by: none
+    transitions:
+      - "Standing erect at the centre, the priest raises his eyes to the cross."
+      - "He extends his hands, elevates them, joins them, and lowers them."
+      - "He bows his head at 'Deus'."
+      - "He turns to his right toward the people and places his left hand on his breast."
+      - "With his right hand he makes one LARGE sign of the cross over the people."
+      - "He completes the circle to his right, back toward the altar, and goes to the Gospel side."
+      - "The servers make a simple bow at 'Benedicat vos omnipotens Deus', sign themselves, and answer 'Amen'."
+      - "Both servers then stand for the Last Gospel."
+    responses:
+      - actor: AC1
+        text: "Amen"
+        voice: audible
+      - actor: AC2
+        text: "Amen"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants:
+      - id: "no-blessing-function-follows"
+        kind: profile-parameter
+        applies_when: "FUNCTION-FOLLOWS"
+        description: >-
+          When 'Benedicamus Domino' was said because a procession or another
+          liturgical function immediately follows, there is no blessing.
+        baseline: false
+      - id: "no-blessing-requiem"
+        kind: requiem
+        applies_when: "REQUIEM"
+        description: "At a Requiem, where 'Requiescant in pace' was said, there is no blessing."
+        baseline: false
+    unresolved:
+      - "The depth of the priest's bow at 'Deus' in the blessing formula is not fixed by the approved record."
+      - "The approved record specifies a 'simple bow' for the servers at 'Benedicat vos omnipotens Deus' without fixing its depth."
+    notes: >-
+      The rightward circle is choreographically load-bearing: `turn-right`
+      appears twice in the priest's gestures because he turns right to the
+      people to bless and then continues in the SAME direction to complete
+      the circle back toward the altar. Do not render him turning back to his
+      left. The cross over the people is LARGE, made with the right hand
+      while the left rests on the breast. The servers' 'simple bow' is
+      recorded as `head-slight`, the nearest listed value; `bow` has no
+      `head-simple`. The servers remain kneeling for the blessing and rise
+      only at the end of this scene, so that they are standing when LM-139A
+      begins. The two no-blessing variants agree with
+      `sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml` (`function_follows_mass`
+      blessing no; `requiem` blessing no). Source: panel LM-138C/D,
+      "BENEDICAT VOS" and "SERVERS" of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.

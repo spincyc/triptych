@@ -1,0 +1,71 @@
+schema: triptych.mass_pictographic.conditions
+version: "1.0"
+status: structural-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+provenance: repository-recovery-from-approved-baseline
+
+# Branch conditions. Every scene declares exactly one `condition`. A scene whose
+# condition is not ALWAYS belongs to a conditional block; the scene immediately
+# before that block declares `bypass_successor`, which names the scene the order
+# resumes at when the condition does not hold. `validate.py` proves that every
+# conditional block reconnects.
+
+conditions:
+  - id: ALWAYS
+    statement: Present in every celebration of the spoken 1962 Low Mass.
+
+  - id: GLORIA-PRESCRIBED
+    statement: The Gloria in excelsis is prescribed for this Mass.
+    note: >-
+      This condition governs only whether the Gloria in excelsis is said. It has
+      no bearing whatever on the dismissal; see INV-END-01.
+
+  - id: CREDO-PRESCRIBED
+    statement: The Credo is prescribed for this Mass.
+
+  - id: REQUIEM
+    statement: The Mass is a Requiem.
+
+  - id: NOT-REQUIEM
+    statement: The Mass is not a Requiem.
+
+  - id: PASSIONTIDE-OR-REQUIEM
+    statement: >-
+      The psalm doxology "Gloria Patri" is omitted, as in Passiontide and in
+      Requiem Masses.
+
+  - id: LENTEN-FERIAL
+    statement: >-
+      A Lenten ferial day from Ash Wednesday through Wednesday of Holy Week, on
+      which the Oratio super populum follows the Postcommunion.
+
+  - id: FUNCTION-FOLLOWS
+    statement: >-
+      A procession or another liturgical function immediately follows the Mass.
+
+  - id: LAST-GOSPEL-PROPER
+    statement: >-
+      A Mass with a proper Last Gospel rather than John 1:1-14, as on Palm
+      Sunday when the Mass does not follow the blessing of palms.
+
+  - id: LAST-GOSPEL-OMITTED
+    statement: >-
+      A Mass from which the Last Gospel is omitted, including the third Mass of
+      Christmas, the Easter Vigil Mass, a Mass followed by an incompatible
+      function after "Benedicamus Domino", and a Requiem followed by the
+      absolution over the catafalque.
+
+  - id: LEONINE-PRESCRIBED
+    statement: >-
+      The serving profile prescribes the Leonine prayers and no incompatible
+      function follows the Mass.
+
+  - id: BLESSED-SACRAMENT-EXPOSED
+    statement: >-
+      The Blessed Sacrament is exposed, which alters the direction of the
+      prescribed bows.
+    note: >-
+      Retained as a declared variant condition only. The approved baseline does
+      not depict this case; see the variants that reference it.

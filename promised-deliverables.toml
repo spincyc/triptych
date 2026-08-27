@@ -1539,3 +1539,58 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/handoff/PLAN-OUTLINE.md",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-low-mass-scene-corpus"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/schema.md"
+promise = "Recover the whole approved spoken 1962 Roman Low Mass with two servers as a deterministic, machine-readable scene-by-scene structural corpus, covering the Prayers at the Foot through the Leonine prayers appendix, so a later artistic-rendering lane can stage every approved scene without re-deriving choreography from prose, review images, or the older altar-server guides."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "approved-baseline-preserved"
+  criterion = "The approved choreography that governs the recovery is preserved verbatim in the repository as a durable record, with its provenance and its non-authority over the older altar-server guides stated."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/recovery/approved-choreography-baseline.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/recovery/recovery-notes.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "scene-schema-and-vocabulary"
+  criterion = "A tracked schema document defines every scene field, its controlled vocabulary, the sanctuary coordinate frame, the global invariants with their scene ranges, and the branch conditions."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/schema.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/geometry.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/invariants.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/conditions.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-scene-coverage"
+  criterion = "A canonical inventory enumerates every approved scene of the spoken Low Mass in order from the Prayers at the Foot to the final appendix, each scene ID occurring exactly once, each implemented by a tracked scene record carrying actors, postures, facing, hands, object state and orientation, transitions, responses, bells, invariants, and branch linkage."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/inventory.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes/sections",
+  ]
+
+  [[deliverables.requirements]]
+  id = "invariant-contradiction-guard"
+  criterion = "The validator rejects every named stale contradiction of the approved baseline, and repository prose that retains such a contradiction is fenced as historical or superseded where a reader of that file can see it."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/validate.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/VALIDATION.md",
+    "tools/tests/test_mass_pictographic_corpus.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "scene-corpus-validated"
+  criterion = "Every canonical YAML parses, every canonical SVG is valid XML and raster-renders, scene order and conditional reconnection are coherent, checksums cover the authored corpus, and no corpus reference dangles."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/MANIFEST-AUTHORED.sha256",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/storyboards",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/render-storyboards.py",
+  ]

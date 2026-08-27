@@ -1,0 +1,959 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "04-epistle-and-missal-transfer"
+  title: "The Epistle and the Missal transfer"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-029A"
+    order: 42
+    cluster: "LM-029"
+    title: "The Epistle read at the Epistle-side Missal"
+    kind: action
+    liturgical_moment: "The Epistle"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-028B"
+    successor: "LM-030A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest is at the Epistle corner of the predella, both hands on the
+        open Missal. Both servers kneel at the lowest step, one to each side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: false, left: on-missal, right: on-missal}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the Collect, oriented so that the priest reading it is turned toward his left."
+        state_after: "Open on the Epistle side at the Epistle, still oriented so that the priest reading it is turned toward his left."
+        handled_by: priest
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar from the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal, with the purificator, paten, Host and pall upon it."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest stands at the open Missal at the Epistle corner of the predella and reads the Epistle."
+      - "Both of his hands rest on the Missal throughout the reading; they are not joined and are not raised."
+      - "Both servers remain kneeling at the lowest altar step, AC1 on the Epistle side and AC2 on the Gospel side."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The Missal was placed and opened on the Epistle side before the priest
+      descended for the Prayers at the Foot; it is not placed or opened on
+      camera here. Its reading orientation is unchanged from the Introit.
+  - scene_id: "LM-030A"
+    order: 43
+    cluster: "LM-030"
+    title: "Deo gratias and the transfer cue"
+    kind: response
+    liturgical_moment: "The response to the Epistle"
+    text_cue: "Deo gratias."
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-029A"
+    successor: "LM-031A"
+    camera:
+      view: nave-front
+      note: >-
+        The Epistle is finished. The priest stands at the Missal; both servers
+        are still kneeling as they answer.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: missal
+        hands: {joined: false, left: on-missal, right: on-missal}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side at the end of the Epistle."
+        state_after: "Open on the Epistle side, ready to be taken up by AC1."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The Epistle ends and the servers answer from their kneeling places."
+      - "The priest remains at the Epistle-side Missal; the response is the servers' act, not his."
+    responses:
+      - actor: AC1
+        text: "Deo gratias."
+        voice: audible
+      - actor: AC2
+        text: "Deo gratias."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The priest may signal the Missal transfer by placing his left hand on the altar, but this cue is not universal; whether it is made, and at what moment, is a serving-profile parameter the approved record deliberately left open. It is therefore not depicted as a fixed gesture in the baseline."
+    notes: >-
+      Both servers answer together. The transfer that follows begins on the
+      servers' side of the sanctuary, not on a fixed priestly gesture.
+  - scene_id: "LM-031A"
+    order: 44
+    cluster: "LM-031"
+    title: "AC1 stages for the Missal transfer"
+    kind: action
+    liturgical_moment: "Preparation for the transfer of the Missal before the Gospel"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-030A"
+    successor: "LM-032A"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 alone has risen, on the Epistle side. AC2 is still kneeling on the
+        Gospel side and does not move.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: missal
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side, about to be taken up."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "AC1, the Epistle-side acolyte, rises from his kneeling place at the lowest altar step on the Epistle side and stands there."
+      - "AC1 alone stages for the transfer: it is his office, and no part of it passes to AC2."
+      - "AC2 remains kneeling in his ordinary place on the Gospel side and does not move toward the Missal."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-02
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Locked role correction: the pre-Gospel Missal transfer belongs to AC1,
+      the Epistle-side acolyte. AC2 does not handle the Missal at any point in
+      this section.
+  - scene_id: "LM-032A"
+    order: 45
+    cluster: "LM-032"
+    title: "AC1 lifts the open Missal on the Epistle side"
+    kind: action
+    liturgical_moment: "The transfer of the Missal from the Epistle side to the Gospel side"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-031A"
+    successor: "LM-032B"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 has come up to the step below the predella on the Epistle side and
+        takes the open Missal in both hands without closing or turning it.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-epistle
+        side: epistle
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: missal
+        hands: {joined: false, left: holding-missal, right: holding-missal}
+        gestures: []
+        path:
+          from: step-1-epistle
+          to: step-3-epistle
+          note: >-
+            AC1 goes up the altar steps on the Epistle side as far as the step
+            immediately below the predella, and takes the Missal from there.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: "Held open in AC1's two hands, before his breast, at the Epistle side."
+        orientation: priest-reads-facing-left
+        state_before: "Open on the mensa at the Epistle corner."
+        state_after: "Open in AC1's hands, still at the page of the Gospel-side reading order, and still oriented so that the priest reading it is turned toward his left."
+        handled_by: AC1
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "AC1 ascends on the Epistle side to the step immediately below the predella."
+      - "AC1 takes the Missal in both hands and lifts it from the mensa, leaving it open."
+      - "The Missal is neither closed nor turned: it keeps the orientation in which the priest reading it is turned toward his left."
+      - "AC2 does not rise and does not touch the Missal."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-02
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "Whether AC1 carries the Missal stand across with the open Missal, or the Gospel corner of the altar is already furnished with its own stand, is a serving-profile parameter the approved record does not settle."
+    notes: >-
+      The Missal is carried open. Nothing about the carriage changes its
+      reading orientation.
+  - scene_id: "LM-032B"
+    order: 46
+    cluster: "LM-032"
+    title: "AC1 crosses the centre with the Missal"
+    kind: transition
+    liturgical_moment: "The transfer of the Missal from the Epistle side to the Gospel side"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-032A"
+    successor: "LM-033A"
+    camera:
+      view: nave-front
+      note: >-
+        The centre genuflection on AC1's path. He is below the lowest step, at
+        the centre, the open Missal held in both hands before his breast.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-centre
+        side: centre
+        depth_rank: 1
+        posture: genuflecting
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: holding-missal, right: holding-missal}
+        gestures:
+          - genuflect
+        path:
+          from: step-3-epistle
+          to: plano-centre
+          via:
+            - step-1-epistle
+            - plano-epistle
+          note: >-
+            AC1 comes down the altar steps on the Epistle side to the floor
+            below them, then crosses to the centre, where he genuflects before
+            continuing to the Gospel side.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: "Held open in AC1's two hands, before his breast, at the centre below the altar steps."
+        orientation: priest-reads-facing-left
+        state_before: "Open in AC1's hands on the Epistle side."
+        state_after: "Open in AC1's hands at the centre, its reading orientation unchanged by the crossing."
+        handled_by: AC1
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "AC1 descends the altar steps on the Epistle side, carrying the open Missal in both hands."
+      - "At the centre, below the lowest step, AC1 genuflects with the Missal held before his breast."
+      - "He does not set the Missal down, does not close it, and does not turn it as he genuflects."
+      - "AC2 remains kneeling on the Gospel side throughout the crossing."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-02
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      This is the centre genuflection on AC1's transfer path. The approved
+      record fixes the path and the orientation of the book; the genuflection
+      is depicted below the lowest altar step, at the centre.
+  - scene_id: "LM-033A"
+    order: 47
+    cluster: "LM-033"
+    title: "The Missal placed on the Gospel side"
+    kind: action
+    liturgical_moment: "The transfer of the Missal from the Epistle side to the Gospel side"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-032B"
+    successor: "LM-034A"
+    camera:
+      view: nave-front
+      note: >-
+        AC1 has come up on the Gospel side and sets the open Missal on its
+        stand at the Gospel corner of the mensa, turned exactly as it was on
+        the Epistle side.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-epistle-corner
+        side: epistle
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-gospel
+        side: gospel
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: missal
+        hands: {joined: false, left: holding-missal, right: holding-missal}
+        gestures: []
+        path:
+          from: plano-centre
+          to: step-3-gospel
+          via:
+            - plano-gospel
+          note: >-
+            After the centre genuflection AC1 crosses to the Gospel side and
+            goes up to the step immediately below the predella, from which he
+            places the Missal at the Gospel corner of the mensa.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-gospel-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open in AC1's hands at the centre below the altar steps."
+        state_after: "Open on its stand at the Gospel corner of the mensa, oriented so that the priest reading it is turned toward his left. It is not mirrored because it has changed sides."
+        handled_by: AC1
+      - id: missal-stand
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "At the Gospel corner of the mensa, ready to receive the Missal."
+        state_after: "At the Gospel corner of the mensa, bearing the open Missal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "AC1 goes up on the Gospel side and places the open Missal on its stand at the Gospel corner of the mensa."
+      - "The Missal keeps the orientation it had on the Epistle side: the priest who reads it is turned toward his left. It is not mirrored because it moved."
+      - "AC1 alone has handled the Missal; AC2 has not touched it and is still kneeling."
+      - "AC1 stays for the moment where he has placed the book, on the step below the predella on the Gospel side."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-ROLE-02
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Missal placement side and reading orientation are independent. Whether
+      the stand travelled with the book or was already at the Gospel corner is
+      recorded as unsettled on LM-032A; either way the book rests on a stand
+      here, and its reading orientation is the Epistle-side one.
+  - scene_id: "LM-034A"
+    order: 48
+    cluster: "LM-034"
+    title: "Munda cor meum: eyes raised to the cross and lowered"
+    kind: action
+    liturgical_moment: "Munda cor meum, at the centre of the altar"
+    voice: none
+    condition: "ALWAYS"
+    predecessor: "LM-033A"
+    successor: "LM-034B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest has come to the centre of the predella. He is upright, hands
+        joined before his breast and clear of the altar, his eyes first to the
+        cross and then lowered.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - raise-eyes
+          - lower-eyes
+        path:
+          from: predella-epistle-corner
+          to: predella-centre
+          note: >-
+            The priest leaves the now empty Epistle corner and comes to the
+            centre of the predella for Munda cor meum.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-gospel
+        side: gospel
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-gospel-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on its stand at the Gospel corner of the mensa."
+        state_after: "Open on its stand at the Gospel corner of the mensa, untouched."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "At the Gospel corner of the mensa, bearing the open Missal."
+        state_after: "At the Gospel corner of the mensa, bearing the open Missal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest goes from the Epistle corner of the predella to the centre."
+      - "Standing at the centre he first raises his eyes to the cross."
+      - "He then lowers his eyes."
+      - "His hands are joined before his breast and are NOT resting on the altar at any point of this moment."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Munda cor meum is said at the CENTRE of the altar, not at the Missal. The
+      order is exact: eyes raised to the cross, then lowered, and only then the
+      profound bow of the body in LM-034B. The joined hands are held before the
+      breast and are not resting on the altar.
+  - scene_id: "LM-034B"
+    order: 49
+    cluster: "LM-034"
+    title: "Munda cor meum said in a profound body bow"
+    kind: action
+    liturgical_moment: "Munda cor meum, Jube Domine, Dominus sit in corde meo"
+    text_cue: "Munda cor meum ac labia mea, omnipotens Deus."
+    voice: secret
+    condition: "ALWAYS"
+    predecessor: "LM-034A"
+    successor: "LM-035A"
+    camera:
+      view: nave-front
+      note: >-
+        A profound bow of the body at the centre of the predella. The joined
+        hands stay before the breast, clear of the mensa; nothing rests on the
+        altar.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 4
+        posture: standing
+        bow: body-profound
+        facing: altar-cross
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-gospel
+        side: gospel
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: kneeling
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-gospel-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on its stand at the Gospel corner of the mensa."
+        state_after: "Open on its stand at the Gospel corner of the mensa, untouched."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "At the Gospel corner of the mensa, bearing the open Missal."
+        state_after: "At the Gospel corner of the mensa, bearing the open Missal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "Still at the centre, the priest makes a profound bow of the body."
+      - "So bowed he says Munda cor meum, then Jube, Domine, benedicere, then Dominus sit in corde meo et in labiis meis."
+      - "His hands remain joined before his breast and are NOT resting on the altar."
+      - "The servers do not answer here; both remain as they are."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Three prayers are said in this one bow: Munda cor meum, Jube Domine and
+      Dominus sit in corde meo. The bow is of the body and is profound, and the
+      hands are joined and not resting on the altar.
+  - scene_id: "LM-035A"
+    order: 50
+    cluster: "LM-035"
+    title: "The priest moves to the Gospel-side Missal"
+    kind: transition
+    liturgical_moment: "Dominus vobiscum before the Gospel"
+    text_cue: "Dominus vobiscum."
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-034B"
+    successor: "LM-036A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the Gospel corner of the predella, set DIAGONALLY
+        to the altar rather than square to it, hands joined, the open Missal
+        before him.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-gospel-corner
+        side: gospel
+        depth_rank: 4
+        posture: standing
+        bow: none
+        facing: missal
+        gaze: downcast
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+        path:
+          from: predella-centre
+          to: predella-gospel-corner
+          note: >-
+            The priest goes from the centre of the predella to the Gospel
+            corner and there stands diagonally to the altar, not square to it.
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-3-gospel
+        side: gospel
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: gospel
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: gospel
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-gospel-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on its stand at the Gospel corner of the mensa."
+        state_after: "Open on its stand at the Gospel corner, the priest now standing at it."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "At the Gospel corner of the mensa, bearing the open Missal."
+        state_after: "At the Gospel corner of the mensa, bearing the open Missal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest goes from the centre to the Gospel-side Missal."
+      - "At the Missal he stands DIAGONALLY to the altar, not square to it, his hands joined."
+      - "The Missal keeps its left-reading orientation: the priest at it is turned toward his left."
+      - "He says Dominus vobiscum without turning to the people."
+      - "AC2 rises; both servers now stand for the Gospel, facing the Gospel side."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo."
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo."
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The diagonal stance at the Gospel-side Missal is approved and structural:
+      the priest's body is set at an angle to the altar, and the book is not
+      mirrored to meet him. AC1 is still on the Gospel side where he placed the
+      book; his return is LM-040A.

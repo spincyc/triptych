@@ -1,8 +1,19 @@
 # Spoken 1962 Low Mass structural checkpoint v0.21
 
-Status: **structural pass complete and human-approved through v0.21**.
+Status: **structural pass complete and human-approved through v0.21, and the
+detailed scene corpus is complete**.
 
 Publication-quality artistic rendering: **not started**.
+
+This directory holds two layers, and the distinction is load-bearing. The
+**transported** layer — `handoff/`, `sources/`, `review/`, `review-history/`
+and `transport-originals/` — is supplied bytes, preserved unchanged. The
+**repository-owned** layer — this file, `VALIDATION.md`, `corpus.yaml`,
+`MANIFEST.sha256`, `validate.py`, and the later `scenes/`, `recovery/`,
+`storyboards/` and `render-storyboards.py` — is written here. Every authored
+file says so in its own `provenance` field, and the authored corpus is
+checksummed separately in `MANIFEST-AUTHORED.sha256` rather than folded into the
+transport manifest. See [`recovery/recovery-notes.md`](recovery/recovery-notes.md).
 
 This directory preserves the useful contents of the supplied
 `mass-pictographic-handoff-v0.21.tar.gz` package and adds repository-owned
@@ -16,16 +27,24 @@ under `sources/` has the minimal serialization repair described below.
 
 1. [`handoff/HANDOFF-SUMMARY.md`](handoff/HANDOFF-SUMMARY.md) is the
    authoritative approval record for this checkpoint.
-2. [`corpus.yaml`](corpus.yaml) classifies the retained files and maps their
+2. [`recovery/approved-choreography-baseline.md`](recovery/approved-choreography-baseline.md)
+   preserves the approved scene-by-scene choreography verbatim. It refines the
+   handoff summary and never overrides it.
+3. [`scenes/`](scenes/) is the machine-readable structural corpus recovered
+   from 1 and 2. [`scenes/inventory.yaml`](scenes/inventory.yaml) is its spine:
+   every canonical scene exactly once, in reading order.
+4. [`corpus.yaml`](corpus.yaml) classifies the retained files and maps their
    scene coverage without changing the imported bytes.
-3. `sources/` contains the current machine-readable YAML and deterministic SVG
+5. `sources/` contains the current machine-readable YAML and deterministic SVG
    supplied in the handoff.
-4. `review/current/` contains durable raster review projections. They help a
+6. `storyboards/` contains structural review projections generated from
+   `scenes/`. They are regenerated, never hand-edited, and never authority.
+7. `review/current/` contains durable raster review projections. They help a
    later agent see what was approved, but do not replace the structured
    sources.
-5. `review-history/` contains useful superseded projections. Nothing in that
+8. `review-history/` contains useful superseded projections. Nothing in that
    directory may control choreography, object state, or a new render.
-6. `transport-originals/` preserves a byte-identical supplied file when a
+9. `transport-originals/` preserves a byte-identical supplied file when a
    parsing defect required a distinct canonical copy.
 
 The embedded `status: structural-review` in
@@ -107,31 +126,54 @@ Historical review records:
   choreography.
 
 The handoff certifies completion of the whole structural pass, but the
-transport archive contains standalone detailed assets only for late scenes,
-concentrated on LM-134 through LM-140. Earlier approved scenes are attested by
-the handoff summary but are not present in this package as standalone YAML,
-SVG, or PNG files. A future lane must not substitute the older sibling
-`altar-server-guides/` records for those absent files without a separate human
-reconciliation.
+transport archive contained standalone detailed assets only for late scenes,
+concentrated on LM-134 through LM-140. Earlier approved scenes were attested by
+the handoff summary alone and were not present in the package as standalone
+YAML, SVG, or PNG files.
+
+That gap is closed. `scenes/` now carries the whole spoken Low Mass as
+machine-readable scene records, recovered from the handoff summary and the
+preserved approved choreography. The older sibling `altar-server-guides/`
+records were **not** used, and must still never be substituted for approved
+material without a separate human reconciliation. They now carry a
+`Historical / pre-v0.21` notice in their own text so that fence is visible from
+inside each of them.
 
 ## Validation
 
-From the repository root, run:
+From this directory, run:
 
 ```sh
-src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/validate.py
+./validate.py              # the whole checkpoint, transported and authored
+./render-storyboards.py --check   # prove the storyboards match the corpus
 ```
 
-The validator parses the canonical YAML and SVG, checks retained-asset hashes,
-resolves the manifest's cross-file links, compares SVG and projection scene
-IDs, and asserts the structured state against the approved handoff invariants.
-See `VALIDATION.md` for image checks, the contradiction audit, and the inherited
-repository-wide check baseline.
+Both also run from the repository root by their full path.
+
+For the transported checkpoint the validator parses the canonical YAML and SVG,
+checks retained-asset hashes, resolves the manifest's cross-file links,
+compares SVG and projection scene IDs, and asserts the structured state against
+the approved handoff invariants.
+
+For the recovered corpus it additionally proves that `scenes/inventory.yaml`
+and the section files implement each other exactly; that `order` is dense and
+the predecessor/successor chain is coherent; that every conditional block
+reconnects through a declared `bypass_successor`; that every enumerated value,
+anchor, viewpoint, condition and invariant resolves; that each scene lists all
+three actors and cites only invariants that govern its cluster; and that no
+scene asserts any of the named stale contradictions — the rejected bell
+groupings, the wrong Missal or ablution roles, the wrong crossing order, a
+priest-only Indulgentiam, the Gloria at the Missal, a corporal unfolded at the
+Offertory, or a Gloria-conditioned dismissal.
+
+See `VALIDATION.md` for image checks, the contradiction audit, and the
+inherited repository-wide check baseline.
 
 ## Next artistic lane
 
-The next fresh human-guided session should consume `sources/`, the current
-review projections, and the handoff summary. It should begin with a sanctuary
+The next fresh human-guided session should consume `scenes/inventory.yaml` in
+`order`, the scene records it names, `sources/`, the current review
+projections, and the handoff summary. It should begin with a sanctuary
 master/style anchor and then proceed through opening rites, ascent and
 ordinary, readings, Offertory, Canon and Consecration, Communion and ablutions,
 and concluding rites. Every resulting plate must retain its structural scene

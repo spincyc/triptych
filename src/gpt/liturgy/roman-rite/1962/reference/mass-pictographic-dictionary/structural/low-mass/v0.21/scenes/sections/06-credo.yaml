@@ -1,0 +1,899 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "06-credo"
+  title: "The Credo"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+
+scenes:
+  - scene_id: "LM-044A"
+    order: 62
+    cluster: "LM-044"
+    title: "Credo in unum Deum: the opening gesture"
+    kind: action
+    liturgical_moment: "The Credo"
+    text_cue: "Credo in unum Deum"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-043A"
+    successor: "LM-044B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the centre of the predella with his feet fixed
+        there. Both servers remain kneeling on the lowest altar step, AC2 on
+        the Gospel side and AC1 on the Epistle side. The depicted instant is
+        the elevation of the extended hands.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: elevated, right: elevated}
+        gestures: [extend-hands, elevate-hands, join-hands, lower-hands]
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, standing near the centre of the altar just left of the corporal, where it was moved with its stand after the Gospel."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre of the altar, just left of the corporal, carrying the open Missal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar since the beginning of Mass."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal, carrying the purificator, the paten with the Host, and the pall."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest, standing at the centre with his feet fixed there, extends his hands."
+      - "He elevates the extended hands."
+      - "He rejoins his hands."
+      - "He lowers the joined hands to his breast."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The whole Credo cluster is conditional on CREDO-PRESCRIBED. When the
+      Credo is not prescribed the order does not enter this section at all; it
+      passes from LM-043A directly to LM-050A by that scene's
+      bypass_successor. The depicted instant of this scene is the elevation of
+      the extended hands; by the end of the scene the hands are rejoined and
+      lowered to the breast, which is the state LM-044B opens in. The Credo is
+      said at the centre with the feet fixed there; the Missal stands near the
+      centre just left of the corporal, within reach, and is not moved.
+  - scene_id: "LM-044B"
+    order: 63
+    cluster: "LM-044"
+    title: "The profound head bow at Deum"
+    kind: action
+    liturgical_moment: "The Credo"
+    text_cue: "Credo in unum Deum"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-044A"
+    successor: "LM-045A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest's joined hands rest at his breast and his head is
+        profoundly inclined toward the altar cross. Both servers stay kneeling
+        and incline the head only slightly.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: head-profound
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At \"Deum\" the priest makes a profound head bow toward the altar cross, his joined hands remaining at his breast."
+      - "Both servers remain kneeling and make a slight bow at \"Deum\"."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The servers' bow here is the approved record's "slight bow", encoded as
+      head-slight. It inclines the head only; they stay kneeling and do not
+      change place.
+  - scene_id: "LM-045A"
+    order: 64
+    cluster: "LM-045"
+    title: "The head bow at Jesum Christum"
+    kind: action
+    liturgical_moment: "The Credo"
+    text_cue: "Et in unum Dominum Jesum Christum"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-044B"
+    successor: "LM-046A"
+    camera:
+      view: nave-front
+      note: >-
+        Identical staging to LM-044B. Nothing but the inclination of the three
+        heads distinguishes this plate; no actor is at a different place.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: head-profound
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At \"Jesum Christum\" the priest makes a profound head bow toward the altar cross."
+      - "Both servers make a slight bow."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      No actor changes position at "Jesum Christum". The priest's feet stay
+      fixed at the centre of the predella and both servers stay kneeling at
+      their ordinary places on the lowest step. Only the heads incline: the
+      priest profoundly, the servers slightly.
+  - scene_id: "LM-046A"
+    order: 65
+    cluster: "LM-046"
+    title: "Et incarnatus est: hands on the mensa and the genuflection"
+    kind: action
+    liturgical_moment: "The Credo — the Incarnation"
+    text_cue: "Et incarnatus est de Spiritu Sancto ex Maria Virgine"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-045A"
+    successor: "LM-046B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest genuflects at the centre of the predella with both palms
+        flat on the mensa outside the corporal. Both servers are still
+        kneeling on the lowest step, heads moderately bowed. No server
+        genuflects.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: genuflecting
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: palm-on-mensa-outside-corporal, right: palm-on-mensa-outside-corporal}
+        gestures: [genuflect]
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar; the priest's palms rest on the mensa outside it, not upon it."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "After \"descendit de caelis\" the priest places both hands flat on the mensa, outside the corporal."
+      - "He genuflects at the centre of the predella."
+      - "Both servers remain kneeling and make a moderate bow."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Approved correction, not to be lost: the servers REMAIN KNEELING through
+      the Incarnation and make a MODERATE bow (head-moderate). They do NOT
+      attempt a second genuflection while already kneeling. Only the priest
+      genuflects, and he does so with both hands on the mensa outside the
+      corporal. The genuflection begins after "descendit de caelis" and is
+      held through "Et homo factus est"; LM-046B depicts the held state.
+  - scene_id: "LM-046B"
+    order: 66
+    cluster: "LM-046"
+    title: "The genuflection held through Et homo factus est"
+    kind: state
+    liturgical_moment: "The Credo — the Incarnation"
+    text_cue: "Et homo factus est"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-046A"
+    successor: "LM-047A"
+    camera:
+      view: nave-front
+      note: >-
+        The held state of the Incarnation. The priest is still genuflected,
+        both palms on the mensa outside the corporal; both servers are still
+        kneeling with heads moderately bowed.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: genuflecting
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: palm-on-mensa-outside-corporal, right: palm-on-mensa-outside-corporal}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-moderate
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest remains genuflected, hands still on the mensa, through \"Et homo factus est\"."
+      - "Both servers remain kneeling with a moderate bow; neither genuflects."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Approved correction, restated so it cannot be lost between plates: the
+      servers do NOT attempt a second genuflection while already kneeling.
+      They remain kneeling with a moderate bow for the whole span from
+      "descendit de caelis" through "Et homo factus est". The genuflection is
+      held, not repeated: this scene adds no new gesture.
+  - scene_id: "LM-047A"
+    order: 67
+    cluster: "LM-047"
+    title: "The priest rises and rejoins his hands"
+    kind: action
+    liturgical_moment: "The Credo"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-046B"
+    successor: "LM-048A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest is upright again at the centre of the predella, hands
+        rejoined before his breast and clear of the mensa. Both servers are
+        kneeling erect once more.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: [join-hands]
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar, the priest's palms on the mensa beside it."
+        state_after: "Unfolded at the centre of the altar; the priest's hands have left the mensa."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "The priest rises from the genuflection, lifting both hands from the mensa."
+      - "He rejoins his hands before his breast."
+      - "Both servers come erect from their moderate bow and remain kneeling."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record fixes that the priest remains genuflected through 'Et homo factus est' and then rises, but does not name the words at which he rises; no text_cue is therefore asserted for this scene."
+      - "The approved record does not say at which words the servers come erect from their moderate bow."
+    notes: >-
+      The priest's feet have not moved: he rises in place at the centre of the
+      predella. The servers' posture is recorded as kneeling-erect to make
+      clear that they are kneeling upright again rather than newly bowed; they
+      have been kneeling continuously since before the Credo began.
+  - scene_id: "LM-048A"
+    order: 68
+    cluster: "LM-048"
+    title: "The head bow at simul adoratur"
+    kind: action
+    liturgical_moment: "The Credo"
+    text_cue: "Qui cum Patre et Filio simul adoratur, et conglorificatur"
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-047A"
+    successor: "LM-049A"
+    camera:
+      view: nave-front
+      note: >-
+        The priest's head is profoundly inclined toward the altar cross, hands
+        joined at the breast; both servers kneel with a slight bow.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: head-profound
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling
+        bow: head-slight
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures: []
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At \"simul adoratur\" the priest makes a profound head bow toward the altar cross."
+      - "Both servers make a slight bow while kneeling."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      Neither the priest's feet nor the servers' places change. The bow is of
+      the head only, toward the cross.
+  - scene_id: "LM-049A"
+    order: 69
+    cluster: "LM-049"
+    title: "Et vitam venturi saeculi: all three sign themselves"
+    kind: action
+    liturgical_moment: "The Credo — conclusion"
+    text_cue: "Et vitam venturi saeculi. Amen."
+    voice: audible
+    condition: "CREDO-PRESCRIBED"
+    predecessor: "LM-048A"
+    successor: "LM-050A"
+    camera:
+      view: nave-front
+      note: >-
+        All three figures sign themselves at once: the priest upright at the
+        centre of the predella, AC2 kneeling on the Gospel side and AC1
+        kneeling on the Epistle side. The plate must show three right hands in
+        the sign, not one.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-centre
+        side: centre
+        depth_rank: 2
+        posture: standing
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures: [sign-of-the-cross]
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: step-1-epistle
+        side: epistle
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures: [sign-of-the-cross]
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: step-1-gospel
+        side: gospel
+        depth_rank: 1
+        posture: kneeling-erect
+        bow: none
+        facing: altar-cross
+        gaze: cross
+        hands: {joined: false, left: on-breast, right: signing}
+        gestures: [sign-of-the-cross]
+    objects:
+      - id: missal
+        placement: mensa-centre
+        orientation: priest-reads-facing-left
+        state_before: "Open, near the centre just left of the corporal."
+        state_after: "Open, near the centre just left of the corporal."
+        handled_by: none
+      - id: missal-stand
+        placement: mensa-centre
+        orientation: not-applicable
+        state_before: "Near the centre, just left of the corporal."
+        state_after: "Near the centre, just left of the corporal."
+        handled_by: none
+      - id: corporal
+        placement: mensa-centre
+        orientation: unfolded
+        state_before: "Unfolded at the centre of the altar."
+        state_after: "Unfolded at the centre of the altar."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Empty and veiled on the corporal."
+        state_after: "Empty and veiled on the corporal."
+        handled_by: none
+      - id: chalice-veil
+        placement: corporal-back-centre
+        orientation: not-applicable
+        state_before: "Covering the chalice and the stack upon it."
+        state_after: "Covering the chalice and the stack upon it."
+        handled_by: none
+      - id: burse
+        placement: mensa-gospel
+        orientation: not-applicable
+        state_before: "Empty, on the Gospel side."
+        state_after: "Empty, on the Gospel side."
+        handled_by: none
+    transitions:
+      - "At \"Et vitam venturi saeculi. Amen.\" the priest makes the sign of the cross."
+      - "AC1 makes the sign of the cross at the same words."
+      - "AC2 makes the sign of the cross at the same words."
+      - "The Credo ends; the order rejoins the common path at the convergence into the Offertory."
+    responses: []
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved:
+      - "The approved record does not fix the position of the left hand during this sign of the cross, for the priest or for either server."
+    notes: >-
+      The approved record is explicit that the priest AND AC1 AND AC2 all make
+      the sign of the cross here; a priest-only sign would be wrong. The left
+      hand is drawn on the breast, following the only place the approved
+      record fixes a left-hand position during a sign of the cross (the
+      Introit sign, where the priest's left hand rests on the breast); the
+      record does not restate it here, which is why it is listed as
+      unresolved. Both branches meet at LM-050A: this scene's successor is the
+      same scene LM-043A names as its bypass_successor when the Credo is not
+      prescribed.

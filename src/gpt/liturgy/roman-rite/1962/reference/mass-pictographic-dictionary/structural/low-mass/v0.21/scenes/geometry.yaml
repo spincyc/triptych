@@ -1,0 +1,236 @@
+schema: triptych.mass_pictographic.geometry
+version: "1.0"
+status: structural-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+provenance: repository-recovery-from-approved-baseline
+
+# Dimensionless synthetic scene coordinates. These are NOT metres and must not
+# be read as a physical measurement of any real sanctuary. They exist so that a
+# later rendering agent can stage a scene deterministically and can reason about
+# left/right, depth, and height without re-deriving them from prose.
+
+frame:
+  description: >-
+    Canonical view is the nave facing the altar. The origin is the centre of the
+    lowest floor level (in plano) directly in front of the altar.
+  axes:
+    x:
+      meaning: viewer left/right in the canonical nave-facing view
+      negative: gospel-side
+      positive: epistle-side
+      note: >-
+        Gospel side is viewer LEFT and Epistle side is viewer RIGHT. Secondary
+        views may crop or move the camera but must never change this world-space
+        assignment.
+    y:
+      meaning: depth away from the viewer, toward the altar
+      positive: toward-the-altar
+      note: >-
+        Two actors with the same y are at the same depth. A true side
+        orthographic view collapses them; that is correct and must not be
+        "fixed" by inventing a front/back offset.
+    z:
+      meaning: height above the sanctuary floor
+      positive: up
+
+altar:
+  kind: fixed-traditional-high-altar
+  steps: 3
+  predella: true
+  note: All three full altar steps and the predella are always depicted.
+
+levels:
+  - id: plano
+    z: 0.0
+    description: sanctuary floor below the altar steps
+  - id: step-1
+    z: 0.25
+    description: lowest altar step; the acolytes' ordinary kneeling level
+  - id: step-2
+    z: 0.50
+    description: middle altar step
+  - id: step-3
+    z: 0.75
+    description: highest altar step, immediately below the predella
+  - id: predella
+    z: 1.00
+    description: platform on which the priest stands at the altar
+
+lateral_positions:
+  - id: gospel
+    x: -1.0
+  - id: gospel-inner
+    x: -0.5
+  - id: centre
+    x: 0.0
+  - id: epistle-inner
+    x: 0.5
+  - id: epistle
+    x: 1.0
+
+anchors:
+  - id: plano-centre
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    level: plano
+    side: centre
+  - id: plano-gospel
+    x: -0.5
+    y: 0.0
+    z: 0.0
+    level: plano
+    side: gospel
+  - id: plano-epistle
+    x: 0.5
+    y: 0.0
+    z: 0.0
+    level: plano
+    side: epistle
+  - id: plano-centre-gospel
+    x: -0.18
+    y: 0.0
+    z: 0.0
+    level: plano
+    side: gospel
+    description: >-
+      The Gospel half of the pair position where the two acolytes meet at the
+      centre below the steps to genuflect together. Paired with
+      plano-centre-epistle at the same depth, so a side view collapses them.
+  - id: plano-centre-epistle
+    x: 0.18
+    y: 0.0
+    z: 0.0
+    level: plano
+    side: epistle
+    description: >-
+      The Epistle half of that pair position.
+  - id: step-1-gospel
+    x: -0.5
+    y: 0.5
+    z: 0.25
+    level: step-1
+    side: gospel
+    description: AC2's ordinary kneeling place
+  - id: step-1-epistle
+    x: 0.5
+    y: 0.5
+    z: 0.25
+    level: step-1
+    side: epistle
+    description: AC1's ordinary kneeling place
+  - id: step-1-centre
+    x: 0.0
+    y: 0.5
+    z: 0.25
+    level: step-1
+    side: centre
+  - id: step-3-epistle
+    x: 0.5
+    y: 1.2
+    z: 0.75
+    level: step-3
+    side: epistle
+    description: >-
+      One altar step below the predella on the Epistle side. AC1 occupies this
+      anchor for the second (water) post-Communion ablution.
+  - id: step-3-gospel
+    x: -0.5
+    y: 1.2
+    z: 0.75
+    level: step-3
+    side: gospel
+  - id: predella-centre
+    x: 0.0
+    y: 1.5
+    z: 1.0
+    level: predella
+    side: centre
+  - id: predella-epistle
+    x: 0.6
+    y: 1.5
+    z: 1.0
+    level: predella
+    side: epistle
+  - id: predella-gospel
+    x: -0.6
+    y: 1.5
+    z: 1.0
+    level: predella
+    side: gospel
+  - id: predella-epistle-corner
+    x: 0.9
+    y: 1.5
+    z: 1.0
+    level: predella
+    side: epistle
+    description: The Epistle corner of the predella, at the Epistle-side Missal.
+  - id: predella-gospel-corner
+    x: -0.9
+    y: 1.5
+    z: 1.0
+    level: predella
+    side: gospel
+    description: The Gospel corner of the predella, at the Gospel-side Missal.
+  - id: credence
+    x: 1.6
+    y: 1.0
+    z: 0.0
+    level: plano
+    side: epistle
+    description: Epistle-side credence table.
+
+mensa_positions:
+  description: >-
+    Named positions on the altar table (mensa) itself, used for object placement
+    and orientation. z is the mensa surface.
+  z: 1.35
+  positions:
+    - id: mensa-centre
+      x: 0.0
+    - id: mensa-epistle
+      x: 0.6
+    - id: mensa-gospel
+      x: -0.6
+    - id: mensa-epistle-corner
+      x: 0.95
+    - id: mensa-gospel-corner
+      x: -0.95
+    - id: mensa-inner-gospel
+      x: -0.35
+      note: >-
+        Just to the Gospel side of the corporal, where the Missal and its stand
+        rest after the Gospel and through the Canon.
+    - id: corporal-front-centre
+      x: 0.0
+      note: The front-centre fold of the corporal; the Host rests here.
+    - id: corporal-back-centre
+      x: 0.0
+      note: The back-centre fold of the corporal; the chalice stands here.
+    - id: corporal-right-edge
+      x: 0.35
+      note: >-
+        The right edge of the corporal as the priest faces the altar, i.e.
+        toward the Epistle side. The paten is placed halfway under it.
+    - id: altar-cross
+      x: 0.0
+      note: The crucifix at the centre of the altar; the reference for "eyes to the cross".
+
+viewpoints:
+  - id: nave-front
+    description: >-
+      Default canonical view. Nave facing the altar. Gospel side viewer left,
+      Epistle side viewer right.
+    default: true
+  - id: side-orthographic
+    description: >-
+      True side elevation. Actors at equal depth collapse onto one another. Do
+      not displace side-by-side actors to make them individually visible.
+  - id: over-shoulder
+    description: Behind and above the priest, showing the mensa and corporal.
+  - id: detail-close
+    description: >-
+      Close view of hands and objects. Must honour the post-Consecration
+      thumb/index discipline wherever it is in force.

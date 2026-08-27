@@ -1,0 +1,308 @@
+schema: triptych.mass_pictographic.scenes
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+section:
+  id: "20-last-gospel"
+  title: "The Last Gospel"
+authority:
+  - "../../handoff/HANDOFF-SUMMARY.md"
+  - "../../recovery/approved-choreography-baseline.md"
+  - "../../sources/LM-137-140-final-low-mass-storyboard-v0.1.svg"
+  - "../../sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml"
+
+# depth_rank convention in this file: plano = 1, lowest altar step = 2,
+# predella = 3. Actors sharing a rank are at the same depth (INV-GEO-03).
+
+scenes:
+  - scene_id: "LM-139A"
+    order: 193
+    cluster: "LM-139"
+    title: "The Last Gospel begun at the Gospel corner"
+    kind: action
+    liturgical_moment: "The Last Gospel"
+    text_cue: "Dominus vobiscum - Initium sancti Evangelii secundum Joannem - In principio erat Verbum"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-138D"
+    successor: "LM-139B"
+    camera:
+      view: nave-front
+      note: >-
+        The priest stands at the Gospel corner of the predella at the Last
+        Gospel card, turned in the SAME direction as at the first Gospel.
+        Both servers are now standing, in plano at their own sides, signing
+        forehead, lips and breast together.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-gospel-corner
+        side: gospel
+        depth_rank: 3
+        posture: standing
+        bow: none
+        facing: last-gospel-card
+        gaze: altar
+        hands: {joined: false, left: on-altar-outside-corporal, right: signing}
+        gestures:
+          - sign-text-with-thumb
+          - small-cross-forehead
+          - small-cross-lips
+          - small-cross-breast
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: false, left: at-side, right: signing}
+        gestures:
+          - small-cross-forehead
+          - small-cross-lips
+          - small-cross-breast
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: standing
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: false, left: at-side, right: signing}
+        gestures:
+          - small-cross-forehead
+          - small-cross-lips
+          - small-cross-breast
+    objects:
+      - id: last-gospel-card
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "Standing at the Gospel end of the altar, as throughout Mass."
+        state_after: "Standing at the Gospel end of the altar; the priest reads the Last Gospel from it."
+        handled_by: none
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side after the coordinated transfer of LM-136."
+        state_after: >-
+          Open on the Epistle side. It is NOT carried to the Gospel side for
+          the ordinary Last Gospel, which is read from the card.
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: "Cleansed, standing on the corporal at the centre of the altar."
+        handled_by: none
+    transitions:
+      - "The priest, at the Gospel corner, faces the same direction as at the first Gospel."
+      - "With his hands joined he says 'Dominus vobiscum'; the servers answer 'Et cum spiritu tuo'."
+      - "He announces the beginning of the Gospel according to St John."
+      - "He opens his left hand flat on the altar; with the right thumb he signs the altar, then his own forehead, lips and breast."
+      - "Both servers sign their forehead, lips and breast IN UNISON and answer 'Gloria tibi, Domine'."
+      - "He reads the Last Gospel, John 1:1-14."
+    responses:
+      - actor: AC1
+        text: "Et cum spiritu tuo"
+        voice: audible
+      - actor: AC2
+        text: "Et cum spiritu tuo"
+        voice: audible
+      - actor: AC1
+        text: "Gloria tibi, Domine"
+        voice: audible
+      - actor: AC2
+        text: "Gloria tibi, Domine"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-MISSAL-01
+      - INV-ROLE-01
+      - INV-NAME-01
+      - INV-OBJ-01
+    variants:
+      - id: "last-gospel-proper"
+        kind: seasonal
+        applies_when: "LAST-GOSPEL-PROPER"
+        description: >-
+          A Mass with a proper Last Gospel rather than John 1:1-14, as on
+          Palm Sunday when the Mass does not follow the blessing of palms.
+        baseline: false
+      - id: "last-gospel-omitted"
+        kind: seasonal
+        applies_when: "LAST-GOSPEL-OMITTED"
+        description: >-
+          The Last Gospel is omitted entirely at the third Mass of Christmas
+          and at the Easter Vigil Mass, and after 'Benedicamus Domino' when
+          an incompatible function immediately follows the Mass.
+        baseline: false
+      - id: "last-gospel-omitted-requiem"
+        kind: requiem
+        applies_when: "LAST-GOSPEL-OMITTED"
+        description: >-
+          At a Requiem followed by the absolution over the catafalque the
+          Last Gospel is omitted. A Requiem not followed by the absolution
+          keeps it.
+        baseline: false
+    unresolved:
+      - "Whether the servers stand on the lowest altar step or on the sanctuary floor in plano for the Last Gospel is not fixed by the approved record."
+      - "Whether a proper Last Gospel is read from the Missal rather than from the Last Gospel card, and how the Missal would reach the Gospel side for it, is not fixed by the approved record."
+    notes: >-
+      'Gloria tibi, Domine' is the servers' Gospel response, not the Gloria
+      in excelsis and not a Gloria Patri doxology (INV-NAME-01). The servers
+      sign forehead, lips and breast IN UNISON with each other; the priest
+      signs the altar first with his right thumb while his left hand lies
+      open on the altar. The servers are placed in plano here to agree with
+      their kneeling in plano for the Leonine prayers at LM-140A, which is
+      the only level the approved record fixes for them after the blessing;
+      the alternative is recorded in `unresolved`. The three omission and
+      proper-Gospel branches agree with
+      `sources/LOW-MASS-END-BRANCHES-1962-v0.1.yaml`
+      (`last_gospel_specials`: Palm Sunday proper, third Mass of Christmas
+      omitted, Easter Vigil Mass omitted; `function_follows_mass`
+      last_gospel no; `requiem` last_gospel omitted only if the absolution
+      over the catafalque follows). Vocabulary notes: `gaze` has no value for
+      the Last Gospel card, so `altar` is used - the card stands on the
+      altar; `gesture` has no value for signing the altar itself, so
+      `sign-text-with-thumb` is used as the nearest listed value. Source:
+      panel LM-139A/B of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.
+
+  - scene_id: "LM-139B"
+    order: 194
+    cluster: "LM-139"
+    title: "Et Verbum caro factum est: all genuflect"
+    kind: action
+    liturgical_moment: "The Last Gospel - Et Verbum caro factum est"
+    text_cue: "Et Verbum caro factum est"
+    voice: audible
+    condition: "ALWAYS"
+    predecessor: "LM-139A"
+    successor: "LM-140A"
+    bypass_successor: "LM-140C"
+    camera:
+      view: nave-front
+      note: >-
+        All three figures are down together: the priest genuflecting at the
+        Gospel corner with both hands on the altar, turned toward the Last
+        Gospel card, and both servers genuflecting in unison in plano at
+        their own sides.
+    actors:
+      - id: priest
+        role: "celebrant"
+        anchor: predella-gospel-corner
+        side: gospel
+        depth_rank: 3
+        posture: genuflecting
+        bow: none
+        facing: last-gospel-card
+        gaze: altar
+        hands: {joined: false, left: on-altar-outside-corporal, right: on-altar-outside-corporal}
+        gestures:
+          - genuflect
+      - id: AC1
+        role: "acolyte-epistle-side"
+        anchor: plano-epistle
+        side: epistle
+        depth_rank: 1
+        posture: genuflecting
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - genuflect
+        path:
+          from: plano-epistle
+          to: plano-centre
+          note: >-
+            Only at the CONCLUSION of the Last Gospel, after the 'Deo
+            gratias': AC1 comes to the centre from the Epistle side and
+            stands shoulder to shoulder with AC2.
+      - id: AC2
+        role: "acolyte-gospel-side"
+        anchor: plano-gospel
+        side: gospel
+        depth_rank: 1
+        posture: genuflecting
+        bow: none
+        facing: altar
+        gaze: altar
+        hands: {joined: true, left: joined-before-breast, right: joined-before-breast}
+        gestures:
+          - genuflect
+        path:
+          from: plano-gospel
+          to: plano-centre
+          note: >-
+            Only at the CONCLUSION of the Last Gospel, after the 'Deo
+            gratias': AC2 comes to the centre from the Gospel side and stands
+            shoulder to shoulder with AC1.
+    objects:
+      - id: last-gospel-card
+        placement: mensa-gospel-corner
+        orientation: upright
+        state_before: "Standing at the Gospel end of the altar; the priest is reading from it."
+        state_after: "Standing at the Gospel end of the altar; the priest genuflects toward it."
+        handled_by: none
+      - id: chalice
+        placement: corporal-back-centre
+        orientation: upright
+        state_before: "Cleansed, standing on the corporal at the centre of the altar."
+        state_after: >-
+          Cleansed, standing on the corporal at the centre of the altar, ready
+          to be retrieved at the recessional.
+        handled_by: none
+      - id: missal
+        placement: mensa-epistle-corner
+        orientation: priest-reads-facing-left
+        state_before: "Open on the Epistle side."
+        state_after: "Open on the Epistle side."
+        handled_by: none
+    transitions:
+      - "At 'Et Verbum caro factum est' the priest places his hands on the altar and genuflects toward the Last Gospel card."
+      - "BOTH servers genuflect in unison with him."
+      - "All three rise and the priest finishes the Last Gospel."
+      - "At the conclusion the servers answer 'Deo gratias'."
+      - "The servers then come together at the centre, shoulder to shoulder, and await the priest."
+    responses:
+      - actor: AC1
+        text: "Deo gratias"
+        voice: audible
+      - actor: AC2
+        text: "Deo gratias"
+        voice: audible
+    bells: []
+    invariants:
+      - INV-FORM-01
+      - INV-GEO-01
+      - INV-GEO-02
+      - INV-GEO-03
+      - INV-ROLE-01
+      - INV-OBJ-01
+    variants: []
+    unresolved: []
+    notes: >-
+      The genuflection is threefold and simultaneous: the priest and BOTH
+      servers go down together, the servers in unison with each other. The
+      servers' `path` to the centre belongs to the CONCLUSION of the scene,
+      after the 'Deo gratias'; the drawable state of the scene is the
+      genuflection at their own sides. `bypass_successor: "LM-140C"` is
+      copied from `inventory.yaml`: when the Leonine prayers are not
+      prescribed the order resumes at the recessional, LM-140C, skipping the
+      conditional LM-140A and LM-140B block. Source: panel LM-139A/B, "ET
+      VERBUM CARO FACTUM EST" of
+      `sources/LM-137-140-final-low-mass-storyboard-v0.1.svg`.

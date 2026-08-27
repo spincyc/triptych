@@ -1,0 +1,212 @@
+schema: triptych.mass_pictographic.invariants
+version: "1.0"
+status: structural-approved
+approval: human-approved
+rite: roman-1962
+form: low-mass
+mode: spoken
+server_count: 2
+provenance: repository-recovery-from-approved-baseline
+authority:
+  - "../recovery/APPROVED-CHOREOGRAPHY-BASELINE.md"
+  - "../handoff/HANDOFF-SUMMARY.md"
+
+# Global invariants of the approved baseline. `applies_to` gives the cluster
+# ranges over which each invariant is in force, so a rendering agent can ask
+# which rules govern any given scene. `rejects` states the stale contradiction
+# the invariant exists to exclude; `validate.py` refuses a corpus that asserts
+# any of them.
+
+invariants:
+  - id: INV-FORM-01
+    title: Spoken Low Mass with two servers is the baseline
+    statement: >-
+      The canonical depiction is the Roman Rite 1962 spoken Low Mass served by
+      two altar servers. The one-server Low Mass is a later supported variant
+      only and is never the primary baseline.
+    applies_to: [LM-001..LM-140]
+    rejects: one-server Low Mass treated as the primary baseline
+
+  - id: INV-GEO-01
+    title: Sanctuary sides
+    statement: >-
+      In the canonical nave-facing-the-altar view, the Gospel side is viewer
+      LEFT and the Epistle side is viewer RIGHT. Secondary views may move or
+      crop the camera but must not alter world-space side assignments or object
+      orientations.
+    applies_to: [LM-001..LM-140]
+    rejects: Gospel side mapped to viewer right, or Epistle side to viewer left
+
+  - id: INV-GEO-02
+    title: Altar form
+    statement: >-
+      The altar is a fixed traditional high altar with three full altar steps
+      and a predella. The full set of steps is always shown.
+    applies_to: [LM-001..LM-140]
+    rejects: an altar drawn without its full set of steps
+
+  - id: INV-GEO-03
+    title: Depth honesty
+    statement: >-
+      Actors recorded at the same depth are at the same depth. A true side
+      orthographic view collapses them, which is correct. Never move
+      side-by-side actors into an artificial front/back arrangement merely to
+      make them individually visible.
+    applies_to: [LM-001..LM-140]
+    rejects: side-by-side actors displaced into a front/back arrangement
+
+  - id: INV-MISSAL-01
+    title: Missal reading orientation
+    statement: >-
+      Missal placement side and reading orientation are independent. Wherever
+      the Missal is placed, including on the Gospel side, it is oriented so that
+      the priest reading it is turned toward his left. The Missal is never
+      mirrored merely because it moved from one side to the other.
+    applies_to: [LM-001..LM-140]
+    rejects: the Missal mirrored because it moved to the Gospel side
+
+  - id: INV-ROLE-01
+    title: Server identities
+    statement: >-
+      Acolyte 1 (AC1) is the Epistle-side acolyte and Acolyte 2 (AC2) is the
+      Gospel-side acolyte. There is no permanent generic "book server";
+      Missal-transfer responsibility is phase-specific.
+    applies_to: [LM-001..LM-140]
+    rejects: a permanent generic book server
+
+  - id: INV-ROLE-02
+    title: Pre-Gospel Missal transfer
+    statement: >-
+      AC1, the Epistle-side acolyte, stages for and performs the transfer of the
+      open Missal from the Epistle side to the Gospel side before the Gospel.
+      AC2 does not handle the Missal at this point.
+    applies_to: [LM-029..LM-035]
+    rejects: AC2 moving the Missal before the Gospel
+
+  - id: INV-ROLE-03
+    title: Post-ablution Missal return
+    statement: >-
+      After the vessels are cleansed, AC2 carries the Missal back to the Epistle
+      side. AC1 does not carry the Missal at this point.
+    applies_to: [LM-136]
+    rejects: AC1 moving the Missal after the ablutions
+
+  - id: INV-ROLE-04
+    title: Ablution service
+    statement: >-
+      The post-Communion ablutions are served by AC1 alone: wine first with the
+      chalice on the altar, then water with the priest holding the chalice and
+      AC1 stepping down exactly one altar step. AC2 does not assist and does not
+      supply the water.
+    applies_to: [LM-136]
+    rejects: >-
+      both acolytes performing the post-Communion ablutions, or AC2 supplying
+      the water during them
+
+  - id: INV-ROLE-05
+    title: Ascent assistance
+    statement: >-
+      Only AC1 assists the priest's ascent, briefly lifting the front/lower hem
+      of the priest's alb. AC2 does not touch the vestment.
+    applies_to: [LM-013]
+    rejects: both servers assisting the priest's ascent
+
+  - id: INV-CROSS-01
+    title: Coordinated post-ablution crossing order
+    statement: >-
+      AC1 carries the chalice cloth to the Gospel side while AC2 carries the
+      Missal to the Epistle side. On the first crossing AC2 is in front; the
+      priest then receives the chalice cloth; on the second crossing AC1 is in
+      front. Both then resume their ordinary kneeling positions.
+    applies_to: [LM-136]
+    rejects: >-
+      a first crossing with AC1 in front, or a second crossing with AC2 in front
+
+  - id: INV-BELL-01
+    title: Consecration bell profile
+    statement: >-
+      The spoken Low Mass baseline has one distinct warning cue shortly before
+      the Consecration, then for EACH species one ring at the first
+      genuflection, one ring at the elevation, and one ring at the second
+      genuflection. AC1 is the bell operator.
+    applies_to: [LM-094..LM-103]
+    rejects: three rings concentrated at the elevation as the spoken Low Mass baseline
+
+  - id: INV-BELL-02
+    title: Domine non sum dignus bells
+    statement: >-
+      AC1 rings the bell once at each of the three priestly openings of
+      "Domine, non sum dignus", for three rings in total.
+    applies_to: [LM-134]
+    rejects: a missing AC1 bell at any priestly "Domine, non sum dignus"
+
+  - id: INV-BELL-03
+    title: No baseline bell at the minor elevation
+    statement: >-
+      There is no bell at the minor elevation in the canonical spoken Low Mass
+      profile. A local custom bell exists only as an explicit, non-baseline
+      variant.
+    applies_to: [LM-112]
+    rejects: a bell at the minor elevation treated as the canonical baseline
+
+  - id: INV-HAND-01
+    title: Post-Consecration thumb and index discipline
+    statement: >-
+      From the Consecration of the Host until the finger ablutions, the thumb
+      and index fingertips of both of the priest's hands remain joined,
+      separating only as necessary to touch or handle the Sacred Host. Every
+      close view of the priest's hands in this range must show it.
+    applies_to: [LM-098..LM-136]
+    rejects: a close hand view in this range that separates thumb and index without cause
+
+  - id: INV-OBJ-01
+    title: The corporal is already unfolded
+    statement: >-
+      The corporal is unfolded at the centre of the altar from the beginning of
+      Mass. The priest does not unfold it at the Offertory.
+    applies_to: [LM-001..LM-140]
+    rejects: the corporal newly unfolded at the Offertory
+
+  - id: INV-POS-01
+    title: Line at the foot of the altar
+    statement: >-
+      During the Prayers at the Foot the priest and both servers form a
+      side-to-side line at the same front/back depth, all below the altar steps.
+    applies_to: [LM-001..LM-012]
+    rejects: priest and servers arranged front-to-back at the foot of the altar
+
+  - id: INV-SIGN-01
+    title: All three sign themselves at the Indulgentiam
+    statement: >-
+      At the Indulgentiam the servers become erect and the priest and both
+      servers all make the sign of the cross.
+    applies_to: [LM-010]
+    rejects: a priest-only sign of the cross at the Indulgentiam
+
+  - id: INV-GLORIA-01
+    title: Gloria in excelsis is said at the centre
+    statement: >-
+      When the Gloria in excelsis is prescribed the priest says it standing at
+      the centre of the altar, with his feet fixed at the centre. He does not
+      say it at the Missal.
+    applies_to: [LM-022..LM-024]
+    rejects: the Gloria in excelsis depicted at the Missal instead of the centre
+
+  - id: INV-NAME-01
+    title: Gloria naming discipline
+    statement: >-
+      An unqualified "Gloria" means the Gloria in excelsis. A "Gloria Patri" is
+      always identified explicitly as a doxology and is never labelled simply
+      "Gloria".
+    applies_to: [LM-001..LM-140]
+    rejects: a "Gloria Patri" labelled simply "Gloria"
+
+  - id: INV-END-01
+    title: 1962 dismissal selection
+    statement: >-
+      The dismissal is not chosen according to whether the Gloria was said. An
+      ordinary Mass uses "Ite, missa est"; "Benedicamus Domino" is used only
+      when a procession or another liturgical function immediately follows; a
+      Requiem uses "Requiescant in pace".
+    applies_to: [LM-138]
+    rejects: a dismissal selected according to whether the Gloria was said
