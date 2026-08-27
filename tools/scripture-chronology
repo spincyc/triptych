@@ -74,14 +74,16 @@ EXAMPLES = {
                 "# no binding reaches event apostolic-age.siege-of-jerusalem-begun",
                 "# no binding reaches event apostolic-age.vespasian-invades-galilee",
                 "# no binding reaches event israel.exile.nabuchodonosor-accession",
+                "# no binding reaches event israel.exodus.passage-of-the-red-sea",
                 "# no binding reaches event israel.judges.ark-comes-to-cariathiarim",
                 "# no binding reaches event israel.maccabees.seleucid-era",
-                "chronology corpus valid: 1 profiles, 276 events, 60 composition_units, 374 bindings, 20 gaps, 73 books",
+                "# no binding reaches event israel.restoration.reign-of-artaxerxes-i",
+                "chronology corpus valid: 1 profiles, 279 events, 62 composition_units, 375 bindings, 21 gaps, 73 books",
             ),
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"counts\":{\"bindings\":374,\"books\":73,\"composition_units\":60,\"events\":276,\"gaps\":20,\"profiles\":1},\"problems\":[]... [+694 chars]",
+                "{\"counts\":{\"bindings\":375,\"books\":73,\"composition_units\":62,\"events\":279,\"gaps\":21,\"profiles\":1},\"problems\":[]... [+776 chars]",
             ),
         ),
     ),
@@ -113,7 +115,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
             (
-                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"basis\":\"Gigot's \\\"Book of Daniel\\\" in the Catholic Encyclopedia frames the ... [+3977 chars]",
+                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of the last two deutero-canonical... [+2763 chars]",
             ),
         ),
     ),
@@ -121,19 +123,19 @@ EXAMPLES = {
         Example("tools/scripture-chronology coverage",
             (
                 "verses\t35809",
-                "runs\t1877",
-                "status\tcomposition-only\t16687",
-                "status\tdated\t12406",
+                "runs\t1882",
+                "status\tcomposition-only\t16504",
+                "status\tdated\t12541",
                 "status\tnot-alignable\t0",
                 "status\tresearch-pending\t0",
                 "status\ttextually-distinct\t0",
-                "status\tundated-in-tradition\t6716",
+                "status\tundated-in-tradition\t6764",
                 "... 11 more lines",
             ),
         ),
         Example("tools/scripture-chronology coverage --json",
             (
-                "{\"by_relation\":{\"composition\":22375,\"historical-setting\":2934,\"narrated-event\":8036,\"prophecy-given\":1441,\"pro... [+1143 chars]",
+                "{\"by_relation\":{\"composition\":22129,\"historical-setting\":2934,\"narrated-event\":8023,\"prophecy-given\":1612,\"pro... [+1764 chars]",
             ),
         ),
     ),
@@ -141,7 +143,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run",
             (
-                "dry-run\tsrc/sources/chronology/coverage.tsv\t1877 rows\tunchanged",
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1882 rows\tunchanged",
             ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
@@ -152,7 +154,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run --json",
             (
-                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1877,\"status\":\"dry-run\",\"v\":1}",
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1882,\"status\":\"dry-run\",\"v\":1}",
             ),
             note="the same, as the machine contract",
         ),
@@ -160,12 +162,12 @@ EXAMPLES = {
     "check": (
         Example("tools/scripture-chronology check",
             (
-                "chronology coverage table current: 1877 rows",
+                "chronology coverage table current: 1882 rows",
             ),
         ),
         Example("tools/scripture-chronology check --json",
             (
-                "{\"problems\":[],\"rows\":1877,\"status\":\"ok\",\"v\":1}",
+                "{\"problems\":[],\"rows\":1882,\"status\":\"ok\",\"v\":1}",
             ),
         ),
     ),
