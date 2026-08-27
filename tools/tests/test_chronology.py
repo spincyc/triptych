@@ -1264,6 +1264,45 @@ class TrackedHardCaseTests(unittest.TestCase):
         self.assertEqual(self.ask("Ps.21.1").status, "dated")
         self.assertEqual(self.ask("Ps.21.32").status, "dated")
 
+    def test_a_source_interval_lands_on_the_endpoint_the_source_names(self) -> None:
+        # The cold audit's one critical finding. The Catholic Encyclopedia's
+        # Flood-to-Abraham table totals 367 / 1017 / 1147 under the row "Hence,
+        # number of years from Flood to Call of Abraham", reached by adding
+        # Abraham's seventy-five years at his call. Those totals were carried on
+        # the BIRTH, which overstated the interval by exactly those years and
+        # read perfectly. Arithmetic is not an anchor: a nearby event whose
+        # figure happens to compute is not the endpoint the source named.
+        def flood_intervals(subject: str) -> set[str]:
+            return {
+                str(claim.date)
+                for event in [_chronology.load().events[subject]]
+                for claim in event.claims
+                if claim.date.anchor == "israel.primeval.deluge"
+            }
+
+        self.assertEqual(
+            flood_intervals("israel.patriarchs.call-of-abram"),
+            {"367 years from the flood to the call of Abraham, in the Hebrew",
+             "1017 years from the flood to the call of Abraham, in the Samaritan",
+             "1147 years from the flood to the call of Abraham, in the Septuagint"},
+        )
+        # And none of them may return to the birth, under any text-family.
+        self.assertEqual(flood_intervals("israel.patriarchs.birth-of-abram"), set())
+        for label in ("367", "1017", "1147"):
+            self.assertNotIn(
+                label,
+                {claim.date.label
+                 for claim in _chronology.load().events[
+                     "israel.patriarchs.birth-of-abram"].claims},
+            )
+        # Birth and call stay two events; collapsing them would hide the defect
+        # rather than fix it, and Genesis 12:4 is the interval between them.
+        call = _chronology.load().events["israel.patriarchs.call-of-abram"]
+        self.assertIn(
+            "israel.patriarchs.birth-of-abram",
+            {claim.date.anchor for claim in call.claims},
+        )
+
     def test_the_miserere_is_one_psalm_however_it_is_numbered(self) -> None:
         vulgate = self.ask("Ps.50.3")
         hebrew = self.ask("Ps.51.3", system="hebrew")

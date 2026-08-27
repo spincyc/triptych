@@ -2139,64 +2139,16 @@ events:
     title: The birth of Abram
     note: >-
       No source inspected for this corpus prints an Anno Mundi or B.C. numeral
-      for Abraham's birth. What the Catholic Encyclopedia supplies is an
-      interval from the Flood, and its three text-families give three
-      irreconcilable lengths.
+      for Abraham's birth. The Catholic Encyclopedia's Flood-to-Abraham table
+      does print a Flood-to-birth figure - the unlabelled row 292 / 942 / 1072
+      that its subtraction reaches, before the table adds Abraham's seventy-five
+      years at his call - but this corpus does not carry it, because nothing in
+      the article states it as a claim in its own right. What the table states
+      is its total, and that total is an interval to the CALL, held at
+      israel.patriarchs.call-of-abram. The three text-family figures 367 / 1017
+      / 1147 were carried here until 2026-08-27 and were wrong by exactly those
+      seventy-five years.
     dates:
-      - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          The Catholic Encyclopedia's "Biblical Chronology", in its section
-          from the Flood to Abraham, gives the Hebrew total: "the numbers in
-          the table above differ in the Hebrew, Samaritan, and Septuagint,
-          being respectively 367, 1017, and 1147." This claim carries the
-          Hebrew figure.
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          The section is headed "The flood to the birth of Abraham", but the
-          table it refers to reaches Abraham's call, adding the seventy-five
-          years of Genesis 12:4; the terminus is recorded here as stated in the
-          heading and the ambiguity is not resolved. The encyclopedia adds that
-          these numbers "must be greatly augmented, in order to allow time for
-          such a development of civilization" - its own modern reckoning, set
-          against the totals it has just printed.
-        date:
-          precision: relative
-          relative:
-            of: israel.primeval.deluge
-            statement: "367 years from the flood, in the Hebrew"
-          label: "367"
-      - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          The same sentence of the Catholic Encyclopedia's "Biblical
-          Chronology" gives the Samaritan total as 1017, against the Hebrew's
-          367: "as a rule, the Greek and Samaritan agree against the Hebrew."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        date:
-          precision: relative
-          relative:
-            of: israel.primeval.deluge
-            statement: "1017 years from the flood, in the Samaritan"
-          label: "1017"
-      - profile: catholic-traditional-v1
-        disposition: disputed
-        basis: >-
-          The same sentence of the Catholic Encyclopedia's "Biblical
-          Chronology" gives the Septuagint total as 1147, the largest of the
-          three: "being respectively 367, 1017, and 1147."
-        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
-        note: >-
-          The spread between the Hebrew and the Septuagint here is seven
-          hundred and eighty years, wider than the whole antediluvian
-          disagreement, and no ranked source inspected for this corpus settles
-          it.
-        date:
-          precision: relative
-          relative:
-            of: israel.primeval.deluge
-            statement: "1147 years from the flood, in the Septuagint"
-          label: "1147"
       - profile: catholic-traditional-v1
         disposition: disputed
         basis: >-
@@ -2222,6 +2174,15 @@ events:
           label: "720 years"
   - id: israel.patriarchs.call-of-abram
     title: The call of Abram and his going forth from Haran
+    note: >-
+      The Catholic Encyclopedia's Flood-to-Abraham table ends at this event, not
+      at the birth. Its final row is labelled "Hence, number of years from Flood
+      to Call of Abraham" and is reached from the row above it by "Add for age
+      of Abraham at time of his call: 75". The three text-family totals below
+      were held on israel.patriarchs.birth-of-abram until 2026-08-27, where they
+      overstated the interval by those seventy-five years; the cold audit of
+      2330d63a5 found it, and the anchor's own A.M. 1656 settles it - 1656 + 292
+      reaches the birth, 1656 + 367 reaches the call.
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -2243,6 +2204,65 @@ events:
             of: israel.patriarchs.birth-of-abram
             statement: "Abram was seventy-five years old when he went forth from Haran"
           label: "seventy-five years old"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The Catholic Encyclopedia's "Biblical Chronology" tabulates the years
+          from the Flood and labels its total row "Hence, number of years from
+          Flood to Call of Abraham"; the narrative gives the three text-families'
+          totals as "the numbers in the table above differ in the Hebrew,
+          Samaritan, and Septuagint, being respectively 367, 1017, and 1147."
+          This claim carries the Hebrew figure.
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          Alternate beneath Genesis 12:4, which is rank 1 against this rank-6
+          work and states the interval this corpus prefers. The encyclopedia
+          adds that these numbers "must be greatly augmented, in order to allow
+          time for such a development of civilization" - its own modern
+          reckoning, set against the totals it has just printed, and not carried
+          here.
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.deluge
+            statement: "367 years from the flood to the call of Abraham, in the Hebrew"
+          label: "367"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same sentence of the Catholic Encyclopedia's "Biblical Chronology"
+          gives the Samaritan total as 1017, against the Hebrew's 367: "as a
+          rule, the Greek and Samaritan agree against the Hebrew." The total is
+          the table's row "Hence, number of years from Flood to Call of
+          Abraham".
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.deluge
+            statement: "1017 years from the flood to the call of Abraham, in the Samaritan"
+          label: "1017"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same sentence of the Catholic Encyclopedia's "Biblical Chronology"
+          gives the Septuagint total as 1147, the largest of the three: "being
+          respectively 367, 1017, and 1147." The total is the table's row
+          "Hence, number of years from Flood to Call of Abraham".
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          The spread between the Hebrew and the Septuagint here is seven hundred
+          and eighty years, wider than the whole antediluvian disagreement, and
+          no ranked source inspected for this corpus settles it. The three are
+          kept as alternates rather than disputed because Genesis 12:4 outranks
+          all three and is not in disagreement with them: it measures the call
+          from the birth, they measure it from the Flood.
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.deluge
+            statement: "1147 years from the flood to the call of Abraham, in the Septuagint"
+          label: "1147"
   - id: israel.patriarchs.abram-enters-chanaan
     title: Abraham's arrival in Chanaan
     parent: israel.patriarchs.call-of-abram
