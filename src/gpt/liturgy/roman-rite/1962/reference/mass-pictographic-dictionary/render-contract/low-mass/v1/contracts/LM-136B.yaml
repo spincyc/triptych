@@ -1,0 +1,267 @@
+render_contract_version: '1.0'
+plate_id: LM-136B
+scene_ids:
+- LM-136B
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/17-ablutions-and-coordinated-transfer.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: The second ablution, of water, with AC1 one step down
+order: 183
+cluster: LM-136
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: ready
+  waived_cues:
+  - cue: The approved material names only "Quod ore sumpsimus" among the ablution prayers and does not
+      fix any words said during the second, water ablution.
+    reason: Spoken words only. The pouring, the held chalice and the washed fingertips are the same whatever
+      is said.
+panels:
+- id: primary
+  camera:
+    preset: nave-front
+    projection: perspective
+    projection_kind: perspective
+    position: nave-centre
+    position_xyz:
+    - 0.0
+    - -4.0
+    - 1.6
+    up: upward
+    target: altar-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: predella-centre
+  position:
+  - 0.0
+  - 1.5
+  - 1.0
+  side: centre
+  depth_rank: 3
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 90.0
+  body_facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: degenerate-toward-altar
+  gaze: chalice
+  hands:
+    joined: false
+    left: holding-chalice-both-hands
+    right: holding-chalice-both-hands
+  gestures:
+  - wash-fingertips
+  panel_visibility: &id001
+  - primary
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: step-3-epistle
+  position:
+  - 0.5
+  - 1.2
+  - 0.75
+  side: epistle
+  depth_rank: 2
+  posture: standing
+  bow: head-slight
+  body_facing_yaw_deg: 149.036243
+  body_facing_vector:
+  - -0.857493
+  - 0.514496
+  - 0.0
+  facing_semantic: inward-to-priest
+  facing_derivation: toward-actor
+  gaze: chalice
+  hands:
+    joined: false
+    left: on-breast
+    right: holding-cruet
+  gestures:
+  - pour-ablution
+  panel_visibility: *id001
+  path:
+    from: predella-epistle
+    from_xyz:
+    - 0.6
+    - 1.5
+    - 1.0
+    via: []
+    via_xyz: []
+    to: step-3-epistle
+    to_xyz:
+    - 0.5
+    - 1.2
+    - 0.75
+    settles_at: step-3-epistle
+    note: AC1 steps down exactly one altar step, from the predella to the Epistle side of the third step,
+      to pour the water. He serves this ablution alone.
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: step-1-gospel
+  position:
+  - -0.5
+  - 0.5
+  - 0.25
+  side: gospel
+  depth_rank: 1
+  posture: kneeling
+  bow: none
+  body_facing_yaw_deg: 63.434949
+  body_facing_vector:
+  - 0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+objects:
+- id: corporal
+  placement_semantic: mensa-centre
+  placement_kind: mensa
+  scale_class: linen-spread
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded at the centre of the altar.
+  handled_by: none
+  panel_visibility: &id002
+  - primary
+  position:
+  - 0.0
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: chalice
+  placement_semantic: Held by the priest over the altar.
+  placement_kind: actor-held
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: upright
+  state_after: Held by the priest while AC1 pours the water over his fingers into the cup; the priest
+    then consumes the ablution.
+  handled_by: priest
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+- id: water-cruet
+  placement_semantic: In AC1's right hand, one altar step below the predella on the Epistle side.
+  placement_kind: actor-held
+  scale_class: vessel-small
+  oriented: true
+  orientation_semantic: handle-toward-priest
+  state_after: In AC1's hand, the water of the second ablution having been poured over the priest's fingers
+    into the chalice.
+  handled_by: AC1
+  panel_visibility: *id002
+  parent_transform: AC1
+  position: null
+  orientation_rule: handle-to-priest
+  orientation_note: position unresolved
+- id: paten
+  placement_semantic: corporal-front-centre
+  placement_kind: mensa
+  scale_class: vessel-flat
+  oriented: true
+  orientation_semantic: flat-on-mensa
+  state_after: Lying at the centre of the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.38
+  - 1.35
+  orientation_rule: faces-priest
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  orientation_note: turned toward the priest
+- id: missal
+  placement_semantic: mensa-gospel
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Open on the Gospel side of the altar; it is not moved until the vessels are cleansed.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - -0.6
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-MISSAL-01
+- INV-ROLE-01
+- INV-ROLE-04
+- INV-OBJ-01
+- INV-HAND-01
+blocked_cues: []

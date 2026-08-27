@@ -1,0 +1,76 @@
+schema: triptych.mass_pictographic.panel_contract
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Every plate compiles to an explicit, closed list of panels.
+#
+# The failure this file exists to make impossible: a generated plate added an
+# auxiliary inset nobody asked for. The generator believed it was being
+# helpful. Helpfulness is exactly the problem — an inset the contract did not
+# request is geometry nobody reviewed and nobody approved.
+#
+# The rule is therefore not "prefer few panels" but "the list is closed".
+
+default_plate:
+  panels:
+    - id: primary
+      required: true
+      camera_from_scene: true
+      note: >-
+        The scene's own `camera.view` token resolves through the presets in
+        camera-model.yaml. One panel is the default for every scene.
+  additional_panels: forbidden
+
+additional_panels_policy:
+  value: forbidden
+  meaning: >-
+    A renderer may draw exactly the panels listed, with exactly the listed ids
+    and cameras. It may not add an inset, a key, a locator, a vignette, a
+    detail blow-up, or a plan, however useful one would be. If a panel is
+    genuinely needed, it is added here and reviewed, not improvised at
+    generation time.
+  enforcement:
+    - "a compiled contract always carries an explicit `panels` list"
+    - "a compiled contract always carries `additional_panels: forbidden`"
+    - "the skeleton generator emits a panel manifest and draws only listed panels"
+    - "validate.py fails if a skeleton's panel ids differ from its contract's"
+
+# A scene may opt into extra panels only by declaring them. Movement scenes are
+# the case where a plan genuinely earns its place: an ordered crossing is hard
+# to read in a single elevation.
+declared_extra_panels:
+  - scene_ids: ["LM-136C", "LM-136E"]
+    add:
+      - id: path-plan
+        camera: path-plan
+        reason: >-
+          The two post-ablution crossings are ordered: AC2 leads the first and
+          AC1 the second. Precedence is a depth relation, and a plan view is
+          the honest way to show it. Declared here, so it is reviewed rather
+          than invented.
+  - scene_ids: ["LM-032B"]
+    add:
+      - id: path-plan
+        camera: path-plan
+        reason: >-
+          AC1 carries the Missal across the centre before the Gospel. The path
+          and its centre genuflection read clearly only in plan.
+
+panel_rules:
+  - id: PANEL-01
+    rule: every compiled contract has at least one panel
+  - id: PANEL-02
+    rule: panel ids are unique within a plate
+  - id: PANEL-03
+    rule: every panel names a camera resolvable in camera-model.yaml
+  - id: PANEL-04
+    rule: "every compiled contract sets `additional_panels: forbidden`"
+  - id: PANEL-05
+    rule: >-
+      a generated skeleton's panel manifest equals its contract's panel list,
+      in ids and in order
+  - id: PANEL-06
+    rule: >-
+      a panel label names its projection and position from the camera model,
+      never a compound such as "TOP VIEW (NAVE)"

@@ -1,0 +1,115 @@
+schema: triptych.mass_pictographic.readiness_policy
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# The art gate.
+#
+# The structural corpus deliberately left serving-profile cues open rather than
+# inventing them. The governing policy is:
+#
+#   If an unresolved cue can alter visible actor position, posture,
+#   orientation, hand use, object state, path, or timing represented in a
+#   plate, that scene is BLOCKED FOR ART until human review resolves it.
+#
+# This file does NOT list the blocking cues. It lists only the exceptions: the
+# few cues judged incapable of changing anything a viewer could see. Every
+# other unresolved cue in the corpus blocks its scene, including any cue added
+# to the corpus later that nobody has classified yet.
+#
+# The default is therefore to block, and the compiler derives each scene's
+# status by reading the corpus's own `unresolved` lists. Readiness is never
+# asserted in a second place where it could drift from the reason for it.
+#
+# Resolving a cue is human work. It is never done from the fenced pre-v0.21
+# altar-server guides, and never done to raise the ready count.
+
+default_verdict: blocks
+
+non_visible_cues:
+  - scene_id: "LM-023A"
+    match: "does not enumerate which phrases"
+    reason: >-
+      Which phrases of the Gloria carry the prescribed bows changes the words
+      the bow falls on, not the depicted attitude, which the scene fixes.
+  - scene_id: "LM-028B"
+    match: "number of Collects"
+    reason: >-
+      One Collect or several, the depicted instant is the priest at the Missal
+      with hands extended.
+  - scene_id: "LM-040A"
+    match: "exact cue on which he returns"
+    reason: >-
+      The scene's own path and end anchor already fix AC1 crossing back and
+      standing at his place; only the unshown moment he sets out is open.
+  - scene_id: "LM-047A"
+    match: "does not name the words at which he rises"
+    reason: >-
+      The scene fixes the priest risen with hands rejoined; only the syllable
+      is open.
+  - scene_id: "LM-047A"
+    match: "at which words the servers come erect"
+    reason: >-
+      The scene fixes the servers kneeling erect; only the word is open.
+  - scene_id: "LM-087B"
+    match: "total number of rings"
+    reason: >-
+      The depicted instant is AC1 bowed and ringing. The count belongs to the
+      Sanctus serving profile and is recorded as a null bell count, not
+      guessed.
+  - scene_id: "LM-094B"
+    match: "exact word of the Canon at which AC1 gives the warning"
+    reason: >-
+      The plate shows AC1 sounding the warning while the priest continues the
+      Canon; the word it falls on changes nothing visible.
+  - scene_id: "LM-104A"
+    match: "moment at which AC1 sets the bell down"
+    reason: >-
+      The scene fixes the bell in AC1's hand at the centre genuflection and
+      back at his place by the end; only the unshown instant between is open.
+  - scene_id: "LM-134C"
+    match: "moment at which AC1 takes up the bell"
+    reason: >-
+      The three depicted instants all have the bell already in AC1's right
+      hand.
+  - scene_id: "LM-136B"
+    match: "does not fix any words said during the second"
+    reason: >-
+      Spoken words only. The pouring, the held chalice and the washed
+      fingertips are the same whatever is said.
+  - scene_id: "LM-140B"
+    match: "response texts of the Leonine prayers"
+    reason: >-
+      Words only. Three kneeling figures with joined hands either way.
+  - scene_id: "LM-140C"
+    match: "When the Missal is closed and removed"
+    reason: >-
+      The scene fixes the Missal open at the Epistle corner through the
+      recessional; its closing falls after the last plate.
+
+# Recorded for review. The compiler recomputes these from the corpus and fails
+# if they disagree, so this block cannot quietly go stale.
+expected:
+  total_cues: 85
+  non_visible_cues: 12
+  blocking_cues: 73
+  blocked_by_unresolved_cue: 55
+  blocked_by_undetermined_frame: 2
+  blocked_scenes: 57
+  ready_scenes: 140
+  blocking_note: >-
+    Two scenes block for a second reason, recorded in frame-vocabulary.yaml
+    rather than in the corpus's own cue lists: LM-134B says the Host halves go
+    to the "upper right of the paten", which names no reference frame, and
+    LM-077A depends on how far the priest turned at the Lavabo, whose sense is
+    fixed but whose magnitude is not. LM-075A and LM-076A carry undetermined
+    frame phrases too, but were already blocked by their cues.
+  scenes_with_cues_that_stay_ready:
+    - "LM-028B"
+    - "LM-047A"
+    - "LM-087B"
+    - "LM-094B"
+    - "LM-104A"
+    - "LM-134C"
+    - "LM-136B"
+    - "LM-140B"

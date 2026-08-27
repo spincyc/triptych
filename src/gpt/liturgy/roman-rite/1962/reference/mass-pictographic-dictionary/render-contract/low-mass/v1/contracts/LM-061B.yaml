@@ -1,0 +1,309 @@
+render_contract_version: '1.0'
+plate_id: LM-061B
+scene_ids:
+- LM-061B
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/09-offertory-preparation.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: The paten held at breast height with the gaze on the Host
+order: 83
+cluster: LM-061
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: ready
+panels:
+- id: primary
+  camera:
+    preset: nave-front
+    projection: perspective
+    projection_kind: perspective
+    position: nave-centre
+    position_xyz:
+    - 0.0
+    - -4.0
+    - 1.6
+    up: upward
+    target: altar-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: predella-centre
+  position:
+  - 0.0
+  - 1.5
+  - 1.0
+  side: centre
+  depth_rank: 3
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 90.0
+  body_facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: degenerate-toward-altar
+  gaze: host
+  hands:
+    joined: false
+    left: holding-host-and-paten
+    right: holding-host-and-paten
+  gestures: []
+  panel_visibility: &id001
+  - primary
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: step-1-epistle
+  position:
+  - 0.5
+  - 0.5
+  - 0.25
+  side: epistle
+  depth_rank: 1
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 116.565051
+  body_facing_vector:
+  - -0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: credence
+  position:
+  - 1.6
+  - 1.0
+  - 0.0
+  side: epistle
+  depth_rank: 2
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 0.0
+  body_facing_vector:
+  - 1.0
+  - 0.0
+  - 0.0
+  facing_semantic: credence
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+objects:
+- id: paten
+  placement_semantic: held level in both hands at the height of the priest's breast, above the corporal
+  placement_kind: actor-held
+  scale_class: vessel-flat
+  oriented: true
+  orientation_semantic: horizontal
+  state_after: Held level in both hands at breast height, bearing the Host, for the whole of the prayer.
+  handled_by: priest
+  panel_visibility: &id002
+  - primary
+  parent_transform: priest
+  position: null
+  orientation_rule: faces-priest
+  orientation_note: position unresolved
+- id: host
+  placement_semantic: on the paten at breast height
+  placement_kind: actor-held
+  scale_class: wafer
+  oriented: false
+  orientation_semantic: flat-on-mensa
+  state_after: Lying on the paten; the priest's eyes rest on it and his fingers do not touch it.
+  handled_by: none
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+- id: chalice
+  placement_semantic: mensa-epistle
+  placement_kind: mensa
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: upright
+  state_after: Standing empty toward the Epistle side with the purificator over its cup.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.6
+  - 1.5
+  - 1.35
+- id: purificator
+  placement_semantic: mensa-epistle
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: not-applicable
+  state_after: Spread over the mouth of the chalice cup.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.6
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: pall
+  placement_semantic: mensa-epistle-corner
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: upright
+  state_after: Standing on edge against the Epistle altar card.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.95
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: corporal
+  placement_semantic: mensa-centre
+  placement_kind: mensa
+  scale_class: linen-spread
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded and bare at the centre of the altar.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: chalice-veil
+  placement_semantic: mensa-epistle-corner
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: folded
+  state_after: Folded, near the Epistle-side Lavabo card.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.95
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: burse
+  placement_semantic: mensa-gospel
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: not-applicable
+  state_after: Empty, on the Gospel side.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - -0.6
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: missal
+  placement_semantic: mensa-gospel
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Open near the centre, to the left of the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - -0.6
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-MISSAL-01
+- INV-ROLE-01
+- INV-OBJ-01
+blocked_cues: []

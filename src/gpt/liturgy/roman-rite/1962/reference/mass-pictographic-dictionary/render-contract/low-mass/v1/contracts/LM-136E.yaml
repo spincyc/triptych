@@ -1,0 +1,318 @@
+render_contract_version: '1.0'
+plate_id: LM-136E
+scene_ids:
+- LM-136E
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/17-ablutions-and-coordinated-transfer.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: The second crossing, with AC1 in front
+order: 186
+cluster: LM-136
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: ready
+panels:
+- id: primary
+  camera:
+    preset: nave-front
+    projection: perspective
+    projection_kind: perspective
+    position: nave-centre
+    position_xyz:
+    - 0.0
+    - -4.0
+    - 1.6
+    up: upward
+    target: altar-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+- id: path-plan
+  camera:
+    preset: path-plan
+    projection: orthographic-plan
+    projection_kind: orthographic
+    position: overhead
+    position_xyz:
+    - 0.0
+    - 1.0
+    - 6.0
+    up: upward
+    target: sanctuary-floor
+    target_xyz:
+    - 0.0
+    - 0.75
+    - 0.0
+    frame:
+      page_top_world_direction: altarward
+      page_bottom_world_direction: naveward
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: predella-centre
+  position:
+  - 0.0
+  - 1.5
+  - 1.0
+  side: centre
+  depth_rank: 3
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 90.0
+  body_facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: degenerate-toward-altar
+  gaze: altar
+  hands:
+    joined: false
+    left: on-altar-outside-corporal
+    right: holding-chalice-cloth
+  gestures: []
+  panel_visibility: &id001
+  - primary
+  - path-plan
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: step-1-epistle
+  position:
+  - 0.5
+  - 0.5
+  - 0.25
+  side: epistle
+  depth_rank: 1
+  posture: walking
+  bow: none
+  body_facing_yaw_deg: 0.0
+  body_facing_vector:
+  - 1.0
+  - 0.0
+  - 0.0
+  facing_semantic: epistle-side
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+  depth_offset_naveward: 0.0
+  depth_offset_note: derived from depth_rank because this actor shares an anchor with another; smaller
+    rank stands nearer the viewer
+  path:
+    from: step-3-gospel
+    from_xyz:
+    - -0.5
+    - 1.2
+    - 0.75
+    via:
+    - step-1-centre
+    via_xyz:
+    - - 0.0
+      - 0.5
+      - 0.25
+    to: step-1-epistle
+    to_xyz:
+    - 0.5
+    - 0.5
+    - 0.25
+    settles_at: step-1-epistle
+    note: AC1, his hands now empty, returns to his ordinary kneeling place on the Epistle side of the
+      lowest step. He crosses IN FRONT on this second crossing; his depth_rank is the smaller of the two,
+      nearer the viewer.
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: step-1-gospel
+  position:
+  - -0.5
+  - 0.66
+  - 0.25
+  side: gospel
+  depth_rank: 2
+  posture: walking
+  bow: none
+  body_facing_yaw_deg: 180.0
+  body_facing_vector:
+  - -1.0
+  - 0.0
+  - 0.0
+  facing_semantic: gospel-side
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+  depth_offset_naveward: 0.16
+  depth_offset_note: derived from depth_rank because this actor shares an anchor with another; smaller
+    rank stands nearer the viewer
+  path:
+    from: predella-epistle-corner
+    from_xyz:
+    - 0.9
+    - 1.5
+    - 1.0
+    via:
+    - step-1-centre
+    via_xyz:
+    - - 0.0
+      - 0.5
+      - 0.25
+    to: step-1-gospel
+    to_xyz:
+    - -0.5
+    - 0.5
+    - 0.25
+    settles_at: step-1-gospel
+    note: AC2, having left the Missal at the Epistle corner, returns to his ordinary kneeling place on
+      the Gospel side of the lowest step. He crosses BEHIND AC1 on this second crossing; his depth_rank
+      is the larger of the two, further from the viewer.
+objects:
+- id: missal
+  placement_semantic: mensa-epistle-corner
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Open at the Epistle corner of the altar, oriented so that the priest reading it is turned
+    toward his left, ready for the Communion antiphon.
+  handled_by: none
+  panel_visibility: &id002
+  - primary
+  - path-plan
+  position:
+  - 0.95
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+- id: chalice-cloth
+  placement_semantic: In the priest's hand at the altar.
+  placement_kind: actor-held
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: folded
+  state_after: In the priest's hand at the altar.
+  handled_by: priest
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: chalice
+  placement_semantic: corporal-back-centre
+  placement_kind: mensa
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: upright
+  state_after: Cleansed and standing on the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.62
+  - 1.35
+- id: paten
+  placement_semantic: corporal-front-centre
+  placement_kind: mensa
+  scale_class: vessel-flat
+  oriented: true
+  orientation_semantic: flat-on-mensa
+  state_after: Lying at the centre of the corporal, cleansed.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.38
+  - 1.35
+  orientation_rule: faces-priest
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  orientation_note: turned toward the priest
+- id: corporal
+  placement_semantic: mensa-centre
+  placement_kind: mensa
+  scale_class: linen-spread
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded at the centre of the altar.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-MISSAL-01
+- INV-ROLE-01
+- INV-ROLE-03
+- INV-CROSS-01
+- INV-OBJ-01
+blocked_cues: []

@@ -1,0 +1,170 @@
+schema: triptych.mass_pictographic.camera_model
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Projection type and camera position are INDEPENDENT concepts.
+#
+# The failure this file exists to make impossible: a generated plate carried an
+# inset labelled "TOP VIEW (NAVE)". That label is not merely wrong, it is
+# unparseable — it names a projection ("top view") and a place ("nave") as
+# though they were one thing. A camera here must name both, separately, from
+# the two closed vocabularies below. A projection called "nave" cannot be
+# spelled.
+
+projections:
+  - id: perspective
+    kind: perspective
+    description: Ordinary perspective view with a station point and a target.
+  - id: orthographic-elevation-front
+    kind: orthographic
+    view_axis: altarward
+    description: >-
+      Front elevation looking altarward. No convergence; lateral positions read
+      true.
+  - id: orthographic-elevation-side
+    kind: orthographic
+    view_axis: epistleward
+    description: >-
+      True side elevation looking across the sanctuary. Actors at equal depth
+      collapse onto one another, which is correct and must not be corrected.
+  - id: orthographic-plan
+    kind: orthographic
+    view_axis: downward
+    description: >-
+      Overhead plan. Requires an explicit page-top world direction; see
+      `frame_requirements`.
+  - id: detail-macro
+    kind: perspective
+    description: >-
+      Close view of hands and objects. Carries the post-Consecration thumb and
+      index discipline wherever that is in force.
+
+# A projection id may never name a place. Enforced by the validator.
+forbidden_projection_names:
+  - nave
+  - sanctuary
+  - gospel
+  - epistle
+  - overhead
+  - top
+  - "top view"
+  - "top view (nave)"
+reason: >-
+  Each of these is a position, a page direction, or a label mixing the two. The
+  offending inset "TOP VIEW (NAVE)" is rejected on this list and again by the
+  requirement that every panel name a projection from `projections`.
+
+camera_positions:
+  - id: nave-centre
+    anchor_hint: "on the centreline, in the nave, below and before the steps"
+    position: [0.0, -4.0, 1.6]
+  - id: nave-gospel
+    position: [-2.2, -4.0, 1.6]
+  - id: nave-epistle
+    position: [2.2, -4.0, 1.6]
+  - id: sanctuary-centre
+    position: [0.0, -0.5, 1.6]
+  - id: gospel-side
+    position: [-4.0, 1.5, 1.6]
+  - id: epistle-side
+    position: [4.0, 1.5, 1.6]
+  - id: overhead
+    position: [0.0, 1.0, 6.0]
+  - id: priest-over-shoulder
+    position: [0.0, 0.9, 2.1]
+    note: Behind and above the priest at the predella, looking at the mensa.
+
+targets:
+  - id: altar-centre
+    position: [0.0, 1.5, 1.35]
+  - id: mensa-centre
+    position: [0.0, 1.5, 1.35]
+  - id: foot-of-altar
+    position: [0.0, 0.0, 0.9]
+  - id: sanctuary-floor
+    position: [0.0, 0.75, 0.0]
+
+frame_requirements:
+  orthographic-plan:
+    requires: [page_top_world_direction, page_bottom_world_direction]
+    reason: >-
+      An overhead view is ambiguous until the page top is fixed. Without it a
+      renderer may rotate the plan freely and still believe it is correct.
+    canonical:
+      page_top_world_direction: altarward
+      page_bottom_world_direction: naveward
+  orthographic-elevation-side:
+    requires: [page_right_world_direction]
+    canonical:
+      page_right_world_direction: altarward
+      page_top_world_direction: upward
+
+# Named presets. The structural corpus records a single `camera.view` token per
+# scene; each token maps onto exactly one preset here, so the existing 197
+# scenes compile without being rewritten.
+presets:
+  - id: nave-front
+    projection: perspective
+    position: nave-centre
+    target: altar-centre
+    up: upward
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+    note: >-
+      The canonical view. Gospel side falls on page left and Epistle side on
+      page right, which is the whole of INV-GEO-01 as a camera statement.
+  - id: side-orthographic
+    projection: orthographic-elevation-side
+    position: gospel-side
+    target: altar-centre
+    up: upward
+    frame:
+      page_right_world_direction: altarward
+      page_top_world_direction: upward
+    collapses_equal_depth: true
+    note: >-
+      Actors sharing a depth collapse here. That is the point of the view and
+      is never to be relieved by nudging a figure forward.
+  - id: over-shoulder
+    projection: perspective
+    position: priest-over-shoulder
+    target: mensa-centre
+    up: upward
+  - id: detail-close
+    projection: detail-macro
+    position: priest-over-shoulder
+    target: mensa-centre
+    up: upward
+  - id: path-plan
+    projection: orthographic-plan
+    position: overhead
+    target: sanctuary-floor
+    frame:
+      page_top_world_direction: altarward
+      page_bottom_world_direction: naveward
+    note: >-
+      The only legitimate overhead view, and the only one in which a movement
+      or crossing may be drawn as a plan. It must be requested explicitly by a
+      scene's panel list; it is never added by a generator.
+
+validation_rules:
+  - id: CAM-01
+    rule: every panel names a projection from `projections`
+  - id: CAM-02
+    rule: every panel names a camera position from `camera_positions`
+  - id: CAM-03
+    rule: no projection id appears in `forbidden_projection_names`
+  - id: CAM-04
+    rule: >-
+      a panel whose projection has an entry in `frame_requirements` supplies
+      every field that entry requires
+  - id: CAM-05
+    rule: >-
+      a plan or overhead view is expressed as projection `orthographic-plan`,
+      never as a position alone and never as a bare word like "top view"
+  - id: CAM-06
+    rule: >-
+      a side-orthographic panel does not separate actors who share a depth

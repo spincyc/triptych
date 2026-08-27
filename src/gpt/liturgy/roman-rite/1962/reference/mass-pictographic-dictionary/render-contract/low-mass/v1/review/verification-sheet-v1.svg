@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1180" viewBox="0 0 1720 1180">
+<rect width="100%" height="100%" fill="white"/>
+<style>
+text{fill:#000;font-family:sans-serif}.t{font-size:28px;font-weight:bold;font-family:serif}.h{font-size:17px;font-weight:bold}.s{font-size:13px}.m{font-size:11.5px}.box{fill:#fff;stroke:#000;stroke-width:2}.ax{stroke:#000;stroke-width:2;fill:none}.ok{font-size:13px;font-weight:bold}
+</style>
+<text x="860" y="44" text-anchor="middle" class="t">RENDER-CONTRACT VERIFICATION — 1962 LOW MASS v1</text>
+<text x="860" y="70" text-anchor="middle" class="s">structural baseline d2e97b5ca · not an artistic plate · geometry is binding</text>
+<g transform="translate(30,96)">
+<rect width="810" height="250" rx="8" class="box"/>
+<text x="18" y="30" class="h">1 · WORLD FRAME</text>
+<text x="18" y="56" class="s">Canonical view: the nave, facing the altar.</text>
+<text x="18" y="75" class="m">+X epistleward  →  page RIGHT      -X gospelward  →  page LEFT</text>
+<text x="18" y="94" class="m">+Y altarward (away from the people)  -Y naveward</text>
+<text x="18" y="113" class="m">+Z upward</text>
+<text x="18" y="132" class="m">yaw 0° = epistleward, 90° = altarward, 180° = gospelward</text>
+<text x="18" y="151" class="m">turn right = yaw decreasing; turn left = yaw increasing.</text>
+<text x="18" y="170" class="m">A turn is a sense, never a fixed pair of endpoints, so the two</text>
+<text x="18" y="189" class="m">full-circle turns sweep correctly from a naveward start.</text>
+</g>
+<g transform="translate(560,240)">
+<line x1="-90" y1="0" x2="90" y2="0" class="ax"/>
+<line x1="0" y1="60" x2="0" y2="-60" class="ax"/>
+<text x="96" y="5" class="m">+X epistle</text>
+<text x="-150" y="5" class="m">-X gospel</text>
+<text x="6" y="-66" class="m">+Y altarward</text>
+<text x="6" y="76" class="m">-Y naveward</text>
+</g>
+<g transform="translate(870,96)">
+<rect width="820" height="250" rx="8" class="box"/>
+<text x="18" y="30" class="h">2 · MISSAL ORIENTATION</text>
+<text x="18" y="56" class="s">The failure this layer exists to prevent: a mirrored book.</text>
+<text x="18" y="75" class="m">Epistle side  LM-001A  mensa-epistle  yaw 135.0°</text>
+<text x="18" y="94" class="m">Gospel side   LM-035A  mensa-gospel-corner  yaw 135.0°</text>
+<text x="18" y="113" class="m">page-up vector both sides: [-0.7071067811865476, 0.7071067811865476]</text>
+<text x="18" y="132" class="m">X is negative on both sides: the priest turns gospelward to read,</text>
+<text x="18" y="151" class="m">wherever the book stands. The mirrored value 45° never occurs.</text>
+<text x="18" y="170" class="ok">SAME YAW ON BOTH SIDES: yes</text>
+</g>
+<g transform="translate(30,366)">
+<rect width="810" height="270" rx="8" class="box"/>
+<text x="18" y="30" class="h">3 · CAMERA AND PANEL CONTRACT</text>
+<text x="18" y="56" class="s">Projection and camera position are independent vocabularies.</text>
+<text x="18" y="75" class="m">LM-001A  projection perspective  position nave-centre</text>
+<text x="18" y="94" class="m">panels 1 (primary)  additional_panels: forbidden</text>
+<text x="18" y="113" class="m">LM-136C  panels 2 (primary, path-plan)  — the plan is DECLARED, not invented</text>
+<text x="18" y="132" class="m">A plan view is projection orthographic-plan with a declared</text>
+<text x="18" y="151" class="m">page-top world direction. "nave" is a position and can never be</text>
+<text x="18" y="170" class="m">spelled as a projection, so "TOP VIEW (NAVE)" is unwritable.</text>
+<text x="18" y="189" class="ok">UNDECLARED PANELS: forbidden, and checked against every skeleton</text>
+</g>
+<g transform="translate(870,366)">
+<rect width="820" height="270" rx="8" class="box"/>
+<text x="18" y="30" class="h">4 · CROSSING PRECEDENCE</text>
+<text x="18" y="56" class="s">Ordered choreography must survive compilation, not stay prose.</text>
+<text x="18" y="75" class="m">LM-136C first crossing   AC2 y=0.5 (rank 1)   AC1 y=0.66 (rank 2)</text>
+<text x="18" y="94" class="m">LM-136E second crossing  AC1 y=0.5 (rank 1)   AC2 y=0.66 (rank 2)</text>
+<text x="18" y="113" class="m">Smaller y is nearer the viewer. depth_rank compiles to an</text>
+<text x="18" y="132" class="m">explicit offset, so who leads is a number, not an adjective.</text>
+<text x="18" y="151" class="m">AC1 carries the chalice cloth gospelward; AC2 carries the Missal</text>
+<text x="18" y="170" class="m">epistleward. The Missal keeps its one reading yaw throughout.</text>
+<text x="18" y="189" class="ok">AC2 LEADS FIRST, AC1 LEADS SECOND: yes</text>
+</g>
+<g transform="translate(30,656)">
+<rect width="1660" height="240" rx="8" class="box"/>
+<text x="18" y="30" class="h">5 · FINE DETAIL AT THE ELEVATION</text>
+<text x="18" y="56" class="s">LM-099A — The elevation of the Host, with one ring</text>
+<text x="18" y="75" class="m">priest predella-centre          [0.0, 1.66, 1.0]  faces 90°  hands holding-host | holding-host</text>
+<text x="18" y="94" class="m">AC1    predella-epistle         [0.6, 1.5, 1.0]  faces 180°  hands lifting-chasuble-edge | holding-bell</text>
+<text x="18" y="113" class="m">AC2    predella-gospel          [-0.6, 1.5, 1.0]  faces 0°  hands on-breast | lifting-chasuble-edge</text>
+<text x="18" y="132" class="m">The chasuble-lifting hands and the bell hand are explicit</text>
+<text x="18" y="151" class="m">actor state, so an artist cannot reassign them.</text>
+</g>
+<g transform="translate(30,916)">
+<rect width="1660" height="200" rx="8" class="box"/>
+<text x="18" y="30" class="h">6 · ART READINESS</text>
+<text x="18" y="56" class="s">197 scenes · 140 art-ready · 57 blocked for art</text>
+<text x="18" y="75" class="m">A scene blocks when an unresolved serving-profile cue could change</text>
+<text x="18" y="94" class="m">something visible, or when a directional phrase names no frame.</text>
+<text x="18" y="113" class="m">Blocked is the safe default: an unclassified cue never makes a</text>
+<text x="18" y="132" class="m">scene ready. Cues are resolved by human review only, and never</text>
+<text x="18" y="151" class="m">from the fenced pre-v0.21 altar-server guides.</text>
+<text x="18" y="170" class="ok">Every art-ready scene compiles with no unresolved visible geometry.</text>
+</g>
+</svg>

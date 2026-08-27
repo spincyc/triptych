@@ -1,0 +1,287 @@
+schema: triptych.mass_pictographic.object_model
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Canonical definitions for every object the structural corpus places.
+#
+# The Missal is the object that failed first, but it must not be the only one
+# with real geometry. Any object a viewer can see needs a resolved transform,
+# so the model below is general and the Missal is simply the case with the
+# strictest orientation rule.
+#
+# `oriented` says whether the object has a meaningful yaw. A chalice is
+# rotationally symmetric for rendering purposes and does not; a book, a card,
+# and a folded cloth do. Only oriented objects require a compiled yaw, which is
+# what keeps the contract honest rather than merely verbose.
+
+scale_classes:
+  book-large:   {length: 0.42, width: 0.30, height: 0.09}
+  book-stand:   {length: 0.36, width: 0.26, height: 0.12}
+  card-large:   {length: 0.40, width: 0.26, height: 0.02}
+  card-small:   {length: 0.22, width: 0.16, height: 0.02}
+  linen-spread: {length: 0.50, width: 0.50, height: 0.01}
+  linen-folded: {length: 0.18, width: 0.12, height: 0.03}
+  vessel-tall:  {length: 0.14, width: 0.14, height: 0.24}
+  vessel-flat:  {length: 0.16, width: 0.16, height: 0.02}
+  vessel-small: {length: 0.09, width: 0.07, height: 0.14}
+  dish:         {length: 0.22, width: 0.16, height: 0.04}
+  bell-small:   {length: 0.10, width: 0.10, height: 0.14}
+  wafer:        {length: 0.07, width: 0.07, height: 0.002}
+  wafer-part:   {length: 0.035, width: 0.06, height: 0.002}
+  crumb:        {length: 0.012, width: 0.012, height: 0.002}
+  furniture:    {length: 1.10, width: 0.55, height: 0.90}
+  fixture:      {length: 0.30, width: 0.20, height: 0.90}
+  vesture:      {length: 0.60, width: 0.45, height: 1.30}
+  headwear:     {length: 0.24, width: 0.20, height: 0.14}
+  bier:         {length: 2.10, width: 0.80, height: 0.60}
+
+# `orientation_rule` names the rule that fixes yaw:
+#   missal-reading   - the approved left-facing reading rule, one yaw both sides
+#   faces-priest     - the readable face turns toward the priest's station
+#   aligned-to-mensa - square with the altar, yaw altarward
+#   handle-to-priest - a handled vessel presented handle-first
+#   symmetric        - no meaningful yaw
+objects:
+  - id: missal
+    scale_class: book-large
+    oriented: true
+    orientation_rule: missal-reading
+    attachment: rests-on-mensa
+    states: [open, closed, carried]
+    invariants: ["INV-MISSAL-01"]
+    render_critical: true
+    note: >-
+      The strictest object in the contract. Its reading yaw is defined once, in
+      missal-orientation.yaml, and is identical on both sides.
+
+  - id: missal-stand
+    scale_class: book-stand
+    oriented: true
+    orientation_rule: missal-reading
+    attachment: rests-on-mensa
+    states: [in-place, carried]
+    render_critical: true
+    note: The stand carries the same yaw as the book it supports.
+
+  - id: altar-cards
+    scale_class: card-large
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: stands-on-mensa
+    states: [in-place]
+  - id: epistle-altar-card
+    scale_class: card-small
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: stands-on-mensa
+    states: [in-place]
+  - id: gospel-altar-card
+    scale_class: card-small
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: stands-on-mensa
+    states: [in-place]
+  - id: last-gospel-card
+    scale_class: card-small
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: stands-on-mensa
+    states: [in-place]
+  - id: lavabo-card
+    scale_class: card-small
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: stands-on-mensa
+    states: [in-place]
+
+  - id: corporal
+    scale_class: linen-spread
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: rests-on-mensa
+    states: [unfolded]
+    invariants: ["INV-OBJ-01"]
+    render_critical: true
+    note: >-
+      Unfolded at the centre from the beginning of Mass. It is never shown
+      being unfolded, and never handled at the Offertory.
+
+  - id: pall
+    scale_class: linen-folded
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: rests-on-chalice
+    states: [on-chalice, set-aside]
+    render_critical: true
+  - id: purificator
+    scale_class: linen-folded
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: rests-on-mensa
+    states: [over-cup, folded-once, unfolded, held]
+  - id: chalice-veil
+    scale_class: linen-folded
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: covers-chalice
+    states: [covering, folded, carried]
+  - id: chalice-cloth
+    scale_class: linen-folded
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: held-by-actor
+    states: [folded, carried, received]
+    render_critical: true
+    note: >-
+      Distinct from the chalice veil. The approved post-ablution transfer
+      object is the cloth; the compressed storyboard label is not to be
+      expanded by inference.
+  - id: burse
+    scale_class: linen-folded
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: rests-on-mensa
+    states: [empty]
+  - id: towel
+    scale_class: linen-folded
+    oriented: false
+    orientation_rule: symmetric
+    attachment: held-by-actor
+    states: [offered, in-use, returned]
+
+  - id: chalice
+    scale_class: vessel-tall
+    oriented: false
+    orientation_rule: symmetric
+    attachment: rests-on-mensa
+    states: [empty, veiled, prepared, consecrated, elevated, covered, cleansed]
+    render_critical: true
+  - id: paten
+    scale_class: vessel-flat
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: rests-on-mensa
+    states: [under-corporal-edge, on-corporal, held, upright]
+    render_critical: true
+    note: >-
+      When held upright before the Libera nos its concave face turns toward the
+      Gospel side, which is an oriented state and must compile to a yaw.
+  - id: host
+    scale_class: wafer
+    oriented: false
+    orientation_rule: symmetric
+    attachment: rests-on-corporal
+    states: [on-paten, on-corporal, held, elevated, consecrated, divided, consumed]
+    render_critical: true
+  - id: host-halves
+    scale_class: wafer-part
+    oriented: false
+    orientation_rule: symmetric
+    attachment: rests-on-paten
+    states: [arranged, held, consumed]
+  - id: particle
+    scale_class: crumb
+    oriented: false
+    orientation_rule: symmetric
+    attachment: held-by-actor
+    states: [held-over-chalice, commingled]
+
+  - id: wine-cruet
+    scale_class: vessel-small
+    oriented: true
+    orientation_rule: handle-to-priest
+    attachment: held-by-actor
+    states: [at-credence, presented, returned]
+  - id: water-cruet
+    scale_class: vessel-small
+    oriented: true
+    orientation_rule: handle-to-priest
+    attachment: held-by-actor
+    states: [at-credence, presented, returned]
+  - id: lavabo-dish
+    scale_class: dish
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: held-by-actor
+    states: [at-credence, presented, returned]
+  - id: bell
+    scale_class: bell-small
+    oriented: false
+    orientation_rule: symmetric
+    attachment: held-by-actor
+    states: [at-rest, held, rung]
+    invariants: ["INV-BELL-01", "INV-BELL-02", "INV-BELL-03"]
+    render_critical: true
+
+  - id: altar-cross
+    scale_class: fixture
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: fixed-on-mensa
+    states: [in-place]
+    note: The reference for every "eyes to the cross" gaze.
+  - id: candles
+    scale_class: fixture
+    oriented: false
+    orientation_rule: symmetric
+    attachment: fixed-on-mensa
+    states: [lit]
+  - id: credence-table
+    scale_class: furniture
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: fixed-in-sanctuary
+    states: [in-place]
+  - id: catafalque
+    scale_class: bier
+    oriented: true
+    orientation_rule: aligned-to-mensa
+    attachment: fixed-in-sanctuary
+    states: [in-place]
+
+  - id: biretta
+    scale_class: headwear
+    oriented: true
+    orientation_rule: faces-priest
+    attachment: held-by-actor
+    states: [at-credence, presented, worn]
+  - id: alb
+    scale_class: vesture
+    oriented: false
+    orientation_rule: symmetric
+    attachment: worn-by-actor
+    states: [worn, hem-lifted]
+    invariants: ["INV-ROLE-05"]
+  - id: chasuble
+    scale_class: vesture
+    oriented: false
+    orientation_rule: symmetric
+    attachment: worn-by-actor
+    states: [worn, edge-lifted]
+    render_critical: true
+
+# How each rule resolves to a yaw at compile time.
+orientation_rules:
+  - id: missal-reading
+    yaw_source: "missal-orientation.yaml:reading_orientation.page_up_yaw_deg"
+    depends_on_side: false
+    note: The one rule that must be provably side-independent.
+  - id: faces-priest
+    yaw_source: "the object's readable face turns toward the reading actor's station"
+    depends_on_side: true
+    note: >-
+      Legitimately side-dependent: a card on the Epistle side faces its reader
+      there. This is not mirroring a book, and the two rules must not be
+      confused.
+  - id: aligned-to-mensa
+    yaw_deg: 90.0
+    depends_on_side: false
+    note: Square with the altar, page-up altarward.
+  - id: handle-to-priest
+    yaw_source: "handle turned toward the receiving actor"
+    depends_on_side: true
+  - id: symmetric
+    yaw_deg: null
+    depends_on_side: false
+    note: No meaningful yaw; the compiler emits none and the validator expects none.

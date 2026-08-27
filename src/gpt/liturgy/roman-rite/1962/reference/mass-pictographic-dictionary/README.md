@@ -10,6 +10,12 @@ integration.
 **The structural pass for the spoken 1962 Roman Low Mass with two servers is
 complete, human-approved, and its detailed scene corpus is complete.**
 
+**A render-contract layer now sits between the approved corpus and any
+artwork**, at `render-contract/low-mass/v1/`. It compiles the approved
+semantics into explicit world geometry, so that an artistic generator cannot
+mirror the Missal, cannot invent a panel, and cannot restage approved geometry.
+The choreography remains v0.21 and is not revised there.
+
 **The publication-quality artistic rendering pass has not started.**
 
 The v0.21 checkpoint belongs under
@@ -43,7 +49,8 @@ liturgical action or rubric
 -> canonical structured scene/action state
 -> deterministic structural skeleton
 -> human approval
--> publication-quality artistic rendering
+-> compiled render contract and deterministic render skeleton
+-> publication-quality artistic rendering, bound by that skeleton
 -> derivatives, object compendium, web and manual use
 ```
 

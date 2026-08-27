@@ -1,0 +1,324 @@
+render_contract_version: '1.0'
+plate_id: LM-140C
+scene_ids:
+- LM-140C
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/21-leonine-prayers-and-recessional.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: The recessional
+order: 197
+cluster: LM-140
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: blocked
+  unresolved_cues: &id003
+  - Whether a biretta is worn at all is a serving-profile parameter; the approved record settles only
+    that AC1 retrieves and presents it if one was worn.
+  - The priest's exact grip on the veiled chalice during the recessional is not fixed by the approved
+    record.
+  waived_cues:
+  - cue: When the Missal is closed and removed from the Epistle side after Mass is not fixed by the approved
+      record.
+    reason: The scene fixes the Missal open at the Epistle corner through the recessional; its closing
+      falls after the last plate.
+panels:
+- id: primary
+  camera:
+    preset: nave-front
+    projection: perspective
+    projection_kind: perspective
+    position: nave-centre
+    position_xyz:
+    - 0.0
+    - -4.0
+    - 1.6
+    up: upward
+    target: altar-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: plano-centre
+  position:
+  - 0.0
+  - 0.16
+  - 0.0
+  side: centre
+  depth_rank: 1
+  posture: walking
+  bow: none
+  body_facing_yaw_deg: 270.0
+  body_facing_vector:
+  - -0.0
+  - -1.0
+  - 0.0
+  facing_semantic: nave
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: false
+    left: holding-chalice-both-hands
+    right: holding-chalice-both-hands
+  gestures:
+  - ascend
+  - genuflect
+  - descend
+  panel_visibility: &id001
+  - primary
+  depth_offset_naveward: 0.16
+  depth_offset_note: derived from depth_rank because this actor shares an anchor with another; smaller
+    rank stands nearer the viewer
+  path:
+    from: plano-centre
+    from_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    via:
+    - predella-centre
+    via_xyz:
+    - - 0.0
+      - 1.5
+      - 1.0
+    to: plano-centre
+    to_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    settles_at: plano-centre
+    note: The priest rises, ascends to the altar to retrieve the veiled chalice, descends with it, genuflects
+      at the foot with both servers, and leaves behind them.
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: plano-centre
+  position:
+  - 0.0
+  - 0.0
+  - 0.0
+  side: centre
+  depth_rank: 0
+  posture: walking
+  bow: none
+  body_facing_yaw_deg: 270.0
+  body_facing_vector:
+  - -0.0
+  - -1.0
+  - 0.0
+  facing_semantic: nave
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures:
+  - genuflect
+  - turn-inward
+  panel_visibility: *id001
+  depth_offset_naveward: 0.0
+  depth_offset_note: derived from depth_rank because this actor shares an anchor with another; smaller
+    rank stands nearer the viewer
+  path:
+    from: plano-centre
+    from_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    via: []
+    via_xyz: []
+    to: plano-centre
+    to_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    settles_at: plano-centre
+    note: AC1 stands at once, assists the priest's alb at the ascent, retrieves and presents the biretta
+      if one was worn, genuflects at the foot, then turns inward and takes his place shoulder to shoulder
+      with AC2 in front of the priest.
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: plano-centre
+  position:
+  - 0.0
+  - 0.0
+  - 0.0
+  side: centre
+  depth_rank: 0
+  posture: walking
+  bow: none
+  body_facing_yaw_deg: 270.0
+  body_facing_vector:
+  - -0.0
+  - -1.0
+  - 0.0
+  facing_semantic: nave
+  facing_derivation: world-direction
+  gaze: forward
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures:
+  - genuflect
+  - turn-inward
+  panel_visibility: *id001
+  depth_offset_naveward: 0.0
+  depth_offset_note: derived from depth_rank because this actor shares an anchor with another; smaller
+    rank stands nearer the viewer
+  path:
+    from: plano-gospel
+    from_xyz:
+    - -0.5
+    - 0.0
+    - 0.0
+    via: []
+    via_xyz: []
+    to: plano-centre
+    to_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    settles_at: plano-centre
+    note: AC2 stands at once, assists the priest's alb at the ascent, genuflects at the foot, then turns
+      inward and takes his place shoulder to shoulder with AC1 in front of the priest.
+objects:
+- id: chalice
+  placement_semantic: Carried by the priest in both hands, veiled.
+  placement_kind: actor-held
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: upright
+  state_after: Veiled, carried by the priest out to the sacristy.
+  handled_by: priest
+  panel_visibility: &id002
+  - primary
+  parent_transform: priest
+  position: null
+- id: chalice-veil
+  placement_semantic: Over the chalice in the priest's hands.
+  placement_kind: actor-held
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: not-applicable
+  state_after: Over the chalice the priest carries out.
+  handled_by: priest
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: burse
+  placement_semantic: On the veiled chalice the priest carries out.
+  placement_kind: actor-held
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: not-applicable
+  state_after: Carried out with the veiled chalice.
+  handled_by: priest
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: alb
+  placement_semantic: On the priest.
+  placement_kind: actor-held
+  scale_class: vesture
+  oriented: false
+  orientation_semantic: not-applicable
+  state_after: Lifted clear by BOTH acolytes while the priest ascends to the altar, then released.
+  handled_by: both-acolytes
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+- id: biretta
+  placement_semantic: Presented to the priest by AC1, if one was worn.
+  placement_kind: actor-held
+  scale_class: headwear
+  oriented: true
+  orientation_semantic: not-applicable
+  state_after: In the priest's possession for the recessional, if one was worn.
+  handled_by: AC1
+  panel_visibility: *id002
+  parent_transform: AC1
+  position: null
+  orientation_rule: faces-priest
+  orientation_note: position unresolved
+- id: missal
+  placement_semantic: mensa-epistle-corner
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Left on the Epistle side. The approved record does not say when it is closed or removed.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.95
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-ROLE-01
+- INV-OBJ-01
+blocked_cues: *id003

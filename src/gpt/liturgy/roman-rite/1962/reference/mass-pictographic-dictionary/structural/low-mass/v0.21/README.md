@@ -169,6 +169,18 @@ Offertory, or a Gloria-conditioned dismissal.
 See `VALIDATION.md` for image checks, the contradiction audit, and the
 inherited repository-wide check baseline.
 
+## Downstream: the render contract
+
+This corpus says what happens in each scene. It does not say, in numbers, where
+everything is — and a first artistic plate proved that prose is not enough: it
+resolved `orientation: priest-reads-facing-left` against the priest's body
+rather than the world and drew the Missal mirrored.
+
+That gap is closed one directory over, at
+`../../../render-contract/low-mass/v1/`, which compiles this corpus into
+explicit world geometry and deterministic skeletons. Nothing here changed: the
+choreography is still v0.21, and the render contract versions separately.
+
 ## Next artistic lane
 
 The next fresh human-guided session should consume `scenes/inventory.yaml` in

@@ -476,6 +476,46 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic render contract v1
+
+<!-- promised-deliverable: mass-pictographic-render-contract-v1 -->
+
+**Hardened and validated on 27 August 2026.** A fresh web art lane consumed the sealed
+v0.21 structural corpus and produced a plate that was attractive and
+structurally wrong: it mirrored the Missal, and it invented an inset labelled
+`TOP VIEW (NAVE)`. Both failures trace to the same cause — the corpus states
+geometry as prose, and prose admits interpretation. `orientation:
+priest-reads-facing-left` was resolved against the priest's body instead of the
+world, and nothing declared a panel list closed.
+
+This lane adds a render-contract layer at
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/`,
+downstream of the approved corpus and versioned separately from it. The
+choreography remains v0.21 and is not revised here. The layer compiles the
+approved semantics into explicit world geometry: one absolute coordinate frame,
+the Missal reading rule as a single yaw identical on both sides, projection and
+camera position as independent vocabularies, and a closed panel manifest.
+
+Art readiness is derived rather than asserted. A scene whose unresolved
+serving-profile cue could change something visible is blocked for art with the
+exact cue named, and no cue is resolved from the fenced pre-checkpoint guides.
+
+All 197 scenes compile: 140 are art-ready and 57 are blocked, 55 by an
+unresolved serving-profile cue and 2 by a directional phrase that names no
+reference frame. Every one of the 190 Missal placements resolves to a single
+reading yaw of 135 degrees, identical on the Gospel and Epistle sides, so the
+mirrored value cannot occur. Each scene carries a closed panel list; two
+declare a second, reviewed plan panel. Deterministic skeletons exist for all
+197 scenes and are proved current against their contracts, and a verification
+sheet covers the four regression fixtures. A new `pictographic` tool compiles
+and regenerates them.
+
+Two defects in the contract's own first draft were found by audit and fixed
+before commit: turns had been compiled as fixed endpoint pairs, which reverses
+the two full-circle turns that begin from a naveward facing, and the mensa
+depth axis was uncompiled, which collapsed the Host and the chalice onto one
+point. Both repairs live in the render-contract layer; v0.21 is untouched.
+
 ### Detailed 1962 Low Mass pictographic scene corpus
 
 <!-- promised-deliverable: mass-pictographic-low-mass-scene-corpus -->

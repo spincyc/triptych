@@ -1,0 +1,113 @@
+schema: triptych.mass_pictographic.missal_orientation
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+invariant: "INV-MISSAL-01"
+
+# The approved rule, and the geometry it compiles to.
+#
+# Semantic statement, unchanged and still authoritative as meaning:
+#
+#   Wherever the Missal is placed, including on the Gospel side, it is oriented
+#   so that when the priest reads it he is turned toward the left of the
+#   canonical world frame. It is never mirrored merely because it changed side.
+#
+# The failure this file exists to make impossible: an art generator read the
+# string `orientation: priest-reads-facing-left`, inferred "left" from the
+# actor's own body rather than the world, and mirrored the book on one side.
+#
+# The compiled form removes the inference. Reading orientation is ONE yaw,
+# and it is THE SAME NUMBER on both sides. Mirroring is then not a
+# misreading a renderer could make; it is a different number, and the
+# validator rejects it.
+
+reading_orientation:
+  page_up_yaw_deg: 135.0
+  page_up_vector: [-0.7071067811865476, 0.7071067811865476, 0.0]
+  priest_facing_yaw_deg: 135.0
+  priest_facing_vector: [-0.7071067811865476, 0.7071067811865476, 0.0]
+  semantic_direction: gospelward
+  identical_on_both_sides: true
+  derivation: >-
+    The top of the page points away from the reader, so the priest's facing
+    while reading equals the page-up direction. He stands at the altar, whose
+    default facing is altarward at yaw 90, and the approved rule turns him
+    toward world left, which is gospelward at yaw 180. The canonical reading
+    pose is the diagonal between them, yaw 135: turned toward the Gospel side
+    while still addressing the altar. This is exactly the "priest stands
+    diagonally to altar" recorded at the Gospel-side Missal in LM-035A, and it
+    is the same angle at the Epistle-side Missal.
+
+# What "not mirrored" means numerically. A mirrored book would put the priest's
+# reading facing at yaw 45, the reflection of 135 across the altarward axis.
+# That is the forbidden value.
+mirror_test:
+  forbidden_page_up_yaw_deg: 45.0
+  rule: >-
+    The X component of the reading facing vector is negative on every side,
+    because the priest always turns toward the Gospel side to read. A positive
+    X component is a mirrored book.
+  assertions:
+    - "reading facing vector x < 0 on every Missal-reading scene"
+    - "page_up_yaw_deg is identical for Gospel-side and Epistle-side placements"
+    - "placement side never appears as a term in the orientation computation"
+
+# The renderable state a compiled Missal must carry.
+required_compiled_fields:
+  - anchor
+  - position
+  - yaw_deg
+  - page_up_vector
+  - spine_direction
+  - reading_edge_direction
+  - page_normal
+  - reader_anchor
+  - reader_facing_vector
+  - open_state
+
+# Geometry of the book itself, relative to its reading orientation.
+book_geometry:
+  spine_direction:
+    derivation: >-
+      The spine runs across the top of the open book, perpendicular to the
+      page-up direction in the horizontal plane. Taken as page-up rotated by
+      -90 degrees of yaw, so it points epistleward-and-altarward at yaw 45.
+    yaw_offset_from_page_up_deg: -90.0
+  reading_edge_direction:
+    derivation: >-
+      The near edge the reader stands at, opposite the page-up direction.
+    yaw_offset_from_page_up_deg: 180.0
+  page_normal:
+    vector: [0.0, 0.0, 1.0]
+    note: >-
+      An open book resting on the mensa presents its pages upward. Only the
+      horizontal orientation is at issue in this contract.
+  open_state: open
+  scale_class: book-large
+
+# Where the Missal legitimately rests. The side changes; the orientation does
+# not. Every entry below carries the same reading orientation by construction.
+placements:
+  - anchor: mensa-epistle
+    side: epistle
+    phase: "before the Gospel, and again after the vessels are cleansed"
+  - anchor: mensa-epistle-corner
+    side: epistle
+    phase: "returned by AC2 after the ablutions"
+  - anchor: mensa-gospel
+    side: gospel
+    phase: "from the Gospel through the Canon"
+  - anchor: mensa-gospel-corner
+    side: gospel
+    phase: "at the Gospel itself"
+  - anchor: mensa-inner-gospel
+    side: gospel
+    phase: "moved toward the centre after the Gospel, just left of the corporal"
+
+carried_state:
+  note: >-
+    While an acolyte carries the Missal between sides it is held, not placed.
+    A carried Missal keeps the same reading orientation relative to the book,
+    so that setting it down requires no re-orientation; the compiled transform
+    is parented to the carrying actor.
+  parent_transform: carrying-actor

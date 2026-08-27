@@ -1,0 +1,165 @@
+schema: triptych.mass_pictographic.world_frame
+version: "1.0"
+status: render-contract
+rite: roman-1962
+form: low-mass
+mode: spoken
+structural_baseline_commit: "d2e97b5ca"
+structural_source: "../../../structural/low-mass/v0.21/scenes/geometry.yaml"
+
+# The single canonical world coordinate frame for the render contract.
+#
+# Every direction in a compiled contract is an absolute world vector. No
+# renderable value may depend on an actor's own left or right, or on a reader
+# inferring a frame from prose. The semantic labels below stay usable, but they
+# are names FOR these vectors, never substitutes for them.
+#
+# The axis choices are inherited unchanged from the approved structural
+# geometry; this file only makes them explicit, signed, and testable.
+
+world_frame:
+  handedness: right-handed
+  units: dimensionless-synthetic
+  units_note: >-
+    Synthetic scene units, deliberately not metres. The project chose this at
+    the structural stage and the render contract preserves it. One unit is
+    roughly the lateral offset from the altar centre to a side position.
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+
+# Named direction tokens. `vector` is authoritative; the name is a convenience.
+directions:
+  - id: epistleward
+    vector: [1.0, 0.0, 0.0]
+    aka: "world right in the canonical nave-facing view"
+  - id: gospelward
+    vector: [-1.0, 0.0, 0.0]
+    aka: "world left in the canonical nave-facing view"
+  - id: altarward
+    vector: [0.0, 1.0, 0.0]
+    aka: "away from the nave, toward the high altar"
+  - id: naveward
+    vector: [0.0, -1.0, 0.0]
+    aka: "away from the altar, toward the people"
+  - id: upward
+    vector: [0.0, 0.0, 1.0]
+  - id: downward
+    vector: [0.0, 0.0, -1.0]
+
+# Yaw is the horizontal-plane angle used by every compiled transform.
+yaw:
+  definition: >-
+    Degrees in the XY plane, measured counter-clockwise from +X when viewed
+    from above with +Z toward the viewer. A yaw of T is the unit vector
+    (cos T, sin T, 0).
+  reference_angles:
+    epistleward: 0
+    altarward: 90
+    gospelward: 180
+    naveward: 270
+  rotation_senses:
+    - id: yaw-decreasing
+      aka: clockwise seen from above, with altarward as page top
+      actor_instruction: "turn right"
+    - id: yaw-increasing
+      aka: anticlockwise seen from above
+      actor_instruction: "turn left"
+  turning:
+    note: >-
+      An actor facing altarward (yaw 90) who turns toward world left, that is
+      gospelward, moves toward yaw 180. Turning toward world right, that is
+      epistleward, moves toward yaw 0. This is the whole content of the
+      approved "turn right to the people" and "turn left back to the altar":
+      the priest at the altar faces altarward, so turning right carries him
+      toward the Epistle side and on round to face the nave.
+
+# The approved side convention, restated as a mechanical mapping.
+sides:
+  gospel:
+    direction: gospelward
+    sign_x: -1
+    canonical_view_position: viewer-left
+  epistle:
+    direction: epistleward
+    sign_x: 1
+    canonical_view_position: viewer-right
+  invariant: "INV-GEO-01"
+  note: >-
+    Gospel side is viewer LEFT and Epistle side is viewer RIGHT in the
+    canonical nave-facing-the-altar view. A secondary camera may look from
+    anywhere, but it never changes these world-space assignments.
+
+# Frames a value may be expressed in. A compiled contract may only use `world`
+# for anything renderable; the others exist so prose can be classified rather
+# than silently reinterpreted.
+reference_frames:
+  - id: world
+    description: >-
+      The absolute frame defined above. Every renderable direction resolves
+      here.
+    renderable: true
+  - id: actor-local
+    description: >-
+      An actor's own left and right, which depend on the direction that actor
+      currently faces. Correct and necessary for statements like "the right
+      hand", and never sufficient for a world direction.
+    renderable: false
+    tokens: [actor-local-left, actor-local-right, actor-local-front, actor-local-back]
+  - id: camera-page
+    description: >-
+      Directions on the finished page: page left, page right, page top, page
+      bottom. A camera declares how these map onto world directions; they are
+      never assumed.
+    renderable: false
+    tokens: [camera-page-left, camera-page-right, camera-page-top, camera-page-bottom]
+
+# Phrases the structural corpus uses, mapped to the frame each one belongs to.
+# This is a naming exercise only: no approved meaning is changed here.
+phrase_frames:
+  - phrase: "priest-reads-facing-left"
+    frame: world
+    resolves_to: gospelward
+    note: >-
+      The approved rule is that wherever the Missal is placed, the priest
+      reading it is turned toward the left of the canonical world frame. See
+      missal-orientation.yaml, which compiles this to a single yaw that is
+      identical on both sides.
+  - phrase: "turn right"
+    frame: actor-local
+    resolves_to: "rotation-yaw-decreasing"
+    note: >-
+      A turn is a SENSE, never a fixed pair of endpoints. Compiled from the
+      actor's current yaw: turning right decreases yaw, which is clockwise seen
+      from above in an altarward-up plan. For a priest facing the altar that
+      carries him toward the Epistle side, which is why the approved record can
+      write "turns right / toward Epistle side" — but that equivalence holds
+      only from that start. At LM-081B and at the second turn of LM-138D he is
+      already facing the people, so his right is gospelward and the same
+      instruction sweeps the other way round. Encoding the endpoints instead of
+      the sense would silently reverse both of those circles.
+  - phrase: "turn left"
+    frame: actor-local
+    resolves_to: "rotation-yaw-increasing"
+    note: "Anticlockwise seen from above. Same rule: a sense, not endpoints."
+  - phrase: "turn inward"
+    frame: actor-local
+    resolves_to: "rotation toward the centreline"
+    note: >-
+      The world sense depends on which side the actor stands: AC1 on the
+      Epistle side turns gospelward, AC2 on the Gospel side turns epistleward.
+  - phrase: "right hand"
+    frame: actor-local
+    resolves_to: actor-local-right
+  - phrase: "left hand"
+    frame: actor-local
+    resolves_to: actor-local-left
+  - phrase: "viewer left"
+    frame: camera-page
+    resolves_to: camera-page-left

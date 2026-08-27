@@ -1,0 +1,109 @@
+#!/bin/sh
+# Test for `tools/tpt pictographic`: exit 0 = pass (the stable gate).
+#
+# render-contract and skeleton both write. Every writing invocation here runs
+# against a throwaway --out under mktemp, so the tracked render-contract tree
+# is never touched; only read-only invocations reach the real corpus.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="pictographic"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+match() {
+	if ! printf '%s\n' "$2" | grep -Eq "$1"; then
+		echo "expected /$1/ in: $2" >&2
+		exit 1
+	fi
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		echo "expected failure: $tool_id $*" >&2
+		exit 1
+	fi
+}
+
+run_tool --help >/dev/null
+for verb in render-contract skeleton readiness; do
+	run_tool "$verb" --help >/dev/null
+done
+
+corpus="$repo/src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/scenes"
+if [ ! -d "$corpus" ]; then
+	echo "missing tracked scene corpus: $corpus" >&2
+	exit 1
+fi
+
+out="$sandbox/out"
+second="$sandbox/second"
+
+run_tool render-contract roman-1962 low-mass LM-001A --out "$out"
+contract="$out/contracts/LM-001A.yaml"
+if [ ! -f "$contract" ]; then
+	echo "render-contract wrote no contract at $contract" >&2
+	exit 1
+fi
+match '^plate_id: LM-001A$' "$(cat "$contract")"
+
+# The invariant this whole layer exists for: the Missal reads the same way on
+# both sides. Compare the Epistle-side opening scene against a Gospel-side one.
+run_tool render-contract roman-1962 low-mass LM-035A --out "$out"
+epistle="$(grep -A1 'page_up_yaw_deg' "$contract" | head -1)"
+gospel="$(grep -A1 'page_up_yaw_deg' "$out/contracts/LM-035A.yaml" | head -1)"
+if [ "$epistle" != "$gospel" ]; then
+	echo "the Missal reads differently by side: $epistle vs $gospel" >&2
+	exit 1
+fi
+
+# Deterministic, then idempotent.
+run_tool render-contract roman-1962 low-mass LM-001A --out "$second"
+if ! cmp -s "$contract" "$second/contracts/LM-001A.yaml"; then
+	echo "render-contract is not deterministic" >&2
+	exit 1
+fi
+cp "$contract" "$sandbox/before"
+run_tool render-contract roman-1962 low-mass LM-001A --out "$out"
+if ! cmp -s "$sandbox/before" "$contract"; then
+	echo "render-contract is not idempotent" >&2
+	exit 1
+fi
+
+run_tool skeleton roman-1962 low-mass LM-001A --out "$out"
+skeleton="$out/skeletons/LM-001A.svg"
+if [ ! -f "$skeleton" ]; then
+	echo "skeleton wrote no SVG at $skeleton" >&2
+	exit 1
+fi
+match '^<svg ' "$(head -n 1 "$skeleton")"
+
+# A place name must never appear as a projection.
+if grep -Eqi 'projection (nave|overhead|top)' "$skeleton"; then
+	echo "a camera position is being used as a projection" >&2
+	exit 1
+fi
+
+run_tool skeleton roman-1962 low-mass LM-001A --out "$second"
+if ! cmp -s "$skeleton" "$second/skeletons/LM-001A.svg"; then
+	echo "skeleton is not deterministic" >&2
+	exit 1
+fi
+
+match 'art-ready' "$(run_tool readiness roman-1962 low-mass)"
+
+reject nosuchverb
+reject render-contract
+reject render-contract roman-1962 low-mass LM-999Z --out "$out"
+reject render-contract no-such-calendar low-mass LM-001A --out "$out"
+reject render-contract roman-1962 no-such-form LM-001A --out "$out"
+reject skeleton roman-1962 low-mass LM-999Z --out "$out"
+reject --nonesuch
+
+echo ok

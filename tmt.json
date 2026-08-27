@@ -274,6 +274,17 @@
       "stage": "draft",
       "usage": "pdf-review [--output DIR] [--changed-from REV] [PDF ...]"
     },
+    "pictographic": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Compile pictographic render contracts and deterministic skeleton SVGs.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "pictographic {render-contract,skeleton,readiness} <calendar> <form> [SCENE] [--out DIR]"
+    },
     "public-alpha": {
       "idempotent": true,
       "json": false,

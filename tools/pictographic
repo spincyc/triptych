@@ -1,0 +1,135 @@
+#!/usr/bin/env python3
+"""Compile pictographic render contracts and deterministic skeleton SVGs.
+
+The approved structural corpus says what happens in a scene. A render contract
+says where everything is, in explicit world coordinates, so that a later
+artistic pass cannot mirror a book or invent a panel.
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _pictographic import (  # noqa: E402
+    contract_dir,
+    readiness_report,
+    write_contract,
+    write_skeleton,
+)
+from _tooling import Example, examples_live_on_the_verbs, with_examples  # noqa: E402
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "render-contract": (
+        Example(
+            "tools/pictographic render-contract roman-1962 low-mass LM-001A "
+            "--out build/example-render-contract",
+            (
+                "wrote build/example-render-contract/contracts/LM-001A.yaml",
+            ),
+            "WRITES under the named --out, so a scratch path keeps the tracked "
+            "contracts untouched",
+        ),
+        Example(
+            "tools/pictographic render-contract roman-1962 low-mass LM-136C "
+            "--out build/example-render-contract",
+            (
+                "wrote build/example-render-contract/contracts/LM-136C.yaml",
+            ),
+            "the first post-ablution crossing, whose panel list adds a declared "
+            "plan view",
+        ),
+    ),
+    "skeleton": (
+        Example(
+            "tools/pictographic skeleton roman-1962 low-mass LM-001A "
+            "--out build/example-render-contract",
+            (
+                "wrote build/example-render-contract/skeletons/LM-001A.svg",
+            ),
+            "WRITES under the named --out",
+        ),
+        Example(
+            "tools/pictographic skeleton roman-1962 low-mass LM-035A "
+            "--out build/example-render-contract",
+            (
+                "wrote build/example-render-contract/skeletons/LM-035A.svg",
+            ),
+            "the Gospel-side reading, where the book must not be mirrored",
+        ),
+    ),
+    "readiness": (
+        Example(
+            "tools/pictographic readiness roman-1962 low-mass",
+            (
+                "scenes 197  art-ready 140  blocked 57",
+            ),
+        ),
+        Example(
+            "tools/pictographic readiness roman-1962 low-mass --blocked",
+            (
+                "scenes 197  art-ready 140  blocked 57",
+                "... 57 more lines",
+            ),
+            "--blocked also lists each blocked scene and its first unresolved cue",
+        ),
+    ),
+}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    examples_live_on_the_verbs(parser, "pictographic")
+    verbs = parser.add_subparsers(dest="verb", required=True)
+
+    for name in ("render-contract", "skeleton"):
+        verb = with_examples(verbs.add_parser(name), EXAMPLES[name])
+        verb.add_argument("calendar")
+        verb.add_argument("form")
+        verb.add_argument("scene")
+        verb.add_argument("--out", type=Path, default=None)
+
+    ready = with_examples(verbs.add_parser("readiness"), EXAMPLES["readiness"])
+    ready.add_argument("calendar")
+    ready.add_argument("form")
+    ready.add_argument("--blocked", action="store_true")
+
+    args = parser.parse_args()
+    directory = contract_dir(args.calendar, args.form)
+
+    if args.verb == "readiness":
+        report = readiness_report(directory)
+        totals = report["totals"]
+        print(
+            f"scenes {totals['scenes']}  art-ready {totals['ready']}  "
+            f"blocked {totals['blocked']}"
+        )
+        if args.blocked:
+            for entry in report["blocked_scenes"]:
+                first = entry["unresolved_cues"][0]
+                print(f"  {entry['scene_id']}  {first}")
+        return 0
+
+    out = args.out or directory
+    try:
+        if args.verb == "render-contract":
+            written = write_contract(directory, args.scene, out)
+        else:
+            written = write_skeleton(directory, args.scene, out)
+    except KeyError as unknown:
+        raise SystemExit(f"unknown scene {args.scene!r}") from unknown
+    try:
+        shown = written.relative_to(ROOT)
+    except ValueError:
+        shown = written
+    print(f"wrote {shown}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -115,6 +115,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         (
             "artwork-library",
             "check-roman-sanctuary-artwork",
+            "pictographic",
             "render-sanctuary-dictionary",
             "source-first-cartographic-artwork",
         ),
@@ -196,6 +197,7 @@ REACHES: dict[str, str] = {
     "mass-propers": NOTHING,
     "mass-today": NOTHING,
     "pdf-review": NOTHING,
+    "pictographic": NOTHING,
     "public-alpha": NOTHING,
     "reading-plan": NOTHING,
     "release-bindings": NOTHING,

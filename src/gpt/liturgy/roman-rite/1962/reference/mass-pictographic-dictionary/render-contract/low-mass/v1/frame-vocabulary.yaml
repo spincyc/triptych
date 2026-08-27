@@ -1,0 +1,142 @@
+schema: triptych.mass_pictographic.frame_vocabulary
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Frame-explicit naming, and the two compiled repairs it exposed.
+#
+# The approved corpus says "left" and "right" in four different frames, and the
+# word alone never says which. This file names the frames and records what each
+# ambiguous phrase already means. No approved meaning is changed. Nothing here
+# rewrites choreography; it only stops a renderer from having to guess which
+# left was meant.
+
+frames:
+  - prefix: "w:"
+    id: world
+    renderable: true
+    tokens: [gospelward, epistleward, altarward, naveward, upward, downward]
+  - prefix: "a:"
+    id: actor-local
+    renderable: false
+    tokens: [left, right, front, back, inward, outward, turn-cw, turn-ccw]
+    note: Correct for a hand or a turn, never sufficient for a world direction.
+  - prefix: "p:"
+    id: camera-page
+    renderable: false
+    tokens: [left, right, top, bottom]
+  - prefix: "o:"
+    id: object-local
+    renderable: false
+    tokens: [corporal-gospel-edge, corporal-epistle-edge, corporal-nave-fold,
+             corporal-altar-fold, mensa-nave-edge, open-ends-altarward]
+    note: >-
+      The corpus places objects relative to other objects. That is neither the
+      world frame nor the actor's, and it needs its own names.
+
+# COMPILED REPAIR 1 — the mensa depth axis.
+#
+# `corporal-front-centre` and `corporal-back-centre` both carry x 0.0 in the
+# structural geometry and no y at all. The front/back distinction — which is
+# what keeps the chalice standing behind the Host rather than on top of it —
+# lived only in two English notes. Six hundred placements resolved to one point.
+#
+# This is the same defect as `priest-reads-facing-left`, one axis over.
+#
+# The repair is made HERE, in the render contract, and not in the sealed
+# structural corpus: it adds no choreography and changes no approved meaning,
+# it only makes explicit what the structural notes already say. v0.21 is
+# untouched.
+mensa_depth:
+  default_y: 1.5
+  note: >-
+    The mensa runs from its naveward edge, where the priest stands, to its
+    altarward edge. A named position without its own depth sits at the middle.
+  positions:
+    corporal-front-centre:
+      y: 1.38
+      derivation: >-
+        The front-centre fold of the corporal, nearest the priest. The
+        structural note fixes it functionally: "the Host rests here".
+      object_frame_token: "o:corporal-nave-fold"
+    corporal-back-centre:
+      y: 1.62
+      derivation: >-
+        The back-centre fold, further from the priest. Structural note: "the
+        chalice stands here". The Host must read as in front of the chalice,
+        which requires these two to differ.
+      object_frame_token: "o:corporal-altar-fold"
+    corporal-right-edge:
+      y: 1.5
+      derivation: >-
+        Structural note: "the right edge of the corporal as the priest faces
+        the altar, i.e. toward the Epistle side". Epistleward, not gospelward.
+      object_frame_token: "o:corporal-epistle-edge"
+    altar-cross:
+      y: 1.72
+      derivation: The crucifix stands at the back of the mensa.
+
+# COMPILED REPAIR 2 — the unused inner-Gospel anchor.
+#
+# `mensa-inner-gospel` is defined in the structural geometry and used by no
+# scene: the Missal's Canon-long position is recorded as `mensa-gospel`. The
+# anchor is left in place, unused, and the compiler resolves the Canon Missal
+# from `mensa-gospel` as the corpus actually records it. Recorded here so the
+# discrepancy is visible rather than quietly reconciled.
+unused_structural_anchors:
+  - id: mensa-inner-gospel
+    status: defined-but-unused
+    corpus_uses_instead: mensa-gospel
+    disposition: >-
+      No change to the corpus. A future structural revision may adopt the
+      finer anchor; this lane does not, because moving 104 Missal placements
+      would be a choreography edit and no human approved one.
+
+# Phrases whose frame is ambiguous AND whose meaning the approved material does
+# not settle. These are not resolved. They BLOCK the scenes that depend on
+# them, exactly as an unresolved serving-profile cue does, because guessing a
+# frame is how the first plate went wrong.
+undetermined_phrases:
+  - phrase: "upper right of the paten"
+    scenes: ["LM-134B"]
+    why: >-
+      "Upper right" names no frame. The paten is held nearly horizontal, so
+      "upper" cannot mean upward. The approved record says only "arrange the
+      two Host halves and paten as in current canonical late assets", and the
+      asset referenced is a raster review projection, which is a picture rather
+      than a geometry statement.
+    human_must_decide: >-
+      Whether this is page-right in the scene's own camera, epistleward and
+      altarward in world, or a paten-local direction — and which the approved
+      plate actually shows.
+  - phrase: "which of the two stands nearer the altar"
+    scenes: ["LM-075A"]
+    why: >-
+      The corpus states outright that the approved record does not fix which
+      server stands nearer the altar at the Epistle side. That is a depth
+      ordering, and depth is renderable.
+    human_must_decide: The depth_rank ordering of AC1 against AC2 at plano-epistle.
+  - phrase: "how far the priest turns toward the servers"
+    scenes: ["LM-076A", "LM-077A"]
+    why: >-
+      The sense of the turn is fixed, epistleward, but its magnitude is not. A
+      yaw is renderable; a turn without a magnitude is not.
+    human_must_decide: The priest's yaw at the Lavabo.
+
+lint_rules:
+  - id: FRAME-01
+    rule: >-
+      No renderable field may carry a bare left, right, front, back, top or
+      bottom without a frame prefix or a compiled vector beside it.
+  - id: FRAME-02
+    rule: >-
+      Every mensa position used by an art-ready scene resolves to an explicit
+      depth, so two objects on the corporal cannot occupy one point.
+  - id: FRAME-03
+    rule: >-
+      A turn compiles from the actor's current yaw plus a rotation sense, never
+      from a fixed pair of endpoints.
+  - id: FRAME-04
+    rule: >-
+      A scene naming an undetermined phrase is blocked for art, whatever its
+      unresolved-cue list says.

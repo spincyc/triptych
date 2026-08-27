@@ -1,0 +1,381 @@
+schema: triptych.mass_pictographic.placement_map
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Free-text object placements, resolved for the render-contract compiler.
+#
+# Most `placement` values in the structural corpus are a named anchor from
+# geometry.yaml or a named mensa position, and the compiler resolves those
+# directly. The 85 keys below are the remainder: prose strings that name a
+# place, a pair of hands, or an explicit refusal to fix either. Each key is
+# the corpus string VERBATIM, byte for byte, including capitalisation and any
+# trailing full stop, because the compiler matches on exact equality and a
+# paraphrase silently fails to match.
+#
+# Nothing here revises approved choreography. This file only says, for each
+# prose string, which of three dispositions the compiler must apply.
+#
+#   held       The object is in an actor's hands or on his person. The
+#              compiler parents its transform to that actor, so the file gives
+#              `held_by` and no coordinates. Preferred wherever an actor has
+#              the object: it is more truthful than a point in space, and it
+#              invents nothing.
+#
+#   positioned The string names a definite place the world frame can express.
+#              The file gives explicit world `position: [x, y, z]`, derived
+#              from geometry.yaml anchors and mensa positions. Identical
+#              physical places carry identical coordinates.
+#
+#   unplaced   The approved record DELIBERATELY declines to fix the place, and
+#              inventing one would be exactly the guessing this contract layer
+#              exists to prevent. No coordinates are given; the note says why.
+#              Used only where the string itself, or the affected scene's
+#              `unresolved` list, shows the record declines to fix it -- never
+#              as a resting place for a string that was merely hard.
+#
+# World frame (world-frame.yaml): +X epistleward, -X gospelward, +Y altarward,
+# -Y naveward, +Z up; dimensionless-synthetic units. The mensa surface is
+# z = 1.35 and mensa positions sit at y = 1.5. An object resting on the mensa,
+# or on the corporal or a paten upon it, is at 1.35; the cup of the chalice
+# standing on the corporal is at 1.59, the chalice being 0.24 tall.
+
+map:
+  "Worn by the priest; its front and lower hem briefly lifted by AC1 during the ascent.":
+    disposition: held
+    held_by: priest
+    note: "A vestment on the priest; the alb is parented to him and AC1 only lifts its hem."
+  "Held open in AC1's two hands, before his breast, at the Epistle side.":
+    disposition: held
+    held_by: AC1
+    note: "The Missal is open in AC1's two hands, so its transform parents to AC1."
+  "Held open in AC1's two hands, before his breast, at the centre below the altar steps.":
+    disposition: held
+    held_by: AC1
+    note: "Still in AC1's two hands, one step further along the same crossing; parented to AC1."
+  "Held open in the priest's two hands, lifted clear of its stand at the Gospel corner.":
+    disposition: held
+    held_by: priest
+    note: "Lifted clear of its stand into the priest's two hands, so it parents to the priest."
+  "On the mensa toward the centre, just to the LEFT of the corporal as the priest faces the altar, that is on the Gospel side of the corporal.":
+    disposition: positioned
+    position: [-0.35, 1.5, 1.35]
+    note: "This is mensa-inner-gospel in other words, whose note names exactly this place; its coordinates are used unchanged."
+  "On the mensa toward the centre, just to the LEFT of the corporal as the priest faces the altar.":
+    disposition: positioned
+    position: [-0.35, 1.5, 1.35]
+    note: "The stand carries the book, so it takes the same mensa-inner-gospel coordinates as the Missal it supports."
+  "in the priest's two hands, passing across to AC1 on the Epistle side":
+    disposition: held
+    held_by: priest
+    note: "In transit between hands; the string names the priest's two hands as the current holder, so it parents to him."
+  "held in both hands over the corporal at the centre of the altar":
+    disposition: held
+    held_by: priest
+    note: "Held in the priest's two hands over the corporal, so no fixed coordinate is needed."
+  "on the paten, held in both hands over the corporal":
+    disposition: held
+    held_by: priest
+    note: "The Host rides on the paten the priest holds in both hands, so it parents to the priest."
+  "held level in both hands at the height of the priest's breast, above the corporal":
+    disposition: held
+    held_by: priest
+    note: "Held level in the priest's two hands at breast height; parented to the priest."
+  "on the paten at breast height":
+    disposition: held
+    held_by: priest
+    note: "On the paten that the priest holds at breast height, so it parents to the priest rather than to a point in space."
+  "held in both hands just above the front-centre fold of the corporal":
+    disposition: held
+    held_by: priest
+    note: "Held in the priest's two hands just above the corporal; parented to the priest."
+  "on the paten just above the front-centre fold of the corporal":
+    disposition: held
+    held_by: priest
+    note: "Carried on the paten in the priest's hands through the horizontal cross; parented to the priest."
+  "held in both hands, tilted just above the front-centre fold of the corporal":
+    disposition: held
+    held_by: priest
+    note: "Tilted in the priest's two hands until the Host slides off; parented to the priest."
+  "held out in AC1's right hand at the Epistle side, the handle turned toward the priest":
+    disposition: held
+    held_by: AC1
+    note: "Held out in AC1's right hand, handle toward the priest; parented to AC1."
+  "held in AC2's right hand at the credence":
+    disposition: held
+    held_by: AC2
+    note: "Taken up into AC2's right hand at the credence; parented to AC2."
+  "held out in AC2's right hand at the Epistle side, the handle turned toward the priest":
+    disposition: held
+    held_by: AC2
+    note: "Held out in AC2's right hand, handle toward the priest; parented to AC2."
+  "held at the node of the chalice under the priest's left thumb":
+    disposition: held
+    held_by: priest
+    note: "Gripped at the chalice node under the priest's left thumb, so it is on his person and parents to him."
+  "taken back into AC1's left hand at the Epistle side":
+    disposition: held
+    held_by: AC1
+    note: "Returned into AC1's left hand and kissed; parented to AC1."
+  "taken back into AC2's left hand at the Epistle side":
+    disposition: held
+    held_by: AC2
+    note: "Returned into AC2's left hand and kissed; parented to AC2."
+  "held in AC1's left hand at the Epistle side":
+    disposition: held
+    held_by: AC1
+    note: "Retained in AC1's left hand after the wine is served; parented to AC1."
+  "at the node of the chalice, toward the centre of the altar":
+    disposition: positioned
+    position: [0.0, 1.5, 1.47]
+    note: "The chalice stands at mensa-centre in this scene and the priest has joined his hands, so the purificator is left at the node, half the 0.24 vessel-tall height above the mensa."
+  "held in AC2's left hand at the Epistle side":
+    disposition: held
+    held_by: AC2
+    note: "Retained in AC2's left hand after the water is served; parented to AC2."
+  "held in the priest's hands above the mensa at the centre":
+    disposition: held
+    held_by: priest
+    note: "Taken up into the priest's two hands at the node and base; parented to the priest."
+  "held at the priest's eye height above the corporal at the centre":
+    disposition: held
+    held_by: priest
+    note: "Raised to the priest's eye height in his two hands; parented to the priest."
+  "held just above the corporal at the centre":
+    disposition: held
+    held_by: priest
+    note: "Lowered in the priest's two hands through the horizontal cross; parented to the priest."
+  "carried by AC2 toward the Epistle side":
+    disposition: held
+    held_by: AC2
+    note: "Carried in AC2's hands to the Epistle side for the Lavabo; parented to AC2."
+  "carried by AC1 toward the Epistle side":
+    disposition: held
+    held_by: AC1
+    note: "Carried folded in AC1's right hand to the Epistle side; parented to AC1."
+  "held up by AC2 at the Epistle side":
+    disposition: held
+    held_by: AC2
+    note: "Tilted in AC2's right hand to pour; parented to AC2."
+  "held up by AC2 beneath the priest's hands":
+    disposition: held
+    held_by: AC2
+    note: "Held up in AC2's left hand beneath the priest's fingertips; parented to AC2."
+  "held by AC1 at the Epistle side":
+    disposition: held
+    held_by: AC1
+    note: "Folded in AC1's right hand ready to be given to the priest; parented to AC1."
+  "held by AC2 at the Epistle side":
+    disposition: held
+    held_by: AC2
+    note: "Still in AC2's hands after the pouring; parented to AC2."
+  "On the cup of the chalice.":
+    disposition: positioned
+    position: [0.0, 1.5, 1.59]
+    note: "The chalice stands at corporal-back-centre, so the pall lies on its cup at the 0.24 vessel-tall height above the mensa."
+  "Held above the front-centre fold of the corporal between the thumb and index of both of the priest's hands.":
+    disposition: held
+    held_by: priest
+    note: "Held between the thumb and index of both of the priest's hands; parented to the priest."
+  "Held above the front-centre fold of the corporal between the LEFT thumb and index of the priest.":
+    disposition: held
+    held_by: priest
+    note: "Held between the priest's left thumb and index while his right hand blesses; parented to the priest."
+  "Held between the thumb and index finger of both of the priest's hands, just above the front-centre fold of the corporal.":
+    disposition: held
+    held_by: priest
+    note: "Held between both of the priest's thumb and index pairs; parented to the priest."
+  "Lying flat on the mouth of the chalice.":
+    disposition: positioned
+    position: [0.0, 1.5, 1.59]
+    note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
+  "Carried up from the lowest step and held in AC1's right hand on the predella, Epistle side.":
+    disposition: held
+    held_by: AC1
+    note: "Carried up and held in AC1's right hand on the predella; parented to AC1."
+  "On the priest.":
+    disposition: held
+    held_by: priest
+    note: "A vestment on the priest, so the compiler parents it to him and needs no coordinate."
+  "Held between the thumb and index finger of both of the priest's hands, just above the front-centre fold of the corporal, while his elbows rest on the mensa.":
+    disposition: held
+    held_by: priest
+    note: "Held between both thumb and index pairs while the priest's elbows rest on the mensa; parented to the priest."
+  "In AC1's right hand on the predella, Epistle side.":
+    disposition: held
+    held_by: AC1
+    note: "In AC1's right hand on the predella; parented to AC1."
+  "Raised in both of the priest's hands above his head, as high as he can comfortably lift it, shown to the people.":
+    disposition: held
+    held_by: priest
+    note: "Elevated in both of the priest's hands above his head; parented to the priest."
+  "On the priest; its outside lower edge lifted slightly on the Epistle side by AC1's left hand and on the Gospel side by AC2's right hand.":
+    disposition: held
+    held_by: priest
+    note: "Worn by the priest and parented to him; the servers only lift its outside lower edges and do not carry it."
+  "Set aside on the mensa toward the Epistle side of the corporal while the chalice stands uncovered.":
+    disposition: positioned
+    position: [0.6, 1.5, 1.35]
+    note: "The mensa toward the Epistle side of the corporal is mensa-epistle, where LM-131B and LM-135B place the pall in this same uncovered-chalice state."
+  "Set aside on the mensa toward the Epistle side of the corporal.":
+    disposition: positioned
+    position: [0.6, 1.5, 1.35]
+    note: "The same set-aside place as in LM-101A, so it takes identical mensa-epistle coordinates."
+  "Raised in both of the priest's hands, high enough to be shown to the people, still uncovered.":
+    disposition: held
+    held_by: priest
+    note: "Elevated in both of the priest's hands and shown to the people; parented to the priest."
+  "covering the cup of the chalice":
+    disposition: positioned
+    position: [0.0, 1.5, 1.59]
+    note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
+  "on the exposed half of the paten":
+    disposition: positioned
+    position: [0.35, 1.5, 1.35]
+    note: "The paten lies at corporal-right-edge and the purificator on its exposed half; a paten is 0.02 thick, so the height rule keeps it on the mensa surface."
+  "folded, on the Epistle side of the altar near the Lavabo card":
+    disposition: positioned
+    position: [0.95, 1.5, 1.35]
+    note: "The Lavabo card stands at mensa-epistle-corner, and the corpus resolves this same folded-veil state to mensa-epistle-corner in seventeen other scenes."
+  "at AC1's place at the Epistle end of the lowest step":
+    disposition: positioned
+    position: [0.5, 0.5, 0.25]
+    note: "AC1's place at the Epistle end of the lowest step is the step-1-epistle anchor, which LM-135B uses for this same set-down bell."
+  "held in the priest's right hand over the corporal":
+    disposition: held
+    held_by: priest
+    note: "Lifted from the corporal into the priest's right hand; parented to the priest."
+  "removed from the chalice; the approved record does not fix where it rests while the chalice is uncovered":
+    disposition: unplaced
+    note: "The string states outright that the approved record does not fix where the pall rests while the chalice is uncovered, and the unresolved list of every affected scene repeats it."
+  "held in the priest's right hand over the cup of the chalice":
+    disposition: held
+    held_by: priest
+    note: "Held between the priest's right thumb and index above the cup; parented to the priest."
+  "held in the priest's right hand in the space between the chalice and the priest":
+    disposition: held
+    held_by: priest
+    note: "Held between the priest's right thumb and index; parented to the priest."
+  "held in the priest's right hand a few inches above the corporal, over the chalice":
+    disposition: held
+    held_by: priest
+    note: "Held between the priest's right thumb and index and raised with the chalice; parented to the priest."
+  "raised a few inches above the back-centre fold of the corporal":
+    disposition: held
+    held_by: priest
+    note: "Held at the node in the priest's left hand and raised clear of the corporal; parented to the priest."
+  "covering the chalice on the corporal":
+    disposition: positioned
+    position: [0.0, 1.5, 1.59]
+    note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
+  "in the priest's right hand, drawn clear of the right edge of the corporal":
+    disposition: held
+    held_by: priest
+    note: "Drawn out from under the corporal edge into the priest's right hand; parented to the priest."
+  "held upright off the corporal between the right index and middle fingers":
+    disposition: held
+    held_by: priest
+    note: "Held upright and clear of the corporal in the priest's right hand; parented to the priest."
+  "in the priest's right hand, carried to forehead, breast and both shoulders":
+    disposition: held
+    held_by: priest
+    note: "Carried in the priest's right hand to forehead, breast and shoulders; parented to the priest."
+  "raised in the right hand so that its edge meets the priest's lips":
+    disposition: held
+    held_by: priest
+    note: "Raised in the priest's right hand to his lips; parented to the priest."
+  "on the paten, which now rests on the corporal beside the chalice base":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "The Host rides on the paten now set down on the corporal, so it takes the paten's coordinates midway between mensa-centre and corporal-right-edge."
+  "on the corporal near the chalice base, to the right of the Host's former place":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "On the corporal epistleward of the corporal centre and short of corporal-right-edge, so midway between them at x 0.18 on the mensa surface."
+  "on the paten on the corporal near the chalice base":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "The same paten position as in LM-131A, so the Host upon it takes identical coordinates."
+  "held over the chalice between the thumb and index of both hands":
+    disposition: held
+    held_by: priest
+    note: "Held over the chalice between the thumb and index of both hands; parented to the priest."
+  "the right half on the paten; the left half held over the chalice in the priest's left hand":
+    disposition: held
+    held_by: priest
+    note: "The priest has the left half between his left thumb and index, so the pair parents to him; the right half lies on the paten at the same instant."
+  "both halves on the paten":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "Both halves now lie on the paten resting on the corporal, so they take the paten's coordinates."
+  "held over the chalice between the right thumb and index":
+    disposition: held
+    held_by: priest
+    note: "Retained over the chalice between the priest's right thumb and index; parented to the priest."
+  "both halves on the paten, their broken edges together":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "Still on the paten on the corporal, only realigned, so the coordinates are unchanged."
+  "both halves on the paten, arranged to resemble a complete Host":
+    disposition: positioned
+    position: [0.18, 1.5, 1.35]
+    note: "Still on the paten on the corporal, so the coordinates are unchanged."
+  "in the chalice, in the Precious Blood":
+    disposition: positioned
+    position: [0.0, 1.5, 1.55]
+    note: "Commingled inside the cup of the chalice standing at corporal-back-centre, just below its 1.59 rim."
+  "In the priest's left hand, held behind the Host halves above the corporal.":
+    disposition: held
+    held_by: priest
+    note: "Taken up into the priest's left hand behind the Host halves; parented to the priest."
+  "In the priest's left hand, before the paten and above the corporal.":
+    disposition: held
+    held_by: priest
+    note: "Taken up into the priest's left hand in front of the paten; parented to the priest."
+  "Consumed; no longer present on the altar.":
+    disposition: absent
+    note: "The record fixes that the Sacred Host has been consumed and is no longer on the altar, so there is no place to compile and the compiler must render nothing."
+  "In the priest's left hand, resting on the corporal.":
+    disposition: held
+    held_by: priest
+    note: "Held in the priest's left hand, which itself rests on the corporal; parented to the priest."
+  "In AC1's right hand at the Epistle side of the predella.":
+    disposition: held
+    held_by: AC1
+    note: "In AC1's right hand at the Epistle side of the predella; parented to AC1."
+  "Held by the priest over the altar.":
+    disposition: held
+    held_by: priest
+    note: "Held by the priest in both hands over the altar; parented to the priest."
+  "In AC1's right hand, one altar step below the predella on the Epistle side.":
+    disposition: held
+    held_by: AC1
+    note: "In AC1's right hand at step-3-epistle; parented to AC1."
+  "In AC1's hands, carried to the Gospel side.":
+    disposition: held
+    held_by: AC1
+    note: "Carried in AC1's hands to the Gospel side; parented to AC1."
+  "In the priest's hand at the altar, taken from AC1.":
+    disposition: held
+    held_by: priest
+    note: "Taken from AC1 into the priest's hand; parented to the priest."
+  "In the priest's hand at the altar.":
+    disposition: held
+    held_by: priest
+    note: "Still in the priest's hand at the altar; parented to the priest."
+  "Carried by the priest in both hands, veiled.":
+    disposition: held
+    held_by: priest
+    note: "Carried by the priest in both hands out of the sanctuary; parented to the priest."
+  "Over the chalice in the priest's hands.":
+    disposition: held
+    held_by: priest
+    note: "Over the chalice that the priest carries in his hands, so it parents to the priest."
+  "On the veiled chalice the priest carries out.":
+    disposition: held
+    held_by: priest
+    note: "On the veiled chalice that the priest carries in his hands, so it parents to the priest."
+  "Presented to the priest by AC1, if one was worn.":
+    disposition: held
+    held_by: AC1
+    note: "Retrieved and presented by AC1, so it parents to AC1 for as long as the scene lasts."

@@ -1,0 +1,290 @@
+render_contract_version: '1.0'
+plate_id: LM-133A
+scene_ids:
+- LM-133A
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/15-pater-noster-fraction-agnus-dei.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: 'Pax Domini: three crosses with the particle over the chalice'
+order: 173
+cluster: LM-133
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: ready
+panels:
+- id: primary
+  camera:
+    preset: detail-close
+    projection: detail-macro
+    projection_kind: perspective
+    position: priest-over-shoulder
+    position_xyz:
+    - 0.0
+    - 0.9
+    - 2.1
+    up: upward
+    target: mensa-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: predella-centre
+  position:
+  - 0.0
+  - 1.5
+  - 1.0
+  side: centre
+  depth_rank: 2
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 90.0
+  body_facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  facing_semantic: chalice
+  facing_derivation: toward-target
+  gaze: chalice
+  hands:
+    joined: false
+    left: at-chalice-node
+    right: holding-particle
+  gestures:
+  - cross-with-particle
+  panel_visibility: &id001
+  - primary
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: step-1-epistle
+  position:
+  - 0.5
+  - 0.5
+  - 0.25
+  side: epistle
+  depth_rank: 1
+  posture: kneeling
+  bow: none
+  body_facing_yaw_deg: 116.565051
+  body_facing_vector:
+  - -0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: step-1-gospel
+  position:
+  - -0.5
+  - 0.5
+  - 0.25
+  side: gospel
+  depth_rank: 1
+  posture: kneeling
+  bow: none
+  body_facing_yaw_deg: 63.434949
+  body_facing_vector:
+  - 0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+objects:
+- id: missal
+  placement_semantic: mensa-gospel
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Open on the Gospel side at the Canon.
+  handled_by: none
+  panel_visibility: &id002
+  - primary
+  position:
+  - -0.6
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+- id: corporal
+  placement_semantic: mensa-centre
+  placement_kind: mensa
+  scale_class: linen-spread
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded at the centre of the altar.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: host-halves
+  placement_semantic: both halves on the paten, arranged to resemble a complete Host
+  placement_kind: mapped
+  scale_class: wafer-part
+  oriented: false
+  orientation_semantic: flat-on-mensa
+  state_after: Arranged on the paten to resemble a complete Host.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.18
+  - 1.5
+  - 1.35
+- id: particle
+  placement_semantic: held over the chalice between the right thumb and index
+  placement_kind: actor-held
+  scale_class: crumb
+  oriented: false
+  orientation_semantic: not-applicable
+  state_after: Carried in three horizontal crosses over the chalice and still held over it, having touched
+    nothing.
+  handled_by: priest
+  panel_visibility: *id002
+  parent_transform: priest
+  position: null
+- id: chalice
+  placement_semantic: corporal-back-centre
+  placement_kind: mensa
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: not-applicable
+  state_after: Standing uncovered on the corporal, steadied at the node by the left hand.
+  handled_by: priest
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.62
+  - 1.35
+- id: pall
+  placement_semantic: mensa-epistle
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: flat-on-mensa
+  state_after: Lying on the mensa at the right of the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.6
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: paten
+  placement_semantic: on the corporal near the chalice base, to the right of the Host's former place
+  placement_kind: mapped
+  scale_class: vessel-flat
+  oriented: true
+  orientation_semantic: nearly-horizontal
+  state_after: Resting on the corporal with both halves upon it.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.18
+  - 1.5
+  - 1.35
+  orientation_rule: faces-priest
+  yaw_deg: 180.0
+  facing_vector:
+  - -1.0
+  - 0.0
+  - 0.0
+  orientation_note: turned toward the priest
+- id: purificator
+  placement_semantic: mensa-epistle
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded on the mensa to the right of the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.6
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-MISSAL-01
+- INV-ROLE-01
+- INV-HAND-01
+- INV-OBJ-01
+blocked_cues: []

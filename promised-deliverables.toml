@@ -1594,3 +1594,64 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/storyboards",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/render-storyboards.py",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-render-contract-v1"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/README.md"
+promise = "Harden the approved v0.21 Low Mass structural corpus into a mechanically enforceable render contract, so that an artistic generator cannot mirror the Missal, cannot invent an undeclared panel, and cannot restage approved geometry, and so that any scene whose visible choreography is still unresolved blocks art rather than being guessed."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "absolute-world-frame"
+  criterion = "One canonical world coordinate frame defines signed axes, named direction vectors, a yaw convention, and the reference frame each ambiguous directional phrase belongs to, so no renderable direction depends on an actor's local left or right."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/world-frame.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/frame-vocabulary.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "missal-orientation-compiled"
+  criterion = "The Missal reading invariant is compiled to explicit geometry whose reading yaw is identical on the Gospel and Epistle sides, the mirrored value is named and forbidden, and a regression proves both sides resolve to the same world-facing direction."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/missal-orientation.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "camera-and-panel-contract"
+  criterion = "Projection type and camera position are independent closed vocabularies, a place name cannot be used as a projection, plan views must declare a page-top world direction, and every plate compiles to an explicit closed panel list that forbids generator-invented insets."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/camera-model.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/panel-contract.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "deterministic-compiler-and-skeletons"
+  criterion = "A deterministic compiler turns every approved scene into a compiled render contract carrying resolved actor and object transforms, and generates a deterministic skeleton for every art-ready scene, reproducibly and verifiably current."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/compile.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/skeleton.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/contracts",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/skeletons",
+  ]
+
+  [[deliverables.requirements]]
+  id = "art-readiness-gate"
+  criterion = "Art readiness is derived, not hand-maintained: every scene whose unresolved serving-profile cue could alter visible position, posture, orientation, hand use, object state, path, or ordering is marked blocked with the exact cue, and no cue is resolved from the fenced pre-checkpoint guides."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/art-readiness.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "render-contract-validation"
+  criterion = "A validator rejects semantic-only orientation on a render-ready scene, an invalid or place-named projection, an undeclared panel, a mirrored Missal, and depth separation in a side-orthographic view; regression fixtures cover the opening scene, a Gospel-side reading, the coordinated crossing, and an elevation."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/validate.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/review",
+    "tools/tests/test_render_contract.py",
+  ]

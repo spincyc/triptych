@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="916" viewBox="0 0 960 916">
+<rect width="100%" height="100%" fill="white"/>
+<style>
+text{fill:#000;font-family:sans-serif}.t{font-size:26px;font-weight:bold;font-family:serif}.h{font-size:17px;font-weight:bold}.s{font-size:13px}.m{font-size:11px}.box{fill:#fff;stroke:#000;stroke-width:2}.stone{fill:#fff;stroke:#000;stroke-width:1.5}.actor{fill:#fff;stroke:#000;stroke-width:2.5}.obj{fill:#000}.face{stroke:#000;stroke-width:2.5;fill:none}.path{stroke:#000;stroke-width:1.6;fill:none;stroke-dasharray:7 5}.axis{stroke:#000;stroke-width:1;fill:none}.blocked{fill:#000}
+</style>
+<text x="480" y="42" text-anchor="middle" class="t">LM-002A — RENDER SKELETON</text>
+<text x="480" y="70" text-anchor="middle" class="s">Sign of the cross and Introibo ad altare Dei</text>
+<text x="480" y="92" text-anchor="middle" class="m">world frame: +X epistleward / -X gospelward, +Y altarward, +Z up · yaw 0° = epistleward, 90° = altarward · structural baseline d2e97b5ca</text>
+<text x="480" y="112" text-anchor="middle" class="m">panels: 1 (primary) · additional panels: forbidden · geometry is binding; an artist may beautify but not restage</text>
+<text x="480" y="136" text-anchor="middle" class="h blocked">BLOCKED FOR ART — 1 unresolved cue(s); see art-readiness.yaml</text>
+<g transform="translate(30,150)">
+<rect width="900" height="620" rx="8" class="box"/>
+<text x="16" y="26" class="h">panel primary</text>
+<text x="16" y="46" class="s">projection perspective · position nave-centre</text>
+<text x="16" y="64" class="m">page: page_left=gospelward, page_right=epistleward, page_top=upward</text>
+<line x1="6.0" y1="520.0" x2="894.0" y2="520.0" class="stone"/>
+<line x1="54.0" y1="467.5" x2="846.0" y2="467.5" class="stone"/>
+<line x1="102.0" y1="415.0" x2="798.0" y2="415.0" class="stone"/>
+<line x1="150.0" y1="362.5" x2="750.0" y2="362.5" class="stone"/>
+<line x1="198.0" y1="310.0" x2="702.0" y2="310.0" class="stone"/>
+<rect x="198.0" y="236.5" width="504.0" height="14" class="stone"/>
+<rect x="589.0" y="231.5" width="10" height="10" class="obj"/>
+<line x1="594.0" y1="236.5" x2="574.5" y2="236.5" class="face"/>
+<text x="603.0" y="228.5" class="m">missal 135°</text>
+<rect x="445.0" y="231.5" width="10" height="10" class="obj"/>
+<line x1="450.0" y1="236.5" x2="450.0" y2="236.5" class="face"/>
+<text x="459.0" y="228.5" class="m">corporal 90°</text>
+<rect x="445.0" y="231.5" width="10" height="10" class="obj"/>
+<text x="459.0" y="215.5" class="m">chalice</text>
+<rect x="301.0" y="231.5" width="10" height="10" class="obj"/>
+<line x1="306.0" y1="236.5" x2="306.0" y2="236.5" class="face"/>
+<text x="315.0" y="228.5" class="m">burse 90°</text>
+<circle cx="450.0" cy="520.0" r="15" class="actor"/>
+<circle cx="450.0" cy="520.0" r="4.5" class="obj"/>
+<text x="450.0" y="550.0" text-anchor="middle" class="m">priest</text>
+<text x="450.0" y="498.0" text-anchor="middle" class="m">90&#176; d1</text>
+<circle cx="570.0" cy="520.0" r="15" class="actor"/>
+<line x1="555.0" y1="520.0" x2="530.0" y2="520.0" class="face"/>
+<text x="570.0" y="550.0" text-anchor="middle" class="m">AC1</text>
+<text x="570.0" y="498.0" text-anchor="middle" class="m">106&#176; d1</text>
+<circle cx="330.0" cy="520.0" r="15" class="actor"/>
+<line x1="345.0" y1="520.0" x2="370.0" y2="520.0" class="face"/>
+<text x="330.0" y="550.0" text-anchor="middle" class="m">AC2</text>
+<text x="330.0" y="498.0" text-anchor="middle" class="m">74&#176; d1</text>
+</g>
+<text x="30" y="820" class="m">priest: plano-centre [0.0, 0.0, 0.0] · standing · bow none · faces altar-cross @ 90° · hands on-breast | signing</text>
+<text x="30" y="838" class="m">AC1: plano-epistle [0.5, 0.0, 0.0] · kneeling · bow none · faces altar-cross @ 106° · hands joined-before-breast | joined-before-breast</text>
+<text x="30" y="856" class="m">AC2: plano-gospel [-0.5, 0.0, 0.0] · kneeling · bow none · faces altar-cross @ 74° · hands joined-before-breast | joined-before-breast</text>
+</svg>

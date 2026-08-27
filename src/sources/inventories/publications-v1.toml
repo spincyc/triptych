@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-26"
+audited_on = "2026-08-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
-source_surface_file_count = 2084
-snapshot = "sha256:718aa30eb767f4a07347ef8c748613c89a96b661b9e99176c4086fe0fac8d31b"
+source_surface_file_count = 2086
+snapshot = "sha256:e124ec06bf9830805dc6ec7dfdc06e78bc2e31bfe1e92844ca3cb8a6ecf25a01"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9750,19 +9750,31 @@ owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md"
-sha256 = "10eb8e9b2ac4b2ffbbcd32ba5555f4d769a5d54cfe05faed240f82cf2170423a"
+sha256 = "c260bf4a4df744a9dc55f9d0e786afd21d4e3dff5b3220556a7924fd4036c189"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md"
+sha256 = "da9a4a62b55f7e5d6587b196e6a81d50f5d01bcf0993b41acdaeda445d0b2980"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/README.md"
+sha256 = "109fc7fa01180d24da2bfeda3486c7a17c67891219af1d1e0526595692490808"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/README.md"
-sha256 = "c220664ac6440f9bd8fe702ed4d90c6f9a6030f0f4d35ce12bf24f64642875e9"
+sha256 = "836735d2794928fc44435263ac1be1cfff02ce50b882f42ecec4866850c385f6"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/structural/low-mass/v0.21/VALIDATION.md"
-sha256 = "26c5a2ec81ff233199402ec6702df9bff453e245ca976b4ef460aa0b01002e1e"
+sha256 = "1f14dbf68f26c25a7eaeefb4869aed0199768d38d35bd23b6419e5044a12705a"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 

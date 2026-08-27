@@ -1,0 +1,321 @@
+render_contract_version: '1.0'
+plate_id: LM-094B
+scene_ids:
+- LM-094B
+structural_baseline_commit: d2e97b5ca
+structural_sources:
+- structural/low-mass/v0.21/scenes/sections/12-preface-sanctus-canon-opening.yaml
+- structural/low-mass/v0.21/scenes/inventory.yaml
+title: The warning cue before the Consecration
+order: 127
+cluster: LM-094
+condition: ALWAYS
+world_frame:
+  reference: world-frame.yaml
+  x:
+    positive: epistleward
+    negative: gospelward
+  y:
+    positive: altarward
+    negative: naveward
+  z:
+    positive: upward
+    negative: downward
+  units: dimensionless-synthetic
+  yaw_zero: epistleward
+  yaw_increases: counter-clockwise seen from above
+art_readiness:
+  status: ready
+  waived_cues:
+  - cue: The exact word of the Canon at which AC1 gives the warning cue belongs to the serving profile.
+      The approved record fixes only that it falls shortly before the Consecration and that it is a distinct
+      cue, so no text cue is pinned here.
+    reason: The plate shows AC1 sounding the warning while the priest continues the Canon; the word it
+      falls on changes nothing visible.
+panels:
+- id: primary
+  camera:
+    preset: nave-front
+    projection: perspective
+    projection_kind: perspective
+    position: nave-centre
+    position_xyz:
+    - 0.0
+    - -4.0
+    - 1.6
+    up: upward
+    target: altar-centre
+    target_xyz:
+    - 0.0
+    - 1.5
+    - 1.35
+    frame:
+      page_right_world_direction: epistleward
+      page_left_world_direction: gospelward
+      page_top_world_direction: upward
+additional_panels: forbidden
+actors:
+- id: priest
+  role: celebrant
+  anchor: predella-centre
+  position:
+  - 0.0
+  - 1.5
+  - 1.0
+  side: centre
+  depth_rank: 2
+  posture: standing
+  bow: none
+  body_facing_yaw_deg: 90.0
+  body_facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: degenerate-toward-altar
+  gaze: oblations
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: &id001
+  - primary
+- id: AC1
+  role: acolyte-epistle-side
+  anchor: step-1-epistle
+  position:
+  - 0.5
+  - 0.5
+  - 0.25
+  side: epistle
+  depth_rank: 1
+  posture: kneeling
+  bow: none
+  body_facing_yaw_deg: 116.565051
+  body_facing_vector:
+  - -0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: false
+    left: on-breast
+    right: holding-bell
+  gestures:
+  - ring-bell
+  panel_visibility: *id001
+- id: AC2
+  role: acolyte-gospel-side
+  anchor: step-1-gospel
+  position:
+  - -0.5
+  - 0.5
+  - 0.25
+  side: gospel
+  depth_rank: 1
+  posture: kneeling
+  bow: none
+  body_facing_yaw_deg: 63.434949
+  body_facing_vector:
+  - 0.447214
+  - 0.894427
+  - 0.0
+  facing_semantic: altar
+  facing_derivation: toward-target
+  gaze: altar
+  hands:
+    joined: true
+    left: joined-before-breast
+    right: joined-before-breast
+  gestures: []
+  panel_visibility: *id001
+objects:
+- id: missal
+  placement_semantic: mensa-gospel
+  placement_kind: mensa
+  scale_class: book-large
+  oriented: true
+  orientation_semantic: priest-reads-facing-left
+  state_after: Open at the Canon, unmoved.
+  handled_by: none
+  panel_visibility: &id002
+  - primary
+  position:
+  - -0.6
+  - 1.5
+  - 1.35
+  orientation_rule: missal-reading
+  yaw_deg: 135.0
+  facing_vector:
+  - -0.707107
+  - 0.707107
+  - 0.0
+  orientation_note: identical on both sides by invariant
+  reading:
+    page_up_yaw_deg: 135.0
+    page_up_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    spine_yaw_deg: 45.0
+    reading_edge_yaw_deg: 315.0
+    page_normal:
+    - 0.0
+    - 0.0
+    - 1.0
+    priest_facing_yaw_deg: 135.0
+    priest_facing_vector:
+    - -0.7071067811865476
+    - 0.7071067811865476
+    - 0.0
+    semantic_direction: gospelward
+    identical_on_both_sides: true
+- id: corporal
+  placement_semantic: mensa-centre
+  placement_kind: mensa
+  scale_class: linen-spread
+  oriented: true
+  orientation_semantic: unfolded
+  state_after: Unfolded at the centre of the altar.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: host
+  placement_semantic: corporal-front-centre
+  placement_kind: mensa
+  scale_class: wafer
+  oriented: false
+  orientation_semantic: flat-on-mensa
+  state_after: Unconsecrated, on the front-centre fold of the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.38
+  - 1.35
+- id: paten
+  placement_semantic: corporal-right-edge
+  placement_kind: mensa
+  scale_class: vessel-flat
+  oriented: true
+  orientation_semantic: horizontal
+  state_after: Unmoved.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.35
+  - 1.5
+  - 1.35
+  orientation_rule: faces-priest
+  yaw_deg: 180.0
+  facing_vector:
+  - -1.0
+  - 0.0
+  - 0.0
+  orientation_note: turned toward the priest
+- id: purificator
+  placement_semantic: corporal-right-edge
+  placement_kind: mensa
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: open-ends-toward-back
+  state_after: Unmoved.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.35
+  - 1.5
+  - 1.35
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: chalice
+  placement_semantic: corporal-back-centre
+  placement_kind: mensa
+  scale_class: vessel-tall
+  oriented: false
+  orientation_semantic: upright
+  state_after: Standing covered on the corporal.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.62
+  - 1.35
+- id: pall
+  placement_semantic: On the cup of the chalice.
+  placement_kind: mapped
+  scale_class: linen-folded
+  oriented: true
+  orientation_semantic: horizontal
+  state_after: Covering the cup of the chalice.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.5
+  - 1.59
+  orientation_rule: aligned-to-mensa
+  yaw_deg: 90.0
+  facing_vector:
+  - 0.0
+  - 1.0
+  - 0.0
+- id: altar-cross
+  placement_semantic: altar-cross
+  placement_kind: mensa
+  scale_class: fixture
+  oriented: true
+  orientation_semantic: upright
+  state_after: Standing at the centre of the altar.
+  handled_by: none
+  panel_visibility: *id002
+  position:
+  - 0.0
+  - 1.72
+  - 1.35
+  orientation_rule: faces-priest
+  yaw_deg: 270.0
+  facing_vector:
+  - -0.0
+  - -1.0
+  - 0.0
+  orientation_note: turned toward the priest
+- id: bell
+  placement_semantic: step-1-epistle
+  placement_kind: anchor
+  scale_class: bell-small
+  oriented: false
+  orientation_semantic: upright
+  state_after: Sounded once as the warning cue, then held ready for the Consecration rings.
+  handled_by: AC1
+  panel_visibility: *id002
+  position:
+  - 0.5
+  - 0.5
+  - 0.25
+visible_invariants:
+- INV-FORM-01
+- INV-GEO-01
+- INV-GEO-02
+- INV-GEO-03
+- INV-BELL-01
+- INV-MISSAL-01
+- INV-ROLE-01
+- INV-OBJ-01
+blocked_cues: []

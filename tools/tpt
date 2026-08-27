@@ -72,13 +72,13 @@ EXAMPLES = {
                 "acquisition:",
                 "  Retrieval from outside the project. This is the only group that reaches",
                 "  outside your machine at all, and no tool in any other group makes a network",
-                "... 62 more lines",
+                "... 63 more lines",
             ),
         ),
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+9536 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+9861 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -91,7 +91,7 @@ EXAMPLES = {
                 "group: launcher",
                 "reaches: nothing",
                 "purpose: Unified launcher for Triptych tools and tool discovery commands.",
-                "usage: tpt <tool> [<tool args>...] | tpt <workflow> <doc> {seed,advance,status,replay,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]",
+                "usage: tpt <tool> [<tool args>...] | tpt <workflow> --help | tpt <workflow> list [--json] | tpt <workflow> <doc> {seed,advance,status,replay,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]",
                 "path: <repo>/tools/tpt",
                 "... 1 more line",
             ),
@@ -99,7 +99,7 @@ EXAMPLES = {
         Example(
             "tools/tpt --info tpt --json",
             (
-                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+383 chars]",
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+438 chars]",
             ),
         ),
     ),
@@ -122,13 +122,13 @@ EXAMPLES = {
         Example(
             "tools/tpt --check",
             (
-                "registry ok: 35 tools",
+                "registry ok: 36 tools",
             ),
         ),
         Example(
             "tools/tpt --check --json",
             (
-                "registry ok: 35 tools",
+                "registry ok: 36 tools",
             ),
             "--check reports in text either way; it is a gate, not a query",
         ),
