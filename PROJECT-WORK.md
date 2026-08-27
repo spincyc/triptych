@@ -1139,6 +1139,735 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena publication and completion-envelope ownership lane, V16
+
+<!-- promised-deliverable: corpus-browser-catena-e1-corrections-v16-2026-08-27 -->
+
+The disposition answered is **CHANGES REQUIRED** at exact candidate
+`b9202882badbbbc364f1dd3d9057d2710ee47552`, the V15 head on
+`impl/catena-wave-1-e1-corrections-v15`, recorded at review commit
+`67247ecc39a6e5f6224c64ca3ab1af163ee023b1` on
+`review/catena-wave-1-e1-corrections-v15-independent`. That review answered on
+two axes and recorded both: **SEMANTIC CHANGES REQUIRED** on transport and
+final authority, **EVIDENCE CHANGES REQUIRED** on the package, and **CHANGES
+REQUIRED** overall. The V15 immutable handoff is archived on
+`evidence/catena-e1-corrections-v15-handoff` at
+`db5f651e4eb2d10a15d1a594a4286ac7048f612c`, and its sealed package
+`20260826T195656Z-catena-e1-corrections-v15.zip` is 1,400,092 bytes over 69
+members with ZIP SHA-256
+`711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`, which the
+review re-verified byte for byte against the digest the package's own post-P8
+authority record carries. Current `origin/main` is
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and this lane is not integrated
+with it. The correction is on `impl/catena-wave-1-e1-corrections-v16` at
+`«TBD:v16-head»`, and its immutable handoff is planned for
+`evidence/catena-e1-corrections-v16-handoff`.
+
+**What the review preserved, and why none of it is counted as V16 work.** The
+V15 review passed and did not reopen the row-transport owner model
+(`M.rowTransport` accepting only an actual projected row, returning one stable
+frozen owner per row, retaining the authoritative projection, producing
+distinct owners for distinct same-path rows, and rejecting copies, literals,
+scalars and `null`); the A-held/B-independent decisive behaviour and its
+thirty-six-field terminal vector; the wrapper-created-authority closure and the
+per-name unreadable-spine substitute; one owner's failure suppressing no other
+owner's request, and owner-local retry; the hostile nested `edition` and
+`edition_published` accessor cases; the thirteen throwing mutations and the
+downstream rerender that reconsumes the projection; and the inherited V14
+`unfetched`, one-read inventory, structural member, raw-reread,
+rights/provenance, refusal, carried-path, spine-prefix and prewarm closures.
+All of it is re-run here unchanged and all of it still passes. **These are
+REGRESSIONS, not V16 closures, and this record counts them apart.** The V15
+method accounting was criticised for exactly that conflation — for presenting
+preserved behaviour and new closure under one total — and this lane does not
+repeat it. The ten semantic closures enumerated below are new work against
+defects the V15 review found open, and nothing preserved is among them.
+
+**The decisive V15 defect: a pending value was path-visible, and the shared
+value was raw.** V15 owner-scoped pending transport correctly — normal
+in-flight work was held in `asking`, keyed by the stable per-row transport
+owner — and it did not satisfy the stronger requirement that no unresolved
+work be reachable by path at any instant. `asked` was the promise returned by
+`T.loadJSON(path).then(...)`, and `fragmentTexts.set(path, asked)` ran INSIDE
+that promise's own fulfilment handler, before the handler returned. A promise
+returned by `then` cannot settle until its handler returns, so the entry
+published under that path was `Promise { <pending> }` at the instant it became
+reachable and fulfilled only in the following microtask; publication also
+preceded the freeze. Ordinary event-loop work cannot interleave there, which is
+why the V15 behavioural tests were green, but a synchronous reentrant operation
+retrieves the pending entry, and the review's no-interval rule and V15's own
+publication-timing claim both fail on that. The eventual shared value was worse
+than the interval: it was the raw parsed JSON object, shallow-frozen at the top
+level, with a mutable prototype — not normalized content, not a response
+wrapper, not a failure value, not owner-bearing — and `M.textPayload` read its
+fields at render time by ordinary prototype-sensitive lookup. A frozen empty
+object could therefore change from unreadable to readable between one reader
+and the next by prototype mutation alone, and an own accessor answering
+differently on a second read decided the page. The committed V15 oracle checked
+only top-level `Object.isFrozen`; it proved neither settled-before-publication
+nor mutation safety before a later owner consumed the value.
+
+**And body application was not completion-owned at the boundary.** V15's
+production closure carried the actual projected row to the success and failure
+sinks and `bodyAsked` resolved that row to the exact authoritative projection,
+which closed actual-row and projection identity in ordinary execution. But
+`M.bodyAsked(row, content)` authorized ANY content whenever `row` occurred in
+`rowOwners`. It received no transport owner, no completion token, no promise
+and no generation, and it never compared `content` with the request made for
+that row; the V15 direct test deliberately accepted `{text: "x"}` with no owned
+completion behind it. An actual B row therefore accepted arbitrary A content at
+the boundary, and the association held in production only because one closure
+happened to carry both halves. The body journal was also recorded BEFORE the
+DOM write, so it said `applied` for a body that had not been written and could
+not say whether one ever was.
+
+**The correction: the value is finalized where it settles, and the answer stops
+travelling alone.** `M.textPayload` is no longer a render-time projection; it
+is the FINALIZER, called at settlement. Every field is taken by own descriptor
+through `ownData`, so nothing inherited is visible and no getter is invoked;
+every field is a scalar by construction, because `sealText` admits a boolean or
+`sound()`'s string and nothing else, so no nested mutable structure can be in
+the result to be mutated afterwards; the record is given a null prototype, so
+it carries no inherited authority of its own; it is frozen; and its key set is
+fixed and stated as `M.TEXT_SCHEMA`. `M.NO_TEXT` is the finished value for a
+row that resolves no address at all — a finalized value like any other rather
+than a sentinel the page recognizes by identity. The page then publishes THE
+FINAL VALUE and never a promise: `M.textPayload(file)` runs to completion and
+only then does `fragmentTexts.set(path, content)` run, so there is no instant
+at which a path lookup returns unresolved or partial work, reentrantly or
+otherwise. What the path cache shares is owner-independent, deterministic in
+its keys, and finished before it is reachable.
+
+**The completion envelope carries the owner to the sink.** A settled transport
+is sealed into one frozen envelope — `M.textCompleted(owner, content)` for an
+answer, `M.textFailed(owner, error)` for a reported failure, because a failure
+is a body — carrying the exact `rowTransport` owner beside the finalized value.
+The envelope is minted only against an owner the model is currently holding for
+that owner's own row and only around content the model itself finalized, so
+neither half can be supplied **by the data**; membership is sealed in a
+`WeakSet`, so a literal of the same shape is not one of these and `bodyAsked`
+will not take it. **That is the exact strength of the claim, and it is worth
+stating precisely rather than generously.** A hostile chapter, source record or
+fragment file cannot mint either half, because neither is derivable from
+anything the data carries. In-realm code is a different matter: a recorder
+installed through the exported `chapterWitness` receives the page's actual row
+objects, and from a real row both `M.rowTransport` and `M.textPayload` will
+mint valid halves in five lines. This is therefore **not a security boundary
+against code already running in the realm** — such code can write the DOM
+directly and needs no envelope at all — and any unqualified claim that the
+halves "cannot be supplied from outside" is refutable by a five-line probe and
+is not made here. What the envelope closes is the defect the review found: an
+actual row no longer authorizes content that no request for that row produced.
+The envelope is never shared: it is per-caller by construction,
+because the owner is in it, and it never becomes the path-cache value. A
+finished value already in the path cache is REBOUND to a later owner through
+that owner's OWN completion, which is what keeps the cached value
+owner-independent and keeps A's owner from ever crossing into B.
+
+**Application asks the completion, and the journal follows the write.**
+V14 asked the row; V15 asked the row again, at the application; V16 asks the
+COMPLETION. `M.bodyAsked(row, completed)` requires that the completion be one
+this model sealed, that its owner be the transport the model is holding for
+that very row, and that the owner's projection be the projection that made the
+row — three exact-object comparisons, none of them a path, an id or a string.
+Arbitrary content beside a valid row fails closed, and so does a completion
+sealed for any other owner. `M.bodyApplied(row, completed, wrote)` is new and
+records the body AFTER the write is confirmed: `wrote` is the page's own answer
+to whether the write landed, read back from the node, and an entry is appended
+only when the completion is still owner-valid and the write is confirmed. **A
+failed or unconfirmed write leaves no entry at all**, which is the only
+truthful thing an append-only body journal can do about it. Each entry binds
+the owner object, the row, the projection, the address, the finalized content
+value itself and whether the completion was a failure — not a path and a row id
+that two rows could share.
+
+**What "confirmed" means here, exactly.** The post-write confirmation reads
+back `text.textContent` — the fragment's body — and compares it with what the
+write said it wrote. It does **not** confirm the acknowledgement block, nor the
+`Extent —` and `Date —` apparatus paragraphs that may be appended beside the
+body. So a confirmed application means the fragment's WORDS reached the page,
+not that every node written beside them did, and this record claims no more
+than that. **That boundary is now a pinned assertion rather than a sentence:**
+the two write-failure modes leave DIFFERENT partial states, and the suite pins
+both. A silent non-take still draws the `Extent —` and `Date —` apparatus,
+because the assignment returned and everything after it ran; a throw draws none
+of it; and **both** leave the acknowledgement block standing, because it is
+written before the words. That is the same ordering the deferred fix (b) above
+would have reversed, and it is the reason a reader can tell the two modes apart
+from the page.
+
+**A failed body write does not re-ask the transport, and that is a decision
+with a reason, not an omission.** The write runs inside a `try`, and the
+shipped line is `try { said = write(); } catch (problem) { said = null; }`. An
+earlier revision also reset the retry flag inside that `catch`. **It was
+removed**, because an adversarial review found the reset created an incoherent
+arm: a throw AFTER the body had already landed would leave the body on the
+page, leave no journal entry, and then invite a second full application out of
+the memoised completion — a page written twice and journalled never. `asked =
+false` therefore occurs only in the transport-failure arm, where it always did.
+The distinction is that **a network failure is retryable and a failed DOM write
+is not**, and the two arms now say so. Both write-failure modes consequently
+end in the same place — no journal entry, no false success, and no second
+attempt — because an append-only body journal that cannot say a body was
+written may only stay silent about it. The consequence to disclose beside the
+decision, since the adversary raised it: **a body write that silently does not
+take leaves the fragment showing its previous state with no way for the reader
+to retry.** No such failure is reachable in a real DOM; it is disclosed because
+the arm exists. The suite asserts the shipped behaviour in a method that passes
+at BOTH endpoints, and this record counts that method as a truthful-state
+assertion rather than as a discriminator, because it discriminates nothing.
+
+**One new observation this lane discloses rather than leaving to be found.**
+`M.rowTransport(row)` is now consulted unconditionally in `fragmentText`, where
+V15 consulted it only once an address had resolved. A projected row that
+resolves NO address therefore now produces a transport owner — whose `path` is
+`''` — and one `transport` witness, where V15 produced neither. That is
+deliberate: the ABSENT body is a body application like any other and must be
+owned by a completion the model sealed, which is only possible if the row has
+an owner to seal it against. The consequence is real and measurable: the
+request journal carries one more `transport` row for such a row than V15's did.
+It is recorded here because a reviewer counting transports across the two
+endpoints will find it, and should find it already written down.
+
+**And one thing the journal no longer says, which V15's did.** V15's
+`bodyAsked(row, content)` called `witnessed('body', …)` unconditionally, before
+returning its verdict, so **every attempt was witnessed including every
+refusal** — a stale or cross-owner application that the boundary turned away
+still left a `body` row in the request journal saying it had been turned away.
+V16 moved the record after the write, and `M.bodyApplied` appends only when the
+completion is still owner-valid AND `wrote === true`; `M.bodyAsked` itself
+witnesses nothing. The consequence is exact and it is a real loss: **a refused
+body application now leaves no journal entry at all**, so the journal no longer
+positively records that a stale or cross-owner application was declined. The
+negative cases are still proved, twice over — by the boundary returning `false`
+in a committed direct assertion, and by the rendered page being unchanged — but
+the page-level journal ROW that V15 had is gone, and a reviewer who expects to
+audit refusals from the journal alone will not find them there. This is a
+deliberate consequence of taking the record after the write rather than before
+it, which is what the review required; it is disclosed as a cost of that
+correction and not as an oversight.
+
+**How the budget was paid, and what it did not pay for.** `catena.js` moves
+12,958/13,000 whole-gzip and 7,724/8,800 stripped to **12,965/13,000** and
+**7,835/8,800**. The whole-file ceiling had forty-two gzipped bytes of headroom
+at V15 and this correction is not payable out of forty-two, so the three
+sentences the page may say about a body — `TEXT_ABSENT`, `TEXT_UNREADABLE` and
+`TEXT_LOST`/`TEXT_FAILED` — the presentation decision itself (`M.bodySaying`
+and `M.failureSaid`), and the page's paragraph on its one point-of-use
+acknowledgement channel all moved to `catena-model.js`, which carries no
+ceiling, and the page kept pointers to them. That paid for the completion
+envelope, the finalized-value publication and the confirmed-write journal, and
+**it did not pay for all of them**: the page ends seven gzipped bytes ABOVE
+where V15 left it, at 12,965 against 12,958, with thirty-five bytes under an
+unraised ceiling; stripped, it is 111 bytes above V15 at 7,835 against 7,724.
+Every version from V4 to V15 could report the page smaller than its
+predecessor. This one cannot, and says so rather than trimming load-bearing
+prose to buy the sentence. **No ceiling is raised.** `catena.css` is
+byte-identical at 7,629/8,000 whole and 2,676/2,700 stripped, and `index.html`
+is byte-identical.
+
+**The headroom is now a stated limitation, not a margin.** Thirty-five gzipped
+bytes of whole-file headroom is **not enough for the next correction of any
+size**, and this lane says so plainly rather than leaving the next lane to
+discover it: the relocation lever that has paid for every correction since V4
+moves prose out of `catena.js` into a file with no ceiling at all, and
+`catena-model.js` has now reached **44,247** whole-gzip and **10,344** stripped
+against 41,077 and 9,536 at V15 — model SHA-256
+`64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3`, pinned by
+the focused suite. That growth is disclosed, not budgeted. A governing ceiling
+for `catena-model.js` and the combined route-model payload remains open,
+separately-owned budget work that this lane does not take and cannot take
+inside its bounds. It is the same disclosure V15 made; the number is tighter
+now, and it is stated more sharply for that reason.
+
+**Two fixes an adversarial review of the production change identified, costed,
+and deliberately did not make — because they cost more gzipped bytes than the
+unraised ceiling has.** Both are disclosed here rather than paid for by raising
+a ceiling or by trimming load-bearing prose, which is the trade this lane
+refuses to make silently. (a) **The cache-hit branch tests the finished value
+for truthiness rather than asking `fragmentTexts.has(path)`.** A sealed value
+is always a non-null frozen object, so on today's schema the two tests cannot
+disagree and the branch is exactly correct; it is a latent trap only if the
+schema ever admits a falsy sealed value, at which point a cached answer would
+be silently refetched. Cost to fix: **37 gzipped bytes against 35 of
+headroom** — it does not fit, and no ceiling is raised to make it fit. (b)
+**The body write assigns the class before the words.** Reordering so the words
+land first would leave the page wholly untouched by a write that throws before
+the body lands. No such throw is reachable — `T.el`, `licence`, `insertBefore`,
+`appendChild` and concatenation over `sound()`-typed strings do not throw on
+real data — and the reorder costs about **60 gzipped bytes**, because it breaks
+a repeated pattern gzip was compressing. Both are recorded as **disclosed,
+costed and deferred**, with the cost stated, so the next lane inherits a
+decision rather than a discovery.
+
+**The ten V16 semantic closures, enumerated apart from the regressions.** (1)
+No reentrant pending path publication: the path map receives only a value that
+has been finalized, so no synchronous reentrant lookup can retrieve unresolved
+or partial work at any instant. (2) Finalized normalized immutable cache values
+only: what is shared by path is a frozen, null-prototype, scalar-only record
+over a fixed key set, never a promise and never a raw parsed file. (3)
+Mutable-prototype payload closure: fields are taken by own descriptor at
+settlement, so an inherited `text` cannot make an unreadable payload readable
+and no own accessor is ever invoked. (4) Exact completion-envelope owner: the
+completion carries the exact `rowTransport` owner and is sealed so a
+same-shaped literal is not one. (5) Cross-owner arbitrary content rejected: an
+actual B row presented with A's completion, or with content no request
+produced, applies nothing. (6) Body application tied to the completion owner:
+application requires the completion's owner to be the transport held for that
+row and that owner's projection to be the projection that made it. (7)
+Post-write journal ordering: the body record follows the confirmed DOM write
+rather than preceding it. (8) Write-failure no-false-applied record, **which
+turned out to have two halves and is recorded with both rather than renumbered
+to an eleventh closure** — the ten-closure enumeration is fixed across the
+directions, this record and the package, and renumbering would desynchronise
+them. The first half is the journal: an unconfirmed write appends no entry, so
+the journal cannot claim a body that never reached the page. The second half is
+containment, and it is the sharper discriminator of the two: **a throwing body
+write at the V15 parent escapes as an unhandled rejection and kills the entire
+replay** — `Ran 35 tests, 98 errors`, every replay class down — where V16's
+sink contains it and the page continues. V16's sink contains its writes; V15's
+does not. The harness proves this without weakening the probe: an
+`unhandledRejection` handler RECORDS escapes into a journal rather than letting
+them be fatal, and a global method asserts that journal is empty across the
+entire plan. It is empty at the candidate; at the parent it holds exactly one
+entry, for the throwing-write scenario. (9) The provenance-specific committed `===` assertion
+the V15 review found missing from the equality matrix. (10) The
+observation-accounting semantic correction: the `getPrototypeOf` observation
+caused by key enumeration is counted and stated, and the conflicting `has`
+versus own-property-test terminology and the "four kinds"/"nothing else"
+phrasing are corrected.
+
+**The corrected observation accounting, stated as what it is.** Over one
+sources record: **zero** value reads that would run an own accessor and
+**zero** `in` tests; **three** `getOwnPropertyDescriptor` observations per
+source key; **two** per shared field the record states and **one** per field it
+does not; **one** key enumeration; and **one** `getPrototypeOf` observation
+caused by that enumeration, which V15's prose omitted while calling its list
+exhaustive. `Object.hasOwn` lands in the descriptor count because it is
+`[[GetOwnProperty]]`, which is why the per-key figure is three and not two —
+and it is an own-property TEST performed through the descriptor trap, not a
+`has` operation; V15's prose used the two words interchangeably and that is
+corrected here. A second render of the same chapter observes the record no
+further. The claim this lane is entitled to make is that no consumer runs a
+hostile value accessor and no consumer reaches past the projection to observe
+the record again — not that the record is observed once, and not that
+descriptors, own-property tests, enumeration and prototype reads are the only
+four kinds of observation that could ever occur.
+
+**The thirteen V16 evidence closures, enumerated apart.** (1) Executable
+command representation: no authoritative row is recorded as a paraphrase, a
+fragment missing its arguments, or text that cannot be run as written. (2)
+Unambiguous repo variables: no row single-quotes `$WORKSPACE` or `$REPO` where
+expansion is required, and no row overloads one variable for two distinct
+locations. (3) Prefix-prose rejection: the command classifier no longer accepts
+prose by prefix match, and the handoff checker no longer trusts a precomputed
+`LITERAL` label. (4) Mechanically derived tool execution: execution state is
+derived from the authoritative attempt logs rather than hand-maintained or
+synthesized. (5) Executed drivers classified correctly: the scripts that drove
+the build are labelled executed. (6) A complete nine-attempt V15
+predecessor-history statement. (7) A complete V16 attempt history, with one
+ordinal allocation and one terminal row per attempt. (8) **The example-replay
+figure, derived mechanically, reported in its two distinct senses, and never
+stated without its build state.** The figure is no longer transcribed by hand
+from anywhere: it is read out of the run's own log by the package build, and it
+is reported as DIVERGENT ROWS and DISTINCT COMMAND STRINGS separately, because
+those are two different counts of the same run and collapsing them is the very
+conflation this lane is correcting elsewhere. The volatile figure is kept apart
+from both as the static declaration it is — `sum(len(lines) for lines in
+VOLATILE.values())` at `scripts/replay_examples.py:734`, a count of DECLARED
+LINES and not of examples — and is never summed with either. And the BUILD
+STATE is recorded beside the figure, because without it the figure is not
+reproducible: the count is 30 on a cold `build/` and 28 on a warm one, so
+**`check-examples` must be run exactly once per fresh clone and no record may
+state the figure without stating the state it was taken in.** The V16 battery
+records `build-state=COLD|WARM` at preflight, and **the V16 check pins no
+constant** — a check that pinned 30, or 28, would be wrong in one build state
+or the other. It refuses the unsound SHAPE, a divergence count presented as a
+sum including the volatile count; it refuses a figure this package's own
+transcript does not support; and it refuses a summary line that disagrees with
+its own `DIFF` rows. (9)
+Compare-gate diagnostic granularity: the localising diagnostics no longer
+collapse thousands of assertion rows onto a handful of names while calling them
+assertion objects. (10) Final completeness after the outer sanitize and scan:
+the completeness verdict is taken at the final state, not at a state the
+package then leaves behind. (11) Named outer logs: the outer-sanitize and
+outer-scan siblings are named in the record the checker reads. (12) Direct
+authority bindings. (13) The shipped-versus-local retained-artifact privacy
+boundary, stated explicitly.
+
+**The V15 evidence facts this lane corrects, beginning with the one this lane
+got wrong itself.** This record owes the reader the sequence, not the final
+state. The sequence was: the V15 independent review found an unsupported number
+in a durable record and was RIGHT about that; it explained the number with a
+decomposition that is arithmetically impossible; this lane corrected the
+records on the review's authority, discovered by experiment that the
+decomposition could not be true, and then **corrected its own correction**. All
+of it is written down, because a record that quietly arrives at the right
+answer is worth less than one that shows how it got there, and this lane's
+credibility on every other contested figure rests on having run the experiment
+rather than deferring to either party.
+
+**What the review said, and the half of it that stands.** At commit
+`67247ecc39a6e5f6224c64ca3ab1af163ee023b1`: "The authoritative logs report
+**28** divergent examples plus two separately declared volatile lines, not the
+durable producer claim of 30 divergences." **The finding stands.** V15's
+durable prose claimed 30 example divergences, and V15's own shipped transcripts
+report 28. Read out of the sealed archive
+`20260826T195656Z-catena-e1-corrections-v15.zip`:
+
+```
+logs/attempt-01/make-check-parent.log   DIFF rows: 28 | distinct commands: 27
+logs/attempt-02/make-check-head.log     DIFF rows: 28 | distinct commands: 27
+summary (both): replay-examples: 201 captured example(s); 192 replayed, 28 diverged,
+                35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+```
+
+**No artifact in the V15 package supports 30.** A durable record carried a
+number the evidence shipped beside it did not, the review caught it, and V16
+says so plainly rather than defending the prose.
+
+**The half that does not stand: the diagnosis.** "28 divergent examples plus
+two separately declared volatile lines" is not a decomposition of 30, and it
+cannot be one. `volatile` is a STATIC constant computed at
+`scripts/replay_examples.py:734` as `sum(len(lines) for lines in
+VOLATILE.values())` over the module-level table at `:182-185`, which names two
+`tools/pdf-review` commands with one declared line each. Both captures are
+masked before comparison at `:405`, and in a transcript they read:
+
+```
+116:  ok      tools/pdf-review --explain
+117:  absent  tools/pdf-review --output build/example-review build/core-last-20.pdf
+```
+
+**Neither is a `DIFF` row.** They cannot be subtracted from the diverged set
+because they were never in it; the figure counts DECLARED LINES, not examples;
+and it is 2 at every head, in every run, cold or warm. A run outcome and a
+static declaration are not addends of one another in either direction.
+
+**The real cause is build state, and nobody's number was wrong about the
+world.** Measured three times independently at exact parent
+`b9202882badbbbc364f1dd3d9057d2710ee47552`, in a clean checkout not under
+`/tmp`:
+
+```
+$ rm -rf build/example-ordinary && make check-examples
+exit=2
+grep -c '^  DIFF    '  ->  30
+replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale,
+                 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+$ make check-examples                    # immediately again; build/example-ordinary now exists
+exit=2
+grep -c '^  DIFF    '  ->  28
+replay-examples: ... 28 diverged, ... 2 volatile line(s) declared
+```
+
+Thirty on a cold `build/`, twenty-eight on a warm one, from the same commit and
+the same command. The entire delta is two captures of ONE command:
+`tools/mass-ordinary check --out build/example-ordinary`, which prints `3 files
+would be rewritten` on a cold tree and matches its recorded `the written files
+are current` on any later run — because a LATER capture in the same target,
+`tools/mass-ordinary structure --out build/example-ordinary`, always `ok`,
+writes the very directory the earlier captures are compared against. In the
+cold log those captures stand at rows 96 and 102 with the writing capture at
+row 103; the two transcripts differ by 21 lines and name no other command;
+totals reconcile in every run at 127 ok + 30 DIFF + 35 stale + 6 exempt + 3
+absent = 201 captured. **In V15's shipped transcripts both of those captures
+read `ok`, which is the signature of a warm tree.** So V15 quoted a cold figure
+while shipping a warm log. Neither number was wrong about the world. **The
+record simply never said which tree it was measuring**, and that omission — not
+arithmetic and not a typo — is what made the two figures irreconcilable.
+
+**And 28 is reachable a second way, which may be what the reviewer actually
+saw.** Counting DISTINCT DIFF COMMAND STRINGS rather than rows: the warm
+shipped log gives 28 rows over **27** distinct commands, and a cold run gives
+30 rows over **28** distinct commands, because `tools/mass-ordinary check --out
+build/example-ordinary` and `tools/source-family-migration bootstrap
+build/example-migration.toml --audited-on 2026-07-31` are each captured twice.
+Either way it is a row-versus-name conflation — the fifth in this lane, and of
+exactly the kind this same review rightly criticised in `logs/compare-gate.py`,
+where 2,290 assertion ROWS collapse onto 17 diagnostic NAMES. That is not a
+point scored against the review. It is the reason the general answer below is
+better than the particular one.
+
+**What this lane did, in order, and what it takes from it.** V16 corrected
+these records to 28 + 2 on the review's authority. It then measured, found the
+decomposition impossible and the cause elsewhere, and **corrected the
+correction**. Both steps stand in this file and in the V15 lane section below,
+written beside one another rather than one in place of the other. What V16
+takes from the episode is **not a number but a rule: a count is meaningless
+without the state it was taken in, and this package states both.** Concretely:
+the V16 battery records `build-state=COLD|WARM` at preflight; the completeness
+checker names build state as the cause when a figure and a transcript disagree;
+and **the V16 check enforces no constant at all** — it refuses the unsound
+SHAPE, a divergence count presented as a sum that includes the volatile count;
+it refuses a figure this package's own transcript does not support; and it
+refuses a summary line that disagrees with its own `DIFF` rows. A check that
+pinned 30, or 28, would have been wrong in one build state or the other. This
+lane's own runs report **30** diverged on a cold tree over **28** distinct
+command strings, **28** diverged warm over **27**, and **2** declared volatile
+lines, which is a static constant and not a run outcome, in every run.
+
+**Nine V15 package attempts, not five refusals and a sixth seal — derived
+mechanically, with every attempt named.** The history was reconstructed across
+all three V15 ledgers by `checks.py --history-table --lane V15` over the two
+retired files and the shipped one, so the table below is derived rather than
+recalled:
+
+| # | attempt | ord | ledger | start | disposition | reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `package-20260826T180457Z-03qyvspp` | 3 | 02-retired | 18:55:49Z | discarded | normalize pass 1 failed, exit 1 |
+| 2 | `package-…-04jzwm3k` | 4 | 02-retired | 18:58:52Z | discarded | attempt-log audit exit 1 |
+| 3 | `package-…-058sn2j5` | 5 | 02-retired | 19:01:27Z | discarded | attempt-log audit exit 1 |
+| 4 | `package-…-067xmgxg` | 6 | 02-retired | 19:04:00Z | discarded | aborted in P4 derive, exit 1 |
+| 5 | `package-…-07z8rv48` | 7 | 02-retired | 19:06:30Z | superseded, after sealing | ledger audit exit 1 |
+| 6 | `package-20260826T194118Z-033jkh3w` | 3 | shipped | 19:41:18Z | superseded, after sealing | P8 final verification exit 1 |
+| 7 | `package-20260826T195048Z-04wzq5x4` | 4 | shipped | 19:50:48Z | sealed, **authoritative 19:52:06Z**, superseded 19:52:07Z | authority-coherence exit 1 |
+| 8 | `package-20260826T195411Z-05e1bu7n` | 5 | shipped | 19:54:21Z | discarded | attempt-log audit exit 1 |
+| 9 | `package-20260826T195656Z-06v11wpe` | 6 | shipped | 19:56:56Z | **authoritative** | — |
+
+Derived totals: `package_attempts 9`, `package_authoritative 1`,
+`package_non_authoritative 8`, `battery_attempts 5`,
+`attempts_with_no_terminal_row 1` — that one being
+`parent-20260826T181908Z-01rwghhk`, which has no terminal row because nothing
+terminated it — `ledger_replacements 2` and `reused_ordinals 6`. **Ordinal 1
+was issued three times in one lane**, because allocation was file-scoped and
+the ledger was moved aside twice. Ledger digests: 01-retired 2,501 bytes over 5
+rows, `64683c0b8bb9624278cb136e8e8cbcbd4875bff571a1a128a870bdb6cb01ed90`;
+02-retired 45,619 bytes over 80 rows,
+`5b0c380cf7fab7b507dfedd6bdc0a6ade71cea38522937bf1a6bf851565ec117`; shipped
+61,929 bytes over 107 rows,
+`3990ff6c05a5a53d4b3a835e92259bd40f94847cfa3ce7e2de300ed66d034640`. **No ledger
+is a prefix of a later one and no attempt id is shared between any pair**, so
+these are nine distinct attempts rather than one set counted twice — which is
+the check that had to be made before the number could be asserted. Two batteries
+ran green, had their figures declined and were never marked `set-aside`, while
+V15's `PROVENANCE.md:296` states "This lane set no cohort aside" — declining a
+green cohort's figures is what setting a cohort aside means. V16's own history
+is one ledger with one ordinal allocation, and it is
+`«TBD:attempt-ledger-identity»`.
+
+**The new checks are calibrated against the real package, not only against a
+fixture.** Run over the actual V15 archive and its actual siblings, the rebuilt
+checker reports `handoff inventory: INCOMPLETE` with **14 problems**: the seven
+false-`LITERAL` rows, each named by transcript path; the two unnamed outer logs;
+and the unsupported example figure. Run over a corrected fixture — the two logs
+named exactly, the figure repaired, the seven rows made executable — it reports
+**`problems: 0` / `COMPLETE`**, with zero non-executable rows remaining. That is
+the calibration the review asked for, and it is the strongest statement V16 can
+make about the new checks: **they turn the shipped package's own `COMPLETE`
+into a correctly-explained `INCOMPLETE`**, rather than merely passing on
+material built to pass them.
+
+**The V15 command record could not be re-run as written.** `checks.txt` called
+all 24 command rows `LITERAL`, but seven load-bearing rows contain
+single-quoted `'$WORKSPACE/...'` or `'$REPO/...'` paths that cannot expand, with
+no assignments supplied; the parent replay overloads `$REPO` for both the
+parent working directory and the distinct V15 test source, so unquoting alone
+cannot recover the recorded execution; the package-comparison row omits its
+required package working directory and conflicts with the ledger. Only 16 of 24
+rows were replayable with their recorded context. The classifier fixed the two
+V14 examples without generally solving classification — prefix matching accepts
+prose such as `format`, `installing` and `zipcode` — and the handoff checker
+trusts the precomputed label rather than testing the row.
+
+**Two unlabelled tool-count sets for one lane, and six manufactured rows.**
+`verify-final.log` and `.tool-bytes.json` say `unique tools : 20 (11
+executed)`, `shipped-executed 9 / shipped-not-executed 9`, `invocations:
+shipped-executed 22 / not-executed 9`. `.assemble.log` says `unique_tools 20,
+invocations 33, executed_tools 14, executed_invocations 27,
+merged_battery_invocations 6`. Both are sealed in the same package, taken at
+different phases, neither labelled by phase, and nothing in the package
+reconciles them. Beneath both, six of the supposed invocations are synthesized
+not-executed placeholders carrying a fabricated `at` (the render instant), a
+fabricated `phase` and a fabricated `log` — three fields a tool that never ran
+cannot have — repeated Python and Git uses are sampled rather than counted, and
+both `assemble.sh` and `battery.sh` are marked not executed although they drove
+the build. V16 publishes one phase-labelled schema whose execution state is
+derived mechanically: `«TBD:tool-unique»` unique tools, `«TBD:tool-invocations»`
+invocations, `«TBD:tool-executed»` executed tools and
+`«TBD:tool-executed-invocations»` executed invocations, with the drivers
+classified as what they are.
+
+**The V15 completeness verdict went stale, and the compare gate had one sound
+half and one degenerate half.** Rerunning V15's own shipped completeness checker
+after P11 finds the outer-sanitize and outer-scan siblings unnamed and reports
+`INCOMPLETE`; the recorded `COMPLETE` was taken at an earlier state. The
+checker also cannot detect the false single-quoted `LITERAL` rows, the
+execution-driver contradictions, or a durable figure its own shipped transcript
+does not support — which is exactly the example-divergence defect the review
+caught, and which the V16 checker now detects by comparing the prose figure
+with the transcript and naming build state as the cause. In `logs/compare-gate.py`, `walk()` keys assertions on the NAME alone, so
+**2,290 assertion ROWS collapse onto 17 diagnostic NAMES** under
+last-write-wins and 2,273 rows are discarded before the per-row diagnostics
+run — while the output calls them assertion objects. **Both halves are
+recorded, because only one half is defective:** the VERDICT line is sound, since
+the final comparison is over the whole report object with all 2,290 assertion
+rows included, minus four named volatile fields. The whole-report equality proof
+stands; the localising diagnostics were degenerate.
+
+**The ROW-versus-NAME conflation turned out to be the general defect, and the
+general answer is better than the particular fix.** The review named one
+instance. This lane found the pattern in **four** places in its own evidence,
+and the parent-discrimination figure has the same shape a fifth time. The
+review found two — the browser gate's **2,290 assertion rows over 17 diagnostic
+names**, and the classifier's own prose. This lane found the other two — the
+example replay, where the warm shipped log carries **28 divergent rows over 27
+distinct command strings** and a cold run **30 over 28**, which may well be how
+the review reached its figure, and full discovery's **27 result rows over 22
+distinct identities**, where V15's "27 identities" was the row count wearing
+the identity count's name. The parent-discrimination replay repeats the shape a
+fifth time: **288 failure rows over 39 distinct methods**, one method alone
+contributing 192 `subTest` rows. The durable answer this lane adopts is therefore general
+rather than local: **wherever this evidence quotes a count, it now says what is
+being counted.** Fixing only the one artifact the review named would have left
+three live instances of the same error in the same package.
+
+**Privacy, at the boundary the scans actually cover.** The published archive and
+its ten named siblings pass. Four builder-local classes lie outside every scan:
+the discard and supersession markers, which carry local-offset `date -Is`
+timestamps and free-text failure reasons; the two retired ledgers, whose
+`command` fields hold raw pre-sanitization absolute paths; the lane-wide
+`executed-tools.jsonl`; and the retained discarded package trees, one of which
+(attempt 05) died before its seal and still holds raw absolute paths. The
+shipped-versus-local-only boundary is stated as such, and **no broader
+all-retained-artifacts privacy claim is accepted** — not by the V15 review, and
+not here.
+
+**Fresh validation at both endpoints.** Focused Catena is **660/660** at the
+candidate and **615/615** at the exact V15 parent. `python3
+scripts/_catena.py check` reports 1,351 fragments / 1 book / 73 canon entries
+at both endpoints, unchanged because `src/web/data/` is untouched. The
+promised-deliverable ledger validates at 41 tracked / 19 complete here and 40 /
+19 at the parent. Committed full discovery is **2,011** tests at the candidate
+and **1,966** at the parent, with **14 failures, 13 errors and 11 skips at
+both**, over **27 result ROWS spanning 22 distinct `module.Class.method`
+identities** at both, **and the identity sets are equal** — a byte-for-byte
+`diff` of the two sorted identity lists is empty. The 45 extra tests at the
+candidate are exactly this lane's own: 48 new methods less the 3 removed or
+renamed. **Both figures are given, apart, and the V15 record's "27 identities"
+is imprecise** — 27 is the row count wearing the identity count's name. Two
+methods emit multiple `subTest` rows:
+`test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations`
+yields five, one per `act-history` verb (`check`, `commonality`, `emit`,
+`graph`, `structure`), and
+`test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass` yields two
+(`check-calendar-masses.test`, `index-bible.test`). **None of the 22 identities
+is Catena's.** Nine are failing methods and thirteen erroring ones, in
+`test_propers_reader_integration`, `test_day_reader_integration`,
+`test_day_missal_integration`, `test_mass_ordinary`, `test_tool_registry`,
+`test_index_bible` and `test_public_alpha` — inherited, red equally at both
+endpoints, and neither repaired nor worsened here.
+
+**The reviewer's 15 failures were real, and the difference is the checkout's
+location.** A fresh reviewer replay reached 15 failures where the sealed
+battery recorded 14. The extra identity is the `pdf-review.test` tool-registry
+smoke test. Root cause, and it is environmental rather than a change:
+`tests/tools/pdf-review.test` asserts that an `--output` at
+`$repo/pdf-review-refusal-check` is refused, but `tools/pdf-review:486` allows
+any output under a temporary root, and for a non-managed worker that root is
+`Path("/tmp").resolve()`. **From a checkout that itself lives under `/tmp`, the
+refusal never happens**, and the test reports "an output outside `build/` was
+not refused" — verbatim the reviewer's description. Our clones are not under
+`/tmp`, so V16 records **14 failures / 13 errors / 11 skips** and states the
+checkout-location precondition beside the figure. This is recorded as an
+environment precondition, not as a change and not as a disagreement: the
+reviewer measured something real, in a place where it is true. It is the same
+shape as the example-divergence figure — a number that is only reproducible
+under a stated precondition — and both preconditions are now written down.
+
+**The parent-discrimination split, counted apart.** Replayed against the exact
+parent, the file fails **39 distinct methods over 288 failure ROWS, and zero
+errors** — again both counts, apart, because one method alone
+(`test_every_body_this_page_applied_is_a_finished_scalar_record`) emits 192
+`subTest` rows as it sweeps every applied body in the whole plan. That is the
+third instance of the row-versus-name distinction in this lane, after the
+divergences and the gate, and the consistency is itself worth recording. Of
+those 39 methods: **30 fail for a SEMANTIC reason** — the defect is present at
+the parent, with representative parent messages `'promise' != 'absent'`, `a
+pending answer is reachable by path`, `the body applied an object the path
+never held`, `an actual row still authorizes an arbitrary literal`, `a body
+nobody can read was journalled as applied` and `assignThrew did not throw`, and
+the parent rendering `FORGED INHERITED BODY`, `FORGED LATE BODY` and `FORGED
+ACCESSOR BODY` to the reader. **6 fail because THE MECHANISM IS ABSENT** — the
+pollution and schema probes, where V15 has no `sealText`, `NO_TEXT`,
+`TEXT_SCHEMA` or `bodySaying` at all; they now fail with an explicit *"this
+endpoint seals no such value at all — the mechanism is absent, which is a
+different reading from a value that carries the wrong members"* rather than a
+`TypeError`. **These six are counted apart and named as absence-readings**,
+because the V15 review criticised the previous lane for advertising a
+discriminator that failed the parent only because a witness was missing, and
+this lane does not repeat that by folding them into the semantic thirty. **2
+are source-text closures** (`V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection`,
+extended, and `…test_the_page_states_no_body_sentence_the_model_states`, new).
+**1 is a hash PIN** (`FrozenContractTest.test_the_model_is_byte_identical`) —
+a pin, not a closure, counted apart as V15's record correctly did. **48
+methods are new and 3 were removed or renamed**, named here so a reviewer can
+find them: `V15TransportOwnershipTest.test_a_row_no_projection_made_owns_no_transport_and_writes_nothing`,
+rebuilt as the transport half plus four content negatives — this is the exact
+assertion the review named, which asserted `M.bodyAsked(row, {text:'x'})`
+**true** — and `V15ObservationAccountingTest.test_no_value_read_of_a_source_record_happens_at_all`
+and `…test_the_descriptor_count_is_three_per_key_and_two_per_stated_field`,
+replaced by three methods under the six-field vocabulary. **11** of the new
+methods pass at both endpoints and are recorded as coverage and controls, not
+as closures.
+
+`make -k check` exits 2 on the same four inherited
+top-level targets at both endpoints — `Makefile:554`
+`check-web-editions-current` (101 stale-edition lines), `:598`
+`check-release-bindings` (4 stale), `:803` `check-tool-registry` (8
+undeclared-sibling findings, genuinely RUN because `tmt` is installed) and
+`:791` `check-examples` (**30 diverged on a cold `build/`, 28 on a warm one**; the build state is recorded with the figure, never omitted). **A box without `tmt`
+installed would show only THREE red targets**, because that target skips
+rather than fails; a reviewer must not misread that as a change. The
+browser gate is identically red at both endpoints at **2,290 assertion ROWS
+across 17 diagnostic NAMES — 1,836 pass / 226 fail / 228 skip over 171 pages,
+19 routes and 9 states**, with the 226 failing rows falling in exactly three
+names: `single-main-element` 117, `primary-controls-meet-target-size` 82 and
+`skip-link-targets-existing-element` 27, on Chromium 151.0.7922.173.
+`logs/compare-gate.py` over the two reports answers `identity set equal: True`,
+`rows with changed status: 0`, `rows with changed detail: 0` and `whole report
+identical under the named volatile exclusions (browser, durationMs,
+generatedAt, root): True`. Four Catena release bindings remain stale, unsigned
+and correctly fail-closed; **none was re-signed.** Among them is the binding
+for `index.html`, which records `45c491ab…` while the file's actual SHA-256 is
+`7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8`. Where that
+digest appears in this lane's evidence it is the digest **of the file**, taken
+at the candidate; **the binding for it is separately and independently stale**,
+and this lane re-signs nothing to close the gap.
+
+**Broader blockers remain open and untouched.** Broader projection, orphan and
+source-only semantics; translator coercion; malformed absence and refusal
+typing; selection ordering; unreadable roots and `bibles.json`; broader
+terminal and oracle proof; CLI/web duplication; model-budget governance; the
+historical data seam; release bindings; the common gate; the shared shell;
+device and assistive-technology work; protected Liturgy; PDFs; and integration
+all remain open or separately owned. None was worked around, whitelisted,
+weakened or expect-marked, and this lane accepts no part of E1.
+
+**Ownership boundaries.** The comparison touches
+`src/web/browser/catena/catena.js`, `src/web/browser/catena/catena-model.js`,
+`tools/tests/test_catena_wave_1.py` and the four durable records. It does not
+modify `src/web/data/`, release-owned records, the common browser gate, the
+shared shell, Liturgy, PDFs, CLI architecture, CSS, HTML, or any budget
+ceiling, and it re-signs nothing.
+
+Status: **awaiting fresh independent review** of the exact V16 head and its
+immutable handoff. **One structural limit on that handoff is recorded here
+rather than left to be found**: the evidence commit cannot be bound INSIDE the
+authority record, because naming the commit in the record changes the record's
+bytes and therefore changes the commit. What that commit CONTAINS is bound
+instead, and the authority record carries a required note saying exactly that.
+It is the same shape of limit V15 correctly recorded when it said an archive
+cannot contain its own digest, and it is disclosed for the same reason: a
+reviewer who expects the binding and does not find it should find the reason
+already written down. The handoff is to be archived on
+`evidence/catena-e1-corrections-v16-handoff` at `«TBD:evidence-commit»` with
+sealed package `«TBD:zip-basename»` at `«TBD:zip-bytes»` bytes over
+`«TBD:zip-members»` members with ZIP SHA-256 `«TBD:zip-sha256»`. This lane
+records no acceptance of its own work, marks no separately owned prerequisite
+complete, and does not review itself.
+
 ### E1 Catena transport and completion ownership lane, V15
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v15-2026-08-26 -->
@@ -1316,17 +2045,92 @@ validates at 40 tracked / 19 complete here and 39/19 at the parent. Committed
 full discovery is 1,966 tests at the candidate with 14 failures, 13 errors and
 11 skips over 27 failure/error identities, against 1,947 tests at the parent
 with 14/13/11 over the SAME 27 identities — the identity sets are equal, and the
-nineteen extra tests are this lane's own. The packaged parent-only PDF signal
+nineteen extra tests are this lane's own. **Corrected in place, 2026-08-27, by
+the V16 lane: "27 identities" is imprecise and should read 27 result ROWS over
+22 distinct `module.Class.method` identities.** The two are not the same count:
+two methods emit multiple `subTest` rows —
+`test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations`
+yields 5 and `test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass`
+yields 2 — so 27 is the row figure and 22 the identity figure. The sentence's
+substantive claim survives the correction: the two endpoints' sets ARE equal,
+row for row and identity for identity. Only the label on the number was wrong,
+and V16 states both figures apart rather than repeating the imprecision. **A
+second precondition belongs beside these figures**, found when the V15
+independent review's fresh replay reached 15 failures against this record's 14:
+the extra identity is the `pdf-review.test` tool-registry smoke test, and it is
+environmental. `tests/tools/pdf-review.test` asserts that an `--output` at
+`$repo/pdf-review-refusal-check` is refused, while `tools/pdf-review:486`
+allows any output under a temporary root, which for a non-managed worker is
+`Path("/tmp").resolve()`. **From a checkout that itself lives under `/tmp` the
+refusal never happens**, and the test reports "an output outside `build/` was
+not refused" — verbatim what the review described. The clones behind this
+record are not under `/tmp`, so 14/13/11 is what they measure. The reviewer
+measured something real; the difference is the checkout's location, and it is
+recorded here as a precondition rather than as a disagreement. The packaged parent-only PDF signal
 the V14 review classified as an unrelated timing flake did not reproduce at
 either endpoint in these fresh runs; PDF remains a separate owner's and is not
 touched here. `make -k check` exits 2 on the same four inherited top-level
 targets at both endpoints — `check-web-editions-current`,
 `check-release-bindings`, `check-tool-registry` and `check-examples` — and
-`check-examples` reports 30 example divergences at BOTH endpoints, so exact
-inner-diagnostic identity holds this time rather than being disclaimed. Four
+`check-examples` reports **28** example divergences at BOTH endpoints, so exact
+inner-diagnostic identity holds this time rather than being disclaimed.
+
+**Corrected in place, 2026-08-27, by the V16 lane — and the correction was then
+itself corrected, on the same day, by the same lane. All of it is left standing,
+because a record that quietly arrives at the right answer is worth less than one
+that shows how it got there.** This sentence originally read `30 example
+divergences`. The V15 independent review at
+`67247ecc39a6e5f6224c64ca3ab1af163ee023b1` found that "the authoritative logs
+report **28** divergent examples plus two separately declared volatile lines,
+not the durable producer claim of 30 divergences", and **it was right about the
+defect**: this lane's own shipped transcripts,
+`logs/attempt-01/make-check-parent.log` and `logs/attempt-02/make-check-head.log`
+inside `20260826T195656Z-catena-e1-corrections-v15.zip`, both report 28 `DIFF`
+rows over 27 distinct commands and both summarise `28 diverged … 2 volatile
+line(s) declared`. **No artifact in this package supports 30.** The figure above
+is corrected to 28 and that correction stands.
+
+**What does not stand is the review's account of the difference, and V16's
+first attempt to write it down.** V16 initially rewrote this passage to read
+"28 divergent examples plus 2 separately declared volatile lines", treating 30
+as 28 + 2. That decomposition is arithmetically impossible. `volatile` is a
+static constant computed at `scripts/replay_examples.py:734` as
+`sum(len(lines) for lines in VOLATILE.values())` over the module table at
+`:182-185`, naming two `tools/pdf-review` commands with one declared line each;
+both are masked before comparison at `:405` and appear in the transcript as
+`ok` and `absent`, **never as `DIFF` rows**, so they were never in the set they
+are supposed to be subtracted from. The figure counts DECLARED LINES, not
+examples, and it is 2 in every run.
+
+**The cause is neither arithmetic nor prose but BUILD STATE.** Measured three
+times independently at exact `b9202882badbbbc364f1dd3d9057d2710ee47552` in a
+clean checkout not under `/tmp`: `rm -rf build/example-ordinary && make
+check-examples` exits 2 with **30** `DIFF` rows and `30 diverged … 2 volatile
+line(s) declared`; the same command immediately again, on the now-warm tree,
+exits 2 with **28**. The entire delta is two captures of `tools/mass-ordinary
+check --out build/example-ordinary`, which prints `3 files would be rewritten`
+on a cold tree and matches its recorded `the written files are current`
+afterwards, because a later capture in the same target — `tools/mass-ordinary
+structure --out build/example-ordinary` — writes the very directory the earlier
+captures are compared against. **In this lane's shipped transcripts both of
+those captures read `ok`, the signature of a warm tree.** So this record quoted
+a cold figure while shipping a warm log. Neither number was wrong about the
+world; the record simply never said which tree it was measuring. And 28 is
+reachable a second way, which may be what the reviewer saw: the warm shipped
+log carries 28 rows over 27 distinct command strings, a cold run 30 rows over
+28 — a row-versus-name conflation of the same kind the review rightly
+criticised in `compare-gate.py`.
+
+**The durable consequence: `check-examples` must be run exactly once per fresh
+clone, and no record may state the figure without stating the build state
+beside it.** V16 takes a rule from this rather than a number: its battery
+records `build-state=COLD|WARM` at preflight, and its check pins no constant —
+it refuses the unsound shape, refuses a figure the package's own transcript
+does not support, and refuses a summary that disagrees with its own `DIFF`
+rows. Four
 Catena release bindings remain stale, unsigned and correctly fail-closed; none
-was re-signed. The browser gate is identically red at both endpoints: 2,290
-assertions = 1,836 pass / 226 fail / 228 skip over 171 pages and 19 routes, the
+was re-signed. The browser gate is identically red at both endpoints: **2,290
+assertion ROWS across 17 diagnostic NAMES** = 1,836 pass / 226 fail / 228 skip over 171 pages and 19 routes, the
 failures entirely in the three inherited classes — 117 nested `main`, 82
 target-size, 27 skip-link — and `logs/compare-gate.py` over the two reports
 answers `identity set equal: True`, `rows with changed status: 0`, `rows with

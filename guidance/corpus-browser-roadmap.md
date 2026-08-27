@@ -728,6 +728,331 @@ Catena generator alone, and `catena.js` is smaller than V6 left it in both
 measures. The `src/web/data/` contradiction is **preserved untouched** and
 remains a separate owner's adjudication.
 
+### E1 Catena correction V16 — 2026-08-27
+
+Answers the fresh independent review of V15 — **SEMANTIC CHANGES REQUIRED** and
+**EVIDENCE CHANGES REQUIRED**, **CHANGES REQUIRED** overall, at exact V15 head
+`b9202882badbbbc364f1dd3d9057d2710ee47552` on
+`impl/catena-wave-1-e1-corrections-v15`, recorded at review commit
+`67247ecc39a6e5f6224c64ca3ab1af163ee023b1` on
+`review/catena-wave-1-e1-corrections-v15-independent`. The V15 immutable
+handoff is archived on `evidence/catena-e1-corrections-v15-handoff` at
+`db5f651e4eb2d10a15d1a594a4286ac7048f612c`, and its sealed ZIP
+`20260826T195656Z-catena-e1-corrections-v15.zip` is 1,400,092 bytes over 69
+members with SHA-256
+`711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`. Current
+`origin/main` is `2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and this lane is
+not integrated with it. The correction is on
+`impl/catena-wave-1-e1-corrections-v16` at `«TBD:v16-head»`, and its handoff is
+planned for `evidence/catena-e1-corrections-v16-handoff`.
+
+The review closed nothing it had passed. The row-transport owner model, the
+A-held/B-independent decisive behaviour and its thirty-six-field terminal
+vector, the wrapper-created-authority closure, one owner's failure suppressing
+no other owner's request, owner-local retry, the hostile nested `edition` and
+`edition_published` accessor cases, the thirteen throwing mutations and their
+downstream rerender, and every inherited V14 closure are preserved here
+undiminished. **They are regressions, not V16 closures**, and this record
+counts them apart; the V15 review criticised exactly that conflation.
+
+**The semantic defect.** V15 owner-scoped pending transport correctly, but
+`fragmentTexts.set(path, asked)` ran INSIDE the fulfilment handler of the
+promise returned by `.then()`, before that handler returned. A promise returned
+by `then` cannot settle until its handler returns, so the entry published under
+that path was `Promise { <pending> }` at the instant it became reachable, and
+publication also preceded the freeze. Ordinary event-loop work cannot
+interleave there — which is why the behavioural tests were green — but a
+synchronous reentrant operation retrieves the pending entry. The eventual
+shared value was the raw parsed file, shallow-frozen at the top level and
+carrying a mutable prototype, which `M.textPayload` then read at render time by
+ordinary prototype-sensitive lookup: a frozen empty object could turn from
+unreadable to readable between one reader and the next. And
+`M.bodyAsked(row, content)` proved only that `row` occurred in `rowOwners`, so
+an actual B row accepted arbitrary A content; the V15 direct test deliberately
+passed `{text: "x"}` with no owned completion behind it. The body journal was
+recorded before the DOM write.
+
+**The correction.** `M.textPayload` becomes the FINALIZER, called at settlement
+rather than at render: every field taken by own descriptor through `ownData` so
+nothing inherited is visible and no getter is invoked, sealed into a
+null-prototype, frozen, scalar-only record over the fixed key set
+`M.TEXT_SCHEMA`, with `M.NO_TEXT` as the finished value for a row that resolves
+no address. The page then publishes the FINAL VALUE and never a promise —
+`M.textPayload(file)` runs to completion, then `fragmentTexts.set(path,
+content)` — so there is no instant at which a path lookup returns unresolved or
+partial work, including reentrantly. A completion ENVELOPE
+(`M.textCompleted` / `M.textFailed`) carries the exact `rowTransport` owner
+beside the finalized content through settlement, sealed in a `WeakSet` so a
+literal of the same shape is not one; it is per-caller by construction and
+never becomes the shared path-cache value. **Neither half can be supplied BY
+THE DATA** — that is the exact claim, and no stronger one is made. In-realm
+code holding a recorder installed through the exported `chapterWitness`
+receives the page's actual row objects, and from a real row both
+`M.rowTransport` and `M.textPayload` will mint valid halves in five lines; this
+is not a security boundary against code already in the realm, which can write
+the DOM directly, and any unqualified "cannot be supplied from outside" is
+refutable by a five-line probe. `M.bodyAsked(row, completed)` now
+requires that the completion be one the model sealed, that its owner be the
+transport held for that very row, and that the owner's projection be the
+projection that made the row — three exact-object comparisons, no path, no id,
+no string — so arbitrary content beside a valid row fails closed. The new
+`M.bodyApplied(row, completed, wrote)` records the body AFTER the write is
+confirmed and binds owner, row, projection, path, the finalized content value
+and the post-write success state; a failed or unconfirmed write leaves no entry
+at all. A finished value already in the path cache is rebound to a later owner
+through that owner's OWN completion, so the cached value stays owner-independent
+and A's owner never crosses into B.
+
+**Ten semantic closures, counted apart from the regressions:** no reentrant
+pending path publication; finalized normalized immutable cache values only; the
+mutable-prototype payload closure; the exact completion-envelope owner;
+cross-owner arbitrary content rejected; body application tied to the completion
+owner; post-write journal ordering; **no false applied record on a write
+failure — which has two halves and is recorded with both rather than
+renumbered to an eleventh, since the enumeration is fixed across the
+directions, the records and the package: no journal entry for an unconfirmed
+write, and containment, because a throwing body write at the V15 parent escapes
+as an unhandled rejection and kills the entire replay (`Ran 35 tests, 98
+errors`, every replay class down) where V16's sink contains it and the page
+continues. The harness proves this without weakening the probe: an
+`unhandledRejection` handler records escapes into a journal instead of being
+fatal, and a global method asserts that journal empty across the whole plan —
+empty at the candidate, exactly one entry at the parent**;
+the provenance-specific committed `===` assertion the review found missing; and
+the observation-accounting semantic correction, which adds the `getPrototypeOf`
+observation caused by key enumeration and repairs the conflicting `has` versus
+own-property-test terminology and the "four kinds"/"nothing else" phrasing.
+
+**Thirteen evidence closures, counted apart:** executable command
+representation; unambiguous repo variables; prefix-prose rejection;
+mechanically derived tool execution; executed drivers classified correctly; a
+complete nine-attempt V15 predecessor-history statement; a complete V16 attempt
+history; **the example-replay figure derived mechanically and reported in its
+two distinct senses — divergent ROWS and distinct COMMAND STRINGS — with the
+volatile count kept apart as the static declaration it is and the cold-`build/`
+precondition recorded beside the number**; compare-gate diagnostic granularity;
+final completeness taken after the outer sanitize and scan; named outer logs;
+direct authority bindings; and an explicit shipped-versus-local
+retained-artifact privacy boundary.
+
+**The one V15 fact this lane corrected, then corrected again, with the
+experiment shown.** The V15 review found that "the authoritative logs report
+**28** divergent examples plus two separately declared volatile lines, not the
+durable producer claim of 30 divergences". **The finding stands.** V15's
+durable prose claimed 30 while V15's own shipped transcripts —
+`logs/attempt-01/make-check-parent.log` and
+`logs/attempt-02/make-check-head.log`, inside
+`20260826T195656Z-catena-e1-corrections-v15.zip` — each report 28 `DIFF` rows
+over 27 distinct commands and each summarise `28 diverged … 2 volatile line(s)
+declared`. No artifact in the V15 package supports 30, and V16 says so.
+**The review's account of the difference does not survive measurement**, and
+neither did V16's first attempt to write it down: V16 initially rewrote the
+records to read 28 + 2, treating 30 as a sum. That decomposition is
+arithmetically impossible. `volatile` is a static constant at
+`scripts/replay_examples.py:734`, `sum(len(lines) for lines in
+VOLATILE.values())` over the two-entry table at `:182-185`; both captures are
+masked at `:405` and appear in the transcript as `ok` and `absent`, **never as
+`DIFF` rows**, so they were never in the set they are supposed to be subtracted
+from, and the figure counts DECLARED LINES rather than examples. **The cause is
+neither arithmetic nor prose but BUILD STATE.** Measured three times
+independently at exact parent `b9202882badbbbc364f1dd3d9057d2710ee47552` in a
+clean checkout not under `/tmp`: `rm -rf build/example-ordinary && make
+check-examples` exits 2 with **30** `DIFF` rows; run immediately again on the
+now-warm tree it exits 2 with **28**. The whole delta is two captures of
+`tools/mass-ordinary check --out build/example-ordinary`, which prints `3 files
+would be rewritten` cold and matches its recorded `the written files are
+current` afterwards, because a later capture in the same target,
+`tools/mass-ordinary structure --out build/example-ordinary`, writes the very
+directory the earlier captures are compared against. **In V15's shipped
+transcripts both of those captures read `ok`, the signature of a warm tree**:
+V15 quoted a cold figure while shipping a warm log. Neither number was wrong
+about the world; the record never said which tree it was measuring. And 28 is
+reachable a second way, which may be what the reviewer saw — the warm log
+carries 28 rows over 27 distinct command strings and a cold run 30 over 28,
+a row-versus-name conflation of the kind the same review rightly criticised in
+`compare-gate.py`. **What V16 takes from this is not a number but a rule: a
+count is meaningless without the state it was taken in, and this package states
+both.** The battery records `build-state=COLD|WARM` at preflight, the
+completeness checker names build state as the cause when a figure and a
+transcript disagree, and **the V16 check pins no constant at all** — a check
+that pinned 30, or 28, would be wrong in one state or the other; it refuses the
+unsound SHAPE, refuses a figure the package's own transcript does not support,
+and refuses a summary that disagrees with its own `DIFF` rows. The sequence —
+corrected on the review's authority, measured, then corrected again — is left
+standing in `PROJECT-WORK.md` and here rather than quietly reverted.
+
+**The other V15 evidence facts corrected here.** The attempt history was
+rederived mechanically across all three ledgers by `checks.py --history-table
+--lane V15`, and its totals are `package_attempts 9`,
+`package_authoritative 1`, `package_non_authoritative 8`, `battery_attempts 5`,
+`attempts_with_no_terminal_row 1` (`parent-20260826T181908Z-01rwghhk`),
+`ledger_replacements 2` and `reused_ordinals 6` — **ordinal 1 was issued three
+times in one lane**. The nine are `package-20260826T180457Z-03qyvspp` (ord 3,
+02-retired, discarded on a failed normalize pass), `…-04jzwm3k`, `…-058sn2j5`
+and `…-067xmgxg` (ords 4–6, 02-retired, discarded at the attempt-log audit
+twice and in the P4 derive once), `…-07z8rv48` (ord 7, 02-retired, sealed then
+superseded at the ledger audit), `package-20260826T194118Z-033jkh3w` (ord 3,
+shipped, sealed then superseded on a P8 final-verification exit 1),
+`package-20260826T195048Z-04wzq5x4` (ord 4, shipped, sealed, **authoritative at
+19:52:06Z and superseded one second later** when the authority-coherence gate
+refused), `package-20260826T195411Z-05e1bu7n` (ord 5, shipped, discarded at the
+attempt-log audit) and `package-20260826T195656Z-06v11wpe` (ord 6, shipped,
+**authoritative**). Ledger digests: 01-retired 2,501 B / 5 rows `64683c0b…`;
+02-retired 45,619 B / 80 rows `5b0c380c…`; shipped 61,929 B / 107 rows
+`3990ff6c05a5a53d4b3a835e92259bd40f94847cfa3ce7e2de300ed66d034640`. No ledger
+is a prefix of a later one and no attempt id is shared between any pair, so
+these are nine distinct attempts rather than one set counted twice. Two
+batteries ran green, had their figures declined and were never marked
+`set-aside`, while V15's `PROVENANCE.md:296` states "This lane set no cohort
+aside".
+
+**The new checks are calibrated against the real package.** Run over the actual
+V15 archive and its actual siblings the rebuilt checker reports `handoff
+inventory: INCOMPLETE` with **14 problems** — the seven false-`LITERAL` rows
+named by transcript path, the two unnamed outer logs, and the unsupported
+example figure. Run over a corrected fixture it reports **`problems: 0` /
+`COMPLETE`** with zero non-executable rows remaining. The checks turn the
+shipped package's own `COMPLETE` into a correctly-explained `INCOMPLETE`,
+rather than merely passing on material built to pass them.
+
+Formerly stated as prose and retained for the detail: there were **nine** V15 package attempts
+across three ledgers — eight resolved non-authoritative and one final authority,
+plus five battery attempts — not five refusals and a sixth seal: one shipped
+ledger of 107 rows over ordinals 01–06, and two retired-and-unshipped ledgers
+(2,501 B / 5 rows and 45,619 B / 80 rows) whose five attempts were refused at
+P2, P5, P5, P4 and, after sealing, at the ledger audit before P7. Ordinal 04
+was sealed, briefly authoritative at P9, then superseded at P10; ordinals were
+reissued three times because allocation was file-scoped and the ledger was moved
+aside twice; one retired battery has no terminal row; and `PROVENANCE.md`
+declares no cohort was set aside while two green retired batteries had their
+figures declined. Seven of 24 `LITERAL` command rows single-quote `$WORKSPACE`
+or `$REPO` and cannot expand, the parent replay overloads `$REPO`, the
+classifier prefix-matches prose such as `format`, `installing` and `zipcode`,
+and the handoff checker trusts the label — only 16 of 24 rows were replayable.
+Two unlabelled tool-count sets are sealed in one package: `verify-final.log`
+and `.tool-bytes.json` say 20 unique tools with 11 executed, while
+`.assemble.log` says `executed_tools 14, executed_invocations 27,
+merged_battery_invocations 6`; six "not executed" rows are synthesized with a
+fabricated `at`, `phase` and `log`; and `assemble.sh` and `battery.sh` are
+marked unexecuted though they drove the build. Rerunning V15's shipped
+completeness checker after P11 finds the outer-sanitize and outer-scan siblings
+unnamed and reports `INCOMPLETE`. In `logs/compare-gate.py`, `walk()` keys
+assertions on the name alone, collapsing **2,290 assertion ROWS onto 17
+diagnostic NAMES** under last-write-wins and discarding 2,273 before the
+per-row diagnostics run
+while calling them assertion objects — **the verdict line is nevertheless
+sound**, because the final comparison is over the whole report object with all
+2,290 assertion rows included minus four named volatile fields, so only the
+localising diagnostics were degenerate. **That ROW-versus-NAME conflation is
+the general defect, and this lane answers it generally rather than fixing the
+one artifact the review named.** It occurs in four places in this evidence —
+the gate (2,290 rows over 17 names) and the classifier's own prose, both found
+by the review; the example replay (30 divergent rows over 28 distinct command
+strings) and full discovery (27 result rows over 22 distinct identities, where
+V15's "27 identities" was the row count wearing the identity count's name),
+both found here — and a fifth time in the parent-discrimination figure (288
+failure rows over 39 distinct methods). **Wherever this evidence quotes a
+count, it now says what is being counted.** The published archive and its ten named
+siblings pass the privacy scans; the discard and supersession markers, the two
+retired ledgers, the lane-wide `executed-tools.jsonl` and the retained
+discarded package trees lie outside every scan and preserve builder-local
+offsets and raw absolute paths, so no broader all-retained-artifacts privacy
+claim is accepted.
+
+**No ceiling is raised, and the page is NOT smaller than V15 left it.**
+`catena.js` moves 12,958/13,000 whole-gzip to **12,965/13,000** and 7,724/8,800
+stripped to **7,835/8,800**. The whole-file ceiling had forty-two gzipped bytes
+of headroom at V15 and the correction is not payable out of forty-two, so the
+three sentences the page may say about a body (`TEXT_ABSENT`,
+`TEXT_UNREADABLE`, `TEXT_LOST`/`TEXT_FAILED`), the presentation decision itself
+(`M.bodySaying`, `M.failureSaid`) and the page's paragraph on its one
+point-of-use acknowledgement channel moved to `catena-model.js`, which carries
+no ceiling, and the page kept pointers. That paid for the completion envelope,
+the finalized-value publication and the confirmed-write journal, and it did not
+pay for all of them: the page ends seven gzipped bytes ABOVE V15 at 12,965
+against 12,958, and 111 stripped bytes above at 7,835 against 7,724, with
+thirty-five bytes under an unraised ceiling. Every version from V4 to V15 could
+report the page smaller than its predecessor; this one cannot, and says so
+rather than trimming load-bearing prose to buy the sentence. `catena.css` is
+byte-identical at 7,629/8,000 and 2,676/2,700, and `index.html` is
+byte-identical — its own SHA-256 is
+`7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8`, which is
+the digest OF THE FILE; the release binding for it records `45c491ab…` and is
+one of the four separately stale bindings, which this lane re-signs nothing to
+close. **Thirty-five gzipped bytes is not enough for the next
+correction of any size**, and the uncapped `catena-model.js` has reached
+**44,247** whole-gzip and **10,344** stripped against 41,077 and 9,536 at V15,
+digest
+`64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3`; that growth
+is disclosed, not budgeted, and a governing
+ceiling for the model and the combined route-model payload remains open,
+separately-owned budget work.
+
+**Two fixes identified by an adversarial review, costed, and deliberately not
+made — because they cost more gzipped bytes than the unraised ceiling has.**
+The cache-hit branch tests the finished value for truthiness rather than asking
+`fragmentTexts.has(path)`; a sealed value is always a non-null object, so this
+is safe on today's schema and is a latent trap only if the schema ever admits a
+falsy sealed value — **cost to fix 37 gzipped bytes against 35 of headroom**.
+And the body write assigns the class before the words; reordering so the words
+land first would leave the page wholly untouched by a write that throws before
+the body lands, but no such throw is reachable (`T.el`, `licence`,
+`insertBefore`, `appendChild` and concatenation over `sound()`-typed strings do
+not throw on real data) and **the reorder costs about 60 gzipped bytes**,
+because it breaks a repeated pattern gzip was compressing. Both are disclosed,
+costed and deferred, rather than paid for by raising a ceiling or trimming
+load-bearing prose.
+
+**A refused body application now leaves no journal entry at all.** V15's
+`bodyAsked` witnessed every attempt including refusals, so a stale or
+cross-owner application turned away still left a `body` row saying so. V16
+records only confirmed applications — `M.bodyApplied` appends when the
+completion is owner-valid AND `wrote === true`, and `M.bodyAsked` witnesses
+nothing — so the journal no longer positively records a refusal. The negative
+cases are still proved, by the boundary returning `false` in a committed direct
+assertion and by the rendered page being unchanged, but the page-level journal
+row V15 had is gone. Disclosed as a deliberate consequence of taking the record
+AFTER the write, which is what the review required, not as an oversight.
+
+**Further limitations recorded rather than left to be found.** The post-write
+confirmation reads back `text.textContent` — the fragment's body — and does not
+confirm the acknowledgement block or the `Extent —` and `Date —` apparatus
+paragraphs written beside it, so "confirmed" means the fragment's words reached
+the page and nothing broader; that boundary is now a pinned assertion rather
+than prose, since the two write-failure modes leave different partial states —
+a silent non-take still draws the apparatus, a throw draws none of it, and both
+leave the acknowledgement block standing because it is written before the
+words. The write runs inside a `try` (`try { said = write(); } catch (problem)
+{ said = null; }`), and **the retry flag is deliberately NOT reset there**: an
+earlier revision did reset it, and the reset was removed because a throw after
+the body had landed would leave the body on the page, no journal entry, and an
+invited second full application from the memoised completion. `asked = false`
+occurs only in the transport-failure arm, because a network failure is
+retryable and a failed DOM write is not; both write-failure modes therefore end
+with no entry, no false success and no second attempt. The consequence
+disclosed beside the decision is that a write which silently does not take
+leaves the fragment showing its previous state with no way for the reader to
+retry — unreachable in a real DOM, disclosed because the arm exists. And
+`M.rowTransport(row)` is now
+consulted unconditionally in `fragmentText`, where V15 consulted it only once
+an address resolved, so a projected row that resolves NO address now produces a
+transport owner (its `path` is `''`) and one `transport` witness where V15
+produced neither — deliberate, because the ABSENT body is a body application
+like any other and must be owned by a completion the model sealed, and
+disclosed because the request journal now carries one more transport row for
+such rows than V15's did.
+
+The production diff is `catena.js` and `catena-model.js` alone. `src/web/data/`,
+release-owned records, the common gate, the shared shell, Liturgy, PDFs, the
+CLI, CSS and HTML are untouched; the four stale Catena release bindings remain
+unsigned and correctly fail-closed and none was re-signed; and broader
+projection, orphan and source-only semantics, translator coercion, malformed
+absence and refusal typing, selection ordering, unreadable roots and
+`bibles.json`, broader terminal and oracle proof, CLI/web duplication,
+model-budget governance, the historical data seam, release bindings, the common
+gate, the shared shell, device and assistive-technology work, Liturgy, PDFs and
+integration remain open or separately owned.
+
 ### E1 Catena correction V15 — 2026-08-26
 
 Answers the fresh independent review of V14 — **CHANGES REQUIRED** at exact V14
@@ -1310,7 +1635,7 @@ fresh independent review.
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Sixteenth correction candidate (V15) awaiting fresh independent review; the disposition it answers is **CHANGES REQUIRED** at exact V14 head `69f2575421ba976271c936b1abd4b39dbe8b98fd`, recorded at review commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004` on `review/catena-wave-1-e1-corrections-v14-independent`, so this lane can name the review it answers; the unpublished V13 review V14 had to answer stays the one gap in the chain, and it is V13's alone | That review passed and did not reopen the post-projection `unfetched` closure, the seven-member raw authority inventory, the tally as a consumer of its own, the raw post-projection audit, the structural member matrix, the hostile nested-source refusals, seventeen frozen structures at their exact null-prototype scope, the carried-path and spine-prefix closures, the fulfilled prewarm proof, the rights, provenance and refusal DOM cases, ordinary ownership through address selection, and the whole package protocol. It found ONE decisive semantic defect: projection and row ownership survived address selection and was then discarded by a global path-keyed pending Promise cache before completion and body application, so a second row carrying one address joined the first row's unresolved request and rendered the answer that request was made for — and the green oracle over that case required the leak. Beside it: body application absent from the actual-object roster, wrappers able to create a second projection, the promised nested EDITION accessor case missing, a descriptor count reported as one read when it is three per source key and two per stated field, deep immutability proved without a downstream rerender, and mandatory evidence defects — two browser commands `ELIDED`, the parent replay `PROSE`, an executed-tool table contradicting its own assembly transcript, an invocation count presented as a tool count, and a history called complete and append-only while omitting a set-aside cohort and the P10 rows and disclosing a row replacement. Its exact next action: keep pending text work owned by the initiating row and projection or share only fulfilled immutable values; hold A, let same-path B settle independently with a distinguishable body, then release A and prove B unchanged by actual object identity; complete the body-application consumer roster; audit the descriptor accounting and close the missing edition and deep-mutation sink proofs; and rebuild the evidence with exact portable commands, complete history and one coherent invocation and tool-byte record. V15 is that correction alone; every other enumerated blocker remains open for the authorized continuation. Preserve accepted E0 and every sound V2–V14 correction. E1 stays off main. No merge, re-sign, deploy or cutover. |
+| E1 Catena production implementation | **Seventeenth** correction candidate (V16) awaiting fresh independent review; the disposition it answers is **SEMANTIC CHANGES REQUIRED** and **EVIDENCE CHANGES REQUIRED**, **CHANGES REQUIRED** overall, at exact V15 head `b9202882badbbbc364f1dd3d9057d2710ee47552` on `impl/catena-wave-1-e1-corrections-v15`, recorded at review commit `67247ecc39a6e5f6224c64ca3ab1af163ee023b1` on `review/catena-wave-1-e1-corrections-v15-independent`; the V15 handoff is `evidence/catena-e1-corrections-v15-handoff` at `db5f651e4eb2d10a15d1a594a4286ac7048f612c` with ZIP `20260826T195656Z-catena-e1-corrections-v15.zip`, 1,400,092 bytes over 69 members, SHA-256 `711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac`; `origin/main` is `2778285849f2973ea89d1cfd5b2751ed4ae58e54` and V16 is not integrated with it | That review passed and did not reopen the row-transport owner model, the A-held/B-independent decisive behaviour and its thirty-six-field terminal vector, the wrapper-created-authority closure, one owner's failure suppressing no other owner's request, owner-local retry, the hostile nested `edition` and `edition_published` accessor cases, the thirteen throwing mutations and their downstream rerender, or any inherited V14 closure; those are preserved and re-run here as **REGRESSIONS, not V16 closures**, counted apart because the V15 review criticised exactly that conflation. It found the decisive semantic defect that `fragmentTexts.set(path, asked)` ran INSIDE the fulfilment handler of the promise returned by `.then()`, so a still-pending object was briefly path-visible and publication preceded the freeze; that the eventual shared value was raw shallow-frozen parsed JSON with a mutable prototype, read later by ordinary prototype-sensitive lookup in `M.textPayload`; and that `bodyAsked(row, content)` proved only that `row` occurred in `rowOwners`, so an actual B row accepted arbitrary A content, with the body journal recorded before the DOM write. It also found the evidence package materially defective: seven of 24 `LITERAL` command rows single-quoting `$WORKSPACE`/`$REPO` and unable to expand, a parent replay overloading `$REPO`, a classifier that prefix-matches prose, a handoff checker that trusts the label, six manufactured non-execution placeholders, `assemble.sh` and `battery.sh` classified unexecuted though they drove the build, two unlabelled tool-count sets for one lane, a stale `COMPLETE` verdict that rereads as `INCOMPLETE` after P11, a compare gate collapsing 2,290 assertion ROWS onto 17 diagnostic NAMES, a nine-attempt history presented as five refusals and a sixth seal, and a durable claim of 30 example divergences that the shipped transcripts do not support — they report 28 `DIFF` rows over 27 distinct commands and `28 diverged … 2 volatile line(s) declared`. **That last finding stands and its diagnosis does not.** "28 plus 2 declared volatile lines" cannot be a decomposition of 30: the volatile figure is a static constant over two `tools/pdf-review` captures masked before comparison, which appear as `ok` and `absent` and were never in the divergent set. The cause is BUILD STATE — 30 on a cold `build/` and 28 on a warm one, the delta being two captures of `tools/mass-ordinary check --out build/example-ordinary` whose comparison directory a later capture in the same target writes — and V15 quoted a cold figure while shipping a warm log without saying which tree it measured. V16 corrects only those: `M.textPayload` becomes the finalizer called at settlement, taking every field by own descriptor and sealing a null-prototype, frozen, scalar-only record over `M.TEXT_SCHEMA` with `M.NO_TEXT` for a row that resolves no address; the page publishes the final value and never a promise; a `WeakSet`-sealed completion envelope (`M.textCompleted` / `M.textFailed`) carries the exact `rowTransport` owner beside the finalized content and never becomes the shared cache value; `M.bodyAsked(row, completed)` requires a model-sealed completion whose owner is the transport held for that very row and whose projection made the row; the new `M.bodyApplied(row, completed, wrote)` records the body only after a confirmed write; a finished cached value is rebound to a later owner through that owner's own completion; and the package is rebuilt with executable commands, mechanically derived tool execution, one complete attempt history, the example figure derived mechanically and reported in its two senses apart (divergent ROWS and distinct COMMAND STRINGS) with the volatile count kept separate as a static declaration, the build state recorded beside every statement of the figure and no constant pinned by any check, granular compare-gate diagnostics, a final-state completeness verdict, named outer logs, direct authority bindings and an explicit shipped-versus-local privacy boundary. Projection/orphan-source, source-only-fragment, translator, absence, selection, refusal-typing, unreadable-root, broader-terminal/oracle, CLI/web, model-budget, data-seam, release, common-gate, B0/shared-shell, real-device/AT, protected Liturgy and PDF blockers remain open or separately owned. Preserve accepted E0 and every sound V2–V15 correction. E1 stays off main. No merge, re-sign, deploy or cutover. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -1337,7 +1662,8 @@ fresh independent review.
 | 2026-08-15 | E1 Catena correction V7 | Answered independent review `f183ed1b0` (**CHANGES REQUIRED** at `4639b139f`) by replacing raw fragment copying with an explicit typed projection. `chapterFragments` had shallow-copied every own property and cleared `text_path` only when a composed form could be built, so a fragment whose id or whose file's prefix was unreadable kept the record's own `text_path` and the page requested it; `text_path` is now composed, and a carried one is accepted only where its stem is that fragment's own validated id, which is what keeps the sample corpus working. Hollow fragment, absence and refusal members make no row, tally or claim; an absence source is validated before it claims a work's row, so a hollow source no longer renders blank and masks the valid sibling behind it; a refusal needs the closed kind and the chapter matched against the chapter being read, which stops a chapter-1 record establishing chapter 2's boundary; a contradiction contributes no rights prose, where V6 declined the finding and then printed one side's reason chosen by length; `partial` stops being coerced in `scripts/_catena.py`, where `str(row.get("partial") or "")` turned a mapping into prose; and holdings, canon, voices, the edition manifest, the paragraph layer, the verses container and the chapter spine each distinguish a corpus read and found empty from a corpus state that could not be established. Ten oracles that blessed those defects are corrected with their reasons recorded, and the late-work guard grew from thirteen sinks to thirty-six after the review found it compared the announcement journal rather than the live region a stale write could replace. This lane attacked its own change twice: the first pass found five further defects, one introduced by the correction, all fixed with regressions, and one confirmed finding is recorded unfixed rather than settled by a lane that cannot settle it. Package claims are machine-derived from one pass and a checker refuses prose that disagrees with them; the sealer no longer deletes the manifest in its read-only mode and now proves every archive member against it. `catena.css`, `index.html` and all of `src/web/data/` byte-identical; no ceiling raised, and `catena.js` smaller than V6 left it in both measures. **Every figure is derived at the sealed head and recorded in the package's own claim record rather than restated here, which is the direct answer to the five counts this review found wrong.** | Branch `impl/catena-wave-1-e1-corrections-v7`; parent `4639b139f2179b1fca7f9cb1e4ba3ac19c9bbc46`; review addressed `f183ed1b0afc6f14574a3507f6eaf3102dc999fa`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-15 | E1 Catena correction V8 | Answered independent review `d9ad5ec1a` (**CHANGES REQUIRED** at `e876b29e5`) with exactly its stated first bounded commit: the byte-exact `structure/catena/text/` namespace closure at the request sink, and nothing else. `trail` and `leaf` stated what a path of this data root looks like and nothing stated which directory the route owns, so `structure/paragraphs/` composed a request, a carried same-stem `structure/paragraphs/text/<id>.json` fetched a real Sources text sharing that id, and whitespace-wrapped paths were trimmed into validity. The model now states the namespace once — `TEXT_HOME` — and `textTrail`/`textLeaf` require it byte-exactly at a directory boundary with no whitespace repair, for the composed and the carried form alike, before projection completes; `catena.js` is untouched. Three adversarial replay scenarios plant a real body at the wrong-namespace address, pin the entire fetched journal, assert the planted words reach no sink, and hold the terminal state. Focused suite 510 green, up from 505; catena check 1,351/1/73 with all 1,356 real and 47 fixture paths unchanged; browser gate 2,290 assertions with the inherited 1,836/226/228 and 117/82/27 identity; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +514 gzipped whole. All other V7 findings recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v8`; parent `e876b29e5797edcc6e86422daa807f4b1104ec81`; review addressed `d9ad5ec1ae35c308a0da5ed3456fd05fdad97cbd`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-16 | E1 Catena correction V9 | Answered independent review `611b5eed8` (**CHANGES REQUIRED** at `7e4df42a2`) with exactly its stated next action: the composed prefix/fallback closure and a truthful final-byte package, and nothing else. `textTrail` collapsed a prefix the file never stated and a prefix the file stated and the page refused into the same `''`, and `fragmentRow`'s truthy test read that `''` as leave to consult the carried `text_path`, so the reviewer's refused `structure/paragraphs/` prefix still fetched a valid same-stem carried file and rendered its planted body. The prefix is now the statement `{stated, trail}`: absence is property absence on the spine record, every carried shape is a statement, a refused statement is terminal and kept on the row as `text_refused`, and the carried door opens only on genuine absence with a byte-exact own-stem path; `catena.js` is untouched. The regressions pin the exact vector cold, prewarmed and genuinely late at the production sinks — whole journal, body, rows, announcement journal and standing `statusText`, tally, busy, hash, history, focus — and fail nine ways at the uncorrected parent; a model-level matrix classifies thirteen refused shapes beside the absent and valid states. The handoff pipeline freezes its inventory before derivation, names derived members unsized, and verifies its claims read-only against the final ZIP, with the retained parent run and the discarded `/tmp` run ledgered. Focused suite 519 green, up from 510; catena check 1,351/1/73; browser gate 2,290 with the inherited 1,836/226/228 and 117/82/27 identity, whole report identical; budgets unraised with `catena.js` and `catena.css` byte-identical at 12,901/13,000, 7,530/8,800, 7,629/8,000 and 2,676/2,700; the unbudgeted model's growth is disclosed at +833 gzipped whole. All other V7 blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v9`; parent `7e4df42a21bc2be2d28ff14943f63af3e7e3a6f8`; review addressed `611b5eed8128ad5f84f6bf73ac9f9ead5959ab7f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
-| 2026-08-26 | E1 Catena correction V15 | Answered the V14 independent review (**CHANGES REQUIRED** at `69f2575421ba976271c936b1abd4b39dbe8b98fd`, recorded at review commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004`) with exactly its stated next action. V14 resolved a text address THROUGH the projected row and then handed the resolved string to a module-scope map keyed on the path alone that held the unresolved PROMISE, so a second row carrying that address did not ask — it joined the first row's request and was handed the answer that request was made for. Replayed at the exact parent, owner A is held and owner B shows `Loading…`; after A releases, B shows `PLANTED BODY A`, A's document, under B's row, on B's route, in B's projection — and the V14 test that was green over that case asserted one request for the address and B rendering A's body, so its oracle required the leak. A path map now holds only a settled answer and receives the promise from inside that promise's own settle handler; work in flight is held against `M.rowTransport(row)`, one frozen owner object per projected row carrying the row, its projection and the address it asks; `M.bodyAsked(row, content)` is asked AT the body application and records the projection, the row and the value written, so the roster reaches the step that writes the page and a row no projection made applies nothing; the substitute record for an unreadable spine is made once per name, so walking away from an unreadable chapter and back no longer mints a second authority over it; and a request released late may not displace an answer another row already has. The decisive case parks only the FIRST ask of a shared address and answers it two different documents in turn, so B rendering its own body and B rendering A's are distinguishable: B settles and renders `PLANTED BODY B` while A is held, never renders `PLANTED BODY A`, and A's late release moves exactly one journal row against a thirty-six-field terminal vector pinned value by value beforehand. The promised nested EDITION accessor case is asked directly and gives one coherent outcome across edition, printing, provenance line, rights, voices and readable state — a proof gap closed, not a production defect. Observations are reported by kind: zero value reads that would run an own accessor, zero `in` tests, three `getOwnPropertyDescriptor` observations per source key, two per stated shared field and one per absent one, one key enumeration, nothing further on a second render, with `Object.hasOwn` counted under descriptors because it is `[[GetOwnProperty]]`. After thirteen attempted mutations the chapter is drawn again from the same projection and its bodies applied again, and thirty-two rendered fields and the request journal are unchanged. Focused Catena 615 green, up from 596; fourteen methods fail at the exact parent — eleven new, plus the corrected oracle, the roster audit and the model hash pin, the last two counted apart — and eight further new methods pass at both endpoints as coverage and controls. Full discovery 1,966 at the candidate and 1,947 at the parent, 14/13/11 at both over the SAME 27 identities; `make -k check` exits 2 on the same four inherited targets at both, with 30 example divergences at both; the browser gate is byte-identical under the named volatile exclusions. Budgets unraised: `catena.js` is smaller than the parent at 12,958/13,000 whole and 7,724/8,800 stripped, `catena.css` and `index.html` byte-identical, and the three paragraphs relocated to the uncapped model to pay for the correction are disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v15`; parent `69f2575421ba976271c936b1abd4b39dbe8b98fd`; review addressed `0d11766ec232b2b4e46a7d1b0ada56ef22370004`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+| 2026-08-27 | E1 Catena correction V16 | Answered the V15 independent review (**SEMANTIC CHANGES REQUIRED** and **EVIDENCE CHANGES REQUIRED**, **CHANGES REQUIRED** overall, at exact V15 head `b9202882badbbbc364f1dd3d9057d2710ee47552`, recorded at review commit `67247ecc39a6e5f6224c64ca3ab1af163ee023b1`) with exactly its stated next action. V15 owner-scoped pending transport correctly, but `fragmentTexts.set(path, asked)` ran INSIDE the fulfilment handler of the promise returned by `.then()` — before that handler returned — so a still-pending object was briefly path-visible and publication preceded the freeze; the eventual shared value was raw shallow-frozen parsed JSON with a mutable prototype that `M.textPayload` read later by ordinary prototype-sensitive lookup, so a frozen empty object could turn from unreadable to readable between readers; and `bodyAsked(row, content)` proved only that `row` occurred in `rowOwners`, so an actual B row accepted arbitrary A content, with the body journal written before the DOM write. `M.textPayload` is now the FINALIZER called at settlement: every field taken by own descriptor through `ownData` so nothing inherited is visible and no getter is invoked, sealed into a null-prototype, frozen, scalar-only record over the fixed key set `M.TEXT_SCHEMA`, with `M.NO_TEXT` the finished value for a row that resolves no address. The page publishes the FINAL VALUE and never a promise, so no path lookup returns unresolved or partial work at any instant, including reentrantly. A `WeakSet`-sealed completion envelope (`M.textCompleted` / `M.textFailed`) carries the exact `rowTransport` owner beside the finalized content through settlement, is per-caller by construction and never becomes the shared path-cache value; `M.bodyAsked(row, completed)` requires a model-sealed completion whose owner is the transport held for that very row and whose owner's projection made the row — three exact-object comparisons, no path, id or string — so arbitrary content beside a valid row fails closed; the new `M.bodyApplied(row, completed, wrote)` records the body only after the write is confirmed and binds owner, row, projection, path, the finalized content value and the post-write success state, leaving no entry at all for a failed or unconfirmed write; and a finished cached value is rebound to a later owner through that owner's own completion, so the cached value stays owner-independent and A's owner never crosses into B. Ten semantic closures are counted apart from the preserved V15 and V14 behaviour, which is re-run as REGRESSIONS rather than restated as new work. Thirteen evidence closures rebuild the package, and the V15 evidence facts are corrected truthfully — including one this lane first corrected on the review's authority and then corrected again after measuring. **The review's finding stands:** V15's prose claimed 30 example divergences while V15's own shipped transcripts (`logs/attempt-01/make-check-parent.log`, `logs/attempt-02/make-check-head.log`) each report 28 `DIFF` rows over 27 distinct commands and `28 diverged … 2 volatile line(s) declared`, so no artifact in the V15 package supports 30. **Its diagnosis does not:** "28 plus two declared volatile lines" is arithmetically impossible, because `volatile` is a static constant at `scripts/replay_examples.py:734` over the table at `:182-185` counting DECLARED LINES for two `tools/pdf-review` captures masked at `:405` that appear as `ok` and `absent`, never as `DIFF` rows, so they were never in the set they are supposed to be subtracted from. **The cause is BUILD STATE.** Measured three times independently at the exact parent in a clean checkout not under `/tmp`: cold `build/` gives **30** rows, the same command immediately again on the warm tree gives **28**, the entire delta being two captures of `tools/mass-ordinary check --out build/example-ordinary`, whose comparison directory a later capture in the same target writes. In V15's shipped transcripts both of those captures read `ok`, the warm signature — V15 quoted a cold figure while shipping a warm log, and the record never said which tree it measured. 28 is also reachable as distinct DIFF command strings (warm 28 rows over 27, cold 30 over 28), a row-versus-name conflation of the kind the same review rightly criticised in `compare-gate.py`. **V16 takes a rule rather than a number: a count is meaningless without the state it was taken in.** The battery records `build-state=COLD|WARM` at preflight and the V16 check pins no constant — it refuses the unsound shape, a figure the package's own transcript does not support, and a summary that disagrees with its own `DIFF` rows. Also corrected: **nine** retained V15 package attempts across three ledgers, eight resolved non-authoritative and one final authority, rather than five refusals and a sixth seal; seven of 24 `LITERAL` rows unable to expand and a parent replay overloading `$REPO`; six manufactured non-execution placeholders and two unlabelled tool-count sets for one lane; a `COMPLETE` verdict that rereads as `INCOMPLETE` after P11; a compare gate whose diagnostics collapse **2,290 assertion ROWS onto 17 diagnostic NAMES** although its whole-report verdict is sound — the ROW-versus-NAME conflation this lane found in four places in its own evidence and answers generally, so that wherever this evidence quotes a count it now says what is being counted; and a privacy claim that holds for the published archive and its ten named siblings but not for retained builder-local artifacts. Focused Catena **660/660** at the candidate against **615/615** at the exact V15 parent, with **39 distinct methods failing at the parent over 288 failure ROWS and zero errors** — 30 for a semantic reason, 6 because the mechanism is ABSENT and counted apart as absence-readings rather than advertised as discriminators, 2 source-text closures and 1 hash pin — and **48** new methods against **3** removed or renamed, **11** of the new ones passing at both endpoints as coverage and controls. Full discovery **2,011** at the candidate and **1,966** at the parent, **14 failures / 13 errors / 11 skips at both**, over **27 result ROWS spanning 22 distinct identities at both, the identity sets equal**; none of the 22 is Catena's. `make -k check` exits 2 on the same four inherited targets at both endpoints — `Makefile:554` `check-web-editions-current` (101 stale-edition lines), `:598` `check-release-bindings` (4 stale), `:803` `check-tool-registry` (8 undeclared-sibling findings, genuinely run because `tmt` is installed; **a box without `tmt` shows only three red targets, which is not a change**) and `:791` `check-examples` (30, cold). The browser gate is identically red at **2,290 assertion ROWS across 17 diagnostic NAMES — 1,836 pass / 226 fail / 228 skip over 171 pages, 19 routes and 9 states**, the 226 failing rows in exactly three names (`single-main-element` 117, `primary-controls-meet-target-size` 82, `skip-link-targets-existing-element` 27) on Chromium 151.0.7922.173, and whole-report identical under the named volatile exclusions. No ceiling is raised and the page is NOT smaller than the parent: `catena.js` goes 12,958 to **12,965**/13,000 whole-gzip and 7,724 to **7,835**/8,800 stripped, seven gzipped bytes ABOVE V15 with thirty-five under an unraised ceiling, the first version since V4 that cannot report the page smaller than its predecessor and it says so; `catena.css` and `index.html` are byte-identical; the three body sentences, the presentation decision and the acknowledgement paragraph relocated to the uncapped model to pay the forty-two-byte V15 headroom are disclosed; and `catena-model.js` has reached **44,247** whole-gzip and **10,344** stripped against 41,077 and 9,536 at V15, digest `64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3`, with thirty-five bytes of page headroom recorded as a limitation — not enough for the next correction of any size — and a governing model ceiling still open and separately owned. The post-write confirmation reads back the body alone, not the acknowledgement block or the apparatus paragraphs beside it — now a pinned assertion rather than prose, since a silent non-take still draws the apparatus, a throw draws none of it, and both leave the acknowledgement block standing because it is written before the words. `M.rowTransport` is now consulted unconditionally, so a row that resolves no address produces one more transport witness than V15's did. **A refused body application now leaves no journal entry at all**: V15's `bodyAsked` witnessed every attempt including refusals, while V16 records only confirmed applications, so the negative cases are still proved by a committed direct assertion and an unchanged page but the page-level journal row V15 had is gone — a deliberate consequence of taking the record after the write, not an oversight. **The retry flag is deliberately not reset in the write's `catch`**, because a throw after the body had landed would leave the body on the page, no entry, and an invited second application from the memoised completion; `asked = false` occurs only in the transport-failure arm, since a network failure is retryable and a failed DOM write is not, and the disclosed consequence is that a silent non-take leaves the fragment showing its previous state with no reader retry. **Two fixes were identified, costed and deliberately not made** because they exceed the unraised ceiling: testing the cache hit with `fragmentTexts.has(path)` rather than for truthiness (37 gzipped bytes against 35 of headroom, safe today because a sealed value is always a non-null object) and writing the words before the class (about 60 gzipped bytes, since the reorder breaks a repeated pattern gzip was compressing, and no throw is reachable there). And the completion envelope's two halves cannot be supplied **by the data**, which is the exact claim — in-realm code holding a recorder installed through the exported `chapterWitness` can mint valid halves from a real row in five lines, so this is not a security boundary and no unqualified impossibility is asserted. All of these are disclosed rather than left to be found. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v16` at `«TBD:v16-head»`; parent `b9202882badbbbc364f1dd3d9057d2710ee47552`; review addressed `67247ecc39a6e5f6224c64ca3ab1af163ee023b1`; handoff planned on `evidence/catena-e1-corrections-v16-handoff` at `«TBD:evidence-commit»`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
+| 2026-08-26 | E1 Catena correction V15 | Answered the V14 independent review (**CHANGES REQUIRED** at `69f2575421ba976271c936b1abd4b39dbe8b98fd`, recorded at review commit `0d11766ec232b2b4e46a7d1b0ada56ef22370004`) with exactly its stated next action. V14 resolved a text address THROUGH the projected row and then handed the resolved string to a module-scope map keyed on the path alone that held the unresolved PROMISE, so a second row carrying that address did not ask — it joined the first row's request and was handed the answer that request was made for. Replayed at the exact parent, owner A is held and owner B shows `Loading…`; after A releases, B shows `PLANTED BODY A`, A's document, under B's row, on B's route, in B's projection — and the V14 test that was green over that case asserted one request for the address and B rendering A's body, so its oracle required the leak. A path map now holds only a settled answer and receives the promise from inside that promise's own settle handler; work in flight is held against `M.rowTransport(row)`, one frozen owner object per projected row carrying the row, its projection and the address it asks; `M.bodyAsked(row, content)` is asked AT the body application and records the projection, the row and the value written, so the roster reaches the step that writes the page and a row no projection made applies nothing; the substitute record for an unreadable spine is made once per name, so walking away from an unreadable chapter and back no longer mints a second authority over it; and a request released late may not displace an answer another row already has. The decisive case parks only the FIRST ask of a shared address and answers it two different documents in turn, so B rendering its own body and B rendering A's are distinguishable: B settles and renders `PLANTED BODY B` while A is held, never renders `PLANTED BODY A`, and A's late release moves exactly one journal row against a thirty-six-field terminal vector pinned value by value beforehand. The promised nested EDITION accessor case is asked directly and gives one coherent outcome across edition, printing, provenance line, rights, voices and readable state — a proof gap closed, not a production defect. Observations are reported by kind: zero value reads that would run an own accessor, zero `in` tests, three `getOwnPropertyDescriptor` observations per source key, two per stated shared field and one per absent one, one key enumeration, nothing further on a second render, with `Object.hasOwn` counted under descriptors because it is `[[GetOwnProperty]]`. After thirteen attempted mutations the chapter is drawn again from the same projection and its bodies applied again, and thirty-two rendered fields and the request journal are unchanged. Focused Catena 615 green, up from 596; fourteen methods fail at the exact parent — eleven new, plus the corrected oracle, the roster audit and the model hash pin, the last two counted apart — and eight further new methods pass at both endpoints as coverage and controls. Full discovery 1,966 at the candidate and 1,947 at the parent, 14/13/11 at both over the SAME 27 identities — **corrected in place on 2026-08-27 by the V16 lane: read 27 result ROWS over 22 distinct `module.Class.method` identities**, since two methods emit multiple `subTest` rows (`test_every_verb_shows_at_least_two_real_invocations` five, `test_shell_smoke_tests_pass` two); the substantive claim survives, the sets ARE equal, and only the label on the number was wrong. **A second precondition belongs beside the figure:** the V15 review's fresh replay reached 15 failures, the extra identity being the `pdf-review.test` tool-registry smoke test, because `tools/pdf-review:486` allows any output under `Path("/tmp").resolve()` for a non-managed worker, so **from a checkout under `/tmp` the asserted refusal never happens**; these clones are not under `/tmp`, so 14/13/11 is what they measure, and the reviewer measured something real in a place where it is true. `make -k check` exits 2 on the same four inherited targets at both, with **28** example divergences at both — **corrected in place on 2026-08-27 by the V16 lane, twice.** This row and the V15 lane record had said `30 example divergences`; the V15 review found that this lane's own shipped transcripts report 28 `DIFF` rows over 27 distinct commands and `28 diverged … 2 volatile line(s) declared`, and **it was right — no artifact in this package supports 30**, so the figure above is corrected to 28 and that correction stands. V16 first also adopted the review's explanation, rewriting this row to read 28 + 2, and **that part was wrong and is withdrawn**: `volatile` is a static constant at `scripts/replay_examples.py:734` over the table at `:182-185`, counting declared LINES for two `tools/pdf-review` captures masked at `:405` that appear as `ok` and `absent`, never as `DIFF` rows, so they were never in the set they are supposed to be subtracted from. **The cause is BUILD STATE:** measured three times independently at the exact parent in a clean checkout not under `/tmp`, a cold `build/` gives 30 and an immediately repeated warm run gives 28, the whole delta being two captures of `tools/mass-ordinary check --out build/example-ordinary`, whose comparison directory a later capture in the same target writes. Both of those captures read `ok` in this lane's shipped transcripts, the warm signature — this record quoted a cold figure while shipping a warm log, and never said which tree it measured. **`check-examples` must therefore be run exactly once per fresh clone, and no record may state the figure without stating the build state beside it.** The browser gate is byte-identical under the named volatile exclusions at **2,290 assertion ROWS across 17 diagnostic NAMES**. Budgets unraised: `catena.js` is smaller than the parent at 12,958/13,000 whole and 7,724/8,800 stripped, `catena.css` and `index.html` byte-identical, and the three paragraphs relocated to the uncapped model to pay for the correction are disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v15`; parent `69f2575421ba976271c936b1abd4b39dbe8b98fd`; review addressed `0d11766ec232b2b4e46a7d1b0ada56ef22370004`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-20 | E1 Catena correction V14 | Answered the V13 independent review (**CHANGES REQUIRED** at `6cc85e1a1`) with exactly its stated next action. **That review has no published ref**: `origin` carries no `review/catena-wave-1-e1-corrections-v13-independent` and the branch exists only in a local reviewer checkout at the reviewed head with no review commit, so no review SHA is recorded and the gap is stated rather than filled. `unfetched` was the one request-critical chapter member the projection read and did not carry, so the page read the raw record a second time for the string it prints; a record answering `undefined` while readability was decided and a forged string afterwards replaced an accepted chapter with a manufactured unavailable state, taking its rows, its recorded refusal and its tally and printing the payload's own words to the reader. The value is projected now and the member is asked once, against twice at the parent. `chapterWitness` is a bounded seam handed the exact object each consumer is about to read, so identity is `===` on an object rather than equality on an id; the roster grows from six consumers to ten, is checked against every name the replay produced, and the tally is a consumer of its own rather than the length of the rows. `fragmentText(row)` resolves the address through the row and the model records the owning row and projection at that moment, so two rows carrying one path are two owners, two projections carrying one path stay apart, and a genuinely-late completion belongs to the row that started it; a row no projection made resolves no address at all. Nested `sources["1"]` as an own getter was invoked for voices and editions and declined for fragment provenance out of one projection — an empty provenance line under an edition whose voice the control offers — and every entry and shared field is own data now, with invocation counts falling from 1, 3, 3, 1 and 1 at the parent to zero. The member list is tested as an inventory: `Array.isArray` is true of a proxy over a real array and the parent asks the length twice, so add, remove, reorder, phantom and tally are pinned independently, each beside a steady control. Seventeen trusted structures are asserted frozen and thirteen values actually assigned to, every assignment throwing and every value holding; the null-prototype claim is stated at its exact scope; and the exported row, lead and blocked builders seal what they return. Focused Catena 596 green, up from 555. Replayed against the exact reviewed parent the file fails 43 ways across 29 methods — 23 semantic adversarial, 2 source-audit and roster, 1 packaged-provenance, 2 exported-builder contract and 1 candidate-hash pin — and the ten independent semantic closures are enumerated separately rather than counted off the method total; thirteen further new methods pass at both endpoints and are recorded as coverage and control. Budgets unraised with `catena.css` byte-identical and `catena.js` smaller than the parent at 12,972/13,000 whole and identical at 7,546/8,800 stripped; the unbudgeted model's growth is disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v14`; parent `6cc85e1a1dea317a48c0bfcfd6f774201ea3a6c3`; the review addressed has no published commit; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-17 | E1 Catena correction V13 | Answered independent review `728c3e3b3` (**CHANGES REQUIRED** at `d312786dd`) with exactly its stated next action and nothing else. V12 took each record's request-critical state once inside a projection and then ran that projection three times over one raw chapter: `spineUnreadable` projected to decide readability and threw the rows away, the tally projected to keep a length, and `renderChain` projected a third time and kept the rows that reach request, cache, body and ownership — so a record answering one way while readability was decided and another while the render was built rendered, requested, cached and attributed from an answer nothing had approved. The chapter is normalized ONCE now, each request-critical member read into a local exactly once, the rows frozen where they are made, the editions gathered in one walk and readability decided from that same walk, into a frozen null-prototype projection held against the raw record that every consumer reads and none reaches past; `catena.js` changes by two lines and gets smaller. Identity is observable rather than argued, and a request is bound to the projection that produced the row carrying its address. Six of six planted scenarios are non-vacuous, each at a different sink: at the parent the walked carried path and the walked prefix each fetch and render a deeper composed body, the walked member list renders and fetches off members readability never approved, the walked editions put a forged rights claim on the reader's provenance line, the walked refusals print a Rule 4 boundary the record never stated, and the prewarmed walk misses a warm cache to fetch a second body; the parent asks the walked member 3, 3, 5, 8, 4 and 3 times for one render and this head asks each once. Replayed against the uncorrected parent the file fails twenty-seven ways across thirteen methods; one committed assertion required the wrong answer and is corrected with its reason. On the package: the journal roster is derived from the test file rather than hand-maintained, an in-package row may claim at most `sealed` and final authority is a post-P8 sidecar bound to the ZIP's basename, size, digest and P8 result, the authority gate's six accepted contradictions are closed and it now consumes the archive, sidecar, P8 transcript, external ledger and sibling markers, ordinals are monotonic and never reused with a reason on every non-authoritative terminal state, the inventory is verified substantively rather than lexically, every outer sibling is sanitized before it is committed, and every tool invocation digests its exact bytes immediately before it runs. Measured at both endpoints: focused Catena 555 green here and 544 at the parent; catena check 1,351/1/73; full discovery 1,906 here and 1,895 there with the identical inherited 14/13/11 and the same 27 identities at both; `make -k check` red on the same four inherited targets at both; browser gate 2,290 at 1,836/226/228, identical at both; promise ledger 38 tracked / 19 complete; budgets unraised with `catena.css` byte-identical and `catena.js` smaller at both measures; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v13`; parent `d312786dd2b23926aa88e29ea15647dfcc7e7e6e`; review addressed `728c3e3b3d0d6e899f0da33e06a08a116375896f`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |
 | 2026-08-17 | E1 Catena correction V12 | Answered independent review `22b9bdad5` (**CHANGES REQUIRED** at `0255b8499`) with exactly its stated next action and nothing else. Three inputs reached the production request sink that no record's own bytes had stated, and they are one defect: the raw record was observed more than once and the observations were allowed to disagree. An inherited valid spine `text_prefix` was invisible to `ownData` and so produced the claim that means genuine absence, the one state that reopens the carried fallback; `ownContract` asked `Object.prototype` about three names, so an inherited refusal marker left an own-valid claim composing its request; and the carried `text_path` descriptor was read twice, so the address handed to `fetch` had passed no test. The request-critical state is now taken once — one descriptor read per requested name, one question to the prototype, a null-prototype record of frozen own data — and contamination in any of the five named fields is neither absence nor an ordinary refusal but one conservative malformed state; an accessor is declined without being called, so the invocation count stays zero rather than becoming one. `catena.js` is untouched. A model matrix drives the review's exact reproductions, ten prototype and inherited combinations and six drifting descriptors; six replay scenarios drive the same inputs through `T.loadJSON`, the cache and the renderer with a body planted at every reachable address and a control beside each that really does fetch. Replayed against the uncorrected parent the file fails twelve ways across eleven methods, and the alternating descriptor fetches and renders the second address outright. A static pin holds the request-critical names to the three lines that snapshot them, and two committed assertions that required the wrong answer are corrected with their reasons. On the package: a completed battery and a sealing package attempt were both written authoritative, so the count could never be one; the states are separated, only a package attempt may be authoritative, exactly one may be, every attempt writes into its own log root, and a coherence check run before publication fails on a second authoritative attempt, a wrong package or head, an attempt both authoritative and superseded, an unresolved attempt called final, an unexplained empty or reused or unclaimed log, and any ledger/outer-log/prose disagreement. Measured at both endpoints: focused Catena 544 green here and 534 at the parent; catena check 1,351/1/73; full discovery 1,895 here and 1,885 there with the identical inherited 14/13/11 at both; `make -k check` red on the same four inherited targets at both; browser gate 2,290 at 1,836/226/228, identical at both; promise ledger 37 tracked / 19 complete; budgets unraised with both capped files byte-identical; the unbudgeted model's growth disclosed. All other blockers recorded open and untouched. | Branch `impl/catena-wave-1-e1-corrections-v12`; parent `0255b84996e1dc24da3ce75ac318c4f774b7957c`; review addressed `22b9bdad5e71920a103e3ec3bcf2f79bba50cebb`; awaiting fresh independent review. No merge, re-signing, deployment, or outside-owner work occurred. |

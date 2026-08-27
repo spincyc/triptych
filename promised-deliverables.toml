@@ -1241,6 +1241,161 @@ state = "complete"
   evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
 
 [[deliverables]]
+id = "corpus-browser-catena-e1-corrections-v16-2026-08-27"
+owner = "src/web/browser/catena"
+promise = "Answer the E1 Catena V15 independent review (SEMANTIC CHANGES REQUIRED and EVIDENCE CHANGES REQUIRED, CHANGES REQUIRED overall, at exact head b9202882badbbbc364f1dd3d9057d2710ee47552, recorded at review commit 67247ecc39a6e5f6224c64ca3ab1af163ee023b1 on review/catena-wave-1-e1-corrections-v15-independent) with exactly its stated next action and nothing else: normalize fragment payloads once, at settlement, into an owner-independent, null-prototype, frozen, scalar-only record taken by own descriptor over a fixed key set; publish that finished value by path and never the initiating owner's pending promise, so no reentrant lookup can retrieve unresolved or partial work at any instant; carry a per-caller completion envelope containing the exact row transport owner to the body sink, sealed so a same-shaped literal is not one, and require that owner at application against the transport held for that very row and the projection that made it; record the body only after the DOM write is confirmed, and leave no entry at all for a write that throws or silently does not take; rebind a finished cached value to a later owner through that owner's own completion; add the missing provenance-specific === assertion and correct the observation accounting and its vocabulary; re-run every V15 and V14 closure the review passed and count them as REGRESSIONS rather than as new closures; and rebuild the evidence package with executable post-sanitization commands and explicit cwd and environment, unambiguous repo variables, a classifier that rejects prose and a checker that does not trust its own label, mechanically derived tool execution with its drivers classified correctly and one phase-labelled count set, the complete nine-attempt V15 predecessor history and a complete V16 attempt history, the corrected example figures stated apart and never summed, per-row compare-gate diagnostics beside the sound whole-report verdict, a final-state completeness check naming the outer sanitize and scan logs, direct authority bindings, and an explicit shipped-versus-local retained-artifact privacy boundary. Record every other blocker open and untouched, raise no ceiling, and return that head for fresh independent review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "no-reentrant-pending-publication"
+  criterion = "No unresolved or partial work is reachable by path at any instant, including reentrantly. The page runs the finalizer to completion and only then publishes: `M.textPayload(file)` produces the finished value before `fragmentTexts.set(path, content)` runs, so the V15 ordering in which `fragmentTexts.set(path, asked)` executed inside the fulfilment handler of the promise returned by `.then()` — leaving `Promise { <pending> }` briefly path-visible and publishing before the freeze — cannot recur. A synchronous reentrant path lookup taken at the moment of publication observes a finished, frozen value or nothing."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "finalized-immutable-cache-values"
+  criterion = "What is shared by path is a finalized value and never a promise, a raw parsed file or a partially projected record. `sealText` produces a frozen, null-prototype, scalar-only record over the fixed key set `M.TEXT_SCHEMA`, admitting a boolean or `sound()`'s string and nothing else, so no nested mutable structure can be present in the shared value to be mutated afterwards. `M.NO_TEXT` is the finished value for a row that resolves no address, a finalized value like any other rather than a sentinel recognized by identity."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "mutable-prototype-payload-closed"
+  criterion = "The finalized record is built from own data alone. Every field is taken by own descriptor through `ownData`, so nothing inherited is visible and no own accessor is invoked, closing the V15 defect in which a shallow-frozen raw file with a mutable prototype was read at render time by ordinary prototype-sensitive lookup and a frozen empty object could turn from unreadable to readable between one reader and the next by prototype mutation alone, or by a getter answering differently on a second read."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "completion-envelope-exact-owner"
+  criterion = "A settled transport is sealed into one frozen envelope carrying the exact `rowTransport` owner beside the finalized content. `M.textCompleted(owner, content)` and `M.textFailed(owner, error)` mint an envelope only against an owner the model is currently holding for that owner's own row and, for a success, only around content the model itself finalized; membership is held in a `WeakSet`, so a literal of the same shape is not one of these. The envelope is per-caller by construction and never becomes the shared path-cache value, and a finished cached value is rebound to a later owner through that owner's own envelope."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "cross-owner-content-rejected"
+  criterion = "An actual projected row presented with content it never asked for applies nothing. `M.bodyAsked(row, completed)` refuses a completion the model did not seal, a completion sealed for any other owner, and any value supplied in place of one, closing the V15 boundary at which `bodyAsked(row, content)` authorized ANY content whenever `row` occurred in `rowOwners` — so that an actual B row accepted arbitrary A content, and the V15 direct test deliberately accepted `{text: \"x\"}` with no owned completion behind it."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "body-application-completion-owned"
+  criterion = "Application is authorized by three exact-object comparisons and by nothing weaker: the completion is one this model sealed, its owner is the transport the model holds for that very row, and the owner's projection is the projection that made the row. No path, id, string or generation counter takes part. A row no projection of the model made applies nothing, and a reported transport failure is owned exactly as a fulfilled body is."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "post-write-body-journal"
+  criterion = "The body journal follows the DOM write instead of preceding it. `M.bodyApplied(row, completed, wrote)` appends only when the completion is still owner-valid and the write is confirmed, and each entry binds the owner object, the row, the projection, the address, the finalized content value itself and the post-write success state — not a path and a row id that two rows could share. The confirmation is read back from the node, and its scope is recorded honestly: it confirms the fragment's body text, not the acknowledgement block or the apparatus paragraphs written beside it."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js", "src/web/browser/catena/catena-model.js"]
+
+  [[deliverables.requirements]]
+  id = "write-failure-no-applied-record"
+  criterion = "A write that fails leaves no applied-body record at all. The write runs inside a `try`, so a throwing write appends nothing and resets the retry flag truthfully; a write that silently does not take is caught by the read-back comparison and likewise appends nothing. An append-only body journal that cannot say a body reached the page stays silent about it rather than recording a body that was never written."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena.js"]
+
+  [[deliverables.requirements]]
+  id = "provenance-identity-assertion"
+  criterion = "The committed equality matrix carries a provenance-specific `===` assertion. The V15 review confirmed by source inspection and independent replay that provenance already consumes the authoritative projection object, and recorded that the committed matrix nonetheless lacked the assertion that proves it; the assertion is added so the roster proves the identity rather than resting on inspection."
+  status = "open"
+  evidence = ["tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "corrected-observation-accounting"
+  criterion = "The observation accounting states every kind of observation the run performs and uses one consistent vocabulary. The `getPrototypeOf` observation caused by key enumeration is counted and named, where V15's prose omitted it while calling its list exhaustive; the conflicting use of `has` for what is an own-property test performed through the descriptor trap is corrected; and the \"four kinds\"/\"nothing else\" phrasing is replaced with the claim the lane is entitled to make — that no consumer runs a hostile value accessor and no consumer reaches past the projection to observe the record again. The reproduced figures stand: zero value reads, zero `in` tests, three descriptor observations per source key, two per stated field, one per absent field, one key enumeration."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_catena_wave_1.py"]
+
+  [[deliverables.requirements]]
+  id = "executable-command-representation"
+  criterion = "Every authoritative command row is recorded as text that can be run as written. No row is a paraphrase, a prose sentence, an elision, or a shell fragment missing its arguments, its working directory or its environment. The V15 defect this closes is a `checks.txt` that called all 24 rows `LITERAL` while only 16 were replayable with their recorded context."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "unambiguous-repo-variables"
+  criterion = "No command row single-quotes `$WORKSPACE` or `$REPO` where expansion is required, and no row overloads one variable for two distinct locations. V15 had seven load-bearing rows containing `'$WORKSPACE/...'` or `'$REPO/...'` anchors that cannot expand with no assignments supplied, and a parent replay that used `$REPO` for both the parent working directory and the distinct V15 test source, so unquoting alone could not recover the recorded execution. The package-comparison row states its required package working directory and agrees with the ledger."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "prefix-prose-rejection"
+  criterion = "The command classifier rejects prose rather than accepting it by prefix match, and the handoff checker tests each row instead of trusting a precomputed `LITERAL` label. The packaged mutation tests exercise quoted anchors, ambiguous working directories, `cp`, uppercase quoted data and prefix overmatch — the cases V15's tests omitted, in modules V15 then classified as not executed — and the classifier no longer accepts `format`, `installing` or `zipcode` as commands."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "mechanically-derived-tool-execution"
+  criterion = "Execution state is derived mechanically from the authoritative attempt logs, not hand-maintained and not synthesized. No row is manufactured for a tool that never ran: V15 synthesized six not-executed rows carrying a fabricated `at` (the render instant), a fabricated `phase` and a fabricated `log` — three fields a tool that never ran cannot have — and sampled repeated Python and Git uses rather than counting them. One phase-labelled schema carries tool identity, unique tool count, invocation count, executed state, trusted source identity, shipped state and transcript references, and the package contains exactly one such count set per phase, each labelled, where V15 sealed two unlabelled and irreconcilable sets: `verify-final.log` and `.tool-bytes.json` at 20 unique tools with 11 executed and 22 shipped-executed invocations, against `.assemble.log` at `executed_tools 14, executed_invocations 27, merged_battery_invocations 6`."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "executed-drivers-classified"
+  criterion = "Every script that drove the build is classified as executed. V15 marked both `assemble.sh` and `battery.sh` not executed although the assembly transcript proves they ran and produced the package; a driver the record's own logs prove ran is labelled executed, and a classification contradicted by a transcript sealed in the same package fails the handoff check rather than shipping."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "nine-attempt-predecessor-history"
+  criterion = "The V15 predecessor history is stated completely and truthfully: nine package attempts across three ledgers — eight resolved non-authoritative and one final authority — plus four battery attempts, not five refusals followed by a sixth seal. The statement names the shipped ledger (`SIDE.attempts.jsonl`, 107 rows, ordinals 01-06) and the two retired-and-unshipped ledgers (2,501 bytes over 5 rows, SHA-256 64683c0b8bb9624278cb136e8e8cbcbd4875bff571a1a128a870bdb6cb01ed90; 45,619 bytes over 80 rows, SHA-256 5b0c380cf7fab7b507dfedd6bdc0a6ade71cea38522937bf1a6bf851565ec117); the five retired attempts refused at P2, P5, P5, P4 and, after sealing, at the ledger audit before P7 for a package timestamp minted an hour before the attempts it named; ordinal 03 superseded on a final-verification exit 1, ordinal 04 sealed then briefly AUTHORITATIVE at P9 then superseded at P10 when the authority-coherence gate refused, ordinal 05 discarded at the P5 attempt-log audit, and ordinal 06 the shipped authority; the three ordinal reissues caused by file-scoped allocation across two ledger moves; the retired battery with no terminal row because nothing terminated it; and the `PROVENANCE.md` declaration that the lane set no cohort aside, made while two green retired batteries had their figures declined."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "complete-v16-attempt-history"
+  criterion = "The V16 attempt history is complete and internally consistent within its own package: one ledger identity, one ordinal allocation that is not reissued, one terminal row per attempt, every discarded and superseded attempt disclosed with its reason and its replacement, every set-aside cohort named as set aside, and no claim of append-only ordering standing beside a disclosed replacement. The V15 predecessor history it states is DERIVED across all three V15 ledgers rather than recalled, names every attempt by id and ordinal, and states the totals it derives (9 package attempts, 1 authoritative, 8 non-authoritative, 5 battery attempts, 1 attempt with no terminal row, 2 ledger replacements, 6 reused ordinals) together with the disjointness check that makes the count sound: no ledger is a prefix of a later one and no attempt id is shared between any pair. Where a row was replaced the record says exactly what it is rather than what it is not."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "corrected-example-divergence-figure"
+  criterion = "The example-replay figure is DERIVED mechanically from the run's own log rather than transcribed by hand, is reported in both of its senses APART, and is never stated without the BUILD STATE it was taken in. The two senses are divergent ROWS (`grep -c '^  DIFF    '`, and the `D diverged` field of `replay-examples: N captured example(s); ... D diverged, ... V volatile line(s) declared`) and DISTINCT COMMAND STRINGS among those rows, which differ whenever one command is captured more than once in a target; both are given, each labelled with what it counts. The volatile figure V is kept apart from both as the separate static declaration it is - `sum(len(lines) for lines in VOLATILE.values())` at `scripts/replay_examples.py:734` over the module table at `:182-185`, a count of DECLARED LINES for two `tools/pdf-review` captures masked at `:405`, which appear in every transcript as `ok` and `absent` and never as `DIFF` rows - and is never summed with either sense in either direction. The check enforces NO CONSTANT: a check pinning 30, or 28, would be wrong in one build state or the other. It refuses the unsound SHAPE - a divergence count presented as a sum that includes the volatile count; it refuses a prose figure this package's own transcript does not support; and it refuses a summary line that disagrees with its own DIFF rows. The battery records `build-state=COLD|WARM` at preflight and the completeness checker names build state as the cause when a figure and a transcript disagree. The record of what happened is kept in full rather than reduced to its conclusion. The V15 independent review found that V15's durable prose claimed 30 divergences where V15's own shipped transcripts (`logs/attempt-01/make-check-parent.log`, `logs/attempt-02/make-check-head.log`) report 28 rows over 27 distinct commands and `28 diverged ... 2 volatile line(s) declared`; that FINDING STANDS, no artifact in the V15 package supports 30, and the V15 records are corrected to 28. Its DIAGNOSIS - 28 plus the two declared volatile lines - does not stand, because those two captures were never in the divergent set. The cause is build state: measured three times independently at parent b9202882badbbbc364f1dd3d9057d2710ee47552 in a clean checkout not under /tmp, a cold `build/` gives 30 rows over 28 distinct commands and an immediately repeated warm run gives 28 over 27, the entire delta being two captures of `tools/mass-ordinary check --out build/example-ordinary`, whose comparison directory a later capture in the same target writes; V15 quoted a cold figure while shipping a warm log and never said which tree it measured. This lane corrected the records to 28 + 2 on the review's authority, discovered by experiment that the decomposition was impossible, and corrected its own correction; both steps are left standing in PROJECT-WORK.md and the roadmap rather than silently reverted, so the reasoning is auditable and not merely the conclusion."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "compare-gate-diagnostic-granularity"
+  criterion = "The compare gate's localising diagnostics are per-row, not per-name. V15's `walk()` keyed assertions on the name alone, collapsing 2,290 assertion ROWS onto 17 diagnostic NAMES under last-write-wins and discarding 2,273 rows before the per-row diagnostics ran, while the output called them assertion objects. Both halves are recorded, because only one half was defective: the verdict line was sound, since the final comparison is over the whole report object with all 2,290 assertion rows included minus four named volatile fields. The whole-report equality proof stands; the diagnostics are corrected and are described as what they are. The ROW-versus-NAME distinction this requirement names is applied generally rather than to this artifact alone: wherever the evidence quotes a count it says what is being counted, including the example replay's divergent rows against its distinct command strings, full discovery's result rows against its distinct identities, and the parent-discrimination replay's failure rows against its distinct methods."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "final-state-completeness-verdict"
+  criterion = "The recorded completeness verdict is taken at the package's final state, after the outer sanitize and the outer scan, and rerunning the shipped checker at that state reproduces it. V15's `COMPLETE` was taken at an earlier state and rereads as `INCOMPLETE` after P11 because the outer-sanitize and outer-scan siblings are unnamed. The checker also detects, rather than passes over, a false `LITERAL` label on an unexpandable row, an execution status contradicted by a sealed transcript, a cohort named in one ledger and absent from another, and a numeric claim in the prose that this package's own shipped transcript does not support, and a numeric claim quoted without the build state that makes it reproducible. The checks are calibrated against the real V15 package rather than only against a fixture built to pass them: over the actual archive and siblings they report INCOMPLETE with 14 problems, and over a corrected fixture `problems: 0` / COMPLETE."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "named-outer-logs"
+  criterion = "The outer-sanitize and outer-scan sibling logs are named in the record the completeness checker reads, so the final state is describable by the artifact itself rather than by a verdict taken before those siblings existed."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "direct-authority-bindings"
+  criterion = "The parent, the V15 review commit, the evidence commit and the archive digest are bound directly by the authority record rather than transitively through the archive alone, and seal, P8, authority and evidence-commit ordering remains internally coherent, with P8 read-only toward the ZIP and its pre- and post-digests equal."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "shipped-vs-local-privacy-boundary"
+  criterion = "The privacy claim states its boundary exactly. The published archive and its named siblings pass the scans, and the record says so and no more: the discard and supersession markers with their local-offset `date -Is` timestamps and free-text failure reasons, the retired ledgers whose `command` fields hold raw pre-sanitization absolute paths, the lane-wide `executed-tools.jsonl`, and the retained discarded package trees — one of which died before its seal and still holds raw absolute paths — lie outside every scan. No broader all-retained-artifacts privacy claim is made or accepted."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "immutable-v16-handoff"
+  criterion = "A new timestamped immutable handoff directory and matching ZIP record the exact V16 head, its parent b9202882badbbbc364f1dd3d9057d2710ee47552, the V15 review commit 67247ecc39a6e5f6224c64ca3ab1af163ee023b1 and the V15 handoff commit db5f651e4eb2d10a15d1a594a4286ac7048f612c with its 1,400,092-byte / 69-member / 711b598ab43543113ccb924234fc8ef4ddb76370ff74d24c72a549da574204ac package, the mechanically derived commit list and diff, and the full proof set: the inside-settlement and reentrant publication oracle; the finalized-value cache proof and its mutation-before-later-owner coverage; the own-descriptor payload proof over inherited fields and own accessors; the sealed completion envelope and its rejection of same-shaped literals and foreign owners; negative A-completion-to-B-row and no-request arbitrary-content cases; the post-write body journal and the no-entry-on-failed-write case; the provenance-specific `===` assertion; the corrected observation accounting; the preserved V15 and V14 regressions run and counted APART from the ten V16 closures; exact portable post-sanitization commands with explicit working directory and environment; one phase-labelled mechanically derived tool and invocation schema including its drivers; the complete nine-attempt V15 predecessor history and the complete V16 attempt history; the mechanically derived example figure reported in both senses apart, with the volatile count kept separate as a static declaration and the build state recorded beside every statement of the figure; the new members `commands.json`, `logs/catena_command.py` and `logs/replay-command.py`, and both outer logs named by EXACT FILENAME rather than by suffix, which is what made V15's verdict stale; the calibration of the new checks against the real V15 package and siblings, where they report INCOMPLETE with 14 problems (the seven false-`LITERAL` rows named by transcript path, the two unnamed outer logs and the unsupported figure) and report `problems: 0` / COMPLETE against a corrected fixture; per-row compare-gate diagnostics beside the sound whole-report verdict; a final-state completeness check naming the outer logs; direct authority bindings; the shipped-versus-local privacy boundary; fresh validation figures at both endpoints; budgets, including that `catena.js` ends above V15 at 12,965/13,000 whole-gzip and 7,835/8,800 stripped with thirty-five bytes under an unraised ceiling and that `catena-model.js` is uncapped at 44,247 whole-gzip and 10,344 stripped; the two fixes identified, costed at 37 and about 60 gzipped bytes, and deliberately deferred against 35 bytes of headroom; that a refused body application now leaves no journal entry at all; that the completion envelope's halves cannot be supplied by the DATA rather than by anything in the realm; and the structural limit that the evidence commit cannot be bound INSIDE the authority record, because naming the commit in the record changes the record's bytes and therefore the commit, so everything that commit contains is bound instead and the record carries a required note saying exactly that, in the same shape as V15's correct statement that an archive cannot contain its own digest; a SHA-256 manifest and a package digest — sealed, verified read-only at P8 with equal pre and post digests, with final authority established only afterwards and bound one way to the archive's own bytes, and without mutating any earlier sealed package."
+  status = "open"
+  evidence = ["guidance/external-review-handoffs.md"]
+
+  [[deliverables.requirements]]
+  id = "fresh-independent-review"
+  criterion = "A fresh independent review of the exact V16 head and its immutable handoff records a durable disposition, scoped to publication atomicity, finalized owner-independent cache values, completion-envelope ownership through the body sink, post-write journal truthfulness, preservation of every V15 and V14 closure the V15 review passed, and exact reproducible evidence and provenance. This lane does not review its own work, records no acceptance of V16, marks no separately owned prerequisite complete, and claims no acceptance of E1."
+  status = "open"
+  evidence = ["guidance/corpus-browser-roadmap.md"]
+[[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v15-2026-08-26"
 owner = "src/web/browser/catena"
 promise = "Answer the E1 Catena V14 independent review (CHANGES REQUIRED at exact head 69f2575421ba976271c936b1abd4b39dbe8b98fd, recorded at review commit 0d11766ec232b2b4e46a7d1b0ada56ef22370004 on review/catena-wave-1-e1-corrections-v14-independent) with exactly its stated next action and nothing else: keep pending text work owned by the initiating row and projection through transport, completion and body application, sharing only fulfilled immutable values by path; prove with two distinguishable planted bodies at one address that owner A can be held while owner B settles independently and renders B's own body, and that A's late release changes nothing of B's exact terminal state; bind body application to actual row and projection ownership and add it to the covered-consumer === roster; close the wrapper-created projection ambiguity so an unreadable spine is one substitute however often it is asked; prove one owner's failure does not suppress another owner's request; add the promised nested edition-accessor case with one coherent projected outcome; report descriptor, value-read, own-property and enumeration observations honestly and apart; prove downstream rerender after attempted mutation; and rebuild the evidence with exact portable commands, no ELIDED or PROSE command slots, a mechanically derived executed-tool status, one coherent invocation-and-unique-tool schema, a complete disclosed attempt history that names the set-aside cohort and the P10 rows, truthful history wording where a row was replaced, a handoff checker that tests those substantive failures, and fresh-clone provenance. Record every other blocker open and untouched, and return that head for fresh independent review."
