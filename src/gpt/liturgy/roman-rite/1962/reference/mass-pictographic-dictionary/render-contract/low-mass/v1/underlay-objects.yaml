@@ -61,16 +61,32 @@ objects:
 
   # --- the object that failed ---------------------------------------------
   missal:
+    support:
+      supported_by: missal-stand
+      states:
+        open: {supported: true}
+        closed: {supported: true}
+        carried: {supported: false}
+      note: >-
+        The book takes its pitch from the stand it rests on rather than
+        declaring one of its own, so the two cannot drift apart. A carried book
+        is not on a stand and is not pitched by one.
     local_frame:
       page_up_axis: [0.0, 1.0, 0.0]
       spine_axis: [0.0, 1.0, 0.0]
       reading_edge_axis: [0.0, -1.0, 0.0]
       spread_axis: [1.0, 0.0, 0.0]
       page_normal: [0.0, 0.0, 1.0]
+      page_normal_is_local: true
       note: >-
         An open book's spine runs from the reader's near edge to the far edge,
         so it lies along page-up; the two pages open to either side along the
         spread axis. The reading edge is the near edge the reader stands at.
+        These are LOCAL axes. The world page normal is derived by carrying this
+        local normal through the support pitch and then the world yaw, and is
+        not a constant: a book on its stand faces the priest, not the ceiling.
+        Anything asserting a world page normal of [0, 0, 1] has skipped the
+        transform.
     variants:
       open:
         description: >-
@@ -116,15 +132,34 @@ objects:
       page_normal: [0.0, 0.0, 1.0]
       note: >-
         The stand carries the book's frame so the two cannot disagree.
+    support:
+      pitch_deg: 24.0
+      note: >-
+        The inclination of the stand's support plane, and therefore of the book
+        that rests on it. An altar Missal stand tilts the book toward the priest
+        so he can read it standing; that is why a Missal is legible from the
+        nave at all, and modelling the book flat is what previously made it
+        unreadable without an implausibly high camera.
     variants:
       default:
-        description: A sloped reading wedge under the book.
+        description: >-
+          A reading wedge: a base on the mensa, a rear support, and an inclined
+          support plane the book lies against. Its slope is the pitch the book
+          inherits, so the two are one physical statement rather than two.
         parts:
-          - points: [[-0.19, -0.14, 0.0], [0.19, -0.14, 0.0], [0.19, 0.14, 0.055], [-0.19, 0.14, 0.055]]
+          # base footprint on the mensa
+          - points: [[-0.20, -0.15, 0.0], [0.20, -0.15, 0.0], [0.20, 0.15, 0.0], [-0.20, 0.15, 0.0]]
             closed: true
-          - points: [[-0.19, -0.14, 0.0], [-0.19, 0.14, 0.0], [-0.19, 0.14, 0.055]]
-          - points: [[0.19, -0.14, 0.0], [0.19, 0.14, 0.0], [0.19, 0.14, 0.055]]
-          - points: [[-0.19, 0.14, 0.0], [0.19, 0.14, 0.0]]
+          # the inclined support plane, rising toward the far edge
+          - points: [[-0.20, -0.15, 0.005], [0.20, -0.15, 0.005], [0.20, 0.15, 0.14], [-0.20, 0.15, 0.14]]
+            closed: true
+          # rear support and side cheeks, which make the wedge read as a solid
+          - points: [[-0.20, 0.15, 0.0], [-0.20, 0.15, 0.14]]
+          - points: [[0.20, 0.15, 0.0], [0.20, 0.15, 0.14]]
+          - points: [[-0.20, -0.15, 0.0], [-0.20, -0.15, 0.005], [-0.20, 0.15, 0.14]]
+          - points: [[0.20, -0.15, 0.0], [0.20, -0.15, 0.005], [0.20, 0.15, 0.14]]
+          # the contact edge the book's reading edge rests behind
+          - points: [[-0.20, -0.13, 0.02], [0.20, -0.13, 0.02]]
 
   # --- the object it was confused with ------------------------------------
   burse:

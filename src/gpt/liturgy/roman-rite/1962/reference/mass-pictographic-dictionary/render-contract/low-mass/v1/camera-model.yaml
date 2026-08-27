@@ -57,23 +57,25 @@ reason: >-
 
 camera_positions:
   - id: nave-centre
-    anchor_hint: "on the centreline, in the nave, before and slightly above the steps"
-    position: [0.0, -3.6, 3.6]
+    anchor_hint: "on the centreline, in the nave, before the steps"
+    position: [0.0, -4.2, 1.85]
+    height_m_equivalent: 1.85
+    distance_from_altar: 5.6
+    focal_length_px: 1180
+    projection_hint: perspective
+    semantic: publication-nave-front
     note: >-
-      Raised well above standing eye height on purpose, and raised twice.
-      From a 1.6 eye the mensa is edge-on and everything resting on it
-      foreshortens to nothing. From 2.35 the surface reads, but the horizontal
-      plane is still so grazing that an object's rotation within it projects
-      to within about twenty degrees of collinear — a flat smear, in which a
-      book cannot look oriented whatever yaw it carries. That is measurable,
-      and it is now measured: see the orientation-legibility check in
-      `underlay.py` and its regression.
-      At 3.6 the two page axes of an open Missal project roughly forty degrees
-      from collinear, which is enough for a viewer to see which way the book
-      faces. The plate convention for this dictionary is therefore a markedly
-      elevated nave view: high enough that orientation in the horizontal plane
-      survives projection, low enough that the figures still stand against the
-      steps rather than being seen from directly overhead.
+      A PUBLICATION camera, not a literal standing eye and not an engineering
+      overhead. It sits a little above head height, as an instructional plate
+      conventionally does, so that the mensa and its furniture read while the
+      altar stays substantially frontal and the figures still stand against the
+      steps rather than being looked down upon.
+      It was briefly raised to 2.35 and then to 3.6, to make a Missal legible.
+      That was the wrong instrument: the book was modelled flat, and the camera
+      was being moved to compensate for the object. With the Missal correctly
+      pitched on its stand the book is legible from standing height, so the
+      camera has been returned to what it should mean. A camera expresses the
+      intended viewpoint; it does not repair geometry.
   - id: nave-gospel
     position: [-2.2, -4.0, 1.6]
   - id: nave-epistle

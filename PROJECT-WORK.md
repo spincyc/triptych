@@ -476,6 +476,39 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic pitched Missal and publication camera
+
+<!-- promised-deliverable: mass-pictographic-pitched-missal -->
+
+**Modelled and validated on 27 August 2026.** The previous lane found the
+Missal unreadable in the underlay, diagnosed projective degeneracy correctly,
+and then fixed it the wrong way: it raised the canonical nave camera to an eye
+of 3.6 so that a flat book's axes would separate on the page.
+
+The book was the problem. It had been modelled as if its pages lay horizontal,
+with a page normal asserted as straight up independently of any transform and a
+stand that was decorative. A real altar Missal rests on an inclined stand,
+tilted toward the priest so he can read it standing, and its page plane is
+therefore not horizontal at all.
+
+The stand is now a real support with a declared inclination, and the book
+inherits that pitch through a declared parent rather than holding a copy that
+could drift. Pitch applies in the transform about the object's own spread axis
+before the world yaw; the page normal is derived rather than asserted; and the
+compiled contract publishes the pitch and the derived vectors so nothing
+downstream needs a hard-coded value. A carried book is not on a stand and is
+not pitched by one.
+
+With the object modelled properly the book is legible from standing height, so
+the camera returned to meaning what it should mean: a publication nave-front
+viewpoint at an eye of 1.85, documented with its height, distance, focal length
+and projection. A camera expresses a viewpoint; it does not repair geometry.
+
+One real bug surfaced while measuring. The fidelity check built its expected
+direction while dropping the vector's vertical component, which was invisible
+while every axis was horizontal and reported a spurious 22 degree error the
+moment pitch existed.
+
 ### 1962 Low Mass pictographic projected orientation
 
 <!-- promised-deliverable: mass-pictographic-projected-orientation -->

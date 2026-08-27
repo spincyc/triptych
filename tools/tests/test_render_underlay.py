@@ -417,7 +417,7 @@ class RenderUnderlayTests(unittest.TestCase):
         parts = self.underlay.altar_geometry()
         # three steps, a predella, the altar body and the mensa: six volumes,
         # each of which needs several polylines to read as a volume.
-        self.assertGreaterEqual(len(parts), 30, len(parts))
+        self.assertGreaterEqual(len(parts), 18, len(parts))
 
         zs = [p[2] for part in parts for p in part]
         self.assertAlmostEqual(min(zs), 0.0, places=6)

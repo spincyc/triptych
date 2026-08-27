@@ -406,6 +406,27 @@ def check_projected_orientation(contracts: list[dict]) -> tuple[int, float, int]
                     f"projects to {measured['expected_deg']}deg — the model does "
                     "not embody the transform"
                 )
+            # Physical plausibility: a book on its stand is pitched toward the
+            # priest, so its world page normal is not straight up. A normal of
+            # exactly world-Z means the page plane was left horizontal and the
+            # transform never reached it.
+            if item["id"] == "missal":
+                reading = item.get("reading") or {}
+                carried = (reading.get("support_pitch_deg") or 0.0) == 0.0
+                normal = measured["world_page_normal"]
+                horizontal = (normal[0] ** 2 + normal[1] ** 2) ** 0.5
+                if not carried and horizontal < 0.15:
+                    raise Failure(
+                        f"{contract['plate_id']}: the Missal's world page normal "
+                        f"is {normal}, effectively straight up. A book on its "
+                        "stand faces the priest, not the ceiling; the page plane "
+                        "has been left horizontal"
+                    )
+                if not carried and measured["pitch_deg"] <= 0.0:
+                    raise Failure(
+                        f"{contract['plate_id']}: a stand-supported Missal has no "
+                        "pitch"
+                    )
             worst = min(worst, measured["separation_deg"])
             if measured["separation_deg"] < floor:
                 raise Failure(

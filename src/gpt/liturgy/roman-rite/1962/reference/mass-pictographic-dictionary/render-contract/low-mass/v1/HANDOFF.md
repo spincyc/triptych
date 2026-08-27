@@ -89,6 +89,28 @@ The raster is produced by `rsvg-convert`. Where that is missing, `underlay.py`
 and `art-seed` both fail rather than shipping the vector alone, because the
 edit source is the PNG.
 
+## The Missal, the stand, and the camera
+
+The Missal rests on an inclined stand and is pitched toward the priest. The
+stand declares the inclination; the book inherits it through a declared parent,
+so the two cannot drift apart. A carried Missal is not on a stand and carries no
+pitch. The compiled contract publishes `support_pitch_deg`, `supported_by`,
+`page_up_vector_pitched` and `page_normal_world`, so nothing downstream needs a
+hard-coded value.
+
+The canonical plate camera is a **publication nave-front viewpoint** at an eye
+of 1.85 and a distance of 4.2, documented in `camera-model.yaml` with its
+height, distance, focal length and projection. It is deliberately not a literal
+standing eye and not an overhead engineering view. It was briefly raised much
+higher to make a flat Missal readable; that was compensating for the object
+with the viewpoint, and the pitched model removed the need.
+
+Look at an underlay on its own with:
+
+```sh
+./tools/tpt pictographic underlay roman-1962 low-mass LM-001A
+```
+
 ## Regenerating and checking
 
 ```sh
@@ -105,6 +127,22 @@ The verification sheet for the regression fixtures is at
 `./underlay.py --check` regenerates every art-ready scene's underlay in memory
 and fails when the tracked SVG differs, so an underlay cannot drift away from
 the contract it was projected from without the check saying so.
+
+## Known deferred underlay issues
+
+Recorded rather than fixed, because this lane was narrow and these are art
+direction rather than geometry:
+
+- the figure envelopes are coarse robed columns, and kneeling and walking
+  figures are the weakest of them;
+- the sanctuary architecture is minimal, being the altar, its steps and the
+  predella with no surrounding building;
+- the altar steps remain visually prominent in a nave view, which is honest to
+  a stepped altar but leaves less frame for the action than a plate eventually
+  wants.
+
+None of these blocks an artistic canary. All of them are places an artist adds
+realism inside geometry that is already fixed.
 
 ## Current blockers to human review
 

@@ -70,8 +70,8 @@ EXACT_DEG = 0.01
 
 # The camera at which the defect was reported: the nave-centre eye before it
 # was raised to 3.6, and the original lower eye before that.
-REPORTED_CAMERA_XYZ = [0.0, -3.6, 2.35]
-ORIGINAL_CAMERA_XYZ = [0.0, -3.6, 1.6]
+REPORTED_CAMERA_XYZ = [0.0, -4.2, 1.36]
+ORIGINAL_CAMERA_XYZ = [0.0, -4.2, 1.30]
 
 # A dot product of unit vectors is exact arithmetic on authored 0s and 1s, but
 # compare with a tolerance so the contract is "parallel", not "equal strings".
@@ -235,8 +235,23 @@ class ProjectedOrientationTests(unittest.TestCase):
         """
         raised = self.measure(self.contract(CANARY), "missal")
 
+        # Reproduce the historical failure honestly. It needs BOTH halves of
+        # it: the book modelled flat, as it then was, and the camera that was
+        # later raised to compensate for that. With the Missal properly pitched
+        # on its stand the same camera is perfectly readable, which is the
+        # whole point of the lane that followed — so flattening the book is
+        # what restores the conditions the legibility check was written for.
         lowered = self.contract(CANARY)
-        lowered["panels"][0]["camera"]["position_xyz"] = list(REPORTED_CAMERA_XYZ)
+        lowered["panels"][0]["camera"]["position_xyz"] = [0.0, -3.6, 2.35]
+        for item in lowered["objects"]:
+            if item["id"] == "missal":
+                item["reading"]["support_pitch_deg"] = 0.0
+                item["reading"]["supported_by"] = None
+                item["reading"]["page_up_vector_pitched"] = item["reading"][
+                    "page_up_vector"
+                ]
+                item["state_after"] = "carried in the hand"
+                item["placement_semantic"] = "in the priest's hand"
         reported = self.measure(lowered, "missal")
 
         self.assertLess(
@@ -258,7 +273,15 @@ class ProjectedOrientationTests(unittest.TestCase):
         )
 
         deeper = self.contract(CANARY)
-        deeper["panels"][0]["camera"]["position_xyz"] = list(ORIGINAL_CAMERA_XYZ)
+        deeper["panels"][0]["camera"]["position_xyz"] = [0.0, -3.6, 1.6]
+        for item in deeper["objects"]:
+            if item["id"] == "missal":
+                item["reading"]["support_pitch_deg"] = 0.0
+                item["reading"]["page_up_vector_pitched"] = item["reading"][
+                    "page_up_vector"
+                ]
+                item["state_after"] = "carried in the hand"
+                item["placement_semantic"] = "in the priest's hand"
         original = self.measure(deeper, "missal")
         self.assertLess(
             original["fidelity_deg"], EXACT_DEG,

@@ -35,8 +35,8 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -3.6
-    - 3.6
+    - -4.2
+    - 1.85
     up: upward
     target: altar-centre
     target_xyz:
@@ -169,6 +169,16 @@ objects:
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
+    support_pitch_deg: 24.0
+    supported_by: missal-stand
+    page_up_vector_pitched:
+    - -0.645974
+    - 0.645974
+    - 0.406737
+    page_normal_world:
+    - 0.287606
+    - -0.287606
+    - 0.913545
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:

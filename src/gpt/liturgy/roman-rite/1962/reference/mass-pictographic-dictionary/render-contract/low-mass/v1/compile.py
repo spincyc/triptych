@@ -226,9 +226,18 @@ class Compiler:
                     record["orientation_note"] = why
                 if object_id in ("missal", "missal-stand"):
                     missal = self.c.missal["reading_orientation"]
+                    support = self.c.missal.get("support") or {}
+                    carried = "carried" in str(item.get("state_after") or "").lower() \
+                        or "hand" in str(item["placement"]).lower()
                     record["reading"] = {
                         "page_up_yaw_deg": missal["page_up_yaw_deg"],
                         "page_up_vector": missal["page_up_vector"],
+                        "support_pitch_deg": 0.0 if carried else float(
+                            support.get("pitch_deg", 0.0)
+                        ),
+                        "supported_by": None if carried else support.get("supported_by"),
+                        "page_up_vector_pitched": missal.get("page_up_vector_pitched"),
+                        "page_normal_world": missal.get("page_normal_world"),
                         "spine_yaw_deg": round6(
                             (missal["page_up_yaw_deg"] - 90.0) % 360.0
                         ),

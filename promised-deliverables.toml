@@ -1796,3 +1796,43 @@ state = "complete"
     "tools/tests/test_projected_orientation.py",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-pitched-missal"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml"
+promise = "Model the Missal as a pitched rigid object on a real stand, so that its orientation is legible from a sane publication viewpoint, and return the canonical nave camera to expressing an intended viewpoint rather than compensating for an inadequately modelled object."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "stand-is-a-real-support"
+  criterion = "The Missal stand declares a base, an inclined support plane and a support pitch, and the book inherits that pitch through a declared parent rather than carrying a duplicate of its own that could drift."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "pitch-in-the-transform"
+  criterion = "Pitch is applied in the transform pipeline about the object's own spread axis before the world yaw, the page normal is derived from yaw and pitch rather than asserted as a constant, and the compiled contract publishes the pitch and the derived vectors so no consumer needs a hard-coded value."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/missal-orientation.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "publication-camera-restored"
+  criterion = "The canonical nave camera is defined semantically with height, distance, target, focal length and projection, sits at a publication viewpoint rather than a quasi-overhead one, and is documented as expressing a viewpoint rather than repairing geometry."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/camera-model.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "pitch-regressions"
+  criterion = "Regressions prove the Missal is pitched, its page normal is not vertical, a carried book is not pitched, the Epistle and Gospel scenes differ only by translation, fidelity holds with pitch, and a grazing camera still fails legibility."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_missal_pitch.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
+  ]

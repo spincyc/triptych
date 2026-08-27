@@ -21,6 +21,21 @@ invariant: "INV-MISSAL-01"
 # misreading a renderer could make; it is a different number, and the
 # validator rejects it.
 
+support:
+  pitch_deg: 24.0
+  supported_by: missal-stand
+  note: >-
+    An altar Missal rests on an inclined stand, tilted toward the priest so he
+    can read it standing. Its page plane is therefore NOT horizontal, and its
+    page normal is not straight up.
+    This matters beyond realism. When the book was modelled flat, its page
+    plane could only be seen edge-on from the nave, and the only way to make
+    its orientation visible was to raise the camera to an implausible height.
+    That was compensating for the object with the viewpoint. Pitched properly,
+    the book is legible from a standing nave view, and the camera is free to
+    mean what it should mean.
+  applies_when: the Missal is resting on its stand, not while it is carried
+
 reading_orientation:
   page_up_yaw_deg: 135.0
   page_up_vector: [-0.7071067811865476, 0.7071067811865476, 0.0]
@@ -28,6 +43,16 @@ reading_orientation:
   priest_facing_vector: [-0.7071067811865476, 0.7071067811865476, 0.0]
   semantic_direction: gospelward
   identical_on_both_sides: true
+  # The two vectors below are different questions about the same book.
+  # `page_up_vector` is the canonical READING ORIENTATION: the horizontal
+  # direction the priest turns to read, and the approved invariant. It is
+  # unchanged, and it is what must never mirror between sides.
+  # `page_up_vector_pitched` is where the page-up axis of the physical book
+  # actually points once the stand's inclination is applied. A renderer draws
+  # the second; the approved rule is stated by the first.
+  page_up_vector_pitched: [-0.645974, 0.645974, 0.406737]
+  page_normal_world: [0.287606, -0.287606, 0.913545]
+  pitch_applied_deg: 24.0
   derivation: >-
     The top of the page points away from the reader, so the priest's facing
     while reading equals the page-up direction. He stands at the altar, whose

@@ -135,14 +135,47 @@ def yaw_rotate(point, yaw_deg):
     return [x * c - y * s, x * s + y * c, z]
 
 
-def place(points, yaw_deg, origin):
+def pitch_rotate(point, pitch_deg):
+    """Tilt about the object's own spread axis, local +X.
+
+    A Missal on an altar stand is inclined toward the priest: its far edge
+    rises and its page plane turns to face him. Modelling the book flat and
+    then raising the camera until the flat thing became readable was solving
+    the wrong problem, so pitch lives here, in the object, where it belongs.
+
+    Positive pitch lifts local +Y, the page-up axis, and swings the page
+    normal from straight up toward the reader.
+    """
+    if not pitch_deg:
+        return list(point)
+    angle = math.radians(pitch_deg)
+    c, s = math.cos(angle), math.sin(angle)
+    x, y, z = point
+    return [x, y * c - z * s, y * s + z * c]
+
+
+def place(points, yaw_deg, origin, pitch_deg=0.0):
+    """Local geometry to world: pitch about local X, then yaw about Z, then move.
+
+    The order matters and is the repository convention: pitch is a property of
+    how the object sits on its support, so it applies in the object's own
+    frame, before the world yaw turns that support to face where it faces.
+    """
     out = []
     for p in points:
-        rotated = yaw_rotate(p, yaw_deg if yaw_deg is not None else 90.0)
+        tilted = pitch_rotate(p, pitch_deg)
+        rotated = yaw_rotate(tilted, yaw_deg if yaw_deg is not None else 90.0)
         out.append(
             [rotated[0] + origin[0], rotated[1] + origin[1], rotated[2] + origin[2]]
         )
     return out
+
+
+def world_axis(local_axis, yaw_deg, pitch_deg=0.0):
+    """A local direction carried through pitch and yaw into world space."""
+    v = yaw_rotate(pitch_rotate(local_axis, pitch_deg), yaw_deg)
+    length = math.sqrt(sum(c * c for c in v)) or 1.0
+    return [round(c / length, 6) for c in v]
 
 
 # --------------------------------------------------------------------------
@@ -165,24 +198,37 @@ def box(cx, cy, cz, dx, dy, dz):
     ]
 
 
+def step(cy, z, width, depth, rise):
+    """One altar step, drawn as the faces a viewer in the nave actually sees.
+
+    Full boxes gave every step a back edge and a hidden underside, and three of
+    them stacked read as a flight of hollow crates rather than as the base of
+    an altar. A step shows its riser and its tread; that is all it owes the
+    drawing.
+    """
+    y0, y1 = cy - depth / 2, cy + depth / 2
+    x0, x1 = -width / 2, width / 2
+    return [
+        [[x0, y0, z], [x1, y0, z], [x1, y0, z + rise], [x0, y0, z + rise], [x0, y0, z]],
+        [[x0, y0, z + rise], [x0, y1, z + rise], [x1, y1, z + rise], [x1, y0, z + rise]],
+    ]
+
+
 def altar_geometry():
     """The full approved altar: three steps, predella, altar body and mensa.
 
     Drawn as volumes rather than lines so the image model does not have to
-    invent how many steps there are or how deep they run.
+    invent how many steps there are or how deep they run — but as the volumes
+    a viewer sees, so the steps support the altar rather than upstaging it.
     """
     parts = []
-    # three full altar steps, each rising and receding
     for z, depth_centre, width in (
-        (0.0, 0.175, 3.05), (0.25, 0.525, 2.90), (0.50, 0.875, 2.75)
+        (0.0, 0.15, 2.85), (0.25, 0.45, 2.72), (0.50, 0.75, 2.59)
     ):
-        parts += box(0.0, depth_centre, z, width, 0.35, 0.25)
-    # the predella
-    parts += box(0.0, 1.28, 0.75, 2.60, 0.46, 0.25)
-    # the altar body, standing on the predella
-    parts += box(0.0, 1.60, 1.00, 2.10, 0.34, 0.35)
-    # the mensa, oversailing the body
-    parts += box(0.0, 1.60, 1.35, 2.34, 0.46, 0.06)
+        parts += step(depth_centre, z, width, 0.30, 0.25)
+    parts += step(1.06, 0.75, 2.46, 0.32, 0.25)          # the predella
+    parts += box(0.0, 1.42, 1.00, 2.10, 0.34, 0.35)      # the altar body
+    parts += box(0.0, 1.42, 1.35, 2.34, 0.46, 0.06)      # the mensa
     return parts
 
 
@@ -319,9 +365,29 @@ class Underlay:
             variant = variants[variant["alias_of"]]
         yaw = item.get("yaw_deg")
         origin = item["position"]
+        pitch = self.support_pitch(item["id"], wanted)
         return [place(part["points"] + ([part["points"][0]] if part.get("closed") else []),
-                      yaw, origin)
+                      yaw, origin, pitch)
                 for part in variant["parts"]]
+
+    def support_pitch(self, object_id: str, variant: str = "default") -> float:
+        """The inclination this object sits at, resolved through its support.
+
+        A book on a stand inherits the stand's support-plane pitch rather than
+        declaring its own, so the two cannot drift apart. A book being carried
+        is not on a stand and is not pitched by one.
+        """
+        definition = self.library.get(object_id) or {}
+        support = definition.get("support") or {}
+        states = support.get("states") or {}
+        state = states.get(variant, states.get("default"))
+        if state is not None and not state.get("supported", True):
+            return 0.0
+        parent_id = support.get("supported_by")
+        if parent_id:
+            parent = self.library.get(parent_id) or {}
+            return float((parent.get("support") or {}).get("pitch_deg", 0.0))
+        return float(support.get("pitch_deg", 0.0))
 
     def render_panel(self, contract: dict, panel: dict) -> str:
         camera = Camera(panel)
@@ -410,34 +476,69 @@ def projected_orientation(contract: dict, object_id: str, panel_index: int = 0):
     item = next((o for o in contract["objects"] if o["id"] == object_id), None)
     if item is None or item.get("position") is None or item.get("yaw_deg") is None:
         return None
-    library = Underlay().library.get(object_id) or {}
+    engine = Underlay()
+    library = engine.library.get(object_id) or {}
     frame = library.get("local_frame") or {}
     page_up = frame.get("page_up_axis", [0.0, 1.0, 0.0])
     spread = frame.get("spread_axis", [1.0, 0.0, 0.0])
+    normal = frame.get("page_normal", [0.0, 0.0, 1.0])
+
+    state = str(item.get("state_after") or "").lower()
+    variant = "carried" if "carried" in state or "hand" in str(
+        item.get("placement_semantic") or ""
+    ).lower() else ("closed" if "closed" in state else "open")
+    pitch = engine.support_pitch(object_id, variant)
 
     camera = Camera(contract["panels"][panel_index])
     origin, yaw = item["position"], item["yaw_deg"]
 
     def page_angle(local_a, local_b):
-        a = camera.project(place([local_a], yaw, origin)[0])
-        b = camera.project(place([local_b], yaw, origin)[0])
+        a = camera.project(place([local_a], yaw, origin, pitch)[0])
+        b = camera.project(place([local_b], yaw, origin, pitch)[0])
         return math.degrees(math.atan2(-(b[1] - a[1]), b[0] - a[0]))
 
     reach = 0.18
     drawn = page_angle([-v * reach for v in page_up], [v * reach for v in page_up])
     across = page_angle([-v * reach for v in spread], [v * reach for v in spread])
 
-    world = item.get("reading", {}).get("page_up_vector")
+    # How much of the page face actually reaches the page. A flat book seen
+    # edge-on projects its spread to a sliver however faithful its yaw is, and
+    # the area is what notices.
+    corners = [
+        place([[sx * 0.20, sy * 0.15, 0.0]], yaw, origin, pitch)[0]
+        for sx, sy in ((-1, -1), (1, -1), (1, 1), (-1, 1))
+    ]
+    flat = [camera.project(c) for c in corners]
+    area = abs(sum(
+        flat[i][0] * flat[(i + 1) % 4][1] - flat[(i + 1) % 4][0] * flat[i][1]
+        for i in range(4)
+    )) / 2.0
+
+    reading = item.get("reading", {})
+    # Compare the drawn axis against the PITCHED contract vector. The flat
+    # `page_up_vector` states the approved reading orientation and is the thing
+    # that must never mirror; it is not where the physical page-up points once
+    # the book lies on its stand. Comparing the drawn axis to the flat one
+    # would report a fault that is really just the pitch doing its job.
+    world = reading.get("page_up_vector_pitched") or reading.get("page_up_vector")
+    if pitch == 0.0:
+        world = reading.get("page_up_vector") or world
     if world is None:
         world = [math.cos(math.radians(yaw)), math.sin(math.radians(yaw)), 0.0]
     here = camera.project(origin)
-    there = camera.project(
-        [origin[0] + world[0] * reach, origin[1] + world[1] * reach, origin[2]]
-    )
+    there = camera.project([
+        origin[0] + world[0] * reach,
+        origin[1] + world[1] * reach,
+        origin[2] + world[2] * reach,
+    ])
     expected = math.degrees(math.atan2(-(there[1] - here[1]), there[0] - here[0]))
 
     gap = abs((drawn - across + 180.0) % 360.0 - 180.0)
     return {
+        "pitch_deg": round(pitch, 4),
+        "world_page_normal": world_axis(normal, yaw, pitch),
+        "world_page_up": world_axis(page_up, yaw, pitch),
+        "page_area_px": round(area, 2),
         "page_up_deg": round(drawn, 4),
         "expected_deg": round(expected, 4),
         "fidelity_deg": round(abs((drawn - expected + 180.0) % 360.0 - 180.0), 4),

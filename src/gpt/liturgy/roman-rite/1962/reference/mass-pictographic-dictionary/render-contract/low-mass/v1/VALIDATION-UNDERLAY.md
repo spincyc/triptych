@@ -105,6 +105,47 @@ Measured separations for the canary's Missal, by camera eye height:
 
 Fidelity is exact in every row. Only legibility moves.
 
+## Three different questions
+
+The lane above conflated two of these, and a later lane conflated the second
+and third. They are separate, and each needs its own evidence.
+
+**Orientation fidelity** asks whether the drawing embodies the compiled
+transform. It is a comparison between the drawn axis and the projection of the
+contract's own vector, and it was satisfied even when the picture was useless.
+
+**Orientation legibility** asks whether that orientation survives projection.
+Two axes of a flat object seen at a grazing angle collapse toward collinear,
+and once they do no yaw can look like anything. This is what failed first.
+
+**Physical plausibility** asks whether the object is modelled as the thing it
+is. This is what failed next, and it is the one that had been quietly funding
+the other two. The Missal had been modelled with its pages horizontal, its
+page normal asserted as straight up independently of any transform, and a
+purely decorative stand. A real altar Missal rests on an inclined stand and is
+pitched toward the priest.
+
+That mattered because the first repair for illegibility was to raise the
+camera until a flat book's axes separated — eye 2.35, then 3.6. It worked, and
+it was the wrong instrument. The camera was being moved to compensate for the
+object.
+
+> A mathematically faithful orientation can still be visually unreadable if the
+> physical page plane is modelled incorrectly or the camera grazes it. Fix the
+> object first, and only then ask what the camera should mean.
+
+With the book pitched 24 degrees on its stand it is legible from standing eye
+height, and the canonical camera has returned to a publication nave-front
+viewpoint at an eye of 1.85. The page normal is now derived from yaw and pitch
+rather than asserted, so it points where the priest stands rather than at the
+ceiling.
+
+A bug surfaced in the measurement itself while this was done: the fidelity
+check built its expected direction while dropping the vector's vertical
+component. That was invisible for as long as every axis was horizontal, and
+reported a spurious 22 degree error the instant pitch existed. It is fixed, and
+a regression pins it.
+
 ## What now guards it
 
 `validate.py` measures both properties for every oriented object in every
