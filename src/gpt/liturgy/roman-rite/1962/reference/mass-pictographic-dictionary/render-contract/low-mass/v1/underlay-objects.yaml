@@ -163,6 +163,18 @@ objects:
 
   # --- the object it was confused with ------------------------------------
   burse:
+    support:
+      pitch_deg: 78.0
+      supported_by_surface: gradine
+      note: >-
+        A burse is a stiff square case, and on the mensa it stands upright
+        against the gradine rather than lying flat on the altar cloth. Modelled
+        flat it collapsed to under three degrees from collinear at a nave eye,
+        which is not a camera problem: from a standing eye the mensa is very
+        nearly edge-on, and a flat square on it genuinely cannot be seen. The
+        pitch is the object being modelled as it actually stands, which is the
+        same instrument the Missal's stand supplies, and the only one this
+        layer permits. Raising the camera to reveal it is forbidden.
     local_frame:
       page_up_axis: [0.0, 1.0, 0.0]
       spread_axis: [1.0, 0.0, 0.0]
@@ -212,6 +224,18 @@ objects:
           - points: [[0.0, 0.0, 0.27], [0.0, -0.06, 0.25]]
 
   paten:
+    legibility:
+      exempt_when_flat: true
+      reason: >-
+        A paten lying flat on the linen is a plain disc. It has no readable
+        page-up in the picture because it has none in the room: turn it on the
+        corporal and nothing about it looks different. The legibility floor
+        exists to catch an orientation the drawing fails to communicate, and
+        here there is no orientation to communicate. The exemption is narrow on
+        purpose. It applies only while the disc is unpitched, it never applies
+        to fidelity, and the moment the paten is held it is policed like
+        everything else - held under the chin at the Communion it measures 90
+        degrees of separation, so the check still has teeth.
     local_frame:
       page_up_axis: [0.0, 1.0, 0.0]
       spread_axis: [1.0, 0.0, 0.0]

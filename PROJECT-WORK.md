@@ -476,6 +476,88 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic sanctuary blocking and publication composition
+
+<!-- promised-deliverable: mass-pictographic-sanctuary-blocking -->
+
+**Rebuilt and gated on 27 August 2026.** The canary underlay drew three coarse
+figures in front of a large staircase with a thin slab at the top. Every
+automated check passed while it did. Measured, the steps took 69 per cent of
+the drawn height and the altar 20, and the first step's leading edge stood at
+depth 0, exactly where the actors stood, so they had no floor in front of them
+at all.
+
+The cause was not the camera, and this lane began by proving that: the same
+failure appears at every eye height and every focal length. The approved
+structural geometry assigns sanctuary levels evenly spaced values 0.25 apart,
+and those are an ordering device rather than measurements. Read as
+measurements they put the platform at 61 per cent of a standing actor, where a
+real sanctuary platform is nearer 39, and left 0.35 between the predella and
+the mensa, where a priest working at his altar needs roughly 55 per cent of his
+own height. Those two numbers cannot both be satisfied, which is why no camera
+move had ever fixed the picture.
+
+A new `sanctuary-master.yaml` defines the sanctuary once and does what a render
+contract is for: it resolves the structural ordinals into explicit geometry.
+Elevations become floor 0, steps 0.16, 0.32 and 0.48, predella 0.64 and mensa
+1.55; standing depths resolve to the centre of each level's own tread. Both
+mappings preserve every level's identity and order, both are monotonic so every
+depth ordering the corpus relies on survives, and both are applied once in the
+compiler so contracts, skeletons and underlays agree. `structural/low-mass/
+v0.21/` is untouched.
+
+The altar now carries a gradine, tabernacle, reredos, cross and candlesticks,
+because a traditional high altar is read from its superstructure and without
+one the modelled mass was a cupboard on a slab. The figures were rebuilt: two
+outlines a body depth apart tied together, so an actor facing along the view
+axis no longer collapses to a vertical spike; a head drawn in two planes; a
+cincture, a hem, a chasuble for the priest, and real feet. Standing, kneeling
+and genuflecting actors all have flat contact patches, and 1754 of them are
+checked to lie in the plane of their level with their centre on that level's
+own tread. The 30 belonging to actors in transit are counted, not skipped.
+
+The camera moved, and moved in the opposite direction to the earlier mistake:
+down to a standing worshipper's eye of 1.52 and back to 6.9 behind a 1520px
+lens. The focal length now belongs to the preset rather than to the renderer.
+A debug calibration sheet draws the published camera beside the rejected
+candidates, including the raises to 2.35 and 3.6, so that the argument against
+moving a camera to rescue an object can be made from pictures.
+
+Two objects were remodelled rather than lit differently. The burse stands
+upright against the gradine, as a stiff square case on a mensa does; modelled
+flat it fell to 2.9 degrees from collinear and the check advised raising the
+camera, which is the move this layer forbids. The paten lying flat on the linen
+is exempted from the legibility floor, narrowly and in writing: a disc has no
+readable page-up, the exemption dies the moment it is pitched or picked up, and
+held under the chin at the Communion it still measures 90 degrees.
+
+The composition is now measured against authored thresholds and each guard was
+shown to fire. The step band came from 0.69 to 0.29 and the altar band from
+0.20 to 0.60. The altar band alone proved to have too much slack once the
+elevations were resolved, so the mass above the mensa is measured separately at
+0.35 against a 0.28 floor, and flattening the superstructure onto the mensa
+drops it to 0.22 and is refused.
+
+Rendering an exempt scene found one more fault of the same family. The
+composition guards measure nave panels and exempt the thirty-three shot from
+inside the sanctuary, and exempt is not unexamined: `LM-016B` drew two diverging
+funnels and almost nothing else. `Camera.project` clamped depth instead of
+clipping, so a point just in front of a close eye projected enormously and the
+fit zoomed out to contain it. Perspective cameras now reject anything nearer
+than their near plane. The over-the-shoulder preset also had no focal length of
+its own, so it inherited the publication lens at close range, and its station
+point had been authored against the unresolved depths; it now carries a short
+lens and stands where it clears both the kneeling servers and the priest's own
+head.
+
+Last, the thing no threshold can do. Every check in this layer has at some
+point passed while the picture was wrong, so the publication composition is
+also gated on someone having looked at the canary. The approval is bound to a
+digest of the sanctuary, the camera and the renderer, and `art-seed` refuses
+both an unapproved preset and an approval whose geometry has since moved.
+Verified in both directions: it refused while the digest was stale and wrote
+nothing, and seeded once the review was recorded.
+
 ### 1962 Low Mass pictographic pitched Missal and publication camera
 
 <!-- promised-deliverable: mass-pictographic-pitched-missal -->

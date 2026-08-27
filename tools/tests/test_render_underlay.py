@@ -415,9 +415,15 @@ class RenderUnderlayTests(unittest.TestCase):
     # -- the altar ---------------------------------------------------------
     def test_the_altar_is_drawn_as_volumes_from_the_floor_to_the_mensa(self) -> None:
         parts = self.underlay.altar_geometry()
-        # three steps, a predella, the altar body and the mensa: six volumes,
-        # each of which needs several polylines to read as a volume.
-        self.assertGreaterEqual(len(parts), 18, len(parts))
+        master = self.underlay.sanctuary()
+        # The sanctuary is no longer six volumes. It draws the floor region,
+        # three steps, the predella, the altar body, the mensa, the gradine,
+        # the tabernacle and its door, a reredos band, the altar cross and
+        # four candlesticks — 104 polylines as measured. The floor below is
+        # set well under that so this is not a tripwire on the massing, and
+        # well above the old six-volume 18 so that losing the superstructure
+        # is a failure rather than a smaller number nobody reads.
+        self.assertGreaterEqual(len(parts), 60, len(parts))
 
         zs = [p[2] for part in parts for p in part]
         self.assertAlmostEqual(min(zs), 0.0, places=6)
@@ -426,6 +432,16 @@ class RenderUnderlayTests(unittest.TestCase):
             max(zs), mensa_z,
             "the altar must reach the surface its linen lies on",
         )
+        # And it does not stop there: an altar is read from its superstructure,
+        # so the drawing must reach the top of the crowning band the master
+        # declares, not merely the slab.
+        crown = float(master["altar"]["reredos_hint"]["to_z"])
+        self.assertGreaterEqual(
+            max(zs), crown,
+            f"the drawn sanctuary stops at z={max(zs)}, below the {crown} the "
+            "reredos band reaches. Without the mass above the mensa the altar "
+            "reads as a cupboard on a slab",
+        )
 
         levels = sorted({round(min(p[2] for p in part), 4) for part in parts})
         self.assertGreaterEqual(
@@ -433,6 +449,35 @@ class RenderUnderlayTests(unittest.TestCase):
             f"three steps, predella, body and mensa need distinct levels: {levels}",
         )
         self.assertEqual(levels[0], 0.0)
+
+        # The cross and the candlesticks stand where sanctuary-master.yaml
+        # puts them. They are what makes the mass unmistakably an altar, and
+        # an anchor nothing checks is an anchor an editor can move.
+        drawn = {
+            (round(p[0], 4), round(p[1], 4)) for part in parts for p in part
+        }
+        anchors = master["fixed_anchors"]
+        for label, anchor in (
+            [("altar cross", anchors["altar_cross"])]
+            + [("candlestick", c) for c in anchors["candlesticks"]]
+        ):
+            self.assertIn(
+                (round(anchor[0], 4), round(anchor[1], 4)), drawn,
+                f"nothing is drawn on the {label} anchor at "
+                f"{anchor[0]}, {anchor[1]}",
+            )
+        heights = [
+            max(p[2] for part in parts for p in part if
+                round(p[0], 4) == round(c[0], 4)
+                and round(p[1], 4) == round(c[1], 4))
+            for c in anchors["candlesticks"]
+        ]
+        for height, candle in zip(heights, anchors["candlesticks"]):
+            self.assertGreater(
+                height, candle[2],
+                f"the candlestick at {candle[:2]} is drawn flat on its "
+                "anchor; a candlestick stands up",
+            )
 
     # -- the panel ---------------------------------------------------------
     def test_a_one_panel_contract_draws_one_panel_and_no_furniture(self) -> None:

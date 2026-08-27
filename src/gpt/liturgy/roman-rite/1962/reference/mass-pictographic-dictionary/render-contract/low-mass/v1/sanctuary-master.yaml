@@ -1,0 +1,265 @@
+schema: triptych.mass_pictographic.sanctuary_master
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# The canonical Low Mass sanctuary, defined once.
+#
+# Every scene projects against this. The underlay must not rebuild the
+# sanctuary scene by scene, or two scenes will disagree about where the first
+# step begins and nobody will notice until a plate looks wrong.
+#
+# WHAT IS SEALED AND WHAT IS NOT. The approved structural geometry fixes which
+# levels exist, what they are called, and their order: floor, three steps, the
+# predella, and the mensa above it. It does NOT fix how tall they are. Its z
+# values are evenly spaced ordinals - 0.25 apart for every step and again for
+# the predella - which is an ordering device, not a measurement.
+#
+# Taking them as measurements produced the failure this file exists to fix. It
+# put the platform at 1.00, which is 61% of a standing actor, where a real
+# sanctuary platform is nearer 39%; and it left only 0.35 between the predella
+# and the mensa, where a priest standing at his altar needs roughly 55% of his
+# own height. No camera and no blocking can reconcile those two numbers, and
+# the earlier attempts to fix the picture failed because they tried.
+#
+# So this file does what a render contract is for: it resolves the structural
+# ordinals into explicit world geometry. The mapping preserves every level's
+# identity and order and changes only its elevation. No structural file is
+# touched; the resolution happens here and flows through the compiler, so
+# contracts, skeletons and underlays all agree about where a level is.
+#
+# Everything else below - how deep a tread runs, how far the first step stands
+# from the actors, how the altar is massed above its mensa - is render geometry
+# chosen for the composition it produces.
+
+level_elevations:
+  applies_to: structural/low-mass/v0.21/scenes/geometry.yaml
+  rationale: >-
+    Scaled against a standing actor of 1.65 in the same units, so one unit is
+    about 1.06m. A riser of 0.16 is about 17cm; the platform reaches 0.64, or
+    39% of an actor; the mensa stands 0.91 above the predella, which is 55% of
+    the priest who works at it, and 0.94 of an actor's height above the floor,
+    so a figure in plano meets the altar table just below his head.
+  map:
+    - {level: plano, structural_z: 0.0, elevation: 0.0}
+    - {level: step-1, structural_z: 0.25, elevation: 0.16}
+    - {level: step-2, structural_z: 0.50, elevation: 0.32}
+    - {level: step-3, structural_z: 0.75, elevation: 0.48}
+    - {level: predella, structural_z: 1.00, elevation: 0.64}
+    - {level: mensa, structural_z: 1.35, elevation: 1.55}
+  unmapped_z_passes_through: true
+  level_ids_are_structural: true
+  note: >-
+    An elevation not listed is used as authored. The compiler maps anchor and
+    mensa elevations through this table; nothing else in a scene is rescaled.
+
+level_depths:
+  applies_to: structural/low-mass/v0.21/scenes/geometry.yaml
+  rationale: >-
+    The structural anchor depths are ordinals in the same way the elevations
+    are: plano at 0.0, step-1 at 0.5, step-3 at 1.2, the predella at 1.5, in a
+    sanctuary whose mensa carries the corporal at 1.38. Taken literally an
+    actor on step-3 stands past the predella's leading edge and a priest at the
+    predella stands inside the altar. Each level resolves instead to a standing
+    depth on its own tread, chosen so a sole 0.20 long lies wholly within a
+    tread 0.24 deep with clearance at both edges. The mapping is monotonic, so
+    every depth ordering the corpus relies on is preserved.
+  map:
+    - {level: plano, structural_y: 0.0, depth: 0.0}
+    - {level: step-1, structural_y: 0.5, depth: 0.37}
+    - {level: step-2, structural_y: 0.85, depth: 0.67}
+    - {level: step-3, structural_y: 1.2, depth: 0.97}
+    - {level: predella, structural_y: 1.5, depth: 1.29}
+  note: >-
+    Keyed on the anchor's level AND its structural depth, so an anchor that is
+    merely on a level without standing at its canonical depth - the credence,
+    which is on the floor but beside the steps - is left where it was authored.
+
+levels:
+  floor: 0.0
+  step_1: 0.16
+  step_2: 0.32
+  step_3: 0.48
+  predella: 0.64
+  mensa: 1.55
+  levels_are_structural: true
+  note: >-
+    Identity and order are structural. The elevations are the resolved values
+    from level_elevations above, repeated here as the single table the
+    renderer reads.
+
+# The floor is a region, not the absence of a step.
+in_plano:
+  plane_z: 0.0
+  naveward_edge: -0.85
+  altarward_edge: 0.22
+  width: 3.60
+  note: >-
+    The actors stand at depth 0. The first step's leading edge is held at 0.28,
+    so there is real floor in front of them and behind them. Previously the
+    step began at 0 - exactly where they stood - and three figures standing at
+    the lip of a staircase read as three figures halfway up it.
+  minimum_margin_before_first_step: 0.20
+  standing_region:
+    y_min: -0.85
+    y_max: 1.90
+    x_half_width: 2.10
+    note: >-
+      The sanctuary floor does not stop at the first step; it runs past the
+      steps on both sides, which is where the credence stands. Validation asks
+      whether a foot is on the floor, and this is the floor.
+  drawn_extent:
+    note: >-
+      The plate draws the floor only in front of the steps. Drawing the whole
+      region would put its far edge above the altar steps, which reads as a
+      wall rather than a floor.
+
+steps:
+  count: 3
+  tread_depth: 0.30
+  first_leading_edge_y: 0.22
+  widths: [2.74, 2.56, 2.38]
+  note: >-
+    A riser of 0.16 against a tread of 0.30 is the proportion of altar steps
+    rather than of a staircase, and 0.30 is also what a turned figure needs:
+    a pair of soles rotated 45 degrees spans about 0.32, so a shallower tread
+    left the priest at the predella standing half off it. The run is bounded
+    altarward by the mensa, which carries the corporal's nave fold at y 1.38.
+
+predella:
+  depth: 0.34
+  width: 2.28
+  leading_edge_y: 1.12
+
+altar:
+  body:
+    width: 2.06
+    depth: 0.36
+    front_y: 1.46
+    from_z: 0.64
+    to_z: 1.48
+  mensa:
+    width: 2.34
+    depth: 0.60
+    thickness: 0.07
+  # The altar rises 0.91 from the predella to its mensa, and its presence in
+  # the plate comes from the gradine, tabernacle and reredos above that. A
+  # traditional high altar is read from its superstructure, not from the slab.
+  gradine:
+    width: 1.72
+    depth: 0.16
+    from_z: 1.55
+    to_z: 1.68
+  tabernacle:
+    width: 0.62
+    depth: 0.30
+    from_z: 1.68
+    to_z: 2.30
+    door_inset: 0.10
+    note: >-
+      A plain blocking volume with a door face. No ornament: the image editor
+      adds architectural style inside this mass, and cannot move it.
+  reredos_hint:
+    width: 1.66
+    from_z: 2.30
+    to_z: 2.86
+    note: A shallow crowning band that closes the altar's silhouette.
+
+fixed_anchors:
+  altar_cross: [0.0, 1.80, 2.30]
+  candlesticks:
+    - [-0.72, 1.78, 1.68]
+    - [-0.46, 1.78, 1.68]
+    - [0.46, 1.78, 1.68]
+    - [0.72, 1.78, 1.68]
+  note: >-
+    Six candlesticks would be the full set; four are modelled as the standing
+    blocking, and their anchors sit on the gradine rather than on the mensa so
+    they do not compete with the Missal, corporal and vessels.
+
+foot_contact:
+  max_overhang_fraction_of_tread: 0.25
+  note: >-
+    How far a contact patch may project past the edge of the level it rests on.
+    Measured against the tread rather than against the patch, because hanging
+    off a step is a fact about the step: a knee, a toe and a standing sole are
+    very different sizes, and a bound written as a fraction of the patch held
+    the smallest of them to the tightest tolerance for no reason. Some overhang
+    is real - altar treads are barely deeper than a foot, and a turned figure
+    does project over the edge - so the check that carries the weight is that a
+    patch's centre lies on its own tread.
+
+composition:
+  # Guardrails, not a beauty score. Tuned from the composition wanted, and
+  # documented so a later change has to argue with a number rather than a mood.
+  max_step_band_fraction: 0.46
+  min_altar_band_fraction: 0.22
+  min_superstructure_band_fraction: 0.28
+  min_floor_below_feet_fraction: 0.06
+  min_actor_height_fraction: 0.22
+  note: >-
+    Fractions of the drawn subject height. The step band previously took 69 per
+    cent and the altar 20; that is the picture these bounds exist to refuse.
+    The superstructure bound is the one with teeth now. Once the elevations are
+    resolved the altar body is tall by construction, so min_altar_band_fraction
+    has a great deal of slack and would pass an altar whose gradine, tabernacle
+    and reredos had been flattened to a slab. What is above the mensa is what
+    can actually vanish, and it is what makes the shape read as an altar rather
+    than as a table, so it is measured on its own. Built it comes to 0.35, and flattening the gradine, tabernacle, reredos, cross and candlesticks onto the mensa drops it to 0.22, so the bound sits between the two and refuses that plate.
+
+# The gate a machine cannot pass for you.
+#
+# Every automated check in this layer passed while the picture was wrong. They
+# compared world-space numbers to world-space numbers and never asked what
+# reached the page. The composition thresholds above close part of that gap,
+# but a threshold only refuses the failures somebody already thought of.
+#
+# So the publication composition is also gated on someone having looked at the
+# canary underlay. The approval is bound to a digest of the files that decide
+# what the picture looks like. Change any of them and the approval goes stale
+# and art-seed refuses, which is the fail-closed behaviour: a preset nobody has
+# looked at is treated exactly like a preset somebody rejected.
+underlay_visual_review:
+  status: approved
+  canary: LM-001A
+  preset: nave-front
+  digest_inputs:
+    # Everything that can change what the plate looks like. The sanctuary and
+    # the camera are obvious; the renderer draws it; the compiler decides where
+    # the actors stand, and the object library decides what the furniture is
+    # shaped like. Leaving the last two out would have let a change to either
+    # move the picture under an approval that still called itself current.
+    - sanctuary-master.yaml
+    - camera-model.yaml
+    - underlay.py
+    - underlay-objects.yaml
+    - _contract.py
+  reviewed_geometry_digest: 480c69b43fda7f920618904eb8372a9d2f3f9da38e9878ab7f0dda46ac95976b
+  reviewed_in: "feature/pictographic: sanctuary blocking and publication composition"
+  reviewer_note: >-
+    Reviewed by rendering LM-001A and answering the composition gate questions
+    one at a time: three actors standing in plano on a floor that is visible in
+    front of them, the first step set back altarward of their feet, three steps
+    and a predella countable without a fourth step invented from the floor, an
+    altar that reads as an altar because it carries a mensa, a gradine, a
+    tabernacle, a cross and its candlesticks, the Missal pitched on its stand
+    and turned to its reading orientation, and a nave-front viewpoint at a
+    standing eye rather than an overhead one.
+  regression_scenes:
+    note: >-
+      The canary alone cannot show a change of level, a kneeling figure, a
+      figure in profile or a full mensa. These are the scenes to re-render and
+      look at whenever the sanctuary, the envelopes or the camera move; they
+      are chosen so that between them every property this file fixes is on
+      screen somewhere.
+    scenes:
+      - {id: LM-001A, shows: "the canary: three figures standing in plano at the foot"}
+      - {id: LM-039A, shows: "the Gospel-side reading, where the book moves but does not mirror"}
+      - {id: LM-009A, shows: "kneeling servers, on the canary's own anchors and camera"}
+      - {id: LM-014A, shows: "two levels at once, with both servers kneeling on step 1"}
+      - {id: LM-035A, shows: "three levels at once, and servers turned into profile"}
+      - {id: LM-061A, shows: "the priest working at the predella over a full mensa"}
+  on_stale_digest: >-
+    Re-render the canary, look at it, answer the gate questions again, and only
+    then refresh the digest. Refreshing the digest without looking is the one
+    move this gate exists to prevent.

@@ -52,8 +52,8 @@ text{fill:#000;font-family:sans-serif}.t{font-size:28px;font-weight:bold;font-fa
 <rect width="820" height="270" rx="8" class="box"/>
 <text x="18" y="30" class="h">4 · CROSSING PRECEDENCE</text>
 <text x="18" y="56" class="s">Ordered choreography must survive compilation, not stay prose.</text>
-<text x="18" y="75" class="m">LM-136C first crossing   AC2 y=0.5 (rank 1)   AC1 y=0.66 (rank 2)</text>
-<text x="18" y="94" class="m">LM-136E second crossing  AC1 y=0.5 (rank 1)   AC2 y=0.66 (rank 2)</text>
+<text x="18" y="75" class="m">LM-136C first crossing   AC2 y=0.37 (rank 1)   AC1 y=0.53 (rank 2)</text>
+<text x="18" y="94" class="m">LM-136E second crossing  AC1 y=0.37 (rank 1)   AC2 y=0.53 (rank 2)</text>
 <text x="18" y="113" class="m">Smaller y is nearer the viewer. depth_rank compiles to an</text>
 <text x="18" y="132" class="m">explicit offset, so who leads is a number, not an adjective.</text>
 <text x="18" y="151" class="m">AC1 carries the chalice cloth gospelward; AC2 carries the Missal</text>
@@ -64,9 +64,9 @@ text{fill:#000;font-family:sans-serif}.t{font-size:28px;font-weight:bold;font-fa
 <rect width="1660" height="240" rx="8" class="box"/>
 <text x="18" y="30" class="h">5 · FINE DETAIL AT THE ELEVATION</text>
 <text x="18" y="56" class="s">LM-099A — The elevation of the Host, with one ring</text>
-<text x="18" y="75" class="m">priest predella-centre          [0.0, 1.66, 1.0]  faces 90°  hands holding-host | holding-host</text>
-<text x="18" y="94" class="m">AC1    predella-epistle         [0.6, 1.5, 1.0]  faces 180°  hands lifting-chasuble-edge | holding-bell</text>
-<text x="18" y="113" class="m">AC2    predella-gospel          [-0.6, 1.5, 1.0]  faces 0°  hands on-breast | lifting-chasuble-edge</text>
+<text x="18" y="75" class="m">priest predella-centre          [0.0, 1.45, 0.64]  faces 90°  hands holding-host | holding-host</text>
+<text x="18" y="94" class="m">AC1    predella-epistle         [0.6, 1.29, 0.64]  faces 161°  hands lifting-chasuble-edge | holding-bell</text>
+<text x="18" y="113" class="m">AC2    predella-gospel          [-0.6, 1.29, 0.64]  faces 19°  hands on-breast | lifting-chasuble-edge</text>
 <text x="18" y="132" class="m">The chasuble-lifting hands and the bell hand are explicit</text>
 <text x="18" y="151" class="m">actor state, so an artist cannot reassign them.</text>
 </g>

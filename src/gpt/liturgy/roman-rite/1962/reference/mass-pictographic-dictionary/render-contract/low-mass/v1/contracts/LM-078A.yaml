@@ -38,14 +38,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -57,16 +58,16 @@ actors:
   anchor: predella-epistle
   position:
   - 0.6
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: epistle
   depth_rank: 2
   posture: standing
   bow: head-moderate
-  body_facing_yaw_deg: 159.863697
+  body_facing_yaw_deg: 144.372093
   body_facing_vector:
-  - -0.938876
-  - 0.344255
+  - -0.812817
+  - 0.582519
   - 0.0
   facing_semantic: altar-cross
   facing_derivation: toward-target
@@ -82,15 +83,15 @@ actors:
     from: predella-epistle
     from_xyz:
     - 0.6
-    - 1.5
-    - 1.0
+    - 1.29
+    - 0.64
     via: []
     via_xyz: []
     to: predella-centre
     to_xyz:
     - 0.0
-    - 1.5
-    - 1.0
+    - 1.29
+    - 0.64
     settles_at: predella-epistle
     note: The bow is made first, at the Epistle side. The return along the predella to the centre begins
       at "Sicut erat" and finishes within this scene.
@@ -105,10 +106,10 @@ actors:
   depth_rank: 1
   posture: standing
   bow: none
-  body_facing_yaw_deg: 86.185925
+  body_facing_yaw_deg: 85.567332
   body_facing_vector:
-  - 0.066519
-  - 0.997785
+  - 0.077287
+  - 0.997009
   - 0.0
   facing_semantic: inward-to-priest
   facing_derivation: toward-actor
@@ -130,10 +131,10 @@ actors:
   depth_rank: 1
   posture: standing
   bow: none
-  body_facing_yaw_deg: 86.185925
+  body_facing_yaw_deg: 85.567332
   body_facing_vector:
-  - 0.066519
-  - 0.997785
+  - 0.077287
+  - 0.997009
   - 0.0
   facing_semantic: inward-to-priest
   facing_derivation: toward-actor
@@ -158,12 +159,12 @@ objects:
   position:
   - 0.0
   - 1.72
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
-  yaw_deg: 339.863697
+  yaw_deg: 324.372093
   facing_vector:
-  - 0.938876
-  - -0.344255
+  - 0.812817
+  - -0.582519
   - 0.0
   orientation_note: turned toward the priest
 - id: towel
@@ -215,7 +216,7 @@ objects:
   position:
   - 0.0
   - 1.62
-  - 1.35
+  - 1.55
 - id: host
   placement_semantic: corporal-front-centre
   placement_kind: mensa
@@ -228,7 +229,7 @@ objects:
   position:
   - 0.0
   - 1.38
-  - 1.35
+  - 1.55
 - id: corporal
   placement_semantic: mensa-centre
   placement_kind: mensa
@@ -241,7 +242,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:

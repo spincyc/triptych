@@ -27,6 +27,19 @@ ROOT = Path(__file__).resolve().parent
 CONTRACTS = ROOT / "contracts"
 OUT = ROOT / "skeletons"
 
+_LEVELS = None
+
+
+def _levels():
+    """The sanctuary master's resolved level elevations."""
+    global _LEVELS
+    if _LEVELS is None:
+        with open(Path(__file__).resolve().parent / "sanctuary-master.yaml",
+                  encoding="utf-8") as handle:
+            _LEVELS = yaml.safe_load(handle)["levels"]
+    return _LEVELS
+
+
 PANEL_W, PANEL_H = 900, 620
 MARGIN, GUTTER = 30, 26
 HEADER = 150
@@ -99,15 +112,22 @@ def draw_altar(panel: Panel) -> list[str]:
             f'width="{abs(x2-x1):.1f}" height="{abs(y2-y1):.1f}" class="stone"/>'
         )
         return out
-    # elevation: the steps, the predella, and the mensa
-    for z, half in ((0.0, 1.85), (0.25, 1.65), (0.5, 1.45), (0.75, 1.25), (1.0, 1.05)):
+    # elevation: the steps, the predella, and the mensa. The elevations come
+    # from the sanctuary master, so the skeleton cannot drift away from the
+    # underlay about where a level is.
+    _lv = _levels()
+    _rows = (
+        (_lv["floor"], 1.85), (_lv["step_1"], 1.65), (_lv["step_2"], 1.45),
+        (_lv["step_3"], 1.25), (_lv["predella"], 1.05),
+    )
+    for z, half in _rows:
         x1, y = panel.project([-half, 1.5, z])
         x2, _ = panel.project([half, 1.5, z])
         out.append(
             f'<line x1="{x1:.1f}" y1="{y:.1f}" x2="{x2:.1f}" y2="{y:.1f}" class="stone"/>'
         )
-    xl, ym = panel.project([-1.05, 1.5, 1.35])
-    xr, _ = panel.project([1.05, 1.5, 1.35])
+    xl, ym = panel.project([-1.05, 1.5, _lv["mensa"]])
+    xr, _ = panel.project([1.05, 1.5, _lv["mensa"]])
     out.append(
         f'<rect x="{xl:.1f}" y="{ym:.1f}" width="{xr-xl:.1f}" height="14" class="stone"/>'
     )

@@ -35,14 +35,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -54,8 +55,8 @@ actors:
   anchor: predella-centre
   position:
   - 0.0
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: centre
   depth_rank: 2
   posture: standing
@@ -66,7 +67,7 @@ actors:
   - 1.0
   - 0.0
   facing_semantic: altar
-  facing_derivation: degenerate-toward-altar
+  facing_derivation: toward-target
   gaze: altar
   hands:
     joined: false
@@ -83,16 +84,16 @@ actors:
   anchor: step-1-epistle
   position:
   - 0.5
-  - 0.5
-  - 0.25
+  - 0.37
+  - 0.16
   side: epistle
   depth_rank: 1
   posture: kneeling
   bow: none
-  body_facing_yaw_deg: 116.565051
+  body_facing_yaw_deg: 113.86833
   body_facing_vector:
-  - -0.447214
-  - 0.894427
+  - -0.404636
+  - 0.914478
   - 0.0
   facing_semantic: altar
   facing_derivation: toward-target
@@ -108,16 +109,16 @@ actors:
   anchor: step-1-gospel
   position:
   - -0.5
-  - 0.5
-  - 0.25
+  - 0.37
+  - 0.16
   side: gospel
   depth_rank: 1
   posture: kneeling
   bow: none
-  body_facing_yaw_deg: 63.434949
+  body_facing_yaw_deg: 66.13167
   body_facing_vector:
-  - 0.447214
-  - 0.894427
+  - 0.404636
+  - 0.914478
   - 0.0
   facing_semantic: altar
   facing_derivation: toward-target
@@ -142,7 +143,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: missal-reading
   yaw_deg: 135.0
   facing_vector:
@@ -191,7 +192,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -210,7 +211,7 @@ objects:
   position:
   - 0.0
   - 1.38
-  - 1.35
+  - 1.55
 - id: chalice
   placement_semantic: corporal-back-centre
   placement_kind: mensa
@@ -224,7 +225,7 @@ objects:
   position:
   - 0.0
   - 1.62
-  - 1.35
+  - 1.55
 - id: pall
   placement_semantic: covering the cup of the chalice
   placement_kind: mapped
@@ -237,7 +238,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.59
+  - 1.79
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -256,12 +257,12 @@ objects:
   position:
   - 0.35
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
-  yaw_deg: 180.0
+  yaw_deg: 210.963757
   facing_vector:
-  - -1.0
-  - 0.0
+  - -0.857493
+  - -0.514496
   - 0.0
   orientation_note: turned toward the priest
 - id: purificator
@@ -276,7 +277,7 @@ objects:
   position:
   - 0.35
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -295,7 +296,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -314,7 +315,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -333,7 +334,7 @@ objects:
   position:
   - 0.5
   - 0.5
-  - 0.25
+  - 0.16
 visible_invariants:
 - INV-FORM-01
 - INV-GEO-01

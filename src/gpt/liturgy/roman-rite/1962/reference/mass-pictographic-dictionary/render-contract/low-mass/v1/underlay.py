@@ -95,7 +95,7 @@ class Camera:
         camera = panel["camera"]
         self.projection = camera["projection"]
         self.eye = list(camera["position_xyz"])
-        self.target = list(camera.get("target_xyz") or [0.0, 1.5, 1.0])
+        self.target = list(camera.get("target_xyz") or [0.0, 1.5, 1.42])
         up = [0.0, 0.0, 1.0]
 
         self.forward = normalise(sub(self.target, self.eye))
@@ -105,7 +105,14 @@ class Camera:
         # Framing is fixed per projection so the output is reproducible and the
         # altar fills a comparable share of every plate.
         self.perspective = self.projection in ("perspective", "detail-macro")
-        self.focal = 1180.0 if self.projection == "perspective" else 1500.0
+        # The preset owns its lens. A renderer that picks its own focal
+        # length is choosing the composition the contract meant to fix.
+        declared = camera.get("focal_length_px")
+        default = 1520.0 if self.projection == "perspective" else 1500.0
+        self.focal = float(declared) if declared else default
+        # How close a thing may be and still be in shot. Only a station point
+        # inside the sanctuary ever has anything nearer than this.
+        self.near = 0.55 if self.perspective else -1e9
         self.ortho_scale = 250.0
         self.plan = self.projection == "orthographic-plan"
 
@@ -214,21 +221,103 @@ def step(cy, z, width, depth, rise):
     ]
 
 
-def altar_geometry():
-    """The full approved altar: three steps, predella, altar body and mensa.
+SANCTUARY = None
 
-    Drawn as volumes rather than lines so the image model does not have to
-    invent how many steps there are or how deep they run — but as the volumes
-    a viewer sees, so the steps support the altar rather than upstaging it.
+
+def sanctuary():
+    """The canonical sanctuary master, loaded once."""
+    global SANCTUARY
+    if SANCTUARY is None:
+        SANCTUARY = load(ROOT / "sanctuary-master.yaml")
+    return SANCTUARY
+
+
+def altar_geometry():
+    """The canonical sanctuary: floor, three steps, predella, and a massed altar.
+
+    Built from sanctuary-master.yaml so every scene projects against the same
+    thing. Which levels exist and in what order is structural; how tall each
+    one is, how deep a tread runs, how far the first step stands back, and how
+    the altar is massed above its mensa are all resolved there, because the
+    structural values are ordinals rather than measurements.
     """
+    m = sanctuary()
+    lv = m["levels"]
     parts = []
-    for z, depth_centre, width in (
-        (0.0, 0.15, 2.85), (0.25, 0.45, 2.72), (0.50, 0.75, 2.59)
-    ):
-        parts += step(depth_centre, z, width, 0.30, 0.25)
-    parts += step(1.06, 0.75, 2.46, 0.32, 0.25)          # the predella
-    parts += box(0.0, 1.42, 1.00, 2.10, 0.34, 0.35)      # the altar body
-    parts += box(0.0, 1.42, 1.35, 2.34, 0.46, 0.06)      # the mensa
+
+    # The floor the actors stand on, drawn as a real region so that standing in
+    # plano is visible rather than merely asserted.
+    plano = m["in_plano"]
+    half = plano["width"] / 2
+    parts.append([
+        [-half, plano["naveward_edge"], 0.0],
+        [half, plano["naveward_edge"], 0.0],
+        [half, plano["altarward_edge"], 0.0],
+        [-half, plano["altarward_edge"], 0.0],
+        [-half, plano["naveward_edge"], 0.0],
+    ])
+
+    # Three steps, set back from the actors, each drawn as riser and tread.
+    st = m["steps"]
+    y = st["first_leading_edge_y"]
+    for index, width in enumerate(st["widths"]):
+        z = lv["floor"] if index == 0 else lv[f"step_{index}"]
+        rise = lv[f"step_{index + 1}"] - z
+        parts += step(y + st["tread_depth"] / 2, z, width, st["tread_depth"], rise)
+        y += st["tread_depth"]
+
+    pr = m["predella"]
+    parts += step(
+        pr["leading_edge_y"] + pr["depth"] / 2, lv["step_3"], pr["width"],
+        pr["depth"], lv["predella"] - lv["step_3"],
+    )
+
+    a = m["altar"]
+    b = a["body"]
+    parts += box(0.0, b["front_y"] + b["depth"] / 2, b["from_z"],
+                 b["width"], b["depth"], b["to_z"] - b["from_z"])
+    ms = a["mensa"]
+    parts += box(0.0, b["front_y"] + b["depth"] / 2, lv["mensa"],
+                 ms["width"], ms["depth"], ms["thickness"])
+
+    # The altar's mass lives above the mensa, because below it the structural
+    # frame allows only 0.35 against a mensa 2.34 wide.
+    g = a["gradine"]
+    parts += box(0.0, b["front_y"] + b["depth"] - 0.02, g["from_z"],
+                 g["width"], g["depth"], g["to_z"] - g["from_z"])
+    tb = a["tabernacle"]
+    parts += box(0.0, b["front_y"] + b["depth"] - 0.04, tb["from_z"],
+                 tb["width"], tb["depth"], tb["to_z"] - tb["from_z"])
+    inset = tb["door_inset"]
+    face = b["front_y"] + b["depth"] - 0.04 - tb["depth"] / 2
+    parts.append([
+        [-tb["width"] / 2 + inset, face, tb["from_z"] + inset],
+        [tb["width"] / 2 - inset, face, tb["from_z"] + inset],
+        [tb["width"] / 2 - inset, face, tb["to_z"] - inset],
+        [-tb["width"] / 2 + inset, face, tb["to_z"] - inset],
+        [-tb["width"] / 2 + inset, face, tb["from_z"] + inset],
+    ])
+    rd = a["reredos_hint"]
+    parts += box(0.0, b["front_y"] + b["depth"] + 0.02, rd["from_z"],
+                 rd["width"], 0.12, rd["to_z"] - rd["from_z"])
+
+    # The cross and the standing candlesticks. Without them the modelled mass
+    # is a cupboard on a slab; with them it is unmistakably an altar, and an
+    # image editor cannot put the cross somewhere else.
+    fx = m["fixed_anchors"]
+    cross = fx["altar_cross"]
+    shaft = 0.55
+    arm = 0.20
+    foot_z = cross[2]
+    parts.append([[cross[0], cross[1], foot_z], [cross[0], cross[1], foot_z + shaft]])
+    bar_z = foot_z + shaft * 0.66
+    parts.append([[cross[0] - arm, cross[1], bar_z], [cross[0] + arm, cross[1], bar_z]])
+    parts += box(cross[0], cross[1], foot_z, 0.16, 0.10, 0.06)
+    for cx, cy, cz in fx["candlesticks"]:
+        parts += box(cx, cy, cz, 0.09, 0.09, 0.06)            # foot
+        parts.append([[cx, cy, cz + 0.06], [cx, cy, cz + 0.34]])   # stem
+        parts += box(cx, cy, cz + 0.34, 0.07, 0.07, 0.05)     # bowl
+        parts.append([[cx, cy, cz + 0.39], [cx, cy, cz + 0.58]])   # candle
     return parts
 
 
@@ -267,34 +356,76 @@ def mannequin(actor: dict, is_priest: bool):
         lean = max(lean, 0.30)
 
     parts = []
-    # One body outline. The priest's chasuble falls wider than the servers'
-    # cassock and surplice, which is what makes the elevation scenes legible
-    # where the servers lift its lower edge.
-    # Every actor here wears ankle-length vesture, so the body is a robed
-    # column rather than a torso on two sticks. The priest's chasuble falls
-    # wider than a server's cassock and surplice, which is what makes the
-    # elevation scenes legible where the servers lift its lower edge.
-    flare = 0.15 if is_priest else 0.06
+    # A robed column, but a column with a waist, a hem and feet. The earlier
+    # envelope tapered in one straight line from shoulder to a hem more than
+    # twice the shoulder width, which draws a cone, not a vested man. The hem
+    # is now held near shoulder width, and the alb, the cincture and the feet
+    # are drawn separately so an illustrator can see where the body is inside
+    # the vesture instead of guessing it.
     hem_z = 0.02 if not kneeling else hip_z - 0.30
-    hem = hip / 2 + flare + (0.05 if not kneeling else 0.0)
-    parts.append([
-        [-shoulder / 2, lean, shoulder_z],
-        [-hem, lean * 0.35, hem_z],
-        [hem, lean * 0.35, hem_z],
-        [shoulder / 2, lean, shoulder_z],
-        [-shoulder / 2, lean, shoulder_z],
-    ])
+    hem = (0.22 if is_priest else 0.15) if not kneeling else (0.24 if is_priest else 0.17)
+    waist_z = hip_z + 0.06
+    waist = hip / 2 + 0.02
+
+    # The body has thickness. Drawn as a single flat outline it disappeared
+    # whenever an actor faced along the view axis - a server turned gospelward
+    # rendered as a vertical spike - because a cut-out seen edge-on has no
+    # width. Two outlines a body-depth apart, tied together, give a figure that
+    # reads from any yaw and tells an illustrator where the body actually is.
+    depth = 0.20 if is_priest else 0.17
+
+    def column(dy):
+        return [
+            [-shoulder / 2, lean + dy, shoulder_z],
+            [-waist, lean * 0.6 + dy, waist_z],
+            [-hem, lean * 0.35 + dy, hem_z],
+            [hem, lean * 0.35 + dy, hem_z],
+            [waist, lean * 0.6 + dy, waist_z],
+            [shoulder / 2, lean + dy, shoulder_z],
+            [-shoulder / 2, lean + dy, shoulder_z],
+        ]
+
+    for dy in (-depth / 2, depth / 2):
+        parts.append(column(dy))
+    for sx in (-1, 1):
+        for z, half, spread in ((shoulder_z, shoulder / 2, 1.0),
+                                (waist_z, waist, 0.6),
+                                (hem_z, hem, 0.35)):
+            parts.append([
+                [sx * half, lean * spread - depth / 2, z],
+                [sx * half, lean * spread + depth / 2, z],
+            ])
+    # the hem line, so the vesture reads as ending rather than fading out
     parts.append([[-hem, lean * 0.35, hem_z], [hem, lean * 0.35, hem_z]])
+    # the cincture, which is where a viewer reads the waist and so the height
+    parts.append([[-waist, lean * 0.6, waist_z], [waist, lean * 0.6, waist_z]])
     # shoulder line, which is what makes facing readable
     parts.append([[-shoulder / 2, lean, shoulder_z], [shoulder / 2, lean, shoulder_z]])
+    if is_priest and not kneeling:
+        # The chasuble: a shorter, wider over-garment falling to about the
+        # knee. This, not a flared hem, is what distinguishes the priest.
+        cz = hip_z - 0.16
+        cw = shoulder / 2 + 0.17
+        parts.append([
+            [-shoulder / 2 - 0.02, lean, shoulder_z - 0.02],
+            [-cw, lean * 0.5, cz],
+            [cw, lean * 0.5, cz],
+            [shoulder / 2 + 0.02, lean, shoulder_z - 0.02],
+        ])
+        parts.append([[-cw, lean * 0.5, cz], [cw, lean * 0.5, cz]])
     # head
     neck_z = shoulder_z + 0.06
     head_z = neck_z + head_r
-    ring = []
-    for step in range(13):
-        a = 2 * math.pi * step / 12
-        ring.append([head_r * math.cos(a), lean * 1.25, head_z + head_r * math.sin(a)])
-    parts.append(ring)
+    for plane in ("frontal", "sagittal"):
+        ring = []
+        for step in range(13):
+            a = 2 * math.pi * step / 12
+            c, s = head_r * math.cos(a), head_r * math.sin(a)
+            if plane == "frontal":
+                ring.append([c, lean * 1.25, head_z + s])
+            else:
+                ring.append([0.0, lean * 1.25 + c, head_z + s])
+        parts.append(ring)
     parts.append([[0.0, lean, shoulder_z], [0.0, lean * 1.25, neck_z]])
     # a short nose-line so head facing is unambiguous
     parts.append([[0.0, lean * 1.25, head_z], [0.0, lean * 1.25 - 0.10, head_z - 0.01]])
@@ -306,13 +437,58 @@ def mannequin(actor: dict, is_priest: bool):
             [hem + 0.02, -0.14, 0.0], [hem, lean * 0.35, hem_z],
         ])
         parts.append([[-hem - 0.02, -0.14, 0.0], [hem + 0.02, -0.14, 0.0]])
+        # Knees and toes, flat on the level. A kneeling figure met the floor
+        # only through the fall of its cassock, which draws a shape resting on
+        # nothing; these are the patches that actually bear the weight.
+        for side in (-1, 1):
+            kx = side * 0.085
+            parts.append([
+                [kx - 0.05, -0.02, 0.0], [kx + 0.05, -0.02, 0.0],
+                [kx + 0.05, 0.10, 0.0], [kx - 0.05, 0.10, 0.0],
+                [kx - 0.05, -0.02, 0.0],
+            ])
+            # Toes tucked under, not stretched back: kneeling erect the shin is
+            # near vertical, so the foot's footprint sits close behind the knee
+            # and stays on the same tread.
+            parts.append([
+                [kx - 0.04, -0.14, 0.0], [kx + 0.04, -0.14, 0.0],
+                [kx + 0.04, -0.06, 0.0], [kx - 0.04, -0.06, 0.0],
+                [kx - 0.04, -0.14, 0.0],
+            ])
     elif genuflect:
         parts.append([[-hem, lean * 0.35, hem_z], [-hem - 0.04, -0.20, 0.0], [0.04, -0.20, 0.0]])
         parts.append([[hem, lean * 0.35, hem_z], [hem, 0.10, 0.24]])
+        # The down knee and the standing foot: a genuflection rests on both.
+        parts.append([
+            [-0.13, -0.05, 0.0], [-0.03, -0.05, 0.0],
+            [-0.03, 0.07, 0.0], [-0.13, 0.07, 0.0], [-0.13, -0.05, 0.0],
+        ])
+        parts.append([
+            [0.03, -0.14, 0.0], [0.12, -0.14, 0.0],
+            [0.12, 0.05, 0.0], [0.03, 0.05, 0.0], [0.03, -0.14, 0.0],
+        ])
     else:
-        # a hint of feet below the hem, so the figure is planted
-        parts.append([[-0.10, -0.03, hem_z], [-0.12, -0.12, 0.0]])
-        parts.append([[0.10, -0.03, hem_z], [0.12, -0.12, 0.0]])
+        # Two feet, flat on the plane the actor stands on and wholly within it.
+        # A figure whose feet are a pair of ticks floats; a figure with soles
+        # is planted, and a validator can check that the soles are on a level.
+        for side in (-1, 1):
+            tx = side * 0.075
+            # A tapered sole: narrow at the heel, wider across the ball, and
+            # turned very slightly outward as a standing foot is. Drawn as a
+            # plain rectangle it read as a flat plate under the hem rather
+            # than as a foot.
+            splay = side * 0.012
+            parts.append([
+                [tx - 0.030, -0.150, 0.0],
+                [tx + 0.030, -0.150, 0.0],
+                [tx + 0.048 + splay, -0.020, 0.0],
+                [tx + 0.040 + splay, 0.048, 0.0],
+                [tx - 0.036 + splay, 0.048, 0.0],
+                [tx - 0.046 + splay, -0.020, 0.0],
+                [tx - 0.030, -0.150, 0.0],
+            ])
+            # ankle, joining the sole to the hem
+            parts.append([[tx, -0.02, 0.0], [tx, lean * 0.35, hem_z]])
 
     # arms, placed by hand-state class rather than drawn in detail
     hands = actor["hands"]
@@ -336,6 +512,55 @@ def mannequin(actor: dict, is_priest: bool):
 
     origin = actor["position"]
     return [place(part, yaw, origin) for part in parts]
+
+
+def round6(value: float) -> float:
+    return round(float(value), 6)
+
+
+def level_of(z: float) -> str | None:
+    """Name the sanctuary level an elevation stands on, if it is one."""
+    for name, value in sanctuary()["levels"].items():
+        if isinstance(value, (int, float)) and abs(value - z) < 1e-6:
+            return name
+    return None
+
+
+def foot_contacts(actor: dict, is_priest: bool) -> dict:
+    """Where this actor's soles meet the sanctuary, and on what.
+
+    A figure is planted or it floats, and the difference is checkable: every
+    sole must lie flat on the level the actor was placed on, and must not
+    overhang the tread it stands on into the riser in front of it.
+    """
+    origin = actor["position"]
+    stands_on = level_of(origin[2])
+    soles = []
+    for part in mannequin(actor, is_priest):
+        zs = [p[2] for p in part]
+        if len(part) < 4 or max(zs) - min(zs) > 1e-6:
+            continue  # not a flat sole
+        if abs(zs[0] - origin[2]) > 1e-6:
+            continue
+        soles.append({
+            "z": round6(zs[0]),
+            "y_min": round6(min(p[1] for p in part)),
+            "y_max": round6(max(p[1] for p in part)),
+            "x_min": round6(min(p[0] for p in part)),
+            "x_max": round6(max(p[0] for p in part)),
+        })
+    m = sanctuary()
+    st = m["steps"]
+    edges = [st["first_leading_edge_y"] + index * st["tread_depth"]
+             for index in range(st["count"])]
+    edges.append(m["predella"]["leading_edge_y"])
+    return {
+        "actor": actor["id"],
+        "stands_on": stands_on,
+        "level_z": round6(origin[2]),
+        "soles": soles,
+        "riser_leading_edges": [round6(e) for e in edges],
+    }
 
 
 # --------------------------------------------------------------------------
@@ -393,15 +618,33 @@ class Underlay:
         camera = Camera(panel)
         drawable = []  # (depth, css class, projected points)
 
-        def add(parts, css):
+        framing = []  # the subject the crop is composed around
+
+        def add(parts, css, frames=True):
             for part in parts:
                 projected = [camera.project(p) for p in part]
                 if not projected:
                     continue
+                # Near-plane rejection. `project` clamps depth rather than
+                # clipping, so a point just in front of the eye projects to an
+                # enormous coordinate instead of disappearing. From the nave
+                # nothing is ever that close and this changes nothing; from the
+                # over-the-shoulder station the floor behind the camera and the
+                # top of the reredos were being flung across the plate as two
+                # diverging funnels, and the fit then zoomed out to contain
+                # them. A part any of whose points is nearer than this is out
+                # of shot, which is what a real close view does too.
+                if min(p[2] for p in projected) < camera.near:
+                    continue
                 depth = sum(p[2] for p in projected) / len(projected)
-                drawable.append((depth, css, [(p[0], p[1]) for p in projected]))
+                flat = [(p[0], p[1]) for p in projected]
+                drawable.append((depth, css, flat))
+                if frames:
+                    framing.extend(flat)
 
-        add(altar_geometry(), "arch")
+        sanctuary_parts = altar_geometry()
+        add(sanctuary_parts[:1], "arch", frames=False)   # the floor region
+        add(sanctuary_parts[1:], "arch")
         for item in contract["objects"]:
             parts = self.object_parts(item)
             if parts:
@@ -412,8 +655,11 @@ class Underlay:
         # Fit the whole scene into the panel with a fixed margin. Deterministic:
         # the same contract always yields the same frame.
         margin = 46.0
-        xs = [x for _, _, pts in drawable for x, _ in pts]
-        ys = [y for _, _, pts in drawable for _, y in pts]
+        xs = [x for x, _ in framing] or [x for _, _, pts in drawable for x, _ in pts]
+        ys = [y for _, y in framing] or [y for _, _, pts in drawable for _, y in pts]
+        # Leave a little floor below the feet so the figures are planted rather
+        # than cropped at the ankle.
+        ys.append(max(ys) + (max(ys) - min(ys)) * 0.10)
         if not xs:
             return ""
         span_x = max(xs) - min(xs) or 1.0
@@ -524,7 +770,13 @@ def projected_orientation(contract: dict, object_id: str, panel_index: int = 0):
     if pitch == 0.0:
         world = reading.get("page_up_vector") or world
     if world is None:
-        world = [math.cos(math.radians(yaw)), math.sin(math.radians(yaw)), 0.0]
+        # No published vector, so the expectation is built from the contract's
+        # own yaw AND the support pitch it declares. Building it from the yaw
+        # alone silently exempted every pitched object that does not publish a
+        # vector: the drawing applied the pitch, the expectation did not, and
+        # the difference was reported as the model failing to embody its
+        # transform. The pitch is part of the transform.
+        world = world_axis(page_up, yaw, pitch)
     here = camera.project(origin)
     there = camera.project([
         origin[0] + world[0] * reach,

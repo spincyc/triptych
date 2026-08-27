@@ -35,14 +35,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -54,8 +55,8 @@ actors:
   anchor: predella-centre
   position:
   - 0.0
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: centre
   depth_rank: 2
   posture: standing
@@ -66,7 +67,7 @@ actors:
   - 1.0
   - 0.0
   facing_semantic: altar
-  facing_derivation: degenerate-toward-altar
+  facing_derivation: toward-target
   gaze: altar
   hands:
     joined: true
@@ -120,8 +121,8 @@ actors:
     to: step-1-epistle
     to_xyz:
     - 0.5
-    - 0.5
-    - 0.25
+    - 0.37
+    - 0.16
     settles_at: plano-centre-epistle
     note: AC1 returns the towel to the credence, meets AC2 at the centre, genuflects with him, and goes
       to his kneeling place.
@@ -170,8 +171,8 @@ actors:
     to: step-1-gospel
     to_xyz:
     - -0.5
-    - 0.5
-    - 0.25
+    - 0.37
+    - 0.16
     settles_at: plano-centre-gospel
     note: AC2 returns the water cruet and the lavabo dish to the credence, meets AC1 at the centre, genuflects
       with him, and goes to his kneeling place.
@@ -204,10 +205,10 @@ objects:
   - 1.0
   - 0.0
   orientation_rule: handle-to-priest
-  yaw_deg: 162.645975
+  yaw_deg: 169.726669
   facing_vector:
-  - -0.95448
-  - 0.298275
+  - -0.983968
+  - 0.178344
   - 0.0
   orientation_note: turned toward the priest
 - id: lavabo-dish
@@ -224,10 +225,10 @@ objects:
   - 1.0
   - 0.0
   orientation_rule: faces-priest
-  yaw_deg: 162.645975
+  yaw_deg: 169.726669
   facing_vector:
-  - -0.95448
-  - 0.298275
+  - -0.983968
+  - 0.178344
   - 0.0
   orientation_note: turned toward the priest
 - id: credence-table
@@ -261,7 +262,7 @@ objects:
   position:
   - 0.0
   - 1.62
-  - 1.35
+  - 1.55
 - id: host
   placement_semantic: corporal-front-centre
   placement_kind: mensa
@@ -274,7 +275,7 @@ objects:
   position:
   - 0.0
   - 1.38
-  - 1.35
+  - 1.55
 - id: corporal
   placement_semantic: mensa-centre
   placement_kind: mensa
@@ -287,7 +288,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:

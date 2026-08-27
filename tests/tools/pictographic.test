@@ -123,6 +123,31 @@ if [ -e "$seed/$blocked" ]; then
 	exit 1
 fi
 
+# The publication composition is gated on someone having looked at the canary,
+# and the gate is bound to a digest of the files that decide what the picture
+# looks like. Reporting is read-only; --refresh is not exercised here, because
+# it writes to the tracked tree.
+review="$(run_tool composition-review roman-1962 low-mass)"
+match 'canary LM-001A' "$review"
+match 'status +approved' "$review"
+
+# Fail-closed on a moved composition: a scratch copy of the layer with one
+# changed number must make art-seed refuse and write nothing. This proves the
+# gate against a copy, so the tracked tree is never perturbed.
+layer="$repo/src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1"
+cp "$layer/sanctuary-master.yaml" "$sandbox/sanctuary-master.bak"
+sed -i 's/^  tread_depth: .*/  tread_depth: 0.31/' "$layer/sanctuary-master.yaml"
+if run_tool art-seed roman-1962 low-mass LM-001A --out "$sandbox/stale" >/dev/null 2>&1; then
+	cp "$sandbox/sanctuary-master.bak" "$layer/sanctuary-master.yaml"
+	echo "art-seed accepted a composition nobody has looked at" >&2
+	exit 1
+fi
+cp "$sandbox/sanctuary-master.bak" "$layer/sanctuary-master.yaml"
+if [ -e "$sandbox/stale/LM-001A" ]; then
+	echo "a refused art-seed left a package behind" >&2
+	exit 1
+fi
+
 reject nosuchverb
 reject render-contract
 reject render-contract roman-1962 low-mass LM-999Z --out "$out"

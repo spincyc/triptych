@@ -1836,3 +1836,83 @@ state = "complete"
     "tools/tests/test_missal_pitch.py",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-sanctuary-blocking"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/sanctuary-master.yaml"
+promise = "Make the render underlay read as a priest and two servers standing in plano at the foot of a traditional high altar, by defining the sanctuary once, resolving the structural level ordinals into physical geometry, giving the figures blocking envelopes and real foot contact, and gating the publication composition on measurement and on a human having looked at it."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "sanctuary-defined-once"
+  criterion = "One authored file defines the sanctuary - levels, floor region, steps, predella, altar mass and fixed anchors - and the underlay, the skeleton and the compiler all read it rather than rebuilding it independently."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/sanctuary-master.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/skeleton.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "ordinals-resolved-not-measured"
+  criterion = "The approved structural levels are treated as ordinals and resolved to physical elevations and standing depths by a documented, monotonic mapping applied once in the compiler, so contracts, skeletons and underlays agree, and no structural file is altered."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/sanctuary-master.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/_contract.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "figures-are-blocked-not-sketched"
+  criterion = "Actor envelopes carry head, shoulders, torso, waist, arms, hem and vesture width with real body depth, so a figure facing along the view axis no longer collapses to a vertical spike, and the priest is distinguishable from a server."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "feet-meet-the-sanctuary"
+  criterion = "Every standing, kneeling and genuflecting actor has explicit flat contact patches, and a check proves each one lies in the plane of its actor's level with its centre on that level's own tread, with actors in transit counted separately rather than silently skipped."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/validate.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "composition-is-measured"
+  criterion = "The drawn plate is measured against authored thresholds for the step band, the altar band, the altar's mass above the mensa, the floor below the feet and the actors' height, the crop is composed around the subject rather than the widest element, and each guard is demonstrated to fire."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/validate.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/sanctuary-master.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "someone-has-to-look"
+  criterion = "The publication composition is gated on a recorded visual review of the canary, bound to a digest of the files that decide what the picture looks like, so that art-seed refuses both an unapproved preset and an approval whose geometry has since moved."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/sanctuary-master.yaml",
+    "scripts/_pictographic.py",
+    "tools/pictographic",
+  ]
+
+  [[deliverables.requirements]]
+  id = "close-views-clip"
+  criterion = "A perspective camera rejects geometry nearer than its near plane rather than clamping depth, so an in-sanctuary station point no longer flings the floor and the reredos across the plate as diverging funnels, and the over-the-shoulder preset carries its own short lens and a station point that clears both the kneeling servers and the priest's own head."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/camera-model.yaml",
+    "tools/tests/test_sanctuary_blocking.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "camera-chosen-from-pictures"
+  criterion = "A debug calibration sheet draws the published publication camera beside the candidates that were rejected, including the two earlier raises, and is never part of an art-seed package."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/camera-calibration.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/review/camera-calibration-v1.svg",
+  ]

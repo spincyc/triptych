@@ -35,14 +35,15 @@ panels:
     position: priest-over-shoulder
     position_xyz:
     - 0.0
-    - 0.9
-    - 2.1
+    - 0.72
+    - 2.62
     up: upward
+    focal_length_px: 640
     target: mensa-centre
     target_xyz:
     - 0.0
     - 1.5
-    - 1.35
+    - 1.55
 additional_panels: forbidden
 actors:
 - id: priest
@@ -50,16 +51,16 @@ actors:
   anchor: predella-epistle
   position:
   - 0.6
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: epistle
   depth_rank: 3
   posture: standing
   bow: none
-  body_facing_yaw_deg: 180.0
+  body_facing_yaw_deg: 160.709954
   body_facing_vector:
-  - -1.0
-  - 0.0
+  - -0.943858
+  - 0.33035
   - 0.0
   facing_semantic: altar
   facing_derivation: toward-target
@@ -83,10 +84,10 @@ actors:
   depth_rank: 1
   posture: standing
   bow: none
-  body_facing_yaw_deg: 86.185925
+  body_facing_yaw_deg: 85.567332
   body_facing_vector:
-  - 0.066519
-  - 0.997785
+  - 0.077287
+  - 0.997009
   - 0.0
   facing_semantic: inward-to-priest
   facing_derivation: toward-actor
@@ -101,8 +102,8 @@ actors:
     from: step-1-epistle
     from_xyz:
     - 0.5
-    - 0.5
-    - 0.25
+    - 0.37
+    - 0.16
     via: []
     via_xyz: []
     to: plano-epistle
@@ -117,16 +118,16 @@ actors:
   anchor: step-1-epistle
   position:
   - 0.5
-  - 0.5
-  - 0.25
+  - 0.37
+  - 0.16
   side: epistle
   depth_rank: 2
   posture: standing
   bow: none
-  body_facing_yaw_deg: 84.289407
+  body_facing_yaw_deg: 83.796552
   body_facing_vector:
-  - 0.099504
-  - 0.995037
+  - 0.108059
+  - 0.994144
   - 0.0
   facing_semantic: inward-to-priest
   facing_derivation: toward-actor
@@ -149,8 +150,8 @@ actors:
     to: step-1-epistle
     to_xyz:
     - 0.5
-    - 0.5
-    - 0.25
+    - 0.37
+    - 0.16
     settles_at: step-1-epistle
     note: AC2 comes up in his turn to hand the water to the priest.
 objects:
@@ -181,7 +182,7 @@ objects:
   position:
   - 0.6
   - 1.5
-  - 1.35
+  - 1.55
 - id: purificator
   placement_semantic: held at the node of the chalice under the priest's left thumb
   placement_kind: actor-held
@@ -224,7 +225,7 @@ objects:
   position:
   - 0.0
   - 1.38
-  - 1.35
+  - 1.55
 - id: paten
   placement_semantic: corporal-right-edge
   placement_kind: mensa
@@ -237,12 +238,12 @@ objects:
   position:
   - 0.35
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
-  yaw_deg: 0.0
+  yaw_deg: 319.969741
   facing_vector:
-  - 1.0
-  - 0.0
+  - 0.765705
+  - -0.643192
   - 0.0
   orientation_note: turned toward the priest
 - id: corporal
@@ -257,7 +258,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -276,7 +277,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -295,7 +296,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -314,7 +315,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -333,7 +334,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: missal-reading
   yaw_deg: 135.0
   facing_vector:

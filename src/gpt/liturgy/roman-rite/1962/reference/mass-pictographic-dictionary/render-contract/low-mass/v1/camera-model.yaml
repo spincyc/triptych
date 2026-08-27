@@ -55,13 +55,47 @@ reason: >-
   offending inset "TOP VIEW (NAVE)" is rejected on this list and again by the
   requirement that every panel name a projection from `projections`.
 
+# Which knob to turn, in order.
+#
+# This layer has twice fixed a picture by raising the camera, and both times
+# the object was the problem. The order below is the standing conclusion: reach
+# for elevation last, and only to express a viewpoint somebody actually wants.
+# If the reason for raising it is that something cannot be seen, the answer is
+# almost always that the something is modelled wrong.
+composition_instruments:
+  preferred_order:
+    - id: model-the-object
+      note: >-
+        Not a camera move at all, and the right answer most of the time. The
+        Missal reads because it is on a stand; the burse reads because it
+        stands upright. Both were previously flat, and both previously looked
+        like camera problems.
+    - id: distance
+      note: Step back. Costs nothing and flattens the perspective toward frontal.
+    - id: focal-length
+      note: >-
+        A longer lens with the distance. The preset owns its focal length so
+        the renderer cannot quietly choose a different composition.
+    - id: target
+      note: Aim higher or lower on the same standing point. Changes what centres.
+    - id: crop
+      note: >-
+        The fit composes around the subject and lets the floor run past the
+        frame. A crop cannot invent what was never drawn.
+    - id: elevation
+      note: >-
+        Last. Raising the eye opens the treads and turns a nave view into an
+        engineering overhead, and it is the move that hid two modelling faults.
+        review/camera-calibration-v1.svg draws what it costs.
+  see_also: review/camera-calibration-v1.svg
+
 camera_positions:
   - id: nave-centre
     anchor_hint: "on the centreline, in the nave, before the steps"
-    position: [0.0, -4.2, 1.85]
-    height_m_equivalent: 1.85
-    distance_from_altar: 5.6
-    focal_length_px: 1180
+    position: [0.0, -5.6, 1.52]
+    height_m_equivalent: 1.61
+    distance_from_altar: 6.9
+    focal_length_px: 1520
     projection_hint: perspective
     semantic: publication-nave-front
     note: >-
@@ -81,26 +115,37 @@ camera_positions:
   - id: nave-epistle
     position: [2.2, -4.0, 1.6]
   - id: sanctuary-centre
-    position: [0.0, -0.5, 1.6]
+    position: [0.0, -1.2, 1.6]
   - id: gospel-side
-    position: [-4.0, 1.5, 1.6]
+    position: [-4.0, 1.16, 1.6]
   - id: epistle-side
-    position: [4.0, 1.5, 1.6]
+    position: [4.0, 1.16, 1.6]
   - id: overhead
-    position: [0.0, 1.0, 6.0]
+    position: [0.0, 0.75, 6.0]
   - id: priest-over-shoulder
-    position: [0.0, 0.9, 2.1]
-    note: Behind and above the priest at the predella, looking at the mensa.
+    position: [0.0, 0.72, 2.62]
+    focal_length_px: 640
+    note: >-
+      Behind and above the priest at the predella, looking at the mensa. It
+      carries its own short lens because it is a close view: the priest stands
+      at depth 1.29 and this eye is 0.4 behind him, and at that range the
+      publication lens magnified the altar far past the edges of the plate. A
+      renderer that fell back to the publication default drew a funnel, which
+      is why a preset now owns its focal length rather than inheriting one.
+      The station point stays between the kneeling servers and the priest, and
+      high enough to look over him: move it back to gain room and it lands
+      among the servers, and drop it to his own head height and the near-plane
+      cull removes the very figure the view is of.
 
 targets:
   - id: altar-centre
-    position: [0.0, 1.35, 1.15]
+    position: [0.0, 1.35, 1.42]
   - id: mensa-centre
-    position: [0.0, 1.5, 1.35]
+    position: [0.0, 1.5, 1.55]
   - id: foot-of-altar
-    position: [0.0, 0.0, 0.9]
+    position: [0.0, 0.0, 0.95]
   - id: sanctuary-floor
-    position: [0.0, 0.75, 0.0]
+    position: [0.0, 0.64, 0.0]
 
 frame_requirements:
   orthographic-plan:

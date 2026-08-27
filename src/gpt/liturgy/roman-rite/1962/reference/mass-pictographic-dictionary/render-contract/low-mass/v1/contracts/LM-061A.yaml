@@ -35,14 +35,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -54,8 +55,8 @@ actors:
   anchor: predella-centre
   position:
   - 0.0
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: centre
   depth_rank: 3
   posture: standing
@@ -82,16 +83,16 @@ actors:
   anchor: step-1-epistle
   position:
   - 0.5
-  - 0.5
-  - 0.25
+  - 0.37
+  - 0.16
   side: epistle
   depth_rank: 1
   posture: standing
   bow: none
-  body_facing_yaw_deg: 116.565051
+  body_facing_yaw_deg: 113.86833
   body_facing_vector:
-  - -0.447214
-  - 0.894427
+  - -0.404636
+  - 0.914478
   - 0.0
   facing_semantic: altar
   facing_derivation: toward-target
@@ -166,7 +167,7 @@ objects:
   position:
   - 0.0
   - 1.72
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
   yaw_deg: 270.0
   facing_vector:
@@ -186,7 +187,7 @@ objects:
   position:
   - 0.6
   - 1.5
-  - 1.35
+  - 1.55
 - id: purificator
   placement_semantic: mensa-epistle
   placement_kind: mensa
@@ -199,7 +200,7 @@ objects:
   position:
   - 0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -218,7 +219,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -237,7 +238,7 @@ objects:
   position:
   - 0.0
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -256,7 +257,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -275,7 +276,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: aligned-to-mensa
   yaw_deg: 90.0
   facing_vector:
@@ -294,7 +295,7 @@ objects:
   position:
   - -0.6
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: missal-reading
   yaw_deg: 135.0
   facing_vector:

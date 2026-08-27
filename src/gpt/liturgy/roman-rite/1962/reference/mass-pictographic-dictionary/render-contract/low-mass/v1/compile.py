@@ -85,6 +85,7 @@ class Compiler:
                 "position": preset["position"],
                 "position_xyz": [round6(v) for v in position["position"]],
                 "up": preset.get("up", "upward"),
+                "focal_length_px": position.get("focal_length_px"),
             },
         }
         target_id = preset.get("target")

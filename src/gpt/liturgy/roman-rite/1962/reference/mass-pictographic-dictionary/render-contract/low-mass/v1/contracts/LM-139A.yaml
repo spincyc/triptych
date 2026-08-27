@@ -40,14 +40,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -59,16 +60,16 @@ actors:
   anchor: predella-gospel-corner
   position:
   - -0.9
-  - 1.5
-  - 1.0
+  - 1.29
+  - 0.64
   side: gospel
   depth_rank: 3
   posture: standing
   bow: none
-  body_facing_yaw_deg: 180.0
+  body_facing_yaw_deg: 103.392498
   body_facing_vector:
-  - -1.0
-  - 0.0
+  - -0.231621
+  - 0.972806
   - 0.0
   facing_semantic: last-gospel-card
   facing_derivation: toward-target
@@ -154,12 +155,12 @@ objects:
   position:
   - -0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
-  yaw_deg: 0.0
+  yaw_deg: 283.392498
   facing_vector:
-  - 1.0
-  - 0.0
+  - 0.231621
+  - -0.972806
   - 0.0
   orientation_note: turned toward the priest
 - id: missal
@@ -175,7 +176,7 @@ objects:
   position:
   - 0.95
   - 1.5
-  - 1.35
+  - 1.55
   orientation_rule: missal-reading
   yaw_deg: 135.0
   facing_vector:
@@ -221,7 +222,7 @@ objects:
   position:
   - 0.0
   - 1.62
-  - 1.35
+  - 1.55
 visible_invariants:
 - INV-FORM-01
 - INV-GEO-01

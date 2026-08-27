@@ -39,14 +39,15 @@ panels:
     position: nave-centre
     position_xyz:
     - 0.0
-    - -4.2
-    - 1.85
+    - -5.6
+    - 1.52
     up: upward
+    focal_length_px: 1520
     target: altar-centre
     target_xyz:
     - 0.0
     - 1.35
-    - 1.15
+    - 1.42
     frame:
       page_right_world_direction: epistleward
       page_left_world_direction: gospelward
@@ -58,16 +59,16 @@ actors:
   anchor: step-1-gospel
   position:
   - -0.5
-  - 0.5
-  - 0.25
+  - 0.37
+  - 0.16
   side: gospel
   depth_rank: 2
   posture: kneeling
   bow: none
-  body_facing_yaw_deg: 67.714412
+  body_facing_yaw_deg: 69.676863
   body_facing_vector:
-  - 0.379223
-  - 0.925305
+  - 0.347314
+  - 0.937749
   - 0.0
   facing_semantic: altar-cross
   facing_derivation: toward-target
@@ -143,7 +144,7 @@ objects:
   position:
   - 0.0
   - 1.62
-  - 1.35
+  - 1.55
 - id: altar-cross
   placement_semantic: altar-cross
   placement_kind: mensa
@@ -156,12 +157,12 @@ objects:
   position:
   - 0.0
   - 1.72
-  - 1.35
+  - 1.55
   orientation_rule: faces-priest
-  yaw_deg: 247.714412
+  yaw_deg: 249.676863
   facing_vector:
-  - -0.379223
-  - -0.925305
+  - -0.347314
+  - -0.937749
   - 0.0
   orientation_note: turned toward the priest
 visible_invariants:

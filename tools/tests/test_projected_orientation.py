@@ -68,14 +68,44 @@ FIDELITY_TOLERANCE_DEG = 1.5
 # untouched by a change, not merely inside tolerance.
 EXACT_DEG = 0.01
 
-# The camera at which the defect was reported: the nave-centre eye before it
-# was raised to 3.6, and the original lower eye before that.
-REPORTED_CAMERA_XYZ = [0.0, -4.2, 1.36]
-ORIGINAL_CAMERA_XYZ = [0.0, -4.2, 1.30]
+# The historical nave-centre eyes, taken from camera-model.yaml's own history
+# rather than invented: the view was authored at [0, -4.0, 1.6], raised to
+# [0, -3.6, 2.35] when a flat Missal would not read, and raised again to
+# [0, -3.6, 3.6]. The two below are the ones this file reproduces the report
+# at, and they are now the values its body actually uses. The previous
+# constants, [0, -4.2, 1.36] and [0, -4.2, 1.30], were never nave-centre
+# positions at all, and the test that named them measured different numbers.
+REPORTED_CAMERA_XYZ = [0.0, -3.6, 2.35]
+ORIGINAL_CAMERA_XYZ = [0.0, -4.0, 1.6]
+
+# A station on the publication camera's own centreline and distance, dropped
+# to the sanctuary floor. This is what it now takes to make the PITCHED book
+# illegible: at the publication eye it separates 29.73deg, and here 13.07,
+# against a floor of 25. The historical eyes above cannot do it any more,
+# because the book they were raised for was flat and this one is not.
+GRAZING_CAMERA_XYZ = [0.0, -5.6, 0.40]
+
+# A true side elevation collapses its view axis, and that is a measurable fact
+# about the view rather than a label a panel awards itself. Measured in the
+# two exempt scenes: a unit step along world X moves 16.32 page units where a
+# unit step along Y or Z moves 249.7, a ratio of 0.0654. At the publication
+# camera the same ratio is 0.998. The bound sits between them.
+COLLAPSED_AXIS_RATIO = 0.10
 
 # A dot product of unit vectors is exact arithmetic on authored 0s and 1s, but
 # compare with a tolerance so the contract is "parallel", not "equal strings".
 AXIS_TOLERANCE = 1e-6
+
+# The object library may excuse an object from the legibility floor while it
+# lies flat, on the ground that it has no orientation to communicate. That
+# claim is measurable, and is measured here rather than believed: turn the
+# object and see how much of its own drawn extent its projected bounding box
+# moves. At 37 degrees of extra yaw the paten — the object that declares the
+# exemption — shifts by 0.007 of its extent in the first scene that places it,
+# while the Missal shifts by 0.086 there and 0.137 in the canary. 0.05 sits
+# between them.
+YAW_INVARIANCE_RATIO = 0.05
+YAW_PROBE_DEG = 37.0
 
 
 def load(path: Path) -> dict:
@@ -148,6 +178,87 @@ class ProjectedOrientationTests(unittest.TestCase):
             "the object is absent, unplaced or unoriented",
         )
         return measured
+
+    def flat_exempt_ids(self) -> set:
+        """Objects the library excuses the floor while they lie flat."""
+        return {
+            object_id
+            for object_id, definition in self.library["objects"].items()
+            if (definition.get("legibility") or {}).get("exempt_when_flat")
+        }
+
+    def first_scene_with(self, object_id: str):
+        """The first art-ready perspective scene that places this object."""
+        for plate, contract in self.art_ready():
+            if is_side_elevation(contract):
+                continue
+            for item in contract["objects"]:
+                if (
+                    item["id"] == object_id
+                    and item.get("position") is not None
+                    and item.get("yaw_deg") is not None
+                ):
+                    return plate, copy.deepcopy(contract)
+        raise AssertionError(
+            f"no art-ready perspective scene places an oriented {object_id}"
+        )
+
+    def yaw_shift(self, contract: dict, object_id: str) -> float:
+        """How far turning an object moves its drawn extent, relative to it.
+
+        The projected bounding box of the object's own geometry, at its
+        compiled yaw and at that yaw plus a probe angle. Divided by the box's
+        own size, so the answer is about shape rather than about how large the
+        object happens to be drawn.
+        """
+        camera = self.underlay.Camera(contract["panels"][0])
+        engine = self.underlay.Underlay()
+        item = self.item(contract, object_id)
+
+        def box(yaw):
+            turned = copy.deepcopy(item)
+            turned["yaw_deg"] = yaw
+            parts = engine.object_parts(turned)
+            self.assertTrue(parts, f"{object_id} draws no geometry")
+            points = [
+                camera.project(point)[:2] for part in parts for point in part
+            ]
+            xs = [point[0] for point in points]
+            ys = [point[1] for point in points]
+            return min(xs), max(xs), min(ys), max(ys)
+
+        here = box(item["yaw_deg"])
+        there = box(item["yaw_deg"] + YAW_PROBE_DEG)
+        extent = (here[1] - here[0]) + (here[3] - here[2])
+        self.assertGreater(
+            extent, 0.0, f"the drawn {object_id} has no extent at all"
+        )
+        return max(abs(a - b) for a, b in zip(here, there)) / extent
+
+    def collapsed_axis_ratio(self, contract: dict) -> float:
+        """How much of the in-plane page scale the view axis still reaches.
+
+        A side elevation looks across the sanctuary, so world X is the axis it
+        collapses. Project a unit step along X and a unit step along each of
+        the two axes that stay in the view plane, and take the ratio. Near
+        zero is a collapsed axis; near one is a view that is not collapsing
+        anything and has no business claiming the exemption.
+        """
+        camera = self.underlay.Camera(contract["panels"][0])
+        origin = [0.0, 1.5, 1.55]
+
+        def reach(step):
+            here = camera.project(origin)
+            there = camera.project(
+                [origin[index] + step[index] for index in range(3)]
+            )
+            return math.hypot(there[0] - here[0], there[1] - here[1])
+
+        in_plane = max(reach([0.0, 1.0, 0.0]), reach([0.0, 0.0, 1.0]))
+        self.assertGreater(
+            in_plane, 0.0, "the view plane has no scale at all"
+        )
+        return reach([1.0, 0.0, 0.0]) / in_plane
 
     def art_ready(self):
         for plate, contract in sorted(self.contracts.items()):
@@ -242,7 +353,9 @@ class ProjectedOrientationTests(unittest.TestCase):
         # whole point of the lane that followed — so flattening the book is
         # what restores the conditions the legibility check was written for.
         lowered = self.contract(CANARY)
-        lowered["panels"][0]["camera"]["position_xyz"] = [0.0, -3.6, 2.35]
+        lowered["panels"][0]["camera"]["position_xyz"] = list(
+            REPORTED_CAMERA_XYZ
+        )
         for item in lowered["objects"]:
             if item["id"] == "missal":
                 item["reading"]["support_pitch_deg"] = 0.0
@@ -273,7 +386,9 @@ class ProjectedOrientationTests(unittest.TestCase):
         )
 
         deeper = self.contract(CANARY)
-        deeper["panels"][0]["camera"]["position_xyz"] = [0.0, -3.6, 1.6]
+        deeper["panels"][0]["camera"]["position_xyz"] = list(
+            ORIGINAL_CAMERA_XYZ
+        )
         for item in deeper["objects"]:
             if item["id"] == "missal":
                 item["reading"]["support_pitch_deg"] = 0.0
@@ -299,10 +414,23 @@ class ProjectedOrientationTests(unittest.TestCase):
 
     # -- 6: every oriented object, every art-ready scene ------------------
     def test_every_oriented_object_in_every_art_ready_scene(self):
-        """The property holds across the corpus, not just at the canary."""
+        """The property holds across the corpus, not just at the canary.
+
+        Fidelity is demanded of everything. Legibility is demanded of
+        everything that has an orientation to show. An object may declare
+        `legibility.exempt_when_flat` in the object library — the paten does,
+        because a disc lying on the linen looks the same at every yaw — and
+        that claim is not taken on trust: the exemption is counted, refused to
+        the Missal, applied only while the object really is unpitched, and its
+        premise is measured by turning the object and looking at what reaches
+        the page. `test_the_flat_exemption_is_earned_and_narrow` is that
+        measurement.
+        """
+        exempt_ids = self.flat_exempt_ids()
         worst_separation = (180.0, None)
         checked = 0
         scenes = 0
+        flat_exempt = 0
         for plate, contract in self.art_ready():
             if is_side_elevation(contract):
                 continue
@@ -322,27 +450,105 @@ class ProjectedOrientationTests(unittest.TestCase):
                     f"{measured['page_up_deg']}deg but its compiled "
                     f"orientation projects to {measured['expected_deg']}deg",
                 )
+                # The exemption never touches fidelity, and dies the moment
+                # the object is pitched or picked up.
+                if item["id"] in exempt_ids and measured["pitch_deg"] == 0.0:
+                    flat_exempt += 1
+                    continue
                 if measured["separation_deg"] < worst_separation[0]:
                     worst_separation = (
                         measured["separation_deg"], f"{plate}/{item['id']}"
                     )
         self.assertGreater(scenes, 100, "too few art-ready scenes measured")
         self.assertGreater(checked, 100, "too few oriented objects measured")
+        self.assertGreater(
+            checked - flat_exempt, 100,
+            f"only {checked - flat_exempt} of {checked} oriented objects were "
+            f"held to the legibility floor; {flat_exempt} were excused as "
+            "lying flat. An exemption that covers most of the corpus is not "
+            "an exemption",
+        )
         self.assertGreaterEqual(
             worst_separation[0], self.floor,
             f"worst axis separation {worst_separation[0]}deg at "
             f"{worst_separation[1]}, below the {self.floor}deg floor "
-            f"(measured {checked} oriented objects in {scenes} scenes)",
+            f"(measured {checked} oriented objects in {scenes} scenes, "
+            f"{flat_exempt} excused as lying flat)",
+        )
+
+    def test_the_flat_exemption_is_earned_and_narrow(self):
+        """An object excused the floor must really look the same at any yaw.
+
+        The exemption's own reason is a claim about the picture: "turn it on
+        the corporal and nothing about it looks different". So turn it. If the
+        drawing changes, the object does communicate an orientation and the
+        floor is the check that says whether it communicates it legibly.
+
+        Paired with the Missal, which fails the same measurement by an order
+        of magnitude, so the probe cannot be passing everything.
+        """
+        exempt_ids = self.flat_exempt_ids()
+        self.assertTrue(
+            exempt_ids,
+            "no object declares legibility.exempt_when_flat, so this test "
+            "measures nothing; if the exemption has been withdrawn, the "
+            "corpus check above should be holding every object to the floor",
+        )
+        self.assertNotIn(
+            "missal", exempt_ids,
+            "the Missal declares a flat-lying legibility exemption. A book "
+            "that cannot show its reading orientation is this lane's defect, "
+            "not an exception to it",
+        )
+
+        for object_id in sorted(exempt_ids):
+            with self.subTest(object_id=object_id):
+                declaration = self.library["objects"][object_id]["legibility"]
+                self.assertTrue(
+                    str(declaration.get("reason") or "").strip(),
+                    f"{object_id} claims the exemption without a reason",
+                )
+                plate, contract = self.first_scene_with(object_id)
+                shift = self.yaw_shift(contract, object_id)
+                self.assertLess(
+                    shift, YAW_INVARIANCE_RATIO,
+                    f"{plate}: turning the {object_id} by {YAW_PROBE_DEG}deg "
+                    f"moves its drawn extent by {shift:.4f} of itself. It "
+                    "does show its orientation, so it is not entitled to be "
+                    "excused from showing it legibly",
+                )
+
+        # The probe has teeth: the Missal moves far more than the bound.
+        canary = self.contract(CANARY)
+        missal_shift = self.yaw_shift(canary, "missal")
+        self.assertGreater(
+            missal_shift, YAW_INVARIANCE_RATIO,
+            f"turning the Missal by {YAW_PROBE_DEG}deg moves its drawn extent "
+            f"by only {missal_shift:.4f} of itself, inside the "
+            f"{YAW_INVARIANCE_RATIO} bound. The probe would excuse the book "
+            "as well, and it measures nothing",
         )
 
     # -- 7: the exemption is earned, not assumed -------------------------
     def test_side_elevations_are_exempt_for_a_real_reason(self):
         """Fidelity holds where legibility cannot, which is why they are out.
 
-        The exemption is pinned to a measured property. If a side elevation
-        ever stopped collapsing the Missal's axes, or ever stopped drawing it
-        faithfully, this test would say so rather than let the exemption
-        quietly widen to cover scenes that simply failed.
+        The exemption is pinned to a measured property of the VIEW. It used to
+        be pinned to the Missal instead — the book's axes had to collapse in
+        an exempt scene — and that stopped being true when the book was
+        pitched: it now separates 28.81deg in both side elevations, well above
+        the floor, because pitch gives its page-up a vertical component that a
+        horizontal projection cannot flatten. That is the pitch working, not
+        the exemption failing, and reading it as a failure would have argued
+        for taking the pitch away.
+
+        What the exemption actually rests on is that the view collapses its
+        own axis, so an object's horizontal orientation cannot be read there
+        however well it is modelled. That is measured directly below. The
+        widening the old test feared is guarded separately, by refusing to let
+        a perspective panel claim the exemption at all: `validate.py` exempts
+        on `collapses_equal_depth` OR a side-elevation projection, and the
+        first of those is a flag any panel could set.
         """
         exempt = [
             (plate, contract)
@@ -356,20 +562,89 @@ class ProjectedOrientationTests(unittest.TestCase):
         )
         for plate, contract in exempt:
             with self.subTest(plate=plate):
-                measured = self.measure(copy.deepcopy(contract), "missal")
-                self.assertLess(
-                    measured["fidelity_deg"], FIDELITY_TOLERANCE_DEG,
-                    f"{plate}: a side elevation is exempt from legibility, "
-                    "never from fidelity, and the drawn Missal points "
-                    f"{measured['page_up_deg']}deg against an expected "
-                    f"{measured['expected_deg']}deg",
+                primary = contract["panels"][0]["camera"]
+                self.assertEqual(
+                    primary["projection"], "orthographic-elevation-side",
+                    f"{plate}: this scene is exempted from the legibility "
+                    f"floor while drawing a {primary['projection']} panel. "
+                    "The exemption belongs to a true side elevation; a "
+                    "perspective panel carrying collapses_equal_depth would "
+                    "be a failing scene excusing itself",
                 )
+                self.assertTrue(
+                    primary.get("collapses_equal_depth"),
+                    f"{plate}: a side elevation that does not declare "
+                    "collapses_equal_depth is hiding what the view does",
+                )
+
+                # The exemption, earned: a unit step along the collapsed world
+                # axis must reach the page as a small fraction of what the two
+                # axes in the view plane reach.
+                ratio = self.collapsed_axis_ratio(contract)
                 self.assertLess(
-                    measured["separation_deg"], self.floor,
-                    f"{plate}: the Missal's axes separate by "
-                    f"{measured['separation_deg']}deg, at or above the "
-                    f"{self.floor}deg floor, so this scene is not in fact "
-                    "collapsing depth and does not need the exemption",
+                    ratio, COLLAPSED_AXIS_RATIO,
+                    f"{plate}: a unit step along the view axis moves "
+                    f"{ratio:.4f} of what a unit step in the view plane does. "
+                    "This view is not collapsing depth, so nothing in it is "
+                    "entitled to be excused from showing an orientation",
+                )
+
+                # Never exempt from fidelity, for any oriented object present.
+                present = []
+                for object_id in ORIENTED_OBJECTS:
+                    item = self.underlay.projected_orientation(
+                        copy.deepcopy(contract), object_id
+                    )
+                    if item is None:
+                        continue
+                    present.append((object_id, item))
+                    self.assertLess(
+                        item["fidelity_deg"], FIDELITY_TOLERANCE_DEG,
+                        f"{plate}: a side elevation is exempt from "
+                        "legibility, never from fidelity, and the drawn "
+                        f"{object_id} points {item['page_up_deg']}deg against "
+                        f"an expected {item['expected_deg']}deg",
+                    )
+                self.assertTrue(
+                    present,
+                    f"{plate}: no oriented object is measurable here, so this "
+                    "scene proves nothing about the exemption",
+                )
+
+                # And the record that replaces the old assertion: pitch does
+                # real work even in the view that collapses depth. A
+                # horizontal projection cannot flatten an axis with a vertical
+                # component, so the Missal on its stand separates 26.44deg
+                # here where the paten lying flat beside it separates 6.16.
+                # The Missal's own margin over the 25deg floor is thin and
+                # moves with the side camera, so what is asserted is the gap
+                # between the inclined object and the flat one rather than the
+                # absolute number.
+                pitched = [
+                    (name, item) for name, item in present
+                    if item["pitch_deg"] > 0.0
+                ]
+                flat = [
+                    (name, item) for name, item in present
+                    if item["pitch_deg"] == 0.0
+                ]
+                self.assertTrue(
+                    pitched and flat,
+                    f"{plate}: this scene holds "
+                    f"{sorted(name for name, _ in present)}, not both an "
+                    "inclined and a flat oriented object, so the comparison "
+                    "below measures nothing",
+                )
+                self.assertGreater(
+                    min(item["separation_deg"] for _, item in pitched),
+                    max(item["separation_deg"] for _, item in flat),
+                    f"{plate}: the inclined objects "
+                    f"{[(n, i['separation_deg']) for n, i in pitched]} read "
+                    f"no better than the flat ones "
+                    f"{[(n, i['separation_deg']) for n, i in flat]}. The "
+                    "exemption is for a view that cannot show a horizontal "
+                    "orientation; if pitch buys nothing here either, the "
+                    "objects are back to being flat",
                 )
 
     # -- 8: the local frame is data ---------------------------------------
@@ -439,7 +714,11 @@ class ProjectedOrientationTests(unittest.TestCase):
         self.assertIn("oriented objects", output)
         self.assertIn("embody their compiled transform", output)
         self.assertIn("axis separation", output)
-        self.assertIn("side-elevation scenes exempt", output)
+        # Every exemption is named and counted in the same line. A silent
+        # exemption is how a floor stops being a floor.
+        self.assertIn("side-elevation scenes", output)
+        self.assertIn("flat unpitched objects", output)
+        self.assertIn("exempt by design", output)
 
     def test_validator_rejects_illegible_and_infidelitous_scenes(self):
         """Called directly on mutated copies, the check must actually raise.
@@ -448,15 +727,29 @@ class ProjectedOrientationTests(unittest.TestCase):
         contract list as an argument, so a deep copy is enough.
         """
         clean = self.contract(CANARY)
-        checked, worst, exempt = self.validate.check_projected_orientation([clean])
+        checked, worst, exempt, flat_exempt = (
+            self.validate.check_projected_orientation([clean])
+        )
         self.assertGreater(
             checked, 0, "the canary offered the validator nothing to measure"
         )
         self.assertGreaterEqual(worst, self.floor)
         self.assertEqual(exempt, 0)
+        self.assertEqual(
+            flat_exempt, 0,
+            f"{flat_exempt} object(s) in {CANARY} took the flat-lying "
+            "legibility exemption; the canary is the scene this whole file "
+            "measures and nothing in it should be excused",
+        )
 
+        # Illegible. The historical eyes cannot produce this any more — the
+        # book they were raised for was flat — so the check is made to bite
+        # with a station at the sanctuary floor, where even the pitched book
+        # collapses to 13.07deg.
         illegible = self.contract(CANARY)
-        illegible["panels"][0]["camera"]["position_xyz"] = list(REPORTED_CAMERA_XYZ)
+        illegible["panels"][0]["camera"]["position_xyz"] = list(
+            GRAZING_CAMERA_XYZ
+        )
         with self.assertRaises(self.validate.Failure) as caught:
             self.validate.check_projected_orientation([illegible])
         self.assertIn("from collinear", str(caught.exception))
@@ -473,7 +766,9 @@ class ProjectedOrientationTests(unittest.TestCase):
             for _, contract in self.art_ready()
             if is_side_elevation(contract)
         )
-        checked, _, exempt = self.validate.check_projected_orientation([side])
+        checked, _, exempt, _flat = self.validate.check_projected_orientation(
+            [side]
+        )
         self.assertEqual((checked, exempt), (0, 1))
 
 

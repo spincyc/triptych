@@ -49,6 +49,67 @@ def underlays(directory: Path):
     return _module(directory / "underlay.py", "_pictographic_underlay")
 
 
+def composition_digest(directory: Path) -> tuple[str, dict]:
+    """Hash the files that decide what a published plate looks like.
+
+    The visual review is bound to this digest. Anything that can change the
+    composition - the sanctuary, the camera, or the renderer itself - is in it,
+    so an approval cannot outlive the picture it was given for.
+    """
+    import hashlib
+    import yaml
+
+    master = yaml.safe_load(
+        (directory / "sanctuary-master.yaml").read_text(encoding="utf-8")
+    )
+    review = master.get("underlay_visual_review") or {}
+    digest = hashlib.sha256()
+    for name in review.get("digest_inputs") or []:
+        source = directory / name
+        if not source.is_file():
+            raise SeedRefused(
+                f"composition digest input {name!r} is missing; the visual "
+                "review cannot be verified"
+            )
+        body = source.read_bytes()
+        if name == "sanctuary-master.yaml":
+            # Exclude the recorded digest itself, or refreshing it would always
+            # invalidate it.
+            body = b"\n".join(
+                line for line in body.split(b"\n")
+                if not line.strip().startswith(b"reviewed_geometry_digest:")
+            )
+        digest.update(name.encode("utf-8"))
+        digest.update(hashlib.sha256(body).digest())
+    return digest.hexdigest(), review
+
+
+def require_visual_review(directory: Path, scene_id: str) -> None:
+    """Refuse to seed art from a composition nobody has looked at.
+
+    Fail-closed in both directions: an unapproved preset is refused, and so is
+    an approval whose geometry has moved since it was given.
+    """
+    current, review = composition_digest(directory)
+    if review.get("status") != "approved":
+        raise SeedRefused(
+            f"{scene_id}: the publication composition is not approved "
+            f"(underlay_visual_review.status = {review.get('status')!r}). "
+            "Render the canary, look at it, and record the review in "
+            "sanctuary-master.yaml before seeding art."
+        )
+    recorded = review.get("reviewed_geometry_digest")
+    if recorded != current:
+        raise SeedRefused(
+            f"{scene_id}: the publication composition has changed since it was "
+            f"last looked at (recorded {recorded!r}, current {current!r}). "
+            f"Re-render the canary {review.get('canary')}, answer the gate "
+            "questions again, and refresh the digest with "
+            "`tpt pictographic composition-review --refresh` only after "
+            "actually looking at it."
+        )
+
+
 def dump(data: dict) -> str:
     import yaml
 
@@ -204,6 +265,9 @@ def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
         raise SeedRefused(
             f"{scene_id}: the render contract failed to compile: {failure}"
         ) from failure
+
+    # Before anything else about this scene: is the picture itself approved?
+    require_visual_review(directory, scene_id)
 
     readiness = contract["art_readiness"]
     if readiness["status"] != "ready":

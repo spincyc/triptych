@@ -36,9 +36,11 @@ structural_baseline_commit: "d2e97b5ca"
 #
 # World frame (world-frame.yaml): +X epistleward, -X gospelward, +Y altarward,
 # -Y naveward, +Z up; dimensionless-synthetic units. The mensa surface is
-# z = 1.35 and mensa positions sit at y = 1.5. An object resting on the mensa,
-# or on the corporal or a paten upon it, is at 1.35; the cup of the chalice
-# standing on the corporal is at 1.59, the chalice being 0.24 tall.
+# z = 1.55 and mensa positions sit at y = 1.5. An object resting on the mensa,
+# or on the corporal or a paten upon it, is at 1.55; the cup of the chalice
+# standing on the corporal is at 1.79, the chalice being 0.24 tall.
+# The mensa elevation is resolved from the structural ordinal by
+# sanctuary-master.yaml:level_elevations; these literals follow it.
 
 map:
   "Worn by the priest; its front and lower hem briefly lifted by AC1 during the ascent.":
@@ -59,11 +61,11 @@ map:
     note: "Lifted clear of its stand into the priest's two hands, so it parents to the priest."
   "On the mensa toward the centre, just to the LEFT of the corporal as the priest faces the altar, that is on the Gospel side of the corporal.":
     disposition: positioned
-    position: [-0.35, 1.5, 1.35]
+    position: [-0.35, 1.5, 1.55]
     note: "This is mensa-inner-gospel in other words, whose note names exactly this place; its coordinates are used unchanged."
   "On the mensa toward the centre, just to the LEFT of the corporal as the priest faces the altar.":
     disposition: positioned
-    position: [-0.35, 1.5, 1.35]
+    position: [-0.35, 1.5, 1.55]
     note: "The stand carries the book, so it takes the same mensa-inner-gospel coordinates as the Missal it supports."
   "in the priest's two hands, passing across to AC1 on the Epistle side":
     disposition: held
@@ -127,7 +129,7 @@ map:
     note: "Retained in AC1's left hand after the wine is served; parented to AC1."
   "at the node of the chalice, toward the centre of the altar":
     disposition: positioned
-    position: [0.0, 1.5, 1.47]
+    position: [0.0, 1.5, 1.67]
     note: "The chalice stands at mensa-centre in this scene and the priest has joined his hands, so the purificator is left at the node, half the 0.24 vessel-tall height above the mensa."
   "held in AC2's left hand at the Epistle side":
     disposition: held
@@ -171,7 +173,7 @@ map:
     note: "Still in AC2's hands after the pouring; parented to AC2."
   "On the cup of the chalice.":
     disposition: positioned
-    position: [0.0, 1.5, 1.59]
+    position: [0.0, 1.5, 1.79]
     note: "The chalice stands at corporal-back-centre, so the pall lies on its cup at the 0.24 vessel-tall height above the mensa."
   "Held above the front-centre fold of the corporal between the thumb and index of both of the priest's hands.":
     disposition: held
@@ -187,7 +189,7 @@ map:
     note: "Held between both of the priest's thumb and index pairs; parented to the priest."
   "Lying flat on the mouth of the chalice.":
     disposition: positioned
-    position: [0.0, 1.5, 1.59]
+    position: [0.0, 1.5, 1.79]
     note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
   "Carried up from the lowest step and held in AC1's right hand on the predella, Epistle side.":
     disposition: held
@@ -215,11 +217,11 @@ map:
     note: "Worn by the priest and parented to him; the servers only lift its outside lower edges and do not carry it."
   "Set aside on the mensa toward the Epistle side of the corporal while the chalice stands uncovered.":
     disposition: positioned
-    position: [0.6, 1.5, 1.35]
+    position: [0.6, 1.5, 1.55]
     note: "The mensa toward the Epistle side of the corporal is mensa-epistle, where LM-131B and LM-135B place the pall in this same uncovered-chalice state."
   "Set aside on the mensa toward the Epistle side of the corporal.":
     disposition: positioned
-    position: [0.6, 1.5, 1.35]
+    position: [0.6, 1.5, 1.55]
     note: "The same set-aside place as in LM-101A, so it takes identical mensa-epistle coordinates."
   "Raised in both of the priest's hands, high enough to be shown to the people, still uncovered.":
     disposition: held
@@ -227,19 +229,19 @@ map:
     note: "Elevated in both of the priest's hands and shown to the people; parented to the priest."
   "covering the cup of the chalice":
     disposition: positioned
-    position: [0.0, 1.5, 1.59]
+    position: [0.0, 1.5, 1.79]
     note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
   "on the exposed half of the paten":
     disposition: positioned
-    position: [0.35, 1.5, 1.35]
+    position: [0.35, 1.5, 1.55]
     note: "The paten lies at corporal-right-edge and the purificator on its exposed half; a paten is 0.02 thick, so the height rule keeps it on the mensa surface."
   "folded, on the Epistle side of the altar near the Lavabo card":
     disposition: positioned
-    position: [0.95, 1.5, 1.35]
+    position: [0.95, 1.5, 1.55]
     note: "The Lavabo card stands at mensa-epistle-corner, and the corpus resolves this same folded-veil state to mensa-epistle-corner in seventeen other scenes."
   "at AC1's place at the Epistle end of the lowest step":
     disposition: positioned
-    position: [0.5, 0.5, 0.25]
+    position: [0.5, 0.5, 0.16]
     note: "AC1's place at the Epistle end of the lowest step is the step-1-epistle anchor, which LM-135B uses for this same set-down bell."
   "held in the priest's right hand over the corporal":
     disposition: held
@@ -266,7 +268,7 @@ map:
     note: "Held at the node in the priest's left hand and raised clear of the corporal; parented to the priest."
   "covering the chalice on the corporal":
     disposition: positioned
-    position: [0.0, 1.5, 1.59]
+    position: [0.0, 1.5, 1.79]
     note: "The same physical place as \"On the cup of the chalice.\", so it takes identical coordinates."
   "in the priest's right hand, drawn clear of the right edge of the corporal":
     disposition: held
@@ -286,15 +288,15 @@ map:
     note: "Raised in the priest's right hand to his lips; parented to the priest."
   "on the paten, which now rests on the corporal beside the chalice base":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "The Host rides on the paten now set down on the corporal, so it takes the paten's coordinates midway between mensa-centre and corporal-right-edge."
   "on the corporal near the chalice base, to the right of the Host's former place":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "On the corporal epistleward of the corporal centre and short of corporal-right-edge, so midway between them at x 0.18 on the mensa surface."
   "on the paten on the corporal near the chalice base":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "The same paten position as in LM-131A, so the Host upon it takes identical coordinates."
   "held over the chalice between the thumb and index of both hands":
     disposition: held
@@ -306,7 +308,7 @@ map:
     note: "The priest has the left half between his left thumb and index, so the pair parents to him; the right half lies on the paten at the same instant."
   "both halves on the paten":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "Both halves now lie on the paten resting on the corporal, so they take the paten's coordinates."
   "held over the chalice between the right thumb and index":
     disposition: held
@@ -314,15 +316,15 @@ map:
     note: "Retained over the chalice between the priest's right thumb and index; parented to the priest."
   "both halves on the paten, their broken edges together":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "Still on the paten on the corporal, only realigned, so the coordinates are unchanged."
   "both halves on the paten, arranged to resemble a complete Host":
     disposition: positioned
-    position: [0.18, 1.5, 1.35]
+    position: [0.18, 1.5, 1.55]
     note: "Still on the paten on the corporal, so the coordinates are unchanged."
   "in the chalice, in the Precious Blood":
     disposition: positioned
-    position: [0.0, 1.5, 1.55]
+    position: [0.0, 1.5, 1.75]
     note: "Commingled inside the cup of the chalice standing at corporal-back-centre, just below its 1.59 rim."
   "In the priest's left hand, held behind the Host halves above the corporal.":
     disposition: held

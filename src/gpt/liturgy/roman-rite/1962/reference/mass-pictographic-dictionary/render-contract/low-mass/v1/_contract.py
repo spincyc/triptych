@@ -53,14 +53,26 @@ class Contract:
         self.placements = load(ROOT / "placement-map.yaml")
         self.readiness_policy = load(ROOT / "readiness-policy.yaml")
         self.frames = load(ROOT / "frame-vocabulary.yaml")
+        self.sanctuary = load(ROOT / "sanctuary-master.yaml")
 
         self.geometry = load(SCENES / "geometry.yaml")
         self.inventory = load(SCENES / "inventory.yaml")
         self.invariants = load(SCENES / "invariants.yaml")
 
         self.directions = {d["id"]: d["vector"] for d in self.world["directions"]}
+        # Structural level values are ordinals; the sanctuary master resolves
+        # them to elevations. Doing it here, once, is what keeps contracts,
+        # skeletons and underlays from disagreeing about where a level is.
+        self.elevations = {
+            round6(row["structural_z"]): round6(row["elevation"])
+            for row in self.sanctuary["level_elevations"]["map"]
+        }
+        self.depths = {
+            (row["level"], round6(row["structural_y"])): round6(row["depth"])
+            for row in self.sanctuary["level_depths"]["map"]
+        }
         self.anchors = {a["id"]: a for a in self.geometry["anchors"]}
-        self.mensa_z = self.geometry["mensa_positions"]["z"]
+        self.mensa_z = self.elevation(self.geometry["mensa_positions"]["z"])
         self.mensa = {
             p["id"]: p for p in self.geometry["mensa_positions"]["positions"]
         }
@@ -107,9 +119,30 @@ class Contract:
         return self._scenes[scene_id]
 
     # -- geometry resolution ----------------------------------------------
+    def elevation(self, z: float) -> float:
+        """Resolve a structural level ordinal to its render elevation.
+
+        A value that is not a named level passes through untouched, so nothing
+        but the levels themselves is rescaled.
+        """
+        return self.elevations.get(round6(z), round6(z))
+
+    def standing_depth(self, anchor: dict) -> float:
+        """Resolve a level's ordinal depth to a standing depth on its tread.
+
+        Keyed on the level and the canonical depth together, so an anchor that
+        shares a level without standing at its depth is left alone.
+        """
+        key = (anchor.get("level"), round6(anchor["y"]))
+        return self.depths.get(key, round6(anchor["y"]))
+
     def anchor_position(self, anchor_id: str) -> list[float]:
         anchor = self.anchors[anchor_id]
-        return [round6(anchor["x"]), round6(anchor["y"]), round6(anchor["z"])]
+        return [
+            round6(anchor["x"]),
+            self.standing_depth(anchor),
+            self.elevation(anchor["z"]),
+        ]
 
     def resolve_placement(self, placement) -> tuple[list[float] | None, str, str]:
         """Return (position, kind, note) for an object placement.

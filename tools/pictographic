@@ -18,6 +18,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from _pictographic import (  # noqa: E402
     SeedRefused,
     art_seed,
+    composition_digest,
     compile_scene,
     contract_dir,
     underlay_module,
@@ -87,6 +88,17 @@ EXAMPLES = {
             "the Gospel-side reading, where the book moves but does not mirror",
         ),
     ),
+    "composition-review": (
+        Example(
+            "tools/pictographic composition-review roman-1962 low-mass",
+            (
+                "canary LM-001A  preset nave-front",
+                "  status  approved",
+                "... 3 more lines",
+            ),
+            "whether anyone has looked at the picture the pipeline now draws",
+        ),
+    ),
     "art-seed": (
         Example(
             "tools/pictographic art-seed roman-1962 low-mass LM-001A "
@@ -146,8 +158,43 @@ def main() -> int:
     ready.add_argument("form")
     ready.add_argument("--blocked", action="store_true")
 
+    review = with_examples(
+        verbs.add_parser("composition-review"), EXAMPLES["composition-review"]
+    )
+    review.add_argument("calendar")
+    review.add_argument("form")
+    review.add_argument(
+        "--refresh",
+        action="store_true",
+        help="record the current composition as reviewed; only after looking",
+    )
+
     args = parser.parse_args()
     directory = contract_dir(args.calendar, args.form)
+
+    if args.verb == "composition-review":
+        current, review = composition_digest(directory)
+        recorded = review.get("reviewed_geometry_digest")
+        state = "approved" if review.get("status") == "approved" else "NOT APPROVED"
+        fresh = recorded == current
+        print(f"canary {review.get('canary')}  preset {review.get('preset')}")
+        print(f"  status  {state}")
+        print(f"  recorded {recorded}")
+        print(f"  current  {current}")
+        print(f"  {'current' if fresh else 'STALE - art-seed will refuse'}")
+        if not args.refresh:
+            return 0 if (fresh and state == "approved") else 2
+        master = directory / "sanctuary-master.yaml"
+        body = master.read_text(encoding="utf-8")
+        lines = []
+        for line in body.split("\n"):
+            if line.strip().startswith("reviewed_geometry_digest:"):
+                indent = line[: len(line) - len(line.lstrip())]
+                line = f"{indent}reviewed_geometry_digest: {current}"
+            lines.append(line)
+        master.write_text("\n".join(lines), encoding="utf-8")
+        print(f"  recorded the current composition as reviewed: {current}")
+        return 0
 
     if args.verb == "readiness":
         report = readiness_report(directory)
