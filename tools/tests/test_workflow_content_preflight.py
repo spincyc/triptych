@@ -101,7 +101,11 @@ class TopologyTests(unittest.TestCase):
         revision = stages[failure]
         self.assertEqual(revision["type"], "bounded-revision")
         self.assertEqual(revision["revision_target"], "author-proper")
-        self.assertEqual(revision["next"], "content-evaluation")
+        # The reviser re-enters the gate, not the evaluation behind it, so a
+        # mechanical defect's repair is checked mechanically. Sending it
+        # straight to `content-evaluation` would spend five AI lanes on a
+        # document whose preflight failure may still stand.
+        self.assertEqual(revision["next"], STAGE)
         for key in ("next", "pass_transition", "fail_transition"):
             self.assertNotEqual(revision.get(key), "research")
             self.assertNotEqual(revision.get(key), "research-synthesis")
@@ -411,12 +415,12 @@ class DrivenRunTests(RoutingCase):
                          "the reviser is handed the check's own output")
 
     def test_three_consecutive_refusals_block_the_run(self):
-        """The cheap loop is bounded like every other.
+        """The cheap loop is cheap, and bounded like every other.
 
-        The gate is re-entered the only way the topology allows: the revision
-        goes on to `content-evaluation`, that evaluation routes to research,
-        and the regenerated leaf comes back through `author-proper`. Three
-        consecutive refusals of the gate end the run.
+        The reviser returns to the gate directly, so a refusal costs one
+        worker and one gate run. Nothing upstream is disturbed: no evaluation
+        lane, no research lane, no synthesis. Three consecutive refusals end
+        the run.
         """
         run_id = self.drive_to_preflight()
         self.stub_failure("relation-coverage", "GATE-RELATION-COVERAGE")
@@ -426,16 +430,9 @@ class DrivenRunTests(RoutingCase):
             out = self.engine.advance(
                 run_id,
                 result_path=self.worker_pass(run_id, "content-revision"))
-            self.assertEqual(out["stage"], "content-evaluation")
-            out = self.engine.advance(
-                run_id, lane_results=self.content_submissions(run_id, {
-                    "evidence-discipline": [
-                        blocking("CON-EVI-001", RESEARCH)]}))
-            self.assertEqual(out["stage"], RESEARCH)
-            out = self.engine.advance(
-                run_id, lane_results=self.research_submissions(run_id))
-            self.assertEqual(out["stage"], "research-synthesis")
-            self.drive_to_preflight(run_id)
+            self.assertEqual(
+                out["stage"], STAGE,
+                "the reviser goes back to the gate that refused it")
         out = self.engine.advance(run_id, run_gate=True)
         self.assertEqual(out["disposition"], BLOCKED)
         self.assertIn("iteration limit exceeded", out["message"])
