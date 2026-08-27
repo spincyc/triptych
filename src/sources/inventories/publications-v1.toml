@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-08-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
-source_surface_file_count = 2086
-snapshot = "sha256:e124ec06bf9830805dc6ec7dfdc06e78bc2e31bfe1e92844ca3cb8a6ecf25a01"
+source_surface_file_count = 2087
+snapshot = "sha256:01edd9aef004268d62ffa953ccc9835df02248bc194e9f1386e244c40fbe7a12"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9750,19 +9750,25 @@ owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md"
-sha256 = "c260bf4a4df744a9dc55f9d0e786afd21d4e3dff5b3220556a7924fd4036c189"
+sha256 = "62cef0992585205c5613edd6072763606c7b9ffeb660bf1e39f5f205d14adfd7"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md"
+sha256 = "a57fca6b0e1b96d35c6fb450215f837ba20eb94bd29cacae4676bcb9ddd5f358"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md"
-sha256 = "da9a4a62b55f7e5d6587b196e6a81d50f5d01bcf0993b41acdaeda445d0b2980"
+sha256 = "4f3bb589a5fd14c2264a8f2fb7b43a9aa62f9b512c8889dd7cb1cd2c92577edf"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/README.md"
-sha256 = "109fc7fa01180d24da2bfeda3486c7a17c67891219af1d1e0526595692490808"
+sha256 = "6a31e4211d814dad4a5304c09333ad49dc40e14eabedfe02798bdb899e50f294"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 

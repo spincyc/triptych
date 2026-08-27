@@ -80,8 +80,14 @@ removing any object the scene requires.
 ### Failure policy
 
 If a generated plate deviates from its compiled render contract, the verdict is
-**ART FAIL**, however good the drawing is. Aesthetic quality is not a defence
-for moved geometry. The contract is checkable; the check governs.
+**`STRUCTURE = FAIL`**, however good the drawing is. Aesthetic quality is not a
+defence for moved geometry. The contract is checkable; the check governs.
+
+`STRUCTURE` and `ART` are two independent gates, defined in
+[`../../../artistic/RENDERING-PROTOCOL.md`](../../../artistic/RENDERING-PROTOCOL.md).
+`STRUCTURE` asks whether the plate is faithful to this contract; `ART` asks
+whether it is publication quality. Deviating geometry fails the first, and
+never reaches the second.
 
 ## Art readiness
 

@@ -68,7 +68,7 @@ REPO = "<repo>"
 # would report a divergence that says nothing about the transcript, so each
 # tool's scratch paths are removed and rebuilt before its captures run.
 SCRATCH: dict[str, tuple[str, ...]] = {
-    "pictographic": ("build/example-render-contract",),
+    "pictographic": ("build/example-render-contract", "build/example-art-seed"),
     "artwork-library": ("build/example-art.png",),
     "calendar-days": ("build/example-days",),
     "calendar-rubrics": ("build/example-web",),

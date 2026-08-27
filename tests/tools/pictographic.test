@@ -32,7 +32,7 @@ reject() {
 }
 
 run_tool --help >/dev/null
-for verb in render-contract skeleton readiness; do
+for verb in render-contract skeleton art-seed readiness; do
 	run_tool "$verb" --help >/dev/null
 done
 
@@ -97,6 +97,31 @@ if ! cmp -s "$skeleton" "$second/skeletons/LM-001A.svg"; then
 fi
 
 match 'art-ready' "$(run_tool readiness roman-1962 low-mass)"
+
+# --- the artistic entry path, which must fail closed -----------------------
+
+seed="$sandbox/seed"
+run_tool art-seed roman-1962 low-mass LM-001A --out "$seed"
+for part in render-contract.yaml skeleton.svg provenance.yaml ART-AGENT-INSTRUCTIONS.md; do
+	if [ ! -s "$seed/LM-001A/$part" ]; then
+		echo "art-seed package is missing $part" >&2
+		exit 1
+	fi
+done
+match 'is_pipeline_canary: true' "$(cat "$seed/LM-001A/provenance.yaml")"
+match 'STRUCTURE' "$(cat "$seed/LM-001A/ART-AGENT-INSTRUCTIONS.md")"
+
+# A blocked scene is refused, and leaves nothing behind.
+blocked="$(run_tool readiness roman-1962 low-mass --blocked | sed -n '2s/^ *\([A-Z0-9-]*\).*/\1/p')"
+if [ -z "$blocked" ]; then
+	echo "no blocked scene reported; the fail-closed path is untested" >&2
+	exit 1
+fi
+reject art-seed roman-1962 low-mass "$blocked" --out "$seed"
+if [ -e "$seed/$blocked" ]; then
+	echo "a refused art-seed left a package behind at $seed/$blocked" >&2
+	exit 1
+fi
 
 reject nosuchverb
 reject render-contract

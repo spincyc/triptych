@@ -1655,3 +1655,52 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/review",
     "tools/tests/test_render_contract.py",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-artistic-protocol"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md"
+promise = "Persist the artistic rendering protocol as durable repository architecture, so a future artistic agent discovers from the repository alone that a plate may be generated only from an art-ready scene's compiled render contract and deterministic skeleton, that blocked means stop, that undeclared panels are forbidden, and that structural fidelity and artistic quality are separate approval gates."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "durable-protocol-document"
+  criterion = "A timeless protocol document states the only valid artistic input path, the readiness gate, the two independent approval gates, what the renderer owns and does not own, the panel rule, the Missal failure mode, and the canary rule, without hard-coding counts that would go stale."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fail-closed-art-seed"
+  criterion = "A canonical command prepares the only sanctioned input package for an artistic agent, refuses nonzero for a blocked scene while naming the exact blocking cue, refuses when geometry cannot compile or a panel manifest disagrees, emits no package on refusal, and offers no silent force path."
+  status = "pass"
+  evidence = [
+    "tools/pictographic",
+    "scripts/_pictographic.py",
+    "tests/tools/pictographic.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "seed-package-and-provenance"
+  criterion = "The emitted package carries the compiled render contract, the deterministic skeleton, scene and plate identity, structural baseline commit, render-contract version, visible invariants, panel manifest, readiness, and generated art-agent instructions; and the per-plate provenance contract is defined for the later persistence lane."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/plate-provenance.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "artistic-entry-tests"
+  criterion = "Focused tests prove the artistic entry path: an art-ready scene seeds, a blocked scene is refused with its cue and leaves no package, the LM-001A canary carries one declared panel and the compiled Missal transform, and the operation is reproducible."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_artistic_entry.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "discoverable-architecture"
+  criterion = "The owner documentation presents the pipeline from structural corpus through render contract, protocol and seed package to the human-guided artistic lane, and the handoff points at the durable protocol rather than restating it."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md",
+  ]

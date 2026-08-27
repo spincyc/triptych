@@ -476,6 +476,40 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic artistic rendering protocol
+
+<!-- promised-deliverable: mass-pictographic-artistic-protocol -->
+
+**In progress from 27 August 2026.** The render-contract layer made the first
+artistic failure mechanically impossible, but only for an agent that chooses to
+use it. Nothing yet stopped a future lane from seeding an image generator
+straight from structural prose, which is exactly how the mirrored Missal and the
+invented `TOP VIEW (NAVE)` inset happened.
+
+This lane turns that lesson into architecture rather than advice. It adds a
+durable protocol at
+`src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/`,
+a fail-closed command that prepares the only sanctioned input package for an
+artistic agent, and tests for the entry path itself. Structural choreography
+stays v0.21 and the render contract stays v1; this is documentation and workflow
+enforcement around them, not a semantic change to either.
+
+The protocol states the only valid artistic input path, the readiness gate, the
+two independent approval gates, what the artist owns and does not own, the
+closed panel rule, the Missal failure mode, the canary rule and fail-closed
+behaviour, and it deliberately carries no counts or commit hashes so it cannot
+go stale. `pictographic art-seed` is the sanctioned door: it emits the compiled
+contract, the deterministic skeleton, a provenance record and generated
+art-agent instructions, and it refuses a blocked scene with its exact cue at
+exit 2 while writing nothing. There is no force path.
+
+One naming collision was found by audit and fixed: the render-contract README
+used **ART FAIL** for what the protocol now calls `STRUCTURE = FAIL`, so an
+agent reading both would have got opposite verdicts from the same word. The
+per-plate provenance fields were also aligned to this repository's existing
+artwork records rather than inventing synonyms, so a future plate raster can be
+validated by `artwork-library` instead of a second bespoke checker.
+
 ### 1962 Low Mass pictographic render contract v1
 
 <!-- promised-deliverable: mass-pictographic-render-contract-v1 -->

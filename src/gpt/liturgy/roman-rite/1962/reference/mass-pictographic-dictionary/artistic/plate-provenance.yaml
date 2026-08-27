@@ -1,0 +1,133 @@
+schema: triptych.mass_pictographic.plate_provenance
+version: "1.0"
+status: contract-defined-registry-not-yet-built
+owner_protocol: "RENDERING-PROTOCOL.md"
+
+# The provenance contract for a canonical artistic plate.
+#
+# No plate registry exists yet, and building one before there are plates would
+# be premature. This file defines the FIELDS now, so that the web artistic lane
+# and the later CLI persistence lane mean the same things by the same words and
+# nothing has to be retrofitted.
+#
+# A plate that cannot fill the required fields is not canonical. That is the
+# point: a plate whose geometry cannot be traced back to a compiled contract is
+# a picture, not a record.
+
+required_fields:
+  - id: plate_id
+    description: Stable identifier for the finished plate.
+  - id: scene_ids
+    description: >-
+      Every structural scene the plate depicts. Usually one; a cluster plate
+      names each.
+  - id: structural_baseline_commit
+    description: >-
+      The commit of the approved structural corpus the render contract was
+      compiled from. Copied from the contract, never typed by hand.
+  - id: render_contract_version
+    description: The render-contract layer version, for example "1.0".
+  - id: render_contract_source
+    description: Repository path of the compiled contract the plate was drawn from.
+  - id: skeleton_source
+    description: Repository path of the deterministic skeleton used as reference.
+  - id: panel_manifest
+    description: >-
+      The panel ids the contract declared. The finished plate carries these and
+      no others.
+  - id: structure_review
+    description: "STRUCTURE gate: PASS, FAIL or PENDING."
+    values: [PASS, FAIL, PENDING]
+  - id: art_review
+    description: "ART gate: PASS, FAIL or PENDING."
+    values: [PASS, FAIL, PENDING]
+
+conditional_fields:
+  - id: approval_commit
+    description: The commit at which the plate was persisted as approved.
+    required_when: "structure_review is PASS and art_review is PASS"
+  - id: approval_date
+    description: Date of approval.
+    required_when: "structure_review is PASS and art_review is PASS"
+  - id: correction_notes
+    description: >-
+      Human correction notes. Required whenever either gate has ever returned
+      FAIL, so a plate that was fixed records what was wrong with it.
+    required_when: "either review has returned FAIL at any point"
+
+# Field names follow this repository's existing artwork records rather than
+# inventing synonyms, so a plate can be validated beside them. The governing
+# rule is in guidance/liturgy/roman-1962-pictorial-dictionaries.md, which
+# requires each asset to name its brief, generator or creator, date,
+# dimensions, mode, hash, references, corrections, consumers, rights and
+# validation state.
+optional_fields:
+  - id: brief
+    description: The instruction text the generator was given.
+  - id: exact_prompt
+    description: The verbatim prompt, where one exists and is exposed.
+  - id: generator
+    description: >-
+      The tool or model that produced the image, with whatever version or
+      runtime the interface exposes. Say plainly when it is not exposed.
+  - id: generated_on
+    description: Date of generation.
+  - id: reference_ids
+    description: Source or reference identities the plate was drawn against.
+  - id: precursor_ids
+    description: Earlier plates this one supersedes.
+  - id: corrections
+    description: >-
+      Every post-generation edit applied to the raster, named. Required by the
+      governing artwork rule.
+  - id: baked_content_audit
+    description: >-
+      What is baked into the image itself. Publication plates carry no words,
+      letters, arrows or numerals; labels belong to the typesetting layer.
+  - id: consumer_plate_ids
+    description: Plates or editions that consume this asset.
+  - id: sha256
+    description: SHA-256 of the image file.
+  - id: width
+    description: Pixel width.
+  - id: height
+    description: Pixel height.
+  - id: depth
+    description: Bit depth.
+  - id: mode
+    description: Colour mode, for example grayscale or grayscale-alpha.
+  - id: rights
+    description: >-
+      Rights statement. Project-created content in this repository is CC BY
+      4.0; state the provenance of anything that is not.
+
+technical_identity:
+  note: >-
+    When real plate rasters exist, record their technical identity in a TOML
+    using the generic [[asset]] shape that `tools/tpt artwork-library check`
+    already validates: id, path, sha256, width, height, depth, mode. That gets
+    dimension, hash, bit-depth and colour-mode checking for free instead of a
+    second bespoke validator. `tools/tpt artwork-library identify <png>` prints
+    those fields ready to paste.
+  required_asset_fields: [id, path, sha256, width, height, depth, mode]
+  validator: "tools/tpt artwork-library check <manifest>"
+
+rules:
+  - id: PLATE-01
+    rule: >-
+      A plate may only cite a scene that was art-ready at the time it was
+      seeded. A plate citing a blocked scene is not canonical.
+  - id: PLATE-02
+    rule: >-
+      structure_review and art_review are decided independently, and a plate is
+      approved only when both are PASS.
+  - id: PLATE-03
+    rule: >-
+      A structural violation is FAIL, never "approved with notes".
+  - id: PLATE-04
+    rule: >-
+      panel_manifest must equal the contract's declared panel list exactly.
+  - id: PLATE-05
+    rule: >-
+      structural_baseline_commit, render_contract_version and panel_manifest
+      are copied from the compiled contract, never authored independently.

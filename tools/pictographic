@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _pictographic import (  # noqa: E402
+    SeedRefused,
+    art_seed,
     contract_dir,
     readiness_report,
     write_contract,
@@ -63,6 +65,30 @@ EXAMPLES = {
             "the Gospel-side reading, where the book must not be mirrored",
         ),
     ),
+    "art-seed": (
+        Example(
+            "tools/pictographic art-seed roman-1962 low-mass LM-001A "
+            "--out build/example-art-seed",
+            (
+                "seeded LM-001A -> build/example-art-seed/LM-001A",
+                "  render-contract.yaml  skeleton.svg  provenance.yaml  "
+                "ART-AGENT-INSTRUCTIONS.md",
+                "  panels 1 (primary) - additional panels forbidden",
+                "  PIPELINE CANARY: render this first; the lane proceeds only "
+                "at STRUCTURE = PASS",
+            ),
+            "the only sanctioned way to hand a scene to an artistic agent",
+        ),
+        Example(
+            "tools/pictographic art-seed roman-1962 low-mass LM-001B "
+            "--out build/example-art-seed",
+            (
+                "REFUSED: LM-001B is BLOCKED_FOR_ART and must not be rendered.",
+                "... 4 more lines",
+            ),
+            "fails closed on a blocked scene, naming the cue and writing nothing",
+        ),
+    ),
     "readiness": (
         Example(
             "tools/pictographic readiness roman-1962 low-mass",
@@ -87,7 +113,7 @@ def main() -> int:
     examples_live_on_the_verbs(parser, "pictographic")
     verbs = parser.add_subparsers(dest="verb", required=True)
 
-    for name in ("render-contract", "skeleton"):
+    for name in ("render-contract", "skeleton", "art-seed"):
         verb = with_examples(verbs.add_parser(name), EXAMPLES[name])
         verb.add_argument("calendar")
         verb.add_argument("form")
@@ -113,6 +139,29 @@ def main() -> int:
             for entry in report["blocked_scenes"]:
                 first = entry["unresolved_cues"][0]
                 print(f"  {entry['scene_id']}  {first}")
+        return 0
+
+    if args.verb == "art-seed":
+        out = args.out or (directory / "art-seed")
+        try:
+            seeded = art_seed(directory, args.scene, out)
+        except SeedRefused as refusal:
+            print(f"REFUSED: {refusal}", file=sys.stderr)
+            return 2
+        package, provenance = seeded["package"], seeded["provenance"]
+        try:
+            shown = package.relative_to(ROOT)
+        except ValueError:
+            shown = package
+        panels = provenance["panel_manifest"]
+        print(f"seeded {args.scene} -> {shown}")
+        print("  render-contract.yaml  skeleton.svg  provenance.yaml  "
+              "ART-AGENT-INSTRUCTIONS.md")
+        print(f"  panels {len(panels)} ({', '.join(panels)}) - additional "
+              f"panels {provenance['additional_panels']}")
+        if provenance["is_pipeline_canary"]:
+            print("  PIPELINE CANARY: render this first; the lane proceeds "
+                  "only at STRUCTURE = PASS")
         return 0
 
     out = args.out or directory

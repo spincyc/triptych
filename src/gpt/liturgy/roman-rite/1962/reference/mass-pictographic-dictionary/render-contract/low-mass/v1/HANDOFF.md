@@ -1,84 +1,83 @@
-# Handoff — to the artistic rendering agent
+# Handoff — current state of the pictographic lane
 
-You are receiving a **render specification and a set of skeletons**, not an
-invitation to restage the Mass.
+**Operational continuation document.** It records where the work stands right
+now and how to pick it up. It deliberately does **not** restate the rules.
 
-## What you are given
+The durable rules live in
+[`../../../artistic/RENDERING-PROTOCOL.md`](../../../artistic/RENDERING-PROTOCOL.md).
+**Read that first.** It is the timeless protocol: the only valid artistic input
+path, the readiness gate, the two approval gates, what the artist owns and does
+not own, the panel rule, the Missal failure mode, the canary rule, and
+fail-closed behaviour. Nothing in this file overrides it.
 
-- **Structural baseline:** `d2e97b5ca` on `feature/pictographic`.
-- **Approved choreography:** `structural/low-mass/v0.21/` — 197 scenes,
-  `LM-001A` to `LM-140C`, in `scenes/inventory.yaml` order. Unchanged by this
-  lane and not revisable by yours.
-- **Render contract:** this directory, `render-contract/low-mass/v1/`.
-- **Compiled contracts:** `contracts/<SCENE>.yaml`, one per scene.
-- **Skeletons:** `skeletons/<SCENE>.svg`, one per scene.
-- **Verification sheet:** `review/verification-sheet-v1.svg`.
+## Where things stand
 
-## Commands
+| Layer | Path | State |
+| --- | --- | --- |
+| Structural choreography | `structural/low-mass/v0.21/` | Complete and human-approved. Sealed. |
+| Render contract | `render-contract/low-mass/v1/` | Complete. Compiles every scene to explicit world geometry. |
+| Artistic protocol | `artistic/RENDERING-PROTOCOL.md` | In force. |
+| Artistic rendering | — | **Not started.** No canonical plate is approved. |
+
+Current base commit and readiness counts are not written here, because they go
+stale. Get them from git and from the tooling:
 
 ```sh
+git log --oneline -1
 ./tools/tpt pictographic readiness roman-1962 low-mass
 ./tools/tpt pictographic readiness roman-1962 low-mass --blocked
-./tools/tpt pictographic render-contract roman-1962 low-mass LM-001A
-./tools/tpt pictographic skeleton roman-1962 low-mass LM-001A
 ```
 
-Regenerate everything, and prove the tracked output is current:
+## Starting an artistic lane
+
+Seed the canary first. This is the only sanctioned way to hand a scene to an
+artistic agent:
+
+```sh
+./tools/tpt pictographic art-seed roman-1962 low-mass LM-001A
+```
+
+That writes a package containing the compiled render contract, the
+deterministic skeleton, the provenance record, and the generated art-agent
+instructions. Give the artistic agent **that package**, and nothing else — not
+the structural YAML, not a prose summary.
+
+The command fails closed. A blocked scene refuses with its exact cue and
+exit status 2, and writes no package. There is no force path.
+
+Then, per the protocol: render `LM-001A`, decide `STRUCTURE` before `ART`, and
+do not begin style development until `LM-001A` reaches `STRUCTURE = PASS`. If
+it fails structurally, stop and diagnose the pipeline.
+
+## Regenerating and checking
 
 ```sh
 cd src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1
-./compile.py && ./skeleton.py && ./review.py
+./compile.py && ./skeleton.py && ./review.py     # regenerate
 ./compile.py --check && ./skeleton.py --check && ./review.py --check
 ./validate.py
 ```
 
-## Where to start
+The verification sheet for the regression fixtures is at
+`review/verification-sheet-v1.svg`.
 
-**140 of the 197 scenes are art-ready.** Begin with `LM-001A`, the scene whose
-first plate failed. Its skeleton shows the whole contract in one panel: the
-altar's three steps and predella, the three figures in a side-to-side line at
-one depth, and the Missal open on the Epistle side at reading yaw 135°.
+## Current blockers to human review
 
-**57 scenes are blocked for art.** Do not draw them, and do not resolve what
-blocks them. `art-readiness.yaml` names the exact cue for each. Resolving a cue
-is human work, and it is never done from the `altar-server-guides/` tree, which
-is fenced and superseded.
+A scene is blocked when an unresolved serving-profile cue could change
+something visible, or when a directional phrase names no reference frame. The
+live list, with each blocking cue, comes from:
 
-## What you may change
+```sh
+./tools/tpt pictographic readiness roman-1962 low-mass --blocked
+```
 
-Graphite texture and mark-making. Shading and value. Facial naturalism. Fabric
-and vestment realism. Architectural detailing that moves nothing. Visual
-refinement of any kind.
+Resolving any of them is human work in the structural or render-contract lane.
+Four frame-ambiguous phrases and what a human must decide about each are
+recorded in `frame-vocabulary.yaml` under `undetermined_phrases`.
 
-## What you may not change
+## Next lane recommendation
 
-Actor positions. Actor facing. Object placement. Object orientation — the
-Missal's above all. The number of altar steps. The ordering of actions.
-Crossing precedence. Panel count. Camera projection. The presence or absence of
-any object the scene requires.
-
-If a plate deviates from its compiled contract, the verdict is **ART FAIL**,
-however good the drawing is.
-
-## Three traps, named
-
-1. **The Missal is never mirrored.** Its reading yaw is 135° on the Gospel side
-   and 135° on the Epistle side — one number, both sides. The priest turns
-   toward the Gospel side to read, wherever the book stands. A yaw of 45° is
-   the mirrored value and is forbidden.
-2. **Panels are closed.** Each contract lists its panels and sets
-   `additional_panels: forbidden`. Do not add an inset, a key, a locator, or a
-   plan, however useful one would be. Two scenes declare a second panel; they
-   say so.
-3. **A projection is not a place.** `nave-front` is a preset resolving to
-   projection `perspective` at position `nave-centre`. A label like
-   `TOP VIEW (NAVE)` names a projection and a place as one thing and cannot be
-   written in this vocabulary.
-
-## What is still open
-
-Four directional phrases have no determinable frame and block their scenes;
-`frame-vocabulary.yaml` names each and what a human must decide. Two structural
-observations are recorded there too: the mensa depth axis is compiled here
-rather than in v0.21, and `mensa-inner-gospel` is defined in the structural
-geometry but unused by any scene.
+Begin with the canary, then the opening cluster at the foot of the altar, which
+is the most art-ready stretch of the corpus. Keep every plate's provenance per
+`artistic/plate-provenance.yaml` from the first plate onward; retrofitting
+provenance later is how it stops being true.

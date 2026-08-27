@@ -16,7 +16,17 @@ semantics into explicit world geometry, so that an artistic generator cannot
 mirror the Missal, cannot invent a panel, and cannot restage approved geometry.
 The choreography remains v0.21 and is not revised there.
 
-**The publication-quality artistic rendering pass has not started.**
+**The artistic rendering protocol is in force**, at
+[`artistic/RENDERING-PROTOCOL.md`](artistic/RENDERING-PROTOCOL.md). It is
+durable project architecture rather than advice: a plate may be generated only
+from an art-ready scene's compiled render contract and deterministic skeleton,
+a blocked scene must not be rendered at all, undeclared panels are forbidden,
+and structural fidelity and artistic quality are separate approval gates.
+
+**The publication-quality artistic rendering pass has not started.** No
+canonical artistic plate is approved. Work state for all three layers is
+tracked in `promised-deliverables.toml` and `PROJECT-WORK.md` rather than
+asserted here.
 
 The v0.21 checkpoint belongs under
 `structural/low-mass/v0.21/`. Its imported handoff summary is the authority for
@@ -42,7 +52,34 @@ the relationship and known contrasts are also recorded in
 a `Historical / pre-v0.21` notice in its own text, so the fence is visible to a
 reader who arrives at one of them directly rather than through this owner.
 
-## Pipeline
+## Architecture
+
+Three layers, each downstream of the last. A fresh agent should read them in
+this order.
+
+```text
+structural/low-mass/v0.21/          approved choreography — what happens
+        |
+        v
+render-contract/low-mass/v1/        compiled world geometry — what may be drawn
+        |
+        v
+artistic/RENDERING-PROTOCOL.md      the rules governing any artistic lane
+        |
+        v
+./tools/tpt pictographic art-seed   the only sanctioned input package
+        |
+        v
+human-guided web artistic lane      STRUCTURE gate, then ART gate
+```
+
+| Layer | Path | Holds |
+| --- | --- | --- |
+| Structural | `structural/low-mass/v0.21/` | The approved scene corpus, its registry, invariants and branch conditions. |
+| Render contract | `render-contract/low-mass/v1/` | The world frame, camera and panel model, object and actor transforms, compiled contracts, deterministic skeletons, and the current [handoff](render-contract/low-mass/v1/HANDOFF.md). |
+| Artistic | [`artistic/RENDERING-PROTOCOL.md`](artistic/RENDERING-PROTOCOL.md) | The durable protocol, and the [plate provenance contract](artistic/plate-provenance.yaml). |
+
+The full pipeline, from the rubric outward:
 
 ```text
 liturgical action or rubric
@@ -50,9 +87,22 @@ liturgical action or rubric
 -> deterministic structural skeleton
 -> human approval
 -> compiled render contract and deterministic render skeleton
--> publication-quality artistic rendering, bound by that skeleton
+-> artistic rendering, bound by that skeleton and gated twice
 -> derivatives, object compendium, web and manual use
 ```
+
+## Canonical CLI flow
+
+```sh
+./tools/tpt pictographic readiness roman-1962 low-mass
+./tools/tpt pictographic readiness roman-1962 low-mass --blocked
+./tools/tpt pictographic art-seed roman-1962 low-mass LM-001A
+```
+
+`art-seed` prepares the only sanctioned input for an artistic agent, and fails
+closed: a scene that is not art-ready is refused with its exact blocking cue,
+and no package is written. Readiness counts are not recorded in prose anywhere
+in this owner — ask the tooling, so the answer cannot go stale.
 
 The future graphite or pencil plates remain downstream of the approved
 structured data. They must retain links to the structural scene IDs and
