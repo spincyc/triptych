@@ -1516,9 +1516,10 @@ def to_canonical(system: str, token: str, chapter: int, verse: int) -> Locus | U
         # hops from the Vulgate, through the Greek, and `_deuterocanon`'s own
         # docstring says `convert_through` "is the only way to reach it without
         # a second table saying the same thing twice". Asking the wrong way
-        # returned `textually-distinct` for all 2 131 of its loci — a refusal
+        # returned `textually-distinct` for every one of its loci — a refusal
         # asserted by taking the wrong road, which under the corrected coverage
-        # rules would have counted every one of them as new Scripture.
+        # rules would have counted them all as new Scripture. (The count then
+        # given was 2 131, the densified figure; the witness prints 2 094.)
         hops = (
             (system, "greek", PREFERRED_SYSTEM)
             if system == "world-english-catholic"
@@ -2085,9 +2086,9 @@ def native_coverage(
                 continue
             # It refuses the preferred system — but that does not make it new
             # text. The World English Catholic edition re-divides the GREEK,
-            # and 2 122 of its 2 131 loci reach it; counting those again would
-            # be counting one text twice because two editions number it
-            # differently, which is exactly what §9.2 forbids.
+            # and 2 088 of the 2 094 loci it prints reach it; counting those
+            # again would be counting one text twice because two editions
+            # number it differently, which is exactly what §9.2 forbids.
             elsewhere = False
             for prior in counted:
                 if token not in (scripture_systems().get(prior) or ()):
