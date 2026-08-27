@@ -309,6 +309,8 @@ class RetryLoopTests(RetryCase):
                 self.engine.advance(
                     run_id, result_path=self.worker_pass(run_id,
                                                          "author-proper"))
+                # v10 preflights the leaf before the evaluation reads it.
+                self.engine.advance(run_id, run_gate=True)
                 self.engine.advance(run_id, lane_results=[
                     (lane, self.write(f"ce-{lane}", {
                         "stage": "content-evaluation", "iteration": 0,
@@ -394,12 +396,19 @@ class PreservedGuaranteeTests(RetryCase):
         author = (FRAGMENTS / "propers" / "author-proper.md").read_text("utf-8")
         self.assertRegex(author, re.compile(r"immutable|read-only", re.I))
 
-    def test_the_content_evaluation_routing_is_unchanged(self):
-        """Test 17 and 18."""
+    def test_the_content_evaluation_routing_still_reaches_research(self):
+        """Test 17 and 18.
+
+        Version 10 added the `brief` owner between the two this test was
+        written for. The guarantee it holds is the one the synthesis retry
+        depends on: a `research` finding still re-enters `research`, and the
+        stage is still the five-lane fan-out in canonical order.
+        """
         stage = {s["id"]: s for s in
                  workflow_json()["stages"]}["content-evaluation"]
         self.assertEqual(stage["repair_routes"], [
             {"repair_target": "research", "transition": "research"},
+            {"repair_target": "brief", "transition": "research-synthesis"},
             {"repair_target": "authoring", "transition": "content-revision"},
         ])
         self.assertEqual(stage["execution"]["mode"], FANOUT)

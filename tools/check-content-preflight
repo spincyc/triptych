@@ -1,0 +1,477 @@
+#!/usr/bin/env python3
+"""Decide a proper leaf's mechanically checkable content defects by exit code."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+import tomllib
+import unicodedata
+from pathlib import Path
+
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+from _tooling import Example, with_examples  # noqa: E402
+
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
+ERROR = "check-content-preflight error: "
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/check-content-preflight --provider claude --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "49-ninth-after-pentecost",
+            (
+                "identifiers-resolve: 2 source identifiers, every one "
+                "registered",
+                "references-used: 32 entries, every one used in the body",
+                "relation-coverage: 4 relations, every element key claimed "
+                "by the unit that carries its evidence",
+                "unquoted-not-quoted: 2 sources declared unquoted, none "
+                "attributed a quotation",
+            ),
+            "the whole preflight over a published leaf; exits 0",
+        ),
+        Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "49-ninth-after-pentecost --check relation-coverage",
+            (
+                "relation-coverage: 4 relations, every element key claimed "
+                "by the unit that carries its evidence",
+            ),
+            "one check at a time, which is how a workflow gate runs them",
+        ),
+        Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "47-seventh-after-pentecost --check references-used",
+            (
+                "check-content-preflight error: references-used: References "
+                "entry is cited nowhere in the body: Internet Archive, "
+                "Missale Romanum (1962) item and OCR locating aid , accessed "
+                "2026-07-10; exact retrieval data, checksum",
+            ),
+            "exits 1; this is the refusal the content-preflight gate is "
+            "built on",
+        ),
+        Example(
+            "tools/check-content-preflight --list",
+            (
+                "identifiers-resolve",
+                "references-used",
+                "relation-coverage",
+                "unquoted-not-quoted",
+            ),
+            "prints every check id, one a line",
+        ),
+    ),
+}
+
+# --- Reading the leaf ------------------------------------------------------
+
+def leaf_dir(root: Path, provider: str, document: str) -> Path:
+    """The leaf's source directory, refusing anything outside the provider."""
+    if not provider or "/" in provider or provider.startswith("."):
+        raise ValueError(f"not a provider name: {provider!r}")
+    provider_root = (root / "src" / provider).resolve()
+    if not provider_root.is_dir():
+        raise ValueError(f"no source root for provider {provider!r}")
+    leaf = (provider_root / document).resolve()
+    if leaf != provider_root and provider_root not in leaf.parents:
+        raise ValueError(f"document leaves the provider root: {document!r}")
+    if not leaf.is_dir():
+        raise ValueError(f"no such leaf: src/{provider}/{document}")
+    return leaf
+
+
+def leaf_tex(leaf: Path) -> list[Path]:
+    """Every .tex file the leaf publishes, in a stable order.
+
+    `format.tex` defines macros and `generation-metadata.tex` is stamped by
+    the build; neither carries prose, and reading them would let a macro
+    definition stand in for a citation.
+    """
+    return [path for path in sorted(leaf.rglob("*.tex"))
+            if path.name not in ("format.tex", "generation-metadata.tex")]
+
+
+URL_ARG = re.compile(r"\\(?:url|nolinkurl|href)\{[^{}]*\}")
+SOURCEURL = re.compile(r"\\sourceurl\{[^{}]*\}")
+TEXTTT = re.compile(r"\\texttt\{[^{}]*\}")
+COMMAND = re.compile(r"\\[A-Za-z@]+\s*")
+
+
+def prose(text: str) -> str:
+    """LaTeX reduced to the words a reader sees.
+
+    A URL is dropped whole: it is a locator, not a citation, and leaving it
+    in would let a shared hostname count as a mention of the work. The
+    *label* of a `\\sourceurl{url}{label}` is kept, because that is the part
+    the reader reads.
+    """
+    text = URL_ARG.sub(" ", text)
+    text = SOURCEURL.sub(" ", text)
+    text = TEXTTT.sub(" ", text)
+    text = COMMAND.sub(" ", text)
+    return text.replace("{", " ").replace("}", " ")
+
+
+def fold(text: str) -> str:
+    """Case- and accent-insensitive form, so Guéranger matches Gueranger."""
+    return "".join(ch for ch in unicodedata.normalize("NFD", text)
+                   if unicodedata.category(ch) != "Mn").lower()
+
+
+REFERENCES = re.compile(r"\\section\*\{References\}")
+SECTION = re.compile(r"\\section\*\{")
+
+
+def split_leaf(leaf: Path) -> tuple[str, str]:
+    """The leaf's References section and everything else, as two strings."""
+    references, body = "", []
+    for path in leaf_tex(leaf):
+        text = path.read_text(encoding="utf-8")
+        start = REFERENCES.search(text)
+        if not start:
+            body.append(text)
+            continue
+        after = SECTION.search(text, start.end())
+        end = after.start() if after else len(text)
+        references += text[start.start():end]
+        body.append(text[:start.start()] + text[end:])
+    return references, "\n".join(body)
+
+
+ITEM = re.compile(r"(?m)^\\item\s")
+END_ITEMIZE = re.compile(r"(?m)^\\end\{itemize\}")
+
+
+def reference_items(references: str) -> list[str]:
+    """One string per `\\item` of the References section, in printed order."""
+    return [END_ITEMIZE.split(part)[0]
+            for part in ITEM.split(references)[1:]]
+
+
+# Words too common to identify anything. A word here can only make a check
+# more permissive, never less, so the list is deliberately generous: an
+# apparatus word that slipped through would let an unused entry pass, and a
+# distinctive word wrongly listed here can only produce a false refusal.
+COMMON = frozenset("""
+about after also among another are before being between both had has have
+here his her its most must not nor only other our over same shall should
+such than that their them then there they this those upon very was were
+what when which while will with would your
+abbey american archive books british brothers cambridge city college
+collegeville company copyright dublin domain edited edition editio editions
+editor eds english facsimile first french german greek gutenberg internet
+italian january february march april june july august september october
+november december latin limited london new york note notes online oxford
+pages page paris part parts philadelphia press print printed printing
+project public reprint rome second series society sons spanish stanbrook
+text texts third fourth fifth sixth seventh eighth ninth tenth trans
+translated translation translator university vatican vienna vol vols volume
+saint sant santo santa work works item
+""".split())
+
+NAME = re.compile(r"[A-Z\u00c0-\u00dd][A-Za-z\u00c0-\u00ff'\u2019-]{3,}")
+
+
+def anchors(item: str) -> set[str]:
+    """The capitalised words that identify a References entry.
+
+    An entry is named in the body by its author's surname or by a short form
+    of its title, never by the whole entry and never by any key: the leaves
+    carry no citation macro, and a printed source identifier appears in the
+    References and nowhere else. So identity here is the set of distinctive
+    proper words the entry uses, and an entry counts as cited when the body
+    uses any one of them.
+    """
+    found = set()
+    for word in NAME.findall(prose(item)):
+        folded = fold(word)
+        if len(folded) >= 4 and folded not in COMMON:
+            found.add(folded)
+    return found
+
+
+# --- The checks ------------------------------------------------------------
+
+def check_references_used(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """Every References entry is cited somewhere in the body.
+
+    The profile is explicit: References carries only sources actually used,
+    and no unused lead or source used only by deleted material. That is a
+    rule about the whole document, so reading either half alone cannot
+    settle it, and a five-lane evaluation has twice spent its judgment
+    discovering entries the body never touches.
+    """
+    references, body = split_leaf(leaf)
+    if not references:
+        return (["the leaf prints no References section"], "")
+    used = fold(prose(body))
+    unused = []
+    items = reference_items(references)
+    for item in items:
+        names = anchors(item)
+        if not names:
+            continue
+        if not any(re.search(r"\b" + re.escape(name), used)
+                   for name in names):
+            unused.append("References entry is cited nowhere in the body: "
+                          + " ".join(prose(item).split())[:120])
+    return unused, (f"{len(items)} entries, every one used in the body")
+
+
+IDENTIFIER = re.compile(
+    r"^(?:work|edition|artifact|segment|passage|corpus)"
+    r"\.[a-z0-9][a-z0-9.-]*[a-z0-9]$")
+PRINTED_ID = re.compile(r"\\(?:texttt|nolinkurl)\{([^{}]*)\}", re.S)
+ALLOWBREAK = re.compile(r"\\allowbreak")
+RECORD_ID = re.compile(r'^id = "([^"]+)"$')
+
+
+def printed_identifiers(leaf: Path) -> list[str]:
+    """Every source-library identifier the leaf prints, sorted and unique.
+
+    A long identifier is broken for the typesetter with `\\allowbreak` and a
+    line end, so the id has to be reassembled before it is anything at all: a
+    line-at-a-time reader sees `edition.eugene-cummiskey` and calls it
+    unregistered.
+    """
+    found = set()
+    for path in leaf_tex(leaf):
+        text = path.read_text(encoding="utf-8")
+        for match in PRINTED_ID.finditer(text):
+            value = "".join(ALLOWBREAK.sub("", match.group(1)).split())
+            if IDENTIFIER.match(value):
+                found.add(value)
+    return sorted(found)
+
+
+def registered_ids(root: Path) -> set[str]:
+    """Every id the source library registers.
+
+    Read from the records rather than from their paths: 185 of the 5977 ids
+    do not match the directory their record lives in, so a path-derived
+    answer would call one registered source in thirty unregistered. The
+    inventories under `src/sources/inventories/` are deliberately not read —
+    they carry `id =` lines that are audit rows, not registrations.
+    """
+    ids = set()
+    for directory in ("works", "corpora"):
+        library = root / "src" / "sources" / directory
+        for path in sorted(library.rglob("*.toml")):
+            for line in path.read_text(encoding="utf-8").splitlines():
+                match = RECORD_ID.match(line)
+                if match:
+                    ids.add(match.group(1))
+    return ids
+
+
+def check_identifiers_resolve(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """Every source identifier the leaf prints resolves in the library.
+
+    An identifier that resolves to nothing is a citation with no source
+    behind it, and it reads exactly like one that does.
+    """
+    printed = printed_identifiers(leaf)
+    if not printed:
+        return [], "the leaf prints no source identifier"
+    known = registered_ids(root)
+    missing = [f"printed source identifier is registered nowhere in "
+               f"src/sources: {value}" for value in printed
+               if value not in known]
+    return missing, f"{len(printed)} source identifiers, every one registered"
+
+
+# A relation's evidence names the kind of unit that carries it. Two of the
+# evidence classes name a component kind; the other two are observations made
+# inside whatever unit uses them and name no single owner.
+EVIDENCE_UNIT = {
+    "source-grounded-synthesis": "source-grounded-synthesis",
+    "exploratory-proposal": "exploratory-synthesis",
+}
+
+
+def check_relation_coverage(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """A relation's element keys are claimed by the unit carrying its evidence.
+
+    `[[relations]]` says which appointed elements a claim joins, and
+    `[[components]]` says which elements each unit draws on. When a relation
+    rests on the source-grounded synthesis, that component has to claim every
+    element the relation joins, or the manifest asserts a join in a unit that
+    does not admit to reading one of its parts. The drift is invisible in
+    either table alone.
+    """
+    manifest = leaf / "proper-components.toml"
+    if not manifest.is_file():
+        return (["the leaf carries no proper-components.toml"], "")
+    data = tomllib.loads(manifest.read_text(encoding="utf-8"))
+    claimed: dict[str, set[str]] = {}
+    for component in data.get("components", []):
+        claimed.setdefault(component.get("kind", ""), set()).update(
+            component.get("element_keys", []))
+    problems = []
+    relations = data.get("relations", [])
+    for relation in relations:
+        joins = set(relation.get("element_keys", []))
+        for evidence in relation.get("evidence", []):
+            kind = EVIDENCE_UNIT.get(evidence)
+            if kind is None:
+                continue
+            unit = claimed.get(kind)
+            if unit is None:
+                problems.append(
+                    f"relation {relation.get('key')!r} rests on {evidence} "
+                    f"but the manifest declares no {kind} component")
+            elif not joins <= unit:
+                problems.append(
+                    f"relation {relation.get('key')!r} joins "
+                    f"{sorted(joins - unit)} which the {kind} component does "
+                    f"not claim")
+    return problems, (f"{len(relations)} relations, every element key "
+                      f"claimed by the unit that carries its evidence")
+
+
+# The forms the leaves actually use to say a source is not quoted. There is
+# no field and no macro for it: the fact lives in the References entry's own
+# prose, so the check reads the prose the profile asks an author to write.
+DECLARES_UNQUOTED = re.compile(
+    r"(is not quoted|are not quoted|was not quoted|were not quoted"
+    r"|never quoted|not quoted here|summarised only|summarized only"
+    r"|summarised rather than quoted|summarized rather than quoted"
+    r"|was not used|were not used|supplies no English"
+    r"|protected text is not reproduced)", re.I)
+
+TITLED = re.compile(r"\\(?:work|emph|textit|sourceurl)\{")
+
+
+def attributed_author(item: str) -> str | None:
+    """The surname a References entry is attributed to, if it names one.
+
+    Only the words before the entry's first title carry the author, and only
+    the last of them is the surname. Nothing else in an entry is safe to
+    match a quotation's attribution against: an entry about the 2002 typical
+    edition is headed by the work, and matching its title would credit it
+    with every passage printed from the 1962 one; an entry naming a homily
+    on Luke would claim every Lucan pericope in the guide. An entry with no
+    author is not checked, because there is nothing in it that identifies
+    the source and only the source.
+    """
+    head = prose(TITLED.split(item, maxsplit=1)[0])
+    names = [fold(word) for word in NAME.findall(head)]
+    names = [name for name in names if name not in COMMON]
+    return names[-1] if names else None
+
+
+# `namedtranslation` and the `sourcecard` it is built on are the two
+# environments whose argument names the witness a printed passage was taken
+# from. A quotation elsewhere in the prose is not attributable mechanically:
+# the same paragraph routinely quotes an original whose only translation is
+# the one being declared unquoted, and testing for it refuses four published
+# leaves that are correct.
+ATTRIBUTED = re.compile(
+    r"\\begin\{(?:namedtranslation|sourcecard)\}\{"
+    r"((?:[^{}]|\{[^{}]*\})*)\}")
+
+
+def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """No source the leaf says it does not quote is credited with a quotation.
+
+    A guide that states four times that it quotes a witness only at second
+    hand, and then prints that witness's words as quoted text, contradicts
+    itself in a way neither statement shows on its own.
+    """
+    references, body = split_leaf(leaf)
+    if not references:
+        return (["the leaf prints no References section"], "")
+    declared = []
+    for item in reference_items(references):
+        # The fragments are hard-wrapped, so the declaration routinely spans
+        # two lines and a line-shaped search would never see it whole.
+        flat = " ".join(prose(item).split())
+        if not DECLARES_UNQUOTED.search(flat):
+            continue
+        author = attributed_author(item)
+        if author:
+            declared.append((author, flat[:80]))
+    problems = []
+    for match in ATTRIBUTED.finditer(body):
+        credited = fold(prose(match.group(1)))
+        for author, entry in declared:
+            if re.search(r"\b" + re.escape(author), credited):
+                problems.append(
+                    f"a quotation is credited to {author}, which the "
+                    f"References declare unquoted: {entry}")
+    return sorted(set(problems)), (
+        f"{len(declared)} sources declared unquoted, none attributed a "
+        f"quotation")
+
+
+CHECKS = {
+    "identifiers-resolve": check_identifiers_resolve,
+    "references-used": check_references_used,
+    "relation-coverage": check_relation_coverage,
+    "unquoted-not-quoted": check_unquoted_not_quoted,
+}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        prog="check-content-preflight",
+        description=__doc__,
+    )
+    parser.add_argument("--root", default=str(DEFAULT_ROOT),
+                        help="repository root (default: this checkout)")
+    parser.add_argument("--provider", default="gpt",
+                        help="provider directory under src/ (default: gpt)")
+    parser.add_argument("--document",
+                        help="leaf id under the provider root")
+    parser.add_argument("--check", choices=sorted(CHECKS),
+                        help="run one check instead of all of them")
+    parser.add_argument("--list", action="store_true",
+                        help="print every check id, one a line")
+    with_examples(parser, EXAMPLES[""])
+    args = parser.parse_args()
+
+    if args.list:
+        for name in sorted(CHECKS):
+            print(name)
+        return 0
+    if not args.document:
+        print(f"{ERROR}give --document ID, or --list", file=sys.stderr)
+        return 1
+
+    root = Path(args.root).resolve()
+    try:
+        leaf = leaf_dir(root, args.provider, args.document)
+    except ValueError as exc:
+        print(f"{ERROR}{exc}", file=sys.stderr)
+        return 1
+
+    selected = [args.check] if args.check else sorted(CHECKS)
+    failed = False
+    for name in selected:
+        try:
+            problems, summary = CHECKS[name](leaf, root)
+        except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
+            print(f"{ERROR}{name}: {exc}", file=sys.stderr)
+            failed = True
+            continue
+        if problems:
+            failed = True
+            for problem in problems:
+                print(f"{ERROR}{name}: {problem}", file=sys.stderr)
+        else:
+            print(f"{name}: {summary}")
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

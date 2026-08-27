@@ -49,32 +49,63 @@ itself.
 Every **blocking** finding must name who has to repair it:
 
 ```json
-"repair_target": "research" | "authoring"
+"repair_target": "research" | "brief" | "authoring"
 ```
 
-- `research` — the defect is in the research evidence or in
-  `research/scope.md`: an unsupported or missing research premise, missing
-  reception coverage in the brief, a weak evidence foundation.
-- `authoring` — the brief is adequate, but the canonical proper's prose,
-  structure, or use of citations is defective: prose that ignores an
-  adequate brief, bad organization of the leaf, a citation placement or use
-  problem where the source evidence is already adequate.
+Ask the three questions in this order and stop at the first yes.
 
-`tpt` reads this field and routes the repair itself. If any blocking finding
-from any lane is `research`, the run re-enters the `research` stage, then
-`research-synthesis`, then `author-proper`, then a fresh content evaluation.
-Otherwise it goes to `content-revision`. You do not choose the route and the
-controller does not choose the route: the field decides it.
+- `research` — **does the repair need retrieval that has not happened?** No
+  record in the brief supports the claim and none could without a fresh sweep:
+  the witness was never obtained, a reception field was never swept, a source
+  the claim depends on was never read. Only a research lane can go and get it.
+- `brief` — **is the material already held, and stated wrongly?** The brief has
+  the evidence and misstates it — a wrong locus, a wrong edition, a relation
+  named against the component manifest — or it recorded a bound and does not
+  carry that bound forward into what it asserts. Nothing new has to be
+  retrieved: the correction is a sentence of `research/scope.md`, which no
+  stage but `research-synthesis` may touch.
+- `authoring` — **is the brief adequate, and the leaf departing from it?** The
+  prose, the structure, or the use of citations in the canonical leaf is
+  defective while the brief it was written from is right.
 
-Because research is corrected first and the whole downstream is regenerated,
-an authoring defect reported alongside a research one is simply rediscovered
-by the fresh evaluation. That is intended, not a loss, so report each defect
-against its own owner and let the routing follow.
+`brief` exists because `research/scope.md` has exactly one writer,
+`research-synthesis`, and so a defect in the brief can be repaired in no other
+stage. Naming such a defect `research` does not reach that writer any sooner:
+it discards the brief and re-runs every research lane only to arrive back at
+the same stage with the same evidence.
 
-Where ownership is genuinely ambiguous, name the earliest authoritative
-owner whose correction is necessary — that is, prefer `research`. There is
-no third value; the engine rejects anything else. Advisory findings do not
-need the field.
+The line between `research` and `brief` is retrieval, not severity. A worked
+example: the brief cited the Gelasian Postcommunion at "Book II sect. LXIX,
+p. 207", where the printing's own contents put the Vigil at sect. LXVIII,
+p. 206. The witness is held, the reading was taken, and the locus is written
+down wrong. That is `brief`. It would be `research` only if the witness itself
+had never been obtained.
+
+`tpt` reads this field and routes the repair itself, in the order the workflow
+declares its routes — `research`, then `brief`, then `authoring`. The earliest
+owner that any blocking finding names wins, and only the findings that named
+that owner travel the route:
+
+- any finding naming `research` → the `research` stage, then
+  `research-synthesis`, then `author-proper`, then a fresh content evaluation;
+- otherwise, any finding naming `brief` → `research-synthesis`, then
+  `author-proper`, then a fresh content evaluation;
+- otherwise → `content-revision`.
+
+You do not choose the route and the controller does not choose the route: the
+field decides it.
+
+Because the earlier owner is corrected first and everything downstream of it is
+regenerated, a later owner's defect reported alongside it is simply
+rediscovered by the fresh evaluation. That is intended, not a loss, so report
+each defect against its own owner and let the routing follow.
+
+Where ownership is genuinely ambiguous, name the earliest owner whose
+correction is actually necessary. That ordering is not a licence to round
+upward: a defect the brief can repair out of evidence it already holds is
+`brief` however grave it is, and `research` is for the cases where the evidence
+is not there to repair it from. There is no fourth value; the engine rejects
+anything else. Advisory findings do not need the field.
 
 ## Result
 

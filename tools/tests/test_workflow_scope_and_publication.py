@@ -570,9 +570,17 @@ class PreservedGuaranteeTests(unittest.TestCase):
                                    "visual-evaluation"},
                          "the publication phase added no fan-out")
 
-    def test_the_repair_routes_are_unchanged(self):
+    def test_content_evaluation_is_still_the_only_routed_stage(self):
+        """The publication phase added no route; version 10 added one owner.
+
+        `brief` was inserted between the two owners this test was written
+        for, and it routes to the brief's sole writer. Everything else the
+        guarantee covers is unchanged: the order, the two outer owners, and
+        the fact that exactly one stage routes at all.
+        """
         self.assertEqual(self.stages["content-evaluation"]["repair_routes"], [
             {"repair_target": "research", "transition": "research"},
+            {"repair_target": "brief", "transition": "research-synthesis"},
             {"repair_target": "authoring", "transition": "content-revision"},
         ])
         routed = [stage["id"] for stage in workflow_json()["stages"]
@@ -606,7 +614,7 @@ class PreservedGuaranteeTests(unittest.TestCase):
                          "the production plan is a maintainer record with one "
                          "owning stage")
 
-    def test_the_seed_is_still_byte_idempotent_at_version_9(self):
+    def test_the_seed_is_still_byte_idempotent_at_version_10(self):
         name = self.id().rsplit(".", 1)[-1]
         runs = ROOT / "build" / f"tpt-runs-scope-{os.getpid()}-{name}"
         shutil.rmtree(runs, ignore_errors=True)
@@ -624,7 +632,7 @@ class PreservedGuaranteeTests(unittest.TestCase):
         after = {path.relative_to(run_dir).as_posix(): path.read_bytes()
                  for path in sorted(run_dir.rglob("*")) if path.is_file()}
         self.assertEqual(before, after)
-        self.assertEqual(json.loads(first)["workflow_version"], 9)
+        self.assertEqual(json.loads(first)["workflow_version"], 10)
         self.assertEqual(json.loads(first)["stage"], "seed")
 
     def test_every_new_fragment_exists_and_is_declared(self):

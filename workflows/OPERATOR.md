@@ -363,7 +363,7 @@ workflow below.
       "location": "page 4",
       "problem": "Description of the issue.",
       "required_result": "What the reviser must produce.",
-      "repair_target": "research | authoring"
+      "repair_target": "research | brief | authoring"
     }
   ]
 }
@@ -378,22 +378,26 @@ evaluator too and has its own prefix, below.
 
 `content-evaluation` also names who repairs each defect. Every blocking finding
 it returns carries `repair_target`, validated against
-`workflows/schema/content-evaluation-result.json`: `research` when the defect
-is in the research evidence or in `research/scope.md`, and `authoring` when the
-brief is adequate but the canonical leaf's prose, structure, or use of
-citations is not. There is no third value, a blocking finding that omits the
-field is refused, and advisory findings do not carry it. `visual-evaluation`
-and the gates route no repairs and use no `repair_target`.
+`workflows/schema/content-evaluation-result.json`, and it names one of three
+owners: `research` when the evidence is not there and a sweep must go and get
+it, `brief` when the evidence is there and `research/scope.md` states it
+wrongly or drops a bound it recorded, and `authoring` when the brief is
+adequate but the canonical leaf's prose, structure, or use of citations is not.
+The set is closed, a blocking finding that omits the field is refused, and
+advisory findings do not carry it. `visual-evaluation` and the gates route no
+repairs and use no `repair_target`.
 
 `tpt` reads the field and picks the route itself, in the order the workflow
 declares its routes: one blocking finding naming `research`, from any lane,
-sends the run to `research`, and a join whose blocking findings all name
-`authoring` goes to `content-revision`. So a `CHANGES_REQUIRED` content
-evaluation can print `"stage": "research"` as the next stage. That is correct,
-not a bug — the run resweeps, resynthesizes, reauthors, and is evaluated fresh.
-Only the findings that chose the route are forwarded, so the research lane
-packets carry the `research` findings and none of the `authoring` ones. You
-neither choose the route nor summarize anything into it.
+sends the run to `research`; failing that, one naming `brief` sends it to
+`research-synthesis`, the brief's sole writer; and a join whose blocking
+findings all name `authoring` goes to `content-revision`. So a
+`CHANGES_REQUIRED` content evaluation can print `"stage": "research"` or
+`"stage": "research-synthesis"` as the next stage. That is correct, not a bug —
+the run resweeps or restates, reauthors, and is evaluated fresh. Only the
+findings that chose the route are forwarded, so the research lane packets carry
+the `research` findings and none of the others. You neither choose the route
+nor summarize anything into it.
 
 A lane of a fan-out evaluator returns this same shape plus `lane` and
 `lane_packet_hash`, and uses its own lane's finding-ID prefix; see Execution
@@ -613,8 +617,12 @@ research-synthesis
   ├─ PASS ↓
 author-proper
   ↓
+content-preflight (programmatic)
+  ├─ FAIL → content-revision → reevaluate (never research: these are leaf defects)
+  ├─ PASS ↓
 content-evaluation
   ├─ CHANGES_REQUIRED, a research defect → research → synthesis → author → reevaluate
+  ├─ CHANGES_REQUIRED, a brief defect → research-synthesis → author → reevaluate
   ├─ CHANGES_REQUIRED, authoring defects only → content-revision → reevaluate
   ├─ PASS ↓
 build-artifacts
@@ -700,8 +708,8 @@ Each stage declares how it is run:
   the release records, and the catalog cell — one owner each.
   `web-evaluation` is `single` rather than a fan-out because there is one
   conversion to judge and one edition to judge it against; nothing partitions.
-- `program`, run by `tpt` itself: `scope-gate`, `mechanical-gates`,
-  `final-acceptance`, `publication-gates`.
+- `program`, run by `tpt` itself: `scope-gate`, `content-preflight`,
+  `mechanical-gates`, `final-acceptance`, `publication-gates`.
 - `fanout/host-max`: `research`, `content-evaluation`, and `visual-evaluation`.
   All three mutate no authoritative artifact — one discovers, two judge — so
   their work is partitioned across lanes that can run at the same time. Nothing
@@ -757,8 +765,9 @@ then seed a new run.
 `content-evaluation` is also the one stage that routes its own repairs. Each
 blocking finding its lanes raise names `repair_target`, and `tpt` reads that
 field to decide where a `CHANGES_REQUIRED` join sends the run — back to
-`research` if any of them names `research`, and to `content-revision`
-otherwise. See Structured result formats above.
+`research` if any of them names `research`, to `research-synthesis` if any
+names `brief`, and to `content-revision` otherwise. See Structured result
+formats above.
 
 `visual-evaluation` declares four, in canonical order:
 
@@ -780,7 +789,22 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 9. Version 9 gave the workflow the whole
+The `proper` workflow is at version 10. Version 10 changed two things about the
+content loop. `content-evaluation` gained a third repair owner, `brief`, which
+routes to `research-synthesis`: a defect the brief already holds the evidence
+for is one sentence of `research/scope.md`, and sending it to `research`
+discarded a sound brief and re-ran seven lanes to arrive back at the same
+writer. And a programmatic `content-preflight` gate now sits between
+`author-proper` and `content-evaluation`, running four checks a shell can
+decide — that every References entry is cited in the body, that every source
+identifier the leaf prints is registered, that every component-manifest
+relation's element keys are claimed by the unit carrying its evidence, and that
+no source the References declare unquoted is credited with a quotation. Its
+failures go to `content-revision` and never to research: they are mechanical
+defects in the leaf. Nothing else changed; research, the lanes, the other
+evaluators and the publication phase are as they were at version 9.
+
+Version 9 gave the workflow the whole
 lifecycle: an `authorize-target` stage and a terminal-on-failure `scope-gate`
 in front of the production phase, and `publish-artifacts`, `generate-web`,
 `web-evaluation` with its `web-revision` loop, `install-publication`, and the
@@ -806,6 +830,17 @@ content and visual evaluation lanes, the gates, and every other `single` stage
 are as they were at version 5. A run seeded against version 8 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
+
+`content-preflight` is a gate like any other: advance it with
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its four checks is
+one invocation of `tools/tpt check-content-preflight --check <name>`, judged by
+exit code, and the tool prints what it counted on a pass and names the entry,
+identifier, relation or quotation it refused on a failure. It exists so the
+five-lane evaluation behind it spends its budget on judgment rather than on
+things grep can settle; it does not replace any of that judgment. A failed
+check sends the run to `content-revision` with the check's own output as
+findings, and that loop is bounded at three consecutive failures like every
+other.
 
 Artifact acceptance is a gate, not a stage any agent is asked about. Advance
 it with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other

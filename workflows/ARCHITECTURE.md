@@ -228,11 +228,12 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 8: version 7 made `research-synthesis` an
-evaluator stage, so research too thin for a safe brief re-enters the seven
-lanes instead of ending the run, and version 8 declared `document_discovery`,
-which is guidance nobody reads but definition all the same. A run seeded
-against version 7 or earlier fails closed and is seeded again.
+`proper` workflow is at version 10: version 9 put the authorization gate and
+the whole publication phase around the production phase, and version 10 gave
+`content-evaluation` a third repair owner and inserted the `content-preflight`
+gate between `author-proper` and `content-evaluation`. A run seeded against
+version 9 or earlier fails closed and is seeded again. `workflows/OPERATOR.md`
+carries the version history in full.
 
 ### Hashing boundary
 
@@ -377,6 +378,30 @@ authoritative, and an authoritative artifact has one owner. A publication
 defect is repaired by `publication-revision` at the owner that installed it,
 never by sending a broken catalog link back through research or authoring.
 
+### The mechanical preflight
+
+`content-preflight` is a `program` gate between `author-proper` and
+`content-evaluation`, and it exists because a five-lane AI evaluation was
+twice spent discovering things a shell can decide: References entries the body
+never cites, a cited source identifier that resolves to nothing, a
+component-manifest relation whose element keys the unit carrying its evidence
+does not claim, and a witness credited with a quotation in a guide that
+declares it quotes that witness not. Each is one check, one command,
+`tools/tpt check-content-preflight --check <name>`, judged by exit code like
+every other gate check.
+
+Its `fail_transition` is `content-revision` and never `research`. These are
+defects in the leaf: none of them says anything about whether the evidence
+under the leaf was gathered, so sending one to `research` would re-run seven
+lanes over something grep found. The gate does not weaken the evaluation
+behind it — it removes from that evaluation's budget the questions that were
+never judgment.
+
+The gate is reached only from `author-proper`, so its own three-failure budget
+is spent only by a run that keeps coming back through the author. A revision
+made for it returns by `content-revision` to `content-evaluation` like any
+other content revision.
+
 ### One repair owner per defect
 
 Execution mode decides how many agents run a stage and ownership decides which
@@ -389,20 +414,22 @@ research/scope.md               -> sole writer is research-synthesis
 authoring                       -> single owner
 content evaluation              -> classifies repair owner
 research defect                 -> research, synthesis, authoring, fresh evaluation
+brief defect                    -> research-synthesis, authoring, fresh evaluation
 authoring defect                -> content-revision
 ```
 
-`content-evaluation` finds two kinds of defect: research that does not support
-what was written, and prose that does not use research that does. They are
-repaired in different places by different stages, so the evaluator names the
-owner of each defect and the engine routes on the name. The field is the whole
+`content-evaluation` finds three kinds of defect: evidence that was never
+gathered, evidence that was gathered and is written down wrongly in the brief,
+and prose that does not use a brief that is right. They are repaired in three
+different places by three different stages, so the evaluator names the owner of
+each defect and the engine routes on the name. The field is the whole
 of the decision: nothing reads a finding's prose, a filename, a finding-id
 prefix, or a controller's judgment, because a route chosen from any of those is
 a route the engine does not own.
 
 `content-evaluation-result.json`, used by that stage alone, requires
-`repair_target` on every blocking finding and admits `research` or `authoring`
-as its values. It declares that through two schema keys the engine now honours
+`repair_target` on every blocking finding and admits `research`, `brief` or
+`authoring` as its values. It declares that through two schema keys the engine now honours
 generally: `blocking_finding_fields` names fields required only of a finding
 whose `severity` is `blocking`, and `finding_enums` names the allowed values of
 a field wherever it appears. A field the engine branches on is required where
@@ -424,11 +451,22 @@ owner is corrected first and everything downstream of it is regenerated.
 `fail_transition` remains the route when the blocking findings name no declared
 target.
 
+The middle owner exists because the outer two are not exhaustive and rounding a
+defect up to `research` is expensive. A brief that holds the right witness and
+prints the wrong locus for it needs no sweep; it needs one sentence changed by
+the one stage allowed to change it. `research/scope.md` has a single writer, so
+`brief` routes to `research-synthesis` and names a stage that already exists
+rather than inventing one. Routing such a defect as `research` discards a sound
+brief, re-runs seven lanes, and arrives back at the same writer with the same
+evidence — which is what version 9 did, and what cost a production run a full
+research round to correct one page number.
+
 Only the findings that chose the route travel it. `_extract_prior_findings`
 filters the forwarded blocking findings to the chosen `repair_target`, so a
 research-owned finding cannot arrive at `content-revision`, which could not
-repair it, and an authoring-owned finding is not carried across a regeneration
-that rewrites the prose it describes. The fresh evaluation afterwards raises it
+repair it, a brief-owned finding is not carried into the research lanes, which
+do not write the brief, and an authoring-owned finding is not carried across a
+regeneration that rewrites the prose it describes. The fresh evaluation afterwards raises it
 again if it still holds, which is what a fresh evaluation is for.
 
 The forwarded findings reach every lane packet of the re-entered `research`
@@ -436,9 +474,10 @@ stage on the ordinary `PRIOR_FINDINGS` header line, so each lane resweeps
 holding the evaluator's own words. Nothing summarizes them on the way, and no
 controller decides which lane needs to see which.
 
-The loop this opens — `content-evaluation`, `research`, `research-synthesis`,
+The loops this opens — `content-evaluation`, `research`, `research-synthesis`,
 `author-proper`, and a fresh `content-evaluation` whose packet carries
-`PRIOR_FINDINGS: []` — is bounded like the revision loop, by the evaluator's
+`PRIOR_FINDINGS: []`, and the shorter one that re-enters `research-synthesis`
+directly — are bounded like the revision loop, by the evaluator's
 own `max_iterations` counted in `stage_failures`. Three consecutive
 `CHANGES_REQUIRED` results block the run, whichever route they took. The two
 loops share that budget deliberately: it bounds how many times a run may be

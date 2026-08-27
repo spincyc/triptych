@@ -141,20 +141,25 @@ says so, every **blocking** finding must also carry:
 
 ```json
 {
-  "repair_target": "research" | "authoring"
+  "repair_target": "research" | "brief" | "authoring"
 }
 ```
 
-- `research`: the defect is in the research evidence or in the research brief.
+- `research`: the evidence is not there, and getting it needs a fresh sweep.
+- `brief`: the evidence is there and the research brief states it wrongly, or
+  drops a bound the brief itself recorded. No retrieval is required.
 - `authoring`: the brief is adequate; the canonical leaf's prose, structure,
   or use of citations is not.
+
+The stage's own fragment names the values it admits and how to tell them
+apart; a stage that routes by owner may declare fewer than these three.
 
 `tpt` reads the field and chooses the repair route itself, in the order the
 workflow declares its routes, so one blocking finding naming the earlier owner
 sends the whole run that way. You are not choosing the route and neither is
-the driver: you are stating who owns the defect. There is no third value, and
-the engine rejects a blocking finding that omits the field or names anything
-else. Advisory findings do not carry it.
+the driver: you are stating who owns the defect. The set of values is closed,
+and the engine rejects a blocking finding that omits the field or names
+anything outside it. Advisory findings do not carry it.
 
 ## Gate stages
 

@@ -16,6 +16,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -35,6 +36,7 @@ from _workflow import (  # noqa: E402
     REPAIR_ROUTES,
     REPAIR_TARGET,
     SINGLE,
+    WorkflowEngine,
     WorkflowError,
     _repair_route,
 )
@@ -55,6 +57,7 @@ from test_workflow_research_fanout import (  # noqa: E402
 )
 
 RESEARCH = "research"
+BRIEF = "brief"
 AUTHORING = "authoring"
 SYNTHESIS = "research-synthesis"
 
@@ -270,7 +273,7 @@ class RepairOwnershipTests(RoutingCase):
         wrong = dict(missing, repair_target="typesetting")
         with self.assertRaises(WorkflowError) as caught:
             self.engine.advance(run_id, lane_results=submit(wrong))
-        self.assertIn("expected one of: research, authoring",
+        self.assertIn("expected one of: research, brief, authoring",
                       str(caught.exception))
 
         # Severity is what decides whether the owner is required at all, so
@@ -325,6 +328,64 @@ class RepairOwnershipTests(RoutingCase):
         })
         self.assertEqual(out["next"], RESEARCH,
                          "one research finding sends the whole run to research")
+
+    def test_a_brief_finding_routes_to_the_briefs_sole_writer(self):
+        """The middle owner, and the whole reason it exists.
+
+        The evidence is held and the brief states it wrongly. Nothing has to
+        be retrieved, and `research-synthesis` is the only stage that may
+        write `research/scope.md`, so the repair goes straight there instead
+        of discarding a sound brief and re-running seven lanes to arrive back
+        at the same writer.
+        """
+        out = self.route_for({
+            "citation-integrity": [blocking("CON-CIT-011", BRIEF)],
+        })
+        self.assertEqual(out["next"], SYNTHESIS)
+        self.assertEqual(out["transition"],
+                         {"from": "content-evaluation", "to": SYNTHESIS,
+                          "disposition": CHANGES_REQUIRED})
+        forwarded = self.forwarded(out["packet"])
+        self.assertEqual([f["id"] for f in forwarded], ["CON-CIT-011"])
+        self.assertTrue(all(f[REPAIR_TARGET] == BRIEF for f in forwarded),
+                        "only brief-owned findings enter the brief repair")
+
+    def test_a_brief_finding_outranks_an_authoring_one(self):
+        """Declaration order again, one place further down the list."""
+        out = self.route_for({
+            "citation-integrity": [blocking("CON-CIT-011", BRIEF)],
+            "profile-conformance": [blocking("CON-PRO-001", AUTHORING)],
+        })
+        self.assertEqual(out["next"], SYNTHESIS,
+                         "the brief is corrected before the prose written "
+                         "from it")
+        self.assertEqual([f["id"] for f in self.forwarded(out["packet"])],
+                         ["CON-CIT-011"],
+                         "the authoring finding is not carried across the "
+                         "reauthoring its own route would trigger")
+
+    def test_a_research_finding_still_outranks_a_brief_one(self):
+        """The new owner did not displace the earliest one."""
+        out = self.route_for({
+            "evidence-discipline": [blocking("CON-EVI-001", RESEARCH)],
+            "citation-integrity": [blocking("CON-CIT-011", BRIEF)],
+        })
+        self.assertEqual(out["next"], RESEARCH,
+                         "evidence that was never gathered is repaired first")
+        self.assertEqual([f["id"] for f in self.forwarded(out["packet"])],
+                         ["CON-EVI-001"])
+
+    def test_the_three_owners_are_declared_in_priority_order(self):
+        """The order is the routing, so it is asserted as an ordered list."""
+        stage = {s["id"]: s for s in workflow_json()["stages"]}[
+            "content-evaluation"]
+        self.assertEqual(
+            [route[REPAIR_TARGET] for route in stage[REPAIR_ROUTES]],
+            [RESEARCH, BRIEF, AUTHORING],
+            "earliest authoritative owner first")
+        self.assertEqual(
+            [route["transition"] for route in stage[REPAIR_ROUTES]],
+            [RESEARCH, SYNTHESIS, "content-revision"])
 
     def test_only_the_routed_findings_travel_the_route(self):
         """Test 20: a research finding cannot arrive at content-revision."""
@@ -389,7 +450,14 @@ class RepairOwnershipTests(RoutingCase):
                     route["transition"] if route else None, expected)
 
     def test_the_correction_path_is_exactly_the_declared_loop(self):
-        """Test 22 and 23: research, synthesis, authoring, fresh evaluation."""
+        """Test 22 and 23: research, synthesis, authoring, preflight, fresh
+        evaluation.
+
+        Version 10 put `content-preflight` between the author and the
+        evaluation, so the regenerated leaf is checked mechanically before
+        five AI lanes read it. The route the correction takes is otherwise
+        the one the workflow has always declared.
+        """
         run_id = self.drive_to("content-evaluation")
         out = self.engine.advance(run_id, lane_results=self.content_submissions(
             run_id, {"evidence-discipline": [blocking("CON-EVI-001", RESEARCH)]}))
@@ -405,9 +473,11 @@ class RepairOwnershipTests(RoutingCase):
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "author-proper"))
         visited.append(out["stage"])
+        out = self.pass_stage(run_id, "content-preflight")
+        visited.append(out["stage"])
         self.assertEqual(
             visited, [RESEARCH, SYNTHESIS, "author-proper",
-                      "content-evaluation"],
+                      "content-preflight", "content-evaluation"],
             "the research correction path is fixed by the workflow")
 
         # Test 23: the second evaluation starts clean. Nothing carries the
@@ -461,6 +531,7 @@ class RepairOwnershipTests(RoutingCase):
                 run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
             self.engine.advance(
                 run_id, result_path=self.worker_pass(run_id, "author-proper"))
+            self.pass_stage(run_id, "content-preflight")
         out = self.engine.advance(
             run_id, lane_results=self.content_submissions(run_id, research))
         self.assertEqual(out["disposition"], BLOCKED)
@@ -756,6 +827,97 @@ class DeclarationOrderTests(unittest.TestCase):
                       str(caught.exception))
 
 
+class RealWorkflowCoverageTests(unittest.TestCase):
+    """The propers workflow's own two lists, held to each other.
+
+    `DeclarationOrderTests` proves the rule on a synthetic workflow. This
+    proves it where it is load-bearing: the enum in
+    `content-evaluation-result.json` and the routes in `proper.json` are two
+    lists in two files that nothing but this rule keeps agreed, and the third
+    owner had to be added to both at once.
+    """
+
+    OWNERS = [RESEARCH, BRIEF, AUTHORING]
+
+    def schema_path(self, root: Path) -> Path:
+        return root / "schema" / "content-evaluation-result.json"
+
+    def pipeline_path(self, root: Path) -> Path:
+        return root / "pipelines" / "proper.json"
+
+    def copy_workflows(self) -> Path:
+        copied = Path(tempfile.mkdtemp()) / "workflows"
+        shutil.copytree(ROOT / "workflows", copied)
+        self.addCleanup(shutil.rmtree, copied.parent, ignore_errors=True)
+        return copied
+
+    def load(self, root: Path):
+        return WorkflowEngine(ROOT, root).load_workflow("proper")
+
+    def test_the_enum_and_the_routes_name_the_same_owners(self):
+        schema = json.loads(
+            self.schema_path(ROOT / "workflows").read_text(encoding="utf-8"))
+        self.assertEqual(schema["finding_enums"][REPAIR_TARGET], self.OWNERS)
+        stage = {s["id"]: s for s in workflow_json()["stages"]}[
+            "content-evaluation"]
+        self.assertEqual([r[REPAIR_TARGET] for r in stage[REPAIR_ROUTES]],
+                         self.OWNERS)
+        # Loading the real workflow is itself the coverage check running.
+        self.load(ROOT / "workflows")
+
+    def test_an_owner_the_schema_admits_with_no_route_refuses_the_workflow(self):
+        root = self.copy_workflows()
+        path = self.schema_path(root)
+        schema = json.loads(path.read_text(encoding="utf-8"))
+        schema["finding_enums"][REPAIR_TARGET] = self.OWNERS + ["layout"]
+        path.write_text(json.dumps(schema, indent=2), encoding="utf-8")
+        with self.assertRaises(WorkflowError) as caught:
+            self.load(root)
+        self.assertIn("every value a finding may carry needs a route",
+                      str(caught.exception))
+
+    def test_a_route_for_an_owner_the_schema_rejects_refuses_the_workflow(self):
+        root = self.copy_workflows()
+        path = self.pipeline_path(root)
+        workflow = json.loads(path.read_text(encoding="utf-8"))
+        for stage in workflow["stages"]:
+            if stage["id"] == "content-evaluation":
+                stage[REPAIR_ROUTES] = [
+                    route for route in stage[REPAIR_ROUTES]
+                    if route[REPAIR_TARGET] != BRIEF]
+        path.write_text(json.dumps(workflow, indent=2), encoding="utf-8")
+        with self.assertRaises(WorkflowError) as caught:
+            self.load(root)
+        self.assertIn("every value a finding may carry needs a route",
+                      str(caught.exception))
+
+    def test_dropping_brief_from_both_files_at_once_still_loads(self):
+        """The two lists move together, or not at all.
+
+        Without this the two tests above would pass for a workflow that had
+        simply lost the owner, and the rule they hold would read as a
+        prohibition on changing the enum rather than on changing one of them.
+        """
+        root = self.copy_workflows()
+        path = self.schema_path(root)
+        schema = json.loads(path.read_text(encoding="utf-8"))
+        schema["finding_enums"][REPAIR_TARGET] = [RESEARCH, AUTHORING]
+        path.write_text(json.dumps(schema, indent=2), encoding="utf-8")
+        path = self.pipeline_path(root)
+        workflow = json.loads(path.read_text(encoding="utf-8"))
+        for stage in workflow["stages"]:
+            if stage["id"] == "content-evaluation":
+                stage[REPAIR_ROUTES] = [
+                    route for route in stage[REPAIR_ROUTES]
+                    if route[REPAIR_TARGET] != BRIEF]
+        path.write_text(json.dumps(workflow, indent=2), encoding="utf-8")
+        loaded = {s["id"]: s for s in self.load(root)["stages"]}
+        self.assertEqual(
+            [r[REPAIR_TARGET]
+             for r in loaded["content-evaluation"][REPAIR_ROUTES]],
+            [RESEARCH, AUTHORING])
+
+
 class LauncherTests(unittest.TestCase):
     """Test 33."""
 
@@ -774,6 +936,7 @@ class LauncherTests(unittest.TestCase):
         stages = {s["id"]: s for s in json.loads(shown.stdout)["stages"]}
         self.assertEqual(stages["content-evaluation"]["repair_routes"], [
             {"repair_target": RESEARCH, "transition": RESEARCH},
+            {"repair_target": BRIEF, "transition": SYNTHESIS},
             {"repair_target": AUTHORING, "transition": "content-revision"},
         ])
 

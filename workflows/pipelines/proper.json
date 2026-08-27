@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 9,
+  "version": 10,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -193,7 +193,39 @@
         "propers/author-proper.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "content-evaluation"
+      "next": "content-preflight"
+    },
+    {
+      "id": "content-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "references-used",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check references-used",
+          "required_result": "every References entry must be cited somewhere in the body; the profile admits only sources actually used, and an entry the body never touches is a lead or a deletion left behind"
+        },
+        {
+          "id": "identifiers-resolve",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check identifiers-resolve",
+          "required_result": "every source identifier the leaf prints must name a record the source library registers; an identifier that resolves to nothing reads exactly like one that resolves"
+        },
+        {
+          "id": "relation-coverage",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check relation-coverage",
+          "required_result": "every element key a component manifest relation joins must be claimed by the unit that carries that relation's evidence; the drift is invisible in either table alone"
+        },
+        {
+          "id": "unquoted-not-quoted",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check unquoted-not-quoted",
+          "required_result": "no source the References declare the guide does not quote may be credited with a printed quotation; the contradiction shows in neither statement alone"
+        }
+      ],
+      "pass_transition": "content-evaluation",
+      "fail_transition": "content-revision",
+      "max_iterations": 3
     },
     {
       "id": "content-evaluation",
@@ -247,6 +279,10 @@
         {
           "repair_target": "research",
           "transition": "research"
+        },
+        {
+          "repair_target": "brief",
+          "transition": "research-synthesis"
         },
         {
           "repair_target": "authoring",

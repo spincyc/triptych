@@ -932,8 +932,9 @@ class LauncherTests(unittest.TestCase):
            "publication tree stays single-owner")
         program = {stage["id"] for stage in workflow["stages"]
                    if stage["execution"]["mode"] == PROGRAM}
-        self.assertEqual(program, {"scope-gate", "mechanical-gates",
-                                   "final-acceptance", "publication-gates"})
+        self.assertEqual(program, {"scope-gate", "content-preflight",
+                                   "mechanical-gates", "final-acceptance",
+                                   "publication-gates"})
 
 
 if __name__ == "__main__":

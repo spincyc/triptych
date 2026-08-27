@@ -95,15 +95,16 @@ SINGLE_OWNER = {
     "publish-artifacts", "generate-web", "web-evaluation", "web-revision",
     "install-publication", "publication-revision",
 }
-PROGRAM_STAGES = {"scope-gate", "mechanical-gates", "final-acceptance",
-                  "publication-gates"}
+PROGRAM_STAGES = {"scope-gate", "content-preflight", "mechanical-gates",
+                  "final-acceptance", "publication-gates"}
 
-# The v9 lifecycle, in order: authorize, produce, accept the artifacts,
-# publish, wire the catalog, accept the publication.
+# The v10 lifecycle, in order: authorize, produce, preflight the leaf, accept
+# the artifacts, publish, wire the catalog, accept the publication.
 STAGE_ORDER = [
     "seed", "authorize-target", "scope-gate", "resolve-context",
     "source-audit", "research", "research-synthesis", "author-proper",
-    "content-evaluation", "content-revision", "build-artifacts",
+    "content-preflight", "content-evaluation", "content-revision",
+    "build-artifacts",
     "mechanical-gates", "artifact-revision", "visual-evaluation",
     "visual-revision", "final-acceptance", "publish-artifacts",
     "generate-web", "web-evaluation", "web-revision", "install-publication",
@@ -403,7 +404,11 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(self.stages["research-synthesis"]["fail_transition"],
                          "research")
         self.assertEqual(self.stages["author-proper"]["next"],
-                         "content-evaluation")
+                         "content-preflight")
+        preflight = self.stages["content-preflight"]
+        self.assertEqual(preflight["type"], "gate")
+        self.assertEqual(preflight["execution"], {"mode": PROGRAM})
+        self.assertEqual(preflight["pass_transition"], "content-evaluation")
 
     def test_research_uses_the_research_result_schema(self):
         self.assertEqual(self.stages["research"]["result_schema"],
@@ -460,7 +465,7 @@ class TopologyTests(unittest.TestCase):
                          VISUAL_LANES)
         self.assertEqual(self.stages["visual-evaluation"]["type"], "evaluator")
 
-    def test_the_stage_list_is_exactly_the_v9_lifecycle(self):
+    def test_the_stage_list_is_exactly_the_v10_lifecycle(self):
         """The whole topology, in order, and nothing else.
 
         Version 9 put an authorization phase in front of the production
