@@ -18,11 +18,23 @@ harmonized", which is exactly the defect. That criterion now asks whether the
 disagreement is present and attributed. Four more causes of the same shape are
 fixed with it, and the tests below name each one.
 
-The rules are checked against the defect they were written for, with real
-sentences from the generated corpus on both sides: prose that must be caught,
-and prose that must survive. A rule that deleted a required modern dating, a
-documented disagreement, or the Joyce and Keynes afterlives would be worse
-than the fault it replaced.
+What this suite proves, and what it does not. It proves that the guidance
+states both rules, that the fragments carry them, that the compiled packets
+deliver them to the workers, that the repair routes are what they claim, and
+that the illustrative examples below are labelled correctly on both sides:
+prose that reads as a defect, and prose that must survive because a rule
+deleting a required modern dating, a documented disagreement, or the Joyce
+and Keynes afterlives would be worse than the fault it replaced.
+
+It does not prove that any particular guide is free of the fault, and the
+phrase list here is illustrative rather than a detector. It cannot be one.
+The exemptions the rules state are section-scoped — the same sentence is a
+defect in `Detailed Commentary` and required in `Appendix: Scope and
+Qualifications` — and a sentence carries no section; and the fault is not
+always a sentence, the plainest instance in the corpus being a table column
+header. Enforcement is criteria 11 and 12 read by an evaluator that can see
+which section it is reading, and the deterministic bytes that carry those
+criteria to it are what is tested here.
 """
 import json
 import re
@@ -81,7 +93,7 @@ def sentences(text: str) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
-# The matcher, and the insight it encodes
+# The illustrative phrase list, and what it is not
 # ---------------------------------------------------------------------------
 #
 # Both faults share one sentence template:
@@ -95,10 +107,38 @@ def sentences(text: str) -> list[str]:
 # subject or on an unmistakable piece of process vocabulary; none is anchored
 # on the mere presence of a qualification, because qualification is what the
 # profile requires.
+#
+# The list classifies the labelled examples below. It is not a detector over
+# the corpus and must not be presented as one, for two reasons that no amount
+# of further pattern-writing removes:
+#
+#   1. The exemptions the rules state are section-scoped, and a sentence
+#      carries no section. `This guide does not settle the year of the
+#      Passion` is a defect in `Detailed Commentary` and is exactly what
+#      `Appendix: Scope and Qualifications` exists to say. The same string
+#      has opposite verdicts, so no function of the string alone is right.
+#      SECTION_EXEMPT_BUT_MATCHING below holds real corpus sentences that
+#      prove it, and a test asserts that the list still matches them.
+#   2. Not every defect is a sentence. The `{Control retained}` column at
+#      `src/gpt/.../46-sixth-after-pentecost/main.tex:109` is a table column
+#      header inside `The Propers: Themes and Movement`, and a sentence
+#      matcher cannot see a column.
+#   3. A phrase list is evaded by rewording: `a guide which` for `a guide
+#      that`, `documented medieval reception` for the four adjectives listed
+#      above, `X is reported here` for `this guide reports X`. Adding
+#      patterns chases that forever, costs a false positive each time, and
+#      buys nothing the evaluator reading the criteria does not already do
+#      better. Do not answer a missed example by extending the list.
+#
+# Enforcement therefore lives where the review found it already working: in
+# criteria 11 and 12 and the lanes that own them, read by an evaluator that
+# can see which section it is reading. These tests prove the deterministic
+# half of that — the guidance states the rules, the fragments carry them, the
+# packets deliver them, and the examples are labelled correctly.
 
 SELF_NARRATION = re.compile(r"""
     \b(this|the\ present|our)\ (guide|commentary|treatment|exposition
-        |analysis|section|study)\b
+        |analysis|section|study|sheet)\b
         [^.;:]{0,80}?\b(reports?|does\ not|do\ not|declines?|refrains?
         |adopts\ no|makes\ no|asserts\ no|supplies|will\ not|treats
         |has\ not\ resolved)\b
@@ -114,7 +154,7 @@ SELF_NARRATION = re.compile(r"""
   | \bbounded\ negative\b
   | \bbounded\ and\ correctable\b
   | \bsilently\ harmoni[sz]\w*\b
-  | \bis\ offered\ as\ (a\ claim|source-grounded|documented)\b
+  | \bis\ offered\ as\ (source-grounded|documented)\b
   | \b(is|are)\ documented\ (allegorical\ |typological\ |later\ |patristic\ )?
         reception,\ not\b
   | \bnot\ a\ replacement\ for\ the\b
@@ -132,8 +172,13 @@ TRADITION_DISTANCE = re.compile(r"""
 """, re.IGNORECASE | re.VERBOSE)
 
 
-def house_voice_defects(text: str) -> list[str]:
-    """Sentences that narrate the process or stand outside the tradition."""
+def phrase_list_matches(text: str) -> list[str]:
+    """Sentences the illustrative phrase list matches.
+
+    A match is evidence about the sentence's grammar, not a verdict: whether
+    a matched sentence is a defect depends on the section it stands in, which
+    this function cannot see. See the header comment above.
+    """
     return [s for s in sentences(text)
             if SELF_NARRATION.search(s) or TRADITION_DISTANCE.search(s)]
 
@@ -180,9 +225,12 @@ METHOD_NARRATION_DEFECTS = [
     "It is worth stating plainly what this section has not resolved, "
     "because a guide that manufactured a consensus here would misrepresent "
     "its sources.",
-    # .../52-twelfth-after-pentecost/sections/90-scope.tex:104, in the body
-    "None of these negatives is offered as a claim about literature outside "
-    "the corpora named.",
+    # src/claude/.../53-thirteenth-after-pentecost/sections/
+    #     10-date-location.tex:16, the closing clause of the Ps. 73 dossier.
+    #     Page 2 is reader-facing prose, and until this repair criterion 12
+    #     did not reach it, so this defect had no criterion able to see it.
+    "Witnesses since antiquity have resolved the tension as prophecy or as a "
+    "later Asaphite's voice; this sheet reports it unresolved.",
     # The forms the governing brief names directly.
     "It is important to distinguish the literal sense from the allegorical "
     "here.",
@@ -248,8 +296,17 @@ HISTORICAL_CRITICAL_DATING = [                                     # (b)
     "inspired author. The 1906 Pontifical Biblical Commission allows "
     "pre-Mosaic sources, secretarial aid, inspired additions, and later "
     "linguistic updating while maintaining substantial Mosaic authenticity.",
-    "Psalm 73's superscription names Asaph while its content laments a "
-    "sanctuary already destroyed; the tension is reported and not resolved.",
+    # src/claude/.../53-thirteenth-after-pentecost/sections/
+    #     10-date-location.tex:16, with its closing clause removed. The
+    #     dossier ends `this sheet reports it unresolved`, whose subject is
+    #     the sheet's own conduct, so by this commit's own discriminator that
+    #     clause is the defect and cannot be a positive control. The fact and
+    #     the witnesses who differ say the same thing declaratively, and the
+    #     discarded clause is now a negative control below.
+    "Asaph is David's chief musician, so the bare title suggests a "
+    "Davidic-era horizon - yet the psalm mourns a sanctuary already "
+    "destroyed, and witnesses since antiquity have resolved the tension as "
+    "prophecy or as a later Asaphite's voice.",
 ]
 
 DOCUMENTED_DISAGREEMENT = [                                        # (c)
@@ -298,9 +355,52 @@ REQUIRED_NOTICES = [
     "keeper.",
 ]
 
+TERMINAL_APPARATUS = [                                             # (e)
+    # src/claude/.../52-twelfth-after-pentecost/sections/90-scope.tex:104.
+    # That file has exactly one heading, `\section*{Appendix: Scope and
+    # Qualifications}` at line 2, so line 104 is inside the appendix that
+    # editorial.md, the profile, criterion 12 and the profile-conformance
+    # lane all exempt by name. It was first labelled a body defect; it is
+    # the appendix doing its job, and bounding the negatives is required of
+    # it. (The gpt tree's file of the same name is 38 lines and has no line
+    # 104; the sentence is the claude tree's.)
+    "No exhaustive search of Syriac originals, chant manuscripts, "
+    "untranslated homiliaries, subscription databases or current specialist "
+    "monographs is claimed, and none of these negatives is offered as a "
+    "claim about literature outside the corpora named.",
+]
+
 LEGITIMATE = (CLAIM_LOCAL_QUALIFICATIONS + HISTORICAL_CRITICAL_DATING
               + DOCUMENTED_DISAGREEMENT + CULTURAL_AFTERLIFE
-              + REQUIRED_NOTICES)
+              + REQUIRED_NOTICES + TERMINAL_APPARATUS)
+
+# --- The section-blindness demonstration. Real corpus sentences that the
+# --- phrase list matches and that are legitimate where they stand, because
+# --- they stand in a section the rules exempt by name. Grammar cannot tell
+# --- these from the identical sentence in `Detailed Commentary`, where each
+# --- would be a defect, so these are the standing proof that the list
+# --- classifies labelled examples and does not detect defects in a corpus.
+SECTION_EXEMPT_BUT_MATCHING = [
+    # src/claude/.../51-eleventh-after-pentecost/sections/90-scope.tex,
+    # inside `Appendix: Scope and Qualifications`. Declining to settle
+    # authorship is precisely what a scope appendix is for.
+    "This guide does not settle the authorship or date of any psalm, the "
+    "date or place of Mark's composition, the compilation history of "
+    "Proverbs, or the year of the events Mark narrates.",
+    # src/claude/.../49-ninth-after-pentecost/sections/90-scope.tex, same
+    # section.
+    "This guide does not settle the year of the Passion, the date or place "
+    "of Luke's or John's composition, or the historical authorship of any "
+    "psalm.",
+    # src/claude/.../51-eleventh-after-pentecost/sections/99-references.tex,
+    # inside `References`, where a source-local note on what a search
+    # established is exactly the right home for the audit's phrasing.
+    "Also searched entire for the Collect, with the bounded negative result "
+    "recorded in research/scope.md.",
+    # src/claude/.../52-twelfth-after-pentecost/sections/99-references.tex,
+    # same section.
+    "De principiis I.1.2, with the bounded negative at Book IV;",
+]
 
 
 # ---------------------------------------------------------------------------
@@ -538,13 +638,44 @@ class ContentEvaluationTests(PacketCase):
                       self.shared)
 
     def test_the_qualification_sections_are_exempt(self):
-        """The appendix is qualification by design; the body is not."""
+        """The appendix is qualification by design; the body is not.
+
+        The mandated limit field is exempted by role rather than by label,
+        because the corpus writes it as `Strongest limit`, as `Limit`, and
+        as inline bold prose depending on the leaf.
+        """
         for exempt in ("Appendix: Scope and Qualifications", "References",
-                       "Strongest limit"):
+                       "the exploratory notice", "the novelty "
+                       "classification", "controlling-limit field"):
             with self.subTest(section=exempt):
                 self.assertIn(exempt, self.shared)
-        self.assertIn("qualification by design and out of scope for this "
-                      "criterion", self.shared)
+        self.assertIn("Out of scope, as qualification by design", self.shared)
+
+    def test_criterion_twelve_reaches_every_reader_facing_section(self):
+        """The holes the review found: page 2, the gallery, and the body of
+        Interpretive Possibilities were outside every content criterion."""
+        for section in ("Scriptural Date and Location",
+                        "The Propers: Notable and Quotable",
+                        "the proposals of `The Propers: Interpretive "
+                        "Possibilities`"):
+            with self.subTest(section=section):
+                self.assertIn(section, self.shared)
+        self.assertIn("Every reader-facing section is in scope", self.shared)
+
+    def test_criterion_twelve_reaches_a_defect_that_is_not_a_sentence(self):
+        """The `{Control retained}` column and the `Rights and limit` block
+        are the fault written as a column and as a field."""
+        self.assertIn("a run-in label, a standing per-entry field, or a "
+                      "table column", self.shared)
+        self.assertIn("`Control` or `Rights and limit` block", self.shared)
+
+    def test_criterion_twelve_spares_the_content_those_sections_must_carry(
+            self):
+        """Widening scope must not make required material a finding."""
+        self.assertIn("and none of those is ever a finding", self.shared)
+        self.assertIn("the modern critical horizon", self.shared)
+        self.assertIn("later user or work, exact locus, and turn in meaning",
+                      self.shared)
 
     def test_criterion_six_no_longer_rewards_the_defect(self):
         """The root cause: an evaluator could only verify non-silence if the
@@ -657,22 +788,28 @@ class VoiceRepairRoutingTests(RoutingCase):
 
 
 # ---------------------------------------------------------------------------
-# The matcher has teeth, and does not destroy what must survive
+# The labelled examples are labelled correctly, and the list knows its limits
 # ---------------------------------------------------------------------------
 
-class MatcherTests(unittest.TestCase):
-    """Negative and positive controls for the rule the tests apply."""
+class IllustrativeExampleTests(unittest.TestCase):
+    """The phrase list classifies the labelled examples correctly.
+
+    This is a claim about the examples, not about the corpus. What must not
+    happen is a required qualification being labelled a defect, because a
+    rule that deleted a modern dating, a documented disagreement, or the
+    Joyce and Keynes afterlives would be worse than the fault it replaced.
+    """
 
     def test_the_rule_catches_methodological_narration(self):
         for text in METHOD_NARRATION_DEFECTS:
             with self.subTest(defect=text[:60]):
-                self.assertTrue(house_voice_defects(text),
+                self.assertTrue(phrase_list_matches(text),
                                 f"the rule lets this through: {text!r}")
 
     def test_the_rule_catches_secular_framing(self):
         for text in SECULAR_FRAMING_DEFECTS:
             with self.subTest(defect=text[:60]):
-                self.assertTrue(house_voice_defects(text),
+                self.assertTrue(phrase_list_matches(text),
                                 f"the rule lets this through: {text!r}")
 
     def test_claim_local_qualification_survives(self):
@@ -680,7 +817,7 @@ class MatcherTests(unittest.TestCase):
         for text in CLAIM_LOCAL_QUALIFICATIONS:
             with self.subTest(allowed=text[:60]):
                 self.assertEqual(
-                    house_voice_defects(text), [],
+                    phrase_list_matches(text), [],
                     f"a required claim-local qualification is flagged: "
                     f"{text!r}")
 
@@ -689,7 +826,7 @@ class MatcherTests(unittest.TestCase):
         for text in HISTORICAL_CRITICAL_DATING:
             with self.subTest(allowed=text[:60]):
                 self.assertEqual(
-                    house_voice_defects(text), [],
+                    phrase_list_matches(text), [],
                     f"a required modern dating is flagged: {text!r}")
 
     def test_documented_disagreement_survives(self):
@@ -697,7 +834,7 @@ class MatcherTests(unittest.TestCase):
         for text in DOCUMENTED_DISAGREEMENT:
             with self.subTest(allowed=text[:60]):
                 self.assertEqual(
-                    house_voice_defects(text), [],
+                    phrase_list_matches(text), [],
                     f"a documented disagreement is flagged: {text!r}")
 
     def test_cultural_afterlife_survives(self):
@@ -705,27 +842,57 @@ class MatcherTests(unittest.TestCase):
         for text in CULTURAL_AFTERLIFE:
             with self.subTest(allowed=text[:60]):
                 self.assertEqual(
-                    house_voice_defects(text), [],
+                    phrase_list_matches(text), [],
                     f"a documented cultural afterlife is flagged: {text!r}")
 
     def test_the_required_notices_survive(self):
         for text in REQUIRED_NOTICES:
             with self.subTest(allowed=text[:60]):
                 self.assertEqual(
-                    house_voice_defects(text), [],
+                    phrase_list_matches(text), [],
                     f"a profile-mandated notice is flagged: {text!r}")
 
-    def test_the_rule_is_not_vacuous_against_the_corpus_it_was_built_on(self):
-        """Both control sets together: every defect caught, none of the
-        legitimate prose touched. A rule that passed only one half would be
-        either useless or destructive."""
+    def test_the_terminal_apparatus_survives(self):
+        """The appendix and References are qualification by design."""
+        for text in TERMINAL_APPARATUS:
+            with self.subTest(allowed=text[:60]):
+                self.assertEqual(
+                    phrase_list_matches(text), [],
+                    f"the terminal apparatus is flagged: {text!r}")
+
+    def test_every_labelled_example_is_classified_correctly(self):
+        """Both control sets together: every labelled defect matched, no
+        labelled legitimate sentence matched."""
         defects = METHOD_NARRATION_DEFECTS + SECULAR_FRAMING_DEFECTS
         self.assertEqual(
-            [t for t in defects if not house_voice_defects(t)], [])
+            [t for t in defects if not phrase_list_matches(t)], [])
         self.assertEqual(
-            [t for t in LEGITIMATE if house_voice_defects(t)], [])
+            [t for t in LEGITIMATE if phrase_list_matches(t)], [])
         self.assertGreaterEqual(len(defects), 28)
         self.assertGreaterEqual(len(LEGITIMATE), 21)
+
+    def test_the_phrase_list_is_section_blind_and_says_so(self):
+        """The list matches legitimate prose in the exempt sections.
+
+        This test asserts the limitation rather than papering over it. Each
+        sentence below is required of the section it stands in and would be
+        a defect in the substantive body, so grammar cannot decide it and
+        the phrase list is not the enforcement. Criteria 11 and 12 are, read
+        by an evaluator that can see the section.
+        """
+        for text in SECTION_EXEMPT_BUT_MATCHING:
+            with self.subTest(exempt=text[:60]):
+                self.assertTrue(
+                    phrase_list_matches(text),
+                    f"this example no longer demonstrates section-blindness, "
+                    f"so it should be retired or moved: {text!r}")
+
+    def test_the_module_does_not_claim_the_list_detects_defects(self):
+        """The suite must not narrate a discipline it does not have."""
+        source = Path(__file__).read_text(encoding="utf-8")
+        self.assertIn("It is not a detector over", source)
+        self.assertIn("a sentence matcher cannot see a column", source)
+        self.assertIn("illustrative", __doc__)
 
 
 # ---------------------------------------------------------------------------
@@ -733,7 +900,16 @@ class MatcherTests(unittest.TestCase):
 # ---------------------------------------------------------------------------
 
 class NoMethodInTheBodyTests(PacketCase):
-    """Proof 12, over every fragment and every compiled packet."""
+    """Proof 12, over every fragment and every compiled packet.
+
+    The sweeps below find nothing, and a sweep that finds nothing proves
+    nothing until it is shown to be capable of finding something. Exactly
+    one fragment sentence reaches the BODY_TARGET / METHOD_TOPIC / DIRECTIVE
+    gate — criterion 12's own question — and the question rule excludes it.
+    The inoculation tests therefore spike each fragment and each packet with
+    a directive that must be caught, so a green sweep is a fact about the
+    fragments rather than about the gate.
+    """
 
     def test_the_rule_catches_the_directive_it_forbids(self):
         for text in METHOD_IN_BODY_EVASIONS:
@@ -741,24 +917,50 @@ class NoMethodInTheBodyTests(PacketCase):
                 self.assertTrue(method_in_body_directives(text),
                                 f"the rule lets this through: {text!r}")
 
+    def reaches_the_gate(self, sentence: str) -> bool:
+        return bool(BODY_TARGET.search(sentence)
+                    and METHOD_TOPIC.search(sentence)
+                    and DIRECTIVE.search(sentence))
+
     def test_the_rule_permits_a_directive_that_sends_method_away(self):
-        allowed = [
-            "Method, search bounds, corpora checked, evidence classes, and "
-            "negative results already have their homes: the audit records "
-            "the profile names, and the terminal Appendix: Scope and "
-            "Qualifications.",
-            "Remove self-explanation of method.",
-            "That last phrasing belongs to the `notes` field of the findings "
-            "you return, which is an audit record.",
-            "Do not tell the reader that the reception is documented "
-            "reception in the commentary.",
-            "Does the reader-facing prose state its findings, or does it "
-            "repeatedly narrate what methodology governs the section?",
+        """Each case must reach the gate before a guard can clear it.
+
+        The gate is asserted first because a case that never reaches it
+        exercises no guard and proves nothing about one. ELSEWHERE and
+        FORBIDS are the guards; the question rule is checked separately.
+        """
+        cleared_by_elsewhere = [
+            "State the editorial reasoning behind each inclusion in "
+            "research/scope.md, and give the detailed commentary the "
+            "conclusion it reached.",
+            "Record the search bounds that govern the commentary in the "
+            "terminal appendix.",
         ]
-        for text in allowed:
+        cleared_by_forbids = [
+            "Never explain the guiding principle in the detailed commentary.",
+            "Do not narrate the research process in reader-facing prose.",
+        ]
+        for text, guard in ([(x, ELSEWHERE) for x in cleared_by_elsewhere]
+                            + [(x, FORBIDS) for x in cleared_by_forbids]):
             with self.subTest(allowed=text[:60]):
+                self.assertTrue(
+                    any(self.reaches_the_gate(s) for s in sentences(text)),
+                    f"this case never reaches the gate, so it tests no "
+                    f"guard: {text!r}")
+                self.assertTrue(
+                    any(guard.search(s) for s in sentences(text)),
+                    f"the intended guard does not fire on {text!r}")
                 self.assertEqual(method_in_body_directives(text), [],
                                  f"the rule wrongly flags: {text!r}")
+
+    def test_a_criterion_asking_the_question_is_not_a_directive(self):
+        """The one fragment sentence that reaches the gate is criterion 12's
+        own question, and mood is what tells it from an instruction."""
+        question = ("Does the reader-facing prose state its findings, or "
+                    "does it repeatedly narrate what methodology governs "
+                    "the section?")
+        self.assertTrue(self.reaches_the_gate(question))
+        self.assertEqual(method_in_body_directives(question), [])
 
     def test_no_fragment_directs_method_into_the_body(self):
         for name, text in propers_fragments().items():
@@ -774,6 +976,36 @@ class NoMethodInTheBodyTests(PacketCase):
                 self.assertEqual(
                     method_in_body_directives(text), [],
                     f"the {stage} packet directs method into the body")
+
+    def test_the_fragment_sweep_would_catch_a_directive_if_one_appeared(self):
+        """Inoculation: the green sweep above is about the fragments."""
+        spike = ("\n\nThe fragment ends here. Explain in the detailed "
+                 "commentary the editorial principle that governed which "
+                 "witnesses were included.\n")
+        for name, text in propers_fragments().items():
+            with self.subTest(fragment=name):
+                found = method_in_body_directives(text + spike)
+                self.assertTrue(
+                    found,
+                    f"the sweep over {name} cannot see a directive that is "
+                    f"actually there, so its silence proves nothing")
+                self.assertIn("editorial principle that governed",
+                              " ".join(found))
+
+    def test_the_packet_sweep_would_catch_a_directive_if_one_appeared(self):
+        """Inoculation, for the compiled packets."""
+        spike = ("\n\nThe packet ends here. In reader-facing prose, "
+                 "narrate the research process that produced the reception "
+                 "matrix.\n")
+        for stage, text in self.compiled_packets().items():
+            with self.subTest(stage=stage):
+                found = method_in_body_directives(text + spike)
+                self.assertTrue(
+                    found,
+                    f"the sweep over the {stage} packet cannot see a "
+                    f"directive that is actually there")
+                self.assertIn("narrate the research process",
+                              " ".join(found))
 
 
 # ---------------------------------------------------------------------------
@@ -926,6 +1158,33 @@ class GuidanceOwnershipTests(unittest.TestCase):
                       "does not reach them", self.profile)
         self.assertIn("What it reaches is their register leaking into the "
                       "body", self.profile)
+
+    def test_the_profile_delta_reaches_every_reader_facing_section(self):
+        """The delta named five sections, so page 2, the gallery and the
+        exploratory proposals were told the rules did not apply to them
+        while criterion 12 was widened to judge them."""
+        for section in ("Scriptural Date and Location",
+                        "The Propers: Notable and Quotable",
+                        "the proposals of `The Propers: Interpretive "
+                        "Possibilities`"):
+            with self.subTest(section=section):
+                self.assertIn(section, self.profile)
+        self.assertIn("Both rules reach every reader-facing word",
+                      self.profile)
+        self.assertIn("never reach that required content", self.profile)
+
+    def test_the_profile_does_not_require_the_limits_to_be_signposted(self):
+        """The surviving incentive: a signpost scan could only recover the
+        principal limits if the limits were printed as signposts, which is
+        the fault, and is what produced the `Control retained` column."""
+        self.assertNotIn("decisive evidence, and principal limits",
+                         self.profile)
+        self.assertIn("Do not make the limits recoverable by scan",
+                      self.profile)
+        self.assertIn("a table column that prints the discipline",
+                      self.profile)
+        self.assertIn("a requirement that a scan surface the limits is how "
+                      "a guide is driven to write one", self.profile)
 
     def test_the_profile_gate_can_reject_a_violation(self):
         self.assertIn("the reader-facing body states its findings rather than "

@@ -19,18 +19,32 @@ Read the leaf's structure and its source records against the profile in
     caution was necessary, what methodology governs the section, or why an
     interpretation is being presented at all? Weigh recurrence rather than a
     single sentence: a claim-local qualification that keeps a claim accurate
-    is required by the profile, and so is the terminal apparatus. `Appendix:
-    Scope and Qualifications`, `References`, and the exploratory notice and
-    `Strongest limit` field of `The Propers: Interpretive Possibilities` are
-    qualification by design and out of scope. In scope is their register
-    leaking into the substantive body — the four senses, `Themes and
-    Movement`, `Detailed Commentary`, the integrated commentary, and the
-    source-grounded synthesis. A criterion 12 finding is `authoring`, and it
-    is repaired by rewriting the sentence, never by deleting what it was
-    about.
+    is required by the profile, and so is the terminal apparatus. The habit
+    counts the same whether it is written as a sentence, a run-in label, a
+    standing per-entry field, or a table column. Read every reader-facing
+    section: the four senses, `Scriptural Date and Location`, `Themes and
+    Movement`, `Detailed Commentary`, the integrated commentary, the
+    source-grounded synthesis, `Notable and Quotable`, and the proposals of
+    `Interpretive Possibilities`. Out of scope, as qualification by design,
+    are `Appendix: Scope and Qualifications`, `References`, and — within
+    `Interpretive Possibilities` — the exploratory notice, the novelty
+    classification, and the mandated controlling-limit field, however it is
+    labelled. Page 2's required attribution, modern critical horizon,
+    uncertainty and claim-local sources are never a finding, and neither are
+    a gallery entry's required phrase, later user or work, exact locus and
+    turn in meaning; what is a finding in those two sections is the audit's
+    own apparatus printed for the reader — a dossier narrating the sheet's
+    conduct, or a standing `Control` or `Rights and limit` block under every
+    entry. A criterion 12 finding is `authoring`, and it is repaired by
+    rewriting the sentence, never by deleting what it was about.
 
-Judge the source structure only. The mechanical gates measure the rendered
-pages; do not rediscover what they check.
+Criteria 9 and 10 are judged from the leaf's structure and its source
+records. Criterion 12 is judged by reading the reader-facing prose itself:
+open the sources that carry the sections named above and read what they
+say, because a register that has moved into the body is visible nowhere
+else. The mechanical gates measure the rendered pages — build success,
+page counts, ordering, required blocks, undefined references — and you do
+not rediscover what they check.
 
 ## Result
 

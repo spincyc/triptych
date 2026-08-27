@@ -223,7 +223,7 @@ For each passage, distinguish traditional attribution from historical judgment a
 
 ### Themes, commentary, and exploration
 
-`The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies two complete, readable pages. Both pages must be substantively filled by the argument at the settled typesetting size; a forced break followed by conspicuous unused space does not satisfy the requirement. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five developed functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims and must earn its extent through real synthesis rather than repetition, enlarged type, decorative spacing, or displaced apparatus.
+`The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies two complete, readable pages. Both pages must be substantively filled by the argument at the settled typesetting size; a forced break followed by conspicuous unused space does not satisfy the requirement. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five developed functional units that account for every appointed element and let a signpost-only scan recover the thesis, its movement, and the decisive evidence. Do not make the limits recoverable by scan. A heading, a run-in label, or a table column that prints the discipline — a retained control, a caveat field, a note that a difference was not harmonised — is the defect [`guidance/editorial.md`](../editorial.md) names, and a requirement that a scan surface the limits is how a guide is driven to write one. A limit that materially changes a claim stays in the prose beside that claim, and every work-wide bound belongs to `Appendix: Scope and Qualifications`, where a reader looking for the limits finds them gathered. This section contains only source-grounded claims and must earn its extent through real synthesis rather than repetition, enlarged type, decorative spacing, or displaced apparatus.
 
 `The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. In the full edition, treat every appointed scriptural passage and every composed proper substantively in the element-by-element sweep, developing its literal setting, traditional spiritual senses, principal patristic and saintly reasoning, place in the liturgical action, and concrete relations to the other appointed elements. In the synthesis companion, replace that sweep with the dedicated integrated commentary: organize by three to six cross-proper claims rather than by appointed order, draw each unit from multiple elements and witnesses, and ensure that all appointed elements materially inform the whole even though they do not receive individual headings. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
 
@@ -232,10 +232,15 @@ For each passage, distinguish traditional attribution from historical judgment a
 that produced it".** Both govern every reader-facing word of a proper guide,
 and both are revised there and not here. Four deltas apply to this genre.
 
-- The substantive body is where the two rules bite: the page-1 four senses,
-  `The Propers: Themes and Movement`, `The Propers: Detailed Commentary`, the
-  synthesis companion's integrated commentary, and `Source-Grounded Synthesis
-  Across the Propers`. Represent a patristic, medieval, or saintly
+- Both rules reach every reader-facing word, and the substantive body is
+  where they bite hardest: the page-1 four senses, `Scriptural Date and
+  Location`, `The Propers: Themes and Movement`, `The Propers: Detailed
+  Commentary`, the synthesis companion's integrated commentary,
+  `Source-Grounded Synthesis Across the Propers`, `The Propers: Notable and
+  Quotable`, and the proposals of `The Propers: Interpretive Possibilities`.
+  The bullets below name what page 2, the gallery, and the exploratory
+  section are each required to carry; the rules govern the register of those
+  sections and never reach that required content. Represent a patristic, medieval, or saintly
   interpretation faithfully within its own theological grammar, state the
   reading, and attribute it. Do not tell the reader that the reception is
   documented reception, that a negative result is bounded and correctable,

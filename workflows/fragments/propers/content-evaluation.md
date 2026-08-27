@@ -60,11 +60,29 @@ scholarly content.
     guided inclusion, why caution was necessary, what methodology governs the
     section, or why the interpretation is being presented at all, instead of
     giving the conclusion? A few necessary claim-local qualifications are not
-    a defect; the defect is a recurring rhetorical habit. `Appendix: Scope and
-    Qualifications`, `References`, and the exploratory notice and `Strongest
-    limit` field of `The Propers: Interpretive Possibilities` are
-    qualification by design and out of scope for this criterion, which
-    reaches only their register leaking into the substantive body.
+    a defect; the defect is a recurring rhetorical habit, and it counts the
+    same whether it is written as a sentence, a run-in label, a standing
+    per-entry field, or a table column. Every reader-facing section is in
+    scope: the page-1 four senses, `Scriptural Date and Location`, `The
+    Propers: Themes and Movement`, `The Propers: Detailed Commentary`, the
+    integrated commentary, the source-grounded synthesis, `The Propers:
+    Notable and Quotable`, and the proposals of `The Propers: Interpretive
+    Possibilities`. Out of scope, as qualification by design, are `Appendix:
+    Scope and Qualifications`, `References`, and — within `The Propers:
+    Interpretive Possibilities` — the exploratory notice, the novelty
+    classification, and the controlling-limit field the profile mandates for
+    each proposal, however that field is labelled. Two sections are in scope
+    for their register and not for their required content. Page 2 must carry
+    the traditional attribution, the modern critical horizon, the
+    uncertainty, and the claim-local sources, and none of those is ever a
+    finding; what is a finding is a dossier that turns to narrating the
+    sheet's own conduct, as `this sheet reports it unresolved` does where the
+    fact and the witnesses who differ would say it. Each gallery entry must
+    carry its phrase, later user or work, exact locus, and turn in meaning,
+    and none of those is ever a finding; what is a finding is the
+    `Notable-and-quotable audit` printed for the reader as a standing
+    `Control` or `Rights and limit` block under every entry, where the
+    profile keeps that material in `research/scope.md`.
 
 ## Lane scope
 
