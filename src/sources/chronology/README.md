@@ -29,6 +29,8 @@ The review record, which asserts nothing about Scripture and is read by no tool:
 | `post-audit-corrections.tsv` | one row per standing finding, and what was done about it |
 | `post-audit-rereview-manifest.tsv` | every claim, scope and gap row the correction lane changed; the next cold reviewer inspects all of it |
 | `post-audit-correction-report.md` | what the correction lane changed, and what it left open |
+| `post-audit-rereview-findings.tsv` | the targeted cold re-review of every one of those changes, one row each |
+| `post-audit-rereview-report.md` | its disposition, and what still fails |
 
 `coverage.tsv` is written by `tools/tpt scripture-chronology build` and gated
 by `check`, which refuses a stale table rather than rebuilding it. Do not
