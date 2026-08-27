@@ -74,7 +74,20 @@ bindings:
       St. John alone, again, who tells us of the order to break the legs". The
       way to Calvary, the burial, and the hour of the Passion (Mark's third hour
       against John's sixth, Augustine III.13) are deliberately outside this
-      scope. This binding carries no date: the year, the day of the month and
+      scope. Matthew's range is bound whole through 27:54, and the one verse
+      inside it whose own words place its action later is named here rather
+      than left to be discovered: 27:52-53 is a single sentence in the tracked
+      Douay - "And the graves were opened: and many bodies of the saints that
+      had slept arose, And coming out of the tombs after his resurrection, came
+      into the holy city and appeared to many" - whose first half Matthew
+      narrates among the signs at the death, with the veil and the earthquake,
+      and whose second half the verse itself dates "after his resurrection".
+      The scope is NOT cut between the two, because that division would be this
+      corpus's and not the text's; but this binding does not date the saints'
+      entry into the holy city, for which no event is held here, and a query at
+      Matt 27:53 reaches the Crucifixion through the pericope it stands in -
+      which is why every assertion carries the scope it was reached from.
+      This binding carries no date: the year, the day of the month and
       the hour are the event's business, and the Catholic Encyclopedia leaves
       the first two open.
     sources:
@@ -385,49 +398,28 @@ bindings:
     sources:
       - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd
       - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10212c-f915c8f4
-  # --- Micheas: the oracle given, and the birth it is read of ----------------
-  - relation: prophecy-given
-    event: israel.divided-kingdom.fall-of-samaria
-    scope:
-      - {book: Mich, chapter: 4, through: 5}
-    note: >-
-      The occasion, not a date: the event holds the date and the sources
-      dispute it there. The Catholic Encyclopedia's "Book of Micheas"
-      distinguishes this section from the first — "The difference of tone and
-      contents clearly show that 4-5 must have been composed in other
-      circumstances than 1-3. They probably date from shortly after the fall of
-      Samaria in 722 B.C." The article's "probably" and "shortly after" are its
-      own and are the reason this binding names the fall of Samaria as the
-      occasion the oracles stand next to, not as the day they were uttered on.
-      The same article notes that "We do not, however, appear to possess any of
-      his addresses prior to the reign of Ezechias."
-    sources:
-      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-0de24478
-  - relation: prophetic-referent
-    event: life-of-christ.nativity
-    scope:
-      - {book: Mich, chapter: 5, first: 2, last: 2}
-    note: >-
-      Verse-numbering trap, resolved in favour of the canon's own numbering:
-      what the Douay and this corpus call Micheas 5:2, "And thou Bethlehem
-      Ephrata... out of thee shall he come forth unto me that is to be the
-      ruler in Israel", the Catholic Encyclopedia's "Book of Micheas" calls
-      "5:1 sq. (Hebr., 2 sq.)", where "the prophet introduces the Messianic
-      king whose place of origin is to be Bethlehem-Ephrata". That article
-      names the Messianic king and does not itself write "Jesus Christ"; the
-      identification with the birth at Bethlehem is Eusebius's, Church History
-      I.5.2 — "our Saviour and Lord Jesus Christ was born in Bethlehem of
-      Judea, according to the prophecies which had been uttered concerning him.
-      Micah 5:2" — and St Matthew's, whose chief priests answer Herod "In
-      Bethlehem of Juda. For so it is written by the prophet" (Matt. 2:5-6).
-      Eusebius dates by regnal year, "the forty-second year of the reign of
-      Augustus", which is not converted here and is not this binding's business
-      in any case.
-    sources:
-      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-0de24478
-      - artifact.eusebius.ecclesiastical-history.english-mcgiffert-npnf2-1-newadvent-web-2026-07-27.newadvent-250101-422405e9
-      - bible:douay-rheims:Matt.2.5
-      - bible:douay-rheims:Matt.2.6
+  # --- Micheas: what is NOT bound here, and why ------------------------------
+  # No prophecy-given is authored over Micheas 4-5, and the reason is left
+  # standing so that the next lane does not re-author it. The only sentence the
+  # Catholic Encyclopedia's "Book of Micheas" offers is about COMPOSITION - "The
+  # difference of tone and contents clearly show that 4-5 must have been
+  # composed in other circumstances than 1-3. They probably date from shortly
+  # after the fall of Samaria in 722 B.C." - and section 5 forbids reading a
+  # composition statement as another relation. That sentence is already held,
+  # with its "probably" and its "shortly after" intact, by
+  # `composition.book-of-micheas.chapters-4-5`. A binding carries no date, so
+  # reaching the fall of Samaria under prophecy-given collapsed "shortly AFTER
+  # the fall" onto the fall's own year and dropped both hedges at the consumer
+  # boundary; the article says nothing about when the oracles were uttered, and
+  # remarks only that "We do not, however, appear to possess any of his
+  # addresses prior to the reign of Ezechias."
+  # No historical-setting is authored in its place either. The occasion the
+  # article actually names is not the fall but what followed it - "the enemy
+  # left Palestine without attacking Jerusalem", chapters 4-5 having "preserved
+  # us an echo of the joy caused in Jerusalem by the removal of the danger" -
+  # and this corpus holds no event for that withdrawal. Binding to the fall
+  # because the fall is the event that happens to exist would be corpus
+  # convenience standing in for source authority.
   # --- Zacharias 1-8, and why the book is not bound whole --------------------
   - relation: prophecy-given
     event: israel.restoration.temple-work-resumed
@@ -456,20 +448,33 @@ bindings:
       - bible:douay-rheims:Zach.1.1
   # --- Daniel: the prophet's setting, what chapter 9 recalls, what it foretells
   - relation: historical-setting
-    event: israel.exile.first-captivity
+    event: israel.exile.seventy-years
     scope:
       - {book: Dan}
     note: >-
       The whole book, under historical-setting and never under narrated-event:
       this says what occasion tradition associates the text with, not that
-      every verse narrates it. The Catholic Encyclopedia's "Daniel" places the
-      prophet's whole career from that deportation — "When still a youth,
+      every verse narrates it. The occasion is the Babylonian captivity itself
+      and not any one deportation inside it. The Catholic Encyclopedia's
+      "Daniel" places the prophet's whole career there - "When still a youth,
       probably about fourteen years of age, he was carried captive to Babylon
-      by Nabuchodonosor in the fourth year of the reign of Joakim (605 B.C.)" —
-      and the same article warns at the outset that "Nearly all that is known
-      concerning the Prophet Daniel is derived from the book ascribed to him."
-      The regnal disagreement lives on the event, which prefers Daniel 1:1's
-      "third year of the reign of Joakim" against the encyclopedia's fourth.
+      by Nabuchodonosor in the fourth year of the reign of Joakim (605 B.C.)"
+      at one end, and at the other "Daniel continued to prosper through the
+      rest of the reign of Darius, and in that of his successor, Cyrus the
+      Persian" - and the same article warns at the outset that "Nearly all that
+      is known concerning the Prophet Daniel is derived from the book ascribed
+      to him." This binding named `israel.exile.first-captivity` until
+      2026-08-27, and that was over-broad rather than wrong in its evidence:
+      the book's chapters are dated by six different regnal years running from
+      Joakim to Cyrus, and 10:1 stands "in the third year of Cyrus", some
+      sixty-six years after the deportation the binding named. Contrast the
+      whole-book Ezechiel binding, which DOES name a single deportation and is
+      warranted in doing so because Ezechiel reckons his datelines from it
+      throughout, "the fifth year of the captivity of king Joachin"; Daniel has
+      no such reckoning. The deportation keeps its own binding, narrated-event
+      over Dan. 1:1-7, and the regnal disagreement lives on that event, which
+      prefers Daniel 1:1's "third year of the reign of Joakim" against the
+      encyclopedia's fourth.
     sources:
       - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04620a-900282cd
   - relation: retrospective-event
@@ -626,7 +631,7 @@ bindings:
     scope:
       - {book: Ps, chapter: 53}
     note: >-
-      Ps 53.1-2: "Unto the end, in verses, understanding for David, / When the
+      Ps 53.1-2: "Unto the end, in verses, understanding for David. / When the
       men of Ziph had come and said to Saul: Is not David hidden with us? [1
       Kings 23.19]" — the bracket is Challoner's cross-reference. What the title
       asserts is the Ziphites' denunciation at 1 Kings 23:19. This corpus holds
@@ -696,15 +701,55 @@ bindings:
       citing 1 Kings 19 and 27); imminent danger in the desert of Maon (1 Kings
       23:25, with Kimchi and Du Pin); Absalom's conspiracy (Theodoret and
       Menochius); an episode associated with Eusebius; and the captives
-      (Chrysostom). Only the Maon setting is anchored on that page to a verse
-      this corpus already holds an event for, and it alone is bound. The other
-      four are deliberately left unbound: "Absalom's conspiracy" does not say
-      which of the two markers standing inside 2 Kings 15 is meant, and this
-      corpus keeps Absalom's preparations and the move to Hebron as separate
-      events; "the captives" names no captivity; the remaining two name no
-      datable occasion. The record's own warning is kept — any year for Maon
-      comes from the 1 Kings 23 passage record and is never invented from this
-      psalm note. VULGATE numbering: Hebrew 31.
+      (Chrysostom). The page settles none of the five and neither does this
+      corpus: TWO of them are bound, as two historical-setting bindings on this
+      psalm, and the disagreement is preserved rather than harmonised (section
+      4.4, section 15.1(5)). This binding carries the desert of Maon; the
+      binding immediately below carries the conspiracy of Absalom. The ground
+      formerly recorded here for excluding Absalom - that the page "does not
+      say which of the two markers standing inside 2 Kings 15 is meant" - was
+      withdrawn on 2026-08-27 as no ground at all: a binding carries no date
+      (section 6), the corpus holds `israel.monarchy.david-flight-from-absalom`
+      as one event whose own claim is relative and names no marker to choose
+      between, and two other pairs of psalms are already bound to it on
+      evidence of exactly this kind. The remaining three stay unbound, and the
+      reason is what the page gives and not what this corpus happens to hold:
+      "the captives" names no captivity; the flight from court is anchored on
+      the page at 1 Kings 19 and 27, where the events this corpus holds for
+      David's flights are at 1 Kings 21, 23 and 24; and the "unpremeditated
+      fall of David" names no chapter at all. The record's own warning is kept
+      - any year for Maon comes from the 1 Kings 23 passage record and is never
+      invented from this psalm note. VULGATE numbering: Hebrew 31.
+    sources:
+    sources:
+      - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-30-traditional-settings
+      - bible:douay-rheims:Ps.30.1
+
+  - relation: historical-setting
+    event: israel.monarchy.david-flight-from-absalom
+    scope:
+      - {book: Ps, chapter: 30}
+    note: >-
+      The second of the five settings the single Haydock page at Ps 30:1
+      offers, authored BESIDE the Maon binding above and not instead of it,
+      because section 4.4 preserves a disagreement and does not resolve one.
+      The page names this reading and its authorities in one clause - "though
+      some refer this psalm to the conspiracy of Absalom, (Theod. M.)" - and
+      the record's own context field enumerates all five settings the page
+      carries. Three things this binding is not. It is not
+      superscription-setting: the Douay title of Ps 30 reads only "Unto the
+      end, a psalm for David, in an ecstasy" and names no occasion, so nothing
+      here comes from the title. It is not composition, although the page's
+      verb is "composed": what is taken from the sentence is the occasion
+      tradition associates with the psalm, and the page gives no year for the
+      writing and settles nothing between its five readings. And it is not a
+      second date: the event bound is the one this corpus already holds for the
+      flight, to which Ps 3 and Ps 142 are bound from their own titles and Ps
+      62 and Ps 70 from tradition, and its claim is relative - "when he fled
+      from the face of his son Absalom" - so nothing is asserted here about
+      which of the markers inside 2 Kings 15 is meant. A consumer querying Ps
+      30 now receives two settings and neither is presented as settled, which
+      is what the page supports. VULGATE numbering: Hebrew 31.
     sources:
       - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-30-traditional-settings
       - bible:douay-rheims:Ps.30.1
@@ -713,7 +758,6 @@ bindings:
     event: israel.monarchy.david-flight-from-absalom
     scope:
       - {book: Ps, chapter: 62}
-      - {book: Ps, chapter: 70}
     note: >-
       Neither title asserts this occasion; tradition associates it, which is the
       whole reason this is historical-setting and not superscription-setting.
@@ -1524,7 +1568,7 @@ bindings:
       - {book: 2Esd, chapter: 9, first: 15, last: 15}
       - {book: 2Esd, chapter: 9, first: 20, last: 20}
     note: >-
-      "He had rained down manna upon them to eat" — recital, not narration. The
+      "And had rained down manna upon them to eat" — recital, not narration. The
       narration is Exodus 16, bound above.
     sources: [bible:douay-rheims:Ps.77.24, bible:douay-rheims:Deut.8.3]
   - relation: retrospective-event
@@ -4415,8 +4459,22 @@ bindings:
       it and ties it to Isaias 7:14, which this corpus already binds to the same
       event. When Micheas uttered the oracle is a different assertion and is
       carried by the composition unit for chapters 4-5, not by this binding.
+      MERGED 2026-08-27: a second binding of this same relation over this same
+      event stood at Mich. 5:2 alone, so a query at that verse printed every
+      Nativity claim twice - "the year of Rome 750 which he styles 3 B.C."
+      twice and "probably the year 7 B.C." twice - while Mich. 5:3 printed each
+      once. The narrower row is gone and its distinct witness is kept here: the
+      identification of the Messianic king with the birth at Bethlehem is also
+      Eusebius's, Church History I.5.2 - "our Saviour and Lord Jesus Christ was
+      born in Bethlehem of Judea, according to the prophecies which had been
+      uttered concerning him. Micah 5:2" - who dates by regnal year, "the
+      forty-second year of the reign of Augustus", which is not converted here
+      and is not this binding's business in any case. The two encyclopedia
+      artifacts the two rows named are two retrievals of one article; the one
+      kept is the retrieval this entry was written against.
     sources:
       - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-734c8637
+      - artifact.eusebius.ecclesiastical-history.english-mcgiffert-npnf2-1-newadvent-web-2026-07-27.newadvent-250101-422405e9
       - bible:douay-rheims:Mich.5.2
       - bible:douay-rheims:Matt.2.5
       - bible:douay-rheims:Matt.2.6

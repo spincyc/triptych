@@ -5,8 +5,13 @@
 # One row per FACTUAL CLAIM - a subject plus the index of one of its dates -
 # never per binding, so a claim reused by a thousand verses is reviewed once.
 #
-# SELECTION RULE, reproducible from this header and the tracked corpus:
-#   pool = every authored claim (458 when this file was built) MINUS the
+# SELECTION RULE, reproducible from this header and the corpus AS AUDITED.
+# The corpus it selects from is the one at commit 2330d63a5, which is the
+# commit the cold audit reviewed. Later lanes withdrew claims and changed
+# dispositions, so the rule does not reproduce against a later HEAD, and a
+# reviewer regenerating this list must read the corpus at that commit:
+#   git show 2330d63a5:src/sources/chronology/<file>.yaml
+#   pool = every authored claim (458 at that commit) MINUS the
 #     complete-inspection set below. The exclusion needed to reproduce this
 #     file is exactly: precision == 'duration', OR the claim's subject carries
 #     a `relation: historical-setting` binding whose scope is a Psalm in

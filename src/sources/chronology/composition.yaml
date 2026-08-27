@@ -1024,7 +1024,9 @@ units:
           (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
           writings belong to the end of the first century, from the year 90 to
           100 (approximately)."
-        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        sources:
+          - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08435a-d50fa955
         note: >-
           The window is asserted of the Johannine writings collectively, not of
           this Epistle by itself. The encyclopedia's own article on the
@@ -1048,7 +1050,9 @@ units:
           (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
           writings belong to the end of the first century, from the year 90 to
           100 (approximately)."
-        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        sources:
+          - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08435a-d50fa955
         note: >-
           The window is asserted of the Johannine writings collectively. Drum's
           article on the Epistles of St John gives no year for the two short
@@ -1072,7 +1076,9 @@ units:
           (vol. 14, 1912) dates the Johannine corpus as a body: "The Johannine
           writings belong to the end of the first century, from the year 90 to
           100 (approximately)."
-        sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
+        sources:
+          - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08435a-d50fa955
         note: >-
           The window is asserted of the Johannine writings collectively. Drum's
           article on the Epistles of St John covers this letter and the Second
@@ -1409,11 +1415,24 @@ units:
   # reached every verse of the Latin text - including the pluses the same
   # article calls "foreign not only to the Greek, but also to the Hebrew text".
   #
-  # This unit is admissible precisely because sharing is impossible. The
-  # concordance refuses 1 355 of the Greek book's 1 356 loci - "there is no
-  # numbering of 'Sirach' that both editions are numbering differently; there
-  # are two texts", `guidance/versification.md` §4 - and the load-time gate
-  # would refuse this scope if it did not.
+  # This unit is admissible because authoring it here does not restate a fact
+  # the preferred locus holds. The concordance refuses 1 355 of the Greek
+  # book's 1 356 loci - "there is no numbering of 'Sirach' that both editions
+  # are numbering differently; there are two texts", `guidance/versification.md`
+  # section 4 - and the load-time gate would refuse this scope if what it
+  # authored were already held in the vulgate.
+  #
+  # THE ONE LOCUS THAT IS NOT REFUSED LIES INSIDE THIS SCOPE, DELIBERATELY.
+  # Greek Ecclus 36:16 is the single locus the concordance carries safely to
+  # the Vulgate - the introit Da pacem Domine sustinentibus te, the Vulgate's
+  # 36:18 - and the scope is NOT split to exclude it, because splitting would
+  # delete the only assertion true of that verse about the Greek text: the
+  # vulgate-scoped unit dates the Hebrew original and reaches the Latin
+  # version, and holds nothing at all about the Greek translation. A query at
+  # greek Ecclus 36:16 therefore answers at vulgate Ecclus 36:18 and returns
+  # both units, which is what the gate now asks for - a native scope is
+  # refused where it would RESTATE a claim the preferred locus already holds
+  # under the same relation, not wherever the two texts happen to correspond.
   - id: composition.book-of-ecclesiasticus.greek
     title: Ecclesiasticus, the Greek translation
     scope: {system: greek, book: Ecclus}

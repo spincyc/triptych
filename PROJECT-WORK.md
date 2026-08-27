@@ -1894,10 +1894,10 @@ than propping a count up with a binding the sources do not support.
 
 **A defect this lane found in a test.** The World English Catholic edition is
 two hops from the Vulgate, through the Greek. Chronology asked for a direct row,
-the direct index is empty, and all 2 131 of its loci returned
+the direct index is empty, and all 2 094 of the loci it prints returned
 `textually-distinct` — and a test asserted that refusal as correct behaviour.
 730 of those loci are the Vulgate's own text, and under the corrected coverage
-rules every one of the 2 131 would have counted as new Scripture. A refusal is
+rules every one of the 2 094 would have counted as new Scripture. A refusal is
 evidence about a route until the route has been checked.
 
 **Coverage, over a universe that is now named rather than assumed.**

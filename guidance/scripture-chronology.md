@@ -546,9 +546,13 @@ substantive assertion, a composition assertion, or an authored gap row.
 **[verified]** No verse of it is `research-pending`.
 
 That is a statement about that universe and no other. It must never be reported
-as "the Bible is dated" or "Scripture chronology is complete": 1 400 native
-loci sit outside it, and ten of those currently have no chronology status of
-their own at all.
+as "the Bible is dated" or "Scripture chronology is complete": 1 362 native
+loci sit outside it — 1 356 `greek` and 6 `world-english-catholic`, counted
+from the verses those witnesses actually print — and seven of them answer
+`research-pending` on the chronology axis, beside a mapping refusal on the
+mapping axis. The figures were 1 400 and ten until 2026-08-27, when
+`_system_loci` stopped filling each chapter from its first printed verse to its
+last; three of the ten were invented verse numbers and were never text.
 
 That is a real result and a small one. It means a ranked source was inspected
 for every verse and its answer recorded — including where the answer was that
@@ -899,10 +903,11 @@ source. Check for them by name.
 
 10. **A refusal produced by taking the wrong route, then enshrined in a test.**
     The World English Catholic edition is two hops from the Vulgate; chronology
-    asked for a direct row, the direct index is empty, and all 2 131 of its loci
-    came back `textually-distinct`. A test asserted that refusal as correct. 730
-    of those loci are the Vulgate's own text, and under the corrected coverage
-    rules every one of the 2 131 would have been counted as new Scripture.
+    asked for a direct row, the direct index is empty, and all 2 094 of the loci
+    it prints came back `textually-distinct`. A test asserted that refusal as
+    correct. 730 of those loci are the Vulgate's own text, and under the
+    corrected coverage rules every one of the 2 094 would have been counted as
+    new Scripture.
     **A refusal is evidence about a route until you have checked the route.**
 
 ---
