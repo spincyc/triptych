@@ -45,6 +45,12 @@ companion, web edition, and release records. No other identity becomes a target
 by either decision, and the collections otherwise remain closed as recorded
 above.
 
+On 2026-08-26 the maintainer reopened this boundary once more, for the single
+1962 temporal identity `54`, the Fourteenth Sunday after Pentecost, for both
+Claude and GPT, authored to the current componentized profile. Each provider
+target is a full target on the same terms as `51`–`53`. No other identity
+becomes a target by this decision, and the collections otherwise remain closed.
+
 The permanent identities in the registry and the profile remain complete and
 fixed, because an identity may never be reassigned and a future maintainer must
 be able to place any guide that does get written. They are **not** a queue, and
