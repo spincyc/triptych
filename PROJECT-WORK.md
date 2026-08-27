@@ -1159,9 +1159,17 @@ members with ZIP SHA-256
 review re-verified byte for byte against the digest the package's own post-P8
 authority record carries. Current `origin/main` is
 `2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and this lane is not integrated
-with it. The correction is on `impl/catena-wave-1-e1-corrections-v16` at
-`«TBD:v16-head»`, and its immutable handoff is planned for
-`evidence/catena-e1-corrections-v16-handoff`.
+with it. The correction is on `impl/catena-wave-1-e1-corrections-v16`, and its
+immutable handoff is archived on `evidence/catena-e1-corrections-v16-handoff`.
+This record does not name its own head, and cannot: it is a member of the commit
+that head identifies, so a sentence quoting the value would change the value it
+quoted. It is the same structural limit that stops an archive containing its own
+digest, one level out. The head, the package, its size, its member count and its
+digest are named in the handoff itself and in the evidence commit that carries
+it, which are the places where a figure about this lane's own artifacts can be
+stated without being self-referential. Every lane from V5 onward has recorded
+the PREDECESSOR's identities here and its own in the handoff, and this one does
+the same.
 
 **What the review preserved, and why none of it is counted as V16 work.** The
 V15 review passed and did not reopen the row-transport owner model
@@ -1644,8 +1652,16 @@ the check that had to be made before the number could be asserted. Two batteries
 ran green, had their figures declined and were never marked `set-aside`, while
 V15's `PROVENANCE.md:296` states "This lane set no cohort aside" — declining a
 green cohort's figures is what setting a cohort aside means. V16's own history
-is one ledger with one ordinal allocation, and it is
-`«TBD:attempt-ledger-identity»`.
+is not one ledger either, and it says so rather than being tidied. The first was
+retired when a parent battery that had run green was declined for having run
+against a `build/` warmed by an earlier refused attempt, so its example figure
+was the warm one; the successor's opening row carries the retired file's digest,
+byte count, row count, the ordinals it spent, the attempts it held and the
+reason it stopped, and the declined cohort is classified `set-aside` by a row in
+the retired file rather than by prose about it. No ordinal was reissued: the
+spent ones were carried forward, which is the defect the V15 review found when
+ordinal 1 was issued three times in one lane. The identities and digests of both
+files are in the handoff.
 
 **The new checks are calibrated against the real package, not only against a
 fixture.** Run over the actual V15 archive and its actual siblings, the rebuilt
@@ -1684,10 +1700,16 @@ fabricated `phase` and a fabricated `log` — three fields a tool that never ran
 cannot have — repeated Python and Git uses are sampled rather than counted, and
 both `assemble.sh` and `battery.sh` are marked not executed although they drove
 the build. V16 publishes one phase-labelled schema whose execution state is
-derived mechanically: `«TBD:tool-unique»` unique tools, `«TBD:tool-invocations»`
-invocations, `«TBD:tool-executed»` executed tools and
-`«TBD:tool-executed-invocations»` executed invocations, with the drivers
-classified as what they are.
+derived mechanically from the transcripts that recorded the runs: unique
+referenced tools, unique executed tools, execution invocations, shipped tools
+and trusted-but-not-executed tools are five separately named counts and never a
+combined label, the drivers that hashed themselves at their own preflight are
+classified as executed, and the roster of shipped-but-never-run tools carries no
+instant, phase or log, because a tool that never ran has none of the three. The
+figures themselves are in the handoff, each taken at a stated phase — the defect
+being corrected is a package that sealed two unlabelled figure sets for one
+lane, and a record that quoted either one here without its phase would repeat
+it.
 
 **The V15 completeness verdict went stale, and the compare gate had one sound
 half and one degenerate half.** Rerunning V15's own shipped completeness checker
@@ -1861,12 +1883,12 @@ instead, and the authority record carries a required note saying exactly that.
 It is the same shape of limit V15 correctly recorded when it said an archive
 cannot contain its own digest, and it is disclosed for the same reason: a
 reviewer who expects the binding and does not find it should find the reason
-already written down. The handoff is to be archived on
-`evidence/catena-e1-corrections-v16-handoff` at `«TBD:evidence-commit»` with
-sealed package `«TBD:zip-basename»` at `«TBD:zip-bytes»` bytes over
-`«TBD:zip-members»` members with ZIP SHA-256 `«TBD:zip-sha256»`. This lane
-records no acceptance of its own work, marks no separately owned prerequisite
-complete, and does not review itself.
+already written down. The handoff is archived on
+`evidence/catena-e1-corrections-v16-handoff`; its commit, the package basename,
+its size, its member count and its ZIP SHA-256 are named there and in the
+evidence commit that carries it, and deliberately not here, for the reason given
+at the head of this section. This lane records no acceptance of its own work,
+marks no separately owned prerequisite complete, and does not review itself.
 
 ### E1 Catena transport and completion ownership lane, V15
 
