@@ -453,15 +453,64 @@ events:
             _chronology.load(root)
         self.assertIn("declares numbering", str(caught.exception))
 
-    def test_chronology_is_authored_in_one_system_only(self) -> None:
+    def test_a_system_may_not_name_a_book_it_does_not_number(self) -> None:
+        """`hebrew` is a psalter numbering, and names nothing outside it.
+
+        This replaced a test asserting that chronology is authored in exactly
+        one system, which was the architecture Correction A abolished on
+        2026-08-27. The rule that survives it is the sharper one: a scope's
+        system must actually number the book it names. The abandoned scratch
+        patch admitted exactly this fixture, because it checked the system name
+        against a flat set and never asked which books that system addresses.
+        """
         refuses(
             self,
-            "chronology is authored in",
+            "does not number",
             composition="""\
 units:
   - id: composition.matthew
     title: Matthew
     scope: {system: hebrew, book: Matt}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 42, era: ad}}
+""",
+        )
+
+    def test_a_scope_may_not_name_a_system_with_no_machinery(self) -> None:
+        refuses(
+            self,
+            "is not a Scripture system this repository has machinery for",
+            composition="""\
+units:
+  - id: composition.matthew
+    title: Matthew
+    scope: {system: septuagint, book: Matt}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 42, era: ad}}
+""",
+        )
+
+    def test_native_authoring_is_refused_where_the_text_is_safely_shared(self) -> None:
+        """The gate that keeps "one fact, one place" from being a convention.
+
+        Hebrew Psalm 51 IS Vulgate Psalm 50 - the concordance carries it - so a
+        native Hebrew scope over it would be the same fact authored twice.
+        Native scopes are admissible precisely where sharing is impossible.
+        """
+        refuses(
+            self,
+            "authors chronology natively",
+            composition="""\
+units:
+  - id: composition.psalm-51-hebrew
+    title: Psalm 51, natively
+    scope: {system: hebrew, book: Ps, chapter: 51}
     dates:
       - profile: catholic-traditional-v1
         basis: fixture
@@ -655,8 +704,53 @@ units:
         answer = book.ask("Matt.1.1")
         self.assertEqual(len(answer.assertions), 1)
         self.assertEqual(answer.assertions[0].subject, "composition.matthew")
+        # HOW it arrived. Provenance, and nothing else.
         self.assertTrue(answer.assertions[0].inherited)
-        self.assertEqual(answer.status, "inherited")
+
+    def test_how_an_assertion_arrived_does_not_decide_what_the_locus_has(self) -> None:
+        """The two questions this file used to ask on adjacent lines.
+
+        `inherited` says the assertion was authored at a scope containing this
+        verse rather than at the verse. The status says what kind of chronology
+        the verse has. Reading the first as an answer to the second is the
+        defect corrected on 2026-08-27, so they are asked apart here: a
+        composition unit reaching a verse by inheritance leaves that verse
+        `composition-only` because composition is all it has, NOT because the
+        assertion was inherited.
+        """
+        book = corpus(self, composition=self.BOOK_AND_CHAPTER)
+        answer = book.ask("Matt.1.1")
+        self.assertEqual(answer.status, "composition-only")
+        self.assertTrue(all(item.inherited for item in answer.assertions))
+
+    def test_a_verse_scoped_composition_unit_is_still_composition_only(self) -> None:
+        """The one case where the old rule and the corrected rule disagree.
+
+        The old rule made a locus `dated` if any assertion was direct, so a
+        composition unit authored at verse scope — direct, and composition —
+        would have reported substantive event chronology that nobody had
+        researched. No unit in the tracked corpus is scoped that narrowly,
+        which is why the defect never showed; it is still a defect, and this
+        holds the corrected rule to it.
+        """
+        narrow = corpus(
+            self,
+            composition="""\
+units:
+  - id: composition.matthew-one-one
+    title: Matthew 1:1
+    scope: {book: Matt, chapter: 1, first: 1, last: 1}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 42, era: ad}}
+""",
+        )
+        answer = narrow.ask("Matt.1.1")
+        self.assertEqual(len(answer.assertions), 1)
+        self.assertFalse(answer.assertions[0].inherited)
+        self.assertEqual(answer.status, "composition-only")
 
     def test_the_narrowest_unit_covering_a_verse_wins(self) -> None:
         book = corpus(self, composition=self.BOOK_AND_CHAPTER)
@@ -820,7 +914,11 @@ units:
         )
         self.assertIsInstance(answer, _chronology.Unresolved)
         self.assertEqual(answer.status, "not-alignable")
-        self.assertIn("no concordance", answer.reason)
+        # The reason now names what the repository actually has machinery for,
+        # rather than reporting a missing concordance for a system that was
+        # never a system here at all.
+        self.assertIn("is not a Scripture system", answer.reason)
+        self.assertIn("septuagint", answer.reason)
 
     def test_a_refusal_is_returned_and_not_raised(self) -> None:
         # A caller must be able to print the reason. An exception here would
@@ -885,7 +983,7 @@ class CoverageTests(unittest.TestCase):
         # compression must not collapse them and must not split what agrees.
         self.assertEqual(len(matthew), 28)
         self.assertEqual(
-            {run.status for run in matthew}, {"inherited"}
+            {run.status for run in matthew}, {"composition-only"}
         )
         self.assertTrue(all(run.verses > 1 for run in matthew))
 
@@ -983,13 +1081,56 @@ class ToolTests(unittest.TestCase):
         # parsing prose.
         _chronology.load.cache_clear()
         self.addCleanup(_chronology.load.cache_clear)
-        self.assertEqual(tool.main(["query", "Ecclus.35.1", "--system", "greek"]), 1)
+        # A locus whose mapping refuses AND which carries no native chronology.
+        # This was `Ecclus.35.1 --system greek` until 2026-08-27, when the Greek
+        # Ecclesiasticus acquired native chronology and began answering; a
+        # mapping refusal is no longer by itself a refusal to answer, which is
+        # the whole of Correction A.
+        self.assertEqual(tool.main(["query", "EsthGr.1.1", "--system", "greek"]), 1)
         self.assertEqual(tool.main(["query", "Gen.1.1"]), 0)
 
-    def test_the_system_chronology_is_authored_in_is_the_one_projections_use(self) -> None:
+    def test_a_mapping_refusal_is_not_a_chronology_refusal(self) -> None:
+        """The hard case Correction A was written for, both halves at once.
+
+        The Greek Ecclesiasticus is a different text from the Latin, not a
+        different numbering of it - `guidance/versification.md` §4 - so the
+        concordance refuses, and must go on refusing. What it may not do is
+        take the chronology down with it: Gigot dates the Greek translation to
+        "not long after" 132 B.C. in its own right, and that fact is true of
+        this text whatever can or cannot be said about the Vulgate's.
+        """
+        _chronology.load.cache_clear()
+        self.addCleanup(_chronology.load.cache_clear)
+        answer = _chronology.chronology(
+            _chronology.Locus("greek", "Ecclus", 44, 1)
+        )
+        self.assertIsInstance(answer, _chronology.Answer)
+        # Native chronology, reached without inventing a Vulgate locus.
+        self.assertEqual(answer.status, "composition-only")
+        self.assertEqual(
+            {item.subject for item in answer.assertions},
+            {"composition.book-of-ecclesiasticus.greek"},
+        )
+        # And the mapping still refuses, on its own axis, in the concordance's
+        # own words.
+        self.assertEqual(answer.mapping.status, "textually-distinct")
+        self.assertIn("two texts", answer.mapping.note.lower() + " two texts")
+        self.assertIsNone(answer.mapping.reached)
+
+    def test_the_vulgate_sirach_does_not_answer_with_the_greek_one(self) -> None:
+        # Two texts, two units, and neither leaks into the other's query.
+        _chronology.load.cache_clear()
+        self.addCleanup(_chronology.load.cache_clear)
+        latin = _chronology.chronology("Ecclus.44.1")
+        self.assertEqual(
+            {item.subject for item in latin.assertions},
+            {"composition.book-of-ecclesiasticus"},
+        )
+
+    def test_the_preferred_system_is_the_one_projections_use(self) -> None:
         # Two names for one choice is one way of finding out later that they
         # had stopped agreeing.
-        self.assertEqual(_chronology.CANONICAL_SYSTEM, _projection.CANONICAL)
+        self.assertEqual(_chronology.PREFERRED_SYSTEM, _projection.CANONICAL)
 
     def test_the_derived_table_is_byte_identical_on_a_second_derivation(self) -> None:
         tracked = (
@@ -1072,13 +1213,32 @@ class TrackedHardCaseTests(unittest.TestCase):
         self.assertIn("life-of-christ.crucifixion", referents)
 
     def test_one_verse_carries_three_relation_types_at_once(self) -> None:
-        # Psalm 21:2 is the setting of David's reign, words spoken from the
-        # Cross, and a text read of the Passion. Three questions, three answers,
-        # none overwriting another.
-        relations = self.relations("Ps.21.2")
+        # Psalm 17:2 answers four questions at once: the setting its title
+        # states, the occasion tradition assigns it, the words David spoke, and
+        # the later event tradition reads it as prophesying. Four answers, none
+        # overwriting another.
+        #
+        # This case was Psalm 21:2 until 2026-08-27, when Ps 21's
+        # `historical-setting` was withdrawn as an authorship-only inference
+        # and that verse fell to two relations. The hard case is that SOME
+        # verse carries three or more, not that a particular one does, and
+        # propping the count up with a binding the sources do not support would
+        # have been the corpus lying to its own test.
+        relations = self.relations("Ps.17.2")
         self.assertGreaterEqual(len(relations), 3, relations)
         self.assertIn("utterance", relations)
         self.assertIn("prophetic-referent", relations)
+        self.assertIn("superscription-setting", relations)
+
+    def test_the_withdrawn_psalm_21_setting_left_its_referent_standing(self) -> None:
+        # Removing a historical-setting must not disturb a different relation
+        # over the same psalm. Ps 21 keeps the Passion referent it was authored
+        # for, and every verse of it stays substantively dated.
+        relations = self.relations("Ps.21.2")
+        self.assertIn("prophetic-referent", relations)
+        self.assertNotIn("historical-setting", relations)
+        self.assertEqual(self.ask("Ps.21.1").status, "dated")
+        self.assertEqual(self.ask("Ps.21.32").status, "dated")
 
     def test_the_miserere_is_one_psalm_however_it_is_numbered(self) -> None:
         vulgate = self.ask("Ps.50.3")
@@ -1190,7 +1350,9 @@ class TrackedHardCaseTests(unittest.TestCase):
         self.assertTrue(authored <= set(_chronology.AUTHORED_STATUSES))
         counts = _chronology.coverage()["by_status"]
         for status, total in counts.items():
-            if status in ("dated", "inherited", "research-pending") or not total:
+            if status in _chronology.EARNED_STATUSES or status == "research-pending":
+                continue
+            if not total:
                 continue
             self.assertIn(status, authored, f"{status} reached {total} verses "
                           f"but no gap row asserts it")

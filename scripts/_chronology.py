@@ -89,10 +89,66 @@ from typing import Any, Iterable, NamedTuple
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS_ROOT = ROOT / "src" / "sources" / "chronology"
 
-# The system chronology is authored in. Not a constant for its own sake: it is
-# `_projection.CANONICAL`, named here so that the two cannot drift apart, and
-# checked against it at load time.
-CANONICAL_SYSTEM = "vulgate"
+# The PREFERRED SHARED SYSTEM, which is not the same as the only one.
+#
+# `vulgate` is preferred because it is what `_projection.CANONICAL` projects
+# into, what both tracked calendars cite in, and what the canonical edition
+# witnesses. A fact about a text that CAN be stated here is stated here once,
+# and every edition reaches it through machinery that already exists.
+#
+# But `guidance/versification.md` §4 settles that some traditions carry a
+# DIFFERENT TEXT rather than a different numbering, and for those the
+# concordance rightly refuses. A refusal there answers one question — may this
+# locus be asserted equivalent to that one — and the corpus used to read it as
+# an answer to another: may this locus carry chronology at all. It may. The
+# Greek Ecclesiasticus is the standing case: 1 355 of its 1 356 loci refuse the
+# Vulgate, and the Catholic Encyclopedia dates the Greek translation and the
+# Latin version separately and explicitly.
+PREFERRED_SYSTEM = "vulgate"
+
+# Kept as the old name so nothing outside this module breaks on the rename.
+CANONICAL_SYSTEM = PREFERRED_SYSTEM
+
+
+def _scripture_systems() -> dict[str, frozenset[str] | None]:
+    """Every system a scope may name, and the books each one can address.
+
+    Read from the modules that OWN the names rather than restated here, because
+    a fifth list beside theirs is how they stop agreeing — and they already do:
+    `_commentary.NUMBERING_SYSTEMS` names `septuagint`, `nova-vulgata` and `nab`,
+    for which no concordance exists, and omits `world-english-catholic`, for
+    which one does. This function admits only names with machinery behind them.
+
+    A value of None means "every book of the canon". A frozenset means the
+    system can address those books and no others, which is the check the
+    abandoned scratch patch lacked: it would have accepted `{system: hebrew,
+    book: Matt}`, since it tested the system name against a flat set and never
+    asked whether that system numbers Matthew at all. `hebrew` is a psalter
+    numbering; outside the psalter it names nothing this repository can resolve.
+    """
+    import sys as _sys  # noqa: PLC0415
+
+    scripts = str(Path(__file__).resolve().parent)
+    if scripts not in _sys.path:
+        _sys.path.insert(0, scripts)
+    import _deuterocanon  # noqa: PLC0415
+    import _psalms  # noqa: PLC0415
+    import _projection  # noqa: PLC0415
+
+    systems: dict[str, frozenset[str] | None] = {_projection.CANONICAL: None}
+    for name in _psalms.SYSTEMS:
+        if name != _projection.CANONICAL:
+            systems[name] = frozenset({"Ps"})
+    for name in _deuterocanon.WITNESSES:
+        if name == _projection.CANONICAL:
+            continue
+        systems[name] = frozenset(_deuterocanon.BOOKS)
+    return systems
+
+
+@lru_cache(maxsize=1)
+def scripture_systems() -> dict[str, frozenset[str] | None]:
+    return _scripture_systems()
 
 # The documents that carry Scripture loci and must therefore declare the system
 # those loci are numbered in. Profiles and events name no verse.
@@ -128,6 +184,15 @@ DISPOSITIONS = ("preferred", "alternate", "disputed")
 
 # How a date's endpoints are to be read. Separate from `basis` on purpose:
 # "approximate" says the date is approximate, not that its source is weak.
+#
+# `relative` and `duration` are the two that are easy to confuse and must not be.
+# `relative` is an OFFSET: B happened N units after A, and naming A is the whole
+# of what makes it meaningful. `duration` is a LENGTH: B lasted N units, and it
+# is measured from nothing at all. "He judged Israel eighteen years" states no
+# point in time and no anchor; reading it as an offset would put the judgeship
+# eighteen years after whatever the anchor happened to be. One value that meant
+# both would be a date that resolves successfully and wrongly, which is the
+# failure `guidance/the-shape.md` §1 names.
 PRECISIONS = (
     "day",              # from == to, both carrying month and day
     "month-day",        # month and day known, year not
@@ -135,8 +200,15 @@ PRECISIONS = (
     "approximate-year", # from == to, the source's own "about"
     "range",            # the subject spans from..to
     "interval",         # the subject falls somewhere within from..to
-    "relative",         # no absolute endpoints; a stated interval from another event
+    "relative",         # no absolute endpoints; a stated interval FROM another event
+    "duration",         # how long the subject itself lasted; measured from nothing
 )
+
+# The units a duration may be stated in, largest first, which is also the order
+# they render in. No unit smaller than a day, because no inspected source states
+# one, and none larger than a year, because a source that says "two centuries"
+# says it in years or says something vaguer than a duration.
+DURATION_UNITS = ("years", "months", "days")
 
 # `basis` in this repository means the prose that says what GROUNDS a claim,
 # and it is required beside every stated date. `tools/source-library` enforces
@@ -154,12 +226,13 @@ PRECISIONS = (
 ERAS = ("bc", "ad", "am")
 CHRISTIAN_ERAS = ("bc", "ad")
 
-# Every status a locus can carry. `dated` and `inherited` are earned by
-# assertions; the rest are authored in gaps.yaml, except `research-pending`,
+# Every status a locus can carry. `dated` and `composition-only` are earned
+# from the assertions that APPLY to a locus, at whatever scope they were
+# authored; the rest are authored in gaps.yaml, except `research-pending`,
 # which is what a locus has when nothing else applies.
 STATUSES = (
-    "dated",              # at least one direct, substantive assertion
-    "inherited",          # covered only by an inherited composition assertion
+    "dated",              # a substantive assertion applies, direct or inherited
+    "composition-only",   # only a composition assertion applies, at any scope
     "research-pending",   # not yet researched. The default, and honest.
     "undated-in-tradition",  # ranked sources inspected; tradition dates nothing
     "not-alignable",      # the locus cannot be safely addressed from the asking system
@@ -178,10 +251,12 @@ STATUS_ORDER = {status: index for index, status in enumerate(STATUSES)}
 # at the one place that enforces it, because the coverage guard in
 # `tools/tests/test_chronology.py` asks the same question and two spellings of
 # one set is how they stop agreeing.
+EARNED_STATUSES = ("dated", "composition-only")
+
 AUTHORED_STATUSES = tuple(
     status
     for status in STATUSES
-    if status not in ("dated", "inherited", "research-pending")
+    if status not in EARNED_STATUSES and status != "research-pending"
 )
 
 # --- Errors -----------------------------------------------------------------
@@ -242,6 +317,13 @@ class Span(NamedTuple):
     last: int | None
 
     def __str__(self) -> str:
+        # A whole-book scope has no chapter, and printing one anyway produced
+        # the literal "Ezech.None" — which then travelled out to consumers as
+        # the authored scope of every whole-book binding. That string is the
+        # provenance channel now that scope and directness have stopped
+        # deciding status, so it has to name something real.
+        if self.chapter is None:
+            return self.token
         if self.first is None and self.last is None:
             return f"{self.token}.{self.chapter}"
         if self.first == self.last:
@@ -304,12 +386,24 @@ class Date(NamedTuple):
     relative: dict[str, Any] | None
     label: str
     derivation: dict[str, Any] | None
+    duration: dict[str, Any] | None = None
 
     @property
     def derived(self) -> bool:
         return self.derivation is not None
 
+    @property
+    def anchor(self) -> str | None:
+        """The event this date is measured FROM, and only that.
+
+        A duration's `within` is not an anchor and is deliberately not returned
+        here: it says where the span sits, not what it is counted from.
+        """
+        return self.relative.get("of") if self.relative else None
+
     def __str__(self) -> str:
+        if self.precision == "duration" and self.duration:
+            return str(self.duration.get("statement") or _duration_text(self.duration))
         if self.precision == "relative" and self.relative:
             return str(self.relative.get("statement") or self.relative)
         if self.begin is None:
@@ -319,6 +413,51 @@ class Date(NamedTuple):
             return f"about {head}" if self.precision == "approximate-year" else head
         joiner = "-" if self.precision == "range" else " to "
         return f"{self.begin}{joiner}{self.end}"
+
+
+def _duration_text(duration: dict[str, Any]) -> str:
+    """`{years: 18}` as "18 years"; the fallback when a source gave no words."""
+    parts = [
+        f"{duration[unit]} {unit[:-1] if duration[unit] == 1 else unit}"
+        for unit in DURATION_UNITS
+        if duration.get(unit)
+    ]
+    return " ".join(parts) or "?"
+
+
+def _duration(raw: object, where: str) -> dict[str, Any]:
+    """Read a stated length. It is measured from nothing, and says so."""
+    if not isinstance(raw, dict):
+        raise ChronologyError(f"{where}: a duration must be a mapping")
+    unknown = set(raw) - {*DURATION_UNITS, "statement", "within"}
+    if unknown:
+        raise ChronologyError(f"{where}: unknown duration key(s) {sorted(unknown)}")
+    stated = {unit: raw[unit] for unit in DURATION_UNITS if unit in raw}
+    if not stated:
+        raise ChronologyError(
+            f"{where}: a duration must state a length in one of "
+            f"{list(DURATION_UNITS)}"
+        )
+    for unit, value in stated.items():
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise ChronologyError(f"{where}: duration {unit} must be a whole number")
+        if value < 0:
+            raise ChronologyError(
+                f"{where}: duration {unit} is {value}; a span cannot run backwards"
+            )
+        if value == 0:
+            # Not pedantry. A zero-length span is how "the source says nothing
+            # about how long" would look if it were written down, and it must
+            # not be writable: absence has `undated-in-tradition` and a gap row.
+            raise ChronologyError(
+                f"{where}: duration {unit} is zero; a span of no length is not a "
+                f"span, and a source that states none is silence, not a duration"
+            )
+    within = raw.get("within")
+    if within is not None and not isinstance(within, str):
+        raise ChronologyError(f"{where}: duration 'within' must name one event")
+    return {**stated, **({"statement": raw["statement"]} if "statement" in raw else {}),
+            **({"within": within} if within else {})}
 
 
 def _endpoint(raw: object, where: str) -> Endpoint:
@@ -368,7 +507,7 @@ def parse_date(raw: object, where: str) -> Date:
     if not isinstance(raw, dict):
         raise ChronologyError(f"{where}: a date must be a mapping, not {raw!r}")
     unknown = set(raw) - {
-        "precision", "from", "to", "relative", "label", "derivation",
+        "precision", "from", "to", "relative", "duration", "label", "derivation",
     }
     if unknown:
         raise ChronologyError(f"{where}: unknown date key(s) {sorted(unknown)}")
@@ -400,6 +539,34 @@ def parse_date(raw: object, where: str) -> Date:
             )
 
     relative = raw.get("relative")
+    duration = raw.get("duration")
+
+    # The two are kept apart structurally, not by convention, because the whole
+    # point of the distinction is that a consumer must never read one as the
+    # other. A duration that could name an offset anchor would be exactly the
+    # overloaded value this precision was split out to abolish.
+    if precision == "duration":
+        if relative is not None:
+            raise ChronologyError(
+                f"{where}: a duration is measured from nothing and carries no "
+                f"'relative' anchor. If the source says how long AND where it "
+                f"is measured from, those are two claims; if it says how long "
+                f"and merely where it sits, that is duration.within"
+            )
+        if raw.get("from") or raw.get("to"):
+            raise ChronologyError(
+                f"{where}: a duration carries no absolute endpoints; give it "
+                f"precision 'range' or 'interval' if the source states them"
+            )
+        return Date(
+            precision, None, None, None, label, derivation, _duration(duration, where)
+        )
+    if duration is not None:
+        raise ChronologyError(
+            f"{where}: only a duration carries 'duration'; precision "
+            f"{precision!r} states a position in time, not a length"
+        )
+
     if precision == "relative":
         if not isinstance(relative, dict) or not relative.get("of"):
             raise ChronologyError(
@@ -553,6 +720,23 @@ class Assertion(NamedTuple):
         )
 
 
+class Mapping(NamedTuple):
+    """Whether the asked locus reached the preferred shared system, and how.
+
+    A SEPARATE AXIS from chronology status, which is the whole of Correction A.
+    `status` here answers "may this locus be asserted equivalent to a Vulgate
+    one", and its refusals are `_deuterocanon`'s and `_psalms`' own words. It
+    never answers "does this locus have chronology", and a consumer that reads
+    it as though it did will conclude that the Greek Ecclesiasticus is undated
+    because the Latin numbers its chapters differently.
+    """
+
+    system: str
+    status: str          # shared | native | textually-distinct | not-alignable
+    reached: str | None  # the preferred-system locus, where one was reached
+    note: str = ""
+
+
 class Answer(NamedTuple):
     """A resolved locus and everything the corpus says about it."""
 
@@ -560,6 +744,8 @@ class Answer(NamedTuple):
     assertions: tuple[Assertion, ...]
     status: str
     note: str
+    mapping: Mapping | None = None
+    asked: str | None = None
 
     @property
     def resolved(self) -> bool:
@@ -713,14 +899,23 @@ def _scope(raw: object, where: str, books: dict[str, int]) -> tuple[Span, ...]:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{spot}: expected a mapping")
         _keys(entry, {"system", "book", "chapter", "through", "first", "last"}, spot)
-        system = entry.get("system", CANONICAL_SYSTEM)
-        if system != CANONICAL_SYSTEM:
+        system = entry.get("system", PREFERRED_SYSTEM)
+        systems = scripture_systems()
+        if system not in systems:
             raise ChronologyError(
-                f"{spot}: chronology is authored in {CANONICAL_SYSTEM!r}; a "
-                f"locus in {system!r} reaches it through the concordance, not "
-                f"by being authored twice"
+                f"{spot}: {system!r} is not a Scripture system this repository "
+                f"has machinery for; the systems are {sorted(systems)}"
             )
         token = entry.get("book")
+        addressable = systems[system]
+        if addressable is not None and token not in addressable:
+            # The check the flat-set version could not make. `hebrew` is a
+            # psalter numbering and names nothing outside it; `greek` addresses
+            # the seven books `_deuterocanon` holds a witness for and no others.
+            raise ChronologyError(
+                f"{spot}: {system!r} does not number {token!r}; it addresses "
+                f"{sorted(addressable)}"
+            )
         if token not in books:
             raise ChronologyError(
                 f"{spot}: {token!r} is not a book of the canon; see scripts/_canon.py"
@@ -880,7 +1075,7 @@ def _refuse_ambiguous_inheritance(units: dict[str, Unit], root: Path) -> None:
     date resolving successfully and wrongly. So the corpus refuses to load and
     the author says which unit owns the text.
     """
-    by_width: dict[int, dict[tuple[str, int, int], str]] = {}
+    by_width: dict[int, dict[tuple[str, str, int, int], str]] = {}
     for unit in units.values():
         width = unit.width()
         seen = by_width.setdefault(width, {})
@@ -889,21 +1084,30 @@ def _refuse_ambiguous_inheritance(units: dict[str, Unit], root: Path) -> None:
                 if key in seen and seen[key] != unit.id:
                     raise ChronologyError(
                         f"{root}/composition.yaml: units {seen[key]} and "
-                        f"{unit.id} both claim {key[0]}.{key[1]}.{key[2]} at the "
-                        f"same width; narrow one of them"
+                        f"{unit.id} both claim {key[0]} {key[1]}.{key[2]}.{key[3]} "
+                        f"at the same width; narrow one of them"
                     )
                 seen[key] = unit.id
 
 
-def _span_keys(span: Span, _scope_all: tuple[Span, ...]) -> Iterable[tuple[str, int, int]]:
-    """The overlap key a span occupies. Chapter-level, so it needs no verse counts."""
+def _span_keys(
+    span: Span, _scope_all: tuple[Span, ...]
+) -> Iterable[tuple[str, str, int, int]]:
+    """The overlap key a span occupies. Chapter-level, so it needs no verse counts.
+
+    Keyed by SYSTEM first. Two whole-book units over `Ecclus` are ambiguous
+    only if they are talking about the same text; the Vulgate's
+    Ecclesiasticus and the Greek one are two texts, which is the whole reason
+    the second may be authored natively at all, and a unit over each is not a
+    tie for anything to break.
+    """
     if span.chapter is None:
-        yield (span.token, 0, 0)
+        yield (span.system, span.token, 0, 0)
         return
     if span.first is None and span.last is None:
-        yield (span.token, span.chapter, 0)
+        yield (span.system, span.token, span.chapter, 0)
         return
-    yield (span.token, span.chapter, span.first or 1)
+    yield (span.system, span.token, span.chapter, span.first or 1)
 
 
 def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) -> tuple[Binding, ...]:
@@ -966,8 +1170,9 @@ def _load_gaps(root: Path, books: dict[str, int]) -> tuple[Gap, ...]:
         if status not in authored:
             raise ChronologyError(
                 f"{where}: status {status!r} is not one an author may assert; "
-                f"choose from {sorted(authored)}. 'dated' and 'inherited' are "
-                f"earned by assertions and 'research-pending' is the default"
+                f"choose from {sorted(authored)}. {list(EARNED_STATUSES)} are "
+                f"earned from the assertions that apply, and 'research-pending' "
+                f"is the default"
             )
         gaps.append(
             Gap(
@@ -991,7 +1196,60 @@ def load(root: Path | None = None) -> Corpus:
     bindings = _load_bindings(where, events, books)
     gaps = _load_gaps(where, books)
     _refuse_dangling_anchors(events, units, where)
+    _refuse_duplicated_native_scopes(units, bindings, gaps, where)
     return Corpus(profiles, events, units, bindings, gaps, books)
+
+
+def _refuse_duplicated_native_scopes(
+    units: dict[str, Unit],
+    bindings: tuple[Binding, ...],
+    gaps: tuple[Gap, ...],
+    where: Path,
+) -> None:
+    """Native authoring is allowed only where the concordance actually refuses.
+
+    This is what keeps "one fact, one place" a GATE rather than a convention.
+    Admitting native non-Vulgate loci creates exactly one new way to duplicate:
+    author a fact at `{system: greek, book: Ecclus}` that the Vulgate already
+    holds and that the concordance can safely carry between them. So the rule
+    is not "do not do that" — it is that a native scope whose locus SAFELY
+    corresponds to a Vulgate locus is refused at load.
+
+    The consequence is worth stating plainly: a scope in another system is
+    admissible precisely when sharing is impossible. Where sharing is possible
+    it is mandatory, and it happens through machinery that already exists.
+    """
+    scoped: list[tuple[str, str, tuple[Span, ...]]] = [
+        *(("composition unit", unit.id, unit.scope) for unit in units.values()),
+        *(
+            ("binding", f"{binding.relation} -> {binding.event}", binding.scope)
+            for binding in bindings
+        ),
+        *(("gap", f"{gap.status}", gap.scope) for gap in gaps),
+    ]
+    for kind, identifier, scope in scoped:
+        for span in scope:
+            if span.system == PREFERRED_SYSTEM:
+                continue
+            verse = span.first or 1
+            chapter = span.chapter
+            if chapter is None:
+                # A whole-book native scope is admissible only if the book does
+                # not safely correspond anywhere. Probed at its opening verse,
+                # which is the cheapest honest question to ask of it.
+                chapter = 1
+            reached = to_canonical(span.system, span.token, chapter, verse)
+            if isinstance(reached, Unresolved):
+                continue
+            raise ChronologyError(
+                f"{where}: {kind} {identifier} authors chronology natively at "
+                f"{span.system} {span.token} {chapter}:{verse}, but the "
+                f"concordance carries that locus safely to {reached}. A fact "
+                f"true of both texts is authored once, at the preferred "
+                f"{PREFERRED_SYSTEM} locus, and reached from here through the "
+                f"concordance. Native scopes are for text the concordance "
+                f"refuses, which is the only case where sharing is impossible"
+            )
 
 
 def _refuse_dangling_anchors(
@@ -1012,6 +1270,17 @@ def _refuse_dangling_anchors(
         *(("composition unit", unit) for unit in units.values()),
     ):
         for claim in holder.claims:
+            # A duration names no anchor, but it may say what it sits inside,
+            # and a containment that names nothing is as empty as an offset
+            # that does. Checked here for the same reason: it is structural.
+            containing = (claim.date.duration or {}).get("within")
+            if containing is not None and containing not in known:
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} states a duration within "
+                    f"{containing!r}, which is neither an event nor a "
+                    f"composition unit this corpus holds; a span contained by "
+                    f"nothing is not contained"
+                )
             relative = claim.date.relative
             if not relative:
                 continue
@@ -1163,6 +1432,83 @@ def _by_book(root: Path | None) -> dict[str, tuple[tuple, tuple, tuple]]:
     }
 
 
+def _status_of(assertions: Iterable[Assertion]) -> str:
+    """APPLICABILITY, NOT DIRECTNESS — the one place that decides it.
+
+    Whether a substantive assertion reaches this verse is one question; whether
+    it was authored at this verse or at a scope containing it is another, and
+    the second rides on each returned assertion as `inherited`. The old rule
+    asked the second and answered the first with it, which said two wrong
+    things at once: a whole-book `prophecy-given` over Ezechiel left 271 verses
+    looking undated though the oracle applies to every one of them, and a
+    directly authored composition unit alone would have made a verse "dated"
+    though nothing had dated an event it tells of.
+    """
+    if any(item.relation != "composition" for item in assertions):
+        return "dated"
+    return "composition-only"
+
+
+def _native_assertions(
+    corpus: Corpus, locus: Locus, profile: str | None
+) -> tuple[Assertion, ...]:
+    """What was authored in the asked locus's OWN system, at its own locus.
+
+    Only scopes that name this system are consulted. A Vulgate scope is not
+    silently reused here: if the two texts corresponded safely the load-time
+    gate would have refused the native scope, so anything reached from here is
+    a fact about this text and about no other.
+    """
+    found: list[Assertion] = []
+    for unit in corpus.units.values():
+        span = _scope_covers(
+            [s for s in unit.scope if s.system == locus.system],
+            locus.token,
+            locus.chapter,
+            locus.verse,
+        )
+        if span is None:
+            continue
+        for claim in unit.claims:
+            if profile and claim.profile != profile:
+                continue
+            found.append(
+                Assertion(
+                    relation="composition",
+                    subject=unit.id,
+                    title=unit.title,
+                    claim=claim,
+                    inherited=span.first is None or span.chapter is None,
+                    scope=_scope_text(unit.scope),
+                )
+            )
+    for binding in corpus.bindings:
+        span = _scope_covers(
+            [s for s in binding.scope if s.system == locus.system],
+            locus.token,
+            locus.chapter,
+            locus.verse,
+        )
+        if span is None:
+            continue
+        event = corpus.events[binding.event]
+        for claim in event.claims:
+            if profile and claim.profile != profile:
+                continue
+            found.append(
+                Assertion(
+                    relation=binding.relation,
+                    subject=event.id,
+                    title=event.title,
+                    claim=claim,
+                    inherited=span.first is None and span.last is None,
+                    scope=_scope_text(binding.scope),
+                )
+            )
+    found.sort(key=lambda item: item.sort_key())
+    return tuple(found)
+
+
 def chronology(
     locus: Locus | str,
     *,
@@ -1179,10 +1525,47 @@ def chronology(
     corpus = load(root)
     if isinstance(locus, str):
         locus = parse_locus(locus)
-    if locus.system != CANONICAL_SYSTEM:
+
+    asked = str(locus)
+    mapping: Mapping | None = None
+    native: tuple[Assertion, ...] = ()
+    if locus.system != PREFERRED_SYSTEM:
+        systems = scripture_systems()
+        if locus.system not in systems:
+            return Unresolved(
+                "not-alignable",
+                f"{locus.system!r} is not a Scripture system this repository "
+                f"has machinery for; the systems are {sorted(systems)}",
+                asked,
+            )
+        addressable = systems[locus.system]
+        if addressable is not None and locus.token not in addressable:
+            return Unresolved(
+                "not-alignable",
+                f"{locus.system!r} does not number {locus.token!r}; it "
+                f"addresses {sorted(addressable)}",
+                asked,
+            )
+
+        # NATIVE FIRST, and this ordering is the correction. What the corpus
+        # authored AT this locus is true of this locus whatever the concordance
+        # can or cannot carry, so it is gathered before the mapping is even
+        # attempted. The old code asked the concordance first and returned its
+        # refusal, which threw away chronology that was sitting right there.
+        native = _native_assertions(corpus, locus, profile)
+
         converted = to_canonical(locus.system, locus.token, locus.chapter, locus.verse)
         if isinstance(converted, Unresolved):
-            return converted._replace(locus=str(locus))
+            mapping = Mapping(locus.system, converted.status, None, converted.reason)
+            if native:
+                # Both true at once: this text has chronology, and it may not
+                # be asserted equivalent to the Vulgate's. The status is
+                # computed by the same rule the shared path uses, so a native
+                # locus carrying only a composition claim is composition-only
+                # here exactly as it would be there.
+                return Answer(locus, native, _status_of(native), "", mapping, asked)
+            return converted._replace(locus=asked)
+        mapping = Mapping(locus.system, "shared", str(converted), "")
         locus = converted
     if locus.token not in corpus.books:
         return Unresolved(
@@ -1206,7 +1589,16 @@ def chronology(
     best: Unit | None = None
     best_span: Span | None = None
     for unit in units:
-        span = _scope_covers(unit.scope, locus.token, locus.chapter, locus.verse)
+        # Only scopes in the system being asked about. A native Greek scope is
+        # a fact about the Greek text; letting it answer a Vulgate query would
+        # be the duplication the load-time gate exists to prevent, arriving
+        # through the back door.
+        span = _scope_covers(
+            [s for s in unit.scope if s.system == locus.system],
+            locus.token,
+            locus.chapter,
+            locus.verse,
+        )
         if span is None:
             continue
         if best is None or unit.width() > best.width():
@@ -1229,7 +1621,12 @@ def chronology(
     # Events, by binding. One event, dated once, reached from every locus bound
     # to it under whichever relation that locus stands in to it.
     for binding in bindings:
-        span = _scope_covers(binding.scope, locus.token, locus.chapter, locus.verse)
+        span = _scope_covers(
+            [s for s in binding.scope if s.system == locus.system],
+            locus.token,
+            locus.chapter,
+            locus.verse,
+        )
         if span is None:
             continue
         event = corpus.events[binding.event]
@@ -1250,19 +1647,34 @@ def chronology(
     assertions.sort(key=lambda item: item.sort_key())
 
     if assertions:
-        direct = any(not item.inherited for item in assertions)
-        others = any(item.relation != "composition" for item in assertions)
-        status = "dated" if direct or others else "inherited"
-        return Answer(locus, tuple(assertions), status, "")
+        # APPLICABILITY, NOT DIRECTNESS. Whether a substantive assertion reaches
+        # this verse is one question; whether it was authored at this verse or
+        # at a scope containing it is another, and the second is provenance that
+        # rides on each returned assertion. The old rule asked the second and
+        # answered the first with it, which said two wrong things at once: a
+        # whole-book `prophecy-given` over Ezechiel left eight and a half
+        # chapters looking undated though the oracle applies to every verse in
+        # its scope, and a directly authored composition unit alone made a verse
+        # "dated" though nothing had dated an event it tells of.
+        return Answer(
+            locus, tuple(assertions), _status_of(assertions), "", mapping, asked
+        )
 
     for gap in gaps:
-        if _scope_covers(gap.scope, locus.token, locus.chapter, locus.verse):
-            return Answer(locus, (), gap.status, gap.reason)
+        if _scope_covers(
+            [s for s in gap.scope if s.system == locus.system],
+            locus.token,
+            locus.chapter,
+            locus.verse,
+        ):
+            return Answer(locus, (), gap.status, gap.reason, mapping, asked)
     return Answer(
         locus,
         (),
         "research-pending",
         "no ranked source has been inspected for this locus yet",
+        mapping,
+        asked,
     )
 
 
@@ -1394,8 +1806,10 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
             f"must reach exactly one status"
         )
     alternates = _alternate_verses(table, root, profile)
+    provenance = _provenance_verses(table, root, profile)
     return {
         "status": "ok",
+        "universe": "vulgate-clementine-primary",
         "total_verses": total,
         "runs": len(table),
         "by_status": dict(sorted(by_status.items())),
@@ -1403,6 +1817,49 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
         "verses_with_multiple_relations": multiple,
         "verses_with_substantive_event_assertions": substantive,
         "verses_with_alternative_traditional_claims": alternates,
+        "substantive_by_provenance": provenance,
+    }
+
+
+def _provenance_verses(
+    table: list[Run], root: Path | None, profile: str | None
+) -> dict[str, int]:
+    """How the substantive assertions reached the verses they apply to.
+
+    Reported beside the statuses and never inside them. Directness is what the
+    corrected status rule deliberately stopped asking (§9), so it has to be
+    visible somewhere or the question "was any of this authored at this verse?"
+    becomes unanswerable. Counted over verses whose status is `dated`, since
+    that is the only status directness could be mistaken for evidence about.
+    """
+    direct = inherited = both = 0
+    for run in table:
+        if run.status != "dated":
+            continue
+        answer = chronology(
+            Locus(CANONICAL_SYSTEM, run.token, run.chapter, run.first),
+            profile=profile,
+            root=root,
+        )
+        if not isinstance(answer, Answer):
+            continue
+        substantive = [
+            item for item in answer.assertions if item.relation != "composition"
+        ]
+        if not substantive:
+            continue
+        has_direct = any(not item.inherited for item in substantive)
+        has_inherited = any(item.inherited for item in substantive)
+        if has_direct and has_inherited:
+            both += run.verses
+        elif has_direct:
+            direct += run.verses
+        else:
+            inherited += run.verses
+    return {
+        "direct_only": direct,
+        "inherited_only": inherited,
+        "both": both,
     }
 
 

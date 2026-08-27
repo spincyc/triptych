@@ -225,14 +225,17 @@ def validate(arguments: argparse.Namespace) -> dict[str, object]:
         "gaps": len(corpus.gaps),
         "books": len(corpus.books),
     }
-    # The system chronology is authored in must be the system every tracked
-    # projection projects into. Two names for one choice is one way of
-    # discovering later that they had stopped agreeing.
+    # The PREFERRED shared system must be the one every tracked projection
+    # projects into. Two names for one choice is one way of discovering later
+    # that they had stopped agreeing. Chronology may be authored natively in
+    # other named systems, but only where the concordance refuses to carry the
+    # text - the loader gates that - so this remains the system that shared
+    # facts are held in.
     import _projection  # noqa: PLC0415
 
-    if _chronology.CANONICAL_SYSTEM != _projection.CANONICAL:
+    if _chronology.PREFERRED_SYSTEM != _projection.CANONICAL:
         problems.append(
-            f"chronology is authored in {_chronology.CANONICAL_SYSTEM!r} but "
+            f"chronology prefers {_chronology.PREFERRED_SYSTEM!r} but "
             f"projections project into {_projection.CANONICAL!r}"
         )
     # An event nothing binds is not an error — it may be a parent, or authored
@@ -261,7 +264,7 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
     root = _corpus_root(arguments)
     answer = _chronology.chronology(
         _chronology.parse_locus(
-            arguments.locus, "locus", arguments.system or _chronology.CANONICAL_SYSTEM
+            arguments.locus, "locus", arguments.system or _chronology.PREFERRED_SYSTEM
         ),
         profile=arguments.profile,
         root=root,
@@ -279,6 +282,25 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
         "locus": str(answer.locus),
         "chronology_status": answer.status,
         "reason": answer.note,
+        # A SEPARATE AXIS. `chronology_status` says what this locus has;
+        # `mapping` says whether it may be asserted equivalent to a locus in
+        # the preferred shared system. A textually distinct text can be dated
+        # and unmappable at once, and a consumer reading either field as the
+        # other will get the Greek Ecclesiasticus wrong in one direction or the
+        # Vulgate's wrong in the other.
+        **(
+            {
+                "asked": answer.asked,
+                "mapping": {
+                    "system": answer.mapping.system,
+                    "status": answer.mapping.status,
+                    "reached": answer.mapping.reached,
+                    "note": answer.mapping.note,
+                },
+            }
+            if answer.mapping is not None
+            else {}
+        ),
         "assertions": [
             {
                 "relation": item.relation,

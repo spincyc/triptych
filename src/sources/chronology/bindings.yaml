@@ -305,23 +305,19 @@ bindings:
   # --- Psalm 21 (Vulg.; Hebr. 22): the case the model exists for -------------
   # Two relations on one psalm, never merged. Where David sang it, and what the
   # Church reads in it. Neither binding carries a date; the events hold those.
-  - relation: historical-setting
-    event: israel.monarchy.david-reign
-    scope:
-      - {book: Ps, chapter: 21}
-    note: >-
-      The psalm's own title ascribes it to David — "Unto the end, for the
-      morning protection, a psalm for David" — and names no occasion, so no
-      superscription-setting is authored from it. The occasion tradition
-      associates is the reign of David itself: the Catholic Encyclopedia's
-      "King David" states that "According to the usual chronology, David was
-      born in 1085 and reigned from 1055 to 1015 B.C.", and in the same breath
-      that "Recent writers have been induced by the Assyrian inscriptions to
-      date his reign from 30 to 50 years later." The second sentence is part of
-      the claim; the event holds both, and this binding holds neither.
-    sources:
-      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3
-      - bible:douay-rheims:Ps.21.1
+  # WITHDRAWN 2026-08-27: `historical-setting` on Ps 21 -> israel.monarchy.david-reign.
+  # It was an authorship-only inference wearing an occasion's clothes. Its own
+  # note conceded the title "names no occasion", and then took the occasion to be
+  # "the reign of David itself" - which is the attribution restated as a setting.
+  # The Catholic Encyclopedia's "King David", its only other source, never
+  # mentions this psalm; Drum's "Psalms" omits Hebrew xxii from the thirteen
+  # titles it says indicate "the historical occasion of the song", and speaks of
+  # it only as Messianic. Ps 88 had already refused exactly this move - "this
+  # corpus does not convert an authorship claim into an occasion" - and the two
+  # now stand under one rule. `guidance/scripture-chronology.md` §8 states it.
+  # Nothing else on Ps 21 is disturbed: the Passion `prophetic-referent` over the
+  # whole psalm and the `utterance` at 21:2 are a different relation and stand,
+  # so all 32 verses remain `dated`.
   - relation: prophetic-referent
     event: life-of-christ.crucifixion
     scope:
@@ -753,9 +749,14 @@ bindings:
       that most of the Fathers explain the Psalm of Christ's kingdom. Neither is
       bound: the second is a claim about authorship, and this corpus does not
       convert an authorship claim into an occasion, and the third is a different
-      relation. This binding carries no date and implies none — the passage
-      record states in terms that the Usher figures printed at Psalm 70 are not
-      printed at Psalm 88 and do not prove the Babylonian proposal. VULGATE
+      relation. What this binding asserts is the occasion and not a year: no
+      binding carries a date, and the passage record states in terms that the
+      Usher figures printed at Psalm 70 are not printed at Psalm 88 and do not
+      prove the Babylonian proposal. But the occasion it names is itself dated,
+      so a query here does reach the third captivity's A.M. 3416 and the two
+      B.C. figures held against it — an earlier note here said the binding
+      "implies none", which was wrong about what a reader receives. The
+      alternatives arrive as alternatives and none is resolved. VULGATE
       numbering: Hebrew 89.
     sources:
       - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-88-ethan-attribution-and-reproach

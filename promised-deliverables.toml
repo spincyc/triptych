@@ -1494,7 +1494,7 @@ state = "complete"
 id = "scripture-chronology-corpus-2026-08-26"
 owner = "guidance/scripture-chronology.md"
 promise = "A provider-neutral, translation-independent, traditional-Catholic Scripture chronology corpus exists behind the Bible locus/projection layer; it supports a variable number of typed temporal assertions per locus; preserves provenance, alternative traditional claims, uncertainty, and typed resolution failures; can generate and query verse-level chronology without duplicating authored data per translation; and ultimately covers the complete addressable Scripture corpus without downstream documents re-deriving dates."
-state = "complete"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "governing-contract"
@@ -1504,13 +1504,14 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "translation-independent-identity"
-  criterion = "Chronology is keyed to canonical Scripture loci in a named addressing system rather than to any translation's verse strings, composes with the existing projection and concordance behaviour without reversing it, and introduces no universal-locus fiction."
-  status = "pass"
+  criterion = "Chronology identity rests on named Scripture textual/addressing systems rather than translation editions; the Vulgate remains the preferred shared system wherever an existing safe correspondence holds, and shared chronology is authored once there rather than duplicated per system; a textually distinct non-Vulgate locus may own chronology natively; a failed projection into the Vulgate does not imply a failed native chronology query, mapping status and chronology status being separate axes; chronology is not duplicated per translation; and no universal verse-space fiction is introduced."
+  status = "open"
   evidence = [
     "scripts/_chronology.py",
     "guidance/scripture-chronology.md",
     "tools/tests/test_chronology.py",
   ]
+  note = "Reopened 2026-08-27. The former criterion was satisfiable by one named system, `vulgate`, and so did not prove the requirement it was written for. The corpus treated a concordance refusal as a chronology refusal, which conflates two questions: whether this locus can be asserted equivalent to that one, and whether this locus can carry chronology at all. A textually distinct locus - the Greek Sirach is the repository's own standing example - must be able to own native chronology while its mapping to the Vulgate is still refused."
 
   [[deliverables.requirements]]
   id = "typed-many-valued-model"
@@ -1568,21 +1569,28 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "exhaustive-coverage"
-  criterion = "Every locus in the canonical edition's addressable verse space reaches exactly one typed chronology status, no locus is silently undated, and the coverage report distinguishes substantive, inherited-only, multi-assertion, alternative-bearing, research-gap, and alignment-blocked categories without a bare headline percentage."
-  status = "pass"
+  criterion = "Coverage is reported over a universe that is named rather than assumed. Every locus of the Vulgate/Clementine primary chronology universe reaches exactly one typed chronology status and none is silently undated; separately, every additional native locus in each non-Vulgate textual/addressing system the chronology subsystem declares native support for is accounted for, without counting an alternate numbering of a safely corresponding text as new Scripture; cross-system mapping status is reported as its own axis rather than as a chronology status; and the report distinguishes substantive, composition-only, multi-assertion, alternative-bearing, research-gap and mapping-refused categories without a bare headline percentage."
+  status = "open"
   evidence = [
     "src/sources/chronology/coverage.tsv",
     "src/sources/chronology/gaps.yaml",
     "guidance/scripture-chronology.md",
     "tools/tests/test_chronology.py",
   ]
-  note = "All 35 809 verses reach exactly one status and none is research-pending: 12 406 dated, 16 687 inherited-composition-only, 6 716 undated-in-tradition, 0 alignment-blocked; 7 975 carry more than one relation and 12 897 carry preserved alternatives. Every gap row names the source record read and found silent, which tools/tests/test_chronology.py enforces, along with the rule that no status reaches a verse unless an author asserted it - the two guards that replaced the retired research-pending sentinel, per guidance/scripture-chronology.md section 9.2. Coverage reports categories and no headline percentage."
+  note = "Reopened 2026-08-27. The former criterion proved exhaustive Vulgate/Clementine accounting - 35 809 verses, none research-pending - and was marked pass on that basis, but it did not prove exhaustive coverage of every locus the chronology layer can address once native non-Vulgate systems are admitted, because the layer admitted none. It returns to pass only when the corrected universe is honestly and completely enumerated; if the repository's machinery cannot yet enumerate a supported system's native loci, this stays open with that reason recorded."
 
   [[deliverables.requirements]]
   id = "consumer-non-derivation-contract"
   criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
   status = "pass"
   evidence = ["guidance/scripture-chronology.md"]
+
+  [[deliverables.requirements]]
+  id = "independent-source-audit"
+  criterion = "A cold agent that did not author or correct the chronology independently reopens the cited sources and performs the required high-risk and stratified source audit, records exact PASS / CHANGES REQUIRED findings with source loci, and no chronology acceptance, merge, or propers integration occurs until that independent disposition is PASS."
+  status = "open"
+  evidence = ["guidance/scripture-chronology.md", "PROJECT-WORK.md"]
+  note = "Added 2026-08-27 by the correction lane, which may not mark it pass. Machine-valid is not source-verified: the population wave passed every gate and its own authors' review, and a second reader still found a quotation from memory, a wrong relative anchor, a modern-critical figure inside the traditional profile, an unretained claim of source silence that proved false for half its subjects, and a refusal that went stale mid-wave. Author self-review cannot discharge this. The corpus is a canonical factual dependency for every future proper, which makes false confidence more dangerous than missing data."
 
   [[deliverables.requirements]]
   id = "validation-and-handoff"

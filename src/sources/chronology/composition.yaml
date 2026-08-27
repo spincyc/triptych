@@ -1397,6 +1397,57 @@ units:
           from: {year: 280, era: bc}
           label: "about 280 B.C."
 
+  # --- The Greek Ecclesiasticus, natively -----------------------------------
+  # The hard case Correction A exists for, and it was already latent here: the
+  # unit above carries a note warning that three dates in Gigot's article "must
+  # not be conflated", written by an author who had nowhere to put the second
+  # one. `{book: Ecclus}` means the VULGATE's Ecclesiasticus, so 190-170 B.C.
+  # reached every verse of the Latin text - including the pluses the same
+  # article calls "foreign not only to the Greek, but also to the Hebrew text".
+  #
+  # This unit is admissible precisely because sharing is impossible. The
+  # concordance refuses 1 355 of the Greek book's 1 356 loci - "there is no
+  # numbering of 'Sirach' that both editions are numbering differently; there
+  # are two texts", `guidance/versification.md` §4 - and the load-time gate
+  # would refuse this scope if it did not.
+  - id: composition.book-of-ecclesiasticus.greek
+    title: Ecclesiasticus, the Greek translation
+    scope: {system: greek, book: Ecclus}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Gigot's "Ecclesiasticus" in the Catholic Encyclopedia dates the Greek
+          translation by its own translator's prologue, and separately from the
+          Hebrew work it renders: "the thirty-eighth year of Ptolemy
+          Euergetes", in which "the grandson of Jesus, the son of Sirach, came
+          to Egypt, is the year 132 B.C.", and it was "not long after which he
+          rendered into Greek his grandfather's work."
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05263a-c3fe190d]
+        note: >-
+          The article's own hedge "not long after" is kept and not turned into a
+          year: 132 B.C. dates the grandson's arrival, and the translation
+          followed it by an interval the source does not measure. So this is an
+          approximate year and not the exact one the arrival carries.
+
+          What this unit does NOT say is as important. It does not date the
+          Hebrew original, which the vulgate-scoped
+          `composition.book-of-ecclesiasticus` holds at 190-170 B.C.; the two
+          are different acts of composition on different texts, and this corpus
+          now has somewhere to put both. It does not date the Latin version
+          either: the same article puts that at "probably the second century of
+          our era", made "directly from the Greek", and says it "abounds in
+          additional lines or even verses foreign not only to the Greek, but
+          also to the Hebrew text." That third fact is still unauthored, and
+          the honest consequence is recorded for the cold audit: the Vulgate
+          unit's 190-170 B.C. currently reaches Latin pluses that the same
+          source dates three centuries later. Narrowing it needs a verse-level
+          account of which loci are pluses, which this repository does not hold.
+        date:
+          precision: approximate-year
+          from: {year: 132, era: bc}
+          label: "not long after ... the year 132 B.C."
+
   - id: composition.book-of-isaias
     title: The Book of Isaias
     scope: {book: Is}
