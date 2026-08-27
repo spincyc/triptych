@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1910,
-  "editions": 721,
+  "artifacts": 1918,
+  "editions": 722,
   "passages": 2869,
   "readable": 1635,
-  "works": 539
+  "works": 540
  },
  "facets": {
   "authors": [
@@ -259,7 +259,7 @@
    },
    {
     "id": "Charles G. Herbermann and others",
-    "works": 7
+    "works": 8
    },
    {
     "id": "Charles G. Herbermann and the Catholic Encyclopedia editorial board",
@@ -1248,6 +1248,10 @@
     "works": 8
    },
    {
+    "id": "reference-encyclopedia",
+    "works": 8
+   },
+   {
     "id": "encyclical",
     "works": 7
    },
@@ -1257,10 +1261,6 @@
    },
    {
     "id": "patristic-treatise",
-    "works": 7
-   },
-   {
-    "id": "reference-encyclopedia",
     "works": 7
    },
    {
@@ -2290,7 +2290,7 @@
   ],
   "languages": [
    {
-    "editions": 357,
+    "editions": 358,
     "id": "en"
    },
    {
@@ -2426,7 +2426,7 @@
     "label": "20th century"
    },
    {
-    "editions": 383,
+    "editions": 384,
     "id": "2000",
     "label": "21st century"
    }
@@ -2437,7 +2437,7 @@
     "id": "public-domain"
    },
    {
-    "artifacts": 520,
+    "artifacts": 528,
     "id": "restricted"
    },
    {
@@ -6413,6 +6413,31 @@
     "en"
    ],
    "title": "The Catholic Encyclopedia, Volume 9"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/alphabetical-index/",
+   "editions": [
+    {
+     "date": "2026",
+     "file": "2026-newadvent-web-2026-08-27.json",
+     "id": "edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.catholic-encyclopedia.alphabetical-index",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, alphabetical index"
   },
   {
    "alternate_titles": [
