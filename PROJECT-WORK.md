@@ -476,6 +476,34 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic projected orientation
+
+<!-- promised-deliverable: mass-pictographic-projected-orientation -->
+
+**Diagnosed, fixed and validated on 27 August 2026.** The LM-001A canary showed the Missal
+on the correct Epistle side but visibly mis-oriented: it read square to the nave
+rather than embodying its compiled 135 degree yaw.
+
+The transform was never wrong. The drawn page-up direction matched the
+projection of the contract's own page-up vector to within one degree at every
+camera height tried, including the one that failed. What failed was the
+projection: the camera sat low enough that the horizontal plane was seen at a
+grazing angle, and the book's two principal axes projected to within about
+twenty-two degrees of collinear. In that smear no yaw can look like anything.
+
+Every earlier check passed while this was true, for the same reason the first
+artistic failure passed every semantic check: they compared world-space numbers
+and never asked what reached the page. The lesson repeated one level down.
+
+The camera rose again, from an eye of 2.35 to 3.6, which gives about
+forty-four degrees of separation. Object-local axes became explicit data rather
+than a convention living in drawing code. And the missing measurement was
+added: the drawn page-up is now compared against the projected contract
+direction, and the projected separation of an object's principal axes is held
+above a declared floor. True side elevations are exempt, because collapsing one
+horizontal axis is what that view is for, and they are counted rather than
+silently skipped.
+
 ### 1962 Low Mass pictographic render underlay
 
 <!-- promised-deliverable: mass-pictographic-render-underlay -->

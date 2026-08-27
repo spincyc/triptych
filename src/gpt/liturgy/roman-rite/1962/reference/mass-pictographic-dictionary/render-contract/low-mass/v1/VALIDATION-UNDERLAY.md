@@ -24,10 +24,13 @@ Four underlay rasters were rendered and looked at.
 
 | Scene | What it had to prove | Result |
 | --- | --- | --- |
-| `LM-001A` | The canary. Open Missal recognizable and on the Epistle/page-right side; burse distinguishable; three figures below the full step geometry. | **PASS** |
-| `LM-033A` | A Gospel-side reading. The same book geometry moves to page-left without mirroring. | **PASS** |
+| `LM-001A` | The canary. Open Missal recognizable, on the Epistle/page-right side, and visibly angled rather than square. | **PASS** |
+| `LM-033A` | A Gospel-side reading. The same book geometry moves to page-left, at the same angle, without mirroring. | **PASS** |
 | `LM-136E` | The second post-ablution crossing. Declared panels only; crossing precedence visible. | **PASS** |
 | `LM-099A` | The elevation. Priest, both servers, chasuble geometry, servers reaching to its lower edge. | **PASS** |
+
+All four were re-inspected after the second camera raise; the table records that
+pass, not the earlier one.
 
 `LM-001A` and `LM-033A` are the load-bearing pair. In the first the open book
 stands to the right of the corporal, its two page planes and spine clearly a
@@ -66,15 +69,74 @@ into `build/` when a scene is actually handed to an artist. Tracking a hundred
 and forty PNGs would add weight without adding truth, since any of them can be
 reproduced byte-for-byte from the tracked SVG.
 
+## The orientation defect, and what it turned out to be
+
+The canary was reported again: the Missal on the correct Epistle side, but
+visibly facing the wrong way — square to the nave rather than embodying its
+compiled 135 degree yaw.
+
+It was not the transform. Measured at the missal's own geometry, the drawn
+page-up direction and the projection of the contract's own page-up vector agree
+to within about one degree, and they agreed at every camera height tried,
+including the one that failed. The yaw was applied, about the right axis, all
+along.
+
+What failed was the projection. The camera sat low enough that the horizontal
+plane was seen at a grazing angle, and the book's two principal axes — the
+spine running from the reader's near edge to the far edge, and the spread
+running across the two pages — projected to within about twenty-two degrees of
+collinear. A flat object whose axes collapse toward one line cannot look
+oriented at any yaw whatever. The picture was not disobeying the contract; it
+was unable to express it.
+
+That distinction matters, because the two failures need opposite fixes. A
+wrong-axis transform is fixed in the model. A degenerate projection is fixed in
+the camera, and fixing it in the model would mean rotating the book away from
+its compiled orientation to make it look right, which is the exact class of
+error this whole layer exists to prevent.
+
+Measured separations for the canary's Missal, by camera eye height:
+
+| Eye height | Axis separation | Fidelity | Verdict |
+| --- | --- | --- | --- |
+| 1.60, standing | 5.7 degrees | exact | unreadable |
+| 2.35, the reported failure | 22.1 degrees | exact | unreadable |
+| 3.60, current | 44.3 degrees | exact | readable |
+
+Fidelity is exact in every row. Only legibility moves.
+
+## What now guards it
+
+`validate.py` measures both properties for every oriented object in every
+art-ready scene, and refuses on either. A mirrored yaw fails fidelity by 135
+degrees. The camera at which the defect was reported fails the legibility floor
+of 25 degrees. Both refusals were demonstrated before the floor was set, so the
+check is known to bite rather than assumed to.
+
+True side elevations are exempt. Collapsing one horizontal axis is what that
+view is for, and requiring orientation to survive there would be requiring the
+view not to be itself. The two such scenes are counted in the validator's
+output rather than quietly skipped, so a scene that comes to need orientation
+is known to need another declared panel.
+
+Object-local axes are now explicit data in `underlay-objects.yaml`: a page-up
+axis, a spine axis, a spread axis and a page normal, with the open book's spine
+declared parallel to page-up because that is how an open book lies. A yaw
+applied about the wrong local axis is no longer invisible to a reader of the
+library.
+
 ## A camera change, recorded
 
-`nave-centre` was raised from a 1.6 standing eye to 2.35, and the altar target
-lowered. From a standing eye the mensa is edge-on and everything resting on it
-foreshortens to nothing — including the Missal, which is the one object this
-whole layer exists to make unmistakable. The plate convention for this
-dictionary is therefore a slightly elevated nave view: high enough that the
-altar surface and its furniture read, low enough that the figures still stand
-against the steps.
+`nave-centre` was raised twice. First from a 1.6 standing eye to 2.35, because
+from standing height the mensa is edge-on and everything resting on it
+foreshortens to nothing. Then from 2.35 to 3.6, because 2.35 made the surface
+visible without making orientation within it legible, which is the defect
+recorded above.
+
+The plate convention for this dictionary is therefore a markedly elevated nave
+view: high enough that rotation in the horizontal plane survives projection,
+low enough that the figures still stand against the steps rather than being
+seen from overhead.
 
 This is a render-contract change, not a choreography change. No structural
 value moved, and `structural/low-mass/v0.21` is untouched.

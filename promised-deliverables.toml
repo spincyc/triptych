@@ -1755,3 +1755,44 @@ state = "complete"
   evidence = [
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-projected-orientation"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py"
+promise = "Make an oriented object's compiled orientation survive projection and be visible in the render underlay, and prove it mechanically, so that a correct transform can no longer produce a picture in which the orientation cannot be seen."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "local-axes-are-data"
+  criterion = "Object-local axes are explicit data rather than a convention hidden in drawing code, so the pipeline can state what a local page-up becomes in world space and on the page."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "orientation-fidelity-measured"
+  criterion = "The drawn page-up direction of every oriented object is compared against the projection of its contract's own page-up vector, and a disagreement fails rather than passing unseen."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/validate.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "orientation-legibility-enforced"
+  criterion = "The projected separation of an oriented object's principal axes is held above a declared floor, so a faithful transform whose projection collapses to a smear is refused; true side elevations are exempt by design and counted rather than skipped."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/validate.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "orientation-regressions"
+  criterion = "Regressions prove the checks are non-vacuous: a mirrored yaw fails fidelity, and the camera height at which the defect was reported fails legibility while fidelity still passes."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_projected_orientation.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
+  ]

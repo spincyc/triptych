@@ -353,6 +353,70 @@ def check_underlays(contracts: list[dict]) -> int:
     return count
 
 
+def check_projected_orientation(contracts: list[dict]) -> tuple[int, float]:
+    """Prove the drawing embodies the compiled orientation, and shows it.
+
+    Two separate failures, and the second is the one that hid. A yaw applied
+    about the wrong local axis is a fidelity failure and shows up as a
+    disagreement between the drawn page-up direction and the projection of the
+    contract's own page-up vector. But a perfectly faithful yaw can still be
+    invisible: seen at a grazing angle, a flat object's two principal axes
+    collapse toward collinear, and the object then cannot look oriented at any
+    yaw. Every earlier check passed while exactly that was true.
+    """
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("underlay", ROOT / "underlay.py")
+    underlay = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(underlay)
+
+    library = load(ROOT / "underlay-objects.yaml")
+    floor = float(
+        library["local_frame_contract"]["legibility"]["minimum_axis_separation_deg"]
+    )
+    checked = 0
+    worst = 180.0
+    exempt = 0
+    for contract in contracts:
+        if contract["art_readiness"]["status"] != "ready":
+            continue
+        # A true side elevation collapses one horizontal axis on purpose: that
+        # is what the view is for, and INV-GEO-03 requires it. Demanding that
+        # an object's horizontal orientation stay legible there would be
+        # demanding the view not be itself. Such scenes are exempt from the
+        # legibility floor and counted, not silently skipped, so a scene that
+        # needs orientation to read is known to need another declared panel.
+        primary = contract["panels"][0]["camera"]
+        if primary.get("collapses_equal_depth") or primary["projection"].endswith(
+            "elevation-side"
+        ):
+            exempt += 1
+            continue
+        for item in contract["objects"]:
+            if item["id"] not in ("missal", "burse", "paten", "missal-stand"):
+                continue
+            measured = underlay.projected_orientation(contract, item["id"])
+            if measured is None:
+                continue
+            checked += 1
+            if measured["fidelity_deg"] > 1.5:
+                raise Failure(
+                    f"{contract['plate_id']}: the drawn {item['id']} points "
+                    f"{measured['page_up_deg']}deg but its compiled orientation "
+                    f"projects to {measured['expected_deg']}deg — the model does "
+                    "not embody the transform"
+                )
+            worst = min(worst, measured["separation_deg"])
+            if measured["separation_deg"] < floor:
+                raise Failure(
+                    f"{contract['plate_id']}: the {item['id']} projects only "
+                    f"{measured['separation_deg']}deg from collinear, below the "
+                    f"{floor}deg floor. The yaw is right and the picture cannot "
+                    "show it; raise the camera rather than the yaw"
+                )
+    return checked, worst, exempt
+
+
 def main() -> int:
     world = load(ROOT / "world-frame.yaml")
     camera = load(ROOT / "camera-model.yaml")
@@ -372,6 +436,7 @@ def main() -> int:
         raise Failure("art-readiness.yaml disagrees with the compiled contracts")
     boards = check_skeletons(contracts)
     drawings = check_underlays(contracts)
+    oriented, worst, side_views = check_projected_orientation(contracts)
     hashed = check_authored_manifest()
 
     print(f"PASS: world frame, camera model and Missal rule "
@@ -384,6 +449,11 @@ def main() -> int:
     )
     print(f"PASS: {boards} skeletons match their contracts' panel manifests")
     print(f"PASS: {drawings} render underlays, textless and panel-exact")
+    print(
+        f"PASS: {oriented} oriented objects embody their compiled transform "
+        f"and stay legible (worst axis separation {worst:.1f}deg; "
+        f"{side_views} side-elevation scenes exempt by design)"
+    )
     return 0
 
 

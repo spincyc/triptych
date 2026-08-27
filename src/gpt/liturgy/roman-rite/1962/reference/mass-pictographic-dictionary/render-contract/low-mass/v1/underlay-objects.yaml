@@ -29,10 +29,48 @@ structural_baseline_commit: "d2e97b5ca"
 defaults:
   closed: false
 
+# LOCAL AXIS CONTRACT.
+#
+# Object-local axes are explicit data, not a convention hidden in drawing code.
+# The pipeline must be able to answer, for any oriented object:
+#
+#   local page-up  ->  world transform  ->  world page-up
+#                  ->  camera projection  ->  expected page-up on the page
+#
+# and a regression compares that expectation against what was actually drawn.
+# A numerically correct yaw applied about the wrong local axis is otherwise
+# invisible to every check that looks only at world-space values.
+local_frame_contract:
+  orientation_axis: [0.0, 1.0, 0.0]
+  note: >-
+    The compiled yaw points the object's local +Y. Every object below is
+    authored in that frame, so a yaw of 90 leaves the object square to the
+    altar and a yaw of 135 turns it toward the Gospel side.
+  legibility:
+    rule: >-
+      An orientation that survives the transform can still die in the
+      projection. Two axes of a flat object seen at a grazing angle collapse
+      toward collinear, and once they do the object cannot look oriented at any
+      yaw. The underlay therefore checks the projected separation of an
+      oriented object's two principal axes, and the camera is placed high
+      enough to keep it above the floor below.
+    minimum_axis_separation_deg: 25.0
+
+
 objects:
 
   # --- the object that failed ---------------------------------------------
   missal:
+    local_frame:
+      page_up_axis: [0.0, 1.0, 0.0]
+      spine_axis: [0.0, 1.0, 0.0]
+      reading_edge_axis: [0.0, -1.0, 0.0]
+      spread_axis: [1.0, 0.0, 0.0]
+      page_normal: [0.0, 0.0, 1.0]
+      note: >-
+        An open book's spine runs from the reader's near edge to the far edge,
+        so it lies along page-up; the two pages open to either side along the
+        spread axis. The reading edge is the near edge the reader stands at.
     variants:
       open:
         description: >-
@@ -72,6 +110,12 @@ objects:
         alias_of: open
 
   missal-stand:
+    local_frame:
+      page_up_axis: [0.0, 1.0, 0.0]
+      spread_axis: [1.0, 0.0, 0.0]
+      page_normal: [0.0, 0.0, 1.0]
+      note: >-
+        The stand carries the book's frame so the two cannot disagree.
     variants:
       default:
         description: A sloped reading wedge under the book.
@@ -84,6 +128,12 @@ objects:
 
   # --- the object it was confused with ------------------------------------
   burse:
+    local_frame:
+      page_up_axis: [0.0, 1.0, 0.0]
+      spread_axis: [1.0, 0.0, 0.0]
+      page_normal: [0.0, 0.0, 1.0]
+      note: >-
+        A closed case: page-up is the direction its face is squared to.
     variants:
       default:
         description: >-
@@ -127,6 +177,12 @@ objects:
           - points: [[0.0, 0.0, 0.27], [0.0, -0.06, 0.25]]
 
   paten:
+    local_frame:
+      page_up_axis: [0.0, 1.0, 0.0]
+      spread_axis: [1.0, 0.0, 0.0]
+      page_normal: [0.0, 0.0, 1.0]
+      note: >-
+        Page-up is the direction the concave face is turned toward.
     variants:
       default:
         description: A shallow disc, flat on the linen. Wide and low.

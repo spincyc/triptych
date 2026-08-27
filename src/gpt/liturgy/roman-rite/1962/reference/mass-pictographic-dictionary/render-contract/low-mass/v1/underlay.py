@@ -390,6 +390,61 @@ class Underlay:
         return "\n".join(parts) + "\n"
 
 
+def projected_orientation(contract: dict, object_id: str, panel_index: int = 0):
+    """What an oriented object's local axes actually become on the page.
+
+    This is the measurement the earlier checks were missing. Everything before
+    it asked whether the world-space yaw was right, and the yaw was right; the
+    picture was still unreadable, because an orientation that survives the
+    transform can still die in the projection. Two axes of a flat object seen
+    at a grazing angle collapse toward collinear, and once they do the object
+    cannot look oriented at any yaw at all.
+
+    Returns None when the object is absent or unoriented, otherwise:
+      page_up_deg      the drawn page-up direction, in page degrees
+      expected_deg     where the contract's own world page-up vector projects
+      fidelity_deg     the disagreement between them
+      separation_deg   how far the two principal axes are from collinear,
+                       0 being a flat smear and 90 an ideal open corner
+    """
+    item = next((o for o in contract["objects"] if o["id"] == object_id), None)
+    if item is None or item.get("position") is None or item.get("yaw_deg") is None:
+        return None
+    library = Underlay().library.get(object_id) or {}
+    frame = library.get("local_frame") or {}
+    page_up = frame.get("page_up_axis", [0.0, 1.0, 0.0])
+    spread = frame.get("spread_axis", [1.0, 0.0, 0.0])
+
+    camera = Camera(contract["panels"][panel_index])
+    origin, yaw = item["position"], item["yaw_deg"]
+
+    def page_angle(local_a, local_b):
+        a = camera.project(place([local_a], yaw, origin)[0])
+        b = camera.project(place([local_b], yaw, origin)[0])
+        return math.degrees(math.atan2(-(b[1] - a[1]), b[0] - a[0]))
+
+    reach = 0.18
+    drawn = page_angle([-v * reach for v in page_up], [v * reach for v in page_up])
+    across = page_angle([-v * reach for v in spread], [v * reach for v in spread])
+
+    world = item.get("reading", {}).get("page_up_vector")
+    if world is None:
+        world = [math.cos(math.radians(yaw)), math.sin(math.radians(yaw)), 0.0]
+    here = camera.project(origin)
+    there = camera.project(
+        [origin[0] + world[0] * reach, origin[1] + world[1] * reach, origin[2]]
+    )
+    expected = math.degrees(math.atan2(-(there[1] - here[1]), there[0] - here[0]))
+
+    gap = abs((drawn - across + 180.0) % 360.0 - 180.0)
+    return {
+        "page_up_deg": round(drawn, 4),
+        "expected_deg": round(expected, 4),
+        "fidelity_deg": round(abs((drawn - expected + 180.0) % 360.0 - 180.0), 4),
+        "separation_deg": round(min(gap, 180.0 - gap), 4),
+    }
+
+
 def rasterize(svg_path: Path, png_path: Path) -> None:
     subprocess.run(
         ["rsvg-convert", "--zoom", str(RASTER_SCALE),

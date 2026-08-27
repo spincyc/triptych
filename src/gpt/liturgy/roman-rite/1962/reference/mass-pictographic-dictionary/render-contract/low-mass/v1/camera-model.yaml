@@ -58,14 +58,22 @@ reason: >-
 camera_positions:
   - id: nave-centre
     anchor_hint: "on the centreline, in the nave, before and slightly above the steps"
-    position: [0.0, -3.6, 2.35]
+    position: [0.0, -3.6, 3.6]
     note: >-
-      Raised above standing eye height on purpose. From a 1.6 eye the mensa is
-      edge-on and everything resting on it foreshortens to nothing, which is
-      exactly how a render underlay stops being able to show which side the
-      Missal is on. The plate convention for this dictionary is a slightly
-      elevated nave view, high enough that the altar surface and its furniture
-      read, low enough that the figures still stand against the steps.
+      Raised well above standing eye height on purpose, and raised twice.
+      From a 1.6 eye the mensa is edge-on and everything resting on it
+      foreshortens to nothing. From 2.35 the surface reads, but the horizontal
+      plane is still so grazing that an object's rotation within it projects
+      to within about twenty degrees of collinear — a flat smear, in which a
+      book cannot look oriented whatever yaw it carries. That is measurable,
+      and it is now measured: see the orientation-legibility check in
+      `underlay.py` and its regression.
+      At 3.6 the two page axes of an open Missal project roughly forty degrees
+      from collinear, which is enough for a viewer to see which way the book
+      faces. The plate convention for this dictionary is therefore a markedly
+      elevated nave view: high enough that orientation in the horizontal plane
+      survives projection, low enough that the figures still stand against the
+      steps rather than being seen from directly overhead.
   - id: nave-gospel
     position: [-2.2, -4.0, 1.6]
   - id: nave-epistle
