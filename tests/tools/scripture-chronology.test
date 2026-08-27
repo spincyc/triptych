@@ -47,8 +47,25 @@ run_tool check --root "$sandbox" >/dev/null
 # concordance or is refused; it is never resolved by arithmetic.
 run_tool query Ps.50.5 >/dev/null
 run_tool query Ps.51.5 --system hebrew >/dev/null
-if run_tool query Ecclus.35.1 --system greek --json | grep -q '"status":"ok"'; then
-	echo "a Greek-numbered Sirach locus resolved instead of refusing" >&2
+
+# A mapping refusal is not a chronology refusal, and the Greek Sirach is where
+# the difference lives. The concordance refuses it - two texts, not two
+# numberings - and the corpus holds chronology authored at the Greek locus
+# itself, so the query answers AND reports the refusal. This test asserted the
+# opposite until 2026-08-27, when it was asserting that a text with a date in
+# an inspected source had none.
+run_tool query Ecclus.44.1 --system greek --json | grep -q '"status":"ok"' || {
+	echo "the Greek Sirach lost its native chronology" >&2
+	exit 1
+}
+run_tool query Ecclus.44.1 --system greek --json \
+	| grep -q '"status":"textually-distinct"' || {
+	echo "the Greek Sirach stopped refusing the Vulgate mapping" >&2
+	exit 1
+}
+# And a locus that genuinely has neither still refuses outright.
+if run_tool query EsthGr.1.1 --system greek --json | grep -q '"status":"ok"'; then
+	echo "a locus with no native chronology and no mapping resolved anyway" >&2
 	exit 1
 fi
 # And where the concordance DOES record a row, the answer is the row's, not the

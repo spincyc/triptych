@@ -1951,6 +1951,79 @@ claim. What the reviewer must verify per claim is in
 §15.1 and the five new semantic ones are named there so they can be looked for
 by name.
 
+### Cold-audit handoff: the exact review target
+
+| | |
+| --- | --- |
+| branch | `feature/bible-dating` (unmerged, and to stay so) |
+| population HEAD this lane started from | `f1bf113564f57a90dfc593eab4742268b5ffe587` |
+| correction HEAD | `68c8d8ef2b2bfd25a147cbaf56cbb11781126f9e` |
+| base compared against | `origin/main` `2778285849f2973ea89d1cfd5b2751ed4ae58e54` |
+| promised deliverable | `scripture-chronology-corpus-2026-08-26`, **in_progress**, 10 pass / 3 open |
+| open requirements | `translation-independent-identity`, `exhaustive-coverage`, `independent-source-audit` |
+
+**Corpus files.** `src/sources/chronology/{profiles,events,composition,bindings,gaps}.yaml`
+authored; `coverage.tsv` derived and gated; `cold-audit-manifest.tsv` the review
+target. Loader `scripts/_chronology.py`; tool `tools/scripture-chronology`;
+tests `tools/tests/test_chronology.py` and `tests/tools/scripture-chronology.test`.
+
+**Source families the claims rest on.** The Catholic Encyclopedia (New Advent
+transcriptions, all fifteen volumes, `storage = "remote"`, no bytes retained);
+the Douay-Rheims as its own rank-1 witness, cited `bible:douay-rheims:<locus>`;
+the Haydock 2014 Loreto/Feeney Memorial printing, via tracked passage records;
+Eusebius's *Church History* I-III; Augustine's *De consensu evangelistarum* III.
+
+**What this lane changed in production data**, and which the reviewer should
+treat as unreviewed: 47 claims migrated from `relative` to `duration`; 7 anchors
+corrected; 1 binding withdrawn (Ps 21 `historical-setting`); 1 composition unit
+added (`composition.book-of-ecclesiasticus.greek`); 2 anchor events added
+(`israel.judges.ark-comes-to-cariathiarim`,
+`israel.exile.nabuchodonosor-accession`); notes corrected on the Ps 88 setting
+and the Micheas 1-3 unit.
+
+**Six claims left ambiguous for reviewer disposition**, not guessed:
+`israel.judges.period` (Acts 13:20 — the Douay word order attaches the 450
+years to what precedes, the Greek to the judges; a textual variant, not a
+reading choice), `israel.monarchy.absalom-revolt` ("after forty years" with no
+stated origin), `israel.exodus.moses-in-madian` ×2 (the ambiguity is in the
+subject: one event denotes both the flight and the shepherd years),
+`israel.exodus.mara-and-elim`, `israel.conquest.war-against-the-kings-of-chanaan`
+("a long time", unquantified). Four wrong anchors were also dispositioned
+rather than changed; they are named in `.scratch/audit/durations.md` §3.1.
+
+**Inherited broad-suite failures**, identical on branch and base and none of
+them chronology: `check-web-editions-current` (one stale tracked web edition),
+`check-sources` (pinned migration snapshots stale), `check-tool-registry` (8
+tools using a sibling without declaring it), `check-examples` (4 diverged on the
+branch, 24 on base).
+
+**One branch regression against `origin/main`, and it is not this lane's.**
+`tools/tests/test_tool_registry.py::test_shell_smoke_tests_pass` fails on
+`tests/tools/source-family-migration.test`, which reports that
+`src/sources/inventories/source-family-migration-v1.toml`'s pinned
+`canonical_catalog_snapshot` and `inventory_snapshot` are stale. The cause is
+the population lane of 2026-08-26 registering 128 new source artifacts behind a
+pin that has not been re-reviewed; the same staleness is what makes
+`check-sources` fail on base and branch alike, and the test was already failing
+at `f1bf113` before this correction began. **It has deliberately not been
+refreshed here.** Re-pinning a snapshot is an assertion that the review the pin
+stands for has been performed, and it has not been. It needs a maintainer, or
+the source-family review lane, not a correction lane rewriting a timestamp to
+make a gate green.
+
+**What the cold reviewer must verify, per claim**: the cited artifact or record
+exists; the cited locus actually supports the claim; quoted wording matches the
+retained text exactly; the claim is in the source's own voice or correctly
+attributed; the traditional-profile rank is admissible and no modern-critical
+figure is silently treated as traditional; the date structure preserves the
+source's precision and its hedge; the relation type is semantically right;
+anchor, containment and duration semantics are right; the event identity is
+right; the binding scope does not reach past what the source supports;
+alternatives are not quietly reconciled; and a negative or silence claim is
+actually supported by retained inspected evidence. PASS / CHANGES REQUIRED per
+finding, plus an overall disposition. **No same-agent self-review satisfies
+this**, which is why the requirement exists and why this lane left it open.
+
 **Not in this lane.** Propers, the Catena, the web reader and the PDFs are not
 wired to the corpus, and no proper document was revised. The consumer contract
 that binds them when they are is stated in `guidance/scripture-chronology.md`
