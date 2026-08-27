@@ -803,7 +803,7 @@ commit. Version 6 added the
 returned, and gave `content-evaluation` a result schema of its own and the
 repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
 content and visual evaluation lanes, the gates, and every other `single` stage
-are as they were at version 5. A run seeded against version 7 or any earlier
+are as they were at version 5. A run seeded against version 8 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
