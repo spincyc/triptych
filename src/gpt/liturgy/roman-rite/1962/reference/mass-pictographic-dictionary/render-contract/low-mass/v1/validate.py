@@ -450,7 +450,9 @@ def underlay_module():
     return UNDERLAY_MODULE
 
 
-def check_projected_orientation(contracts: list[dict]) -> tuple[int, float, int]:
+def check_projected_orientation(
+    contracts: list[dict],
+) -> tuple[int, float, int, int]:
     """Prove the drawing embodies the compiled orientation, and shows it.
 
     Two separate failures, and the second is the one that hid. A yaw applied
