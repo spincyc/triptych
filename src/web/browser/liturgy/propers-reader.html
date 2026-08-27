@@ -30,9 +30,10 @@
   </div>
   <header class="reader-identity" aria-labelledby="formulary-title">
     <p class="reader-context">Propers · Read</p>
-    <h1 id="formulary-title" class="celebration-title">Choose a formulary</h1>
+    <h1 id="formulary-title" class="celebration-title" tabindex="-1">Choose a formulary</h1>
     <p id="formulary-type" class="entry-title"></p>
     <p id="formulary-meta" class="entry-meta"></p>
+    <p id="formulary-source" class="entry-meta" hidden></p>
     <p id="coverage-notice" class="coverage-notice" role="note" hidden></p>
   </header>
 
@@ -101,7 +102,7 @@
         </div>
         <button class="surface-apply" type="submit">Read this formulary</button>
       </form>
-      <p id="browse-status" class="surface-note">A formulary must be selected. Nothing is chosen by manifest order.</p>
+      <p id="browse-status" class="surface-note" role="status" aria-live="polite" aria-atomic="true">A formulary must be selected. Nothing is chosen by manifest order.</p>
     </div>
   </dialog>
 

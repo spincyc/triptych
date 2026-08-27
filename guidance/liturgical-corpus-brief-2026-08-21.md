@@ -8,8 +8,8 @@ the project's governing instruction. It is kept because it is the WARRANT for
 and this one is where the policy came from and who asked for it.
 
 **Read the policy, not this, for what the rules are.** Two halves of this brief
-have different fates and a reader who confuses them will act on a spent
-instruction:
+have different functions, and a reader who confuses them will mistake an open
+work order for current standing policy:
 
 - **Standing policy** — its sections 1 to 6, 10, 11, 14, 19 and 20 — is
   implemented in `guidance/liturgical-text-publication-policy.md`, which is the
@@ -19,9 +19,10 @@ instruction:
   re-verification and expects it to correct the brief.
 - **A work order** — its sections 12, 13, 23 and 28 to 32, the repository sweep,
   the completeness audit, the phase sequence, the stop conditions and the report
-  format — was addressed to the agents executing it in August 2026. It is spent.
-  Do not read "Execute in this order" or "At completion, report" as an
-  instruction to you.
+  format — was addressed to the agents executing it in August 2026. Work has
+  addressed parts of it, but its section 31 Definition of Done has not been met;
+  it is not spent. Apply it as the scoped work order it is, while taking current
+  policy and corpus status from the owning files named here.
 
 Its sections 7 to 9, the corpus targets for the 1955, 1962 and postconciliar
 states, are absorbed into the files that own that data:
@@ -36,6 +37,19 @@ fill a corpus hole with generated text.
 Three of its factual premises were corrected in execution, and the corrections
 are recorded in the policy's own superseded register rather than edited into the
 text below. The brief is preserved as written.
+
+### Current-status addendum, 27 August 2026
+
+The current public-data route is clonable and downloadable. The controlling
+policy therefore quarantines ICEL payloads from the public Git corpus,
+client-fetched JSON, command output, downloads, PDFs, fixtures, and build
+artifacts. A future non-bundled Internet display must verify the exact work,
+publication surface, conditions, and required acknowledgement before relying on
+ICEL's standing permission. The corpus-completion work remains open: current
+indexes and projections are not machine-verifiable completeness reports for the
+three missal families. See `guidance/liturgical-text-publication-policy.md` for
+the current rights rule and `guidance/propers-for-agents.md` and
+`guidance/recensions.md` for current coverage boundaries.
 
 ---
 

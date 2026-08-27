@@ -11,9 +11,9 @@ repeating either document.
 The DOM-free contract is
 `src/web/browser/liturgy/reader-state.js`. Consumer projections are in
 `src/web/browser/liturgy/reader-state-adapters.js`. Both use the existing
-browser-global/CommonJS pattern. Neither production route loads them at this
-accepted M1 boundary, so current Day and Propers behavior remains unchanged
-until a separately scoped integration.
+browser-global/CommonJS pattern. The canonical Day and Propers routes load both
+modules before their entrance-specific reader controller; the retained legacy
+route names canonicalize to those same public entrances.
 
 ## Versioning
 
@@ -73,8 +73,10 @@ specific as described below.
 Stable IDs carry identity. Edition names, celebration titles, translated
 headings, control labels, DOM IDs, CSS classes, notice prose, and current
 disclosure state do not. `requestedMode`, semantic location, comparison, and
-other future state fields are representable now, but their public URL spelling
-remains provisional until the owning roadmap milestone integrates them.
+other future state fields are representable now. The integrated public URL
+spellings are `mode` for `requestedMode` and `location` for an exact semantic
+event ID; comparison has no implicit public spelling and remains separately
+scoped.
 
 The adapters accept resolved data; they do not fetch it. Day receives the
 existing `MassAssembly.derive()` result. Proper and Ordinary data remain the
@@ -164,8 +166,8 @@ The v1 inventory is:
 
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
-| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, and manifest-declared Ordinary variant keys (currently `eucharistic-prayer`) | `data` |
-| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `cycle`, `alternative`, `translation-witness` | `data`, `missals` |
+| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, and manifest-declared Ordinary variant keys (currently `eucharistic-prayer`) | `data` |
+| Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
 legacy pairs remain in a compatibility envelope and round-trip with both key
@@ -174,25 +176,28 @@ preference-sensitive semantic value, including values equal to repository
 defaults, so another reader's stored preferences cannot reinterpret a shared
 URL. A variant key valid in another edition is preserved as inert and is never
 applied across editions. Duplicate semantic keys and an explicit value invalid
-under the selected manifests fail closed. Propers `cycle`, `alternative`, and
-`translation-witness` values use stable nonempty public identities. Their
-canonical order follows the five base Propers keys, and serialization never
-uses implementation-scoped aliases. Production adapters retain ownership of
-whether the selected formulary actually holds the named choice or witness.
+under the selected manifests fail closed. Day and Propers
+`translation-witness` values, and Propers `cycle` and `alternative` values, use
+stable nonempty public identities. Their canonical order follows the five base
+Propers keys, and serialization never uses implementation-scoped aliases.
+Production adapters retain ownership of whether the selected formulary actually
+holds the named choice or witness.
+
+`form` is valid only beside an exact selected `mass` and names a
+source-authored form ID held by that Mass. The internal single-form `main`
+sentinel is omitted from public state and an explicit `form=main` refuses. A
+multi-form Mass without `form` remains choice-required; a form without a Mass,
+or an invalid form, fails closed without substituting or concatenating text.
+`mode` uses the closed reader-mode vocabulary. `location` names an exact
+semantic event and is restored only inside the selected result.
 
 URL fields outrank valid remembered preferences, which outrank
 repository-declared defaults. A throwing or absent storage adapter yields no
 remembered preferences and does not fail the reader. The contract has no
-storage or geolocation dependency and never infers territory. Because it is
-not yet wired to the pages, current legacy behavior remains deployed exactly
-as it was; the accepted contract tests establish the stricter integration rule
-rather than silently changing public URLs.
-
-The inventory also records current defects for later scoped integration: the
-pages presently coerce some invalid explicit values, Day history navigation
-does not fully restore `why` or clear an absent Ordinary variant, and the
-shared self-written-hash marker can mistake a later Forward navigation for its
-old event. This accepted M1 contract does not change those behaviors.
+storage or geolocation dependency and never infers territory. Both canonical
+pages apply the contract now: invalid explicit semantic values refuse, route
+aliases canonicalize without dropping the query string, and history state
+retains the semantic location needed to restore navigation.
 
 ## Adding a fixture
 
@@ -225,7 +230,8 @@ release map contains the contract modules but no fixture path.
 External review accepted the cycle-alternative and v1 property-presence model
 after correction `c6b8070ae76e75153448895a19a0b916c18806ea` and final micro-fix
 `c1a590f5854215d68d167d9040e188f41762663e`; the focused suite passed all 38
-tests. Acceptance does not integrate a visible mode, redesign the reader shell,
-add Propers search or comparison UI, change calendar or liturgical data, or
-begin recension work. The deployed Day and Propers routes still load neither
-M1 module.
+tests. That acceptance was the historical M1 boundary. The canonical Day and
+Propers routes have since integrated the contract, adapters, visible reader
+modes, and semantic-location restoration. Comparison UI remains outside this
+contract; calendar, source, and recension changes still require their own
+evidence and review.

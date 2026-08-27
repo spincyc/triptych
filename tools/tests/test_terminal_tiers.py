@@ -16,9 +16,13 @@ from __future__ import annotations
 
 import argparse
 import io
+import json
+import os
 import sys
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -31,6 +35,7 @@ from _tooling import (  # noqa: E402
     Style,
     fold_to_ascii,
     resolve_style,
+    run_verb_cli,
 )
 
 
@@ -232,6 +237,96 @@ class FoldedWriterTests(unittest.TestCase):
         writer = _Folded(buffer)
         writer.write("roman-1962 — advent…\n")
         self.assertEqual(buffer.getvalue(), "roman-1962 -- advent...\n")
+
+
+class RendererFailureTests(unittest.TestCase):
+    """A renderer gets the same controlled diagnostics as its handler."""
+
+    @staticmethod
+    def parser() -> argparse.ArgumentParser:
+        parser = argparse.ArgumentParser(prog="example")
+        show = parser.add_subparsers(dest="command").add_parser("show")
+        show.add_argument("--json", action="store_true")
+        return parser
+
+    @staticmethod
+    def handler(_arguments: argparse.Namespace) -> dict[str, str]:
+        return {"status": "ok"}
+
+    @staticmethod
+    def broken_renderer(
+        _payload: object, _arguments: argparse.Namespace
+    ) -> int:
+        raise ValueError("renderer broke")
+
+    def run_broken(self, *argv: str, **extra) -> int:
+        return run_verb_cli(
+            parser=self.parser(),
+            handlers={"show": self.handler},
+            renderer=self.broken_renderer,
+            prefix="example",
+            argv=list(argv),
+            **extra,
+        )
+
+    def test_machine_renderer_failure_is_structured_and_nonzero(self) -> None:
+        error = io.StringIO()
+        with redirect_stderr(error):
+            status = self.run_broken("show", "--json")
+        self.assertEqual(status, 70)
+        self.assertEqual(
+            json.loads(error.getvalue()),
+            {
+                "code": "internal",
+                "error": "renderer broke",
+                "status": "error",
+                "v": 1,
+            },
+        )
+        self.assertNotIn("Traceback", error.getvalue())
+
+    def test_plain_renderer_failure_restores_stdout(self) -> None:
+        output = io.StringIO()
+        error = io.StringIO()
+        held = sys.stdout
+        with patch.object(sys, "stdout", output), redirect_stderr(error):
+            wrapped = sys.stdout
+            status = self.run_broken("show", "--plain")
+            self.assertIs(sys.stdout, wrapped)
+        self.assertIs(sys.stdout, held)
+        self.assertEqual(status, 70)
+        self.assertEqual(error.getvalue(), "example: renderer broke\n")
+
+    def test_renderer_failure_uses_the_mapped_error_contract(self) -> None:
+        error = io.StringIO()
+        with redirect_stderr(error):
+            status = self.run_broken(
+                "show", "--json", mapped_errors={ValueError: ("input", 2)}
+            )
+        self.assertEqual(status, 2)
+        self.assertEqual(json.loads(error.getvalue())["code"], "input")
+
+    def test_handler_failure_keeps_the_same_mapped_error_contract(self) -> None:
+        def broken_handler(_arguments: argparse.Namespace) -> object:
+            raise ValueError("handler broke")
+
+        error = io.StringIO()
+        with redirect_stderr(error):
+            status = run_verb_cli(
+                parser=self.parser(),
+                handlers={"show": broken_handler},
+                renderer=lambda _payload, _arguments: 0,
+                prefix="example",
+                argv=["show", "--json"],
+                mapped_errors={ValueError: ("input", 2)},
+            )
+        self.assertEqual(status, 2)
+        self.assertEqual(json.loads(error.getvalue())["code"], "input")
+
+    def test_traceback_opt_in_still_raises_renderer_errors(self) -> None:
+        with patch.dict(os.environ, {"TPT_TRACEBACK": "1"}):
+            with self.assertRaisesRegex(ValueError, "renderer broke"):
+                self.run_broken("show", "--json")
 
 
 if __name__ == "__main__":

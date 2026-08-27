@@ -103,6 +103,28 @@
     return held[held.length - 1] || null;
   }
 
+  /** Year-computation refusals that actually reach this civil date. */
+  function unresolvedOn(owner, isoDate) {
+    return ((owner && owner.unresolved) || []).filter(function (row) {
+      // Older year files carry only year-wide refusals. A refusal becomes
+      // date-scoped only when it names the complete inclusive window emitted
+      // by calendar-days; missing scope fields retain the legacy behavior.
+      if (!row || !row.from || !row.to) return true;
+      return row.from <= isoDate && isoDate <= row.to;
+    });
+  }
+
+  /** Date-scoped computation refusals that can authoritatively block a day. */
+  function blockingRefusalsOn(owner, isoDate) {
+    return unresolvedOn(owner, isoDate).filter(function (row) {
+      // Legacy unscoped rows include year-level coverage notices. They remain
+      // visible in the liturgical-year apparatus, but cannot prove that one
+      // particular civil date is unresolved. New blocking refusals name their
+      // complete inclusive date window.
+      return Boolean(row && row.from && row.to);
+    });
+  }
+
   function seasonOf(owner, isoDate) {
     for (const span of (owner && owner.seasons) || []) {
       if (span.from <= isoDate && isoDate <= span.to) return span.season;
@@ -529,12 +551,37 @@
       contest.push(one);
     }
 
-    // Overrides run before the comparison, because each of them defeats a
-    // candidate that the row numbers alone would have made the winner.
+    // Overrides run before the comparison. Some change the basis on which an
+    // occurrence is compared; the older shapes below defeat a candidate that
+    // the row numbers alone would have made the winner.
     for (const override of rubrics.overrides || []) {
       if (override.stated_only || !override.key) continue;
       const target = contest.find((one) => one.key === override.key);
       if (!target) continue;
+
+      // Prot. n. 2671/98/L does not decide which memorial wins. It changes the
+      // status of the Immaculate Heart and every obligatory memorial occurring
+      // with it to optional for that year. Re-basing both candidates before
+      // comparison preserves that distinction: the source states a reduction,
+      // and the ordinary optional-memorial rule below leaves the choice open.
+      if (override.when_with_basis && override.reduce_with_to_basis) {
+        const companions = contest.filter(
+          (one) => one !== target && one.basis.id === override.when_with_basis
+        );
+        const reducedBasis = (rubrics.bases || []).find(
+          (one) => one.id === override.reduce_with_to_basis
+        );
+        if (!companions.length || !reducedBasis) continue;
+        for (const one of [target].concat(companions)) {
+          one.reducedBy = {
+            override: override,
+            fromBasis: one.basis
+          };
+          one.basis = reducedBasis;
+          one.row = reducedBasis.row;
+        }
+        continue;
+      }
 
       if (override.yields_to) {
         const beats = contest.find((one) => one !== target && one.basis.nature === override.yields_to);
@@ -563,13 +610,26 @@
     for (const one of standing) if (one.row < best.row) best = one;
     const tied = standing.filter((one) => one.row === best.row);
 
+    // Optional does not mean "the highest optional memorial must be kept". It
+    // means one may be kept, or all may be omitted and the underlying day kept.
+    // This is an answered choice even when there is only one optional memorial.
+    // The old tied-only condition handled several optional memorials but made a
+    // single one a compulsory winner and reported its weekday as displaced.
+    if (tied.every((one) => one.basis.optional)) {
+      const underlying = standing.filter(
+        (one) => one.row > best.row && one.basis.constitutes_the_day
+      );
+      return {
+        winner: null,
+        contest: contest,
+        defeated: defeated,
+        aside: standingAside,
+        choice: tied.concat(underlying)
+      };
+    }
+
     if (tied.length > 1) {
-      // A tie at a row the rubrics mark optional is not a gap in the rules: the
-      // rules say the choice belongs to the celebrant. Anywhere else it is a
-      // gap, and the derivation stops.
-      if (tied.every((one) => one.basis.optional)) {
-        return { winner: null, contest: contest, defeated: defeated, aside: standingAside, choice: tied };
-      }
+      // A non-optional tie is a gap in the rules, and the derivation stops.
       // Naming the rule that would settle it is the useful part. Several of
       // the real ties turn on the identity of a divine Person or of a saint,
       // which the source declares and deliberately never applies.
@@ -993,6 +1053,33 @@
    * not know which Mass occurs; offering the candidates as though the celebrant
    * might pick one would turn an honest refusal into a false permission.
    */
+  function candidateLocus(one) {
+    return (one.reducedBy && one.reducedBy.override.locus) || one.basis.locus || null;
+  }
+
+  function candidateWhy(one) {
+    return (one.reducedBy && one.reducedBy.override.why) || one.basis.why;
+  }
+
+  function candidateFormularyKey(one) {
+    return (one.formulary && one.formulary.key) || one.key || null;
+  }
+
+  /** Every norm used to authorize a calendar choice, in derivation order. */
+  function choiceLocus(candidates) {
+    const held = [];
+    function add(locus) {
+      if (locus && held.indexOf(locus) < 0) held.push(locus);
+    }
+    for (const one of candidates || []) {
+      // An occurrence-only reduction proves why this celebration is optional;
+      // the reduced basis separately proves what choices optional status allows.
+      if (one.reducedBy) add(one.reducedBy.override.locus);
+      add(one.basis && one.basis.locus);
+    }
+    return held.length ? held.join('; ') : null;
+  }
+
   function readableOn(winner, candidates, losers, choices, settled) {
     const out = [];
     const seen = {};
@@ -1003,26 +1090,45 @@
       out.push(row);
     }
 
-    if (!winner || !settled) {
+    if (!settled) {
       for (const one of candidates) {
         add({
           id: one.id, key: one.key, label: one.name, state: 'unresolved',
-          locus: one.basis.locus || null,
+          locus: candidateLocus(one),
           why: 'this date is not settled here, so nothing on it is stated to be the Mass'
         });
       }
       return out;
     }
 
-    const held = winner.formulary;
-    add({
-      id: winner.id,
-      key: held && held.key ? held.key : winner.key,
-      label: held && held.kind === 'borrowed' ? held.name : winner.name,
-      state: 'said',
-      locus: winner.basis.locus || null,
-      why: winner.basis.why
-    });
+    if (winner) {
+      const held = winner.formulary;
+      add({
+        id: winner.id,
+        key: held && held.key ? held.key : winner.key,
+        label: held && held.kind === 'borrowed' ? held.name : winner.name,
+        state: 'said',
+        locus: candidateLocus(winner),
+        why: candidateWhy(winner)
+      });
+    } else {
+      // A rubrically authorized choice is settled precisely because it is not
+      // an unresolved collision. Every arm is readable as an option; none is
+      // falsely labelled the Mass that must be said.
+      const dayChoices = candidates.filter((candidate) => candidate.dayChoice)
+        .sort((left, right) => left.dayChoiceOrder - right.dayChoiceOrder);
+      for (const one of dayChoices) {
+        add({
+          id: one.id,
+          key: candidateFormularyKey(one),
+          label: one.name,
+          state: 'option',
+          locus: candidateLocus(one),
+          why: candidateWhy(one),
+          choice: 'calendar-formulary'
+        });
+      }
+    }
 
     for (const choice of choices || []) {
       for (const option of choice.among || []) {
@@ -1061,13 +1167,28 @@
    * One branch of the derivation
    * --------------------------------------------------------------------- */
 
-  function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow) {
-    const unsettled = [];
+  function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow,
+                        calendarRefusals) {
+    // Calendar computation owns whether it has enough evidence to appoint a
+    // day at all. An active refusal therefore precedes every occurrence rule:
+    // a rubrical override cannot turn a computation-layer "neither is chosen"
+    // into a winner by continuing the derivation underneath it.
+    const unsettled = (calendarRefusals || []).map((row) => Object.assign({}, row));
     const remarks = [];
     const season = seasonOf(owner, isoDate);
     const absent = absencesOn(rubrics, isoDate);
 
-    const ranked = rank(rubrics, candidates, unsettled);
+    // A territorial branch may share the objects that came from the year file
+    // with another branch. Occurrence-only reductions must not leak from one
+    // branch to another, so ranking works on branch-local shallow copies.
+    const effectiveCandidates = candidates.map((one) => Object.assign({}, one));
+    const ranked = unsettled.length
+      ? { winner: null, contest: [], defeated: [], aside: [] }
+      : rank(rubrics, effectiveCandidates, unsettled);
+    (ranked.choice || []).forEach(function (one, index) {
+      one.dayChoice = true;
+      one.dayChoiceOrder = index;
+    });
     // A formulary with no day to be the Mass of. The year file appoints one
     // here under RGMR 299 and no rule in this source constitutes the day it
     // would be said on, so the Mass is named and the day is not claimed —
@@ -1088,7 +1209,7 @@
     if (!ranked.winner && !ranked.choice && !unsettled.length) {
       unsettled.push({
         what: isoDate,
-        why: candidates.length
+        why: effectiveCandidates.length
           ? 'nothing on this date competes for the day: what the index carries here ' +
             'occupies no row of the table, and no rule in this source constitutes a ' +
             'day for it. The calendar index, not the rubrics, is what is missing.'
@@ -1107,7 +1228,7 @@
       ? dispose(rubrics, winner, losers, owner, isoDate, true, [])
       : null;
 
-    const conditions = candidates
+    const conditions = effectiveCandidates
       .filter((one) => one.certain === false && one.caveat)
       .map((one) => ({
         id: one.impliedBy ? one.impliedBy.id : one.id,
@@ -1154,7 +1275,7 @@
       });
     }
 
-    const choices = massChoicesFor(rubrics, winner, candidates, isoDate);
+    const choices = massChoicesFor(rubrics, winner, effectiveCandidates, isoDate);
     const settled =
       unsettled.length === 0 &&
       conditions.length === 0 &&
@@ -1164,7 +1285,7 @@
     return {
       option: option,
       season: season,
-      candidates: candidates.map(function (one) {
+      candidates: effectiveCandidates.map(function (one) {
         return {
           id: one.id,
           key: one.key,
@@ -1176,8 +1297,8 @@
           nature: one.basis.nature,
           basis: one.basis.id,
           basisLabel: one.basis.label || null,
-          why: one.basis.why,
-          locus: one.basis.locus,
+          why: candidateWhy(one),
+          locus: candidateLocus(one),
           competes: competes(one),
           certain: one.certain !== false,
           caveat: one.caveat || null,
@@ -1216,8 +1337,8 @@
             // turned a permission into an obligation.
             optional: Boolean(winner.basis.optional),
             source: winner.source,
-            why: winner.basis.why,
-            locus: winner.basis.locus,
+            why: candidateWhy(winner),
+            locus: candidateLocus(winner),
             // The Mass said on this day. `kind: 'own'` is a day with a
             // formulary of its own — the Office of Our Lady on Saturday, which
             // RGMR 270 joins to its Office; `kind: 'borrowed'` is RGMR 299's
@@ -1231,11 +1352,17 @@
         latin: (rubrics.precedence || {}).latin || null,
         what: 'precedence among liturgical days is governed by this table and by nothing else'
       },
+      choiceRequired: Boolean(ranked.choice),
       choice: ranked.choice
         ? {
-            among: ranked.choice.map((one) => ({ id: one.id, name: one.name })),
-            locus: (rubrics.precedence.rows.find((r) => r.row === ranked.choice[0].row) || {}).note || null,
-            what: 'neither displaces the other; one may be kept and the rest are omitted'
+            id: 'calendar-formulary',
+            required: true,
+            among: ranked.choice.map((one) => {
+              const key = candidateFormularyKey(one);
+              return { id: key, key: key, candidateId: one.id, name: one.name };
+            }),
+            locus: choiceLocus(ranked.choice),
+            what: 'one optional memorial may be kept, or all may be omitted in favor of the underlying day'
           }
         : null,
       losers: low.losers.map(function (one) {
@@ -1268,7 +1395,7 @@
       // Every formulary a reader may ask to see, each carrying its standing.
       // Also absent from `settled`: being able to READ a displaced Mass says
       // nothing about which Mass is said.
-      readable: readableOn(winner, candidates, low.losers, choices, settled),
+      readable: readableOn(winner, effectiveCandidates, low.losers, choices, settled),
       conditions: conditions,
       absent: absent,
       unsettled: unsettled,
@@ -1289,6 +1416,8 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(isoDate || '')) throw new Error('derive needs a YYYY-MM-DD date');
 
     const owner = liturgicalYearFor(year, isoDate);
+    const calendarRefusals = unresolvedOn(owner, isoDate);
+    const blockingRefusals = blockingRefusalsOn(owner, isoDate);
     const season = seasonOf(owner, isoDate);
     const held = indexCandidates(year, rubrics, isoDate);
     const arrived = arrivals(rubrics, owner, isoDate);
@@ -1316,7 +1445,7 @@
         set.unshift(implied);
       }
       return deriveBranch(rubrics, owner, isoDate, set, option, held.folded,
-                          implied ? null : (takes[0] || null));
+                          implied ? null : (takes[0] || null), blockingRefusals);
     }
 
     // The borrowed rows carry territorial tags of their own — on the ferias
@@ -1341,7 +1470,7 @@
             begins: owner.begins,
             ends: owner.ends,
             lectionary: owner.lectionary || null,
-            unresolved: owner.unresolved || []
+            unresolved: calendarRefusals
           }
         : null,
       territorial: year.territorial || null,

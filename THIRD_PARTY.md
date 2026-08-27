@@ -121,48 +121,81 @@ In particular:
   focused OCR source extracts and is not offered under CC BY 4.0; and
 - the liturgical-text portions of the corresponding `propers/verified.md`
   files, document sources, and PDFs are not offered under CC BY 4.0; and
-- English translations carried in the calendar mass indexes under
-  `src/sources/calendars/**/propers.yaml` are recorded per proper with their
-  own `rights` basis and, where licensed, the notice their licensor requires.
-  The English translation of *The Roman Missal*, third edition, is copyright
-  the International Commission on English in the Liturgy Corporation. **This
-  project has no permission for it, none is recorded anywhere in this
-  repository, and no ICEL text is carried here in whole or in part.** The
-  rights position, with its citations, is settled once in
-  `src/sources/inventories/liturgical-english-rights-v1.toml`; do not carry
-  ICEL text on the strength of anything short of a written grant, and read
-  that record's `seeking_a_licence` before writing one in even if a grant
-  arrives, because this repository cannot yet express a text that is licensed
-  and not publishable; and
-- the English recorded in
-  `src/sources/inventories/postconciliar-proper-translations-v1.toml` reaches
-  that file by two routes with different rights positions, and the file marks
-  each entry with which. **Neither route carries the text of the *Missale
-  Romanum*, third typical edition (2002), whose approved English is ICEL's, is
-  in copyright, and is not held in this repository in whole or in part.**
+- English translations carried by the sidecar inventories under
+  `src/sources/inventories/*-proper-translations-v1.toml` are overlaid onto the
+  calendar mass indexes by `mass-propers` and recorded per proper with their own
+  `rights` basis and, where licensed, the notice their licensor requires.
+  A `rights` value is local provenance metadata, not an offer to relicense the
+  words under this repository's CC BY 4.0 terms; and
+- the English translation of *The Roman Missal*, third edition, is copyright
+  the International Commission on English in the Liturgy Corporation (ICEL).
+  ICEL's *Publication Policies* contain a standing, conditional permission for
+  exact approved, recognized, and promulgated ICEL text on a no-fee,
+  noncommercial Internet site. That permission is not public-domain status, is
+  not a general license for a downloadable file, a clonable data corpus, an
+  installed PDF, or another form of publication, and does not imply ICEL
+  affiliation, sponsorship, or endorsement. The public repository and bundled
+  static-web data therefore do not distribute ICEL text payloads on the
+  strength of that web-only permission. Text-free source and rights metadata
+  may record the source, permission, and required notice for a future display
+  route whose surface satisfies the permission's conditions.
 
-  70 entries are `project-created`: this project's own work, offered under
+  The governing policy is
+  `guidance/liturgical-text-publication-policy.md`; the factual rights records
+  are
+  `src/sources/inventories/icel-web-permission-rights-v1.toml` and
+  `src/sources/inventories/liturgical-english-rights-v1.toml`. The controlling
+  current external sources are ICEL's
+  [Publication Policies](https://www.icelweb.org/PubPolicy.PDF) for the grant
+  and its [copyright page](https://www.icelweb.org/copyright.htm) for the
+  acknowledgement form. A display of excerpts from the 2010 translation must
+  carry:
+
+  > Excerpts from the English translation of The Roman Missal © 2010,
+  > International Commission on English in the Liturgy Corporation. All rights
+  > reserved.
+
+  Preserve that wording with any covered excerpt; do not substitute the
+  entire-work form, `(c)` for the copyright symbol, or an acknowledgement copied
+  from an unofficial intermediary. The acknowledgement identifies the owner
+  and satisfies a condition when the permission otherwise applies; it is not
+  itself evidence that a payload is exact, approved, promulgated, or cleared
+  for a particular surface. USCCB adaptations and proper texts, CCD/*Lectionary
+  for Mass* text, NAB/NABRE text, and the Abbey Psalms and Canticles are
+  separately controlled and are not covered by ICEL's permission.
+
+  Quarantine of the current public bundle does not erase earlier Git objects.
+  Repository history contains commits that tracked ICEL text payloads, including
+  material transcribed from unofficial intermediaries. Whether a public-history
+  rewrite, repository replacement, or another remedial step is required is a
+  release-policy and counsel decision for the maintainer; this notice neither
+  clears those historical copies nor claims that current-tree removal makes
+  them undistributed; and
+- the English recorded in
+  `src/sources/inventories/postconciliar-proper-translations-v1.toml` includes
+  non-ICEL routes with different rights positions, and the file marks every
+  translation with which basis and witness apply.
+
+  One route is `project-created`: this project's own work, offered under
   CC BY 4.0 with the project's authorship identified at the point of use. They
   translate prayers of the ancient Roman sacramentaries — the Veronense, the
   Old Gelasian, the Hadrianum — which are out of copyright everywhere, and each
   entry names its ancient witness and states every difference between that
   witness and the Missal's own text.
 
-  56 entries, carrying 63 translation rows, are `public-domain` and are not
-  this project's work. They carry, unaltered, the English of *The Roman Missal
-  translated into the English language for the use of the laity*, first revised
-  edition (Philadelphia: Eugene Cummiskey, 1861), made for the **antecedent** of
-  the prayer — the older oration whose Latin this calendar's own recorded Latin
-  reproduces. Each entry names that antecedent and enumerates every difference
-  the two Latin texts show. That 1861 translation is in the public domain in the
-  United States by publication date; Triptych claims no exclusive right in the
-  wording and does not offer it under CC BY 4.0. It is a nineteenth-century lay
-  hand missal, a century older than the reform, and it is never presented as the
-  2002 Missal's text.
+  Other rows are `public-domain` and are not this project's work. Most carry,
+  unaltered, the English of *The Roman Missal translated into the English
+  language for the use of the laity*, first revised edition (Philadelphia:
+  Eugene Cummiskey, 1861), made for the **antecedent** of the prayer — the older
+  oration whose Latin this calendar's own recorded Latin reproduces. Each entry
+  names that antecedent and enumerates every difference between the two Latin
+  texts. The sequences use Edward Caswall's *Lyra Catholica* (London, 1849) and
+  name that witness separately. These translations are in the public domain in
+  the United States by publication date; Triptych claims no exclusive right in
+  their wording and does not offer them under CC BY 4.0.
 
-  Nothing on either route is an approved liturgical translation, nothing on
-  either is derived from ICEL's, and nothing in the file may be used for
-  recitation; and
+  Nothing on either non-ICEL route is an approved liturgical translation or is
+  derived from ICEL's, and nothing in the file may be used for recitation; and
 - the English orations recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
   transcription of the same book vendored at
@@ -179,9 +212,9 @@ In particular:
   those exact bytes are a Google-produced derivative carrying Google's own
   front matter, no distribution grant for it was established, and the record
   keeps its rights status unresolved. The same 1861 book is also quoted, on the
-  same public-domain basis, by the 56 antecedent entries of the postconciliar
-  file described in the bullet above; the rights position is identical and only
-  the relation to the prayer differs.
+  same public-domain basis, by antecedent entries in the postconciliar file
+  described above; the rights position is identical and only the relation to
+  the prayer differs.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution

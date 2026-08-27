@@ -1,0 +1,54 @@
+#!/bin/sh
+# Test for `tools/tpt complete-missal`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+report="$(mktemp)"
+trap 'rm -f "$report"' EXIT HUP INT TERM
+
+"$tool" complete-missal --help >/dev/null
+"$tool" complete-missal --check --json >"$report"
+
+python3 - "$report" <<'PY'
+import json
+import sys
+
+report = json.load(open(sys.argv[1], encoding="utf-8"))
+assert report["schema"] == "triptych-complete-missal-completeness/v1", report
+assert report["status"] == "unresolved", report
+assert report["check"]["valid"] is True, report
+assert report["check"]["resolved"] is False, report
+assert report["check"]["unresolved_dimension_cells"] > 0, report
+assert [row["calendar"] for row in report["families"]] == [
+    "roman-pre-1955", "roman-1962", "postconciliar"
+], report
+
+expected = {
+    name
+    for names in report["scope"]["dimensions"].values()
+    for name in names
+}
+assert len(expected) == 15, expected
+for family in report["families"]:
+    found = {
+        name
+        for group in ("structural", "textual", "provenance")
+        for name in family[group]
+    }
+    assert found == expected, (family["calendar"], found ^ expected)
+    assert family["structural"]["represented_celebrations"]["state"] == "measured"
+    assert isinstance(family["structural"]["represented_celebrations"]["count"], int)
+    assert family["textual"]["inherited_reference_slots"]["state"] == "measured"
+    assert isinstance(family["textual"]["inherited_reference_slots"]["count"], int)
+    for group in ("structural", "textual", "provenance"):
+        for dimension in family[group].values():
+            if dimension["state"] == "unresolved":
+                assert dimension["count"] is None, dimension
+                assert isinstance(dimension["lower_bound"], int), dimension
+                assert dimension["reason"]["kind"], dimension
+
+gate = report["scope"]["runtime_year_gate"]
+assert gate["included"] is False, gate
+assert gate["expected_renders"] == 4380, gate
+PY

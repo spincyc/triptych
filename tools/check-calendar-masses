@@ -8,6 +8,8 @@ Requires PyYAML (requirements-tools.txt).
 from __future__ import annotations
 
 import argparse
+import csv
+import hashlib
 import json
 import re
 import subprocess
@@ -37,6 +39,7 @@ from _calendars import (
     restated_identity,
     spans_of,
 )
+from _recensions import catalog_problems
 from _tooling import (
     Example,
     examples_live_on_the_verbs,
@@ -44,6 +47,7 @@ from _tooling import (
     run_verb_cli,
     with_examples,
 )
+from _proper_latin import sidecar_problems as latin_sidecar_problems
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -51,13 +55,14 @@ EXAMPLES = {
         Example(
             "tools/check-calendar-masses check --calendar roman-1962",
             (
-                "src/sources/calendars/roman-1962/propers.yaml\t459 masses\t1465 propers",
+                "src/sources/calendars/roman-1962/propers.yaml\t491 masses\t2773 propers",
+                "src/sources/inventories/roman-1962-proper-translations-v1.toml\t6 read twice\t5 agree\t1 disagree",
             ),
         ),
         Example(
             "tools/check-calendar-masses check --json",
             (
-                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance An... [+5515 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ot-23-thursday/Responsorial Psal... [+1566 chars]",
             ),
         ),
     ),
@@ -78,6 +83,31 @@ SCHEMA = "triptych-calendar-masses/v1"
 TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created", "permission"}
 # The bases whose grant is conditioned on a notice travelling with the words.
 RIGHTS_NEEDING_NOTICE = ("licensed", "permission")
+# These are Lectionary slots even where their source is composed rather than a
+# biblical citation. ICEL's historical Lectionary acknowledgement is not ruled
+# out here; the narrower error is attaching a Roman Missal music witness to a
+# Lectionary translation, which is the misclassification this check can prove.
+LECTIONARY_ACCLAMATIONS = {"Gospel Acclamation", "Verse Before the Gospel"}
+ICEL_ROMAN_MISSAL_MUSIC_SOURCE = ".music-for-the-roman-missal."
+# Availability and its reason are two axes.  Flattening them into values such
+# as `unavailable_rights_restricted` leaves a renderer unable to say the stable
+# state without parsing every reason vocabulary, and it contradicts the same
+# contract used by the Ordinary and the Commons.  `[[untranslated]]` is the
+# sidecar's unavailable ledger; the explicit field keeps that state readable
+# without making the table name carry semantics of its own.
+TRANSLATION_AVAILABILITY = {"unavailable"}
+TRANSLATION_ABSENCE_KINDS = {"witness-gap", "rights-withheld", "no-exemplar"}
+TRANSLATION_ABSENCE_REASON_FIELDS = {"kind", "source_id", "surfaces"}
+TRANSLATION_ABSENCE_EXTENTS = {"body", "incipit"}
+TRANSLATION_ABSENCE_CYCLES = {"all", "A", "B", "C", "I", "II"}
+TRANSLATION_MAIN_FORM_ID = "main"
+TRANSLATION_ABSENCE_SURFACES = {
+    "site-display",
+    "corpus-data",
+    "public-git",
+    "command-line",
+    "download",
+}
 # Vulgate and Hebrew psalm numbering diverge across most of the psalter,
 # so a reference is only resolvable against a bible in the same system.
 PSALM_NUMBERING = {"vulgate", "hebrew"}
@@ -92,6 +122,20 @@ EXCEPTIONS = "psalm_numbering_exceptions"
 # yet uses while the file the site actually serves went unvalidated.
 OVERLAY_DIR = Path("src/sources/inventories")
 OVERLAY_SUFFIX = "-proper-translations-v1.toml"
+# A harvested translation may use one exact artifact as its page-image
+# collation witness while a different, safely trackable artifact carries the
+# publication rights basis.  These fields make that split machine-readable.
+OVERLAY_ARTIFACT = "artifact_id"
+OVERLAY_PASSAGE = "passage_id"
+OVERLAY_IA_LEAF_RANGE = "ia_leaf_range"
+OVERLAY_PUBLICATION_ARTIFACT = "publication_artifact_id"
+OVERLAY_PUBLICATION_ARTIFACT_SHA256 = "publication_artifact_sha256"
+OVERLAY_PUBLICATION_PASSAGE = "publication_passage_id"
+OVERLAY_PUBLICATION_FIELDS = (
+    OVERLAY_PUBLICATION_ARTIFACT,
+    OVERLAY_PUBLICATION_ARTIFACT_SHA256,
+    OVERLAY_PUBLICATION_PASSAGE,
+)
 # Where each proper stands inside the Ordinary, stated once per calendar on the
 # authority of a named rubric, and read here rather than restated.
 ORDO_SUFFIX = "-ordo-missae-v1.toml"
@@ -153,17 +197,29 @@ SIBLING_AGREES = "sibling-agrees"
 NOT_A_READING = str.maketrans(
     {"‘": "'", "’": "'", "“": '"', "”": '"', "–": "-", "—": "-"}
 )
+# The fixed-calendar spine and the Advent-first temporal catalog normally use
+# the same registry string.  These five 1962 celebrations are the complete,
+# measured exception: they are fixed dated rows in the former and numbered
+# temporal formularies in the latter.  Keeping the bounded crosswalk here
+# preserves that namespace distinction without turning every unique registry
+# typo into an accepted mismatch.
+SPINE_REGISTRY_CROSSWALK = frozenset(
+    {
+        ("octava-nativitatis-domini", "1962-01-01", "08"),
+        ("epiphania-domini", "1962-01-06", "10"),
+        (
+            "commemoratione-baptismatis-domini-nostri-iesu-christi",
+            "1962-01-13",
+            "12",
+        ),
+        ("vigil-nativity-lord", "1962-12-24", "05"),
+        ("nativitate-domini-octave", "1962-12-25", "06"),
+    }
+)
 # The companion beside a mass index that states which rubric governs what. A
 # text appointed across a span of days is stated there and carried here, and
 # `span_problems` is the only thing that joins the two halves.
 SPANS_SOURCE = "rubrics.yaml"
-# Every psalm-bound complaint opens on the locus it refused (see
-# `_psalms.validate_psalm`), which is what the ledger is keyed by. Matching the
-# locus rather than the whole sentence keeps the ledger readable and survives a
-# reworded message.
-PSALM_TROUBLE = re.compile(r": (Psalm \d+(?::\d+)?) (?:exceeds|precedes|is outside)\b")
-PSALM_LOCUS = re.compile(r"Psalm (\d+)(?::(\d+))?$")
-
 REQUIRED_HEADER = (
     "calendar",
     "citation_convention",
@@ -190,7 +246,8 @@ ENTRY_REQUIRED = ("key", "name", "registry")
 # calendar carries one today only because they are all still in the sidecars.
 PROPER_FIELDS = frozenset(
     {"name", "source", "verses", "incipit", "text", "notes", "cycles",
-     "weekday_cycles", "takes_from", "psalm_numbering", "translations"}
+     "weekday_cycles", "takes_from", "psalm_numbering", "translations",
+     "text_status"}
 )
 
 SOURCES = ("scripture", "composed", "mixed")
@@ -226,7 +283,30 @@ KINDS = ("christological", "marian", "sanctoral", "seasonal")
 # reached only by `takes_from`, which is why the section could not exist before
 # the reference did.
 COMMON_KIND = "common"
+# A witnessed direction into an unresolved Common is not `takes_from`: it must
+# never cause the resolver to present absent target text as appointed wording.
+COMMON_FROM = "common_from"
+COMMON_FROM_FIELDS = frozenset({"scope", "source_id", "locus", "options"})
+COMMON_FROM_OPTION_FIELDS = frozenset({"mass", "selection"})
+COMMON_FROM_SCOPES = frozenset({"missal-propers-except-collect"})
+TEXT_STATUS = "text_status"
+TEXT_STATUS_FIELDS = frozenset({"state", "scope", "reasons"})
+TEXT_STATUS_STATES = frozenset({"partial", "unavailable"})
+UNAVAILABLE_TEXT_STATUS_STATES = frozenset({"unavailable"})
+MASS_TEXT_STATUS_SCOPES = frozenset({"missal-formulary", "proper-collect"})
+PROPER_TEXT_STATUS_SCOPES = frozenset({"proper-body"})
+TEXT_STATUS_SCOPES = MASS_TEXT_STATUS_SCOPES | PROPER_TEXT_STATUS_SCOPES
+TEXT_STATUS_REASON_FIELDS = frozenset({"kind", "source_id"})
+# The Ordinary and the translation ledger already use these distinctions; an
+# unavailable Common is the same absence, not a fourth vocabulary.
+TEXT_STATUS_REASON_KINDS = frozenset(
+    {"witness-gap", "rights-withheld", "no-exemplar"}
+)
+ORDINARY_FRAME = "ordinary_frame"
+ORDINARY_FRAME_FIELDS = frozenset({"applicability", "basis"})
+ORDINARY_FRAME_APPLICABILITY = frozenset({"full", "none", "unavailable"})
 KEY_CHARS = set("abcdefghijklmnopqrstuvwxyz0123456789-")
+FORM_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 DAYS_IN_MONTH = (31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 DATE_RE = re.compile(r"^(\d{2})-(\d{2})$")
 # A commemoration written into another celebration's name - "Feast; comm. Saint"
@@ -260,6 +340,168 @@ def check_reference(
             f"{where}: {TAKES_FROM} on a mass takes the whole formulary; name a "
             "single proper on the proper that takes it"
         )
+
+
+def check_registered_source(where: str, source_id: object, problems: list[str]) -> None:
+    """A structural claim names a source-library record, never a prose label."""
+    if not isinstance(source_id, str) or not source_id.strip():
+        problems.append(f"{where}: source_id must be a nonempty string")
+        return
+    registered = source_ids()[0]
+    if registered is not None and source_id not in registered:
+        problems.append(
+            f"{where}: source_id {source_id!r} is registered nowhere in the "
+            "source library"
+        )
+
+
+def check_common_from(where: str, value: object, problems: list[str]) -> None:
+    """Validate a non-resolving, witnessed direction to one or more Commons."""
+    if not isinstance(value, dict):
+        problems.append(f"{where}: {COMMON_FROM} must be a mapping")
+        return
+    unknown = sorted(set(value) - COMMON_FROM_FIELDS)
+    if unknown:
+        problems.append(
+            f"{where}: {COMMON_FROM} carries unknown field(s) {', '.join(unknown)}; "
+            f"it takes {', '.join(sorted(COMMON_FROM_FIELDS))}"
+        )
+    scope = value.get("scope")
+    if scope not in COMMON_FROM_SCOPES:
+        problems.append(
+            f"{where}: {COMMON_FROM}.scope must be one of "
+            f"{sorted(COMMON_FROM_SCOPES)}, got {scope!r}"
+        )
+    check_registered_source(
+        f"{where}: {COMMON_FROM}", value.get("source_id"), problems
+    )
+    locus = value.get("locus")
+    if not isinstance(locus, str) or not locus.strip():
+        problems.append(f"{where}: {COMMON_FROM}.locus must be a nonempty string")
+    options = value.get("options")
+    if not isinstance(options, list) or not options:
+        problems.append(f"{where}: {COMMON_FROM}.options must be a nonempty list")
+        return
+    seen: set[tuple[str, str]] = set()
+    for index, option in enumerate(options):
+        label = f"{where}: {COMMON_FROM}.options[{index}]"
+        if not isinstance(option, dict):
+            problems.append(f"{label} must be a mapping")
+            continue
+        strange = sorted(set(option) - COMMON_FROM_OPTION_FIELDS)
+        if strange:
+            problems.append(
+                f"{label} carries unknown field(s) {', '.join(strange)}; it takes "
+                f"{', '.join(sorted(COMMON_FROM_OPTION_FIELDS))}"
+            )
+        mass = option.get("mass")
+        if not isinstance(mass, str) or not mass.strip():
+            problems.append(f"{label}.mass must be a nonempty Common mass key")
+            continue
+        selection = option.get("selection", "")
+        if "selection" in option and (
+            not isinstance(selection, str) or not selection.strip()
+        ):
+            problems.append(f"{label}.selection must be a nonempty string when present")
+            continue
+        identity = (mass, str(selection))
+        if identity in seen:
+            problems.append(f"{label} duplicates Common option {identity!r}")
+        seen.add(identity)
+
+
+def check_text_status(
+    where: str,
+    value: object,
+    problems: list[str],
+    *,
+    allowed_states: frozenset[str] = TEXT_STATUS_STATES,
+    allowed_scopes: frozenset[str] = MASS_TEXT_STATUS_SCOPES,
+) -> None:
+    """Validate text absence separately from a structural appointment."""
+    if not isinstance(value, dict):
+        problems.append(f"{where}: {TEXT_STATUS} must be a mapping")
+        return
+    unknown = sorted(set(value) - TEXT_STATUS_FIELDS)
+    if unknown:
+        problems.append(
+            f"{where}: {TEXT_STATUS} carries unknown field(s) {', '.join(unknown)}; "
+            f"it takes {', '.join(sorted(TEXT_STATUS_FIELDS))}"
+        )
+    state = value.get("state")
+    if state not in allowed_states:
+        problems.append(
+            f"{where}: {TEXT_STATUS}.state must be one of "
+            f"{sorted(allowed_states)}, got {state!r}"
+        )
+    scope = value.get("scope")
+    if scope not in allowed_scopes:
+        problems.append(
+            f"{where}: {TEXT_STATUS}.scope must be one of "
+            f"{sorted(allowed_scopes)}, got {scope!r}"
+        )
+    reasons = value.get("reasons")
+    if not isinstance(reasons, list) or not reasons:
+        problems.append(f"{where}: {TEXT_STATUS}.reasons must be a nonempty list")
+        return
+    seen: set[tuple[str, str]] = set()
+    for index, reason in enumerate(reasons):
+        label = f"{where}: {TEXT_STATUS}.reasons[{index}]"
+        if not isinstance(reason, dict):
+            problems.append(f"{label} must be a mapping")
+            continue
+        strange = sorted(set(reason) - TEXT_STATUS_REASON_FIELDS)
+        if strange:
+            problems.append(
+                f"{label} carries unknown field(s) {', '.join(strange)}; it takes "
+                f"{', '.join(sorted(TEXT_STATUS_REASON_FIELDS))}"
+            )
+        kind = reason.get("kind")
+        if kind not in TEXT_STATUS_REASON_KINDS:
+            problems.append(
+                f"{label}.kind must be one of {sorted(TEXT_STATUS_REASON_KINDS)}, "
+                f"got {kind!r}"
+            )
+        source_id = reason.get("source_id")
+        if kind == "no-exemplar":
+            if source_id is not None:
+                problems.append(
+                    f"{label}: no-exemplar names an unreachable exact copy, so "
+                    "it must omit source_id"
+                )
+        else:
+            check_registered_source(label, source_id, problems)
+        identity = (str(kind), str(source_id))
+        if identity in seen:
+            problems.append(f"{label} duplicates text-status reason {identity!r}")
+        seen.add(identity)
+
+
+def check_ordinary_frame(where: str, value: object, problems: list[str]) -> None:
+    """Validate an exceptional rite's applicability to the normal Ordinary."""
+    if not isinstance(value, dict):
+        problems.append(f"{where}: {ORDINARY_FRAME} must be a mapping")
+        return
+    unknown = sorted(set(value) - ORDINARY_FRAME_FIELDS)
+    missing = sorted(ORDINARY_FRAME_FIELDS - set(value))
+    if unknown:
+        problems.append(
+            f"{where}: {ORDINARY_FRAME} carries unknown field(s) "
+            f"{', '.join(unknown)}"
+        )
+    if missing:
+        problems.append(
+            f"{where}: {ORDINARY_FRAME} is missing field(s) {', '.join(missing)}"
+        )
+    applicability = value.get("applicability")
+    if applicability not in ORDINARY_FRAME_APPLICABILITY:
+        problems.append(
+            f"{where}: {ORDINARY_FRAME}.applicability must be one of "
+            f"{sorted(ORDINARY_FRAME_APPLICABILITY)}, got {applicability!r}"
+        )
+    basis = value.get("basis")
+    if not isinstance(basis, str) or not basis.strip():
+        problems.append(f"{where}: {ORDINARY_FRAME}.basis must be a nonempty string")
 
 
 def check_cycle_mapping(
@@ -299,12 +541,56 @@ def check_cycle_mapping(
         if effective not in SOURCES:
             problems.append(f"{where}/{cycle}: no source, and the proper declares none")
             continue
-        if effective == "scripture" and "verses" not in value:
-            problems.append(f"{where}/{cycle}: scripture {noun} has no verses")
-        elif effective == "composed" and "text" not in value:
-            problems.append(f"{where}/{cycle}: composed {noun} has no text")
-        elif effective == "mixed" and not ("verses" in value and "text" in value):
-            problems.append(f"{where}/{cycle}: mixed {noun} needs verses and text")
+        branch_where = f"{where}/{cycle}"
+        has_body_status = TEXT_STATUS in value
+        if has_body_status:
+            check_text_status(
+                branch_where,
+                value[TEXT_STATUS],
+                problems,
+                allowed_states=UNAVAILABLE_TEXT_STATUS_STATES,
+                allowed_scopes=PROPER_TEXT_STATUS_SCOPES,
+            )
+            status = value[TEXT_STATUS]
+            reasons = status.get("reasons") if isinstance(status, dict) else None
+            if not isinstance(reasons, list) or not any(
+                isinstance(reason, dict) and reason.get("kind") == "rights-withheld"
+                for reason in reasons
+            ):
+                problems.append(
+                    f"{branch_where}: a proper-body {TEXT_STATUS} must include a "
+                    "rights-withheld reason"
+                )
+            if "text" in value:
+                problems.append(
+                    f"{branch_where}: a proper-body {TEXT_STATUS} records a removed "
+                    "body and must not coexist with text"
+                )
+        numbering = value.get("psalm_numbering")
+        if "psalm_numbering" in value and numbering not in PSALM_NUMBERING:
+            problems.append(
+                f"{branch_where}: psalm_numbering must be one of "
+                f"{sorted(PSALM_NUMBERING)}, got {numbering!r}"
+            )
+        if effective == "scripture":
+            if "verses" not in value:
+                problems.append(f"{branch_where}: scripture {noun} has no verses")
+            if "text" in value:
+                problems.append(f"{branch_where}: scripture {noun} must not carry text")
+            if has_body_status:
+                problems.append(
+                    f"{branch_where}: scripture {noun} cannot carry a composed "
+                    f"proper-body {TEXT_STATUS}"
+                )
+        elif effective == "composed":
+            if "text" not in value and not has_body_status:
+                problems.append(f"{branch_where}: composed {noun} has no text")
+            if "verses" in value:
+                problems.append(f"{branch_where}: composed {noun} must not carry verses")
+        elif not ("verses" in value and ("text" in value or has_body_status)):
+            problems.append(f"{branch_where}: mixed {noun} needs verses and text")
+        check_verses(branch_where, value.get("verses"), problems)
+        check_translations(branch_where, value, problems)
 
 
 def weekday_cycle_placement(where: str, calendar: str, season: object) -> list[str]:
@@ -350,12 +636,54 @@ def check_proper(
         problems.append(f"{where}: proper has no name")
         return
     where = f"{where}/{name}"
+    if name == "Placeholder":
+        problems.append(
+            f"{where}: Placeholder is not a source-owned Proper slot; replace the "
+            "placeholder-only formulary with a typed mass-level text_status that "
+            "records why its text is unavailable"
+        )
+        return
     unknown = sorted(set(proper) - PROPER_FIELDS)
     if unknown:
         problems.append(
             f"{where}: unrecognised field(s) {', '.join(repr(k) for k in unknown)}; "
             "an unquoted scalar carrying a colon becomes a key of its own"
         )
+    has_body_status = TEXT_STATUS in proper
+    numbering = proper.get("psalm_numbering")
+    if "psalm_numbering" in proper and numbering not in PSALM_NUMBERING:
+        problems.append(
+            f"{where}: psalm_numbering must be one of {sorted(PSALM_NUMBERING)}, "
+            f"got {numbering!r}"
+        )
+    if has_body_status:
+        check_text_status(
+            where,
+            proper[TEXT_STATUS],
+            problems,
+            allowed_states=UNAVAILABLE_TEXT_STATUS_STATES,
+            allowed_scopes=PROPER_TEXT_STATUS_SCOPES,
+        )
+        status = proper[TEXT_STATUS]
+        reasons = status.get("reasons") if isinstance(status, dict) else None
+        if not isinstance(reasons, list) or not any(
+            isinstance(reason, dict) and reason.get("kind") == "rights-withheld"
+            for reason in reasons
+        ):
+            problems.append(
+                f"{where}: a proper-body {TEXT_STATUS} must include a "
+                "rights-withheld reason"
+            )
+        if "text" in proper:
+            problems.append(
+                f"{where}: a proper-body {TEXT_STATUS} records a removed body and "
+                "must not coexist with text"
+            )
+        if any(field in proper for field in (TAKES_FROM, CYCLES_KEY, WEEKDAY_CYCLES_KEY)):
+            problems.append(
+                f"{where}: a proper-body {TEXT_STATUS} belongs only to a direct, "
+                "non-cyclic proper"
+            )
     if TAKES_FROM in proper:
         # A proper that names where its text is printed holds none of its own.
         # Its incipit and translations come from the resolved proper too, so a
@@ -407,11 +735,11 @@ def check_proper(
         if "text" in proper:
             problems.append(f"{where}: scripture proper must not carry text")
     elif source == "composed":
-        if "text" not in proper:
+        if "text" not in proper and not has_body_status:
             problems.append(f"{where}: composed proper has no text")
         if "verses" in proper:
             problems.append(f"{where}: composed proper must not carry verses")
-    elif "verses" not in proper or "text" not in proper:
+    elif "verses" not in proper or ("text" not in proper and not has_body_status):
         problems.append(f"{where}: mixed proper needs both verses and text")
     check_verses(where, proper.get("verses"), problems)
     check_translations(where, proper, problems)
@@ -422,12 +750,23 @@ def check_translations(where: str, proper: dict, problems: list[str]) -> None:
     payload = proper.get("translations")
     if payload is None:
         return
-    if "text" not in proper:
+    status = proper.get(TEXT_STATUS)
+    removed_body = (
+        isinstance(status, dict)
+        and status.get("state") == "unavailable"
+        and status.get("scope") == "proper-body"
+    )
+    if "text" not in proper and not removed_body:
         problems.append(f"{where}: translations require a text to translate")
-    check_translation_list(where, payload, problems)
+    check_translation_list(where, payload, problems, proper.get("name"))
 
 
-def check_translation_list(where: str, payload: object, problems: list[str]) -> None:
+def check_translation_list(
+    where: str,
+    payload: object,
+    problems: list[str],
+    proper_name: object = None,
+) -> None:
     """A translation is someone's expression; it carries its own rights basis.
 
     Liturgical translations are not relicensed by inclusion, so each one names
@@ -488,6 +827,17 @@ def check_translation_list(where: str, payload: object, problems: list[str]) -> 
                     f"{label}: source_id {source_id!r} is registered nowhere in "
                     "the source library"
                 )
+        if (
+            proper_name in LECTIONARY_ACCLAMATIONS
+            and isinstance(source_id, str)
+            and ICEL_ROMAN_MISSAL_MUSIC_SOURCE in source_id
+        ):
+            problems.append(
+                f"{label}: {proper_name} is a Lectionary slot and cannot use "
+                "an ICEL Music for the Roman Missal source as its translation "
+                "witness; establish the exact Lectionary edition, exemplar, and "
+                "publication basis instead"
+            )
         lang = entry.get("lang")
         if isinstance(lang, str):
             key = (lang, source_id if isinstance(source_id, str) else None)
@@ -504,7 +854,28 @@ def check_translation_list(where: str, payload: object, problems: list[str]) -> 
 
 # Resolved once per process and cached, because loading the source graph costs
 # well over a second and a calendar makes thousands of translation entries.
-_SOURCE_IDS: tuple[set[str] | None, str | None] | None = None
+_SOURCE_RECORDS: tuple[dict | None, str | None] | None = None
+
+
+def source_records() -> tuple[dict | None, str | None]:
+    """The source-library records, loaded by their owning implementation."""
+
+    global _SOURCE_RECORDS
+    if _SOURCE_RECORDS is None:
+        try:
+            module = sibling("source-library")
+            library = module.load_library(
+                Path(__file__).resolve().parents[1],
+                check_binding_fingerprints=False,
+            )
+            _SOURCE_RECORDS = (library.records, None)
+        except Exception as error:  # the tool is a sibling script, not an API
+            _SOURCE_RECORDS = (
+                None,
+                "cannot read the source library to resolve translation "
+                f"sources: {error}",
+            )
+    return _SOURCE_RECORDS
 
 
 def source_ids() -> tuple[set[str] | None, str | None]:
@@ -519,21 +890,408 @@ def source_ids() -> tuple[set[str] | None, str | None]:
     graph is internally sound is `check-sources`' question, and answering it
     twice would report one defect under two names.
     """
-    global _SOURCE_IDS
-    if _SOURCE_IDS is None:
+    records, trouble = source_records()
+    return (set(records) if records is not None else None, trouble)
+
+
+def overlay_entry_source_problems(
+    where: str,
+    entry: dict,
+    witnesses: dict[str, dict],
+) -> list[str]:
+    """Validate an exact page-image collation without turning it into rights.
+
+    The entry-level artifact and passage prove what was read and where.  The
+    witness row's artifact independently proves why the resulting historical
+    translation may be published.  Conflating the two would either claim a
+    right over unresolved whole-book bytes or leave an impressive-looking
+    passage id that no consumer ever resolves.
+    """
+
+    fields = (OVERLAY_ARTIFACT, OVERLAY_PASSAGE, OVERLAY_IA_LEAF_RANGE)
+    if not any(field in entry for field in fields):
+        if entry.get("collated"):
+            return [
+                f"{where}: collated page-image claim also requires {field}"
+                for field in fields
+            ]
+        return []
+    problems = [
+        f"{where}: exact page-image collation also requires {field}"
+        for field in fields
+        if field not in entry
+    ]
+    artifact_id = entry.get(OVERLAY_ARTIFACT)
+    passage_id = entry.get(OVERLAY_PASSAGE)
+    for field, value in (
+        (OVERLAY_ARTIFACT, artifact_id),
+        (OVERLAY_PASSAGE, passage_id),
+    ):
+        if not isinstance(value, str) or not value.strip():
+            problems.append(f"{where}: {field} must be a nonempty source-library id")
+
+    leaf_range = entry.get(OVERLAY_IA_LEAF_RANGE)
+    valid_range = (
+        isinstance(leaf_range, list)
+        and len(leaf_range) == 2
+        and all(
+            isinstance(number, int) and not isinstance(number, bool) and number >= 0
+            for number in leaf_range
+        )
+        and leaf_range[0] <= leaf_range[1]
+    )
+    if not valid_range:
+        problems.append(
+            f"{where}: {OVERLAY_IA_LEAF_RANGE} must be an ordered inclusive "
+            "[first, last] pair of zero-based IA leaves"
+        )
+    elif entry.get("ia_leaf") != leaf_range[0]:
+        problems.append(
+            f"{where}: ia_leaf must equal the first leaf in "
+            f"{OVERLAY_IA_LEAF_RANGE}; got {entry.get('ia_leaf')!r} and {leaf_range!r}"
+        )
+
+    printed = entry.get("printed_page")
+    printed_match = (
+        re.fullmatch(r"([0-9]+)(?:-([0-9]+))?", printed)
+        if isinstance(printed, str)
+        else None
+    )
+    if printed_match is None:
+        problems.append(
+            f"{where}: a bound page-image collation requires printed_page as "
+            "a page or inclusive page range"
+        )
+
+    records, trouble = source_records()
+    if records is None:
+        # The one library-read problem is reported by run(); repeating it for
+        # every bound entry would hide the actionable defect in noise.
+        return problems
+    artifact = records.get(artifact_id) if isinstance(artifact_id, str) else None
+    passage = records.get(passage_id) if isinstance(passage_id, str) else None
+    if artifact is None or artifact.record_type != "artifact":
+        problems.append(f"{where}: {OVERLAY_ARTIFACT} does not name an artifact record")
+    if passage is None or passage.record_type != "passage":
+        problems.append(f"{where}: {OVERLAY_PASSAGE} does not name a passage record")
+    if artifact is not None and passage is not None:
+        if passage.data.get("artifact_id") != artifact_id:
+            problems.append(
+                f"{where}: {OVERLAY_PASSAGE} is controlled by "
+                f"{passage.data.get('artifact_id')!r}, not {artifact_id!r}"
+            )
+        states = passage.data.get("states") or []
+        if (
+            not {"inspected", "verified"}.issubset(set(states))
+            or re.fullmatch(
+                r"[0-9]{4}-[0-9]{2}-[0-9]{2}",
+                str(passage.data.get("verified_on") or ""),
+            )
+            is None
+        ):
+            problems.append(
+                f"{where}: {OVERLAY_PASSAGE} must be an inspected and dated "
+                "verified passage"
+            )
+        if valid_range:
+            wanted_pages = [[leaf_range[0] + 1, leaf_range[1] + 1]]
+            if passage.data.get("artifact_page_ranges") != wanted_pages:
+                problems.append(
+                    f"{where}: {OVERLAY_IA_LEAF_RANGE} {leaf_range!r} requires "
+                    f"passage artifact_page_ranges {wanted_pages!r}; got "
+                    f"{passage.data.get('artifact_page_ranges')!r}"
+                )
+        if passage.data.get("artifact_sha256") != artifact.data.get("sha256"):
+            problems.append(
+                f"{where}: passage artifact_sha256 does not pin the named artifact"
+            )
+        if printed_match is not None:
+            first = printed_match.group(1)
+            last = printed_match.group(2)
+            printed_locus = (
+                f"printed pp. {first}-{last}" if last else f"printed p. {first}"
+            )
+            printed_context = " ".join(
+                str(passage.data.get(field) or "") for field in ("context", "notes")
+            )
+            if printed_locus not in printed_context:
+                problems.append(
+                    f"{where}: passage context does not record {printed_locus!r}"
+                )
+
+    witness = str(entry.get("witness") or "")
+    witness_row = witnesses.get(witness)
+    if witness_row is None:
+        problems.append(
+            f"{where}: exact collation names witness {witness!r}, which has no "
+            "[[sources]] rights row"
+        )
+        return problems
+    if (
+        any(field in entry for field in OVERLAY_PUBLICATION_FIELDS)
+        and not str(witness_row.get("caution") or "").strip()
+    ):
+        problems.append(
+            f"{where}: publication-bound witness {witness!r} must retain its caution"
+        )
+    rights_artifact_id = witness_row.get("artifact_id")
+    rights_artifact = (
+        records.get(rights_artifact_id)
+        if isinstance(rights_artifact_id, str)
+        else None
+    )
+    if rights_artifact is None or rights_artifact.record_type != "artifact":
+        problems.append(
+            f"{where}: witness {witness!r} must name its independent rights artifact"
+        )
+    elif (
+        not any(field in entry for field in OVERLAY_PUBLICATION_FIELDS)
+        and witness_row.get("rights") == "public-domain"
+        and (
+        rights_artifact.data.get("rights_status") != "public-domain"
+        or rights_artifact.data.get("storage") != "tracked"
+        )
+    ):
+        problems.append(
+            f"{where}: witness {witness!r} claims public-domain publication but "
+            "its rights artifact is not a tracked public-domain artifact"
+        )
+    for index, translation in enumerate(entry.get("translations") or []):
+        if not isinstance(translation, dict):
+            continue
+        if translation.get("source_id") != witness_row.get("source_id"):
+            problems.append(
+                f"{where}.translations[{index}]: source_id does not match "
+                f"witness {witness!r}"
+            )
+        if translation.get("rights") != witness_row.get("rights"):
+            problems.append(
+                f"{where}.translations[{index}]: rights does not match witness "
+                f"{witness!r}"
+            )
+    return problems
+
+
+def overlay_entry_publication_problems(where: str, entry: dict) -> list[str]:
+    """Validate the independently publishable body behind an exact collation.
+
+    The page-image artifact proves what was inspected, even when those exact
+    scan bytes are remote and unresolved for redistribution.  The publication
+    triple points separately at one tracked public-domain transcription and at
+    the one-body passage whose text is actually carried.  Requiring both edges
+    prevents either an unverifiable transcription or an impressive page proof
+    with no lawful publication artifact from standing in for the other.
+    """
+
+    if not any(field in entry for field in OVERLAY_PUBLICATION_FIELDS):
+        return []
+    problems = [
+        f"{where}: publication binding also requires {field}"
+        for field in OVERLAY_PUBLICATION_FIELDS
+        if field not in entry
+    ]
+    for field in (OVERLAY_ARTIFACT, OVERLAY_PASSAGE, OVERLAY_IA_LEAF_RANGE):
+        if field not in entry:
+            problems.append(
+                f"{where}: publication binding supplements the exact page proof "
+                f"and therefore also requires {field}"
+            )
+
+    artifact_id = entry.get(OVERLAY_PUBLICATION_ARTIFACT)
+    passage_id = entry.get(OVERLAY_PUBLICATION_PASSAGE)
+    recorded_sha256 = entry.get(OVERLAY_PUBLICATION_ARTIFACT_SHA256)
+    for field, value in (
+        (OVERLAY_PUBLICATION_ARTIFACT, artifact_id),
+        (OVERLAY_PUBLICATION_PASSAGE, passage_id),
+    ):
+        if not isinstance(value, str) or not value.strip():
+            problems.append(f"{where}: {field} must be a nonempty source-library id")
+    if not isinstance(recorded_sha256, str) or re.fullmatch(
+        r"[0-9a-f]{64}", recorded_sha256
+    ) is None:
+        problems.append(
+            f"{where}: {OVERLAY_PUBLICATION_ARTIFACT_SHA256} must be 64 lowercase "
+            "hexadecimal characters"
+        )
+
+    records, _trouble = source_records()
+    if records is None:
+        return problems
+    artifact = records.get(artifact_id) if isinstance(artifact_id, str) else None
+    passage = records.get(passage_id) if isinstance(passage_id, str) else None
+    if artifact is None or artifact.record_type != "artifact":
+        problems.append(
+            f"{where}: {OVERLAY_PUBLICATION_ARTIFACT} does not name an artifact record"
+        )
+    if passage is None or passage.record_type != "passage":
+        problems.append(
+            f"{where}: {OVERLAY_PUBLICATION_PASSAGE} does not name a passage record"
+        )
+    if artifact is None or artifact.record_type != "artifact":
+        return problems
+
+    artifact_data = artifact.data
+    artifact_sha256 = artifact_data.get("sha256")
+    if recorded_sha256 != artifact_sha256:
+        problems.append(
+            f"{where}: {OVERLAY_PUBLICATION_ARTIFACT_SHA256} does not match the "
+            "named publication artifact"
+        )
+    if artifact_data.get("storage") != "tracked":
+        problems.append(f"{where}: publication artifact must be tracked")
+    if artifact_data.get("indexable") is not True:
+        problems.append(f"{where}: publication artifact must be indexable")
+    if artifact_data.get("encoding") != "utf-8":
+        problems.append(f"{where}: publication artifact must be UTF-8")
+    media_type = str(artifact_data.get("media_type") or "")
+    if not (
+        media_type.startswith("text/")
+        and "charset=utf-8" in media_type.lower()
+    ):
+        problems.append(
+            f"{where}: publication artifact must have a searchable UTF-8 text media type"
+        )
+    if artifact_data.get("rights_status") != "public-domain":
+        problems.append(
+            f"{where}: publication artifact must carry public-domain rights_status"
+        )
+    if artifact_data.get("rights_jurisdiction") != "United States":
+        problems.append(
+            f"{where}: publication artifact must carry United States rights jurisdiction"
+        )
+
+    edition_id = artifact_data.get("edition_id")
+    edition = records.get(edition_id) if isinstance(edition_id, str) else None
+    edition_date = edition.data.get("date") if edition is not None else None
+    if (
+        edition is None
+        or edition.record_type != "edition"
+        or not isinstance(edition_date, str)
+        or re.fullmatch(r"[0-9]{4}", edition_date) is None
+        or int(edition_date) >= 1931
+    ):
+        problems.append(
+            f"{where}: publication artifact must resolve to a pre-1931 edition; "
+            "that publication date is the public-domain basis"
+        )
+
+    # The scan proof and the distributable transcription witness the same
+    # edition.  A translation silently joined across editions is not a dual
+    # binding; it is two unrelated citations.
+    for field in (OVERLAY_ARTIFACT, OVERLAY_PASSAGE):
+        record_id = entry.get(field)
+        record = records.get(record_id) if isinstance(record_id, str) else None
+        if record is not None and record.record_type in {"artifact", "passage"}:
+            if record.data.get("edition_id") != edition_id:
+                problems.append(
+                    f"{where}: {field} and the publication artifact must belong "
+                    "to the same edition"
+                )
+    if entry.get(OVERLAY_ARTIFACT) == artifact_id:
+        problems.append(
+            f"{where}: publication artifact must be independent of the page-image proof"
+        )
+
+    if passage is None or passage.record_type != "passage":
+        return problems
+    passage_data = passage.data
+    if passage_data.get("edition_id") != edition_id:
+        problems.append(
+            f"{where}: publication passage and artifact must belong to the same edition"
+        )
+    if passage_data.get("artifact_id") != artifact_id:
+        problems.append(
+            f"{where}: publication passage is not controlled by the named artifact"
+        )
+    if passage_data.get("artifact_sha256") != recorded_sha256:
+        problems.append(
+            f"{where}: publication passage does not pin the recorded artifact hash"
+        )
+    states = passage_data.get("states") or []
+    if not {"inspected", "verified"}.issubset(set(states)) or not re.fullmatch(
+        r"[0-9]{4}-[0-9]{2}-[0-9]{2}",
+        str(passage_data.get("verified_on") or ""),
+    ):
+        problems.append(
+            f"{where}: publication passage must be inspected and dated verified"
+        )
+
+    translations = entry.get("translations")
+    if (
+        not isinstance(translations, list)
+        or len(translations) != 1
+        or not isinstance(translations[0], dict)
+    ):
+        problems.append(
+            f"{where}: a publication passage must bind exactly one translation body"
+        )
+        return problems
+    translation = translations[0]
+    if translation.get("lang") != "en":
+        problems.append(f"{where}: publication binding must carry one English body")
+    if translation.get("rights") != "public-domain":
+        problems.append(
+            f"{where}: publication binding must carry public-domain translation rights"
+        )
+    if translation.get("source_id") != edition_id:
+        problems.append(
+            f"{where}: publication translation source_id must name the artifact's edition"
+        )
+
+    ranges = passage_data.get("physical_line_ranges")
+    line_number = None
+    if (
+        isinstance(ranges, list)
+        and len(ranges) == 1
+        and isinstance(ranges[0], list)
+        and len(ranges[0]) == 2
+        and all(
+            isinstance(value, int) and not isinstance(value, bool)
+            for value in ranges[0]
+        )
+        and ranges[0][0] == ranges[0][1]
+        and ranges[0][0] > 1
+    ):
+        line_number = ranges[0][0]
+    else:
+        problems.append(
+            f"{where}: publication passage must select exactly one TSV data line"
+        )
+
+    publication_text = None
+    artifact_path = artifact_data.get("path")
+    if line_number is not None and isinstance(artifact_path, str):
+        payload_path = Path(__file__).resolve().parents[1] / artifact_path
         try:
-            module = sibling("source-library")
-            library = module.load_library(
-                Path(__file__).resolve().parents[1], check_binding_fingerprints=False
+            payload_bytes = payload_path.read_bytes()
+            if hashlib.sha256(payload_bytes).hexdigest() != recorded_sha256:
+                problems.append(
+                    f"{where}: publication artifact payload does not match its recorded hash"
+                )
+            lines = payload_bytes.decode("utf-8").splitlines()
+            header = next(csv.reader([lines[0]], dialect="excel-tab"))
+            row = next(csv.reader([lines[line_number - 1]], dialect="excel-tab"))
+            if len(row) != len(header) or header.count("english") != 1:
+                raise ValueError("expected one rectangular TSV row with an english column")
+            publication_text = row[header.index("english")]
+        except (OSError, IndexError, StopIteration, UnicodeError, csv.Error, ValueError) as error:
+            problems.append(
+                f"{where}: cannot resolve the publication passage's exact TSV row: {error}"
             )
-            _SOURCE_IDS = (set(library.records), None)
-        except Exception as error:  # the tool is a sibling script, not an API
-            _SOURCE_IDS = (
-                None,
-                f"cannot read the source library to resolve translation "
-                f"source ids: {error}",
-            )
-    return _SOURCE_IDS
+    elif line_number is not None:
+        problems.append(f"{where}: publication artifact must name its tracked payload path")
+
+    translation_text = translation.get("text")
+    # TOML's multiline delimiter can contribute one terminal LF to a body.
+    # Remove exactly that structural byte and no other whitespace; the TSV
+    # cell remains the byte-for-byte publication authority.
+    if isinstance(translation_text, str) and translation_text.endswith("\n"):
+        translation_text = translation_text[:-1]
+    if publication_text is not None and translation_text != publication_text:
+        problems.append(
+            f"{where}: publication TSV English body does not exactly equal the translation"
+        )
+    return problems
 
 
 def check_verses(where: str, verses: object, problems: list[str]) -> None:
@@ -573,6 +1331,59 @@ def check_name(where: str, name: object, problems: list[str]) -> None:
             "rank 'Comm.' instead"
         )
         return
+
+
+def normalized_proper_body(text: str) -> str:
+    """A composed Proper body reduced only by non-reading presentation.
+
+    This identity is deliberately narrower than the corpus-search Latin fold:
+    ``ae/oe``, ``v/u``, ``y/i``, and diacritics can distinguish real readings
+    and therefore remain.  NFC joins canonically equivalent Unicode, case and
+    Latin ``i/j`` are orthographic presentation here, and whitespace plus
+    Unicode punctuation cannot create a second occurrence of the same body.
+    """
+    folded = unicodedata.normalize("NFC", text).casefold().replace("j", "i")
+    return "".join(
+        character
+        for character in folded
+        if not character.isspace()
+        and not unicodedata.category(character).startswith("P")
+    )
+
+
+def check_duplicate_proper_bodies(
+    where: str, entry: dict, problems: list[str]
+) -> None:
+    """One mass/form/exact slot cannot mint occurrences from presentation."""
+    groups: list[tuple[str, object]] = [(TRANSLATION_MAIN_FORM_ID, entry.get("propers"))]
+    groups.extend(
+        (str(form.get("id") or "<invalid-form>"), form.get("propers"))
+        for form in entry.get("forms") or []
+        if isinstance(form, dict)
+    )
+    for form_id, propers in groups:
+        if not isinstance(propers, list):
+            continue
+        seen: dict[tuple[str, str], int] = {}
+        for index, proper in enumerate(propers):
+            if not isinstance(proper, dict):
+                continue
+            name = proper.get("name")
+            text = proper.get("text")
+            if not isinstance(name, str) or not isinstance(text, str):
+                continue
+            identity = (name, normalized_proper_body(text))
+            if not identity[1]:
+                continue
+            first = seen.get(identity)
+            if first is not None:
+                problems.append(
+                    f"{where}/{form_id}/{name}: duplicate normalized Proper body "
+                    f"at source positions {first + 1} and {index + 1}; one body "
+                    "may occur once within the same mass, form, and exact Proper name"
+                )
+            else:
+                seen[identity] = index
 
 
 def iter_masses(document: dict) -> list[tuple[str, dict]]:
@@ -638,6 +1449,81 @@ def check_entry(
     has_propers = "propers" in entry
     has_forms = "forms" in entry
     takes_from = TAKES_FROM in entry
+    has_common_from = COMMON_FROM in entry
+    has_text_status = TEXT_STATUS in entry
+    has_ordinary_frame = ORDINARY_FRAME in entry
+    if has_common_from:
+        check_common_from(where, entry[COMMON_FROM], problems)
+    if has_text_status:
+        status = entry[TEXT_STATUS]
+        allowed_states = (
+            UNAVAILABLE_TEXT_STATUS_STATES
+            if section_kind == COMMON_KIND
+            else TEXT_STATUS_STATES
+        )
+        check_text_status(
+            where,
+            status,
+            problems,
+            allowed_states=allowed_states,
+        )
+        state = status.get("state") if isinstance(status, dict) else None
+        scope = status.get("scope") if isinstance(status, dict) else None
+        if section_kind == COMMON_KIND and scope != "missal-formulary":
+            problems.append(
+                f"{where}: a Common's {TEXT_STATUS}.scope must be "
+                "'missal-formulary'; Lectionary options are not a Missal formulary"
+            )
+        if state == "partial":
+            if scope != "missal-formulary":
+                problems.append(
+                    f"{where}: partial {TEXT_STATUS} is only for scope "
+                    "'missal-formulary'"
+                )
+            if section_kind == COMMON_KIND or has_season == has_date:
+                problems.append(
+                    f"{where}: partial {TEXT_STATUS} belongs only to a non-Common "
+                    "dated or seasonal mass"
+                )
+            if has_propers == has_forms:
+                problems.append(
+                    f"{where}: partial {TEXT_STATUS} must coexist with exactly one "
+                    "of propers or forms"
+                )
+            if takes_from or has_common_from:
+                problems.append(
+                    f"{where}: partial {TEXT_STATUS} records a local incomplete "
+                    f"formulary and cannot coexist with {TAKES_FROM} or {COMMON_FROM}"
+                )
+        if scope == "proper-collect":
+            if has_common_from == takes_from:
+                problems.append(
+                    f"{where}: {TEXT_STATUS}.scope 'proper-collect' must accompany "
+                    f"exactly one of {COMMON_FROM}, when the Common choice itself "
+                    f"remains unresolved, or {TAKES_FROM}, when only the borrowed "
+                    "Common's Collect is excluded"
+                )
+            local = entry.get("propers") if isinstance(entry.get("propers"), list) else []
+            if any(
+                isinstance(proper, dict)
+                and str(proper.get("name") or "").split(" (", 1)[0] == "Collect"
+                for proper in local
+            ):
+                problems.append(
+                    f"{where}: {TEXT_STATUS} says the proper Collect is unavailable "
+                    "but the mass also carries a Collect"
+                )
+    if has_ordinary_frame:
+        check_ordinary_frame(where, entry[ORDINARY_FRAME], problems)
+        if section_kind == COMMON_KIND:
+            problems.append(
+                f"{where}: a Common cannot carry {ORDINARY_FRAME}; applicability "
+                "belongs to the rite that appoints a formulary"
+            )
+    if section_kind == COMMON_KIND and has_common_from:
+        problems.append(
+            f"{where}: a Common cannot carry {COMMON_FROM}; it is the destination"
+        )
     if takes_from:
         # A mass that takes another formulary may still print propers of its
         # own: that is what a third-class saint is - the Mass of the Common
@@ -650,9 +1536,50 @@ def check_entry(
             problems.append(
                 f"{where}: a mass taking another formulary must not also carry forms"
             )
+        if has_common_from:
+            problems.append(
+                f"{where}: {TAKES_FROM} cannot coexist with {COMMON_FROM}; one "
+                "resolves a formulary and the other records an unresolved choice"
+            )
+        if has_text_status and (
+            not isinstance(entry[TEXT_STATUS], dict)
+            or entry[TEXT_STATUS].get("scope") != "proper-collect"
+        ):
+            problems.append(
+                f"{where}: {TAKES_FROM} may coexist with {TEXT_STATUS} only for "
+                "scope 'proper-collect', which excludes that one borrowed slot"
+            )
+    elif has_common_from:
+        # A Common direction is an appointment with deliberately unresolved
+        # text, not itself a formulary. The status is what keeps a text-free row
+        # from passing merely because it has a pointer-shaped mapping.
+        if not has_text_status:
+            problems.append(
+                f"{where}: {COMMON_FROM} requires {TEXT_STATUS} for the proper "
+                "text it does not resolve"
+            )
+        if has_forms:
+            problems.append(
+                f"{where}: {COMMON_FROM} cannot govern a mass printed in forms"
+            )
+        if has_propers:
+            problems.append(
+                f"{where}: {COMMON_FROM}.scope 'missal-propers-except-collect' "
+                "covers every Missal proper outside the separately unavailable "
+                "Collect, so the mass must not also carry local propers"
+            )
+    elif has_text_status:
+        status = entry[TEXT_STATUS]
+        state = status.get("state") if isinstance(status, dict) else None
+        if state == "unavailable" and (has_propers or has_forms):
+            problems.append(
+                f"{where}: a standalone {TEXT_STATUS} for an unavailable formulary "
+                "must not also carry propers or forms"
+            )
     elif has_propers == has_forms:
         problems.append(
-            f"{where}: exactly one of propers, forms or {TAKES_FROM} is required"
+            f"{where}: exactly one of propers, forms, {TAKES_FROM}, or a typed "
+            f"{COMMON_FROM}/{TEXT_STATUS} absence is required"
         )
     # Which day the propers stand on, read once and carried into every proper:
     # a reading course is admitted by the calendar that keeps it and the season
@@ -672,25 +1599,180 @@ def check_entry(
         if not isinstance(forms, list) or not forms:
             problems.append(f"{where}: forms must be a nonempty list")
         else:
+            form_ids: set[str] = set()
+            form_names: set[str] = set()
             for form in forms:
-                if not isinstance(form, dict) or not form.get("name"):
-                    problems.append(f"{where}: form has no name")
+                if not isinstance(form, dict):
+                    problems.append(f"{where}: form must be a mapping")
                     continue
+                form_id = form.get("id")
+                if not isinstance(form_id, str) or not FORM_ID_RE.fullmatch(form_id):
+                    problems.append(
+                        f"{where}: form id must be a nonempty lowercase kebab-case "
+                        f"string, got {form_id!r}"
+                    )
+                else:
+                    if form_id in form_ids:
+                        problems.append(
+                            f"{where}: duplicate form id {form_id!r} within one mass"
+                        )
+                    form_ids.add(form_id)
+                    if len(forms) > 1 and form_id == TRANSLATION_MAIN_FORM_ID:
+                        problems.append(
+                            f"{where}: form id 'main' is reserved for a mass with "
+                            "no forms and cannot identify one of multiple forms"
+                        )
+                unknown = sorted(set(form) - {"id", "name", "propers"})
+                if unknown:
+                    problems.append(
+                        f"{where}: form carries unknown field(s) {', '.join(unknown)}; "
+                        "it takes id, name, propers"
+                    )
+                form_name = form.get("name")
+                if not isinstance(form_name, str) or not form_name.strip():
+                    problems.append(f"{where}: form name must be a nonempty string")
+                    continue
+                if form_name in form_names:
+                    problems.append(
+                        f"{where}: duplicate form name {form_name!r} within "
+                        "one mass; legacy form-label lookup would be ambiguous"
+                    )
+                form_names.add(form_name)
                 inner = form.get("propers")
                 if not isinstance(inner, list) or not inner:
                     problems.append(
-                        f"{where}/{form['name']}: propers must be a nonempty list"
+                        f"{where}/{form_name}: propers must be a nonempty list"
                     )
                     continue
                 for proper in inner:
                     check_proper(
-                        f"{where}/{form['name']}",
+                        f"{where}/{form_name}",
                         proper,
                         problems,
                         calendar=calendar,
                         season=season,
                     )
+    check_duplicate_proper_bodies(where, entry, problems)
     return key
+
+
+def common_reference_problems(masses: list[tuple[str, dict]]) -> list[str]:
+    """Join every structural Common appointment to an actual Common mass."""
+    targets: dict[str, tuple[str, dict]] = {}
+    for kind, mass in masses:
+        key = mass.get("key")
+        if isinstance(key, str) and key:
+            targets.setdefault(key, (kind, mass))
+    problems: list[str] = []
+    for _, mass in masses:
+        value = mass.get(COMMON_FROM)
+        if not isinstance(value, dict) or not isinstance(value.get("options"), list):
+            continue
+        origin = str(mass.get("key") or "<unnamed>")
+        for index, option in enumerate(value["options"]):
+            if not isinstance(option, dict):
+                continue
+            target_key = option.get("mass")
+            if not isinstance(target_key, str) or not target_key:
+                continue
+            target = targets.get(target_key)
+            if target is None:
+                problems.append(
+                    f"mass {origin}: {COMMON_FROM}.options[{index}] names "
+                    f"{target_key!r}, which this calendar has no entry for"
+                )
+                continue
+            target_kind, target_mass = target
+            if target_kind != COMMON_KIND:
+                problems.append(
+                    f"mass {origin}: {COMMON_FROM}.options[{index}] names "
+                    f"{target_key!r} in section kind {target_kind!r}, not the "
+                    "Commune Sanctorum"
+                )
+                continue
+            status = target_mass.get(TEXT_STATUS)
+            if not (
+                isinstance(status, dict)
+                and status.get("state") == "unavailable"
+                and status.get("scope") == "missal-formulary"
+            ):
+                problems.append(
+                    f"mass {origin}: {COMMON_FROM}.options[{index}] targets "
+                    f"{target_key!r}, which is not explicitly unavailable with "
+                    f"{TEXT_STATUS}.scope 'missal-formulary'"
+                )
+            carried = [
+                field
+                for field in ("propers", "forms", TAKES_FROM, COMMON_FROM)
+                if field in target_mass
+            ]
+            if carried:
+                problems.append(
+                    f"mass {origin}: {COMMON_FROM}.options[{index}] targets "
+                    f"{target_key!r}, which carries {', '.join(carried)} rather "
+                    "than remaining an explicitly text-free Common"
+                )
+    # A different typed absence appoints a KNOWN Common while withholding only
+    # the dated Mass's proper Collect.  That is a resolving ``takes_from`` edge,
+    # unlike ``common_from`` above, but it is still meaningful only when the
+    # borrowed formulary is a Common and really contributes the Collect that the
+    # status excludes.  Resolve a copy without the exclusion: resolving the
+    # original would remove the very slot this check needs to prove existed.
+    document = {
+        "sections": {
+            "all": {"masses": [mass for _, mass in masses]},
+        }
+    }
+    for _, mass in masses:
+        status = mass.get(TEXT_STATUS)
+        reference = mass.get(TAKES_FROM)
+        if not (
+            isinstance(status, dict)
+            and status.get("state") == "unavailable"
+            and status.get("scope") == "proper-collect"
+            and isinstance(reference, dict)
+        ):
+            continue
+        origin = str(mass.get("key") or "<unnamed>")
+        target_key = reference.get("mass")
+        if not isinstance(target_key, str) or not target_key:
+            continue  # ``check_reference`` owns the malformed edge diagnostic.
+        target = targets.get(target_key)
+        if target is None:
+            # ``resolve_propers`` reports the missing key below too, but this
+            # diagnostic states the stronger typed-Common contract explicitly.
+            problems.append(
+                f"mass {origin}: {TAKES_FROM} for an unavailable proper Collect "
+                f"names {target_key!r}, which this calendar has no entry for"
+            )
+            continue
+        target_kind, _ = target
+        if target_kind != COMMON_KIND:
+            problems.append(
+                f"mass {origin}: {TAKES_FROM} for an unavailable proper Collect "
+                f"names {target_key!r} in section kind {target_kind!r}, not the "
+                "Commune Sanctorum"
+            )
+            continue
+        probe = dict(mass)
+        probe.pop(TEXT_STATUS, None)
+        inherited, trouble = resolve_propers(document, probe)
+        if trouble:
+            problems.append(
+                f"mass {origin}: {TAKES_FROM} for an unavailable proper Collect "
+                f"does not resolve {target_key!r} cleanly: {'; '.join(trouble)}"
+            )
+            continue
+        if not any(
+            str(proper.get("name") or "") == "Collect"
+            for _, proper, _ in inherited
+        ):
+            problems.append(
+                f"mass {origin}: {TAKES_FROM} for an unavailable proper Collect "
+                f"targets {target_key!r}, whose selected formulary appoints no "
+                "unqualified Collect"
+            )
+    return problems
 
 
 def count_propers(entry: object) -> int:
@@ -739,6 +1821,7 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
         problems.append(f"{path}: sections must contain at least one mass")
         return {"masses": 0, "propers": 0}
     keys: list[str] = []
+    registries: list[str] = []
     # The file's own name for itself, not the directory's: the index owns its
     # identity and `restated_identity` holds every companion to it, so a rule
     # keyed on which calendar this is reads the same string every other rule does.
@@ -749,9 +1832,22 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
         problems.extend(f"{path}: {problem}" for problem in scoped)
         if key:
             keys.append(key)
+        registry = entry.get("registry")
+        if isinstance(registry, str):
+            registries.append(registry)
     duplicates = sorted({key for key in keys if keys.count(key) > 1})
     if duplicates:
         problems.append(f"{path}: duplicate mass keys: {', '.join(duplicates)}")
+    duplicate_registries = sorted(
+        {registry for registry in registries if registries.count(registry) > 1}
+    )
+    if duplicate_registries:
+        problems.append(
+            f"{path}: duplicate registry IDs: {', '.join(duplicate_registries)}"
+        )
+    problems.extend(
+        f"{path}: {problem}" for problem in common_reference_problems(masses)
+    )
     # Shape is not landing. `check_entry` proves a reference is well formed;
     # only resolving it proves the mass, form and proper it names exist and
     # that the chain terminates. Both this check and the browser's structure
@@ -772,6 +1868,14 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     # partition is shared with `citations` so the two cannot disagree about what
     # a calendar directory contains.
     paths, companions, problems = partition(root, calendar)
+    repository = Path(__file__).resolve().parents[1]
+    problems.extend(
+        catalog_problems(
+            root,
+            repository=repository,
+            required=root.resolve() == (repository / DEFAULT_ROOT).resolve(),
+        )
+    )
     if not paths:
         scope = f" for calendar {calendar!r}" if calendar else ""
         raise ValueError(f"no calendar index found under {root}{scope}")
@@ -787,7 +1891,8 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     # from the served calendar instead of adding a dangling pointer to it.
     for path in paths:
         problems.extend(recension_problems(root, path.parent.name))
-    problems.extend(citation_problems(root, calendar))
+    citation_errors, excepted = citation_problems(root, calendar)
+    problems.extend(citation_errors)
     problems.extend(spine_problems(paths))
     # A rubric appointing one text across a range of days is stated in the
     # calendar's rubrics and carried by its masses, and nothing joined the two.
@@ -802,16 +1907,34 @@ def run(root: Path, calendar: str | None) -> dict[str, object]:
     problems.extend(order_problems(paths))
     overlay, witnessed = overlay_problems(paths)
     problems.extend(overlay)
+    # The calendar index says what was transcribed; it is not a permission
+    # record.  Each direct Latin text is hash-bound in a separate ledger whose
+    # provenance and surface-specific publication decisions cannot collapse
+    # into one blanket assertion about a missal or a Vatican edition.
+    production_root = (
+        root.resolve()
+        == (Path(__file__).resolve().parents[1] / DEFAULT_ROOT).resolve()
+    )
+    problems.extend(
+        latin_sidecar_problems(
+            paths,
+            inventory_root=root.parent / "inventories",
+            required=production_root,
+            # A synthetic fixture with no ledger has no source id to resolve.
+            # Loading the 2,000-record source graph on every one of the shell
+            # gate's fixture invocations would turn a shape check into minutes.
+            registered_source_ids=source_ids()[0] if production_root else None,
+        )
+    )
     # The index names the book; a companion beside it must not name it again.
     # `edition` was hand-typed in both files of both calendar directories, four
     # copies of two strings, and nothing here compared them.
     problems.extend(restated_identity(root, calendar))
     # Reported here and once: the cache is populated only if some translation
     # actually asked for it, so a calendar with none never raises it at all.
-    unreadable = (_SOURCE_IDS or (None, None))[1]
+    unreadable = (_SOURCE_RECORDS or (None, None))[1]
     if unreadable:
         problems.append(unreadable)
-    problems, excepted = apply_psalm_exceptions(paths, problems)
     return {
         "excepted": excepted,
         "files": files,
@@ -950,6 +2073,59 @@ def calendar_spine():
     return sibling("calendar-spine")
 
 
+def _spine_identity(record: dict, *, title_field: str) -> dict[str, str]:
+    """The identity fields the spine and the mass index actually share.
+
+    A spine registry identifies a fixed calendar row (for example
+    ``1962-01-06``), while a mass may retain its temporal-series registry (for
+    example ``10``).  Equating those two namespaces made five fully filed 1962
+    formularies look absent after the temporal registry was renumbered.
+
+    Both sources do share the stable key, date, printed rank, and principal
+    title.  A calendar-reference title may append commemorations after a
+    semicolon; the mass index files those as their own entries, so the
+    principal identity ends at that delimiter on both sides.
+    """
+    title = " ".join(
+        unicodedata.normalize("NFC", str(record.get(title_field) or "")).split()
+    ).split(";", 1)[0].strip()
+    return {
+        "key": str(record.get("key") or ""),
+        "date": str(record.get("date") or ""),
+        "rank": str(record.get("rank") or ""),
+        "title": title,
+    }
+
+
+def _spine_identity_problems(entry: dict, mass: dict, section_kind: str) -> list[str]:
+    """Compare one spine row with the mass filed under its stable key."""
+    expected = _spine_identity(entry, title_field="title")
+    actual = _spine_identity(mass, title_field="name")
+    registry = str(entry.get("registry") or "")
+    title = str(entry.get("title") or "")
+    problems = [
+        f"{registry} ({title}) identifies {field} {wanted!r}, but mass "
+        f"{actual['key']!r} carries {got!r}"
+        for field, wanted in expected.items()
+        if (got := actual[field]) != wanted
+    ]
+    mass_registry = str(mass.get("registry") or "")
+    if mass_registry != registry and (
+        expected["key"], registry, mass_registry
+    ) not in SPINE_REGISTRY_CROSSWALK:
+        problems.append(
+            f"{registry} ({title}) identifies registry {registry!r}, but mass "
+            f"{actual['key']!r} carries {mass_registry!r}; this is not one of the "
+            "five recorded fixed-row/temporal-catalog crosswalks"
+        )
+    if section_kind != entry.get("kind"):
+        problems.append(
+            f"{registry} ({title}) is filed {section_kind} but the spine "
+            f"classifies it {entry.get('kind')}"
+        )
+    return problems
+
+
 def spine_problems(paths: list[Path]) -> list[str]:
     """Every celebration the spine carries must have a mass, filed as it says.
 
@@ -984,26 +2160,31 @@ def spine_problems(paths: list[Path]) -> list[str]:
             continue  # already reported by check_file
         if not isinstance(document, dict):
             continue
-        filed: dict[str, str] = {}
+        filed: dict[str, tuple[str, dict]] = {}
         for section in (document.get("sections") or {}).values():
             if not isinstance(section, dict):
                 continue
-            kind = section.get("kind")
+            kind = str(section.get("kind") or "")
             for mass in section.get("masses") or []:
-                if isinstance(mass, dict) and mass.get("registry") is not None:
-                    filed[str(mass["registry"])] = str(kind)
+                if isinstance(mass, dict) and mass.get("key") is not None:
+                    # Duplicate keys are already a check_file failure. Keeping
+                    # the first here makes this comparison deterministic while
+                    # that owning diagnostic reports the duplicate itself.
+                    filed.setdefault(str(mass["key"]), (kind, mass))
         for entry in entries:
             registry = str(entry["registry"])
-            if registry not in filed:
+            key = str(entry["key"])
+            if key not in filed:
                 problems.append(
                     f"{path}: the spine carries {registry} ({entry['title']}) "
-                    "and no section has a mass for it"
+                    f"as key {key!r}, and no section has a mass with that key"
                 )
-            elif filed[registry] != entry["kind"]:
-                problems.append(
-                    f"{path}: {registry} ({entry['title']}) is filed "
-                    f"{filed[registry]} but the spine classifies it {entry['kind']}"
-                )
+                continue
+            section_kind, mass = filed[key]
+            problems.extend(
+                f"{path}: {problem}"
+                for problem in _spine_identity_problems(entry, mass, section_kind)
+            )
     return problems
 
 
@@ -1430,16 +2611,27 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
         # Loaded once, and only where a sidecar was actually found.
         if history is None:
             history = act_history()
+        source_rows: dict[str, dict] = {}
+        library_source_ids: set[str] = set()
         for index, row in enumerate(document.get("sources") or []):
             if not isinstance(row, dict):
                 problems.append(f"{sidecar}: sources[{index}] is not a table")
                 continue
             named = str(row.get("id") or "") or f"sources[{index}]"
+            if named in source_rows:
+                problems.append(f"{sidecar}: duplicate sources.id {named!r}")
+            source_id = str(row.get("source_id") or "")
+            if source_id in library_source_ids:
+                problems.append(f"{sidecar}: duplicate sources.source_id {source_id!r}")
+            library_source_ids.add(source_id)
+            source_rows[named] = row
             problems.extend(
                 source_attestation_problems(f"{sidecar}: {named}", row, history)
             )
         agree: list[str] = []
         disagree: list[str] = []
+        active_targets: set[tuple[object, ...]] = set()
+        active_entries: list[tuple[str, dict]] = []
         for index, entry in enumerate(document.get("entries") or []):
             where = f"{sidecar}: entries[{index}]"
             if not isinstance(entry, dict):
@@ -1452,15 +2644,452 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
             )
             named = named or f"entries[{index}]"
             where = f"{sidecar}: {named}"
+            target = (
+                entry.get("mass"),
+                (
+                    entry.get("form_id")
+                    if entry.get("form_id") is not None
+                    else entry.get("form") or ""
+                ),
+                entry.get("proper"),
+                entry.get("cycle") or "all",
+                entry.get("occurrence") or 1,
+            )
+            if target in active_targets:
+                problems.append(
+                    f"{sidecar}: duplicate exact translation entry target {target!r}"
+                )
+            active_targets.add(target)
+            active_entries.append((where, entry))
             payload = entry.get("translations")
             if payload is None:
                 problems.append(f"{where}: entry records no translations")
                 continue
-            check_translation_list(where, payload, problems)
+            check_translation_list(where, payload, problems, entry.get("proper"))
+            problems.extend(overlay_entry_source_problems(where, entry, source_rows))
+            problems.extend(overlay_entry_publication_problems(where, entry))
             found, verdict = witness_problems(where, entry, payload)
             problems.extend(found)
             if verdict is not None:
                 (disagree if verdict else agree).append(named)
+        # A typed absence names the exact source-owned slot it answers. Human
+        # form labels and incipits are display/content, not identity: forms have
+        # source-authored ids, a mass with no forms uses the reserved `main`,
+        # and repeated proper names are distinguished by their positive
+        # one-based occurrence in source order. Cycle is explicit even when the
+        # record covers every course. This is the same identity the consumer
+        # needs to keep a year-C absence off years A and B.
+        try:
+            import yaml
+
+            calendar_document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError) as error:
+            problems.append(f"{path}: cannot validate untranslated targets: {error}")
+            calendar_document = {}
+        exact_targets: dict[tuple[str, str, str, str, int], dict[str, object]] = {}
+        target_counts: dict[tuple[str, str, str, str], int] = {}
+        legacy_form_ids: dict[tuple[str, str], str] = {}
+        if isinstance(calendar_document, dict):
+            for _, mass in iter_masses(calendar_document):
+                mass_key = str(mass.get("key") or "")
+                legacy_form_ids[(mass_key, "")] = TRANSLATION_MAIN_FORM_ID
+                groups: list[tuple[str, object]] = [
+                    (TRANSLATION_MAIN_FORM_ID, mass.get("propers"))
+                ]
+                for form in mass.get("forms") or []:
+                    if not isinstance(form, dict):
+                        continue
+                    form_id = form.get("id")
+                    # The owning form validator reports a missing/non-string
+                    # id. Do not invent one from the human label here.
+                    if not isinstance(form_id, str) or not form_id.strip():
+                        continue
+                    form_name = form.get("name")
+                    if isinstance(form_name, str) and form_name.strip():
+                        legacy_form_ids[(mass_key, form_name)] = form_id
+                    groups.append((form_id, form.get("propers")))
+                for form_id, propers in groups:
+                    if not isinstance(propers, list):
+                        continue
+                    # Occurrence is the top-level source ordinal among owners
+                    # with the same printed name.  Count it before asking
+                    # whether the owner is Scripture, a placeholder, or
+                    # cycle-varying, then reuse that ordinal for every cycle.
+                    # Otherwise the exact identity changes when a consumer
+                    # filters out a body it cannot translate.
+                    proper_occurrences: dict[str, int] = {}
+                    for proper in propers:
+                        if not isinstance(proper, dict) or proper.get(TAKES_FROM):
+                            continue
+                        proper_name = str(proper.get("name") or "")
+                        occurrence = proper_occurrences.get(proper_name, 0) + 1
+                        proper_occurrences[proper_name] = occurrence
+                        top_incipit = str(proper.get("incipit") or "")
+                        owners: list[tuple[str, dict]] = []
+                        for field, admitted in (
+                            ("cycles", {"A", "B", "C"}),
+                            (WEEKDAY_CYCLES_KEY, set(WEEKDAY_CYCLES)),
+                        ):
+                            branches = proper.get(field)
+                            if not isinstance(branches, dict):
+                                # The owning schema walk has already reported
+                                # the malformed recurrence.  Preserve that
+                                # actionable problem instead of replacing it
+                                # with an AttributeError in this join.
+                                continue
+                            for cycle, owner in branches.items():
+                                if cycle in admitted and isinstance(owner, dict):
+                                    owners.append((str(cycle), owner))
+                        if not owners:
+                            owners.append(("all", proper))
+                        for cycle, owner in owners:
+                            base = (mass_key, form_id, proper_name, cycle)
+                            target_counts[base] = max(
+                                target_counts.get(base, 0), occurrence
+                            )
+                            status = owner.get(TEXT_STATUS)
+                            if not isinstance(status, dict):
+                                status = proper.get(TEXT_STATUS)
+                            exact_targets[(*base, occurrence)] = {
+                                "text": isinstance(owner.get("text"), str),
+                                "body": isinstance(owner.get("text"), str)
+                                or (
+                                    isinstance(status, dict)
+                                    and status.get("state") == "unavailable"
+                                    and status.get("scope") == "proper-body"
+                                ),
+                                "incipit": str(owner.get("incipit") or top_incipit),
+                                "placeholder": proper_name == "Placeholder",
+                            }
+
+        positive_claims: set[tuple[str, str, str, str, int, str, str]] = set()
+
+        def record_positive_target(
+            where: str,
+            entry: dict,
+            target: tuple[str, str, str, str, int],
+            *,
+            exact_incipit: bool,
+        ) -> None:
+            live = exact_targets.get(target)
+            if live is None:
+                problems.append(f"{where}: translation target {target!r} does not exist")
+                return
+            if live.get("placeholder"):
+                problems.append(
+                    f"{where}: Placeholder is not a translatable source-owned Proper"
+                )
+            if not live.get("body"):
+                problems.append(
+                    f"{where}: translation target {target!r} owns no composed body "
+                    "or typed removed-body state"
+                )
+            incipit = str(entry.get("incipit") or "")
+            target_incipit = str(live.get("incipit") or "")
+            # Legacy witnesses may preserve an incipit beside a target whose
+            # index has not yet transcribed it; absence there is not a
+            # contradiction.  An exact row deliberately opts into the stable
+            # identity contract, so its recorded incipit remains strict.
+            if (
+                incipit
+                and incipit != target_incipit
+                and (exact_incipit or bool(target_incipit))
+            ):
+                problems.append(
+                    f"{where}: incipit {incipit!r} does not match exact target "
+                    f"{target_incipit!r}"
+                )
+            for translation in entry.get("translations") or []:
+                if isinstance(translation, dict) and isinstance(
+                    translation.get("lang"), str
+                ):
+                    positive_claims.add((*target, "body", translation["lang"]))
+
+        for where, entry in active_entries:
+            explicit = any(
+                field in entry for field in ("form_id", "cycle", "occurrence")
+            )
+            if not explicit:
+                mass = entry.get("mass")
+                proper_name = entry.get("proper")
+                if not isinstance(mass, str) or not mass.strip():
+                    problems.append(f"{where}: mass must be a nonempty string")
+                    continue
+                if not isinstance(proper_name, str) or not proper_name.strip():
+                    problems.append(f"{where}: proper must be a nonempty string")
+                    continue
+                legacy_form = str(entry.get("form") or "")
+                form_id = legacy_form_ids.get(
+                    (mass, legacy_form)
+                )
+                if form_id is None:
+                    problems.append(
+                        f"{where}: legacy translation form {legacy_form!r} does not "
+                        f"exist on source mass {mass!r}"
+                    )
+                    continue
+                base = (mass, form_id, proper_name, "all")
+                if target_counts.get(base, 0) > 1:
+                    problems.append(
+                        f"{where}: legacy translation target {base!r} is ambiguous; "
+                        "record form_id, cycle, and occurrence"
+                    )
+                    continue
+                target = (*base, 1)
+                record_positive_target(where, entry, target, exact_incipit=False)
+                continue
+            if not all(field in entry for field in ("form_id", "cycle", "occurrence")):
+                problems.append(
+                    f"{where}: stable translation identity requires form_id, cycle, "
+                    "and occurrence together"
+                )
+                continue
+            malformed = False
+            for field in ("mass", "form_id", "proper", "cycle"):
+                value = entry.get(field)
+                if not isinstance(value, str) or not value.strip():
+                    problems.append(f"{where}: {field} must be a nonempty string")
+                    malformed = True
+            cycle = entry.get("cycle")
+            if isinstance(cycle, str) and cycle not in TRANSLATION_ABSENCE_CYCLES:
+                problems.append(
+                    f"{where}: cycle must be one of "
+                    f"{sorted(TRANSLATION_ABSENCE_CYCLES)}, got {cycle!r}"
+                )
+                malformed = True
+            occurrence = entry.get("occurrence")
+            if (
+                isinstance(occurrence, bool)
+                or not isinstance(occurrence, int)
+                or occurrence < 1
+            ):
+                problems.append(
+                    f"{where}: occurrence must be a positive one-based integer, "
+                    f"got {occurrence!r}"
+                )
+                malformed = True
+            if malformed:
+                continue
+            target = (
+                entry["mass"],
+                entry["form_id"],
+                entry["proper"],
+                entry["cycle"],
+                occurrence,
+            )
+            record_positive_target(where, entry, target, exact_incipit=True)
+
+        unavailable = document.get("untranslated") or []
+        unavailable_claims: set[tuple[str, str, str, str, int, str, str]] = set()
+        duplicate_unavailable_claims: set[
+            tuple[str, str, str, str, int, str, str]
+        ] = set()
+        required_unavailable_fields = {
+            "mass",
+            "proper",
+            "form_id",
+            "cycle",
+            "occurrence",
+            "extent",
+            "lang",
+            "availability",
+            "reason",
+            "note",
+        }
+        for index, row in enumerate(unavailable):
+            where = f"{sidecar}: untranslated[{index}]"
+            if not isinstance(row, dict):
+                problems.append(f"{where}: entry is not a table")
+                continue
+            missing = sorted(required_unavailable_fields - set(row))
+            if missing:
+                problems.append(
+                    f"{where}: exact untranslated record is missing field(s) "
+                    f"{', '.join(missing)}; legacy defaults are not accepted"
+                )
+            for field in ("mass", "proper"):
+                value = row.get(field)
+                if not isinstance(value, str) or not value.strip():
+                    problems.append(f"{where}: {field} must be a nonempty string")
+            availability = row.get("availability")
+            if availability not in TRANSLATION_AVAILABILITY:
+                problems.append(
+                    f"{where}: availability must be one of "
+                    f"{sorted(TRANSLATION_AVAILABILITY)}, got {availability!r}"
+                )
+            for field in ("form_id", "cycle", "extent", "lang"):
+                value = row.get(field)
+                if not isinstance(value, str) or not value.strip():
+                    problems.append(f"{where}: {field} must be a nonempty string")
+            form_id = row.get("form_id")
+            cycle = row.get("cycle")
+            extent = row.get("extent")
+            occurrence = row.get("occurrence")
+            if cycle not in TRANSLATION_ABSENCE_CYCLES:
+                problems.append(
+                    f"{where}: cycle must be one of "
+                    f"{sorted(TRANSLATION_ABSENCE_CYCLES)}, got {cycle!r}"
+                )
+            if extent not in TRANSLATION_ABSENCE_EXTENTS:
+                problems.append(
+                    f"{where}: extent must be one of "
+                    f"{sorted(TRANSLATION_ABSENCE_EXTENTS)}, got {extent!r}"
+                )
+            if (
+                isinstance(occurrence, bool)
+                or not isinstance(occurrence, int)
+                or occurrence < 1
+            ):
+                problems.append(
+                    f"{where}: occurrence must be a positive one-based integer, "
+                    f"got {occurrence!r}"
+                )
+            if "text" in row:
+                problems.append(f"{where}: an unavailable record must not carry text")
+            if "form" in row:
+                problems.append(
+                    f"{where}: legacy form labels are forbidden; use source-authored form_id"
+                )
+            note = row.get("note")
+            if not isinstance(note, str) or not note.strip():
+                problems.append(f"{where}: note must be a nonempty audit explanation")
+            if extent == "body" and "incipit" in row:
+                problems.append(
+                    f"{where}: extent 'body' must not carry incipit; incipit is "
+                    "content and belongs only to extent 'incipit'"
+                )
+            if extent == "incipit":
+                incipit = row.get("incipit")
+                if not isinstance(incipit, str) or not incipit.strip():
+                    problems.append(
+                        f"{where}: extent 'incipit' requires a nonempty incipit"
+                    )
+            if row.get("lang") != "en":
+                problems.append(
+                    f"{where}: this English translation ledger requires lang = 'en', "
+                    f"got {row.get('lang')!r}"
+                )
+            reason = row.get("reason")
+            if not isinstance(reason, dict):
+                problems.append(
+                    f"{where}: reason must be a table with a typed kind, not prose"
+                )
+                reason = {}
+            extras = sorted(set(reason) - TRANSLATION_ABSENCE_REASON_FIELDS)
+            if extras:
+                problems.append(
+                    f"{where}: reason has unknown fields: {', '.join(extras)}"
+                )
+            kind = reason.get("kind")
+            if kind not in TRANSLATION_ABSENCE_KINDS:
+                problems.append(
+                    f"{where}: reason.kind must be one of "
+                    f"{sorted(TRANSLATION_ABSENCE_KINDS)}, got {kind!r}"
+                )
+            source_id = reason.get("source_id")
+            if kind in {"rights-withheld", "witness-gap"}:
+                if not isinstance(source_id, str) or not source_id.strip():
+                    problems.append(
+                        f"{where}: reason.kind {kind!r} requires source_id"
+                    )
+                else:
+                    registered = source_ids()[0]
+                    if registered is not None and source_id not in registered:
+                        problems.append(
+                            f"{where}: reason.source_id {source_id!r} is registered "
+                            "nowhere in the source library"
+                        )
+            elif source_id is not None:
+                problems.append(
+                    f"{where}: reason.kind 'no-exemplar' cannot name source_id; "
+                    "a source id would assert the exemplar the reason says is absent"
+                )
+            surfaces = reason.get("surfaces")
+            if kind == "rights-withheld":
+                if (
+                    not isinstance(surfaces, list)
+                    or not surfaces
+                    or any(not isinstance(surface, str) for surface in surfaces)
+                ):
+                    problems.append(
+                        f"{where}: reason.kind 'rights-withheld' requires a nonempty "
+                        "surfaces list"
+                    )
+                else:
+                    unknown = sorted(set(surfaces) - TRANSLATION_ABSENCE_SURFACES)
+                    if unknown:
+                        problems.append(
+                            f"{where}: reason.surfaces has unknown values: "
+                            f"{', '.join(unknown)}"
+                        )
+                    if len(surfaces) != len(set(surfaces)):
+                        problems.append(f"{where}: reason.surfaces repeats a value")
+            elif surfaces is not None:
+                problems.append(
+                    f"{where}: reason.surfaces applies only to rights-withheld"
+                )
+
+            base_target = (
+                str(row.get("mass") or ""),
+                str(form_id or ""),
+                str(row.get("proper") or ""),
+                str(cycle or ""),
+            )
+            if isinstance(occurrence, int) and not isinstance(occurrence, bool):
+                target = (*base_target, occurrence)
+                live_target = exact_targets.get(target)
+                if live_target is None:
+                    available = target_counts.get(base_target, 0)
+                    if available:
+                        problems.append(
+                            f"{where}: occurrence {occurrence} is out of range for "
+                            f"target {base_target!r}; source order has "
+                            f"{available} occurrence(s)"
+                        )
+                    else:
+                        problems.append(
+                            f"{where}: no source-owned proper has target "
+                            f"{base_target!r}"
+                        )
+                else:
+                    if live_target.get("placeholder"):
+                        problems.append(
+                            f"{where}: Placeholder is not a translatable source-owned "
+                            "Proper and cannot be an untranslated target"
+                        )
+                    if extent == "body" and not live_target.get("body"):
+                        problems.append(
+                            f"{where}: target owns no body or proper-body unavailable state"
+                        )
+                    if extent == "incipit":
+                        live_incipit = str(live_target.get("incipit") or "")
+                        if not live_incipit:
+                            problems.append(f"{where}: target owns no incipit")
+                        elif row.get("incipit") != live_incipit:
+                            problems.append(
+                                f"{where}: incipit {row.get('incipit')!r} does not match "
+                                f"the target's source incipit {live_incipit!r}"
+                            )
+                claim = (*target, str(extent or ""), str(row.get("lang") or ""))
+                if claim in unavailable_claims:
+                    duplicate_unavailable_claims.add(claim)
+                unavailable_claims.add(claim)
+        if duplicate_unavailable_claims:
+            problems.append(
+                f"{sidecar}: duplicate exact untranslated claims: "
+                + ", ".join(
+                    repr(target) for target in sorted(duplicate_unavailable_claims)
+                )
+            )
+        positive_unavailable_collisions = positive_claims & unavailable_claims
+        if positive_unavailable_collisions:
+            problems.append(
+                f"{sidecar}: exact targets cannot be both translated and unavailable: "
+                + ", ".join(
+                    repr(target)
+                    for target in sorted(positive_unavailable_collisions)
+                )
+            )
         if agree or disagree:
             witnessed.append(
                 {
@@ -1480,11 +3109,13 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
     return problems, sorted(witnessed, key=lambda row: row["source"])
 
 
-def citation_problems(root: Path, calendar: str | None) -> list[str]:
-    """Delegate citation contents to the sibling tool that owns the canon."""
+def citation_problems(
+    root: Path, calendar: str | None
+) -> tuple[list[str], list[str]]:
+    """Delegate citation contents and its exact exceptions to their owner."""
     tool = Path(__file__).resolve().parent / "citations"
     if not tool.exists():
-        return [f"{tool} is missing; cannot validate citation contents"]
+        return [f"{tool} is missing; cannot validate citation contents"], []
     scope = root / calendar if calendar else root
     result = subprocess.run(
         [sys.executable, str(tool), "check", "--root", str(scope), "--json"],
@@ -1493,109 +3124,17 @@ def citation_problems(root: Path, calendar: str | None) -> list[str]:
     )
     stream = result.stdout.strip() or result.stderr.strip()
     if not stream:
-        return [f"{tool} produced no output (exit {result.returncode})"]
+        return [f"{tool} produced no output (exit {result.returncode})"], []
     try:
         payload = json.loads(stream)
     except json.JSONDecodeError:
-        return [f"{tool} emitted unreadable output: {stream[:200]}"]
+        return [f"{tool} emitted unreadable output: {stream[:200]}"], []
     if payload.get("code"):
-        return [f"{tool}: {payload.get('error')}"]
-    return list(payload.get("problems") or [])
-
-
-def psalm_exceptions(path: Path, problems: list[str]) -> dict[str, str]:
-    """Read one calendar's ledger of psalm loci excused from its numbering.
-
-    The ledger names each locus and where it is cited, so a reader can see what
-    is owed without running anything. It is deliberately spelled out one verse
-    at a time: a rule of the form "allow anything in Psalm 118" would absorb the
-    next mistyped reference in that psalm along with the known ones.
-    """
-    import yaml
-
-    try:
-        document = yaml.safe_load(path.read_text(encoding="utf-8"))
-    except (OSError, yaml.YAMLError):
-        return {}  # already reported by check_file
-    if not isinstance(document, dict):
-        return {}
-    payload = document.get(EXCEPTIONS)
-    if payload is None:
-        return {}
-    if not isinstance(payload, list) or not payload:
-        problems.append(f"{path}: {EXCEPTIONS} must be a nonempty list, or absent")
-        return {}
-    listed: dict[str, str] = {}
-    for index, entry in enumerate(payload):
-        where = f"{path}: {EXCEPTIONS}[{index}]"
-        if not isinstance(entry, dict):
-            problems.append(f"{where}: entry is not a mapping")
-            continue
-        psalm = entry.get("psalm")
-        if not isinstance(psalm, int):
-            problems.append(f"{where}: psalm must be the cited psalm's number")
-            psalm = None
-        divergence = entry.get("divergence")
-        if not isinstance(divergence, str) or not divergence.strip():
-            problems.append(f"{where}: divergence must say how the systems differ here")
-        loci = entry.get("loci")
-        if not isinstance(loci, dict) or not loci:
-            problems.append(f"{where}: loci must be a nonempty mapping")
-            continue
-        for locus, cited in loci.items():
-            found = PSALM_LOCUS.fullmatch(locus) if isinstance(locus, str) else None
-            if found is None:
-                problems.append(f"{where}: {locus!r} is not a Psalm chapter:verse locus")
-                continue
-            if psalm is not None and int(found.group(1)) != psalm:
-                problems.append(f"{where}: {locus} does not belong to Psalm {psalm}")
-                continue
-            if not isinstance(cited, str) or not cited.strip():
-                problems.append(f"{where}: {locus} must name the proper that cites it")
-                continue
-            if locus in listed:
-                problems.append(f"{path}: {EXCEPTIONS} lists {locus} twice")
-            listed[locus] = cited
-    return listed
-
-
-def apply_psalm_exceptions(
-    paths: list[Path], problems: list[str]
-) -> tuple[list[str], list[str]]:
-    """Set aside the psalm-bound problems a calendar's ledger already owns.
-
-    The ledger keeps the gate shut while the data defect it records is still
-    open, and it is self-cleaning in both directions: a psalm-bound problem at
-    an unlisted locus still fails, so a new leak cannot slip in behind the known
-    ones, and a listed locus that no longer produces a problem fails too, so the
-    ledger empties itself as the antiphons are corrected rather than rotting
-    into a permission nobody remembers granting.
-    """
-    kept: list[str] = []
-    listed = {str(path): psalm_exceptions(path, kept) for path in paths}
-    listed = {name: entries for name, entries in listed.items() if entries}
-    excepted: list[str] = []
-    met: dict[str, set[str]] = {}
-    for problem in problems:
-        found = PSALM_TROUBLE.search(problem)
-        owner = None
-        if found:
-            owner = next(
-                (name for name in listed if problem.startswith(f"{name}: ")), None
-            )
-        if owner is None or found.group(1) not in listed[owner]:
-            kept.append(problem)
-            continue
-        met.setdefault(owner, set()).add(found.group(1))
-        excepted.append(problem)
-    for name, entries in listed.items():
-        for locus in entries:
-            if locus not in met.get(name, ()):
-                kept.append(
-                    f"{name}: {EXCEPTIONS} lists {locus}, which no longer breaches "
-                    "this calendar's numbering; delete the entry"
-                )
-    return kept, excepted
+        return [f"{tool}: {payload.get('error')}"], []
+    return (
+        list(payload.get("problems") or []),
+        list(payload.get("excepted") or []),
+    )
 
 
 def main(argv: list[str] | None = None) -> int:

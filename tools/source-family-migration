@@ -37,26 +37,26 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration check",
             (
-                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+                "source-family-migration valid: families=0 review_units=149 screened=0 pending=149 trace_records=0 atomic_citation_coverage=false",
             ),
         ),
         Example(
             "tools/source-family-migration --root . check",
             (
-                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+                "source-family-migration valid: families=0 review_units=149 screened=0 pending=149 trace_records=0 atomic_citation_coverage=false",
             ),
             "--root belongs before the verb",
         ),
     ),
     "bootstrap": (
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-22",
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
             (
             ),
             "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched. The date may not predate the inventory or the classification review, so re-auditing either one lapses this example and the date here has to move with it",
         ),
         Example(
-            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-22",
+            "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
             (
                 "source-family-migration error: <repo>/build/example-migration.toml: already exists; use refresh",
             ),
@@ -67,12 +67,12 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration check",
             (
-                "source-family-migration valid: families=362 review_units=144 screened=0 pending=144 trace_records=4041 atomic_citation_coverage=fa... [+3 chars]",
+                "source-family-migration valid: families=0 review_units=149 screened=0 pending=149 trace_records=0 atomic_citation_coverage=false",
             ),
             "read-only first: `check` says what state a refresh would start from",
         ),
         Example(
-            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-08-22",
+            "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-08-27",
             (
             ),
             "WRITES the named ledger. With no positional argument it rewrites the tracked one",
@@ -1363,20 +1363,27 @@ def main() -> int:
         if canonical_errors:
             _print_errors(canonical_errors)
             return 1
-        represented_ids = {
-            canonical_id
-            for family in old["families"]
-            for canonical_id in family["canonical_ids"]
-        }
-        missing_ids = sorted(canonical_ids - represented_ids)
-        if missing_ids:
-            _print_errors(
-                [
-                    "cannot accept canonical catalog; source IDs lack reviewed "
-                    f"family membership: {', '.join(missing_ids)}"
-                ]
-            )
-            return 1
+        # A bootstrap ledger with no reviewed families makes no membership
+        # claim: its owner review units remain explicitly pending.  It may pin
+        # a changed canonical catalogue without pretending that every source
+        # has already been grouped.  Once even one reviewed family exists, the
+        # ledger claims exhaustive family membership and acceptance must keep
+        # requiring every canonical source ID to belong to one.
+        if old["families"]:
+            represented_ids = {
+                canonical_id
+                for family in old["families"]
+                for canonical_id in family["canonical_ids"]
+            }
+            missing_ids = sorted(canonical_ids - represented_ids)
+            if missing_ids:
+                _print_errors(
+                    [
+                        "cannot accept canonical catalog; source IDs lack reviewed "
+                        f"family membership: {', '.join(missing_ids)}"
+                    ]
+                )
+                return 1
         # Only a family whose MEMBERSHIP has moved needs re-reviewing. This
         # used to demand `reviewed_on == audited_on` of every family carrying
         # canonical ids, so admitting one new source asserted a fresh review of

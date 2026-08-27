@@ -1,0 +1,28 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-advent"
+edition_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+artifact_type = "rehosted-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = """
+The rehosted file is a composite of an FDLC compilation, contributor-authored
+reflections, design and artwork or images, and embedded Collects identified by
+the file as ICEL's Roman Missal English. It reports USCCB Committee on Divine
+Worship approval for reprinting the liturgical excerpts but does not identify
+the authorization instrument or grant Triptych a right to redistribute the
+composite PDF. The Diocese of Evansville is a delivery host, not an established
+publisher or rightsholder for these exact bytes. Because no redistribution
+basis covers every layer or the rehosted-byte provenance, only remote,
+text-free metadata is tracked and the artifact rights remain unresolved.
+"""
+rights_jurisdiction = "United States"
+source_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.advent.pdf"
+provenance = "Exact HTTPS response fetched whole from the recorded Diocese of Evansville URL on 2026-08-26 and hashed before use. Both inventory entries were checked visually against rendered page images at their recorded artifact pages; the embedded text layer was used only as a locator. The host is a delivery route, not the textual authority. No liturgical wording from this verification is retained as tracked source data."
+retrieved = "2026-08-26"
+sha256 = "ad88b8dba4fb71c0bb87192675538852dad603c5f947a6aee8931060696e2827"
+byte_size = 264039
+page_count = 7
+indexable = false
+notes = "File collect_mystogogy.advent.pdf, the Advent portion of the 2012-2013 series. The upstream filename spells mystagogy as mystogogy."

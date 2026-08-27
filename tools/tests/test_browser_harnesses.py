@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Keeps the four Chromium reader harnesses discovered, syntactic, and runnable.
+"""Keeps the Chromium reader harnesses discovered, syntactic, and runnable.
 
 `tools/tests/*_browser.mjs` are dependency-free CDP harnesses that nothing in the
 suite ran: no Makefile target invoked them and no Python test did more than
 `node --check` one of them. They were therefore believed broken for a long time,
-and they were not. Three of them serve their pages out of
+and they were not. Most serve their pages out of
 `build/public-alpha/preview`, so in a checkout that has never run
 `make public-preview` every request 404s and the harness reports
 "Timed out waiting for ... readiness" — a missing build artifact wearing the
@@ -13,7 +13,7 @@ costume of a code defect.
 This module removes both failure modes. Without a browser it still asserts the
 set of harnesses, checks their syntax, and pins the preview dependency in place
 so nobody "fixes" the data root without also arranging for the build. With
-`TRIPTYCH_BROWSER_HARNESSES=1` it runs all four for real, parses the JSON report
+`TRIPTYCH_BROWSER_HARNESSES=1` it runs all of them for real, parses the JSON report
 each one emits — from stdout, or from stderr, because the propers harness writes
 its failing report to stderr and a parser that only reads stdout would score that
 run as zero assertions — and ratchets the pass counts. A harness exiting non-zero
@@ -55,6 +55,7 @@ PREVIEW = ROOT / PREVIEW_ROOT
 # are a real finding about absence and coverage notices, owned by the liturgy
 # work, not by this file.
 ASSERTION_FLOORS = {
+    "day_reader_choices_browser.mjs": 5,
     "day_reader_integration_browser.mjs": 39,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 22,

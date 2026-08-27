@@ -210,6 +210,49 @@ class GateTests(unittest.TestCase):
         self.assertIsNotNone(recipe, "no `check` target; did the Makefile change shape?")
         self.assertIn("check-examples", recipe.group(1))
 
+    def test_make_check_depends_on_calendar_day_freshness(self) -> None:
+        text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        recipe = re.search(r"\ncheck:((?:.*\\\n)*.*)\n", text)
+        self.assertIsNotNone(recipe, "no `check` target; did the Makefile change shape?")
+        prerequisites = recipe.group(1)
+        self.assertIn("check-calendar-days", prerequisites)
+        self.assertLess(
+            prerequisites.index("check-calendar-days"),
+            prerequisites.index("check-calendar-rubrics"),
+        )
+
+    def test_calendar_day_target_invokes_check_mode(self) -> None:
+        text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        self.assertRegex(
+            text,
+            r"\ncheck-calendar-days:\n(?:\t.*\\\n)*"
+            r"\t\t\$\(PYTHON\) tools/tpt calendar-days check; \\",
+        )
+
+    def test_deployment_source_gate_checks_every_generated_missal_layer(self) -> None:
+        text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        recipe = re.search(
+            r"\ncheck-deployment-sources:\n((?:\t.*\n)+)",
+            text,
+        )
+        self.assertIsNotNone(recipe, "check-deployment-sources has no recipe")
+        body = recipe.group(1)
+        commands = (
+            "$(SOURCE_READER_TOOL) check",
+            "$(SOURCE_READER_TOOL) structure --check",
+            "tools/tpt calendar-days check",
+            "tools/tpt check-calendar-masses",
+            "tools/tpt mass-propers structure --check",
+            "tools/tpt calendar-rubrics check",
+            "tools/tpt mass-ordinary check",
+        )
+        positions = []
+        for command in commands:
+            with self.subTest(command=command):
+                self.assertIn(command, body)
+                positions.append(body.index(command))
+        self.assertEqual(sorted(positions), positions)
+
     def test_the_replay_target_exists_and_invokes_the_script(self) -> None:
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         self.assertRegex(

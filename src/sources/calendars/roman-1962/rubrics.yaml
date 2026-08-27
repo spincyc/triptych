@@ -16,6 +16,10 @@ advisory: >-
   place, the diocese and the religious institute, to a legitimate indult, and to
   the competent annual Ordo, which controls. Nothing here is an occurrence
   witness and nothing here authorises the use of any book.
+latin_text_status:
+  state: unavailable
+  scope: rubric-wording
+  kind: rights-withheld
 
 # ---------------------------------------------------------------------------
 # Where every rule below came from
@@ -62,10 +66,6 @@ derived_from:
 precedence:
   stated: true
   locus: RG 91
-  latin: >-
-    Praecedentia dierum liturgicorum, sublatis quibuslibet aliis titulis vel
-    normis, unice regitur ex sequenti tabella dierum liturgicorum secundum
-    ordinem praecedentiae disposita.
   gloss: >-
     Twenty-eight numbered rows, banded into the four classes of day. A lower row
     number wins. The table ranks days, not saints: eight of its rows contain no
@@ -131,12 +131,6 @@ precedence:
   - {row: 28, class: IV, label: Fourth-class ferias}
   occurrence:
     locus: RG 92
-    latin: >-
-      Occurrentia dicitur occursus duorum vel plurium Officiorum uno eodemque
-      die. Occurrentia autem dicitur accidentalis, quando dies liturgicus
-      mobilis et dies liturgicus fixus certis solummodo annorum intervallis
-      simul occurrunt; perpetua vero quando duo dies liturgici quotannis simul
-      occurrunt.
     gloss: >-
       The distinction selects the remedy. Accidental occurrence may lead to
       transfer; perpetual occurrence may lead to reposition. A feast cannot be
@@ -144,10 +138,6 @@ precedence:
       accidental one.
   effect:
     locus: RG 93
-    latin: >-
-      Effectus occurrentiae est, ut Officium diei liturgici gradus inferioris
-      Officio gradus superioris cedat: quod fieri potest per minus nobilis
-      omissionem, aut commemorationem, aut translationem, aut repositionem.
     gloss: Four outcomes and no others - omission, commemoration, transfer, reposition.
   concurrence:
     locus: RG 103-105
@@ -170,17 +160,6 @@ overrides:
     first-class feast of the universal Church, and the row itself adds "quae
     tamen locum cedit dominicae occurrenti". It is the only qualified row in the
     table.
-- id: the-last-sunday-after-pentecost-keeps-the-final-slot
-  key: last-sunday-after-pentecost
-  over_key_matches: '^pentecost-\d+$'
-  when_same_row: true
-  locus: RG 18, closing paragraph
-  why: >-
-    In a year whose count of Sundays after Pentecost leaves the numbered Sunday
-    and the last Sunday in one slot, the Mass Dominica XXIV et ultima post
-    Pentecosten is the one that is said: RG 18's closing paragraph puts it last
-    always. Both are second-class Sundays at row 15, so the table alone cannot
-    separate them.
 - id: same-divine-person-or-same-saint
   locus: RG 95 second paragraph
   stated_only: true
@@ -664,10 +643,6 @@ saturday_office:
   basis: row-27-our-lady-on-saturday
   when_implied_basis: row-28-feria
   locus: RG 78; RG 79
-  latin: >-
-    In sabbatis, in quibus occurrit Officium de feria IV classis, fit de sancta
-    Maria in sabbato. Officium sanctae Mariae in sabbato incipit a Matutino et
-    explicit post Nonam.
   why: >-
     On a Saturday carrying a fourth-class feria the Office is of Our Lady on
     Saturday. Its Mass exists and may be sung, but any occurring feast displaces
@@ -697,7 +672,6 @@ saturday_office:
   # -------------------------------------------------------------------------
   mass:
     locus: RGMR 270; RGMR 515 b
-    latin: Missa proinde per se cum Officio diei concordare debet.
     why: >-
       The Mass agrees with the Office of the day, and the Office is of Our Lady.
       This Saturday is not a fourth-class feria but the Office of Our Lady on
@@ -752,19 +726,16 @@ saturday_office:
 # not blur the two, so they are different blocks, rendered differently, and a
 # choice never sets `settled: false`.
 #
-# Each entry states the locus, the Latin, what governs each option, and either
-# the option ordinarily said or, where the rubric orders neither, that it is
-# genuinely open. Inventing a preference where the book states none would be the
-# same defect as inventing precedence.
+# Each entry states the locus, what governs each option, and either the option
+# ordinarily said or, where the rubric orders neither, that it is genuinely
+# open. The verbatim wording is withheld as the top-level status records.
+# Inventing a preference where the book states none would be the same defect as
+# inventing precedence.
 # ---------------------------------------------------------------------------
 mass_choices:
 - id: carmel-on-a-saturday
   what: The Mass of Our Lady on Saturday, or the proper Mass of the Commemoration
   locus: the Missal's own rubric at 16 July, printed p. 587
-  latin: >-
-    Si Commemoratio B. Mariae Virg. de Monte Carmelo venerit in sabbato, Missa
-    dici potest aut de sancta Maria in sabbato, aut propria de Commemoratione
-    B. Mariae Virg. de Monte Carmelo.
   why: >-
     Read off the controlling facsimile on 2026-08-01 at artifact page 668. The
     Commemoration of Our Lady of Mount Carmel is a commemoration and not a
@@ -803,10 +774,6 @@ mass_choices:
   what: The Mass of the Friday of Passion Week, or one of the two festive Masses of
     the Seven Sorrows
   locus: the Missal's own rubric at the Friday after Passion Sunday, printed p. 499
-  latin: >-
-    Hodie, ubi peculiaria pietatis exercitia in honorem beatae Mariae Virg.
-    Matris dolorosae peraguntur, permittuntur duae Missae festivae de septem
-    Doloribus beatae Mariae Virginis.
   why: >-
     Read off the controlling facsimile on 2026-08-02 at printed p. 499, digital
     p. 580, at 400 dpi. This is the second instance of the shape 16 July already
@@ -879,12 +846,6 @@ impediment:
   outcomes_locus: RG 93
   transfer:
     locus: RG 95 first paragraph
-    latin: >-
-      Ius translationis in alium diem ob occurrentiam accidentalem cum die
-      liturgico, qui in tabella praecedentiae superiorem obtinet locum, competit
-      solummodo festis I classis. Alia festa, ab Officio gradus superioris
-      accidentaliter impedita, aut commemorantur aut, eo anno, penitus
-      omittuntur, iuxta rubricas.
     applies_to: first-class feasts only
     destination:
       locus: RG 96
@@ -905,8 +866,6 @@ impediment:
       impeded_when_easter_offset_between: [-7, 6]
       destination: the Monday after Low Sunday
       seat_easter_offset: 8
-      latin: festum Annuntiationis B. Mariae Virg., quando est transferendum post Pascha,
-        transfertur, tamquam in sedem propriam, in feriam II post dominicam in albis
     - key: commemoratione-omnium-fidelium-defunctorum
       locus: RG 96 b
       own_date: 11-02
@@ -914,8 +873,6 @@ impediment:
       impeded_when_weekday: sunday
       destination: the following Monday
       seat_offset_days: 1
-      latin: Commemoratio omnium Fidelium defunctorum, quando occurrit cum dominica,
-        transfertur, tamquam in sedem propriam, in feriam II sequentem
     proper_seat_note: >-
       "Tamquam in sedem propriam" matters: a day reached as a proper seat is not
       a borrowed lodging. On it the transferred item behaves as though it were at
@@ -923,7 +880,6 @@ impediment:
       impeded for that year.
     keeps_its_class:
       locus: RG 99
-      latin: Festa translata sunt eiusdem gradus ac in sede propria.
   reposition:
     locus: RG 100-102
     stated_only: true
@@ -933,13 +889,9 @@ impediment:
       carries no particular calendar, so nothing here is ever repositioned.
   fixed_commemoration:
     locus: RG 94
-    latin: >-
-      Commemoratio die fixo statuta non transfertur vel reponitur cum festo
-      transferendo vel reponendo, sed fit suo die vel omittitur.
     gloss: A commemoration attached to a date does not travel with the feast it accompanies.
   sunday_not_resumed:
     locus: RG 14
-    latin: Officium et Missa dominicae impeditae nec anticipantur nec resumuntur.
     gloss: An impeded Sunday is gone for that year. It is not moved forward, back, or
       into the following week.
   vigil_dropped:
@@ -956,11 +908,6 @@ impediment:
 commemoration:
   kinds:
     locus: RG 107-108
-    latin: >-
-      Commemorationes sunt aut privilegiatae aut ordinariae. Commemorationes
-      privilegiatae fiunt in Laudibus et in Vesperis necnon in omnibus Missis;
-      commemorationes vero ordinariae fiunt tantum in Laudibus, in Missis
-      conventualibus et in omnibus Missis lectis.
     gloss: >-
       An ordinary commemoration is made at every Low Mass and at the conventual
       Mass, and at no other sung Mass. A sung parish Mass that is not a
@@ -978,15 +925,6 @@ commemoration:
     closing: Omnes aliae commemorationes sunt commemorationes ordinariae.
   ceilings:
     locus: RG 111; RGMR 434
-    latin: >-
-      Ratio admittendi commemorationes haec est: a) in diebus liturgicis I
-      classis et in Missis in cantu non conventualibus, nulla admittitur
-      commemoratio, praeter unam privilegiatam; b) in dominicis II classis, una
-      tantum admittitur commemoratio, scilicet de festo II classis, quae tamen
-      omittitur si commemoratio privilegiata facienda sit; c) in aliis diebus
-      liturgicis II classis, una tantum admittitur commemoratio, scilicet aut
-      una privilegiata aut una ordinaria; d) in diebus liturgicis III et IV
-      classis, duae tantum admittuntur commemorationes.
     rules:
     - {clause: a, when_class: I, max: 1, privileged_only: true, what: 'On a first-class
         day, one commemoration only and it must be privileged.'}
@@ -1038,14 +976,9 @@ commemoration:
     applied: false
   order:
     locus: RG 113
-    latin: >-
-      Commemoratio de Tempore fit primo loco. In admittendis et ordinandis aliis
-      commemorationibus, servetur ordo tabellae praecedentiae.
     gloss: The season first, then the table order.
   surplus:
     locus: RG 114
-    latin: Quaelibet commemoratio, quae numerum pro singulis diebus liturgicis statutum
-      superet, omittitur.
   abolished:
     locus: Variationes cap. II n. 13; cap. IV n. 18 (Acta 52 (1960) 708-709)
     what: >-
@@ -1073,9 +1006,6 @@ orations:
   absolute_cap:
     locus: RGMR 435
     value: 3
-    latin: 'Quaelibet oratio, quae numerum pro singulis diebus liturgicis statutum
-      superet, omittitur; profecto numerum ternarium orationum nullo praetextu excedere
-      licet.'
     gloss: Three, always. Nullo praetextu.
   conclusions:
     locus: RGMR 436-437
@@ -1156,7 +1086,6 @@ appointed_across:
   stated: true
   locus: Proprium de tempore, Dominica Resurrectionis, the rubric printed under the
     Sequence at marginal n. 1145, printed p. 330
-  latin: Sequentia dicitur usque ad sabbatum in albis inclusive.
   note: >-
     The day list was already in the mass index as prose - the Sequence at
     easter-sunday carried "The rubric appoints the Sequence daily through
@@ -1185,7 +1114,6 @@ appointed_across:
   stated: true
   locus: Proprium de tempore, Dominica Pentecostes, the rubric printed under the Sequence
     at marginal n. 1314, printed p. 357
-  latin: Et dicitur cotidie usque ad sequens sabbatum inclusive.
   note: >-
     Stated nowhere in this repository before this row. Read for this file on
     2026-08-01 at a 200 dpi greyscale page image of artifact PDF p. 438 of the
@@ -1209,7 +1137,6 @@ appointed_across:
 mass_category:
   assumed: the Mass of the Office of the day
   locus: RGMR 270
-  latin: Missa proinde per se cum Officio diei concordare debet.
   not_tested:
   - {category: festive Mass, locus: RGMR 301-303}
   - {category: votive Mass, locus: 'RGMR 306-309, 314-317, 326, 328, 341, 384-387'}
@@ -1256,30 +1183,14 @@ divergences:
   reported: true
 
 unsettled:
-- what: one formulary the Missal carries and this calendar index does not
-  why: >-
-    The index's own notes record it - the Mass for the days within the octave of
-    the Nativity used on 29, 30 and 31 December, identified against the
-    controlling facsimile on 2026-07-31 as Diebus infra octavam Nativitatis
-    Domini, II classis, printed pp. 28-29. It is not in the fixed-date spine, so
-    nothing places it. This row held five. D. N. Iesu Christi Regis and
-    Sanctissimi Nominis Iesu are now masses in the index and are classified in
-    `assignment`; the Missa dominicae primae post Epiphaniam of printed p. 40 is
-    carried and classified `alternative-formulary`; and the Commemoratio septem
-    Dolorum B. Mariae Virg. of printed pp. 499-501 landed on 2026-08-02 as the
-    undated marian entry comm-septem-dolorum-beatae-mariae-virginis, classified
-    `calendar-commemoration` and carrying the mass choice
-    seven-sorrows-where-devotions-are-held.
-  effect: >-
-    29, 30 and 31 December are ranked and placed - each is a dated entry of rank
-    II - but each holds a placeholder in place of the one formulary the Missal
-    prints for all three, so the page can name the day and cannot show its Mass.
-- what: two entries that are the same celebration under different keys
+- what: the twenty-three-Sunday shortfall after Pentecost
   why: >-
     A year with exactly twenty-three Sundays after Pentecost puts the numbered
     Sunday and the last Sunday in one slot, and the day file emits both. RG 18's
-    closing paragraph decides it and is applied as an override; the underlying
-    duplication is in the day file rather than here.
+    closing paragraph legislates the twenty-five- through twenty-eight-Sunday
+    cases but does not expressly provide for this shortfall. The date-scoped
+    calendar refusal therefore prevents occurrence from choosing either entry;
+    a competent dated Ordo is required.
 - what: the Greater Litanies and the Rogation days
   why: >-
     The calendar index inscribes the Greater Litanies at 25 April under one key

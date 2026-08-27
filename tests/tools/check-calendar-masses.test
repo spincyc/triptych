@@ -16,6 +16,295 @@ encode() {
 # --help always works.
 "$tpt" "$tool" --help >/dev/null
 
+# The fixed-calendar spine and the temporal mass series are distinct identity
+# namespaces. These five 1962 formularies are fixed dated rows in the spine and
+# numbered temporal identities in the mass index. Their shared key, date,
+# principal title, rank, and kind identify the same Mass; a registry mismatch
+# alone must not make it disappear, while any shared identity mismatch must.
+/usr/bin/python3 - "$tools/$tool" <<'PY'
+import copy
+import sys
+import tempfile
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+from pathlib import Path
+
+import yaml
+
+loader = SourceFileLoader("check_calendar_masses", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+loader.exec_module(module)
+
+cases = (
+    (
+        "01-01", "octava-nativitatis-domini", "1962-01-01", "08",
+        "Octava Nativitatis Domini", "I",
+    ),
+    (
+        "01-06", "epiphania-domini", "1962-01-06", "10",
+        "In Epiphania Domini", "I",
+    ),
+    (
+        "01-13", "commemoratione-baptismatis-domini-nostri-iesu-christi",
+        "1962-01-13", "12",
+        "In Commemoratione Baptismatis Domini Nostri Iesu Christi", "II",
+    ),
+    (
+        "12-24", "vigil-nativity-lord", "1962-12-24", "05",
+        "Vigil of the Nativity of the Lord", "I",
+    ),
+    (
+        "12-25", "nativitate-domini-octave", "1962-12-25", "06",
+        "In Nativitate Domini, with octave", "I",
+    ),
+)
+
+spine_entries = []
+mass_entries = []
+for date, key, spine_registry, mass_registry, title, rank in cases:
+    spine = {
+        "date": date,
+        "key": key,
+        "kind": "christological",
+        "rank": rank,
+        "registry": spine_registry,
+        "title": title + "; commemoration filed separately",
+    }
+    mass = {
+        "date": date,
+        "key": key,
+        "name": title,
+        "rank": rank,
+        "registry": mass_registry,
+    }
+    problems = module._spine_identity_problems(spine, mass, "christological")
+    if problems:
+        raise SystemExit(f"separate registry namespaces should match: {problems}")
+    spine_entries.append(spine)
+    mass_entries.append(mass)
+
+# Exercise the full join too: a helper test alone would stay green if the
+# validator accidentally went back to looking masses up by registry.
+class StubSpine:
+    SOURCES = {"roman-1962": ()}
+
+    @staticmethod
+    def spine(calendar):
+        if calendar != "roman-1962":
+            raise AssertionError(calendar)
+        return spine_entries
+
+
+with tempfile.TemporaryDirectory() as directory:
+    path = Path(directory) / "roman-1962" / "propers.yaml"
+    path.parent.mkdir()
+    path.write_text(
+        yaml.safe_dump(
+            {
+                "sections": {
+                    "christological": {
+                        "kind": "christological",
+                        "masses": mass_entries,
+                    }
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    original = module.calendar_spine
+    module.calendar_spine = lambda: StubSpine
+    try:
+        problems = module.spine_problems([path])
+    finally:
+        module.calendar_spine = original
+    if problems:
+        raise SystemExit(f"stable-key spine join should accept all five: {problems}")
+
+spine = {
+    "date": "01-06",
+    "key": "epiphania-domini",
+    "kind": "christological",
+    "rank": "I",
+    "registry": "1962-01-06",
+    "title": "In Epiphania Domini",
+}
+mass = {
+    "date": "01-06",
+    "key": "epiphania-domini",
+    "name": "In Epiphania Domini",
+    "rank": "I",
+    "registry": "10",
+}
+for field, bad, named in (
+    ("key", "another-key", "key"),
+    ("date", "01-07", "date"),
+    ("name", "Another feast", "title"),
+    ("rank", "II", "rank"),
+):
+    changed = copy.deepcopy(mass)
+    changed[field] = bad
+    problems = module._spine_identity_problems(spine, changed, "christological")
+    if not any(f"identifies {named} " in problem for problem in problems):
+        raise SystemExit(f"shared {named} mismatch was not rejected: {problems}")
+problems = module._spine_identity_problems(spine, mass, "marian")
+if not any("filed marian" in problem for problem in problems):
+    raise SystemExit(f"section-kind mismatch was not rejected: {problems}")
+changed = copy.deepcopy(mass)
+changed["registry"] = "definitely-wrong-but-unique"
+problems = module._spine_identity_problems(spine, changed, "christological")
+if not any("not one of the five recorded" in problem for problem in problems):
+    raise SystemExit(f"unrecorded registry mismatch was not rejected: {problems}")
+
+
+def composed(name, text):
+    return {"name": name, "source": "composed", "text": text}
+
+
+# Exceptional rites state whether the normal Ordinary applies.  The mapping is
+# deliberately closed: absence means the ordinary full frame, while a present
+# mapping always names one of the three states and the rubrical basis for it.
+for applicability in ("full", "none", "unavailable"):
+    entry = {
+        "key": "exceptional-rite",
+        "name": "Exceptional Rite",
+        "registry": "rite-1",
+        "season": "holy-week",
+        "ordinary_frame": {
+            "applicability": applicability,
+            "basis": "The edition's appointed rite.",
+        },
+        "propers": [composed("Collect", "Deus")],
+    }
+    problems = []
+    module.check_entry(entry, 0, problems, section_kind="seasonal")
+    if problems:
+        raise SystemExit(f"valid ordinary_frame {applicability!r} failed: {problems}")
+
+for payload, expected in (
+    ([], "ordinary_frame must be a mapping"),
+    ({"applicability": "none"}, "ordinary_frame is missing field(s) basis"),
+    ({"basis": "rubric"}, "ordinary_frame is missing field(s) applicability"),
+    (
+        {"applicability": "partial", "basis": "rubric"},
+        "ordinary_frame.applicability must be one of",
+    ),
+    (
+        {"applicability": "none", "basis": "  "},
+        "ordinary_frame.basis must be a nonempty string",
+    ),
+    (
+        {"applicability": "none", "basis": "rubric", "note": "free prose"},
+        "ordinary_frame carries unknown field(s) note",
+    ),
+):
+    problems = []
+    module.check_ordinary_frame("mass exceptional-rite", payload, problems)
+    if not any(expected in problem for problem in problems):
+        raise SystemExit(f"ordinary_frame did not reject {payload!r}: {problems}")
+
+common_with_frame = {
+    "key": "common-with-frame",
+    "name": "Common with Frame",
+    "registry": "common-1",
+    "ordinary_frame": {"applicability": "none", "basis": "rubric"},
+    "propers": [composed("Collect", "Deus")],
+}
+problems = []
+module.check_entry(
+    common_with_frame, 0, problems, section_kind=module.COMMON_KIND
+)
+if not any("a Common cannot carry ordinary_frame" in problem for problem in problems):
+    raise SystemExit(f"ordinary_frame on a Common was not rejected: {problems}")
+
+
+def unavailable(scope):
+    return {
+        "state": "unavailable",
+        "scope": scope,
+        "reasons": [{"kind": "no-exemplar"}],
+    }
+
+
+def collect_gap(target="common-with-collect"):
+    return {
+        "key": "saint-with-collect-gap",
+        "name": "Saint with Collect Gap",
+        "registry": "saint-1",
+        "date": "01-01",
+        "kind": "sanctoral",
+        "rank": "III",
+        "takes_from": {"mass": target},
+        "text_status": unavailable("proper-collect"),
+    }
+
+
+common = {
+    "key": "common-with-collect",
+    "name": "Common with Collect",
+    "registry": "common-2",
+    "propers": [composed("Collect", "Deus"), composed("Secret", "Suscipe")],
+}
+saint = collect_gap()
+masses = [("sanctoral", saint), (module.COMMON_KIND, common)]
+if problems := module.common_reference_problems(masses):
+    raise SystemExit(f"valid typed proper-Collect gap failed: {problems}")
+
+problems = module.common_reference_problems(
+    [("sanctoral", saint), ("seasonal", common)]
+)
+if not any("not the Commune Sanctorum" in problem for problem in problems):
+    raise SystemExit(f"non-Common Collect target was not rejected: {problems}")
+
+problems = module.common_reference_problems([("sanctoral", collect_gap("absent"))])
+if not any("no entry for" in problem for problem in problems):
+    raise SystemExit(f"missing Collect target was not rejected: {problems}")
+
+common_without_collect = dict(common)
+common_without_collect["propers"] = [composed("Secret", "Suscipe")]
+problems = module.common_reference_problems(
+    [("sanctoral", saint), (module.COMMON_KIND, common_without_collect)]
+)
+if not any("appoints no unqualified Collect" in problem for problem in problems):
+    raise SystemExit(f"Collect-free Common target was not rejected: {problems}")
+
+common_with_qualified_collect = dict(common)
+common_with_qualified_collect["propers"] = [
+    composed("Collect (Altera oratio)", "Deus")
+]
+problems = module.common_reference_problems(
+    [("sanctoral", saint), (module.COMMON_KIND, common_with_qualified_collect)]
+)
+if not any("appoints no unqualified Collect" in problem for problem in problems):
+    raise SystemExit(f"qualified-only Collect target was not rejected: {problems}")
+
+broken_common = dict(common)
+broken_common.pop("propers")
+broken_common["takes_from"] = {"mass": "absent-common"}
+problems = module.common_reference_problems(
+    [("sanctoral", saint), (module.COMMON_KIND, broken_common)]
+)
+if not any("does not resolve" in problem for problem in problems):
+    raise SystemExit(f"unresolvable Common target was not rejected: {problems}")
+
+# The pre-existing non-resolving Common direction remains a separate contract:
+# its explicitly unavailable target carries no formulary to resolve.
+unavailable_common = {
+    "key": "unavailable-common",
+    "text_status": unavailable("missal-formulary"),
+}
+directed = {
+    "key": "directed-saint",
+    "common_from": {"options": [{"mass": "unavailable-common"}]},
+    "text_status": unavailable("proper-collect"),
+}
+problems = module.common_reference_problems(
+    [("sanctoral", directed), (module.COMMON_KIND, unavailable_common)]
+)
+if problems:
+    raise SystemExit(f"existing common_from contract regressed: {problems}")
+PY
+
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 cd "$sandbox"
@@ -540,6 +829,62 @@ if "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
 	exit 1
 fi
 
+# Duplicate quoted registry IDs are rejected even when the mass keys differ,
+# and the diagnostic names the duplicated ID.
+{
+	header
+	cat <<'YAML'
+  - key: one
+    name: One
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+  - key: two
+    name: Two
+    registry: "01"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if output="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "expected failure for duplicate mass registry IDs" >&2
+	exit 1
+fi
+case "$output" in
+	*"duplicate registry IDs: 01"*) ;;
+	*)
+		echo "duplicate registry diagnostic did not name 01: $output" >&2
+		exit 1
+		;;
+esac
+
+# Distinct registry IDs remain valid for otherwise independent masses.
+{
+	header
+	cat <<'YAML'
+  - key: one
+    name: One
+    registry: "one-id"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
+  - key: two
+    name: Two
+    registry: "two-id"
+    season: test
+    propers:
+      - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
+YAML
+} >src/sources/calendars/test/propers.yaml
+encode
+if ! "$tpt" "$tool" --root src/sources/calendars >/dev/null 2>&1; then
+	echo "distinct mass registry IDs must pass" >&2
+	exit 1
+fi
+
 # Carrying both propers and forms is rejected.
 {
 	header
@@ -551,7 +896,8 @@ fi
     propers:
       - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
     forms:
-      - name: Vigil Mass
+      - id: vigil
+        name: Vigil Mass
         propers:
           - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
 YAML
@@ -571,10 +917,12 @@ fi
     registry: "01"
     season: test
     forms:
-      - name: Vigil Mass
+      - id: vigil
+        name: Vigil Mass
         propers:
           - {name: Introit, source: scripture, verses: ["Psalm 1:1"]}
-      - name: Mass during the Day
+      - id: day
+        name: Mass during the Day
         propers:
           - {name: Introit, source: scripture, verses: ["Psalm 2:1"]}
           - {name: Gospel, source: scripture, verses: ["John 1:1-18"]}
@@ -875,6 +1223,30 @@ case "$out" in
 *) echo "an excepted locus must still be reported, got: $out" >&2; exit 1 ;;
 esac
 
+# `citations` owns exact exception scope.  The wrapper must preserve its
+# owner+locus decision instead of re-excepting every Proper at a known locus.
+python3 - <<'PY'
+from copy import deepcopy
+from pathlib import Path
+import yaml
+
+path = Path("src/sources/calendars/test/propers.yaml")
+document = yaml.safe_load(path.read_text())
+mass = document["sections"]["seasonal"]["masses"][0]
+communion = deepcopy(mass["propers"][0])
+communion["name"] = "Communion"
+mass["propers"].append(communion)
+path.write_text(yaml.safe_dump(document, sort_keys=False))
+PY
+if out="$("$tpt" "$tool" --root src/sources/calendars 2>&1)"; then
+	echo "an Introit exception must not excuse Communion at the same locus" >&2
+	exit 1
+fi
+case "$out" in
+*"excepted"*"only/Introit"*"error"*"only/Communion"*"Psalm 118:137"*) ;;
+*) echo "expected exact owner scope through the wrapper, got: $out" >&2; exit 1 ;;
+esac
+
 # A breach the ledger does not list still fails, so a new leak cannot slip in
 # behind the known ones.
 ledger '"Psalm 118:137", "Psalm 15:11"' <<'YAML'
@@ -1009,6 +1381,51 @@ $base
 YAML
 if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
 	echo "a permitted translation carrying its notice should validate" >&2
+	exit 1
+fi
+
+# A Lectionary acclamation cannot cite ICEL's 2010 Roman Missal music edition
+# as the witness for its English. This is deliberately narrower than rejecting
+# ICEL: ICEL's historical Lectionary acknowledgement is a separate rights
+# layer, and may be usable once an exact edition and exemplar are established.
+icel_music='edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21'
+for acclamation in "Gospel Acclamation" "Verse Before the Gospel"; do
+	translated <<YAML
+  - key: t
+    name: T
+    registry: "t1"
+    season: advent
+    propers:
+    - name: $acclamation
+      source: composed
+      text: "Alleluia."
+      translations:
+      - lang: en
+        rights: permission
+        source_id: $icel_music
+        notice: "The English translation of The Roman Missal (c) 2010, ICEL."
+        text: "An acclamation."
+YAML
+	out="$("$tpt" "$tool" --root tr-root 2>&1 || true)"
+	case "$out" in
+	*"is a Lectionary slot"*"cannot use an ICEL Music for the Roman Missal source"*) ;;
+	*) echo "expected Roman Missal source rejection for $acclamation, got: $out" >&2; exit 1 ;;
+	esac
+done
+
+# The source classification is proper-specific: the same Roman Missal music
+# edition remains a valid witness for a text that actually belongs to it.
+translated <<YAML
+$base
+      translations:
+      - lang: en
+        rights: permission
+        source_id: $icel_music
+        notice: "The English translation of The Roman Missal (c) 2010, ICEL."
+        text: "Stir up thy power."
+YAML
+if ! "$tpt" "$tool" --root tr-root >/dev/null 2>&1; then
+	echo "the Roman Missal source must remain valid for a Roman Missal proper" >&2
 	exit 1
 fi
 

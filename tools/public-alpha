@@ -41,7 +41,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
         ),
@@ -59,17 +59,17 @@ EXAMPLES = {
             (
                 "{",
                 "  \"approval_conferred\": false,",
-                "  \"notice\": \"PREPARATION ONLY \u2014 NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
+                "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 2257 more lines",
+                "... 13233 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read the policy first: `check` is the gate `prepare` reports against",
@@ -79,7 +79,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read-only first: `check` validates the policy `build` renders from",
@@ -132,6 +132,61 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
 WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
+# Rights recorded as `permission` are not automatically grants for every
+# public surface.  ICEL's standing web-display permission, in particular, does
+# not cover the downloadable JSON, public Git corpus, CLI or PDFs assembled by
+# this release tool.  Nor does the generic inventory spelling `licensed-free`
+# prove authorization for every one of those surfaces: licensed source-study
+# words must not become an assembled liturgy merely because a generator copied
+# that spelling into its output.  Source-browser structures are bound as exact
+# public inputs too, but their typed source-study metadata is governed by the
+# source projection rather than by the liturgy quarantine below.  Only the two
+# non-licensed rights states below are authorized in generated public liturgy
+# structures.
+BOUND_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics", "sources")
+LITURGICAL_RIGHTS_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics")
+PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(("public-domain", "project-created"))
+ICEL_SOURCE_MARKERS = (
+    "international-commission-on-english-in-the-liturgy",
+    "icel-antiphonary",
+)
+ELLC_SOURCE_MARKERS = ("english-language-liturgical-consultation",)
+RESTRICTED_AUTHORITY_REFERENCE_RE = re.compile(
+    r"\b(?:ICEL|ELLC)\b|"
+    r"International(?: |-)Commission(?: |-)on(?: |-)English(?: |-)in(?: |-)the(?: |-)Liturgy|"
+    r"English(?: |-)Language(?: |-)Liturgical(?: |-)Consultation",
+    re.IGNORECASE,
+)
+# A rights absence is deliberately much smaller than its private provenance
+# record.  Public projections may say only which target/language is absent and
+# give its typed state.  Source ids, artifact ids, hashes, page loci, rights
+# bases and permission details remain on the private/source-study side.
+RESTRICTED_PROJECTION_STATES = frozenset(("rights-restricted",))
+RESTRICTED_PROJECTION_KINDS = frozenset(("rights-withheld",))
+RESTRICTED_PROJECTION_FIELDS = frozenset(("target", "lang", "state"))
+RESTRICTED_TARGET_FIELDS = frozenset(
+    ("mass", "form_id", "proper", "cycle", "occurrence", "extent")
+)
+SOURCE_STUDY_DISTRIBUTABLE_RIGHTS = frozenset(
+    ("licensed", "project-created", "public-domain")
+)
+ORDINARY_ABSENCE_FIELDS = frozenset(("key", "count", "state", "kind"))
+ORDINARY_ABSENCE_KINDS = frozenset(
+    (
+        "witness-gap",
+        "rights-withheld",
+        "no-exemplar",
+        "model-gap",
+        "outside-layer",
+        "not-applicable",
+    )
+)
+SAFE_TYPED_KEY_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
+NON_NEUTRAL_ABSENCE_KEY_PARTS = (
+    "artifact", "copyright", "ellc", "icel", "permission", "source"
+)
+ORDINARY_ABSENCE_LOCATION_RE = re.compile(r"^\$\.absences\[[0-9]+\]$")
+_PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
 # Tracks of the abridged plans: one tier of one plan in one edition, typeset
 # from the tracked plan and the tracked verse text and installed as a reviewed
 # PDF. A track is not a publication record and deliberately has none: it has no
@@ -660,6 +715,282 @@ def is_unserved_browser_page(relative: str) -> bool:
     )
 
 
+def protected_source_identity_pattern() -> re.Pattern[str] | None:
+    """Compile the source library's non-distributable artifact identities.
+
+    The manifest library, not a provider-name heuristic, decides which source
+    identities are private.  An edition id is protected only when every one of
+    its artifacts lacks even a source-study redistribution basis; one
+    unresolved capture must not poison a sibling normalized artifact that has
+    an actual licence.  Cache per ``ROOT`` because tests repoint the module at
+    fixtures and a release process validates many structure files.
+    """
+    cache_key = str(ROOT.resolve())
+    if cache_key in _PROTECTED_IDENTITY_PATTERNS:
+        return _PROTECTED_IDENTITY_PATTERNS[cache_key]
+    works = ROOT / "src/sources/works"
+    records: list[dict] = []
+    for path in sorted(works.glob("**/artifact.toml")) if works.is_dir() else []:
+        try:
+            record = tomllib.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+            label = path.relative_to(ROOT).as_posix()
+            raise ReleaseError(f"cannot read source artifact manifest {label}: {exc}") from exc
+        if not isinstance(record, dict):
+            label = path.relative_to(ROOT).as_posix()
+            raise ReleaseError(f"source artifact manifest {label} is not a table")
+        for field in ("id", "edition_id", "rights_status"):
+            if not isinstance(record.get(field), str) or not record[field]:
+                label = path.relative_to(ROOT).as_posix()
+                raise ReleaseError(
+                    f"source artifact manifest {label} has no nonempty {field}"
+                )
+        records.append(record)
+
+    protected = {
+        record["id"]
+        for record in records
+        if record.get("rights_status") not in SOURCE_STUDY_DISTRIBUTABLE_RIGHTS
+    }
+    by_edition: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        by_edition[record["edition_id"]].append(record)
+    protected.update(
+        edition_id
+        for edition_id, artifacts in by_edition.items()
+        if artifacts
+        and all(
+            artifact.get("rights_status") not in SOURCE_STUDY_DISTRIBUTABLE_RIGHTS
+            for artifact in artifacts
+        )
+    )
+    pattern = (
+        re.compile(
+            r"(?<![a-z0-9._-])(?:"
+            + "|".join(
+                re.escape(identity) for identity in sorted(protected, key=len, reverse=True)
+            )
+            + r")(?![a-z0-9._-])"
+        )
+        if protected
+        else None
+    )
+    _PROTECTED_IDENTITY_PATTERNS[cache_key] = pattern
+    return pattern
+
+
+def validate_liturgical_public_data(path: Path) -> None:
+    """Refuse restricted witnesses in generated public liturgy JSON.
+
+    Generators own the positive inclusion rules.  This release gate is the
+    independent negative rule: even a stale or hand-edited structure file may
+    not be copied merely because it already sits under ``src/web/data``.
+    """
+    data_root = ROOT / WEB_DATA_ROOT_RELATIVE
+    try:
+        relative = path.relative_to(data_root)
+    except ValueError:
+        return
+    parts = relative.parts
+    if (
+        len(parts) < 3
+        or parts[0] != "structure"
+        or parts[1] not in LITURGICAL_RIGHTS_STRUCTURE_KINDS
+        or path.suffix != ".json"
+    ):
+        return
+    label = (WEB_DATA_ROOT_RELATIVE / relative).as_posix()
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
+    protected_identity = protected_source_identity_pattern()
+
+    def visit(value: object, location: str = "$") -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value):
+                visit(item, f"{location}[{index}]")
+            return
+        if isinstance(value, str):
+            match = protected_identity.search(value) if protected_identity is not None else None
+            if match is not None:
+                raise ReleaseError(
+                    f"{label} {location}: protected source identity {match.group(0)!r} "
+                    "belongs only in the source-study record"
+                )
+            if RESTRICTED_AUTHORITY_REFERENCE_RE.search(value):
+                raise ReleaseError(
+                    f"{label} {location}: restricted-authority metadata belongs only "
+                    "in the source-study record, not an assembled public liturgy"
+                )
+            return
+        if not isinstance(value, dict):
+            return
+        if (
+            parts[1] == "ordinary"
+            and ORDINARY_ABSENCE_LOCATION_RE.fullmatch(location)
+        ):
+            fields = set(value)
+            if fields != ORDINARY_ABSENCE_FIELDS:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence catalog row must "
+                    "contain exactly key, count, state and kind"
+                )
+            key = value.get("key")
+            count = value.get("count")
+            kind = value.get("kind")
+            state = value.get("state")
+            if (
+                not isinstance(key, str)
+                or not SAFE_TYPED_KEY_RE.fullmatch(key)
+                or RESTRICTED_AUTHORITY_REFERENCE_RE.search(key)
+                or any(part in key for part in NON_NEUTRAL_ABSENCE_KEY_PARTS)
+            ):
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence key must be a "
+                    "neutral typed key"
+                )
+            if not isinstance(count, int) or isinstance(count, bool) or count < 0:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence count must be a "
+                    "nonnegative integer"
+                )
+            if not isinstance(kind, str) or kind not in ORDINARY_ABSENCE_KINDS:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence kind {kind!r} is "
+                    "outside the safe taxonomy"
+                )
+            expected_state = (
+                "rights-restricted" if kind == "rights-withheld" else "unavailable"
+            )
+            if state != expected_state:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence kind {kind!r} "
+                    f"requires state {expected_state!r}"
+                )
+            return
+        rights = value.get("rights")
+        rights_status = value.get("rights_status")
+        source_id = value.get("source_id")
+        restricted_permission = rights == "permission" or rights_status == "permission"
+        icel_witness = isinstance(source_id, str) and any(
+            marker in source_id.casefold() for marker in ICEL_SOURCE_MARKERS
+        )
+        ellc_witness = isinstance(source_id, str) and any(
+            marker in source_id.casefold() for marker in ELLC_SOURCE_MARKERS
+        )
+        if restricted_permission or icel_witness or ellc_witness:
+            reason = (
+                "permission-scoped rights"
+                if restricted_permission
+                else "ICEL witness"
+                if icel_witness
+                else "ELLC witness"
+            )
+            raise ReleaseError(
+                f"{label} {location}: {reason} is not distributable on public-alpha surfaces"
+            )
+        if rights is not None and (
+            not isinstance(rights, str)
+            or rights not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+        ):
+            raise ReleaseError(
+                f"{label} {location}: rights {rights!r} have no explicit authorization "
+                "for every public-alpha liturgy surface"
+            )
+        if rights_status is not None and (
+            not isinstance(rights_status, str)
+            or rights_status not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+        ):
+            raise ReleaseError(
+                f"{label} {location}: rights_status {rights_status!r} has no explicit "
+                "authorization for every public-alpha liturgy surface"
+            )
+        if rights is not None and rights_status is not None and rights != rights_status:
+            raise ReleaseError(
+                f"{label} {location}: rights {rights!r} and rights_status "
+                f"{rights_status!r} do not name the same public authorization"
+            )
+
+        state = value.get("state")
+        if isinstance(state, str) and state in RESTRICTED_PROJECTION_STATES:
+            difference = sorted(set(value) ^ RESTRICTED_PROJECTION_FIELDS)
+            if difference:
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection must "
+                    "contain exactly target, lang and state; field difference "
+                    f"{', '.join(difference)}"
+                )
+            lang = value.get("lang")
+            if "lang" in value and (
+                not isinstance(lang, str) or not lang.strip()
+            ):
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection has "
+                    "a non-string or empty lang"
+                )
+            target = value.get("target")
+            target_is_string = isinstance(target, str) and bool(target.strip())
+            target_is_structured = (
+                isinstance(target, dict)
+                and set(target) == RESTRICTED_TARGET_FIELDS
+                and all(
+                    isinstance(target.get(field), str) and bool(target[field].strip())
+                    for field in ("mass", "form_id", "proper", "cycle", "extent")
+                )
+                and isinstance(target.get("occurrence"), int)
+                and not isinstance(target.get("occurrence"), bool)
+                and target["occurrence"] >= 1
+            )
+            if "target" in value and not (target_is_string or target_is_structured):
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection has "
+                    "an unsafe target; it may be a label or the exact safe target schema"
+                )
+        kind = value.get("kind")
+        if isinstance(kind, str) and kind in RESTRICTED_PROJECTION_KINDS:
+            if parts[1] == "propers":
+                raise ReleaseError(
+                    f"{label} {location}: a rights-withheld Proper must project only "
+                    "as target, lang and state"
+                )
+            extra = sorted(set(value) - {"kind"})
+            if extra:
+                raise ReleaseError(
+                    f"{label} {location}: rights-withheld public reason exposes private "
+                    f"fields {', '.join(extra)}; only its typed kind is safe"
+                )
+        for key, item in value.items():
+            visit(item, f"{location}.{key}")
+
+    visit(payload)
+
+
+def is_bound_web_data_source(path: Path) -> bool:
+    """Whether this generated-data input belongs to the approval closure.
+
+    Browser structure JSON is authoritative served content, not a disposable
+    cache: changing a day, proper, rubric, Ordinary element or source graph
+    changes what the public artifact says. Bind those exact generated bytes.
+    Bible fragments remain outside this set because their 9,387-file closure is
+    independently driven and verified from the one bound ``bibles.json``
+    decision.
+    """
+    try:
+        relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
+    except ValueError:
+        return False
+    if relative == Path("bibles.json"):
+        return True
+    parts = relative.parts
+    return (
+        len(parts) >= 3
+        and parts[0] == "structure"
+        and parts[1] in BOUND_STRUCTURE_KINDS
+        and path.suffix == ".json"
+    )
+
+
 def web_data_files() -> dict[str, Path]:
     """Map every copied artifact data-root path to the repository file it copies.
 
@@ -698,6 +1029,7 @@ def web_data_files() -> dict[str, Path]:
                 "the generated data root must hold JSON only: "
                 f"{path.relative_to(ROOT).as_posix()}"
             )
+        validate_liturgical_public_data(path)
         relative = path.relative_to(data_root).as_posix()
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
 
@@ -773,7 +1105,11 @@ def site_source_paths() -> set[str]:
     pages are: a reader reaches them, and the approval is a statement about what
     a reader may reach. `bibles.json` is here because it is the single decision
     about which scripture editions the site may serve, so an edition added or a
-    publishable flag flipped moves the authorization.
+    publishable flag flipped moves the authorization. Every generated liturgy
+    structure and source-browser projection is here too: those JSON bytes are
+    the exact calendar, proper, rubric, Ordinary and source-graph content the
+    artifact serves, so binding only its generator would not catch a stale or
+    hand-edited result.
 
     The 9,387 verse fragments are deliberately not bound. Binding them would add
     a hash line per fragment and move the authorization on every regeneration,
@@ -786,12 +1122,14 @@ def site_source_paths() -> set[str]:
     """
     browser = {
         path.relative_to(ROOT).as_posix()
-        for path in (*web_browser_pages().values(), *web_data_files().values())
-        if WEB_BROWSER_ROOT_RELATIVE.as_posix() in path.relative_to(ROOT).as_posix()
+        for path in web_browser_pages().values()
     }
-    manifest = web_data_manifest_path()
-    if manifest.is_file():
-        browser.add(manifest.relative_to(ROOT).as_posix())
+    browser.update(
+        path.relative_to(ROOT).as_posix()
+        for path in web_data_files().values()
+        if path.is_relative_to(ROOT / WEB_BROWSER_ROOT_RELATIVE)
+        or is_bound_web_data_source(path)
+    )
     # The tracks are bound, where the fragments are not, because nothing else
     # decides them: a fragment is a consequence of bibles.json, while a track is
     # a whole published volume of scripture whose only gate is the file being

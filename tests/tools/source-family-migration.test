@@ -59,10 +59,13 @@ match '^source-family-migration valid: families=[0-9]+ review_units=[0-9]+ scree
 units="$(field review_units "$summary")"
 screened="$(field screened "$summary")"
 pending="$(field pending "$summary")"
-if [ "$units" -lt 1 ] || [ "$(field families "$summary")" -lt 1 ]; then
-	echo "expected the repository ledger to carry families and review units: $summary" >&2
+if [ "$units" -lt 1 ]; then
+	echo "expected the repository ledger to carry review units: $summary" >&2
 	exit 1
 fi
+# A current review inventory can legitimately contain no reusable families:
+# the review units remain the accountable pending work, so zero families must
+# not make the read-only repository check contradict the tool's valid result.
 # The counts must add up. Whether a human has screened the families is a
 # separate question and not one this test may answer for them: asserting
 # screened == units over the repository's own ledger meant that adding a single

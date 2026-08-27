@@ -262,14 +262,29 @@
   }
 
   function deferredState(parsed) {
-    return [];
+    const mode = requestedModeOf(parsed);
+    // Study has a complete public spelling but no renderer in this slice.
+    // Compare deliberately does not: the state contract requires an explicit
+    // comparison request, for which v1 exposes no public URL spelling, so a
+    // bare mode=compare is rejected instead of masquerading as deferred work.
+    return mode === 'study' ? ['mode=' + mode] : [];
   }
 
   function requestedModeOf(parsed) {
     const duplicates = (parsed.duplicates || []).some(function (row) {
-      return row.key === 'ordinary';
+      return row.key === 'ordinary' || row.key === 'mode';
     });
     if (duplicates) return null;
+    if (parsed.present.indexOf('mode') >= 0) {
+      const mode = parsed.recognized.mode;
+      if (Contract.MODES.indexOf(mode) < 0) return null;
+      if (parsed.present.indexOf('ordinary') >= 0) {
+        const legacy = parsed.recognized.ordinary === '1' ? 'missal' :
+          (parsed.recognized.ordinary === '0' ? 'read' : null);
+        if (legacy === null || mode !== legacy) return null;
+      }
+      return mode;
+    }
     if (parsed.present.indexOf('ordinary') < 0) return 'read';
     if (parsed.recognized.ordinary === '0') return 'read';
     if (parsed.recognized.ordinary === '1') return 'missal';
@@ -279,6 +294,8 @@
   function modeLabel(mode) {
     if (mode === 'missal') return 'Missal';
     if (mode === 'read') return 'Read';
+    if (mode === 'study') return 'Study';
+    if (mode === 'compare') return 'Compare';
     return 'Mode unavailable';
   }
 
@@ -322,10 +339,11 @@
   }
 
   async function validateExplicitVariants(parsed, manifests, selectedMissal) {
-    const present = (parsed.variantKeys || []).filter(function (key) {
+    const variantPresent = (parsed.variantKeys || []).filter(function (key) {
       return parsed.present.indexOf(key) >= 0;
     });
-    if (!present.length) return [];
+    const languagePresent = parsed.present.indexOf('ordinary-lang') >= 0;
+    if (!languagePresent && !variantPresent.length) return [];
     const calendar = ((manifests.ordinaryIndex && manifests.ordinaryIndex.calendars) || [])
       .find(function (row) { return row.calendar === selectedMissal; });
     const structures = calendar
@@ -341,7 +359,17 @@
       });
     });
     const errors = [];
-    present.forEach(function (key) {
+    if (languagePresent && !structures.some(function (structure) {
+      return (structure.languages || []).some(function (row) {
+        return row.lang === parsed.recognized['ordinary-lang'];
+      });
+    })) {
+      errors.push({
+        code: 'invalid-explicit-value', path: 'ordinary-lang',
+        message: 'the explicit Ordinary language is not applicable to the selected edition’s production Ordinary'
+      });
+    }
+    variantPresent.forEach(function (key) {
       if (!allowed[key] || allowed[key].indexOf(parsed.recognized[key]) < 0) {
         errors.push({
           code: 'invalid-explicit-variant', path: key,
@@ -364,15 +392,27 @@
     if (!Contract.strictDate(wantedDate)) {
       errors.push({ code: 'invalid-explicit-value', path: 'date', message: 'the requested date is not a real YYYY-MM-DD civil date' });
     }
+    if (parsed.present.indexOf('mode') >= 0 &&
+        parsed.present.indexOf('ordinary') >= 0 && requestedModeOf(parsed) === null) {
+      errors.push({
+        code: 'conflicting-explicit-mode', path: 'mode',
+        message: 'explicit mode conflicts with the legacy ordinary state'
+      });
+    }
     return { ok: errors.length === 0, missal: wantedMissal, date: wantedDate, errors: errors };
   }
 
   async function assemble(parsed, manifests, preliminary) {
     const missal = preliminary.missal;
     const year = preliminary.date.slice(0, 4);
-    const needsOrdinary = parsed.present.indexOf('ordinary-lang') >= 0 ||
-      parsed.recognized.ordinary === '1' ||
-      (parsed.variantKeys || []).some(function (key) { return parsed.present.indexOf(key) >= 0; });
+    const requestedMode = requestedModeOf(parsed);
+    // Read does not present the Ordinary, but explicit dormant Ordinary state
+    // is still source-validated. Remembered or default state remains cold.
+    const explicitOrdinary = parsed.present.indexOf('ordinary-lang') >= 0 ||
+      (parsed.variantKeys || []).some(function (key) {
+        return parsed.present.indexOf(key) >= 0;
+      });
+    const needsOrdinary = requestedMode === 'missal' || explicitOrdinary;
     const paths = [
       'structure/rubrics/' + missal + '.json',
       'structure/calendar/' + missal + '/' + year + '.json',
@@ -491,7 +531,10 @@
     }));
     orationsSelect.value = state.languages.orations;
     const readable = (runtime.branch && runtime.branch.readable) || [];
-    if (readable.length > 1) {
+    // The unresolved document is the only selector when the source appoints
+    // coequal formularies.  A native select would visibly preselect its first
+    // option and manufacture the very default the adapter refused to choose.
+    if (readable.length > 1 && runtime.outcome !== 'unresolved') {
       T.fillSelect(formularySelect, readable.map(function (row) {
         return { value: row.key, label: (row.label || row.key) + ' — ' + row.state };
       }));
@@ -608,7 +651,9 @@
         ? runtime.branches.map(function (row) {
           return row.result && row.result.resolved && row.result.resolved.formulary;
         }).filter(Boolean).join('; ')
-        : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)]
+        : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)],
+      ['Mass form', state.form ||
+        (runtime.result && runtime.result.resolved && runtime.result.resolved.form)]
     ]));
     detailsBody.appendChild(selection);
 
@@ -629,7 +674,11 @@
       outcome.appendChild(T.el('h3', null, 'Reader outcome'));
       const messages = {
         deferred: 'An active request is valid and preserved, but is not yet rendered.',
-        unresolved: 'The current request is validated, but no formulary outcome has been selected.',
+        unresolved: runtime.branches.some(function (row) {
+          return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
+        })
+          ? 'The current request has rendered territorial results alongside a branch-local formulary choice that remains unresolved.'
+          : 'The current request is validated, but no formulary outcome has been selected.',
         unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
       };
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
@@ -674,7 +723,7 @@
 
   function commitOutcomePresentation(presentation) {
     const held = presentation || {};
-    const mode = held.mode === 'read' || held.mode === 'missal' ? held.mode : null;
+    const mode = Contract.MODES.indexOf(held.mode) >= 0 ? held.mode : null;
     runtime.mode = mode;
     runtime.outcome = held.outcome || runtime.outcome;
     window.dayReaderDebug.mode = mode;
@@ -1050,6 +1099,256 @@
     };
   }
 
+  function primaryDayChoice(result, branch) {
+    const readable = new Set();
+    (branch && branch.readable || []).forEach(function (one) {
+      if (one.id) readable.add(one.id);
+      if (one.key) readable.add(one.key);
+    });
+    return (result.unresolvedChoices || []).find(function (one) {
+      return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
+        ((one.options || []).length > 1 && one.options.every(function (option) {
+          return readable.has(option.id);
+        }));
+    }) || null;
+  }
+
+  function translationIdentity(row) {
+    return row && (row.source_id || row.source || null);
+  }
+
+  /** Witnesses that can supply every translated Proper without suppressing one. */
+  function translationWitnessState(result, structure, language) {
+    if (!result || language === T.SOURCE_LANGUAGE) {
+      return { requiresChoice: false, held: [], choices: [] };
+    }
+    const heldByProper = [];
+    let requiresChoice = false;
+    let anonymousHeldTranslation = false;
+    (result.events || []).forEach(function (event) {
+      if (event.kind !== 'proper' || !event.selected ||
+          event.selected.kind !== 'composed' || event.selected.language !== language) return;
+      const selected = event.selected;
+      if (selected.availability === 'choice-required') {
+        const ids = Array.from(new Set(selected.unresolvedWitnesses || [])).filter(Boolean);
+        if (ids.length > 1) {
+          requiresChoice = true;
+          heldByProper.push(ids);
+        } else anonymousHeldTranslation = true;
+      } else if (selected.availability === 'held' && !selected.missing && selected.text) {
+        if (selected.sourceId) heldByProper.push([selected.sourceId]);
+        else anonymousHeldTranslation = true;
+      }
+    });
+    if (!heldByProper.length || anonymousHeldTranslation) {
+      return { requiresChoice: requiresChoice, held: [], choices: [] };
+    }
+    const common = heldByProper.reduce(function (intersection, ids) {
+      return intersection.filter(function (id) { return ids.indexOf(id) >= 0; });
+    }, heldByProper[0].slice());
+    const labels = new Map((structure.translations || []).map(function (row) {
+      return [translationIdentity(row), row.label || translationIdentity(row)];
+    }));
+    return {
+      requiresChoice: requiresChoice,
+      held: common,
+      choices: requiresChoice ? common.map(function (id) {
+        return { id: id, label: labels.get(id) || id };
+      }) : []
+    };
+  }
+
+  function validateExplicitTranslationWitness(state, derived, structure) {
+    const wanted = state.languages && state.languages.translationWitness || null;
+    if (!wanted) return [];
+    const errors = [];
+    (derived.options || []).forEach(function (branch) {
+      const branchState = resultStateForBranch(state, branch, derived.options.length > 1);
+      const languages = Object.assign({}, branchState.languages);
+      delete languages.translationWitness;
+      const witnessless = Object.assign({}, branchState, { languages: languages });
+      const probe = Adapters.adaptDay({
+        request: witnessless,
+        derived: derived,
+        structure: structure,
+        ordinary: null
+      });
+      const witnessState = translationWitnessState(
+        probe, structure, branchState.languages.orations
+      );
+      if (primaryDayChoice(probe, branch) || witnessState.held.indexOf(wanted) < 0) {
+        errors.push({
+          code: 'invalid-explicit-value', path: 'translation-witness',
+          message: 'the explicit translation witness cannot faithfully supply this resolved Day formulary and language'
+        });
+      }
+    });
+    return errors.slice(0, 1);
+  }
+
+  function resolvableTranslationWitnessState(result, structure, state) {
+    const witnessState = translationWitnessState(result, structure, state.languages.orations);
+    if (!witnessState.choices.length || !runtime.derived) return witnessState;
+    const choices = witnessState.choices.filter(function (option) {
+      const languages = Object.assign({}, state.languages, {
+        translationWitness: option.id
+      });
+      const candidate = Object.assign({}, state, { languages: languages });
+      return !validateExplicitTranslationWitness(
+        candidate, runtime.derived, structure
+      ).length;
+    });
+    return Object.assign({}, witnessState, { choices: choices });
+  }
+
+  /** A valid Day whose source authorizes several identities and no default. */
+  function unresolvedChoiceDocument(result, branch, structure, prefix) {
+    const choice = primaryDayChoice(result, branch);
+    if (!choice || !choice.options || choice.options.length < 2) {
+      throw new Error('an unresolved Day needs its complete authorized formulary choice');
+    }
+    const properForm = /^proper-form:/.test(choice.id);
+    const mass = properForm && (structure.masses || []).find(function (row) {
+      return result.resolved && row.key === result.resolved.formulary;
+    });
+    if (properForm && !mass) {
+      throw new Error('a Proper-form choice has no resolved source Mass');
+    }
+    const offered = properForm ? (mass.forms || []) : (branch.readable || []);
+    const readable = new Map(offered.map(function (row) {
+      return [row.id || row.key, row];
+    }));
+    const optionIds = choice.options.map(function (option) { return option.id; });
+    if (optionIds.indexOf('main') >= 0) {
+      throw new Error('the internal main form may not become a reader choice');
+    }
+    if (optionIds.some(function (id) { return !readable.has(id); }) ||
+        optionIds.length !== readable.size) {
+      throw new Error('source choice options do not match the readable identities');
+    }
+
+    const titleText = properForm ? 'Choose a Mass form' : 'Choose a formulary';
+    const section = T.el('section', 'candidate-choice ' +
+      (properForm ? 'proper-form-choice' : 'calendar-formulary-choice'));
+    section.dataset.unresolvedChoice = choice.id;
+    section.tabIndex = -1;
+    const heading = T.el('h2', null, titleText);
+    const baseId = properForm ? 'proper-form-choice' : 'calendar-formulary-choice';
+    heading.id = prefix
+      ? baseId + '-' + String(branch.option || 'universal').replace(/[^a-z0-9]+/gi, '-')
+      : baseId;
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason', choice.reason));
+    const locus = (choice.sourceHooks || []).find(function (one) {
+      return one.kind === 'locus';
+    });
+    if (locus) section.appendChild(T.el('p', 'candidate-choice-locus', locus.id));
+
+    const form = T.el('form', 'candidate-choice-form');
+    form.dataset.choice = choice.id;
+    const fieldset = T.el('fieldset');
+    fieldset.appendChild(T.el('legend', null,
+      properForm ? 'Source-authored forms of this Mass' :
+        'Authorized formularies for this date'));
+    const options = T.el('div', 'candidate-choice-options');
+    choice.options.forEach(function (option) {
+      const row = readable.get(option.id);
+      const label = T.el('label', 'candidate-choice-option');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'day-authorized-choice';
+      input.value = option.id;
+      input.dataset.choiceOption = option.id;
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(row.label || row.name || option.id));
+      options.appendChild(label);
+    });
+    fieldset.appendChild(options);
+    const submit = T.el('button', 'candidate-choice-apply',
+      properForm ? 'Read selected Mass form' : 'Read selected formulary');
+    submit.type = 'submit';
+    submit.disabled = true;
+    fieldset.appendChild(submit);
+    form.appendChild(fieldset);
+    form.addEventListener('change', function () {
+      submit.disabled = !form.querySelector('input[name="day-authorized-choice"]:checked');
+    });
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const selected = form.querySelector('input[name="day-authorized-choice"]:checked');
+      if (!selected) return;
+      readerShell.close({ restoreFocus: false, restoreScroll: false });
+      if (properForm) {
+        navigate({
+          mass: result.resolved.formulary, form: selected.value, location: null
+        }, ['location'], {
+          location: { kind: 'top', id: null }, focus: { kind: 'day-choice-result' }
+        });
+      } else {
+        navigate({ mass: selected.value, form: null, location: null },
+          ['form', 'location'], {
+            location: { kind: 'top', id: null }, focus: { kind: 'day-choice-result' }
+          });
+      }
+    });
+    section.appendChild(form);
+    return { node: section, choice: choice, title: titleText, id: heading.id };
+  }
+
+  function unresolvedBranchDocument(result, branch, structure, prefix) {
+    const documentChoice = unresolvedChoiceDocument(result, branch, structure, prefix);
+    const fragment = document.createDocumentFragment();
+    fragment.appendChild(documentChoice.node);
+    return {
+      branch: branch,
+      result: result,
+      fragment: fragment,
+      contents: [{
+        id: documentChoice.id,
+        label: documentChoice.title,
+        element: documentChoice.node,
+        group: 'Day selection'
+      }],
+      bible: bibleRow(runtime.normalized.state.bible.id),
+      uncompiled: null,
+      notice: coverageMessage(result),
+      prefix: prefix,
+      unresolved: true
+    };
+  }
+
+  function commitUnresolvedChoice(result, branch, assembled, state) {
+    const documentChoice = unresolvedChoiceDocument(
+      result, branch, assembled.structure
+    );
+    reading.replaceChildren(documentChoice.node);
+    reading.setAttribute('aria-busy', 'false');
+    readerShell.setContents([{
+      id: documentChoice.id,
+      label: documentChoice.title,
+      element: documentChoice.node,
+      group: 'Day selection'
+    }]);
+
+    const missal = missalRow(state.edition.id);
+    title.textContent = documentChoice.title;
+    dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+    commitOutcomePresentation({
+      mode: runtime.mode,
+      outcome: 'unresolved',
+      outcomeClass: 'unresolved',
+      metadata: [
+        missal && (missal.edition || missal.label),
+        documentChoice.choice.options.length + ' authorized options',
+        'No default selected'
+      ].filter(Boolean).join(' · ')
+    });
+    coverageNotice.textContent = coverageMessage(result);
+    coverageNotice.hidden = false;
+    document.title = documentChoice.title + ' — Day — Triptych';
+    refreshDetailsAfterOutcome();
+  }
+
   async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
     const state = renderContext.state;
     const mode = renderContext.mode;
@@ -1080,7 +1379,7 @@
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
-          fragments.fragments, state, 'h2', prefix);
+          fragments.fragments, state, 'h2', prefix, result);
         exposeReaderLocus(section, branchLocus ? branchLocus + ' · Propers' : 'Propers',
           event.editionSlotLabel || proper.name || 'Proper');
         documentFragment.appendChild(section);
@@ -1118,6 +1417,11 @@
 
   function commitResultDocuments(rows, assembled, state, showWhy) {
     const multiple = rows.length > 1;
+    const hasUnresolved = rows.some(function (row) {
+      return row.unresolved || Boolean(
+        row.result && (row.result.unresolvedChoices || []).length
+      );
+    });
     const documentFragment = document.createDocumentFragment();
     const contents = [];
     rows.forEach(function (row, ordinal) {
@@ -1164,8 +1468,8 @@
     }
     commitOutcomePresentation({
       mode: runtime.mode,
-      outcome: 'ready',
-      outcomeClass: 'ready',
+      outcome: hasUnresolved ? 'unresolved' : 'ready',
+      outcomeClass: hasUnresolved ? 'unresolved' : 'ready',
       metadata: metadata.filter(Boolean).join(' · ')
     });
     document.title = multiple
@@ -1216,13 +1520,52 @@
     return node;
   }
 
-  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix) {
+  function renderTranslationWitnessChoice(event, witnessState, prefix) {
+    if (!event.selected || event.selected.availability !== 'choice-required' ||
+        !witnessState.choices.length) return null;
+    const fieldset = T.el('fieldset', 'ordinary-choice translation-witness-choice');
+    fieldset.dataset.translationWitnessChoice = event.id;
+    fieldset.appendChild(T.el('legend', null,
+      'Choose a translation witness for ' + (event.editionSlotLabel || 'this Proper')));
+    fieldset.appendChild(T.el('p', 'ordinary-choice-note',
+      'This witness will be used only when it faithfully supplies every translated Proper in this formulary.'));
+    const options = T.el('div', 'ordinary-choice-options');
+    witnessState.choices.forEach(function (option) {
+      const label = T.el('label', 'ordinary-choice-option');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'reader-' + (prefix || '').replace(/[^a-z0-9]+/gi, '-') +
+        event.id.replace(/[^a-z0-9]+/gi, '-') + '-translation-witness';
+      input.value = option.id;
+      input.dataset.translationWitness = option.id;
+      input.addEventListener('change', function () {
+        if (!input.checked) return;
+        const location = { kind: 'event', id: (prefix || '') + event.id };
+        navigate({ 'translation-witness': option.id }, [], {
+          location: location,
+          focus: { kind: 'translation-witness-result', event: location.id }
+        });
+      });
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(option.label));
+      options.appendChild(label);
+    });
+    fieldset.appendChild(options);
+    return fieldset;
+  }
+
+  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix, result) {
     const section = T.renderProper(proper, bible, fragments, {
       numbering: structure.numbering || null,
       orations: state.languages.orations,
+      translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null
     });
+    const choice = renderTranslationWitnessChoice(
+      event, resolvableTranslationWitnessState(result, structure, state), prefix
+    );
+    if (choice) section.appendChild(choice);
     return semanticNode(section, event, index, prefix);
   }
 
@@ -1294,7 +1637,7 @@
         );
         if (!optionListed && group && raw.variant) {
           optionListed = true;
-          const choice = renderOrdinaryChoice(group, selectedOption, event, prefix);
+          const choice = renderOrdinaryChoice(group, selectedOption, event, prefix, ordinary);
           contents.push({
             id: prefix + event.id,
             label: selectedOrdinaryOptionLabel(state, ordinary),
@@ -1318,7 +1661,7 @@
         const anchor = event.seat && event.seat.anchor || '';
         const seatedSection = sections.get(anchor.split('/')[0]);
         const node = exposeReaderLocus(
-          renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix),
+          renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix, result),
           namedDivision(seatedSection && seatedSection.name || currentDivision || 'Appointed propers'),
           event.editionSlotLabel || proper.name || 'Proper'
         );
@@ -1342,7 +1685,7 @@
     fragment.appendChild(OrdinaryRenderer.ordinaryPreamble(ordinary));
   }
 
-  function renderOrdinaryChoice(group, selected, event, prefix) {
+  function renderOrdinaryChoice(group, selected, event, prefix, ordinary) {
     const fieldset = T.el('fieldset', 'ordinary-choice');
     fieldset.dataset.optionGroup = group.group;
     fieldset.dataset.optionBranch = prefix || '';
@@ -1351,6 +1694,15 @@
       'This source-defined choice belongs here in the liturgical sequence.'));
     const options = T.el('div', 'ordinary-choice-options');
     (group.options || []).forEach(function (option) {
+      const semanticKeys = [];
+      (ordinary.sections || []).forEach(function (section) {
+        (section.elements || []).forEach(function (element) {
+          if (element.variant === option.id) semanticKeys.push(element.key);
+        });
+      });
+      if (semanticKeys.length !== 1) {
+        throw new Error('Ordinary option has no unique semantic element: ' + option.id);
+      }
       const label = T.el('label', 'ordinary-choice-option');
       const input = document.createElement('input');
       input.type = 'radio';
@@ -1359,8 +1711,11 @@
       input.checked = Boolean(selected && selected.id === option.id);
       input.addEventListener('change', function () {
         if (!input.checked) return;
-        const location = { kind: 'event', id: (prefix || '') + event.id };
-        navigate({ ordinary: '1', [group.group]: option.id }, [], {
+        const location = {
+          kind: 'event',
+          id: (prefix || '') + 'ordinary-element/' + semanticKeys[0]
+        };
+        navigate({ mode: 'missal', [group.group]: option.id }, ['ordinary'], {
           location: location,
           focus: {
             kind: 'ordinary-option', group: group.group, option: option.id,
@@ -1432,7 +1787,9 @@
         renderFailure(preliminary.errors, { mode: requestedMode });
         return;
       }
-      const variantErrors = await validateExplicitVariants(parsed, manifests, preliminary.missal);
+      const variantErrors = await validateExplicitVariants(
+        parsed, manifests, preliminary.missal
+      );
       if (serial !== runtime.serial) return;
       if (variantErrors.length) {
         renderFailure(variantErrors, { mode: requestedMode });
@@ -1447,7 +1804,7 @@
         defaults: {
           date: preliminary.date,
           missal: preliminary.missal,
-          bible: runtime.bibles[0].id,
+          bible: Contract.defaultBibleId(runtime.bibles),
           orations: T.SOURCE_LANGUAGE
         }
       });
@@ -1455,24 +1812,41 @@
         renderFailure(normalized.errors, { mode: requestedMode });
         return;
       }
-      normalized.state.requestedMode = normalized.state.options.ordinary ? 'missal' : 'read';
       const validation = Contract.validateReaderState(normalized.state);
       if (!validation.ok) {
         renderFailure(validation.errors, { mode: requestedMode });
+        return;
+      }
+      const witnessErrors = validateExplicitTranslationWitness(
+        normalized.state, assembled.derived, assembled.structure
+      );
+      if (witnessErrors.length) {
+        renderFailure(witnessErrors, { mode: requestedMode });
         return;
       }
       runtime.normalized = normalized;
       runtime.derived = assembled.derived;
       runtime.rubrics = assembled.rubrics;
       runtime.structure = assembled.structure;
-      runtime.ordinary = normalized.state.options.ordinary ? assembled.ordinary : null;
-      runtime.mode = normalized.state.options.ordinary ? 'missal' : 'read';
+      runtime.mode = normalized.state.requestedMode;
+      runtime.ordinary = runtime.mode === 'missal' ? assembled.ordinary : null;
       runtime.branch = assembled.derived.options.length === 1 ? assembled.derived.options[0] : null;
       runtime.branches = [];
       runtime.deferred = deferredState(parsed);
       window.dayReaderDebug.state = normalized.state;
       window.dayReaderDebug.deferred = runtime.deferred.slice();
       window.dayReaderDebug.legacy = normalized.legacy;
+      if (!pendingNavigation.location && normalized.state.semanticLocation) {
+        pendingNavigation.location = {
+          kind: 'event', id: normalized.state.semanticLocation.eventId
+        };
+      }
+      const canonicalPath = Contract.canonicalRoute('day', window.location.pathname);
+      const canonicalHash = Contract.serializeLegacy(normalized);
+      if (window.location.pathname !== canonicalPath || window.location.hash !== canonicalHash) {
+        history.replaceState(history.state, '',
+          canonicalPath + window.location.search + canonicalHash);
+      }
 
       if (runtime.deferred.length) {
         commitOutcomePresentation({
@@ -1509,6 +1883,14 @@
               structure: assembled.structure,
               ordinary: runtime.ordinary
             });
+            if (primaryDayChoice(result, branch)) {
+              const row = {
+                branch: branch, result: result, prefix: prefix, state: branchState,
+                unresolved: true
+              };
+              rendered.push(row);
+              continue;
+            }
             if (!result.resolved) {
               throw new Error('the production result leaves its formulary unresolved');
             }
@@ -1547,6 +1929,33 @@
       if (!rendered.length || serial !== runtime.serial) return;
       if (branchFailures === rendered.length) {
         throw branchErrors[0];
+      }
+      const unresolved = rendered.filter(function (row) { return row.unresolved; });
+      if (unresolved.length) {
+        if (rendered.length === 1 && !branchFailures) {
+          runtime.branches = [{
+            branch: unresolved[0].branch,
+            result: unresolved[0].result,
+            prefix: unresolved[0].prefix
+          }];
+          runtime.branch = unresolved[0].branch;
+          runtime.result = unresolved[0].result;
+          commitUnresolvedChoice(
+            unresolved[0].result, unresolved[0].branch, assembled, normalized.state
+          );
+          populateDateSurface();
+          window.dayReaderDebug.semantic = semanticProjection(unresolved[0].result);
+          restorePendingNavigation(pendingNavigation);
+          if (modeStartedAt !== null) {
+            window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
+          }
+          return;
+        }
+        unresolved.forEach(function (row) {
+          Object.assign(row, unresolvedBranchDocument(
+            row.result, row.branch, assembled.structure, row.prefix
+          ));
+        });
       }
       runtime.branches = rendered.map(function (row) {
         return { branch: row.branch, result: row.result, prefix: row.prefix };
@@ -1619,8 +2028,15 @@
   function navigate(updates, removals) {
     const navigation = arguments.length > 2 && arguments[2] || {};
     const currentLocation = readerShell.captureSemanticLocation();
-    history.replaceState({ dayReaderLocation: currentLocation }, '', window.location.href);
-    if (navigation.location) runtime.pendingLocation = navigation.location;
+    history.replaceState(
+      Object.assign({}, history.state || {}, { dayReaderLocation: currentLocation }),
+      '', window.location.href
+    );
+    if (Object.prototype.hasOwnProperty.call(navigation, 'location')) {
+      runtime.pendingLocation = navigation.location;
+      updates.location = navigation.location && navigation.location.kind === 'event'
+        ? navigation.location.id : null;
+    }
     runtime.pendingModeFocus = navigation.modeFocus === true;
     runtime.pendingFocus = navigation.focus || null;
     window.dayReaderDebug.pendingNavigation = {
@@ -1628,9 +2044,12 @@
       modeFocus: runtime.pendingModeFocus,
       focus: runtime.pendingFocus
     };
-    const hash = hashWith(updates, removals);
-    history.pushState({ dayReaderLocation: runtime.pendingLocation }, '',
-      window.location.pathname + window.location.search + hash);
+    const hash = hashWith(updates, (removals || []).concat(['ordinary']));
+    const route = Contract.canonicalRoute('day', window.location.pathname);
+    history.pushState(Object.assign({}, history.state || {}, {
+      dayReaderLocation: runtime.pendingLocation
+    }), '',
+      route + window.location.search + hash);
     renderCandidate();
   }
 
@@ -1697,6 +2116,14 @@
       optionTarget.focus({ preventScroll: true });
       const optionGroup = optionTarget.closest('[data-option-group]');
       (optionGroup || optionTarget).scrollIntoView({ block: 'start', behavior: 'auto' });
+    } else if (held.focus && held.focus.kind === 'day-choice-result') {
+      const target = reading.querySelector('[data-semantic-event-id]');
+      if (target) target.focus({ preventScroll: true });
+    } else if (held.focus && held.focus.kind === 'translation-witness-result') {
+      const target = Array.from(reading.querySelectorAll('[data-semantic-location]')).find(
+        function (node) { return node.dataset.semanticLocation === held.focus.event; }
+      );
+      if (target) target.focus({ preventScroll: true });
     } else if (held.modeFocus) {
       modeAction.focus({ preventScroll: true });
     }
@@ -1705,14 +2132,19 @@
   dateForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const previous = runtime.normalized && runtime.normalized.state;
+    const nextFormulary = formularyField.hidden ? null : formularySelect.value;
     const changedDay = !previous || previous.civilDate !== dateInput.value ||
       previous.edition.id !== missalSelect.value;
+    const previousFormulary = previous && previous.selectedReadableFormulary
+      ? previous.selectedReadableFormulary.id : null;
+    const changedFormulary = previousFormulary !== nextFormulary;
+    const changedOrations = !previous || previous.languages.orations !== orationsSelect.value;
     const updates = {
       date: dateInput.value,
       missal: missalSelect.value,
       bible: bibleSelect.value,
       orations: orationsSelect.value,
-      mass: formularyField.hidden ? null : formularySelect.value
+      mass: nextFormulary
     };
     if (!ordinaryLangField.hidden) updates['ordinary-lang'] = ordinaryLangSelect.value;
     if (!ordinaryOptionField.hidden && runtime.ordinary) {
@@ -1720,22 +2152,29 @@
       if (group) updates[group.group] = ordinaryOptionSelect.value;
     }
     readerShell.close({ restoreFocus: false });
-    navigate(updates, changedDay ? ['mass'] : []);
+    navigate(updates, changedDay ? ['mass', 'form', 'translation-witness', 'location'] :
+      (changedFormulary ? ['form', 'translation-witness', 'location'] :
+        (changedOrations ? ['translation-witness'] : [])));
   });
 
   document.getElementById('previous-date').addEventListener('click', function () {
     if (!runtime.normalized) return;
     readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, -1), mass: null }, ['mass']);
+    navigate({ date: Model.shift(runtime.normalized.state.civilDate, -1), mass: null,
+      form: null, 'translation-witness': null, location: null },
+      ['mass', 'form', 'translation-witness', 'location']);
   });
   document.getElementById('today-date').addEventListener('click', function () {
     readerShell.close({ restoreFocus: false });
-    navigate({ date: todayISO(), mass: null }, ['mass']);
+    navigate({ date: todayISO(), mass: null, form: null, 'translation-witness': null,
+      location: null }, ['mass', 'form', 'translation-witness', 'location']);
   });
   document.getElementById('next-date').addEventListener('click', function () {
     if (!runtime.normalized) return;
     readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, 1), mass: null }, ['mass']);
+    navigate({ date: Model.shift(runtime.normalized.state.civilDate, 1), mass: null,
+      form: null, 'translation-witness': null, location: null },
+      ['mass', 'form', 'translation-witness', 'location']);
   });
 
   document.querySelector('[data-mode="read"]').addEventListener('click', function () {
@@ -1747,7 +2186,7 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ ordinary: '0' }, [], { location: location, modeFocus: true });
+    navigate({ mode: 'read' }, ['ordinary'], { location: location, modeFocus: true });
   });
   document.querySelector('[data-mode="missal"]').addEventListener('click', function () {
     if (runtime.mode === 'missal') {
@@ -1758,11 +2197,21 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ ordinary: '1' }, [], { location: location, modeFocus: true });
+    navigate({ mode: 'missal' }, ['ordinary'], { location: location, modeFocus: true });
   });
+  let historyRenderTimer = null;
+  function scheduleHistoryRender() {
+    if (historyRenderTimer !== null) return;
+    historyRenderTimer = window.setTimeout(function () {
+      historyRenderTimer = null;
+      renderCandidate();
+    }, 0);
+  }
   window.addEventListener('popstate', function (event) {
-    runtime.pendingLocation = event.state && event.state.dayReaderLocation ||
-      readerShell.captureSemanticLocation();
+    const hasLocation = event.state &&
+      Object.prototype.hasOwnProperty.call(event.state, 'dayReaderLocation');
+    runtime.pendingLocation = hasLocation
+      ? event.state.dayReaderLocation : null;
     runtime.pendingModeFocus = false;
     runtime.pendingFocus = null;
     window.dayReaderDebug.pendingNavigation = {
@@ -1770,11 +2219,11 @@
       modeFocus: false,
       focus: null
     };
-    renderCandidate();
+    scheduleHistoryRender();
   });
   window.addEventListener('hashchange', function () {
     if (!window.dayReaderDebug.ready) return;
-    renderCandidate();
+    scheduleHistoryRender();
   });
 
   T.setInlineNotice(

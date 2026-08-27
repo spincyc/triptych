@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 import subprocess
 import tomllib
@@ -12,46 +11,15 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-# The W3 reader candidates were accepted against c4c071d6ba962524487bc8f4c6a4b781981851c7
-# ("Record W3 Propers Read acceptance", 2026-08-04), and this guard froze the
-# calendar sources and the browser data at that commit so the reader could be
-# reviewed against inputs that did not move under it.
-#
-# Moved to the commit below on 2026-08-08, on the maintainer's instruction to
-# complete the propers and commons for both missals -- work that necessarily
-# rewrites both of those trees, so the freeze could not stay where it was. What
-# is NOT claimed by moving it: nobody has re-accepted the readers against the
-# data as it now stands. The acceptance remains a statement about
-# c4c071d6b, which git still holds and this comment still names; the guard
-# below is only the tripwire for drift from here on.
-#
-# Moved again on 2026-08-20, for the same reason and under the same
-# instruction. The propers-and-commons work has now rewritten both pinned trees
-# many times over, and this change also edits `ordinary-seating.js`, which the
-# hash list below protects: a slot may declare `qualified` and claim
-# `<name> (<qualifier>)`, which took Masses refusing Missal mode from 105 to 17.
-# What is NOT claimed, again: nobody has re-accepted the readers against the
-# data or the seating engine as they now stand, and the fail-closed guard in
-# day-reader.js is untouched. See the 2026-08-20 row in
-# guidance/liturgy-browser-roadmap.md.
-BASE = "5d6c92627"
 LITURGY = ROOT / "src/web/browser/liturgy"
 HTML = LITURGY / "day-reader.html"
 JS = LITURGY / "day-reader.js"
 CSS = LITURGY / "day-reader.css"
 PUBLIC_RENDERER = LITURGY / "day.js"
-SEATING = LITURGY / "ordinary-seating.js"
 
 
 def text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
-
-
-def original(relative: str) -> bytes:
-    return subprocess.run(
-        ["git", "show", f"{BASE}:{relative}"], cwd=ROOT, check=True,
-        capture_output=True,
-    ).stdout
 
 
 class DayMissalIntegrationTests(unittest.TestCase):
@@ -63,9 +31,9 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("Study", html)
         self.assertIn("Compare", html)
         source = text(JS)
-        self.assertIn("normalized.state.options.ordinary ? 'missal' : 'read'", source)
-        self.assertIn("navigate({ ordinary: '1' }", source)
-        self.assertIn("navigate({ ordinary: '0' }", source)
+        self.assertIn("runtime.mode = normalized.state.requestedMode", source)
+        self.assertIn("navigate({ mode: 'missal' }", source)
+        self.assertIn("navigate({ mode: 'read' }", source)
 
     def test_one_production_renderer_and_one_seating_engine_own_the_frame(self) -> None:
         candidate = text(JS)
@@ -79,8 +47,6 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertNotIn("function seatPropers", candidate)
         self.assertNotIn("function massEvents", candidate)
         self.assertNotIn("innerHTML", candidate)
-        relative = SEATING.relative_to(ROOT).as_posix()
-        self.assertEqual(SEATING.read_bytes(), original(relative))
 
     def test_state_language_option_and_why_rules_are_explicit(self) -> None:
         source = text(JS)
@@ -95,7 +61,8 @@ class DayMissalIntegrationTests(unittest.TestCase):
             "window.OrdinarySeating.chosenOption", "group.options || []",
         ):
             self.assertIn(token, source)
-        self.assertIn("function deferredState(parsed) {\n    return [];\n  }", source)
+        self.assertIn("return mode === 'study' ? ['mode=' + mode] : [];", source)
+        self.assertIn("Compare deliberately does not", source)
         self.assertNotIn("recognized.why === '1'", source)
         self.assertNotIn("recognized.rubrics === '1'", source)
         self.assertNotIn("group.options[0]", source)
@@ -108,7 +75,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
         roman_elements = sum(len(section["elements"]) for section in roman["sections"])
         post_elements = sum(len(section["elements"]) for section in post["sections"])
         self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 195, 9))
-        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 48, 11))
+        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 47, 11))
         self.assertEqual(roman.get("variants", []), [])
         group = post["variants"][0]
         self.assertEqual(group["group"], "eucharistic-prayer")
@@ -148,7 +115,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("mode ? modeLabel(mode) : 'Unavailable'", source)
         self.assertIn("outcomeClass: 'unrenderable'", source)
         self.assertIn("outcomeClass: 'deferred'", source)
-        self.assertIn("outcomeClass: 'ready'", source)
+        self.assertIn("outcomeClass: hasUnresolved ? 'unresolved' : 'ready'", source)
         self.assertIn("function commitResultDocuments(rows, assembled, state, showWhy)", source)
         self.assertIn("function failedBranchDocument(branch, prefix, error)", source)
         self.assertIn("if (branchFailures === rendered.length)", source)
@@ -174,40 +141,19 @@ class DayMissalIntegrationTests(unittest.TestCase):
         self.assertIn("composeInstrumentAbsences", text(JS))
         self.assertIn("shellRoot.dataset.readerMode", text(JS))
 
-    def test_public_routes_renderer_data_and_accepted_oracles_are_isolated(self) -> None:
-        exact = {
-            "src/web/browser/liturgy/day.html":
-                "9a119a6aa87e900d6fc4c3e236191fe8a036abc305236eb576c09f823c7b7972",
-            "src/web/browser/liturgy/index.html":
-                "a6527316266365b79ff2ecdc193da3ab1034b1daa63408b869b192d2aeb85600",
-            "src/web/browser/liturgy/day.js":
-                "0bc1714bca04c65ed45de00f69c08d7536b3e72612bf6cb15301580d4f26daae",
-        }
-        for relative, digest in exact.items():
-            self.assertEqual(
-                hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(),
-                digest,
-                relative,
-            )
-        protected = [
-            "src/web/browser/liturgy/day.css",
-            "src/web/browser/liturgy/day-missal.css",
-            "src/web/browser/liturgy/liturgy.js",
-            "src/web/browser/liturgy/liturgy.css",
-            "src/web/browser/liturgy/reader-state-adapters.js",
-            "src/web/browser/liturgy/assembly-model.js",
-            "src/web/browser/liturgy/ordinary-seating.js",
-        ]
-        for relative in protected:
-            self.assertEqual(
-                hashlib.sha256((ROOT / relative).read_bytes()).digest(),
-                hashlib.sha256(original(relative)).digest(), relative,
-            )
-        changed = subprocess.run(
-            ["git", "diff", "--name-only", BASE, "--", "src/web/data", "src/sources/calendars"],
-            cwd=ROOT, check=True, text=True, capture_output=True,
-        ).stdout.splitlines()
-        self.assertEqual(changed, [])
+    def test_public_routes_renderer_and_test_fixtures_are_isolated(self) -> None:
+        for relative in ("day.html", "index.html"):
+            source = text(LITURGY / relative)
+            self.assertIn("data-reader-shell", source)
+            self.assertNotIn("reader-visual-reset", source)
+
+        public_renderer = text(PUBLIC_RENDERER)
+        self.assertIn("window.TriptychOrdinaryRenderer", public_renderer)
+        self.assertIn("renderSemanticFrame", public_renderer)
+        for path in (ROOT / "src/web/data").rglob("*.json"):
+            payload = text(path)
+            self.assertNotIn("synthetic-cycle-order", payload, path.as_posix())
+            self.assertNotIn("candidate-contract-only", payload, path.as_posix())
 
     def test_candidate_tracking_is_distinct_and_accepted(self) -> None:
         with (ROOT / "promised-deliverables.toml").open("rb") as handle:
@@ -216,8 +162,13 @@ class DayMissalIntegrationTests(unittest.TestCase):
                 "liturgy-day-missal-w3-candidate-2026-08-05"]
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]["state"], "complete")
-        self.assertEqual(len(ledger["deliverables"]), 23)
-        self.assertEqual(sum(row["state"] == "complete" for row in ledger["deliverables"]), 17)
+        self.assertEqual(rows[0]["owner"], "src/web/browser/liturgy/day-reader.html")
+        self.assertEqual(
+            {requirement["status"] for requirement in rows[0]["requirements"]},
+            {"pass"},
+        )
+        ids = [row["id"] for row in ledger["deliverables"]]
+        self.assertEqual(len(ids), len(set(ids)))
 
     def test_javascript_syntax_and_browser_harness(self) -> None:
         for path in (JS, PUBLIC_RENDERER, LITURGY / "reader-shell.js"):

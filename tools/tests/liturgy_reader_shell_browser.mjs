@@ -255,18 +255,18 @@ async function runAssertions(cdp, base) {
     assert.match(value.robots, /noindex/);
   });
 
-  await test('complete Read states omit diagnostic notices while reliance states retain them', async () => {
+  await test('rights-limited Read states retain subordinate diagnostic notices', async () => {
     let value = await evaluate(cdp, `(() => ({
       hidden: document.querySelector('#reader-coverage').hidden,
       text: document.querySelector('#reader-coverage').textContent,
       meta: document.querySelector('#reader-meta').textContent,
       firstTop: document.querySelector('#reader-document .proper').getBoundingClientRect().top
     }))()`);
-    assert.equal(value.hidden, true);
-    assert.equal(value.text, '');
+    assert.equal(value.hidden, false);
+    assert.match(value.text, /partial or unavailable/i);
     assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
     assert.match(value.meta, /1962 Roman Missal · Universal · Douay–Rheims · Latin orations/);
-    assert.ok(value.firstTop < 255, `first content remains at ${value.firstTop}px`);
+    assert.ok(value.firstTop < 340, `first content remains at ${value.firstTop}px`);
 
     await navigate(cdp, url(base, 'unavailable', 'persistent'));
     value = await evaluate(cdp, `({

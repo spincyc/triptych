@@ -1,8 +1,11 @@
 # Source Audit
 
-All acquisitions and checks below were made on 2026-07-25 unless stated otherwise. Exact artifact
-identities, hashes, rights bases and passage ranges are registered under `src/sources/works/`; this
-file records what was done with them for this publication and what was not.
+All acquisitions and checks below were made on 2026-07-25 unless stated otherwise. Exact reusable
+artifact identities, hashes, rights bases and passage ranges are registered under
+`src/sources/works/`; this file records what was done with them for this publication and what was
+not. The separately dated 2026-08-26 check below is now bound to two centrally registered exact
+states: the restricted official HTML delivery and the constituent page of the registered official
+journal PDF. The restricted bytes are identified but not retained.
 
 ## Artifacts acquired and checked
 
@@ -16,6 +19,8 @@ file records what was done with them for this publication and what was not.
 | USCCB *Liturgical Calendar* 2026, 61 pp., SHA-256 `4bd9add0…372d02` | newly registered | front matter pp. 7-9 and the daily entries needed to fix week numbering |
 | USCCB *Liturgical Calendar* 2027, 63 pp., SHA-256 `d7997b57…8074ce` | newly registered | same ranges |
 | USCCB *Liturgical Calendar* 2028, 61 pp., SHA-256 `2115e024…663316` | newly registered | same ranges |
+| CDWDS notification Prot. n. 2671/98/L, official Vatican Latin HTML, 3,672 bytes, SHA-256 `81fea8ec…3c36e` | registered as a restricted exact artifact after direct acquisition from the [official Vatican delivery](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20000630_memoria-immaculati-cordis-mariae-virginis_lt.html) on 2026-08-26; bytes not retained | complete notification, including protocol, operative paragraph, date and subscriptions |
+| *Notitiae* 35 (1999), nos. 392-393, official PDF, 132 pp., SHA-256 `c42b1215…5420` | fetched directly from the [official Dicastery archive](https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1990/notitiae-35-%281999%29/Notitiae-392-393-1999.pdf) on 2026-08-26; hash and 10,825,226-byte size match the restricted registered artifact | artifact p. 63, printed p. 157, rendered at 180 dpi and read as an image; optical text checked only as an aid |
 
 ## Verification events
 
@@ -65,6 +70,16 @@ file records what was done with them for this publication and what was not.
    computed table, the three worked years entry by entry, the 1900-2100 range results, and all
    twenty-four *Tabella temporaria* rows were recomputed independently and reproduced every
    published figure. Three defects were found and corrected, and are recorded below.
+7. **Subsequent official verification of Prot. n. 2671/98/L, 2026-08-26.** This check did not
+   retroactively change what the Claude sessions reached in July. It independently read the complete
+   Latin notification in the official Vatican HTML delivery and in the rendered image of its
+   official publication at *Notitiae* 35 (1999), 157. The two official states agree: when the movable
+   obligatory memorial of the Immaculate Heart occurs with another obligatory memorial, both
+   memorials are retained as optional for that year. The notification supplies that occurrence-only
+   reduction and refers to *Calendaria particularia* 23 c. The further choice to keep one optional
+   memorial or omit all of them, and the availability of the underlying ordinary weekday, come from
+   Universal Norms 14 and 16 c and Table of Liturgical Days places 12 and 13, not from the
+   notification itself.
 
 ## Defects found by the independent audit and corrected
 
@@ -107,10 +122,13 @@ the rubric and reports the variant.
   *Annuntiatio Paschae festorumque mobilium*, listed in the edition's own index at p. 1247, could
   therefore not be read. The publication cites the Epiphany rubric that points to it and records the
   omission.
-- **Two Roman acts not reached.** The Holy See's portal was queried for the Latin text of the 2018
-  decree inscribing the Blessed Virgin Mary, Mother of the Church, and for the 1998 notification on
-  the Immaculate Heart. Neither was served at the paths tried. Both are reported in the publication
-  from the territorial calendar and marked as reported.
+- **Original failed retrieval, later partly superseded.** On 2026-07-25 the Claude research queried
+  the Holy See's portal for the Latin text of the 2018 decree inscribing the Blessed Virgin Mary,
+  Mother of the Church, and for the 1998 notification on the Immaculate Heart. Neither was served at
+  the paths tried, so both were originally reported from the territorial calendar. The independent
+  2026-08-26 check above subsequently reached and read the 1998 notification in two official states.
+  The original retrieval failure remains a historical fact; it is no longer the evidence ceiling for
+  that notification. The 2018 inserting decree remains outside this later check.
 - **USCCB complementary-norm page refused access.** The Conference page carrying the complementary
   norm to canon 1246 §2 returned HTTP 403 to this session. Its effect is reported from the
   Secretariat's 2026 calendar.

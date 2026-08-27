@@ -49,7 +49,9 @@ the only sanctioned way to carry a mass that takes another's formulary. On a
 mass: `mass` (a key in the **same file**), optional `form`, `citation`, `note`.
 On a proper, also `proper`, defaulting to its own name; a proper carrying it
 carries nothing else. A mass's own `propers` replace the borrowed ones by
-`name`. `src/sources/calendars/README.md` owns the full rule.
+`name`. A proper in one form may name a directly printed proper in a different
+sibling form of the same mass; mass-level and same-form self-references remain
+cycles. `src/sources/calendars/README.md` owns the full rule.
 
 A rubric may appoint one text across a **span of days**. That is stated once,
 in the calendar's `rubrics.yaml` under `appointed_across`, and carried by each
@@ -109,9 +111,15 @@ A citation is structured data:
 
 `ranges` is canonical. `ref` is a side field. Read the ranges.
 
-A placeholder mass holds exactly one proper, named `Placeholder`, `source:
-composed`, text `This entry is a placeholder pending formula migration and
-source verification.` Nothing is partial — there is no half-filled tier.
+Never encode a missing formulary as a composed proper named `Placeholder`.
+That boilerplate is repository apparatus, not a source-owned Proper slot. A
+whole Mass whose Missal wording is unavailable carries a mass-level
+`text_status` with `state: unavailable`, `scope: missal-formulary`, and one or
+more typed `witness-gap`, `rights-withheld`, or `no-exemplar` reasons; it carries
+no `propers` or `forms`. This applies to dated and seasonal masses as well as
+text-free Commons. A non-Common Mass with some genuine target wording may use
+`state: partial` beside exactly one of `propers` or `forms`; the typed status
+accounts for the rest without inventing content.
 
 ## Invariants
 
@@ -155,7 +163,7 @@ Assume more of the same kind exist.
 | Failure | Why it is silent | Status |
 | --- | --- | --- |
 | A citation resolving to the **wrong words** across a book-division divergence | It resolves. `Joel 3:1-5` returned the valley of Josaphat, not the outpoured spirit, and appeared in no error count. | Now caught: `citation_divergences` is validated by `index-bible`, which refuses an unrecorded citation reaching a divergent locus. |
-| A psalm verse **beyond the end of its psalm** under the file's declared numbering | The bounds check once held ceilings for six psalms only, so `Psalm 118:137` passed although Hebrew 118 ends at 29. | Now caught: every psalm is bounded from the tracked verse-level concordance. Eleven loci remain, ledgered. |
+| A psalm verse **beyond the end of its psalm** under the file's declared numbering | The bounds check once held ceilings for six psalms only, so `Psalm 118:137` passed although Hebrew 118 ends at 29. | Now caught: every psalm is bounded from the tracked verse-level concordance. Three loci remain ledgered across four owning slots. |
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18` and `Acts 7:60` were each dropped this way. | Partly closed: `Mark 4:41` and `Acts 7:60` now resolve and only `1 Thessalonians 4:18` still reports. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
@@ -326,8 +334,8 @@ tools/tpt check-calendar-masses --calendar roman-1962
 # `make check-calendar-masses` beside the validator above.
 tools/tpt mass-propers structure --check
 
-# Citation contents only. Exits 1 today: it reads the file-level
-# psalm_numbering and not the per-proper one, so the eleven still report.
+# Citation contents only. Exits 0 while reporting the three ledgered loci at
+# their four owning slots; an unledgered breach or stale ledger row still fails.
 tools/tpt citations check --root src/sources/calendars
 
 # Encode one printed citation without touching a file.
@@ -366,17 +374,17 @@ carries the identical block.
 
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-pre-1955 | seasonal | 6 | 6 | 6 |
-| roman-1962 | seasonal | 128 | 1152 | 0 |
+| roman-pre-1955 | seasonal | 6 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1154 | 0 |
 | roman-1962 | christological | 8 | 66 | 0 |
 | roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1106 | 2 |
-| roman-1962 | common | 30 | 334 | 0 |
+| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-1962 | common | 30 | 358 | 0 |
 | postconciliar | seasonal | 390 | 2108 | 0 |
 | postconciliar | christological | 7 | 67 | 0 |
-| postconciliar | marian | 14 | 54 | 2 |
-| postconciliar | sanctoral | 181 | 714 | 8 |
-| postconciliar | common | 7 | 7 | 7 |
+| postconciliar | marian | 14 | 52 | 0 |
+| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
@@ -390,26 +398,25 @@ carries the identical block.
 | postconciliar | All Souls commemoration | 1 | 1 |
 | postconciliar | Feast | 24 | 24 |
 | postconciliar | Memorial | 69 | 69 |
-| postconciliar | Optional memorial | 82 | 82 |
-| postconciliar | Optional memorials | 18 | 38 |
+| postconciliar | Optional memorial | 120 | 120 |
 | postconciliar | Solemnity | 11 | 11 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 599 |
-| Propers | 6 | 2746 | 2950 |
-| — named `Placeholder` | 6 | 2 | 17 |
-| — inside a `forms` block | 0 | 147 | 244 |
+| Masses | 6 | 491 | 619 |
+| Propers | 0 | 2773 | 2941 |
+| — named `Placeholder` | 0 | 0 | 0 |
+| — inside a `forms` block | 0 | 149 | 184 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
-| Masses holding only placeholders | 6 | 2 | 17 |
+| Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
-| Propers taking their text from another entry | 0 | 53 | 41 |
-| Propers that are not placeholders | 0 | 2744 | 2933 |
-| — of those, scripture-bearing | 0 | 2192 | 2579 |
-| Encoded passages | 0 | 2598 | 3534 |
+| Propers taking their text from another entry | 0 | 70 | 41 |
+| Propers that are not placeholders | 0 | 2773 | 2941 |
+| — of those, scripture-bearing | 0 | 2192 | 2587 |
+| Encoded passages | 0 | 2598 | 3542 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 1 | 119 | 93 |
+| Distinct slot names | 0 | 120 | 92 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the
@@ -479,27 +486,34 @@ acclamation takes the Lectionary's. `ot-23` shows both in one Mass: Entrance
 Antiphon `Psalm 118:137, 124`, Year C Gospel Acclamation `Psalm 119:135`. Same
 psalm.
 
-Eleven antiphons carried the Vulgate number inside the Hebrew-declaring file and
-so addressed verses that do not exist. State as of 2026-07-31:
+Eleven antiphons once carried the Vulgate number inside the Hebrew-declaring
+file and therefore addressed verses that did not exist under the inherited
+numbering. Their propers now declare their numbering; all their shifted loci
+have self-cleaned from the exception ledger, while the out-of-bound
+`Psalm 28:11` endpoint remains. Three unresolved loci remain across four owning
+slots: that antiphon endpoint and two responsorial-psalm endpoints.
 
-- **Data:** all eleven now carry `psalm_numbering: vulgate` on the proper.
+- **Data:** the former eleven antiphons carry `psalm_numbering: vulgate` on the
+  proper. Their Vulgate-to-Hebrew shifts no longer breach; `Psalm 28:11` still
+  exceeds the tracked Vulgate bound.
   `tools/mass-propers.numbered_entries` implements the inheritance — a proper
   inherits its calendar's numbering unless it declares its own, and its cycles may
   differ again.
-- **Validation:** not yet caught up. `tools/citations.check` still reads only the
-  document-level key, so all eleven still report, and `check-calendar-masses`
-  still sets them aside through the `psalm_numbering_exceptions` ledger. Net
-  effect: `check-calendar-masses` exits 0, `citations check` exits 1.
+- **Validation:** `tools/citations.check` and `check-calendar-masses` both honor
+  the per-proper declaration. Each reports the three ledgered loci at their four
+  owning slots without failing.
 - **The ledger is self-cleaning in both directions.** A psalm-bound problem at an
   *unlisted* locus still fails. A listed locus that has *stopped* breaching also
   fails, with `delete the entry`. So an entry cannot outlive its defect, and you
   cannot slip a new one in behind the known ones.
-- **Owner:** TASK-32 — measure each antiphon against its incipit and decide per
-  slot whether the number moves or the declaration does. When it lands the ledger
-  empties and goes. Do not pre-empt it by renumbering.
+- **Remaining decisions:** `Psalm 28:11` requires checking the Communion
+  Antiphon's printed text and verse bound. `Psalm 56:14` and `Psalm 150:6` are
+  responsorial endpoints and require checking the Ordo's numbering rather than
+  treating them as antiphon renumberings.
 
-The eleven: `ascension`/Vigil Mass, `ot-6`, `ot-8`, `ot-9`, `ot-22`, `ot-23`,
-`ot-26`, `ot-29`, `ot-31`, `ot-33`, `christ-the-king`.
+The three loci are `Psalm 28:11` at `christ-the-king`, `Psalm 56:14` at
+`ot-24-saturday` cycle II, and `Psalm 150:6` at both `ot-23-thursday` cycle I
+and `ot-33-wednesday` cycle II.
 
 Two references cannot resolve: `4 Esdras 2:36-37` (not among the Douay-Rheims'
 73 books) and `1 Thessalonians 4:18` (past the last verse this edition prints in
@@ -517,10 +531,10 @@ implements it:
   `Fifth day within the octave; comm. S. Thomae Episcopi et Martyris` → `seasonal`.
 
 So 1962 12-26/27/28 are `sanctoral` and 12-29/30/31 are `seasonal`, and the spine
-and the propers now agree. The three seasonal ones are placeholders: the shared
-formulary those days actually use is still absent from the file, along with
-*D. N. Iesu Christi Regis* and *Sanctissimi Nominis Iesu*. All three are movable
-or shared, so nothing in the fixed-date spine reports them missing.
+and the propers now agree. The fifth day owns the shared formulary: the Day Mass
+chants and orations with the Dawn Mass's Titus 3:4-7 and Luke 2:15-20 readings.
+The sixth and seventh days reference that resolved hybrid. None of the three is
+a placeholder.
 
 ## The corpus targets, and what each still owes
 
@@ -529,45 +543,48 @@ for three missal states to be measured and completed. Its sections 7 to 9 are
 the target list; this section is where they live, because this file owns the
 data they describe. Read the counts from `mass-propers census`, never from here.
 
-**1962.** The most complete state, because its witnesses are public domain: the
-1862 Pustet printing and the 1861 Cummiskey English are tracked, and the CMAA
-facsimile of the controlling edition is reachable under the 103(b) analysis at
-`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`. What it
-still owes is named in the open items below and in the Ordinary's own absence
-keys.
+**1962.** This is the most populated state, not an independently complete one.
+The 1862 Pustet printing and the 1861 Cummiskey English are public-domain
+witnesses, while use of the CMAA facsimile of the controlling edition is bounded
+by the 103(b) analysis at
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml`.
+The derived census measures represented rows and translation dispositions; it
+does not establish a complete expected-slot universe, full target-edition
+collation, or per-text provenance. Open Latin, English, Common, Ordinary, Holy
+Week, and calendar questions remain in the owning inventories and lists below.
 
-**Postconciliar.** Its ceiling is different in kind and worth stating plainly so
-nobody re-derives it as a defect. The Missale Romanum 2002 is in copyright and
-this project holds only a restricted artifact of it, so the calendar carries:
-Lectionary ASSIGNMENTS in full, which are facts about what is appointed and are
-free; the ancient Latin of the Order of Mass, recovered from public-domain
-witnesses and marked as antecedent; ICEL's English, under the standing web
-permission at `guidance/liturgical-text-publication-policy.md` §3; and for the
-reform's own compositions, a typed refusal. The Commons are not carried at all —
-the index has no `common` section, which is why most sanctoral days hold no
-oration, and until one exists the sanctoral cannot be completed however much
-text is sourced. Even with it, the Commons' own antiphons and orations stay
-refused: the Latin is the Holy See's and the English is ICEL's, so what the
-structure buys is a checkable pointer, not prayers on the page.
+**Postconciliar.** This is an index and a collection of bounded text routes, not
+a complete transcription of the 2002 Missal. The restricted target-edition
+artifact is not a publication source. The calendar carries extensive Lectionary
+assignments as facts about what is appointed, but the current census does not
+prove that the target universe is exhaustively modelled or collated. Stored
+Latin bodies mix independently witnessed antecedents with rows whose exact
+target-edition relation remains unrepresented. ICEL's standing permission is
+recorded, but the current clonable/downloadable route publishes no ICEL payload
+on that basis. The seven edition-identified Common identities carry typed
+unavailable/rights dispositions rather than target-edition formularies. Counts
+of represented masses, propers, translations, or non-placeholder rows must not
+be reported as textual, provenance, rights, or whole-book completeness.
 
-**Pre-1955.** A RECENSION and not a corpus: `roman-pre-1955` holds departures
-from the 1962 base and inherits everything it does not state, which is all but
-a handful of its masses — read the figure from `calendar-days coverage` and the
-census, not from here. The brief's estimate that the state is 80–90 per cent the
-same as 1962 is right and the repository already banks far more than that. Two
-cautions own the rest. What that inheritance measures is what has been
-ESTABLISHED, not how far the books stand apart — where anyone has looked, the Triduum, 20 of 38 modelled units do
-not survive. And the delta was made by FOUR acts, not the one the file's
-`stands_before` names; `guidance/recensions.md` and that file's own
-`open_collation_items` own the apportionment, and a row added without it charges
-the 1960 code's work to Pius XII.
+**Pre-1955.** A structural-only RECENSION and not a corpus:
+`roman-pre-1955` holds only stated structural departure rows. Known-different
+formularies whose target wording is not held use typed whole-Mass unavailable
+status, not pseudo-Proper placeholders, and every unstated formulary is
+mechanically inherited from `roman-1962` without target-recension collation.
+The file holds no independently transcribed target Proper wording. The inherited
+mass count is therefore an assembly result, not evidence that the pre-1955
+Missal agrees with 1962 or that either book is complete. Where the Triduum has
+been examined, 20 of 38 modelled units do not survive the reform. The delta was
+made by four acts, not the one the file's `stands_before` names;
+`guidance/recensions.md` and the coverage header own the precise boundaries and
+apportionment.
 
 ## Open items — name them, do not decide them
 
 | Item | Recorded in |
 | --- | --- |
 | Twelve of the thirteen 1962 Commons, and the sanctoral pointers into them | 1962 `open_collation_items` |
-| Whether the eleven antiphons move their number or keep the per-slot declaration | TASK-32; `psalm_numbering_exceptions` |
+| The unresolved bound or numbering of `Psalm 28:11`, `Psalm 56:14`, and `Psalm 150:6` across their four owning slots | postconciliar `psalm_numbering_exceptions` |
 | Whether `ascension`, `corpus-christi`, `sacred-heart`, `chrism-mass` belong under `seasonal` or `christological` | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias | 1962 `open_collation_items` |
 | A schema giving a commemoration's own three orations somewhere to live — the 104 are dated entries of rank `Comm.`, but their orations are still placeholders | 1962 `open_collation_items` |

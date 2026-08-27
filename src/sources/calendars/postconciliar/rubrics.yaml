@@ -17,6 +17,10 @@ advisory: >-
   Ascension, the Body and Blood of Christ and the Epiphany sit on a Sunday only
   where the competent authority has actually decided it, and the competent
   territorial calendar or Ordo controls. Nothing here is an occurrence witness.
+latin_text_status:
+  state: unavailable
+  scope: rubric-wording
+  kind: rights-withheld
 
 # ---------------------------------------------------------------------------
 # Where every norm below came from
@@ -35,10 +39,21 @@ derived_from:
   - src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-occurrence.tex
   edition_manifest: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/edition-manifest.md
   witnesses:
-  - id: Missale Romanum, editio typica tertia 2002
-    role: controlling book
-    what: Universal Norms and the Table of Liturgical Days complete, artifact pages
-      64-71; the General Instruction at the cited articles
+  - id: passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text
+    role: controlling norms
+    what: the Universal Norms and Table of Liturgical Days complete, artifact
+      pages 64-71 of the 2002 Missal witness
+  - id: segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61
+    role: controlling instruction
+    what: the complete General Instruction containing the articles cited below
+  - id: passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-vatican-web-2026-08-26.operative-occurrence-rule
+    role: governing later notification, official web state
+    what: >-
+      the operative occurrence-only reduction in the exact official Latin HTML
+      delivery of Notification Prot. n. 2671/98/L
+  - id: passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393.operative-occurrence-rule
+    role: governing later notification, official periodical state
+    what: the same operative paragraph at Notitiae 35 (1999), 157, artifact page 63
 
 # ---------------------------------------------------------------------------
 # Decision two. Thirteen numbered places, in three parts which are not three
@@ -49,8 +64,6 @@ derived_from:
 precedence:
   stated: true
   locus: NUALC 59
-  latin: Praecedentia inter dies liturgicos, quoad eorum celebrationem, unice regitur
-    sequenti tabula.
   gloss: >-
     Unice - solely. There is no residual customary precedence, no appeal to the
     dignity of a titular, and no general principle that a solemnity always wins.
@@ -100,15 +113,6 @@ precedence:
       the weekdays in Ordinary Time'}
   occurrence:
     locus: NUALC 60
-    latin: >-
-      Si eodem die plures celebrationes occurrunt, fit de ea quae in tabula
-      dierum liturgicorum superiorem obtinet locum. Attamen sollemnitas, quae
-      impeditur a die liturgico, qui praecedentia gaudeat, ad proximiorem diem
-      transferatur qui sit liber a diebus sub nn. 1-8 in tabula praecedentiae
-      recensitis, servatis iis quae n. 5 statuuntur. Sollemnitas vero
-      Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadae
-      sanctae, semper ad feriam II post dominicam II Paschae erit transferenda.
-      Reliquae celebrationes eo anno omittuntur.
     gloss: >-
       Four dispositions in one article: occurrence resolved by the table;
       transfer, reserved to solemnities; the Annunciation's fixed transfer; and
@@ -122,7 +126,17 @@ precedence:
       for the Office and has no Mass analogue.
     decides_the_mass: false
 
-overrides: []
+overrides:
+- id: immaculate-heart-and-obligatory-memorials-become-optional
+  key: immaculate-heart-blessed-virgin-mary
+  when_with_basis: place-10-obligatory-memorial
+  reduce_with_to_basis: place-12-optional-memorial
+  locus: CDWDS, Notification Prot. n. 2671/98/L, 8 December 1998; Notitiae
+    35 (1999), 157
+  why: >-
+    When the movable obligatory memorial of the Immaculate Heart coincides with
+    another obligatory memorial, both are retained as optional memorials for
+    that year.
 
 # ---------------------------------------------------------------------------
 # The bases.
@@ -281,9 +295,10 @@ assignment:
   note: 'Two obligatory memorials inscribed by rule rather than by date, so the dated
     rules below cannot reach them. The notification of 24 March 2018 makes the Monday
     memorial of the Blessed Virgin Mary, Mother of the Church, prevail over any other
-    memorial of a saint or blessed on the day, and the notification of 8 December 1998
-    makes the Immaculate Heart and a coinciding obligatory memorial both optional. Neither
-    notification was read here and neither refinement is applied.'}
+    memorial of a saint or blessed on the day; that notification has not been read here
+    and its refinement is not applied. The official notification of 8 December 1998 has
+    been read and is applied by the occurrence-only reduction above: it makes the
+    Immaculate Heart and a coinciding obligatory memorial both optional for that year.'}
 - {basis: place-5-feast-of-the-lord, keys: [holy-family, baptism-of-the-lord]}
 - {basis: place-6-sunday, keys: [second-sunday-after-nativity]}
 - {basis: place-6-sunday, key_matches: '^ot-\d+$'}
@@ -293,18 +308,15 @@ assignment:
 - {basis: place-7-feast, dated: true, rank: Feast}
 - {basis: place-10-obligatory-memorial, dated: true, rank: Memorial}
 - {basis: place-12-optional-memorial, dated: true, rank: Optional memorial}
-- {basis: place-12-optional-memorial, dated: true, rank: Optional memorials, note: 'This
-    entry holds more than one optional memorial under a single key. The calendar index
-    does not separate them, so the page can only say that several fall here and that
-    NUALC 14 permits one.'}
 
 # ---------------------------------------------------------------------------
 # Implied days. What the index carries, stated as it is rather than as it was
 # once summarized: 269 entries, of which 64 are the seasonal days with no rank -
 # the Sundays, the Triduum and the other days of the Proper of Time it holds -
 # and 205 carry a printed rank. Only 11 of those are solemnities. The rest are
-# 82 optional memorials, 69 memorials, 24 feasts, 18 keys joining several
-# optional memorials, and the Commemoration of All the Faithful Departed. What
+# 120 optional memorials, 69 memorials, 24 feasts, and the Commemoration of All
+# the Faithful Departed. Distinct optional choices on one date have separate
+# keys and remain coequal at place 12. What
 # the index does NOT carry is the ferial Proper of Time: the ordinary weekdays
 # have no key at all, so on most weekdays the day that a memorial is measured
 # against is unnamed. These rules constitute it from the season the year file
@@ -683,8 +695,6 @@ implied:
         this source.
 saturday_office:
   locus: NUALC 15
-  latin: In sabbatis "per annum", in quibus non occurrat memoria obligatoria, fieri
-    potest memoria ad libitum de beata Maria Virgine.
   stated_only: true
   why: >-
     The Saturday memorial of the Blessed Virgin Mary is an optional memorial and
@@ -698,9 +708,6 @@ impediment:
   transfer:
     locus: NUALC 60
     applies_to: solemnities only
-    latin: Sollemnitas, quae impeditur a die liturgico, qui praecedentia gaudeat, ad
-      proximiorem diem transferatur qui sit liber a diebus sub nn. 1-8 in tabula praecedentiae
-      recensitis.
     destination:
       rule: the nearest day free of the days listed under table places 1 to 8
       computed_here: false
@@ -717,8 +724,6 @@ impediment:
       impeded_when_easter_offset_between: [-7, -1]
       destination: the Monday after the Second Sunday of Easter
       seat_easter_offset: 8
-      latin: Sollemnitas vero Annuntiationis Domini, quotiescumque occurrit aliquo die
-        Hebdomadae sanctae, semper ad feriam II post dominicam II Paschae erit transferenda.
       note: This is not the nearest free day and is not derived from the general rule;
         it is a specific disposition that overrides it.
     sunday_rule:
@@ -738,15 +743,12 @@ impediment:
         which this repository does not know.
   omission:
     locus: NUALC 60
-    latin: Reliquae celebrationes eo anno omittuntur.
     gloss: >-
       Everything else that lost is omitted for that year. Not anticipated, not
       deferred, not commemorated - omitted. Transfer does not reach downwards:
       nothing below a solemnity is ever moved by the general law.
   reduction:
     locus: NUALC 14; NUALC 59 table 12
-    latin: Memoriae vero obligatoriae, quae occurrunt in feriis Quadragesimae, solummodo
-      tamquam memoriae ad libitum celebrari possunt.
     applies_when_loser_basis: [place-10-obligatory-memorial]
     applies_when_winner_basis: [place-9-privileged-weekday]
     only_in_season: [lent]
@@ -893,9 +895,6 @@ not_decided_here:
 # below, which now asserts the Mass is offered and never ranked.
 
 unsettled:
-- what: an entry that carries several optional memorials under one key
-  why: the calendar index in this repository joins them, so the page can say that more
-    than one falls on the day but cannot list them separately or say which is which.
 - what: two candidates that land on the same place
   why: 'the table orders within several places - and at place 12 it does not order at
     all, because NUALC 14 leaves the choice to the celebrant. Where two candidates tie
@@ -914,6 +913,37 @@ unsettled:
     declared beside it and does not choose a basis either.'
 
 worked_cases:
+- id: immaculate-heart-and-boniface-are-options
+  source: >-
+    CDWDS, Notification Prot. n. 2671/98/L, 8 December 1998; Notitiae 35
+    (1999), 157; NUALC 14; NUALC 16 c; NUALC 59 table 12 and table 13
+  date: '2027-06-05'
+  why: >-
+    The movable obligatory memorial of the Immaculate Heart coincides with the
+    obligatory memorial of Saint Boniface. The notification reduces both to
+    optional memorials for this occurrence. NUALC 14 and table place 12 then
+    permit one optional memorial to be kept or all to be omitted; NUALC 16 c
+    and table place 13 constitute the underlying ordinary weekday. The
+    notification alone neither chooses between the memorials nor supplies the
+    weekday arm.
+  expect:
+    winner: null
+    settled: true
+    readable:
+      option: [ot-9-saturday, immaculate-heart-blessed-virgin-mary,
+        saint-boniface-bishop-martyr]
+- id: an-optional-memorial-may-be-omitted
+  source: NUALC 14; NUALC 59 table 12
+  date: '2026-07-20'
+  why: >-
+    An optional memorial may be kept or omitted. It therefore does not become a
+    compulsory winner merely because no other memorial shares its place: both
+    its formulary and the underlying Monday remain authorized options.
+  expect:
+    winner: null
+    settled: true
+    readable:
+      option: [saint-apollinaris-bishop-martyr, ot-16-monday]
 - id: assumption-on-a-saturday
   source: 40-occurrence.tex, worked occurrences
   date: '2026-08-15'

@@ -9,14 +9,13 @@ rights_status = "unresolved"
 rights_basis = """
 The booklet is ICEL's own corporate policy document and carries no reuse grant
 over itself. The Global Computer Networks clause it prints at artifact page 26
-reaches "ICEL texts and translations that have been approved by the Conferences
-of Bishops, have received the recognition of the Holy See, and have subsequently
-been promulgated for use" — approved liturgical translations, which this booklet
-is not. So the clause that makes ICEL's liturgical English publishable here says
-nothing about redistributing these particular bytes, and the exact remote bytes
-are identified and hashed while no payload is retained. This is a disposition of
-the file, not of the text the file authorises: the rights record at
-src/sources/inventories/icel-web-permission-rights-v1.toml settles the text.
+applies conditionally to qualifying approved and promulgated liturgical material,
+not to the policy booklet itself. It therefore says nothing about redistributing
+these particular bytes. The exact remote bytes are identified and hashed while
+no payload is retained. This is a disposition of the file, not a conclusion that
+the current repository or static bundle satisfies the separate live-site clause;
+that possible route and its unresolved surface conditions are recorded at
+src/sources/inventories/icel-web-permission-rights-v1.toml.
 """
 source_url = "https://www.icelweb.org/PubPolicy.PDF"
 provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 and hashed before any page was read. Nothing in the retrieval path passed through a model; the contents were read locally with pdftotext -layout against the retained bytes."

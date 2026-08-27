@@ -87,7 +87,10 @@ class PublicAlphaTest(unittest.TestCase):
                 f"release/public-alpha/{asset}",
                 (REPOSITORY_ROOT / "release/public-alpha" / asset).read_bytes(),
             )
-        self.write("requirements-public-alpha.txt", b"Markdown==3.10.2\n")
+        self.write(
+            "requirements-public-alpha.txt",
+            (REPOSITORY_ROOT / "requirements-public-alpha.txt").read_bytes(),
+        )
         self.write("tools/public-alpha", b"test generator\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
@@ -1431,6 +1434,59 @@ class PublicAlphaTest(unittest.TestCase):
             "site source notes/retired.md is recorded but the renderer no "
             "longer reads it",
             str(failure.exception),
+        )
+
+    def test_site_source_graph_keeps_browser_assets_and_source_projection(self) -> None:
+        bible_manifest = {
+            "bibles": [
+                {
+                    "id": "offered",
+                    "label": "Offered",
+                    "language": "la",
+                    "numbering": "vulgate",
+                    "psalter": "gallican",
+                    "rights": "public-domain",
+                }
+            ]
+        }
+        self.write(
+            "src/web/data/bibles.json",
+            (json.dumps(bible_manifest) + "\n").encode(),
+        )
+        self.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
+
+        browser_inputs = {"src/web/browser/shared/browser-core.js"}
+        self.write("src/web/browser/shared/browser-core.js", b"// shared\n")
+        for entrance in self.tool.WEB_BROWSER_ENTRANCES:
+            relative = f"src/web/browser/{entrance}/index.html"
+            browser_inputs.add(relative)
+            self.write(relative, b"<!doctype html><main>fixture</main>\n")
+        for relative in (
+            "src/web/browser/liturgy/liturgy.css",
+            "src/web/browser/sources/sources.js",
+        ):
+            browser_inputs.add(relative)
+            self.write(relative, b"/* fixture */\n")
+
+        source_projection = "src/web/data/structure/sources/index.json"
+        unbound_projection = "src/web/data/structure/catena/index.json"
+        self.write(source_projection, b'{"works": []}\n')
+        self.write(unbound_projection, b'{"sources": []}\n')
+
+        recognized = self.tool.site_source_paths()
+
+        self.assertEqual(
+            browser_inputs,
+            {
+                relative
+                for relative in recognized
+                if relative.startswith("src/web/browser/")
+            },
+        )
+        self.assertIn(source_projection, recognized)
+        self.assertNotIn(unbound_projection, recognized)
+        self.assertTrue(
+            self.tool.is_bound_web_data_source(self.root / source_projection)
         )
 
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:

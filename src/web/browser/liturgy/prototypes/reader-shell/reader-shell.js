@@ -1264,7 +1264,16 @@
   window.addEventListener('resize', updateViewportScrollbar);
   window.addEventListener('resize', syncStudyPresentation);
   if ('ResizeObserver' in window) new ResizeObserver(updateViewportScrollbar).observe(document.documentElement);
-  document.addEventListener('focusin', () => {
+  document.addEventListener('focusin', (event) => {
+    const location = event.target instanceof Element
+      ? event.target.closest('[data-semantic-location]') : null;
+    if (location && reading.contains(location)) {
+      const changed = runtime.currentLocation !== location.dataset.semanticLocation;
+      runtime.currentLocation = location.dataset.semanticLocation;
+      markCurrentButton();
+      if (changed && runtime.openSurface === 'study' &&
+          runtime.surfacePresentation === 'pinned') populateStudy();
+    }
     if (runtime.shell === 'reveal' && (actions.contains(document.activeElement) || revealButton === document.activeElement)) {
       revealShell(false);
     }

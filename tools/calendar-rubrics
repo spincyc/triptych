@@ -68,18 +68,18 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
-                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 4 questions left open",
-                "solved cases: 37 of 37 verified against the browser's model",
-                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choice, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
+                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
+                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 4 questions le... [+7 chars]",
+                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 5 questions left open",
+                "solved cases: 39 of 39 verified against the browser's model",
+                "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "check compares --out's already-written browser files against the sources, so it reports a stale --out as a failure; this one was pointed at a freshly written untracked copy. A missing node or model is a failure here, never a skip",
         ),
         Example(
             "tools/calendar-rubrics check --out build/example-web --json",
             (
-                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":592,... [+533 chars]",
+                "{\"calendars\":[{\"bases\":13,\"calendar\":\"postconciliar\",\"implied_rules\":11,\"masses_classified\":612,... [+550 chars]",
             ),
         ),
     ),
@@ -98,7 +98,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics assign --calendar postconciliar --json",
             (
-                "{\"assignments\":[{\"calendar\":\"postconciliar\",\"masses\":[{\"basis\":\"place-2-great-day\",\"key\":\"advent... [+76425 chars]",
+                "{\"assignments\":[{\"calendar\":\"postconciliar\",\"masses\":[{\"basis\":\"place-2-great-day\",\"key\":\"advent... [+78496 chars]",
             ),
         ),
     ),
@@ -115,7 +115,7 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics day --date 2026-12-19 --calendar roman-1962 --json",
             (
-                "{\"date\":\"2026-12-19\",\"days\":[{\"advisory\":\"A finding aid for how a day is put together, and nev... [+5906 chars]",
+                "{\"date\":\"2026-12-19\",\"days\":[{\"advisory\":\"A finding aid for how a day is put together, and nev... [+5423 chars]",
             ),
             "the machine form carries every field the model returns, of which the text form prints six",
         ),
@@ -124,11 +124,11 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 592 masses classified over 13 bases and 13 rows, 11 implied-day rules, 4 question... [+11 chars]",
-                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
-                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 4 questions left open",
-                "solved cases: 37 of 37 verified against the browser's model",
-                "  asserting 6 of 19 fields the model returns; no case asserts absent, candidates, ceilings, choice, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
+                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
+                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 4 questions le... [+7 chars]",
+                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 5 questions left open",
+                "solved cases: 39 of 39 verified against the browser's model",
+                "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
             "read-only first: `check` validates the sources and reports whether --out is already current",
         ),
@@ -170,6 +170,7 @@ REQUIRED_TOP = (
     "code",
     "advisory",
     "derived_from",
+    "latin_text_status",
     "precedence",
     "bases",
     "assignment",
@@ -182,7 +183,9 @@ REQUIRED_TOP = (
     "worked_cases",
 )
 # Emitted to the browser. `worked_cases` is deliberately absent: it is how this
-# tool holds the model, not something a page reads.
+# tool holds the model, not something a page reads. `derived_from` is source-only
+# audit provenance; the public rules retain their text-free loci without exposing
+# restricted artifact and witness identifiers from that graph.
 EMITTED = (
     "advisory",
     "assignment",
@@ -191,7 +194,6 @@ EMITTED = (
     "citation_forms",
     "code",
     "commemoration",
-    "derived_from",
     "divergences",
     "edition",
     "edition_short",
@@ -199,6 +201,7 @@ EMITTED = (
     "implied",
     "keys",
     "known_absences",
+    "latin_text_status",
     "mass_category",
     "mass_choices",
     "not_decided_here",
@@ -211,7 +214,31 @@ EMITTED = (
     "unsettled",
 )
 
+LATIN_TEXT_STATUS = {
+    "state": "unavailable",
+    "scope": "rubric-wording",
+    "kind": "rights-withheld",
+}
+LATIN_TEXT_STATUS_FIELDS = frozenset((*LATIN_TEXT_STATUS, "paths"))
+LATIN_PATH_PART = re.compile(r"^(?P<key>[A-Za-z_][A-Za-z0-9_-]*)(?:\[(?P<index>[0-9]+)\])?$")
 PREDICATE_FIELDS = ("keys", "key_matches", "dated", "kind", "rank", "season")
+REDUCTION_OVERRIDE_FIELDS = frozenset(
+    ("id", "key", "when_with_basis", "reduce_with_to_basis", "locus", "why")
+)
+REDUCTION_OVERRIDE_ACTIONS = frozenset(("when_with_basis", "reduce_with_to_basis"))
+YIELD_OVERRIDE_FIELDS = frozenset(("id", "key", "yields_to", "locus", "why"))
+COLLISION_OVERRIDE_FIELDS = frozenset(
+    ("id", "key", "over_key_matches", "when_same_row", "locus", "why")
+)
+STATED_OVERRIDE_FIELDS = frozenset(("id", "stated_only", "locus", "why"))
+# When Node is unavailable, accept only the deliberately small grammar the
+# tracked key matcher needs.  This is a portability fallback, not a second
+# implementation of JavaScript regular expressions: grouping, alternation,
+# lookarounds and engine-specific extensions all fail closed until the browser's
+# own engine can validate them.
+FALLBACK_OVERRIDE_PATTERN = re.compile(
+    r"\^?(?:(?:[A-Za-z0-9_-]|\\[dDsSwW])(?:[?*+]|\{[0-9]+(?:,[0-9]*)?\})?)+\$?"
+)
 # The one section of a mass index that holds no celebrations; see `load_masses`.
 COMMON_KIND = "common"
 
@@ -240,7 +267,7 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
     """The calendar's own mass index, which the rubrics classify.
 
     Read through `_calendars.load_document`, which is the same derivation
-    `calendar-days` and `mass-propers` read, so a rank or a kind is never
+    the calendar-day and Proper assemblers read, so a rank or a kind is never
     restated beside the file that owns it.
 
     THE `effective=True` IS LOAD-BEARING AND WAS NOT ALWAYS HERE. A recension's
@@ -270,6 +297,30 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
             if not isinstance(mass, dict) or not mass.get("key"):
                 continue
             key = str(mass["key"])
+            source_forms = mass.get("forms")
+            if source_forms is None:
+                source_forms = []
+            if not isinstance(source_forms, list):
+                raise SourceError(f"{path}: mass {key!r} forms must be a list")
+            forms: list[dict[str, str]] = []
+            form_ids: set[str] = set()
+            form_names: set[str] = set()
+            for position, form in enumerate(source_forms):
+                if not isinstance(form, dict):
+                    raise SourceError(f"{path}: mass {key!r} form {position} must be a mapping")
+                form_id = form.get("id")
+                form_name = form.get("name")
+                if not isinstance(form_id, str) or not form_id:
+                    raise SourceError(f"{path}: mass {key!r} form {position} carries no nonempty id")
+                if not isinstance(form_name, str) or not form_name:
+                    raise SourceError(f"{path}: mass {key!r} form {form_id!r} carries no nonempty name")
+                if form_id in form_ids:
+                    raise SourceError(f"{path}: mass {key!r} repeats form id {form_id!r}")
+                if form_name in form_names:
+                    raise SourceError(f"{path}: mass {key!r} repeats form name {form_name!r}")
+                form_ids.add(form_id)
+                form_names.add(form_name)
+                forms.append({"id": form_id, "name": form_name})
             masses[key] = {
                 "key": key,
                 "name": mass.get("name"),
@@ -278,6 +329,7 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
                 "rank": mass.get("rank"),
                 "season": mass.get("season"),
                 "dated": bool(mass.get("date")),
+                "forms": forms,
             }
     if not masses:
         raise SourceError(f"{path}: carries no masses")
@@ -323,6 +375,88 @@ def load_source(root: Path, name: str) -> dict:
 
 
 # --------------------------------------------------------------- validation
+
+
+def latin_body_paths(value: object, prefix: str = "") -> list[str]:
+    """Return every data path whose final mapping key is ``latin``."""
+    found: list[str] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            path = f"{prefix}.{key}" if prefix else str(key)
+            if key == "latin":
+                found.append(path)
+            found.extend(latin_body_paths(child, path))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            found.extend(latin_body_paths(child, f"{prefix}[{index}]"))
+    return found
+
+
+def latin_path_has_container(document: dict, path: str) -> bool:
+    """Whether a withheld path still points to an existing structural slot."""
+    parts = path.split(".")
+    if len(parts) < 2 or parts[-1] != "latin":
+        return False
+    value: object = document
+    for part in parts[:-1]:
+        matched = LATIN_PATH_PART.fullmatch(part)
+        if not matched or not isinstance(value, dict) or matched["key"] not in value:
+            return False
+        value = value[matched["key"]]
+        if matched["index"] is not None:
+            if not isinstance(value, list):
+                return False
+            index = int(matched["index"])
+            if index >= len(value):
+                return False
+            value = value[index]
+    return isinstance(value, dict)
+
+
+def check_latin_text_status(document: dict, where: str) -> list[str]:
+    """Hold withheld wording out of both whole and path-scoped sources."""
+    problems: list[str] = []
+    status = document.get("latin_text_status")
+    if not isinstance(status, dict):
+        return [f"{where}: latin_text_status must be a mapping"]
+    extra = sorted(set(status) - LATIN_TEXT_STATUS_FIELDS)
+    if extra:
+        problems.append(f"{where}: latin_text_status carries unknown fields {extra}")
+    for field, expected in LATIN_TEXT_STATUS.items():
+        if status.get(field) != expected:
+            problems.append(
+                f"{where}: latin_text_status.{field} is {status.get(field)!r}, "
+                f"expected {expected!r}"
+            )
+
+    present = set(latin_body_paths(document))
+    if "paths" not in status:
+        for path in sorted(present):
+            problems.append(f"{where}: withheld Latin body is present at {path}")
+        return problems
+
+    paths = status["paths"]
+    if not isinstance(paths, list) or not paths:
+        problems.append(f"{where}: latin_text_status.paths must be a nonempty list")
+        return problems
+    withheld: set[str] = set()
+    for position, path in enumerate(paths):
+        if not isinstance(path, str) or not path:
+            problems.append(
+                f"{where}: latin_text_status.paths[{position}] must be a nonempty string"
+            )
+            continue
+        if path in withheld:
+            problems.append(f"{where}: latin_text_status.paths repeats {path!r}")
+            continue
+        withheld.add(path)
+        if not latin_path_has_container(document, path):
+            problems.append(
+                f"{where}: latin_text_status.paths entry {path!r} has no structural container"
+            )
+        if path in present:
+            problems.append(f"{where}: withheld Latin body is present at {path}")
+    return problems
 
 
 def check_precedence(document: dict, where: str) -> list[str]:
@@ -407,7 +541,12 @@ def assign(document: dict, masses: dict[str, dict], where: str) -> tuple[dict[st
         for position, rule in enumerate(rules):
             if matches(rule, mass):
                 used[position] += 1
-                assigned[key] = {"basis": rule["basis"], "name": mass["name"], "rule": position}
+                assigned[key] = {
+                    "basis": rule["basis"],
+                    "forms": mass["forms"],
+                    "name": mass["name"],
+                    "rule": position,
+                }
                 break
         else:
             problems.append(
@@ -445,6 +584,127 @@ def check_implied(document: dict, basis_index: dict[str, int], where: str) -> li
     if office and not office.get("stated_only"):
         if office.get("basis") not in basis_index:
             problems.append(f"{where}: saturday_office names unknown basis {office.get('basis')!r}")
+    return problems
+
+
+def javascript_regex_problem(pattern: str) -> str | None:
+    """Return why ``pattern`` cannot be consumed by JavaScript's ``RegExp``.
+
+    Override patterns are emitted unchanged and compiled by the browser.  A
+    Python ``re.compile`` check is therefore the wrong boundary: Python accepts
+    comments, atomic groups and possessive quantifiers that JavaScript rejects.
+    Ask Node for the exact consumer grammar when it is available.  Structure
+    remains usable on a host without Node only for the explicit, portable key
+    matcher subset above.
+    """
+    node = shutil.which("node")
+    if node:
+        try:
+            finished = subprocess.run(
+                [
+                    node,
+                    "-e",
+                    (
+                        "try { new RegExp(process.argv[1]); } "
+                        "catch (error) { console.error(error.message); process.exit(1); }"
+                    ),
+                    pattern,
+                ],
+                capture_output=True,
+                text=True,
+                timeout=5,
+                check=False,
+            )
+        except (OSError, ValueError, subprocess.TimeoutExpired) as error:
+            return f"could not be checked by JavaScript's RegExp: {error}"
+        if finished.returncode:
+            detail = (finished.stderr or finished.stdout).strip()
+            return "is not valid for JavaScript's RegExp" + (f": {detail}" if detail else "")
+        return None
+    if FALLBACK_OVERRIDE_PATTERN.fullmatch(pattern):
+        return None
+    return (
+        "cannot be proved portable without node; use only anchored ASCII key "
+        "literals, character classes such as \\d, and ordinary quantifiers"
+    )
+
+
+def check_overrides(document: dict, assigned: dict[str, dict], basis_index: dict[str, int],
+                    where: str) -> list[str]:
+    """Validate every override shape consumed by the browser model."""
+    problems: list[str] = []
+    entries = document.get("overrides") or []
+    if not isinstance(entries, list):
+        return [f"{where}: overrides must be a list of mappings"]
+    for position, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            problems.append(f"{where}: override {position} must be a mapping")
+            continue
+        label = entry.get("id") if isinstance(entry.get("id"), str) and entry.get("id") else position
+        if REDUCTION_OVERRIDE_ACTIONS.intersection(entry):
+            fields = REDUCTION_OVERRIDE_FIELDS
+        elif "yields_to" in entry:
+            fields = YIELD_OVERRIDE_FIELDS
+        elif "over_key_matches" in entry or "when_same_row" in entry:
+            fields = COLLISION_OVERRIDE_FIELDS
+        elif "stated_only" in entry:
+            fields = STATED_OVERRIDE_FIELDS
+        else:
+            problems.append(f"{where}: override {label!r} has no recognized action")
+            continue
+        missing = sorted(fields - set(entry))
+        extra = sorted(set(entry) - fields)
+        if missing:
+            problems.append(f"{where}: override {label!r} is missing fields {missing}")
+        if extra:
+            problems.append(f"{where}: override {label!r} carries unknown fields {extra}")
+        boolean_fields = {"stated_only", "when_same_row"}
+        for field in fields - boolean_fields:
+            if field in entry and (not isinstance(entry[field], str) or not entry[field]):
+                problems.append(
+                    f"{where}: override {label!r} field {field!r} must be a nonempty string"
+                )
+        for field in fields & boolean_fields:
+            if field in entry and not isinstance(entry[field], bool):
+                problems.append(f"{where}: override {label!r} field {field!r} must be boolean")
+        key = entry.get("key")
+        if isinstance(key, str) and key and key not in assigned:
+            problems.append(
+                f"{where}: override {label!r} names mass {key!r}, which this "
+                "calendar's index does not carry"
+            )
+        pattern = entry.get("over_key_matches")
+        if isinstance(pattern, str) and pattern:
+            regex_problem = javascript_regex_problem(pattern)
+            if regex_problem:
+                problems.append(
+                    f"{where}: override {label!r} key pattern {regex_problem}"
+                )
+        source_basis = entry.get("when_with_basis")
+        target_basis = entry.get("reduce_with_to_basis")
+        for field, basis in (
+            ("when_with_basis", source_basis),
+            ("reduce_with_to_basis", target_basis),
+        ):
+            if isinstance(basis, str) and basis and basis not in basis_index:
+                problems.append(
+                    f"{where}: reduction override {label!r} field {field!r} names unknown basis {basis!r}"
+                )
+        if source_basis and source_basis == target_basis:
+            problems.append(
+                f"{where}: reduction override {label!r} cannot reduce basis {source_basis!r} to itself"
+            )
+        if (
+            isinstance(key, str)
+            and key in assigned
+            and isinstance(source_basis, str)
+            and source_basis
+            and assigned[key].get("basis") != source_basis
+        ):
+            problems.append(
+                f"{where}: reduction override {label!r} expects {key!r} to have basis "
+                f"{source_basis!r}, found {assigned[key].get('basis')!r}"
+            )
     return problems
 
 
@@ -592,7 +852,11 @@ def document_for(document: dict, assigned: dict[str, dict], basis_index: dict[st
             continue
         if field == "keys":
             out["keys"] = {
-                key: {"basis": basis_index[row["basis"]], "name": row["name"]}
+                key: {
+                    "basis": basis_index[row["basis"]],
+                    "forms": row["forms"],
+                    "name": row["name"],
+                }
                 for key, row in sorted(assigned.items())
             }
             continue
@@ -613,16 +877,32 @@ def document_for(document: dict, assigned: dict[str, dict], basis_index: dict[st
             # opening the source; the browser reads `keys` and never re-matches.
             out["assignment"] = document["assignment"]
             continue
+        if field == "latin_text_status":
+            # The source status also carries audit-only scope and path data.
+            # The public structure needs only the typed nonpresence reason.
+            status = document.get(field)
+            if isinstance(status, dict) and isinstance(status.get("kind"), str):
+                out[field] = {"kind": status["kind"]}
+            continue
         if field in document:
             out[field] = document[field]
     return out
 
 
+def serialise_json(payload: dict, *, indent: int | None) -> str:
+    """Return the canonical bytes this projection writes for one JSON object."""
+    return json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True,
+        indent=indent,
+        separators=(",", ":") if indent is None else None,
+    ) + "\n"
+
+
 def write_json(path: Path, payload: dict, *, indent: int | None) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=indent,
-                      separators=(",", ":") if indent is None else None)
-    path.write_text(text + "\n", encoding="utf-8")
+    path.write_text(serialise_json(payload, indent=indent), encoding="utf-8")
 
 
 def index_document(built: list[dict]) -> dict:
@@ -648,6 +928,85 @@ def index_document(built: list[dict]) -> dict:
         ),
         "schema": SCHEMA,
     }
+
+
+def rubric_json_files(out: Path) -> set[Path]:
+    """Immediate JSON files owned by the rubrics projection.
+
+    The layer owns ``structure/rubrics/*.json`` and nothing below a nested
+    directory.  Keeping that boundary explicit lets an unscoped structure pass
+    retire orphaned calendar leaves without treating an unknown directory as
+    disposable.
+    """
+    target = out / "structure" / "rubrics"
+    if not target.is_dir():
+        return set()
+    return {
+        path
+        for path in target.glob("*.json")
+        if path.is_file() or path.is_symlink()
+    }
+
+
+def expected_rubric_names(built: list[dict]) -> set[str]:
+    return {"index.json", *(f"{payload['calendar']}.json" for payload in built)}
+
+
+def merge_scoped_index(index: Path, expected: dict) -> dict:
+    """Replace selected rows while retaining unrelated shared-index rows.
+
+    Scoped structure has no authority to validate or repair another calendar,
+    so even an incomplete unrelated row travels unchanged.  The complete
+    structure pass remains responsible for projecting the full canonical
+    index.
+    """
+    if not index.exists():
+        return expected
+    try:
+        current = json.loads(index.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise ValueError(
+            f"cannot preserve malformed shared rubrics index {index}: {error}"
+        ) from error
+    current_rows = current.get("calendars") if isinstance(current, dict) else None
+    if not isinstance(current_rows, list):
+        raise ValueError(f"shared rubrics index {index} must contain a calendars list")
+    expected_rows = {
+        str(row["calendar"]): row
+        for row in expected["calendars"]
+        if isinstance(row, dict) and row.get("calendar")
+    }
+    selected = set(expected_rows)
+    merged: list[dict] = []
+    seen: set[str] = set()
+    for row in current_rows:
+        if not isinstance(row, dict):
+            raise ValueError("the shared rubrics index contains a non-mapping row")
+        calendar = str(row.get("calendar") or "")
+        if not calendar:
+            raise ValueError("the shared rubrics index has a row with no calendar identity")
+        if calendar in seen:
+            raise ValueError(f"the shared rubrics index repeats {calendar}")
+        seen.add(calendar)
+        if calendar in selected:
+            replacement = expected_rows.pop(calendar, None)
+            if replacement is not None:
+                merged.append(replacement)
+            continue
+        merged.append(row)
+    merged.extend(expected_rows.values())
+    return {**expected, "calendars": merged}
+
+
+def refuse_symlink_output(root: Path, target: Path) -> None:
+    """Never follow an owned output component outside the requested tree."""
+    current = root
+    if current.is_symlink():
+        raise ValueError(f"output root is a symlink: {current}")
+    for part in target.relative_to(root).parts:
+        current = current / part
+        if current.is_symlink():
+            raise ValueError(f"rubrics output path is a symlink: {current}")
 
 
 # --------------------------------------------------------------- the model
@@ -896,12 +1255,14 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         where = f"{name}/{SOURCE_NAME}"
         document = load_source(root, name)
         masses = load_masses(root, name)
+        problems.extend(check_latin_text_status(document, where))
         problems.extend(check_precedence(document, where))
         basis_index, found = check_bases(document, where)
         problems.extend(found)
         assigned, found = assign(document, masses, where)
         problems.extend(found)
         problems.extend(check_implied(document, basis_index, where))
+        problems.extend(check_overrides(document, assigned, basis_index, where))
         problems.extend(check_seats(document, assigned, where))
         problems.extend(check_absences(document, where))
         problems.extend(
@@ -932,14 +1293,29 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     if problems:
         raise SourceError("; ".join(problems[:4]) + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
     out = Path(arguments.out)
+    base = out / "structure" / "rubrics"
+    index = base / "index.json"
+    refuse_symlink_output(out, base)
+    for payload in built:
+        refuse_symlink_output(out, base / f"{payload['calendar']}.json")
+    refuse_symlink_output(out, index)
+    index_payload = index_document(built)
+    if arguments.calendar:
+        # Preserve the shared manifest before writing any selected leaf. A
+        # malformed existing manifest must leave the output tree untouched.
+        index_payload = merge_scoped_index(index, index_payload)
     written: list[str] = []
     for payload in built:
         path = out / "structure" / "rubrics" / f"{payload['calendar']}.json"
         write_json(path, payload, indent=None)
         written.append(str(path))
-    index = out / "structure" / "rubrics" / "index.json"
-    write_json(index, index_document(built), indent=1)
+    write_json(index, index_payload, indent=1)
     written.append(str(index))
+    if not arguments.calendar:
+        expected = expected_rubric_names(built)
+        for path in sorted(rubric_json_files(out)):
+            if path.name not in expected:
+                path.unlink()
     return {
         "files": len(written),
         "status": "ok",
@@ -960,14 +1336,53 @@ def run_check(arguments: argparse.Namespace) -> dict:
         if not path.is_file():
             stale.append(f"{path} has not been written")
             continue
-        if json.loads(path.read_text(encoding="utf-8")) != payload:
+        try:
+            current = path.read_bytes()
+        except OSError:
+            current = b""
+        if current != serialise_json(payload, indent=None).encode("utf-8"):
             stale.append(f"{path} is stale; run `calendar-rubrics structure`")
     index = data / "structure" / "rubrics" / "index.json"
     if index.is_file():
-        if json.loads(index.read_text(encoding="utf-8")) != index_document(built):
+        expected_index = index_document(built)
+        try:
+            current_index = index.read_bytes()
+        except OSError:
+            current_index = b""
+        index_current = False
+        if arguments.calendar:
+            try:
+                written_index = json.loads(current_index)
+            except (UnicodeError, json.JSONDecodeError):
+                written_index = None
+            if isinstance(written_index, dict) and isinstance(
+                written_index.get("calendars"), list
+            ):
+                selected = {payload["calendar"] for payload in built}
+                written_index = {
+                    **written_index,
+                    "calendars": [
+                        row
+                        for row in written_index["calendars"]
+                        if isinstance(row, dict) and row.get("calendar") in selected
+                    ],
+                }
+                index_current = written_index == expected_index
+        else:
+            index_current = current_index == serialise_json(
+                expected_index, indent=1
+            ).encode("utf-8")
+        if not index_current:
             stale.append(f"{index} is stale; run `calendar-rubrics structure`")
     elif built:
         stale.append(f"{index} has not been written")
+    if not arguments.calendar:
+        expected = expected_rubric_names(built)
+        for path in sorted(rubric_json_files(data)):
+            if path.name not in expected:
+                stale.append(
+                    f"{path} is extra; run `calendar-rubrics structure` to remove it"
+                )
     problems.extend(stale)
 
     cases: list[dict] = []
@@ -1123,6 +1538,8 @@ def run_day(arguments: argparse.Namespace) -> dict:
             problems.append(f"{row['id']}: the model raised {row.get('error', '')[:200]}")
             continue
         days.append(row["result"])
+    if problems:
+        raise SourceError("; ".join(problems))
     return {"date": date, "days": days, "problems": problems, "status": "ok"}
 
 
@@ -1203,14 +1620,40 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar directory")
-    shared.add_argument("--out", default=str(DEFAULT_DATA), help="the browser's data root")
-    shared.add_argument("--calendar", default=None, help="limit to one calendar")
-    shared.add_argument("--format", choices=("text", "json"), default="text")
-    shared.add_argument("--verbose", action="store_true", help="list every file written")
-    shared.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
-    shared.add_argument("--date", help="the civil date to derive (the `day` verb)")
+    def shared_options(*, verb: bool) -> argparse.ArgumentParser:
+        shared = argparse.ArgumentParser(add_help=False)
+        missing = argparse.SUPPRESS if verb else None
+        shared.add_argument(
+            "--root", default=argparse.SUPPRESS if verb else str(DEFAULT_ROOT),
+            help="calendar directory"
+        )
+        shared.add_argument(
+            "--out", default=argparse.SUPPRESS if verb else str(DEFAULT_DATA),
+            help="the browser's data root"
+        )
+        shared.add_argument("--calendar", default=missing, help="limit to one calendar")
+        shared.add_argument(
+            "--format", choices=("text", "json"),
+            default=argparse.SUPPRESS if verb else "text"
+        )
+        shared.add_argument(
+            "--verbose", action="store_true",
+            default=argparse.SUPPRESS if verb else False,
+            help="list every file written"
+        )
+        shared.add_argument(
+            "--json", action="store_true",
+            default=argparse.SUPPRESS if verb else False,
+            help="emit one compact key-sorted JSON object (cli-v1)"
+        )
+        shared.add_argument(
+            "--date", default=argparse.SUPPRESS if verb else None,
+            help="the civil date to derive (the `day` verb)"
+        )
+        return shared
+
+    shared = shared_options(verb=False)
+    verb_shared = shared_options(verb=True)
     parser = argparse.ArgumentParser(
         prog="calendar-rubrics",
         description="Validate the rubrical precedence sources and emit them for the browser.",
@@ -1219,19 +1662,19 @@ def main(argv: list[str] | None = None) -> int:
     examples_live_on_the_verbs(parser, "calendar-rubrics")
     sub = parser.add_subparsers(dest="command")
     with_examples(
-        sub.add_parser("check", help="validate the sources and run the solved cases", parents=[shared]),
+        sub.add_parser("check", help="validate the sources and run the solved cases", parents=[verb_shared]),
         EXAMPLES["check"],
     )
     with_examples(
-        sub.add_parser("structure", help="write the browser's rubrics files", parents=[shared]),
+        sub.add_parser("structure", help="write the browser's rubrics files", parents=[verb_shared]),
         EXAMPLES["structure"],
     )
     with_examples(
-        sub.add_parser("assign", help="report what each mass was classified as", parents=[shared]),
+        sub.add_parser("assign", help="report what each mass was classified as", parents=[verb_shared]),
         EXAMPLES["assign"],
     )
     with_examples(
-        sub.add_parser("day", help="derive one date through the browser's model", parents=[shared]),
+        sub.add_parser("day", help="derive one date through the browser's model", parents=[verb_shared]),
         EXAMPLES["day"],
     )
 

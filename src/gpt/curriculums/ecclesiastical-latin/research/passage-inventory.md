@@ -52,6 +52,22 @@ review. The SacredBible.org host represents the 1914 Hetzenauer text and scans
 as public domain. Donor-corpus authorship and licensing remain unresolved as
 recorded in `scope.md` and `source-audit.md`.
 
+### Text-free English disposition
+
+| Stable ID | Language | State | Scope | Reason |
+|---|---|---|---|---|
+| W.I.20 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| W.I.21 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| W.I.27 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| W.I.53 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| W.II.61 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+
+The received Latin, exercise identity, and grammatical analysis remain in
+place. These dispositions govern every exercise-bank reuse of the affected
+English segments, including the corresponding Volume II compression exercise.
+They establish no restriction on the Latin and make no claim about the creator
+of the removed English wording.
+
 ## Verified connected-reader register
 
 | Stable source ID | Received object | Edition locator | State |

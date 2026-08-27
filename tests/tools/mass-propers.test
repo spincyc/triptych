@@ -18,12 +18,19 @@ cd "$sandbox"
 
 # The reading view names the mass, its edition, and every proper slot.
 out="$(run_tool --calendar roman-1962 --mass advent-1)"
-for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect" "Excita, quaesumus"; do
+for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect" \
+	"Latin text unavailable"; do
 	case "$out" in
 	*"$want"*) ;;
 	*) echo "reading view is missing $want" >&2; exit 1 ;;
 	esac
 done
+case "$out" in
+*"publication basis"*|*"publication_status"*|*"publication_basis"*)
+	echo "reading view leaked Latin publication audit metadata" >&2
+	exit 1
+	;;
+esac
 
 # Scripture propers show their reference; without a bible there is no verse text.
 case "$out" in
@@ -31,16 +38,38 @@ case "$out" in
 *) echo "scripture proper did not print its reference" >&2; exit 1 ;;
 esac
 
-# The recorded English reaches this verb, by the same merge the browser gets.
-# This assertion used to read the other way -- it required the fallback note
-# here -- and it passed because only `structure` merged the sidecar, so the
-# reading view answered "no en translation recorded" over an oration whose
-# English the site was publishing. The test encoded the defect.
+# A historical English lead without exact publication binding is a typed
+# unavailable translation, never a payload reachable through the reading view.
 english="$(run_tool --calendar roman-1962 --mass advent-1 --lang en)"
 case "$english" in
-*"Exert, we beseech thee, O Lord, thy power, and come"*) ;;
-*) echo "recorded English did not reach the reading view" >&2; exit 1 ;;
+*"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
+*) echo "withheld historical English did not report unavailability" >&2; exit 1 ;;
 esac
+case "$english" in
+*"Exert, we beseech thee, O Lord, thy power, and come"*)
+	echo "withheld historical English reached the reading view" >&2
+	exit 1
+	;;
+esac
+run_tool --calendar roman-1962 --mass advent-1 --lang en --format json >roman-english-withheld.json
+python3 - roman-english-withheld.json <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+collect = next(
+    row["proper"] for row in document["appointed"]
+    if row["proper"]["name"] == "Collect"
+)
+assert not collect.get("translations"), collect
+assert collect["unavailable_translations"] == [{
+    "lang": "en",
+    "state": "rights-restricted",
+    "target": {
+        "mass": "advent-1", "form_id": "main", "proper": "Collect",
+        "cycle": "all", "occurrence": 1, "extent": "body",
+    },
+}], collect
+PY
 
 # Latin is the tracked text, so a language nothing records falls back and says so.
 absent="$(run_tool --calendar roman-1962 --mass advent-1 --lang fr)"
@@ -49,27 +78,25 @@ case "$absent" in
 *) echo "expected a note when the requested language is absent" >&2; exit 1 ;;
 esac
 
-# A proper deliberately left without English says so, rather than reading as a gap.
-# Asked of postconciliar/advent-1 until its English was filled in: that calendar's
-# `untranslated` ledger is now empty, so nothing in it can demonstrate the state
-# and the assertion tested the absence of a ledger rather than the note. The
-# 1962 overlay still ledgers 66 slots, and several masses are tried so that
-# translating one of them does not turn this red.
-deliberate=""
-for mass in commemoratione-omnium-fidelium-defunctorum commune-summorum-pontificum \
-	good-friday easter-vigil; do
-	found="$(run_tool --calendar roman-1962 --mass "$mass" --lang en)"
-	case "$found" in
-	*"no en recorded, deliberately"*)
-		deliberate="$found"
-		break
-		;;
-	esac
-done
-if [ -z "$deliberate" ]; then
-	echo "ledgered untranslated proper did not say it was deliberate" >&2
-	exit 1
-fi
+# A proper deliberately left without English remains a typed, text-free ledger
+# state in machine output even though the reading view uses one generic absence
+# sentence for Latin and English together.
+run_tool --calendar roman-1962 \
+	--mass commemoratione-omnium-fidelium-defunctorum \
+	--lang en --format json >deliberate-untranslated.json
+python3 - deliberate-untranslated.json <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+states = [
+    state
+    for row in document["appointed"]
+    for state in row["proper"].get("untranslated") or []
+]
+assert states, document
+assert any(state["lang"] == "en" and state["state"] == "unavailable" for state in states)
+assert all("text" not in state for state in states)
+PY
 
 # Machine forms carry the record only; rendering options stay off the payload.
 run_tool --calendar roman-1962 --mass advent-1 --format json >one.json
@@ -259,6 +286,13 @@ assert citation["unresolved"] is None, citation["unresolved"]
 assert citation["loci"]["vulgate"] == [{"chapter": 24, "first": 1, "last": 3}], citation
 assert citation["loci"]["hebrew"] == [{"chapter": 25, "first": 1, "last": 3}], citation
 
+for mass in document["masses"]:
+    for proper in mass["propers"]:
+        latin = proper.get("latin")
+        if latin and latin.get("withheld"):
+            assert set(latin) == {"target", "state", "held", "available", "withheld"}, latin
+            assert latin["held"] is False and latin["available"] is False, latin
+
 # A citation that cannot be converted carries the reason and NO loci: a page
 # that explains itself beats one that renders the wrong psalm confidently.
 postconciliar = json.load(open(sys.argv[1].replace("roman-1962", "postconciliar"), encoding="utf-8"))
@@ -284,6 +318,106 @@ cycled = [
     if proper["cycles"]
 ]
 assert cycled, "the postconciliar calendar carries cycle-varying propers"
+
+# Fresh multi-form output is canonical without breaking the v1 flat projection:
+# stable ids are source-authored, grouped order is source order, and the legacy
+# flat list is exactly the concatenation of the groups.
+ascension = masses = {mass["key"]: mass for mass in postconciliar["masses"]}
+ascension = masses["ascension"]
+assert [form["id"] for form in ascension["forms"]] == ["vigil", "day"]
+assert [form["ordinal"] for form in ascension["forms"]] == [1, 2]
+assert [p for form in ascension["forms"] for p in form["propers"]] == ascension["propers"]
+assert all(proper["form_id"] in {"vigil", "day"} for proper in ascension["propers"])
+
+# Typed absences retain exact ownership by containment but expose only the
+# frozen public target/lang/state projection.  The cycle-B body is not held.
+ot11 = masses["ot-11"]
+acclamation = next(p for p in ot11["propers"] if p["name"] == "Gospel Acclamation")
+cycle_b = acclamation["cycles"]["B"]
+assert cycle_b["text"] is None, cycle_b
+assert cycle_b["text_status"] == {
+    "state": "unavailable", "scope": "proper-body",
+}, cycle_b
+assert cycle_b["latin"] == {
+    "target": "Gospel Acclamation",
+    "state": "unavailable",
+    "held": False,
+    "available": False,
+    "withheld": True,
+}, cycle_b
+la = next(row for row in cycle_b["languages"] if row["lang"] == "la")
+assert la["status"] == "unavailable", la
+assert la["held"] is False and la["available"] is False, la
+assert la["reason"] == "text-withheld", la
+absence = acclamation["cycles"]["B"]["untranslated"][0]
+assert set(absence) == {"target", "lang", "state"}, absence
+assert absence["target"] == {
+    "mass": "ot-11", "form_id": "main", "proper": "Gospel Acclamation",
+    "cycle": "B", "occurrence": 1, "extent": "body",
+}, absence
+assert absence["state"] == "unavailable"
+en = next(row for row in acclamation["cycles"]["B"]["languages"] if row["lang"] == "en")
+assert en["held"] is False and en["available"] is False, en
+encoded = json.dumps(postconciliar, ensure_ascii=False)
+assert "vatican-typica-tertia-2002" not in encoded, "private rights context leaked"
+assert '"reasons"' not in encoded, "source-side absence reasons leaked"
+
+# Protected Common evidence stays authoritative-source-side.
+fatima = masses["our-lady-fatima"]
+assert set(fatima["common_from"]) == {"scope", "options"}, fatima["common_from"]
+
+for mass in postconciliar["masses"]:
+    for proper in mass["propers"]:
+        for row in proper.get("untranslated") or []:
+            assert set(row) == {"target", "lang", "state"}, row
+        for row in proper.get("unavailable_translations") or []:
+            assert set(row) == {"target", "lang", "state"}, row
+PY
+
+# An unscoped check owns the complete generated directory and catches orphan
+# JSON; a scoped check neither diagnoses nor deletes another target. The writer
+# prunes only that exact owned orphan.
+orphan="$structure/structure/propers/orphan.json"
+echo '{}' >"$orphan"
+status=0
+run_tool structure --out "$structure" --check --json >orphan-check.json || status=$?
+if [ "$status" -ne 1 ]; then
+	echo "unscoped orphan structure check should exit 1, got $status" >&2
+	exit 1
+fi
+python3 - orphan-check.json "$orphan" <<'PY'
+import json, sys
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+assert payload["status"] == "stale", payload
+assert sys.argv[2] in payload["drifted"], payload
+PY
+run_tool structure --out "$structure" --calendar postconciliar --check --json >/dev/null
+run_tool structure --out "$structure" >/dev/null
+if [ -e "$orphan" ]; then
+	echo "unscoped structure writer did not prune its orphan JSON" >&2
+	exit 1
+fi
+
+# Machine output preserves the same stale exit status as text output.
+mkdir -p stale-docs/docs stale-docs/guidance stale-docs/src/sources/calendars
+for path in docs/the-mass.md guidance/propers-for-agents.md src/sources/calendars/README.md; do
+	cat >"stale-docs/$path" <<'EOF'
+before
+<!-- census:begin — derived; edit nothing between these markers -->
+stale
+<!-- census:end -->
+after
+EOF
+done
+status=0
+run_tool census --doc-root stale-docs --check --json >stale-census.json || status=$?
+if [ "$status" -ne 1 ]; then
+	echo "JSON census check should exit 1 for stale documents, got $status" >&2
+	exit 1
+fi
+python3 - stale-census.json <<'PY'
+import json, sys
+assert json.load(open(sys.argv[1], encoding="utf-8"))["status"] == "stale"
 PY
 
 # A proper may carry two English translations, and something visible has to
@@ -293,6 +427,7 @@ PY
 # first entry in its language land on the same witness.
 cummiskey='edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861'
 transcription='artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en'
+restricted='edition.example.permission-scoped-translation'
 mkdir -p witness/two
 cat >witness/two/propers.yaml <<YAML
 schema: triptych-calendar-masses/v1
@@ -313,6 +448,19 @@ sections:
       name: T
       registry: 't1'
       season: advent
+      common_from:
+        scope: missal-propers-except-collect
+        source_id: artifact.demo.common-map
+        locus: p. 1
+        options:
+        - mass: commune-demo
+          selection: Form A
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: rights-withheld
+          source_id: edition.demo.missal
       propers:
       - name: Collect
         source: composed
@@ -326,6 +474,10 @@ sections:
           rights: public-domain
           source_id: $cummiskey
           text: "Exert, we beseech thee, O Lord, thy power."
+        - lang: en
+          rights: permission
+          source_id: $restricted
+          text: "Protected exact wording must not leave the source layer."
       - name: Secret
         source: composed
         text: "Haec sacra nos."
@@ -337,11 +489,20 @@ sections:
 YAML
 run_tool structure --root witness --calendar two --out witness-out >/dev/null
 
-python3 - witness-out/structure/propers/two.json "$cummiskey" "$transcription" <<'PY'
+python3 - witness-out/structure/propers/two.json "$cummiskey" "$transcription" "$restricted" <<'PY'
 import json, sys
 
 document = json.load(open(sys.argv[1], encoding="utf-8"))
-wide, narrow = sys.argv[2], sys.argv[3]
+wide, narrow, restricted = sys.argv[2], sys.argv[3], sys.argv[4]
+mass = document["masses"][0]
+assert mass["common_from"] == {
+    "scope": "missal-propers-except-collect",
+    "options": [{"mass": "commune-demo", "selection": "Form A"}],
+}, mass
+assert mass["text_status"] == {
+    "state": "unavailable",
+    "scope": "missal-formulary",
+}, mass
 manifest = document["translations"]
 assert [row["source_id"] for row in manifest] == [wide, narrow], manifest
 # Counted, not assumed: a control that implies completeness is worse than none.
@@ -353,6 +514,12 @@ propers = {proper["name"]: proper for proper in document["masses"][0]["propers"]
 # List order is the whole of the default, so it cannot be left to typing order.
 assert [t["source_id"] for t in propers["Collect"]["translations"]] == [wide, narrow]
 assert [t["source_id"] for t in propers["Secret"]["translations"]] == [wide]
+assert propers["Collect"]["unavailable_translations"] == [
+    {"target": "Collect", "lang": "en", "state": "rights-restricted"}
+]
+serialised = json.dumps(document)
+assert restricted not in serialised, serialised
+assert "Protected exact wording" not in serialised, serialised
 PY
 
 # A terminal has no dropdown, so both witnesses are shown and each is named;
@@ -364,6 +531,38 @@ for want in "Stir up thy power" "Exert, we beseech thee" "$cummiskey" "$transcri
 	*) echo "the reading view did not show both witnesses and name them: $want" >&2; exit 1 ;;
 	esac
 done
+case "$both" in
+*"Protected exact wording"*|*"$restricted"*)
+	echo "the reading view exposed a permission-scoped witness" >&2
+	exit 1
+	;;
+esac
+
+# Asking for the restricted witness by id must not turn the CLI into an
+# extraction surface, and its machine form must retain only a typed absence.
+withheld="$(run_tool --root witness --calendar two --mass t --lang en --witness "$restricted")"
+case "$withheld" in
+*"en translation unavailable: rights restricted"*) ;;
+*) echo "the reading view did not report a rights-restricted translation" >&2; exit 1 ;;
+esac
+case "$withheld" in
+*"Protected exact wording"*) echo "the restricted wording reached show" >&2; exit 1 ;;
+esac
+run_tool --root witness --calendar two --mass t --format json >withheld.json
+python3 - withheld.json "$restricted" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+serialised = json.dumps(payload)
+assert sys.argv[2] not in serialised, serialised
+assert "Protected exact wording" not in serialised, serialised
+states = [
+    state
+    for appointed in payload["appointed"]
+    for state in appointed["proper"].get("unavailable_translations") or []
+]
+assert {"target": "Collect", "lang": "en", "state": "rights-restricted"} in states, states
+PY
 
 # --witness narrows to one, and then there is nothing to attribute.
 one="$(run_tool --root witness --calendar two --mass t --lang en --witness "$cummiskey")"
@@ -385,6 +584,21 @@ esac
 case "$missing" in
 *"Grant, O Lord"*) echo "a missing witness must not be filled in from another" >&2; exit 1 ;;
 esac
+
+# A historical hand-missal variant is not an exact translation of the 1962
+# slot. Its typed witness gap remains visible without serving either wording.
+vianney="$(run_tool --calendar roman-1962 \
+	--mass s-ioannis-mariae-vianney-confessoris --lang en)"
+case "$vianney" in
+*"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
+*) echo "Vianney witness gap did not report unavailability" >&2; exit 1 ;;
+esac
+for forbidden in "The New Roman Missal in Latin and English" \
+	"beatum Joannem Mariam" "sanctum Ioannem Mariam"; do
+	case "$vianney" in
+	*"$forbidden"*) echo "Vianney witness-gap payload escaped quarantine: $forbidden" >&2; exit 1 ;;
+	esac
+done
 
 # `census` derives the count of both calendars once. One census used to exist in
 # three retyped copies that disagreed by as much as sixty masses in a section,
@@ -449,17 +663,18 @@ run_tool census --check >/dev/null
 # A drifted document is named and exits 1; `--write` restores it and leaves the
 # prose outside the region alone.
 begin="$(head -1 census-one.md)"
-mkdir -p docroot/docs docroot/guidance
+mkdir -p docroot/docs docroot/guidance docroot/src/sources/calendars
 printf 'before\n\n%s\nstale\n<!-- census:end -->\n\nafter\n' "$begin" >docroot/docs/the-mass.md
 cp docroot/docs/the-mass.md docroot/guidance/propers-for-agents.md
+cp docroot/docs/the-mass.md docroot/src/sources/calendars/README.md
 status=0
 run_tool census --check --doc-root docroot >stale.txt 2>/dev/null || status=$?
 if [ "$status" -ne 1 ]; then
 	echo "a stale document should exit 1, got $status" >&2
 	exit 1
 fi
-if [ "$(grep -c '^stale	' stale.txt)" -ne 2 ]; then
-	echo "both stale documents should be named" >&2
+if [ "$(grep -c '^stale	' stale.txt)" -ne 3 ]; then
+	echo "all three stale documents should be named" >&2
 	exit 1
 fi
 run_tool census --write --doc-root docroot >/dev/null

@@ -17,7 +17,7 @@ through another source named here.
 | John Paul II, *Scripturarum thesaurus*, establishing the *Nova Vulgata* as typical for liturgical use | 1979-04-25 | recited in the 1981 decree below | reported |
 | Sacred Congregation for the Sacraments and Divine Worship, decree prot. CD 240/81 promulgating the second typical edition of the *Ordo lectionum Missae* and recording that the *Praenotanda* were enlarged | 1981-01-21 | 1981 edition front matter, artifact pages 8-9 | image-collated |
 | *Codex Iuris Canonici*, can. 1246 §§1-2 | 1983-01-25 | Holy See's Latin web presentation of Book IV | read |
-| Congregation for Divine Worship and the Discipline of the Sacraments, notification prot. 2671/98/L on the Immaculate Heart | 1998-12-08 | Secretariat of Divine Worship, *Liturgical Calendar* 2026, miscellaneous note 6 b | reported |
+| Congregation for Divine Worship and the Discipline of the Sacraments, notification Prot. n. 2671/98/L on the Immaculate Heart | 1998-12-08 | Original Claude research: Secretariat of Divine Worship, *Liturgical Calendar* 2026, miscellaneous note 6 b. Independent subsequent verification, 2026-08-26: complete official Vatican Latin web delivery and official *Notitiae* 35 (1999), 157 | read in subsequent independent verification; originally reported |
 
 ## Controlling books
 

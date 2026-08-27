@@ -71,11 +71,11 @@ this repository and is recorded as an open item in the calendar's own \
 """
 
 not_decided_here = [
-  "What the 1962 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1962 altar book, and the two are not collated element by element.",
+  "What the 1920 typical edition prints. This is an 1861 witness to the same rite, not a transcription of the 1920 altar book, and the two are not collated element by element.",
   "Which of the ten proper Prefaces a given day takes. That is the propers layer's question, and this file carries the Prefaces as the book prints them without appointing any.",
   "Anything about how the rite is performed. The rubrics transcribed here are the book's own, in its own words, and are evidence of what it printed in 1861 and of nothing else.",
-  "Whether any element's Latin is the wording the 1962 typical edition prints. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above, and no element-by-element collation against the 1962 book is asserted.",
-  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1962 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
+  "Whether any element's Latin is the wording the 1920 typical edition prints. The Latin here is this 1861 book's own, transcribed from its facing column; the departures that are known are named on the elements that carry them and in the advisory above, and no element-by-element collation against the 1920 book is asserted.",
+  "Where a proper stands that the Ordo Missae does not place. A slot is declared only where the 1920 book states the position in terms; the oration super populum of the Lenten ferias, the chants of an Ember Saturday after the first, and the whole of Good Friday and the paschal Vigil are left unplaced, and a page that reads this file must show them in the missal's own order rather than guess at a seat for them.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -85,7 +85,7 @@ id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 lang = "en"
 label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
 rights = "public-domain"
-caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and its seasonal second orations are not those of 1962, and its spelling is its own. Nothing here may be used for recitation."
+caution = "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics and seasonal second orations have not been collated against the 1920 typical edition, and its spelling is its own. Nothing here may be used for recitation."
 artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
@@ -104,7 +104,7 @@ id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 lang = "la"
 label = "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861), the facing Latin column"
 rights = "public-domain"
-caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1962 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. No element-by-element collation against the 1962 book is asserted."
+caution = "The Latin of a pre-1955 lay hand missal's facing column: never an altar book, and nothing here may be used for recitation. It is the 1861 printing's own text and NOT the 1920 typical edition's. Its Canon prints the Communicantes without the clause naming St Joseph that later legislation inserted; its seasonal second orations and rubrics are the discipline in force before the 1955 and 1960 reforms; and its orthography, j and the ae/oe ligatures, is its own. No element-by-element collation against the 1920 book is asserted."
 artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
@@ -119,7 +119,7 @@ artifacts = [
 [[absences]]
 key = "no-facing-latin"
 kind = "witness-gap"
-what = "The 1861 book sets this block across the full measure in English only and prints no Latin text for it; the facing-column Latin of every block that has one is transcribed. The absence is the witness's, not a rights or effort gap. It holds for 83 elements - 53 rubrics, 21 English headings, 8 prayers (a-cunctis, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, secreta-ii, postcommunio-mundet, et-famulos) and the form benedicat-vos-omnipotens-deus - and each was established by opening the leaf, not inferred: leaves n25-n56 were all read. Some of these the 1962 Ordo Missae does print, accendat-in-nobis among them; the reason is scoped to this witness's page and says nothing about the rite."
+what = "The 1861 book sets this block across the full measure in English only and prints no Latin text for it; the facing-column Latin of every block that has one is transcribed. The absence is the witness's, not a rights or effort gap. It holds for 83 elements - 53 rubrics, 21 English headings, 8 prayers (a-cunctis, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, secreta-ii, postcommunio-mundet, et-famulos) and the form benedicat-vos-omnipotens-deus - and each was established by opening the leaf, not inferred: leaves n25-n56 were all read. Whether the 1920 Ordo Missae prints any of these is a separate target-edition question; the reason is scoped to this witness's page and says nothing about the rite."
 
 # ---------------------------------------------------------------- sections
 
@@ -131,6 +131,16 @@ witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la"
 absent_latin = "no-facing-latin"
 
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
@@ -138,6 +148,16 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
 absent_latin = "no-facing-latin"
+
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
 [[sections]]
 key = "praefatio"
@@ -147,6 +167,16 @@ witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la"
 absent_latin = "no-facing-latin"
 
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
 [[sections]]
 key = "canon"
 name = "The Canon of the Mass"
@@ -154,6 +184,16 @@ artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-18
 witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la"
 absent_latin = "no-facing-latin"
+
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
 [[sections]]
 key = "communio"
@@ -163,6 +203,16 @@ witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la"
 absent_latin = "no-facing-latin"
 
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
@@ -171,11 +221,21 @@ witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
 artifact_latin = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la"
 absent_latin = "no-facing-latin"
 
+[sections.english]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[sections.latin]
+relation = "antecedent"
+collation = "uncollated"
+note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
 # ---------------------------------------------------------------- slots
 #
 # A slot is a seat in this frame for a proper of the day. It names one element
 # of the Ordinary and whether the proper stands before or after it, the proper
-# names it receives, and the rubric of the 1962 book that puts it there.
+# names it receives, and the rubric of the 1920 book that puts it there.
 #
 # This is DATA and not a renderer's rule, for the reason everything else in
 # this file is: where a proper sits inside the Ordinary is liturgical fact, it

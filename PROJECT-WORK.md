@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-20.
+Last reconciled: 2026-08-26.
 
 ## Standing public-alpha authority
 
@@ -1705,3 +1705,84 @@ GPT Reader routes returned the revised timestamps, and all six live PDF routes
 matched the reviewed SHA-256 hashes exactly. The unrelated local
 `directions.md` and `-.png` remained untracked and outside the commits and
 deployment.
+
+## Complete Missal corpus remediation
+
+<!-- promised-deliverable: complete-missal-remediation-2026-08-26 -->
+
+**In progress on `feature/complete-missal`, from synchronized base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`.** The maintainer requested one
+source-honest program that audits and remediates the postconciliar, Roman 1962,
+and Roman pre-1955 Missal data in English and Latin; corrects calendar,
+recension, Common, Proper, Ordinary, dialogue, presentation, provenance, and
+publication-boundary defects; verifies the complete one-year matrix; commits
+and pushes coherent feature work; receives a cold review; then reconciles with
+current `main` and advances `origin/main` without rewriting history.
+
+The audit baseline covers every civil date from 2026-08-26 through 2027-08-25:
+three calendars by two requested languages by 365 dates, with 2,190 successful
+JSON renders and 2,190 successful text renders, no invocation or JSON-parse
+failure, and empty standard error. It found ten whole-Mass postconciliar
+placeholders and four historical placeholders; seven placeholder
+postconciliar Commons and seven structurally incomplete Roman Commons; 89
+explicit postconciliar English Proper gaps and 166 historical English Proper
+gaps; 391 unselected postconciliar weekday reading or psalm slots; incomplete
+postconciliar Eucharistic Prayers; and a historical Ordinary witness that does
+not by itself establish a target 1962 or 1920 recension. Roman pre-1955 remains
+primarily inherited 1962 material with six Holy Week deltas, and the 1956-1960
+middle recension is not held as a complete source-grounded corpus.
+
+The same baseline records the historical January 4 no-Mass result, the
+postconciliar 2027-06-05 equal-rank conflict, ambiguous Common selection,
+Roman calendar-spine identity failures, scoped-rubric/global-index drift, and
+language, territorial, option, weekday-cycle, diagnostic, and generated-data
+freshness weaknesses. Rights review found tracked ICEL-facing material without
+an adequate per-text/per-surface publication filter, provenance mismatches,
+misclassified Gospel Acclamations, missing FDLC artifact records, and Latin
+surfaces without sufficient per-text rights evidence. No unavailable or
+uncleared text may be filled by reconstruction, an unofficial copy, or silent
+cross-recension fallback; an unresolved or withheld state is the correct
+result until an exact permitted witness exists.
+
+The visual baseline and browser evidence under the ignored review tree already
+establish a calmer 39.75rem reading measure, a readable three-rem cue axis,
+cross-browser serif fallback, print/reflow/accessibility coverage, and event,
+text, Proper, Ordinary, state, source, seat, and rubric parity for representative
+Roman 1962 and postconciliar states. Structured dialogue work may add only
+source-owned turns and semantically honest role or versicle/response cues; it
+may not split opaque prose by string matching or equate Priest/Server with
+versicle/response.
+
+**Feature implementation complete; integration still pending.** The recovered
+source tree now carries 619 postconciliar Mass identities, 491 Roman 1962
+identities, and six explicit pre-1955 departure records over the inherited 491
+identity surface. The source library validates at 1,822 artifacts, 718 editions,
+535 works, 2,920 passages, 72 segments, and 2,165 bindings. The new registered
+`complete-missal` audit measures all fifteen completion dimensions and reports
+39 typed unresolved cells instead of inventing text or silently borrowing a
+recension. Its strict `--require-resolved` mode therefore refuses, while the
+source-honest validity check passes.
+
+The repaired feature passes 2,065 discovered Python tests (10 intentional
+skips), the complete 2,190-case year audit with 4,380 JSON/text renders, all six
+live Chromium harnesses, the tool registry, all three calendar/rubric families,
+Bible-index freshness, public-alpha preview verification, release-binding
+exactness, and the 212-command example replay with no stale transcript debt.
+Rights-withheld bodies are absent from public structures; formerly composite
+celebration identities are split; calendar and option ambiguity fails closed;
+Ordinary and Proper consumers share the same typed availability, source, and
+dialogue semantics; and every generated structure has been regenerated from
+its owning source. This establishes the first six remediation requirements.
+It does not claim the final requirement: the exact feature snapshot still needs
+its cold review, reconciliation with current `origin/main`, fast-forward main
+update, and exact Pages verification.
+
+Completion requires the source-owned corrections and typed unresolved states,
+regenerated public data with no stale or orphan output, all focused and
+repository deployment gates, a scoped release-binding refresh after the shared
+tree is frozen, a coherent feature push, an independent cold review with every
+blocking finding resolved, a clean reconciliation with current `origin/main`,
+a genuine fast-forward update of `origin/main`, and verification of the exact
+resulting Pages run and affected public routes. A commit, feature push, green
+visual comparison, or release-binding match alone does not complete this
+program.

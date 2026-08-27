@@ -4,46 +4,49 @@ id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-
 edition_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
 artifact_type = "normalized-text"
 media_type = "text/tab-separated-values; charset=utf-8"
-storage = "tracked"
-rights_status = "permission"
+storage = "restricted"
+rights_status = "restricted"
 rights_basis = """
-Two layers, and they are different properties.
+CURRENT DISPOSITION. This artifact record does not clear any liturgical text or
+publisher file for publication from the current tree. No payload belonging to
+this record is cleared for the public Git repository, source browser, static
+data bundle, CLI, PDF, or download surface. `rights_status = "restricted"`
+records a conditional lead; it is not an outbound licence or a completed
+per-artifact publication decision.
 
-THE TEXT is ICEL's, and this file is the rightsholder's own copy of it: the foot
-of every page carries "The English translation and chants of The Roman Missal (c)
-2010, International Commission on English in the Liturgy Corporation. All rights
-reserved." It is approved, recognised and promulgated ICEL English, so it falls
-within ICEL's standing permission to reproduce such texts on a free
-non-commercial website without written or oral permission, on the six conditions
-of passage
+CONDITIONAL LIVE-SITE LEAD. ICEL's Publication Policies record a standing
+Internet-site clause for an ICEL text that has been approved by the Conferences
+of Bishops, recognised by the Holy See, and promulgated for use. The clause is
+evidence of a possible future qualifying non-bundled live-site display route
+only. This artifact does not by itself establish, for each contained text, ICEL
+ownership; approval; recognition; promulgation and currentness in the relevant
+territory; exactness after transcription, de-syllabification, or later
+emendment; the appropriate current excerpt notice and its required placement;
+actual no-fee and non-commercial site conditions; or the absence of material
+owned by another party. Every applicable fact and condition remains to be
+verified before such a route could be used. The controlling clause is passage
 passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
-Note the acknowledgment form: text taken from this file is reproduced under the
-"English translation AND CHANTS" notice printed on it, not the plain "English
-translation" notice of the Missal at large.
 
-THE FILE is the other layer. The index page that publishes it grants
-reproduction "free of charge IN PRINTED FORM, for non-commercial purposes, in
-publications not for sale, BY PARISHES, DIOCESES, SCHOOLS, AND RELIGIOUS
-COMMUNITIES" -- print, and a named class of user this project is neither in nor
-imitating -- and condition (4) of the clause above grants no licence to publish
-in any other form. The original PDF is
-not retained as a payload: its bytes are identified and hashed at the remote
-source, and the text carried here is a project transcription held as a tracked
-TSV. That disposes of the file layer and withholds nothing of the text, which is
-publishable under the clause.
+PUBLISHER FILE. The Music for the Roman Missal index separately describes a
+narrow free-of-charge printed-form use for non-commercial parish, diocesan,
+school, and religious-community publications not for sale. This record does not
+establish that this project is within that named class, and neither that printed
+use nor the Internet-site clause clears redistribution of ICEL's PDF bytes. The
+`storage` and `provenance` fields say whether the recorded digest and size
+identify the remote publisher PDF or a quarantined normalized transcription;
+neither identity is a permission to republish those bytes.
 
-src/sources/inventories/icel-web-permission-rights-v1.toml settles the whole
-question once, including the Revised Grail carve-out and the territorial rule.
+The audit trail and surface-by-surface disposition are recorded in
+src/sources/inventories/icel-web-permission-rights-v1.toml.
 """
-source_url = "https://www.icelweb.org/musicfolder/Communion.pdf"
-provenance = "Exact HTTPS response fetched whole with curl on 2026-08-21 from the URL published on ICEL's own Music for the Roman Missal index page, and hashed before any page was read. Nothing in the retrieval path passed through a model."
+provenance = "The normalized TSV was transcribed from the exact parent publisher PDF identified by derived_from. The recorded SHA-256 and byte size identify the quarantined TSV, not the remote PDF; no payload bytes remain in the repository."
 retrieved = "2026-08-21"
 sha256 = "ed3353a42159645296cc90de065d3bcbee6b08b70432a232640b3f1b0c0fe27f"
 byte_size = 598
-path = "src/sources/works/international-commission-on-english-in-the-liturgy/music-for-the-roman-missal/editions/2010-chants-web-2026-08-21/artifacts/communion/communion.tsv"
+derived_from = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.communion-pdf"
+transformation = "Human transcription of the English verbal content printed with the chant notation into source reading order. Omit musical notation and page layout, assign a controlled element_key to each liturgical unit, number rows consecutively from 1, and emit the columns seq, element_key, and text as LF-terminated UTF-8 TSV."
 encoding = "utf-8"
-page_count = 1
-indexable = true
+indexable = false
 notes = """
-File Communion.pdf in ICEL's Music for the Roman Missal library, 1 pp. The index page lists it as "Invitation to Communion".
+Source parent: file Communion.pdf in ICEL's Music for the Roman Missal library, 1 pp. The index page lists it as "Invitation to Communion".
 """

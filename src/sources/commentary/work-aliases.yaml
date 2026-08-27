@@ -14,7 +14,7 @@
 # asserts a new alias ages the table and `harvest promote` refuses until the
 # new grouping has been looked at.
 schema: triptych-commentary-work-aliases/v1
-derived_on: '2026-07-31'
+derived_on: '2026-08-27'
 evidence_sha256: 6a9af2d38d5a14ee58440b8d3e3de175305e377e1284a355f6f999b57f9497ba
 review:
   ambiguous_titles:
@@ -137,32 +137,6 @@ review:
     instead_of: Expositio in Leviticum
     title: Expositio in Pentateuchum
     reason: Exodus, Leviticus and Numbers under the name of Leviticus.
-  - author: Carl Friedrich Keil
-    instead_of: Biblischer Commentar uber die zwolf kleinen Propheten
-    title: Keil and Delitzsch, Commentary on the Minor Prophets
-    reason: 'One commentary on the twelve, named after Amos. Two things are worth separating
-      here, because only one of them is a cataloguing error. The grouping and the renaming
-      are right: Keil''s minor-prophets volume covers all twelve and the group''s own English
-      name says so, while the German name it was carrying reached Obadiah as well as Amos.
-      But the word that made the check fire is `zwolf` — German for twelve — which the derivation
-      had proved a book name because every title in the ledger carrying it happened to land
-      on Amos, two authors used it and three titles did. `guidance/catena.md` calls the derived
-      lexicon "sound where incomplete", meaning an unproved word is never read as a book name
-      so the check under-reports rather than invents. That is true of omissions and not of
-      this: a numeral was proved a name of Amos, and the check over-reported. It over-reported
-      onto a group that did need renaming, so nothing wrong reached the table, but the next
-      one need not be so lucky. Recorded here rather than fixed because narrowing the lexicon
-      is a change to the derivation and belongs with its own regression test.'
-  - author: Haymo of Auxerre
-    instead_of: Expositio in Epistulam ad Romanos
-    title: Haymo of Halberstadt, In divi Pauli epistolas expositio
-    reason: Haymo's Pauline commentary is one work over the epistles and the group reaches
-      Philippians as well as Romans, so naming it for Romans repeats exactly the Aquinas and
-      Theophylact defect this list already carries twice. The whole-naming title is the one
-      the group already holds, which prints the work under Haymo of Halberstadt — the attribution
-      Migne inherited and modern scholarship gives to Haymo of Auxerre. The disputed name is
-      kept because a reviewed title must be a name the group holds; the dispute belongs to
-      the work record, not to the alias table.
   - author: Cassiodorus
     instead_of: Complexiones in Actus Apostolorum
     title: Complexiones in epistulas et acta apostolorum et apocalypsin

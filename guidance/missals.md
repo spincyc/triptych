@@ -467,34 +467,47 @@ the scan argument **stood alone** and left `unresolved` correctly standing, whil
 here the underlying work has an affirmative basis — so the scan argument
 **completes a case** instead of substituting for one.
 
-### `absent: icel` is right, and its stated reason is not quite
+### ICEL's web permission is real; a bundled corpus is a different surface
 
-`the-shape.md` §4 gives `absent: icel` as its example of an absence carrying a
-reason: *a postconciliar text nobody may publish*. **That reason is too strong as
-stated**, and an absence must carry a true reason or it is doing the same job as
-a silence.
+`the-shape.md` once used `absent: icel` as an example of a gap carrying a
+reason. The resulting blanket explanation was wrong in two directions: ICEL
+has granted a conditional web use, but that permission does not make every
+surface publishable and it does not supply or authenticate the words.
 
-ICEL's own published policy contains a standing conditional permission: approved,
-recognised and promulgated ICEL texts *may be reproduced in a non-commercial site
-… on the global computer network commonly known as the Internet without obtaining
-written or oral permission*, subject to five conditions — no access fee, the
-acknowledgment on first and last pages, texts followed exactly, and ICEL
-reserving the right to terminate [sourced]. The USCCB points the other way:
-*with the exception of … single daily collects from the Roman Missal, no
-permission will be given for the publication of liturgical texts on the Internet
-at this time* [sourced].
+ICEL's own *Publication Policies* contain a standing conditional permission:
+approved, recognized, and promulgated ICEL texts may be reproduced on a
+noncommercial Internet site without obtaining individual written or oral
+permission. The clause has six conditions: no access fee; the appropriate
+acknowledgement on the first and last pages or frames displaying the text;
+exact reproduction; no grant for another form of publication and no implication
+of ICEL affiliation, sponsorship, or endorsement; ICEL's reserved right to
+modify or terminate the permission; and its reserved enforcement rights
+[sourced]. The grant is recorded at
+`src/sources/inventories/icel-web-permission-rights-v1.toml`.
 
-So the position is **a conflict between two bodies**, not a prohibition. The
-operational answer is unchanged — a conditional permission with five conditions
-and a termination clause is not a basis for a library to print from, and the
-USCCB directly contradicts it — but the recorded reason should be *the two bodies
-that would have to agree do not*, rather than *nobody may*.
+Condition four matters to this repository. A static JSON payload committed to a
+public repository is a clonable and downloadable copy, even when a browser later
+displays it on a free site. This audit does not treat that bundle as the same
+surface as a non-bundled web display. ICEL payloads are therefore quarantined
+from the public data bundle; text-free source, provenance, and acknowledgement
+metadata may remain for a future display route that satisfies the terms.
 
-> **Check before acting.** Another lane was working this exact ground
-> concurrently on 2026-08-01, with uncommitted records for ICEL publication
-> policies and WIPO Berne contracting parties. That work is not cited here
-> because it was not committed, and this audit does not adopt another lane's
-> uncommitted files. Reconcile before either is relied on.
+ICEL's current copyright page distinguishes an entire work from excerpts. The
+appropriate form for a selected proper or Ordinary excerpt is:
+
+> Excerpts from the English translation of The Roman Missal © 2010,
+> International Commission on English in the Liturgy Corporation. All rights
+> reserved.
+
+That line is required attribution, not a license token: it cannot establish
+that a text is exact or promulgated, expand the permitted surface, or clear
+material owned by somebody else. USCCB national adaptations and proper texts,
+CCD/*Lectionary for Mass* text, NAB/NABRE text, and the Abbey Psalms and
+Canticles remain separate rights questions. The USCCB's 2025 publication
+guidelines, scheduled to enter force on 29 November 2026, expressly include
+digital publication and describe authentication and licensing requirements;
+recheck their effective requirements and ICEL's current terms before opening
+any future display route in the United States.
 
 ### A rights conclusion that must not travel
 
@@ -504,8 +517,10 @@ edition and the 2011 English Roman Missal *under the project public-domain
 assumption* — while recording in the same table that *ICEL lists the underlying
 Roman Missal translation as copyrighted* [sourced].
 
-That assumption is the opposite of this project's, which marks postconciliar
-English `absent: icel` and registers the 2002 artifact `storage = restricted`.
+That assumption is the opposite of this project's. This project registers the
+2002 artifact `storage = restricted` and quarantines ICEL payloads from the
+public bundled corpus; it does not treat either Internet availability or a
+source repository's public-domain label as a rights basis.
 The door between the two repositories is already open — seven text layers have
 come through it. **Any future reuse of lt-hist material must re-derive rights
 rather than inherit them.**

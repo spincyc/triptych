@@ -14,6 +14,8 @@ const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dir
 const CANDIDATE = '/src/web/browser/liturgy/propers-reader.html';
 const CURRENT = '/src/web/browser/liturgy/index.html';
 const DATA = '/build/public-alpha/preview/browse';
+const CYCLE_UNTRANSLATED_DATA = DATA + '-cycle-untranslated';
+const NO_WITNESS_DATA = DATA + '-no-witness';
 const captureAt = process.argv.indexOf('--capture-dir');
 const captureDir = captureAt >= 0 ? resolve(process.argv[captureAt + 1]) : null;
 const chromeBinary = process.env.TRIPTYCH_CHROME || '/usr/bin/google-chrome-stable';
@@ -24,6 +26,7 @@ const failedRequests = [];
 let accessibilityReport = null;
 let performanceReport = null;
 let responseGate = null;
+let navigationSerial = 0;
 
 function mime(path) {
   return ({
@@ -78,9 +81,75 @@ function server() {
           response.end('{'); return;
         }
       }
+      const cycleUntranslated = relative.startsWith(
+        'build/public-alpha/preview/browse-cycle-untranslated/'
+      );
+      if (cycleUntranslated) {
+        relative = relative.replace('/browse-cycle-untranslated/', '/browse/');
+      }
+      const noWitness = relative.startsWith('build/public-alpha/preview/browse-no-witness/');
+      if (noWitness) {
+        relative = relative.replace('/browse-no-witness/', '/browse/');
+      }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
-      const body = await readFile(file);
+      let body = await readFile(file);
+      if (cycleUntranslated && relative.endsWith('/structure/propers/postconciliar.json')) {
+        const payload = JSON.parse(body.toString('utf8'));
+        const mass = payload.masses.find((row) => row.key === 'transfiguration-lord');
+        const proper = mass && mass.propers[0];
+        if (!proper) throw new Error('cycle-untranslated fixture target is absent');
+        mass.propers.forEach((row) => { row.form_id = 'main'; });
+        proper.name = 'Collect';
+        proper.source = 'composed';
+        const absence = (cycle, state) => ({
+          target: {
+            mass: mass.key, form_id: 'main', proper: proper.name,
+            cycle, occurrence: 1, extent: 'body'
+          },
+          lang: 'en', state
+        });
+        proper.citations = [];
+        proper.text = null;
+        proper.translations = [];
+        proper.unavailable_translations = null;
+        proper.untranslated = null;
+        proper.incipit = null;
+        proper.cycles = {
+          A: {
+            citations: [], text: 'A Latin sibling sentinel',
+            unavailable_translations: [absence('A', 'rights-restricted')]
+          },
+          C: {
+            citations: [], text: 'C Latin safe sibling',
+            untranslated: [absence('C', 'unavailable')]
+          }
+        };
+        body = Buffer.from(JSON.stringify(payload));
+      }
+      if (noWitness && relative.endsWith('/structure/propers/roman-1962.json')) {
+        const payload = JSON.parse(body.toString('utf8'));
+        const mass = payload.masses.find((row) =>
+          row.key === 's-hilarii-episcopi-confessoris-ecclesiae-doctoris');
+        if (!mass) throw new Error('no-witness fixture target is absent');
+        const occurrences = new Map();
+        mass.propers.forEach((proper) => {
+          proper.form_id = 'main';
+          delete proper.form;
+          if (!proper.text) return;
+          const occurrence = (occurrences.get(proper.name) || 0) + 1;
+          occurrences.set(proper.name, occurrence);
+          proper.translations = [];
+          proper.untranslated = [{
+            target: {
+              mass: mass.key, form_id: 'main', proper: proper.name,
+              cycle: 'all', occurrence, extent: 'body'
+            },
+            lang: 'en', state: 'unavailable'
+          }];
+        });
+        body = Buffer.from(JSON.stringify(payload));
+      }
       response.writeHead(200, {
         'content-type': mime(file), 'cache-control': 'no-store',
         'x-robots-tag': 'noindex, nofollow'
@@ -188,7 +257,18 @@ const STATES = Object.freeze({
   romanEnglishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en' }),
   romanEnglishWitness: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en', 'translation-witness': 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861' }),
   romanEnglishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-unius-martyris-1', bible: 'douay-rheims', orations: 'en' }),
-  romanEnglishNone: hash({ missal: 'roman-1962', type: 'christological', mass: 'octava-nativitatis-domini', bible: 'douay-rheims', orations: 'en' })
+  romanEnglishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
+  romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
+  romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),
+  romanEnglishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
+  pre1955Advent: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
+  pre1955Palm: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'palm-sunday', bible: 'douay-rheims', orations: 'la' }),
+  pre1955Supper: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'mass-of-the-lords-supper', bible: 'douay-rheims', orations: 'la' }),
+  formWithoutMass: hash({ missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', form: 'vigil' }),
+  invalidLocation: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la', location: 'proper/roman-1962/advent-1/999' }),
+  validLocation: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la', location: 'proper/roman-1962/advent-1/003' }),
+  cycleAUntranslated: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'en', cycle: 'A' }),
+  cycleCUntranslated: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'en', cycle: 'C' })
 });
 
 function candidateUrl(base, state = STATES.roman, data = DATA) {
@@ -203,12 +283,21 @@ async function navigate(cdp, url, ready = 'window.propersReaderReady === true') 
 }
 
 async function candidate(cdp, base, state = STATES.roman, data = DATA) {
-  await navigate(cdp, candidateUrl(base, state, data));
+  const url = `${base}${CANDIDATE}?data=${data}&test-nav=${++navigationSerial}${state}`;
+  await cdp.send('Page.navigate', { url });
+  await waitFor(cdp,
+    `performance.getEntriesByType('navigation')[0]?.name === ${JSON.stringify(url)} && ` +
+    'window.propersReaderReady === true', 'Propers readiness');
+  await new Promise((done) => setTimeout(done, 70));
 }
 
 async function freshCandidate(cdp, base, state = STATES.roman, data = DATA) {
-  await navigate(cdp,
-    `${base}${CANDIDATE}?data=${data}&browse-race=${Math.random()}${state}`);
+  const url = `${base}${CANDIDATE}?data=${data}&browse-race=${Math.random()}${state}`;
+  await cdp.send('Page.navigate', { url });
+  await waitFor(cdp,
+    `performance.getEntriesByType('navigation')[0]?.name === ${JSON.stringify(url)} && ` +
+    'window.propersReaderReady === true', 'fresh Propers readiness');
+  await new Promise((done) => setTimeout(done, 70));
 }
 
 async function current(cdp, base, state = STATES.roman) {
@@ -284,12 +373,20 @@ async function shot(cdp, path) {
 
 async function check(name, action) {
   try { await action(); results.push({ name, status: 'pass' }); }
-  catch (error) { failures.push({ name, detail: error.stack || String(error) }); results.push({ name, status: 'fail' }); }
+  catch (error) {
+    failures.push({ name, detail: error.stack || String(error) });
+    results.push({ name, status: 'fail' });
+    if (process.env.TRIPTYCH_FAIL_FAST === '1') throw error;
+  }
 }
 
 async function snapshot(cdp) {
   return evaluate(cdp, `(() => ({
     title: document.querySelector('#formulary-title')?.textContent,
+    documentTitle: document.title,
+    meta: document.querySelector('#formulary-meta')?.textContent,
+    source: document.querySelector('#formulary-source')?.textContent,
+    sourceHidden: document.querySelector('#formulary-source')?.hidden,
     outcome: propersReaderDebug.outcome,
     notice: document.querySelector('#coverage-notice')?.textContent,
     noticeHidden: document.querySelector('#coverage-notice')?.hidden,
@@ -336,13 +433,25 @@ async function assertions(cdp, base) {
   await viewport(cdp, 393, 852);
   await candidate(cdp, base);
 
-  await check('valid deep link uses the shared calm shell and complete state has no notice', async () => {
+  await check('valid deep link uses the shared calm shell and reports typed material coverage', async () => {
     const value = await snapshot(cdp);
-    assert.equal(value.title, 'First Sunday of Advent');
+    assert.equal(value.title, 'First Sunday of Advent', JSON.stringify(value));
     assert.equal(value.outcome, 'ready');
-    assert.equal(value.noticeHidden, true);
+    assert.equal(value.noticeHidden, false);
+    assert.match(value.notice, /Proper text is unavailable/i);
     assert.equal(value.semantic.resolved.formulary, 'advent-1');
     assert.equal(value.semantic.events.length, 10);
+    assert.equal(await evaluate(cdp, 'location.pathname'), CURRENT);
+    const semanticOrder = await evaluate(cdp, `(() => ({
+      events: propersReaderDebug.semantic.events.filter(row => row.kind === 'proper').map(row => row.id),
+      dom: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+        .map(row => row.dataset.semanticEventId),
+      contents: [...document.querySelectorAll('[data-reader-contents] [data-reader-location]')]
+        .map(row => row.dataset.readerLocation)
+    }))()`);
+    assert.deepEqual(semanticOrder.dom, semanticOrder.events);
+    assert.deepEqual(semanticOrder.contents, semanticOrder.dom);
+    assert.equal(new Set(semanticOrder.dom).size, semanticOrder.dom.length);
     assert.deepEqual(await evaluate(cdp, `[...document.querySelectorAll('[data-reader-action]')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`),
       ['Browse', 'Contents', 'Mode Read', 'Details']);
     const measured = await metrics(cdp);
@@ -358,6 +467,159 @@ async function assertions(cdp, base) {
       selectedStructureLoadCount: measured.loadCounts['structure/propers/roman-1962.json']
     };
   });
+
+  await check('form without exact formulary fails closed and is not canonicalized into Browse', async () => {
+    await candidate(cdp, base, STATES.formWithoutMass);
+    const value = await snapshot(cdp);
+    assert.equal(value.outcome, 'invalid');
+    assert.ok(value.error.some(row => row.path === 'form' && row.code === 'incomplete-explicit-identity'));
+    assert.equal(await evaluate(cdp, 'location.pathname'), CANDIDATE);
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('form')`), 'vigil');
+    assert.equal(await evaluate(cdp,
+      `document.querySelector('#browse-surface').open`), false);
+  });
+
+  await check('source-authored form names survive choice, result identity, print, and focus', async () => {
+    await candidate(cdp, base, STATES.romanChristmasForms);
+    let value = await snapshot(cdp);
+    assert.equal(value.outcome, 'unresolved');
+    assert.deepEqual(await evaluate(cdp,
+      `[...document.querySelectorAll('.proper-form-choice button')].map(row => row.textContent.trim())`),
+    ['Ad primam Missam in nocte', 'Ad secundam Missam in aurora', 'Ad tertiam Missam in die']);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    assert.match(await evaluate(cdp, `document.querySelector('.proper-form-summary').textContent`),
+      /Ad primam Missam in nocte.*Ad secundam Missam in aurora.*Ad tertiam Missam in die/);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    await click(cdp, '.proper-form-choice button');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.form === 'night'`,
+      'source-authored form navigation');
+    value = await snapshot(cdp);
+    assert.match(value.meta, /Form: Ad primam Missam in nocte/);
+    assert.match(value.documentTitle, /Ad primam Missam in nocte/);
+    assert.equal(await evaluate(cdp, `document.activeElement.id`), 'formulary-title');
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    assert.match(await evaluate(cdp, `document.querySelector('#formulary-meta').textContent`),
+      /Form: Ad primam Missam in nocte/);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+  });
+
+  await check('pre-1955 coverage, inheritance, and departures remain visible and print-safe', async () => {
+    await candidate(cdp, base, STATES.pre1955Advent);
+    let value = await snapshot(cdp);
+    assert.equal(value.sourceHidden, false);
+    assert.match(value.source, /Recension coverage: Structural-only finding aid/);
+    assert.match(value.source, /Proper text source: .*1962.*inherited uncollated/i);
+    assert.match(value.notice, /structural-only finding aid/i);
+    assert.match(value.notice, /inherited material.*remains uncollated/i);
+
+    await candidate(cdp, base, STATES.pre1955Palm);
+    value = await snapshot(cdp);
+    assert.match(value.source, /Departure: Replaced/);
+    assert.match(value.source, /Also: Renamed, Reslotted/);
+
+    await candidate(cdp, base, STATES.pre1955Supper);
+    value = await snapshot(cdp);
+    assert.match(value.source, /inherited uncollated/i);
+    assert.match(value.source, /Departure: Moved/);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    assert.notEqual(await evaluate(cdp,
+      `getComputedStyle(document.querySelector('#formulary-source')).display`), 'none');
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+
+    await candidate(cdp, base, STATES.roman);
+    value = await snapshot(cdp);
+    assert.equal(value.sourceHidden, true);
+    assert.equal(value.source, '');
+  });
+
+  await check('semantic location must exist in rendered inventory and valid location restores exactly', async () => {
+    await candidate(cdp, base, STATES.invalidLocation);
+    let value = await snapshot(cdp);
+    assert.equal(value.outcome, 'invalid');
+    assert.ok(value.error.some(row => row.path === 'location' && row.code === 'invalid-semantic-location'));
+    assert.equal(await evaluate(cdp, 'location.pathname'), CANDIDATE);
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('location')`),
+    'proper/roman-1962/advent-1/999');
+
+    await candidate(cdp, base, STATES.validLocation);
+    value = await snapshot(cdp);
+    assert.equal(value.outcome, 'ready');
+    assert.deepEqual(value.state.semanticLocation,
+      { eventId: 'proper/roman-1962/advent-1/003' });
+    assert.equal(await evaluate(cdp, 'location.pathname'), CURRENT);
+    assert.equal(await evaluate(cdp,
+      `document.querySelector('[data-semantic-event-id="proper/roman-1962/advent-1/003"]') !== null`),
+      true);
+  });
+
+  await check('Contents movement replaces canonical semantic location and focuses the result', async () => {
+    await candidate(cdp, base, STATES.roman);
+    await click(cdp, '[data-reader-action="contents"]');
+    const wanted = await evaluate(cdp, `(() => {
+      const row = document.querySelectorAll('[data-reader-contents] [data-reader-location]')[2];
+      if (!row) throw new Error('third Contents location is absent');
+      const id = row.dataset.readerLocation; row.click(); return id;
+    })()`);
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('location')`), wanted);
+    assert.equal(await evaluate(cdp,
+      `document.activeElement.dataset.semanticEventId`), wanted);
+    assert.deepEqual(await evaluate(cdp, `propersReaderDebug.state.semanticLocation`),
+      { eventId: wanted });
+  });
+
+  await check('A and C use only their own typed untranslated state', async () => {
+    const cases = [
+      [STATES.cycleAUntranslated, 'rights-restricted', /rights restricted/i,
+        'A Latin sibling sentinel', 'C Latin safe sibling'],
+      [STATES.cycleCUntranslated, 'unavailable', /No English body is held.*cycle/i,
+        'C Latin safe sibling', 'A Latin sibling sentinel']
+    ];
+    for (const [state, unavailable, notice, present, absent] of cases) {
+      await candidate(cdp, base, state, CYCLE_UNTRANSLATED_DATA);
+      const snapshotValue = await snapshot(cdp);
+      assert.equal(snapshotValue.outcome, 'ready', JSON.stringify(snapshotValue));
+      const row = await evaluate(cdp, `(() => {
+        const event = propersReaderDebug.semantic.events.find(one => one.editionSlotLabel === 'Collect');
+        const node = document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+        return { selected: event.selected, text: node.textContent.replace(/\\s+/g, ' ').trim() };
+      })()`);
+      assert.equal(row.selected.unavailableState, unavailable);
+      assert.equal(row.selected.missing, true);
+      assert.equal(row.selected.text, null);
+      assert.match(row.text, notice);
+      if (unavailable === 'unavailable') assert.match(row.text, new RegExp(present));
+      else assert.doesNotMatch(row.text, new RegExp(present));
+      assert.doesNotMatch(row.text, new RegExp(absent));
+    }
+  });
+
+  await check('held English remains readable when the corresponding Latin body is unavailable', async () => {
+    await candidate(cdp, base, STATES.romanEnglishWithoutLatinBody);
+    const value = await snapshot(cdp);
+    assert.equal(value.outcome, 'ready', JSON.stringify(value));
+    assert.match(value.source, /Translation witness: The Roman Missal translated into the English language/);
+    assert.match(value.source, /Rights: Public Domain/);
+    const row = await evaluate(cdp, `(() => {
+      const event = propersReaderDebug.semantic.events.find(one =>
+        one.kind === 'proper' && one.editionSlotLabel === 'Alleluia');
+      if (!event) throw new Error('Alleluia semantic event is absent');
+      const node = document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+      const composed = node && node.querySelector('.composed');
+      return {
+        text: node && node.textContent.replace(/\\s+/g, ' ').trim(),
+        composed: composed && composed.textContent.replace(/\\s+/g, ' ').trim(),
+        lang: composed && composed.lang
+      };
+    })()`);
+    assert.match(row.composed, /This is a wise virgin, and one of the number of the prudent/);
+    assert.equal(row.lang, 'en');
+    assert.doesNotMatch(row.text, /Latin text unavailable|No English body is held/i);
+  });
+  if (process.env.TRIPTYCH_P0_ONLY === '1') return;
 
   await check('explicit URL outranks remembered preferences', async () => {
     await evaluate(cdp, `localStorage.setItem('triptych:liturgy:propers', JSON.stringify({missal:'postconciliar',bible:'clementine-vulgate',orations:'en'}))`);
@@ -423,7 +685,9 @@ async function assertions(cdp, base) {
     assert.equal((await snapshot(cdp)).outcome, 'ready');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.state.cycle'), 'A');
     assert.equal(await evaluate(cdp,
-      `new URLSearchParams(location.hash.slice(1)).has('cycle')`), false);
+      `new URLSearchParams(location.hash.slice(1)).get('cycle')`), 'A');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).has('_candidate-cycle')`), false);
 
     await candidate(cdp, base, STATES.romanEnglishWitness);
     assert.equal((await snapshot(cdp)).outcome, 'ready');
@@ -463,12 +727,13 @@ async function assertions(cdp, base) {
     assert.equal((await snapshot(cdp)).outcome, 'invalid');
   });
 
-  await check('partial production coverage produces one concise reliance notice', async () => {
+  await check('source-declared partial formulary reports its typed coverage without suppressing material', async () => {
     await candidate(cdp, base, STATES.partial);
     const held = await snapshot(cdp);
     assert.equal(held.outcome, 'ready');
     assert.equal(held.noticeHidden, false);
-    assert.match(held.notice, /not held|not yet transcribed|unavailable|coverage/i);
+    assert.match(held.notice, /not held|unavailable|coverage/i);
+    assert.ok(held.texts.length > 0);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#coverage-notice').length`), 1);
   });
 
@@ -517,9 +782,9 @@ async function assertions(cdp, base) {
   });
 
   await check('no held witness remains an explicit unavailable or partial result', async () => {
-    await candidate(cdp, base, STATES.romanEnglishNone);
+    await candidate(cdp, base, STATES.romanEnglishNone, NO_WITNESS_DATA);
     const value = await snapshot(cdp);
-    assert.equal(value.outcome, 'ready'); assert.equal(value.noticeHidden, false);
+    assert.equal(value.outcome, 'ready', JSON.stringify(value.error)); assert.equal(value.noticeHidden, false);
     assert.match(value.notice, /not held|not yet transcribed|unavailable|coverage/i);
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
@@ -769,6 +1034,13 @@ async function assertions(cdp, base) {
       `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ` +
       `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
       'translation witness navigation');
+    const source = await evaluate(cdp, `document.querySelector('#formulary-source').textContent`);
+    assert.match(source, /Translation witness: The Roman Missal translated into the English language/);
+    assert.match(source, /Rights: Public Domain/);
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
+    assert.notEqual(await evaluate(cdp,
+      `getComputedStyle(document.querySelector('#formulary-source')).display`), 'none');
+    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
     await cdp.send('Page.reload', { ignoreCache: true });
     await waitFor(cdp,
       `performance.getEntriesByType('navigation')[0]?.type === 'reload' && window.propersReaderDebug && ` +
@@ -1008,17 +1280,19 @@ try {
   ` });
   const base = `http://127.0.0.1:${port}`;
   await assertions(cdp, base);
-  await viewport(cdp, 393, 852); await candidate(cdp, base, STATES.roman);
-  const tree = await cdp.send('Accessibility.getFullAXTree');
-  const interactive = new Set(['button', 'link', 'radio', 'combobox', 'textbox']);
-  const unnamed = tree.nodes.filter(row => interactive.has(row.role?.value) && !row.name?.value);
-  accessibilityReport = {
-    nodeCount: tree.nodes.length,
-    unnamedInteractiveNodes: unnamed.length,
-    roles: unnamed.map(row => row.role?.value)
-  };
-  assert.equal(unnamed.length, 0, 'unnamed interactive accessibility nodes');
-  await captures(cdp, base);
+  if (process.env.TRIPTYCH_P0_ONLY !== '1') {
+    await viewport(cdp, 393, 852); await candidate(cdp, base, STATES.roman);
+    const tree = await cdp.send('Accessibility.getFullAXTree');
+    const interactive = new Set(['button', 'link', 'radio', 'combobox', 'textbox']);
+    const unnamed = tree.nodes.filter(row => interactive.has(row.role?.value) && !row.name?.value);
+    accessibilityReport = {
+      nodeCount: tree.nodes.length,
+      unnamedInteractiveNodes: unnamed.length,
+      roles: unnamed.map(row => row.role?.value)
+    };
+    assert.equal(unnamed.length, 0, 'unnamed interactive accessibility nodes');
+    await captures(cdp, base);
+  }
 } catch (error) {
   failures.push({ name: 'harness', detail: error.stack || String(error) });
 } finally {

@@ -25,6 +25,7 @@ import argparse
 import re
 import sys
 import unicodedata
+from datetime import date
 from functools import lru_cache
 from pathlib import Path
 # Shared CLI helpers live outside tools/ so that tmt's registry scan,
@@ -46,10 +47,10 @@ EXAMPLES = {
         Example(
             "tools/calendar-spine derive --calendar roman-1962 --kind marian",
             (
-                "roman-1962\t02-02\tmarian\t1962-02-02\tII\tpurificatione-beatae-mariae-virginis\tIn Purificatione Beatae Mariae Virginis",
+                "# roman-1962: 17 entries (17 marian)",
+                "roman-1962\t02-02\tmarian\t1962-02-02\tII\tpurificatione-beatae-mariae-virginis\tIn Purificatione Beat... [+18 chars]",
                 "roman-1962\t02-11\tmarian\t1962-02-11\tIII\tapparitione-beatae-mariae-virginis-immaculatae\tIn Apparit... [+39 chars]",
                 "roman-1962\t03-25\tmarian\t1962-03-25\tI\tannuntiatio-beatae-mariae-virginis\tAnnuntiatio Beatae Maria... [+10 chars]",
-                "roman-1962\t05-31\tmarian\t1962-05-31\tII\tbeatae-mariae-virginis-reginae\tBeatae Mariae Virginis Regi... [+34 chars]",
                 "... 14 more lines",
             ),
         ),
@@ -114,7 +115,11 @@ ABBREVIATED = {
 CALENTRY = re.compile(r"\\calentry\{([^}]*)\}\{(.*?)\}\{([^}]*)\}\s*$")
 CALMONTH = re.compile(r"\\calmonth\{([^}]*)\}")
 TABLE_MONTH = re.compile(r"\\bfseries\s+([A-Z][a-z]+)\}")
-TABLE_ROW = re.compile(r"^(\d{1,2})\s*&\s*(.+?)\s*&\s*\\calrank\{([^}]*)\}")
+TABLE_ROW = re.compile(
+    r"^(\d{1,2})\s*&\s*(.+?)\s*&\s*\\calrank\{([^}]*)\}"
+    r"\s*(?:\\caldiscriminator\{([^}]*)\})?\s*\\\\\s*$"
+)
+DISCRIMINATOR = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 LORD = (
     "domini", "iesu christi", "jesu christi", "of the lord", "name of jesus",
@@ -260,6 +265,7 @@ def parse_table(directory: Path, names: tuple[str, ...]) -> list[dict]:
                     "day": int(found.group(1)),
                     "title": strip_tex(found.group(2)),
                     "rank": strip_tex(found.group(3)),
+                    "discriminator": found.group(4),
                 }
             )
     return entries
@@ -274,13 +280,54 @@ def spine(calendar: str) -> list[dict]:
     entries = PARSERS[calendar](directory, names)
     if not entries:
         raise ValueError(f"{calendar}: no calendar entries found")
+    for entry in entries:
+        try:
+            # A fixed sanctoral spine needs only month/day validity.  The leap
+            # year keeps February 29 available without accepting impossible
+            # source dates such as February 30.
+            date(2000, entry["month"], entry["day"])
+        except (KeyError, TypeError, ValueError) as error:
+            month = entry.get("month") if isinstance(entry, dict) else None
+            day = entry.get("day") if isinstance(entry, dict) else None
+            raise ValueError(
+                f"{calendar}: impossible calendar date {month!r}-{day!r}"
+            ) from error
     entries.sort(key=lambda entry: (entry["month"], entry["day"]))
     used: set[str] = set()
+    registries_by_date: dict[str, set[str]] = {}
     for entry in entries:
         entry["kind"] = classify(entry["title"])
         entry["key"] = make_key(entry["title"], used)
         entry["date"] = f"{entry['month']:02d}-{entry['day']:02d}"
-        entry["registry"] = f"{PREFIX[calendar]}-{entry['date']}"
+        discriminator = entry.pop("discriminator", None)
+        date_registries = registries_by_date.setdefault(entry["date"], set())
+        base_registry = f"{PREFIX[calendar]}-{entry['date']}"
+        if not date_registries:
+            if discriminator:
+                raise ValueError(
+                    f"{calendar} {entry['date']}: the first row on a date must "
+                    "not carry a calendar-spine discriminator"
+                )
+            registry = base_registry
+        else:
+            if not discriminator:
+                raise ValueError(
+                    f"{calendar} {entry['date']}: every additional row on a date "
+                    "requires a source-authored calendar-spine discriminator"
+                )
+            if not DISCRIMINATOR.fullmatch(discriminator):
+                raise ValueError(
+                    f"{calendar} {entry['date']}: calendar-spine discriminator "
+                    f"{discriminator!r} must be lowercase kebab-case"
+                )
+            registry = f"{base_registry}-{discriminator}"
+        if registry in date_registries:
+            raise ValueError(
+                f"{calendar} {entry['date']}: duplicate calendar-spine registry "
+                f"{registry!r}"
+            )
+        date_registries.add(registry)
+        entry["registry"] = registry
     return entries
 
 

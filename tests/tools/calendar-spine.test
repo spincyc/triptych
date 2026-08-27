@@ -47,7 +47,7 @@ if ! cmp -s first.json second.json; then
 	exit 1
 fi
 
-# Keys are unique within each calendar.
+# Keys and registries are unique within each calendar.
 for calendar in roman-1962 postconciliar; do
 	run_tool --calendar "$calendar" 2>/dev/null | cut -f6 >keys.txt
 	if [ "$(sort keys.txt | uniq -d | wc -l | tr -d ' ')" -ne 0 ]; then
@@ -55,7 +55,72 @@ for calendar in roman-1962 postconciliar; do
 		sort keys.txt | uniq -d >&2
 		exit 1
 	fi
+	run_tool --calendar "$calendar" 2>/dev/null | cut -f4 >registries.txt
+	if [ "$(sort registries.txt | uniq -d | wc -l | tr -d ' ')" -ne 0 ]; then
+		echo "$calendar has duplicate registries:" >&2
+		sort registries.txt | uniq -d >&2
+		exit 1
+	fi
 done
+
+# Separately keyed Masses on one civil date remain separate spine rows.  The
+# first keeps the date registry; every later row takes its explicit source
+# discriminator.  Their singular ranks and titles must not be joined again.
+run_tool --calendar postconciliar 2>/dev/null | awk -F'\t' '$2 == "08-07"' >august-7.txt
+if [ "$(wc -l <august-7.txt | tr -d ' ')" -ne 2 ]; then
+	echo "expected two postconciliar rows on August 7" >&2
+	exit 1
+fi
+if ! awk -F'\t' '$4 == "pc-08-07" && $5 == "Optional memorial" && $6 == "saints-sixtus-ii-pope-companions-martyrs" && $7 == "Saints Sixtus II, Pope, and Companions, Martyrs" {found=1} END {exit !found}' august-7.txt; then
+	echo "the August 7 martyrs do not retain the base date identity" >&2
+	exit 1
+fi
+if ! awk -F'\t' '$4 == "pc-08-07-cajetan" && $5 == "Optional memorial" && $6 == "saint-cajetan-priest" && $7 == "Saint Cajetan, Priest" {found=1} END {exit !found}' august-7.txt; then
+	echo "Saint Cajetan does not carry the source-authored date discriminator" >&2
+	exit 1
+fi
+
+# The source-authored discriminator contract fails closed.  It is not inferred
+# from a display name, and it cannot silently renumber the first row on a date.
+/usr/bin/python3 - "$repo/tools/calendar-spine" <<'PY'
+import copy
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+
+loader = SourceFileLoader("calendar_spine_discriminator", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+loader.exec_module(module)
+
+base = [
+    {"month": 8, "day": 7, "title": "Saint Alpha", "rank": "Optional memorial", "discriminator": None},
+    {"month": 8, "day": 7, "title": "Saint Beta", "rank": "Optional memorial", "discriminator": "beta"},
+]
+
+original_sources = module.SOURCES
+original_parsers = module.PARSERS
+try:
+    module.SOURCES = {"postconciliar": (None, ())}
+    for label, rows, expected in (
+        ("impossible calendar date", [dict(base[0], month=2, day=30)], "impossible calendar date"),
+        ("first-row discriminator", [dict(base[0], discriminator="alpha")], "first row on a date"),
+        ("missing discriminator", [base[0], dict(base[1], discriminator=None)], "requires a source-authored"),
+        ("duplicate discriminator", [base[0], base[1], dict(base[1], title="Saint Gamma")], "duplicate calendar-spine registry"),
+        ("invalid discriminator", [base[0], dict(base[1], discriminator="Saint Beta")], "lowercase kebab-case"),
+    ):
+        module.PARSERS = {"postconciliar": lambda _directory, _names, rows=rows: copy.deepcopy(rows)}
+        try:
+            module.spine("postconciliar")
+        except ValueError as error:
+            if expected not in str(error):
+                raise SystemExit(f"{label}: wrong diagnostic: {error}")
+        else:
+            raise SystemExit(f"{label}: invalid source was accepted")
+finally:
+    module.SOURCES = original_sources
+    module.PARSERS = original_parsers
+PY
 
 # Classification follows each edition's own title: the 1962 books print
 # February 2 and March 25 as Marian, the postconciliar books as of the Lord.

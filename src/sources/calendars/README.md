@@ -11,11 +11,30 @@ to read it.
 
 ```text
 src/sources/calendars/
+  recensions.json      # capability catalog; never a calendar index
   roman-1962/
     propers.yaml        # every mass of the calendar: seasonal, marian,
   postconciliar/        # christological and sanctoral alike
     propers.yaml
 ```
+
+## Recension capability catalog
+
+`recensions.json` is the single identity and capability catalog for the Roman
+book states and language/territory expressions named by tracked evidence. It is
+JSON so the YAML-only calendar discovery cannot turn an unsupported row into a
+calendar selector. `check-calendar-masses` validates the catalog, every cited
+source record, and the one-to-one mapping between its `calendar` fields and the
+actual `propers.yaml` indexes.
+
+Capability `data_availability` describes target-attested repository data, not
+mechanical fallback from a neighboring recension. `publication_availability`
+is a separate rights/surface claim; held or partially collated data can remain
+unavailable for publication. `collation` distinguishes direct collation,
+mixed evidence, a finding aid, and an unestablished claim. Detailed and
+derivable coverage stays in each row's `coverage_ref`; counts are not copied
+into the catalog. An `interval-gap` has no `calendar`, and every unavailable
+capability must be named by an activation requirement.
 
 ## What an index is
 
@@ -25,10 +44,12 @@ one built" without opening a missal. It is not a source of record: it carries
 no artifact hash, and a publication still binds the edition and artifact that
 control each text through its own `research/source-bindings.toml`.
 
-Every citation and text is an **unverified lead** until collated against the
-controlling edition. Each file states this in its `verification` field and
-tracks known divergences in `open_collation_items`. Fix a divergence by
-collation, not by harmonizing the file into false uniformity.
+The index alone is not evidence for a citation or text. Each file's
+`verification` header and individual rows state the applicable evidence grade,
+and a publication binds the source artifact separately. Treat no row as more
+verified than those records say. Known divergences remain in
+`open_collation_items`; fix one by collation, not by harmonizing the file into
+false uniformity.
 
 ## Translations
 
@@ -69,9 +90,85 @@ and sorts every translation list into that order; see `guidance/web-data.md`.
 A translation is someone's expression and is not relicensed by inclusion; see
 `THIRD_PARTY.md`.
 
+An overlay entry collated visually from an exact page-image artifact records
+all three of these fields together:
+
+```toml
+artifact_id = "artifact.example.exact-facsimile"
+passage_id = "passage.example.collect"
+ia_leaf_range = [912, 913]
+```
+
+`ia_leaf_range` is a zero-based, inclusive Internet Archive BookReader range;
+the legacy `ia_leaf` field, when retained, equals its first member. The passage
+must be dated and verified, name the same exact artifact and hash, and cover the
+corresponding one-based artifact pages (leaf + 1). `printed_page` gives the
+visible printed page or full inclusive range and must agree with the passage's
+locus. The calendar checker resolves all of this against the source library;
+an impressive-looking but stale or partial passage ID is not provenance.
+
+The page-image artifact proves what was read and where. It does not silently
+become the translation's publication basis. `source_id` continues to identify
+the translation witness, and that witness's `[[sources]].artifact_id` names the
+independent rights artifact. Thus a remote whole-book PDF whose mixed contents
+remain unresolved can control a visual passage while a separately tracked,
+bounded public-domain derivative supplies the publication basis.
+
 Until a calendar's translations can move into its propers they are recorded in
 `src/sources/inventories/<calendar>-proper-translations-v1.toml`, and
 `check-calendar-masses` holds that sidecar to every rule above.
+
+## Latin provenance and publication
+
+The Latin `text` in this index is a transcription lead. Its presence does not
+establish either where the exact words were read or permission to publish
+them. Those are separate per-text decisions in:
+
+```text
+src/sources/inventories/<calendar>-proper-latin-provenance-v1.toml
+```
+
+Each direct text node is keyed by `mass`, `form`, `proper`, reading `course`
+and `cycle`, plus a one-based `occurrence`. The occurrence is load-bearing:
+repeated names are legitimate, including the six separately worded Procession
+Antiphons on Palm Sunday. Each row carries the SHA-256 of the exact Unicode
+string, so a changed text cannot keep an earlier decision by name alone.
+When a rights review removes a body from the current YAML, its row instead
+retains that former hash and whatever evidence was actually established, if
+any, with `body_status = "removed"`. Unresolved provenance stays unresolved;
+quarantine never upgrades a search lead into a transcription source. The
+matching proper carries no `text`; it carries `text_status` with state
+`unavailable`, scope `proper-body`, and a registered `rights-withheld` reason.
+That reason's `source_id` identifies rights/search context only. It does not
+assert that the removed bytes were read from, or are exact to, that source.
+That pairing is checked bidirectionally. The hash remains an audit identity,
+not a store from which a consumer may recover or reconstruct the wording.
+
+`provenance_status` identifies the transcription witness, source date,
+locator, relationship, transformations, verification witness, evidence,
+authority, and confidence. `publication_status`, `publication_basis`, and
+`surfaces` independently say whether the words may be emitted to `web`,
+`download`, `print`, `cli`, the tracked `corpus-data`, or `public-git`. Both
+tracked surfaces must be affirmative while the wording remains in this public
+repository. A witness may be
+fully identified while publication remains unresolved; naming a Holy See
+edition never supplies a Vatican permission or a public-domain conclusion.
+
+The defaults are fixed to unresolved. An affirmative public-domain row needs
+an exact per-text collation against a registered witness. A permission or
+licensed row needs its distinct rights authority, evidence, retrieval date,
+conditioned notice, and the exact surfaces covered. `publication_source_ids`
+and `publication_locator` bind that rights basis to registered evidence
+independently of the transcription and verification witnesses. Missing records, orphan
+records, stale hashes, ambiguous occurrences, and incomplete grants fail
+closed in generated browser/download/print data and in CLI output.
+
+Most source YAML remains tracked while the per-text collation is completed;
+an explicitly quarantined `body_status = "removed"` row is the exception and
+has no corresponding YAML wording. Filtering projections does not retract
+other words from the current Git tree or any removed wording from its history;
+the unresolved `corpus-data` and `public-git` exposure is a separate
+maintainer/counsel disposition, not a permission this schema infers.
 
 ## Entry shape
 
@@ -138,7 +235,12 @@ citation it cannot encode without guessing rather than writing a wrong range.
 - `source: mixed` carries both: the scriptural constituents and the full text.
 - A celebration with several Mass formularies — the Nativity's four Masses, the
   Vigil and Day Masses of Epiphany, Ascension, and Pentecost — replaces
-  `propers` with `forms`, each form carrying its own `name` and `propers`.
+  `propers` with `forms`, each form carrying its own `id`, `name`, and
+  `propers`. The source-authored `id` is a nonempty lowercase kebab-case string
+  and is unique within the mass. It is stable identity for sidecars and
+  consumers; the printed `name` remains the display label. `main` is reserved
+  for the implicit sole formulary of a mass without `forms`, so it cannot be an
+  `id` when a mass has multiple forms.
 - A proper whose text varies by Lectionary cycle carries a `cycles` mapping
   keyed `A`, `B`, `C`. Where the cycles differ in kind, `source` moves inside
   each cycle; otherwise it stays on the proper.
@@ -199,6 +301,10 @@ referring proper's own name. `mass` names a key in **the same file** — a
 reference never crosses calendars, because the two books print different prayers
 under the same names. `citation` records the edition's own printed pointer, which
 is the evidence that the reference is the book's and not the reader's.
+The narrow same-mass exception is a proper in one form naming a directly printed
+proper in a **different** sibling form. A mass-level self-reference, a same-form
+proper reference, and a sibling target that is itself only a reference remain
+cycles and are refused.
 
 ```yaml
 - key: resumed-epiphany-5
@@ -218,12 +324,21 @@ is the evidence that the reference is the book's and not the reader's.
   dropped.
 - A mass carrying `takes_from` may not also carry `forms`; a reference into a
   mass that *is* printed in forms must name which form.
+- One narrow mass-level absence may accompany `takes_from`: `text_status` with
+  `state: unavailable` and `scope: proper-collect`. It means the referenced
+  formulary supplies every held proper except its Collect, because the dated
+  mass's own proper Collect is unavailable. The resolver therefore omits only
+  the inherited Collect and retains every other borrowed proper with its
+  provenance. Such a mass carries neither `forms` nor a local Collect; other
+  `text_status` scopes cannot accompany `takes_from`.
 - A proper carrying `takes_from` carries nothing else — no `source`, `text`,
   `verses`, `cycles`, `weekday_cycles`, `incipit` or `translations`. All of
   those come from the resolved proper, and a second copy here is the restatement
   the key removes.
-- References may chain. A cycle, a self-reference, a missing mass and a missing
-  proper are each refused by `check-calendar-masses`.
+- References may chain. A cycle, a mass-level self-reference, a same-form proper
+  self-reference, a missing mass and a missing proper are each refused by
+  `check-calendar-masses`; the explicit different-sibling exception above is the
+  only same-mass reference.
 - The resolution is `resolve_propers` in `scripts/_calendars.py`, read by the
   validator and by `mass-propers` alike, so the reference the gate accepts and
   the reference the site resolves cannot come apart. Nothing is ever copied into
@@ -234,6 +349,71 @@ is the evidence that the reference is the book's and not the reader's.
 - The census counts what each file *carries*, so a mass that takes a formulary
   lowers the proper count. Its two `taking` rows count what the calendar
   *appoints* from elsewhere. Neither shape is a placeholder.
+
+## A Common direction is not resolved text
+
+`common_from` records a Missal heading whose Common formulary is not held as
+resolvable text. It is deliberately separate from `takes_from`: the latter
+borrows an existing formulary, while the former preserves only a witnessed
+structural appointment. Consumers must expose the direction and must not turn
+it into words.
+
+```yaml
+common_from:
+  scope: missal-propers-except-collect
+  source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
+  locus: artifact page 112, printed page 104
+  options:
+  - mass: commune-martyrum
+    selection: "<printed Common subheading>"
+text_status:
+  state: unavailable
+  scope: proper-collect
+  reasons:
+  - kind: no-exemplar
+```
+
+`options` are coequal where more than one is printed; list order selects
+nothing. Each `mass` must exist in this file's `kind: common` section.
+`selection`, when present, records the printed subdivision label but does not
+claim that the subdivision has been modeled as a form. `source_id` and `locus`
+identify the registered structural witness. A mass carrying `common_from`
+carries neither local `propers` nor `forms`: its scope already accounts for
+every Missal proper except the separately unavailable proper Collect.
+
+`text_status` keeps the missing words separate from the verified direction.
+Its `state`, `scope`, reason keys, and source ids are closed and checked.
+`proper-collect` accompanies either a dated `common_from` whose scope excludes
+the Collect or the exact `takes_from` case above, where it suppresses only the
+borrowed Collect. `missal-formulary` accounts for the whole Missal formulary
+when target wording is unavailable. It is required on a text-free Common
+destination and is equally valid on a dated or seasonal non-Common Mass; it does
+not include Lectionary options. With `state: unavailable` it stands alone and
+the Mass carries no `propers`, `forms`, `takes_from`, or `common_from`. A
+non-Common Mass may instead use `state: partial` beside exactly one of real
+`propers` or `forms`, never beside a reference, so held source content remains
+distinct from the typed remainder. The reason kinds reuse the Ordinary
+inventory's `witness-gap`, `rights-withheld`, and `no-exemplar` vocabulary.
+`witness-gap` and `rights-withheld` name the registered source that establishes
+the gap; `no-exemplar` names the absence of an exact copy and therefore omits
+`source_id`.
+
+```yaml
+- key: target-formulary-not-held
+  name: Target formulary not held
+  registry: 'example'
+  season: example
+  text_status:
+    state: unavailable
+    scope: missal-formulary
+    reasons:
+    - kind: witness-gap
+      source_id: artifact.example.restricted-target-edition
+```
+
+A proper named `Placeholder` is never an alternate representation of this
+state. It invents a composed slot the Missal does not own and is rejected by
+`check-calendar-masses`; use the mass-level typed absence instead.
 
 ## A rubric may appoint one text across a span of days
 
@@ -384,27 +564,96 @@ owns the canon. Both run inside `make check` and need PyYAML
 
 ## Current contents
 
-Counted from the files by `check-calendar-masses` and `citations check`, which
-are the authority; these figures are restated here and go stale, so re-run them
-before trusting the table.
+<!-- census:begin — derived; edit nothing between these markers -->
 
-| Index | Masses | Propers | Encoded passages | Placeholder-only masses | Propers in seasonal | Propers inside `forms` |
-| --- | --- | --- | --- | --- | --- | --- |
-| `roman-1962/propers.yaml` | 460 | 1475 | 1115 | 337 | 1141 | 97 |
-| `postconciliar/propers.yaml` | 268 | 1031 | 1082 | 205 | 824 | 117 |
+| Calendar | Section | Masses | Propers | Masses holding only placeholders |
+| --- | --- | ---: | ---: | ---: |
+| roman-pre-1955 | seasonal | 6 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1154 | 0 |
+| roman-1962 | christological | 8 | 66 | 0 |
+| roman-1962 | marian | 18 | 88 | 0 |
+| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-1962 | common | 30 | 358 | 0 |
+| postconciliar | seasonal | 390 | 2108 | 0 |
+| postconciliar | christological | 7 | 67 | 0 |
+| postconciliar | marian | 14 | 52 | 0 |
+| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | common | 7 | 0 | 0 |
 
-The proper counts include those nested inside `forms`, so a count that reads
-`propers` alone lands short by the last column.
+| Calendar | Rank | Entries | Celebrations |
+| --- | --- | ---: | ---: |
+| roman-pre-1955 | (no rank) | 6 | 6 |
+| roman-1962 | (no rank) | 93 | 93 |
+| roman-1962 | Comm. | 104 | 104 |
+| roman-1962 | I | 37 | 37 |
+| roman-1962 | II | 46 | 47 |
+| roman-1962 | III | 211 | 211 |
+| postconciliar | (no rank) | 394 | 394 |
+| postconciliar | All Souls commemoration | 1 | 1 |
+| postconciliar | Feast | 24 | 24 |
+| postconciliar | Memorial | 69 | 69 |
+| postconciliar | Optional memorial | 120 | 120 |
+| postconciliar | Solemnity | 11 | 11 |
 
-**Most of what is here is a name, not a formulary.** The placeholder-only column
-is most of both indexes: those masses establish that the mass exists and where it
-falls, and record nothing of what is said at it. The seasonal sections hold the
-substance. Coverage is therefore wide and shallow by design, and a reader who
-sees a mass listed should not infer its texts are here. The prose here states no
-figure the table does not: the two disagreed for four commits, because a lane
-refreshed the table and left three older totals standing beside it.
+| Measure | roman-pre-1955 | roman-1962 | postconciliar |
+| --- | ---: | ---: | ---: |
+| Masses | 6 | 491 | 619 |
+| Propers | 0 | 2773 | 2941 |
+| — named `Placeholder` | 0 | 0 | 0 |
+| — inside a `forms` block | 0 | 149 | 184 |
+| — carrying a `cycles` mapping | 0 | 0 | 258 |
+| — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
+| Masses holding only placeholders | 0 | 0 | 0 |
+| Masses taking a formulary from another entry | 0 | 164 | 0 |
+| Propers taking their text from another entry | 0 | 70 | 41 |
+| Propers that are not placeholders | 0 | 2773 | 2941 |
+| — of those, scripture-bearing | 0 | 2192 | 2587 |
+| Encoded passages | 0 | 2598 | 3542 |
+| Distinct books cited | 0 | 57 | 73 |
+| Distinct slot names | 0 | 120 | 92 |
 
-`check-calendar-masses` enforces that every mass matches a spine entry and that
-no key repeats. It exits 0 on both indexes, so coverage is exact and
-duplicate-free as of that run — which is a statement about the check, not a
-standing property of the files.
+Counted from `src/sources/calendars/*/propers.yaml` and written here by
+`tools/mass-propers census --write`, which is the only thing that writes the
+block above; `make check-propers-census` refuses a copy that has drifted. What
+each row counts, because two honest counts of “propers” differ by hundreds
+when they key differently: a **mass** is one entry under `sections[*].masses`.
+A **proper** is one entry in a mass's `propers`, or in the `propers` of one of
+its `forms`; a proper carrying `cycles` counts once, not three times.
+Placeholders are **inside** the proper and mass totals, and are also given
+their own rows. A mass **holds only placeholders** when every proper it holds,
+those inside `forms` included, is named `Placeholder` — keying on the mass's
+own `propers` alone undercounts, because it misses the masses whose
+placeholders sit inside a `forms` block. **Scripture-bearing** means a
+`source` of `scripture` or `mixed`, or a `cycles` entry that is. **Encoded
+passages** and **distinct books** are `tools/citations check`'s own counts,
+one passage per encoded citation entry and books counted distinct within a
+file. **Distinct slot names** counts distinct proper `name` values, with
+`Placeholder` among them. The two **taking** rows count the entries that name
+where their text is printed instead of printing it — a feria taking the
+preceding Sunday, a saint taking a Mass of the Common. Such an entry holds few
+propers or none, so it lowers the proper count while raising what the calendar
+can actually show: every row above counts what a file **carries**, and these
+two count what it **appoints** from elsewhere. Neither is a placeholder.
+
+The rank rows count **entries**, and a calendar's rank rows sum to its
+`Masses` above. `(no rank)` is a row and not an omission: the temporal cycle
+prints no rank at all, so unranked entries are a large group in both indexes,
+and a table that dropped them would invite the ranks it does show to be read
+as the whole book. **Celebrations** counts what those entries name. One entry
+can print more than one celebration — a pair of optional memorials falling on
+the same day, or the Greater Litanies kept with Saint Mark — and the index
+records the join only in the entry's `name`, joined with `;`, so that is where
+it is read from; the plural rank word marks some such entries and not others,
+and it never says how many. Where the two columns differ the index is keeping
+more celebrations than it holds entries: reading the entry count as a count of
+celebrations understates the calendar, and folding the celebrations into the
+entry count would break the sum against `Masses`, so both are given and
+neither replaces the other. A **rank** is reproduced exactly as the file
+prints it. `Optional memorial` and `Optional memorials` are two rows because
+they are two different words in the index, and the two Missals' rank
+vocabularies are not one scale — no row of this table is comparable across
+calendars, which is why rank is tabulated down the page and not across it.
+This table answers what an index is scoped to; it does not answer which
+entries are Sundays, because no entry states that and it is not derived here.
+
+<!-- census:end -->

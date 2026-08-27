@@ -170,6 +170,37 @@ class ProseRuleTests(unittest.TestCase):
         self.assertFalse(reading["readable"])
         self.assertEqual(reading["withheld"], "no-transcription")
 
+    def test_withheld_projection_omits_prose_bearing_metadata(self) -> None:
+        one = passage(
+            context="Protected context must not become a quotation channel.",
+            notes="Protected notes must not become a quotation channel.",
+        )
+        held = library_with(rights_status="unresolved", storage="remote")
+        work = {
+            "id": "work.test", "title": "W", "author": None,
+            "category": None, "languages": [], "alternate_titles": [],
+            "description": None,
+        }
+        edition = {
+            "id": "edition.test", "title": "E", "language": "en",
+            "date": "2026", "year": 2026, "publication": None,
+            "editors": [], "translators": [], "authority": None,
+            "jurisdiction": None, "notes": "Protected edition quotation.",
+            "artifacts": [{
+                **next(iter(held.records.values())).data,
+                "notes": "Protected artifact quotation.",
+            }],
+            "passages": [{**one, "reading": reader.reading_of(held, one)}],
+        }
+        payload = reader.edition_payload(work, edition)
+        row = payload["passages"][0]
+        self.assertFalse(row["readable"])
+        for field in ("context", "notes", "rights_basis"):
+            self.assertNotIn(field, row)
+        self.assertNotIn("notes", payload["edition"])
+        self.assertNotIn("notes", payload["artifacts"][0])
+        self.assertNotIn("rights_basis", payload["artifacts"][0])
+
     def test_a_transcription_wins_over_line_bounds(self) -> None:
         """The checked transcription is the reading; the bounds are its evidence."""
         reading = reader.reading_of(

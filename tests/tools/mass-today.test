@@ -42,6 +42,26 @@ for want in "roman-1962" "First Sunday of Advent" "Introit" "Epistle — Romans 
 	esac
 done
 
+# A citation-backed postconciliar antiphon may carry a short Latin incipit as
+# identifying apparatus while carrying no English Missal rendering.  The
+# compact English view must not print that Latin as though it answered the
+# language request or as though an incipit were the complete proper.
+postconciliar_terse="$(run_tool show --date 2026-11-29 \
+	--calendar postconciliar --lang en --plain)"
+case "$postconciliar_terse" in
+*"Latin incipit only; no en rendering recorded: Ad te levavi"*) ;;
+*)
+	echo "postconciliar English output does not label its Latin incipit" >&2
+	exit 1
+	;;
+esac
+case "$postconciliar_terse" in
+*"      Ad te levavi"*)
+	echo "postconciliar English output prints a bare Latin incipit" >&2
+	exit 1
+	;;
+esac
+
 # A date the rubrics settle must NOT be reported as unranked. This sentence was
 # printed over Easter Sunday, beside a third-class confessor offered as an
 # equal candidate, until the ranking moved to `calendar-rubrics day`.
@@ -68,6 +88,41 @@ case "$easter" in
 	exit 1
 	;;
 esac
+
+# An implied feria has its appointed Mass on winner.formulary rather than on
+# winner.key.  It is still a settled day and must therefore select that Mass
+# and assemble its Ordinary instead of reporting a synthetic day-unsettled
+# suppression.
+run_tool show --date 2026-08-26 --calendar roman-1962 --ordinary --json \
+	>"$sandbox/implied-feria.json"
+/usr/bin/python3 - "$sandbox/implied-feria.json" <<'PY'
+import json, sys
+
+day = json.load(open(sys.argv[1], encoding="utf-8"))["days"][0]
+assert day["selected_mass"] == "pentecost-13", day
+assert day["branches"][0]["selected_mass"] == "pentecost-13", day
+assert "ordinary_suppressed" not in day, day
+assert day["ordinary"]["calendar"] == "roman-1962", day["ordinary"]
+PY
+
+# A settled implied feria can lack a held formulary.  That is neither an
+# unsettled day nor a Mass choice: the typed suppression says exactly which
+# source boundary prevents an Ordinary from being assembled.
+run_tool show --date 2027-05-03 --calendar roman-1962 --ordinary --json \
+	>"$sandbox/implied-feria-without-formulary.json"
+/usr/bin/python3 - "$sandbox/implied-feria-without-formulary.json" <<'PY'
+import json, sys
+
+day = json.load(open(sys.argv[1], encoding="utf-8"))["days"][0]
+assert day["settled"] is True, day
+assert day["selected_mass"] is None, day
+assert day["ordinary_suppressed"] == {
+    "kind": "ferial-formulary-unavailable"
+}, day
+winner = day["branches"][0]["winner"]
+assert winner["source"] == "implied", winner
+assert winner["key"] is None and winner["formulary"] is None, winner
+PY
 
 # ---- The expanded mode ----------------------------------------------------
 #
@@ -113,6 +168,85 @@ done
 case "$cycled" in
 *"Matthew 24:37-44"*|*"Luke 21:25-28, 34-36"*)
 	echo "postconciliar Year B output includes another Sunday's cycle" >&2
+	exit 1
+	;;
+esac
+
+# Ordinary Time weekdays use the independent I/II Lectionary course. The
+# source proper retains both variants, while the appointed top-level verses
+# must be exactly the variant for the resolved liturgical year. This used to
+# inspect only `cycles`, so every `weekday_cycles` slot reached this payload
+# with an empty top-level `verses` list.
+run_tool show --date 2027-08-26 --calendar postconciliar --why --json \
+	>"$sandbox/weekday-i.json"
+run_tool show --date 2026-08-26 --calendar postconciliar --why --json \
+	>"$sandbox/weekday-ii.json"
+run_tool show --date 2026-08-30 --calendar postconciliar --why --json \
+	>"$sandbox/sunday-a.json"
+/usr/bin/python3 - "$sandbox/weekday-i.json" "$sandbox/weekday-ii.json" \
+	"$sandbox/sunday-a.json" <<'PY'
+import json
+import sys
+
+
+def load(path):
+    with open(path, encoding="utf-8") as source:
+        payload = json.load(source)
+    day = payload["days"][0]
+    propers = {proper["name"]: proper for proper in day["masses"][0]["propers"]}
+    return day, propers
+
+
+def refs(proper):
+    return [verse["ref"] for verse in proper.get("verses", [])]
+
+
+cycle_i, propers_i = load(sys.argv[1])
+assert cycle_i["why"]["lectionary"]["weekday"] == "I", cycle_i["why"]
+assert refs(propers_i["First Reading"]) == ["1 Thessalonians 3:7-13"], propers_i
+assert refs(propers_i["Responsorial Psalm"]) == [
+    "Psalm 90:3-4, 12-13, 14, 17"
+], propers_i
+assert sorted(propers_i["First Reading"]["weekday_cycles"]) == ["I", "II"]
+# A slot with no cycle mapping remains on its one annual course.
+assert refs(propers_i["Gospel"]) == ["Matthew 24:42-51"], propers_i
+assert "cycles" not in propers_i["Gospel"]
+assert "weekday_cycles" not in propers_i["Gospel"]
+
+cycle_ii, propers_ii = load(sys.argv[2])
+assert cycle_ii["why"]["lectionary"]["weekday"] == "II", cycle_ii["why"]
+assert refs(propers_ii["First Reading"]) == [
+    "2 Thessalonians 3:6-10, 16-18"
+], propers_ii
+assert refs(propers_ii["Responsorial Psalm"]) == ["Psalm 128:1-2, 4-5"], propers_ii
+assert sorted(propers_ii["First Reading"]["weekday_cycles"]) == ["I", "II"]
+assert refs(propers_ii["Gospel"]) == ["Matthew 23:27-32"], propers_ii
+
+sunday_a, propers_a = load(sys.argv[3])
+assert sunday_a["why"]["lectionary"]["sunday"] == "A", sunday_a["why"]
+assert refs(propers_a["First Reading"]) == ["Jeremiah 20:7-9"], propers_a
+assert sorted(propers_a["First Reading"]["cycles"]) == ["A", "B", "C"]
+assert "weekday_cycles" not in propers_a["First Reading"]
+PY
+
+# The reading view is the surface `tpt` dumps for a person, so hold the same
+# boundary there: Cycle II is printed and Cycle I is not quietly appended.
+weekday_expanded="$(run_tool show --date 2026-08-26 --calendar postconciliar \
+	--bible douay-rheims --expanded --plain)"
+for want in \
+	"First Reading -- 2 Thessalonians 3:6-10, 16-18" \
+	"Responsorial Psalm -- Psalm 128:1-2, 4-5"; do
+	case "$weekday_expanded" in
+	*"$want"*) ;;
+	*)
+		echo "postconciliar Cycle II output is missing: $want" >&2
+		exit 1
+		;;
+	esac
+done
+case "$weekday_expanded" in
+*"1 Thessalonians 2:9-13"*|*"Psalm 139:7-8, 9-10, 11-12ab"*)
+	echo "postconciliar Cycle II output includes Cycle I" >&2
 	exit 1
 	;;
 esac
@@ -223,7 +357,7 @@ done
 # frame, must break out of the Ordinary and say so — the same break the page
 # makes, from the same declarations. Nothing is dropped and nothing is
 # reordered.
-for date in 2026-12-19 2026-04-03 2026-04-04; do
+for date in 2026-04-03 2026-04-04; do
 	broke="$(run_tool show --date "$date" --calendar roman-1962 --expanded)"
 	case "$broke" in
 	*"no longer run forward through the"*) ;;
@@ -233,6 +367,38 @@ for date in 2026-12-19 2026-04-03 2026-04-04; do
 		;;
 	esac
 done
+
+# Ember Saturday has two source-authored forms and no default.  The unselected
+# view is a typed choice with no flat Proper sequence or Ordinary; each stable
+# selector yields only its own subsequence.
+run_tool show --date 2026-12-19 --calendar roman-1962 --json \
+	>"$sandbox/ember-unselected.json"
+run_tool show --date 2026-12-19 --calendar roman-1962 --form longer --json \
+	>"$sandbox/ember-longer.json"
+run_tool show --date 2026-12-19 --calendar roman-1962 --form shorter --json \
+	>"$sandbox/ember-shorter.json"
+/usr/bin/python3 - "$sandbox/ember-unselected.json" "$sandbox/ember-longer.json" \
+	"$sandbox/ember-shorter.json" <<'PY'
+import json
+import sys
+
+unselected, longer, shorter = [json.load(open(path, encoding="utf-8")) for path in sys.argv[1:]]
+mass = unselected["days"][0]["masses"][0]
+assert mass["key"] == "advent-ember-saturday"
+assert mass["form_choice_required"] is True
+assert "selected_form" not in mass
+assert mass["propers"] == []
+assert "ordinary" not in unselected["days"][0]
+assert [(form["id"], len(form["propers"])) for form in mass["forms"]] == [
+    ("longer", 16), ("shorter", 8),
+]
+for payload, wanted, count in ((longer, "longer", 16), (shorter, "shorter", 8)):
+    selected = payload["days"][0]["masses"][0]
+    assert selected["selected_form"] == wanted
+    assert selected["form_choice_required"] is False
+    assert len(selected["propers"]) == count
+    assert {proper["form_id"] for proper in selected["propers"]} == {wanted}
+PY
 
 # Good Friday and the Vigil open with propers the Ordinary appoints no place
 # for, and those are shown first rather than seated somewhere plausible.
@@ -247,36 +413,25 @@ esac
 
 # ---- Absence, placeholders and provenance ---------------------------------
 #
-# A Mass whose text is not transcribed is counted, and never printed as the
-# prayer it stands in for.
-# A single pinned date cannot carry this: 1 January was filled on 2026-08-07 and
-# 2026-02-09 (S. Cyrilli) after it, and each time the suite went red for the one
-# reason a placeholder test must not -- the placeholder was transcribed, which is
-# the work succeeding. So walk the days that still hold one and assert against
-# the first. Filling every one of them is the only thing that empties the list,
-# and then the message says to retire the assertion rather than to re-pin it.
-placeholder=""
-for candidate in 2026-06-17 2026-07-21 2026-10-23 2026-11-15; do
-	found="$(run_tool show --date "$candidate" --calendar roman-1962 --expanded)"
-	case "$found" in
-	*"placeholder"*)
-		placeholder="$found"
-		break
-		;;
-	esac
+# The former pinned placeholders are now transcribed. Their remaining typed
+# Proper-Collect gap is rendered as availability beside the retained Common,
+# never as prayer text or a repository placeholder.
+for candidate in 2027-06-17 2027-07-21 2027-10-23; do
+    found="$(run_tool show --date "$candidate" --calendar roman-1962 --expanded)"
+    case "$found" in
+    *"proper collect unavailable:"*) ;;
+    *)
+        echo "$candidate lost its typed proper-Collect availability" >&2
+        exit 1
+        ;;
+    esac
+    case "$found" in
+    *"This entry is a placeholder"*|*"placeholder: this Mass's text"*)
+        echo "$candidate printed repository placeholder prose as liturgy" >&2
+        exit 1
+        ;;
+    esac
 done
-if [ -z "$placeholder" ]; then
-	echo "no pinned day still holds a placeholder; if the sanctoral is fully" >&2
-	echo "transcribed this assertion has done its job and should be retired," >&2
-	echo "otherwise pin a day that still holds one" >&2
-	exit 1
-fi
-case "$placeholder" in
-*"This entry is a placeholder"*)
-	echo "a placeholder was printed as the prayer" >&2
-	exit 1
-	;;
-esac
 
 # ---- The tiers ------------------------------------------------------------
 #
@@ -311,11 +466,262 @@ for want in '"date"' '"days"' '"masses"' '"propers"'; do
 		exit 1
 	fi
 done
+
+# Machine output stays the canonical record until a language is explicitly
+# selected. `--lang` then adds a projection beside every proper, so English
+# and Latin dumps cannot be byte-identical silent no-ops.
+run_tool show --date 2026-11-29 --calendar roman-1962 --lang en --json \
+	>"$sandbox/lang-en.json"
+run_tool show --date 2026-11-29 --calendar roman-1962 --lang la --json \
+	>"$sandbox/lang-la.json"
+run_tool show --date 2026-11-29 --calendar postconciliar --lang en --json \
+	>"$sandbox/lang-post-en.json"
+run_tool show --date 2027-06-13 --calendar postconciliar --lang en --json \
+	>"$sandbox/lang-post-ot11-en.json"
+/usr/bin/python3 - "$sandbox/one.json" "$sandbox/lang-en.json" \
+	"$sandbox/lang-la.json" "$sandbox/lang-post-en.json" "$repo/tools/mass-today" <<'PY'
+import copy
+import importlib.machinery
+import importlib.util
+import json
+import sys
+
+
+def load(path):
+    with open(path, encoding="utf-8") as source:
+        return json.load(source)
+
+
+canonical, english, latin, post = map(load, sys.argv[1:5])
+assert canonical["language"] == {
+    **canonical["language"], "mode": "canonical-record", "requested": None,
+    "selection": None,
+}
+assert english["language"]["mode"] == "language-projection"
+assert english["language"]["requested"] == "en"
+assert latin["language"]["requested"] == "la"
+assert english != latin
+
+
+def propers(payload):
+    return [
+        proper
+        for day in payload["days"]
+        for mass in day["masses"]
+        for proper in mass["propers"]
+    ]
+
+
+assert all("language_selection" not in proper for proper in propers(canonical))
+for payload, requested in ((english, "en"), (latin, "la"), (post, "en")):
+    for proper in propers(payload):
+        assert proper["language_selection"]["requested"] == requested, proper
+    for row in payload["language"]["available"]:
+        statuses = row["statuses"]
+        assert row["units"] == sum(statuses.values()), row
+        # Public capability is inferred only from text this participation
+        # surface actually carries. Typed withheld rows are always unheld.
+        assert row["held"] == statuses["full-text"], row
+        assert row["available"] == statuses["full-text"], row
+
+plain = propers(canonical)
+projected = copy.deepcopy(propers(english))
+for proper in projected:
+    proper.pop("language_selection")
+assert projected == plain
+post_selection = [proper["language_selection"] for proper in propers(post)]
+assert any(one["status"] == "withheld" for one in post_selection), post_selection
+assert all("texts" not in one for one in post_selection if one["status"] == "withheld")
+
+# A mixed proper is not wholly delegated merely because it cites scripture;
+# Latin fallback and incipit apparatus do not advertise English capability.
+loader = importlib.machinery.SourceFileLoader("mass_today_language_test", sys.argv[5])
+spec = importlib.util.spec_from_loader(loader.name, loader)
+module = importlib.util.module_from_spec(spec)
+loader.exec_module(module)
+def absence(cycle, state="unavailable"):
+    return {
+        "target": {
+            "mass": "demo", "form_id": "main", "proper": "Collect",
+            "cycle": cycle, "occurrence": 1, "extent": "body",
+        },
+        "lang": "en", "state": state,
+    }
+
+fallback = module.language_projection({"source": "composed", "text": "Latin"}, "en", None)
+assert fallback["status"] == "fallback-latin" and not fallback["held"]
+incipit = module.language_projection({"source": "composed", "incipit": "Initium"}, "en", None)
+assert incipit["status"] == "incipit-only" and not incipit["available"]
+mixed = module.language_projection(
+    {"source": "mixed", "verses": [{"ref": "Psalm 1:1"}]}, "en", None
+)
+assert mixed["status"] == "absent", mixed
+delegated = module.language_projection(
+    {"source": "scripture", "verses": [{"ref": "Psalm 1:1"}]}, "en", None
+)
+assert delegated["status"] == "scripture-delegated", delegated
+withheld = module.language_projection(
+    {"unavailable_translations": [{"lang": "en", "state": "rights-restricted"}]},
+    "en", None,
+)
+assert withheld["status"] == "withheld" and not withheld["held"]
+assert not withheld["available"] and "texts" not in withheld
+quarantined = module.language_projection(
+    {"unavailable_translations": [{"lang": "en", "state": "unavailable"}]},
+    "en", None,
+)
+assert quarantined["status"] == "withheld" and not quarantined["held"]
+assert quarantined["reason"] == [{"state": "unavailable", "lang": "en"}]
+scoped = module.untranslated_reason({"untranslated": absence("C")})
+assert scoped["records"] == [{
+    "state": "ledgered-untranslated", "lang": "en",
+    "unavailableState": "unavailable",
+}], scoped
+proper = {
+    "untranslated": [
+        absence("A"), absence("C", "rights-restricted"), absence("all"),
+    ]
+}
+module.select_untranslated_records(proper, "C")
+assert [row["target"]["cycle"] for row in proper["untranslated"]] == ["C", "all"]
+assert module.untranslated_notes(proper) == [
+    "en unavailable, cycle C: rights restricted",
+    "en unavailable: unavailable",
+]
+for selected in ("A", "B", "C", "I", "II"):
+    proper = {
+        "untranslated": [
+            absence("all"),
+            *[absence(cycle) for cycle in ("A", "B", "C", "I", "II")],
+        ]
+    }
+    module.select_untranslated_records(proper, selected)
+    assert [row["target"]["cycle"] for row in proper["untranslated"]] == ["all", selected]
+PY
+/usr/bin/python3 - "$sandbox/lang-post-ot11-en.json" <<'PY'
+import json
+import sys
+
+with open(sys.argv[1], encoding="utf-8") as source:
+    payload = json.load(source)
+mass = next(
+    mass
+    for day in payload["days"]
+    for mass in day["masses"]
+    if mass["key"] == "ot-11"
+)
+rows = {
+    proper["name"]: proper["language_selection"]
+    for proper in mass["propers"]
+}
+for name in ("Collect", "Prayer after Communion"):
+    selected = rows[name]
+    assert selected == {
+        "requested": "en",
+        "status": "withheld",
+        "held": False,
+        "available": False,
+        "complete": False,
+        "reason": [{"state": "rights-restricted", "lang": "en"}],
+    }, (name, selected)
+PY
+latin_unavailable="$(
+    run_tool show --date 2027-06-13 --calendar postconciliar --lang la --expanded
+)"
+case "$latin_unavailable" in
+*"Latin text unavailable"*) ;;
+*)
+    echo "withheld Latin lost its approved public message" >&2
+    exit 1
+    ;;
+esac
+case "$latin_unavailable" in
+*"Latin body is unavailable for public display"*|*"publication"*|*"source_id"*)
+    echo "withheld Latin exposed superseded or audit-facing detail" >&2
+    exit 1
+    ;;
+esac
 run_tool show --date 2026-11-29 --calendar roman-1962 --format yaml >"$sandbox/one.yaml"
 if ! grep -q '^date:' "$sandbox/one.yaml"; then
 	echo "yaml payload is missing date" >&2
 	exit 1
 fi
+
+# A sibling-tool refusal remains inspectable, but the composed command must not
+# return success. Each failure is represented once in the additive root
+# problems list and remains beside the affected mass or Ordinary as well.
+if run_tool show --date 2026-11-29 --calendar roman-1962 \
+	--bible not-held --json >"$sandbox/refused-propers.json"; then
+	echo "a mass-propers refusal exited successfully" >&2
+	exit 1
+fi
+mkdir -p "$sandbox/fake-repo/tools"
+cp "$repo/tools/mass-today" "$sandbox/fake-repo/tools/mass-today"
+ln -s "$repo/scripts" "$sandbox/fake-repo/scripts"
+for sibling in calendar-days calendar-rubrics mass-propers; do
+	ln -s "$repo/tools/$sibling" "$sandbox/fake-repo/tools/$sibling"
+done
+ln -s /dev/null "$sandbox/fake-repo/tools/mass-ordinary"
+if /usr/bin/python3 "$sandbox/fake-repo/tools/mass-today" show \
+	--date 2026-11-29 --calendar roman-1962 --ordinary --lang en --json \
+	>"$sandbox/refused-ordinary.json"; then
+	echo "a mass-ordinary refusal exited successfully" >&2
+	exit 1
+fi
+mkdir -p "$sandbox/path"
+ln -s /usr/bin/python3 "$sandbox/path/python3"
+if PATH="$sandbox/path" "$tool" "$tool_id" show --date 2026-11-29 \
+	--calendar roman-1962 --json >"$sandbox/refused-rubrics.json"; then
+	echo "a calendar-rubrics refusal exited successfully" >&2
+	exit 1
+fi
+if run_tool show --date 2026-11-29 --calendar roman-1962 \
+	--bible not-held --plain >"$sandbox/refused-propers.txt"; then
+	echo "a text mass-propers refusal exited successfully" >&2
+	exit 1
+fi
+/usr/bin/python3 - "$sandbox/refused-propers.json" \
+	"$sandbox/refused-ordinary.json" "$sandbox/refused-rubrics.json" <<'PY'
+import json
+import sys
+
+
+def load(path):
+    with open(path, encoding="utf-8") as source:
+        return json.load(source)
+
+
+propers = load(sys.argv[1])
+assert propers["status"] == "partial", propers
+assert propers["problems"], propers
+assert {problem["component"] for problem in propers["problems"]} == {
+    "mass-propers"
+}, propers["problems"]
+assert all("refused" in mass for mass in propers["days"][0]["masses"]), propers
+
+ordinary = load(sys.argv[2])
+assert ordinary["status"] == "partial", ordinary
+assert [problem["component"] for problem in ordinary["problems"]] == [
+    "mass-ordinary"
+], ordinary["problems"]
+assert "refused" in ordinary["days"][0]["ordinary"], ordinary
+
+rubrics = load(sys.argv[3])
+assert rubrics["status"] == "partial", rubrics
+assert [problem["component"] for problem in rubrics["problems"]] == [
+    "calendar-rubrics"
+], rubrics["problems"]
+assert rubrics["problems"][0]["fallback"] == "calendar-days", rubrics
+# The arithmetic fallback still supplies the inspectable day and Mass.
+assert rubrics["days"][0]["ranking_refused"], rubrics
+assert rubrics["days"][0]["masses"][0]["name"] == "First Sunday of Advent", rubrics
+PY
+for want in "refused:" "partial result:" "component failures"; do
+	if ! grep -q "$want" "$sandbox/refused-propers.txt"; then
+		echo "text refusal output is missing: $want" >&2
+		exit 1
+	fi
+done
 
 reject() {
 	if run_tool "$@" >/dev/null 2>&1; then
@@ -327,6 +733,8 @@ reject() {
 # A refusal is a first-class answer.
 reject show --date not-a-date
 reject show --date 2026-11-29 --calendar nonesuch
-reject show --date 2026-11-29 --expanded --lang xx
+reject show --date 2026-11-29 --lang xx
+reject show --date 2026-11-29 --lang xx --json
+reject show --date 2026-11-29 --calendar roman-1962 --form main
 
 echo ok

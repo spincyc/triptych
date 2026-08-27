@@ -35,11 +35,13 @@
   const title = document.getElementById('formulary-title');
   const typeLine = document.getElementById('formulary-type');
   const metaLine = document.getElementById('formulary-meta');
+  const sourceLine = document.getElementById('formulary-source');
   const coverageNotice = document.getElementById('coverage-notice');
   const detailsBody = document.querySelector('[data-reader-details]');
   const browseForm = document.getElementById('browse-form');
   const browseSurface = document.getElementById('browse-surface');
   const browseStatus = document.getElementById('browse-status');
+  const contentsList = document.querySelector('[data-reader-contents]');
   const missalSelect = document.getElementById('reader-missal');
   const typeSelect = document.getElementById('reader-type');
   const formularySelect = document.getElementById('reader-formulary');
@@ -62,6 +64,9 @@
     outcome: 'loading',
     serial: 0,
     browseSerial: 0,
+    pendingLocation: null,
+    pendingLocationSet: false,
+    pendingFocus: null,
     preferredType: null,
     draftStructure: null,
     draftGroups: []
@@ -173,6 +178,91 @@
     return runtime.groups.find(function (row) { return row.kind === kind; }) || null;
   }
 
+  function editionName(id) {
+    const row = missalRow(id);
+    return row && (row.edition || row.label) || id;
+  }
+
+  function formRow(mass, id) {
+    if (!mass || !id) return null;
+    return (mass.forms || []).find(function (row) { return row && row.id === id; }) || null;
+  }
+
+  function translationWitnessRow(structure, id) {
+    if (!structure || !id) return null;
+    return (structure.translations || []).find(function (row) {
+      return row && (row.source_id || row.source || null) === id;
+    }) || null;
+  }
+
+  function rightsLabel(value) {
+    return value ? T.titleCase(String(value).replace(/-/g, ' ')) : null;
+  }
+
+  function sourceStateLabel(value) {
+    const held = typeof value === 'string' ? value.trim() : '';
+    return held ? held.charAt(0).toUpperCase() + held.slice(1) : null;
+  }
+
+  function recensionContext(structure, mass) {
+    const candidate = structure && structure.recension_coverage;
+    const coverage = candidate && typeof candidate === 'object' && !Array.isArray(candidate)
+      ? candidate : null;
+    const domains = coverage && coverage.domains && typeof coverage.domains === 'object'
+      ? coverage.domains : {};
+    const properDomain = domains.propers && typeof domains.propers === 'object'
+      ? domains.propers : {};
+    const inheritance = coverage && coverage.inheritance &&
+      typeof coverage.inheritance === 'object' ? coverage.inheritance : {};
+    const stamp = mass && mass.recension && typeof mass.recension === 'object'
+      ? mass.recension : null;
+    if (!coverage && !stamp) return null;
+    const sourceId = stamp && typeof stamp.text_from === 'string' && stamp.text_from
+      ? stamp.text_from : null;
+    const additional = stamp && Array.isArray(stamp.also) ? stamp.also.filter(function (row) {
+      return row && typeof row === 'object' && typeof row.kind === 'string' && row.kind;
+    }) : [];
+    const coverageStatus = coverage && coverage.status || null;
+    const properStatus = properDomain.state || null;
+    const inheritanceStatus = inheritance.status || null;
+    const inheritanceSource = inheritance.source_calendar || null;
+    const coverageLabel = [
+      coverageStatus && sourceStateLabel(coverageStatus) + ' finding aid',
+      properStatus && 'Propers: ' + sourceStateLabel(properStatus),
+      coverage && coverage.as_of && 'as of ' + coverage.as_of
+    ].filter(Boolean).join(' · ') || null;
+    const notice = [
+      coverageStatus && 'This edition surface is a ' + coverageStatus +
+        ' finding aid; recension coverage is dated ' + (coverage.as_of || 'without an as-of date') + '.',
+      properStatus && 'Proper wording coverage is ' + properStatus + '.',
+      inheritanceStatus && 'Inherited material' +
+        (inheritanceSource ? ' from ' + editionName(inheritanceSource) : '') +
+        ' remains ' + inheritanceStatus + '.'
+    ].filter(Boolean).join(' ') || null;
+    return {
+      coverage: coverageLabel,
+      coverageAsOf: coverage && coverage.as_of || null,
+      coverageBasis: properDomain.basis || null,
+      inheritanceBasis: inheritance.basis || null,
+      notice: notice,
+      textSource: sourceId
+        ? editionName(sourceId) + ' · inherited ' + (inheritanceStatus || 'uncollated')
+        : (stamp && stamp.stated === true
+          ? 'Departure stated by this recension; no other calendar supplies this formulary'
+          : null),
+      departure: stamp && stamp.kind || null,
+      departureBasis: stamp && stamp.basis || null,
+      additional: additional,
+      sourceId: sourceId
+    };
+  }
+
+  function setSourceContext(parts) {
+    const rows = (parts || []).filter(Boolean);
+    sourceLine.textContent = rows.join(' · ');
+    sourceLine.hidden = !rows.length;
+  }
+
   function explicitValues(key) {
     const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
     return params.getAll(key);
@@ -238,7 +328,7 @@
     const remembered = safePreferences();
     const defaults = {
       missal: manifests.properIndex.default,
-      bible: runtime.bibles[0] && runtime.bibles[0].id,
+      bible: Contract.defaultBibleId(runtime.bibles),
       orations: T.SOURCE_LANGUAGE
     };
     const missal = choosePreference(
@@ -277,6 +367,8 @@
     const groups = groupByKind(structure.masses || []);
     const hasType = parsed.present.indexOf('type') >= 0;
     const hasMass = parsed.present.indexOf('mass') >= 0;
+    const hasForm = parsed.present.indexOf('form') >= 0;
+    const hasLocation = parsed.present.indexOf('location') >= 0;
     let preferredType = null;
     if (hasType) {
       preferredType = parsed.recognized.type;
@@ -302,6 +394,18 @@
         message: 'the current Propers identity requires both type and mass'
       });
     }
+    if (hasForm && (!hasMass || !hasType)) {
+      errors.push({
+        code: 'incomplete-explicit-identity', path: 'form',
+        message: 'an explicit source-appointed form requires an exact formulary type and mass'
+      });
+    }
+    if (hasLocation && (!hasMass || !hasType)) {
+      errors.push({
+        code: 'incomplete-explicit-identity', path: 'location',
+        message: 'an explicit semantic location requires an exact formulary type and mass'
+      });
+    }
     if (errors.length || !orations) return { ok: false, errors: errors, structure: structure, groups: groups };
     return {
       ok: true, parsed: parsed, remembered: remembered, defaults: defaults,
@@ -321,6 +425,8 @@
   }
 
   function browseState(prepared, context) {
+    const requestedMode = Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'mode')
+      ? prepared.parsed.recognized.mode : 'read';
     const state = {
       schema: Contract.STATE_SCHEMA,
       entrance: 'propers',
@@ -332,11 +438,14 @@
         numbering: context.bibles[prepared.bible] && context.bibles[prepared.bible].numbering || null
       },
       languages: { orations: prepared.orations },
-      requestedMode: 'read',
+      requestedMode: requestedMode,
       coverage: [],
       unresolvedChoices: [],
       sourceHooks: []
     };
+    if (Object.prototype.hasOwnProperty.call(prepared.parsed.recognized, 'location')) {
+      state.semanticLocation = { eventId: prepared.parsed.recognized.location };
+    }
     return { ok: Contract.validateReaderState(state).ok, state: state, legacy: {
       sources: {}, unknown: (prepared.parsed.unknown || []).slice(), inert: [], variants: {}
     }, errors: Contract.validateReaderState(state).errors };
@@ -349,7 +458,6 @@
       defaults: prepared.defaults
     });
     if (!normalized.ok) return normalized;
-    normalized.state.requestedMode = 'read';
     const cycle = explicitSemanticValue('cycle', errors);
     const alternative = explicitSemanticValue('alternative', errors);
     const witness = explicitSemanticValue('translationWitness', errors);
@@ -417,6 +525,7 @@
     runtime.draftGroups = [];
     runtime.outcome = outcome;
     runtime.detailsLoaded = false;
+    setSourceContext([]);
     window.propersReaderDebug.state = null;
     window.propersReaderDebug.semantic = null;
     window.propersReaderDebug.legacy = null;
@@ -474,7 +583,10 @@
       missal && (missal.edition || missal.label), bible && bible.label,
       T.languageName(state.languages.orations) + ' orations'
     ].filter(Boolean).join(' · ');
-    coverageNotice.hidden = true;
+    const recension = recensionContext(runtime.structure, null);
+    setSourceContext(recension ? ['Recension coverage: ' + recension.coverage] : []);
+    coverageNotice.textContent = recension && recension.notice || '';
+    coverageNotice.hidden = !(recension && recension.notice);
     document.title = 'Choose a formulary — Propers — Triptych';
   }
 
@@ -496,9 +608,58 @@
     return value ? '#' + value : '';
   }
 
+  function eventLocation(location) {
+    return location && location.kind === 'event' && location.id ? location.id : null;
+  }
+
+  function canonicalAddress(normalized) {
+    return Contract.canonicalRoute('propers', window.location.pathname) +
+      window.location.search + Contract.serializeLegacy(normalized);
+  }
+
+  function canonicalize(normalized, location, locationOverridesURL) {
+    if (locationOverridesURL) {
+      if (eventLocation(location)) {
+        normalized.state.semanticLocation = { eventId: eventLocation(location) };
+      } else {
+        delete normalized.state.semanticLocation;
+      }
+    }
+    const current = history.state && typeof history.state === 'object' ? history.state : {};
+    const state = Object.assign({}, current, { propersReaderLocation: location || null });
+    history.replaceState(state, '', canonicalAddress(normalized));
+  }
+
+  function focusCommittedResult(intent, location) {
+    if (intent === 'event' && eventLocation(location)) {
+      const target = Array.from(reading.querySelectorAll('[data-semantic-event-id]')).find(
+        function (row) { return row.dataset.semanticEventId === eventLocation(location); }
+      );
+      if (target) target.focus({ preventScroll: true });
+      return;
+    }
+    if (intent === 'title') title.focus();
+  }
+
   function navigate(updates, removals) {
-    const hash = internalHash(updates, removals);
-    history.pushState(null, '', window.location.pathname + window.location.search + hash);
+    const navigation = arguments.length > 2 && arguments[2] || {};
+    const currentLocation = readerShell.captureSemanticLocation();
+    const currentState = history.state && typeof history.state === 'object' ? history.state : {};
+    history.replaceState(
+      Object.assign({}, currentState, { propersReaderLocation: currentLocation }),
+      '', window.location.href
+    );
+    runtime.pendingLocation = Object.prototype.hasOwnProperty.call(navigation, 'location')
+      ? navigation.location : currentLocation;
+    runtime.pendingLocationSet = true;
+    runtime.pendingFocus = navigation.focus || null;
+    const canonicalUpdates = Object.assign({}, updates || {}, {
+      location: eventLocation(runtime.pendingLocation)
+    });
+    const canonicalHash = internalHash(canonicalUpdates, removals);
+    history.pushState({ propersReaderLocation: runtime.pendingLocation }, '',
+      Contract.canonicalRoute('propers', window.location.pathname) +
+      window.location.search + canonicalHash);
     renderCandidate();
   }
 
@@ -519,7 +680,9 @@
       button.addEventListener('click', function () {
         navigate((function () {
           const row = {}; row[PUBLIC_KEYS.cycle] = alternative.cycle; return row;
-        }()), [LEGACY_KEYS.cycle]);
+        }()), [LEGACY_KEYS.cycle], {
+          location: { kind: 'event', id: event.id }, focus: 'event'
+        });
       });
       controls.appendChild(button);
     });
@@ -574,7 +737,7 @@
     return section;
   }
 
-  function coverageMessage(result) {
+  function materialCoverageMessage(result) {
     const events = (result && result.events) || [];
     if (events.some(function (event) {
       return event.selected && event.selected.kind === 'cycle-alternatives';
@@ -595,12 +758,86 @@
       return 'Part of this formulary is outside the supported Read boundary.';
     }
     if (rows.some(function (row) { return row.completeness === 'partial'; })) {
+      if (rows.some(function (row) {
+        return (row.reasons || []).some(function (reason) {
+          return reason && reason.kind === 'partial-recension';
+        });
+      })) {
+        return 'Some Proper material has not been collated against the selected recension; available portions remain identified.';
+      }
       return 'Some Proper text is not held in this repository; the available portions are shown.';
     }
     return rows.length ? 'This formulary has a material coverage limitation.' : null;
   }
 
-  async function renderResult(result, mass, bible, serial) {
+  function coverageMessage(result, mass, structure) {
+    const recension = recensionContext(structure, mass);
+    return [recension && recension.notice, materialCoverageMessage(result)]
+      .filter(Boolean).join(' ') || null;
+  }
+
+  function unresolvedFormChoice(result, mass) {
+    const choice = (result.unresolvedChoices || []).find(function (row) {
+      return row && typeof row.id === 'string' && row.id.indexOf('proper-form:') === 0;
+    });
+    if (!choice) return false;
+    const section = T.el('section', 'candidate-entry proper-form-choice');
+    section.appendChild(T.el('h2', null, mass.name || mass.key));
+    section.appendChild(T.el('p', 'cycle-choice-note', choice.reason ||
+      'Several source-appointed forms are held. Choose one explicitly.'));
+    const controls = T.el('div', 'cycle-choice-controls');
+    controls.setAttribute('role', 'group');
+    controls.setAttribute('aria-label', 'Choose a source-appointed form');
+    const labels = [];
+    (choice.options || []).forEach(function (option) {
+      const sourceForm = formRow(mass, option.id);
+      const label = sourceForm && sourceForm.name || T.titleCase(option.id);
+      labels.push(label);
+      const button = T.el('button', null, label);
+      button.type = 'button';
+      button.addEventListener('click', function () {
+        navigate({ form: option.id }, [], { location: null, focus: 'title' });
+      });
+      controls.appendChild(button);
+    });
+    section.appendChild(T.el('p', 'proper-form-summary', 'Available forms: ' + labels.join('; ') + '.'));
+    section.appendChild(controls);
+    replaceReading(section);
+    title.textContent = mass.name || mass.key;
+    typeLine.textContent = 'Source-appointed form required';
+    metaLine.textContent = 'Propers · choice unresolved';
+    const recension = recensionContext(runtime.structure, mass);
+    setSourceContext(recension ? [
+      'Recension coverage: ' + recension.coverage,
+      recension.textSource && 'Proper text source: ' + recension.textSource
+    ] : []);
+    coverageNotice.textContent = [
+      'No form was selected by manifest order.',
+      recension && recension.notice
+    ].filter(Boolean).join(' ');
+    coverageNotice.hidden = false;
+    document.title = (mass.name || mass.key) + ' — Choose a form — Triptych';
+    return true;
+  }
+
+  function renderedSemanticInventory(contents, root) {
+    const contentIds = (contents || []).map(function (row) { return row.id; });
+    const domIds = Array.from(root.querySelectorAll('[data-semantic-event-id]')).map(
+      function (node) { return node.dataset.semanticEventId; }
+    );
+    if (new Set(contentIds).size !== contentIds.length ||
+        new Set(domIds).size !== domIds.length) {
+      throw new Error('rendered semantic event identities must be globally unique');
+    }
+    if (contentIds.length !== domIds.length || contentIds.some(function (id, index) {
+      return id !== domIds[index];
+    })) {
+      throw new Error('reader Contents must exactly match rendered semantic event order');
+    }
+    return domIds;
+  }
+
+  async function renderResult(result, mass, bible, serial, location) {
     const held = await T.fetchFragments(bible, T.citationsOf(mass));
     if (serial !== runtime.serial) return false;
     const fragment = document.createDocumentFragment();
@@ -622,6 +859,10 @@
         element: section
       });
     });
+    const semanticIds = renderedSemanticInventory(contents, fragment);
+    if (eventLocation(location) && semanticIds.indexOf(eventLocation(location)) < 0) {
+      return { invalidLocation: true, semanticIds: semanticIds };
+    }
     reading.replaceChildren(fragment);
     reading.setAttribute('aria-busy', 'false');
     readerShell.setContents(contents);
@@ -629,6 +870,10 @@
     const state = runtime.normalized.state;
     const missal = missalRow(state.edition.id);
     const group = groupRow(state.formulary.type);
+    const selectedForm = formRow(mass, result.resolved && result.resolved.form);
+    const witnessId = state.languages.translationWitness || null;
+    const witness = translationWitnessRow(runtime.structure, witnessId);
+    const recension = recensionContext(runtime.structure, mass);
     title.textContent = mass.name || mass.key;
     typeLine.textContent = group && group.label || T.titleCase(state.formulary.type);
     const cycle = Object.prototype.hasOwnProperty.call(state, 'cycle') ? T.cycleLabel(state.cycle) : null;
@@ -636,18 +881,34 @@
       missal && (missal.edition || missal.label),
       bible.label,
       T.languageName(state.languages.orations) + ' orations',
+      selectedForm && 'Form: ' + (selectedForm.name || selectedForm.id),
       cycle
     ].filter(Boolean).join(' · ');
-    const notice = coverageMessage(result);
+    setSourceContext([
+      witnessId && 'Translation witness: ' + (witness && witness.label || witnessId),
+      witness && witness.rights && 'Rights: ' + rightsLabel(witness.rights),
+      recension && recension.coverage && 'Recension coverage: ' + recension.coverage,
+      recension && recension.textSource && 'Proper text source: ' + recension.textSource,
+      recension && recension.departure && 'Departure: ' + rightsLabel(recension.departure),
+      recension && recension.additional.length && 'Also: ' + recension.additional.map(function (row) {
+        return rightsLabel(row.kind);
+      }).join(', ')
+    ]);
+    const notice = coverageMessage(result, mass, runtime.structure);
     if (uncompiled) {
       coverageNotice.replaceChildren(...uncompiled.childNodes);
+      if (notice) coverageNotice.appendChild(document.createTextNode(' ' + notice));
       coverageNotice.hidden = false;
     } else {
       coverageNotice.textContent = notice || '';
       coverageNotice.hidden = !notice;
     }
-    document.title = (mass.name || mass.key) + ' — Propers — Triptych';
-    return true;
+    document.title = [
+      mass.name || mass.key,
+      selectedForm && (selectedForm.name || selectedForm.id),
+      'Propers', 'Triptych'
+    ].filter(Boolean).join(' — ');
+    return { semanticIds: semanticIds };
   }
 
   function placeholder(select, label) {
@@ -696,7 +957,7 @@
       return { deterministic: null, choices: [] };
     }
     const heldRows = (mass.propers || []).filter(function (proper) {
-      return proper && proper.text && !T.isPlaceholder(proper);
+      return proper && !T.isPlaceholder(proper);
     }).map(function (proper) {
       return (proper.translations || []).filter(function (row) {
         return row && row.lang === language && row.text;
@@ -769,7 +1030,7 @@
     setBrowseEnabled(false);
     if (runtime.manifests) {
       fillMissals(runtime.manifests.properIndex.default);
-      fillBibles(runtime.bibles[0] && runtime.bibles[0].id);
+      fillBibles(Contract.defaultBibleId(runtime.bibles));
       missalSelect.disabled = false;
       bibleSelect.disabled = false;
     }
@@ -868,9 +1129,9 @@
     return cycles.length ? 'Choice unresolved: ' + cycles.map(T.cycleLabel).join(', ') : 'Not applicable';
   }
 
-  function coverageSummary(result) {
+  function coverageSummary(result, mass, structure) {
     if (!result) return null;
-    const notice = coverageMessage(result);
+    const notice = coverageMessage(result, mass, structure);
     return notice || 'Complete for the selected production state';
   }
 
@@ -892,16 +1153,40 @@
     }
     const missal = missalRow(state.edition.id);
     const bible = bibleRow(state.bible.id);
+    const selectedForm = formRow(
+      runtime.mass, runtime.result && runtime.result.resolved && runtime.result.resolved.form
+    );
+    const witnessId = state.languages.translationWitness || null;
+    const witness = translationWitnessRow(runtime.structure, witnessId);
+    const recension = recensionContext(runtime.structure, runtime.mass);
+    const additionalDepartures = recension && recension.additional.map(function (row) {
+      return rightsLabel(row.kind) + (row.basis ? ' — ' + row.basis : '');
+    }).join(' | ');
     const selection = T.el('section', 'details-section');
     selection.appendChild(T.el('h3', null, 'Selection'));
     selection.appendChild(definitionList([
       ['Missal', missal && (missal.edition || missal.label) || state.edition.id],
       ['Formulary type', state.formulary && (groupRow(state.formulary.type) || {}).label],
       ['Formulary', runtime.mass && (runtime.mass.name || runtime.mass.key)],
+      ['Form', selectedForm && (selectedForm.name || selectedForm.id) ||
+        (runtime.mass && (runtime.mass.forms || []).length > 1 ? 'Choice required' : null)],
       ['Bible', bible && bible.label || state.bible.id],
       ['Orations', T.languageName(state.languages.orations)],
+      ['Translation witness', witnessId && (witness && witness.label || witnessId)],
+      ['Translation rights', witness && rightsLabel(witness.rights)],
+      ['Translation caution', witness && witness.caution],
       ['Cycle', runtime.result ? cycleSummary(runtime.result, state) : 'Not selected'],
-      ['Coverage', runtime.result ? coverageSummary(runtime.result) : 'No formulary selected']
+      ['Recension coverage', recension && recension.coverage],
+      ['Proper recension basis', recension && recension.coverageBasis],
+      ['Proper text source', recension && recension.textSource],
+      ['Inheritance basis', recension && recension.inheritanceBasis],
+      ['Departure', recension && recension.departure &&
+        (rightsLabel(recension.departure) +
+          (recension.departureBasis ? ' — ' + recension.departureBasis : ''))],
+      ['Additional departures', additionalDepartures],
+      ['Coverage', runtime.result
+        ? coverageSummary(runtime.result, runtime.mass, runtime.structure)
+        : (recension && recension.notice || 'No formulary selected')]
     ]));
     detailsBody.appendChild(selection);
     detailsBody.appendChild(detailsLinkSection('Related reader', [
@@ -948,6 +1233,12 @@
 
   async function renderCandidate() {
     const serial = ++runtime.serial;
+    const pendingLocation = runtime.pendingLocation;
+    const pendingLocationSet = runtime.pendingLocationSet;
+    const pendingFocus = runtime.pendingFocus;
+    runtime.pendingLocation = null;
+    runtime.pendingLocationSet = false;
+    runtime.pendingFocus = null;
     runtime.browseSerial += 1;
     if (readerShell.openSurface()) readerShell.close({ restoreFocus: false });
     clearSelectionState('loading');
@@ -1007,10 +1298,29 @@
         renderFailure(normalized.errors);
         return;
       }
+      const location = pendingLocationSet ? pendingLocation : (normalized.state.semanticLocation && {
+        kind: 'event', id: normalized.state.semanticLocation.eventId
+      }) || null;
       runtime.normalized = normalized;
       window.propersReaderDebug.state = normalized.state;
       window.propersReaderDebug.legacy = normalized.legacy;
+      if (normalized.state.requestedMode !== 'read') {
+        if (eventLocation(location)) {
+          renderFailure([{
+            code: 'invalid-semantic-location', path: 'location',
+            message: 'the requested mode has no rendered semantic event inventory for this location'
+          }]);
+          return;
+        }
+        canonicalize(normalized, location, pendingLocationSet);
+        renderFailure([{
+          code: 'unsupported-mode', path: 'mode',
+          message: 'this Propers surface currently renders Read mode only'
+        }]);
+        return;
+      }
       if (prepared.browse) {
+        canonicalize(normalized, location, pendingLocationSet);
         runtime.outcome = 'browse';
         window.propersReaderDebug.outcome = 'browse';
         renderBrowseEntry();
@@ -1040,11 +1350,51 @@
       if (!mass) throw new Error('the validated formulary is absent from production Proper data');
       runtime.result = result;
       runtime.mass = mass;
+      const hasUnresolvedForm = (result.unresolvedChoices || []).some(function (row) {
+        return row && typeof row.id === 'string' && row.id.indexOf('proper-form:') === 0;
+      });
+      if (hasUnresolvedForm) {
+        if (eventLocation(location)) {
+          renderFailure([{
+            code: 'invalid-semantic-location', path: 'location',
+            message: 'the explicit location is absent because this form choice is unresolved'
+          }]);
+          return;
+        }
+        canonicalize(normalized, location, pendingLocationSet);
+        if (!unresolvedFormChoice(result, mass)) {
+          throw new Error('the unresolved form choice could not be presented');
+        }
+        runtime.outcome = 'unresolved';
+        window.propersReaderDebug.outcome = 'unresolved';
+        window.propersReaderDebug.semantic = semanticProjection(result);
+        populateBrowseSurface();
+        refreshDetailsAfterOutcome();
+        return;
+      }
       runtime.outcome = 'ready';
       window.propersReaderDebug.outcome = 'ready';
-      const rendered = await renderResult(result, mass, bibleRow(normalized.state.bible.id), serial);
+      const rendered = await renderResult(
+        result, mass, bibleRow(normalized.state.bible.id), serial, location
+      );
       if (!rendered || serial !== runtime.serial) return;
       window.propersReaderDebug.semantic = semanticProjection(result);
+      if (rendered.invalidLocation) {
+        renderFailure([{
+          code: 'invalid-semantic-location', path: 'location',
+          message: 'the explicit location is not present in the rendered semantic event inventory'
+        }]);
+        return;
+      }
+      if (location && !readerShell.restoreSemanticLocation(location)) {
+        renderFailure([{
+          code: 'semantic-location-render', path: 'location',
+          message: 'the validated semantic location could not be restored in the rendered document'
+        }], 'The Propers reader could not restore this semantic location');
+        return;
+      }
+      canonicalize(normalized, location, pendingLocationSet);
+      focusCommittedResult(pendingFocus, location);
       refreshDetailsAfterOutcome();
     } catch (error) {
       if (serial !== runtime.serial) return;
@@ -1118,9 +1468,18 @@
     updates[PUBLIC_KEYS.translationWitness] = witnessField.hidden ? null : witnessSelect.value;
     readerShell.close({ restoreFocus: false });
     navigate(updates, [
-      PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative,
+      'form', 'location', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative,
       LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness
-    ]);
+    ], { location: null, focus: 'title' });
+  });
+
+  contentsList.addEventListener('click', function (event) {
+    const button = event.target.closest('[data-reader-location]');
+    if (!button || !contentsList.contains(button) || !runtime.normalized ||
+        runtime.outcome !== 'ready') return;
+    canonicalize(runtime.normalized, {
+      kind: 'event', id: button.dataset.readerLocation
+    }, true);
   });
 
   document.querySelector('[data-mode="read"]').addEventListener('click', function () {
@@ -1128,7 +1487,14 @@
   });
 
   let historyQueued = false;
-  function historyRender() {
+  function historyRender(event) {
+    if (event && event.type === 'popstate') {
+      runtime.pendingLocation = event.state && event.state.propersReaderLocation || null;
+      runtime.pendingLocationSet = true;
+    } else if (!historyQueued) {
+      runtime.pendingLocation = null;
+      runtime.pendingLocationSet = false;
+    }
     if (historyQueued) return;
     historyQueued = true;
     queueMicrotask(function () {

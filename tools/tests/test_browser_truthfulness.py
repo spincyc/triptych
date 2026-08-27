@@ -1,4 +1,4 @@
-"""Four places where the browser told a reader something that was not so.
+"""Five places where the browser told a reader something that was not so.
 
 Each class below is one defect, and each was reproduced in a real browser
 before it was fixed. They are grouped here because they are one kind of fault
@@ -23,6 +23,10 @@ Missal is pointed at the Code.
      act touched to the units it moved and called the sum "changed", so a
      station's caption and its own aria-label gave two different numbers for
      one act.
+  5. SOURCES: opening an edition did not name it in the URL, a passage choice
+     rebuilt and detached the focused control, one-passage editions offered
+     impossible steps, and neither the passage nor apparatus named which
+     artifact controlled the selection.
 
 HOW THESE RUN. There is no headless model to replay for a race or for what a
 page paints, so the two page-level defects are driven in real Chromium over
@@ -55,6 +59,18 @@ SOURCES = DATA / "structure/sources"
 # retained, and they sit next to each other in the dropdown.
 IRENAEUS = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
 EDITION_FILE = SOURCES / "editions/irenaeus/adversus-haereses/1887-roberts-rambaut-coxe-anf1-1887.json"
+ONE_PASSAGE = (
+    "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described."
+    "burns-oates-washbourne-1917"
+)
+ONE_PASSAGE_FILE = SOURCES / (
+    "editions/adrian-fortescue/ceremonies-of-the-roman-rite-described/"
+    "1917-burns-oates-washbourne-1917.json"
+)
+SEGMENT_EDITION = "edition.catholic-encyclopedia.volume-4.new-york-1908"
+SEGMENT_EDITION_FILE = SOURCES / (
+    "editions/catholic-encyclopedia/volume-4/1908-new-york-1908.json"
+)
 
 BROWSERS = ("/usr/bin/chromium", "/usr/bin/chromium-browser",
             "/usr/bin/google-chrome-stable", "/usr/bin/google-chrome")
@@ -383,6 +399,202 @@ class WithheldPassageTests(unittest.TestCase):
         if self.withheld.get("notes"):
             self.assertIn("passage-notes", settled["classes"])
         self.assertEqual(settled["classes"].count("passage-source"), 1)
+
+
+SOURCE_READER_STATE = """JSON.stringify({
+  hash: location.hash,
+  count: document.querySelector('.passage-count').textContent,
+  options: document.getElementById('passage-select').options.length,
+  steps: document.querySelectorAll('.passage-nav .step').length,
+  controller: document.querySelector('.source-identifier').textContent,
+  currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+    .dataset.artifactId,
+  artifactIds: Array.from(document.querySelectorAll('.artifact-id'))
+    .map((node) => node.textContent)
+})"""
+
+
+class SourceReaderInteractionTests(unittest.TestCase):
+    """The visible selection remains exact, navigable, and citeable."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.single = json.loads(ONE_PASSAGE_FILE.read_text(encoding="utf-8"))
+        cls.single_passage = cls.single["passages"][0]
+        cls.many = json.loads(EDITION_FILE.read_text(encoding="utf-8"))
+        cls.passages = cls.many["passages"]
+        cls.segment_edition = json.loads(
+            SEGMENT_EDITION_FILE.read_text(encoding="utf-8")
+        )
+        cls.segment_passage = next(
+            passage for passage in cls.segment_edition["passages"]
+            if passage.get("segment_id")
+        )
+        assert len(cls.passages) > 3
+        assert len(cls.single["passages"]) == 1
+        assert cls.single_passage["artifact_id"]
+        assert cls.segment_passage["artifact_id"]
+        assert cls.segment_passage["segment_id"]
+
+        find_edition = json.dumps(ONE_PASSAGE)
+        controller_one = json.dumps(cls.passages[1]["artifact_id"])
+        cls.seen = drive({
+            "delays": [],
+            "acts": [
+                {"do": "navigate", "url": page("sources")},
+                {"do": "wait", "until": "!document.getElementById('find-input').disabled",
+                 "label": "the source finder"},
+                {"do": "eval", "name": "finder_history", "expression": """(() => {
+                  const input = document.getElementById('find-input');
+                  const before = history.length;
+                  for (const value of ['edition.adrian', 'edition.adrian-fortescue',
+                                       %s]) {
+                    input.value = value;
+                    input.dispatchEvent(new Event('input'));
+                  }
+                  return JSON.stringify({
+                    before: before, after: history.length, hash: location.hash,
+                    editions: document.querySelectorAll('.edition-open').length
+                  });
+                })()""" % find_edition},
+                {"do": "eval", "expression": """(() => {
+                  document.querySelector('.edition-open').click();
+                  return true;
+                })()"""},
+                {"do": "wait", "until": "document.querySelector('.source-identifier')",
+                 "label": "the one-passage source reader"},
+                {"do": "eval", "name": "one_passage", "expression": SOURCE_READER_STATE},
+                {"do": "navigate", "url": page("sources", fragment="#edition=" + IRENAEUS)},
+                {"do": "wait", "until": "document.querySelector('.source-identifier')",
+                 "label": "the multi-passage source reader"},
+                {"do": "eval", "name": "opened_many", "expression": """JSON.stringify({
+                  hash: location.hash,
+                  controller: document.querySelector('.source-identifier').textContent
+                })"""},
+                {"do": "eval", "name": "selected", "expression": """(() => {
+                  const nav = document.querySelector('.passage-nav');
+                  const select = document.getElementById('passage-select');
+                  select.focus();
+                  select.value = '1';
+                  select.dispatchEvent(new Event('change'));
+                  return JSON.stringify({
+                    hash: location.hash, value: select.value,
+                    focused: document.activeElement === select,
+                    connected: select.isConnected,
+                    sameNavigation: document.querySelector('.passage-nav') === nav
+                  });
+                })()"""},
+                {"do": "wait", "until":
+                 "document.querySelector('.source-identifier') && "
+                 "document.querySelector('.source-identifier').textContent === " + controller_one,
+                 "label": "the selected passage provenance"},
+                {"do": "eval", "name": "selected_source", "expression":
+                 "document.querySelector('.source-identifier').textContent"},
+                {"do": "eval", "name": "stepped", "expression": """(() => {
+                  const nav = document.querySelector('.passage-nav');
+                  const next = nav.querySelector('[data-passage-step="1"]');
+                  next.focus();
+                  next.click();
+                  return JSON.stringify({
+                    hash: location.hash,
+                    value: document.getElementById('passage-select').value,
+                    focused: document.activeElement === next,
+                    connected: next.isConnected,
+                    sameNavigation: document.querySelector('.passage-nav') === nav
+                  });
+                })()"""},
+                {"do": "navigate", "url": page(
+                    "sources", fragment=(
+                        "#edition=" + SEGMENT_EDITION +
+                        "&passage=" + cls.segment_passage["id"]
+                    )
+                )},
+                {"do": "wait", "until": "document.querySelector('.source-segment')",
+                 "label": "the segment-controlled source reader"},
+                {"do": "eval", "name": "segment_source", "expression":
+                 """JSON.stringify({
+                   controller: document.querySelector('.source-identifier').textContent,
+                   segment: document.querySelector('.source-segment').textContent,
+                   currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+                     .dataset.artifactId
+                 })"""},
+            ],
+        })
+
+    def state(self, name: str) -> dict:
+        return json.loads(self.seen[name])
+
+    def test_finder_typing_replaces_one_canonical_history_entry(self) -> None:
+        state = self.state("finder_history")
+        self.assertEqual(state["before"], state["after"])
+        self.assertEqual(state["hash"], "#find=" + ONE_PASSAGE)
+        self.assertEqual(state["editions"], 1)
+
+    def test_opening_a_one_passage_edition_writes_its_complete_citation(self) -> None:
+        state = self.state("one_passage")
+        self.assertEqual(
+            state["hash"],
+            "#edition=" + ONE_PASSAGE + "&passage=" + self.single_passage["id"],
+        )
+
+    def test_one_passage_keeps_the_selector_and_omits_impossible_steps(self) -> None:
+        state = self.state("one_passage")
+        self.assertEqual(state["count"], "Passage 1 of 1")
+        self.assertEqual(state["options"], 1)
+        self.assertEqual(state["steps"], 0)
+
+    def test_the_controller_is_named_in_both_passage_and_apparatus(self) -> None:
+        state = self.state("one_passage")
+        artifact_id = self.single_passage["artifact_id"]
+        self.assertEqual(state["controller"], artifact_id)
+        self.assertEqual(state["currentArtifact"], artifact_id)
+        self.assertIn(artifact_id, state["artifactIds"])
+
+    def test_an_edition_only_link_is_canonicalized_to_its_first_passage(self) -> None:
+        state = self.state("opened_many")
+        first = self.passages[0]
+        self.assertEqual(
+            state["hash"], "#edition=" + IRENAEUS + "&passage=" + first["id"]
+        )
+        self.assertEqual(state["controller"], first["artifact_id"])
+
+    def test_selecting_preserves_focus_navigation_and_exact_controller(self) -> None:
+        state = self.state("selected")
+        selected = self.passages[1]
+        self.assertEqual(state["value"], "1")
+        self.assertTrue(state["focused"])
+        self.assertTrue(state["connected"])
+        self.assertTrue(state["sameNavigation"])
+        self.assertEqual(self.seen["selected_source"], selected["artifact_id"])
+        self.assertEqual(
+            state["hash"], "#edition=" + IRENAEUS + "&passage=" + selected["id"]
+        )
+
+    def test_stepping_preserves_focus_navigation_and_exact_controller(self) -> None:
+        state = self.state("stepped")
+        selected = self.passages[2]
+        self.assertEqual(state["value"], "2")
+        self.assertTrue(state["focused"])
+        self.assertTrue(state["connected"])
+        self.assertTrue(state["sameNavigation"])
+        self.assertEqual(
+            state["hash"], "#edition=" + IRENAEUS + "&passage=" + selected["id"]
+        )
+
+    def test_a_segment_narrows_but_does_not_replace_its_controller(self) -> None:
+        state = self.state("segment_source")
+        self.assertEqual(state["controller"], self.segment_passage["artifact_id"])
+        self.assertEqual(
+            state["currentArtifact"], self.segment_passage["artifact_id"]
+        )
+        self.assertIn(self.segment_passage["segment_id"], state["segment"])
+        self.assertIn("does not replace its controller", state["segment"])
+
+    def test_the_page_makes_no_false_claim_about_a_majority(self) -> None:
+        markup = (ROOT / "src/web/browser/sources/index.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertNotIn("Most of this corpus fails", markup)
 
 
 LOOK_UP = """(() => {

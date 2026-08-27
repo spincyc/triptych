@@ -25,21 +25,22 @@ lesson the propers side learned expensively: a hand-typed second copy of an
 artifact drifted from it at 45 loci, and every error the site served sat inside
 those 45.
 
-Where a rite has no transcribable text held here --- the postconciliar one,
-whose approved English is ICEL's and whose Latin editio typica this project does
-not hold --- the inventory carries the element skeleton itself, with each
-element's received Latin incipit as its identity and an `absent` key naming the
-reason. An incipit is a reference, and a reference is a fact. The prayer is not
-reproduced.
+Where a rite has no text this surface may carry, the inventory preserves the
+element skeleton, with each element's received Latin incipit as its identity and
+an `absent` key naming the reason. The reason distinguishes an unavailable
+witness or exemplar from a rights restriction, a model that spans independently
+sourceable parts, material belonging to another layer, and a structural element
+to which fixed text does not apply. An incipit is a reference, and a reference
+is a fact. The prayer is not reproduced.
 
-Those reasons are not one reason, and the Latin side of that file now names six
-rather than one: the reform's own new matter, which is the Holy See's and is
-withheld; an ancient text whose public-domain antecedent this project holds and
-has not yet carried; an ancient text no witness here prints at all; an element
-whose extent spans retained and changed matter together; the Roman Canon, which
-is modelled as one span and must be split before any of it is reachable; and the
-rubric or propers slot that has no words in any book. One key over all of them
-said a rights refusal where no rightsholder had refused anything.
+Those reasons are not one reason. The postconciliar Latin side distinguishes the
+reform's own withheld matter, sourceable antecedent material not yet carried,
+the absence of an antecedent witness, coarse model spans, and structural or
+outside-layer slots. Its English side separately distinguishes registered
+official exemplars not carried on this surface, proper texts outside the
+Ordinary, elements with no fixed text, composite spans, and quiet prayers for
+which no exact exemplar is held. A generic rightsholder key over those cases
+would turn unlike facts into one false claim.
 
 Two languages, one rule, and the relation that keeps them honest
 ---------------------------------------------------------------
@@ -51,13 +52,12 @@ cannot drift into two rules --- which is exactly what had already happened
 between `from_artifact` and `from_inventory`, and is why the postconciliar Latin
 could not be reached at all however much of it this project held.
 
-The second language is not a second column of one book. The 1962 frame joins two
-facing columns of ONE printing, and `from_artifact` may therefore assume a shared
-key space and a shared edition. Here the English is the ecumenical text of 1998
-and the Latin, where any is carried, is an 1861 Philadelphia lay printing's
-facing column --- a different book, a different rightsholder, a different
-century, joined element by element because the older book prints the ANCIENT
-prayer the postconciliar Missal received, and for no other reason.
+Two languages do not imply one provenance. The artifact-backed Roman frames join
+the facing columns of one printing and may therefore assume only a shared key
+space. Each carried column still declares an `english` or `latin` provenance
+block with its own explicit relation and collation state. Inventory-declared
+elements may instead join languages from different books; `side_text` validates
+each language block independently.
 
 That difference is a claim about identity, and an unlabelled claim is the failure
 this layer exists to prevent. A reader looking at a page headed `Missale Romanum,
@@ -75,8 +75,9 @@ and then two further things are required of it and refused without:
                    and therefore beside the words rather than at the foot of a
                    page: whose words these are, at which leaf and printed page,
                    which accidents of that printing they carry, and the sentence
-                   that the controlling edition's text is not held here and this
-                   is not it. A relation nobody can check is a claim nobody made.
+                   that the frame does not carry the controlling edition's text
+                   on this surface and this is not it. A relation nobody can
+                   check is a claim nobody made.
 
 `collation = "collated"` additionally requires `collation_finding`, a citation to
 the tracked finding. Without it the grade is an assertion, and the whole point of
@@ -86,18 +87,21 @@ What is NOT modelled here, deliberately: the witness's own spelling is never
 normalised toward the target's. The 1861 column prints `justum`, `coelis`,
 `Jesu`, the ae- and oe-ligatures, and its own misprints --- `nodie` for `hodie`
 at In spiritu humilitatis. Normalising them would manufacture a witness to a book
-nobody opened; the note names them instead.
+the selected artifact row does not witness; the note names them instead.
 
-The third rights state
-----------------------
-The propers pass publishes a translation whose `rights` is `public-domain` or
-`project-created` and withholds everything else. That is two states, and the
-ELLC common texts are a third: under copyright, licensed for free use, and
-carrying an acknowledgement the licence requires. `licensed-free` is that state,
-and it is not a softer `public-domain`: a witness declaring it must carry a
-nonempty `acknowledgement`, this tool refuses the file otherwise, and the
-acknowledgement is emitted beside every text it covers so it cannot be separated
-from what it licenses in transit to the page.
+The publication boundary
+------------------------
+This generated corpus publishes only a witness whose `rights` is
+`public-domain` or `project-created`. A licence or permission scoped to some
+other surface is source-study metadata, not a softer public-domain state, and
+it cannot enter the witness table or a text join here.
+
+A `[[restricted_witnesses]]` row is different again: source-only provenance,
+not a text offer.  ICEL's prescribed excerpt acknowledgement and the source
+library's completed text-free quarantine remain checkable there, but neither
+the witness metadata nor any text, source id, rights state, or turns from it
+enter the generated translation manifest.  An element that tries to join a
+restricted witness is refused rather than silently made available.
 
 What this tool refuses to do
 ----------------------------
@@ -170,14 +174,14 @@ from _tooling import (  # noqa: E402
 EXAMPLES = {
     "check": (
         Example(
-            "tools/mass-ordinary check --out build/example-ordinary",
+            "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
+                "postconciliar: 7 sections, 47 elements, 1 witness, 1 variants, 11 slots; 10 elements translated, 47 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
-            "check reads the inventories, joins the artifacts, and reports whether --out is already current; it writes nothing",
+            "check reads the inventories, joins the artifacts, and reports whether the tracked output is current; it writes nothing",
         ),
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
@@ -221,15 +225,16 @@ EXAMPLES = {
                 "----------------------",
                 "",
                 "  Entrance and veneration of the altar",
-                "    [ All make the Sign of the Cross as the Priest says: In the name of the Father, and",
-                "    of the Son, and of the Holy Spirit. Amen. ]",
+                "    [absent: approved-english-publication-restriction]",
+                "    opens Populo congregato",
                 "",
                 "  The Greeting (all)",
-                "    The grace of our Lord Jesus Christ, and the love of God, and the communion of the",
-                "    Holy Spirit be with you all. Or: Grace to you and peace from God our Father and the",
-                "    Lord Jesus Christ. Or: The Lord be with you. In this first greeting, a Bishop, in",
-                "    place of The Lord be with you, says: Peace be with you. And with your spirit.",
-                "... 276 more lines",
+                "    [absent: approved-english-publication-restriction]",
+                "    opens Dominus vobiscum",
+                "",
+                "  Penitential Act, form I (all)",
+                "    [absent: official-exemplar-not-carried]",
+                "... 188 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -238,13 +243,11 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary coverage --calendar postconciliar",
             (
-                "postconciliar: 48 elements",
-                "  en  edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21  23 elements  licensed-free",
-                "  en  edition.english-language-liturgical-consultation.praying-together.1998  2 elements  licensed-free",
+                "postconciliar: 47 elements",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  10 elements  public-domain",
-                "  absent: antecedent-held-not-carried 4, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 17, no-antecedent-witness 2, not-a-text 12, priest-prayer-said-quietly 6",
+                "  absent: antecedent-held-not-carried 3, approved-english-publication-restriction 24, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-availability 3, element-spans-mixed-matter 7, no-antecedent-witness 2, no-fixed-text 3, not-a-text 12, official-exemplar-not-carried 5, priest-prayer-said-quietly 6, proper-text-outside-ordinary 6",
             ),
-            "read-only: what each witness reaches, and what is absent under which recorded reason",
+            "read-only: what each publishable witness reaches and what is absent; restricted provenance remains source-only",
         ),
         Example(
             "tools/mass-ordinary coverage --calendar roman-1962",
@@ -254,24 +257,24 @@ EXAMPLES = {
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  112 elements  public-domain",
                 "  absent: no-facing-latin 83",
             ),
-            "the 1962 Ordinary is held whole in English and not at all in Latin; the absence is recorded, not inferred",
+            "the 1962 Ordinary is held whole in English and partly in facing Latin; every remaining Latin absence is recorded, not inferred",
         ),
     ),
     "structure": (
         Example(
-            "tools/mass-ordinary check --out build/example-ordinary",
+            "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
+                "postconciliar: 7 sections, 47 elements, 1 witness, 1 variants, 11 slots; 10 elements translated, 47 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "the written files are current",
             ),
-            "read-only first: `check` validates the inventories and reports whether --out is current",
+            "read-only first: `check` validates the inventories and reports whether tracked output is current",
         ),
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
+                "postconciliar: 7 sections, 47 elements, 1 witness, 1 variants, 11 slots; 10 elements translated, 47 absent",
                 "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
                 "wrote 4 files",
@@ -289,11 +292,10 @@ SCHEMA = "triptych-ordo-missae/v1"
 OUT_SCHEMA = "triptych-ordinary-structure/v1"
 INVENTORY_SUFFIX = "-ordo-missae-v1.toml"
 
-# A witness this tool will carry into the published artifact, and what each
-# state obliges. `licensed-free` is the ELLC case: freely granted, and granted
-# on a condition, so the condition travels with it or the file is refused.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created", "licensed-free")
-NEEDS_ACKNOWLEDGEMENT = ("licensed-free",)
+# A witness this tool will carry into the published artifact. Surface-limited
+# licences and permissions remain source-study metadata; this public corpus
+# carries only the two rights states below.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
 
 # What the source library's own record must say for a witness the inventory
 # declares. Two vocabularies meet here and neither is authoritative over the
@@ -301,7 +303,23 @@ NEEDS_ACKNOWLEDGEMENT = ("licensed-free",)
 LIBRARY_RIGHTS = {
     "public-domain": {"public-domain"},
     "project-created": {"project-created"},
-    "licensed-free": {"licensed", "permission"},
+}
+
+# A restricted witness is provenance the source inventory retains without
+# making it a publication offer.  The first use is ICEL's Roman Missal text:
+# its standing permission reaches a qualifying live web display, not the
+# clonable JSON assembled here.  Requiring the prescribed excerpt notice and
+# the artifact library's completed quarantine state makes this table a
+# fail-closed record rather than a second spelling of a publishable witness.
+RESTRICTED_WITNESS_STATE = "rights-restricted"
+RESTRICTED_ARTIFACT_RIGHTS = ("permission", "restricted")
+RESTRICTED_ARTIFACT_STORAGE = "restricted"
+ICEL_EXCERPT_ACKNOWLEDGEMENT = (
+    "Excerpts from the English translation of The Roman Missal © 2010, "
+    "International Commission on English in the Liturgy Corporation. All rights reserved."
+)
+RESTRICTED_WITNESS_FIELDS = {
+    "id", "lang", "state", "label", "acknowledgement", "caution", "artifacts"
 }
 
 REQUIRED_TOP = ("schema", "calendar", "title", "advisory", "derived_from", "sections")
@@ -318,7 +336,7 @@ SLOT_SIDES = ("before", "after")
 # a bare `("english", "latin")` walked by the element builder while `show
 # --lang` looked the reason up by ISO code against those same side-names, found
 # nothing, and fell back to the English one --- so `--lang la` reported the
-# postconciliar Latin as withheld under ICEL, which is the English reason for
+# postconciliar Latin as rights-restricted, which was the English reason for
 # the other text. That resolved, printed, and was wrong.
 LANGUAGES = (
     {"lang": "en", "absent": "english"},
@@ -338,23 +356,35 @@ ABSENT_SIDES = tuple(one["absent"] for one in LANGUAGES)
 # of.
 SIDE_BLOCKS = {one["lang"]: one["absent"] for one in LANGUAGES}
 
+# A turn is an inventory-owned reading of rows the selected text artifact
+# already exposes.  These closed vocabularies keep speaker and dialogue role
+# independent: a priest can answer, and a server can initiate a prayer.
+TURN_SPEAKERS = ("all", "priest", "server")
+TURN_DIALOGUE_ROLES = ("versicle", "response")
+TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action"}
+
 # What an element's use of a book is, and what has been established about it.
 # Two fields because they are two facts, and collapsing them is how a page comes
 # to say `this is the Missal's Latin` on the strength of a resemblance.
 #
 #   relation  own         the witness IS the edition this frame declares
 #             antecedent  the witness prints an older text this frame's book
-#                         received; the frame's own edition is not held here
+#                         received; this frame does not carry the target text
 #   collation collated    a finding in this repository states the relationship
 #                         between this element's text and the controlling
 #                         edition, and `collation_finding` cites it
 #             uncollated  no such finding; the note must say so in those words
 #
-# `relation` absent means `own`, so the 1962 file needs no back-fill and the
-# facing-column join it makes is unchanged.
+# `relation_of` retains an absent-as-own result for legacy inline language
+# blocks. Artifact-backed sections use `artifact_provenance`, which refuses an
+# omission: their wide join would otherwise stamp every row with an identity
+# claim nobody declared.
 RELATIONS = ("own", "antecedent")
 COLLATIONS = ("collated", "uncollated")
 NEEDS_RELATION_NOTE = ("antecedent",)
+ARTIFACT_PROVENANCE_FIELDS = {
+    "relation", "collation", "collation_finding", "note",
+}
 
 
 class SourceError(ValueError):
@@ -405,6 +435,7 @@ def artifact_records(root: Path) -> dict[str, dict]:
         identifier = data.get("id")
         if isinstance(identifier, str):
             data["_path"] = path
+            data["_source_root"] = root.resolve()
             held[identifier] = data
     return held
 
@@ -414,7 +445,20 @@ def payload_rows(record: dict) -> list[dict]:
     relative = record.get("path")
     if not isinstance(relative, str):
         raise SourceError(f"{record['id']}: artifact declares no payload path")
-    path = ROOT / relative
+    source_root = record.get("_source_root")
+    if not isinstance(source_root, Path):
+        raise SourceError(
+            f"{record['id']}: artifact record has no source-library root"
+        )
+    relative_path = Path(relative)
+    if relative_path.is_absolute():
+        raise SourceError(f"{record['id']}: payload path must be relative: {relative}")
+    parts = relative_path.parts
+    if parts[:2] == ("src", "sources"):
+        parts = parts[2:]
+    path = source_root.joinpath(*parts).resolve()
+    if not path.is_relative_to(source_root):
+        raise SourceError(f"{record['id']}: payload path escapes the source library: {relative}")
     if not path.is_file():
         raise SourceError(f"{record['id']}: payload missing at {relative}")
     with path.open(encoding="utf-8", newline="") as handle:
@@ -425,6 +469,88 @@ def payload_rows(record: dict) -> list[dict]:
 
 
 # --------------------------------------------------------------- witnesses
+
+
+def restricted_witness_table(
+    source: dict, library: dict[str, dict], name: str
+) -> dict[tuple[str, str], dict]:
+    """Validate text-free source metadata this generator must never publish.
+
+    A restricted witness is intentionally kept outside `witness_table`: it is
+    neither eligible for a text join nor copied into the generated translation
+    manifest.  Its artifacts must already be quarantined in the source library
+    so an inventory cannot get ahead of the payload removal it claims.
+    """
+    held: dict[tuple[str, str], dict] = {}
+    for entry in source.get("restricted_witnesses") or []:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: a restricted witness is not a table")
+        unknown = set(entry) - RESTRICTED_WITNESS_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: a restricted witness declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        identifier = entry.get("id")
+        if not isinstance(identifier, str) or not identifier:
+            raise SourceError(f"{name}: a restricted witness has no id")
+        language = entry.get("lang")
+        if not isinstance(language, str) or not language:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} declares no lang"
+            )
+        language_row(language)
+        reach = (identifier, language)
+        if reach in held:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} is declared twice for {language}"
+            )
+        if entry.get("state") != RESTRICTED_WITNESS_STATE:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} must declare "
+                f"state = {RESTRICTED_WITNESS_STATE!r}"
+            )
+        if entry.get("acknowledgement") != ICEL_EXCERPT_ACKNOWLEDGEMENT:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} does not carry ICEL's "
+                "exact prescribed excerpt acknowledgement"
+            )
+        artifacts = entry.get("artifacts")
+        if (
+            not isinstance(artifacts, list)
+            or not artifacts
+            or any(not isinstance(one, str) or not one for one in artifacts)
+            or len(artifacts) != len(set(artifacts))
+        ):
+            raise SourceError(
+                f"{name}: restricted witness {identifier} needs a nonempty, "
+                "duplicate-free artifact id array"
+            )
+        for artifact_id in artifacts:
+            record = library.get(artifact_id)
+            if record is None:
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} names unknown "
+                    f"artifact {artifact_id}"
+                )
+            if record.get("rights_status") not in RESTRICTED_ARTIFACT_RIGHTS:
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} is rights-restricted "
+                    f"but {artifact_id} has rights_status "
+                    f"{record.get('rights_status')!r}; one of "
+                    f"{', '.join(RESTRICTED_ARTIFACT_RIGHTS)} is required"
+                )
+            if (
+                record.get("storage") != RESTRICTED_ARTIFACT_STORAGE
+                or "path" in record
+                or record.get("indexable") is not False
+            ):
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} names {artifact_id}, "
+                    "whose artifact record is not text-free restricted storage"
+                )
+        held[reach] = dict(entry)
+    return held
 
 
 def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str, dict]:
@@ -458,11 +584,6 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
                 f"{name}: witness {identifier} declares rights {rights!r}; "
                 f"this tool publishes only {', '.join(PUBLISHABLE_RIGHTS)}"
             )
-        if rights in NEEDS_ACKNOWLEDGEMENT and not entry.get("acknowledgement"):
-            raise SourceError(
-                f"{name}: witness {identifier} is {rights} and carries no "
-                "acknowledgement; the licence that makes it free requires one"
-            )
         for artifact_id in entry.get("artifacts") or []:
             record = library.get(artifact_id)
             if record is None:
@@ -480,19 +601,25 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
 
 
 # Why a text is not here, as a value a renderer can read rather than prose it
-# would have to parse. The three are genuinely different states and a reader
-# owes the difference to whoever is looking at the empty place:
-#   witness-gap     the source this project holds does not print it
-#   rights-withheld a rightsholder has reserved this use
-#   no-exemplar     the use is permitted and no exact copy of the words is
-#                   reachable, so the gap is an acquisition and not a refusal
-# The distinction is not academic. This inventory said for a year that ICEL's
-# licence forbade the use; it does not, and the reason then was that nobody here
-# had the book. One of those is answered by asking permission and the other by
-# finding a copy. The ICEL copies have since been registered and the elements
-# they print carry that English, so what is left under the `icel` key is neither:
-# text that no tracked payload prints yet, which is a witness gap.
-ABSENCE_KINDS = ("witness-gap", "rights-withheld", "no-exemplar")
+# would have to parse. The acquisition, publication, and modelling states are
+# deliberately disjoint:
+#   witness-gap     a held or registered source has no joined usable payload
+#   rights-withheld this distribution surface has no recorded authorization
+#   no-exemplar     no exact authoritative exemplar is registered
+#   model-gap       the element spans independently sourceable matter
+#   outside-layer   the assigned text belongs to another data layer
+#   not-applicable  the element has no fixed text at this layer
+# A proper assigned in another layer and an action with no fixed text are not
+# missing witnesses, while a composite span cannot be repaired merely by
+# acquiring another page.
+ABSENCE_KINDS = (
+    "witness-gap",
+    "rights-withheld",
+    "no-exemplar",
+    "model-gap",
+    "outside-layer",
+    "not-applicable",
+)
 
 
 def absence_table(source: dict, name: str) -> dict[str, dict]:
@@ -501,6 +628,8 @@ def absence_table(source: dict, name: str) -> dict[str, dict]:
         key = entry.get("key")
         if not isinstance(key, str) or not key:
             raise SourceError(f"{name}: an absence has no key")
+        if key in held:
+            raise SourceError(f"{name}: absence {key} is declared twice")
         if not entry.get("what"):
             raise SourceError(f"{name}: absence {key} says nothing about why")
         kind = entry.get("kind")
@@ -658,7 +787,7 @@ def absent_pair(holder: dict, fallback: dict, absences: dict, key: str, name: st
 
 
 def latin_side(
-    section: dict, witnesses: dict, library: dict, name: str
+    section: dict, witnesses: dict, restricted: dict, library: dict, name: str
 ) -> tuple[dict[str, dict], dict | None, str | None]:
     """The section's Latin rows, keyed by element, or nothing where it has none.
 
@@ -676,6 +805,11 @@ def latin_side(
     if not artifact_id:
         return {}, None, None
     witness_id = section.get("witness_latin") or section.get("witness")
+    if (witness_id, "la") in restricted:
+        raise SourceError(
+            f"{name}: section {section['key']} attempts a Latin text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, "la"))
     if witness is None:
         raise SourceError(
@@ -706,7 +840,48 @@ def latin_side(
     return rows, witness, witness_id
 
 
-def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict, name: str) -> list[dict]:
+def artifact_provenance(section: dict, lang: str, key: str, name: str) -> dict:
+    """The explicit text-to-edition relation for one artifact-backed side.
+
+    Artifact-backed sections select their text at section granularity, so their
+    provenance declaration lives there too.  It remains language-local: facing
+    columns share row keys, not necessarily a relationship to the edition named
+    by the calendar.  Requiring even `own` to be written prevents a missing
+    declaration from silently becoming an identity claim.
+    """
+    side = SIDE_BLOCKS[lang]
+    block = section.get(side)
+    if not isinstance(block, dict):
+        raise SourceError(
+            f"{name}: section {section['key']} carries {lang} artifact text but "
+            f"declares no [{side}] provenance block"
+        )
+    unknown = set(block) - ARTIFACT_PROVENANCE_FIELDS
+    if unknown:
+        raise SourceError(
+            f"{name}: section {section['key']} [{side}] provenance declares "
+            f"unknown fields {', '.join(sorted(unknown))}"
+        )
+    if block.get("relation") is None:
+        raise SourceError(
+            f"{name}: section {section['key']} [{side}] provenance declares no "
+            "relation; artifact-backed text must state own or antecedent explicitly"
+        )
+    relation = relation_of(block, key, lang, name)
+    if block["relation"] == "own":
+        extras = set(block) - {"relation"}
+        if extras:
+            raise SourceError(
+                f"{name}: section {section['key']} [{side}] relation is own but "
+                f"also declares {', '.join(sorted(extras))}"
+            )
+    return relation
+
+
+def from_artifact(
+    section: dict, witnesses: dict, restricted: dict, absences: dict,
+    library: dict, name: str
+) -> list[dict]:
     """The elements of a section whose text an artifact holds.
 
     Nothing about order, part, kind, speaker or wording is restated in the
@@ -718,6 +893,11 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
     if record is None:
         raise SourceError(f"{name}: section {section['key']} names unknown artifact {artifact_id}")
     witness_id = section.get("witness")
+    if (witness_id, "en") in restricted:
+        raise SourceError(
+            f"{name}: section {section['key']} attempts an English text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, "en"))
     if witness is None:
         raise SourceError(f"{name}: section {section['key']} names undeclared witness {witness_id!r}")
@@ -726,7 +906,9 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             f"{name}: section {section['key']} draws on {artifact_id}, which witness "
             f"{witness_id} does not list; the rights check would not have covered it"
         )
-    latin_rows, latin_witness, latin_id = latin_side(section, witnesses, library, name)
+    latin_rows, latin_witness, latin_id = latin_side(
+        section, witnesses, restricted, library, name
+    )
 
     elements = []
     for row in payload_rows(record):
@@ -749,6 +931,11 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             )
         if latin:
             absent["latin"] = None
+        elif absent["latin"] is None:
+            raise SourceError(
+                f"{artifact_id}: row {key} has no Latin and its section names no "
+                "reason; a silent gap is the one thing this layer must never emit"
+            )
         elements.append(
             {
                 "key": section["key"] + "/" + key,
@@ -768,6 +955,7 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
                             "rights": witness["rights"],
                             "text": english,
                         }
+                        | artifact_provenance(section, "en", key, name)
                     ]
                     if english
                     else []
@@ -780,6 +968,7 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
                             "rights": latin_witness["rights"],
                             "text": latin,
                         }
+                        | artifact_provenance(section, "la", key, name)
                     ]
                     if latin
                     else []
@@ -799,8 +988,8 @@ def artifact_text(library: dict, artifact_id: str, element: str, name: str,
                   column: str = "text") -> str:
     """One artifact element's words, out of the column that holds them.
 
-    The column is named because the library does not use one name. The ELLC
-    common texts carry `text`; the 1861 facing-column artifacts carry `latin`,
+    The column is named because the library does not use one name. Some
+    artifacts carry `text`; the 1861 facing-column artifacts carry `latin`,
     beside the `seq`, `part`, `printed_page`, `ia_leaf` and `notes` that make
     the row checkable against the leaf. Guessing `text` on those raised nothing
     useful --- it raised KeyError from inside a dict comprehension --- so the
@@ -888,7 +1077,151 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
     return out
 
 
-def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
+def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
+                     named: list[str], column: str, key: str, name: str,
+                     parent_text: str) -> list[dict] | None:
+    """Validate and project one side's explicit artifact-row turn partition.
+
+    Turn boundaries are source row identities, never offsets or prose matches.
+    The declarations must partition exactly the same rows, in the same order,
+    that produced the parent translation.  This makes turns additive metadata:
+    joining their text is byte-for-byte the already selected parent text.
+    """
+    field = side + "_turns"
+    declarations = entry.get(field)
+    if declarations is None:
+        return None
+    if not isinstance(declarations, list) or not declarations:
+        raise SourceError(f"{name}: element {key} has an empty or malformed {field}")
+
+    record = library.get(artifact_id)
+    if record is None:
+        raise SourceError(f"{name}: element {key} names unknown artifact {artifact_id}")
+    payload = payload_rows(record)
+    selected = []
+    for element in named:
+        selected.extend(
+            row for row in payload
+            if (row.get("element_key") or "").strip() == element
+        )
+
+    source_sequence = []
+    source_rows = {}
+    for row in selected:
+        raw_seq = (row.get("seq") or "").strip()
+        if not raw_seq.isdecimal():
+            raise SourceError(
+                f"{name}: {artifact_id} row for {key} has non-integer seq {raw_seq!r}"
+            )
+        seq = int(raw_seq)
+        if seq in source_rows:
+            raise SourceError(
+                f"{name}: {artifact_id} repeats seq {seq}; turn boundaries would be ambiguous"
+            )
+        if column not in row:
+            raise SourceError(
+                f"{name}: {artifact_id} has no column {column!r} for turn seq {seq}"
+            )
+        text = (row[column] or "").strip()
+        if not text:
+            raise SourceError(
+                f"{name}: {artifact_id} turn seq {seq} carries no {column!r} text"
+            )
+        source_sequence.append(seq)
+        source_rows[seq] = text
+
+    turns = []
+    declared_sequence = []
+    seen_keys = set()
+    for declaration in declarations:
+        if not isinstance(declaration, dict):
+            raise SourceError(f"{name}: element {key} has a non-table turn in {field}")
+        unknown = set(declaration) - TURN_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: element {key} turn declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        turn_key = declaration.get("key")
+        if not isinstance(turn_key, str) or not turn_key:
+            raise SourceError(f"{name}: element {key} has a turn with no key in {field}")
+        turn_key_parts = turn_key.split("-")
+        if any(
+            not part
+            or not part.isascii()
+            or not part.isalnum()
+            or part.lower() != part
+            for part in turn_key_parts
+        ):
+            raise SourceError(
+                f"{name}: element {key} turn key {turn_key!r} is not stable kebab-case"
+            )
+        if turn_key in seen_keys:
+            raise SourceError(f"{name}: element {key} repeats turn key {turn_key!r} in {field}")
+        seen_keys.add(turn_key)
+
+        sequence = declaration.get("seq")
+        if (
+            not isinstance(sequence, list)
+            or not sequence
+            or any(not isinstance(one, int) or isinstance(one, bool) for one in sequence)
+        ):
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} needs a nonempty integer seq array"
+            )
+        declared_sequence.extend(sequence)
+
+        speaker = declaration.get("speaker")
+        if speaker is not None and speaker not in TURN_SPEAKERS:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} has speaker {speaker!r}; "
+                f"one of {', '.join(TURN_SPEAKERS)} is required"
+            )
+        dialogue_role = declaration.get("dialogue_role")
+        if dialogue_role is not None and dialogue_role not in TURN_DIALOGUE_ROLES:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} has dialogue_role "
+                f"{dialogue_role!r}; one of {', '.join(TURN_DIALOGUE_ROLES)} is required"
+            )
+        action = declaration.get("action") if "action" in declaration else None
+        if "action" in declaration and action is not True:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} action must be true or omitted"
+            )
+        if action and (speaker is not None or dialogue_role is not None):
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} cannot be both an action "
+                "and a spoken turn"
+            )
+        turns.append(
+            {
+                "key": turn_key,
+                "speaker": speaker,
+                "dialogue_role": dialogue_role,
+                "action": action,
+                "text": None,
+            }
+        )
+
+    if declared_sequence != source_sequence:
+        raise SourceError(
+            f"{name}: element {key} {field} seq {declared_sequence} does not exactly "
+            f"partition source seq {source_sequence} in order"
+        )
+    offset = 0
+    for turn, declaration in zip(turns, declarations):
+        count = len(declaration["seq"])
+        sequence = declared_sequence[offset:offset + count]
+        turn["text"] = "\n".join(source_rows[one] for one in sequence)
+        offset += count
+    if "\n".join(turn["text"] for turn in turns) != parent_text:
+        raise SourceError(
+            f"{name}: element {key} {field} changes the selected parent text"
+        )
+    return turns
+
+
+def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library: dict,
               key: str, name: str) -> dict | None:
     """One element's text in one language, from whichever edition holds it.
 
@@ -897,10 +1230,20 @@ def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
     and the column --- and never inferred from which language is being asked
     for, so that adding the Latin could not quietly change what the English did.
     """
-    block = entry.get(SIDE_BLOCKS[lang])
+    side = SIDE_BLOCKS[lang]
+    block = entry.get(side)
     if not block:
+        if side + "_turns" in entry:
+            raise SourceError(
+                f"{name}: element {key} declares {side}_turns without a {side} text block"
+            )
         return None
     witness_id = block.get("witness")
+    if (witness_id, lang) in restricted:
+        raise SourceError(
+            f"{name}: element {key} attempts a {lang} text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, lang))
     if witness is None:
         raise SourceError(
@@ -921,18 +1264,27 @@ def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
     if not named:
         raise SourceError(f"{name}: element {key} names no artifact element for {lang}")
     column = block.get("column") or "text"
-    return {
+    text = "\n".join(
+        artifact_text(library, artifact_id, one, name, column) for one in named
+    )
+    translation = {
         "lang": lang,
         "source_id": witness_id,
         "rights": witness["rights"],
-        "text": "\n".join(
-            artifact_text(library, artifact_id, one, name, column) for one in named
-        ),
+        "text": text,
     } | relation_of(block, key, lang, name)
+    turns = structured_turns(
+        entry, SIDE_BLOCKS[lang], library, artifact_id, named, column, key, name, text
+    )
+    if turns is not None:
+        translation["turns"] = turns
+    return translation
 
 
-def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict,
-                   library: dict, name: str) -> list[dict]:
+def from_inventory(
+    section: dict, witnesses: dict, restricted: dict, absences: dict,
+    options: dict, library: dict, name: str
+) -> list[dict]:
     """The elements of a section the inventory states itself.
 
     Used where no artifact of the rite's own text exists to draw on. The
@@ -955,7 +1307,9 @@ def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict
         held = [
             row
             for row in (
-                side_text(entry, language["lang"], witnesses, library, key, name)
+                side_text(
+                    entry, language["lang"], witnesses, restricted, library, key, name
+                )
                 for language in LANGUAGES
             )
             if row
@@ -1020,7 +1374,15 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 f"{name}: {field} belongs to the calendar's mass index and must not be restated here"
             )
 
+    restricted = restricted_witness_table(source, library, name)
     witnesses = witness_table(source, library, name)
+    overlap = set(restricted) & set(witnesses)
+    if overlap:
+        identifier, language = sorted(overlap)[0]
+        raise SourceError(
+            f"{name}: witness {identifier} for {language} is both publishable "
+            "and rights-restricted"
+        )
     absences = absence_table(source, name)
     variants, options = variant_table(source, name)
 
@@ -1033,9 +1395,13 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         if "artifact" in section and "elements" in section:
             raise SourceError(f"{name}: section {key} names both an artifact and inline elements")
         if "artifact" in section:
-            elements = from_artifact(section, witnesses, absences, library, name)
+            elements = from_artifact(
+                section, witnesses, restricted, absences, library, name
+            )
         elif "elements" in section:
-            elements = from_inventory(section, witnesses, absences, options, library, name)
+            elements = from_inventory(
+                section, witnesses, restricted, absences, options, library, name
+            )
         else:
             raise SourceError(f"{name}: section {key} carries neither an artifact nor elements")
         for element in elements:
@@ -1085,7 +1451,19 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "advisory": source["advisory"],
         "derived_from": source["derived_from"],
         "slots_derived_from": source.get("slots_derived_from") or None,
-        "absences": [absences[key] | {"count": absent_counts.get(key, 0)} for key in sorted(absences)],
+        "absences": [
+            {
+                "key": key,
+                "count": absent_counts.get(key, 0),
+                "state": (
+                    "rights-restricted"
+                    if absences[key]["kind"] == "rights-withheld"
+                    else "unavailable"
+                ),
+                "kind": absences[key]["kind"],
+            }
+            for key in sorted(absences)
+        ],
         # Every language this layer speaks of, whether or not this missal holds
         # a word of it, each carrying how many of its elements are reached and
         # which side of `absent` says why the rest are not. A page offering a
@@ -1136,6 +1514,21 @@ def relative_paths(built: list[dict], whole: bool) -> dict[str, dict]:
     return files
 
 
+def owned_orphans(out: Path, expected: set[str]) -> list[str]:
+    """Unexpected generated Ordinary JSON, bounded to this tool's directory."""
+    directory = out / "structure" / "ordinary"
+    if not directory.is_dir():
+        return []
+    found = []
+    for path in directory.iterdir():
+        if path.suffix != ".json" or not (path.is_file() or path.is_symlink()):
+            continue
+        relative = "structure/ordinary/" + path.name
+        if relative not in expected:
+            found.append(relative)
+    return sorted(found)
+
+
 def serialise(payload: dict) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
@@ -1178,12 +1571,15 @@ def summarise(one: dict, stale: bool | None) -> dict:
 def run_check(arguments: argparse.Namespace) -> dict:
     built = build(arguments)
     out = Path(arguments.out)
+    files = relative_paths(built, arguments.calendar is None)
     stale = []
-    for relative, payload in relative_paths(built, arguments.calendar is None).items():
+    for relative, payload in files.items():
         target = out / relative
         current = target.read_text(encoding="utf-8") if target.is_file() else None
         if current != serialise(payload):
             stale.append(relative)
+    if arguments.calendar is None:
+        stale.extend(owned_orphans(out, set(files)))
     return {
         "calendars": [
             summarise(one, "structure/ordinary/" + one["calendar"] + ".json" in stale)
@@ -1196,13 +1592,24 @@ def run_check(arguments: argparse.Namespace) -> dict:
 def run_structure(arguments: argparse.Namespace) -> dict:
     built = build(arguments)
     out = Path(arguments.out)
+    files = relative_paths(built, arguments.calendar is None)
     written = []
-    for relative, payload in sorted(relative_paths(built, arguments.calendar is None).items()):
+    for relative, payload in sorted(files.items()):
         target = out / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(serialise(payload), encoding="utf-8")
         written.append(str(target))
-    return {"calendars": [summarise(one, False) for one in built], "written": written}
+    removed = []
+    if arguments.calendar is None:
+        for relative in owned_orphans(out, set(files)):
+            target = out / relative
+            target.unlink()
+            removed.append(str(target))
+    return {
+        "calendars": [summarise(one, False) for one in built],
+        "written": written,
+        "removed": removed,
+    }
 
 
 def run_show(arguments: argparse.Namespace) -> dict:
@@ -1233,7 +1640,7 @@ def render_ordinary(
     them, and read as its first and last lines. Nothing was wrong with the
     data; every one of those is its own element correctly carrying `kind:
     rubric`. The distinction is drawn in `scripts/_ordinary_text.py`, once, for
-    this tool and for `mass-today --expanded` alike.
+    this tool and for the expanded daily-Mass renderer alike.
     """
     for one in built:
         for line in style.heading(one["title"], rule="="):
@@ -1289,12 +1696,12 @@ def run_coverage(arguments: argparse.Namespace) -> dict:
 def render(payload: dict, arguments: argparse.Namespace) -> int:
     if getattr(arguments, "json", False) or arguments.format == "json":
         print_json(payload)
-        return 0
+        return 1 if payload.get("stale") else 0
     if arguments.format == "yaml":
         import yaml
 
         print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
-        return 0
+        return 1 if payload.get("stale") else 0
     if "ordinary" in payload:
         return render_ordinary(
             payload["ordinary"],
@@ -1332,7 +1739,7 @@ def render(payload: dict, arguments: argparse.Namespace) -> int:
         return 0
     stale = payload["stale"]
     print(f"{len(stale)} files would be rewritten" if stale else "the written files are current")
-    return 0
+    return 1 if stale else 0
 
 
 def main(argv: list[str] | None = None) -> int:

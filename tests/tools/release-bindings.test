@@ -28,6 +28,142 @@ done
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
+# Approval counts the active per-publication inventory after migration, while
+# older aggregate manifests remain readable.  Exercise the pure counting seam:
+# a successful `approve` would write a real dated authorization and must never
+# be invoked by this test.
+python3 - "$repo" "$sandbox/counts" <<'PY'
+import importlib.machinery
+import importlib.util
+import json
+import sys
+from pathlib import Path
+
+repo, sandbox = Path(sys.argv[1]), Path(sys.argv[2])
+loader = importlib.machinery.SourceFileLoader(
+    "release_bindings", str(repo / "tools/release-bindings")
+)
+module = importlib.util.module_from_spec(
+    importlib.util.spec_from_loader(loader.name, loader)
+)
+loader.exec_module(module)
+module.ROOT = sandbox
+
+manifest = {"provider": "gpt", "providers": ["gpt", "claude"]}
+for provider, leaf, status in (
+    ("gpt", "articles/one", "alpha"),
+    ("gpt", "articles/two", "hold"),
+    ("claude", "curriculums/three", "alpha"),
+):
+    path = sandbox / "release/publications" / provider / f"{leaf}.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({
+        "schema_version": 1,
+        "id": leaf,
+        "catalog": "fixture",
+        "status": status,
+        "authorization": "fixture" if status == "alpha" else None,
+    }) + "\n", encoding="utf-8")
+
+try:
+    module.publication_status_counts(manifest)
+except module.BindingError as error:
+    assert "installed PDF missing" in str(error), error
+else:
+    raise AssertionError("an alpha record without its installed PDF was counted")
+for provider, leaf in (
+    ("gpt", "articles/one"),
+    ("claude", "curriculums/three"),
+):
+    pdf = sandbox / "pdf" / provider / f"{leaf}.pdf"
+    pdf.parent.mkdir(parents=True, exist_ok=True)
+    pdf.write_bytes(f"{provider}:{leaf}".encode())
+
+schema, counts = module.publication_status_counts(manifest)
+assert schema == "records", schema
+assert counts == {"alpha": 2, "hold": 1}, counts
+summary = module.publication_clearance_summary(schema, counts)
+assert "all 2 exact installed public-alpha" in summary, summary
+assert "records 1 publication(s) on hold" in summary, summary
+
+# Generated structure JSON participates in the same exact-byte comparison as
+# every other authorized site input. Exercise change, addition and removal
+# without writing an authorization or hard-coding a digest.
+relative = "src/web/data/structure/calendar/2026.json"
+structure = sandbox / relative
+structure.parent.mkdir(parents=True, exist_ok=True)
+structure.write_text('{"year": 2026}\n', encoding="utf-8")
+authorization = {"site_sources": {relative: module.sha256_file(structure)}}
+module.recognized_site_sources = lambda: {relative}
+assert module.site_source_divergences(authorization) == []
+
+structure.write_text('{"year": 2027}\n', encoding="utf-8")
+divergences = module.site_source_divergences(authorization)
+assert len(divergences) == 1 and divergences[0].kind == "stale", divergences
+
+added = "src/web/data/structure/ordinary/demo.json"
+added_path = sandbox / added
+added_path.parent.mkdir(parents=True, exist_ok=True)
+added_path.write_text("{}\n", encoding="utf-8")
+structure.write_text('{"year": 2026}\n', encoding="utf-8")
+module.recognized_site_sources = lambda: {relative, added}
+divergences = module.site_source_divergences(authorization)
+assert len(divergences) == 1 and divergences[0].kind == "unrecorded", divergences
+
+module.recognized_site_sources = lambda: set()
+divergences = module.site_source_divergences(authorization)
+assert len(divergences) == 1 and divergences[0].kind == "unrecognized", divergences
+
+# Scoped adoption changes only its own subtree. It neither adopts an
+# unrecorded sibling nor retires a recorded sibling the renderer stopped using.
+own = "src/web/data/structure/sources/own.json"
+sibling_new = "src/web/data/structure/sources/sibling-new.json"
+sibling_old = "src/web/data/structure/sources/sibling-old.json"
+for relative_path in (own, sibling_new):
+    path = sandbox / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(relative_path + "\n", encoding="utf-8")
+authorization = {"site_sources": {
+    own: "stale-own", sibling_old: "keep-this-recorded-value"
+}}
+module.recognized_site_sources = lambda: {own, sibling_new}
+computed = module.compute_site_hashes(
+    authorization, adopt=True, only=[own]
+)
+assert computed == {
+    own: module.sha256_file(sandbox / own),
+    sibling_old: "keep-this-recorded-value",
+}, computed
+
+legacy = {
+    "provider": "gpt",
+    "publications": [
+        {"id": "one", "status": "release"},
+        {"id": "two", "status": "review"},
+        {"id": "three", "status": "hold"},
+    ],
+}
+try:
+    module.publication_status_counts(legacy)
+except module.BindingError as error:
+    assert "mixed legacy aggregate" in str(error), error
+else:
+    raise AssertionError("mixed legacy and local records were silently undercounted")
+legacy_root = sandbox / "legacy"
+module.ROOT = legacy_root
+for leaf in ("one", "two"):
+    pdf = legacy_root / "pdf/gpt" / f"{leaf}.pdf"
+    pdf.parent.mkdir(parents=True, exist_ok=True)
+    pdf.write_bytes(leaf.encode())
+schema, counts = module.publication_status_counts(legacy)
+assert schema == "legacy", schema
+assert counts == {"release": 1, "review": 1, "hold": 1}, counts
+summary = module.publication_clearance_summary(schema, counts)
+assert "all 1 exact installed release" in summary, summary
+assert "all 1 conspicuously labelled public-alpha" in summary, summary
+assert "records 1 publication(s) on hold" in summary, summary
+PY
+
 # `status` reports and exits together, whatever the tree happens to hold.  This
 # used to assert "exact: 0 stale binding(s)" outright, which made the smoke test
 # a statement about the checkout rather than about the tool: while `status`

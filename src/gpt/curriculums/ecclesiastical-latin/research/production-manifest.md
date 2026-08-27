@@ -119,6 +119,54 @@ the byte-identical installed mirror at
 | `05-stage-assessments/03-missal-reading.pdf` | 29 | 522380 | `f6970be5d5429a0cfd7bd70cb64eea9d65262c43e068c7e94918f0af0b1bccef` |
 | `05-stage-assessments/04-advanced.pdf` | 28 | 546367 | `12356f017239052318402684a903e826b511cc66d63659d595cf7eb1fa3577a1` |
 
+## Rights-quarantine repair — 27 August 2026
+
+The exact table above remains the historical 23 July snapshot that its release
+exception names. A later repair removed English Sanctus and Benedictus wording
+whose authorship and redistribution basis were not established. The typed
+text-free dispositions in `passage-inventory.md` cover W.I.20, W.I.21, W.I.27,
+W.I.53, W.II.61, and every exercise-bank reuse of those English segments. The
+Latin, stable exercise identities, and grammatical analysis remain.
+
+Four publications consume the changed selections. Their current build and
+installed files are byte-identical, and a forced second build from the same
+inputs reproduced every hash:
+
+| Publication | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `01-foundations/03-nouns-and-adjectives.pdf` | 39 | 570311 | `ad57f90931c3d21bf08519f864ab78b41b6587dd494b560198f181778f31c24d` |
+| `01-foundations/04-being-and-present-action.pdf` | 38 | 603446 | `47da03459c26c5eba2d9206db78cb46caa99429fede5a303086b73946749b935` |
+| `01-foundations/06-pronouns-prepositions-and-reading.pdf` | 47 | 630647 | `22e6585a54bde5218e68f96eaeb8cafe7c48d4701a3a53b23821716f1ceffb37` |
+| `02-core-grammar/12-adverbial-cases-order-compression.pdf` | 41 | 563776 | `7f31b71adfbeaeb64ed1d5a9e2731271c367e1a24985c4f5279479d86b718922` |
+| **Total** | **165** | **2368180** | — |
+
+The current review package records those exact four hashes and all 165 page
+rasters. Comparison against the previously reviewed 23 July rasters found 142
+pixel-identical pages. The other 23 full-size pages were inspected: M03 pages
+3, 7, 21, 22, 34, 35, and 39; M04 pages 3, 5, and 38; M06 pages 3, 8, 9, 22,
+28, 40, 44, and 47; and M12 pages 3, 7, 23, 37, and 41. No clipping, overlap,
+spill, harmful break, or illegible content was found. Each final TeX log retains
+one underfull-box diagnostic in the generated terminal metadata block; the
+affected final pages were inspected full-size and the diagnostic has no visible
+layout consequence. No overflow, fatal error, undefined reference, or unsettled
+cross-reference remains.
+
+The curriculum rights regression scans the complete tracked curriculum text
+tree and every installed curriculum PDF for independently fingerprinted
+protected segments. The rights tests, generation-metadata validation, complete
+discovered-publication curriculum-structure audit, and exact build/install
+mirror checks passed for this repair. The repository-wide source graph itself
+remains governed by its separate current validation state.
+
+The four independent publication records remain `alpha` under
+`perpetual-public-repository-2026`. Consistent with the repository release
+contract, ordinary publication work does not rewrite the historical shared
+rights-table hash inventory: current PDF hashes and aggregate checksums are
+generated during public-alpha artifact construction. The standing 27 July 2026
+public-alpha decision covers later current snapshots only while the six alpha
+concerns and reproducible installed/artifact identities pass; it supplies no
+external, specialist, ecclesiastical, or final editorial review.
+
 ## Consequential limitations and authorization boundary
 
 Page-image collation remains incomplete, the donor tree contains no local
@@ -133,8 +181,9 @@ profile-final status, or general distribution authority.
 
 This record did not itself authorize installation, linking, staging, commit,
 distribution, integration, push, deployment, publication, or history
-rewriting; those actions require separate authority. The separate 23 July 2026
-instruction now release-clears only the exact installed hashes below and
-reserves its distinct integration and publication authority to the primary
-session after the recorded gates. It does not resolve any limitation above;
-changed bytes require renewed exact-snapshot authorization.
+rewriting; those actions require separate authority. The 23 July 2026
+instruction release-clears only the historical exact installed hashes in its
+table. The later standing 27 July public-alpha decision supplies the ordinary
+preparation and current-snapshot authority described in the repair record
+above, subject to the repository's alpha gates and reserved integration
+boundary. Neither authorization resolves any substantive limitation above.

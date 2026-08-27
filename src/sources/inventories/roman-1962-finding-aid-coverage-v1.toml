@@ -1,0 +1,193 @@
+# What the historical Roman 1962 calendar index can prove, and what it cannot.
+# This is evidence about one finding aid, not another recension catalog and not
+# a source of liturgical text. Moving totals belong to `mass-propers census`.
+
+schema = "triptych-roman-1962-finding-aid-coverage/v1"
+record_type = "roman-1962-finding-aid-coverage"
+recension_id = "roman-1962"
+calendar = "roman-1962"
+target_edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+target_artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+as_of = "2026-08-26"
+status = "partial"
+completeness_claim = "not-established"
+central_catalog = "src/sources/calendars/recensions.json"
+finding_aid = "src/sources/calendars/roman-1962/propers.yaml"
+rights_record = "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml"
+
+[accounting]
+command = "tools/tpt mass-propers census --json"
+mode = "derived-only"
+dimensions = [
+  "represented-masses",
+  "represented-proper-records",
+  "direct-proper-records",
+  "placeholder-proper-records",
+  "mass-reference-records",
+  "proper-reference-records",
+  "resolved-proper-occurrences",
+  "direct-resolved-occurrences",
+  "referenced-resolved-occurrences",
+  "masses-resolving-no-propers",
+  "resolution-errors",
+]
+interpretation = """
+Representation counts rows in the finding aid as written. Resolution follows
+its formulary and proper references and counts appointed occurrences. Direct,
+reference and placeholder are storage and resolution states, not textual
+quality grades. None of these dimensions supplies the expected universe of a
+complete 1962 Missal, proves that a represented proper carries its full text,
+or establishes target-edition collation.
+"""
+
+[[evidence]]
+id = "seasonal-scripture-citation-collation"
+domains = ["propers"]
+grade = "page-image"
+edition_ids = ["edition.catholic-church.missale-romanum.vatican-typica-1962"]
+artifact_ids = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+record = "src/sources/inventories/roman-1962-seasonal-citation-collation-v1.toml"
+establishes = "The bounded seasonal citation loci named by that record were compared with the target edition's page images."
+does_not_establish = "It does not collate the whole seasonal, the composed chants and orations outside its expressly later readings, the sanctoral, the Commons, or the Ordinary."
+
+[[evidence]]
+id = "sanctoral-common-pointer-recovery"
+domains = ["propers", "commons"]
+grade = "mixed"
+edition_ids = ["edition.catholic-church.missale-romanum.vatican-typica-1962"]
+artifact_ids = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+record = "src/sources/inventories/roman-1962-sanctoral-commons-v1.toml"
+establishes = "The record preserves a bounded geometric recovery of sanctoral pointers and identifies which pointer and oration readings were checked on target-edition page images."
+does_not_establish = "A held pointer is not a landed formulary, conditional pointers remain a model problem, and the record is not a whole-sanctoral or whole-Common collation."
+
+[[evidence]]
+id = "ordinary-frame-and-historical-witness"
+domains = ["ordinary"]
+grade = "mixed"
+edition_ids = [
+  "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+]
+artifact_ids = []
+record = "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+establishes = "The 1861 hand missal's English and facing Latin are edition-identified historical witnesses; separately identified 1962 rubrical loci place the proper slots in the frame."
+does_not_establish = "Neither language is an element-by-element transcription or collation of the 1962 Ordo Missae, and the 1861 English is not an approved liturgical translation."
+
+[[evidence]]
+id = "historical-english-proper-witnesses"
+domains = ["propers", "translations"]
+grade = "mixed"
+edition_ids = ["edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"]
+artifact_ids = []
+record = "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+establishes = "The sidecar identifies the historical public-domain witness, wording and collation state of each English proper entry it records."
+does_not_establish = "A historical hand-missal translation is neither ICEL text nor an approved vernacular edition of the 1962 altar book, and the sidecar does not prove that every expected proper has an English witness."
+
+[[evidence]]
+id = "target-edition-rights-analysis"
+domains = ["rights"]
+grade = "policy"
+edition_ids = ["edition.catholic-church.missale-romanum.vatican-typica-1962"]
+artifact_ids = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+record = "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml"
+establishes = "The repository's United States rights position for the target facsimile and its distinction between preexisting text and the edition's own modern matter."
+does_not_establish = "The facsimile's unresolved rights state is not permission to publish page images, protected editorial matter, the 1955 or 1960 revisions, or post-1920 additions from that artifact."
+
+[[limitations]]
+id = "expected-universe-not-modeled"
+domains = ["propers", "commons", "ordinary"]
+kind = "scope-exclusion"
+status = "open"
+basis = "The finding aid enumerates represented rows but carries no edition-derived inventory of every expected formulary and slot."
+requirement = "Collate a target-edition table of contents and formulary inventory, including Proper of Time, Proper of Saints, Commons, votive, ritual and Requiem material, and keep the invariant Ordinary as its own domain."
+source_refs = ["src/sources/calendars/roman-1962/propers.yaml"]
+
+[[limitations]]
+id = "represented-is-not-full-text"
+domains = ["propers"]
+kind = "data-transcription"
+status = "open"
+basis = "A represented proper may carry a citation, incipit, pointer or placeholder rather than the full wording the target formulary prints."
+requirement = "For every expected non-scriptural slot, record an edition-identified lawful witness, transcribe no text from inference, and collate the target reading at the page."
+source_refs = [
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/inventories/roman-1962-seasonal-citation-collation-v1.toml",
+]
+
+[[limitations]]
+id = "commons-and-proper-orations-remain-held"
+domains = ["propers", "commons"]
+kind = "data-transcription"
+status = "open"
+basis = "The sanctoral recovery record deliberately holds pointers whose proper orations or conditional appointments are not safely represented."
+requirement = "Read and model each held day from the named target-edition page; land a reference only with every proper override and condition the page appoints."
+source_refs = ["src/sources/inventories/roman-1962-sanctoral-commons-v1.toml"]
+
+[[limitations]]
+id = "ordinary-not-target-collated"
+domains = ["ordinary"]
+kind = "page-image-collation"
+status = "open"
+basis = "The recorded Ordinary text is the 1861 hand missal's own witness, while only slot placement is tied to 1962 loci."
+requirement = "Collate every Ordinary and Preface element against the 1962 typical edition and record each identical, changed, absent and added element without silently carrying the 1861 wording forward."
+source_refs = ["src/sources/inventories/roman-1962-ordo-missae-v1.toml"]
+
+[[limitations]]
+id = "proper-level-target-attestation-missing"
+domains = ["propers", "provenance"]
+kind = "provenance-gap"
+status = "open"
+basis = "The calendar schema does not yet join each Latin proper to the edition, artifact, reading method and locus from which it was recorded."
+requirement = "Implement and populate the reviewed per-proper attestation design before treating a mass note or a file-level verification paragraph as proof for every proper."
+source_refs = ["guidance/liturgy/per-proper-attestation-proposal.md"]
+
+[[limitations]]
+id = "target-edition-modern-matter"
+domains = ["propers", "commons", "ordinary", "rights"]
+kind = "rights-restriction"
+status = "open"
+basis = "The repository's current United States analysis treats the 1962 typical edition as probably protected through 2057; section 103(b) reaches preexisting text, not the edition's own new matter."
+requirement = "Pair inherited wording with an edition-identified public-domain antecedent and compare it to the target; keep 1955 Holy Week, the 1960 revisions, post-1920 additions and 1962 front matter unavailable unless an independent lawful basis is recorded."
+source_refs = [
+  "guidance/liturgical-text-publication-policy.md",
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+]
+
+[[limitations]]
+id = "icel-does-not-supply-historical-english"
+domains = ["translations", "rights"]
+kind = "scope-exclusion"
+status = "open"
+basis = "The ICEL permission and exemplar analysis governs ICEL-owned postconciliar English; it neither supplies nor authorizes a translation of the 1962 Latin book."
+requirement = "Keep each historical English reading attached to its actual edition and rights basis; where none is held, report the absence instead of generating, adapting or importing modern ICEL wording."
+source_refs = [
+  "guidance/liturgical-text-publication-policy.md",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+]
+
+[[source_requirements]]
+id = "target-vatican-typica-1962"
+domains = ["propers", "commons", "ordinary"]
+edition_identity = "Missale Romanum, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962)"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+status = "registered-remote-collation-required"
+requirement = "Use the exact hashed page images to establish target readings and differences; do not republish the artifact or treat it as the publication-rights basis."
+
+[[source_requirements]]
+id = "identified-1920-typical-impression"
+domains = ["propers", "commons", "ordinary", "rights"]
+edition_identity = "Missale Romanum, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1920)"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1920"
+artifact_id = ""
+status = "artifact-required"
+requirement = "Acquire an edition-identified 1920 impression. The currently registered OCR artifact is a much later accreted printing and cannot by itself prove the exact contents of the 1920 impression."
+
+[[source_requirements]]
+id = "restored-holy-week-1956"
+domains = ["propers", "ordinary", "rights"]
+edition_identity = "Ordo Hebdomadae Sanctae instauratus, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1956)"
+edition_id = ""
+artifact_id = ""
+status = "edition-and-artifact-registration-required"
+requirement = "Locate, register and inspect a complete lawful artifact of the restored Holy Week book; the target facsimile is presently the only whole witness and its modern matter has no section 103(b) fallback."

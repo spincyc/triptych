@@ -1202,11 +1202,13 @@ aliases_tried = ["Roman Missal Third Edition", "ICEL Roman Missal"]
 aliases_that_hit = ["Roman Missal Third Edition"]
 rights = "third-party-copyright"
 rights_basis = """
-The English translation is ICEL's, and ICEL's required acknowledgment form dates
-it 2010 rather than 2011: `The English translation of The Roman Missal (c) 2010,
-International Commission on English in the Liturgy Corporation. All rights
-reserved.` [sourced: https://icelweb.org/copyright.htm]. This repository treats
-postconciliar English as unpublishable and marks it `absent: icel`.
+The English translation is ICEL's, and ICEL's current acknowledgment form for
+excerpts dates it 2010 rather than 2011: `Excerpts from the English translation
+of The Roman Missal © 2010, International Commission on English in the Liturgy
+Corporation. All rights reserved.` [sourced:
+https://icelweb.org/copyright.htm]. The notice is a condition of an applicable
+permission, not permission by itself. This repository treats postconciliar
+English as unpublishable and marks it `absent: icel`.
 
 THE POSITION IS A CONFLICT, NOT A FLAT PROHIBITION, and the row says so because
 the reason attached to an absence has to be true. ICEL publishes a standing
@@ -2146,9 +2148,12 @@ finding = """
 `NOBODY MAY PUBLISH` IS TOO STRONG AS STATED, AND THE REAL POSITION IS A
 CONFLICT BETWEEN TWO BODIES rather than a single prohibition.
 
-ICEL's own published policy contains a standing blanket permission for the
-internet. `Publication Policies of the International Commission on English in
-the Liturgy`, under `Use of ICEL Materials on Global Computer Networks`
+ICEL's own published policy contains a conditional, surface-specific permission
+for reproduction on a non-commercial site on the live Internet. It is not a
+blanket permission for a corpus, public Git repository, command-line response,
+or downloadable data bundle. `Publication Policies of the International
+Commission on English in the Liturgy`, under `Use of ICEL Materials on Global
+Computer Networks`
 [sourced: https://icelweb.org/PubPolicy.PDF, and the summary at
 https://icelweb.org/copyright.htm]: approved, recognised and promulgated ICEL
 texts `may be reproduced in a non-commercial site ... on the global computer

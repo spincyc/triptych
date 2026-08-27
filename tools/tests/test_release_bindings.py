@@ -310,6 +310,33 @@ class ReleaseBindingsTests(unittest.TestCase):
         recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
         self.assertEqual({"README.md"}, set(recorded))
 
+    def test_scoped_adoption_preserves_a_missing_recorded_sibling(self):
+        own = self.root / "web/own/page.md"
+        own.parent.mkdir(parents=True)
+        own.write_bytes(b"own v1")
+        sibling_new = self.root / "web/sibling/new.md"
+        sibling_new.parent.mkdir(parents=True)
+        sibling_new.write_bytes(b"sibling v1")
+        self.readme.unlink()
+        self.recognize({"web/own/page.md", "web/sibling/new.md"})
+        changes = self.tool.refresh(
+            self.tool.load_manifest(),
+            adopt=True,
+            only=["web/own"],
+        )
+
+        recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
+        self.assertEqual(
+            {
+                "README.md": sha(b"readme v1"),
+                "web/own/page.md": sha(b"own v1"),
+            },
+            recorded,
+        )
+        self.assertIn("adopted site web/own/page.md", changes)
+        self.assertNotIn("adopted site web/sibling/new.md", changes)
+        self.assertNotIn("retired site README.md", changes)
+
     def test_site_refresh_does_not_scan_publication_pdfs(self):
         self.gpt_pdf.unlink()
         self.tool.refresh(self.tool.load_manifest())
@@ -378,6 +405,25 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual("alpha", gpt_record["status"])
         self.assertEqual("auth-1", gpt_record["authorization"])
         self.assertNotIn("pdf_sha256", gpt_record)
+
+    def test_migrated_inventory_summary_requires_its_installed_pdfs(self):
+        self.tool.migrate_publications(self.tool.load_manifest())
+
+        schema, counts = self.tool.publication_status_counts(
+            self.tool.load_manifest()
+        )
+
+        self.assertEqual("records", schema)
+        self.assertEqual({"alpha": 2, "hold": 0}, counts)
+        summary = self.tool.publication_clearance_summary(schema, counts)
+        self.assertIn("all 2 exact installed public-alpha", summary)
+
+        self.claude_pdf.unlink()
+        with self.assertRaisesRegex(
+            self.tool.BindingError,
+            "installed PDF missing",
+        ):
+            self.tool.publication_status_counts(self.tool.load_manifest())
 
     def test_approve_records_note_and_refreshes(self):
         self.claude_pdf.write_bytes(b"claude pdf v3")

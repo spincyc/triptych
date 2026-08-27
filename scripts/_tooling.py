@@ -127,6 +127,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "check-generation-metadata",
             "check-promised-deliverables",
             "check-web-edition",
+            "complete-missal",
             "document-library",
             "pdf-review",
             "public-alpha",
@@ -188,6 +189,7 @@ REACHES: dict[str, str] = {
     "check-web-edition": NOTHING,
     "citations": NOTHING,
     "commentary-work-index": NOTHING,
+    "complete-missal": NOTHING,
     "document-library": NOTHING,
     "harvest": MODEL,
     "index-bible": NOTHING,
@@ -657,6 +659,17 @@ def run_verb_cli(
 
     try:
         payload = handler(arguments)
+        if machine or not arguments.style_resolved.plain:
+            return renderer(payload, arguments)
+        # The plain tier holds for every one of the thirty-four tools,
+        # including the thirty-three that have never heard of it, which is
+        # what a fold around the renderer buys and a per-tool rule does not.
+        held = sys.stdout
+        sys.stdout = _Folded(held)  # type: ignore[assignment]
+        try:
+            return renderer(payload, arguments)
+        finally:
+            sys.stdout = held
     except ModuleNotFoundError as error:
         message = str(error)
         if dependency_message:
@@ -685,14 +698,3 @@ def run_verb_cli(
             70,
             prefix,
         )
-    if machine or not arguments.style_resolved.plain:
-        return renderer(payload, arguments)
-    # The plain tier holds for every one of the thirty-four tools, including
-    # the thirty-three that have never heard of it, which is what a fold around
-    # the renderer buys and a per-tool rule does not.
-    held = sys.stdout
-    sys.stdout = _Folded(held)  # type: ignore[assignment]
-    try:
-        return renderer(payload, arguments)
-    finally:
-        sys.stdout = held

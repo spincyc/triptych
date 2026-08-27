@@ -786,21 +786,21 @@ def edition_payload(work: dict, edition: dict) -> dict:
             "id": passage.get("id"),
             "locus": passage.get("locus"),
             "states": list(passage.get("states") or ()),
-            "context": passage.get("context"),
-            "notes": passage.get("notes"),
             "verified_on": passage.get("verified_on"),
             "readable": reading["readable"],
             "artifact_id": reading.get("artifact_id"),
             "artifact_type": reading.get("artifact_type"),
             "media_type": reading.get("media_type"),
             "rights": reading.get("rights"),
-            "rights_basis": reading.get("rights_basis"),
             "rights_jurisdiction": reading.get("rights_jurisdiction"),
             "storage": reading.get("storage"),
             "source_url": reading.get("source_url"),
             "segment_id": reading.get("segment_id"),
         }
         if reading["readable"]:
+            row["context"] = passage.get("context")
+            row["notes"] = passage.get("notes")
+            row["rights_basis"] = reading.get("rights_basis")
             row["source"] = reading["source"]
             row["words"] = len(str(reading["text"]).split())
             row["text_path"] = (
@@ -841,7 +841,6 @@ def edition_payload(work: dict, edition: dict) -> dict:
                 "translators",
                 "authority",
                 "jurisdiction",
-                "notes",
             )
         },
         "artifacts": [
@@ -850,14 +849,20 @@ def edition_payload(work: dict, edition: dict) -> dict:
                 "artifact_type": one.get("artifact_type"),
                 "media_type": one.get("media_type"),
                 "rights": one.get("rights_status"),
-                "rights_basis": one.get("rights_basis"),
                 "rights_jurisdiction": one.get("rights_jurisdiction"),
                 "storage": one.get("storage"),
                 "source_url": one.get("source_url"),
                 "retrieved": one.get("retrieved"),
                 "byte_size": one.get("byte_size"),
                 "page_count": one.get("page_count"),
-                "notes": one.get("notes"),
+                **(
+                    {
+                        "rights_basis": one.get("rights_basis"),
+                        "notes": one.get("notes"),
+                    }
+                    if one.get("rights_status") in DISTRIBUTABLE_RIGHTS
+                    else {}
+                ),
             }
             for one in edition["artifacts"]
         ],
@@ -1276,16 +1281,16 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
 EXAMPLES = {
     "check": (
         Example(
-            "tools/tpt source-reader check",
+            "tools/source-reader check",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
-                "  passages the rights records withhold: 1234",
+                "535 works, 718 editions, 1822 artifacts, 2920 passages; 1635 readable here.",
+                "  passages the rights records withhold: 1285",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
         ),
         Example(
-            "tools/tpt source-reader check --rights licensed",
+            "tools/source-reader check --rights licensed",
             (
                 "... 4 more lines",
             ),
@@ -1294,14 +1299,14 @@ EXAMPLES = {
     ),
     "list": (
         Example(
-            "tools/tpt source-reader list --author 'Augustine of Hippo'",
+            "tools/source-reader list --author 'Augustine of Hippo'",
             (
                 "Augustine of Hippo       Confessiones                           1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
                 "... 10 more lines",
             ),
         ),
         Example(
-            "tools/tpt source-reader list --language grc --sort date",
+            "tools/source-reader list --language grc --sort date",
             (
                 "... 17 more lines",
             ),
@@ -1310,14 +1315,14 @@ EXAMPLES = {
     ),
     "show": (
         Example(
-            "tools/tpt source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
+            "tools/source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
             (
                 "... 12 more lines",
             ),
             "a licensed edition: the acknowledgement its licence requires travels with the text",
         ),
         Example(
-            "tools/tpt source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
+            "tools/source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
             (
                 "... 36 more lines",
             ),
@@ -1325,18 +1330,18 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/tpt source-reader structure --out build/example-sources",
+            "tools/source-reader structure --out build/example-sources",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
-                "  -> build/example-sources/structure/sources (2352 files)",
+                "535 works, 718 editions, 1822 artifacts, 2920 passages; 1635 readable here.",
+                "  -> build/example-sources/structure/sources (2354 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
-            "tools/tpt source-reader structure --check",
+            "tools/source-reader structure --check",
             (
-                "534 works, 716 editions, 1782 artifacts, 2869 passages; 1635 readable here.",
-                "  src/web/data/structure/sources is current (2352 files)",
+                "535 works, 718 editions, 1822 artifacts, 2920 passages; 1635 readable here.",
+                "  src/web/data/structure/sources is current (2354 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

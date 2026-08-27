@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1782,
-  "editions": 716,
-  "passages": 2869,
+  "artifacts": 1822,
+  "editions": 718,
+  "passages": 2920,
   "readable": 1635,
-  "works": 534
+  "works": 535
  },
  "facets": {
   "authors": [
@@ -287,7 +287,7 @@
    },
    {
     "id": "Congregation for Divine Worship and the Discipline of the Sacraments",
-    "works": 14
+    "works": 15
    },
    {
     "id": "Congregation for the Doctrine of the Faith",
@@ -1484,6 +1484,10 @@
     "works": 2
    },
    {
+    "id": "official-liturgical-notification",
+    "works": 2
+   },
+   {
     "id": "papal-bull",
     "works": 2
    },
@@ -1988,10 +1992,6 @@
     "works": 1
    },
    {
-    "id": "official-liturgical-notification",
-    "works": 1
-   },
-   {
     "id": "official-liturgical-periodical",
     "works": 1
    },
@@ -2294,7 +2294,7 @@
     "id": "en"
    },
    {
-    "editions": 227,
+    "editions": 229,
     "id": "la"
    },
    {
@@ -2421,36 +2421,36 @@
     "label": "19th century"
    },
    {
-    "editions": 166,
+    "editions": 167,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 382,
+    "editions": 383,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1004,
+    "artifacts": 1017,
     "id": "public-domain"
    },
    {
-    "artifacts": 392,
+    "artifacts": 597,
     "id": "restricted"
    },
    {
-    "artifacts": 216,
-    "id": "permission"
-   },
-   {
-    "artifacts": 95,
+    "artifacts": 104,
     "id": "unresolved"
    },
    {
     "artifacts": 57,
     "id": "licensed"
+   },
+   {
+    "artifacts": 29,
+    "id": "permission"
    },
    {
     "artifacts": 18,
@@ -5472,7 +5472,7 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 0,
+     "passages": 8,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -5520,7 +5520,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 41,
+     "passages": 48,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -5938,7 +5938,7 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 85,
+     "passages": 105,
      "readable": 18,
      "rights": [
       "public-domain",
@@ -6794,6 +6794,43 @@
     "en"
    ],
    "title": "Liturgiam authenticam"
+  },
+  {
+   "alternate_titles": [
+    "Notification Prot. n. 2671/98/L"
+   ],
+   "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-liturgical-notification",
+   "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/notificatio-de-occurrentia-memoriae-immaculati-cordis-1998/",
+   "editions": [
+    {
+     "date": "1999",
+     "file": "1999-1999-latin-notitiae-392-393.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [],
+     "year": 1999
+    },
+    {
+     "date": "2026-08-26",
+     "file": "2026-2026-latin-vatican-web-2026-08-26.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-vatican-web-2026-08-26",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998",
+   "languages": [
+    "la"
+   ],
+   "title": "Notificatio de occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus"
   },
   {
    "alternate_titles": [
@@ -8178,7 +8215,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "unresolved"
+     ],
      "year": 2012
     },
     {
@@ -8188,7 +8227,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "unresolved"
+     ],
      "year": 2016
     }
    ],
@@ -8562,7 +8603,7 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 0,
+     "passages": 14,
      "readable": 0,
      "rights": [
       "public-domain",
@@ -10095,7 +10136,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
-      "permission",
+      "restricted",
       "unresolved"
      ],
      "year": 2026

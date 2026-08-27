@@ -7,9 +7,9 @@
  * resolved repository data; it validates identity, coverage, choices, Compare
  * anchors, and legacy URL state without deriving a second liturgical answer.
  *
- * It is intentionally not loaded by either production page during the M1
- * candidate. That keeps the current routes byte-for-byte in control of their
- * deployed behavior while tests establish the fail-closed integration seam.
+ * Both production readers load this contract. Their controllers remain
+ * responsible for rendering and navigation, while this module supplies the
+ * shared fail-closed state and canonical URL vocabulary they enforce.
  * ======================================================================== */
 
 'use strict';
@@ -24,10 +24,11 @@
   const URL_SCHEMA = 'triptych-liturgy-url-state/v1';
   const ENTRANCES = Object.freeze(['day', 'propers']);
   const MODES = Object.freeze(['read', 'missal', 'study', 'compare']);
+  const DEFAULT_BIBLE_ID = 'douay-rheims';
   const STATE_FIELDS = Object.freeze([
     'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
     'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
-    'apparatus', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
+    'apparatus', 'form', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
     'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison'
   ]);
 
@@ -60,11 +61,11 @@
 
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
-    'ordinary-lang', 'rubrics', 'mass'
+    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
-    'cycle', 'alternative', 'translation-witness'
+    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -76,6 +77,10 @@
       hash: PROPERS_KEYS,
       query: Object.freeze(['data', 'missals'])
     })
+  });
+  const CANONICAL_ROUTES = Object.freeze({
+    day: Object.freeze({ canonical: 'day.html', legacy: Object.freeze(['day-reader.html']) }),
+    propers: Object.freeze({ canonical: 'index.html', legacy: Object.freeze(['propers-reader.html']) })
   });
 
   function has(object, key) {
@@ -94,6 +99,20 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return false;
     const stamp = Date.parse(value + 'T00:00:00Z');
     return !Number.isNaN(stamp) && new Date(stamp).toISOString().slice(0, 10) === value;
+  }
+
+  /** Replace only a known retained reader basename; preserve its directory. */
+  function canonicalRoute(entrance, pathname) {
+    if (ENTRANCES.indexOf(entrance) < 0) throw new Error('entrance must be day or propers');
+    const route = CANONICAL_ROUTES[entrance];
+    const path = String(pathname || '');
+    const slash = path.lastIndexOf('/');
+    const directory = slash >= 0 ? path.slice(0, slash + 1) : '';
+    const basename = slash >= 0 ? path.slice(slash + 1) : path;
+    if (basename === route.canonical || route.legacy.indexOf(basename) >= 0) {
+      return directory + route.canonical;
+    }
+    return path;
   }
 
   function issue(code, path, message, source) {
@@ -626,6 +645,9 @@
     if (has(value, 'cycle') && value.cycle !== null && !nonempty(value.cycle)) {
       errors.push(issue('cycle-id', 'cycle', 'cycle must be a stable code or explicit null'));
     }
+    if (has(value, 'form') && !nonempty(value.form)) {
+      errors.push(issue('form-id', 'form', 'form must be a stable nonempty id when supplied'));
+    }
     if (has(value, 'alternative') && value.alternative !== null) {
       assertIdentity(errors, value.alternative, 'alternative');
     } else if (has(value, 'alternative')) {
@@ -859,6 +881,16 @@
     return object(table) && has(table, id);
   }
 
+  /** Repository preference first, then stable identity order; never manifest order. */
+  function defaultBibleId(rows, preferred) {
+    const held = valuesOf(rows).filter(function (row) {
+      return object(row) && nonempty(row.id);
+    }).map(function (row) { return row.id; });
+    const declared = preferred || DEFAULT_BIBLE_ID;
+    if (held.indexOf(declared) >= 0) return declared;
+    return held.slice().sort()[0] || null;
+  }
+
   function normalizeLegacy(parsed, options) {
     const opts = options || {};
     const context = opts.context || {};
@@ -936,6 +968,11 @@
       inert: [],
       variants: {}
     };
+    const mode = validOrDefault('mode', function (value) {
+      return MODES.indexOf(value) >= 0;
+    }, false);
+    const location = validOrDefault('location', nonempty, false);
+    if (location !== null) state.semanticLocation = { eventId: location };
 
     if (parsed.entrance === 'day') {
       state.civilDate = validOrDefault('date', strictDate, true);
@@ -954,12 +991,32 @@
         return value === '0' || value === '1';
       }, false);
       state.apparatus = { why: why === '1', rubrics: rubrics !== '0' };
-      state.options = { ordinary: ordinary === '1', legitimate: {} };
+      const legacyMode = ordinary === '1' ? 'missal' : 'read';
+      if (mode !== null && (mode === 'read' || mode === 'missal') &&
+          has(parsed.recognized, 'ordinary') && mode !== legacyMode) {
+        errors.push(issue(
+          'conflicting-explicit-mode', 'mode',
+          'explicit mode and legacy ordinary state select different reader modes', 'url'
+        ));
+      }
+      state.requestedMode = mode === null ? legacyMode : mode;
+      state.options = {
+        ordinary: mode === 'read' ? false : (mode === 'missal' ? true : ordinary === '1'),
+        legitimate: {}
+      };
       const dayRows = valuesOf(context.dayReadableFormularies);
       const mass = validOrDefault('mass', function (id) {
         return dayRows.some(function (one) { return one.id === id; });
       }, false);
       if (mass) state.selectedReadableFormulary = { id: mass };
+      const form = validOrDefault('form', function (id) {
+        return mass && valuesOf((missalContext.formsByMass || {})[mass]).indexOf(id) >= 0;
+      }, false);
+      if (form !== null) state.form = form;
+      const translationWitness = validOrDefault('translation-witness', nonempty, false);
+      if (translationWitness !== null) {
+        state.languages.translationWitness = translationWitness;
+      }
 
       const groups = missalContext.variantGroups || {};
       for (const key of parsed.variantKeys || []) {
@@ -987,14 +1044,19 @@
       }, true);
       state.formulary = mass ? { id: mass, type: type } : null;
       state.civilDate = null;
+      const form = validOrDefault('form', function (id) {
+        return mass && valuesOf((missalContext.formsByMass || {})[mass]).indexOf(id) >= 0;
+      }, false);
       const cycle = validOrDefault('cycle', nonempty, false);
       const alternative = validOrDefault('alternative', nonempty, false);
       const translationWitness = validOrDefault('translation-witness', nonempty, false);
+      if (form !== null) state.form = form;
       if (cycle !== null) state.cycle = cycle;
       if (alternative !== null) state.alternative = { id: alternative };
       if (translationWitness !== null) {
         state.languages.translationWitness = translationWitness;
       }
+      state.requestedMode = mode === null ? 'read' : mode;
     }
 
     const validated = validateReaderState(state);
@@ -1015,21 +1077,34 @@
       pairs.push(['missal', state.edition.id]);
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
+      pairs.push(['mode', state.requestedMode || (state.options.ordinary ? 'missal' : 'read')]);
+      if (state.requestedMode && ['read', 'missal'].indexOf(state.requestedMode) < 0) {
+        pairs.push(['ordinary', state.options.ordinary ? '1' : '0']);
+      }
+      if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
       pairs.push(['why', state.apparatus.why ? '1' : '0']);
-      pairs.push(['ordinary', state.options.ordinary ? '1' : '0']);
       if (state.languages.ordinary) pairs.push(['ordinary-lang', state.languages.ordinary]);
       pairs.push(['rubrics', state.apparatus.rubrics ? '1' : '0']);
       if (state.selectedReadableFormulary) pairs.push(['mass', state.selectedReadableFormulary.id]);
+      if (state.form) pairs.push(['form', state.form]);
+      if (state.languages.translationWitness) {
+        pairs.push(['translation-witness', state.languages.translationWitness]);
+      }
       Object.keys(normalized.legacy.variants || {}).sort().forEach(function (key) {
         pairs.push([key, normalized.legacy.variants[key]]);
       });
       for (const row of normalized.legacy.inert || []) pairs.push([row.key, row.value]);
     } else {
       pairs.push(['missal', state.edition.id]);
-      pairs.push(['type', state.formulary.type]);
-      pairs.push(['mass', state.formulary.id]);
+      if (state.formulary) {
+        pairs.push(['type', state.formulary.type]);
+        pairs.push(['mass', state.formulary.id]);
+      }
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
+      pairs.push(['mode', state.requestedMode || 'read']);
+      if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
+      if (state.form) pairs.push(['form', state.form]);
       if (has(state, 'cycle') && state.cycle !== null) pairs.push(['cycle', state.cycle]);
       if (state.alternative) pairs.push(['alternative', state.alternative.id]);
       if (state.languages.translationWitness) {
@@ -1269,12 +1344,15 @@
     URL_SCHEMA: URL_SCHEMA,
     ENTRANCES: ENTRANCES,
     MODES: MODES,
+    DEFAULT_BIBLE_ID: DEFAULT_BIBLE_ID,
     STATE_FIELDS: STATE_FIELDS,
     COVERAGE_STATES: COVERAGE_STATES,
     COVERAGE_COMPLETENESS: COVERAGE_COMPLETENESS,
     COVERAGE_REASONS: COVERAGE_REASONS,
     URL_INVENTORY: URL_INVENTORY,
+    CANONICAL_ROUTES: CANONICAL_ROUTES,
     strictDate: strictDate,
+    canonicalRoute: canonicalRoute,
     coverage: coverage,
     unresolvedChoice: unresolvedChoice,
     resolveAuthorizedChoice: resolveAuthorizedChoice,
@@ -1287,6 +1365,7 @@
     validateReaderState: validateReaderState,
     parseLegacy: parseLegacy,
     safeRemembered: safeRemembered,
+    defaultBibleId: defaultBibleId,
     normalizeLegacy: normalizeLegacy,
     serializeLegacy: serializeLegacy,
     validateFixture: validateFixture

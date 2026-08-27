@@ -1,0 +1,412 @@
+schema = "triptych-latin-page-collation/v1"
+calendar = "roman-1962"
+language = "la"
+reviewed_on = "2026-08-26"
+authority = "Human page-image collation"
+target_artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+target_artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+verification_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+policy = "guidance/liturgical-text-publication-policy.md"
+scope = "Seventeen newly transcribed Roman Common and Saturday Blessed Virgin Mary chant bodies compared visually between the controlling 1962 CMAA facsimile and exact retained page images of the public-domain 1862 Pustet printing."
+method = "Read each target and verification locus on its exact page image. Transcribe the Pustet wording after only the controlled mechanical transformations below, hash both the live YAML text field and that transformed Pustet transcription, and record every remaining Unicode difference. A public-domain page does not authorize a non-exact 1962 target string."
+comparison_preimage = "UTF-8 fields joined by TAB in this order: mass, form, proper, course, cycle, decimal occurrence, target_text_sha256, verification_text_sha256, outcome; followed by LF."
+result = "1 collated-exact-after-mechanical-normalization with publication unresolved; 16 collated-non-exact and explicitly withheld; all 17 have empty serving surfaces."
+
+[[mechanical_transformations]]
+id = "strip-stress-accents"
+description = "Remove printed stress accents only where the underlying base-letter sequence is unchanged."
+
+[[mechanical_transformations]]
+id = "expand-print-ligatures"
+description = "Expand printed ae and oe ligature glyphs to their underlying ae or oe letter sequence; do not change oe to ae."
+
+[[mechanical_transformations]]
+id = "join-line-breaks"
+description = "Remove discretionary line-end hyphenation and join or normalize page line wrapping and whitespace to the YAML field representation."
+
+[[mechanical_transformations]]
+id = "map-liturgical-layout"
+description = "Represent printed V. versicles and seasonal Alleluia/rubric layout using the canonical body's punctuation and conditional notation without substituting letters or words."
+
+[[comparisons]]
+mass = "commune-virginum-4"
+form = ""
+proper = "Alleluia"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-virginum-p-34"
+target_locator = "1962 printed p. [34], chant no. 4425; artifact PDF p. 842"
+target_text_sha256 = "7ff557ab764b5f30d8fc4b3e78ce694986e2ede51737aa6f8ece4c3b08e0da0f"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-701-94a5fc0c"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-701"]
+verification_locator = "Pustet printed p. [32]; Internet Archive leaf n701"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Alleluja, alleluja. V. Haec est virgo sapiens, et una de numero prudentum. Alleluja."
+verification_text_sha256 = "f902d71621ca3404ea182e6cc775a28fdc09adc0bfe5da58d7670c33a89156f7"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "4afb12ef713601891ddbab83f5eb8b7b899444b3c89e087ca60e07f2d4664480"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-virginum-4"
+form = ""
+proper = "Alleluia (Tempore paschali)"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-virginum-p-34"
+target_locator = "1962 printed p. [34], chant no. 4427; artifact PDF p. 842"
+target_text_sha256 = "6cf265b1c393bb123cf07ae980c56b4abd475076e8d9fe435f6e819b39d3277a"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-701-94a5fc0c"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-701"]
+verification_locator = "Pustet printed p. [32]; Internet Archive leaf n701"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Alleluja, alleluja. V. Haec est virgo sapiens, et una de numero prudentum. Alleluja. V. O quam pulchra est casta generatio cum claritate! Alleluja."
+verification_text_sha256 = "8f39121c0f36d45191683a235d0054895cdb9c9a5964917ca072916b8cc05bc4"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "b415760efcec8b6a9957ca4603735392c8130b9c4069ca8aecb651e4b41ae4f8"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Gradual"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-dedicationis-p-39"
+target_locator = "1962 printed p. [39], chant no. 4464; artifact PDF p. 847"
+target_text_sha256 = "7ae3d255917a093daa92a2e3e1b27e227a47e5d54f85a6a47e7b5b5d4396de41"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-706-b5705840"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-706"]
+verification_locator = "Pustet printed p. [37]; Internet Archive leaf n706"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Locus iste a Deo factus est, inaestimabile sacramentum,\nirreprehensibilis est. V. Deus, cui adstat Angelorum chorus, exaudi\npreces servorum tuorum.\n"
+verification_text_sha256 = "2df699bfa5740a5ce7cf8968bfe82ef40b39f974097231a2be6c995dece928f1"
+differences = ["Pustet adstat contains d; target astat omits it."]
+outcome = "collated-non-exact"
+comparison_sha256 = "045e8cb14ad078660ea87675c08b18428622a8ef2414be7a1726dac173035f6f"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-dedicationis-ecclesiae"
+form = ""
+proper = "Alleluia (Tempore paschali)"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-dedicationis-p-39"
+target_locator = "1962 printed p. [39], chant no. 4467; artifact PDF p. 847"
+target_text_sha256 = "5ef24d03c642b1cd15fa9747ad0075cd7030305f06c4e876897d24c6836e4ffb"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-706-b5705840"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-706"]
+verification_locator = "Pustet printed p. [37]; Internet Archive leaf n706"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Alleluja, alleluja. V. Adorabo ad templum sanctum tuum: et confitebor nomini tuo. Alleluja. V. Bene fundata est domus Domini supra firmam petram. Alleluja."
+verification_text_sha256 = "d264650f763d2d74ef4afdb18bebd917ac2a07907a02952dc2ecd7cdfebbb681"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "7ef60b2d98c6fa3e1f5520ab10400d9a51a1fb58d7893deeca68b806c6d5e74c"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-41"
+target_locator = "1962 printed p. [41], chant no. 4476; artifact PDF p. 849"
+target_text_sha256 = "376fee906f7664dd8cd9d22b939bed6134e4a9c128004ddf3f20e524b162e755"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-723-c1b1231a"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722", "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"]
+verification_locator = "Pustet printed pp. [53]-[54]; Internet Archive leaves n722-n723"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Salve, sancta parens, enixa puerpera Regem: qui coelum terramque\nregit in saecula saeculorum. (T. P. Alleluja, alleluja.)\n"
+verification_text_sha256 = "571f2dac761909542eed206536e93d7487b986b38926bfa977f40273f5bdf2f4"
+differences = ["Pustet coelum retains oe; target caelum uses ae.", "Pustet Alleluja uses j; target Alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "61092f6a154a1e95e59f020647bd14f7e5dccb4fe6c31e8390ebe9f6f6d49b14"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Gradual"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-41"
+target_locator = "1962 printed p. [41], chant no. 4479; artifact PDF p. 849"
+target_text_sha256 = "c85d0caa27c76deefc3723a38ca022507769c187824fc7db3dd31156c2445c60"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-724-b9744aa4"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722", "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"]
+verification_locator = "Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Benedicta et venerabilis es, Virgo Maria: quae sine tactu pudoris\ninventa es mater Salvatoris. V. Virgo Dei genitrix, quem totus non\ncapit orbis, in tua se clausit viscera factus homo.\n"
+verification_text_sha256 = "3bfc558fc013dcf3089cfa65f7a355946eadb37f48cc2e915b073a00288436d3"
+differences = ["Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."]
+outcome = "collated-non-exact"
+comparison_sha256 = "0e65220c8d4a3b95d6b7ceb85042375c7b2ce2e008ba677c1057582fa71bf7c0"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Alleluia"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-41"
+target_locator = "1962 printed p. [41], chant no. 4480; artifact PDF p. 849"
+target_text_sha256 = "8d0f55c250e0434c6aaa2bdb15e98c339f7723f3997a56b35b52573991844cf1"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-721-7778c887", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-724-b9744aa4"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-721", "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"]
+verification_locator = "Pustet printed pp. [52] and [55]; Internet Archive leaves n721 and n724"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text = "Alleluja, alleluja. V. Post partum, Virgo, inviolata permansisti: Dei genitrix, intercede pro nobis. Alleluja."
+verification_text_sha256 = "82431707ecb6d54dbd085581e405eb77597ea5a02e08d1ae39e4e5718a5cb787"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i.", "Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."]
+outcome = "collated-non-exact"
+comparison_sha256 = "0b022140fd3540a89c7480a5fd673614551540f1cb4329331f2b1ca62b0b0daf"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Tract"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-42"
+target_locator = "1962 printed p. [42], chant no. 4482; artifact PDF p. 850"
+target_text_sha256 = "f995601b4da2150a387f571a1f5050098ac4dee94e92a36be440057fa7d1ded7"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-723-c1b1231a"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"]
+verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "943f33494eff5256e4d6f17e43fad2c4fcce7b197668641f2cbe6d399eef0a4b"
+differences = ["Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."]
+outcome = "collated-non-exact"
+comparison_sha256 = "32c6d1473ecb49d89d61443b04fb4fa46bfca843a5ec150db0f113181ea4a650"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Alleluia (Tempore paschali)"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-42"
+target_locator = "1962 printed p. [42], chant no. 4483; artifact PDF p. 850"
+target_text_sha256 = "43c97f9fd0c1807141866186ba3401e10aaf8cf2c5e1266d446f89b7eb4d275b"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-723-c1b1231a"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"]
+verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "1091183077373682321109ad2e3c7df0d948346b257b13456518330ea145a34a"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i.", "Pustet Jesse uses J; target Iesse uses I.", "Pustet omits the target comma after Ave."]
+outcome = "collated-non-exact"
+comparison_sha256 = "0857899123a827459498211973bfc80de1471407bee88fc0f64219d08e10ec4b"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "commune-festorum-bmv"
+form = ""
+proper = "Communion"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.commune-bmv-p-42"
+target_locator = "1962 printed p. [42], chant no. 4487; artifact PDF p. 850"
+target_text_sha256 = "fe1fa6143557e9615918ca09ea6921bf6f42903e1a647ed5066477019c5ff82c"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-724-b9744aa4"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722", "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"]
+verification_locator = "Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "719e6a2c10c9d74b641b070f610b5058755961640c204c594ab2e5edba4c2862"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "9cce6676690aae7c3931b03496ee01c46154bc54d8dde05b5a79d6701a939c15"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-2"
+form = ""
+proper = "Offertory"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-45"
+target_locator = "1962 printed p. [45], chant no. 4506; artifact PDF p. 853"
+target_text_sha256 = "878e82b79b6e40334e6d491a5f41f76a563a4aeb07ee90dd8e965bde9b3b12f0"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"]
+verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "03fd890f8f6c1d6b6602ad7bbe3b70c25318d577ddf161e008e40991b6b01786"
+differences = ["Pustet justitiae uses j; target iustitiae uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "3f28b2bad1a488e76f1192e655fb37711f233fcd9167d75e2b949063f8668897"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-3"
+form = ""
+proper = "Alleluia"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-46"
+target_locator = "1962 printed p. [46], chant no. 4514; artifact PDF p. 854"
+target_text_sha256 = "49dc2daa979296444ae52090673591d5c1de2e65ab81f121ee70def60bf96c4a"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"]
+verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "9387eec57ca530ffa7e2cb0fdf7aaead721015a8ad37779282fdc8d789782ea2"
+differences = ["Pustet Alleluja uses j; target Alleluia uses i.", "Pustet Jesse uses J; target Iesse uses I."]
+outcome = "collated-non-exact"
+comparison_sha256 = "1e2fda106f1586e2c17c56778514c0b7eb5f1512326feb989195935ed4c65c31"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-4"
+form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-46"
+target_locator = "1962 printed p. [46], chant no. 4521; artifact PDF p. 854"
+target_text_sha256 = "eeecebef9dd444b54a3fe45f5d00a304f7cf7cef59c4522c7587d678d289bea1"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-723-c1b1231a"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"]
+verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "f793fa5714a19fd4a55109d3b3ca26dddd74e2ea2f449352c53e3c42a2db0819"
+differences = ["Pustet coelum retains oe; target caelum uses ae.", "Pustet alleluja uses j; target alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "fc51cf34ca0842a515a7da80890d100b91666c31d10e50647e25ad4da55b85d3"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-4"
+form = ""
+proper = "Offertory"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-47"
+target_locator = "1962 printed p. [47], chant no. 4526; artifact PDF p. 855"
+target_text_sha256 = "5632ca76d59acdf5f953057a63ac9ff241e1e844dbf59a5d8d2ef0c308edd169"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-724-b9744aa4"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"]
+verification_locator = "Pustet printed p. [55]; Internet Archive leaf n724"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "2a6fd3d174f4309bcdcf303f5f8d423d8d6a4cfd70f8ff7dc9dbdbb59a6aec6e"
+differences = ["Pustet alleluja uses j; target alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "9e64a97e7d2887271b377c56302357272c23136090a977bd7544978c026f224f"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-4"
+form = ""
+proper = "Communion"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-47"
+target_locator = "1962 printed p. [47], chant no. 4528; artifact PDF p. 855"
+target_text_sha256 = "dbe3eb2664b957d8ab91e1480cc7a4231ce59e55e8fb063c1cfaec2ad9fd334d"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-724-b9744aa4"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"]
+verification_locator = "Pustet printed p. [55]; Internet Archive leaf n724"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "932c2a263392ce16952a3698cf16896b310c3068eb825f66622f3ff030cf6b20"
+differences = ["Pustet alleluja uses j; target alleluia uses i."]
+outcome = "collated-non-exact"
+comparison_sha256 = "5cf48e0a2d5f980f0e51e33dc101afbcf59c4ebe9d419bc0929e07b2712eaaec"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-2"
+form = ""
+proper = "Communion"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-45"
+target_locator = "1962 printed p. [45], chant no. 4508; artifact PDF p. 853"
+target_text_sha256 = "e0b41d65ea8e97fc21d3f9b40f4d8e2d7d209819022cd99ee5bdddcdd90fb056"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"]
+verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks"]
+verification_text = "Beata viscera Mariae Virginis, quae portaverunt aeterni Patris Filium."
+verification_text_sha256 = "e0b41d65ea8e97fc21d3f9b40f4d8e2d7d209819022cd99ee5bdddcdd90fb056"
+differences = []
+outcome = "collated-exact-after-mechanical-normalization"
+comparison_sha256 = "1a5e6bab6b438e81326bf547aec657b1202ce3e5a4ca5fa4326b44565d7a24c0"
+provenance_disposition = "collated"
+publication_disposition = "unresolved"
+publication_basis = "unresolved"
+note = "Exact comparison alone does not change this freeze's sidecar decision or serving surfaces."
+
+[[comparisons]]
+mass = "missa-de-s-maria-in-sabbato-3"
+form = ""
+proper = "Introit"
+course = ""
+cycle = ""
+occurrence = 1
+target_passage_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.maria-in-sabbato-p-45"
+target_locator = "1962 printed p. [45], chant no. 4510; artifact PDF p. 853"
+target_text_sha256 = "068c500553e972c24432b6d824efb6c3b3efc81fbddd0d2cc142549ae998a1ba"
+verification_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-722-ca6809d2"]
+verification_passage_ids = ["passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"]
+verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
+transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
+verification_text_sha256 = "89ecb12d33b5a2559af084c8773486b66c0e88fe950c33cb8dfd63435acd0f50"
+differences = ["Pustet coelum retains oe; target caelum uses ae."]
+outcome = "collated-non-exact"
+comparison_sha256 = "a6530ddf42123fdd56f97dcdf9b1bc585785727f24ade71598466a6d8b9a9461"
+provenance_disposition = "collated"
+publication_disposition = "withheld"
+publication_basis = "non-exact-historical-witness"

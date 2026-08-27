@@ -47,6 +47,23 @@ blocking item and is a fact about this repository's tooling rather than about th
 availability of any book.
 """
 
+current_state = """
+UPDATED 2026-08-26. A `roman-pre-1955/rubrics.yaml` now ships, and its own
+advisory calls it a LINEARIZATION and not the rule itself. It reduces criteria
+(a)-(d) to numbered rows, carries criterion (e) only through bounded overrides,
+and records the cases that reduction cannot settle. It is therefore a useful
+finding aid and makes the recension selectable, but it does not close the schema
+finding below or make a source-shaped pre-1955 precedence implementation
+writable.
+
+The two headline counts preserve that distinction:
+`rubrics_sources_this_record_makes_writable = 0` remains the answer for a
+faithful expression of the five criteria, while
+`linearized_finding_aids_shipped = 1` records the bounded approximation that is
+actually tracked. Treating either number as the other would turn explicit
+uncertainty into a false completion claim.
+"""
+
 evidence = """
 Three evidence levels, and no row claims one it did not reach. The classes are
 the ones `missal-acquisition-audit-v1.toml` fixed, used identically here.
@@ -754,6 +771,7 @@ repositories_searched = 5
 repositories_actually_reached = 4
 books_still_wanted = 3
 rubrics_sources_this_record_makes_writable = 0
+linearized_finding_aids_shipped = 1
 counts_note = """
 `rubrics_sources_this_record_makes_writable = 0` is the headline and is written
 as a number so that it cannot be read past. IT DID NOT MOVE WHEN THE SEARCH
@@ -764,6 +782,11 @@ promulgated it, in the public domain and publishable. The count is still zero,
 because the rule is five ordered criteria and `tools/calendar-rubrics` can only
 express a table of numbered rows. Sourcing is finished; the schema is the
 blocker. See `[[findings]]` `the-rule-is-criteria-not-rows`.
+
+`linearized_finding_aids_shipped = 1` records the companion that now consumes
+that source through a disclosed numbered approximation. It did not move the
+faithful-source count above, because the companion itself states where the
+linearization cannot carry the source's semantics.
 
 `repositories_actually_reached = 4` of 5 is the other number to read. Google
 Books was quota-blocked on every query including a trivial one, so five prepared

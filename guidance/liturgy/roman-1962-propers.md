@@ -94,6 +94,34 @@ Visually collate every published Latin form, rubric, citation, and boundary agai
 
 Study every appointed text in full and read each direct biblical passage in its complete literary context. Every appointed element must contribute to the guide; add, substitute, or locally define cues for Tracts, Sequences, ritual prayers, blessings, and other actual texts rather than forcing a ten-row Sunday template.
 
+### Finding-aid coverage boundary
+
+`src/sources/calendars/roman-1962/propers.yaml` is a historical finding aid,
+not a transcription of the whole Missal and not the source of record for its
+words. The derived `tools/tpt mass-propers census --json` report distinguishes
+rows represented directly, placeholders, references, and the occurrences those
+references resolve. Those dimensions describe storage and resolution only. A
+represented row does not prove a complete formulary, and no sum of represented
+rows supplies the target edition's expected universe.
+
+The edition-identified evidence, typed open limitations, rights boundary, and
+remaining source requirements live in
+`src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml`. Existing
+page-image work is bounded: the seasonal record collates the citation loci it
+names, the sanctoral record recovers the Common pointers it names, and the
+Ordinary record carries an 1861 hand-missal witness with separately sourced
+1962 slot positions. None is a whole-book or element-by-element 1962
+collation. Never fill the difference by inference or generated text.
+
+Apply the current publication policy separately from textual coverage. The
+target facsimile is a collation witness, not a general publication licence;
+preexisting wording needs its recorded public-domain antecedent, and the 1955
+Holy Week, 1960 revisions, post-1920 additions, and 1962 front matter need
+their own lawful basis. ICEL's postconciliar permission and exemplar analysis
+does not supply English for this historical Missal. Historical English remains
+attached to the edition that actually prints it and never becomes an approved
+1962 liturgical translation by being aligned to a slot.
+
 For every new or substantially revised guide, maintain a passage-by-passage reception matrix in `research/scope.md`. Give each distinct appointed passage or material scriptural adaptation one row, name every proper that uses it, and record: direct ancient exegesis checked; medieval, Doctoral, or later saintly reception checked; works, loci, languages, and corpora searched; how any retained witness is used; and material negative results. Search direct commentaries, homilies, and psalm expositions before broader doctrinal or liturgical reuse. Sample both Greek and Latin traditions where relevant and available, then medieval Doctors and later canonized exegetes or spiritual writers. A catena may map leads, but verify the underlying work and locus before publication.
 
 “Broad” means that every appointed passage receives a documented search across the major reasonably accessible patristic and saintly corpora relevant to it; “deep” means that the guide explains and, where useful, compares the reasoning of checked witnesses rather than stacking names or aphorisms. Retain at least one direct witness for a passage when one is located and more than one where they materially differ or develop the reading. When no responsible direct witness is found, say which corpora were checked and use any illuminating reuse only under that label. Never claim to have found all witnesses everywhere; state the bounded search and preserve a discoverable omission for later research.

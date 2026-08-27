@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-scandata-e4529c25"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "scan-pagination-metadata"
+media_type = "application/xml; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This is machine-produced factual leaf, crop, and pagination metadata for a faithful scan of an 1862 public-domain printing. Facts and machine-generated measurements add no human authorship. The decision does not rely on a host rights label."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ_scandata.xml"
+provenance = "Exact Internet Archive scandata XML for item bub_gb_E7sPAAAAIAAJ. Fetched whole over HTTPS on 2026-08-26, independently re-fetched from the same URL, hashed, and byte-compared; the responses were identical. Retained without normalization or any model involvement."
+retrieved = "2026-08-26"
+sha256 = "e4529c25b01473f9408d3eb41b49aec8548ef2426abff57e20f185bd6e65a71f"
+byte_size = 298248
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-scandata-e4529c25/1862-scandata.xml"
+encoding = "utf-8"
+indexable = false
+notes = "Whole 922-leaf scan metadata. It independently records the exact source dimensions for the retained leaves. Printed bracketed Common page numbers were read from the page images themselves because the restarted page sequence is not labeled in this XML."

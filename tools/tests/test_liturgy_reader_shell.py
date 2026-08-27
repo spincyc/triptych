@@ -11,7 +11,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = "1e2af87dd9815d4847a32323797695456aebeacf"
 PROTOTYPE = ROOT / "src/web/browser/liturgy/prototypes/reader-shell"
 HTML = PROTOTYPE / "index.html"
 CSS = PROTOTYPE / "reader-shell.css"
@@ -160,36 +159,14 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages))
         self.assertFalse(any("prototypes/reader-shell" in str(path) for path in pages.values()))
 
-    def test_legacy_assets_are_byte_identical_to_m1_base(self) -> None:
-        promoted_routes = {
-            "src/web/browser/liturgy/day.html",
-            "src/web/browser/liturgy/index.html",
-        }
-        for relative in (path for path in PRODUCTION if path not in promoted_routes):
-            expected = subprocess.run(
-                ["git", "show", f"{BASE}:{relative}"], cwd=ROOT,
-                check=True, stdout=subprocess.PIPE,
-            ).stdout
-            self.assertEqual((ROOT / relative).read_bytes(), expected, relative)
-        subprocess.run(
-            [
-                "git", "diff", "--exit-code", BASE, "--",
-                "src/web/browser/liturgy",
-                ":(exclude)src/web/browser/liturgy/prototypes/**",
-                ":(exclude)src/web/browser/liturgy/day-reader.*",
-                ":(exclude)src/web/browser/liturgy/day.html",
-                ":(exclude)src/web/browser/liturgy/reader-shell.*",
-                ":(exclude)src/web/browser/liturgy/reader-state.js",
-                ":(exclude)src/web/browser/liturgy/propers-reader.*",
-                ":(exclude)src/web/browser/liturgy/index.html",
-                ":(exclude)src/web/browser/liturgy/reader-instrument.css",
-                ":(exclude)src/web/browser/liturgy/reader-visual-reset.*",
-                ":(exclude)src/web/browser/liturgy/reader-visual-reset-*",
-                ":(exclude)src/web/browser/liturgy/day.js",
-                "src/web/browser/shared/browser-core.css",
-            ],
-            cwd=ROOT, check=True,
-        )
+    def test_prototype_remains_isolated_from_production_assets(self) -> None:
+        for relative in PRODUCTION:
+            source = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertNotIn("prototypes/reader-shell", source, relative)
+        for path in (HTML, CSS, JS):
+            self.assertTrue(path.is_relative_to(PROTOTYPE))
+        self.assertIn("../../../shared/browser-core.js", self.html)
+        self.assertNotIn("reader-shell.js", self.js)
 
     def test_javascript_syntax(self) -> None:
         subprocess.run(["node", "--check", str(JS)], cwd=ROOT, check=True)

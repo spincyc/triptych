@@ -80,7 +80,7 @@ source_ids = [
 
 [the_icel_translation]
 question = "May the approved English be reproduced?"
-answer = "Not without a licence, which this project does not have."
+answer = "Only on a surface covered by an applicable permission; this project has none for its corpus, public Git, command-line, or download surfaces."
 reasoning = """
 The English of the Roman Missal, third edition, is the work of the International
 Commission on English in the Liturgy, a mixed commission of eleven bishops'
@@ -92,23 +92,32 @@ liturgical Commissions", and n. 118 provides for a licensing agreement where the
 copyright is common to several conferences, which is exactly the case of the
 English.
 
-ICEL's own published terms say the rest. The acknowledgement it requires is
-"The English translation of The Roman Missal (c) 2010, International Commission
-on English in the Liturgy Corporation. All rights reserved." Its texts are "made
-available to publishers without distinction, on a non-exclusive basis", and "all
-requests for permission should be directed to the ICEL Secretariat". Any
-publication produced for sale is subject to a royalty or flat fee, and the
-classes named include electronic media; material not used during a celebration --
-textbooks, commentaries, religious education material, private prayerbooks --
-"may be assessed a royalty or flat fee".
+ICEL's own published terms say the rest. Its current acknowledgement for
+excerpts is "Excerpts from the English translation of The Roman Missal © 2010,
+International Commission on English in the Liturgy Corporation. All rights
+reserved." The acknowledgement is a condition of an applicable permission, not
+permission by itself. Its texts are "made available to publishers without
+distinction, on a non-exclusive basis", and "all requests for permission should
+be directed to the ICEL Secretariat". Any publication produced for sale is
+subject to a royalty or flat fee, and the classes named include electronic
+media; material not used during a celebration -- textbooks, commentaries,
+religious education material, private prayerbooks -- "may be assessed a royalty
+or flat fee".
 
-There is exactly one royalty-free class, and a corpus like this one is not in
-it. It covers reprinting "in a publication for use at a specific Mass or
-celebration of an individual congregation or institution", on four conditions:
-not produced by a publishing firm, not sold, carrying the notice, and following
-the official editions exactly. A permanently published website of the whole
-temporale fails the first condition on its face and is not "for use at a
-specific Mass" at all.
+The royalties section names a no-royalty class for reprinting "in a publication
+for use at a specific Mass or celebration of an individual congregation or
+institution", on four conditions: not produced by a publishing firm, not sold,
+carrying the notice, and following the official editions exactly. A whole
+temporale corpus is not that one-off publication.
+
+A separate Global Computer Networks clause conditionally permits exact,
+approved, recognised, and promulgated ICEL text on a qualifying non-commercial
+live Internet site without case-by-case written or oral permission. Its six
+conditions include display-boundary acknowledgement and expressly withhold a
+licence to publish the texts in any other form. It therefore does not clear this
+repository's source corpus, public Git history, command-line responses, or
+downloadable data. The current tree quarantines the protected payloads and does
+not rely on that clause for an assembled display.
 """
 imprimatur_does_not_supply_it = """
 An imprimatur is an ordinary's judgement under canon law that a book is free of
@@ -120,6 +129,7 @@ found here disturbs it.
 """
 source_ids = [
   "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties",
+  "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks",
   "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.what-is-icel-html",
 ]
 
@@ -169,21 +179,29 @@ property that made it unusable as a study text and provoked its replacement.
 """
 
 [the_ellc_grant]
-question = "The project already publishes nine texts under a free grant. Does that grant reach the orations?"
-answer = "No. It is not close, and its bound is explicit."
+question = "Does the ELLC free-use grant reach the orations or authorize the project's current assembled corpus?"
+answer = "No. Its subject bound is explicit, and the current tree quarantines the formerly mapped payloads."
 reasoning = """
 The grant is the English Language Liturgical Consultation's, over Praying
 Together (1998): "The texts in Praying Together may be used freely and without
 the need for prior permission. The liturgical text(s) should be properly
-acknowledged." This repository relies on it, correctly, and carries the
-acknowledgement it requires wherever the texts are served.
+acknowledged." This records the grant and its condition; the current repository
+does not rely on it to publish those words in its assembled data or public Git
+tree. The formerly mapped payloads are quarantined, so no acknowledgement is
+claimed to travel with a current display.
 
 Its scope is the ecumenical common texts and nothing else: the Lord's Prayer,
 Kyrie eleison, Gloria in excelsis, the Nicene and Apostles' Creeds, the Sursum
 corda, the Sanctus and Benedictus, the Agnus Dei, the Gloria Patri, the Te Deum
-and the three gospel canticles. Nine of them are used here, in the Order of Mass
-inventory. Every one is an invariable text of the Ordinary. Not one is a proper,
+and the three gospel canticles. Earlier source work mapped nine of them to the
+Order of Mass; none is currently served from that mapping. Every member of the
+grant's subject set is an invariable text of the Ordinary. Not one is a proper,
 and no oration of any Sunday or feast is within a hundred miles of the grant.
+
+Any future source-study use would have to remain within that exact subject
+bound, preserve the printed sense lines, and carry the required acknowledgement
+at the point of use. This record does not authorize restoration to assembled
+browser, command-line, download, or public-Git surfaces.
 
 The Consultation is also not a Catholic body and its texts are not the approved
 English of the Roman Rite. Where the two can be compared the difference is

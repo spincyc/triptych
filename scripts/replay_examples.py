@@ -102,11 +102,25 @@ PREPARE: dict[str, tuple[object, ...]] = {
         "tools/calendar-rubrics structure --out build/example-web",
     ),
     "citations": (("copy", "src/sources/calendars", "build/example-cal"),),
+    # Rebuilding the real ledger needs the table's reviewed identity decisions.
+    # Seed the untracked target with that review before the example derives its
+    # groups; an empty target can only rediscover the machine edges and must
+    # correctly refuse every naming conflict that requires human judgment.
+    "harvest": (
+        ("mkdir", "build/example-harvest"),
+        (
+            "copy-file",
+            "src/sources/commentary/work-aliases.yaml",
+            "build/example-harvest/aliases.yaml",
+        ),
+    ),
     "render-sanctuary-dictionary": (("mkdir", "build/example-empty-objects"),),
     # The capture records the second run, which is the one that reports
     # `unchanged`; a first render into an empty tree writes instead.
     "typeset-bible": (
         "tools/typeset-bible render --bible clementine-vulgate --out build/example-typeset",
+        "tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims "
+        "--out build/example-typeset",
     ),
 }
 
@@ -193,99 +207,9 @@ VOLATILE: dict[str, dict[int, tuple[re.Pattern[str], str]]] = {
 # moved, and `scripts/replay_examples.py --recapture --tool <id>` is how one
 # leaves.
 #
-# Nothing here was recaptured wholesale on the way in, deliberately. Three of
-# these divergences are not stale prose but live defects the transcript is
-# reporting honestly — the tracked king-james-version index is stale, harvest's
-# alias rebuild now refuses on a naming conflict, and typeset-bible writes a
-# volume under a different name than it did — and rewriting the transcript
-# would have enshrined each one as expected output.
-STALE: dict[str, str] = {
-    "tools/calendar-days check":
-        "2026-07-31: roman-1962 gained a mass; 12667 placements recorded, 12769 now",
-    "tools/calendar-days coverage --calendar roman-1962 --first 2026 --last 2026":
-        "2026-07-31: 459 masses and 454 reachable recorded; 462 and 455 now. The two new masses are the Commune Sanctorum's, which no date reaches and which are therefore correctly unreachable",
-    "tools/check-calendar-masses check --calendar roman-1962":
-        "2026-07-31: 459 masses over 1465 propers recorded; 462 over 1472 now",
-    "tools/check-calendar-masses check --json":
-        "2026-08-22: the verb refuses where the transcript shows a report, because "
-        "postconciliar's Ascension vigil cites Psalm 67:33 and the hebrew Psalm 67 "
-        "ends at verse 8. A repository defect the transcript reports honestly, so "
-        "recapturing would record the refusal as the example; correcting the citation "
-        "is the fix",
-    "tools/citations encode --root build/example-cal":
-        "2026-07-31: roman-1962 propers grew; 1108 already-encoded recorded, 1151 now",
-    "tools/citations check":
-        "2026-07-31: the transcript ends claiming 25 further lines; the run prints 26",
-    "tools/citations check --json":
-        "2026-08-22: refuses on the same out-of-range Psalm 67:33 citation as "
-        "`check-calendar-masses check --json`, and waits on the same fix",
-    "tools/commentary-work-index discover --passage 'Psalm 24:1-3'"
-    " --numbering vulgate --max-results 2 --json":
-        "2026-07-31: the payload grew; the line was cut at +401 chars, +499 now",
-    "tools/commentary-work-index discover --passage 'Joel 3:1-5' --max-results 3":
-        "2026-07-31: the refusal shortened; the line was cut at +130 chars, +128 now",
-    "tools/harvest propers --top 3":
-        "2026-07-31: the ledger grew; 490 passages over 6 runs recorded, 524 over 9 now",
-    "tools/harvest propers --top 2 --format json":
-        "2026-07-31: the ledger grew; 490 passages over 6 runs recorded, 524 over 9 now",
-    "tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml"
-    " --limit 3":
-        "2026-07-31: the corpus is covered; 3 passages below 3 runs recorded, 0 now, "
-        "so the rows the transcript shows are no longer printed at all",
-    "tools/harvest plan --corpus src/sources/commentary/mass-commentary-corpus.yaml"
-    " --limit 2 --by-chapter --format json":
-        "2026-07-31: the payload shrank; the line was cut at +328 chars, +261 now",
-    "tools/harvest ask --corpus src/sources/commentary/mass-commentary-corpus.yaml"
-    " --by-chapter --limit 3 --dry-run":
-        "2026-07-31: nothing is left to ask about, so the dry run refuses where the "
-        "transcript shows the prompt it would send",
-    "tools/harvest aliases":
-        "2026-07-31: 300 derived groups over 10 reviewed recorded; 517 over 31 now",
-    "tools/harvest aliases --rebuild --alias-table build/example-harvest/aliases.yaml"
-    " --audited-on 2026-07-31":
-        "2026-07-31: the rebuild now refuses — Peter Lombard's canonical title names "
-        "Psalms while one of its own names names Colossians. A live naming conflict, "
-        "not a stale count; recapturing would record the refusal as the example",
-    "tools/harvest promote --audited-on 2026-07-31 --dry-run"
-    " --index src/sources/commentary/passage-commentary-index.yaml":
-        "2026-07-31: 341 distinct works recorded, 556 now, and the keys reordered",
-    "tools/harvest promote --audited-on 2026-07-31 --index build/example-discovery.yaml":
-        "2026-07-31: 341 distinct works recorded, 556 now, and the keys reordered",
-    "tools/index-bible check --bible douay-rheims":
-        "2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them",
-    "tools/index-bible check --bible king-james-version --verbose":
-        "2026-07-31: the tracked king-james-version index is stale, so the verb refuses "
-        "where the transcript shows a report. A repository defect the transcript is "
-        "reporting honestly; `index-bible build --bible king-james-version` is the fix",
-    "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles":
-        "2026-07-31: 1601 passages recorded, 1605 now, with the resolved counts behind them",
-    "tools/mass-propers list --calendar roman-1962":
-        "2026-07-31: the calendar gained masses; 459 recorded, 462 now, the last two "
-        "being the Commune Sanctorum's first entries",
-    "tools/public-alpha prepare":
-        "2026-07-31: the candidate inventory grew; 2257 further lines recorded, 2305 now",
-    "tools/release-bindings status":
-        "2026-07-31: captured against a tree carrying 19 stale bindings; this tree is "
-        "exact, so the verb prints one line where the transcript shows twenty",
-    "tools/release-bindings status --help":
-        "2026-07-31: the tool's own epilog grew; 11 further lines recorded, 16 now",
-    "tools/source-family-migration check":
-        "2026-07-31: the library gained a family; 362 recorded, 363 now",
-    "tools/source-family-migration --root . check":
-        "2026-07-31: the library gained a family; 362 recorded, 363 now",
-    "tools/source-library validate":
-        "2026-07-31: the library grew; artifact=1391 passage=1227 work=466 recorded, "
-        "1392, 1231 and 467 now",
-    "tools/source-library validate --help":
-        "2026-07-31: the tool's own epilog grew; 11 further lines recorded, 12 now",
-    "tools/typeset-bible check --volume narrative-spine-landmarks-king-james-version"
-    " --verbose":
-        "2026-07-31: the refused-reading line shortened; cut at +31 chars, +27 now",
-    "tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims"
-    " --out build/example-typeset":
-        "2026-07-31: the volume is written under its own name now; the transcript "
-        "records a narrative-spine-overview path. A behaviour change, not a count",
-}
+# This table is empty after the complete-Missal recovery: the stale projections,
+# alias review, and changed tool behavior were all reconciled before recapture.
+STALE: dict[str, str] = {}
 
 
 @dataclass(frozen=True)
@@ -498,6 +422,8 @@ def prepare(tool: str) -> None:
     for step in PREPARE.get(tool, ()):
         if isinstance(step, tuple) and step[0] == "copy":
             shutil.copytree(ROOT / step[1], ROOT / step[2])
+        elif isinstance(step, tuple) and step[0] == "copy-file":
+            shutil.copy2(ROOT / step[1], ROOT / step[2])
         elif isinstance(step, tuple) and step[0] == "mkdir":
             (ROOT / step[1]).mkdir(parents=True, exist_ok=True)
         else:

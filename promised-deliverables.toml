@@ -596,12 +596,14 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "durable-handoff-closeout"
-  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP are tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved."
+  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP were tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
   status = "pass"
   evidence = [
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
     "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/MANIFEST.sha256",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip",
+    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/REVIEW-ROUND-1-ACCEPTANCE.md",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/test_liturgical_rights_surfaces.py",
   ]
 
 [[deliverables]]
@@ -644,13 +646,18 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "complete-measured-evidence-and-handoff"
-  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP."
+  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
     "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/capture-metadata.json",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/BEFORE-AFTER.md",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/MEASUREMENTS.md",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/baseline-corrected-measurements.json",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/browser-results.json",
+    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/round1-shell-regression-matrix.png",
+    "tools/tests/test_liturgical_rights_surfaces.py",
   ]
 
   [[deliverables.requirements]]
@@ -1488,4 +1495,93 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+  ]
+
+[[deliverables]]
+id = "complete-missal-remediation-2026-08-26"
+owner = "PROJECT-WORK.md"
+promise = "Audit and source-honestly remediate the postconciliar, Roman 1962, and Roman pre-1955 Missal data and reader across English and Latin for a complete year; close actionable Proper, Common, Ordinary, calendar, recension, tooling, dialogue, visual, rights, provenance, generated-data, and publication-boundary defects; validate and push coherent feature work; obtain a cold review; then reconcile and fast-forward the accepted result to origin/main with verified deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "complete-year-audit-baseline"
+  criterion = "A reproducible audit covers all three calendars, English and Latin, and every date from 2026-08-26 through 2027-08-25 in JSON and text; records invocation, parse, and standard-error results; and reconciles the resulting content, calendar, tooling, recension, and rights findings into the tracked work register."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "source-honest-content-and-recensions"
+  criterion = "Every actionable Proper, Common, Ordinary, and recension gap identified by the audit is corrected from an exact permitted witness or retained as a typed unresolved, unavailable, withheld, or partial-coverage state; no reconstruction, unofficial-copy substitution, silent cross-recension borrowing, or overstated 1962, pre-1955, 1956-1960, or postconciliar coverage remains."
+  status = "pass"
+  evidence = [
+    "src/sources/calendars",
+    "guidance/missals.md",
+    "guidance/recensions.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "calendar-and-tooling-correctness"
+  criterion = "The historical January 4-5 resolution, 2027-06-05 precedence conflict, Roman calendar-spine identities, scoped calendar-rubrics comparison, weekday-cycle selection, Common ambiguity, language behavior, diagnostic exit behavior, and related deterministic/schema/duplicate checks are corrected or fail closed with explicit tested limitations; all three calendar and rubric checkers pass."
+  status = "pass"
+  evidence = [
+    "tools/calendar-days",
+    "tools/calendar-rubrics",
+    "tools/check-calendar-masses",
+    "tools/mass-today",
+    "tests/tools/calendar-rubrics.test",
+    "tests/tools/mass-today.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rights-provenance-and-publication-boundary"
+  criterion = "Every affected ICEL, CCD, USCCB, FDLC, Latin, and other third-party surface has accurate ownership, witness, artifact, rights, acknowledgement, and per-surface publication metadata; public builders and direct data routes refuse uncleared text; and cross-surface tests prove that repository, browser, CLI, downloadable, print, and public-data behavior does not overgrant or misattribute permission."
+  status = "pass"
+  evidence = [
+    "guidance/liturgical-text-publication-policy.md",
+    "THIRD_PARTY.md",
+    "src/sources",
+    "tools/public-alpha",
+  ]
+
+  [[deliverables.requirements]]
+  id = "structured-dialogue-and-missal-presentation"
+  criterion = "Ordinary dialogue uses source-owned ordered turn semantics where held, exposes complete accessible speaker identity, renders honest role or versicle/response cues without prose matching or role substitution, preserves opaque text where boundaries are unknown, and passes the required Chromium, Firefox, mobile, reflow, forced-colors, reduced-motion, accessibility, interaction, full-Mass, and print review."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.js",
+    "src/web/browser/liturgy/reader-instrument.css",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "guidance/liturgy-browser-vision.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "generated-data-and-consumer-parity"
+  criterion = "Every source-owned change is projected by its canonical generator; tracked generated structures contain no stale or orphan output; browser, generated data, CLI, and tests agree on identity, selected branches and options, semantic event order, liturgical text, Proper and Ordinary order, sources, rights, seats, rubrics, and explicit absence across the complete one-year three-calendar by two-language regression matrix."
+  status = "pass"
+  evidence = [
+    "src/web/data",
+    "guidance/web-data.md",
+    "src/web/browser/liturgy/reader-state-adapters.js",
+    "src/web/browser/liturgy/ordinary-seating.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "owning-and-release-gates"
+  criterion = "The exact current owning suite and full current mass-ordinary suite pass; each of the original nine owning-suite and six mass-ordinary failures is demonstrably closed inside those expanded suites with no new failure; tpt --check, tmt check, the three calendar/rubric checkers, the complete one-year dump regression, deterministic/duplicate/schema checks, browser static and harness checks, public-alpha checks, and scoped post-refresh release-binding checks pass without concealing inherited failures."
+  status = "pass"
+  evidence = [
+    "tools/tests",
+    "tests/tools",
+    "tmt.json",
+    "release/public-alpha.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "feature-cold-review-main-and-deployment"
+  criterion = "The coherent result is committed and pushed to feature/complete-missal; an independent cold review examines the exact feature snapshot and every blocking finding is resolved; the accepted snapshot is reconciled cleanly with current origin/main; origin/main is advanced by genuine fast-forward without force or history rewrite only after make check-deployment-sources, make public-site, and public-alpha verify --deployment-target github-pages pass; and the exact resulting Pages workflow and affected live routes are verified."
+  status = "open"
+  evidence = [
+    "PROJECT-WORK.md",
+    ".github/workflows/pages.yml",
+    "tools/public-alpha",
   ]

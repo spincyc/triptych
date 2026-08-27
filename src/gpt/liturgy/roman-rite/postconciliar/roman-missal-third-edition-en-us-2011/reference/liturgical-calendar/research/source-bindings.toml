@@ -125,3 +125,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete official English article was checked for the reference's high-reuse Sunday claim: apostolic weekly celebration of the paschal mystery, assembly for word and Eucharist, and the Lord's day as original feast and foundation of the liturgical year. Its repeated central use justifies overlap with the complete Chapter V binding."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:64aa0044c15aaaae83ba4055af7315102eeb374f77cf00853d0aaed3c9ad30f9"
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-vatican-web-2026-08-26.operative-occurrence-rule"
+loci = ["operative-occurrence-rule"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The operative paragraph in the exact official Holy See HTML delivery was checked for the occurrence-only rule used by the reference: when the movable obligatory memorial of the Immaculate Heart coincides with another obligatory memorial, both are retained as optional for that year. The binding does not attribute the resulting choice among the two memorials and the weekday to this notification."
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:1beb50bfb600d739441bbfa4298d95add28e7aa6b9d9ff9a5d25606c507cddc0"
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393.operative-occurrence-rule"
+loci = ["operative-occurrence-rule"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The same operative paragraph was checked independently in the official Notitiae periodical witness at artifact p. 63, printed p. 157. It corroborates the occurrence-only reduction established by the official web delivery without expanding the notification to choose a memorial or supply the weekday option."
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:bba54c32d06e80b828aed8d704823a24f4082e29ab72ab27fd75ed32abf037d9"

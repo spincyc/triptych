@@ -120,7 +120,11 @@
     // that is said". Cleared on every date change, because a selection belongs
     // to the day it was made on and carrying yesterday's onto today would put a
     // Mass on a date that never carried it.
-    shownMass: null
+    shownMass: null,
+    // Source-authored identity of a Mass form within `shownMass`. It is never
+    // inferred from a translated/display name and never defaults by array order
+    // when the source appoints more than one form.
+    shownForm: null
   };
 
   const dateInput = document.getElementById('date-input');
@@ -422,11 +426,120 @@
     if (entry) select.value = entry.key;
     select.addEventListener('change', function () {
       state.shownMass = select.value;
+      state.shownForm = null;
       writeHash();
       onPick();
     });
     field.appendChild(select);
     node.appendChild(field);
+    return node;
+  }
+
+  /** Validate and select one source-authored Mass form without concatenation. */
+  function selectedProperForm(mass) {
+    if (!mass) return { ok: true, id: null, propers: [] };
+    const flat = mass.propers || [];
+    const forms = mass.forms || [];
+    if (!Array.isArray(forms)) {
+      return { ok: false, reason: 'invalid-manifest', propers: [] };
+    }
+    if (!forms.length) {
+      const legacyLabels = new Set(flat.map((proper) => proper.form).filter(Boolean));
+      if (legacyLabels.size > 1) {
+        return { ok: false, reason: 'missing-identities', propers: [] };
+      }
+      if (flat.some((proper) => !proper || proper.form_id !== 'main')) {
+        return { ok: false, reason: 'invalid-manifest', propers: [] };
+      }
+      if (state.shownForm) {
+        return { ok: false, reason: 'unsupported', propers: [] };
+      }
+      return { ok: true, id: null, propers: flat };
+    }
+
+    const ids = [];
+    let offset = 0;
+    for (const [index, form] of forms.entries()) {
+      if (!form || typeof form.id !== 'string' || !form.id ||
+          form.ordinal !== index + 1 || !Array.isArray(form.propers) ||
+          ids.includes(form.id)) {
+        return { ok: false, reason: 'invalid-manifest', propers: [] };
+      }
+      ids.push(form.id);
+      for (const proper of form.propers) {
+        if (!proper || proper.form_id !== form.id) {
+          return { ok: false, reason: 'invalid-manifest', propers: [] };
+        }
+        if (JSON.stringify(proper) !== JSON.stringify(flat[offset])) {
+          return { ok: false, reason: 'invalid-manifest', propers: [] };
+        }
+        offset += 1;
+      }
+    }
+    if (offset !== flat.length) {
+      return { ok: false, reason: 'invalid-manifest', propers: [] };
+    }
+    if (state.shownForm && !ids.includes(state.shownForm)) {
+      return { ok: false, reason: 'unsupported', valid: ids, propers: [] };
+    }
+    if (!state.shownForm && forms.length > 1) {
+      return { ok: false, reason: 'choice-required', valid: ids, propers: [] };
+    }
+    const selected = state.shownForm || forms[0].id;
+    return {
+      ok: true, id: selected,
+      propers: forms.find((form) => form.id === selected).propers
+    };
+  }
+
+  /** One explicit selector for forms of a single Mass formulary. */
+  function properFormSelector(mass, onPick) {
+    const forms = mass && mass.forms || [];
+    if (!Array.isArray(forms) || forms.length < 2) return null;
+    const node = T.el('div', 'mass-choice');
+    const field = T.el('p', 'mass-choice-field');
+    const id = 'proper-form-shown';
+    const label = T.el('label', 'mass-choice-label', 'Show the Mass form');
+    label.setAttribute('for', id);
+    field.appendChild(label);
+    const select = document.createElement('select');
+    select.id = id;
+    select.className = 'mass-choice-select';
+    const prompt = document.createElement('option');
+    prompt.value = '';
+    prompt.textContent = 'Choose a Mass form';
+    select.appendChild(prompt);
+    for (const form of forms) {
+      const option = document.createElement('option');
+      option.value = form.id;
+      option.textContent = form.name || form.id;
+      select.appendChild(option);
+    }
+    select.value = state.shownForm || '';
+    select.addEventListener('change', function () {
+      state.shownForm = select.value || null;
+      writeHash();
+      onPick();
+    });
+    field.appendChild(select);
+    node.appendChild(field);
+    return node;
+  }
+
+  function properFormNotice(selection) {
+    if (selection.ok) return null;
+    const node = T.el('p', 'uncompiled');
+    const unsupported = selection.reason === 'unsupported';
+    const invalid = selection.reason === 'invalid-manifest' ||
+      selection.reason === 'missing-identities';
+    node.appendChild(T.el('span', 'uncompiled-mark', unsupported
+      ? 'Unsupported Mass form' : invalid ? 'Mass forms unavailable' : 'Choose a Mass form'));
+    node.appendChild(document.createTextNode(unsupported
+      ? 'The form named by this link is not held by this Mass. Nothing was substituted.'
+      : invalid
+        ? 'This Mass carries several forms but no valid source-authored form manifest. ' +
+          'Their propers were not concatenated.'
+        : 'This Mass appoints several forms. Select one before the Proper sequence can be assembled.'));
     return node;
   }
 
@@ -698,11 +811,23 @@
    * know which year it is and shows all three.
    */
   function cycleKeyFor(proper, lectionary) {
-    if (!lectionary) return null;
-    const keys = T.cycleKeysOf(proper);
-    if (keys.indexOf(lectionary.sunday) >= 0) return lectionary.sunday;
-    if (keys.indexOf(lectionary.weekday) >= 0) return lectionary.weekday;
-    return null;
+    const sunday = T.sundayCycleKeysOf(proper);
+    const weekday = T.weekdayCycleKeysOf(proper);
+    if (!sunday.length && !weekday.length) return null;
+    if (!lectionary) throw new Error('cycle-bearing Proper has no resolved Lectionary year');
+    if (sunday.length && weekday.length) {
+      throw new Error('Proper carries both Sunday and weekday Lectionary cycle families');
+    }
+    if (sunday.length) {
+      if (sunday.indexOf(lectionary.sunday) < 0) {
+        throw new Error('resolved Sunday Lectionary year is not held for this Proper');
+      }
+      return lectionary.sunday;
+    }
+    if (weekday.indexOf(lectionary.weekday) < 0) {
+      throw new Error('resolved weekday Lectionary year is not held for this Proper');
+    }
+    return lectionary.weekday;
   }
 
   function renderVerdictNotice(branch) {
@@ -832,6 +957,8 @@
     // control itself belongs in Settings, not in the ordered Mass.
     const selector = formularySelector(branch, () => render({ moveFocus: false }));
     if (selector) formularyControls.appendChild(selector);
+    const formSelector = properFormSelector(mass, () => render({ moveFocus: false }));
+    if (formSelector) formularyControls.appendChild(formSelector);
     const apparatus = annotated(head, massMargin(branch, rubrics, derived));
 
     // A selected displaced or optional formulary must still qualify the words
@@ -896,13 +1023,17 @@
       section.appendChild(T.uncompiledNote(mass));
     }
 
-    const propers = (mass && !T.massIsUncompiled(mass) && mass.propers) || [];
-    if (ordinary) {
+    const formSelection = mass && !T.massIsUncompiled(mass)
+      ? selectedProperForm(mass) : { ok: true, id: null, propers: [] };
+    const formNotice = properFormNotice(formSelection);
+    if (formNotice) section.appendChild(formNotice);
+    const propers = formSelection.ok ? formSelection.propers : [];
+    if (ordinary && formSelection.ok) {
       // The Ordinary is the frame and the propers go into it. A Mass with no
       // formulary still gets the frame: the reader is following the same rite,
       // and the line above has already said what is not transcribed.
       section.appendChild(renderFrame(ordinary, propers, renderMassProper));
-    } else {
+    } else if (formSelection.ok) {
       for (const proper of propers) {
         if (T.isPlaceholder(proper)) continue;
         section.appendChild(renderMassProper(proper, null));
@@ -943,10 +1074,10 @@
    *
    * NOR IS ANY PLACEMENT DECIDED HERE. `file.slots` is the missal's own
    * statement of where each proper stands, each with the rubric that puts it
-   * there. Thirty-nine of the postconciliar frame's forty-eight elements carry
-   * no text at all, and that changes nothing: an element that names its absence
-   * still marks the place, and the day's Collect is seated after the withheld
-   * one rather than in its stead.
+   * there. Many postconciliar-frame elements carry no text on this distribution
+   * surface, and that changes nothing: an element that names its absence still
+   * marks the place, and the day's Collect is seated after the unavailable one
+   * rather than in its stead.
    * --------------------------------------------------------------------- */
 
   const variantGroupOf = Seating.variantGroupOf;
@@ -1075,14 +1206,94 @@
    * --------------------------------------------------------------------- */
 
   const SPEAKER_WORDS = { priest: 'Priest', server: 'Server', all: 'All' };
+  const SPEAKER_CUES = { priest: 'P', server: 'S', all: 'All' };
+  const DIALOGUE_ROLE_WORDS = { versicle: 'Versicle', response: 'Response' };
+  const DIALOGUE_ROLE_CUES = { versicle: '℣', response: '℟' };
   const MARK_WORDS = { 'P.': 'Priest', 'R.': 'Response' };
   // Only where a mark can be a speaker at all. A rubric is printed matter about
   // the Mass, not words said in it, and it is where both false positives live.
   const SPOKEN_KINDS = { dialogue: true, prayer: true, form: true };
   const A_MARK = /(^|[.;:,!?)\]"'’”]\s+|\n\s*)(P\.|R\.)(?=\s|$)/g;
+  const A_LITERAL_V_MARK = /(^|[.;:,!?)\]"'’”]\s+|\n\s*)V\.(?=\s|$)/;
 
-  function speakerTag(word, speaker) {
-    return T.el('span', 'speaker-tag' + (speaker ? ' is-' + speaker : ''), word);
+  function speakerTag(word, speaker, opening) {
+    const tag = T.el(
+      'span',
+      'speaker-tag' + (speaker ? ' is-' + speaker : '') + (opening ? ' is-opening-cue' : '')
+    );
+    if (!opening) {
+      tag.textContent = word;
+      return tag;
+    }
+
+    // This cue comes only from the element's structured `speaker` field. It is
+    // presentation furniture, not another word of the Ordinary; keep the full
+    // identity for assistive technology and the compact role mark for sighted
+    // readers. Interior P./R. marks remain untouched because they are held in
+    // opaque prose and are not trustworthy turn boundaries.
+    tag.setAttribute('data-presentation-only', 'speaker-cue');
+    tag.lang = 'en';
+    tag.appendChild(T.el('span', 'visually-hidden', word));
+    const mark = T.el('span', 'cue-mark');
+    mark.setAttribute('data-cue', SPEAKER_CUES[speaker] || word);
+    mark.setAttribute('aria-hidden', 'true');
+    tag.appendChild(mark);
+    return tag;
+  }
+
+  /** One explicit turn cue, with one accessible label and no spoken glyph. */
+  function structuredTurnCue(turn) {
+    if (turn.action === true) return null;
+    const speakerWord = SPEAKER_WORDS[turn.speaker] || null;
+    const roleWord = DIALOGUE_ROLE_WORDS[turn.dialogue_role] || null;
+    const visible = DIALOGUE_ROLE_CUES[turn.dialogue_role] ||
+      SPEAKER_CUES[turn.speaker] || null;
+    if (!visible || (!speakerWord && !roleWord)) return null;
+
+    // Dialogue role and speaker are independent axes. A priest may answer and
+    // a server may initiate, so the explicit role chooses only the visible
+    // ℣/℟ mark while the single accessible label retains both held facts.
+    const fullLabel = roleWord && speakerWord
+      ? roleWord + ' — ' + speakerWord
+      : roleWord || speakerWord;
+    const tag = T.el(
+      'span',
+      'speaker-tag is-opening-cue ordinary-turn-cue' +
+        (turn.speaker ? ' is-' + turn.speaker : '')
+    );
+    tag.setAttribute('data-presentation-only', 'speaker-cue');
+    tag.lang = 'en';
+    tag.appendChild(T.el('span', 'visually-hidden', fullLabel));
+    const mark = T.el('span', 'cue-mark');
+    mark.setAttribute('data-cue', visible);
+    mark.setAttribute('aria-hidden', 'true');
+    tag.appendChild(mark);
+    return tag;
+  }
+
+  /** Exact source-owned turns inside one Ordinary element and semantic event. */
+  function structuredTurns(held, locus) {
+    const body = T.el('div', 'composed ordinary-dialogue');
+    body.lang = held.lang;
+    if (locus) body.appendChild(T.el('span', 'ordinary-locus', locus));
+
+    for (const turn of held.turns) {
+      const action = turn.action === true;
+      const row = T.el('p', 'ordinary-turn' + (action ? ' is-action' : ''));
+      if (turn.speaker) row.setAttribute('data-speaker', turn.speaker);
+      if (turn.dialogue_role) {
+        row.setAttribute('data-dialogue-role', turn.dialogue_role);
+      }
+      if (action) row.setAttribute('data-action', 'true');
+
+      const cue = structuredTurnCue(turn);
+      if (cue) row.appendChild(cue);
+      const text = T.el('span', 'ordinary-turn-text', turn.text);
+      text.lang = held.lang;
+      row.appendChild(text);
+      body.appendChild(row);
+    }
+    return body;
   }
 
   /**
@@ -1093,11 +1304,25 @@
    */
   function spoken(element, text) {
     const source = String(text === null || text === undefined ? '' : text);
-    if (!SPOKEN_KINDS[element.kind]) return T.versicled(source);
+    if (!SPOKEN_KINDS[element.kind]) return document.createTextNode(source);
 
     const fragment = document.createDocumentFragment();
     const opening = SPEAKER_WORDS[element.speaker] || null;
-    if (opening) fragment.appendChild(speakerTag(opening, element.speaker));
+    // `all` is frequently attached to a composite element whose first turn is
+    // the priest (for example the postconciliar Greeting). Without structured
+    // turns it is not an honest opening cue, so do not present it as one.
+    if (opening && element.speaker !== 'all') {
+      fragment.appendChild(speakerTag(opening, element.speaker, true));
+    }
+
+    // A source that still prints V./R. is wholly opaque: retain both marks
+    // literally rather than letting the older P./R. compatibility pass recast
+    // only its R. half. This check disables parsing; it does not split turns or
+    // manufacture a dialogue role.
+    if (A_LITERAL_V_MARK.test(source)) {
+      fragment.appendChild(document.createTextNode(source));
+      return fragment;
+    }
 
     let at = 0;
     let found;
@@ -1114,11 +1339,12 @@
       const leading = first && source.slice(0, start).trim() === '';
       first = false;
       if (leading && opening) { at = start + found[2].length; continue; }
-      // Genuine V./R. marks inside the words still become ℣/℟. Returning
-      // early to `T.versicled` for unspoken kinds only meant a prayer, a form
-      // or a dialogue never reached it, and every versicle the book prints
-      // inside one lost its glyph.
-      if (start > at) fragment.appendChild(T.versicled(source.slice(at, start)));
+      // This compatibility path retains the already reviewed P./R. word
+      // labels while an opaque source remains unmodelled. It never manufactures
+      // ℣/℟: those glyphs belong only to explicit structured dialogue roles.
+      if (start > at) {
+        fragment.appendChild(document.createTextNode(source.slice(at, start)));
+      }
       fragment.appendChild(speakerTag(word, word === 'Priest' ? 'priest' : null));
       at = start + found[2].length;
     }
@@ -1126,7 +1352,7 @@
     // place it opened every turn with a double space.
     const rest = source.slice(at);
     const tail = at === 0 ? rest : rest.replace(/^[ \t]+/, '');
-    if (tail) fragment.appendChild(T.versicled(tail));
+    if (tail) fragment.appendChild(document.createTextNode(tail));
     return fragment;
   }
 
@@ -1150,14 +1376,20 @@
       // every element of an Ordinary, so saying it 195 times said nothing 194
       // of those times; what distinguishes a rubric from a prayer here is how
       // it is set, which is what distinguishes them in the book.
-      const body = T.el('p', element.kind === 'heading' ? 'ordinary-head' : 'composed');
-      if (!heading && element.locus) {
-        body.appendChild(T.el('span', 'ordinary-locus', element.locus));
+      const hasTurns = Array.isArray(held.turns) && held.turns.length > 0;
+      const body = hasTurns
+        ? structuredTurns(held, !heading ? element.locus : null)
+        : T.el('p', element.kind === 'heading' ? 'ordinary-head' : 'composed');
+      if (!hasTurns) {
+        if (!heading && element.locus) {
+          body.appendChild(T.el('span', 'ordinary-locus', element.locus));
+        }
+        // Speaker tags are set here and nowhere upstream: the artifacts hold
+        // what the book prints, and the compatibility path retains their P./R.
+        // column until those source boundaries are structured as turns.
+        body.appendChild(spoken(element, held.text));
+        body.lang = held.lang;
       }
-      // Speaker tags are set here and nowhere upstream: the artifacts hold what
-      // the book prints, and the book prints "P." and "R." in one column.
-      body.appendChild(spoken(element, held.text));
-      body.lang = held.lang;
       section.appendChild(body);
 
       const witness = witnessNote(file, held.source_id);
@@ -1190,10 +1422,10 @@
     // Which languages this element does not answer, and under what reason.
     //
     // The one the reader asked for is always said, so a chosen language that
-    // is empty here can never be silently empty — which is the whole of the
-    // postconciliar case, where 39 of 48 elements are withheld under ICEL. The
-    // others are said only where the element holds nothing in any language at
-    // all; there the reader is looking at an incipit and is owed the entire
+    // is empty here can never be silently empty — including the postconciliar
+    // English projection, whose distinct rights, witness, model and layer states
+    // must stay explicit. The others are said only where the element holds
+    // nothing in any language at all; there the reader is looking at an incipit and is owed the entire
     // account of why, and everywhere else the count stands in the preamble
     // rather than under 195 elements that do have their words.
     const anywhere = translations.length > 0;
@@ -1262,8 +1494,11 @@
     for (const absence of file.absences || []) {
       const line = T.el('p', 'row-meta ordinary-absence');
       line.appendChild(T.el('span', 'ordinary-absence-key', absence.key));
+      const kind = String(absence.kind || 'unavailable').replace(/-/g, ' ');
+      const state = String(absence.state || 'unavailable').replace(/-/g, ' ');
       line.appendChild(document.createTextNode(
-        absence.count + ' of ' + frameSize(file) + ' elements. ' + absence.what));
+        absence.count + ' of ' + frameSize(file) + ' elements · ' + kind +
+        ' · ' + state + '.'));
       body.appendChild(line);
     }
 
@@ -1441,11 +1676,11 @@
    * The Ordinary's language control, filled from the Ordinary's own file.
    *
    * A language nothing is held in is still offered, and says so in its label.
-   * That is not an oversight: the postconciliar frame holds nine elements of
-   * forty-eight and the Latin of neither missal is here at all, and choosing an
-   * empty language is how a reader sees, element by element and at the place
-   * each falls due, under what recorded reason it is empty. A control that
-   * hid them would leave the reader to conclude the texts do not exist.
+   * That is not an oversight: a frame may hold only part of one language, or no
+   * text at all in another, and choosing an empty language is how a reader sees,
+   * element by element and at the place each falls due, under what recorded
+   * reason it is empty. A control that hid them would leave the reader to
+   * conclude the texts do not exist.
    */
   function fillOrdinaryLanguageSelect(file) {
     const offered = languagesOf(file);
@@ -1544,7 +1779,8 @@
       ['rubrics', state.showRubrics ? null : '0'],
       // So a displaced Mass can be linked to. `standingNotice` is what makes
       // that safe: it states the displacement to whoever follows the link.
-      ['mass', state.shownMass]
+      ['mass', state.shownMass],
+      ['form', state.shownForm]
     ];
     // Keyed by the group's own id, so a second choice in some later missal
     // rides in the hash without a line being added here.
@@ -1699,6 +1935,7 @@
     // that never asked the question.
     if ((date && date !== state.date) || (missalId && missalId !== state.missalId)) {
       state.shownMass = null;
+      state.shownForm = null;
     }
     if (date) state.date = date;
     if (missalId) state.missalId = missalId;
@@ -1786,6 +2023,7 @@
     // Taken as asked and resolved against the date's own formularies in
     // `shownEntry`; nothing here knows yet what this date carries.
     state.shownMass = hash.get('mass') || null;
+    state.shownForm = hash.get('form') || null;
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);
@@ -1885,6 +2123,7 @@
     // Taken as asked and resolved against the date's own formularies in
     // `shownEntry`; nothing here knows yet what this date carries.
     state.shownMass = hash.get('mass') || null;
+    state.shownForm = hash.get('form') || null;
     for (const row of state.ordinaryIndex) {
       for (const group of row.variants || []) {
         const wanted = hash.get(group);

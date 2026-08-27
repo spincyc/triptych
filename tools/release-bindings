@@ -36,10 +36,7 @@ EXAMPLES = {
         Example(
             "tools/release-bindings status",
             (
-                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
-                "stale site source docs/reading-and-commentary.md: recorded 81ed3ce14abcb1c613b6ac765e7eeabce754fc7b204118f5a73... [+86 chars]",
-                "stale site source docs/the-mass.md: recorded 9801ae5974a7e5d6eeb30e0a3323a0c65f58da715e1f8a43ecacbf9708327612,... [+72 chars]",
-                "... 17 more lines",
+                "exact: 0 stale binding(s)",
             ),
             "exit 1, ending `stale: 19 stale binding(s)`: every recorded site "
             "source is hashed and compared, and each divergence names the "
@@ -55,7 +52,7 @@ EXAMPLES = {
                 "",
                 "options:",
                 "  -h, --help  show this help message and exit",
-                "... 11 more lines",
+                "... 6 more lines",
             ),
             "status takes no arguments",
         ),
@@ -64,8 +61,7 @@ EXAMPLES = {
         Example(
             "tools/release-bindings status",
             (
-                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
-                "... 19 more lines",
+                "exact: 0 stale binding(s)",
             ),
             "read-only first: `status` names exactly what `refresh` would "
             "rewrite, from the same comparison, without writing anything",
@@ -87,8 +83,7 @@ EXAMPLES = {
         Example(
             "tools/release-bindings status",
             (
-                "stale site source README.md: recorded 7aaeb703f9a63777919a2bfe535911c493a940981d1638d21715f8a71b3f02f7, actual... [+65 chars]",
-                "... 19 more lines",
+                "exact: 0 stale binding(s)",
             ),
             "read-only first",
         ),
@@ -223,6 +218,142 @@ def compute_publication_hashes(manifest: dict) -> dict[str, str]:
     return hashes
 
 
+def publication_status_counts(manifest: dict) -> tuple[str, dict[str, int]]:
+    """Count the active publication inventory in its actual storage schema.
+
+    Migrated manifests own one record per publication under
+    ``release/publications``.  The legacy aggregate remains readable so an
+    older checkout can still record an honest supplement during migration.
+    The returned schema name lets the prose use the statuses that really exist
+    instead of calling an alpha record a legacy release row.
+    """
+    primary = primary_provider(manifest)
+    providers = manifest.get("providers", [primary])
+    if (
+        not isinstance(providers, list)
+        or not providers
+        or not all(
+            isinstance(provider, str)
+            and re.fullmatch(r"[a-z0-9-]+", provider)
+            for provider in providers
+        )
+        or len(providers) != len(set(providers))
+        or primary not in providers
+    ):
+        raise BindingError(
+            "manifest providers must be a unique non-empty provider list "
+            "containing the primary provider"
+        )
+    record_root = ROOT / PUBLICATION_RECORD_ROOT
+    local_records = (
+        sorted(record_root.rglob("*.json")) if record_root.is_dir() else []
+    )
+    if "publications" in manifest:
+        if local_records:
+            raise BindingError(
+                "cannot approve a mixed legacy aggregate and local publication-record "
+                "inventory; finish migration first"
+            )
+        publications = manifest.get("publications")
+        if not isinstance(publications, list):
+            raise BindingError("manifest publications must be a list")
+        counts = {"release": 0, "review": 0, "hold": 0}
+        for number, publication in enumerate(publications, 1):
+            if not isinstance(publication, dict):
+                raise BindingError(f"publication {number} must be an object")
+            status = publication.get("status")
+            if status not in counts:
+                raise BindingError(
+                    f"publication {number} has invalid legacy status {status!r}"
+                )
+            if status in {"release", "review"}:
+                publication_id = publication.get("id")
+                if not isinstance(publication_id, str) or not publication_id:
+                    raise BindingError(
+                        f"publication {number} has invalid id {publication_id!r}"
+                    )
+                provider, _leaf = split_id(manifest, publication_id)
+                if provider not in providers:
+                    raise BindingError(
+                        f"publication {number} names undeclared provider {provider!r}"
+                    )
+                path = pdf_path(manifest, publication_id)
+                if path.is_symlink() or not path.is_file():
+                    raise BindingError(
+                        f"installed PDF missing for {publication_id}: "
+                        f"{path.relative_to(ROOT)}"
+                    )
+            counts[status] += 1
+        return "legacy", counts
+
+    counts = {"alpha": 0, "hold": 0}
+    declared_records: set[Path] = set()
+    for provider in providers:
+        provider_root = ROOT / PUBLICATION_RECORD_ROOT / provider
+        if not provider_root.is_dir():
+            continue
+        for path in sorted(provider_root.rglob("*.json")):
+            declared_records.add(path)
+            if path.is_symlink() or not path.is_file():
+                raise BindingError(
+                    f"unsafe publication record: {path.relative_to(ROOT)}"
+                )
+            try:
+                publication = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                raise BindingError(
+                    f"cannot read publication record {path.relative_to(ROOT)}: {exc}"
+                ) from exc
+            if not isinstance(publication, dict) or publication.get("schema_version") != 1:
+                raise BindingError(
+                    f"{path.relative_to(ROOT)} must be a schema-version-1 object"
+                )
+            leaf = path.relative_to(provider_root).with_suffix("").as_posix()
+            if publication.get("id") != leaf:
+                raise BindingError(
+                    f"{path.relative_to(ROOT)} id does not match its path"
+                )
+            status = publication.get("status")
+            if status not in counts:
+                raise BindingError(
+                    f"{path.relative_to(ROOT)} has invalid status {status!r}"
+                )
+            if status == "alpha":
+                installed = ROOT / "pdf" / provider / f"{leaf}.pdf"
+                if installed.is_symlink() or not installed.is_file():
+                    raise BindingError(
+                        "installed PDF missing for "
+                        f"{provider}:{leaf}: {installed.relative_to(ROOT)}"
+                    )
+            counts[status] += 1
+    undeclared_records = set(local_records) - declared_records
+    if undeclared_records:
+        names = ", ".join(
+            path.relative_to(ROOT).as_posix()
+            for path in sorted(undeclared_records)
+        )
+        raise BindingError(f"publication records name undeclared providers: {names}")
+    if not any(counts.values()):
+        raise BindingError("publication record inventory is empty")
+    return "records", counts
+
+
+def publication_clearance_summary(schema: str, counts: dict[str, int]) -> str:
+    """The supplement sentence for the status vocabulary actually counted."""
+    if schema == "records":
+        return (
+            f"The approval binds all {counts['alpha']} exact installed public-alpha\n"
+            f"PDF snapshots, records {counts['hold']} publication(s) on hold, and binds\n"
+        )
+    if schema == "legacy":
+        return (
+            f"The approval binds all {counts['release']} exact installed release\n"
+            f"PDF snapshots, all {counts['review']} conspicuously labelled public-alpha\n"
+            f"review snapshots, records {counts['hold']} publication(s) on hold, and binds\n"
+        )
+    raise BindingError(f"unknown publication inventory schema: {schema!r}")
+
+
 def recognized_site_sources() -> set[str]:
     """Ask the renderer which repository inputs can change the artifact."""
     loader = importlib.machinery.SourceFileLoader("triptych_public_alpha", str(PUBLIC_ALPHA))
@@ -323,9 +454,39 @@ def compute_site_hashes(
     site_sources = recorded_site_sources(authorization)
     # Refresh re-derives the recorded inputs only; adoption reconciles the
     # record with the set the renderer currently recognizes.
-    sources = recognized_site_sources() if adopt else set(site_sources)
+    recognized = recognized_site_sources() if adopt else set()
+
+    def in_scope(source: str) -> bool:
+        return only is None or any(
+            source == path_only or source.startswith(path_only.rstrip("/") + "/")
+            for path_only in only
+        )
+
+    if not adopt:
+        sources = set(site_sources)
+    elif only is None:
+        sources = recognized
+    else:
+        # Scoped adoption may add or retire only within the named paths. Every
+        # recorded sibling survives byte-for-byte, and an unrecorded sibling
+        # cannot be signed merely because it is visible to the renderer.
+        sources = {
+            source
+            for source in site_sources
+            if not in_scope(source) or source in recognized
+        }
+        sources.update(source for source in recognized if in_scope(source))
     hashes: dict[str, str] = {}
     for source in sorted(sources):
+        # Scope is checked before the filesystem. A sibling which was deleted,
+        # renamed, or stopped being recognized is still outside this operator's
+        # review and must keep its recorded value; refusing because its old file
+        # is gone would make a supposedly scoped refresh impossible.
+        if only is not None and not in_scope(source):
+            held = site_sources.get(source)
+            if held is not None:
+                hashes[source] = held
+                continue
         path = ROOT / source
         if not path.is_file():
             raise BindingError(f"site source missing: {source}")
@@ -338,14 +499,6 @@ def compute_site_hashes(
         # happens to have on disk. An authorization is a statement that someone
         # reviewed those bytes, so signing for bytes you have not read is the
         # one thing it must not be able to do by accident.
-        if only is not None and not any(
-            source == path_only or source.startswith(path_only.rstrip("/") + "/")
-            for path_only in only
-        ):
-            held = site_sources.get(source)
-            if held is not None:
-                hashes[source] = held
-                continue
         hashes[source] = sha256_file(path)
     return hashes
 
@@ -435,11 +588,7 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
     site_sources = recorded_site_sources(authorization)
     zone = zoneinfo.ZoneInfo(timezone_name)
     now = datetime.datetime.now(tz=zone).replace(microsecond=0)
-    counts = {"release": 0, "review": 0, "hold": 0}
-    for publication in manifest.get("publications", []):
-        status = publication.get("status")
-        if status in counts:
-            counts[status] += 1
+    publication_schema, counts = publication_status_counts(manifest)
     day = now.strftime("%-d %B %Y")
     supplement = (
         f"## Supplemental exact-current-snapshot clearance — {day}\n\n"
@@ -448,9 +597,8 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
         "exact-current-snapshot distribution authorization under the existing\n"
         "represented authority in this record. The sole condition remains\n"
         "`no-project-initiated-promotion`.\n\n"
-        f"The approval binds all {counts['release']} exact installed release\n"
-        f"PDF snapshots, all {counts['review']} conspicuously labelled public-alpha\n"
-        f"review snapshots, and all {len(site_sources)} exact recognized\n"
+        + publication_clearance_summary(publication_schema, counts)
+        + f"all {len(site_sources)} exact recognized\n"
         "artifact-affecting reader-site inputs inventoried below, which were\n"
         "compared against the renderer's recognized set and their current\n"
         "bytes before this approval was recorded. It is an\n"

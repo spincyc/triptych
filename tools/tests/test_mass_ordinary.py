@@ -2,16 +2,16 @@
 """Regression checks for the Ordinary layer, and for the page that shows it.
 
 The interesting failures here are not crashes. They are a prayer served under
-the wrong name and a licensed text served without the condition that makes it
-lawful, and neither would raise anything.
+the wrong name and a surface-limited text escaping its source-study quarantine,
+and neither would raise anything.
 
 Two of the checks below exist because of specific, recorded near-misses. The
 1861 Canon and the postconciliar Eucharistic Prayer I differ at eleven places,
 among them both consecratory forms, so serving the one as the other would put a
 wrong text at the most consequential locus in the rite; `test_prayer_one_is_not
-_the_1861_canon` holds that boundary. And the ELLC common texts are free only on
-a stated condition, so `test_a_licensed_text_carries_its_acknowledgement` holds
-the acknowledgement beside the words rather than in a footer.
+_the_1861_canon` holds that boundary. Surface-specific permissions are retained
+only in source-study records, while the assembled Ordinary exposes a typed,
+provider-neutral absence and no recoverable text or attribution.
 
 The browser half runs the real `day.js` and `ordinary-seating.js` under node
 against the real generated files, for the reason `calendar-rubrics check` runs
@@ -20,9 +20,13 @@ page.
 """
 
 import hashlib
+import importlib.machinery
+import importlib.util
 import json
 import shutil
 import subprocess
+import tempfile
+import tomllib
 import unittest
 from pathlib import Path
 
@@ -33,6 +37,9 @@ DAY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "day.js"
 DAY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "day.html"
 FORMULARY_JS = ROOT / "src" / "web" / "browser" / "liturgy" / "liturgy.js"
 FORMULARY_HTML = ROOT / "src" / "web" / "browser" / "liturgy" / "index.html"
+FORMULARY_READER_JS = (
+    ROOT / "src" / "web" / "browser" / "liturgy" / "propers-reader.js"
+)
 READING_CONTENTS_JS = (
     ROOT / "src" / "web" / "browser" / "liturgy" / "reading-contents.js"
 )
@@ -41,9 +48,30 @@ PLACEMENT_NOTES_JS = (
 )
 DAY_MISSAL_CSS = ROOT / "src" / "web" / "browser" / "liturgy" / "day-missal.css"
 TOOL = ROOT / "tools" / "mass-ordinary"
+POST_INVENTORY = (
+    ROOT / "src" / "sources" / "inventories" / "postconciliar-ordo-missae-v1.toml"
+)
 
-PUBLISHABLE = {"public-domain", "project-created", "licensed-free"}
-NEEDS_ACKNOWLEDGEMENT = {"licensed-free"}
+ICEL_SOURCE_ID = (
+    "edition.international-commission-on-english-in-the-liturgy."
+    "music-for-the-roman-missal.2010-chants-web-2026-08-21"
+)
+ICEL_ACKNOWLEDGEMENT = (
+    "Excerpts from the English translation of The Roman Missal © 2010, "
+    "International Commission on English in the Liturgy Corporation. "
+    "All rights reserved."
+)
+ICEL_ARTIFACT_SUFFIXES = (
+    "greeting", "penitential-act", "kyrie", "gloria", "liturgy-word", "credo-1",
+    "orate-fratres", "preface-dialogue", "sanctus", "memorial-acclamation",
+    "doxology", "lords-prayer", "sign-of-peace", "agnus-dei", "communion",
+    "blessing", "dismissal",
+)
+ELLC_SOURCE_ID = (
+    "edition.english-language-liturgical-consultation.praying-together.1998"
+)
+
+PUBLISHABLE = {"public-domain", "project-created"}
 
 
 def load(name: str) -> dict:
@@ -62,7 +90,8 @@ class OrdinaryStructure(unittest.TestCase):
     def setUp(self) -> None:
         if not DATA.is_dir():
             self.skipTest("no ordinary layer written; run `tools/tpt mass-ordinary structure`")
-        self.files = {row: load(row) for row in ("roman-1962", "postconciliar")}
+        calendars = [row["calendar"] for row in load("index")["calendars"]]
+        self.files = {calendar: load(calendar) for calendar in calendars}
 
     def test_every_element_has_text_or_a_stated_reason(self) -> None:
         """The one thing this layer must never emit is a silent gap."""
@@ -83,13 +112,200 @@ class OrdinaryStructure(unittest.TestCase):
                     self.assertIn(translation["rights"], PUBLISHABLE,
                                   f"{name}: {element['key']}")
 
-    def test_a_licensed_text_carries_its_acknowledgement(self) -> None:
-        """Free use granted on a condition is not free use without the condition."""
+    def test_surface_limited_rights_never_reach_the_assembled_ordinary(self) -> None:
+        """A permission for another surface is not an assembled-data right."""
         for name, file in self.files.items():
             for witness in file["translations"]:
-                if witness["rights"] in NEEDS_ACKNOWLEDGEMENT:
-                    self.assertTrue(witness["acknowledgement"],
-                                    f"{name}: {witness['source_id']} states no acknowledgement")
+                self.assertNotEqual(witness["rights"], "licensed-free", name)
+            for element in elements(file):
+                for translation in element["translations"] or []:
+                    self.assertNotEqual(
+                        translation["rights"], "licensed-free",
+                        f"{name}: {element['key']}",
+                    )
+
+    def test_restricted_provenance_never_enters_the_public_payload(self) -> None:
+        """Restricted provenance stays source-only; public absence is text-free."""
+        with POST_INVENTORY.open("rb") as handle:
+            source = tomllib.load(handle)
+        restricted = source["restricted_witnesses"]
+        self.assertEqual(len(restricted), 1)
+        icel = restricted[0]
+        self.assertEqual(icel["id"], ICEL_SOURCE_ID)
+        self.assertEqual(icel["lang"], "en")
+        self.assertEqual(icel["state"], "rights-restricted")
+        self.assertEqual(icel["acknowledgement"], ICEL_ACKNOWLEDGEMENT)
+        prefix = "artifact." + ICEL_SOURCE_ID.removeprefix("edition.") + "."
+        self.assertEqual(icel["artifacts"], [prefix + one for one in ICEL_ARTIFACT_SUFFIXES])
+
+        file = self.files["postconciliar"]
+        serialized = json.dumps(file, ensure_ascii=False, sort_keys=True)
+        self.assertNotIn(ICEL_SOURCE_ID, serialized)
+        self.assertNotIn(ICEL_ACKNOWLEDGEMENT, serialized)
+        self.assertNotIn(icel["label"], serialized)
+        self.assertNotIn(ELLC_SOURCE_ID, serialized)
+        self.assertNotIn("English Language Liturgical Consultation", serialized)
+        self.assertNotIn("International Commission on English", serialized)
+        self.assertNotIn("licensed-free", serialized)
+        self.assertEqual(
+            [(one["source_id"], one["held"]) for one in file["translations"]],
+            [
+                (
+                    "edition.eugene-cummiskey.roman-missal-english-laity."
+                    "philadelphia-1861",
+                    10,
+                ),
+            ],
+        )
+        expected_absences = {
+            "antecedent-held-not-carried": (3, "unavailable", "witness-gap"),
+            "approved-english-publication-restriction": (
+                24, "rights-restricted", "rights-withheld"
+            ),
+            "canon-not-split": (1, "unavailable", "model-gap"),
+            "editio-typica-new-matter": (
+                12, "rights-restricted", "rights-withheld"
+            ),
+            "element-spans-mixed-availability": (3, "unavailable", "model-gap"),
+            "element-spans-mixed-matter": (7, "unavailable", "model-gap"),
+            "no-antecedent-witness": (2, "unavailable", "witness-gap"),
+            "no-fixed-text": (3, "unavailable", "not-applicable"),
+            "not-a-text": (12, "unavailable", "not-applicable"),
+            "official-exemplar-not-carried": (5, "unavailable", "witness-gap"),
+            "priest-prayer-said-quietly": (6, "unavailable", "no-exemplar"),
+            "proper-text-outside-ordinary": (6, "unavailable", "outside-layer"),
+        }
+        self.assertEqual(
+            {
+                row["key"]: (row["count"], row["state"], row["kind"])
+                for row in file["absences"]
+            },
+            expected_absences,
+        )
+        for absence in file["absences"]:
+            self.assertEqual(set(absence), {"key", "count", "state", "kind"})
+            self.assertEqual(
+                absence["state"],
+                "rights-restricted"
+                if absence["kind"] == "rights-withheld"
+                else "unavailable",
+            )
+        affected = [
+            element for element in elements(file)
+            if element["absent"]["english"]
+            == "approved-english-publication-restriction"
+        ]
+        self.assertEqual(len(affected), 24)
+        for element in affected:
+            self.assertFalse(
+                any(row["lang"] == "en" for row in (element["translations"] or [])),
+                element["key"],
+            )
+
+        languages = {one["lang"]: one for one in file["languages"]}
+        self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
+                         (0, 47))
+        self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
+                         (10, 47))
+        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 47)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 37)
+        held_elements = [one for one in elements(file) if one["translations"]]
+        wholly_absent = [one for one in elements(file) if not one["translations"]]
+        self.assertEqual((len(held_elements), len(wholly_absent)), (10, 37))
+
+        self.assertEqual(len(source["witnesses"]), 1)
+        self.assertEqual(source["witnesses"][0]["lang"], "la")
+        self.assertEqual(
+            {absence["kind"] for absence in source["absences"]},
+            {
+                "model-gap", "no-exemplar", "not-applicable", "outside-layer",
+                "rights-withheld", "witness-gap",
+            },
+        )
+        self.assertFalse(any("english" in element
+                             for section in source["sections"]
+                             for element in section.get("elements", [])))
+
+    def test_structured_turns_are_lossless_translation_local_metadata(self) -> None:
+        """The generator preserves source rows; it never invents turn text."""
+        found = []
+        allowed_speakers = {None, "all", "priest", "server"}
+        allowed_roles = {None, "versicle", "response"}
+        for calendar, file in self.files.items():
+            for element in elements(file):
+                self.assertNotIn("turns", element, f"{calendar}: {element['key']}")
+                for translation in element["translations"] or []:
+                    turns = translation.get("turns")
+                    if turns is None:
+                        continue
+                    found.append((calendar, element["key"], translation["lang"], turns))
+                    self.assertTrue(turns)
+                    keys = [turn["key"] for turn in turns]
+                    self.assertEqual(len(keys), len(set(keys)))
+                    self.assertEqual(
+                        "\n".join(turn["text"] for turn in turns),
+                        translation["text"],
+                        f"{calendar}: {element['key']}: {translation['lang']}",
+                    )
+                    for turn in turns:
+                        self.assertEqual(
+                            set(turn),
+                            {"key", "speaker", "dialogue_role", "action", "text"},
+                        )
+                        self.assertRegex(turn["key"], r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+                        self.assertIn(turn["speaker"], allowed_speakers)
+                        self.assertIn(turn["dialogue_role"], allowed_roles)
+                        self.assertIn(turn["action"], (None, True))
+                        self.assertIsInstance(turn["text"], str)
+                        self.assertTrue(turn["text"])
+                        if turn["action"] is True:
+                            self.assertIsNone(turn["speaker"])
+                            self.assertIsNone(turn["dialogue_role"])
+
+        self.assertEqual(
+            [(calendar, key, lang) for calendar, key, lang, _turns in found],
+            [("postconciliar", "praeparatio-donorum/orate-fratres", "la")],
+        )
+        turns = found[0][3]
+        self.assertEqual(
+            [
+                (turn["key"], turn["speaker"], turn["dialogue_role"], turn["action"])
+                for turn in turns
+            ],
+            [
+                ("priest-summons", "priest", "versicle", None),
+                ("people-response", "all", "response", None),
+            ],
+        )
+        self.assertTrue(turns[1]["text"].startswith("R. Suscipiat"))
+
+        # Quarantined English has neither text nor turns. Metadata on Latin
+        # never leaks across to English, and no Roman source is heuristically
+        # split.
+        post = self.files["postconciliar"]
+        post_by_key = {element["key"]: element for element in elements(post)}
+        key = "symbolum/symbolum-apostolicum"
+        self.assertFalse(any(
+            row["lang"] == "en"
+            for row in (post_by_key[key]["translations"] or [])
+        ), key)
+        for calendar in ("roman-1962", "roman-pre-1955"):
+            for element in elements(self.files[calendar]):
+                for translation in element["translations"] or []:
+                    self.assertNotIn("turns", translation,
+                                     f"{calendar}: {element['key']}")
+
+    def test_postconciliar_n_130_is_the_single_received_agnus_dei(self) -> None:
+        """One received text at n. 130 must not acquire an invented alternative."""
+        post = list(elements(self.files["postconciliar"]))
+        self.assertEqual(
+            [one["key"] for one in post if one["locus"] == "n. 130"],
+            ["ritus-communionis/agnus-dei"],
+        )
+        self.assertNotIn(
+            "ritus-communionis/agnus-dei-forma-altera",
+            {one["key"] for one in post},
+        )
 
     def test_element_keys_are_unique_across_sections(self) -> None:
         """The 1861 book says `Gloria Patri` twice; the keys must still differ."""
@@ -170,7 +386,8 @@ class OrdinarySlots(unittest.TestCase):
     def setUp(self) -> None:
         if not DATA.is_dir():
             self.skipTest("no ordinary layer written; run `tools/tpt mass-ordinary structure`")
-        self.files = {row: load(row) for row in ("roman-1962", "postconciliar")}
+        calendars = [row["calendar"] for row in load("index")["calendars"]]
+        self.files = {calendar: load(calendar) for calendar in calendars}
 
     def test_every_seat_names_an_element_the_frame_shows(self) -> None:
         for name, file in self.files.items():
@@ -211,8 +428,21 @@ class OrdinarySlots(unittest.TestCase):
         """A seat for a proper name no mass uses is a seat that never fills.
 
         Not a rights or a truth question — a spelling one, and exactly the kind
-        that resolves successfully and does nothing.
+        that resolves successfully and does nothing. A structural-only
+        recension with no independently represented Propers is checked against
+        the canonical corpus-wide vocabulary: its typed missing formularies
+        cannot supply names of their own.
         """
+        corpus_names = set()
+        for path in PROPERS.glob("*.json"):
+            if path.name == "index.json":
+                continue
+            corpus = json.loads(path.read_text(encoding="utf-8"))
+            corpus_names.update(
+                proper.get("name")
+                for mass in corpus.get("masses", [])
+                for proper in mass.get("propers", [])
+            )
         for name, file in self.files.items():
             path = PROPERS / (name + ".json")
             if not path.is_file():
@@ -221,6 +451,14 @@ class OrdinarySlots(unittest.TestCase):
             used = {proper.get("name")
                     for mass in corpus.get("masses", [])
                     for proper in mass.get("propers", [])}
+            proper_coverage = (
+                (corpus.get("recension_coverage") or {})
+                .get("domains", {})
+                .get("propers", {})
+                .get("state")
+            )
+            if proper_coverage == "none":
+                used = corpus_names
             for slot in file["slots"]:
                 for proper in slot["propers"]:
                     self.assertIn(proper, used, f"{name}: seat {slot['key']} awaits {proper!r}")
@@ -229,6 +467,13 @@ class OrdinarySlots(unittest.TestCase):
 class OrdinaryTool(unittest.TestCase):
     """The generator refuses what it must refuse."""
 
+    @classmethod
+    def setUpClass(cls) -> None:
+        loader = importlib.machinery.SourceFileLoader("mass_ordinary_test", str(TOOL))
+        spec = importlib.util.spec_from_loader(loader.name, loader)
+        cls.tool_module = importlib.util.module_from_spec(spec)
+        loader.exec_module(cls.tool_module)
+
     def test_written_files_are_current(self) -> None:
         run = subprocess.run(
             ["python3", str(TOOL), "check", "--json"],
@@ -236,6 +481,441 @@ class OrdinaryTool(unittest.TestCase):
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
         self.assertEqual(json.loads(run.stdout)["stale"], [],
                          "regenerate with `tools/tpt mass-ordinary structure`")
+
+    def test_check_distinguishes_stale_and_current_output_in_both_tiers(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            stale = subprocess.run(
+                ["python3", str(TOOL), "check", "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(stale.returncode, 1, stale.stdout + stale.stderr)
+            self.assertTrue(json.loads(stale.stdout)["stale"])
+
+            written = subprocess.run(
+                ["python3", str(TOOL), "structure", "--out", str(out)],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(written.returncode, 0, written.stdout + written.stderr)
+            for json_tier in (False, True):
+                command = ["python3", str(TOOL), "check", "--out", str(out)]
+                if json_tier:
+                    command.append("--json")
+                current = subprocess.run(
+                    command, capture_output=True, text=True, cwd=ROOT, check=False,
+                )
+                self.assertEqual(current.returncode, 0, current.stdout + current.stderr)
+                if json_tier:
+                    self.assertEqual(json.loads(current.stdout)["stale"], [])
+                else:
+                    self.assertIn("the written files are current", current.stdout)
+
+    def test_unscoped_writer_prunes_only_owned_orphan_json(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            written = subprocess.run(
+                ["python3", str(TOOL), "structure", "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(written.returncode, 0, written.stdout + written.stderr)
+            ordinary = out / "structure" / "ordinary"
+            orphan = ordinary / "retired-calendar.json"
+            unrelated = ordinary / "keep-me.txt"
+            orphan.write_text("{}\n", encoding="utf-8")
+            unrelated.write_text("not owned by mass-ordinary\n", encoding="utf-8")
+
+            scoped = subprocess.run(
+                ["python3", str(TOOL), "check", "--calendar", "postconciliar",
+                 "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(scoped.returncode, 0, scoped.stdout + scoped.stderr)
+            self.assertEqual(json.loads(scoped.stdout)["stale"], [])
+            subprocess.run(
+                ["python3", str(TOOL), "structure", "--calendar", "postconciliar",
+                 "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=True,
+            )
+            self.assertTrue(orphan.is_file(), "scoped structure must not prune")
+
+            stale = subprocess.run(
+                ["python3", str(TOOL), "check", "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(stale.returncode, 1, stale.stdout + stale.stderr)
+            self.assertEqual(
+                json.loads(stale.stdout)["stale"],
+                ["structure/ordinary/retired-calendar.json"],
+            )
+
+            refreshed = subprocess.run(
+                ["python3", str(TOOL), "structure", "--out", str(out), "--json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(refreshed.returncode, 0, refreshed.stdout + refreshed.stderr)
+            self.assertEqual(
+                json.loads(refreshed.stdout)["removed"], [str(orphan)]
+            )
+            self.assertFalse(orphan.exists())
+            self.assertTrue(unrelated.is_file(), "unowned files must survive pruning")
+
+    def test_artifact_payloads_resolve_against_the_passed_source_root(self) -> None:
+        tool = self.tool_module
+        with tempfile.TemporaryDirectory() as directory:
+            source_root = Path(directory) / "alternate-sources"
+            artifact_dir = source_root / "works" / "synthetic"
+            artifact_dir.mkdir(parents=True)
+            (artifact_dir / "rows.tsv").write_text(
+                "element_key\tseq\ttext\nmarker\t1\talternate root\n",
+                encoding="utf-8",
+            )
+            (artifact_dir / "artifact.toml").write_text(
+                'id = "artifact.synthetic.alternate-root"\n'
+                'path = "src/sources/works/synthetic/rows.tsv"\n',
+                encoding="utf-8",
+            )
+
+            records = tool.artifact_records(source_root)
+            record = records["artifact.synthetic.alternate-root"]
+            self.assertEqual(record["_source_root"], source_root.resolve())
+            self.assertEqual(tool.payload_rows(record)[0]["text"], "alternate root")
+
+    def test_artifact_sections_require_explicit_language_provenance(self) -> None:
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        english_id = "artifact.synthetic.english"
+        latin_id = "artifact.synthetic.latin"
+        with tempfile.TemporaryDirectory() as directory:
+            source_root = Path(directory)
+            (source_root / "english.tsv").write_text(
+                "element_key\tkind\tenglish\tlatin_incipit\tprinted_page\tspeaker\tnotes\n"
+                "oratio\tprayer\tEnglish words.\tOratio\t1\tpriest\t\n",
+                encoding="utf-8",
+            )
+            (source_root / "latin.tsv").write_text(
+                "element_key\tlatin\n"
+                "oratio\tOratio Latina.\n",
+                encoding="utf-8",
+            )
+            library = {
+                english_id: {
+                    "id": english_id, "path": "english.tsv",
+                    "_source_root": source_root,
+                },
+                latin_id: {
+                    "id": latin_id, "path": "latin.tsv",
+                    "_source_root": source_root,
+                },
+            }
+            witnesses = {
+                (witness_id, "en"): {
+                    "lang": "en", "rights": "public-domain",
+                    "artifacts": [english_id],
+                },
+                (witness_id, "la"): {
+                    "lang": "la", "rights": "public-domain",
+                    "artifacts": [latin_id],
+                },
+            }
+            section = {
+                "key": "synthetic",
+                "artifact": english_id,
+                "witness": witness_id,
+                "artifact_latin": latin_id,
+                "english": {
+                    "relation": "antecedent",
+                    "collation": "uncollated",
+                    "note": "An identified antecedent; this comparison is uncollated.",
+                },
+                "latin": {
+                    "relation": "antecedent",
+                    "collation": "collated",
+                    "collation_finding": "research/finding.md:1",
+                    "note": "An identified antecedent with a cited collation.",
+                },
+            }
+
+            built = tool.from_artifact(
+                section, witnesses, {}, {}, library, "synthetic.toml"
+            )
+            translations = {
+                row["lang"]: row for row in built[0]["translations"]
+            }
+            self.assertEqual(
+                {
+                    key: translations["en"][key]
+                    for key in ("relation", "collation", "note")
+                },
+                section["english"],
+            )
+            self.assertEqual(
+                {
+                    key: translations["la"][key]
+                    for key in (
+                        "relation", "collation", "collation_finding", "note",
+                    )
+                },
+                section["latin"],
+            )
+
+            for side in ("english", "latin"):
+                missing = dict(section)
+                missing.pop(side)
+                with self.subTest(missing=side):
+                    with self.assertRaisesRegex(
+                        tool.SourceError, rf"no \[{side}\] provenance block"
+                    ):
+                        tool.from_artifact(
+                            missing, witnesses, {}, {}, library, "synthetic.toml"
+                        )
+
+            invalid = dict(section)
+            invalid["english"] = section["english"] | {"grade": "uncollated"}
+            with self.assertRaisesRegex(tool.SourceError, "unknown fields grade"):
+                tool.from_artifact(
+                    invalid, witnesses, {}, {}, library, "synthetic.toml"
+                )
+
+            contradictory = dict(section)
+            contradictory["english"] = {
+                "relation": "own", "collation": "uncollated",
+            }
+            with self.assertRaisesRegex(tool.SourceError, "relation is own"):
+                tool.from_artifact(
+                    contradictory, witnesses, {}, {}, library, "synthetic.toml"
+                )
+
+    def test_artifact_sections_refuse_an_unreasoned_latin_gap(self) -> None:
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        artifact_id = "artifact.synthetic.english-only"
+        with tempfile.TemporaryDirectory() as directory:
+            source_root = Path(directory)
+            (source_root / "english.tsv").write_text(
+                "element_key\tkind\tenglish\n"
+                "oratio\tprayer\tEnglish words.\n",
+                encoding="utf-8",
+            )
+            library = {
+                artifact_id: {
+                    "id": artifact_id, "path": "english.tsv",
+                    "_source_root": source_root,
+                },
+            }
+            witnesses = {
+                (witness_id, "en"): {
+                    "lang": "en", "rights": "project-created",
+                    "artifacts": [artifact_id],
+                },
+            }
+            section = {
+                "key": "synthetic", "artifact": artifact_id,
+                "witness": witness_id, "english": {"relation": "own"},
+            }
+            with self.assertRaisesRegex(tool.SourceError, "has no Latin"):
+                tool.from_artifact(
+                    section, witnesses, {}, {}, library, "synthetic.toml"
+                )
+
+            section["absent_latin"] = "no-facing-latin"
+            built = tool.from_artifact(
+                section, witnesses, {},
+                {"no-facing-latin": {"kind": "witness-gap"}},
+                library, "synthetic.toml",
+            )
+            self.assertEqual(built[0]["absent"]["latin"], "no-facing-latin")
+            self.assertEqual(built[0]["translations"][0]["relation"], "own")
+
+    def test_duplicate_absence_keys_fail_closed_before_public_projection(self) -> None:
+        tool = self.tool_module
+        row = {
+            "key": "provider-neutral-gap",
+            "kind": "witness-gap",
+            "what": "The held witness carries no facing text.",
+        }
+        with self.assertRaisesRegex(
+            tool.SourceError, "absence provider-neutral-gap is declared twice"
+        ):
+            tool.absence_table({"absences": [row, dict(row)]}, "synthetic")
+
+    def test_structured_turns_are_exact_closed_and_source_row_owned(self) -> None:
+        tool = self.tool_module
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Path(directory)
+            (fixture / "rows.tsv").write_text(
+                "element_key\tseq\ttext\n"
+                "dialogue\t10\tServer call.\n"
+                "dialogue\t20\tPriest response.\n"
+                "dialogue\t30\tBow.\n",
+                encoding="utf-8",
+            )
+            artifact_id = "artifact.synthetic.turns"
+            library = {
+                artifact_id: {
+                    "id": artifact_id,
+                    "path": "rows.tsv",
+                    "_source_root": fixture,
+                }
+            }
+            with self.subTest(source_root=fixture):
+                entry = {
+                    "english_turns": [
+                        {
+                            "key": "server-call", "seq": [10],
+                            "speaker": "server", "dialogue_role": "versicle",
+                        },
+                        {
+                            "key": "priest-response", "seq": [20],
+                            "speaker": "priest", "dialogue_role": "response",
+                        },
+                        {"key": "bow", "seq": [30], "action": True},
+                    ]
+                }
+                parent = "Server call.\nPriest response.\nBow."
+                turns = tool.structured_turns(
+                    entry, "english", library, artifact_id, ["dialogue"],
+                    "text", "synthetic/dialogue", "synthetic", parent,
+                )
+                self.assertEqual(
+                    turns,
+                    [
+                        {
+                            "key": "server-call", "speaker": "server",
+                            "dialogue_role": "versicle", "action": None,
+                            "text": "Server call.",
+                        },
+                        {
+                            "key": "priest-response", "speaker": "priest",
+                            "dialogue_role": "response", "action": None,
+                            "text": "Priest response.",
+                        },
+                        {
+                            "key": "bow", "speaker": None,
+                            "dialogue_role": None, "action": True, "text": "Bow.",
+                        },
+                    ],
+                )
+                self.assertEqual("\n".join(row["text"] for row in turns), parent)
+                self.assertIsNone(
+                    tool.structured_turns(
+                        entry, "latin", library, artifact_id, ["dialogue"],
+                        "text", "synthetic/dialogue", "synthetic", parent,
+                    ),
+                    "English turn metadata must not create Latin turns",
+                )
+
+                invalid = (
+                    ({"english_turns": []}, "empty or malformed"),
+                    ({"english_turns": [
+                        {"key": "second", "seq": [20]},
+                        {"key": "first", "seq": [10]},
+                        {"key": "bow", "seq": [30]},
+                    ]}, "does not exactly partition"),
+                    ({"english_turns": [
+                        {"key": "first", "seq": [10, 20]},
+                        {"key": "again", "seq": [20, 30]},
+                    ]}, "does not exactly partition"),
+                    ({"english_turns": [
+                        {"key": "same", "seq": [10]},
+                        {"key": "same", "seq": [20, 30]},
+                    ]}, "repeats turn key"),
+                    ({"english_turns": [
+                        {"key": "Not Kebab", "seq": [10, 20, 30]},
+                    ]}, "kebab"),
+                    ({"english_turns": [
+                        {"key": "bad-speaker", "seq": [10, 20, 30],
+                         "speaker": "deacon"},
+                    ]}, "has speaker"),
+                    ({"english_turns": [
+                        {"key": "bad-role", "seq": [10, 20, 30],
+                         "dialogue_role": "reply"},
+                    ]}, "has dialogue_role"),
+                    ({"english_turns": [
+                        {"key": "false-action", "seq": [10, 20, 30],
+                         "action": False},
+                    ]}, "action must be true or omitted"),
+                    ({"english_turns": [
+                        {"key": "mixed-action", "seq": [10, 20, 30],
+                         "action": True, "speaker": "priest"},
+                    ]}, "both an action and a spoken turn"),
+                    ({"english_turns": [
+                        {"key": "unknown-field", "seq": [10, 20, 30],
+                         "offset": 0},
+                    ]}, "unknown fields"),
+                )
+                for bad_entry, message in invalid:
+                    with self.subTest(message=message):
+                        with self.assertRaisesRegex(tool.SourceError, message):
+                            tool.structured_turns(
+                                bad_entry, "english", library, artifact_id,
+                                ["dialogue"], "text", "synthetic/dialogue",
+                                "synthetic", parent,
+                            )
+
+                with self.assertRaisesRegex(tool.SourceError, "without a english text block"):
+                    tool.side_text(
+                        {"english_turns": entry["english_turns"]}, "en",
+                        {}, {}, {}, "synthetic/dialogue", "synthetic",
+                    )
+
+    def test_restricted_witness_validation_is_fail_closed(self) -> None:
+        tool = self.tool_module
+        witness_id = "edition.synthetic.restricted"
+        artifact_id = "artifact.synthetic.restricted"
+        entry = {
+            "id": witness_id,
+            "lang": "en",
+            "state": tool.RESTRICTED_WITNESS_STATE,
+            "label": "Restricted provenance",
+            "acknowledgement": tool.ICEL_EXCERPT_ACKNOWLEDGEMENT,
+            "caution": "Not a publication basis.",
+            "artifacts": [artifact_id],
+        }
+        record = {
+            "id": artifact_id,
+            "rights_status": "restricted",
+            "storage": tool.RESTRICTED_ARTIFACT_STORAGE,
+            "indexable": False,
+        }
+        for rights_status in tool.RESTRICTED_ARTIFACT_RIGHTS:
+            with self.subTest(rights_status=rights_status):
+                restricted = tool.restricted_witness_table(
+                    {"restricted_witnesses": [entry]},
+                    {artifact_id: record | {"rights_status": rights_status}},
+                    "synthetic",
+                )
+                self.assertEqual(set(restricted), {(witness_id, "en")})
+
+        cases = (
+            (entry | {"state": "licensed"}, record, "state = 'rights-restricted'"),
+            (entry | {"acknowledgement": "Almost the prescribed notice."}, record,
+             "exact prescribed excerpt acknowledgement"),
+            (entry, record | {"rights_status": "public-domain"}, "rights_status"),
+            (entry, record | {"storage": "tracked"}, "text-free restricted storage"),
+            (entry, record | {"path": "payload.tsv"}, "text-free restricted storage"),
+            (entry, record | {"indexable": True}, "text-free restricted storage"),
+        )
+        for bad_entry, bad_record, message in cases:
+            with self.subTest(message=message):
+                with self.assertRaisesRegex(tool.SourceError, message):
+                    tool.restricted_witness_table(
+                        {"restricted_witnesses": [bad_entry]},
+                        {artifact_id: bad_record},
+                        "synthetic",
+                    )
+
+        with self.assertRaisesRegex(tool.SourceError, "rights-restricted witness"):
+            tool.side_text(
+                {
+                    "english": {
+                        "witness": witness_id,
+                        "artifact": artifact_id,
+                        "element": "dialogue",
+                    }
+                },
+                "en", {}, restricted, {artifact_id: record},
+                "synthetic/dialogue", "synthetic",
+            )
 
 
 class OrdinaryPage(unittest.TestCase):
@@ -318,23 +998,29 @@ class OrdinaryPage(unittest.TestCase):
         digest = hashlib.sha256(
             json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         ).hexdigest()
-        self.assertEqual(len(sequence), 63)
+        self.assertEqual(len(sequence), 62)
         self.assertEqual(
             digest,
-            "0aa4fc7139443a2bd9a53df16a737485d64cc8bf686fbde8e8e976981f158f2e",
+            "53ff991c14c9283ec3376355f19325e2514ce8bfa8ead51e204f6892b73ddd7a",
         )
 
     def test_ordered_mass_text_contract_for_both_missals(self) -> None:
-        """Navigation must not alter the text-bearing event stream."""
+        """Navigation must not alter the text-bearing event stream.
+
+        The harness hashes received text, explicitly omitting nodes marked
+        presentation-only. Speaker and role cues therefore cannot change this
+        digest; the postconciliar movement records the ICEL quarantine and the
+        current Proper corpus, while the separate cue test holds accessibility.
+        """
         report = self.run_harness()
         expected = {
             "pentecost_10_text": (
                 211,
-                "b18b9e4c33019380fa11baeb7ed8e386848fdb530b8bd1a396afff601c6d2666",
+                "24f393967887da2611bb432d3fda3f6342fd2129873ca864ed8d8570d1a74e35",
             ),
             "ot_18_text": (
-                63,
-                "da08c368ba61ce86467892eaa4833b7659ae8939c4bd73cc1eb4fcec726d1988",
+                62,
+                "42281a2c23766d6a96010a23f19f84fb6918d869a2da461d31ba47bcf5bec478",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -349,9 +1035,11 @@ class OrdinaryPage(unittest.TestCase):
         report = self.run_harness()
         self.assertEqual(report["shown_by_default"], ["ep-i"])
         self.assertEqual(report["shown_when_third_chosen"], ["ep-iii"])
-        self.assertIn("Lord, have mercy.", report["kyrie"])
-        self.assertIn("English Language Liturgical Consultation (ELLC), and used by permission",
-                      report["kyrie"])
+        self.assertNotIn("Lord, have mercy.", report["kyrie"])
+        self.assertIn("Not shown: its English.", report["kyrie"])
+        self.assertIn("approved-english-publication-restriction", report["kyrie"])
+        self.assertNotIn(ICEL_SOURCE_ID, report["kyrie"])
+        self.assertNotIn(ICEL_ACKNOWLEDGEMENT, report["kyrie"])
         self.assertIn("Not shown: its English.", report["prayer_one"])
         self.assertIn("Not shown: its Latin.", report["prayer_one"])
         self.assertIn("Te igitur, clementissime Pater", report["prayer_one"])
@@ -406,19 +1094,20 @@ class OrdinaryPage(unittest.TestCase):
         self.assertEqual(report["nativity_after"], 31)
         self.assertEqual(report["nativity_total"], 41, "nothing is dropped")
 
-    def test_a_withheld_element_still_holds_the_place_of_its_proper(self) -> None:
+    def test_an_outside_layer_element_still_holds_the_place_of_its_proper(self) -> None:
         """Absence does not forfeit a seat.
 
-        The postconciliar Collect is withheld under ICEL's licence. The day's
-        Collect is still set down immediately after it, so a reader sees both
-        what is withheld and what is not, at the moment each falls due.
+        The invariant Ordinary has a seat for the postconciliar Collect, but the
+        variable prayer itself belongs to the Propers layer. The day's Collect
+        is still set down immediately after that seat, so a reader sees the
+        boundary between layers at the moment the prayer falls due.
         """
         report = self.run_harness()
         self.assertEqual(report["postconciliar_collect"],
                          ["ritus-initiales/collecta", "Collect"])
 
     def test_a_language_nobody_holds_is_offered_and_says_why(self) -> None:
-        """The control's whole purpose, and the failure it must not have.
+        """Partial language coverage stays visible and never becomes fallback.
 
         A language is offered whether or not a given element holds it, and a
         reader who asks for it must be told, at every element that is silent,
@@ -439,16 +1128,15 @@ class OrdinaryPage(unittest.TestCase):
         the held case is asserted beside it, because a control that offers a
         language must be tested on both.
 
-        The two reasons still in play remain incomparable and are asserted not
-        to leak into each other: `no-facing-latin` is a fact about one
-        printing's pages, and `editio-typica` is a rights question nobody has
-        settled about the postconciliar Missal, whose Latin is held nowhere.
+        The postconciliar file now carries partial English and partial
+        antecedent Latin. It must neither describe the Latin as wholly absent
+        nor silently fall back to English where an element has no Latin.
         """
         report = self.run_harness()
         self.assertEqual(
             [one["lang"] for one in report["languages"]["postconciliar"]], ["en", "la"])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["postconciliar"]], [9, 0])
+            [one["held"] for one in report["languages"]["postconciliar"]], [0, 10])
         self.assertEqual(
             [one["held"] for one in report["languages"]["roman-1962"]], [195, 112])
         # The Latin the 1962 file does not hold is exactly the elements the
@@ -458,10 +1146,18 @@ class OrdinaryPage(unittest.TestCase):
         self.assertEqual(elements - 112, 83)
 
         pater = report["kyrie_in_each"]
-        self.assertIn("Our Father in heaven", pater["en"])
-        self.assertNotIn("Our Father in heaven", pater["la"])
-        self.assertIn("Not shown: its Latin.", pater["la"])
-        self.assertIn("editio-typica", pater["la"])
+        self.assertNotIn("Our Father, who art in heaven", pater["en"])
+        self.assertIn("Not shown: its English.", pater["en"])
+        self.assertIn("approved-english-publication-restriction", pater["en"])
+        self.assertIn("Pater noster, qui es in cœlis", pater["la"])
+        self.assertNotIn("Not shown: its Latin.", pater["la"])
+
+        greeting = report["greeting_in_each"]
+        self.assertNotIn("The grace of our Lord Jesus Christ", greeting["en"])
+        self.assertIn("Not shown: its English.", greeting["en"])
+        self.assertIn("approved-english-publication-restriction", greeting["en"])
+        self.assertIn("Not shown: its Latin.", greeting["la"])
+        self.assertIn("element-spans-mixed-matter", greeting["la"])
 
         # Held: the facing column was read, so the Latin stands in its own right
         # and no reason is offered for a silence there is not.
@@ -502,9 +1198,7 @@ class OrdinaryPage(unittest.TestCase):
         preamble = report["preamble_1962"]
         self.assertIn("no-facing-latin", preamble)
         self.assertIn("83 of 195 elements", preamble)
-        self.assertIn("prints no Latin text for it", preamble)
-        self.assertNotIn("prints no Latin text for it",
-                         report["accendat_in_each"]["la"])
+        self.assertNotIn("undefined", preamble)
         self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
         self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])
 
@@ -551,6 +1245,120 @@ class OrdinaryPage(unittest.TestCase):
         self.assertNotIn("Priest Priest", held)
         self.assertIn("B. V. M.", report["virgin_1861"])
         self.assertNotIn("℣", report["virgin_1861"])
+
+        raw = report["raw_vr"]
+        self.assertEqual(raw["received"], "V. Literal call. R. Literal response.")
+        self.assertEqual(raw["turns"], [], "opaque text is never split into turns")
+        self.assertEqual(raw["vr_marks"], 0)
+        self.assertEqual(raw["cues"], ["P"], "priest is a speaker, not a versicle")
+
+    def test_explicit_turns_keep_role_speaker_accessibility_and_language_apart(self) -> None:
+        """Structured turns are lossless presentation inside one element.
+
+        The crossed server-versicle and priest-response rows prove the visible
+        glyph comes only from the explicit dialogue role. Speaker-only rows
+        prove a priest does not imply a versicle. Presentation cues have one
+        accessible English name, are absent from the received text, and turn
+        rows acquire neither event IDs nor semantic destinations.
+        """
+        report = self.run_harness()
+        english = report["structured_english"]
+        self.assertEqual(english["dialogue_count"], 1)
+        self.assertEqual(
+            english["received"],
+            "Server call.Priest response.Priest part.Server part.Bow.",
+        )
+        self.assertEqual(
+            english["turns"],
+            [
+                {
+                    "speaker": "server", "dialogue_role": "versicle",
+                    "action": None, "id": None, "semantic_id": None,
+                    "labels": ["Versicle — Server"],
+                    "cues": [{"mark": "℣", "aria_hidden": "true"}],
+                    "texts": [{"lang": "en", "text": "Server call."}],
+                    "received": "Server call.",
+                },
+                {
+                    "speaker": "priest", "dialogue_role": "response",
+                    "action": None, "id": None, "semantic_id": None,
+                    "labels": ["Response — Priest"],
+                    "cues": [{"mark": "℟", "aria_hidden": "true"}],
+                    "texts": [{"lang": "en", "text": "Priest response."}],
+                    "received": "Priest response.",
+                },
+                {
+                    "speaker": "priest", "dialogue_role": None,
+                    "action": None, "id": None, "semantic_id": None,
+                    "labels": ["Priest"],
+                    "cues": [{"mark": "P", "aria_hidden": "true"}],
+                    "texts": [{"lang": "en", "text": "Priest part."}],
+                    "received": "Priest part.",
+                },
+                {
+                    "speaker": "server", "dialogue_role": None,
+                    "action": None, "id": None, "semantic_id": None,
+                    "labels": ["Server"],
+                    "cues": [{"mark": "S", "aria_hidden": "true"}],
+                    "texts": [{"lang": "en", "text": "Server part."}],
+                    "received": "Server part.",
+                },
+                {
+                    "speaker": None, "dialogue_role": None,
+                    "action": "true", "id": None, "semantic_id": None,
+                    "labels": [], "cues": [],
+                    "texts": [{"lang": "en", "text": "Bow."}],
+                    "received": "Bow.",
+                },
+            ],
+        )
+
+        latin = report["structured_latin"]
+        self.assertEqual(latin["dialogue_count"], 1)
+        self.assertEqual(latin["received"], "Versus.Responsum.")
+        self.assertEqual(
+            [row["texts"] for row in latin["turns"]],
+            [
+                [{"lang": "la", "text": "Versus."}],
+                [{"lang": "la", "text": "Responsum."}],
+            ],
+        )
+        self.assertEqual([row["received"] for row in latin["turns"]],
+                         ["Versus.", "Responsum."])
+        self.assertNotEqual(len(english["turns"]), len(latin["turns"]),
+                            "one language's turns must not leak into the other")
+
+        real = report["real_orate_latin"]
+        self.assertEqual(real["dialogue_count"], 1)
+        self.assertEqual(
+            [row["text"] for row in real["source_turns"]],
+            real["source_text"].split("\n"),
+        )
+        self.assertEqual(
+            [row["texts"][0]["text"] for row in real["rendered_turns"]],
+            [row["text"] for row in real["source_turns"]],
+        )
+        self.assertEqual(
+            [
+                (row["speaker"], row["dialogue_role"], row["labels"], row["cues"])
+                for row in real["rendered_turns"]
+            ],
+            [
+                (
+                    "priest", "versicle", ["Versicle — Priest"],
+                    [{"mark": "℣", "aria_hidden": "true"}],
+                ),
+                (
+                    "all", "response", ["Response — All"],
+                    [{"mark": "℟", "aria_hidden": "true"}],
+                ),
+            ],
+        )
+        self.assertTrue(real["rendered_turns"][1]["received"].startswith("R. Suscipiat"))
+        self.assertTrue(all(
+            row["id"] is None and row["semantic_id"] is None
+            for row in real["rendered_turns"]
+        ))
 
     def run_harness(self) -> dict:
         run = subprocess.run(
@@ -646,16 +1454,17 @@ class FormularyPage(unittest.TestCase):
         self.assertIn("reading.appendChild(T.renderProper(proper", source[traversal:])
 
     def test_text_bearing_proper_structures_remain_fixed(self) -> None:
+        """The full Proper records, including current FDLC oration provenance."""
         expected = {
             "roman-1962": (
                 "advent-1",
                 10,
-                "c7e2c7432efc8383a6aa253a25cb27b57f583d7ce2bbc3fba9011bb0df97220c",
+                "a5fdf977ad1519d1b16242d0536026b3d267a8e9434db3b4c95c8ee911d92911",
             ),
             "postconciliar": (
                 "ot-18",
                 11,
-                "0e177a7008ef4b3ba4863724848b185257164cacd383d334378b03d55c2b81e2",
+                "1a9a860550b7d969c3838fe256bc7af10a61904b6feecc964f780c3a1bdb7cbc",
             ),
         }
         keys = (
@@ -814,26 +1623,32 @@ class ProperPlacementNotesPage(unittest.TestCase):
 
         formulary = FORMULARY_HTML.read_text(encoding="utf-8")
         self.assertNotIn("proper-placement-notes", formulary)
-        # The two pins are a tripwire, not the assertion: they say the formulary
-        # page and its script have not moved without someone re-reading the line
-        # above, which is the thing actually guarded. Re-pinned once, on
-        # 2026-08-20. The page's bytes had moved and the pin had not, so the
-        # tripwire was reporting a change nobody had looked at. It was then
-        # looked at: `git diff` over the whole interval since the pin was set
-        # shows one hunk, the six lines that wrap the existing reader-place
-        # breadcrumb around a hidden `data-reader-locus` span. It adds no
-        # script tag, names no placement-notes module, and changes no load
-        # order, so the guarded proposition is untouched and the pin is moved
-        # rather than the assertion weakened. `liturgy.js` had not moved at all
-        # and its pin is the original.
-        self.assertEqual(
-            hashlib.sha256(FORMULARY_HTML.read_bytes()).hexdigest(),
-            "61593982117969b8673a936117ae8c331aca91c20283f613bd9c289424c83164",
-        )
-        self.assertEqual(
-            hashlib.sha256(FORMULARY_JS.read_bytes()).hexdigest(),
-            "7e1def40d8ed150d181926e312b2faa24aa4bf85f24bfe14dd9edf832150f73d",
-        )
+        scripts = [
+            '<script src="../shared/browser-core.js"></script>',
+            '<script src="ordinary-seating.js"></script>',
+            '<script src="reader-state.js"></script>',
+            '<script src="reader-state-adapters.js"></script>',
+            '<script src="reader-shell.js"></script>',
+            '<script src="propers-reader.js"></script>',
+        ]
+        positions = [formulary.index(script) for script in scripts]
+        self.assertEqual(positions, sorted(positions))
+        for script in scripts:
+            self.assertEqual(formulary.count(script), 1, script)
+        self.assertNotIn('<script src="liturgy.js"></script>', formulary)
+
+        # Bind the page to the controller it actually loads. This guards the
+        # dependency contract and load order without pinning unrelated bytes in
+        # either the HTML or a retired controller.
+        controller = FORMULARY_READER_JS.read_text(encoding="utf-8")
+        bindings = [
+            "const T = window.Triptych;",
+            "const Contract = window.LiturgyReaderState;",
+            "const Adapters = window.LiturgyReaderStateAdapters;",
+            "const Shell = window.TriptychReaderShell;",
+        ]
+        binding_positions = [controller.index(binding) for binding in bindings]
+        self.assertEqual(binding_positions, sorted(binding_positions))
 
     def test_real_seats_supply_exact_factual_notes_and_no_placeholder(self) -> None:
         run = subprocess.run(
@@ -923,10 +1738,19 @@ function node(tag) {
     setAttribute(k, v) { this.attrs[k] = v; },
     querySelectorAll() { return []; }, addEventListener() {},
     text() { let o = this.textContent || '';
-      for (const c of this.children) o += (c.text ? c.text() : String(c.data || '')); return o; } };
+      for (const c of this.children) o += (c.text ? c.text() : String(c.data || '')); return o; },
+    receivedText() {
+      if (this.attrs['data-presentation-only']) return '';
+      let o = this.textContent || '';
+      for (const c of this.children) {
+        o += c.receivedText ? c.receivedText() : String(c.data || '');
+      }
+      return o;
+    } };
 }
 const ids = {};
-global.document = { createElement: node, createTextNode: (t) => ({ data: t, text: () => t }),
+global.document = { createElement: node, createTextNode: (t) => ({
+    data: t, text: () => t, receivedText: () => t }),
   createDocumentFragment: () => node('#fragment'),
   getElementById: (id) => (ids[id] = ids[id] || node('div')),
   body: { classList: { toggle() {} }, appendChild() {} }, addEventListener() {} };
@@ -952,6 +1776,34 @@ const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const pc = read('src/web/data/structure/ordinary/postconciliar.json');
 const tlm = read('src/web/data/structure/ordinary/roman-1962.json');
 const all = (f) => f.sections.flatMap((s) => s.elements);
+const hasClass = (n, wanted) => String(n.className || '').split(/\s+/).includes(wanted);
+function descendants(root, wanted) {
+  const out = [];
+  function visit(one) {
+    if (hasClass(one, wanted)) out.push(one);
+    for (const child of one.children || []) visit(child);
+  }
+  visit(root);
+  return out;
+}
+function dialogueReport(rendered) {
+  return descendants(rendered, 'ordinary-turn').map((row) => ({
+    speaker: row.attrs['data-speaker'] || null,
+    dialogue_role: row.attrs['data-dialogue-role'] || null,
+    action: row.attrs['data-action'] || null,
+    id: row.attrs.id || null,
+    semantic_id: row.attrs['data-semantic-id'] || null,
+    labels: descendants(row, 'visually-hidden').map((one) => one.text()),
+    cues: descendants(row, 'cue-mark').map((one) => ({
+      mark: one.attrs['data-cue'] || null,
+      aria_hidden: one.attrs['aria-hidden'] || null
+    })),
+    texts: descendants(row, 'ordinary-turn-text').map((one) => ({
+      lang: one.lang, text: one.text()
+    })),
+    received: row.receivedText()
+  }));
+}
 const eps = all(pc).filter((e) => e.variant);
 const shown = () => eps.filter((e) => P.elementShows(e, pc)).map((e) => e.variant);
 const byDefault = shown();
@@ -986,7 +1838,9 @@ function pour(file, calendar, key) {
   });
   const text = events.map((event) => {
     if (event.kind === 'begin_section') return event.section.name;
-    if (event.kind === 'ordinary_element') return P.renderElement(event.element, file).text();
+    if (event.kind === 'ordinary_element') {
+      return P.renderElement(event.element, file).receivedText();
+    }
     const proper = event.proper;
     return JSON.stringify({
       name: proper.name, form: proper.form, incipit: proper.incipit,
@@ -1028,6 +1882,71 @@ function inEach(file, key) {
   return out;
 }
 
+/* Synthetic rows hold renderer semantics that must not depend on an artifact's
+   current coverage. Each language owns an explicit, complete set of turns; a
+   speaker and a dialogue role deliberately cross so neither can imply the
+   other. */
+const syntheticFile = {
+  languages: [
+    {lang: 'en', held: 1, elements: 1, absent: 'english'},
+    {lang: 'la', held: 1, elements: 1, absent: 'latin'}
+  ],
+  translations: [], absences: []
+};
+const structured = {
+  key: 'synthetic/structured', kind: 'dialogue', speaker: null,
+  name: null, latin_incipit: null, locus: null, note: null, variant: null,
+  absent: {english: null, latin: null},
+  translations: [
+    {lang: 'en', source_id: 'synthetic-en', rights: 'project-created',
+      text: 'Server call.\nPriest response.\nPriest part.\nServer part.\nBow.',
+      turns: [
+        {key: 'server-call', speaker: 'server', dialogue_role: 'versicle',
+          action: null, text: 'Server call.'},
+        {key: 'priest-response', speaker: 'priest', dialogue_role: 'response',
+          action: null, text: 'Priest response.'},
+        {key: 'priest-part', speaker: 'priest', dialogue_role: null,
+          action: null, text: 'Priest part.'},
+        {key: 'server-part', speaker: 'server', dialogue_role: null,
+          action: null, text: 'Server part.'},
+        {key: 'bow', speaker: null, dialogue_role: null,
+          action: true, text: 'Bow.'}
+      ]},
+    {lang: 'la', source_id: 'synthetic-la', rights: 'project-created',
+      text: 'Versus.\nResponsum.',
+      turns: [
+        {key: 'versus', speaker: 'priest', dialogue_role: 'versicle',
+          action: null, text: 'Versus.'},
+        {key: 'responsum', speaker: 'all', dialogue_role: 'response',
+          action: null, text: 'Responsum.'}
+      ]}
+  ]
+};
+P.state.ordinaryLang = 'en';
+const structuredEnglish = P.renderElement(structured, syntheticFile);
+P.state.ordinaryLang = 'la';
+const structuredLatin = P.renderElement(structured, syntheticFile);
+P.state.ordinaryLang = null;
+
+/* Raw V./R. is intentionally opaque. The priest field may provide P as visual
+   furniture, but it must not manufacture a versicle or split the source. */
+const raw = {
+  key: 'synthetic/raw', kind: 'dialogue', speaker: 'priest',
+  name: null, latin_incipit: null, locus: null, note: null, variant: null,
+  absent: {english: null, latin: 'synthetic'},
+  translations: [{lang: 'en', source_id: 'synthetic-en',
+    rights: 'project-created', text: 'V. Literal call. R. Literal response.'}]
+};
+P.state.ordinaryLang = 'en';
+const rawRendered = P.renderElement(raw, syntheticFile);
+P.state.ordinaryLang = null;
+const orateElement = all(pc).find(
+  (e) => e.key === 'praeparatio-donorum/orate-fratres');
+const orateLatin = (orateElement.translations || []).find((one) => one.lang === 'la');
+P.state.ordinaryLang = 'la';
+const orateRendered = P.renderElement(orateElement, pc);
+P.state.ordinaryLang = null;
+
 process.stdout.write(JSON.stringify({
   shown_by_default: byDefault,
   shown_when_third_chosen: whenThird,
@@ -1035,6 +1954,7 @@ process.stdout.write(JSON.stringify({
   kyrie_in_each: inEach(pc, 'ritus-communionis/pater-noster'),
   te_igitur_in_each: inEach(tlm, 'canon/te-igitur'),
   accendat_in_each: inEach(tlm, 'oblatio/accendat-in-nobis'),
+  greeting_in_each: inEach(pc, 'ritus-initiales/salutatio'),
   preamble_1962: P.ordinaryPreamble(tlm).text(),
   versicles_1861: P.renderElement(
     all(tlm).find((e) => e.key === 'praeparatio/dominus-vobiscum'), tlm).text(),
@@ -1053,7 +1973,29 @@ process.stdout.write(JSON.stringify({
   pentecost_10_sequence: pentecost10.sequence,
   pentecost_10_text: pentecost10.text,
   ot_18_sequence: ot18.sequence,
-  ot_18_text: ot18.text
+  ot_18_text: ot18.text,
+  structured_english: {
+    turns: dialogueReport(structuredEnglish),
+    received: structuredEnglish.receivedText(),
+    dialogue_count: descendants(structuredEnglish, 'ordinary-dialogue').length
+  },
+  structured_latin: {
+    turns: dialogueReport(structuredLatin),
+    received: structuredLatin.receivedText(),
+    dialogue_count: descendants(structuredLatin, 'ordinary-dialogue').length
+  },
+  raw_vr: {
+    received: rawRendered.receivedText(),
+    turns: dialogueReport(rawRendered),
+    vr_marks: descendants(rawRendered, 'vr-mark').length,
+    cues: descendants(rawRendered, 'cue-mark').map((one) => one.attrs['data-cue'])
+  },
+  real_orate_latin: {
+    source_text: orateLatin && orateLatin.text,
+    source_turns: orateLatin && orateLatin.turns,
+    rendered_turns: dialogueReport(orateRendered),
+    dialogue_count: descendants(orateRendered, 'ordinary-dialogue').length
+  }
 }));
 """
 

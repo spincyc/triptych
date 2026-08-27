@@ -24,6 +24,7 @@ which asks for one sentence per locus and cannot rot in either direction.
 from __future__ import annotations
 
 import sys
+import copy
 import unittest
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
@@ -204,6 +205,55 @@ class WitnessGate(unittest.TestCase):
         self.assertIn("witnesses differ", problems[0])
 
 
+class PageImageProvenanceGate(unittest.TestCase):
+    """A visual collation and its publication basis remain two exact records."""
+
+    def setUp(self):
+        import tomllib
+
+        document = tomllib.loads(SIDECAR.read_text(encoding="utf-8"))
+        self.witnesses = {row["id"]: row for row in document["sources"]}
+        self.bound = [
+            row
+            for row in document["entries"]
+            if row.get("artifact_id", "").endswith(
+                "internet-archive-facsimile-pdf-6cf3c3d0"
+            )
+        ]
+
+    def test_all_lasance_page_collations_resolve_exactly(self):
+        self.assertEqual(len(self.bound), 13)
+        for row in self.bound:
+            where = f"{row['mass']}/{row['proper']}"
+            self.assertEqual(
+                checker.overlay_entry_source_problems(where, row, self.witnesses),
+                [],
+            )
+
+    def test_a_starting_leaf_cannot_hide_a_missing_second_leaf(self):
+        row = copy.deepcopy(
+            next(
+                row
+                for row in self.bound
+                if row["mass"].startswith("s-cyrilli")
+                and row["proper"] == "Secret"
+            )
+        )
+        row["ia_leaf_range"] = [912, 912]
+        problems = checker.overlay_entry_source_problems(
+            "Cyril/Secret", row, self.witnesses
+        )
+        self.assertTrue(any("artifact_page_ranges" in problem for problem in problems))
+
+    def test_unresolved_page_images_cannot_become_the_rights_artifact(self):
+        witnesses = copy.deepcopy(self.witnesses)
+        witnesses["lasance-1945"]["artifact_id"] = self.bound[0]["artifact_id"]
+        problems = checker.overlay_entry_source_problems(
+            "Lasance", self.bound[0], witnesses
+        )
+        self.assertTrue(any("tracked public-domain artifact" in p for p in problems))
+
+
 class TheCorpusItself(unittest.TestCase):
     """The rules above, against the file they were written for."""
 
@@ -248,11 +298,12 @@ class TheCorpusItself(unittest.TestCase):
         for field in (checker.OVERLAY_ATTESTS, checker.OVERLAY_ATTESTS_KIND):
             self.assertEqual(transcription[field], printing[field])
 
-    def test_the_second_witness_is_the_artifact_verbatim(self):
-        """Copied, never edited: the point of a second witness is that it is one.
+    def test_the_unbound_second_witness_is_quarantined_verbatim(self):
+        """The historical artifact remains evidence, never served wording.
 
-        Read back against the tracked TSV rather than against a list here, so
-        this cannot become the third transcription of the same book.
+        None of its payload may survive in positive entries until each target
+        has an exact page and publication binding. The typed absence ledger,
+        not an unbound transcription, carries that disposition.
         """
         import csv
         import tomllib
@@ -273,10 +324,22 @@ class TheCorpusItself(unittest.TestCase):
             for translation in row["translations"]
             if translation.get("source_id") == ARTIFACT
         ]
-        self.assertTrue(carried)
+        self.assertEqual(carried, [])
         wording = {text.strip() for text in printed.values()}
-        for text in carried:
-            self.assertIn(text, wording)
+        retained = {
+            translation["text"].strip()
+            for row in document["entries"]
+            for translation in row["translations"]
+        }
+        self.assertTrue(wording.isdisjoint(retained))
+        unavailable = [
+            row
+            for row in document["untranslated"]
+            if row.get("reason", {}).get("source_id") == EDITION
+            and row.get("reason", {}).get("kind") == "rights-withheld"
+        ]
+        self.assertEqual(len(unavailable), 406)
+        self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):
         """The gap the sibling could not close, and which the page closed instead.

@@ -217,9 +217,24 @@ async function fresh(cdp, target, entrance, selector = null) {
   await waitFor(cdp, `location.href === 'about:blank'`, 'blank document');
   await cdp.send('Page.navigate', { url: target });
   const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
-  await waitFor(cdp,
-    `location.href === ${JSON.stringify(target)} && ${ready} && window.readerVisualResetDebug`,
-    `${entrance} visual-reset readiness`);
+  try {
+    await waitFor(cdp,
+      `${ready} && window.readerVisualResetDebug`,
+      `${entrance} visual-reset readiness`);
+  } catch (error) {
+    const state = await evaluate(cdp, `({
+      href: location.href,
+      ready: ${ready},
+      visualReset: Boolean(window.readerVisualResetDebug),
+      outcome: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.outcome,
+      errors: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.error,
+      renders: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.renders,
+      loads: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.loads,
+      title: document.title,
+      reading: document.querySelector('#reader-document')?.textContent.slice(0, 160)
+    })`);
+    throw new Error(error.message + ': ' + JSON.stringify(state));
+  }
   return stableFrames(cdp, selector);
 }
 
@@ -229,7 +244,7 @@ async function productionFresh(cdp, target, entrance, selector = null) {
   await cdp.send('Page.navigate', { url: target });
   const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
   await waitFor(cdp,
-    `location.href === ${JSON.stringify(target)} && ${ready} && document.querySelector('.reader-instrument')`,
+    `${ready} && document.querySelector('.reader-instrument')`,
     `${entrance} production Instrument readiness`);
   return stableFrames(cdp, selector);
 }
@@ -586,7 +601,7 @@ async function runAssertions(cdp, base) {
       uncompiled: document.querySelectorAll('#reader-document > .uncompiled').length,
       held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
     })`);
-    assert.match(value.coverage, /not yet transcribed/i);
+    assert.match(value.coverage, /not held/i);
     assert.equal(value.uncompiled, 0);
     assert.ok(value.held > 3);
 
@@ -711,20 +726,23 @@ async function runAssertions(cdp, base) {
       { name: 'forced-colors', value: 'active' },
       { name: 'prefers-reduced-motion', value: 'reduce' }
     ] });
-    await viewport(cdp, 393, 852);
-    await fresh(cdp, prototypeUrl(base, 'propers', 'reader', STATES.propers), 'propers');
-    await click(cdp, '[data-reader-action="details"]');
-    await waitFor(cdp, 'document.querySelector("#details-surface").open', 'forced-color Details');
-    const value = await evaluate(cdp, `({ close: document.querySelector('#details-surface [data-reader-close]').getBoundingClientRect().width,
-      reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
-      forced: matchMedia('(forced-colors: active)').matches,
-      focus: document.activeElement.getAttribute('aria-label') })`);
-    assert.equal(value.reduced, true);
-    assert.equal(value.forced, true);
-    assert.ok(value.close >= 44);
-    assert.equal(value.focus, 'Close Details');
-    await escape(cdp);
-    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    try {
+      await viewport(cdp, 393, 852);
+      await fresh(cdp, prototypeUrl(base, 'propers', 'reader', STATES.propers), 'propers');
+      await click(cdp, '[data-reader-action="details"]');
+      await waitFor(cdp, 'document.querySelector("#details-surface").open', 'forced-color Details');
+      const value = await evaluate(cdp, `({ close: document.querySelector('#details-surface [data-reader-close]').getBoundingClientRect().width,
+        reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+        forced: matchMedia('(forced-colors: active)').matches,
+        focus: document.activeElement.getAttribute('aria-label') })`);
+      assert.equal(value.reduced, true);
+      assert.equal(value.forced, true);
+      assert.ok(value.close >= 44);
+      assert.equal(value.focus, 'Close Details');
+      await escape(cdp);
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    }
   });
 
   await check('production Instrument Read matches the accepted axis and portrait measure', async () => {
@@ -792,7 +810,7 @@ async function runAssertions(cdp, base) {
 
     await productionFresh(cdp, productionUrl(base, 'day', STATES.partial), 'day');
     production = await metrics(cdp);
-    assert.match(production.coverage.text, /not yet transcribed/i);
+    assert.match(production.coverage.text, /not held/i);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document > .uncompiled').length`), 0);
     assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .composed, #reader-document .passage').length`) > 3);
 
@@ -864,18 +882,22 @@ async function runAssertions(cdp, base) {
           branches: branches.map(node => node.dataset.territorialBranch),
           headings: branches.map(node => node.querySelector('.territorial-branch-heading h2').textContent.trim()),
           properCounts: branches.map(node => node.querySelectorAll('.proper').length),
+          unresolvedChoices: branches.map(node =>
+            node.querySelectorAll('[data-unresolved-choice]').length),
           semanticBranches: dayReaderDebug.semantic.map(row => row.territory),
           uniqueLocations: new Set(locations).size === locations.length,
           uniqueIds: new Set(ids).size === ids.length,
           overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
         };
       })()`);
-      assert.equal(value.outcome, 'ready');
+      assert.equal(value.outcome, 'unresolved');
       assert.equal(value.title, 'Held territorial branches');
       assert.deepEqual(value.branches, ['epiphany-january-6', 'epiphany-transferred-to-sunday']);
       assert.deepEqual(value.semanticBranches, value.branches);
       assert.equal(new Set(value.headings).size, 2);
-      value.properCounts.forEach(count => assert.ok(count > 0));
+      value.properCounts.forEach((count, index) =>
+        assert.ok(count > 0 || value.unresolvedChoices[index] > 0));
+      assert.ok(value.unresolvedChoices.some(count => count > 0));
       assert.equal(value.uniqueLocations, true);
       assert.equal(value.uniqueIds, true);
       assert.ok(value.overflow <= 1);

@@ -1,0 +1,533 @@
+{
+  "schema": "triptych-roman-recensions/v1",
+  "as_of": "2026-08-26",
+  "rite": "roman",
+  "vocabulary": {
+    "data_availability": ["available", "partial", "unavailable"],
+    "publication_availability": ["available", "partial", "unavailable", "unestablished"],
+    "collation": ["directly-collated", "mixed", "finding-aid", "unestablished"]
+  },
+  "recensions": [
+    {
+      "id": "roman-1920",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica Vaticana 1920",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 1920,
+      "calendar": "roman-pre-1955",
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1920-typica"
+      ],
+      "coverage_ref": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+      "capabilities": {
+        "calendar": {
+          "data_availability": "partial",
+          "publication_availability": "available",
+          "collation": "finding-aid"
+        },
+        "propers": {
+          "data_availability": "unavailable",
+          "publication_availability": "partial",
+          "collation": "unestablished"
+        },
+        "rubrics": {
+          "data_availability": "partial",
+          "publication_availability": "available",
+          "collation": "finding-aid"
+        },
+        "ordinary": {
+          "data_availability": "partial",
+          "publication_availability": "available",
+          "collation": "mixed"
+        }
+      },
+      "language_capabilities": [
+        {
+          "id": "la",
+          "data_availability": "partial",
+          "publication_availability": "partial",
+          "collation": "mixed",
+          "coverage_ref": "src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml"
+        }
+      ],
+      "activation_requirements": [
+        {
+          "id": "collate-1920-calendar-and-propers",
+          "kind": "proper-collation",
+          "capabilities": ["calendar", "propers"],
+          "need": "Collate the complete 1920 target calendar, Proper, Commons, and inherited formularies instead of treating roman-1962 fallback as 1920 attestation.",
+          "evidence_refs": [
+            "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage"
+          ]
+        },
+        {
+          "id": "collate-1920-rubrics-and-ordinary",
+          "kind": "rubric-collation",
+          "capabilities": ["rubrics", "ordinary"],
+          "need": "Collate the target edition's rubrics and Ordinary; the present Ordinary witness is an 1861 lay missal and the precedence table is a disclosed finding aid.",
+          "evidence_refs": [
+            "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-transition-1956-1960",
+      "kind": "interval-gap",
+      "label": "Unresolved Roman Missal state after the 1956 restored Holy Week and before the 1960 Code of Rubrics",
+      "identity_status": "unresolved",
+      "language": "la",
+      "period": {"from": 1956, "through": 1960},
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=ordo-hebdomadae-sanctae-1956",
+        "src/sources/inventories/roman-holy-week-acts-v1.toml#id=maxima-redemptionis-1955",
+        "src/sources/inventories/roman-holy-week-acts-v1.toml#id=rubricarum-instructum-1960",
+        "src/sources/inventories/roman-holy-week-acts-v1.toml#id=codex-rubricarum-1960"
+      ],
+      "capabilities": {
+        "calendar": {
+          "data_availability": "unavailable",
+          "publication_availability": "unavailable",
+          "collation": "unestablished"
+        },
+        "propers": {
+          "data_availability": "unavailable",
+          "publication_availability": "unavailable",
+          "collation": "unestablished"
+        },
+        "rubrics": {
+          "data_availability": "unavailable",
+          "publication_availability": "unavailable",
+          "collation": "unestablished"
+        },
+        "ordinary": {
+          "data_availability": "unavailable",
+          "publication_availability": "unavailable",
+          "collation": "unestablished"
+        }
+      },
+      "language_capabilities": [
+        {
+          "id": "la",
+          "data_availability": "unavailable",
+          "publication_availability": "unavailable",
+          "collation": "unestablished"
+        }
+      ],
+      "activation_requirements": [
+        {
+          "id": "identify-transitional-missal-printing",
+          "kind": "identity-resolution",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Identify a specific complete Missale Romanum edition and printing used in this interval before assigning an edition-named calendar id.",
+          "evidence_refs": [
+            "guidance/recensions.md",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=ordo-hebdomadae-sanctae-1956"
+          ]
+        },
+        {
+          "id": "acquire-1956-restored-holy-week",
+          "kind": "source-acquisition",
+          "capabilities": ["calendar", "propers", "rubrics"],
+          "need": "Acquire a lawful, authenticated, complete 1956 Ordo Hebdomadae Sanctae instauratus; the recorded Internet Archive copies are access-restricted and cite-only.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=ordo-hebdomadae-sanctae-1956"
+          ]
+        },
+        {
+          "id": "collate-transitional-calendar",
+          "kind": "calendar-collation",
+          "capabilities": ["calendar"],
+          "need": "Collate a dated competent calendar or Ordo for occurrence, vigils, octaves, and placements; computation may only be used as a finding aid.",
+          "evidence_refs": [
+            "guidance/liturgy/calendar-computation.md",
+            "guidance/recensions.md"
+          ]
+        },
+        {
+          "id": "collate-transitional-propers",
+          "kind": "proper-collation",
+          "capabilities": ["propers"],
+          "need": "Collate the target Proper and Commons against both the pre-reform and 1962 witnesses, recording every established, absent, and unrecorded departure without filling silence from either neighbor.",
+          "evidence_refs": [
+            "guidance/recensions.md",
+            "src/sources/inventories/roman-holy-week-acts-v1.toml"
+          ]
+        },
+        {
+          "id": "collate-transitional-rubrics",
+          "kind": "rubric-collation",
+          "capabilities": ["rubrics"],
+          "need": "Acquire and collate rubrics applicable after the 1955 simplification and restored Holy Week but before the 1960 Code; neither neighboring rubric set may be inherited as proof.",
+          "evidence_refs": [
+            "src/sources/inventories/roman-holy-week-acts-v1.toml#id=de-rubricis-simpliciorem-1955",
+            "src/sources/inventories/roman-holy-week-acts-v1.toml#id=codex-rubricarum-1960"
+          ]
+        },
+        {
+          "id": "collate-transitional-ordinary",
+          "kind": "ordinary-collation",
+          "capabilities": ["ordinary"],
+          "need": "Collate the target Order and Ordinary of Mass and its ceremonies; the repository's 1861 and 1962 witnesses do not establish this interval's exact state.",
+          "evidence_refs": [
+            "src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml",
+            "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+          ]
+        },
+        {
+          "id": "review-transitional-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Record artifact- and surface-specific publication bases before reproducing exact 1955 or later Latin matter; public-domain antecedence must be established text by text.",
+          "evidence_refs": [
+            "guidance/liturgical-text-publication-policy.md",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=ordo-hebdomadae-sanctae-1956"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-1962",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica 1962",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 1962,
+      "calendar": "roman-1962",
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1962-typica"
+      ],
+      "coverage_ref": "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml",
+      "capabilities": {
+        "calendar": {
+          "data_availability": "available",
+          "publication_availability": "available",
+          "collation": "mixed"
+        },
+        "propers": {
+          "data_availability": "available",
+          "publication_availability": "partial",
+          "collation": "finding-aid"
+        },
+        "rubrics": {
+          "data_availability": "available",
+          "publication_availability": "available",
+          "collation": "mixed"
+        },
+        "ordinary": {
+          "data_availability": "partial",
+          "publication_availability": "available",
+          "collation": "finding-aid"
+        }
+      },
+      "language_capabilities": [
+        {
+          "id": "la",
+          "data_availability": "partial",
+          "publication_availability": "partial",
+          "collation": "mixed",
+          "coverage_ref": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+        }
+      ],
+      "activation_requirements": [
+        {
+          "id": "finish-1962-propers-collation",
+          "kind": "proper-collation",
+          "capabilities": ["calendar", "propers", "rubrics"],
+          "need": "Replace finding-aid, OCR-only, placeholder, and model-generated regions with target-page collation and explicit target-edition evidence.",
+          "evidence_refs": [
+            "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml"
+          ]
+        },
+        {
+          "id": "collate-1962-ordinary",
+          "kind": "ordinary-collation",
+          "capabilities": ["ordinary"],
+          "need": "Collate an element-complete 1962 Ordinary; the currently rendered words principally come from a pre-1955 1861 lay witness.",
+          "evidence_refs": [
+            "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+          ]
+        },
+        {
+          "id": "keep-1962-rights-bounds",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Publish only material supported by public-domain antecedents or another recorded basis; a modern facsimile is evidence and not a blanket publication license.",
+          "evidence_refs": [
+            "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-1970",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica 1970",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 1970,
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1970-typica"
+      ],
+      "capabilities": {
+        "calendar": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "propers": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "rubrics": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "ordinary": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      },
+      "language_capabilities": [
+        {"id": "la", "data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      ],
+      "activation_requirements": [
+        {
+          "id": "acquire-and-collate-1970",
+          "kind": "source-acquisition",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Register an authenticated complete 1970 target artifact, then collate its calendar, Proper, rubrics, and Ordinary without projecting later editions backward.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1970-typica"
+          ]
+        },
+        {
+          "id": "review-1970-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Obtain a defensible publication basis for exact post-1929 Latin text; the acquisition record says the target text may not be published.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1970-typica"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-1971-reimpressio-emendata",
+      "kind": "book-state",
+      "label": "Missale Romanum, reimpressio emendata 1971",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 1971,
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1971-reimpressio"
+      ],
+      "capabilities": {
+        "calendar": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "propers": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "rubrics": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "ordinary": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      },
+      "language_capabilities": [
+        {"id": "la", "data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      ],
+      "activation_requirements": [
+        {
+          "id": "acquire-and-collate-1971",
+          "kind": "source-acquisition",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Locate and register the 1971 emended reprint, then collate it as its own state so changes are not silently assigned to 1970 or 1975.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1971-reimpressio"
+          ]
+        },
+        {
+          "id": "review-1971-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Record a publication basis after the exact reprint is identified; the current acquisition record permits no text publication.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1971-reimpressio"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-1975-editio-typica-altera",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica altera 1975",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 1975,
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1975-typica-altera"
+      ],
+      "capabilities": {
+        "calendar": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "propers": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "rubrics": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "ordinary": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      },
+      "language_capabilities": [
+        {"id": "la", "data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      ],
+      "activation_requirements": [
+        {
+          "id": "acquire-and-collate-1975",
+          "kind": "source-acquisition",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Acquire the complete 1975 second typical edition; the recorded Ordo Missae fragment cannot establish its whole calendar, Proper, rubrics, or Ordinary.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1975-typica-altera"
+          ]
+        },
+        {
+          "id": "review-1975-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Record a publication basis for exact target text; the current acquisition record permits no text publication.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1975-typica-altera"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-2002-editio-typica-tertia",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica tertia 2002",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 2002,
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2002-typica-tertia"
+      ],
+      "capabilities": {
+        "calendar": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "propers": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "rubrics": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"},
+        "ordinary": {"data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      },
+      "language_capabilities": [
+        {"id": "la", "data_availability": "unavailable", "publication_availability": "unavailable", "collation": "unestablished"}
+      ],
+      "activation_requirements": [
+        {
+          "id": "collate-registered-2002-artifact",
+          "kind": "proper-collation",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Collate the registered restricted 2002 artifact as its own edition rather than treating the current 2008-labeled index as evidence of the unamended book.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2002-typica-tertia"
+          ]
+        },
+        {
+          "id": "review-2002-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Keep the registered target artifact storage-restricted and obtain a defensible publication basis before reproducing exact target text.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2002-typica-tertia"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roman-2008-reimpressio-emendata",
+      "kind": "book-state",
+      "label": "Missale Romanum, editio typica tertia, reimpressio emendata 2008",
+      "identity_status": "identified",
+      "language": "la",
+      "year": 2008,
+      "calendar": "postconciliar",
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio"
+      ],
+      "coverage_ref": "src/sources/calendars/postconciliar/propers.yaml",
+      "capabilities": {
+        "calendar": {"data_availability": "partial", "publication_availability": "available", "collation": "mixed"},
+        "propers": {"data_availability": "partial", "publication_availability": "partial", "collation": "mixed"},
+        "rubrics": {"data_availability": "partial", "publication_availability": "partial", "collation": "mixed"},
+        "ordinary": {"data_availability": "partial", "publication_availability": "partial", "collation": "mixed"}
+      },
+      "language_capabilities": [
+        {
+          "id": "la",
+          "data_availability": "partial",
+          "publication_availability": "partial",
+          "collation": "mixed",
+          "coverage_ref": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+        }
+      ],
+      "activation_requirements": [
+        {
+          "id": "acquire-2008-altar-book",
+          "kind": "source-acquisition",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Acquire and register an exact complete 2008 altar-book artifact; the repository currently holds the official change list and status notice, not the reprint's own bytes.",
+          "evidence_refs": [
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio"
+          ]
+        },
+        {
+          "id": "collate-2008-target-slots",
+          "kind": "proper-collation",
+          "capabilities": ["calendar", "propers", "rubrics", "ordinary"],
+          "need": "Establish target-edition artifact attestation per slot; current residence, antecedent relations, Lectionary citations, and change-list evidence do not jointly prove the complete 2008 Missal.",
+          "evidence_refs": [
+            "src/sources/calendars/postconciliar/propers.yaml",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio"
+          ]
+        },
+        {
+          "id": "review-2008-publication-rights",
+          "kind": "rights-review",
+          "capabilities": ["propers", "rubrics", "ordinary"],
+          "need": "Keep exact modern Latin text withheld unless a licensed or public-domain antecedent basis is recorded for the publication surface.",
+          "evidence_refs": [
+            "guidance/liturgical-text-publication-policy.md",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio"
+          ]
+        }
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "roman-missal-en-us-2011",
+      "parent": "roman-2008-reimpressio-emendata",
+      "label": "The Roman Missal, Third Typical Edition, English for the United States 2011",
+      "identity_status": "identified",
+      "language": "en-US",
+      "territory": "US",
+      "year": 2011,
+      "evidence_refs": [
+        "src/sources/inventories/missal-acquisition-audit-v1.toml#id=roman-missal-english-2011"
+      ],
+      "coverage_ref": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml",
+      "capabilities": {
+        "propers": {
+          "data_availability": "partial",
+          "publication_availability": "unavailable",
+          "collation": "mixed"
+        },
+        "ordinary": {
+          "data_availability": "partial",
+          "publication_availability": "unavailable",
+          "collation": "mixed"
+        }
+      },
+      "activation_requirements": [
+        {
+          "id": "account-for-2011-approved-text",
+          "kind": "language-collation",
+          "capabilities": ["propers", "ordinary"],
+          "need": "Account separately for approved 2011 ICEL rows, antecedent or historical English, project-created English, stale keys, and missing slots; language fallback is not target coverage.",
+          "evidence_refs": [
+            "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=roman-missal-english-2011"
+          ]
+        },
+        {
+          "id": "resolve-2011-publication-path",
+          "kind": "rights-review",
+          "capabilities": ["propers", "ordinary"],
+          "need": "Keep ICEL text quarantined until the ICEL standing permission and USCCB internet position are reconciled for an exact, acknowledged, non-bundled publication surface.",
+          "evidence_refs": [
+            "src/sources/inventories/liturgical-english-rights-v1.toml",
+            "src/sources/inventories/icel-web-permission-rights-v1.toml",
+            "src/sources/inventories/missal-acquisition-audit-v1.toml#id=roman-missal-english-2011"
+          ]
+        }
+      ]
+    }
+  ]
+}

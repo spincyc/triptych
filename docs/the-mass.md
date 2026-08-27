@@ -311,17 +311,17 @@ the calendars, and nothing else on this page states a figure it gives.
 
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
-| roman-pre-1955 | seasonal | 6 | 6 | 6 |
-| roman-1962 | seasonal | 128 | 1152 | 0 |
+| roman-pre-1955 | seasonal | 6 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1154 | 0 |
 | roman-1962 | christological | 8 | 66 | 0 |
 | roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1106 | 2 |
-| roman-1962 | common | 30 | 334 | 0 |
+| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-1962 | common | 30 | 358 | 0 |
 | postconciliar | seasonal | 390 | 2108 | 0 |
 | postconciliar | christological | 7 | 67 | 0 |
-| postconciliar | marian | 14 | 54 | 2 |
-| postconciliar | sanctoral | 181 | 714 | 8 |
-| postconciliar | common | 7 | 7 | 7 |
+| postconciliar | marian | 14 | 52 | 0 |
+| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
@@ -335,26 +335,25 @@ the calendars, and nothing else on this page states a figure it gives.
 | postconciliar | All Souls commemoration | 1 | 1 |
 | postconciliar | Feast | 24 | 24 |
 | postconciliar | Memorial | 69 | 69 |
-| postconciliar | Optional memorial | 82 | 82 |
-| postconciliar | Optional memorials | 18 | 38 |
+| postconciliar | Optional memorial | 120 | 120 |
 | postconciliar | Solemnity | 11 | 11 |
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 599 |
-| Propers | 6 | 2746 | 2950 |
-| — named `Placeholder` | 6 | 2 | 17 |
-| — inside a `forms` block | 0 | 147 | 244 |
+| Masses | 6 | 491 | 619 |
+| Propers | 0 | 2773 | 2941 |
+| — named `Placeholder` | 0 | 0 | 0 |
+| — inside a `forms` block | 0 | 149 | 184 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
-| Masses holding only placeholders | 6 | 2 | 17 |
+| Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
-| Propers taking their text from another entry | 0 | 53 | 41 |
-| Propers that are not placeholders | 0 | 2744 | 2933 |
-| — of those, scripture-bearing | 0 | 2192 | 2579 |
-| Encoded passages | 0 | 2598 | 3534 |
+| Propers taking their text from another entry | 0 | 70 | 41 |
+| Propers that are not placeholders | 0 | 2773 | 2941 |
+| — of those, scripture-bearing | 0 | 2192 | 2587 |
+| Encoded passages | 0 | 2598 | 3542 |
 | Distinct books cited | 0 | 57 | 73 |
-| Distinct slot names | 1 | 119 | 93 |
+| Distinct slot names | 0 | 120 | 92 |
 
 Counted from `src/sources/calendars/*/propers.yaml` and written here by
 `tools/mass-propers census --write`, which is the only thing that writes the
@@ -453,19 +452,20 @@ only for the six psalms that split between the systems. The eleven are:
 | christ-the-king | Communion Antiphon | *Sedebit Dominus Rex in aeternum* | Psalm 28:10-11 |
 
 **Current state.** Each proper may now declare its own numbering rather than
-being forced into its calendar's, and all eleven carry that declaration; the
-validation path has not caught up, so all eleven still report as out of bounds
-and are set aside through a listed exceptions ledger. That ledger is
-self-cleaning in both directions: an out-of-bounds psalm at an *unlisted* locus
-still fails the build, so a new leak cannot hide behind the known ones, and a
-listed locus that has *stopped* breaching also fails, so an entry cannot outlive
-the defect that earned it. Correcting the eleven — deciding, per slot, whether
-the number moves or the declaration does — is tracked as TASK-32.
+being forced into its calendar's, and the former eleven antiphons carry the
+needed declaration. `citations check` and `check-calendar-masses` honor it.
+Three unresolved loci remain across four owning slots: `Psalm 28:11` at
+`christ-the-king`, `Psalm 56:14` at `ot-24-saturday` cycle II, and
+`Psalm 150:6` at `ot-23-thursday` cycle I and `ot-33-wednesday` cycle II. The
+exceptions ledger is self-cleaning in both directions: an unlisted breach fails,
+and a listed locus that stops breaching also fails until its stale row is
+removed.
 
 Two other references cannot resolve for reasons upstream of any of this:
 `4 Esdras 2:36-37` is not among the Douay-Rheims' 73 books, and
-`Malachi 3:19-20a` is Hebrew numbering where the Vulgate prints Malachi 4:1-6.
-Only psalms are converted between systems today.
+`1 Thessalonians 4:18` falls past the last verse this edition prints in that
+chapter. `Malachi 3:19-20a` now resolves. Only psalms are converted between
+numbering systems today.
 
 ### Divergences outside the psalter, recorded by hand
 
@@ -490,9 +490,9 @@ wrong one is an answer.
 
 29, 30 and 31 December 1962 — the fifth, sixth and seventh days within the
 Octave of the Nativity — sat in the date-ordered list of celebrations and in no
-section of the propers file at all. They are there now, as placeholders, and
-every celebration the date list carries must now have a Mass, filed under the
-kind that list assigns it, or the build fails.
+section of the propers file at all. They are there now, and every celebration
+the date list carries must have a Mass, filed under the kind that list assigns
+it, or the build fails.
 
 Closing the gap meant settling how they classify, and the answer was in the
 edition's own punctuation. Within an octave:
@@ -505,27 +505,23 @@ edition's own punctuation. Within an octave:
   classifies **seasonal**.
 
 So in the 1962 data, 26–28 December are filed sanctoral and 29–31 December
-seasonal.
+seasonal. Their current formularies are expressed as references rather than
+placeholder copies; their owning rows and collation notes, not this historical
+account of the filing defect, govern the exact inheritance.
 
-The formulary those three days actually use is still absent. It is one of three
-the Missal carries that this file does not — the others being *D. N. Iesu Christi
-Regis* and *Sanctissimi Nominis Iesu*.
-
-### Everything here is an unverified lead
+### Evidence is recorded per entry
 
 A calendar index is a **planning and cross-reference spine, not a source of
 record**. It carries no artifact hash and proves nothing on its own; a
 publication still binds the edition and artifact that control each text through
 its own `research/source-bindings.toml`.
 
-Both files say so in their `verification` header. The 1962 file states three
-tiers of confidence; the postconciliar file states two. Every citation and every
-text is an unverified lead until collated against the controlling edition, and
-each file tracks its known problems in `open_collation_items` rather than
-silently harmonizing them away. The instruction is explicit: fix a divergence by
-collation, not by making the file falsely uniform. `open_collation_items` in
-both files ends with the line *all entries in this file are placeholders pending
-source-backed completion*.
+Each file's `verification` header records the evidence grades and known issues
+that apply to it. Some entries have since been read or collated more closely than
+others; consult the header, row, and bound source rather than applying a blanket
+state to the whole calendar. Known problems remain in `open_collation_items`
+rather than being silently harmonized away. The instruction is unchanged: fix a
+divergence by collation, not by making the file falsely uniform.
 
 ---
 
@@ -535,7 +531,7 @@ Each of these is recorded in the repository as unresolved, not silently decided.
 
 | Question | Where it lives |
 | --- | --- |
-| Whether the eleven antiphons should move their numbers or keep their per-slot declaration | TASK-32; the `psalm_numbering_exceptions` ledger |
+| The unresolved bound or numbering of `Psalm 28:11`, `Psalm 56:14`, and `Psalm 150:6` across their four owning slots | postconciliar `psalm_numbering_exceptions` |
 | Whether Ascension, Corpus Christi, the Sacred Heart and the Chrism Mass belong under `seasonal` (where the Missal prints them) or `christological` (what they are by kind) | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias, which have no printed identifier | 1962 `open_collation_items` |
 | How 1962 commemorations should be modelled — the 104 are now dated entries of rank `Comm.`, but a commemoration's own three orations still have nowhere to live | 1962 `open_collation_items` |

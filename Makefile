@@ -230,7 +230,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-tool-registry check-calendar-masses \
+	distclean check-tools check-tool-registry check-calendar-days \
+	check-calendar-masses \
 	check-propers-census \
 	check-metadata check-web-editions \
 	check-proper-components \
@@ -369,6 +370,13 @@ check-pdf-review:
 
 check-deployment-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
+	@$(PYTHON) $(SOURCE_READER_TOOL) check
+	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
+	@$(PYTHON) tools/tpt calendar-days check
+	@$(PYTHON) tools/tpt check-calendar-masses
+	@$(PYTHON) tools/tpt mass-propers structure --check
+	@$(PYTHON) tools/tpt calendar-rubrics check
+	@$(PYTHON) tools/tpt mass-ordinary check
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
 		[ -e "$$inventory" ] || continue; \
 		case "$$inventory" in \
@@ -446,7 +454,7 @@ help:
 		'make dependencies-arch-browser  List the browser package the harnesses need and this installer omits' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-sources  Validate the source library, inventory, and migration ledger' \
-		'make check-deployment-sources  Validate deployable sources and publication inventories' \
+		'make check-deployment-sources  Validate deployable sources, generated structures, and publication inventories' \
 		'make check-source-library  Test reusable source-library tooling' \
 		'make check-source-inventory  Replay the exhaustive legacy-source inventory' \
 		'make check-source-inventory-tool  Test legacy-source inventory tooling' \
@@ -483,6 +491,7 @@ help:
 		'make check-tracks [PLAN=<plan>]  Prove every track can be set and is installed current' \
 		'make reading-structure  Rewrite the browser structure of every abridged plan' \
 		'make check    Run every repository policy check' \
+		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
 		'make check-tests  Run the complete script unit-test suite' \
@@ -740,7 +749,8 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-browser-static \
-	check-calendar-masses check-calendar-rubrics check-propers-census \
+	check-calendar-days check-calendar-masses check-calendar-rubrics \
+	check-propers-census \
 	check-mass-ordinary check-bible-indexes check-catena \
 	check-commentary-coverage check-examples
 
@@ -803,6 +813,14 @@ recapture-examples:
 check-tool-registry:
 	@if command -v tmt >/dev/null; then tmt check; \
 	else echo "tmt not installed; skipping tool-registry check"; fi
+
+# Refuses a stale generated date projection and writes nothing;
+# `calendar-days structure` is what fixes a failure. Needs PyYAML, skipped
+# rather than failed without it.
+check-calendar-days:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt calendar-days check; \
+	else echo "PyYAML missing; skipping calendar-day check"; fi
 
 # Needs PyYAML (requirements-tools.txt); skipped rather than failed without it.
 # Two claims. The first is that the sources are valid; the second is that what

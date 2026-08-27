@@ -323,7 +323,7 @@ The weekday-capable parents and conditional omissions in this spine are fixed as
 | PC-S23 Ascension | The fortieth day of Easter or the Seventh Sunday of Easter, according to the competent calendar. |
 | PC-S24 Seventh Sunday of Easter | Preserved in the inventory but replaced, without weekday fallback, where Ascension is assigned to that Sunday. |
 | PC-S25 Pentecost | Sunday celebration; where Monday or Tuesday after Pentecost is a day on which the faithful are obliged or accustomed to attend Mass, the Missal permits the Pentecost Mass to be repeated or a Mass of the Holy Spirit to be used. This is conditional reuse, not transfer or a new identity. |
-| PC-S59 Body and Blood of Christ | Thursday after Trinity Sunday or the following Sunday, according to the competent calendar. |
+| PC-S27 Body and Blood of Christ | Thursday after Trinity Sunday or the following Sunday, according to the competent calendar. |
 
 Only two Proper-of-Time parents require separate, prebuilt weekday fallback targets because the fallback changes the Liturgy of the Word. Their six keys follow the Sunday registry but do not count as Sunday formulas:
 
@@ -341,7 +341,7 @@ The temporal production queue is therefore **190 targets** when the 184 Sunday f
 The fixed `temporal/shared/ordinary-time/weeks/01` through `weeks/34` layer owns the Ordinary Time Missal formularies and, when warranted, supplies separately manifested weekday companions:
 
 - Week I has no numbered Sunday consumer; its separate formulary is available for ferial use and cross-references `PC-S10`. Never invent a First Sunday in Ordinary Time.
-- Weeks II–XXXIII are owned by the week layer and consumed by `PC-S26`–`PC-S57`. On an Ordinary Time weekday, use of that formulary or of orations from another Sunday is a permitted selection, not an assertion that the Sunday celebration continues unchanged.
+- Weeks II–XXXIII are owned by the week layer and consumed by `PC-S28`–`PC-S59`. On an Ordinary Time weekday, use of that formulary or of orations from another Sunday is a permitted selection, not an assertion that the Sunday celebration continues unchanged.
 - The ordinary Week XXXIV formulary has no numbered Sunday consumer and is available for ferial use; the Sunday of Week XXXIV is `PC-S60` Christ the King, whose formulary is distinct.
 - The Roman Missal's *Tempus per annum* rubric 3(b) permits selection of any of the 34 Ordinary Time formularies—their antiphons and orations—on an eligible Ordinary Time feria; GIRM 363 separately permits orations from the preceding or another Ordinary Time Sunday. Chronological proximity does not make one of them automatically appointed.
 - [Calendar computation](calendar-computation.md) fixes the week resumed after Pentecost, the thirty-three or thirty-four week count, and the week omitted in a thirty-three-week year so that the final eschatological weeks remain in place. An omitted week is not transferred, anticipated, or renumbered, and a Sunday displaced by Pentecost, Trinity, the Body and Blood of Christ, or another celebration does not erase its numbered weekday week. The competent annual calendar still governs the actual result.
@@ -357,6 +357,10 @@ This order and policy were checked on 15 July 2026 against Paul VI's [*Mysterii 
 
 ## Commons namespace (`pc-C`)
 
-Reserve `pc-C-<slug>` for the Commune Sanctorum entries in the mass index, by the precedent of `1962-C-<slug>` in the 1962 calendar. Seven Commons are minted — Dedication of a church, Blessed Virgin Mary, Martyrs, Pastors, Doctors of the Church, Virgins, and Saints/holy women — from the sevenfold top-level division established by the acquisition record's page-image reading of the *Ordo lectionum Missae* 1981 Communia (artifact pages 375–398, nn. 701–742). Each carries `kind: common`, no `season` and no `date`, and a Placeholder proper; the Missal's own antiphons, orations and readings are not published from the restricted 2002 *Missale Romanum*. The Missal's subdivisions within each Common — how many formularies it prints and how they are divided — are not yet established from a witness this project holds.
+Reserve `pc-C-<slug>` for the Commune Sanctorum entries in the mass index, by the precedent of `1962-C-<slug>` in the 1962 calendar. Seven Commons are minted — Dedication of a church, Blessed Virgin Mary, Martyrs, Pastors, Doctors of the Church, Virgins, and Saints/holy women — from the sevenfold top-level division established by the acquisition record's page-image reading of the *Ordo lectionum Missae* 1981 Communia (artifact pages 375–398, nn. 701–742). Each carries `kind: common`, no `season` and no `date`, and a typed unavailable/rights disposition for the target Missal formulary. These are edition-identified Common identities, not generic placeholders and not supplied text. The restricted 2002 *Missale Romanum* does not provide publishable antiphons or orations, and the Ordo's Communia are option lists rather than Missal formularies.
 
-A registry revision is open: the full inventory of Commons formularies, their counts, and their slug grammar will be added when the *Missale Romanum* 2002 Commune Sanctorum table of contents is read. Until then, `pc-C` ids are minted in the mass index beside the existing `pc-T-<key>` precedent, and the `open_collation_items` in `src/sources/calendars/postconciliar/propers.yaml` records the decision. No `takes_from` from a dated mass to a Common is landed until the Missal's own heading for that day has been read, because the Ordo's heading appoints readings and the Missal's heading appoints prayers, and the two need not agree.
+The `pc-C` namespace and its seven identities are established. Their records do
+not claim a complete inventory of the target Missal's internal subdivisions or
+formularies. Relations from dated masses remain source-specific: an Ordo heading
+appoints readings while a Missal heading appoints prayers, and the two must not
+be treated as interchangeable evidence.

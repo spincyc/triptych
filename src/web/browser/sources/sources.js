@@ -264,6 +264,10 @@
       }
     }
     open = { work: work, edition: edition, payload: payload, at: at };
+    // Opening from the finder names the first passage just as exactly as a
+    // deep link does. This matters most for a one-passage edition: there is no
+    // Next button whose later use could accidentally finish the address.
+    writeHash();
     renderReader();
   }
 
@@ -337,11 +341,14 @@
     const bar = T.el('nav', 'passage-nav');
     bar.setAttribute('aria-label', 'Passages of this edition');
 
-    const previous = T.el('button', 'step', '‹ Previous');
-    previous.type = 'button';
-    previous.disabled = open.at <= 0;
-    previous.addEventListener('click', function () { step(-1); });
-    bar.appendChild(previous);
+    if (passages.length > 1) {
+      const previous = T.el('button', 'step previous', '‹ Previous');
+      previous.type = 'button';
+      previous.dataset.passageStep = '-1';
+      previous.disabled = open.at <= 0;
+      previous.addEventListener('click', function () { step(-1); });
+      bar.appendChild(previous);
+    }
 
     const field = T.el('div', 'field');
     const label = T.el('label', null, 'Passage');
@@ -360,7 +367,9 @@
     }));
     select.value = String(open.at);
     select.addEventListener('change', function () {
-      open.at = Number(select.value) || 0;
+      const chosen = Number(select.value);
+      if (!Number.isInteger(chosen) || chosen < 0 || chosen >= passages.length) return;
+      open.at = chosen;
       writeHash();
       renderPassage();
       refreshNavigation();
@@ -369,11 +378,14 @@
     field.appendChild(select);
     bar.appendChild(field);
 
-    const next = T.el('button', 'step', 'Next ›');
-    next.type = 'button';
-    next.disabled = open.at >= passages.length - 1;
-    next.addEventListener('click', function () { step(1); });
-    bar.appendChild(next);
+    if (passages.length > 1) {
+      const next = T.el('button', 'step next', 'Next ›');
+      next.type = 'button';
+      next.dataset.passageStep = '1';
+      next.disabled = open.at >= passages.length - 1;
+      next.addEventListener('click', function () { step(1); });
+      bar.appendChild(next);
+    }
 
     bar.appendChild(
       T.el('p', 'passage-count',
@@ -385,8 +397,18 @@
   function refreshNavigation() {
     const bar = elements.reader.querySelector('.passage-nav');
     if (!bar) return;
-    const replacement = renderNavigation(open.payload.passages || []);
-    bar.parentNode.replaceChild(replacement, bar);
+    const passages = open.payload.passages || [];
+    const select = bar.querySelector('#passage-select');
+    if (select) select.value = String(open.at);
+    const previous = bar.querySelector('[data-passage-step="-1"]');
+    const next = bar.querySelector('[data-passage-step="1"]');
+    if (previous) previous.disabled = open.at <= 0;
+    if (next) next.disabled = open.at >= passages.length - 1;
+    const count = bar.querySelector('.passage-count');
+    if (count) {
+      count.textContent = 'Passage ' + (open.at + 1) + ' of ' + passages.length;
+    }
+    refreshApparatusSelection();
   }
 
   function step(by) {
@@ -496,6 +518,15 @@
    *  weighing a text. */
   function renderProvenance(passage) {
     const source = T.el('p', 'passage-source');
+    const controller = T.el('span', 'source-controller');
+    if (passage.artifact_id) {
+      controller.appendChild(document.createTextNode('Controlling artifact: '));
+      controller.appendChild(T.el('code', 'source-identifier', passage.artifact_id));
+      controller.appendChild(document.createTextNode('.'));
+    } else {
+      controller.textContent = 'No controlling artifact is recorded.';
+    }
+    source.appendChild(controller);
     const parts = [];
     if (passage.artifact_type) parts.push(passage.artifact_type);
     if (passage.rights) parts.push(passage.rights);
@@ -508,8 +539,8 @@
     if (passage.segment_id) {
       source.appendChild(
         T.el('span', 'source-segment',
-          'Witnessed inside a container artifact, through segment ' +
-          passage.segment_id + '.')
+          'The passage is narrowed within that artifact through segment ' +
+          passage.segment_id + '; the segment does not replace its controller.')
       );
     }
     if (passage.source_url) {
@@ -535,6 +566,17 @@
     const list = T.el('ul', 'artifact-list');
     for (const artifact of artifacts) {
       const item = T.el('li', 'artifact');
+      item.dataset.artifactId = artifact.id || '';
+      if (artifact.id) {
+        item.appendChild(T.el('code', 'artifact-id', artifact.id));
+      } else {
+        item.appendChild(T.el('span', 'artifact-id', 'No artifact id recorded'));
+      }
+      const selection = T.el(
+        'span', 'artifact-selection', 'Controls the selected passage'
+      );
+      selection.hidden = true;
+      item.appendChild(selection);
       item.appendChild(T.el('span', 'artifact-type', artifact.artifact_type || ''));
       item.appendChild(T.el('span', 'artifact-rights', artifact.rights || ''));
       item.appendChild(T.el('span', 'artifact-storage', 'stored ' + artifact.storage));
@@ -545,6 +587,7 @@
     }
     section.appendChild(list);
     elements.reader.appendChild(section);
+    refreshApparatusSelection();
 
     const work = open.payload.work || {};
     if (work.description) {
@@ -552,6 +595,20 @@
       about.appendChild(T.el('summary', null, 'About this work'));
       about.appendChild(T.el('p', null, work.description));
       elements.reader.appendChild(about);
+    }
+  }
+
+  /** Keep the edition-level source list tied to the passage being read. */
+  function refreshApparatusSelection() {
+    if (!open) return;
+    const passage = (open.payload.passages || [])[open.at];
+    const controller = passage && passage.artifact_id;
+    for (const item of elements.reader.querySelectorAll('.artifact[data-artifact-id]')) {
+      const selected = Boolean(controller) && item.dataset.artifactId === controller;
+      if (selected) item.setAttribute('aria-current', 'true');
+      else item.removeAttribute('aria-current');
+      const note = item.querySelector('.artifact-selection');
+      if (note) note.hidden = !selected;
     }
   }
 
@@ -569,6 +626,20 @@
       return;
     }
     T.writeHash([
+      ['author', state.author],
+      ['category', state.category],
+      ['language', state.language],
+      ['period', state.period],
+      ['rights', state.rights],
+      ['readable', state.readable ? '1' : ''],
+      ['find', state.find],
+      ['sort', state.sort === 'author' ? '' : state.sort]
+    ]);
+  }
+
+  /** The finder query is canonical state, but partial keystrokes are not trips. */
+  function replaceFinderHash() {
+    T.replaceHash([
       ['author', state.author],
       ['category', state.category],
       ['language', state.language],
@@ -712,7 +783,9 @@
     });
     elements.find.addEventListener('input', function () {
       readControls();
-      writeHash();
+      // Typing rewrites the current finder address rather than manufacturing
+      // a Back-button stop for every partial query.
+      replaceFinderHash();
       renderFinder();
     });
 

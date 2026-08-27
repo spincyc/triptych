@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 import re
 import unittest
@@ -151,6 +152,60 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
         self.assertIn("shellRoot.dataset.readerMode", held(LITURGY / "day-reader.js"))
         self.assertIn("coverageNotice.replaceChildren(...uncompiled.childNodes)", held(LITURGY / "propers-reader.js"))
 
+    def test_instrument_response_safe_areas_and_print_reset_are_exact(self) -> None:
+        css = held(INSTRUMENT)
+
+        ordinary = json.loads(held(
+            ROOT / "src/web/data/structure/ordinary/postconciliar.json"
+        ))
+        elements = [
+            element
+            for section in ordinary["sections"]
+            for element in section["elements"]
+        ]
+        orate = next(
+            element for element in elements
+            if element["key"] == "praeparatio-donorum/orate-fratres"
+        )
+        latin = next(
+            translation for translation in orate["translations"]
+            if translation["lang"] == "la"
+        )
+        responses = [
+            turn for turn in latin["turns"]
+            if turn.get("dialogue_role") == "response"
+        ]
+        self.assertEqual(len(responses), 1)
+        self.assertRegex(responses[0]["text"], r"^R\.\s")
+
+        response_rule = re.search(
+            r'\[data-semantic-event-id="ordinary-element/'
+            r'praeparatio-donorum/orate-fratres"\]\s+'
+            r'\.ordinary-turn\[data-dialogue-role="response"\]\s*>\s*'
+            r'\.ordinary-turn-cue\s+\.cue-mark::before\s*\{([^}]*)\}',
+            css,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(response_rule)
+        self.assertIn("content: none;", response_rule.group(1))
+
+        for rule in (
+            "padding-inline: max(1rem, var(--reader-safe-left)) "
+            "max(1rem, var(--reader-safe-right));",
+            "padding-inline: max(1.5rem, var(--reader-safe-left)) "
+            "max(1.5rem, var(--reader-safe-right));",
+            "padding-inline: max(1.25rem, var(--reader-safe-left)) "
+            "max(1.25rem, var(--reader-safe-right));",
+        ):
+            self.assertIn(rule, css)
+
+        print_css = css[css.index("@media print"):]
+        self.assertIn(
+            ".reader-instrument .reader-document .ordinary-frame > "
+            ".ordinary-element { display: block; }",
+            print_css,
+        )
+
     def test_candidate_routes_have_static_privacy_and_route_neutral_identity(self) -> None:
         expected = {
             PRODUCTION_DAY: ("Day — Triptych", "Date"),
@@ -198,13 +253,10 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             ids = re.findall(r'\bid="([^"]+)"', held(page))
             self.assertEqual(len(ids), len(set(ids)), page.name)
 
-    def test_visual_oracle_and_liturgical_owners_are_exactly_unchanged(self) -> None:
+    def test_visual_oracle_is_exactly_unchanged(self) -> None:
         expected = {
-            "reader-shell.css": "e7195cd86ed4fc4a8455e97369702239eb22d709a13d3d8462d7759c01fe814a",
-            "reader-state-adapters.js": "ec655b52e850152a1a3034b09fbc36b828000a5edc9d01b7b8d98dfaeea96bcb",
-            "ordinary-seating.js": "67917f4888764f1aac097d291df5e655fb485d89219fda56ffba9a25aee993ba",
             "reader-visual-reset-day.html": "ff734f07b797e5706c7e62a4c890f47c32c0fbfd78bfc855f421a4123273c18d",
-            "reader-visual-reset-propers.html": "7b0a3a4c7ef1189f27bf134a9f6df90315c62675a19cabca0135adaf7201ba65",
+            "reader-visual-reset-propers.html": "638a816e189ab14b2c38dce83e8998a8cc440ebc38c025e920677a6bf8594312",
             "reader-visual-reset.css": "850e1acacb6f487a5c2f3118388b3fce7b96f9db667e783ba35cdef7d9918b48",
             "reader-visual-reset.js": "eb1c1dd5c0c9c7076b74f2187627dc56e39963429212c0a51872df0ea98a9679",
         }

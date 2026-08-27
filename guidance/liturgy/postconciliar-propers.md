@@ -109,11 +109,14 @@ Mark the brief synthesis with
 N+1, and N+2. Page breaks without that validation do not meet the exact
 two-page requirement.
 
-The rights position here is narrower than it is for the 1962 books. The ICEL
-English of the Roman Missal and the
-Lectionary text are under copyright and are never reproduced. Neither is
-any Bible translation under copyright — the Knox, Jerusalem and New
-Jerusalem, RSV and NRSV, NABRE, and the Grail psalms are all excluded.
+The rights position for these installed PDFs is narrower than it is for the
+site's live display. The ICEL English of the Roman Missal is under copyright;
+ICEL's standing permission is limited to a qualifying no-fee noncommercial
+Internet site and expressly grants no license for another form of publication.
+It therefore is not reproduced in these PDFs. Lectionary text is controlled
+separately by CCD and is not reproduced either. Nor is any Bible translation
+under copyright — the Knox, Jerusalem and New Jerusalem, RSV and NRSV, NABRE,
+and the Grail psalms are all excluded.
 A guide may cite a locus, describe what a text says, and quote the short
 phrase an argument actually turns on; it may not stand in for the book.
 
@@ -130,6 +133,13 @@ Within that bound:
   description of what the prayer asks. Do not supply a rendering of the
   project's own, and do not paraphrase the ICEL text closely enough to
   reconstruct it.
+
+Do not copy a live-page acknowledgement into the PDF and infer that it expands
+the permission. For a future qualifying web display of excerpts, ICEL currently
+prescribes `Excerpts from the English translation of The Roman Missal © 2010,
+International Commission on English in the Liturgy Corporation. All rights
+reserved.` That notice is necessary where applicable but does not clear a PDF,
+a public data bundle, USCCB-specific material, or CCD/Lectionary text.
 
 Where this leaves an element without English, say so in that element's
 own place rather than in a general disclaimer. An honest gap is a

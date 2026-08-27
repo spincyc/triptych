@@ -1,0 +1,196 @@
+# Dated action record for the browser Day reader under the USCCB publication
+# guidelines that enter into force on 29 November 2026.
+#
+# This is a repository publication-surface decision, not legal advice, a
+# canonical classification, an imprimatur, an authentication, a copyright
+# license, or a release authorization. It authorizes no publication and changes
+# no external system. Its purpose is to keep an ambiguity from turning silently
+# into permission as the effective date approaches.
+
+decision_schema = 1
+record_type = "liturgical-publication-surface-review"
+id = "day-reader-usccb-participation-aid-2026"
+recorded_on = "2026-08-26"
+jurisdiction = "United States"
+guidelines_effective_on = "2026-11-29"
+mandatory_review_on = "2026-11-15"
+contingency_deadline = "2026-11-28"
+legal_advice = false
+authorizes_release = false
+
+authorizes_nothing = """
+This record does not decide civil law, canon law, the Day reader's definitive
+USCCB category, or any rightsholder's terms. It does not request or record an
+imprimatur, a concordat cum originali, Secretariat authentication, or an ICEL,
+USCCB, CCD, or other copyright license. It does not clear any liturgical text,
+data bundle, PDF, repository object, historical Git blob, or future display
+route. Only the named repository maintainer may approve a release, and that
+internal approval cannot substitute for any determination or permission that
+belongs to an ecclesiastical authority or copyright holder.
+"""
+
+[surface]
+id = "browser-day-reader"
+name = "Day reader, Read and continuous Missal modes"
+entrypoints = [
+  "src/web/browser/liturgy/day.html",
+  "src/web/browser/liturgy/day-reader.html",
+]
+presenters = [
+  "src/web/browser/liturgy/day-reader.js",
+  "src/web/browser/liturgy/day.js",
+  "src/web/browser/shared/browser-core.js",
+]
+public_data = [
+  "src/web/data/structure/calendar/",
+  "src/web/data/structure/propers/",
+  "src/web/data/structure/ordinary/",
+  "src/web/data/structure/rubrics/",
+  "src/web/data/bibles.json",
+  "src/sources/bibles/*/chapters/",
+]
+release_boundary = "tools/public-alpha"
+scope = """
+The surface resolves one civil date in one selected missal, presents the day's
+Mass in liturgical order, can include the invariant Ordinary and its options,
+and can show Scripture from a selected Bible. It offers both a Read mode and a
+continuous Missal mode and is intended to remain usable while following the
+Mass. The scope includes every client-fetched JSON or chapter fragment needed
+to produce that view, because a stable public URL and a public Git object are
+downloadable copies even when the browser normally renders them as a page.
+
+The scope does not include installed research PDFs, source-browser pages,
+standalone Propers and Ordinary maintenance commands, externally hosted source
+documents, or a hypothetical future server-side/non-bundled display route.
+Those are separate surfaces and require their own decisions. This record does
+not extend a basis from the Day reader to any of them or from any of them to the
+Day reader.
+"""
+
+[classification]
+status = "unresolved; operationally treat as participation aid"
+decision_kind = "fail-closed repository safeguard, not a legal or canonical conclusion"
+reason = """
+The Day reader is not safely classifiable here as an academic or other
+non-liturgical publication. It provides the texts and ordered frame of a single
+Mass, includes controls over the Ordinary and its variants, describes itself as
+usable at Mass, and is therefore close to the function the USCCB guidelines
+describe for participation aids. The same guidelines direct publishers to use
+the participation-aid requirements when the category is ambiguous and identify
+the Secretariat as the place to resolve the category. This repository records
+that ambiguity rather than deciding it in its own favor.
+"""
+
+[decision]
+state = "fail-closed"
+effective_from = "2026-08-26"
+continues_after_guidelines_effective_date = true
+holding = """
+Until the mandatory review is completed with current evidence, operate the Day
+reader as though the participation-aid safeguards apply. No copyright payload
+may enter its public Git history, static data, browser assets, test fixtures, or
+downloadable build merely because a rightsholder permits a different live-web
+surface. Only material with a recorded basis that affirmatively reaches every
+actual Day-reader distribution surface may ship, with every required notice.
+
+ICEL's standing Global Computer Networks permission remains relevant evidence
+for a qualifying live Internet display, but it is not treated here as clearance
+for the current clonable data bundle. USCCB national adaptations and proper
+texts, CCD/Lectionary text, NAB/NABRE text, and other third-party material remain
+separate rights units. An ICEL acknowledgement is a condition and attribution,
+not proof of exactness, ownership, promulgation, territorial currency, surface
+coverage, Secretariat review, or blanket clearance.
+"""
+release_gate = """
+The release remains blocked for any copyrighted liturgical payload whose exact
+Day-reader basis is absent, unresolved, surface-limited, stale, or conditioned
+on an approval, authentication, license, acknowledgement, or text-form
+requirement that the release cannot prove. A missing review does not become an
+approval on 29 November 2026: this fail-closed decision continues unchanged.
+"""
+
+[review]
+repository_decision_authority = "The repository maintainer may accept, narrow, or continue the internal release decision after the evidence below is refreshed."
+external_authority = "The USCCB Secretariat of Divine Worship determines its publication category and authentication requirements; the competent local Ordinary determines any required canonical permission; each copyright holder determines its license."
+must_begin_by = "2026-11-15"
+must_complete_before = "2026-11-29"
+if_not_complete = "Keep the current fail-closed gate; publish no newly cleared copyrighted liturgical payload and do not infer an exemption."
+required_evidence = [
+  "Re-fetch the complete current USCCB guidelines and the Participation Aids section; record URLs, retrieval dates, and hashes, and compare them with this record.",
+  "Re-fetch ICEL's complete Publication Policies and current copyright page; verify that the grant, conditions, and acknowledgement forms are unchanged.",
+  "Inventory the exact Day-reader entrypoints, data requests, build outputs, public Git paths, copy/download behavior, intended use, and any material retained in Git history.",
+  "List every non-project-created text by rightsholder, work, version, territory, source witness, rights basis, permission scope, required notice, and release surface.",
+  "Obtain and record any classification, authentication, imprimatur, or license actually required for the proposed release; absence is not evidence that none is required.",
+  "Run the rights-surface and release-verification tests against the exact candidate artifact and preserve their output with the review.",
+]
+
+[[evidence]]
+authority = "United States Conference of Catholic Bishops, Committee on Divine Worship"
+title = "Guidelines for the Publication of Liturgical Books"
+url = "https://www.usccb.org/committees/divine-worship/policies/guidelines-for-the-publication-of-liturgical-books"
+retrieved_on = "2026-08-26"
+sha256 = "916a4e98994e7f0faba08a1a2dfc763ae9fa73e292fb219c9653aa0daa8c36e7"
+finding = "The page states approval on 15 June 2025, entry into force on 29 November 2026, a broad digital/publication scope, publisher responsibility for permissions, and U.S. review/authentication requirements."
+
+[[evidence]]
+authority = "United States Conference of Catholic Bishops, Committee on Divine Worship"
+title = "Guidelines for the Publication of Liturgical Books, complete 51-page PDF"
+url = "https://www.usccb.org/resources/guidelines-publication-liturgical-books.pdf"
+retrieved_on = "2026-08-26"
+sha256 = "daab29993c7764b9f5a8972629a9ee87e45a6fa0b62c9fe0318e85eca8ee4512"
+finding = "Paragraphs 55 and 57 assign devotional classification to the Secretariat and direct publishers, in ambiguity, to err toward participation-aid requirements. This is the source for the provisional operational treatment, not a project-issued canonical classification."
+
+[[evidence]]
+authority = "United States Conference of Catholic Bishops, Committee on Divine Worship"
+title = "Guidelines for the Publication of Liturgical Books: C. Participation Aids"
+url = "https://www.usccb.org/committees/divine-worship/policies/guidelines-for-the-publication-of-liturgical-books/participation-aids"
+retrieved_on = "2026-08-26"
+sha256 = "194b52ff917a559039994964e31e57eddfb6cfbe9f7f55358deb7ea62afce1d6"
+finding = "The section describes participation aids by their role in supplying texts and music for active participation, requires permissions and ecclesiastical review steps, and subjects digital participation-aid platforms to participation-aid requirements."
+
+[[evidence]]
+authority = "International Commission on English in the Liturgy Corporation"
+title = "Publication Policies, 2013-amended booklet"
+url = "https://www.icelweb.org/PubPolicy.PDF"
+retrieved_on = "2026-08-26"
+sha256 = "e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7"
+finding = "The Global Computer Networks clause is conditional, limited to a qualifying Internet site, requires exact text and acknowledgement at display boundaries, disclaims other publication forms and endorsement, and reserves modification or termination."
+
+[[evidence]]
+authority = "Triptych repository"
+title = "Liturgical text publication policy"
+path = "guidance/liturgical-text-publication-policy.md"
+reviewed_on = "2026-08-26"
+finding = "Sections 3.4, 5-7, 11, 13-14, and 17 separate text, rightsholder, source, territory, notice, and publication surface and already require fail-closed treatment at the public bundle."
+
+[[change_triggers]]
+trigger = "The Day reader's purpose, ordering, Ordinary controls, text coverage, client data route, downloadability, financing, access terms, or intended use changes."
+action = "Repeat this review before release; do not inherit the current provisional classification."
+
+[[change_triggers]]
+trigger = "ICEL modifies or terminates its web permission, the USCCB issues implementing guidance, the effective date changes, or a competent authority supplies a surface-specific determination."
+action = "Record the new evidence, scope it to the actual text and surface, and rerun the release gate."
+
+[[change_triggers]]
+trigger = "A new rightsholder, national adaptation, Lectionary rendering, Scripture translation, chant, rubric, or liturgical option enters the Day-reader dependency graph."
+action = "Withhold its payload until its independent provenance, exactness, permission, notice, and surface decision are complete."
+
+[non_assertions]
+statements = [
+  "This does not say the Day reader is legally or canonically a participation aid.",
+  "This does not say the Day reader is an academic, devotional, or other non-liturgical publication.",
+  "This does not say ICEL's standing permission is rescinded, sufficient for the data bundle, or irrelevant to a different live-web surface.",
+  "This does not say USCCB guidance transfers ownership of ICEL text or that ICEL permission clears USCCB, CCD, Lectionary, NAB/NABRE, psalm, music, or national text.",
+  "This does not say an acknowledgement, imprimatur, authentication, public URL, source citation, or exact transcription is a copyright license.",
+  "This does not clear current or historical Git payloads and does not decide whether repository-history remediation is required.",
+]
+
+[history_residual]
+status = "requires maintainer release-policy/counsel decision"
+record = """
+Removing a payload from the current tree and public build does not erase Git
+objects that carried it in earlier commits. The mandatory review must inventory
+that history and explicitly decide, with appropriate advice if needed, whether
+a rewrite, repository replacement, access change, notice, or another remedy is
+required. This record authorizes none of those destructive or external actions.
+"""

@@ -78,7 +78,7 @@ EXAMPLES = {
                 "    unranked: more than one candidate, and no precedence is stated",
                 "  roman-1962: christmastide, liturgical year 2027",
                 "    nativitate-domini-octave: In Nativitate Domini, with octave",
-                "... 5 more lines",
+                "... 3 more lines",
             ),
         ),
         Example(
@@ -89,7 +89,6 @@ EXAMPLES = {
                 "    easter-sunday: Easter Sunday",
                 "    s-vincentii-ferrerii-confessoris: S. Vincentii Ferrerii Confessoris",
                 "    unranked: more than one candidate, and no precedence is stated",
-                "    unresolved this year: the ferial Mass from 2026-01-05 to 2026-01-05 - the Most Holy Name of ... [+245 chars]",
                 "  Computed, not celebrated. Every date here is derived from the arithmetic in guidance/liturgy/calendar-computation.md and is a finding aid only. The competent General, territorial, diocesan, religious, parish and church calendar, the approved books and the competent annual Ordo control an actual celebration. Verify against a dated official witness before relying on any date, and never cite this file as an occurrence witness.",
             ),
         ),
@@ -98,15 +97,16 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check",
             (
-                "postconciliar: 6735 placements",
-                "roman-1962: 12667 placements",
+                "postconciliar: 38406 placements",
+                "roman-1962: 12871 placements",
+                "roman-pre-1955: 12769 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
         ),
         Example(
             "tools/calendar-days check --json",
             (
-                "{\"calendars\":{\"postconciliar\":{\"placements\":38406,\"rules_without_a_mass\":[]},\"roman-1962\":{\"plac... [+319 chars]",
+                "{\"calendars\":{\"postconciliar\":{\"placements\":38406,\"rules_suppressed_by_recension\":[],\"rules_with... [+502 chars]",
             ),
         ),
     ),
@@ -116,17 +116,17 @@ EXAMPLES = {
             (
                 "roman-1962: 2026-2026",
                 "  dates 365: 316 resolve to a mass, 49 to nothing, 124 carry unranked candidates",
-                "  masses 459: 454 reachable, 5 never placed",
-                "    no mass, advent: 8",
-                "    no mass, after-pentecost: 23",
-                "    no mass, christmastide: 2",
-                "... 8 more lines",
+                "  ferial formulary on 238 dates; 0 dates reach no mass at all",
+                "  masses 491: 456 reachable, 8 never placed",
+                "    never placed: epiphany-4 (seasonal) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
+                "    never placed: missa-de-s-maria-in-sabbato-1 (common) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
+                "... 6 more lines",
             ),
         ),
         Example(
             "tools/calendar-days coverage --calendar postconciliar --first 2026 --last 2026 --json",
             (
-                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":0,\"dates_re... [+5470 chars]",
+                "{\"coverage\":[{\"calendar\":\"postconciliar\",\"dates\":365,\"dates_reaching_no_mass_at_all\":0,\"dates_re... [+5530 chars]",
             ),
         ),
     ),
@@ -134,8 +134,9 @@ EXAMPLES = {
         Example(
             "tools/calendar-days check",
             (
-                "postconciliar: 6735 placements",
-                "roman-1962: 12667 placements",
+                "postconciliar: 38406 placements",
+                "roman-1962: 12871 placements",
+                "roman-pre-1955: 12769 placements",
                 "checked against the worked tables in guidance/liturgy/calendar-computation.md",
             ),
             "read-only first: `check` verifies the same computation `structure` writes out",
@@ -619,8 +620,30 @@ class Year:
                 return name
         return None
 
-    def refuse(self, what: str, why: str) -> None:
-        self.unresolved.append({"what": what, "why": why})
+    def refuse(
+        self,
+        what: str,
+        why: str,
+        from_date: date | None = None,
+        to_date: date | None = None,
+    ) -> None:
+        if (from_date is None) != (to_date is None):
+            raise ValueError("a scoped refusal needs both from_date and to_date")
+        if from_date is not None and to_date is not None and from_date > to_date:
+            raise ValueError("a scoped refusal cannot end before it begins")
+        entry = {"what": what, "why": why}
+        if from_date is not None and to_date is not None:
+            entry |= {"from": from_date.isoformat(), "to": to_date.isoformat()}
+        self.unresolved.append(entry)
+
+    def unresolved_on(self, when: date) -> list[dict]:
+        """Return year-wide and explicitly date-scoped refusals for one day."""
+        return [
+            entry
+            for entry in self.unresolved
+            if not entry.get("from")
+            or date.fromisoformat(entry["from"]) <= when <= date.fromisoformat(entry["to"])
+        ]
 
     def resolve_ferial(self, windows: tuple) -> None:
         """Fill `ferial` for every date whose feria has no Mass of its own.
@@ -962,16 +985,20 @@ def build_1962(ending: int, known: set[str]) -> Year:
     # those ferias, and the refusal is declared here rather than left as a
     # silent hole in `ferial_formulary`.
     if holy_name.weekday() == 6 and holy_name < date(ending, 1, 5):
+        refusal_from = holy_name + timedelta(days=1)
+        refusal_to = date(ending, 1, 5)
         year.refuse(
             "the ferial Mass from "
-            + (holy_name + timedelta(days=1)).isoformat()
+            + refusal_from.isoformat()
             + " to "
-            + date(ending, 1, 5).isoformat(),
+            + refusal_to.isoformat(),
             "the Most Holy Name of Jesus occupies the Sunday those ferias "
             "follow, and RGMR 299 gives them the Mass of the preceding "
             "Sunday, which this calendar index does not carry; borrowing the "
             "feast's own Mass instead would decide by preference what no "
             "rubric read here decides",
+            from_date=refusal_from,
+            to_date=refusal_to,
         )
 
     # The Ember Days of September follow the third Sunday of September, reckoned
@@ -1031,6 +1058,8 @@ def build_1962(ending: int, known: set[str]) -> Year:
             + " records that neither identified normative locus provides for the "
             "shortfall, so both the twenty-third and the twenty-fourth-and-last "
             "formulary are listed and neither is chosen",
+            from_date=a.sunday_before_advent,
+            to_date=a.sunday_before_advent,
         )
 
     year.facts = {
@@ -1534,6 +1563,7 @@ def temporal_base(root: Path, name: str) -> str:
 
 
 def load_calendar(root: Path, name: str) -> dict:
+    raw_document = _calendars.load_document(root, name, effective=False)
     document = _calendars.load_document(root, name, effective=True)
     path = root / name / "propers.yaml"
     masses: dict[str, dict] = {}
@@ -1577,6 +1607,19 @@ def load_calendar(root: Path, name: str) -> dict:
         "edition": document.get("edition"),
         "masses": masses,
         "keys": set(masses),
+        # The effective recension intentionally omits these base masses.  Keep
+        # the exact typed departure from the raw source so an inherited year
+        # builder can distinguish a sourced suppression from a rule that
+        # accidentally names no mass.  Only primary `absent` departures count:
+        # an `also` row records a further claim but does not remove the mass.
+        "absent_departures": {
+            str(mass["key"])
+            for _, _, mass in _calendars.departures_of(raw_document)
+            if raw_document.get(_calendars.RECENSION_BASE)
+            and mass.get(_calendars.DEPARTURE) == "absent"
+            and isinstance(mass.get("key"), str)
+            and mass["key"]
+        },
     }
 
 
@@ -1720,7 +1763,7 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
         "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
         "rules": rules,
         "schema": SCHEMA,
-        "territorial": territorial_block(name),
+        "territorial": territorial_block(index["builder"]),
     }
     # Carried only by a calendar this tool can borrow for WHOLE, which today is
     # 1962 alone.
@@ -1884,6 +1927,13 @@ def coverage_of(index: dict, first: int, last: int) -> dict:
     ]
     return {
         "calendar": index["calendar"],
+        # A recension can inherit another calendar's year builder. Name that
+        # arithmetic in the result so inherited coverage cannot be mistaken
+        # for an independently established placement model.
+        "placement_basis": {
+            "calendar": index["builder"],
+            "kind": "own" if index["builder"] == name else "inherited",
+        },
         "dates": total,
         "dates_resolved": resolved,
         # `dates_unresolved` counts a date with no mass of its own, which is
@@ -2229,9 +2279,164 @@ def check_guidance(indexes: dict[str, dict]) -> list[str]:
     )
 
 
+def structure_projection(
+    indexes: dict[str, dict], first: int, last: int
+) -> tuple[dict[Path, dict], dict]:
+    """Return exactly what ``structure`` writes, without touching ``--out``.
+
+    Keeping the derivation in one function is the freshness contract: ``check``
+    compares the written layer with these objects and ``structure`` serialises
+    the same objects.  A second implementation here would be capable of
+    agreeing with itself while the browser continued to serve something else.
+    Paths are relative to ``structure/calendar`` so a custom ``--out`` changes
+    only where the projection is read or written, never what it contains.
+    """
+    if last < first:
+        raise ValueError(f"--last {last} precedes --first {first}")
+    documents: dict[Path, dict] = {}
+    manifest: list[dict] = []
+    for name, index in indexes.items():
+        built = build_years(index, list(range(first, last + 2)))
+        with_fixed(index, list(range(first, last + 1)))
+        for civil_year in range(first, last + 1):
+            documents[Path(name) / f"{civil_year}.json"] = year_document(
+                index,
+                civil_year,
+                {civil_year: built[civil_year], civil_year + 1: built[civil_year + 1]},
+            )
+        manifest.append(
+            {
+                "calendar": index["calendar"],
+                "edition": index["edition"],
+                "lectionary_cycles": CYCLED[index["builder"]],
+                "path": f"structure/calendar/{name}/{{civil_year}}.json",
+                "territorial": territorial_block(index["builder"]),
+            }
+        )
+    index_document = {
+        "advisory": ADVISORY,
+        "calendars": manifest,
+        "guidance": GUIDANCE,
+        "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
+        "schema": SCHEMA,
+        "span": {"first": first, "last": last},
+    }
+    return documents, index_document
+
+
+def serialise_year(document: dict) -> str:
+    return json.dumps(
+        document, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ) + "\n"
+
+
+def serialise_index(document: dict) -> str:
+    return json.dumps(
+        document, ensure_ascii=False, sort_keys=True, indent=1
+    ) + "\n"
+
+
+def is_year_json(path: Path) -> bool:
+    return path.suffix == ".json" and path.stem.isdecimal()
+
+
+def owned_year_paths(base: Path, only_names: set[str] | None) -> set[Path]:
+    """Immediate generated year leaves, never unknown files or nested trees."""
+    if not base.is_dir() or base.is_symlink():
+        return set()
+    directories = (
+        [base / name for name in sorted(only_names)]
+        if only_names is not None
+        else [
+            path
+            for path in base.iterdir()
+            if path.is_dir() and not path.is_symlink()
+        ]
+    )
+    return {
+        path.relative_to(base)
+        for directory in directories
+        if directory.is_dir() and not directory.is_symlink()
+        for path in directory.glob("*.json")
+        if (path.is_file() or path.is_symlink()) and is_year_json(path)
+    }
+
+
+def freshness_of(
+    out: Path,
+    documents: dict[Path, dict],
+    expected_index: dict,
+    selected_paths: set[str] | None,
+) -> dict[str, list[str]]:
+    """Missing, stale and extra rows of the written date projection.
+
+    A calendar-scoped check owns only that calendar's year files and its row in
+    the shared index.  Other calendar directories and index rows are therefore
+    deliberately invisible in that mode.  An unscoped check owns the complete
+    layer and reports files for removed calendars or years as extras.
+    """
+    base = out / "structure" / "calendar"
+    display = Path("structure/calendar")
+    expected_paths = set(documents)
+    only_names = (
+        {Path(path).parts[2] for path in selected_paths}
+        if selected_paths is not None
+        else None
+    )
+    actual_paths = owned_year_paths(base, only_names)
+
+    missing = [str(display / path) for path in sorted(expected_paths - actual_paths)]
+    extra = [str(display / path) for path in sorted(actual_paths - expected_paths)]
+    stale: list[str] = []
+    for relative in sorted(expected_paths & actual_paths):
+        path = base / relative
+        try:
+            current = path.read_bytes()
+        except OSError:
+            stale.append(str(display / relative))
+            continue
+        if current != serialise_year(documents[relative]).encode("utf-8"):
+            stale.append(str(display / relative))
+
+    index_path = base / "index.json"
+    index_row = str(display / "index.json")
+    if not index_path.is_file():
+        missing.append(index_row)
+    else:
+        try:
+            current_bytes = index_path.read_bytes()
+            current_index = json.loads(current_bytes.decode("utf-8"))
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            stale.append(index_row)
+        else:
+            if selected_paths is not None and isinstance(current_index, dict):
+                rows = current_index.get("calendars")
+                if isinstance(rows, list):
+                    current_index = {
+                        **current_index,
+                        "calendars": [
+                            row
+                            for row in rows
+                            if isinstance(row, dict) and row.get("path") in selected_paths
+                        ],
+                    }
+                matches = current_index == expected_index
+            else:
+                matches = current_bytes == serialise_index(expected_index).encode("utf-8")
+            if not matches:
+                stale.append(index_row)
+    return {
+        "missing": sorted(missing),
+        "stale": sorted(stale),
+        "extra": sorted(extra),
+    }
+
+
 def run_check(arguments: argparse.Namespace) -> dict:
     root = Path(arguments.root)
     first, last = arguments.first, arguments.last
+    if last < first:
+        raise ValueError(f"--last {last} precedes --first {first}")
     indexes = {name: load_calendar(root, name) for name in calendars(root, arguments.calendar)}
     problems = check_guidance(indexes)
     seen: dict[str, dict] = {}
@@ -2242,12 +2447,20 @@ def run_check(arguments: argparse.Namespace) -> dict:
             year = BUILDERS[index["builder"]](ending, index["keys"])
             placements += sum(len(v) for v in year.placements.values())
             missing.extend(year.missing)
+        missing_keys = {str(row["key"]) for row in missing}
+        suppressed = missing_keys & index["absent_departures"]
         # Every emitted key is in the calendar by construction; this reports the
-        # rules whose key the calendar does not carry, which is a coverage gap
-        # rather than a wrong emission.
+        # rules whose key the calendar does not carry.  An inherited builder may
+        # also name a base mass the recension explicitly removes; those sourced
+        # absences are reported separately with their exact departure type, not
+        # misclassified as coverage gaps.
         seen[name] = {
             "placements": placements,
-            "rules_without_a_mass": sorted({row["key"] for row in missing}),
+            "rules_without_a_mass": sorted(missing_keys - suppressed),
+            "rules_suppressed_by_recension": [
+                {"departure": "absent", "key": key}
+                for key in sorted(suppressed)
+            ],
         }
         for key, mass in index["masses"].items():
             if not mass.get("date"):
@@ -2258,6 +2471,20 @@ def run_check(arguments: argparse.Namespace) -> dict:
     if problems:
         head = "; ".join(problems[:4])
         raise ValueError(head + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
+    documents, expected_index = structure_projection(indexes, first, last)
+    freshness = freshness_of(
+        Path(arguments.out),
+        documents,
+        expected_index,
+        {
+            str(row["path"])
+            for row in expected_index["calendars"]
+            if isinstance(row, dict) and row.get("path")
+        }
+        if arguments.calendar
+        else None,
+    )
+    stale = any(freshness.values())
     return {
         "calendars": seen,
         "checked": {
@@ -2267,16 +2494,81 @@ def run_check(arguments: argparse.Namespace) -> dict:
             "worked_cycle_rows": len(WORKED_INTERVALS) + len(WORKED_PAIRS) + len(WORKED_SERIES),
             "worked_ordinary_time_rows": len(WORKED_ORDINARY),
         },
+        "freshness": freshness,
         "span": {"first": first, "last": last},
-        "status": "ok",
+        "status": "stale" if stale else "ok",
     }
+
+
+def merge_scoped_index(index_path: Path, expected: dict) -> dict:
+    """Replace selected rows while retaining unrelated rows.
+
+    A scoped writer must not erase other calendars from a shared output.  It
+    cannot judge those calendars' freshness, so their rows travel unchanged.
+    """
+    if not index_path.exists():
+        return expected
+    try:
+        current = json.loads(index_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise ValueError(
+            f"cannot preserve malformed shared calendar index {index_path}: {error}"
+        ) from error
+    current_rows = current.get("calendars") if isinstance(current, dict) else None
+    if not isinstance(current_rows, list):
+        raise ValueError(f"shared calendar index {index_path} must contain a calendars list")
+    expected_rows = {
+        str(row["calendar"]): row
+        for row in expected["calendars"]
+        if isinstance(row, dict) and row.get("calendar")
+    }
+    selected_calendars = set(expected_rows)
+    retained = [
+        row
+        for row in current_rows
+        if isinstance(row, dict)
+        and str(row.get("calendar") or "") not in selected_calendars
+    ]
+    if retained and current.get("span") != expected.get("span"):
+        raise ValueError(
+            "a scoped calendar structure write must use the shared index span; "
+            "rerun without --calendar or with the existing --first/--last"
+        )
+    merged: list[dict] = []
+    seen: set[str] = set()
+    for row in current_rows:
+        if not isinstance(row, dict):
+            raise ValueError("the shared calendar index contains a non-mapping row")
+        calendar = str(row.get("calendar") or "")
+        if not calendar:
+            raise ValueError("the shared calendar index has a row with no calendar identity")
+        if calendar in seen:
+            raise ValueError(f"the shared calendar index repeats {calendar}")
+        seen.add(calendar)
+        if calendar in selected_calendars:
+            replacement = expected_rows.pop(calendar, None)
+            if replacement is not None:
+                merged.append(replacement)
+            continue
+        merged.append(row)
+    merged.extend(expected_rows.values())
+    return {**expected, "calendars": merged}
+
+
+def refuse_symlink_output(root: Path, target: Path) -> None:
+    """Never follow an owned output component outside the requested tree."""
+    current = root
+    if current.is_symlink():
+        raise ValueError(f"output root is a symlink: {current}")
+    for part in target.relative_to(root).parts:
+        current = current / part
+        if current.is_symlink():
+            raise ValueError(f"calendar output path is a symlink: {current}")
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
     root = Path(arguments.root)
     first, last = arguments.first, arguments.last
-    if last < first:
-        raise ValueError(f"--last {last} precedes --first {first}")
     indexes = {name: load_calendar(root, name) for name in calendars(root, arguments.calendar)}
     problems = check_guidance(indexes)
     if problems:
@@ -2285,53 +2577,27 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         )
     out = Path(arguments.out)
     written: list[str] = []
-    manifest = []
-    for name, index in indexes.items():
-        built = build_years(index, list(range(first, last + 2)))
-        with_fixed(index, list(range(first, last + 1)))
-        target = out / "structure" / "calendar" / name
-        target.mkdir(parents=True, exist_ok=True)
-        for civil_year in range(first, last + 1):
-            document = year_document(
-                index,
-                civil_year,
-                {civil_year: built[civil_year], civil_year + 1: built[civil_year + 1]},
-            )
-            path = target / f"{civil_year}.json"
-            path.write_text(
-                json.dumps(document, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-                + "\n",
-                encoding="utf-8",
-            )
-            written.append(str(path))
-        manifest.append(
-            {
-                "calendar": index["calendar"],
-                "edition": index["edition"],
-                "lectionary_cycles": CYCLED[index["builder"]],
-                "path": f"structure/calendar/{name}/{{civil_year}}.json",
-                "territorial": territorial_block(index["builder"]),
-            }
-        )
-    index_path = out / "structure" / "calendar" / "index.json"
+    documents, index_document = structure_projection(indexes, first, last)
+    base = out / "structure" / "calendar"
+    index_path = base / "index.json"
+    refuse_symlink_output(out, base)
+    for relative in documents:
+        refuse_symlink_output(out, base / relative)
+    refuse_symlink_output(out, index_path)
+    if arguments.calendar:
+        # Reconcile the shared manifest before writing any selected year.  A
+        # rejected scoped update must not leave a half-written projection.
+        index_document = merge_scoped_index(index_path, index_document)
+    for relative, document in documents.items():
+        path = base / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(serialise_year(document), encoding="utf-8")
+        written.append(str(path))
+    only_names = set(indexes) if arguments.calendar else None
+    for relative in sorted(owned_year_paths(base, only_names) - set(documents)):
+        (base / relative).unlink()
     index_path.parent.mkdir(parents=True, exist_ok=True)
-    index_path.write_text(
-        json.dumps(
-            {
-                "advisory": ADVISORY,
-                "calendars": manifest,
-                "guidance": GUIDANCE,
-                "precedence": {"note": PRECEDENCE_NOTE, "stated": False},
-                "schema": SCHEMA,
-                "span": {"first": first, "last": last},
-            },
-            ensure_ascii=False,
-            sort_keys=True,
-            indent=1,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
+    index_path.write_text(serialise_index(index_document), encoding="utf-8")
     written.append(str(index_path))
     return {
         "files": len(written),
@@ -2356,7 +2622,7 @@ def run_day(arguments: argparse.Namespace) -> dict:
     It took 2.1 seconds, and all but a tenth of that was `yaml.safe_load`
     scanning a megabyte of `propers.yaml` character by character in pure
     Python. The obvious fix — answer from the emitted
-    `structure/calendar/<cal>/<year>.json`, as `calendar-rubrics day` does —
+    `structure/calendar/<cal>/<year>.json`, as the rubrics day resolver does —
     was examined and NOT taken, because that file deliberately carries a
     candidate's key and nothing else about it: its own note says the title
     lives in the propers structure, and a candidate here carries its name, its
@@ -2399,7 +2665,7 @@ def run_day(arguments: argparse.Namespace) -> dict:
                 ],
                 "ranked": len(candidates) <= 1,
                 "season": owner.season_of(when),
-                "unresolved": owner.unresolved,
+                "unresolved": owner.unresolved_on(when),
                 "week": owner.weeks.get(when),
                 "year": owner.ending,
             }
@@ -2430,10 +2696,13 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         return 70
     if arguments.json or arguments.format == "json":
         print_json(payload)
-        return 0
+        return 1 if payload.get("status") == "stale" else 0
     if "coverage" in payload:
         for row in payload["coverage"]:
             print(f"{row['calendar']}: {row['span']['first']}-{row['span']['last']}")
+            basis = row["placement_basis"]
+            if basis["kind"] == "inherited":
+                print(f"  placement arithmetic inherited from {basis['calendar']}")
             print(
                 f"  dates {row['dates']}: {row['dates_resolved']} resolve to a mass, "
                 f"{row['dates_unresolved']} to nothing, "
@@ -2470,7 +2739,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             if not row["ranked"]:
                 print("    unranked: more than one candidate, and no precedence is stated")
             for refusal in row["unresolved"]:
-                print(f"    unresolved this year: {refusal['what']} - {refusal['why']}")
+                scope = "on this date" if refusal.get("from") else "this year"
+                print(f"    unresolved {scope}: {refusal['what']} - {refusal['why']}")
         print(f"  {ADVISORY}")
         return 0
     if "files" in payload:
@@ -2483,22 +2753,69 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         for key in row["rules_without_a_mass"]:
             print(f"    a rule names {key}, which this calendar does not carry")
     print(f"checked against the worked tables in {GUIDANCE}")
+    freshness = payload.get("freshness") or {}
+    missing = freshness.get("missing") or []
+    stale = freshness.get("stale") or []
+    extra = freshness.get("extra") or []
+    if missing or stale or extra:
+        print(
+            "generated calendar layer is not current: "
+            f"{len(missing)} missing, {len(stale)} stale, {len(extra)} extra"
+        )
+        if arguments.verbose:
+            for kind, rows in (("missing", missing), ("stale", stale), ("extra", extra)):
+                for row in rows:
+                    print(f"    {kind}: {row}")
+        print(
+            "run `calendar-days structure` with the same --root, --out, span and scope "
+            "to refresh missing/stale rows and remove owned extra year files"
+        )
+        return 1
     return 0
 
 
 def main(argv: list[str] | None = None) -> int:
-    shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument("--root", default=str(DEFAULT_ROOT), help="calendar directory")
-    shared.add_argument("--out", default="src/web/data", help="where `structure` writes")
-    shared.add_argument("--calendar", default=None, help="limit to one calendar")
-    shared.add_argument("--first", type=int, default=FIRST_YEAR, help="first civil year")
-    shared.add_argument("--last", type=int, default=LAST_YEAR, help="last civil year")
-    shared.add_argument("--date", default=None, help="the date `day` resolves")
-    shared.add_argument("--format", choices=("text", "json"), default="text")
-    shared.add_argument("--verbose", action="store_true", help="list every file written")
-    shared.add_argument(
-        "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
-    )
+    def shared_options(*, verb: bool) -> argparse.ArgumentParser:
+        shared = argparse.ArgumentParser(add_help=False)
+        missing = argparse.SUPPRESS if verb else None
+        shared.add_argument(
+            "--root", default=argparse.SUPPRESS if verb else str(DEFAULT_ROOT),
+            help="calendar directory"
+        )
+        shared.add_argument(
+            "--out", default=argparse.SUPPRESS if verb else "src/web/data",
+            help="where `structure` writes"
+        )
+        shared.add_argument("--calendar", default=missing, help="limit to one calendar")
+        shared.add_argument(
+            "--first", type=int,
+            default=argparse.SUPPRESS if verb else FIRST_YEAR,
+            help="first civil year"
+        )
+        shared.add_argument(
+            "--last", type=int,
+            default=argparse.SUPPRESS if verb else LAST_YEAR,
+            help="last civil year"
+        )
+        shared.add_argument("--date", default=missing, help="the date `day` resolves")
+        shared.add_argument(
+            "--format", choices=("text", "json"),
+            default=argparse.SUPPRESS if verb else "text"
+        )
+        shared.add_argument(
+            "--verbose", action="store_true",
+            default=argparse.SUPPRESS if verb else False,
+            help="list every file written"
+        )
+        shared.add_argument(
+            "--json", action="store_true",
+            default=argparse.SUPPRESS if verb else False,
+            help="emit one compact key-sorted JSON object (cli-v1)"
+        )
+        return shared
+
+    shared = shared_options(verb=False)
+    verb_shared = shared_options(verb=True)
     parser = argparse.ArgumentParser(
         prog="calendar-days",
         description="Resolve civil dates to each calendar's masses as a computed finding aid.",
@@ -2507,19 +2824,19 @@ def main(argv: list[str] | None = None) -> int:
     examples_live_on_the_verbs(parser, "calendar-days")
     sub = parser.add_subparsers(dest="command")
     with_examples(
-        sub.add_parser("check", help="verify the computation against the guidance", parents=[shared]),
+        sub.add_parser("check", help="verify the computation against the guidance", parents=[verb_shared]),
         EXAMPLES["check"],
     )
     with_examples(
-        sub.add_parser("structure", help="write the browser's date-to-mass files", parents=[shared]),
+        sub.add_parser("structure", help="write the browser's date-to-mass files", parents=[verb_shared]),
         EXAMPLES["structure"],
     )
     with_examples(
-        sub.add_parser("coverage", help="report what each calendar can reach", parents=[shared]),
+        sub.add_parser("coverage", help="report what each calendar can reach", parents=[verb_shared]),
         EXAMPLES["coverage"],
     )
     with_examples(
-        sub.add_parser("day", help="resolve one civil date", parents=[shared]),
+        sub.add_parser("day", help="resolve one civil date", parents=[verb_shared]),
         EXAMPLES["day"],
     )
 

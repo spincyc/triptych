@@ -9,7 +9,7 @@
  },
  "models": [
   {
-   "documents": 134,
+   "documents": 135,
    "id": "GPT-5-based Codex agent"
   },
   {
@@ -1999,7 +1999,7 @@
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-22T14:30:20Z",
+     "revised": "2026-08-27T18:08:26Z",
      "status": "alpha",
      "subject": "Teaching, memory work, broad Latin reading, composition, cumulative practice, and answers on the way to reading the 1962 Roman Missal",
      "title": "Ecclesiastical Latin — EL-M03: Nouns and Adjectives",
@@ -2037,7 +2037,7 @@
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-22T14:30:20Z",
+     "revised": "2026-08-27T18:08:26Z",
      "status": "alpha",
      "subject": "Teaching, memory work, broad Latin reading, composition, cumulative practice, and answers on the way to reading the 1962 Roman Missal",
      "title": "Ecclesiastical Latin — EL-M04: Being and Present Action",
@@ -2113,7 +2113,7 @@
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-22T14:30:20Z",
+     "revised": "2026-08-27T18:08:26Z",
      "status": "alpha",
      "subject": "Teaching, memory work, broad Latin reading, composition, cumulative practice, and answers on the way to reading the 1962 Roman Missal",
      "title": "Ecclesiastical Latin — EL-M06: Pronouns, Prepositions, and Connected Reading",
@@ -2341,7 +2341,7 @@
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
-     "revised": "2026-07-22T16:54:56Z",
+     "revised": "2026-08-27T18:08:26Z",
      "status": "alpha",
      "subject": "Teaching, memory work, broad Latin reading, composition, cumulative practice, and answers on the way to reading the 1962 Roman Missal",
      "title": "Ecclesiastical Latin — EL-M12: Adverbial Cases, Order, and Compression",
@@ -7926,17 +7926,23 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (independent audit: recomputation of every worked year, re-collation of the territorial witness, citation correction, build and page review); Claude Code CLI 2.1.219; unexposed: server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (subsequent official-source verification, evidence correction, and production review); API workspace; unexposed: client version, interface, and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "GPT-5-based Codex agent"
      ],
      "pages": 39,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
      "provider": "claude",
      "reviewed": "2026-07-26",
-     "revised": "2026-07-26T09:45:30Z",
+     "revised": "2026-08-26T21:23:18Z",
      "status": "alpha",
      "subject": "A source-first reference to the norms of the postconciliar liturgical year for the dioceses of the United States of America: the structure of the year, the table of liturgical days, ranks, occurrence and transfer, the movable cycle, Ordinary Time and its omitted week, the Sunday and weekday Lectionary cycles, and the proper calendars of nation, diocese and church",
      "title": "The Liturgical Calendar of the Roman Missal, Third Edition",
