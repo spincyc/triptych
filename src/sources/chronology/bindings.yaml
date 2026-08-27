@@ -1661,3 +1661,3246 @@ bindings:
       prophet", with the four hundred and fifty years. A recital in a sermon,
       centuries after, and not a narration of the period.
     sources: [bible:douay-rheims:Acts.13.20]
+  # === lane deuteronomy ===
+  # --- Deuteronomy: the one dated occasion, and what it recalls -------------
+  # Deuteronomy 1:3 dates the speaking; the events Moses recalls across
+  # chapters 1-11 are bound separately as retrospective-event. The two are not
+  # collapsed: a verse in which Moses recalls Horeb in the fortieth year
+  # carries both relations, which is what the model is for.
+  - relation: utterance
+    event: israel.wilderness.moses-final-discourse
+    scope:
+      - {book: Deut, chapter: 1, first: 6, through: 4, last: 40}
+      - {book: Deut, chapter: 5, first: 1, through: 26, last: 19}
+      - {book: Deut, chapter: 27, first: 1, through: 30, last: 20}
+      - {book: Deut, chapter: 31, first: 1, through: 33, last: 29}
+    note: >-
+      The words themselves, spoken on the occasion Deuteronomy 1:3 dates: "In
+      the fortieth year, the eleventh month, the first day of the month, Moses
+      spoke to the children of Israel all that the Lord had commanded him to
+      say to them." The four spans are the Catholic Encyclopedia's own division
+      of the book in its "Pentateuch" article, which is where its stub
+      "Deuteronomy" sends the introductory questions: "Introduction, i, 1-5",
+      "(1) First Discourse, i, 6-iv, 40", "(2) Second Discourse, v, 1-xxvi,
+      19", "(3) Third Discourse, xxvii, 1-xxx, 20", "(4) Historical Appendix,
+      xxxi, 1-xxxiv, 12". Of the first three that article says: "The main body
+      of the book consists of three discourses delivered by Moses to the people
+      in the eleventh month of the fortieth year." The fourth span stops at
+      33:29 because chapter 34 narrates the death and is bound to that event
+      instead. The appendix carries no date of its own in that article, and is
+      bound here on Scripture's own continuity - 31:1 resumes without a break,
+      "And Moses went, and spoke all these words to all Israel", and 32:48 puts
+      the Lord's command to go up Nebo on "the same day" as the canticle - and
+      on the Catholic Encyclopedia's "Moses", which keeps the canticle and the
+      blessings with the discourses in one last occasion: "Moses in his last
+      days pronounces the three memorable discourses preserved in Deuteronomy
+      ... He then bursts forth into a sublime song of praise to Jahweh and adds
+      prophetic blessings for each of the twelve tribes." This binding says
+      when the words were spoken and nothing about when the book was written;
+      Deuteronomy's composition is a gap row, not a date.
+    sources:
+      - bible:douay-rheims:Deut.1.3
+      - bible:douay-rheims:Deut.32.48
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-5333461d
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-ae23faf9
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04761b-babad506
+  - relation: narrated-event
+    event: israel.wilderness.moses-final-discourse
+    scope:
+      - {book: Deut, chapter: 4, first: 41, last: 49}
+      - {book: Deut, chapter: 5, first: 1, last: 1}
+      - {book: Deut, chapter: 27, first: 1, last: 1}
+      - {book: Deut, chapter: 27, first: 9, last: 9}
+      - {book: Deut, chapter: 27, first: 11, last: 11}
+      - {book: Deut, chapter: 29, first: 1, last: 2}
+      - {book: Deut, chapter: 31, first: 1, through: 33, last: 29}
+    note: >-
+      What the narrator tells of the same occasion, as against the words
+      themselves. Deuteronomy 1:1-5 is bound elsewhere; these are the remaining
+      frames. Of 4:41-49 the Catholic Encyclopedia's "Pentateuch" says: "By way
+      of parenthesis, the sacred writer adds here (i) the appointment of three
+      cities of refuge across the Jordan, iv, 41-43; (ii) an historical
+      preamble, preparing us for the second discourse, iv, 44-49." Chapters
+      31-33 are that article's "Historical Appendix" and both narrate and
+      quote, so they stand under this relation and under utterance at once.
+    sources:
+      - bible:douay-rheims:Deut.1.3
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-5333461d
+  - relation: prophecy-given
+    event: israel.wilderness.moses-final-discourse
+    scope:
+      - {book: Deut, chapter: 18, first: 15, last: 19}
+    note: >-
+      The oracle of the PROPHET to come, uttered on the dated occasion - "The
+      Lord thy God will raise up to thee a PROPHET of thy nation and of thy
+      brethren like unto me: him thou shalt hear:" - and carried on in the
+      Lord's own words at 18:18, "I will raise them up a prophet out of the
+      midst of their brethren like to thee: and I will put my words in his
+      mouth, and he shall speak to them all that I shall command him."
+      Authored beside the utterance binding rather than folded into it, so that
+      the referent binding below has an oracle to answer to.
+    sources: [bible:douay-rheims:Deut.18.15, bible:douay-rheims:Deut.18.18]
+  - relation: prophetic-referent
+    event: life-of-christ.nativity
+    scope:
+      - {book: Deut, chapter: 18, first: 15, last: 19}
+    note: >-
+      NOT narrated-event and NOT utterance. Scripture applies the words to Our
+      Lord twice in its own voice: St Peter, "For Moses said: A prophet shall
+      the Lord your God raise up unto you of your brethren, like unto me: him
+      you shall hear according to all things whatsoever he shall speak to you"
+      (Acts 3:22), and St Stephen, "This is that Moses who said to the children
+      of Israel: A prophet shall God raise up to you of your own brethren, as
+      myself" (Acts 7:37). The Catholic Encyclopedia's "Moses" says the same of
+      the passage - "his chief utterance relates to a future Prophet, like to
+      himself, whom the people are to receive" - and closes on "the
+      incomparable Antitype whose coming he had predicted". No source inspected
+      names a moment; the referent is bound to the coming in the flesh because
+      that is the word the encyclopedia uses and because it is where this
+      corpus already binds the prophecies of the Messias's coming at Isaias
+      7:14 and Micheas 5:2. The choice of moment is this corpus's and not the
+      source's, and nothing here dates the utterance, which the binding above
+      holds.
+    sources:
+      - bible:douay-rheims:Acts.3.22
+      - bible:douay-rheims:Acts.7.37
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-ae23faf9
+
+  # --- Deuteronomy: what Moses RECALLS, which is not what he narrates -------
+  - relation: retrospective-event
+    event: israel.exodus.the-exodus
+    scope:
+      - {book: Deut, chapter: 1, first: 27, last: 27}
+      - {book: Deut, chapter: 1, first: 30, last: 30}
+      - {book: Deut, chapter: 4, first: 20, last: 20}
+      - {book: Deut, chapter: 4, first: 34, last: 34}
+      - {book: Deut, chapter: 4, first: 37, last: 37}
+      - {book: Deut, chapter: 5, first: 6, last: 6}
+      - {book: Deut, chapter: 5, first: 15, last: 15}
+      - {book: Deut, chapter: 6, first: 13, last: 13}
+      - {book: Deut, chapter: 6, first: 21, last: 23}
+      - {book: Deut, chapter: 7, first: 8, last: 8}
+      - {book: Deut, chapter: 7, first: 18, last: 19}
+      - {book: Deut, chapter: 8, first: 14, last: 14}
+      - {book: Deut, chapter: 9, first: 7, last: 7}
+      - {book: Deut, chapter: 9, first: 12, last: 12}
+      - {book: Deut, chapter: 9, first: 26, last: 29}
+      - {book: Deut, chapter: 10, first: 19, last: 19}
+      - {book: Deut, chapter: 11, first: 2, last: 4}
+      - {book: Deut, chapter: 13, first: 5, last: 5}
+      - {book: Deut, chapter: 13, first: 10, last: 10}
+      - {book: Deut, chapter: 15, first: 15, last: 15}
+      - {book: Deut, chapter: 16, first: 1, last: 1}
+      - {book: Deut, chapter: 16, first: 3, last: 3}
+      - {book: Deut, chapter: 16, first: 6, last: 6}
+      - {book: Deut, chapter: 16, first: 12, last: 12}
+      - {book: Deut, chapter: 20, first: 1, last: 1}
+      - {book: Deut, chapter: 23, first: 4, last: 4}
+      - {book: Deut, chapter: 24, first: 18, last: 18}
+      - {book: Deut, chapter: 24, first: 22, last: 22}
+      - {book: Deut, chapter: 26, first: 8, last: 8}
+      - {book: Deut, chapter: 29, first: 2, last: 3}
+      - {book: Deut, chapter: 29, first: 16, last: 16}
+      - {book: Deut, chapter: 29, first: 25, last: 25}
+      - {book: Deut, chapter: 34, first: 11, last: 12}
+    note: >-
+      Forty years after the fact, to a generation that mostly did not see it.
+      Not one of these narrates the going out; each recites it as done - "who
+      brought thee out of the land of Egypt, out of the house of bondage"
+      (5:6), "We were bondmen of Pharao in Egypt, and the Lord brought us out
+      of Egypt with a strong hand" (6:21), "how the waters of the Red Sea
+      covered them, when they pursued you" (11:4). The narration is Exodus
+      12-14, bound elsewhere. Deuteronomy 34:11-12 is the narrator's eulogium
+      and recalls the same signs after Moses is dead.
+    sources:
+      - bible:douay-rheims:Deut.5.6
+      - bible:douay-rheims:Deut.6.21
+      - bible:douay-rheims:Deut.11.4
+      - bible:douay-rheims:Deut.26.8
+  - relation: retrospective-event
+    event: israel.wilderness.arrival-at-sinai
+    scope:
+      - {book: Deut, chapter: 1, first: 6, last: 8}
+      - {book: Deut, chapter: 4, first: 10, last: 15}
+      - {book: Deut, chapter: 4, first: 33, last: 33}
+      - {book: Deut, chapter: 4, first: 36, last: 36}
+      - {book: Deut, chapter: 5, first: 2, last: 5}
+      - {book: Deut, chapter: 5, first: 22, last: 31}
+      - {book: Deut, chapter: 10, first: 4, last: 4}
+      - {book: Deut, chapter: 18, first: 16, last: 17}
+      - {book: Deut, chapter: 29, first: 1, last: 1}
+      - {book: Deut, chapter: 33, first: 2, last: 2}
+    note: >-
+      Israel at Horeb, recalled in Moab: "The Lord our God spoke to us in
+      Horeb" (1:6), "From the day in which thou didst stand before the Lord thy
+      God in Horeb" (4:10), "The Lord our God made a covenant with us in Horeb"
+      (5:2), "beside that covenant which he made with them in Horeb" (29:1),
+      "The Lord came from Sinai" (33:2). Deuteronomy 5:6-21 repeats the words
+      spoken there and is deliberately NOT authored as an utterance of this
+      event: the event is dated at the arrival, and its own note says the verse
+      that dates it "dates the arrival at Sinai, not the promulgation of the
+      Law that follows at Exodus 20". The promulgation is a separate event in
+      this corpus, dated from Exodus 19:11 and 19:16 to the third day, and the
+      words the Decalogue recites belong to it; so Deuteronomy 5:6-21 is bound
+      as a retrospective-event of the promulgation in the binding that follows
+      this one, and is left out of the scope here for that reason and not
+      because nothing reaches it. What Deuteronomy 5 does in the fortieth year
+      is recite, and both bindings say so.
+    sources:
+      - bible:douay-rheims:Deut.1.6
+      - bible:douay-rheims:Deut.5.2
+      - bible:douay-rheims:Deut.29.1
+  - relation: retrospective-event
+    event: israel.wilderness.promulgation-of-the-law
+    scope:
+      - {book: Deut, chapter: 5, first: 6, last: 21}
+    note: >-
+      NOT utterance of the promulgation and NOT a second promulgation. Moses in
+      the fortieth year repeats to the generation in Moab the ten words the Lord
+      spoke on the third day at Sinai, and Deuteronomy 5:22 says in the same
+      breath whose words they are and where they were spoken: "These words the
+      Lord spoke to all the multitude of you in the mountain, out of the midst
+      of the fire and the cloud, and the darkness, with a loud voice, adding
+      nothing more: and he wrote them in two tables of stone, which he delivered
+      unto me." The utterance of these verses as Moses speaks them is already
+      carried by the discourse's own binding, which Deuteronomy 1:3 dates to the
+      fortieth year; this binding is the earlier occasion the recital recalls.
+      Exodus 20:1-17 carries the same words as utterance of the promulgation
+      itself.
+    sources:
+      - bible:douay-rheims:Deut.5.22
+      - bible:douay-rheims:Ex.20.1
+  - relation: retrospective-event
+    event: israel.wilderness.forty-years-in-the-desert
+    scope:
+      - {book: Deut, chapter: 1, first: 34, last: 40}
+      - {book: Deut, chapter: 1, first: 46, last: 46}
+      - {book: Deut, chapter: 2, first: 1, last: 1}
+      - {book: Deut, chapter: 2, first: 7, last: 7}
+      - {book: Deut, chapter: 2, first: 14, last: 16}
+      - {book: Deut, chapter: 8, first: 15, last: 16}
+      - {book: Deut, chapter: 9, first: 7, last: 7}
+      - {book: Deut, chapter: 11, first: 5, last: 5}
+      - {book: Deut, chapter: 32, first: 10, last: 12}
+    note: >-
+      Moses recalling the sentence and its running out. 1:34-40 is his
+      recollection of the oath sworn at Cades - "Not one of the men of this
+      wicked generation shall see the good land" - which Numbers 14:33-34
+      narrates and which the event is dated from; 2:7 says "how thou hast
+      passed through this great wilderness, for forty years"; 2:14 gives the
+      other measure the corpus does not reconcile with it, "the time that we
+      journeyed from Cadesbarne till we passed over the torrent Zared, was
+      thirty-eight years". 32:10-12 is the canticle's recital of the same
+      leading, "He found him in a desert land ... The Lord alone was his
+      leader". Deuteronomy 8:2-4 and 29:5 are already bound.
+    sources:
+      - bible:douay-rheims:Deut.1.35
+      - bible:douay-rheims:Deut.2.7
+      - bible:douay-rheims:Deut.2.14
+  - relation: retrospective-event
+    event: israel.wilderness.forty-days-on-the-mount
+    scope:
+      - {book: Deut, chapter: 9, first: 25, last: 25}
+      - {book: Deut, chapter: 10, first: 1, last: 5}
+      - {book: Deut, chapter: 10, first: 10, last: 11}
+    note: >-
+      The second forty days and the second tables, which Exodus 34 narrates:
+      "And I lay prostrate before the Lord forty days and nights" (9:25), "And
+      I stood in the mount, as before, forty days and nights" (10:10). The
+      first fast is recalled at 9:9-11 and 9:18, already bound.
+    sources: [bible:douay-rheims:Deut.9.25, bible:douay-rheims:Deut.10.10]
+  - relation: retrospective-event
+    event: israel.wilderness.golden-calf
+    scope:
+      - {book: Deut, chapter: 9, first: 25, last: 29}
+    note: >-
+      Moses' intercession after the calf, recalled in his own words: "destroy
+      not thy people, and thy inheritance, which thou hast redeemed in thy
+      greatness". Deuteronomy 9:8-21 is already bound to the same event.
+    sources: [bible:douay-rheims:Deut.9.26]
+  - relation: retrospective-event
+    event: israel.wilderness.manna
+    scope:
+      - {book: Deut, chapter: 8, first: 16, last: 16}
+    note: >-
+      "And fed thee in the wilderness with manna which thy fathers knew not" -
+      a second recital in the same discourse; 8:3 is already bound.
+    sources: [bible:douay-rheims:Deut.8.16]
+  - relation: retrospective-event
+    event: israel.wilderness.death-of-aaron
+    scope:
+      - {book: Deut, chapter: 10, first: 6, last: 6}
+      - {book: Deut, chapter: 32, first: 50, last: 50}
+    note: >-
+      "Mosera, where Aaron died and was buried, and Eleazar his son succeeded
+      him in the priestly office" (10:6), and the Lord's own comparison at
+      32:50, "as Aaron thy brother died in mount Hor, and was gathered to his
+      people". Numbers 20 and 33:38-39 narrate it, and 33:38 is what dates it;
+      Deuteronomy 10:6 names Mosera where Numbers names mount Hor, and this
+      corpus records the recollection without reconciling the place.
+    sources: [bible:douay-rheims:Deut.10.6, bible:douay-rheims:Deut.32.50]
+  - relation: retrospective-event
+    event: israel.egypt.descent
+    scope:
+      - {book: Deut, chapter: 10, first: 22, last: 22}
+      - {book: Deut, chapter: 26, first: 5, last: 5}
+    note: >-
+      "In seventy souls thy fathers went down into Egypt" (10:22), and the
+      firstfruits confession, "The Syrian pursued my father, who went down into
+      Egypt, and sojourned there in a very small number" (26:5).
+    sources: [bible:douay-rheims:Deut.10.22, bible:douay-rheims:Deut.26.5]
+  - relation: retrospective-event
+    event: israel.egypt.sojourn
+    scope:
+      - {book: Deut, chapter: 26, first: 6, last: 7}
+    note: >-
+      The bondage, in the same confession: "And the Egyptians afflicted us, and
+      persecuted us, laying on us most grievous burdens: And we cried to the
+      Lord God of our fathers: who heard us, and looked down upon our
+      affliction, and labour, and distress:" No number of years is recited here
+      and none is imported.
+    sources: [bible:douay-rheims:Deut.26.6, bible:douay-rheims:Deut.26.7]
+  - relation: retrospective-event
+    event: israel.primeval.creation-of-adam
+    scope:
+      - {book: Deut, chapter: 4, first: 32, last: 32}
+    note: >-
+      "Ask of the days of old, that have been before thy time from the day that
+      God created man upon the earth" - the furthest back the discourse
+      reaches, and a recital, not a narration.
+    sources: [bible:douay-rheims:Deut.4.32]
+  # === lane esdras ===
+  # --- 1 Esdras: the return under Zorobabel and the Temple ------------------
+  - relation: narrated-event
+    event: israel.restoration.return-and-temple-rebuilding
+    scope:
+      - {book: 1Esd, chapter: 1}
+      - {book: 1Esd, chapter: 2}
+      - {book: 1Esd, chapter: 3}
+      - {book: 1Esd, chapter: 4, first: 1, last: 5}
+      - {book: 1Esd, chapter: 4, first: 24, last: 24}
+      - {book: 1Esd, chapter: 5}
+      - {book: 1Esd, chapter: 6}
+    note: >-
+      The former of the two parallel parts of the book, which Souvay's "Esdras"
+      says covers twenty-one years, 536-515. Chapter 4:6-23 is deliberately
+      left out: the same article calls it "the break in the narrative" and Van
+      Hoonacker dates it to two later reigns, so it carries its own event.
+    sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778]
+  - relation: narrated-event
+    event: israel.restoration.decree-of-cyrus
+    scope:
+      - {book: 1Esd, chapter: 1, first: 5, last: 11}
+      - {book: 1Esd, chapter: 2}
+    note: >-
+      The going up itself and the roll of those who went up, which the text
+      places at the decree: "these are the children of the province, that went
+      out of the captivity ... and who returned to Jerusalem and Juda". Souvay
+      describes chapter ii as "the enumeration of the most prominent members of
+      the caravan". The existing binding covers only the decree at 1:1-4.
+    sources: [bible:douay-rheims:1Esd.2.1, bible:douay-rheims:1Esd.1.11]
+  - relation: narrated-event
+    event: israel.restoration.altar-restored
+    scope:
+      - {book: 1Esd, chapter: 3, first: 1, last: 7}
+    note: >-
+      The seventh month, the altar set upon its bases, the feast of
+      tabernacles, and the holocausts begun before the temple was founded.
+    sources: [bible:douay-rheims:1Esd.3.6]
+  - relation: narrated-event
+    event: israel.restoration.walls-forbidden-by-artaxerxes
+    scope:
+      - {book: 1Esd, chapter: 4, first: 6, last: 23}
+    note: >-
+      The break in the narrative: the accusation under Assuerus, the letter to
+      Artaxerxes, his rescript and the forcible stopping of the work. Van
+      Hoonacker reads exactly these verses as belonging to the reigns of Xerxes
+      and Artaxerxes I, decades after the Temple was finished.
+    sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067]
+  - relation: narrated-event
+    event: israel.restoration.first-pasch-in-the-second-temple
+    scope:
+      - {book: 1Esd, chapter: 6, first: 19, last: 22}
+    note: The phase on the fourteenth day of the first month, and the seven days of unleavened bread.
+    sources: [bible:douay-rheims:1Esd.6.19]
+
+  # --- 1 Esdras: the mission of Esdras --------------------------------------
+  - relation: narrated-event
+    event: israel.restoration.esdras-return
+    scope:
+      - {book: 1Esd, chapter: 7, first: 1, last: 5}
+      - {book: 1Esd, chapter: 7, first: 11, last: 28}
+      - {book: 1Esd, chapter: 8}
+    note: >-
+      Esdras's descent, which the text places at his introduction "in the reign
+      of Artaxerxes king of the Persians" and which Souvay reads there -- "Esdras
+      was of priestly descent and belonged to the line of Sardoc (Ezra 7:1-5)";
+      the edict of Artaxerxes; and the caravan, its roll, the fast at the river
+      Ahava and the journey from the twelfth day of the first month to the
+      arrival at Jerusalem. Souvay: "Opening with the decree of Artaxerxes (vii)
+      and the census of the members of the party, it briefly relates the journey
+      across the desert (viii)". The existing binding covers only 7:6-10.
+    sources:
+      - bible:douay-rheims:1Esd.7.1
+      - bible:douay-rheims:1Esd.8.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+  - relation: narrated-event
+    event: israel.restoration.esdras-reform-of-marriages
+    scope:
+      - {book: 1Esd, chapter: 9}
+      - {book: 1Esd, chapter: 10, first: 1, last: 8}
+    note: >-
+      The discovery of the strange marriages, Esdras's mourning and prayer, the
+      counsel of Sechenias, the oath, and the proclamation summoning the people
+      within three days.
+    sources: [bible:douay-rheims:1Esd.9.1]
+  - relation: utterance
+    event: israel.restoration.esdras-reform-of-marriages
+    scope:
+      - {book: 1Esd, chapter: 9, first: 6, last: 15}
+    note: >-
+      Esdras's prayer, spoken at the evening sacrifice on the day the
+      transgression was reported to him. The words quoted and the occasion they
+      were spoken on are two assertions, not one.
+    sources: [bible:douay-rheims:1Esd.9.5]
+  - relation: narrated-event
+    event: israel.restoration.strange-wives-assembly
+    scope:
+      - {book: 1Esd, chapter: 10, first: 9, last: 15}
+    note: The gathering in the street of the house of God, in the rain, and the appointing of the rulers.
+    sources: [bible:douay-rheims:1Esd.10.9]
+  - relation: narrated-event
+    event: israel.restoration.strange-wives-put-away
+    scope:
+      - {book: 1Esd, chapter: 10, first: 16, last: 44}
+    note: >-
+      The three months of the commission's sessions and the roll of those found
+      to have taken strange wives, which the text places at the sessions that
+      examined them.
+    sources: [bible:douay-rheims:1Esd.10.16]
+
+  # --- 2 Esdras: the first mission of Nehemias ------------------------------
+  - relation: narrated-event
+    event: israel.restoration.nehemias-tidings-of-jerusalem
+    scope:
+      - {book: 2Esd, chapter: 1}
+    note: The month of Casleu in the twentieth year, at the castle of Susa.
+    sources: [bible:douay-rheims:2Esd.1.1]
+  - relation: utterance
+    event: israel.restoration.nehemias-tidings-of-jerusalem
+    scope:
+      - {book: 2Esd, chapter: 1, first: 5, last: 11}
+    note: >-
+      Nehemias's prayer, spoken in the days of fasting that followed the
+      tidings and before he stood before the king.
+    sources: [bible:douay-rheims:2Esd.1.4]
+  - relation: narrated-event
+    event: israel.restoration.nehemias-mission
+    scope:
+      - {book: 2Esd, chapter: 2, first: 9, last: 20}
+      - {book: 2Esd, chapter: 3}
+      - {book: 2Esd, chapter: 4}
+      - {book: 2Esd, chapter: 5}
+      - {book: 2Esd, chapter: 6, first: 1, last: 14}
+      - {book: 2Esd, chapter: 6, first: 17, last: 19}
+      - {book: 2Esd, chapter: 7, first: 1, last: 5}
+      - {book: 2Esd, chapter: 11}
+      - {book: 2Esd, chapter: 12, first: 27, last: 46}
+      - {book: 2Esd, chapter: 13, first: 1, last: 3}
+    note: >-
+      The whole of Van Hoonacker's Section I apart from the tidings at Susa,
+      together with the parts of Section II he assigns to the same mission: the
+      journey and the night survey of the wall; chapter iii, which he calls "a
+      document of the highest importance for determining the area of Jerusalem
+      in the middle of the fifth century B.C.", and which is a builders' roll
+      standing at the work it records; the opposition of Sanaballat, the usury,
+      the twelve years of the governorship; the numbering of the people (vii,
+      1-5); the peopling of Jerusalem and its census, of which he says "verses
+      3-36 give the census of Jerusalem and of other towns as Nehemiah's
+      measures left it"; the dedication of the walls, "In chapter xii, 27-43,
+      we have the account of the solemn dedication of the walls of Jerusalem";
+      and the commission and separation of xii, 44-xiii, 3, which he groups
+      with the covenant -- "After chapter x it is advisable to read xii,
+      43-xiii, 1-3". The existing binding covers only 2:1-8 and 6:15-16. The
+      list at xii, 1-26 is deliberately left unbound: see the notes.
+    sources:
+      - bible:douay-rheims:2Esd.5.14
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+  - relation: narrated-event
+    event: israel.restoration.wall-of-jerusalem-finished
+    scope:
+      - {book: 2Esd, chapter: 6, first: 15, last: 16}
+    note: >-
+      The twenty-fifth of Elul, in fifty-two days. The existing binding already
+      reaches these verses from the mission as a whole; this one carries the
+      day the mission event cannot.
+    sources: [bible:douay-rheims:2Esd.6.15]
+  - relation: retrospective-event
+    event: israel.restoration.decree-of-cyrus
+    scope:
+      - {book: 2Esd, chapter: 7, first: 6, last: 73}
+    note: >-
+      Not what Nehemias did, but the book he found: "I found a book of the
+      number of them who came up at first". Van Hoonacker: "He gives (vii, 5
+      ff.) the list of the families who had returned from captivity with
+      Zorobabel. This list is in I Esd., ii." The occasion the list stands in
+      is the numbering of the people, bound above; the return it records is a
+      century earlier, and a passage that recalls an event does not narrate it.
+    sources:
+      - bible:douay-rheims:2Esd.7.6
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+
+  # --- 2 Esdras: the Law read and the covenant renewed ----------------------
+  - relation: narrated-event
+    event: israel.restoration.reading-of-the-law
+    scope:
+      - {book: 2Esd, chapter: 8}
+    note: >-
+      The first day of the seventh month and the days that followed it: the
+      reading, the joy of the people, the second day's exposition, and the
+      feast of tabernacles kept seven days with the reading continued "from the
+      first day till the last".
+    sources: [bible:douay-rheims:2Esd.8.2]
+  - relation: narrated-event
+    event: israel.restoration.covenant-renewed
+    scope:
+      - {book: 2Esd, chapter: 9}
+      - {book: 2Esd, chapter: 10}
+    note: >-
+      The fast of the twenty-fourth day, the confession, and the written
+      covenant with the roll of its subscribers, which the text places at the
+      sealing: "And the subscribers were Nehemias, Athersatha the son of
+      Hachelai". Chapter 9 already carries retrospective bindings to the events
+      the confession recalls; this is the occasion those words were the
+      confession of.
+    sources: [bible:douay-rheims:2Esd.9.1, bible:douay-rheims:2Esd.9.38]
+  - relation: utterance
+    event: israel.restoration.covenant-renewed
+    scope:
+      - {book: 2Esd, chapter: 9, first: 5, last: 38}
+    note: >-
+      The Levites' confession, spoken on the twenty-fourth day. What it recalls
+      is bound elsewhere under retrospective-event and is not this assertion.
+    sources: [bible:douay-rheims:2Esd.9.5]
+
+  # --- 2 Esdras: the second mission -----------------------------------------
+  - relation: narrated-event
+    event: israel.restoration.nehemias-second-mission
+    scope:
+      - {book: 2Esd, chapter: 13, first: 4, last: 5}
+      - {book: 2Esd, chapter: 13, first: 8, last: 31}
+    note: >-
+      Van Hoonacker's Section III: "it is with his doings during this second
+      mission that xiii, 4-31 is concerned" -- the storeroom of Tobias cast out,
+      the tithes restored, the sabbath enforced, the strange wives driven off.
+      The existing binding covers only 13:6-7.
+    sources:
+      - bible:douay-rheims:2Esd.13.6
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+  # === lane exodus ===
+  # --- Exodus: from the birth of Moses to the going out ----------------------
+  - relation: narrated-event
+    event: israel.exodus.moses-in-madian
+    scope:
+      - {book: Ex, chapter: 2, first: 11, last: 25}
+    note: >-
+      From the slaying of the Egyptian to the death of the king of Egypt, which
+      is the whole of the forty years the Acts assign to the Madian sojourn.
+      Exodus dates the opening of the run only as "In those days, after Moses
+      was grown up" and its close as "after a long time"; the number is the
+      event's, from Acts 7:23 and 7:30, and not this binding's.
+    sources: [bible:douay-rheims:Ex.2.11, bible:douay-rheims:Ex.2.23]
+  - relation: narrated-event
+    event: israel.exodus.return-of-moses-to-egypt
+    scope:
+      - {book: Ex, chapter: 4, first: 18, last: 31}
+    note: >-
+      The leave-taking from Jethro, the journey, the meeting with Aaron at the
+      mountain of God, and the first assembly of the ancients. The run opens at
+      4:18 because the vocation dialogue that the burning-bush event carries
+      closes at 4:17.
+    sources: [bible:douay-rheims:Ex.4.18]
+  - relation: narrated-event
+    event: israel.exodus.moses-before-pharao
+    scope:
+      - {book: Ex, chapter: 6, first: 1, last: 13}
+      - {book: Ex, chapter: 6, first: 28, last: 30}
+      - {book: Ex, chapter: 7, first: 1, last: 5}
+    note: >-
+      The renewal of the commission after the first audience failed, and the
+      charge given immediately before the plagues begin. It joins the two runs
+      the corpus already binds to this event - Exodus 5 and Exodus 7:6-13 - so
+      that the whole approach to Pharao stands together. Exodus 6:28 marks the
+      occasion in the text's own words, "In the day when the Lord spoke to
+      Moses in the land of Egypt". The genealogy at 6:14-27 is bound
+      separately, because it looks back over the sojourn rather than forward to
+      Pharao.
+    sources: [bible:douay-rheims:Ex.6.28]
+  - relation: retrospective-event
+    event: israel.egypt.sojourn
+    scope:
+      - {book: Ex, chapter: 6, first: 14, last: 27}
+    note: >-
+      The genealogy of the heads of the houses of Ruben, Simeon and Levi down
+      to Aaron and Moses, with the lifetimes of Levi, Caath and Amram. It
+      recalls the generations of the sojourn in Egypt, which is the event the
+      corpus already dates at Exodus 12:40; it is not a narrative of anything
+      happening at Exodus 6, and it is not a chronology of its own. The years
+      the passage prints are lifetimes, not dates, and the corpus does not add
+      them into one.
+    sources: [bible:douay-rheims:Ex.6.16, bible:douay-rheims:Ex.6.20]
+  - relation: narrated-event
+    event: israel.exodus.the-plagues-of-egypt
+    scope:
+      - {book: Ex, chapter: 7, first: 14, through: 11}
+      - {book: Ex, chapter: 12, first: 29, last: 30}
+    note: >-
+      The nine plagues from the striking of the river to the darkness, and the
+      tenth at Exodus 12:29-30. Those two verses carry the Exodus itself as
+      well, because the slaying of the firstborn is at once the last plague and
+      the night of the going out; that is one event narrated under two heads
+      and not two dates. The Catholic Encyclopedia's "Plagues of Egypt" heads
+      its article with a wider range than this scope - "Ten calamities
+      inflicted on the Egyptians ... (Exodus 7:8 - 12:30)" - but puts the first
+      five verses of it outside the count, treating the rod turned into a
+      serpent as a wonder wrought before the plagues began: "the wonder of
+      changing Aaron's rod into a serpent, which was wrought in proof of Moses's
+      Divine mission, made no impression, as it was imitated by the Egyptian
+      magicians (Exodus 5; 7:8-13). A series of afflictions, culminating in the
+      destruction of all the first-born of Egypt, was required before Pharao
+      yielded." So it begins the count where Scripture's first plague begins,
+      which is where this scope begins, and the difference between the two
+      extents is Exodus 7:8-13, bound to no plague here either.
+    sources:
+      - bible:douay-rheims:Ex.7.14
+      - bible:douay-rheims:Ex.12.29
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12143a-0612afa4
+
+  # --- Exodus: the march to Sinai --------------------------------------------
+  - relation: utterance
+    event: israel.exodus.the-exodus
+    scope:
+      - {book: Ex, chapter: 15, first: 1, last: 21}
+    note: >-
+      The canticle of Moses and the canticle of Mary, sung at the sea on the
+      day of the passage: "Then Moses and the children of Israel sung this
+      canticle to the Lord, and said: Let us sing to the Lord: for he is
+      gloriously magnified, the horse and the rider he hath thrown into the
+      sea." The words are quoted, not narrated, so the relation is utterance;
+      the passage of the sea it celebrates is the event
+      the corpus already dates, and the singing carries no separate date.
+    sources: [bible:douay-rheims:Ex.15.1, bible:douay-rheims:Ex.15.20]
+  - relation: narrated-event
+    event: israel.wilderness.mara-and-elim
+    scope:
+      - {book: Ex, chapter: 15, first: 22, last: 27}
+    note: >-
+      The three days' march through the wilderness of Sur, the bitter waters,
+      and the encampment at Elim.
+    sources: [bible:douay-rheims:Ex.15.22]
+  - relation: narrated-event
+    event: israel.wilderness.raphidim
+    scope:
+      - {book: Ex, chapter: 17, first: 1, last: 16}
+    note: >-
+      The setting forward from the desert of Sin, the water struck from the
+      rock Horeb, and the battle with Amalec, all at the one encampment.
+    sources: [bible:douay-rheims:Ex.17.1]
+  - relation: narrated-event
+    event: israel.wilderness.jethro-and-the-judges
+    scope:
+      - {book: Ex, chapter: 18, first: 1, last: 27}
+    note: >-
+      The whole chapter is one visit: Jethro's coming to the camp by the
+      mountain of God, the sacrifice, the counsel, the appointment of the
+      rulers, and the departure at 18:27. Where the visit stands in the march
+      is a question the event's note leaves open, and this binding does not
+      close it.
+    sources: [bible:douay-rheims:Ex.18.5]
+
+  # --- Exodus: Sinai ---------------------------------------------------------
+  - relation: narrated-event
+    event: israel.wilderness.promulgation-of-the-law
+    scope:
+      - {book: Ex, chapter: 20, first: 1, last: 26}
+    note: >-
+      The day the Lord came down on the mount and spoke the ten words, the
+      people's fear at 20:18-21, and the first ordinance given to Moses in the
+      cloud. The date is the third day of Exodus 19:16 and belongs to the
+      event.
+    sources: [bible:douay-rheims:Ex.20.1]
+  - relation: utterance
+    event: israel.wilderness.promulgation-of-the-law
+    scope:
+      - {book: Ex, chapter: 20, first: 1, last: 17}
+      - {book: Ex, chapter: 20, through: 23, first: 22, last: 33}
+    note: >-
+      The words themselves: the ten commandments as spoken, and the judgments
+      the Lord spoke to Moses in the cloud from 20:22 onward - "These are the
+      judgments which thou shalt set before them" - which Moses tells to the
+      people at Exodus 24:3 and reads to them out of the book of the covenant
+      at 24:7. Quoted words and the narrative that frames them are two
+      assertions on the same verses, which is what the two relations are for.
+    sources: [bible:douay-rheims:Ex.20.22, bible:douay-rheims:Ex.21.1, bible:douay-rheims:Ex.24.7]
+  - relation: narrated-event
+    event: israel.wilderness.covenant-at-sinai
+    scope:
+      - {book: Ex, chapter: 24, first: 1, last: 11}
+    note: >-
+      The altar and the twelve titles, the blood of the covenant, and the
+      seventy ancients who went up and saw the God of Israel. The run closes at
+      24:11 because the ascent into the cloud at 24:12 is the forty days, which
+      the corpus binds separately.
+    sources: [bible:douay-rheims:Ex.24.4]
+  - relation: narrated-event
+    event: israel.wilderness.forty-days-on-the-mount
+    scope:
+      - {book: Ex, chapter: 25, through: 31}
+    note: >-
+      What Moses received during the first forty days: the pattern of the
+      tabernacle and its vessels, the priesthood and its vestments, the rites
+      of consecration, and at 31:18 the two stone tables. Exodus 31:18 says so
+      in the text's own words - "the Lord, when he had ended these words in
+      Mount Sinai, gave to Moses two stone tables of testimony" - which is what
+      makes these seven chapters one stay on the mount and not seven dates.
+    sources: [bible:douay-rheims:Ex.31.18, bible:douay-rheims:Ex.24.18]
+  - relation: utterance
+    event: israel.wilderness.forty-days-on-the-mount
+    scope:
+      - {book: Ex, chapter: 25, through: 31, last: 17}
+    note: >-
+      The same seven chapters as words spoken: "And the Lord spoke to Moses,
+      saying" at 25:1, running to the end of the discourse at 31:17. The
+      narration of the giving of the tables at 31:18 is not part of the speech
+      and is left to the narrated-event binding.
+    sources: [bible:douay-rheims:Ex.25.1]
+  - relation: narrated-event
+    event: israel.wilderness.golden-calf
+    scope:
+      - {book: Ex, chapter: 33, first: 1, last: 23}
+    note: >-
+      The immediate sequel of the calf and part of the same episode: the Lord's
+      refusal to go up in the midst of the people, their mourning and the
+      laying aside of their ornaments "by Mount Horeb" at 33:6, the tabernacle
+      pitched without the camp, and Moses' prayer to see the glory. Exodus 34
+      opens the second forty days and is bound to that event instead, so this
+      run closes at 33:23. The Anno Mundi figure the Haydock edition prints at
+      the head of Exodus 32 is a year and covers this run without being
+      stretched to a day.
+    sources: [bible:douay-rheims:Ex.33.1, bible:douay-rheims:Ex.33.6]
+  - relation: narrated-event
+    event: israel.wilderness.forty-days-on-the-mount
+    scope:
+      - {book: Ex, chapter: 34, first: 1, last: 26}
+      - {book: Ex, chapter: 34, first: 29, last: 35}
+    note: >-
+      The second of the two stays, which the event's own note already records
+      from Exodus 34:28 and which the Catholic Encyclopedia's "Moses" states as
+      "two periods of forty days each". The run opens at 34:1 with the command
+      to hew the second tables and the ascent at 34:4, and resumes at 34:29
+      with the descent, the horned face and the veil; 34:27-28, which carries
+      the forty days themselves, is already bound.
+    sources: [bible:douay-rheims:Ex.34.4, bible:douay-rheims:Ex.34.29]
+
+  # --- Exodus: the tabernacle -------------------------------------------------
+  - relation: narrated-event
+    event: israel.wilderness.making-of-the-tabernacle
+    scope:
+      - {book: Ex, chapter: 35, through: 39}
+    note: >-
+      Five chapters of one work: the calling of the people and their offerings,
+      Beseleel and Ooliab, the curtains, the boards, the ark, the table, the
+      candlestick, the altars, the court, the vestments, and at 39:43 Moses
+      seeing all things finished. The date is the event's and is a terminus,
+      not a start.
+    sources: [bible:douay-rheims:Ex.35.4, bible:douay-rheims:Ex.39.43]
+  - relation: narrated-event
+    event: israel.wilderness.erection-of-the-tabernacle
+    scope:
+      - {book: Ex, chapter: 40, first: 1, last: 13}
+    note: >-
+      The command that carries the date. Exodus 40:2 in this Douay numbering is
+      the verse that names the day - "The first month, the first day of the
+      month, thou shalt set up the tabernacle of the testimony" - and the run
+      stops at 40:13, the last verse of that command. The doing begins at 40:14,
+      "And Moses did all that the Lord had commanded", and is carried by the
+      separate 40:14-33 binding on this same event, which is where 40:15, the
+      verse that records the tabernacle set up, is reached. The command and the
+      doing are two ranges on one event and not two events.
+    sources: [bible:douay-rheims:Ex.40.2]
+  - relation: narrated-event
+    event: israel.wilderness.forty-years-in-the-desert
+    scope:
+      - {book: Ex, chapter: 40, first: 34, last: 36}
+    note: >-
+      The last three verses of the book leave the day the tabernacle was raised
+      and describe the whole march: "If at any time the cloud removed from the
+      tabernacle, the children of Israel went forward by their troops ...
+      throughout all their mansions." That is the wilderness period, not the
+      erection, and it is bound to the wilderness period accordingly. Numbers
+      9:15-23 tells the same thing at greater length.
+    sources: [bible:douay-rheims:Ex.40.34, bible:douay-rheims:Ex.40.36]
+  # === lane ezechiel ===
+  # === bind-ezechiel ===================================================
+  # The book of Ezechiel, whose fourteen datelines are the most precise
+  # self-dating in the prophets. Each dated oracle is bound at the extent the
+  # next dateline fixes, except where Schets's "Ezekiel" in the Catholic
+  # Encyclopedia marks a structural boundary of its own; every such decision is
+  # stated on the binding that made it. Two bindings cover the whole book,
+  # because the exile is the occasion of all of it and the ministry is the span
+  # all of it was uttered in.
+  - relation: historical-setting
+    event: israel.exile.second-captivity
+    scope:
+      - {book: Ezech}
+    note: >-
+      The whole book, under historical-setting and never under narrated-event:
+      this says what occasion tradition associates the text with, not that
+      every verse narrates it. Schets's "Ezekiel" (Catholic Encyclopedia, New
+      York, 1909) places the prophet's whole life there from that deportation:
+      he "was the son of Buzi, and was one of the priests who, in the year 598
+      B.C., had been deported together with Joachim as prisoners from Jerusalem
+      (2 Kings 24:12-16; cf. Ezekiel 33:21, 40:1)", and "With the other exiles
+      he settled in Tell-Abib near the Chobar (Ezek. i,1; iii, 15) in Babylonia,
+      and seems to have spent the rest of his life there." Scripture says the
+      same of the place at Ezech. 1:1, "when I was in the midst of the captives
+      by the river Chobar". The article's "598 B.C." is one year earlier than
+      the "597 B.C." held as an alternate on this event and is on a different
+      reckoning from the "A.M. 3405" it prefers; the disagreement lives on the
+      event, and this binding carries no date at all.
+    sources:
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+      - bible:douay-rheims:Ezech.1.1
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.ministry
+    scope:
+      - {book: Ezech}
+    note: >-
+      The span, not a day: every oracle in the book was uttered inside the
+      ministry, and the ministry's own claim is relative and bounded only at
+      its beginning. Schets's "Ezekiel" gives the bound and its hedge: "From
+      Ezek. xxix, 17 it appears that he prophesied during at least twenty-two
+      years." The chapters that carry a dateline of their own are bound again,
+      more narrowly, below; this binding is what reaches the chapters that
+      carry none — Ezech. 12-19, 25, 30:1-19 and 33:1-20 — and it reaches them
+      with a span and not with a date those chapters do not have.
+    sources:
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+      - bible:douay-rheims:Ezech.29.17
+  # --- the fourteen datelines, in the order they stand in the book ----------
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.call
+    scope:
+      - {book: Ezech, chapter: 1, through: 3, first: 1, last: 15}
+    note: >-
+      Boundary fixed at 3:15 because the next dateline falls at 3:16, "And at
+      the end of seven days the word of the Lord came to me". Schets's
+      "Ezekiel" runs its introduction one section further, to "the vision of
+      the calling of the prophet (Ezek. i-iii, 21)", but that division is not a
+      dating and the seven-day interval inside it is: 3:16 is separately dated
+      and separately bound, so the earlier bound is taken.
+    sources:
+      - bible:douay-rheims:Ezech.1.1
+      - bible:douay-rheims:Ezech.3.15
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.watchman-charge
+    scope:
+      - {book: Ezech, chapter: 3, through: 7, first: 16, last: 27}
+    note: >-
+      Boundary fixed at 7:27 because the next dateline falls at 8:1, and the
+      run is confirmed by Schets's "Ezekiel", which keeps the same material in
+      one group: "After a second revelation, in which God discloses to the
+      prophet His course of action (iii, 22-27), the prophet foretells by
+      symbolic acts (iv, v) and in words (vi-vii), the siege and capture of
+      Jerusalem, and the banishment of Juda."
+    sources:
+      - bible:douay-rheims:Ezech.3.16
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.vision-of-the-abominations
+    scope:
+      - {book: Ezech, chapter: 8, through: 11, first: 1, last: 25}
+    note: >-
+      Boundary fixed at 11:25 and NOT at the next dateline, which is nineteen
+      verses into chapter 20. Two controls agree against the mechanical rule
+      here. Scripture closes the vision itself at 11:25, "And I spoke to them of
+      the captivity all the words of the Lord, which he had shewn me"; and
+      Schets's "Ezekiel" makes viii-xi one group and opens a new one at xii:
+      "In a prophetic vision, in the presence of the elders of Israel, God
+      reveals to him the cause of these punishments... With this the judgment
+      which the prophet communicates to the exiles ends (xi). In the third
+      group (xii-xix) many different prophecies are brought together, whose
+      sole connection is the relation they bear to the guilt and punishment of
+      Jerusalem and Juda." Carrying the sixth year over xii-xix would date
+      eight chapters no source dates; they stand under the book-wide bindings
+      instead.
+    sources:
+      - bible:douay-rheims:Ezech.8.1
+      - bible:douay-rheims:Ezech.11.25
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.elders-inquiry
+    scope:
+      - {book: Ezech, chapter: 20, through: 23, first: 1, last: 49}
+    note: >-
+      Boundary fixed at 23:49 because the next dateline falls at 24:1, and
+      Schets's "Ezekiel" bounds the same group the same way, from "In the
+      presence of the elders the prophet denounces the whole people of Israel
+      ... (xx)" through "but Juda is more guilty than Israel has ever been
+      (xxiii)".
+    sources:
+      - bible:douay-rheims:Ezech.20.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.final-siege
+    scope:
+      - {book: Ezech, chapter: 24}
+    note: >-
+      No new event: Scripture says this oracle was uttered on the day the siege
+      of Jerusalem began, which the corpus already holds. Ezech. 24:1-2 reads
+      "And the word of the Lord came to me in the ninth year, in the tenth
+      month, the tenth day of the month, saying: Son of man, write thee the
+      name of this day, on which the king of Babylon hath set himself against
+      Jerusalem to day", and 4 Kings 25:1, which dates the event, reads "in the
+      ninth year of his reign, in the tenth month, the tenth day of the month,
+      that Nabuchodonosor, king of Babylon, came". The two texts count in two
+      reckonings — Ezechiel from the captivity of Joachin, 4 Kings from the
+      reign of Sedecias — and they fall on the same year, month and day;
+      Ezechiel's own verse is what identifies the day, and nothing is
+      harmonised beyond what it says. Boundary fixed at 24:27 because Schets's
+      "Ezekiel" ends the first part there and opens the prophecies against the
+      Gentiles at xxv, and because it ties this chapter to that day in so many
+      words: "On the day on which the siege of Jerusalem began, the prophet
+      represents, under the figure of the rusty pot, what was to befall the
+      inhabitants of the city."
+    sources:
+      - bible:douay-rheims:Ezech.24.1
+      - bible:douay-rheims:Ezech.24.2
+      - bible:douay-rheims:4Kings.25.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.oracle-against-tyre
+    scope:
+      - {book: Ezech, chapter: 26, through: 28, first: 1, last: 26}
+    note: >-
+      Boundary fixed at 28:26 because the next dateline falls at 29:1, and
+      Schets's "Ezekiel" runs the same stretch before the Egyptian oracles
+      begin: "He treats more at length of Tyre and its king (xxxvi-xxviii,19),
+      after which he casts a glance at Sidon (xxviii, 20-26)." The "xxxvi" is a
+      transcription slip for xxvi in the source, as its own terminus at
+      xxviii,19 shows. Chapter 25, the oracles on Ammon, Moab, Edom and the
+      Philistines, carries no dateline and is deliberately left outside this
+      scope: the encyclopedia groups it with the Gentile prophecies but dates
+      nothing in it.
+    sources:
+      - bible:douay-rheims:Ezech.26.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.first-oracle-against-egypt
+    scope:
+      - {book: Ezech, chapter: 29, first: 1, last: 16}
+    note: >-
+      Boundary fixed at 29:16 because the next dateline falls at 29:17, inside
+      the same chapter.
+    sources: [bible:douay-rheims:Ezech.29.1]
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.egypt-as-wages-for-nabuchodonosor
+    scope:
+      - {book: Ezech, chapter: 29, first: 17, last: 21}
+    note: >-
+      Boundary fixed at the chapter's end and NOT at the next dateline, which
+      falls at 30:20. Ezech. 30:1-19 opens with its own undated revelation
+      formula, "And the word of the Lord came to me, saying" (30:1), so the
+      twenty-seventh year is not carried across it; it stands under the
+      book-wide bindings instead. Schets's "Ezekiel" counts "Six prophecies
+      against Egypt... dating from different years (xxix-xxxii" without saying
+      where each begins or ends, so it does not settle the question either way.
+    sources:
+      - bible:douay-rheims:Ezech.29.17
+      - bible:douay-rheims:Ezech.30.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.broken-arm-of-pharao
+    scope:
+      - {book: Ezech, chapter: 30, first: 20, last: 26}
+    note: >-
+      Boundary fixed at 30:26 because the next dateline falls at 31:1, the
+      first verse of the next chapter.
+    sources: [bible:douay-rheims:Ezech.30.20]
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.parable-of-the-cedar
+    scope:
+      - {book: Ezech, chapter: 31}
+    note: >-
+      Boundary fixed at 31:18 because the next dateline falls at 32:1, so this
+      oracle is exactly the chapter.
+    sources: [bible:douay-rheims:Ezech.31.1]
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.lamentation-for-pharao
+    scope:
+      - {book: Ezech, chapter: 32, first: 1, last: 16}
+    note: >-
+      Boundary fixed at 32:16 because the next dateline falls at 32:17, inside
+      the same chapter.
+    sources: [bible:douay-rheims:Ezech.32.1]
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.lamentation-for-the-multitude-of-egypt
+    scope:
+      - {book: Ezech, chapter: 32, first: 17, last: 32}
+    note: >-
+      Boundary fixed at the chapter's end and NOT at the next dateline, which
+      falls at 33:21. Schets's "Ezekiel" closes the Gentile prophecies at
+      xxxii and opens the third part at xxxiii — "The third part
+      (xxxiii-xlviii), is occupied with the Divine utterances on the subject of
+      Israel's restoration" — so the twelfth year is not carried into a section
+      the source separates. Ezech. 33:1-20, the watchman discourse that opens
+      that third part, carries no dateline of its own and stands under the
+      book-wide bindings.
+    sources:
+      - bible:douay-rheims:Ezech.32.17
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.news-of-the-fall-of-jerusalem
+    scope:
+      - {book: Ezech, chapter: 33, through: 39, first: 21, last: 29}
+    note: >-
+      Boundary fixed at 39:29 because the next and last dateline falls at 40:1.
+      This is the longest carry in the book and it is stated plainly: only the
+      coming of the fugitive at 33:21-22 is dated, and the restoration oracles
+      that follow it — the shepherds and the second David (xxxiv), Mount Seir
+      and the new spirit (xxxv-xxxvii), the dry bones (xxxvii), and Gog
+      (xxxviii-xxxix) — carry no dateline of their own. Schets's "Ezekiel"
+      treats them as one movement from that announcement, opening the third
+      part at xxxiii and running it unbroken to xlviii, so no earlier boundary
+      is available from the source, and the next dateline is the only bound
+      Scripture gives.
+    sources:
+      - bible:douay-rheims:Ezech.33.21
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: prophecy-given
+    event: israel.exile.ezechiel.vision-of-the-new-temple
+    scope:
+      - {book: Ezech, chapter: 40, through: 48, first: 1, last: 35}
+    note: >-
+      Boundary fixed at the book's end because 40:1 is the last dateline and
+      Schets's "Ezekiel" treats the whole of it as one vision: "In the last
+      prophetic vision, God shows the new temple (xl-xliii), the new worship
+      (xliii-xlvi), the return to their own land, and the new division thereof
+      among the twelve tribes (xlvii-xlviii) ..." -- the sentence running on in
+      the source, "as a figure of His foundation of a kingdom where He shall
+      dwell among His people". The same article defends these
+      chapters against the charge that they are apocryphal: "Some few consider
+      chapters xl-xlviii to be apocryphal, because the plan there described in
+      the building of the temple was not followed, but they overlook the fact
+      that Ezekiel here gives a symbolic representation of the temple, that was
+      to find spiritual realization in God's new kingdom." That is a statement
+      about what the vision means, not about a later event this corpus holds,
+      so no prophetic-referent is authored from it. See the lane report.
+    sources:
+      - bible:douay-rheims:Ezech.40.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  # --- where Ezechiel narrates rather than prophesies -----------------------
+  # prophecy-given answers when an ORACLE was uttered. Two passages in this book
+  # utter none: they tell what happened to the prophet. They are bound under
+  # narrated-event and the rest of the book is not, because the rest of the book
+  # is oracle.
+  - relation: narrated-event
+    event: israel.exile.ezechiel.death-of-the-prophets-wife
+    scope:
+      - {book: Ezech, chapter: 24, first: 18, last: 20}
+    note: >-
+      Three verses of narrative inside a chapter of oracle. Ezech. 24:15-17 is
+      the word of the Lord and 24:21-27 is the oracle he was told to speak; both
+      stand under the chapter's prophecy-given binding. What lies between them
+      is told, not foretold: "So I spoke to the people in the morning, and my
+      wife died in the evening: and I did in the morning as he had commanded me"
+      (24:18), "And the people said to me: Why dost thou not tell us what these
+      things mean that thou doest?" (24:19), "And I said to them: The word of
+      the Lord came to me, saying:" (24:20). Schets's "Ezekiel" reads the
+      passage the same way, as an occasion rather than an oracle: "On the
+      occasion of the death of his wife, God forbids him to mourn openly, in
+      order to teach the exiles that they should be willing to lose that which
+      is dearest to them without grieving over it (xxiv)." The scope stops at
+      24:20 and does not take the chapter, and no other chapter of Ezechiel is
+      bound under this relation.
+    sources:
+      - bible:douay-rheims:Ezech.24.18
+      - bible:douay-rheims:Ezech.24.19
+      - bible:douay-rheims:Ezech.24.20
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  - relation: narrated-event
+    event: israel.exile.ezechiel.news-of-the-fall-of-jerusalem
+    scope:
+      - {book: Ezech, chapter: 33, first: 21, last: 22}
+    note: >-
+      No oracle is uttered here. A man arrives and speaks, and the passage
+      reports it: "there came to me one that was fled from Jerusalem, saying:
+      The city is laid waste" (33:21), and "the hand of the Lord had been upon
+      me in the evening, before he that was fled came: and he opened my mouth
+      till he came to me in the morning, and my mouth being opened, I was silent
+      no more" (33:22). The event is the coming of the fugitive, and it is the
+      same event whose dateline dates the oracles that follow, which is why it
+      is bound twice over these two verses and under two relations: the arrival
+      is what these verses narrate, and the day of the arrival is when the
+      oracles of xxxiii-xxxix were given. What the fugitive REPORTS is a third
+      thing, earlier than either, and is bound below under retrospective-event.
+    sources:
+      - bible:douay-rheims:Ezech.33.21
+      - bible:douay-rheims:Ezech.33.22
+  # --- what two of Ezechiel's datelines look back to ------------------------
+  - relation: retrospective-event
+    event: israel.exile.third-captivity
+    scope:
+      - {book: Ezech, chapter: 33, first: 21, last: 21}
+      - {book: Ezech, chapter: 40, first: 1, last: 1}
+    note: >-
+      Two verses recall the destruction of Jerusalem and neither narrates it.
+      At 33:21 the news arrives in Babylonia: "there came to me one that was
+      fled from Jerusalem, saying: The city is laid waste." At 40:1 the same
+      event is used as a second measure of the date: "the fourteenth year after
+      the city was destroyed". Schets's "Ezekiel" cites exactly these two
+      verses when placing the prophet among the deported: "cf. Ezekiel 33:21,
+      40:1". The event holds four traditional figures and no preferred one; a
+      binding carries none of them.
+    sources:
+      - bible:douay-rheims:Ezech.33.21
+      - bible:douay-rheims:Ezech.40.1
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+  # === lane genesis ===
+  # --- Genesis: the second account and the book of the generations ----------
+  - relation: retrospective-event
+    event: israel.primeval.creation
+    scope:
+      - {book: Gen, chapter: 2, first: 4, last: 6}
+    note: >-
+      Genesis 2:4-6 does not narrate the six days again; it looks back on them -
+      "These are the generations of the heaven and the earth, when they were
+      created, in the day that the Lord God made the heaven and the earth" - and
+      the relation says so rather than dating the verses a second time.
+    sources: [bible:douay-rheims:Gen.2.4]
+  - relation: retrospective-event
+    event: israel.primeval.creation-of-adam
+    scope:
+      - {book: Gen, chapter: 5, first: 1, last: 2}
+    note: >-
+      The heading of the genealogy recalls the day itself: "In the day that God
+      created man, he made him to the likeness of God. He created them male and
+      female."
+    sources: [bible:douay-rheims:Gen.5.1]
+
+  # --- Genesis 5: the ten antediluvian patriarchs ---------------------------
+  # One binding per notice. Each patriarch's begetting verse and its "lived
+  # after" verse go to the birth of the son; the total-and-death verse goes to
+  # the death. No scope overlaps another for the same event.
+  - relation: narrated-event
+    event: israel.primeval.birth-of-enos
+    scope:
+      - {book: Gen, chapter: 5, first: 6, last: 7}
+    sources: [bible:douay-rheims:Gen.5.6]
+  - relation: narrated-event
+    event: israel.primeval.death-of-seth
+    scope:
+      - {book: Gen, chapter: 5, first: 8, last: 8}
+    sources: [bible:douay-rheims:Gen.5.8]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-cainan
+    scope:
+      - {book: Gen, chapter: 5, first: 9, last: 10}
+    sources: [bible:douay-rheims:Gen.5.9]
+  - relation: narrated-event
+    event: israel.primeval.death-of-enos
+    scope:
+      - {book: Gen, chapter: 5, first: 11, last: 11}
+    sources: [bible:douay-rheims:Gen.5.11]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-malaleel
+    scope:
+      - {book: Gen, chapter: 5, first: 12, last: 13}
+    sources: [bible:douay-rheims:Gen.5.12]
+  - relation: narrated-event
+    event: israel.primeval.death-of-cainan
+    scope:
+      - {book: Gen, chapter: 5, first: 14, last: 14}
+    sources: [bible:douay-rheims:Gen.5.14]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-jared
+    scope:
+      - {book: Gen, chapter: 5, first: 15, last: 16}
+    sources: [bible:douay-rheims:Gen.5.15]
+  - relation: narrated-event
+    event: israel.primeval.death-of-malaleel
+    scope:
+      - {book: Gen, chapter: 5, first: 17, last: 17}
+    sources: [bible:douay-rheims:Gen.5.17]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-henoch
+    scope:
+      - {book: Gen, chapter: 5, first: 18, last: 19}
+    sources: [bible:douay-rheims:Gen.5.18]
+  - relation: narrated-event
+    event: israel.primeval.death-of-jared
+    scope:
+      - {book: Gen, chapter: 5, first: 20, last: 20}
+    sources: [bible:douay-rheims:Gen.5.20]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-mathusala
+    scope:
+      - {book: Gen, chapter: 5, first: 21, last: 22}
+    sources: [bible:douay-rheims:Gen.5.21]
+  - relation: narrated-event
+    event: israel.primeval.translation-of-henoch
+    scope:
+      - {book: Gen, chapter: 5, first: 23, last: 24}
+    note: The one notice in the chapter that ends in a taking rather than a death.
+    sources: [bible:douay-rheims:Gen.5.23]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-lamech
+    scope:
+      - {book: Gen, chapter: 5, first: 25, last: 26}
+    sources: [bible:douay-rheims:Gen.5.25]
+  - relation: narrated-event
+    event: israel.primeval.death-of-mathusala
+    scope:
+      - {book: Gen, chapter: 5, first: 27, last: 27}
+    sources: [bible:douay-rheims:Gen.5.27]
+  - relation: narrated-event
+    event: israel.primeval.birth-of-noe
+    scope:
+      - {book: Gen, chapter: 5, first: 28, last: 30}
+    note: Verse 29 is the naming of Noe, verse 30 the years after the begetting.
+    sources: [bible:douay-rheims:Gen.5.28]
+  - relation: narrated-event
+    event: israel.primeval.death-of-lamech
+    scope:
+      - {book: Gen, chapter: 5, first: 31, last: 31}
+    sources: [bible:douay-rheims:Gen.5.31]
+  - relation: narrated-event
+    event: israel.primeval.begetting-of-sem-cham-and-japheth
+    scope:
+      - {book: Gen, chapter: 5, first: 31, last: 31}
+    note: >-
+      The Douay carries the begetting in the same verse as Lamech's death, which
+      is why one verse stands under two events.
+    sources: [bible:douay-rheims:Gen.5.31]
+
+  # --- Genesis 9 to 11: after the Flood -------------------------------------
+  - relation: narrated-event
+    event: israel.primeval.death-of-noe
+    scope:
+      - {book: Gen, chapter: 9, first: 28, last: 29}
+    sources: [bible:douay-rheims:Gen.9.28]
+  - relation: narrated-event
+    event: israel.primeval.division-of-the-earth
+    scope:
+      - {book: Gen, chapter: 10, first: 1, last: 32}
+    note: >-
+      The table of nations entire, because Genesis 10:32 makes the chapter its
+      own summary - "By these were the nations divided on the earth after the
+      flood" - and Genesis 10:25 is the verse that dates the dividing, in the
+      days of Phaleg. Genesis 11:1-9 is deliberately not in this scope; see the
+      event's note.
+    sources: [bible:douay-rheims:Gen.10.25]
+  - relation: narrated-event
+    event: israel.patriarchs.begetting-of-arphaxad
+    scope:
+      - {book: Gen, chapter: 11, first: 11, last: 11}
+    note: >-
+      The years Sem lived after the begetting, joined to the same event as
+      Genesis 11:10 rather than dated again.
+    sources: [bible:douay-rheims:Gen.11.11]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-sale
+    scope:
+      - {book: Gen, chapter: 11, first: 12, last: 13}
+    sources: [bible:douay-rheims:Gen.11.12]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-heber
+    scope:
+      - {book: Gen, chapter: 11, first: 14, last: 15}
+    sources: [bible:douay-rheims:Gen.11.14]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-phaleg
+    scope:
+      - {book: Gen, chapter: 11, first: 16, last: 17}
+    sources: [bible:douay-rheims:Gen.11.16]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-reu
+    scope:
+      - {book: Gen, chapter: 11, first: 18, last: 19}
+    sources: [bible:douay-rheims:Gen.11.18]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-sarug
+    scope:
+      - {book: Gen, chapter: 11, first: 20, last: 21}
+    sources: [bible:douay-rheims:Gen.11.20]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-nachor
+    scope:
+      - {book: Gen, chapter: 11, first: 22, last: 23}
+    sources: [bible:douay-rheims:Gen.11.22]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-thare
+    scope:
+      - {book: Gen, chapter: 11, first: 24, last: 25}
+    sources: [bible:douay-rheims:Gen.11.24]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-thare
+    scope:
+      - {book: Gen, chapter: 11, first: 31, last: 32}
+    note: >-
+      The going out from Ur and the death in Haran, which Genesis 11:32 dates by
+      Thare's own years.
+    sources: [bible:douay-rheims:Gen.11.32]
+
+  # --- Abraham --------------------------------------------------------------
+  - relation: narrated-event
+    event: israel.patriarchs.abram-contact-with-egypt-and-elam
+    scope:
+      - {book: Gen, chapter: 12, first: 10, last: 20}
+      - {book: Gen, chapter: 14, first: 1, last: 24}
+    note: >-
+      Two scopes on one binding because the Catholic Encyclopedia's "Israelites"
+      names both chapters in one clause and puts both at the arrival in Chanaan.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08193a-4931095f]
+  - relation: prophetic-referent
+    event: israel.egypt.sojourn
+    scope:
+      - {book: Gen, chapter: 15, first: 13, last: 13}
+    note: >-
+      The four hundred years are foretold to Abram here, and the corpus already
+      holds them as one of the disputed measures of the sojourn. The relation is
+      prophetic-referent and not narrated-event: Genesis 15 does not report the
+      bondage, it foretells it.
+    sources: [bible:douay-rheims:Gen.15.13]
+  - relation: prophetic-referent
+    event: israel.exodus.the-exodus
+    scope:
+      - {book: Gen, chapter: 15, first: 14, last: 16}
+      - {book: Gen, chapter: 46, first: 3, last: 4}
+      - {book: Gen, chapter: 50, first: 23, last: 24}
+    note: >-
+      Three places in Genesis where the going up out of Egypt is promised before
+      it happens: "after this they shall come out with great substance" (15:14),
+      "I will go down with thee thither, and will bring thee back again from
+      thence" (46:4), and Joseph's "God will visit you after my death, and will
+      make you go up out of this land" (50:23), with the oath about his bones
+      that Exodus 13:19 discharges.
+    sources:
+      - bible:douay-rheims:Gen.15.14
+      - bible:douay-rheims:Gen.46.4
+      - bible:douay-rheims:Gen.50.23
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-ismael
+    scope:
+      - {book: Gen, chapter: 16, first: 1, last: 16}
+    note: Genesis 16:3 dates the taking of Agar and 16:16 the birth itself.
+    sources: [bible:douay-rheims:Gen.16.16]
+  - relation: prophetic-referent
+    event: israel.patriarchs.birth-of-isaac
+    scope:
+      - {book: Gen, chapter: 17, first: 15, last: 21}
+      - {book: Gen, chapter: 18, first: 9, last: 15}
+    note: >-
+      The promise of Isaac, twice given and twice dated in the Douay text -
+      Genesis 17:21, "whom Sara shall bring forth to thee at this time in the
+      next year", and Genesis 18:10, "I will return and come to thee at this
+      time, life accompanying" - and fulfilled at Genesis 21:2, "at the time
+      that God had foretold her". The birth itself is bound under
+      narrated-event at Genesis 21; these verses foretell it.
+    sources:
+      - bible:douay-rheims:Gen.17.21
+      - bible:douay-rheims:Gen.18.10
+  - relation: narrated-event
+    event: israel.patriarchs.theophany-at-mambre
+    scope:
+      - {book: Gen, chapter: 18, first: 1, last: 33}
+    sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845]
+  - relation: narrated-event
+    event: israel.patriarchs.destruction-of-sodom
+    scope:
+      - {book: Gen, chapter: 19, first: 1, last: 29}
+    note: >-
+      The scope stops where the source stops. The Catholic Encyclopedia's
+      "Abraham" carries the episode from the coming of the angels to Sodom
+      through to "Next morning Abraham, looking from his tent towards Sodom,
+      sees the smoke of destruction ascending to heaven", which is Genesis
+      19:27-28, and says nothing after it. Genesis 19:30-38, Lot and his
+      daughters in the cave and the begetting of Moab and Ammon, is a separate
+      episode after the destruction; nothing inspected for this corpus dates
+      it, and it stands under the book-scoped gap row instead.
+    sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-sara
+    scope:
+      - {book: Gen, chapter: 23, first: 1, last: 20}
+    note: The death, the buying of the double cave from Ephron, and the burial.
+    sources: [bible:douay-rheims:Gen.23.1]
+  - relation: narrated-event
+    event: israel.patriarchs.marriage-of-isaac
+    scope:
+      - {book: Gen, chapter: 24, first: 1, last: 67}
+      - {book: Gen, chapter: 25, first: 20, last: 20}
+    note: >-
+      Genesis 24 narrates the bringing of Rebecca and Genesis 25:20 states the
+      age; one event, two scopes, one date.
+    sources: [bible:douay-rheims:Gen.25.20]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-abraham
+    scope:
+      - {book: Gen, chapter: 25, first: 1, last: 11}
+    note: >-
+      Cetura and her sons, the total of Abraham's years at 25:7, and the burial
+      by Isaac and Ismael in the double cave.
+    sources: [bible:douay-rheims:Gen.25.7]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-ismael
+    scope:
+      - {book: Gen, chapter: 25, first: 12, last: 18}
+    sources: [bible:douay-rheims:Gen.25.17]
+
+  # --- Isaac and Jacob ------------------------------------------------------
+  - relation: narrated-event
+    event: israel.patriarchs.marriage-of-esau
+    scope:
+      - {book: Gen, chapter: 26, first: 34, last: 35}
+    sources: [bible:douay-rheims:Gen.26.34]
+  - relation: narrated-event
+    event: israel.patriarchs.jacob-service-with-laban
+    scope:
+      - {book: Gen, chapter: 29, through: 31}
+    note: >-
+      The whole time in the house of Laban, from the coming to the well of Haran
+      to the parting at Galaad; Genesis 31:41 is the verse that states its
+      length.
+    sources: [bible:douay-rheims:Gen.31.41]
+  - relation: narrated-event
+    event: israel.patriarchs.birth-of-joseph
+    scope:
+      - {book: Gen, chapter: 30, first: 22, last: 26}
+    sources: [bible:douay-rheims:Gen.30.24]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-isaac
+    scope:
+      - {book: Gen, chapter: 35, first: 27, last: 29}
+    sources: [bible:douay-rheims:Gen.35.28]
+
+  # --- Joseph in Egypt ------------------------------------------------------
+  - relation: narrated-event
+    event: israel.patriarchs.joseph-sold-into-egypt
+    scope:
+      - {book: Gen, chapter: 37, first: 1, last: 36}
+    note: Genesis 37:2 carries the age; the rest of the chapter is the selling.
+    sources: [bible:douay-rheims:Gen.37.2]
+  - relation: narrated-event
+    event: israel.egypt.butler-and-baker
+    scope:
+      - {book: Gen, chapter: 40, first: 1, last: 23}
+    sources: [bible:douay-rheims:Gen.40.20]
+  - relation: narrated-event
+    event: israel.egypt.joseph-before-pharao
+    scope:
+      - {book: Gen, chapter: 41, first: 1, last: 46}
+    note: >-
+      Pharao's two dreams, their interpretation and Joseph's investiture.
+      Genesis 41:1 dates the dreams two years after the prison and 41:46 gives
+      Joseph's age at the audience.
+    sources: [bible:douay-rheims:Gen.41.46]
+  - relation: narrated-event
+    event: israel.egypt.years-of-plenty
+    scope:
+      - {book: Gen, chapter: 41, first: 47, last: 53}
+    sources: [bible:douay-rheims:Gen.41.47]
+  - relation: narrated-event
+    event: israel.egypt.years-of-famine
+    scope:
+      - {book: Gen, chapter: 41, first: 54, last: 57}
+      - {book: Gen, chapter: 42, through: 45}
+      - {book: Gen, chapter: 47, first: 13, last: 26}
+    note: >-
+      The dearth itself and everything Genesis narrates inside it: both journeys
+      of the brethren, the making known, and the buying up of the land of Egypt
+      at Genesis 47:13-26, which opens "For in the whole world there was want of
+      bread".
+    sources: [bible:douay-rheims:Gen.45.6]
+  - relation: narrated-event
+    event: israel.egypt.brethren-first-journey
+    scope:
+      - {book: Gen, chapter: 42, first: 1, last: 38}
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad]
+  - relation: narrated-event
+    event: israel.egypt.sojourn
+    scope:
+      - {book: Gen, chapter: 47, first: 27, last: 27}
+    note: >-
+      The one verse of Genesis that states the settled dwelling in Gessen and
+      the multiplying - "So Israel dwelt in Egypt, that is, in the land of
+      Gessen, and possessed it; and grew, and was multiplied exceedingly" -
+      which is the sojourn Exodus 1 continues.
+    sources: [bible:douay-rheims:Gen.47.27]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-jacob
+    scope:
+      - {book: Gen, chapter: 47, first: 28, last: 31}
+      - {book: Gen, chapter: 48, through: 49}
+      - {book: Gen, chapter: 50, first: 1, last: 14}
+    note: >-
+      The deathbed entire. The Catholic Encyclopedia's "Jacob" brackets it the
+      same way, saying that on his death-bed "he foretold the future of fortunes
+      of the respective descendants of his sons, and passed away at the age of
+      147 (xlvi, 29-xlix)", and that "According to his last wishes, he was
+      buried in the land of Chanaan (1, 1-13)".
+    sources:
+      - bible:douay-rheims:Gen.47.28
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08261a-9865c411
+  - relation: narrated-event
+    event: israel.patriarchs.mourning-for-jacob
+    scope:
+      - {book: Gen, chapter: 50, first: 1, last: 3}
+    sources: [bible:douay-rheims:Gen.50.3]
+  - relation: narrated-event
+    event: israel.patriarchs.death-of-joseph
+    scope:
+      - {book: Gen, chapter: 50, first: 15, last: 25}
+    note: >-
+      The bracket the Catholic Encyclopedia's "Joseph" itself gives the passage:
+      he "allayed the fears of his brothers who dreaded that he should now
+      avenge their former ill-treatment of him. He died at the age of 110 ...
+      (l, 15-25)."
+    sources:
+      - bible:douay-rheims:Gen.50.25
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+  # === lane josue-judges ===
+  # --- The conquest, continued --------------------------------------------
+  - relation: retrospective-event
+    event: israel.wilderness.death-of-moses
+    scope:
+      - {book: Jos, chapter: 1, first: 1, last: 1}
+    note: >-
+      The book opens by dating itself from an event Deuteronomy 34 narrates:
+      "Now it came to pass after the death of Moses, the servant of the Lord,
+      that the Lord spoke to Josue". It recalls that death; it does not narrate
+      it.
+    sources: [bible:douay-rheims:Jos.1.1]
+  - relation: narrated-event
+    event: israel.conquest.sending-of-the-spies-to-jericho
+    scope:
+      - {book: Jos, chapter: 1, first: 10, last: 18}
+      - {book: Jos, chapter: 2, first: 1, last: 24}
+    note: >-
+      The order to prepare victuals "for after the third day you shall pass
+      over the Jordan" and the three days the spies lay hid, which are the same
+      three days Josue 3:1-2 counts again. Josue 1:1-9, the Lord's charge, names
+      no day and is left out of the run.
+    sources: [bible:douay-rheims:Jos.1.11, bible:douay-rheims:Jos.2.22]
+  - relation: narrated-event
+    event: israel.conquest.war-against-the-kings-of-chanaan
+    scope:
+      - {book: Jos, chapter: 6, through: 12}
+    note: >-
+      Jericho, Hai, the Gabaonites, the kings of the south and the kings at the
+      waters of Merom, and the catalogue of the conquered kings; the part Drum's
+      Catholic Encyclopedia article calls "The Conquest (i-xii)", from the point
+      where the dated days of Josue 4-5 end. Scripture dates none of these
+      battles to a month or a day, and the seven days' compassing of Jericho at
+      Josue 6:15 is a length without an anchor, so no separate event is authored
+      for it.
+    sources: [bible:douay-rheims:Jos.11.18, bible:douay-rheims:Jos.11.23]
+  - relation: narrated-event
+    event: israel.conquest.division-of-the-land
+    scope:
+      - {book: Jos, chapter: 13, first: 1, last: 33}
+      - {book: Jos, chapter: 14, first: 1, last: 5}
+      - {book: Jos, chapter: 15, through: 22}
+    note: >-
+      Josue 14:6-15, Caleb's own portion and his forty-five years, is dated
+      separately on israel.conquest.calebs-inheritance and is left out of this
+      run so that the one number spoken inside the division is not restated.
+    sources: [bible:douay-rheims:Jos.13.1]
+  - relation: narrated-event
+    event: israel.conquest.last-charge-and-death-of-josue
+    scope:
+      - {book: Jos, chapter: 23, through: 24}
+      - {book: Judg, chapter: 2, first: 6, last: 10}
+    note: >-
+      One event, two tellings: the assembly at Sichem and the burial in
+      Thamnathsare at Josue 23-24, and the same dismissal, death and burial
+      again at Judges 2:6-9, with the passing of that whole generation at Judges
+      2:10. The recitals inside Josue 24 that recall the call of Abram, the
+      descent into Egypt and the crossing of the Jordan are bound separately as
+      retrospective, and are not this event.
+    sources: [bible:douay-rheims:Jos.23.1, bible:douay-rheims:Jos.24.29, bible:douay-rheims:Judg.2.8]
+
+  # --- The judges, by their own stated spans --------------------------------
+  - relation: narrated-event
+    event: israel.judges.after-the-death-of-josue
+    scope:
+      - {book: Judg, chapter: 1, first: 1, last: 36}
+      - {book: Judg, chapter: 2, first: 1, last: 5}
+    note: >-
+      The book's introduction, which Drum's article marks off as "A summary of
+      the conquest of Chanaan (i, 1-36)" and "The angel of Jahweh reproves the
+      tribes that made league with the stranger (ii, 1-5)". The cycle of the
+      judges proper begins at Judges 2:11 and is bound to israel.judges.period.
+    sources: [bible:douay-rheims:Judg.1.1]
+  - relation: retrospective-event
+    event: israel.exodus.the-exodus
+    scope:
+      - {book: Judg, chapter: 2, first: 1, last: 5}
+    note: >-
+      The angel at the place of weepers recalls it in the Lord's own person: "I
+      made you go out of Egypt, and have brought you into the land for which I
+      swore to your fathers." A recital, not the going out.
+    sources: [bible:douay-rheims:Judg.2.1]
+  - relation: narrated-event
+    event: israel.judges.servitude-under-chusan-rasathaim
+    scope:
+      - {book: Judg, chapter: 3, first: 7, last: 8}
+    sources: [bible:douay-rheims:Judg.3.8]
+  - relation: narrated-event
+    event: israel.judges.othoniel-judgeship
+    scope:
+      - {book: Judg, chapter: 3, first: 9, last: 11}
+    sources: [bible:douay-rheims:Judg.3.11]
+  - relation: narrated-event
+    event: israel.judges.servitude-under-eglon
+    scope:
+      - {book: Judg, chapter: 3, first: 12, last: 14}
+    sources: [bible:douay-rheims:Judg.3.14]
+  - relation: narrated-event
+    event: israel.judges.aod-judgeship
+    scope:
+      - {book: Judg, chapter: 3, first: 15, last: 30}
+    note: >-
+      Judges 3:31, Samgar son of Anath, carries no number of years and is left
+      out of the run; it remains covered by israel.judges.period.
+    sources: [bible:douay-rheims:Judg.3.30]
+  - relation: narrated-event
+    event: israel.judges.servitude-under-jabin
+    scope:
+      - {book: Judg, chapter: 4, first: 1, last: 3}
+    sources: [bible:douay-rheims:Judg.4.3]
+  - relation: narrated-event
+    event: israel.judges.debbora-and-barac
+    scope:
+      - {book: Judg, chapter: 4, first: 4, through: 5}
+    note: >-
+      The rout of Sisara and the forty years' rest that closes the chapter of
+      the canticle at Judges 5:32 in the tracked Douay.
+    sources: [bible:douay-rheims:Judg.5.32]
+  - relation: utterance
+    event: israel.judges.debbora-and-barac
+    scope:
+      - {book: Judg, chapter: 5, first: 1, last: 31}
+    note: >-
+      The canticle is words sung on the day of the victory - "In that day
+      Debbora and Barac, son of Abinoem, sung, and said" - and is claimed as an
+      utterance of the event, not as a second event.
+    sources: [bible:douay-rheims:Judg.5.1]
+  - relation: narrated-event
+    event: israel.judges.servitude-under-madian
+    scope:
+      - {book: Judg, chapter: 6, first: 1, last: 6}
+    sources: [bible:douay-rheims:Judg.6.1]
+  - relation: narrated-event
+    event: israel.judges.gedeon-judgeship
+    scope:
+      - {book: Judg, chapter: 6, first: 7, through: 8, last: 32}
+    note: >-
+      The calling of Gedeon, the rout of Madian, and the forty years' rest
+      "while Gedeon presided" at Judges 8:28, down to his death at 8:32. The
+      run stops there and does not carry the chapter's last three verses:
+      Judges 8:33 opens "But after Gedeon was dead, the children of Israel
+      turned again, and committed fornication with Baalim", which is the
+      apostasy that follows the judgeship and introduces Abimelech, not part of
+      the forty years' rest this event dates.
+    sources: [bible:douay-rheims:Judg.8.28, bible:douay-rheims:Judg.8.33]
+  - relation: narrated-event
+    event: israel.judges.abimelech-reign
+    scope:
+      - {book: Judg, chapter: 9, first: 1, last: 57}
+    sources: [bible:douay-rheims:Judg.9.22]
+  - relation: narrated-event
+    event: israel.judges.thola-judgeship
+    scope:
+      - {book: Judg, chapter: 10, first: 1, last: 2}
+    sources: [bible:douay-rheims:Judg.10.2]
+  - relation: narrated-event
+    event: israel.judges.jair-judgeship
+    scope:
+      - {book: Judg, chapter: 10, first: 3, last: 5}
+    sources: [bible:douay-rheims:Judg.10.3]
+  - relation: narrated-event
+    event: israel.judges.oppression-by-ammon
+    scope:
+      - {book: Judg, chapter: 10, first: 6, last: 18}
+    sources: [bible:douay-rheims:Judg.10.8]
+  - relation: narrated-event
+    event: israel.judges.jephte-judgeship
+    scope:
+      - {book: Judg, chapter: 11, through: 12, last: 7}
+    note: >-
+      The six years are stated only at Judges 12:7, in the notice of Jephte's
+      death, and cover the whole of his rule as the book tells it. The three
+      hundred years he argues at Judges 11:26 are a different figure and are
+      held on a different event.
+    sources: [bible:douay-rheims:Judg.12.7]
+  - relation: narrated-event
+    event: israel.judges.abesan-judgeship
+    scope:
+      - {book: Judg, chapter: 12, first: 8, last: 10}
+    sources: [bible:douay-rheims:Judg.12.9]
+  - relation: narrated-event
+    event: israel.judges.ahialon-judgeship
+    scope:
+      - {book: Judg, chapter: 12, first: 11, last: 12}
+    sources: [bible:douay-rheims:Judg.12.11]
+  - relation: narrated-event
+    event: israel.judges.abdon-judgeship
+    scope:
+      - {book: Judg, chapter: 12, first: 13, last: 15}
+    sources: [bible:douay-rheims:Judg.12.14]
+  - relation: narrated-event
+    event: israel.judges.servitude-under-the-philistines
+    scope:
+      - {book: Judg, chapter: 13, first: 1, last: 1}
+    sources: [bible:douay-rheims:Judg.13.1]
+  - relation: narrated-event
+    event: israel.judges.samson-judgeship
+    scope:
+      - {book: Judg, chapter: 13, first: 2, through: 16}
+    note: >-
+      From the annunciation to Manue's wife to the burial between Saraa and
+      Esthaol, the stretch across which the tracked Douay states the twenty
+      years twice, at 15:20 and again at 16:31.
+    sources: [bible:douay-rheims:Judg.15.20, bible:douay-rheims:Judg.16.31]
+  # === lane kings ===
+  # --- Samuel, Heli and the ark (1 Kings 1-7) -------------------------------
+  - relation: narrated-event
+    event: israel.judges.samuel-at-silo
+    scope:
+      - {book: 1Kings, chapter: 1, first: 1, last: 28}
+      - {book: 1Kings, chapter: 2, first: 11, last: 26}
+    note: >-
+      Elcana at Silo, Anna's vow, the birth and weaning of Samuel and his
+      presentation; then the child ministering before Heli while Heli's own sons
+      grow worse. The canticle of Anna at 2:1-10 is bound separately as an
+      utterance, and the oracle against Heli's house at 2:27-36 separately again,
+      so that three different kinds of claim are not made to stand on one row.
+    sources: [bible:douay-rheims:1Kings.1.20, bible:douay-rheims:1Kings.2.11]
+  - relation: utterance
+    event: israel.judges.samuel-at-silo
+    scope:
+      - {book: 1Kings, chapter: 2, first: 1, last: 10}
+    note: >-
+      The canticle of Anna, spoken at the presentation of the child at Silo:
+      "My heart hath rejoiced in the Lord, and my horn is exalted in my God."
+      Bechtel's "First and Second Books of Kings" marks off the same ten verses
+      as a distinct piece — "The canticle of Anna (I, ii, 1-10) ... very probably
+      also drawn from a written source" — which is a claim about a source and
+      not about a date, and this binding carries no date either.
+    sources:
+      - bible:douay-rheims:1Kings.2.1
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7
+  - relation: prophecy-given
+    event: israel.judges.heli-judgeship
+    scope:
+      - {book: 1Kings, chapter: 2, first: 27, last: 36}
+      - {book: 1Kings, chapter: 3, first: 11, last: 14}
+    note: >-
+      Two oracles against the house of Heli, uttered while he still judged
+      Israel: the man of God at 2:27, "And there came a man of God to Heli, and
+      said to him: Thus saith the Lord", and the Lord's word to Samuel at 3:12,
+      "In that day I will raise up against Heli all the things I have spoken
+      concerning his house." This relation dates the speaking, which falls inside
+      the forty years; what the oracles point forward to is a separate binding.
+    sources: [bible:douay-rheims:1Kings.2.27, bible:douay-rheims:1Kings.3.12]
+  - relation: prophetic-referent
+    event: israel.judges.capture-of-the-ark
+    scope:
+      - {book: 1Kings, chapter: 2, first: 27, last: 36}
+      - {book: 1Kings, chapter: 3, first: 11, last: 14}
+    note: >-
+      What the two oracles are read as foretelling, and the text itself makes the
+      identification: 2:34, "And this shall be a sign to thee, that shall come
+      upon thy two sons, Ophni and Phinees: in one day they shall both of them
+      die", answered at 4:11, "And the ark of God was taken: and the two sons of
+      Heli, Ophni and Phinees, were slain." A referent is not a narration: these
+      verses do not report the day of Aphec, and the binding must not be read as
+      saying they do.
+    sources: [bible:douay-rheims:1Kings.2.34, bible:douay-rheims:1Kings.4.11]
+  - relation: narrated-event
+    event: israel.judges.call-of-samuel
+    scope:
+      - {book: 1Kings, chapter: 3, first: 1, last: 21}
+    sources: [bible:douay-rheims:1Kings.3.1]
+  - relation: narrated-event
+    event: israel.judges.capture-of-the-ark
+    scope:
+      - {book: 1Kings, chapter: 4, first: 1, last: 11}
+      - {book: 1Kings, chapter: 4, first: 19, last: 22}
+    note: >-
+      The battle at Aphec and the taking of the ark, and the death in childbirth
+      of the wife of Phinees that follows on the same news. The intervening
+      verses 12-18, which report the news reaching Silo and Heli's death, already
+      carry the judgeship's own binding, where the forty years are counted.
+    sources: [bible:douay-rheims:1Kings.4.11, bible:douay-rheims:1Kings.4.21]
+  - relation: narrated-event
+    event: israel.judges.ark-among-the-philistines
+    scope:
+      - {book: 1Kings, chapter: 5, first: 1, last: 12}
+      - {book: 1Kings, chapter: 6, first: 1, last: 21}
+    note: >-
+      Azotus, Geth and Accaron, and then the sending back by the kine to
+      Bethsames and the message to Cariathiarim. The seven months are stated at
+      6:1, at the head of the return. 7:1-2, the arrival at Cariathiarim and the
+      twentieth year, is the next event and is already bound.
+    sources: [bible:douay-rheims:1Kings.6.1]
+  - relation: narrated-event
+    event: israel.judges.victory-at-maspha
+    scope:
+      - {book: 1Kings, chapter: 7, first: 3, last: 14}
+    note: >-
+      Samuel's summons to put away Baalim and Astaroth, the assembly and fast at
+      Masphath, and the Philistine rout. 7:15-17, Samuel judging Israel all the
+      days of his life, is the summary that closes the section and belongs to the
+      period of the judges, where it is already bound.
+    sources: [bible:douay-rheims:1Kings.7.6]
+
+  # --- The demand for a king and Saul (1 Kings 8-12) ------------------------
+  - relation: narrated-event
+    event: israel.monarchy.demand-for-a-king
+    scope:
+      - {book: 1Kings, chapter: 8, first: 1, last: 22}
+    sources: [bible:douay-rheims:1Kings.8.5]
+  - relation: narrated-event
+    event: israel.monarchy.anointing-of-saul
+    scope:
+      - {book: 1Kings, chapter: 9, first: 1, last: 27}
+      - {book: 1Kings, chapter: 10, first: 1, last: 16}
+    note: >-
+      The search for the asses, the meeting with the seer, the anointing with the
+      vial of oil and the signs, down to Saul's silence about the kingdom before
+      his uncle. The election by lot from 10:17 is the founding of the monarchy
+      and is bound to that event, not to this one.
+    sources: [bible:douay-rheims:1Kings.10.1]
+  - relation: narrated-event
+    event: israel.monarchy.deliverance-of-jabes-galaad
+    scope:
+      - {book: 1Kings, chapter: 11, first: 1, last: 13}
+    note: >-
+      Naas the Ammonite before Jabes Galaad and Saul's relief of the city, "about
+      a month after" the assembly at Maspha. The renewal of the kingdom at Galgal
+      at 11:14-15 follows it and is already bound to the founding of the
+      monarchy.
+    sources: [bible:douay-rheims:1Kings.11.1]
+  - relation: utterance
+    event: israel.monarchy.saul-accession
+    scope:
+      - {book: 1Kings, chapter: 12, first: 1, last: 25}
+    note: >-
+      Samuel's discourse at Galgal, spoken at the renewal of the kingdom that
+      11:14-15 reports and that the accession event already covers: "And Samuel
+      said to all Israel: Behold I have hearkened to your voice in all that you
+      said to me, and have made a king over you." An utterance binding says when
+      the words were spoken and takes no position on when the chapter was
+      written, which the composition unit over the book holds separately.
+    sources: [bible:douay-rheims:1Kings.12.1]
+
+  # --- Saul's death and the house of Saul (1 Kings 31; 2 Kings 1-4) ---------
+  - relation: narrated-event
+    event: israel.monarchy.death-of-saul
+    scope:
+      - {book: 1Kings, chapter: 31, first: 1, last: 13}
+      - {book: 1Par, chapter: 10, first: 1, last: 14}
+    note: >-
+      Two accounts of one battle, kept as two scopes on one binding so that the
+      parallel cannot acquire two dates. The warrant for treating them as one
+      is the source's, not this corpus's: Bechtel's "First and Second Books of
+      Kings" infers a shared document "from the passages common to I-II Kings
+      and the First Book of Paralipomenon (Chronicles), which are shown in the
+      following list", and the list's first row pairs "I K., xxxi" with
+      "1 Chronicles 10:1-12". Of the list as a whole he writes that "these
+      passages often agree word for word" and that "both authors made use of
+      the same document". These verses already stand inside the reign of Saul;
+      this binding says more narrowly that they narrate its last day. Bechtel's
+      pairing stops at 1 Paralipomenon 10:12; the run carries two verses
+      further because 10:13-14 is that book's judgment on Saul's death, which
+      adds no chronology and belongs to the same day.
+    sources:
+      - bible:douay-rheims:1Kings.31.6
+      - bible:douay-rheims:1Par.10.14
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7
+  - relation: narrated-event
+    event: israel.monarchy.news-of-sauls-death
+    scope:
+      - {book: 2Kings, chapter: 1, first: 1, last: 27}
+    note: >-
+      The Amalecite's report at Siceleg on the third day, his execution, and the
+      lamentation over Saul and Jonathan. The lament itself is bound again as an
+      utterance.
+    sources: [bible:douay-rheims:2Kings.1.2]
+  - relation: utterance
+    event: israel.monarchy.news-of-sauls-death
+    scope:
+      - {book: 2Kings, chapter: 1, first: 17, last: 27}
+    note: >-
+      The lament, spoken on the day the news came: "And David made this kind of
+      lamentation over Saul, and over Jonathan his son." Bechtel's "First and
+      Second Books of Kings" notes that the sacred writer here names an older
+      book — "One such document, 'The Book of the Just', is mentioned in
+      connection with David's lament over Saul and Jonathan (II, i, 18)" — which
+      bears on the sources of the text and not on when the words were spoken.
+    sources:
+      - bible:douay-rheims:2Kings.1.17
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7
+  - relation: utterance
+    event: israel.monarchy.david-accession
+    scope:
+      - {book: 2Kings, chapter: 2, first: 5, last: 7}
+    note: >-
+      David's message to the men of Jabes Galaad, sent as soon as he was anointed
+      at Hebron and continuous with 2:4, which the accession's own binding
+      already covers. The words quoted stand at 2 Kings 2:7, the last verse of
+      the message: "Let your hands be strengthened, and be ye men of valour:
+      for although your master Saul be dead, yet the house of Juda hath
+      anointed me to be their king." The message opens at 2:5, which is why the
+      scope begins there and why both verses are cited.
+    sources: [bible:douay-rheims:2Kings.2.5, bible:douay-rheims:2Kings.2.7]
+  - relation: narrated-event
+    event: israel.monarchy.isboseth-reign
+    scope:
+      - {book: 2Kings, chapter: 2, first: 8, through: 4, last: 12}
+    note: >-
+      Abner's raising of Isboseth, the fight at Gabaon, the long war, Abner's
+      going over to David and his murder by Joab, and the murder of Isboseth
+      himself. The regnal formula at 2:10 is inside the run, and 2 Kings 5:1-3,
+      where all Israel comes to David, belongs to the accession and is bound
+      there.
+    sources: [bible:douay-rheims:2Kings.2.10, bible:douay-rheims:2Kings.3.1]
+
+  # --- David: birth and the numbering of the people -------------------------
+  - relation: retrospective-event
+    event: israel.monarchy.birth-of-david
+    scope:
+      - {book: 2Kings, chapter: 5, first: 4, last: 4}
+    note: >-
+      "David was thirty years old when he began to reign" looks back to a birth
+      the sacred text nowhere dates. The binding records that the verse recalls
+      it; the only year in the corpus for that birth is the Catholic
+      Encyclopedia's "usual chronology" figure, and no arithmetic is done here
+      between the two.
+    sources: [bible:douay-rheims:2Kings.5.4]
+  - relation: narrated-event
+    event: israel.monarchy.numbering-of-the-people
+    scope:
+      - {book: 2Kings, chapter: 24, first: 1, last: 25}
+      - {book: 1Par, chapter: 21, first: 1, last: 30}
+    note: >-
+      Two accounts of one census and one pestilence, kept as two scopes on one
+      binding. The warrant is again Bechtel's own list of "the passages common
+      to I-II Kings and the First Book of Paralipomenon", whose last row pairs
+      "xxiv" with "21" — this census and this one. 1 Paralipomenon 27:23-24,
+      which reports that Joab "began to number, but he finished not", is a
+      notice inside the lists and is left out of the run; it is cited on the
+      event instead. The two books name different movers, 2 Kings 24:1 "the
+      anger of the Lord" and 1 Paralipomenon 21:1 "Satan"; this binding takes
+      no position on that, because what both narrate is the numbering, and the
+      numbering is what is dated.
+    sources:
+      - bible:douay-rheims:2Kings.24.8
+      - bible:douay-rheims:1Par.21.1
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7
+  # === lane numbers ===
+  # === bind-numbers ====================================================
+  # Numbers dates itself more often than any other book of the Pentateuch, and
+  # the datelines are the spine of these rows: Num 1:1, 7:1, 9:1-5, 10:11,
+  # 20:1, 33:3 and 33:38. Where the book states no date, nothing here supplies
+  # one; the legislative and census material is bound to the encampment it
+  # stands in and to nothing finer.
+  - relation: historical-setting
+    event: israel.wilderness.encampment-at-sinai
+    scope:
+      - {book: Num, chapter: 1, through: 9}
+      - {book: Num, chapter: 10, first: 1, last: 10}
+    note: >-
+      The occasion of the whole first section, and deliberately not a date for
+      any part of it. Numbers 1:1 speaks "in the desert of Sinai", Numbers 9:1
+      again "in the desert of Sinai", Numbers 9:5 keeps the phase "in mount
+      Sinai", and Numbers 10:12 marches "from the desert of Sinai", so the
+      section stands wholly inside the encampment. The three dated moments
+      inside it - the numbering, the dedication of the altar, the phase - carry
+      their own narrated-event bindings and their own dates. The divine
+      speeches of Numbers 5, 6, 8 and 10:1-10, the cloud of Numbers 9:15-23,
+      and the numbering of the Levites in Numbers 3 and 4 carry no date beyond
+      this occasion and are given none.
+    sources:
+      - bible:douay-rheims:Num.1.1
+      - bible:douay-rheims:Num.9.1
+      - bible:douay-rheims:Num.10.12
+  - relation: narrated-event
+    event: israel.wilderness.numbering-at-sinai
+    scope:
+      - {book: Num, chapter: 1, through: 4}
+    note: >-
+      The census and the ordering of the camp that Numbers 1:1 dates to "the
+      first day of the second month, the second year of their going out of
+      Egypt". Chapters 2 to 4 are the same operation continued - the camp drawn
+      up by standards, and the sons of Levi numbered "in the desert of Sinai"
+      (3:14-15) - and are bound with it because Numbers 26:64 looks back on the
+      whole as what was "numbered before by Moses and Aaron in the desert of
+      Sinai". They carry no separate date and none is authored.
+    sources:
+      - bible:douay-rheims:Num.1.1
+      - bible:douay-rheims:Num.3.14
+  - relation: narrated-event
+    event: israel.wilderness.dedication-of-the-altar
+    scope:
+      - {book: Num, chapter: 7, first: 1, last: 89}
+    note: >-
+      Dated by its own first verse to "the day that Moses had finished the
+      tabernacle, and set it up", which is the day Exodus 40:15 dates. Verse 89,
+      Moses entering the tabernacle to consult the oracle, closes the chapter in
+      the same tabernacle and on the same occasion and is bound with it; it
+      states no date of its own.
+    sources: [bible:douay-rheims:Num.7.1]
+  - relation: narrated-event
+    event: israel.wilderness.phase-in-the-desert-of-sinai
+    scope:
+      - {book: Num, chapter: 9, first: 1, last: 14}
+    note: >-
+      Numbers 9:1-5 dates the keeping of the phase; 9:6-14 is the case of the
+      unclean and the ordinance given for it, arising on the same occasion. The
+      "second month, on the fourteenth day" of 9:11 is the standing remedy the
+      ordinance appoints, not a second event of this year, and no event is
+      authored from it.
+    sources:
+      - bible:douay-rheims:Num.9.1
+      - bible:douay-rheims:Num.9.5
+  - relation: narrated-event
+    event: israel.wilderness.departure-from-sinai
+    scope:
+      - {book: Num, chapter: 10, first: 11, last: 36}
+      - {book: Num, chapter: 33, first: 16, last: 16}
+    note: >-
+      Two ranges, one removal. Numbers 10:11 dates it - "The second year, in the
+      second month, the twentieth day of the month" - and Numbers 33:16 enters
+      the same departure in the itinerary without a date, "But departing also
+      from the desert of Sinai, they came to the graves of lust." The three
+      days' journey of 10:33 and the order of the march belong to it.
+    sources:
+      - bible:douay-rheims:Num.10.11
+      - bible:douay-rheims:Num.33.16
+  - relation: retrospective-event
+    event: israel.wilderness.numbering-at-sinai
+    scope:
+      - {book: Num, chapter: 26, first: 64, last: 64}
+    note: >-
+      NOT narrated-event. Numbers 26 narrates the second census, taken in the
+      plains of Moab; verse 64 looks back to the first, which Numbers 1:1 dates
+      to "the first day of the second month, the second year of their going out
+      of Egypt": "Among whom there was not one of them that were numbered
+      before by Moses and Aaron in the desert of Sinai." The verse recalls the
+      earlier numbering and does not date the later one, for which Scripture
+      gives no date at all. How far apart the two censuses stand is not stated
+      here: no source inspected for this corpus dates the second, and the
+      distance between them is not something this corpus computes.
+    sources: [bible:douay-rheims:Num.26.64, bible:douay-rheims:Num.1.1]
+  - relation: narrated-event
+    event: israel.wilderness.coming-to-cades
+    scope:
+      - {book: Num, chapter: 20, first: 1, last: 1}
+    note: >-
+      One verse, because one verse is what carries the datum: the coming into
+      the desert of Sin "in the first month", the abiding in Cades, and the
+      death and burial of Mary. The year is not Scripture's but the Catholic
+      Encyclopedia's, and the event records the tension that creates with
+      Numbers 33:38. What follows at 20:2-21 - the waters of contradiction and
+      the embassy to Edom - happens at the same Cades and is left unbound
+      because nothing dates it.
+    sources:
+      - bible:douay-rheims:Num.20.1
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+  - relation: narrated-event
+    event: israel.wilderness.mourning-for-aaron
+    scope:
+      - {book: Num, chapter: 20, first: 30, last: 30}
+    note: >-
+      The thirty days' mourning, which follows the death bound at Numbers
+      20:22-29 and is dated from it rather than with it.
+    sources: [bible:douay-rheims:Num.20.30]
+  - relation: historical-setting
+    event: israel.wilderness.encampment-in-the-plains-of-moab
+    scope:
+      - {book: Num, chapter: 22, first: 1, through: 36, last: 13}
+    note: >-
+      The occasion of the last fifteen chapters, and deliberately not a date for
+      anything narrated in them. Numbers 22:1 pitches the camp "in the plains of
+      Moab, over against where Jericho is situate beyond the Jordan"; 26:3,
+      33:50, 35:1 and the book's closing verse 36:13 all keep it there. Balaam
+      and Balac, Beelphegor, the second census, the war on Madian, the
+      settlement of Ruben and Gad, the itinerary of chapter 33, the bounds of
+      the land, the cities of refuge and the daughters of Salphaad are dated by
+      no source inspected for this corpus, and the Catholic Encyclopedia's
+      "Balaam", read in full, prints no date of any kind for the episode it
+      treats. The itinerary is the sharpest case: chapter 33 dates exactly two
+      of its stations, the departure from Ramesses (33:3) and the death of
+      Aaron on mount Hor (33:38), which are bound elsewhere, and lists some
+      forty more with no date at all. Those stations are left undated here.
+    sources:
+      - bible:douay-rheims:Num.22.1
+      - bible:douay-rheims:Num.36.13
+      - artifact.catholic-encyclopedia.volume-2.new-york-1907.newadvent-02214b-53ac6d68
+  - relation: prophetic-referent
+    event: israel.wilderness.death-of-moses
+    scope:
+      - {book: Num, chapter: 27, first: 12, last: 14}
+      - {book: Num, chapter: 31, first: 2, last: 2}
+    note: >-
+      NOT narrated-event. Numbers does not narrate the death of Moses;
+      Deuteronomy 34 does. These two passages announce it: "And when thou shalt
+      have seen it, thou also shalt go to thy people, as thy brother Aaron is
+      gone" (27:13), and "Revenge first the children of Israel on the
+      Madianites, and so thou shalt be gathered to thy people" (31:2). The event
+      they point to carries no year in any era in any source inspected for this
+      corpus, and this binding supplies none.
+    sources:
+      - bible:douay-rheims:Num.27.13
+      - bible:douay-rheims:Num.31.2
+  - relation: historical-setting
+    event: israel.wilderness.coming-to-cades
+    scope:
+      - {book: Num, chapter: 20, first: 2, last: 21}
+    note: >-
+      NOT a date for the waters of contradiction, which Scripture does not date.
+      The occasion is the camp at Cades that verse 1 records: Numbers 20:14 has
+      Moses send messengers "from Cades to the king of Edom", and the Catholic
+      Encyclopedia's "Aaron" keeps the whole passage at that one halt, going on
+      in the same breath as its dateline - "In the first month of the
+      thirty-ninth year after the Exodus, the Hebrews camped at Cades, where
+      Mary, Aaron's sister, died and was buried. There the people were in want
+      of water and soon murmured against Moses and Aaron." The encyclopedia's
+      year is the event's, with the difficulty the event records against
+      Numbers 33:38, and this binding adds nothing to it.
+    sources:
+      - bible:douay-rheims:Num.20.14
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+  - relation: narrated-event
+    event: israel.wilderness.mary-stricken-at-haseroth
+    scope:
+      - {book: Num, chapter: 12, first: 1, last: 15}
+    note: >-
+      The fault committed at Haseroth. The arrival is the closing clause of
+      Numbers 11:34, "And departing from the graves of lust, they came unto
+      Haseroth, and abode there", but that verse is chiefly the burial at the
+      graves of lust and is left with it. The murmuring, the
+      seventy elders and the quails of Numbers 11:1-33 are left unbound: they
+      stand between the same two dated points but no source inspected for this
+      corpus places them, and the encyclopedia's "a few months later" is
+      attached to Haseroth and not to them.
+    sources:
+      - bible:douay-rheims:Num.11.34
+      - bible:douay-rheims:Num.12.1
+  - relation: prophecy-given
+    event: israel.wilderness.forty-years-in-the-desert
+    scope:
+      - {book: Num, chapter: 14, first: 33, last: 34}
+    note: >-
+      NOT narrated-event. These two verses are the sentence as the Lord speaks
+      it at the return of the spies - "Your children shall wander in the desert
+      forty years, and shall bear your fornication, until the carcasses of their
+      fathers be consumed in the desert, According to the number of the forty
+      days, wherein you viewed the land: a year shall be counted for a day." -
+      so the forty years are announced here and not narrated as elapsed. The
+      event is dated from these words and names them as its source record, and
+      the verses that carry them must therefore reach it. Numbers 32:13 narrates
+      the running out of the sentence and is bound separately; Deuteronomy
+      1:34-40 is Moses recalling it in Moab. The rest of the speech, Numbers
+      14:26-32 and 14:35, is the doom on the fathers rather than the measure of
+      the wandering, and no source inspected for this corpus dates it, so it is
+      left under the silence the Numbers gap row records.
+    sources:
+      - bible:douay-rheims:Num.14.33
+      - bible:douay-rheims:Num.14.34
+  # === lane psalms-1-50 ===
+  # --- Psalm 17 (Vulg.; Hebr. 18): the title, the canticle, and tradition -----
+  - relation: superscription-setting
+    event: israel.monarchy.david-delivered-from-his-enemies
+    scope:
+      - {book: Ps, chapter: 17}
+    note: >-
+      The title itself names the occasion, Ps 17:1: "Unto the end, for David,
+      the servant of the Lord, who spoke to the Lord the words of this canticle,
+      in the day that the Lord delivered him from the hand of all his enemies,
+      and from the hand of Saul: and he said:". The same canticle stands at 2
+      Kings (2 Samuel) 22, whose verse 1 asserts the same occasion in the
+      narrative's own voice, so the occasion here does not rest on the title
+      alone. VULGATE numbering: this is Hebrew 18. A title asserts an occasion
+      and never a year; the year, such as it is, belongs to the event, which
+      carries only a relative claim and an explicit refusal to place the day
+      within the reign.
+    sources:
+      - bible:douay-rheims:Ps.17.1
+      - bible:douay-rheims:2Kings.22.1
+  - relation: utterance
+    event: israel.monarchy.david-delivered-from-his-enemies
+    scope:
+      - {book: Ps, chapter: 17, first: 2, last: 51}
+    note: >-
+      Not the psalm's setting but the speaking of its words, which is a
+      different assertion and is carried by a different verse. 2 Kings 22:1
+      states it as narrative: "And David spoke to the Lord the words of this
+      canticle, in the day that the Lord delivered him out of the hand of all
+      his enemies, and out of the hand of Saul." The scope begins at verse 2, "I
+      will love thee, O Lord, my strength", because verse 1 is the
+      superscription and is not part of the canticle spoken; it runs to verse 51,
+      the last verse of the psalm in this numbering. VULGATE numbering: Hebrew
+      18.
+    sources:
+      - bible:douay-rheims:2Kings.22.1
+      - bible:douay-rheims:Ps.17.2
+  - relation: historical-setting
+    event: israel.monarchy.saul-reign
+    scope:
+      - {book: Ps, chapter: 7}
+      - {book: Ps, chapter: 17}
+    note: >-
+      Tradition's occasion, not the titles' own, and for the two psalms it
+      reaches it is a different claim from anything their titles assert. The
+      Catholic Encyclopedia's article on the Psalms lists the psalms whose titles
+      it takes to name an occasion and refers them: "Thirteen Davidic psalms have
+      such titles. Pss. vii, xviii, xxxiv, lii, liv, lvi, lvii, lix, cxlii (vii,
+      xvii, xxxiii, li, liii, lv, lvi, lviii, cxli) are referred to the time of
+      David's persecution by Saul". The article prints Hebrew numbers first and
+      the Vulgate ones in brackets, so its "vii" and "xvii" in the bracketed list
+      are Vulgate 7 and Vulgate 17, which is the numbering this corpus is
+      authored in. The occasion the article names is "the time of David's
+      persecution by Saul", for which this corpus holds no event of its own; the
+      event it does hold that contains that time is the reign of Saul, and that
+      is what is bound, at reign granularity and no finer. Two cautions belong
+      here and not to the event. First, the title of Psalm 7 names an occasion
+      the corpus cannot reach at all — "The psalm of David, which he sung to the
+      Lord, for the words of Chusi, the son of Jemini" — and no source inspected
+      for this lane identifies Chusi or dates his words, so Psalm 7 carries no
+      superscription-setting. Second, the title of Psalm 17 names the deliverance
+      from Saul, which is the end of the persecution and not the time of it; that
+      is authored separately as superscription-setting, and the two assertions
+      are kept apart on purpose. Vulgate 33, also in the article's bracketed
+      list, already carries a superscription-setting binding whose note quotes
+      this same sentence, and is deliberately not re-bound here.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - bible:douay-rheims:Ps.7.1
+      - bible:douay-rheims:Ps.17.1
+
+  # --- Psalm 29 (Vulg.; Hebr. 30): the dedication of David's house -----------
+  - relation: superscription-setting
+    event: israel.monarchy.david-house-built
+    scope:
+      - {book: Ps, chapter: 29}
+    note: >-
+      Ps 29:1: "A psalm of a canticle, at the dedication of David's house." What
+      the title asserts is the dedication of the house. This corpus holds no
+      event for the dedication; what it now holds, and what is bound here, is the
+      building of the house, which 2 Kings (2 Samuel) 5:11 narrates: "Hiram the
+      king of Tyre sent messengers to David, and cedar trees, and carpenters, and
+      masons for walls: and they built a house for David." The binding should be
+      read as reaching no further than the title's own words: if a later lane
+      authors an event for the dedication itself, this binding should move to it.
+      It carries no date and implies none, and the event it names carries only a
+      relative claim, deliberately, so that the "about the year 1058 B.C." this
+      corpus holds for the capture of the castle of Sion is not transferred to
+      this psalm. One ranked source reads the title differently and is recorded
+      rather than suppressed: the Catholic Encyclopedia's article on the Psalms
+      files this title not among the thirteen historical titles but among the
+      liturgical ones, quoting it without the word David and offering a use
+      rather than an occasion — "Psalm xxx (xxix) is entitled 'A Song at the
+      Dedication of the House'. The psalm may have been used at the Feast of the
+      Dedication of the Temple, the Encaenia (John 10:22)." That is a hedged
+      claim about liturgical use ("may have been used"), not a statement of the
+      psalm's setting, and it is not authored as one; what is authored here is
+      what the printed title of this edition asserts, which is the dedication of
+      David's house. VULGATE numbering: Hebrew 30.
+    sources:
+      - bible:douay-rheims:Ps.29.1
+      - bible:douay-rheims:2Kings.5.11
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  # --- Psalms read of Christ, in the range Vulgate 1-50 ----------------------
+  - relation: prophetic-referent
+    event: life-of-christ.crucifixion
+    scope:
+      - {book: Ps, chapter: 2, first: 1, last: 2}
+    note: >-
+      NOT narrated-event: David does not report the Passion as history. The
+      identification is the Apostles' own, made in prayer at Acts 4:25-27, which
+      quotes the two verses and then names the day they were fulfilled on: "Who,
+      by the Holy Ghost, by the mouth of our father David, thy servant, hast
+      said: Why did the Gentiles rage: and the people meditate vain things? The
+      kings of the earth stood up: and the princes assembled together against the
+      Lord and his Christ. For of a truth there assembled together in this city
+      against thy holy child Jesus, whom thou hast anointed, Herod, and Pontius
+      Pilate, with the Gentiles and the people of Israel". The psalm's own words
+      in this edition are "Why have the Gentiles raged, and the people devised
+      vain things? The kings of the earth stood up, and the princes met together,
+      against the Lord, and against his Christ" (Ps 2:1-2). The scope is the two
+      verses Acts quotes and no more; Psalm 2 is numbered alike in the Vulgate
+      and the Hebrew. The rest of the psalm is deliberately left unbound — see
+      the lane notes on verse 7.
+    sources:
+      - bible:douay-rheims:Acts.4.25
+      - bible:douay-rheims:Acts.4.26
+      - bible:douay-rheims:Acts.4.27
+      - bible:douay-rheims:Ps.2.1
+      - bible:douay-rheims:Ps.2.2
+  - relation: prophetic-referent
+    event: life-of-christ.resurrection
+    scope:
+      - {book: Ps, chapter: 15}
+    note: >-
+      NOT narrated-event, and the New Testament is explicit that it is not: St
+      Peter at Acts 2:29-31 first sets David's own death aside — "he died and was
+      buried; and his sepulchre is with us to this present day" — and then says
+      of the words he has just quoted, "Foreseeing this, he spoke of the
+      resurrection of Christ. For neither was he left in hell: neither did his
+      flesh see corruption." The words quoted at Acts 2:25-28 are this psalm's:
+      "Because thou wilt not leave my soul in hell; nor wilt thou give thy holy
+      one to see corruption" (Ps 15:10). St Paul repeats the same verse to the
+      same purpose at Acts 13:35-37. VULGATE numbering: this is Hebrew 16. The
+      scope is the whole psalm rather than the quoted verses because the
+      canonical Clementine division gives this psalm ten verses where the tracked
+      Douay-Rheims prints eleven, and a verse-range scope would be asserting
+      something about a verse boundary this corpus does not hold; the psalm is
+      one psalm and the claim is made of it.
+    sources:
+      - bible:douay-rheims:Acts.2.27
+      - bible:douay-rheims:Acts.2.31
+      - bible:douay-rheims:Acts.13.35
+      - bible:douay-rheims:Ps.15.10
+  - relation: prophetic-referent
+    event: life-of-christ.nativity
+    scope:
+      - {book: Ps, chapter: 17}
+      - {book: Ps, chapter: 49}
+    note: >-
+      NOT narrated-event and NOT the psalms' own setting, both of which are
+      authored separately where they exist. The Catholic Encyclopedia's article
+      on the Psalms states in its own voice that "The Fathers are unanimous in
+      interpreting many psalms as prophecies of the coming, kingdom, priesthood,
+      passion, death, and resurrection of the Messias. The coming of the Messias
+      is predicted in Pss. xviii, l, lxviii, xcvi-xcviii (xvii, xlix, lxvii,
+      xcv-xcvii)." The bracketed numbers are the Vulgate ones, so the two psalms
+      of that list falling in this range are Vulgate 17 and Vulgate 49, which
+      `_psalms` confirms are Hebrew 18 and Hebrew 50. One step in this binding is
+      the binding's own and is stated rather than hidden: the article says
+      "coming" and names no event, and the event this corpus holds for the coming
+      of the Messias is the Nativity. Nothing here asserts that either psalm
+      speaks of the circumstances of the Nativity, and nothing here dates either
+      psalm. Psalm 49's own text is what the article is reading — "God shall come
+      manifestly: our God shall come, and shall not keep silence" (Ps 49:3). The
+      same article's further list, "The kingdom of the Messias is predicted in
+      Pss. ii, xviii, xx, xxi, xlv, lxi, lxxii, lxxxix, cx, cxxxii (ii, xvii,
+      xix, xx, xliv, lx, lxxi, lxxxviii, cix, cxxxi)", is deliberately not
+      authored: this corpus holds no event for the kingdom of the Messias, and
+      inventing one to receive Vulgate 19, 20 and 44 would be manufacturing a
+      subject out of a sentence.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - bible:douay-rheims:Ps.49.3
+  # === lane psalms-101-150 ===
+  # --- Psalter, Vulgate 101-150 ------------------------------------------------
+  # Four psalms out of fifty carry something a ranked source actually dates.
+  # The other forty-six are left to the psalter-policy lane's book-scoped gap
+  # row on purpose; NOTES.md in this lane says of each one why. No composition
+  # unit and no gap row is authored here.
+  - relation: superscription-setting
+    event: israel.restoration.decree-of-cyrus
+    scope:
+      - {book: Ps, chapter: 111}
+    note: >-
+      The occasion is carried by the Latin title alone. The tracked
+      Douay-Rheims prints no title at this psalm at all — its verse 1 is the
+      first body line, "Blessed is the man that feareth the Lord: he shall
+      delight exceedingly in his commandments" — so what is recorded here is
+      read from the tracked Clementine Vulgate, whose Ps 111:1 begins
+      "Alleluja, reversionis Aggæi et Zachariæ." The clause that names an
+      occasion is "reversionis", of the return, and the event this corpus holds
+      for the return from the Babylonian captivity is the decree of Cyrus and
+      the return under it. The title says the return and no more: it does not
+      name Cyrus, does not name Babylon, and does not distinguish the decree
+      from the journey, and this note is the record that it does not. The rest
+      of the title, "Aggæi et Zachariæ", is an ascription and is deliberately
+      not converted into an occasion — the Catholic Encyclopedia's "Aggeus
+      (Haggai)" says outright that "Aggeus has also been credited, but
+      wrongly, with the authorship of Psalms 111 and 145", numbering them as
+      this corpus does in the Vulgate, and the same encyclopedia's "Psalms"
+      records that St Augustine "thinks that all the Psalms are Davidic and that the names of
+      Aggeus and Zacharias were superscribed by the poet in prophetic spirit".
+      Nothing here rests on either prophet having written the psalm. VULGATE
+      numbering: this is Hebrew 112, whose Massoretic title is the bare
+      Hallelujah and carries none of this.
+    sources:
+      - bible:clementine-vulgate:Ps.111.1
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01209d-02397b81
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  - relation: superscription-setting
+    event: israel.monarchy.saul-reign
+    scope:
+      - {book: Ps, chapter: 143}
+    note: >-
+      Another title the tracked English Douay does not print. Its Ps 143:1 is
+      body — "Blessed be the Lord my God, who teacheth my hands to fight, and
+      my fingers to war" — while the tracked Clementine Vulgate reads "Psalmus
+      David. Adversus Goliath." at the same verse. "Adversus Goliath" names an
+      occasion: the single combat with the Philistine giant. This corpus holds
+      no event for that combat and none is authored here, because no ranked
+      source inspected for this lane dates it; the Catholic Encyclopedia's
+      "King David" narrates it without a year, saying only that it happened
+      "whilst his three elder brothers were in the field, fighting under Saul
+      against the Philistines". What that same sentence does establish is the
+      period, and the period is the dated event bound here. The binding
+      therefore asserts the reign of Saul and nothing narrower; it is a
+      widening of the title's claim, not a substitution for it, and if a later
+      lane authors an event for the combat with Goliath this binding should
+      move to it. VULGATE numbering: Hebrew 144, whose Massoretic title is
+      "Of David" alone.
+    sources:
+      - bible:clementine-vulgate:Ps.143.1
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3
+
+  - relation: superscription-setting
+    event: israel.monarchy.david-in-the-cave
+    scope:
+      - {book: Ps, chapter: 141}
+    note: >-
+      Ps 141:1, printed in the tracked Douay: "Of understanding for David, A
+      prayer when he was in the cave. [1 Kings 24.]" — the bracket is
+      Challoner's cross-reference apparatus and not part of the inspired title;
+      the Clementine reads "Intellectus David, cum esset in spelunca, oratio."
+      The occasion asserted is the cave of 1 Kings 24, where Saul came into
+      David's power at Engaddi. That is the SAME occasion Ps 56's title sends
+      the reader to under the same bracketed "[1 Kings 24.]", so the two psalms
+      bind to one event and cannot acquire two answers. This entry was first
+      authored against `israel.monarchy.saul-reign`, on the ground that the
+      corpus held no event for the episode; it held none when that was written
+      and holds one now, `israel.monarchy.david-in-the-cave` having been
+      authored in the same wave from Ps 56's title. Two psalms with one title
+      answering differently is precisely the drift an event held once exists to
+      prevent, so the narrower event wins here as it does there. The Catholic
+      Encyclopedia's "King David" reports the episode — "In the deserts of
+      Engaddi he was again in great danger, but when Saul was at his mercy, he
+      generously spared his life" — and attaches no date to it; the date this
+      binding reaches is the Haydock edition's A.M. 2946 marker, carried once
+      on the event and never on a binding. The containing reign remains
+      asserted over this psalm by the `historical-setting` binding below, which
+      is a different witness making a different claim. Read this binding as
+      asserting
+      the period and not the episode, and move it if the cave is ever given an
+      event of its own. The corpus's neighbouring events are deliberately not
+      used: David in the desert of Maon is 1 Kings 23 and David's flight to
+      Achis is 1 Kings 21, and neither is the cave. VULGATE numbering: Hebrew
+      142.
+    sources:
+      - bible:douay-rheims:Ps.141.1
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3
+
+  - relation: historical-setting
+    event: israel.monarchy.saul-reign
+    scope:
+      - {book: Ps, chapter: 141}
+    note: >-
+      A second assertion on Ps 141, from a different witness, which is why it
+      is a second binding and not a widening of the one above. The title's
+      claim is the cave; tradition's is the persecution, and the Catholic
+      Encyclopedia's "Psalms" states it in its own voice, listing the thirteen
+      Davidic psalms with historical titles: "Pss. vii, xviii, xxxiv, lii, liv,
+      lvi, lvii, lix, cxlii (vii, xvii, xxxiii, li, liii, lv, lvi, lviii, cxli)
+      are referred to the time of David's persecution by Saul". That article
+      follows the Hebrew numeration and brackets the Vulgate, so its "cxlii
+      (cxli)" is this psalm, Vulgate 141. "The time of David's persecution by
+      Saul" is a period and not an episode, and the dated event this corpus
+      holds for it is the reign of Saul. No year passes through this binding:
+      the reign's own claim rests on 1 Kings 13:1, a verse the event's note
+      calls textually notorious and refuses to resolve.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - bible:douay-rheims:Ps.141.1
+
+  - relation: historical-setting
+    event: israel.exile.seventy-years
+    scope:
+      - {book: Ps, chapter: 136}
+    note: >-
+      The psalm names its own occasion in its opening line, Ps 136:1: "Upon the
+      rivers of Babylon, there we sat and wept: when we remembered Sion". This
+      is historical-setting and not superscription-setting, because the tracked
+      Douay prints no title here — verse 1 is body — and the Clementine's title
+      at the same verse, "Psalmus David, Jeremiæ", is an ascription and names
+      no occasion. It is not narrated-event either: what the psalm tells of is
+      the sitting and the weeping and the demand for a song of Sion, and the
+      event this corpus holds is not that but the state the singers are in.
+      WHICH exile event: the corpus holds seven, and the text distinguishes
+      only one of them. The first, second and third captivities, the beginning
+      of the final siege, the burning of the Temple and Nabuchodonosor's
+      counted deportations are each a single occasion, and the psalm says
+      nothing that would choose among them — it does not say which carrying-off
+      brought these singers to Babylon, and nothing here will pick one to be
+      decisive. What the psalm does assert is that it is sung from inside the
+      servitude, in Babylon, with the fall of Jerusalem already a thing
+      remembered and prayed against: "Remember, O Lord, the children of Edom,
+      in the day of Jerusalem: Who say: Rase it, rase it, even to the
+      foundation thereof" (v. 7), and "O daughter of Babylon, miserable"
+      (v. 8), whose punishment is still to come. The seventy years of servitude
+      to Babylon is the only one of the seven that is that state rather than a
+      day within it, and it is the one bound. The binding carries no date, and
+      the event's own claim is relative — Jeremias 25:11's seventy years,
+      measured from the first subjection of Juda — so nothing here converts the
+      psalm into a year. Verses 7-9 additionally recall the destruction of
+      Jerusalem as an earlier event; that is retrospective-event, a different
+      relation, and it is not authored here. VULGATE numbering: this is Hebrew
+      137.
+    sources:
+      - bible:douay-rheims:Ps.136.1
+      - bible:douay-rheims:Ps.136.7
+      - bible:douay-rheims:Ps.136.8
+
+  - relation: prophetic-referent
+    event: life-of-christ.ascension
+    scope:
+      - {book: Ps, chapter: 109, first: 1, last: 1}
+    note: >-
+      NOT narrated-event, and not a composition date: David does not report the
+      session at the right hand as history. That the psalm is read of Christ is
+      stated by the Catholic Encyclopedia's "Messias" in its own voice and, for
+      once, in Vulgate numbers — "The Messianic priest is described by David in
+      Psalm 109, with reference to Genesis 14:14-20. That this psalm was
+      generally understood in a Messianic sense is not disputed, while the
+      universal consent of the Fathers puts the matter beyond question for
+      Catholics." WHICH event: Scripture supplies it at the verse bound. St
+      Peter at Pentecost quotes this verse and makes his argument turn on the
+      ascent into heaven — "For David ascended not into heaven; but he himself
+      said: The Lord said to my Lord: Sit thou on my right hand, Until I make
+      thy enemies thy footstool" (Acts 2:34-35), having just said "Being
+      exalted therefore by the right hand of God" (Acts 2:33). The words of Ps
+      109:1 are thus read, in Scripture itself, of the Christ who ascended, and
+      the dated event this corpus holds for that is the Ascension. The extent
+      is verse 1 alone, the verse that is quoted; verses 2-7 get nothing from
+      this binding. Two things this binding is deliberately not. It is not a
+      claim about Acts 2 or Matthew 22: a passage quoting an older text does
+      not make the quoted words that passage's narrated event, and Our Lord's
+      question to the Pharisees, "How then doth David in spirit call him Lord"
+      (Matt. 22:43-44), is an utterance at its own locus and belongs to
+      whatever lane authors the Gospels. And it is not the whole of what the
+      sources say about this psalm: the same "Psalms" article assigns to Ps.
+      cx — Vulgate 109, that article numbering by the Hebrew and bracketing the
+      Vulgate — both "the kingdom of the Messias" and "the priesthood", and the
+      encyclopedia's "Melchisedech" ties verse 4 to Hebrews, "Christ is 'a
+      priest forever according to the order of Melchisedech' (Hebrews 7:6;
+      Psalm 109:4)". Neither the kingdom nor the priesthood is an event this
+      corpus holds or that any inspected source dates, so neither is authored.
+      VULGATE numbering: this is Hebrew 110.
+    sources:
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10212c-f915c8f4
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10156b-8737c8f5
+      - bible:douay-rheims:Acts.2.34
+      - bible:douay-rheims:Ps.109.1
+  # === lane psalms-51-100 ===
+  # --- Psalms 51-100 (Vulg.): titles that name an occasion --------------------
+  - relation: superscription-setting
+    event: israel.monarchy.saul-reign
+    scope:
+      - {book: Ps, chapter: 51}
+    note: >-
+      Ps 51.1-2: "Unto the end, understanding for David, / When Doeg the Edomite
+      came and told Saul: David went to the house of Achimelech." The title
+      names two moments standing in two different chapters of 1 Kings — Doeg's
+      report to Saul at 1 Kings 22:9-10, and the visit to Achimelech at Nobe at
+      1 Kings 21:1 — and this corpus holds an event for neither. What it does
+      hold under the 1 Kings 21 year marker is David's flight to Achis, king of
+      Geth, A.M. 2944, and that is a different episode of that chapter, so it is
+      not bound here. The event bound is the reign of Saul, which the title
+      itself names and which contains both moments: this binding asserts that
+      containment and nothing narrower, and should be moved to an event for
+      Doeg's denunciation if a later lane authors one. The Catholic
+      Encyclopedia's "Psalms" refers the title no more precisely either, listing
+      it among the thirteen historical titles: "Pss. vii, xviii, xxxiv, lii,
+      liv, lvi, lvii, lix, cxlii (vii, xvii, xxxiii, li, liii, lv, lvi, lviii,
+      cxli) are referred to the time of David's persecution by Saul". That
+      article follows the Hebrew numeration and brackets the Vulgate, so its
+      "lii (li)" is this psalm. A title asserts an occasion and never a year,
+      and the year on the bound event is the notoriously unresolved 1 Kings 13:1
+      figure, which is the event's problem and not the title's. VULGATE
+      numbering: this is Hebrew 52.
+    sources:
+      - bible:douay-rheims:Ps.51.1
+      - bible:douay-rheims:Ps.51.2
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  - relation: superscription-setting
+    event: israel.monarchy.david-in-the-cave
+    scope:
+      - {book: Ps, chapter: 56}
+    note: >-
+      Ps 56.1: "Unto the end, destroy not, for David, for an inscription of a
+      title, when he fled from Saul into the cave. [1 Kings 24.]" The bracketed
+      reference is the Challoner edition's cross-reference apparatus and not
+      part of the inspired title; it is what fixes which cave is meant, and the
+      event bound is dated from the year marker standing at the head of that
+      chapter. The Catholic Encyclopedia's "Psalms" quotes this same title, in
+      the Hebrew numeration and from the Massoretic text, as its example of a
+      title that carries both an author and an occasion: "Of the Director, to
+      the tune 'Destroy not', of David, a chosen piece (Mikhtam), when he fled
+      from the face of Saul into the cave" (Ps. lvii), and it lists the psalm
+      among those "referred to the time of David's persecution by Saul". Neither
+      the title nor that article supplies a year; the year is the bound event's
+      and is an Anno Mundi figure recorded as printed. VULGATE numbering: this
+      is Hebrew 57.
+    sources:
+      - bible:douay-rheims:Ps.56.1
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  - relation: superscription-setting
+    event: israel.monarchy.saul-reign
+    scope:
+      - {book: Ps, chapter: 58}
+    note: >-
+      Ps 58.1: "Unto the end, destroy not, for David for an inscription of a
+      title, when Saul sent and watched his house to kill him. [1 Kings 19.]"
+      ("for David for" is as printed in the tracked text; the bracket is
+      Challoner's cross-reference.) The occasion is the watch set on David's
+      house at 1 Kings 19:11, and this corpus holds no event for it: no Haydock
+      passage record has been inspected for 1 Kings 19, and the Catholic
+      Encyclopedia's "David", which narrates the episode, dates no episode of
+      David's life at all. The reign of Saul is bound because the title names
+      Saul and the occasion falls inside it; the binding asserts containment
+      only and should move to an event for the watch on the house if one is ever
+      authored. The Catholic Encyclopedia's "Psalms" places this title among
+      those "referred to the time of David's persecution by Saul", its "lix
+      (lviii)" being this psalm. VULGATE numbering: this is Hebrew 59.
+    sources:
+      - bible:douay-rheims:Ps.58.1
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  - relation: superscription-setting
+    event: israel.monarchy.david-reign
+    scope:
+      - {book: Ps, chapter: 59}
+    note: >-
+      Ps 59.1-2: "Unto the end, for them that shall be changed, for the
+      inscription of a title, to David himself, for doctrine, / When he set fire
+      to Mesopotamia of Syria and Sobal: and Joab returned and slew of Edom, in
+      the vale of the saltpits, twelve thousand men." The Catholic
+      Encyclopedia's "Psalms" refers this one title to a different occasion from
+      the twelve others it lists, and to this one: "Ps. lx (lix) to that of the
+      victories in Mesopotamia and Syria", its bracketed number being the
+      Vulgate one. This corpus holds no event for those victories — they are
+      narrated at 2 Kings 8 and 1 Paralipomenon 18, for which no chronological
+      record has been inspected — so the reign of David is bound as the event
+      that contains them, and this binding asserts nothing narrower. The
+      numbers, moreover, are not to be harmonised here: the title says twelve
+      thousand men of Edom, where 2 Kings 8:13 says "eighteen thousand" of Syria
+      in the valley of the saltpits and 1 Paralipomenon 18:12 gives the
+      "eighteen thousand" to Abisai son of Sarvia against the Edomites. The
+      corpus records the discrepancy and settles none of it. VULGATE numbering:
+      this is Hebrew 60.
+    sources:
+      - bible:douay-rheims:Ps.59.1
+      - bible:douay-rheims:Ps.59.2
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  # --- Psalms 51-100 (Vulg.): what the Church reads in them -------------------
+  - relation: prophetic-referent
+    event: life-of-christ.nativity
+    scope:
+      - {book: Ps, chapter: 67}
+      - {book: Ps, chapter: 95}
+      - {book: Ps, chapter: 96}
+      - {book: Ps, chapter: 97}
+    note: >-
+      NOT narrated-event and NOT composition. The Catholic Encyclopedia's
+      "Psalms", treating the Messianic psalms in its own voice, states that "The
+      coming of the Messias is predicted in Pss. xviii, l, lxviii, xcvi-xcviii
+      (xvii, xlix, lxvii, xcv-xcvii)", the bracketed numbers being the Vulgate
+      ones: of that list, 67 and 95-97 fall in this range and 17 and 49 do not.
+      The article says "the coming of the Messias" and does not itself name the
+      Nativity; the Nativity is the event this corpus holds for that coming, and
+      the sequence the same paragraph runs through — "the coming, kingdom,
+      priesthood, passion, death, and resurrection of the Messias" — is what
+      settles that the first coming is meant. Nothing here dates the writing of
+      any of these psalms: the same article dates the writing of only two psalms
+      and one group in the whole Psalter, and none of them is one of these. Ps
+      95 also carries a superscription-setting binding to the rebuilding of the
+      house after the captivity; the two relations are two claims about one
+      psalm and the corpus keeps both. VULGATE numbering: these are Hebrew 68
+      and 96-98.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+
+  - relation: prophetic-referent
+    event: life-of-christ.ascension
+    scope:
+      - {book: Ps, chapter: 67, first: 19, last: 19}
+    note: >-
+      One verse, and the Apostle names it. The Catholic Encyclopedia's "Psalms"
+      states that "St. Paul (Ephesians 4:8) interprets of Christ's ascent into
+      heaven the words of Ps. lxviii, 18, description of Jahweh's ascent after
+      conquering the world" — Hebrew 68:18 being Vulgate 67:19, which reads
+      "Thou hast ascended on high, thou hast led captivity captive; thou hast
+      received gifts in men", against Ephesians 4:8, "Wherefore he saith:
+      Ascending on high, he led captivity captive: he gave gifts to men." The
+      extent is the verse and not the psalm, because it is the verse St Paul
+      quotes; the whole psalm carries the separate binding to the coming of the
+      Messias, which is the article's own wider statement about it.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - bible:douay-rheims:Ps.67.19
+      - bible:douay-rheims:Eph.4.8
+
+  - relation: prophetic-referent
+    event: life-of-christ.crucifixion
+    scope:
+      - {book: Ps, chapter: 68}
+    note: >-
+      NOT narrated-event: the psalmist does not report Calvary as history. The
+      Catholic Encyclopedia's "Psalms" states that "The passion and death of the
+      Messias are clear in the sufferings of the Servant of Jahweh of Pss. xxii,
+      xl, lxix (xxi, xxxix, lxviii)" — the third of that list, Hebrew 69, being
+      this psalm, Vulgate 68. This corpus already binds the first of them,
+      Vulgate 21, to the same event on the same sentence. The narrower warrant
+      stands at Ps 68:22, "And they gave me gall for my food, and in my thirst
+      they gave me vinegar to drink", against St John's account of the death:
+      "Afterwards, Jesus knowing that all things were now accomplished, that the
+      scripture might be fulfilled, said: I thirst... Jesus therefore, when he
+      had taken the vinegar, said: It is consummated" (John 19:28-30). The
+      binding is scoped to the psalm and not to that verse because the article's
+      claim is about the psalm. The same article separately reports the Biblical
+      Commission of 1 May 1910 naming Hebrew lxix among the psalms whose Davidic
+      authorship "can it not be denied" — an authorship claim, which this corpus
+      does not convert into either a composition date or an occasion. VULGATE
+      numbering: this is Hebrew 69.
+    sources:
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25
+      - bible:douay-rheims:Ps.68.22
+      - bible:douay-rheims:John.19.28
+  # === lane tail ===
+  # === bind-micheas-bethlehem ==========================================
+  - relation: prophetic-referent
+    event: life-of-christ.nativity
+    scope:
+      - {book: Mich, chapter: 5, first: 2, last: 3}
+    note: >-
+      NOT narrated-event. Micheas does not report the Nativity as history; the
+      Church reads the birth at Bethlehem in his oracle. Van Hoonacker's "Book of
+      Micheas" in the Catholic Encyclopedia states of this passage, in its own
+      voice, that "the prophet introduces the Messianic king whose place of
+      origin is to be Bethlehem-Ephrata; Yahweh will only give up his people
+      'till the time wherein she that travaileth shall bring forth', an allusion
+      to the well-known passage of Isaiah 7:14." The article does not name Christ;
+      what identifies the Messianic king born at Bethlehem is St Matthew, quoted
+      here as the rank-1 witness he is: Herod "inquired of them where Christ
+      should be born. But they said to him: In Bethlehem of Juda. For so it is
+      written by the prophet: And thou Bethlehem the land of Juda art not the
+      least among the princes of Juda: for out of thee shall come forth the
+      captain that shall rule my people Israel" (Matt. 2:4-6). NUMBERING: the
+      article's chapter-5 verse numbers are neither the Douay's nor the Hebrew's
+      and are not used to fix this scope. It states its own offset in passing -
+      "in 5:4-5 (Vulgate 5-6)" - which puts its 5:1 at Vulgate 5:2, and the same
+      encyclopedia's "Bethlehem" article writes the reference out as "Mich., v, 2
+      (1)". The scope is fixed instead from the tracked Douay text, where "And
+      thou Bethlehem Ephrata" stands at Mich. 5:2 and the sentence the article
+      quotes, "till the time wherein she that travaileth shall bring forth", at
+      Mich. 5:3. Verse 3 is included because the encyclopedia's sentence covers
+      it and ties it to Isaias 7:14, which this corpus already binds to the same
+      event. When Micheas uttered the oracle is a different assertion and is
+      carried by the composition unit for chapters 4-5, not by this binding.
+    sources:
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-734c8637
+      - bible:douay-rheims:Mich.5.2
+      - bible:douay-rheims:Matt.2.5
+      - bible:douay-rheims:Matt.2.6
+  # === bind-apostolic-age ==============================================
+  # The events below are already dated with full provenance in events.yaml; these
+  # rows only say which Scripture tells of them. Extents follow the Acts ranges
+  # the Catholic Encyclopedia's "St. Paul" (Prat, vol. 11) prints in its own
+  # section headings and cross-references, checked against the tracked Douay text
+  # verse by verse, because the article's chapter-and-verse citations are in the
+  # modern numbering and the Douay is not always at the same number.
+  - relation: narrated-event
+    event: apostolic-age.martyrdom-of-saint-stephen
+    scope:
+      - {book: Acts, chapter: 7, first: 54, last: 59}
+    note: >-
+      The "St. Paul" article keys the martyrdom to "Acts 7:58-60; 22:20". Those
+      numbers are the modern ones; the Douay chapter ends at verse 59, and the
+      stoning stands at 7:57-59, "And casting him forth without the city, they
+      stoned him ... And when he had said this, he fell asleep in the Lord."
+      The scope opens at 7:54, "Now hearing these things, they were cut to the
+      heart", which is where the Douay begins the scene the article points at.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.7.57
+      - bible:douay-rheims:Acts.7.59
+  - relation: retrospective-event
+    event: apostolic-age.martyrdom-of-saint-stephen
+    scope:
+      - {book: Acts, chapter: 22, first: 20, last: 20}
+    note: >-
+      NOT narrated-event: this is St Paul, years later on the steps of the
+      Antonia, recalling what he had been at the stoning. The Douay verse is "And
+      when the blood of Stephen thy witness was shed, I stood by and consented:
+      and kept the garments of them that killed him." The "St. Paul" article
+      names the same verse beside the narrative one.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.22.20
+  - relation: narrated-event
+    event: apostolic-age.conversion-of-saint-paul
+    scope:
+      - {book: Acts, chapter: 9, first: 1, last: 19}
+    note: >-
+      The "St. Paul" article states the extent itself: "We read in the Acts of
+      the Apostles three accounts of the conversion of St. Paul (9:1-19; 22:3-21;
+      26:9-23) presenting some slight differences, which it is not difficult to
+      harmonize." The first of the three is the narrative; the other two are
+      bound separately as retrospective. The Douay range runs from "And Saul, as
+      yet breathing out threatenings and slaughter against the disciples of the
+      Lord" to "And when he had taken meat, he was strengthened."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.9.1
+      - bible:douay-rheims:Acts.9.19
+  - relation: retrospective-event
+    event: apostolic-age.conversion-of-saint-paul
+    scope:
+      - {book: Acts, chapter: 22, first: 3, last: 21}
+      - {book: Acts, chapter: 26, first: 9, last: 23}
+    note: >-
+      Two ranges, one conversion, neither of them a narration of it: both are St
+      Paul on trial recounting what happened to him on the Damascus road. The
+      "St. Paul" article numbers them with the narrative account as the second
+      and third of "three accounts of the conversion of St. Paul (9:1-19;
+      22:3-21; 26:9-23)", and describes them as speeches - the first "delivered
+      in Hebrew on the steps of the Antonia before the threatening crowd; herein
+      Paul relates his conversion and vocation to the Apostolate", the second
+      "pronounced before the Governor Festus, King Agrippa, and his wife
+      Berenice, again relates the history of Paul's conversion". The Douay
+      supports both bounds: 22:3 opens "I am a Jew, born at Tarsus in Cilicia",
+      and 26:9 opens "And I indeed did formerly think that I ought to do many
+      things contrary to the name of Jesus of Nazareth."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.22.3
+      - bible:douay-rheims:Acts.26.9
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-first-visit-to-jerusalem
+    scope:
+      - {book: Acts, chapter: 9, first: 26, last: 29}
+    note: >-
+      "And when he was come into Jerusalem, he essayed to join himself to the
+      disciples" (Acts 9:26) to "But they sought to kill him" (9:29), which is
+      the visit; verse 30, the sending away to Tarsus, belongs to the sojourn
+      that follows and is bound there. The "St. Paul" article joins the same
+      stretch to the Apostle's own account: "He went to Jerusalem to see Peter
+      (Galatians 1:18), but remained only fifteen days, for the snares of the
+      Greeks threatened his life."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.9.26
+      - bible:douay-rheims:Acts.9.29
+  - relation: retrospective-event
+    event: apostolic-age.saint-paul-first-visit-to-jerusalem
+    scope:
+      - {book: Gal, chapter: 1, first: 18, last: 19}
+    note: >-
+      St Paul recalling the visit in a letter written long after it, which is the
+      same sentence the event's preferred claim rests its interval on: "Then,
+      after three years, I went to Jerusalem to see Peter: and I tarried with him
+      fifteen days. But other of the apostles I saw none, saving James the
+      brother of the Lord." The interval is the event's; this binding carries no
+      date.
+    sources: [bible:douay-rheims:Gal.1.18]
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-sojourn-at-tarsus
+    scope:
+      - {book: Acts, chapter: 9, first: 30, last: 30}
+      - {book: Acts, chapter: 11, first: 25, last: 25}
+    note: >-
+      Two verses, not a range, because Acts narrates the going and the fetching
+      and nothing between: "they brought him down to Caesarea and sent him away
+      to Tarsus" (9:30), and "And Barnabas went to Tarsus to seek Saul: whom,
+      when he had found, he brought to Antioch" (11:25). The "St. Paul" article
+      says exactly that of the years the event dates: "He then left for Tarsus
+      and is lost to sight for five or six years (Acts 9:29-30; Galatians 1:21).
+      Barnabas went in search of him and brought him to Antioch."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.9.30
+      - bible:douay-rheims:Acts.11.25
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-apostolate-at-antioch
+    scope:
+      - {book: Acts, chapter: 11, first: 25, last: 26}
+    note: >-
+      "And they conversed there in the church a whole year: and they taught a
+      great multitude, so that at Antioch the disciples were first named
+      Christians" (Acts 11:26). The "St. Paul" article cites the same two verses
+      for it: "Barnabas went in search of him and brought him to Antioch where
+      for a year they worked together and their apostolate was most fruitful
+      (Acts 11:25-26)." The verse this shares with the Tarsus sojourn is shared
+      deliberately: 11:25 ends one and opens the other.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.11.26
+  - relation: narrated-event
+    event: apostolic-age.persecution-by-herod-agrippa
+    scope:
+      - {book: Acts, chapter: 12, first: 1, last: 19}
+    note: >-
+      "And at the same time, Herod the king stretched forth his hands, to afflict
+      some of the church. And he killed James, the brother of John, With the
+      sword. And seeing that it pleased the Jews, he proceeded to take up Peter
+      also" (Acts 12:1-3), through the deliverance and Herod's departure to
+      Caesarea at verse 19. The event's own claim, from the Catholic
+      Encyclopedia's "St. Peter, Prince of the Apostles", describes this passage:
+      "after the execution of James, the son of Zebedee, this ruler had Peter
+      cast into prison." The martyrdom of St James is inside this scope and has
+      no event of its own, because no source inspected for this corpus dates it
+      apart from the persecution.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11744a-3bac29d1
+      - bible:douay-rheims:Acts.12.2
+      - bible:douay-rheims:Acts.12.3
+  - relation: narrated-event
+    event: apostolic-age.death-of-herod-agrippa
+    scope:
+      - {book: Acts, chapter: 12, first: 20, last: 23}
+    note: >-
+      The scene at Caesarea, ending "And forthwith an angel of the Lord struck
+      him, because he had not given the honour to God: and, being eaten up by
+      worms, he gave up the ghost" (Acts 12:23). The year is the event's, argued
+      by the Catholic Encyclopedia from Josephus and the coinage; Acts gives the
+      manner and no year, and this binding carries none.
+    sources: [bible:douay-rheims:Acts.12.23]
+  - relation: narrated-event
+    event: apostolic-age.famine-under-claudius
+    scope:
+      - {book: Acts, chapter: 11, first: 27, last: 28}
+    note: >-
+      "And in these days there came prophets from Jerusalem to Antioch. And one
+      of them named Agabus, rising up, signified by the Spirit that there should
+      be a great famine over the whole world, which came to pass under Claudius."
+      The event's own note already records that this verse "dates the famine only
+      by a reign ... and supports no year on its own"; the year is Orosius's, by
+      way of the "St. Paul" article, and is held on the event.
+    sources: [bible:douay-rheims:Acts.11.28]
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-second-visit-to-jerusalem
+    scope:
+      - {book: Acts, chapter: 11, first: 29, last: 30}
+      - {book: Acts, chapter: 12, first: 25, last: 25}
+    note: >-
+      The going and the returning, with the intervening chapter belonging to
+      Herod and Peter: "the disciples, every man according to his ability,
+      purposed to send relief to the brethren who dwelt in Judea. Which also they
+      did, sending it to the ancients, by the hands of Barnabas and Saul"
+      (11:29-30), and "And Barnabas and Saul, returned from Jerusalem, having
+      fulfilled their ministry" (12:25). The "St. Paul" article names the alms
+      mission with the same reference: "Together also they were sent to Jerusalem
+      to carry alms to the brethren on the occasion of the famine predicted by
+      Agabus (Acts 11:27-30)."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.11.30
+      - bible:douay-rheims:Acts.12.25
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-first-mission
+    scope:
+      - {book: Acts, chapter: 13, through: 14, first: 1, last: 27}
+    note: >-
+      The extent is the article's own section heading, "First mission (Acts
+      13:1-14:27)", in the Catholic Encyclopedia's "St. Paul". The Douay range
+      closes at 14:27, "And they abode no small time with the disciples", after
+      the return to Antioch of Syria.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.14.27
+  - relation: narrated-event
+    event: apostolic-age.founding-of-the-south-galatian-churches
+    scope:
+      - {book: Acts, chapter: 13, through: 14, first: 13, last: 24}
+    note: >-
+      The Catholic Encyclopedia's "Judaizers" (Bechtel, vol. 8) gives the extent
+      with the event's own dated sentence: "Soon after (between A.D. 45-49) Saul,
+      now called Paul, and Barnabas founded the South Galatian churches of
+      Antioch in Pisidia, Iconium, Derbe, and Perge, thus increasing the Gentile
+      converts (Acts 13:13 - 14:24)." The Douay bounds match: 13:13 is the
+      arrival at "Perge in Pamphylia" and 14:24 the return through Perge to
+      Attalia. Nested inside the first mission and not a duplicate of it: one is
+      the journey, the other the churches founded on it.
+    sources:
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08537a-e2154141
+      - bible:douay-rheims:Acts.13.13
+      - bible:douay-rheims:Acts.14.24
+  - relation: narrated-event
+    event: apostolic-age.council-of-jerusalem
+    scope:
+      - {book: Acts, chapter: 15, first: 1, last: 35}
+    note: >-
+      From the Judaizers coming down from Judea (15:1) to Paul and Barnabas
+      continuing at Antioch (15:35); the second mission begins at 15:36 and is
+      bound separately, on the article's own division. The event's claim already
+      rests on the identification the same article makes: "Here it is to be
+      assumed that Galatians 2 and Acts 15 relate to the same fact."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.15.1
+      - bible:douay-rheims:Acts.15.35
+  - relation: retrospective-event
+    event: apostolic-age.council-of-jerusalem
+    scope:
+      - {book: Gal, chapter: 2, first: 1, last: 10}
+    note: >-
+      NOT narrated-event: St Paul recalls the assembly in a letter, and the
+      recollection is the source of the fourteen-year interval the event holds as
+      its alternate claim, "Then, after fourteen years, I went up again to
+      Jerusalem with Barnabas, taking Titus also with me" (Gal. 2:1). The
+      identification of this passage with Acts 15 is the encyclopedia's and not
+      this corpus's: "the actors are the same, Paul and Barnabas on the one hand,
+      Peter and James on the other; the discussion is the same, the question of
+      the circumcision of the Gentiles; the scenes are the same, Antioch and
+      Jerusalem; the date is the same, about A.D. 50; and the result is the same,
+      Paul's victory over the Judaizers." The scope stops at 2:10, the right
+      hands of fellowship and the charge to remember the poor; the dispute with
+      Peter at Antioch from 2:11 is a different occasion and is not bound here.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Gal.2.1
+      - bible:douay-rheims:Gal.2.9
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-second-mission
+    scope:
+      - {book: Acts, chapter: 15, through: 18, first: 36, last: 22}
+    note: >-
+      The extent is the article's own section heading, "Second mission (Acts
+      15:36-18:22)". The Douay closes the range at 18:22, "And going down to
+      Caesarea, he went up to Jerusalem and saluted the church: and so came down
+      to Antioch."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.18.22
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-at-corinth
+    scope:
+      - {book: Acts, chapter: 18, first: 1, last: 18}
+    note: >-
+      "After these things, departing from Athens, he came to Corinth" (18:1) to
+      the departure by sea at 18:18; the stay's length, which the event carries
+      as its claim, is stated inside the range at 18:11, "And he stayed there a
+      year and six months, teaching among them the word of God." The "St. Paul"
+      article describes the same stretch: "He carried on his apostolate in this
+      manner for eighteen months, while the Jews vainly stormed against him."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.18.1
+      - bible:douay-rheims:Acts.18.11
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-fourth-visit-to-jerusalem
+    scope:
+      - {book: Acts, chapter: 18, first: 22, last: 22}
+    note: >-
+      One verse, and the Douay names the city outright: "And going down to
+      Caesarea, he went up to Jerusalem and saluted the church: and so came down
+      to Antioch." The identification of this as the FOURTH visit is the "St.
+      Paul" article's own arrangement and not an inference of this corpus: its
+      chronological table numbers the visits first (37), second (44 or 45), third
+      (49 or 50), fourth (53), fifth with the arrest (57), and its narrative puts
+      this one at the close of the second mission, "Finally he decided to go to
+      Jerusalem in fulfillment of a vow made perhaps in a moment of danger. From
+      Jerusalem, according to his custom, he returned to Antioch." No year is
+      asserted here; the year is the event's.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.18.22
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-third-mission
+    scope:
+      - {book: Acts, chapter: 18, through: 21, first: 23, last: 26}
+    note: >-
+      The extent is the article's own section heading, "Third mission (Acts
+      18:23-21:26)". The Douay opens at 18:23, "And after he had spent some time
+      there, he departed and went through the country of Galatia and Phrygia";
+      the arrest that follows at 21:27 is a separate event and a separate row.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.18.23
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-at-ephesus
+    scope:
+      - {book: Acts, chapter: 19}
+    note: >-
+      The whole chapter: the arrival at Ephesus (19:1), the three months in the
+      synagogue and the school of Tyrannus (19:8-9), the two years of 19:10 which
+      the event holds as one of its two disputed lengths, and the silversmiths'
+      riot which ends the stay. The "St. Paul" article treats the same chapter as
+      the Ephesian ministry and adds the reason the corpus keeps two lengths
+      rather than one: "After a stay at Ephesus of two years and a half, perhaps
+      more (Acts 20:31: trietian), he departed for Macedonia."
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.19.10
+  - relation: retrospective-event
+    event: apostolic-age.saint-paul-at-ephesus
+    scope:
+      - {book: Acts, chapter: 20, first: 18, last: 31}
+    note: >-
+      NOT narrated-event: the Miletus address is St Paul at the end of the third
+      mission recalling the years already past at Ephesus - "You know from the
+      first day that I came into Asia, in what manner I have been with you, for
+      all the time" (20:18) - and closing with the reckoning the event carries as
+      its second disputed claim, "keeping in memory that for three years I ceased
+      not with tears to admonish every one of you, night and day" (20:31). Acts
+      states the length twice and the two statements do not agree; the corpus
+      keeps both on the event and neither here.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.20.18
+      - bible:douay-rheims:Acts.20.31
+  - relation: narrated-event
+    event: apostolic-age.arrest-of-saint-paul-at-jerusalem
+    scope:
+      - {book: Acts, chapter: 21, first: 27, last: 40}
+    note: >-
+      The article opens its captivity section at exactly this verse - "Captivity
+      (Acts 21:27-28:31)" - and describes what the Douay range carries: "Falsely
+      accused by the Jews of having brought Gentiles into the Temple, Paul was
+      ill-treated by the populace and led in chains to the fortress Antonia by
+      the tribune Lysias." The scope ends at 21:40, where he is on the stairs and
+      begins the first of the five discourses of the captivity.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.21.27
+      - bible:douay-rheims:Acts.21.33
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-imprisonment-at-caesarea
+    scope:
+      - {book: Acts, chapter: 23, through: 24, first: 23, last: 27}
+    note: >-
+      From the night escort out of Jerusalem, "Make ready two hundred soldiers to
+      go as far as Caesarea" (23:23), to the sentence the event's claim rests on,
+      "But when two years were ended, Felix had for successor Portius Festus. And
+      Felix being willing to shew the Jews a pleasure, left Paul bound" (24:27).
+      The "St. Paul" article describes the same stretch: "Felix kept him in chains
+      for two years and even left him in prison in order to please the Jews,
+      until the arrival of his successor, Festus." What follows under Festus and
+      Agrippa is bound to the next event.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.24.27
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-sent-to-rome
+    scope:
+      - {book: Acts, chapter: 25, first: 1, last: 12}
+      - {book: Acts, chapter: 27, first: 1, last: 2}
+    note: >-
+      Two ranges because the event is two things the article names together,
+      "arrival of Festus, departure for Rome": the new governor's coming and the
+      appeal that settles where the case will be heard - "Now when Festus was
+      come into the province, after three days, he went up to Jerusalem from
+      Caesarea" (25:1) and "I appeal to Caesar ... To Caesar shalt thou go"
+      (25:11-12) - and the embarkation, "And when it was determined that he should
+      sail into Italy and that Paul, with the other prisoners, should be
+      delivered to a centurion, named Julius" (27:1). The hearing before Agrippa
+      that stands between them (chapter 26) is bound to the conversion as a
+      retrospective account and is not bound here.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.25.12
+      - bible:douay-rheims:Acts.27.1
+  - relation: narrated-event
+    event: apostolic-age.saint-paul-first-roman-captivity
+    scope:
+      - {book: Acts, chapter: 28, first: 16, last: 31}
+    note: >-
+      "And when we were come to Rome, Paul was suffered to dwell by himself, with
+      a soldier that kept him" (28:16) to the last verse of the book. The two
+      years the event's alternate claim carries stand inside the range at 28:30,
+      "And he remained two whole years in his own hired lodging", and the "St.
+      Paul" article closes its narrative on the same words: "With these words the
+      Acts of the Apostles conclude." The composition date of Acts is built on
+      the same verse by other units and is a different assertion.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+      - bible:douay-rheims:Acts.28.30
+  - relation: prophetic-referent
+    event: apostolic-age.martyrdom-of-saint-peter
+    scope:
+      - {book: John, chapter: 21, first: 18, last: 19}
+    note: >-
+      NOT narrated-event: no book of Scripture narrates the martyrdom, and this
+      passage foretells it. The Gospel states the referent in its own voice,
+      which is why nothing outside Scripture is needed for the relation: "But when
+      thou shalt be old, thou shalt stretch forth thy hands, and another shall
+      gird thee and lead thee whither thou wouldst not. And this he said,
+      signifying by what death he should glorify God." The date is the event's,
+      where the Catholic Encyclopedia leaves it unsettled between three claims;
+      this binding carries none of them.
+    sources:
+      - bible:douay-rheims:John.21.18
+      - bible:douay-rheims:John.21.19
+  - relation: prophetic-referent
+    event: apostolic-age.fall-of-jerusalem
+    scope:
+      - {book: Luke, chapter: 19, first: 43, last: 44}
+    note: >-
+      NOT narrated-event, and not a second date for the fall: the Catholic
+      Encyclopedia's "Jerusalem (Before A.D. 71)" (Meistermann, vol. 8), telling
+      the Roman war, names these two verses as the prophecy the Christians of the
+      city were acting on - "The Christians, recalling Christ's prophecies (Luke
+      19:43, 44), withdrew beyond the Jordan into Agrippa's territory, led by
+      their bishop, St. Simeon." The Douay verses are "thy enemies shall cast a
+      trench about thee and compass thee round and straiten thee on every side,
+      And beat thee flat to the ground, and thy children who are in thee. And
+      they shall not leave in thee a stone upon a stone." The corpus already
+      binds Daniel 9:24-27 to the destruction of Jerusalem on the same kind of
+      claim; this is the Gospel's own. The article names the two verses without
+      distributing them between the siege, the burning of the Temple and the
+      capture, which this corpus holds as three separate events, so only the
+      event the article's own sentence is about is bound.
+    sources:
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08344a-e6625662
+      - bible:douay-rheims:Luke.19.43
+      - bible:douay-rheims:Luke.19.44
+  - relation: narrated-event
+    event: apostolic-age.exile-of-saint-john-to-patmos
+    scope:
+      - {book: Apoc, chapter: 1, first: 9, last: 9}
+    note: >-
+      The one verse of Scripture that tells of the exile, and the event's own note
+      already says what it does not carry: "Apocalypse 1:9, the verse everything
+      is anchored to, carries no date, no emperor and no interval." The Douay is
+      "I, John, your brother and your partner in tribulation and in the kingdom
+      and patience in Christ Jesus, was in the island which is called Patmos, for
+      the word of God and for the testimony of Jesus." The reign of Domitian, and
+      the rival reckonings from Irenaeus, Eusebius and Jerome, are held on the
+      event and not here.
+    sources: [bible:douay-rheims:Apoc.1.9]
+  - relation: narrated-event
+    event: life-of-christ.public-ministry-begins
+    scope:
+      - {book: Luke, chapter: 3, first: 23, last: 23}
+    note: >-
+      The Catholic Encyclopedia's "Biblical Chronology" opens its section "Date of
+      the beginning of the ministry" on this verse, calling it "St. Luke's
+      statement, 'And Jesus himself was beginning about the age of thirty years'
+      (iii, 23)", and immediately refuses to compute a year from it: the phrase
+      "might without any straining of its sense be used for a year or two more or
+      less than thirty", which "would leave us with the indefinite result that it
+      might have taken place anywhere between A.D. 23 and 27." The A.D. 27 the
+      event carries comes from the forty-six years of John 2:20 instead, which
+      dates the Pasch that followed the baptism and does not narrate this; John
+      2 is therefore NOT bound here. The Baptism in the Jordan is a separate
+      event, already bound at Luke 3:21-22, immediately before this verse.
+    sources:
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+      - bible:douay-rheims:Luke.3.23

@@ -173,6 +173,17 @@ STATUSES = (
 
 STATUS_ORDER = {status: index for index, status in enumerate(STATUSES)}
 
+# The statuses an AUTHOR may assert, which is every status that is neither
+# earned from an assertion nor the default. Named here rather than recomputed
+# at the one place that enforces it, because the coverage guard in
+# `tools/tests/test_chronology.py` asks the same question and two spellings of
+# one set is how they stop agreeing.
+AUTHORED_STATUSES = tuple(
+    status
+    for status in STATUSES
+    if status not in ("dated", "inherited", "research-pending")
+)
+
 # --- Errors -----------------------------------------------------------------
 
 
@@ -945,7 +956,7 @@ def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) 
 def _load_gaps(root: Path, books: dict[str, int]) -> tuple[Gap, ...]:
     document = _document("gaps", root)
     gaps: list[Gap] = []
-    authored = set(STATUSES) - {"dated", "inherited", "research-pending"}
+    authored = set(AUTHORED_STATUSES)
     for entry in document.get("gaps") or []:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/gaps.yaml: a gap must be a mapping")

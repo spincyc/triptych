@@ -388,6 +388,36 @@ of a corpus that has researched nothing, if the thing being counted is keys in
 a file. A consumer that wants a headline builds it from the categories, in
 sight of them.
 
+### 9.2 `research-pending` is now empty, and what that does and does not mean
+
+Every locus in the address space reaches a substantive assertion, an inherited
+composition, or an authored gap row. **[verified]** No verse is
+`research-pending`.
+
+That is a real result and a small one. It means a ranked source was inspected
+for every verse and its answer recorded — including where the answer was that
+tradition dates nothing, which is most of `undated-in-tradition`'s share. It
+does **not** mean the chronology is finished, and it must never be reported as
+"the Bible is dated". Two thirds of the canon is `inherited` — a book-level
+composition claim reaching its verses — and a book whose composition tradition
+declines to date has no chronology of its own at all.
+
+While the corpus was incomplete, the presence of `research-pending` was itself
+the guard: a coverage number could not run ahead of the research, because the
+unresearched share was printed beside it. That guard is now gone, and the job
+falls to two others, both in `tools/tests/test_chronology.py`:
+
+- **every gap row names a source record.** A row that names none is the exact
+  shape a fabricated coverage number would take — a verse leaves
+  `research-pending` for an authored status and no other way, so an unsourced
+  row is coverage asserted on nobody's authority.
+- **no status reaches a verse unless an author asserted it**, checked against
+  `AUTHORED_STATUSES`, which `_chronology` names once so the loader and the
+  test cannot drift apart.
+
+A lane that closes the last of a book's gaps should expect to add to those
+guards rather than to delete them.
+
 ---
 
 ## 10. Dates
@@ -588,6 +618,49 @@ them.** That is a separate bounded lane. The rule above binds it when it comes.
 Never fabricate to close a gap. Never promote a superscription to a composition
 date because the composition date is missing. Never let a book-level date be
 authored solely to move a coverage number.
+
+### 15.1 The five ways this corpus has actually been got wrong
+
+Not hypotheticals. Each of these passed a lane's own review, loaded clean,
+audited clean, and was caught only when a second reader went back to the
+source. Check for them by name.
+
+1. **A quotation from memory.** A note quoted Genesis 18:10 as "at this set
+   time I will return to thee". The tracked Douay reads "I will return and come
+   to thee at this time" — the remembered string is the Authorised Version's.
+   The claim was true; the evidence for it was not. **Read every verse you
+   quote out of the tracked text**, and never from recollection, however
+   familiar. `.scratch`-style helpers exist for this; `_bible` is the source.
+
+2. **A relative anchor that exists but is the wrong one.** Jacob's twenty years
+   of service were anchored on the birth of Joseph, which Genesis places
+   *fourteen years into* the term. The loader cannot catch this: it checks that
+   the anchor exists, not that the interval is measured from it. **Say what is
+   measured, from what, and check the text puts the anchor at the interval's
+   start.**
+
+3. **A figure the source reports rather than asserts.** Both books of Esdras
+   were dated to 300 B.C. on a clause reading "as most critics think". §4.3
+   excludes exactly that, and the same lane had correctly refused a different
+   figure on the same ground an hour earlier. **A year inside "most critics
+   hold", "some writers say", or a named third party's voice is that party's
+   claim, not the source's** — and under this profile usually not a claim at
+   all. The units were withdrawn and the books now carry typed silence.
+
+4. **A claim about a source with no retained retrieval.** A gap row asserted
+   that four encyclopedia articles "carry no chronological statement of any
+   kind". Nothing of those four was retained, so the claim could not be
+   checked — and when it finally was, it was false for two of them: "Adam"
+   quotes the years of Genesis 5 and "Sara" gives three ages. **Register and
+   retain what you read before you characterise it**, including when what you
+   are recording is a silence.
+
+5. **A refusal that goes stale in the same wave.** A binding refused to name an
+   event "because this corpus holds no event for that episode" while a parallel
+   lane was authoring precisely that event; two psalms with one superscription
+   ended up with two answers. **When lanes run in parallel, re-read the merged
+   corpus before trusting any refusal whose ground is "the corpus does not hold
+   it".**
 
 ---
 

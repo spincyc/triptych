@@ -1889,3 +1889,392 @@ units:
           precision: approximate-year
           from: {year: 124, era: bc}
           label: "not earlier than ... 124 B.C. ... the latter would be of about the same date"
+  # === lane esdras ===
+  # NO composition unit is authored for 1 or 2 Esdras, and the withdrawal is
+  # deliberate. The only year either inspected article prints for the writing
+  # of these books is Van Hoonacker's, and it stands inside a clause he
+  # attributes to others -- the documents "underwent compilation and redaction
+  # together at the hands probably, as most critics think, of the author of
+  # Paralipomenon about B.C. 300" -- which is modern critical chronology and
+  # is excluded by guidance/scripture-chronology.md 4.3. Souvay's "Esdras"
+  # prints no year for the writing at all. Both books therefore stand under
+  # undated-in-tradition rows in gaps.yaml, where the refusals are quoted.
+  # === lane josue-judges ===
+  # --- ot-composition-josue-judges ---------------------------------------
+  - id: composition.book-of-josue
+    title: The Book of Josue
+    scope: {book: Jos}
+    note: >-
+      Walter Drum's article "Josue (Joshua)" in the Catholic Encyclopedia (vol.
+      8, New York, 1910) was read in full for this corpus. Unlike the
+      Pentateuch article, it does treat the date of writing, and it prints no
+      year of any era for it: what it gives are two bounds and an estimate, all
+      of them relative to persons and events. Its one printed numeral, "Tyre
+      (twelfth century B.C.)", dates the rise of Tyre over Sidon inside the
+      argument and is not the date of the book. The bounds and the estimate are
+      one argument by one author, not rival traditions, so the bound the
+      article calls certain is displayed first and the estimate it calls
+      favoured by internal evidence is kept beneath it.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's article opens its section on authorship with the bound it
+          calls certain: "The Book of Josue was certainly written before the
+          time of David, for the Chanaanite still dwelt in Gazer (xvi, 10), the
+          Jebusite in Jerusalem (xv, 63), and Sidon held supremacy in Phoenicia
+          (xiv, 28); whereas, before the time of Solomon, the Egyptians had
+          driven the Chanaanite from Gazer (1 Kings 9:16), David had captured
+          Jerusalem in the eighth year of his reign (2 Samuel 5:5), and Tyre
+          (twelfth century B.C.) had supplanted Sidon in the supremacy of
+          Phoenicia."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08524a-98ab5e95]
+        note: >-
+          This is the article's own "certainly", and it is what settles the
+          display order against the estimate below, which the same article
+          hedges. Of the later editing that many Catholic authors admit, the
+          article adds that "all insist that this editing was done before the
+          Exile", so the pre-exilic bound covers the redaction as well as the
+          first writing. The article rejects the critics' "final redaction is
+          post-Exilic a work done about 440-400 B.C." as their theory and not
+          its own, and that figure is therefore not a claim of this corpus.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-accession
+            statement: certainly written before the time of David
+          label: "certainly written before the time of David"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article's next paragraph states the narrower estimate and
+          hedges it: "Internal evidence favours the view that the author lived
+          not long after the death of Josue." It reasons from the exactness of
+          the tribal allotments, which "could not be explained were we to admit
+          that the narrative is post-Exilic in its final redaction."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08524a-98ab5e95]
+        note: >-
+          "Favours the view" is the article's hedge and is kept. On whether
+          Josue himself wrote all but the epilogue the same article declines to
+          decide - "Catholics are divided" - so this claim dates a writing and
+          settles no question of authorship. It is displayed beneath the
+          certain bound above, not against it.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.last-charge-and-death-of-josue
+            statement: the author lived not long after the death of Josue
+          label: "not long after the death of Josue"
+
+  - id: composition.book-of-judges
+    title: The Book of Judges
+    scope: {book: Judg}
+    note: >-
+      Walter Drum's article "Judges" in the Catholic Encyclopedia (vol. 8, New
+      York, 1910) was read in full for this corpus. It reasons to a date of
+      writing in six numbered steps and reaches a conclusion in its own voice,
+      but it prints no year of any era for the book. Its one B.C. numeral, the
+      "not later than 621 B.C." at which Moore's pre-Deuteronomic redactor is
+      said to have united J and E, belongs to the critical hypothesis the
+      article reports in order to refuse it - "Catholics may not go the way of
+      Rationalists and of Protestants in the matter of the so-called late and
+      manifold redaction of Judges" - and is not a date of this corpus. The
+      conclusion and the bounds are one argument by one author, so the
+      conclusion is displayed first and the tightest bound is kept beneath it.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's article states the conclusion of its own argument: "(5) Since,
+          then, Judges was most likely written in the first years of Saul's
+          reign, there is no more probable writer thereof than Samuel." It
+          reaches it from step (4), that "it is likely that Judges antedates
+          even the first seven years of David's reign and the last years of
+          Saul's", because in that period "Saul had rooted out the magicians
+          and soothsayers from the land" and the book's purpose "to keep the
+          children of Israel from idolatry" would have had no occasion.
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08547a-5242e582]
+        note: >-
+          "Most likely" and "it is likely" are the article's own hedges and are
+          kept. The article's ascription to Samuel, which it shares with
+          Cornely and Hummelauer, who "both consider that the writer of Judges
+          was probably Samuel", is an author and not a date, and nothing here
+          rests on it. The claim is displayed first because it is the article's
+          own conclusion, of which the bound below is one premise.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.saul-accession
+            statement: most likely written in the first years of Saul's reign
+          label: "in the first years of Saul's reign"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The same article's step (3) states the tightest bound it argues for:
+          "This last editor must have written before David had reigned seven
+          years. For Jerusalem was still called Jebus and was occupied by the
+          Jebusites (xix, 11); whereas, in the seventh year of his reign, David
+          took the citadel of Sion, called it the city of David, and destroyed
+          the Jebusites (2 Samuel 5)."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08547a-5242e582]
+        note: >-
+          The outer bounds of the same argument are steps (1) and (2), neither
+          of which is a year: "Judges, in its present state, cannot have been
+          written before Israel had a king", because of "In those days there
+          was no king in Israel" at xvii, 6; and "The book was not written
+          after Solomon had done evil." The capture of Sion named here is the
+          event this corpus holds as israel.monarchy.david-capture-of-sion, and
+          the bound is recorded against it rather than against any of the
+          disputed years for David's accession.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-capture-of-sion
+            statement: >-
+              the last editor must have written before David had reigned seven
+              years, when he took the citadel of Sion
+          label: "before David had reigned seven years"
+  # === lane kings ===
+  - id: composition.first-book-of-kings
+    title: The First Book of Kings
+    scope: {book: 1Kings}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Florentine Bechtel's "First and Second Books of Kings" in the Catholic
+          Encyclopedia (New York, 1910) treats I-II Kings as one work, refuses a
+          precise date and then states the limits it will allow: "No sufficient
+          data are at hand to fix a precise date. We can, however, assign certain
+          limits of time within which the work must have been composed. ... The
+          earliest date cannot, therefore, be placed before the reign of Abiam.
+          The latest date, on the other hand, must be assigned to a time prior to
+          Josias's reform (621 B.C.)." It adds that "The purity of language
+          speaks for an early rather than a late date within the above limits."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7]
+        note: >-
+          The upper limit is the only bound the article expresses as a year, and
+          the year belongs to Josias's reform, which this corpus already holds as
+          an event; that is why the claim is anchored on the reform rather than
+          printed as an interval. The lower limit is a reign, not a year: the
+          article names "the reign of Abiam" and prints no figure for it, and
+          this corpus will not borrow one from the Petavius or Sloet tables in
+          the neighbouring article, because that subtraction is a derivation no
+          source makes. On the author the same article is flatly negative — "we
+          can only say that the author is unknown" — and its survey of proposals
+          ranges from "the last days of David" (Hummelauer) to "between the death
+          of David and the destruction of the Kingdom of Juda" (Clair), none of
+          which it adopts. PROFILE BOUNDARY: the article also reports that
+          "According to recent critics it belongs to the seventh century, but
+          received retouches as late as the fifth or even the fourth century",
+          which is a modern critical dating this profile does not consult. This
+          unit is authored per book because the corpus is keyed per book, and it
+          asserts of 1 Kings exactly what the article asserts of the single work.
+        date:
+          precision: relative
+          relative:
+            of: israel.divided-kingdom.josias-reform
+            statement: >-
+              not before the reign of Abiam and prior to Josias's reform (621
+              B.C.), with the purity of language speaking for an early rather
+              than a late date within those limits
+          label: "prior to Josias's reform (621 B.C.)"
+
+  - id: composition.second-book-of-kings
+    title: The Second Book of Kings
+    scope: {book: 2Kings}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Florentine Bechtel's "First and Second Books of Kings" in the Catholic
+          Encyclopedia (New York, 1910) treats the two books as one work whose
+          division "was first introduced into the Septuagint, to conform to the
+          shorter and more convenient size of scrolls in vogue among the Greeks",
+          and assigns that one work its limits: "The earliest date cannot,
+          therefore, be placed before the reign of Abiam. The latest date, on the
+          other hand, must be assigned to a time prior to Josias's reform (621
+          B.C.)." Its refusal stands in the same paragraph: "No sufficient data
+          are at hand to fix a precise date."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08647b-a445d5a7]
+        note: >-
+          The same limits as the first book, because the article dates one work
+          and not two. One caveat belongs to this book alone and is recorded
+          rather than acted on: the article divides the contents so that "(5)
+          xxi-xxiv, appendix containing miscellaneous matter" is the appendix of
+          II Kings, and then says "The appendix, however, may possibly be due to
+          a somewhat later hand", adding that "additions by a subsequent inspired
+          revisor may be admitted without difficulty." That is a hedged
+          possibility with no date attached, so no narrower unit is authored over
+          2 Kings 21-24 and this unit is not withdrawn from them; anyone
+          publishing a date for the appendix must carry the article's "may
+          possibly". PROFILE BOUNDARY: the Wellhausen-Budde source analysis the
+          article reports at length, with its ninth-century J and its
+          seventh-century E, is modern critical chronology this profile does not
+          consult.
+        date:
+          precision: relative
+          relative:
+            of: israel.divided-kingdom.josias-reform
+            statement: >-
+              not before the reign of Abiam and prior to Josias's reform (621
+              B.C.), the appendix at chapters xxi-xxiv possibly being due to a
+              somewhat later hand
+          label: "prior to Josias's reform (621 B.C.)"
+  # === lane psalter-policy ===
+  - id: composition.psalm-73
+    title: Psalm 73, "Ut quid, Deus, repulisti in finem?" (Hebrew 74)
+    scope: {book: Ps, chapter: 73}
+    note: >-
+      One of the twelve psalms the titles ascribe to Asaph, and one of only two
+      psalms in the whole Psalter whose writing Drum's "Psalms" dates at all.
+      The article numbers in Hebrew and brackets the Vulgate - "In the course of
+      this article, we shall follow the Hebrew numeration and bracket that of
+      the Septuagint and Vulgate" - so its "Ps. lxxiv (lxxiii)" is authored here
+      at the vulgate Ps.73 that scripts/_psalms.py reaches from Hebrew 74.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's "Psalms" in the Catholic Encyclopedia (vol. 12, 1911), treating
+          the Asaph psalms, states: "Ps. lxxiv (lxxiii) was probably written, as
+          Briggs surmises, during the Babylonian Exile, after 586 B.C." The same
+          paragraph refuses any single date for the group, saying the Asaph
+          psalms "are all national in character and pertain to widely-separated
+          periods of Jewish history".
+        sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25]
+        note: >-
+          The article's own hedge is "probably written, as Briggs surmises", and
+          it is kept. The claim is a lower bound and a period, not a year: the
+          article prints no year for the end of the Exile, so this is recorded
+          as the relative statement it is rather than given an invented upper
+          endpoint. 586 B.C. is one of three figures this corpus already holds
+          for the destruction of Jerusalem, which is why the anchor is that
+          event and not a bare year.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.third-captivity
+            statement: >-
+              during the Babylonian Exile, after 586 B.C.
+          label: "probably written during the Babylonian Exile, after 586 B.C."
+
+  - id: composition.psalm-82
+    title: Psalm 82, "Deus, quis similis erit tibi?" (Hebrew 83)
+    scope: {book: Ps, chapter: 82}
+    note: >-
+      The second of the two psalms whose writing Drum's "Psalms" dates. The
+      article's "Ps. lxxxiii (lxxxii)" is Hebrew 83, which scripts/_psalms.py
+      reaches at the vulgate Ps.82 authored here. The article dates it against
+      Briggs rather than with him, which is why the disagreement it reports is
+      named in the basis and not silently dropped.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's "Psalms" in the Catholic Encyclopedia (vol. 12, 1911) states:
+          "Ps. lxxxiii (lxxxii), although assigned by Briggs ("Psalms", New
+          York, 1906, p. lxvii) to the early Persian period, seems to have been
+          written at the time of the havoc wrought by the Assyrian invasion of
+          Tiglath-pileser III in 737 B.C."
+        sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25]
+        note: >-
+          "Seems to have been written" is the article's own hedge and is kept.
+          737 B.C. is the year the article prints for the Assyrian invasion, not
+          a year it prints for the act of writing, so the claim is approximate
+          and the label carries the article's whole sentence. Briggs's "early
+          Persian period" is the opinion the article is rejecting, not a second
+          traditional date, so it is reported here and not authored as an
+          alternate.
+        date:
+          precision: approximate-year
+          from: {year: 737, era: bc}
+          label: "at the time of the havoc wrought by the Assyrian invasion of Tiglath-pileser III in 737 B.C."
+
+  - id: composition.psalms-of-the-sons-of-korah
+    title: The Psalms of the Sons of Korah
+    scope:
+      - {book: Ps, chapter: 41, through: 48}
+      - {book: Ps, chapter: 83}
+      - {book: Ps, chapter: 84}
+      - {book: Ps, chapter: 86}
+      - {book: Ps, chapter: 87}
+    note: >-
+      A group unit, not a book unit: the Psalter is an anthology and gets no
+      single date. The extent is the article's own, printed in its own bracketed
+      Vulgate numbers - "The Sons of Korah are named in the titles of eleven
+      psalms - xlii-xlix, lxxxiv, lxxxv, lxxxvii, lxxxviii (xli-xlviii, lxxxiii,
+      lxxxiv, lxxxvi, lxxxvii)". The article counts eleven while its own range
+      spans twelve psalms, because vulgate Ps.42 (Hebrew 43) is one of the
+      "orphan psalms" that carry no title and is elsewhere in the same article
+      said to be "broken from" the psalm before it. The range is authored as the
+      article printed it and the discrepancy is recorded rather than resolved.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Drum's "Psalms" in the Catholic Encyclopedia (vol. 12, 1911), of the
+          psalms titled "of the sons of Korah": "From their Messianic ideas and
+          historical allusions, these psalms seem to have been composed between
+          the days of Isaias and the return from exile." The same paragraph says
+          of their authorship only that "each was rather composed by some member
+          of the guild of Korah; or, perhaps, all were gathered from the various
+          sources into one liturgical hymnal by the guild of the sons of Korah."
+        sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25]
+        note: >-
+          The article prints no year of any era for these psalms, so nothing
+          here is a year. It bounds them by two termini and this corpus holds
+          only one anchor per relative claim, so the anchor is the later
+          terminus, the return from exile, and the article's whole sentence is
+          carried in the statement. The corpus's own date for that return is
+          itself disputed between 538 and 536 B.C., which is a further reason
+          not to convert this bound into numbers. The article is not saying the
+          sons of Korah wrote them; it leaves composition by a member of the
+          guild and mere collection by the guild open side by side.
+        date:
+          precision: relative
+          relative:
+            of: israel.restoration.decree-of-cyrus
+            statement: >-
+              between the days of Isaias and the return from exile
+          label: "between the days of Isaias and the return from exile"
+  # === lane tail ===
+  - id: composition.book-of-micheas.chapters-4-5
+    title: The Prophecy of Micheas, chapters 4-5
+    scope: {book: Mich, chapter: 4, through: 5}
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Van Hoonacker's "Book of Micheas" in the Catholic Encyclopedia dates the
+          second part of the book apart from the first and in the same breath:
+          "The difference of tone and contents clearly show that 4-5 must have
+          been composed in other circumstances than 1-3. They probably date from
+          shortly after the fall of Samaria in 722 B.C."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-734c8637]
+        note: >-
+          The hedge "probably" is the article's own and is kept. The year 722 is
+          not a date of writing but the anchor the article writes these chapters
+          against: chapters 1-3 it places shortly BEFORE the fall of Samaria and
+          these shortly AFTER it, which is why the two units carry the same
+          numeral and are not the same claim. The occasion the article assigns is
+          not a date and is recorded only in its own words: "Chapters 4-5 have
+          preserved us an echo of the joy caused in Jerusalem by the removal of
+          the danger." It rejects the rival dating without proposing another:
+          "Several recent critics have maintained that chapters 4-5, either
+          wholly or in part, are of post-exilic origin. But their arguments,
+          principally based on considerations inspired by certain theories on the
+          history of the Messianic doctrine, are not convincing." It allows two
+          passages to be later than the rest and dates neither - "The connexion of
+          ideas, it is true, is interrupted in 4:10, and in 5:4-5 (Vulgate 5-6),
+          both of which may be later additions" - so no narrower unit is authored
+          inside this scope. SOURCE RECORD: the article was re-fetched and read in
+          full for this lane, and New Advent's page furniture had changed since
+          the earlier retrieval, so the bytes hash differently from the record the
+          chapters-1-3 unit cites; the artifact named here is the retrieval
+          actually read, and every sentence the sibling unit quotes stands
+          verbatim in it.
+        date:
+          precision: approximate-year
+          from: {year: 722, era: bc}
+          label: "shortly after the fall of Samaria in 722 B.C."

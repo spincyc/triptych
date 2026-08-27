@@ -1748,53 +1748,91 @@ in this repository has been inspected asserting. No bare coverage percentage.
 **State on 2026-08-26.** The governing contract, the traditional profile, the
 data model, the loader and its validation, the query, the coverage derivation,
 the gated derived table, the registered tool and the repository gate are in
-place, and eleven of the twelve promised requirements pass. The corpus holds 143
-events, 51 composition units, 139 bindings and 10 typed gaps, resting on 109
-newly registered source artifacts — 89 signed Catholic Encyclopedia articles
-across all fifteen volumes, Eusebius's *Church History* I to III, and
-Augustine's *De consensu evangelistarum* III — each acquired over HTTPS,
-hashed, and read for the sentence it is cited for.
+place, and **all twelve promised requirements pass**. The corpus holds 274
+events, 59 composition units, 375 bindings and 20 typed gaps, resting on 128
+registered source artifacts - signed Catholic Encyclopedia articles across all
+fifteen volumes, Eusebius's *Church History* I to III, and Augustine's *De
+consensu evangelistarum* III - each acquired over HTTPS, hashed, and read for
+the sentence it is cited for.
 
 Coverage, by category, over the canonical Clementine edition's 35 809 verses:
 
 | Category | Verses |
 | --- | --- |
-| substantive event assertions (`dated`) | 5 109 |
-| inherited composition only | 16 871 |
-| undated in tradition, sources inspected | 4 126 |
-| research-pending | 9 703 |
-| carrying more than one relation type | 2 540 |
-| carrying preserved alternative traditional claims | 9 233 |
+| substantive event assertions (`dated`) | 12 406 |
+| inherited composition only | 16 687 |
+| undated in tradition, sources inspected | 6 716 |
+| research-pending | 0 |
+| carrying more than one relation type | 7 975 |
+| carrying preserved alternative traditional claims | 12 897 |
 | blocked by Scripture identity or alignment | 0 |
 
 There is deliberately no single percentage. A headline would be true of a corpus
 that had researched nothing, since what it would count is keys in a file.
 
-**The exhaustive-coverage requirement is open, and that is the honest state.**
-9 703 verses have no assertion and no inspected silence behind them; they carry
-`research-pending`, which is a queryable status and not a hole. Nothing was
-authored to move that number. The Psalter is the clearest case: not one
-inspected source states when any psalm was *written*, the Miserere included, so
-the psalms carry their superscription settings, their traditional occasions and
-their prophetic referents, and no composition date at all.
+**`research-pending` reached zero, and the guard that removed was replaced.**
+Every locus now resolves to a substantive assertion, an inherited composition,
+or an authored gap row naming the source that was read and found silent. That
+is a real result and a bounded one: two thirds of the canon is `inherited`, and
+`undated-in-tradition` is the second largest share precisely because the
+traditional apparatus dates so little composition. While the corpus was
+incomplete, the printed `research-pending` count was itself the proof that no
+coverage claim ran ahead of the research. `guidance/scripture-chronology.md`
+§9.2 records what replaced it: `tools/tests/test_chronology.py` now refuses a
+gap row that names no source record - the exact shape a fabricated coverage
+number would have to take - and refuses any status reaching a verse that no
+author asserted, checked against `AUTHORED_STATUSES`, which `_chronology` names
+once so the loader and the test cannot drift apart.
 
-**What the population proved.** The four Gospels reach one Crucifixion, dated
-once and disputed seven ways because the Catholic Encyclopedia declines to
-settle its own question, while each Gospel keeps its own composition
-chronology. Psalm 21 binds to that same Crucifixion under `prophetic-referent`
-and never under `narrated-event`; its second verse carries three relation types
-at once, since the words it holds were also spoken from the Cross. Psalm 50
-takes its setting from its own printed title and answers to Hebrew 51 through
-the existing concordance rather than through a second copy. Sirach refuses in
-the Greek arrangement, because there are two texts and not two numberings.
-Micheas is scoped to chapters 1-3 and Nahum to 2-3, because that is the extent
-the sources date.
+**A finding recorded here was wrong.** The first entry stated that not one
+inspected source says when any psalm was *written*. Re-reading Drum's "Psalms"
+in full overturned that in three places, and only three: the article dates
+Vulgate Ps 82 ("seems to have been written at the time of the havoc wrought by
+the Assyrian invasion of Tiglath-pileser III in 737 B.C."), Vulgate Ps 73
+("probably written, as Briggs surmises, during the Babylonian Exile, after 586
+B.C."), and the Korahite psalms as a period. It dates nothing else in 150
+psalms, David included, and the Miserere is genuinely not among them - so the
+half of the finding that mattered for Psalm 50 stands.
 
-**A defect this work found in itself.** An authoring lane reported that a
-`relative` date whose anchor named a nonexistent event loaded clean and audited
-clean — a date that stated nothing, in well-formed YAML, inside the apparatus
-built to catch exactly that. The first real corpus carried two. The loader now
-refuses a relative date whose anchor this corpus does not hold.
+**What auditing the population proved.** Every book was populated by a lane that
+read ranked sources and quoted them, and every lane's work was then re-read
+against those same sources by an independent one. The audit found five classes
+of defect that had passed their own lane's review, loaded clean and audited
+clean: a quotation from memory (the Authorised Version's wording of Genesis
+18:10 standing in for the tracked Douay's); a `relative` anchor that existed but
+was the wrong one (Jacob's twenty years measured from a birth Genesis places
+fourteen years into the term); a modern-critical figure admitted to the
+traditional profile ("as most critics think ... about B.C. 300" dating both
+books of Esdras, which §4.3 excludes and which the same lane had correctly
+refused an hour earlier in another sentence); a claim about four articles with
+no retained retrieval, which turned out to be false for two of them once
+fetched; and a refusal that went stale inside its own wave, giving two psalms
+with one superscription two different answers. All are fixed, and
+`guidance/scripture-chronology.md` §15.1 names them so the next lane can look
+for them by name. The two Esdras composition units were withdrawn rather than
+re-labelled, which moved 684 verses out of `composition`: coverage went down,
+and that was the honest direction.
+
+The hard cases still hold. The four Gospels reach one Crucifixion, dated once
+and disputed seven ways because the Catholic Encyclopedia declines to settle its
+own question, while each Gospel keeps its own composition chronology. Psalm 21
+binds to that same Crucifixion under `prophetic-referent` and never under
+`narrated-event`. Psalm 50 takes its setting from its own printed title and
+answers to Hebrew 51 through the existing concordance. Sirach refuses in the
+Greek arrangement, because there are two texts and not two numberings.
+
+**What is left, and is not a promised requirement.** Thirteen dated events are
+bound to nothing, because no Scripture passage narrates them and no inspected
+source names one. The Hallel at the Last Supper (CE: "He recited the Hallels at
+the last Passover, Pss. cxiii-cxiv before the Last Supper, Pss. cxv-cxviii
+thereafter") is an `utterance` binding worth some ninety verses that no lane
+owned. Van Hoonacker supplies three restoration figures - B.C. 445, 433 and 398
+- that belong as further claims on events already held, and Schets a fourth,
+598 B.C. for Joachin's deportation. Two corpus-wide questions want a
+maintainer: whether `precision: relative` may carry a duration *within* an
+anchor rather than an interval *from* it, which is what all eighteen judges'
+spans and several older events do; and whether an authorship ascription may
+become an occasion, which the corpus refuses for Ps 88 and allows for Ps 21.
 
 **Not in this lane.** Propers, the Catena, the web reader and the PDFs are not
 wired to the corpus, and no proper document was revised. The consumer contract

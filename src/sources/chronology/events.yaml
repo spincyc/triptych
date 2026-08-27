@@ -2728,7 +2728,9 @@ events:
           gives its measure: "Your children shall wander in the desert forty
           years ... According to the number of the forty days, wherein you
           viewed the land: a year shall be counted for a day."
-        sources: [bible:douay-rheims:Num.14.33]
+        sources:
+          - bible:douay-rheims:Num.14.33
+          - bible:douay-rheims:Num.14.34
         note: >-
           The forty years are here a sentence pronounced at the return of the
           spies, and are counted from that moment rather than from the Red Sea;
@@ -4871,3 +4873,3644 @@ events:
           from: {year: 141, era: bc}
           to: {year: 135, era: bc}
           label: "Simon was made ruler in 141, was murdered in 135"
+  # === lane esdras ===
+  - id: israel.restoration.return-and-temple-rebuilding
+    title: The return under Zorobabel and the rebuilding of the Temple
+    note: >-
+      The subject of the first part of 1 Esdras, from the decree of Cyrus to
+      the dedication of the second Temple. Scripture dates its stages only
+      regnally; the span below is the Catholic Encyclopedia's own, and its
+      closing figure is a fourth one beside the 537 this corpus already holds
+      for the raising, and the 516 and 514 it already holds for the
+      completion. Nothing here reconciles them.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Charles Souvay's article "Esdras" (Catholic Encyclopedia, New York,
+          1909), describing the former of the two parallel parts of I Esdras,
+          writes: "In the former, with the decree of Cyrus (i, 1-4) and the
+          enumeration of the most prominent members of the caravan (ii), we
+          read a detailed account of the rebuilding of the Temple and its
+          successful completion, in spite of bitter opposition (iii-iv). The
+          events therein contained cover twenty-one years (536-515)."
+        sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778]
+        note: >-
+          A range: the events narrated SPAN these years, they do not fall
+          somewhere within them. The binding built on this event leaves 1
+          Esdras 4:6-23 out and gives those verses their own event, and it does
+          so on Souvay's own words for the break -- "due allowance being made
+          for the break in the narrative -- Ezra 4:6-23" -- which are his, in
+          his own voice, and name that passage. What that parenthesis is NOT is
+          a caution about the order of the book: it stands inside a sentence
+          about the order of the two missions -- "Many Biblical scholars still
+          cling to the view suggested by the traditional order of the sacred
+          text (due allowance being made for the break in the narrative -- Ezra
+          4:6-23), and place the mission of Esdras before that of Nehemias" --
+          and what it qualifies is the scholars' view of whether Esdras came
+          before Nehemias. The break it names stands; the framing is corrected.
+          Souvay's 536 agrees with Howlett and Meistermann for the decree and
+          disagrees with Reid's 538; his 515 agrees with neither the 516 nor
+          the 514 the encyclopedia prints elsewhere for the completion.
+        date:
+          precision: range
+          from: {year: 536, era: bc}
+          to: {year: 515, era: bc}
+          label: "twenty-one years (536-515)"
+
+  - id: israel.restoration.altar-restored
+    title: The restoring of the altar and the first holocausts after the return
+    parent: israel.restoration.return-and-temple-rebuilding
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Esdras 3:1 opens "And now the seventh
+          month was come, and the children of Israel were in their cities: and
+          the people gathered themselves together as one man to Jerusalem",
+          and 3:6 dates the beginning of the sacrifices to the day: "From the
+          first day of the seventh month they began to offer holocausts to the
+          Lord: but the temple of God was not yet founded."
+        sources: [bible:douay-rheims:1Esd.3.1, bible:douay-rheims:1Esd.3.6]
+        note: >-
+          Scripture gives the month and the day and no year at all. The
+          following verse but two, 3:8, dates the laying of the foundations to
+          "the second year of their coming to the temple of God in Jerusalem,
+          the second month", which is a regnal-style anchor and not an era
+          date; this corpus converts neither.
+        date:
+          precision: month-day
+          from: {month: 7, day: 1, calendar: hebrew}
+          label: "From the first day of the seventh month"
+
+  - id: israel.restoration.walls-forbidden-by-artaxerxes
+    title: The forbidding of the rebuilding of the walls of Jerusalem
+    note: >-
+      1 Esdras 4:6-23 is the break in the narrative of the book: an accusation
+      under Assuerus and a second under Artaxerxes, standing between the
+      opposition to the Temple under Cyrus and the resumption under Darius.
+      Souvay's "Esdras" flags the break in passing -- "due allowance being made
+      for the break in the narrative -- Ezra 4:6-23" -- and Van Hoonacker's
+      "Book of Nehemiah" dates it.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Albin Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia, New
+          York, 1911) writes: "Already in the reign of Xerxes (B. C. 485-65),
+          and especially during the first half of the reign of Artaxerxes I
+          (B. C. 465-24), the Jews had attempted, but with only partial
+          success, to rebuild the walls of their capital, a work, up to then,
+          never sanctioned by the Persian kings (see Ezra 4:6-23). In
+          consequence of the edict of Artaxerxes, given in I Esd., iv, 18-22,
+          the enemies of the Jews at Jerusalem forcibly stopped the work
+          (ibid., 23) and pulled down a part of what had already been
+          accomplished."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067]
+        note: >-
+          An interval and NOT a range: the article does not say the forbidding
+          spanned these sixty-one years, it says the attempts fell within the
+          reign of Xerxes and especially within the FIRST HALF of the reign of
+          Artaxerxes I. The structured bounds are the two reigns entire, which
+          is wider than the claim -- 424 B.C. is the end of the reign the
+          article prints, not the end of the attempts it describes -- so the
+          bounds say only that what is dated falls somewhere inside them, and
+          the narrowing is in the label. composition.first-book-of-paralipomenon
+          discloses the same gap between bounds and claim the same way. The
+          article's identification of the Assuerus of 4:6 with Xerxes and of the
+          Artaxerxes of 4:7-23 with Artaxerxes I is the article's; this corpus
+          does not settle it.
+        date:
+          precision: interval
+          from: {year: 485, era: bc}
+          to: {year: 424, era: bc}
+          label: >-
+            in the reign of Xerxes (B. C. 485-65), and especially during the
+            first half of the reign of Artaxerxes I (B. C. 465-24)
+
+  - id: israel.restoration.first-pasch-in-the-second-temple
+    title: The pasch kept after the dedication of the second Temple
+    parent: israel.restoration.second-temple-completed
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Esdras 6:19 dates it to the day: "And the
+          children of Israel of the captivity kept the phase, on the
+          fourteenth day of the first month."
+        sources: [bible:douay-rheims:1Esd.6.19]
+        note: >-
+          Month and day, and no year. The year is the one 6:15 gives regnally
+          for the finishing of the house, "the sixth year of the reign of king
+          Darius", and which Darius that is is disputed among the Catholic
+          sources; that dispute lives on the completion event and is not
+          restated here.
+        date:
+          precision: month-day
+          from: {month: 1, day: 14, calendar: hebrew}
+          label: "on the fourteenth day of the first month"
+
+  - id: israel.restoration.esdras-reform-of-marriages
+    title: The reform of the strange marriages under Esdras
+    note: >-
+      Scripture places the reform after Esdras's arrival and gives it no year
+      of its own; the two stages below carry the month and day the text does
+      give.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Esdras 9:1 anchors the reform to what
+          precedes it and to nothing else: "And after these things were
+          accomplished, the princes came to me, saying: The people of Israel,
+          and the priests and Levites have not separated themselves from the
+          people of the lands". Souvay's "Esdras" (Catholic Encyclopedia, New
+          York, 1909) places it the same way: "The first task which confronted
+          him was that of dealing with mixed marriages."
+        sources:
+          - bible:douay-rheims:1Esd.9.1
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+        note: >-
+          Relative to the return of Esdras, whose own year is disputed in the
+          Catholic Encyclopedia between about 458 and as late as 397 B.C. That
+          dispute is held on the return event and is not resolved here.
+        date:
+          precision: relative
+          relative:
+            of: israel.restoration.esdras-return
+            statement: >-
+              And after these things were accomplished, the princes came to me
+          label: "after these things were accomplished"
+
+  - id: israel.restoration.strange-wives-assembly
+    title: The assembly at Jerusalem concerning the strange wives
+    parent: israel.restoration.esdras-reform-of-marriages
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Esdras 10:9 dates the assembly to the
+          day: "Then all the men of Juda, and Benjamin gathered themselves
+          together to Jerusalem within three days, in the ninth month, the
+          twentieth day of the month: and all the people sat in the street of
+          the house of God, trembling because of the sin, and the rain."
+        sources: [bible:douay-rheims:1Esd.10.9]
+        note: >-
+          Month and day, and no year; the year is the disputed one of Esdras's
+          mission.
+        date:
+          precision: month-day
+          from: {month: 9, day: 20, calendar: hebrew}
+          label: "in the ninth month, the twentieth day of the month"
+
+  - id: israel.restoration.strange-wives-put-away
+    title: The sessions of the commission and the putting away of the strange wives
+    parent: israel.restoration.esdras-reform-of-marriages
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Esdras 10:16 gives the commission's first
+          sitting -- the heads of families "went and sat down in the first day
+          of the tenth month to examine the matter" -- and 10:17 its last:
+          "And they made an end with all the men that had taken strange wives
+          by the first day of the first month." Souvay's "Esdras" (Catholic
+          Encyclopedia, New York, 1909) states the same span as a duration:
+          "For three full months this commission held its sessions; at the end
+          of that time the 'strange wives' were dismissed."
+        sources:
+          - bible:douay-rheims:1Esd.10.16
+          - bible:douay-rheims:1Esd.10.17
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+        note: >-
+          The two endpoints are months and days without years, and they cross
+          the turn of the year, so no range with endpoints can be authored
+          from them; the stated interval is carried instead, relative to the
+          assembly that ordered the commission.
+        date:
+          precision: relative
+          relative:
+            of: israel.restoration.strange-wives-assembly
+            statement: >-
+              from the first day of the tenth month to the first day of the
+              first month; three full months
+          label: >-
+            sat down in the first day of the tenth month ... made an end ... by
+            the first day of the first month
+
+  - id: israel.restoration.nehemias-tidings-of-jerusalem
+    title: The tidings of Jerusalem brought to Nehemias at Susa
+    parent: israel.restoration.nehemias-mission
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Esdras 1:1 dates it regnally and by the
+          month: "The words of Nehemias the son of Helchias. And it came to
+          pass in the month of Casleu, in the twentieth year, as I was in the
+          castle of Susa". Van Hoonacker's "Book of Nehemiah" (Catholic
+          Encyclopedia, New York, 1911) reads it the same way: Nehemias
+          "relates how, at the court of Artaxerxes at Susa where he fulfilled
+          the office of the king's cup-bearer, he received the news of this
+          calamity in the twentieth year of the king".
+        sources:
+          - bible:douay-rheims:2Esd.1.1
+          - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+        note: >-
+          Casleu is named without a day and the twentieth year is a regnal
+          year, not an era year; the commission that follows in 2:1 is dated
+          to "the month of Nisan, in the twentieth year of Artaxerxes the
+          king", so the tidings are carried relative to the mission rather
+          than converted.
+        date:
+          precision: relative
+          relative:
+            of: israel.restoration.nehemias-mission
+            statement: >-
+              in the month of Casleu, in the twentieth year
+          label: "in the month of Casleu, in the twentieth year"
+
+  - id: israel.restoration.wall-of-jerusalem-finished
+    title: The finishing of the wall of Jerusalem in fifty-two days
+    parent: israel.restoration.nehemias-mission
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Esdras 6:15 dates the finishing to the
+          day and gives the work's length: "But the wall was finished the five
+          and twentieth day of the month of Elul, in two and fifty days."
+        sources:
+          - bible:douay-rheims:2Esd.6.15
+          - bible:douay-rheims:1Mach.14.27
+          - bible:douay-rheims:1Mach.4.52
+        note: >-
+          Elul is named and not numbered. No source inspected for this corpus
+          numbers it: 2 Esdras 6:15 gives the name alone, 1 Machabees 14:27
+          likewise ("The eighteenth day of the month Elul"), and neither
+          Souvay's "Esdras" nor Van Hoonacker's "Book of Nehemiah" assigns it
+          an ordinal. So no month number is carried, and the
+          claim is anchored to the mission instead. The corpus numbers a Hebrew
+          month only where a ranked source states the ordinal -- Casleu is
+          written as month 9 on israel.maccabees.feast-of-dedication because 1
+          Machabees 4:52 states it -- and nothing states this one. The year is
+          the twentieth of Artaxerxes, a regnal year, and is not converted here.
+          Van Hoonacker's "Book of Nehemiah" prints a different figure
+          for the duration -- "We learn from vii, 15 that the work was
+          completely finished within fifty-one days" -- and reports and rejects
+          a third: "Josephus (Ant., V, 7, 8) says that it lasted two years and
+          four months, but his testimony, often far from reliable, presents no
+          plausible reason for setting aside the text." Neither is harmonized
+          with the Douay-Rheims fifty-two.
+        date:
+          precision: relative
+          relative:
+            of: israel.restoration.nehemias-mission
+            statement: >-
+              finished the five and twentieth day of the month of Elul, in two
+              and fifty days
+          label: "the five and twentieth day of the month of Elul, in two and fifty days"
+
+  - id: israel.restoration.reading-of-the-law
+    title: The reading of the Law by Esdras before the people
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Esdras 8:2 dates it to the day: "Then
+          Esdras the priest brought the law before the multitude of men and
+          women, and all those that could understand, in the first day of the
+          seventh month." Souvay's "Esdras" (Catholic Encyclopedia, New York,
+          1909) reports it identically and names the month: "On the first day
+          of the seventh month (Tishri), a great meeting was held 'in the
+          street that was before the watergate', for the purpose of reading
+          the Law."
+        sources:
+          - bible:douay-rheims:2Esd.8.2
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+        note: >-
+          Month and day; no year is stated by either witness. Souvay places
+          the reading after the rebuilding of the walls -- "At any rate we find
+          him again in the latter city at the reading of the Law which took
+          place after the rebuilding of the walls" -- while Van Hoonacker's
+          "Book of Nehemiah" holds that at this time "Esdras was at the
+          beginning of his career" and that his own mission followed under
+          Artaxerxes II. The two orderings are the standing dispute carried on
+          the Esdras and Nehemias events, and nothing here settles it.
+        date:
+          precision: month-day
+          from: {month: 7, day: 1, calendar: hebrew}
+          label: "in the first day of the seventh month"
+
+  - id: israel.restoration.covenant-renewed
+    title: The fast of the twenty-fourth day and the renewing of the covenant
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Esdras 9:1 dates the assembly to the day:
+          "And in the four and twentieth day of the month the children of
+          Israel came together with fasting and with sackcloth, and earth upon
+          them." Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia,
+          New York, 1911) supplies the month the verse leaves implicit: "When
+          this feast is over, the people gather together again on the
+          twenty-fourth day of the seventh month (ix, 1 ff.) to praise God,
+          confess their sins, and to bind themselves by a written covenant
+          faithfully to observe their obligations."
+        sources:
+          - bible:douay-rheims:2Esd.9.1
+          - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+        note: >-
+          The month is the article's reading of "the month" of 9:1, carried
+          forward from the seventh month of 8:2; the verse itself names no
+          month. Souvay's "Esdras" places the fast the same way without
+          numbering the month: "two days after its close a strict fast was
+          held". No year is stated by any witness inspected.
+        date:
+          precision: month-day
+          from: {month: 7, day: 24, calendar: hebrew}
+          label: "in the four and twentieth day of the month"
+  # === lane exodus ===
+  # --- Exodus: the years before the going out ---------------------------------
+  - id: israel.exodus.moses-in-madian
+    title: The flight of Moses into Madian and the years of his shepherd life
+    note: >-
+      Exodus itself dates this stretch only by two vague phrases - "In those
+      days, after Moses was grown up" at 2:11 and "after a long time the king
+      of Egypt died" at 2:23. The forty years are St Stephen's, in the Acts,
+      and are recorded here because Scripture states them somewhere, not
+      because the number would otherwise be convenient.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Acts 7:23 in the Douay-Rheims dates the flight by Moses' age: "And
+          when he was full forty years old, it came into his heart to visit his
+          brethren, the children of Israel." Acts 7:29-30 then measures the
+          sojourn that followed: "And Moses fled upon this word: and was a
+          stranger in the land of Madian, where he begot two sons. And when
+          forty years were expired, there appeared to him, in the desert of
+          mount Sina, an angel in a flame of fire in a bush."
+        sources:
+          - bible:douay-rheims:Acts.7.23
+          - bible:douay-rheims:Acts.7.30
+          - bible:douay-rheims:Ex.2.11
+        note: >-
+          A span measured in Moses' own years and in no era. St Stephen's two
+          forties are a speech in the Acts about an event in Exodus; they are
+          used here as Scripture's own chronological statement, which is what
+          rank 1 of the authority hierarchy is, and the corpus does not add
+          them to anything to reach a year.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.birth-of-moses
+            statement: "And when he was full forty years old, it came into his heart to visit his brethren, the children of Israel"
+          label: "full forty years old"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The Catholic Encyclopedia's "Moses" states the same term of the
+          shepherd life in its own voice: "After forty years of shepherd life,
+          Moses speaks with God."
+        sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-59d1207b]
+        note: >-
+          Not a rival claim about the same moment. The preferred claim above
+          dates the beginning of this stretch, by Moses' age when he fled - Acts
+          7:23, "when he was full forty years old" - and this one dates its end,
+          the vision at the bush after the shepherd years were over, which is
+          the same terminus Acts 7:30 states in the words "And when forty years
+          were expired". The two are the two ends of one span and they agree;
+          this one is kept beneath the other because the corpus dates the event
+          from its beginning, and because the encyclopedia is a rank-6 source
+          where Acts is Scripture's own statement at rank 1. The title is
+          compound for that reason: it holds the flight and the years that
+          followed it as one stretch, and the two claims fix its two ends. The
+          article prints no year in any era for the flight; the only absolute
+          figure on its page is the opening sentence placing Moses "in the
+          thirteenth and early part of the twelfth
+          century, B. C.", which follows that article's late Exodus and is the
+          profile boundary already recorded at the death of Moses.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.burning-bush
+            statement: "After forty years of shepherd life, Moses speaks with God"
+          label: "forty years of shepherd life"
+  - id: israel.exodus.return-of-moses-to-egypt
+    title: The return of Moses from Madian into Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 4:18-20 narrates the return as the immediate sequel of the
+          vocation at the bush, with no interval between them: "Moses went his
+          way, and returned to Jethro his father in law, and said to him; I
+          will go and return to my brethren into Egypt ... Moses therefore took
+          his wife, and his sons, and set them upon an ass; and returned into
+          Egypt, carrying the rod of God in his hand."
+        sources:
+          - bible:douay-rheims:Ex.4.18
+          - bible:douay-rheims:Ex.4.20
+        note: >-
+          Scripture states no length for the journey and no year for it, so
+          nothing but the sequence is recorded. The Haydock edition's
+          uninitialled apparatus prints A. M. 2513 at the head of Exodus 3 and
+          A. M. 2518 at the transition into Exodus 5, five years apart across
+          the chapters this event stands between; that discrepancy is already
+          recorded at the two events themselves and is not resolved by putting
+          this journey in either year.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.burning-bush
+            statement: "Moses went his way, and returned to Jethro his father in law, and said to him; I will go and return to my brethren into Egypt"
+          label: "I will go and return to my brethren into Egypt"
+  - id: israel.exodus.the-plagues-of-egypt
+    title: The ten plagues of Egypt
+    note: >-
+      A series, not a point. The only measured interval inside it that
+      Scripture states is the seven days of Exodus 7:25; the only seasonal
+      bracket a ranked source prints is the Catholic Encyclopedia's, and that
+      article opens by refusing the question outright.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 7:25 in the Douay-Rheims measures the one interval Scripture
+          states within the series: "And seven days were fully ended, after
+          that the Lord struck the river." Exodus 9:31-32 fixes the season of
+          the seventh plague by the state of the crops: "The flax therefore,
+          and the barley were hurt, because the barley was green, and the flax
+          was now bolled; But the wheat, and other winter corn were not hurt,
+          because they were lateward."
+        sources:
+          - bible:douay-rheims:Ex.7.25
+          - bible:douay-rheims:Ex.9.31
+        note: >-
+          The series runs from the first audience at Exodus 5 to the slaying of
+          the firstborn on the night of the departure at Exodus 12:29, which is
+          the tenth plague and belongs also to the Exodus itself. Scripture
+          gives the whole no year and no total length, and the state of the
+          barley and flax is a season and not a month; neither is turned into
+          one here.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.moses-before-pharao
+            statement: "And seven days were fully ended, after that the Lord struck the river"
+          label: "seven days were fully ended, after that the Lord struck the river"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The Catholic Encyclopedia's "Plagues of Egypt" brackets the close of
+          the series by the season: "The last four must have followed in close
+          succession between the beginning of March and the first days of
+          April. For when the hail fell barley was in the ear and flax in bud,
+          which in Lower Egypt happens about March, and the Israelites left on
+          the 14th of Nisan, which falls in the latter part of March or the
+          early part of April."
+        sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12143a-0612afa4]
+        note: >-
+          The article's own first word on the question is a refusal - "The
+          interval of time within which they occurred cannot be stated with
+          certainty" - and it holds the refusal open for the earlier plagues:
+          "The first six seem also to have succeeded one another at short
+          intervals, but the interval, if any, between them and the last four
+          is uncertain." What it prints is therefore a season for four of the
+          ten and no year in any era for any of them, and it is recorded as
+          such rather than as a date for the series. The same article states
+          that "The second plague came seven days later", which is the
+          encyclopedia reading the seven days of Exodus 7:25 the same way this
+          entry's preferred claim does.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "The last four must have followed in close succession between the beginning of March and the first days of April"
+          label: "between the beginning of March and the first days of April"
+
+  # --- The wilderness: the stages of the march to Sinai -----------------------
+  - id: israel.wilderness.mara-and-elim
+    title: The three days' march to Mara, and the encampment at Elim
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 15:22 in the Douay-Rheims measures the march from the sea:
+          "And Moses brought Israel from the Red Sea, and they went forth into
+          the wilderness of Sur: and they marched three days through the
+          wilderness, and found no water." Numbers 33:8 enters the same three
+          days in the itinerary: "having marched three days through the
+          desert of Etham, they camped in Mara."
+        sources:
+          - bible:douay-rheims:Ex.15.22
+          - bible:douay-rheims:Num.33.8
+        note: >-
+          The far end of the stretch is fixed by Exodus 16:1, which puts the
+          departure from Elim and the coming into the desert of Sin on the
+          fifteenth day of the second month after the going out; Scripture does
+          not say how long the camp at Elim lasted, and the corpus does not
+          subtract to find out.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "they marched three days through the wilderness, and found no water"
+          label: "three days through the wilderness"
+  - id: israel.wilderness.raphidim
+    title: The encampment at Raphidim, the water from the rock, and the battle with Amalec
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 17:1 in the Douay-Rheims places the camp between two dated
+          stages: "Then all the multitude of the children of Israel setting
+          forward from the desert of Sin, by their mansions, according to the
+          word of the Lord, encamped in Raphidim, where there was no water for
+          the people to drink." Exodus 19:2 closes it: "For departing out of
+          Raphidim, and coming to the desert of Sinai, they camped in the same
+          place, and there Israel pitched their tents over against the
+          mountain."
+        sources:
+          - bible:douay-rheims:Ex.17.1
+          - bible:douay-rheims:Ex.19.2
+        note: >-
+          Bounded on one side by the fifteenth day of the second month at
+          Exodus 16:1 and on the other by the third month at Exodus 19:1, and
+          given no day of its own by any source inspected for this corpus.
+          Numbers 33:12-14 interposes the stations of Daphca and Alus between
+          the desert of Sin and Raphidim without dating either.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.manna
+            statement: "setting forward from the desert of Sin, by their mansions, according to the word of the Lord, encamped in Raphidim"
+          label: "setting forward from the desert of Sin ... encamped in Raphidim"
+  - id: israel.wilderness.jethro-and-the-judges
+    title: The visit of Jethro and the appointment of the judges
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 18:5 in the Douay-Rheims places the visit at the camp by the
+          mountain of God: "And Jethro, the kinsman of Moses, came with his
+          sons, and his wife to Moses into the desert, where he was camped by
+          the mountain of God." That camp is the one of the preceding chapter,
+          where the Lord says at Exodus 17:6 "Behold I will stand there before
+          thee, upon the rock Horeb, and thou shalt strike the rock, and water
+          shall come out of it that the people may drink." The
+          Catholic Encyclopedia's "Moses" narrates the same order: "The
+          meeting with Jethro ends in an alliance with Madian, and the
+          appointment of a corps of judges subordinate to Moses, to attend to
+          minor decisions. At Sinai the Ten Commandments are promulgated."
+        sources:
+          - bible:douay-rheims:Ex.18.5
+          - bible:douay-rheims:Ex.17.6
+          - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-59d1207b
+        note: >-
+          Where this episode stands in the march is a question the sources
+          inspected for this corpus do not settle, and this claim does not
+          settle it either: it records only that Exodus narrates it at the camp
+          by the mountain of God, between Raphidim and the third month of
+          Exodus 19:1. Deuteronomy 1:9-18 recalls the appointment of judges at
+          Horeb before the departure from the mount, which some read as putting
+          it after the promulgation of the Law rather than before; no year, and
+          no month or day, is printed for it anywhere this corpus has read.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.raphidim
+            statement: "came with his sons, and his wife to Moses into the desert, where he was camped by the mountain of God"
+          label: "where he was camped by the mountain of God"
+
+  # --- The wilderness: Sinai --------------------------------------------------
+  - id: israel.wilderness.promulgation-of-the-law
+    title: The promulgation of the Law at Sinai
+    parent: israel.wilderness.arrival-at-sinai
+    note: >-
+      Held apart from the arrival at Sinai deliberately: the note on that event
+      says that Exodus 19:1 "dates the arrival at Sinai, not the promulgation
+      of the Law that follows at Exodus 20", and this is the event it was held
+      apart from.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 19:11 in the Douay-Rheims appoints the day: "And let them be
+          ready against the third day; for on the third day the Lord will come
+          down in the sight of all the people, upon Mount Sinai." Exodus 19:16
+          records it arriving: "And now the third day was come, and the morning
+          appeared: and behold thunders began to be heard, and lightning to
+          flash, and a very thick cloud to cover the mount, and the noise of the
+          trumpet sounded exceeding loud; and the people that was in the camp,
+          feared."
+        sources:
+          - bible:douay-rheims:Ex.19.11
+          - bible:douay-rheims:Ex.19.16
+        note: >-
+          The third day is counted from the sanctifying commanded at Exodus
+          19:10, which follows the coming into the wilderness of Sinai in the
+          third month of the departure. It is a day within that month and not a
+          day of any era, so it is recorded as relative and not as a month-day.
+          The Catholic Encyclopedia's "Moses" says only "At Sinai the Ten
+          Commandments are promulgated" and prints no date for it.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.arrival-at-sinai
+            statement: "And now the third day was come, and the morning appeared"
+          label: "the third day"
+  - id: israel.wilderness.covenant-at-sinai
+    title: The sealing of the covenant at the foot of the mount
+    parent: israel.wilderness.arrival-at-sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Exodus 24:3-4 in the Douay-Rheims dates the sacrifice to the morning
+          after the words were told to the people: "So Moses came and told the
+          people all the words of the Lord, and all the judgments ... And Moses
+          wrote all the words of the Lord: and rising in the morning, he built
+          an altar at the foot of the mount, and twelve titles according to the
+          twelve tribes of Israel."
+        sources:
+          - bible:douay-rheims:Ex.24.3
+          - bible:douay-rheims:Ex.24.4
+        note: >-
+          Exodus 24:4 also states that Moses wrote the words, and Exodus 24:7
+          that he read "the book of the covenant" to the people. That is a
+          statement about writing and would be a composition claim, not a
+          narrated event; it is deliberately not authored as one here, because
+          the extent it would cover is a matter this corpus has inspected no
+          ranked source settling, and because the received Catholic apparatus
+          dates the writing of Exodus nowhere at all.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.promulgation-of-the-law
+            statement: "rising in the morning, he built an altar at the foot of the mount"
+          label: "rising in the morning"
+  - id: israel.wilderness.making-of-the-tabernacle
+    title: The making of the tabernacle and its furniture
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Scripture dates the work by its completion and by nothing else.
+          Exodus 39:43: "And when Moses saw all things finished, he blessed
+          them." Exodus 40:2 gives the day the finished work was to be raised:
+          "The first month, the first day of the month, thou shalt set up the
+          tabernacle of the testimony", and Exodus 40:15 records it done: "So
+          in the first month of the second year, the first day of the month,
+          the tabernacle was set up."
+        sources:
+          - bible:douay-rheims:Ex.39.43
+          - bible:douay-rheims:Ex.40.2
+          - bible:douay-rheims:Ex.40.15
+        note: >-
+          No source inspected for this corpus states when the work began, how
+          long it took, or what year in any era it fell in. What is recorded is
+          only that Exodus places its completion before the day the tabernacle
+          was set up, and that day is itself counted from the Exodus and is not
+          a day of any era. The Catholic Encyclopedia's "Moses" passes over the
+          work in a subordinate clause - "After instituting the priesthood and
+          erecting the Tabernacle, Moses orders a census" - and dates neither.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.erection-of-the-tabernacle
+            statement: "And when Moses saw all things finished, he blessed them"
+          label: "all things finished, before the tabernacle was set up"
+  # === lane ezechiel ===
+  # --- Ezechiel: the prophet's ministry, and the fourteen oracles he dates ---
+  # Ezechiel dates his own oracles by the years of the captivity of Joachin,
+  # which is why every claim below is `relative` and anchored to
+  # israel.exile.second-captivity rather than converted to a year of any era.
+  # No inspected source performs that conversion, so this corpus does not.
+  - id: israel.exile.ezechiel.ministry
+    title: The prophetic ministry of Ezechiel among the exiles by the river Chobar
+    note: >-
+      Schets's "Ezekiel" (Catholic Encyclopedia, New York, 1909) says the
+      prophet was "one of the priests who, in the year 598 B.C., had been
+      deported together with Joachim as prisoners from Jerusalem". That 598 is
+      one year earlier than the "597 B.C." George Reid's "Captivities of the
+      Israelites" gives for the same deportation and is held as an alternate on
+      israel.exile.second-captivity, and it is on a different reckoning again
+      from the "A.M. 3405" the Haydock edition prints and that event prefers.
+      The three figures are not one another's conversions and are not
+      harmonised here; the ministry itself is dated relative to that captivity,
+      as Scripture and the encyclopedia both date it, and carries no B.C. year
+      of its own.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Schets's "Ezekiel" in the Catholic Encyclopedia fixes both ends of the
+          ministry without printing a year for either: "In the fifth year after
+          the captivity of Joachim, and according to some, the thirtieth year of
+          his life, Ezekiel received his call as a prophet (Ezek. i, 2, 4 etc)
+          in the vision which he describes in the beginning of his prophecy",
+          and "From Ezek. xxix, 17 it appears that he prophesied during at least
+          twenty-two years." The Douay-Rheims text supplies the two datelines
+          the article reckons from: "the fifth year of the captivity of king
+          Joachin" (Ezech. 1:2) and "in the seven and twentieth year in the
+          first month, in the first of the month" (Ezech. 29:17).
+        sources:
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+          - bible:douay-rheims:Ezech.1.2
+          - bible:douay-rheims:Ezech.29.17
+        note: >-
+          "At least twenty-two years" is the encyclopedia's own bound and its
+          own hedge, drawn by subtracting the fifth year of the captivity from
+          the twenty-seventh; it is a minimum, not a span, because nothing in
+          the book says the ministry ended at its latest dateline. That latest
+          dateline is Ezech. 29:17, "the seven and twentieth year", and no verse
+          of Ezechiel carries the reckoning past it: the vision of Ezech. 40:1,
+          which stands last in the book, is dated two years EARLIER, "in the
+          five and twentieth year of our captivity". The book's order is not its
+          chronology here any more than it is at Ezech. 26:1 and 29:1. The
+          encyclopedia leaves the two reckonings of "the thirtieth year" of
+          Ezech. 1:1 unsettled and so does this claim.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              from the fifth year after the captivity of Joachim, and lasting at
+              least twenty-two years
+          label: >-
+            from the fifth year after the captivity of Joachim; he prophesied
+            during at least twenty-two years
+
+  - id: israel.exile.ezechiel.call
+    title: The call of Ezechiel and the vision of the glory by the river Chobar
+    parent: israel.exile.ezechiel.ministry
+    note: >-
+      Scripture gives two reckonings in two consecutive verses and says of the
+      first only "the thirtieth year", without saying of what. Ezech. 1:2 is the
+      fixed point and is what this claim is anchored to. The other reckoning is
+      reported by the Catholic Encyclopedia as an opinion and not adopted:
+      "according to some, the thirtieth year of his life".
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 1:1-2 dates the vision to the day
+          within the captivity: "Now it came to pass in the thirtieth year, in
+          the fourth month, on the fifth day of the month, when I was in the
+          midst of the captives by the river Chobar, the heavens were opened,
+          and I saw the visions of God. On the fifth day of the month, the same
+          was the fifth year of the captivity of king Joachin". Schets's
+          "Ezekiel" in the Catholic Encyclopedia reads the same two verses the
+          same way: "In the fifth year after the captivity of Joachim ...
+          Ezekiel received his call as a prophet (Ezek. i, 2, 4 etc) in the
+          vision which he describes in the beginning of his prophecy."
+        sources:
+          - bible:douay-rheims:Ezech.1.1
+          - bible:douay-rheims:Ezech.1.2
+          - bible:douay-rheims:Ezech.1.3
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+        note: >-
+          Day-precise, but only within the captivity's own reckoning and in the
+          Hebrew months; there is no era anchor in the passage and no inspected
+          source converts one. The "thirtieth year" is carried in the statement
+          exactly as printed and is not resolved.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the thirtieth year, in the fourth month, on the fifth day of
+              the month, the same was the fifth year of the captivity of king
+              Joachin
+          label: >-
+            in the thirtieth year, in the fourth month, on the fifth day of the
+            month, the same was the fifth year of the captivity of king Joachin
+
+  - id: israel.exile.ezechiel.watchman-charge
+    title: The word making Ezechiel watchman to the house of Israel, seven days after the vision
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text dates this word by counting from the vision it
+          follows: "I remained there seven days mourning in the midst of them"
+          (Ezech. 3:15), "And at the end of seven days the word of the Lord came
+          to me, saying" (Ezech. 3:16).
+        sources:
+          - bible:douay-rheims:Ezech.3.15
+          - bible:douay-rheims:Ezech.3.16
+        note: >-
+          The only one of Ezechiel's fourteen datelines that names no year,
+          month or day at all: it is an interval from the preceding vision, so
+          it is anchored to that vision and to nothing else.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.ezechiel.call
+            statement: at the end of seven days
+          label: "at the end of seven days"
+
+  - id: israel.exile.ezechiel.vision-of-the-abominations
+    title: The vision of the abominations in the temple, in the sixth year of the captivity
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 8:1: "And it came to pass in the
+          sixth year, in the sixth month, in the fifth day of the month, as I
+          sat in my house, and the ancients of Juda sat before me, that the hand
+          of the Lord God fell there upon me."
+        sources: [bible:douay-rheims:Ezech.8.1]
+        note: >-
+          The year is the sixth of the captivity of Joachin, on the reckoning
+          Ezech. 1:2 establishes for the book; the text does not repeat the era
+          at every dateline and this corpus does not supply a B.C. year for it.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the sixth year, in the sixth month, in the fifth day of the
+              month
+          label: "in the sixth year, in the sixth month, in the fifth day of the month"
+
+  - id: israel.exile.ezechiel.elders-inquiry
+    title: The coming of the ancients of Israel to inquire of the Lord, in the seventh year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 20:1: "And it came to pass in the
+          seventh year, in the fifth month, the tenth day of the month: there
+          came men of the ancients of Israel to inquire of the Lord, and they
+          sat before me."
+        sources: [bible:douay-rheims:Ezech.20.1]
+        note: >-
+          The seventh year of the captivity of Joachin, on the book's own
+          reckoning. Schets's "Ezekiel" describes the occasion in the same
+          terms: "In the presence of the elders the prophet denounces the whole
+          people of Israel for the abominations they practiced in Egypt, in the
+          Wilderness, and in Canaan (xx)."
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the seventh year, in the fifth month, the tenth day of the
+              month
+          label: "in the seventh year, in the fifth month, the tenth day of the month"
+
+  - id: israel.exile.ezechiel.death-of-the-prophets-wife
+    title: The death of the wife of Ezechiel, and his forbidden mourning
+    parent: israel.exile.ezechiel.ministry
+    note: >-
+      Ezechiel 24 carries one dateline, at 24:1, and it belongs to the oracle of
+      the rusty pot, which was uttered on the day the siege of Jerusalem began.
+      The word at 24:15 opens with the book's undated revelation formula, "And
+      the word of the Lord came to me, saying", and Scripture attaches no year,
+      month or day to it. The chapter's dateline is therefore NOT carried onto
+      this event, on the same rule the lane applied at Ezech. 30:1. Schets's
+      "Ezekiel" keeps the two in one group without dating the second: "On the
+      day on which the siege of Jerusalem began, the prophet represents, under
+      the figure of the rusty pot, what was to befall the inhabitants of the
+      city. On the occasion of the death of his wife, God forbids him to mourn
+      openly, in order to teach the exiles that they should be willing to lose
+      that which is dearest to them without grieving over it (xxiv)."
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 24:18 narrates the death and its day
+          within the day: "So I spoke to the people in the morning, and my wife
+          died in the evening: and I did in the morning as he had commanded me."
+          The only temporal statement Scripture makes about it is that sequence,
+          and 24:16-17 gives the command it obeys, "thou shalt not lament, nor
+          weep ... make no mourning for the dead".
+        sources:
+          - bible:douay-rheims:Ezech.24.16
+          - bible:douay-rheims:Ezech.24.17
+          - bible:douay-rheims:Ezech.24.18
+          - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+        note: >-
+          Anchored to the ministry and to nothing narrower, because nothing
+          narrower is stated: the death falls inside the prophetic ministry and
+          Scripture places it no more exactly than "in the evening" of the day
+          the prophet had spoken in the morning. It is deliberately not anchored
+          to israel.exile.final-siege, whose day the chapter's other oracle
+          carries: the text does not say the two fell together, and dating this
+          by the neighbouring dateline would be exactly the borrowing this lane
+          refuses elsewhere.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.ezechiel.ministry
+            statement: >-
+              in the evening of a day on which the prophet had spoken to the
+              people in the morning; the passage gives no year, month or day
+          label: >-
+            I spoke to the people in the morning, and my wife died in the
+            evening
+
+  - id: israel.exile.ezechiel.oracle-against-tyre
+    title: The oracle against Tyre, in the eleventh year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 26:1: "And it came to pass in the
+          eleventh year, the first day of the month, that the word of the Lord
+          came to me, saying:" -- the oracle following being against Tyre, "Son
+          of man, because Tyre hath said of Jerusalem: Aha, the gates of the
+          people are broken ..." (Ezech. 26:2), the verse continuing "she is
+          turned to me: I shall be filled, now she is laid waste."
+        sources:
+          - bible:douay-rheims:Ezech.26.1
+          - bible:douay-rheims:Ezech.26.2
+        note: >-
+          This dateline names the year and the day of the month but NOT the
+          month, and it is NOT alone in that: Ezech. 32:17, "in the twelfth
+          year, in the fifteenth day of the month", omits it in exactly the same
+          way, as the note on
+          israel.exile.ezechiel.lamentation-for-the-multitude-of-egypt records.
+          Ezech. 40:1 numbers no month either, giving "the beginning of the
+          year" instead. The omission stands in the tracked Douay text at each
+          of those places and is filled in at none of them.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: in the eleventh year, the first day of the month
+          label: "in the eleventh year, the first day of the month"
+
+  - id: israel.exile.ezechiel.first-oracle-against-egypt
+    title: The first oracle against Pharao and Egypt, in the tenth year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 29:1-2: "In the tenth year, the
+          tenth month, the eleventh day of the month, the word of the Lord came
+          to me, saying: Son of man, set thy face against Pharao king of Egypt:
+          and thou shalt prophesy of him, and of all Egypt:" -- the colon is the
+          verse's own and the oracle runs on into 29:3.
+        sources:
+          - bible:douay-rheims:Ezech.29.1
+          - bible:douay-rheims:Ezech.29.2
+        note: >-
+          Earlier in the captivity's reckoning than the oracle against Tyre that
+          stands before it in the book: the tenth year here, the eleventh year
+          at Ezech. 26:1. The book's arrangement is not its chronology, and
+          nothing is reordered to make it one. Schets's "Ezekiel" says only
+          that "Six prophecies against Egypt follow, dating from different
+          years (xxix-xxxii" — the closing parenthesis is missing in the
+          transcription and the sentence runs straight into the next.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the tenth year, the tenth month, the eleventh day of the month
+          label: "In the tenth year, the tenth month, the eleventh day of the month"
+
+  - id: israel.exile.ezechiel.egypt-as-wages-for-nabuchodonosor
+    title: The oracle giving Egypt to Nabuchodonosor as wages for Tyre, in the twenty-seventh year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 29:17: "And it came to pass in the
+          seven and twentieth year in the first month, in the first of the
+          month: that the word of the Lord came to me, saying", the oracle
+          giving Egypt to Babylon "for the service that he rendered me against
+          it" (Ezech. 29:18-19).
+        sources:
+          - bible:douay-rheims:Ezech.29.17
+          - bible:douay-rheims:Ezech.29.18
+          - bible:douay-rheims:Ezech.29.19
+        note: >-
+          The latest dateline in the book outright. The vision of Ezech. 40:1
+          stands last in the book but is dated two years earlier, "in the five
+          and twentieth year of our captivity", so nothing in Ezechiel is dated
+          after this verse. It is the one Schets's "Ezekiel" reckons the length
+          of the ministry from: "From Ezek. xxix, 17 it appears that he
+          prophesied during at least twenty-two years."
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the seven and twentieth year in the first month, in the first
+              of the month
+          label: "in the seven and twentieth year in the first month, in the first of the month"
+
+  - id: israel.exile.ezechiel.broken-arm-of-pharao
+    title: The oracle on the broken arm of Pharao, in the eleventh year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 30:20-21: "And it came to pass in
+          the eleventh year, in the first month, in the seventh day of the
+          month, that the word of the Lord came to me, saying: Son of man, I
+          have broken the arm of Pharao king of Egypt ..." -- the quotation
+          stops inside 30:21, where the verse goes on "and behold it is not
+          bound up, to be healed".
+        sources:
+          - bible:douay-rheims:Ezech.30.20
+          - bible:douay-rheims:Ezech.30.21
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the eleventh year, in the first month, in the seventh day of
+              the month
+          label: "in the eleventh year, in the first month, in the seventh day of the month"
+
+  - id: israel.exile.ezechiel.parable-of-the-cedar
+    title: The parable of the cedar spoken to Pharao, in the eleventh year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 31:1-2: "And it came to pass, in the
+          eleventh year, the third month the first day of the month, that the
+          word of the Lord came to me, saying: Son of man, speak to Pharao king
+          of Egypt, and to his people: To whom art thou like in thy greatness?"
+        sources:
+          - bible:douay-rheims:Ezech.31.1
+          - bible:douay-rheims:Ezech.31.2
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the eleventh year, the third month the first day of the month
+          label: "in the eleventh year, the third month the first day of the month"
+
+  - id: israel.exile.ezechiel.lamentation-for-pharao
+    title: The lamentation for Pharao king of Egypt, in the twelfth year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 32:1-2: "And it came to pass in the
+          twelfth year, in the twelfth month, in the first day of the month,
+          that the word of the Lord came to me, saying: Son of man, take up a
+          lamentation for Pharao the king of Egypt ..." -- the quotation stops
+          inside 32:2, where the verse goes on "and say to him: Thou art like
+          the lion of the nations".
+        sources:
+          - bible:douay-rheims:Ezech.32.1
+          - bible:douay-rheims:Ezech.32.2
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the twelfth year, in the twelfth month, in the first day of the
+              month
+          label: "in the twelfth year, in the twelfth month, in the first day of the month"
+
+  - id: israel.exile.ezechiel.lamentation-for-the-multitude-of-egypt
+    title: The mournful song for the multitude of Egypt, in the twelfth year
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 32:17-18: "And it came to pass in
+          the twelfth year, in the fifteenth day of the month, that the word of
+          the Lord came to me saying: Son of man, sing a mournful song for the
+          multitude of Egypt."
+        sources:
+          - bible:douay-rheims:Ezech.32.17
+          - bible:douay-rheims:Ezech.32.18
+        note: >-
+          Like Ezech. 26:1 this dateline names the year and the day of the month
+          but no month. The tracked Douay wording is kept and the month is not
+          borrowed from the dateline sixteen verses earlier.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: in the twelfth year, in the fifteenth day of the month
+          label: "in the twelfth year, in the fifteenth day of the month"
+
+  - id: israel.exile.ezechiel.news-of-the-fall-of-jerusalem
+    title: The coming of the fugitive with the news that Jerusalem was laid waste
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 33:21: "And it came to pass in the
+          twelfth year of our captivity, in the tenth month, in the fifth day of
+          the month, that there came to me one that was fled from Jerusalem,
+          saying: The city is laid waste."
+        sources:
+          - bible:douay-rheims:Ezech.33.21
+          - bible:douay-rheims:Ezech.33.22
+        note: >-
+          This is the one dateline in the book that names the era it counts in,
+          "our captivity", which is why every other dateline in Ezechiel is
+          anchored to the same event. What the messenger reports is a separate
+          and earlier event, israel.exile.third-captivity, which is bound to
+          this passage under retrospective-event and holds its own disputed
+          dates.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the twelfth year of our captivity, in the tenth month, in the
+              fifth day of the month
+          label: "in the twelfth year of our captivity, in the tenth month, in the fifth day of the month"
+
+  - id: israel.exile.ezechiel.vision-of-the-new-temple
+    title: The vision of the new temple, the new worship and the new division of the land
+    parent: israel.exile.ezechiel.ministry
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Ezechiel 40:1: "In the five and twentieth
+          year of our captivity, in the beginning of the year, the tenth day of
+          the month, the fourteenth year after the city was destroyed: in the
+          selfsame day the hand of the Lord was upon me, and he brought me
+          thither."
+        sources: [bible:douay-rheims:Ezech.40.1]
+        note: >-
+          The verse carries two reckonings, and the second, "the fourteenth year
+          after the city was destroyed", is bound to israel.exile.third-captivity
+          under retrospective-event rather than made a second claim here: it is
+          the same day counted from a different event, not a different date.
+          Neither is converted to a year of any era, and no inspected source
+          converts them.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.second-captivity
+            statement: >-
+              in the five and twentieth year of our captivity, in the beginning
+              of the year, the tenth day of the month, the fourteenth year after
+              the city was destroyed
+          label: >-
+            In the five and twentieth year of our captivity, in the beginning of
+            the year, the tenth day of the month
+  # === lane genesis ===
+  # --- Genesis 5: the ten antediluvian patriarchs ---------------------------
+  # Each notice in Genesis 5 states an age at begetting and a total of years,
+  # and states them inside one man's life rather than in any era. They are
+  # therefore authored as relative dates, chained from the creation of Adam,
+  # which is where the existing birth-of-seth already anchors the chain.
+  - id: israel.primeval.birth-of-enos
+    title: The birth of Enos
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:6 in the Douay-Rheims states the interval in Seth's life:
+          "Seth also lived a hundred and five years, and begot Enos."
+          Scripture's own chronological statement, carrying no era.
+        sources:
+          - bible:douay-rheims:Gen.5.6
+          - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+        note: >-
+          A hundred and five is the Hebrew and Vulgate figure. The Catholic
+          Encyclopedia's "Biblical Chronology" prints the Septuagint reading of
+          the same datum as 205 in its table of the patriarchs, and observes of
+          the whole table that "the diversity is due to systematic change".
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-seth
+            statement: "Seth also lived a hundred and five years, and begot Enos"
+          label: "a hundred and five years"
+  - id: israel.primeval.death-of-seth
+    title: The death of Seth
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:8 in the Douay-Rheims closes the notice of Seth with the
+          total: "And all the days of Seth were nine hundred and twelve years,
+          and he died."
+        sources: [bible:douay-rheims:Gen.5.8]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-seth
+            statement: "And all the days of Seth were nine hundred and twelve years, and he died"
+          label: "nine hundred and twelve years"
+  - id: israel.primeval.birth-of-cainan
+    title: The birth of Cainan
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:9 in the Douay-Rheims: "And Enos lived ninety years, and
+          begot Cainan."
+        sources: [bible:douay-rheims:Gen.5.9]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-enos
+            statement: "And Enos lived ninety years, and begot Cainan"
+          label: "ninety years"
+  - id: israel.primeval.death-of-enos
+    title: The death of Enos
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:11 in the Douay-Rheims: "And all the days of Enos were nine
+          hundred and five years, and he died."
+        sources: [bible:douay-rheims:Gen.5.11]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-enos
+            statement: "And all the days of Enos were nine hundred and five years, and he died"
+          label: "nine hundred and five years"
+  - id: israel.primeval.birth-of-malaleel
+    title: The birth of Malaleel
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:12 in the Douay-Rheims: "And Cainan lived seventy years, and
+          begot Malaleel."
+        sources: [bible:douay-rheims:Gen.5.12]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-cainan
+            statement: "And Cainan lived seventy years, and begot Malaleel"
+          label: "seventy years"
+  - id: israel.primeval.death-of-cainan
+    title: The death of Cainan
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:14 in the Douay-Rheims: "And all the days of Cainan were
+          nine hundred and ten years, and he died."
+        sources: [bible:douay-rheims:Gen.5.14]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-cainan
+            statement: "And all the days of Cainan were nine hundred and ten years, and he died"
+          label: "nine hundred and ten years"
+  - id: israel.primeval.birth-of-jared
+    title: The birth of Jared
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:15 in the Douay-Rheims: "And Malaleel lived sixty-five years
+          and begot Jared."
+        sources: [bible:douay-rheims:Gen.5.15]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-malaleel
+            statement: "And Malaleel lived sixty-five years and begot Jared"
+          label: "sixty-five years"
+  - id: israel.primeval.death-of-malaleel
+    title: The death of Malaleel
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:17 in the Douay-Rheims: "And all the days of Malaleel were
+          eight hundred and ninety-five years, and he died."
+        sources: [bible:douay-rheims:Gen.5.17]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-malaleel
+            statement: "And all the days of Malaleel were eight hundred and ninety-five years, and he died"
+          label: "eight hundred and ninety-five years"
+  - id: israel.primeval.birth-of-henoch
+    title: The birth of Henoch
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:18 in the Douay-Rheims: "And Jared lived a hundred and
+          sixty-two years, and begot Henoch."
+        sources: [bible:douay-rheims:Gen.5.18]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-jared
+            statement: "And Jared lived a hundred and sixty-two years, and begot Henoch"
+          label: "a hundred and sixty-two years"
+  - id: israel.primeval.death-of-jared
+    title: The death of Jared
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:20 in the Douay-Rheims: "And all the days of Jared were nine
+          hundred and sixty-two years, and he died."
+        sources: [bible:douay-rheims:Gen.5.20]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-jared
+            statement: "And all the days of Jared were nine hundred and sixty-two years, and he died"
+          label: "nine hundred and sixty-two years"
+  - id: israel.primeval.birth-of-mathusala
+    title: The birth of Mathusala
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:21 in the Douay-Rheims: "And Henoch lived sixty-five years,
+          and begot Mathusala."
+        sources: [bible:douay-rheims:Gen.5.21]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-henoch
+            statement: "And Henoch lived sixty-five years, and begot Mathusala"
+          label: "sixty-five years"
+  - id: israel.primeval.translation-of-henoch
+    title: The translation of Henoch
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:23-24 in the Douay-Rheims gives a total and no death: "And
+          all the days of Henoch were three hundred and sixty-five years. And he
+          walked with God, and was seen no more: because God took him."
+        sources:
+          - bible:douay-rheims:Gen.5.23
+          - bible:douay-rheims:Gen.5.24
+        note: >-
+          The one notice in the chapter that does not end "and he died". The
+          total is recorded as Scripture states it and nothing here asserts what
+          the taking was.
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-henoch
+            statement: "And all the days of Henoch were three hundred and sixty-five years"
+          label: "three hundred and sixty-five years"
+  - id: israel.primeval.birth-of-lamech
+    title: The birth of Lamech
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:25 in the Douay-Rheims: "And Mathusala lived a hundred and
+          eighty-seven years, and begot Lamech."
+        sources: [bible:douay-rheims:Gen.5.25]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-mathusala
+            statement: "And Mathusala lived a hundred and eighty-seven years, and begot Lamech"
+          label: "a hundred and eighty-seven years"
+  - id: israel.primeval.death-of-mathusala
+    title: The death of Mathusala
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:27 in the Douay-Rheims: "And all the days of Mathusala were
+          nine hundred and sixty-nine years, and he died."
+        sources: [bible:douay-rheims:Gen.5.27]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-mathusala
+            statement: "And all the days of Mathusala were nine hundred and sixty-nine years, and he died"
+          label: "nine hundred and sixty-nine years"
+  - id: israel.primeval.birth-of-noe
+    title: The birth of Noe
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:28 in the Douay-Rheims: "And Lamech lived a hundred and
+          eighty-two years, and begot a son," whom verse 29 names Noe.
+        sources: [bible:douay-rheims:Gen.5.28]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-lamech
+            statement: "And Lamech lived a hundred and eighty-two years, and begot a son"
+          label: "a hundred and eighty-two years"
+  - id: israel.primeval.death-of-lamech
+    title: The death of Lamech
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:31 in the Douay-Rheims: "And all the days of Lamech came to
+          seven hundred and seventy-seven years, and he died."
+        sources: [bible:douay-rheims:Gen.5.31]
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-lamech
+            statement: "And all the days of Lamech came to seven hundred and seventy-seven years, and he died"
+          label: "seven hundred and seventy-seven years"
+  - id: israel.primeval.begetting-of-sem-cham-and-japheth
+    title: Noe begetting Sem, Cham and Japheth
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 5:31 in the Douay-Rheims closes the chapter with Noe's age:
+          "And Noe, when he was five hundred years old, begot Sem, Cham, and
+          Japheth."
+        sources: [bible:douay-rheims:Gen.5.31]
+        note: >-
+          The Douay carries this clause at the end of Genesis 5:31, where other
+          versifications number it 5:32; the verse cited is the Douay's own. The
+          five hundredth year of Noe is a year of one man's life, as the six
+          hundredth of Genesis 7:11 is.
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.birth-of-noe
+            statement: "And Noe, when he was five hundred years old, begot Sem, Cham, and Japheth"
+          label: "five hundred years old"
+  - id: israel.primeval.death-of-noe
+    title: The death of Noe
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 9:28-29 in the Douay-Rheims measures the rest of Noe's life
+          from the Flood itself: "And Noe lived after the flood three hundred
+          and fifty years. And all his days were in the whole nine hundred and
+          fifty years: and he died."
+        sources:
+          - bible:douay-rheims:Gen.9.28
+          - bible:douay-rheims:Gen.9.29
+        note: >-
+          Genesis gives this interval from the Flood rather than from Noe's
+          birth, which is why the anchor is the Deluge and not the birth of Noe.
+        date:
+          precision: relative
+          relative:
+            of: israel.primeval.deluge
+            statement: "And Noe lived after the flood three hundred and fifty years"
+          label: "three hundred and fifty years"
+  - id: israel.primeval.division-of-the-earth
+    title: The division of the earth among the nations
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 10:25 in the Douay-Rheims dates the division inside one man's
+          lifetime: "the name of the one was Phaleg, because in his days was the
+          earth divided."
+        sources: [bible:douay-rheims:Gen.10.25]
+        note: >-
+          Genesis states the division twice and measures it differently each
+          time: 10:25 inside the days of Phaleg, and 10:32 only as "By these
+          were the nations divided on the earth after the flood." Neither
+          statement gives a length of time, and this corpus does not supply one.
+          Genesis 11:1-9, the tower and the confusion of tongues, is not bound
+          to this event: no source inspected for this corpus states that the
+          scattering from Babel and the division in the days of Phaleg are the
+          same moment, and asserting it here would settle a question the sources
+          leave open.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-phaleg
+            statement: "the name of the one was Phaleg, because in his days was the earth divided"
+          label: "in his days was the earth divided"
+
+  # --- Genesis 11: the post-diluvian genealogy -------------------------------
+  - id: israel.patriarchs.birth-of-sale
+    title: The birth of Sale
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:12 in the Douay-Rheims: "And Arphaxad lived thirty-five
+          years, and begot Sale."
+        sources:
+          - bible:douay-rheims:Gen.11.12
+          - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+        note: >-
+          The Catholic Encyclopedia's "Biblical Chronology" records that the
+          Greek line of this genealogy is not the same chain: "the name of
+          Cainan, whose age at the birth of Sale is given as 130 years, is to be
+          found in the Greek only." The Douay and Hebrew put Sale directly after
+          Arphaxad, and this claim follows the Douay.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.begetting-of-arphaxad
+            statement: "And Arphaxad lived thirty-five years, and begot Sale"
+          label: "thirty-five years"
+  - id: israel.patriarchs.birth-of-heber
+    title: The birth of Heber
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:14 in the Douay-Rheims: "Sale also lived thirty years, and
+          begot Heber."
+        sources: [bible:douay-rheims:Gen.11.14]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-sale
+            statement: "Sale also lived thirty years, and begot Heber"
+          label: "thirty years"
+  - id: israel.patriarchs.birth-of-phaleg
+    title: The birth of Phaleg
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:16 in the Douay-Rheims: "And Heber lived thirty-four years,
+          and begot Phaleg."
+        sources: [bible:douay-rheims:Gen.11.16]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-heber
+            statement: "And Heber lived thirty-four years, and begot Phaleg"
+          label: "thirty-four years"
+  - id: israel.patriarchs.birth-of-reu
+    title: The birth of Reu
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:18 in the Douay-Rheims: "Phaleg also lived thirty years,
+          and begot Reu."
+        sources: [bible:douay-rheims:Gen.11.18]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-phaleg
+            statement: "Phaleg also lived thirty years, and begot Reu"
+          label: "thirty years"
+  - id: israel.patriarchs.birth-of-sarug
+    title: The birth of Sarug
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:20 in the Douay-Rheims: "And Reu lived thirty-two years,
+          and begot Sarug."
+        sources: [bible:douay-rheims:Gen.11.20]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-reu
+            statement: "And Reu lived thirty-two years, and begot Sarug"
+          label: "thirty-two years"
+  - id: israel.patriarchs.birth-of-nachor
+    title: The birth of Nachor
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:22 in the Douay-Rheims: "And Sarug lived thirty years, and
+          begot Nachor."
+        sources: [bible:douay-rheims:Gen.11.22]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-sarug
+            statement: "And Sarug lived thirty years, and begot Nachor"
+          label: "thirty years"
+  - id: israel.patriarchs.birth-of-thare
+    title: The birth of Thare
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:24 in the Douay-Rheims: "And Nachor lived nine and twenty
+          years, and begot Thare."
+        sources: [bible:douay-rheims:Gen.11.24]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-nachor
+            statement: "And Nachor lived nine and twenty years, and begot Thare"
+          label: "nine and twenty years"
+  - id: israel.patriarchs.death-of-thare
+    title: The death of Thare in Haran
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 11:32 in the Douay-Rheims: "And the days of Thare were two
+          hundred and five years, and he died in Haran."
+        sources: [bible:douay-rheims:Gen.11.32]
+        note: >-
+          Genesis 11:26 gives Thare seventy years at the begetting of Abram,
+          Nachor and Aran in one clause, and Genesis 12:4 gives Abram
+          seventy-five at his going forth from Haran. The three figures cannot
+          all be read as one straightforward sequence, and Genesis does not
+          settle the order of Thare's sons; the corpus records each statement
+          and reconciles none of them.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-thare
+            statement: "And the days of Thare were two hundred and five years, and he died in Haran"
+          label: "two hundred and five years"
+
+  # --- Abraham --------------------------------------------------------------
+  - id: israel.patriarchs.abram-contact-with-egypt-and-elam
+    title: Abram's passing contact with Egypt and with Elam
+    parent: israel.patriarchs.abram-enters-chanaan
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Catholic Encyclopedia's "Israelites" attaches both episodes to the
+          arrival in Chanaan in one clause: "the first of whom appears to have
+          reached Chanaan about 2300 B.C., when he came into passing contact
+          with Egypt (Genesis 12) and Elam (Genesis 14)."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08193a-4931095f]
+        note: >-
+          Recorded as an interval from the arrival rather than as a second
+          printing of "about 2300 B.C.", because the arrival already carries
+          that figure and one fact is held once. The article's own "appears to
+          have" and "about" are preserved on the arrival, and the same profile
+          boundary applies here: the figure rests on Babylonian synchronism, not
+          on the biblical genealogies. Genesis 14:4-5 supplies its own reckoning
+          for the war - "For they had served Chodorlahomor twelve years, and in
+          the thirteenth year they revolted from him. And in the fourteenth year
+          came Chodorlahomor" - but it counts from the beginning of a servitude
+          that no source inspected for this corpus dates, so it is reported here
+          and not authored as a claim.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.abram-enters-chanaan
+            statement: "when he came into passing contact with Egypt (Genesis 12) and Elam (Genesis 14)"
+          label: "when he came into passing contact with Egypt (Genesis 12) and Elam (Genesis 14)"
+  - id: israel.patriarchs.birth-of-ismael
+    title: The birth of Ismael
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 16:16 in the Douay-Rheims fixes the birth by Abram's age:
+          "Abram was four score and six years old when Agar brought him forth
+          Ismael."
+        sources:
+          - bible:douay-rheims:Gen.16.16
+          - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
+        note: >-
+          Genesis 16:3 measures the taking of Agar differently again, from the
+          settlement rather than from Abram's life: "She took Agar the Egyptian
+          her handmaid, ten years after they first dwelt in the land of
+          Chanaan." The Catholic Encyclopedia's "Abraham" reads the interval
+          from this birth to the covenant as thirteen years - "Thirteen years
+          later God appears to Abram and promises him a son by Sarai" - which is
+          the difference between this verse and Genesis 17:1.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-abram
+            statement: "Abram was four score and six years old when Agar brought him forth Ismael"
+          label: "four score and six years old"
+  - id: israel.patriarchs.theophany-at-mambre
+    title: The appearing of the Lord to Abraham in the vale of Mambre
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Catholic Encyclopedia's "Abraham" places the theophany the day
+          after the covenant of circumcision: "One day later, as Abraham is
+          sitting by his tent, in the vale of Mambre, Jehovah with two angels
+          appears to him in human form."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845]
+        note: >-
+          The interval is the encyclopedia's reading of the order of Genesis 17
+          and 18; Genesis itself opens chapter 18 with no measure of time. The
+          anchor is therefore an event the corpus already dates by Abraham's
+          own age, and no era is reached by it.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.covenant-of-circumcision
+            statement: "One day later, as Abraham is sitting by his tent, in the vale of Mambre, Jehovah with two angels appears to him in human form"
+          label: "One day later"
+  - id: israel.patriarchs.destruction-of-sodom
+    title: The destruction of Sodom and Gomorrha
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Catholic Encyclopedia's "Abraham" dates the overthrow to the
+          morning after the theophany at Mambre: "Then follows a description of
+          the destruction of the two cities and the escape of Lot. Next morning
+          Abraham, looking from his tent towards Sodom, sees the smoke of
+          destruction ascending to heaven."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845]
+        note: >-
+          Genesis 19:27-28 is the verse the encyclopedia is reading, and it says
+          "Abraham got up early in the morning" without naming a day of any
+          reckoning. Nothing here asserts a calendar.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.theophany-at-mambre
+            statement: "Next morning Abraham, looking from his tent towards Sodom, sees the smoke of destruction ascending to heaven"
+          label: "Next morning"
+  - id: israel.patriarchs.death-of-sara
+    title: The death of Sara at Cariatharbe
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Catholic Encyclopedia's "Isaac" states the interval in Isaac's
+          life: "His mother died when he was thirty-six years of age (cf.
+          Genesis 17:17; 23:1)." Genesis 23:1 supplies the other measure in its
+          own words: "And Sara lived a hundred and twenty-seven years."
+        sources:
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08175a-b904fd43
+          - bible:douay-rheims:Gen.23.1
+          - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
+        note: >-
+          Two measures of one death and no conflict between them: Genesis counts
+          from Sara's birth, which this corpus holds no event for, and the
+          encyclopedia counts from Isaac's, which it does. The claim is anchored
+          on the measure that reaches an event the corpus holds. The Catholic
+          Encyclopedia's "Abraham" prints the same total in its own summary,
+          "Sarah dies at the age of 127".
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-isaac
+            statement: "His mother died when he was thirty-six years of age"
+          label: "thirty-six years of age"
+  - id: israel.patriarchs.marriage-of-isaac
+    title: The taking of Rebecca to wife by Isaac
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 25:20 in the Douay-Rheims gives Isaac's age at the marriage:
+          "Who when he was forty years old, took to wife Rebecca the daughter of
+          Bathuel the Syrian of Mesopotamia, sister to Laban."
+        sources:
+          - bible:douay-rheims:Gen.25.20
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08175a-b904fd43
+        note: >-
+          Genesis 24 narrates the sending of Abraham's servant and the bringing
+          of Rebecca and gives no figure; Genesis 25:20 is the verse that gives
+          the age, and the two are bound to one event rather than dated twice.
+          The Catholic Encyclopedia's "Isaac" is vaguer than Scripture here - "A
+          few years later, he married Rebecca" - and adds nothing that is a
+          date.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-isaac
+            statement: "Who when he was forty years old, took to wife Rebecca the daughter of Bathuel the Syrian of Mesopotamia"
+          label: "forty years old"
+  - id: israel.patriarchs.death-of-abraham
+    title: The death of Abraham
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 25:7 in the Douay-Rheims gives the total: "And the days of
+          Abraham's life were a hundred and seventy-five years."
+        sources: [bible:douay-rheims:Gen.25.7]
+        note: >-
+          The Catholic Encyclopedia's "Abraham" prints a different total, and it
+          is kept as the alternate claim below rather than harmonised away. This
+          claim carries Scripture's figure because Scripture is rank 1 of this
+          profile's authority hierarchy and the encyclopedia is rank 6, and a
+          lower rank is consulted only where every higher rank is silent. Here
+          it is not silent.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-abram
+            statement: "And the days of Abraham's life were a hundred and seventy-five years"
+          label: "a hundred and seventy-five years"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        basis: >-
+          The Catholic Encyclopedia's "Abraham", closing its summary of the
+          life, prints a different total: "Finally, leaving all his possessions
+          to Isaac, he dies at age 170."
+        sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845]
+        note: >-
+          Five years short of the hundred and seventy-five Genesis 25:7 states,
+          and kept queryable with its own provenance rather than reconciled with
+          it. The encyclopedia offers no harmonisation and none is made here.
+          It is alternate and not preferred only because of rank: rank 6 against
+          Scripture's rank 1, on a point where Scripture is not silent.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-abram
+            statement: "he dies at age 170"
+          label: "age 170"
+  - id: israel.patriarchs.death-of-ismael
+    title: The death of Ismael
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 25:17 in the Douay-Rheims: "And the years of Ismael's life
+          were a hundred and thirty-seven, and decaying he died, and was
+          gathered unto his people."
+        sources: [bible:douay-rheims:Gen.25.17]
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-ismael
+            statement: "And the years of Ismael's life were a hundred and thirty-seven, and decaying he died"
+          label: "a hundred and thirty-seven"
+
+  # --- Isaac and Jacob ------------------------------------------------------
+  - id: israel.patriarchs.marriage-of-esau
+    title: The marriage of Esau to Judith and Basemath
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 26:34 in the Douay-Rheims: "And Esau being forty years old,
+          married wives, Judith, the daughter of Beeri, the Hethite, and
+          Basemath, the daughter of Elon, of the same place."
+        sources: [bible:douay-rheims:Gen.26.34]
+        note: >-
+          Esau's years are counted from the birth Genesis 25:26 records for both
+          twins at once, which is the event this claim is anchored on.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-jacob
+            statement: "And Esau being forty years old, married wives"
+          label: "forty years old"
+  - id: israel.patriarchs.death-of-isaac
+    title: The death of Isaac at Mambre
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 35:28 in the Douay-Rheims gives the total: "And the days of
+          Isaac were a hundred and eighty years." The Catholic Encyclopedia's
+          "Isaac" prints the same figure: "After Jacob's return, Isaac died at
+          the age of one hundred and eighty, and was buried by his sons in the
+          cave of Machpelah."
+        sources:
+          - bible:douay-rheims:Gen.35.28
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08175a-b904fd43
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-isaac
+            statement: "And the days of Isaac were a hundred and eighty years"
+          label: "a hundred and eighty years"
+  - id: israel.patriarchs.jacob-service-with-laban
+    title: The twenty years of Jacob's service with Laban
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 31:41 in the Douay-Rheims states the whole term and its two
+          parts: "And in this manner have I served thee in thy house twenty
+          years, fourteen for thy daughters, and six for thy flocks: thou hast
+          changed also my wages ten times."
+        sources:
+          - bible:douay-rheims:Gen.31.41
+          - bible:douay-rheims:Gen.30.25
+          - bible:douay-rheims:Gen.29.20
+          - bible:douay-rheims:Gen.29.30
+        note: >-
+          Genesis fixes where the twenty years divide but not where they begin
+          in any era, and it does not measure the whole twenty from any event
+          this corpus holds. The birth of Joseph is the one point inside the
+          term that Genesis marks, and it falls fourteen years in, not at the
+          start: Genesis 29:20 and 29:30 give the two sevens for Lia and Rachel
+          - "So Jacob served seven years for Rachel" and, after the week of the
+          match, "served with him other seven years" - and Genesis 30:25 puts
+          the birth at the moment Jacob asks leave to go, "And when Joseph was
+          born, Jacob said to his father-in-law: Send me away". The six years
+          for the flocks that Genesis 31:41 distinguishes are what runs from
+          that point. The interval below is therefore stated in both directions
+          about the birth and must not be read as twenty years after it.
+          Genesis 31:38 states the same twenty years in the same speech, and
+          the six for the flocks are stated only at 31:41.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-joseph
+            statement: "fourteen for thy daughters before this birth, and six for thy flocks after it"
+            note: >-
+              Not twenty years from the anchor. The anchor falls fourteen years
+              into the twenty, by Genesis 29:20, 29:30 and 30:25; only the six
+              years for the flocks run forward from it.
+          label: "twenty years - fourteen for thy daughters before this birth, six for thy flocks after it"
+
+  # --- Joseph in Egypt ------------------------------------------------------
+  # The chain here runs backwards from an event the corpus already holds. The
+  # descent into Egypt is dated by Jacob's own age at Genesis 47:9; Genesis 45:6
+  # measures the famine from the moment that immediately precedes it; the years
+  # of plenty are measured from the famine at Genesis 41:53-54; and Joseph's own
+  # ages hang from the elevation. Nothing in the chain is computed here.
+  - id: israel.egypt.years-of-famine
+    title: The seven years of famine in Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 45:6 in the Douay-Rheims has Joseph state how much of the
+          famine has run and how much remains, at the moment he makes himself
+          known to his brethren: "For it is two years since the famine began to
+          be upon the land, and five years more remain, wherein there can be
+          neither ploughing nor reaping."
+        sources: [bible:douay-rheims:Gen.45.6]
+        note: >-
+          Joseph speaks these words in Genesis 45, and Genesis 45:9-46:7 puts
+          the sending for Jacob and the going down into Egypt immediately after
+          them, with no interval stated; that is why the two years are anchored
+          on the descent. Genesis 45:11 repeats the remainder in the same
+          speech, "for there are yet five years of famine remaining". No source
+          inspected for this corpus reaches any era from this famine.
+        date:
+          precision: relative
+          relative:
+            of: israel.egypt.descent
+            statement: "For it is two years since the famine began to be upon the land, and five years more remain"
+          label: "two years since the famine began to be upon the land, and five years more remain"
+  - id: israel.egypt.years-of-plenty
+    title: The seven years of plenty in Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 41:53-54 in the Douay-Rheims joins the two terms end to end:
+          "Now when the seven years of plenty that had been in Egypt were
+          passed: The seven years of scarcity, which Joseph had foretold, began
+          to come."
+        sources:
+          - bible:douay-rheims:Gen.41.53
+          - bible:douay-rheims:Gen.41.54
+        date:
+          precision: relative
+          relative:
+            of: israel.egypt.years-of-famine
+            statement: "Now when the seven years of plenty that had been in Egypt were passed: The seven years of scarcity, which Joseph had foretold, began to come"
+          label: "the seven years of plenty"
+  - id: israel.egypt.joseph-before-pharao
+    title: Joseph standing before Pharao and set over the land of Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 41:46-47 in the Douay-Rheims puts the elevation immediately
+          before the first of the seven fruitful years: "(Now he was thirty
+          years old when he stood before king Pharao), and he went round all the
+          countries of Egypt. And the fruitfulness of the seven years came."
+        sources:
+          - bible:douay-rheims:Gen.41.46
+          - bible:douay-rheims:Gen.41.47
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+        note: >-
+          Genesis states the sequence and no measured interval between the
+          elevation and the first year of plenty, and none is asserted here. The
+          Catholic Encyclopedia's "Joseph" declines to give the career an era at
+          all: "The date of his eventful career can be fixed only approximately
+          at the present day, for the Biblical account of Joseph's life does not
+          name the particular Pharaoh of his time", adding only that "His term
+          of office in Egypt falls probably under one of the later Hyksos
+          kings." That is a dynasty and a hedge, not a year, and no year is
+          authored from it.
+        date:
+          precision: relative
+          relative:
+            of: israel.egypt.years-of-plenty
+            statement: "and he went round all the countries of Egypt. And the fruitfulness of the seven years came"
+          label: "when he stood before king Pharao"
+  - id: israel.egypt.butler-and-baker
+    title: The dreams of Pharao's chief butler and chief baker
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 41:1 in the Douay-Rheims measures the gap from the prison to
+          the throne room: "After two years Pharao had a dream."
+        sources:
+          - bible:douay-rheims:Gen.41.1
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+        note: >-
+          Genesis 40:20 measures the shorter interval inside the episode itself,
+          "The third day after this was the birthday of Pharao", and the
+          Catholic Encyclopedia's "Joseph" reads the two together: Joseph bade
+          the chief butler remember him, "as indeed he was three days after, on
+          Pharaoh's birthday (xl). Two years rolled by, after which the monarch
+          himself had two dreams."
+        date:
+          precision: relative
+          relative:
+            of: israel.egypt.joseph-before-pharao
+            statement: "After two years Pharao had a dream"
+          label: "two years"
+  - id: israel.patriarchs.birth-of-joseph
+    title: The birth of Joseph
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 41:46 in the Douay-Rheims gives Joseph's age at his elevation
+          and so the interval from his birth: "(Now he was thirty years old when
+          he stood before king Pharao)."
+        sources:
+          - bible:douay-rheims:Gen.41.46
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+        note: >-
+          Genesis 30:22-24 narrates the birth and gives no figure with it, so
+          the interval is taken from the one verse that states an age. The
+          Catholic Encyclopedia's "Joseph" adds a place and not a date: "He was
+          born in Haran, of Rachel, Jacob's beloved and long-barren wife."
+        date:
+          precision: relative
+          relative:
+            of: israel.egypt.joseph-before-pharao
+            statement: "Now he was thirty years old when he stood before king Pharao"
+          label: "thirty years old"
+  - id: israel.patriarchs.joseph-sold-into-egypt
+    title: Joseph sold by his brethren into Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 37:2 in the Douay-Rheims gives Joseph's age at the accusation
+          that opens the chapter: "Joseph, when he was sixteen years old, was
+          feeding the flock with his brethren, being but a boy."
+        sources: [bible:douay-rheims:Gen.37.2]
+        note: >-
+          The age is stated at the head of the chapter, before the dreams, the
+          journey to Dothain and the selling; Genesis states no interval between
+          them, and none is asserted here.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-joseph
+            statement: "Joseph, when he was sixteen years old, was feeding the flock with his brethren, being but a boy"
+          label: "sixteen years old"
+  - id: israel.egypt.brethren-first-journey
+    title: The first going down of Joseph's brethren into Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Catholic Encyclopedia's "Joseph" measures the interval from the
+          selling: "Admitted into Joseph's presence, his brothers failed to
+          recognize in the Egyptian grandee before them the lad whom they had so
+          cruelly treated twenty years before."
+        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad]
+        note: >-
+          Twenty years is the encyclopedia's figure; Genesis 42 states no
+          interval at all. The journey itself falls inside the famine, which is
+          separately dated and separately bound to the same chapters.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.joseph-sold-into-egypt
+            statement: "the lad whom they had so cruelly treated twenty years before"
+          label: "twenty years before"
+  - id: israel.patriarchs.death-of-jacob
+    title: The death of Jacob in Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 47:28 in the Douay-Rheims gives both the years in Egypt and
+          the total: "And he lived in it seventeen years: and all the days of
+          his life came to a hundred and forty-seven years." The Catholic
+          Encyclopedia's "Jacob" prints the same total: he "passed away at the
+          age of 147 (xlvi, 29-xlix)."
+        sources:
+          - bible:douay-rheims:Gen.47.28
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08261a-9865c411
+        note: >-
+          The seventeen years in Egypt are counted from the descent, which
+          Genesis 47:9 dates by Jacob's age of a hundred and thirty; the hundred
+          and forty-seven are counted from his birth, which is the anchor used
+          here because the corpus holds it as an event.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-jacob
+            statement: "all the days of his life came to a hundred and forty-seven years"
+          label: "a hundred and forty-seven years"
+  - id: israel.patriarchs.mourning-for-jacob
+    title: The embalming of Jacob and the mourning of Egypt
+    parent: israel.patriarchs.death-of-jacob
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 50:3 in the Douay-Rheims states two durations: "And while they
+          were fulfilling his commands, there passed forty days: for this was
+          the manner with bodies that were embalmed, and Egypt mourned for him
+          seventy days."
+        sources: [bible:douay-rheims:Gen.50.3]
+        note: >-
+          Genesis states the forty days of embalming and the seventy days of
+          mourning without saying how they are to be added, and this corpus does
+          not add them.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.death-of-jacob
+            statement: "there passed forty days: for this was the manner with bodies that were embalmed, and Egypt mourned for him seventy days"
+          label: "forty days ... seventy days"
+  - id: israel.patriarchs.death-of-joseph
+    title: The death of Joseph in Egypt
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Genesis 50:25 in the Douay-Rheims: "And he died, being a hundred and
+          ten years old. And being embalmed, he was laid in a coffin in Egypt."
+          Genesis 50:22 states the same total. The Catholic Encyclopedia's
+          "Joseph" prints it too: "He died at the age of 110, and his body was
+          embalmed and put in a coffin in Egypt."
+        sources:
+          - bible:douay-rheims:Gen.50.25
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+        note: >-
+          The same encyclopedia adds that the figure may be conventional rather
+          than counted: "Even the age of 110 years, at which Joseph died,
+          appears to have been regarded in Egypt - as is shown by several papyri
+          - as the most perfect age to be desired." The hedge is reported and
+          not resolved.
+        date:
+          precision: relative
+          relative:
+            of: israel.patriarchs.birth-of-joseph
+            statement: "And he died, being a hundred and ten years old"
+          label: "a hundred and ten years old"
+  # === lane josue-judges ===
+  # --- ot-events-josue ---------------------------------------------------
+  - id: israel.conquest.sending-of-the-spies-to-jericho
+    title: The sending of the spies to Jericho, three days before the passage
+    note: >-
+      Scripture anchors this stretch on the passage of the Jordan and on
+      nothing else: the order at Josue 1:11 counts forward to it, the spies'
+      stay counts the same three days, and Josue 3:2 counts them again. No
+      source inspected for this lane gives the sending a month, a day or a
+      year of its own.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Josue 1:11 in the Douay-Rheims counts the days to the passage:
+          "Prepare your victuals: for after the third day you shall pass over
+          the Jordan, and shall go in to possess the land, which the Lord your
+          God will give you." Josue 2:22 says of the spies that "they went and
+          came to the mountains, and stayed there three days, till they that
+          pursued them were returned", and Josue 3:1-2 that the people "abode
+          there for three days. After which, the heralds went through the midst
+          of the camp".
+        sources: [bible:douay-rheims:Jos.1.11, bible:douay-rheims:Jos.2.22, bible:douay-rheims:Jos.3.2]
+        note: >-
+          Three days before the coming up out of the Jordan that Josue 4:19
+          dates to the tenth day of the first month. The corpus does not
+          subtract the three days from the tenth to name a day for the sending;
+          Scripture does not perform that subtraction and neither does any
+          source inspected here.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.crossing-of-the-jordan
+            statement: "after the third day you shall pass over the Jordan"
+          label: "three days before the passage of the Jordan"
+
+  - id: israel.conquest.war-against-the-kings-of-chanaan
+    title: Josue's war against the kings of Chanaan
+    note: >-
+      Scripture gives the war no length in years and no era. Its one measure of
+      duration is the narrator's "a long time" at Josue 11:18, and its one
+      numerical figure anywhere in the conquest is Caleb's forty-five years at
+      Josue 14:10, which this corpus holds once on
+      israel.conquest.calebs-inheritance and does not subtract from. The
+      Catholic Encyclopedia's article on the book supplies no year for the war
+      either.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Josue 11:18 in the Douay-Rheims states the only duration the book
+          gives the war: "Josue made war a long time against these kings." Its
+          close is stated at Josue 11:23: "So Josue took all the land, as the
+          Lord spoke to Moses, and delivered it in possession to the children
+          of Israel, according to their divisions and tribes. And the land
+          rested from wars."
+        sources: [bible:douay-rheims:Jos.11.18, bible:douay-rheims:Jos.11.23]
+        note: >-
+          "A long time" is the sacred text's own phrase and is not a number.
+          The war begins after the passage of the Jordan that Josue 4:19 dates
+          to the tenth day of the first month, which is the anchor named here;
+          how long after, no inspected source says.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.crossing-of-the-jordan
+            statement: "Josue made war a long time against these kings"
+          label: "a long time"
+
+  - id: israel.conquest.division-of-the-land
+    title: The division of the land among the tribes
+    note: >-
+      Walter Drum's Catholic Encyclopedia article on the book divides it at the
+      same place - "The Book of Josue contains two parts: the conquest of the
+      promised land and the division thereof", the second being "(b) The
+      Division of the Land among the Tribes of Israel (xiii-xxii)" - and
+      attaches no date to either part.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Josue 13:1 in the Douay-Rheims opens the division where the war of
+          Josue 11:23 left off: "Josue was old, and far advanced in years, and
+          the Lord said to him: Thou art grown old, and advanced in age, and
+          there is a very large country left, which is not yet divided by lot."
+        sources: [bible:douay-rheims:Jos.13.1, bible:douay-rheims:Jos.11.23]
+        note: >-
+          After the war and in Josue's old age; the text states the order and
+          not an interval. The only number spoken inside the division is
+          Caleb's, at Josue 14:10, and it is held once on
+          israel.conquest.calebs-inheritance rather than repeated here.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.war-against-the-kings-of-chanaan
+            statement: >-
+              the land rested from wars, and Josue was old, and far advanced in
+              years, and there is a very large country left, which is not yet
+              divided by lot
+          label: "when Josue was old, and far advanced in years"
+
+  - id: israel.conquest.last-charge-and-death-of-josue
+    title: The last charge and death of Josue
+    note: >-
+      Drum's article groups the two as one close to the book - "Epilogue: last
+      message and death of Josue (xxiii and xxiv)" - and dates neither. Josue
+      24:29 gives an age and not a date, and no source inspected for this lane
+      dates the birth of Josue, so the hundred and ten years reach no era here.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Josue 23:1 in the Douay-Rheims sets the charge after the division:
+          "And when a long time was passed, after that the Lord had given peace
+          to Israel, all the nations round about being subdued, and Josue being
+          now old, and far advanced in years". Josue 24:29 closes it: "And
+          after these things Josue the son of Nun the servant of the Lord died,
+          being a hundred and ten years old."
+        sources: [bible:douay-rheims:Jos.23.1, bible:douay-rheims:Jos.24.29]
+        note: >-
+          "A long time" after the division, which is itself dated only
+          relatively; the chain reaches no year in any era, which is the honest
+          state of the text. Judges 2:8 repeats the age of a hundred and ten
+          without adding a date.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.division-of-the-land
+            statement: >-
+              when a long time was passed, after that the Lord had given peace
+              to Israel, all the nations round about being subdued, and Josue
+              being now old, and far advanced in years
+          label: "when a long time was passed"
+
+  # --- ot-events-judges --------------------------------------------------
+  - id: israel.judges.after-the-death-of-josue
+    title: The tribes' wars after the death of Josue, and the rebuke at Bochim
+    note: >-
+      Drum's Catholic Encyclopedia article on Judges marks this stretch off as
+      the book's introduction - "(1) Introduction (i-xx, 5). A summary of the
+      conquest of Chanaan (i, 1-36). The angel of Jahweh reproves the tribes
+      that made league with the stranger (ii, 1-5)" - and gives it no date. The
+      printed "i-xx, 5" is the article's misprint for i, 1-ii, 5, as its own
+      next clause shows.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 1:1 in the Douay-Rheims dates the whole introduction from the
+          death of Josue: "After the death of Josue, the children of Israel
+          consulted the Lord, saying: Who shall go up before us against the
+          Chanaanite, and shall be the leader of the war?"
+        sources: [bible:douay-rheims:Judg.1.1]
+        note: >-
+          The verse states the order and no interval. Several of the wars
+          summarised here are also told in Josue - the encyclopedia lists
+          "Juda's siege of Dabir (1:10-15; Joshua 15:14-19), the Jebusites in
+          Jerusalem (1:21; Joshua 15:63)" among them - and this corpus takes no
+          position on which telling is the earlier.
+        date:
+          precision: relative
+          relative:
+            of: israel.conquest.last-charge-and-death-of-josue
+            statement: "After the death of Josue, the children of Israel consulted the Lord"
+          label: "after the death of Josue"
+
+  - id: israel.judges.servitude-under-chusan-rasathaim
+    title: The eight years' servitude under Chusan Rasathaim
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 3:8 in the Douay-Rheims states the span: the Lord "delivered
+          them into the hands of Chusan Rasathaim, king of Mesopotamia, and
+          they served him eight years."
+        sources: [bible:douay-rheims:Judg.3.8]
+        note: >-
+          A duration inside the period of the Judges, anchored where the text
+          anchors it and nowhere else. This corpus does not add the stated
+          spans of the judges together; whether they run consecutively or
+          overlap is not settled by any source inspected for this lane.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: they served him eight years
+          label: "they served him eight years"
+
+  - id: israel.judges.othoniel-judgeship
+    title: The judgeship of Othoniel, and the forty years' rest
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 3:11 in the Douay-Rheims closes the account of Othoniel with
+          the first of the book's rest formulas: "And the land rested forty
+          years, and Othoniel, the son of Cenez, died."
+        sources: [bible:douay-rheims:Judg.3.11]
+        note: >-
+          The formula measures the land's rest, not the length of Othoniel's
+          own rule, and Scripture does not equate the two. No total is computed
+          from it here.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: the land rested forty years
+          label: "the land rested forty years"
+
+  - id: israel.judges.servitude-under-eglon
+    title: The eighteen years' servitude under Eglon of Moab
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 3:14 in the Douay-Rheims states the span: "And the children of
+          Israel served Eglon, king of Moab, eighteen years."
+        sources: [bible:douay-rheims:Judg.3.14]
+        note: A duration inside the period of the Judges; no absolute year is stated.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: the children of Israel served Eglon, king of Moab, eighteen years
+          label: "eighteen years"
+
+  - id: israel.judges.aod-judgeship
+    title: The judgeship of Aod, and the eighty years' rest
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 3:30 in the Douay-Rheims: "And Moab was humbled that day under
+          the hand of Israel: and the land rested eighty years."
+        sources: [bible:douay-rheims:Judg.3.30]
+        note: >-
+          The only eighty in the book. Judges 3:31 adds Samgar without any
+          number of years, so Samgar receives no event here.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: the land rested eighty years
+          label: "the land rested eighty years"
+
+  - id: israel.judges.servitude-under-jabin
+    title: The twenty years' oppression under Jabin of Chanaan
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 4:3 in the Douay-Rheims states the span in the crying of
+          Israel: Sisara "had nine hundred chariots set with scythes and for
+          twenty years had grievously oppressed them."
+        sources: [bible:douay-rheims:Judg.4.3]
+        note: >-
+          Judges 4:1 places it "after the death of Aod", which is an order and
+          not an interval.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: for twenty years had grievously oppressed them
+          label: "twenty years"
+
+  - id: israel.judges.debbora-and-barac
+    title: The judgeship of Debbora and Barac, and the forty years' rest
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 5:32 in the Douay-Rheims, the last verse of the canticle's
+          chapter: "And the land rested for forty years."
+        sources: [bible:douay-rheims:Judg.5.32]
+        note: >-
+          The tracked Douay carries the formula at 5:32, after the canticle;
+          other versifications carry it at 5:31. The canticle itself is words
+          sung on the day of the victory (Judges 5:1) and is bound as an
+          utterance of this same event, not as a second one.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: the land rested for forty years
+          label: "the land rested for forty years"
+
+  - id: israel.judges.servitude-under-madian
+    title: The seven years under the hand of Madian
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 6:1 in the Douay-Rheims: the Lord "delivered them into the
+          hand of Madian seven years".
+        sources: [bible:douay-rheims:Judg.6.1]
+        note: A duration inside the period of the Judges; no absolute year is stated.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he delivered them into the hand of Madian seven years
+          label: "seven years"
+
+  - id: israel.judges.gedeon-judgeship
+    title: The judgeship of Gedeon, and the forty years' rest
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 8:28 in the Douay-Rheims attaches the rest to Gedeon's own
+          presiding: "but the land rested for forty years, while Gedeon
+          presided."
+        sources: [bible:douay-rheims:Judg.8.28]
+        note: >-
+          Judges 8:32 adds only that Gedeon "died in a good old age", which is
+          not a number of years. Drum's article calls Gedeon and Samson the
+          chief heroes of the book and dates neither.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: the land rested for forty years, while Gedeon presided
+          label: "the land rested for forty years, while Gedeon presided"
+
+  - id: israel.judges.abimelech-reign
+    title: The three years of Abimelech
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 9:22 in the Douay-Rheims: "So Abimelech reigned over Israel
+          three years."
+        sources: [bible:douay-rheims:Judg.9.22]
+        note: >-
+          The text says reigned, not judged, and the corpus keeps the word. The
+          three years are not added to any other span here.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: Abimelech reigned over Israel three years
+          label: "three years"
+
+  - id: israel.judges.thola-judgeship
+    title: The twenty-three years of Thola
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 10:2 in the Douay-Rheims: "And he judged Israel three and
+          twenty years, and he died, and was buried in Samir."
+        sources: [bible:douay-rheims:Judg.10.2]
+        note: >-
+          Judges 10:1 places him "After Abimelech", which is an order and not
+          an interval.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he judged Israel three and twenty years
+          label: "three and twenty years"
+
+  - id: israel.judges.jair-judgeship
+    title: The twenty-two years of Jair the Galaadite
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 10:3 in the Douay-Rheims: "To him succeeded Jair, the
+          Galaadite, who judged Israel for two and twenty years".
+        sources: [bible:douay-rheims:Judg.10.3]
+        note: >-
+          "To him succeeded" states succession, not an interval; the twenty-two
+          years are the only number.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: Jair, the Galaadite, judged Israel for two and twenty years
+          label: "two and twenty years"
+
+  - id: israel.judges.oppression-by-ammon
+    title: The eighteen years' affliction beyond the Jordan
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 10:8 in the Douay-Rheims: "And they were afflicted, and
+          grievously oppressed for eighteen years, all they that dwelt beyond
+          the Jordan in the land of the Amorrhite, who is in Galaad".
+        sources: [bible:douay-rheims:Judg.10.8]
+        note: >-
+          Judges 10:7 names both the Philistines and the children of Ammon; the
+          eighteen years are stated of those beyond the Jordan. Jephte's own
+          three hundred years, spoken in the same episode at Judges 11:26, are
+          held separately on israel.judges.jephte-three-hundred-years.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: they were afflicted, and grievously oppressed for eighteen years
+          label: "eighteen years"
+
+  - id: israel.judges.jephte-judgeship
+    title: The six years of Jephte
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 12:7 in the Douay-Rheims: "And Jephte, the Galaadite, judged
+          Israel six years: and he died, and was buried in his city of Galaad."
+        sources: [bible:douay-rheims:Judg.12.7]
+        note: >-
+          Six years of judgeship, distinct from the three hundred years Jephte
+          argues to the king of Ammon at Judges 11:26; the corpus keeps the two
+          apart and reconciles neither.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: Jephte, the Galaadite, judged Israel six years
+          label: "six years"
+
+  - id: israel.judges.abesan-judgeship
+    title: The seven years of Abesan of Bethlehem
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 12:9 in the Douay-Rheims closes the notice of Abesan: "And he
+          judged Israel seven years".
+        sources: [bible:douay-rheims:Judg.12.9]
+        note: A duration inside the period of the Judges; no absolute year is stated.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he judged Israel seven years
+          label: "seven years"
+
+  - id: israel.judges.ahialon-judgeship
+    title: The ten years of Ahialon the Zabulonite
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 12:11 in the Douay-Rheims: "To him succeeded Ahialon, a
+          Zabulonite: and he judged Israel ten years".
+        sources: [bible:douay-rheims:Judg.12.11]
+        note: A duration inside the period of the Judges; no absolute year is stated.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he judged Israel ten years
+          label: "ten years"
+
+  - id: israel.judges.abdon-judgeship
+    title: The eight years of Abdon the Pharathonite
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 12:14 in the Douay-Rheims closes the notice of Abdon: "and he
+          judged Israel eight years".
+        sources: [bible:douay-rheims:Judg.12.14]
+        note: A duration inside the period of the Judges; no absolute year is stated.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he judged Israel eight years
+          label: "eight years"
+
+  - id: israel.judges.servitude-under-the-philistines
+    title: The forty years in the hands of the Philistines
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 13:1 in the Douay-Rheims: the Lord "delivered them into the
+          hands of the Philistines forty years."
+        sources: [bible:douay-rheims:Judg.13.1]
+        note: >-
+          The span within which Samson's own twenty years fall, since Judges
+          15:20 says he judged Israel "in the days of the Philistines"; the
+          corpus states that the text places one inside the other and computes
+          nothing from it.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he delivered them into the hands of the Philistines forty years
+          label: "forty years"
+
+  - id: israel.judges.samson-judgeship
+    title: The twenty years of Samson
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Judges 15:20 in the Douay-Rheims: "And he judged Israel, in the days
+          of the Philistines, twenty years." Judges 16:31 states the same
+          figure again at his burial: "and he judged Israel twenty years."
+        sources: [bible:douay-rheims:Judg.15.20, bible:douay-rheims:Judg.16.31]
+        note: >-
+          The tracked Douay states the twenty years twice, before and after the
+          Dalila narrative, and this corpus reads them as one span stated
+          twice, not as two spans to be added.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: he judged Israel, in the days of the Philistines, twenty years
+          label: "twenty years"
+  # === lane kings ===
+  # --- Samuel, Heli and the ark (1 Kings 1-7) -------------------------------
+  - id: israel.judges.samuel-at-silo
+    title: The birth of Samuel and his childhood ministry at Silo under Heli
+    parent: israel.judges.period
+    note: >-
+      No source inspected for this lane attaches an Anno Mundi or a B.C. year to
+      Samuel's birth. The Catholic Encyclopedia's article on Saul, read in full
+      for this lane, calls Samuel "the last of the great Judges of Israel" and
+      prints no date of any kind; its article on the First and Second Books of
+      Kings dates the writing and not the events. What Scripture does state is
+      the containing tenure, and that is what is recorded here.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims places the whole episode inside Heli's tenure at
+          Silo. 1 Kings (1 Samuel) 1:3, "And this man went up out of his city
+          upon the appointed days, to adore and to offer sacrifice to the Lord
+          of hosts in Silo. And the two sons of Heli, Ophni and Phinees, were
+          there priests of the Lord."; 1:20, "And it came to pass when the time
+          was come about, Anna conceived and bore a son, and called his name
+          Samuel: because she had asked him of the Lord."; and 2:11, "but the
+          child ministered in the sight of the Lord before the face of Heli the
+          priest."
+        sources:
+          - bible:douay-rheims:1Kings.1.3
+          - bible:douay-rheims:1Kings.1.20
+          - bible:douay-rheims:1Kings.2.11
+        note: >-
+          Containment, not an interval and not a year. The forty years of
+          1 Kings 4:18 are Heli's whole judgeship; the text nowhere says how far
+          into them Samuel was born, and this corpus does not supply a figure.
+          The recurring "appointed days" and "every year" of 1:3, 1:7 and 2:19
+          are a yearly observance, not a chronological anchor.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.heli-judgeship
+            statement: >-
+              within the forty years Heli judged Israel, while Ophni and Phinees
+              his sons were priests of the Lord in Silo
+          label: "in the days when the two sons of Heli were priests of the Lord in Silo"
+
+  - id: israel.judges.call-of-samuel
+    title: The call of Samuel in the temple at Silo
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Kings (1 Samuel) 3:1-2 sets the call inside
+          Heli's tenure and at the end of it: "Now the child Samuel ministered
+          to the Lord before Heli, and the word of the Lord was precious in
+          those days, there was no manifest vision. And it came to pass one day
+          when Heli lay in his place, and his eyes were grown dim, that he could
+          not see."
+        sources:
+          - bible:douay-rheims:1Kings.3.1
+          - bible:douay-rheims:1Kings.3.2
+        note: >-
+          "In those days" and "one day" are the only temporal words the passage
+          carries, and neither is a date. Heli's failing sight at 3:2 is repeated
+          at 4:15, where he is "ninety and eight years old"; the corpus does not
+          turn that into an interval, because the text does not say how long
+          stood between the two notices.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.heli-judgeship
+            statement: >-
+              while the child Samuel ministered to the Lord before Heli, whose
+              eyes were grown dim
+          label: "Now the child Samuel ministered to the Lord before Heli"
+
+  - id: israel.judges.capture-of-the-ark
+    title: The defeat at Aphec and the taking of the ark of God
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims joins the taking of the ark to the last day of Heli's
+          judgeship. 1 Kings (1 Samuel) 4:11, "And the ark of God was taken: and
+          the two sons of Heli, Ophni and Phinees, were slain."; 4:12, "And there
+          ran a man of Benjamin out of the army, and came to Silo the same day";
+          and 4:18, where Heli, hearing it, "fell from his stool backwards by the
+          door, and broke his neck and died. For he was an old man, and far
+          advanced in years: And he judged Israel forty years."
+        sources:
+          - bible:douay-rheims:1Kings.4.11
+          - bible:douay-rheims:1Kings.4.12
+          - bible:douay-rheims:1Kings.4.18
+        note: >-
+          The forty years are Heli's, not the ark's, and the text states only
+          that the news reached Silo "the same day" and that Heli died on
+          hearing it. So the capture closes the forty years; it is not dated to
+          any year of them, and no era figure is asserted here. Some Greek copies
+          read twenty years at 4:18, as the note on the judgeship already records.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.heli-judgeship
+            statement: >-
+              on the day Heli died, which closed the forty years in which he
+              judged Israel
+          label: "he judged Israel forty years"
+
+  - id: israel.judges.ark-among-the-philistines
+    title: The seven months of the ark in the land of the Philistines
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Kings (1 Samuel) 6:1 states the length
+          outright: "Now the ark of God was in the land of the Philistines seven
+          months." The stay begins at 5:1, "And the Philistines took the ark of
+          God, and carried it from the Stone of help into Azotus."
+        sources:
+          - bible:douay-rheims:1Kings.5.1
+          - bible:douay-rheims:1Kings.6.1
+        note: >-
+          A duration measured from the capture, which itself carries no era
+          figure, so nothing here yields a year. The seven months run from Azotus
+          through Geth and Accaron to the sending back by the kine to Bethsames,
+          and end where the twenty years at Cariathiarim begin.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.capture-of-the-ark
+            statement: the ark of God was in the land of the Philistines seven months
+          label: "Now the ark of God was in the land of the Philistines seven months"
+
+  - id: israel.judges.victory-at-maspha
+    title: "Samuel's assembly at Maspha and the deliverance from the Philistines"
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims sets the assembly in the twentieth year of the ark's
+          abode at Cariathiarim, the year already held as an event by this
+          corpus. 1 Kings (1 Samuel) 7:2, "from the day the ark of the Lord abode
+          in Cariathiarim, days were multiplied (for it was now the twentieth
+          year) and all the house of Israel rested, following the Lord"; and 7:3,
+          which follows straight upon it, "And Samuel spoke to all the house of
+          Israel, saying: If you turn to the Lord with all your heart, put away
+          the strange gods from among you".
+        sources:
+          - bible:douay-rheims:1Kings.7.2
+          - bible:douay-rheims:1Kings.7.3
+        note: >-
+          The twentieth year is counted from the ark's arrival at Cariathiarim
+          and from no era. 7:13-14 says the Philistines "did not come any more
+          into the borders of Israel ... all the days of Samuel", which is a
+          statement about the rest of Samuel's life and not a further date for
+          this assembly.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.ark-at-cariathiarim
+            statement: >-
+              in the twentieth year from the day the ark of the Lord abode in
+              Cariathiarim, when all the house of Israel rested, following the
+              Lord
+          label: "for it was now the twentieth year"
+
+  # --- The demand for a king and Saul (1 Kings 8-12) ------------------------
+  - id: israel.monarchy.demand-for-a-king
+    title: The elders of Israel ask Samuel for a king
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims dates the demand by Samuel's age. 1 Kings (1 Samuel)
+          8:1, "And it came to pass, when Samuel was old, that he appointed his
+          sons to be judges over Israel."; and 8:5, "Behold thou art old, and thy
+          sons walk not in thy ways: make us a king, to judge us, as all nations
+          have." James Driscoll's "Saul" in the Catholic Encyclopedia (New York,
+          1912) narrates the same occasion in the same terms: "The prophet
+          Samuel, who is counted as the last of the great Judges of Israel, was
+          growing old and the administration of civic and religious affairs had
+          been confided to his sons."
+        sources:
+          - bible:douay-rheims:1Kings.8.1
+          - bible:douay-rheims:1Kings.8.5
+          - artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13486d-f838ad5f
+        note: >-
+          The Catholic Encyclopedia's article on Saul was read in full for this
+          lane and contains no date of any kind, in any era; it is cited here for
+          its placing of the demand in Samuel's old age and for nothing else.
+          Samuel's old age is a point in the period of the judges and not a year,
+          and the corpus does not convert it into one.
+        date:
+          precision: relative
+          relative:
+            of: israel.judges.period
+            statement: >-
+              at the close of the judges, when Samuel was old and had appointed
+              his sons to be judges over Israel
+          label: "when Samuel was old"
+
+  - id: israel.monarchy.anointing-of-saul
+    title: Saul's search for the asses and his anointing by Samuel in private
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims puts the private anointing before the public election
+          by lot. 1 Kings (1 Samuel) 10:1, "And Samuel took a little vial of oil,
+          and poured it upon his head, and kissed him, and said: Behold, the Lord
+          hath anointed thee to be prince over his inheritance"; and 10:17, which
+          opens the next scene, "And Samuel called together the people to the
+          Lord in Maspha".
+        sources:
+          - bible:douay-rheims:1Kings.10.1
+          - bible:douay-rheims:1Kings.10.17
+        note: >-
+          Order, not interval: Scripture says the anointing came first and gives
+          no length of time between it and Maspha. The "three days ago" of 9:20
+          measures how long the asses had been lost and dates nothing else. James
+          Driscoll's "Saul" in the Catholic Encyclopedia narrates the anointing
+          and then says "A month after these events the newly-chosen king, who
+          had hitherto refrained from asserting his royal prerogatives, justifies
+          his election by defeating the Ammonites and delivering Jabes Galaad" —
+          which would measure the month from this episode, where 1 Kings 11:1
+          measures it from Maspha. The two are not harmonised here, and neither
+          is offered as a rival claim, because "these events" in the article has
+          no determinate antecedent.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.saul-accession
+            statement: >-
+              before Samuel called together the people to the Lord in Maspha,
+              where the lot fell upon Saul
+          label: "Behold, the Lord hath anointed thee to be prince over his inheritance"
+
+  - id: israel.monarchy.deliverance-of-jabes-galaad
+    title: "Saul's defeat of Naas the Ammonite and the deliverance of Jabes Galaad"
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Kings (1 Samuel) 11:1 dates it by an
+          interval from what precedes: "And it came to pass about a month after
+          this, that Naas, the Ammonite, came up, and began to fight against
+          Jabes Galaad."
+        sources: [bible:douay-rheims:1Kings.11.1]
+        note: >-
+          The month runs from the election by lot at Maspha, which is the scene
+          immediately before it, and the sacred text's own "about" is kept. The
+          renewal of the kingdom at Galgal (11:14-15) belongs to the same event
+          this date is measured from and follows the deliverance, so the anchor
+          spans this episode on both sides. James Driscoll's "Saul" in the
+          Catholic Encyclopedia gives the same month — "A month after these
+          events ... he justifies his election by defeating the Ammonites and
+          delivering Jabes Galaad" — but appears to count it from the private
+          anointing instead; the difference is recorded and not resolved.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.saul-accession
+            statement: about a month after the people were called together to the Lord in Maspha
+          label: "about a month after this"
+
+  # --- Saul's death and the house of Saul (1 Kings 31; 2 Kings 1-4) ---------
+  - id: israel.monarchy.death-of-saul
+    title: The battle of Gelboe and the death of Saul and his sons
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims closes the reign with the battle. 1 Kings (1 Samuel)
+          31:6, "So Saul died, and his three sons, and his armourbearer, and all
+          his men that same day together."; and 1 Paralipomenon 10:14, "And
+          trusted not in the Lord: therefore he slew him, and transferred his
+          kingdom to David the son of Isai."
+        sources:
+          - bible:douay-rheims:1Kings.31.6
+          - bible:douay-rheims:1Par.10.14
+        note: >-
+          The terminus of the reign, on the day of the battle in mount Gelboe.
+          No era figure attaches to it in any source inspected for this lane: the
+          Catholic Encyclopedia's article on Saul carries no date at all, and the
+          only figure this corpus holds for the founding of the monarchy is
+          Howlett's 1020 B.C., which it does not display first. The length of the
+          reign is the notorious 1 Kings 13:1, already held apart under the reign
+          itself.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.saul-reign
+            statement: >-
+              at the close of the reign, when Saul and his three sons died in
+              mount Gelboe that same day together
+          label: "So Saul died, and his three sons ... that same day together"
+
+  - id: israel.monarchy.news-of-sauls-death
+    title: "The news of Saul's death brought to Siceleg, and David's lamentation"
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Kings (2 Samuel) 1:1-2 counts the days:
+          "Now it came to pass, after Saul was dead, that David returned from the
+          slaughter of the Amalecites, and abode two days in Siceleg. And on the
+          third day, there appeared a man who came out of Saul's camp, with his
+          garments rent, and dust strewed on his head".
+        sources:
+          - bible:douay-rheims:2Kings.1.1
+          - bible:douay-rheims:2Kings.1.2
+        note: >-
+          The two days are counted from David's return to Siceleg, and the third
+          day from the same point; the text does not say how many days stood
+          between the battle in Gelboe and that return, so the interval from
+          Saul's death itself is not stated and is not supplied here.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.death-of-saul
+            statement: >-
+              after Saul was dead, David abode two days in Siceleg, and on the
+              third day the news came to him
+          label: "and abode two days in Siceleg. And on the third day"
+
+  - id: israel.monarchy.isboseth-reign
+    title: The two years of Isboseth over Israel and the war with the house of David
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Kings (2 Samuel) 2:10-11 states both reigns
+          together: "Isboseth the son of Saul was forty years old when he began
+          to reign over Israel, and he reigned two years; and only the house of
+          Juda followed David. And the number of the days that David abode,
+          reigning in Hebron over the house of Juda, was seven years and six
+          months."
+        sources:
+          - bible:douay-rheims:2Kings.2.10
+          - bible:douay-rheims:2Kings.2.11
+        note: >-
+          Two years set beside seven years and six months in one breath, and the
+          sacred text reconciles them nowhere; neither does this corpus. 2 Kings
+          3:1 calls the intervening struggle "a long war between the house of
+          Saul and the house of David" and gives it no length. John Corbett's
+          "King David" in the Catholic Encyclopedia (New York, 1908) reports the
+          longer figure without the shorter — "His reign at Hebron over Juda
+          alone had lasted seven years and a half" — and offers no reckoning of
+          Isboseth's two years against it.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-accession
+            statement: >-
+              he reigned two years over Israel, while David reigned in Hebron
+              over the house of Juda seven years and six months
+          label: "he reigned two years"
+
+  # --- David: birth and the numbering of the people -------------------------
+  - id: israel.monarchy.birth-of-david
+    title: The birth of David at Bethlehem
+    note: >-
+      The one year any source inspected for this lane prints for David's birth.
+      It is a rank-6 witness reporting what it calls "the usual chronology", and
+      it is recorded with that hedge and with the article's own caveat against
+      it. Being the only figure is not a reason to prefer it, which is why its
+      disposition is `disputed` and not `preferred`.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis: >-
+          John Corbett's "King David" in the Catholic Encyclopedia (New York,
+          1908) opens its account with the figure: "According to the usual
+          chronology, David was born in 1085 and reigned from 1055 to 1015 B.C.
+          Recent writers have been induced by the Assyrian inscriptions to date
+          his reign from 30 to 50 years later."
+        sources: [artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3]
+        note: >-
+          "According to the usual chronology" is the article's own qualification
+          and is kept. Corbett does not assert 1085 in his own voice: he reports
+          a received reckoning and immediately names a competing one, which is
+          the same shape as a figure attributed to Klaproth or to "some few
+          Catholic writers" and differs only in that the other voice is
+          unnamed. That is why this claim is `disputed`.
+
+          The disposition also has to agree with itself across the corpus. The
+          reign figures in the very same sentence, 1055 to 1015 B.C., agree with
+          the Petavius table, and this corpus already holds that reckoning as
+          one of three `disputed` claims for David's accession. Preferring the
+          birth on a reckoning whose accession the corpus refuses to prefer
+          would have made the two entries disagree about one sentence. This
+          entry settles neither dispute, and is not adjusted by the article's
+          remark that recent writers would move the reign 30 to 50 years
+          later. The corpus derives nothing
+          from 1085 and 2 Kings 5:4's "thirty years old" together; that
+          subtraction is not made in any source inspected here.
+        date:
+          precision: year
+          from: {year: 1085, era: bc}
+          label: "According to the usual chronology, David was born in 1085"
+
+  - id: israel.monarchy.numbering-of-the-people
+    title: "David's numbering of Israel and Juda, and the pestilence"
+    parent: israel.monarchy.david-reign
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Kings (2 Samuel) 24:8 gives the census its
+          own length: "And having gone through the whole land, after nine months
+          and twenty days, they came to Jerusalem." 1 Paralipomenon 27:24 records
+          that it was broken off: "Joab the son of Sarvia began to number, but he
+          finished not: because upon this there fell wrath upon Israel."
+        sources:
+          - bible:douay-rheims:2Kings.24.8
+          - bible:douay-rheims:1Par.27.24
+        note: >-
+          A duration inside the reign of David and not a year of any era. The
+          three days of pestilence at 2 Kings 24:13-15 are a separate figure and
+          are not added to the nine months and twenty days here. John Corbett's
+          "King David" in the Catholic Encyclopedia narrates the census and the
+          pestilence and attaches no date to either, saying of the neighbouring
+          famine only that "It is not possible to fix the exact date of the
+          famine."
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-reign
+            statement: >-
+              having gone through the whole land, after nine months and twenty
+              days, they came to Jerusalem
+          label: "after nine months and twenty days"
+  # === lane numbers ===
+  - id: israel.wilderness.encampment-at-sinai
+    title: The encampment of Israel in the desert of Sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          A derived span, not a source's own figure. Scripture dates both of its
+          ends and this corpus already holds each as an event: Exodus 19:1, "In
+          the third month of the departure of Israel out of the land of Egypt,
+          on this day they came into the wilderness of Sinai", and Numbers
+          10:11-12, "The second year, in the second month, the twentieth day of
+          the month, the cloud was taken up from the tabernacle of the covenant.
+          And the children of Israel marched by their troops from the desert of
+          Sinai, and the cloud rested in the wilderness of Pharan." The
+          encampment is the stretch between the two, and it is the
+          occasion in which Numbers 1:1 - 10:10 stands: Numbers 1:1 speaks "in
+          the desert of Sinai", Numbers 9:1 again "in the desert of Sinai", and
+          Numbers 10:12 is the marching out of it.
+        sources:
+          - bible:douay-rheims:Ex.19.1
+          - bible:douay-rheims:Num.1.1
+          - bible:douay-rheims:Num.9.1
+          - bible:douay-rheims:Num.10.11
+        note: >-
+          Recorded as relative because both ends are counted from the Exodus and
+          neither is a year of any era. The span is a project derivation and is
+          marked as one: no source inspected for this corpus prints it as a
+          single figure, and it must never be read as one. It dates the
+          encampment, not any particular law given in it - the divine speeches
+          of Numbers 5, 6, 8 and 10:1-10 carry no date of their own beyond
+          standing inside this stretch, and none is supplied for them.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "from the third month of the departure of Israel out of the land of Egypt until the second year, in the second month, the twentieth day of the month"
+          label: "from the third month of the departure until the second year, the second month, the twentieth day of the month"
+          derivation:
+            rule: >-
+              The span between two points Scripture dates in the era of the
+              departure from Egypt, the arrival in the wilderness of Sinai and
+              the marching out of it, taken as the extent of the encampment
+              between them. No arithmetic is performed and no year of any era
+              is produced.
+            inputs:
+              - israel.wilderness.arrival-at-sinai
+              - israel.wilderness.departure-from-sinai
+            note: >-
+              Both inputs are themselves relative to israel.exodus.the-exodus,
+              so the derived span is relative too. Nothing here converts the
+              interval into months or into an Anno Mundi or Christian-era
+              figure.
+  - id: israel.wilderness.numbering-at-sinai
+    title: The numbering of Israel in the desert of Sinai
+    parent: israel.wilderness.encampment-at-sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Numbers opens with its own dateline. Numbers 1:1 in the Douay-Rheims:
+          "And the Lord spoke to Moses in the desert of Sinai in the tabernacle
+          of the covenant, the first day of the second month, the second year of
+          their going out of Egypt, saying:" - and the command that dateline
+          carries is the next verse, Numbers 1:2, "Take the sum of all the
+          congregation of the children of Israel by their families, and houses,
+          and the names of every one, as many as are of the male sex". Numbers
+          1:18 dates the execution to the
+          same day: Moses and Aaron "assembled them on the first day of the
+          second month, reckoning them up by the kindreds, and houses, and
+          families, and heads, and names of every one from twenty years old and
+          upward", and 1:19 adds "And they were numbered in the desert of
+          Sinai."
+        sources:
+          - bible:douay-rheims:Num.1.1
+          - bible:douay-rheims:Num.1.18
+        note: >-
+          Recorded as relative rather than as a month and a day because the
+          second year is counted from the going out of Egypt and is not a year
+          of any era, exactly as the erection of the tabernacle is recorded from
+          Exodus 40:15. The command and the assembling fall on one day; the
+          numbering of the Levites that follows at Numbers 3:14-16 and 4:1-3 is
+          commanded "in the desert of Sinai" without a further date, and none is
+          supplied for it. Numbers 26:64 looks back to this numbering as the one
+          made "by Moses and Aaron in the desert of Sinai".
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "the first day of the second month, the second year of their going out of Egypt"
+          label: "the first day of the second month, the second year of their going out of Egypt"
+  - id: israel.wilderness.dedication-of-the-altar
+    title: The offerings of the princes at the dedication of the altar
+    parent: israel.wilderness.encampment-at-sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Numbers 7:1 dates the chapter by the day the tabernacle was set up -
+          "And it came to pass in the day that Moses had finished the
+          tabernacle, and set it up, and had anointed and sanctified it with all
+          its vessels, the altar likewise and all the vessels thereof," the
+          sentence running on into the offering of the princes at 7:2. That day
+          is the one Exodus 40:15 dates, "the first month of the second year,
+          the first day of the month", which this corpus holds as the erection
+          of the tabernacle.
+        sources:
+          - bible:douay-rheims:Num.7.1
+          - bible:douay-rheims:Num.7.10
+          - bible:douay-rheims:Ex.40.15
+        note: >-
+          The offering is not confined to one day. Numbers 7:11 has the Lord
+          say "Let each of the princes one day after another offer their gifts
+          for the dedication of the altar", and twelve princes follow in order,
+          so the chapter runs twelve days from the day it is dated by; Numbers
+          7:10 and 7:84 nevertheless speak of "the day when it was anointed"
+          and "the day wherein it was consecrated". The corpus keeps the datum
+          the text gives - the opening day - and does not compute the closing
+          one. This day falls in the first month of the second year and the
+          dateline of Numbers 1:1 falls in the second month of the same year, so
+          the chapter stands before the book's opening date; the distance
+          between them is not stated here, because crossing from one month into
+          the next would require a month length no source inspected for this
+          corpus states. Numbers is not arranged in the order of its own dates
+          and this corpus does not rearrange it.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.erection-of-the-tabernacle
+            statement: "in the day that Moses had finished the tabernacle, and set it up, and had anointed and sanctified it with all its vessels"
+          label: "in the day that Moses had finished the tabernacle, and set it up"
+  - id: israel.wilderness.phase-in-the-desert-of-sinai
+    title: The phase kept in the desert of Sinai in the second year
+    parent: israel.wilderness.encampment-at-sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Numbers 9:1-3 in the Douay-Rheims: "The Lord spoke to Moses in the
+          desert of Sinai, the second year after they were come out of the land
+          of Egypt, in the first month, saying: Let the children of Israel make
+          the phase in its due time, The fourteenth day of this month in the
+          evening." Numbers 9:5 records the keeping of it: "And they made it in
+          its proper time: the fourteenth day of the month at evening, in mount
+          Sinai."
+        sources:
+          - bible:douay-rheims:Num.9.1
+          - bible:douay-rheims:Num.9.3
+          - bible:douay-rheims:Num.9.5
+          - bible:douay-rheims:Ex.40.15
+        note: >-
+          The first anniversary of the phase of the departure. Three datelines
+          stand around it and the corpus states them rather than reckoning
+          between them: the tabernacle was set up on the first day of the first
+          month of the second year (Exodus 40:15), the phase was kept on the
+          fourteenth day of that month (Numbers 9:3, 9:5), and Numbers 1:1 is
+          dated the first day of the second month. No interval is computed
+          across them, and crossing from the first month into the second would
+          in any case require a month length no source inspected for this corpus
+          states. Numbers 9:10-11 then institutes a second phase for the
+          unclean and the traveller, "In the second month, on the fourteenth day
+          of the month in the evening"; that is a standing ordinance and not an
+          event of this year, and no event is authored from it.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "the second year after they were come out of the land of Egypt, in the first month ... The fourteenth day of this month in the evening"
+          label: "the second year after they were come out of the land of Egypt, in the first month, the fourteenth day of this month in the evening"
+  - id: israel.wilderness.departure-from-sinai
+    title: The going forward of Israel from the desert of Sinai
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Numbers 10:11-12 in the Douay-Rheims: "The second year, in the second
+          month, the twentieth day of the month, the cloud was taken up from the
+          tabernacle of the covenant. And the children of Israel marched by
+          their troops from the desert of Sinai, and the cloud rested in the
+          wilderness of Pharan." The itinerary of Numbers 33:16 records the same
+          removal without a date: "But departing also from the desert of Sinai,
+          they came to the graves of lust."
+        sources:
+          - bible:douay-rheims:Num.10.11
+          - bible:douay-rheims:Num.33.16
+        note: >-
+          Recorded as relative because the second year is counted from the
+          Exodus. It is the end of the encampment at Sinai that began in the
+          third month of the departure, and it stands in the same second month
+          as the dateline of Numbers 1:1, which is the first day of it; the
+          corpus states both datelines and computes no interval between them.
+          The three days' journey of Numbers 10:33 is measured from
+          this removal and is not given a date of its own.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "The second year, in the second month, the twentieth day of the month, the cloud was taken up from the tabernacle of the covenant"
+          label: "The second year, in the second month, the twentieth day of the month"
+  - id: israel.wilderness.coming-to-cades
+    title: The coming into the desert of Sin at Cades, and the death of Mary
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Scripture gives the month and no year. Numbers 20:1 in the
+          Douay-Rheims: "And the children of Israel, and all the multitude came
+          into the desert of Sin, in the first month: and the people abode in
+          Cades. And Mary died there, and was buried in the same place." The
+          year is supplied by the Catholic Encyclopedia's "Aaron", which opens
+          its account of this stage: "In the first month of the thirty-ninth
+          year after the Exodus, the Hebrews camped at Cades, where Mary,
+          Aaron's sister, died and was buried."
+        sources:
+          - bible:douay-rheims:Num.20.1
+          - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+        note: >-
+          Rank 1 states the month and is silent on the year, so the year is
+          taken from rank 6 and from nowhere else. The encyclopedia's own
+          reckoning does not sit quietly beside Scripture's: the same article
+          continues that the sentence excluding Moses and Aaron from the land
+          "received, four months later, its fulfilment in Aaron's case", which
+          on its own figures would put Aaron's death in the fifth month of the
+          thirty-ninth year, whereas Numbers 33:38 says he "died in the fortieth
+          year of the coming forth of the children of Israel out of Egypt, the
+          fifth month, the first day of the month." This corpus records both and
+          reconciles neither; the death of Aaron keeps Scripture's fortieth
+          year. The waters of contradiction and the embassy to Edom that follow
+          at Numbers 20:2-21 stand at this same Cades but carry no date, and
+          none is supplied for them.
+        date:
+          precision: relative
+          relative:
+            of: israel.exodus.the-exodus
+            statement: "In the first month of the thirty-ninth year after the Exodus, the Hebrews camped at Cades"
+          label: "the first month of the thirty-ninth year after the Exodus"
+  - id: israel.wilderness.mourning-for-aaron
+    title: The thirty days' mourning for Aaron
+    parent: israel.wilderness.death-of-aaron
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Numbers 20:30 in the Douay-Rheims: "And all the multitude seeing that
+          Aaron was dead, mourned for him thirty days throughout all their
+          families." The Catholic Encyclopedia's "Aaron" reports the same
+          measure at the close of its narrative: "Moses then came down with
+          Eleazar and all the multitude mourned for Aaron thirty days."
+        sources:
+          - bible:douay-rheims:Num.20.30
+          - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+        note: >-
+          An interval from a death this corpus already dates by Numbers 33:38,
+          and recorded as relative to it rather than resolved into a month and a
+          day, because adding thirty days to the first day of the fifth month
+          would require a month length no source inspected here states.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.death-of-aaron
+            statement: "all the multitude seeing that Aaron was dead, mourned for him thirty days throughout all their families"
+          label: "thirty days"
+  - id: israel.wilderness.encampment-in-the-plains-of-moab
+    title: The encampment of Israel in the plains of Moab over against Jericho
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          A derived span, not a source's own figure. Scripture dates neither the
+          pitching nor the striking of this camp, but it fixes the camp between
+          two points this corpus already holds. Numbers 33 puts it after the
+          death of Aaron: "there he died in the fortieth year of the coming
+          forth of the children of Israel out of Egypt, the fifth month, the
+          first day of the month" (33:38), and then, eleven stations later, "And
+          departing from the mountains of Abarim, they passed to the plains of
+          Moab, by the Jordan, over against Jericho" (33:48). Deuteronomy 1:3
+          finds Israel still there, in the land of Moab beyond the Jordan
+          (1:5), when "In the fortieth year, the eleventh month, the first day
+          of the month, Moses spoke to the children of Israel all that the Lord
+          had commanded him to say to them." Numbers 22:1 is the pitching -
+          "And they went forward and encamped in the plains of Moab, over
+          against where Jericho is situate beyond the Jordan" - and Numbers
+          26:3, 33:50, 35:1 and 36:13 keep the book there to its last verse.
+        sources:
+          - bible:douay-rheims:Num.22.1
+          - bible:douay-rheims:Num.33.38
+          - bible:douay-rheims:Num.33.48
+          - bible:douay-rheims:Num.36.13
+          - bible:douay-rheims:Deut.1.3
+        note: >-
+          The derivation bounds the encampment; it does not date its beginning.
+          Scripture says only that the camp was pitched after the first day of
+          the fifth month of the fortieth year and was standing on the first day
+          of the eleventh month of the same year, and this corpus states exactly
+          that and no more. It is the occasion in which Numbers 22:1 - 36:13
+          stands, which is why that stretch is bound to it under
+          historical-setting; it dates none of the events narrated there. The
+          Catholic Encyclopedia's "Pentateuch" agrees on where the book ends
+          without adding a figure of its own: Numbers "takes up the account from
+          the first month of the second year, and brings it down to the eleventh
+          month of the fortieth year."
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.death-of-aaron
+            statement: "after the death of Aaron on mount Hor in the fortieth year, the fifth month, the first day of the month, and still standing in the fortieth year, the eleventh month, the first day of the month"
+          label: "between the fortieth year, fifth month, first day and the fortieth year, eleventh month, first day"
+          derivation:
+            rule: >-
+              An encampment Scripture does not date is bounded by the two dated
+              points Scripture places on either side of it: the last dated event
+              before the camp is pitched, and the first dated event that finds
+              the camp standing. Neither bound is asserted as the date of the
+              pitching, and no arithmetic is performed on them.
+            inputs:
+              - israel.wilderness.death-of-aaron
+              - israel.wilderness.moses-final-discourse
+            note: >-
+              Both inputs are relative to israel.exodus.the-exodus, so the
+              bounded span is relative too. The later bound is a Deuteronomy
+              datum used only as a bound; nothing here dates any part of
+              Deuteronomy from it.
+  - id: israel.wilderness.mary-stricken-at-haseroth
+    title: The fault of Aaron and Mary at Haseroth, and Mary's leprosy
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          Scripture places the episode and dates nothing: Numbers 11:34, "And
+          departing from the graves of lust, they came unto Haseroth, and abode
+          there", and Numbers 13:1, "And the people marched from Haseroth, and
+          pitched their tents in the desert of Pharan", with the fault standing
+          between them. The only temporal statement any source inspected for
+          this corpus makes about it is the Catholic Encyclopedia's "Aaron": "A
+          few months later, when the Hebrews reached Haseroth, the second
+          station after Mount Sinai, Aaron fell into a new fault."
+        sources:
+          - bible:douay-rheims:Num.11.34
+          - bible:douay-rheims:Num.12.1
+          - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+        note: >-
+          The hedge is the encyclopedia's and is kept: "a few months" is not a
+          number of months and is not made into one. The article's "later" is
+          measured from the stay at Sinai - the same sentence calls Haseroth
+          "the second station after Mount Sinai", and the paragraph it closes
+          has been at Sinai throughout - so the encampment at Sinai is the
+          anchor. Scripture supplies no interval whatever, and the itinerary of
+          Numbers 33:16-17 confirms only the order, desert of Sinai, graves of
+          lust, Haseroth. Nothing here dates the murmuring and the quails of
+          Numbers 11:1-34, for which no source inspected states any time at all.
+        date:
+          precision: relative
+          relative:
+            of: israel.wilderness.encampment-at-sinai
+            statement: "A few months later, when the Hebrews reached Haseroth, the second station after Mount Sinai"
+          label: "A few months later"
+  # === lane psalms-1-50 ===
+  - id: israel.monarchy.david-delivered-from-his-enemies
+    title: David's deliverance from all his enemies and from the hand of Saul
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Kings (2 Samuel) 22:1 names the occasion of
+          the canticle: "And David spoke to the Lord the words of this canticle,
+          in the day that the Lord delivered him out of the hand of all his
+          enemies, and out of the hand of Saul." The superscription of Psalm 17
+          (Vulgate; Hebrew 18), which carries the same canticle, asserts the same
+          occasion in its own words, Ps 17:1: "Unto the end, for David, the
+          servant of the Lord, who spoke to the Lord the words of this canticle,
+          in the day that the Lord delivered him from the hand of all his
+          enemies, and from the hand of Saul: and he said:"
+        sources:
+          - bible:douay-rheims:2Kings.22.1
+          - bible:douay-rheims:Ps.17.1
+        note: >-
+          An occasion, not a year. Neither text carries a chronological marker,
+          and no source inspected for this lane attaches an Anno Mundi or a B.C.
+          figure to the day. The anchor is deliberately the reign as a whole and
+          nothing narrower, because the two witnesses do not agree on where in
+          the reign the day falls: 2 Kings prints the canticle at chapter 22,
+          after the wars of chapters 8 and 10, while the deliverance "out of the
+          hand of Saul" belongs to the reign's beginning. This corpus does not
+          resolve that, and nothing here may be read as placing the day early or
+          late within the reign.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-reign
+            statement: >-
+              within the reign of David, in the day that the Lord delivered him
+              out of the hand of all his enemies, and out of the hand of Saul
+          label: >-
+            in the day that the Lord delivered him out of the hand of all his
+            enemies, and out of the hand of Saul
+  - id: israel.monarchy.david-house-built
+    title: The building of David's house at Jerusalem
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 2 Kings (2 Samuel) 5 places the building four
+          verses after the taking of the stronghold: "But David took the castle
+          of Sion, the same is the city of David" (5:7), and then "Hiram the king
+          of Tyre sent messengers to David, and cedar trees, and carpenters, and
+          masons for walls: and they built a house for David" (5:11). The
+          Catholic Encyclopedia's "King David" sets the two in the same order in
+          its own voice: "A notable exploit at the beginning of his reign was the
+          conquest of the Jebusite city of Jerusalem, which he made the capital
+          of his kingdom, 'the city of David', the political centre of the
+          nation. He built a palace, took more wives and concubines, and begat
+          other sons and daughters."
+        sources:
+          - bible:douay-rheims:2Kings.5.7
+          - bible:douay-rheims:2Kings.5.11
+          - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3
+        note: >-
+          A sequence, not a year. No source inspected for this lane attaches an
+          Anno Mundi or a B.C. figure to the building of the house: the "about
+          the year 1058 B.C." this corpus holds dates the capture of the castle
+          of Sion and must not be transferred to the house, which is why this
+          claim is relative and not absolute. Neither text says how long after
+          the capture the house was finished, and the dedication of the house —
+          the occasion the title of Psalm 29 (Vulgate; Hebrew 30) names — is a
+          further occasion again, which this corpus does not hold and this event
+          does not claim to be.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.david-capture-of-sion
+            statement: >-
+              after David took the castle of Sion and dwelt in it, when Hiram
+              king of Tyre sent carpenters and masons and they built a house for
+              David
+          label: "and they built a house for David"
+  # === lane psalms-51-100 ===
+  - id: israel.monarchy.david-in-the-cave
+    title: David's flight from Saul into the cave
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The 2014 Loreto / Feeney Memorial printing of the Douay-Rheims with
+          Haydock's commentary carries a continuous marginal chronology in the
+          historical books. The verified record read across artifact pages
+          400-401 for 1 Kings 23 states of the following chapter that "the
+          ensuing 1 Kings 24 begins under the next marker, A.M. 2946, A.C.
+          1058". 1 Kings 24 is the chapter this edition's own bracketed
+          cross-reference sends the reader to in the title of Psalm 56, "when he
+          fled from Saul into the cave. [1 Kings 24.]", and 1 Kings 24:4 is
+          where David and his men are in the cave and Saul enters it.
+        sources:
+          - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
+          - bible:douay-rheims:Ps.56.1
+          - bible:douay-rheims:1Kings.24.4
+        note: >-
+          The year marker is the edition's own uninitialled biblical apparatus
+          and is NOT attributed personally to Haydock, Calmet, Menochius or
+          Salien; the A.C. 1058 is the edition's own printed equivalent, and
+          this corpus records the Anno Mundi figure as printed and converts
+          nothing. Two cautions belong to this event. First, the passage record
+          that carries the figure was inspected at 1 Kings 23, whose locus is
+          1K.23.1-28: it reports the A.M. 2946 marker as the marker of the
+          chapter that follows, so anyone publishing this year should re-verify
+          it against the page image at the head of 1 Kings 24. Second, this
+          event is not David and his men in the desert of Maon, which the same
+          record dates A.M. 2945 at the head of 1 Kings 23, and it is not the
+          cave or stronghold of Odollam of 1 Kings 22, which the Catholic
+          Encyclopedia's "David" names separately as the place where his band
+          of four hundred gathered. The title of Psalm 141 also names a cave and
+          carries the same bracketed "[1 Kings 24.]"; this event is not thereby
+          bound to it, and that psalm belongs to another lane's range.
+        date:
+          precision: year
+          from: {year: 2946, era: am}
+          label: "A. M. 2946, A. C. 1058"

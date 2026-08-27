@@ -1160,9 +1160,40 @@ class TrackedHardCaseTests(unittest.TestCase):
         counts = _chronology.coverage()
         self.assertEqual(counts["total_verses"], 35809)
         self.assertEqual(sum(counts["by_status"].values()), counts["total_verses"])
-        # And the honest default is still visibly the largest untouched share,
-        # so nothing here is claiming coverage it has not got.
-        self.assertGreater(counts["by_status"]["research-pending"], 0)
+
+    def test_nothing_is_undated_in_tradition_on_nobody_s_authority(self) -> None:
+        """The guard that replaced `research-pending > 0`.
+
+        While the corpus was incomplete, the honest default being visibly
+        present was itself the proof that no coverage was being claimed that
+        had not been earned. Now that every locus is accounted for, that
+        sentinel is gone and the same job falls here: the ONLY way a verse
+        leaves `research-pending` without acquiring an assertion is an
+        authored gap row, so a gap row that names no source record is the
+        shape a fabricated coverage number would have to take. There is no
+        such row, and a lane that adds one fails this.
+        """
+        corpus = _chronology.load()
+        unsourced = [
+            f"{gap.status} over {_chronology._scope_text(gap.scope)}"
+            for gap in corpus.gaps
+            if not gap.sources
+        ]
+        self.assertEqual(unsourced, [])
+
+    def test_a_status_that_is_not_earned_is_one_an_author_may_assert(self) -> None:
+        # `dated` and `inherited` are earned from assertions; the rest are
+        # authored. `research-pending` is neither, and is the default. A verse
+        # reaching any other status without a gap row standing over it would
+        # mean the loader had invented a status, so sweep the whole canon.
+        authored = {gap.status for gap in _chronology.load().gaps}
+        self.assertTrue(authored <= set(_chronology.AUTHORED_STATUSES))
+        counts = _chronology.coverage()["by_status"]
+        for status, total in counts.items():
+            if status in ("dated", "inherited", "research-pending") or not total:
+                continue
+            self.assertIn(status, authored, f"{status} reached {total} verses "
+                          f"but no gap row asserts it")
 
     def test_a_gap_and_an_assertion_never_stand_over_one_verse(self) -> None:
         self.assertEqual(_chronology.audit(), [])
