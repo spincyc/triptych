@@ -476,6 +476,42 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic render underlay
+
+<!-- promised-deliverable: mass-pictographic-render-underlay -->
+
+**Built and visually validated on 27 August 2026.** A fresh web artistic canary failed a second
+time, and the second failure was the diagnostic one: the compiled render
+contract was correct, the deterministic skeleton was correct, and the generated
+image still put the Missal on the wrong side.
+
+The remaining gap was the visual-conditioning hop. The skeleton is a debug
+schematic — the Missal, burse, chalice and corporal are four identical squares
+distinguished only by text labels, and the actors are labelled circles. An image
+model asked to work from it must reconstruct what an open book looks like, how
+wide a burse is, and which anonymous square was which, and it attached "open
+book" to the wrong one.
+
+This lane adds a render underlay: a recognizable projected line drawing,
+generated deterministically from the same contract and the same camera, in which
+the geometry itself carries the meaning. The artistic step becomes an image edit
+of that drawing rather than a fresh composition from a description.
+
+Underlays exist for every art-ready scene, carry no text at all, and draw
+exactly the panels their contract declares. `art-seed` now generates and
+verifies one before it will emit a package, and refuses if the drawing or its
+raster cannot be produced or if a visible object has no recognizable geometry.
+Four scenes were rendered and looked at, because the failure that opened this
+lane passed every semantic check that existed: the canary, a Gospel-side
+reading, the second post-ablution crossing and an elevation. The canary and the
+Gospel-side reading are the load-bearing pair, and they show the same book
+geometry standing on opposite sides with an unchanged reading orientation.
+
+The canonical nave viewpoint was raised from a standing eye to slightly above
+it. From 1.6 the mensa is edge-on and everything on it foreshortens to nothing,
+including the Missal. That is a render-contract change; `structural/low-mass/v0.21`
+is untouched and no choreography moved.
+
 ### 1962 Low Mass pictographic artistic rendering protocol
 
 <!-- promised-deliverable: mass-pictographic-artistic-protocol -->

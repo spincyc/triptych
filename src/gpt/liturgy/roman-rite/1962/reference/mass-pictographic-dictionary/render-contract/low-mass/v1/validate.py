@@ -286,6 +286,8 @@ AUTHORED = (
     "skeleton.py",
     "review.py",
     "validate.py",
+    "underlay.py",
+    "underlay-objects.yaml",
 )
 
 
@@ -317,6 +319,40 @@ def check_authored_manifest() -> int:
     return len(listed)
 
 
+UNDERLAYS = ROOT / "underlays"
+
+
+def check_underlays(contracts: list[dict]) -> int:
+    """The conditioning drawings exist, parse, and carry no text.
+
+    A label in the underlay would let a renderer read the scene instead of
+    seeing it, which is precisely the failure this layer exists to end.
+    """
+    count = 0
+    for contract in contracts:
+        if contract["art_readiness"]["status"] != "ready":
+            continue
+        path = UNDERLAYS / contract["plate_id"] / "render-underlay.svg"
+        if not path.is_file():
+            raise Failure(f"{contract['plate_id']}: no render underlay")
+        ET.parse(path)
+        text = path.read_text(encoding="utf-8")
+        for element in ("<text", "<tspan"):
+            if element in text:
+                raise Failure(
+                    f"{contract['plate_id']}: the underlay carries {element}; "
+                    "the conditioning drawing must have no readable labels"
+                )
+        groups = text.count("<g transform=")
+        if groups != len(contract["panels"]):
+            raise Failure(
+                f"{contract['plate_id']}: underlay draws {groups} panels, "
+                f"contract declares {len(contract['panels'])}"
+            )
+        count += 1
+    return count
+
+
 def main() -> int:
     world = load(ROOT / "world-frame.yaml")
     camera = load(ROOT / "camera-model.yaml")
@@ -335,6 +371,7 @@ def main() -> int:
     if stats["ready"] != readiness["totals"]["ready"]:
         raise Failure("art-readiness.yaml disagrees with the compiled contracts")
     boards = check_skeletons(contracts)
+    drawings = check_underlays(contracts)
     hashed = check_authored_manifest()
 
     print(f"PASS: world frame, camera model and Missal rule "
@@ -346,6 +383,7 @@ def main() -> int:
         f"all at one reading yaw)"
     )
     print(f"PASS: {boards} skeletons match their contracts' panel manifests")
+    print(f"PASS: {drawings} render underlays, textless and panel-exact")
     return 0
 
 

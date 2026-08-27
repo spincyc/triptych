@@ -57,8 +57,15 @@ reason: >-
 
 camera_positions:
   - id: nave-centre
-    anchor_hint: "on the centreline, in the nave, below and before the steps"
-    position: [0.0, -4.0, 1.6]
+    anchor_hint: "on the centreline, in the nave, before and slightly above the steps"
+    position: [0.0, -3.6, 2.35]
+    note: >-
+      Raised above standing eye height on purpose. From a 1.6 eye the mensa is
+      edge-on and everything resting on it foreshortens to nothing, which is
+      exactly how a render underlay stops being able to show which side the
+      Missal is on. The plate convention for this dictionary is a slightly
+      elevated nave view, high enough that the altar surface and its furniture
+      read, low enough that the figures still stand against the steps.
   - id: nave-gospel
     position: [-2.2, -4.0, 1.6]
   - id: nave-epistle
@@ -77,7 +84,7 @@ camera_positions:
 
 targets:
   - id: altar-centre
-    position: [0.0, 1.5, 1.35]
+    position: [0.0, 1.35, 1.15]
   - id: mensa-centre
     position: [0.0, 1.5, 1.35]
   - id: foot-of-altar

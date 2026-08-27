@@ -36,15 +36,24 @@ compiled per-scene render contract render-contract/low-mass/v1/contracts/
         ↓
 deterministic skeleton SVG         render-contract/low-mass/v1/skeletons/
         ↓
+render underlay, SVG and raster    render-contract/low-mass/v1/underlays/
+        ↓
 human structural and render review
         ↓
-art generation, using the skeleton as its reference
+artistic image edit of the underlay raster
         ↓
 artistic acceptance against the contract
 ```
 
 The structural corpus is the choreography. This layer is the geometry. Art
 comes after both, and is bound by both.
+
+The skeleton and the underlay are different artifacts for different readers.
+The skeleton is a coordinate schematic with labels and angles, for verification
+and regression; it is not what an artist draws from. The underlay is a
+projected line drawing with no text at all, in which the geometry itself says
+which object is which, and it is the mandatory conditioning input for any
+artistic step.
 
 ## Files
 
@@ -57,10 +66,13 @@ comes after both, and is bound by both.
 | `panel-contract.yaml` | The default panel manifest and the rule that closes it. |
 | `compile.py` | The compiler: symbolic scene → compiled render contract. |
 | `skeleton.py` | Deterministic SVG skeleton generator from compiled contracts. |
+| `underlay.py` | Projects a compiled contract into a recognizable line drawing, and rasterizes it. |
+| `underlay-objects.yaml` | Object geometry: an open Missal is a spread with a spine, a burse a flat case. |
 | `validate.py` | Render-contract acceptance checks, including the Missal and panel regressions. |
 | `art-readiness.yaml` | Derived inventory of art-ready and art-blocked scenes, with the exact unresolved cue blocking each. |
 | `contracts/` | One compiled contract per scene. Generated; never hand-edited. |
 | `skeletons/` | One deterministic skeleton per art-ready scene. Generated; never hand-edited. |
+| `underlays/` | One render underlay per art-ready scene. Rasters are made on demand by `art-seed`. |
 | `review/` | Render-contract verification sheets for the regression fixtures. |
 
 ## What the artist may and may not change
@@ -121,6 +133,6 @@ From the repository root:
 To regenerate and to prove the tracked output is current:
 
 ```sh
-./tools/tpt pictographic compile-all roman-1962 low-mass
-./tools/tpt pictographic compile-all roman-1962 low-mass --check
+./compile.py && ./skeleton.py && ./underlay.py && ./review.py
+./compile.py --check && ./skeleton.py --check && ./underlay.py --check && ./review.py --check
 ```

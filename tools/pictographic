@@ -18,7 +18,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from _pictographic import (  # noqa: E402
     SeedRefused,
     art_seed,
+    compile_scene,
     contract_dir,
+    underlay_module,
     readiness_report,
     write_contract,
     write_skeleton,
@@ -65,17 +67,36 @@ EXAMPLES = {
             "the Gospel-side reading, where the book must not be mirrored",
         ),
     ),
+    "underlay": (
+        Example(
+            "tools/pictographic underlay roman-1962 low-mass LM-001A "
+            "--out build/example-underlay",
+            (
+                "wrote build/example-underlay/LM-001A/render-underlay.svg "
+                "and render-underlay.png",
+            ),
+            "a recognizable projected drawing, not a labelled schematic",
+        ),
+        Example(
+            "tools/pictographic underlay roman-1962 low-mass LM-035A "
+            "--out build/example-underlay",
+            (
+                "wrote build/example-underlay/LM-035A/render-underlay.svg "
+                "and render-underlay.png",
+            ),
+            "the Gospel-side reading, where the book moves but does not mirror",
+        ),
+    ),
     "art-seed": (
         Example(
             "tools/pictographic art-seed roman-1962 low-mass LM-001A "
             "--out build/example-art-seed",
             (
                 "seeded LM-001A -> build/example-art-seed/LM-001A",
-                "  render-contract.yaml  skeleton.svg  provenance.yaml  "
-                "ART-AGENT-INSTRUCTIONS.md",
+                "  render-underlay.png  render-underlay.svg  render-contract.yaml  skeleton.svg  provenance.yaml  ART-AGENT-INSTRUCTIONS.md",
+                "  EDIT render-underlay.png; do not compose a fresh image",
                 "  panels 1 (primary) - additional panels forbidden",
-                "  PIPELINE CANARY: render this first; the lane proceeds only "
-                "at STRUCTURE = PASS",
+                "  PIPELINE CANARY: render this first; the lane proceeds only at STRUCTURE = PASS",
             ),
             "the only sanctioned way to hand a scene to an artistic agent",
         ),
@@ -113,7 +134,7 @@ def main() -> int:
     examples_live_on_the_verbs(parser, "pictographic")
     verbs = parser.add_subparsers(dest="verb", required=True)
 
-    for name in ("render-contract", "skeleton", "art-seed"):
+    for name in ("render-contract", "skeleton", "underlay", "art-seed"):
         verb = with_examples(verbs.add_parser(name), EXAMPLES[name])
         verb.add_argument("calendar")
         verb.add_argument("form")
@@ -142,7 +163,7 @@ def main() -> int:
         return 0
 
     if args.verb == "art-seed":
-        out = args.out or (directory / "art-seed")
+        out = args.out or (ROOT / "build" / "art-seed")
         try:
             seeded = art_seed(directory, args.scene, out)
         except SeedRefused as refusal:
@@ -155,13 +176,30 @@ def main() -> int:
             shown = package
         panels = provenance["panel_manifest"]
         print(f"seeded {args.scene} -> {shown}")
-        print("  render-contract.yaml  skeleton.svg  provenance.yaml  "
+        print("  render-underlay.png  render-underlay.svg  "
+              "render-contract.yaml  skeleton.svg  provenance.yaml  "
               "ART-AGENT-INSTRUCTIONS.md")
+        print("  EDIT render-underlay.png; do not compose a fresh image")
         print(f"  panels {len(panels)} ({', '.join(panels)}) - additional "
               f"panels {provenance['additional_panels']}")
         if provenance["is_pipeline_canary"]:
             print("  PIPELINE CANARY: render this first; the lane proceeds "
                   "only at STRUCTURE = PASS")
+        return 0
+
+    if args.verb == "underlay":
+        out = args.out or (ROOT / "build" / "underlay")
+        module = underlay_module(directory)
+        try:
+            contract = compile_scene(directory, args.scene)
+        except KeyError:
+            raise SystemExit(f"unknown scene {args.scene!r}")
+        svg_path, png_path = module.write(contract, out / args.scene)
+        try:
+            shown = svg_path.parent.relative_to(ROOT)
+        except ValueError:
+            shown = svg_path.parent
+        print(f"wrote {shown}/{svg_path.name} and {png_path.name}")
         return 0
 
     out = args.out or directory

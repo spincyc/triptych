@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-08-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
-source_surface_file_count = 2087
-snapshot = "sha256:01edd9aef004268d62ffa953ccc9835df02248bc194e9f1386e244c40fbe7a12"
+source_surface_file_count = 2089
+snapshot = "sha256:a42c5f6e747e3e50611cd97e3def48c9a6de7555156219c2c1d94c0d163cde66"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9756,19 +9756,31 @@ owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md"
-sha256 = "a57fca6b0e1b96d35c6fb450215f837ba20eb94bd29cacae4676bcb9ddd5f358"
+sha256 = "28a0f5c0a8ee8b8310b61e5e3dedb7ed06bbdfcbbd915c4d12c24b1e1b8fbca9"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/publication-compositor.md"
+sha256 = "704c5db4a839cab3d045ba1128be9c26357e714db38a296dcda54d5058701903"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md"
-sha256 = "4f3bb589a5fd14c2264a8f2fb7b43a9aa62f9b512c8889dd7cb1cd2c92577edf"
+sha256 = "0a00930b1e01a9ed5daae4526a4af04746579098fa753f8c549b15ffa28aaef5"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/README.md"
-sha256 = "6a31e4211d814dad4a5304c09333ad49dc40e14eabedfe02798bdb899e50f294"
+sha256 = "3cfffd8b516032d769fc2c5a575b2a4178949650b565ea205d1f8978435a320c"
+kind = "rendered-content"
+owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md"
+sha256 = "1764f961d58d99e76c802ef77580bd3f838c2636cc380e1b8771d66758a100f1"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 

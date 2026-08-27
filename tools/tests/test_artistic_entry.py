@@ -35,6 +35,8 @@ CANARY = "LM-001A"
 PACKAGE_FILES = (
     "render-contract.yaml",
     "skeleton.svg",
+    "render-underlay.svg",
+    "render-underlay.png",
     "provenance.yaml",
     "ART-AGENT-INSTRUCTIONS.md",
 )
@@ -213,11 +215,12 @@ class ArtisticEntryTests(unittest.TestCase):
     def test_the_instructions_carry_the_binding_rule(self) -> None:
         text = " ".join(self.instructions().split())
         self.assertIn(
-            "Generate only from the supplied compiled render contract and "
-            "deterministic skeleton.",
+            "Generate only by editing the supplied render underlay.",
             text,
         )
-        self.assertIn("Do not restage the scene.", text)
+        self.assertIn("EDIT THE ATTACHED `render-underlay.png`", text)
+        self.assertIn("Do not create a fresh composition.", text)
+        self.assertIn("Do not restage the scene", text)
         self.assertIn("two independent decisions", text)
         self.assertIn("STRUCTURE: PASS | FAIL", text)
         self.assertIn("ART: PASS | FAIL", text)

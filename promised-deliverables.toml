@@ -1704,3 +1704,54 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/README.md",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-render-underlay"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py"
+promise = "Give the artistic lane a recognizable projected line drawing to edit rather than a labelled schematic to read, by generating a deterministic render underlay and raster from the compiled render contract, so that an image model never has to reconstruct what an open Missal looks like or which anonymous square it was."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "projected-underlay-generator"
+  criterion = "A deterministic generator projects the compiled contract through its own declared camera into a line drawing carrying recognizable object geometry, human body envelopes, and the full altar, step and predella volumes, with no instructional text in the conditioning raster."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "object-identity-legible"
+  criterion = "Materially different objects carry materially different silhouettes: an open Missal is not the same mark as a burse, a chalice is not the same mark as a bell, and a viewer who reads no labels can tell them apart and can tell which side of the altar the Missal stands on."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlay-objects.yaml",
+    "tools/tests/test_render_underlay.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/underlays",
+  ]
+
+  [[deliverables.requirements]]
+  id = "underlay-in-seed-package"
+  criterion = "The canonical art-seed package carries the underlay SVG and its raster, art-seed generates and verifies them itself, and the generated instructions require an image edit of that raster rather than a fresh text-to-image composition."
+  status = "pass"
+  evidence = [
+    "tools/pictographic",
+    "scripts/_pictographic.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "raw-art-carries-no-furniture"
+  criterion = "The protocol and the generated instructions forbid the image model from producing titles, captions, plate identifiers, metadata, borders, headers or footers, and a separate deterministic publication compositor owns that layer after art approval."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/publication-compositor.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "underlay-regressions-inspected"
+  criterion = "The canary, a Gospel-side Missal reading, the coordinated crossing and a Consecration elevation each generate an underlay that was visually inspected, proving placement changes while the Missal reading orientation does not mirror."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/VALIDATION-UNDERLAY.md",
+  ]

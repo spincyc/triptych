@@ -35,12 +35,44 @@ required_fields:
     description: >-
       The panel ids the contract declared. The finished plate carries these and
       no others.
+  - id: render_underlay_source
+    description: >-
+      The raster the artist was required to edit. This is the conditioning
+      input, and a plate that did not come from one is not canonical.
+  - id: render_underlay_svg_source
+    description: The vector form of the same drawing.
+  - id: render_underlay_sha256
+    description: >-
+      SHA-256 of the underlay raster, binding the plate to the exact drawing it
+      was made from rather than to a drawing of the same name.
+  - id: render_underlay_width
+    description: Pixel width of the underlay raster.
+  - id: render_underlay_height
+    description: Pixel height of the underlay raster.
+  - id: generation_mode
+    description: >-
+      How the image was produced. `image-edit` is the only canonical value; a
+      plate recorded any other way is outside the sanctioned path.
+    values: [image-edit]
   - id: structure_review
     description: "STRUCTURE gate: PASS, FAIL or PENDING."
     values: [PASS, FAIL, PENDING]
   - id: art_review
     description: "ART gate: PASS, FAIL or PENDING."
     values: [PASS, FAIL, PENDING]
+
+# Set once the artist returns, and once a plate is composed. Both are null in a
+# freshly seeded package, which is how a package is known not to have been
+# through the lane yet.
+staged_fields:
+  - id: raw_scene_art
+    description: >-
+      The artist's image edit of the underlay: scene only, no publication
+      furniture. Null until the artist returns.
+  - id: publication_plate
+    description: >-
+      The composed plate, produced from approved raw art by the publication
+      compositor. Null until both gates pass and composition happens.
 
 conditional_fields:
   - id: approval_commit

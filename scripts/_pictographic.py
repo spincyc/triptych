@@ -45,6 +45,10 @@ def skeletons(directory: Path):
     return _module(directory / "skeleton.py", "_pictographic_skeleton")
 
 
+def underlays(directory: Path):
+    return _module(directory / "underlay.py", "_pictographic_underlay")
+
+
 def dump(data: dict) -> str:
     import yaml
 
@@ -70,6 +74,14 @@ def write_skeleton(directory: Path, scene_id: str, out: Path) -> Path:
     return target
 
 
+def underlay_module(directory: Path):
+    return underlays(directory)
+
+
+def compile_scene(directory: Path, scene_id: str) -> dict:
+    return compiler(directory).Compiler().compile_scene(scene_id)
+
+
 def readiness_report(directory: Path) -> dict:
     module = compiler(directory)
     _, readiness = module.Compiler().compile_all()
@@ -89,15 +101,39 @@ CANARY_SCENE = "LM-001A"
 ART_AGENT_INSTRUCTION = """\
 # Art-agent instructions — {plate_id}
 
-Generate only from the supplied compiled render contract and deterministic
-skeleton. The skeleton owns composition and geometry. You own artistic
-realization only. Do not restage the scene.
+Generate only by editing the supplied render underlay. The underlay owns
+composition and geometry. You own artistic realization only. Do not restage the
+scene, and do not compose a fresh image from any description of it.
+
+## EDIT THE ATTACHED `render-underlay.png`. Do not create a fresh composition.
+
+`render-underlay.png` is the mandatory source image. Load it into an image
+EDIT / style-transformation operation and render artistic quality onto that
+exact geometry. Do not use it as loose inspiration for a text-to-image
+generation.
+
+**If your image tool cannot use the underlay as an image-edit source, STOP and
+report that limitation. Do not substitute text-to-image generation.** A fresh
+composition is how the Missal ended up on the wrong side of the altar twice.
 
 ## What you are given
 
-- `render-contract.yaml` — the compiled geometry. Authoritative.
-- `skeleton.svg` — the deterministic skeleton. Authoritative for composition.
+- `render-underlay.png` — **the mandatory edit source.** It owns all visible
+  geometry: object identity, object side, orientation, human placement, camera
+  and panel count.
+- `render-underlay.svg` — the same drawing as vectors, if useful.
+- `render-contract.yaml` — the compiled geometry in numbers. Supporting
+  authority for review.
+- `skeleton.svg` — the diagnostic schematic, with labels and angles. Supporting
+  authority only; it is a debugging view, never the conditioning image.
 - `provenance.yaml` — identity, baseline commit, panel manifest, readiness.
+
+## Produce scene art only
+
+Do not generate a title, a caption, a plate identifier, metadata, a source
+citation, a border, a header or a footer. Those are deterministic typography
+handled after approval by the publication compositor. Invented prose describing
+the scene is not acceptable in the raw art.
 
 ## Scene
 
@@ -258,10 +294,65 @@ def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
         canary_note=canary_note,
     )
 
+    # The render underlay is the mandatory visual conditioning input. Without a
+    # recognizable projected drawing the artist is back to reconstructing the
+    # scene from labels, which is the failure this whole layer exists to end.
+    module = underlays(directory)
+    try:
+        underlay_svg = module.Underlay().render(contract)
+    except Exception as failure:
+        raise SeedRefused(
+            f"{scene_id}: render underlay could not be generated: {failure}"
+        ) from failure
+
+    missing = [
+        item["id"]
+        for item in contract["objects"]
+        if item.get("position") is not None
+        and item.get("visible") is not False
+        and item["id"] not in module.Underlay().library
+    ]
+    if missing:
+        raise SeedRefused(
+            f"{scene_id}: no recognizable underlay geometry for visible "
+            f"object(s) {sorted(set(missing))}. Add it to "
+            "underlay-objects.yaml rather than shipping an anonymous mark."
+        )
+
     package = out / scene_id
     package.mkdir(parents=True, exist_ok=True)
     (package / "render-contract.yaml").write_text(dump(contract), encoding="utf-8")
     (package / "skeleton.svg").write_text(drawing, encoding="utf-8")
+    (package / "provenance.yaml").write_text(dump(provenance), encoding="utf-8")
+
+    underlay_path = package / "render-underlay.svg"
+    underlay_path.write_text(underlay_svg, encoding="utf-8")
+    raster_path = package / "render-underlay.png"
+    try:
+        module.rasterize(underlay_path, raster_path)
+    except Exception as failure:
+        # Leave no half-package behind: a partial seed is exactly the weak
+        # package that invites restaging.
+        for stray in package.iterdir():
+            stray.unlink()
+        package.rmdir()
+        raise SeedRefused(
+            f"{scene_id}: underlay rasterization failed: {failure}"
+        ) from failure
+
+    import hashlib
+
+    raster = raster_path.read_bytes()
+    provenance["render_underlay_source"] = "render-underlay.png"
+    provenance["render_underlay_svg_source"] = "render-underlay.svg"
+    provenance["render_underlay_sha256"] = hashlib.sha256(raster).hexdigest()
+    provenance["skeleton_source"] = "skeleton.svg"
+    provenance["generation_mode"] = "image-edit"
+    provenance["raw_scene_art"] = None
+    provenance["publication_plate"] = None
+    width, height = module.PANEL_W * len(declared), module.PANEL_H
+    provenance["render_underlay_width"] = width * module.RASTER_SCALE
+    provenance["render_underlay_height"] = height * module.RASTER_SCALE
     (package / "provenance.yaml").write_text(dump(provenance), encoding="utf-8")
     (package / "ART-AGENT-INSTRUCTIONS.md").write_text(instructions, encoding="utf-8")
     return {"package": package, "provenance": provenance}

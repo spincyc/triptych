@@ -1,0 +1,224 @@
+schema: triptych.mass_pictographic.underlay_objects
+version: "1.0"
+status: render-contract
+structural_baseline_commit: "d2e97b5ca"
+
+# Deterministic geometry for the render underlay.
+#
+# The diagnostic skeleton draws every object as the same small square and lets a
+# text label carry the meaning. That is fine for coordinate review and fatal as
+# visual conditioning: an image model asked to work from it must decide for
+# itself which anonymous square was the open book, and in the failed canary it
+# decided wrongly.
+#
+# So each object here has a silhouette a viewer can name without reading a
+# label. An open Missal is a spread of two page planes with a spine. A burse is
+# a flat closed case. A chalice is a cup on a stem. They cannot be confused.
+#
+# LOCAL FRAME. Each part is a polyline in the object's own coordinates:
+#   +X local  the object's own right, before yaw is applied
+#   +Y local  the direction the object's yaw points — for a book, page-up, the
+#             way the reader faces
+#   +Z local  up, with 0 at the surface the object rests on
+# The compiler's yaw rotates local into world about +Z, then the object is
+# translated to its compiled world position. So a book's 135 degree reading yaw
+# is embodied by the drawing itself rather than annotated beside it.
+#
+# `closed: true` closes the polyline back to its first point.
+
+defaults:
+  closed: false
+
+objects:
+
+  # --- the object that failed ---------------------------------------------
+  missal:
+    variants:
+      open:
+        description: >-
+          An open book: two page planes rising from a common spine, with the
+          reading edge nearest the reader. Unmistakable against a flat case.
+        parts:
+          # left page plane, rising from the spine
+          - points: [[-0.23, -0.16, 0.05], [-0.02, -0.14, 0.13], [-0.02, 0.14, 0.13], [-0.23, 0.16, 0.05]]
+            closed: true
+          # right page plane
+          - points: [[0.23, -0.16, 0.05], [0.02, -0.14, 0.13], [0.02, 0.14, 0.13], [0.23, 0.16, 0.05]]
+            closed: true
+          # spine
+          - points: [[-0.02, -0.14, 0.13], [0.02, -0.14, 0.13]]
+          - points: [[-0.02, 0.14, 0.13], [0.02, 0.14, 0.13]]
+          - points: [[0.0, -0.14, 0.13], [0.0, 0.14, 0.13]]
+          # page block depth on the reading edge, so the book reads as solid
+          - points: [[-0.23, -0.16, 0.05], [-0.23, -0.16, 0.0], [-0.02, -0.14, 0.06], [-0.02, -0.14, 0.13]]
+          - points: [[0.23, -0.16, 0.05], [0.23, -0.16, 0.0], [0.02, -0.14, 0.06], [0.02, -0.14, 0.13]]
+          # one rule per page: enough to read as a written spread, few enough
+          # not to collapse into a blob at plate scale
+          - points: [[-0.18, -0.02, 0.062], [-0.06, -0.01, 0.108]]
+          - points: [[0.18, -0.02, 0.062], [0.06, -0.01, 0.108]]
+      closed:
+        description: "A closed book: a slab with a spine edge and a page block."
+        parts:
+          - points: [[-0.15, -0.21, 0.0], [0.15, -0.21, 0.0], [0.15, 0.21, 0.0], [-0.15, 0.21, 0.0]]
+            closed: true
+          - points: [[-0.15, -0.21, 0.06], [0.15, -0.21, 0.06], [0.15, 0.21, 0.06], [-0.15, 0.21, 0.06]]
+            closed: true
+          - points: [[-0.15, -0.21, 0.0], [-0.15, -0.21, 0.06]]
+          - points: [[0.15, -0.21, 0.0], [0.15, -0.21, 0.06]]
+          - points: [[0.15, 0.21, 0.0], [0.15, 0.21, 0.06]]
+          - points: [[-0.15, 0.21, 0.0], [-0.15, 0.21, 0.06]]
+      carried:
+        description: An open book held before the breast, drawn as the open spread.
+        alias_of: open
+
+  missal-stand:
+    variants:
+      default:
+        description: A sloped reading wedge under the book.
+        parts:
+          - points: [[-0.19, -0.14, 0.0], [0.19, -0.14, 0.0], [0.19, 0.14, 0.055], [-0.19, 0.14, 0.055]]
+            closed: true
+          - points: [[-0.19, -0.14, 0.0], [-0.19, 0.14, 0.0], [-0.19, 0.14, 0.055]]
+          - points: [[0.19, -0.14, 0.0], [0.19, 0.14, 0.0], [0.19, 0.14, 0.055]]
+          - points: [[-0.19, 0.14, 0.0], [0.19, 0.14, 0.0]]
+
+  # --- the object it was confused with ------------------------------------
+  burse:
+    variants:
+      default:
+        description: >-
+          A flat closed square case. Deliberately nothing like an open book:
+          one plane, square, no spine, no spread.
+        parts:
+          - points: [[-0.13, -0.13, 0.0], [0.13, -0.13, 0.0], [0.13, 0.13, 0.0], [-0.13, 0.13, 0.0]]
+            closed: true
+          - points: [[-0.13, -0.13, 0.025], [0.13, -0.13, 0.025], [0.13, 0.13, 0.025], [-0.13, 0.13, 0.025]]
+            closed: true
+          - points: [[-0.13, -0.13, 0.0], [-0.13, -0.13, 0.025]]
+          - points: [[0.13, -0.13, 0.0], [0.13, -0.13, 0.025]]
+          - points: [[0.13, 0.13, 0.0], [0.13, 0.13, 0.025]]
+          - points: [[-0.13, 0.13, 0.0], [-0.13, 0.13, 0.025]]
+          # the cross on the burse face, a diagonal-free mark that is not a page line
+          - points: [[0.0, -0.07, 0.026], [0.0, 0.07, 0.026]]
+          - points: [[-0.07, 0.0, 0.026], [0.07, 0.0, 0.026]]
+
+  # --- vessels --------------------------------------------------------------
+  chalice:
+    variants:
+      default:
+        description: A cup on a stem and a spreading base. Vertical, not flat.
+        parts:
+          - points: [[-0.06, 0.0, 0.24], [-0.055, 0.0, 0.16], [0.055, 0.0, 0.16], [0.06, 0.0, 0.24]]
+          - points: [[-0.06, 0.0, 0.24], [0.06, 0.0, 0.24]]
+          - points: [[-0.02, 0.0, 0.16], [-0.02, 0.0, 0.10], [0.02, 0.0, 0.10], [0.02, 0.0, 0.16]]
+          - points: [[-0.035, 0.0, 0.10], [0.035, 0.0, 0.10]]
+          - points: [[-0.02, 0.0, 0.10], [-0.02, 0.0, 0.045], [0.02, 0.0, 0.045], [0.02, 0.0, 0.10]]
+          - points: [[-0.075, 0.0, 0.0], [-0.06, 0.0, 0.03], [0.06, 0.0, 0.03], [0.075, 0.0, 0.0]]
+            closed: true
+          # cup seen slightly from above, so it reads as a vessel not a goblet outline
+          - points: [[-0.06, -0.022, 0.24], [0.0, -0.03, 0.24], [0.06, -0.022, 0.24], [0.0, -0.012, 0.245]]
+    veiled_variant: veiled
+    variants_extra:
+      veiled:
+        description: The same vessel under a draped veil, a tented cloth.
+        parts:
+          - points: [[-0.11, 0.0, 0.0], [-0.08, 0.0, 0.20], [0.0, 0.0, 0.27], [0.08, 0.0, 0.20], [0.11, 0.0, 0.0]]
+          - points: [[-0.11, 0.0, 0.0], [0.11, 0.0, 0.0]]
+          - points: [[0.0, 0.0, 0.27], [0.0, -0.06, 0.25]]
+
+  paten:
+    variants:
+      default:
+        description: A shallow disc, flat on the linen. Wide and low.
+        parts:
+          - points: [[-0.08, 0.0, 0.004], [-0.056, -0.056, 0.004], [0.0, -0.08, 0.004], [0.056, -0.056, 0.004], [0.08, 0.0, 0.004], [0.056, 0.056, 0.004], [0.0, 0.08, 0.004], [-0.056, 0.056, 0.004]]
+            closed: true
+          - points: [[-0.05, 0.0, 0.008], [-0.035, -0.035, 0.008], [0.0, -0.05, 0.008], [0.035, -0.035, 0.008], [0.05, 0.0, 0.008], [0.035, 0.035, 0.008], [0.0, 0.05, 0.008], [-0.035, 0.035, 0.008]]
+            closed: true
+
+  pall:
+    variants:
+      default:
+        description: A small stiff square, smaller than the burse and unmarked.
+        parts:
+          - points: [[-0.065, -0.065, 0.0], [0.065, -0.065, 0.0], [0.065, 0.065, 0.0], [-0.065, 0.065, 0.0]]
+            closed: true
+          - points: [[-0.065, -0.065, 0.014], [0.065, -0.065, 0.014], [0.065, 0.065, 0.014], [-0.065, 0.065, 0.014]]
+            closed: true
+          - points: [[-0.065, -0.065, 0.0], [-0.065, -0.065, 0.014]]
+          - points: [[0.065, -0.065, 0.0], [0.065, -0.065, 0.014]]
+          - points: [[0.065, 0.065, 0.0], [0.065, 0.065, 0.014]]
+
+  purificator:
+    variants:
+      default:
+        description: A folded linen strip, longer than it is wide, with a fold line.
+        parts:
+          - points: [[-0.09, -0.055, 0.0], [0.09, -0.055, 0.0], [0.09, 0.055, 0.0], [-0.09, 0.055, 0.0]]
+            closed: true
+          - points: [[-0.09, 0.0, 0.006], [0.09, 0.0, 0.006]]
+
+  corporal:
+    variants:
+      default:
+        description: >-
+          A large square linen spread flat on the mensa, with its fold lines.
+          Much larger than any vessel, so it reads as the ground they stand on.
+        parts:
+          - points: [[-0.25, -0.25, 0.0], [0.25, -0.25, 0.0], [0.25, 0.25, 0.0], [-0.25, 0.25, 0.0]]
+            closed: true
+          - points: [[-0.25, -0.083, 0.001], [0.25, -0.083, 0.001]]
+          - points: [[-0.25, 0.083, 0.001], [0.25, 0.083, 0.001]]
+          - points: [[-0.083, -0.25, 0.001], [-0.083, 0.25, 0.001]]
+          - points: [[0.083, -0.25, 0.001], [0.083, 0.25, 0.001]]
+
+  chalice-veil:
+    variants:
+      default:
+        description: A folded cloth, a low soft slab with a fold.
+        parts:
+          - points: [[-0.09, -0.06, 0.0], [0.09, -0.06, 0.0], [0.09, 0.06, 0.0], [-0.09, 0.06, 0.0]]
+            closed: true
+          - points: [[-0.09, -0.06, 0.03], [0.09, -0.06, 0.03], [0.09, 0.06, 0.03], [-0.09, 0.06, 0.03]]
+            closed: true
+          - points: [[-0.09, -0.06, 0.0], [-0.09, -0.06, 0.03]]
+          - points: [[0.09, -0.06, 0.0], [0.09, -0.06, 0.03]]
+          - points: [[-0.09, 0.0, 0.032], [0.09, 0.0, 0.032]]
+
+  chalice-cloth:
+    variants:
+      default:
+        description: A folded cloth, narrower than the veil.
+        parts:
+          - points: [[-0.07, -0.05, 0.0], [0.07, -0.05, 0.0], [0.07, 0.05, 0.0], [-0.07, 0.05, 0.0]]
+            closed: true
+          - points: [[-0.07, -0.05, 0.024], [0.07, -0.05, 0.024], [0.07, 0.05, 0.024], [-0.07, 0.05, 0.024]]
+            closed: true
+          - points: [[-0.07, -0.05, 0.0], [-0.07, -0.05, 0.024]]
+          - points: [[0.07, -0.05, 0.0], [0.07, -0.05, 0.024]]
+
+  altar-cross:
+    variants:
+      default:
+        description: An upright crucifix on a foot. Tall, unmistakable.
+        parts:
+          - points: [[-0.02, 0.0, 0.10], [-0.02, 0.0, 0.72], [0.02, 0.0, 0.72], [0.02, 0.0, 0.10]]
+            closed: true
+          - points: [[-0.14, 0.0, 0.52], [0.14, 0.0, 0.52], [0.14, 0.0, 0.56], [-0.14, 0.0, 0.56]]
+            closed: true
+          - points: [[-0.08, 0.0, 0.0], [-0.06, 0.0, 0.10], [0.06, 0.0, 0.10], [0.08, 0.0, 0.0]]
+            closed: true
+          - points: [[-0.08, 0.0, 0.0], [0.08, 0.0, 0.0]]
+
+  candles:
+    variants:
+      default:
+        description: "A candlestick: foot, stem, candle and flame. Narrow and tall."
+        parts:
+          - points: [[-0.055, 0.0, 0.0], [-0.04, 0.0, 0.03], [0.04, 0.0, 0.03], [0.055, 0.0, 0.0]]
+            closed: true
+          - points: [[-0.014, 0.0, 0.03], [-0.014, 0.0, 0.20], [0.014, 0.0, 0.20], [0.014, 0.0, 0.03]]
+          - points: [[-0.03, 0.0, 0.20], [0.03, 0.0, 0.20]]
+          - points: [[-0.016, 0.0, 0.20], [-0.016, 0.0, 0.42], [0.016, 0.0, 0.42], [0.016, 0.0, 0.20]]
+          - points: [[0.0, 0.0, 0.42], [-0.014, 0.0, 0.46], [0.0, 0.0, 0.50], [0.014, 0.0, 0.46]]
+            closed: true
