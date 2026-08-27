@@ -1999,8 +1999,17 @@ reading choice), `israel.monarchy.absalom-revolt` ("after forty years" with no
 stated origin), `israel.exodus.moses-in-madian` ×2 (the ambiguity is in the
 subject: one event denotes both the flight and the shepherd years),
 `israel.exodus.mara-and-elim`, `israel.conquest.war-against-the-kings-of-chanaan`
-("a long time", unquantified). Four wrong anchors were also dispositioned
-rather than changed; they are named in `.scratch/audit/durations.md` §3.1.
+("a long time", unquantified). All six were dispositioned by name by the
+post-audit correction lane; see `post-audit-corrections.tsv`.
+
+**The wrong anchors: fourteen, not four, and the record no longer lives in
+`.scratch`.** This paragraph said four were "dispositioned rather than changed"
+and pointed at `.scratch/audit/durations.md` §3.1 — a file `wt tidy` deletes
+without asking, holding the tracked acceptance record for the question. §3.1
+names **fourteen**. The cold audit re-derived every one against the corpus and
+put the whole table in `cold-audit-report.md`, which is tracked and immutable:
+nine are genuinely fixed, and the five that were not are dispositioned in the
+correction ledger. Nothing about this question now depends on a scratch file.
 
 **Inherited broad-suite failures**, identical on branch and base and none of
 them chronology: `check-web-editions-current` (one stale tracked web edition),

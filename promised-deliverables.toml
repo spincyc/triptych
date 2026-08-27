@@ -1513,6 +1513,19 @@ state = "in_progress"
   ]
   note = "Reopened 2026-08-27. The former criterion was satisfiable by one named system, `vulgate`, and so did not prove the requirement it was written for. The corpus treated a concordance refusal as a chronology refusal, which conflates two questions: whether this locus can be asserted equivalent to that one, and whether this locus can carry chronology at all. A textually distinct locus - the Greek Sirach is the repository's own standing example - must be able to own native chronology while its mapping to the Vulgate is still refused."
 
+  # 2026-08-27, post-audit correction lane: READY_FOR_REREVIEW, and still open,
+  # because this lane authored the corrections and may not accept its own work.
+  # All five criteria now hold, the fifth for the first time. The cold audit
+  # confirmed four and kept this open because the §3.0 gate probed only a span's
+  # first locus: it now walks every locus the witness prints inside the span,
+  # refuses a duplicated fact rather than a safe correspondence, and asks the
+  # module that owns each system which kind it is - a psalter renumbering may
+  # never date natively where the concordance carries, a witness to another text
+  # may. A successful mapping no longer discards a native assertion. The
+  # regression fixture is a span whose first locus refuses and whose interior
+  # would duplicate; it loads under the old gate and is refused by the new one.
+  # The next cold reviewer decides PASS; see post-audit-rereview-manifest.tsv.
+
   [[deliverables.requirements]]
   id = "typed-many-valued-model"
   criterion = "One locus resolves to any number of typed temporal assertions, one event binds to many loci, composition chronology is independent of narrated-event chronology, and prophecy is not collapsed into ordinary narration."
@@ -1579,6 +1592,21 @@ state = "in_progress"
   ]
   note = "Reopened 2026-08-27. The former criterion proved exhaustive Vulgate/Clementine accounting - 35 809 verses, none research-pending - and was marked pass on that basis, but it did not prove exhaustive coverage of every locus the chronology layer can address once native non-Vulgate systems are admitted, because the layer admitted none. It returns to pass only when the corrected universe is honestly and completely enumerated; if the repository's machinery cannot yet enumerate a supported system's native loci, this stays open with that reason recorded."
 
+  # 2026-08-27, post-audit correction lane: still open, and now open for a
+  # reason the criterion names rather than for a defect. Every locus of every
+  # declared native system reaches a chronology status of its own: a mapping
+  # word no longer stands in the chronology axis, a native locus whose mapping
+  # refuses consults gap rows scoped in its own system and otherwise reaches
+  # §9's honest default, and native scopes are bounded by their own witness
+  # rather than by the canon, which had left `EsthGr` unauthorable. Seven loci
+  # answer `research-pending` - one Greek Esther locus and six World English
+  # Catholic ones - because no ranked source has been inspected for them, and
+  # this lane invented no date to close them. Three of the ten the audit counted
+  # were never loci: `_system_loci` filled each chapter from its first printed
+  # verse to its last, and the corrected universe is 35 809 + 1 356 + 6 + 0 =
+  # 37 171. The criterion is unweakened, and stays open while any locus is
+  # `research-pending`.
+
   [[deliverables.requirements]]
   id = "consumer-non-derivation-contract"
   criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
@@ -1591,6 +1619,16 @@ state = "in_progress"
   status = "open"
   evidence = ["guidance/scripture-chronology.md", "PROJECT-WORK.md"]
   note = "Added 2026-08-27 by the correction lane, which may not mark it pass. Machine-valid is not source-verified: the population wave passed every gate and its own authors' review, and a second reader still found a quotation from memory, a wrong relative anchor, a modern-critical figure inside the traditional profile, an unretained claim of source silence that proved false for half its subjects, and a refusal that went stale mid-wave. Author self-review cannot discharge this. The corpus is a canonical factual dependency for every future proper, which makes false confidence more dangerous than missing data."
+
+  # 2026-08-27: the cold audit ran and returned CHANGES_REQUIRED - 104 standing
+  # findings over 84 distinct defects, one critical. The post-audit correction
+  # lane dispositioned all 104: 96 fixed, 8 withdrawn on evidence stronger than
+  # the audit's, none blocked and none unresolved. That does NOT discharge this
+  # requirement. An author correcting findings is not an independent acceptance,
+  # and the corrections are themselves unreviewed. It stays open until a cold
+  # reviewer reopens every row of post-audit-rereview-manifest.tsv - 92 changed
+  # claims, binding scopes, gap rows and hard cases, none of them sampled - and
+  # returns PASS.
 
   [[deliverables.requirements]]
   id = "validation-and-handoff"

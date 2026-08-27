@@ -1,0 +1,100 @@
+# Targeted cold re-review manifest for the post-audit correction lane.
+# Audited corpus: 2330d63a5. Every row is a factual claim, binding scope, gap
+# row or hard case this lane CHANGED, derived by diffing the loaded corpus at
+# HEAD against the loaded corpus at 2330d63a5. Nothing here is sampled: the
+# next cold reviewer inspects 100% of it.
+# Regenerate with .scratch/correction/build_rereview.py, or by rerunning the
+# same diff against the two commits.
+review_id	kind	identifier	why	locus	notes
+RR-001	claim	event:apostolic-age.death-of-herod-agrippa#0	changed:sources		
+RR-002	claim	event:apostolic-age.exile-of-saint-john-to-patmos#0	changed:sources+note		
+RR-003	claim	event:apostolic-age.jewish-revolt-against-rome#0	changed:sources		
+RR-004	claim	event:apostolic-age.saint-paul-first-roman-captivity#1	changed:basis+note		
+RR-005	claim	event:apostolic-age.second-arrest-of-saint-paul#0	changed:date+note		
+RR-006	claim	event:israel.conquest.war-against-the-kings-of-chanaan#0	changed:date+label+note		
+RR-007	claim	event:israel.divided-kingdom.osee-ministry#0	added		absent at 2330d63a5
+RR-008	claim	event:israel.divided-kingdom.osee-ministry#1	added		absent at 2330d63a5
+RR-009	claim	event:israel.exile.ezechiel.call#0	changed:date+label		
+RR-010	claim	event:israel.exile.first-captivity#0	changed:basis+note		
+RR-011	claim	event:israel.exile.second-captivity#0	changed:disposition+basis+note		
+RR-012	claim	event:israel.exile.second-captivity#1	changed:disposition+date+label+sources+basis+note		
+RR-013	claim	event:israel.exile.second-captivity#2	added		absent at 2330d63a5
+RR-014	claim	event:israel.exile.third-captivity#0	changed:basis		
+RR-015	claim	event:israel.exodus.passage-of-the-red-sea#0	added		absent at 2330d63a5
+RR-016	claim	event:israel.exodus.the-exodus#0	changed:disposition+note		
+RR-017	claim	event:israel.exodus.the-exodus#1	changed:disposition+date+label+sources+basis+note		
+RR-018	claim	event:israel.exodus.the-exodus#2	changed:disposition+date+label+sources+basis+note		
+RR-019	claim	event:israel.exodus.the-exodus#3	withdrawn		present at 2330d63a5, absent now
+RR-020	claim	event:israel.exodus.the-plagues-of-egypt#0	changed:date+label+sources+note		
+RR-021	claim	event:israel.exodus.the-plagues-of-egypt#1	changed:label+note		
+RR-022	claim	event:israel.judges.capture-of-the-ark#0	changed:label+note		
+RR-023	claim	event:israel.judges.heli-judgeship#0	changed:note		
+RR-024	claim	event:israel.judges.period#0	changed:date+label+note		
+RR-025	claim	event:israel.monarchy.absalom-revolt#0	changed:date+sources+note		
+RR-026	claim	event:israel.monarchy.birth-of-david#0	changed:sources		
+RR-027	claim	event:israel.monarchy.david-in-the-cave#0	changed:note		
+RR-028	claim	event:israel.monarchy.saul-accession#0	withdrawn		present at 2330d63a5, absent now
+RR-029	claim	event:israel.monarchy.temple-begun#2	changed:basis+note		
+RR-030	claim	event:israel.monarchy.temple-begun#4	changed:note		
+RR-031	claim	event:israel.monarchy.temple-begun#5	changed:note		
+RR-032	claim	event:israel.patriarchs.birth-of-abram#0	changed:date+label+basis+note		
+RR-033	claim	event:israel.patriarchs.birth-of-abram#1	withdrawn		present at 2330d63a5, absent now
+RR-034	claim	event:israel.patriarchs.birth-of-abram#2	withdrawn		present at 2330d63a5, absent now
+RR-035	claim	event:israel.patriarchs.birth-of-abram#3	withdrawn		present at 2330d63a5, absent now
+RR-036	claim	event:israel.patriarchs.call-of-abram#1	added		absent at 2330d63a5
+RR-037	claim	event:israel.patriarchs.call-of-abram#2	added		absent at 2330d63a5
+RR-038	claim	event:israel.patriarchs.call-of-abram#3	added		absent at 2330d63a5
+RR-039	claim	event:israel.primeval.deluge#0	changed:note		
+RR-040	claim	event:israel.restoration.nehemias-tidings-of-jerusalem#0	changed:note		
+RR-041	claim	event:israel.restoration.reign-of-artaxerxes-i#0	added		absent at 2330d63a5
+RR-042	claim	event:israel.wilderness.mara-and-elim#0	changed:note		
+RR-043	claim	event:israel.wilderness.mary-stricken-at-haseroth#0	changed:note		
+RR-044	claim	event:life-of-christ.finding-in-the-temple#0	changed:note		
+RR-045	claim	unit:composition.book-of-abdias#0	changed:disposition+note		
+RR-046	claim	unit:composition.book-of-daniel#0	changed:date+label+basis+note		
+RR-047	claim	unit:composition.book-of-daniel.prayer-of-azarias#0	added		absent at 2330d63a5
+RR-048	claim	unit:composition.book-of-daniel.susanna-and-bel#0	added		absent at 2330d63a5
+RR-049	claim	unit:composition.book-of-jonas#0	withdrawn		present at 2330d63a5, absent now
+RR-050	claim	unit:composition.book-of-osee#0	withdrawn		present at 2330d63a5, absent now
+RR-051	claim	unit:composition.book-of-osee#1	withdrawn		present at 2330d63a5, absent now
+RR-052	claim	unit:composition.first-epistle-of-st-john#0	changed:sources		
+RR-053	claim	unit:composition.fourth-book-of-kings#0	changed:date+label+basis+note		
+RR-054	claim	unit:composition.fourth-book-of-kings#1	added		absent at 2330d63a5
+RR-055	claim	unit:composition.gospel-of-john#0	changed:date+basis+note		
+RR-056	claim	unit:composition.gospel-of-matthew#0	changed:sources+note		
+RR-057	claim	unit:composition.second-book-of-machabees#0	changed:note		
+RR-058	claim	unit:composition.second-book-of-machabees.first-letter#0	added		absent at 2330d63a5
+RR-059	claim	unit:composition.second-book-of-machabees.second-letter#0	added		absent at 2330d63a5
+RR-060	claim	unit:composition.second-epistle-of-st-john#0	changed:sources		
+RR-061	claim	unit:composition.third-book-of-kings#0	changed:date+label+basis+note		
+RR-062	claim	unit:composition.third-book-of-kings#1	added		absent at 2330d63a5
+RR-063	claim	unit:composition.third-epistle-of-st-john#0	changed:sources		
+RR-064	binding	historical-setting -> israel.exile.first-captivity	withdrawn	Dan	
+RR-065	binding	historical-setting -> israel.exile.seventy-years	scope-changed	was: Ps.136 | now: Dan,Ps.136	
+RR-066	binding	historical-setting -> israel.monarchy.david-flight-from-absalom	scope-changed	was: Ps.62,Ps.70 | now: Ps.30,Ps.62,Ps.70	
+RR-067	binding	prophecy-given -> israel.divided-kingdom.fall-of-samaria	withdrawn	Mich.4,Mich.5	
+RR-068	binding	prophecy-given -> israel.divided-kingdom.osee-ministry	added	Os	
+RR-069	binding	prophetic-referent -> life-of-christ.nativity	scope-changed	was: Dan.9.24-27,Deut.18.15-19,Is.7.14,Mich.5.2,Mich.5.2-3,Ps.17,Ps.49,Ps.67,Ps.95,Ps.96,Ps.97 | now: Dan.9.24-27,Deut.18.15-19,Is.7.14,Mich.5.2-3,Ps.17,Ps.49,Ps.67,Ps.95,Ps.96,Ps.97	
+RR-070	binding	superscription-setting -> israel.divided-kingdom.osee-ministry	added	Os.1.1	
+RR-071	gap	undated-in-tradition @ Deut	reason-or-sources-changed		
+RR-072	gap	undated-in-tradition @ Eccles	reason-or-sources-changed		
+RR-073	gap	undated-in-tradition @ Gen	reason-or-sources-changed		
+RR-074	gap	undated-in-tradition @ Jon	added		
+RR-075	gap	undated-in-tradition @ Lev	reason-or-sources-changed		
+RR-076	gap	undated-in-tradition @ Num	reason-or-sources-changed		
+RR-077	hard-case	israel.patriarchs.call-of-abram / birth-of-abram	critical-correction	Gen.11.26; Gen.12.4	the Flood-to-Abram intervals; verify they land on the call and not the birth
+RR-078	hard-case	greek Ecclus 36:16	native-hard-case	Ecclus.36.16 --system greek	the one safely-shared Greek locus; both axes must answer and the native date must survive the mapping
+RR-079	hard-case	greek Ecclus 35:1	native-hard-case	Ecclus.35.1 --system greek	mapping refuses, chronology answers
+RR-080	hard-case	hebrew Ps 51	safe-shared-alternate-system	Ps.51.3 --system hebrew	must reach vulgate Ps.50.3 with identical assertions and no duplicate authored data
+RR-081	hard-case	mixed-validity native span	gate-regression	greek Ecclus 36	a span whose first locus refuses and whose interior would duplicate must be refused at load
+RR-082	hard-case	greek EsthGr.15.10	native-status-gap	EsthGr.15.10 --system greek	research-pending on the chronology axis, textually-distinct on the mapping axis
+RR-083	hard-case	world-english-catholic Dan.3.71	native-status-gap	Dan.3.71 --system world-english-catholic	
+RR-084	hard-case	world-english-catholic Esth.1.1	native-status-gap	Esth.1.1 --system world-english-catholic	
+RR-085	hard-case	world-english-catholic Esth.3.13	native-status-gap	Esth.3.13 --system world-english-catholic	
+RR-086	hard-case	world-english-catholic Esth.5.1	native-status-gap	Esth.5.1 --system world-english-catholic	
+RR-087	hard-case	world-english-catholic Esth.5.2	native-status-gap	Esth.5.2 --system world-english-catholic	
+RR-088	hard-case	world-english-catholic Esth.8.13	native-status-gap	Esth.8.13 --system world-english-catholic	
+RR-089	hard-case	world-english-catholic Esth.4.6 / Esth.9.5 / Esth.9.30	withdrawn-native-loci		the witness prints none of these; verify they are absent from the universe rather than statusless
+RR-090	hard-case	israel.monarchy.temple-begun#5	maintainer-question		Howlett's 958 B.C. survives as an alternate beneath rank-1 Scripture while its twins from the same sentence (Exodus 1277, Saul 1020) were withdrawn as modern-critical. A cold auditor passed this claim (P-008). The next reviewer should rule.
+RR-091	hard-case	artifact.catholic-encyclopedia.alphabetical-index.*	newly-registered-source		two index pages registered by this lane; the Genesis and Numbers gap rows now rest on them
+RR-092	hard-case	artifact.catholic-encyclopedia.volume-6/9/11 newadvent-06412b, 06412c, 06413a, 06413c, 09207a, 11151a	newly-registered-source		six articles registered by this lane; gap rows rest on them

@@ -19,6 +19,17 @@ only; where the two appear to disagree, the guidance is right.
 | `gaps.yaml` | where the corpus knowingly says nothing dated, and why |
 | `coverage.tsv` | **derived** — one row a run of verses answering alike |
 
+The review record, which asserts nothing about Scripture and is read by no tool:
+
+| File | Holds |
+| --- | --- |
+| `cold-audit-manifest.tsv` | the deterministic sample the cold audit reviewed, and the predicate that regenerates it |
+| `cold-audit-report.md` | the cold independent source audit of `2330d63a5` — **immutable review evidence** |
+| `cold-audit-findings.tsv` | its 104 standing findings — **immutable review evidence** |
+| `post-audit-corrections.tsv` | one row per standing finding, and what was done about it |
+| `post-audit-rereview-manifest.tsv` | every claim, scope and gap row the correction lane changed; the next cold reviewer inspects all of it |
+| `post-audit-correction-report.md` | what the correction lane changed, and what it left open |
+
 `coverage.tsv` is written by `tools/tpt scripture-chronology build` and gated
 by `check`, which refuses a stale table rather than rebuilding it. Do not
 hand-edit it.
