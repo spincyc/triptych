@@ -196,7 +196,21 @@ NODE = shutil.which("node")
 # so the sentences moved to the file that carries no ceiling and the page
 # kept pointers to them. The page is SMALLER than V14 left it — 12,958
 # against 12,972 whole — while carrying the whole ownership change.
-MODEL_SHA256 = "ef949fb304ee14204989f58174c3f8126ab0544e1bd22f0820331e7501f39506"
+# V16 moves both again, for the publication, finalization and completion
+# closures the V15 review required. The model gains the sealed text record —
+# `TEXT_SCHEMA`, `NO_TEXT` and the `sealText` mint behind `textPayload`, which
+# is now the FINALIZER and runs where the file settles rather than where it is
+# rendered — the completion envelope `textCompleted`/`textFailed` and the
+# post-write journal `bodyApplied`, and it takes in the four body sentences
+# the page used to compose. `bodyAsked` keeps its name and stops accepting
+# content: it takes an envelope this file sealed and compares three objects.
+# The model grows 129,518 bytes to 139,503, which is the disclosed, uncapped
+# cost of putting the whole projection where the answer is finished. The page
+# pays 12,958 to 12,966 gzipped whole against its unraised 13,000 ceiling and
+# 7,724 to 7,836 stripped against 8,800: eight bytes for a correction that
+# moved a projection, an envelope and a confirmed write into the page's own
+# settle, because the sentences it no longer writes paid for most of it.
+MODEL_SHA256 = "64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3"
 
 # gzip -9, whole file, mtime pinned to zero. These are the recorded E1
 # ceilings — the first candidate raised them to 8,600/13,400 without a waiver
@@ -1656,6 +1670,108 @@ V15_BODY_A = _fixture({
 V15_BODY_B = _fixture({
     "id": "fallback-owned", "language": "la",
     "text": "PLANTED BODY B — the answer the row in projection B asked for."})
+
+# ================================================================ V16 §§A-C
+# THE PAYLOAD WHOSE WORDS ARE NOT ITS OWN.
+#
+# The V15 review's mutation finding, made into a document. V15 shallow-froze
+# the RAW PARSED FILE, shared that by path, and projected it at RENDER time by
+# ordinary property lookup — so `Object.create({text: '…'})` answered for a
+# record that states nothing, and an unreadable payload became a readable one
+# between one reader and the next. This record states NO words of its own; the
+# words are planted above it, or planted above it AFTER it was cached.
+#
+# `notes` is the other half of the same finding and is here for the same
+# reason: whatever nested mutable structure a shared raw file carries stays
+# reachable and stays mutable, so "the cached value is frozen" was a claim
+# about one level of one object.
+V16_QUIET_PAYLOAD = _fixture({
+    "id": "fallback-owned", "language": "la",
+    "notes": {"marker": "quiet"}})
+
+# The words themselves, said three ways: inherited from the start, inherited
+# only AFTER the value was published, and — the control — stated by the
+# record itself, where they are genuinely this fragment's own.
+V16_INHERITED_TEXT = "FORGED INHERITED BODY — supplied from a prototype."
+V16_LATE_TEXT = "FORGED LATE BODY — supplied after the value was cached."
+V16_INHERITED_BASIS = "FORGED INHERITED EXTENT"
+V16_INHERITED_DATE = "FORGED INHERITED DATE BASIS"
+V16_INHERITED_NOTE = "FORGED INHERITED ACKNOWLEDGEMENT"
+V16_ACCESSOR_TEXT = "FORGED ACCESSOR BODY — supplied by a prototype getter."
+V16_LATE_MARKER = "FORGED LATE MARKER"
+
+# THE POSITIVE CONTROL. Everything the prototype would have said, said by the
+# record itself: the same words reach the reader, the same extent line is
+# drawn and the same acknowledgement is rendered. So an inherited value that
+# reaches none of them is DECLINED, not merely unreachable.
+V16_OWN_TEXT_PAYLOAD = _fixture({
+    "id": "fallback-owned", "language": "la",
+    "text": V16_INHERITED_TEXT,
+    "basis": V16_INHERITED_BASIS,
+    "date_basis": V16_INHERITED_DATE,
+    "acknowledgement": V16_INHERITED_NOTE,
+    "notes": {"marker": "quiet"}})
+
+# ================================================================== V16 §E
+# A BODY WITH AN APPARATUS AND AN ACKNOWLEDGEMENT BESIDE ITS WORDS.
+#
+# The forced write-failure cases need a payload that draws MORE than the one
+# node the page reads back. The confirmation is `text.textContent === said`
+# and nothing else, so a fragment whose extent line, date line and licence
+# note are separate nodes is what makes the exact scope of a journal entry
+# assertable: it says the fragment's WORDS reached the page, and it does not
+# say that everything beside them did.
+V16_APPARATUS_BODY_A = _fixture({
+    "id": "fallback-owned", "language": "la",
+    "text": "PLANTED BODY A — the answer the row in projection A asked for.",
+    "basis": "PLANTED EXTENT BASIS",
+    "date_basis": "PLANTED DATE BASIS",
+    "acknowledgement": "PLANTED ACKNOWLEDGEMENT"})
+
+# ================================================================== V16 §C
+# THE SEVEN SCHEMA NAMES, SUPPLIED BY THE REALM ITSELF.
+#
+# The same closure as the mutable-prototype payload, reached from the other
+# side: not the served file's prototype, but the prototype above the ORDINARY
+# LITERAL the model seals its finalized value FROM. `sealText` iterated
+# `TEXT_SCHEMA` and read `fields[name]`, and `NO_TEXT` was built from a
+# two-key literal — so five of the seven members of the one value this whole
+# lane seals against the world were answered by `Object.prototype`. The
+# rendered page was never wrong, because `bodySaying` reaches the absent
+# sentence from `present !== true`; the VALUE was, and the value is what the
+# closure is about.
+#
+# `present` is deliberately a BOOLEAN. `sealText` admits a boolean unchanged
+# and puts everything else through `sound()`, so a hostile string is flattened
+# to `''` on its way in and a hostile boolean is not: it is the one member
+# that survives the mint intact, and therefore the sharpest case.
+V16_HOSTILE_SCHEMA = {
+    "present": True,
+    "unreadable": False,
+    "text": "HOSTILE INHERITED TEXT",
+    "basis": "HOSTILE INHERITED EXTENT",
+    "date_basis": "HOSTILE INHERITED DATE",
+    "acknowledgement": "HOSTILE INHERITED ACKNOWLEDGEMENT",
+    "acknowledgement_broken": True,
+}
+
+# ONE ROW THAT ASKS AN ADDRESS AND ONE THAT ASKS NONE, so a single scenario
+# applies both kinds of finalized value: one minted at a settlement from a
+# real file, and `NO_TEXT` — the one built from a literal, which is the value
+# the pollution defect actually reached.
+V16_NO_FILE_SPINE = _fixture({
+    "token": "Gen", "chapter": 1,
+    "sources": {"1": _voice_source(1), "2": _voice_source(2)},
+    "fragments": [
+        _voice_fragment(1, id="fallback-owned", locator="first",
+                        text_path="structure/catena/text/fallback-owned.json"),
+        _voice_fragment(2, locator="second", source="2",
+                        extent={"token": "Gen", "first_chapter": 1,
+                                "first_verse": 2, "last_chapter": 1,
+                                "last_verse": 2}),
+    ],
+    "leads": [], "blocked": [], "refusals": {},
+})
 
 # A CHAPTER WHOSE SPINE IS A DOCUMENT AND NOT A SPINE, on two chapters, so a
 # reader can walk from one to the other and back. The page substitutes a
@@ -3407,6 +3523,238 @@ SCENARIOS = [
      "steps": [{"do": "selectChapter", "value": "2", "label": "away"},
                {"do": "selectChapter", "value": "1", "label": "back"}]},
 
+    # ================================================================ V16 §A
+    # WHAT THE PATH HELD, AT EVERY INSTANT IT HELD ANYTHING.
+    #
+    # The V15 review's decisive defect: `fragmentTexts.set(path, asked)` runs
+    # INSIDE `asked`'s own fulfilment handler, and a promise returned by
+    # `then` cannot settle until that handler returns — so the value published
+    # by path is an UNRESOLVED PROMISE, and publication precedes the freeze.
+    # Ordinary event-loop work cannot interleave there, which is why every V15
+    # behavioural test stayed green; a synchronous reentrant operation can.
+    # The probe reads the path at the five instants the review named.
+    {"name": "v16-publication", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "probePublication": {"path": "structure/catena/text/fallback-owned.json"},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # ================================================================ V16 §B
+    # A SECOND OWNER, ASKING THE SAME ADDRESS FROM INSIDE THE FIRST OWNER'S
+    # SETTLEMENT. The shim's `dispatch` is synchronous, so opening row B from
+    # the probe is a genuine reentrant ask in the middle of row A's turn —
+    # the one operation V15's publication interval is reachable by.
+    #
+    # AFTER PUBLICATION: at V16 the entry is the finalized immutable record,
+    # so B is answered from it and rebinds it through B's own completion. At
+    # V15 the entry is A's still-pending promise, so B joins it and renders
+    # A's body without ever asking.
+    {"name": "v16-reentrant-published", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "probePublication": {"path": "structure/catena/text/fallback-owned.json",
+                          "reentrantAt": "after-publication",
+                          "reentrantAuthor": "Author 2"},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # DURING NORMALIZATION: the parse is done and the record is not yet
+    # built, so nothing final exists to be shared. B must MISS and open a
+    # request of its own — and the turn-indexed serving answers it with a
+    # different document, so B's independence is a body a reader could see
+    # and not an entry in a journal. This is also the combined adversarial
+    # case: A's publication and completion both happen after B has asked,
+    # and may not reach B.
+    {"name": "v16-reentrant-normalizing", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "probePublication": {"path": "structure/catena/text/fallback-owned.json",
+                          "reentrantAt": "during-normalize",
+                          "reentrantAuthor": "Author 2"},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # ONE OWNER FAILS AND THE OTHER DOES NOT, WITH THE PATH WATCHED. The V15
+    # closure proved the two owners apart; what it could not prove is that
+    # neither the failure nor anything intermediate was ever PUBLISHED.
+    {"name": "v16-one-fails-probed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [None, V15_BODY_B]},
+     "probePublication": {"path": "structure/catena/text/fallback-owned.json"},
+     "steps": [{"do": "openEveryFragment", "label": "both"}]},
+    # ================================================================ V16 §C
+    # THE WORDS SUPPLIED FROM ABOVE THE RECORD. The served document states no
+    # text of its own; a prototype states it. Under V15 `sound(record.text)`
+    # answers from the prototype and the fragment reads as though it carried
+    # words. Under V16 every member is taken by own descriptor at the
+    # settlement, so the payload is what it is: one this page cannot read.
+    {"name": "v16-inherited-text", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V16_QUIET_PAYLOAD},
+     "contaminate": {"structure/catena/text/fallback-owned.json":
+                     {"text": V16_INHERITED_TEXT,
+                      "basis": V16_INHERITED_BASIS,
+                      "date_basis": V16_INHERITED_DATE,
+                      "acknowledgement": V16_INHERITED_NOTE}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE POSITIVE CONTROL: the same three values as the record's OWN data.
+    {"name": "v16-inherited-text-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V16_OWN_TEXT_PAYLOAD},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE SAME WORDS SUPPLIED BY A PROTOTYPE GETTER. `contaminate` can plant
+    # only what JSON can express; this plants an ACCESSOR above the served
+    # body, which is the other shape the V15 review's finding covers — a
+    # plain lookup walks the chain and invokes it, and an own-descriptor read
+    # never reaches it. The getter counts its own calls.
+    {"name": "v16-inherited-accessor", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V16_QUIET_PAYLOAD},
+     "inheritAccessor": {"path": "structure/catena/text/fallback-owned.json",
+                         "fields": {"text": V16_ACCESSOR_TEXT,
+                                    "basis": V16_INHERITED_BASIS}},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE PROTOTYPE AND THE NESTED RECORD, CHANGED AFTER THE VALUE WAS
+    # CACHED. Row A asks and settles; the plant is then written into the
+    # object sitting above the served body and into the served body's own
+    # nested record; row B asks the same address afterwards and is answered
+    # from what the cache holds. Under V15 the cache holds the raw file and B
+    # reads the forged words through it. Under V16 the cache holds a frozen
+    # null-prototype record of scalars, which has no prototype to answer from
+    # and nothing nested to reach.
+    {"name": "v16-late-contamination", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V16_QUIET_PAYLOAD},
+     "contaminate": {"structure/catena/text/fallback-owned.json": {}},
+     "corrupt": {"above": {"structure/catena/text/fallback-owned.json":
+                           {"text": V16_LATE_TEXT,
+                            "basis": V16_INHERITED_BASIS}},
+                 "inside": {"structure/catena/text/fallback-owned.json":
+                            {"notes": {"marker": V16_LATE_MARKER}}}},
+     "steps": [{"do": "openFirstFragment", "label": "first"},
+               {"do": "corrupt", "label": "corrupted"},
+               {"do": "openEveryFragment", "label": "second"}]},
+    # ================================================================ V16 §E
+    # THE AUTHORITATIVE BODY WRITE, MADE TO FAIL. Two rows, two documents,
+    # one address; the write of A's body does not take. V15 recorded the
+    # application BEFORE the write, so its journal says a body was applied
+    # that no reader ever saw. V16 reads the node back and records nothing.
+    {"name": "v16-write-fails", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "breakBodyWrite": {"said": "PLANTED BODY A"},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE CONTROL: the same two rows with nothing held shut.
+    {"name": "v16-write-fails-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE SECOND FAILURE MODE: the setter THROWS instead of quietly refusing.
+    # The page runs the whole write inside a `try` and compares what the
+    # write returned with what the node reads back, so the throw is caught
+    # where it happened, nothing is journalled, and — unlike the silent
+    # case — the fragment's `asked` flag is put back, because a write that
+    # detonated is a write worth attempting again. The reader re-opens, and
+    # the retry must reuse the owner's own completion rather than ask again.
+    #
+    # The body carries an extent, a date and a licence note, so the partial
+    # state each mode leaves is a page a reviewer can be shown rather than a
+    # sentence about one node.
+    {"name": "v16-write-throws", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V16_APPARATUS_BODY_A, V15_BODY_B]},
+     "breakBodyWrite": {"said": "PLANTED BODY A", "mode": "throw"},
+     "steps": [{"do": "openEveryFragment", "label": "opened"},
+               {"do": "openEveryFragment", "label": "reopened"}]},
+    # THE SAME PAYLOAD, DROPPED SILENTLY, AND RE-OPENED THE SAME WAY. The
+    # write returns, so the page has no reason to think it failed until it
+    # reads the node back — and `asked` stays true, so re-opening does
+    # nothing at all. Two failure modes, two truthful and DIFFERENT answers.
+    {"name": "v16-write-silent", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V16_APPARATUS_BODY_A, V15_BODY_B]},
+     "breakBodyWrite": {"said": "PLANTED BODY A", "mode": "silent"},
+     "steps": [{"do": "openEveryFragment", "label": "opened"},
+               {"do": "openEveryFragment", "label": "reopened"}]},
+    # THE CONTROL FOR BOTH: the same payload with nothing held shut, so the
+    # apparatus, the licence note and both journal entries are what a whole
+    # write produces.
+    {"name": "v16-write-modes-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V16_APPARATUS_BODY_A, V15_BODY_B]},
+     "steps": [{"do": "openEveryFragment", "label": "opened"},
+               {"do": "openEveryFragment", "label": "reopened"}]},
+    # ================================================================ V16 §C
+    # THE WHOLE SCHEMA, SUPPLIED BY THE REALM. `Object.prototype` carries all
+    # seven `TEXT_SCHEMA` names before `catena-model.js` is loaded, so
+    # `NO_TEXT` and every `sealText` mint are built under the pollution. One
+    # row asks an address and one asks none, so both kinds of finalized value
+    # are applied and both are read out of the journal by value.
+    {"name": "v16-polluted-schema", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V16_NO_FILE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "polluteObjectPrototype": V16_HOSTILE_SCHEMA,
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # THE CONTROL: the same chapter in an unpolluted realm.
+    {"name": "v16-polluted-schema-control", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V16_NO_FILE_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+    # ================================================================ V16 §H
+    # THE FRAGMENT TEXT FILE, OBSERVED. The V15 accounting covered the
+    # chapter's sources and never the file that becomes the reader's words.
+    {"name": "v16-text-accounting", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "countText": {"path": "structure/catena/text/fallback-owned.json"},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # AND THE SAME FILE WITH ITS WORDS AS AN OWN ACCESSOR, which is the shape
+    # `ownData` exists to decline. The getter counts its own invocations, so
+    # "never called" is a number taken at the accessor itself.
+    {"name": "v16-text-accessor", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE,
+               "structure/catena/text/fallback-owned.json":
+                   V9_PLANTED_FALLBACK},
+     "countText": {"path": "structure/catena/text/fallback-owned.json",
+                   "accessor": ["text", "basis"]},
+     "steps": [{"do": "openFirstFragment", "label": "opened"}]},
+    # ================================================================ V16 §F
+    # OWNER-LOCAL RETRY, WITH THE PATH WATCHED. A's request is held and then
+    # failed; A asks again and recovers. V15 proved the retry owner-correct
+    # and could not prove what the shared cache held while it happened.
+    {"name": "v16-retry-probed", "hash": GEN1,
+     "files": {"structure/catena/01-gen/001.json": V14_SAME_PATH_SPINE},
+     "bodies": {"structure/catena/text/fallback-owned.json":
+                [V15_BODY_A, V15_BODY_B]},
+     "defer": ["structure/catena/text/fallback-owned.json"],
+     "probePublication": {"path": "structure/catena/text/fallback-owned.json"},
+     "steps": [{"do": "openFirstFragment", "label": "asked"},
+               {"do": "release",
+                "path": "structure/catena/text/fallback-owned.json",
+                "outcome": "fail", "label": "failed"},
+               {"do": "openFirstFragment", "label": "reopened"},
+               {"do": "release",
+                "path": "structure/catena/text/fallback-owned.json",
+                "label": "recovered"}]},
+    # ================================================================ V16 §G
+    # EVERY CONSUMER OF ONE CHAPTER, ON ONE PAGE. The provenance line is
+    # drawn only where a reader asks for a translation that is not held, and
+    # no committed scenario asked for one AND opened a body — so provenance
+    # and the three ownership consumers had never met on one authority.
+    {"name": "v16-whole-roster", "hash": GEN1 + "&voice=translation:en",
+     "steps": [{"do": "openEveryFragment", "label": "opened"}]},
+
     # ============================================================= V14 §20-22
     # THE WHOLE AUTHORITY GRAPH, so the freeze report has one of everything
     # to report on.
@@ -3754,6 +4102,92 @@ const PLAN = JSON.parse(fs.readFileSync(PLAN_PATH, 'utf8'));
 const DATA = pathlib.join(ROOT, 'src/web/data');
 const BROWSER = pathlib.join(ROOT, 'src/web/browser');
 
+/* ==========================================================================
+ * V16 §§A, B, E — THE PUBLICATION PROBE AND THE FAILING BODY WRITE
+ *
+ * Two seams the V15 review's decisive findings cannot be reached without,
+ * and neither of them may be a seam in the PAGE. `fragmentTexts` is a
+ * module-scope `Map` inside the page's own IIFE: nothing exported reaches
+ * it, and adding an export so a test could look would be the test changing
+ * the thing it is asserting about. So the engine is instrumented instead.
+ *
+ * `Map.prototype` is wrapped ONCE, here, for every scenario, and answers
+ * exactly as it did — the real method runs first and its answer is what is
+ * returned. Only a STRING key carrying the probed path is recorded, and only
+ * while a scenario has asked for a probe, so the page's own chapter and
+ * paragraph caches, the harness's parked-request table (excluded by
+ * identity) and every object-keyed `Map` in either realm are untouched.
+ * What is recorded is the ONE fact V15 cannot survive: what a lookup of the
+ * path returns AT THE INSTANT of each event — whether the entry is absent,
+ * an unresolved promise, a settling promise, a partially normalized record
+ * or the finalized immutable value.
+ *
+ * `breakWrite` is the other seam. V15 recorded the body application BEFORE
+ * the DOM write, so the journal claimed `applied` for a body that had not
+ * been written and could not have said so if the write had failed. A write
+ * that does not take is the smallest truthful way to ask that question, and
+ * it is bounded to ONE node in ONE scenario: the first `textContent` write
+ * whose value carries a named marker is dropped on the floor, and nothing
+ * else in the shim changes. It does not THROW: a throw inside the page's
+ * own settle handler would become an unhandled rejection and take the whole
+ * replay down, which would be the probe deciding the result rather than
+ * reporting it.
+ * ====================================================================== */
+let breakWrite = null;
+let publication = null;
+
+/* WHAT THE PAGE LET ESCAPE.
+ *
+ * Node aborts the process on an unhandled rejection, so a page that lets a
+ * failing body write out of its own settle handler would take the whole
+ * replay down with it — every scenario in the plan, not only the one that
+ * forced the failure — and the probe would be deciding the result instead of
+ * reporting it. Recording them keeps the run alive and turns the escape into
+ * a FACT about the page: a sink that contains its writes escapes nothing,
+ * and one that does not escapes exactly once per failure it did not catch.
+ *
+ * Nothing is suppressed. Every escape is journalled with the scenario and
+ * the step in force, and the assertions require the journal to be empty
+ * everywhere except where a scenario deliberately breaks a write. */
+const escaped = [];
+let currentScenario = '';
+let currentStep = 'start';
+process.on('unhandledRejection', (reason) => {
+  escaped.push({
+    scenario: currentScenario,
+    step: currentStep,
+    said: String((reason && reason.message) || reason)
+  });
+});
+
+const realMapGet = Map.prototype.get;
+const realMapSet = Map.prototype.set;
+const realMapHas = Map.prototype.has;
+
+function watchMap(map, moment, key, value) {
+  const probe = publication;
+  if (probe === null || typeof key !== 'string') return;
+  if (key.indexOf(probe.path) === -1 || probe.ignore.has(map)) return;
+  probe.map = map;
+  probe.saw(moment, value);
+}
+
+Map.prototype.get = function (key) {
+  const value = realMapGet.call(this, key);
+  watchMap(this, 'get', key, value);
+  return value;
+};
+Map.prototype.has = function (key) {
+  const value = realMapHas.call(this, key);
+  watchMap(this, 'has', key, value);
+  return value;
+};
+Map.prototype.set = function (key, value) {
+  const answer = realMapSet.call(this, key, value);
+  watchMap(this, 'set', key, value);
+  return answer;
+};
+
 class TextNode {
   constructor(text) { this.nodeType = 3; this.parentNode = null; this.data = String(text); }
   get textContent() { return this.data; }
@@ -3844,6 +4278,38 @@ class Element {
   }
   get textContent() { return this.childNodes.map((one) => one.textContent).join(''); }
   set textContent(value) {
+    /* V16 §E: THE AUTHORITATIVE BODY WRITE, MADE TO FAIL — TWO WAYS.
+     *
+     * One node, one scenario, one write: the first whose value carries the
+     * named marker. `silent` drops the assignment on the floor, so the
+     * write RETURNS and the read-back is what catches it. `throw` detonates
+     * before the node is touched, so the assignment never returns at all.
+     *
+     * Both are reachable because the page's sink now runs the whole write
+     * inside a `try` and compares what the write RETURNED with what the node
+     * reads back — so a throwing setter is caught in the page, leaves `said`
+     * null, and cannot become an unhandled rejection that would abort the
+     * replay and let the probe decide the result. The two modes leave
+     * DIFFERENT states behind, and the page answers each differently; that
+     * difference is the assertion. */
+    if (breakWrite !== null && String(value).indexOf(breakWrite.said) !== -1) {
+      /* HOW MANY TIMES THE PAGE TRIED. The seam closes once; the count keeps
+       * going, so "the retry really attempted the write again" is a number
+       * and not an inference from the DOM afterwards. */
+      breakWrite.attempts += 1;
+      if (breakWrite.broke) {
+        this.childNodes = [];
+        this.appendChild(new TextNode(value));
+        return;
+      }
+      breakWrite.broke = true;
+      breakWrite.node = this.className || this.localName;
+      breakWrite.dropped = String(value);
+      if (breakWrite.mode === 'throw') {
+        throw new Error('the body write failed');
+      }
+      return;
+    }
     this.childNodes = [];
     if (value !== '' && value !== null && value !== undefined) {
       this.appendChild(new TextNode(value));
@@ -4343,17 +4809,33 @@ async function run(scenario) {
    * is inferred from a path afterwards. */
   const transports = [];
   const applied = [];
-  /* V15 §23: WHAT WAS OBSERVED, AND HOW, COUNTED BY KIND.
+  /* V15 §23, CORRECTED BY V16 — WHAT WAS OBSERVED, AND HOW, COUNTED BY KIND.
    *
    * The V14 review found the getter-invocation claim true and the sentence
-   * around it too strong: hostile nested value accessors are never invoked,
-   * and a Proxy over the same record still sees its descriptor asked three
-   * times per source key and twice per shared field. Those are different
-   * observations and one count cannot report both. Four kinds are counted
-   * apart here — a value read that would run an accessor, a descriptor read
-   * that would not, an own-property test, and the key enumeration — so the
-   * package can say exactly what each one is instead of rounding them all to
-   * `one read`. */
+   * around it too strong. V15 answered with four buckets and the V15 review
+   * refused the accounting again, for two reasons this vocabulary fixes.
+   *
+   * It called the descriptor bucket `descriptor` and the `in` bucket `has`,
+   * while `Object.hasOwn` — an OWN-PROPERTY TEST — is `[[GetOwnProperty]]`
+   * and therefore landed in `descriptor`. One name said "descriptor read"
+   * and covered two different questions, and the other said "has" and
+   * covered neither of them. And it reported no `getPrototypeOf` bucket at
+   * all while asserting a key list that contained one, so the prototype
+   * observation that ENUMERATION causes was measured and never disclosed.
+   *
+   * Six kinds now, each named for the operation it is:
+   *
+   *   value_gets            a `[[Get]]`: the read that would RUN an accessor
+   *   getter_invocations    an own accessor actually invoked
+   *   has_operator          the `in` operator's `[[HasProperty]]`
+   *   own_descriptor_reads  `[[GetOwnProperty]]`: own tests AND `ownData`
+   *   enumerations          `[[OwnPropertyKeys]]`, which `for…in` opens with
+   *   prototype_observations `[[GetPrototypeOf]]`
+   *
+   * The semantic claim they are here to support is NOT "the record is
+   * observed once". It is: NO HOSTILE INHERITED OR ACCESSOR VALUE BECOMES
+   * SEMANTIC AUTHORITY — no value read runs, no accessor is invoked, and
+   * every semantic member is taken from the record's own descriptor table. */
   const observations = {};
   const observe = (kind, where) => {
     const at = kind + ':' + where;
@@ -4376,8 +4858,17 @@ async function run(scenario) {
   const memberReads = {};
   /* THE BODY A TEXT REQUEST WAS ANSWERED WITH, short enough to read in a
    * ledger and long enough to name a planted marker. */
-  const bodyOf = (doc) => doc && typeof doc === 'object'
-    && typeof doc.text === 'string' ? doc.text.slice(0, 48) : '';
+  /* Taken by OWN DESCRIPTOR, for the same reason the model takes its
+   * members that way. This is the journal's own reading of a served
+   * document, and a journal that ran a planted accessor — or answered from
+   * a planted prototype — would be reporting on itself. It is not a
+   * consumer and it may not behave like one. */
+  const bodyOf = (doc) => {
+    if (!doc || typeof doc !== 'object') return '';
+    const spot = Object.getOwnPropertyDescriptor(doc, 'text');
+    const said = spot && Object.hasOwn(spot, 'value') ? spot.value : undefined;
+    return typeof said === 'string' ? said.slice(0, 48) : '';
+  };
   /* V13: A SPINE WHOSE OWN MEMBERS DRIFT BETWEEN PROJECTIONS.
    *
    * `driftingSpine` walks a FRAGMENT's carried path, which is the V11/V12
@@ -4557,39 +5048,48 @@ async function run(scenario) {
       if (!one || typeof one !== 'object') continue;
       entries[key] = new Proxy(one, {
         get(target, name) {
-          observe('value-get', 'field/' + String(name));
+          /* A `[[Get]]` AND, SEPARATELY, WHETHER IT RAN ANYTHING. The two
+           * are one event only when the property is a data property; on an
+           * accessor they are the value read and the invocation, and the
+           * V16 vocabulary keeps them apart even where — as here — the
+           * record carries no accessor and both are zero. */
+          observe('value_gets', 'field/' + String(name));
+          const spot = Reflect.getOwnPropertyDescriptor(target, name);
+          if (spot && typeof spot.get === 'function') {
+            observe('getter_invocations', 'field/' + String(name));
+          }
           return target[name];
         },
         has(target, name) {
-          observe('has', 'field/' + String(name));
+          observe('has_operator', 'field/' + String(name));
           return Reflect.has(target, name);
         },
         getOwnPropertyDescriptor(target, name) {
-          observe('descriptor', 'field/' + String(name));
+          observe('own_descriptor_reads', 'field/' + String(name));
           return Reflect.getOwnPropertyDescriptor(target, name);
         },
         ownKeys(target) {
-          observe('own-keys', 'field');
+          observe('enumerations', 'field');
           return Reflect.ownKeys(target);
         },
         getPrototypeOf(target) {
-          observe('prototype', 'field');
+          observe('prototype_observations', 'field');
           return Reflect.getPrototypeOf(target);
         }
       });
     }
     made.sources = new Proxy(raw, {
       get(target, name) {
-        observe('value-get', 'key/' + String(name));
+        observe('value_gets', 'key/' + String(name));
         return Object.prototype.hasOwnProperty.call(entries, name)
           ? entries[name] : target[name];
       },
       has(target, name) {
-        observe('has', 'key/' + String(name));
+        observe('has_operator', 'key/' + String(name));
         return Reflect.has(target, name);
       },
       getOwnPropertyDescriptor(target, name) {
-        observe('descriptor', 'key/' + String(name));
+        observe('own_descriptor_reads', 'key/' + String(name));
         const spot = Reflect.getOwnPropertyDescriptor(target, name);
         if (spot && Object.prototype.hasOwnProperty.call(entries, name)) {
           spot.value = entries[name];
@@ -4597,15 +5097,60 @@ async function run(scenario) {
         return spot;
       },
       ownKeys(target) {
-        observe('own-keys', 'key');
+        observe('enumerations', 'key');
         return Reflect.ownKeys(target);
       },
       getPrototypeOf(target) {
-        observe('prototype', 'key');
+        observe('prototype_observations', 'key');
         return Reflect.getPrototypeOf(target);
       }
     });
     return made;
+  };
+  /* V16 §H: THE FRAGMENT TEXT FILE, COUNTED THE SAME WAY.
+   *
+   * The V15 accounting covered the chapter's `sources` record and stopped
+   * there, so the file that becomes the READER'S WORDS — the one V16 moved
+   * the whole projection of, out of the render and into the settlement —
+   * had no accounting at all. It is served here behind the same six-bucket
+   * Proxy, and `accessor` plants an OWN GETTER over any field named, which
+   * is the shape `ownData` exists to decline: the getter counts its own
+   * invocations, so "never called" is a number taken at the accessor and
+   * not an inference from the descriptor bucket. */
+  const countingText = (doc, plan) => {
+    const raw = Object.assign({}, doc);
+    for (const name of plan.accessor || []) {
+      const was = raw[name];
+      Object.defineProperty(raw, name, {
+        get() {
+          observe('getter_invocations', 'text/' + name);
+          return was;
+        },
+        enumerable: true, configurable: true
+      });
+    }
+    return new Proxy(raw, {
+      get(target, name) {
+        observe('value_gets', 'text/' + String(name));
+        return target[name];
+      },
+      has(target, name) {
+        observe('has_operator', 'text/' + String(name));
+        return Reflect.has(target, name);
+      },
+      getOwnPropertyDescriptor(target, name) {
+        observe('own_descriptor_reads', 'text/' + String(name));
+        return Reflect.getOwnPropertyDescriptor(target, name);
+      },
+      ownKeys(target) {
+        observe('enumerations', 'text');
+        return Reflect.ownKeys(target);
+      },
+      getPrototypeOf(target) {
+        observe('prototype_observations', 'text');
+        return Reflect.getPrototypeOf(target);
+      }
+    });
   };
   const driftingSpine = (spine, values, cycle) => {
     const made = Object.assign({}, spine);
@@ -4643,6 +5188,114 @@ async function run(scenario) {
       });
     });
     return made;
+  };
+
+  /* V16 §B: ONE FRAGMENT, OPENED BY THE AUTHOR ON ITS HEAD, from anywhere.
+   * The step verbs open fragments between settles; a REENTRANT owner has to
+   * open one from INSIDE a settle, which is what the shim's synchronous
+   * `dispatch` makes possible and what the V15 defect requires to be
+   * visible at all. */
+  const openFragmentByAuthor = (author) => {
+    const item = page.reading.descendants().find(
+      (one) => new ClassList(one).contains('fragment')
+        && one.descendants().some((deep) =>
+          new ClassList(deep).contains('fragment-author')
+            && deep.textContent === author));
+    const body = item && item.descendants().find(
+      (one) => new ClassList(one).contains('fragment-body'));
+    if (!body || body.open) return false;
+    body.open = true;
+    body.dispatch('toggle');
+    return true;
+  };
+
+  /* V16 §A: WHAT A PATH LOOKUP RETURNS, AT EVERY INSTANT IT COULD RETURN
+   * ANYTHING. `describe` is the whole reading: present or absent, promise or
+   * value, frozen or not, what prototype it answers from, which keys it
+   * carries, and — through `refOf`, which is `===` in this realm — WHICH
+   * OBJECT it is, so the value published by path and the value the body
+   * later applies can be compared as objects and not as equal shapes. */
+  const publicationLog = [];
+  const describe = (value) => {
+    const there = value !== undefined;
+    const object = there && value !== null && typeof value === 'object';
+    const promise = object && typeof value.then === 'function';
+    const above = object ? Object.getPrototypeOf(value) : undefined;
+    const keys = object && !promise ? Object.keys(value) : [];
+    return {
+      present: there,
+      kind: !there ? 'absent' : value === null ? 'null'
+        : promise ? 'promise' : object ? 'object' : typeof value,
+      isPromise: promise,
+      isFrozen: object ? Object.isFrozen(value) : null,
+      prototype: !object ? '-'
+        : above === null ? 'null'
+          : above === Object.prototype ? 'Object' : 'other',
+      keys: keys,
+      /* WHETHER THERE IS ANYTHING LEFT TO MUTATE. A record every one of
+       * whose own values is a string or a boolean carries no nested
+       * structure, so "deeply immutable" is a fact about the value and not
+       * a promise about what nobody will do to it. */
+      scalarsOnly: object && !promise
+        && keys.every((name) => typeof value[name] === 'string'
+          || typeof value[name] === 'boolean'),
+      ref: refOf(object ? value : null),
+      body: object && !promise && typeof value.text === 'string'
+        ? value.text.slice(0, 48) : ''
+    };
+  };
+  if (scenario.probePublication) {
+    const plan = scenario.probePublication;
+    const probe = {
+      path: plan.path,
+      map: null,
+      /* The harness's OWN path-keyed table. It is excluded by identity
+       * rather than by name, so a rename cannot quietly widen the probe. */
+      ignore: new Set([parked]),
+      inSet: false,
+      firing: false,
+      context: 'direct',
+      row: (moment, published) => {
+        publicationLog.push({
+          moment: moment,
+          step: phase.now,
+          context: probe.context,
+          published: published,
+          lookup: describe(probe.map
+            ? realMapGet.call(probe.map, plan.path) : undefined)
+        });
+      },
+      saw: (moment, value) => {
+        probe.row(moment, describe(value));
+        if (moment === 'set' && !probe.inSet) {
+          probe.inSet = true;
+          try { probe.at('after-publication'); }
+          finally { probe.inSet = false; }
+        }
+      },
+      at: (moment) => {
+        probe.row(moment, null);
+        if (plan.reentrantAt !== moment || probe.firing) return;
+        probe.firing = true;
+        const was = probe.context;
+        probe.context = 'reentrant';
+        try { probe.reentered = openFragmentByAuthor(plan.reentrantAuthor); }
+        finally { probe.context = was; }
+      }
+    };
+    publication = probe;
+  } else {
+    publication = null;
+  }
+  currentScenario = scenario.name;
+  currentStep = 'start';
+  breakWrite = scenario.breakBodyWrite
+    ? { said: scenario.breakBodyWrite.said,
+        mode: scenario.breakBodyWrite.mode || 'silent',
+        broke: false, attempts: 0, node: '', dropped: '' }
+    : null;
+  const notePublication = (moment) => {
+    if (publication !== null) publication.at(moment);
   };
 
   global.window = window;
@@ -4704,8 +5357,29 @@ async function run(scenario) {
      * the readability gate, the projection, the cache and the renderer —
      * meets exactly what a hostile server could hand a real page. */
     const above = (scenario.contaminate || {})[path];
-    const parented = above && body && typeof body === 'object'
-      ? Object.assign(Object.create(above), body)
+    /* V16 §C: A PROTOTYPE GETTER. `contaminate` can only plant what JSON can
+     * express, and the V15 review's finding covers the other shape too: a
+     * record whose words are supplied by an ACCESSOR one level above it.
+     * V15 read the payload by plain property lookup, which walks the chain
+     * and INVOKES it; `ownData` reads the record's own descriptor table and
+     * never sees it. Every invocation is counted, because "never called" is
+     * a claim about a number. */
+    const ghost = scenario.inheritAccessor;
+    let ancestor = above;
+    if (ghost && ghost.path === path) {
+      ancestor = Object.assign({}, above || {});
+      for (const name of Object.keys(ghost.fields)) {
+        const value = ghost.fields[name];
+        const label = 'inherited-' + name;
+        if (sourceCalls[label] === undefined) sourceCalls[label] = 0;
+        Object.defineProperty(ancestor, name, {
+          get() { sourceCalls[label] += 1; return value; },
+          enumerable: true, configurable: true
+        });
+      }
+    }
+    const parented = ancestor && body && typeof body === 'object'
+      ? Object.assign(Object.create(ancestor), body)
       : body;
     /* V12: A DESCRIPTOR THAT ANSWERS DIFFERENTLY THE SECOND TIME. The V11
      * review's third finding is not expressible as a document either: it
@@ -4745,6 +5419,13 @@ async function run(scenario) {
     const counting = scenario.countSources;
     const served = counting && counting.path === path && listed
       && typeof listed === 'object' ? countingSources(listed) : listed;
+    /* V16 §H: the fragment text file, behind the same six-bucket Proxy. It
+     * is applied LAST and used only in the response, so the journal's own
+     * `bodyOf` reading below observes the plain record and cannot be
+     * mistaken for the page observing it. */
+    const watching = scenario.countText;
+    const finished = watching && watching.path === path && served
+      && typeof served === 'object' ? countingText(served, watching) : served;
     /* V13: WHO OWNS THIS REQUEST. The page composes no text address of its
      * own, so a `structure/catena/text/…` request can only have come off a
      * projected row — and the row names which projection made it. A request
@@ -4780,11 +5461,31 @@ async function run(scenario) {
       body: held || record.kind === 'text'
         ? bodyOf(rawly ? raw[path] : served) : ''
     };
+    /* V16 §A: THE TWO MOMENTS INSIDE THE TRANSPORT ITSELF. `before-handler`
+     * is the instant the response body is about to become a document, which
+     * is before the page's own settle handler has run at all; the reviver
+     * fires `during-parse` on the first member the parse builds. A probed
+     * scenario therefore really is parsed, rather than handed the object the
+     * plan carried, so "during parse" is a moment and not a name. */
+    let parsedOnce = false;
+    const answering = async () => {
+      if (publication === null || path.indexOf(publication.path) === -1) {
+        return finished;
+      }
+      notePublication('before-handler');
+      return JSON.parse(JSON.stringify(finished), function (key, value) {
+        if (key !== '' && !parsedOnce) {
+          parsedOnce = true;
+          notePublication('during-parse');
+        }
+        return value;
+      });
+    };
     const response = rawly
       ? { ok: true, status: 200, json: async () => raw[path] }
       : (served === null || served === undefined)
         ? { ok: false, status: 404, json: async () => null }
-        : { ok: true, status: 200, json: async () => served };
+        : { ok: true, status: 200, json: answering };
     /* V15: WHICH ASK OF THIS PATH IS HELD. `defer` parks every request whose
      * path carries the piece, which is the whole of the V14 axis. `deferTurn`
      * parks only the listed asks of it, so A's request may be held while B's
@@ -4837,6 +5538,29 @@ async function run(scenario) {
     const projected = model.chapterFragments;
     model.chapterFragments = (file) => projected(file).map(
       (row) => Object.assign({}, row, scenario.forceRow));
+  }
+  /* V16 §A: THE NORMALIZATION ITSELF, BRACKETED FROM OUTSIDE.
+   *
+   * `M.textPayload` is where a raw file becomes the finalized value, and the
+   * publication is the statement immediately after it returns. Wrapping the
+   * export gives the two moments the review named that no other seam can
+   * reach: `during-normalize`, with the parse done and the record not yet
+   * built, and `before-publication`, with the record built and not yet
+   * reachable by path. The wrapper decides nothing — the real function's own
+   * answer is returned untouched — and at the parent, where the page calls
+   * `textPayload` at RENDER time rather than at settlement, the same two
+   * moments still fire and report exactly that: the cache is already full,
+   * and what is in it is a promise. */
+  if (scenario.probePublication
+      && typeof window.CatenaModel.textPayload === 'function') {
+    const model = window.CatenaModel;
+    const projected = model.textPayload;
+    model.textPayload = function () {
+      notePublication('during-normalize');
+      const made = projected.apply(this, arguments);
+      notePublication('before-publication');
+      return made;
+    };
   }
   /* V13: WHICH PROJECTION EACH CONSUMER READ, AND WHICH ONE OWNS EACH
    * REQUEST.
@@ -4956,6 +5680,48 @@ async function run(scenario) {
         entry.frozen = Boolean(detail && detail.content
           && typeof detail.content === 'object'
           && Object.isFrozen(detail.content));
+        /* V16 §D: EVERYTHING THE APPLICATION BOUND, as objects. V15's body
+         * detail was `{row, content}` and nothing else, so the sink could
+         * be tied to a row and to no transport, no owner and no address —
+         * which is precisely how an actual B row came to authorize A's
+         * answer. The owner, the projection the owner holds, the address it
+         * asked, the finalized value's own identity, whether the completion
+         * was a failure and whether the write was confirmed are each taken
+         * HERE, at the recording, and each is a label — so `===` is what
+         * the assertions downstream are really asking.
+         *
+         * At the parent these fields are absent from the detail and read
+         * as `-1` / `false`, which is the parent's own answer: it recorded
+         * an application it could not tie to an owner or to a write. */
+        entry.owner = refOf(detail && detail.owner);
+        entry.ownerProjection = refOf(detail && detail.projection);
+        entry.ownerPath = detail && detail.path !== undefined
+          ? String(detail.path || '') : '';
+        entry.content = refOf(detail && detail.content);
+        entry.failed = Boolean(detail && detail.failed);
+        entry.wrote = Boolean(detail && detail.wrote === true);
+        const held = detail && detail.content;
+        const object = held !== null && typeof held === 'object';
+        entry.contentKeys = object ? Object.keys(held) : [];
+        entry.contentPrototype = !object ? '-'
+          : Object.getPrototypeOf(held) === null ? 'null'
+            : Object.getPrototypeOf(held) === Object.prototype
+              ? 'Object' : 'other';
+        entry.contentScalars = object && entry.contentKeys.every(
+          (name) => typeof held[name] === 'string'
+            || typeof held[name] === 'boolean');
+        /* V16 §C: THE VALUES THEMSELVES, taken by OWN DESCRIPTOR for the
+         * same reason `bodyOf` is. Without them the sealed record could be
+         * asserted to have the right SHAPE while carrying members no file
+         * stated — which is exactly the defect a polluted `Object.prototype`
+         * produces in a value built from an ordinary literal, and it is
+         * invisible to a key list. */
+        entry.contentValues = {};
+        for (const name of entry.contentKeys) {
+          const spot = Object.getOwnPropertyDescriptor(held, name);
+          entry.contentValues[name] =
+            spot && Object.hasOwn(spot, 'value') ? spot.value : null;
+        }
         applied.push(entry);
       }
       witnessLog.push(entry);
@@ -5104,6 +5870,13 @@ async function run(scenario) {
     taken.asks = JSON.parse(JSON.stringify(asks));
     taken.transports = JSON.parse(JSON.stringify(transports));
     taken.applied = JSON.parse(JSON.stringify(applied));
+    taken.publication = JSON.parse(JSON.stringify(publicationLog));
+    taken.escaped = escaped.filter((one) => one.scenario === scenario.name)
+      .map((one) => ({ step: one.step, said: one.said }));
+    taken.writeBreak = breakWrite === null ? null
+      : { said: breakWrite.said, mode: breakWrite.mode,
+          broke: breakWrite.broke, attempts: breakWrite.attempts,
+          node: breakWrite.node, dropped: breakWrite.dropped };
     taken.sourceCalls = JSON.parse(JSON.stringify(sourceCalls));
     taken.memberReads = JSON.parse(JSON.stringify(memberReads));
     taken.observations = JSON.parse(JSON.stringify(observations));
@@ -5134,6 +5907,7 @@ async function run(scenario) {
     // The step's label is in force BEFORE it runs, so every request it
     // causes is journalled under the step that owns it.
     phase.now = step.label || step.do;
+    currentStep = phase.now;
     if (step.do === 'hash') {
       // The browser: Back, Forward, or a typed hash — the URL changes and a
       // hashchange event fires. The raw assignment bypasses the recording
@@ -5208,6 +5982,32 @@ async function run(scenario) {
       if (body) {
         body.open = true;
         body.dispatch('toggle');
+      }
+      await settle();
+    } else if (step.do === 'corrupt') {
+      /* V16 §C: THE PAYLOAD, CHANGED AFTER IT WAS ALREADY CACHED.
+       *
+       * The V15 review's mutation finding is not about the value the page
+       * was handed; it is about the value the page KEPT. V15 shallow-froze
+       * the raw parsed file and shared it by path, then read its fields at
+       * render time by ordinary prototype-sensitive lookup — so the record
+       * ABOVE that file, and any nested record inside it, both stayed live
+       * between one reader and the next.
+       *
+       * `above` writes into the very object `contaminate` planted as the
+       * served body's prototype, and `inside` merges into the served
+       * document itself, which is the object the cache holds a reference to.
+       * Neither touches anything the page has projected: they change what a
+       * V15 cache entry can still be READ THROUGH, after it was published,
+       * and the reader who comes next is the one who finds out. */
+      const plan = scenario.corrupt || {};
+      for (const path of Object.keys(plan.above || {})) {
+        const proto = (scenario.contaminate || {})[path];
+        if (proto) Object.assign(proto, plan.above[path]);
+      }
+      for (const path of Object.keys(plan.inside || {})) {
+        const doc = (scenario.files || {})[path];
+        if (doc) mergeInto(doc, plan.inside[path]);
       }
       await settle();
     } else if (step.do === 'openFirstFragment') {
@@ -5355,6 +6155,7 @@ class ReplayTest(unittest.TestCase):
                     # are per-session records of WHO asked and who wrote, not
                     # of what stands on the page.
                     "transports", "applied", "observations",
+                    "publication", "writeBreak", "escaped",
                     "immutability"}
         return {key: value for key, value in snap.items() if key not in journals}
 
@@ -9717,6 +10518,7 @@ class NullBootstrapTerminalStateTest(ReplayTest):
                     # are per-session records of WHO asked and who wrote, not
                     # of what stands on the page.
                     "transports", "applied", "observations",
+                    "publication", "writeBreak", "escaped",
                     "immutability"}
         base = {key: value for key, value in self.page("null-index").items()
                 if key not in journals
@@ -12478,6 +13280,17 @@ class V14UnfetchedProjectionTest(V14ProjectionAuthorityBase):
                          "the page reads a member off the raw chapter")
         self.assertNotIn("bag(file)", script,
                          "the page reaches around the projection")
+        # V16 EXTENDS THE SAME AUDIT TO THE FRAGMENT TEXT FILE. V15 froze
+        # the raw parsed file, shared it by path and read its fields at
+        # render time, so the page held a raw document for the life of the
+        # session at a SECOND address as well. `M.textPayload` is now the
+        # finalizer and is called where the file settles; nothing downstream
+        # of it names a member of the raw record, and the page no longer
+        # freezes one.
+        self.assertEqual(re.findall(r"\bloaded\.\w+", script), [],
+                         "the page reads a member off the raw text file")
+        self.assertNotIn("Object.freeze(file)", script,
+                         "the page still seals a raw document of its own")
         # Every raw chapter member, asked of every identifier the page could
         # be holding a chapter in.
         for holder in ("file", "record", "spine", "chapter", "loaded"):
@@ -12500,6 +13313,35 @@ class V14UnfetchedProjectionTest(V14ProjectionAuthorityBase):
         self.assertEqual(
             re.findall(r"\brecord\.unfetched\b", model),
             ["record.unfetched"])
+
+    #: The four sentences a reader is given about a body that is not the
+    #: fragment's words. V16 moved all four into the model, where
+    #: `M.bodySaying` and `M.failureSaid` compose them.
+    BODY_SENTENCES = (
+        "This fragment carries no text file",
+        "The text of this fragment arrived in a form this page cannot read.",
+        "The text of this fragment was not published beside the page.",
+        "The text of this fragment could not be loaded")
+
+    def test_the_page_states_no_body_sentence_the_model_states(self):
+        # V16 §A — THE SOURCE-TEXT HALF OF THE SAME AUDIT.
+        #
+        # The page no longer reads the body field by field and no longer
+        # writes the words for what it found: it holds ONE branch and writes
+        # what the model hands it. That is not tidiness. `catena.js` is at
+        # its gzipped ceiling and `catena-model.js` has none, and a sentence
+        # restated in the page would be a second source of truth for what a
+        # reader is told, in the file that cannot afford it — which is
+        # exactly how V15's four body sentences came to be written twice
+        # over, once as a string and once as a branch deciding it.
+        page = without_comments(held(CATENA / "catena.js"), script=True)
+        model = without_comments(held(CATENA / "catena-model.js"), script=True)
+        for said in self.BODY_SENTENCES:
+            with self.subTest(sentence=said[:40]):
+                self.assertNotIn(said, page,
+                                 "the page restates a sentence the model owns")
+                self.assertEqual(model.count(said), 1,
+                                 "the model states it once, or not at all")
 
     def test_the_model_reads_each_chapter_member_once_in_source(self):
         # The other end of the same audit: exactly one `record.<member>` in
@@ -12530,6 +13372,14 @@ class V14ConsumerIdentityTest(V14ProjectionAuthorityBase):
     """
 
     def test_every_consumer_received_the_object_the_normalization_made(self):
+        # V16, THE V15 REVIEW. This iterated `RENDERED_CONSUMERS` — eight of
+        # the twelve — because `v14-authority-graph` is an ordinary readable
+        # render and the request, transport, body and provenance consumers do
+        # not all stand on one. The eight are still asked here, of the
+        # scenario that has them; the whole twelve, provenance included, are
+        # asked of one authority in `V16ConsumerIdentityRosterTest`, and the
+        # two rosters are pinned against each other there so neither can
+        # drift away from the other.
         page, authority = self.one_authority("v14-authority-graph")
         for consumer in self.RENDERED_CONSUMERS:
             with self.subTest(consumer=consumer):
@@ -12540,6 +13390,13 @@ class V14ConsumerIdentityTest(V14ProjectionAuthorityBase):
                     page["consumerRefs"][consumer], [authority],
                     "%s read an object the normalization did not make"
                     % consumer)
+        # And the one this page does not draw is named, so the gap is a
+        # recorded fact about the scenario rather than a silent omission:
+        # the provenance line is drawn only where a reader asks for a
+        # translation that is not held.
+        self.assertEqual(sorted(set(self.CONSUMERS)
+                                - set(page["consumerRefs"])),
+                         ["provenance"])
 
     def test_the_tally_is_a_consumer_of_its_own(self):
         # V14 §8. V13 collapsed the tally into the rows: the page read
@@ -12864,6 +13721,11 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         for one in wrote:
             self.assertIn(one["row"], rows)
             self.assertEqual(one["owned"], page["authoritativeRefs"][0])
+        # V16 EXTENDS THIS. What V15 could not ask is whether the failure —
+        # or a rejected promise, or anything intermediate — reached the
+        # SHARED CACHE, because nothing could look at it. The same sequence
+        # with the path watched is
+        # `V16PublicationAtomicityTest.test_no_failure_and_no_intermediate_value_is_published`.
 
     # ------------------------------------------------------------ §19
 
@@ -13112,50 +13974,14 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         # once each, and the two owner objects are distinct.
         self.assertEqual(len({one["owner"] for one in page["transports"]}), 2)
 
-    def test_a_row_no_projection_made_owns_no_transport_and_writes_nothing(self):
-        # The fail-closed rule `textAsked` obeys, one and two steps later. A
-        # row this file did not project creates no transport at all, and a
-        # body may not be applied for it.
-        told = json.loads(subprocess.run(
-            [NODE, "-e", """
-            const M = require(process.argv[1]);
-            const raw = JSON.parse(process.argv[2]);
-            const made = M.chapterProjection(raw);
-            const row = made.rows[0];
-            const copy = Object.assign({}, row);
-            const forged = { text_path: 'structure/catena/text/forged.json' };
-            const owner = M.rowTransport(row);
-            console.log(JSON.stringify({
-              owned: owner !== null,
-              same: M.rowTransport(row) === owner,
-              carries: owner && owner.row === row
-                       && owner.projection === made
-                       && owner.path === row.text_path,
-              frozen: owner !== null && Object.isFrozen(owner),
-              copy: M.rowTransport(copy),
-              forged: M.rowTransport(forged),
-              scalar: M.rowTransport('x'),
-              nothing: M.rowTransport(null),
-              wroteOwn: M.bodyAsked(row, { text: 'x' }),
-              wroteCopy: M.bodyAsked(copy, { text: 'x' }),
-              wroteForged: M.bodyAsked(forged, { text: 'x' }),
-              wroteScalar: M.bodyAsked(7, { text: 'x' })
-            }));
-            """, str(CATENA / "catena-model.js"),
-             json.dumps(V14_SAME_PATH_SPINE)],
-            capture_output=True, text=True, check=True).stdout)
-        self.assertTrue(told["owned"])
-        self.assertTrue(told["same"], "one owner per row, held against it")
-        self.assertTrue(told["carries"])
-        self.assertTrue(told["frozen"])
-        self.assertIsNone(told["copy"])
-        self.assertIsNone(told["forged"])
-        self.assertIsNone(told["scalar"])
-        self.assertIsNone(told["nothing"])
-        self.assertTrue(told["wroteOwn"])
-        self.assertFalse(told["wroteCopy"])
-        self.assertFalse(told["wroteForged"])
-        self.assertFalse(told["wroteScalar"])
+    # V16, THE V15 REVIEW. The direct model probe that stood here is now
+    # `V16CompletionEnvelopeTest`, and it is there rather than here because
+    # what it asks changed. V15's copy asserted
+    # `M.bodyAsked(row, {text: 'x'})` to be TRUE and called that ownership:
+    # the row was real, the content was a literal nobody had asked for, and
+    # the boundary said yes. The review named that assertion by name. The
+    # transport half of the probe is unchanged and travels with it, beside
+    # the completion-envelope cases V15 had no shape for.
 
     # ------------------------------------------------------------ §14
 
@@ -13489,34 +14315,54 @@ class V14MemberAuthorityTest(V14ProjectionAuthorityBase):
 
 
 class V15ObservationAccountingTest(V14ProjectionAuthorityBase):
-    """V15 §23 — what is observed, and in which way, counted apart.
+    """V15 §23, CORRECTED BY V16 §H — what is observed, and in which way.
 
     The V14 review accepted that hostile nested value accessors are never
-    invoked and refused the sentence built on top of it: a Proxy over the same
-    record sees its descriptor asked three times per source key and twice per
-    shared field, and calling that "one read" reports two different things
-    with one number. A drifting descriptor trap is a real hostile shape, so
-    the count matters and has to be stated as what it is.
+    invoked and refused the sentence built on top of it. V15 answered with
+    four buckets, and the V15 review refused the accounting again for two
+    reasons this class now fixes.
 
-    Four kinds are counted apart, and each is named for what it would do to a
-    hostile record:
+    V15 called one bucket `descriptor` and one `has`, while `Object.hasOwn`
+    is `HasOwnProperty` and therefore `[[GetOwnProperty]]` — an OWN-PROPERTY
+    TEST that landed in `descriptor`. One name said "descriptor read" and
+    covered two different questions; the other said "has" and covered
+    neither. And V15's own key list contained a `prototype` bucket that no
+    sentence disclosed, so the `getPrototypeOf` observation that ENUMERATION
+    causes was measured and then left out of the prose that claimed to say
+    what happened.
 
-    * `value-get`   — the read that RUNS an own accessor. This is the one the
-                      closure claim is about, and it is zero.
-    * `descriptor`  — `Object.getOwnPropertyDescriptor`, which runs nothing.
-                      `Object.hasOwn` is `HasOwnProperty` and is therefore
-                      `[[GetOwnProperty]]` as well, so an own-property test
-                      lands in THIS bucket and not in `has`; that is exactly
-                      why the per-key figure is three and not two.
-    * `has`         — the `in` operator's trap. Zero: the model never asks it.
-    * `own-keys`    — the enumeration `for…in` opens with. One.
+    Six kinds now, each named for the operation it is:
 
-    The claim this file is entitled to make is therefore: no consumer runs a
-    hostile value accessor, and no consumer reaches past the projection to
-    observe the record again — not that the record is observed once.
+    * `value_gets`            — a `[[Get]]`: the read that would RUN an own
+                                accessor. This is the one the closure claim
+                                is about, and it is zero.
+    * `getter_invocations`    — an own accessor actually invoked. Counted
+                                separately from the read that would invoke
+                                it, because on a data property they are one
+                                event and on an accessor they are two.
+    * `has_operator`          — the `in` operator's `[[HasProperty]]`. Zero:
+                                the model never asks it.
+    * `own_descriptor_reads`  — `[[GetOwnProperty]]`, which runs nothing.
+                                Own-property tests AND `ownData` are both
+                                here, which is exactly why the per-key
+                                figure is three and not two.
+    * `enumerations`          — `[[OwnPropertyKeys]]`, which `for…in` opens
+                                with. One.
+    * `prototype_observations` — `[[GetPrototypeOf]]`. ONE, and it is not
+                                the model reaching for a prototype: it is
+                                what `for…in` does before it walks. Stated
+                                here rather than omitted, because a count
+                                that is disclosed as one is a fact and a
+                                count that is left out of the sentence is
+                                a claim of zero nobody made.
+
+    The claim this file is entitled to make is therefore NOT that the record
+    is observed once. It is: NO HOSTILE INHERITED OR ACCESSOR VALUE BECOMES
+    SEMANTIC AUTHORITY — no read runs, no accessor is invoked, and every
+    semantic member is taken from the record's own descriptor table.
     """
 
-    KEY = "descriptor:key/1"
+    KEY = "own_descriptor_reads:key/1"
     #: The shared-with-edition members `_voice_source` actually writes.
     PRESENT = ("work_id", "author", "work", "date", "language", "voice",
                "edition", "edition_published", "translators", "container",
@@ -13527,36 +14373,65 @@ class V15ObservationAccountingTest(V14ProjectionAuthorityBase):
     def observed(self, label="opened"):
         return self.snapshot("v15-descriptor-accounting", label)["observations"]
 
-    def test_no_value_read_of_a_source_record_happens_at_all(self):
-        # THE CLOSURE CLAIM, and the whole of it. Not one read of a source
+    def test_nothing_is_read_by_value_and_no_accessor_is_invoked(self):
+        # THE SEMANTIC CLAIM, and the whole of it. Not one read of a source
         # key or a shared field goes through the path that would run an own
-        # accessor — which is why a hostile getter at either level is never
-        # invoked, and why this page cannot be made to say two things about
+        # accessor; no accessor is invoked; and the `in` operator is never
+        # asked. That is why a hostile getter at either level is never
+        # called, and why this page cannot be made to say two things about
         # one edition.
         seen = self.observed()
-        self.assertEqual([at for at in seen if at.startswith("value-get:")], [])
-        self.assertEqual([at for at in seen if at.startswith("has:")], [])
+        for kind in ("value_gets", "getter_invocations", "has_operator"):
+            with self.subTest(kind=kind):
+                self.assertEqual([at for at in seen
+                                  if at.startswith(kind + ":")], [],
+                                 kind + " is not zero")
 
-    def test_the_descriptor_count_is_three_per_key_and_two_per_stated_field(self):
-        # THE HONEST NUMBER, stated as the review required. Three per source
-        # key: `for…in` tests the key's enumerability, `Object.hasOwn` tests
+    def test_the_own_descriptor_count_is_three_per_key_and_two_per_field(self):
+        # THE HONEST NUMBERS. Three own-descriptor reads per source key:
+        # `for…in` tests the key's enumerability, `Object.hasOwn` tests
         # ownership, and `ownData` takes the value — all three of which are
-        # `[[GetOwnProperty]]`. Two per field that the record states, one per
-        # field it does not, because the second is the read the first skips.
+        # `[[GetOwnProperty]]`, and none of which is the `in` operator. Two
+        # per field the record states, one per field it does not, because
+        # the second is the read the first skips.
         seen = self.observed()
         self.assertEqual(seen[self.KEY], 3)
-        self.assertEqual(seen["own-keys:key"], 1)
         for name in self.PRESENT:
             with self.subTest(field=name):
-                self.assertEqual(seen["descriptor:field/" + name], 2)
+                self.assertEqual(
+                    seen["own_descriptor_reads:field/" + name], 2)
         for name in self.ABSENT:
             with self.subTest(field=name):
-                self.assertEqual(seen["descriptor:field/" + name], 1)
-        # Nothing else is observed: the buckets above are the whole record.
+                self.assertEqual(
+                    seen["own_descriptor_reads:field/" + name], 1)
+
+    def test_the_enumeration_and_the_prototype_it_observes_are_disclosed(self):
+        # ★ THE V15 REVIEW'S ACCOUNTING CORRECTION ★
+        #
+        # ONE enumeration, and ONE prototype observation caused by it. The
+        # second is not the model asking about a prototype — nothing in the
+        # projection does — it is `[[GetPrototypeOf]]` on the way into a
+        # `for…in`, and it happens whether or not anybody wants it to. V15
+        # measured it and did not say so. It is said here, with its number,
+        # and the claim around it is stated in the only form the measurement
+        # supports: nothing INHERITED becomes authority, which is a fact
+        # about `ownData`, not about how many times a prototype was looked at.
+        seen = self.observed()
+        self.assertEqual(seen["enumerations:key"], 1)
+        self.assertEqual(seen["prototype_observations:key"], 1,
+                         "the enumeration's prototype observation moved")
+        # The entries themselves are never enumerated, so neither happens to
+        # them — which is what makes the two figures above the enumeration's
+        # and not a page-wide total.
+        self.assertEqual([at for at in seen
+                          if at.startswith("enumerations:field")], [])
+        self.assertEqual([at for at in seen
+                          if at.startswith("prototype_observations:field")], [])
+        # NOTHING ELSE IS OBSERVED: the buckets above are the whole record.
         self.assertEqual(
             sorted(seen),
-            sorted([self.KEY, "own-keys:key", "prototype:key"]
-                   + ["descriptor:field/" + name
+            sorted([self.KEY, "enumerations:key", "prototype_observations:key"]
+                   + ["own_descriptor_reads:field/" + name
                       for name in self.PRESENT + self.ABSENT]))
 
     def test_the_observation_is_per_chapter_and_not_per_consumer(self):
@@ -13644,6 +14519,1389 @@ class V15DownstreamMutationTest(V14ProjectionAuthorityBase):
         for one in after["applied"]:
             self.assertEqual(one["owned"], authority)
             self.assertIn(one["row"], rows)
+
+
+class V16PublicationBase(V14ProjectionAuthorityBase):
+    """Shared vocabulary for the V16 lane.
+
+    The V15 review's exact next action, in the order it stated it: normalize
+    the payload ONCE into an owner-independent immutable scalar record;
+    publish it only after it is finished, never the initiating owner's
+    pending promise; prove that with an inside-settlement and reentrant
+    oracle and with mutation-before-a-later-owner; carry a per-caller
+    completion envelope holding the exact transport owner to the body sink
+    and require that owner at application; record the application after the
+    write; add the missing provenance identity assertion; and correct the
+    observation prose.
+    """
+
+    #: The finalized record's key set, deterministic and in order. Pinned
+    #: here as a literal AND asked of the model itself in
+    #: `V16CompletionEnvelopeTest`, so this list is the reviewed schema and
+    #: not a transcription of whatever the model happens to emit.
+    SCHEMA = ["present", "unreadable", "text", "basis", "date_basis",
+              "acknowledgement", "acknowledgement_broken"]
+    #: The instants a settlement passes through before anything final exists.
+    BEFORE = ("before-handler", "during-parse", "during-normalize",
+              "before-publication")
+    UNREADABLE = ("The text of this fragment arrived in a form this page "
+                  "cannot read.")
+    NOT_PUBLISHED = "The text of this fragment was not published beside the page."
+    A_BODY = "PLANTED BODY A"
+    B_BODY = "PLANTED BODY B"
+
+    def probe(self, name, label):
+        """The publication journal of one scenario's watched path."""
+        rows = self.snapshot(name, label)["publication"]
+        self.assertTrue(rows, "the publication probe recorded nothing at all")
+        return rows
+
+    def published(self, name, label):
+        """Every value actually entered into the shared path cache."""
+        return [one for one in self.probe(name, label)
+                if one["moment"] == "set"]
+
+    def assert_final(self, seen, why):
+        """One reading of the path, asserted to be a FINISHED value."""
+        self.assertFalse(seen["isPromise"], why + ": a promise is reachable")
+        self.assertEqual(seen["kind"], "object", why)
+        self.assertIs(seen["isFrozen"], True, why + ": not frozen")
+        self.assertEqual(seen["prototype"], "null", why + ": has a prototype")
+        self.assertEqual(seen["keys"], self.SCHEMA, why + ": not the schema")
+        self.assertIs(seen["scalarsOnly"], True,
+                      why + ": carries something mutable")
+
+
+class V16PublicationAtomicityTest(V16PublicationBase):
+    """V16 §A — the shared path holds nothing until the answer is finished.
+
+    ★ THE DECISIVE V15 DEFECT ★
+
+    The V15 review, exactly: `asked` is the promise returned by
+    `T.loadJSON(path).then(...)`, and `fragmentTexts.set(path, asked)` runs
+    INSIDE that promise's own fulfilment handler. A promise returned by
+    `then` cannot settle until its handler returns, so the value published by
+    path was `Promise { <pending> }` — and the publication also preceded the
+    freeze. Ordinary event-loop work cannot interleave between those two
+    statements, which is exactly why every V15 behavioural test was green and
+    why the review had to reach the defect with a direct ordering probe
+    rather than with a rendered page.
+
+    `fragmentTexts` is module-scope inside the page's IIFE and nothing
+    exported reaches it. Adding an export so a test could look would be this
+    file changing the thing it is asserting about, so the ENGINE is
+    instrumented instead: `Map.prototype` is wrapped in the harness, the real
+    method answers, and what is recorded is what a lookup of the path returns
+    at each instant — before the handler, during the parse, during the
+    normalization, immediately before the publication and immediately after
+    it.
+
+    The invariant asserted here is the review's own no-interval rule. At no
+    instant may a path lookup return an unresolved promise, a settling
+    promise, partially normalized content, raw parsed JSON, an owner-bearing
+    completion, or a mutable payload.
+    """
+
+    PROBED = "v16-publication"
+
+    def test_the_path_is_empty_until_the_finished_value_exists(self):
+        # THE FIVE INSTANTS, IN ORDER. Each of the four moments before the
+        # publication is present — a probe that never fired would prove
+        # nothing — and at every one of them the path holds NOTHING. Not a
+        # promise, not a half-built record: nothing.
+        rows = self.probe(self.PROBED, "opened")
+        seen = [one["moment"] for one in rows]
+        for moment in self.BEFORE:
+            with self.subTest(moment=moment):
+                self.assertIn(moment, seen, moment + " never fired")
+        for one in rows:
+            if one["moment"] not in self.BEFORE:
+                continue
+            with self.subTest(moment=one["moment"]):
+                self.assertEqual(one["lookup"]["kind"], "absent",
+                                 one["moment"] + ": the path already held "
+                                 + one["lookup"]["kind"])
+        # And they all stand BEFORE the one publication, which is what makes
+        # them moments in a settlement and not four readings after it.
+        first = min(index for index, one in enumerate(rows)
+                    if one["moment"] == "set")
+        for index, one in enumerate(rows):
+            if one["moment"] in self.BEFORE:
+                self.assertLess(index, first,
+                                one["moment"] + " fired after publication")
+
+    def test_exactly_one_finished_value_is_ever_published(self):
+        # WHAT WAS PUBLISHED, read where it was published. One entry, and it
+        # is the finalized immutable record: not a promise, frozen, answering
+        # from no prototype, carrying the model's own deterministic schema,
+        # and holding nothing but scalars — so there is no nested structure
+        # in it for a later reader to change.
+        made = self.published(self.PROBED, "opened")
+        self.assertEqual(len(made), 1, "the path was written more than once")
+        self.assert_final(made[0]["published"], "the published value")
+
+    def test_no_lookup_of_the_path_ever_returns_anything_unfinished(self):
+        # THE WHOLE JOURNAL, EVERY WATCHED SCENARIO, EVERY EVENT — including
+        # the reentrant ones, which are the only ones that can reach the
+        # interval at all. A reading is either absent or the finished value.
+        for name, label in (("v16-publication", "opened"),
+                            ("v16-reentrant-published", "opened"),
+                            ("v16-reentrant-normalizing", "opened"),
+                            ("v16-one-fails-probed", "both")):
+            for index, one in enumerate(self.probe(name, label)):
+                with self.subTest(scenario=name, event=index,
+                                  moment=one["moment"]):
+                    self.assertFalse(one["lookup"]["isPromise"],
+                                     "a pending answer is reachable by path")
+                    if one["published"] is not None:
+                        self.assertFalse(one["published"]["isPromise"],
+                                         "a promise was published by path")
+                    if one["lookup"]["present"]:
+                        self.assert_final(one["lookup"], "a path reading")
+
+    def test_the_value_published_by_path_is_the_value_the_body_applied(self):
+        # ★ THE CROSS-CHECK ★  Not two objects of equal shape: ONE object.
+        #
+        # `refOf` maps an object to an integer inside the replay's own realm,
+        # so label equality here IS `===` there. The value entered into the
+        # shared cache and the value the body application later carried are
+        # the same object — which is what "the cache holds the finalized
+        # content, and the owner is carried beside it" means when it is asked
+        # as a question about identity rather than about fields.
+        page = self.snapshot(self.PROBED, "opened")
+        made = self.published(self.PROBED, "opened")
+        self.assertEqual(len(page["applied"]), 1)
+        wrote = page["applied"][0]
+        self.assertNotEqual(made[0]["published"]["ref"], -1)
+        self.assertEqual(wrote["content"], made[0]["published"]["ref"],
+                         "the body applied an object the path never held")
+        # The owner travelled the whole chain as an object too, and the
+        # projection recorded at the application is the owner's own.
+        self.assertNotEqual(wrote["owner"], -1)
+        self.assertEqual(wrote["ownerProjection"], wrote["projection"])
+        self.assertEqual(wrote["owner"],
+                         page["transports"][0]["owner"])
+
+    def test_no_failure_and_no_intermediate_value_is_published(self):
+        # V15 §21 CARRIED FORWARD AND EXTENDED. The V15 closure proved that
+        # one owner's 404 is not the other owner's answer. What it could not
+        # prove is that nothing about the failure — a rejected promise, a
+        # failure envelope, a half-built record — ever entered the shared
+        # cache, because the cache could not be looked at.
+        page = self.snapshot("v16-one-fails-probed", "both")
+        made = self.published("v16-one-fails-probed", "both")
+        self.assertEqual(len(made), 1, "the failure reached the path cache")
+        self.assert_final(made[0]["published"], "the surviving value")
+        failed = [one for one in page["applied"] if one["failed"]]
+        stood = [one for one in page["applied"] if not one["failed"]]
+        self.assertEqual(len(failed), 1)
+        self.assertEqual(len(stood), 1)
+        self.assertEqual(failed[0]["content"], -1,
+                         "a failure envelope carried content")
+        self.assertEqual(stood[0]["content"], made[0]["published"]["ref"])
+        self.assertNotEqual(failed[0]["owner"], stood[0]["owner"])
+        # And the reader sees both facts, each against the row that asked.
+        self.assertEqual(page["fragmentTexts"][0], self.NOT_PUBLISHED)
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+
+
+class V16ReentrantPublicationTest(V16PublicationBase):
+    """V16 §B — a second owner asking from inside the first owner's settle.
+
+    The V15 publication interval is one statement wide and is unreachable by
+    ordinary event-loop work. The one operation that reaches it is a
+    SYNCHRONOUS reentrant ask, and the shim's `dispatch` is synchronous, so
+    opening a second projected row from the probe is a genuine second owner
+    asking the same address in the middle of the first owner's turn.
+
+    Two moments, and the branch permitted at each is pinned exactly.
+
+    * DURING NORMALIZATION nothing final exists, so the second owner must
+      MISS and open a request of its own. The turn-indexed serving answers it
+      with a different document, so its independence is a body a reader could
+      see and not a line in a journal.
+    * AFTER PUBLICATION the finished value exists, so the second owner may be
+      answered from it — rebound through its OWN completion envelope, because
+      the cache holds the owner-independent content and never an owner.
+
+    At V15 the second moment returns A's still-pending promise: B joins it,
+    makes no request, and renders A's body.
+    """
+
+    def test_a_reentrant_owner_after_publication_gets_the_finished_value(self):
+        # ★ THE INTERVAL, ENTERED ★  B asks from inside A's settlement, one
+        # statement after the publication. What B's lookup returns is the
+        # finalized immutable record — never a promise — and B applies it
+        # under B's own transport owner.
+        page = self.snapshot("v16-reentrant-published", "opened")
+        rows = self.probe("v16-reentrant-published", "opened")
+        entered = [one for one in rows if one["context"] == "reentrant"]
+        self.assertTrue(entered, "the reentrant owner never asked")
+        for one in entered:
+            with self.subTest(moment=one["moment"]):
+                self.assert_final(one["lookup"], "what the reentrant ask saw")
+        # ONE request: the finished value really was reused, so this is the
+        # permitted branch and not B quietly asking again.
+        self.assertEqual(len([one for one in page["requests"]
+                              if one["kind"] == "text"]), 1)
+        # TWO owners, TWO applications, ONE value. The owner is per caller;
+        # the content is not.
+        self.assertEqual(len(page["applied"]), 2)
+        owners = {one["owner"] for one in page["applied"]}
+        self.assertEqual(len(owners), 2, "one owner served both rows")
+        values = {one["content"] for one in page["applied"]}
+        self.assertEqual(len(values), 1,
+                         "the shared finished value was not shared")
+        published = self.published("v16-reentrant-published", "opened")
+        self.assertEqual(values, {published[0]["published"]["ref"]})
+
+    def test_a_reentrant_owner_during_normalization_asks_for_itself(self):
+        # ★ THE OTHER PERMITTED BRANCH ★  B asks while the record is being
+        # built. Nothing final exists, so B must miss — and it does: its
+        # lookup is ABSENT, it opens its own request, and it renders the
+        # document its own request returned.
+        page = self.snapshot("v16-reentrant-normalizing", "opened")
+        rows = self.probe("v16-reentrant-normalizing", "opened")
+        entered = [one for one in rows if one["context"] == "reentrant"]
+        self.assertTrue(entered, "the reentrant owner never asked")
+        for one in entered:
+            with self.subTest(moment=one["moment"]):
+                self.assertEqual(one["lookup"]["kind"], "absent",
+                                 "an unfinished value was reachable")
+        asked = [one for one in page["requests"] if one["kind"] == "text"]
+        self.assertEqual(len(asked), 2, "the second owner did not ask")
+        self.assertEqual([one["outcome"] for one in asked],
+                         ["completed", "completed"])
+        # THE BODIES ARE THE PROOF. A renders A's answer and B renders B's.
+        self.assertEqual(len(page["fragmentTexts"]), 2)
+        self.assertIn(self.A_BODY, page["fragmentTexts"][0])
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+        self.assertNotIn(self.A_BODY, page["fragmentTexts"][1])
+
+    def test_a_late_publication_and_completion_cannot_reach_the_second(self):
+        # THE ONE COMBINED ADVERSARIAL CASE. A is settling; B asks the same
+        # address reentrantly and completes independently; A then publishes
+        # and completes. A's published value stands at the path — FIRST
+        # SETTLED ANSWER WINS — and B's own answer is not displaced by it,
+        # before or after.
+        page = self.snapshot("v16-reentrant-normalizing", "opened")
+        made = self.published("v16-reentrant-normalizing", "opened")
+        self.assertEqual(len(made), 1,
+                         "the second owner overwrote the published value")
+        self.assertIn(self.A_BODY, made[0]["published"]["body"])
+        self.assertEqual(len(page["applied"]), 2)
+        first, second = page["applied"]
+        self.assertEqual(first["content"], made[0]["published"]["ref"])
+        self.assertNotEqual(second["content"], first["content"],
+                            "the second owner was handed the first's value")
+        self.assertIn(self.B_BODY, second["body"])
+        self.assertNotEqual(second["owner"], first["owner"])
+        # B's later settlement finds the path already answered and leaves it
+        # alone: the journal's `has` events after the publication all read
+        # the finished value, and no second `set` follows.
+        rows = self.probe("v16-reentrant-normalizing", "opened")
+        tail = rows[rows.index(made[0]) + 1:]
+        self.assertTrue(tail, "nothing happened after the publication")
+        for one in tail:
+            with self.subTest(moment=one["moment"]):
+                self.assertNotEqual(one["moment"], "set")
+                self.assert_final(one["lookup"], "the standing value")
+
+
+class V16FinalizedContentTest(V16PublicationBase):
+    """V16 §C — the shared value is finished, and there is nothing left in it.
+
+    The V15 review found the path entry's eventual value to be the RAW PARSED
+    FILE, shallow-frozen at the top level, and `M.textPayload` reading its
+    fields at render time by ordinary prototype-sensitive lookup. Three
+    things follow, and this lane closes all three:
+
+    * a frozen object still answers from its prototype, so
+      `Object.create({text: '…'})` — or a prototype mutated AFTER the value
+      was cached — turns an unreadable payload into a readable one between
+      one reader and the next;
+    * an own accessor is still INVOKED by a plain lookup, so a getter
+      answering differently on the second read decides the page; and
+    * whatever nested mutable structure the file carried stayed reachable
+      and stayed mutable behind a top-level freeze.
+
+    `sealText` admits a boolean or `sound()`'s string and nothing else, so
+    the finished record cannot contain an object to reach. That is asserted
+    below as a fact about the actual values, not stated as prose.
+    """
+
+    def test_every_body_this_page_applied_is_a_finished_scalar_record(self):
+        # THE INVARIANT OVER THE WHOLE FILE, not over one scenario. Every
+        # body application in every replayed scenario: frozen, null
+        # prototype, exactly the schema's keys, every value a string or a
+        # boolean, and the write confirmed. A reported failure carries no
+        # content at all, which is the only other shape permitted.
+        rows = 0
+        for name, page in replayed().items():
+            if "applied" not in page:
+                continue
+            for index, one in enumerate(page["applied"]):
+                rows += 1
+                with self.subTest(scenario=name, application=index):
+                    self.assertIs(one["wrote"], True,
+                                  "an unconfirmed write was journalled")
+                    if one["failed"]:
+                        self.assertEqual(one["content"], -1)
+                        self.assertEqual(one["contentKeys"], [])
+                        continue
+                    self.assertIs(one["frozen"], True)
+                    self.assertEqual(one["contentPrototype"], "null")
+                    self.assertEqual(one["contentKeys"], self.SCHEMA)
+                    self.assertIs(one["contentScalars"], True,
+                                  "the finished value carries something "
+                                  "mutable")
+        self.assertGreater(rows, 100,
+                           "the sweep found almost nothing to sweep")
+
+    def test_words_supplied_from_above_the_record_are_not_its_words(self):
+        # ★ THE V15 MUTABLE-PROTOTYPE DEFECT ★  The served document states no
+        # text, no extent and no acknowledgement of its own; a prototype
+        # states all three. Under V15 `sound(record.text)` answers from the
+        # prototype and the fragment reads as though it carried words. Every
+        # member is taken by own descriptor now, at the settlement, so the
+        # payload is what it is.
+        page = self.snapshot("v16-inherited-text", "opened")
+        self.assertEqual(page["fragmentTexts"],
+                         [self.UNREADABLE, self.UNREADABLE])
+        self.assertEqual(page["fragmentBases"], [])
+        self.assertEqual(page["acknowledgements"], [])
+        self.assertNotIn(V16_INHERITED_TEXT, json.dumps(page))
+        self.assertNotIn(V16_INHERITED_BASIS, json.dumps(page))
+        self.assertNotIn(V16_INHERITED_DATE, json.dumps(page))
+        self.assertNotIn(V16_INHERITED_NOTE, json.dumps(page))
+
+    def test_the_same_three_values_as_own_data_do_reach_the_reader(self):
+        # NON-VACUITY. Everything the prototype would have said, said by the
+        # record itself: the words, the extent line and the acknowledgement
+        # all reach the page. So an inherited value that reaches none of them
+        # is DECLINED, not merely unreachable.
+        page = self.snapshot("v16-inherited-text-control", "opened")
+        self.assertEqual(page["fragmentTexts"],
+                         [V16_INHERITED_TEXT, V16_INHERITED_TEXT])
+        self.assertEqual(page["fragmentBases"],
+                         ["Extent — " + V16_INHERITED_BASIS,
+                          "Date — " + V16_INHERITED_DATE] * 2)
+        self.assertEqual(page["acknowledgements"],
+                         ["Licence: " + V16_INHERITED_NOTE] * 2)
+
+    def test_a_getter_one_level_above_the_record_is_never_invoked(self):
+        # THE OTHER HOSTILE SHAPE ABOVE A RECORD. `contaminate` plants what
+        # JSON can express; an ACCESSOR is what it cannot, and it is the
+        # shape a plain property lookup does not merely read but RUNS. V15
+        # read the payload with `record.text`, which walks the chain; the
+        # descriptor read never leaves the record's own table.
+        page = self.snapshot("v16-inherited-accessor", "opened")
+        self.assertEqual(page["fragmentTexts"],
+                         [self.UNREADABLE, self.UNREADABLE])
+        self.assertEqual(page["fragmentBases"], [])
+        self.assertNotIn(V16_ACCESSOR_TEXT, json.dumps(page))
+        # AND THE CALL COUNT IS ZERO, taken at the accessor itself.
+        self.assertEqual(page["sourceCalls"],
+                         {"inherited-text": 0, "inherited-basis": 0})
+
+    def test_a_prototype_planted_after_publication_reaches_no_later_owner(self):
+        # ★ MUTATION BEFORE A LATER OWNER ★  Row A asks and settles; the
+        # words are then written into the object sitting ABOVE the served
+        # body; row B asks the same address afterwards and is answered from
+        # the cache. Under V15 the cache holds the raw file, whose prototype
+        # now states words, and B renders them. Under V16 the cache holds a
+        # frozen null-prototype record: there is no prototype to answer from,
+        # and B is handed the very object A was handed.
+        first = self.snapshot("v16-late-contamination", "first")
+        second = self.snapshot("v16-late-contamination", "second")
+        self.assertEqual(first["fragmentTexts"], [self.UNREADABLE, "Loading…"])
+        self.assertEqual(second["fragmentTexts"],
+                         [self.UNREADABLE, self.UNREADABLE])
+        self.assertNotIn(V16_LATE_TEXT, json.dumps(second))
+        self.assertNotIn(V16_INHERITED_BASIS, json.dumps(second))
+        self.assertEqual(second["fragmentBases"], [])
+        # ONE REQUEST: B really was answered from what A published, so this
+        # is the shared value being unchanged and not B asking again.
+        self.assertEqual(len([one for one in second["requests"]
+                              if one["kind"] == "text"]), 1)
+        # AND IT IS THE SAME OBJECT. Two applications, two owners, one value.
+        self.assertEqual(len(second["applied"]), 2)
+        self.assertEqual(second["applied"][0]["content"],
+                         second["applied"][1]["content"])
+        self.assertNotEqual(second["applied"][0]["owner"],
+                            second["applied"][1]["owner"])
+        self.assertEqual(second["applied"][0]["content"],
+                         first["applied"][0]["content"])
+
+    def test_a_nested_record_altered_after_publication_is_out_of_reach(self):
+        # THE THIRD HALF OF THE SAME FINDING. The served document carries a
+        # nested record, and the same step that plants the prototype changes
+        # it. Under V15 the cached value IS that document and the nested
+        # record is still reachable and still mutable through it. Under V16
+        # the cached value's own members are scalars, so the alteration has
+        # nothing to travel through — which is asserted as a property of the
+        # actual value, not as a statement about what nobody looked at.
+        second = self.snapshot("v16-late-contamination", "second")
+        for one in second["applied"]:
+            self.assertIs(one["contentScalars"], True)
+            self.assertEqual(one["contentKeys"], self.SCHEMA)
+        self.assertNotIn(V16_LATE_MARKER, json.dumps(second))
+        self.assertNotIn("marker", json.dumps(second["applied"]))
+        # And the reader's page is what it was before the alteration.
+        before = self.snapshot("v16-late-contamination", "corrupted")
+        self.assertEqual(before["fragmentTexts"][0],
+                         second["fragmentTexts"][0])
+
+    def test_an_own_accessor_never_becomes_the_pages_words(self):
+        # THE SECOND OF THE THREE. The served file's `text` and `basis` are
+        # own GETTERS. `ownData` reads the descriptor and hands back the
+        # stored value, and an accessor descriptor has no `value` — so the
+        # getter reads as undefined and is never called. Under V15
+        # `record.text` invokes it and the words are the page's.
+        page = self.snapshot("v16-text-accessor", "opened")
+        self.assertEqual(page["fragmentTexts"][0], self.UNREADABLE)
+        self.assertEqual(page["fragmentBases"], [])
+        self.assertNotIn(self.HELD_BODY, json.dumps(page["fragmentTexts"]))
+        # AND THE INVOCATION COUNT IS ZERO, taken at the accessor itself.
+        seen = page["observations"]
+        self.assertEqual(
+            [at for at in seen if at.startswith("getter_invocations:")], [],
+            "an own accessor on the fragment text file was invoked")
+        # The same file WITHOUT the accessors renders its words, so the
+        # decline is the accessor and not the fixture.
+        plain = self.snapshot("v16-text-accounting", "opened")
+        self.assertIn(self.HELD_BODY, plain["fragmentTexts"][0])
+
+    # =========================================================== V16 §C, again
+    #
+    # THE SAME CLOSURE, REACHED FROM THE OTHER SIDE.
+    #
+    # Everything above attacks the payload's prototype: the record the page is
+    # HANDED answers from somewhere the page did not derive. This attacks the
+    # literal the model seals its finalized value FROM. `sealText` walked
+    # `TEXT_SCHEMA` reading `fields[name]` by ordinary lookup, and `NO_TEXT`
+    # was built from a two-key literal — so five of the seven members of the
+    # one value this whole lane seals against the world were answered by
+    # `Object.prototype`:
+    #
+    #     Object.prototype.text = 'HOSTILE TEXT';
+    #     …
+    #     M.NO_TEXT  ->  {"present":false, … ,"text":"HOSTILE TEXT", …}
+    #
+    # The rendered page was never wrong: `bodySaying` reaches the absent
+    # sentence from `present !== true`, and `textPayload`'s literal states all
+    # seven members so every lookup there hit an own key. The VALUE was wrong,
+    # and the value is what this lane exists to prove. "No inherited or
+    # accessor value becomes semantic authority" is not a claim about what a
+    # reader saw; it is a claim about what the sealed record contains.
+    #
+    # Not an eleventh closure — the third one, asked of the mint instead of
+    # the payload.
+
+    #: The model probe. `Object.prototype` is polluted BEFORE the module is
+    #: required, so `NO_TEXT` — which is minted at load — is built inside the
+    #: hostile realm. Every entry point is reached through `call`, so an
+    #: export the parent does not have answers with a value rather than
+    #: taking the probe down: at V15 there is no `sealText`, no `NO_TEXT` and
+    #: no sealed value at all, and that is a DIFFERENT and more basic reading
+    #: than a wrong one.
+    POLLUTION = r"""
+    'use strict';
+    const raw = JSON.parse(process.argv[2]);
+    const hostile = JSON.parse(process.argv[3]);
+    const pollute = (record) => {
+      for (const name of Object.keys(record)) {
+        Object.defineProperty(Object.prototype, name, {
+          value: record[name], writable: true, configurable: true,
+          enumerable: false });
+      }
+    };
+    const clean = (record) => {
+      for (const name of Object.keys(record)) delete Object.prototype[name];
+    };
+    pollute(hostile);
+    const M = require(process.argv[1]);
+    const has = (name) => typeof M[name] === 'function';
+    const call = (name, ...args) =>
+      (has(name) ? M[name].apply(M, args) : 'NO SUCH EXPORT');
+    const read = (value) => {
+      if (!value || typeof value !== 'object') return 'NO SUCH VALUE';
+      const keys = Object.keys(value);
+      const out = { keys: keys, values: {},
+        frozen: Object.isFrozen(value),
+        prototype: Object.getPrototypeOf(value) === null ? 'null'
+          : Object.getPrototypeOf(value) === Object.prototype
+            ? 'Object' : 'other',
+        scalars: true };
+      for (const name of keys) {
+        const spot = Object.getOwnPropertyDescriptor(value, name);
+        const held = spot && Object.hasOwn(spot, 'value') ? spot.value : null;
+        out.values[name] = held;
+        if (typeof held !== 'string' && typeof held !== 'boolean') {
+          out.scalars = false;
+        }
+      }
+      return out;
+    };
+    const noText = read(M.NO_TEXT);
+    const emptyPayload = read(call('textPayload', {}));
+    const sayingEmpty = call('bodySaying', {});
+    const sayingNoText = M.NO_TEXT === undefined
+      ? 'NO SUCH EXPORT' : call('bodySaying', M.NO_TEXT);
+    const made = M.chapterProjection(raw);
+    const row = made.rows[0];
+    const owner = M.rowTransport(row);
+    const content = call('textPayload', { text: 'THE WORDS' });
+    pollute({ row: row });
+    const inheritedRowSeals = call('textCompleted', {}, content);
+    const inheritedRowFails = call('textFailed', {}, new Error('x'));
+    clean({ row: row });
+    clean(hostile);
+    pollute({ present: true, text: 'LATER HOSTILE TEXT',
+              acknowledgement_broken: true });
+    const noTextAfter = read(M.NO_TEXT);
+    const sayingAfter = M.NO_TEXT === undefined
+      ? 'NO SUCH EXPORT' : call('bodySaying', M.NO_TEXT);
+    console.log(JSON.stringify({
+      schema: Array.isArray(M.TEXT_SCHEMA)
+        ? M.TEXT_SCHEMA.slice() : 'NO SUCH EXPORT',
+      noText: noText,
+      emptyPayload: emptyPayload,
+      sayingEmpty: sayingEmpty,
+      sayingNoText: sayingNoText,
+      inheritedRowSeals: inheritedRowSeals,
+      inheritedRowFails: inheritedRowFails,
+      ownerIsReal: owner !== null,
+      noTextAfter: noTextAfter,
+      sayingAfter: sayingAfter
+    }));
+    """
+
+    #: What every member of a finalized value must be when the realm supplied
+    #: all seven of them and the record itself stated none.
+    NOTHING_STATED = {"present": False, "unreadable": False, "text": "",
+                      "basis": "", "date_basis": "", "acknowledgement": "",
+                      "acknowledgement_broken": False}
+    ABSENT_SAID = ("This fragment carries no text file, so nothing of it can "
+                   "be shown.")
+
+    def sealed(self, told, name):
+        """One finalized value read out of the pollution probe.
+
+        `NO SUCH VALUE` is the honest answer at an endpoint that seals no
+        such value at all — V15 has no `sealText`, no `NO_TEXT` and no
+        finalized record — and it is reported as a MISSING MECHANISM rather
+        than as a wrong one. The V15 review refused a method count that
+        conflated the two, so the distinction is made in the assertion and
+        not only in the prose around it.
+        """
+        said = told[name]
+        self.assertNotEqual(
+            said, "NO SUCH VALUE",
+            name + ": this endpoint seals no such value at all — the "
+            "mechanism is absent, which is a different reading from a "
+            "value that carries the wrong members")
+        return said
+
+    @classmethod
+    def polluted(cls):
+        if not hasattr(cls, "_polluted"):
+            cls._polluted = json.loads(subprocess.run(
+                [NODE, "-e", cls.POLLUTION, str(CATENA / "catena-model.js"),
+                 json.dumps(V14_SAME_PATH_SPINE),
+                 json.dumps(V16_HOSTILE_SCHEMA)],
+                capture_output=True, text=True, check=True).stdout)
+        return cls._polluted
+
+    def test_a_polluted_realm_supplies_no_member_of_a_finalized_value(self):
+        # ★ THE MINT, UNDER A HOSTILE REALM ★  `NO_TEXT` is built at load, so
+        # the pollution is in place before the value exists. Every one of the
+        # seven members is what the literal stated, the key set is exactly the
+        # schema, the record is frozen and null-prototype, and every value is
+        # a scalar — the same four facts asserted of a settled payload, asked
+        # of the one value that is minted from a literal instead of a file.
+        told = self.polluted()
+        self.assertEqual(told["schema"], self.SCHEMA)
+        said = self.sealed(told, "noText")
+        self.assertEqual(said["keys"], self.SCHEMA)
+        self.assertEqual(said["values"], self.NOTHING_STATED)
+        self.assertIs(said["frozen"], True)
+        self.assertEqual(said["prototype"], "null")
+        self.assertIs(said["scalars"], True)
+
+    def test_a_polluted_boolean_survives_the_mint_and_is_still_refused(self):
+        # THE SHARPEST MEMBER. `sealText` admits a boolean unchanged and puts
+        # everything else through `sound()`, so a hostile STRING would be
+        # flattened to `''` on its way in and would prove little. A hostile
+        # `present: true` is not flattened: it would arrive intact and turn
+        # the one value that means "this fragment has no text file" into one
+        # claiming a file was read. It is `false`.
+        told = self.polluted()
+        self.assertIs(V16_HOSTILE_SCHEMA["present"], True,
+                      "the fixture stopped being the hostile case")
+        said = self.sealed(told, "noText")
+        self.assertIs(said["values"]["present"], False)
+        self.assertIs(said["values"]["acknowledgement_broken"], False)
+        # And an EMPTY payload literal — every member unstated, every one of
+        # them therefore answerable by the realm — states nothing either, and
+        # says so: present, and unreadable.
+        empty = self.sealed(told, "emptyPayload")
+        self.assertEqual(empty["keys"], self.SCHEMA)
+        self.assertEqual(empty["values"], dict(self.NOTHING_STATED,
+                                               present=True, unreadable=True))
+        self.assertIs(empty["scalars"], True)
+
+    def test_the_sentence_and_the_envelope_refuse_inherited_authority_too(self):
+        # THE TWO CONSUMERS ON THE SAME DOCTRINE. `bodySaying` decides which
+        # of three things the page says; asked about a record that states
+        # nothing, in a realm that states everything, it must reach the
+        # ABSENT sentence and not the fragment's supposed words.
+        # `sealCompletion` resolves the owner's row; asked about a literal in
+        # a realm whose `Object.prototype.row` IS a real projected row, it
+        # must still mint nothing.
+        told = self.polluted()
+        self.assertIs(told["ownerIsReal"], True)
+        self.assertEqual(told["sayingEmpty"],
+                         {"missing": True, "said": self.ABSENT_SAID})
+        self.assertEqual(told["sayingNoText"],
+                         {"missing": True, "said": self.ABSENT_SAID})
+        self.assertIsNone(told["inheritedRowSeals"],
+                          "an inherited row minted a completion")
+        self.assertIsNone(told["inheritedRowFails"])
+
+    def test_pollution_after_the_value_was_sealed_moves_nothing(self):
+        # THE DIRECTIONS' "PROTOTYPE MUTATED AFTER CACHE INSERTION", asked of
+        # the mint. Trivially true of a frozen null-prototype record — which
+        # is the point: it is trivially true BECAUSE the value is finished,
+        # and it was not true of the raw shared file V15 kept. Asserted
+        # rather than assumed.
+        told = self.polluted()
+        # NON-VACUITY FIRST. "Nothing moved" is trivially true of a value
+        # that never existed, so the value is asserted to be a real sealed
+        # record before the two readings are compared at all.
+        said = self.sealed(told, "noText")
+        self.assertEqual(said["keys"], self.SCHEMA)
+        self.assertEqual(self.sealed(told, "noTextAfter"), said)
+        self.assertEqual(told["sayingAfter"], told["sayingNoText"])
+
+    def test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one(self):
+        # THE SAME CLOSURE THROUGH THE REPLAY, not only through a probe. One
+        # row asks an address and one asks none, so both kinds of finalized
+        # value are applied: one minted at a settlement from a real file, and
+        # `NO_TEXT` — the one the defect actually reached. The realm carries
+        # all seven schema names for the life of the scenario.
+        page = self.snapshot("v16-polluted-schema", "opened")
+        clean = self.snapshot("v16-polluted-schema-control", "opened")
+        self.assertEqual(self.rendered_state(page), self.rendered_state(clean))
+        self.assertNotIn("HOSTILE INHERITED", json.dumps(page))
+        # THE VALUES THEMSELVES, out of the body journal. A key list alone
+        # would have passed the defect: the shape was always right.
+        self.assertEqual(len(page["applied"]), 2)
+        self.assertEqual([one["contentValues"] for one in page["applied"]],
+                         [one["contentValues"] for one in clean["applied"]])
+        carried = [one for one in page["applied"]
+                   if one["contentValues"]["present"]]
+        nothing = [one for one in page["applied"]
+                   if not one["contentValues"]["present"]]
+        self.assertEqual(len(carried), 1)
+        self.assertEqual(len(nothing), 1)
+        # The row that asked no address applied `NO_TEXT`, and every member
+        # of it is what the model stated.
+        self.assertEqual(nothing[0]["contentValues"], self.NOTHING_STATED)
+        # The row that asked one applied its file's words and nothing else.
+        self.assertEqual(carried[0]["contentValues"],
+                         dict(self.NOTHING_STATED, present=True,
+                              text=self.HELD_BODY + " — reachable only "
+                                   "through genuine absence."))
+        self.assertEqual(page["fragmentTexts"][1], self.ABSENT_SAID)
+
+
+
+class V16CompletionEnvelopeTest(V16PublicationBase):
+    """V16 §D — the answer stops travelling alone.
+
+    The V15 review's boundary finding, stated exactly: `M.bodyAsked(row,
+    content)` authorized ANY content whenever `row` occurred in `rowOwners`.
+    It received no transport owner, no completion token, no promise and no
+    generation, and it did not compare the content with the request made for
+    that row. An actual B row therefore accepted arbitrary A content at the
+    sink. The association held in production only because one closure
+    happened to carry both halves — and the review's own words for the
+    committed oracle were that "the direct test intentionally accepts
+    `{text: "x"}` without any owned completion".
+
+    A settled transport is now sealed into one frozen envelope carrying the
+    exact `rowTransport` owner beside the value, minted only against an owner
+    this file is holding for that owner's own row and only around content
+    this file itself finalized. The envelope — not the value — reaches the
+    body, and `bodyAsked` makes three exact-object comparisons: that the
+    envelope is one this file sealed, that its owner is the transport held
+    for this very row, and that the owner's projection is the projection that
+    made the row. None of them is a path, a row id, a projection id string,
+    the current rows or the current route.
+    """
+
+    #: The model probe, run once. Every entry point is reached through
+    #: `call`, so an export the parent does not have answers
+    #: 'NO SUCH EXPORT' instead of taking the whole probe down — a missing
+    #: export and a wrong answer are two different readings and the
+    #: discrimination record has to be able to tell them apart.
+    PROBE = r"""
+    'use strict';
+    const M = require(process.argv[1]);
+    const raw = JSON.parse(process.argv[2]);
+    const has = (name) => typeof M[name] === 'function';
+    const call = (name, ...args) =>
+      (has(name) ? M[name].apply(M, args) : 'NO SUCH EXPORT');
+    const made = M.chapterProjection(raw);
+    const rowA = made.rows[0];
+    const rowB = made.rows[1];
+    const ownerA = M.rowTransport(rowA);
+    const ownerB = M.rowTransport(rowB);
+    const forgedOwner = Object.assign({}, ownerA);
+    const contentA = call('textPayload', { text: 'THE WORDS',
+                                           basis: 'AN EXTENT' });
+    const doneA = call('textCompleted', ownerA, contentA);
+    const doneB = call('textCompleted', ownerB, contentA);
+    const failedA = call('textFailed', ownerA, new Error('the network failed'));
+    const literal = { owner: ownerA, failed: false, content: contentA,
+                      error: null };
+    const keys = contentA && typeof contentA === 'object'
+      ? Object.keys(contentA) : [];
+    const mutated = (() => {
+      if (!contentA || typeof contentA !== 'object') return null;
+      const before = contentA.text;
+      const tried = (change) => {
+        try { change(); return false; } catch (error) { return true; }
+      };
+      return {
+        assignThrew: tried(() => { contentA.text = 'FORGED'; }),
+        addThrew: tried(() => { contentA.extra = 'FORGED'; }),
+        deleteThrew: tried(() => { delete contentA.basis; }),
+        protoThrew: tried(
+          () => Object.setPrototypeOf(contentA, { text: 'FORGED ABOVE' })),
+        held: contentA.text === before,
+        keptBasis: contentA.basis === 'AN EXTENT',
+        noExtra: contentA.extra === undefined,
+        stillNullPrototype: Object.getPrototypeOf(contentA) === null
+      };
+    })();
+    console.log(JSON.stringify({
+      twoRows: made.rows.length,
+      ownersDiffer: ownerA !== ownerB,
+      onePathTwoOwners: ownerA.path === ownerB.path,
+      contentFrozen: Object.isFrozen(contentA),
+      contentPrototype: Object.getPrototypeOf(contentA) === null ? 'null'
+        : Object.getPrototypeOf(contentA) === Object.prototype
+          ? 'Object' : 'other',
+      contentKeys: keys,
+      schema: Array.isArray(M.TEXT_SCHEMA)
+        ? M.TEXT_SCHEMA.slice() : 'NO SUCH EXPORT',
+      schemaFrozen: Array.isArray(M.TEXT_SCHEMA)
+        ? Object.isFrozen(M.TEXT_SCHEMA) : 'NO SUCH EXPORT',
+      contentScalars: keys.every((n) => typeof contentA[n] === 'string'
+        || typeof contentA[n] === 'boolean'),
+      mutation: mutated,
+      sealedOwn: doneA !== null && doneA !== 'NO SUCH EXPORT',
+      sealedCarriesOwner: doneA ? doneA.owner === ownerA : null,
+      sealedCarriesContent: doneA ? doneA.content === contentA : null,
+      sealedFrozen: doneA ? Object.isFrozen(doneA) : null,
+      forgedOwnerSealsNothing: call('textCompleted', forgedOwner, contentA),
+      unmintedContentSealsNothing:
+        call('textCompleted', ownerA, { present: true, text: 'x' }),
+      failureSealed: failedA !== null && failedA !== 'NO SUCH EXPORT',
+      failureCarriesNoContent: failedA ? failedA.content === null : null,
+      forgedOwnerFailsNothing: call('textFailed', forgedOwner,
+                                    new Error('x')),
+      noTextIsMinted: has('textCompleted') && M.NO_TEXT !== undefined
+        ? M.textCompleted(ownerA, M.NO_TEXT) !== null : 'NO SUCH EXPORT',
+      wroteOwn: call('bodyAsked', rowA, doneA),
+      wroteLiteral: call('bodyAsked', rowA, { text: 'x' }),
+      wroteShapedLiteral: call('bodyAsked', rowA, literal),
+      wroteBareContent: call('bodyAsked', rowA, contentA),
+      wroteForeign: call('bodyAsked', rowB, doneA),
+      wroteRebound: call('bodyAsked', rowB, doneB),
+      reboundSameValue: doneB ? doneB.content === contentA : null,
+      reboundOwnOwner: doneB
+        ? doneB.owner === ownerB && doneB.owner !== ownerA : null,
+      wroteFailure: call('bodyAsked', rowA, failedA),
+      appliedConfirmed: call('bodyApplied', rowA, doneA, true),
+      appliedUnconfirmed: call('bodyApplied', rowA, doneA, false),
+      appliedTruthy: call('bodyApplied', rowA, doneA, 'true'),
+      appliedForeign: call('bodyApplied', rowB, doneA, true)
+    }));
+    """
+
+    @classmethod
+    def told(cls):
+        if not hasattr(cls, "_told"):
+            cls._told = json.loads(subprocess.run(
+                [NODE, "-e", cls.PROBE, str(CATENA / "catena-model.js"),
+                 json.dumps(V14_SAME_PATH_SPINE)],
+                capture_output=True, text=True, check=True).stdout)
+        return cls._told
+
+    def test_two_same_path_rows_are_two_owners_and_the_content_is_neither(self):
+        told = self.told()
+        self.assertEqual(told["twoRows"], 2)
+        self.assertTrue(told["ownersDiffer"])
+        self.assertTrue(told["onePathTwoOwners"],
+                        "the fixture stopped being a same-path fixture")
+
+    def test_the_finalized_content_is_the_models_own_deterministic_schema(self):
+        # The key list this lane reviews, pinned as a literal AND taken from
+        # the model, so the two are asserted against each other rather than
+        # one being a transcription of the other.
+        told = self.told()
+        self.assertEqual(told["schema"], self.SCHEMA)
+        self.assertIs(told["schemaFrozen"], True)
+        self.assertEqual(told["contentKeys"], self.SCHEMA)
+        self.assertIs(told["contentFrozen"], True)
+        self.assertEqual(told["contentPrototype"], "null")
+        self.assertIs(told["contentScalars"], True)
+
+    def test_the_finalized_content_cannot_be_changed(self):
+        # Every way there is to change a record, and what the value says
+        # afterwards. The assignment, the addition, the deletion and the
+        # reparenting all throw, and each value is what it was — including
+        # the prototype, which is the member the V15 defect travelled
+        # through.
+        said = self.told()["mutation"]
+        for what in ("assignThrew", "addThrew", "deleteThrew", "protoThrew"):
+            with self.subTest(attempt=what):
+                self.assertIs(said[what], True, what + " did not throw")
+        for what in ("held", "keptBasis", "noExtra", "stillNullPrototype"):
+            with self.subTest(value=what):
+                self.assertIs(said[what], True, what + " moved")
+
+    def test_a_row_no_projection_made_owns_no_transport_and_writes_nothing(self):
+        # THE V15 FAIL-CLOSED RULE, one and two steps later. A row this file
+        # did not project creates no transport at all, and a body may not be
+        # applied for it. Kept from V15 unchanged in what it asks about the
+        # TRANSPORT; the content half of it is asked below, where V16 moved
+        # it.
+        told = json.loads(subprocess.run(
+            [NODE, "-e", """
+            const M = require(process.argv[1]);
+            const raw = JSON.parse(process.argv[2]);
+            const made = M.chapterProjection(raw);
+            const row = made.rows[0];
+            const copy = Object.assign({}, row);
+            const forged = { text_path: 'structure/catena/text/forged.json' };
+            const owner = M.rowTransport(row);
+            console.log(JSON.stringify({
+              owned: owner !== null,
+              same: M.rowTransport(row) === owner,
+              carries: owner && owner.row === row
+                       && owner.projection === made
+                       && owner.path === row.text_path,
+              frozen: owner !== null && Object.isFrozen(owner),
+              copy: M.rowTransport(copy),
+              forged: M.rowTransport(forged),
+              scalar: M.rowTransport('x'),
+              nothing: M.rowTransport(null),
+              wroteCopy: M.bodyAsked(copy, { text: 'x' }),
+              wroteForged: M.bodyAsked(forged, { text: 'x' }),
+              wroteScalar: M.bodyAsked(7, { text: 'x' })
+            }));
+            """, str(CATENA / "catena-model.js"),
+             json.dumps(V14_SAME_PATH_SPINE)],
+            capture_output=True, text=True, check=True).stdout)
+        self.assertTrue(told["owned"])
+        self.assertTrue(told["same"], "one owner per row, held against it")
+        self.assertTrue(told["carries"])
+        self.assertTrue(told["frozen"])
+        self.assertIsNone(told["copy"])
+        self.assertIsNone(told["forged"])
+        self.assertIsNone(told["scalar"])
+        self.assertIsNone(told["nothing"])
+        self.assertFalse(told["wroteCopy"])
+        self.assertFalse(told["wroteForged"])
+        self.assertFalse(told["wroteScalar"])
+
+    def test_an_actual_row_no_longer_authorizes_arbitrary_content(self):
+        # ★ THE CORRECTION THE V15 REVIEW NAMED BY NAME ★
+        #
+        # V15's committed probe asserted `M.bodyAsked(row, {text: 'x'})` to
+        # be TRUE and called that ownership. It was not ownership: the row
+        # was real, the content was a literal nobody had asked for, and the
+        # boundary said yes. It says no now, and so does every other shape
+        # that is not this row's own sealed completion — a bare finalized
+        # value, an object literal wearing the envelope's four fields, and a
+        # completion sealed for the other row.
+        told = self.told()
+        self.assertIs(told["wroteOwn"], True,
+                      "this row's own sealed completion must be accepted")
+        self.assertIs(told["wroteLiteral"], False,
+                      "an actual row still authorizes an arbitrary literal")
+        self.assertIs(told["wroteShapedLiteral"], False,
+                      "a forged envelope of the right shape was accepted")
+        self.assertIs(told["wroteBareContent"], False,
+                      "content with no owner was accepted")
+        self.assertIs(told["wroteForeign"], False,
+                      "row B accepted a completion sealed for row A")
+
+    def test_the_envelope_can_be_minted_from_neither_half_alone(self):
+        # FAIL-CLOSED ON BOTH INPUTS, one step later than `rowTransport`. A
+        # copy of an owner is not that owner; a record this file did not
+        # finalize is not content. Neither can be supplied from outside, so
+        # a forged envelope cannot be assembled at all.
+        told = self.told()
+        self.assertTrue(told["sealedOwn"])
+        self.assertIs(told["sealedCarriesOwner"], True)
+        self.assertIs(told["sealedCarriesContent"], True)
+        self.assertIs(told["sealedFrozen"], True)
+        self.assertIsNone(told["forgedOwnerSealsNothing"],
+                          "a forged owner sealed a completion")
+        self.assertIsNone(told["unmintedContentSealsNothing"],
+                          "content this file never made was sealed")
+        self.assertIsNone(told["forgedOwnerFailsNothing"])
+        self.assertIs(told["noTextIsMinted"], True,
+                      "NO_TEXT is not one of this file's own values")
+
+    def test_a_reported_failure_is_a_body_and_is_owned_as_one(self):
+        told = self.told()
+        self.assertTrue(told["failureSealed"])
+        self.assertIs(told["failureCarriesNoContent"], True)
+        self.assertIs(told["wroteFailure"], True)
+
+    def test_a_finished_value_rebinds_to_the_owner_that_reuses_it(self):
+        # THE SAME-PATH FULFILLED-CACHE REBINDING, at the model boundary. The
+        # value A's request produced is owner-independent, so B may have it —
+        # through B'S OWN envelope. A's owner never crosses: the envelope B
+        # holds carries B's owner, the value inside it is the very object A
+        # was given, and the boundary accepts B's envelope for B's row and
+        # A's for A's.
+        told = self.told()
+        self.assertIs(told["wroteRebound"], True)
+        self.assertIs(told["reboundSameValue"], True,
+                      "the cached value was copied instead of shared")
+        self.assertIs(told["reboundOwnOwner"], True,
+                      "the second owner inherited the first owner's envelope")
+
+    def test_the_journal_entry_follows_a_confirmed_write_and_nothing_else(self):
+        # §E AT THE MODEL BOUNDARY. `wrote` is the page's own answer to
+        # whether the write landed, and only `true` is an answer: `false` and
+        # a truthy string are both refused, so an unconfirmed application
+        # cannot become a journal entry by being merely plausible.
+        told = self.told()
+        self.assertIs(told["appliedConfirmed"], True)
+        self.assertIs(told["appliedUnconfirmed"], False)
+        self.assertIs(told["appliedTruthy"], False,
+                      "a truthy value passed for a confirmed write")
+        self.assertIs(told["appliedForeign"], False)
+
+
+class V16BodyApplicationJournalTest(V16PublicationBase):
+    """V16 §E — the record follows the write, or there is no record.
+
+    The V15 review: "the body journal is also recorded before the DOM write
+    rather than after a committed application". V15's `bodyAsked` recorded a
+    witness and then answered, so the page journalled `applied` for a body
+    that had not been written — and could not have said so if the write had
+    failed, because it had already spoken.
+
+    The order is validate the completion's owner, perform the write, read the
+    node back, and only then append. A write that does not take therefore
+    leaves NO entry at all, which is the only truthful thing an append-only
+    body journal can do about it.
+    """
+
+    def test_a_write_that_does_not_take_leaves_no_applied_record(self):
+        # ★ THE FORCED FAILURE ★  One node, one scenario: the first write
+        # carrying A's words is dropped by the shim and nothing else changes.
+        # Under V15 the journal already held an application for it.
+        page = self.snapshot("v16-write-fails", "opened")
+        broke = page["writeBreak"]
+        self.assertIsNotNone(broke)
+        self.assertIs(broke["broke"], True, "the seam never closed")
+        self.assertEqual(broke["node"], "fragment-text")
+        self.assertIn(self.A_BODY, broke["dropped"])
+        # NO FALSE SUCCESS. The reader is left with the honest state — the
+        # fragment still says it is loading — and the journal says nothing
+        # was applied there.
+        self.assertEqual(page["fragmentTexts"][0], "Loading…")
+        self.assertEqual(len(page["applied"]), 1,
+                         "a body nobody can read was journalled as applied")
+        self.assertIn(self.B_BODY, page["applied"][0]["body"])
+        # THE OTHER OWNER IS UNHARMED, and the page terminates.
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["failureText"], None)
+
+    def test_the_same_two_rows_with_nothing_held_shut_both_record(self):
+        # NON-VACUITY. The identical scenario without the seam applies both
+        # bodies and journals both, so the missing entry above is the failed
+        # write and not the fixture.
+        page = self.snapshot("v16-write-fails-control", "opened")
+        self.assertIsNone(page["writeBreak"])
+        self.assertEqual(len(page["applied"]), 2)
+        self.assertIn(self.A_BODY, page["fragmentTexts"][0])
+        self.assertIn(self.B_BODY, page["fragmentTexts"][1])
+        # And the request behaviour is the same in both: the seam is in the
+        # DOM write and nowhere earlier.
+        broken = self.snapshot("v16-write-fails", "opened")
+        self.assertEqual([one["path"] for one in broken["requests"]],
+                         [one["path"] for one in page["requests"]])
+        self.assertEqual(broken["transports"], page["transports"])
+
+    def test_an_owner_local_retry_never_observes_a_partial_path_state(self):
+        # V15 §F CARRIED FORWARD, WITH THE CACHE VISIBLE. A's request is
+        # held, then failed; A asks again and recovers. What V15 proved is
+        # that the retry stays A-owned and that no negative result enters the
+        # cache. What it could not prove is what the path held WHILE that was
+        # happening, because there was no way to look at it.
+        #
+        # Nothing is published until the recovery finishes, and what is
+        # published then is one finished value.
+        failed = self.probe("v16-retry-probed", "failed")
+        for one in failed:
+            with self.subTest(moment=one["moment"]):
+                self.assertEqual(one["lookup"]["kind"], "absent",
+                                 "the failed attempt left something behind")
+                self.assertNotEqual(one["moment"], "set")
+        made = self.published("v16-retry-probed", "recovered")
+        self.assertEqual(len(made), 1)
+        self.assert_final(made[0]["published"], "the recovered value")
+        for one in self.probe("v16-retry-probed", "recovered"):
+            with self.subTest(moment=one["moment"]):
+                self.assertFalse(one["lookup"]["isPromise"])
+                if one["lookup"]["present"]:
+                    self.assert_final(one["lookup"], "a path reading")
+        # THE RETRY REALLY HAPPENED, and it stayed with the row that failed.
+        page = self.snapshot("v16-retry-probed", "recovered")
+        asked = [one for one in page["requests"] if one["kind"] == "text"]
+        self.assertEqual([one["outcome"] for one in asked],
+                         ["failed", "released"])
+        self.assertEqual(len(page["transports"]), 2)
+        self.assertEqual(page["transports"][0]["owner"],
+                         page["transports"][1]["owner"],
+                         "one row's retry made a second owner")
+        self.assertEqual(len(page["applied"]), 2)
+        for one in page["applied"]:
+            self.assertEqual(one["owner"], page["transports"][0]["owner"])
+        self.assertIs(page["applied"][0]["failed"], True)
+        self.assertIs(page["applied"][1]["failed"], False)
+        self.assertEqual(page["applied"][1]["content"],
+                         made[0]["published"]["ref"])
+
+    #: What a whole write draws beside the fragment's words. The page reads
+    #: back ONE of these — `text.textContent` — and nothing else.
+    WHOLE = {"acknowledgements": ["Licence: PLANTED ACKNOWLEDGEMENT"],
+             "fragmentBases": ["Extent — PLANTED EXTENT BASIS",
+                               "Date — PLANTED DATE BASIS"]}
+    BODY_A = "PLANTED BODY A — the answer the row in projection A asked for."
+
+    def test_a_throwing_write_is_caught_and_leaves_no_applied_record(self):
+        # ★ THE SECOND FAILURE MODE ★  The setter DETONATES rather than
+        # quietly refusing. The page runs the whole write inside a `try` and
+        # compares what the write RETURNED with what the node reads back, so
+        # the throw is caught where it happened: `said` stays null, null is
+        # not the node's text, and no record is appended.
+        #
+        # That this is provable at all is the correction. A throw that
+        # escaped the sink would become an unhandled rejection, and Node
+        # aborts on those — the whole replay would die and the probe would be
+        # deciding the result instead of reporting it. The replay completes,
+        # every other scenario in the plan runs after it, and this page
+        # terminates in an ordinary state.
+        page = self.snapshot("v16-write-throws", "opened")
+        broke = page["writeBreak"]
+        self.assertEqual(broke["mode"], "throw")
+        self.assertIs(broke["broke"], True, "the seam never closed")
+        self.assertEqual(broke["attempts"], 1)
+        self.assertEqual(broke["node"], "fragment-text")
+        self.assertEqual(broke["dropped"], self.BODY_A)
+        # NO RECORD, NO FALSE SUCCESS, NO TERMINAL DAMAGE.
+        self.assertEqual(page["fragmentTexts"][0], "Loading…")
+        self.assertEqual(len(page["applied"]), 1)
+        self.assertIn(self.B_BODY, page["applied"][0]["body"])
+        self.assertEqual(page["busy"], "false")
+        self.assertEqual(page["errorSections"], [])
+        self.assertEqual(page["failureText"], None)
+        # And the page did not speak the exception at the reader.
+        self.assertNotIn("the body write failed", json.dumps(page))
+        # ★ THE THROW NEVER LEFT THE SINK ★  A rejection the page does not
+        # catch is not a quiet defect: Node aborts on one, so a sink that
+        # lets a failing write out takes every other scenario in the plan
+        # down with it. The escape journal is empty here, which is the whole
+        # reason this mode is assertable at all.
+        self.assertEqual(page["escaped"], [],
+                         "the page let a failing body write out of its own "
+                         "settle handler")
+
+    def test_no_scenario_anywhere_lets_a_body_write_escape_the_page(self):
+        # THE SAME CLAIM OVER THE WHOLE PLAN. The escape recorder is global
+        # and suppresses nothing: it exists so one deliberately broken write
+        # cannot end the run, and every escape it does see is journalled
+        # against the scenario and the step that produced it. Not one
+        # scenario — including the two that force a write to fail — lets
+        # anything out.
+        loose = {name: page["escaped"] for name, page in replayed().items()
+                 if page.get("escaped")}
+        self.assertEqual(loose, {},
+                         "a rejection escaped the page's own settle handler")
+
+    def test_the_two_write_failures_leave_different_partial_states(self):
+        # ★ WHAT THE PAGE LOOKS LIKE WHEN THE WRITE FAILS ★
+        #
+        # "No journal entry" is a weaker answer than "no journal entry, and
+        # here is the exact page". The two modes stop at different points of
+        # one thunk and the difference is visible, so it is pinned:
+        #
+        #   SILENT — the assignment returns, so everything after it runs.
+        #            The extent and date paragraphs are drawn. Only the
+        #            read-back catches the failure.
+        #   THROW  — the assignment never returns, so nothing after it runs.
+        #            No apparatus is drawn at all.
+        #
+        # BOTH — and this is the scope of a journal entry, stated as an
+        # assertion rather than as prose — leave the ACKNOWLEDGEMENT block
+        # standing, because it is written before the words are. A body
+        # application record says the fragment's WORDS reached the page. It
+        # does not say that every node beside them did, and this file claims
+        # no more than that.
+        thrown = self.snapshot("v16-write-throws", "opened")
+        silent = self.snapshot("v16-write-silent", "opened")
+        whole = self.snapshot("v16-write-modes-control", "opened")
+        for name, page in (("throw", thrown), ("silent", silent)):
+            with self.subTest(mode=name):
+                self.assertEqual(page["fragmentTexts"][0], "Loading…")
+                self.assertEqual(len(page["applied"]), 1,
+                                 "a body nobody can read was journalled")
+                self.assertEqual(page["acknowledgements"],
+                                 self.WHOLE["acknowledgements"],
+                                 "the licence note is written before the "
+                                 "words and stands either way")
+        self.assertEqual(thrown["fragmentBases"], [],
+                         "a detonating write drew the apparatus anyway")
+        self.assertEqual(silent["fragmentBases"], self.WHOLE["fragmentBases"],
+                         "a silent write stopped short of the apparatus")
+        # THE CONTROL. The identical payload with nothing held shut draws all
+        # of it and journals both bodies, so each absence above is the seam.
+        self.assertIsNone(whole["writeBreak"])
+        self.assertEqual(whole["fragmentTexts"][0], self.BODY_A)
+        self.assertEqual(whole["fragmentBases"], self.WHOLE["fragmentBases"])
+        self.assertEqual(whole["acknowledgements"],
+                         self.WHOLE["acknowledgements"])
+        self.assertEqual(len(whole["applied"]), 2)
+
+    def test_neither_failed_write_asks_the_transport_again(self):
+        # THE RETRY QUESTION, ANSWERED AS THE SHIPPED PAGE ANSWERS IT.
+        #
+        # `asked` is reset only in the FAILURE arm — a transport that
+        # reported a failure is worth asking again. A write that failed is
+        # not a transport failure: the sink's catch sets `said = null` and
+        # leaves `asked` alone, so re-opening the fragment does nothing in
+        # EITHER mode. The reader is left at `Loading…`, and the page makes
+        # no second request for a body it already holds.
+        #
+        # This is asserted as the behaviour, not endorsed as the only
+        # possible one. What matters for §E is that the state is TRUTHFUL —
+        # no record claims a body that was never written, and no request is
+        # repeated for an answer already in hand — and both hold.
+        for name in ("v16-write-throws", "v16-write-silent"):
+            with self.subTest(scenario=name):
+                first = self.snapshot(name, "opened")
+                again = self.snapshot(name, "reopened")
+                # The re-open really happened and changed nothing.
+                self.assertEqual(again["fragmentTexts"],
+                                 first["fragmentTexts"])
+                self.assertEqual(again["applied"], first["applied"])
+                self.assertEqual(again["writeBreak"]["attempts"], 1,
+                                 "the write was attempted a second time")
+                # NO SECOND REQUEST, in either mode: the owner's completion
+                # is memoised against the owner and a re-open reuses it.
+                self.assertEqual(
+                    [one["path"] for one in again["requests"]],
+                    [one["path"] for one in first["requests"]])
+                self.assertEqual(len([one for one in again["requests"]
+                                      if one["kind"] == "text"]), 2)
+                self.assertEqual(again["released"], 0)
+        # THE CONTROL: a re-open after a WHOLE write is equally inert, so the
+        # inertness above is not the failure doing it.
+        whole_first = self.snapshot("v16-write-modes-control", "opened")
+        whole_again = self.snapshot("v16-write-modes-control", "reopened")
+        self.assertEqual(whole_again["applied"], whole_first["applied"])
+        self.assertEqual(len([one for one in whole_again["requests"]
+                              if one["kind"] == "text"]), 2)
+
+    def test_the_owner_state_stays_coherent_after_a_failed_write(self):
+        # The failed row's transport is still recorded, still owned by that
+        # row's own projection, and the failure did not release, retry or
+        # re-ask anything. What is truthful about the state is that the
+        # request was made and no body stands.
+        page = self.snapshot("v16-write-fails", "opened")
+        owners = page["transports"]
+        self.assertEqual(len(owners), 2)
+        self.assertNotEqual(owners[0]["owner"], owners[1]["owner"])
+        rows = page["projectionRowRefs"][str(page["authoritativeRefs"][0])]
+        for one in owners:
+            self.assertIn(one["row"], rows)
+        self.assertEqual(page["applied"][0]["row"], owners[1]["row"])
+        self.assertNotIn(owners[0]["row"],
+                         [one["row"] for one in page["applied"]])
+        self.assertEqual(len([one for one in page["requests"]
+                              if one["kind"] == "text"]), 2)
+        self.assertEqual(page["released"], 0)
+
+    def test_every_journal_entry_binds_the_whole_chain_it_stands_for(self):
+        # §E, THE POSITIVE HALF. Each successful application binds the
+        # transport owner, the row, the projection, the address, the
+        # finalized content and the confirmed write — every one of them
+        # taken at the recording, and every object one of them compared as
+        # an object.
+        for name, label in (("v16-publication", "opened"),
+                            ("v16-write-fails-control", "opened"),
+                            ("v16-late-contamination", "second"),
+                            ("v16-whole-roster", "opened")):
+            page = self.snapshot(name, label)
+            owners = {one["owner"]: one for one in page["transports"]}
+            authority = page["authoritativeRefs"]
+            self.assertTrue(page["applied"], name + " applied nothing")
+            for index, one in enumerate(page["applied"]):
+                with self.subTest(scenario=name, application=index):
+                    self.assertIs(one["wrote"], True)
+                    self.assertIn(one["owner"], owners,
+                                  "the applied owner is no recorded transport")
+                    held = owners[one["owner"]]
+                    self.assertEqual(one["row"], held["row"])
+                    self.assertEqual(one["ownerProjection"], held["held"])
+                    self.assertEqual(one["projection"], held["held"])
+                    self.assertEqual(one["owned"], held["owned"])
+                    self.assertIn(one["projection"], authority)
+                    self.assertEqual(one["ownerPath"], held["path"])
+                    self.assertEqual(one["ownerPath"], one["path"])
+                    self.assertNotEqual(one["content"], -1)
+
+
+class V16ConsumerIdentityRosterTest(V16PublicationBase):
+    """V16 §G — an actual `===` for every consumer, provenance included.
+
+    The V15 review: "the full name roster passes, though the committed
+    equality matrix lacks a provenance-specific `===` assertion". Source
+    inspection and an independent replay confirmed the behaviour; what was
+    missing was the committed assertion, and roster logging is not one.
+
+    The production boundary is `catena-model.js`'s `absenceRows`, which reads
+    `witnessed('provenance', chapterProjection(file)).editions`. It is drawn
+    only where a reader asks for a translation that is not held, and no
+    committed scenario asked for one AND opened a body — so provenance and
+    the three ownership consumers had never stood on one authority. They do
+    here, and every one of the twelve is asserted by identity.
+    """
+
+    def test_all_twelve_consumers_read_the_object_the_normalization_made(self):
+        # ONE chapter, ONE normalization, TWELVE consumers, each asserted
+        # against the reference recorded where the projection was MADE.
+        page, authority = self.one_authority("v16-whole-roster", "opened")
+        for consumer in self.CONSUMERS:
+            with self.subTest(consumer=consumer):
+                self.assertIn(consumer, page["consumerRefs"],
+                              consumer + " is not routed through the "
+                              "projection")
+                self.assertEqual(page["consumerRefs"][consumer], [authority],
+                                 consumer + " read an object the "
+                                 "normalization did not make")
+
+    def test_the_provenance_line_reads_the_authoritative_projection(self):
+        # ★ THE MISSING ASSERTION ★  Named on its own, because the review
+        # named it on its own: the object `absenceRows` consumed IS the
+        # object the normalization made, compared as an object.
+        page, authority = self.one_authority("v16-whole-roster", "opened")
+        self.assertEqual(page["consumerRefs"]["provenance"], [authority])
+        self.assertEqual(page["consumerRefs"]["provenance"],
+                         page["consumerRefs"]["normalize"])
+        # NON-VACUITY: the boundary really was reached on this page — the
+        # absence disclosure it draws is standing on it.
+        self.assertTrue(page["absenceReasons"],
+                        "no absence was drawn, so provenance proves nothing")
+        seen = [one["consumer"] for one in page["witness"]]
+        self.assertIn("provenance", seen)
+
+    def test_the_roster_and_the_identity_matrix_cover_the_same_names(self):
+        # The gap the V15 review's phrasing points at: the V14 matrix
+        # iterated `RENDERED_CONSUMERS`, which is eight of the twelve. The
+        # matrix above iterates all twelve, and this asserts that the eight
+        # are a strict subset of them rather than a second roster that could
+        # drift.
+        self.assertEqual(len(self.CONSUMERS), 12)
+        self.assertEqual(sorted(set(self.RENDERED_CONSUMERS)
+                                - set(self.CONSUMERS)), [])
+        self.assertEqual(len(self.RENDERED_CONSUMERS), 8)
+
+
+class V16TextObservationAccountingTest(V16PublicationBase):
+    """V16 §H — what the fragment text file is asked, under the new names.
+
+    The V15 review refused the observation prose twice over: it omitted the
+    `getPrototypeOf` observation that ENUMERATION causes, and it conflated
+    `has` with own-property testing. The vocabulary is six distinct fields
+    now — `value_gets`, `getter_invocations`, `has_operator`,
+    `own_descriptor_reads`, `enumerations`, `prototype_observations` — and
+    the prototype observation is disclosed with a number rather than being
+    absent from a sentence that claimed nothing else happened.
+
+    The V15 accounting also covered only the chapter's `sources` record. The
+    file that becomes the READER'S WORDS — the one V16 moved the whole
+    projection of, out of the render and into the settlement — had no
+    accounting at all, which is exactly where the mutable-prototype and
+    accessor findings live. It has one here.
+    """
+
+    #: The four members `textPayload` takes, each by own descriptor, once.
+    TAKEN = ("text", "basis", "date_basis", "acknowledgement")
+
+    def observed(self, name):
+        return self.snapshot(name, "opened")["observations"]
+
+    def test_the_projection_takes_four_own_descriptors_and_nothing_else(self):
+        # THE WHOLE ACCOUNTING OF THE TEXT FILE, stated as six numbers and
+        # verified rather than assumed. Four own-descriptor reads, one per
+        # member the finalized record carries from the file; no value read;
+        # no accessor invoked; no `in`; no enumeration; and — because nothing
+        # enumerates this record — no prototype observation either.
+        seen = self.observed("v16-text-accounting")
+        for name in self.TAKEN:
+            with self.subTest(member=name):
+                self.assertEqual(seen.get("own_descriptor_reads:text/" + name),
+                                 1, name + " was not taken exactly once")
+        self.assertEqual(
+            sorted(at for at in seen if at.startswith("own_descriptor_reads:")),
+            sorted("own_descriptor_reads:text/" + name
+                   for name in self.TAKEN))
+        for kind in ("getter_invocations", "has_operator", "enumerations",
+                     "prototype_observations"):
+            with self.subTest(kind=kind):
+                self.assertEqual([at for at in seen
+                                  if at.startswith(kind + ":")], [],
+                                 kind + " is not zero for the text file")
+
+    def test_the_only_value_read_of_the_file_is_the_transport_resolving_it(self):
+        # THE HONEST EXCEPTION, disclosed rather than rounded away. There
+        # ARE value reads of the served document, and they are not the
+        # page's: resolving a promise with an object performs `Get(value,
+        # "then")`, twice, in `loadJSON`'s own `await` and in the settle the
+        # page attaches. Not one of them is a semantic member, and the
+        # projection itself reads nothing by value — which is the claim, and
+        # is why a hostile accessor on `text` is never invoked.
+        seen = self.observed("v16-text-accounting")
+        self.assertEqual(sorted(at for at in seen
+                                if at.startswith("value_gets:")),
+                         ["value_gets:text/then"])
+        self.assertEqual(seen["value_gets:text/then"], 2)
+        for name in self.TAKEN:
+            with self.subTest(member=name):
+                self.assertNotIn("value_gets:text/" + name, seen)
+
+    def test_an_accessor_over_the_same_members_changes_none_of_it(self):
+        # The same file with `text` and `basis` as own GETTERS is observed
+        # exactly the same way — four descriptor reads, two `then` reads,
+        # nothing else — and the getters are never called. The descriptor
+        # read is what makes those two facts one fact.
+        self.assertEqual(self.observed("v16-text-accessor"),
+                         self.observed("v16-text-accounting"))
 
 
 class V14ProjectionImmutabilityTest(V14ProjectionAuthorityBase):
