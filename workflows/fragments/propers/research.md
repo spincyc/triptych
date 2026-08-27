@@ -51,6 +51,20 @@ A finding without `repair_target` came from `research-synthesis`: its
 `location` names the research lane that owes the work. Address it if it names
 your lane, and leave it alone if it names another.
 
+## Persist as you go
+
+Write your result file as the sweep proceeds rather than composing it all in
+context and serialising once at the end. Each time a finding is settled — its
+claim fixed, its sources named — save the result you hold so far to the path
+the parent driver gave you, carrying the findings established up to that
+point. Rewriting that file costs nothing next to the retrieval behind it, and
+this stage has lost whole lanes at exactly the moment of that single final
+save: an hour of checked loci gone because the last step of it failed. Only
+the file's final state is submitted, so nothing is lost by saving early and
+often, and an interrupted lane leaves partial evidence on disk that a later
+attempt can resume from instead of leaving nothing at all. Your result file
+is not repository content: the read-only rule above stands untouched.
+
 ## Result
 
 Return a research result validated against `research-result.json`, carrying

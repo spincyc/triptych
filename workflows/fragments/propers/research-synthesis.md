@@ -74,13 +74,27 @@ Integrate the joined research into one research brief that the
    the brief: on `CHANGES_REQUIRED` or `BLOCKED`, leave `research/scope.md`
    exactly as you found it rather than leaving a partial brief behind for a
    later pass to mistake for a finished one.
-10. Write into `research/scope.md`: the passage-by-passage reception matrix,
+10. Certify the brief's evidence coverage, section by section. The
+   `Reader-Facing Order` in `guidance/liturgy/roman-1962-propers.md` fixes
+   the sections a reader is given; for each one that carries reader-facing
+   content, state in the brief whether the brief supplies the evidence that
+   section needs, and name every section for which it does not. This is a
+   statement of fact and not a bar to clear. A section for which this
+   repository holds no citable evidence is a legitimate outcome and passes:
+   record it as a bounded negative naming the corpora, languages, and loci
+   checked and the limit reached, and the guide carries that bound in place
+   of the claim. What fails is silence. Nothing after you can repair the
+   brief, so a section whose evidence position goes unstated is found only
+   when the author needs the evidence and blocks, and the run has then spent
+   a stage discovering what one line here would have said.
+11. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
-   `Notable-and-quotable audit`, the `Interpretive-proposal audit`, and the
-   organized brief. This stage is the sole writer of `research/scope.md`
-   in the workflow: the research lanes were forbidden to touch it, and no
-   later stage may add to it or amend it. Leave it complete enough to author
+   `Notable-and-quotable audit`, the `Interpretive-proposal audit`, the
+   section-by-section evidence coverage statement, and the organized brief.
+   This stage is the sole writer of `research/scope.md` in the workflow:
+   the research lanes were forbidden to touch it, and no later stage may add
+   to it or amend it. Leave it complete enough to author
    from, because nothing after you will fill a gap you leave.
 
 ## Result
@@ -92,7 +106,11 @@ carrying `stage`, `iteration`, `disposition`, and `findings`, with a
 `PASS` — the joined research supports a brief that can be authored from.
 Return `findings: []`, `artifact_path` pointing at `research/scope.md`, and a
 summary naming the overlaps reconciled, the cross-proper claims settled, the
-exploratory proposals developed, and the evidence gaps found.
+exploratory proposals developed, and the evidence gaps found. Do not pass
+before the section-by-section coverage statement is in the brief and complete
+over the reader-facing sections. A `PASS` asserts that every one of those
+sections has its evidence position stated; it does not assert that every one
+of them has evidence.
 
 `CHANGES_REQUIRED` — the research is insufficient but plausibly recoverable:
 you can name concrete missing or inadequate research the existing seven lanes
