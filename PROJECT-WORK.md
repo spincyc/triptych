@@ -1834,6 +1834,123 @@ anchor rather than an interval *from* it, which is what all eighteen judges'
 spans and several older events do; and whether an authorship ascription may
 become an occasion, which the corpus refuses for Ps 88 and allows for Ps 21.
 
+## Correction lane, 2026-08-27: the ontology, before an independent audit
+
+The population of 2026-08-26 was marked complete by its own author. That
+disposition was premature and is reversed here. **The research was not the
+problem; the ontology was.** Four defects were corrected, the promise was
+reopened, and the corpus now waits on a cold independent source audit that this
+lane may not perform and did not.
+
+**A named system is not a translation, and a mapping refusal is not silence.**
+Chronology was authored in `vulgate` alone and returned a concordance refusal as
+its own answer, conflating two questions: whether a locus may be asserted
+equivalent to another, and whether it can carry chronology at all. The Greek
+Ecclesiasticus is the standing case — 1 391 of its loci refuse the Vulgate
+because there are two texts and not two numberings — and the corpus already knew
+it had nowhere to put the fact: `composition.book-of-ecclesiasticus` carried a
+note warning that three dates in Gigot's article "must not be conflated",
+written by an author who could not act on it. The Greek translation is now dated
+natively to "not long after ... the year 132 B.C." while the concordance goes on
+refusing, and both are true at once. Systems are read from the modules that own
+them rather than restated, the check is `(system, book)` so `hebrew` cannot name
+Matthew, and native authoring is refused wherever the concordance carries the
+text safely — which makes "one fact, one place" a load-time gate rather than a
+convention.
+
+**Applicability is not directness.** `dated` required a *direct* substantive
+assertion, which said two wrong things: 271 verses of Ezechiel reached by a
+whole-book `prophecy-given` looked undated though the oracle applies to every
+one of them, and a directly authored composition unit alone would have reported
+event chronology nobody had researched. Status now asks what applies;
+`direct`/`inherited` rides on each returned assertion as provenance and decides
+nothing. Measured: **zero verses change status** — `direct` was dead code,
+because no composition unit is scoped to verses — but the definition was false
+of **7 354** verses, which is what was corrected. The status formerly called
+`inherited` is `composition-only`, since it was a directness word doing a scope
+job, and coverage reports the provenance split beside the statuses.
+
+**A duration is not an offset.** All 216 `relative` claims were classified
+against their sources. **47** were lengths wearing an offset's clothes — the
+whole Judges family among them, nineteen and not the eighteen previously
+reported, because `israel.judges.heli-judgeship` is the nineteenth and any
+migration selecting on the book of Judges would have missed it. `duration` is
+now its own precision and the distinction is structural: no offset anchor, no
+endpoints, no zero or negative length, and a `within` that is validated as a
+real event but is deliberately not returned as an anchor. Seven wrong anchors
+were corrected besides — one that ran backwards onto the mission it precedes,
+two circular regnal datelines, one naming the wrong king's accession. Six claims
+are genuinely ambiguous in their sources and are left as `relative` for reviewer
+disposition rather than guessed.
+
+**Authorship is not occasion.** Ps 21's `historical-setting` conceded in its own
+note that the title "names no occasion" and then took the occasion to be "the
+reign of David itself". Ps 88 had already refused exactly that move in its own
+words. Ps 21's was withdrawn; six of the seven Psalm settings rest on real
+occasion evidence and stand. Ps 21 keeps its Passion `prophetic-referent` and
+every verse of it stays dated. The hard case "one verse carries three relation
+types" moved from Ps 21:2 to Ps 17:2, which carries four on evidence, rather
+than propping a count up with a binding the sources do not support.
+
+**A defect this lane found in a test.** The World English Catholic edition is
+two hops from the Vulgate, through the Greek. Chronology asked for a direct row,
+the direct index is empty, and all 2 131 of its loci returned
+`textually-distinct` — and a test asserted that refusal as correct behaviour.
+730 of those loci are the Vulgate's own text, and under the corrected coverage
+rules every one of the 2 131 would have counted as new Scripture. A refusal is
+evidence about a route until the route has been checked.
+
+**Coverage, over a universe that is now named rather than assumed.**
+
+| Vulgate/Clementine primary universe | Loci |
+| --- | --- |
+| total | 35 809 |
+| substantive (`dated`) | 12 406 |
+| composition-only | 16 687 |
+| undated-in-tradition | 6 716 |
+| research-pending | 0 |
+| — of the substantive: direct only | 3 646 |
+| — inherited only | 7 354 |
+| — both | 1 406 |
+
+| Additional native loci | Printed | Shared | Already counted | Additional |
+| --- | --- | --- | --- | --- |
+| `greek` | 2 194 | 803 | 0 | **1 391** |
+| `hebrew` | 2 528 | 2 528 | 0 | 0 |
+| `world-english-catholic` | 2 131 | 730 | 1 392 | **9** |
+
+Corrected universe: **37 209**. Ten of the 1 400 additional native loci carry no
+chronology status of their own — one Greek Esther locus and nine World English
+Catholic ones — so the corrected universe is **not** fully accounted for and
+`exhaustive-coverage` stays open. That is the honest reading of the requirement
+as rewritten, and it is the reason it was rewritten.
+
+**The promise is reopened and stays open.** Thirteen requirements now, three of
+them open: `translation-independent-identity` and `exhaustive-coverage`, both
+rewritten to require what they were meant to require, and a new
+`independent-source-audit` which **this lane may not mark pass**. Machine-valid
+is not source-verified: the population wave passed every gate and its own
+authors' review, and a second reader still found a quotation from memory, a
+wrong relative anchor, a modern-critical figure inside the traditional profile,
+an unretained claim of source silence that proved false for half its subjects,
+and a refusal that went stale mid-wave. Author self-review cannot discharge
+this.
+
+**The cold audit's review target is tracked**, at
+`src/sources/chronology/cold-audit-manifest.tsv`. It holds 72 factual claims —
+one row per subject-and-claim, never per binding, so a claim reused by a
+thousand verses is reviewed once — selected by a rule reproducible from the file
+alone: strata of (precision, disposition), ordered within each by
+`sha256(seed + id)` with the seed recorded, round-robined until 72 are taken.
+Nothing was hand-picked, and a reviewer can regenerate the identical list. Four
+high-risk classes totalling **57** claims are excluded from the sample because
+they are to be inspected **completely**, not sampled: 47 migrated durations,
+9 Psalm historical-settings, 2 derived spans, and the 1 native non-Vulgate
+claim. What the reviewer must verify per claim is in
+`guidance/scripture-chronology.md`; the five source-fidelity failure modes from
+§15.1 and the five new semantic ones are named there so they can be looked for
+by name.
+
 **Not in this lane.** Propers, the Catena, the web reader and the PDFs are not
 wired to the corpus, and no proper document was revised. The consumer contract
 that binds them when they are is stated in `guidance/scripture-chronology.md`

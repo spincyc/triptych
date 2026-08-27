@@ -1052,10 +1052,12 @@ events:
           there a year and six months, teaching among them the word of God."
         sources: [bible:douay-rheims:Acts.18.11]
         date:
-          precision: relative
-          relative:
-            of: apostolic-age.saint-paul-second-mission
+          precision: duration
+          duration:
+            years: 1
+            months: 6
             statement: "he stayed there a year and six months"
+            within: apostolic-age.saint-paul-second-mission
           label: "a year and six months"
 
   - id: apostolic-age.saint-paul-fourth-visit-to-jerusalem
@@ -1122,10 +1124,11 @@ events:
           in Asia heard the word of the Lord, both Jews and Gentiles."
         sources: [bible:douay-rheims:Acts.19.10]
         date:
-          precision: relative
-          relative:
-            of: apostolic-age.saint-paul-third-mission
+          precision: duration
+          duration:
+            years: 2
             statement: "this continued for the space of two years"
+            within: apostolic-age.saint-paul-third-mission
           label: "for the space of two years"
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -1135,10 +1138,11 @@ events:
           with tears to admonish every one of you, night and day."
         sources: [bible:douay-rheims:Acts.20.31]
         date:
-          precision: relative
-          relative:
-            of: apostolic-age.saint-paul-third-mission
+          precision: duration
+          duration:
+            years: 3
             statement: "for three years I ceased not with tears to admonish every one of you"
+            within: apostolic-age.saint-paul-third-mission
           label: "for three years"
 
   - id: apostolic-age.arrest-of-saint-paul-at-jerusalem
@@ -1183,9 +1187,9 @@ events:
           reckoned from their own date for the arrest, which the encyclopedia
           itself puts at 57 in one article and 59 in another.
         date:
-          precision: relative
-          relative:
-            of: apostolic-age.arrest-of-saint-paul-at-jerusalem
+          precision: duration
+          duration:
+            years: 2
             statement: "when two years were ended, Felix had for successor Portius Festus"
           label: "when two years were ended"
 
@@ -1262,9 +1266,9 @@ events:
           disagreement. Both the "Acts of the Apostles" article and Jerome build
           their date for the composition of Acts on this verse.
         date:
-          precision: relative
-          relative:
-            of: apostolic-age.saint-paul-sent-to-rome
+          precision: duration
+          duration:
+            years: 2
             statement: "he remained two whole years in his own hired lodging"
           label: "two whole years"
 
@@ -2019,9 +2023,9 @@ events:
           measured from the day the deep was broken up in verse 11.
         sources: [bible:douay-rheims:Gen.7.12]
         date:
-          precision: relative
-          relative:
-            of: israel.primeval.deluge-begins
+          precision: duration
+          duration:
+            days: 40
             statement: "And the rain fell upon the earth forty days and forty nights"
           label: "forty days and forty nights"
   - id: israel.primeval.deluge-waters-prevail
@@ -2039,9 +2043,9 @@ events:
           of prevailing waters without saying how they are to be added, and
           this corpus does not add them.
         date:
-          precision: relative
-          relative:
-            of: israel.primeval.deluge-begins
+          precision: duration
+          duration:
+            days: 150
             statement: "And the waters prevailed upon the earth a hundred and fifty days"
           label: "a hundred and fifty days"
   - id: israel.primeval.deluge-waters-abate
@@ -2379,9 +2383,9 @@ events:
           Anno Mundi chain built on this verse has chosen a text-family by
           building on it.
         date:
-          precision: relative
-          relative:
-            of: israel.egypt.descent
+          precision: duration
+          duration:
+            years: 430
             statement: "the abode of the children of Israel that they made in Egypt, was four hundred and thirty years"
           label: "four hundred and thirty years"
       - profile: catholic-traditional-v1
@@ -2399,9 +2403,9 @@ events:
           consumer wanting when the oracle was uttered wants a different
           relation from the length of the sojourn it foretells.
         date:
-          precision: relative
-          relative:
-            of: israel.egypt.descent
+          precision: duration
+          duration:
+            years: 400
             statement: "they shall bring them under bondage, and afflict them four hundred years"
           label: "four hundred years"
       - profile: catholic-traditional-v1
@@ -2421,9 +2425,9 @@ events:
           corpus printing only 430, or only 215, would be settling what the
           source left open.
         date:
-          precision: relative
-          relative:
-            of: israel.egypt.descent
+          precision: duration
+          duration:
+            years: 215
             statement: "only 215 years are left for the sojourn in Egypt"
           label: "only 215 years are left for the sojourn in Egypt"
   - id: israel.exodus.the-exodus
@@ -2670,9 +2674,9 @@ events:
           days each. A chronology that counts only this one is short by forty
           days.
         date:
-          precision: relative
-          relative:
-            of: israel.wilderness.arrival-at-sinai
+          precision: duration
+          duration:
+            days: 40
             statement: "he was there forty days and forty nights"
           label: "forty days and forty nights"
   - id: israel.wilderness.golden-calf
@@ -2733,15 +2737,15 @@ events:
           - bible:douay-rheims:Num.14.34
         note: >-
           The forty years are here a sentence pronounced at the return of the
-          spies, and are counted from that moment rather than from the Red Sea;
-          the relation to the Exodus is recorded because the wilderness period
-          is what the phrase names elsewhere. Exodus 16:35, Deuteronomy 2:7 and
-          Deuteronomy 29:5 all say "forty years" of the wilderness from
+          spies, and are counted from that moment rather than from the Red Sea.
+          The corpus carries the length Numbers states and leaves the point it
+          is counted from where Scripture leaves it. Exodus 16:35, Deuteronomy
+          2:7 and Deuteronomy 29:5 all say "forty years" of the wilderness from
           different starting points, and this corpus does not reconcile them.
         date:
-          precision: relative
-          relative:
-            of: israel.exodus.the-exodus
+          precision: duration
+          duration:
+            years: 40
             statement: "Your children shall wander in the desert forty years ... a year shall be counted for a day"
           label: "forty years"
   - id: israel.wilderness.death-of-aaron
@@ -2948,9 +2952,9 @@ events:
           This is Jephte's own argument inside a diplomatic message, not the
           narrator's chronological statement, and the corpus records it as such.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 300
             statement: he hath dwelt in Hesebon ... for three hundred years
           label: "for three hundred years"
 
@@ -2968,11 +2972,44 @@ events:
           A duration, not an anchored date. Some Greek copies read twenty years;
           the Douay text here reads forty.
         date:
+          precision: duration
+          duration:
+            years: 40
+            statement: he judged Israel forty years
+            within: israel.judges.period
+          label: "And he judged Israel forty years"
+
+  - id: israel.judges.ark-comes-to-cariathiarim
+    title: The coming of the ark of the Lord to Cariathiarim
+    parent: israel.judges.period
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of 1 Kings (1 Samuel) 7:1 states the arrival the
+          next verse counts from: "And the men of Cariathiarim came, and fetched
+          up the ark of the Lord, and carried it into the house of Abinadab, in
+          Gabaa: and they sanctified Eleazar, his son, to keep the ark of the
+          Lord." It follows straight upon the sending at 6:21, "The Philistines
+          have brought back the ark of the Lord, come ye down and fetch it up to
+          you", which closes the seven months in the land of the Philistines.
+        sources:
+          - bible:douay-rheims:1Kings.6.21
+          - bible:douay-rheims:1Kings.7.1
+        note: >-
+          Held because 1 Kings 7:2 counts its twenty years "from the day the ark
+          of the Lord abode in Cariathiarim": that day is the origin of the only
+          number the verse states, and a corpus that does not hold it measures
+          the twenty years from nothing. Scripture gives the arrival itself no
+          year, month or day of any era, and none is supplied.
+        date:
           precision: relative
           relative:
-            of: israel.judges.period
-            statement: he judged Israel forty years
-          label: "And he judged Israel forty years"
+            of: israel.judges.ark-among-the-philistines
+            statement: >-
+              And the men of Cariathiarim came, and fetched up the ark of the
+              Lord, and carried it into the house of Abinadab, in Gabaa
+          label: "the men of Cariathiarim came, and fetched up the ark of the Lord"
 
   - id: israel.judges.ark-at-cariathiarim
     title: The twentieth year of the ark's abode at Cariathiarim
@@ -2993,7 +3030,7 @@ events:
         date:
           precision: relative
           relative:
-            of: israel.judges.period
+            of: israel.judges.ark-comes-to-cariathiarim
             statement: >-
               from the day the ark of the Lord abode in Cariathiarim, it was now
               the twentieth year
@@ -3045,9 +3082,9 @@ events:
           stands, and no Catholic source inspected for this lane resolves it, so
           none is offered.
         date:
-          precision: relative
-          relative:
-            of: israel.monarchy.saul-accession
+          precision: duration
+          duration:
+            years: 2
             statement: he reigned two years over Israel
           label: >-
             Saul was a child of one year when he began to reign, and he reigned
@@ -3145,14 +3182,15 @@ events:
           - bible:douay-rheims:2Kings.5.4
           - bible:douay-rheims:2Kings.5.5
         note: >-
-          A duration measured from an accession the sources do not agree on. The
+          A duration, and not a date: Scripture states the length, and the
+          accession it runs from is one the sources do not agree on. The
           seven years and six months plus three and thirty years do not sum
           exactly to forty; the text prints both figures without harmonising
           them, and neither does this corpus.
         date:
-          precision: relative
-          relative:
-            of: israel.monarchy.david-accession
+          precision: duration
+          duration:
+            years: 40
             statement: he reigned forty years
           label: >-
             David was thirty years old when he began to reign, and he reigned
@@ -3255,8 +3293,8 @@ events:
           relative:
             of: israel.monarchy.david-reign
             statement: >-
-              within the reign of David, when Nathan the prophet came to him
-              after he had sinned with Bethsabee
+              When Nathan the prophet came to him, after he had sinned with
+              Bethsabee
           label: >-
             When Nathan the prophet came to him, after he had sinned with
             Bethsabee
@@ -3438,9 +3476,9 @@ events:
           Scripture. The eighteen-years-old figure is Oussani's, is not in the
           Douay text of 3 Kings, and carries his own hedge.
         date:
-          precision: relative
-          relative:
-            of: israel.monarchy.solomon-accession
+          precision: duration
+          duration:
+            years: 40
             statement: he reigned in Jerusalem, over all Israel, forty years
           label: >-
             the days that Solomon reigned in Jerusalem, over all Israel, were
@@ -3955,6 +3993,41 @@ events:
           from: {year: 610, era: bc}
           label: "B.C. 610"
 
+  - id: israel.exile.nabuchodonosor-accession
+    title: The accession of Nabuchodonosor, king of Babylon
+    note: >-
+      Held for the reason apostolic-age.accession-of-vespasian is held: it is
+      the origin of the regnal years Scripture counts the deportations and the
+      burning of the Temple by, and a dateline in a king's years whose first
+      year this corpus does not hold is measured from nothing.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: >-
+          The Douay-Rheims text of Jeremias 25:1 identifies the first year of
+          Nabuchodonosor with a year of Juda's own reckoning: "The word that
+          came to Jeremias concerning all the people of Juda, in the fourth year
+          of Joakim the son of Josias king of Juda, (the same is the first year
+          of Nabuchodonosor king of Babylon,)". Jeremias 46:2 dates the defeat
+          of Pharao Nechao at Charcamis by the same year of Joakim.
+        sources:
+          - bible:douay-rheims:Jer.25.1
+          - bible:douay-rheims:Jer.46.2
+        note: >-
+          The identification is Jeremias's own, in his own parenthesis, and is
+          carried as he prints it; no year of any era is asserted here. Daniel
+          1:1 says "the third year of the reign of Joakim" where Jeremias says
+          the fourth, a divergence already recorded on
+          israel.exile.first-captivity and not harmonised here.
+        date:
+          precision: relative
+          relative:
+            of: israel.exile.joakim-accession
+            statement: >-
+              in the fourth year of Joakim the son of Josias king of Juda, the
+              same is the first year of Nabuchodonosor king of Babylon
+          label: "the same is the first year of Nabuchodonosor king of Babylon"
+
   - id: israel.exile.first-captivity
     title: "The first captivity of Juda, under Joakim"
     note: >-
@@ -4228,11 +4301,13 @@ events:
         note: >-
           Jeremias 52:12 in the same Bible gives the tenth day of the fifth
           month, not the seventh; the divergence is in the text and is
-          preserved. The regnal year here is Nabuchodonosor's, not Sedecias's.
+          preserved. The regnal year here is Nabuchodonosor's, not Sedecias's,
+          which is why it is counted from his first year and not from the siege
+          the burning ends.
         date:
           precision: relative
           relative:
-            of: israel.exile.final-siege
+            of: israel.exile.nabuchodonosor-accession
             statement: >-
               in the fifth month, the seventh day of the month, the nineteenth
               year of the king of Babylon
@@ -4260,11 +4335,13 @@ events:
           These regnal years, 7, 18 and 23, do not line up straightforwardly
           with the 4 Kings scheme, which speaks of the eighth and nineteenth
           years of the king of Babylon. Both stand in the tracked Douay text and
-          neither is adjusted to the other.
+          neither is adjusted to the other. All three are counted from
+          Nabuchodonosor's own first year, not from any one of the deportations
+          they date.
         date:
           precision: relative
           relative:
-            of: israel.exile.third-captivity
+            of: israel.exile.nabuchodonosor-accession
             statement: >-
               in the seventh year, in the eighteenth year, and in the three and
               twentieth year of Nabuchodonosor
@@ -4291,12 +4368,11 @@ events:
           Paralipomenon 36:21-22 reports its fulfilment "till the seventy years
           were expired ... in the first year of Cyrus king of the Persians".
         date:
-          precision: relative
-          relative:
-            of: israel.exile.first-captivity
+          precision: duration
+          duration:
+            years: 70
             statement: >-
-              these nations shall serve the king of Babylon seventy years, from
-              the first subjection of Juda
+              all these nations shall serve the king of Babylon seventy years
           label: "seventy years"
 
   - id: israel.restoration.decree-of-cyrus
@@ -4404,18 +4480,25 @@ events:
           The Douay-Rheims text of 1 Esdras (Ezra) 6:15 dates the completion to
           the day within a Persian regnal year: "And they were finishing this
           house of God, until the third day of the month of Adar, which was in
-          the sixth year of the reign of king Darius."
-        sources: [bible:douay-rheims:1Esd.6.15]
+          the sixth year of the reign of king Darius." Esther 3:7 in the same
+          Bible states the month's ordinal: "there came out the twelfth month,
+          which is called Adar."
+        sources:
+          - bible:douay-rheims:1Esd.6.15
+          - bible:douay-rheims:Esth.3.7
         note: >-
-          A regnal anchor with no era, and the identity of the Darius is
-          disputed in the Catholic Encyclopedia articles inspected here.
+          The month and the day are the verse's own, and Adar is numbered only
+          because Esther 3:7 numbers it, which is the one ground on which this
+          corpus numbers a Hebrew month. The year is not carried: "the sixth
+          year of the reign of king Darius" is a regnal year, this corpus holds
+          no first year of Darius to count it from, and the identity of the
+          Darius is disputed in the Catholic Encyclopedia articles inspected
+          here. It stands in the label and the basis, where the source put it,
+          and is neither converted nor measured from the resumption of the work,
+          which is not what the verse counts from.
         date:
-          precision: relative
-          relative:
-            of: israel.restoration.temple-work-resumed
-            statement: >-
-              until the third day of the month of Adar, which was in the sixth
-              year of the reign of king Darius
+          precision: month-day
+          from: {month: 12, day: 3, calendar: hebrew}
           label: >-
             until the third day of the month of Adar, which was in the sixth
             year of the reign of king Darius
@@ -5085,15 +5168,15 @@ events:
         note: >-
           The two endpoints are months and days without years, and they cross
           the turn of the year, so no range with endpoints can be authored
-          from them; the stated interval is carried instead, relative to the
-          assembly that ordered the commission.
+          from them; the three full months Souvay states are carried instead,
+          as the length they are.
         date:
-          precision: relative
-          relative:
-            of: israel.restoration.strange-wives-assembly
+          precision: duration
+          duration:
+            months: 3
             statement: >-
-              from the first day of the tenth month to the first day of the
-              first month; three full months
+              For three full months this commission held its sessions; at the
+              end of that time the 'strange wives' were dismissed
           label: >-
             sat down in the first day of the tenth month ... made an end ... by
             the first day of the first month
@@ -5118,14 +5201,17 @@ events:
           - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
         note: >-
           Casleu is named without a day and the twentieth year is a regnal
-          year, not an era year; the commission that follows in 2:1 is dated
-          to "the month of Nisan, in the twentieth year of Artaxerxes the
-          king", so the tidings are carried relative to the mission rather
-          than converted.
+          year, not an era year. This corpus holds no first year of Artaxerxes
+          to count it from, so the tidings are carried relative to the calamity
+          they report -- the forcible stopping of the work under that king's
+          edict, which Van Hoonacker's sentence calls "this calamity" -- and not
+          to the mission they occasion, which stands later in the same twentieth
+          year, "the month of Nisan, in the twentieth year of Artaxerxes the
+          king" (2 Esdras 2:1).
         date:
           precision: relative
           relative:
-            of: israel.restoration.nehemias-mission
+            of: israel.restoration.walls-forbidden-by-artaxerxes
             statement: >-
               in the month of Casleu, in the twentieth year
           label: "in the month of Casleu, in the twentieth year"
@@ -5150,8 +5236,9 @@ events:
           likewise ("The eighteenth day of the month Elul"), and neither
           Souvay's "Esdras" nor Van Hoonacker's "Book of Nehemiah" assigns it
           an ordinal. So no month number is carried, and the
-          claim is anchored to the mission instead. The corpus numbers a Hebrew
-          month only where a ranked source states the ordinal -- Casleu is
+          claim states the fifty-two days as the duration they are, contained
+          in the mission. The corpus numbers a Hebrew month only where a ranked
+          source states the ordinal -- Casleu is
           written as month 9 on israel.maccabees.feast-of-dedication because 1
           Machabees 4:52 states it -- and nothing states this one. The year is
           the twentieth of Artaxerxes, a regnal year, and is not converted here.
@@ -5163,12 +5250,13 @@ events:
           plausible reason for setting aside the text." Neither is harmonized
           with the Douay-Rheims fifty-two.
         date:
-          precision: relative
-          relative:
-            of: israel.restoration.nehemias-mission
+          precision: duration
+          duration:
+            days: 52
             statement: >-
               finished the five and twentieth day of the month of Elul, in two
               and fifty days
+            within: israel.restoration.nehemias-mission
           label: "the five and twentieth day of the month of Elul, in two and fifty days"
 
   - id: israel.restoration.reading-of-the-law
@@ -5581,7 +5669,7 @@ events:
           relative:
             of: israel.wilderness.erection-of-the-tabernacle
             statement: "And when Moses saw all things finished, he blessed them"
-          label: "all things finished, before the tabernacle was set up"
+          label: "And when Moses saw all things finished, he blessed them"
   # === lane ezechiel ===
   # --- Ezechiel: the prophet's ministry, and the fourteen oracles he dates ---
   # Ezechiel dates his own oracles by the years of the captivity of Joachin,
@@ -5599,9 +5687,10 @@ events:
       israel.exile.second-captivity, and it is on a different reckoning again
       from the "A.M. 3405" the Haydock edition prints and that event prefers.
       The three figures are not one another's conversions and are not
-      harmonised here; the ministry itself is dated relative to that captivity,
-      as Scripture and the encyclopedia both date it, and carries no B.C. year
-      of its own.
+      harmonised here; the ministry itself carries only the length the
+      encyclopedia states and no B.C. year of its own, and the dateline of its
+      beginning is held where Scripture puts it, on
+      israel.exile.ezechiel.call.
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
@@ -5623,8 +5712,10 @@ events:
         note: >-
           "At least twenty-two years" is the encyclopedia's own bound and its
           own hedge, drawn by subtracting the fifth year of the captivity from
-          the twenty-seventh; it is a minimum, not a span, because nothing in
-          the book says the ministry ended at its latest dateline. That latest
+          the twenty-seventh; the duration carries the twenty-two as the
+          minimum the encyclopedia states, and its "at least" stands in the
+          statement, because it is a minimum and not a span: nothing in the
+          book says the ministry ended at its latest dateline. That latest
           dateline is Ezech. 29:17, "the seven and twentieth year", and no verse
           of Ezechiel carries the reckoning past it: the vision of Ezech. 40:1,
           which stands last in the book, is dated two years EARLIER, "in the
@@ -5633,15 +5724,13 @@ events:
           encyclopedia leaves the two reckonings of "the thirtieth year" of
           Ezech. 1:1 unsettled and so does this claim.
         date:
-          precision: relative
-          relative:
-            of: israel.exile.second-captivity
+          precision: duration
+          duration:
+            years: 22
             statement: >-
-              from the fifth year after the captivity of Joachim, and lasting at
+              From Ezek. xxix, 17 it appears that he prophesied during at
               least twenty-two years
-          label: >-
-            from the fifth year after the captivity of Joachim; he prophesied
-            during at least twenty-two years
+          label: "he prophesied during at least twenty-two years"
 
   - id: israel.exile.ezechiel.call
     title: The call of Ezechiel and the vision of the glory by the river Chobar
@@ -5810,8 +5899,8 @@ events:
           relative:
             of: israel.exile.ezechiel.ministry
             statement: >-
-              in the evening of a day on which the prophet had spoken to the
-              people in the morning; the passage gives no year, month or day
+              So I spoke to the people in the morning, and my wife died in the
+              evening
           label: >-
             I spoke to the people in the morning, and my wife died in the
             evening
@@ -6815,20 +6904,19 @@ events:
           the birth at the moment Jacob asks leave to go, "And when Joseph was
           born, Jacob said to his father-in-law: Send me away". The six years
           for the flocks that Genesis 31:41 distinguishes are what runs from
-          that point. The interval below is therefore stated in both directions
-          about the birth and must not be read as twenty years after it.
+          that point. The twenty years below are therefore carried as the
+          length they are, not as an interval from the birth, which falls
+          fourteen years into them.
           Genesis 31:38 states the same twenty years in the same speech, and
           the six for the flocks are stated only at 31:41.
         date:
-          precision: relative
-          relative:
-            of: israel.patriarchs.birth-of-joseph
-            statement: "fourteen for thy daughters before this birth, and six for thy flocks after it"
-            note: >-
-              Not twenty years from the anchor. The anchor falls fourteen years
-              into the twenty, by Genesis 29:20, 29:30 and 30:25; only the six
-              years for the flocks run forward from it.
-          label: "twenty years - fourteen for thy daughters before this birth, six for thy flocks after it"
+          precision: duration
+          duration:
+            years: 20
+            statement: >-
+              And in this manner have I served thee in thy house twenty years,
+              fourteen for thy daughters, and six for thy flocks
+          label: "twenty years, fourteen for thy daughters, and six for thy flocks"
 
   # --- Joseph in Egypt ------------------------------------------------------
   # The chain here runs backwards from an event the corpus already holds. The
@@ -6846,19 +6934,23 @@ events:
           famine has run and how much remains, at the moment he makes himself
           known to his brethren: "For it is two years since the famine began to
           be upon the land, and five years more remain, wherein there can be
-          neither ploughing nor reaping."
-        sources: [bible:douay-rheims:Gen.45.6]
+          neither ploughing nor reaping." Genesis 41:54 states the number of
+          the years in Genesis's own voice: "The seven years of scarcity, which
+          Joseph had foretold, began to come."
+        sources: [bible:douay-rheims:Gen.45.6, bible:douay-rheims:Gen.41.54]
         note: >-
           Joseph speaks these words in Genesis 45, and Genesis 45:9-46:7 puts
           the sending for Jacob and the going down into Egypt immediately after
-          them, with no interval stated; that is why the two years are anchored
-          on the descent. Genesis 45:11 repeats the remainder in the same
+          them, with no interval stated, so the descent falls in the second year
+          of the famine and is not a point the seven years are measured from.
+          The seven is Genesis's own figure and not a sum of the two years and
+          the five. Genesis 45:11 repeats the remainder in the same
           speech, "for there are yet five years of famine remaining". No source
           inspected for this corpus reaches any era from this famine.
         date:
-          precision: relative
-          relative:
-            of: israel.egypt.descent
+          precision: duration
+          duration:
+            years: 7
             statement: "For it is two years since the famine began to be upon the land, and five years more remain"
           label: "two years since the famine began to be upon the land, and five years more remain"
   - id: israel.egypt.years-of-plenty
@@ -6875,9 +6967,9 @@ events:
           - bible:douay-rheims:Gen.41.53
           - bible:douay-rheims:Gen.41.54
         date:
-          precision: relative
-          relative:
-            of: israel.egypt.years-of-famine
+          precision: duration
+          duration:
+            years: 7
             statement: "Now when the seven years of plenty that had been in Egypt were passed: The seven years of scarcity, which Joseph had foretold, began to come"
           label: "the seven years of plenty"
   - id: israel.egypt.joseph-before-pharao
@@ -7038,11 +7130,13 @@ events:
         note: >-
           Genesis states the forty days of embalming and the seventy days of
           mourning without saying how they are to be added, and this corpus does
-          not add them.
+          not add them. The length carried below is the seventy days of Egypt's
+          mourning; the forty days of embalming stand in the same verse, in the
+          statement, and are not added to it.
         date:
-          precision: relative
-          relative:
-            of: israel.patriarchs.death-of-jacob
+          precision: duration
+          duration:
+            days: 70
             statement: "there passed forty days: for this was the manner with bodies that were embalmed, and Egypt mourned for him seventy days"
           label: "forty days ... seventy days"
   - id: israel.patriarchs.death-of-joseph
@@ -7105,7 +7199,7 @@ events:
           relative:
             of: israel.conquest.crossing-of-the-jordan
             statement: "after the third day you shall pass over the Jordan"
-          label: "three days before the passage of the Jordan"
+          label: "after the third day you shall pass over the Jordan"
 
   - id: israel.conquest.war-against-the-kings-of-chanaan
     title: Josue's war against the kings of Chanaan
@@ -7167,9 +7261,9 @@ events:
           relative:
             of: israel.conquest.war-against-the-kings-of-chanaan
             statement: >-
-              the land rested from wars, and Josue was old, and far advanced in
-              years, and there is a very large country left, which is not yet
-              divided by lot
+              And the land rested from wars ... Josue was old, and far
+              advanced in years, and the Lord said to him: ... there is a very
+              large country left, which is not yet divided by lot
           label: "when Josue was old, and far advanced in years"
 
   - id: israel.conquest.last-charge-and-death-of-josue
@@ -7249,15 +7343,16 @@ events:
           they served him eight years."
         sources: [bible:douay-rheims:Judg.3.8]
         note: >-
-          A duration inside the period of the Judges, anchored where the text
-          anchors it and nowhere else. This corpus does not add the stated
+          A duration inside the period of the Judges, contained where the text
+          places it and nowhere else. This corpus does not add the stated
           spans of the judges together; whether they run consecutively or
           overlap is not settled by any source inspected for this lane.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 8
             statement: they served him eight years
+            within: israel.judges.period
           label: "they served him eight years"
 
   - id: israel.judges.othoniel-judgeship
@@ -7276,10 +7371,11 @@ events:
           own rule, and Scripture does not equate the two. No total is computed
           from it here.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 40
             statement: the land rested forty years
+            within: israel.judges.period
           label: "the land rested forty years"
 
   - id: israel.judges.servitude-under-eglon
@@ -7294,10 +7390,11 @@ events:
         sources: [bible:douay-rheims:Judg.3.14]
         note: A duration inside the period of the Judges; no absolute year is stated.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 18
             statement: the children of Israel served Eglon, king of Moab, eighteen years
+            within: israel.judges.period
           label: "eighteen years"
 
   - id: israel.judges.aod-judgeship
@@ -7314,10 +7411,11 @@ events:
           The only eighty in the book. Judges 3:31 adds Samgar without any
           number of years, so Samgar receives no event here.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 80
             statement: the land rested eighty years
+            within: israel.judges.period
           label: "the land rested eighty years"
 
   - id: israel.judges.servitude-under-jabin
@@ -7335,10 +7433,11 @@ events:
           Judges 4:1 places it "after the death of Aod", which is an order and
           not an interval.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 20
             statement: for twenty years had grievously oppressed them
+            within: israel.judges.period
           label: "twenty years"
 
   - id: israel.judges.debbora-and-barac
@@ -7357,10 +7456,11 @@ events:
           sung on the day of the victory (Judges 5:1) and is bound as an
           utterance of this same event, not as a second one.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 40
             statement: the land rested for forty years
+            within: israel.judges.period
           label: "the land rested for forty years"
 
   - id: israel.judges.servitude-under-madian
@@ -7375,10 +7475,11 @@ events:
         sources: [bible:douay-rheims:Judg.6.1]
         note: A duration inside the period of the Judges; no absolute year is stated.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 7
             statement: he delivered them into the hand of Madian seven years
+            within: israel.judges.period
           label: "seven years"
 
   - id: israel.judges.gedeon-judgeship
@@ -7397,10 +7498,11 @@ events:
           not a number of years. Drum's article calls Gedeon and Samson the
           chief heroes of the book and dates neither.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 40
             statement: the land rested for forty years, while Gedeon presided
+            within: israel.judges.period
           label: "the land rested for forty years, while Gedeon presided"
 
   - id: israel.judges.abimelech-reign
@@ -7417,10 +7519,11 @@ events:
           The text says reigned, not judged, and the corpus keeps the word. The
           three years are not added to any other span here.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 3
             statement: Abimelech reigned over Israel three years
+            within: israel.judges.period
           label: "three years"
 
   - id: israel.judges.thola-judgeship
@@ -7437,10 +7540,11 @@ events:
           Judges 10:1 places him "After Abimelech", which is an order and not
           an interval.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 23
             statement: he judged Israel three and twenty years
+            within: israel.judges.period
           label: "three and twenty years"
 
   - id: israel.judges.jair-judgeship
@@ -7457,10 +7561,11 @@ events:
           "To him succeeded" states succession, not an interval; the twenty-two
           years are the only number.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 22
             statement: Jair, the Galaadite, judged Israel for two and twenty years
+            within: israel.judges.period
           label: "two and twenty years"
 
   - id: israel.judges.oppression-by-ammon
@@ -7480,10 +7585,11 @@ events:
           three hundred years, spoken in the same episode at Judges 11:26, are
           held separately on israel.judges.jephte-three-hundred-years.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 18
             statement: they were afflicted, and grievously oppressed for eighteen years
+            within: israel.judges.period
           label: "eighteen years"
 
   - id: israel.judges.jephte-judgeship
@@ -7501,10 +7607,11 @@ events:
           argues to the king of Ammon at Judges 11:26; the corpus keeps the two
           apart and reconciles neither.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 6
             statement: Jephte, the Galaadite, judged Israel six years
+            within: israel.judges.period
           label: "six years"
 
   - id: israel.judges.abesan-judgeship
@@ -7519,10 +7626,11 @@ events:
         sources: [bible:douay-rheims:Judg.12.9]
         note: A duration inside the period of the Judges; no absolute year is stated.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 7
             statement: he judged Israel seven years
+            within: israel.judges.period
           label: "seven years"
 
   - id: israel.judges.ahialon-judgeship
@@ -7537,10 +7645,11 @@ events:
         sources: [bible:douay-rheims:Judg.12.11]
         note: A duration inside the period of the Judges; no absolute year is stated.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 10
             statement: he judged Israel ten years
+            within: israel.judges.period
           label: "ten years"
 
   - id: israel.judges.abdon-judgeship
@@ -7555,10 +7664,11 @@ events:
         sources: [bible:douay-rheims:Judg.12.14]
         note: A duration inside the period of the Judges; no absolute year is stated.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 8
             statement: he judged Israel eight years
+            within: israel.judges.period
           label: "eight years"
 
   - id: israel.judges.servitude-under-the-philistines
@@ -7577,10 +7687,11 @@ events:
           corpus states that the text places one inside the other and computes
           nothing from it.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 40
             statement: he delivered them into the hands of the Philistines forty years
+            within: israel.judges.period
           label: "forty years"
 
   - id: israel.judges.samson-judgeship
@@ -7599,10 +7710,11 @@ events:
           Dalila narrative, and this corpus reads them as one span stated
           twice, not as two spans to be added.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.period
+          precision: duration
+          duration:
+            years: 20
             statement: he judged Israel, in the days of the Philistines, twenty years
+            within: israel.judges.period
           label: "twenty years"
   # === lane kings ===
   # --- Samuel, Heli and the ark (1 Kings 1-7) -------------------------------
@@ -7644,8 +7756,9 @@ events:
           relative:
             of: israel.judges.heli-judgeship
             statement: >-
-              within the forty years Heli judged Israel, while Ophni and Phinees
-              his sons were priests of the Lord in Silo
+              the two sons of Heli, Ophni and Phinees, were there priests of
+              the Lord ... the child ministered in the sight of the Lord
+              before the face of Heli the priest
           label: "in the days when the two sons of Heli were priests of the Lord in Silo"
 
   - id: israel.judges.call-of-samuel
@@ -7675,8 +7788,9 @@ events:
           relative:
             of: israel.judges.heli-judgeship
             statement: >-
-              while the child Samuel ministered to the Lord before Heli, whose
-              eyes were grown dim
+              Now the child Samuel ministered to the Lord before Heli ... And
+              it came to pass one day when Heli lay in his place, and his eyes
+              were grown dim
           label: "Now the child Samuel ministered to the Lord before Heli"
 
   - id: israel.judges.capture-of-the-ark
@@ -7708,8 +7822,9 @@ events:
           relative:
             of: israel.judges.heli-judgeship
             statement: >-
-              on the day Heli died, which closed the forty years in which he
-              judged Israel
+              And the ark of God was taken ... And when he had named the ark
+              of God, he fell from his stool backwards by the door, and broke
+              his neck and died
           label: "he judged Israel forty years"
 
   - id: israel.judges.ark-among-the-philistines
@@ -7727,14 +7842,14 @@ events:
           - bible:douay-rheims:1Kings.5.1
           - bible:douay-rheims:1Kings.6.1
         note: >-
-          A duration measured from the capture, which itself carries no era
+          A duration. It runs from the capture, which itself carries no era
           figure, so nothing here yields a year. The seven months run from Azotus
           through Geth and Accaron to the sending back by the kine to Bethsames,
           and end where the twenty years at Cariathiarim begin.
         date:
-          precision: relative
-          relative:
-            of: israel.judges.capture-of-the-ark
+          precision: duration
+          duration:
+            months: 7
             statement: the ark of God was in the land of the Philistines seven months
           label: "Now the ark of God was in the land of the Philistines seven months"
 
@@ -7767,9 +7882,9 @@ events:
           relative:
             of: israel.judges.ark-at-cariathiarim
             statement: >-
-              in the twentieth year from the day the ark of the Lord abode in
-              Cariathiarim, when all the house of Israel rested, following the
-              Lord
+              from the day the ark of the Lord abode in Cariathiarim, days
+              were multiplied (for it was now the twentieth year) and all the
+              house of Israel rested, following the Lord
           label: "for it was now the twentieth year"
 
   # --- The demand for a king and Saul (1 Kings 8-12) ------------------------
@@ -7803,8 +7918,8 @@ events:
           relative:
             of: israel.judges.period
             statement: >-
-              at the close of the judges, when Samuel was old and had appointed
-              his sons to be judges over Israel
+              when Samuel was old, that he appointed his sons to be judges
+              over Israel
           label: "when Samuel was old"
 
   - id: israel.monarchy.anointing-of-saul
@@ -7839,8 +7954,8 @@ events:
           relative:
             of: israel.monarchy.saul-accession
             statement: >-
-              before Samuel called together the people to the Lord in Maspha,
-              where the lot fell upon Saul
+              the Lord hath anointed thee to be prince over his inheritance
+              ... And Samuel called together the people to the Lord in Maspha
           label: "Behold, the Lord hath anointed thee to be prince over his inheritance"
 
   - id: israel.monarchy.deliverance-of-jabes-galaad
@@ -7899,8 +8014,8 @@ events:
           relative:
             of: israel.monarchy.saul-reign
             statement: >-
-              at the close of the reign, when Saul and his three sons died in
-              mount Gelboe that same day together
+              So Saul died, and his three sons, and his armourbearer, and all
+              his men that same day together
           label: "So Saul died, and his three sons ... that same day together"
 
   - id: israel.monarchy.news-of-sauls-death
@@ -7927,8 +8042,9 @@ events:
           relative:
             of: israel.monarchy.death-of-saul
             statement: >-
-              after Saul was dead, David abode two days in Siceleg, and on the
-              third day the news came to him
+              after Saul was dead, that David returned from the slaughter of
+              the Amalecites, and abode two days in Siceleg. And on the third
+              day, there appeared a man who came out of Saul's camp
           label: "and abode two days in Siceleg. And on the third day"
 
   - id: israel.monarchy.isboseth-reign
@@ -7956,9 +8072,9 @@ events:
           alone had lasted seven years and a half" — and offers no reckoning of
           Isboseth's two years against it.
         date:
-          precision: relative
-          relative:
-            of: israel.monarchy.david-accession
+          precision: duration
+          duration:
+            years: 2
             statement: >-
               he reigned two years over Israel, while David reigned in Hebron
               over the house of Juda seven years and six months
@@ -8031,12 +8147,14 @@ events:
           famine only that "It is not possible to fix the exact date of the
           famine."
         date:
-          precision: relative
-          relative:
-            of: israel.monarchy.david-reign
+          precision: duration
+          duration:
+            months: 9
+            days: 20
             statement: >-
               having gone through the whole land, after nine months and twenty
               days, they came to Jerusalem
+            within: israel.monarchy.david-reign
           label: "after nine months and twenty days"
   # === lane numbers ===
   - id: israel.wilderness.encampment-at-sinai
@@ -8290,14 +8408,15 @@ events:
           - bible:douay-rheims:Num.20.30
           - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
         note: >-
-          An interval from a death this corpus already dates by Numbers 33:38,
-          and recorded as relative to it rather than resolved into a month and a
-          day, because adding thirty days to the first day of the fifth month
-          would require a month length no source inspected here states.
+          A length of thirty days from a death this corpus already dates by
+          Numbers 33:38, carried as the duration the verse states rather than
+          resolved into a month and a day, because adding thirty days to the
+          first day of the fifth month would require a month length no source
+          inspected here states.
         date:
-          precision: relative
-          relative:
-            of: israel.wilderness.death-of-aaron
+          precision: duration
+          duration:
+            days: 30
             statement: "all the multitude seeing that Aaron was dead, mourned for him thirty days throughout all their families"
           label: "thirty days"
   - id: israel.wilderness.encampment-in-the-plains-of-moab
@@ -8428,8 +8547,8 @@ events:
           relative:
             of: israel.monarchy.david-reign
             statement: >-
-              within the reign of David, in the day that the Lord delivered him
-              out of the hand of all his enemies, and out of the hand of Saul
+              in the day that the Lord delivered him out of the hand of all
+              his enemies, and out of the hand of Saul
           label: >-
             in the day that the Lord delivered him out of the hand of all his
             enemies, and out of the hand of Saul
@@ -8469,9 +8588,10 @@ events:
           relative:
             of: israel.monarchy.david-capture-of-sion
             statement: >-
-              after David took the castle of Sion and dwelt in it, when Hiram
-              king of Tyre sent carpenters and masons and they built a house for
-              David
+              But David took the castle of Sion, the same is the city of David
+              ... Hiram the king of Tyre sent messengers to David, and cedar
+              trees, and carpenters, and masons for walls: and they built a
+              house for David
           label: "and they built a house for David"
   # === lane psalms-51-100 ===
   - id: israel.monarchy.david-in-the-cave

@@ -91,19 +91,57 @@ spelled exactly as `scripts/_projection.py` spells a locus: `Ps.50.3`,
 `scripts/_canon.py`, which reads them from the canonical edition's tracked book
 index — 73 books, 1 334 chapters, 35 809 verses. **[verified]**
 
-The system is `vulgate`: the same `_projection.CANONICAL` every tracked
-projection projects into, because it is the system both tracked calendars cite
-in and the system the canonical edition witnesses. `_chronology.CANONICAL_SYSTEM`
-names it once and is checked against `_projection.CANONICAL` at load.
+The **preferred shared system** is `vulgate`: the same `_projection.CANONICAL`
+every tracked projection projects into, because it is the system both tracked
+calendars cite in and the system the canonical edition witnesses.
+`_chronology.PREFERRED_SYSTEM` names it once and is checked against
+`_projection.CANONICAL` at load.
 
-**Chronology is authored in exactly one system.** A locus in another system
-reaches the corpus through a concordance that already exists — `_psalms` for
-the psalter's vulgate/hebrew numbering, `_deuterocanon` for the arrangements of
-Esther, Sirach and Daniel — and a refusal there is returned as a refusal here.
-There is deliberately **no reverse projection**: `_projection` runs canonical →
-edition, and inventing the inverse would manufacture a plausible locus at
-exactly the places where the true answer is that two traditions carry different
-text.
+Preferred is not sole. The systems a scope may name are read from the modules
+that **own** them — `_projection` owns the canonical name, `_psalms` owns
+`hebrew`, `_deuterocanon` owns `greek` and `world-english-catholic` — rather
+than restated here, because a list beside theirs is how lists stop agreeing.
+They already had: `_commentary.NUMBERING_SYSTEMS` names `septuagint`,
+`nova-vulgata` and `nab`, for which no concordance exists, and omits
+`world-english-catholic`, for which one does. Chronology admits only names with
+machinery behind them, and the check is **(system, book)**: `hebrew` is a
+psalter numbering and may not name Matthew.
+
+### 3.0 One fact, one place — and the gate that enforces it
+
+**Where a safe correspondence exists, chronology is authored once at the
+preferred locus and reached from elsewhere through the concordance.** Hebrew
+Psalm 51 is Vulgate Psalm 50; there is one Miserere and it is dated once.
+
+This is a **load-time gate, not a convention**: a scope naming another system
+whose locus the concordance carries safely to the Vulgate is refused. So a
+native scope is admissible *precisely when sharing is impossible*, and where
+sharing is possible it is mandatory.
+
+### 3.0.1 A mapping refusal is not a chronology refusal
+
+The corpus used to return a concordance refusal as its own answer. Those are
+two questions:
+
+```text
+may this locus be asserted equivalent to that one?     mapping status
+does this locus have chronology at all?                chronology status
+```
+
+They are **separate axes** and an `Answer` carries both. A textually distinct
+text can be dated and unmappable at once, and the standing case is the Greek
+Ecclesiasticus: 1 391 of its loci refuse the Vulgate because there are two
+texts and not two numberings, and Gigot dates the Greek translation to "not
+long after" 132 B.C. in its own right. Both are true. Before the correction the
+second was unreachable, and the corpus knew it — `composition.book-of-ecclesiasticus`
+carried a note warning that three dates in that article "must not be conflated",
+written by an author with nowhere to put the second one.
+
+There is still deliberately **no reverse projection**: `_projection` runs
+canonical → edition, and inventing the inverse would manufacture a plausible
+locus at exactly the places where the true answer is that two traditions carry
+different text. Native chronology is not a reverse projection; it is a fact
+authored at the locus it is true of.
 
 ### 3.1 Why there is no translation-specific chronology
 
@@ -129,9 +167,14 @@ King James Apocrypha, because the Latin carries expansions the Greek does not.
 
 A chronology key that resolved anyway would be the defect this apparatus exists
 to catch, in its purest form: a query that succeeds, returns a well-formed
-date, and has answered about different text than the caller asked about. So
-where the concordance refuses, chronology refuses, and says which of the two
-kinds of refusal it is (§9).
+date, and has answered about different text than the caller asked about. So the
+concordance goes on refusing, and says which of the two kinds of refusal it is.
+
+What changed on 2026-08-27 is what that refusal *means*. It is reported on the
+mapping axis and it no longer suppresses the answer: where the corpus holds
+chronology authored natively at the asked locus, the query returns it **and**
+the refusal. Refusing to equate two texts is not a reason to say the second one
+is undated.
 
 ---
 
@@ -329,8 +372,26 @@ statement about its book.
 
 ## 8. The Psalter
 
-The psalter is the case every simplification breaks on, and three separate
+The psalter is the case every simplification breaks on, and four separate
 things are load-bearing here.
+
+**Traditional authorship or attribution ALONE never establishes a
+`historical-setting`.** That a psalm is "of David" — or that a ranked source
+says David wrote it — supports authorship, and it may support a `composition`
+claim to the degree an inspected source actually dates or bounds the writing.
+It does not establish the occasion the psalm was written on, or the event it is
+historically about. A `historical-setting` needs a source that actually
+identifies an occasion, or an explicit deterministic derivation from evidence
+that does.
+
+The rule had been applied in both directions at once. Ps 88 refused an
+authorship-derived setting and said so in its own note — "this corpus does not
+convert an authorship claim into an occasion" — while Ps 21 carried one whose
+note conceded the title "names no occasion" and then took the occasion to be
+"the reign of David itself", which is the attribution restated. Ps 21's was
+withdrawn on 2026-08-27. Removing a `historical-setting` does not disturb a
+`prophetic-referent` over the same psalm: they are different relations, and Ps
+21 keeps the Passion referent it was authored for.
 
 **It is an anthology.** It has no single composition date and this corpus will
 not give it one. Composition units are authored per psalm, or per group where
@@ -359,18 +420,39 @@ kinds at once, which is the whole reason the model is many-valued.
 ## 9. Statuses: what a locus has when it has no date
 
 **Absence is data and must have somewhere to live**, or it will be filled —
-`the-shape.md` §4. Every locus in the corpus's address space reaches exactly
-one status, and the coverage report refuses to load if the statuses do not
-account for all 35 809 verses.
+`the-shape.md` §4. Every locus of the **Vulgate/Clementine primary universe**
+reaches exactly one status, and the coverage report refuses to load if the
+statuses do not account for all 35 809 of them. That universe is named, not
+assumed: it is not the whole of Scripture this layer can address (§9.3).
+
+**Chronology status answers whether a substantive assertion APPLIES, not how it
+arrived.** A scoped assertion true of every verse in its scope is true of each
+of them; that it was authored at the scope rather than at the verse is
+provenance, it rides on every returned assertion as `inherited`, and it decides
+nothing. Before 2026-08-27 `dated` was defined as "at least one **direct**
+substantive assertion", which said two wrong things: a whole-book
+`prophecy-given` over Ezechiel left 271 verses looking undated though the oracle
+applies to every one of them, and a directly authored composition unit alone
+would have reported event chronology nobody had researched.
 
 | Status | Meaning | Authored? |
 | --- | --- | --- |
-| `dated` | at least one direct substantive assertion | earned |
-| `inherited` | covered only by an inherited composition assertion | earned |
+| `dated` | at least one substantive (non-composition) assertion applies, direct or inherited | earned |
+| `composition-only` | a composition assertion applies and no substantive one does, at any scope | earned |
 | `research-pending` | nothing has been inspected for it yet | the default |
 | `undated-in-tradition` | ranked sources inspected; tradition dates nothing | `gaps.yaml` |
 | `not-alignable` | the locus cannot be safely addressed from the asking system | `gaps.yaml`, or returned live by the concordance |
 | `textually-distinct` | another tradition carries different text, not a renumbering | `gaps.yaml`, or returned live |
+
+The last two are **mapping** answers, and where they arrive live they belong to
+the mapping axis (§3.0.1), not to the chronology axis. Do not read
+`not-alignable` as "undated", and do not read `research-pending` as "the
+projection refused".
+
+`composition-only` was called `inherited` until 2026-08-27 — a directness word
+doing a scope job, and the same word the per-assertion provenance flag uses.
+Coverage reports the provenance split (`substantive_by_provenance`: direct-only,
+inherited-only, both) beside the statuses rather than inside them.
 
 `research-pending` is **the honest default and is not authored**. A corpus that
 had to write a row for every unresearched verse would be 35 809 rows asserting
@@ -388,11 +470,39 @@ of a corpus that has researched nothing, if the thing being counted is keys in
 a file. A consumer that wants a headline builds it from the categories, in
 sight of them.
 
-### 9.2 `research-pending` is now empty, and what that does and does not mean
+### 9.3 The universe is named, not assumed
 
-Every locus in the address space reaches a substantive assertion, an inherited
-composition, or an authored gap row. **[verified]** No verse is
-`research-pending`.
+Coverage is reported over three dimensions, because one number over an
+unexamined universe is how a corpus claims completeness it has not got.
+
+1. **The Vulgate/Clementine primary universe** — 35 809 loci. Complete
+   accounting: every one reaches exactly one chronology status.
+2. **Additional native loci per named system** — loci a system prints that the
+   concordance refuses to carry to the preferred system, and which are
+   therefore additional text rather than the same text renumbered. An alternate
+   numbering of a safely corresponding locus is **not** new Scripture and is
+   not counted. Neither is a locus already counted under another system: the
+   World English Catholic edition re-divides the Greek, and 2 122 of its 2 131
+   loci reach it, so counting those again would count one text twice.
+3. **Cross-system mapping status** — safely shared, textually-distinct,
+   not-alignable — reported as its own axis, never as a chronology status.
+
+At the time of writing the corrected universe is 35 809 + 1 391 (`greek`) + 9
+(`world-english-catholic`) + 0 (`hebrew`, whose psalter is wholly shared) =
+**37 209**. A system this repository can name but cannot enumerate is reported
+as `enumerable: false` and is a reason the coverage requirement stays open, not
+a thing to leave out quietly.
+
+### 9.2 `research-pending` is empty in the primary universe, and what that does and does not mean
+
+Every locus of the **Vulgate/Clementine primary universe** reaches a
+substantive assertion, a composition assertion, or an authored gap row.
+**[verified]** No verse of it is `research-pending`.
+
+That is a statement about that universe and no other. It must never be reported
+as "the Bible is dated" or "Scripture chronology is complete": 1 400 native
+loci sit outside it, and ten of those currently have no chronology status of
+their own at all.
 
 That is a real result and a small one. It means a ranked source was inspected
 for every verse and its answer recorded — including where the answer was that
@@ -447,11 +557,46 @@ date:
 | `approximate-year` | one point, the source's own "about" |
 | `range` | the subject **spans** from..to |
 | `interval` | the subject **falls somewhere within** from..to |
-| `relative` | no absolute endpoints; a stated interval from another event |
+| `relative` | an **offset**: N units after/before a named anchor event |
+| `duration` | a **length**: the subject lasted N units, measured from nothing |
 
 `range` and `interval` are different claims and the corpus keeps them apart: a
 Gospel written over five years and a Gospel written at an unknown point in a
 five-year window are not the same statement.
+
+### 10.0 A duration is not a relative offset
+
+`relative` says **when** relative to something else. `duration` says **how
+long**. "He judged Israel eighteen years" states no point in time and no
+anchor; reading it as an offset would put the judgeship eighteen years after
+whatever the anchor happened to be. One value meaning both would be a date that
+resolves successfully and wrongly.
+
+The distinction is **structural, not conventional**:
+
+- a `duration` may not carry a `relative` anchor, and may not carry endpoints;
+- a `relative` must name an anchor that exists;
+- a duration's units are whole and positive — zero is refused, because a span
+  of no length is how "the source says nothing about how long" would look if it
+  were written down, and that is silence, with `undated-in-tradition` and a gap
+  row of its own;
+- a duration may say what it sits **within**, validated as a real event, and
+  `Date.anchor` deliberately does not return it. **Containment is not offset.**
+
+```yaml
+date:
+  precision: duration
+  duration:
+    years: 18
+    statement: "And he judged Israel eighteen years"
+    within: israel.judges.period
+  label: "eighteen years"
+```
+
+Before 2026-08-27 the corpus had only `relative`, and 47 claims were using it
+for lengths — the whole Judges family among them, each anchored on
+`israel.judges.period` as though counted from its start. Nothing computed with
+them, which is the only reason no wrong date had yet been produced.
 
 **`precision` is separate from authority.** Approximate means the *date* is
 approximate. It is not a judgement about the source, and a rank-3 source's
@@ -661,6 +806,36 @@ source. Check for them by name.
    ended up with two answers. **When lanes run in parallel, re-read the merged
    corpus before trusting any refusal whose ground is "the corpus does not hold
    it".**
+
+6. **A duration encoded as an offset.** Forty-seven claims used `relative` —
+   "N units after an anchor" — to say "lasted N units". Nothing computed with
+   them, which is the only reason no wrong date had been produced yet. The two
+   are now different precisions and the loader keeps them apart structurally
+   (§10.0).
+
+7. **Authorship promoted to a historical occasion.** Ps 21 carried a
+   `historical-setting` inferred from "of David" plus the years David reigned,
+   while Ps 88 had refused exactly that inference. §8 now states the rule once
+   and both stand under it.
+
+8. **Directness confused with applicability.** `dated` required a *direct*
+   assertion, so 271 verses of Ezechiel reached by a whole-book
+   `prophecy-given` looked undated though the oracle applies to every one of
+   them. Status now asks what applies; `inherited` is provenance and decides
+   nothing (§9).
+
+9. **A textually distinct locus treated as chronologically nonexistent because
+   the projection refused.** The Greek Ecclesiasticus had a date in an
+   inspected source and no way to hold it. Mapping status and chronology status
+   are separate axes (§3.0.1).
+
+10. **A refusal produced by taking the wrong route, then enshrined in a test.**
+    The World English Catholic edition is two hops from the Vulgate; chronology
+    asked for a direct row, the direct index is empty, and all 2 131 of its loci
+    came back `textually-distinct`. A test asserted that refusal as correct. 730
+    of those loci are the Vulgate's own text, and under the corrected coverage
+    rules every one of the 2 131 would have been counted as new Scripture.
+    **A refusal is evidence about a route until you have checked the route.**
 
 ---
 

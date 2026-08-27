@@ -1,0 +1,90 @@
+# The deterministic review target for the independent source audit.
+# Built by the correction lane of 2026-08-27; see
+# guidance/scripture-chronology.md and PROJECT-WORK.md for the audit scope.
+#
+# One row per FACTUAL CLAIM - a subject plus the index of one of its dates -
+# never per binding, so a claim reused by a thousand verses is reviewed once.
+#
+# SELECTION RULE, reproducible from this file alone:
+#   seed = scripture-chronology-cold-audit-2026-08-27
+#   strata = (precision, disposition)
+#   within a stratum, order by sha256(seed + id), then round-robin the
+#   strata in sorted order until 72 claims are taken.
+#   High-risk classes are EXCLUDED here because they are inspected
+#   completely, not sampled; this list adds coverage rather than repeating.
+#
+# Nothing here was hand-picked. A reviewer can regenerate the identical
+# list, which is the point: a sample an author could steer is not a sample.
+id	kind	subject	claim	precision	disposition	sources
+event:israel.monarchy.temple-begun#4	event	israel.monarchy.temple-begun	4	approximate-year	alternate	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:apostolic-age.saint-paul-sent-to-rome#0	event	apostolic-age.saint-paul-sent-to-rome	0	approximate-year	disputed	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+unit:composition.third-book-of-kings#0	unit	composition.third-book-of-kings	0	approximate-year	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08652a-189e1a8f
+event:apostolic-age.arrival-of-cestius-gallus-at-jerusalem#0	event	apostolic-age.arrival-of-cestius-gallus-at-jerusalem	0	day	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08344a-e6625662
+event:apostolic-age.saint-paul-second-visit-to-jerusalem#1	event	apostolic-age.saint-paul-second-visit-to-jerusalem	1	interval	alternate	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+unit:composition.first-epistle-to-the-thessalonians#0	unit	composition.first-epistle-to-the-thessalonians	0	interval	disputed	artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74
+unit:composition.book-of-habacuc#0	unit	composition.book-of-habacuc	0	interval	preferred	artifact.catholic-encyclopedia.volume-7.new-york-1910.newadvent-07097a-8ad7be64
+event:life-of-christ.last-supper#0	event	life-of-christ.last-supper	0	month-day	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23
+event:israel.restoration.strange-wives-assembly#0	event	israel.restoration.strange-wives-assembly	0	month-day	preferred	bible:douay-rheims:1Esd.10.9
+unit:composition.book-of-osee#1	unit	composition.book-of-osee	1	range	alternate	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12
+event:apostolic-age.saint-paul-third-mission#1	event	apostolic-age.saint-paul-third-mission	1	range	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:apostolic-age.saint-paul-apostolate-at-antioch#0	event	apostolic-age.saint-paul-apostolate-at-antioch	0	range	preferred	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:life-of-christ.finding-in-the-temple#1	event	life-of-christ.finding-in-the-temple	1	relative	alternate	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23
+unit:composition.second-epistle-to-the-thessalonians#0	unit	composition.second-epistle-to-the-thessalonians	0	relative	disputed	artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74
+event:life-of-christ.finding-in-the-temple#0	event	life-of-christ.finding-in-the-temple	0	relative	preferred	bible:douay-rheims:Luke.2.42
+event:israel.restoration.second-temple-completed#1	event	israel.restoration.second-temple-completed	1	year	alternate	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:apostolic-age.martyrdom-of-saint-peter#1	event	apostolic-age.martyrdom-of-saint-peter	1	year	disputed	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11744a-3bac29d1
+event:israel.monarchy.absalom-defeat#0	event	israel.monarchy.absalom-defeat	0	year	preferred	passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-18-absalom-defeat-chronology
+event:israel.monarchy.temple-begun#3	event	israel.monarchy.temple-begun	3	approximate-year	alternate	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+unit:composition.gospel-of-john#0	unit	composition.gospel-of-john	0	approximate-year	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c
+event:apostolic-age.second-arrest-of-saint-paul#0	event	apostolic-age.second-arrest-of-saint-paul	0	approximate-year	preferred	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:apostolic-age.exile-of-saint-john-to-patmos#1	event	apostolic-age.exile-of-saint-john-to-patmos	1	interval	alternate	artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01594b-7f47696f
+unit:composition.gospel-of-matthew#2	unit	composition.gospel-of-matthew	2	interval	disputed	artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef
+unit:composition.book-of-jonas#0	unit	composition.book-of-jonas	0	interval	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08497b-3ef68123
+event:life-of-christ.crucifixion#6	event	life-of-christ.crucifixion	6	month-day	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:israel.conquest.first-pasch-in-the-land#0	event	israel.conquest.first-pasch-in-the-land	0	month-day	preferred	bible:douay-rheims:Jos.5.10
+event:israel.divided-kingdom.josias-reign#0	event	israel.divided-kingdom.josias-reign	0	range	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08523a-612a4c8c
+event:apostolic-age.jewish-revolt-against-rome#0	event	apostolic-age.jewish-revolt-against-rome	0	range	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08537a-e2154141
+event:israel.patriarchs.death-of-abraham#1	event	israel.patriarchs.death-of-abraham	1	relative	alternate	artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
+unit:composition.gospel-of-mark#5	unit	composition.gospel-of-mark	5	relative	disputed	artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9
+event:israel.exile.ezechiel.call#0	event	israel.exile.ezechiel.call	0	relative	preferred	bible:douay-rheims:Ezech.1.1;bible:douay-rheims:Ezech.1.2;bible:douay-rheims:Ezech.1.3;artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070
+event:israel.monarchy.saul-accession#0	event	israel.monarchy.saul-accession	0	year	alternate	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:israel.primeval.creation#0	event	israel.primeval.creation	0	year	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b
+event:apostolic-age.vespasian-invades-galilee#0	event	apostolic-age.vespasian-invades-galilee	0	year	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08344a-e6625662
+event:israel.monarchy.temple-begun#6	event	israel.monarchy.temple-begun	6	approximate-year	alternate	artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e
+unit:composition.epistle-of-st-james#0	unit	composition.epistle-of-st-james	0	approximate-year	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08275b-53821a60
+event:apostolic-age.death-of-saint-john#0	event	apostolic-age.death-of-saint-john	0	approximate-year	preferred	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08492a-68d29c7c
+event:israel.divided-kingdom.division#4	event	israel.divided-kingdom.division	4	interval	alternate	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+event:israel.divided-kingdom.ezechias-accession#1	event	israel.divided-kingdom.ezechias-accession	1	interval	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+unit:composition.book-of-sophonias#0	unit	composition.book-of-sophonias	0	interval	preferred	artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14146a-4ff4aa4c
+event:life-of-christ.crucifixion#5	event	life-of-christ.crucifixion	5	month-day	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23
+event:israel.restoration.first-pasch-in-the-second-temple#0	event	israel.restoration.first-pasch-in-the-second-temple	0	month-day	preferred	bible:douay-rheims:1Esd.6.19
+event:apostolic-age.saint-paul-third-mission#0	event	apostolic-age.saint-paul-third-mission	0	range	disputed	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:apostolic-age.saint-paul-missionary-expeditions#0	event	apostolic-age.saint-paul-missionary-expeditions	0	range	preferred	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:apostolic-age.council-of-jerusalem#4	event	apostolic-age.council-of-jerusalem	4	relative	alternate	bible:douay-rheims:Gal.2.1;artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+unit:composition.second-epistle-to-the-corinthians#0	unit	composition.second-epistle-to-the-corinthians	0	relative	disputed	artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d
+event:israel.judges.capture-of-the-ark#0	event	israel.judges.capture-of-the-ark	0	relative	preferred	bible:douay-rheims:1Kings.4.11;bible:douay-rheims:1Kings.4.12;bible:douay-rheims:1Kings.4.18
+event:israel.divided-kingdom.division#1	event	israel.divided-kingdom.division	1	year	alternate	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+event:israel.divided-kingdom.fall-of-samaria#0	event	israel.divided-kingdom.fall-of-samaria	0	year	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2
+event:israel.divided-kingdom.division#0	event	israel.divided-kingdom.division	0	year	preferred	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:apostolic-age.saint-paul-first-visit-to-jerusalem#1	event	apostolic-age.saint-paul-first-visit-to-jerusalem	1	approximate-year	alternate	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:israel.restoration.esdras-return#4	event	israel.restoration.esdras-return	4	approximate-year	disputed	artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+unit:composition.acts-of-the-apostles#0	unit	composition.acts-of-the-apostles	0	approximate-year	preferred	artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01117a-582c8526
+unit:composition.gospel-of-john#1	unit	composition.gospel-of-john	1	interval	disputed	artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c
+unit:composition.book-of-abdias#0	unit	composition.book-of-abdias	0	interval	preferred	artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01030b-f708bbb1
+event:israel.primeval.deluge-ends#0	event	israel.primeval.deluge-ends	0	month-day	preferred	bible:douay-rheims:Gen.8.14
+event:israel.exile.sedecias-reign#0	event	israel.exile.sedecias-reign	0	range	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08344a-e6625662
+event:apostolic-age.saint-paul-first-mission#0	event	apostolic-age.saint-paul-first-mission	0	range	preferred	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+unit:composition.book-of-josue#1	unit	composition.book-of-josue	1	relative	alternate	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08524a-98ab5e95
+event:israel.patriarchs.birth-of-abram#3	event	israel.patriarchs.birth-of-abram	3	relative	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:israel.primeval.death-of-mathusala#0	event	israel.primeval.death-of-mathusala	0	relative	preferred	bible:douay-rheims:Gen.5.27
+event:israel.exile.first-captivity#0	event	israel.exile.first-captivity	0	year	alternate	passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
+unit:composition.epistle-to-the-galatians#3	unit	composition.epistle-to-the-galatians	3	year	disputed	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8
+event:israel.monarchy.nabal-in-the-wilderness-of-maon#0	event	israel.monarchy.nabal-in-the-wilderness-of-maon	0	year	preferred	passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-25-maon-chronology
+unit:composition.book-of-ecclesiasticus#1	unit	composition.book-of-ecclesiasticus	1	approximate-year	alternate	artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05263a-c3fe190d
+event:israel.monarchy.david-accession#1	event	israel.monarchy.david-accession	1	approximate-year	disputed	artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c
+unit:composition.second-book-of-machabees#0	unit	composition.second-book-of-machabees	0	approximate-year	preferred	artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09495a-6afd1136
+unit:composition.gospel-of-matthew#3	unit	composition.gospel-of-matthew	3	interval	disputed	artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef
+unit:composition.book-of-daniel#0	unit	composition.book-of-daniel	0	interval	preferred	artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e
+event:israel.maccabees.feast-of-dedication#0	event	israel.maccabees.feast-of-dedication	0	month-day	preferred	bible:douay-rheims:1Mach.4.59;bible:douay-rheims:2Mach.10.5
+event:apostolic-age.saint-paul-first-roman-captivity#1	event	apostolic-age.saint-paul-first-roman-captivity	1	range	disputed	artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+event:apostolic-age.saint-paul-second-period-of-activity#0	event	apostolic-age.saint-paul-second-period-of-activity	0	range	preferred	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8

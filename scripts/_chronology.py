@@ -1352,9 +1352,22 @@ def to_canonical(system: str, token: str, chapter: int, verse: int) -> Locus | U
         # book because the Latin and the Greek are independent translations out
         # of two languages, while Daniel and Esther have real rows in places.
         # Refusing everything would hide which of the two a caller had hit.
+        # ROUTE MATTERS. `convert_verse` asks for a direct row, and the direct
+        # World-English-Catholic-to-Vulgate index is empty: that edition is two
+        # hops from the Vulgate, through the Greek, and `_deuterocanon`'s own
+        # docstring says `convert_through` "is the only way to reach it without
+        # a second table saying the same thing twice". Asking the wrong way
+        # returned `textually-distinct` for all 2 131 of its loci — a refusal
+        # asserted by taking the wrong road, which under the corrected coverage
+        # rules would have counted every one of them as new Scripture.
+        hops = (
+            (system, "greek", PREFERRED_SYSTEM)
+            if system == "world-english-catholic"
+            else (system, PREFERRED_SYSTEM)
+        )
         try:
-            moved, reason = _deuterocanon.convert_verse(
-                token, chapter, verse, system, CANONICAL_SYSTEM
+            moved, reason = _deuterocanon.convert_through(
+                token, chapter, verse, hops
             )
         except _deuterocanon.NumberingError as error:
             return Unresolved("not-alignable", str(error))
@@ -1776,6 +1789,114 @@ def runs(root: Path | None = None, profile: str | None = None) -> list[Run]:
     return out
 
 
+def _system_loci(system: str) -> list[tuple[str, int, int]] | None:
+    """Every locus a named system prints, or None if it cannot be enumerated.
+
+    None is a real answer and is reported as one. A system this repository can
+    name but not enumerate cannot be honestly accounted for, and a coverage
+    report that quietly omitted it would be claiming completeness over a
+    universe it had not measured.
+    """
+    import sys as _sys  # noqa: PLC0415
+
+    scripts = str(Path(__file__).resolve().parent)
+    if scripts not in _sys.path:
+        _sys.path.insert(0, scripts)
+    import _deuterocanon  # noqa: PLC0415
+    import _psalms  # noqa: PLC0415
+
+    if system in _psalms.SYSTEMS and system != PREFERRED_SYSTEM:
+        out = []
+        for chapter in range(1, _psalms.LAST_PSALM + 1):
+            low, high = _psalms._extent(chapter, system)
+            out.extend(("Ps", chapter, verse) for verse in range(low, high + 1))
+        return out
+    if system in _deuterocanon.WITNESSES:
+        try:
+            extents = _deuterocanon._extents(system)
+        except Exception:  # noqa: BLE001 - an unmeasurable system is a finding
+            return None
+        out = []
+        for (token, chapter), (low, high) in sorted(extents.items()):
+            out.extend((token, chapter, verse) for verse in range(low, high + 1))
+        return out
+    return None
+
+
+def native_coverage(
+    root: Path | None = None, profile: str | None = None
+) -> dict[str, Any]:
+    """Each named system beside the preferred one, counted without double-counting.
+
+    A locus that the concordance carries safely to the Vulgate is NOT new
+    Scripture — it is the same text under another number, and its chronology is
+    held once at the preferred locus. Only loci the concordance refuses are
+    additional content, and only those are counted here.
+    """
+    import _deuterocanon  # noqa: PLC0415
+
+    out: dict[str, Any] = {}
+    counted: list[str] = []
+    for system in sorted(scripture_systems()):
+        if system == PREFERRED_SYSTEM:
+            continue
+        loci = _system_loci(system)
+        if loci is None:
+            out[system] = {
+                "enumerable": False,
+                "note": "this repository holds no witness that enumerates this "
+                        "system's loci, so its native universe cannot be "
+                        "honestly accounted for",
+            }
+            continue
+        shared = 0
+        already = 0
+        additional = 0
+        by_status: dict[str, int] = {}
+        for token, chapter, verse in loci:
+            reached = to_canonical(system, token, chapter, verse)
+            if not isinstance(reached, Unresolved):
+                shared += 1
+                continue
+            # It refuses the preferred system — but that does not make it new
+            # text. The World English Catholic edition re-divides the GREEK,
+            # and 2 122 of its 2 131 loci reach it; counting those again would
+            # be counting one text twice because two editions number it
+            # differently, which is exactly what §9.2 forbids.
+            elsewhere = False
+            for prior in counted:
+                if token not in (scripture_systems().get(prior) or ()):
+                    continue
+                try:
+                    moved, _ = _deuterocanon.convert_through(
+                        token, chapter, verse, (system, prior)
+                    )
+                except Exception:  # noqa: BLE001
+                    moved = None
+                if moved is not None:
+                    elsewhere = True
+                    break
+            if elsewhere:
+                already += 1
+                continue
+            additional += 1
+            answer = chronology(
+                Locus(system, token, chapter, verse), profile=profile, root=root
+            )
+            status = answer.status if isinstance(answer, Answer) else reached.status
+            by_status[status] = by_status.get(status, 0) + 1
+        out[system] = {
+            "enumerable": True,
+            "printed_loci": len(loci),
+            "safely_shared_with_preferred": shared,
+            "same_text_as_a_system_already_counted": already,
+            "additional_loci": additional,
+            "by_status": dict(sorted(by_status.items())),
+        }
+        counted.append(system)
+    return out
+
+
 def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, Any]:
     """The counts a headline may be built from, never a headline on its own.
 
@@ -1818,6 +1939,7 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
         "verses_with_substantive_event_assertions": substantive,
         "verses_with_alternative_traditional_claims": alternates,
         "substantive_by_provenance": provenance,
+        "native_systems": native_coverage(root, profile),
     }
 
 

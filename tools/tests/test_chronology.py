@@ -898,14 +898,38 @@ units:
         self.assertEqual(str(ask("Dan.1.1", "greek").locus), "Dan.1.1")
 
     def test_an_arrangement_with_no_recorded_row_refuses_with_its_reason(self) -> None:
+        # EsthGr, where the concordance genuinely records no row between this
+        # edition and the Greek it re-divides.
         book = corpus(self)
         answer = _chronology.chronology(
-            _chronology.parse_locus("Dan.13.1", "test", "world-english-catholic"),
+            _chronology.parse_locus("EsthGr.1.1", "test", "world-english-catholic"),
             root=book.root,
         )
         self.assertIsInstance(answer, _chronology.Unresolved)
         self.assertEqual(answer.status, "textually-distinct")
         self.assertIn("no correspondence is recorded", answer.reason)
+
+    def test_a_two_hop_edition_is_reached_through_its_hops(self) -> None:
+        """This test used to assert the opposite, and the opposite was a bug.
+
+        The World English Catholic edition is two hops from the Vulgate,
+        through the Greek, and `_deuterocanon.convert_through`'s own docstring
+        says so: it "is the only way to reach it without a second table saying
+        the same thing twice". Chronology asked `convert_verse` for a direct
+        row, the direct index is empty, and every one of that edition's 2 131
+        loci came back `textually-distinct` — a refusal produced by taking the
+        wrong road, which the test then enshrined as expected. Under the
+        corrected coverage rules it would also have counted all 2 131 as new
+        Scripture; 730 of them are the Vulgate's own text.
+        """
+        book = corpus(self)
+        answer = _chronology.chronology(
+            _chronology.parse_locus("Dan.13.1", "test", "world-english-catholic"),
+            root=book.root,
+        )
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertEqual(answer.mapping.status, "shared")
+        self.assertEqual(answer.mapping.reached, "Dan.13.1")
 
     def test_an_unknown_system_refuses_with_a_reason(self) -> None:
         book = corpus(self)
