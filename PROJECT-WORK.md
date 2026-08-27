@@ -2058,3 +2058,60 @@ wired to the corpus, and no proper document was revised. The consumer contract
 that binds them when they are is stated in `guidance/scripture-chronology.md`
 §14: a consumer must read the corpus and must not re-derive, and where the
 corpus is unresolved the consumer preserves that state or omits the date.
+
+### The final cold-acceptance handoff
+
+The cold audit returned `CHANGES_REQUIRED` and a correction lane closed all 104
+findings. A targeted cold re-review then read all 92 changed rows and returned
+`CHANGES_REQUIRED` again — 23 rows, 9 major, none critical — and disclosed that
+it had run in the same session as the lane it reviewed, so it could not satisfy
+`independent-source-audit` whatever it found. A bounded repair lane has now
+closed those 23. It is in the same position and accepts nothing.
+
+**What that repair changed, beyond the 23.** Ruling RR-090 required treating
+Howlett's concluding sentence as one provenance unit, and that ruling does not
+stop at the one figure the row names: the same sentence supplies the dates of
+the Exodus, Saul's accession, David's accession, Solomon's accession and the
+building of the Temple, and the section after it derives more from the same
+Assyriological reconstruction. Withdrawing one while keeping the others would
+have reproduced the defect the row condemns. The whole sentence was therefore
+ruled, and every withdrawn figure is recorded in its subject's note rather than
+lost.
+
+**What the review apparatus could not see, and now can.** The 92-row manifest
+compared `str(claim.date)`, which renders a relative date's statement and not
+its anchor, so ten claims that moved anchor were labelled by what else changed
+and three were labelled `changed:note` alone — a wrong anchor being the class
+the audit rated major. It compared binding scope alone, so four binding groups
+that changed materially without changing scope appeared on no row, two of them
+corrected misquotations of the tracked Douay. It enumerated no guidance or
+loader change, so the contract drifting behind the implementation was caught by
+a reviewer's eye rather than by the apparatus. And its 92 rows are **96**
+distinct cases: two rows duplicate others and two are bundles naming eight
+source records between them.
+
+All three are now derivations rather than habits.
+`scripts/chronology_review_diff.py` loads each revision's corpus through **that
+revision's own loader** — which matters, because the loader has since been
+tightened to refuse duplicate mapping keys and the older corpus contains
+some — and diffs the loaded objects over claims, bindings, gaps, source
+records, contracts and code.
+`scripts/build_rereview_manifest.py` and
+`scripts/build_final_acceptance_manifest.py` derive the two manifests from it,
+and `scripts/check_final_acceptance_manifest.py` proves the final one complete
+in both directions and proves that none of the 218 prior review ids was dropped.
+
+**The review surface is `src/sources/chronology/final-acceptance-manifest.tsv`.**
+Every row is reviewed; nothing is sampled.
+`src/sources/chronology/final-repair-report.md` carries the head references by
+sha, the two source-retrieval hazards a cold reviewer will otherwise hit, and
+the cold-review requirement itself.
+
+**The next lane is not this one, and may not be.** `independent-source-audit`
+is closed only by a reviewer in a clean new agent or session that performed
+none of the population, the first audit, the post-audit correction, the
+targeted re-review, or this repair — reading repository artifacts only,
+reopening sources, and instructed to distrust the ledgers and the tests,
+including the ones this lane wrote. No same-session subagent arrangement
+satisfies it. Until that review returns PASS and a maintainer accepts, nothing
+merges and propers integration does not begin.

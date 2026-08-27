@@ -1,0 +1,175 @@
+# Final acceptance manifest for the Scripture chronology corpus.
+# The complete review surface for a GENUINELY COLD acceptance review:
+# a new agent or session that performed none of the population, the
+# first audit, the post-audit correction, the targeted re-review, or
+# the repair that closed its 23 failures. Every row is reviewed.
+#
+# Derived from two production diffs -- 2330d63a5..214797e78 and
+# 214797e78..eb38161ba -- by loading each revision's corpus through its
+# OWN scripts/_chronology.py and diffing the loaded OBJECTS, so a
+# reformat cannot hide a change and a loader that has since tightened
+# cannot refuse to read the older side. Deduplicated on
+# case_type + ':' + claim_or_scope_id. Nothing is sampled and nothing
+# is hand-picked.
+#
+# Regenerate with `python3 scripts/build_final_acceptance_manifest.py`.
+# Prove complete with `python3 scripts/check_final_acceptance_manifest.py`,
+# which fails on any changed case this file omits, any row no diff
+# supports, and any prior review id no row cites.
+final_review_id	case_type	claim_or_scope_id	diff_range	derived_change	defect_class	original_audit_ids	original_rereview_ids	prior_result	source_record	source_locus	production_files	why_in_final_review	review_requirements
+FA-001	binding	historical-setting -> israel.exile.first-captivity	2330d63a5..214797e78	withdrawn	-	-	RR-064	PASS	-	Dan	-	-	-
+FA-002	binding	historical-setting -> israel.exile.seventy-years	2330d63a5..214797e78	scope-changed	-	-	RR-065	PASS	-	was: Ps.136 | now: Dan,Ps.136	-	-	-
+FA-003	binding	historical-setting -> israel.monarchy.david-flight-from-absalom	2330d63a5..214797e78	scope-changed	-	-	RR-066;PS70;PS70-HISTORY	PASS	-	was: Ps.62,Ps.70 | now: Ps.30,Ps.62,Ps.70	-	-	-
+FA-004	binding	historical-setting -> israel.monarchy.david-in-the-desert-of-maon	2330d63a5..214797e78	changed:note	-	-	-	not-previously-reviewed	-	Ps.30	-	-	-
+FA-005	binding	narrated-event -> life-of-christ.crucifixion	2330d63a5..214797e78	changed:note	-	-	-	not-previously-reviewed	-	John.19.18-37,Luke.23.33-47,Mark.15.22-39,Matt.27.33-54	-	-	-
+FA-006	binding	prophecy-given -> israel.divided-kingdom.fall-of-samaria	2330d63a5..214797e78	withdrawn	-	-	RR-067	CHANGES_REQUIRED	-	Mich.4,Mich.5	-	-	-
+FA-007	binding	prophecy-given -> israel.divided-kingdom.osee-ministry	2330d63a5..214797e78	added	-	-	RR-068	PASS	-	Os	-	-	-
+FA-008	binding	prophetic-referent -> life-of-christ.nativity	2330d63a5..214797e78	scope-changed	-	-	RR-069	PASS	-	was: Dan.9.24-27,Deut.18.15-19,Is.7.14,Mich.5.2,Mich.5.2-3,Ps.17,Ps.49,Ps.67,Ps.95,Ps.96,Ps.97 | now: Dan.9.24-27,Deut.18.15-19,Is.7.14,Mich.5.2-3,Ps.17,Ps.49,Ps.67,Ps.95,Ps.96,Ps.97	-	-	-
+FA-009	binding	retrospective-event -> israel.wilderness.manna	2330d63a5..214797e78	changed:note	-	-	-	not-previously-reviewed	-	2Esd.9.15,2Esd.9.20,Deut.8.16,Deut.8.3,Ps.104.40,Ps.77.23-25	-	-	-
+FA-010	binding	superscription-setting -> israel.divided-kingdom.osee-ministry	2330d63a5..214797e78	added	-	-	RR-070	PASS	-	Os.1.1	-	-	-
+FA-011	binding	superscription-setting -> israel.monarchy.david-in-the-desert-of-maon	2330d63a5..214797e78	changed:note	-	-	-	not-previously-reviewed	-	Ps.53	-	-	-
+FA-012	claim	event:apostolic-age.death-of-herod-agrippa#0	2330d63a5..214797e78	changed:sources	-	LEAD-007	RR-001	PASS	-	-	-	-	-
+FA-013	claim	event:apostolic-age.exile-of-saint-john-to-patmos#0	2330d63a5..214797e78	changed:sources+note	-	P-020	RR-002	PASS	-	-	-	-	-
+FA-014	claim	event:apostolic-age.jewish-revolt-against-rome#0	2330d63a5..214797e78	changed:sources	-	LEAD-007	RR-003	PASS	-	-	-	-	-
+FA-015	claim	event:apostolic-age.saint-paul-first-roman-captivity#1	2330d63a5..214797e78	changed:basis+note	-	S6-011	RR-004	CHANGES_REQUIRED	-	-	-	-	-
+FA-016	claim	event:apostolic-age.second-arrest-of-saint-paul#0	2330d63a5..214797e78	changed:date+note+precision	-	S2-009	RR-005	PASS	-	-	-	-	-
+FA-017	claim	event:israel.conquest.war-against-the-kings-of-chanaan#0	2330d63a5..214797e78	changed:date+label+note+relative	-	A6-021	RR-006	PASS	-	-	-	-	-
+FA-018	claim	event:israel.divided-kingdom.division#0	214797e78..eb38161ba	changed:note	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-019	claim	event:israel.divided-kingdom.division#2	214797e78..eb38161ba	changed:date+label+sources+basis+note+precision+endpoints	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-020	claim	event:israel.divided-kingdom.division#3	214797e78..eb38161ba	withdrawn	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-021	claim	event:israel.divided-kingdom.division#4	214797e78..eb38161ba	withdrawn	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-022	claim	event:israel.divided-kingdom.osee-ministry#0	2330d63a5..214797e78	added	-	-	RR-007	PASS	-	-	-	-	-
+FA-023	claim	event:israel.divided-kingdom.osee-ministry#1	2330d63a5..214797e78	added	-	-	RR-008	PASS	-	-	-	-	-
+FA-024	claim	event:israel.exile.ezechiel.call#0	2330d63a5..214797e78	changed:date+label+relative	-	A4-013	RR-009	PASS	-	-	-	-	-
+FA-025	claim	event:israel.exile.ezechiel.death-of-the-prophets-wife#0	214797e78..eb38161ba	withdrawn	-	A4-017	WD-A4-017	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-026	claim	event:israel.exile.first-captivity#0	2330d63a5..214797e78	changed:basis+note	-	E2-006;S6-002	RR-010	PASS	-	-	-	-	-
+FA-027	claim	event:israel.exile.second-captivity#0	2330d63a5..214797e78	changed:disposition+basis+note	-	E2-007;LEAD-013;P-011;LEAD-002	RR-011;WD-LEAD-002	PASS	-	-	-	-	-
+FA-028	claim	event:israel.exile.second-captivity#1	2330d63a5..214797e78	changed:disposition+date+anchor+label+sources+basis+note+precision+endpoints+relative	-	-	RR-012;RR-013	PASS	-	-	-	-	-
+FA-029	claim	event:israel.exile.second-captivity#2	2330d63a5..214797e78	added	-	-	RR-013	PASS	-	-	-	-	-
+FA-030	claim	event:israel.exile.third-captivity#0	2330d63a5..214797e78	changed:basis	-	E2-008;LEAD-001;P-012	RR-014;WD-LEAD-001;WD-P-012	PASS	-	-	-	-	-
+FA-031	claim	event:israel.exodus.passage-of-the-red-sea#0	2330d63a5..214797e78	added	-	-	RR-015	PASS	-	-	-	-	-
+FA-032	claim	event:israel.exodus.the-exodus#0	2330d63a5..214797e78	changed:disposition+note	-	E1-008;E1-010;LEAD-014;G-006	RR-016	PASS	-	-	-	-	-
+FA-033	claim	event:israel.exodus.the-exodus#1	2330d63a5..214797e78	changed:disposition+date+anchor+label+sources+basis+note+precision+endpoints+relative	-	E1-009;LEAD-014;P-004	RR-017;RR-090	CHANGES_REQUIRED	-	-	-	-	-
+FA-034	claim	event:israel.exodus.the-exodus#2	2330d63a5..214797e78	changed:disposition+date+label+sources+basis+note+relative	-	E1-010;LEAD-014;P-004;G-006	RR-018;RR-090	CHANGES_REQUIRED	-	-	-	-	-
+FA-035	claim	event:israel.exodus.the-exodus#3	2330d63a5..214797e78	withdrawn	-	LEAD-014	RR-019;RR-090	CHANGES_REQUIRED	-	-	-	-	-
+FA-036	claim	event:israel.exodus.the-plagues-of-egypt#0	2330d63a5..214797e78	changed:date+label+sources+note+relative	-	A4-004;LEAD-010	RR-020	PASS	-	-	-	-	-
+FA-037	claim	event:israel.exodus.the-plagues-of-egypt#1	2330d63a5..214797e78	changed:label+note	-	LEAD-010;A4-005	RR-021	PASS	-	-	-	-	-
+FA-038	claim	event:israel.judges.capture-of-the-ark#0	2330d63a5..214797e78	changed:label+note	-	A7-017;S4-011	RR-022	PASS	-	-	-	-	-
+FA-039	claim	event:israel.judges.heli-judgeship#0	2330d63a5..214797e78	changed:note	-	A2-028	RR-023	PASS	-	-	-	-	-
+FA-040	claim	event:israel.judges.period#0	2330d63a5..214797e78	changed:date+anchor+label+note+relative	-	A2-026;A2-029;LEAD-010;LEAD-015	RR-024	PASS	-	-	-	-	-
+FA-041	claim	event:israel.monarchy.absalom-revolt#0	2330d63a5..214797e78	changed:date+anchor+sources+note+relative	-	A3-006;E1-018	RR-025	PASS	-	-	-	-	-
+FA-042	claim	event:israel.monarchy.birth-of-david#0	2330d63a5..214797e78	changed:sources	-	P-025	RR-026	PASS	-	-	-	-	-
+FA-043	claim	event:israel.monarchy.david-accession#2	214797e78..eb38161ba	withdrawn	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-044	claim	event:israel.monarchy.david-capture-of-sion#0	214797e78..eb38161ba	changed:note	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-045	claim	event:israel.monarchy.david-in-the-cave#0	2330d63a5..214797e78	changed:note	-	G-010	RR-027	PASS	-	-	-	-	-
+FA-046	claim	event:israel.monarchy.death-of-saul#0	214797e78..eb38161ba	changed:note	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-047	claim	event:israel.monarchy.saul-accession#0	2330d63a5..214797e78	withdrawn	-	E1-016;LEAD-015	RR-028	CHANGES_REQUIRED	-	-	-	-	-
+FA-048	claim	event:israel.monarchy.solomon-accession#2	214797e78..eb38161ba	withdrawn	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-049	claim	event:israel.monarchy.temple-begun#2	214797e78..eb38161ba;2330d63a5..214797e78	changed:basis+note;changed:note	-	P-004;E2-001;G-006;S1-001	RR-029;RR-090	CHANGES_REQUIRED	-	-	-	-	-
+FA-050	claim	event:israel.monarchy.temple-begun#4	214797e78..eb38161ba;2330d63a5..214797e78	changed:note;changed:date+label+sources+basis+note+endpoints	-	E2-003;S1-001	RR-030;RR-090;RR-031	CHANGES_REQUIRED	-	-	-	-	-
+FA-051	claim	event:israel.monarchy.temple-begun#5	214797e78..eb38161ba;2330d63a5..214797e78	changed:note;withdrawn	-	P-004;E2-004	RR-031;RR-090;RR-019;RR-029	CHANGES_REQUIRED	-	-	-	-	-
+FA-052	claim	event:israel.monarchy.temple-begun#6	214797e78..eb38161ba	withdrawn	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-053	claim	event:israel.patriarchs.birth-of-abram#0	2330d63a5..214797e78	changed:date+anchor+label+basis+note+relative	-	A2-002;A2-003;A2-004;E1-007;LEAD-009	RR-032;RR-035	PASS	-	-	-	-	-
+FA-054	claim	event:israel.patriarchs.birth-of-abram#1	2330d63a5..214797e78	withdrawn	-	A2-003;E1-007;LEAD-009	RR-033;RR-035	PASS	-	-	-	-	-
+FA-055	claim	event:israel.patriarchs.birth-of-abram#2	2330d63a5..214797e78	withdrawn	-	A2-004;E1-007;LEAD-009	RR-034;RR-032;RR-033	PASS	-	-	-	-	-
+FA-056	claim	event:israel.patriarchs.birth-of-abram#3	2330d63a5..214797e78	withdrawn	-	-	RR-035;RR-032;RR-034	PASS	-	-	-	-	-
+FA-057	claim	event:israel.patriarchs.call-of-abram#1	2330d63a5..214797e78	added	-	A2-003	RR-036;RR-033	PASS	-	-	-	-	-
+FA-058	claim	event:israel.patriarchs.call-of-abram#2	2330d63a5..214797e78	added	-	A2-004	RR-037;RR-038-LEAD;RR-033;RR-034	CHANGES_REQUIRED	-	-	-	-	-
+FA-059	claim	event:israel.patriarchs.call-of-abram#3	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:note	-	-	RR-038;RR-038-LEAD;RR-034	CHANGES_REQUIRED	-	-	-	-	-
+FA-060	claim	event:israel.primeval.deluge#0	2330d63a5..214797e78	changed:note	-	E1-006	RR-039	PASS	-	-	-	-	-
+FA-061	claim	event:israel.restoration.nehemias-tidings-of-jerusalem#0	2330d63a5..214797e78	changed:anchor+note+relative	-	A3-027	RR-040	PASS	-	-	-	-	-
+FA-062	claim	event:israel.restoration.reign-of-artaxerxes-i#0	2330d63a5..214797e78	added	-	-	RR-041	PASS	-	-	-	-	-
+FA-063	claim	event:israel.wilderness.mara-and-elim#0	2330d63a5..214797e78	changed:anchor+note+relative	-	A4-006	RR-042	PASS	-	-	-	-	-
+FA-064	claim	event:israel.wilderness.mary-stricken-at-haseroth#0	2330d63a5..214797e78	changed:anchor+note+relative	-	A8-007	RR-043	PASS	-	-	-	-	-
+FA-065	claim	event:life-of-christ.finding-in-the-temple#0	2330d63a5..214797e78	changed:note	-	S2-003	RR-044	PASS	-	-	-	-	-
+FA-066	claim	unit:composition.book-of-abdias#0	214797e78..eb38161ba;2330d63a5..214797e78	changed:disposition+note;changed:note	-	E3-009;S5-007	RR-045	CHANGES_REQUIRED	-	-	-	-	-
+FA-067	claim	unit:composition.book-of-daniel#0	2330d63a5..214797e78	changed:date+label+basis+note+endpoints	-	S6-009	RR-046;RR-047;RR-048	PASS	-	-	-	-	-
+FA-068	claim	unit:composition.book-of-daniel.prayer-of-azarias#0	2330d63a5..214797e78	added	-	-	RR-047	PASS	-	-	-	-	-
+FA-069	claim	unit:composition.book-of-daniel.susanna-and-bel#0	2330d63a5..214797e78	added	-	-	RR-048	PASS	-	-	-	-	-
+FA-070	claim	unit:composition.book-of-jonas#0	2330d63a5..214797e78	withdrawn	-	E3-010;LEAD-017;S2-012	RR-049	PASS	-	-	-	-	-
+FA-071	claim	unit:composition.book-of-osee#0	2330d63a5..214797e78	withdrawn	-	S1-010	RR-050;RR-007	PASS	-	-	-	-	-
+FA-072	claim	unit:composition.book-of-osee#1	2330d63a5..214797e78	withdrawn	-	S1-010	RR-051;RR-008;RR-050	PASS	-	-	-	-	-
+FA-073	claim	unit:composition.first-epistle-of-st-john#0	2330d63a5..214797e78	changed:sources	-	-	RR-052	PASS	-	-	-	-	-
+FA-074	claim	unit:composition.fourth-book-of-kings#0	2330d63a5..214797e78	changed:date+anchor+label+basis+note+precision+endpoints+relative	-	-	RR-053	PASS	-	-	-	-	-
+FA-075	claim	unit:composition.fourth-book-of-kings#1	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:note	-	-	RR-054	CHANGES_REQUIRED	-	-	-	-	-
+FA-076	claim	unit:composition.gospel-of-john#0	2330d63a5..214797e78	changed:date+basis+note+precision+endpoints	-	S2-008	RR-055	PASS	-	-	-	-	-
+FA-077	claim	unit:composition.gospel-of-matthew#0	2330d63a5..214797e78	changed:sources+note	-	E2-012	RR-056	PASS	-	-	-	-	-
+FA-078	claim	unit:composition.second-book-of-machabees#0	2330d63a5..214797e78	changed:note	-	S6-007	RR-057;RR-058;RR-059	PASS	-	-	-	-	-
+FA-079	claim	unit:composition.second-book-of-machabees.first-letter#0	2330d63a5..214797e78	added	-	-	RR-058	PASS	-	-	-	-	-
+FA-080	claim	unit:composition.second-book-of-machabees.second-letter#0	2330d63a5..214797e78	added	-	-	RR-059	PASS	-	-	-	-	-
+FA-081	claim	unit:composition.second-epistle-of-st-john#0	2330d63a5..214797e78	changed:sources	-	-	RR-060	PASS	-	-	-	-	-
+FA-082	claim	unit:composition.third-book-of-kings#0	2330d63a5..214797e78	changed:date+anchor+label+basis+note+precision+endpoints+relative	-	S1-003	RR-061	PASS	-	-	-	-	-
+FA-083	claim	unit:composition.third-book-of-kings#1	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:note	-	-	RR-062	CHANGES_REQUIRED	-	-	-	-	-
+FA-084	claim	unit:composition.third-epistle-of-st-john#0	2330d63a5..214797e78	changed:sources	-	-	RR-063	PASS	-	-	-	-	-
+FA-085	code	scripts/_chronology.py	214797e78..eb38161ba;2330d63a5..214797e78	changed:+268/-42;changed:+85/-3	-	LEAD-009;D-003;LEAD-011;N-006;S1-010;V-014;V-016;D-004;LEAD-012;N-008	GUIDANCE-6;WD-A4-017;RR-028;RR-054;STALECOUNT;MANIFEST;RR-021;RR-081;RR-082;RR-089;WD-V-008	CHANGES_REQUIRED	-	-	-	-	-
+FA-086	code	scripts/build_final_acceptance_manifest.py	214797e78..eb38161ba	changed:+297/-0	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-087	code	scripts/build_rereview_manifest.py	214797e78..eb38161ba	changed:+143/-0	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-088	code	scripts/check_final_acceptance_manifest.py	214797e78..eb38161ba	changed:+206/-0	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-089	code	scripts/chronology_review_diff.py	214797e78..eb38161ba	changed:+517/-0	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-090	code	tests/tools/scripture-chronology.test	2330d63a5..214797e78	changed:+21/-3	-	-	-	not-previously-reviewed	-	-	-	-	-
+FA-091	code	tools/scripture-chronology	214797e78..eb38161ba;2330d63a5..214797e78	changed:+27/-16;changed:+6/-6	-	N-006;B-039;D-005;G-015;N-009	-	not-previously-reviewed	-	-	-	-	-
+FA-092	code	tools/source-reader	214797e78..eb38161ba;2330d63a5..214797e78	changed:+5/-5;changed:+4/-4	-	-	-	not-previously-reviewed	-	-	-	-	-
+FA-093	code	tools/tests/test_chronology.py	214797e78..eb38161ba;2330d63a5..214797e78	changed:+231/-6;changed:+66/-2	-	D-005	RR-077	PASS	-	-	-	-	-
+FA-094	contract	guidance/scripture-chronology.md	214797e78..eb38161ba;2330d63a5..214797e78	changed:+86/-13;changed:+50/-3	-	D-003;LEAD-011;V-015;F-001;LEAD-001;N-008;V-017	GUIDANCE-6;RR-073;RR-090;RR-091;WD-A4-017;RR-028;RR-005;RR-081;RR-082;RR-083;RR-084;RR-085;RR-086;RR-087;RR-088	CHANGES_REQUIRED	-	-	-	-	-
+FA-095	contract	guidance/sources.md	214797e78..eb38161ba	changed:+24/-0	-	F-021	RR-092-LEAD;WD-F-021	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-096	gap	undated-in-tradition @ Deut	2330d63a5..214797e78	reason-or-sources-changed	-	-	RR-071	PASS	-	-	-	-	-
+FA-097	gap	undated-in-tradition @ Eccles	2330d63a5..214797e78	reason-or-sources-changed	-	-	RR-072	PASS	-	-	-	-	-
+FA-098	gap	undated-in-tradition @ Gen	214797e78..eb38161ba;2330d63a5..214797e78	reason-or-sources-changed	-	-	RR-073	CHANGES_REQUIRED	-	-	-	-	-
+FA-099	gap	undated-in-tradition @ Jon	2330d63a5..214797e78	added	-	-	RR-074	PASS	-	-	-	-	-
+FA-100	gap	undated-in-tradition @ Lev	214797e78..eb38161ba;2330d63a5..214797e78	reason-or-sources-changed	-	-	RR-075	CHANGES_REQUIRED	-	-	-	-	-
+FA-101	gap	undated-in-tradition @ Num	214797e78..eb38161ba;2330d63a5..214797e78	reason-or-sources-changed	-	-	RR-076	PASS	-	-	-	-	-
+FA-102	source-record	artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-091;RR-073;RR-091-LEAD	CHANGES_REQUIRED	-	-	-	-	-
+FA-103	source-record	artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce-5c91a95b	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-104	source-record	artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce-5fd9c5e7	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-105	source-record	artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-091;RR-076	CHANGES_REQUIRED	-	-	-	-	-
+FA-106	source-record	artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-59d1207b	214797e78..eb38161ba	changed:notes	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-107	source-record	artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-ae23faf9	214797e78..eb38161ba	changed:notes	-	F-021	RR-071	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-108	source-record	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11151a-aaa70339	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-092;RR-076	CHANGES_REQUIRED	-	-	-	-	-
+FA-109	source-record	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-5333461d	214797e78..eb38161ba	changed:notes	-	F-010;F-021	RR-071	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-110	source-record	artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001	214797e78..eb38161ba	changed:notes	-	F-001;F-012;F-013	RR-075;RR-076	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-111	source-record	artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412b-bdfebbee	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-092;RR-073	CHANGES_REQUIRED	-	-	-	-	-
+FA-112	source-record	artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412c-57ecea11	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-092	not-previously-reviewed	-	-	-	-	-
+FA-113	source-record	artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413a-88aaf066	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-092	not-previously-reviewed	-	-	-	-	-
+FA-114	source-record	artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413c-a10d26f7	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-092	not-previously-reviewed	-	-	-	-	-
+FA-115	source-record	artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09207a-e9463bc3	2330d63a5..214797e78	added	-	-	RR-092;RR-075	CHANGES_REQUIRED	-	-	-	-	-
+FA-116	source-record	edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:notes	-	-	RR-091	CHANGES_REQUIRED	-	-	-	-	-
+FA-117	source-record	passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-118	source-record	passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-119	source-record	passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-120	source-record	passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce	214797e78..eb38161ba	added	-	-	-	not-previously-reviewed	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-121	source-record	work.catholic-encyclopedia.alphabetical-index	214797e78..eb38161ba;2330d63a5..214797e78	added;changed:description	-	-	RR-091	CHANGES_REQUIRED	-	-	-	-	-
+FA-122	architecture	prior-finding:B-043	-	declared	-	B-043	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-123	architecture	prior-finding:C-002	-	declared	-	C-002	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-124	architecture	prior-finding:C-006	-	declared	-	C-006	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-125	architecture	prior-finding:C-009	-	declared	-	C-009	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-126	architecture	prior-finding:COVERAGE	-	declared	-	-	COVERAGE	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-127	architecture	prior-finding:F-005	-	declared	-	F-005	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-128	architecture	prior-finding:G-002	-	declared	-	G-002	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-129	architecture	prior-finding:G-008	-	declared	-	G-008	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-130	architecture	prior-finding:LEAD-003	-	declared	-	LEAD-003	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-131	architecture	prior-finding:LEAD-004	-	declared	-	LEAD-004	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-132	architecture	prior-finding:LEAD-008	-	declared	-	LEAD-008	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-133	architecture	prior-finding:LEAD-016	-	declared	-	LEAD-016	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-134	architecture	prior-finding:LEAD-018	-	declared	-	LEAD-018	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-135	architecture	prior-finding:MANIFEST-WHY	-	declared	-	-	MANIFEST-WHY	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-136	architecture	prior-finding:NOLOSS	-	declared	-	NOLOSS	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-137	architecture	prior-finding:RR-078	-	declared	-	-	RR-078	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-138	architecture	prior-finding:RR-079	-	declared	-	-	RR-079	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-139	architecture	prior-finding:RR-080	-	declared	-	-	RR-080	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-140	architecture	prior-finding:RR-090-LEAD	-	declared	-	-	RR-090-LEAD	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-141	architecture	prior-finding:S3-001	-	declared	-	S3-001	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-142	architecture	prior-finding:S4-005	-	declared	-	S4-005	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-143	architecture	prior-finding:STALEHEAD	-	declared	-	-	STALEHEAD	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-144	architecture	prior-finding:V-004	-	declared	-	V-004	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-145	architecture	prior-finding:V-005	-	declared	-	V-005	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-146	architecture	prior-finding:V-006	-	declared	-	V-006	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-147	architecture	prior-finding:V-007	-	declared	-	V-007	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-148	architecture	prior-finding:V-008	-	declared	-	V-008	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-149	architecture	prior-finding:V-009	-	declared	-	V-009	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-150	architecture	prior-finding:V-010	-	declared	-	V-010	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-151	architecture	prior-finding:V-011	-	declared	-	V-011	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-152	architecture	prior-finding:V-012	-	declared	-	V-012	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-153	architecture	prior-finding:V-013	-	declared	-	V-013	-	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-154	architecture	prior-finding:WD-V-012	-	declared	-	-	WD-V-012	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-155	architecture	prior-finding:WD-V-013	-	declared	-	-	WD-V-013	PASS	-	-	-	-	python3 tools/tpt scripture-chronology validate
+FA-156	architecture	prior-finding:YAMLDUP	-	declared	-	-	YAMLDUP	CHANGES_REQUIRED	-	-	-	-	python3 tools/tpt scripture-chronology validate

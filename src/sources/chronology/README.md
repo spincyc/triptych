@@ -29,12 +29,23 @@ The review record, which asserts nothing about Scripture and is read by no tool:
 | `post-audit-corrections.tsv` | one row per standing finding, and what was done about it |
 | `post-audit-rereview-manifest.tsv` | every claim, scope and gap row the correction lane changed; the next cold reviewer inspects all of it |
 | `post-audit-correction-report.md` | what the correction lane changed, and what it left open |
-| `post-audit-rereview-findings.tsv` | the targeted cold re-review of every one of those changes, one row each |
-| `post-audit-rereview-report.md` | its disposition, and what still fails |
+| `post-audit-rereview-findings.tsv` | the targeted cold re-review of every one of those changes, one row each — **immutable review evidence** |
+| `post-audit-rereview-report.md` | its disposition, and what still fails — **immutable review evidence** |
+| `final-rereview-corrections.tsv` | the 23 failed re-review rows, one row each, and what was done about them |
+| `final-acceptance-manifest.tsv` | **derived** — every case a genuinely cold acceptance reviewer must review, over both correction lanes |
+| `final-repair-report.md` | what the repair lane changed, the head references by sha, and the cold-review requirement |
 
 `coverage.tsv` is written by `tools/tpt scripture-chronology build` and gated
 by `check`, which refuses a stale table rather than rebuilding it. Do not
 hand-edit it.
+
+The two manifests are derived too, and by tracked scripts rather than by hand:
+`post-audit-rereview-manifest.tsv` from `scripts/build_rereview_manifest.py` and
+`final-acceptance-manifest.tsv` from `scripts/build_final_acceptance_manifest.py`,
+both over `scripts/chronology_review_diff.py`, which loads each revision's corpus
+through that revision's own loader and diffs the loaded objects.
+`scripts/check_final_acceptance_manifest.py` proves the final manifest complete
+in both directions and proves that no prior review id was dropped.
 
 ## Chain
 

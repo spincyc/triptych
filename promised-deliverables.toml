@@ -1526,6 +1526,16 @@ state = "in_progress"
   # would duplicate; it loads under the old gate and is refused by the new one.
   # The next cold reviewer decides PASS; see post-audit-rereview-manifest.tsv.
 
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open. The targeted cold re-review of the 92 changed rows recommended PASS
+  # on all five criteria, verifying the fifth by construction rather than by
+  # reading the tests, and none of the 23 rows it failed touches this
+  # requirement. The repair lane that closed those 23 changed nothing here
+  # either. But that re-review disclosed that it ran in the same session as the
+  # lane it reviewed, and this lane is in the same position, so neither may
+  # accept. The reviewer who marks this pass reviews every row of
+  # final-acceptance-manifest.tsv from a clean session.
+
   [[deliverables.requirements]]
   id = "typed-many-valued-model"
   criterion = "One locus resolves to any number of typed temporal assertions, one event binds to many loci, composition chronology is independent of narrated-event chronology, and prophecy is not collapsed into ordinary narration."
@@ -1607,6 +1617,23 @@ state = "in_progress"
   # 37 171. The criterion is unweakened, and stays open while any locus is
   # `research-pending`.
 
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open, on the criterion AS WRITTEN. The targeted cold re-review read it
+  # strictly and found all five things it asks for satisfied: the universe is
+  # named, every Vulgate locus reaches exactly one typed status, every
+  # additional native locus is accounted for without counting an alias as new
+  # Scripture, mapping status is reported on its own axis, and the report
+  # distinguishes substantive, composition-only, multi-assertion,
+  # alternative-bearing, research-gap and mapping-refused without a headline
+  # percentage. The criterion nowhere requires zero `research-pending`: it
+  # requires a research-gap CATEGORY, and the seven native loci occupy it
+  # honestly. The note above read it more strictly than it is written and kept
+  # the requirement open on that reading. Erring toward open is the safe
+  # direction, and it stays open here for that reason and because no lane that
+  # authored the corpus may accept it -- but if the maintainer intends the
+  # stricter reading, the criterion should SAY so rather than be enforced by a
+  # note. The seven loci are preserved: no date was invented to close them.
+
   [[deliverables.requirements]]
   id = "consumer-non-derivation-contract"
   criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
@@ -1629,6 +1656,20 @@ state = "in_progress"
   # reviewer reopens every row of post-audit-rereview-manifest.tsv - 92 changed
   # claims, binding scopes, gap rows and hard cases, none of them sampled - and
   # returns PASS.
+
+  # 2026-08-27: that re-review ran and returned CHANGES_REQUIRED -- 23 of 114
+  # rows, 9 major, 0 critical -- and disclosed that it was NOT independent at
+  # the session level, so it discharges nothing here either. A bounded repair
+  # lane then closed all 23. It also found what the 92-row manifest could not:
+  # four binding groups changed with no scope change (two of them corrected
+  # misquotations of the tracked Douay), the guidance contract and the loader
+  # changed unenumerated, and the 92 rows are 96 distinct cases rather than 92.
+  # The review surface is now src/sources/chronology/final-acceptance-manifest.tsv,
+  # derived from both correction lanes and proved complete in both directions by
+  # scripts/check_final_acceptance_manifest.py. This requirement is closed only
+  # by a reviewer in a NEW session that performed none of the population, the
+  # audit, the correction, the re-review or the repair. No same-session subagent
+  # arrangement satisfies it.
 
   [[deliverables.requirements]]
   id = "validation-and-handoff"

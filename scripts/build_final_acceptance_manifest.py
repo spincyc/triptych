@@ -33,6 +33,7 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -196,7 +197,16 @@ def main() -> int:
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args()
 
-    head = subprocess.run(["git", "-C", str(REPO), "rev-parse", "--short", args.head],
+    spec = args.head
+    if args.check and spec == "HEAD" and OUT.exists():
+        # A CHECK MUST NOT MOVE ITS OWN TARGET. The file pins the head it was
+        # derived from; re-deriving against a later HEAD would report every
+        # commit since as a difference, so the check would go red on work that
+        # has nothing to do with it.
+        found = re.search(r"# 214797e78\.\.(\S+) --", OUT.read_text(encoding="utf-8"))
+        if found:
+            spec = found.group(1)
+    head = subprocess.run(["git", "-C", str(REPO), "rev-parse", "--short", spec],
                           capture_output=True, text=True, check=True).stdout.strip()
     cases = derive(head)
     rr = rereview_provenance()
