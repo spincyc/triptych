@@ -114,23 +114,27 @@
       : Promise.resolve(undefined);
   }
 
-  // One fragment's prose, asked BY THE ROW and held against it until it
-  // settles; `fragmentTexts` takes the promise from INSIDE the settle, so
-  // what is shared by path is only ever an answer. `M.rowTransport` says why.
+  // One fragment's prose, asked BY THE ROW and shared by path ONLY ONCE
+  // FINISHED. `M.rowTransport` and `M.textCompleted` say why.
   function fragmentText(row) {
     const path = M.textAsked(row);
-    const owner = path ? M.rowTransport(row) : null;
-    if (!owner) return Promise.resolve(ABSENT);
-    const held = asking.get(owner) || fragmentTexts.get(path);
+    const owner = M.rowTransport(row);
+    if (!owner) return Promise.resolve(null);
+    if (!path) return Promise.resolve(M.textCompleted(owner, M.NO_TEXT));
+    const held = asking.get(owner);
     if (held) return held;
+    // A FINISHED VALUE, REBOUND TO THIS OWNER: the path holds no owner.
+    const done = fragmentTexts.get(path);
+    if (done) return Promise.resolve(M.textCompleted(owner, done));
     const asked = T.loadJSON(path).then(
       (file) => {
         // FIRST SETTLED ANSWER WINS: a request released late may not replace
         // the answer a row already has, or displace it for the next asker.
-        if (!fragmentTexts.has(path)) fragmentTexts.set(path, asked);
-        return Object.freeze(file);
+        const content = M.textPayload(file);
+        if (!fragmentTexts.has(path)) fragmentTexts.set(path, content);
+        return M.textCompleted(owner, content);
       },
-      (error) => { asking.delete(owner); throw error; }
+      (error) => { asking.delete(owner); throw M.textFailed(owner, error); }
     );
     asking.set(owner, asked);
     return asked;
@@ -274,12 +278,9 @@
     const apparatus = T.el('div', 'fragment-apparatus');
     details.appendChild(apparatus);
 
-    // ONE point-of-use acknowledgement channel: two VALID supplies render ONE
-    // block, and a broken note — said to be broken once — cannot claim the
-    // channel and erase a valid note the other supply carries.
+    // ONE point-of-use acknowledgement channel; `M.broken` says why `awry`
+    // is kept apart from the note, and what the one channel costs.
     let acknowledged = 0;
-    // `awry`: something was recorded and is not text — kept apart from the
-    // note so a malformed supply still says so instead of reading as none.
     const acknowledge = (note, awry) => {
       if (acknowledged > 1 || !(note || awry)) return;
       if (!note && acknowledged) return;
@@ -304,48 +305,46 @@
         text.textContent = fragment.text_note;
         return;
       }
+      // APPLIED, THEN RECORDED: only a write read back is a body, and
+      // `M.bodyApplied` says why an unconfirmed one leaves no entry.
+      const wrote = (completed, write) => {
+        let said = null;
+        try { said = write(); } catch (problem) { said = null; }
+        if (said === text.textContent) M.bodyApplied(fragment, completed, true);
+      };
       fragmentText(fragment).then(
-        (loaded) => {
-          // A completion for a rebuilt page mutates nothing here, and the
-          // ROW THAT ASKED owns the application; containment first, so a
-          // stale completion returns before it records.
-          if (!reading.contains(details) || !M.bodyAsked(fragment, loaded)) return;
-          // No file, or a file: a 200 answering `null` is the second.
-          if (loaded === ABSENT) {
-            text.className = 'fragment-text missing';
-            text.textContent =
-              'This fragment carries no text file, so nothing of it can be shown.';
-            return;
-          }
-          // PROJECTED, not read field by field: an unreadable payload used
-          // to render an empty paragraph and report nothing.
-          const body = M.textPayload(loaded);
-          acknowledge(body.acknowledgement, body.acknowledgement_broken);
-          if (body.unreadable) {
-            text.className = 'fragment-text missing';
-            text.textContent =
-              'The text of this fragment arrived in a form this page cannot read.';
-            return;
-          }
-          text.className = 'fragment-text';
-          text.textContent = body.text;
-          if (body.basis) {
-            apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + body.basis));
-          }
-          if (body.date_basis) {
-            apparatus.appendChild(T.el('p', 'fragment-basis', 'Date — ' + body.date_basis));
-          }
+        (completed) => {
+          // Containment first, then the ROW'S OWN TRANSPORT: a completion
+          // for a rebuilt page mutates nothing here.
+          if (!reading.contains(details) || !M.bodyAsked(fragment, completed)) return;
+          const body = completed.content;
+          wrote(completed, () => {
+            if (body.present) acknowledge(body.acknowledgement, body.acknowledgement_broken);
+            const say = M.bodySaying(body);
+            text.className = say.missing ? 'fragment-text missing' : 'fragment-text';
+            text.textContent = say.said;
+            if (!say.missing) {
+              if (body.basis) {
+                apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + body.basis));
+              }
+              if (body.date_basis) {
+                apparatus.appendChild(T.el('p', 'fragment-basis', 'Date — ' + body.date_basis));
+              }
+            }
+            return say.said;
+          });
         },
-        (error) => {
+        (failed) => {
           // A reported failure is a body applied, and owned as one.
-          if (!reading.contains(details) || !M.bodyAsked(fragment, error)) return;
+          if (!reading.contains(details) || !M.bodyAsked(fragment, failed)) return;
           asked = false;
-          text.className = 'fragment-text missing';
-          text.textContent =
-            error instanceof T.NotFound
-              ? 'The text of this fragment was not published beside the page.'
-              : 'The text of this fragment could not be loaded: ' +
-                (error.message || error);
+          const error = failed.error;
+          wrote(failed, () => {
+            const said = M.failureSaid(error instanceof T.NotFound, error);
+            text.className = 'fragment-text missing';
+            text.textContent = said;
+            return said;
+          });
         }
       );
     });

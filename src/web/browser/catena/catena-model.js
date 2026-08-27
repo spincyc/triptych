@@ -859,7 +859,16 @@
     });
   }
 
-  /** Was something recorded here that this page cannot read as text? */
+  /**
+   * WAS SOMETHING RECORDED HERE THAT THIS PAGE CANNOT READ AS TEXT?
+   *
+   * The fact is kept APART from the note itself, and the page's one
+   * point-of-use acknowledgement channel is why. Two valid supplies render
+   * one block; a broken note — said to be broken once — may not claim the
+   * channel and erase a valid note the other supply carries; and a malformed
+   * supply still says so instead of reading as none. A single value could
+   * carry only one of those three states.
+   */
   function broken(value) {
     return value !== undefined && value !== null && value !== '' && !sound(value);
   }
@@ -1112,24 +1121,110 @@
   }
 
   /**
-   * THE PROJECTION ONE FULFILLED BODY IS BEING APPLIED FOR.
+   * THE COMPLETION OF ONE OWNED TRANSPORT — the owner, and the value it
+   * finished with, sealed together.
    *
-   * V14 carried ownership as far as the request and stopped there, so the
-   * identity roster a reviewer could read ended one step before the step that
-   * writes the page: the body was applied by a closure that knew a DOM node
-   * and a path. The row that asked is asked AGAIN here, at the application
-   * itself, and the content being applied travels with it. What is recorded
-   * is the projection, the row and the value, taken where the body is
-   * written — not inferred afterwards from two paths that match.
+   * V16, the V15 review. V15 carried the owner as far as the request and
+   * then let the answer travel alone: `bodyAsked(row, content)` asked only
+   * whether `row` was a row this file had projected, so an actual B row
+   * authorized ANY content — A's answer, a literal, a value no request ever
+   * produced. The association held in production only because one closure
+   * happened to carry both halves; the boundary itself proved nothing.
    *
-   * `false` for a row no projection of this file made: fail-closed, one step
-   * later than `textAsked`.
+   * So the answer stops travelling alone. A settled transport is sealed here
+   * into one frozen envelope carrying the exact `rowTransport` owner beside
+   * the value, and the envelope — not the value — is what reaches the body.
+   * The envelope is minted only against an owner this file is currently
+   * holding for that owner's own row, and only around content this file
+   * itself finalized, so neither half can be supplied from outside.
+   * `completions` is the proof: a literal of the same shape is not one of
+   * these, and `bodyAsked` will not take it.
+   *
+   * THE ENVELOPE IS NEVER SHARED. It is per-caller by construction — the
+   * owner is in it — and the path cache holds the owner-independent content
+   * alone, so a second row reusing a finished value is rebound through its
+   * OWN envelope rather than inheriting the first row's.
+   *
+   * `null` for a forged or foreign owner, and for content this file did not
+   * finalize: fail-closed, one step later than `rowTransport`.
    */
-  function bodyAsked(row, content) {
+  const completions = new WeakSet();
+
+  function sealCompletion(owner, failed, content, error) {
+    // `bag(owner) !== owner` refuses a scalar, a list and `null` before the
+    // map is asked anything, so the identity test below compares two owners
+    // and never two absences.
+    if (bag(owner) !== owner
+      || rowTransports.get(ownData(owner, 'row')) !== owner) return null;
+    if (!failed && !contents.has(content)) return null;
+    const done = Object.freeze({
+      owner: owner,
+      failed: failed,
+      content: failed ? null : content,
+      error: failed ? error : null
+    });
+    completions.add(done);
+    return done;
+  }
+
+  /** One owner's finished answer, sealed. */
+  function textCompleted(owner, content) {
+    return sealCompletion(owner, false, content, null);
+  }
+
+  /** One owner's reported failure, sealed the same way. A failure is a body. */
+  function textFailed(owner, error) {
+    return sealCompletion(owner, true, null, error);
+  }
+
+  /**
+   * MAY THIS COMPLETION BE APPLIED TO THIS ROW? — asked before the write,
+   * and recording nothing.
+   *
+   * V14 asked the row. V15 asked the row again, at the application. V16 asks
+   * the COMPLETION: that it is one this file sealed, that its owner is the
+   * transport this file is holding for this very row, and that the owner's
+   * projection is the projection that made the row. Three exact-object
+   * comparisons, none of them a path, an id or a string.
+   *
+   * `false` for a row no projection of this file made, for a completion this
+   * file did not seal, and for a completion sealed for any other owner.
+   */
+  function bodyAsked(row, completed) {
     const held = rowOwners.get(row);
-    witnessed('body', held === undefined ? NO_CHAPTER : held,
-      { row: row, content: content });
-    return held !== undefined;
+    if (held === undefined || !completions.has(completed)) return false;
+    return completed.owner === rowTransports.get(row)
+      && completed.owner.projection === held;
+  }
+
+  /**
+   * THE BODY THAT REACHED THE PAGE, RECORDED AFTER IT REACHED IT.
+   *
+   * V15 recorded the application before the DOM write, so the journal said
+   * `applied` for a body that had not been written and could not say whether
+   * one ever was. The record now follows the write and its confirmation:
+   * `wrote` is the page's own answer to whether the write landed, and a
+   * record is appended only when the completion is still owner-valid AND the
+   * write is confirmed. A failed write leaves no entry at all, which is the
+   * only truthful thing an append-only body journal can do about it.
+   *
+   * What is bound is everything a reviewer needs to tie one entry to one
+   * owned transport: the owner object, the row, the projection, the address,
+   * the finalized content value itself and whether the completion was a
+   * failure — not a path and a row id that two rows could share.
+   */
+  function bodyApplied(row, completed, wrote) {
+    if (wrote !== true || !bodyAsked(row, completed)) return false;
+    witnessed('body', completed.owner.projection, Object.freeze({
+      row: row,
+      owner: completed.owner,
+      projection: completed.owner.projection,
+      path: completed.owner.path,
+      content: completed.content,
+      failed: completed.failed,
+      wrote: true
+    }));
+    return true;
   }
 
   /**
@@ -1419,28 +1514,144 @@
   }
 
   /**
-   * One fragment's own text payload, projected, or the fact that it is not one.
+   * ONE FRAGMENT'S TEXT, FINALIZED ONCE INTO THE VALUE THE PAGE RENDERS.
    *
    * V7. `sound(loaded.text)` normalized a record, a list and a number alike to
    * `''`, so a payload that arrived unreadable rendered as an EMPTY paragraph
    * and the route finished without ever saying the words could not be read.
    * Nothing was shown and nothing was claimed, which reads to a reader exactly
    * like a fragment whose text is blank.
+   *
+   * V16, the V15 review. V15 shallow-froze the RAW PARSED FILE and shared
+   * that by path, then projected it here, at render time, by ordinary
+   * property lookup. Three things followed. A frozen object still answers
+   * from its prototype, so `Object.create({text: '…'})` — or a prototype
+   * mutated after the value was already cached — turned an unreadable payload
+   * into a readable one between one reader and the next. An own accessor was
+   * still CALLED, so a getter answering differently on the second read
+   * decided the page. And the shared value was raw: whatever nested mutable
+   * structure the file carried stayed reachable and stayed mutable.
+   *
+   * So the projection moves to the SETTLEMENT and produces the finished value
+   * itself. Every field is taken by own descriptor — `ownData`, so nothing
+   * inherited is visible and no getter is invoked — and every field is a
+   * scalar by construction: `sealText` admits a boolean or `sound()`'s
+   * string and nothing else, so no nested object can be in the result to be
+   * mutated afterwards. The record has a null prototype, so it has no
+   * inherited authority of its own, and it is frozen. What the path cache
+   * shares is this value: owner-independent, deterministic in its keys, and
+   * finished before it is reachable.
+   *
+   * `present` is the third state the page needs and the raw object could not
+   * carry: a row whose record resolves NO ADDRESS asks nothing and renders
+   * `NO_TEXT`, which is a finalized value like any other rather than a
+   * sentinel the page has to recognize by identity.
    */
+  const TEXT_SCHEMA = Object.freeze(['present', 'unreadable', 'text', 'basis',
+    'date_basis', 'acknowledgement', 'acknowledgement_broken']);
+
+  const contents = new WeakSet();
+
+  function sealText(fields) {
+    const made = Object.create(null);
+    for (const name of TEXT_SCHEMA) {
+      // OWN DATA HERE TOO, and for the same reason one level out: `fields` is
+      // an ordinary literal, so an unstated member of the schema would be
+      // answered by `Object.prototype`. A polluted prototype contributed
+      // `text` and `acknowledgement_broken` to a finalized value that had
+      // stated neither — the one field this file seals against the WORLD and
+      // then read from it. Every schema member is now taken from the literal's
+      // own table or not at all.
+      const value = Object.hasOwn(fields, name) ? fields[name] : undefined;
+      made[name] = typeof value === 'boolean' ? value : sound(value);
+    }
+    Object.freeze(made);
+    contents.add(made);
+    return made;
+  }
+
+  /**
+   * The finished value for a row that resolves no text file at all. Every
+   * member of the schema is stated, so the record is the schema and nothing
+   * about it is decided elsewhere.
+   */
+  const NO_TEXT = sealText({
+    present: false,
+    unreadable: false,
+    text: '',
+    basis: '',
+    date_basis: '',
+    acknowledgement: '',
+    acknowledgement_broken: false
+  });
+
+  /**
+   * WHAT THE PAGE MAY SAY ABOUT ONE FINALIZED BODY, and whether it is the
+   * fragment's words or a statement about their absence.
+   *
+   * The same reason V10 put `TEXT_REFUSED` here and V15 moved three of the
+   * page's paragraphs after it: `catena.js` is at its gzipped ceiling and
+   * this file has none, and the model already knows which of the three
+   * things it is entitled to assert. The page holds one branch and writes
+   * what this hands it.
+   */
+  const TEXT_ABSENT =
+    'This fragment carries no text file, so nothing of it can be shown.';
+  const TEXT_UNREADABLE =
+    'The text of this fragment arrived in a form this page cannot read.';
+  const TEXT_LOST = 'The text of this fragment was not published beside the page.';
+  const TEXT_FAILED = 'The text of this fragment could not be loaded: ';
+
+  function bodySaying(content) {
+    // Own data, like every other semantic member of this file. A finalized
+    // value has a null prototype and cannot answer from one, so this is a
+    // statement about what the function will accept rather than about what
+    // the page hands it: nothing inherited decides which of the three things
+    // the page says, whatever it is asked about.
+    const held = bag(content);
+    const present = ownData(held, 'present') === true;
+    const missing = !present || ownData(held, 'unreadable') === true;
+    return Object.freeze({
+      missing: missing,
+      said: !missing ? sound(ownData(held, 'text'))
+        : present ? TEXT_UNREADABLE : TEXT_ABSENT
+    });
+  }
+
+  const TEXT_UNSAID = 'the reason was not stated.';
+
+  /**
+   * The same, for a reported transport failure. A failure is a body.
+   *
+   * The reason is TAKEN, never coerced: a rejection carrying a stated
+   * message states it, a rejection that is itself text states that, and
+   * anything else — a record with no message, a hostile object with no
+   * primitive form — says that no reason was stated rather than printing
+   * `[object Object]` at the reader or throwing out of the sink.
+   */
+  function failureSaid(missing, error) {
+    // OWN DATA, like every other semantic member of this file: a rejection
+    // carrying an accessor for `message` has it declined rather than run.
+    const why = sound(ownData(bag(error), 'message')) || sound(error);
+    return missing ? TEXT_LOST : TEXT_FAILED + (why || TEXT_UNSAID);
+  }
+
   function textPayload(loaded) {
     const record = bag(loaded);
-    const text = sound(record.text);
-    return {
+    const text = sound(ownData(record, 'text'));
+    const acknowledged = ownData(record, 'acknowledgement');
+    return sealText({
+      present: true,
       // A payload is a record that states its words. Anything else — a list, a
       // string, a number, a record whose `text` is not text — is a file this
       // page could not read, and it says so instead of showing nothing.
       unreadable: record !== loaded || !text,
       text: text,
-      basis: sound(record.basis),
-      date_basis: sound(record.date_basis),
-      acknowledgement: sound(record.acknowledgement),
-      acknowledgement_broken: broken(record.acknowledgement)
-    };
+      basis: sound(ownData(record, 'basis')),
+      date_basis: sound(ownData(record, 'date_basis')),
+      acknowledgement: sound(acknowledged),
+      acknowledgement_broken: broken(acknowledged)
+    });
   }
 
   /* ------------------------------------------------------------------------
@@ -2580,9 +2791,16 @@
     rowProjection: rowProjection,
     rowTransport: rowTransport,
     bodyAsked: bodyAsked,
+    bodyApplied: bodyApplied,
+    textCompleted: textCompleted,
+    textFailed: textFailed,
     textAsked: textAsked,
     fragmentRow: fragmentRow,
     textPayload: textPayload,
+    NO_TEXT: NO_TEXT,
+    bodySaying: bodySaying,
+    failureSaid: failureSaid,
+    TEXT_SCHEMA: TEXT_SCHEMA,
     formatExtent: formatExtent,
     spansChapters: spansChapters,
     chapterVoices: chapterVoices,
