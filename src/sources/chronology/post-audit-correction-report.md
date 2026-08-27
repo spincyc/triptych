@@ -25,8 +25,10 @@ adversarial verification. This lane consumed all 104.
 | left to maintainer disposition | 0 |
 | unresolved | **0** |
 
-By severity: 5 critical, 50 major, 49 minor —
-of which 5 / 46 / 45 were fixed outright.
+By severity, counted as ledger rows: 5 critical, 50 major, 49 minor — of which
+5 / 46 / 45 were fixed outright. The five critical rows are **one defect** over
+three claims, found separately by three auditors and again by the audit lead;
+that is why the audit reported one critical and this ledger reports five rows.
 
 The eight withdrawals each rest on evidence stronger than the audit's, and each
 names it in the ledger. Three (`V-008`, `V-012`, `V-013`) are loci that do not
