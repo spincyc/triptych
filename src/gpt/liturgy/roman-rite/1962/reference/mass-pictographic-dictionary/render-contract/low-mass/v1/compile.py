@@ -236,8 +236,14 @@ class Compiler:
                             support.get("pitch_deg", 0.0)
                         ),
                         "supported_by": None if carried else support.get("supported_by"),
-                        "page_up_vector_pitched": missal.get("page_up_vector_pitched"),
-                        "page_normal_world": missal.get("page_normal_world"),
+                        "page_up_vector_pitched": (
+                            missal["page_up_vector"] if carried
+                            else missal.get("page_up_vector_pitched")
+                        ),
+                        "page_normal_world": (
+                            [0.0, 0.0, 1.0] if carried
+                            else missal.get("page_normal_world")
+                        ),
                         "spine_yaw_deg": round6(
                             (missal["page_up_yaw_deg"] - 90.0) % 360.0
                         ),

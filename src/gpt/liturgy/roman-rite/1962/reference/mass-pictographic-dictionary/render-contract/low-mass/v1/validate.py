@@ -412,8 +412,22 @@ def check_projected_orientation(contracts: list[dict]) -> tuple[int, float, int]
             # transform never reached it.
             if item["id"] == "missal":
                 reading = item.get("reading") or {}
-                carried = (reading.get("support_pitch_deg") or 0.0) == 0.0
+                # Whether the book is on a stand is a fact about its support,
+                # not about a number that happens to be zero. Keying this off
+                # the pitch let a contract disable the check by zeroing the very
+                # value the check exists to police.
+                carried = not reading.get("supported_by")
+                published = reading.get("page_normal_world")
                 normal = measured["world_page_normal"]
+                if published and any(
+                    abs(a - b) > 1e-3 for a, b in zip(published, normal)
+                ):
+                    raise Failure(
+                        f"{contract['plate_id']}: the contract publishes a page "
+                        f"normal of {published} but the drawn Missal resolves to "
+                        f"{normal}; the contract and the drawing disagree about "
+                        "how the book lies"
+                    )
                 horizontal = (normal[0] ** 2 + normal[1] ** 2) ** 0.5
                 if not carried and horizontal < 0.15:
                     raise Failure(

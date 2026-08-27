@@ -26,7 +26,7 @@ world_frame:
   yaw_increases: counter-clockwise seen from above
 art_readiness:
   status: blocked
-  unresolved_cues: &id003
+  unresolved_cues: &id004
   - The approved material does not fix where AC1 obtains the chalice cloth before carrying it to the Gospel
     side.
   - The approved material fixes only that AC1 carries the chalice cloth to the Gospel side and does not
@@ -213,7 +213,7 @@ objects:
   state_after: Carried by AC2 to the Epistle corner of the altar and set down there, still oriented so
     that the priest reading it is turned toward his left.
   handled_by: AC2
-  panel_visibility: &id002
+  panel_visibility: &id003
   - primary
   - path-plan
   position:
@@ -229,20 +229,17 @@ objects:
   orientation_note: identical on both sides by invariant
   reading:
     page_up_yaw_deg: 135.0
-    page_up_vector:
+    page_up_vector: &id002
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
     support_pitch_deg: 0.0
     supported_by: null
-    page_up_vector_pitched:
-    - -0.645974
-    - 0.645974
-    - 0.406737
+    page_up_vector_pitched: *id002
     page_normal_world:
-    - 0.287606
-    - -0.287606
-    - 0.913545
+    - 0.0
+    - 0.0
+    - 1.0
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:
@@ -264,7 +261,7 @@ objects:
   orientation_semantic: folded
   state_after: Carried by AC1 to the Gospel side, ready for the priest to take.
   handled_by: AC1
-  panel_visibility: *id002
+  panel_visibility: *id003
   parent_transform: AC1
   position: null
   orientation_rule: aligned-to-mensa
@@ -281,7 +278,7 @@ objects:
   orientation_semantic: upright
   state_after: Cleansed and standing on the corporal before the priest.
   handled_by: priest
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - 0.0
   - 1.62
@@ -294,7 +291,7 @@ objects:
   orientation_semantic: flat-on-mensa
   state_after: Lying at the centre of the corporal, cleansed.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - 0.0
   - 1.38
@@ -314,7 +311,7 @@ objects:
   orientation_semantic: unfolded
   state_after: Unfolded at the centre of the altar.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - 0.0
   - 1.5
@@ -335,4 +332,4 @@ visible_invariants:
 - INV-ROLE-03
 - INV-CROSS-01
 - INV-OBJ-01
-blocked_cues: *id003
+blocked_cues: *id004

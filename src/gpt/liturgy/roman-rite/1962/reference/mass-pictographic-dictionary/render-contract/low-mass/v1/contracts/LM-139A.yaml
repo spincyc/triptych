@@ -26,7 +26,7 @@ world_frame:
   yaw_increases: counter-clockwise seen from above
 art_readiness:
   status: blocked
-  unresolved_cues: &id003
+  unresolved_cues: &id004
   - Whether the servers stand on the lowest altar step or on the sanctuary floor in plano for the Last
     Gospel is not fixed by the approved record.
   - Whether a proper Last Gospel is read from the Missal rather than from the Last Gospel card, and how
@@ -185,20 +185,17 @@ objects:
   orientation_note: identical on both sides by invariant
   reading:
     page_up_yaw_deg: 135.0
-    page_up_vector:
+    page_up_vector: &id003
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
     support_pitch_deg: 0.0
     supported_by: null
-    page_up_vector_pitched:
-    - -0.645974
-    - 0.645974
-    - 0.406737
+    page_up_vector_pitched: *id003
     page_normal_world:
-    - 0.287606
-    - -0.287606
-    - 0.913545
+    - 0.0
+    - 0.0
+    - 1.0
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:
@@ -234,4 +231,4 @@ visible_invariants:
 - INV-ROLE-01
 - INV-NAME-01
 - INV-OBJ-01
-blocked_cues: *id003
+blocked_cues: *id004

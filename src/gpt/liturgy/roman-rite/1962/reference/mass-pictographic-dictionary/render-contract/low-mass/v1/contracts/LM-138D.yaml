@@ -26,7 +26,7 @@ world_frame:
   yaw_increases: counter-clockwise seen from above
 art_readiness:
   status: blocked
-  unresolved_cues: &id003
+  unresolved_cues: &id004
   - The depth of the priest's bow at 'Deus' in the blessing formula is not fixed by the approved record.
   - The approved record specifies a 'simple bow' for the servers at 'Benedicat vos omnipotens Deus' without
     fixing its depth.
@@ -212,20 +212,17 @@ objects:
   orientation_note: identical on both sides by invariant
   reading:
     page_up_yaw_deg: 135.0
-    page_up_vector:
+    page_up_vector: &id003
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
     support_pitch_deg: 0.0
     supported_by: null
-    page_up_vector_pitched:
-    - -0.645974
-    - 0.645974
-    - 0.406737
+    page_up_vector_pitched: *id003
     page_normal_world:
-    - 0.287606
-    - -0.287606
-    - 0.913545
+    - 0.0
+    - 0.0
+    - 1.0
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:
@@ -246,4 +243,4 @@ visible_invariants:
 - INV-GEO-03
 - INV-ROLE-01
 - INV-OBJ-01
-blocked_cues: *id003
+blocked_cues: *id004

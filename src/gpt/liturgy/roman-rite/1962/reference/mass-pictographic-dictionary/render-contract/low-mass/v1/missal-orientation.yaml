@@ -79,6 +79,10 @@ mirror_test:
 
 # The renderable state a compiled Missal must carry.
 required_compiled_fields:
+  - support_pitch_deg
+  - supported_by
+  - page_up_vector_pitched
+  - page_normal_world
   - anchor
   - position
   - yaw_deg
@@ -104,9 +108,12 @@ book_geometry:
     yaw_offset_from_page_up_deg: 180.0
   page_normal:
     vector: [0.0, 0.0, 1.0]
+    frame: object-local
     note: >-
-      An open book resting on the mensa presents its pages upward. Only the
-      horizontal orientation is at issue in this contract.
+      This is the LOCAL normal, before the object is placed. The world normal
+      is derived by carrying it through the stand's pitch and then the world
+      yaw, and is published per scene as `page_normal_world`. A book on its
+      stand does not present its pages upward; it presents them to the priest.
   open_state: open
   scale_class: book-large
 

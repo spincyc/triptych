@@ -61,6 +61,25 @@ lower edge.
 `./underlay.py --check` proves the tracked drawings are exactly what the
 current contracts generate.
 
+## A hole in the guard, found by its own regression lane
+
+The page-plane check added with the pitched model decided whether a book was
+being carried by asking whether its pitch was zero. That let a contract switch
+the check off by zeroing the very number the check existed to police: a Missal
+could publish a page normal of straight up, declare no pitch, and pass.
+
+It now asks whether the book declares a support, which is a fact about the
+object rather than a number that happens to be zero, and it additionally
+compares the normal the contract publishes against the one the drawing
+resolves, so the two can no longer disagree in silence. Both lying recipes are
+refused; a genuinely carried book is still allowed.
+
+Two smaller things were corrected at the same time. A carried Missal was
+publishing the stand's inclination in its pitched vectors while declaring that
+it stood on no stand, which was inert only because such books resolve to
+actor-held with no position. And the local page-normal note still said an open
+book "presents its pages upward", which had become the opposite of true.
+
 ## What is tracked, and what is not
 
 The underlay **drawings** are tracked, one per art-ready scene, as vectors. The

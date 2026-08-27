@@ -134,7 +134,7 @@ objects:
   orientation_semantic: priest-reads-facing-left
   state_after: Open at the Gospel, lifted in both of the priest's hands, its orientation unchanged.
   handled_by: priest
-  panel_visibility: &id002
+  panel_visibility: &id003
   - primary
   parent_transform: priest
   position: null
@@ -147,20 +147,17 @@ objects:
   orientation_note: identical on both sides by invariant
   reading:
     page_up_yaw_deg: 135.0
-    page_up_vector: &id003
+    page_up_vector: &id002
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
     support_pitch_deg: 0.0
     supported_by: null
-    page_up_vector_pitched: &id004
-    - -0.645974
-    - 0.645974
-    - 0.406737
-    page_normal_world: &id005
-    - 0.287606
-    - -0.287606
-    - 0.913545
+    page_up_vector_pitched: *id002
+    page_normal_world:
+    - 0.0
+    - 0.0
+    - 1.0
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:
@@ -168,7 +165,7 @@ objects:
     - 0.0
     - 1.0
     priest_facing_yaw_deg: 135.0
-    priest_facing_vector: &id006
+    priest_facing_vector: &id004
     - -0.7071067811865476
     - 0.7071067811865476
     - 0.0
@@ -182,7 +179,7 @@ objects:
   orientation_semantic: upright
   state_after: At the Gospel corner of the mensa, empty, the Missal lifted from it.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - -0.95
   - 1.5
@@ -196,11 +193,17 @@ objects:
   orientation_note: identical on both sides by invariant
   reading:
     page_up_yaw_deg: 135.0
-    page_up_vector: *id003
+    page_up_vector: *id002
     support_pitch_deg: 24.0
     supported_by: missal-stand
-    page_up_vector_pitched: *id004
-    page_normal_world: *id005
+    page_up_vector_pitched:
+    - -0.645974
+    - 0.645974
+    - 0.406737
+    page_normal_world:
+    - 0.287606
+    - -0.287606
+    - 0.913545
     spine_yaw_deg: 45.0
     reading_edge_yaw_deg: 315.0
     page_normal:
@@ -208,7 +211,7 @@ objects:
     - 0.0
     - 1.0
     priest_facing_yaw_deg: 135.0
-    priest_facing_vector: *id006
+    priest_facing_vector: *id004
     semantic_direction: gospelward
     identical_on_both_sides: true
 - id: corporal
@@ -219,7 +222,7 @@ objects:
   orientation_semantic: unfolded
   state_after: Unfolded at the centre of the altar.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - 0.0
   - 1.5
@@ -238,7 +241,7 @@ objects:
   orientation_semantic: not-applicable
   state_after: Empty and veiled on the corporal.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - 0.0
   - 1.62
@@ -251,7 +254,7 @@ objects:
   orientation_semantic: not-applicable
   state_after: Empty, on the Gospel side.
   handled_by: none
-  panel_visibility: *id002
+  panel_visibility: *id003
   position:
   - -0.6
   - 1.5
