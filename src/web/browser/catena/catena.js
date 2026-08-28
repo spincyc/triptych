@@ -410,6 +410,8 @@
     for (const row of rows) {
       const item = T.el('li', 'absence');
       item.appendChild(T.el('span', 'absence-author', row.author));
+      // A node, not a gap: a gap is not text.
+      if (row.author && row.work) item.appendChild(textNode(' — '));
       item.appendChild(T.el('span', 'absence-work', row.work));
       if (row.reason) item.appendChild(T.el('p', 'absence-reason', row.reason));
       // Only the finding that says so in its own name licenses the offer.

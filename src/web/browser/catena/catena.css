@@ -728,6 +728,15 @@
   max-width: none;
 }
 
+/* THIS PAGE MOVES FOCUS INTO THE REGION — a rebuild that swallows the node
+   the reader stood on (the recovery link, a failing load) hands focus to
+   `#reading` — and the shared sheet's `.reading:focus { outline: none }`
+   outranks the universal `:focus-visible`, so the reader was moved without
+   being shown where. The section's own ring, restored for `:focus-visible`
+   alone so a click on the region stays undecorated. `outline-offset` is not
+   in the shorthand the shared rule resets, so it still governs. */
+.catena-page .reading:focus-visible { outline: 3px solid var(--focus); }
+
 @media (min-width: 64.0625rem) {
   .catena-page .reading {
     display: grid;
@@ -757,9 +766,10 @@
  * 2px left border, and forcing its transparent base to CanvasText would
  * hand an ordinary passage the same mark as a projected boundary — so the
  * base is Canvas and only `.projected` takes CanvasText. Dashed against
- * solid survives untouched and the refusal keeps a visible rule. Focus is
- * the shared sheet's: this page declares no focus rule in any mode, so the
- * universal outline governs and the system forces its colour itself.
+ * solid survives untouched and the refusal keeps a visible rule. Focus needs
+ * nothing here either: the one focus rule this page declares — the reading
+ * region's restored ring, above — asks for `var(--focus)`, and a forced mode
+ * substitutes its own colour for that as it does for the shared sheet's.
  * ------------------------------------------------------------------------ */
 
 @media (forced-colors: active) {
