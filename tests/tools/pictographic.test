@@ -100,9 +100,23 @@ match 'art-ready' "$(run_tool readiness roman-1962 low-mass)"
 
 # --- the artistic entry path, which must fail closed -----------------------
 
+# A canonical package binds itself to a commit and so refuses a dirty tree.
+# That is the right behaviour and an awkward precondition for a smoke test, so
+# the shape checks run in whichever mode this checkout allows. The dirty-tree
+# refusal itself is proved against a scratch clone in
+# tools/tests/test_web_handoff.py, where it costs the tracked tree nothing.
+if [ -n "$(git -C "$repo" status --porcelain)" ]; then
+	seed_mode="--development"
+else
+	seed_mode=""
+fi
+
 seed="$sandbox/seed"
-run_tool art-seed roman-1962 low-mass LM-001A --out "$seed"
-for part in render-contract.yaml skeleton.svg provenance.yaml ART-AGENT-INSTRUCTIONS.md; do
+# shellcheck disable=SC2086
+run_tool art-seed roman-1962 low-mass LM-001A --out "$seed" $seed_mode
+for part in render-contract.yaml skeleton.svg provenance.yaml \
+	ART-AGENT-INSTRUCTIONS.md WEB-AGENT-PROMPT.md PACKAGE-MANIFEST.yaml \
+	render-underlay.png render-underlay.svg; do
 	if [ ! -s "$seed/LM-001A/$part" ]; then
 		echo "art-seed package is missing $part" >&2
 		exit 1
@@ -110,6 +124,16 @@ for part in render-contract.yaml skeleton.svg provenance.yaml ART-AGENT-INSTRUCT
 done
 match 'is_pipeline_canary: true' "$(cat "$seed/LM-001A/provenance.yaml")"
 match 'STRUCTURE' "$(cat "$seed/LM-001A/ART-AGENT-INSTRUCTIONS.md")"
+
+# The whole point of the lane: the operator pastes a generated prompt rather
+# than writing one.
+prompt="$(cat "$seed/LM-001A/WEB-AGENT-PROMPT.md")"
+match 'EDIT THE ATTACHED `render-underlay.png`' "$prompt"
+match 'spincyc/triptych' "$prompt"
+match 'Pipeline canary: yes' "$prompt"
+match 'Generate exactly one candidate' "$prompt"
+match 'mandatory_edit_source: render-underlay.png' \
+	"$(cat "$seed/LM-001A/PACKAGE-MANIFEST.yaml")"
 
 # A blocked scene is refused, and leaves nothing behind.
 blocked="$(run_tool readiness roman-1962 low-mass --blocked | sed -n '2s/^ *\([A-Z0-9-]*\).*/\1/p')"
@@ -137,7 +161,11 @@ match 'status +approved' "$review"
 layer="$repo/src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1"
 cp "$layer/sanctuary-master.yaml" "$sandbox/sanctuary-master.bak"
 sed -i 's/^  tread_depth: .*/  tread_depth: 0.31/' "$layer/sanctuary-master.yaml"
-if run_tool art-seed roman-1962 low-mass LM-001A --out "$sandbox/stale" >/dev/null 2>&1; then
+# --development here on purpose: perturbing the master dirties the tree, and
+# without it the canonical git binding would refuse first and this check would
+# pass for the wrong reason.
+if run_tool art-seed roman-1962 low-mass LM-001A --out "$sandbox/stale" \
+	--development >/dev/null 2>&1; then
 	cp "$sandbox/sanctuary-master.bak" "$layer/sanctuary-master.yaml"
 	echo "art-seed accepted a composition nobody has looked at" >&2
 	exit 1

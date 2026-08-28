@@ -476,6 +476,53 @@ which is the honest state rather than a rounding of it.
 
 ## Promised work
 
+### 1962 Low Mass pictographic fresh-web art-seed handoff
+
+<!-- promised-deliverable: mass-pictographic-fresh-web-handoff -->
+
+**Generated and gated on 28 August 2026.** The render pipeline was structurally
+ready for the artistic canary and the remaining defect was operational:
+`art-seed` emitted the technical package, and a human then wrote, from memory,
+the prompt that carried it into a fresh web conversation. That prompt has to
+state the repository, the exact commit, the scene's readiness and panel
+manifest, which file is the mandatory edit source, and what is visibly true in
+this particular scene. Written by hand it was rewritten every time, and a
+prompt nobody can diff is a prompt nobody reviewed.
+
+`art-seed` now emits the whole handoff. The package is eight files: the two
+that already carried the drawing, the contract, the skeleton, the provenance
+and the scene-art rules, plus a generated `WEB-AGENT-PROMPT.md` and a
+`PACKAGE-MANIFEST.yaml` that checksums everything else and gives each file a
+declared role. The operator runs one command, attaches the directory, and
+pastes the prompt verbatim.
+
+The prompt's scene facts are generated rather than templated. Actor side, level,
+posture, facing, gaze and holdings; object side, support, pitch and orientation
+immutability; panel count, step count and altar massing all come from the
+compiled contract, the camera model and the sanctuary master. The generator
+knows nothing about Low Mass, two servers, one panel or LM-001A, so it will
+serve the sung and pontifical forms when their contracts exist. Two habits of
+the earlier lanes are kept: it reads the artist's freedoms and the render
+contract's reserved list out of the durable protocol rather than restating them,
+and it refuses to generate at all if the protocol stops stating them readably,
+because a prompt that invents a rule is worse than no prompt.
+
+Three things it learned to be honest about. A panel whose camera declares no
+page mapping — the over-the-shoulder and detail views — has none, so the summary
+states world sides there and says so, rather than inventing a page left. An
+object in somebody's hands has no compiled position, and a summary keyed on
+position alone silently dropped it, which is a licence to draw a carried Missal
+anywhere. And a canonical package names a commit, so it refuses a dirty tree and
+refuses an origin that is a filesystem path rather than a hosted repository; a
+local clone would otherwise have reported its repository as two adjacent
+directory names. `--development` still produces a package, labelled NONCANONICAL
+in the console, the prompt banner, the manifest and the provenance.
+
+Any failure after the directory exists deletes it. A blocked scene, a missing
+underlay, a summary that contradicts its contract, a missing prompt section or a
+file with no declared role all leave nothing behind, because a package that
+looks complete is exactly the one somebody attaches.
+
 ### 1962 Low Mass pictographic sanctuary blocking and publication composition
 
 <!-- promised-deliverable: mass-pictographic-sanctuary-blocking -->

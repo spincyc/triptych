@@ -104,20 +104,34 @@ EXAMPLES = {
             "tools/pictographic art-seed roman-1962 low-mass LM-001A "
             "--out build/example-art-seed",
             (
-                "seeded LM-001A -> build/example-art-seed/LM-001A",
-                "  render-underlay.png  render-underlay.svg  render-contract.yaml  skeleton.svg  provenance.yaml  ART-AGENT-INSTRUCTIONS.md",
-                "  EDIT render-underlay.png; do not compose a fresh image",
+                "ART SEED READY: LM-001A",
+                "",
+                "Package:",
+                "  build/example-art-seed/LM-001A",
+                "  commit 6e896b5534e9 on feature/pictographic (spincyc/triptych)",
                 "  panels 1 (primary) - additional panels forbidden",
                 "  PIPELINE CANARY: render this first; the lane proceeds only at STRUCTURE = PASS",
+                "",
+                "Fresh-web workflow:",
+                "  1. Attach the entire emitted package to a fresh ChatGPT web conversation.",
+                "  2. Open WEB-AGENT-PROMPT.md.",
+                "  3. Paste it verbatim.",
+                "  4. The web agent must EDIT render-underlay.png.",
+                "  5. Generate exactly one candidate.",
+                "  6. Stop for STRUCTURE review.",
             ),
-            "the only sanctioned way to hand a scene to an artistic agent",
+            "the only sanctioned way to hand a scene to an artistic agent; a "
+            "canonical package binds itself to a commit, so it needs a clean "
+            "working tree",
         ),
         Example(
-            "tools/pictographic art-seed roman-1962 low-mass LM-001B "
+            "tools/pictographic art-seed roman-1962 low-mass LM-128A "
             "--out build/example-art-seed",
             (
-                "REFUSED: LM-001B is BLOCKED_FOR_ART and must not be rendered.",
-                "... 4 more lines",
+                "REFUSED: LM-128A is BLOCKED_FOR_ART and must not be rendered.",
+                "Blocking cue(s):",
+                "  - The approved record prescribes a bow to the Host at 'Oremus' but does not grade its depth.",
+                "... 1 more line",
             ),
             "fails closed on a blocked scene, naming the cue and writing nothing",
         ),
@@ -152,6 +166,15 @@ def main() -> int:
         verb.add_argument("form")
         verb.add_argument("scene")
         verb.add_argument("--out", type=Path, default=None)
+        if name == "art-seed":
+            verb.add_argument(
+                "--development",
+                action="store_true",
+                help=(
+                    "seed from an uncommitted tree, producing an explicitly "
+                    "NONCANONICAL package that must not be used for a plate"
+                ),
+            )
 
     ready = with_examples(verbs.add_parser("readiness"), EXAMPLES["readiness"])
     ready.add_argument("calendar")
@@ -212,7 +235,9 @@ def main() -> int:
     if args.verb == "art-seed":
         out = args.out or (ROOT / "build" / "art-seed")
         try:
-            seeded = art_seed(directory, args.scene, out)
+            seeded = art_seed(
+                directory, args.scene, out, allow_dirty=args.development
+            )
         except SeedRefused as refusal:
             print(f"REFUSED: {refusal}", file=sys.stderr)
             return 2
@@ -222,16 +247,30 @@ def main() -> int:
         except ValueError:
             shown = package
         panels = provenance["panel_manifest"]
-        print(f"seeded {args.scene} -> {shown}")
-        print("  render-underlay.png  render-underlay.svg  "
-              "render-contract.yaml  skeleton.svg  provenance.yaml  "
-              "ART-AGENT-INSTRUCTIONS.md")
-        print("  EDIT render-underlay.png; do not compose a fresh image")
+        identity = seeded["identity"]
+        state = "ART SEED READY" if identity["canonical"] else (
+            "ART SEED READY (NONCANONICAL DEVELOPMENT PACKAGE)"
+        )
+        print(f"{state}: {args.scene}")
+        print()
+        print("Package:")
+        print(f"  {shown}")
+        print(f"  commit {identity['seed_commit'][:12]} on "
+              f"{identity['branch']} ({identity['repository']})")
         print(f"  panels {len(panels)} ({', '.join(panels)}) - additional "
               f"panels {provenance['additional_panels']}")
         if provenance["is_pipeline_canary"]:
             print("  PIPELINE CANARY: render this first; the lane proceeds "
                   "only at STRUCTURE = PASS")
+        print()
+        print("Fresh-web workflow:")
+        print("  1. Attach the entire emitted package to a fresh ChatGPT web "
+              "conversation.")
+        print("  2. Open WEB-AGENT-PROMPT.md.")
+        print("  3. Paste it verbatim.")
+        print("  4. The web agent must EDIT render-underlay.png.")
+        print("  5. Generate exactly one candidate.")
+        print("  6. Stop for STRUCTURE review.")
         return 0
 
     if args.verb == "underlay":

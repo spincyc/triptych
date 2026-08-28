@@ -45,6 +45,10 @@ def skeletons(directory: Path):
     return _module(directory / "skeleton.py", "_pictographic_skeleton")
 
 
+def web(directory: Path):
+    return _module(ROOT / "scripts" / "_pictographic_web.py", "_pictographic_web")
+
+
 def underlays(directory: Path):
     return _module(directory / "underlay.py", "_pictographic_underlay")
 
@@ -108,6 +112,12 @@ def require_visual_review(directory: Path, scene_id: str) -> None:
             "`tpt pictographic composition-review --refresh` only after "
             "actually looking at it."
         )
+
+
+def load_yaml(path: Path) -> dict:
+    import yaml
+
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
 def dump(data: dict) -> str:
@@ -248,11 +258,17 @@ class SeedRefused(Exception):
     """The artistic entry path refused to seed. Carries the reason."""
 
 
-def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
+def art_seed(directory: Path, scene_id: str, out: Path,
+             allow_dirty: bool = False) -> dict:
     """Prepare the canonical input package for an artistic agent.
 
+    The package is the whole handoff, including the prompt that carries it into
+    a fresh web conversation. Nothing about the transition is left for a human
+    to reconstruct from memory.
+
     Raises SeedRefused, having written nothing, when the scene may not be
-    seeded.
+    seeded. `allow_dirty` produces an explicitly NONCANONICAL development
+    package instead of refusing an uncommitted tree.
     """
     module = compiler(directory)
     build = module.Compiler()
@@ -265,9 +281,6 @@ def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
         raise SeedRefused(
             f"{scene_id}: the render contract failed to compile: {failure}"
         ) from failure
-
-    # Before anything else about this scene: is the picture itself approved?
-    require_visual_review(directory, scene_id)
 
     readiness = contract["art_readiness"]
     if readiness["status"] != "ready":
@@ -294,6 +307,23 @@ def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
         raise SeedRefused(f"{scene_id}: the panel list is not closed")
     if not contract.get("structural_baseline_commit"):
         raise SeedRefused(f"{scene_id}: missing structural provenance")
+
+    # The gates above are about the SCENE: whether it may be drawn at all.
+    # These two are about the PACKAGE: whether this checkout may build one.
+    # They come second on purpose. A blocked scene seeded from a dirty tree has
+    # two problems, and the one the operator needs told about is the blocked
+    # scene; reporting the working tree instead would hide a liturgical
+    # refusal behind a workflow one.
+    require_visual_review(directory, scene_id)
+
+    handoff = web(directory)
+    try:
+        identity = handoff.repository_identity(ROOT, allow_dirty=allow_dirty)
+        rules = handoff.durable_rules(
+            OWNER / "artistic" / "RENDERING-PROTOCOL.md"
+        )
+    except handoff.PromptRefused as refusal:
+        raise SeedRefused(f"{scene_id}: {refusal}") from refusal
 
     try:
         drawing = skeletons(directory).render(contract)
@@ -417,6 +447,52 @@ def art_seed(directory: Path, scene_id: str, out: Path) -> dict:
     width, height = module.PANEL_W * len(declared), module.PANEL_H
     provenance["render_underlay_width"] = width * module.RASTER_SCALE
     provenance["render_underlay_height"] = height * module.RASTER_SCALE
+    provenance["repository"] = identity["repository"]
+    provenance["branch"] = identity["branch"]
+    provenance["seed_commit"] = identity["seed_commit"]
+    provenance["canonical_package"] = identity["canonical"]
+    provenance["web_prompt"] = "WEB-AGENT-PROMPT.md"
+    provenance["package_manifest"] = "PACKAGE-MANIFEST.yaml"
     (package / "provenance.yaml").write_text(dump(provenance), encoding="utf-8")
     (package / "ART-AGENT-INSTRUCTIONS.md").write_text(instructions, encoding="utf-8")
-    return {"package": package, "provenance": provenance}
+
+    # The fresh-web handoff. Anything that goes wrong from here takes the whole
+    # package with it: a package holding every file but the prompt is exactly
+    # the half-valid seed that sends a human back to writing one by hand.
+    def discard():
+        for stray in sorted(package.iterdir()):
+            stray.unlink()
+        package.rmdir()
+
+    try:
+        camera_model = load_yaml(directory / "camera-model.yaml")
+        master = load_yaml(directory / "sanctuary-master.yaml")
+        summary = handoff.scene_summary(contract, camera_model, master)
+        handoff.verify_summary(contract, summary)
+        prompt = handoff.render_prompt(
+            contract, provenance, identity, summary, rules
+        )
+        handoff.check_prompt_complete(prompt)
+        (package / "WEB-AGENT-PROMPT.md").write_text(prompt, encoding="utf-8")
+        manifest = handoff.package_manifest(
+            package, contract, provenance, identity
+        )
+        (package / "PACKAGE-MANIFEST.yaml").write_text(
+            dump(manifest), encoding="utf-8"
+        )
+    except handoff.PromptRefused as refusal:
+        discard()
+        raise SeedRefused(f"{scene_id}: {refusal}") from refusal
+    except Exception as failure:
+        discard()
+        raise SeedRefused(
+            f"{scene_id}: the fresh-web handoff could not be generated: "
+            f"{failure}"
+        ) from failure
+
+    return {
+        "package": package,
+        "provenance": provenance,
+        "manifest": manifest,
+        "identity": identity,
+    }

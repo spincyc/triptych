@@ -39,6 +39,10 @@ PACKAGE_FILES = (
     "render-underlay.png",
     "provenance.yaml",
     "ART-AGENT-INSTRUCTIONS.md",
+    # The fresh-web handoff: the prompt an operator pastes, and the manifest
+    # that checksums the rest and gives every file a declared role.
+    "WEB-AGENT-PROMPT.md",
+    "PACKAGE-MANIFEST.yaml",
 )
 # The marker skeleton.py emits for each drawn panel.
 PANEL_MARKER = re.compile(r"panel ([a-z0-9-]+)</text>")
@@ -56,7 +60,12 @@ def run(*args: str) -> subprocess.CompletedProcess:
 
 
 def seed(scene: str, out: Path) -> subprocess.CompletedProcess:
-    return run("art-seed", CALENDAR, FORM, scene, "--out", str(out))
+    # --development so a test never depends on whether the developer's tree
+    # happens to be clean. The canonical git binding, which refuses a dirty
+    # tree, is proved against a scratch clone in test_web_handoff.py.
+    return run(
+        "art-seed", CALENDAR, FORM, scene, "--out", str(out), "--development"
+    )
 
 
 def load(path: Path) -> dict:

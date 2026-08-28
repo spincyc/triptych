@@ -181,9 +181,21 @@ HOST_PLAN = (
     "free memory and core count are facts about the host, not the sources",
 )
 
+# The art seed binds itself to the commit it was generated from, so the one
+# line that names that commit moves with every commit. Everything else on the
+# line is pinned: the branch, the repository, and the shape of the hash.
+ART_SEED_COMMIT = (
+    re.compile(
+        r"^  commit [0-9a-f]{12} on feature/pictographic \(spincyc/triptych\)$"
+    ),
+    "a canonical art seed names the commit it was generated from",
+)
+
 VOLATILE: dict[str, dict[int, tuple[re.Pattern[str], str]]] = {
     "tools/pdf-review --explain": {1: HOST_PLAN},
     "tools/pdf-review --output build/example-review build/core-last-20.pdf": {1: HOST_PLAN},
+    "tools/pictographic art-seed roman-1962 low-mass LM-001A --out build/example-art-seed":
+        {5: ART_SEED_COMMIT},
 }
 
 

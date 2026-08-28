@@ -21,6 +21,7 @@ overrides it.
 | Render underlay | `render-contract/low-mass/v1/underlay.py` | Projects a compiled contract into the line drawing the artist edits. Required by `art-seed`. |
 | Sanctuary geometry | `render-contract/low-mass/v1/sanctuary-master.yaml` | The single definition of the sanctuary, and the authority resolving the structural level ordinals into elevations. |
 | Composition review | `render-contract/low-mass/v1/sanctuary-master.yaml` | `underlay_visual_review:` **approved**, against the current geometry digest. `art-seed` refuses when it goes stale. |
+| Fresh-web handoff | `scripts/_pictographic_web.py` | In force. `art-seed` emits the whole package, `WEB-AGENT-PROMPT.md` included; nobody writes the web prompt by hand. |
 | Artistic protocol | `artistic/RENDERING-PROTOCOL.md` | In force. |
 | Artistic rendering | — | **Not started.** No canonical plate is approved. |
 
@@ -36,28 +37,52 @@ git log --oneline -1
 ## Starting an artistic lane
 
 Seed the canary first. This is the only sanctioned way to hand a scene to an
-artistic agent:
+artistic agent, and it now emits the whole handoff, the web prompt included:
 
 ```sh
 ./tools/tpt pictographic art-seed roman-1962 low-mass LM-001A
 ```
 
-That writes one package, at `build/art-seed/<SCENE>/` unless `--out` names
-somewhere else, holding exactly these files:
+Then, in order:
+
+1. attach the **entire** emitted package to a fresh ChatGPT web conversation —
+   all eight files, and nothing else;
+2. open `WEB-AGENT-PROMPT.md` and paste it verbatim; do not summarize it, and do
+   not write a prompt of your own;
+3. the web agent **edits** `render-underlay.png`, and never composes a fresh
+   picture;
+4. it generates exactly one candidate and stops;
+5. review `STRUCTURE`;
+6. only once `STRUCTURE` passes does anyone review `ART`.
+
+The prompt is not reproduced here. It is generated per scene from that scene's
+compiled contract and from git — repository, branch, exact seed commit, scene
+identity, readiness, panel manifest, canary status, and a visible-invariant
+summary of the scene — and a copy in this file would be stale the first time any
+of that moved. The durable rules stay in
+[`../../../artistic/RENDERING-PROTOCOL.md`](../../../artistic/RENDERING-PROTOCOL.md);
+the generator reads the artist's freedoms and the contract's reserved list out
+of its section 6 rather than restating them.
+
+The package is written to `build/art-seed/<SCENE>/` unless `--out` names
+somewhere else, and holds exactly these eight files, in the order of authority
+the prompt itself states:
 
 | File | What it is |
 | --- | --- |
-| `render-underlay.png` | **The edit source.** The projected line drawing, no text anywhere in it. |
+| `render-underlay.png` | **The edit source**, and the authority on what is visible. The projected line drawing, no text anywhere in it. |
 | `render-underlay.svg` | The same drawing as vectors, if the tool prefers them. |
-| `render-contract.yaml` | The compiled geometry in numbers. Supporting authority for review. |
+| `render-contract.yaml` | The compiled geometry in numbers. The numeric and semantic authority at review. |
 | `skeleton.svg` | The diagnostic schematic, with its labels and angles. Supporting authority only, never the conditioning image. |
-| `provenance.yaml` | Plate identity, baseline commit, panel manifest, readiness, and the underlay's hash and dimensions. |
-| `ART-AGENT-INSTRUCTIONS.md` | The generated brief, including the canary note where it applies. |
+| `ART-AGENT-INSTRUCTIONS.md` | The generated scene-art rules, with the canary note where it applies. |
+| `provenance.yaml` | Plate identity, baseline and seed commits, panel manifest, readiness, and the underlay's hash and dimensions. |
+| `PACKAGE-MANIFEST.yaml` | The machine-readable inventory: schema, package type, canonical flag, repository, branch, seed commit, plate and scene ids, structural baseline, render-contract version, readiness, canary flag, mandatory edit source, generation mode, web prompt, panel manifest, both review gates, and a `files` list of path, `sha256` and role. `structure_review` and `art_review` start `PENDING` and are never auto-approved. |
+| `WEB-AGENT-PROMPT.md` | The generated fresh-web prompt: the one document you open and paste. |
 
 Give the artistic agent **that package**, and nothing else — not the structural
-YAML, not a prose summary. Hand `render-underlay.png` to the image tool as the
-**EDIT SOURCE**, and ask for an image edit onto that exact geometry rather than
-a picture in its manner.
+YAML, not a prose summary of your own. `render-underlay.png` goes to the image
+tool as the **EDIT SOURCE**: ask for an image edit onto that exact geometry
+rather than a picture in its manner.
 
 **If the web tool cannot perform an image edit from the supplied PNG, the lane
 STOPS and reports that limitation.** Do not substitute text-to-image
@@ -66,12 +91,43 @@ substitution is what failed the canary, most recently with a correct contract
 and a correct skeleton behind it, and another correct-looking failure costs
 more than a reported limitation.
 
-The command fails closed. A blocked scene refuses with its exact cue and
-exit status 2, and writes no package. A scene whose underlay cannot be
-generated or rasterized, or which holds a visible object with no recognizable
-underlay geometry, refuses the same way and leaves nothing behind. So does a
-composition nobody has looked at, or one whose geometry has moved since it was
-looked at — see the next section. There is no force path.
+The console prints `ART SEED READY: <scene>`, the package path, the commit,
+branch and repository, the panel manifest, the canary line where it applies, and
+the six steps above. It does not print the prompt: the prompt is a file to
+attach and paste, not a block to copy out of a terminal.
+
+### Canonical and development packages
+
+A canonical package names its seed commit, so a reader can check that commit out
+and regenerate it. `art-seed` therefore refuses a dirty working tree rather than
+binding a package to a commit whose tree is not what was packaged.
+
+`--development` seeds from an uncommitted tree and produces an explicitly
+NONCANONICAL package, labelled in the console output, in the prompt's banner, in
+`PACKAGE-MANIFEST.yaml` (`package_type: pictographic-art-seed-development`,
+`canonical: false`) and in provenance. Use it while working on the pipeline;
+never for a real plate.
+
+### It fails closed
+
+The command refuses with exit status 2, writing nothing, when:
+
+- the scene is `BLOCKED_FOR_ART` — it names the exact cue;
+- the composition review is unapproved or stale, see the next section;
+- the render contract will not compile;
+- a render-critical placement is unresolved;
+- a visible object has no recognizable underlay geometry;
+- the panel manifest disagrees with the skeleton;
+- the underlay cannot be generated or rasterized;
+- the working tree is dirty and the run is canonical;
+- the scene summary cannot be generated for a render-critical field;
+- the summary contradicts the contract;
+- a required prompt section is missing;
+- a file in the package has no declared role.
+
+Any failure reached after the package directory exists deletes the partial
+package: a seed holding every file but the prompt is exactly the half-valid
+package that sends a human back to writing one by hand. There is no force path.
 
 Then, per the protocol: render `LM-001A`, decide `STRUCTURE` before `ART`, and
 do not begin style development until `LM-001A` reaches `STRUCTURE = PASS`. If

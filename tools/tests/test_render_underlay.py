@@ -60,6 +60,8 @@ SEED_FILES = UNDERLAY_FILES + (
     "skeleton.svg",
     "provenance.yaml",
     "ART-AGENT-INSTRUCTIONS.md",
+    "WEB-AGENT-PROMPT.md",
+    "PACKAGE-MANIFEST.yaml",
 )
 
 PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
@@ -538,7 +540,10 @@ class RenderUnderlayTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as workspace:
             out = Path(workspace)
-            result = run("art-seed", CALENDAR, FORM, scene, "--out", str(out))
+            result = run(
+                "art-seed", CALENDAR, FORM, scene, "--out", str(out),
+                "--development",
+            )
             self.assertNotEqual(result.returncode, 0, result.stdout)
             self.assertIn("REFUSED", result.stderr)
             self.assertFalse((out / scene).exists())
@@ -551,7 +556,8 @@ class RenderUnderlayTests(unittest.TestCase):
     def test_the_seed_package_ships_the_underlay_as_the_edit_source(self) -> None:
         with tempfile.TemporaryDirectory() as workspace:
             out = Path(workspace)
-            result = run("art-seed", CALENDAR, FORM, CANARY, "--out", str(out))
+            result = run("art-seed", CALENDAR, FORM, CANARY, "--out", str(out),
+                         "--development")
             self.assertEqual(result.returncode, 0, result.stderr)
 
             package = out / CANARY

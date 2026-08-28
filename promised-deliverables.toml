@@ -1916,3 +1916,67 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/camera-calibration.py",
     "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/review/camera-calibration-v1.svg",
   ]
+
+[[deliverables]]
+id = "mass-pictographic-fresh-web-handoff"
+owner = "scripts/_pictographic_web.py"
+promise = "Make art-seed emit the complete fresh-web handoff, including a generated prompt that carries the repository, the exact commit, the scene's identity and its visible facts, so that no part of the transition from repository to web conversation is left for a human to reconstruct."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "prompt-is-generated-not-remembered"
+  criterion = "Every successful art-seed writes WEB-AGENT-PROMPT.md, pasteable verbatim into a fresh web conversation, carrying project identity, package inventory and authority order, the mandatory edit source, scene identity, a scene-specific visible-invariant summary, artistic freedoms, forbidden changes, the raw-art rule, both review gates and the one-candidate stop."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic_web.py",
+    "scripts/_pictographic.py",
+    "tools/tests/test_web_handoff.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "facts-come-from-the-scene"
+  criterion = "The visible-invariant summary is generated from the compiled contract, the camera model and the sanctuary master. Actor side, level, posture, facing and holdings, object side, support and orientation immutability, panel count and step count all come from scene data, and the generator carries no scene-specific prose."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic_web.py",
+    "tools/tests/test_web_handoff.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "durable-rules-stay-in-the-protocol"
+  criterion = "The artist's freedoms and the render contract's reserved list are read out of RENDERING-PROTOCOL.md rather than restated, generation fails if the protocol stops stating them readably, and the protocol keeps no commit hashes or scene-specific facts."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic_web.py",
+    "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/artistic/RENDERING-PROTOCOL.md",
+    "tools/tests/test_web_handoff.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "packages-bind-to-a-commit"
+  criterion = "A canonical package names a hosted repository and an exact commit and refuses a dirty working tree; --development produces an explicitly NONCANONICAL package labelled in the console, the prompt, the manifest and the provenance, and a remote that is not a hosted repository URL is refused rather than reported as a repository name."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic_web.py",
+    "tools/pictographic",
+    "tools/tests/test_web_handoff.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "package-integrity-is-auditable"
+  criterion = "PACKAGE-MANIFEST.yaml records the package type, canonicity, repository, branch, seed commit, scene identity, readiness, canary status, edit source, generation mode, panel manifest, both PENDING review gates, and a sha256 and declared role for every other file; a file with no declared role fails generation."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic_web.py",
+    "tools/tests/test_web_handoff.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "half-valid-seeds-are-never-attachable"
+  criterion = "Any failure after the package directory exists deletes it, so a blocked scene, a missing underlay, a contradicted summary, a missing prompt section or an unclassified file all leave nothing behind rather than a package that looks complete."
+  status = "pass"
+  evidence = [
+    "scripts/_pictographic.py",
+    "tools/tests/test_web_handoff.py",
+    "tests/tools/pictographic.test",
+  ]

@@ -333,6 +333,118 @@ human must decide. A blocked scene is not a defect and must not be cleared by
 guessing, and never from the fenced pre-v0.21 guides. `art-readiness.yaml` is
 derived by the compiler, so the block cannot drift from the reason for it.
 
+## Seeding an artistic lane
+
+`art-seed` emits the entire fresh-web handoff, the prompt included. A human used
+to write that prompt by hand, restating the repository, the commit, the scene's
+readiness, its panel manifest and what is visibly true in it. Written by hand it
+was rewritten every time, and a prompt nobody can diff is a prompt nobody
+reviewed. It is now generated from the compiled contract and from git.
+
+```sh
+./tools/tpt pictographic art-seed roman-1962 low-mass LM-001A
+```
+
+The operator workflow is six steps and does not vary by scene:
+
+1. run the command above;
+2. attach the entire emitted package to a fresh ChatGPT web conversation;
+3. open `WEB-AGENT-PROMPT.md` and paste it verbatim;
+4. the web agent **edits** `render-underlay.png`, and never composes a fresh
+   picture;
+5. it generates exactly one candidate and stops;
+6. a human reviews `STRUCTURE`, and only once `STRUCTURE` passes does anyone
+   review `ART`.
+
+This README does not reproduce the prompt. It is generated per scene from that
+scene's contract, and a copy kept here would be a second version to keep in
+step with the first.
+
+### What the package holds
+
+Eight files, written to `build/art-seed/<SCENE>/` unless `--out` names
+somewhere else:
+
+| File | What it is |
+| --- | --- |
+| `render-underlay.png` | The mandatory image-edit source, and the authority on what is visible. |
+| `render-underlay.svg` | The same drawing as vectors. |
+| `render-contract.yaml` | The compiled geometry in numbers: the numeric and semantic authority when a plate is reviewed. |
+| `skeleton.svg` | The diagnostic schematic, with its labels and angles. Supporting reference only, and never the conditioning image. |
+| `ART-AGENT-INSTRUCTIONS.md` | The generated scene-art rules, with the canary note where it applies. |
+| `provenance.yaml` | Plate identity, readiness, panel manifest, seed commit, and the underlay's hash and dimensions. |
+| `PACKAGE-MANIFEST.yaml` | The machine-readable inventory: `schema`, `package_type`, `canonical`, `repository`, `branch`, `seed_commit`, `plate_id`, `scene_ids`, `structural_baseline_commit`, `render_contract_version`, `art_readiness`, `is_pipeline_canary`, `mandatory_edit_source`, `generation_mode`, `web_prompt`, `panel_manifest`, `additional_panels`, `structure_review`, `art_review`, and a `files` list of path, `sha256` and role. Both review gates start `PENDING` and are never auto-approved. |
+| `WEB-AGENT-PROMPT.md` | The generated fresh-web prompt: the one document the operator opens and pastes. |
+
+That order is the order of authority, and the prompt states it as well.
+`render-underlay.png` owns what is visible; `render-contract.yaml` settles a
+numeric question during review; `skeleton.svg` is a debugging view and is never
+the image the model conditions on.
+
+### The prompt generator knows nothing about Low Mass
+
+`scripts/_pictographic_web.py` writes the prompt. It is handed a compiled
+contract, the camera model and the sanctuary master, and it knows nothing about
+Low Mass, two servers, one panel or `LM-001A`. Every scene-specific sentence —
+where each actor stands and faces, which page side that lands on, what each
+actor holds or carries, where every visible object sits and what supports it —
+is generated from scene data, so the same generator serves the sung and
+pontifical forms as soon as their contracts exist.
+
+The division of labour with the protocol is deliberate.
+[`../../../artistic/RENDERING-PROTOCOL.md`](../../../artistic/RENDERING-PROTOCOL.md)
+holds the timeless rules, and must never carry a commit hash or a scene-specific
+fact. `WEB-AGENT-PROMPT.md` holds the current facts: repository, branch, the
+exact seed commit, scene identity, readiness, the panel manifest, canary status,
+and a visible-invariant summary of this scene. The two bolded lists in the
+protocol's section 6 — what the artist owns, and what the render contract
+reserves — are read out of the protocol rather than restated in the generator,
+so the two cannot drift. If the protocol ever stops stating them in a form the
+generator can read, generation fails rather than inventing the rule.
+
+### The package names an exact commit
+
+A canonical package claims a seed commit, and the claim has to be worth
+something: a reader must be able to check that commit out and regenerate the
+same package. So `art-seed` refuses a dirty working tree rather than naming a
+commit whose tree is not the tree that was packaged.
+
+`--development` seeds from an uncommitted tree and produces an explicitly
+NONCANONICAL package, labelled as such in the console output, in the prompt's
+banner, in `PACKAGE-MANIFEST.yaml` (`package_type:
+pictographic-art-seed-development`, `canonical: false`) and in provenance. It is
+for working on the pipeline, and must never be used for a real plate.
+
+### Fail closed
+
+`art-seed` refuses, writing nothing, when:
+
+- the scene is `BLOCKED_FOR_ART`;
+- the composition review is unapproved or stale;
+- the render contract will not compile;
+- a render-critical placement is unresolved;
+- a visible object has no recognizable underlay geometry;
+- the panel manifest disagrees with the skeleton;
+- rasterization fails;
+- the working tree is dirty, in canonical mode;
+- the scene summary cannot be generated for a render-critical field;
+- the summary contradicts the contract;
+- a required prompt section is missing;
+- a file in the package has no declared role.
+
+Any failure reached after the package directory exists deletes the partial
+package. A half-valid seed — every file but the prompt, say — is exactly the
+package that sends a human back to writing a prompt by hand, so none is ever
+left attachable.
+
+### What the console prints
+
+`ART SEED READY: <scene>`, the package path, the commit, branch and repository,
+the panel manifest, the canary line where it applies, and the six-step
+fresh-web workflow. It deliberately does not dump the prompt to stdout: the
+prompt is a file to attach and paste, and a copy scrolled past in a terminal is
+the copy somebody edits.
+
 ## The camera calibration sheet
 
 `camera-calibration.py` writes `review/camera-calibration-v1.svg`: six
@@ -363,6 +475,7 @@ From the repository root:
 ./tools/tpt pictographic render-contract roman-1962 low-mass LM-001A
 ./tools/tpt pictographic skeleton roman-1962 low-mass LM-001A
 ./tools/tpt pictographic readiness roman-1962 low-mass
+./tools/tpt pictographic art-seed roman-1962 low-mass LM-001A
 ```
 
 To regenerate and to prove the tracked output is current:

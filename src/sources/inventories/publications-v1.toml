@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-27"
+audited_on = "2026-08-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
 source_surface_file_count = 2089
-snapshot = "sha256:0119c95337b73b2b5f6bfc1d3a55615850ca74a9652ffbfca4598ae03d9290be"
+snapshot = "sha256:27a2e350b924947972c01894dc149cea7e607fb5bf1d6c6f9390b937c2846882"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9768,13 +9768,13 @@ owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/HANDOFF.md"
-sha256 = "b8dd300078847c432241762241cbd228b5eb42b8c5b1388d29ef8c42d0c0d1e5"
+sha256 = "5b6c39faef37a1f9ff2ae5d1fe4c218a32976f7a55342e53c6568dee99299484"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/mass-pictographic-dictionary/render-contract/low-mass/v1/README.md"
-sha256 = "185f67059e9a261e8fc006b3b65623c5ebe0baf1df5bab2c1ccd264b7a487fbb"
+sha256 = "560b95d52347747f84a2a73406822f1ca50e5f7878b6eb85f5689ad22fa07cb7"
 kind = "rendered-content"
 owners = ["owner.liturgy.roman-rite.1962.mass-pictographic-dictionary"]
 
