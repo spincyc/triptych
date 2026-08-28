@@ -203,10 +203,12 @@ transmitted text and is not a New Advent artefact.
 | binding rows citing it | 1, carrying no date |
 | gap rows citing it | 2 |
 
-The repair reports "52 total / 44 retained / 8 withdrawn". That does not
-reproduce: 46 stand at HEAD, and the manifest itself lists 11 withdrawn rows
-citing the artifact. The arithmetic reconciles on no reading. A ledger defect,
-not a corpus defect.
+The repair reports "52 total / 44 retained / 8 withdrawn". Traced across the
+three revisions: **54** claims cite the artifact at `2330d63a5`, **52** at
+`214797e78` — the review target — and **46** at HEAD, six having been withdrawn
+in the repair lane. So the 52 is right at the target and the 44 is wrong: it is
+46. A ledger defect, not a corpus defect, and one a cold reviewer is told to
+reconcile an enumeration against.
 
 **The withdrawals are right.** Every figure Howlett reaches on Egyptological or
 Assyriological ground — Exodus about 1277, Saul 1020, David 1002, Solomon 962,
@@ -259,14 +261,35 @@ the captivity that destruction caused. No combination of figures in the article
 reaches 536 as a destruction date; 536 is reachable only as the first year of
 Cyrus.
 
-Production holds it as `alternate`, recorded exactly as printed, with the note:
-"It contradicts the same article, which elsewhere gives 586 and puts the return
-under Cyrus at 536; it has the look of a printing error, but this corpus does not
-silently repair a source." That is the right disposition. Deleting it suppresses
-a ranked source's statement; reading it silently as 586 is exactly the "silent
-harmonisation of two claims into a third nobody asserted" the profile forbids.
-`basis: derived` occurs zero times in `events.yaml`, so no harmonising third
-figure exists anywhere.
+Production holds it as `alternate`, recorded exactly as printed, with a candid
+note naming the contradiction and declining to act. Reading it silently as 586
+would indeed be the "silent harmonisation of two claims into a third nobody
+asserted" the profile forbids, and `basis: derived` occurs zero times in
+`events.yaml`, so no harmonising figure exists anywhere.
+
+**But holding it is not the only alternative to harmonising it, and the present
+state does not survive.** Two lanes split on this, and the ruling is
+CHANGES_REQUIRED (minor). Every disposition the profile offers presents a figure
+as a candidate answer; there is no "recorded but not held" disposition. So
+`query 4Kings.25.9` returns "the destruction of Jerusalem 536 B.C. | alternate"
+indistinguishably beside 586, 587, 588 and the preferred A.M. 3416, with the
+disclosing note **not in the default view** — the corpus asserting, at the
+consumer boundary, a destruction date no authority holds, Howlett least of all.
+§4.4's "preserve the disagreement" presupposes a disagreement between
+authorities, and here there is none.
+
+**Required correction:** withdraw the claim and record the printed 536, the
+article's own 586, and its 536 for Cyrus's first year in the event's subject
+note — the shape this corpus already uses for the withdrawn Howlett figures.
+That preserves the printing verbatim, keeps the contradiction on the record, and
+stops the tool answering a date nobody holds. Withdrawal is not repair.
+
+This is what consistency requires: MF-2 withdraws `creation#1` because a source's
+non-assertion was authored as a claim and then displayed, and a compositor's slip
+is a non-assertion of the same kind. A maintainer may reasonably fix this from the
+other end instead, by making the disclosure reach the consumer. What cannot stand
+is a record saying the figure is probably a misprint while the tool presents it
+as a date.
 
 ## Sloet — whole-artifact ruling
 
@@ -530,6 +553,36 @@ lane will re-derive the same inconsistency.
 - **required correction** Put the review TSVs under the differ, or add the
   promised reproduction check as a test.
 - **severity** minor
+
+### MF-12 — the manifest's `prior_result` column is invented for 25 rows and undocumented for 38 more
+
+- **case** the review apparatus, `scripts/build_final_acceptance_manifest.py` (FA-086, FA-135)
+- **defect** `cold-audit-findings.tsv` holds 104 rows and **every one is
+  `CHANGES_REQUIRED`**. The builder never reads that column:
+  `findings_provenance` collects ids only, and the declared branch writes
+  `"CHANGES_REQUIRED" if fid in FAILED_ROWS else "PASS"`, where `FAILED_ROWS`
+  holds re-review ids alone. The result, measured at HEAD:
+
+  | manifest rows citing a cold-audit finding | 79 |
+  | --- | ---: |
+  | reporting `prior_result: PASS` | 63 |
+  | of those, **also** citing a re-review id that did pass them | 38 |
+  | of those, citing **only** a cold-audit id — no prior PASS exists anywhere | **25** |
+
+  For the 25 the column is simply invented; all 25 are architecture rows, the
+  same rows the completeness checker cannot police. For the other 38 the value is
+  defensible under one reading — "the most recent prior verdict" — but **the
+  manifest header never defines the column**, so a reviewer cannot tell which
+  reading applies to the row in front of them.
+- **why it matters** `prior_result` is one of the two signals the acceptance
+  brief tells a reviewer to steer by: a prior `PASS` means "nobody has failed
+  this", a prior `CHANGES_REQUIRED` means "check the fix". On 25 rows that signal
+  points the wrong way, and on 38 more it is unreadable.
+- **required correction** Join `cold-audit-findings.tsv`'s own result column in
+  `findings_provenance` so it sets `prior_result`, exactly as the re-review result
+  already does; define the column in the manifest header; regenerate. The row set
+  does not change.
+- **severity** medium
 
 ## Promised-deliverable recommendations
 
