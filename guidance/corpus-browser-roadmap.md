@@ -257,7 +257,7 @@ findings remain backlog, and the twenty separately owned concerns were not
 touched. Release bindings were not refreshed; no merge, deploy, or release
 signing occurred.
 
-Fresh validation on the candidate: `scripts/_catena.py check` reports
+Fresh validation on the candidate: `python3 scripts/_catena.py check` reports
 1,351 fragments / 1 book / 73 canon entries; `test_catena.py` 56/56 and the
 curated suite 419/419 under node; static browser checks 5/5; real-Chromium
 route-only runs over `/catena/index.html` produced the same 121 assertion
@@ -271,6 +271,74 @@ passing (2,700 and 8,800) and `catena-model.js` uncapped. Status: **awaiting
 independent integration review**, per the fixed loop (one independent review,
 at most one bounded correction pass, one confirmation review, merge). E1 is
 not accepted and not integrated.
+
+The independent integration review (branch `review/catena-e1-integration`,
+commit `c3698563e3b45e35a672db37616e39ef27eb3d08`) then returned **CHANGES
+REQUIRED** against candidate head
+`9810a29c38f6138069d11cb7c735d8bb8b190326`: two `MERGE_BLOCKER` findings, two
+`BOUNDED_INTEGRATION_CORRECTION` findings, `GenuinelyLateStaleWorkTest`
+ratified, and one new `HARDENING_BACKLOG` finding (the empty no-JavaScript
+`h2`). The one authorized bounded correction pass fixed exactly those four and
+opened no lane:
+
+- **Translation-absence identity.** `renderAbsences` rendered
+  `.absence-author` and `.absence-work` as adjacent element children, so a row
+  flattened to `Ambrose of MilanHexameron` for a screen reader, a copy, or a
+  text-only rendering. A semantic `' — '` text node now stands between them,
+  written only where both halves are present, matching the `renderLeads`
+  convention — a DOM delimiter, not a CSS gap, because a gap is not text.
+  `AbsenceRowFlatteningTest` pins the flattened text and the child-node order on
+  the real production route, with an adjacent-identity control over further real
+  rows and the disclosure state asserted unchanged.
+- **Keyboard recovery focus.** Recovery lands on `#reading`, where the shared
+  shell's `.reading:focus { outline: none }` out-ranked the universal
+  `:focus-visible` rule and the browser drew nothing. One rule,
+  `.catena-page .reading:focus-visible { outline: 3px solid var(--focus); }`,
+  restores a keyboard-only ring in the section's own violet ink; the shared
+  shell is untouched, the mouse case stays undecorated, and the offset survives
+  from the universal rule. `tools/tests/catena_recovery_focus_gate.mjs` drives
+  real Chromium over the BUILT artifact and reads `getComputedStyle` on the
+  element the browser reports as active, on the success path and the reviewed
+  failure/recovery path, requiring a painted ring distinguishable from the
+  region at rest at 3:1 contrast or better (measured 10.95:1); it exits 3, and
+  its Python test skips with the enabling variable named, when no browser or no
+  build is present.
+- **Curated-suite cleanup.** The forbidden candidate SHA pin is gone and not
+  replaced; twelve hostile/evidence-only classes, one hostile method and every
+  harness seam that existed only for them are gone; the over-wide 2026-08-11
+  print pin is narrowed to the one focus rule that now exists;
+  `GenuinelyLateStaleWorkTest` is retained as ratified; and the ordinary
+  coverage lost with the hostile classes is restored (chronology, absence and
+  paragraph counts, author-filter recovery, leads copy, shared-field generator
+  drift, null/list bootstrap truth, visible failure text, unregressed
+  Scripture). The disproved `8 hostile + 40 non-manifest` split is replaced by a
+  measured inventory counted the same way for both files: 71 runnable classes /
+  394 tests here against 105 / 604 in wave-1, so 36 runnable classes and 221
+  tests omitted, 2 classes and 13 tests added by the correction, and three
+  dependency-only bases each side. All nine required coverage categories remain
+  represented.
+- **Record integrity.** The candidate ledger entry now carries its one
+  `<!-- promised-deliverable: … -->` work-register marker, the recorded
+  generator command is the executable `python3 scripts/_catena.py check` rather
+  than the mode-644 `scripts/_catena.py check`, and full discovery was rerun at
+  the exact base and the exact corrected head.
+
+Fresh validation at the corrected head: `python3 scripts/_catena.py check`
+reports 1,351 fragments / 1 book / 73 canon entries; regeneration of
+`src/web/data` is byte-identical (zero changed paths); `test_catena.py` 56/56
+and the corrected curated suite 394/394 including the live Chromium gate; static
+browser checks 5/5; governed gzip-9 budgets CSS 7,921/8,000 whole and
+2,698/2,700 stripped, JS 12,992/13,000 whole and 7,843/8,800 stripped, no
+ceiling raised; real-Chromium route-only runs over `/catena/index.html` produce
+the same 121 assertion identities and the same 95/14/12 statuses at the exact
+base and the corrected head, zero identity and zero status changes; full
+discovery ran 1,736 tests at the base and 2,134 at the corrected head, both
+reporting 46 failures, 13 errors and 11 skips over the identical 24 failure and
+13 error identities, so zero new integration-caused failure identities and zero
+Catena failures. Status:
+**awaiting one confirmation Codex review** scoped to these four corrections and
+a regression check. E1 remains unaccepted and unintegrated; no merge, deploy,
+release signing, or self-acceptance occurred.
 
 ## Structured-data limits and blocked follow-ups
 
@@ -332,6 +400,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
 | 2026-08-28 | E1 Catena integration candidate | Built `integration/catena-e1` from the exact convergence-authorized main base per the review's bring-across manifest: final Catena route/model/HTML/CSS, the generator voice-authority change with its deterministic generated data, the generator-contract test expansion, and 419 curated production regressions. Fresh validation passed structure (1,351/1/73), focused Catena (56 and 419), static checks 5/5, identical 121-identity Chromium route runs at base and candidate (95/14/12, zero changes), governed CSS/JS budgets, and full discovery with zero new failure identities and zero Catena failures. Status **awaiting independent integration review**; not accepted, not integrated, no merge/deploy/release binding. | Convergence review `f1a5bbad763b847ded8799748223898de6ad4de9`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; branch `integration/catena-e1`; candidate head is the commit carrying this row. |
+| 2026-08-28 | E1 Catena bounded integration correction | Independent integration review `c3698563e3b45e35a672db37616e39ef27eb3d08` returned **CHANGES REQUIRED** (2 `MERGE_BLOCKER`, 2 `BOUNDED_INTEGRATION_CORRECTION`, `GenuinelyLateStaleWorkTest` ratified, one new `HARDENING_BACKLOG`). The one authorized bounded pass fixed exactly those four: a semantic DOM delimiter between the absence author and work (`Ambrose of MilanHexameron` no longer flattens into one word), a keyboard-only visible focus ring for recovery on `#reading` proved in real Chromium on the success and failure paths, curated-suite cleanup with the SHA pin and hostile machinery removed, lost ordinary coverage restored and a measured 71-class/394-test inventory replacing the disproved `8 + 40` split, and record integrity (work-register marker, executable `python3 scripts/_catena.py check`, discovery rerun at exact base and head). Zero new integration-caused failure identities; zero Chromium route identity or status changes; no ceiling raised. Status **awaiting one confirmation Codex review**; not accepted, not integrated, no merge/deploy/release binding. | Integration review `c3698563e3b45e35a672db37616e39ef27eb3d08`; reviewed candidate head `9810a29c38f6138069d11cb7c735d8bb8b190326`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; branch `integration/catena-e1`; corrected head is the commit carrying this row. |
 
 ## Next Codex tasks
 

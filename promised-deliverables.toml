@@ -1537,3 +1537,43 @@ state = "candidate"
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
   ]
+
+  [[deliverables.requirements]]
+  id = "reviewed-merge-blockers-corrected"
+  criterion = "The two MERGE_BLOCKER findings of integration review c3698563e3b45e35a672db37616e39ef27eb3d08 are corrected: translation-absence rows carry a semantic DOM delimiter so a row's flattened text never reads the author and the work as one word, and keyboard recovery onto the reading region draws a visible keyboard-only focus indicator of sufficient contrast in real Chromium on both the success and the failure/recovery path, without changing the shared shell, removing the focus-management behaviour, or raising a governed budget ceiling."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "tools/tests/test_catena_production.py",
+    "tools/tests/catena_recovery_focus_gate.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curated-suite-cleanup-and-measured-inventory"
+  criterion = "The curated suite carries no candidate or source SHA pin and no synthetic hostile or evidence-only machinery, retains GenuinelyLateStaleWorkTest with its GUARDED dependency, restores the ordinary coverage the first curation lost, keeps all nine required production coverage categories represented, and records an inventory counted the same way for both files rather than the disproved 8-hostile-plus-40-non-manifest split."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "record-integrity-at-the-exact-corrected-head"
+  criterion = "The ledger entry carries exactly one work-register marker in PROJECT-WORK.md, the recorded generator command is executable as written, and full discovery is rerun at the exact integration base and the exact corrected head with zero new integration-caused failure or error identities."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "scripts/_catena.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "correction-stays-bounded"
+  criterion = "The pass changes only the four authorized corrections: no V17 semantic lane, no broadened merge bar, no hardening or evidence-tooling backlog work, no separately owned concern touched, no release binding refreshed, and no merge, deployment, release signing, or self-acceptance."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
