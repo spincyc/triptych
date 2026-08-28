@@ -63,6 +63,17 @@ but an asymptote, and the marginal value of the four-hundredth Sunday guide is a
 small fraction of the first. A library that can be finished is worth more than
 one that cannot.
 
+### Authorized targets
+
+Each line below records one maintainer decision to open the boundary for
+one provider and one permanent identity. A line is the whole
+authorization: it opens that provider's target and nothing else — not the
+other provider, not a neighbouring identity, not the series it belongs
+to. A permanent identity in the registry is not itself an authorization,
+and an identity with no line here is closed.
+
+- Authorized 2026-08-27: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost`.
+
 ## How to find out what exists
 
 **Derive it; do not read it from a table here.** What each provider has
