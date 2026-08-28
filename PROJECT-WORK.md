@@ -1827,13 +1827,14 @@ restriction, or another remedy remains a maintainer/counsel release-policy
 decision; the required fast-forward workflow deliberately does not rewrite it.
 
 The exact successor review handoff is
-`build/agent-handoffs/20260828T170544Z-complete-missal-final-review/`, with a
+`build/agent-handoffs/20260828T172422Z-complete-missal-final-review/`, with a
 verified one-root ZIP beside it. Its 15-entry manifest has SHA-256
-`2d2826b1cefd67998e0c769ccd3541b0216e537da3f938e49383320f47e30f83`;
+`9e53c26fd3588f009c770f22a6cf4a7bb3ad8acd48f8c85919e69a88f4d4bd03`;
 the ZIP has SHA-256
-`09db34ca505ffedd84cf1aaa1bcdc3be7adafa2ca58758660d42862e6fb8d90d`.
-It supersedes the preserved `20260828T164734Z` package, which superseded the
-earlier `20260828T045009` recovery package. This is
+`e0d42528ccabb6889f8dadd771a6f94b1c068e6744c76e52b1fbf51c17075907`.
+It supersedes the preserved `20260828T170544Z` package, which superseded
+`20260828T164734Z`; that package superseded the earlier `20260828T045009`
+recovery package. This is
 AI-assisted and automated review evidence, not human, priestly, specialist,
 intended-reader, physical-use, ecclesiastical, or new exact-snapshot human
 approval.
