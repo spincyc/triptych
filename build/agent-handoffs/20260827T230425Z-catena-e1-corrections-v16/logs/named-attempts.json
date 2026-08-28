@@ -1,0 +1,7 @@
+{
+    "_why": "Attempt ids this package legitimately DISCUSSES but was not produced by. `authority-coherence.py` reads every prose sentence that puts an attempt id near the word `authoritative` and refuses any that names an attempt other than the one that sealed this archive -- which is exactly right for a claim about THIS package, and wrong for a record of a PREDECESSOR lane's history. Every entry here is a deliberate mention with its reason, in the same shape as logs/named-commits.json, and an id not listed here is still refused. This lane's own attempts are not listed: they are what this package IS, and the sealing attempt is named in PROVENANCE.md by the assembler itself.",
+    "attempts": {
+        "package-20260826T195048Z-04wzq5x4": "A V15 package attempt, ordinal 04, recorded in this package's complete predecessor history. It reached final authority at 19:52:06Z and was superseded one second later when the authority-coherence gate refused it. It is named here because a history that omitted the attempt which briefly held authority would be the defect this lane exists to correct; V15's own shipped summary recorded it as `sealed` and never mentioned that it had been authoritative.",
+        "package-20260826T195656Z-06v11wpe": "The V15 package attempt that sealed the reviewed V15 archive, ordinal 06. Named because this package identifies the artifact it supersedes by the attempt that produced it as well as by its digest. It is authoritative in the V15 lane and in no sense authoritative here."
+    }
+}

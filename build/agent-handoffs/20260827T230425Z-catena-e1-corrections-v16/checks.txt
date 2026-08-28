@@ -1,0 +1,712 @@
+Every command this lane ran UP TO THE INSTANT THIS FILE IS COMPOSED,
+with its numeric exit, the log it wrote, the commit it ran at, and
+the state of the working tree read immediately before and immediately
+after it.
+
+WHAT `recorded:` MEANS, ON EVERY ROW. V12 opened by claiming "Every
+command this lane ran, its exact invocation" and then rendered three
+different kinds of thing identically: real invocations from the
+battery ledgers, package-phase strings with this lane's values elided
+to bare capitals, and prose. Its own epilogue admitted omitting four
+commands and dropped seven more without saying so. Each row now
+states which kind its command string is:
+
+  EXECUTABLE   a VALIDATED EXEC RECORD is recorded beside the
+               prose: a cwd naming one of the root variables below,
+               an argv list or an expandable shell form, and the
+               environment the command needed. Re-runnable, and
+               `logs/replay-command.py` re-runs it.
+  ELIDED       capitalised tokens stand in for this lane's values,
+               or a plausible command string carries no exec record.
+               Either way not re-runnable as shipped
+  PROSE        a description, not an invocation; not re-runnable
+  NON-EXECUTABLE  a command was recorded and FAILED validation. The
+               reason names the fault by code: quoted-variable,
+               prose-prefix, no-command-head, malformed-argv,
+               undefined-variable, undefined-cwd
+  NOT RECORDED no command string was recorded for this step
+
+WHAT IS NOT IN THIS FILE is listed at the end, by phase and by name,
+rather than left for a reader to notice missing.
+
+COMPOSED, NOT TYPED. `logs/checks.py` reads the ordering ledgers the
+two batteries wrote as they ran and the logs those ledgers name. V6
+wrote this member by hand and its review found five counts wrong
+across the package; the answer for this one is that nobody writes it.
+
+THE TREE STATE ON A ROW IS THAT ROW'S. V10 read the porcelain result
+once, at preflight, and stamped it on every row -- including the two
+parent rows that run after a tracked file has been overwritten, both
+of which printed `clean`. Each row below carries the reading the
+battery took either side of that row's own command.
+
+parent  b9202882badbbbc364f1dd3d9057d2710ee47552
+head    cc1f2fb8625f044558c26edd358b99cd7dcc7646
+
+======================================================================
+PARENT battery — logs/order-parent.txt
+======================================================================
+
+attempt    : parent-20260827T193049Z-15pnpphq  (ordinal 15; its transcripts are under logs/attempt-15/)
+lane       : V16
+expected   : b9202882badbbbc364f1dd3d9057d2710ee47552
+preflight  : sha=b9202882badbbbc364f1dd3d9057d2710ee47552  porcelain=clean  cwd=$PARENT_REPO
+postflight : sha=b9202882badbbbc364f1dd3d9057d2710ee47552  porcelain=clean  drift=none
+build-state: COLD: build/example-ordinary did not exist before make-check; the divergence figure this attempt records is the cold figure
+naming     : every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["python3", "-m", "unittest", "discover", "-s", "tools/tests", "-p", "test_catena*.py", "-v"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 0
+    order   : 1
+    started : 2026-08-27T19:30:49Z
+    ended   : 2026-08-27T19:30:55Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/focused-catena-parent.log
+    result  : Ran 615 tests in 5.861s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["python3", "scripts/_catena.py", "check"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 0
+    order   : 2
+    started : 2026-08-27T19:30:55Z
+    ended   : 2026-08-27T19:30:59Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/catena-check-parent.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["tools/tpt", "check-promised-deliverables"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 0
+    order   : 3
+    started : 2026-08-27T19:30:59Z
+    ended   : 2026-08-27T19:30:59Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/promised-parent.log
+    result  : Promised-deliverable ledger valid: 40 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["python3", "-m", "unittest", "discover", "-s", "tools/tests"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 1
+    order   : 4
+    started : 2026-08-27T19:30:59Z
+    ended   : 2026-08-27T19:40:49Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/full-discovery-parent.log
+    result  : Ran 1966 tests in 589.247s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["make", "-k", "check"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 2
+    order   : 5
+    started : 2026-08-27T19:40:49Z
+    ended   : 2026-08-27T19:46:41Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/make-check-parent.log
+    result  : Ran 5 tests in 0.587s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 40 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["make", "check-release-bindings"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 2
+    order   : 6
+    started : 2026-08-27T19:46:41Z
+    ended   : 2026-08-27T19:46:43Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/release-bindings-parent.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["make", "public-site"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 0
+    order   : 7
+    started : 2026-08-27T19:46:43Z
+    ended   : 2026-08-27T19:46:49Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/public-site-parent.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json" > /dev/null; gate=$?; python3 "$TOOLS_ANCHOR/gate-summary.py" "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-shell: node tools/tests/corpus_browser_gate.mjs --json-out "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json" > /dev/null; gate=$?; python3 "$TOOLS_ANCHOR/gate-summary.py" "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+    exec-env: {"TRIPTYCH_CHROME": "/usr/bin/chromium"}
+    exec-uses: $EVIDENCE_ROOT, $PARENT_REPO, $TOOLS_ANCHOR
+    exit    : 1
+    order   : 8
+    started : 2026-08-27T19:46:50Z
+    ended   : 2026-08-27T19:48:30Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/browser-gate-parent.log
+    report  : logs/attempt-15/browser-gate-parent.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- gzip-sizes
+    command : python3 "$TOOLS_ANCHOR/gzip-sizes.py" src/web/browser/catena
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["python3", "$TOOLS_ANCHOR/gzip-sizes.py", "src/web/browser/catena"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO, $TOOLS_ANCHOR
+    exit    : 0
+    order   : 9
+    started : 2026-08-27T19:48:30Z
+    ended   : 2026-08-27T19:48:30Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/gzip-sizes-parent.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12958 stripped 7724
+
+--- head-tests-against-parent
+    command : cp "$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-shell: cp "$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO, $PARENT_REPO
+    exit    : 1
+    order   : 10
+    started : 2026-08-27T19:48:30Z
+    ended   : 2026-08-27T19:48:35Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before clean; after DIRTY: 1 entries, 36 bytes; NOT CLEAN
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/head-tests-against-parent.log
+    result  : Ran 604 tests in 4.150s
+    result  : FAILED (failures=288)
+
+--- request-journals
+    command : python3 "$TOOLS_ANCHOR/journal-dump.py" tools/tests/test_catena_wave_1.py
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-argv: ["python3", "$TOOLS_ANCHOR/journal-dump.py", "tools/tests/test_catena_wave_1.py"]
+    exec-env: {}
+    exec-uses: $PARENT_REPO, $TOOLS_ANCHOR
+    exit    : 0
+    order   : 11
+    started : 2026-08-27T19:48:35Z
+    ended   : 2026-08-27T19:48:39Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before DIRTY: 1 entries, 36 bytes; NOT CLEAN; after DIRTY: 1 entries, 36 bytes; NOT CLEAN
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/request-journals-parent.log
+    result  : (no headline line matched; read the log)
+
+--- restore-parent-tree
+    command : git checkout -- tools/tests/test_catena_wave_1.py; echo "restored: tools/tests/test_catena_wave_1.py"; git status --porcelain; echo "porcelain entries after restore: $(git status --porcelain | wc -l)"
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PARENT_REPO
+    exec-shell: git checkout -- tools/tests/test_catena_wave_1.py; echo "restored: tools/tests/test_catena_wave_1.py"; git status --porcelain; echo "porcelain entries after restore: $(git status --porcelain | wc -l)"
+    exec-env: {}
+    exec-uses: $PARENT_REPO
+    exit    : 0
+    order   : 12
+    started : 2026-08-27T19:48:39Z
+    ended   : 2026-08-27T19:48:39Z
+    sha     : b9202882badbbbc364f1dd3d9057d2710ee47552
+    clean   : before DIRTY: 1 entries, 36 bytes; NOT CLEAN; after clean
+    cwd     : $PARENT_REPO
+    attempt : parent-20260827T193049Z-15pnpphq
+    log     : logs/attempt-15/restore-parent-tree.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+HEAD battery — logs/order-head.txt
+======================================================================
+
+attempt    : head-20260827T194839Z-166gh2tz  (ordinal 16; its transcripts are under logs/attempt-16/)
+lane       : V16
+expected   : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+preflight  : sha=cc1f2fb8625f044558c26edd358b99cd7dcc7646  porcelain=clean  cwd=$CANDIDATE_REPO
+postflight : sha=cc1f2fb8625f044558c26edd358b99cd7dcc7646  porcelain=clean  drift=none
+build-state: COLD: build/example-ordinary did not exist before make-check; the divergence figure this attempt records is the cold figure
+naming     : every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+
+--- focused-catena
+    command : python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "-m", "unittest", "discover", "-s", "tools/tests", "-p", "test_catena*.py", "-v"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 0
+    order   : 1
+    started : 2026-08-27T19:48:40Z
+    ended   : 2026-08-27T19:48:46Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/focused-catena-head.log
+    result  : Ran 660 tests in 5.899s
+    result  : OK
+
+--- catena-check
+    command : python3 scripts/_catena.py check
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "scripts/_catena.py", "check"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 0
+    order   : 2
+    started : 2026-08-27T19:48:46Z
+    ended   : 2026-08-27T19:48:50Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/catena-check-head.log
+    result  : catena valid: fragments=1351 books=1 canon=73
+
+--- promised
+    command : tools/tpt check-promised-deliverables
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["tools/tpt", "check-promised-deliverables"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 0
+    order   : 3
+    started : 2026-08-27T19:48:50Z
+    ended   : 2026-08-27T19:48:50Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/promised-head.log
+    result  : Promised-deliverable ledger valid: 41 tracked, 19 complete.
+
+--- full-discovery
+    command : python3 -m unittest discover -s tools/tests
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "-m", "unittest", "discover", "-s", "tools/tests"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 1
+    order   : 4
+    started : 2026-08-27T19:48:51Z
+    ended   : 2026-08-27T19:58:45Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/full-discovery-head.log
+    result  : Ran 2011 tests in 593.612s
+    result  : FAILED (failures=14, errors=13, skipped=11)
+
+--- make-check
+    command : make -k check
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["make", "-k", "check"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 2
+    order   : 5
+    started : 2026-08-27T19:58:45Z
+    ended   : 2026-08-27T20:04:51Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/make-check-head.log
+    result  : Ran 5 tests in 0.743s
+    result  : OK
+    result  : Promised-deliverable ledger valid: 41 tracked, 19 complete.
+    result  : catena valid: fragments=1351 books=1 canon=73
+    result  : replay-examples: 201 captured example(s); 192 replayed, 30 diverged, 35 known stale, 6 never run, 3 unrunnable here, 2 volatile line(s) declared
+
+--- release-bindings
+    command : make check-release-bindings
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["make", "check-release-bindings"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 2
+    order   : 6
+    started : 2026-08-27T20:04:51Z
+    ended   : 2026-08-27T20:04:53Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/release-bindings-head.log
+    result  : stale: 4 stale binding(s)
+
+--- public-site
+    command : make public-site
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["make", "public-site"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 0
+    order   : 7
+    started : 2026-08-27T20:04:53Z
+    ended   : 2026-08-27T20:04:59Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/public-site-head.log
+    result  : (no headline line matched; read the log)
+
+--- browser-gate
+    command : TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out "$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json" > /dev/null; gate=$?; python3 "$TOOLS_ANCHOR/gate-summary.py" "$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json"; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-shell: node tools/tests/corpus_browser_gate.mjs --json-out "$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json" > /dev/null; gate=$?; python3 "$TOOLS_ANCHOR/gate-summary.py" "$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json"; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+    exec-env: {"TRIPTYCH_CHROME": "/usr/bin/chromium"}
+    exec-uses: $CANDIDATE_REPO, $EVIDENCE_ROOT, $TOOLS_ANCHOR
+    exit    : 1
+    order   : 8
+    started : 2026-08-27T20:04:59Z
+    ended   : 2026-08-27T20:06:34Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/browser-gate-head.log
+    report  : logs/attempt-16/browser-gate-head.json
+    result  : assertions 2290, failed 226, pages 171, passed 1836, routes 19, skipped 228, states 9
+
+--- browser-static
+    command : python3 -m unittest discover -s tools/tests -p test_browser_static.py
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "-m", "unittest", "discover", "-s", "tools/tests", "-p", "test_browser_static.py"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO
+    exit    : 0
+    order   : 9
+    started : 2026-08-27T20:06:34Z
+    ended   : 2026-08-27T20:06:35Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/browser-static-head.log
+    result  : Ran 5 tests in 0.733s
+    result  : OK
+
+--- gzip-sizes
+    command : python3 "$TOOLS_ANCHOR/gzip-sizes.py" src/web/browser/catena
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "$TOOLS_ANCHOR/gzip-sizes.py", "src/web/browser/catena"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO, $TOOLS_ANCHOR
+    exit    : 0
+    order   : 10
+    started : 2026-08-27T20:06:35Z
+    ended   : 2026-08-27T20:06:35Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/gzip-sizes-head.log
+    result  : catena.css whole 7629 stripped 2676
+    result  : catena.js whole 12965 stripped 7835
+
+--- request-journals
+    command : python3 "$TOOLS_ANCHOR/journal-dump.py" tools/tests/test_catena_wave_1.py
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $CANDIDATE_REPO
+    exec-argv: ["python3", "$TOOLS_ANCHOR/journal-dump.py", "tools/tests/test_catena_wave_1.py"]
+    exec-env: {}
+    exec-uses: $CANDIDATE_REPO, $TOOLS_ANCHOR
+    exit    : 0
+    order   : 11
+    started : 2026-08-27T20:06:35Z
+    ended   : 2026-08-27T20:06:39Z
+    sha     : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+    clean   : before clean; after clean
+    cwd     : $CANDIDATE_REPO
+    attempt : head-20260827T194839Z-166gh2tz
+    log     : logs/attempt-16/request-journals-head.log
+    result  : (no headline line matched; read the log)
+
+======================================================================
+PIPELINE steps — assemble.sh's own recorded commands
+======================================================================
+
+attempt    : package-20260827T230425Z-3238tjpk
+status     : sealing
+
+This member is composed at P1, so it carries the steps run
+up to that point, and the attempt is still sealing when it
+is written. The attempt's terminal disposition, and every
+row appended after this instant, are in logs/attempts.json,
+which is composed at P5 for exactly that reason.
+
+--- P1 gate comparison
+    command : python3 logs/compare-gate.py logs/attempt-15/browser-gate-parent.json logs/attempt-16/browser-gate-head.json
+    recorded: EXECUTABLE -- a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py
+    exec-cwd: $PACKAGE_ROOT
+    exec-argv: ["python3", "logs/compare-gate.py", "logs/attempt-15/browser-gate-parent.json", "logs/attempt-16/browser-gate-head.json"]
+    exec-env: {}
+    exec-uses: $PACKAGE_ROOT
+    exit    : 0
+    order   : 1
+    started : 2026-08-27T23:04:25Z
+    ended   : 2026-08-27T23:04:25Z
+    result  : exit 0
+    cwd     : $PACKAGE_ROOT
+    attempt : package-20260827T230425Z-3238tjpk
+    log     : logs/attempt-32/gate-comparison.log
+
+======================================================================
+Not recorded in this file, by name
+======================================================================
+
+THE CLAIM AND THE CONTENT AGREE HERE OR NOT AT ALL. V12's epilogue
+named four omitted commands while in fact omitting eleven, and the
+opening line claimed all of them exactly. What follows is the whole
+list, and the reason each one is not above.
+
+ONE. Everything the pipeline runs AFTER this file is composed. This
+member is written at P1. Nothing later can be in it, because it does
+not exist yet when this is written:
+
+  - logs/attempt-32/sealer-tests.log -- P1: the sealer's own test suite
+  - logs/attempt-32/seal.log -- P2: every normalization pass, appended
+  - logs/attempt-32/seal-check.log -- P2: the check-only pass that closed the fixpoint
+  - logs/attempt-32/derive-claims.log -- P4: the derivation, as it printed
+  - logs/attempt-32/head-consistency.log -- P5: the consistency audit
+  - logs/attempts.json -- P5: the attempt rows this package was built from, composed after the consistency audit so it carries the sealing attempt's own terminal row
+  - P6 -- the manifest pass; it runs after this member is frozen, because this member is one of the files it hashes
+  - P7 -- the archive; it runs on the sealed directory and its identity is in the out-of-package sidecar, not in a member it contains
+  - P8 -- the final verification; its verdict is in the out-of-package verification transcript, for the same reason
+
+  Their ledger rows ARE recorded, in machine-readable form, in the
+  append-only attempt ledger that lives outside this package, and
+  the rows that exist by P5 are copied into logs/attempts.json. That
+  member declares, in `phases_not_recorded`, the phases that run
+  after its own freeze, so a reader can tell a phase that left no
+  row from a phase that never ran.
+
+TWO. The transcripts themselves are not summarised here. The sealing
+and sanitization passes are logs/attempt-32/seal-check.log and
+logs/attempt-32/seal.log; the derivation and the audit are
+logs/attempt-32/derive-claims.log and logs/attempt-32/head-consistency.log.
+A summary of a transcript is the thing this file exists to stop being
+written; the transcripts ship whole.
+
+THREE. How exact the commands above are, counted:
+
+  - EXECUTABLE: 24
+
+  Which of them carry a command record at all, by side:
+
+  - head: 11 row(s), 11 with an exec record, 11 EXECUTABLE
+  - package: 1 row(s), 1 with an exec record, 1 EXECUTABLE
+  - parent: 12 row(s), 12 with an exec record, 12 EXECUTABLE
+
+  Only an EXECUTABLE row is re-runnable, and it is re-runnable
+  because it carries a validated exec record -- a cwd, an argv or a
+  shell form, and an environment -- not because its first word looks
+  like a command. An ELIDED row is a real invocation with this
+  lane's values replaced by capitalised tokens, or a string with no
+  exec record beside it; a PROSE row is a description and was never
+  a string a shell was handed; a NON-EXECUTABLE row has a recorded
+  command that FAILED validation, and its reason carries the code.
+
+  V15 called all twenty-four of its rows LITERAL, "the exact string
+  handed to the shell; re-runnable", while seven of them quoted
+  $WORKSPACE or $REPO inside SINGLE quotes, where no shell expands
+  them, with no assignments supplied anywhere in the package. The
+  label is now earned by a structure and checked by running it.
+
+REPLAY ROOTS -- BIND THESE TO RUN A RECORDED COMMAND. Every path in
+every row above is written against one of these and never as an
+absolute path. V15 overloaded one name, $REPO, for both the parent
+checkout and the candidate checkout inside a single row; these names
+are disjoint and the composer refuses a second, different definition
+of any of them.
+
+  $CANDIDATE_REPO -- the implementation checkout under review -- the head side
+  $EVIDENCE_ROOT -- the staged package source directory the batteries wrote into
+  $PACKAGE_ROOT -- the package directory itself, which the package-phase commands ran inside
+  $PARENT_REPO -- the comparison checkout -- the parent side
+  $TOOLS_ANCHOR -- the out-of-package handoff-tools checkout this lane ran from
+
+SANITIZATION TOKENS -- THESE APPEAR IN TRANSCRIPT PROSE, NEVER IN A
+COMMAND RECORD. They are privacy SUBSTITUTIONS, not bindings: a
+private path was removed at P2 and the token stands where it was.
+Nothing binds them and `replay-command.py` takes no --root for one.
+The list below is derived from the sealer's own substitution table,
+so a token it can emit and this legend does not explain is refused
+rather than shipped.
+
+  $EVIDENCE -- the lane's agent evidence directory, the `.agents/<lane>` segment. It is NOT the tools anchor: the sealer's rule matches that directory segment and nothing else
+  $HOME -- the builder's home directory; nothing under it is shipped and no authoritative claim rests on it
+  $REPO == $CANDIDATE_REPO -- the checkout `sanitize-and-seal.py --repo` was pointed at, which this pipeline binds to the implementation clone
+  $SCRATCH -- a builder-local temporary root; nothing under it is shipped and no authoritative claim rests on it
+  $WORKSPACE -- the workspace root that CONTAINS the checkouts and the anchor. It is a PREFIX of the replay roots and equal to none of them
+
+  THE TWO VOCABULARIES ARE DISJOINT BY DESIGN, AND THE DESIGN IS
+  ENFORCED IN BOTH DIRECTIONS. Of the substitution tokens above,
+  $EVIDENCE, $REPO, $SCRATCH, $WORKSPACE
+  are names `catena_command.py` REFUSES a command record to define,
+  so a name that stands for a removed path in a transcript can never
+  also be a binding in a record; $HOME
+  are shell-standard roots no record binds either. The scopes never
+  meet, and no name in this package means two directories. Where a
+  token and a replay root do name the SAME directory it is written
+  `==` above -- that correspondence is stated, not left to a reader
+  to infer from two members that use two spellings.
+
+  Replay a row with:
+
+    python3 logs/replay-command.py --commands commands.json \
+        --check
+    python3 logs/replay-command.py --commands commands.json \
+        --side head --replay gzip-sizes \
+        --root CANDIDATE_REPO=/path/to/candidate \
+        --root TOOLS_ANCHOR=/path/to/handoff-tools \
+        --witness 'catena-model.js whole'
+
+  AN EXIT STATUS ALONE DOES NOT PROVE A ROW RE-RAN, so pass
+  `--witness` and be told rather than assuming. Bind both roots of
+  `head-tests-against-parent` to an empty directory and its `cp`
+  fails, `&&` short-circuits, the suite never starts, the shell
+  exits 1 -- and the recorded exit is 1, because the recorded run
+  was a suite with 288 failures. `--witness TEXT` requires TEXT in
+  the replayed output and reports VACUOUS when the status matched
+  and the run did not. The text to use is on the row itself: each
+  row's `result :` slot above is the headline of its own recorded
+  transcript.
+
+  REPLAY A SIDE IN ITS RECORDED ORDER, NOT A ROW ON ITS OWN. A
+  step may consume what an earlier step of the same battery
+  built, in the same checkout; the invocation above replays one
+  row and cannot supply what a row before it produced. Replay
+  from ORDER 1, or at least replay every row ahead of the one
+  you want, into the same checkout. The orders are these:
+
+  head:
+     1  focused-catena
+     2  catena-check
+     3  promised
+     4  full-discovery
+     5  make-check
+     6  release-bindings
+     7  public-site
+     8  browser-gate
+     9  browser-static
+    10  gzip-sizes
+    11  request-journals
+      -- head/browser-gate reads the site
+         head/public-site builds under
+         build/public-alpha/site. Replayed on a checkout
+         where public-site has not run it exits 3, not
+         its recorded exit, and says so on its own
+         output. That is the prerequisite failing, not
+         the evidence.
+  parent:
+     1  focused-catena
+     2  catena-check
+     3  promised
+     4  full-discovery
+     5  make-check
+     6  release-bindings
+     7  public-site
+     8  browser-gate
+     9  gzip-sizes
+    10  head-tests-against-parent
+    11  request-journals
+    12  restore-parent-tree
+      -- parent/browser-gate reads the site
+         parent/public-site builds under
+         build/public-alpha/site. Replayed on a checkout
+         where public-site has not run it exits 3, not
+         its recorded exit, and says so on its own
+         output. That is the prerequisite failing, not
+         the evidence.
+
+  The machine-readable form of every row above, with its exec
+  record and this root table, is `commands.json` beside this file.
+
+The roster of every log, and the attempt each belongs to, is
+logs/LOG-INDEX.md, derived in the same pass as this file.
+The attempt rows themselves — including the ones belonging to
+attempts that were discarded — are machine-readable in
+logs/attempts.json, which is composed at P5 rather than here:
+this file is written before the pipeline knows how the attempt
+ends, and that member is written after the pipeline does.
+
+No judgement is recorded here either. What a result MEANS is argued
+in HANDOFF.md, LIMITATIONS.md and UNRESOLVED-BLOCKERS.md.

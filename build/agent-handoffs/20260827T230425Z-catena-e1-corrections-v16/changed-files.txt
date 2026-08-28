@@ -1,0 +1,19 @@
+# parent b9202882badbbbc364f1dd3d9057d2710ee47552
+# head   cc1f2fb8625f044558c26edd358b99cd7dcc7646
+
+M	PROJECT-WORK.md
+M	guidance/corpus-browser-master-plan.md
+M	guidance/corpus-browser-roadmap.md
+M	promised-deliverables.toml
+M	src/web/browser/catena/catena-model.js
+M	src/web/browser/catena/catena.js
+M	tools/tests/test_catena_wave_1.py
+
+ PROJECT-WORK.md                        |  836 ++++++++++-
+ guidance/corpus-browser-master-plan.md |    2 +-
+ guidance/corpus-browser-roadmap.md     |  333 ++++-
+ promised-deliverables.toml             |  155 ++
+ src/web/browser/catena/catena-model.js |  264 +++-
+ src/web/browser/catena/catena.js       |  103 +-
+ tools/tests/test_catena_wave_1.py      | 2480 ++++++++++++++++++++++++++++++--
+ 7 files changed, 3979 insertions(+), 194 deletions(-)

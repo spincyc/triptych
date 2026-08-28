@@ -1,0 +1,426 @@
+{
+  "attempts": [
+    {
+      "attempt": "parent-20260827T135733Z-01m83vq7",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "failed",
+      "execution_reason": "the step's exec record failed validation before the step ran; V15 shipped seven rows whose recorded command could not expand, and this is the check that refuses one rather than shipping it",
+      "ledger": "attempt-ledger.jsonl",
+      "ordinal": "1",
+      "side": "parent",
+      "start": "2026-08-27T13:57:33Z"
+    },
+    {
+      "attempt": "parent-20260827T141358Z-02sh6373",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "failed",
+      "execution_reason": "logs/order-parent.txt already exists; nothing was run and nothing was overwritten",
+      "ledger": "attempt-ledger.jsonl",
+      "ordinal": "2",
+      "side": "parent",
+      "start": "2026-08-27T14:13:58Z"
+    },
+    {
+      "attempt": "parent-20260827T141439Z-038xp4y2",
+      "evidence_disposition": "set-aside",
+      "evidence_reason": "this ledger was retired (the parent battery of ordinal 03 ran green against a build/ warmed by the refused attempt of ordinal 01, so its check-examples figure is the WARM 28 rather than the cold 30 a reviewer reproduces from a fresh clone; its cohort is declined and re-run cold rather than shipped, and the ordinals this file spent stay spent) and no figure in any package derives from this cohort; it ran to completion and its figures were not used",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger.jsonl",
+      "ordinal": "3",
+      "side": "parent",
+      "start": "2026-08-27T14:14:39Z"
+    },
+    {
+      "attempt": "parent-20260827T143106Z-04hy5j4v",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "this cohort executed battery.sh at digest 04ca35cb while the package ships that driver at cca4d284; the difference is header prose from the execution-versus-evidence split, and P8 refuses an archive whose executed bytes are not its shipped bytes, so the endpoint was measured again under a later ordinal and this cohort's figures are not carried",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "4",
+      "side": "parent",
+      "start": "2026-08-27T14:31:06Z"
+    },
+    {
+      "attempt": "head-20260827T144631Z-05qmtgwx",
+      "evidence_disposition": "set-aside",
+      "evidence_reason": "this head cohort measured head 251900b14, which was superseded by cc1f2fb8 when four self-referential figures were removed from the lane record; the battery completed and none of its figures is carried into any V16 claim, and the head was measured again from the beginning under ordinal 07",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "5",
+      "side": "head",
+      "start": "2026-08-27T14:46:31Z"
+    },
+    {
+      "attempt": "head-20260827T150233Z-06zg9rhq",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "abandoned",
+      "execution_reason": "the background process running this battery was stopped from outside the battery after three green steps; no step failed and no figure of this attempt is carried anywhere, and the head cohort was measured again from the beginning under a later ordinal",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "6",
+      "side": "head",
+      "start": "2026-08-27T15:02:33Z"
+    },
+    {
+      "attempt": "head-20260827T154350Z-079xrp6n",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "this cohort executed battery.sh at digest 04ca35cb while the package ships that driver at cca4d284; the difference is header prose from the execution-versus-evidence split, and P8 refuses an archive whose executed bytes are not its shipped bytes, so the endpoint was measured again under a later ordinal and this cohort's figures are not carried",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "7",
+      "side": "head",
+      "start": "2026-08-27T15:43:50Z"
+    },
+    {
+      "attempt": "package-20260827T185118Z-084t4236",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "normalize pass 1 failed with exit 1",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "8",
+      "side": "package",
+      "start": "2026-08-27T18:51:30Z"
+    },
+    {
+      "attempt": "package-20260827T190747Z-09sn82rr",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the consistency audit failed with exit 1; a member disagreed with the frozen inventory or with the claims derived from it",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "9",
+      "side": "package",
+      "start": "2026-08-27T19:07:58Z"
+    },
+    {
+      "attempt": "package-20260827T191122Z-10x52qgn",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "10",
+      "side": "package",
+      "start": "2026-08-27T19:11:22Z"
+    },
+    {
+      "attempt": "package-20260827T191528Z-1196tyyp",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "11",
+      "side": "package",
+      "start": "2026-08-27T19:15:28Z"
+    },
+    {
+      "attempt": "package-20260827T191825Z-12gkk5s8",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "12",
+      "side": "package",
+      "start": "2026-08-27T19:18:25Z"
+    },
+    {
+      "attempt": "package-20260827T192021Z-13qt4xks",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the executed-tool record could not be rendered with exit 1; one logical tool was executed as two different sets of bytes, so the record cannot say which copy any claim in this package is about",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "13",
+      "side": "package",
+      "start": "2026-08-27T19:20:21Z"
+    },
+    {
+      "attempt": "package-20260827T192515Z-14vwr9zy",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the final verification failed with exit 1; the archive does not answer for the claims the package makes about itself, so no final-authority record was written and this attempt is not authoritative",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "14",
+      "side": "package",
+      "start": "2026-08-27T19:25:15Z"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "evidence_disposition": "authoritative",
+      "evidence_reason": "this parent cohort measured the comparison checkout at the parent commit on a cold build tree, executing the four battery tools at the exact digests the package ships, and every parent-side figure the package carries is derived from its transcripts",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "15",
+      "side": "parent",
+      "start": "2026-08-27T19:30:49Z"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "evidence_disposition": "authoritative",
+      "evidence_reason": "this head cohort measured the candidate checkout at the head commit on a cold build tree, executing the four battery tools at the exact digests the package ships, and every head-side figure the package carries is derived from its transcripts",
+      "execution_disposition": "complete",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "16",
+      "side": "head",
+      "start": "2026-08-27T19:48:39Z"
+    },
+    {
+      "attempt": "package-20260827T200754Z-17ss7m5n",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the consistency audit failed with exit 1; a member disagreed with the frozen inventory or with the claims derived from it",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "17",
+      "side": "package",
+      "start": "2026-08-27T20:07:54Z"
+    },
+    {
+      "attempt": "package-20260827T205127Z-189y3zrv",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "normalize pass 1 failed with exit 1",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "18",
+      "side": "package",
+      "start": "2026-08-27T20:51:27Z"
+    },
+    {
+      "attempt": "package-20260827T205242Z-19k4x433",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "19",
+      "side": "package",
+      "start": "2026-08-27T20:52:42Z"
+    },
+    {
+      "attempt": "package-20260827T205659Z-2099y7ym",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "20",
+      "side": "package",
+      "start": "2026-08-27T20:56:59Z"
+    },
+    {
+      "attempt": "package-20260827T205923Z-213p3n74",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "21",
+      "side": "package",
+      "start": "2026-08-27T20:59:23Z"
+    },
+    {
+      "attempt": "package-20260827T221649Z-224yt5pr",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the outer siblings did not reach a clean sanitizer fixpoint (sanitize exit 1, scan exit 1, ledger rescan exit 0); a tracked file beside the package still discloses a private token, or would still be rewritten by the sanitizer",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "22",
+      "side": "package",
+      "start": "2026-08-27T22:16:49Z"
+    },
+    {
+      "attempt": "package-20260827T222021Z-23tzjtsz",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "23",
+      "side": "package",
+      "start": "2026-08-27T22:20:21Z"
+    },
+    {
+      "attempt": "package-20260827T222325Z-24phksss",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the final-state completeness verdict is not COMPLETE (inventory exit 1, own-transcript scan exit 0)",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "24",
+      "side": "package",
+      "start": "2026-08-27T22:23:25Z"
+    },
+    {
+      "attempt": "package-20260827T224521Z-25kktng5",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "25",
+      "side": "package",
+      "start": "2026-08-27T22:45:21Z"
+    },
+    {
+      "attempt": "package-20260827T224746Z-264x2m2y",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "abandoned",
+      "execution_reason": "the process running this assembly was stopped from outside it during P2 normalization; no phase refused and no gate failed, and nothing of this attempt is carried anywhere",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "26",
+      "side": "package",
+      "start": "2026-08-27T22:47:46Z"
+    },
+    {
+      "attempt": "package-20260827T225033Z-27hvmm95",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "discarded",
+      "execution_reason": "the attempt-log audit failed with exit 1; a transcript in this package is not accounted for by exactly one row of exactly one attempt, which is the defect that let one attempt overwrite another's logs",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "27",
+      "side": "package",
+      "start": "2026-08-27T22:50:33Z"
+    },
+    {
+      "attempt": "package-20260827T225323Z-28w4rrh6",
+      "evidence_disposition": "unevidenced",
+      "evidence_reason": "",
+      "execution_disposition": "abandoned",
+      "execution_reason": "the process running this assembly was stopped from outside it during P2 normalization; no phase refused it and no gate failed, and nothing of this attempt is carried anywhere",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "28",
+      "side": "package",
+      "start": "2026-08-27T22:53:23Z"
+    },
+    {
+      "attempt": "package-20260827T225430Z-2944376k",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "29",
+      "side": "package",
+      "start": "2026-08-27T22:54:30Z"
+    },
+    {
+      "attempt": "package-20260827T225812Z-3073phky",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "30",
+      "side": "package",
+      "start": "2026-08-27T22:58:13Z"
+    },
+    {
+      "attempt": "package-20260827T230126Z-31vhy73v",
+      "evidence_disposition": "superseded",
+      "evidence_reason": "the authority-coherence gate refused with exit 1; the records beside this package do not agree on which attempt is authoritative, or the record does not bind the archive's own bytes",
+      "execution_disposition": "sealed",
+      "execution_reason": "",
+      "ledger": "attempt-ledger-02.jsonl",
+      "ordinal": "31",
+      "side": "package",
+      "start": "2026-08-27T23:01:26Z"
+    }
+  ],
+  "counts": {
+    "abandoned_count": 3,
+    "attempt_count": 31,
+    "authoritative_evidence_count": 2,
+    "complete_count": 6,
+    "failed_count": 2,
+    "reused_ordinal_count": 0,
+    "set_aside_count": 2,
+    "terminal_execution_disposition_count": 31,
+    "unresolved_count": 0
+  },
+  "invariants": {
+    "every attempt reaches exactly one terminal execution disposition": {
+      "pass": true,
+      "statement": "attempt_count 31 == terminal_execution_disposition_count 31"
+    },
+    "no attempt is left open": {
+      "pass": true,
+      "statement": "unresolved_count 0 == 0"
+    },
+    "no ordinal is carried by two attempts": {
+      "pass": true,
+      "statement": "reused_ordinal_count 0 == 0"
+    }
+  },
+  "lane": "V16",
+  "ledger_replacements": 1,
+  "ledgers": [
+    {
+      "bytes": 21536,
+      "lane": "V16",
+      "ordinals_spent": [
+        1,
+        2,
+        3
+      ],
+      "path": "attempt-ledger.jsonl",
+      "rows": 29,
+      "sha256": "d7fd68ce256f94d1efca59d3248960a5d6d6999ea4aa2d06c60cf6cb2c901d87"
+    },
+    {
+      "bytes": 264379,
+      "lane": "V16",
+      "ordinals_spent": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "path": "attempt-ledger-02.jsonl",
+      "rows": 426,
+      "sha256": "0e0d5647153e5a06d64d24b6e6c1a012b19d7d678d0d36812cbcaacef804b177"
+    }
+  ],
+  "reused_ordinals": {},
+  "schema": "catena/attempt-history/2",
+  "verdict": "PASS"
+}

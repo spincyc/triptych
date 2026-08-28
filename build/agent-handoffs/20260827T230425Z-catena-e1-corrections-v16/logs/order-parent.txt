@@ -1,0 +1,156 @@
+PREFLIGHT battery=parent
+2026-08-27T19:30:49Z
+attempt=parent-20260827T193049Z-15pnpphq
+attempt-no=15
+lane=V16
+expect-sha=b9202882badbbbc364f1dd3d9057d2710ee47552
+sha=b9202882badbbbc364f1dd3d9057d2710ee47552
+sha-matches-expected=yes
+porcelain=clean
+cwd=$PARENT_REPO
+root=CANDIDATE_REPO the implementation checkout under review -- the head side
+root=PARENT_REPO the comparison checkout -- the parent side
+root=TOOLS_ANCHOR the out-of-package handoff-tools checkout this lane ran from
+root=EVIDENCE_ROOT the staged package source directory the batteries wrote into
+log-prefix=15
+log-root=logs/attempt-15
+log-naming=every transcript this attempt writes lives in its own root, logs/attempt-<ordinal>, and is named <slug>-<side>.log inside it; the ordinal names THE ATTEMPT and comes from the attempt ledger outside this directory, so a rerun never reuses a path, and the ordinal is the DIRECTORY rather than a filename prefix so the package-phase transcripts written later by assemble.sh are carried by the same rule instead of by none; the slug names the step, so a step means the same thing on both sides even though the two sides are two attempts with two ordinals
+tree-state=read before AND after every command, not once at preflight
+2026-08-27T19:30:49Z
+START focused-catena
+ORDER: 1
+LOG: logs/attempt-15/focused-catena-parent.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v
+CMDJSON: {"argv": ["python3", "-m", "unittest", "discover", "-s", "tools/tests", "-p", "test_catena*.py", "-v"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:30:55Z
+END focused-catena
+2026-08-27T19:30:55Z
+START catena-check
+ORDER: 2
+LOG: logs/attempt-15/catena-check-parent.log
+TREE-BEFORE: clean
+CMD: python3 scripts/_catena.py check
+CMDJSON: {"argv": ["python3", "scripts/_catena.py", "check"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:30:59Z
+END catena-check
+2026-08-27T19:30:59Z
+START promised
+ORDER: 3
+LOG: logs/attempt-15/promised-parent.log
+TREE-BEFORE: clean
+CMD: tools/tpt check-promised-deliverables
+CMDJSON: {"argv": ["tools/tpt", "check-promised-deliverables"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:30:59Z
+END promised
+2026-08-27T19:30:59Z
+START full-discovery
+ORDER: 4
+LOG: logs/attempt-15/full-discovery-parent.log
+TREE-BEFORE: clean
+CMD: python3 -m unittest discover -s tools/tests
+CMDJSON: {"argv": ["python3", "-m", "unittest", "discover", "-s", "tools/tests"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=1
+TREE-AFTER: clean
+2026-08-27T19:40:49Z
+END full-discovery
+build-state=COLD: build/example-ordinary did not exist before make-check; the divergence figure this attempt records is the cold figure
+2026-08-27T19:40:49Z
+START make-check
+ORDER: 5
+LOG: logs/attempt-15/make-check-parent.log
+TREE-BEFORE: clean
+CMD: make -k check
+CMDJSON: {"argv": ["make", "-k", "check"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=2
+TREE-AFTER: clean
+2026-08-27T19:46:41Z
+END make-check
+2026-08-27T19:46:41Z
+START release-bindings
+ORDER: 6
+LOG: logs/attempt-15/release-bindings-parent.log
+TREE-BEFORE: clean
+CMD: make check-release-bindings
+CMDJSON: {"argv": ["make", "check-release-bindings"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=2
+TREE-AFTER: clean
+2026-08-27T19:46:43Z
+END release-bindings
+2026-08-27T19:46:43Z
+START public-site
+ORDER: 7
+LOG: logs/attempt-15/public-site-parent.log
+TREE-BEFORE: clean
+CMD: make public-site
+CMDJSON: {"argv": ["make", "public-site"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:46:49Z
+END public-site
+2026-08-27T19:46:50Z
+START browser-gate
+ORDER: 8
+LOG: logs/attempt-15/browser-gate-parent.log
+TREE-BEFORE: clean
+CMD: node tools/tests/corpus_browser_gate.mjs --json-out "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json" > /dev/null; gate=$?; python3 "$TOOLS_ANCHOR/gate-summary.py" "$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate
+CMDJSON: {"argv": null, "cwd": "$PARENT_REPO", "env": {"TRIPTYCH_CHROME": "/usr/bin/chromium"}, "schema": "catena-exec-command/1", "shell": "node tools/tests/corpus_browser_gate.mjs --json-out \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\" > /dev/null; gate=$?; python3 \"$TOOLS_ANCHOR/gate-summary.py\" \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate", "uses": ["EVIDENCE_ROOT", "PARENT_REPO", "TOOLS_ANCHOR"]}
+exit=1
+TREE-AFTER: clean
+2026-08-27T19:48:30Z
+END browser-gate
+2026-08-27T19:48:30Z
+START gzip-sizes
+ORDER: 9
+LOG: logs/attempt-15/gzip-sizes-parent.log
+TREE-BEFORE: clean
+CMD: python3 "$TOOLS_ANCHOR/gzip-sizes.py" src/web/browser/catena
+CMDJSON: {"argv": ["python3", "$TOOLS_ANCHOR/gzip-sizes.py", "src/web/browser/catena"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO", "TOOLS_ANCHOR"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:48:30Z
+END gzip-sizes
+2026-08-27T19:48:30Z
+START head-tests-against-parent
+ORDER: 10
+LOG: logs/attempt-15/head-tests-against-parent.log
+TREE-BEFORE: clean
+CMD: cp "$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v
+CMDJSON: {"argv": null, "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": "cp \"$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py\" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v", "uses": ["CANDIDATE_REPO", "PARENT_REPO"]}
+exit=1
+TREE-AFTER: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+2026-08-27T19:48:35Z
+END head-tests-against-parent
+2026-08-27T19:48:35Z
+START request-journals
+ORDER: 11
+LOG: logs/attempt-15/request-journals-parent.log
+TREE-BEFORE: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+CMD: python3 "$TOOLS_ANCHOR/journal-dump.py" tools/tests/test_catena_wave_1.py
+CMDJSON: {"argv": ["python3", "$TOOLS_ANCHOR/journal-dump.py", "tools/tests/test_catena_wave_1.py"], "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": null, "uses": ["PARENT_REPO", "TOOLS_ANCHOR"]}
+exit=0
+TREE-AFTER: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+2026-08-27T19:48:39Z
+END request-journals
+2026-08-27T19:48:39Z
+START restore-parent-tree
+ORDER: 12
+LOG: logs/attempt-15/restore-parent-tree.log
+TREE-BEFORE: DIRTY: 1 entries, 36 bytes; NOT CLEAN
+CMD: git checkout -- tools/tests/test_catena_wave_1.py; echo "restored: tools/tests/test_catena_wave_1.py"; git status --porcelain; echo "porcelain entries after restore: $(git status --porcelain | wc -l)"
+CMDJSON: {"argv": null, "cwd": "$PARENT_REPO", "env": {}, "schema": "catena-exec-command/1", "shell": "git checkout -- tools/tests/test_catena_wave_1.py; echo \"restored: tools/tests/test_catena_wave_1.py\"; git status --porcelain; echo \"porcelain entries after restore: $(git status --porcelain | wc -l)\"", "uses": ["PARENT_REPO"]}
+exit=0
+TREE-AFTER: clean
+2026-08-27T19:48:39Z
+END restore-parent-tree
+POSTFLIGHT battery=parent
+2026-08-27T19:48:39Z
+sha=b9202882badbbbc364f1dd3d9057d2710ee47552
+porcelain=clean
+sha-drift=none

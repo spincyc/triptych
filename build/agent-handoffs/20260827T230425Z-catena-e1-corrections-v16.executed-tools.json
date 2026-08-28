@@ -1,0 +1,398 @@
+{
+  "anchor": "$EVIDENCE",
+  "attempt": "package-20260827T230425Z-3238tjpk",
+  "counting_notes": {
+    "driver_invocations": "assemble.sh and battery.sh drove the rows rather than being driven. Each hashes its own bytes at its own preflight and appends one row; they are EXECUTED and are counted in execution_invocations, and are named separately here so a reader can tell a driver from a step.",
+    "execution_invocations": "OBSERVED invocations only. A tool the package ships and this attempt did not run is in shipped_not_executed, which is a roster and not a list of invocations; it carries no instant, no phase and no transcript, because it did not run.",
+    "external_system_tool_rows": "REPRESENTATIVE, NOT EXHAUSTIVE. python3 and git are recorded once each, at the phase that first used them, and run many more times than that. This figure is the number of ROWS and is never a count of invocations of those tools.",
+    "phase_view": "every figure here describes the record AS OF P10 the post-seal gates. This record is rendered before P8, because P8 receives it as --executed, and re-rendered after the post-seal gates; the two renderings carry different figures for the same quantities and each says which phase it is the view from."
+  },
+  "counts": {
+    "driver_invocations": 2,
+    "execution_invocations": 30,
+    "external_system_tool_rows": 2,
+    "merged_battery_invocations": 8,
+    "shipped_tools": 21,
+    "trusted_not_executed_tools": 8,
+    "unique_executed_tools": 15,
+    "unique_referenced_tools": 23
+  },
+  "phase_view": "P10 the post-seal gates",
+  "runs": [
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(the allocation writes no transcript; the ordinal is its whole output)",
+      "path": "logs/checks.py",
+      "phase": "P0 preflight",
+      "sha256": "359ecdc23d5734e1ba53d9db9f89ead8917f295b6e04fdcc24b9df263a1d8d39",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "external-system-tool",
+      "log": "20260827T230425Z-catena-e1-corrections-v16.assemble.log",
+      "path": "",
+      "phase": "P0 preflight",
+      "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "tool": "python3"
+    },
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "external-system-tool",
+      "log": "20260827T230425Z-catena-e1-corrections-v16.assemble.log",
+      "path": "",
+      "phase": "P0 preflight",
+      "sha256": "93473c28694fd72bd889364107cd2770514de59780885a6a4aafca4d602e30ad",
+      "tool": "git"
+    },
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "20260827T230425Z-catena-e1-corrections-v16.assemble.log",
+      "path": "logs/assemble.sh",
+      "phase": "P0 preflight",
+      "sha256": "273dfee859472e1ccd3970efc4ca68e441f501dd9a29446bfbc7b119361e790b",
+      "tool": "assemble.sh"
+    },
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/gate-comparison.log",
+      "path": "logs/compare-gate.py",
+      "phase": "P1 gate comparison",
+      "sha256": "85768f11f2ef75c4bf1f5ef1686a73162dadfdbd1db85c210a88c8418a27738c",
+      "tool": "compare-gate.py"
+    },
+    {
+      "at": "2026-08-27T23:04:25Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(this step writes checks.txt and logs/LOG-INDEX.md, not a transcript; the invocation log is the transcript)",
+      "path": "logs/checks.py",
+      "phase": "P1 checks.txt, the log index and the packaged attempt rows",
+      "sha256": "359ecdc23d5734e1ba53d9db9f89ead8917f295b6e04fdcc24b9df263a1d8d39",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-27T23:04:26Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/sealer-tests.log",
+      "path": "logs/test-sanitize-and-seal.py",
+      "phase": "P1 the sealer's own tests",
+      "sha256": "678da783629ebf81bdcd8d762a3e7e54cc01d3675cea9ca49a2cd09bc525839f",
+      "tool": "test-sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:04:30Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 1)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:04:42Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 1)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:04:53Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 2)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:04Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 2)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:16Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (normalize pass 3)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:28Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/seal-check.log",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P2 normalize to a fixpoint (check pass 3)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:39Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(the freeze is taken outside the package; the invocation log is the transcript)",
+      "path": "logs/derive-claims.py",
+      "phase": "P3 the freeze",
+      "sha256": "1826d911cab24cf1ea9063c6d33d83183d08cd6f1aac962060dfdde52c2c0864",
+      "tool": "derive-claims.py"
+    },
+    {
+      "at": "2026-08-27T23:05:39Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/derive-claims.log",
+      "path": "logs/derive-claims.py",
+      "phase": "P4 derive once",
+      "sha256": "1826d911cab24cf1ea9063c6d33d83183d08cd6f1aac962060dfdde52c2c0864",
+      "tool": "derive-claims.py"
+    },
+    {
+      "at": "2026-08-27T23:05:40Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "logs/attempt-32/head-consistency.log",
+      "path": "logs/head-consistency.py",
+      "phase": "P5 consistency audit",
+      "sha256": "8ffd64b5f2aaa61cd8b13ad107db0f8ac8e3e3a59cc2c0643129ea986bbdd15b",
+      "tool": "head-consistency.py"
+    },
+    {
+      "at": "2026-08-27T23:05:40Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(the audit writes no member; the invocation log is the transcript)",
+      "path": "logs/checks.py",
+      "phase": "P5 attempt-log audit",
+      "sha256": "359ecdc23d5734e1ba53d9db9f89ead8917f295b6e04fdcc24b9df263a1d8d39",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-27T23:05:40Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(this step writes the member logs/attempts.json, not a transcript; the invocation log is the transcript)",
+      "path": "logs/checks.py",
+      "phase": "P5 the sealed row and the shipped ledger",
+      "sha256": "359ecdc23d5734e1ba53d9db9f89ead8917f295b6e04fdcc24b9df263a1d8d39",
+      "tool": "checks.py"
+    },
+    {
+      "at": "2026-08-27T23:05:41Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "MANIFEST.sha256",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P6 manifest",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:46Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "(--verify writes nothing; the invocation log is the transcript)",
+      "path": "logs/sanitize-and-seal.py",
+      "phase": "P7 archive (seal verification)",
+      "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d",
+      "tool": "sanitize-and-seal.py"
+    },
+    {
+      "at": "2026-08-27T23:05:46Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "20260827T230425Z-catena-e1-corrections-v16.verify-final.log",
+      "path": "logs/verify-final-package.py",
+      "phase": "P8 final verification",
+      "sha256": "1f0a146b1135384fd6e5dc19c12d6b884bfc99f21261f2e1a0e00af520469300",
+      "tool": "verify-final-package.py"
+    },
+    {
+      "at": "2026-08-27T23:06:00Z",
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-executed",
+      "log": "20260827T230425Z-catena-e1-corrections-v16.authority-coherence.log",
+      "path": "logs/authority-coherence.py",
+      "phase": "P10 the post-seal gates",
+      "sha256": "6f236ae60e90223816a32e37cbfcf8c8bb3b8e12670692cf64ca7525ac49b130",
+      "tool": "authority-coherence.py"
+    },
+    {
+      "at": "2026-08-27T19:30:49Z",
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "class": "shipped-executed",
+      "kind": "driver",
+      "log": "logs/order-parent.txt",
+      "path": "logs/battery.sh",
+      "phase": "battery-parent",
+      "sha256": "cca4d2840116e2e101c68d9bdf8db1305f545b838015a837514f4464b73b947c",
+      "tool": "battery.sh"
+    },
+    {
+      "at": "2026-08-27T19:46:50Z",
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-15/browser-gate-parent.log",
+      "path": "logs/gate-summary.py",
+      "phase": "browser-gate",
+      "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+      "tool": "gate-summary.py"
+    },
+    {
+      "at": "2026-08-27T19:48:30Z",
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-15/gzip-sizes-parent.log",
+      "path": "logs/gzip-sizes.py",
+      "phase": "gzip-sizes",
+      "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+      "tool": "gzip-sizes.py"
+    },
+    {
+      "at": "2026-08-27T19:48:35Z",
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-15/request-journals-parent.log",
+      "path": "logs/journal-dump.py",
+      "phase": "request-journals",
+      "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+      "tool": "journal-dump.py"
+    },
+    {
+      "at": "2026-08-27T19:48:40Z",
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "class": "shipped-executed",
+      "kind": "driver",
+      "log": "logs/order-head.txt",
+      "path": "logs/battery.sh",
+      "phase": "battery-head",
+      "sha256": "cca4d2840116e2e101c68d9bdf8db1305f545b838015a837514f4464b73b947c",
+      "tool": "battery.sh"
+    },
+    {
+      "at": "2026-08-27T20:04:59Z",
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-16/browser-gate-head.log",
+      "path": "logs/gate-summary.py",
+      "phase": "browser-gate",
+      "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a",
+      "tool": "gate-summary.py"
+    },
+    {
+      "at": "2026-08-27T20:06:35Z",
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-16/gzip-sizes-head.log",
+      "path": "logs/gzip-sizes.py",
+      "phase": "gzip-sizes",
+      "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478",
+      "tool": "gzip-sizes.py"
+    },
+    {
+      "at": "2026-08-27T20:06:35Z",
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "class": "shipped-executed",
+      "kind": "battery",
+      "log": "logs/attempt-16/request-journals-head.log",
+      "path": "logs/journal-dump.py",
+      "phase": "request-journals",
+      "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9",
+      "tool": "journal-dump.py"
+    }
+  ],
+  "schema": "catena-executed-tools/2",
+  "shipped_not_executed": [
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/catena_command.py",
+      "sha256": "f419c13012cbbe6cbe126aa8dec6c14c28af165336767d13921b30afebed5303",
+      "tool": "catena_command.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/handoff-inventory.py",
+      "sha256": "e12acdfecdbbdd8bf1e2df4c957e76edb02e9d4a28ae6ed0fe237652c48dbc74",
+      "tool": "handoff-inventory.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/replay-command.py",
+      "sha256": "bff116c0b22ae1614ecbba9453be5b6b23c4565b13d93bf9bf96d3b57d868f00",
+      "tool": "replay-command.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/test-attempt-history.py",
+      "sha256": "99d1f5e3940cc85205c95a7a4e09a9add83894836d512fa15a5bf21590e6683c",
+      "tool": "test-attempt-history.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/test-authority-coherence.py",
+      "sha256": "347edde39f50c107f71dae6d59cc6a86c4e5258817b073587b7cdd33ad7e6837",
+      "tool": "test-authority-coherence.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/test-compare-gate.py",
+      "sha256": "b2450767ca7a851e9c2d7644c5e1900d2b9497cce3348fdcdbca4ec6ef23f6bd",
+      "tool": "test-compare-gate.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/test-handoff-inventory.py",
+      "sha256": "54cc5d3a29eda402d8bce86779142935a74f5089688d802f5fcb15443bedd8c6",
+      "tool": "test-handoff-inventory.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "class": "shipped-not-executed",
+      "path": "logs/test-verify-final-package.py",
+      "sha256": "8024147b3cb3b0c58e55f429cdab27b4b3db0d1c241e32556317c2b98b076c2e",
+      "tool": "test-verify-final-package.py",
+      "why": "the package ships this file and this attempt did not execute it; it has no instant, no phase and no transcript because it did not run"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+base summary: [{"failed": 0, "name": "escape-key-does-not-throw", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "focus-indicator-differs-from-resting", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "hash-deep-link-is-honoured", "passed": 10, "routesFailing": 0, "skipped": 0, "total": 10}, {"failed": 0, "name": "html-element-has-lang", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "interactive-controls-have-accessible-names", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "internal-links-resolve", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 0, "name": "no-console-errors", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "no-failed-requests", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "no-horizontal-overflow-at-320", "passed": 19, "routesFailing": 0, "skipped": 152, "total": 171}, {"failed": 0, "name": "no-script-static-truth", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 82, "name": "primary-controls-meet-target-size", "passed": 13, "routesFailing": 19, "skipped": 76, "total": 171}, {"failed": 0, "name": "single-h1-element", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 117, "name": "single-main-element", "passed": 54, "routesFailing": 13, "skipped": 0, "total": 171}, {"failed": 27, "name": "skip-link-targets-existing-element", "passed": 144, "routesFailing": 3, "skipped": 0, "total": 171}, {"failed": 0, "name": "subpath-deep-link-startup", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 0, "name": "tab-traversal-reaches-visible-controls", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "title-present-and-unduplicated", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}]
+head summary: [{"failed": 0, "name": "escape-key-does-not-throw", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "focus-indicator-differs-from-resting", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "hash-deep-link-is-honoured", "passed": 10, "routesFailing": 0, "skipped": 0, "total": 10}, {"failed": 0, "name": "html-element-has-lang", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "interactive-controls-have-accessible-names", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "internal-links-resolve", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 0, "name": "no-console-errors", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "no-failed-requests", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "no-horizontal-overflow-at-320", "passed": 19, "routesFailing": 0, "skipped": 152, "total": 171}, {"failed": 0, "name": "no-script-static-truth", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 82, "name": "primary-controls-meet-target-size", "passed": 13, "routesFailing": 19, "skipped": 76, "total": 171}, {"failed": 0, "name": "single-h1-element", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 117, "name": "single-main-element", "passed": 54, "routesFailing": 13, "skipped": 0, "total": 171}, {"failed": 27, "name": "skip-link-targets-existing-element", "passed": 144, "routesFailing": 3, "skipped": 0, "total": 171}, {"failed": 0, "name": "subpath-deep-link-startup", "passed": 19, "routesFailing": 0, "skipped": 0, "total": 19}, {"failed": 0, "name": "tab-traversal-reaches-visible-controls", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}, {"failed": 0, "name": "title-present-and-unduplicated", "passed": 171, "routesFailing": 0, "skipped": 0, "total": 171}]
+summary equal: True
+base assertion rows (every assertion object): 2290
+base assertion rows the report itself declares: 2290
+base distinct diagnostic names: 17
+head assertion rows (every assertion object): 2290
+head assertion rows the report itself declares: 2290
+head distinct diagnostic names: 17
+rows per diagnostic name (base):
+     171  escape-key-does-not-throw
+     171  focus-indicator-differs-from-resting
+      10  hash-deep-link-is-honoured
+     171  html-element-has-lang
+     171  interactive-controls-have-accessible-names
+      19  internal-links-resolve
+     171  no-console-errors
+     171  no-failed-requests
+     171  no-horizontal-overflow-at-320
+      19  no-script-static-truth
+     171  primary-controls-meet-target-size
+     171  single-h1-element
+     171  single-main-element
+     171  skip-link-targets-existing-element
+      19  subpath-deep-link-startup
+     171  tab-traversal-reaches-visible-controls
+     171  title-present-and-unduplicated
+distinct row identities, base: 2290
+distinct row identities, head: 2290
+identity set equal: True
+base-only identities: []
+head-only identities: []
+diagnostic names only in base: []
+diagnostic names only in head: []
+rows with changed status: 0
+rows with changed detail: 0
+whole report identical under the named volatile exclusions (browser, durationMs, generatedAt, root): True
+comparison: assertion_rows 2290, distinct_diagnostic_names 17, whole_report_equal True
+EXIT=0

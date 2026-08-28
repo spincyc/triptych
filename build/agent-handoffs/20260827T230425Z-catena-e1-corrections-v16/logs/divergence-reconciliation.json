@@ -1,0 +1,298 @@
+{
+ "artifact": "divergence-reconciliation",
+ "schema": "catena-divergence-reconciliation/1",
+ "lane": "V16 finalization -- divergence reconciliation (measurement lane)",
+ "generated_by": "mechanical parse of the four shipping transcripts; no figure typed by hand",
+ "parsing_rule": {
+  "statement": "A DIFF row is a transcript line matching ^  DIFF    (.+)$ ; the capture's command is group 1.",
+  "derivation": [
+   "scripts/replay_examples.py:565 rendered() is the sole producer of a per-capture status row.",
+   "It returns f\"{mark}  {result.capture.command}\" where mark is drawn from a fixed six-entry table whose every value is exactly 8 characters wide: match='  ok    ', diverged='  DIFF  ', stale='  stale ', recovered='  FIXED ', exempt='  exempt', not-run='  absent'.",
+   "So every status row is 8-char mark + 2 spaces + command, and the command always begins at column 11.",
+   "Soundness: report() at :728 emits the only other indented output. Detail blocks print problems as f\"    {problem}\" (4 spaces) and problem continuation lines are indented exactly 12 spaces (:437, :451); problem bodies are built with !r so no raw newline can inject a line. The stale/exempt/absent listings use a '  $ ' prefix. None of these can begin with '  DIFF  '.",
+   "Verified: in all four transcripts the parsed row count is exactly 201, equal to the 'captured example(s)' field, and the six status counts sum to 201."
+  ],
+  "diverged_field_semantics": "report() :770 computes the summary's 'N diverged' as len(diverged) + len(recovered), i.e. DIFF rows PLUS FIXED rows. FIXED rows are 0 in all four transcripts, so here the field equals the DIFF row count -- but the two are not the same quantity in general.",
+  "volatile_field_semantics": "report() :734 computes 'M volatile line(s) declared' as sum(len(lines) for lines in VOLATILE.values()) over the module-level table at :182-185. It is a STATIC CONSTANT over the source tree: it counts DECLARED LINES, never a run outcome, and is unaffected by which tools ran. Demonstrated: `scripts/replay_examples.py --tool mass-ordinary`, replaying 8 captures and no pdf-review capture at all, still reports '2 volatile line(s) declared'."
+ },
+ "identity_set_comparisons": {
+  "v16_cold_minus_v15_warm": [
+   "tools/mass-ordinary check --out build/example-ordinary"
+  ],
+  "v15_warm_minus_v16_cold": [],
+  "note": "ONE additional identity, contributing TWO rows because the same command is captured twice. Distinct commands go 27 to 28, not 26 to 28. V16 cold is a strict superset of V15 warm. Describing this as 'two additional identities' conflates a row count with a name count, which is the error this package corrects in four other places.",
+  "v16_endpoints_agree": true
+ },
+ "volatile_check": {
+  "declared_commands": [
+   "tools/pdf-review --explain",
+   "tools/pdf-review --output build/example-review build/core-last-20.pdf"
+  ],
+  "in_any_diff_set": {
+   "v16_parent": {
+    "tools/pdf-review --explain": false,
+    "tools/pdf-review --output build/example-review build/core-last-20.pdf": false
+   },
+   "v16_head": {
+    "tools/pdf-review --explain": false,
+    "tools/pdf-review --output build/example-review build/core-last-20.pdf": false
+   },
+   "v15_parent": {
+    "tools/pdf-review --explain": false,
+    "tools/pdf-review --output build/example-review build/core-last-20.pdf": false
+   },
+   "v15_head": {
+    "tools/pdf-review --explain": false,
+    "tools/pdf-review --output build/example-review build/core-last-20.pdf": false
+   }
+  },
+  "observed_rows_in_all_four_transcripts": {
+   "tools/pdf-review --explain": "ok",
+   "tools/pdf-review --output build/example-review build/core-last-20.pdf": "absent"
+  },
+  "verdict": "CONFIRMED. Neither volatile-declared capture is a DIFF row in any of the four transcripts. One is masked and matches ('ok'); the other never runs at all ('absent', a REQUIRES miss on build/core-last-20.pdf). They were never in the diverged set, so they cannot be subtracted from it, and the 'M volatile line(s)' field is a count of declared lines rather than of examples."
+ },
+ "root_cause": {
+  "identity": "tools/mass-ordinary check --out build/example-ordinary",
+  "captures": [
+   "tools/mass-ordinary:116 (under the `check` verb)",
+   "tools/mass-ordinary:201 (under the `structure` verb)"
+  ],
+  "replay_rows": [
+   96,
+   102
+  ],
+  "writing_capture": "tools/mass-ordinary structure --out build/example-ordinary (tool line 211, replay row 103, always `ok`)",
+  "recorded_line_3": "the written files are current",
+  "cold_run_line_3": "3 files would be rewritten",
+  "mechanism": "build/example-ordinary is written by replay row 103 and is NEVER cleaned up: `mass-ordinary` appears in neither SCRATCH (scripts/replay_examples.py:70-90) nor PREPARE (:92-110). On a cold tree the two `check` captures at rows 96 and 102 run before anything creates that directory, so both report `3 files would be rewritten` and both are DIFF. Row 103 then writes it. On every later run in the same tree the directory is present and current, so both `check` captures match and report `ok`. Nothing in the Makefile writes build/example-ordinary either -- `check-mass-ordinary` (Makefile:844) runs `tools/tpt mass-ordinary check` with no --out -- so replay-examples is its own and only warmer.",
+  "comparable_case_already_handled": "typeset-bible has exactly this shape and IS handled: PREPARE seeds it with a first render, with the comment 'The capture records the second run, which is the one that reports `unchanged`; a first render into an empty tree writes instead.' (scripts/replay_examples.py:106-110). mass-ordinary has no equivalent entry. That missing declaration, not any change in the tree, is the whole defect.",
+  "controlled_experiment": {
+   "claim": "The tree is not a variable. V15's HEAD commit and V16's PARENT commit are the SAME COMMIT, b9202882badbbbc364f1dd3d9057d2710ee47552, and they report 28 and 30 respectively.",
+   "blob_invariance": "tools/mass-ordinary is blob 603b02fd967188f822b74248e7fbf249c1cd1760 and scripts/replay_examples.py is blob 4be7caaf23105dd87165a2dde7ee79c5fac88c19 at ALL THREE commits involved (69f25754 V15-parent, b9202882 V15-head/V16-parent, cc1f2fb8 V16-head). Byte-identical. The only variable that moved is the state of build/."
+  },
+  "live_reproduction": {
+   "where": "throwaway extract of cc1f2fb8 (git archive HEAD scripts tools src Makefile) under this lane's scratch dir; no repository was modified",
+   "command": "python3 scripts/replay_examples.py --tool mass-ordinary",
+   "run_1_cold": "2 diverged (both mass-ordinary check captures DIFF, line 3: recorded 'the written files are current' / the run printed '3 files would be rewritten')",
+   "run_2_warm": "0 diverged (all 8 rows ok)",
+   "run_3_warm": "0 diverged (stable)",
+   "run_4_after_rm_rf_build_example_ordinary": "2 diverged again",
+   "verdict": "The transition is deterministic and reversible by exactly one filesystem condition: the existence and currency of build/example-ordinary."
+  }
+ },
+ "v15_review_reconciliation": {
+  "review_commit": "67247ecc39a6e5f6224c64ca3ab1af163ee023b1",
+  "review_quote": "The authoritative logs report 28 divergent examples plus two separately declared volatile lines, not the durable producer claim of 30 divergences.",
+  "what_the_review_got_right": "The observation. V15's durable prose (PROJECT-WORK.md:1325 at b9202882) claimed 'check-examples reports 30 example divergences at BOTH endpoints', and V15's own shipped transcripts report 28 diverged over 28 DIFF rows and 27 distinct commands at both endpoints. No artifact in the V15 package supports 30. That half of the finding stands, confirmed here by direct parse of the sealed ZIP.",
+  "what_the_review_got_wrong": "The diagnosis. '28 divergent examples plus two separately declared volatile lines' presents 28 + 2 = 30 as a decomposition of the durable 30. It cannot be one. The volatile field is a static count of DECLARED LINES over a two-entry source table; both its captures are masked at :405 and appear as `ok` and `absent`, never as DIFF rows. They were never members of the diverged set, so they cannot be added to or subtracted from it. A run outcome and a source-level declaration are not addends. That 28 + 2 happens to equal 30 is an arithmetic coincidence, and treating it as an explanation closed the question on the wrong cause.",
+  "the_real_cause": "Build state. V15 shipped a WARM transcript (28) beside a durable claim of 30 taken from a COLD run. Both numbers were true of the run that produced them; neither was wrong about the world. The V15 package simply had no field recording which state its figure came from, so the gap was read as an arithmetic error when it was a state error. V16's battery now reads and records that state before make-check (logs/battery.sh:768-806, 'THE COLD-BUILD PRECONDITION, CHECKED RATHER THAN WRITTEN DOWN'), which is why both V16 cohorts carry an explicit build-state=COLD line.",
+  "consequence_for_v16": "V16's cold figure of 30 is numerically equal to V15's durable 30 but reaches it by a DIFFERENT route: 30 DIFF rows over 28 distinct commands on a cold build/, not 28 + 2. Shipping a bare '30 divergences' would therefore be doubly misleading -- it would silently endorse the review's refuted 28+2 decomposition, and it would omit the build state without which the figure does not reproduce."
+ },
+ "figures": {
+  "v16_parent": {
+   "member": "logs/attempt-15/make-check-parent.log",
+   "attempt": "parent-20260827T193049Z-15pnpphq",
+   "build_state": "COLD",
+   "endpoint": "b9202882badbbbc364f1dd3d9057d2710ee47552",
+   "divergent_rows": 30,
+   "distinct_divergent_identities": 28,
+   "divergent_rows_reported_by_the_tool": 30,
+   "volatile_rows": 2,
+   "total_differing_rows": 32,
+   "divergent_identities": [
+    "tools/calendar-days check --json",
+    "tools/check-calendar-masses check --json",
+    "tools/check-promised-deliverables",
+    "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+    "tools/citations check --json",
+    "tools/citations encode --root build/example-cal --json",
+    "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+    "tools/index-bible check --bible clementine-vulgate --json",
+    "tools/mass-ordinary check --out build/example-ordinary",
+    "tools/mass-propers census",
+    "tools/mass-propers list --calendar postconciliar --format json",
+    "tools/mass-propers structure --check",
+    "tools/mass-propers structure --out build/example-propers",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded",
+    "tools/public-alpha verify --preview",
+    "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+    "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+    "tools/research-staleness status",
+    "tools/research-staleness status --provider claude",
+    "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+    "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+    "tools/tpt --info tpt --json",
+    "tools/tpt --list --json",
+    "tools/tpt source-reader check",
+    "tools/tpt source-reader list --language grc --sort date",
+    "tools/tpt source-reader structure --check",
+    "tools/tpt source-reader structure --out build/example-sources"
+   ],
+   "source": "logs/attempt-15/make-check-parent.log"
+  },
+  "v16_head": {
+   "member": "logs/attempt-16/make-check-head.log",
+   "attempt": "head-20260827T194839Z-166gh2tz",
+   "build_state": "COLD",
+   "endpoint": "cc1f2fb8625f044558c26edd358b99cd7dcc7646",
+   "divergent_rows": 30,
+   "distinct_divergent_identities": 28,
+   "divergent_rows_reported_by_the_tool": 30,
+   "volatile_rows": 2,
+   "total_differing_rows": 32,
+   "divergent_identities": [
+    "tools/calendar-days check --json",
+    "tools/check-calendar-masses check --json",
+    "tools/check-promised-deliverables",
+    "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+    "tools/citations check --json",
+    "tools/citations encode --root build/example-cal --json",
+    "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+    "tools/index-bible check --bible clementine-vulgate --json",
+    "tools/mass-ordinary check --out build/example-ordinary",
+    "tools/mass-propers census",
+    "tools/mass-propers list --calendar postconciliar --format json",
+    "tools/mass-propers structure --check",
+    "tools/mass-propers structure --out build/example-propers",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded",
+    "tools/public-alpha verify --preview",
+    "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+    "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+    "tools/research-staleness status",
+    "tools/research-staleness status --provider claude",
+    "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+    "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+    "tools/tpt --info tpt --json",
+    "tools/tpt --list --json",
+    "tools/tpt source-reader check",
+    "tools/tpt source-reader list --language grc --sort date",
+    "tools/tpt source-reader structure --check",
+    "tools/tpt source-reader structure --out build/example-sources"
+   ],
+   "source": "logs/attempt-16/make-check-head.log"
+  },
+  "v15_parent": {
+   "member": "logs/attempt-01/make-check-parent.log",
+   "build_state": "WARM (inferred: V15's order files carry no build-state line; both mass-ordinary check captures read `ok`, which is only possible where a later capture had already written the directory they compare against)",
+   "divergent_rows": 28,
+   "distinct_divergent_identities": 27,
+   "divergent_rows_reported_by_the_tool": 28,
+   "volatile_rows": 2,
+   "total_differing_rows": 30,
+   "divergent_identities": [
+    "tools/calendar-days check --json",
+    "tools/check-calendar-masses check --json",
+    "tools/check-promised-deliverables",
+    "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+    "tools/citations check --json",
+    "tools/citations encode --root build/example-cal --json",
+    "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+    "tools/index-bible check --bible clementine-vulgate --json",
+    "tools/mass-propers census",
+    "tools/mass-propers list --calendar postconciliar --format json",
+    "tools/mass-propers structure --check",
+    "tools/mass-propers structure --out build/example-propers",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded",
+    "tools/public-alpha verify --preview",
+    "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+    "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+    "tools/research-staleness status",
+    "tools/research-staleness status --provider claude",
+    "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+    "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+    "tools/tpt --info tpt --json",
+    "tools/tpt --list --json",
+    "tools/tpt source-reader check",
+    "tools/tpt source-reader list --language grc --sort date",
+    "tools/tpt source-reader structure --check",
+    "tools/tpt source-reader structure --out build/example-sources"
+   ],
+   "source": "20260826T195656Z-catena-e1-corrections-v15.zip!logs/attempt-01/make-check-parent.log",
+   "source_note": "a member of the PREDECESSOR package, read from the sealed V15 archive committed on evidence/catena-e1-corrections-v15-handoff; it is not a member of this package and no V16 figure derives from it"
+  },
+  "v15_head": {
+   "member": "logs/attempt-02/make-check-head.log",
+   "build_state": "WARM (inferred: V15's order files carry no build-state line; both mass-ordinary check captures read `ok`, which is only possible where a later capture had already written the directory they compare against)",
+   "divergent_rows": 28,
+   "distinct_divergent_identities": 27,
+   "divergent_rows_reported_by_the_tool": 28,
+   "volatile_rows": 2,
+   "total_differing_rows": 30,
+   "divergent_identities": [
+    "tools/calendar-days check --json",
+    "tools/check-calendar-masses check --json",
+    "tools/check-promised-deliverables",
+    "tools/check-promised-deliverables --ledger promised-deliverables.toml",
+    "tools/citations check --json",
+    "tools/citations encode --root build/example-cal --json",
+    "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+    "tools/index-bible check --bible clementine-vulgate --json",
+    "tools/mass-propers census",
+    "tools/mass-propers list --calendar postconciliar --format json",
+    "tools/mass-propers structure --check",
+    "tools/mass-propers structure --out build/example-propers",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962",
+    "tools/mass-today show --date 2026-11-29 --calendar roman-1962 --expanded",
+    "tools/public-alpha verify --preview",
+    "tools/research-staleness explain claude articles/faith/four-last-things-01-death",
+    "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
+    "tools/research-staleness status",
+    "tools/research-staleness status --provider claude",
+    "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-07-31",
+    "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-07-31",
+    "tools/tpt --info tpt --json",
+    "tools/tpt --list --json",
+    "tools/tpt source-reader check",
+    "tools/tpt source-reader list --language grc --sort date",
+    "tools/tpt source-reader structure --check",
+    "tools/tpt source-reader structure --out build/example-sources"
+   ],
+   "source": "20260826T195656Z-catena-e1-corrections-v15.zip!logs/attempt-02/make-check-head.log",
+   "source_note": "a member of the PREDECESSOR package, read from the sealed V15 archive committed on evidence/catena-e1-corrections-v15-handoff; it is not a member of this package and no V16 figure derives from it"
+  }
+ },
+ "recommended_sentence": "On a cold `build/`, `check-examples` reports 30 divergent rows over 28 distinct commands at both V16 endpoints, alongside 2 statically declared volatile lines that are not divergences and are not part of that count; the same head on a warm `build/` reports 28 rows over 27 commands, the whole difference being the two captures of `tools/mass-ordinary check --out build/example-ordinary`, which are compared against a directory a later capture in the same target writes.",
+ "recommended_sentence_short": "check-examples: 30 divergent rows over 28 distinct commands on a COLD `build/` at both endpoints (28 over 27 on a warm one); 2 declared volatile lines are counted separately and are not divergences.",
+ "prohibited_phrasings": [
+  "30 divergences (bare -- omits build state, and conflates 30 rows with 28 identities)",
+  "28 divergent examples plus two volatile lines, totalling 30 (the V15 review's refuted decomposition)",
+  "any divergence figure not carrying its build state"
+ ],
+ "reconciliation": "V16's authoritative cold transcripts report 30 DIFF rows over 28 distinct commands and summarise '30 diverged ... 2 volatile line(s) declared'; V15's shipped warm transcripts report 28 DIFF rows over 27 distinct commands and summarise '28 diverged ... 2 volatile line(s) declared'. Set-differencing the identities in both directions shows V16-cold is a strict superset of V15-warm by exactly ONE command, tools/mass-ordinary check --out build/example-ordinary, which is captured twice in tools/mass-ordinary and so contributes exactly TWO rows; nothing diverges in V15 that does not diverge in V16. The classification changes because build/example-ordinary is written by a LATER capture in the same target (tools/mass-ordinary structure --out build/example-ordinary) and is never cleaned up -- mass-ordinary is in neither the SCRATCH nor the PREPARE table -- so the two check captures diverge on the first run in a fresh tree and match on every run after it. The tree is provably not the variable: V15's head commit IS V16's parent commit (b9202882badbbbc364f1dd3d9057d2710ee47552), and tools/mass-ordinary and scripts/replay_examples.py are byte-identical blobs at all three commits involved; the same commit yields 28 warm and 30 cold. This was reproduced live: a throwaway extract replaying only --tool mass-ordinary gives 2 diverged cold, 0 warm, 0 warm again, and 2 diverged again after rm -rf build/example-ordinary. The V15 independent review was RIGHT that V15's durable claim of 30 was unsupported by V15's own shipped evidence, and WRONG that the gap decomposes as 28 divergent examples + 2 volatile lines: the volatile field is a static count of declared lines over a two-entry source table, both of whose captures are masked and read `ok` and `absent` in all four transcripts and are never DIFF rows, so they can be neither added to nor subtracted from the diverged set. 28 + 2 = 30 is a coincidence, not a decomposition. The real cause is build state, which V15's battery did not record and V16's battery now does.",
+ "verification_summary": {
+  "coordinator_figures_all_reproduced": true,
+  "notes": [
+   "V15 shipped transcripts: 28 DIFF rows over 27 distinct commands, '28 diverged ... 2 volatile line(s) declared' -- REPRODUCED at both V15 endpoints.",
+   "V16 cold runs: 30 DIFF rows over 28 distinct commands -- REPRODUCED at both V16 endpoints.",
+   "volatile is a static constant, both captures masked, never DIFF -- REPRODUCED in all four transcripts and additionally demonstrated live.",
+   "V16 parent and V16 head agree exactly on the DIFF identity set AND on row multiplicity -- CONFIRMED.",
+   "CORRECTION TO THE BRIEF'S FRAMING: the brief asks for 'the two additional identities'. There is only ONE additional IDENTITY; it contributes TWO additional ROWS because the same command is captured twice in tools/mass-ordinary. Distinct diverging commands go 27 -> 28, not 26 -> 28.",
+   "CAVEAT ON V15's BUILD STATE: V15's order-parent.txt and order-head.txt carry no build-state line, so WARM is an inference from V15's own transcript (rows 96 and 102 read `ok`, which requires build/example-ordinary to have pre-existed) rather than a recorded fact. The inference is sound but should be stated as an inference."
+  ]
+ },
+ "cohort_note": "The two V16 transcripts named here are the SHIPPING cohorts of this package: ordinal 15 (parent) and ordinal 16 (head). An earlier pair, ordinals 04 and 07, produced the same figures and was superseded when P8 found that those cohorts had executed battery.sh at a digest the package does not ship; their transcripts are retained outside the package and support nothing. Both pairs report 30 diverged on a cold build tree, so the reconciliation below is unchanged in substance by the supersession -- which is itself a small control on the figure.",
+ "path_policy": "All artifact member names and evidence references are package-root-relative. Builder-local absolute filesystem paths are excluded because they are not part of the portable evidence identity, and they are excluded rather than tokenised into placeholders: a placeholder for a path nobody else has is still a fact about one machine. The two V16 entries name members of this package; the two V15 entries name members of the sealed predecessor archive by the path they occupy inside it. Nothing here names a directory on the machine that derived it.",
+ "vocabulary": {
+  "statement": "Four measures, named apart, because collapsing them is the defect this package corrects in five places. The phrase '30 divergences' is not used anywhere and names none of these.",
+  "divergent_rows": "captured rows the replay marked DIFF; a command captured twice contributes two",
+  "distinct_divergent_identities": "distinct command strings among those rows",
+  "volatile_rows": "lines declared volatile in a static source table and masked BEFORE comparison; they are never DIFF rows and are not part of divergent_rows",
+  "total_differing_rows": "divergent_rows + volatile_rows, stated only as that sum and never as a divergence count"
+ },
+ "authoritative_basis": {
+  "authoritative_parent_attempt": "15",
+  "authoritative_head_attempt": "16",
+  "authoritative_v16_measurement_basis": "cold attempts 15 and 16",
+  "historical_v15_measurement_basis": "shipped warm evidence, inferred build state",
+  "note": "The V15 figures here are historical reconciliation context only. No V16 validation figure derives from them, and none derives from the superseded cohorts 04 and 07, which reproduced the same cold counts and are recorded as a control on this figure rather than as a source of it."
+ },
+ "v16_endpoints_equal": true,
+ "v16_minus_v15_distinct_identities": [
+  "tools/mass-ordinary check --out build/example-ordinary"
+ ],
+ "v15_minus_v16_distinct_identities": []
+}

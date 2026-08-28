@@ -1,0 +1,1626 @@
+{
+ "byte_scan": {
+  "clean": true,
+  "findings": [],
+  "scanned": 78
+ },
+ "commit_count": 4,
+ "commits": [
+  {
+   "authored": "2026-08-27T13:55:54Z",
+   "files": [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js"
+   ],
+   "sha": "e34ab2b0564c69b05b0ac9e5e85e55cbc3565805",
+   "subject": "Publish only a finished value, and carry its owner to the body"
+  },
+  {
+   "authored": "2026-08-27T13:56:22Z",
+   "files": [
+    "tools/tests/test_catena_wave_1.py"
+   ],
+   "sha": "208f086b55ce1ef53a66e3a15b865d3eae3e53b7",
+   "subject": "Prove the interval closed, the owner carried, and the record earned"
+  },
+  {
+   "authored": "2026-08-27T13:56:49Z",
+   "files": [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+    "promised-deliverables.toml"
+   ],
+   "sha": "251900b14a168b356297299d68b947c686c91768",
+   "subject": "Record the V16 lane, and correct what this lane first corrected wrongly"
+  },
+  {
+   "authored": "2026-08-27T15:02:18Z",
+   "files": [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md"
+   ],
+   "sha": "cc1f2fb8625f044558c26edd358b99cd7dcc7646",
+   "subject": "Do not state here what stating here would change"
+  }
+ ],
+ "diff": {
+  "deletions": 194,
+  "files": 7,
+  "insertions": 3979,
+  "rows": [
+   {
+    "added": 831,
+    "path": "PROJECT-WORK.md",
+    "removed": 5
+   },
+   {
+    "added": 1,
+    "path": "guidance/corpus-browser-master-plan.md",
+    "removed": 1
+   },
+   {
+    "added": 331,
+    "path": "guidance/corpus-browser-roadmap.md",
+    "removed": 2
+   },
+   {
+    "added": 155,
+    "path": "promised-deliverables.toml",
+    "removed": 0
+   },
+   {
+    "added": 241,
+    "path": "src/web/browser/catena/catena-model.js",
+    "removed": 23
+   },
+   {
+    "added": 51,
+    "path": "src/web/browser/catena/catena.js",
+    "removed": 52
+   },
+   {
+    "added": 2369,
+    "path": "tools/tests/test_catena_wave_1.py",
+    "removed": 111
+   }
+  ],
+  "status": {
+   "PROJECT-WORK.md": "M",
+   "guidance/corpus-browser-master-plan.md": "M",
+   "guidance/corpus-browser-roadmap.md": "M",
+   "promised-deliverables.toml": "M",
+   "src/web/browser/catena/catena-model.js": "M",
+   "src/web/browser/catena/catena.js": "M",
+   "tools/tests/test_catena_wave_1.py": "M"
+  }
+ },
+ "examples": {
+  "head": {
+   "build_state_sensitive": "`check-examples` reports MORE divergent rows on a cold build/ than on a warm one, because a capture that writes build/example-ordinary makes an earlier capture in the same target match. Run the target exactly once per fresh clone; this figure describes the run that produced this transcript",
+   "example_divergence_commands": 28,
+   "example_divergence_rows": 30,
+   "example_divergence_rows_in_detail": 30,
+   "examples_captured": 201,
+   "examples_known_stale": 35,
+   "examples_never_run": 6,
+   "examples_replayed": 192,
+   "examples_unrunnable_here": 3,
+   "line": 635,
+   "path": "make-check-head.log",
+   "volatile_is_not_a_divergence_count": "`volatile` counts DECLARED LINES in a static table and those captures are masked before comparison; they were never in the divergent set and are never an addend of it",
+   "volatile_lines_declared": 2
+  },
+  "parent": {
+   "build_state_sensitive": "`check-examples` reports MORE divergent rows on a cold build/ than on a warm one, because a capture that writes build/example-ordinary makes an earlier capture in the same target match. Run the target exactly once per fresh clone; this figure describes the run that produced this transcript",
+   "example_divergence_commands": 28,
+   "example_divergence_rows": 30,
+   "example_divergence_rows_in_detail": 30,
+   "examples_captured": 201,
+   "examples_known_stale": 35,
+   "examples_never_run": 6,
+   "examples_replayed": 192,
+   "examples_unrunnable_here": 3,
+   "line": 635,
+   "path": "make-check-parent.log",
+   "volatile_is_not_a_divergence_count": "`volatile` counts DECLARED LINES in a static table and those captures are masked before comparison; they were never in the divergent set and are never an addend of it",
+   "volatile_lines_declared": 2
+  }
+ },
+ "gate": {
+  "head": {
+   "browser": "Chrome/151.0.7922.173",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-head.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  },
+  "parent": {
+   "browser": "Chrome/151.0.7922.173",
+   "failure_categories": {
+    "primary-controls-meet-target-size": 82,
+    "single-main-element": 117,
+    "skip-link-targets-existing-element": 27
+   },
+   "measured": {
+    "assertions": 2290,
+    "failures": 226,
+    "pages": 171,
+    "routes": 19,
+    "states": 9
+   },
+   "path": "browser-gate-parent.json",
+   "totals": {
+    "assertions": 2290,
+    "failed": 226,
+    "pages": 171,
+    "passed": 1836,
+    "routes": 19,
+    "skipped": 228,
+    "states": 9
+   }
+  }
+ },
+ "identity": {
+  "git_dir_kind": "directory",
+  "head": "cc1f2fb8625f044558c26edd358b99cd7dcc7646",
+  "head_of_branch": "cc1f2fb8625f044558c26edd358b99cd7dcc7646",
+  "parent": "b9202882badbbbc364f1dd3d9057d2710ee47552",
+  "parent_is_ancestor_of_head": true,
+  "review_addressed": "67247ecc39a6e5f6224c64ca3ab1af163ee023b1",
+  "workspace_mode": "fresh-clone",
+  "worktree": false,
+  "worktree_clean_at_head": true
+ },
+ "inherited_identities": {
+  "count": 27,
+  "identical": true,
+  "mentioning_catena": [],
+  "only_at_head": [],
+  "only_at_parent": []
+ },
+ "lane": "V16",
+ "oracles": {
+  "against_parent": {
+   "classes": 8,
+   "failing_by_class": {
+    "FrozenContractTest": 1,
+    "V14UnfetchedProjectionTest": 5,
+    "V16BodyApplicationJournalTest": 26,
+    "V16CompletionEnvelopeTest": 14,
+    "V16FinalizedContentTest": 202,
+    "V16PublicationAtomicityTest": 28,
+    "V16ReentrantPublicationTest": 5,
+    "V16TextObservationAccountingTest": 7
+   },
+   "failing_method_count": 39,
+   "failing_methods": [
+    "test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection",
+    "test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_a_throwing_write_is_caught_and_leaves_no_applied_record",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_a_write_that_does_not_take_leaves_no_applied_record",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_an_owner_local_retry_never_observes_a_partial_path_state",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_no_scenario_anywhere_lets_a_body_write_escape_the_page",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_the_owner_state_stays_coherent_after_a_failed_write",
+    "test_catena_wave_1.V16BodyApplicationJournalTest.test_the_two_write_failures_leave_different_partial_states",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_a_finished_value_rebinds_to_the_owner_that_reuses_it",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_a_reported_failure_is_a_body_and_is_owned_as_one",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_an_actual_row_no_longer_authorizes_arbitrary_content",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_the_envelope_can_be_minted_from_neither_half_alone",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_is_the_models_own_deterministic_schema",
+    "test_catena_wave_1.V16CompletionEnvelopeTest.test_the_journal_entry_follows_a_confirmed_write_and_nothing_else",
+    "test_catena_wave_1.V16FinalizedContentTest.test_a_getter_one_level_above_the_record_is_never_invoked",
+    "test_catena_wave_1.V16FinalizedContentTest.test_a_nested_record_altered_after_publication_is_out_of_reach",
+    "test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_boolean_survives_the_mint_and_is_still_refused",
+    "test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_realm_supplies_no_member_of_a_finalized_value",
+    "test_catena_wave_1.V16FinalizedContentTest.test_a_prototype_planted_after_publication_reaches_no_later_owner",
+    "test_catena_wave_1.V16FinalizedContentTest.test_an_own_accessor_never_becomes_the_pages_words",
+    "test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record",
+    "test_catena_wave_1.V16FinalizedContentTest.test_pollution_after_the_value_was_sealed_moves_nothing",
+    "test_catena_wave_1.V16FinalizedContentTest.test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one",
+    "test_catena_wave_1.V16FinalizedContentTest.test_the_sentence_and_the_envelope_refuse_inherited_authority_too",
+    "test_catena_wave_1.V16FinalizedContentTest.test_words_supplied_from_above_the_record_are_not_its_words",
+    "test_catena_wave_1.V16PublicationAtomicityTest.test_exactly_one_finished_value_is_ever_published",
+    "test_catena_wave_1.V16PublicationAtomicityTest.test_no_failure_and_no_intermediate_value_is_published",
+    "test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished",
+    "test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists",
+    "test_catena_wave_1.V16PublicationAtomicityTest.test_the_value_published_by_path_is_the_value_the_body_applied",
+    "test_catena_wave_1.V16ReentrantPublicationTest.test_a_late_publication_and_completion_cannot_reach_the_second",
+    "test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_after_publication_gets_the_finished_value",
+    "test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_during_normalization_asks_for_itself",
+    "test_catena_wave_1.V16TextObservationAccountingTest.test_an_accessor_over_the_same_members_changes_none_of_it",
+    "test_catena_wave_1.V16TextObservationAccountingTest.test_the_only_value_read_of_the_file_is_the_transport_resolving_it",
+    "test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else"
+   ],
+   "identities": 288,
+   "log": "head-tests-against-parent.log",
+   "methods_run": 604,
+   "new_classes_that_do_not_fail": [
+    "V16ConsumerIdentityRosterTest",
+    "V16PublicationBase"
+   ],
+   "new_classes_that_fail": [
+    "V16BodyApplicationJournalTest",
+    "V16CompletionEnvelopeTest",
+    "V16FinalizedContentTest",
+    "V16PublicationAtomicityTest",
+    "V16ReentrantPublicationTest",
+    "V16TextObservationAccountingTest"
+   ],
+   "passing_methods": 565,
+   "pre_existing_classes_that_fail": [
+    "FrozenContractTest",
+    "V14UnfetchedProjectionTest"
+   ],
+   "subtest_identities": [
+    "FAIL: test_a_finished_value_rebinds_to_the_owner_that_reuses_it (test_catena_wave_1.V16CompletionEnvelopeTest.test_a_finished_value_rebinds_to_the_owner_that_reuses_it)",
+    "FAIL: test_a_getter_one_level_above_the_record_is_never_invoked (test_catena_wave_1.V16FinalizedContentTest.test_a_getter_one_level_above_the_record_is_never_invoked)",
+    "FAIL: test_a_late_publication_and_completion_cannot_reach_the_second (test_catena_wave_1.V16ReentrantPublicationTest.test_a_late_publication_and_completion_cannot_reach_the_second)",
+    "FAIL: test_a_nested_record_altered_after_publication_is_out_of_reach (test_catena_wave_1.V16FinalizedContentTest.test_a_nested_record_altered_after_publication_is_out_of_reach)",
+    "FAIL: test_a_polluted_boolean_survives_the_mint_and_is_still_refused (test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_boolean_survives_the_mint_and_is_still_refused)",
+    "FAIL: test_a_polluted_realm_supplies_no_member_of_a_finalized_value (test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_realm_supplies_no_member_of_a_finalized_value)",
+    "FAIL: test_a_prototype_planted_after_publication_reaches_no_later_owner (test_catena_wave_1.V16FinalizedContentTest.test_a_prototype_planted_after_publication_reaches_no_later_owner)",
+    "FAIL: test_a_reentrant_owner_after_publication_gets_the_finished_value (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_after_publication_gets_the_finished_value)",
+    "FAIL: test_a_reentrant_owner_after_publication_gets_the_finished_value (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_after_publication_gets_the_finished_value) (moment='get')",
+    "FAIL: test_a_reentrant_owner_during_normalization_asks_for_itself (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_during_normalization_asks_for_itself)",
+    "FAIL: test_a_reentrant_owner_during_normalization_asks_for_itself (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_during_normalization_asks_for_itself) (moment='get')",
+    "FAIL: test_a_reported_failure_is_a_body_and_is_owned_as_one (test_catena_wave_1.V16CompletionEnvelopeTest.test_a_reported_failure_is_a_body_and_is_owned_as_one)",
+    "FAIL: test_a_throwing_write_is_caught_and_leaves_no_applied_record (test_catena_wave_1.V16BodyApplicationJournalTest.test_a_throwing_write_is_caught_and_leaves_no_applied_record)",
+    "FAIL: test_a_write_that_does_not_take_leaves_no_applied_record (test_catena_wave_1.V16BodyApplicationJournalTest.test_a_write_that_does_not_take_leaves_no_applied_record)",
+    "FAIL: test_an_accessor_over_the_same_members_changes_none_of_it (test_catena_wave_1.V16TextObservationAccountingTest.test_an_accessor_over_the_same_members_changes_none_of_it)",
+    "FAIL: test_an_actual_row_no_longer_authorizes_arbitrary_content (test_catena_wave_1.V16CompletionEnvelopeTest.test_an_actual_row_no_longer_authorizes_arbitrary_content)",
+    "FAIL: test_an_own_accessor_never_becomes_the_pages_words (test_catena_wave_1.V16FinalizedContentTest.test_an_own_accessor_never_becomes_the_pages_words)",
+    "FAIL: test_an_owner_local_retry_never_observes_a_partial_path_state (test_catena_wave_1.V16BodyApplicationJournalTest.test_an_owner_local_retry_never_observes_a_partial_path_state)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='acknowledgement-order', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='acknowledgement-order', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='default', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='fragment-retry', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='fragment-retry', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='malformed-action-then-retry', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='malformed-record', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='severian-open', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='severian-projected', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='synthetic-licence', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='synthetic-licence', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v11-renderer-order-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-alternating-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-drifting-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-prewarmed-inherited-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-stable-carried-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-carried-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-chapter-members', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-chapter-members-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-refusals', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-refusals-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-sources', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-sources-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-spine-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-spine-prefix-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-later', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-graph', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-graph', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-text_prefix-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-unfetched-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-late-same-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-fields', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-fields-throw', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-forged-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-quiet-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-same-path-rows', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-same-path-rows', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-two-projections-one-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-two-projections-one-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-walking-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-descriptor-accounting', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-late-same-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-late-same-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-steady', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-throw', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-one-fails', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-one-fails', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-together', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-together', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-settled-then-shared', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-settled-then-shared', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-accessor', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-accessor', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-late-contamination', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-late-contamination', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-one-fails-probed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-one-fails-probed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-publication', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-normalizing', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-normalizing', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-published', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-published', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-retry-probed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-retry-probed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-text-accessor', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-text-accounting', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=10)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=11)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=12)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=13)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-modes-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-modes-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-silent', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-silent', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-throws', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-throws', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments-reversed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments-reversed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-inherited-id', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-inherited-id', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-null-fragment-text', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=10)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=11)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-absent-prefix-carried', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-prewarmed-fallback', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-valid-prefix-carried', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-late-contamination', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-late-contamination', application=1)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-publication', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=1)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=10)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=11)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=12)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=13)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=2)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=3)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=4)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=5)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=6)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=7)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=8)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=9)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-write-fails-control', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-write-fails-control', application=1)",
+    "FAIL: test_exactly_one_finished_value_is_ever_published (test_catena_wave_1.V16PublicationAtomicityTest.test_exactly_one_finished_value_is_ever_published)",
+    "FAIL: test_no_failure_and_no_intermediate_value_is_published (test_catena_wave_1.V16PublicationAtomicityTest.test_no_failure_and_no_intermediate_value_is_published)",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=5, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=6, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=7, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=6, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=7, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=10, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=6, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=7, moment='get')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=9, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=10, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=6, moment='get')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=7, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=9, moment='during-normalize')",
+    "FAIL: test_no_scenario_anywhere_lets_a_body_write_escape_the_page (test_catena_wave_1.V16BodyApplicationJournalTest.test_no_scenario_anywhere_lets_a_body_write_escape_the_page)",
+    "FAIL: test_pollution_after_the_value_was_sealed_moves_nothing (test_catena_wave_1.V16FinalizedContentTest.test_pollution_after_the_value_was_sealed_moves_nothing)",
+    "FAIL: test_the_envelope_can_be_minted_from_neither_half_alone (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_envelope_can_be_minted_from_neither_half_alone)",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='addThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='assignThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='deleteThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='protoThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='held')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='keptBasis')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='noExtra')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='stillNullPrototype')",
+    "FAIL: test_the_finalized_content_is_the_models_own_deterministic_schema (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_is_the_models_own_deterministic_schema)",
+    "FAIL: test_the_journal_entry_follows_a_confirmed_write_and_nothing_else (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_journal_entry_follows_a_confirmed_write_and_nothing_else)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_only_value_read_of_the_file_is_the_transport_resolving_it (test_catena_wave_1.V16TextObservationAccountingTest.test_the_only_value_read_of_the_file_is_the_transport_resolving_it)",
+    "FAIL: test_the_owner_state_stays_coherent_after_a_failed_write (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_owner_state_stays_coherent_after_a_failed_write)",
+    "FAIL: test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one (test_catena_wave_1.V16FinalizedContentTest.test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one)",
+    "FAIL: test_the_page_reads_no_raw_chapter_member_after_projection (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection)",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment arrived in a f')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment could not be l')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment was not publis')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='This fragment carries no text file')",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists)",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists) (moment='before-publication')",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists) (moment='during-normalize')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else)",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='acknowledgement')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='basis')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='date_basis')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='text')",
+    "FAIL: test_the_sentence_and_the_envelope_refuse_inherited_authority_too (test_catena_wave_1.V16FinalizedContentTest.test_the_sentence_and_the_envelope_refuse_inherited_authority_too)",
+    "FAIL: test_the_two_write_failures_leave_different_partial_states (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_two_write_failures_leave_different_partial_states) (mode='silent')",
+    "FAIL: test_the_two_write_failures_leave_different_partial_states (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_two_write_failures_leave_different_partial_states) (mode='throw')",
+    "FAIL: test_the_value_published_by_path_is_the_value_the_body_applied (test_catena_wave_1.V16PublicationAtomicityTest.test_the_value_published_by_path_is_the_value_the_body_applied)",
+    "FAIL: test_words_supplied_from_above_the_record_are_not_its_words (test_catena_wave_1.V16FinalizedContentTest.test_words_supplied_from_above_the_record_are_not_its_words)"
+   ]
+  },
+  "classes_added": {
+   "tools/tests/test_catena.py": [],
+   "tools/tests/test_catena_wave_1.py": [
+    "V16BodyApplicationJournalTest",
+    "V16CompletionEnvelopeTest",
+    "V16ConsumerIdentityRosterTest",
+    "V16FinalizedContentTest",
+    "V16PublicationAtomicityTest",
+    "V16PublicationBase",
+    "V16ReentrantPublicationTest",
+    "V16TextObservationAccountingTest"
+   ]
+  },
+  "classes_added_count": 8,
+  "corrected_blocks": 23,
+  "corrected_by_lane": {
+   "?": 1,
+   "V6": 8,
+   "V7": 14
+  },
+  "corrected_classes": [
+   "ActionPartialArrivalTerminalStateTest",
+   "FindingOrderIndependenceTest",
+   "FrozenContractTest",
+   "GenuinelyLateStaleWorkTest",
+   "MalformedLanguageAttributeTest",
+   "MalformedRecordRenderingTest",
+   "MixedCollectionMemberTest",
+   "NumericVerseAndPathTest",
+   "RenderedScriptureTruthTest",
+   "RoutableIdentityTest",
+   "TypedAbsenceFindingTest",
+   "UnsupportedVoiceTest",
+   "UntypedProvenanceTest",
+   "V7UnreadableRootDomainClaimTest"
+  ],
+  "corrected_sites": [
+   {
+    "class": "UnsupportedVoiceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 6822
+   },
+   {
+    "class": "UntypedProvenanceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 7675
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 7703
+   },
+   {
+    "class": "MalformedRecordRenderingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "?",
+    "line": 7721
+   },
+   {
+    "class": "FrozenContractTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8312
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8607
+   },
+   {
+    "class": "MalformedLanguageAttributeTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8628
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8667
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8692
+   },
+   {
+    "class": "MixedCollectionMemberTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8703
+   },
+   {
+    "class": "TypedAbsenceFindingTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8770
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8813
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 8829
+   },
+   {
+    "class": "NumericVerseAndPathTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V6",
+    "line": 8852
+   },
+   {
+    "class": "RenderedScriptureTruthTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9481
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9609
+   },
+   {
+    "class": "FindingOrderIndependenceTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 9743
+   },
+   {
+    "class": "GenuinelyLateStaleWorkTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 10567
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 10792
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 10863
+   },
+   {
+    "class": "ActionPartialArrivalTerminalStateTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 10898
+   },
+   {
+    "class": "RoutableIdentityTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 11100
+   },
+   {
+    "class": "V7UnreadableRootDomainClaimTest",
+    "file": "tools/tests/test_catena_wave_1.py",
+    "lane": "V7",
+    "line": 16602
+   }
+  ],
+  "marker": "CORRECTED ORACLE"
+ },
+ "package": {
+  "authority": "package totals and final bytes are proved by MANIFEST.sha256, the ZIP and its .zip.sha256 sidecar; this file sizes only members frozen before it was written",
+  "derived_members": [
+   {
+    "path": "claims.json",
+    "reason": "written by this derivation; it cannot inventory its own bytes"
+   },
+   {
+    "path": "DERIVED-CLAIMS.md",
+    "reason": "rendered from claims.json in the same pass that writes it"
+   },
+   {
+    "path": "logs/attempts.json",
+    "reason": "the attempt ledger rows this package was built from, composed after the consistency audit so it can carry this attempt's own terminal row"
+   },
+   {
+    "path": "logs/attempt-32/derive-claims.log",
+    "reason": "transcript of this derivation, written as the derivation prints"
+   },
+   {
+    "path": "logs/attempt-32/head-consistency.log",
+    "reason": "transcript of the consistency audit, which runs after this derivation"
+   },
+   {
+    "path": "MANIFEST.sha256",
+    "reason": "written by the manifest phase, after every other member is frozen"
+   }
+  ],
+  "evidence_bytes": 21895630,
+  "evidence_members": 70,
+  "rows": [
+   {
+    "bytes": 33191,
+    "path": "CLAIM-CLOSURE.md",
+    "sha256": "21e786d49b32b8187f20b6df59536c0b6c8776b272956fa12573abc0990d19d5"
+   },
+   {
+    "bytes": 27078,
+    "path": "EVIDENCE-INDEX.md",
+    "sha256": "73283e9750785f3a149975c3e97d8c63e66cdbab03300da68d3a6c7502bfaf37"
+   },
+   {
+    "bytes": 34597,
+    "path": "HANDOFF.md",
+    "sha256": "88fd3656204e8ce1ddf840759dc8d10acb03fa4b78fc6c85a584f42b2c8d48fb"
+   },
+   {
+    "bytes": 36987,
+    "path": "LIMITATIONS.md",
+    "sha256": "52b39985bcd5865ce3339e06b364c63a312cdde9c6ac34daa24c0f6396e9b393"
+   },
+   {
+    "bytes": 17766,
+    "path": "PRIVACY-AUDIT.md",
+    "sha256": "2e6fd47381d53032a46bdcf69887bfe2140ad84460a372a9aa6d099193474fa5"
+   },
+   {
+    "bytes": 102107,
+    "path": "PROVENANCE.md",
+    "sha256": "fbfc6724e1d13fc1f76a363d9ffcd018126f1ac3c74e60790545e5ce640d0930"
+   },
+   {
+    "bytes": 27765,
+    "path": "REVIEW_REQUEST.md",
+    "sha256": "bf4041d49ff2d0aee6fadc277903a2ea7f663a98e7dc689e80c45249bb4b111d"
+   },
+   {
+    "bytes": 6451,
+    "path": "UNRESOLVED-BLOCKERS.md",
+    "sha256": "a8df6294a722620a9411e9db8923a6dfb8210075f7fae2edc1bc177d339ec48c"
+   },
+   {
+    "bytes": 788,
+    "path": "changed-files.txt",
+    "sha256": "07d7517e76fd521f3f01d73afad09715ae8ea6c3be5f37f2959711f9a2adacc4"
+   },
+   {
+    "bytes": 343542,
+    "path": "changes.patch",
+    "sha256": "4630af8e99205afcc9cb82df0748f8e87a74d6782f3f451e288b621ddc89aad0"
+   },
+   {
+    "bytes": 36832,
+    "path": "checks.txt",
+    "sha256": "3b1dfbfa80d62104f5f3556eb1d9736e4a67c0144c43dfad5e0af4bc49d86f0d"
+   },
+   {
+    "bytes": 22545,
+    "path": "commands.json",
+    "sha256": "025dfb6b53f353ce8c6ceb5dd48626bdfd140fc0874d06b6561e486ef5cf79a5"
+   },
+   {
+    "bytes": 516,
+    "path": "commits.txt",
+    "sha256": "74c695b99bd1335ca87686a84bd2716977e69495817a9890077af6f98c4fe467"
+   },
+   {
+    "bytes": 10196,
+    "path": "logs/LOG-INDEX.md",
+    "sha256": "616dd568dbbc11ce5c3b02a484c264dcb9720d5d80f5d74763b7a7fdb31efefb"
+   },
+   {
+    "bytes": 144265,
+    "path": "logs/assemble.sh",
+    "sha256": "273dfee859472e1ccd3970efc4ca68e441f501dd9a29446bfbc7b119361e790b"
+   },
+   {
+    "bytes": 589801,
+    "path": "logs/attempt-15/browser-gate-parent.json",
+    "sha256": "f69fc9741d582ebaa10e74934ca64dab3f6e1cb1870f153250faa3edd0f0d25a"
+   },
+   {
+    "bytes": 289,
+    "path": "logs/attempt-15/browser-gate-parent.log",
+    "sha256": "115c2217bd5fddcf13eddefcb58dcf1acf65083d50c5b3d7783659053f4a430d"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/attempt-15/catena-check-parent.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 99117,
+    "path": "logs/attempt-15/focused-catena-parent.log",
+    "sha256": "c8ef2cdedd9e8f310f884853076fc2808697dffc7671a5fedbbe4047654108fe"
+   },
+   {
+    "bytes": 32209,
+    "path": "logs/attempt-15/full-discovery-parent.log",
+    "sha256": "2df5050cf26735fe937558562877b5fe4f7388f6bdefad8881e0b267d6ecfff4"
+   },
+   {
+    "bytes": 114,
+    "path": "logs/attempt-15/gzip-sizes-parent.log",
+    "sha256": "49c55cfb709bff189c635a0055e264ec9df8f06ce48bacb0f582088bd103365a"
+   },
+   {
+    "bytes": 542490,
+    "path": "logs/attempt-15/head-tests-against-parent.log",
+    "sha256": "36fcf6179ab9f9e41be56e8cf9a4aad9ed495273532bcb8f3f4357e9846c7c06"
+   },
+   {
+    "bytes": 51474,
+    "path": "logs/attempt-15/make-check-parent.log",
+    "sha256": "3bb1d5ea68be84720c82e9239fcff741df6f04e1120b468f8b88a72357a460ba"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/attempt-15/promised-parent.log",
+    "sha256": "df34d254ad1120b703af8e58ae5b3127e0d38045087b6104f7741fb313c7f9ed"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/attempt-15/public-site-parent.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/attempt-15/release-bindings-parent.log",
+    "sha256": "e6d0d9c74fcd18efc785f44b6358387d5038c6d723370ff3cc9376c8d4956b2f"
+   },
+   {
+    "bytes": 8762519,
+    "path": "logs/attempt-15/request-journals-parent.log",
+    "sha256": "e05099e79c9e31f34c2d3e85678e5eb17426e622fc5c3fd4c0cd7452780d9064"
+   },
+   {
+    "bytes": 79,
+    "path": "logs/attempt-15/restore-parent-tree.log",
+    "sha256": "c5308cf051f67d7c080fa0b8b8aef38fc2b85d8c1affc3ada5add3ac07a22069"
+   },
+   {
+    "bytes": 589794,
+    "path": "logs/attempt-16/browser-gate-head.json",
+    "sha256": "1d70ba0865d77f3e13c7ca1ad4cd9cf278c7e5fa2c521724dd73e3b4b3df786e"
+   },
+   {
+    "bytes": 287,
+    "path": "logs/attempt-16/browser-gate-head.log",
+    "sha256": "6a1724fd0aaf2fea317ee5fd8b20755c5d2330f6a99c5657ec32c6dd2e8593d9"
+   },
+   {
+    "bytes": 103,
+    "path": "logs/attempt-16/browser-static-head.log",
+    "sha256": "94c6076578e15171cce7817ba5e44b55cb9587181dd9dbc813d0f5cb55baa73a"
+   },
+   {
+    "bytes": 46,
+    "path": "logs/attempt-16/catena-check-head.log",
+    "sha256": "d03e1dd1c8f512d2ec10bee4e308263f9c926ac22b163465a97be4ac8514d59a"
+   },
+   {
+    "bytes": 106990,
+    "path": "logs/attempt-16/focused-catena-head.log",
+    "sha256": "4b2fa8838d8288f2da8c60805dcef375a093751ef1cdcb9307e4619255d022e6"
+   },
+   {
+    "bytes": 31813,
+    "path": "logs/attempt-16/full-discovery-head.log",
+    "sha256": "9bf8f0d342ec9b1300c97abf7b7e78d23e35646232904a1da6059c5f697df27f"
+   },
+   {
+    "bytes": 115,
+    "path": "logs/attempt-16/gzip-sizes-head.log",
+    "sha256": "9a5ce135cdb3a0260a61459b05b9c2c912dbd4336f68532f60de889f4769f6ba"
+   },
+   {
+    "bytes": 51467,
+    "path": "logs/attempt-16/make-check-head.log",
+    "sha256": "bb186a86ee712778de6b40ef3f10ca089e1747b2f9cf7a51c0ffa721ba2ac035"
+   },
+   {
+    "bytes": 60,
+    "path": "logs/attempt-16/promised-head.log",
+    "sha256": "afb5e6a5cd4244142605740d167ccedef3d3cb72ec98c7b5abc23ca7acb3fb57"
+   },
+   {
+    "bytes": 97,
+    "path": "logs/attempt-16/public-site-head.log",
+    "sha256": "3cd191d29d2dd913cf59b47785cd17788caaac70cabcd2c9633b5be38302a283"
+   },
+   {
+    "bytes": 887,
+    "path": "logs/attempt-16/release-bindings-head.log",
+    "sha256": "3b852a9d38553622260d980930618d2b215f891a6cc52ddb9229ea433c7bc0d5"
+   },
+   {
+    "bytes": 8763655,
+    "path": "logs/attempt-16/request-journals-head.log",
+    "sha256": "11f974ba8729c71c7f2c8088d70144d4f1ef4f603f06c29a831713f0b872275e"
+   },
+   {
+    "bytes": 5437,
+    "path": "logs/attempt-32/gate-comparison.log",
+    "sha256": "229650f0a0aaada858fd85a042db8f39fcde05b5309a2a5e9dc9fe4b5691d8f5"
+   },
+   {
+    "bytes": 1856,
+    "path": "logs/attempt-32/seal-check.log",
+    "sha256": "8a858ed3e8c508878f53bb9599b130ed80a4d123562d5e4a9b3224037f05868a"
+   },
+   {
+    "bytes": 6179,
+    "path": "logs/attempt-32/seal.log",
+    "sha256": "f4d4ab343e4e5a74039f777eb71a13c0b2b29128df7b700cdabc4b72c850f10d"
+   },
+   {
+    "bytes": 24858,
+    "path": "logs/attempt-32/sealer-tests.log",
+    "sha256": "db924cd6f821a4a05620088df310db03b42f83572f8c0832632ae96122597938"
+   },
+   {
+    "bytes": 18370,
+    "path": "logs/attempt-history.json",
+    "sha256": "7dac228b74e1dd6d5d85672faa19dfadf78260d2a3709f7a95dceb1c1a670213"
+   },
+   {
+    "bytes": 76179,
+    "path": "logs/authority-coherence.py",
+    "sha256": "6f236ae60e90223816a32e37cbfcf8c8bb3b8e12670692cf64ca7525ac49b130"
+   },
+   {
+    "bytes": 52175,
+    "path": "logs/battery.sh",
+    "sha256": "cca4d2840116e2e101c68d9bdf8db1305f545b838015a837514f4464b73b947c"
+   },
+   {
+    "bytes": 34997,
+    "path": "logs/catena_command.py",
+    "sha256": "f419c13012cbbe6cbe126aa8dec6c14c28af165336767d13921b30afebed5303"
+   },
+   {
+    "bytes": 223937,
+    "path": "logs/checks.py",
+    "sha256": "359ecdc23d5734e1ba53d9db9f89ead8917f295b6e04fdcc24b9df263a1d8d39"
+   },
+   {
+    "bytes": 10253,
+    "path": "logs/compare-gate.py",
+    "sha256": "85768f11f2ef75c4bf1f5ef1686a73162dadfdbd1db85c210a88c8418a27738c"
+   },
+   {
+    "bytes": 54368,
+    "path": "logs/derive-claims.py",
+    "sha256": "1826d911cab24cf1ea9063c6d33d83183d08cd6f1aac962060dfdde52c2c0864"
+   },
+   {
+    "bytes": 25411,
+    "path": "logs/divergence-reconciliation.json",
+    "sha256": "2a424b5d34680ab882edda92cb7e758639e7c627ba8b929cfe7eccb83c3d0fb0"
+   },
+   {
+    "bytes": 1009,
+    "path": "logs/gate-summary.py",
+    "sha256": "0f3834b9cdf61b3ad1ae4586047e61101ce20d4433d55cfadd3d1aaa5918436a"
+   },
+   {
+    "bytes": 1156,
+    "path": "logs/gzip-sizes.py",
+    "sha256": "c8f54536387a902f46e23cabc499f02817e599fc707ab386ff729c0d57816478"
+   },
+   {
+    "bytes": 131105,
+    "path": "logs/handoff-inventory.py",
+    "sha256": "e12acdfecdbbdd8bf1e2df4c957e76edb02e9d4a28ae6ed0fe237652c48dbc74"
+   },
+   {
+    "bytes": 15054,
+    "path": "logs/head-consistency.py",
+    "sha256": "8ffd64b5f2aaa61cd8b13ad107db0f8ac8e3e3a59cc2c0643129ea986bbdd15b"
+   },
+   {
+    "bytes": 9612,
+    "path": "logs/journal-dump.py",
+    "sha256": "e5ca3443a2275b95c878137f8af43194bd2ed0398257686e14429a3ad7b39cb9"
+   },
+   {
+    "bytes": 1531,
+    "path": "logs/named-attempts.json",
+    "sha256": "a736260e39c8d1ca516b32122d72e79f7377aeec7f9e22243a205ab7b4f338e1"
+   },
+   {
+    "bytes": 4995,
+    "path": "logs/named-commits.json",
+    "sha256": "33b63b2da1df1b3400c1886d1441f724f7bec76bb46a9ad6f48322040c0ca628"
+   },
+   {
+    "bytes": 6903,
+    "path": "logs/order-head.txt",
+    "sha256": "67903cfed88f9c482ca9f40d5467b469f66f3e722faaa6d924533e03adce2e27"
+   },
+   {
+    "bytes": 7949,
+    "path": "logs/order-parent.txt",
+    "sha256": "b7c93200244a80300ae0d079b5918e02af73f14fe2252d5ffbeeec488e48477b"
+   },
+   {
+    "bytes": 13236,
+    "path": "logs/replay-command.py",
+    "sha256": "bff116c0b22ae1614ecbba9453be5b6b23c4565b13d93bf9bf96d3b57d868f00"
+   },
+   {
+    "bytes": 87687,
+    "path": "logs/sanitize-and-seal.py",
+    "sha256": "5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d"
+   },
+   {
+    "bytes": 162376,
+    "path": "logs/test-attempt-history.py",
+    "sha256": "99d1f5e3940cc85205c95a7a4e09a9add83894836d512fa15a5bf21590e6683c"
+   },
+   {
+    "bytes": 60456,
+    "path": "logs/test-authority-coherence.py",
+    "sha256": "347edde39f50c107f71dae6d59cc6a86c4e5258817b073587b7cdd33ad7e6837"
+   },
+   {
+    "bytes": 12202,
+    "path": "logs/test-compare-gate.py",
+    "sha256": "b2450767ca7a851e9c2d7644c5e1900d2b9497cce3348fdcdbca4ec6ef23f6bd"
+   },
+   {
+    "bytes": 65266,
+    "path": "logs/test-handoff-inventory.py",
+    "sha256": "54cc5d3a29eda402d8bce86779142935a74f5089688d802f5fcb15443bedd8c6"
+   },
+   {
+    "bytes": 148488,
+    "path": "logs/test-sanitize-and-seal.py",
+    "sha256": "678da783629ebf81bdcd8d762a3e7e54cc01d3675cea9ca49a2cd09bc525839f"
+   },
+   {
+    "bytes": 46480,
+    "path": "logs/test-verify-final-package.py",
+    "sha256": "8024147b3cb3b0c58e55f429cdab27b4b3db0d1c241e32556317c2b98b076c2e"
+   },
+   {
+    "bytes": 116983,
+    "path": "logs/verify-final-package.py",
+    "sha256": "1f0a146b1135384fd6e5dc19c12d6b884bfc99f21261f2e1a0e00af520469300"
+   }
+  ],
+  "screenshots": {
+   "png_count": 0,
+   "raster_pairs": 0,
+   "unpaired": []
+  }
+ },
+ "payload": {
+  "head": {
+   "_combined": {
+    "one_stream": 56462,
+    "summed": 57212
+   },
+   "catena-model.js": {
+    "comment_share": 0.766,
+    "sha256": "64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3",
+    "source_bytes": 139503,
+    "stripped": 10344,
+    "stripped_ceiling": null,
+    "whole": 44247,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.396,
+    "sha256": "2d85fc32c69f29bed787028a9d72b345926b479a6ed3e84702afee273010fc95",
+    "source_bytes": 41970,
+    "stripped": 7835,
+    "stripped_ceiling": 8800,
+    "whole": 12965,
+    "whole_ceiling": 13000
+   }
+  },
+  "parent": {
+   "_combined": {
+    "one_stream": 53267,
+    "summed": 54035
+   },
+   "catena-model.js": {
+    "comment_share": 0.768,
+    "sha256": "ef949fb304ee14204989f58174c3f8126ab0544e1bd22f0820331e7501f39506",
+    "source_bytes": 129518,
+    "stripped": 9536,
+    "stripped_ceiling": null,
+    "whole": 41077,
+    "whole_ceiling": null
+   },
+   "catena.css": {
+    "comment_share": 0.649,
+    "sha256": "733e84909e0e8049629187352d3800be320e469da7be200e860378bcc28851c5",
+    "source_bytes": 26034,
+    "stripped": 2676,
+    "stripped_ceiling": 2700,
+    "whole": 7629,
+    "whole_ceiling": 8000
+   },
+   "catena.js": {
+    "comment_share": 0.404,
+    "sha256": "deb5b4828e7c7d9d75d5c49930317c983fbd554fa81389a82f60a999e3126e1d",
+    "source_bytes": 42166,
+    "stripped": 7724,
+    "stripped_ceiling": 8800,
+    "whole": 12958,
+    "whole_ceiling": 13000
+   }
+  }
+ },
+ "suites": {
+  "browser_static_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "browser-static-head.log",
+   "seconds": 0.733,
+   "skipped": 0,
+   "tests": 5
+  },
+  "focused_catena_head": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-head.log",
+   "seconds": 5.899,
+   "skipped": 0,
+   "tests": 660
+  },
+  "focused_catena_parent": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "focused-catena-parent.log",
+   "seconds": 5.861,
+   "skipped": 0,
+   "tests": 615
+  },
+  "full_discovery_head": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "full-discovery-head.log",
+   "seconds": 593.612,
+   "skipped": 11,
+   "tests": 2011
+  },
+  "full_discovery_parent": {
+   "errors": 13,
+   "failures": 14,
+   "identities": [
+    "ERROR: test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter (test_index_bible.TrackedIndexTests.test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter)",
+    "ERROR: test_long_form_contents_marker_renders_linked_unique_anchors (test_public_alpha.PublicAlphaTest.test_long_form_contents_marker_renders_linked_unique_anchors)",
+    "ERROR: test_public_site_records_and_reaches_legacy_review_as_alpha (test_public_alpha.PublicAlphaTest.test_public_site_records_and_reaches_legacy_review_as_alpha)",
+    "ERROR: test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites (test_index_bible.CorrectedReadingTests.test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites)",
+    "ERROR: test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it (test_index_bible.CorrectedReadingTests.test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it)",
+    "ERROR: test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching (test_index_bible.CorrectedReadingTests.test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching)",
+    "ERROR: test_the_holy_family_sirach_opens_at_the_fathers_honour (test_index_bible.CorrectedReadingTests.test_the_holy_family_sirach_opens_at_the_fathers_honour)",
+    "ERROR: test_verifier_passes_when_every_site_source_matches_its_approved_hash (test_public_alpha.PublicAlphaTest.test_verifier_passes_when_every_site_source_matches_its_approved_hash)",
+    "ERROR: test_verifier_rejects_a_recognized_site_source_the_record_omits (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recognized_site_source_the_record_omits)",
+    "ERROR: test_verifier_rejects_a_recorded_site_source_nothing_renders (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_recorded_site_source_nothing_renders)",
+    "ERROR: test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_that_no_longer_matches_its_hash)",
+    "ERROR: test_verifier_rejects_a_site_source_whose_file_is_gone (test_public_alpha.PublicAlphaTest.test_verifier_rejects_a_site_source_whose_file_is_gone)",
+    "ERROR: test_verifier_rejects_copied_pdf_without_owning_catalog_link (test_public_alpha.PublicAlphaTest.test_verifier_rejects_copied_pdf_without_owning_catalog_link)",
+    "FAIL: test_candidate_and_contract_fixtures_do_not_leak_into_generated_data (test_propers_reader_integration.PropersReaderIntegrationTests.test_candidate_and_contract_fixtures_do_not_leak_into_generated_data)",
+    "FAIL: test_candidate_does_not_leak_fixture_or_discovery_records (test_day_reader_integration.DayReaderIntegrationTests.test_candidate_does_not_leak_fixture_or_discovery_records)",
+    "FAIL: test_candidate_tracking_is_distinct_and_accepted (test_day_missal_integration.DayMissalIntegrationTests.test_candidate_tracking_is_distinct_and_accepted)",
+    "FAIL: test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated (test_propers_reader_integration.PropersReaderIntegrationTests.test_canonical_routes_data_shell_and_adapter_oracle_remain_isolated)",
+    "FAIL: test_data_legacy_shell_css_and_visual_oracle_are_frozen (test_day_reader_integration.DayReaderIntegrationTests.test_data_legacy_shell_css_and_visual_oracle_are_frozen)",
+    "FAIL: test_day_alone_loads_placement_notes_before_its_renderer (test_mass_ordinary.ProperPlacementNotesPage.test_day_alone_loads_placement_notes_before_its_renderer)",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history check')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history commonality')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history emit')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history graph')",
+    "FAIL: test_every_verb_shows_at_least_two_real_invocations (test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations) (target='act-history structure')",
+    "FAIL: test_public_routes_renderer_data_and_accepted_oracles_are_isolated (test_day_missal_integration.DayMissalIntegrationTests.test_public_routes_renderer_data_and_accepted_oracles_are_isolated)",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='check-calendar-masses.test')",
+    "FAIL: test_shell_smoke_tests_pass (test_tool_registry.ToolSmokeTests.test_shell_smoke_tests_pass) (test='index-bible.test')"
+   ],
+   "identity_count": 27,
+   "outcome": "FAILED",
+   "path": "full-discovery-parent.log",
+   "seconds": 589.247,
+   "skipped": 11,
+   "tests": 1966
+  },
+  "head_tests_against_parent": {
+   "errors": 0,
+   "failures": 288,
+   "identities": [
+    "FAIL: test_a_finished_value_rebinds_to_the_owner_that_reuses_it (test_catena_wave_1.V16CompletionEnvelopeTest.test_a_finished_value_rebinds_to_the_owner_that_reuses_it)",
+    "FAIL: test_a_getter_one_level_above_the_record_is_never_invoked (test_catena_wave_1.V16FinalizedContentTest.test_a_getter_one_level_above_the_record_is_never_invoked)",
+    "FAIL: test_a_late_publication_and_completion_cannot_reach_the_second (test_catena_wave_1.V16ReentrantPublicationTest.test_a_late_publication_and_completion_cannot_reach_the_second)",
+    "FAIL: test_a_nested_record_altered_after_publication_is_out_of_reach (test_catena_wave_1.V16FinalizedContentTest.test_a_nested_record_altered_after_publication_is_out_of_reach)",
+    "FAIL: test_a_polluted_boolean_survives_the_mint_and_is_still_refused (test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_boolean_survives_the_mint_and_is_still_refused)",
+    "FAIL: test_a_polluted_realm_supplies_no_member_of_a_finalized_value (test_catena_wave_1.V16FinalizedContentTest.test_a_polluted_realm_supplies_no_member_of_a_finalized_value)",
+    "FAIL: test_a_prototype_planted_after_publication_reaches_no_later_owner (test_catena_wave_1.V16FinalizedContentTest.test_a_prototype_planted_after_publication_reaches_no_later_owner)",
+    "FAIL: test_a_reentrant_owner_after_publication_gets_the_finished_value (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_after_publication_gets_the_finished_value)",
+    "FAIL: test_a_reentrant_owner_after_publication_gets_the_finished_value (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_after_publication_gets_the_finished_value) (moment='get')",
+    "FAIL: test_a_reentrant_owner_during_normalization_asks_for_itself (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_during_normalization_asks_for_itself)",
+    "FAIL: test_a_reentrant_owner_during_normalization_asks_for_itself (test_catena_wave_1.V16ReentrantPublicationTest.test_a_reentrant_owner_during_normalization_asks_for_itself) (moment='get')",
+    "FAIL: test_a_reported_failure_is_a_body_and_is_owned_as_one (test_catena_wave_1.V16CompletionEnvelopeTest.test_a_reported_failure_is_a_body_and_is_owned_as_one)",
+    "FAIL: test_a_throwing_write_is_caught_and_leaves_no_applied_record (test_catena_wave_1.V16BodyApplicationJournalTest.test_a_throwing_write_is_caught_and_leaves_no_applied_record)",
+    "FAIL: test_a_write_that_does_not_take_leaves_no_applied_record (test_catena_wave_1.V16BodyApplicationJournalTest.test_a_write_that_does_not_take_leaves_no_applied_record)",
+    "FAIL: test_an_accessor_over_the_same_members_changes_none_of_it (test_catena_wave_1.V16TextObservationAccountingTest.test_an_accessor_over_the_same_members_changes_none_of_it)",
+    "FAIL: test_an_actual_row_no_longer_authorizes_arbitrary_content (test_catena_wave_1.V16CompletionEnvelopeTest.test_an_actual_row_no_longer_authorizes_arbitrary_content)",
+    "FAIL: test_an_own_accessor_never_becomes_the_pages_words (test_catena_wave_1.V16FinalizedContentTest.test_an_own_accessor_never_becomes_the_pages_words)",
+    "FAIL: test_an_owner_local_retry_never_observes_a_partial_path_state (test_catena_wave_1.V16BodyApplicationJournalTest.test_an_owner_local_retry_never_observes_a_partial_path_state)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='acknowledgement-order', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='acknowledgement-order', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='default', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='fragment-retry', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='fragment-retry', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='malformed-action-then-retry', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='malformed-record', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='severian-open', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='severian-projected', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='synthetic-licence', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='synthetic-licence', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='unsafe-identities-opened', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v11-renderer-order-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-alternating-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-drifting-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-prewarmed-inherited-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v12-stable-carried-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-prewarmed-walking-path-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-carried-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-carried-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-chapter-members', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-chapter-members-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-refusals', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-refusals-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-sources', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-sources-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-spine-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v13-walking-spine-prefix-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-blocked-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-fragments-later', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-graph', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-graph', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-leads-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-refusals-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-sources-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-text_prefix-later', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-authority-unfetched-first', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-late-same-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-add-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-remove-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-reorder-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-members-tally-control', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-fields', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-fields-throw', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-nested-forged-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-quiet-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-same-path-rows', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-same-path-rows', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-two-projections-one-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-two-projections-one-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v14-walking-unfetched', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-authority-rerender', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-descriptor-accounting', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-late-same-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-late-same-path-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-data', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-steady', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-nested-edition-throw', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-one-fails', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-one-fails', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-together', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-same-path-together', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-settled-then-shared', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v15-settled-then-shared', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-accessor', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-accessor', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-inherited-text-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-late-contamination', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-late-contamination', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-one-fails-probed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-one-fails-probed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-polluted-schema-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-publication', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-normalizing', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-normalizing', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-published', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-reentrant-published', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-retry-probed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-retry-probed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-text-accessor', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-text-accounting', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=10)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=11)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=12)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=13)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-whole-roster', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-fails-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-modes-control', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-modes-control', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-silent', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-silent', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-throws', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v16-write-throws', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments-reversed', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-hollow-fragments-reversed', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-inherited-id', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-inherited-id', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-null-fragment-text', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=10)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=11)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v7-text-path-no-prefix', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=1)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=2)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=3)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=4)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=5)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=6)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=7)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=8)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v8-wrong-namespace-carried', application=9)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-absent-prefix-carried', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-prewarmed-fallback', application=0)",
+    "FAIL: test_every_body_this_page_applied_is_a_finished_scalar_record (test_catena_wave_1.V16FinalizedContentTest.test_every_body_this_page_applied_is_a_finished_scalar_record) (scenario='v9-valid-prefix-carried', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-late-contamination', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-late-contamination', application=1)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-publication', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=1)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=10)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=11)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=12)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=13)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=2)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=3)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=4)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=5)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=6)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=7)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=8)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-whole-roster', application=9)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-write-fails-control', application=0)",
+    "FAIL: test_every_journal_entry_binds_the_whole_chain_it_stands_for (test_catena_wave_1.V16BodyApplicationJournalTest.test_every_journal_entry_binds_the_whole_chain_it_stands_for) (scenario='v16-write-fails-control', application=1)",
+    "FAIL: test_exactly_one_finished_value_is_ever_published (test_catena_wave_1.V16PublicationAtomicityTest.test_exactly_one_finished_value_is_ever_published)",
+    "FAIL: test_no_failure_and_no_intermediate_value_is_published (test_catena_wave_1.V16PublicationAtomicityTest.test_no_failure_and_no_intermediate_value_is_published)",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=5, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=6, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=7, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-one-fails-probed', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=6, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-publication', event=7, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=10, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=6, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=7, moment='get')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-normalizing', event=9, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=10, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=4, moment='set')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=5, moment='after-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=6, moment='get')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=7, moment='during-normalize')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=8, moment='before-publication')",
+    "FAIL: test_no_lookup_of_the_path_ever_returns_anything_unfinished (test_catena_wave_1.V16PublicationAtomicityTest.test_no_lookup_of_the_path_ever_returns_anything_unfinished) (scenario='v16-reentrant-published', event=9, moment='during-normalize')",
+    "FAIL: test_no_scenario_anywhere_lets_a_body_write_escape_the_page (test_catena_wave_1.V16BodyApplicationJournalTest.test_no_scenario_anywhere_lets_a_body_write_escape_the_page)",
+    "FAIL: test_pollution_after_the_value_was_sealed_moves_nothing (test_catena_wave_1.V16FinalizedContentTest.test_pollution_after_the_value_was_sealed_moves_nothing)",
+    "FAIL: test_the_envelope_can_be_minted_from_neither_half_alone (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_envelope_can_be_minted_from_neither_half_alone)",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='addThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='assignThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='deleteThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (attempt='protoThrew')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='held')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='keptBasis')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='noExtra')",
+    "FAIL: test_the_finalized_content_cannot_be_changed (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_cannot_be_changed) (value='stillNullPrototype')",
+    "FAIL: test_the_finalized_content_is_the_models_own_deterministic_schema (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_finalized_content_is_the_models_own_deterministic_schema)",
+    "FAIL: test_the_journal_entry_follows_a_confirmed_write_and_nothing_else (test_catena_wave_1.V16CompletionEnvelopeTest.test_the_journal_entry_follows_a_confirmed_write_and_nothing_else)",
+    "FAIL: test_the_model_is_byte_identical (test_catena_wave_1.FrozenContractTest.test_the_model_is_byte_identical)",
+    "FAIL: test_the_only_value_read_of_the_file_is_the_transport_resolving_it (test_catena_wave_1.V16TextObservationAccountingTest.test_the_only_value_read_of_the_file_is_the_transport_resolving_it)",
+    "FAIL: test_the_owner_state_stays_coherent_after_a_failed_write (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_owner_state_stays_coherent_after_a_failed_write)",
+    "FAIL: test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one (test_catena_wave_1.V16FinalizedContentTest.test_the_page_in_a_polluted_realm_is_the_page_in_a_clean_one)",
+    "FAIL: test_the_page_reads_no_raw_chapter_member_after_projection (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_reads_no_raw_chapter_member_after_projection)",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment arrived in a f')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment could not be l')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='The text of this fragment was not publis')",
+    "FAIL: test_the_page_states_no_body_sentence_the_model_states (test_catena_wave_1.V14UnfetchedProjectionTest.test_the_page_states_no_body_sentence_the_model_states) (sentence='This fragment carries no text file')",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists)",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists) (moment='before-publication')",
+    "FAIL: test_the_path_is_empty_until_the_finished_value_exists (test_catena_wave_1.V16PublicationAtomicityTest.test_the_path_is_empty_until_the_finished_value_exists) (moment='during-normalize')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else)",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='acknowledgement')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='basis')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='date_basis')",
+    "FAIL: test_the_projection_takes_four_own_descriptors_and_nothing_else (test_catena_wave_1.V16TextObservationAccountingTest.test_the_projection_takes_four_own_descriptors_and_nothing_else) (member='text')",
+    "FAIL: test_the_sentence_and_the_envelope_refuse_inherited_authority_too (test_catena_wave_1.V16FinalizedContentTest.test_the_sentence_and_the_envelope_refuse_inherited_authority_too)",
+    "FAIL: test_the_two_write_failures_leave_different_partial_states (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_two_write_failures_leave_different_partial_states) (mode='silent')",
+    "FAIL: test_the_two_write_failures_leave_different_partial_states (test_catena_wave_1.V16BodyApplicationJournalTest.test_the_two_write_failures_leave_different_partial_states) (mode='throw')",
+    "FAIL: test_the_value_published_by_path_is_the_value_the_body_applied (test_catena_wave_1.V16PublicationAtomicityTest.test_the_value_published_by_path_is_the_value_the_body_applied)",
+    "FAIL: test_words_supplied_from_above_the_record_are_not_its_words (test_catena_wave_1.V16FinalizedContentTest.test_words_supplied_from_above_the_record_are_not_its_words)"
+   ],
+   "identity_count": 288,
+   "outcome": "FAILED",
+   "path": "head-tests-against-parent.log",
+   "seconds": 4.15,
+   "skipped": 0,
+   "tests": 604
+  },
+  "sealer": {
+   "errors": 0,
+   "failures": 0,
+   "identities": [],
+   "identity_count": 0,
+   "outcome": "OK",
+   "path": "sealer-tests.log",
+   "seconds": 4.392,
+   "skipped": 0,
+   "tests": 169
+  }
+ },
+ "tool": "derive-claims.py"
+}

@@ -1,0 +1,157 @@
+== P8 final verification, bound to the exact archive
+   archive : 20260827T230425Z-catena-e1-corrections-v16.zip
+   bytes   : 2172189
+   sha256  : bb473e7afbfa619182248a02fdc4db28b645792cba054e8be3cf660ff845d4fb
+   root    : 20260827T230425Z-catena-e1-corrections-v16
+   verified: 2026-08-27T23:05:47Z (UTC)
+   verifier        : $WORKSPACE/spincyc/v16-handoff-tools/verify-final-package.py
+   verifier sha256 : 1f0a146b1135384fd6e5dc19c12d6b884bfc99f21261f2e1a0e00af520469300
+   tools           : $WORKSPACE/spincyc/v16-handoff-tools
+   tools at        : 5a1819f8e3448bed36e392dab60f47526e898515
+   anchor          : versioned and clean at 5a1819f8e3448bed36e392dab60f47526e898515
+   executed        : $REPO/build/agent-handoffs/20260827T230425Z-catena-e1-corrections-v16.executed-tools.json (28 run row(s), attempt package-20260827T230425Z-3238tjpk, anchor $EVIDENCE)
+   head            : cc1f2fb8625f044558c26edd358b99cd7dcc7646
+   parent          : b9202882badbbbc364f1dd3d9057d2710ee47552
+   review          : 67247ecc39a6e5f6224c64ca3ab1af163ee023b1
+   lane            : V16 (claims tool: derive-claims.py)
+   claims          : 70 frozen row(s), 21895630 byte(s), 6 derived member(s), as claims.json declares
+   pre-check bytes : 2172189
+   pre-check sha256: bb473e7afbfa619182248a02fdc4db28b645792cba054e8be3cf660ff845d4fb
+[0 trust anchor] ok
+[1 sidecar] ok
+[2 layout] ok
+--- archive byte span accounting
+    file size          : 2172189 bytes
+    first local header : offset 0
+    central directory  : offset 2163337, 8830 byte(s), 76 entry(ies) walked
+    EOCD record        : offset 2172167, comment 0 byte(s), ends at 2172189
+    EOCD claims        : central directory at offset 2163337, 8830 byte(s), 76 entry(ies)
+    zipfile decoded    : 76 entry(ies)
+    span               : bytes 0..2172189 of 2172189; prefix 0, trailing 0
+    accounted          : every byte from 0 to the end of the EOCD record belongs to a member, the central directory, or the EOCD itself
+[3 structure] ok
+[4 crc] ok
+[5 extraction] ok
+[6 manifest] ok
+[7 claims rows] ok
+[8 partition] ok
+--- final bytes, derived from the archive alone
+    members            : 76
+    frozen rows        : 70 row(s), 21895630 bytes
+    derived claims.json: 170198 bytes
+    derived DERIVED-CLAIMS.md: 70895 bytes
+    derived logs/attempts.json: 309632 bytes
+    derived logs/attempt-32/derive-claims.log: 94 bytes
+    derived logs/attempt-32/head-consistency.log: 3847 bytes
+    derived MANIFEST.sha256: 7076 bytes
+    derived members    : 6 member(s), 561742 bytes
+    total uncompressed : 22457372 bytes across 76 member(s) (= frozen 21895630 + derived 561742)
+--- check 9 trust anchor
+    tool derive-claims.py
+      trusted : $WORKSPACE/spincyc/v16-handoff-tools/derive-claims.py
+      trusted sha256: 1826d911cab24cf1ea9063c6d33d83183d08cd6f1aac962060dfdde52c2c0864
+      shipped : logs/derive-claims.py (read as bytes, never run)
+      shipped sha256: 1826d911cab24cf1ea9063c6d33d83183d08cd6f1aac962060dfdde52c2c0864
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+[9 rendering] ok
+--- check 10 trust anchors
+    tool head-consistency.py
+      trusted : $WORKSPACE/spincyc/v16-handoff-tools/head-consistency.py
+      trusted sha256: 8ffd64b5f2aaa61cd8b13ad107db0f8ac8e3e3a59cc2c0643129ea986bbdd15b
+      shipped : logs/head-consistency.py (read as bytes, never run)
+      shipped sha256: 8ffd64b5f2aaa61cd8b13ad107db0f8ac8e3e3a59cc2c0643129ea986bbdd15b
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+    tool sanitize-and-seal.py
+      trusted : $WORKSPACE/spincyc/v16-handoff-tools/sanitize-and-seal.py
+      trusted sha256: 5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d
+      shipped : logs/sanitize-and-seal.py (read as bytes, never run)
+      shipped sha256: 5afbdb8c53f5dda72747b98905aeecacc18612e10ab7f34e4c273fe231c8814d
+      agreement: identical bytes -- running the trusted copy is running the shipped one
+--- head-consistency.py (trusted copy) over the extraction (exit 0)
+head consistency: 47 text member(s) scanned
+  entitled SHAs: e34ab2b0564c (commit in range), 208f086b55ce (commit in range), 251900b14a16 (commit in range), 2778285849f2 (declared: Current origin/main at the time of this lane, recorded so a reviewer can see this candidate is not integrated with it and does not overlap it on any Catena path.), 733e84909e0e (declared: Not a commit: the SHA-256 of src/web/browser/catena/catena.css, byte-identical at both endpoints, quoted where this package claims no stylesheet changed.), 7779d1f19ca1 (declared: Not a commit: the SHA-256 of src/web/browser/catena/index.html, byte-identical at both endpoints, quoted where this package claims no markup changed.), 64683c0b8bb9 (declared: Not a commit: the SHA-256 of the FIRST attempt ledger the PREVIOUS lane retired, 2,501 bytes over five rows. Quoted because this lane's complete predecessor history counts the package attempts recorded across all three V15 ledgers rather than the six the shipped one carries, and a reviewer handed that file must be able to tell whether it is the one being counted. It carries a battery that reached no terminal row at all.), 5b0c380cf7fa (declared: Not a commit: the SHA-256 of the SECOND attempt ledger the PREVIOUS lane retired, 45,619 bytes over eighty rows. Quoted for the same reason. It carried two batteries whose figures were declined -- SET-ASIDE COHORTS of the V15 lane, which V15's own PROVENANCE.md declared did not exist -- and five package attempts, four discarded and one that reached a sealed terminal row before its own anti-backdating audit refused a package timestamp chosen an hour before the attempts it named.), 45c491abf223 (declared: Not a commit: the SHA-256 the RELEASE BINDING records for src/web/browser/catena/index.html, which is one of the four stale bindings this lane leaves fail-closed and unsigned. Quoted beside the file's actual digest 7779d1f1... so a reviewer can see that the two differ, that the difference is the staleness itself, and that this lane re-signed nothing. The file is byte-identical at both endpoints; it is the BINDING that is out of date, and correcting it belongs to the release owner.), 711b598ab435 (declared: Not a commit: the V15 package's ZIP SHA-256, at 1,400,092 bytes over 69 members, quoted so the artifact this lane supersedes is identified by its bytes rather than by its name alone.), 69f2575421ba (declared: The V14 head, which is the parent of the V15 head this lane corrects and therefore the endpoint the V15 comparison was drawn against. Named where this record traces the chain of heads a figure was measured at, so a reviewer can tell which endpoint each inherited closure was passed at. Not an endpoint of this lane: V16's parent is b9202882 and its head is the commit this package was sealed for.), 0d11766ec232 (declared: The V14 independent review, on review/catena-wave-1-e1-corrections-v14-independent. Named where this lane states which review each of the preserved closures was passed by, so a reviewer can tell V14-inherited closure from V15 closure from V16 work. Not the review this lane answers.), db5f651e4eb2 (declared: The V15 evidence commit on evidence/catena-e1-corrections-v15-handoff, carrying the immutable handoff of the head this lane corrects. Named so the chain from the reviewed package to this correction is followable without the reviewer reconstructing it.), cc1f2fb8625f (head), b9202882badb (parent), 67247ecc39a6 (review addressed)
+  package members: 76; referenced: 76; unreferenced: 0
+  frozen rows in claims.json: 70; declared derived members: 6; pending: 0
+  residue (present without a frozen row): 6 (DERIVED-CLAIMS.md, MANIFEST.sha256, claims.json, logs/attempt-32/derive-claims.log, logs/attempt-32/head-consistency.log, logs/attempts.json) -- every one must be a declared derived member
+  frozen members that drifted: 0
+  problems: 0
+--- sanitize-and-seal.py (trusted copy) over the extraction (exit 0)
+check-only: 0 file(s) would change, 0 would-be substitution(s)
+sanitization scan: 0 private-token hit(s)
+evidence-index check: 0 missing reference(s), 0 unreferenced member(s), 0 deferred reference(s)
+screenshot pair audit: 0 before/after pair(s), 0 byte-identical, 0 differing
+[10 shipped audits] ok
+--- check 12 attempt dispositions, on BOTH axes -------------------------
+    ATTEMPT                              EXECUTION   EVIDENCE
+    head-20260827T194839Z-166gh2tz       complete    authoritative
+    package-20260827T185118Z-084t4236    discarded   unevidenced
+    package-20260827T190747Z-09sn82rr    discarded   unevidenced
+    package-20260827T191122Z-10x52qgn    discarded   unevidenced
+    package-20260827T191528Z-1196tyyp    discarded   unevidenced
+    package-20260827T191825Z-12gkk5s8    discarded   unevidenced
+    package-20260827T192021Z-13qt4xks    sealed      superseded
+    package-20260827T192515Z-14vwr9zy    sealed      superseded
+    package-20260827T200754Z-17ss7m5n    discarded   unevidenced
+    package-20260827T205127Z-189y3zrv    discarded   unevidenced
+    package-20260827T205242Z-19k4x433    sealed      superseded
+    package-20260827T205659Z-2099y7ym    sealed      superseded
+    package-20260827T205923Z-213p3n74    sealed      superseded
+    package-20260827T221649Z-224yt5pr    sealed      superseded
+    package-20260827T222021Z-23tzjtsz    discarded   unevidenced
+    package-20260827T222325Z-24phksss    sealed      superseded
+    package-20260827T224521Z-25kktng5    discarded   unevidenced
+    package-20260827T224746Z-264x2m2y    abandoned   unevidenced
+    package-20260827T225033Z-27hvmm95    discarded   unevidenced
+    package-20260827T225323Z-28w4rrh6    abandoned   unevidenced
+    package-20260827T225430Z-2944376k    sealed      superseded
+    package-20260827T225812Z-3073phky    sealed      superseded
+    package-20260827T230126Z-31vhy73v    sealed      superseded
+    package-20260827T230425Z-3238tjpk    sealed      unevidenced
+    parent-20260827T193049Z-15pnpphq     complete    authoritative
+
+    execution: abandoned 2, complete 2, discarded 10, sealed 11
+    evidence : authoritative 2, superseded 10, unevidenced 13
+    abandoned: 2 -- package-20260827T224746Z-264x2m2y, package-20260827T225323Z-28w4rrh6; resolved terminal history, in no successful and no authoritative tally
+[12 attempt dispositions] ok
+--- check 11 tool bytes, three ways (executed / trusted / shipped)
+    execution record : attempt package-20260827T230425Z-3238tjpk, anchor $EVIDENCE, 28 run row(s) over 13 tool(s)
+    EXECUTED-BYTE CLAIM: PROVED where an executed digest is present and equal to the trusted and shipped bytes
+    tool                          class                 ran        equal    executed/trusted/shipped
+    assemble.sh                   shipped-executed      yes        yes      273dfee8/273dfee8/273dfee8  package-20260827T230425Z-3238tjpk
+    authority-coherence.py        shipped-not-executed  no         yes      6f236ae6/6f236ae6/6f236ae6
+    battery.sh                    shipped-executed      yes        yes      cca4d284/cca4d284/cca4d284
+    catena_command.py             shipped-not-executed  no         yes      f419c130/f419c130/f419c130
+    checks.py                     shipped-executed      yes        yes      359ecdc2/359ecdc2/359ecdc2  package-20260827T230425Z-3238tjpk
+    compare-gate.py               shipped-executed      yes        yes      85768f11/85768f11/85768f11  package-20260827T230425Z-3238tjpk
+    derive-claims.py              shipped-executed      yes        yes      1826d911/1826d911/1826d911  package-20260827T230425Z-3238tjpk
+    gate-summary.py               shipped-executed      yes        yes      0f3834b9/0f3834b9/0f3834b9
+    git                           external-system-tool  yes        n/a      93473c28/--------/--------  package-20260827T230425Z-3238tjpk
+    gzip-sizes.py                 shipped-executed      yes        yes      c8f54536/c8f54536/c8f54536
+    handoff-inventory.py          shipped-not-executed  no         yes      e12acdfe/e12acdfe/e12acdfe
+    head-consistency.py           shipped-executed      yes        yes      8ffd64b5/8ffd64b5/8ffd64b5  package-20260827T230425Z-3238tjpk
+    journal-dump.py               shipped-executed      yes        yes      e5ca3443/e5ca3443/e5ca3443
+    python3                       external-system-tool  yes        n/a      d78f9cf7/--------/--------  package-20260827T230425Z-3238tjpk
+    replay-command.py             shipped-not-executed  no         yes      bff116c0/bff116c0/bff116c0
+    sanitize-and-seal.py          shipped-executed      yes        yes      5afbdb8c/5afbdb8c/5afbdb8c  package-20260827T230425Z-3238tjpk
+    test-attempt-history.py       shipped-not-executed  no         yes      99d1f5e3/99d1f5e3/99d1f5e3
+    test-authority-coherence.py   shipped-not-executed  no         yes      347edde3/347edde3/347edde3
+    test-compare-gate.py          shipped-not-executed  no         yes      b2450767/b2450767/b2450767
+    test-handoff-inventory.py     shipped-not-executed  no         yes      54cc5d3a/54cc5d3a/54cc5d3a
+    test-sanitize-and-seal.py     shipped-executed      yes        yes      678da783/678da783/678da783  package-20260827T230425Z-3238tjpk
+    test-verify-final-package.py  shipped-not-executed  no         yes      8024147b/8024147b/8024147b
+    verify-final-package.py       shipped-not-executed  no         yes      1f0a146b/1f0a146b/1f0a146b
+    unique tools     : 23 (13 executed)
+    invocations      : 28 (28 executed)
+    tools by class   : external-system-tool 2, shipped-executed 11, shipped-not-executed 10
+    invocations/class: external-system-tool 2, shipped-executed 26, shipped-not-executed 0
+[11 tool bytes] ok
+--- tool byte table written to $REPO/build/agent-handoffs/20260827T230425Z-catena-e1-corrections-v16.tool-bytes.json (23 unique tool(s), 28 invocation(s), schema catena-tool-byte-table/1)
+--- post-verification rehash of the archive bytes
+    checks performed : 0 trust anchor, 1 sidecar, 2 layout, 3 structure, 4 crc, 5 extraction, 6 manifest, 7 claims rows, 8 partition, 9 rendering, 10 shipped audits, 12 attempt dispositions, 11 tool bytes
+    checks skipped   : (none)
+    pre-check bytes  : 2172189
+    pre-check sha256 : bb473e7afbfa619182248a02fdc4db28b645792cba054e8be3cf660ff845d4fb
+    post-check bytes : 2172189
+    post-check sha256: bb473e7afbfa619182248a02fdc4db28b645792cba054e8be3cf660ff845d4fb
+    result           : UNCHANGED -- every check above read the archive named in the header
+P8 verification: PASS (0 problem(s))

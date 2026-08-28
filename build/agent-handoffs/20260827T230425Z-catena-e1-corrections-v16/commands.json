@@ -1,0 +1,654 @@
+{
+  "commands": [
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v",
+      "exec": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_catena*.py",
+          "-v"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/focused-catena-parent.log",
+      "order": "1",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "focused-catena",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "python3 scripts/_catena.py check",
+      "exec": {
+        "argv": [
+          "python3",
+          "scripts/_catena.py",
+          "check"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/catena-check-parent.log",
+      "order": "2",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "catena-check",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "tools/tpt check-promised-deliverables",
+      "exec": {
+        "argv": [
+          "tools/tpt",
+          "check-promised-deliverables"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/promised-parent.log",
+      "order": "3",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "promised",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "python3 -m unittest discover -s tools/tests",
+      "exec": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 1,
+      "log": "logs/attempt-15/full-discovery-parent.log",
+      "order": "4",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "full-discovery",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "make -k check",
+      "exec": {
+        "argv": [
+          "make",
+          "-k",
+          "check"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 2,
+      "log": "logs/attempt-15/make-check-parent.log",
+      "order": "5",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "make-check",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "make check-release-bindings",
+      "exec": {
+        "argv": [
+          "make",
+          "check-release-bindings"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 2,
+      "log": "logs/attempt-15/release-bindings-parent.log",
+      "order": "6",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "release-bindings",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "make public-site",
+      "exec": {
+        "argv": [
+          "make",
+          "public-site"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/public-site-parent.log",
+      "order": "7",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "public-site",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\" > /dev/null; gate=$?; python3 \"$TOOLS_ANCHOR/gate-summary.py\" \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate",
+      "exec": {
+        "argv": null,
+        "cwd": "$PARENT_REPO",
+        "env": {
+          "TRIPTYCH_CHROME": "/usr/bin/chromium"
+        },
+        "schema": "catena-exec-command/1",
+        "shell": "node tools/tests/corpus_browser_gate.mjs --json-out \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\" > /dev/null; gate=$?; python3 \"$TOOLS_ANCHOR/gate-summary.py\" \"$EVIDENCE_ROOT/logs/attempt-15/browser-gate-parent.json\"; echo 'report written: browser-gate-parent.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate",
+        "uses": [
+          "EVIDENCE_ROOT",
+          "PARENT_REPO",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 1,
+      "log": "logs/attempt-15/browser-gate-parent.log",
+      "order": "8",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "browser-gate",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "python3 \"$TOOLS_ANCHOR/gzip-sizes.py\" src/web/browser/catena",
+      "exec": {
+        "argv": [
+          "python3",
+          "$TOOLS_ANCHOR/gzip-sizes.py",
+          "src/web/browser/catena"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/gzip-sizes-parent.log",
+      "order": "9",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "gzip-sizes",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "cp \"$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py\" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v",
+      "exec": {
+        "argv": null,
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": "cp \"$CANDIDATE_REPO/tools/tests/test_catena_wave_1.py\" tools/tests/test_catena_wave_1.py && python3 -m unittest discover -s tools/tests -p 'test_catena_wave_1.py' -v",
+        "uses": [
+          "CANDIDATE_REPO",
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 1,
+      "log": "logs/attempt-15/head-tests-against-parent.log",
+      "order": "10",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "head-tests-against-parent",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "python3 \"$TOOLS_ANCHOR/journal-dump.py\" tools/tests/test_catena_wave_1.py",
+      "exec": {
+        "argv": [
+          "python3",
+          "$TOOLS_ANCHOR/journal-dump.py",
+          "tools/tests/test_catena_wave_1.py"
+        ],
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PARENT_REPO",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/request-journals-parent.log",
+      "order": "11",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "request-journals",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "parent-20260827T193049Z-15pnpphq",
+      "command": "git checkout -- tools/tests/test_catena_wave_1.py; echo \"restored: tools/tests/test_catena_wave_1.py\"; git status --porcelain; echo \"porcelain entries after restore: $(git status --porcelain | wc -l)\"",
+      "exec": {
+        "argv": null,
+        "cwd": "$PARENT_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": "git checkout -- tools/tests/test_catena_wave_1.py; echo \"restored: tools/tests/test_catena_wave_1.py\"; git status --porcelain; echo \"porcelain entries after restore: $(git status --porcelain | wc -l)\"",
+        "uses": [
+          "PARENT_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-15/restore-parent-tree.log",
+      "order": "12",
+      "recorded": "EXECUTABLE",
+      "side": "parent",
+      "slug": "restore-parent-tree",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 -m unittest discover -s tools/tests -p 'test_catena*.py' -v",
+      "exec": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_catena*.py",
+          "-v"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/focused-catena-head.log",
+      "order": "1",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "focused-catena",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 scripts/_catena.py check",
+      "exec": {
+        "argv": [
+          "python3",
+          "scripts/_catena.py",
+          "check"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/catena-check-head.log",
+      "order": "2",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "catena-check",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "tools/tpt check-promised-deliverables",
+      "exec": {
+        "argv": [
+          "tools/tpt",
+          "check-promised-deliverables"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/promised-head.log",
+      "order": "3",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "promised",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 -m unittest discover -s tools/tests",
+      "exec": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 1,
+      "log": "logs/attempt-16/full-discovery-head.log",
+      "order": "4",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "full-discovery",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "make -k check",
+      "exec": {
+        "argv": [
+          "make",
+          "-k",
+          "check"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 2,
+      "log": "logs/attempt-16/make-check-head.log",
+      "order": "5",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "make-check",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "make check-release-bindings",
+      "exec": {
+        "argv": [
+          "make",
+          "check-release-bindings"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 2,
+      "log": "logs/attempt-16/release-bindings-head.log",
+      "order": "6",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "release-bindings",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "make public-site",
+      "exec": {
+        "argv": [
+          "make",
+          "public-site"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/public-site-head.log",
+      "order": "7",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "public-site",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs --json-out \"$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json\" > /dev/null; gate=$?; python3 \"$TOOLS_ANCHOR/gate-summary.py\" \"$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json\"; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate",
+      "exec": {
+        "argv": null,
+        "cwd": "$CANDIDATE_REPO",
+        "env": {
+          "TRIPTYCH_CHROME": "/usr/bin/chromium"
+        },
+        "schema": "catena-exec-command/1",
+        "shell": "node tools/tests/corpus_browser_gate.mjs --json-out \"$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json\" > /dev/null; gate=$?; python3 \"$TOOLS_ANCHOR/gate-summary.py\" \"$EVIDENCE_ROOT/logs/attempt-16/browser-gate-head.json\"; echo 'report written: browser-gate-head.json beside this log, under this attempt root (the gate prints the same json report to stdout; discarded so the report ships once)'; exit $gate",
+        "uses": [
+          "CANDIDATE_REPO",
+          "EVIDENCE_ROOT",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 1,
+      "log": "logs/attempt-16/browser-gate-head.log",
+      "order": "8",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "browser-gate",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 -m unittest discover -s tools/tests -p test_browser_static.py",
+      "exec": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-p",
+          "test_browser_static.py"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/browser-static-head.log",
+      "order": "9",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "browser-static",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 \"$TOOLS_ANCHOR/gzip-sizes.py\" src/web/browser/catena",
+      "exec": {
+        "argv": [
+          "python3",
+          "$TOOLS_ANCHOR/gzip-sizes.py",
+          "src/web/browser/catena"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/gzip-sizes-head.log",
+      "order": "10",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "gzip-sizes",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "head-20260827T194839Z-166gh2tz",
+      "command": "python3 \"$TOOLS_ANCHOR/journal-dump.py\" tools/tests/test_catena_wave_1.py",
+      "exec": {
+        "argv": [
+          "python3",
+          "$TOOLS_ANCHOR/journal-dump.py",
+          "tools/tests/test_catena_wave_1.py"
+        ],
+        "cwd": "$CANDIDATE_REPO",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "CANDIDATE_REPO",
+          "TOOLS_ANCHOR"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-16/request-journals-head.log",
+      "order": "11",
+      "recorded": "EXECUTABLE",
+      "side": "head",
+      "slug": "request-journals",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    },
+    {
+      "attempt": "package-20260827T230425Z-3238tjpk",
+      "command": "python3 logs/compare-gate.py logs/attempt-15/browser-gate-parent.json logs/attempt-16/browser-gate-head.json",
+      "exec": {
+        "argv": [
+          "python3",
+          "logs/compare-gate.py",
+          "logs/attempt-15/browser-gate-parent.json",
+          "logs/attempt-16/browser-gate-head.json"
+        ],
+        "cwd": "$PACKAGE_ROOT",
+        "env": {},
+        "schema": "catena-exec-command/1",
+        "shell": null,
+        "uses": [
+          "PACKAGE_ROOT"
+        ]
+      },
+      "exit": 0,
+      "log": "logs/attempt-32/gate-comparison.log",
+      "order": "1",
+      "recorded": "EXECUTABLE",
+      "side": "package",
+      "slug": "P1 gate comparison",
+      "why": "a validated exec record: cwd, argv or shell, and env, with every filesystem root named by a variable this file defines. Replay it with logs/replay-command.py"
+    }
+  ],
+  "counts": {
+    "executable": 24,
+    "non_executable": 0,
+    "not_replayable_and_says_so": 0,
+    "rows": 24,
+    "with_exec_record": 24
+  },
+  "coverage": {
+    "head": {
+      "executable": 11,
+      "rows": 11,
+      "with_record": 11
+    },
+    "package": {
+      "executable": 1,
+      "rows": 1,
+      "with_record": 1
+    },
+    "parent": {
+      "executable": 12,
+      "rows": 12,
+      "with_record": 12
+    }
+  },
+  "schema": "catena-commands/1",
+  "variables": {
+    "roots": {
+      "CANDIDATE_REPO": "the implementation checkout under review -- the head side",
+      "EVIDENCE_ROOT": "the staged package source directory the batteries wrote into",
+      "PACKAGE_ROOT": "the package directory itself, which the package-phase commands ran inside",
+      "PARENT_REPO": "the comparison checkout -- the parent side",
+      "TOOLS_ANCHOR": "the out-of-package handoff-tools checkout this lane ran from"
+    },
+    "schema": "catena-exec-roots/1"
+  }
+}
