@@ -1985,6 +1985,100 @@ class ParityTests(unittest.TestCase):
         self.assertEqual(browser_source.count("'Latin text unavailable'"), 2)
         self.assertNotIn("Latin body is unavailable for public display", browser_source)
 
+    def test_browser_typed_proper_body_absence_never_becomes_empty_text(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+        }
+
+        latin = node_call({
+            "op": "browser-oration", "proper": proper, "language": "la",
+        })
+        self.assertEqual(latin["availability"], "unavailable")
+        self.assertEqual(latin["reason"], "latin-unavailable")
+        self.assertEqual(latin["lang"], "la")
+        self.assertTrue(latin["missing"])
+        self.assertFalse(latin["held"])
+        self.assertIsNone(latin["text"])
+        self.assertIsNone(latin["source"])
+
+        english_proper = copy.deepcopy(proper)
+        english_proper["untranslated"] = [{
+            "lang": "en",
+            "state": "unavailable",
+            "target": {"extent": "body"},
+        }]
+        english = node_call({
+            "op": "browser-oration", "proper": english_proper, "language": "en",
+        })
+        self.assertEqual(english.get("availability"), "unavailable")
+        self.assertEqual(english.get("reason"), "text-unavailable")
+        self.assertEqual(english.get("lang"), "en")
+        self.assertTrue(english.get("missing"))
+        self.assertFalse(english.get("held"))
+        self.assertIsNone(english.get("text"))
+        self.assertIsNone(english.get("source"))
+        self.assertNotEqual(english.get("lang"), "la")
+
+    def test_browser_typed_body_absence_preserves_english_rights_reason(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+            "unavailable_translations": [{
+                "lang": "en",
+                "state": "rights-restricted",
+                "target": {"extent": "body"},
+            }],
+        }
+
+        english = node_call({
+            "op": "browser-oration", "proper": proper, "language": "en",
+        })
+        self.assertEqual(english["availability"], "unavailable")
+        self.assertEqual(english["reason"], "rights-restricted")
+        self.assertEqual(english["unavailableState"], "rights-restricted")
+        self.assertEqual(english["lang"], "en")
+        self.assertTrue(english["missing"])
+        self.assertFalse(english["held"])
+        self.assertIsNone(english["text"])
+        self.assertIsNone(english["source"])
+
+    def test_browser_typed_body_absence_without_english_ledger_is_unavailable(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+        }
+
+        english = node_call({
+            "op": "browser-oration", "proper": proper, "language": "en",
+        })
+        self.assertEqual(english["availability"], "unavailable")
+        self.assertEqual(english["reason"], "text-unavailable")
+        self.assertEqual(english["lang"], "en")
+        self.assertTrue(english["missing"])
+        self.assertFalse(english["held"])
+        self.assertIsNone(english["text"])
+        self.assertIsNone(english["source"])
+        self.assertNotEqual(english["lang"], "la")
+
     def test_missing_ordinary_language_is_explicitly_unavailable(self) -> None:
         request = copy.deepcopy(fixture_named("day-roman-1962-2026-08-02")["requested"])
         request["requestedMode"] = "missal"

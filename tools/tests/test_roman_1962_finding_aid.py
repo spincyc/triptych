@@ -85,6 +85,10 @@ CUMMISKEY_RECOVERED_PUBLICATION_TSV = (
     CUMMISKEY_EDITION.parent
     / "artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv"
 )
+CUMMISKEY_AUGUSTINE_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/augustine-collect-en/augustine-collect-en.tsv"
+)
 ANTECEDENT_EDITION = (
     ROOT
     / "src/sources/works/catholic-church/missale-romanum/editions"
@@ -657,11 +661,11 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             for row in self.base["untranslated"]
             if isinstance(row.get("reason"), dict)
         }
-        self.assertEqual(len(source_established), 666)
-        self.assertEqual(len(expected), 737)
+        self.assertEqual(len(source_established), 663)
+        self.assertEqual(len(expected), 734)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 360)
+        self.assertEqual(len(quarantined), 362)
         self.assertEqual(
             {
                 (
@@ -682,6 +686,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
+                ("no-exemplar", None): 2,
                 ("rights-withheld", CUMMISKEY_SOURCE): 348,
                 ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
@@ -797,7 +802,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             )
             and "publication_artifact_id" in row
         }
-        self.assertEqual(len(expected), 60)
+        self.assertEqual(len(expected), 61)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         self.assertEqual(
@@ -812,6 +817,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             CUMMISKEY_PUBLICATION_TSV,
             CUMMISKEY_PALM_PUBLICATION_TSV,
             CUMMISKEY_RECOVERED_PUBLICATION_TSV,
+            CUMMISKEY_AUGUSTINE_PUBLICATION_TSV,
         )
         publication_artifacts = {
             load(path.parent / "artifact.toml")["id"]: load(

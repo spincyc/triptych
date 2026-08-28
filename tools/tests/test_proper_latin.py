@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (529, 5),
+            "roman-1962": (532, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -149,13 +149,13 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 529, "roman-pre-1955": 529}
+        expected = {"postconciliar": 329, "roman-1962": 532, "roman-pre-1955": 532}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
             self.assertEqual(count, len(records))
 
-    def test_production_ledgers_publish_only_the_ten_exact_lasance_recoveries(self) -> None:
+    def test_production_ledgers_publish_only_the_exact_historical_recoveries(self) -> None:
         permitted = []
         nonpermitted = []
         for calendar in ("postconciliar", "roman-1962", "roman-pre-1955"):
@@ -183,75 +183,122 @@ class ProductionLedgerTests(unittest.TestCase):
         } | {
             LatinKey("s-silvestri-abbatis", "", proper, occurrence=1)
             for proper in ("Collect", "Secret", "Postcommunion")
+        } | {
+            LatinKey(
+                "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
+                "",
+                proper,
+                occurrence=1,
+            )
+            for proper in ("Collect", "Secret", "Postcommunion")
         }
         self.assertEqual(
             expected_permitted,
             {key for calendar, key, _ in permitted if calendar == "roman-1962"},
         )
-        self.assertEqual(10, len(permitted))
-        projection_artifact = (
-            "artifact.triptych.roman-1962-latin-proper-editorial-projection."
-            "editorial-projection-2026-08-27.normalized-latin-propers-0bf4adcc"
+        self.assertEqual(13, len(permitted))
+        target_artifact = (
+            "artifact.catholic-church.missale-romanum."
+            "vatican-typica-1962.cmaa-facsimile-pdf"
         )
-        public_domain_artifact = (
-            "artifact.francis-xavier-lasance.the-new-roman-missal."
-            "benziger-revised-1945.new-roman-missal-text-80b34759"
-        )
-        self.assertTrue(
-            all(
-                calendar == "roman-1962"
-                and row.get("body_status") is None
-                and row["provenance_status"] == "collated"
-                and row["relationship"]
-                == "editorial-projection-exact-to-target"
-                and bool(row["transformations"])
-                and row["publication_basis"] == "public-domain"
-                and set(row["surfaces"]) == set(SURFACES)
-                and row["publication_source_ids"]
-                == [projection_artifact, public_domain_artifact]
-                and row["source_id"].startswith(
-                    "passage.triptych.roman-1962-latin-proper-editorial-projection."
+        projection_specs = {
+            "editorial-projection-2026-08-27": {
+                "artifact_id": (
+                    "artifact.triptych.roman-1962-latin-proper-editorial-projection."
                     "editorial-projection-2026-08-27."
+                    "normalized-latin-propers-0bf4adcc"
+                ),
+                "publication_source_id": (
+                    "artifact.francis-xavier-lasance.the-new-roman-missal."
+                    "benziger-revised-1945.new-roman-missal-text-80b34759"
+                ),
+                "projected_from": {
+                    "artifact.francis-xavier-lasance.the-new-roman-missal."
+                    "benziger-revised-1945."
+                    "internet-archive-facsimile-pdf-6cf3c3d0",
+                    target_artifact,
+                },
+            },
+            "editorial-projection-2026-08-28": {
+                "artifact_id": (
+                    "artifact.triptych.roman-1962-latin-proper-editorial-projection."
+                    "editorial-projection-2026-08-28.augustine-orations-8a2a938d"
+                ),
+                "publication_source_id": (
+                    "artifact.catholic-church.missale-romanum."
+                    "1922-tours-mame-editio-quarta-iuxta-typicam."
+                    "ia-scan-pdf-9873693a"
+                ),
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum."
+                    "1922-tours-mame-editio-quarta-iuxta-typicam."
+                    "ia-scan-pdf-9873693a",
+                    target_artifact,
+                },
+            },
+        }
+
+        used_projection_editions = set()
+        for calendar, key, row in permitted:
+            with self.subTest(calendar=calendar, key=key):
+                matches = [
+                    edition
+                    for edition in projection_specs
+                    if f".{edition}." in row["source_id"]
+                ]
+                self.assertEqual(1, len(matches), row["source_id"])
+                edition = matches[0]
+                used_projection_editions.add(edition)
+                spec = projection_specs[edition]
+                self.assertEqual("roman-1962", calendar)
+                self.assertIsNone(row.get("body_status"))
+                self.assertEqual("collated", row["provenance_status"])
+                self.assertEqual(
+                    "editorial-projection-exact-to-target", row["relationship"]
                 )
-                and row["verification_source_id"].startswith(
-                    "passage.catholic-church.missale-romanum."
-                    "vatican-typica-1962.sanctoral-"
+                self.assertTrue(row["transformations"])
+                self.assertEqual("public-domain", row["publication_basis"])
+                self.assertEqual(set(SURFACES), set(row["surfaces"]))
+                self.assertEqual(
+                    [spec["artifact_id"], spec["publication_source_id"]],
+                    row["publication_source_ids"],
                 )
-                for calendar, _, row in permitted
-            )
-        )
+                self.assertTrue(
+                    row["verification_source_id"].startswith(
+                        "passage.catholic-church.missale-romanum."
+                        "vatican-typica-1962.sanctoral-"
+                    )
+                )
+        self.assertEqual(set(projection_specs), used_projection_editions)
 
         work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
-        artifact = tomllib.loads(
-            (
-                EDITORIAL_PROJECTION
-                / "editions/2026-08-27-editorial-projection/artifacts/"
-                "normalized-latin-propers-0bf4adcc/artifact.toml"
-            ).read_text()
-        )
         self.assertEqual("Triptych contributors", work["responsible"])
-        self.assertEqual("project-created", artifact["rights_status"])
-        self.assertTrue(artifact["transformation"].strip())
-        self.assertEqual(
-            {
-                "artifact.francis-xavier-lasance.the-new-roman-missal."
-                "benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
-                "artifact.catholic-church.missale-romanum."
-                "vatican-typica-1962.cmaa-facsimile-pdf",
-            },
-            set(artifact["projected_from"]),
-        )
-        payload = (ROOT / artifact["path"]).read_text().splitlines(keepends=True)
-        passages = {
+        artifacts = {
             row["id"]: row
-            for path in (
-                EDITORIAL_PROJECTION
-                / "editions/2026-08-27-editorial-projection/passages"
-            ).glob("*.toml")
+            for path in EDITORIAL_PROJECTION.glob(
+                "editions/*/artifacts/*/artifact.toml"
+            )
             for row in [tomllib.loads(path.read_text())]
         }
+        passages = {
+            row["id"]: row
+            for path in EDITORIAL_PROJECTION.glob("editions/*/passages/*.toml")
+            for row in [tomllib.loads(path.read_text())]
+        }
+        for edition, spec in projection_specs.items():
+            with self.subTest(edition=edition):
+                artifact = artifacts[spec["artifact_id"]]
+                self.assertEqual("project-created", artifact["rights_status"])
+                self.assertTrue(artifact["transformation"].strip())
+                self.assertEqual(
+                    spec["projected_from"], set(artifact["projected_from"])
+                )
         for _, _, row in permitted:
             passage = passages[row["source_id"]]
+            artifact = artifacts[passage["artifact_id"]]
+            payload = (ROOT / artifact["path"]).read_text().splitlines(
+                keepends=True
+            )
             projected_body = "".join(
                 line
                 for start, end in passage["physical_line_ranges"]

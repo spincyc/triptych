@@ -160,15 +160,15 @@ class CountingKeyTests(unittest.TestCase):
                 "seasonal": (128, 1352),
                 "christological": (8, 96),
                 "marian": (18, 124),
-                "sanctoral": (307, 1509),
+                "sanctoral": (307, 1511),
                 "common": (30, 358),
             },
         )
         self.assertEqual(counted["masses"], 491)
-        self.assertEqual(counted["propers"], 3439)
-        self.assertEqual(counted["substantive_propers"], 3439)
+        self.assertEqual(counted["propers"], 3441)
+        self.assertEqual(counted["substantive_propers"], 3441)
         self.assertEqual(counted["propers_in_forms"], 182)
-        self.assertEqual(counted["scripture_bearing_propers"], 2192)
+        self.assertEqual(counted["scripture_bearing_propers"], 2194)
         self.assertEqual(counted["slot_names"], 120)
 
 
@@ -969,6 +969,18 @@ class LanguageCapabilityTests(unittest.TestCase):
             "ledgered-untranslated",
         )
         self.assertFalse(self.state(fallback, "en")["held"])
+
+        bodyless = {
+            "name": "Collect",
+            "text_status": {"state": "unavailable", "scope": "proper-body"},
+            "untranslated": [{"lang": "en", "state": "unavailable"}],
+        }
+        self.assertEqual(self.state(bodyless, "en")["status"], "unavailable")
+        self.assertEqual(
+            self.state(bodyless, "en")["reason"]["kind"],
+            "ledgered-untranslated",
+        )
+        self.assertFalse(self.state(bodyless, "en")["held"])
 
     def test_a_placeholder_is_absent_even_when_its_note_uses_text(self) -> None:
         placeholder = {

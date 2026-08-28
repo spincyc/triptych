@@ -4681,6 +4681,87 @@ text_sha256 = "4750a85cade3e62f43bc0e1525aea460e04d09f94788450e2f1d911e5baab0dc"
 body_status = "removed"
 
 [[entries]]
+mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "adb6e37ca93273dd9ced3fab625a0855ad3d4c3d73275d1c7679ad4160121255"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-collect"
+source_date = "2026-08-28 project editorial projection; antecedent Mame 1922"
+locator = "project editorial artifact physical lines 1-4; antecedent Mame printed pp. 702-703, artifact pp. 816-817"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-augustine-orations"
+verification_locator = "printed p. 639, no. 3479; artifact PDF p. 720"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "retain project j orthography", "expand the standard conclusion from the target"]
+provenance_evidence = "The project-owned projection passage reproduces the retained body hash exactly. Its artifact manifest records the bounded public-domain Mame antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes."
+provenance_authority = "Triptych editorial projection verified by exact page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-orations-8a2a938d", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "project editorial artifact physical lines 1-4; antecedent Mame printed pp. 702-703, artifact pp. 816-817"
+publication_evidence = "The project-created artifact owns the projection while the registered 1922 Mame artifact supplies the United States public-domain basis; the selected project-artifact lines hash to this calendar body."
+note = "Published from a Triptych-owned editorial projection; the Mame antecedent and 1962 target remain separate witnesses."
+
+[[entries]]
+mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Postcommunion"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "2c627d20091cc66a7526d2600770202f08b59e357575c8db5fda04f7c4d09e3a"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-postcommunion"
+source_date = "2026-08-28 project editorial projection; antecedent Mame 1922"
+locator = "project editorial artifact physical lines 11-12; antecedent Mame printed p. 703, artifact p. 817"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-augustine-orations"
+verification_locator = "printed p. 641, no. 3489; artifact PDF p. 722"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "retain project j orthography", "omit the Mame comma after Augustinus", "expand the standard conclusion from the target"]
+provenance_evidence = "The project-owned projection passage reproduces the retained body hash exactly. Its artifact manifest records the bounded public-domain Mame antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes."
+provenance_authority = "Triptych editorial projection verified by exact page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-orations-8a2a938d", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "project editorial artifact physical lines 11-12; antecedent Mame printed p. 703, artifact p. 817"
+publication_evidence = "The project-created artifact owns the projection while the registered 1922 Mame artifact supplies the United States public-domain basis; the selected project-artifact lines hash to this calendar body."
+note = "Published from a Triptych-owned editorial projection; the Mame antecedent and 1962 target remain separate witnesses."
+
+[[entries]]
+mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
+form = ""
+proper = "Secret"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "557a88c9c82c259e624fc2bf3e5f599a5fda7f9dd2b6736dddb3458d24828756"
+provenance_status = "collated"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-secret"
+source_date = "2026-08-28 project editorial projection; antecedent Mame 1922"
+locator = "project editorial artifact physical lines 6-9; antecedent Mame printed p. 703, artifact p. 817"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.sanctoral-augustine-orations"
+verification_locator = "printed p. 640, no. 3486; artifact PDF p. 721"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "retain project j orthography", "omit the Mame comma after quae", "expand the standard conclusion from the target"]
+provenance_evidence = "The project-owned projection passage reproduces the retained body hash exactly. Its artifact manifest records the bounded public-domain Mame antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes."
+provenance_authority = "Triptych editorial projection verified by exact page-image collation against the 1962 target edition"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28.augustine-orations-8a2a938d", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "project editorial artifact physical lines 6-9; antecedent Mame printed p. 703, artifact p. 817"
+publication_evidence = "The project-created artifact owns the projection while the registered 1922 Mame artifact supplies the United States public-domain basis; the selected project-artifact lines hash to this calendar body."
+note = "Published from a Triptych-owned editorial projection; the Mame antecedent and 1962 target remain separate witnesses."
+
+[[entries]]
 mass = "s-bedae-venerabilis-confessoris-ecclesiae-doctoris"
 form = ""
 proper = "Collect"

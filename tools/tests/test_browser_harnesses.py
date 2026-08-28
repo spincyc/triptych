@@ -43,7 +43,7 @@ PREVIEW = ROOT / PREVIEW_ROOT
 # partial result, a new unaccounted assertion, or a nonzero exit all fail here.
 ASSERTION_COUNTS = {
     "day_reader_choices_browser.mjs": 8,
-    "day_reader_integration_browser.mjs": 42,
+    "day_reader_integration_browser.mjs": 43,
     "liturgy_reader_shell_browser.mjs": 18,
     "liturgy_reader_visual_reset_browser.mjs": 26,
     "propers_reader_integration_browser.mjs": 40,

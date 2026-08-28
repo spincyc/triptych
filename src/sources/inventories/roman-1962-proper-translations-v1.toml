@@ -14,10 +14,10 @@ calendar = "roman-1962"
 target = "src/sources/calendars/roman-1962/propers.yaml"
 recorded_on = "2026-08-02"
 merge = """
-Current disposition, 2026-08-27: 98 positive entries remain -- sixty
+Current disposition, 2026-08-28: 99 positive entries remain -- sixty-one
 Cummiskey rows with exact page-image and tracked-publication bindings, thirty-two
 Lasance rows with exact facsimile bindings, and six public-domain Sequence rows.
-The other 1,097 exact identities are typed, text-free `untranslated` records.
+The other 1,096 exact identities are typed, text-free `untranslated` records.
 The new 106-row Cummiskey recovery artifact supplies 48 active exact identities
 and 58 evidence-only or quarantined rows; cataloguing a historical English row
 does not itself establish a target identity. Nineteen formerly quarantined Lasance leads now
@@ -15022,17 +15022,31 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
 
-[[untranslated]]
+[[entries]]
 mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
 form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
+incipit = "Adesto supplicationibus nostris"
+witness = "cummiskey-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-s-augustini-episcopi-confessoris-ecclesiae-doctoris--main--collect--all--1"
+printed_page = "652"
+ia_leaf = 660
+ia_leaf_range = [660, 660]
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.augustine-collect-en"
+publication_artifact_sha256 = "fceb029190e1f7a651a095cc808e758ab0fe9da08dad67f9c1c6eab32346b47c"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-s-augustini-episcopi-confessoris-ecclesiae-doctoris--main--collect--all--1"
+collated = "page-image and tracked transcription, 2026-08-28"
+collation_result = "confirmed"
+witness_note = "Leaf n660, printed p. 652, running head `28th AUGUST.`, under `COLLECT. Adesto.—` in the entry headed `XXVIII. St. AUGUSTIN, bp. c. D.` after `All as in Mass XII. p. 485, except`. The feast, exception, Latin cue and complete English clause sequence establish the target `Adesto supplicationibus nostris`. Page-image collation confirms that this historical English body answers the complete target Latin identity; publication is limited to the exact 1861 wording and does not claim an approved liturgical translation."
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+rights = "public-domain"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+text = "Give ear, O Lord, to our prayers, and by the intercession of blessed Augustin, thy conf. and bp. favourably bestow the effects of thy accustomed mercy on us, to whom thou hast given reason to trust in thy goodness. Thro’."
 
 [[untranslated]]
 mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
@@ -15044,7 +15058,7 @@ lang = "en"
 extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
@@ -15056,7 +15070,7 @@ lang = "en"
 extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+note = "No exact English exemplar is bound to this source-established Latin proper."
 
 [[untranslated]]
 mass = "decollatione-s-ioannis-baptistae"

@@ -268,6 +268,9 @@ function canonicalDayHash(state) {
 
 const STATES = Object.freeze({
   roman: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10' }),
+  augustineRomanLatin: hash({ date: '2026-08-28', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la' }),
+  augustineRomanEnglish: hash({ date: '2026-08-28', missal: 'roman-1962', bible: 'douay-rheims', orations: 'en' }),
+  augustinePostconciliarLatin: hash({ date: '2026-08-28', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la' }),
   romanMissal: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   romanLatinMissal: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'la', rubrics: '1', why: '0' }),
   postconciliar: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1' }),
@@ -989,6 +992,52 @@ async function runAssertions(cdp, base) {
       assert.deepEqual(actual.coverage, expected.coverage);
       assert.deepEqual(actual.explicitAbsences, expected.explicitAbsences);
     }
+  });
+
+  await test('St Augustine default day routes render the historical Collect or its explicit absence', async () => {
+    for (const [state, language, opening] of [
+      [STATES.augustineRomanLatin, 'la', 'Adesto supplicationibus nostris, omnipotens Deus'],
+      [STATES.augustineRomanEnglish, 'en', 'Give ear, O Lord, to our prayers']
+    ]) {
+      await navigateCandidate(cdp, base, state);
+      const value = await evaluate(cdp, `(() => {
+        const collect = [...document.querySelectorAll('#reader-document .proper')]
+          .find(row => row.querySelector('.proper-name')?.childNodes[0]?.textContent.trim() === 'Collect');
+        const composed = collect?.querySelector('.composed') || null;
+        return {
+          formulary: dayReaderDebug.semantic?.resolved?.formulary || null,
+          collectCount: [...document.querySelectorAll('#reader-document .proper .proper-name')]
+            .filter(row => row.childNodes[0]?.textContent.trim() === 'Collect').length,
+          text: composed?.textContent.replace(/\\s+/g, ' ').trim() || '',
+          language: composed?.lang || '',
+          note: collect?.querySelector('.composed-note')?.textContent.trim() || ''
+        };
+      })()`);
+      assert.equal(value.formulary, 's-augustini-episcopi-confessoris-ecclesiae-doctoris');
+      assert.equal(value.collectCount, 1);
+      assert.equal(value.language, language);
+      assert.match(value.text, new RegExp(opening));
+      assert.doesNotMatch(value.note, /unavailable|not recorded|incipit only/i);
+    }
+
+    await navigateCandidate(cdp, base, STATES.augustinePostconciliarLatin);
+    const unavailable = await evaluate(cdp, `(() => {
+      const collect = [...document.querySelectorAll('#reader-document .proper')]
+        .find(row => row.querySelector('.proper-name')?.childNodes[0]?.textContent.trim() === 'Collect');
+      return {
+        formulary: dayReaderDebug.semantic?.resolved?.formulary || null,
+        collectCount: [...document.querySelectorAll('#reader-document .proper .proper-name')]
+          .filter(row => row.childNodes[0]?.textContent.trim() === 'Collect').length,
+        composedCount: collect?.querySelectorAll('.composed').length ?? -1,
+        note: collect?.querySelector('.composed-note')?.textContent.trim() || '',
+        sectionText: collect?.innerText.replace(/\\s+/g, ' ').trim() || ''
+      };
+    })()`);
+    assert.equal(unavailable.formulary, 'saint-augustine-bishop-doctor-church');
+    assert.equal(unavailable.collectCount, 1);
+    assert.equal(unavailable.composedCount, 0);
+    assert.equal(unavailable.note, 'Latin text unavailable');
+    assert.equal(unavailable.sectionText, 'Collect Latin text unavailable');
   });
 
   await test('explicit readable formulary and material coverage remain explicit', async () => {

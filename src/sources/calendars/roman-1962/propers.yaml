@@ -38851,12 +38851,18 @@ sections:
       date: 08-28
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 639 (digital p.
-        720), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: 'The complete main formulary was read on 2026-08-28 from the page
+        images of the CMAA facsimile of the controlling edition at printed pp.
+        639-641 (artifact PDF pp. 720-722), including Collect no. 3479, Secret
+        no. 3486 and Postcommunion no. 3489. The three orations are published
+        through a separately registered Triptych editorial projection over the
+        public-domain Mame 1922 St Augustine passage at printed pp. 702-703
+        (artifact pp. 816-817). The earlier witness abbreviates the three standard
+        conclusions and differs only in two commas; every transformation is
+        recorded in that projection artifact. The Gospel and Communion citations
+        omitted from the earlier scripture-only record are restored from the same
+        controlling page images. The commemoration of St Hermes remains the
+        separate entry beside this Mass.'
       propers:
       - name: Introit
         source: scripture
@@ -38880,13 +38886,13 @@ sections:
               verse: 2
           ref: Psalms 91:2
       - name: Collect
+        incipit: Adesto supplicationibus nostris
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam
+          sperandae pietatis indulges, intercedente beato Augustino Confessore tuo
+          atque Pontifice, consuetae misericordiae tribue benignus effectum. Per
+          Dominum nostrum.
       - name: Epistle
         source: scripture
         verses:
@@ -38923,6 +38929,18 @@ sections:
               chapter: 88
               verse: 21
           ref: Psalms 88:21
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin:
+              chapter: 5
+              verse: 13
+            end:
+              chapter: 5
+              verse: 19
+          ref: Matthew 5:13-19
       - name: Offertory
         source: scripture
         verses:
@@ -38936,21 +38954,31 @@ sections:
               verse: 13
           ref: Psalms 91:13
       - name: Secret
+        incipit: Sancti Augustini Pontificis tui atque Doctoris
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Sancti Augustini Pontificis tui atque Doctoris nobis, Domine, pia non desit
+          oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper
+          obtineat. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
+          et regnat in unitate.
+      - name: Communion
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin:
+              chapter: 12
+              verse: 42
+            end:
+              chapter: 12
+              verse: 42
+          ref: Luke 12:42
       - name: Postcommunion
+        incipit: Ut nobis, Domine, tua sacrificia dent salutem
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Ut nobis, Domine, tua sacrificia dent salutem: beatus Augustinus Pontifex
+          tuus et Doctor egregius, quaesumus, precator accedat. Per Dominum nostrum.
     - key: comm-s-hermetis-martyris
       name: Comm. S. Hermetis Martyris
       registry: 1962-08-28-comm

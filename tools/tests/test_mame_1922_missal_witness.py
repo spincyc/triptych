@@ -165,7 +165,7 @@ class Mame1922WitnessTests(unittest.TestCase):
         structure = json.loads(STRUCTURE_EDITION.read_text(encoding="utf-8"))
 
         self.assertEqual(structure["edition"]["id"], EDITION_ID)
-        self.assertEqual(len(structure["passages"]), 4)
+        self.assertEqual(len(structure["passages"]), 5)
         self.assertEqual(
             {passage["artifact_id"] for passage in structure["passages"]},
             {ARTIFACT_ID},

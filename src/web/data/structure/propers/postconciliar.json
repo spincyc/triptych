@@ -13,8 +13,8 @@
    "lang": "la",
    "rights_withheld": 0,
    "scripture_delegated": 2647,
-   "unavailable": 347,
-   "units": 2997,
+   "unavailable": 348,
+   "units": 2998,
    "withheld": 0
   },
   {
@@ -23,12 +23,12 @@
    "fallback_latin": 0,
    "full_text": 122,
    "held": 122,
-   "incipit_only": 141,
+   "incipit_only": 0,
    "lang": "en",
    "rights_withheld": 84,
    "scripture_delegated": 2647,
-   "unavailable": 0,
-   "units": 2997,
+   "unavailable": 142,
+   "units": 2998,
    "withheld": 0
   }
  ],
@@ -1910,8 +1910,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -2189,8 +2205,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -2730,8 +2762,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "night",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -3948,8 +3996,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "dawn",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -4371,8 +4435,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -4873,8 +4953,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -5152,8 +5248,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -5686,8 +5798,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "night",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -6897,8 +7025,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "dawn",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -7313,8 +7457,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -7839,8 +7999,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mary-holy-mother-god",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -11729,8 +11905,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "our-lady-loreto",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -11783,8 +11975,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "our-lady-loreto",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -11837,8 +12045,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "our-lady-loreto",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -12212,8 +12436,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-raymond-penyafort-priest",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -12280,8 +12520,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-hilary-bishop-doctor-church",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -12348,8 +12604,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-anthony-abbot",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -12402,8 +12674,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-anthony-abbot",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -12456,8 +12744,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-anthony-abbot",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -31510,8 +31814,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-paulinus-nola-bishop",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -31824,8 +32144,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-paulinus-nola-bishop",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -31878,8 +32214,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-paulinus-nola-bishop",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -41341,8 +41693,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saints-sixtus-ii-pope-companions-martyrs",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -41695,8 +42063,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saints-sixtus-ii-pope-companions-martyrs",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -46187,6 +46571,70 @@
    "name": "Saint Augustine, Bishop and Doctor of the Church",
    "propers": [
     {
+     "citations": [],
+     "cycles": {},
+     "form": "",
+     "form_id": "main",
+     "incipit": null,
+     "languages": [
+      {
+       "available": false,
+       "held": false,
+       "lang": "la",
+       "reason": null,
+       "status": "unavailable"
+      },
+      {
+       "available": false,
+       "held": false,
+       "lang": "en",
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-augustine-bishop-doctor-church",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
+      }
+     ],
+     "latin": null,
+     "name": "Collect",
+     "source": "composed",
+     "taken_from": null,
+     "text": null,
+     "text_status": {
+      "scope": "proper-body",
+      "state": "unavailable"
+     },
+     "translations": null,
+     "unavailable_translations": null,
+     "untranslated": [
+      {
+       "lang": "en",
+       "state": "unavailable",
+       "target": {
+        "cycle": "all",
+        "extent": "body",
+        "form_id": "main",
+        "mass": "saint-augustine-bishop-doctor-church",
+        "occurrence": 1,
+        "proper": "Collect"
+       }
+      }
+     ]
+    },
+    {
      "citations": [
       {
        "book": "1 John",
@@ -46470,7 +46918,10 @@
    "registry": "pc-08-28",
    "season": null,
    "takes_from": null,
-   "text_status": null
+   "text_status": {
+    "scope": "missal-formulary",
+    "state": "partial"
+   }
   },
   {
    "common_from": null,
@@ -47387,8 +47838,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "saint-peter-claver-priest",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -47505,8 +47972,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "most-holy-name-mary",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -47559,8 +48042,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "most-holy-name-mary",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -65904,8 +66403,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "advent-1",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -67149,8 +67664,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "advent-2",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -68437,8 +68968,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "advent-4",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -69516,8 +70063,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "advent-4",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -69625,8 +70188,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "advent-4",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -75550,8 +76129,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -75809,8 +76404,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -76310,8 +76921,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "night",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -77438,8 +78065,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "dawn",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -77831,8 +78474,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "nativity",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -78298,8 +78957,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -78557,8 +79232,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -79051,8 +79742,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "night",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -80172,8 +80879,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "dawn",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -80558,8 +81281,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "nativity",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -81645,8 +82384,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "holy-family",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -81754,8 +82509,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "holy-family",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -82035,8 +82806,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mary-mother-of-god",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -82394,8 +83181,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mary-mother-of-god",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -82503,8 +83306,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mary-mother-of-god",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -82626,8 +83445,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "second-sunday-after-nativity",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -82995,8 +83830,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "second-sunday-after-nativity",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -83104,8 +83955,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "second-sunday-after-nativity",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -83229,8 +84096,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "epiphany",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -83598,8 +84481,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "epiphany",
+             "occurrence": 1,
+             "proper": "Prayer over the Offerings"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -83707,8 +84606,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "epiphany",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -84438,8 +85353,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "epiphany",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -84807,8 +85738,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "epiphany",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -84916,8 +85863,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "epiphany",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -85647,8 +86610,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "baptism-of-the-lord",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -86847,8 +87826,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "baptism-of-the-lord",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -86978,8 +87973,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "baptism-of-the-lord",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -92197,8 +93208,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-1",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -92251,8 +93278,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-1",
+           "occurrence": 1,
+           "proper": "Prayer over the People"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -93455,8 +94498,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-2",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -93564,8 +94623,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-2",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -93618,8 +94693,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-2",
+           "occurrence": 1,
+           "proper": "Prayer over the People"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -94920,8 +96011,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-3",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -95096,8 +96203,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-3",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -95150,8 +96273,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-3",
+           "occurrence": 1,
+           "proper": "Prayer over the People"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -96385,8 +97524,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-4",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -96632,8 +97787,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-4",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -98104,8 +99275,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-5",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -98158,8 +99345,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "lent-5",
+           "occurrence": 1,
+           "proper": "Prayer over the People"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -107533,8 +108736,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Address before the Blessing of Branches"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -107587,8 +108806,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Blessing of Branches"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -107647,8 +108882,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 2,
+           "proper": "Blessing of Branches"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -107890,8 +109141,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Invitation to the Procession"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -108078,8 +109345,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Hymn to Christ the King"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -108834,8 +110117,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -108943,8 +110242,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "palm-sunday",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -110128,8 +111443,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mass-of-the-lords-supper",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -111064,8 +112395,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mass-of-the-lords-supper",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -111118,8 +112465,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mass-of-the-lords-supper",
+           "occurrence": 1,
+           "proper": "Hymn at the Transfer of the Blessed Sacrament"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -111172,8 +112535,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "mass-of-the-lords-supper",
+           "occurrence": 1,
+           "proper": "Chant at the Place of Reposition"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -111244,8 +112623,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Prayer"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -111304,8 +112699,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Prayer (alternative)"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -112569,8 +113980,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Improperia"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -112678,8 +114105,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Hymn at the Adoration of the Holy Cross"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -112787,8 +114230,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -112841,8 +114300,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "good-friday",
+           "occurrence": 1,
+           "proper": "Prayer over the People"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113047,8 +114522,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Insertion of the Grains of Incense"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113101,8 +114592,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Lighting of the Paschal Candle"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113469,8 +114976,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the First Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113529,8 +115052,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the First Reading (alternative)"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113729,8 +115268,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Second Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113933,8 +115488,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Third Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -113993,8 +115564,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Third Reading (alternative)"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114213,8 +115800,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Fourth Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114397,8 +116000,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Fifth Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114611,8 +116230,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Sixth Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114827,8 +116462,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Seventh Reading"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114887,8 +116538,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Seventh Reading (alternative)"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -114947,8 +116614,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115314,8 +116997,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Litany of the Saints"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115368,8 +117067,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Prayer after the Litany"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115422,8 +117137,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Blessing of Baptismal Water"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115531,8 +117262,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Blessing of Water"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115585,8 +117332,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Renewal of Baptismal Promises"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -115888,8 +117651,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-vigil",
+           "occurrence": 1,
+           "proper": "Solemn Blessing"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -116536,8 +118315,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-sunday",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -116645,8 +118440,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-sunday",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -117458,8 +119269,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-2",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -118558,8 +120385,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "no-text-recorded",
-         "status": "absent"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "C",
+             "extent": "body",
+             "form_id": "main",
+             "mass": "easter-3",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -119057,8 +120900,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-3",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -120258,8 +122117,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-4",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -121565,8 +123440,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-5",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -122682,8 +124573,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-6",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -122791,8 +124698,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-6",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -122901,8 +124824,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "ascension",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -123526,8 +125465,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "ascension",
+             "occurrence": 1,
+             "proper": "Prayer over the Offerings"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -123635,8 +125590,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "ascension",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -123751,8 +125722,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "ascension",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -124537,8 +126524,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "ascension",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -124638,8 +126641,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "ascension",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -125263,8 +127282,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "ascension",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -125372,8 +127407,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "ascension",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -125481,8 +127532,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "ascension",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -126267,8 +128334,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "ascension",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -126390,8 +128473,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "easter-7",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -127596,8 +129695,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -127656,8 +129771,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "pentecost",
+             "occurrence": 2,
+             "proper": "Collect"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -128120,8 +130251,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -128229,8 +130376,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Prayer over the Offerings"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -128338,8 +130501,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "vigil",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -128987,8 +131166,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -129244,8 +131439,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Prayer over the Offerings"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -129375,8 +131586,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "incipit-only",
-         "status": "incipit-only"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "all",
+             "extent": "body",
+             "form_id": "day",
+             "mass": "pentecost",
+             "occurrence": 1,
+             "proper": "Prayer after Communion"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -129513,8 +131740,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -129573,8 +131816,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "pentecost",
+           "occurrence": 2,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -130037,8 +132296,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -130146,8 +132421,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -130255,8 +132546,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "vigil",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -130893,8 +133200,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Gospel Acclamation"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -131150,8 +133473,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -131281,8 +133620,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "day",
+           "mass": "pentecost",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -145371,8 +147726,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-3",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -146919,8 +149290,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-4",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -148117,8 +150504,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-5",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -148293,8 +150696,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-5",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -148416,8 +150835,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-6",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -149505,8 +151940,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-6",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -152421,8 +154872,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-8",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -153621,8 +156088,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-9",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -153807,8 +156290,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-9",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -155012,8 +157511,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-10",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -156069,8 +158584,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "no-text-recorded",
-         "status": "absent"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "B",
+             "extent": "body",
+             "form_id": "main",
+             "mass": "ot-11",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -157792,8 +160323,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-12",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -161685,8 +164232,24 @@
          "available": false,
          "held": false,
          "lang": "en",
-         "reason": "no-text-recorded",
-         "status": "absent"
+         "reason": {
+          "kind": "ledgered-untranslated",
+          "records": [
+           {
+            "lang": "en",
+            "state": "unavailable",
+            "target": {
+             "cycle": "A",
+             "extent": "body",
+             "form_id": "main",
+             "mass": "ot-15",
+             "occurrence": 1,
+             "proper": "Gospel Acclamation"
+            }
+           }
+          ]
+         },
+         "status": "unavailable"
         }
        ],
        "latin": {
@@ -162061,8 +164624,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-15",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -166632,8 +169211,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-19",
+           "occurrence": 1,
+           "proper": "Collect"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -169120,8 +171715,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-20",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -170514,8 +173125,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-21",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -174905,8 +177532,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-25",
+           "occurrence": 1,
+           "proper": "Entrance Antiphon"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -176041,8 +178684,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-25",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -177513,8 +180172,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-26",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -178882,8 +181557,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-27",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -183010,8 +185701,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-30",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -184404,8 +187111,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-31",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -184565,8 +187288,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-31",
+           "occurrence": 1,
+           "proper": "Prayer after Communion"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -185770,8 +188509,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "ot-32",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -188473,8 +191228,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "most-holy-trinity",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {
@@ -285511,8 +288282,24 @@
        "available": false,
        "held": false,
        "lang": "en",
-       "reason": "incipit-only",
-       "status": "incipit-only"
+       "reason": {
+        "kind": "ledgered-untranslated",
+        "records": [
+         {
+          "lang": "en",
+          "state": "unavailable",
+          "target": {
+           "cycle": "all",
+           "extent": "body",
+           "form_id": "main",
+           "mass": "christ-the-king",
+           "occurrence": 1,
+           "proper": "Prayer over the Offerings"
+          }
+         }
+        ]
+       },
+       "status": "unavailable"
       }
      ],
      "latin": {

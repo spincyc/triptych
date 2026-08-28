@@ -565,7 +565,7 @@ class CompleteMissalReportTests(unittest.TestCase):
             self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
 
         english = pre_1955["textual"]["filled_text_slots"]["english"]
-        self.assertEqual(english["with_english"], 85)
+        self.assertEqual(english["with_english"], 86)
         self.assertEqual(
             english["translation_ledger_calendars"],
             ["roman-1962", "roman-pre-1955"],

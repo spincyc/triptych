@@ -112,13 +112,13 @@ EXAMPLES = {
             "tools/mass-propers structure --out build/example-propers",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4353 citations",
-                "roman-pre-1955: 489 masses, 4288 citations",
+                "roman-1962: 491 masses, 4355 citations",
+                "roman-pre-1955: 489 masses, 4290 citations",
                 "  -> build/example-propers/structure/propers/postconciliar.json",
                 "  -> build/example-propers/structure/propers/roman-1962.json",
                 "  -> build/example-propers/structure/propers/roman-pre-1955.json",
                 "  -> build/example-propers/structure/propers/index.json",
-                "  Latin withheld from publication: 2120",
+                "  Latin withheld from publication: 2123",
                 "  refused: 34",
             ),
             "WRITES one file per missal and the manifest naming them. --out here is untracked; the default writes tracked src/web/data",
@@ -127,8 +127,8 @@ EXAMPLES = {
             "tools/mass-propers structure --check",
             (
                 "postconciliar: 619 masses, 3626 citations",
-                "roman-1962: 491 masses, 4353 citations",
-                "roman-pre-1955: 489 masses, 4288 citations",
+                "roman-1962: 491 masses, 4355 citations",
+                "roman-pre-1955: 489 masses, 4290 citations",
                 "  4 tracked file(s) are current",
             ),
             "writes nothing: exits 1 naming each tracked file the sources no longer produce. The calendar-Mass check target runs this",
@@ -138,10 +138,10 @@ EXAMPLES = {
         Example(
             "tools/mass-propers census",
             (
-                "# roman-pre-1955 English orations: 1147 slots appointed, 85 public-available, 0 held rights-restricted, 1062 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# roman-1962 English orations: 1195 slots appointed, 98 public-available, 0 held rights-restricted, 1097 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar English orations: 329 slots appointed, 113 public-available, 0 held rights-restricted, 216 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
-                "# postconciliar Latin recension: 325 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
+                "# roman-pre-1955 English orations: 1147 slots appointed, 86 public-available, 0 held rights-restricted, 1061 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# roman-1962 English orations: 1195 slots appointed, 99 public-available, 0 held rights-restricted, 1096 ledgered untranslated, 0 unaccounted; 0 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar English orations: 330 slots appointed, 113 public-available, 0 held rights-restricted, 217 ledgered untranslated, 0 unaccounted; 3 cycle-specific unavailable records, 0 composed propers outside the ledger's slots, 0 ledger rows matching no slot, 0 translation rows with stale incipits",
+                "# postconciliar Latin recension: 326 unique non-scriptural slots, 0 bodies resident; 0 explicitly antecedent substitutes, 0 other bodies with antecedent-relation metadata, 0 without per-slot Latin relation; direct target-edition artifact attestation not-represented",
                 "<!-- census:begin — derived; edit nothing between these markers -->",
                 "",
                 "... 95 more lines",
@@ -762,6 +762,17 @@ def whole_unit_untranslated(
     ]
 
 
+def proper_body_unavailable(proper: dict) -> bool:
+    """Whether a source-owned Proper slot explicitly has no Latin body."""
+
+    status = proper.get("text_status")
+    return (
+        isinstance(status, dict)
+        and status.get("state") == "unavailable"
+        and status.get("scope") == "proper-body"
+    )
+
+
 def proper_language_capabilities(
     proper: dict, cycle: str = "all"
 ) -> list[dict]:
@@ -789,6 +800,7 @@ def proper_language_capabilities(
 
     rows = []
     for lang in PROPER_LANGUAGES:
+        untranslated = whole_unit_untranslated(proper, lang, cycle)
         translated = any(
             row.get("lang") == lang and bool(row.get("text")) for row in translations
         )
@@ -801,9 +813,14 @@ def proper_language_capabilities(
         )
         latin_unavailable = (
             lang == "la"
-            and isinstance(proper.get("latin"), dict)
-            and proper["latin"].get("state") == "unavailable"
-            and not bool(proper["latin"].get("held"))
+            and (
+                (
+                    isinstance(proper.get("latin"), dict)
+                    and proper["latin"].get("state") == "unavailable"
+                    and not bool(proper["latin"].get("held"))
+                )
+                or proper_body_unavailable(proper)
+            )
         )
 
         if proper.get("name") == PLACEHOLDER:
@@ -839,7 +856,6 @@ def proper_language_capabilities(
                 "delegated-to-scripture",
             )
         elif lang != "la" and proper.get("text"):
-            untranslated = whole_unit_untranslated(proper, lang, cycle)
             status, held, available, reason = (
                 "fallback-latin",
                 False,
@@ -849,6 +865,13 @@ def proper_language_capabilities(
                     if untranslated
                     else {"kind": "no-translation-recorded"}
                 ),
+            )
+        elif untranslated:
+            status, held, available, reason = (
+                "unavailable",
+                False,
+                False,
+                {"kind": "ledgered-untranslated", "records": untranslated},
             )
         elif proper.get("incipit"):
             status, held, available, reason = (
@@ -4233,9 +4256,10 @@ def select_texts(
     would have been a second answer to which text a Mass is said in.
     """
     latin = proper.get("latin")
-    latin_unavailable = isinstance(latin, dict) and (
-        latin.get("withheld") or latin.get("state") == "unavailable"
-    )
+    latin_unavailable = (
+        isinstance(latin, dict)
+        and (latin.get("withheld") or latin.get("state") == "unavailable")
+    ) or proper_body_unavailable(proper)
     if lang == "la" and latin_unavailable:
         return [("", "", "Latin text unavailable")]
     available = [

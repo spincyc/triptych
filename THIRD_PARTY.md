@@ -199,10 +199,11 @@ In particular:
   derived from ICEL's, and nothing in the file may be used for recitation; and
 - the English recorded in
   `src/sources/inventories/roman-1962-proper-translations-v1.toml` comes from
-  several public-domain historical witnesses. Twelve proper entries use *The
+  several public-domain historical witnesses. Sixty-one proper entries use *The
   Roman Missal translated into the English language for the use of the laity*,
   first revised edition (Philadelphia: Eugene Cummiskey, 1861), including three
-  page-collated Palm Sunday procession antiphons; six sequence
+  page-collated Palm Sunday procession antiphons and the St Augustine Collect
+  at printed p. 652, Internet Archive leaf n660; six sequence
   entries use Edward Caswall's *Lyra Catholica* (London, 1849), with the
   *Hymns Ancient and Modern* printing attributed to William Josiah Irons
   (London, complete edition, catalogued 1890) retained as an alternative for

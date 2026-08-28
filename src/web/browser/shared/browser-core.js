@@ -1373,6 +1373,12 @@ window.Triptych = (function () {
    * reader believe they are looking at the English they asked for. The absence
    * is stated where the text would have been.
    */
+  function properBodyUnavailable(proper) {
+    const status = proper && proper.text_status;
+    return Boolean(status && status.state === 'unavailable' &&
+      status.scope === 'proper-body');
+  }
+
   function orationFor(proper, wanted, witness) {
     const asked = wanted || SOURCE_LANGUAGE;
     if (asked === SOURCE_LANGUAGE) {
@@ -1383,6 +1389,13 @@ window.Triptych = (function () {
           unavailableState: ['rights-restricted', 'unavailable'].includes(proper.latin.state)
             ? proper.latin.state : 'unavailable',
           held: false
+        };
+      }
+      if (properBodyUnavailable(proper)) {
+        return {
+          text: null, lang: SOURCE_LANGUAGE, missing: true, wanted: asked,
+          source: null, availability: 'unavailable', reason: 'latin-unavailable',
+          unavailableState: 'unavailable', held: false
         };
       }
       return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
@@ -1423,17 +1436,27 @@ window.Triptych = (function () {
       return translation && translation.lang === asked && translation.text;
     })) {
       const state = unavailable.state || 'unavailable';
+      const latinUnavailable = properBodyUnavailable(proper) && !proper.text;
+      const blocksFallback = state === 'rights-restricted' || latinUnavailable;
       return {
-        text: state === 'rights-restricted' ? null : (proper.text || null),
-        lang: state === 'rights-restricted' ? asked : SOURCE_LANGUAGE,
+        text: blocksFallback ? null : (proper.text || null),
+        lang: blocksFallback ? asked : SOURCE_LANGUAGE,
         missing: true,
         wanted: asked,
         source: null,
         availability: 'unavailable',
-        reason: state,
+        reason: state === 'rights-restricted'
+          ? state : (latinUnavailable ? 'text-unavailable' : state),
         unavailableState: state,
         held: false,
         extent: unavailable.target && unavailable.target.extent || null
+      };
+    }
+    if (properBodyUnavailable(proper) && !proper.text) {
+      return {
+        text: null, lang: asked, missing: true, wanted: asked,
+        source: null, availability: 'unavailable', reason: 'text-unavailable',
+        unavailableState: 'unavailable', held: false
       };
     }
     return {
@@ -1502,7 +1525,8 @@ window.Triptych = (function () {
       (proper.translations || []).some((translation) => translation && translation.text) ||
       (proper.unavailable_translations || []).length > 0 ||
       (proper.untranslated || []).length > 0 ||
-      Boolean(proper.latin && proper.latin.withheld);
+      Boolean(proper.latin && proper.latin.withheld) ||
+      properBodyUnavailable(proper);
     if (hasOrationState) {
       const oration = orationFor(proper, held.orations, held.translationWitness || null);
       if (oration.text) {
@@ -1523,8 +1547,11 @@ window.Triptych = (function () {
         const missing = oration.reason === 'rights-restricted'
           ? 'The ' + languageName(oration.wanted) +
             ' translation is unavailable because its use is rights restricted.'
-          : oration.reason === 'latin-withheld'
+          : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
             ? 'Latin text unavailable'
+          : oration.reason === 'text-unavailable'
+            ? 'No ' + languageName(oration.wanted) +
+              ' or Latin body is held here.'
           : oration.reason === 'translation-choice-required'
             ? 'Several ' + languageName(oration.wanted) +
               ' translations are held. Choose a witness before reading one.'
@@ -1582,7 +1609,7 @@ window.Triptych = (function () {
       block.appendChild(el(under, 'cycle-name', cycleLabel(key)));
       if (cycle.text || cycle.translations.some((translation) => translation && translation.text) ||
           cycle.unavailable_translations.length || cycle.untranslated.length ||
-          (cycle.latin && cycle.latin.withheld)) {
+          (cycle.latin && cycle.latin.withheld) || properBodyUnavailable(cycle)) {
         const oration = orationFor(
           cycle, held.orations, held.translationWitness || null
         );
@@ -1599,8 +1626,11 @@ window.Triptych = (function () {
           const message = oration.reason === 'rights-restricted'
             ? 'The ' + languageName(oration.wanted) +
               ' translation is unavailable because its use is rights restricted.'
-            : oration.reason === 'latin-withheld'
+            : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
               ? 'Latin text unavailable'
+              : oration.reason === 'text-unavailable'
+                ? 'No ' + languageName(oration.wanted) +
+                  ' or Latin body is held for this cycle.'
               : 'No ' + languageName(oration.wanted) + ' body is held for this cycle.';
           block.appendChild(el('p', 'composed-note', message));
         }

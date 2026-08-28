@@ -81,6 +81,42 @@ PRE_1955_WITNESS_GAP = (
     "artifact.catholic-church.missale-romanum.vatican-typica-1920."
     "missale-romanum-1920-text-aa646196"
 )
+ST_AUGUSTINE_KEY = "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
+ST_AUGUSTINE_PROPER_NAMES = [
+    "Introit",
+    "Collect",
+    "Epistle",
+    "Gradual",
+    "Alleluia",
+    "Gospel",
+    "Offertory",
+    "Secret",
+    "Communion",
+    "Postcommunion",
+]
+ST_AUGUSTINE_LATIN_ORATIONS = {
+    "Collect": (
+        "Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam\n"
+        "sperandae pietatis indulges, intercedente beato Augustino Confessore tuo\n"
+        "atque Pontifice, consuetae misericordiae tribue benignus effectum. Per\n"
+        "Dominum nostrum."
+    ),
+    "Secret": (
+        "Sancti Augustini Pontificis tui atque Doctoris nobis, Domine, pia non desit\n"
+        "oratio: quae et munera nostra conciliet; et tuam nobis indulgentiam semper\n"
+        "obtineat. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit\n"
+        "et regnat in unitate."
+    ),
+    "Postcommunion": (
+        "Ut nobis, Domine, tua sacrificia dent salutem: beatus Augustinus Pontifex\n"
+        "tuus et Doctor egregius, quaesumus, precator accedat. Per Dominum nostrum."
+    ),
+}
+ST_AUGUSTINE_ENGLISH_COLLECT = (
+    "Give ear, O Lord, to our prayers, and by the intercession of blessed Augustin, "
+    "thy conf. and bp. favourably bestow the effects of thy accustomed mercy on "
+    "us, to whom thou hast given reason to trust in thy goodness. Thro’."
+)
 
 sys.path.insert(0, str(ROOT / "scripts"))
 
@@ -127,6 +163,104 @@ def reference_nodes(mass: dict):
 
 
 class HistoricalProperIntegrityTest(unittest.TestCase):
+    def test_st_augustine_formulary_is_complete_in_both_historical_states(self):
+        """The August 28 recovery reaches each historical source and public structure."""
+        propers_tool = load_mass_propers()
+        tokens = propers_tool.book_tokens()
+
+        for calendar in HISTORICAL_CALENDARS:
+            with self.subTest(calendar=calendar):
+                document = _calendars.load_document(CALENDARS, calendar)
+                mass = _calendars.mass_index(document)[ST_AUGUSTINE_KEY]
+                appointed, problems = _calendars.resolve_propers(document, mass)
+                self.assertEqual(problems, [])
+                source_propers = [proper for _, proper, _ in appointed]
+                self.assertEqual(
+                    [str(proper["name"]) for proper in source_propers],
+                    ST_AUGUSTINE_PROPER_NAMES,
+                )
+                source_by_name = {
+                    str(proper["name"]): proper for proper in source_propers
+                }
+                self.assertEqual(
+                    source_by_name["Gospel"]["verses"][0]["ref"],
+                    "Matthew 5:13-19",
+                )
+                self.assertEqual(
+                    source_by_name["Communion"]["verses"][0]["ref"],
+                    "Luke 12:42",
+                )
+                for name, expected in ST_AUGUSTINE_LATIN_ORATIONS.items():
+                    self.assertEqual(
+                        str(source_by_name[name].get("text") or "").strip(),
+                        expected,
+                        (calendar, name),
+                    )
+
+                current = propers_tool.calendar_structure(CALENDARS, calendar, tokens)
+                current_mass = next(
+                    mass
+                    for mass in current["masses"]
+                    if mass["key"] == ST_AUGUSTINE_KEY
+                )
+                current_by_name = {
+                    str(proper["name"]): proper
+                    for proper in current_mass["propers"]
+                }
+                self.assertEqual(
+                    list(current_by_name),
+                    ST_AUGUSTINE_PROPER_NAMES,
+                )
+                if calendar == "roman-1962":
+                    for name, expected in ST_AUGUSTINE_LATIN_ORATIONS.items():
+                        self.assertEqual(
+                            str(current_by_name[name].get("text") or "").strip(),
+                            expected,
+                            (calendar, name),
+                        )
+                else:
+                    for name in ST_AUGUSTINE_LATIN_ORATIONS:
+                        proper = current_by_name[name]
+                        self.assertFalse(
+                            str(proper.get("text") or "").strip(),
+                            (calendar, name),
+                        )
+                        latin = proper.get("latin")
+                        self.assertIsInstance(latin, dict, (calendar, name))
+                        self.assertTrue(latin.get("withheld"), (calendar, name))
+                        self.assertFalse(latin.get("held"), (calendar, name))
+                        self.assertFalse(latin.get("available"), (calendar, name))
+                        self.assertEqual(
+                            latin.get("state"), "unavailable", (calendar, name)
+                        )
+                self.assertEqual(
+                    [
+                        str(translation["text"]).strip()
+                        for translation in current_by_name["Collect"].get(
+                            "translations"
+                        )
+                        or []
+                        if translation.get("lang") == "en"
+                    ],
+                    [ST_AUGUSTINE_ENGLISH_COLLECT],
+                )
+
+                generated_path = PROPER_STRUCTURES / f"{calendar}.json"
+                if generated_path.is_file():
+                    generated = json.loads(
+                        generated_path.read_text(encoding="utf-8")
+                    )
+                    generated_mass = next(
+                        mass
+                        for mass in generated["masses"]
+                        if mass["key"] == ST_AUGUSTINE_KEY
+                    )
+                    self.assertEqual(
+                        generated_mass["propers"],
+                        current_mass["propers"],
+                        f"{generated_path} is stale",
+                    )
+
     def test_pre_1955_holy_week_gaps_are_typed_not_pseudo_propers(self):
         """Structural evidence is retained without inventing liturgical text."""
         document = _calendars.load_document(

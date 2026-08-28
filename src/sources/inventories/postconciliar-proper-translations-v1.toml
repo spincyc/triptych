@@ -27,7 +27,7 @@ translations_schema = 1
 record_type = "calendar-proper-translations"
 calendar = "postconciliar"
 target = "src/sources/calendars/postconciliar/propers.yaml"
-recorded_on = "2026-08-27"
+recorded_on = "2026-08-28"
 
 merge = """
 Each entry names one proper by mass key, form label and proper name, and carries
@@ -7288,3 +7288,15 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No authoritative Lectionary exemplar establishing the exact approved English for this cycle-specific source-owned slot is held. No English wording is retained."
+
+[[untranslated]]
+mass = "saint-augustine-bishop-doctor-church"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "No authoritative English exemplar for this target-edition Collect is held. No English wording is retained or published."

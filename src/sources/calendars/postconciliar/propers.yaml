@@ -109,10 +109,10 @@ conventions:
 - the Missal's Vel alternatives are separate propers carrying a notes line, not
   cycle entries, except where the alternative is genuinely cycle-linked
 - the invariant Ordinary is out of scope; prefaces are not recorded
-- every proper-body text_status marks a former Latin body quarantined from the
-  current Git tree; the provenance ledger retains only its former exact hash,
-  and a reason source_id supplies rights/search context rather than a claim that
-  the removed bytes were read from or are exact to that source
+- a proper-body text_status is text-free; rights-restricted nodes mark former
+  Latin bodies quarantined from the current Git tree, while witness-gap or
+  no-exemplar nodes mark known slots whose exact target wording was never held;
+  reason source_ids supply rights/search context rather than publishing text
 open_collation_items:
 - 'sixteen Mass identities formerly carried ANTECEDENT Latin added on 2026-08-20, read from the page
   images of the Pustet Ratisbon 1862 Missale Romanum, Internet Archive item bub_gb_E7sPAAAAIAAJ.
@@ -47898,17 +47898,32 @@ sections:
       date: 08-28
       rank: Memorial
       kind: sanctoral
+      text_status:
+        state: partial
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
         lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 358, printed page 304, n. 633. The Ordo heads it De Communi pastorum
         aut doctorum Ecclesiae, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is
         recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate numbering;
         they are converted here by scripts/_psalms from the tracked verse concordance, because
-        this file declares psalm_numbering hebrew. Nothing else of this Mass has been read
-        - the Entrance and Communion Antiphons and the three orations are printed in the
-        Missal, not in the Ordo, and are absent because no witness to them is on disk that
-        this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+        this file declares psalm_numbering hebrew. The Collect slot is represented
+        explicitly below without wording; the Entrance and Communion Antiphons and the
+        other two orations are printed in the Missal, not in the Ordo, and remain absent.
+        No exact target-edition witness to those bodies is on disk that this project may
+        publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       - name: First Reading
         source: scripture
         verses:

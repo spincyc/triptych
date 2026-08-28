@@ -25,6 +25,8 @@ from __future__ import annotations
 
 import sys
 import copy
+import hashlib
+import tomllib
 import unittest
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
@@ -58,6 +60,24 @@ PRE_1955_SIDECAR = (
 CUMMISKEY_TEMPORAL = ROOT / (
     "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/"
     "philadelphia-1861/artifacts/temporal-orations-en/temporal-orations-en.tsv"
+)
+CUMMISKEY_AUGUSTINE_DIR = ROOT / (
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/"
+    "philadelphia-1861/artifacts/augustine-collect-en"
+)
+CUMMISKEY_AUGUSTINE_MANIFEST = CUMMISKEY_AUGUSTINE_DIR / "artifact.toml"
+CUMMISKEY_AUGUSTINE_PAYLOAD = CUMMISKEY_AUGUSTINE_DIR / "augustine-collect-en.tsv"
+CUMMISKEY_PASSAGES = ROOT / (
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/"
+    "philadelphia-1861/passages"
+)
+CUMMISKEY_AUGUSTINE_SLUG = (
+    "roman-1962--s-augustini-episcopi-confessoris-ecclesiae-doctoris--"
+    "main--collect--all--1"
+)
+CUMMISKEY_AUGUSTINE_ID_SLUG = (
+    "roman-1962-s-augustini-episcopi-confessoris-ecclesiae-doctoris--"
+    "main--collect--all--1"
 )
 
 LASANCE_SAFE_19 = {
@@ -398,6 +418,100 @@ class PageImageProvenanceGate(unittest.TestCase):
 
 class TheCorpusItself(unittest.TestCase):
     """The rules above, against the file they were written for."""
+
+    def test_st_augustine_collect_uses_the_primary_cummiskey_witness(self):
+        document = tomllib.loads(SIDECAR.read_text(encoding="utf-8"))
+        witnesses = {row["id"]: row for row in document["sources"]}
+        rows = [
+            row
+            for row in document["entries"]
+            if row["mass"]
+            == "s-augustini-episcopi-confessoris-ecclesiae-doctoris"
+            and row["form_id"] == "main"
+            and row["proper"] == "Collect"
+            and row["cycle"] == "all"
+            and row["occurrence"] == 1
+        ]
+        self.assertEqual(len(rows), 1)
+        row = rows[0]
+        self.assertEqual(row["witness"], "cummiskey-1861")
+        self.assertEqual(row["printed_page"], "652")
+        self.assertEqual(row["ia_leaf_range"], [660, 660])
+        self.assertEqual(
+            checker.overlay_entry_source_problems(
+                "St Augustine/Collect", row, witnesses
+            ),
+            [],
+        )
+
+        verify_id = (
+            "passage.eugene-cummiskey.roman-missal-english-laity."
+            "philadelphia-1861.verify-" + CUMMISKEY_AUGUSTINE_ID_SLUG
+        )
+        publish_id = (
+            "passage.eugene-cummiskey.roman-missal-english-laity."
+            "philadelphia-1861.publish-" + CUMMISKEY_AUGUSTINE_ID_SLUG
+        )
+        artifact_id = (
+            "artifact.eugene-cummiskey.roman-missal-english-laity."
+            "philadelphia-1861.augustine-collect-en"
+        )
+        self.assertEqual(row["passage_id"], verify_id)
+        self.assertEqual(row["publication_artifact_id"], artifact_id)
+        self.assertEqual(row["publication_passage_id"], publish_id)
+
+        manifest = tomllib.loads(
+            CUMMISKEY_AUGUSTINE_MANIFEST.read_text(encoding="utf-8")
+        )
+        verify = tomllib.loads(
+            (CUMMISKEY_PASSAGES / f"verify--{CUMMISKEY_AUGUSTINE_SLUG}.toml")
+            .read_text(encoding="utf-8")
+        )
+        publish = tomllib.loads(
+            (CUMMISKEY_PASSAGES / f"publish--{CUMMISKEY_AUGUSTINE_SLUG}.toml")
+            .read_text(encoding="utf-8")
+        )
+        payload = CUMMISKEY_AUGUSTINE_PAYLOAD.read_bytes()
+        digest = hashlib.sha256(payload).hexdigest()
+        self.assertEqual(
+            digest,
+            "fceb029190e1f7a651a095cc808e758ab0fe9da08dad67f9c1c6eab32346b47c",
+        )
+        self.assertEqual(manifest["id"], artifact_id)
+        self.assertEqual(manifest["sha256"], digest)
+        self.assertEqual(manifest["byte_size"], len(payload))
+        self.assertEqual(verify["id"], verify_id)
+        self.assertEqual(verify["artifact_page_ranges"], [[661, 661]])
+        self.assertEqual(publish["id"], publish_id)
+        self.assertEqual(publish["physical_line_ranges"], [[2, 2]])
+
+        expected = (
+            "Give ear, O Lord, to our prayers, and by the intercession of "
+            "blessed Augustin, thy conf. and bp. favourably bestow the effects "
+            "of thy accustomed mercy on us, to whom thou hast given reason to "
+            "trust in thy goodness. Thro’."
+        )
+        self.assertEqual(
+            row["translations"],
+            [
+                {
+                    "lang": "en",
+                    "rights": "public-domain",
+                    "source_id": EDITION,
+                    "text": expected,
+                }
+            ],
+        )
+        self.assertEqual(
+            payload.decode("utf-8").splitlines()[1].split("\t")[-1], expected
+        )
+        for label in (
+            "XXVIII. St. AUGUSTIN, bp. c. D.",
+            "All as in Mass XII. p. 485, except",
+            "COLLECT. Adesto.—",
+        ):
+            self.assertIn(label, row["witness_note"])
+            self.assertIn(label, verify["notes"])
 
     def test_leaf_n114_uses_its_visible_printed_page(self):
         import csv

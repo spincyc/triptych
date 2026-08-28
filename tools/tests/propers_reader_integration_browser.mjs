@@ -935,7 +935,8 @@ async function assertions(cdp, base) {
     assert.equal(value.outcome, 'ready', JSON.stringify(value.error)); assert.equal(value.noticeHidden, false);
     assert.ok(value.semantic.coverage.some(row =>
       row.state === 'unavailable' && row.scope === 'proper-translation:en'));
-    assert.ok(value.texts.some(row => /No English (?:body is held|translation is recorded)/i.test(row)));
+    assert.ok(value.texts.some(row =>
+      /No English (?:or Latin body is held here|body is held|translation is recorded)/i.test(row)));
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');

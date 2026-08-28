@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import subprocess
 import sys
 import tomllib
 import unittest
@@ -660,6 +661,224 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         self.assertEqual(coverage["unaccounted"], 0, coverage)
         self.assertEqual(coverage["unmatched_records"], 0, coverage)
         self.assertEqual(coverage["stale_translation_records"], 0, coverage)
+
+    def test_saint_augustine_collect_is_an_explicit_text_free_witness_gap(self):
+        """A known Missal slot stays visible without inventing either language."""
+        key = "saint-augustine-bishop-doctor-church"
+        source = {
+            str(mass.get("key") or ""): mass for _, _, mass in self.rows
+        }[key]
+        source_status = {
+            "state": "partial",
+            "scope": "missal-formulary",
+            "reasons": [
+                {
+                    "kind": "witness-gap",
+                    "source_id": (
+                        "edition.catholic-church.missale-romanum."
+                        "vatican-typica-tertia-reimpressio-emendata-2008"
+                    ),
+                }
+            ],
+        }
+        self.assertEqual(source.get("text_status"), source_status)
+
+        collects = [
+            proper
+            for _, proper in direct_propers(source)
+            if proper.get("name") == "Collect"
+        ]
+        self.assertEqual(len(collects), 1)
+        collect = collects[0]
+        self.assertEqual(collect.get("source"), "composed")
+        self.assertEqual(
+            collect.get("text_status"),
+            {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": source_status["reasons"],
+            },
+        )
+        for body_field in ("text", "incipit", "latin", "translations"):
+            self.assertNotIn(body_field, collect)
+
+        english_rows = [
+            row
+            for row in self.translations.get("untranslated") or []
+            if row.get("mass") == key and row.get("proper") == "Collect"
+        ]
+        self.assertEqual(len(english_rows), 1)
+        self.assertEqual(
+            {
+                field: english_rows[0].get(field)
+                for field in (
+                    "form_id",
+                    "cycle",
+                    "occurrence",
+                    "lang",
+                    "extent",
+                    "availability",
+                    "reason",
+                )
+            },
+            {
+                "form_id": "main",
+                "cycle": "all",
+                "occurrence": 1,
+                "lang": "en",
+                "extent": "body",
+                "availability": "unavailable",
+                "reason": {"kind": "no-exemplar"},
+            },
+        )
+        for body_field in ("text", "translation", "translations"):
+            self.assertNotIn(body_field, english_rows[0])
+
+        generated = propers_tool.calendar_structure(
+            CALENDARS, "postconciliar", propers_tool.book_tokens()
+        )
+        public_mass = next(mass for mass in generated["masses"] if mass["key"] == key)
+        self.assertEqual(
+            public_mass.get("text_status"),
+            {"state": "partial", "scope": "missal-formulary"},
+        )
+        public_collect = next(
+            proper
+            for proper in public_mass["propers"]
+            if proper.get("name") == "Collect"
+        )
+        self.assertEqual(
+            public_collect.get("text_status"),
+            {"state": "unavailable", "scope": "proper-body"},
+        )
+        self.assertIsNone(public_collect.get("text"))
+        self.assertIsNone(public_collect.get("latin"))
+        self.assertNotIn("reasons", public_mass["text_status"])
+        self.assertNotIn("reasons", public_collect["text_status"])
+        self.assertEqual(
+            public_collect.get("untranslated"),
+            [
+                {
+                    "target": {
+                        "mass": key,
+                        "form_id": "main",
+                        "proper": "Collect",
+                        "cycle": "all",
+                        "occurrence": 1,
+                        "extent": "body",
+                    },
+                    "lang": "en",
+                    "state": "unavailable",
+                }
+            ],
+        )
+        self.assertNotIn("reason", public_collect["untranslated"][0])
+        latin = next(
+            row for row in public_collect["languages"] if row.get("lang") == "la"
+        )
+        self.assertEqual(
+            {field: latin.get(field) for field in ("status", "held", "available")},
+            {"status": "unavailable", "held": False, "available": False},
+        )
+        english = next(
+            row for row in public_collect["languages"] if row.get("lang") == "en"
+        )
+        self.assertEqual(
+            {field: english.get(field) for field in ("status", "held", "available")},
+            {"status": "unavailable", "held": False, "available": False},
+        )
+        self.assertEqual(
+            english.get("reason", {}).get("kind"), "ledgered-untranslated"
+        )
+
+        shown = subprocess.run(
+            [
+                str(ROOT / "tools" / "tpt"),
+                "mass-today",
+                "show",
+                "--date",
+                "2026-08-28",
+                "--calendar",
+                "postconciliar",
+                "--lang",
+                "la",
+                "--format",
+                "text",
+                "--plain",
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout
+        self.assertIn("Saint Augustine, Bishop and Doctor of the Church", shown)
+        self.assertRegex(shown, r"(?s)Collect\s+Latin text unavailable")
+
+        shown_english = subprocess.run(
+            [
+                str(ROOT / "tools" / "tpt"),
+                "mass-today",
+                "show",
+                "--date",
+                "2026-08-28",
+                "--calendar",
+                "postconciliar",
+                "--lang",
+                "en",
+                "--format",
+                "text",
+                "--plain",
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout
+        self.assertIn("Saint Augustine, Bishop and Doctor of the Church", shown_english)
+        self.assertRegex(
+            shown_english,
+            r"(?s)Collect\s+No English or Latin body is held here\.",
+        )
+
+    def test_mass_today_preserves_rights_copy_when_latin_is_unavailable(self):
+        """Human output distinguishes restricted English from absent Latin."""
+
+        def show(language: str) -> str:
+            return subprocess.run(
+                [
+                    str(ROOT / "tools" / "tpt"),
+                    "mass-today",
+                    "show",
+                    "--date",
+                    "2026-12-25",
+                    "--calendar",
+                    "postconciliar",
+                    "--form",
+                    "day",
+                    "--lang",
+                    language,
+                    "--format",
+                    "text",
+                    "--plain",
+                ],
+                cwd=ROOT,
+                check=True,
+                capture_output=True,
+                text=True,
+            ).stdout
+
+        english = show("en")
+        restriction = (
+            "English translation unavailable: rights restricted; "
+            "Latin text unavailable"
+        )
+        self.assertIn("The Nativity of the Lord", english)
+        self.assertEqual(english.count(restriction), 2)
+
+        latin = show("la")
+        self.assertIn("The Nativity of the Lord", latin)
+        self.assertRegex(latin, r"(?s)Entrance Antiphon.*?Latin text unavailable")
+        self.assertNotIn("rights restricted", latin)
 
     def test_unavailable_translation_identity_is_explicit_and_unique(self):
         """Form, cycle, extent, and repeated-slot occurrence are never inferred."""

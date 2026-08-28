@@ -362,11 +362,47 @@ def untranslated_notes(proper: dict) -> list[str]:
     return notes
 
 
+def availability_reason_has_state(value: object, state: str) -> bool:
+    """Whether a public language-selection reason contains ``state``."""
+    if isinstance(value, dict):
+        if value.get("state") == state or value.get("unavailableState") == state:
+            return True
+        return any(availability_reason_has_state(one, state) for one in value.values())
+    if isinstance(value, list):
+        return any(availability_reason_has_state(one, state) for one in value)
+    return False
+
+
 def latin_availability_note(proper: dict, lang: str) -> str | None:
-    """The complete public message for a withheld Latin body."""
+    """The complete public message when no selectable body can be shown."""
     latin = proper.get("latin")
-    if lang == "la" and isinstance(latin, dict) and latin.get("withheld"):
+    status = proper.get("text_status")
+    body_unavailable = (
+        isinstance(status, dict)
+        and status.get("state") == "unavailable"
+        and status.get("scope") == "proper-body"
+    )
+    latin_unavailable = (
+        isinstance(latin, dict) and bool(latin.get("withheld"))
+    ) or body_unavailable
+    if lang == "la" and latin_unavailable:
         return "Latin text unavailable"
+    selection = proper.get("language_selection")
+    if (
+        lang != "la"
+        and latin_unavailable
+        and isinstance(selection, dict)
+        and not selection.get("held")
+    ):
+        language = {"en": "English"}.get(lang, lang)
+        if availability_reason_has_state(
+            selection.get("reason"), "rights-restricted"
+        ):
+            return (
+                f"{language} translation unavailable: rights restricted; "
+                "Latin text unavailable"
+            )
+        return f"No {language} or Latin body is held here."
     return None
 
 
@@ -510,6 +546,21 @@ def language_projection(proper: dict, lang: str, bible: dict | None) -> dict:
             "available": False,
             "complete": False,
             "reason": {"state": "text-withheld", "lang": "la"},
+        }
+    text_status = proper.get("text_status")
+    body_unavailable = (
+        isinstance(text_status, dict)
+        and text_status.get("state") == "unavailable"
+        and text_status.get("scope") == "proper-body"
+    )
+    if lang == "la" and body_unavailable:
+        return {
+            "requested": lang,
+            "status": "unavailable",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": {"state": "text-unavailable", "lang": "la"},
         }
     translations = [
         dict(one)

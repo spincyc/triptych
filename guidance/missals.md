@@ -462,8 +462,11 @@ The Roman-propers translation overlay applies that boundary per passage. Its
 thirty-two Lasance entries each name the remote facsimile passage and exact IA
 leaf range inspected, while the independent tracked, insert-excluded OCR
 artifact carries the publication basis. Nineteen of those entries were restored
-on 2026-08-27 after exact ordinary-page passages replaced earlier unbound leads.
-For the Common of a Supreme Pontiff, only the Collect on ordinary printed p.
+on 2026-08-27 after exact ordinary-page passages replaced earlier unbound leads;
+that closed tranche remains nineteen. The St Augustine Collect is instead the
+exact Cummiskey 1861 reading at printed p. 652 and IA leaf n660: both witnesses
+cover the slot, so the inventory's declared source role leaves the earlier
+Cummiskey witness standing. For the Common of a Supreme Pontiff, only the Collect on ordinary printed p.
 1302 is positive; the five readings whose generic loci are on pp. 1302a–1302d
 remain text-free rights refusals. St John Mary Vianney remains unattached for a
 different reason: the witness translates `beatum`, while the 1962 target reads

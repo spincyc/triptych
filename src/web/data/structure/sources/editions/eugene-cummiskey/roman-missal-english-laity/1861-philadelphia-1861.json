@@ -2,6 +2,21 @@
  "artifacts": [
   {
    "artifact_type": "normalized-text",
+   "byte_size": 457,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.augustine-collect-en",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "notes": "One header and one exact English row, binding only the St Augustine Collect. It makes no claim for the Secret or Postcommunion and does not convert this historical lay-book translation into an approved liturgical translation.",
+   "page_count": null,
+   "retrieved": "2026-08-28",
+   "rights": "public-domain",
+   "rights_basis": "The one row reproduces only English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. It contains no Google or Internet Archive header, watermark, page image, OCR, markup or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "normalized-text",
    "byte_size": 11254,
    "edition_owned": true,
    "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
@@ -7326,6 +7341,50 @@
    ],
    "storage": "remote",
    "verified_on": "2026-08-19",
+   "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.augustine-collect-en",
+   "artifact_type": "normalized-text",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-s-augustini-episcopi-confessoris-ecclesiae-doctoris--main--collect--all--1",
+   "locus": "s-augustini-episcopi-confessoris-ecclesiae-doctoris/collect",
+   "media_type": "text/tab-separated-values; charset=utf-8",
+   "readable": false,
+   "reason": "This passage is bounded into a text/tab-separated-values artifact and records no transcription of its own. Setting a structured row as prose would print its keys and pagination as though they were part of the text, so it is not read here.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "verified_on": "2026-08-28",
+   "withheld": "not-prose"
+  },
+  {
+   "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+   "artifact_type": "facsimile-pdf",
+   "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-s-augustini-episcopi-confessoris-ecclesiae-doctoris--main--collect--all--1",
+   "locus": "s-augustini-episcopi-confessoris-ecclesiae-doctoris/collect",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "The rights position for this artifact has not been settled, and an unsettled question is not a permission.",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source_url": "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "remote",
+   "verified_on": "2026-08-28",
    "withheld": "rights"
   },
   {
