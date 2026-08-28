@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-28"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
+inventory_snapshot = "sha256:51136390c887b954c20d6fc6b4930061de7fb28711fd1b2fb5df6c5191731c8b"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
 canonical_catalog_snapshot = "sha256:919e6a7b67e3b7830fcaf718db785753c50e022ae56364340c95035b23d034fb"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:b2d48f582a44045347f11d909566173cf9ec387ef0af4f075757592e1d7596d5"
+snapshot = "sha256:724d0b244b270a11abd78e545ac7b87764f61bd8fbb898849dd1d06be9fa4619"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -9451,7 +9451,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
-surface_snapshot = "sha256:3ace44b7677f9c33d8b7182d5f7e89cd758e6ef16320ed8f717b9ad9127e23b8"
+surface_snapshot = "sha256:3d6924c4dec0421ca0bf96474c0b4e30844981b534a52b77100ca4d37db7ab3a"
 review_state = "pending"
 
 [[review_units]]

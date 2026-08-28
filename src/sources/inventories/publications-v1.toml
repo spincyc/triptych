@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-26"
+audited_on = "2026-08-28"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
 source_surface_file_count = 2074
-snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
+snapshot = "sha256:51136390c887b954c20d6fc6b4930061de7fb28711fd1b2fb5df6c5191731c8b"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -8413,7 +8413,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md"
-sha256 = "00796e98b650e380d3549d8140d89e5c392619db9bbaf8fae85af6f59bfd57ea"
+sha256 = "7c2c341de6f5c27c1a829a577cbedd14df82c80b7fcd0cf84f067594f6b76297"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 

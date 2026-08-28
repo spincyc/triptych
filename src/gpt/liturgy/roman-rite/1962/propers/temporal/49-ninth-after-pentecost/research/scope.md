@@ -3,7 +3,7 @@
 ## Componentized editions
 
 This record governs both outputs from the canonical
-`46-ninth-after-pentecost` leaf. Its bare identity is the complete research
+`49-ninth-after-pentecost` leaf. Its bare identity is the complete research
 edition and sole web edition. The mechanical `-synthesis` PDF is compiled from
 the same authored components and owns no separate prose or records. It omits
 the complete appointed texts and the element-by-element sweep while retaining
