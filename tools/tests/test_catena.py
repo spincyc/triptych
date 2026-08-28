@@ -646,6 +646,84 @@ class AbsenceTests(CatenaFixture):
         )
         self.assertEqual(self.errors(), [])
 
+    def test_a_partial_that_is_not_prose_is_refused_rather_than_coerced(self) -> None:
+        """V7 §10. `str(row.get("partial") or "")` accepted a mapping, a list,
+        a number and a flag alike and turned each into a sentence — and the
+        page then printed whichever it got as "Partly public domain — …",
+        which is a claim about somebody's rights composed out of a value
+        nobody wrote. The contract is a string; anything else is a malformed
+        record."""
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: partial-public-domain
+              checked_on: "2026-08-01"
+              reason: "Only the preface is out of copyright."
+              aliases_searched: [De civitate Dei]
+              partial:
+                offer: "a mapping, not a sentence"
+            """
+        )
+        self.assertIn("records a partial that is not text (dict)",
+                      " ".join(self.errors()))
+
+    def test_a_reason_that_is_not_prose_is_refused_rather_than_coerced(self) -> None:
+        """The same coercion, on the field beside it."""
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: in-copyright
+              checked_on: "2026-08-01"
+              reason: [not, a, sentence]
+              aliases_searched: [De civitate Dei]
+            """
+        )
+        self.assertIn("records a reason that is not text (list)",
+                      " ".join(self.errors()))
+
+    def test_a_partial_detached_from_its_finding_is_refused(self) -> None:
+        """V7 §10. `partial` REFINES a finding and never establishes one, so a
+        partial standing beside a finding that licenses no offer is a record
+        contradicting itself. The browser already declines to print it; the
+        record is refused where it is written rather than silently dropped."""
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: in-copyright
+              checked_on: "2026-08-01"
+              reason: "A living author's rendering."
+              aliases_searched: [De civitate Dei]
+              partial: "an offer beside a closed finding"
+            """
+        )
+        self.assertIn("only partial-public-domain licenses an offer",
+                      " ".join(self.errors()))
+
+    def test_a_partial_under_its_own_finding_is_emitted_as_written(self) -> None:
+        """And the correction refuses nothing the corpus really holds."""
+        self.latin_only()
+        self.absences(
+            """- work_id: work.augustine.de-civitate-dei
+              language: en
+              finding: partial-public-domain
+              checked_on: "2026-08-01"
+              reason: "Only the preface is out of copyright."
+              aliases_searched: [De civitate Dei]
+              partial: "the   1893    preface"
+            """
+        )
+        self.assertEqual(self.errors(), [])
+        served = _catena.absent_by_work(self.root)
+        self.assertEqual(
+            served["work.augustine.de-civitate-dei"],
+            [{"language": "en", "finding": "partial-public-domain",
+              "reason": "Only the preface is out of copyright.",
+              "partial": "the 1893 preface"}],
+            "the offer is whitespace-collapsed and otherwise as written")
+
     def test_an_absence_the_library_contradicts_is_refused(self) -> None:
         """The way this file rots: the English lands and the note stays.
 
