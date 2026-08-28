@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-26.
+Last reconciled: 2026-08-28.
 
 ## Standing public-alpha authority
 
@@ -1753,54 +1753,96 @@ source-owned turns and semantically honest role or versicle/response cues; it
 may not split opaque prose by string matching or equate Priest/Server with
 versicle/response.
 
-**Feature implementation recovered and frozen-tree acceptance complete;
-Firefox review and integration still pending.** The recovered source tree now carries 619
-postconciliar Mass identities, 491 Roman 1962 identities, 489 Roman pre-1955
-identities, and eight explicit pre-1955 departure records. The source library
-validates at 1,837 artifacts, 721 editions, 536 works, 3,295 passages, 72
-segments, and 2,167 bindings. The registered `complete-missal` audit measures
-all fifteen completion dimensions over 2020--2120 and reports 39 typed
-unresolved cells instead of inventing text or silently borrowing a recension:
-8/492/619 represented celebrations and at least 5,158/5,247/3,056 modeled text
-slots for pre-1955/Roman 1962/postconciliar respectively. Its strict
-`--require-resolved` mode therefore refuses, while the source-honest validity
-check passes.
+**Exact successor snapshot internally accepted for deployment on independent
+AI cold-review evidence; production integration remains open.** Feature commit
+`a1a7ab774a7318cb0b66d74462090856347d5915` (tree
+`b70bdf637387ba552d66d6f7e38704a5ed116f19`) is pushed exactly to
+`origin/feature/complete-missal`, descends without a rewrite from the current
+`origin/main` base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and has a
+clean tracked worktree and index at its exact Firefox capture and handoff
+assembly. Independent semantic, source-identity,
+rights, generated-freshness, path-integrity, deployment-artifact, commit-scope,
+and exact-handoff reviews found no successor blocker.
 
-The first recovered full discovery exposed 23 outcomes (22 failures and one
-error) caused by stale expectations or fixtures after the source-owned
-expansion. Every mapped repair passed an independent 449-test replay (six
-intentional skips), and the five affected shell suites (`index-bible`,
-`act-history`, `mass-propers`, `mass-today`, and `public-alpha`) all pass. The
-final frozen-tree discovery passes 2,270 Python tests with no failure or error
-and ten intentional skips. The separate annual gate passes all six tests over
-365 days, three calendars, and two languages: 2,190 cases and 4,380 successful
-JSON/text renders. The recovered examples account for 212 captures: 203
-replayed, six explicit network, model, or write exemptions, and three
-unavailable PDF fixtures, with no stale transcript debt.
+The accepted source tree carries 619 postconciliar Mass identities, 491 Roman
+1962 identities, 489 effective Roman pre-1955 identities, and eight explicit
+pre-1955 departure records. The source library validates at 537 works, 722
+editions, 1,837 artifacts, 3,295 passages, 72 segments, and 2,167 bindings.
+The registered `complete-missal` audit measures all fifteen completion
+dimensions over 2020--2120 and reports 39 typed unresolved audit cells instead
+of inventing text or silently borrowing a recension: 8/492/619 represented
+celebrations and at least 5,158/5,247/3,056 modeled text slots for
+pre-1955/Roman 1962/postconciliar respectively. Its source-honest `--check`
+passes; its stricter `--require-resolved` mode intentionally refuses while
+those explicit cells remain. They are completion-dimension findings, not a
+claim that 39 whole texts are absent.
 
-Rights-withheld bodies are absent from public structures; formerly composite
-celebration identities are split; calendar and option ambiguity fails closed;
-Ordinary and Proper consumers share the same typed availability, source, and
-dialogue semantics; and every generated structure has been regenerated from
-its owning source. Current-tree ICEL payloads, quarantined Roman 1962 Latin
-Proper bodies, and the superseded Lasance OCR artifact with the excluded
-1302a--1302d insert have been removed from publication and tracked handoff
-surfaces. Reachable earlier Git history still contains those objects; deciding
-whether that history requires rewriting, replacement, access restriction, or
-another remedy remains a maintainer/counsel release-policy decision and is not
-silently treated as resolved by the current-tree quarantine. The
-implementation's Chromium evidence is green, but the separately promised
-Firefox review has no exact-feature evidence and remains open. The exact
-feature snapshot still needs its exact Firefox and cold reviews,
-reconciliation with current `origin/main`, fast-forward main update, and exact
-Pages verification.
+The authoritative full Python run passes 2,302 tests with no failure or error
+and ten intentional skips. `make check` replays 203 of 212 captured examples
+with no divergence, stale capture, or tracked write; six are policy-exempt or
+never-run and three have unavailable fixtures. The annual gate passes all six
+tests over 365 days, three calendars, and two languages: 2,190 cases and 4,380
+successful JSON/text renders. Five focused Chromium production harness
+contracts pass all 134 assertions within six passing unittest gate tests.
+Fresh Firefox 154.0.1 evidence is intrinsically bound to the exact clean
+feature commit; automated metrics plus AI visual inspection of the canonical
+full-Mass desktop 1440x900 and mobile 393x852 states found no horizontal
+overflow, duplicate IDs, or failed page requests. The broad Chromium
+accessibility run retains exit 1 at the exact inherited baseline rather than a
+green gate: 2,290 assertions, 1,850 passes, 212 failures,
+and 228 skips, comprising 108 duplicate-main, 77 target-size, and 27 modal
+skip-link findings. The other long-running FINAL5 gates ran on the frozen
+precommit candidate subsequently committed unchanged; their logs do not embed
+a commit or tree identifier and are forensic workflow evidence rather than
+intrinsically commit-bound records.
 
-Completion requires the source-owned corrections and typed unresolved states,
-regenerated public data with no stale or orphan output, all focused and
-repository deployment gates, a scoped release-binding refresh after the shared
-tree is frozen, a coherent feature push, an independent cold review with every
-blocking finding resolved, a clean reconciliation with current `origin/main`,
-a genuine fast-forward update of `origin/main`, and verification of the exact
-resulting Pages run and affected public routes. A commit, feature push, green
-visual comparison, or release-binding match alone does not complete this
-program.
+The final deployment-source, public-site, and GitHub-Pages-target verification
+gates pass on the frozen successor. The resulting local artifact contains
+20,549 regular files and 1,978 directories totaling 436,003,351 bytes, with
+20,548 matching checksum entries and no symlink, special file, unsafe link,
+forbidden path, residue name, or quarantined-body match. Act-history projects
+all 505 canonical files and rejects replaced or linked projection roots;
+public-alpha uses descriptor-rooted, no-follow creation and an immutable
+verification snapshot with identity-bound cleanup. All generator, Act-history,
+release-binding, calendar, and source-reader freshness gates and the tmt
+registry check pass.
+
+Rights-withheld bodies are absent from current public structures; formerly
+composite celebration identities are split; calendar and option ambiguity
+fails closed; and Ordinary and Proper consumers share typed availability,
+source, and dialogue semantics. Ten Roman 1962 Latin Proper prayer bodies,
+each byte-identical to its selected passage in a Triptych-created editorial-
+projection artifact, are published under a record that attributes only the
+bounded selection, transcription layout, normalization decisions, and
+collation record to Triptych. The underlying prayer wording remains public
+domain in the United States; the Lasance antecedent supplies that basis and the
+restricted 1962 facsimile remains a separate comparison witness. No new human
+collation or approval is claimed. Current-tree
+ICEL payloads, quarantined Roman 1962 Latin Proper bodies, and the superseded
+Lasance OCR artifact with the excluded 1302a--1302d insert are absent from the
+tracked tree, generated surfaces, deployment artifact, and current review
+handoff. Reachable earlier Git history still contains protected or superseded
+objects. Whether that history requires rewriting, replacement, access
+restriction, or another remedy remains a maintainer/counsel release-policy
+decision; the required fast-forward workflow deliberately does not rewrite it.
+
+The exact successor review handoff is
+`build/agent-handoffs/20260828T170544Z-complete-missal-final-review/`, with a
+verified one-root ZIP beside it. Its 15-entry manifest has SHA-256
+`2d2826b1cefd67998e0c769ccd3541b0216e537da3f938e49383320f47e30f83`;
+the ZIP has SHA-256
+`09db34ca505ffedd84cf1aaa1bcdc3be7adafa2ca58758660d42862e6fb8d90d`.
+It supersedes the preserved `20260828T164734Z` package, which superseded the
+earlier `20260828T045009` recovery package. This is
+AI-assisted and automated review evidence, not human, priestly, specialist,
+intended-reader, physical-use, ecclesiastical, or new exact-snapshot human
+approval.
+
+Production integration remains open. Before this program is complete, the
+accepted feature must be reconciled once more with current `origin/main`; the
+three deployment gates must pass on the exact outgoing tree; `origin/main` must
+advance by genuine fast-forward without force or history rewrite; and the
+exact resulting Pages run, deployed checksum inventory, and every added or
+changed live route must be verified. A commit, feature push, exact review
+handoff, local deployment artifact, or release-binding match alone does not
+complete the program.

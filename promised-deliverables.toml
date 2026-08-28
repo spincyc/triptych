@@ -1523,8 +1523,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "structured-dialogue-and-missal-presentation"
   criterion = "Ordinary dialogue uses source-owned ordered turn semantics where held, exposes complete accessible speaker identity, renders honest role or versicle/response cues without prose matching or role substitution, preserves opaque text where boundaries are unknown, and passes the required Chromium, Firefox, mobile, reflow, forced-colors, reduced-motion, accessibility, interaction, full-Mass, and print review."
-  status = "open"
+  status = "pass"
   evidence = [
+    "PROJECT-WORK.md",
     "src/web/browser/liturgy/day.js",
     "src/web/browser/liturgy/reader-instrument.css",
     "tools/tests/day_reader_integration_browser.mjs",
