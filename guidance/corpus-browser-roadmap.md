@@ -270,7 +270,81 @@ whole, JS 12,965/13,000 whole, with the suite's stripped-ceiling assertions
 passing (2,700 and 8,800) and `catena-model.js` uncapped. Status: **awaiting
 independent integration review**, per the fixed loop (one independent review,
 at most one bounded correction pass, one confirmation review, merge). E1 is
-not accepted and not integrated.
+not accepted and not integrated. This is the candidate's handoff report; the
+independent review immediately below supersedes its curation and
+exact-final-discovery claims.
+
+## E1 Catena independent integration review — 2026-08-28
+
+Independent review branch `review/catena-e1-integration` examined exact
+candidate `9810a29c38f6138069d11cb7c735d8bb8b190326` against exact authorized
+base and current `origin/main`
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, convergence review
+`f1a5bbad763b847ded8799748223898de6ad4de9`, and V16 source
+`cc1f2fb8625f044558c26edd358b99cd7dcc7646`. Final disposition is
+**`CHANGES REQUIRED`**: two production-reachable presentation/focus defects
+fail the fixed merge bar.
+
+The four-commit history and exact 12-path boundary are clean. Current main has
+not moved and no current-main Catena, shared-shell, Liturgy, release, PDF,
+unrelated data/CLI/test, common-gate, or deployment work was displaced. The
+four Catena production files are byte-identical to V16. Generator/data
+reconciliation passes: `python3 scripts/_catena.py check` reports
+1,351/1/73, and a strict exact-base-plus-candidate-generator run emitted 1,914
+files with zero byte differences from the candidate tree. Exact voices are
+`original`, `translation:en`, and `translation:la`; `translation:grc` is not
+published. Namespace closure, typed refusal/malformed behavior, provenance
+truth, projection/transport/completion ownership, immutable cache publication,
+and real same-path/late isolation pass.
+
+The two blockers are:
+
+1. real English translation-absence rows append inline author and work spans
+   without a delimiter. Candidate opens the disclosure on cold arrival, so
+   Chromium presents `Ambrose of MilanHexameron` and the same defect affects
+   eight records / 213 Genesis row occurrences;
+2. keyboard recovery removes the focused recovery link and moves focus to
+   `#reading`, but the higher-specificity shared `.reading:focus` rule removes
+   the universal `:focus-visible` outline. Base had no recovery-to-reading
+   focus path.
+
+One bounded correction pass must also re-curate
+`tools/tests/test_catena_production.py`. Although 419/419 passes with minimal
+external dependencies, it retains the exact-model SHA pin forbidden by the
+convergence manifest, the full 1,993-line replay, and substantial
+prototype/getter/pollution/evidence machinery; its recorded eight-plus-forty
+exclusion count is not reproducible, while 185 omitted tests include unique
+ordinary production coverage. `GenuinelyLateStaleWorkTest` is **`RATIFIED`**
+as real late-route coverage and a live manifest dependency. The other bounded
+correction is record integrity: the exact candidate omitted its work-register
+marker, making the ledger checker and two discovery identities fail, and its
+candidate discovery run predates the final record commit. Reconcile the
+marker, executable generator command, exact test counts, and exact-head result.
+
+Fresh focused results are 56/56 and 419/419, browser static 5/5, and both real
+Chromium endpoints have the same 121 identities and 95 pass / 14 fail / 12
+skip statuses, with zero changes. The equal failures are nine inherited
+nested-`main` and five inherited target-size assertions. Controlled full
+discovery results are 1,674 tests / 28 failures / 26 errors / 11 skips at base
+and 2,097 / 30 / 26 / 11 at candidate, with exactly two added and zero removed
+failure/error identities. Both additions are the missing-marker ledger/checker
+failures, not Catena product-test failures. The 423-test growth is exactly four
+generator-contract tests (52 to 56) plus 419 production tests. Governed
+gzip-9 budgets pass: CSS 7,629/8,000 whole and 2,676/2,700 stripped; controller
+JS 12,965/13,000 whole and 7,835/8,800 stripped; the model remains uncapped at
+44,247/10,344.
+
+Classification totals: two `MERGE_BLOCKER`, two
+`BOUNDED_INTEGRATION_CORRECTION`, and one new `HARDENING_BACKLOG` for the
+empty no-JavaScript reference `h2`. The three inherited hardening rows remain
+open, making four total. All eight inherited `EVIDENCE_TOOLING_BACKLOG` rows
+and twenty `SEPARATELY_OWNED` concerns remain open and untouched.
+
+**Exact next action:** one bounded Claude correction pass on
+`integration/catena-e1` fixes the two blockers and two integration corrections,
+then one confirmation Codex review adjudicates the exact corrected head. Do
+not merge, deploy, re-sign, reopen synthetic V13-V16 hardening, or begin a new
+broad loop.
 
 ## Structured-data limits and blocked follow-ups
 
@@ -332,6 +406,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
 | 2026-08-28 | E1 Catena integration candidate | Built `integration/catena-e1` from the exact convergence-authorized main base per the review's bring-across manifest: final Catena route/model/HTML/CSS, the generator voice-authority change with its deterministic generated data, the generator-contract test expansion, and 419 curated production regressions. Fresh validation passed structure (1,351/1/73), focused Catena (56 and 419), static checks 5/5, identical 121-identity Chromium route runs at base and candidate (95/14/12, zero changes), governed CSS/JS budgets, and full discovery with zero new failure identities and zero Catena failures. Status **awaiting independent integration review**; not accepted, not integrated, no merge/deploy/release binding. | Convergence review `f1a5bbad763b847ded8799748223898de6ad4de9`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; branch `integration/catena-e1`; candidate head is the commit carrying this row. |
+| 2026-08-28 | Independent E1 Catena integration review | **`CHANGES REQUIRED`**. Exact history/data/voices/architecture/main preservation pass, but cold English-absence rows concatenate author/work and keyboard recovery transfers focus to a region whose outline is suppressed. One bounded pass must also re-curate the suite and repair exact-candidate ledger/discovery claims. Two blockers, two bounded corrections, one new hardening row; inherited 3/8/20 backlogs remain open. | Base/main `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; candidate `9810a29c38f6138069d11cb7c735d8bb8b190326`; review branch `review/catena-e1-integration`; exact review commit is the commit carrying this row. |
 
 ## Next Codex tasks
 

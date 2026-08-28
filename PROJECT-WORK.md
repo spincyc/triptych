@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-20.
+Last reconciled: 2026-08-28.
 
 ## Standing public-alpha authority
 
@@ -1708,6 +1708,8 @@ deployment.
 
 ## E1 Catena integration candidate
 
+<!-- promised-deliverable: corpus-browser-catena-e1-integration-candidate-2026-08-28 -->
+
 The convergence review (branch `review/catena-e1-convergence`, commit
 `f1a5bbad763b847ded8799748223898de6ad4de9`) classified the remaining Catena E1
 state with zero `MERGE_BLOCKER` and zero `INTEGRATION_BLOCKER` findings,
@@ -1769,4 +1771,196 @@ Status: **awaiting independent integration review** under the fixed loop of
 one independent Codex integration review, at most one bounded correction pass,
 one confirmation review, then merge. E1 is not accepted and not integrated; no
 merge to `main`, deployment, or release signing has occurred. The candidate
-head is the commit carrying this record.
+head is the commit carrying this record. This paragraph preserves the
+candidate's reported evidence at handoff; the independent review immediately
+below supersedes its curation and exact-final-discovery claims and moves the
+candidate to one bounded correction pass.
+
+## E1 Catena independent integration review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-integration-review-2026-08-28 -->
+
+This independent Codex review is complete on branch
+`review/catena-e1-integration`. It reviewed exact candidate
+`9810a29c38f6138069d11cb7c735d8bb8b190326` against exact authorized base and
+current `origin/main` `2778285849f2973ea89d1cfd5b2751ed4ae58e54`, using
+convergence review `f1a5bbad763b847ded8799748223898de6ad4de9` and reviewed V16
+source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`. A final fetch immediately
+before this record confirmed that `origin/main` still equals the authorized
+base and `origin/integration/catena-e1` still equals the reviewed candidate.
+
+Final disposition: **`CHANGES REQUIRED`**. The fixed merge bar does not pass:
+two ordinary production interactions produce a wrong visible result. Both
+product fixes, the test curation repair, and the record repair fit the one
+bounded correction pass authorized by convergence; this review does not open
+another semantic or adversarial hardening loop.
+
+### Integration history, manifest, and current-main preservation
+
+The candidate is a linear four-commit descendant of the exact base:
+
+| Commit | Deliberate content |
+| --- | --- |
+| `171f9c0766cba7f28aa8470e659891dbf9b99cf3` | Four route-owned Catena production files |
+| `7765f46855ed7cc6a1abd215bda3f99b619dee35` | Generator voice authority and deterministic generated data |
+| `a87603f8d600b48d41143b39420dc745cc121fd9` | Generator-contract tests and curated production suite |
+| `9810a29c38f6138069d11cb7c735d8bb8b190326` | Minimal candidate records |
+
+The exact base-to-candidate diff is 12 paths, 17,166 insertions, and 1,086
+deletions:
+
+1. `PROJECT-WORK.md`
+2. `guidance/corpus-browser-roadmap.md`
+3. `promised-deliverables.toml`
+4. `scripts/_catena.py`
+5. `src/web/browser/catena/catena-model.js`
+6. `src/web/browser/catena/catena.css`
+7. `src/web/browser/catena/catena.js`
+8. `src/web/browser/catena/index.html`
+9. `src/web/data/structure/catena/27-is/008.json`
+10. `src/web/data/structure/catena/index.json`
+11. `tools/tests/test_catena.py`
+12. `tools/tests/test_catena_production.py`
+
+The path boundary is faithful: every path belongs to Catena production,
+authorized generator/data, focused regressions, or minimal records. The four
+production blobs are byte-identical to V16. Base made no post-fork Catena
+change, and the candidate leaves shared shell, Liturgy, release bindings,
+PDFs, unrelated CLI/data/tests, the common browser gate, examples/tool
+registry, and deployment configuration byte-identical to base. Current-main
+preservation and ownership therefore pass. Overall manifest faithfulness does
+not pass, however, because the curated suite and its durable claims do not
+honor the convergence curation manifest.
+
+### Production, generator, and architecture judgments
+
+- **Production-file reconciliation:** the V16 route/model/page/stylesheet was
+  carried exactly and no current-main work was overwritten. Two carried
+  presentation/focus defects below prevent merge readiness.
+- **Generator/data:** pass. `scripts/_catena.py`'s exact voice-authority change
+  is production-required. A strict exact-base checkout with only the candidate
+  generator overlaid passed `check`, emitted 1,914 files, and differed from the
+  tracked candidate generated tree in zero bytes. The unchanged source tree
+  independently generates `27-is/008.json`; it is a lead-only Isaiah 8 spine,
+  not an ad hoc semantic patch. The only `src/web/data` changes are that file
+  and `index.json`; the latter adds Isaiah 8 presence and exact voices.
+- **Exact voices:** pass. The published and independently derived set is
+  exactly `original`, `translation:en`, `translation:la`. The 1,351 unique
+  fragments comprise 1,319 original, 23 English translation, and nine Latin
+  translation fragments. Greek originals remain `original`; production data
+  contains no `translation:grc`; unsupported voices fail before rendering and
+  manufacture no absence.
+- **Refusal/absence/provenance:** typed valid text, true absence, terminal
+  supplied-but-refused references, malformed/unestablished records, and
+  carried provenance are distinguished truthfully, except that the composed
+  visible identity of every translation-absence row fails the separator
+  contract below. All 112 real projection refusals are valid displaced
+  numbering records. The separately owned full Severian licence-provenance
+  generator prerequisite remains open and unchanged.
+- **Namespace/request closure:** pass. All 562 chapter spines carry the exact
+  `structure/catena/text/` prefix; 1,356 projected occurrences reference 1,351
+  readable payloads. Wrong-namespace and present-invalid references terminate
+  without fallback substitution or request/cache access.
+- **Projection/transport/cache and same-path/late isolation:** pass. Ordinary
+  production JSON flows through one normalized frozen projection, row-owned
+  transport, owner-bound completion, finalized immutable shared content, and
+  owner-checked body application. Five real cross-chapter same-path fragments
+  accepted zero foreign completions; late/stale results cannot write into a
+  newer route.
+- **Malformed production data:** pass under the fixed bar. Tracked canonical
+  spines/payloads are well formed; ordinary malformed values fail closed as
+  refused, unestablished, or unreadable and never become absence or empty
+  prose. Synthetic prototype/getter/thenable closure remains outside this
+  review.
+
+### Curated-suite judgment
+
+Focused dependency minimality passes, but production-policy curation fails.
+The candidate file retains 12,836 of V16's 17,315 lines, 419 of 604 tests, and
+193 of 255 literal replay scenarios. It retains the complete 1,993-line historical
+replay driver, exact-model SHA pins forbidden by the convergence manifest,
+and material getter, Proxy, prototype/pollution, evidence-journal, and
+write-failure machinery. The physical omission is 33 runnable classes and 185
+tests, not the recorded eight hostile plus forty non-manifest classes. Those
+185 omitted tests pass against the candidate, but omission also lost unique
+ordinary production coverage for chronology, paragraph counts,
+author-filter recovery, leads copy, shared-field drift, selected paragraph
+transport/routes, and null/list bootstrap truth.
+
+`GenuinelyLateStaleWorkTest` is **`RATIFIED`**: it exercises real late-route
+isolation and supplies the `GUARDED` dependency used by retained manifest
+classes. It should remain while the suite is re-curated. The correction must
+remove forbidden SHA/hostile/evidence-only machinery, retain this class and
+the production-policy cases, restore compact unique ordinary coverage, and
+state the resulting exact counts truthfully.
+
+### Fresh validation
+
+| Check | Exact independent result |
+| --- | --- |
+| `python3 scripts/_catena.py check` | pass: 1,351 fragments / 1 book / 73 canon entries |
+| `python3 -m unittest tools.tests.test_catena` | 56/56 pass, zero skips |
+| `python3 -m unittest tools.tests.test_catena_production` | 419/419 pass, zero skips |
+| browser static discovery | 5/5 pass |
+| strict regenerated tree | 1,914 files, zero byte differences |
+| exact-base Chromium Catena route | 121 identities: 95 pass / 14 fail / 12 skip |
+| exact-candidate Chromium Catena route | 121 identities: 95 pass / 14 fail / 12 skip |
+| Chromium identity/status delta | zero new identities and zero status changes |
+| controlled exact-base full discovery | 1,674 tests: 28 failures / 26 errors / 11 skips |
+| controlled exact-candidate full discovery | 2,097 tests: 30 failures / 26 errors / 11 skips |
+| new full-discovery failure/error identities | two added, zero removed; both are the missing-marker ledger/checker failures, with zero new Catena product-test identity |
+| governed gzip-9 budgets | CSS 7,629/8,000 whole and 2,676/2,700 stripped; controller JS 12,965/13,000 whole and 7,835/8,800 stripped; all pass |
+| uncapped model diagnostic | 44,247 whole / 10,344 stripped; no model or combined cap invented |
+
+The 14 equal browser failures are nine inherited nested-`main` assertions and
+five inherited narrow target-size assertions, not fourteen nested-main
+assertions. The candidate's exact focused suites are green, but they miss both
+blockers because absence tests collect author/work fields separately and focus
+tests assert only `activeElement`, not indicator visibility.
+
+The controlled discovery endpoints both built the public site first and ran
+under the same execution constraints. The 423-test growth is exact: four added
+generator-contract tests take `test_catena.py` from 52 to 56, and the new
+production module contributes 419 tests. All 54 base failure/error identities
+persist. The two added identities are
+`test_repository_ledger_is_valid` and the `check-promised-deliverables.test`
+subtest of `test_shell_smoke_tests_pass`; no identity was removed.
+
+The candidate's own final ledger entry has no matching work-register marker.
+Consequently `tools/check-promised-deliverables` fails, focused ledger
+validation fails one test, and exact-candidate full discovery gains both the
+ledger failure and its tool-registry smoke subtest. The candidate's recorded
+full-discovery artifact was run at parent `a87603f8d...` before final record
+commit `9810a29c...`, so its assertion of an exact-candidate identical identity
+set is not valid. This review adds the missing marker only in its own durable
+record branch; the integration correction must carry the repair and rerun the
+exact corrected head.
+
+### Exact new finding classification
+
+| Finding | Production/base proof | Classification | Smallest correction |
+| --- | --- | --- | --- |
+| Translation-absence author and work concatenate | Cold real route `/catena/index.html#book=Gen&chapter=1&bible=douay-rheims&voice=translation:en` joins real Ambrose/Hexameron data, then `catena.js` appends adjacent inline spans with no text node or CSS separator. Chromium reads `Ambrose of MilanHexameron`; all eight absence records create 213 affected Genesis row occurrences. Base contains the latent seam but keeps the disclosure closed; candidate opens it on arrival. | `MERGE_BLOCKER` | Insert a semantic DOM text delimiter such as ` — ` between author and work; assert the real parent row's flattened/accessible text. Do not use CSS-generated content. |
+| Keyboard recovery focus is invisible | Keyboard activation of the real invalid-address recovery link enters render/failure, removes the link, and `focusKeeper()` moves focus to `#reading`. Shared `.reading:focus` has higher specificity than `:focus-visible` and sets `outline: none`. Base has no recovery link/focus transfer; candidate newly connects the event to the suppressed target. | `MERGE_BLOCKER` | Restore a visible focus indicator for the programmatically focused reading region without changing focus ownership; add a real keyboard recovery success/failure visibility assertion. |
+| Curated suite is not the authorized production-only suite | Exact audit proves retained SHA pins, hostile/evidence machinery, and dead replay surface while unique ordinary production checks were omitted; recorded 8+40 exclusion counts are not reproducible. No wrong production result follows. | `BOUNDED_INTEGRATION_CORRECTION` | Re-curate once, retaining manifest coverage and `GenuinelyLateStaleWorkTest`, restoring compact unique ordinary coverage, excluding prohibited machinery, and reconciling exact counts/claims. |
+| Final candidate record is not self-validating | Exact candidate lacks its promised-deliverable marker; the checker and two discovery identities fail, and the cited candidate discovery run predates the final commit. Roadmap also gives non-executable `scripts/_catena.py check`. | `BOUNDED_INTEGRATION_CORRECTION` | Add the marker, record exact-head validation truth and executable `python3 scripts/_catena.py check`, then rerun both endpoint identity comparison and record checks. |
+| No-JavaScript page has an unnamed empty level-two heading | `index.html` leaves the script-populated reference `h2` empty without JavaScript; the no-script prose remains truthful and no corpus state is wrong. | `HARDENING_BACKLOG` | Give the static heading a truthful fallback name in a future bounded route polish; do not expand this correction pass for it. |
+
+Exact new totals are two `MERGE_BLOCKER`, two
+`BOUNDED_INTEGRATION_CORRECTION`, and one `HARDENING_BACKLOG`. The three
+convergence hardening findings remain open, so hardening backlog is four total.
+The eight convergence evidence-tooling findings and twenty separately owned
+concerns remain open and were not silently absorbed; no new material row is
+added to either set. Release bindings remain for their existing release owner
+after accepted integration bytes exist.
+
+### Stop line and exact next action
+
+Use the one already authorized bounded Claude correction pass on
+`integration/catena-e1` to fix both merge blockers and both bounded integration
+corrections above. Then return the exact corrected head for one confirmation
+Codex review. If and only if that review finds the fixed bar clean, proceed to
+the already planned merge. Do not merge this reviewed candidate, deploy,
+re-sign release records, change unrelated owners, restore the old harness
+wholesale, reopen synthetic V13-V16 findings, or start another broad hardening
+loop.

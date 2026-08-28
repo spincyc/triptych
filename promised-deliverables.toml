@@ -1494,12 +1494,12 @@ state = "complete"
 id = "corpus-browser-catena-e1-integration-candidate-2026-08-28"
 owner = "guidance/corpus-browser-roadmap.md"
 promise = "Build the clean E1 Catena integration candidate from the exact convergence-authorized main base with the review's bring-across manifest only, validate the integrated result against that base, and stop awaiting independent integration review without merging, releasing, deploying, or continuing synthetic hardening."
-state = "candidate"
+state = "in_progress"
 
   [[deliverables.requirements]]
   id = "exact-base-and-manifest"
   criterion = "The candidate branches from 2778285849f2973ea89d1cfd5b2751ed4ae58e54 and carries only the manifest: the final Catena route/model/HTML/CSS, the voice-authority generator change with its deterministic generated data, the generator-contract test expansion, and curated production regressions, with no evidence tooling, synthetic hostile fixtures, V16-side records, shared-shell, Liturgy, PDF, or release-binding changes."
-  status = "pass"
+  status = "open"
   evidence = [
     "src/web/browser/catena/catena-model.js",
     "src/web/browser/catena/catena.js",
@@ -1523,7 +1523,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "base-and-candidate-comparison"
   criterion = "Real-Chromium route-only runs produce identical 121 assertion identities with identical statuses at the exact base and the candidate, and full discovery produces zero new integration-caused failure identities with zero Catena failures; governed CSS/JS budgets pass without raised ceilings."
-  status = "pass"
+  status = "open"
   evidence = [
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
@@ -1532,6 +1532,58 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "backlogs-and-stop-line"
   criterion = "Hardening findings and evidence tooling remain backlog, separately owned concerns are untouched, release bindings are unrefreshed, and the record states awaiting independent integration review without marking E1 accepted or integrated, merging, deploying, or release signing."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-review-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Independently review exact E1 Catena integration candidate 9810a29c38f6138069d11cb7c735d8bb8b190326 against exact authorized base and current main under the fixed convergence merge bar; record every manifest, production, data, test, browser, discovery, budget, ownership, and backlog judgment; publish the review branch; and stop without modifying the candidate branch, merging, deploying, re-signing, or restarting broad hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-identities-history-and-boundary"
+  criterion = "The review verifies exact base, candidate, current main, convergence, and V16 identities; audits the four-commit history and all twelve changed paths; and proves current-main and ownership-boundary preservation."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-data-and-architecture"
+  criterion = "The review independently adjudicates the four production files, strict generator/data determinism, exact voices, refusal/absence/provenance, namespace/request closure, malformed ordinary data, projection/transport/cache ownership, and real same-path/late isolation under the fixed production-reachability bar."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curation-and-validation"
+  criterion = "The review audits the 419-test curation and GenuinelyLateStaleWorkTest dependency, runs focused Catena and generator validation, executes strict regeneration, compares real Chromium endpoints, compares controlled full-discovery identities, verifies governed budgets, and records exact limitations rather than relying on candidate claims."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fixed-bar-classification-and-disposition"
+  criterion = "Every new finding uses an authorized classification, every merge blocker carries a real production or exact-base regression chain, inherited backlogs remain explicit, and the final disposition follows the fixed allowed-disposition rule."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "bounded-next-action-and-stop-line"
+  criterion = "The review records one bounded correction pass followed by one confirmation review as the only next lane, pushes its durable review branch, and stops without merging, deploying, changing release bindings, or reopening V13-V16 synthetic hardening."
   status = "pass"
   evidence = [
     "PROJECT-WORK.md",
