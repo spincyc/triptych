@@ -114,18 +114,22 @@ keys, and component-scoped reference files. Every cross-element synthesis
 relation names at least two element keys and one or more controlled evidence
 classes. An included component may never depend on an omitted component.
 
-The full research sequence is: the existing pages 1 and 2; lawful complete
-appointed text; `Each Proper in Full`, including the bounded patristic and
-saintly reception sweep for each element; an exactly two-page `The Propers:
-Themes and Movement`; the full element-by-element `The Propers: Detailed
-Commentary`; unbounded `Source-Grounded Synthesis Across the Propers`;
-unbounded `Interpretive Possibilities Across the Propers`; `The Propers:
-Notable and Quotable`; and terminal apparatus. The synthesis companion
-retains pages 1 and 2, the two-page brief synthesis, a dedicated integrated
-`The Propers: Detailed Commentary`, the complete source-grounded synthesis,
-the complete exploratory synthesis, notable quotations, and terminal
-apparatus. It omits both the complete appointed texts and the element-by-
-element sweep.
+The two editions differ in which components they contain, never in the order
+those components appear. Sequence is stated once, in [Reader-Facing
+Order](#reader-facing-order) below; this paragraph states membership only and
+lists components in that order rather than establishing one.
+
+The research edition contains every component: pages 1 and 2; the lawful
+complete appointed text; the full element-by-element `The Propers: Detailed
+Commentary`, carrying the bounded patristic and saintly reception sweep for
+each element; the unbounded `Source-Grounded Synthesis Across the Propers`;
+`The Propers: Notable and Quotable`; the unbounded `The Propers: Interpretive
+Possibilities`; and terminal apparatus. The synthesis companion omits exactly
+two of them — the complete appointed text and the element-by-element sweep —
+and replaces the sweep with a dedicated integrated `The Propers: Detailed
+Commentary`. It retains pages 1 and 2, the two-page brief synthesis, the
+complete source-grounded synthesis, the complete exploratory synthesis,
+notable quotations, and terminal apparatus.
 
 The synthesis commentary is not an abridged procession through Introit,
 Collect, Epistle, and the remaining propers. It redistills the full research
@@ -190,18 +194,36 @@ The first four classes may appear in source-grounded sections. The fifth appears
 
 ## Reader-Facing Order
 
-Use this fixed macro-order:
+This list is the profile's single statement of reader sequence. No other
+passage here, in a manifest, in a workflow, or in a leaf restates it; where
+another passage needs the order, it links here. Use this fixed macro-order:
 
 1. Page 1: Propers map and four senses
 2. Page 2: `Scriptural Date and Location`
-3. `The Propers: Themes and Movement`
-4. `The Propers: Detailed Commentary`
-5. `The Propers: Notable and Quotable`
-6. `The Propers: Interpretive Possibilities`
-7. `Sacramental Appendix` when required
-8. `Appendix: Scope and Qualifications`
-9. `References`
-10. `Generation Metadata`
+3. `The Propers: Themes and Movement` — pages 3 and 4
+4. The complete appointed text, research edition only — either as its own
+   section or as the opening of the detailed commentary
+5. `The Propers: Detailed Commentary` — the element-by-element sweep in the
+   research edition, the integrated commentary in the synthesis companion
+6. `Source-Grounded Synthesis Across the Propers`
+7. `The Propers: Notable and Quotable`
+8. `The Propers: Interpretive Possibilities`
+9. `Sacramental Appendix` when required
+10. `Appendix: Scope and Qualifications`
+11. `References`
+12. `Generation Metadata`
+
+Positions 4 and 5 follow the thematic movement and never precede it. The
+complete appointed text precedes the element-by-element sweep so that every
+later claim can be checked against the text it is made about, but both sit
+after the page-3 thematic movement: a guide that front-loads either ahead of
+it is non-conforming. This was settled on 2026-08-20, when three lanes
+resolved the then-ambiguous prose three different ways and the published
+corpus was checked; `49-ninth-after-pentecost`, the only leaf in either
+provider that front-loads the formulary, is legacy under this profile's own
+rule and is not the model. Positions 4 and 6 are absent from legacy leaves
+authored before the component architecture, which remain valid until their
+next substantive revision.
 
 The page-2 sheet is the sole exception to terminal historical apparatus. Do not front-load any other chronology, status panel, research boundary, date range, source survey, or general qualification. Put work-wide bounds and qualifications in the terminal appendices. Keep a qualification beside a claim only when it materially changes that claim.
 
@@ -223,7 +245,7 @@ For each passage, distinguish traditional attribution from historical judgment a
 
 ### Themes, commentary, and exploration
 
-`The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies two complete, readable pages. Both pages must be substantively filled by the argument at the settled typesetting size; a forced break followed by conspicuous unused space does not satisfy the requirement. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five developed functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims and must earn its extent through real synthesis rather than repetition, enlarged type, decorative spacing, or displaced apparatus.
+`The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies two complete, readable pages. Both pages must be substantively filled by the argument at the settled typesetting size; a forced break followed by conspicuous unused space does not satisfy the requirement. Position 4 of the reader order therefore begins on page 5: in the research edition the complete appointed text opens there and the detailed commentary follows it, whether the text stands as its own section or as that commentary's opening; in the synthesis companion, which omits the appointed text, the integrated commentary opens page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five developed functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims and must earn its extent through real synthesis rather than repetition, enlarged type, decorative spacing, or displaced apparatus.
 
 `The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. In the full edition, treat every appointed scriptural passage and every composed proper substantively in the element-by-element sweep, developing its literal setting, traditional spiritual senses, principal patristic and saintly reasoning, place in the liturgical action, and concrete relations to the other appointed elements. In the synthesis companion, replace that sweep with the dedicated integrated commentary: organize by three to six cross-proper claims rather than by appointed order, draw each unit from multiple elements and witnesses, and ensure that all appointed elements materially inform the whole even though they do not receive individual headings. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. Represent a patristic, medieval, or saintly interpretation faithfully within its own theological grammar before evaluating or qualifying it. Do not make apology, suspicion, modern correction, or distance from inherited typology the organizing voice; a necessary present doctrinal distinction remains concise and claim-local and does not replace the tradition's positive exposition. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
 
@@ -265,6 +287,6 @@ Before publication, verify that:
 - the notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers; every verbal relation and contextual turn is verified and audited, patristic or devotional excerpts remain in detailed commentary, and no bare title, motto, artwork, or musical setting pads the section;
 - the interpretive section contains four to six non-recapitulatory, multi-element proposals and the research scope records each proposal's anchors, mechanism, targeted precedent result, fruit, and strongest limit without claiming universal novelty;
 - every attribution and historical, doctrinal, or reception claim has an exact source and locus, while source-grounded synthesis and exploratory proposal remain visibly distinct;
-- the guide follows the fixed reader order, keeps the complete date/location sheet alone on physical page 2, begins its two-page thematic movement on page 3 and detailed commentary on page 5, and places all other work-wide bounds, source limits, rights, review status, and qualifications only in the terminal apparatus;
+- the guide follows the fixed reader order, keeps the complete date/location sheet alone on physical page 2, begins its two-page thematic movement on page 3 and reader-order position 4 on page 5, and places all other work-wide bounds, source limits, rights, review status, and qualifications only in the terminal apparatus;
 - a required sacramental summary is imported from the canonical fragment, `References` contains only used sources, and generation metadata is accurate and terminal; and
 - the universal editorial, rights, build, warning, visual-review, installation, and publication gates pass for every affected consumer.
