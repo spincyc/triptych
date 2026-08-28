@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-20.
+Last reconciled: 2026-08-28.
 
 ## Standing public-alpha authority
 
@@ -1705,3 +1705,219 @@ GPT Reader routes returned the revised timestamps, and all six live PDF routes
 matched the reviewed SHA-256 hashes exactly. The unrelated local
 `directions.md` and `-.png` remained untracked and outside the commits and
 deployment.
+
+## E1 Catena convergence and production-reachability review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-convergence-review-2026-08-28 -->
+
+This review is complete. It reviewed V16
+`cc1f2fb8625f044558c26edd358b99cd7dcc7646`, its independent review
+`77045e3153e82feb00d0979ea657e601b826fc4f`, and evidence commit
+`bfa913466c559ad410f252f4192fb3af953dd10b` against current `origin/main`
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`. The common ancestor is
+`9b9ff74a77d1bcd7d454d2a7fc448b8a6c8f1fd4`; main has 129 unique commits
+and V16 has 49. The durable review branch is
+`review/catena-e1-convergence`. This record completes the convergence review,
+not E1 implementation, integration, release, or deployment.
+
+Final convergence disposition: **`READY_FOR_INTEGRATION_BRANCH`**.
+
+V17 semantic decision: **`CANCEL_V17_SEMANTIC`**. The inherited/getter and
+callable-`then` cases require in-memory JavaScript shapes that the canonical
+production data path does not construct. They remain useful
+noncanonical-shape robustness tests, but they do not justify another semantic
+correction loop.
+
+### Production input contract
+
+Canonical Catena authority begins in tracked TOML/YAML records. Sole writer
+`scripts/_catena.py` validates and joins them, serializes deterministic JSON
+with `json.dumps`, and writes `src/web/data/structure/catena/`. The public-site
+builder copies those JSON bytes beneath `browse/`. The page loads
+`browser-core.js`, `catena-model.js`, then `catena.js`; native `fetch()` and
+`Response.json()` produce ordinary objects and arrays with own data
+properties. The inline fallback, where present, also performs a
+`JSON.stringify`/`JSON.parse` round trip. Normal route state is native
+`URLSearchParams` plus strings, numbers, booleans, and DOM events; history
+stores no semantic object snapshot.
+
+The controller passes parsed chapter records to the model and caches the
+resulting projection. Fragment-text work is pending per exact row owner; only
+a finished frozen null-prototype seven-scalar content record is published by
+path, and a later row rebinds that value through its own completion envelope.
+Normal production data and navigation introduce no application-selected
+custom prototype, accessor, Proxy, or callable `then`. Arbitrary same-realm
+script mutation and optional external data roots are outside the canonical
+production contract. This review is limited to ordinary product correctness.
+
+### Complete finding classification
+
+Counts below are counts of normalized root findings, not duplicate promise
+rows or aggregate handoff conclusions:
+
+- `MERGE_BLOCKER`: **0**
+- `INTEGRATION_BLOCKER`: **0**
+- `HARDENING_BACKLOG`: **3**
+- `EVIDENCE_TOOLING_BACKLOG`: **8**
+- `SEPARATELY_OWNED`: **20**
+
+`SEPARATELY_OWNED` rows can remain program prerequisites or release debt; the
+last column answers only whether they block formation and review of the E1
+integration candidate.
+
+| Finding | Owner | Production reachable? | Current-main regression? | Classification | Blocks integration? | Exact proof |
+| --- | --- | --- | --- | --- | --- | --- |
+| Inherited values and accessors at six raw chapter roots and nested members | `src/web/browser/catena` | No; reproduction calls exported model APIs with test-constructed noncanonical JavaScript objects | No | `HARDENING_BACKLOG` | No | V16 review `77045e315:PROJECT-WORK.md:1207-1218`; production chain `cc1f2fb862:scripts/_catena.py:1505-1509`, `cc1f2fb862:src/web/browser/shared/browser-core.js:125-173` |
+| Alternating inherited callable `then` before text finalization | `src/web/browser/catena` | No; JSON cannot encode a getter or callable value | No | `HARDENING_BACKLOG` | No | V16 review `77045e315:PROJECT-WORK.md:1220-1229`; loader `src/web/browser/shared/browser-core.js:151-173` |
+| Body-write failure criterion incorrectly requires retry reset | `src/web/browser/catena` | No ordinary DOM path proved; the journal itself is truthful | No | `HARDENING_BACKLOG` | No | V16 review `77045e315:PROJECT-WORK.md:1194-1205`; synthetic write seams in `tools/tests/test_catena_wave_1.py` |
+| Measurement vocabulary: closure taxonomy, stale budget prose, and artificial divergent-plus-volatile totals | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1231-1267` |
+| Attempt-history temporal views, predecessor topology, and unshipped-history dependency | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1269-1288,1344-1347` |
+| P12 authority binds ledger rows 1-401 instead of the final 402-row ledger | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1296-1305`; prefix SHA `d14ce84c...`, final SHA `e80d6508...` |
+| Final sibling/privacy scan predates P12's last two ledger rows | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1307-1312` |
+| Fresh-clone replay lacks its authoritative transcript, browser prerequisite, and pinned date | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1314-1323` |
+| Command classifier accepts some prose and prelabelled legacy `ELIDED` rows | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1325-1333` |
+| Tool accounting conflates driver identities/runs and executed/trusted bytes | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1335-1342` |
+| Authority-language scanner permits whole-line exception and foreign-ID bypasses | `tools/evidence-handoff-hardening` | No | No | `EVIDENCE_TOOLING_BACKLOG` | No | `77045e315:PROJECT-WORK.md:1348-1352` |
+| Sole-source semantic projection beyond bounded chapter projection | owning semantic lane not assigned by V16 | No E1 production proof | No | `SEPARATELY_OWNED` | No | `77045e315:guidance/corpus-browser-roadmap.md:1157-1163` |
+| Orphan raw sources | owning semantic lane not assigned by V16 | No tracked orphan used as an E1 failure | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365`; `77045e315:guidance/corpus-browser-roadmap.md:1157-1163` |
+| Source-only-fragment semantics | owning semantic lane not assigned by V16 | No tracked instance used as an E1 failure | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Translator semantics | owning semantic lane not assigned by V16 | No E1 production proof | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Malformed absence typing | typed-data owner | No; no canonical production record exhibiting this malformed type is identified | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Malformed refusal typing | typed-data owner | No; no canonical production record exhibiting this malformed type is identified | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Malformed selection typing | typed-data owner | No; no canonical production record exhibiting this malformed type is identified | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Unreadable roots | shared loader/data owner | Transport failure is possible, but this was assigned outside E1 | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Unreadable `bibles.json` wording | `src/web/browser/shared` | Transport failure is possible | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Broader terminal/oracle proof | independent validation owner | Not a product input | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| CLI/web duplication | CLI/web architecture owner | Not an E1 route regression | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Model and combined route/model payload governance | performance-budget owner | The payload is production-loaded; no cap exists | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1243-1255,1359-1365` |
+| Historical `src/web/data/` acceptance seam | `src/web/data` and protected acceptance owners | Yes; canonical generated bytes traverse the seam | No; the acceptance debt predates convergence | `SEPARATELY_OWNED` | No | `guidance/web-data.md`; `77045e315:PROJECT-WORK.md:1359-1365` |
+| Four Catena release bindings | release owner | Yes after production bytes are integrated | No; current main is exact | `SEPARATELY_OWNED` | No; required before release | `release/public-alpha.json`; `77045e315:PROJECT-WORK.md:1243-1255` |
+| Common browser-gate baseline governance and acceptance | common-gate owner | Yes; the common gate executes on the built route | No; exact Catena status set is equal | `SEPARATELY_OWNED` | No | Direct main/V16 route reports: 121 assertions, 95 pass, 14 fail, 12 skip on each; governing-gate ownership is separate from the B0 defects below |
+| B0/shared-shell debt: nested `main`, target sizes, and skip-link/hash ownership | B0/shared-shell owner | Yes through ordinary built-route interaction | No; present at both endpoints | `SEPARATELY_OWNED` | No | `guidance/corpus-browser-master-plan.md`; direct Chromium comparison on `/catena/index.html` |
+| Real-device and assistive-technology evidence | independent validation owner | Not supplied by emulation | No | `SEPARATELY_OWNED` | No | `77045e315:PROJECT-WORK.md:1359-1365` |
+| Protected Liturgy | `src/web/browser/liturgy` owner | Not an E1 input | No E1 path change | `SEPARATELY_OWNED` | No | Zero V16-authored path changes; `77045e315:PROJECT-WORK.md:1354-1365` |
+| Canonical PDFs | PDF owners | Not an E1 input | No E1 path change | `SEPARATELY_OWNED` | No | Zero V16-authored path changes; `77045e315:PROJECT-WORK.md:1354-1365` |
+| Final integration and cutover | integration owner | Not yet performed | Not applicable | `SEPARATELY_OWNED` | No; it is the next lane | `guidance/corpus-browser-master-plan.md`; directions' capped integration loop |
+
+The exact merge-blocker set is empty. The exact integration-blocker set is
+empty. No row above is uncategorized, and the aggregate `immutable-v16-handoff`
+promise is not counted again because it duplicates the evidence-tooling rows.
+
+| Merge blocker | Production path | Incorrect result | Disposition |
+| --- | --- | --- | --- |
+| None | None proved | None | Empty set |
+
+| Integration blocker | Current-main conflict or regression | Disposition |
+| --- | --- | --- |
+| None | No Catena production overlap, new failure status, moved test, or ownership regression | Empty set |
+
+### Fixed nine-part E1 merge bar and validation
+
+The merge bar is frozen as follows:
+
+1. real canonical production Catena inputs render truthfully;
+2. exact voices, refusal, absence, and provenance behavior passes;
+3. production-reachable malformed canonical data fails closed;
+4. real same-path, cache, and late behavior cannot cross-contaminate rows;
+5. the focused Catena suite passes;
+6. the current-main-based integration candidate introduces no new full-suite
+   or browser-gate failures versus current main;
+7. governed CSS/JS budgets pass;
+8. data, release, shell, Liturgy, and PDF ownership boundaries remain
+   respected; and
+9. one independent integration reviewer accepts criteria 1-8.
+
+V16 validation against the parts available before integration:
+
+- focused discovery passed **660/660** at V16; current main passed **52/52**;
+- `scripts/_catena.py check` reported **1,351 fragments / 1 book / 73 canon
+  entries** at both endpoints;
+- browser-static discovery passed **5/5** at both endpoints;
+- exact voice, typed refusal/absence, provenance identity, same-path A/B,
+  late-result, cache-publication, and completion-owner cases all passed in the
+  660-test focused suite;
+- production builds succeeded at both refs, and Chromium 151 route-only runs
+  had identical 121 assertion identities and identical statuses: **95 pass / 14
+  fail / 12 skip**, with zero status changes. Deep link, no-script truth,
+  subpath startup, internal links, console/network health, names, focus, and
+  320px overflow passed. The 14 equal inherited failures are nine nested-main
+  rows and five target-size rows;
+- current-main full discovery ran **1,674 tests, 28 failures, 26 errors, 11
+  skips**; V16's independently recorded full discovery ran **2,011 tests, 14
+  failures, 13 errors, 11 skips**. The inventories diverged with their
+  branches, so raw totals are not a regression oracle; neither endpoint had a
+  Catena failure. Criterion 6 must be rerun on the actual integration candidate;
+- governed V16 gzip-9 sizes pass without raised ceilings: `catena.css`
+  **7,629/2,676** under **8,000/2,700**, and `catena.js`
+  **12,965/7,835** under **13,000/8,800**. Current-main diagnostic values are
+  CSS **5,185/1,813** and JS **12,190/6,450**. `catena-model.js` is uncapped
+  at V16 **44,247/10,344**, so model/combined-payload governance remains
+  separately owned; and
+- all 13 cumulative V16-delta paths are Catena route, generator/data, focused
+  test, or owning-record paths. There are zero V16-authored changes under
+  shared shell, protected Liturgy, PDFs, release, or deployment.
+
+Criteria 6 and 9 are integration-stage gates, not reasons to keep V16 in an
+implementation/review loop.
+
+### Current-main comparison and integration manifest
+
+Current main has no Catena production, data, or focused-test edit after the
+merge base and contains no duplicate E1 fix. There is no production textual or
+semantic conflict and no moved Catena test. A forbidden wholesale merge would
+conflict only in `PROJECT-WORK.md` and `promised-deliverables.toml`, while also
+auto-importing obsolete correction history. Current main's newer `Makefile`,
+`tools/public-alpha`, tests, release records, protected Liturgy, and unrelated
+data must remain authoritative.
+
+Bring across deliberately on a clean branch from current main:
+
+- final route-owned `src/web/browser/catena/catena-model.js`, `catena.js`,
+  `catena.css`, and `index.html`;
+- the applicable final `scripts/_catena.py` changes and only the generated
+  `index.json` voice-authority change they require;
+- the 78-line production-reachable generator contract expansion in
+  `tools/tests/test_catena.py`;
+- focused normal-policy regressions for accepted publication atomicity,
+  owner/completion identity, same-path/late isolation, exact voices,
+  refusal/absence/provenance, and malformed canonical data; and
+- one fresh minimal project/roadmap/promise integration record.
+
+Do not bring wholesale:
+
+- the 49-commit V1-V16 correction history or either independent-review commit;
+- the four V16 correction-loop record blobs;
+- the 17,315-line `test_catena_wave_1.py` synthetic/evidence harness or its
+  exact-model SHA pins; curate the production-relevant cases;
+- the Isaiah 8 generated-drift file and `present` hunk as if they were part of
+  the semantic route patch; regenerate/adjudicate under the data owner;
+- any evidence branch, immutable handoff package, attempt ledger, assembler,
+  replay/classifier/scanner, transcript, ZIP, digest, or temporary proof tool;
+  or
+- main's release manifest, shell, Liturgy, PDF, Makefile, registry, or unrelated
+  tests from the V16 side. Refresh the four Catena release bindings only after
+  accepted integration bytes exist, under the release owner.
+
+Evidence-tool defects move to a separate `tools/evidence-handoff-hardening`
+lane and cannot reset E1's review loop without a product-integrity result.
+
+The fixed integration loop is:
+
+```text
+current main
+-> integration/catena-e1
+-> one independent Codex integration review
+-> at most one bounded correction pass
+-> one confirmation review
+-> merge
+```
+
+Any new non-production-reachable hardening issue goes to backlog and does not
+reset that loop.
+
+**Exact next action:** create `integration/catena-e1` from
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, apply the bring-across manifest
+deliberately, and return the exact candidate for the one independent
+integration review. This convergence lane stops after publishing its review
+branch. It does not create the integration branch, merge, re-sign, deploy, or
+continue synthetic hardening.

@@ -299,7 +299,7 @@ them; it cannot close them.
 | B0/B1 shared foundation and neutral browser gates | Authorized implementation work | One global owner; ingest the shell correction only after independent acceptance; do not enter protected Liturgy or invent surface composition. |
 | C2 Home/Publications implementation | Eligible after clean shared-shell ownership | Implement the accepted C0/C1 contracts; do not duplicate global owners across branches. |
 | D1 Reader implementation | Eligible after clean shared-shell ownership | Rendering and presentation only; preserve web-edition source ownership and canonical PDFs. |
-| E1 Catena implementation | Authorized independently | May begin from the corrected implementation foundation; do not edit global shell owners or protected Liturgy. |
+| E1 Catena implementation | **Ready for clean integration branch** | Convergence review found zero production merge blockers and zero current-main integration blockers at V16 `cc1f2fb8625f044558c26edd358b99cd7dcc7646` against main `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; cancel semantic V17, build `integration/catena-e1` deliberately from current main, preserve global-shell/protected-Liturgy ownership, and apply the fixed capped review loop recorded in the roadmap. |
 | F1 Sources implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by the disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires clean foundation plumbing and explicit authority. |
 | G0/G1 History; H0/H1 Law; I0/I1 Scripture | Planned | Follow their owning guidance and accepted foundation. |

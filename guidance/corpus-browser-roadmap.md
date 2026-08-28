@@ -259,13 +259,59 @@ Designs may show an explicit unsupported/absent state or record a future corpus
 opportunity. They must not simulate the missing relationship, search result,
 comparison, text, or metadata in the UI.
 
+## E1 Catena V16 convergence disposition — 2026-08-28
+
+The production-reachability review of V16
+`cc1f2fb8625f044558c26edd358b99cd7dcc7646` and independent review
+`77045e3153e82feb00d0979ea657e601b826fc4f` against current main
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` records
+**`READY_FOR_INTEGRATION_BRANCH`**. The canonical generator-to-JSON-to-native
+`Response.json()` route constructs ordinary own-data records; it does not
+construct the inherited getters or callable `then` used by the synthetic
+review probes. Those two findings and the artificial body-write retry case are
+`HARDENING_BACKLOG`; **`CANCEL_V17_SEMANTIC`** is controlling. The eight
+normalized package/history/replay/scanner defects are
+`EVIDENCE_TOOLING_BACKLOG` for a separate
+`tools/evidence-handoff-hardening` lane. Twenty inherited release, shell,
+data, validation, Liturgy, PDF, and final-integration concerns remain
+`SEPARATELY_OWNED`. Exact blocker totals are zero `MERGE_BLOCKER` and zero
+`INTEGRATION_BLOCKER`.
+
+Direct validation passed focused Catena 660/660 at V16 and 52/52 at main,
+Catena structure at 1,351 fragments / one book / 73 canon entries, static
+browser checks 5/5, and the governed CSS/JS ceilings. Exact production builds
+under Chromium 151 produced the same 121 Catena assertion identities and the
+same 95 pass / 14 inherited shared-shell fail / 12 skip statuses, with zero
+status changes. Current-main full discovery is 1,674 tests with 28 failures,
+26 errors, and 11 skips, none Catena; V16's independently recorded inventory
+is 2,011 with 14/13/11, also none Catena. Their divergent inventories are not a
+raw-count oracle; the current-main-based integration candidate must rerun the
+failure identities and browser statuses.
+
+The clean integration must bring the final Catena route/model/HTML/CSS,
+applicable generator plus exact voice-authority data change, the focused
+generator-contract expansion, and curated production-policy regressions. It
+must not merge the 49-commit correction line, the four correction-loop record
+blobs, the 17,315-line synthetic/evidence harness wholesale, generated Isaiah
+drift as a semantic patch, or any evidence branch/package/tooling. It preserves
+main's Makefile, public builder, release records, shell, Liturgy, PDFs, and
+unrelated tests. The complete 31-row classification, production input
+contract, nine-part merge bar, exact bring/do-not-bring manifest, budgets, and
+ownership proof are in `PROJECT-WORK.md`.
+
+The fixed loop is current main -> `integration/catena-e1` -> one independent
+Codex integration review -> at most one bounded correction pass -> one
+confirmation review -> merge. A non-production-reachable hardening finding
+goes to backlog and cannot reset the loop. This review creates no integration
+branch, merge, release binding, deployment, or synthetic-hardening work.
+
 ## Remaining program sequence
 
 | Work | Current state | Exact dependency / stopping line |
 | --- | --- | --- |
 | B0/B1 shared non-liturgy implementation and harness | Authorized separately; not owned by this design branch | May use accepted A3/A4 direction and implementation findings; must stop before inventing C0/C1/D0/E0/F0 compositions and must not enter protected liturgy files. |
 | C2/D1 production surface implementation | Eligible after the shell ownership boundary is clean | C0/C1/D0 are accepted; avoid branches that contend for global generator, site CSS, release binding, or shell files. |
-| E1 Catena production implementation | Authorized independently | E0 is accepted; do not edit shared shell/global owners or protected Liturgy. |
+| E1 Catena production implementation | **Ready for `integration/catena-e1` from current main** | Convergence review records zero production merge blockers and zero current-main integration blockers; use the deliberate manifest and fixed capped loop above, with no direct V16 merge and no shared-shell/protected-Liturgy edit. |
 | F1 Sources production implementation | Eligible only for separate owner-authorized dispatch | The F0 design-review dependency is satisfied; no production implementation is started or authorized by this disposition. |
 | Final shared-shell cutover | **Blocked** | The shell design-review dependency is satisfied; cutover still requires a clean implementation-foundation checkpoint and explicit cutover authority. |
 | G0/H0/I0/J0 and implementation partners | Planned Wave 2 | Do not begin merely because Wave 1 prototypes exist; follow owning guidance and exact accepted dependencies. |
@@ -284,6 +330,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
+| 2026-08-28 | E1 Catena convergence review | Reclassified the two synthetic JavaScript-shape findings as hardening, moved evidence machinery to its own backlog, proved zero production merge blockers and zero current-main integration blockers, froze the nine-part bar and capped integration loop, and recorded **`READY_FOR_INTEGRATION_BRANCH`** with **`CANCEL_V17_SEMANTIC`**. | Main `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; prior review `77045e3153e82feb00d0979ea657e601b826fc4f`; branch `review/catena-e1-convergence`. |
 
 ## Next Codex tasks
 

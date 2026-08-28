@@ -1489,3 +1489,55 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-convergence-review-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Determine the minimum true Catena E1 blocker set from canonical production reachability and current-main regression risk; record a complete normalized classification, fixed merge bar, deliberate integration manifest, capped review loop, V17 decision, convergence disposition, and exact next action without implementing integration, merging, releasing, deploying, or continuing synthetic hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "production-contract-and-classification"
+  criterion = "The durable review traces canonical Catena authority from tracked source through generated JSON, public assembly, native browser parsing, model projection, cache and history; it classifies every normalized open finding under only the five authorized classes and gives production or current-main proof for every blocker."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fixed-merge-bar-and-validation"
+  criterion = "The exact nine-part E1 merge bar is frozen and the review records focused Catena, structure, exact voice/refusal/absence/provenance, same-path/late, static-browser, real Chromium, full-discovery, governed-budget, and ownership results at the reviewed refs without treating inherited failures as new Catena defects."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "current-main-and-integration-manifest"
+  criterion = "The review compares V16 with current main, identifies production and record overlap, and records exact bring-across and do-not-bring-wholesale manifests that preserve current-main and separately owned state."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "v17-and-convergence-disposition"
+  criterion = "The record returns one authorized V17 decision and one authorized final convergence disposition, with blocker totals and an exact next action consistent with both."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "review-scope-and-stop-line"
+  criterion = "The completed review records its durable branch and explicitly stops before creating the integration branch, merging, changing release bindings, deploying, or continuing synthetic hardening."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
