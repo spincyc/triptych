@@ -20,7 +20,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # Checkout of the large publication tree can itself take more than ten
+    # minutes on a cold runner. Preserve enough time for the source, build,
+    # verification, upload, and deployment steps that must follow it.
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository

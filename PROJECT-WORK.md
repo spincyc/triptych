@@ -1839,11 +1839,21 @@ AI-assisted and automated review evidence, not human, priestly, specialist,
 intended-reader, physical-use, ecclesiastical, or new exact-snapshot human
 approval.
 
-Production integration remains open. Before this program is complete, the
-accepted feature must be reconciled once more with current `origin/main`; the
-three deployment gates must pass on the exact outgoing tree; `origin/main` must
-advance by genuine fast-forward without force or history rewrite; and the
-exact resulting Pages run, deployed checksum inventory, and every added or
-changed live route must be verified. A commit, feature push, exact review
-handoff, local deployment artifact, or release-binding match alone does not
-complete the program.
+Production deployment remains open. `origin/main` advanced by genuine
+fast-forward from `2778285849f2973ea89d1cfd5b2751ed4ae58e54` to
+`de7c78334d2f7418c20c7a595e6aae9ce45f39c9` after all three local deployment
+gates passed on that exact clean tree. Exact Pages run `33196238024` then
+reached artifact verification only after checkout, dependency installation,
+source verification, and the public build had passed; GitHub cancelled the job
+at its configured 15-minute ceiling before verification, upload, or deployment
+could complete. That is infrastructure timeout evidence, not a successful or
+failed content gate, and no production deployment is claimed from it. The
+workflow ceiling is raised to 30 minutes so the unchanged gate sequence can
+finish on a cold runner.
+
+Before this program is complete, the timeout correction must advance both
+feature and `main` by genuine fast-forward; the exact resulting Pages run must
+succeed; its deployment record must bind that exact commit; and the deployed
+checksum inventory plus every added or changed live route must match the local
+artifact. A commit, feature push, exact review handoff, local deployment
+artifact, or release-binding match alone does not complete the program.
