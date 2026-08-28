@@ -789,6 +789,29 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
+The `proper` workflow is at version 12. Version 12 put the house voice into
+the fragments a worker is handed: `author-proper` now carries the declarative
+and tradition-inhabiting rules that `guidance/editorial.md` owns,
+`content-revision` says a voice finding is repaired by rewriting the sentence
+and never by deleting what the sentence was about, `content-evaluation` gained
+criteria 11 and 12 and rewrote criterion 6 so it asks whether a disagreement is
+present and attributed rather than whether the guide says it preserved one, and
+the two lanes that own those criteria say so. Four instructions that were
+producing the defect went with it: the research lane's "bounded and
+correctable", which was right for a `notes` field and reached the printed page
+in seven places; the afterlife lane's limiting qualification, which both
+providers printed as a per-entry block; the synthesis brief's register, which
+the author was inheriting along with the conclusions; and the profile's
+requirement that a signpost-only scan recover the principal limits, which a
+guide can satisfy only by printing the limits as signposts. It changed no
+stage, no lane and no transition, and it needed no repair target of its own. A
+voice defect is `authoring`: the material was researched and the prose is what
+mishandled it. The one case the author cannot repair — a passage the evidence
+gives no Catholic reception for at all — is `research`. Version 10's third
+owner, `brief`, does not arise for criteria 11 and 12: a reception that was
+swept and never carried into the brief is a criterion 3 defect, and the
+ordinary discriminator already routes it.
+
 The `proper` workflow is at version 11. Version 11 is what two production runs
 driven to completion asked for, and it changes the content loop in five places.
 
@@ -882,7 +905,7 @@ commit. Version 6 added the
 returned, and gave `content-evaluation` a result schema of its own and the
 repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
 content and visual evaluation lanes, the gates, and every other `single` stage
-are as they were at version 5. A run seeded against version 8 or any earlier
+are as they were at version 5. A run seeded against version 11 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 

@@ -20,7 +20,20 @@ accepted work. Focus on the specific findings forwarded to you.
 3. Do not paraphrase or reinterpret the findings. Address them as written.
 4. After addressing all findings, verify that the changes do not introduce
    new violations of the evaluation criteria.
-5. Follow the same authoring rules as the author-proper stage.
+5. Follow the same authoring rules as the author-proper stage, including the
+   house voice: this packet carries `author-proper.md` in full.
+6. A house-voice finding is repaired by rewriting the sentence, never by
+   deleting what the sentence was about. Excessive methodological narration,
+   editorial self-justification, secular skeptical framing, unnecessary
+   distancing from patristic interpretation, and modern-critical framing that
+   has taken over the theological reading are all editorial defects, and all
+   of them are repaired in place. The claim, the witness, the claim-local
+   qualification that keeps a claim accurate, the required modern chronology,
+   the documented disagreement, and the documented cultural afterlife each
+   survive the repair; what goes is the narration of the writer's method and
+   the distance in the grammar. If the only way to satisfy a finding is to
+   drop evidence, it is a research finding wrongly routed here: do not obey
+   it, return `BLOCKED`, and say which evidence it would have cost.
 
 ## Result
 

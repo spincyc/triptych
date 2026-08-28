@@ -23,8 +23,14 @@ scholarly content.
    elements and witnesses?
 5. **Exploratory proposals**: Are proposals labeled as exploratory? Does each
    join at least 2 elements?
-6. **Material disagreement**: Are disagreements, uncertainty, and
-   currentness preserved rather than silently harmonized?
+6. **Material disagreement**: Where the sources disagree, is the
+   disagreement present in the prose and attributed to the sources that hold
+   it? Is uncertainty carried where it bears on a claim, and currentness
+   where it bears? Judge what the text contains. Never judge whether the
+   guide announces that it preserved anything: a sentence saying a difference
+   was retained rather than silently harmonized is not evidence of compliance,
+   it is a criterion 12 defect, and asking for it is how a criterion produces
+   the fault it meant to prevent.
 7. **Citations**: Are only sources actually used cited? No invented searches,
    verifications, quotations, attributions, doctrines, laws, or historical
    facts?
@@ -35,6 +41,48 @@ scholarly content.
    and page assignments from the profile?
 10. **Provenance**: Do source records (verified.md, retrieved.txt, scope.md)
     exist and follow the profile's format?
+11. **Interpretive voice**: Does the guide speak from within the Catholic
+    tradition — Scripture, liturgy, doctrine, patristic reception, typology,
+    and saintly interpretation presented in their own theological grammar and
+    attributed to the witnesses who taught them? Or has secular skepticism
+    become the narrator's default stance: inherited interpretation held at
+    arm's length as an object viewed from outside rather than inhabited and
+    explained, typology reflexively distanced from, modern criticism treated
+    as the authority that validates or invalidates a theological reading,
+    "later Christians believed" standing in for straightforward attribution
+    where no historical distinction requires it? Accurate modern dating, a
+    genuine authorship dispute, factual source criticism, historically
+    documented disagreement, and the secular afterlives of `The Propers:
+    Notable and Quotable` in their own section are never findings here: the
+    profile requires them, and a finding that would delete one is wrong.
+12. **Declarative discipline**: Does the prose state its findings, or does it
+    repeatedly tell the reader how the editors reasoned, what principles
+    guided inclusion, why caution was necessary, what methodology governs the
+    section, or why the interpretation is being presented at all, instead of
+    giving the conclusion? A few necessary claim-local qualifications are not
+    a defect; the defect is a recurring rhetorical habit, and it counts the
+    same whether it is written as a sentence, a run-in label, a standing
+    per-entry field, or a table column. Every reader-facing section is in
+    scope: the page-1 four senses, `Scriptural Date and Location`, `The
+    Propers: Themes and Movement`, `The Propers: Detailed Commentary`, the
+    integrated commentary, the source-grounded synthesis, `The Propers:
+    Notable and Quotable`, and the proposals of `The Propers: Interpretive
+    Possibilities`. Out of scope, as qualification by design, are `Appendix:
+    Scope and Qualifications`, `References`, and — within `The Propers:
+    Interpretive Possibilities` — the exploratory notice, the novelty
+    classification, and the controlling-limit field the profile mandates for
+    each proposal, however that field is labelled. Two sections are in scope
+    for their register and not for their required content. Page 2 must carry
+    the traditional attribution, the modern critical horizon, the
+    uncertainty, and the claim-local sources, and none of those is ever a
+    finding; what is a finding is a dossier that turns to narrating the
+    sheet's own conduct, as `this sheet reports it unresolved` does where the
+    fact and the witnesses who differ would say it. Each gallery entry must
+    carry its phrase, later user or work, exact locus, and turn in meaning,
+    and none of those is ever a finding; what is a finding is the
+    `Notable-and-quotable audit` printed for the reader as a standing
+    `Control` or `Rights and limit` block under every entry, where the
+    profile keeps that material in `research/scope.md`.
 
 ## Lane scope
 
@@ -107,12 +155,31 @@ the winning route's findings travelled, a single `brief` defect sent the run to
 evaluation reached nobody, and the author re-authored from an empty packet. The
 next evaluation spent five lanes rediscovering what the run already knew.
 
+A criterion 11 or 12 finding is `authoring`. Voice is not an evidence
+defect: the material was researched, the prose is what mishandled it, and
+rewriting the prose is the whole repair. Excessive methodological narration,
+editorial self-justification, secular skeptical framing, and unnecessary
+distancing from patristic interpretation all route that way. The single
+exception is a passage for which the evidence supplies no Catholic reception
+at all — there is then nothing for the guide to speak from, the distance
+belongs to the evidence rather than to the author, and the finding is
+`research`.
+
+`brief` is not a third answer for those two criteria. The three questions
+above separate the owners by what the repair needs, and a voice defect needs a
+sentence of the leaf rewritten whatever seeded it — including a brief whose
+own register the author pasted, which `research-synthesis` is separately told
+not to write. A reception the lanes swept and the brief never carried forward
+is a real `brief` defect, but it is a criterion 3 finding rather than a
+criterion 11 one; report it there and the ordinary discriminator routes it.
+
 Where ownership is genuinely ambiguous, name the earliest owner whose
 correction is actually necessary. That ordering is not a licence to round
 upward: a defect the brief can repair out of evidence it already holds is
 `brief` however grave it is, and `research` is for the cases where the evidence
-is not there to repair it from. There is no fourth value; the engine rejects
-anything else. Advisory findings do not need the field.
+is not there to repair it from. That tie-breaker does not reach criteria 11 and
+12, whose owner the paragraphs above already fix. There is no fourth value; the
+engine rejects anything else. Advisory findings do not need the field.
 
 ## When no stage owns the repair
 

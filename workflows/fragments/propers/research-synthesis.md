@@ -54,7 +54,12 @@ Integrate the joined research into one research brief that the
    contexts, and reception witnesses. This is not an abridged procession
    through the propers.
 5. Preserve material disagreement, uncertainty, jurisdiction, and currentness
-   rather than harmonizing them into one settled reading.
+   rather than harmonizing them into one settled reading. The brief is an
+   audit record and carries that qualification in an audit's register. The
+   author inherits the conclusions and not the register:
+   `guidance/editorial.md` keeps method, evidence classes, and caution
+   machinery out of reader-facing prose, so do not phrase a brief entry as a
+   sentence the guide could paste.
 6. Name the missing evidence that should block or constrain authoring,
    drawing on the `source-citation-coverage` lane's findings.
 7. Settle 3-6 cross-proper claims for the synthesis commentary, and 4-6
