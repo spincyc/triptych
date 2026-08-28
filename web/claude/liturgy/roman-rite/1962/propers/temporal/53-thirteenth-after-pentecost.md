@@ -10,7 +10,7 @@
 
 ## The Propers: Map
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit <span class="nodecor">(*Int.*)</span>** | *Réspice, Dómine, in testaméntum tuum* (*Ps. 73:20, 19, 23, with v. 1*) | Asaph’s plea over a ruined sanctuary | Holds God to his covenant, his poor and his own cause; the psalm verse asks why he cast them off. |
 | **Collect <span class="nodecor">(*Coll.*)</span>** | *Omnípotens sempitérne Deus, da nobis* (*composed oration*) | The three theological virtues, asked as one increase | Faith, hope and charity asked for as *augméntum*; attaining what is promised hangs on loving what is commanded. |

@@ -41,7 +41,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
         ),
@@ -69,7 +69,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read the policy first: `check` is the gate `prepare` reports against",
@@ -79,7 +79,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 200 publications (200 alpha, 0 hold)",
+                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read-only first: `check` validates the policy `build` renders from",

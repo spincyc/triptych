@@ -561,7 +561,7 @@ The six proposals below are original editorial syntheses produced with AI assist
 | Celebration | Sixteenth Sunday in Ordinary Time |
 | Rank and precedence | Sunday in Ordinary Time; rank 6 in the Table of Liturgical Days of the Universal Norms on the Liturgical Year and the Calendar. It yields only to the celebrations ranked above it, none of which occurred on this date. |
 | Season and colour | Ordinary Time, Week XVI; green |
-| Registry identity | Stable parent `PC-S40`; formula key `PC-S40-A`; full publication slug `pc-s40-sixteenth-sunday-in-ordinary-time-year-a` |
+| Registry identity | Stable parent `PC-S40`; formula key `PC-S40-A`; full publication slug `pc-s42-sixteenth-sunday-in-ordinary-time-year-a` |
 | Form and coverage | One Mass form; Year A coverage only. Years B and C are separate targets and are not treated here. |
 | Occurrence | Sunday, 19 July 2026, in the dioceses of the United States of America. The national liturgical calendar for 2026 lists no competing celebration on that date, and the Sunday is celebrated. |
 | Governing edition-locale | Roman Missal, Third Edition, for Use in the Dioceses of the United States of America (English, implemented 27 November 2011), whose Latin base is the *Missale Romanum*, third typical edition, in its 2008 emended reprint |

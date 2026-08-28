@@ -10,7 +10,7 @@
 
 ## The Propers: Map
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit <span class="nodecor">(*Int.*)</span>** | *Deus in loco sancto suo* (*Ps. 67:6–7, 36, with v. 2*) | Three clauses cut from one psalm | God’s holy place is a housed people, and the strength is given to them. |
 | **Collect <span class="nodecor">(*Coll.*)</span>** | *mérita súpplicum excédis et vota* (*composed oration*) | Two things God exceeds | Pardon for what conscience dreads, and the gift the prayer does not presume to name. |

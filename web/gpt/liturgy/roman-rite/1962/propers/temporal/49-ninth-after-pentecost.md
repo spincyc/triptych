@@ -8,7 +8,7 @@
 
 TLM propers: received help, chastened standing, visitation through tears, and Eucharistic abiding in one body
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit** | *Ecce Deus adiuvat me*; *Deus, in nomine tuo salvum me fac* (Ps. 53:6–7, 3) | God helps and sustains | The threatened speaker entrusts rescue and truthful judgment to the Lord and invokes his saving name. |
 | **Collect** | *Pateant aures misericordiae tuae* | Mercy reforms desire | Before asking that desires be granted, the Church asks God to make the petitioners seek what pleases him. |
