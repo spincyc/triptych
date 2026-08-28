@@ -34,6 +34,11 @@ The review record, which asserts nothing about Scripture and is read by no tool:
 | `final-rereview-corrections.tsv` | the 23 failed re-review rows, one row each, and what was done about them |
 | `final-acceptance-manifest.tsv` | **derived** — every case a genuinely cold acceptance reviewer must review, over both correction lanes |
 | `final-repair-report.md` | what the repair lane changed, the head references by sha, and the cold-review requirement |
+| `final-acceptance-review.md` | the genuinely cold acceptance review of `5b4fe31c0`, its verdict, and the correction queue — **immutable review evidence** |
+| `final-acceptance-findings.tsv` | its ruling on all 156 cases, one row each, PASS rows included — **immutable review evidence** |
+| `final-acceptance-howlett.md` | the whole-artifact appendix: every claim citing Howlett, with its grounding sentence, source voice and admissibility ruling |
+| `final-acceptance-sloet.md` | the whole-artifact appendix for Sloet, separating the Petavius table from Sloet's own |
+| `final-acceptance-stub-evidence.md` | every conclusion that could have rested on the broken `--bible` stub, re-resolved through the real machinery |
 
 `coverage.tsv` is written by `tools/tpt scripture-chronology build` and gated
 by `check`, which refuses a stale table rather than rebuilding it. Do not
