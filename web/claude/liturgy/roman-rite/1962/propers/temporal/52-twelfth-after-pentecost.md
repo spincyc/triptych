@@ -10,7 +10,7 @@
 
 ## The Propers: Map
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit <span class="nodecor">(*Int.*)</span>** | *Deus, in adiutórium meum inténde* (*Ps. 69:2–3, v. 4*) | The emergency cry | The verse with which the Office opens every hour: help begged before anything else is said. |
 | **Collect <span class="nodecor">(*Coll.*)</span>** | *Omnípotens et miséricors Deus* (*composed*) | Service as gift | Concedes what the Epistle will argue: worthy service comes *de cuius múnere*, of God’s own gift. |

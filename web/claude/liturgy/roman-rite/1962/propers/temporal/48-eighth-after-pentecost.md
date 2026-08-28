@@ -8,7 +8,7 @@
 
 Latin collated against the Vatican typical edition; English quoted from an identified 1861 witness. Not a liturgical book.
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit <span class="nodecor">(*Int.*)</span>** | *Suscépimus, Deus, misericórdiam tuam* (*Ps. 47, 10-11; verse Ps. ibid., 2*) | Zion hymn; mercy received inside the sanctuary | Opens with something already received, before anything is asked. The same antiphon opens the Purification (2 February), where the temple is literal. |
 | **Collect <span class="nodecor">(*Coll.*)</span>** | *Largíre nobis, quǽ sumus, Dómine* | Composed oration; no direct citation | One gift in two motions, thinking and doing what is right, grounded in a confessed inability to exist without God. |

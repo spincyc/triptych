@@ -8,7 +8,7 @@
 
 TLM propers: light, travail, Christ’s word, and the merciful compelling of rebellious wills
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit** | *Dominus illuminatio mea*; *si consistant adversum me castra, non timebit cor meum* (Ps. 26:1–3) | Light, salvation, protection, courage | The Lord is named as light, salvation, and protector; enemies fall, and even an encamped host need not make the heart fear. |
 | **Collect** | *mundi cursus pacifice nobis tuo ordine dirigatur*; *Ecclesia tua tranquilla devotione laetetur* | Ordered course and tranquil devotion | The Church asks God peacefully to direct the world’s course and let the Church rejoice in tranquil devotion. |

@@ -8,7 +8,7 @@
 
 1962 Missal propers: the received gospel, opened hearing, right speech, accepted service, and healing of the whole person
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit** | *Deus in loco sancto suo* (Ps. 67:6–7, 36; 2) | God gathers and strengthens | God dwells in holiness, establishes concord in a house, gives strength to his people, and scatters those who hate him. |
 | **Collect** | *abundantia pietatis tuae* | Mercy exceeds measure | The Church asks pardon for what conscience fears and gifts beyond what prayer presumes. |

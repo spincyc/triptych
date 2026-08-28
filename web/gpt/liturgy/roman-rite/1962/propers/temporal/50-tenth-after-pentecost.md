@@ -8,7 +8,7 @@
 
 TLM propers: mercy, diverse gifts, humble prayer, entrusted offering, and sustaining help
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit** | *Cum clamarem ad Dominum*; *iacta cogitatum tuum* (Ps. 54:17–18, 20, 23, 2) | Cry heard; care entrusted | The lamenting speaker calls continually, confesses the Eternal as judge, and casts care upon the sustaining Lord. |
 | **Collect** | *omnipotentiam tuam parcendo maxime et miserando manifestas* | Mercy manifests power | The Church asks multiplied mercy so that those running toward God’s promises may share heavenly goods. |

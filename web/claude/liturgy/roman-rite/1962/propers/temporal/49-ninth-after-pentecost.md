@@ -10,7 +10,7 @@
 
 ## The Propers: Map
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit <span class="nodecor">(*Int.*)</span>** | *Ecce Deus ádiuvat me* (*Ps. 53:6–7, with v. 3*) | Psalm of a hunted man | Antiphon takes the later verses, psalm verse the earlier: confidence is sung before the cry for rescue. |
 | **Collect <span class="nodecor">(*Coll.*)</span>** | *Páteant aures misericórdiæ tuæ* (*composed oration*) | God’s ears opened, the petitioner’s mouth formed | Grants what is asked only after asking God to make us ask what pleases him. Desire is the thing prayed over. |

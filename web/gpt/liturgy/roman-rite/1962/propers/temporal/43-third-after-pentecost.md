@@ -8,7 +8,7 @@
 
 TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
-| **Proper** | **TLM text / reference** | **Scriptural axis** | **Connection** |
+| **Proper** | **1962 Missal text / reference** | **Scriptural axis** | **Connection** |
 |:-----------|:-----------------|:-------------|:-----------------------|
 | **Introit** | *Respice in me, et miserere mei*; *Ad te, Domine, levavi animam meam* (Ps. 24:1–2, 16, 18) | Solitude, poverty, mercy | The worshipper enters neither self-sufficient nor hidden: affliction and sin are placed under God’s merciful gaze. |
 | **Collect** | *Protector in te sperantium, Deus* | Providence and pilgrimage | God’s mercy supplies what is neither strong nor holy without him and orders temporal goods toward eternity. |
