@@ -23,6 +23,18 @@ def text(path: Path) -> str:
 
 
 class DayMissalIntegrationTests(unittest.TestCase):
+    def test_public_renderer_keeps_recension_boundaries_and_act_stations_visible(self) -> None:
+        source = text(PUBLIC_RENDERER)
+        for token in (
+            "function recensionRows(head, mass, structure)",
+            "structure.stands_before",
+            "row.act",
+            "Historical boundary — stands before:",
+            "Act-history station:",
+            "recensionRows(head, mass, structure)",
+        ):
+            self.assertIn(token, source)
+
     def test_read_default_and_bounded_mode_surface(self) -> None:
         html = text(HTML)
         self.assertIn('data-mode="read"', html)
@@ -39,7 +51,9 @@ class DayMissalIntegrationTests(unittest.TestCase):
         candidate = text(JS)
         public = text(PUBLIC_RENDERER)
         self.assertIn("const OrdinaryRenderer = window.TriptychOrdinaryRenderer", candidate)
-        self.assertIn("OrdinaryRenderer.renderSemanticFrame(result.events", candidate)
+        self.assertIn("const frameEvents = (result.events || []).map", candidate)
+        self.assertIn("event.kind === 'proper-choice'", candidate)
+        self.assertIn("OrdinaryRenderer.renderSemanticFrame(frameEvents", candidate)
         self.assertIn("OrdinaryRenderer.renderElement(raw, ordinary)", candidate)
         self.assertIn("T.renderProper", candidate)
         self.assertIn("window.TriptychOrdinaryRenderer", public)
@@ -58,7 +72,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
             "appendOrdinaryReasoning(body, result, ordinary)",
             "Boolean(normalized.state.apparatus && normalized.state.apparatus.why)",
             "apparatus.className = 'day-reasoning'", "renderOrdinaryChoice",
-            "window.OrdinarySeating.chosenOption", "group.options || []",
+            "window.OrdinarySeating.selectionMap", "group.options || []",
         ):
             self.assertIn(token, source)
         self.assertIn("return mode === 'study' ? ['mode=' + mode] : [];", source)
@@ -74,13 +88,24 @@ class DayMissalIntegrationTests(unittest.TestCase):
         post = json.loads((ROOT / "src/web/data/structure/ordinary/postconciliar.json").read_text())
         roman_elements = sum(len(section["elements"]) for section in roman["sections"])
         post_elements = sum(len(section["elements"]) for section in post["sections"])
-        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 195, 9))
-        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 47, 11))
+        self.assertEqual((len(roman["sections"]), roman_elements, len(roman["slots"])), (6, 189, 9))
+        self.assertEqual(len(roman["exclusions"]), 6)
+        self.assertEqual(
+            {row["state"] for row in roman["exclusions"]},
+            {"not-in-target-recension"},
+        )
+        self.assertEqual((len(post["sections"]), post_elements, len(post["slots"])), (7, 59, 11))
         self.assertEqual(roman.get("variants", []), [])
-        group = post["variants"][0]
-        self.assertEqual(group["group"], "eucharistic-prayer")
-        self.assertEqual([row["id"] for row in group["options"]], ["ep-i", "ep-ii", "ep-iii", "ep-iv"])
-        self.assertEqual([row["id"] for row in group["options"] if row.get("default")], ["ep-i"])
+        groups = {row["group"]: row for row in post["variants"]}
+        self.assertEqual(set(groups), {"penitential-act", "creed", "eucharistic-prayer"})
+        self.assertEqual(
+            [row["id"] for row in groups["eucharistic-prayer"]["options"]],
+            ["ep-i", "ep-ii", "ep-iii", "ep-iv"],
+        )
+        self.assertEqual(
+            [row["id"] for row in groups["eucharistic-prayer"]["options"] if row.get("default")],
+            ["ep-i"],
+        )
 
     def test_semantic_location_races_contents_and_details_have_owned_paths(self) -> None:
         candidate = text(JS)
@@ -100,6 +125,7 @@ class DayMissalIntegrationTests(unittest.TestCase):
             "function locationPrefix(branch, multiple)",
             "function resultStateForBranch(state, branch, multiple)",
             "const territorial = /^territory\\/[^/]+\\//.exec(eventId)",
+            "if (/^(?:proper|proper-choice)\\//.test(eventId)) return location",
             "runtime.branches.find(function (row) { return row.prefix === prefix; })",
             "id: (prefix || '') + event.id",
             "group.dataset.optionBranch === (held.focus.branch || '')",

@@ -34,6 +34,13 @@ if [ "$reversed_code" -ne 2 ]; then
 	echo "check with a reversed span should exit 2, got $reversed_code" >&2
 	exit 1
 fi
+reversed_coverage_code=0
+run_tool coverage --first 2028 --last 2024 \
+	>/dev/null 2>&1 || reversed_coverage_code=$?
+if [ "$reversed_coverage_code" -ne 2 ]; then
+	echo "coverage with a reversed span should exit 2, got $reversed_coverage_code" >&2
+	exit 1
+fi
 
 # Freshness is an exact, read-only three-way comparison. Exercise all three
 # file states on a generated fixture so the tracked projection may honestly be
@@ -258,6 +265,100 @@ assert payload["freshness"] == {
 }, payload["freshness"]
 PY
 
+# A recurring fixed date is validated against a leap year: 29 February is a
+# real date and is emitted only in leap years, while 30 February is invalid
+# source data and every verb refuses it instead of silently treating it like an
+# absent leap day.
+fixed_fixture="$sandbox/fixed-root/roman-1962"
+mkdir -p "$fixed_fixture"
+cp "$repo/src/sources/calendars/roman-1962/propers.yaml" "$fixed_fixture/propers.yaml"
+python3 - "$fixed_fixture/propers.yaml" <<'PY'
+import pathlib, sys
+
+path = pathlib.Path(sys.argv[1])
+source = path.read_text(encoding="utf-8")
+before = "    - key: comm-s-telesphori-papae-martyris\n      name: Comm. S. Telesphori Papae et Martyris\n      registry: '1962-01-05'\n      date: 01-05\n"
+after = before.replace("date: 01-05", "date: 02-29")
+assert source.count(before) == 1, source.count(before)
+path.write_text(source.replace(before, after, 1), encoding="utf-8")
+PY
+fixed_out="$sandbox/fixed-out"
+run_tool structure --root "$sandbox/fixed-root" --out "$fixed_out" \
+	--calendar roman-1962 --first 2023 --last 2024 >/dev/null
+run_tool check --root "$sandbox/fixed-root" --out "$fixed_out" \
+	--calendar roman-1962 --first 2023 --last 2024 >/dev/null
+python3 - "$fixed_out/structure/calendar/roman-1962" <<'PY'
+import json, pathlib, sys
+
+root = pathlib.Path(sys.argv[1])
+common = json.loads((root / "2023.json").read_text(encoding="utf-8"))
+leap = json.loads((root / "2024.json").read_text(encoding="utf-8"))
+key = "comm-s-telesphori-papae-martyris"
+assert "2023-02-29" not in common["days"], common["days"].get("2023-02-29")
+assert key in [row["key"] for row in leap["days"]["2024-02-29"]], leap["days"]["2024-02-29"]
+PY
+python3 - "$fixed_fixture/propers.yaml" <<'PY'
+import pathlib, sys
+
+path = pathlib.Path(sys.argv[1])
+source = path.read_text(encoding="utf-8")
+assert source.count("      date: 02-29\n") == 1
+path.write_text(source.replace("      date: 02-29\n", "      date: 02-30\n", 1), encoding="utf-8")
+PY
+for invocation in \
+	"structure --out $sandbox/impossible-out --first 2024 --last 2024" \
+	"check --out $fixed_out --first 2023 --last 2024" \
+	"coverage --first 2024 --last 2024" \
+	"day --date 2024-02-29"; do
+	impossible_code=0
+	# Deliberate word splitting supplies each argument from this fixed fixture.
+	# shellcheck disable=SC2086
+	run_tool $invocation --root "$sandbox/fixed-root" --calendar roman-1962 \
+		>/dev/null 2>"$sandbox/impossible.err" || impossible_code=$?
+	if [ "$impossible_code" -ne 2 ]; then
+		echo "$invocation accepted an impossible fixed date (exit $impossible_code)" >&2
+		exit 1
+	fi
+	if ! grep -q "comm-s-telesphori-papae-martyris carries an impossible date '02-30'" \
+		"$sandbox/impossible.err"; then
+		echo "$invocation did not identify its impossible fixed date" >&2
+		exit 1
+	fi
+done
+for malformed in false 2-29; do
+	malformed_root="$sandbox/malformed-$malformed/roman-1962"
+	mkdir -p "$malformed_root"
+	cp "$fixed_fixture/propers.yaml" "$malformed_root/propers.yaml"
+	python3 - "$malformed_root/propers.yaml" "$malformed" <<'PY'
+import pathlib, sys
+
+path, malformed = pathlib.Path(sys.argv[1]), sys.argv[2]
+source = path.read_text(encoding="utf-8")
+assert source.count("      date: 02-30\n") == 1
+path.write_text(
+    source.replace("      date: 02-30\n", f"      date: {malformed}\n", 1),
+    encoding="utf-8",
+)
+PY
+	malformed_code=0
+	run_tool check --root "${malformed_root%/roman-1962}" --calendar roman-1962 \
+		--out "$fixed_out" --first 2023 --last 2024 \
+		>/dev/null 2>"$sandbox/malformed.err" || malformed_code=$?
+	if [ "$malformed_code" -ne 2 ]; then
+		echo "check accepted malformed fixed date $malformed (exit $malformed_code)" >&2
+		exit 1
+	fi
+	if ! grep -q "comm-s-telesphori-papae-martyris carries an impossible date" \
+		"$sandbox/malformed.err"; then
+		echo "check did not identify malformed fixed date $malformed" >&2
+		exit 1
+	fi
+done
+if [ -e "$sandbox/impossible-out" ]; then
+	echo "a refused structure created output for an impossible fixed date" >&2
+	exit 1
+fi
+
 # A builder key missing without a typed recension departure remains a true
 # coverage gap.  Renaming the 1962 Chrism Mass in this isolated source keeps
 # the rule but removes its target, and must not acquire the real recension's
@@ -466,8 +567,10 @@ import json, pathlib, sys
 root = pathlib.Path(sys.argv[1])
 document = json.loads((root / "postconciliar" / "2022.json").read_text(encoding="utf-8"))
 year = [y for y in document["liturgical_years"] if y["year"] == 2023][0]
-refused = [row["what"] for row in year["unresolved"]]
+refused = {row["what"]: row for row in year["unresolved"]}
 assert "holy-family" in refused, year["unresolved"]
+thirtieth = refused["the weekday position of 30 December"]
+assert thirtieth["from"] == thirtieth["to"] == "2022-12-30", thirtieth
 assert "2022-12-25" in document["days"]
 assert all("holy-family" not in c["key"] for c in document["days"]["2022-12-25"])
 PY
@@ -652,9 +755,18 @@ for ending in range(tool.FIRST_YEAR, tool.LAST_YEAR + 1):
     lost.setdefault(built.facts["ordinary_time_weeks"], set()).add(204 - len(reached))
     week_keyed[advent_weeks] = week_keyed.get(advent_weeks, 0) + 1
     date_keyed[advent_dates] = date_keyed.get(advent_dates, 0) + 1
-    if "the weekday position of 30 December" in [row["what"] for row in built.unresolved]:
+    thirtieth = [
+        row for row in built.unresolved
+        if row["what"] == "the weekday position of 30 December"
+    ]
+    if thirtieth:
         closed += 1
+        when = date(ending - 1, 12, 30)
         assert date(ending - 1, 12, 25).weekday() == 6, ending
+        assert len(thirtieth) == 1, (ending, thirtieth)
+        assert thirtieth[0]["from"] == thirtieth[0]["to"] == when.isoformat(), (
+            ending, thirtieth[0]
+        )
 assert lost == {33: {10}, 34: {4}}, lost
 assert closed == 15, closed
 # The two Advent runs against the counts the guidance states from the computus:
@@ -680,38 +792,72 @@ for want in '"easter-sunday"' 'finding aid'; do
 	fi
 done
 
-# A refusal concerning particular dates belongs to those dates, not every day
-# of their liturgical year. The Holy Name occupies Sunday 3 January in 2027,
-# leaving the following ferias without the preceding Sunday's formulary in the
-# index. Keep that honest no-Mass result, but do not repeat it on Easter or any
-# other unrelated date. The recension inherits the same temporal computation.
-for calendar in roman-1962 roman-pre-1955; do
-	for stamp in 2027-01-04 2027-01-05 2027-03-28; do
-		run_tool day --date "$stamp" --calendar "$calendar" --format json \
-			>"$sandbox/$calendar-$stamp.json"
-	done
+# The 1962 Missal provides otherwise for every feria from 2 to 5 January: the
+# Mass is that of 1 January, irrespective of which day the Holy Name occupies
+# or whether the Christmas octave contained a Sunday. Exercise both patterns
+# and the ordinary case in which the Holy Name occupies 4 January. The
+# structural pre-1955 projection must not inherit that edition-specific rubric.
+for stamp in 2023-01-03 2023-01-04 2026-01-02 2026-01-03 2026-01-04 2026-01-05 2027-01-02 2027-01-03 2027-01-04 2027-01-05; do
+	run_tool day --date "$stamp" --calendar roman-1962 --format json \
+		>"$sandbox/roman-1962-$stamp.json"
 done
+for stamp in 2027-01-04 2027-01-05 2027-03-28; do
+	run_tool day --date "$stamp" --calendar roman-pre-1955 --format json \
+		>"$sandbox/roman-pre-1955-$stamp.json"
+done
+run_tool coverage --calendar roman-1962 --format json >"$sandbox/roman-1962-coverage.json"
+run_tool coverage --calendar roman-pre-1955 --format json >"$sandbox/roman-pre-1955-coverage.json"
 python3 - "$sandbox" <<'PY'
 import json, pathlib, sys
 
 root = pathlib.Path(sys.argv[1])
-for calendar in ("roman-1962", "roman-pre-1955"):
-    rows = {
-        stamp: json.loads((root / f"{calendar}-{stamp}.json").read_text(encoding="utf-8"))["days"][0]
-        for stamp in ("2027-01-04", "2027-01-05", "2027-03-28")
-    }
-    for stamp in ("2027-01-04", "2027-01-05"):
-        refusal, = rows[stamp]["unresolved"]
-        assert refusal["from"] == "2027-01-04", refusal
-        assert refusal["to"] == "2027-01-05", refusal
-        assert "Most Holy Name of Jesus" in refusal["why"], refusal
-        assert rows[stamp]["ferial_formulary"] == [], rows[stamp]
-    assert rows["2027-01-04"]["candidates"] == [], rows["2027-01-04"]
-    assert [entry["key"] for entry in rows["2027-01-05"]["candidates"]] == [
-        "comm-s-telesphori-papae-martyris"
-    ], rows["2027-01-05"]
-    assert rows["2027-01-05"]["appointed"] is None, rows["2027-01-05"]
-    assert rows["2027-03-28"]["unresolved"] == [], rows["2027-03-28"]
+roman_stamps = (
+    "2023-01-03", "2023-01-04",
+    "2026-01-02", "2026-01-03", "2026-01-04", "2026-01-05",
+    "2027-01-02", "2027-01-03", "2027-01-04", "2027-01-05",
+)
+roman = {
+    stamp: json.loads((root / f"roman-1962-{stamp}.json").read_text(encoding="utf-8"))["days"][0]
+    for stamp in roman_stamps
+}
+for stamp in (
+    "2023-01-03", "2023-01-04",
+    "2026-01-02", "2026-01-03", "2026-01-05",
+    "2027-01-02", "2027-01-04", "2027-01-05",
+):
+    assert [entry["key"] for entry in roman[stamp]["ferial_formulary"]] == [
+        "octava-nativitatis-domini"
+    ], (stamp, roman[stamp])
+    assert all(
+        "the ferial Mass" not in refusal["what"]
+        for refusal in roman[stamp]["unresolved"]
+    ), (stamp, roman[stamp]["unresolved"])
+for stamp in ("2026-01-04", "2027-01-03"):
+    assert [entry["key"] for entry in roman[stamp]["candidates"]] == [
+        "most-holy-name-of-jesus"
+    ], (stamp, roman[stamp])
+    assert roman[stamp]["ferial_formulary"] == [], (stamp, roman[stamp])
+
+older = {
+    stamp: json.loads((root / f"roman-pre-1955-{stamp}.json").read_text(encoding="utf-8"))["days"][0]
+    for stamp in ("2027-01-04", "2027-01-05", "2027-03-28")
+}
+for stamp in ("2027-01-04", "2027-01-05"):
+    refusal, = older[stamp]["unresolved"]
+    assert refusal["from"] == "2027-01-04", refusal
+    assert refusal["to"] == "2027-01-05", refusal
+    assert older[stamp]["ferial_formulary"] == [], older[stamp]
+assert older["2027-01-04"]["candidates"] == [], older["2027-01-04"]
+assert [entry["key"] for entry in older["2027-01-05"]["candidates"]] == [
+    "comm-s-telesphori-papae-martyris"
+], older["2027-01-05"]
+assert older["2027-01-05"]["appointed"] is None, older["2027-01-05"]
+assert older["2027-03-28"]["unresolved"] == [], older["2027-03-28"]
+
+coverage_1962 = json.loads((root / "roman-1962-coverage.json").read_text(encoding="utf-8"))["coverage"][0]
+coverage_older = json.loads((root / "roman-pre-1955-coverage.json").read_text(encoding="utf-8"))["coverage"][0]
+assert coverage_1962["dates_reaching_no_mass_at_all"] == 1, coverage_1962
+assert coverage_older["dates_reaching_no_mass_at_all"] == 76, coverage_older
 PY
 
 # The twenty-three-Sunday shortfall belongs only to the Sunday where the

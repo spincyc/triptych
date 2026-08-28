@@ -2,7 +2,7 @@
 
 ## Inventory contract
 
-The reader-facing tables in `sections/40-temporale.tex`, `sections/50-general-calendar.tex`, and `sections/60-us-calendar.tex` are the canonical row-level inventory. This record audits their completeness, source ownership, counts, amendment overlays, and collision-sensitive rows. A fixed date can contain more than one distinct optional memorial. Alternatives normally share a row separated by semicolons; where the calendar mass index holds separate stable Mass keys, the source instead repeats the date in singular rows. Those rows remain coequal. The first keeps the date registry and each later row carries a unique, zero-width `\caldiscriminator{lowercase-kebab}` source identity; the discriminator states neither rank nor precedence.
+The reader-facing tables in `sections/40-temporale.tex`, `sections/50-general-calendar.tex`, and `sections/60-us-calendar.tex` are the canonical row-level inventory. This record audits their completeness, source ownership, counts, amendment overlays, and collision-sensitive rows. A fixed date can contain more than one distinct optional memorial. Every celebration occupies its own singular row; dates therefore repeat where the calendar names coequal choices. The first keeps the date registry and each later row carries a unique, zero-width `\caldiscriminator{lowercase-kebab}` source identity; the discriminator states neither rank nor precedence.
 
 ## A. Proper of Time ledger
 
@@ -55,7 +55,7 @@ There are 40 substantive recurring rows in the temporal table. They account for 
 
 ## B. Fixed General Calendar reconciliation
 
-The publication has **202 distinct fixed dates**, represented by **203 table entries** because the two separately keyed optional memorials on 7 August occupy singular same-date entries. Nineteen semicolon separators distinguish the other additional alternatives on shared dates. Together the repeated entry and the semicolon alternatives produce **222 celebration choices/groups** when each named group is counted once: 10 solemnities, 24 feasts, 67 obligatory memorials, 120 optional memorials, and the commemoration of All Souls. Saints named as companions within one approved celebration remain one celebration, not multiple rows.
+The publication has **202 distinct fixed dates**, represented by **222 singular table rows**. Thirty-eight rows occupy the **18 dates that repeat** because the calendar names two or three coequal celebrations on those dates; there are **no semicolon-separated universal alternatives**. The 222 rows comprise 10 solemnities, 24 feasts, 67 obligatory memorials, 120 optional memorials, and the commemoration of All Souls. Saints named as companions within one approved celebration remain one celebration, not multiple rows.
 
 | Month | Distinct-date count | Dates accounted for |
 | --- | ---: | --- |

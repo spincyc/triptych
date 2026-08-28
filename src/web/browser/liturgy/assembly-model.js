@@ -103,15 +103,29 @@
     return held[held.length - 1] || null;
   }
 
+  /** Does a year-computation refusal actually reach this civil date? */
+  function refusalHolds(row, isoDate) {
+    if (!row) return false;
+    // A single-date refusal is the natural shape for a computation that stops
+    // on one civil day. Keep the inclusive window accepted by older generated
+    // files as well; neither shape is allowed to become a year-wide refusal.
+    if (typeof row.when === 'string') return row.when === isoDate;
+    if (row.when && typeof row.when === 'object') {
+      if (row.when.date) return row.when.date === isoDate;
+      if (row.when.from || row.when.to) {
+        return (!row.when.from || row.when.from <= isoDate) &&
+          (!row.when.to || isoDate <= row.when.to);
+      }
+    }
+    if (row.from || row.to) {
+      return (!row.from || row.from <= isoDate) && (!row.to || isoDate <= row.to);
+    }
+    return true;
+  }
+
   /** Year-computation refusals that actually reach this civil date. */
   function unresolvedOn(owner, isoDate) {
-    return ((owner && owner.unresolved) || []).filter(function (row) {
-      // Older year files carry only year-wide refusals. A refusal becomes
-      // date-scoped only when it names the complete inclusive window emitted
-      // by calendar-days; missing scope fields retain the legacy behavior.
-      if (!row || !row.from || !row.to) return true;
-      return row.from <= isoDate && isoDate <= row.to;
-    });
+    return ((owner && owner.unresolved) || []).filter((row) => refusalHolds(row, isoDate));
   }
 
   /** Date-scoped computation refusals that can authoritatively block a day. */
@@ -119,9 +133,9 @@
     return unresolvedOn(owner, isoDate).filter(function (row) {
       // Legacy unscoped rows include year-level coverage notices. They remain
       // visible in the liturgical-year apparatus, but cannot prove that one
-      // particular civil date is unresolved. New blocking refusals name their
-      // complete inclusive date window.
-      return Boolean(row && row.from && row.to);
+      // particular civil date is unresolved. A blocking refusal must carry an
+      // explicit single date or an inclusive window.
+      return Boolean(row && (row.when || row.from || row.to));
     });
   }
 
@@ -416,7 +430,68 @@
    * an Ordo result nobody here has checked. So the page states that rule and
    * computes these two.
    */
-  function arrivals(rubrics, owner, isoDate) {
+  function transferRuleAppliesTo(rule, candidate) {
+    const applies = rule && rule.applies_to;
+    if (!applies) return false;
+    if (Array.isArray(applies)) {
+      return applies.indexOf(candidate.basis.id) >= 0 ||
+        applies.indexOf(candidate.basis.nature) >= 0;
+    }
+    return String(applies).indexOf('solemnit') >= 0
+      ? candidate.basis.nature === 'solemnity'
+      : String(applies) === candidate.basis.id || String(applies) === candidate.basis.nature;
+  }
+
+  function sundayTransferRuleHolds(rule, owner, isoDate, winner) {
+    if (!rule || rule.computed_here !== true || rule.seat_offset_days == null) return false;
+    if (rule.when_weekday &&
+        valuesOf(rule.when_weekday).indexOf(weekdayOf(isoDate)) < 0) return false;
+    if (rule.when_seasons &&
+        valuesOf(rule.when_seasons).indexOf(seasonOf(owner, isoDate)) < 0) return false;
+    if (winner && (rule.except_winner_keys || []).indexOf(winner.key) >= 0) return false;
+    return true;
+  }
+
+  /** Source-derived arrivals under a rule whose destination is a fixed offset. */
+  function sundayRuleArrivals(year, rubrics, isoDate) {
+    const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
+    const rule = transfer.sunday_rule || null;
+    if (!rule || rule.seat_offset_days == null) return [];
+    const sourceDate = shift(isoDate, -rule.seat_offset_days);
+    const sourceOwner = liturgicalYearFor(year, sourceDate);
+    if (!sundayTransferRuleHolds(rule, sourceOwner, sourceDate, null)) return [];
+    if (blockingRefusalsOn(sourceOwner, sourceDate).length) return [];
+
+    const held = indexCandidates(year, rubrics, sourceDate).candidates;
+    const season = seasonOf(sourceOwner, sourceDate);
+    const implied = impliedCandidate(rubrics, sourceOwner, sourceDate, season, held);
+    const candidates = (implied ? [implied] : []).concat(held)
+      .map((one) => Object.assign({}, one));
+    if (sourceUnsettledOn(rubrics, candidates).length) return [];
+    const gaps = [];
+    const ranked = rank(rubrics, candidates, gaps);
+    if (gaps.length || !ranked.winner || ranked.choice ||
+        !sundayTransferRuleHolds(rule, sourceOwner, sourceDate, ranked.winner)) return [];
+
+    return (ranked.contest || []).filter(function (candidate) {
+      return candidate !== ranked.winner && transferRuleAppliesTo(rule, candidate);
+    }).map(function (candidate) {
+      return Object.assign({}, candidate, {
+        source: 'arrived',
+        arrivedFrom: sourceDate,
+        seat: {
+          locus: rule.locus || transfer.locus || null,
+          destination: rule.destination || rule.what || null,
+          latin: rule.latin || null
+        },
+        rule: null,
+        territorial: candidate.territorial || null,
+        certain: true
+      });
+    });
+  }
+
+  function arrivals(year, rubrics, owner, isoDate) {
     const transfer = (rubrics.impediment && rubrics.impediment.transfer) || {};
     const found = [];
     const civilYear = isoDate.slice(0, 4);
@@ -455,6 +530,9 @@
         certain: true
       });
     }
+    for (const candidate of sundayRuleArrivals(year, rubrics, isoDate)) {
+      if (!found.some((one) => one.key === candidate.key)) found.push(candidate);
+    }
     return found;
   }
 
@@ -477,6 +555,91 @@
       if (match.on && match.on !== md) return false;
       return true;
     });
+  }
+
+  /* ------------------------------------------------------------------------
+   * Source-declared limits of the occurrence model
+   * --------------------------------------------------------------------- */
+
+  function valuesOf(value) {
+    return Array.isArray(value) ? value : [value];
+  }
+
+  /** The public part of an unsettled source row; `when` is model apparatus. */
+  function publicUnsettled(entry) {
+    const out = { what: entry.what, why: entry.why };
+    if (entry.locus) out.locus = entry.locus;
+    if (entry.scope) out.scope = entry.scope;
+    return out;
+  }
+
+  /**
+   * Match one structured, conjunctive `unsettled[].when` against this branch.
+   *
+   * The `candidate_` predicates identify one subject candidate. The two `with_`
+   * predicates identify one distinct competitor, so a condition cannot be made
+   * true by combining the basis of one candidate with the row of another. An
+   * unknown selector is a source/model contract error, never permission to
+   * continue to a confident result.
+   */
+  function unsettledConditionHolds(when, candidates, winner) {
+    const allowed = [
+      'candidate_key', 'candidate_key_matches', 'candidate_basis',
+      'candidate_origin', 'candidate_wins', 'with_basis',
+      'with_precedence_place'
+    ];
+    const fields = Object.keys(when || {});
+    const unknown = fields.filter((field) => allowed.indexOf(field) < 0);
+    if (unknown.length) {
+      throw new Error('unsupported unsettled condition field(s): ' + unknown.join(', '));
+    }
+    if (!fields.length) throw new Error('an unsettled condition must not be empty');
+    if (Object.prototype.hasOwnProperty.call(when, 'candidate_wins') &&
+        when.candidate_wins !== true) {
+      throw new Error('candidate_wins currently supports only the value true');
+    }
+
+    const pattern = when.candidate_key_matches
+      ? new RegExp(when.candidate_key_matches) : null;
+    const subjects = candidates.filter(function (candidate) {
+      if (when.candidate_key && candidate.key !== when.candidate_key) return false;
+      if (pattern && (!candidate.key || !pattern.test(candidate.key))) return false;
+      if (when.candidate_basis &&
+          valuesOf(when.candidate_basis).indexOf(candidate.basis.id) < 0) return false;
+      if (when.candidate_origin &&
+          (!candidate.rule || candidate.rule.origin !== when.candidate_origin)) return false;
+      if (when.candidate_wins && candidate !== winner) return false;
+      return true;
+    });
+    if (!subjects.length) return false;
+
+    const hasCompanionPredicate = when.with_basis || when.with_precedence_place;
+    if (!hasCompanionPredicate) return true;
+    return subjects.some(function (subject) {
+      return candidates.some(function (other) {
+        if (other === subject) return false;
+        if (when.with_basis &&
+            valuesOf(when.with_basis).indexOf(other.basis.id) < 0) return false;
+        if (when.with_precedence_place) {
+          const range = when.with_precedence_place;
+          if (other.row == null) return false;
+          if (range.min != null && other.row < range.min) return false;
+          if (range.max != null && other.row > range.max) return false;
+        }
+        return true;
+      });
+    });
+  }
+
+  function sourceUnsettledOn(rubrics, candidates, winner, winnerScoped) {
+    return (rubrics.unsettled || [])
+      .filter(function (entry) {
+        if (!entry.when || Boolean(entry.when.candidate_wins) !== Boolean(winnerScoped)) {
+          return false;
+        }
+        return unsettledConditionHolds(entry.when, candidates, winner);
+      })
+      .map(publicUnsettled);
   }
 
   /* ------------------------------------------------------------------------
@@ -694,6 +857,22 @@
           latin: seat.latin || null
         };
       }
+    }
+
+    // NUALC 5 is different from the general "nearest free day" rule: its own
+    // source fixes the following Monday by an exact offset. Once the source
+    // declares the weekday, seasons, exceptions and eligible class, both ends
+    // of that movement can be derived without guessing at an Ordo.
+    const sundayRule = transfer.sunday_rule || null;
+    if (winner && sundayTransferRuleHolds(sundayRule, owner, isoDate, winner) &&
+        transferRuleAppliesTo(sundayRule, loser)) {
+      return {
+        disposition: 'transferred',
+        locus: sundayRule.locus || transfer.locus || null,
+        why: sundayRule.what || 'transferred to the following day',
+        destination: shift(isoDate, sundayRule.seat_offset_days),
+        latin: sundayRule.latin || null
+      };
     }
 
     const eligible = (transfer.applies_to || '').indexOf('solemnit') >= 0
@@ -1182,9 +1361,28 @@
     // with another branch. Occurrence-only reductions must not leak from one
     // branch to another, so ranking works on branch-local shallow copies.
     const effectiveCandidates = candidates.map((one) => Object.assign({}, one));
-    const ranked = unsettled.length
+    // Conditional limits live in the rubrics source beside the proposition the
+    // repository has not established. They are evaluated before ranking: a
+    // known limitation cannot be replaced by whichever row comparison the
+    // incomplete model happens to make.
+    if (!unsettled.length) {
+      unsettled.push.apply(unsettled, sourceUnsettledOn(rubrics, effectiveCandidates));
+    }
+    let ranked = unsettled.length
       ? { winner: null, contest: [], defeated: [], aside: [] }
       : rank(rubrics, effectiveCandidates, unsettled);
+    if (!unsettled.length && ranked.winner) {
+      const winnerScoped = sourceUnsettledOn(
+        rubrics, effectiveCandidates, ranked.winner, true
+      );
+      if (winnerScoped.length) {
+        unsettled.push.apply(unsettled, winnerScoped);
+        // The provisional rank existed only to test the source condition. Once
+        // that condition holds, none of its winner/disposition/oration claims
+        // is public: the source has said this branch cannot be completed.
+        ranked = { winner: null, contest: [], defeated: [], aside: [] };
+      }
+    }
     (ranked.choice || []).forEach(function (one, index) {
       one.dayChoice = true;
       one.dayChoiceOrder = index;
@@ -1420,7 +1618,7 @@
     const blockingRefusals = blockingRefusalsOn(owner, isoDate);
     const season = seasonOf(owner, isoDate);
     const held = indexCandidates(year, rubrics, isoDate);
-    const arrived = arrivals(rubrics, owner, isoDate);
+    const arrived = arrivals(year, rubrics, owner, isoDate);
     const inscribed = held.candidates.concat(arrived);
     // Decided against the inscribed candidates alone. The implied day this
     // borrowing exists to serve must not be what suppresses it.

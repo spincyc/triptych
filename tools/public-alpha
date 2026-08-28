@@ -15,6 +15,7 @@ import shutil
 import struct
 import sys
 import tomllib
+import unicodedata
 from collections import Counter, defaultdict
 from collections.abc import Iterable
 from datetime import date, datetime, timedelta, timezone
@@ -62,7 +63,7 @@ EXAMPLES = {
                 "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 13233 more lines",
+                "... 82709 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
@@ -132,6 +133,10 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
 WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
+POSTCONCILIAR_TRANSLATIONS_RELATIVE = PurePosixPath(
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+)
+POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 172
 # Rights recorded as `permission` are not automatically grants for every
 # public surface.  ICEL's standing web-display permission, in particular, does
 # not cover the downloadable JSON, public Git corpus, CLI or PDFs assembled by
@@ -142,8 +147,9 @@ BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
 # public inputs too, but their typed source-study metadata is governed by the
 # source projection rather than by the liturgy quarantine below.  Only the two
 # non-licensed rights states below are authorized in generated public liturgy
-# structures.
-BOUND_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics", "sources")
+# structures. Every copied JSON byte is bound below, including newly added
+# structure families and the offered Bible fragments; a hand-maintained family
+# allowlist made served browser data invisible to the authorization record.
 LITURGICAL_RIGHTS_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics")
 PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(("public-domain", "project-created"))
 ICEL_SOURCE_MARKERS = (
@@ -167,14 +173,15 @@ RESTRICTED_PROJECTION_FIELDS = frozenset(("target", "lang", "state"))
 RESTRICTED_TARGET_FIELDS = frozenset(
     ("mass", "form_id", "proper", "cycle", "occurrence", "extent")
 )
-SOURCE_STUDY_DISTRIBUTABLE_RIGHTS = frozenset(
-    ("licensed", "project-created", "public-domain")
-)
 ORDINARY_ABSENCE_FIELDS = frozenset(("key", "count", "state", "kind"))
+ORDINARY_LANGUAGE_ABSENCE_FIELDS = frozenset(
+    ("key", "lang", "count", "state", "kind")
+)
 ORDINARY_ABSENCE_KINDS = frozenset(
     (
         "witness-gap",
         "rights-withheld",
+        "rights-unresolved",
         "no-exemplar",
         "model-gap",
         "outside-layer",
@@ -186,7 +193,13 @@ NON_NEUTRAL_ABSENCE_KEY_PARTS = (
     "artifact", "copyright", "ellc", "icel", "permission", "source"
 )
 ORDINARY_ABSENCE_LOCATION_RE = re.compile(r"^\$\.absences\[[0-9]+\]$")
+ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
+    r"^\$\.language_absences\[[0-9]+\]$"
+)
 _PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
+_POSTCONCILIAR_QUARANTINE_HASHES: dict[
+    tuple[str, int, int], frozenset[str]
+] = {}
 # Tracks of the abridged plans: one tier of one plan in one edition, typeset
 # from the tracked plan and the tracked verse text and installed as a reviewed
 # PDF. A track is not a publication record and deliberately has none: it has no
@@ -256,13 +269,17 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/assets/social-card.png",
     "release/public-alpha/assets/icon.png",
     "requirements-public-alpha.txt",
+    POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
     "tools/public-alpha",
 }
-# The one origin the published site is reached at. A link preview needs an
+# The one origin the published site is reached at. Keep this as an origin
+# serialization (no trailing slash); public_site_url adds the path separator.
+# In-artifact navigation stays relative so the same Pages artifact remains
+# portable under a project-path preview. A link preview, by contrast, needs an
 # absolute URL: the Open Graph protocol's URL type admits only http:// and
 # https:// forms (https://ogp.me/), and Apple's own worked example in TN3156
-# uses one, so nothing here may be left for a fetcher to resolve relatively.
-SITE_ORIGIN = "https://spincyc.github.io/triptych"
+# uses one, so nothing there may be left for a fetcher to resolve relatively.
+SITE_ORIGIN = "https://mystago.gy"
 # Apple's TN3156 is explicit that the site name belongs in og:site_name and not
 # in og:title, so the preview reads as a page rather than as the site repeated.
 # `document_title` already appends this for the browser tab; the social title is
@@ -716,14 +733,17 @@ def is_unserved_browser_page(relative: str) -> bool:
 
 
 def protected_source_identity_pattern() -> re.Pattern[str] | None:
-    """Compile the source library's non-distributable artifact identities.
+    """Compile identities ineligible for every public-alpha liturgy surface.
 
     The manifest library, not a provider-name heuristic, decides which source
-    identities are private.  An edition id is protected only when every one of
-    its artifacts lacks even a source-study redistribution basis; one
-    unresolved capture must not poison a sibling normalized artifact that has
-    an actual licence.  Cache per ``ROOT`` because tests repoint the module at
-    fixtures and a release process validates many structure files.
+    identities are protected. Source-study redistribution is deliberately not
+    enough: generic ``licensed`` material may be readable in the Sources
+    browser while remaining unauthorized for the downloadable liturgy JSON,
+    CLI and PDF surfaces assembled here. An edition id is protected only when
+    every one of its artifacts lacks public-liturgy rights; one restricted
+    capture must not poison a sibling public-domain artifact. Exact restricted
+    artifact ids are always protected. Cache per ``ROOT`` because tests repoint
+    the module at fixtures and a release process validates many structure files.
     """
     cache_key = str(ROOT.resolve())
     if cache_key in _PROTECTED_IDENTITY_PATTERNS:
@@ -750,7 +770,7 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
     protected = {
         record["id"]
         for record in records
-        if record.get("rights_status") not in SOURCE_STUDY_DISTRIBUTABLE_RIGHTS
+        if record.get("rights_status") not in PUBLIC_LITURGICAL_TEXT_RIGHTS
     }
     by_edition: dict[str, list[dict]] = defaultdict(list)
     for record in records:
@@ -760,7 +780,7 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         for edition_id, artifacts in by_edition.items()
         if artifacts
         and all(
-            artifact.get("rights_status") not in SOURCE_STUDY_DISTRIBUTABLE_RIGHTS
+            artifact.get("rights_status") not in PUBLIC_LITURGICAL_TEXT_RIGHTS
             for artifact in artifacts
         )
     )
@@ -779,8 +799,56 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
     return pattern
 
 
+def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+    """Load the ledger's exact English body hashes; never retain the bodies."""
+    inventory = ROOT / POSTCONCILIAR_TRANSLATIONS_RELATIVE
+    label = POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix()
+    try:
+        stat = inventory.stat()
+        cache_key = (str(inventory.resolve()), stat.st_mtime_ns, stat.st_size)
+        if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
+            return _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+        document = tomllib.loads(inventory.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+        raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
+    rows = document.get("untranslated")
+    if not isinstance(rows, list):
+        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
+    values: list[str] = []
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
+        raw = row.get("quarantined_text_sha256")
+        if raw is None:
+            continue
+        if row.get("lang") != "en" or row.get("extent") != "body":
+            raise ReleaseError(
+                f"postconciliar quarantine row {index} hashes a non-English body"
+            )
+        if (
+            not isinstance(raw, list)
+            or not raw
+            or any(
+                not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
+                for digest in raw
+            )
+        ):
+            raise ReleaseError(
+                f"postconciliar quarantine row {index} has malformed exact hashes"
+            )
+        values.extend(raw)
+    if len(values) < POSTCONCILIAR_QUARANTINE_BASELINE_ROWS:
+        raise ReleaseError(
+            "postconciliar English quarantine lost baseline hashes: expected at least "
+            f"{POSTCONCILIAR_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
+        )
+    hashes = frozenset(values)
+    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = hashes
+    return hashes
+
+
 def validate_liturgical_public_data(path: Path) -> None:
-    """Refuse restricted witnesses in generated public liturgy JSON.
+    """Refuse quarantined wording and restricted witnesses in public JSON.
 
     Generators own the positive inclusion rules.  This release gate is the
     independent negative rule: even a stale or hand-edited structure file may
@@ -791,19 +859,53 @@ def validate_liturgical_public_data(path: Path) -> None:
         relative = path.relative_to(data_root)
     except ValueError:
         return
-    parts = relative.parts
-    if (
-        len(parts) < 3
-        or parts[0] != "structure"
-        or parts[1] not in LITURGICAL_RIGHTS_STRUCTURE_KINDS
-        or path.suffix != ".json"
-    ):
+    if path.suffix != ".json":
         return
+    parts = relative.parts
     label = (WEB_DATA_ROOT_RELATIVE / relative).as_posix()
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
+    quarantined_text_hashes = postconciliar_quarantined_text_hashes()
+
+    def visit_quarantined(value: object, location: str = "$") -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value):
+                visit_quarantined(item, f"{location}[{index}]")
+            return
+        if isinstance(value, dict):
+            for key, item in value.items():
+                visit_quarantined(item, f"{location}.{key}")
+            return
+        if not isinstance(value, str):
+            return
+        candidates = {
+            value,
+            unicodedata.normalize("NFC", " ".join(value.split())),
+        }
+        matched_hash = next(
+            (
+                digest
+                for candidate in candidates
+                if (digest := hashlib.sha256(candidate.encode("utf-8")).hexdigest())
+                in quarantined_text_hashes
+            ),
+            None,
+        )
+        if matched_hash is not None:
+            raise ReleaseError(
+                f"{label} {location}: quarantined English body sha256 "
+                f"{matched_hash} reached public-alpha data"
+            )
+
+    visit_quarantined(payload)
+    if (
+        len(parts) < 3
+        or parts[0] != "structure"
+        or parts[1] not in LITURGICAL_RIGHTS_STRUCTURE_KINDS
+    ):
+        return
     protected_identity = protected_source_identity_pattern()
 
     def visit(value: object, location: str = "$") -> None:
@@ -826,15 +928,33 @@ def validate_liturgical_public_data(path: Path) -> None:
             return
         if not isinstance(value, dict):
             return
-        if (
+        ordinary_absence = (
             parts[1] == "ordinary"
             and ORDINARY_ABSENCE_LOCATION_RE.fullmatch(location)
-        ):
+        )
+        ordinary_language_absence = (
+            parts[1] == "ordinary"
+            and ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE.fullmatch(location)
+        )
+        if ordinary_absence or ordinary_language_absence:
             fields = set(value)
-            if fields != ORDINARY_ABSENCE_FIELDS:
+            expected_fields = (
+                ORDINARY_LANGUAGE_ABSENCE_FIELDS
+                if ordinary_language_absence
+                else ORDINARY_ABSENCE_FIELDS
+            )
+            row_label = (
+                "language absence" if ordinary_language_absence else "absence catalog"
+            )
+            expected_field_label = (
+                "key, lang, count, state and kind"
+                if ordinary_language_absence
+                else "key, count, state and kind"
+            )
+            if fields != expected_fields:
                 raise ReleaseError(
-                    f"{label} {location}: public Ordinary absence catalog row must "
-                    "contain exactly key, count, state and kind"
+                    f"{label} {location}: public Ordinary {row_label} row must "
+                    f"contain exactly {expected_field_label}"
                 )
             key = value.get("key")
             count = value.get("count")
@@ -860,9 +980,17 @@ def validate_liturgical_public_data(path: Path) -> None:
                     f"{label} {location}: public Ordinary absence kind {kind!r} is "
                     "outside the safe taxonomy"
                 )
-            expected_state = (
-                "rights-restricted" if kind == "rights-withheld" else "unavailable"
-            )
+            if ordinary_language_absence:
+                lang = value.get("lang")
+                if not isinstance(lang, str) or not SAFE_TYPED_KEY_RE.fullmatch(lang):
+                    raise ReleaseError(
+                        f"{label} {location}: public Ordinary language absence "
+                        "must name a safe language key"
+                    )
+            expected_state = {
+                "rights-withheld": "rights-restricted",
+                "rights-unresolved": "unresolved",
+            }.get(kind, "unavailable")
             if state != expected_state:
                 raise ReleaseError(
                     f"{label} {location}: public Ordinary absence kind {kind!r} "
@@ -969,26 +1097,16 @@ def validate_liturgical_public_data(path: Path) -> None:
 def is_bound_web_data_source(path: Path) -> bool:
     """Whether this generated-data input belongs to the approval closure.
 
-    Browser structure JSON is authoritative served content, not a disposable
-    cache: changing a day, proper, rubric, Ordinary element or source graph
-    changes what the public artifact says. Bind those exact generated bytes.
-    Bible fragments remain outside this set because their 9,387-file closure is
-    independently driven and verified from the one bound ``bibles.json``
-    decision.
+    Every JSON file copied from ``src/web/data`` is authoritative served
+    content, not a disposable cache. New structure families are therefore
+    included without another allowlist update. Offered Bible fragments live
+    under ``src/sources/bibles`` and join the closure from ``web_data_files``.
     """
     try:
         relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
     except ValueError:
         return False
-    if relative == Path("bibles.json"):
-        return True
-    parts = relative.parts
-    return (
-        len(parts) >= 3
-        and parts[0] == "structure"
-        and parts[1] in BOUND_STRUCTURE_KINDS
-        and path.suffix == ".json"
-    )
+    return path.suffix == ".json"
 
 
 def web_data_files() -> dict[str, Path]:
@@ -1111,14 +1229,10 @@ def site_source_paths() -> set[str]:
     artifact serves, so binding only its generator would not catch a stale or
     hand-edited result.
 
-    The 9,387 verse fragments are deliberately not bound. Binding them would add
-    a hash line per fragment and move the authorization on every regeneration,
-    which makes an approval record nobody can read — and the manifest above is
-    the decision, while the fragments are its consequence. Three checks already
-    stand between an unpublishable edition and the site: the copy is driven from
-    the manifest and never from a directory listing, `verify_web_data` refuses
-    the build if an unoffered edition id reaches the data root, and the artifact
-    file-set check refuses anything unexpected.
+    Every copied JSON byte is bound, including offered Bible fragments. The
+    manifest remains the inclusion decision and prevents an unoffered edition
+    from being copied, while the exact per-file hashes prevent a fragment or a
+    newly introduced structure family from changing after authorization.
     """
     browser = {
         path.relative_to(ROOT).as_posix()
@@ -1127,14 +1241,10 @@ def site_source_paths() -> set[str]:
     browser.update(
         path.relative_to(ROOT).as_posix()
         for path in web_data_files().values()
-        if path.is_relative_to(ROOT / WEB_BROWSER_ROOT_RELATIVE)
-        or is_bound_web_data_source(path)
     )
-    # The tracks are bound, where the fragments are not, because nothing else
-    # decides them: a fragment is a consequence of bibles.json, while a track is
-    # a whole published volume of scripture whose only gate is the file being
-    # here. Six hash lines, and a plan or a text that changes moves the
-    # authorization, which is what a change to published content should do.
+    # Reading-plan PDFs remain independently bound as published volumes. Their
+    # exact derived bytes are served outside the browser data copy, so they join
+    # the same authorization closure explicitly here.
     return (
         set(SITE_SOURCE_PATHS)
         | set(document_pages())
@@ -2545,6 +2655,16 @@ def shorten_description(text: str) -> str:
     return text[:DESCRIPTION_CEILING].rsplit(" ", 1)[0].rstrip(" ,;:—-") + "…"
 
 
+def public_site_url(relative: str) -> str:
+    """Return one canonical public URL without changing artifact link behavior."""
+    path = PurePosixPath(relative)
+    if not relative or path.is_absolute() or ".." in path.parts:
+        raise ReleaseError(
+            f"public site URL requires a contained relative path: {relative!r}"
+        )
+    return f"{SITE_ORIGIN}/{path.as_posix()}"
+
+
 def social_meta(output_relative: str, title: str, description: str) -> str:
     """The link-preview metadata, absolute, for one page.
 
@@ -2558,8 +2678,8 @@ def social_meta(output_relative: str, title: str, description: str) -> str:
     """
     card = TEMPLATE_ROOT / SOCIAL_CARD_RELATIVE
     width, height = png_dimensions(card)
-    page_url = f"{SITE_ORIGIN}/{output_relative}"
-    card_url = f"{SITE_ORIGIN}/{SOCIAL_CARD_RELATIVE}"
+    page_url = public_site_url(output_relative)
+    card_url = public_site_url(SOCIAL_CARD_RELATIVE)
     properties = [
         ("og:type", "website"),
         ("og:site_name", SITE_NAME),
@@ -3211,7 +3331,7 @@ def verify_catalog_reachability(
 
 
 def verify_web_data(output: Path) -> list[str]:
-    """Confirm the assembled data root serves exactly what it may, and all of it."""
+    """Confirm copied browser machinery and data match their repository bytes."""
     expected = web_data_files()
     if not expected:
         return []
@@ -3225,9 +3345,16 @@ def verify_web_data(output: Path) -> list[str]:
         for path in data_root.rglob("*")
         if path.is_file()
     }
-    for relative in sorted(actual & set(expected)):
-        if sha256(output / relative) != sha256(expected[relative]):
-            errors.append(f"{relative}: data file does not match its repository source")
+    for relative, source in sorted(expected.items()):
+        artifact = output / relative
+        # Presence is owned by the exact artifact file-set check. This parity
+        # check independently authenticates every copied byte, including JS and
+        # CSS outside the data root; regenerating artifact-local checksums must
+        # not make a modified browser program acceptable.
+        if artifact.is_file() and sha256(artifact) != sha256(source):
+            errors.append(
+                f"{relative}: copied browser/data file does not match its repository source"
+            )
 
     manifest_relative = (SITE_DATA_ROOT / "bibles.json").as_posix()
     if manifest_relative not in actual:
@@ -3667,14 +3794,15 @@ def verify_link_previews(output: Path, preview: bool, authorization: dict) -> li
             errors.append(
                 f"{relative}: og:title repeats the site name, which belongs in og:site_name"
             )
-        expected_url = f"{SITE_ORIGIN}/{relative}"
+        expected_url = public_site_url(relative)
         if properties.get("og:url") != expected_url:
             errors.append(f"{relative}: og:url is not {expected_url}")
         image = properties.get("og:image", "")
-        if not image.startswith(f"{SITE_ORIGIN}/"):
-            errors.append(f"{relative}: og:image is not an absolute URL on {SITE_ORIGIN}")
+        expected_image = public_site_url(SOCIAL_CARD_RELATIVE)
+        if image != expected_image:
+            errors.append(f"{relative}: og:image is not {expected_image}")
             continue
-        card = output / image.removeprefix(f"{SITE_ORIGIN}/")
+        card = output / SOCIAL_CARD_RELATIVE
         if not card.is_file():
             errors.append(f"{relative}: og:image {image} is not in the artifact")
             continue

@@ -193,7 +193,15 @@ HOST_PLAN = (
     "free memory and core count are facts about the host, not the sources",
 )
 
+HARVEST_TODAY = (
+    re.compile(r"^audited_on: \d{4}-\d{2}-\d{2}$"),
+    "the dry-run stamps today's date, which changes with the replay clock",
+)
+
 VOLATILE: dict[str, dict[int, tuple[re.Pattern[str], str]]] = {
+    "tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --dry-run": {
+        1: HARVEST_TODAY
+    },
     "tools/pdf-review --explain": {1: HOST_PLAN},
     "tools/pdf-review --output build/example-review build/core-last-20.pdf": {1: HOST_PLAN},
 }

@@ -79,6 +79,31 @@ rule that produced this: every validation rule had been written against a
 `propers.yaml` key no calendar used, while the file the site actually serves
 went unvalidated. Look in the overlay before concluding a text is missing.
 
+An exact exemplar can be held as **text-free witness metadata** while its body
+remains unavailable. Such an `[[untranslated]]` row uses the exact canonical
+target, a typed reason, `witness_artifact_id`, `witness_passage_id`, and the
+verified date and page locator; the calendar checker resolves the passage,
+artifact, page range, date, and hash. The browser structure receives only the
+target, language, and unavailable or rights-restricted state. It never receives
+the witness ids, locator, rights analysis, quarantine hash, or protected words.
+
+Palm Sunday's Simple Entrance Antiphon is the controlling mixed-rights case.
+The official ICEL Antiphonary, artifact page 44 and printed p. 36, interleaves
+ICEL spans with its Revised Grail Psalm 23:9-10 span. The exact exemplar is held;
+`no-exemplar` is false. The whole body is `rights-withheld` on every current
+surface because no one basis reaches both rightsholders and the current model
+cannot publish spans independently. Do not attach ICEL's `permission` token to
+the whole row or substitute a selected Bible and call the result the approved
+English.
+
+The same source boundary runs the other direction for Gospel Acclamations. The
+official ICEL Antiphonary contains none. Nativity Vigil and Day, Pentecost Vigil
+and Day, Easter 3 Year C, and Ordinary Time 15 Year A therefore remain exact
+`no-exemplar` rows: their rejected liturgies.net payloads are only hash-bound
+source candidates for Lectionary/CCD text, and a USCCB comparison is not a
+redistribution grant. Never inherit ICEL permission merely because an
+unofficial page labels one of these rows “Roman Missal / ICEL Music.”
+
 `cycles` is keyed `A`/`B`/`C` and excludes top-level `verses` and `text`. Where
 cycles differ in kind, `source` moves inside each cycle; otherwise it stays on
 the proper. Postconciliar only — a 1962 proper must never carry one.
@@ -166,22 +191,22 @@ Assume more of the same kind exist.
 | A psalm verse **beyond the end of its psalm** under the file's declared numbering | The bounds check once held ceilings for six psalms only, so `Psalm 118:137` passed although Hebrew 118 ends at 29. | Now caught: every psalm is bounded from the tracked verse-level concordance. Three loci remain ledgered across four owning slots. |
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18` and `Acts 7:60` were each dropped this way. | Partly closed: `Mark 4:41` and `Acts 7:60` now resolve and only `1 Thessalonians 4:18` still reports. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
-| **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their orations are still placeholders. |
+| **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their three appointed oration identities are typed text-free witness gaps, not placeholders or invented bodies. |
 | The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: the mass index owns `edition` and `edition_short`, `calendar-rubrics` reads both from it, and `_calendars.restated_identity` refuses a companion that carries either — whether or not its value matches. |
 | One formulary **retyped under a second mass** | The schema could not say "this mass takes that text", so a day the Missal carries by a pointer had to be carried by a copy, and nothing compared the copies. The four resumed Sundays after the Epiphany held one set of orations twice and disagreed in five ways — `caelestis`/`coelestis`, `Caelestibus`/`Coelestibus`, `caelestibus`/`coelestibus`, one Introit citation encoded as a contiguous range against three discrete verses, and a dozen truncated incipits. The English was duplicated with it, twelve sidecar rows for four orations. | Now expressible: `takes_from` on a mass or a proper, resolved once by `_calendars.resolve_propers` for both the validator and the browser. The four Sundays now reference `epiphany-3`..`-6` and `pentecost-23` under RGMR 298. **Partly caught** — `span_problems` detects a copy where a span appoints a reference. Outside a declared span nothing does. |
 | A witness's **recension** recorded only in prose | The 1962 sidecar's `caution` said its two books' rubrics, seasonal second and third orations, Holy Week and sanctoral "are not those of 1962" — a prose statement of the exact fact the recension model exists to carry, in a field no tool reads. 176 collations had been run against the 1861 under a 1962 heading. | Now caught: every `[[sources]]` row states `attests`/`attests_kind`/`attests_basis` in the act history's own vocabulary, and `source_attestation_problems` in `check-calendar-masses` refuses a row that states none, names an act the history does not carry, uses a kind no witness uses, or contradicts the history about a witness both files hold. A row naming no `source_id` — the project as its own witness — is exempt and witnesses no printing. |
-| The **recension stamp** dropped between the derivation and the page | `_calendars.stamp` marks every entry of a recension with `{calendar, kind, stated, text_from, basis, also}` and the tests assert it, but `mass-propers` rebuilt each mass from a key whitelist that omitted it. `roman-pre-1955.json` held 490 masses, zero occurrences of `text_from`, and declared `edition: Missale Romanum, editio typica Vaticana 1920` over text transcribed from a 1962 printing. | Now carried: the structure pass emits `recension` where the stamp is present and omits it where it is not. **The page does not yet print it** — `src/web/browser/liturgy/day.js` still heads the Mass with `edition` alone. |
+| The **recension stamp** dropped between the derivation and the page | `_calendars.stamp` marks every entry of a recension with `{calendar, kind, stated, text_from, basis, act?, also[{kind, basis, act?}]}` and the tests assert it, but `mass-propers` rebuilt each mass from a key whitelist that omitted it. `roman-pre-1955.json` held 490 masses, zero occurrences of `text_from`, and declared `edition: Missale Romanum, editio typica Vaticana 1920` over text transcribed from a 1962 printing. | Now carried and rendered: the structure pass emits `recension` where the stamp is present, carries the aggregate `stands_before` boundary, and both readers expose the boundary and any row-level act-history station. An `unrecorded` station is not restated as a proved causal act. |
 | A **stale browser structure file** | `make check` verifies that tracked `web/**/*.md` matches current sources; nothing does the same for `src/web/data/structure/propers/*.json`. Commit `8c7c7032c` landed `appointed_across` and thirteen Sequence propers without regenerating them, and the two served missals disagreed for one commit about whether the Easter octave has a Sequence. | Measured on 2026-08-07: regenerating at that day's HEAD, with the tools unchanged, rewrote 4,269 lines of `roman-pre-1955.json` that no source change of that day accounts for. The served recension had drifted that far from its own sources with nothing reporting it. **Now caught for the propers**: `mass-propers structure --check` builds every file in memory and names each tracked one the sources no longer produce, writing nothing; `make check-calendar-masses` runs it. The other six subtrees under `src/web/data/structure` were measured the same day and `calendar`, `rubrics`, `ordinary` and `readings` were current — `catena`, `paragraphs` and `act-history` were not measured and have no such verb. **Partly open** on that account. |
 | A rubric appointing one text **across a span of days** | No file could say it. The Easter Sequence survived as an English sentence in a `notes` string — a free field no tool reads and no check tests — the Pentecost span was written nowhere, and eleven of the twelve days inside the two octaves rendered as a finished Mass with no Sequence in it. | Now caught: `appointed_across` in `rubrics.yaml`, read by `_calendars.spans_of`, joined to the masses by `span_problems` in `check-calendar-masses`, which fails on a day appointing no such proper, on one that prints the text instead of referencing it, and on a text out of position. Both loci were read from the controlling facsimile on 2026-08-01. |
 | The **English reaching the site and not the terminal** | Translations live in a sidecar overlay, and only `mass-propers structure` merged it. `mass-propers show --lang en` and `mass-today --expanded` read the raw `propers.yaml`, where no proper carries `translations`, so both answered `no en translation recorded; showing Latin` over every one of the 332 orations whose English the same repository was publishing. A maintainer checking whether a proper still needed harvesting was told, by the tool built for that question, that it did. | Now caught: `mass-propers.carry_translations` is the one merge and both verbs call it. The reading view applies no rights filter, unlike the structure pass, because a terminal over tracked sources should show the English the site withholds as well as the English it serves; `untranslated` is printed as a decision, not as a gap. |
 | A **chained `takes_from` addressed at its first hop** | `_resolve_reference` followed the chain for the TEXT and then overwrote the provenance with the mass it had just gone through, so a saint borrowing a Common that itself borrows another was addressed at the intermediate. `overlay_key` files a translation under the mass that PRINTS it, so Perpetua and Felicitas, Frances of Rome, Petronilla and Elizabeth looked up their English at a Common carrying none, found nothing, and served Latin while the terminal Common's English sat in the ledger. Text right, address wrong, nothing reporting either. | Now caught: `_resolve_reference` keeps the inner provenance where the inherited proper has one, so the address follows the text, and `mass-propers census`' `unaccounted` count fell from 5 to 0 on the strength of it. That count is the detector: a slot neither translated nor refused. |
 | A **coverage census scoped past the gap it measures** | `english_coverage` excluded every scripture-bearing proper, `mixed` among them. A `mixed` proper carries the Missal's own words beside its citations — `Salus populi ego sum` above a psalm verse — and no bible renders those words, so a real gap was counted out of scope, and the rows that closed it then surfaced as `unmatched_records`, which reads as ledger rot and was its opposite. | Now caught: only `source: scripture`, whose English is wholly a bible's, is excluded. 13 postconciliar rows and 8 of the 1962's moved from "rot" into the denominator they belong in. |
 | A mass block spliced by **"up to the next mass"** | The 1962 index nests masses under section headings, so the lines between the last mass of one section and the first of the next are the next section's `label:` and `masses:`. A textual edit that treats a mass as running up to the following `- key:` swallows them, and the two sections silently become one. Done on 2026-08-07 it produced 315 christological masses where there are eight, and `check-calendar-masses` passed on it: the schema is still valid, the masses are all still there, and only their filing moved. | Now caught, by accident of having a derived count: `mass-propers census --write` put `roman-1962 | christological | 315` into two documents, which is what made it visible. Nothing checks section membership directly. A block ends at the first line that is not indented into it, and a splice must stop there. |
-| Two propers under **one name in one mass** | The translation overlay is keyed `(mass, form, proper name)`. `palm-sunday` prints six propers all named `Procession Antiphon`, so one ledger row answers all six and no row can answer one. A shared refusal is harmless; a shared translation would attach one antiphon's English to five others. | Open. Nothing prevents it, and the 2026-08-07 harvest left the six under a single `untranslated` row for want of a key that could tell them apart. |
-| Propers stored **out of the order the edition prints them** | The schema stays valid, `check-calendar-masses` passes, and the census counts move correctly, because nothing validates a mass's own proper order against anything — `span_problems` checks position only inside a declared `appointed_across`. The 2026-08-08 scripture wave appended newly transcribed propers **above** the pre-existing orations, so 49 Commons, sanctoral and marian formularies stood Introit..Communion, Collect, Secret, Postcommunion. The browser's seating walks the propers in file order and by contract never reorders, so the Collect broke the walk and it and everything after it lost their seat: **243 masses — very nearly half the 1962 index — refused the Day reader's Missal mode** and 219 dated days of 2026 with them (the denominator is the census's own and is deliberately not retyped here), while Read mode printed the orations after the Communion without saying anything. The rule was written and unenforced: `src/sources/calendars/README.md` line 259, "Propers stand in the order the edition appoints them, not in a fixed template." | Data now corrected: the 1962 typical edition prints Introit, Oratio, Epistle, Gradual, Alleluia, Tract, Gospel, Offertory, Secreta, Communion, Postcommunio — read on the CMAA facsimile of the controlling edition, Commune unius Martyris I at marginal nos. 4193–4203 and S. Martini at 4073–4075 — and the 49 lists were restored by moving whole blocks. Refusals fell to 105 and order breaks to 1. **Still unenforced**: nothing stops the same wave shape landing again, and any lane landing propers must land them in the printed order. The residue is a second, independent leg — a proper whose name no Ordinary slot claims (`Collect (in plurali)`, `Secret (Altera secreta)`, `Sequence`, `Greater Alleluia`) rides with the previous seated proper by design and trips the same guard, which is a modelling question and not a data defect. |
+| Two propers under **one name in one mass** | Palm Sunday has seven targets named `Procession Antiphon`: six direct source-owned bodies and one Scripture-owned occurrence. An overlay key omitting occurrence would attach one antiphon's English to the others. | Now caught: translation identities are `(mass, form_id, proper name, cycle, occurrence)`. The 2026-08-27 page-image collation attaches Cummiskey English only to occurrences 1–3; occurrence 4 remains Scripture-owned and occurrences 5–7 retain exact no-witness dispositions. The Latin-provenance ledger counts only its six direct bodies, so its occurrence ordinals are not translation ordinals. |
+| Propers stored **out of the order the edition prints them** | The schema stays valid and census counts move correctly unless order is checked explicitly. The 2026-08-08 scripture wave appended newly transcribed propers **above** the pre-existing orations, so 49 Commons, sanctoral and marian formularies stood Introit..Communion, Collect, Secret, Postcommunion. The browser's seating walks the propers in file order and by contract never reorders, so the Collect broke the walk and it and everything after it lost their seat: **243 masses — very nearly half the 1962 index — refused the Day reader's Missal mode** and 219 dated days of 2026 with them (the denominator is the census's own and is deliberately not retyped here), while Read mode printed the orations after the Communion without saying anything. | Data corrected and now enforced: the 1962 typical edition prints Introit, Oratio, Epistle, Gradual, Alleluia, Tract, Gospel, Offertory, Secreta, Communion, Postcommunio — read on the CMAA facsimile of the controlling edition, Commune unius Martyris I at marginal nos. 4193–4203 and S. Martini at 4073–4075 — and the 49 lists were restored by moving whole blocks. `order_problems` in `check-calendar-masses` validates each formulary, requires every temporary `proper_order_exceptions` row to remain necessary, and compares qualified names by their canonical proper family. Legitimate variants such as `Collect (in plurali)`, `Secret (Altera secreta)`, `Sequence`, and `Greater Alleluia` are therefore handled without turning their qualifiers into an escape from ordering. |
 | A guard that **disables the only way out** | `setDateSurfaceEnabled` was rewritten on 2026-08-08 so the navigating controls stopped following its `enabled` argument and followed `Boolean(runtime.missals && runtime.missals.length)` instead. The intent was right — a failed outcome must not disable the date box, the missal select, Apply and Today, which are the only controls able to reach another day. The execution tied them to manifest state, so any paint before `loadManifests()` fills `runtime.missals` freezes the whole surface, which is what the maintainer reported hours later. | Open, and the first move is to revert to `enabled` for every control before re-attempting the fix. The safer shape is to leave the controls live always and let the click handlers refuse, so no state a renderer can be in disables the escape. |
 | A tracked file **written where the source library forbids it** | `source-library validate` rejects any file under `src/sources` outside its own schema list — this file says so — and a research survey was written to `src/sources/inventories` anyway. Nothing local caught it: `make check-calendar-masses` and the census both pass, because neither validates that tree. GitHub Pages did, at `check-deployment-sources`, and refused to publish. | Now removed. The lesson is placement, not validation: a finding belongs in guidance or a document, and only a record matching a source-library schema belongs under `src/sources`. |
-| Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for the two documents that carry the derived block — this one and `docs/the-mass.md` — by `mass-propers census --check`, which `make check-propers-census` runs. `guidance/liturgy/propers-completion-todo.md` carried a third and was deleted on 2026-08-01 rather than corrected, its every count having drifted and nothing in it still being both unique and true. `src/sources/calendars/README.md` still carries a hand-typed table. Open. |
+| Any **stale count table** | One census of these files existed in three retyped copies, and all three disagreed; the 1962 sanctoral section read 247 in a document that called itself current and 307 in the file. | Now caught for all three documents carrying the identical derived block — this one, `docs/the-mass.md`, and `src/sources/calendars/README.md` — by `mass-propers census --check`, which `make check-propers-census` runs. |
 
 ## Tool ownership
 
@@ -192,7 +217,7 @@ Never re-derive what a tool owns; that is how two artifacts come to disagree.
 | `tools/citations` | The canonical book list, citation parsing and encoding, passage validation | yes (`encode`) |
 | `tools/check-calendar-masses` | Schema, identity, `propers`/`forms` exclusivity, source-kind rules, cycle shape, the psalm-exception ledger, spine agreement. Delegates citation contents to `citations`. | no |
 | `tools/calendar-spine` | The date-ordered list of celebrations and its `kind` classification, derived from the calendar-reference publications | no |
-| `tools/mass-propers` | Reading one mass, with the translation overlay merged; per-proper psalm-numbering inheritance; the browser's structure files **and whether the tracked ones are current**; **the census** and the derived block both count-bearing documents carry | yes (`structure`, `census --write`); `structure --check` and `census --check` write nothing |
+| `tools/mass-propers` | Reading one mass, with the translation overlay merged; per-proper psalm-numbering inheritance; the browser's structure files **and whether the tracked ones are current**; **the census** and every document's identical derived block | yes (`structure`, `census --write`); `structure --check` and `census --check` write nothing |
 | `tools/index-bible` | Indexed bibles keyed by the reference strings the calendars actually make; validation of `citation_divergences` | yes |
 | `scripts/_psalms.py` | The Vulgate↔Hebrew verse-level concordance and every psalm bound | — |
 
@@ -226,30 +251,24 @@ exspectaverunt` heads both a Virgins' and a non-Virgins' Mass, so the incipit
 alone is ambiguous where the number never is. The Commons are already complete,
 so a large part of what looks like missing text is a missing pointer.
 
-**But the Commons are complete in orations only, which the census does not say.**
-Measured 2026-08-08 across all thirty: 30 Postcommunions, 29 Collects, 29 Secrets
--- and 6 Introits, 6 Gospels, 4 Lessons, 3 Graduals, 3 Alleluias, 3 Offertories,
-2 Epistles, 2 Communions. `Masses holding only placeholders` reads 0 for the
-common section because every one of them holds real orations, which is true and
-is not the same as complete. So pointing a saint's day at its Common gives that
-day its Secret and its Postcommunion and no scripture at all, which is what 8
-August does now. **Filling the Commons' scripture is the unlock**: it is thirty
-masses of work, not ninety-four, and it completes every day that points at them.
-Citations survive this text layer well -- they are short printed references, not
-prose under a drop capital -- so the objection that stopped the orations does not
-apply to them.
+**The Commons are structurally populated; that is not a body-completeness claim.**
+The current Common section carries 30 Masses and 358 direct proper nodes: 214
+scripture or mixed appointments, 111 composed nodes, and 33 proper references.
+It carries zero literal Latin bodies. The composed appointments are typed
+unavailable or resolve to such a node, and six targets expose mutually exclusive
+oration options through `common_sets`. Counts of nodes or resolved occurrences
+therefore establish appointment structure, not textual availability or collation.
 
-**Why those 55 days carry a `Collect` named placeholder, and why the census reads
-55 unaccounted because of it.** A day that takes a Common `praeter orationem`
+**Why those 55 days carry a text-free `Collect`, while the census reads zero
+unaccounted.** A day that takes a Common `praeter orationem`
 has its OWN Collect. Leave the slot empty and the Common's Collect resolves
 through and is printed as the day's -- for 8 August that is `Deus, qui nos beati
 N. Confessoris tui`, a generic prayer with the saint's name left as `N.`,
-presented as if it were St John Vianney's. Naming the placeholder `Collect`
-overrides the borrowed one and blocks that. The cost is that
-`mass-propers census` counts a Collect-family slot with no English, so the
-1962 `unaccounted` figure went 0 -> 55. The figure is TRUE: those days' own
-Collects are not transcribed at all. A zero bought by printing the wrong prayer
-is the worse trade, and this was tried both ways on 2026-08-08 before choosing.
+presented as if it were St John Vianney's. A typed unavailable proper-body node
+named `Collect` overrides the borrowed one and blocks that false substitution.
+Its exact English `untranslated` identity makes the absence accounted, so zero
+`unaccounted` means complete disposition, not complete text. Those days' own
+Collect bodies remain unavailable.
 
 What the number does NOT settle is the day's own orations, which still have to
 be read, and the drop-capital of each oration OCRs as garbage (`^\mnipotens`)
@@ -291,26 +310,35 @@ Ephraem. Others need no Collect at all -- Evaristus, the Lateran Dedication and
 Cornelius & Cyprian take their whole Mass from a Common and print no proper
 oration, so the right entry there is the pointer alone.
 
-**Postconciliar: 29 of 53 have a publishable source, 22 have none, 2 are
-undecided.** The negatives are one fact wearing many names -- Fatima, Guadalupe,
-Kolbe, Teresa of Calcutta, Padre Pio, Faustina, Paul VI, John XXIII, John Paul II,
-Juan Diego, Mother of the Church: every one canonised or inserted after 1931.
-Two findings worth acting on. **Rita of Cascia** was canonised in 1900, so she is
-absent from the 1862 but should be in the 1920 typica, which this library tracks
-as an edition directory WITH NO FULL-TEXT ARTIFACT -- the one case where a
-pre-1931 route plausibly exists and is not yet held. And the 1862's
-`pro aliquibus locis` **appendix carries its own later imprimaturs (1863, 1865,
-1866) and full proper Masses the Tridentine body lacks** -- Paul of the Cross,
-Margaret Mary Alacoque, John Leonardi, Peter Claver, Angela Merici, Our Lady of
-Loreto. Three of one lane's seven positives rest entirely on it. It deserves a
-systematic sweep; a wave that reads only the main sanctoral will report false
-absences.
+**Postconciliar: 31 of 53 now have a located public-domain historical source,
+22 have none, and 0 remain undecided as acquisition questions.** Target-edition
+collation is a separate gate and remains open for all 31. The negatives are one
+fact wearing many names -- Fatima, Guadalupe, Kolbe, Teresa of Calcutta, Padre
+Pio, Faustina, Paul VI, John XXIII, John Paul II, Juan Diego, Mother of the
+Church: every one canonised or inserted after 1931.
 
-**What 29 "publishable" does NOT mean.** The agents established that a
-public-domain Latin oration exists for that saint. They did NOT establish that
-the 2002 Missal's oration is that text -- the MR 2002 is in copyright and not
-held here, so the per-oration match stays an editorial determination. Denis,
-Clement and Catherine were flagged as likely revisions.
+The two former undecideds are **Bede and Rita of Cascia**. The exact
+public-domain witness is
+`artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a`,
+a Tours Mame 1922 `editio quarta juxta typicam Vaticanam`, not an authenticated
+Vatican 1920 impression. Bede is in its universal sanctoral at PDF
+artifact pages 715-716, printed pages 601-602: the Common-of-Doctors pointer and
+proper Collect, Secret and Postcommunion. Rita is absent only from the bounded
+universal-sanctoral sequence, whose printed page 598 ends 20 May and page 599
+begins 25 May; the same book's `Missae pro aliquibus locis` appendix carries her
+complete 22 May Mass at PDF artifact pages 1109-1111, printed appendix pages
+[79]-[81]. Reading only the universal sanctoral would therefore report a false
+whole-book absence. Passage records carry all four visual bounds. Neither
+historical formulary has been compared with the restricted 2002 target edition,
+so neither result licenses filling the postconciliar prayer slots.
+
+**What 31 located antecedents does NOT mean.** The agents established a
+public-domain historical source locus for each: 29 supply at least one proper
+oration, while Blaise and Eusebius print a Common pointer and no proper oration.
+They did NOT establish that the 2002 Missal's oration is any historical text --
+the MR 2002 is in copyright and not held here, so the per-oration match stays an
+editorial determination. Denis, Clement and Catherine were flagged as likely
+revisions.
 
 **Reading the 1862: leaf = printed page + 85**, derived independently by six
 lanes and constant through the main body. It breaks in the appendices, where the
@@ -375,20 +403,24 @@ carries the identical block.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1154 | 0 |
-| roman-1962 | christological | 8 | 66 | 0 |
-| roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-pre-1955 | marian | 1 | 0 | 0 |
+| roman-pre-1955 | sanctoral | 1 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1352 | 0 |
+| roman-1962 | christological | 8 | 96 | 0 |
+| roman-1962 | marian | 18 | 124 | 0 |
+| roman-1962 | sanctoral | 307 | 1509 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
-| postconciliar | seasonal | 390 | 2108 | 0 |
-| postconciliar | christological | 7 | 67 | 0 |
+| postconciliar | seasonal | 390 | 2116 | 0 |
+| postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | sanctoral | 201 | 760 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
 | roman-pre-1955 | (no rank) | 6 | 6 |
+| roman-pre-1955 | I | 1 | 1 |
+| roman-pre-1955 | II | 1 | 1 |
 | roman-1962 | (no rank) | 93 | 93 |
 | roman-1962 | Comm. | 104 | 104 |
 | roman-1962 | I | 37 | 37 |
@@ -403,18 +435,18 @@ carries the identical block.
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 619 |
-| Propers | 0 | 2773 | 2941 |
+| Masses | 8 | 491 | 619 |
+| Propers | 0 | 3439 | 2997 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 149 | 184 |
+| — inside a `forms` block | 0 | 182 | 188 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
-| Propers taking their text from another entry | 0 | 70 | 41 |
-| Propers that are not placeholders | 0 | 2773 | 2941 |
-| — of those, scripture-bearing | 0 | 2192 | 2587 |
-| Encoded passages | 0 | 2598 | 3542 |
+| Propers taking their text from another entry | 0 | 70 | 49 |
+| Propers that are not placeholders | 0 | 3439 | 2997 |
+| — of those, scripture-bearing | 0 | 2192 | 2635 |
+| Encoded passages | 0 | 2598 | 3590 |
 | Distinct books cited | 0 | 57 | 73 |
 | Distinct slot names | 0 | 120 | 92 |
 
@@ -466,11 +498,14 @@ entries are Sundays, because no entry states that and it is not derived here.
 
 What the census does not cover, and what still has to be counted by reading:
 
-- 63 of the 1962 seasonal entries carry only their scripture-bearing propers and
-  a `notes` line saying so; their registry ids read `1962-T-<key>` and are
-  synthetic. Three further entries carry that registry form without the note.
-  Identity, rank and citations were read from an **OCR text layer** of the CMAA
-  1962 facsimile, not the images. Nothing has been visually collated.
+- The 63-entry temporal expansion retains a `notes` line marking its
+  transcription boundary. Where exact wording remains unheld, each
+  source-established Collect, Secret and Postcommunion is an explicit composed
+  Proper whose `text_status.state` is `unavailable` and whose reason is
+  `witness-gap`. Its registry ids read `1962-T-<key>` and are synthetic; three
+  further entries carry that registry form without the note. Identity, rank and
+  citations were read from an **OCR text layer** of the CMAA 1962 facsimile, not
+  the images. Nothing has been visually collated.
 - `src/sources/calendars/README.md` still carries a hand-typed count table that
   nothing regenerates. Treat it as stale, and do not copy a figure out of it.
 
@@ -574,8 +609,10 @@ mechanically inherited from `roman-1962` without target-recension collation.
 The file holds no independently transcribed target Proper wording. The inherited
 mass count is therefore an assembly result, not evidence that the pre-1955
 Missal agrees with 1962 or that either book is complete. Where the Triduum has
-been examined, 20 of 38 modelled units do not survive the reform. The delta was
-made by four acts, not the one the file's `stands_before` names;
+been examined, 20 of 38 modelled units do not survive the reform. The known
+distance to 1962 was made by four acts: the `stands_before` list names both
+explicit 1955 boundaries, while optional row-level `act` values preserve the
+act-history station or attribution for each established departure claim;
 `guidance/recensions.md` and the coverage header own the precise boundaries and
 apportionment.
 
@@ -583,19 +620,29 @@ apportionment.
 
 | Item | Recorded in |
 | --- | --- |
-| Twelve of the thirteen 1962 Commons, and the sanctoral pointers into them | 1962 `open_collation_items` |
+| Seven sanctoral pointers whose printed evidence does not yet choose among the typed Common-set candidates | 1962 `open_collation_items` and `finding_aid_coverage[*].unresolved_common_set_selections` |
 | The unresolved bound or numbering of `Psalm 28:11`, `Psalm 56:14`, and `Psalm 150:6` across their four owning slots | postconciliar `psalm_numbering_exceptions` |
 | Whether `ascension`, `corpus-christi`, `sacred-heart`, `chrism-mass` belong under `seasonal` or `christological` | 1962 `open_collation_items` |
 | A registry scheme for 1962 ferias | 1962 `open_collation_items` |
-| A schema giving a commemoration's own three orations somewhere to live — the 104 are dated entries of rank `Comm.`, but their orations are still placeholders | 1962 `open_collation_items` |
+| Exact bodies for the 104 commemorations' three appointed text-free oration identities | 1962 `open_collation_items` and translation sidecar |
 | Which numbering system each of a further 23 non-psalm postconciliar citations speaks | postconciliar `open_collation_items` |
 | Whether prefaces and the *Oratio super populum* belong in this index | postconciliar `open_collation_items` |
 | The 1962 `P = 23` shortfall after Pentecost | `guidance/liturgy/calendar-computation.md` |
 | Part-verse letters retained in some Lectionary citations, dropped in others | postconciliar `open_collation_items` |
 | Oration conclusions rendered both as printed cue and expanded | both files' `open_collation_items` |
-| A public-domain English for the 1962 Holy Week's 39 slots, which the 1861 witness cannot supply — measured 2026-08-07, not assumed | 1962 sidecar's `verification`, sixth pass; an acquisition like the Sequences below, not a collation of the book already held |
-| A public-domain English for the five great Sequences, which the 1861 witness prints in Latin only | 1962 sidecar's `verification`, sixth pass; a source acquisition under `guidance/sources.md`, not a harvest. **Scoped 2026-08-07, not decided.** The obvious candidate is Caswall's *Lyra Catholica* (London, 1849), Internet Archive `lyracatholicaco00caswgoog`: it reaches four of the five — Victimae paschali, Veni Sancte Spiritus, Lauda Sion, Stabat Mater — and not the Dies irae, which is a Requiem sequence and outside its scope. Its bytes carry Google's front matter as a single contiguous head block, which is the shape the 1843 audit records as admitting the stated-deletion derivative route, unlike the 1861's page-foot stamp. What is NOT a mechanical question is which translator the project stands behind: Caswall, Neale and Aylward differ materially, and these are five of its most-read texts, so the choice is editorial and the maintainer's. Name the cost, do not pick the voice. |
+| A public-domain English for the 1962 Holy Week's remaining 36 slots. The 2026-08-27 page-image collation recovered three Palm Sunday procession antiphons from the 1861 witness; its other negative Holy Week results remain measured, not assumed. | 1962 translation sidecar's `verification`, sixth pass and 2026-08-27 correction; further work is a source acquisition or an exact per-text collation, not a cross-recension inference |
 | Three commemorations whose Latin the index reprints from a Common instead of referencing it, and whose English is therefore recorded twice | the three rows' own `harvest_note`; the fix is a `takes_from` and belongs to the lane owning `propers.yaml` |
 
 Adding to an `open_collation_items` list is the correct move when you find a
 divergence you cannot collate. Silently normalizing it is not.
+
+The former Sequence-acquisition item is closed. The registered London first
+printing of Edward Caswall's *Lyra Catholica* (James Burns, 1849; Internet
+Archive `LyraCatholica1849`) contains all five Sequence translations, including
+the *Dies irae* at printed pp. 241–244, leaves n278–n281. The previously cited
+item `lyracatholicaco00caswgoog` is a New York 1851 reprint, not the London
+1849 edition. Their Google matter was also formerly reversed here: the London
+text layer has 311 page-foot stamp occurrences and no Google front block; the
+New York text layer has a contiguous head block and no page-foot stamps. The
+active 1962 overlay records Caswall as the through-line across all five and the
+Irons *Dies irae* as an alternative voice, not as coverage of a Caswall gap.

@@ -1156,6 +1156,7 @@ window.Triptych = (function () {
       .filter((key) => {
         const cycle = cycleFrom(proper, family, key);
         return cycle.citations.length || cycle.text ||
+          cycle.translations.some((translation) => translation && translation.text) ||
           cycle.unavailable_translations.length || cycle.untranslated.length ||
           (cycle.latin && cycle.latin.withheld);
       });
@@ -1579,7 +1580,8 @@ window.Triptych = (function () {
       const cycle = cycleOf(proper, key);
       const block = el('div', 'cycle');
       block.appendChild(el(under, 'cycle-name', cycleLabel(key)));
-      if (cycle.text || cycle.unavailable_translations.length || cycle.untranslated.length ||
+      if (cycle.text || cycle.translations.some((translation) => translation && translation.text) ||
+          cycle.unavailable_translations.length || cycle.untranslated.length ||
           (cycle.latin && cycle.latin.withheld)) {
         const oration = orationFor(
           cycle, held.orations, held.translationWitness || null

@@ -141,6 +141,36 @@ class CountingKeyTests(unittest.TestCase):
             list(propers.KIND_ORDER),
         )
 
+    def test_roman_1962_counts_source_established_unavailable_slots_as_propers(
+        self,
+    ) -> None:
+        document = propers.load_calendar(
+            ROOT / "src" / "sources" / "calendars",
+            "roman-1962",
+            effective=False,
+        )
+        counted = propers.census_of(document)
+
+        self.assertEqual(
+            {
+                row["kind"]: (row["masses"], row["propers"])
+                for row in counted["sections"]
+            },
+            {
+                "seasonal": (128, 1352),
+                "christological": (8, 96),
+                "marian": (18, 124),
+                "sanctoral": (307, 1509),
+                "common": (30, 358),
+            },
+        )
+        self.assertEqual(counted["masses"], 491)
+        self.assertEqual(counted["propers"], 3439)
+        self.assertEqual(counted["substantive_propers"], 3439)
+        self.assertEqual(counted["propers_in_forms"], 182)
+        self.assertEqual(counted["scripture_bearing_propers"], 2192)
+        self.assertEqual(counted["slot_names"], 120)
+
 
 class RankCensusTests(unittest.TestCase):
     """The third hand derivation of a rank census, made the last one.
@@ -487,7 +517,7 @@ class EnglishCoverageTests(unittest.TestCase):
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 42
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 48
         )
 
     def test_translation_ledger_inheritance_follows_a_recension_chain(self) -> None:
@@ -542,7 +572,10 @@ class EnglishCoverageTests(unittest.TestCase):
                 encoding="utf-8",
             )
             overlay, _, _, _ = propers.translation_overlay("demo", calendars)
-            self.assertEqual(overlay[("m", "", "Collect")]["translations"][0]["text"], "Here")
+            self.assertEqual(
+                overlay[("m", "main", "Collect", "all", 1)]["translations"][0]["text"],
+                "Here",
+            )
 
             ledger.write_text(
                 ledger.read_text(encoding="utf-8")
@@ -559,7 +592,7 @@ class EnglishCoverageTests(unittest.TestCase):
                 '[[sources]]\nid = "two"\nsource_id = "edition.same"\n',
                 encoding="utf-8",
             )
-            with self.assertRaisesRegex(ValueError, "duplicate translation source_id"):
+            with self.assertRaisesRegex(ValueError, "duplicate translation source alias"):
                 propers.translation_overlay("demo", calendars)
 
             ledger.write_text(
@@ -588,7 +621,7 @@ class EnglishCoverageTests(unittest.TestCase):
             ):
                 propers.translation_overlay("demo", calendars)
 
-    def test_recension_sidecar_adds_to_its_base_and_excludes_only_replaced_rows(self) -> None:
+    def test_recension_sidecar_exclusions_must_match_their_typed_departure(self) -> None:
         with TemporaryDirectory() as temporary:
             sources = Path(temporary) / "sources"
             calendars = sources / "calendars"
@@ -666,7 +699,9 @@ class EnglishCoverageTests(unittest.TestCase):
 
             overlay, unavailable, _, _ = propers.translation_overlay("child", calendars)
             self.assertEqual(propers.translation_ledger_calendars("child", calendars), ["base", "child"])
-            self.assertEqual(set(overlay), {("kept", "", "Collect")})
+            self.assertEqual(
+                set(overlay), {("kept", "main", "Collect", "all", 1)}
+            )
             self.assertEqual(set(unavailable), {("kept", "main", "Secret")})
             self.assertEqual(propers.inherited_inapplicable_count("child", calendars), 2)
 
@@ -679,7 +714,23 @@ class EnglishCoverageTests(unittest.TestCase):
                 encoding="utf-8",
             )
             with self.assertRaisesRegex(
-                ValueError, "not owned by a replaced calendar departure"
+                ValueError, "not owned by a calendar departure 'replaced'"
+            ):
+                propers.translation_overlay("child", calendars)
+
+            child.write_text(
+                child.read_text(encoding="utf-8")
+                .replace(
+                    'mass = "kept"\nform_id = "main"\nproper = "Collect"',
+                    'mass = "replaced"\nform_id = "main"\nproper = "Collect"',
+                    1,
+                )
+                .replace('reason = "recension-replaced"', 'reason = "recension-absent"', 1),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                ValueError,
+                "not owned by a calendar departure 'absent'.*recension-absent",
             ):
                 propers.translation_overlay("child", calendars)
 
@@ -721,10 +772,40 @@ class EnglishCoverageTests(unittest.TestCase):
             for row in document.get("entries") or []
             if "publication_artifact_id" in row
         ]
+        cummiskey_source = (
+            "edition.eugene-cummiskey.roman-missal-english-laity."
+            "philadelphia-1861"
+        )
+        expected = [
+            row
+            for row in document.get("entries") or []
+            if any(
+                translation.get("source_id") == cummiskey_source
+                for translation in row.get("translations") or []
+            )
+        ]
         self.assertEqual(
-            len(rows),
-            9,
-            "the approved Cummiskey publication set has nine bound translations",
+            {
+                (
+                    row["mass"],
+                    row["form_id"],
+                    row["proper"],
+                    row["cycle"],
+                    row["occurrence"],
+                )
+                for row in rows
+            },
+            {
+                (
+                    row["mass"],
+                    row["form_id"],
+                    row["proper"],
+                    row["cycle"],
+                    row["occurrence"],
+                )
+                for row in expected
+            },
+            "every deliberate Cummiskey positive must have a publication binding",
         )
         for row in rows:
             with self.subTest(
@@ -945,14 +1026,18 @@ class LatinRecensionCoverageTests(unittest.TestCase):
             },
         }
         overlay = {
-            ("old", "", "Collect"): {"antecedent_latin_here": "Older body"},
-            ("related", "", "Collect"): {
+            ("old", "main", "Collect", "all", 1): {
+                "antecedent_latin_here": "Older body"
+            },
+            ("related", "main", "Collect", "all", 1): {
                 "ancient_witness": "Witness",
                 "witness_edition_id": "edition.witness",
                 "witness_artifact_id": "artifact.witness",
                 "relation": "verbatim",
             },
-            ("extra", "", "Collect"): {"verified_url": "English exemplar only"},
+            ("extra", "main", "Collect", "all", 1): {
+                "verified_url": "English exemplar only"
+            },
         }
         row = propers.latin_recension_coverage(document, overlay)
         self.assertEqual(row["slots"], 5)

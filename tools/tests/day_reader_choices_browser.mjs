@@ -47,6 +47,54 @@ function withAuthoredForms(payload) {
   return JSON.stringify(structure);
 }
 
+function withMultipleOrdinaryGroups(payload) {
+  const structure = JSON.parse(payload);
+  const groups = [
+    ['reader-fixture-option', 'Focused reader option'],
+    ['reader-fixture-second-option', 'Second focused reader option']
+  ].map(([id, name]) => ({
+    group: id, name,
+    what: 'Synthetic browser-only proof that independent Ordinary choices remain exclusive.',
+    options: [
+      { id: id + '-a', name: 'Fixture A', default: true },
+      { id: id + '-b', name: 'Fixture B', default: false }
+    ]
+  }));
+  structure.variants = [...(structure.variants || []), ...groups];
+  const anchors = new Set((structure.slots || []).map((slot) => slot.anchor));
+  groups.forEach((group) => {
+    const candidates = [];
+    (structure.sections || []).forEach((section) => {
+      (section.elements || []).forEach((element) => {
+        if (!anchors.has(element.key) && !element.variant &&
+            !(element.alternatives || []).length && !(element.conditions || []).length) {
+          candidates.push(element);
+        }
+      });
+    });
+    if (candidates.length < 2) {
+      throw new Error('ordinary fixture needs two unconditional non-anchor elements');
+    }
+    const first = candidates[0];
+    const second = candidates[1];
+    first.key += '-' + group.group + '-a';
+    first.alternatives = [{ group: group.group, option: group.group + '-a' }];
+    second.key += '-' + group.group + '-b';
+    second.name = (second.name || second.key) + ' — Fixture B';
+    second.alternatives = [{ group: group.group, option: group.group + '-b' }];
+  });
+  return JSON.stringify(structure);
+}
+
+function withMultipleOrdinaryIndexGroups(payload) {
+  const index = JSON.parse(payload);
+  const row = (index.calendars || []).find((entry) => entry.calendar === 'roman-1962');
+  if (!row) throw new Error('Roman 1962 Ordinary index row is absent');
+  row.variants = [...(row.variants || []),
+    'reader-fixture-option', 'reader-fixture-second-option'];
+  return JSON.stringify(index);
+}
+
 function withAuthorizedCalendarChoices(payload) {
   return payload + `
 ;(function (root) {
@@ -54,6 +102,7 @@ function withAuthorizedCalendarChoices(payload) {
   const choices = {
     '2026-08-07': [
       ['saints-sixtus-ii-pope-companions-martyrs', 'Saints Sixtus II and Companions'],
+      ['saint-cajetan-priest', 'Saint Cajetan'],
       ['ot-18-friday', 'Friday of the Eighteenth Week in Ordinary Time']
     ],
     '2027-06-05': [
@@ -110,6 +159,12 @@ function staticServer() {
       }
       if (relative === 'src/web/data/structure/propers/postconciliar.json') {
         body = Buffer.from(withAuthoredForms(body.toString('utf8')));
+      }
+      if (relative === 'src/web/data/structure/ordinary/index.json') {
+        body = Buffer.from(withMultipleOrdinaryIndexGroups(body.toString('utf8')));
+      }
+      if (relative === 'src/web/data/structure/ordinary/roman-1962.json') {
+        body = Buffer.from(withMultipleOrdinaryGroups(body.toString('utf8')));
       }
       response.writeHead(200, {
         'content-type': mime(file), 'cache-control': 'no-store',
@@ -224,10 +279,23 @@ async function snapshot(cdp) {
       .map((row) => row.dataset.translationWitnessChoice),
     witnessOptions: [...document.querySelectorAll('[data-translation-witness]')]
       .map((row) => row.value),
+    witnessLimitations: [...document.querySelectorAll('[data-translation-witness-limitation]')]
+      .map((row) => row.textContent.trim()),
+    semanticLocations: [...document.querySelectorAll('[data-semantic-location]')]
+      .map((row) => row.dataset.semanticLocation),
+    stateLocation: dayReaderDebug.state?.semanticLocation || null,
     englishComposed: document.querySelectorAll('.composed[lang="en"]').length,
     ordinaryLoads: Object.keys(dayReaderDebug.loads).filter((path) =>
       path.includes('structure/ordinary/') && !path.endsWith('/index.json')),
-    ordinaryPresentations: dayReaderDebug.ordinaryPresentations
+    ordinaryPresentations: dayReaderDebug.ordinaryPresentations,
+    ordinaryOptionGroups: [...document.querySelectorAll('[data-option-group]')]
+      .map((row) => row.dataset.optionGroup),
+    ordinaryChecked: [...document.querySelectorAll('[data-option-group] input:checked')]
+      .map((row) => row.closest('[data-option-group]').dataset.optionGroup + ':' + row.value),
+    ordinaryUnresolved: (dayReaderDebug.semantic?.ordinaryUnresolved || [])
+      .map((row) => row.element),
+    metadata: document.querySelector('#celebration-meta').textContent,
+    ordinaryOptionFieldHidden: document.querySelector('#reader-ordinary-option-field').hidden
   }))()`);
 }
 
@@ -241,7 +309,9 @@ async function click(cdp, selector) {
 
 async function testCalendarChoices(cdp, base) {
   const cases = [
-    ['2026-08-07', ['saints-sixtus-ii-pope-companions-martyrs', 'ot-18-friday']],
+    ['2026-08-07', [
+      'saints-sixtus-ii-pope-companions-martyrs', 'saint-cajetan-priest', 'ot-18-friday'
+    ]],
     ['2027-06-05', [
       'immaculate-heart-blessed-virgin-mary', 'saint-boniface-bishop-martyr',
       'ot-9-saturday'
@@ -319,12 +389,19 @@ async function testProperForms(cdp, base) {
 }
 
 async function testColdRead(cdp, base) {
+  await navigate(cdp, base, state({ date: '2026-08-02', mass: 'ot-18' }));
+  const defaults = await snapshot(cdp);
+  assert.equal(defaults.outcome, 'unresolved');
+  assert.ok(defaults.contents.includes('Source Proper choice: Communion Antiphon'));
+  assert.equal(new URLSearchParams(defaults.hash.slice(1)).get('ordinary-lang'), null);
+
   await navigate(cdp, base, state({
     date: '2026-08-02', mass: 'ot-18', 'ordinary-lang': 'en',
     'eucharistic-prayer': 'ep-ii'
   }));
   const held = await snapshot(cdp);
-  assert.equal(held.outcome, 'ready');
+  assert.equal(held.outcome, 'unresolved');
+  assert.ok(held.contents.includes('Source Proper choice: Communion Antiphon'));
   assert.deepEqual(held.ordinaryLoads, ['structure/ordinary/postconciliar.json']);
   assert.equal(held.ordinaryPresentations, 0);
   const params = new URLSearchParams(held.hash.slice(1));
@@ -347,6 +424,99 @@ async function testColdRead(cdp, base) {
   assert.equal(invalidLanguage.outcome, 'invalid');
   assert.equal(invalidLanguage.eventCount, 0);
   assert.equal(invalidLanguage.error[0].path, 'ordinary-lang');
+}
+
+async function testMultipleOrdinaryGroups(cdp, base) {
+  await navigate(cdp, base, state({
+    date: '2026-08-02', missal: 'roman-1962', mass: 'pentecost-10',
+    mode: 'missal', 'ordinary-lang': 'en'
+  }));
+  const held = await snapshot(cdp);
+  assert.equal(held.outcome, 'ready', JSON.stringify(held.error));
+  assert.ok(held.ordinaryOptionGroups.includes('reader-fixture-option'));
+  assert.ok(held.ordinaryOptionGroups.includes('reader-fixture-second-option'));
+
+  await click(cdp, '[data-reader-action="date"]');
+  assert.equal((await snapshot(cdp)).ordinaryOptionFieldHidden, true);
+  await click(cdp, '[data-reader-action="date"]');
+
+  await click(cdp,
+    '[data-option-group="reader-fixture-option"] input[value="reader-fixture-option-b"]');
+  await waitFor(cdp,
+    `dayReaderReady && dayReaderDebug.outcome === 'ready' && ` +
+      `dayReaderDebug.state.options.legitimate['reader-fixture-option'] === ` +
+        `'reader-fixture-option-b'`,
+    'second independent Ordinary option');
+  const selected = await snapshot(cdp);
+  assert.equal(new URLSearchParams(selected.hash.slice(1)).get('reader-fixture-option'),
+    'reader-fixture-option-b');
+  assert.ok(selected.semanticLocations.some((id) =>
+    id.endsWith('-reader-fixture-option-b')));
+  assert.ok(!selected.semanticLocations.some((id) =>
+    id.endsWith('-reader-fixture-option-a')));
+  assert.ok(selected.semanticLocations.some((id) =>
+    id.endsWith('-reader-fixture-second-option-a')));
+  assert.ok(!selected.semanticLocations.some((id) =>
+    id.endsWith('-reader-fixture-second-option-b')));
+  assert.equal(await evaluate(cdp,
+    `document.activeElement.closest('[data-option-group]')?.dataset.optionGroup || ''`),
+  'reader-fixture-option');
+}
+
+async function testConditionedOrdinaryGroups(cdp, base) {
+  await navigate(cdp, base, state({
+    date: '2026-11-29', mass: 'advent-1', form: 'night', mode: 'missal',
+    'ordinary-lang': 'en', 'eucharistic-prayer': 'ep-iv'
+  }));
+  const held = await snapshot(cdp);
+  assert.equal(held.outcome, 'unresolved', JSON.stringify(held.error));
+  assert.deepEqual(held.ordinaryOptionGroups,
+    ['penitential-act', 'creed', 'eucharistic-prayer']);
+  assert.ok(held.ordinaryChecked.includes('eucharistic-prayer:ep-iv'));
+  assert.deepEqual(held.ordinaryUnresolved, [
+    'ritus-initiales/gloria-in-excelsis',
+    'prex-eucharistica/prex-eucharistica-iv'
+  ]);
+  assert.ok(!held.semanticLocations.some((id) =>
+    id.endsWith('ordinary-element/prex-eucharistica/prex-eucharistica-iv')));
+  assert.match(held.metadata, /Eucharistic Prayer: IV \(applicability unresolved\)/);
+
+  await click(cdp, '[data-option-group="eucharistic-prayer"] input[value="ep-ii"]');
+  await waitFor(cdp,
+    `dayReaderReady && dayReaderDebug.outcome === 'unresolved' && ` +
+      `dayReaderDebug.state.options.legitimate['eucharistic-prayer'] === 'ep-ii'`,
+    'applicable Eucharistic Prayer');
+  const selected = await snapshot(cdp);
+  const params = new URLSearchParams(selected.hash.slice(1));
+  assert.equal(params.get('eucharistic-prayer'), 'ep-ii');
+  assert.ok(params.get('location').endsWith(
+    'ordinary-element/prex-eucharistica/prex-eucharistica-ii'));
+  assert.ok(selected.semanticLocations.some((id) =>
+    id.endsWith('ordinary-element/prex-eucharistica/prex-eucharistica-ii')));
+  assert.deepEqual(selected.ordinaryUnresolved,
+    ['ritus-initiales/gloria-in-excelsis']);
+  assert.equal(await evaluate(cdp,
+    `document.activeElement.closest('[data-option-group]')?.dataset.optionGroup || ''`),
+  'eucharistic-prayer');
+
+  await click(cdp, '[data-option-group="eucharistic-prayer"] input[value="ep-iv"]');
+  await waitFor(cdp,
+    `dayReaderReady && dayReaderDebug.outcome === 'unresolved' && ` +
+      `dayReaderDebug.state.options.legitimate['eucharistic-prayer'] === 'ep-iv'`,
+    'unresolved-applicability Eucharistic Prayer');
+  const unresolved = await snapshot(cdp);
+  const unresolvedParams = new URLSearchParams(unresolved.hash.slice(1));
+  assert.equal(unresolvedParams.get('location'), 'ordinary-section/prex-eucharistica');
+  assert.ok(unresolved.ordinaryChecked.includes('eucharistic-prayer:ep-iv'));
+  assert.deepEqual(unresolved.ordinaryUnresolved, [
+    'ritus-initiales/gloria-in-excelsis',
+    'prex-eucharistica/prex-eucharistica-iv'
+  ]);
+  assert.ok(!unresolved.semanticLocations.some((id) =>
+    id.endsWith('ordinary-element/prex-eucharistica/prex-eucharistica-iv')));
+  assert.equal(await evaluate(cdp,
+    `document.activeElement.closest('[data-option-group]')?.dataset.optionGroup || ''`),
+  'eucharistic-prayer');
 }
 
 async function testTranslationWitnesses(cdp, base) {
@@ -389,11 +559,76 @@ async function testTranslationWitnesses(cdp, base) {
   assert.equal(invalid.outcome, 'invalid');
   assert.equal(invalid.eventCount, 0);
   assert.equal(invalid.error[0].path, 'translation-witness');
+
+  await navigate(cdp, base, state({
+    date: '2026-11-02', missal: 'roman-1962',
+    mass: 'commemoratione-omnium-fidelium-defunctorum', form: 'first', orations: 'en'
+  }));
+  const noCommonWitness = await snapshot(cdp);
+  assert.equal(noCommonWitness.outcome, 'unresolved', JSON.stringify(noCommonWitness.error));
+  assert.deepEqual(noCommonWitness.witnessChoices, []);
+  assert.equal(noCommonWitness.witnessLimitations.length, 1);
+  assert.ok(noCommonWitness.witnessLimitations.every((message) =>
+    message.includes('No single held translation witness supplies every translated Proper')));
+}
+
+async function testSemanticLocations(cdp, base) {
+  const baseState = state({ date: '2026-08-02', mass: 'ot-18' });
+  await navigate(cdp, base, baseState);
+  const initial = await snapshot(cdp);
+  assert.equal(initial.outcome, 'unresolved');
+  assert.ok(initial.contents.includes('Source Proper choice: Communion Antiphon'));
+  assert.ok(initial.semanticLocations.length > 0);
+  const location = initial.semanticLocations[0];
+
+  await navigate(cdp, base, baseState + '&location=' + encodeURIComponent(location));
+  const restored = await snapshot(cdp);
+  assert.equal(restored.outcome, 'unresolved', JSON.stringify(restored.error));
+  assert.deepEqual(restored.stateLocation, { eventId: location });
+  assert.ok(restored.semanticLocations.includes(location));
+
+  const invalidLocation = 'proper/postconciliar/ot-18/999';
+  await navigate(cdp, base,
+    baseState + '&location=' + encodeURIComponent(invalidLocation));
+  const invalid = await snapshot(cdp);
+  assert.equal(invalid.outcome, 'invalid');
+  assert.equal(invalid.eventCount, 0);
+  assert.equal(invalid.fallbackUnits, 0);
+  assert.ok(invalid.error.some((row) =>
+    row.path === 'location' && row.code === 'invalid-semantic-location'));
+  assert.equal(new URLSearchParams(invalid.hash.slice(1)).get('location'), invalidLocation);
 }
 
 async function testDeferredModeContract(cdp, base) {
   await navigate(cdp, base, state({ date: '2026-08-02', mass: 'ot-18', mode: 'study' }));
+  const study = await snapshot(cdp);
+  assert.equal(study.outcome, 'deferred');
+  const studyParams = new URLSearchParams(study.hash.slice(1));
+  assert.equal(studyParams.get('mode'), 'study');
+  assert.equal(studyParams.get('ordinary'), '0');
+  assert.equal(studyParams.get('ordinary-lang'), null);
+  await navigate(cdp, base, study.hash);
   assert.equal((await snapshot(cdp)).outcome, 'deferred');
+
+  await navigate(cdp, base, state({
+    date: '2026-08-02', mass: 'ot-18', mode: 'study', ordinary: '1'
+  }));
+  const studyOrdinary = await snapshot(cdp);
+  assert.equal(studyOrdinary.outcome, 'deferred');
+  const studyOrdinaryParams = new URLSearchParams(studyOrdinary.hash.slice(1));
+  assert.equal(studyOrdinaryParams.get('ordinary'), '1');
+  assert.equal(studyOrdinaryParams.get('ordinary-lang'), 'en');
+  await navigate(cdp, base, studyOrdinary.hash);
+  assert.equal((await snapshot(cdp)).outcome, 'deferred');
+
+  await navigate(cdp, base, state({
+    date: '2026-08-02', mass: 'ot-18', mode: 'study',
+    location: 'proper/postconciliar/ot-18/001'
+  }));
+  const studyLocation = await snapshot(cdp);
+  assert.equal(studyLocation.outcome, 'invalid');
+  assert.ok(studyLocation.error.some((row) =>
+    row.path === 'location' && row.code === 'invalid-semantic-location'));
 
   await navigate(cdp, base, state({ date: '2026-08-02', mass: 'ot-18', mode: 'compare' }));
   const compare = await snapshot(cdp);
@@ -433,13 +668,17 @@ async function main() {
     await testCalendarChoices(cdp, base);
     await testProperForms(cdp, base);
     await testColdRead(cdp, base);
+    await testMultipleOrdinaryGroups(cdp, base);
+    await testConditionedOrdinaryGroups(cdp, base);
     await testTranslationWitnesses(cdp, base);
+    await testSemanticLocations(cdp, base);
     await testDeferredModeContract(cdp, base);
     process.stdout.write(JSON.stringify({
       status: 'pass',
       assertions: [
         'calendar-formulary-choices', 'proper-form-choices', 'cold-read-validation',
-        'translation-witness-choices', 'deferred-mode-contract'
+        'multiple-ordinary-groups', 'conditioned-ordinary-groups', 'translation-witness-choices',
+        'semantic-location-contract', 'deferred-mode-contract'
       ].map((name) => ({ name, status: 'pass' }))
     }) + '\n');
   } finally {

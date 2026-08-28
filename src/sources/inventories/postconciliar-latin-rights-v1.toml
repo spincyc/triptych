@@ -1,0 +1,85 @@
+# A text-free operational rights audit for the Latin typical editions of the
+# postconciliar Roman Missal. It records evidence, limits, and a release gate;
+# it contains no liturgical wording and supplies no source payload.
+
+rights_schema = 1
+record_type = "postconciliar-latin-rights"
+recorded_on = "2026-08-27"
+jurisdiction = "United States"
+scope = "Latin typical editions of the postconciliar Missale Romanum and their amended reprints, including the 1970, 1971, 1975, 2002, and 2008 states"
+
+civil_law_status = "unresolved"
+affirmative_distribution_basis = "not-established"
+operational_decision = "withhold"
+payload_disposition = "identity-and-rights-metadata-only"
+
+holding = """
+Do not publish Latin wording whose only established source is a postconciliar
+typical edition or amended reprint. Registered evidence verifies that the Holy
+See claims copyright in the Latin typical editions, extends that claim to later
+amended or augmented editions, and requires permission for printing,
+reprinting, or internet distribution. This repository has located no express
+grant that covers its tracked corpus, public Git, downloadable data, browser,
+or PDF surfaces.
+
+That is an operational, fail-closed decision from the absence of an affirmative
+distribution basis. It is not a civil-law adjudication that copyright subsists
+in every word or that one owner holds every layer of a composite book. The
+promulgated 2005 authority cited by the current ecclesiastical instrument has
+not been acquired, and no court has decided the particular claims for this
+repository. Those limits keep `civil_law_status` unresolved while the release
+decision remains withheld.
+"""
+
+[registered_evidence]
+source_ids = [
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.2",
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.3",
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.111",
+  "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+]
+finding = """
+The two 2021 passages are the controlling registered evidence. Number 2 records
+the ownership claim over Latin typical editions and later amended or augmented
+editions. Number 3 records the permission requirement for print and internet
+distribution. The 2001 passage is corroboration, not the current instrument.
+The restricted 2002 artifact records the book's own rights notice and exact
+identity without making its protected payload public.
+"""
+
+[authority_gap]
+status = "open"
+missing = "Secretariat of State decree of 13 May 2005, AAS 97 (2005) 798-799, cited by the 2021 instrument"
+why_it_matters = "The registered 2021 passage verifies the Holy See's present ecclesiastical claim, but the underlying act it cites has not been acquired or read here. A separate Vatican page names a decree of 31 May 2005; this record does not assume that the dates refer to one act."
+what_would_close_it = "Acquire and hash the cited AAS pages, reconcile the date and holder language against the separate 31 May reference, and obtain either an applicable express distribution grant or a jurisdiction-specific rights determination adequate for the intended release surface."
+
+[release_gate]
+default = "withhold"
+open_only_if = "An exact target state and an affirmative basis covering the intended surface are both recorded and reviewed."
+does_not_open_the_gate = [
+  "public web availability",
+  "a host or uploader rights label",
+  "a historical witness that has not been compared with the target wording",
+  "canonical permission to prepare a study edition without a distribution grant",
+]
+
+[scope_partition]
+modern_new_or_changed_matter = "Withheld unless an affirmative distribution basis is recorded."
+public_domain_antecedent = "May be assessed from its own earlier witness and rights basis; this audit does not transfer a modern edition's restriction backward onto pre-existing wording."
+mixed_matter = "Partition inherited and modern contributions at an evidenced boundary. If the boundary or target identity is unresolved, withhold the combined span."
+edition_identity_only = "Titles, dates, promulgating acts, loci, hashes, and text-free change metadata may be recorded without reproducing liturgical wording."
+
+[affected_missal_states]
+book_ids = [
+  "missale-romanum-1970-typica",
+  "missale-romanum-1971-reimpressio",
+  "missale-romanum-1975-typica-altera",
+  "missale-romanum-2002-typica-tertia",
+  "missale-romanum-2008-reimpressio",
+]
+count = 5
+
+[payload_guard]
+contains_liturgical_payload = false
+contains_source_quotation = false
+allowed_content = "Bibliographic identity, source identifiers, evidence summaries, limits, and operational release decisions only."

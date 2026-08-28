@@ -3,9 +3,10 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14288,
+   "edition_owned": true,
    "id": "artifact.english-language-liturgical-consultation.praying-together.1998.common-texts-en",
    "media_type": "text/tab-separated-values; charset=utf-8",
-   "notes": "Audit metadata for the former normalized payload: one header line and 121 data lines, one physical line per printed sense line, with no embedded tabs or newlines; sha256 and byte_size above identify the exact removed bytes. The payload is not tracked, indexable, or an assembled-liturgical-text source. This ecumenical text is not the Roman Missal's approved English, and the copyright grant is not liturgical approval. Retaining the hash and transformation/source evidence does not authorize reconstructing or serving the wording from another corpus.",
+   "notes": "Audit metadata for the former normalized payload: one header line and 121 data lines, one physical line per printed sense line, with no embedded tabs or newlines; this private manifest's sha256 and byte_size fields identify the exact removed bytes. The payload is not tracked, indexable, or an assembled-liturgical-text source. This ecumenical text is not the Roman Missal's approved English, and the copyright grant is not liturgical approval. Retaining the hash and provenance evidence does not authorize reconstructing or serving the wording from another corpus.",
    "page_count": null,
    "retrieved": "2026-07-31",
    "rights": "licensed",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "web-page",
    "byte_size": 60046,
+   "edition_owned": true,
    "id": "artifact.english-language-liturgical-consultation.praying-together.1998.permissions-page",
    "media_type": "text/html; charset=iso-8859-1",
    "page_count": null,
@@ -29,6 +31,7 @@
   {
    "artifact_type": "guidance-pdf",
    "byte_size": 62522,
+   "edition_owned": true,
    "id": "artifact.english-language-liturgical-consultation.praying-together.1998.reproduction-guidelines",
    "media_type": "application/pdf",
    "page_count": 2,

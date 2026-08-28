@@ -383,8 +383,10 @@ which is the right way round.
 
 ## 8.5 One label, four acts
 
-`roman-pre-1955` declares `stands_before: maxima-redemptionis-1955`, and the
-distance it holds was not made by that act alone. Four made it: the
+`roman-pre-1955` now declares a `stands_before` list containing both
+`de-rubricis-simpliciorem-1955` and `maxima-redemptionis-1955`, because the
+1920 state stands before both 1955 acts. The distance it holds to 1962 was not
+made by those acts alone. Four made it: the
 simplification of the rubrics of March 1955, which owns the octaves, the vigils
 and the `semiduplex` vocabulary and is answerable for none of the file's rows;
 *Maxima Redemptionis* of November 1955, which owns the Holy Week order and most
@@ -392,12 +394,14 @@ of what is recorded; the 1960 code; and the 1962 typical edition.
 
 So a reader who takes the file as the 1962 book minus one reform charges the
 1960 code's work to Pius XII, which is the blending of states this document
-exists to prevent. The apportionment is written in that file's own
-`open_collation_items`, and two mechanical fixes stay open because both are
-schema decisions: whether `stands_before` should name the EARLIEST act a state
-stands before or admit a list of act ids, and whether a departure row should
-carry an optional `act` so each row says which act made it rather than the file
-attributing all of them to one.
+exists to prevent. The mechanical ambiguity is closed: `stands_before` is a
+nonempty unique list of act ids, and the primary departure and every `also` row
+may carry an optional `act`, each resolved against the same act inventory. That
+row field names the act-history station or attribution record for the claim. It
+does not turn an `unrecorded` difference into a proved causal instrument:
+`editio-typica-1962` may be the station at which a difference is inventoried
+while the basis still says that no promulgating act was found. An unset `act`
+is the honest representation when no station has been established.
 
 There are also at least two states here worth carrying and not one. The state
 this file targets stands before both acts of 1955; the 1956–1960 middle state,
@@ -414,10 +418,13 @@ built turned out to be built in four places out of five.
 
 A recension calendar is a `propers.yaml` like any other, distinguished by two
 header fields and by the fact that its `masses` are **departures** rather than
-entries. `text_from` names the calendar it inherits from; `stands_before` names
-the act it stands before. Every row states one primary `departure` from the
-closed vocabulary of §3, may carry further kinds under `also`, and must state a
-`basis`.
+entries. `text_from` names the calendar it inherits from; `stands_before` is a
+nonempty, unique list naming the acts explicitly used to bound the state.
+Every id resolves against the act inventory. Every row states one primary
+`departure` from the closed vocabulary of §3, may carry further kinds under
+`also`, and must state a `basis`. The primary claim and each additional claim
+may carry an optional inventory-resolved `act`; absence records that no honest
+act-history station has been established.
 
 Everything downstream then reads **one function**:
 
@@ -733,7 +740,9 @@ answer.
 The canonical current statement is the coverage header itself, not a count in
 this prose. Its boundaries are:
 
-- partial calendar structure, confined chiefly to the stated Holy Week deltas;
+- partial calendar structure: six stated Holy Week deltas plus the exact,
+  source-recorded absence of St Joseph the Worker and the Queenship of the
+  Blessed Virgin Mary from the registered pre-reform witness body;
 - partial precedence through the disclosed linearization;
 - no Proper wording independently transcribed for the target recension;
 - uncollated Commons inherited from `roman-1962`;

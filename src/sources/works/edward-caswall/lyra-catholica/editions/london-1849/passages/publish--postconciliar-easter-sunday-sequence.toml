@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.edward-caswall.lyra-catholica.london-1849.publish-postconciliar-easter-sunday-sequence"
+edition_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_id = "artifact.edward-caswall.lyra-catholica.london-1849.postconciliar-antecedent-sequences-en"
+artifact_sha256 = "d24b323f57140f377d3c826704623362542a062eb369485f49e60e82c133ce22"
+locus = "victimae-paschali"
+physical_line_ranges = [[2, 2]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact publishable Victimae Paschali laudes English body for the postconciliar Easter Sunday Sequence."
+verified_on = "2026-08-27"
+notes = "One complete TSV data line; JSON-decoding its english_json cell yields the page-verified multiline body controlled by the sibling verification passage."

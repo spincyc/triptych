@@ -81,6 +81,7 @@
       (work.alternate_titles || []).join(' '),
       work.id,
       edition.id || '',
+      edition.title || '',
       edition.date || '',
       edition.language || ''
     ].join(' ').toLowerCase();

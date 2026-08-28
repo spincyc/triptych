@@ -109,18 +109,18 @@ class BrowserPagePublishabilityTest(unittest.TestCase):
       with self.subTest(entrance=entrance):
         self.assertIn(entrance, self.module.BROWSER_SECTION_COLOURS)
 
-  def test_no_published_browser_page_carries_a_second_document_landmark(self):
-    """One `<main>` per source page.
+  def test_sources_defers_its_document_landmark_to_the_public_layout(self):
+    """The built Sources route has one main rather than a nested pair."""
+    source = BROWSER / "sources/index.html"
+    output_relative = "sources/index.html"
+    rendered = self.module.render_browser_page(source, output_relative, False, {})
+    self.assertEqual(source.read_text(encoding="utf-8").count("<main"), 0)
+    self.assertEqual(rendered.count("<main"), 1)
 
-    The published artifact currently nests the page's own landmark inside the
-    layout's, which is a defect of `render_browser_page` rather than of these
-    files; this holds the source side of that boundary while the publish side
-    is settled.
-    """
+  def test_every_browser_source_keeps_one_page_heading(self):
     for page in self.pages:
       with self.subTest(page=page.relative_to(ROOT).as_posix()):
         text = page.read_text(encoding="utf-8")
-        self.assertEqual(text.count("<main"), 1, "exactly one <main> per source page")
         self.assertEqual(text.count("<h1"), 1, "exactly one <h1> per source page")
 
 

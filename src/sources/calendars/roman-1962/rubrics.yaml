@@ -1191,20 +1191,29 @@ unsettled:
     cases but does not expressly provide for this shortfall. The date-scoped
     calendar refusal therefore prevents occurrence from choosing either entry;
     a competent dated Ordo is required.
-- what: the Greater Litanies and the Rogation days
-  why: >-
-    The calendar index inscribes the Greater Litanies at 25 April under one key
-    with the feast of St Mark, so where that day loses, this page cannot tell
-    the feast's ordinary commemoration from the Litanies' commemoration, which
-    RG 109 f makes privileged in the Mass. The Rogation Mass itself is placed -
-    404 times over the 101 emitted years, at 25 April and at Easter +36, +37 and
-    +38 - and is classified as a further Mass appointed on the day, because RG 81
-    and RG 88 do nothing about either observance in the Office. What this file
-    still does not decide is whether that Mass is said in any given church, which
-    is a question of the procession and belongs to the Mass category.
-  effect: >-
-    On 25 April a commemoration is derived as ordinary and may in fact be
-    privileged, which changes whether it survives at a sung non-conventual Mass.
+- what: 'the Greater Litanies combined with the feast of St Mark on a higher-ranking day'
+  scope: 'occurrence'
+  when:
+    candidate_key: 'litania-maior'
+    with_precedence_place:
+      min: 1
+      max: 15
+  why: 'The calendar index inscribes the Greater Litanies at 25 April under one
+    key with the feast of St Mark. When that combined entry loses to a day in
+    rows 1 through 15, this file cannot tell the feast''s ordinary
+    commemoration from the Litanies'' privileged commemoration in the Mass
+    under RG 109 f. It therefore cannot settle the losing entry''s
+    commemoration or the resulting oration order.'
+  effect: 'On 25 April the model would otherwise derive an ordinary
+    commemoration that may instead be privileged, changing whether it survives
+    at a sung non-conventual Mass.'
+- what: 'whether the Rogation Mass is said in a given church'
+  why: 'The Rogation Mass is placed 404 times over the 101 emitted years, at 25
+    April and at Easter +36, +37 and +38, and is classified as a further Mass
+    appointed on the day because RG 81 and RG 88 do nothing about either
+    Litany observance in the Office. This file does not decide whether that
+    Mass is said in any given church; that depends on the procession and
+    belongs to the Mass category.'
 - what: two candidates that land on the same row
   why: the table orders within several rows - movable before fixed, proper before indulted
     - and this repository cannot always tell which a mass is. Where two candidates

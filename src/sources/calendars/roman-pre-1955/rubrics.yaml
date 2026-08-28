@@ -559,7 +559,8 @@ bases:
 
 # ---------------------------------------------------------------------------
 # Assignment. Ordered; the first rule whose predicate matches a mass wins.
-# The pre-1955 calendar inherits 486 of 491 masses from the 1962 typical
+# The pre-1955 calendar has 484 unstated base masses among the 489 masses its
+# effective projection serves. Their source is the 1962 typical
 # edition via the recension projection. The 1962 rank (I, II, III, Comm.) is
 # the only grade information the mass index carries, and it is an
 # APPROXIMATION of the pre-1955 grade:
@@ -1058,6 +1059,25 @@ unsettled:
     secondary, proper before common, Apostles before other saints — that a
     mass key does not carry. Where two candidates tie, the derivation stops
     and says the day is not settled here.
+- what: 'a fixed-date feast inherited as 1962 class III colliding with a day in rows 15 through 23'
+  scope: 'occurrence'
+  when:
+    candidate_basis:
+    - 'row-21-semiduplex-lord-bvm'
+    - 'row-22-semiduplex-other'
+    candidate_origin: 'fixed-date'
+    with_precedence_place:
+      min: 15
+      max: 23
+  why: 'The inherited mass index says only that the feast was class III in
+    1962. In the pre-1955 system it may instead have been duplex minus,
+    semiduplex, or simplex, occupying rows 15 through 23 according to personal
+    dignity. Against another day in that same range, the missing historical
+    grade can change the winner, tie, or commemoration disposition. No target
+    edition source held here identifies that grade, so this occurrence must
+    remain unresolved. A competitor above row 15 defeats every possible grade,
+    and one below row 23 loses to every possible grade; those deterministic
+    cases remain settled.'
 - what: criterion (e) propriety in occurrence
   why: >-
     Where a proper feast and a common feast of the same grade occur on the

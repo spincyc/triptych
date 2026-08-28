@@ -17,7 +17,7 @@ the trunk and then becomes an optional eight-packet advanced branch. A separate
 memory workbook permits repeated Latin-to-English, English-to-Latin,
 morphological, construction, reconstruction, and composition retrieval.
 
-The ChatGPT edition has 37 PDFs totaling 2,068 pages: three companions, 22
+The ChatGPT edition has 37 PDFs totaling 2,067 pages: three companions, 22
 core packets, eight advanced-poetry packets, and four cumulative reviews.
 
 ## ChatGPT edition

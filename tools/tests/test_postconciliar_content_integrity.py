@@ -20,6 +20,8 @@ from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[2]
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 PLACEHOLDER_TEXT = (
@@ -58,6 +60,25 @@ TRANSLATION_INVENTORY = (
     / "sources"
     / "inventories"
     / "postconciliar-proper-translations-v1.toml"
+)
+SANCTORAL_INVENTORY = (
+    ROOT
+    / "src"
+    / "sources"
+    / "inventories"
+    / "postconciliar-sanctoral-acquisition-v1.toml"
+)
+LENT_WEEKDAY_PASSAGE = (
+    ROOT
+    / "src"
+    / "sources"
+    / "works"
+    / "catholic-church"
+    / "ordo-lectionum-missae"
+    / "editions"
+    / "latin-editio-typica-altera-1981"
+    / "passages"
+    / "feriae-quadragesimae-219-256.toml"
 )
 FORBIDDEN_COLLECT_SNIPPET_DIGESTS = {
     67: {"3fcad3a774378ec8fbc071c25be23935f93dd96cd4c60a1a8c27812f761dbf32"},
@@ -125,6 +146,43 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
         cls.translations = tomllib.loads(
             TRANSLATION_INVENTORY.read_text(encoding="utf-8")
         )
+        cls.sanctoral = tomllib.loads(
+            SANCTORAL_INVENTORY.read_text(encoding="utf-8")
+        )
+
+    def test_lenten_passage_distinguishes_optional_masses_from_weekdays(self):
+        """Marginal numbers for optional formularies are not weekday identities."""
+        passage = tomllib.loads(LENT_WEEKDAY_PASSAGE.read_text(encoding="utf-8"))
+        context = str(passage.get("context") or "")
+        self.assertIn("nn. 224-235, 237-242, 244-249 and 251-256", context)
+        self.assertIn("nn. 236, 243 and 250 are optional Masses", context)
+        self.assertIn("are not weekday identities", context)
+        self.assertNotIn("The remaining weekdays, nn. 224-256", context)
+
+    def test_ferial_open_collation_claim_is_settled_at_323_entries(self):
+        """The open-collation prose reflects the landed weekday census."""
+        items = "\n".join(str(item) for item in self.document["open_collation_items"])
+        self.assertIn("323 weekday entries", items)
+        self.assertNotIn("this index still carries none of them", items)
+
+        rubrics = yaml.safe_load(
+            (CALENDARS / "postconciliar" / "rubrics.yaml").read_text(
+                encoding="utf-8"
+            )
+        )
+        carried_rules = {
+            row["id"]: re.compile(row["key_matches"])
+            for row in rubrics["assignment"]
+            if "weekday" in str(row.get("id") or "")
+            and str(row.get("id") or "").endswith("-carried")
+        }
+        self.assertEqual(len(carried_rules), 9)
+        weekday_keys = {
+            mass["key"]
+            for _, _, mass in self.rows
+            if any(rule.fullmatch(mass["key"]) for rule in carried_rules.values())
+        }
+        self.assertEqual(len(weekday_keys), 323)
 
     def test_seven_commons_are_typed_unavailable_formularies_not_pseudo_text(self):
         """The acquired sevenfold heading is known; its formularies are not."""
@@ -167,7 +225,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                 continue
             references.append((mass, pointer))
 
-        self.assertTrue(references, "the calendar records no Missal Common headings")
+        self.assertTrue(references, "the calendar records no Antiphonary Common headings")
         self.assertEqual(
             {str(mass.get("key") or "") for mass, _ in references},
             COMMON_HEADING_MASSES,
@@ -179,7 +237,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                 mass.get("text_status"),
                 {
                     "state": "unavailable",
-                    "scope": "proper-collect",
+                    "scope": "missal-formulary",
                     "reasons": [
                         {
                             "kind": "no-exemplar",
@@ -189,7 +247,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                 key,
             )
             self.assertIsInstance(pointer, dict, key)
-            self.assertEqual(pointer.get("scope"), "missal-propers-except-collect", key)
+            self.assertEqual(pointer.get("scope"), "missal-antiphons", key)
             self.assertEqual(pointer.get("source_id"), COMMON_POINTER_SOURCE, key)
             self.assertTrue(str(pointer.get("locus") or "").strip(), key)
 
@@ -246,7 +304,7 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
             notes = str(mass.get("notes") or "")
             self.assertIn("artifact page 354, printed page 300", notes, key)
             self.assertIn(wanted["locus"], notes, key)
-            self.assertIn("no Lectionary text is reproduced", notes, key)
+            self.assertIn("no lectionary text is reproduced", notes.casefold(), key)
 
             refs = {}
             for _, proper in direct_propers(mass):
@@ -256,6 +314,244 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                     self.assertEqual(len(verses), 1, (key, proper))
                     refs[str(proper.get("name") or "")] = verses[0].get("ref")
             self.assertEqual(refs, wanted["refs"], key)
+
+    def test_split_formularies_retain_exact_ordo_page_provenance(self):
+        """Migrated citation sets remain bound to their already-read page images."""
+        expected = {
+            "saint-fabian-pope-martyr": (514, 328, 274),
+            "saint-sebastian-martyr": (515, 328, 274),
+            "saint-blaise-bishop-martyr": (525, 331, 277),
+            "saint-ansgar-bishop": (526, 331, 277),
+            "saint-peter-chanel-priest-martyr": (556, 339, 285),
+            "saints-nereus-achilleus-martyrs": (562, 341, 287),
+            "saint-pancras-martyr": (563, 341, 287),
+            "saint-bede-venerable-priest-doctor-church": (567, 342, 288),
+            "saint-gregory-vii-pope": (568, 342, 288),
+            "saint-mary-magdalene-pazzi-virgin": (569, 342, 288),
+            "saint-eusebius-vercelli-bishop": (611, 353, 299),
+            "saint-robert-bellarmine-bishop-doctor-church": (641, 360, 306),
+            "saints-denis-bishop-companions-martyrs": (654, 364, 310),
+            "saint-john-leonardi-priest": (655, 364, 310),
+            "saints-john-brebeuf-isaac-jogues-priests": (662, 365, 311),
+            "saint-paul-cross-priest": (663, 366, 312),
+            "saint-clement-i-pope-martyr": (682, 370, 316),
+            "saint-columban-abbot": (683, 370, 316),
+        }
+        by_key = {str(mass.get("key") or ""): mass for _, _, mass in self.rows}
+        for key, (number, artifact_page, printed_page) in expected.items():
+            notes = str(by_key[key].get("notes") or "")
+            self.assertIn(
+                f"artifact page {artifact_page}, printed page {printed_page}, "
+                f"n. {number}",
+                notes,
+                key,
+            )
+            self.assertIn("identity-only Common records", notes, key)
+            self.assertIn("no lectionary text is reproduced", notes.casefold(), key)
+
+    def test_recovered_sanctoral_formularies_match_exact_ordo_citations(self):
+        """The eleven recovered page loci stay bound to singular identities."""
+        expected = {
+            "saint-jerome-emiliani": (
+                "Saint Jerome Emiliani", "pc-02-08", "02-08", 529, 332, 278,
+                [
+                    ("First Reading", "Tobit 12:6-13"),
+                    ("Responsorial Psalm", "Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11"),
+                    ("Gospel Acclamation", "Matthew 5:3"),
+                    ("Gospel", "Mark 10:17-30"),
+                    ("Gospel (shorter form)", "Mark 10:17-27"),
+                ],
+            ),
+            "saint-george-martyr": (
+                "Saint George, Martyr", "pc-04-23", "04-23", 553, 338, 284,
+                [
+                    ("First Reading", "Revelation 21:5-7"),
+                    ("Responsorial Psalm", "Psalm 126:1-2ab, 2cd-3, 4-5, 6"),
+                    ("Gospel Acclamation", "1 Peter 4:14"),
+                    ("Gospel", "Luke 9:23-26"),
+                ],
+            ),
+            "saint-paulinus-nola-bishop": (
+                "Saint Paulinus of Nola, Bishop", "pc-06-22", "06-22", 584, 346, 292,
+                [
+                    ("First Reading", "2 Corinthians 8:9-15"),
+                    ("Responsorial Psalm", "Psalm 40:2, 4ab, 7-8a, 8b-9, 10"),
+                    ("Gospel Acclamation", "Matthew 5:3"),
+                    ("Gospel", "Luke 12:32-34"),
+                ],
+            ),
+            "saints-john-fisher-bishop-thomas-more": (
+                "Saints John Fisher, Bishop, and Thomas More, Martyrs",
+                "pc-06-22-fisher-more", "06-22", 585, 346, 292,
+                [
+                    ("First Reading", "1 Peter 4:12-19"),
+                    ("Responsorial Psalm", "Psalm 126:1-2ab, 2cd-3, 4-5, 6"),
+                    ("Gospel Acclamation", "Matthew 5:10"),
+                    ("Gospel", "Matthew 10:34-39"),
+                ],
+            ),
+            "saint-louis": (
+                "Saint Louis", "pc-08-25", "08-25", 630, 357, 303,
+                [
+                    ("First Reading", "Isaiah 58:6-11"),
+                    ("Responsorial Psalm", "Psalm 112:1-2, 3-4, 5-7a, 7b-8, 9"),
+                    ("Gospel Acclamation", "John 13:34"),
+                    ("Gospel", "Matthew 22:34-40"),
+                ],
+            ),
+            "saint-joseph-calasanz-priest": (
+                "Saint Joseph Calasanz, Priest", "pc-08-25-calasanz", "08-25",
+                631, 358, 304,
+                [
+                    ("First Reading", "1 Corinthians 12:31-13:13"),
+                    ("First Reading (shorter form)", "1 Corinthians 13:4-13"),
+                    ("Responsorial Psalm", "Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11"),
+                    ("Gospel Acclamation", "John 15:9b, 5b"),
+                    ("Gospel", "Matthew 18:1-5"),
+                ],
+            ),
+            "saint-wenceslaus-martyr": (
+                "Saint Wenceslaus, Martyr", "pc-09-28", "09-28", 646, 362, 308,
+                [
+                    ("First Reading", "1 Peter 3:14-17"),
+                    ("Responsorial Psalm", "Psalm 126:1-2ab, 2cd-3, 4-5, 6"),
+                    ("Gospel Acclamation", "Matthew 5:10"),
+                    ("Gospel", "Matthew 10:34-39"),
+                ],
+            ),
+            "saint-hedwig-religious": (
+                "Saint Hedwig, Religious", "pc-10-16", "10-16", 658, 365, 311,
+                [
+                    ("First Reading", "Sirach 26:1-4, 16-21"),
+                    ("Responsorial Psalm", "Psalm 128:1-2, 3, 4-5"),
+                    ("Gospel Acclamation", "John 8:31b-32"),
+                    ("Gospel", "Mark 3:31-35"),
+                ],
+            ),
+            "saint-margaret-mary-alacoque-virgin": (
+                "Saint Margaret Mary Alacoque, Virgin", "pc-10-16-alacoque",
+                "10-16", 659, 365, 311,
+                [
+                    ("First Reading", "Ephesians 3:14-19"),
+                    ("Responsorial Psalm", "Psalm 23:1-3, 4, 5, 6"),
+                    ("Gospel Acclamation", "Matthew 11:25"),
+                    ("Gospel", "Matthew 11:25-30"),
+                ],
+            ),
+            "saint-margaret-scotland": (
+                "Saint Margaret of Scotland", "pc-11-16", "11-16", 676, 369, 315,
+                [
+                    ("First Reading", "Isaiah 58:6-11"),
+                    ("Responsorial Psalm", "Psalm 112:1-2, 3-4, 5-7a, 7b-8, 9"),
+                    ("Gospel Acclamation", "John 13:34"),
+                    ("Gospel", "John 15:9-17"),
+                ],
+            ),
+            "saint-gertrude-virgin": (
+                "Saint Gertrude, Virgin", "pc-11-16-gertrude", "11-16",
+                677, 369, 315,
+                [
+                    ("First Reading", "Ephesians 3:14-19"),
+                    ("Responsorial Psalm", "Psalm 23:1-3, 4, 5, 6"),
+                    ("Gospel Acclamation", "John 15:9b, 5b"),
+                    ("Gospel", "John 15:1-8"),
+                ],
+            ),
+        }
+        by_key = {str(mass.get("key") or ""): mass for _, _, mass in self.rows}
+        landed = self.sanctoral["landed"]
+        landed_masses = landed["masses"]
+        self.assertEqual(len(landed_masses), 181)
+        self.assertEqual(len(landed_masses), len(set(landed_masses)))
+        self.assertIn("181 Masses and 750 Lectionary citations", landed["what"])
+        self.assertLessEqual(set(expected), set(landed_masses))
+        for key, wanted in expected.items():
+            name, registry, date, number, artifact_page, printed_page, refs = wanted
+            mass = by_key[key]
+            self.assertEqual(mass.get("name"), name, key)
+            self.assertEqual(mass.get("registry"), registry, key)
+            self.assertEqual(mass.get("date"), date, key)
+            self.assertEqual(mass.get("rank"), "Optional memorial", key)
+            self.assertEqual(mass.get("kind"), "sanctoral", key)
+            self.assertNotIn("forms", mass, key)
+            self.assertNotIn("text_status", mass, key)
+
+            notes = str(mass.get("notes") or "")
+            self.assertIn(
+                f"artifact page {artifact_page}, printed page {printed_page}, "
+                f"n. {number}",
+                notes,
+                key,
+            )
+            self.assertIn("identity-only Common records", notes, key)
+            self.assertIn("no lectionary wording is reproduced", notes.casefold(), key)
+
+            observed = []
+            for _, proper in direct_propers(mass):
+                verses = proper.get("verses")
+                if not verses:
+                    continue
+                self.assertEqual(proper.get("source"), "scripture", (key, proper))
+                self.assertEqual(len(verses), 1, (key, proper))
+                observed.append((proper.get("name"), verses[0].get("ref")))
+            self.assertEqual(observed, refs, key)
+
+    def test_exceptional_rites_state_and_project_nonfull_ordinary_frames(self):
+        """Non-Mass and branch-sensitive rites never inherit a full Mass frame."""
+        expected = {
+            "palm-sunday": "unavailable",
+            "mass-of-the-lords-supper": "unavailable",
+            "good-friday": "none",
+            "easter-vigil": "unavailable",
+            "easter-sunday": "unavailable",
+            "corpus-christi": "unavailable",
+        }
+        expected_forms = {("pentecost", "day"): "unavailable"}
+        source = {str(mass.get("key") or ""): mass for _, _, mass in self.rows}
+        generated = propers_tool.calendar_structure(
+            CALENDARS, "postconciliar", propers_tool.book_tokens()
+        )
+        emitted = {str(mass.get("key") or ""): mass for mass in generated["masses"]}
+
+        self.assertEqual(
+            {
+                key: mass["ordinary_frame"]["applicability"]
+                for key, mass in source.items()
+                if "ordinary_frame" in mass
+            },
+            expected,
+        )
+
+        for key, applicability in expected.items():
+            frame = source[key].get("ordinary_frame")
+            self.assertIsInstance(frame, dict, key)
+            self.assertEqual(frame.get("applicability"), applicability, key)
+            self.assertTrue(str(frame.get("basis") or "").strip(), key)
+            self.assertEqual(emitted[key].get("ordinary_frame"), frame, key)
+
+        observed_forms = {}
+        for key, mass in source.items():
+            for form in mass.get("forms") or []:
+                if "ordinary_frame" in form:
+                    observed_forms[(key, str(form.get("id") or ""))] = form[
+                        "ordinary_frame"
+                    ]["applicability"]
+        self.assertEqual(observed_forms, expected_forms)
+        for (key, form_id), applicability in expected_forms.items():
+            source_form = next(
+                form for form in source[key]["forms"] if form.get("id") == form_id
+            )
+            emitted_form = next(
+                form for form in emitted[key]["forms"] if form.get("id") == form_id
+            )
+            frame = source_form["ordinary_frame"]
+            self.assertEqual(frame.get("applicability"), applicability)
+            self.assertTrue(str(frame.get("basis") or "").strip())
+            self.assertEqual(emitted_form.get("ordinary_frame"), frame)
+
+        for key in ("chrism-mass",):
+            self.assertNotIn("ordinary_frame", source[key], key)
+            self.assertNotIn("ordinary_frame", emitted[key], key)
 
     def test_same_date_optional_memorials_have_distinct_mass_identities(self):
         """Calendar alternatives are choices, never forms of one celebration."""
@@ -414,12 +710,24 @@ class PostconciliarContentIntegrityTest(unittest.TestCase):
                     "witness",
                     "source_id",
                     "witness_artifact_id",
+                    "witness_passage_id",
                 ):
                     self.assertNotIn(false_provenance, row, (label, false_provenance))
             else:
-                self.assertEqual(row.get("rights"), "permission", label)
-                for required in ("witness", "source_id", "witness_artifact_id"):
+                for required in ("witness", "witness_artifact_id"):
                     self.assertTrue(str(row.get(required) or "").strip(), (label, required))
+                if "rights" not in row or "source_id" not in row:
+                    self.assertNotIn("rights", row, label)
+                    self.assertNotIn("source_id", row, label)
+                    self.assertTrue(
+                        str(row.get("witness_passage_id") or "").strip(),
+                        (label, "witness_passage_id"),
+                    )
+                    self.assertEqual(
+                        reason.get("source_id"), row.get("witness_passage_id"), label
+                    )
+                else:
+                    self.assertEqual(row.get("rights"), "permission", label)
                 digests = row.get("quarantined_text_sha256")
                 self.assertIsInstance(digests, list, label)
                 self.assertTrue(digests, label)

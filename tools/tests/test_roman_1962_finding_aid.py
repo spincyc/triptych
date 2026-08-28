@@ -41,6 +41,13 @@ CUMMISKEY_PUBLICATION_ARTIFACT = (
 CUMMISKEY_PUBLICATION_SHA256 = (
     "1c414c2fb24abd25f211841302a0b4ac95ff89d47a998afbefd2b9a323896851"
 )
+CUMMISKEY_PALM_PUBLICATION_ARTIFACT = (
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+    "palm-sunday-procession-antiphons-en"
+)
+CUMMISKEY_PALM_PUBLICATION_SHA256 = (
+    "95cfd5a0821db3a1c0b9cfbdec21ee3898f9c844dd26dc2db28683010a3b55ae"
+)
 LASANCE_SOURCE = (
     "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 )
@@ -68,6 +75,15 @@ CUMMISKEY_EDITION = (
 CUMMISKEY_PUBLICATION_TSV = (
     CUMMISKEY_EDITION.parent
     / "artifacts/common-marian-verified-en/common-marian-verified-en.tsv"
+)
+CUMMISKEY_PALM_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/palm-sunday-procession-antiphons-en/"
+    "palm-sunday-procession-antiphons-en.tsv"
+)
+CUMMISKEY_RECOVERED_PUBLICATION_TSV = (
+    CUMMISKEY_EDITION.parent
+    / "artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv"
 )
 ANTECEDENT_EDITION = (
     ROOT
@@ -183,12 +199,12 @@ class Roman1962FindingAidTest(unittest.TestCase):
         row = rows[0]
         self.assertEqual(row["calendar"], self.record["calendar"])
         self.assertEqual(
-            row["coverage_ref"], RECORD.relative_to(ROOT).as_posix()
+            row["coverage_ref"]["propers"], RECORD.relative_to(ROOT).as_posix()
         )
         self.assertEqual(
             row["capabilities"]["propers"],
             {
-                "data_availability": "available",
+                "data_availability": "partial",
                 "publication_availability": "partial",
                 "collation": "finding-aid",
             },
@@ -360,6 +376,54 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         }
 
     @classmethod
+    def source_established_unavailable_identities(
+        cls,
+    ) -> set[tuple[str, str, str, str, int]]:
+        propers = load_mass_propers()
+        document = propers.load_calendar(
+            ROOT / "src" / "sources" / "calendars",
+            "roman-1962",
+            effective=False,
+        )
+        target_artifact_id = load(TARGET_ARTIFACT)["id"]
+        identities: set[tuple[str, str, str, str, int]] = set()
+
+        for section in document["sections"].values():
+            for mass in section["masses"]:
+                groups = [("main", mass.get("propers", []))]
+                groups.extend(
+                    (str(form["id"]), form.get("propers", []))
+                    for form in mass.get("forms", [])
+                )
+                for form_id, proper_rows in groups:
+                    occurrences: dict[str, int] = {}
+                    for proper in proper_rows:
+                        name = proper["name"]
+                        occurrences[name] = occurrences.get(name, 0) + 1
+                        status = proper.get("text_status") or {}
+                        if (
+                            status.get("state") == "unavailable"
+                            and status.get("scope") == "proper-body"
+                            and any(
+                                reason.get("kind") == "witness-gap"
+                                and reason.get("source_id") == target_artifact_id
+                                for reason in status.get("reasons", [])
+                                if isinstance(reason, dict)
+                            )
+                        ):
+                            identities.add(
+                                (
+                                    mass["key"],
+                                    form_id,
+                                    name,
+                                    "all",
+                                    occurrences[name],
+                                )
+                            )
+
+        return identities
+
+    @classmethod
     def exact_gap_identities(cls) -> set[tuple[str, str, str, str, int]]:
         identities = cls.main_identities(
             {
@@ -368,7 +432,6 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     "Secret",
                     "Postcommunion",
                 },
-                "s-petri-nolasci-confessoris": {"Secret", "Postcommunion"},
                 "s-ioannis-mariae-vianney-confessoris": {"Collect"},
                 "commune-summorum-pontificum": {
                     "Collect (in plurali)",
@@ -462,7 +525,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         )
         identities |= {
             ("palm-sunday", "main", "Procession Antiphon", "all", occurrence)
-            for occurrence in (1, 2, 3, 5, 6, 7)
+            for occurrence in (5, 6, 7)
         }
         identities |= {
             (
@@ -475,24 +538,21 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             for form in ("second", "third")
             for proper in ("Collect", "Secret", "Postcommunion")
         }
+        identities |= cls.source_established_unavailable_identities()
         return identities
 
     @classmethod
     def exact_publication_bound_identities(
         cls,
     ) -> set[tuple[str, str, str, str, int]]:
-        return cls.main_identities(
-            {
-                "commune-festorum-bmv": {"Gradual", "Alleluia", "Tract"},
-                "commune-virginum-4": {"Alleluia"},
-                "missa-de-s-maria-in-sabbato-2": {
-                    "Offertory",
-                    "Communion",
-                },
-                "missa-de-s-maria-in-sabbato-3": {"Introit", "Alleluia"},
-                "missa-de-s-maria-in-sabbato-4": {"Offertory"},
-            }
-        )
+        return {
+            cls.identity(row)
+            for row in cls.base["entries"]
+            if any(
+                translation.get("source_id") == CUMMISKEY_SOURCE
+                for translation in row.get("translations") or []
+            )
+        }
 
     @classmethod
     def exact_child_exclusions(
@@ -552,23 +612,56 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         )
         absent |= {
             ("palm-sunday", "main", "Procession Antiphon", "all", occurrence)
-            for occurrence in (1, 2, 3, 5, 6, 7)
+            for occurrence in (5, 6, 7)
         }
+        absent |= cls.main_identities(
+            {"chrism-mass": {"Collect", "Secret", "Postcommunion"}}
+        )
+        absent |= cls.main_identities(
+            {
+                "s-ioseph-opificis-sponsi-beatae-mariae": {
+                    "Collect",
+                    "Secret",
+                    "Postcommunion",
+                }
+            }
+        )
+        affected = entries | absent
+        affected |= {
+            ("palm-sunday", "main", "Procession Antiphon", "all", occurrence)
+            for occurrence in (1, 2, 3)
+        }
+        positive = {
+            (
+                row["mass"],
+                row.get("form_id", "main"),
+                row["proper"],
+                row.get("cycle", "all"),
+                row.get("occurrence", 1),
+            )
+            for row in cls.base["entries"]
+        }
+        unavailable = {cls.identity(row) for row in cls.base["untranslated"]}
+        if missing := affected - positive - unavailable:
+            raise AssertionError(f"child exclusion targets missing from parent: {missing!r}")
         return {
-            ("untranslated", identity) for identity in entries | absent
+            ("entry" if identity in positive else "untranslated", identity)
+            for identity in affected
         }
 
     def test_historical_english_gaps_are_an_exact_typed_text_free_set(self) -> None:
         expected = self.exact_gap_identities()
+        source_established = self.source_established_unavailable_identities()
         typed = {
             self.identity(row): row
             for row in self.base["untranslated"]
             if isinstance(row.get("reason"), dict)
         }
-        self.assertEqual(len(expected), 76)
+        self.assertEqual(len(source_established), 666)
+        self.assertEqual(len(expected), 737)
         self.assertTrue(expected.issubset(typed))
         quarantined = set(typed) - expected
-        self.assertEqual(len(quarantined), 425)
+        self.assertEqual(len(quarantined), 360)
         self.assertEqual(
             {
                 (
@@ -589,8 +682,8 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 for identity in quarantined
             },
             {
-                ("rights-withheld", CUMMISKEY_SOURCE): 406,
-                ("witness-gap", LASANCE_SOURCE): 19,
+                ("rights-withheld", CUMMISKEY_SOURCE): 348,
+                ("witness-gap", CUMMISKEY_SOURCE): 12,
             },
         )
         self.assertEqual(len(typed), len(self.base["untranslated"]))
@@ -602,7 +695,13 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     "Secret (Altera secreta)",
                     "Postcommunion",
                     "Postcommunion (Altera postcommunio)",
-                }
+                },
+                "palm-sunday": {"Hymn to Christ the King"},
+                "mass-of-the-lords-supper": {
+                    "Mandatum Antiphon 8",
+                    "Prayer of the Mandatum",
+                    "Hymn at the Translation of the Blessed Sacrament",
+                },
             }
         )
         lasance_witness_gap = self.main_identities(
@@ -611,26 +710,45 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         for identity in expected:
             with self.subTest(identity=identity):
                 row = typed[identity]
-                self.assertEqual(
-                    set(row),
-                    {
-                        "mass",
-                        "form_id",
-                        "proper",
-                        "cycle",
-                        "occurrence",
-                        "lang",
-                        "extent",
-                        "availability",
-                        "reason",
-                        "note",
-                    },
-                )
+                required = {
+                    "mass",
+                    "form_id",
+                    "proper",
+                    "cycle",
+                    "occurrence",
+                    "lang",
+                    "extent",
+                    "availability",
+                    "reason",
+                    "note",
+                }
+                witness_fields = {
+                    "witness_artifact_id",
+                    "witness_passage_id",
+                    "verified_artifact_page",
+                    "verified_on_page",
+                    "verified_printed_page",
+                    "verified_heading",
+                    "verified_url",
+                }
+                self.assertTrue(required.issubset(row))
+                self.assertTrue(set(row).issubset(required | witness_fields))
+                if set(row) & witness_fields:
+                    self.assertTrue(
+                        {
+                            "witness_artifact_id",
+                            "witness_passage_id",
+                            "verified_artifact_page",
+                            "verified_on_page",
+                        }.issubset(row)
+                    )
                 self.assertEqual(row["availability"], "unavailable")
                 self.assertEqual(row["lang"], "en")
                 self.assertEqual(row["extent"], "body")
                 self.assertNotIn("text", row)
-                if identity in quarantined:
+                if identity in source_established:
+                    self.assertEqual(row["reason"], {"kind": "no-exemplar"})
+                elif identity in quarantined:
                     if row["reason"]["kind"] == "rights-withheld":
                         self.assertEqual(
                             row["reason"],
@@ -643,7 +761,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     else:
                         self.assertEqual(
                             row["reason"],
-                            {"kind": "witness-gap", "source_id": LASANCE_SOURCE},
+                            {"kind": "witness-gap", "source_id": CUMMISKEY_SOURCE},
                         )
                 elif identity in rights_withheld:
                     self.assertEqual(
@@ -666,35 +784,65 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     )
                 self.assertTrue(row["note"].strip())
 
-    def test_cummiskey_publication_bindings_are_the_exact_nine_attached_rows(
+    def test_cummiskey_publication_bindings_cover_every_deliberate_positive(
         self,
     ) -> None:
         expected = self.exact_publication_bound_identities()
         bound = {
             self.identity(row): row
             for row in self.base["entries"]
-            if "publication_artifact_id" in row
+            if any(
+                translation.get("source_id") == CUMMISKEY_SOURCE
+                for translation in row.get("translations") or []
+            )
+            and "publication_artifact_id" in row
         }
-        self.assertEqual(len(expected), 9)
+        self.assertEqual(len(expected), 60)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         self.assertEqual(
             hashlib.sha256(CUMMISKEY_PUBLICATION_TSV.read_bytes()).hexdigest(),
             CUMMISKEY_PUBLICATION_SHA256,
         )
-        with CUMMISKEY_PUBLICATION_TSV.open(
-            encoding="utf-8", newline=""
-        ) as handle:
-            source_rows = {
-                (
-                    row["mass"],
-                    row["form_id"],
-                    row["proper"],
-                    "all",
-                    1,
-                ): row
-                for row in csv.DictReader(handle, delimiter="\t")
-            }
+        self.assertEqual(
+            hashlib.sha256(CUMMISKEY_PALM_PUBLICATION_TSV.read_bytes()).hexdigest(),
+            CUMMISKEY_PALM_PUBLICATION_SHA256,
+        )
+        publication_paths = (
+            CUMMISKEY_PUBLICATION_TSV,
+            CUMMISKEY_PALM_PUBLICATION_TSV,
+            CUMMISKEY_RECOVERED_PUBLICATION_TSV,
+        )
+        publication_artifacts = {
+            load(path.parent / "artifact.toml")["id"]: load(
+                path.parent / "artifact.toml"
+            )
+            for path in publication_paths
+        }
+        source_rows = {}
+        recovered_rows = []
+        for path in publication_paths:
+            with path.open(encoding="utf-8", newline="") as handle:
+                for row in csv.DictReader(handle, delimiter="\t"):
+                    identity = (
+                        row["mass"],
+                        row["form_id"],
+                        row["proper"],
+                        row.get("cycle") or "all",
+                        int(row.get("occurrence") or 1),
+                    )
+                    self.assertNotIn(identity, source_rows)
+                    source_rows[identity] = row
+                    if path == CUMMISKEY_RECOVERED_PUBLICATION_TSV:
+                        recovered_rows.append(row)
+        self.assertEqual(len(recovered_rows), 106)
+        self.assertEqual(
+            hashlib.sha256(CUMMISKEY_RECOVERED_PUBLICATION_TSV.read_bytes()).hexdigest(),
+            publication_artifacts[
+                "artifact.eugene-cummiskey.roman-missal-english-laity."
+                "philadelphia-1861.roman-1962-recovered-en"
+            ]["sha256"],
+        )
         rejected_candidate = (
             "commune-dedicationis-ecclesiae",
             "main",
@@ -702,8 +850,20 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             "all",
             1,
         )
-        self.assertEqual(set(source_rows) - expected, {rejected_candidate})
+        self.assertTrue(expected.issubset(source_rows))
         self.assertNotIn(rejected_candidate, bound)
+        recovered_identities = {
+            (
+                row["mass"],
+                row["form_id"],
+                row["proper"],
+                row.get("cycle") or "all",
+                int(row.get("occurrence") or 1),
+            )
+            for row in recovered_rows
+        }
+        self.assertEqual(len(recovered_identities & expected), 48)
+        self.assertEqual(len(recovered_identities - expected), 58)
 
         sources = [
             row for row in self.base["sources"] if row["id"] == "cummiskey-1861"
@@ -712,16 +872,11 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         self.assertEqual(sources[0]["source_id"], CUMMISKEY_SOURCE)
         self.assertTrue(sources[0]["caution"].strip())
 
-        passage_prefix = (
-            "passage.eugene-cummiskey.roman-missal-english-laity."
-            "philadelphia-1861"
-        )
+        propers = load_mass_propers()
         for identity in expected:
             with self.subTest(identity=identity):
                 row = bound[identity]
                 source = source_rows[identity]
-                mass, _, proper, _, _ = identity
-                passage_slug = f"{mass}-{proper.lower()}"
                 self.assertEqual(row["incipit"], source["latin_incipit"])
                 self.assertEqual(row["printed_page"], source["printed_page"])
                 leaf_range = [
@@ -731,20 +886,15 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 self.assertEqual(row["ia_leaf"], leaf_range[0])
                 self.assertEqual(row["witness"], "cummiskey-1861")
                 self.assertEqual(row["artifact_id"], CUMMISKEY_PAGE_ARTIFACT)
-                self.assertEqual(
-                    row["passage_id"], f"{passage_prefix}.verify-{passage_slug}"
-                )
-                self.assertEqual(
-                    row["publication_artifact_id"],
-                    CUMMISKEY_PUBLICATION_ARTIFACT,
-                )
+                publication_artifact = publication_artifacts[
+                    row["publication_artifact_id"]
+                ]
                 self.assertEqual(
                     row["publication_artifact_sha256"],
-                    CUMMISKEY_PUBLICATION_SHA256,
+                    publication_artifact["sha256"],
                 )
-                self.assertEqual(
-                    row["publication_passage_id"],
-                    f"{passage_prefix}.publish-{passage_slug}",
+                propers.validate_translation_publication_binding(
+                    row, propers.DEFAULT_ROOT, ROMAN_TRANSLATIONS
                 )
                 self.assertEqual(row["collation_result"], "confirmed")
                 self.assertEqual(len(row["translations"]), 1)
@@ -757,19 +907,19 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 self.assertEqual(translation["source_id"], CUMMISKEY_SOURCE)
                 self.assertEqual(translation["text"], source["english"])
 
-    def test_child_sidecar_excludes_only_exact_inherited_departures(self) -> None:
+    def test_child_sidecar_excludes_only_exact_typed_inherited_departures(self) -> None:
         rows = self.child["inherited_inapplicable"]
         actual = {(row["record"], self.identity(row)) for row in rows}
         expected = self.exact_child_exclusions()
-        self.assertEqual(len(expected), 42)
+        self.assertEqual(len(expected), 48)
         self.assertEqual(actual, expected)
         self.assertEqual(len(actual), len(rows))
-        self.assertEqual({row["record"] for row in rows}, {"untranslated"})
+        self.assertEqual({row["record"] for row in rows}, {"entry", "untranslated"})
         self.assertEqual(
-            sum(row["record"] == "entry" for row in rows), 0
+            sum(row["record"] == "entry" for row in rows), 13
         )
         self.assertEqual(
-            sum(row["record"] == "untranslated" for row in rows), 42
+            sum(row["record"] == "untranslated" for row in rows), 35
         )
         for row in rows:
             with self.subTest(record=row["record"], identity=self.identity(row)):
@@ -786,7 +936,13 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                         "basis",
                     },
                 )
-                self.assertEqual(row["reason"], "recension-replaced")
+                self.assertEqual(
+                    row["reason"],
+                    "recension-absent"
+                    if row["mass"]
+                    in {"chrism-mass", "s-ioseph-opificis-sponsi-beatae-mariae"}
+                    else "recension-replaced",
+                )
                 self.assertEqual(row["basis"], "calendar-departure")
 
         self.assertNotIn("entries", self.child)
@@ -811,7 +967,7 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                     self.assertEqual(row[field], 0)
         self.assertEqual(rows["roman-1962"]["inherited_inapplicable_records"], 0)
         self.assertEqual(
-            rows["roman-pre-1955"]["inherited_inapplicable_records"], 42
+            rows["roman-pre-1955"]["inherited_inapplicable_records"], 48
         )
         self.assertTrue(rows["roman-pre-1955"]["translation_ledger_inherited"])
 

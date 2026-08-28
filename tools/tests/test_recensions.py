@@ -123,7 +123,7 @@ def recension(rows: str, header: str = "") -> str:
         "edition_short: Older\n"
         "calendar: older\n"
         "text_from: base\n"
-        + ("" if header == "-" else "stands_before: some-act-1955\n")
+        + ("" if header == "-" else "stands_before: [some-act-1955, other-act-1955]\n")
         + (header if header != "-" else "")
         + COVERAGE
         + "sections:\n  seasonal:\n    kind: seasonal\n    masses:\n"
@@ -144,7 +144,9 @@ class RecensionTest(unittest.TestCase):
             encoding="utf-8",
         )
         (inventories / "fixture-acts-base.toml").write_text(
-            "acts_schema = 1\n[[acts]]\nid = \"some-act-1955\"\n",
+            "acts_schema = 1\n"
+            "[[acts]]\nid = \"some-act-1955\"\n"
+            "[[acts]]\nid = \"other-act-1955\"\n",
             encoding="utf-8",
         )
         records = repository / "records"
@@ -357,6 +359,43 @@ class RecensionTest(unittest.TestCase):
         self.assertEqual([row["kind"] for row in stamp["also"]], ["replaced", "renamed"])
         self.assertEqual(self.problems(), [])
 
+    def test_act_history_stations_are_resolved_and_survive_the_stamp(self):
+        self.write("""\
+            - key: shifted
+              name: Sabbato Sancto
+              registry: '3'
+              season: lent
+              departure: moved
+              act: some-act-1955
+              basis: Section 9 of the decree.
+              also:
+              - departure: renamed
+                act: other-act-1955
+                basis: The later station records the renamed service.
+            """)
+        stamp = self.masses()["shifted"]["recension"]
+        self.assertEqual(stamp["act"], "some-act-1955")
+        self.assertEqual(stamp["also"][0]["act"], "other-act-1955")
+        self.assertEqual(self.problems(), [])
+
+    def test_act_history_stations_must_resolve(self):
+        self.write("""\
+            - key: shifted
+              name: Shifted
+              registry: '3'
+              season: lent
+              departure: moved
+              act: invented-act-1955
+              basis: A decree.
+              also:
+              - departure: renamed
+                act: Not-an-id
+                basis: A later station.
+            """)
+        problems = self.problems()
+        self.assertTrue(any("act names unknown act 'invented-act-1955'" in row for row in problems))
+        self.assertTrue(any("also act is not an act id" in row for row in problems))
+
     def test_also_may_not_repeat_the_primary_kind(self):
         self.write("""\
             - key: shifted
@@ -492,11 +531,30 @@ class RecensionTest(unittest.TestCase):
               departure: renamed
               basis: A reading.
             """,
-            header="stands_before: invented-act-1955\n",
+            header="stands_before: [invented-act-1955]\n",
         )
         self.assertTrue(
             any("stands_before names unknown act 'invented-act-1955'" in row for row in self.problems())
         )
+
+    def test_historical_claim_is_a_nonempty_unique_list_of_act_ids(self):
+        rows = """\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """
+        for header in (
+            "stands_before: some-act-1955\n",
+            "stands_before: []\n",
+            "stands_before: [some-act-1955, some-act-1955]\n",
+            "stands_before: [some-act-1955, 2]\n",
+        ):
+            with self.subTest(header=header):
+                self.write(rows, header=header)
+                self.assertTrue(any("stands_before" in row for row in self.problems()))
 
     def test_indirect_inheritance_cycle_is_reported_without_recursing_forever(self):
         (self.root / "middle").mkdir()
@@ -637,11 +695,17 @@ class TrackedRecensionTest(unittest.TestCase):
         self.assertIn("structural-only", advisory)
         self.assertIn("not a complete 1920 missal corpus", advisory)
         self.assertIn("six holy week departures", advisory)
+        self.assertIn("st joseph the worker", advisory)
+        self.assertIn("queenship of the blessed virgin mary", advisory)
         self.assertIn("roman-1962", advisory)
         self.assertIn("inherited and uncollated", advisory)
         self.assertIn(
             "implement-criteria-precedence",
             {row["id"] for row in coverage["blockers"]},
+        )
+        self.assertEqual(
+            document["stands_before"],
+            ["de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"],
         )
 
     def test_it_retains_the_sourced_departures_the_design_named(self):
@@ -655,9 +719,38 @@ class TrackedRecensionTest(unittest.TestCase):
                 "mass-of-the-lords-supper",
                 "good-friday",
                 "easter-vigil",
+                "s-ioseph-opificis-sponsi-beatae-mariae",
+                "beatae-mariae-virginis-reginae",
             },
             stated,
         )
+
+    def test_exact_post_1954_absences_are_source_bounded_and_not_served(self):
+        raw = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        stated = {
+            mass["key"]: (section, mass)
+            for section, _, mass in _calendars.departures_of(raw)
+        }
+        expected = {
+            "s-ioseph-opificis-sponsi-beatae-mariae":
+                ("sanctoral", "05-01", "I", "sanctoral"),
+            "beatae-mariae-virginis-reginae":
+                ("marian", "05-31", "II", "marian"),
+        }
+        for key, (section, date, rank, kind) in expected.items():
+            held_section, row = stated[key]
+            self.assertEqual(held_section, section)
+            self.assertEqual(row["departure"], "absent")
+            self.assertEqual((row["date"], row["rank"], row["kind"]), (date, rank, kind))
+            self.assertNotIn("act", row)
+            basis = row["basis"]
+            self.assertIn("missale-romanum-1962-facsimile-rights-v1.toml", basis)
+            self.assertIn("St Pius X negative was corrected as false", basis)
+        served = _calendars.mass_index(
+            _calendars.load_document(self.root, "roman-pre-1955")
+        )
+        for key in expected:
+            self.assertNotIn(key, served)
 
     def test_the_chrism_mass_is_not_served_under_this_recension(self):
         """The pre-1955 books print one Mass on Holy Thursday; `absent` removes it."""
@@ -670,7 +763,13 @@ class TrackedRecensionTest(unittest.TestCase):
     def test_holy_week_gaps_are_typed_absences_not_placeholder_propers(self):
         """Structural departures never manufacture an appointed Proper slot."""
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        holy_week = {
+            "palm-sunday", "blessing-of-palms", "chrism-mass",
+            "mass-of-the-lords-supper", "good-friday", "easter-vigil",
+        }
         for _, _, mass in _calendars.departures_of(document):
+            if mass.get("key") not in holy_week:
+                continue
             self.assertNotIn("propers", mass, mass.get("key"))
             status = mass.get("text_status")
             self.assertIsInstance(status, dict, mass.get("key"))
@@ -683,6 +782,21 @@ class TrackedRecensionTest(unittest.TestCase):
                 ["witness-gap"],
                 mass.get("key"),
             )
+
+    def test_holy_week_departure_stations_are_exact(self):
+        document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        rows = {mass["key"]: mass for _, _, mass in _calendars.departures_of(document)}
+        maxima = "maxima-redemptionis-1955"
+        self.assertEqual(rows["palm-sunday"]["act"], maxima)
+        self.assertEqual(rows["blessing-of-palms"]["act"], maxima)
+        self.assertNotIn("act", rows["chrism-mass"])
+        self.assertEqual(rows["mass-of-the-lords-supper"]["act"], maxima)
+        self.assertEqual(rows["good-friday"]["act"], "editio-typica-1962")
+        self.assertEqual(
+            [(row["departure"], row.get("act")) for row in rows["good-friday"]["also"]],
+            [("moved", maxima), ("renamed", maxima), ("unrecorded", "editio-typica-1962")],
+        )
+        self.assertEqual(rows["easter-vigil"]["act"], maxima)
 
     def test_it_serves_the_rest_of_the_year_from_a_named_printing(self):
         served = _calendars.mass_index(_calendars.load_document(self.root, "roman-pre-1955"))

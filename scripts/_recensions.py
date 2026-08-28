@@ -87,8 +87,30 @@ COVERAGE_SCHEMAS = frozenset(
         # A calendar index is an admissible derivable-coverage source. It is not
         # itself evidence of target collation; the catalog capability says that.
         "triptych-calendar-masses/v1",
+        "triptych-calendar-rubrics/v1",
+        "triptych-ordo-missae/v1",
     }
 )
+COVERAGE_AVAILABILITY = {
+    "complete": "available",
+    "available": "available",
+    "partial": "partial",
+    "incomplete": "partial",
+    "structural-only": "partial",
+    "inherited-uncollated": "partial",
+    "unavailable": "unavailable",
+    "unexamined": "unavailable",
+    "none": "unavailable",
+    "blocked-by-model": "unavailable",
+    "out-of-scope": "unavailable",
+}
+AVAILABILITY_RANK = {"unavailable": 0, "partial": 1, "available": 2}
+RECENSION_COVERAGE_DOMAINS = {
+    "calendar": "calendar",
+    "propers": "propers",
+    "rubrics": "precedence",
+    "ordinary": "ordinary",
+}
 
 
 def load_catalog(root: Path) -> dict:
@@ -148,6 +170,17 @@ def _document(path: Path) -> object:
     return _document_at(path, stat.st_mtime_ns, stat.st_size)
 
 
+def _contained_reference_path(repository: Path, relative: Path) -> Path | None:
+    """Resolve a repository reference without following a symlink out of it."""
+
+    try:
+        root = repository.resolve()
+        source = (root / relative).resolve()
+    except (OSError, RuntimeError):
+        return None
+    return source if source.is_relative_to(root) else None
+
+
 def _reference_problem(repository: Path, reference: object, where: str) -> str | None:
     if not _text([], where, reference):
         return f"{where} must be a non-empty repo-relative reference"
@@ -156,7 +189,9 @@ def _reference_problem(repository: Path, reference: object, where: str) -> str |
     path = Path(raw_path)
     if path.is_absolute() or ".." in path.parts:
         return f"{where} must be repo-relative, got {reference!r}"
-    source = repository / path
+    source = _contained_reference_path(repository, path)
+    if source is None:
+        return f"{where} escapes the repository through a symlink: {reference!r}"
     if not source.is_file():
         return f"{where} names missing source {raw_path!r}"
     if not marker or not selector:
@@ -200,7 +235,9 @@ def _reference_payload(
         return problem, None, None
     assert isinstance(reference, str)
     raw_path, marker, selector = reference.partition("#")
-    source = repository / raw_path
+    source = _contained_reference_path(repository, Path(raw_path))
+    if source is None:  # _reference_problem already returned the public diagnostic
+        return f"{where} escapes the repository through a symlink", None, None
     try:
         document = _document(source)
     except (OSError, ValueError, json.JSONDecodeError, tomllib.TOMLDecodeError, yaml.YAMLError) as error:
@@ -263,6 +300,10 @@ def _capability(problems: list[str], where: str, value: object) -> dict:
         problems.append(f"{where}.collation has unknown value {collation!r}")
     if data == "unavailable" and collation != "unestablished":
         problems.append(f"{where} is unavailable but collation is {collation!r}")
+    if data == "unavailable" and publication in {"available", "partial"}:
+        problems.append(
+            f"{where} has no data but publication is {publication!r}"
+        )
     return row
 
 
@@ -355,30 +396,22 @@ def _language_capabilities(
 def _coverage_reference(
     problems: list[str],
     repository: Path,
-    where: str,
-    row: dict,
+    reference_where: str,
+    reference: object,
     *,
     identifier: object,
     calendar: object = None,
     language: object = None,
-    required: bool = False,
-) -> None:
-    if "coverage_ref" not in row:
-        if required:
-            problems.append(
-                f"{where}.coverage_ref is required when target data is available or partial"
-            )
-        return
-    reference_where = f"{where}.coverage_ref"
+) -> dict | None:
     problem, document, target = _reference_payload(
-        repository, row.get("coverage_ref"), reference_where
+        repository, reference, reference_where
     )
     if problem:
         problems.append(problem)
-        return
+        return None
     if not isinstance(target, dict):
         problems.append(f"{reference_where} must resolve to a coverage mapping")
-        return
+        return None
     schema = target.get("schema")
     if schema not in COVERAGE_SCHEMAS:
         problems.append(
@@ -416,6 +449,129 @@ def _coverage_reference(
             f"{reference_where} does not identify recension {identifier!r} or "
             f"calendar {calendar!r}"
         )
+    return target
+
+
+def _coverage_availability(target: dict, capability: str) -> str | None:
+    """Maximum catalog availability supported for one capability by a record."""
+    schema = target.get("schema")
+    if schema == "triptych-recension-coverage/v1":
+        source_domain = RECENSION_COVERAGE_DOMAINS.get(capability)
+        domains = target.get("domains")
+        domain = domains.get(source_domain) if isinstance(domains, dict) else None
+        state = domain.get("state") if isinstance(domain, dict) else None
+        return COVERAGE_AVAILABILITY.get(str(state))
+    if schema == "triptych-roman-1962-finding-aid-coverage/v1":
+        named_domains = {
+            str(domain)
+            for group in ("evidence", "limitations", "source_requirements")
+            for row in (target.get(group) or [])
+            if isinstance(row, dict)
+            for domain in (row.get("domains") or [])
+        }
+        if capability not in named_domains:
+            return None
+        return COVERAGE_AVAILABILITY.get(str(target.get("status")))
+    if schema == "triptych-recension-language-coverage/v1":
+        record_id = str(target.get("id") or "")
+        if not record_id.endswith(f"-{capability}"):
+            return None
+        stated = target.get("capability")
+        state = stated.get("data_availability") if isinstance(stated, dict) else None
+        return str(state) if state in AVAILABILITY else None
+    fixed = {
+        "triptych-calendar-masses/v1": {
+            "calendar": "available",
+            # An index establishes held formulary structure, not a complete
+            # target-edition collation of the appointed Proper texts.
+            "propers": "partial",
+        },
+        "triptych-calendar-rubrics/v1": {"rubrics": "available"},
+        # Current Ordo inventories are expressly finding aids with typed gaps.
+        # A future complete inventory needs to carry an explicit completeness
+        # status before the catalog may promote this claim.
+        "triptych-ordo-missae/v1": {"ordinary": "partial"},
+    }
+    return fixed.get(str(schema), {}).get(capability)
+
+
+def _language_coverage_availability(target: dict) -> str | None:
+    """Maximum language availability supported by a typed coverage record."""
+
+    schema = target.get("schema")
+    if schema == "triptych-recension-language-coverage/v1":
+        capability = target.get("capability")
+        state = (
+            capability.get("data_availability")
+            if isinstance(capability, dict)
+            else None
+        )
+        return str(state) if state in AVAILABILITY else None
+    if schema == "triptych-proper-latin-provenance/v1":
+        # A per-body inventory proves some scoped accounting, never a complete
+        # language corpus. Completeness belongs in a coverage record that says
+        # so explicitly rather than being inferred from the presence of rows.
+        return "partial" if isinstance(target.get("entries"), list) else None
+    return None
+
+
+def _capability_coverage_references(
+    problems: list[str], repository: Path, where: str, row: dict,
+    capabilities: dict[str, dict], *, identifier: object, calendar: object = None,
+) -> None:
+    required = {
+        name
+        for name, capability in capabilities.items()
+        if capability.get("data_availability") in {"available", "partial"}
+    }
+    references = row.get("coverage_ref")
+    if references is None:
+        if required:
+            problems.append(
+                f"{where}.coverage_ref is required for capabilities with target data: "
+                + ", ".join(sorted(required))
+            )
+        return
+    if not isinstance(references, dict):
+        problems.append(f"{where}.coverage_ref must be a capability-keyed object")
+        return
+    unknown = sorted(set(references) - set(capabilities))
+    if unknown:
+        problems.append(
+            f"{where}.coverage_ref has unknown capabilities: {', '.join(unknown)}"
+        )
+    missing = sorted(required - set(references))
+    if missing:
+        problems.append(
+            f"{where}.coverage_ref does not account for capabilities with target data: "
+            + ", ".join(missing)
+        )
+    for capability in sorted(set(references) & set(capabilities)):
+        reference_where = f"{where}.coverage_ref.{capability}"
+        target = _coverage_reference(
+            problems,
+            repository,
+            reference_where,
+            references[capability],
+            identifier=identifier,
+            calendar=calendar,
+        )
+        if target is None:
+            continue
+        ceiling = _coverage_availability(target, capability)
+        if ceiling is None:
+            problems.append(
+                f"{reference_where} does not account for capability {capability!r}"
+            )
+            continue
+        stated = capabilities[capability].get("data_availability")
+        if stated in AVAILABILITY_RANK and (
+            AVAILABILITY_RANK[stated] > AVAILABILITY_RANK[ceiling]
+        ):
+            problems.append(
+                f"{reference_where} supports at most {ceiling!r} data for "
+                f"capability {capability!r}, below catalog claim {stated!r}"
+            )
 
 
 def _recension(
@@ -488,6 +644,12 @@ def _recension(
                     problems.append(
                         f"{where}.calendar is {calendar!r}, but {source} declares {declared!r}"
                     )
+                edition = document.get("edition") if isinstance(document, dict) else None
+                if edition != row.get("label"):
+                    problems.append(
+                        f"{where}.label is {row.get('label')!r}, but {source} "
+                        f"declares edition {edition!r}"
+                    )
     _references(problems, repository, f"{where}.evidence_refs", row.get("evidence_refs"))
     capabilities = _capabilities(
         problems, f"{where}.capabilities", row.get("capabilities"), CAPABILITIES
@@ -502,27 +664,48 @@ def _recension(
     # Coverage references are validated here, with the actual repository root.
     for lang_index, lang in enumerate(row.get("language_capabilities") or []):
         if isinstance(lang, dict):
-            _coverage_reference(
+            language_where = f"{where}.language_capabilities[{lang_index}]"
+            if "coverage_ref" not in lang:
+                if lang.get("data_availability") in {"available", "partial"}:
+                    problems.append(
+                        f"{language_where}.coverage_ref is required when target "
+                        "data is available or partial"
+                    )
+                continue
+            target = _coverage_reference(
                 problems,
                 repository,
-                f"{where}.language_capabilities[{lang_index}]",
-                lang,
+                f"{language_where}.coverage_ref",
+                lang.get("coverage_ref"),
                 identifier=identifier,
                 calendar=calendar,
                 language=lang.get("id"),
-                required=lang.get("data_availability") in {"available", "partial"},
             )
-    _coverage_reference(
+            if target is None:
+                continue
+            ceiling = _language_coverage_availability(target)
+            if ceiling is None:
+                problems.append(
+                    f"{language_where}.coverage_ref does not account for "
+                    f"language capability {lang.get('id')!r}"
+                )
+                continue
+            stated = lang.get("data_availability")
+            if stated in AVAILABILITY_RANK and (
+                AVAILABILITY_RANK[stated] > AVAILABILITY_RANK[ceiling]
+            ):
+                problems.append(
+                    f"{language_where}.coverage_ref supports at most {ceiling!r} "
+                    f"language data, below catalog claim {stated!r}"
+                )
+    _capability_coverage_references(
         problems,
         repository,
         where,
         row,
+        capabilities,
         identifier=identifier,
         calendar=calendar,
-        required=any(
-            capability.get("data_availability") in {"available", "partial"}
-            for capability in capabilities.values()
-        ),
     )
     _requirements(
         problems,
@@ -587,16 +770,13 @@ def _expression(
         name for name, capability in capabilities.items()
         if capability.get("data_availability") == "unavailable"
     }
-    _coverage_reference(
+    _capability_coverage_references(
         problems,
         repository,
         where,
         row,
+        capabilities,
         identifier=identifier,
-        required=any(
-            capability.get("data_availability") in {"available", "partial"}
-            for capability in capabilities.values()
-        ),
     )
     _requirements(
         problems,

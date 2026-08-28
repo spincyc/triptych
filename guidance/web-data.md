@@ -233,6 +233,27 @@ A legacy payload with no form manifest or form labels may normalize its sole
 formulary to `main`; any payload showing multiple or ambiguous formularies but
 lacking stable IDs is refused. Display labels remain presentation, never keys.
 
+The same public Proper rows retain exact source-authored
+`ordinary_disposition` mappings. An `alternative` row carries stable `group`
+and `option` ids plus its source basis; every member is preserved inside one
+atomic unresolved choice until a consumer has an explicit selection. An
+`unplaced` row carries a stable group, a source basis, and exactly
+`before-frame` or `after-frame`; it remains visible in source order with an
+unseated identity. Names, parentheses, adjacency, and array order infer none of
+these meanings. A form may also override its Mass's `ordinary_frame`; the
+effective frame is the selected `forms[].ordinary_frame`, then the Mass frame,
+then the implicit full frame. The cross-layer Ordinary checker rejects orphan
+choice groups, mixed seats, unknown or backwards full-frame rows, middle-frame
+unplaced claims, and an unplaced claim made stale by a newly declared slot.
+
+A recension projection retains its aggregate historical boundary as the
+top-level `stands_before` list. Each generated `mass.recension` stamp retains
+the optional `act` on its primary claim and on every row under `also`. These ids
+are act-history stations or attribution records: consumers display them and may
+link them to the act history, but do not derive chronology, causation, or an
+unstated middle recension from their order. The absence of a row-level `act`
+remains meaningful and must not be filled from the aggregate boundary.
+
 A source-side translation-absence audit is richer than its public projection.
 Generated Proper absence rows expose exactly `{target, lang, state}`. `target`
 contains only `{mass, form_id, proper, cycle, occurrence, extent}`; `state` is
@@ -337,12 +358,12 @@ a **reference and never a copy**: it is a mass key in the same propers structure
 in exactly one place and a feria cannot drift from the Sunday it repeats. It
 states no ranking, and a date carrying a feast carries its ferial formulary
 beside it, unused; whether the day is a feria belongs to the rubrics layer below.
-Where the immediately preceding Sunday carries no Mass of the Sunday in the index
-— a Sunday the Most Holy Name of Jesus has taken — the map fails closed and the
-year records the refusal, rather than borrowing the feast's Mass instead. Only a
-calendar whose own rubrics appoint such a borrowing carries the block at all: the
-reformed books give a weekday its own formulary and, in Ordinary Time, a choice
-under IGMR 355, so the postconciliar files carry none.
+Where a calendar's own rubric explicitly provides otherwise, the map follows the
+date-keyed exception recorded in the canonical calendar-computation guidance; it
+does not substitute the feast that occupied the preceding Sunday. Where no such
+rubric has been read for that calendar, the map fails closed. The reformed books
+give a weekday its own formulary and, in Ordinary Time, a choice under IGMR 355,
+so the postconciliar files carry none.
 
 ## The rubrics layer
 
@@ -433,6 +454,15 @@ witnesses differ again. Collapsing all of these into one "missing" would hide
 exactly what a reader needs to be able to see. An element that carries neither
 text nor a stated reason is a hard failure: a silent gap is the one thing this
 layer must never emit.
+
+The artifact owns the text and layout it prints; the inventory owns the later
+editorial classification of that evidence. An artifact-backed section therefore
+may set one default Latin-absence reason and narrow it with
+`absent_latin_by_element`. Every override must name an English source row whose
+Latin artifact holds no text and must point to a reason the inventory declares.
+This classification is local to the target recension: a 1962 finding does not
+propagate into the pre-1955 projection of the same witness. Target-recension
+exclusions remain separate accounting and never erase the source-side finding.
 
 **Languages are declared, and one of them holds nothing.** Each file carries a
 `languages` block naming every language the layer speaks of, the side of

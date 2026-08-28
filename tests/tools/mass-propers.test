@@ -32,6 +32,46 @@ case "$out" in
 	;;
 esac
 
+# A mechanically inherited recension must carry its aggregate boundary and its
+# per-formulary source in both the reading view and the machine payload.  The
+# 1920 heading alone must never make 1962-resident material look target-attested.
+pre1955="$(run_tool show --calendar roman-pre-1955 --mass advent-1 --lang en)"
+for want in "Historical boundary" \
+	"de-rubricis-simpliciorem-1955; maxima-redemptionis-1955" \
+	"Recension coverage: structural-only" \
+	"Proper text source: roman-1962 (inherited, uncollated)" \
+	"Structural-only pre-1955 projection, not a complete 1920 Missal corpus"; do
+	case "$pre1955" in
+	*"$want"*) ;;
+	*) echo "pre-1955 reading view is missing provenance: $want" >&2; exit 1 ;;
+	esac
+done
+run_tool show --calendar roman-pre-1955 --mass advent-1 --lang en \
+	--format json >pre1955-provenance.json
+python3 - pre1955-provenance.json <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+assert document["advisory"].startswith("Structural-only pre-1955 projection")
+assert document["stands_before"] == [
+    "de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"
+]
+assert document["recension_coverage"]["status"] == "structural-only"
+assert document["recension_coverage"]["inheritance"] == {
+    "source_calendar": "roman-1962",
+    "status": "uncollated",
+    "basis": document["recension_coverage"]["inheritance"]["basis"],
+}
+assert document["mass"]["recension"]["calendar"] == "roman-1962"
+assert document["mass"]["recension"]["text_from"] == "roman-1962"
+assert document["mass"]["recension"]["stated"] is False
+PY
+palm1955="$(run_tool show --calendar roman-pre-1955 --mass palm-sunday --plain)"
+case "$palm1955" in
+*"Departure act: maxima-redemptionis-1955"*"Additional departure act (reslotted): maxima-redemptionis-1955"*) ;;
+*) echo "pre-1955 departure act stations are missing from the reading view" >&2; exit 1 ;;
+esac
+
 # Scripture propers show their reference; without a bible there is no verse text.
 case "$out" in
 *"Psalm 24:1-3"*) ;;
@@ -207,6 +247,33 @@ sections:
           ranges:
           - begin: {chapter: 147}
           ref: Psalm 147
+    - key: common
+      name: Borrowed Common
+      propers:
+      - name: Introit
+        source: scripture
+        psalm_numbering: vulgate
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 24, verse: 1}
+            end: {chapter: 24, verse: 3}
+          ref: Psalm 24:1-3
+      - name: First Reading
+        source: scripture
+        cycles:
+          A:
+            psalm_numbering: hebrew
+            verses:
+            - book: Psalms
+              ranges:
+              - begin: {chapter: 25, verse: 1}
+                end: {chapter: 25, verse: 3}
+              ref: Psalm 25:1-3
+    - key: borrowed
+      name: Borrowed Formulary
+      takes_from:
+        mass: common
 YAML
 split="$(run_tool --root calendars --calendar demo-hebrew --mass split --bible vg --bible-root bibles)"
 case "$split" in
@@ -216,6 +283,30 @@ esac
 case "$split" in
 *"Praise"*) echo "an ambiguous split must not print verse text" >&2; exit 1 ;;
 esac
+
+# Passage resolution follows the appointed formulary rather than only the
+# propers the borrowing row carries. It also keeps the source proper's own
+# numbering and each cycle owner's override, matching the browser structure.
+run_tool --root calendars --calendar demo-hebrew --mass borrowed \
+	--bible vg --bible-root bibles --json >borrowed.json
+python3 - borrowed.json <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+passages = payload["bible"]["passages"]
+assert sorted(passages) == ["Psalm 24:1-3", "Psalm 25:1-3"], passages
+assert passages["Psalm 24:1-3"] == {
+    "note": "", "text": "To thee, O Lord, have I lifted up my soul."
+}, passages
+assert passages["Psalm 25:1-3"]["text"] == passages["Psalm 24:1-3"]["text"], passages
+assert passages["Psalm 25:1-3"]["note"].startswith("vulgate: Psalm 24:1-3"), passages
+assert all(row["taken_from"]["mass"] == "common" for row in payload["appointed"]), payload
+PY
+if ! run_tool --root calendars --calendar demo-hebrew --mass borrowed \
+	--bible vg --bible-root bibles | grep -q 'lifted up my soul'; then
+	echo "borrowed scripture should render the held Bible text" >&2
+	exit 1
+fi
 
 # An unusable numbering system is refused as bad input rather than converted.
 mkdir -p bibles/odd
@@ -449,14 +540,14 @@ sections:
       registry: 't1'
       season: advent
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.demo.common-map
         locus: p. 1
         options:
         - mass: commune-demo
           selection: Form A
       text_status:
-        state: unavailable
+        state: partial
         scope: missal-formulary
         reasons:
         - kind: rights-withheld
@@ -496,11 +587,11 @@ document = json.load(open(sys.argv[1], encoding="utf-8"))
 wide, narrow, restricted = sys.argv[2], sys.argv[3], sys.argv[4]
 mass = document["masses"][0]
 assert mass["common_from"] == {
-    "scope": "missal-propers-except-collect",
+    "scope": "missal-antiphons",
     "options": [{"mass": "commune-demo", "selection": "Form A"}],
 }, mass
 assert mass["text_status"] == {
-    "state": "unavailable",
+    "state": "partial",
     "scope": "missal-formulary",
 }, mass
 manifest = document["translations"]
@@ -590,7 +681,7 @@ esac
 vianney="$(run_tool --calendar roman-1962 \
 	--mass s-ioannis-mariae-vianney-confessoris --lang en)"
 case "$vianney" in
-*"en translation unavailable: rights restricted; Latin text unavailable"*) ;;
+*"no en translation recorded; Latin text unavailable"*) ;;
 *) echo "Vianney witness gap did not report unavailability" >&2; exit 1 ;;
 esac
 for forbidden in "The New Roman Missal in Latin and English" \

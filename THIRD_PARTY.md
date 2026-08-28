@@ -165,12 +165,13 @@ In particular:
   separately controlled and are not covered by ICEL's permission.
 
   Quarantine of the current public bundle does not erase earlier Git objects.
-  Repository history contains commits that tracked ICEL text payloads, including
-  material transcribed from unofficial intermediaries. Whether a public-history
-  rewrite, repository replacement, or another remedial step is required is a
-  release-policy and counsel decision for the maintainer; this notice neither
-  clears those historical copies nor claims that current-tree removal makes
-  them undistributed; and
+  Repository history contains commits that tracked ICEL text payloads, Roman
+  1962 Latin proper bodies, and a superseded Lasance OCR artifact containing the
+  excluded lettered insert at printed pages 1302a--1302d. Whether a
+  public-history rewrite, repository replacement, access change, or another
+  remedial step is required is a release-policy and counsel decision for the
+  maintainer; this notice neither clears those historical copies nor claims that
+  current-tree removal makes them undistributed; and
 - the English recorded in
   `src/sources/inventories/postconciliar-proper-translations-v1.toml` includes
   non-ICEL routes with different rights positions, and the file marks every
@@ -196,25 +197,40 @@ In particular:
 
   Nothing on either non-ICEL route is an approved liturgical translation or is
   derived from ICEL's, and nothing in the file may be used for recitation; and
-- the English orations recorded in
-  `src/sources/inventories/roman-1962-proper-translations-v1.toml`, and the
-  transcription of the same book vendored at
-  `src/sources/works/eugene-cummiskey/roman-missal-english-laity/`, come
-  from *The Roman Missal translated into the English language for the use of
-  the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861).
-  That translation is in the public domain in the United States by publication
-  date; the artifact record states the basis and its jurisdiction. Triptych
-  claims no exclusive right in the wording and does not offer it under
-  CC BY 4.0. It is a nineteenth-century lay hand missal, not an approved
-  liturgical translation, and nothing taken from it may be used for
-  recitation. The Internet Archive text layer the orations were read out of is
-  registered as a remote artifact of that same edition and is not vendored:
-  those exact bytes are a Google-produced derivative carrying Google's own
-  front matter, no distribution grant for it was established, and the record
-  keeps its rights status unresolved. The same 1861 book is also quoted, on the
-  same public-domain basis, by antecedent entries in the postconciliar file
-  described above; the rights position is identical and only the relation to
-  the prayer differs.
+- the English recorded in
+  `src/sources/inventories/roman-1962-proper-translations-v1.toml` comes from
+  several public-domain historical witnesses. Twelve proper entries use *The
+  Roman Missal translated into the English language for the use of the laity*,
+  first revised edition (Philadelphia: Eugene Cummiskey, 1861), including three
+  page-collated Palm Sunday procession antiphons; six sequence
+  entries use Edward Caswall's *Lyra Catholica* (London, 1849), with the
+  *Hymns Ancient and Modern* printing attributed to William Josiah Irons
+  (London, complete edition, catalogued 1890) retained as an alternative for
+  one sequence; and thirty-two oration entries use Francis Xavier Lasance and
+  Francis Augustine Walsh's *The New Roman Missal*, 1945 revised edition, in a
+  printing of about 1955--56. Every Lasance entry is bound to an exact
+  ordinary-numbered page-image passage. The only Common-of-a-Supreme-Pontiff
+  row served from that witness is the Collect on ordinary printed p. 1302;
+  none of the five candidate rows on inserted pp. 1302a--1302d is served.
+
+  The Cummiskey book and its tracked public-domain transcription are registered
+  under `src/sources/works/eugene-cummiskey/roman-missal-english-laity/`. Its
+  unvendored Internet Archive text layer is a Google-produced derivative with
+  separate unresolved artifact rights. The Lasance work is public domain in the
+  United States by failure to renew registrations A 110108 and A 192159; that
+  conclusion is jurisdiction-specific and does not cover the later lettered
+  inserts at printed pages 1298a--1298n or 1302a--1302d. The tracked OCR
+  derivative mechanically excludes both ranges. The exact source artifact and
+  prior Git objects are not offered under CC BY 4.0 merely because the retained
+  historical wording has a recorded U.S. public-domain basis.
+
+  These are historical lay-book and hymn translations, not approved liturgical
+  translations. Triptych claims no exclusive right in their wording, does not
+  offer the wording under CC BY 4.0, and does not authorize any of it for
+  recitation. The same 1861 Cummiskey book is also quoted, on the same
+  public-domain basis, by antecedent entries in the postconciliar file described
+  above; the rights position is identical and only the relation to the prayer
+  differs.
 
 Their inclusion as evidence or text for study is not a representation that
 they may be extracted and redistributed independently. Their redistribution

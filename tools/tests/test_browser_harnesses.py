@@ -16,18 +16,9 @@ so nobody "fixes" the data root without also arranging for the build. With
 `TRIPTYCH_BROWSER_HARNESSES=1` it runs all of them for real, parses the JSON report
 each one emits — from stdout, or from stderr, because the propers harness writes
 its failing report to stderr and a parser that only reads stdout would score that
-run as zero assertions — and ratchets the pass counts. A harness exiting non-zero
-is reported with its counts rather than raised as an error: the currently known
-failures belong to the liturgy deliverable, and this module's job is to stop them
-getting worse and to stop them getting invisible.
-
-Nothing here asserts on exit status, because exit status conflates three unlike
-things: assertion failures, recorded console and request problems, and transient
-timeouts under load. A harness that times out while five other agents are driving
-Chromium is reporting the machine, not the code — observed once as an 18-of-18
-run that still exited 1, unreproducible on a quiet host. So the ratchet is a pass
-count and the health check is the harness's own problem arrays, each of which
-fails for a stated reason with the offending entries in the message.
+run as zero assertions — and requires every recorded assertion and process exit
+to be green. Console, request, and HTTP diagnostics are checked separately so a
+nominal assertion count cannot conceal a page problem.
 """
 
 from __future__ import annotations
@@ -47,31 +38,27 @@ TESTS = ROOT / "tools/tests"
 PREVIEW_ROOT = "build/public-alpha/preview"
 PREVIEW = ROOT / PREVIEW_ROOT
 
-# Recorded pass floors: harness -> minimum passing assertions. These are a
-# RATCHET, not a target. They record what the harnesses actually achieve on a
-# preview build today so that a regression is loud; raising a floor after fixing a
-# harness is the entire point of writing them down, and lowering one is an
-# admission that wants a reason in the commit message. The seven current failures
-# are a real finding about absence and coverage notices, owned by the liturgy
-# work, not by this file.
-ASSERTION_FLOORS = {
-    "day_reader_choices_browser.mjs": 5,
-    "day_reader_integration_browser.mjs": 39,
+# Exact all-green contracts: harness -> expected passing and total assertions.
+# Adding or removing a harness assertion is a deliberate contract change; a
+# partial result, a new unaccounted assertion, or a nonzero exit all fail here.
+ASSERTION_COUNTS = {
+    "day_reader_choices_browser.mjs": 8,
+    "day_reader_integration_browser.mjs": 42,
     "liturgy_reader_shell_browser.mjs": 18,
-    "liturgy_reader_visual_reset_browser.mjs": 22,
-    "propers_reader_integration_browser.mjs": 30,
+    "liturgy_reader_visual_reset_browser.mjs": 26,
+    "propers_reader_integration_browser.mjs": 40,
 }
 
 # Review-only prototype harnesses serve the tracked tree directly rather than
 # the preview artifact, and each keeps its floor in its own test module
 # (test_corpus_foundation_prototype.py), so they are accounted for here without
-# a preview requirement or a second floor.
+# a preview requirement or a duplicate contract.
 PROTOTYPE_HARNESSES = frozenset({"corpus_foundation_prototype_browser.mjs"})
 
-# The diagnostic arrays a harness keeps beside its assertions. These, not the exit
-# status, are the health signal: a console error, a dead request or a non-200 is a
-# defect in the page whoever ran the gate should hear about, and it says so with
-# the offending entries rather than with a number.
+# The diagnostic arrays a harness keeps beside its assertions. A console error,
+# a dead request or a non-200 is a defect in the page whoever ran the gate should
+# hear about, and it says so with the offending entries rather than only an exit
+# number.
 PROBLEM_KEYS = ("consoleProblems", "failedRequests", "httpProblems")
 
 # The propers harness keeps no such arrays; it folds the same two signals into its
@@ -81,7 +68,7 @@ PROBLEM_FAILURE_NAMES = frozenset({"console", "network", "harness"})
 BROWSER_CANDIDATES = ("/usr/bin/chromium", "/usr/bin/google-chrome-stable")
 
 # A single harness drives Chromium through dozens of navigations; the slowest of
-# the four takes minutes on a warm host. The timeout exists to bound a hang, not
+# the five takes minutes on a warm host. The timeout exists to bound a hang, not
 # to bound a slow run.
 HARNESS_TIMEOUT_SECONDS = 1800
 
@@ -105,7 +92,7 @@ def parse_report(stdout: str, stderr: str) -> dict | None:
 
     `propers_reader_integration_browser.mjs` prints its failing report with
     `console.error`. Reading stdout alone would find nothing there and mistake a
-    30-of-32 run for a run that asserted nothing at all.
+    partial run for a run that asserted nothing at all.
     """
     for stream in (stdout, stderr):
         text = stream.strip()
@@ -168,8 +155,8 @@ class BrowserHarnessStructureTest(unittest.TestCase):
     def test_every_expected_harness_is_present_and_none_is_unaccounted_for(self) -> None:
         self.assertEqual(
             discovered_harnesses(),
-            sorted(set(ASSERTION_FLOORS) | PROTOTYPE_HARNESSES),
-            "a *_browser.mjs harness appeared or vanished; add or remove its floor "
+            sorted(set(ASSERTION_COUNTS) | PROTOTYPE_HARNESSES),
+            "a *_browser.mjs harness appeared or vanished; add or remove its count "
             "(or its PROTOTYPE_HARNESSES entry) deliberately rather than letting "
             "the set drift",
         )
@@ -222,8 +209,8 @@ class BrowserHarnessLiveTest(unittest.TestCase):
                 "a failure"
             )
 
-    # Each harness costs tens of seconds of real Chromium, and the pass floor and
-    # the problem arrays are two readings of one run rather than two runs.
+    # Each harness costs tens of seconds of real Chromium, and the assertion
+    # contract and problem arrays are two readings of one run rather than two runs.
     runs: dict[str, tuple[int, dict | None, str]] = {}
 
     def run_harness(self, name: str) -> tuple[int, dict | None, str]:
@@ -244,8 +231,8 @@ class BrowserHarnessLiveTest(unittest.TestCase):
         self.runs[name] = (finished.returncode, parse_report(stdout, stderr), stderr)
         return self.runs[name]
 
-    def test_every_harness_runs_and_holds_its_recorded_pass_floor(self) -> None:
-        for name, floor in sorted(ASSERTION_FLOORS.items()):
+    def test_every_harness_runs_and_passes_its_exact_contract(self) -> None:
+        for name, expected in sorted(ASSERTION_COUNTS.items()):
             with self.subTest(harness=name):
                 status, report, stderr = self.run_harness(name)
                 self.assertIsNotNone(
@@ -261,19 +248,14 @@ class BrowserHarnessLiveTest(unittest.TestCase):
                 self.assertGreater(
                     total, 0, f"{name} exited {status} having recorded no assertions at all"
                 )
-                # A non-zero exit is a reported finding about the pages under test, not
-                # an error in the harness or in this module — and under concurrent
-                # Chromium load it can be nothing but a timeout. The floor is what
-                # turns the run into a verdict.
-                self.assertGreaterEqual(
-                    passed,
-                    floor,
-                    f"{name} regressed: {passed}/{total} passing, floor is {floor} "
-                    f"(exit status {status})",
+                self.assertEqual(
+                    (status, passed, total),
+                    (0, expected, expected),
+                    f"{name} must complete its exact live contract with a zero exit status",
                 )
 
     def test_no_harness_records_a_console_request_or_http_problem(self) -> None:
-        for name in sorted(ASSERTION_FLOORS):
+        for name in sorted(ASSERTION_COUNTS):
             with self.subTest(harness=name):
                 status, report, stderr = self.run_harness(name)
                 self.assertIsNotNone(

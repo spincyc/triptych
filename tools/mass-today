@@ -138,7 +138,7 @@ EXAMPLES = {
                 "    Gradual — Psalm 24:3; Psalm 24:4",
                 "      Latin incipit only; no en rendering recorded: Universi, qui te exspectant…",
                 "",
-                "... 38 more lines",
+                "... 43 more lines",
             ),
             "read-only; with no --date it resolves today. Two Masses fall on this "
             "date and both are listed",
@@ -154,6 +154,8 @@ EXAMPLES = {
                 "",
                 "    Introit — Philippians 2:10-11",
                 "",
+                "    Collect",
+                "",
                 "    Epistle — 2 Timothy 2:8-10",
                 "",
                 "    Gradual — Psalms 91:13, 14",
@@ -162,7 +164,11 @@ EXAMPLES = {
                 "",
                 "    Offertory — Psalms 88:25",
                 "",
+                "    Secret",
+                "",
                 "    Communion — Luke 12:49",
+                "",
+                "    Postcommunion",
             ),
             "a Mass whose text is not yet transcribed says so; the placeholder is "
             "never printed as the prayer",
@@ -184,7 +190,7 @@ EXAMPLES = {
                 "",
                 "      THE ORDINARY OF THE MASS.",
                 "      -------------------------",
-                "... 932 more lines",
+                "... 940 more lines",
             ),
             "the whole Mass in one piece: scripture in words under a named "
             "edition, and the propers set into the Ordinary at the slots the "
@@ -419,6 +425,11 @@ def public_common_from(value: object) -> dict | None:
         return None
     if not isinstance(value, dict):
         raise Refused("mass-propers returned non-mapping common_from")
+    if value.get("scope") != "missal-antiphons":
+        raise Refused(
+            "mass-propers returned common_from whose scope is not "
+            "'missal-antiphons'"
+        )
     return {
         "scope": value.get("scope"),
         "options": [
@@ -782,6 +793,11 @@ def propers_of(
             "ordinal": ordinal,
             "propers": [],
             "placeholders": 0,
+            **(
+                {"ordinary_frame": source_form["ordinary_frame"]}
+                if "ordinary_frame" in source_form
+                else {}
+            ),
         })
     forms_by_id = {one["id"]: one for one in forms}
 
@@ -868,6 +884,16 @@ def propers_of(
             if "ordinary_frame" in mass
             else _ABSENT_ORDINARY_FRAME
         )
+        for form in forms:
+            if "ordinary_frame" in form:
+                form["ordinary_frame"] = validated_ordinary_frame(
+                    form["ordinary_frame"]
+                )
+        if (
+            selected_form in forms_by_id
+            and "ordinary_frame" in forms_by_id[selected_form]
+        ):
+            ordinary_frame = forms_by_id[selected_form]["ordinary_frame"]
         common_from = public_common_from(mass.get("common_from"))
     except Refused as error:
         return {
@@ -889,6 +915,10 @@ def propers_of(
         "placeholders": selected_placeholders,
         "rank": mass.get("rank"),
         "edition": payload.get("edition"),
+        "advisory": payload.get("advisory"),
+        "stands_before": payload.get(_calendars.RECENSION_ACT),
+        "recension_coverage": payload.get(_calendars.RECENSION_COVERAGE),
+        "recension": mass.get(_calendars.RECENSION),
         "takes_from": mass.get("takes_from"),
         "common_from": common_from,
         "text_status": text_status,
@@ -914,6 +944,19 @@ def run_show(arguments: argparse.Namespace) -> dict:
     if arguments.form == "main":
         raise ValueError(
             "--form main is the internal no-form sentinel, not a selectable authored form"
+        )
+    if arguments.ordinary_variant and (
+        arguments.json or arguments.format in {"json", "yaml"}
+    ):
+        raise Refused(
+            "--ordinary-variant is a rendered text selection; machine output "
+            "does not project a selected Ordinary"
+        )
+    if arguments.ordinary_variant and not (
+        arguments.ordinary or arguments.expanded
+    ):
+        raise Refused(
+            "--ordinary-variant requires --ordinary or --expanded"
         )
     when = arguments.date or dt.date.today().isoformat()
     try:
@@ -1008,6 +1051,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 day,
                 season=(held or {}).get("season"),
                 week=(held or {}).get("week"),
+                weekday=(held or {}).get("weekday"),
                 lectionary=liturgical_year.get("lectionary"),
                 unresolved=liturgical_year.get("unresolved") or [],
             )
@@ -1208,6 +1252,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
             "calendar": day.get("calendar"),
             "season": day.get("season"),
             "week": day.get("week"),
+            "weekday": day.get("weekday"),
             "ranked": day.get("ranked"),
             "appointed": day.get("appointed"),
             "commemorations": day.get("commemorations") or [],
@@ -1353,7 +1398,13 @@ def wrap(text: str, indent: str) -> list[str]:
     return [indent + line if line else "" for line in (out[:-1] or out)]
 
 
-def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> None:
+def render_ordinary(
+    one: dict,
+    lang: str,
+    style: Style,
+    show_rubrics: bool,
+    wanted: list[str] | str | None = None,
+) -> None:
     """The frame printed after the propers, which is what `--ordinary` means.
 
     It is deliberately NOT what `--expanded` does. This appends the Ordinary
@@ -1366,15 +1417,25 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
     print("")
     for line in style.heading(one.get("title") or "The Ordinary"):
         print(f"  {line}")
-    for section in one.get("sections") or []:
-        print("")
-        for line in style.heading(str(section["name"]), rule="-"):
-            print(f"  {line}")
-        for element in section.get("elements") or []:
+    resolved = mass_events(one, [], wanted)
+    for event in resolved["events"]:
+        if event.get("kind") == "begin_section":
+            print("")
+            for line in style.heading(str(event["section"]["name"]), rule="-"):
+                print(f"  {line}")
+        elif event.get("kind") == "ordinary_element":
             for line in element_lines(
-                element, lang, style, indent="    ", show_rubrics=show_rubrics
+                event["element"], lang, style, indent="    ",
+                show_rubrics=show_rubrics,
             ):
                 print(line)
+    for unresolved in resolved["unresolved"]:
+        condition = unresolved.get("condition") or {}
+        print("  " + style.note(
+            "ordinary applicability unresolved at "
+            f"{unresolved.get('element')}: "
+            f"{condition.get('basis') or 'no positive source binding is held'}"
+        ))
 
 
 # ---------------------------------------------------------------- the seating
@@ -1384,24 +1445,77 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
 # seating or traversal rule.
 
 
-def mass_events(ordinary: dict, propers: list[dict], wanted: str | None) -> list[dict]:
+def ordinary_selection_map(
+    ordinary: dict, wanted: list[str] | str | None,
+) -> dict[str, str]:
+    """Validate repeatable option ids and bind each to its declared group."""
+    selected: dict[str, str] = {}
+    requested = [wanted] if isinstance(wanted, str) else list(wanted or [])
+    options = {
+        option.get("id"): group.get("group")
+        for group in ordinary.get("variants") or []
+        for option in group.get("options") or []
+    }
+    for option in requested:
+        group = options.get(option)
+        if group is None:
+            raise Refused(f"the Ordinary declares no variant option {option!r}")
+        previous = selected.get(group)
+        if previous is not None and previous != option:
+            raise Refused(
+                f"the Ordinary cannot select both {previous!r} and {option!r} "
+                f"from one group {group!r}"
+            )
+        selected[group] = option
+    return selected
+
+
+def ordinary_predicates(propers: list[dict]) -> dict[str, bool]:
+    """Positive applicability facts carried by this selected formulary."""
+    predicates: dict[str, bool] = {}
+    if any(proper.get("name") == "Second Reading" for proper in propers):
+        predicates["second-reading-appointed"] = True
+    # No Preface row proves nothing: this corpus says Prefaces are unmodelled.
+    # `mass-has-no-proper-preface` needs a future positive source binding.
+    return predicates
+
+
+def mass_events(
+    ordinary: dict,
+    propers: list[dict],
+    wanted: list[str] | str | None,
+    predicate_context: dict | None = None,
+) -> dict:
     harness = (
         "const model = require(process.argv[1]);\n"
         "let raw = '';\n"
         "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
         "process.stdin.on('end', () => {\n"
         "  const input = JSON.parse(raw);\n"
-        "  const shown = model.shownElements(input.ordinary, input.wanted);\n"
+        "  const predicates = Object.assign(\n"
+        "    {}, model.predicateFacts(input.predicate_context), input.predicates);\n"
+        "  const resolved = model.resolveElements(\n"
+        "    input.ordinary, input.wanted, predicates);\n"
+        "  const shown = resolved.shown;\n"
         "  const placed = model.seatPropers(\n"
         "    input.propers, model.seats(input.ordinary, shown));\n"
         "  const events = model.massEvents(shown, placed);\n"
-        "  process.stdout.write(JSON.stringify({ events: events }));\n"
+        "  process.stdout.write(JSON.stringify({\n"
+        "    events: events, unresolved: resolved.unresolved,\n"
+        "    selected: resolved.selected\n"
+        "  }));\n"
         "});\n"
     )
     try:
         finished = subprocess.run(
             ["node", "-e", harness, str(SEATING_MODEL)],
-            input=json.dumps({"ordinary": ordinary, "propers": propers, "wanted": wanted}),
+            input=json.dumps({
+                "ordinary": ordinary,
+                "propers": propers,
+                "wanted": ordinary_selection_map(ordinary, wanted),
+                "predicate_context": predicate_context,
+                "predicates": ordinary_predicates(propers),
+            }),
             capture_output=True,
             text=True,
             check=False,
@@ -1416,7 +1530,11 @@ def mass_events(ordinary: dict, propers: list[dict], wanted: str | None) -> list
     except json.JSONDecodeError as error:
         raise Refused(f"the Ordinary seating model returned invalid JSON: {error}") from error
 
-    return result["events"]
+    if not isinstance(result.get("events"), list) or not isinstance(
+        result.get("unresolved"), list
+    ):
+        raise Refused("the Ordinary seating model returned no typed resolution")
+    return result
 
 
 def proper_head(proper: dict) -> str:
@@ -1528,6 +1646,51 @@ def render_unresolved_formulary(mass: dict, indent: str, style: Style) -> None:
         print(indent + style.note(f"{scope} unavailable: {reason}"))
 
 
+def render_recension_context(mass: dict, indent: str, style: Style) -> None:
+    """Keep inherited text provenance beside the daily formulary it qualifies."""
+
+    coverage = mass.get(_calendars.RECENSION_COVERAGE)
+    stamp = mass.get(_calendars.RECENSION)
+    advisory = str(mass.get("advisory") or "").strip()
+    boundaries = mass.get(_calendars.RECENSION_ACT)
+    if isinstance(boundaries, list) and boundaries:
+        print(indent + style.note(
+            "Historical boundary — stands before: " + "; ".join(boundaries)
+        ))
+    if isinstance(coverage, dict) and coverage.get("status"):
+        print(indent + style.note(f"Recension coverage: {coverage['status']}"))
+    if isinstance(stamp, dict):
+        source = stamp.get("text_from") or stamp.get("calendar")
+        if source:
+            qualifier = "stated for this recension"
+            if stamp.get("stated") is not True:
+                inheritance = coverage.get("inheritance") if isinstance(coverage, dict) else {}
+                collation = (
+                    inheritance.get("status")
+                    if isinstance(inheritance, dict)
+                    else None
+                ) or "uncollated"
+                qualifier = f"inherited, {collation}"
+            print(indent + style.note(
+                f"Proper text source: {source} ({qualifier})"
+            ))
+        if stamp.get(_calendars.DEPARTURE_ACT):
+            print(indent + style.note(
+                f"Departure act: {stamp[_calendars.DEPARTURE_ACT]}"
+            ))
+        for row in stamp.get("also") or []:
+            if isinstance(row, dict) and row.get(_calendars.DEPARTURE_ACT):
+                label = "Additional departure act"
+                if row.get("kind"):
+                    label += f" ({row['kind']})"
+                print(indent + style.note(
+                    f"{label}: {row[_calendars.DEPARTURE_ACT]}"
+                ))
+    if advisory:
+        for line in wrap(advisory, indent):
+            print(style.note(line))
+
+
 def render_expanded_mass(
     mass: dict,
     ordinary: dict | None,
@@ -1535,6 +1698,7 @@ def render_expanded_mass(
     style: Style,
     *,
     frame: bool,
+    predicate_context: dict | None = None,
 ) -> None:
     """One Mass, set into the frame if it is the one the frame is drawn for."""
     indent = "      "
@@ -1578,8 +1742,19 @@ def render_expanded_mass(
         pour([(proper, None) for proper in propers])
         return
 
+    resolution = mass_events(
+        ordinary, propers, arguments.ordinary_variant, predicate_context
+    )
+    for unresolved in resolution["unresolved"]:
+        condition = unresolved.get("condition") or {}
+        aside(
+            "ordinary applicability unresolved at "
+            f"{unresolved.get('element')}: "
+            f"{condition.get('basis') or 'no positive source binding is held'}"
+        )
+
     announced: set[str] = set()
-    for event in mass_events(ordinary, propers, arguments.ordinary_variant):
+    for event in resolution["events"]:
         kind = event.get("kind")
         if kind == "begin_section":
             section = event["section"]
@@ -1701,6 +1876,28 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         # choice and made the next arm claim that an Ordinary had been printed
         # above when none had been enacted at all.
         framed = day.get("selected_mass")
+        selected_branch = next(
+            (
+                branch
+                for branch in day.get("branches") or []
+                if branch.get("selected")
+            ),
+            None,
+        )
+        winner = (
+            selected_branch.get("winner")
+            if isinstance(selected_branch, dict)
+            and isinstance(selected_branch.get("winner"), dict)
+            else {}
+        )
+        ordinary_predicate_context = {
+            "settled": selected_branch.get("settled")
+            if isinstance(selected_branch, dict)
+            else False,
+            "weekday": day.get("weekday"),
+            "season": day.get("season"),
+            "nature": winner.get("nature"),
+        }
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
@@ -1726,6 +1923,7 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                     print("  " + style.note(mark.strip()))
             else:
                 print(f"  {style.said(name) if not mark else name}{mark}")
+            render_recension_context(mass, "    ", style)
             if arguments.why and mass.get("rule"):
                 print(f"    why: {mass['rule']}")
             if arguments.expanded:
@@ -1734,6 +1932,7 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 render_expanded_mass(
                     mass, day.get("ordinary"), arguments, style,
                     frame=mass["key"] == framed,
+                    predicate_context=ordinary_predicate_context,
                 )
                 if mass["placeholders"] and (
                     (mass.get("ordinary_frame") or {}).get("applicability", "full") == "full"
@@ -1810,7 +2009,8 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 print(f"\n  unresolved: {note}")
         if arguments.ordinary and not arguments.expanded and day.get("ordinary"):
             render_ordinary(
-                day["ordinary"], requested_language(arguments), style, arguments.rubrics
+                day["ordinary"], requested_language(arguments), style,
+                arguments.rubrics, arguments.ordinary_variant,
             )
     problems = payload.get("problems") or []
     if problems:
@@ -1838,7 +2038,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument(
         "--ordinary-variant",
-        help="select an Ordinary variant option by id (default: the file's default)",
+        action="append",
+        help=(
+            "select an Ordinary variant option by id; repeat for independent "
+            "groups (default: each group's source-declared display default)"
+        ),
     )
     shared.add_argument(
         "--territory",

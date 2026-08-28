@@ -36,6 +36,26 @@ The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit
 
 Every external owner, shared fragment, and edition registry record that controls a build is an explicit dependency; rebuild and re-review every consumer after it changes. Declare each edge in the Makefile beside the collection's existing shared edges, following the established `SACRAMENT_SHARED` and `POSTCONCILIAR_US_FORMAT` pattern: collection-wide shared material is declared once against the collection's build PDFs, while a per-parent or per-week formulary owner is declared as a prerequisite of each consuming leaf's PDF target. An undeclared owner is a build defect even where the leaf reads correctly.
 
+### Commons recovery evidence
+
+`src/sources/inventories/postconciliar-sanctoral-commons-v1.toml` is the
+durable recovery of Common directions already present on dated calendar
+records. It is an inventory, not a resolver input: no row creates a
+`takes_from` or `common_from` edge, chooses among alternatives, or establishes
+the target Missal's formulary body. An *Ordo lectionum Missae* heading governs
+the reading provision only. A direction recovered from the ICEL Antiphonary
+governs antiphons only, because that excerpt carries no orations and is not a
+ritual edition. A historical antecedent flagged as wrong-edition evidence
+never becomes evidence for the target postconciliar Missal.
+
+Keep one row per singular dated Mass key, including same-date celebrations as
+separate rows. Preserve the exact heading, artifact and printed-page locator,
+entry number, alternatives, and sub-selection stated by the owning evidence;
+do not derive a Common from the saint's title. Refresh the inventory whenever
+those calendar notes or directions change, and leave every row fail-closed
+until a source with authority for the exact target-Missal relation has been
+read. The inventory is deliberately absent from public projections.
+
 ## Required tracked records
 
 Every publishable leaf contains:

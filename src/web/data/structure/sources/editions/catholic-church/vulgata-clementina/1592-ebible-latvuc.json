@@ -3,6 +3,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 9071,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.book-index-fcad78c2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "73 books. Tokens are shared with the Douay-Rheims so a citation resolves to the same book in either edition.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "structured-text",
    "byte_size": 3553911,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-d8c02326",
    "media_type": "application/zip",
    "notes": "73 USFM files, one per book, carrying the Clementine text with a patristic footnote apparatus.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 4856,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-aliases-52634891",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Twenty-eight rows over six psalms, with one further psalm declared in scripts/_psalter.py and deliberately carrying no row, derived and not typed: `tools/tests/test_psalter.py` and `index-bible check` both fail if this file and the derivation disagree. This table was a two-column header with no rows until 2026-07-31, and the two columns it carried were the two a row would have had to fill, so an edition that recorded no departures and one that could not record any read exactly alike.",
@@ -45,6 +48,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 180990,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-01-genesis-aef47948",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Genesis (Gen): 50 chapters and 1530 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -59,6 +63,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 145969,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-02-exodus-489219e2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Exodus (Ex): 40 chapters and 1211 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -73,6 +78,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 102056,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-03-leviticus-8c16a38f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Leviticus (Lev): 27 chapters and 858 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -87,6 +93,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 146203,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-04-numbers-ffae0eab",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Numbers (Num): 36 chapters and 1288 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -101,6 +108,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 130738,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-05-deuteronomy-d8a18f11",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Deuteronomy (Deut): 34 chapters and 959 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -115,6 +123,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 88618,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-06-josue-d551ccb7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Joshua (Jos): 24 chapters and 658 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -129,6 +138,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 91573,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-07-judges-b9cc78c2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Judges (Judg): 21 chapters and 618 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -143,6 +153,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12439,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-08-ruth-6f1fc214",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ruth (Ruth): 4 chapters and 85 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -157,6 +168,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 126863,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-09-1-kings-06dfaecc",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Samuel (1Kings): 31 chapters and 811 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -171,6 +183,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 102558,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-10-2-kings-b6d70f82",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Samuel (2Kings): 24 chapters and 695 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -185,6 +198,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 122251,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-11-3-kings-fe6dadfe",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Kings (3Kings): 22 chapters and 817 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -199,6 +213,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 113455,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-12-4-kings-e28b08f6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Kings (4Kings): 25 chapters and 719 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -213,6 +228,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 105548,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-13-1-paralipomenon-9ee94256",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Chronicles (1Par): 29 chapters and 940 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -227,6 +243,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 130165,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-14-2-paralipomenon-3215c20c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Chronicles (2Par): 36 chapters and 822 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -241,6 +258,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 36987,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-15-1-esdras-c4a45dc5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ezra (1Esd): 10 chapters and 280 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -255,6 +273,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 52960,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-16-2-esdras-725a7812",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Nehemiah (2Esd): 13 chapters and 404 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -269,6 +288,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 35551,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-17-tobias-3dc64cc2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Tobit (Tob): 14 chapters and 298 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -283,6 +303,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 47545,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-18-judith-c271f5df",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Judith (Jdt): 16 chapters and 346 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -297,6 +318,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 43451,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-19-esther-eabb4220",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Esther (Esth): 16 chapters and 275 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -311,6 +333,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 92796,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-20-job-91c227ad",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Job (Job): 42 chapters and 1070 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -325,6 +348,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 225039,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Psalms (Ps): 150 chapters and 2527 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -339,6 +363,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 79314,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-22-proverbs-36a7353f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Proverbs (Prov): 31 chapters and 915 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -353,6 +378,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 27309,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-23-ecclesiastes-c887c1be",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ecclesiastes (Eccles): 12 chapters and 222 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -367,6 +393,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13530,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-24-canticle-of-canticles-cbb93891",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Song of Songs (Cant): 8 chapters and 116 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -381,6 +408,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 54597,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-25-wisdom-bfeace21",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Wisdom (Wis): 19 chapters and 439 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -395,6 +423,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 158731,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-26-ecclesiasticus-47e0c32c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Sirach (Ecclus): 51 chapters and 1592 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -409,6 +438,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 173214,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-27-isaias-0eb1c68d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Isaiah (Is): 66 chapters and 1292 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -423,6 +453,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 204605,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-28-jeremias-b95e824b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jeremiah (Jer): 52 chapters and 1363 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -437,6 +468,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17934,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-29-lamentations-11a9ada3",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Lamentations (Lam): 5 chapters and 154 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -451,6 +483,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 25352,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-30-baruch-97262d58",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Baruch (Bar): 6 chapters and 213 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -465,6 +498,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 188847,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-31-ezechiel-f0675e77",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ezekiel (Ezech): 48 chapters and 1272 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -479,6 +513,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 76686,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-32-daniel-3ca259b5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Daniel (Dan): 14 chapters and 531 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -493,6 +528,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 24515,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-33-osee-0341e42a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Hosea (Os): 14 chapters and 198 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -507,6 +543,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9777,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-34-joel-0f92ea56",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Joel (Joel): 3 chapters and 73 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -521,6 +558,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 19819,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-35-amos-b352d4cb",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Amos (Amos): 9 chapters and 147 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -535,6 +573,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 2997,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-36-abdias-9ad1b58f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Obadiah (Abd): 1 chapters and 21 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -549,6 +588,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6275,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-37-jonas-2039c4b8",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jonah (Jon): 4 chapters and 48 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -563,6 +603,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14658,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-38-micheas-83d9d935",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Micah (Mich): 7 chapters and 104 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -577,6 +618,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6247,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-39-nahum-ac642191",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Nahum (Nah): 3 chapters and 47 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -591,6 +633,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7160,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-40-habacuc-d6e5d8f1",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Habakkuk (Hab): 3 chapters and 56 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -605,6 +648,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7639,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-41-sophonias-01b9ddd6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Zephaniah (Soph): 3 chapters and 53 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -619,6 +663,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5562,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-42-aggeus-c1b39678",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Haggai (Agg): 2 chapters and 38 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -633,6 +678,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 29948,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-43-zacharias-3d50ff55",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Zechariah (Zach): 14 chapters and 211 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -647,6 +693,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8395,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-44-malachias-8fc54627",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Malachi (Mal): 4 chapters and 55 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -661,6 +708,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 119059,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-45-1-machabees-80d0fe28",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Maccabees (1Mach): 16 chapters and 929 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -675,6 +723,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 81281,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-46-2-machabees-4959f585",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Maccabees (2Mach): 15 chapters and 558 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -689,6 +738,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 118864,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Matthew (Matt): 28 chapters and 1070 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -703,6 +753,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 74086,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Mark (Mark): 16 chapters and 677 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -717,6 +768,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 128316,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Luke (Luke): 24 chapters and 1151 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -731,6 +783,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 95783,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "John (John): 21 chapters and 879 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -745,6 +798,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 123969,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-51-acts-d47f5064",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Acts (Acts): 28 chapters and 1004 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -759,6 +813,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 47704,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-52-romans-b5092f0e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Romans (Rom): 16 chapters and 433 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -773,6 +828,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 47070,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Corinthians (1Cor): 16 chapters and 437 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -787,6 +843,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 31060,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-54-2-corinthians-3f55ae7b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Corinthians (2Cor): 13 chapters and 255 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -801,6 +858,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 15489,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-55-galatians-000c0a2a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Galatians (Gal): 6 chapters and 149 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -815,6 +873,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 15930,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-56-ephesians-d9b55031",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ephesians (Eph): 6 chapters and 155 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -829,6 +888,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 11287,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-57-philippians-6a713d52",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Philippians (Phil): 4 chapters and 104 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -843,6 +903,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 10615,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Colossians (Col): 4 chapters and 95 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -857,6 +918,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 10118,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-59-1-thessalonians-d9f2bcea",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Thessalonians (1Thess): 5 chapters and 89 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -871,6 +933,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5447,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-60-2-thessalonians-79eff09a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Thessalonians (2Thess): 3 chapters and 47 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -885,6 +948,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12195,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-61-1-timothy-29f12dfa",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Timothy (1Tim): 6 chapters and 113 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -899,6 +963,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8724,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-62-2-timothy-92bec3c7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Timothy (2Tim): 4 chapters and 83 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -913,6 +978,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5023,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-63-titus-83aa7065",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Titus (Tit): 3 chapters and 46 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -927,6 +993,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 2299,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-64-philemon-2205e9dd",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Philemon (Philem): 1 chapters and 25 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -941,6 +1008,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 35043,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-65-hebrews-86bab25c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Hebrews (Heb): 13 chapters and 303 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -955,6 +1023,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12398,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-66-james-4f2a3f26",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "James (James): 5 chapters and 108 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -969,6 +1038,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12806,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-67-1-peter-7398fdf6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Peter (1Pet): 5 chapters and 105 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -983,6 +1053,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8116,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-68-2-peter-3b3ce893",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Peter (2Pet): 3 chapters and 61 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -997,6 +1068,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12563,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-69-1-john-a1189392",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 John (1John): 5 chapters and 105 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -1011,6 +1083,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1522,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-70-2-john-60aed670",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 John (2John): 1 chapters and 13 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -1025,6 +1098,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1588,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-71-3-john-c826b5c4",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "3 John (3John): 1 chapters and 14 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -1039,6 +1113,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 3496,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-72-jude-d9bb65d4",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jude (Jude): 1 chapters and 25 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",
@@ -1053,6 +1128,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 57646,
+   "edition_owned": true,
    "id": "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-73-apocalypse-8f990cb5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Revelation (Apoc): 22 chapters and 405 verses, one LF-terminated line per verse after a header line. Chapter and verse numbers are the Clementine Vulgate's, which the 1962 Missal cites; they agree with the Douay-Rheims registered under work.english-college-of-douay.douay-rheims-bible.",

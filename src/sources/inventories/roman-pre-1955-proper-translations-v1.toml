@@ -2,17 +2,79 @@
 #
 # This sidecar carries no English text and does not restate the parent ledger.
 # The effective pre-1955 calendar replaces the restored Palm Sunday, Good
-# Friday, and Easter Vigil formularies source-side. Each row below suppresses
-# one exact inherited roman-1962 ledger record that therefore cannot answer a
-# source slot in this child recension.
+# Friday, and Easter Vigil formularies source-side, and removes the later
+# Chrism Mass, St Joseph the Worker, and the Queenship entirely. (The parent
+# English ledger carries no Queenship row.) Each row below suppresses one exact inherited
+# roman-1962 ledger record that therefore cannot answer a source slot in this
+# child recension.
 
 translations_schema = 1
 record_type = "calendar-proper-translations"
 calendar = "roman-pre-1955"
 target = "src/sources/calendars/roman-pre-1955/propers.yaml"
-recorded_on = "2026-08-26"
+recorded_on = "2026-08-27"
 merge = "Inherit the roman-1962 translation ledger, then suppress only the exact parent records listed as inherited_inapplicable."
-verification = "Text-free recension accounting. Every target is an inherited parent record, its raw child mass is a source-authored departure: replaced, and its exact identity is absent from the effective child source slots."
+verification = "Text-free recension accounting. Every target is an inherited parent record, its raw child mass is a source-authored departure whose exact type is named by reason, and its exact identity is absent from the effective child source slots."
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
 
 [[inherited_inapplicable]]
 record = "untranslated"
@@ -55,7 +117,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Responsory at the Entrance into the Church"
@@ -85,7 +147,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Versicle at the Beginning of the Procession"
@@ -115,7 +177,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "good-friday"
 form_id = "main"
 proper = "Showing of the Cross"
@@ -125,7 +187,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Blessing of the Baptismal Water"
@@ -135,7 +197,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Blessing of the New Fire"
@@ -155,7 +217,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Lumen Christi"
@@ -165,7 +227,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Oration after the First Prophecy"
@@ -175,7 +237,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Oration after the Fourth Prophecy"
@@ -185,7 +247,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Oration after the Second Prophecy"
@@ -195,7 +257,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "easter-vigil"
 form_id = "main"
 proper = "Oration after the Third Prophecy"
@@ -225,7 +287,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"
@@ -235,7 +297,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"
@@ -245,7 +307,7 @@ reason = "recension-replaced"
 basis = "calendar-departure"
 
 [[inherited_inapplicable]]
-record = "untranslated"
+record = "entry"
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"

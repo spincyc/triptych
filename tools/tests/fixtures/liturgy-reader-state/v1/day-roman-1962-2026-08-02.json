@@ -53,7 +53,7 @@
       {"id": "proper/roman-1962/pentecost-10/010", "kind": "proper", "semanticSlot": {"state": "mapped", "identity": {"id": "prayer-after-communion"}}, "editionSlotLabel": "Postcommunion", "selected": {"kind": "composed", "language": "la", "sourceId": null, "rights": null, "missing": true, "text": null, "availability": "unavailable", "held": false, "reason": "latin-withheld", "unavailableState": "unavailable"}, "sourceHooks": [{"kind": "proper-structure", "id": "roman-1962/pentecost-10/010"}]}
     ],
     "coverage": [
-      {"state": "supported", "scope": "formulary:pentecost-10", "completeness": "complete", "reasons": []},
+      {"state": "supported", "scope": "formulary:pentecost-10", "reasons": [{"kind": "text-not-held", "count": 3, "repositoryTerm": "proper-body", "claims": [{"proper": "Collect", "cycle": null}, {"proper": "Secret", "cycle": null}, {"proper": "Postcommunion", "cycle": null}]}], "completeness": "partial"},
       {"state": "unavailable", "scope": "proper-original:la", "reasons": [{"kind": "text-withheld", "count": 3}]}
     ],
     "explicitAbsences": [

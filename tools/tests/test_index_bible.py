@@ -263,7 +263,9 @@ class ConfirmationTests(unittest.TestCase):
         entries = [
             found
             for _, mass in propers.masses_of(document)
-            for found in propers.scripture_entries(mass)
+            for found, _numbering in propers.numbered_entries(
+                mass, document.get("psalm_numbering")
+            )
         ]
         table = Divergences("postconciliar", document, entries, canon)
         table.confirm(self.bible)

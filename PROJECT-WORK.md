@@ -328,16 +328,14 @@ on top of `main`'s current hashes, so no old signature resurrected.
 - `impl/didach-domain` and `ux/didach-identity`: the abandoned `didach.ai`
   direction; not part of this program.
 
-**Domain state, recorded so nobody manufactures a fix.** The public origin
-moved to `https://mystago.gy/` entirely through GitHub Pages settings and
-DNS; no repository change accomplished it and none was made by this
-integration. The old origin 301-redirects. `tools/public-alpha` still
-declares `SITE_ORIGIN = "https://spincyc.github.io/triptych"`, so `og:url`
-and `og:image` metadata name the old origin (reachable via the redirect), and
-`tools/tests/liturgy_reader_visual_reset_browser.mjs` baselines against the
-old URL. Correcting the canonical origin is product/domain-architecture work
-under the master plan, not a bug fix to smuggle in; Triptych remains the
-product and repository identity.
+**Domain state.** The public origin moved to `https://mystago.gy/` through
+GitHub Pages settings and DNS; the old project-path origin 301-redirects.
+`tools/public-alpha` now declares the custom-domain origin, constructs and
+verifies canonical `og:url` and `og:image` metadata there, and keeps all
+in-artifact navigation relative so the same static artifact remains portable
+under a GitHub Pages project-path preview. Triptych remains the product and
+repository identity; this repository change corrects metadata and does not
+perform or imply a deployment.
 
 **Gate baseline for this tree.** `check-browser-gate` over the built site:
 2,290 assertions, **228** failures — 117 single-`main`, 82 target-size, 27
@@ -706,19 +704,19 @@ keeping the first-visit URL empty. The obsolete first patch was superseded
 after gate repair by the accepted 19-path patch. Its prospective 230/230 focused
 Python, 40/40 Day, 32/32 Propers, 18/18 shared-shell, and 24/24 governed
 Instrument gates were repeated successfully in the promoted real tree before
-commit. Planning and compatibility packages remain at
+commit. The planning package remains at
 `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`
-and
-`build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/`.
+and the removed compatibility package remains recoverable from its historical
+introduction commit `e69d91ffff5823dc2970f867f1be8c9eb5b6363b`.
 
 Independent post-deployment review passed all nine final questions and accepts
 the public cutover as complete. Exact cutover SHA
 `9b5f21c0ca26bf02af03d207ddd2617021e16fb3` owns qualifying successful Pages
 run `31175722949`. Immediate live verification passed 936/936 across 36
 original-pixel states; ordinary-cache verification passed 216/216 after 613
-seconds without mixed-generation behavior. The immutable execution handoff is
-`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`;
-its ZIP SHA-256 is
+seconds without mixed-generation behavior. The removed immutable execution
+handoff remains recoverable from historical introduction commit
+`1d60b49bcf2a46e5ee43d6326af3e13a43265b72`; its ZIP SHA-256 was
 `06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`.
 Canonical Day and Propers now serve the accepted Instrument without redirects.
 Public navigation was not redesigned; retained candidate and oracle routes
@@ -731,8 +729,9 @@ transcript replay; no transcript was recaptured or blessed.
 <!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
 
 **Complete; production integration is independently accepted and its exact
-reviewed handoff is durably archived. The separately reviewed public cutover is
-also complete; public-navigation redesign remains outside both phases.**
+reviewed handoff is durably archived in Git history rather than the current
+tree. The separately reviewed public cutover is also complete;
+public-navigation redesign remains outside both phases.**
 Independent Round 1 accepted the
 Liturgical Instrument visual foundation and all seven correction dispositions.
 Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
@@ -842,8 +841,9 @@ bounded visual corrections: one 39.75rem Read axis, earlier Missal action,
 integrated rail/dock, authored masthead, consolidated warnings, tighter ritual
 rhythm, and deliberate 320-pixel wrapping. Work unit D now supplies the full
 matrix, measured before/after package, honest governed-check record, verified
-Pages deployment, and immutable tracked handoff at
-`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
+Pages deployment, and an immutable tracked handoff now retained only in
+historical introduction commit
+`50288ddf9759f56e8a25e4907d8de25e27e25e8f`.
 Independent review round 1 passed six of seven original findings and confirmed
 the direction, typography, ritual grid, warnings, masthead, and Ordinary/Proper
 composition. It retained the original shell blocker only at 1024×768 and added
@@ -862,9 +862,9 @@ continuity record owns both exact stops. A third automatic run again passed all
 repository-owned build/upload work and was canceled only when the job reached
 its 15-minute ceiling during deploy polling. The following immutable-handoff
 push succeeded as Pages run `31109086658`; direct Day/Propers routes are HTTP
-200/noindex and deployed CSS/JS byte-match source. The final narrow immutable
-re-review handoff is
-`build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`.
+200/noindex and deployed CSS/JS byte-match source. The removed final narrow
+immutable re-review handoff remains recoverable from historical introduction
+commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d`.
 Independent Round 1 acceptance passed shell continuity, 200% labeled reflow,
 and absence of accepted-geometry regressions. It independently verified the
 ZIP, all 109 manifest entries, candidate/source CSS parity, and all corrected
@@ -1753,29 +1753,47 @@ source-owned turns and semantically honest role or versicle/response cues; it
 may not split opaque prose by string matching or equate Priest/Server with
 versicle/response.
 
-**Feature implementation complete; integration still pending.** The recovered
-source tree now carries 619 postconciliar Mass identities, 491 Roman 1962
-identities, and six explicit pre-1955 departure records over the inherited 491
-identity surface. The source library validates at 1,822 artifacts, 718 editions,
-535 works, 2,920 passages, 72 segments, and 2,165 bindings. The new registered
-`complete-missal` audit measures all fifteen completion dimensions and reports
-39 typed unresolved cells instead of inventing text or silently borrowing a
-recension. Its strict `--require-resolved` mode therefore refuses, while the
-source-honest validity check passes.
+**Feature implementation recovered and frozen-tree acceptance complete;
+Firefox review and integration still pending.** The recovered source tree now carries 619
+postconciliar Mass identities, 491 Roman 1962 identities, 489 Roman pre-1955
+identities, and eight explicit pre-1955 departure records. The source library
+validates at 1,837 artifacts, 721 editions, 536 works, 3,295 passages, 72
+segments, and 2,167 bindings. The registered `complete-missal` audit measures
+all fifteen completion dimensions over 2020--2120 and reports 39 typed
+unresolved cells instead of inventing text or silently borrowing a recension:
+8/492/619 represented celebrations and at least 5,158/5,247/3,056 modeled text
+slots for pre-1955/Roman 1962/postconciliar respectively. Its strict
+`--require-resolved` mode therefore refuses, while the source-honest validity
+check passes.
 
-The repaired feature passes 2,065 discovered Python tests (10 intentional
-skips), the complete 2,190-case year audit with 4,380 JSON/text renders, all six
-live Chromium harnesses, the tool registry, all three calendar/rubric families,
-Bible-index freshness, public-alpha preview verification, release-binding
-exactness, and the 212-command example replay with no stale transcript debt.
+The first recovered full discovery exposed 23 outcomes (22 failures and one
+error) caused by stale expectations or fixtures after the source-owned
+expansion. Every mapped repair passed an independent 449-test replay (six
+intentional skips), and the five affected shell suites (`index-bible`,
+`act-history`, `mass-propers`, `mass-today`, and `public-alpha`) all pass. The
+final frozen-tree discovery passes 2,270 Python tests with no failure or error
+and ten intentional skips. The separate annual gate passes all six tests over
+365 days, three calendars, and two languages: 2,190 cases and 4,380 successful
+JSON/text renders. The recovered examples account for 212 captures: 203
+replayed, six explicit network, model, or write exemptions, and three
+unavailable PDF fixtures, with no stale transcript debt.
+
 Rights-withheld bodies are absent from public structures; formerly composite
 celebration identities are split; calendar and option ambiguity fails closed;
 Ordinary and Proper consumers share the same typed availability, source, and
 dialogue semantics; and every generated structure has been regenerated from
-its owning source. This establishes the first six remediation requirements.
-It does not claim the final requirement: the exact feature snapshot still needs
-its cold review, reconciliation with current `origin/main`, fast-forward main
-update, and exact Pages verification.
+its owning source. Current-tree ICEL payloads, quarantined Roman 1962 Latin
+Proper bodies, and the superseded Lasance OCR artifact with the excluded
+1302a--1302d insert have been removed from publication and tracked handoff
+surfaces. Reachable earlier Git history still contains those objects; deciding
+whether that history requires rewriting, replacement, access restriction, or
+another remedy remains a maintainer/counsel release-policy decision and is not
+silently treated as resolved by the current-tree quarantine. The
+implementation's Chromium evidence is green, but the separately promised
+Firefox review has no exact-feature evidence and remains open. The exact
+feature snapshot still needs its exact Firefox and cold reviews,
+reconciliation with current `origin/main`, fast-forward main update, and exact
+Pages verification.
 
 Completion requires the source-owned corrections and typed unresolved states,
 regenerated public data with no stale or orphan output, all focused and

@@ -407,9 +407,10 @@ class EmittedReadmeTests(unittest.TestCase):
         """The other direction, and the one a careless renderer gets wrong.
 
         roman-holy-week declares no `[withheld]` table at all. Telling its reader
-        that words are missing on purpose would assert a rights position the
-        slice does not hold, which is worse than saying nothing -- so the README
-        must say instead that the silence IS a silence.
+        that unit words are missing on purpose would assert a position the rows
+        do not hold, so the README must say instead that the silence IS a
+        silence. That is independent of an unresolved physical witness whose
+        words are not carried in the units.
         """
         data, readme = self.readme(HOLY_WEEK)
         self.assertFalse(any(row.get("withheld")
@@ -418,7 +419,8 @@ class EmittedReadmeTests(unittest.TestCase):
         self.assertIn("NOTHING IN THIS SLICE IS WITHHELD", readme)
         self.assertIn("No file in this repository carries that banner", readme)
         self.assertNotIn("WORDS ARE MISSING FROM THIS HISTORY", readme)
-        self.assertNotIn("NOT established a right to redistribute", readme)
+        self.assertIn("NOT established a right to redistribute", readme)
+        self.assertIn("missale-romanum-later-composite-pre-1955-body", readme)
 
     def test_the_rights_values_named_are_the_values_the_witnesses_record(self):
         """Named, not counted in aggregate, and taken off the rows themselves."""

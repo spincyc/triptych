@@ -3,6 +3,7 @@
   {
    "artifact_type": "markdown-document",
    "byte_size": 12300,
+   "edition_owned": true,
    "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.attribution-md-2ce4d341",
    "media_type": "text/markdown; charset=utf-8",
    "notes": "Lists required acknowledgements and source-specific rights conditions for the upstream terrain providers. Its own warning that users remain responsible for each provider's terms prevents collapsing a mixed tile selection into one blanket license.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "markdown-document",
    "byte_size": 12162,
+   "edition_owned": true,
    "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.data-sources-md-dcf07b15",
    "media_type": "text/markdown; charset=utf-8",
    "notes": "Identifies the terrain source families, their geographic and zoom-level roles, and the per-tile X-Imagery-Sources response-header grammar. It is the authority for interpreting the publication receipt's SRTM, GMTED2010, and ETOPO1 lineage strings, not a substitute for the exact headers recorded for each selected tile.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "license-document",
    "byte_size": 17267,
+   "edition_owned": true,
    "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.documentation-license-md-b91b121a",
    "media_type": "text/markdown; charset=utf-8",
    "notes": "The file contains Mapzen's CC BY 4.0 notice and the complete license text. It governs the documentation, not all upstream elevation sources represented in terrain tiles.",
@@ -45,6 +48,7 @@
   {
    "artifact_type": "markdown-document",
    "byte_size": 5392,
+   "edition_owned": true,
    "id": "artifact.mapzen.terrain-tiles.joerd-docs-0b867651.formats-md-f37b923b",
    "media_type": "text/markdown; charset=utf-8",
    "notes": "Defines the Terrarium PNG elevation formula as (red * 256 + green + blue / 256) - 32768 and identifies its Web Mercator projection and tile sizes. It is the format authority for decoding, not an artifact containing terrain pixels.",

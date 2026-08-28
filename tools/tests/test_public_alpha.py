@@ -43,6 +43,18 @@ class PublicAlphaTest(unittest.TestCase):
         self.tool.MANIFEST_PATH = self.root / "release/public-alpha.json"
         self.tool.TEMPLATE_ROOT = self.root / "release/public-alpha"
         self.tool.OUTPUT_ROOT = self.root / "build/public-alpha"
+        self.tool.POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 1
+        self.quarantine_marker = "PROJECT-CREATED PUBLIC-ALPHA QUARANTINE MUTATION"
+        quarantine_hash = digest(self.quarantine_marker.encode())
+        self.write(
+            self.tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
+            (
+                "[[untranslated]]\n"
+                'lang = "en"\n'
+                'extent = "body"\n'
+                f'quarantined_text_sha256 = ["{quarantine_hash}"]\n'
+            ).encode(),
+        )
         self.tool.PAGE_MAP = {
             "README.md": "index.html",
             "library/curriculums.md": "library/curriculums.html",
@@ -172,6 +184,30 @@ class PublicAlphaTest(unittest.TestCase):
         page = tool.render_browser_page(source, output_relative, False, {})
         return page.split("</head>")[0]
 
+    def test_canonical_public_origin_and_relative_artifact_routes_are_distinct(self) -> None:
+        tool = load_tool()
+        self.assertEqual(tool.SITE_ORIGIN, "https://mystago.gy")
+        self.assertEqual(
+            tool.public_site_url("liturgy/day.html"),
+            "https://mystago.gy/liturgy/day.html",
+        )
+        self.assertEqual(
+            tool.public_site_url(tool.SOCIAL_CARD_RELATIVE),
+            "https://mystago.gy/assets/social-card.png",
+        )
+        for unsafe in ("", "/liturgy/day.html", "../liturgy/day.html"):
+            with self.subTest(unsafe=unsafe):
+                with self.assertRaises(tool.ReleaseError):
+                    tool.public_site_url(unsafe)
+
+        # Canonical metadata is absolute, but artifact navigation stays
+        # relative so the same output works at the custom-domain root and in a
+        # GitHub Pages project-path preview.
+        self.assertEqual(
+            tool.relative_link("liturgy/day.html", "index.html"),
+            "../index.html",
+        )
+
     def test_every_browser_page_carries_its_own_link_preview(self) -> None:
         """A shared preview is barely better than none, so each page states itself."""
         tool = load_tool()
@@ -198,9 +234,12 @@ class PublicAlphaTest(unittest.TestCase):
             self.assertEqual(properties["og:site_name"], tool.SITE_NAME)
             self.assertNotIn(f"· {tool.SITE_NAME}", properties["og:title"])
             self.assertEqual(
-                properties["og:url"], f"{tool.SITE_ORIGIN}/{output_relative}"
+                properties["og:url"], tool.public_site_url(output_relative)
             )
-            self.assertTrue(properties["og:image"].startswith("https://"))
+            self.assertEqual(
+                properties["og:image"],
+                tool.public_site_url(tool.SOCIAL_CARD_RELATIVE),
+            )
             seen["og:title"].add(properties["og:title"])
             seen["og:url"].add(properties["og:url"])
         self.assertEqual(len(seen["og:title"]), indexed)
@@ -256,6 +295,40 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertEqual(side, other)
         self.assertGreaterEqual(side, tool.PREVIEW_ICON_MINIMUM_SIDE)
+
+    def test_link_preview_verifier_rejects_the_retired_pages_origin(self) -> None:
+        output_relative = "build/link-preview-origin-test"
+        output = self.root / output_relative
+        for relative in (
+            self.tool.SOCIAL_CARD_RELATIVE,
+            self.tool.SITE_ICON_RELATIVE,
+        ):
+            self.write(
+                f"{output_relative}/{relative}",
+                (self.tool.TEMPLATE_ROOT / relative).read_bytes(),
+            )
+        page = (
+            '<meta name="description" content="Canonical origin test">\n'
+            '<link rel="apple-touch-icon" href="assets/icon.png">\n'
+            + self.tool.social_meta(
+                "index.html", "Canonical origin test", "Canonical origin test"
+            )
+        )
+        self.write(f"{output_relative}/index.html", page.encode())
+
+        self.assertEqual(self.tool.verify_link_previews(output, False, {}), [])
+
+        stale = page.replace(
+            "https://mystago.gy/", "https://spincyc.github.io/triptych/"
+        )
+        self.write(f"{output_relative}/index.html", stale.encode())
+        errors = self.tool.verify_link_previews(output, False, {})
+        self.assertTrue(
+            any("og:url is not https://mystago.gy/" in error for error in errors)
+        )
+        self.assertTrue(
+            any("og:image is not https://mystago.gy/" in error for error in errors)
+        )
 
     def test_no_index_artifact_does_not_advertise_the_public_site(self) -> None:
         tool = load_tool()
@@ -528,7 +601,7 @@ class PublicAlphaTest(unittest.TestCase):
         authorization = self.manifest["authorizations"]["test-authorization"]
         authorization["site_sources"] = {
             source_path: digest((self.root / source_path).read_bytes())
-            for source_path in sorted(self.tool.SITE_SOURCE_PATHS)
+            for source_path in sorted(self.tool.site_source_paths())
         }
         publication_rows = []
         for publication in self.manifest["publications"]:
@@ -1436,7 +1509,7 @@ class PublicAlphaTest(unittest.TestCase):
             str(failure.exception),
         )
 
-    def test_site_source_graph_keeps_browser_assets_and_source_projection(self) -> None:
+    def test_site_source_graph_keeps_every_copied_browser_and_data_input(self) -> None:
         bible_manifest = {
             "bibles": [
                 {
@@ -1469,11 +1542,15 @@ class PublicAlphaTest(unittest.TestCase):
             self.write(relative, b"/* fixture */\n")
 
         source_projection = "src/web/data/structure/sources/index.json"
-        unbound_projection = "src/web/data/structure/catena/index.json"
+        catena_projection = "src/web/data/structure/catena/index.json"
         self.write(source_projection, b'{"works": []}\n')
-        self.write(unbound_projection, b'{"sources": []}\n')
+        self.write(catena_projection, b'{"sources": []}\n')
 
         recognized = self.tool.site_source_paths()
+        copied_inputs = {
+            source.relative_to(self.root).as_posix()
+            for source in self.tool.web_data_files().values()
+        }
 
         self.assertEqual(
             browser_inputs,
@@ -1483,10 +1560,189 @@ class PublicAlphaTest(unittest.TestCase):
                 if relative.startswith("src/web/browser/")
             },
         )
+        self.assertLessEqual(copied_inputs, recognized)
         self.assertIn(source_projection, recognized)
-        self.assertNotIn(unbound_projection, recognized)
+        self.assertIn(catena_projection, recognized)
+        self.assertIn(
+            "src/sources/bibles/offered/chapters/Ps/1.json", recognized
+        )
         self.assertTrue(
             self.tool.is_bound_web_data_source(self.root / source_projection)
+        )
+        self.assertTrue(
+            self.tool.is_bound_web_data_source(self.root / catena_projection)
+        )
+
+        # Exact authorization closure must notice a copied family that changes
+        # after approval, even when it was not named in an old allowlist.
+        self.authorize_current_inputs()
+        self.write(catena_projection, b'{"sources": ["changed"]}\n')
+        errors = self.tool.site_source_binding_errors(self.manifest)
+        self.assertTrue(
+            any(catena_projection in error and "does not match" in error for error in errors),
+            errors,
+        )
+
+    def test_verifier_rejects_tampered_copied_browser_asset_with_fresh_checksums(
+        self,
+    ) -> None:
+        bible_manifest = {
+            "bibles": [
+                {
+                    "id": "offered",
+                    "label": "Offered",
+                    "language": "la",
+                    "numbering": "vulgate",
+                    "psalter": "gallican",
+                    "rights": "public-domain",
+                }
+            ]
+        }
+        self.write(
+            "src/web/data/bibles.json",
+            (json.dumps(bible_manifest) + "\n").encode(),
+        )
+        self.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
+        self.write("src/web/data/structure/sources/index.json", b'{"works": []}\n')
+        self.write("src/web/browser/shared/browser-core.js", b"// approved\n")
+        self.write("src/web/browser/shared/browser-core.css", b"/* approved */\n")
+        for entrance in self.tool.WEB_BROWSER_ENTRANCES:
+            self.write(
+                f"src/web/browser/{entrance}/index.html",
+                b"<!doctype html><main>fixture</main>\n",
+            )
+
+        output = self.tool.OUTPUT_ROOT / "site"
+        for destination, source in self.tool.web_data_files().items():
+            self.write(
+                (output.relative_to(self.root) / destination).as_posix(),
+                source.read_bytes(),
+            )
+        for relative, tampered in (
+            ("shared/browser-core.js", b"// tampered\n"),
+            ("shared/browser-core.css", b"/* tampered */\n"),
+        ):
+            with self.subTest(relative=relative):
+                copied = output / relative
+                approved = copied.read_bytes()
+                copied.write_bytes(tampered)
+                self.tool.write_checksums(output)
+
+                errors = self.tool.verify_web_data(output)
+
+                self.assertTrue(
+                    any(
+                        relative in error
+                        and "does not match its repository source" in error
+                        for error in errors
+                    ),
+                    errors,
+                )
+                copied.write_bytes(approved)
+
+    def test_liturgy_quarantine_rejects_generic_licensed_source_identity(
+        self,
+    ) -> None:
+        self.write(
+            "src/sources/works/example/licensed/editions/fixture/"
+            "artifacts/text/artifact.toml",
+            (
+                'id = "artifact.example.licensed.fixture.text"\n'
+                'edition_id = "edition.example.licensed.fixture"\n'
+                'rights_status = "licensed"\n'
+            ).encode(),
+        )
+        structure = "src/web/data/structure/propers/test.json"
+        for rights in (None, "public-domain"):
+            with self.subTest(rights=rights):
+                row = {
+                    "lang": "en",
+                    "source_id": "artifact.example.licensed.fixture.text",
+                    "text": "not authorized for every liturgy surface",
+                }
+                if rights is not None:
+                    row["rights"] = rights
+                self.write(
+                    structure,
+                    (json.dumps({"translations": [row]}) + "\n").encode(),
+                )
+
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.validate_liturgical_public_data(self.root / structure)
+
+                self.assertIn("protected source identity", str(failure.exception))
+                self.assertIn(
+                    "artifact.example.licensed.fixture.text",
+                    str(failure.exception),
+                )
+
+    def test_liturgy_quarantine_rejects_metadata_free_exact_text_value(self) -> None:
+        for relative in (
+            "src/web/data/structure/propers/test.json",
+            "src/web/data/structure/new-public-family/test.json",
+            "src/web/data/bibles.json",
+        ):
+            with self.subTest(relative=relative):
+                self.write(
+                    relative,
+                    (
+                        json.dumps(
+                            {
+                                "translations": [
+                                    {"lang": "en", "text": self.quarantine_marker}
+                                ]
+                            }
+                        )
+                        + "\n"
+                    ).encode(),
+                )
+
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.validate_liturgical_public_data(self.root / relative)
+
+                message = str(failure.exception)
+                self.assertIn(digest(self.quarantine_marker.encode()), message)
+                self.assertNotIn(self.quarantine_marker, message)
+
+    def test_ordinary_language_absence_allows_only_safe_typed_aggregate(
+        self,
+    ) -> None:
+        structure = "src/web/data/structure/ordinary/test.json"
+        safe_rows = [
+            {
+                "key": "text-rights-withheld",
+                "lang": "en",
+                "count": 2,
+                "state": "rights-restricted",
+                "kind": "rights-withheld",
+            },
+            {
+                "key": "text-rights-unresolved",
+                "lang": "la",
+                "count": 1,
+                "state": "unresolved",
+                "kind": "rights-unresolved",
+            },
+        ]
+        self.write(
+            structure,
+            (json.dumps({"language_absences": safe_rows}) + "\n").encode(),
+        )
+
+        self.tool.validate_liturgical_public_data(self.root / structure)
+
+        unsafe = dict(safe_rows[0])
+        unsafe["source_id"] = "edition.example.private"
+        self.write(
+            structure,
+            (json.dumps({"language_absences": [unsafe]}) + "\n").encode(),
+        )
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_liturgical_public_data(self.root / structure)
+
+        self.assertIn(
+            "must contain exactly key, lang, count, state and kind",
+            str(failure.exception),
         )
 
     def test_verifier_rejects_copied_pdf_without_owning_catalog_link(self) -> None:

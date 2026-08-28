@@ -312,20 +312,24 @@ the calendars, and nothing else on this page states a figure it gives.
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1154 | 0 |
-| roman-1962 | christological | 8 | 66 | 0 |
-| roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-pre-1955 | marian | 1 | 0 | 0 |
+| roman-pre-1955 | sanctoral | 1 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1352 | 0 |
+| roman-1962 | christological | 8 | 96 | 0 |
+| roman-1962 | marian | 18 | 124 | 0 |
+| roman-1962 | sanctoral | 307 | 1509 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
-| postconciliar | seasonal | 390 | 2108 | 0 |
-| postconciliar | christological | 7 | 67 | 0 |
+| postconciliar | seasonal | 390 | 2116 | 0 |
+| postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | sanctoral | 201 | 760 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
 | roman-pre-1955 | (no rank) | 6 | 6 |
+| roman-pre-1955 | I | 1 | 1 |
+| roman-pre-1955 | II | 1 | 1 |
 | roman-1962 | (no rank) | 93 | 93 |
 | roman-1962 | Comm. | 104 | 104 |
 | roman-1962 | I | 37 | 37 |
@@ -340,18 +344,18 @@ the calendars, and nothing else on this page states a figure it gives.
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 619 |
-| Propers | 0 | 2773 | 2941 |
+| Masses | 8 | 491 | 619 |
+| Propers | 0 | 3439 | 2997 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 149 | 184 |
+| — inside a `forms` block | 0 | 182 | 188 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
-| Propers taking their text from another entry | 0 | 70 | 41 |
-| Propers that are not placeholders | 0 | 2773 | 2941 |
-| — of those, scripture-bearing | 0 | 2192 | 2587 |
-| Encoded passages | 0 | 2598 | 3542 |
+| Propers taking their text from another entry | 0 | 70 | 49 |
+| Propers that are not placeholders | 0 | 3439 | 2997 |
+| — of those, scripture-bearing | 0 | 2192 | 2635 |
+| Encoded passages | 0 | 2598 | 3590 |
 | Distinct books cited | 0 | 57 | 73 |
 | Distinct slot names | 0 | 120 | 92 |
 
@@ -413,16 +417,15 @@ Week to Wednesday, the Chrism Mass, the Easter and Whitsun octaves, the Rogation
 Mass, the Vigil and feast of the Ascension, the Vigil of Pentecost, the Mass of
 the First Sunday after Pentecost, Corpus Christi, and the Sacred Heart.
 
-Every one of those 63 entries carries **only its scripture-bearing propers**, and
-says so in its own notes:
+Those notes preserve the transcription boundary:
 
 > Only the scripture-bearing propers are recorded; the day's orations and other
 > composed chants are appointed but not yet transcribed.
 
-This is a deliberate refusal. The orations of those days exist and are appointed;
-they were not transcribed because they were not read. The alternative would have
-been to generate plausible Latin, and a plausible wrong oration is worse than an
-absent one.
+The notes no longer make an unrendered oration disappear. Where exact wording
+remains unheld, each source-established Collect, Secret and Postcommunion now
+exists as an explicit composed Proper whose `text_status.state` is `unavailable`
+and whose reason is `witness-gap`. No wording was generated.
 
 Identity, rank and the printed scripture references were read from an **OCR text
 layer** of the CMAA 1962 facsimile, not from the facsimile images. Confidence in

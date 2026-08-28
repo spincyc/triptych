@@ -16,13 +16,46 @@ SCRIPT = LITURGY / "reader-visual-reset.js"
 INSTRUMENT = LITURGY / "reader-instrument.css"
 PRODUCTION_DAY = LITURGY / "day-reader.html"
 PRODUCTION_PROPERS = LITURGY / "propers-reader.html"
+BROWSER_HARNESS = ROOT / "tools/tests/liturgy_reader_visual_reset_browser.mjs"
 
 
 def held(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def relative_luminance(color: str) -> float:
+    channels = [int(color[index:index + 2], 16) / 255 for index in (1, 3, 5)]
+    linear = [
+        channel / 12.92
+        if channel <= 0.04045
+        else ((channel + 0.055) / 1.055) ** 2.4
+        for channel in channels
+    ]
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+
+def contrast_ratio(first: str, second: str) -> float:
+    lighter, darker = sorted(
+        (relative_luminance(first), relative_luminance(second)), reverse=True
+    )
+    return (lighter + 0.05) / (darker + 0.05)
+
+
+def instrument_tokens(css: str) -> dict[str, str]:
+    root = re.search(r":root\s*\{([^}]*)\}", css, re.DOTALL)
+    if root is None:
+        return {}
+    return dict(re.findall(r"--([\w-]+):\s*(#[0-9a-fA-F]{6})\s*;", root.group(1)))
+
+
 class LiturgyReaderVisualResetTest(unittest.TestCase):
+    def test_capture_matrix_uses_only_same_tree_prototype_and_production_pages(self) -> None:
+        harness = held(BROWSER_HARNESS)
+        self.assertNotIn("https://spincyc.github.io/triptych/liturgy/", harness)
+        self.assertNotRegex(harness, r"before-(?:current|accepted)-")
+        self.assertIn("variant: 'prototype'", harness)
+        self.assertIn("variant: 'production'", harness)
+
     def test_prototypes_are_unlinked_noindex_pages(self) -> None:
         for path in (DAY, PROPERS):
             source = held(path)
@@ -204,6 +237,75 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
             ".reader-instrument .reader-document .ordinary-frame > "
             ".ordinary-element { display: block; }",
             print_css,
+        )
+
+    def test_instrument_contrast_and_dock_focus_are_explicit(self) -> None:
+        css = held(INSTRUMENT)
+        tokens = instrument_tokens(css)
+
+        for background in (
+            tokens["instrument-paper"],
+            tokens["instrument-panel"],
+            tokens["instrument-accent-soft"],
+            "#ffffff",
+        ):
+            self.assertGreaterEqual(
+                contrast_ratio(tokens["instrument-faint"], background),
+                4.5,
+                (tokens["instrument-faint"], background),
+            )
+        for background in (
+            tokens["instrument-paper"],
+            tokens["instrument-panel"],
+            tokens["instrument-accent-soft"],
+        ):
+            self.assertGreaterEqual(
+                contrast_ratio(tokens["instrument-control-line"], background),
+                3.0,
+                (tokens["instrument-control-line"], background),
+            )
+
+        form_controls = re.search(
+            r"\.reader-instrument \.surface-field input,.*?"
+            r"\.reader-instrument \.date-steps button\s*\{([^}]*)\}",
+            css,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(form_controls)
+        self.assertIn(
+            "border: 1px solid var(--instrument-control-line);",
+            form_controls.group(1),
+        )
+        dock_focus = re.search(
+            r"\.reader-instrument \.reader-actions button:focus-visible\s*\{([^}]*)\}",
+            css,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(dock_focus)
+        self.assertRegex(dock_focus.group(1), r"outline-offset:\s*-[0-9.]+px")
+        self.assertIn("--instrument-control-line: CanvasText;", css)
+
+    def test_enlarged_surface_headings_keep_words_intact(self) -> None:
+        css = held(INSTRUMENT)
+        self.assertIn(
+            "--instrument-control: clamp(44px, 3rem, 48px);",
+            css,
+        )
+        heading = re.search(
+            r"\.reader-instrument \.surface-head h2\s*\{([^}]*)\}",
+            css,
+            re.DOTALL,
+        )
+        self.assertIsNotNone(heading)
+        self.assertIn("overflow-wrap: normal;", heading.group(1))
+        self.assertIn("word-break: normal;", heading.group(1))
+        self.assertIn(
+            "padding-right: max(min(1.1rem, 20px), var(--reader-safe-right));",
+            css,
+        )
+        self.assertIn(
+            "padding-left: max(min(1.1rem, 20px), var(--reader-safe-left));",
+            css,
         )
 
     def test_candidate_routes_have_static_privacy_and_route_neutral_identity(self) -> None:

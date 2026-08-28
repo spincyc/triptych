@@ -462,10 +462,16 @@ def text_of(relative: str) -> str:
 # The receivers a page gives a parsed hash. `T.params` and the several spellings
 # of `location.search` are deliberately not among them: those are query reads.
 HASH_READ = re.compile(r"\b(?:hash|next|state|arriving)\.get\('([^']+)'\)")
+HASH_VALIDATED_FACET_READ = re.compile(
+  r"\bvalidFacet\((?:hash|next|state|arriving),\s*'([^']+)'"
+)
 
 
 def hash_keys_read_by(relative: str) -> list[str]:
-  return sorted(set(HASH_READ.findall(text_of(relative))))
+  text = text_of(relative)
+  return sorted(set(
+    HASH_READ.findall(text) + HASH_VALIDATED_FACET_READ.findall(text)
+  ))
 
 
 needs_node = unittest.skipIf(NODE is None, "node is not installed; the URL models cannot be run")

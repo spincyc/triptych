@@ -9,14 +9,15 @@
   --instrument-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
   --instrument-ink: #1d211f;
   --instrument-soft: #555e59;
-  --instrument-faint: #747d77;
+  --instrument-faint: #5e6762;
   --instrument-paper: #f4f1ea;
   --instrument-panel: #faf8f2;
   --instrument-line: #cfd3ce;
+  --instrument-control-line: #747c77;
   --instrument-accent: #8f292b;
   --instrument-accent-soft: #efe3e1;
   --instrument-focus: #1f5d8b;
-  --instrument-control: 3rem;
+  --instrument-control: clamp(44px, 3rem, 48px);
   --reader-shell-height: 4.25rem;
 }
 
@@ -217,6 +218,7 @@ body:has(.reader-instrument) > .site-footer,
 
 .reader-instrument .reader-document [data-semantic-location],
 .reader-instrument .reader-document .proper,
+.reader-instrument .reader-document .proper-choice,
 .reader-instrument .reader-document .ordinary-element,
 .reader-instrument .reader-document .ordinary-division {
   scroll-margin-block: 5rem calc(var(--reader-shell-height) + 1rem);
@@ -480,6 +482,59 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .ordinary-choice-option { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.75rem; cursor: pointer; }
 .reader-instrument .ordinary-choice-option input { width: 1.15rem; height: 1.15rem; margin: 0; accent-color: var(--instrument-accent); }
 
+.reader-instrument .reader-document .proper-choice {
+  max-width: 39.75rem;
+  margin: 3.2rem 0 3.2rem 8rem;
+  padding: 1rem 0 0.25rem 1rem;
+  border-left: 3px solid var(--instrument-accent);
+}
+.reader-instrument .reader-document .proper-choice-title {
+  margin: 0 0 0.35rem;
+  color: var(--instrument-ink);
+  font: 700 0.88rem/1.4 var(--instrument-sans);
+  letter-spacing: 0.035em;
+}
+.reader-instrument .reader-document .proper-choice-note,
+.reader-instrument .reader-document .proper-unplaced-note {
+  max-width: 60ch;
+  margin: 0 0 1rem;
+  color: var(--instrument-soft);
+  font: 0.78rem/1.5 var(--instrument-sans);
+}
+.reader-instrument .reader-document .proper-choice-options { display: grid; gap: 1.25rem; }
+.reader-instrument .reader-document .proper-choice-option {
+  min-width: 0;
+  padding: 0.8rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--instrument-line);
+}
+.reader-instrument .reader-document .proper-choice-option[aria-current="true"] {
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--instrument-accent);
+}
+.reader-instrument .reader-document .proper-choice-option-title {
+  margin: 0 0 0.75rem;
+  color: var(--instrument-accent);
+  font: 650 0.75rem/1.4 var(--instrument-sans);
+  letter-spacing: 0.035em;
+}
+.reader-instrument .reader-document details.proper-choice-option > summary {
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+.reader-instrument .reader-document .proper-choice-member.proper {
+  max-width: none;
+  margin: 1.35rem 0 0;
+}
+.reader-instrument .reader-document .proper-choice-member .proper-name {
+  margin-left: 0;
+  padding-left: 0;
+}
+.reader-instrument .reader-document .proper-unplaced {
+  padding-left: 1rem;
+  border-left: 3px dashed var(--instrument-accent);
+}
+
 .reader-instrument .candidate-entry,
 .reader-instrument .candidate-limitation,
 .reader-instrument .candidate-failure {
@@ -499,7 +554,7 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .cycle-choice { margin-bottom: 3rem; }
 .reader-instrument .cycle-choice-note { color: var(--instrument-soft); font: 0.84rem/1.5 var(--instrument-sans); }
 .reader-instrument .cycle-choice-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
-.reader-instrument .cycle-choice-controls button { min-width: 3rem; min-height: 2.75rem; border: 1px solid var(--instrument-line); background: var(--instrument-panel); color: var(--instrument-ink); font: 650 0.8rem/1 var(--instrument-sans); }
+.reader-instrument .cycle-choice-controls button { min-width: 3rem; min-height: 2.75rem; border: 1px solid var(--instrument-control-line); background: var(--instrument-panel); color: var(--instrument-ink); font: 650 0.8rem/1 var(--instrument-sans); }
 .reader-instrument .cycle-alternative { margin-left: 0 !important; padding-left: 1rem !important; border-left: 2px solid var(--instrument-line) !important; }
 
 /* Read has one editorial axis; the ritual cue gutter belongs to Missal. */
@@ -509,6 +564,7 @@ body:has(.reader-instrument) > .site-footer,
 }
 .reader-instrument[data-reader-mode="read"] .reader-document .proper { max-width: none; margin-left: 0; }
 .reader-instrument[data-reader-mode="read"] .reader-document .proper-name { margin-left: 0; padding-left: 0; }
+.reader-instrument[data-reader-mode="read"] .reader-document .proper-choice { max-width: none; margin-left: 0; }
 
 /* The identity remains, but continuous ritual action begins promptly. */
 .reader-instrument[data-reader-mode="missal"] .reader-identity { padding-top: clamp(0.9rem, 2vw, 1.35rem); padding-bottom: 0.45rem; }
@@ -570,6 +626,9 @@ body:has(.reader-instrument) > .site-footer,
   outline: 2px solid var(--instrument-focus);
   outline-offset: 2px;
 }
+.reader-instrument .reader-actions button:focus-visible {
+  outline-offset: -3px;
+}
 
 /* Temporary contextual surfaces */
 .reader-instrument .reader-surface {
@@ -588,10 +647,10 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .reader-surface::backdrop { background: rgb(25 23 20 / 34%); }
 .reader-instrument .reader-surface,
 .reader-instrument .reader-surface * { min-width: 0; overflow-wrap: anywhere; }
-.reader-instrument .surface-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.25rem 0.95rem; border-bottom: 1px solid var(--instrument-line); }
-.reader-instrument .surface-head h2 { margin: 0; color: var(--instrument-ink); font: 550 1.55rem/1.15 var(--instrument-serif); letter-spacing: -0.015em; }
+.reader-instrument .surface-head { display: flex; align-items: start; justify-content: space-between; gap: min(1rem, 16px); padding: min(1.15rem, 20px) min(1.25rem, 22px) min(0.95rem, 18px); border-bottom: 1px solid var(--instrument-line); }
+.reader-instrument .surface-head h2 { margin: 0; overflow-wrap: normal; word-break: normal; color: var(--instrument-ink); font: 550 1.55rem/1.15 var(--instrument-serif); letter-spacing: -0.015em; }
 .reader-instrument .surface-kicker { margin: 0 0 0.2rem; color: var(--instrument-accent); font: 650 0.64rem/1.2 var(--instrument-sans); letter-spacing: 0.1em; text-transform: uppercase; }
-.reader-instrument .surface-close { display: grid; place-items: center; flex: 0 0 var(--instrument-control); width: var(--instrument-control); height: var(--instrument-control); padding: 0; border: 1px solid var(--instrument-line); border-radius: 50%; background: transparent; color: var(--instrument-soft); font: 400 1.4rem/1 var(--instrument-sans); cursor: pointer; }
+.reader-instrument .surface-close { display: grid; place-items: center; flex: 0 0 var(--instrument-control); width: var(--instrument-control); height: var(--instrument-control); padding: 0; border: 1px solid var(--instrument-control-line); border-radius: 50%; background: transparent; color: var(--instrument-soft); font: 400 1.4rem/1 var(--instrument-sans); cursor: pointer; }
 .reader-instrument .surface-close:hover { color: var(--instrument-ink); border-color: var(--instrument-soft); }
 .reader-instrument .surface-body { max-width: 100%; max-height: calc(min(88svh, 52rem) - 5.25rem); padding: 1.15rem 1.25rem 1.35rem; overflow: auto; overflow-x: hidden; }
 .reader-instrument .surface-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
@@ -607,7 +666,7 @@ body:has(.reader-instrument) > .site-footer,
   max-width: 100%;
   min-height: 2.9rem;
   padding: 0.55rem 0.7rem;
-  border: 1px solid var(--instrument-line);
+  border: 1px solid var(--instrument-control-line);
   border-radius: 0.35rem;
   background: var(--instrument-paper);
   color: var(--instrument-ink);
@@ -630,7 +689,7 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .mode-options { display: grid; gap: 0.45rem; }
 .reader-instrument .mode-options button { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.75rem; width: 100%; min-height: 3.4rem; padding: 0.8rem; border: 1px solid transparent; border-radius: 0.35rem; background: transparent; color: var(--instrument-soft); font: 0.8rem/1.4 var(--instrument-sans); text-align: left; cursor: pointer; }
 .reader-instrument .mode-options button:hover { background: var(--instrument-accent-soft); }
-.reader-instrument .mode-options button[aria-checked="true"] { border-color: var(--instrument-line); background: var(--instrument-accent-soft); }
+.reader-instrument .mode-options button[aria-checked="true"] { border-color: var(--instrument-control-line); background: var(--instrument-accent-soft); }
 .reader-instrument .mode-options strong { color: var(--instrument-ink); font: 600 1rem/1.3 var(--instrument-serif); }
 
 .reader-instrument .details-list { display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr); gap: 0.5rem 0.9rem; margin: 0; }
@@ -751,7 +810,7 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-actions .action-state { grid-column: 1; }
   .reader-instrument .reader-surface { width: 100%; max-width: 100%; max-height: min(90svh, 52rem); margin: auto 0 0; border-inline: 0; border-bottom: 0; border-radius: 1rem 1rem 0 0; }
   .reader-instrument .surface-body { max-height: calc(min(90svh, 52rem) - 5.25rem); padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
-  .reader-instrument .surface-head { padding-right: max(1.1rem, var(--reader-safe-right)); padding-left: max(1.1rem, var(--reader-safe-left)); }
+  .reader-instrument .surface-head { padding-right: max(min(1.1rem, 20px), var(--reader-safe-right)); padding-left: max(min(1.1rem, 20px), var(--reader-safe-left)); }
 }
 
 @container reader-shell (max-width: 18rem) {
@@ -770,6 +829,7 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-brand > span:last-child { display: none; }
   .reader-instrument .reader-document { padding-inline: max(1.25rem, var(--reader-safe-left)) max(1.25rem, var(--reader-safe-right)); }
   .reader-instrument .reader-document .proper { margin-bottom: 2.75rem; }
+  .reader-instrument .reader-document .proper-choice { margin-left: 0; }
   .reader-instrument .surface-fields,
   .reader-instrument .mode-options button,
   .reader-instrument .details-list { grid-template-columns: minmax(0, 1fr); }
@@ -805,6 +865,7 @@ body:has(.reader-instrument) > .site-footer,
     --instrument-soft: CanvasText;
     --instrument-faint: CanvasText;
     --instrument-line: CanvasText;
+    --instrument-control-line: CanvasText;
     --instrument-accent: LinkText;
     --instrument-accent-soft: Canvas;
     --instrument-focus: Highlight;
@@ -837,6 +898,8 @@ body:has(.reader-instrument) > .site-footer,
   .reader-instrument .reader-document { width: auto; padding: 0; }
   .reader-instrument .reader-document .proper { max-width: none; margin: 0 0 0.24in; break-inside: avoid; }
   .reader-instrument .reader-document .proper-name { margin-left: 0; padding-left: 0; break-after: avoid; }
+  .reader-instrument .reader-document .proper-choice { max-width: none; margin: 0 0 0.3in; padding-left: 0.12in; }
+  .reader-instrument .reader-document .proper-choice-option { break-before: avoid; }
   .reader-instrument .reader-document .ordinary-frame > .ordinary-element { display: block; }
   .reader-instrument .reader-document .speaker-tag.is-opening-cue { position: static; width: auto; margin-right: 0.35rem; }
   .reader-instrument .reader-document .ordinary-element > .ordinary-dialogue { display: grid; gap: 0.08in; margin-top: 0.04in; }

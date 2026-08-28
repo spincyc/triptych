@@ -17,6 +17,7 @@ CSS = LITURGY / "propers-reader.css"
 SHELL_JS = LITURGY / "reader-shell.js"
 SHELL_CSS = LITURGY / "reader-shell.css"
 DAY_HTML = LITURGY / "day-reader.html"
+CORE_JS = ROOT / "src/web/browser/shared/browser-core.js"
 
 
 def text(path: Path) -> str:
@@ -24,6 +25,11 @@ def text(path: Path) -> str:
 
 
 class PropersReaderIntegrationTests(unittest.TestCase):
+    def test_cycle_rendering_counts_held_translation_bodies_as_material(self) -> None:
+        source = text(CORE_JS)
+        guard = "cycle.translations.some((translation) => translation && translation.text)"
+        self.assertEqual(source.count(guard), 2)
+
     def test_reader_has_exact_static_privacy_title_and_route_neutral_copy(self) -> None:
         html = text(HTML)
         script = text(JS)
@@ -166,10 +172,11 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         self.assertIn("row[PUBLIC_KEYS.cycle] = alternative.cycle", source)
         self.assertIn("updates[PUBLIC_KEYS.translationWitness]", source)
         self.assertIn("[LEGACY_KEYS.cycle]", source)
-        self.assertIn(
-            "LEGACY_KEYS.cycle, LEGACY_KEYS.alternative, LEGACY_KEYS.translationWitness",
-            source,
-        )
+        self.assertIn("function browseKeepsCurrentFormulary()", source)
+        self.assertIn("if (!browseKeepsCurrentFormulary())", source)
+        self.assertIn("removals.push('form', PUBLIC_KEYS.cycle, PUBLIC_KEYS.alternative)", source)
+        self.assertIn("'location', LEGACY_KEYS.cycle, LEGACY_KEYS.alternative", source)
+        self.assertIn("LEGACY_KEYS.translationWitness", source)
         self.assertIn("'cycle', 'alternative', 'translation-witness'", contract)
         self.assertIn("T.params.get('missals')", source)
         self.assertIn("T.dataRoot", source)
@@ -302,16 +309,23 @@ class PropersReaderIntegrationTests(unittest.TestCase):
             "inheritance.source_calendar",
             "inheritance.status",
             "mass.recension",
+            "structure.stands_before",
             "stamp.text_from",
             "stamp.stated === true",
             "stamp.kind",
+            "stamp.act",
             "stamp.also",
+            "row.act",
+            "'Historical boundary — stands before: ' + recension.boundaryLabel",
+            "'Act-history station: ' + recension.departureAct",
             "'Recension coverage: ' + recension.coverage",
             "'Proper text source: ' + recension.textSource",
             "['Recension coverage', recension",
             "['Proper recension basis', recension",
             "['Proper text source', recension",
             "['Inheritance basis', recension",
+            "['Historical boundary — stands before', recension",
+            "['Departure act-history station', recension",
             "reason.kind === 'partial-recension'",
         ):
             self.assertIn(token, source)
@@ -448,7 +462,9 @@ class PropersReaderIntegrationTests(unittest.TestCase):
         # accessibility seams that the historical shell prototype does not.
         # Keep a concrete ceiling while the stronger copy guard below owns the
         # architectural boundary.
-        self.assertLess(JS.stat().st_size, 64 * 1024)
+        # Source-authored alternatives now render as atomic, accessible groups
+        # with conserved member identities; retain a concrete 74 KiB ceiling.
+        self.assertLess(JS.stat().st_size, 74 * 1024)
         self.assertLess(CSS.stat().st_size, SHELL_CSS.stat().st_size)
         self.assertNotIn(text(SHELL_JS), text(JS))
 

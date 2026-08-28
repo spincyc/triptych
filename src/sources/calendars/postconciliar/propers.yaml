@@ -1,5 +1,5 @@
 schema: triptych-calendar-masses/v1
-edition: Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008
+edition: Missale Romanum, editio typica tertia, reimpressio emendata 2008
 edition_short: Postconciliar Missal
 calendar: postconciliar
 series: deterministic fixed-date feast masses
@@ -13,7 +13,7 @@ citation_convention: Lectionary readings and antiphons preserve the numbering in
   controlling missal
 orthography: 2002 missal Latin (i for j, ae/oe digraphs, no accent marks)
 verification: 'a citation carrying a mass-level notes line naming an artifact page has
-  been READ, at 200 dpi, in a page image of the book it comes from. Every other citation
+  been READ, at 200 or 400 dpi as that note states, in a page image of the book it comes from. Every other citation
   in this file has NOT been read, and the difference is the whole of what verification
   means here. Measured on 2026-08-01, after the seasonal collation: the seasonal section
   holds 1058 book-references, of which 845 were read in the Ordo lectionum Missae 1981
@@ -47,9 +47,9 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   which the General Roman Calendar inscribes by rule and not by date, carries them too.
   Seven formularies on those pages were initially held back because their dates then
   shared composite keys: nn. 553, 556, 562, 563, 567, 568 and 569. The 2026-08-27
-  identity split gave each celebration its own key; six of those formularies are now
-  carried under their exact identities. Only n. 553, Saint George, remains unlanded
-  pending an exact structured transcription of the already-read citation set. Five celebrations
+  identity split gave each celebration its own key; all seven formularies are now
+  carried under their exact identities, including n. 553, Saint George, transcribed
+  exactly from the already-read citation set. Five celebrations
   this calendar carries in that span are not in the 1981 book at all and stay
   placeholders, having been inscribed after it: Our Lady of Fatima, Saint John of Avila,
   Saints Christopher Magallanes and Companions, Saint Rita of Cascia and Saint Paul VI.
@@ -67,8 +67,8 @@ verification: 'a citation carrying a mass-level notes line naming an artifact pa
   were originally withheld for joined-key attribution. The separate 7 August candidates
   now carry nn. 615 and 616 under stable registries `pc-08-07` and `pc-08-07-cajetan`;
   n. 611 is now carried by the separately keyed Saint Eusebius identity; nn. 630 and
-  631 remain unlanded pending exact structured transcription of the already-read
-  citation sets. Six celebrations this calendar
+  631 are now carried by the separately keyed Saint Louis and Saint Joseph Calasanz
+  identities. Six celebrations this calendar
   carries in that span the 1981 book
   does not print on their date and they stay placeholders: Saints Augustine Zhao Rong
   and Companions, Saint Apollinaris, Saint Sharbel Makhluf, Saint Teresa Benedicta of
@@ -218,10 +218,12 @@ open_collation_items:
   ruling admitted the Mass and struck the sentence. It is filed season holy-week rather
   than triduum because NUALC 19 begins the Triduum at the evening Mass and the Ordo
   lectionum prints this one among the Lenten ferias, at feria V Hebdomadae sanctae.
-  What is NOT settled by it, and is the remaining part of the same question, is the
-  rest of the ferial Proper of Time: the Missal prints a proper Mass on most weekdays
-  of Advent, Lent, the Octaves and Eastertide, and this index still carries none of
-  them. rubrics.yaml mass_category.constituted_days holds that census'
+  The remaining part of that question is SETTLED on 2026-08-27: this index now carries
+  323 weekday entries spanning Advent, Christmas Time, Lent, Holy Week, Easter Time
+  and Ordinary Time. They carry source-bounded Lectionary assignments; no protected
+  Missal or Lectionary wording is inferred or reproduced, and Ordinary Time weekday
+  oration ownership remains deliberately unresolved. rubrics.yaml
+  mass_category.constituted_days holds the census'
 - 'whether the three celebrations inscribed by rule belong under seasonal, as they are
   filed, or under christological and marian, is the same question the 1962 index records
   for its own movable feasts of the Lord'
@@ -2734,6 +2736,11 @@ sections:
             - kind: rights-withheld
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         - name: Gospel
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: longer
+            basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
           source: scripture
           verses:
           - book: Matthew
@@ -2741,6 +2748,20 @@ sections:
             - begin: {chapter: 1, verse: 1}
               end: {chapter: 1, verse: 25}
             ref: Matthew 1:1-25
+        - name: Gospel (shorter form)
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: shorter
+            basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
+          source: scripture
+          notes: 'The Ordo prints this as the shorter form (brevior) of the preceding Gospel.'
+          verses:
+          - book: Matthew
+            ranges:
+            - begin: {chapter: 1, verse: 18}
+              end: {chapter: 1, verse: 25}
+            ref: "Matthew 1:18-25"
         - name: Prayer over the Offerings
           incipit: Tanto nos, Domine
           source: composed
@@ -2778,6 +2799,11 @@ sections:
         name: Mass during the Night
         propers:
         - name: Entrance Antiphon
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: psalm-2-7
+            basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
           incipit: Dominus dixit ad me
           source: scripture
           verses:
@@ -2787,6 +2813,11 @@ sections:
               end: {chapter: 2, verse: 7}
             ref: Psalm 2:7
         - name: Entrance Antiphon (alternative)
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: gaudeamus-omnes-in-domino
+            basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
           incipit: Gaudeamus omnes in Domino
           source: composed
           text_status:
@@ -3059,6 +3090,11 @@ sections:
             - kind: rights-withheld
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         - name: Gospel
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: longer
+            basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
           source: scripture
           verses:
           - book: John
@@ -3066,6 +3102,22 @@ sections:
             - begin: {chapter: 1, verse: 1}
               end: {chapter: 1, verse: 18}
             ref: John 1:1-18
+        - name: Gospel (shorter form)
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: shorter
+            basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
+          source: scripture
+          notes: 'The Ordo prints this as the shorter form (brevior) of the preceding Gospel.'
+          verses:
+          - book: John
+            ranges:
+            - begin: {chapter: 1, verse: 1}
+              end: {chapter: 1, verse: 5}
+            - begin: {chapter: 1, verse: 9}
+              end: {chapter: 1, verse: 14}
+            ref: "John 1:1-5, 9-14"
         - name: Prayer over the Offerings
           incipit: Oblatio tibi sit, Domine
           source: composed
@@ -3255,6 +3307,11 @@ sections:
         lead. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: salve-sancta-parens
+          basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
         incipit: Salve, sancta Parens
         source: composed
         text_status:
@@ -3264,6 +3321,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Entrance Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: isaiah-9-1
+          basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
         incipit: Lux fulgebit hodie super nos
         source: mixed
         verses:
@@ -3717,6 +3779,11 @@ sections:
             end: {chapter: 3, verse: 17}
           ref: Matthew 3:16-17
       - name: Collect
+        ordinary_disposition:
+          kind: alternative
+          group: collect
+          option: omnipotens-sempiterne-deus-qui-christum
+          basis: "The Missal prints this under Vel as an alternative to the preceding Collect."
         incipit: Omnipotens sempiterne Deus, qui Christum
         source: composed
         text_status:
@@ -3726,6 +3793,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Collect
+        ordinary_disposition:
+          kind: alternative
+          group: collect
+          option: deus-cuius-unigenitus-in-substantia
+          basis: "The Missal prints this under Vel as an alternative to the preceding Collect."
         incipit: Deus, cuius Unigenitus in substantia nostrae carnis apparuit
         source: composed
         text_status:
@@ -4050,6 +4122,11 @@ sections:
           - begin: {chapter: 98, verse: 9}
             end: {chapter: 98, verse: 9}
           ref: Psalm 98:1, 7-8, 9
+      - name: Gospel Acclamation
+        takes_from:
+          mass: christmas-january-2
+          proper: Gospel Acclamation
+          citation: Cf. n. 205
       - name: Gospel
         source: scripture
         verses:
@@ -4143,6 +4220,11 @@ sections:
             end: {chapter: 9, verse: 6}
           ref: Mark 9:6
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: principal
+          basis: "The Ordo appoints this as an alternative Gospel in its longer form. The Ordo appoints this as an alternative Gospel in its shorter form."
         source: scripture
         verses:
         - book: Mark
@@ -4151,6 +4233,11 @@ sections:
             end: {chapter: 1, verse: 11}
           ref: Mark 1:7-11
       - name: Gospel (alternative, longer form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: alternative-longer
+          basis: "The Ordo appoints this as an alternative Gospel in its longer form. The Ordo appoints this as an alternative Gospel in its shorter form."
         source: scripture
         verses:
         - book: Luke
@@ -4160,6 +4247,11 @@ sections:
           ref: Luke 3:23-38
         notes: 'The Ordo appoints this as an alternative Gospel in its longer form.'
       - name: Gospel (alternative, shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: alternative-shorter
+          basis: "The Ordo appoints this as an alternative Gospel in its longer form. The Ordo appoints this as an alternative Gospel in its shorter form."
         source: scripture
         verses:
         - book: Luke
@@ -4904,6 +4996,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-4-4
+          basis: "Appointed as an alternative to the preceding Communion Antiphon."
         incipit: Non in solo pane vivit homo
         source: scripture
         verses:
@@ -4913,6 +5010,11 @@ sections:
             end: {chapter: 4, verse: 4}
           ref: Matthew 4:4
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-91-4
+          basis: "Appointed as an alternative to the preceding Communion Antiphon."
         incipit: Scapulis suis obumbrabit tibi Dominus
         source: scripture
         verses:
@@ -4956,6 +5058,11 @@ sections:
         src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: psalm-27-8-9
+          basis: "Appointed as an alternative to the preceding Entrance Antiphon."
         incipit: Tibi dixit cor meum
         source: scripture
         verses:
@@ -4965,6 +5072,11 @@ sections:
             end: {chapter: 27, verse: 9}
           ref: Psalm 27:8-9
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: psalm-25-6-2-22
+          basis: "Appointed as an alternative to the preceding Entrance Antiphon."
         incipit: Reminiscere miserationum tuarum
         source: scripture
         verses:
@@ -5170,6 +5282,11 @@ sections:
         src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: psalm-25-15-16
+          basis: "Appointed as an alternative to the preceding Entrance Antiphon."
         incipit: Oculi mei semper ad Dominum
         source: scripture
         verses:
@@ -5179,6 +5296,11 @@ sections:
             end: {chapter: 25, verse: 16}
           ref: Psalm 25:15-16
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: ezekiel-36-23-26
+          basis: "Appointed as an alternative to the preceding Entrance Antiphon."
         incipit: Cum sanctificatus fuero in vobis
         source: scripture
         verses:
@@ -5355,6 +5477,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: samaritan-woman-gospel
+          basis: "Appointed when the Gospel of the Samaritan woman is read. Appointed when another Gospel is read."
         incipit: Qui biberit aquam
         source: scripture
         verses:
@@ -5365,6 +5492,11 @@ sections:
           ref: John 4:13-14
         notes: Appointed when the Gospel of the Samaritan woman is read.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: other-gospel
+          basis: "Appointed when the Gospel of the Samaritan woman is read. Appointed when another Gospel is read."
         incipit: Passer invenit sibi domum
         source: scripture
         verses:
@@ -5584,6 +5716,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: man-born-blind-gospel
+          basis: "Used when the Gospel of the man born blind is read. Used when the Gospel of the prodigal son is read. Used when another Gospel is read."
         incipit: Dominus linivit oculos meos
         source: scripture
         verses:
@@ -5596,6 +5733,11 @@ sections:
           ref: John 9:11, 38
         notes: Used when the Gospel of the man born blind is read.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: prodigal-son-gospel
+          basis: "Used when the Gospel of the man born blind is read. Used when the Gospel of the prodigal son is read. Used when another Gospel is read."
         incipit: Oportet te, fili, gaudere
         source: scripture
         verses:
@@ -5606,6 +5748,11 @@ sections:
           ref: Luke 15:32
         notes: Used when the Gospel of the prodigal son is read.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: other-gospel
+          basis: "Used when the Gospel of the man born blind is read. Used when the Gospel of the prodigal son is read. Used when another Gospel is read."
         incipit: Ierusalem, quae aedificatur ut civitas
         source: scripture
         verses:
@@ -5818,6 +5965,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: lazarus-gospel
+          basis: "Used when the Gospel of Lazarus is read. Used when the Gospel of the woman taken in adultery is read. Used when another Gospel is read."
         incipit: Omnis qui vivit et credit in me
         source: scripture
         verses:
@@ -5828,6 +5980,11 @@ sections:
           ref: John 11:26
         notes: Used when the Gospel of Lazarus is read.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: woman-caught-in-adultery-gospel
+          basis: "Used when the Gospel of Lazarus is read. Used when the Gospel of the woman taken in adultery is read. Used when another Gospel is read."
         incipit: Nemo te condemnavit, mulier?
         source: scripture
         verses:
@@ -5838,6 +5995,11 @@ sections:
           ref: John 8:10-11
         notes: Used when the Gospel of the woman taken in adultery is read.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: other-gospel
+          basis: "Used when the Gospel of Lazarus is read. Used when the Gospel of the woman taken in adultery is read. Used when another Gospel is read."
         incipit: Amen, amen dico vobis
         source: scripture
         verses:
@@ -7508,6 +7670,11 @@ sections:
             end: {chapter: 33, verse: 11}
           ref: Ezekiel 33:11
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-8-1-11
+          basis: "Appointed in Year C in place of the preceding Gospel, when that Gospel was read on the Fifth Sunday of Lent."
         source: scripture
         verses:
         - book: John
@@ -7516,6 +7683,11 @@ sections:
             end: {chapter: 8, verse: 11}
           ref: John 8:1-11
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-8-12-20
+          basis: "Appointed in Year C in place of the preceding Gospel, when that Gospel was read on the Fifth Sunday of Lent."
         source: scripture
         verses:
         - book: John
@@ -7820,6 +7992,15 @@ sections:
       name: Palm Sunday of the Passion of the Lord
       registry: pc-s16
       season: holy-week
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          This entry bundles the Commemoration of the Lord's Entrance, two
+          alternative blessings of branches, the procession, and the following
+          Mass. The boundary and alternative-bearing pre-Mass rite have not yet
+          been represented by a specialized frame, so the normal Order of Mass
+          is withheld rather than seating those units as though they belonged
+          inside it.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 80, printed page 26, nn.
@@ -7850,6 +8031,11 @@ sections:
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         notes: The Missal appoints this text or similar words.
       - name: Blessing of Branches
+        ordinary_disposition:
+          kind: alternative
+          group: blessing-of-branches
+          option: omnipotens-sempiterne-deus-hos-palmites
+          basis: "Appointed as the alternative form of the blessing of branches."
         incipit: Omnipotens sempiterne Deus, hos palmites
         source: composed
         text_status:
@@ -7859,6 +8045,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Blessing of Branches
+        ordinary_disposition:
+          kind: alternative
+          group: blessing-of-branches
+          option: auge-fidem-in-te-sperantium
+          basis: "Appointed as the alternative form of the blessing of branches."
         incipit: Auge fidem in te sperantium, Deus
         source: composed
         text_status:
@@ -8276,16 +8467,25 @@ sections:
         page 140, n. 259. The Ordo prints its responsorial psalms and psalm acclamations in Vulgate
         numbering; they are converted here by scripts/_psalms from the tracked verse concordance, because
         this file declares psalm_numbering hebrew. The Gospel acclamation slot is absent: the book prints
-        a composed text there with no scripture citation above it, and that text is the book''s expression
-        and is not carried. The verse before the Gospel is not carried: the book prints in that slot a
-        reference offering a choice between the two preceding days'' verses, which is a pointer to two
-        targets and not one appointed text. NOTHING BUT THE READINGS IS HELD. No antiphon and no oration
-        is carried: their text is in the Missale Romanum 2002, which is in copyright and not held here,
-        and none is invented or pointed at another day''s.'
+        in that slot a reference offering a choice between the two preceding days'' verses. That is a
+        choice-pointer to two targets, not composed uncited text and not one appointed text. The current
+        takes_from model accepts one target only, so the typed absence is retained until a two-target
+        choice model exists. NOTHING BUT THE READINGS IS HELD. No antiphon and no oration is carried:
+        their text is in the Missale Romanum 2002, which is in copyright and not held here, and none is
+        invented or pointed at another day''s.'
     - key: mass-of-the-lords-supper
       name: Evening Mass of the Lord's Supper
       registry: pc-t01
       season: triduum
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          This source orders the Washing of Feet after the Gospel and before
+          the Presentation of the Gifts, then appoints the transfer procession
+          and chant at the place of reposition after Communion. The normal
+          Order-of-Mass frame cannot represent both exceptional boundaries, and
+          a specialized frame has not yet been modeled, so the generic frame is
+          withheld while every source row remains in order.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 83, printed page 29, n. 39.
@@ -8496,6 +8696,15 @@ sections:
       name: Celebration of the Lord's Passion
       registry: pc-t02
       season: triduum
+      ordinary_frame:
+        applicability: none
+        basis: >-
+          The Celebration of the Lord's Passion is not a Mass and has its own
+          four-part order: the Liturgy of the Word, Solemn Intercessions,
+          Adoration of the Holy Cross, and Holy Communion. The postconciliar
+          Order-of-Mass inventory explicitly leaves the whole Good Friday
+          liturgy unseated, so applying the normal full Order of Mass would
+          invent a frame the source does not appoint.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 83, printed page 29, n. 40.
@@ -8506,6 +8715,11 @@ sections:
         lead. See src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Prayer
+        ordinary_disposition:
+          kind: alternative
+          group: prayer
+          option: reminiscere-miserationum-tuarum-domine
+          basis: "Said after the prostration and silent prayer, without the invitation Oremus. Either of the two prayers may be used."
         incipit: Reminiscere miserationum tuarum, Domine
         source: composed
         notes: Said after the prostration and silent prayer, without the invitation Oremus.
@@ -8516,6 +8730,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: prayer
+          option: deus-qui-peccati-veteris-hereditariam
+          basis: "Said after the prostration and silent prayer, without the invitation Oremus. Either of the two prayers may be used."
         incipit: Deus, qui peccati veteris hereditariam mortem
         source: composed
         notes: Either of the two prayers may be used.
@@ -8762,6 +8981,16 @@ sections:
       name: The Easter Vigil in the Holy Night
       registry: pc-t03
       season: triduum
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          The Easter Vigil is a composite rite: the Service of Light, repeated
+          Liturgy-of-the-Word modules, the Baptismal Liturgy, and the Eucharist,
+          with reduced-reading and initiation or reception branches. The
+          current Ordinary-frame contract represents only a normal full frame,
+          not this partial branch-sensitive order, so the normal frame is
+          withheld until the exceptional rite can be represented without
+          invention.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 84-85, printed pages
@@ -8860,6 +9089,11 @@ sections:
             end: {chapter: 104, verse: 35, part: c}
           ref: "Psalm 104:1-2a, 5-6, 10, 12, 13-14, 24, 35c"
       - name: Prayer after the First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-first-reading
+          option: omnipotens-sempiterne-deus-qui-es
+          basis: "Alternative prayer, De creatione hominis."
         incipit: Omnipotens sempiterne Deus, qui es in omnium operum tuorum
         source: composed
         text_status:
@@ -8869,6 +9103,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer after the First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-first-reading
+          option: deus-qui-mirabiliter-creasti-hominem
+          basis: "Alternative prayer, De creatione hominis."
         incipit: Deus, qui mirabiliter creasti hominem
         source: composed
         notes: Alternative prayer, De creatione hominis.
@@ -8932,6 +9171,11 @@ sections:
             end: {chapter: 15, verse: 18}
           ref: "Exodus 15:1-2, 3-4, 5-6, 17-18"
       - name: Prayer after the Third Reading
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-third-reading
+          option: deus-cuius-antiqua-miracula
+          basis: "Either of the two prayers may be used."
         incipit: Deus, cuius antiqua miracula
         source: composed
         text_status:
@@ -8941,6 +9185,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer after the Third Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-third-reading
+          option: deus-qui-primis-temporibus-impleta
+          basis: "Either of the two prayers may be used."
         incipit: Deus, qui primis temporibus impleta miracula
         source: composed
         notes: Either of the two prayers may be used.
@@ -9075,6 +9324,11 @@ sections:
             end: {chapter: 43, verse: 4}
           ref: "Psalm 43:3, 4"
       - name: Prayer after the Seventh Reading
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-seventh-reading
+          option: deus-incommutabilis-virtus-et-lumen
+          basis: "Either of the two prayers may be used."
         incipit: Deus, incommutabilis virtus et lumen aeternum
         source: composed
         text_status:
@@ -9084,6 +9338,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer after the Seventh Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: prayer-after-the-seventh-reading
+          option: deus-qui-nos-ad-celebrandum
+          basis: "Either of the two prayers may be used."
         incipit: Deus, qui nos ad celebrandum paschale sacramentum
         source: composed
         notes: Either of the two prayers may be used.
@@ -9263,6 +9522,14 @@ sections:
       name: Easter Sunday of the Resurrection of the Lord
       registry: pc-s17
       season: easter
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          This source appoints the Sequence between the second reading and the
+          Gospel Acclamation. The postconciliar Order-of-Mass inventory has no
+          source-backed Sequence anchor, so a generic frame would invent its
+          place. The frame is withheld until that placement is established and
+          modeled; the Sequence remains present in source order.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact page 85, printed page 31, n. 42.
@@ -9274,6 +9541,11 @@ sections:
         src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: psalm-139-18-5-6
+          basis: "The Missal appoints this as an alternative entrance antiphon."
         incipit: Resurrexi, et adhuc tecum sum
         source: scripture
         verses:
@@ -9285,6 +9557,11 @@ sections:
             end: {chapter: 139, verse: 6}
           ref: Psalm 139:18, 5-6
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: luke-24-34
+          basis: "The Missal appoints this as an alternative entrance antiphon."
         incipit: Surrexit Dominus vere
         source: scripture
         verses:
@@ -9406,6 +9683,11 @@ sections:
         src/sources/inventories/postconciliar-seasonal-collation-v1.toml.'
       propers:
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: 1-peter-2-2
+          basis: "The Missal appoints this as an alternative entrance antiphon."
         incipit: Quasi modo geniti infantes
         source: scripture
         verses:
@@ -9415,6 +9697,11 @@ sections:
             end: {chapter: 2, verse: 2}
           ref: 1 Peter 2:2
       - name: Entrance Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: entrance-antiphon
+          option: 4-esdras-2-36-37
+          basis: "The Missal appoints this as an alternative entrance antiphon."
         incipit: Accipite iucunditatem gloriae vestrae
         source: scripture
         verses:
@@ -9739,6 +10026,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: year-a
+          basis: "The Missal appoints this antiphon in Year B. The Missal appoints this antiphon in Year C."
         incipit: Cognoverunt discipuli Dominum Iesum
         source: scripture
         verses:
@@ -9748,6 +10040,11 @@ sections:
             end: {chapter: 24, verse: 35}
           ref: Luke 24:35
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: year-b
+          basis: "The Missal appoints this antiphon in Year B. The Missal appoints this antiphon in Year C."
         incipit: Oportebat Christum pati
         source: scripture
         verses:
@@ -9758,6 +10055,11 @@ sections:
           ref: Luke 24:46-47
         notes: The Missal appoints this antiphon in Year B.
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: year-c
+          basis: "The Missal appoints this antiphon in Year B. The Missal appoints this antiphon in Year C."
         incipit: Dixit Iesus discipulis suis
         source: scripture
         verses:
@@ -10523,6 +10825,11 @@ sections:
               end: {chapter: 1, verse: 11}
             ref: Acts 1:11
         - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: fac-nos-omnipotens-deus
+            basis: "Alternative collect printed in the Missal after the first."
           incipit: Fac nos, omnipotens Deus
           source: composed
           text_status:
@@ -10532,6 +10839,11 @@ sections:
             - kind: rights-withheld
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: concede-quaesumus-omnipotens-deus
+            basis: "Alternative collect printed in the Missal after the first."
           incipit: Concede, quaesumus, omnipotens Deus
           source: composed
           text_status:
@@ -10870,6 +11182,11 @@ sections:
               end: {chapter: 8, verse: 11}
             ref: Romans 8:11
         - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: omnipotens-sempiterne-deus-qui-paschale
+            basis: "Alternative collect printed in the Missal after the first."
           incipit: Omnipotens sempiterne Deus, qui paschale sacramentum
           source: composed
           text_status:
@@ -10879,6 +11196,11 @@ sections:
             - kind: rights-withheld
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
         - name: Collect
+          ordinary_disposition:
+            kind: alternative
+            group: collect
+            option: praesta-quaesumus-omnipotens-deus-ut
+            basis: "Alternative collect printed in the Missal after the first."
           incipit: Praesta, quaesumus, omnipotens Deus, ut claritatis tuae
           source: composed
           text_status:
@@ -10889,6 +11211,11 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
           notes: Alternative collect printed in the Missal after the first.
         - name: First Reading
+          ordinary_disposition:
+            kind: alternative
+            group: first-reading
+            option: genesis-11
+            basis: "Ordo lectionum Missae, editio typica altera (1981), n. 62, prints these four citations as the First Reading choices for this Vigil Mass."
           source: scripture
           verses:
           - book: Genesis
@@ -10897,6 +11224,11 @@ sections:
               end: {chapter: 11, verse: 9}
             ref: Genesis 11:1-9
         - name: First Reading
+          ordinary_disposition:
+            kind: alternative
+            group: first-reading
+            option: exodus-19
+            basis: "Ordo lectionum Missae, editio typica altera (1981), n. 62, prints these four citations as the First Reading choices for this Vigil Mass."
           source: scripture
           verses:
           - book: Exodus
@@ -10907,6 +11239,11 @@ sections:
               end: {chapter: 19, verse: 20, part: b}
             ref: "Exodus 19:3-8a, 16-20b"
         - name: First Reading
+          ordinary_disposition:
+            kind: alternative
+            group: first-reading
+            option: ezekiel-37
+            basis: "Ordo lectionum Missae, editio typica altera (1981), n. 62, prints these four citations as the First Reading choices for this Vigil Mass."
           source: scripture
           verses:
           - book: Ezekiel
@@ -10915,6 +11252,11 @@ sections:
               end: {chapter: 37, verse: 14}
             ref: Ezekiel 37:1-14
         - name: First Reading
+          ordinary_disposition:
+            kind: alternative
+            group: first-reading
+            option: joel-3
+            basis: "Ordo lectionum Missae, editio typica altera (1981), n. 62, prints these four citations as the First Reading choices for this Vigil Mass."
           source: scripture
           verses:
           - book: Joel
@@ -10992,8 +11334,22 @@ sections:
               source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - id: day
         name: Mass during the Day
+        ordinary_frame:
+          applicability: unavailable
+          basis: >-
+            This form appoints the Sequence between the second reading and the
+            Gospel Acclamation. The postconciliar Order-of-Mass inventory has
+            no source-backed Sequence anchor, so a generic frame would invent
+            its place. The frame is withheld until that placement is
+            established and modeled; the Sequence remains present in source
+            order.
         propers:
         - name: Entrance Antiphon
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: spiritus-domini
+            basis: "Alternative entrance antiphon printed in the Missal after the first."
           incipit: Spiritus Domini replevit orbem terrarum
           source: scripture
           verses:
@@ -11003,6 +11359,11 @@ sections:
               end: {chapter: 1, verse: 7}
             ref: Wisdom 1:7
         - name: Entrance Antiphon
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: caritas-dei
+            basis: "Alternative entrance antiphon printed in the Missal after the first."
           incipit: Caritas Dei diffusa est
           source: scripture
           verses:
@@ -11241,6 +11602,11 @@ sections:
           - begin: {chapter: 33, verse: 22}
             end: {chapter: 33, verse: 22}
           ref: Psalm 33:4-5, 18-19, 20, 22
+      - name: Gospel Acclamation
+        takes_from:
+          mass: easter-monday
+          proper: Gospel Acclamation
+          citation: ut supra, n. 261
       - name: Gospel
         source: scripture
         verses:
@@ -11285,6 +11651,11 @@ sections:
           - begin: {chapter: 105, verse: 8}
             end: {chapter: 105, verse: 9}
           ref: Psalm 105:1-2, 3-4, 6-7, 8-9
+      - name: Gospel Acclamation
+        takes_from:
+          mass: easter-monday
+          proper: Gospel Acclamation
+          citation: ut supra, n. 261
       - name: Gospel
         source: scripture
         verses:
@@ -11329,6 +11700,11 @@ sections:
           - begin: {chapter: 8, verse: 8}
             end: {chapter: 8, verse: 9}
           ref: Psalm 8:2a, 5, 6-7, 8-9
+      - name: Gospel Acclamation
+        takes_from:
+          mass: easter-monday
+          proper: Gospel Acclamation
+          citation: ut supra, n. 261
       - name: Gospel
         source: scripture
         verses:
@@ -11373,6 +11749,11 @@ sections:
           - begin: {chapter: 118, verse: 25}
             end: {chapter: 118, verse: 27, part: a}
           ref: Psalm 118:1-2, 4, 22-24, 25-27a
+      - name: Gospel Acclamation
+        takes_from:
+          mass: easter-monday
+          proper: Gospel Acclamation
+          citation: ut supra, n. 261
       - name: Gospel
         source: scripture
         verses:
@@ -11417,6 +11798,11 @@ sections:
           - begin: {chapter: 118, verse: 19}
             end: {chapter: 118, verse: 21}
           ref: Psalm 118:1, 14-15, 16ab-18, 19-21
+      - name: Gospel Acclamation
+        takes_from:
+          mass: easter-monday
+          proper: Gospel Acclamation
+          citation: ut supra, n. 261
       - name: Gospel
         source: scripture
         verses:
@@ -12073,6 +12459,11 @@ sections:
             end: {chapter: 10, verse: 14}
           ref: John 10:14
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-10-1-10
+          basis: "The Ordo appoints this Gospel in Year A, where the principal Gospel of this day was read on the preceding Sunday."
         source: scripture
         verses:
         - book: John
@@ -12081,6 +12472,11 @@ sections:
             end: {chapter: 10, verse: 10}
           ref: John 10:1-10
       - name: Gospel (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-10-11-18
+          basis: "The Ordo appoints this Gospel in Year A, where the principal Gospel of this day was read on the preceding Sunday."
         source: scripture
         verses:
         - book: John
@@ -13315,6 +13711,11 @@ sections:
             end: {chapter: 1, verse: 14}
           ref: Acts 1:14
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: genesis-3-9-15-20
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Genesis
@@ -13325,6 +13726,11 @@ sections:
             end: {chapter: 3, verse: 20}
           ref: Genesis 3:9-15, 20
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: acts-1-12-14
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Acts
@@ -13584,6 +13990,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-23-5
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Parasti in conspectu meo mensam
         source: scripture
         verses:
@@ -13593,6 +14004,11 @@ sections:
             end: {chapter: 23, verse: 5}
           ref: Psalm 23:5
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-john-4-16
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Nos cognovimus et credidimus
         source: scripture
         verses:
@@ -13808,6 +14224,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-34-6
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Accedite ad Dominum
         source: scripture
         verses:
@@ -13817,6 +14238,11 @@ sections:
             end: {chapter: 34, verse: 6}
           ref: Psalm 34:6
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-8-12
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Ego sum lux mundi
         source: scripture
         verses:
@@ -14022,6 +14448,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-31-17-18
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Illumina faciem tuam
         source: scripture
         verses:
@@ -14031,6 +14462,11 @@ sections:
             end: {chapter: 31, verse: 18}
           ref: Psalm 31:17-18
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-5-3-4
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Beati pauperes spiritu
         source: scripture
         verses:
@@ -14235,6 +14671,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-107-8-9
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Confiteantur Domino
         source: scripture
         verses:
@@ -14244,6 +14685,11 @@ sections:
             end: {chapter: 107, verse: 9}
           ref: Psalm 107:8-9
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-5-5-6
+          basis: "Second of the two communion antiphons given; either may be chosen, preferring the one that accords with the Gospel of the Mass."
         incipit: Beati qui lugent
         source: scripture
         verses:
@@ -14448,6 +14894,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-77-29-30
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         psalm_numbering: vulgate
         incipit: Manducaverunt, et saturati sunt nimis
         source: scripture
@@ -14458,6 +14909,11 @@ sections:
             end: {chapter: 77, verse: 30}
           ref: Psalm 77:29-30
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-3-16
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Sic Deus dilexit mundum
         source: scripture
         verses:
@@ -14671,6 +15127,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-9-2-3
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Narrabo omnia mirabilia tua
         source: scripture
         verses:
@@ -14680,6 +15141,11 @@ sections:
             end: {chapter: 9, verse: 3}
           ref: Psalm 9:2-3
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-11-27
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Domine, ego credidi
         source: scripture
         verses:
@@ -14884,6 +15350,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-12-6
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Cantabo Domino, qui bona tribuit mihi
         source: scripture
         verses:
@@ -14893,6 +15364,11 @@ sections:
             end: {chapter: 12, verse: 6}
           ref: Psalm 12:6
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-28-20
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Ecce ego vobiscum sum
         source: scripture
         verses:
@@ -15103,6 +15579,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-16-6
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Ego clamavi, quoniam exaudisti me
         source: scripture
         verses:
@@ -15112,6 +15593,11 @@ sections:
             end: {chapter: 16, verse: 6}
           ref: Psalm 16:6
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: mark-11-23-24
+          basis: "The Missal appoints this second antiphon with Vel, one or the other being chosen, preferably the one according with the Gospel of the Mass."
         incipit: Amen dico vobis
         source: scripture
         verses:
@@ -15317,6 +15803,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-17-3
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Dominus firmamentum meum
         source: scripture
         verses:
@@ -15326,6 +15817,11 @@ sections:
             end: {chapter: 17, verse: 3}
           ref: Psalm 17:3
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-john-4-16
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Deus caritas est
         source: scripture
         verses:
@@ -15530,6 +16026,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-26-4
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Unum petii a Domino
         source: scripture
         verses:
@@ -15539,6 +16040,11 @@ sections:
             end: {chapter: 26, verse: 4}
           ref: Psalm 26:4
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-17-11
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Pater sancte, serva eos in nomine tuo
         source: scripture
         verses:
@@ -15743,6 +16249,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-144-15
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Oculi omnium in te sperant
         source: scripture
         verses:
@@ -15752,6 +16263,11 @@ sections:
             end: {chapter: 144, verse: 15}
           ref: Psalm 144:15
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-10-11-15
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Ego sum pastor bonus
         source: scripture
         verses:
@@ -15976,6 +16492,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-102-1
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Benedic, anima mea, Domino
         source: scripture
         verses:
@@ -15985,6 +16506,11 @@ sections:
             end: {chapter: 102, verse: 1}
           ref: Psalm 102:1
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-17-20-21
+          basis: "Alternative communion antiphon, printed in the Missal after \"Vel\"."
         incipit: Pater, pro eis rogo
         source: scripture
         verses:
@@ -16193,6 +16719,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-34-9
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Gustate et videte quoniam suavis est Dominus
         source: scripture
         verses:
@@ -16202,6 +16733,11 @@ sections:
             end: {chapter: 34, verse: 9}
           ref: Psalm 34:9
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-11-28
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Venite ad me, omnes qui laboratis
         source: scripture
         verses:
@@ -16414,6 +16950,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-84-4-5
+          basis: "Alternative communion antiphon appointed by the Missal, which cites it as John 6:57."
         incipit: Passer invenit sibi domum
         source: scripture
         verses:
@@ -16423,6 +16964,11 @@ sections:
             end: {chapter: 84, verse: 5}
           ref: Psalm 84:4-5
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-56
+          basis: "Alternative communion antiphon appointed by the Missal, which cites it as John 6:57."
         incipit: Qui manducat meam carnem et bibit meum sanguinem
         source: scripture
         verses:
@@ -16626,6 +17172,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-111-4-5
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Memoriam fecit mirabilium suorum
         source: scripture
         verses:
@@ -16635,6 +17186,11 @@ sections:
             end: {chapter: 111, verse: 5}
           ref: Psalm 111:4-5
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: revelation-3-20
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Ecce sto ad ostium et pulso
         source: scripture
         verses:
@@ -16841,6 +17397,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-103-2
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Benedic, anima mea, Domino
         source: scripture
         verses:
@@ -16850,6 +17411,11 @@ sections:
             end: {chapter: 103, verse: 2}
           ref: Psalm 103:2
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-5-7-8
+          basis: "Alternative communion antiphon appointed by the Missal."
         incipit: Beati misericordes, quoniam ipsi misericordiam consequentur
         source: scripture
         verses:
@@ -17065,6 +17631,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: wisdom-16-20
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Panem de caelo dedisti nobis
         source: scripture
         verses:
@@ -17074,6 +17645,11 @@ sections:
             end: {chapter: 16, verse: 20}
           ref: Wisdom 16:20
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-35
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Ego sum panis vitae
         source: scripture
         verses:
@@ -17296,6 +17872,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-147-12
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Lauda, Ierusalem, Dominum
         source: scripture
         verses:
@@ -17310,6 +17891,11 @@ sections:
             end: {chapter: 147, verse: 14}
           ref: Psalm 147:14
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-51
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Panis, quem ego dedero
         source: scripture
         verses:
@@ -17514,6 +18100,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-129-7
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Apud Dominum misericordia
         source: scripture
         verses:
@@ -17523,6 +18114,11 @@ sections:
             end: {chapter: 129, verse: 7}
           ref: Psalm 129:7
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-51-52
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Ego sum panis vivus
         source: scripture
         verses:
@@ -17728,6 +18324,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-103-13-15
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: De fructu operum tuorum, Domine, satiabitur terra
         source: scripture
         verses:
@@ -17737,6 +18338,11 @@ sections:
             end: {chapter: 103, verse: 15}
           ref: Psalm 103:13-15
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-55
+          basis: "Printed as the alternative (\"Vel\") Communion Antiphon."
         incipit: Qui manducat meam carnem
         source: scripture
         verses:
@@ -17949,6 +18555,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-30-20
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         psalm_numbering: vulgate
         incipit: Quam magna multitudo dulcedinis tuae
         source: scripture
@@ -17959,6 +18570,11 @@ sections:
             end: {chapter: 30, verse: 20}
           ref: Psalm 30:20
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: matthew-5-9-10
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Beati pacifici
         source: scripture
         verses:
@@ -18160,6 +18776,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-41-2-3
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Quemadmodum desiderat cervus
         source: scripture
         verses:
@@ -18169,6 +18790,11 @@ sections:
             end: {chapter: 41, verse: 3}
           ref: Psalm 41:2-3
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-8-12
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Ego sum lux mundi
         source: scripture
         verses:
@@ -18370,6 +18996,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-35-8
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Quam pretiosa est misericordia tua, Deus
         source: scripture
         verses:
@@ -18379,6 +19010,11 @@ sections:
             end: {chapter: 35, verse: 8}
           ref: Psalm 35:8
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-corinthians-10-16
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Calix benedictionis, cui benedicimus
         source: scripture
         verses:
@@ -18578,6 +19214,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-118-4-5
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Tu mandasti mandata tua custodiri nimis
         source: scripture
         verses:
@@ -18587,6 +19228,11 @@ sections:
             end: {chapter: 118, verse: 5}
           ref: Psalm 118:4-5
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-10-14
+          basis: "Second communion antiphon offered by the Missal as an alternative."
         incipit: Ego sum pastor bonus
         source: scripture
         verses:
@@ -18811,6 +19457,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-118-49-50
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         psalm_numbering: vulgate
         incipit: Memento verbi tui servo tuo
         source: scripture
@@ -18821,6 +19472,11 @@ sections:
             end: {chapter: 118, verse: 50}
           ref: Psalm 118:49-50
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-john-3-16
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: In hoc cognovimus caritatem Dei
         source: scripture
         verses:
@@ -19024,6 +19680,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: lamentations-3-25
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: Bonus est Dominus
         source: scripture
         verses:
@@ -19033,6 +19694,11 @@ sections:
             end: {chapter: 3, verse: 25}
           ref: Lamentations 3:25
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-corinthians-10-17
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: Unus panis et unum corpus
         source: scripture
         verses:
@@ -19231,6 +19897,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-33-11
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: Divites eguerunt et esurierunt
         source: scripture
         verses:
@@ -19240,6 +19911,11 @@ sections:
             end: {chapter: 33, verse: 11}
           ref: Psalm 33:11
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: 1-john-3-2
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: Cum apparuerit Dominus
         source: scripture
         verses:
@@ -19453,6 +20129,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-32-18-19
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         psalm_numbering: vulgate
         incipit: Ecce oculi Domini super timentes eum
         source: scripture
@@ -19463,6 +20144,11 @@ sections:
             end: {chapter: 32, verse: 19}
           ref: Psalm 32:18-19
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: mark-10-45
+          basis: "The Missal prints this as an alternative (\"Vel\") to the preceding antiphon."
         incipit: Filius hominis venit
         source: scripture
         verses:
@@ -19666,6 +20352,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-19-6
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Laetabimur in salutari tuo
         source: scripture
         verses:
@@ -19675,6 +20366,11 @@ sections:
             end: {chapter: 19, verse: 6}
           ref: Psalm 19:6
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: ephesians-5-2
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Christus dilexit nos
         source: scripture
         verses:
@@ -19878,6 +20574,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-15-11
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         psalm_numbering: vulgate
         incipit: Notas mihi fecisti vias vitae
         source: scripture
@@ -19888,6 +20589,11 @@ sections:
             end: {chapter: 15, verse: 11}
           ref: Psalm 15:11
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: john-6-58
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Sicut misit me vivens Pater
         source: scripture
         verses:
@@ -20093,6 +20799,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-22-1-2
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Dominus regit me
         source: scripture
         verses:
@@ -20102,6 +20813,11 @@ sections:
             end: {chapter: 22, verse: 2}
           ref: Psalm 22:1-2
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: luke-24-35
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Cognoverunt discipuli
         source: scripture
         verses:
@@ -20311,6 +21027,11 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Communion Antiphon
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: psalm-72-28
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         psalm_numbering: vulgate
         incipit: Mihi autem adhaerere Deo bonum est
         source: scripture
@@ -20321,6 +21042,11 @@ sections:
             end: {chapter: 72, verse: 28}
           ref: Psalm 72:28
       - name: Communion Antiphon (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: communion-antiphon
+          option: mark-11-23-24
+          basis: "The Missal offers this antiphon as an alternative, introduced by Vel."
         incipit: Amen dico vobis
         source: scripture
         verses:
@@ -20533,6 +21259,14 @@ sections:
       name: The Most Holy Body and Blood of Christ
       registry: pc-s27
       season: solemnities-of-the-lord
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          This source appoints the Sequence between the second reading and the
+          Gospel Acclamation. The postconciliar Order-of-Mass inventory has no
+          source-backed Sequence anchor, so a generic frame would invent its
+          place. The frame is withheld until that placement is established and
+          modeled; the Sequence remains present in source order.
       notes: 'The Lectionary citations were read at 200 dpi in the page images of the
         Ordo lectionum Missae, editio typica altera 1981, artifact
         internet-archive-scan-pdf-ed4bc14e, at artifact pages 148-149, printed pages
@@ -20834,6 +21568,11 @@ sections:
                 end: {chapter: 5, verse: 11}
               ref: Romans 5:5b-11
       - name: Gospel Acclamation
+        ordinary_disposition:
+          kind: alternative
+          group: gospel-acclamation
+          option: matthew-11-29ab
+          basis: "The Ordo prints this verse once, at n. 170, and sends Years B and C back to it rather than reprinting it, so this is the one slot of this Mass that does not vary by year. The Ordo prints this under Vel as an alternative to the preceding Gospel Acclamation, in Years B and C only."
         source: scripture
         verses:
         - book: Matthew
@@ -20844,6 +21583,11 @@ sections:
         notes: 'The Ordo prints this verse once, at n. 170, and sends Years B and C back to it rather than
           reprinting it, so this is the one slot of this Mass that does not vary by year.'
       - name: Gospel Acclamation (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel-acclamation
+          option: 1-john-4-10b
+          basis: "The Ordo prints this verse once, at n. 170, and sends Years B and C back to it rather than reprinting it, so this is the one slot of this Mass that does not vary by year. The Ordo prints this under Vel as an alternative to the preceding Gospel Acclamation, in Years B and C only."
         source: scripture
         cycles:
           'B':
@@ -20905,7 +21649,8 @@ sections:
         Ordo prints the Alleluia verse as Cf. Lc 2, 19; the reference is recorded and
         the Cf. is not, this file''s citation grammar carrying no marker for it. The
         notification of 8 December 1998, protocol 2671/98/L, governs its meeting with
-        another obligatory memorial and is reported here rather than read. Nothing else
+        another obligatory memorial. Its operative paragraph was read in the exact
+        official Latin web delivery and in Notitiae 35 (1999), 157. Nothing else
         of this Mass has been read - the Entrance and Communion Antiphons and the three
         orations are printed in the Missal, not in the Ordo, and are absent because no
         witness to them is on disk that this project may publish. See
@@ -26601,6 +27346,11 @@ sections:
       season: ordinary-time
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding first reading, in Anno I only."
         source: scripture
         weekday_cycles:
           'I':
@@ -26620,6 +27370,11 @@ sections:
                 end: {chapter: 24, verse: 17}
               ref: 2 Kings 24:8-17
       - name: First Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding first reading, in Anno I only."
         source: scripture
         weekday_cycles:
           'I':
@@ -37974,19 +38729,20 @@ sections:
       rank: Optional memorial
       kind: marian
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 111, printed page 103'
         options:
         - mass: 'commune-beatae-mariae-virginis'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
-        in common_from. The relation covers only Missal propers and selects no Lectionary
-        reading. No exact Collect exemplar is carried or acquired for this entry;
+        in common_from. The direction covers only Entrance and Communion Antiphons,
+        resolves no text, and selects no Lectionary
+        reading. No exact target-formulary exemplar is carried or acquired for this entry;
         nothing has been invented.'
     - key: visitation-blessed-virgin-mary
       name: The Visitation of the Blessed Virgin Mary
@@ -38009,6 +38765,11 @@ sections:
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: zephaniah-3-14-18
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Zephaniah
@@ -38017,6 +38778,11 @@ sections:
             end: {chapter: 3, verse: 18}
           ref: Zephaniah 3:14-18
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: romans-12-9-16b
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Romans
@@ -38302,6 +39068,11 @@ sections:
         no witness to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: micah-5-1-4a
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Micah
@@ -38310,6 +39081,11 @@ sections:
             end: {chapter: 5, verse: 4, part: a}
           ref: Micah 5:1-4a
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: romans-8-28-30
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         notes: The Ordo prints this under Vel as an alternative to the preceding First Reading.
         verses:
@@ -38329,6 +39105,11 @@ sections:
             end: {chapter: 13, verse: 6, part: cd}
           ref: Psalm 13:6ab, 6cd
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -38339,6 +39120,11 @@ sections:
             end: {chapter: 1, verse: 23}
           ref: Matthew 1:1-16, 18-23
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         notes: The Ordo prints this as the shorter form (brevior) of the preceding Gospel.
         verses:
@@ -38393,6 +39179,11 @@ sections:
             end: {chapter: 31, verse: 20}
           ref: Psalm 31:2-3a, 3bc-4, 5-6, 15-16, 20
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-19-25-27
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         verses:
         - book: John
@@ -38401,6 +39192,11 @@ sections:
             end: {chapter: 19, verse: 27}
           ref: John 19:25-27
       - name: Gospel (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: luke-2-33-35
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         notes: The Ordo prints this under Vel as an alternative to the preceding Gospel.
         verses:
@@ -38642,19 +39438,20 @@ sections:
       rank: Optional memorial
       kind: marian
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 149, printed page 141'
         options:
         - mass: 'commune-beatae-mariae-virginis'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
-        in common_from. The relation covers only Missal propers and selects no Lectionary
-        reading. No exact Collect exemplar is carried or acquired for this entry;
+        in common_from. The direction covers only Entrance and Communion Antiphons,
+        resolves no text, and selects no Lectionary
+        reading. No exact target-formulary exemplar is carried or acquired for this entry;
         nothing has been invented.'
   christological:
     kind: christological
@@ -38809,6 +39606,11 @@ sections:
             end: {chapter: 2, verse: 32}
           ref: Luke 2:32
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Luke
@@ -38817,6 +39619,11 @@ sections:
             end: {chapter: 2, verse: 40}
           ref: Luke 2:22-40
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Luke
@@ -39072,10 +39879,25 @@ sections:
             form: Vigil Mass
             proper: Gospel Acclamation
         - name: Gospel
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: longer
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
           takes_from:
             mass: nativity
             form: Vigil Mass
             proper: Gospel
+        - name: Gospel (shorter form)
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: shorter
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
+          takes_from:
+            mass: nativity
+            form: Vigil Mass
+            proper: Gospel (shorter form)
         - name: Prayer over the Offerings
           takes_from:
             mass: nativity
@@ -39095,11 +39917,21 @@ sections:
         name: Mass during the Night
         propers:
         - name: Entrance Antiphon
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: principal
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
           takes_from:
             mass: nativity
             form: Mass during the Night
             proper: Entrance Antiphon
         - name: Entrance Antiphon (alternative)
+          ordinary_disposition:
+            kind: alternative
+            group: entrance-antiphon
+            option: alternative
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
           takes_from:
             mass: nativity
             form: Mass during the Night
@@ -39236,10 +40068,25 @@ sections:
             form: Mass during the Day
             proper: Gospel Acclamation
         - name: Gospel
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: longer
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
           takes_from:
             mass: nativity
             form: Mass during the Day
             proper: Gospel
+        - name: Gospel (shorter form)
+          ordinary_disposition:
+            kind: alternative
+            group: gospel
+            option: shorter
+            basis: "This alias preserves the corresponding Nativity source form's alternative or shorter-form relationship."
+          takes_from:
+            mass: nativity
+            form: Mass during the Day
+            proper: Gospel (shorter form)
         - name: Prayer over the Offerings
           takes_from:
             mass: nativity
@@ -39273,10 +40120,10 @@ sections:
         during the Night and of the Mass at Dawn. Against Alleluia in the Vigil Mass and in the Mass
         during the Day the Ordo prints a chant text and no scriptural reference at all, so those two slots
         hold no citation for this lane to collate and none was taken; what nativity carries in them is
-        that entry''s own record. Two readings the book prints are still absent from nativity - the Ordo
-        prints the Vigil Gospel and the Gospel of the Mass during the Day each in a longer form and a
-        shorter one, and only the longer of each is carried - and that is reported to the entry which owns
-        them rather than added from here. The Ordo also prints, at the foot of n. 13, a rubric permitting
+        that entry''s own record. The Vigil Gospel and the Gospel of the Mass during the Day are each
+        carried in the longer and shorter forms the Ordo prints, in printed order, and this duplicate date
+        entry points to all four rather than copying them. The Ordo also prints, at the foot of n. 13, a
+        rubric permitting
         the Masses celebrated on the day of the Nativity to take more suitable reading texts from any of
         the three; it governs which text may be used and not what is appointed, and its wording is not
         carried. This entry adds no oration and no antiphon: the Missale Romanum 2002 prints them, the
@@ -39441,6 +40288,16 @@ sections:
       date: 01-20
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 328, printed page 274, n. 514. The Ordo heads it De Communi martyrum
+        vel pastorum [pro papa], and this repository carries identity-only Common records that
+        do not resolve a target-edition formulary, so the heading is recorded and not resolved.
+        Its Psalm 39 is converted to Hebrew Psalm 40 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew; the printed 2 et 4ab
+        stanza grouping is stored as separate ordered selections. The citation assignments are
+        the only payload taken from that restricted witness; no Lectionary text is reproduced.
+        See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -39524,6 +40381,15 @@ sections:
       date: 01-20
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 328, printed page 274, n. 515. The Ordo heads it De Communi martyrum,
+        and this repository carries identity-only Common records that do not resolve a
+        target-edition formulary, so the heading is recorded and not resolved. Its Psalm 33 is
+        converted to Hebrew Psalm 34 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The citation assignments are the
+        only payload taken from that restricted witness; no Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -39782,6 +40648,11 @@ sections:
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: acts-22-3-16
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Acts
@@ -39790,6 +40661,11 @@ sections:
             end: {chapter: 22, verse: 16}
           ref: Acts 22:3-16
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: acts-9-1-22
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Acts
@@ -39844,6 +40720,11 @@ sections:
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: 2-timothy-1-1-8
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: 2 Timothy
@@ -39852,6 +40733,11 @@ sections:
             end: {chapter: 1, verse: 8}
           ref: 2 Timothy 1:1-8
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: titus-1-1-5
+          basis: "The source identifies First Reading (alternative) as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Titus
@@ -40076,6 +40962,15 @@ sections:
       date: 02-03
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 331, printed page 277, n. 525. The Ordo heads it De Communi martyrum
+        vel pastorum, and this repository carries identity-only Common records that do not
+        resolve a target-edition formulary, so the heading is recorded and not resolved. Its
+        Psalm 116 is converted to Hebrew Psalm 117 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. The citation assignments
+        are the only payload taken from that restricted witness; no Lectionary text is
+        reproduced. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -40147,6 +41042,15 @@ sections:
       date: 02-03
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 331, printed page 277, n. 526. The Ordo heads it De Communi pastorum
+        [pro missionariis], and this repository carries identity-only Common records that do not
+        resolve a target-edition formulary, so the heading is recorded and not resolved. Its
+        Psalm 95 is converted to Hebrew Psalm 96 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. The citation assignments
+        are the only payload taken from that restricted witness; no Lectionary text is
+        reproduced. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -40353,6 +41257,65 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Tobit
+          ranges:
+          - begin: {chapter: 12, verse: 6}
+            end: {chapter: 12, verse: 13}
+          ref: Tobit 12:6-13
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 2}
+            end: {chapter: 34, verse: 3}
+          - begin: {chapter: 34, verse: 4}
+            end: {chapter: 34, verse: 5}
+          - begin: {chapter: 34, verse: 6}
+            end: {chapter: 34, verse: 7}
+          - begin: {chapter: 34, verse: 8}
+            end: {chapter: 34, verse: 9}
+          - begin: {chapter: 34, verse: 10}
+            end: {chapter: 34, verse: 11}
+          ref: Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 3}
+          ref: Matthew 5:3
+      - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 10, verse: 17}
+            end: {chapter: 10, verse: 30}
+          ref: Mark 10:17-30
+      - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
+        source: scripture
+        notes: The Ordo prints this as the shorter form (brevior) of the preceding Gospel.
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 10, verse: 17}
+            end: {chapter: 10, verse: 27}
+          ref: Mark 10:17-27
       - name: Prayer over the Offerings
         incipit: Clementissime Deus
         source: composed
@@ -40371,15 +41334,23 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 332, printed page 278, n. 529. The Ordo heads it De Communi sanctorum [pro educatoribus],
+        and this repository carries identity-only Common records that do not resolve a target-edition
+        formulary, so the heading is recorded and not resolved. The Gospel is printed in a longer form
+        (longior) and a shorter one (brevior), both carried as citations under separate roles. The Ordo
+        prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms
+        from the tracked verse concordance because this file declares psalm_numbering hebrew. No
+        lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n578, n579 (printed 493, 494) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
         1862 printing of the Missale Romanum, at the day heading Die xx. S. Hieronymi Aemiliani, Confessoris.,
         and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
         It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as
         its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this same
         prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe ligatures
-        are normalized to this file's declared orthography. Nothing here has been collated; the entry stands
-        in open_collation_items. 20 July in the 1862; 8 February in the postconciliar calendar.
+        are normalized to this file''s declared orthography. Nothing here has been collated; the entry stands
+        in open_collation_items. 20 July in the 1862; 8 February in the postconciliar calendar.'
     - key: saint-josephine-bakhita-virgin
       name: Saint Josephine Bakhita, Virgin
       registry: pc-02-08-bakhita
@@ -40387,7 +41358,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
         locus: artifact page 103, printed page 95
         options:
@@ -40395,10 +41366,11 @@ sections:
           selection: For One Virgin
       text_status:
         state: unavailable
-        scope: proper-collect
+        scope: missal-formulary
         reasons:
         - kind: no-exemplar
-      notes: The registered Antiphonary establishes the Common direction. No exact Collect exemplar is carried;
+      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
+        direction and resolves no text. No exact target-formulary exemplar is carried;
         nothing is invented.
     - key: saint-scholastica-virgin
       name: Saint Scholastica, Virgin
@@ -41246,6 +42218,11 @@ sections:
           Lenten form. Its psalm number is converted out of the Ordo's printed Vulgate
           numbering by scripts/_psalms.
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: matthew-1-16-18-21-24a
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -41258,6 +42235,11 @@ sections:
             end: {chapter: 1, verse: 24, part: a}
           ref: Matthew 1:16, 18-21, 24a
       - name: Gospel (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: luke-2-41-51a
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         verses:
         - book: Luke
@@ -41779,6 +42761,44 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Revelation
+          ranges:
+          - begin: {chapter: 21, verse: 5}
+            end: {chapter: 21, verse: 7}
+          ref: Revelation 21:5-7
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 126, verse: 1}
+            end: {chapter: 126, verse: 2, part: ab}
+          - begin: {chapter: 126, verse: 2, part: cd}
+            end: {chapter: 126, verse: 3}
+          - begin: {chapter: 126, verse: 4}
+            end: {chapter: 126, verse: 5}
+          - begin: {chapter: 126, verse: 6}
+            end: {chapter: 126, verse: 6}
+          ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 4, verse: 14}
+            end: {chapter: 4, verse: 14}
+          ref: 1 Peter 4:14
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 9, verse: 23}
+            end: {chapter: 9, verse: 26}
+          ref: Luke 9:23-26
       - name: Prayer over the Offerings
         incipit: Munera, Domine, oblata sanctifica
         source: composed
@@ -41797,14 +42817,20 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 338, printed page 284, n. 553. The Ordo heads it De Communi martyrum, and this repository
+        carries identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n513, n514 (printed 428, 429) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
         1862 printing of the Missale Romanum, at the day heading Die xxiii. S. Georgii, Martyris., and not
         from any optical text layer. That printing attests its own 1862 Tridentine body recension. It does
         not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as its edition,
         which is in copyright and is not held here. Whether the 2002 Missal appoints this same prayer on this
         day is an editorial determination that has NOT been made. Accents and ae/oe ligatures are normalized
-        to this file's declared orthography. Nothing here has been collated; the entry stands in open_collation_items.
+        to this file''s declared orthography. Nothing here has been collated; the entry stands in open_collation_items.'
     - key: saint-adalbert-bishop-martyr
       name: Saint Adalbert, Bishop and Martyr
       registry: pc-04-23-adalbert
@@ -41812,7 +42838,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
         locus: artifact page 108, printed page 100
         options:
@@ -41822,10 +42848,11 @@ sections:
           selection: For a Bishop
       text_status:
         state: unavailable
-        scope: proper-collect
+        scope: missal-formulary
         reasons:
         - kind: no-exemplar
-      notes: The registered Antiphonary establishes the Common direction. No exact Collect exemplar is carried;
+      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
+        direction and resolves no text. No exact target-formulary exemplar is carried;
         nothing is invented.
     - key: saint-fidelis-sigmaringen-priest-martyr
       name: Saint Fidelis of Sigmaringen, Priest and Martyr
@@ -41944,6 +42971,16 @@ sections:
       date: 04-28
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 339, printed page 285, n. 556. The Ordo heads it De Communi martyrum
+        vel pastorum [pro missionariis], and this repository carries identity-only Common
+        records that do not resolve a target-edition formulary, so the heading is recorded and
+        not resolved. Its Psalm 116 is converted to Hebrew Psalm 117 by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The
+        citation assignments are the only payload taken from that restricted witness; no
+        Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -42006,7 +43043,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
         locus: artifact page 109, printed page 101
         options:
@@ -42014,10 +43051,11 @@ sections:
           selection: For One Pastor
       text_status:
         state: unavailable
-        scope: proper-collect
+        scope: missal-formulary
         reasons:
         - kind: no-exemplar
-      notes: The registered Antiphonary establishes the Common direction. No exact Collect exemplar is carried;
+      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
+        direction and resolves no text. No exact target-formulary exemplar is carried;
         nothing is invented.
     - key: saint-catherine-siena-virgin-doctor-church
       name: Saint Catherine of Siena, Virgin and Doctor of the Church
@@ -42169,6 +43207,11 @@ sections:
         src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: genesis-1-26-2-3
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Genesis
@@ -42177,6 +43220,11 @@ sections:
             end: {chapter: 2, verse: 3}
           ref: Genesis 1:26-2:3
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: colossians-3-14-15-17-23-24
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Colossians
@@ -42396,6 +43444,15 @@ sections:
       date: 05-12
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 341, printed page 287, n. 562. The Ordo heads it De Communi martyrum,
+        and this repository carries identity-only Common records that do not resolve a
+        target-edition formulary, so the heading is recorded and not resolved. Its Psalm 123 is
+        converted to Hebrew Psalm 124 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The citation assignments are the
+        only payload taken from that restricted witness; no Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -42464,6 +43521,17 @@ sections:
       date: 05-12
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 341, printed page 287, n. 563. The Ordo heads it De Communi martyrum,
+        and this repository carries identity-only Common records that do not resolve a
+        target-edition formulary, so the heading is recorded and not resolved. Its Psalm 102 is
+        converted to Hebrew Psalm 103 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The printed Cf. Mt 11,25 citation is
+        retained while Cf. is omitted because the citation grammar has no such marker. The
+        citation assignments are the only payload taken from that restricted witness; no
+        Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -42732,7 +43800,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 112, printed page 104'
         options:
@@ -42740,13 +43808,14 @@ sections:
           selection: 'For Several Martyrs'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
         in common_from, with the Easter Time variant retained by that Common selection.
-        The relation covers only Missal propers and selects no Lectionary reading. No
-        exact Collect exemplar is carried or acquired for this entry; nothing has been
+        The direction covers only Entrance and Communion Antiphons, resolves no text,
+        and selects no Lectionary reading. No
+        exact target-formulary exemplar is carried or acquired for this entry; nothing has been
         invented.'
     - key: saint-rita-cascia-religious
       name: Saint Rita of Cascia, Religious
@@ -42755,7 +43824,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 112, printed page 104'
         options:
@@ -42763,19 +43832,41 @@ sections:
           selection: 'For Religious'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
-        in common_from. The relation covers only Missal propers and selects no Lectionary
-        reading. No exact Collect exemplar is carried or acquired for this entry;
-        nothing has been invented.'
+        in common_from. The direction covers only Entrance and Communion Antiphons,
+        resolves no text, and selects no Lectionary
+        reading. A public-domain historical antecedent is acquired and verified at
+        passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.saint-rita-cascia-pro-aliquibus-locis:
+        the 1922 Mame appendix prints a complete 22 May Mass at PDF artifact pages
+        1109-1111. It has not been collated to the restricted 2002 target edition,
+        so no exact target-edition formulary exemplar is carried and nothing has been
+        invented.'
     - key: saint-bede-venerable-priest-doctor-church
       name: Saint Bede the Venerable, Priest and Doctor of the Church
       registry: pc-05-25
       date: 05-25
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 342, printed page 288, n. 567. The Ordo heads it De Communi pastorum
+        vel doctorum Ecclesiae, and this repository carries identity-only Common records that
+        do not resolve a target-edition formulary, so the heading is recorded and not resolved.
+        Its Psalm 118 is converted to Hebrew Psalm 119 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. Its Io 6, 63c. 68c
+        Alleluia agrees with the Common referent n. 729,3 at artifact page 390, printed page 336;
+        n. 552 alone prints the Vulgate-numbered 64b et 69b. The relevant loci were read at 400
+        dpi and each is carried as printed rather than harmonized. The citation assignments are
+        the only payload taken from that restricted witness; no Lectionary text is reproduced.
+        A public-domain historical antecedent is independently verified at
+        passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.saint-bede-venerable:
+        the 1922 Mame universal sanctoral prints the Common-of-Doctors pointer and
+        proper orations at PDF artifact pages 715-716. It has not been collated to
+        the restricted 2002 target edition, and no prayer body is imported. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -42872,6 +43963,15 @@ sections:
       date: 05-25
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 342, printed page 288, n. 568. The Ordo heads it De Communi pastorum
+        [pro papa], and this repository carries identity-only Common records that do not resolve
+        a target-edition formulary, so the heading is recorded and not resolved. Its Psalm 109
+        is converted to Hebrew Psalm 110 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The citation assignments are the
+        only payload taken from that restricted witness; no Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -42958,6 +44058,15 @@ sections:
       date: 05-25
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 342, printed page 288, n. 569. The Ordo heads it De Communi virginum
+        vel sanctarum [pro religiosis], and this repository carries identity-only Common records
+        that do not resolve a target-edition formulary, so the heading is recorded and not
+        resolved. Its Psalm 148 keeps the same number under this file''s Hebrew psalm numbering.
+        The citation assignments are the only payload taken from that restricted witness; no
+        Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -43801,6 +44910,46 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 2 Corinthians
+          ranges:
+          - begin: {chapter: 8, verse: 9}
+            end: {chapter: 8, verse: 15}
+          ref: 2 Corinthians 8:9-15
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 40, verse: 2}
+            end: {chapter: 40, verse: 2}
+          - begin: {chapter: 40, verse: 4, part: ab}
+            end: {chapter: 40, verse: 4, part: ab}
+          - begin: {chapter: 40, verse: 7}
+            end: {chapter: 40, verse: 8, part: a}
+          - begin: {chapter: 40, verse: 8, part: b}
+            end: {chapter: 40, verse: 9}
+          - begin: {chapter: 40, verse: 10}
+            end: {chapter: 40, verse: 10}
+          ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 3}
+            end: {chapter: 5, verse: 3}
+          ref: Matthew 5:3
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Luke
+          ranges:
+          - begin: {chapter: 12, verse: 32}
+            end: {chapter: 12, verse: 34}
+          ref: Luke 12:32-34
       - name: Prayer over the Offerings
         incipit: Sancti tui, quaesumus Domine
         source: composed
@@ -43819,29 +44968,75 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 346, printed page 292, n. 584. The Ordo heads it De Communi pastorum, and this repository
+        carries identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n550, n551 (printed 465, 466) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
         1862 printing of the Missale Romanum, at the day heading Die xxii. S. Paulini, Episcopi et Confessoris.,
         and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
         It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as
         its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this same
         prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe ligatures
-        are normalized to this file's declared orthography. Nothing here has been collated; the entry stands
-        in open_collation_items.
+        are normalized to this file''s declared orthography. Nothing here has been collated; the entry stands
+        in open_collation_items.'
     - key: saints-john-fisher-bishop-thomas-more
       name: Saints John Fisher, Bishop, and Thomas More, Martyrs
       registry: pc-06-22-fisher-more
       date: 06-22
       rank: Optional memorial
       kind: sanctoral
-      text_status:
-        state: unavailable
-        scope: missal-formulary
-        reasons:
-        - kind: witness-gap
-          source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+      propers:
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 4, verse: 12}
+            end: {chapter: 4, verse: 19}
+          ref: 1 Peter 4:12-19
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 126, verse: 1}
+            end: {chapter: 126, verse: 2, part: ab}
+          - begin: {chapter: 126, verse: 2, part: cd}
+            end: {chapter: 126, verse: 3}
+          - begin: {chapter: 126, verse: 4}
+            end: {chapter: 126, verse: 5}
+          - begin: {chapter: 126, verse: 6}
+            end: {chapter: 126, verse: 6}
+          ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 10}
+            end: {chapter: 5, verse: 10}
+          ref: Matthew 5:10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 10, verse: 34}
+            end: {chapter: 10, verse: 39}
+          ref: Matthew 10:34-39
+      notes: The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 346, printed page 292, n. 585. The Ordo heads it De Communi martyrum, and this repository
+        carries identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. Stable calendar
+        identity split from a formerly composite optional-memorial entry. No Missal formulary body is
+        inferred or invented.
     - key: nativity-saint-john-baptist
       name: The Nativity of Saint John the Baptist
       registry: pc-06-24
@@ -44349,6 +45544,11 @@ sections:
             end: {chapter: 13, verse: 34}
           ref: John 13:34
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -44357,6 +45557,11 @@ sections:
             end: {chapter: 25, verse: 46}
           ref: Matthew 25:31-46
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -44494,7 +45699,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 119, printed page 111'
         options:
@@ -44502,12 +45707,13 @@ sections:
           selection: 'For Several Martyrs'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
-        in common_from. The relation covers only Missal propers and selects no Lectionary
-        reading. No exact Collect exemplar is carried or acquired for this entry;
+        in common_from. The direction covers only Entrance and Communion Antiphons,
+        resolves no text, and selects no Lectionary
+        reading. No exact target-formulary exemplar is carried or acquired for this entry;
         nothing has been invented.'
     - key: saint-benedict-abbot
       name: Saint Benedict, Abbot
@@ -44874,6 +46080,11 @@ sections:
         disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: song-of-songs-3-1-4a
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Song of Songs
@@ -44882,6 +46093,11 @@ sections:
             end: {chapter: 3, verse: 4, part: a}
           ref: Song of Songs 3:1-4a
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: 2-corinthians-5-14-17
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: 2 Corinthians
@@ -44981,7 +46197,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 121, printed page 113'
         options:
@@ -44991,12 +46207,13 @@ sections:
           selection: 'For a Monk'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes both permitted Common directions
-        recorded in common_from; neither has been selected by the index. The relation covers
-        only Missal propers and selects no Lectionary reading. No exact Collect exemplar
+        recorded in common_from; neither has been selected by the index. The directions
+        cover only Entrance and Communion Antiphons, resolve no text, and select no
+        Lectionary reading. No exact target-formulary exemplar
         is carried or acquired for this entry; nothing has been invented.'
     - key: saint-james-apostle
       name: Saint James, Apostle
@@ -45157,6 +46374,11 @@ sections:
             end: {chapter: 8, verse: 12}
           ref: John 8:12
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: john-11-19-27
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         verses:
         - book: John
@@ -45165,6 +46387,11 @@ sections:
             end: {chapter: 11, verse: 27}
           ref: John 11:19-27
       - name: Gospel (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: luke-10-38-42
+          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
         source: scripture
         verses:
         - book: Luke
@@ -45354,6 +46581,18 @@ sections:
       date: 08-02
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 353, printed page 299, n. 611. The Ordo heads it De Communi pastorum,
+        and this repository carries identity-only Common records that do not resolve a
+        target-edition formulary, so the heading is recorded and not resolved. Its Psalm 88 is
+        converted to Hebrew Psalm 89 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The Ordo groups the psalm''s
+        twenty-fifth and twenty-seventh verses, 25 et 27, into one stanza with et; this file''s
+        citation grammar has an ordered list of ranges and no stanza grouping, so each is
+        recorded as a separate selection naming the same verse. The citation assignments are
+        the only payload taken from that restricted witness; no Lectionary text is reproduced.
+        See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -45435,7 +46674,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
         locus: artifact page 124, printed page 116
         options:
@@ -45445,10 +46684,11 @@ sections:
           selection: For One Pastor
       text_status:
         state: unavailable
-        scope: proper-collect
+        scope: missal-formulary
         reasons:
         - kind: no-exemplar
-      notes: The registered Antiphonary establishes the Common direction. No exact Collect exemplar is carried;
+      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
+        direction and resolves no text. No exact target-formulary exemplar is carried;
         nothing is invented.
     - key: saint-john-vianney-priest
       name: Saint John Vianney, Priest
@@ -45777,7 +47017,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 125, printed page 117'
         options:
@@ -45787,12 +47027,13 @@ sections:
           selection: 'For One Virgin'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes both permitted Common directions
-        recorded in common_from; neither has been selected by the index. The relation covers
-        only Missal propers and selects no Lectionary reading. No exact Collect exemplar
+        recorded in common_from; neither has been selected by the index. The directions
+        cover only Entrance and Communion Antiphons, resolve no text, and select no
+        Lectionary reading. No exact target-formulary exemplar
         is carried or acquired for this entry; nothing has been invented.'
     - key: saint-lawrence-deacon-martyr
       name: Saint Lawrence, Deacon and Martyr
@@ -46112,6 +47353,11 @@ sections:
             end: {chapter: 14, verse: 23}
           ref: John 14:23
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -46120,6 +47366,11 @@ sections:
             end: {chapter: 25, verse: 30}
           ref: Matthew 25:14-30
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -46428,6 +47679,46 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 58, verse: 6}
+            end: {chapter: 58, verse: 11}
+          ref: Isaiah 58:6-11
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 112, verse: 1}
+            end: {chapter: 112, verse: 2}
+          - begin: {chapter: 112, verse: 3}
+            end: {chapter: 112, verse: 4}
+          - begin: {chapter: 112, verse: 5}
+            end: {chapter: 112, verse: 7, part: a}
+          - begin: {chapter: 112, verse: 7, part: b}
+            end: {chapter: 112, verse: 8}
+          - begin: {chapter: 112, verse: 9}
+            end: {chapter: 112, verse: 9}
+          ref: Psalm 112:1-2, 3-4, 5-7a, 7b-8, 9
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 13, verse: 34}
+            end: {chapter: 13, verse: 34}
+          ref: John 13:34
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 22, verse: 34}
+            end: {chapter: 22, verse: 40}
+          ref: Matthew 22:34-40
       - name: Prayer over the Offerings
         incipit: Praesta, quaesumus omnipotens Deus
         source: composed
@@ -46446,7 +47737,13 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      notes: The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 357, printed page 303, n. 630. The Ordo heads it De Communi sanctorum, and this repository
+        carries identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n612, n613 (printed 527, 528) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
         1862 printing of the Missale Romanum, at the day heading Die xxv. vel xxvi. S. Ludovici, Confess.,
         and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
@@ -46461,14 +47758,79 @@ sections:
       date: 08-25
       rank: Optional memorial
       kind: sanctoral
-      text_status:
-        state: unavailable
-        scope: missal-formulary
-        reasons:
-        - kind: witness-gap
-          source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+      propers:
+      - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding First Reading."
+        source: scripture
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 12, verse: 31}
+            end: {chapter: 13, verse: 13}
+          ref: 1 Corinthians 12:31-13:13
+      - name: First Reading (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding First Reading."
+        source: scripture
+        notes: The Ordo prints this as the shorter form (brevior) of the preceding First Reading.
+        verses:
+        - book: 1 Corinthians
+          ranges:
+          - begin: {chapter: 13, verse: 4}
+            end: {chapter: 13, verse: 13}
+          ref: 1 Corinthians 13:4-13
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 34, verse: 2}
+            end: {chapter: 34, verse: 3}
+          - begin: {chapter: 34, verse: 4}
+            end: {chapter: 34, verse: 5}
+          - begin: {chapter: 34, verse: 6}
+            end: {chapter: 34, verse: 7}
+          - begin: {chapter: 34, verse: 8}
+            end: {chapter: 34, verse: 9}
+          - begin: {chapter: 34, verse: 10}
+            end: {chapter: 34, verse: 11}
+          ref: Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 9, part: b}
+            end: {chapter: 15, verse: 9, part: b}
+          - begin: {chapter: 15, verse: 5, part: b}
+            end: {chapter: 15, verse: 5, part: b}
+          ref: John 15:9b, 5b
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 18, verse: 1}
+            end: {chapter: 18, verse: 5}
+          ref: Matthew 18:1-5
+      notes: The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 358, printed page 304, n. 631. The Ordo heads it De Communi pastorum vel sanctorum
+        [pro educatoribus], and this repository carries identity-only Common records that do not resolve
+        a target-edition formulary, so the heading is recorded and not resolved. The First Reading is
+        printed in a longer form (longior) and a shorter one (brevior), both carried as citations under
+        separate roles. The Gospel Acclamation is printed in the unusual order John 15:9b, 5b, preserved
+        here. The Ordo prints its responsorial psalms in Vulgate numbering; they are converted here by
+        scripts/_psalms from the tracked verse concordance because this file declares psalm_numbering
+        hebrew. No lectionary wording is reproduced. Stable calendar identity split from a formerly
+        composite optional-memorial entry. No Missal formulary body is inferred or invented.
     - key: saint-monica
       name: Saint Monica
       registry: pc-08-27
@@ -46755,6 +48117,11 @@ sections:
             end: {chapter: 11, verse: 25}
           ref: Matthew 11:25
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The source identifies Gospel (shorter form) as the shorter form of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -46763,6 +48130,11 @@ sections:
             end: {chapter: 25, verse: 46}
           ref: Matthew 25:31-46
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The source identifies Gospel (shorter form) as the shorter form of the preceding Gospel."
         source: scripture
         verses:
         - book: Matthew
@@ -46917,6 +48289,11 @@ sections:
             end: {chapter: 40, verse: 10}
           ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
       - name: Gospel
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: longer
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         verses:
         - book: Mark
@@ -46927,6 +48304,11 @@ sections:
             end: {chapter: 4, verse: 20}
           ref: Mark 4:1-10, 13-20
       - name: Gospel (shorter form)
+        ordinary_disposition:
+          kind: alternative
+          group: gospel
+          option: shorter
+          basis: "The Ordo prints this as the shorter form (brevior) of the preceding Gospel."
         source: scripture
         notes: The Ordo prints this as the shorter form (brevior) of the preceding Gospel.
         verses:
@@ -46996,6 +48378,19 @@ sections:
       date: 09-17
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 360, printed page 306, n. 641. The Ordo heads it De Communi pastorum
+        vel doctorum Ecclesiae, and this repository carries identity-only Common records that
+        do not resolve a target-edition formulary, so the heading is recorded and not resolved.
+        Its Psalm 18 is converted to Hebrew Psalm 19 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. The Ordo prints this
+        Alleluia as Io 6, 63c. 68c under n. 729,3; n. 552 instead prints Io 6, 64b et 69b in
+        Vulgate numbering. Both celebrations and the Common referent n. 729,3 at artifact page
+        390, printed page 336, were read at 400 dpi; the referent agrees with nn. 567 and 641.
+        Each is carried as printed rather than harmonized. The citation assignments are the
+        only payload taken from that restricted witness; no Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -47233,7 +48628,7 @@ sections:
       rank: Memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 134, printed page 126'
         options:
@@ -47243,12 +48638,13 @@ sections:
           selection: 'For Religious'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes both permitted Common directions
-        recorded in common_from; neither has been selected by the index. The relation covers
-        only Missal propers and selects no Lectionary reading. No exact Collect exemplar
+        recorded in common_from; neither has been selected by the index. The directions
+        cover only Entrance and Communion Antiphons, resolve no text, and select no
+        Lectionary reading. No exact target-formulary exemplar
         is carried or acquired for this entry; nothing has been invented.'
     - key: saints-cosmas-damian-martyrs
       name: Saints Cosmas and Damian, Martyrs
@@ -47379,7 +48775,51 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: 1 Peter
+          ranges:
+          - begin: {chapter: 3, verse: 14}
+            end: {chapter: 3, verse: 17}
+          ref: 1 Peter 3:14-17
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 126, verse: 1}
+            end: {chapter: 126, verse: 2, part: ab}
+          - begin: {chapter: 126, verse: 2, part: cd}
+            end: {chapter: 126, verse: 3}
+          - begin: {chapter: 126, verse: 4}
+            end: {chapter: 126, verse: 5}
+          - begin: {chapter: 126, verse: 6}
+            end: {chapter: 126, verse: 6}
+          ref: Psalm 126:1-2ab, 2cd-3, 4-5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 5, verse: 10}
+            end: {chapter: 5, verse: 10}
+          ref: Matthew 5:10
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 10, verse: 34}
+            end: {chapter: 10, verse: 39}
+          ref: Matthew 10:34-39
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 362, printed page 308, n. 646. The Ordo heads it De Communi martyrum, and this repository
+        carries identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n634, n635 (printed 549, 550) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon
         1862 printing of the Missale Romanum, at the day heading Die xxviii. S. Wenceslai, Ducis et Martyris.,
         and not from any optical text layer. That printing attests its own 1862 Tridentine body recension.
@@ -47398,7 +48838,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: missal-propers-except-collect
+        scope: missal-antiphons
         source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
         locus: artifact page 135, printed page 127
         options:
@@ -47406,10 +48846,11 @@ sections:
           selection: For Several Martyrs
       text_status:
         state: unavailable
-        scope: proper-collect
+        scope: missal-formulary
         reasons:
         - kind: no-exemplar
-      notes: The registered Antiphonary establishes the Common direction. No exact Collect exemplar is carried;
+      notes: The registered Antiphonary establishes only the Entrance- and Communion-antiphon Common
+        direction and resolves no text. No exact target-formulary exemplar is carried;
         nothing is invented.
     - key: saints-michael-gabriel-raphael-archangels
       name: Saints Michael, Gabriel, and Raphael, Archangels
@@ -47432,6 +48873,11 @@ sections:
         project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: daniel-7-9-10-13-14
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         verses:
         - book: Daniel
@@ -47442,6 +48888,11 @@ sections:
             end: {chapter: 7, verse: 14}
           ref: Daniel 7:9-10, 13-14
       - name: First Reading (alternative)
+        ordinary_disposition:
+          kind: alternative
+          group: first-reading
+          option: revelation-12-7-12a
+          basis: "The Ordo prints this under Vel as an alternative to the preceding First Reading."
         source: scripture
         notes: The Ordo prints this under Vel as an alternative to the preceding First Reading.
         verses:
@@ -47836,6 +49287,15 @@ sections:
       date: 10-09
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 364, printed page 310, n. 654. The Ordo heads it De Communi martyrum,
+        and this repository carries identity-only Common records that do not resolve a
+        target-edition formulary, so the heading is recorded and not resolved. Its Psalm 125 is
+        converted to Hebrew Psalm 126 by scripts/_psalms from the tracked verse concordance,
+        because this file declares psalm_numbering hebrew. The citation assignments are the
+        only payload taken from that restricted witness; no Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -47911,6 +49371,19 @@ sections:
       date: 10-09
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 364, printed page 310, n. 655. The Ordo heads it De Communi pastorum
+        vel sanctorum [pro iis qui opera misericordiae exercuerunt], and this repository carries
+        identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. Its Psalm 95 is converted to Hebrew Psalm 96 by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. The Ordo prints this selection in nine places: n. 541 has 7-8,
+        while nn. 544, 571, 617, 635, 655, 665 and 683 and their Common referent n. 721,5 at
+        artifact page 386, printed page 332, have 7-8a. All nine were read in the page images,
+        five at 400 dpi, and each is recorded as printed rather than harmonized. The citation
+        assignments are the only payload taken from that restricted witness; no Lectionary text
+        is reproduced. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -48193,7 +49666,54 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Sirach
+          ranges:
+          - begin: {chapter: 26, verse: 1}
+            end: {chapter: 26, verse: 4}
+          - begin: {chapter: 26, verse: 16}
+            end: {chapter: 26, verse: 21}
+          ref: Sirach 26:1-4, 16-21
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 128, verse: 1}
+            end: {chapter: 128, verse: 2}
+          - begin: {chapter: 128, verse: 3}
+            end: {chapter: 128, verse: 3}
+          - begin: {chapter: 128, verse: 4}
+            end: {chapter: 128, verse: 5}
+          ref: Psalm 128:1-2, 3, 4-5
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 8, verse: 31, part: b}
+            end: {chapter: 8, verse: 32}
+          ref: John 8:31b-32
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Mark
+          ranges:
+          - begin: {chapter: 3, verse: 31}
+            end: {chapter: 3, verse: 35}
+          ref: Mark 3:31-35
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 365, printed page 311, n. 658. The Ordo heads it De Communi sanctarum [pro religiosis],
+        and this repository carries identity-only Common records that do not resolve a target-edition
+        formulary, so the heading is recorded and not resolved. The first reading is printed as Sirach
+        26:1-4, 16-21 with Greek numbering 1-4, 13-16 beside it; the Latin-number form is carried and
+        the Greek numbering is recorded rather than harmonized away. The Ordo prints its responsorial
+        psalms in Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse
+        concordance because this file declares psalm_numbering hebrew. No lectionary wording is
+        reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n645 (printed 560) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
         printing of the Missale Romanum, at the day heading Die xvii. S. Hedwigis, Reginae Viduae., and not
         from any optical text layer. That printing attests its own 1862 Tridentine body recension. It does
@@ -48211,14 +49731,56 @@ sections:
       date: 10-16
       rank: Optional memorial
       kind: sanctoral
-      text_status:
-        state: unavailable
-        scope: missal-formulary
-        reasons:
-        - kind: witness-gap
-          source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+      propers:
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 3, verse: 14}
+            end: {chapter: 3, verse: 19}
+          ref: Ephesians 3:14-19
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 3}
+          - begin: {chapter: 23, verse: 4}
+            end: {chapter: 23, verse: 4}
+          - begin: {chapter: 23, verse: 5}
+            end: {chapter: 23, verse: 5}
+          - begin: {chapter: 23, verse: 6}
+            end: {chapter: 23, verse: 6}
+          ref: Psalm 23:1-3, 4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        notes: The Ordo prints this reference with Cf.
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 25}
+          ref: Matthew 11:25
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: Matthew
+          ranges:
+          - begin: {chapter: 11, verse: 25}
+            end: {chapter: 11, verse: 30}
+          ref: Matthew 11:25-30
+      notes: The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 365, printed page 311, n. 659. The Ordo heads it De Communi virginum vel sanctarum
+        [pro religiosis], and this repository carries identity-only Common records that do not resolve
+        a target-edition formulary, so the heading is recorded and not resolved. The Gospel Acclamation
+        is printed with Cf., recorded on that proper. The Ordo prints its responsorial psalms in Vulgate
+        numbering; they are converted here by scripts/_psalms from the tracked verse concordance because
+        this file declares psalm_numbering hebrew. No lectionary wording is reproduced. Stable calendar
+        identity split from a formerly composite optional-memorial entry. No Missal formulary body is
+        inferred or invented.
     - key: saint-ignatius-antioch-bishop-martyr
       name: Saint Ignatius of Antioch, Bishop and Martyr
       registry: pc-10-17
@@ -48337,6 +49899,16 @@ sections:
       date: 10-19
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 365, printed page 311, n. 662. The Ordo heads it De Communi martyrum
+        vel pastorum [pro missionariis], and this repository carries identity-only Common
+        records that do not resolve a target-edition formulary, so the heading is recorded and
+        not resolved. Its Psalm 125 is converted to Hebrew Psalm 126 by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. The
+        citation assignments are the only payload taken from that restricted witness; no
+        Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -48422,6 +49994,17 @@ sections:
       date: 10-19
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 366, printed page 312, n. 663. The Ordo heads it De Communi pastorum,
+        vel sanctorum [pro religiosis], and this repository carries identity-only Common
+        records that do not resolve a target-edition formulary, so the heading is recorded and
+        not resolved. Its Psalm 116 is converted to Hebrew Psalm 117 by scripts/_psalms from the
+        tracked verse concordance, because this file declares psalm_numbering hebrew. This note
+        attests the Lectionary assignments and Common heading only; the proper antiphons were
+        separately read in the registered Antiphonary, and this Ordo note does not attest the
+        Missal antiphons or orations. No Lectionary text is reproduced. See
+        src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -49290,7 +50873,54 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Isaiah
+          ranges:
+          - begin: {chapter: 58, verse: 6}
+            end: {chapter: 58, verse: 11}
+          ref: Isaiah 58:6-11
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 112, verse: 1}
+            end: {chapter: 112, verse: 2}
+          - begin: {chapter: 112, verse: 3}
+            end: {chapter: 112, verse: 4}
+          - begin: {chapter: 112, verse: 5}
+            end: {chapter: 112, verse: 7, part: a}
+          - begin: {chapter: 112, verse: 7, part: b}
+            end: {chapter: 112, verse: 8}
+          - begin: {chapter: 112, verse: 9}
+            end: {chapter: 112, verse: 9}
+          ref: Psalm 112:1-2, 3-4, 5-7a, 7b-8, 9
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 13, verse: 34}
+            end: {chapter: 13, verse: 34}
+          ref: John 13:34
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 9}
+            end: {chapter: 15, verse: 17}
+          ref: John 15:9-17
+      notes: 'The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 369, printed page 315, n. 676. The Ordo heads it De Communi sanctarum [pro iis qui opera
+        misericordiae exercuerunt], and this repository carries identity-only Common records that do
+        not resolve a target-edition formulary, so the heading is recorded and not resolved. The Ordo
+        prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms
+        from the tracked verse concordance because this file declares psalm_numbering hebrew. No
+        lectionary wording is reproduced. ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE
         of leaf n541 (printed 456) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862
         printing of the Missale Romanum, at the day heading Die x. S. Margaritae, Reginae Scotiae., and not
         from any optical text layer. That printing attests its own 1862 Tridentine body recension. It does
@@ -49307,14 +50937,57 @@ sections:
       date: 11-16
       rank: Optional memorial
       kind: sanctoral
-      text_status:
-        state: unavailable
-        scope: missal-formulary
-        reasons:
-        - kind: witness-gap
-          source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+      propers:
+      - name: First Reading
+        source: scripture
+        verses:
+        - book: Ephesians
+          ranges:
+          - begin: {chapter: 3, verse: 14}
+            end: {chapter: 3, verse: 19}
+          ref: Ephesians 3:14-19
+      - name: Responsorial Psalm
+        source: scripture
+        verses:
+        - book: Psalms
+          ranges:
+          - begin: {chapter: 23, verse: 1}
+            end: {chapter: 23, verse: 3}
+          - begin: {chapter: 23, verse: 4}
+            end: {chapter: 23, verse: 4}
+          - begin: {chapter: 23, verse: 5}
+            end: {chapter: 23, verse: 5}
+          - begin: {chapter: 23, verse: 6}
+            end: {chapter: 23, verse: 6}
+          ref: Psalm 23:1-3, 4, 5, 6
+      - name: Gospel Acclamation
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 9, part: b}
+            end: {chapter: 15, verse: 9, part: b}
+          - begin: {chapter: 15, verse: 5, part: b}
+            end: {chapter: 15, verse: 5, part: b}
+          ref: John 15:9b, 5b
+      - name: Gospel
+        source: scripture
+        verses:
+        - book: John
+          ranges:
+          - begin: {chapter: 15, verse: 1}
+            end: {chapter: 15, verse: 8}
+          ref: John 15:1-8
+      notes: The Lectionary citations were read at 400 dpi in the page image of the Ordo lectionum
+        Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact
+        page 369, printed page 315, n. 677. The Ordo heads it De Communi virginum vel sanctarum
+        [pro religiosis], and this repository carries identity-only Common records that do not resolve
+        a target-edition formulary, so the heading is recorded and not resolved. The Gospel Acclamation
+        is printed in the unusual order John 15:9b, 5b, preserved here. The Ordo prints its responsorial
+        psalms in Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse
+        concordance because this file declares psalm_numbering hebrew. No lectionary wording is reproduced.
+        Stable calendar identity split from a formerly composite optional-memorial entry. No Missal
+        formulary body is inferred or invented.
     - key: saint-elizabeth-hungary-religious
       name: Saint Elizabeth of Hungary, Religious
       registry: pc-11-17
@@ -49498,6 +51171,18 @@ sections:
       date: 11-23
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 370, printed page 316, n. 682. The Ordo heads it De Communi martyrum
+        vel pastorum [pro papa], and this repository carries identity-only Common records that
+        do not resolve a target-edition formulary, so the heading is recorded and not resolved.
+        Its Psalm 88 is converted to Hebrew Psalm 89 by scripts/_psalms from the tracked verse
+        concordance, because this file declares psalm_numbering hebrew. The Ordo groups the
+        psalm''s twenty-fifth and twenty-seventh verses, 25 et 27, into one stanza with et; this
+        file''s citation grammar has an ordered list of ranges and no stanza grouping, so each is
+        recorded as a separate selection naming the same verse. The citation assignments are
+        the only payload taken from that restricted witness; no Lectionary text is reproduced.
+        See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -49577,6 +51262,19 @@ sections:
       date: 11-23
       rank: Optional memorial
       kind: sanctoral
+      notes: 'The Lectionary citations were read at 200 dpi in the page image of the Ordo
+        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
+        at artifact page 370, printed page 316, n. 683. The Ordo heads it De Communi pastorum
+        [pro missionariis] vel sanctorum [pro religiosis], and this repository carries
+        identity-only Common records that do not resolve a target-edition formulary, so the
+        heading is recorded and not resolved. Its Psalm 95 is converted to Hebrew Psalm 96 by
+        scripts/_psalms from the tracked verse concordance, because this file declares
+        psalm_numbering hebrew. The Ordo prints this selection in nine places: n. 541 has 7-8,
+        while nn. 544, 571, 617, 635, 655, 665 and 683 and their Common referent n. 721,5 at
+        artifact page 386, printed page 332, have 7-8a. All nine were read in the page images,
+        five at 400 dpi, and each is recorded as printed rather than harmonized. The citation
+        assignments are the only payload taken from that restricted witness; no Lectionary text
+        is reproduced. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
       propers:
       - name: First Reading
         source: scripture
@@ -49699,7 +51397,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 147, printed page 139'
         options:
@@ -49709,12 +51407,13 @@ sections:
           selection: 'For One Virgin'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes both permitted Common directions
-        recorded in common_from; neither has been selected by the index. The relation covers
-        only Missal propers and selects no Lectionary reading. No exact Collect exemplar
+        recorded in common_from; neither has been selected by the index. The directions
+        cover only Entrance and Communion Antiphons, resolve no text, and select no
+        Lectionary reading. No exact target-formulary exemplar
         is carried or acquired for this entry; nothing has been invented.'
     - key: saint-andrew-apostle
       name: Saint Andrew, Apostle
@@ -50004,7 +51703,7 @@ sections:
       rank: Optional memorial
       kind: sanctoral
       common_from:
-        scope: 'missal-propers-except-collect'
+        scope: 'missal-antiphons'
         source_id: 'artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
         locus: 'artifact page 149, printed page 141'
         options:
@@ -50012,12 +51711,13 @@ sections:
           selection: 'For One Saint'
       text_status:
         state: 'unavailable'
-        scope: 'proper-collect'
+        scope: 'missal-formulary'
         reasons:
         - kind: 'no-exemplar'
       notes: 'The official ICEL Antiphonary establishes the Common direction recorded
-        in common_from. The relation covers only Missal propers and selects no Lectionary
-        reading. No exact Collect exemplar is carried or acquired for this entry;
+        in common_from. The direction covers only Entrance and Communion Antiphons,
+        resolves no text, and selects no Lectionary
+        reading. No exact target-formulary exemplar is carried or acquired for this entry;
         nothing has been invented.'
     - key: saint-damasus-i-pope
       name: Saint Damasus I, Pope

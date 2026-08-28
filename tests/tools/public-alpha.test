@@ -115,6 +115,7 @@ reject verify --deployment-target nonesuch
 python3 - "$repo" "$sandbox/data-root" <<'PY'
 import importlib.machinery
 import importlib.util
+import hashlib
 import json
 import shutil
 import sys
@@ -142,15 +143,21 @@ offered = set(tool.offered_bible_ids())
 assert offered, "the repository manifest offers no editions"
 assert "knox" not in offered, offered
 assert tool.data_root_edition_ids(tool.web_data_files()) == offered
+real_copied_inputs = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in tool.web_data_files().values()
+}
+real_bound_inputs = tool.site_source_paths()
+assert real_copied_inputs <= real_bound_inputs, sorted(
+    real_copied_inputs - real_bound_inputs
+)
 
 # Exercise the approval inventory itself, not only its path classifier: every
-# and only the explicitly bound browser-structure families must reach the
-# exact-byte site-source closure.
+# copied browser/data input must reach the exact-byte site-source closure.
 real_structure_prefix = tool.WEB_DATA_ROOT_RELATIVE / "structure"
 real_structure_expected = {
     path.relative_to(tool.ROOT).as_posix()
-    for kind in tool.BOUND_STRUCTURE_KINDS
-    for path in (tool.ROOT / real_structure_prefix / kind).rglob("*.json")
+    for path in (tool.ROOT / real_structure_prefix).rglob("*.json")
     if path.is_file() and not path.is_symlink()
 }
 real_structure_bound = {
@@ -180,6 +187,27 @@ assert real_browser_bound == real_browser_expected, (
 
 # A sandbox holding one offered edition and one that is on disk only.
 tool.ROOT = sandbox
+# The release gate deliberately refuses a public-data root when its hash-only
+# English quarantine ledger is absent. This isolated root therefore carries a
+# complete synthetic ledger: it exercises the same 172-row floor without
+# copying or materializing any protected wording.
+quarantine = sandbox / tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE
+quarantine.parent.mkdir(parents=True, exist_ok=True)
+quarantine.write_text(
+    "".join(
+        "[[untranslated]]\n"
+        'lang = "en"\n'
+        'extent = "body"\n'
+        f'quarantined_text_sha256 = ["{digest}"]\n'
+        for digest in (
+            hashlib.sha256(
+                f"project-created-public-alpha-quarantine-{index}".encode("utf-8")
+            ).hexdigest()
+            for index in range(tool.POSTCONCILIAR_QUARANTINE_BASELINE_ROWS)
+        )
+    ),
+    encoding="utf-8",
+)
 # The page ships with the data it reads, so a sandbox carrying a data root
 # carries a browser too; without one the assembly refuses, which is the
 # invariant that keeps a corpus from going live with nothing to serve it.
@@ -204,6 +232,12 @@ for directory in tool.WEB_BROWSER_DIRECTORIES:
     page = sandbox / "src/web/browser" / directory / "index.html"
     page.parent.mkdir(parents=True, exist_ok=True)
     page.write_text(WHOLE_PAGE, encoding="utf-8")
+(sandbox / "src/web/browser/shared/browser-core.css").write_text(
+    "body { color: black; }\n", encoding="utf-8"
+)
+(sandbox / "src/web/browser/shared/browser-core.js").write_text(
+    "'use strict';\n", encoding="utf-8"
+)
 data = sandbox / "src/web/data"
 write(
     data / "bibles.json",
@@ -235,18 +269,24 @@ protected_manifest.write_text(
     'rights_status = "unresolved"\n',
     encoding="utf-8",
 )
+licensed_manifest = (
+    sandbox / "src/sources/works/example/licensed-missal/editions/fixture/"
+    "artifacts/licensed/artifact.toml"
+)
+licensed_manifest.parent.mkdir(parents=True, exist_ok=True)
+licensed_manifest.write_text(
+    'id = "artifact.example.licensed-missal.licensed"\n'
+    'edition_id = "edition.example.licensed-missal"\n'
+    'rights_status = "licensed"\n',
+    encoding="utf-8",
+)
 # The approval closure binds the exact generated liturgy and source-browser
-# structures it serves, but not unrelated generated JSON or the many Bible
-# fragments governed by the separately bound bibles.json decision.
+# structures it serves. The classifier has no family allowlist: any future
+# copied JSON under the generated data root is bound automatically.
 assert tool.is_bound_web_data_source(data / "bibles.json")
-for kind in ("calendar", "propers", "rubrics", "ordinary", "sources"):
+for kind in ("calendar", "propers", "rubrics", "ordinary", "sources", "catena"):
     assert tool.is_bound_web_data_source(data / f"structure/{kind}/test.json"), kind
-for relative in (
-    "structure/catena/test.json",
-    "sources/test.json",
-    "offered/chapters/Ps/24.json",
-):
-    assert not tool.is_bound_web_data_source(data / relative), relative
+assert tool.is_bound_web_data_source(data / "future-family/test.json")
 for edition in ("offered", "licensed"):
     write(
         sandbox / f"src/sources/bibles/{edition}/chapters/Ps/24.json",
@@ -256,6 +296,15 @@ for edition in ("offered", "licensed"):
 files = tool.web_data_files()
 assert tool.data_root_edition_ids(files) == {"offered"}, sorted(files)
 assert not any("licensed" in path for path in files), sorted(files)
+bound_sources = tool.site_source_paths()
+copied_sources = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in files.values()
+}
+assert copied_sources <= bound_sources, sorted(copied_sources - bound_sources)
+assert "src/web/data/structure/catena/test.json" in bound_sources
+assert "src/sources/bibles/offered/chapters/Ps/24.json" in bound_sources
+assert "src/sources/bibles/licensed/chapters/Ps/24.json" not in bound_sources
 
 # Generated liturgical JSON is a downloadable public surface, not merely an
 # implementation detail of the browser. Permission-scoped text, generic
@@ -267,7 +316,7 @@ safe_proper = json.loads(proper_path.read_text(encoding="utf-8"))
 write(
     proper_path,
     {"masses": [{"common_from": {
-        "scope": "missal-propers-except-collect",
+        "scope": "missal-antiphons",
         "source_id": "edition.example.fatima-antiphonary",
         "locus": "private page locator",
         "options": [{"mass": "Common of the Blessed Virgin Mary"}],
@@ -283,7 +332,7 @@ else:
 write(
     proper_path,
     {"masses": [{"common_from": {
-        "scope": "missal-propers-except-collect",
+        "scope": "missal-antiphons",
         "options": [{"mass": "Common of the Blessed Virgin Mary"}],
     }}]},
 )
@@ -344,6 +393,34 @@ except tool.ReleaseError as exc:
     assert "ELLC witness" in str(exc), exc
 else:
     raise AssertionError("generic licensed-free proper JSON was accepted")
+
+# A generic licensed artifact identity is restricted even if a stale producer
+# omits its rights field or lies with a public-domain spelling. Source-study
+# readability is not authorization for every liturgy surface.
+for row in (
+    {
+        "lang": "en",
+        "source_id": "artifact.example.licensed-missal.licensed",
+        "text": "mislabelled licensed source",
+    },
+    {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "artifact.example.licensed-missal.licensed",
+        "text": "mislabelled licensed source",
+    },
+):
+    write(
+        proper_path,
+        {"masses": [{"propers": [{"translations": [row]}]}]},
+    )
+    try:
+        tool.web_data_files()
+    except tool.ReleaseError as exc:
+        assert "protected source identity" in str(exc), exc
+        assert "artifact.example.licensed-missal.licensed" in str(exc), exc
+    else:
+        raise AssertionError("licensed artifact identity was accepted")
 
 write(
     proper_path,
@@ -514,6 +591,31 @@ write(
 tool.web_data_files()
 write(
     ordinary_path,
+    {"language_absences": [
+        {"key": "text-rights-withheld", "lang": "en", "count": 2,
+         "state": "rights-restricted", "kind": "rights-withheld"},
+        {"key": "text-rights-unresolved", "lang": "la", "count": 1,
+         "state": "unresolved", "kind": "rights-unresolved"},
+    ]},
+)
+tool.web_data_files()
+write(
+    ordinary_path,
+    {"language_absences": [{
+        "key": "text-rights-withheld", "lang": "en", "count": 2,
+        "state": "rights-restricted", "kind": "rights-withheld",
+        "source_id": "edition.example.private",
+    }]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "must contain exactly key, lang, count, state and kind" in str(exc), exc
+else:
+    raise AssertionError("rich public Ordinary language absence was accepted")
+
+write(
+    ordinary_path,
     {"absences": [{
         "key": "text-rights-withheld", "count": 2,
         "state": "rights-restricted", "kind": "rights-withheld",
@@ -549,8 +651,7 @@ write(ordinary_path, {"sections": []})
 sandbox_structure_prefix = tool.WEB_DATA_ROOT_RELATIVE / "structure"
 sandbox_structure_expected = {
     path.relative_to(tool.ROOT).as_posix()
-    for kind in tool.BOUND_STRUCTURE_KINDS
-    for path in (tool.ROOT / sandbox_structure_prefix / kind).rglob("*.json")
+    for path in (tool.ROOT / sandbox_structure_prefix).rglob("*.json")
     if path.is_file() and not path.is_symlink()
 }
 sandbox_structure_bound = {
@@ -606,6 +707,20 @@ assert not (site / f"{root}/licensed").exists()
 # citation demand nothing: numbering is a property of the system, not a
 # translation to be shipped twice.
 assert not (site / f"{root}/offered/chapters/Ps/25.json").exists()
+assert tool.verify_web_data(site) == []
+
+# Artifact-local checksums cannot authenticate copied browser programs. Even
+# after rewriting SHA256SUMS, source parity must reject a modified JS payload.
+copied_js = site / "shared/browser-core.js"
+copied_js.write_text("'use strict'; // tampered\n", encoding="utf-8")
+tool.write_checksums(site)
+errors = tool.verify_web_data(site)
+assert any(
+    "shared/browser-core.js" in error and "does not match" in error
+    for error in errors
+), errors
+shutil.copyfile(sandbox / "src/web/browser/shared/browser-core.js", copied_js)
+tool.write_checksums(site)
 assert tool.verify_web_data(site) == []
 
 # Planted after assembly, an unoffered edition still fails verification.

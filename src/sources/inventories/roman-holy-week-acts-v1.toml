@@ -49,11 +49,16 @@ renamed, moved, reslotted, unrecorded -- and this file exercises all seven.
 evidence = """
 Nothing in this file has been read against a page image. Every quotation, line
 number and reading below comes from Internet Archive DjVu optical-character-
-recognition text layers of public-domain scans, which are a discovery aid and
-not a witness to wording. Each unit and each act therefore carries `read_from`,
-whose only values here are `ocr-only` and `not-read`; no row claims
-`page-image`, and `inspected` in the sense of guidance/sources.md is the ceiling
-reached, never `verified`.
+recognition text layers, which are discovery aids and not witnesses to wording.
+Their rights are recorded per physical artifact rather than inferred from the
+edition a text layer appears to reproduce. In particular, the artifact formerly
+called the 1920 printing is a later composite: its body is 1951-1954 and its
+appendix is post-1970, its exact bytes are remote, and their rights are
+unresolved. That body retains pre-1955 Holy Week and can locate structural
+features; it cannot identify an exact 1920 printing or establish target-edition
+wording. Each unit and each act therefore carries `read_from`, whose only values
+here are `ocr-only` and `not-read`; no row claims `page-image`, and `inspected`
+in the sense of guidance/sources.md is the ceiling reached, never `verified`.
 
 That matters more here than usual. On 2026-07-31 this repository collated 99
 orations that had been taken from an OCR text layer of a single 1861 printing
@@ -91,6 +96,11 @@ open_items = """
   `editio-typica-1920` and is not represented: the 1920 decree says its text was
   drawn from it. The edge is drawn with `via_unrepresented` set, so the history
   says "descends from" and not "immediately follows".
+- No exact 1920 printing is held. The OCR artifact whose body preserves the
+  pre-1955 Holy Week is a later composite, body 1951-1954 with a post-1970
+  appendix. It is retained only as a structural/search witness, under the exact
+  artifact id and hash below; the 1862 Pustet witness supplies an independently
+  dated pre-reform comparison, not target-edition collation.
 - No act is cited here that let the pre-1955 Holy Week continue in use after
   25 March 1956. The tracer therefore draws no such branch. The absence is a
   statement about this corpus and this search, not about history.
@@ -149,9 +159,9 @@ on and draws no edge into. A root here means "this record starts here", not
 """
 act_citation = "cited-in-corpus"
 citation = "Pius V, Quo primum tempore, 14 July 1570, printed in the front matter of the witnesses below."
-attested_in = ["pustet-1862", "missale-romanum-1920"]
+attested_in = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
 read_from = "ocr-only"
-locus = "pustet-1862 OCR lines 155-283; missale-romanum-1920 OCR lines 80-230"
+locus = "pustet-1862 OCR lines 155-283; missale-romanum-later-composite-pre-1955-body OCR lines 80-230"
 dateline = "Datum Romae apud S. Petrum, anno Incarnationis Dominicae millesimo quingentesimo, septuagesimo, pridie Idus Julii, Pontificatus nostri anno quinto."
 promulgation_note = "Posted at the doors of St Peter's and of the Apostolic Chancery on 29 July 1570, per the subscription printed after the bull in pustet-1862 (OCR lines 276-282)."
 effect = "Establishes the state this tracer treats as its base."
@@ -270,7 +280,7 @@ locus = "pustet-1862 OCR lines 409-447"
 dateline = "die Secunda Septembris M.DC.XXXIV. Pontificatus nostri anno duodecimo."
 effect = "No departure in this slice has been established for it."
 effect_established = false
-effect_note = "The witnesses this tracer read for units are 1862, 1920 and 1962; none of them separates the 1604 state from the 1634 state."
+effect_note = "The witnesses this tracer read for units are the 1862 printing, the later composite's pre-reform body, and the 1962 printing; none of them separates the 1604 state from the 1634 state."
 
 [[acts]]
 id = "divino-afflatu-1911"
@@ -294,9 +304,9 @@ between them.
 """
 act_citation = "cited-in-corpus"
 citation = "Pius X, Divino afflatu, 1 November 1911, cited by name in the 1920 decree of approbation."
-attested_in = ["missale-romanum-1920"]
+attested_in = ["missale-romanum-later-composite-pre-1955-body"]
 read_from = "ocr-only"
-locus = "missale-romanum-1920 OCR lines 18-19 (citation only; the constitution's own text is not in this corpus)"
+locus = "missale-romanum-later-composite-pre-1955-body OCR lines 18-19 (citation only; the constitution's own text is not in this corpus)"
 effect = "No departure in this slice."
 effect_established = true
 effect_note = """
@@ -322,9 +332,9 @@ parent_kind = "act-states-it"
 parent_basis = "Named beside Divino afflatu in the same clause of the 1920 decree of approbation, and dated after it."
 act_citation = "cited-in-corpus"
 citation = "Pius X, Abhinc duos annos, 23 October 1913, cited by name in the 1920 decree of approbation."
-attested_in = ["missale-romanum-1920"]
+attested_in = ["missale-romanum-later-composite-pre-1955-body"]
 read_from = "ocr-only"
-locus = "missale-romanum-1920 OCR lines 19-20 (citation only)"
+locus = "missale-romanum-later-composite-pre-1955-body OCR lines 19-20 (citation only)"
 effect = "No departure in this slice."
 effect_established = true
 effect_note = "Second of the two stations that write no row; see divino-afflatu-1911."
@@ -373,13 +383,13 @@ introduced in the typical Breviary.
 """
 act_citation = "cited-in-corpus"
 citation = "Sacred Congregation of Rites, Decretum approbationis editionis typicae Vaticanae, printed at the head of the 1920 Missale Romanum; the corpus records the promulgation as 25 July 1920."
-attested_in = ["missale-romanum-1920"]
+attested_in = ["missale-romanum-later-composite-pre-1955-body"]
 read_from = "ocr-only"
-locus = "missale-romanum-1920 OCR lines 7-60"
+locus = "missale-romanum-later-composite-pre-1955-body OCR lines 7-60"
 dateline = "Die 25 Julii 1920"
 signatories = "A. Card. Vico, Ep. Portuen. et S. Rufinae, S. R. C. Praefectus; Alexander Verde, S. R. C. Secretarius"
 date_note = """
-Read from the decree's own subscription at missale-romanum-1920 OCR 57-64, not
+Read from the decree's own subscription at missale-romanum-later-composite-pre-1955-body OCR 57-64, not
 taken from the corpus metadata. An earlier draft of this file said the
 subscription was not legible and dated the act at one remove; that was wrong, and
 the correction is recorded rather than quietly applied.
@@ -801,17 +811,23 @@ optical readings and not one.
 """
 
 [[witnesses]]
-id = "missale-romanum-1920"
-label = "Missale Romanum, editio typica vaticana, 1920"
+id = "missale-romanum-later-composite-pre-1955-body"
+label = "Later composite Missale Romanum: body 1951-1954, appendix 1970 or later"
 language = "la"
-printed = "1920"
+printed = "assembled 1970 or later; body printed 1951-1954"
 attests = "editio-typica-1920"
 attests_kind = "decree-printed-in-book"
-attests_basis = "The book prints its own DECRETUM APPROBATIONIS EDITIONIS TYPICAE VATICANAE at its head, which is the act it attests."
+attests_basis = "The body reprints the DECRETUM APPROBATIONIS EDITIONIS TYPICAE VATICANAE at its head, so it witnesses the decree's words and the pre-1955 body it carries. Reprinting the decree does not identify the physical printing as the Vatican 1920 impression or establish exact correspondence with that target edition."
 read_from = "ocr-only"
 ocr_artifact = "MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes"
-rights = "public-domain"
-rights_basis = "1920 printing. The corpus this came from records it as treated as public domain in the United States, and notes that the Internet Archive item carries no licence field. That is a weaker basis than the pre-1900 printings above and is recorded as it stands."
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196"
+artifact_sha256 = "aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0"
+artifact_storage = "remote"
+evidence_scope = "structural-search-only"
+target_edition_correspondence = "unverified"
+rights = "unresolved"
+rights_basis = "The canonical artifact record controls: these exact bytes combine a 1951-1954 body with a post-1970 appendix, are remote, and have rights_status unresolved. The public-domain status of the underlying 1920 edition does not clear the later composite artifact. No artifact words are published from this witness here."
+units_read_note = "Holy Week is read only through the OCR body as a locator for headings, order, presence, and placement. The body retains pre-1955 Holy Week, but no reading is target-edition wording and no correspondence to an exact 1920 printing is claimed."
 
 [[witnesses]]
 id = "benziger-iuxta-typicam-1962"
@@ -867,7 +883,8 @@ rights_basis = "Recorded in the corpus this came from as a public-domain Interne
 # `at` names the act whose state each row enters at. Every row below enters at
 # `si-quid-est-1634` and not at `quo-primum-1570`, and the reason is the rule
 # this file is built on rather than a guess about 1570. The earliest witnesses
-# read for any unit are the 1862 Pustet printing and the 1920 typical edition,
+# read for any unit are the 1862 Pustet printing and the later composite's
+# pre-1955 body,
 # and the latest act the 1862 printing attests is Urban VIII's revision. So the
 # earliest state anything here can be placed in is the one that act left. The
 # two stations before it hold no Holy Week at all, and that is the record saying
@@ -879,8 +896,8 @@ at = "si-quid-est-1634"
 title = "Dominica in Palmis"
 day = "Sunday before Easter"
 hour = "in the morning, in choir after Terce"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "pustet-1862 28094; missale-romanum-1920 31875-31877, hour at 31882"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "pustet-1862 28094; missale-romanum-later-composite-pre-1955-body 31875-31877, hour at 31882"
 
 [[masses]]
 id = "feria-v-in-coena-domini"
@@ -888,8 +905,8 @@ at = "si-quid-est-1634"
 title = "Feria V in Coena Domini"
 day = "Thursday of Holy Week"
 hour = "not established"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "pustet-1862 31249; missale-romanum-1920 34811-34813"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "pustet-1862 31249; missale-romanum-later-composite-pre-1955-body 34811-34813"
 
 [[masses]]
 id = "feria-vi-in-parasceve"
@@ -897,8 +914,8 @@ at = "si-quid-est-1634"
 title = "Feria VI in Parasceve"
 day = "Friday of Holy Week"
 hour = "in the morning, in choir after None"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "pustet-1862 31916; missale-romanum-1920 35401-35403, hour at 35408"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "pustet-1862 31916; missale-romanum-later-composite-pre-1955-body 35401-35403, hour at 35408"
 
 [[masses]]
 id = "sabbato-sancto"
@@ -909,15 +926,15 @@ hour = "in the morning, after None"
 hour_basis = """
 No rubric in either pre-1955 witness fixes an hour for Holy Saturday in words.
 The morning is established indirectly and from two places at once: the service
-begins `Dicta Nona in Choro` (missale-romanum-1920 37276, pustet-1862 33479),
+begins `Dicta Nona in Choro` (missale-romanum-later-composite-pre-1955-body 37276, pustet-1862 33479),
 and the general rubric De hora celebrandi Missam allows Mass only `ab aurora
-usque ad meridiem` (missale-romanum-1920 9614-9615, pustet-1862 8151-8152). Both
+usque ad meridiem` (missale-romanum-later-composite-pre-1955-body 9614-9615, pustet-1862 8151-8152). Both
 books also open the day with the phrase `Hora competenti`, which is the same
 phrase the 1962 book uses for a midnight Vigil, so that phrase alone establishes
 nothing in either direction.
 """
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "pustet-1862 33466; missale-romanum-1920 37265"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "pustet-1862 33466; missale-romanum-later-composite-pre-1955-body 37265"
 
 # --- Base units -------------------------------------------------------------
 #
@@ -936,8 +953,8 @@ name = "Antiphona"
 incipit = "Hosanna filio David"
 order = 10
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 31891-31895; pustet-1862 28109-28111"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 31891-31895; pustet-1862 28109-28111"
 
 [[units]]
 id = "palmis.benedictio.oratio-deus-quem-diligere"
@@ -948,8 +965,8 @@ name = "Oratio"
 incipit = "Deus, quem diligere et amare justitia est"
 order = 20
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 31907-31909; pustet-1862 28123-28124"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 31907-31909; pustet-1862 28123-28124"
 
 [[units]]
 id = "palmis.benedictio.lectio-exodi"
@@ -960,8 +977,8 @@ name = "Lectio libri Exodi"
 incipit = "In diebus illis: Venerunt filii Israel in Elim"
 order = 30
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 31922-31926 (Exodi 15, 27; 16, 1-7); pustet-1862 28141-28142"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 31922-31926 (Exodi 15, 27; 16, 1-7); pustet-1862 28141-28142"
 
 [[units]]
 id = "palmis.benedictio.graduale-collegerunt"
@@ -972,8 +989,8 @@ name = "Graduale"
 incipit = "Collegerunt pontifices et pharisaei consilium"
 order = 40
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 31966-31968 (Joann. 11, 47-49, 50 et 53); pustet-1862 28189-28191"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 31966-31968 (Joann. 11, 47-49, 50 et 53); pustet-1862 28189-28191"
 
 [[units]]
 id = "palmis.benedictio.evangelium"
@@ -984,8 +1001,8 @@ name = "Sequentia sancti Evangelii secundum Matthaeum"
 incipit = "In illo tempore: Cum appropinquasset Jesus Jerosolymis"
 order = 50
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32017-32022 (Matth. 21, 1-9); pustet-1862 28242-28247"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32017-32022 (Matth. 21, 1-9); pustet-1862 28242-28247"
 
 [[units]]
 id = "palmis.benedictio.oratio-auge-fidem"
@@ -996,8 +1013,8 @@ name = "Oratio"
 incipit = "Auge fidem in te sperantium, Deus"
 order = 60
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32066-32068; pustet-1862 28304-28306"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32066-32068; pustet-1862 28304-28306"
 
 [[units]]
 id = "palmis.benedictio.praefatio"
@@ -1008,8 +1025,8 @@ name = "Praefatio"
 incipit = "Vere dignum et justum est"
 order = 70
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32106-32196; pustet-1862 28353"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32106-32196; pustet-1862 28353"
 
 [[units]]
 id = "palmis.benedictio.sanctus"
@@ -1020,8 +1037,8 @@ name = "Sanctus"
 incipit = "Sanctus, Sanctus, Sanctus Dominus Deus Sabaoth"
 order = 80
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32305-32307; pustet-1862 28440-28441"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32305-32307; pustet-1862 28440-28441"
 
 [[units]]
 id = "palmis.benedictio.oratio-petimus"
@@ -1032,8 +1049,8 @@ name = "Oratio"
 incipit = "Petimus, Domine sancte, Pater omnipotens, aeterne Deus"
 order = 90
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32318-32320; pustet-1862 28451-28457"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32318-32320; pustet-1862 28451-28457"
 
 [[units]]
 id = "palmis.benedictio.oratio-deus-qui-dispersa"
@@ -1044,8 +1061,8 @@ name = "Oratio"
 incipit = "Deus, qui dispersa congregas, et congregata conservas"
 order = 100
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32340-32342; pustet-1862 28477-28479"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32340-32342; pustet-1862 28477-28479"
 
 [[units]]
 id = "palmis.benedictio.oratio-deus-qui-miro"
@@ -1056,8 +1073,8 @@ name = "Oratio"
 incipit = "Deus, qui miro dispositionis ordine, ex rebus etiam insensibilibus"
 order = 110
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32358-32360; pustet-1862 28502-28504"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32358-32360; pustet-1862 28502-28504"
 
 [[units]]
 id = "palmis.benedictio.oratio-deus-qui-per-olivae-ramum"
@@ -1068,8 +1085,8 @@ name = "Oratio"
 incipit = "Deus, qui, per olivae ramum, pacem terris columbam nuntiare jussisti"
 order = 120
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32404-32406; pustet-1862 28545-28547"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32404-32406; pustet-1862 28545-28547"
 
 [[units]]
 id = "palmis.benedictio.oratio-benedic-quaesumus"
@@ -1080,8 +1097,8 @@ name = "Oratio"
 incipit = "Benedic, quaesumus, Domine, hos palmarum seu olivarum ramos"
 order = 130
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32416-32418; pustet-1862 28562-28564"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32416-32418; pustet-1862 28562-28564"
 
 [[units]]
 id = "palmis.benedictio.oratio-deus-qui-filium-tuum"
@@ -1092,8 +1109,8 @@ name = "Oratio"
 incipit = "Deus, qui Filium tuum Jesum Christum, Dominum nostrum, pro salute nostra"
 order = 140
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32444-32446; pustet-1862 28588-28590"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32444-32446; pustet-1862 28588-28590"
 
 [[units]]
 id = "palmis.distributio.antiphona-pueri-1"
@@ -1104,8 +1121,8 @@ name = "Antiphona"
 incipit = "Pueri Hebraeorum"
 order = 150
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32481 (Joann. 12, 13); pustet-1862 28643"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32481 (Joann. 12, 13); pustet-1862 28643"
 
 [[units]]
 id = "palmis.distributio.antiphona-pueri-2"
@@ -1116,8 +1133,8 @@ name = "Alia Antiphona"
 incipit = "Pueri Hebraeorum"
 order = 160
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32487 (Matth. 21, 8 et 9); pustet-1862 28649"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32487 (Matth. 21, 8 et 9); pustet-1862 28649"
 incipit_note = "The two antiphons share an incipit in what the OCR carries; the words that tell them apart were not read."
 
 [[units]]
@@ -1129,8 +1146,8 @@ name = "Oratio"
 incipit = "Omnipotens sempiterne Deus, qui Dominum nostrum Jesum Christum super pullum asinae sedere fecisti"
 order = 170
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 32502-32504; pustet-1862 28663-28665"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32502-32504; pustet-1862 28663-28665"
 
 [[units]]
 id = "palmis.missa.introitus"
@@ -1141,14 +1158,15 @@ name = "Introitus"
 incipit = ""
 order = 200
 read_from = "ocr-only"
-attested_by = ["missale-romanum-1920"]
-locus = "missale-romanum-1920 32689 (Introitus. Ps. 21, 20 et 22.)"
+attested_by = ["missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 32689 (Introitus. Ps. 21, 20 et 22.)"
 incipit_note = """
 The label and the psalm citation were read; the words were not. This book sets
 its Introits with chant notation and the text layer does not carry them: a
-search of the 1920 and 1862 scans for the Palm Sunday Introit's own words,
-`Domine, ne longe facias`, returns nothing, while the 1962 scan returns it at
-35161. That is a fact about three scanners, not about three books.
+search of the later composite and 1862 scans for the Palm Sunday Introit's own
+words, `Domine, ne longe facias`, returns nothing, while the 1962 scan returns
+it at 35161. That is a fact about three scanners, not about three books, and
+does not identify the composite as an exact 1920 printing.
 """
 
 [[units]]
@@ -1160,8 +1178,8 @@ name = "Introitus"
 incipit = ""
 order = 200
 read_from = "ocr-only"
-attested_by = ["missale-romanum-1920"]
-locus = "missale-romanum-1920 34818 (Introitus. Gal. 6, 14.)"
+attested_by = ["missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 34818 (Introitus. Gal. 6, 14.)"
 
 [[units]]
 id = "parasceve.orationes.pro-iudaeis-invitatorium"
@@ -1172,8 +1190,8 @@ name = "Oremus"
 incipit = "Oremus et pro perfidis Judaeis"
 order = 300
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 36442-36458; pustet-1862 32769-32774"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 36442-36458; pustet-1862 32769-32774"
 
 [[units]]
 id = "parasceve.orationes.pro-iudaeis-rubrica"
@@ -1184,15 +1202,17 @@ name = "Rubrica"
 incipit = "Non respondetur Amen, nec dicitur Oremus, aut Flectamus genua, aut Levate"
 order = 310
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 36461-36462; pustet-1862 32776-32777"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 36461-36462; pustet-1862 32776-32777"
 incipit_note = """
 The two witnesses print different rubrics here and no act stands between them in
-this record. The 1920 has the full form quoted; the 1862 has only `Non
-respondetur Amen, sed statim dicitur:`. Whether that is two printings, two
-states, or one scanner is not established, and the incipit above is the 1920's.
-This is exactly the case the act rule keeps out of the history: it is recorded
-as a disagreement between witnesses and generates no station.
+this record. The later composite's pre-reform body has the full form quoted;
+the 1862 printing has only `Non respondetur Amen, sed statim dicitur:`. Whether
+that is two printings, two states, or one scanner is not established, and the
+incipit above is the composite OCR's. This is exactly the case the act rule
+keeps out of the history: it is recorded as a disagreement between witnesses
+and generates no station. It does not establish the composite as an exact 1920
+printing.
 """
 
 [[units]]
@@ -1210,9 +1230,9 @@ eundem Dominum.
 """
 order = 320
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 36471-36482; pustet-1862 32779-32798"
-text_note = "Transcribed from the 1920 text layer, with its line breaks joined and nothing else altered. Not collated against any page."
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 36471-36482; pustet-1862 32779-32798"
+text_note = "Transcribed from the later composite's OCR text layer, with its line breaks joined and nothing else altered. Not collated against any page and not attributed to an exact 1920 printing."
 
 [[units]]
 id = "sabbato.prophetiae.01"
@@ -1223,8 +1243,8 @@ name = "Prophetia Prima"
 incipit = "In principio creavit Deus coelum et terram"
 order = 400
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 38611-38615 (Gen. 1, 1-31; 2, 1-2); pustet-1862 34319-34322"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 38611-38615 (Gen. 1, 1-31; 2, 1-2); pustet-1862 34319-34322"
 
 [[units]]
 id = "sabbato.prophetiae.02"
@@ -1235,8 +1255,8 @@ name = "Prophetia Secunda"
 incipit = "Noe vero cum quingentorum esset annorum"
 order = 410
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 38770-38774 (Gen. 5; 6; 7 et 8); pustet-1862 34479-34483"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 38770-38774 (Gen. 5; 6; 7 et 8); pustet-1862 34479-34483"
 
 [[units]]
 id = "sabbato.prophetiae.03"
@@ -1247,8 +1267,8 @@ name = "Prophetia Tertia"
 incipit = "In diebus illis: Tentavit Deus Abraham"
 order = 420
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 38993-38997 (Gen. 22, 1-19); pustet-1862 34713-34715"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 38993-38997 (Gen. 22, 1-19); pustet-1862 34713-34715"
 
 [[units]]
 id = "sabbato.prophetiae.04"
@@ -1259,8 +1279,8 @@ name = "Prophetia Quarta"
 incipit = "In diebus illis: Factum est in vigilia matutina"
 order = 430
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39099-39103 (Exodi 14, 24-31; 15, 1); pustet-1862 34826-34830"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39099-39103 (Exodi 14, 24-31; 15, 1); pustet-1862 34826-34830"
 
 [[units]]
 id = "sabbato.prophetiae.05"
@@ -1271,8 +1291,8 @@ name = "Prophetia Quinta"
 incipit = "Haec est hereditas servorum Domini"
 order = 440
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39184-39188 (Isaiae 54, 17; 55, 1-11); pustet-1862 34923-34927"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39184-39188 (Isaiae 54, 17; 55, 1-11); pustet-1862 34923-34927"
 
 [[units]]
 id = "sabbato.prophetiae.06"
@@ -1283,8 +1303,8 @@ name = "Prophetia Sexta"
 incipit = "Audi, Israel, mandata vitae"
 order = 450
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39267-39271 (Baruch 3, 9-38); pustet-1862 35009-35011"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39267-39271 (Baruch 3, 9-38); pustet-1862 35009-35011"
 
 [[units]]
 id = "sabbato.prophetiae.07"
@@ -1295,8 +1315,8 @@ name = "Prophetia Septima"
 incipit = "In diebus illis: Facta est super me manus Domini"
 order = 460
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39381-39385 (Ezech. 37, 1-14); pustet-1862 35129-35131"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39381-39385 (Ezech. 37, 1-14); pustet-1862 35129-35131"
 
 [[units]]
 id = "sabbato.prophetiae.08"
@@ -1307,8 +1327,8 @@ name = "Prophetia Octava"
 incipit = "Apprehendent septem mulieres virum unum in die illa"
 order = 470
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39468-39472 (Is. 4, 1-6); pustet-1862 35225-35226"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39468-39472 (Is. 4, 1-6); pustet-1862 35225-35226"
 
 [[units]]
 id = "sabbato.prophetiae.09"
@@ -1319,8 +1339,8 @@ name = "Prophetia Nona"
 incipit = "In diebus illis: Dixit Dominus ad Moysen et Aaron"
 order = 480
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39537-39541 (Exodi 12, 1-11); pustet-1862 35292-35293"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39537-39541 (Exodi 12, 1-11); pustet-1862 35292-35293"
 
 [[units]]
 id = "sabbato.prophetiae.10"
@@ -1331,8 +1351,8 @@ name = "Prophetia Decima"
 incipit = "In diebus illis: Factum est verbum Domini ad Jonam"
 order = 490
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39605-39609 (Jonae 3, 1-10); pustet-1862 35364-35366"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39605-39609 (Jonae 3, 1-10); pustet-1862 35364-35366"
 
 [[units]]
 id = "sabbato.prophetiae.11"
@@ -1343,8 +1363,8 @@ name = "Prophetia Undecima"
 incipit = "In diebus illis: Scripsit Moyses canticum"
 order = 500
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39672-39676 (Deut. 31, 22-30); pustet-1862 35430-35432"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39672-39676 (Deut. 31, 22-30); pustet-1862 35430-35432"
 
 [[units]]
 id = "sabbato.prophetiae.12"
@@ -1355,8 +1375,8 @@ name = "Prophetia Duodecima"
 incipit = "In diebus illis: Nabuchodonosor rex fecit statuam auream"
 order = 510
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 39756-39760 (Dan. 3, 1-24); pustet-1862 35517-35519"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 39756-39760 (Dan. 3, 1-24); pustet-1862 35517-35519"
 
 [[units]]
 id = "sabbato.missa.rubrica-nec-postcommunio"
@@ -1367,8 +1387,8 @@ name = "Rubrica"
 incipit = "Agnus Dei non dicitur nec Postcommunio"
 order = 600
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 41411-41413; pustet-1862 36945-36948"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 41411-41413; pustet-1862 36945-36948"
 
 [[units]]
 id = "sabbato.vesperae.antiphona"
@@ -1379,8 +1399,8 @@ name = "Antiphona ad Vesperas"
 incipit = "Alleluja, alleluja, alleluja"
 order = 610
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 41415-41446 (with Ps. 116); pustet-1862 36950-36953"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 41415-41446 (with Ps. 116); pustet-1862 36950-36953"
 
 [[units]]
 id = "sabbato.vesperae.antiphona-magnificat"
@@ -1391,8 +1411,8 @@ name = "Antiphona ad Magnificat"
 incipit = "Vespere autem sabbati"
 order = 620
 read_from = "ocr-only"
-attested_by = ["missale-romanum-1920"]
-locus = "missale-romanum-1920 41449-41460"
+attested_by = ["missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 41449-41460"
 
 [[units]]
 id = "sabbato.vesperae.oratio"
@@ -1407,8 +1427,8 @@ satiasti, tua facias pietate concordes. Per Dominum ... in unitate ejusdem.
 """
 order = 630
 read_from = "ocr-only"
-attested_by = ["pustet-1862", "missale-romanum-1920"]
-locus = "missale-romanum-1920 41564-41580; pustet-1862 36993-37004"
+attested_by = ["pustet-1862", "missale-romanum-later-composite-pre-1955-body"]
+locus = "missale-romanum-later-composite-pre-1955-body 41564-41580; pustet-1862 36993-37004"
 corroboration = """
 This is the one unit in the file whose slot has independent support from a page
 image, though in another book and another language. The repository's own record
@@ -1560,7 +1580,7 @@ order = 180
 basis = """
 The same Gospel, Matthew 21, 1-9, in a different place in the service. In the
 pre-1955 witnesses it is read before the blessing prayers
-(missale-romanum-1920 32017-32022, pustet-1862 28242-28247); in the 1962 witness
+(missale-romanum-later-composite-pre-1955-body 32017-32022, pustet-1862 28242-28247); in the 1962 witness
 it stands after the distribution of palms, under its own heading DE LECTIONE
 EVANGELICA (benziger-iuxta-typicam-1962 34784, 34800-34805).
 """
@@ -1647,7 +1667,7 @@ unit = "sabbato.prophetiae.08"
 incipit = "In die illa erit germen Domini in magnificentia"
 basis = """
 The same chapter, shortened at the front. The pre-1955 books print Is. 4, 1-6
-beginning `Apprehendent septem mulieres` (missale-romanum-1920 39468-39472); the
+beginning `Apprehendent septem mulieres` (missale-romanum-later-composite-pre-1955-body 39468-39472); the
 witness prints `I s . 4, 2-6` beginning `Tn die illa erit germen D6mini in
 magnific6ntia` (benziger-iuxta-typicam-1962 41583-41585). Verse 1 is gone. This
 is the one departure in the file where a unit both moves and changes, and it is
@@ -1685,7 +1705,7 @@ basis = """
 The case this tracer was built to carry. The words do not change. In the
 pre-1955 witnesses they are the Oratio of the short Vespers sung after the Holy
 Saturday Mass, in a service whose own rubric says the Mass has no Postcommunion
-(missale-romanum-1920 41411-41413, 41564-41580; pustet-1862 36945-36948,
+(missale-romanum-later-composite-pre-1955-body 41411-41413, 41564-41580; pustet-1862 36945-36948,
 36993-37004). In the 1962 witness the same words stand under the heading
 `Postcommunio seu Oratio` at the end of Lauds (benziger-iuxta-typicam-1962
 43583-43589). A matcher keyed on (mass, proper-name) asks a pre-reform book for
@@ -1704,7 +1724,7 @@ name = "Antiphona ad Laudes"
 order = 610
 basis = """
 The office that follows the Mass changes from Vespers to Lauds. The pre-1955
-witnesses sing it `pro Vesperis in Choro` with Ps. 116 (missale-romanum-1920
+witnesses sing it `pro Vesperis in Choro` with Ps. 116 (missale-romanum-later-composite-pre-1955-body
 41415-41446); the 1962 witness sings it `pro LAUDIBUS dominicae Resurrectionis`
 with Ps. 150 (benziger-iuxta-typicam-1962 43393-43396, 43420). The antiphon's own
 words were not read in the 1962 witness and are carried forward unchanged, which
@@ -1718,7 +1738,7 @@ unit = "sabbato.vesperae.antiphona-magnificat"
 to_slot = "laudes-antiphona-benedictus"
 name = "Antiphona ad Benedictus"
 order = 620
-basis = "The canticle changes with the hour: Magnificat in the pre-1955 witnesses (missale-romanum-1920 41449-41460), Benedictus in the 1962 witness (benziger-iuxta-typicam-1962 43466-43482)."
+basis = "The canticle changes with the hour: Magnificat in the pre-1955 witnesses (missale-romanum-later-composite-pre-1955-body 41449-41460), Benedictus in the 1962 witness (benziger-iuxta-typicam-1962 43466-43482)."
 
 [[departures]]
 act = "maxima-redemptionis-1955"
@@ -1739,8 +1759,11 @@ own section `De antiphona ad Introitum, et Kyrie, eleison` and says at n. 427
 `Ad Introitum dicitur antiphona cum versu psalmi et Gloria Patri`
 (benziger-iuxta-typicam-1962 4633-4637). The Palm Sunday Mass in the same book
 then heads the unit `3. Antiphona ad Introitum` with the citation `Ps. 21, 20 et
-22` (35155-35157), where the 1920 typical edition heads the same unit
-`Introitus. Ps. 21, 20 et 22.` (missale-romanum-1920 32689).
+22` (35155-35157), where the later composite's pre-reform body heads the same
+unit `Introitus. Ps. 21, 20 et 22.`
+(missale-romanum-later-composite-pre-1955-body 32689). This comparison
+establishes the heading change across the two witness bodies, not exact
+correspondence between the composite and the 1920 typical edition.
 """
 
 [[departures]]
@@ -1748,7 +1771,7 @@ act = "codex-rubricarum-1960"
 kind = "renamed"
 unit = "coena.missa.introitus"
 name = "Antiphona ad Introitum"
-basis = "The same rename, at the same citation: missale-romanum-1920 34818 prints `Introitus. Gal. 6, 14.`"
+basis = "The same rename, at the same citation: missale-romanum-later-composite-pre-1955-body 34818 prints `Introitus. Gal. 6, 14.`"
 
 [[departures]]
 act = "editio-typica-1962"
@@ -1756,7 +1779,7 @@ kind = "unrecorded"
 unit = "parasceve.orationes.pro-iudaeis-invitatorium"
 note = """
 The witnesses differ and the act is not established. The pre-1955 books print
-`Oremus et pro perfidis Judaeis` (missale-romanum-1920 36442, pustet-1862
+`Oremus et pro perfidis Judaeis` (missale-romanum-later-composite-pre-1955-body 36442, pustet-1862
 32769-32770); the 1962 witness prints `Oremus et pro Iudaeis` under a numbered
 title `8. PRO CONVERSIONE IUDAEORUM` (benziger-iuxta-typicam-1962 39247, 39252),
 and a whole-file search of it for `perfid` returns nothing. The removal is

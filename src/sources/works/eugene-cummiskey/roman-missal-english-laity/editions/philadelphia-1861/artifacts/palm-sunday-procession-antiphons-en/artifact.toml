@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.palm-sunday-procession-antiphons-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The three rows reproduce only English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup, or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Human page-image transcription on 2026-08-27 from the registered Cummiskey 1861 facsimile at printed p. 238 (IA leaf n248; one-based PDF artifact page 249). Only the three consecutive printed English ANTHEM bodies were copied. The heading, surrounding text, Google matter, line-break hyphenation and page furniture were omitted; words split only by a printed line break were joined. Spelling, capitalization and punctuation were retained. Latin incipits are cataloguing identities established separately by consecutive semantic correspondence and order against the active 1962 target and the visually checked Pustet 1862 Latin witness; they are not represented as Cummiskey page transcription."
+retrieved = "2026-08-27"
+sha256 = "95cfd5a0821db3a1c0b9cfbdec21ee3898f9c844dd26dc2db28683010a3b55ae"
+byte_size = 882
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/palm-sunday-procession-antiphons-en/palm-sunday-procession-antiphons-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and three English rows, distinguished by one-based translation-overlay occurrence. The rows bind only roman-1962 Palm Sunday Procession Antiphon occurrences 1-3. They make no claim for scripture occurrence 4 or the post-1955 occurrences 5-7, and no broader claim that pre-1955 and 1962 Holy Week formularies correspond."

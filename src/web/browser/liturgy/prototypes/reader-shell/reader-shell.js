@@ -615,6 +615,12 @@
 
   function locationAtViewport() {
     if (!runtime.locations.length) return null;
+    const focused = document.activeElement instanceof Element
+      ? document.activeElement.closest('[data-semantic-location]') : null;
+    if (focused && reading.contains(focused)) {
+      const bounds = focused.getBoundingClientRect();
+      if (bounds.bottom > 0 && bounds.top < window.innerHeight) return focused;
+    }
     const threshold = Math.min(window.innerHeight * 0.34, 220);
     let current = runtime.locations[0];
     runtime.locations.forEach((location) => {

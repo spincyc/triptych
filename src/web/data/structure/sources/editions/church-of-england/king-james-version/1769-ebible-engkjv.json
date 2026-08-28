@@ -3,6 +3,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 15409,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.book-index-ee979c6e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "80 books: 39 Old Testament, 14 Apocrypha, 27 New Testament. TRAP: the tokens 1Esd and 2Esd are Ezra and Nehemiah, which the Douay-Rheims calls 1 and 2 Esdras; the tokens 1Esdras and 2Esdras are the apocryphal books of those names, which the Vulgate prints in an appendix as 3 and 4 Esdras and which are not in the Catholic canon. The note column records every book whose canon status or verse division differs from the Douay-Rheims registered here.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "structured-text",
    "byte_size": 2770418,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.ebible-usfm-1ba52215",
    "media_type": "application/zip",
    "notes": "81 USFM files: one front-matter file carrying the 1611 preface and 80 book files, 39 of the Old Testament, 14 of the Apocrypha and 27 of the New Testament. The Old Testament and New Testament files carry Strong's number attributes on most words; the Apocrypha files come from a separate transcription and carry none.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 326661,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.paragraph-marks-511adaf2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "11440 rows across 80 books: 3596 prose paragraph openings, 2311 poetry line openings, and 5533 in the thirteen verse-per-paragraph books. Only the prose rows are usable as paragraph evidence. Two distinct witnesses are recorded here and must not be conflated. The 2970 printed pilcrows are the edition's own: the standardized text prints them, the first at Genesis 1:6 and the last at Acts 20:36, and after that the printers stopped — the twenty-two books following carry none, and none stands in the Apocrypha. 2902 stand at the head of their verse and 68 inside it. F. H. A. Scrivener, who edited the 1873 Cambridge Paragraph Bible and knew them better than anyone, judged them 'unequally and capriciously distributed' and confirmed that they cease after Acts xx. 36 in both 1611 issues and in the Bible of 1613 (The Authorized Edition of the English Bible (1611), Cambridge 1884, pp. 128-129). The remaining prose markers are NOT those pilcrows and must never be described as them: they continue to the end of Revelation, Romans alone carrying 24 of them where the printed text has none, and eBible.org documents no origin for them. They are a modern editorial paragraphing of unstated provenance, and this library uses them only as one witness among others under a rule requiring concurrence, never as the edition's own printing.",
@@ -45,6 +48,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 428966,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-aliases-087975e7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Every row is derived from the tracked deuterocanon numbering concordance; nothing here is written by hand. An empty resolves_to means a citation naming that locus cannot be answered from this edition, whatever it prints at those numbers; a filled one names the locus that carries the cited words. Ecclesiasticus is withheld whole but for 36:18, which is this edition's 36:16.",
@@ -59,6 +63,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 212070,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-01-genesis-a047a715",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Genesis (Gen): 50 chapters and 1533 verses, numbered as chapters 1-50, one LF-terminated line per verse after a header line.",
@@ -73,6 +78,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 179967,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-02-exodus-6384dfb0",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Exodus (Ex): 40 chapters and 1213 verses, numbered as chapters 1-40, one LF-terminated line per verse after a header line.",
@@ -87,6 +93,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 135190,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-03-leviticus-f2bcba83",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Leviticus (Lev): 27 chapters and 859 verses, numbered as chapters 1-27, one LF-terminated line per verse after a header line.",
@@ -101,6 +108,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 187976,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-04-numbers-96aa627f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Numbers (Num): 36 chapters and 1288 verses, numbered as chapters 1-36, one LF-terminated line per verse after a header line.",
@@ -115,6 +123,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 156529,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-05-deuteronomy-43e9342a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Deuteronomy (Deut): 34 chapters and 959 verses, numbered as chapters 1-34, one LF-terminated line per verse after a header line.",
@@ -129,6 +138,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 106473,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-06-joshua-e6731aef",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Joshua (Jos): 24 chapters and 658 verses, numbered as chapters 1-24, one LF-terminated line per verse after a header line.",
@@ -143,6 +153,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 105164,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-07-judges-f3b8c18f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Judges (Judg): 21 chapters and 618 verses, numbered as chapters 1-21, one LF-terminated line per verse after a header line.",
@@ -157,6 +168,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13869,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-08-ruth-e787834b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ruth (Ruth): 4 chapters and 85 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line.",
@@ -171,6 +183,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 139586,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-09-1-samuel-149d2cae",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Samuel (1Kings): 31 chapters and 810 verses, numbered as chapters 1-31, one LF-terminated line per verse after a header line. TRAP: the token 1Kings is the Douay-Rheims token for this book, which the King James Version prints as 1 Samuel. A modern “1 Kings” citation is the book under token 3Kings.",
@@ -185,6 +198,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 115299,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-10-2-samuel-65d46f4d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Samuel (2Kings): 24 chapters and 695 verses, numbered as chapters 1-24, one LF-terminated line per verse after a header line. TRAP: the token 2Kings is the Douay-Rheims token for this book, which the King James Version prints as 2 Samuel. A modern “2 Kings” citation is the book under token 4Kings.",
@@ -199,6 +213,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 137256,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-11-1-kings-8ef16833",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Kings (3Kings): 22 chapters and 816 verses, numbered as chapters 1-22, one LF-terminated line per verse after a header line. TRAP: Douay 3 Kings is the King James 1 Kings.",
@@ -213,6 +228,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 129821,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-12-2-kings-2aa32d00",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Kings (4Kings): 25 chapters and 719 verses, numbered as chapters 1-25, one LF-terminated line per verse after a header line. TRAP: Douay 4 Kings is the King James 2 Kings.",
@@ -227,6 +243,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 120861,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-13-1-chronicles-b224522d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Chronicles (1Par): 29 chapters and 942 verses, numbered as chapters 1-29, one LF-terminated line per verse after a header line.",
@@ -241,6 +258,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 147740,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-14-2-chronicles-87bca2d6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Chronicles (2Par): 36 chapters and 822 verses, numbered as chapters 1-36, one LF-terminated line per verse after a header line.",
@@ -255,6 +273,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 43209,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-15-ezra-6e73e37b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ezra (1Esd): 10 chapters and 280 verses, numbered as chapters 1-10, one LF-terminated line per verse after a header line. TRAP: the Douay-Rheims calls this book 1 Esdras. In this edition the name “1 Esdras” belongs to the apocryphal book under token 1Esdras, so the Douay name is deliberately not registered as an alias here.",
@@ -269,6 +288,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 61305,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-16-nehemiah-2d63e531",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Nehemiah (2Esd): 13 chapters and 406 verses, numbered as chapters 1-13, one LF-terminated line per verse after a header line. TRAP: the Douay-Rheims calls this book 2 Esdras. In this edition the name “2 Esdras” belongs to the apocryphal book under token 2Esdras, so the Douay name is deliberately not registered as an alias here.",
@@ -283,6 +303,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 32014,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-17-esther-1166e1b5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Esther (Esth): 10 chapters and 167 verses, numbered as chapters 1-10, one LF-terminated line per verse after a header line. This is the Hebrew Esther only, 10 chapters ending at 10:3. The Greek additions the Vulgate and the Douay-Rheims print inside Esther at 10:4-16:24 stand in this edition as a separate book under token EsthGr.",
@@ -297,6 +318,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 104423,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-18-job-07da19d9",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Job (Job): 42 chapters and 1070 verses, numbered as chapters 1-42, one LF-terminated line per verse after a header line.",
@@ -311,6 +333,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 245800,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-19-psalms-3b3e8ba7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Psalms (Ps): 150 chapters and 2461 verses, numbered as chapters 1-150, one LF-terminated line per verse after a header line. Psalm numbers are Hebrew/Masoretic numbers throughout, not the Vulgate and Septuagint numbers the 1962 Missal cites. Psalm inscriptions are printed but left unnumbered, so this edition's verse numbers run one or two lower than the Hebrew numbering the psalm concordance records; see the edition record.",
@@ -325,6 +348,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 89608,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-20-proverbs-153719ac",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Proverbs (Prov): 31 chapters and 915 verses, numbered as chapters 1-31, one LF-terminated line per verse after a header line.",
@@ -339,6 +363,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 31009,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-21-ecclesiastes-4fa66bb6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ecclesiastes (Eccles): 12 chapters and 222 verses, numbered as chapters 1-12, one LF-terminated line per verse after a header line. TRAP: the Missal abbreviation “Eccle.” is Ecclesiastes; “Eccli.” is Ecclesiasticus, which is under token Ecclus.",
@@ -353,6 +378,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14837,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-22-song-of-solomon-30afcff5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Song of Songs (Cant): 8 chapters and 117 verses, numbered as chapters 1-8, one LF-terminated line per verse after a header line.",
@@ -367,6 +393,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 204966,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-23-isaiah-1cfe2701",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Isaiah (Is): 66 chapters and 1292 verses, numbered as chapters 1-66, one LF-terminated line per verse after a header line.",
@@ -381,6 +408,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 236846,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-24-jeremiah-f88f7548",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jeremiah (Jer): 52 chapters and 1364 verses, numbered as chapters 1-52, one LF-terminated line per verse after a header line.",
@@ -395,6 +423,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 19455,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-25-lamentations-9f5510cc",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Lamentations (Lam): 5 chapters and 154 verses, numbered as chapters 1-5, one LF-terminated line per verse after a header line.",
@@ -409,6 +438,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 220064,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-26-ezekiel-603a9458",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ezekiel (Ezech): 48 chapters and 1273 verses, numbered as chapters 1-48, one LF-terminated line per verse after a header line.",
@@ -423,6 +453,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 65162,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-27-daniel-6c00506b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Daniel (Dan): 12 chapters and 357 verses, numbered as chapters 1-12, one LF-terminated line per verse after a header line. This is the Hebrew and Aramaic Daniel only, 12 chapters, and chapter 3 ends at verse 30. The three Greek additions the Vulgate and the Douay-Rheims print inside Daniel stand in this edition as three separate books: the Prayer of Azarias and Canticle of the Three Children, at Vulgate Daniel 3:24-90, under token SgThree; Susanna, Vulgate Daniel 13, under token Sus; and Bel and the Dragon, Vulgate Daniel 14, under token Bel.",
@@ -437,6 +468,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 28672,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-28-hosea-739ac74c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Hosea (Os): 14 chapters and 197 verses, numbered as chapters 1-14, one LF-terminated line per verse after a header line.",
@@ -451,6 +483,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 11445,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-29-joel-85d8d2fb",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Joel (Joel): 3 chapters and 73 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -465,6 +498,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 23282,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-30-amos-908265f8",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Amos (Amos): 9 chapters and 146 verses, numbered as chapters 1-9, one LF-terminated line per verse after a header line.",
@@ -479,6 +513,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 3784,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-31-obadiah-42dfaa03",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Obadiah (Abd): 1 chapter and 21 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line.",
@@ -493,6 +528,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7057,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-32-jonah-70fa2b6f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jonah (Jon): 4 chapters and 48 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line.",
@@ -507,6 +543,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17349,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-33-micah-611491f9",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Micah (Mich): 7 chapters and 105 verses, numbered as chapters 1-7, one LF-terminated line per verse after a header line.",
@@ -521,6 +558,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7334,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-34-nahum-c612a013",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Nahum (Nah): 3 chapters and 47 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -535,6 +573,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8432,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-35-habakkuk-12b1faba",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Habakkuk (Hab): 3 chapters and 56 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -549,6 +588,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9039,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-36-zephaniah-bc0db645",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Zephaniah (Soph): 3 chapters and 53 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -563,6 +603,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6091,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-37-haggai-8bf5f67a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Haggai (Agg): 2 chapters and 38 verses, numbered as chapters 1-2, one LF-terminated line per verse after a header line.",
@@ -577,6 +618,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 35044,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-38-zechariah-b957498d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Zechariah (Zach): 14 chapters and 211 verses, numbered as chapters 1-14, one LF-terminated line per verse after a header line.",
@@ -591,6 +633,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9687,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-39-malachi-74dea29e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Malachi (Mal): 4 chapters and 55 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line.",
@@ -605,6 +648,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 69509,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-40-1-esdras-0cdae37a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Esdras (1Esdras): 9 chapters and 448 verses, numbered as chapters 1-9, one LF-terminated line per verse after a header line. NOT in the Catholic canon. The Vulgate prints this book in an appendix after the New Testament as 3 Esdras, outside the canon fixed at Trent. It is a Greek reworking of Paralipomenon, Esdras and Nehemias, not the Douay-Rheims 1 Esdras, which is Ezra and stands under token 1Esd.",
@@ -619,6 +663,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 119210,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-41-2-esdras-2a0b513a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Esdras (2Esdras): 16 chapters and 874 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line. NOT in the Catholic canon. The Vulgate prints this book in an appendix after the New Testament as 4 Esdras, outside the canon fixed at Trent, in the same 16 chapters this edition numbers. The postconciliar Lectionary cites it as 4 Esdras, so that name is registered as an alias here.",
@@ -633,6 +678,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 37983,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-42-tobit-a9e4a40e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Tobit (Tob): 14 chapters and 244 verses, numbered as chapters 1-14, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. This edition follows the Greek, whose chapter and verse division differs from the Vulgate the Douay-Rheims translates: 244 verses here against the Douay-Rheims's 298. A Vulgate-numbered citation may land on different words.",
@@ -647,6 +693,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 61845,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-43-judith-81d7b6da",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Judith (Jdt): 16 chapters and 339 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. This edition follows the Greek, whose chapter and verse division differs from the Vulgate: 339 verses here against the Douay-Rheims's 345.",
@@ -661,6 +708,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 16215,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-44-rest-of-esther-925c9115",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Rest of Esther (EsthGr): 7 chapters and 105 verses, numbered as chapters 10-16, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon, but printed here as a separate book rather than integrated. It carries the Vulgate's own chapter and verse numbers, 10:4 through 16:24, so a Vulgate citation of Esther 13-16 addresses this book and not the Esther under token Esth.",
@@ -675,6 +723,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 62234,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-45-wisdom-ea830b7f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Wisdom (Wis): 19 chapters and 436 verses, numbered as chapters 1-19, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon.",
@@ -689,6 +738,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 167008,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-46-ecclesiasticus-5bdb6d4f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Sirach (Ecclus): 51 chapters and 1393 verses, numbered as chapters 1-51, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. TRAP: “Eccli.” is this book, not Ecclesiastes. This edition follows the Greek, whose chapter and verse division differs from the Vulgate, often by one or more verses: 1393 verses here against the Douay-Rheims's 1591.",
@@ -703,6 +753,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 28600,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-47-baruch-a8b4c916",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Baruch (Bar): 6 chapters and 213 verses, numbered as chapters 1-6, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. Chapter 6 is the Epistle of Jeremias, as in the Vulgate. 213 verses, the same total as the Douay-Rheims, but not the same division: chapter 3 has 37 verses here against 38 because this edition joins what the Vulgate divides at 3:34, and chapter 6 has 73 against 72. A Vulgate citation of Baruch 3:35-38 is one verse ahead of this edition and 3:38 falls past the end of its chapter, so it refuses.",
@@ -717,6 +768,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8102,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-48-song-of-the-three-0def7624",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Song of the Three Holy Children (SgThree): 1 chapter and 68 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 68 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter inside Daniel at 3:24-90. The correspondence is not a uniform offset, so this edition asserts none: a Daniel 3:24-90 citation is withheld rather than resolved here.",
@@ -731,6 +783,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8233,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-49-susanna-9095a0ee",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Susanna (Sus): 1 chapter and 64 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 64 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter as Daniel 13.",
@@ -745,6 +798,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6024,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-50-bel-and-the-dragon-17346223",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Bel and the Dragon (Bel): 1 chapter and 42 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon, but printed here as a separate book of 42 verses rather than integrated. The Vulgate and the Douay-Rheims print this matter as Daniel 14.",
@@ -759,6 +813,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 2438,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-51-prayer-of-manasses-79e1ef6f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Prayer of Manasses (PrMan): 1 chapter and 15 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line. NOT in the Catholic canon. The Vulgate prints it in an appendix after the New Testament, outside the canon fixed at Trent.",
@@ -773,6 +828,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 137257,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-52-1-maccabees-9e8af103",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Maccabees (1Mach): 16 chapters and 924 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. 924 verses here against the Douay-Rheims's 929.",
@@ -787,6 +843,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 96551,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-53-2-maccabees-3b26bd69",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Maccabees (2Mach): 15 chapters and 555 verses, numbered as chapters 1-15, one LF-terminated line per verse after a header line. Deuterocanonical, and in the Catholic canon. 555 verses here against the Douay-Rheims's 558.",
@@ -801,6 +858,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 135802,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-54-matthew-831b52c1",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Matthew (Matt): 28 chapters and 1071 verses, numbered as chapters 1-28, one LF-terminated line per verse after a header line.",
@@ -815,6 +873,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 86128,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-55-mark-cb871dc9",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Mark (Mark): 16 chapters and 678 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line.",
@@ -829,6 +888,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 146777,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-56-luke-d197600a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Luke (Luke): 24 chapters and 1151 verses, numbered as chapters 1-24, one LF-terminated line per verse after a header line.",
@@ -843,6 +903,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 107183,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-57-john-dcd7631a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "John (John): 21 chapters and 879 verses, numbered as chapters 1-21, one LF-terminated line per verse after a header line. TRAP: do not confuse the token John with Jon (Jonas) or 1John/2John/3John.",
@@ -857,6 +918,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 140447,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-58-acts-b268dc53",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Acts (Acts): 28 chapters and 1007 verses, numbered as chapters 1-28, one LF-terminated line per verse after a header line.",
@@ -871,6 +933,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 54295,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-59-romans-8f530d59",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Romans (Rom): 16 chapters and 433 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line.",
@@ -885,6 +948,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 53586,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-60-1-corinthians-e3ce3c4c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Corinthians (1Cor): 16 chapters and 437 verses, numbered as chapters 1-16, one LF-terminated line per verse after a header line.",
@@ -899,6 +963,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 34694,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-61-2-corinthians-dc04c061",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Corinthians (2Cor): 13 chapters and 257 verses, numbered as chapters 1-13, one LF-terminated line per verse after a header line.",
@@ -913,6 +978,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17602,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-62-galatians-01f5aae3",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Galatians (Gal): 6 chapters and 149 verses, numbered as chapters 1-6, one LF-terminated line per verse after a header line.",
@@ -927,6 +993,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17701,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-63-ephesians-0a142b4f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ephesians (Eph): 6 chapters and 155 verses, numbered as chapters 1-6, one LF-terminated line per verse after a header line.",
@@ -941,6 +1008,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12651,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-64-philippians-7cb6794f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Philippians (Phil): 4 chapters and 104 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line. TRAP: the token Phil is Philippians; Philemon is Philem.",
@@ -955,6 +1023,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 11633,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-65-colossians-e28eac31",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Colossians (Col): 4 chapters and 95 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line.",
@@ -969,6 +1038,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 10778,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-66-1-thessalonians-68b81afb",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Thessalonians (1Thess): 5 chapters and 89 verses, numbered as chapters 1-5, one LF-terminated line per verse after a header line.",
@@ -983,6 +1053,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6070,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-67-2-thessalonians-cea93fa7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Thessalonians (2Thess): 3 chapters and 47 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -997,6 +1068,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13908,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-68-1-timothy-6a290315",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Timothy (1Tim): 6 chapters and 113 verses, numbered as chapters 1-6, one LF-terminated line per verse after a header line.",
@@ -1011,6 +1083,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 10181,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-69-2-timothy-2f64acfe",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Timothy (2Tim): 4 chapters and 83 verses, numbered as chapters 1-4, one LF-terminated line per verse after a header line.",
@@ -1025,6 +1098,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5656,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-70-titus-ecdb594a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Titus (Tit): 3 chapters and 46 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -1039,6 +1113,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 2692,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-71-philemon-18f93a7a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Philemon (Philem): 1 chapter and 25 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line.",
@@ -1053,6 +1128,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 40033,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-72-hebrews-b48240dc",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Hebrews (Heb): 13 chapters and 303 verses, numbered as chapters 1-13, one LF-terminated line per verse after a header line.",
@@ -1067,6 +1143,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13308,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-73-james-4c775e65",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "James (James): 5 chapters and 108 verses, numbered as chapters 1-5, one LF-terminated line per verse after a header line.",
@@ -1081,6 +1158,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14504,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-74-1-peter-e41b36e3",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 Peter (1Pet): 5 chapters and 105 verses, numbered as chapters 1-5, one LF-terminated line per verse after a header line.",
@@ -1095,6 +1173,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9309,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-75-2-peter-96028824",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 Peter (2Pet): 3 chapters and 61 verses, numbered as chapters 1-3, one LF-terminated line per verse after a header line.",
@@ -1109,6 +1188,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13899,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-76-1-john-c3285a89",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "1 John (1John): 5 chapters and 105 verses, numbered as chapters 1-5, one LF-terminated line per verse after a header line.",
@@ -1123,6 +1203,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1713,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-77-2-john-a71e9e27",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "2 John (2John): 1 chapter and 13 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line.",
@@ -1137,6 +1218,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1764,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-78-3-john-a6e2b0d2",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "3 John (3John): 1 chapter and 14 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line.",
@@ -1151,6 +1233,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 3790,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-79-jude-9cb87181",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Jude (Jude): 1 chapter and 25 verses, numbered as chapters 1-1, one LF-terminated line per verse after a header line. TRAP: Jude is the epistle; Judith is Jdt and Judges is Judg.",
@@ -1165,6 +1248,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 66195,
+   "edition_owned": true,
    "id": "artifact.church-of-england.king-james-version.ebible-engkjv.verse-text-80-revelation-6a09f207",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Revelation (Apoc): 22 chapters and 404 verses, numbered as chapters 1-22, one LF-terminated line per verse after a header line.",

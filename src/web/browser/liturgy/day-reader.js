@@ -154,7 +154,7 @@
       resolved: result.resolved,
       calendarResult: result.calendarResult,
       events: (result.events || []).map(function (event) {
-        return {
+        const projected = {
           id: event.id,
           kind: event.kind,
           semanticSlot: event.semanticSlot || null,
@@ -166,10 +166,33 @@
           locus: event.locus || null,
           sourceHooks: event.sourceHooks || []
         };
+        if (event.kind === 'proper-choice') {
+          projected.group = event.group;
+          projected.selection = event.selection;
+          projected.choiceBasis = event.choiceBasis;
+          projected.options = (event.options || []).map(function (option) {
+            return {
+              id: option.id,
+              events: (option.events || []).map(function (member) {
+                return {
+                  id: member.id,
+                  kind: member.kind,
+                  semanticSlot: member.semanticSlot || null,
+                  editionSlotLabel: member.editionSlotLabel || null,
+                  selected: member.selected || null,
+                  seat: member.seat || null,
+                  sourceHooks: member.sourceHooks || []
+                };
+              })
+            };
+          });
+        }
+        return projected;
       }),
       coverage: result.coverage || [],
       explicitAbsences: result.explicitAbsences || [],
-      unresolvedChoices: result.unresolvedChoices || []
+      unresolvedChoices: result.unresolvedChoices || [],
+      ordinaryUnresolved: result.ordinaryUnresolved || []
     };
   }
 
@@ -263,10 +286,7 @@
 
   function deferredState(parsed) {
     const mode = requestedModeOf(parsed);
-    // Study has a complete public spelling but no renderer in this slice.
-    // Compare deliberately does not: the state contract requires an explicit
-    // comparison request, for which v1 exposes no public URL spelling, so a
-    // bare mode=compare is rejected instead of masquerading as deferred work.
+    // Compare deliberately does not expose a URL.
     return mode === 'study' ? ['mode=' + mode] : [];
   }
 
@@ -281,7 +301,8 @@
       if (parsed.present.indexOf('ordinary') >= 0) {
         const legacy = parsed.recognized.ordinary === '1' ? 'missal' :
           (parsed.recognized.ordinary === '0' ? 'read' : null);
-        if (legacy === null || mode !== legacy) return null;
+        if (legacy === null ||
+            (['read', 'missal'].indexOf(mode) >= 0 && mode !== legacy)) return null;
       }
       return mode;
     }
@@ -412,7 +433,8 @@
       (parsed.variantKeys || []).some(function (key) {
         return parsed.present.indexOf(key) >= 0;
       });
-    const needsOrdinary = requestedMode === 'missal' || explicitOrdinary;
+    const needsOrdinary = requestedMode === 'missal' ||
+      (requestedMode === 'study' && parsed.recognized.ordinary === '1') || explicitOrdinary;
     const paths = [
       'structure/rubrics/' + missal + '.json',
       'structure/calendar/' + missal + '/' + year + '.json',
@@ -556,17 +578,18 @@
       }));
       ordinaryLangSelect.value = state.languages.ordinary || 'en';
       ordinaryLangField.hidden = languages.length < 2;
-      const group = window.OrdinarySeating.variantGroupOf(runtime.ordinary);
-      if (group) {
+      const groups = ordinaryVariantGroups(runtime.ordinary);
+      if (groups.length === 1) {
+        const group = groups[0];
         T.fillSelect(ordinaryOptionSelect, (group.options || []).map(function (option) {
           return { value: option.id, label: option.name };
         }));
-        const wanted = state.options && state.options.legitimate && state.options.legitimate[group.group];
-        const chosen = window.OrdinarySeating.chosenOption(group, wanted);
-        if (chosen) ordinaryOptionSelect.value = chosen.id;
+        const chosen = ordinarySelectionMap(state, runtime.ordinary)[group.group];
+        if (chosen) ordinaryOptionSelect.value = chosen;
         ordinaryOptionField.hidden = false;
       } else {
         ordinaryOptionField.hidden = true;
+        ordinaryOptionSelect.replaceChildren();
       }
     } else {
       ordinaryLangField.hidden = true;
@@ -646,7 +669,8 @@
       ['Ordinary language', runtime.mode === 'missal'
         ? humanLanguage(state.languages.ordinary || 'en') : null],
       ['Ordinary option', runtime.mode === 'missal'
-        ? selectedOrdinaryOptionLabel(state, runtime.ordinary) : null],
+        ? selectedOrdinaryOptionLabel(state, runtime.ordinary,
+          runtime.branches.map(function (row) { return row.result; })) : null],
       ['Formulary', runtime.branches.length > 1
         ? runtime.branches.map(function (row) {
           return row.result && row.result.resolved && row.result.resolved.formulary;
@@ -672,11 +696,16 @@
     } else if (runtime.outcome !== 'ready') {
       const outcome = T.el('section', 'details-section');
       outcome.appendChild(T.el('h3', null, 'Reader outcome'));
+      const ordinaryUnresolved = runtime.branches.some(function (row) {
+        return row.result && (row.result.ordinaryUnresolved || []).length;
+      });
       const messages = {
         deferred: 'An active request is valid and preserved, but is not yet rendered.',
-        unresolved: runtime.branches.some(function (row) {
-          return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
-        })
+        unresolved: ordinaryUnresolved
+          ? 'Some Ordinary elements have unresolved applicability, so their text is not shown.'
+          : runtime.branches.length > 1 && runtime.branches.some(function (row) {
+            return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
+          })
           ? 'The current request has rendered territorial results alongside a branch-local formulary choice that remains unresolved.'
           : 'The current request is validated, but no formulary outcome has been selected.',
         unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
@@ -711,14 +740,50 @@
     }
   });
 
-  function selectedOrdinaryOptionLabel(state, ordinary) {
-    const group = ordinary && window.OrdinarySeating.variantGroupOf(ordinary);
-    if (!group) return state && state.edition && state.edition.id === 'roman-1962'
+  function ordinaryVariantGroups(ordinary) {
+    return ordinary ? window.OrdinarySeating.variantGroupsOf(ordinary) : [];
+  }
+
+  function ordinarySelectionMap(state, ordinary) {
+    if (!ordinary) return {};
+    const wanted = state && state.options && state.options.legitimate || {};
+    return window.OrdinarySeating.selectionMap(ordinary, wanted);
+  }
+
+  function selectedOrdinaryOptionLabel(state, ordinary, results) {
+    const groups = ordinaryVariantGroups(ordinary);
+    if (!groups.length) return state && state.edition && state.edition.id === 'roman-1962'
       ? 'Roman Canon' : null;
-    const wanted = state.options && state.options.legitimate &&
-      state.options.legitimate[group.group];
-    const chosen = window.OrdinarySeating.chosenOption(group, wanted);
-    return chosen ? group.name + ': ' + chosen.name : group.name + ': choice unresolved';
+    const selected = ordinarySelectionMap(state, ordinary);
+    return groups.map(function (group) {
+      const chosen = (group.options || []).find(function (option) {
+        return option.id === selected[group.group];
+      });
+      if (!chosen) return group.name + ': choice unresolved';
+      const keys = new Set();
+      (ordinary.sections || []).forEach(function (section) {
+        (section.elements || []).forEach(function (element) {
+          if ((element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group && alternative.option === chosen.id;
+          }) || element.variant === chosen.id) keys.add(element.key);
+        });
+      });
+      const held = results || [];
+      const shown = held.some(function (result) {
+        return (result && result.events || []).some(function (event) {
+          return event.kind === 'ordinary-element' && keys.has(
+            event.id.replace(/^ordinary-element\//, ''));
+        });
+      });
+      const unresolved = held.some(function (result) {
+        return (result && result.ordinaryUnresolved || []).some(function (row) {
+          return keys.has(row.element);
+        });
+      });
+      const status = shown ? '' : unresolved
+        ? ' (applicability unresolved)' : ' (not appointed)';
+      return group.name + ': ' + chosen.name + status;
+    }).join('; ');
   }
 
   function commitOutcomePresentation(presentation) {
@@ -1125,8 +1190,8 @@
     const heldByProper = [];
     let requiresChoice = false;
     let anonymousHeldTranslation = false;
-    (result.events || []).forEach(function (event) {
-      if (event.kind !== 'proper' || !event.selected ||
+    semanticProperEvents(result).forEach(function (event) {
+      if (!event.selected ||
           event.selected.kind !== 'composed' || event.selected.language !== language) return;
       const selected = event.selected;
       if (selected.availability === 'choice-required') {
@@ -1149,11 +1214,16 @@
     const labels = new Map((structure.translations || []).map(function (row) {
       return [translationIdentity(row), row.label || translationIdentity(row)];
     }));
+    const names = common.map(function (id) { return labels.get(id) || id; });
     return {
       requiresChoice: requiresChoice,
       held: common,
-      choices: requiresChoice ? common.map(function (id) {
-        return { id: id, label: labels.get(id) || id };
+      choices: requiresChoice ? common.map(function (id, index) {
+        const label = names[index];
+        return {
+          id: id,
+          label: names.indexOf(label) === names.lastIndexOf(label) ? label : label + ' — ' + id
+        };
       }) : []
     };
   }
@@ -1184,6 +1254,45 @@
       }
     });
     return errors.slice(0, 1);
+  }
+
+  function validateExplicitSemanticLocation(state, derived, structure, ordinary) {
+    const wanted = state.semanticLocation && state.semanticLocation.eventId || null;
+    if (!wanted) return [];
+    if (state.requestedMode === 'study') {
+      return [{
+        code: 'invalid-semantic-location', path: 'location',
+        message: 'the requested mode renders no semantic event at this location'
+      }];
+    }
+
+    const multiple = (derived.options || []).length > 1;
+    const held = new Set();
+    let adapted = false;
+    (derived.options || []).forEach(function (branch) {
+      try {
+        const branchState = resultStateForBranch(state, branch, multiple);
+        const result = Adapters.adaptDay({
+          request: branchState,
+          derived: derived,
+          structure: structure,
+          ordinary: state.requestedMode === 'missal' ? ordinary : null
+        });
+        adapted = true;
+        if (!result.resolved || primaryDayChoice(result, branch)) return;
+        const prefix = locationPrefix(branch, multiple);
+        (result.events || []).forEach(function (event) {
+          if (state.requestedMode === 'read' &&
+              ['proper', 'proper-choice'].indexOf(event.kind) < 0) return;
+          held.add(prefix + event.id);
+        });
+      } catch (_error) { /* Rendering owns wholly unadaptable state. */ }
+    });
+    if (held.has(wanted) || !adapted) return [];
+    return [{
+      code: 'invalid-semantic-location', path: 'location',
+      message: 'the explicit location is absent from the rendered semantic events'
+    }];
   }
 
   function resolvableTranslationWitnessState(result, structure, state) {
@@ -1368,26 +1477,56 @@
 
     const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
     if (mode === 'missal') {
-      renderMissalDocument(
-        documentFragment, contents, result, mass, structure, bible,
-        fragments.fragments, state, ordinary, prefix, branchLocus
-      );
+      const hasOrdinaryFrame = (result.events || []).some(function (event) {
+        return event.kind === 'ordinary-section' || event.kind === 'ordinary-element';
+      });
+      if (hasOrdinaryFrame) {
+        renderMissalDocument(
+          documentFragment, contents, result, mass, structure, bible,
+          fragments.fragments, state, ordinary, prefix, branchLocus
+        );
+      } else {
+        renderUnframedMissalDocument(
+          documentFragment, contents, result, mass, structure, bible,
+          fragments.fragments, state, prefix, branchLocus
+        );
+      }
     } else {
-      (result.events || []).forEach(function (event) {
+      (result.events || []).forEach(function (event, eventOrdinal) {
+        if (event.kind === 'proper-choice') {
+          const choice = renderProperChoiceEvent(
+            event, mass, structure, bible, fragments.fragments, state,
+            'h2', 'h4', prefix, result, eventOrdinal, false
+          );
+          exposeReaderLocus(choice,
+            branchLocus ? branchLocus + ' · Source alternatives' : 'Source alternatives',
+            properChoiceLabel(event));
+          documentFragment.appendChild(choice);
+          contents.push({
+            id: prefix + event.id,
+            label: properChoiceLabel(event),
+            element: choice,
+            group: 'Proper choices'
+          });
+          return;
+        }
         if (event.kind !== 'proper') return;
         const index = sourceIndex(event);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
           fragments.fragments, state, 'h2', prefix, result);
-        exposeReaderLocus(section, branchLocus ? branchLocus + ' · Propers' : 'Propers',
+        const unplaced = typedUnplacedSeat(event);
+        const region = unplaced && event.seat.region === 'before-frame'
+          ? 'Before Ordinary frame' : (unplaced ? 'After Ordinary frame' : 'Propers');
+        exposeReaderLocus(section, branchLocus ? branchLocus + ' · ' + region : region,
           event.editionSlotLabel || proper.name || 'Proper');
         documentFragment.appendChild(section);
         contents.push({
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: section,
-          group: 'Proper of the Mass'
+          group: unplaced ? 'Exceptional source-order propers' : 'Proper of the Mass'
         });
       });
     }
@@ -1419,7 +1558,8 @@
     const multiple = rows.length > 1;
     const hasUnresolved = rows.some(function (row) {
       return row.unresolved || Boolean(
-        row.result && (row.result.unresolvedChoices || []).length
+        row.result && ((row.result.unresolvedChoices || []).length ||
+          (row.result.ordinaryUnresolved || []).length)
       );
     });
     const documentFragment = document.createDocumentFragment();
@@ -1464,7 +1604,9 @@
     ];
     if (runtime.mode === 'missal') {
       metadata.push(humanLanguage(state.languages.ordinary || 'en') + ' Ordinary');
-      metadata.push(selectedOrdinaryOptionLabel(state, runtime.ordinary));
+      metadata.push(selectedOrdinaryOptionLabel(
+        state, runtime.ordinary, rows.map(function (row) { return row.result; })
+      ));
     }
     commitOutcomePresentation({
       mode: runtime.mode,
@@ -1520,9 +1662,32 @@
     return node;
   }
 
-  function renderTranslationWitnessChoice(event, witnessState, prefix) {
-    if (!event.selected || event.selected.availability !== 'choice-required' ||
-        !witnessState.choices.length) return null;
+  function semanticProperEvents(result) {
+    const held = [];
+    (result && result.events || []).forEach(function (event) {
+      if (event.kind === 'proper') held.push(event);
+      if (event.kind === 'proper-choice') {
+        (event.options || []).forEach(function (option) {
+          (option.events || []).forEach(function (member) { held.push(member); });
+        });
+      }
+    });
+    return held;
+  }
+
+  function renderTranslationWitnessChoice(event, witnessState, prefix, result, locationEvent) {
+    if (!event.selected || event.selected.availability !== 'choice-required') return null;
+    if (!witnessState.choices.length) {
+      const first = semanticProperEvents(result).find(function (row) {
+        return row.selected && row.selected.availability === 'choice-required';
+      });
+      if (first !== event) return null;
+      const explanation = T.el('p', 'composed-note translation-witness-limitation',
+        'No single held translation witness supplies every translated Proper in this ' +
+          'formulary. Choosing one would suppress another held translation.');
+      explanation.dataset.translationWitnessLimitation = event.id;
+      return explanation;
+    }
     const fieldset = T.el('fieldset', 'ordinary-choice translation-witness-choice');
     fieldset.dataset.translationWitnessChoice = event.id;
     fieldset.appendChild(T.el('legend', null,
@@ -1540,7 +1705,9 @@
       input.dataset.translationWitness = option.id;
       input.addEventListener('change', function () {
         if (!input.checked) return;
+        const target = locationEvent || event;
         const location = { kind: 'event', id: (prefix || '') + event.id };
+        if (target !== event) location.id = (prefix || '') + target.id;
         navigate({ 'translation-witness': option.id }, [], {
           location: location,
           focus: { kind: 'translation-witness-result', event: location.id }
@@ -1554,7 +1721,7 @@
     return fieldset;
   }
 
-  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix, result) {
+  function renderProperMaterial(event, proper, structure, bible, fragments, state, heading, prefix, result, locationEvent) {
     const section = T.renderProper(proper, bible, fragments, {
       numbering: structure.numbering || null,
       orations: state.languages.orations,
@@ -1563,21 +1730,280 @@
       cycle: event.selected && event.selected.cycle || null
     });
     const choice = renderTranslationWitnessChoice(
-      event, resolvableTranslationWitnessState(result, structure, state), prefix
+      event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
+      locationEvent || event
     );
     if (choice) section.appendChild(choice);
+    return section;
+  }
+
+  function typedUnplacedSeat(event) {
+    const seat = event && event.seat;
+    return event && event.kind === 'proper' && seat &&
+      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
+      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
+      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
+  }
+
+  function decorateUnplacedProper(section, event) {
+    if (!typedUnplacedSeat(event)) return section;
+    const region = event.seat.region;
+    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
+    section.dataset.unplacedRegion = region;
+    section.dataset.unplacedBasis = event.seat.basis;
+    const position = region === 'before-frame' ? 'before' : 'after';
+    const note = T.el('p', 'composed-note proper-unplaced-note',
+      'Exceptional source placement: the source assigns this Proper ' + position +
+      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
+    note.setAttribute('role', 'note');
+    const heading = section.querySelector(':scope > .proper-name');
+    if (heading) heading.after(note);
+    else section.prepend(note);
+    return section;
+  }
+
+  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix, result) {
+    const section = renderProperMaterial(
+      event, proper, structure, bible, fragments, state, heading, prefix, result, event
+    );
+    decorateUnplacedProper(section, event);
     return semanticNode(section, event, index, prefix);
+  }
+
+  function validateProperChoiceEvent(event, requireSeat) {
+    if (!event || event.kind !== 'proper-choice' || typeof event.group !== 'string' ||
+        !event.group || typeof event.choiceBasis !== 'string' || !event.choiceBasis.trim() ||
+        !event.selection || !Array.isArray(event.options) ||
+        event.options.length < 2) {
+      throw new Error('a Proper choice needs a stable group, selection, and at least two options');
+    }
+    const selected = event.selection.option;
+    if ((event.selection.state === 'required' && selected !== null) ||
+        (event.selection.state === 'selected' &&
+          (typeof selected !== 'string' || !selected)) ||
+        ['required', 'selected'].indexOf(event.selection.state) < 0) {
+      throw new Error('a Proper choice has an invalid explicit selection state: ' + event.id);
+    }
+    const optionIds = event.options.map(function (option) { return option && option.id; });
+    if (optionIds.some(function (id) { return typeof id !== 'string' || !id; }) ||
+        new Set(optionIds).size !== optionIds.length ||
+        (selected !== null && optionIds.indexOf(selected) < 0)) {
+      throw new Error('a Proper choice has invalid or duplicate option identities: ' + event.id);
+    }
+    const memberIds = [];
+    event.options.forEach(function (option) {
+      if (!Array.isArray(option.events) || !option.events.length ||
+          option.events.some(function (member) {
+            if (!member || member.kind !== 'proper' || typeof member.id !== 'string' || !member.id) {
+              return true;
+            }
+            memberIds.push(member.id);
+            return false;
+          })) {
+        throw new Error('every Proper choice option must retain its source Proper events: ' + event.id);
+      }
+    });
+    if (new Set(memberIds).size !== memberIds.length) {
+      throw new Error('a source Proper occurs in more than one choice option: ' + event.id);
+    }
+    if (requireSeat && (!event.seat || !event.seat.id ||
+        event.seat.placement !== 'seated')) {
+      throw new Error('a Proper choice has no usable semantic seat: ' + event.id);
+    }
+    return selected;
+  }
+
+  function properChoiceLabel(event) {
+    return 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' '));
+  }
+
+  function renderProperChoiceEvent(event, mass, structure, bible, fragments, state,
+      heading, memberHeading, prefix, result, ordinal, requireSeat) {
+    const selected = validateProperChoiceEvent(event, requireSeat);
+    const wrapper = semanticNode(T.el('section', 'proper-choice'), event, ordinal, prefix);
+    wrapper.dataset.properChoice = event.group;
+    wrapper.dataset.choiceState = event.selection.state;
+    if (selected) wrapper.dataset.choiceSelection = selected;
+    const title = T.el(heading, 'proper-choice-title', properChoiceLabel(event));
+    title.id = wrapper.id + '-title';
+    wrapper.setAttribute('aria-labelledby', title.id);
+    wrapper.appendChild(title);
+    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
+      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
+      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
+    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
+      'Source basis: ' + event.choiceBasis));
+    const options = T.el('div', 'proper-choice-options');
+    event.options.forEach(function (option) {
+      const isSelected = selected === option.id;
+      const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
+      const optionNode = selected && !isSelected
+        ? document.createElement('details') : T.el('section', 'proper-choice-option');
+      optionNode.classList.add('proper-choice-option');
+      optionNode.dataset.properChoiceOption = option.id;
+      optionNode.dataset.choiceStatus = isSelected ? 'selected' :
+        (selected ? 'not-selected' : 'available');
+      if (isSelected) optionNode.setAttribute('aria-current', 'true');
+      const label = (isSelected ? 'Selected option: ' :
+        (selected ? 'Other source option: ' : 'Option: ')) + optionName;
+      if (optionNode.tagName === 'DETAILS') {
+        optionNode.appendChild(T.el('summary', 'proper-choice-option-title', label + ' (not selected)'));
+      } else {
+        optionNode.appendChild(T.el('h' + String(Math.min(Number(memberHeading.slice(1)) - 1, 6)),
+          'proper-choice-option-title', label));
+      }
+      (option.events || []).forEach(function (member) {
+        const index = sourceIndex(member);
+        const proper = index === null ? null : (mass.propers || [])[index];
+        if (!proper || T.isPlaceholder(proper)) {
+          throw new Error('Proper choice member has no production Proper at ' + member.id);
+        }
+        const node = renderProperMaterial(
+          member, proper, structure, bible, fragments, state, memberHeading,
+          prefix, result, event
+        );
+        node.classList.add('proper-choice-member');
+        node.dataset.properChoiceMemberEvent = member.id;
+        optionNode.appendChild(node);
+      });
+      options.appendChild(optionNode);
+    });
+    wrapper.appendChild(options);
+    return wrapper;
+  }
+
+  function nonFullOrdinaryFrameCoverage(result, state) {
+    const scope = 'ordinary-frame:' + state.edition.id;
+    const row = (result.coverage || []).find(function (coverage) {
+      return coverage && coverage.scope === scope;
+    });
+    const reasons = row && row.reasons || [];
+    const reason = reasons.find(function (candidate) {
+      return candidate && ['none', 'unavailable'].indexOf(candidate.applicability) >= 0 &&
+        typeof candidate.basis === 'string' && candidate.basis.trim();
+    });
+    if (!row || !reason ||
+        (reason.applicability === 'none' && row.state !== 'absent') ||
+        (reason.applicability === 'unavailable' && row.state !== 'unavailable')) {
+      throw new Error('Missal mode has no Ordinary events and no exact non-full frame coverage');
+    }
+    return { row: row, reason: reason };
+  }
+
+  function renderUnframedMissalDocument(fragment, contents, result, mass, structure,
+      bible, fragments, state, prefix, branchLocus) {
+    const coverage = nonFullOrdinaryFrameCoverage(result, state);
+    if ((result.events || []).some(function (event) {
+      return ['proper', 'proper-choice'].indexOf(event.kind) < 0;
+    })) {
+      throw new Error('a non-full Ordinary frame contains an unsupported semantic event');
+    }
+    const limitation = T.el('section', 'missal-frame-limitation candidate-limitation');
+    const heading = coverage.reason.applicability === 'none'
+      ? 'This source rite has no ordinary Mass frame'
+      : 'The Ordinary frame is unavailable for this source rite';
+    limitation.appendChild(T.el('h2', null, heading));
+    limitation.appendChild(T.el('p', null,
+      'The appointed Propers remain below in source order. The reader has not invented ' +
+      'Ordinary seats or substituted the standard frame.'));
+    limitation.appendChild(T.el('p', 'composed-note missal-frame-basis',
+      'Source basis: ' + coverage.reason.basis));
+    fragment.appendChild(limitation);
+
+    const properIds = [];
+    (result.events || []).forEach(function (event, eventOrdinal) {
+      if (event.kind === 'proper-choice') {
+        const choice = renderProperChoiceEvent(
+          event, mass, structure, bible, fragments, state,
+          'h2', 'h4', prefix, result, eventOrdinal, false
+        );
+        exposeReaderLocus(choice,
+          branchLocus ? branchLocus + ' · Unframed source rite' : 'Unframed source rite',
+          properChoiceLabel(event));
+        fragment.appendChild(choice);
+        contents.push({
+          id: prefix + event.id,
+          label: properChoiceLabel(event),
+          element: choice,
+          group: 'Proper choices'
+        });
+        (event.options || []).forEach(function (option) {
+          (option.events || []).forEach(function (member) { properIds.push(member.id); });
+        });
+        return;
+      }
+      const index = sourceIndex(event);
+      const proper = index === null ? null : (mass.propers || [])[index];
+      if (!proper || T.isPlaceholder(proper)) {
+        throw new Error('semantic Proper event has no production Proper at ' + event.id);
+      }
+      if (event.seat && event.seat.placement === 'unseated' && !typedUnplacedSeat(event)) {
+        throw new Error('a source Proper has an invalid unseated disposition: ' + event.id);
+      }
+      const node = exposeReaderLocus(
+        renderProperEvent(
+          event, proper, eventOrdinal, structure, bible, fragments,
+          state, 'h2', prefix, result
+        ),
+        branchLocus ? branchLocus + ' · Unframed source rite' : 'Unframed source rite',
+        event.editionSlotLabel || proper.name || 'Proper'
+      );
+      fragment.appendChild(node);
+      contents.push({
+        id: prefix + event.id,
+        label: event.editionSlotLabel || proper.name || 'Proper',
+        element: node,
+        group: typedUnplacedSeat(event)
+          ? 'Exceptional source-order propers' : 'Appointed propers'
+      });
+      properIds.push(event.id);
+    });
+    if (new Set(properIds).size !== properIds.length) {
+      throw new Error('the production semantic stream duplicated an appointed Proper');
+    }
+  }
+
+  function assertMissalProperPlacements(events) {
+    let enteredFrame = false;
+    let leftFrame = false;
+    (events || []).forEach(function (event) {
+      if (event.kind === 'ordinary-section' || event.kind === 'ordinary-element') {
+        if (leftFrame) {
+          throw new Error('an Ordinary event follows an after-frame Proper');
+        }
+        enteredFrame = true;
+        return;
+      }
+      if (event.kind === 'proper-choice') {
+        if (leftFrame) throw new Error('a seated Proper choice follows the Ordinary frame');
+        validateProperChoiceEvent(event, true);
+        return;
+      }
+      if (event.kind !== 'proper') return;
+      if (event.seat && event.seat.id && event.seat.placement === 'seated') {
+        if (leftFrame) throw new Error('a seated Proper follows the Ordinary frame');
+        return;
+      }
+      if (!typedUnplacedSeat(event)) {
+        throw new Error('appointed Proper has no usable semantic seat: ' +
+          (event.editionSlotLabel || event.id));
+      }
+      if (event.seat.region === 'before-frame') {
+        if (enteredFrame || leftFrame) {
+          throw new Error('a before-frame Proper does not precede the Ordinary frame: ' + event.id);
+        }
+      } else {
+        if (!enteredFrame) {
+          throw new Error('an after-frame Proper precedes the Ordinary frame: ' + event.id);
+        }
+        leftFrame = true;
+      }
+    });
   }
 
   function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix, branchLocus) {
     if (!ordinary) throw new Error('the selected edition has no production Ordinary to render');
-    const unseated = (result.events || []).filter(function (event) {
-      return event.kind === 'proper' && (!event.seat || !event.seat.id || event.seat.placement !== 'seated');
-    });
-    if (unseated.length) {
-      throw new Error('appointed Proper has no usable semantic seat: ' +
-        unseated.map(function (event) { return event.editionSlotLabel || event.id; }).join(', '));
-    }
+    assertMissalProperPlacements(result.events || []);
     window.dayReaderDebug.ordinaryPresentations += 1;
 
     OrdinaryRenderer.configure({
@@ -1586,21 +2012,39 @@
       why: false
     });
 
+    const groups = ordinaryVariantGroups(ordinary);
     const sections = new Map();
     const elements = new Map();
+    const groupSections = new Map();
     (ordinary.sections || []).forEach(function (section) {
       sections.set(section.key, section);
-      (section.elements || []).forEach(function (element) { elements.set(element.key, element); });
+      (section.elements || []).forEach(function (element) {
+        elements.set(element.key, element);
+        groups.forEach(function (group) {
+          const owns = (element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group;
+          }) || (group.options || []).some(function (option) {
+            return option.id === element.variant;
+          });
+          if (owns && !groupSections.has(group.group)) {
+            groupSections.set(group.group, section.key);
+          }
+        });
+      });
     });
-    let optionListed = false;
-    const group = window.OrdinarySeating.variantGroupOf(ordinary);
-    const wantedOption = group && state.options && state.options.legitimate &&
-      state.options.legitimate[group.group];
-    const selectedOption = group && window.OrdinarySeating.chosenOption(group, wantedOption);
-    if (group && !selectedOption) {
-      throw new Error('the production Ordinary leaves ' + group.name + ' unresolved');
-    }
-
+    const selected = ordinarySelectionMap(state, ordinary);
+    const selectedOptions = new Map();
+    groups.forEach(function (group) {
+      const selectedOption = (group.options || []).find(function (option) {
+        return option.id === selected[group.group];
+      });
+      if (!selectedOption) {
+        throw new Error('the production Ordinary leaves ' + group.name + ' unresolved');
+      }
+      selectedOptions.set(group.group, selectedOption);
+    });
+    const listedGroups = new Set();
+    const sectionNodes = new Map();
     const ordinals = new Map((result.events || []).map(function (event, ordinal) {
       return [event.id, ordinal];
     }));
@@ -1608,7 +2052,11 @@
     function namedDivision(name) {
       return branchLocus ? branchLocus + ' · ' + name : name;
     }
-    const frame = OrdinaryRenderer.renderSemanticFrame(result.events, {
+    const frameEvents = (result.events || []).map(function (event) {
+      return event.kind === 'proper-choice'
+        ? Object.assign({}, event, { kind: 'proper', properChoiceEvent: event }) : event;
+    });
+    const frame = OrdinaryRenderer.renderSemanticFrame(frameEvents, {
       section: function (event) {
         const ordinal = ordinals.get(event.id);
         const raw = sections.get(event.id.replace(/^ordinary-section\//, ''));
@@ -1618,6 +2066,7 @@
           semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal, prefix),
           namedDivision(raw.name), null
         );
+        sectionNodes.set(raw.key, node);
         contents.push({ id: prefix + event.id, label: raw.name, element: node, group: 'Rites and divisions' });
         return node;
       },
@@ -1635,24 +2084,57 @@
           namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
           raw.name || null
         );
-        if (!optionListed && group && raw.variant) {
-          optionListed = true;
-          const choice = renderOrdinaryChoice(group, selectedOption, event, prefix, ordinary);
-          contents.push({
-            id: prefix + event.id,
-            label: selectedOrdinaryOptionLabel(state, ordinary),
-            element: node,
-            group: 'Options'
+        const localGroups = groups.filter(function (group) {
+          return !listedGroups.has(group.group) && (
+            (raw.alternatives || []).some(function (alternative) {
+              return alternative.group === group.group;
+            }) || (group.options || []).some(function (option) {
+              return option.id === raw.variant;
+            })
+          );
+        });
+        if (localGroups.length) {
+          const block = document.createDocumentFragment();
+          localGroups.forEach(function (group) {
+            const option = selectedOptions.get(group.group);
+            const choice = renderOrdinaryChoice(
+              group, option, prefix, ordinary, state, structure,
+              groupSections.get(group.group)
+            );
+            listedGroups.add(group.group);
+            block.appendChild(choice);
+            contents.push({
+              id: prefix + 'ordinary-option/' + group.group,
+              label: group.name + ': ' + option.name,
+              element: choice,
+              group: 'Options'
+            });
           });
-          const pair = document.createDocumentFragment();
-          pair.appendChild(choice);
-          pair.appendChild(node);
-          return pair;
+          block.appendChild(node);
+          return block;
         }
         return node;
       },
       proper: function (event) {
         const ordinal = ordinals.get(event.id);
+        if (event.properChoiceEvent) {
+          const choiceEvent = event.properChoiceEvent;
+          const node = exposeReaderLocus(
+            renderProperChoiceEvent(
+              choiceEvent, mass, structure, bible, fragments, state,
+              'h3', 'h5', prefix, result, ordinal, true
+            ),
+            namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
+            properChoiceLabel(choiceEvent)
+          );
+          contents.push({
+            id: prefix + choiceEvent.id,
+            label: properChoiceLabel(choiceEvent),
+            element: node,
+            group: 'Proper choices'
+          });
+          return node;
+        }
         const index = sourceIndex(event);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) {
@@ -1660,24 +2142,47 @@
         }
         const anchor = event.seat && event.seat.anchor || '';
         const seatedSection = sections.get(anchor.split('/')[0]);
+        const unplaced = typedUnplacedSeat(event);
+        const unplacedDivision = unplaced && event.seat.region === 'before-frame'
+          ? 'Before the Ordinary frame' : (unplaced ? 'After the Ordinary frame' : null);
         const node = exposeReaderLocus(
           renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix, result),
-          namedDivision(seatedSection && seatedSection.name || currentDivision || 'Appointed propers'),
+          namedDivision(unplacedDivision || seatedSection && seatedSection.name ||
+            currentDivision || 'Appointed propers'),
           event.editionSlotLabel || proper.name || 'Proper'
         );
         contents.push({
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: node,
-          group: 'Appointed propers'
+          group: unplaced ? 'Exceptional source-order propers' : 'Appointed propers'
         });
         return node;
       }
     });
 
-    const properIds = (result.events || []).filter(function (event) {
-      return event.kind === 'proper';
-    }).map(function (event) { return event.id; });
+    const tails = new Map();
+    groups.filter(function (group) {
+      return !listedGroups.has(group.group);
+    }).forEach(function (group) {
+      const sectionKey = groupSections.get(group.group);
+      const anchor = tails.get(sectionKey) || sectionNodes.get(sectionKey);
+      if (!anchor) throw new Error('Ordinary option has no rendered division: ' + group.group);
+      const option = selectedOptions.get(group.group);
+      const choice = renderOrdinaryChoice(
+        group, option, prefix, ordinary, state, structure, sectionKey
+      );
+      anchor.after(choice);
+      tails.set(sectionKey, choice);
+      contents.push({
+        id: prefix + 'ordinary-option/' + group.group,
+        label: group.name + ': ' + option.name,
+        element: choice,
+        group: 'Options'
+      });
+    });
+
+    const properIds = semanticProperEvents(result).map(function (event) { return event.id; });
     if (new Set(properIds).size !== properIds.length) {
       throw new Error('the production semantic stream duplicated an appointed Proper');
     }
@@ -1685,23 +2190,55 @@
     fragment.appendChild(OrdinaryRenderer.ordinaryPreamble(ordinary));
   }
 
-  function renderOrdinaryChoice(group, selected, event, prefix, ordinary) {
+  function renderOrdinaryChoice(group, selected, prefix, ordinary, state, structure, sectionKey) {
     const fieldset = T.el('fieldset', 'ordinary-choice');
+    fieldset.tabIndex = -1;
     fieldset.dataset.optionGroup = group.group;
     fieldset.dataset.optionBranch = prefix || '';
     fieldset.appendChild(T.el('legend', null, group.name));
     fieldset.appendChild(T.el('p', 'ordinary-choice-note',
       'This source-defined choice belongs here in the liturgical sequence.'));
     const options = T.el('div', 'ordinary-choice-options');
+    let selectedApplicability = null;
     (group.options || []).forEach(function (option) {
       const semanticKeys = [];
       (ordinary.sections || []).forEach(function (section) {
         (section.elements || []).forEach(function (element) {
-          if (element.variant === option.id) semanticKeys.push(element.key);
+          const owns = (element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group && alternative.option === option.id;
+          });
+          if (owns || element.variant === option.id) semanticKeys.push(element.key);
         });
       });
-      if (semanticKeys.length !== 1) {
-        throw new Error('Ordinary option has no unique semantic element: ' + option.id);
+      if (!semanticKeys.length) {
+        throw new Error('Ordinary option has no semantic element: ' + option.id);
+      }
+      let target = null;
+      let applicability = null;
+      try {
+        const legitimate = Object.assign(
+          {}, state.options && state.options.legitimate || {}, { [group.group]: option.id }
+        );
+        const candidateState = Object.assign({}, state, {
+          options: Object.assign({}, state.options || {}, { legitimate: legitimate })
+        });
+        const candidate = Adapters.adaptDay({
+          request: candidateState, derived: runtime.derived,
+          structure: structure, ordinary: ordinary
+        });
+        const events = candidate.events || [];
+        target = events.find(function (row) {
+          return row.kind === 'ordinary-element' && semanticKeys.indexOf(
+            row.id.replace(/^ordinary-element\//, '')) >= 0;
+        }) || events.find(function (row) {
+          return row.id === 'ordinary-section/' + sectionKey;
+        }) || null;
+        if ((candidate.ordinaryUnresolved || []).some(function (row) {
+          return semanticKeys.indexOf(row.element) >= 0;
+        })) applicability = 'unresolved';
+        else if (!target || target.kind !== 'ordinary-element') applicability = 'inapplicable';
+      } catch (_error) {
+        applicability = 'unresolved';
       }
       const label = T.el('label', 'ordinary-choice-option');
       const input = document.createElement('input');
@@ -1709,14 +2246,13 @@
       input.name = 'reader-' + (prefix || '').replace(/[^a-z0-9]+/gi, '-') + group.group;
       input.value = option.id;
       input.checked = Boolean(selected && selected.id === option.id);
+      input.disabled = applicability === 'inapplicable';
+      input.dataset.optionApplicability = applicability || 'applicable';
+      if (input.checked) selectedApplicability = applicability;
       input.addEventListener('change', function () {
         if (!input.checked) return;
-        const location = {
-          kind: 'event',
-          id: (prefix || '') + 'ordinary-element/' + semanticKeys[0]
-        };
         navigate({ mode: 'missal', [group.group]: option.id }, ['ordinary'], {
-          location: location,
+          location: target ? { kind: 'event', id: (prefix || '') + target.id } : null,
           focus: {
             kind: 'ordinary-option', group: group.group, option: option.id,
             branch: prefix || ''
@@ -1724,10 +2260,19 @@
         });
       });
       label.appendChild(input);
-      label.appendChild(document.createTextNode(option.name));
+      label.appendChild(document.createTextNode(option.name + (
+        applicability === 'unresolved' ? ' — applicability unresolved' :
+          applicability === 'inapplicable' ? ' — not appointed here' : ''
+      )));
       options.appendChild(label);
     });
     fieldset.appendChild(options);
+    if (selectedApplicability === 'unresolved') {
+      const notice = T.el('p', 'ordinary-choice-note',
+        'This selected option has unresolved applicability here, so its text is not shown.');
+      notice.dataset.ordinaryApplicability = 'unresolved';
+      fieldset.appendChild(notice);
+    }
     return fieldset;
   }
 
@@ -1801,12 +2346,14 @@
       const normalized = Contract.normalizeLegacy(parsed, {
         context: assembled.context,
         remembered: {},
-        defaults: {
+        defaults: Object.assign({
           date: preliminary.date,
           missal: preliminary.missal,
           bible: Contract.defaultBibleId(runtime.bibles),
           orations: T.SOURCE_LANGUAGE
-        }
+        }, requestedMode === 'missal' ||
+          (requestedMode === 'study' && parsed.recognized.ordinary === '1')
+          ? { 'ordinary-lang': 'en' } : {})
       });
       if (!normalized.ok) {
         renderFailure(normalized.errors, { mode: requestedMode });
@@ -1822,6 +2369,13 @@
       );
       if (witnessErrors.length) {
         renderFailure(witnessErrors, { mode: requestedMode });
+        return;
+      }
+      const locationErrors = validateExplicitSemanticLocation(
+        normalized.state, assembled.derived, assembled.structure, assembled.ordinary
+      );
+      if (locationErrors.length) {
+        renderFailure(locationErrors, { mode: requestedMode });
         return;
       }
       runtime.normalized = normalized;
@@ -2062,7 +2616,7 @@
       prefix = territorial[0];
       eventId = eventId.slice(prefix.length);
     }
-    if (/^proper\//.test(eventId)) return location;
+    if (/^(?:proper|proper-choice)\//.test(eventId)) return location;
     let rows = events || [];
     if (prefix) {
       const held = runtime.branches.find(function (row) { return row.prefix === prefix; });
@@ -2148,8 +2702,8 @@
     };
     if (!ordinaryLangField.hidden) updates['ordinary-lang'] = ordinaryLangSelect.value;
     if (!ordinaryOptionField.hidden && runtime.ordinary) {
-      const group = window.OrdinarySeating.variantGroupOf(runtime.ordinary);
-      if (group) updates[group.group] = ordinaryOptionSelect.value;
+      const groups = ordinaryVariantGroups(runtime.ordinary);
+      if (groups.length === 1) updates[groups[0].group] = ordinaryOptionSelect.value;
     }
     readerShell.close({ restoreFocus: false });
     navigate(updates, changedDay ? ['mass', 'form', 'translation-witness', 'location'] :

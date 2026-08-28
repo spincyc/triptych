@@ -539,6 +539,168 @@ class ActiveCalendarRefusalTests(unittest.TestCase):
                 self.assertTrue(all(row["state"] == "unresolved" for row in branch["readable"]))
 
 
+class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
+    """Known source limits stop only the civil branches on which they hold."""
+
+    CASES = {
+        "postconciliar": {
+            "holy-family-refusal": "2022-12-30",
+            "joseph-departure": "2023-03-19",
+            "joseph-arrival": "2023-03-20",
+            "ordinary-time-orations": "2026-01-12",
+            "ordinary-time-loses": "2026-08-15",
+            "mother-of-church": "2020-06-01",
+        },
+        "roman-1962": {
+            "litanies-lose": "2021-04-25",
+            "litanies-win": "2026-04-25",
+        },
+        "roman-pre-1955": {
+            "linearization-can-decide": "2021-11-14",
+            "easter-deterministic": "2026-04-05",
+        },
+    }
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        if not rubrics.shutil.which("node"):
+            raise unittest.SkipTest("node is not installed")
+        cases = []
+        cls.inputs = {}
+        for calendar, named_dates in cls.CASES.items():
+            built_rubrics, problems, _ = rubrics.build(CALENDARS, calendar)
+            if problems:
+                raise AssertionError("; ".join(problems))
+            years = sorted({int(value[:4]) for value in named_dates.values()})
+            index = calendar_days.load_calendar(CALENDARS, calendar)
+            built_years = calendar_days.build_years(
+                index, sorted(set(years + [year + 1 for year in years]))
+            )
+            calendar_days.with_fixed(index, years)
+            documents = {
+                year: calendar_days.year_document(index, year, built_years)
+                for year in years
+            }
+            for identifier, date in named_dates.items():
+                case = {
+                    "id": identifier,
+                    "date": date,
+                    "year": documents[int(date[:4])],
+                    "rubrics": built_rubrics[0],
+                }
+                cls.inputs[identifier] = case
+                cases.append(case)
+
+        answered = rubrics.run_model({"cases": cases})
+        cls.results = {}
+        for row in answered["results"]:
+            if not row.get("ok"):
+                raise AssertionError(row.get("error"))
+            branch, = row["result"]["options"]
+            cls.results[row["id"]] = (row["result"], branch)
+
+    def assert_refused(self, identifier: str, scope: str | None = None) -> dict:
+        _, branch = self.results[identifier]
+        self.assertFalse(branch["settled"])
+        self.assertIsNone(branch["winner"])
+        self.assertFalse(branch["choiceRequired"])
+        self.assertIsNone(branch["choice"])
+        self.assertTrue(branch["unsettled"])
+        self.assertTrue(all(not rows for rows in branch["orations"].values()))
+        self.assertTrue(all(row["state"] == "unresolved" for row in branch["readable"]))
+        self.assertTrue(all("when" not in row for row in branch["unsettled"]))
+        if scope:
+            self.assertIn(scope, {row.get("scope") for row in branch["unsettled"]})
+        return branch
+
+    def test_thirty_december_refusal_blocks_the_date_not_the_liturgical_year(self) -> None:
+        result, branch = self.results["holy-family-refusal"]
+        self.assert_refused("holy-family-refusal")
+        self.assertIn(
+            "the weekday position of 30 December",
+            {row["what"] for row in branch["unsettled"]},
+        )
+        active = [
+            row for row in result["liturgicalYear"]["unresolved"]
+            if row["what"] == "the weekday position of 30 December"
+        ]
+        self.assertEqual(len(active), 1)
+        self.assertTrue(active[0].get("when") or active[0].get("from"))
+
+    def test_nualc_five_moves_saint_joseph_to_the_following_monday(self) -> None:
+        _, departure = self.results["joseph-departure"]
+        _, arrival = self.results["joseph-arrival"]
+        self.assertTrue(departure["settled"])
+        self.assertEqual(departure["winner"]["id"], "lent-4")
+        moved, = [
+            row for row in departure["losers"]
+            if row["id"] == "saint-joseph-spouse-blessed-virgin-mary"
+        ]
+        self.assertEqual(moved["disposition"], "transferred")
+        self.assertEqual(moved["destination"], "2023-03-20")
+        self.assertEqual(moved["locus"], "NUALC 5")
+
+        self.assertTrue(arrival["settled"])
+        self.assertEqual(
+            arrival["winner"]["id"], "saint-joseph-spouse-blessed-virgin-mary"
+        )
+        arrived, = [
+            row for row in arrival["candidates"]
+            if row["id"] == "saint-joseph-spouse-blessed-virgin-mary"
+        ]
+        self.assertEqual(arrived["source"], "arrived")
+        self.assertEqual(arrived["arrivedFrom"], "2023-03-19")
+
+    def test_ordinary_time_oration_gap_does_not_invent_a_collect(self) -> None:
+        branch = self.assert_refused("ordinary-time-orations", "oration-owner")
+        reason, = branch["unsettled"]
+        self.assertEqual(reason["what"], "the oration owner for an Ordinary Time weekday")
+
+    def test_ordinary_time_condition_does_not_fire_when_the_weekday_loses(self) -> None:
+        _, branch = self.results["ordinary-time-loses"]
+        self.assertTrue(branch["settled"])
+        self.assertEqual(branch["winner"]["id"], "assumption-blessed-virgin-mary")
+        self.assertEqual(branch["unsettled"], [])
+        self.assertEqual(len(branch["orations"]["all"]), 1)
+
+    def test_mother_of_church_collision_uses_the_source_reason(self) -> None:
+        branch = self.assert_refused("mother-of-church", "precedence")
+        reason, = branch["unsettled"]
+        self.assertIn("Mother of the Church", reason["what"])
+        self.assertNotIn("movable before fixed", reason["why"])
+
+    def test_1962_litanies_refuse_only_when_the_combined_entry_loses(self) -> None:
+        losing = self.assert_refused("litanies-lose", "occurrence")
+        self.assertIn("Greater Litanies", losing["unsettled"][0]["what"])
+        _, winning = self.results["litanies-win"]
+        self.assertTrue(winning["settled"])
+        self.assertEqual(winning["winner"]["id"], "litania-maior")
+        self.assertEqual(winning["unsettled"], [])
+
+    def test_pre1955_linearization_refuses_only_the_material_range(self) -> None:
+        uncertain = self.assert_refused("linearization-can-decide", "occurrence")
+        self.assertIn("1962 class III", uncertain["unsettled"][0]["what"])
+        _, deterministic = self.results["easter-deterministic"]
+        self.assertTrue(deterministic["settled"])
+        self.assertEqual(deterministic["winner"]["id"], "easter-sunday")
+        self.assertEqual(deterministic["unsettled"], [])
+
+    def test_unknown_condition_fields_fail_instead_of_settling(self) -> None:
+        case = json.loads(json.dumps(self.inputs["ordinary-time-loses"]))
+        case["id"] = "unknown-condition"
+        case["rubrics"]["unsettled"].append(
+            {
+                "what": "an invalid source condition",
+                "why": "the consumer must reject it",
+                "when": {"candidate_typo": "ot-19-saturday"},
+            }
+        )
+        answered = rubrics.run_model({"cases": [case]})
+        result, = answered["results"]
+        self.assertFalse(result["ok"])
+        self.assertIn("unsupported unsettled condition field", result["error"])
+
+
 class SourceDrivenAssignmentTests(unittest.TestCase):
     """Distinct celebrations inherit precedence from their source attributes."""
 

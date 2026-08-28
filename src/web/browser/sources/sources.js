@@ -72,7 +72,10 @@
   }
 
   function editionLabel(edition) {
-    const parts = [];
+    // Date and language do not identify an edition. Several works carry two
+    // editions with the same date, language and passage count, so lead with the
+    // source-authored title and fall back to the stable id when it is absent.
+    const parts = [edition.title || edition.id];
     if (edition.date) parts.push(edition.date);
     if (edition.language) parts.push(T.languageName(edition.language));
     parts.push(
@@ -116,14 +119,18 @@
     // may I actually read, and what is only identified for me.
     T.fillSelect(elements.rights, [{ value: '', label: 'Any rights status' }].concat(
       (facets.rights || []).map(function (one) {
-        return { value: one.id, label: one.id + ' (' + one.artifacts + ')' };
+        return {
+          value: one.id,
+          label: one.id + ' (' + one.artifacts + ' artifacts · ' +
+            one.editions + ' editions)'
+        };
       })
     ));
     T.fillSelect(elements.sort, [
       { value: 'author', label: 'Author' },
       { value: 'title', label: 'Title' },
       { value: 'date', label: 'Earliest edition' },
-      { value: 'readable', label: 'Most readable here' }
+      { value: 'readable', label: 'Readable passage count' }
     ]);
     elements.readable.disabled = false;
     elements.find.disabled = false;
@@ -223,7 +230,7 @@
    * The reader
    * ------------------------------------------------------------------ */
 
-  async function openEdition(work, edition, wantedPassage) {
+  async function openEdition(work, edition, wantedPassage, canonicalize) {
     const path = M.editionPath(spine, work, edition);
     if (!path) {
       T.fail('The index records no file for ' + edition.id + '.');
@@ -267,7 +274,8 @@
     // Opening from the finder names the first passage just as exactly as a
     // deep link does. This matters most for a one-passage edition: there is no
     // Next button whose later use could accidentally finish the address.
-    writeHash();
+    if (canonicalize) replaceReaderHash();
+    else writeHash();
     renderReader();
   }
 
@@ -321,9 +329,8 @@
     if (!passages.length) {
       elements.reader.appendChild(
         T.el('p', 'placeholder',
-          'This edition is identified and its artifacts are recorded, but no ' +
-          'passage of it has been addressed yet. There is nothing to step ' +
-          'through.')
+          'This edition is identified, but no passage of it has been addressed ' +
+          'yet. There is nothing to step through.')
       );
       renderApparatus();
       return;
@@ -402,8 +409,19 @@
     if (select) select.value = String(open.at);
     const previous = bar.querySelector('[data-passage-step="-1"]');
     const next = bar.querySelector('[data-passage-step="1"]');
-    if (previous) previous.disabled = open.at <= 0;
-    if (next) next.disabled = open.at >= passages.length - 1;
+    const atStart = open.at <= 0;
+    const atEnd = open.at >= passages.length - 1;
+    // Disabling the button that was just used moves focus to the document body
+    // in Chromium. Put it on the stable selector first, so reaching either end
+    // of the sequence does not strand a keyboard reader at the top of the page.
+    if (select && (
+      (previous && document.activeElement === previous && atStart) ||
+      (next && document.activeElement === next && atEnd)
+    )) {
+      select.focus();
+    }
+    if (previous) previous.disabled = atStart;
+    if (next) next.disabled = atEnd;
     const count = bar.querySelector('.passage-count');
     if (count) {
       count.textContent = 'Passage ' + (open.at + 1) + ' of ' + passages.length;
@@ -473,6 +491,8 @@
         T.notice('the text of this passage could not be loaded: ' +
           (error.message || error))
       );
+      body.appendChild(renderProvenance(passage));
+      if (passage.notes) body.appendChild(T.el('p', 'passage-notes', passage.notes));
       return;
     }
     if (!T.isCurrentRender(token)) return;
@@ -560,8 +580,8 @@
     section.appendChild(
       T.el('summary', null,
         artifacts.length === 1
-          ? 'The one artifact behind this edition'
-          : 'The ' + artifacts.length + ' artifacts behind this edition')
+          ? 'The one source artifact for this edition'
+          : 'The ' + artifacts.length + ' source artifacts for this edition')
     );
     const list = T.el('ul', 'artifact-list');
     for (const artifact of artifacts) {
@@ -577,6 +597,12 @@
       );
       selection.hidden = true;
       item.appendChild(selection);
+      item.appendChild(T.el(
+        'span', 'artifact-relationship',
+        artifact.edition_owned
+          ? 'Owned by this edition'
+          : 'Controls a passage in this edition; owned by another edition'
+      ));
       item.appendChild(T.el('span', 'artifact-type', artifact.artifact_type || ''));
       item.appendChild(T.el('span', 'artifact-rights', artifact.rights || ''));
       item.appendChild(T.el('span', 'artifact-storage', 'stored ' + artifact.storage));
@@ -634,6 +660,15 @@
       ['readable', state.readable ? '1' : ''],
       ['find', state.find],
       ['sort', state.sort === 'author' ? '' : state.sort]
+    ]);
+  }
+
+  /** Complete an arrived reader address without adding a phantom Back stop. */
+  function replaceReaderHash() {
+    const passage = open && (open.payload.passages || [])[open.at];
+    T.replaceHash([
+      ['edition', open && open.edition.id],
+      ['passage', passage ? passage.id : '']
     ]);
   }
 
@@ -703,6 +738,36 @@
     );
   }
 
+  /** An explicit edition id is a citation, not a finder filter. Refuse a miss. */
+  function reportEditionNotHere(editionId) {
+    open = null;
+    showReader();
+    T.clear(elements.reader);
+    const back = T.el('button', 'back', '← Back to the corpus');
+    back.type = 'button';
+    back.addEventListener('click', showFinder);
+    elements.reader.appendChild(back);
+    elements.reader.appendChild(
+      T.el('p', 'error',
+        'No edition with the id “' + editionId + '” can be opened here. The ' +
+        'address has been left unchanged so it cannot be mistaken for another ' +
+        'edition.')
+    );
+  }
+
+  function facetValues(name) {
+    return new Set(((spine.facets || {})[name] || []).map(function (one) {
+      return String(one.id);
+    }));
+  }
+
+  /** Finder values are enumerated state. Unknown values collapse to the
+   *  unfiltered/default value and the resulting address is written below. */
+  function validFacet(hash, key, facet) {
+    const value = hash.get(key) || '';
+    return !value || facetValues(facet).has(value) ? value : '';
+  }
+
   async function applyHash(hash) {
     const editionId = hash.get('edition');
     const passageId = hash.get('passage');
@@ -711,7 +776,7 @@
       for (const work of spine.works || []) {
         for (const edition of work.editions || []) {
           if (edition.id === editionId) {
-            await openEdition(work, edition, passageId);
+            await openEdition(work, edition, passageId, true);
             return;
           }
         }
@@ -720,28 +785,37 @@
     if (passageId) {
       const found = await followPassage(passageId);
       if (found) {
-        await openEdition(found.work, found.edition, passageId);
+        await openEdition(found.work, found.edition, passageId, true);
         return;
       }
       reportPassageNotHere(passageId);
       return;
     }
+    if (editionId) {
+      reportEditionNotHere(editionId);
+      return;
+    }
 
+    const sorts = new Set(['author', 'title', 'date', 'readable']);
+    const askedSort = hash.get('sort') || 'author';
     state = {
-      author: hash.get('author') || '',
-      category: hash.get('category') || '',
-      language: hash.get('language') || '',
-      period: hash.get('period') || '',
-      rights: hash.get('rights') || '',
+      author: validFacet(hash, 'author', 'authors'),
+      category: validFacet(hash, 'category', 'categories'),
+      language: validFacet(hash, 'language', 'languages'),
+      period: validFacet(hash, 'period', 'periods'),
+      rights: validFacet(hash, 'rights', 'rights'),
       readable: hash.get('readable') === '1',
       find: (hash.get('find') || '').toLowerCase(),
-      sort: hash.get('sort') || 'author'
+      sort: sorts.has(askedSort) ? askedSort : 'author'
     };
     writeControls();
     elements.reader.hidden = true;
     elements.controls.hidden = false;
     elements.finder.hidden = false;
     renderFinder();
+    // Drops unknown keys and invalid enumerated values, normalises Find, and
+    // never manufactures a history entry merely for correcting an address.
+    replaceFinderHash();
   }
 
   /* ---------------------------------------------------------------------

@@ -612,8 +612,8 @@ def print_json(payload: dict[str, object], *, stream=sys.stdout) -> None:
     print(text, file=stream)
 
 
-def fail(message: str, code: str, as_json: bool, status: int, prefix: str) -> int:
-    if as_json:
+def fail(message: str, code: str, machine: bool, status: int, prefix: str) -> int:
+    if machine:
         print_json(
             {
                 "code": code,
@@ -674,7 +674,7 @@ def run_verb_cli(
         message = str(error)
         if dependency_message:
             message = f"{message}; {dependency_message}"
-        return fail(message, "dependency", as_json, 69, prefix)
+        return fail(message, "dependency", machine, 69, prefix)
     except Exception as error:
         if mapped_errors:
             for exc_type, (code, status) in mapped_errors.items():
@@ -682,7 +682,7 @@ def run_verb_cli(
                     return fail(
                         str(error) or error.__class__.__name__,
                         code,
-                        as_json,
+                        machine,
                         status,
                         prefix,
                     )
@@ -694,7 +694,7 @@ def run_verb_cli(
         return fail(
             str(error) or error.__class__.__name__,
             "internal",
-            as_json,
+            machine,
             70,
             prefix,
         )

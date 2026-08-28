@@ -213,12 +213,15 @@ the excerpt form. Retaining the entire-work form copied from a source PDF, or
 replacing `©` with `(c)`, does not satisfy the current prescribed wording.
 
 **Current-tree quarantine does not clean Git history.** Earlier commits tracked
-ICEL payloads, including strings sourced through unofficial intermediaries; the
-commit graph retains those blobs after the served files stop carrying them.
-Whether the public repository needs a history rewrite, replacement, access
-change, or another remedy is a release-policy and counsel decision for the
-maintainer. This policy records the residual and does not treat a clean current
-artifact as retroactive clearance of historical distribution.
+ICEL payloads, including strings sourced through unofficial intermediaries;
+Roman 1962 Latin Proper bodies now covered by the text-free quarantine ledger;
+and a superseded Lasance OCR artifact containing the excluded lettered insert
+at printed pages 1302a--1302d. The commit graph retains those blobs after the
+served files and tracked review artifacts stop carrying them. Whether the
+public repository needs a history rewrite, replacement, access change, or
+another remedy is a release-policy and counsel decision for the maintainer.
+This policy records the residual and does not treat a clean current artifact as
+retroactive clearance of historical distribution.
 
 ---
 
@@ -268,9 +271,10 @@ official source exists; later harvests must report their own measured coverage.
 The England-and-Wales text must be verified element by element against the U.S.
 state before it lands: the universal ICEL text is common to ICEL territories,
 national adaptations are not. And an authoritative publisher establishes WHO
-says so, not AS OF WHEN: ICEL's own presidential-tones file prints the Advent 1
-Collect with the ending superseded after Cardinal Sarah's letter of May 2020,
-which each conference implemented on its own date.
+says so, not AS OF WHEN: ICEL's own presidential-tones file prints three
+Proper-of-Time orations. Its Advent 1 Collect has the ending superseded after
+Cardinal Sarah's letter of May 2020, which each conference implemented on its
+own date.
 
 So the reason a slot is empty must be recorded truly. It is not enough to say
 *"nobody may publish"* or *"ICEL owns it"*. Name the actual blocker: no exact
@@ -318,23 +322,23 @@ reaches an ICEL oration: the CCD's governs the readings, the USCCB's governs the
 U.S. adaptations and U.S. propers, and the ICEL line carries "All rights
 reserved" with its terms stated in ICEL's own published policy — which is §3.
 
-**A third consequence, withdrawn.** This page argued on 2026-08-20 that the
-Grail line made the unit of rights smaller than a proper slot, because on Palm
-Sunday an ICEL antiphon and a Grail psalm verse appear together, and that no
-antiphon could land until the model could express it. **That was wrong, and the
-schema already had the answer.** An antiphon slot is `source: mixed`: it carries
-the antiphon's own words as `text` and its scriptural constituents as `verses`,
-which are CITATIONS resolved at render time against whichever bible the reader
-has selected. The 1962 calendar has done this all along — its First Antiphon at
-the Distribution of Palms carries the antiphon's Latin beside `Matthew 21:9` and
-`Psalm 23:1-2, 7-10`, and the psalm's words come from the reader's own edition.
+**A third consequence, corrected twice.** A scriptural constituent ordinarily
+is a citation rather than acquired text. A `source: mixed` proper can therefore
+carry its own words as `text` and resolve its `verses` against the reader's
+selected Bible, as the 1962 palm rite already does. That general rule does not
+answer the approved English of Palm Sunday's Simple Entrance Antiphon.
 
-So a Grail rendering is never needed and never wanted. What this project carries
-from ICEL is the antiphon; what it carries for the psalm is the reference. The
-psalms are the psalms, and they are served from the public-domain editions this
-repository already indexes. No slot is blocked by the Grail line, and the three
-psalms it names require nothing of us but that we do not transcribe ICEL's
-particular rendering of them, which we have no reason to.
+The official ICEL Antiphonary was read again on 2026-08-27 at artifact page 44,
+printed page 36. Its source-owned English body interleaves the ICEL Johannine
+antiphon and refrain, the document's Revised Grail rendering of Psalm 23:9-10,
+and the repeated ICEL refrain. The psalm span matches the Psalm 23 witness on
+artifact page 41, and the copyright page assigns that rendering to Conception
+Abbey/The Grail, administered by GIA. Replacing those lines with a selected
+Bible would construct a different body and would not satisfy ICEL's exactness
+condition. The unit of rights is therefore smaller than this one slot after all.
+Its text-free ledger row records the exact passage witness and withholds the
+whole body until a per-span publication model or a basis reaching the Grail span
+exists; it does not overextend ICEL's permission to GIA's text.
 
 ### 5.2 What ICEL says it owns
 
@@ -571,13 +575,17 @@ respected. Do not conflate:
   typography, newly authored material and edition-specific changes; with
 - the **underlying ancient or otherwise public-domain liturgical text**.
 
-### 8.1 *Postquam Summus Pontifex* (2021) is the current word, and this repository does not hold it
+### 8.1 *Postquam Summus Pontifex* (2021) is the current registered word
 
 Decree of the Congregation for Divine Worship and the Discipline of the
 Sacraments, 22 October 2021, giving effect to canon 838 CIC as modified by
 *Magnum principium*; abbreviated `PSP` and cited at nn. 39–40 by the USCCB's own
-2025 guidelines. Retrieved 2026-08-20 from the Holy See Press Office bulletin
-[verified].
+2025 guidelines. The decree was already registered under the descriptive,
+immutable work ID
+`work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021`;
+the earlier title-only search missed that identity. Its exact Holy See Press
+Office bulletin PDF, retrieved 2026-08-20, is now hash-registered without
+tracked bytes, with verified passage records for the loci below.
 
 - **n. 2** — the Latin *editiones typicae* are promulgated by the Apostolic See,
   "which holds their copyright", and the same applies to subsequent editions.
@@ -593,6 +601,19 @@ Sacraments, 22 October 2021, giving effect to canon 838 CIC as modified by
   the Bishops' Conference. This is the 2021 successor to *Liturgiam authenticam*
   n. 117.
 
+The controlling source records are the Press Office PDF artifact
+`artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.press-office-pdf-9fd22cb8`
+and these passages:
+
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.2`;
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.3`; and
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.40`.
+
+Numbers 2 and 3 are on artifact page 2; their footnotes 7 and 8 are on artifact
+page 17; n. 40 is on artifact page 6. The PDF remains untracked because the
+Holy See portal terms reviewed for the artifact establish no repository
+redistribution basis.
+
 **What footnote [8] gives, stated narrowly.** It is the strongest support any
 source gives to §7.2: a study edition is expressly contemplated, expressly
 distinguished from the licensed liturgical-use edition, and routed to a
@@ -602,17 +623,9 @@ study edition may reproduce the copyrighted Latin without permission.** It
 allocates canonical competence; a footnote allocating canonical competence is
 not a copyright licence, and n. 2's ownership claim stands over both cases.
 
-Two open items follow, both real:
+One open item follows:
 
-1. **PSP is not registered anywhere in this repository** — a search on
-   2026-08-20 for "Postquam Summus", "postquam-summus" and `\bPSP\b` found no
-   source record, passage or citation. The repository cites *Liturgiam
-   authenticam* n. 111 (2001) in its place, and n. 111 speaks only of
-   reprinting where PSP n. 3 speaks of the internet. **Registering PSP is the
-   highest-value source acquisition this analysis identified.** Until it is
-   registered, cite it as `[sourced]` from the URL in §16 and not from a
-   repository record.
-2. **The Holy See's own cited authority for its copyright has not been
+1. **The Holy See's own cited authority for its copyright has not been
    retrieved.** PSP n. 2 footnote [7] cites *Secretariat of State, Decree, 13
    May 2005: AAS 97 (2005) 798-799*. That, not LA n. 111, is the instrument the
    Holy See points to. Note also that `missals.md` §5 already cites a
@@ -876,12 +889,14 @@ Before any text is written to a tracked file:
    had.
 3. **Determine the actual copyright owner per text**, not per book. Is it ICEL
    universal text? a USCCB national adaptation or U.S. proper? CCD Scripture? a
-   fourth party. **Scripture inside a proper is a citation, not a text to
-   acquire**: an antiphon carries its own words and its scriptural constituents
-   as references, and those resolve against the bible the reader selected. That
-   is why the Revised Grail rendering of three psalms, named in the 2011 book
-   and in ICEL's Antiphonary, blocks nothing — this project never wants a
-   particular publisher's psalm wording, only the reference.
+   fourth party. **Scripture inside a proper is ordinarily a citation, not a
+   text to acquire**: an antiphon carries its own words and its scriptural
+   constituents as references, resolved against the Bible the reader selected.
+   Do not apply that rule where an authoritative approved-English exemplar
+   makes a particular third-party rendering part of the source-owned body. The
+   Palm Sunday Simple Entrance Antiphon is the recorded counterexample: its
+   interleaved Revised Grail span makes the whole text unavailable until the
+   publication model can express per-span rights or another basis reaches it.
 4. **Name the basis** from §1's seven, and record it as a token, not prose.
    Where the basis is a permission, record the policy URL and its retrieval date
    beside the artifact's own source URL: they are different URLs and condition
@@ -946,16 +961,18 @@ only the corrected claim learns nothing about how the error was reached.
 | Withdrawn | This page had said | What is true | Corrected |
 | --- | --- | --- | --- |
 | ICEL publishes no exemplar | "its own site has seven pages, catalogues the books it has translated, and offers no text and no download" | ICEL's News page links an open music folder, and the ICEL Antiphonary is published free and entire. These are authoritative exemplar leads; coverage must be measured against the current corpus rather than copied from this dated audit. | 2026-08-21, §4 |
-| The Grail makes the rights unit smaller than a slot | "the unit of rights is therefore smaller than the slot, and this repository types rights per proper, which cannot express it. Until it can, no Palm Sunday antiphon may land" | A psalm inside a proper is a CITATION, not a text to acquire. An antiphon is `source: mixed`: its own words as `text`, its scriptural constituents as `verses`, resolved at render time against the reader's chosen bible. The 1962 calendar has done this since before the objection was written. No slot is blocked. | 2026-08-21, §5.1 |
+| The Grail never blocks a slot | "No slot is blocked by the Grail line" | The mixed-proper citation model remains right generally, but the official English of Palm Sunday's Simple Entrance Antiphon interleaves an exact Revised Grail span between ICEL spans. Substituting another Bible would change the approved body. This one slot is withheld with exact text-free witness metadata until per-span rights or a basis for the Grail span exists. | 2026-08-27, §5.1 |
 | The postconciliar Latin is refused entire | carried in the data rather than this page: one `editio-typica` absence asserted a rights refusal over all 48 elements of the Order of Mass | True of 12. The other 36 are twelve slots holding no words, eight modelled too coarsely to source, and sixteen ancient texts no rightsholder has refused. Now six typed keys. | 2026-08-21 |
 | The postconciliar English is wholly this project's own | carried in `THIRD_PARTY.md` and `liturgical-english-rights-v1.toml` | Public-domain 1861 Cummiskey English is also carried for antecedent prayers; derive current coverage from the inventory. | 2026-08-20 |
 
-**Who found them matters more than the list.** Three of the four were overturned
-by the maintainer, not by a tool or a review: he said the text is online
-everywhere, and he said the psalms are the psalms. A page like this one is
-written from what its author could reach, and its most consequential errors will
-usually be the ones only somebody who knows the subject can see. Contradiction
-from such a reader is the intended failure path, not an interruption of it.
+**Who found them matters more than the list.** Several were overturned by the
+maintainer rather than by a tool: he said the text is online everywhere, and he
+said the psalms are the psalms. Both corrections improved the investigation;
+the second still needed the exact official page to show the narrower exception.
+A page like this one is written from what its author could reach, and its most
+consequential errors will usually be the ones only somebody who knows the
+subject can see. Contradiction from such a reader is the intended failure path,
+not an interruption of it.
 
 ### 15.1 The root cause, in the repository's own record
 
@@ -1061,7 +1078,7 @@ does not satisfy `sources.md`'s source-text retrieval rule.
 
 | Source | URL | State |
 | --- | --- | --- |
-| CDWDS, *Postquam Summus Pontifex*, 22 Oct 2021 | `https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/10/22/211022b.pdf` | retrieved; sha256 `9fd22cb8…`; **not registered in this repository** — §8.1 |
+| CDWDS, *Postquam Summus Pontifex*, 22 Oct 2021 | `https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/10/22/211022b.pdf` | registered under the canonical canon-838 work; restricted/hash-only artifact sha256 `9fd22cb8…`; nn. 2, 3 with footnotes 7–8, and 40 verified — §8.1 |
 | *Liturgiam authenticam* nn. 110, 111, 117 | `https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_il_en.html` | held as a verified passage record, verified 2026-08-01 |
 | Secretariat of State, Decree, 13 May 2005: AAS 97 (2005) 798-799 | — | **not retrieved.** PSP's own cited authority — §8.1 |
 

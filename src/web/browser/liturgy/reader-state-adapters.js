@@ -58,6 +58,13 @@
     };
   }
 
+  function qualifiedSemanticId(proper) {
+    const name = proper && proper.name || '';
+    if (SEMANTIC_SLOTS[name]) return SEMANTIC_SLOTS[name];
+    const family = /^(.+?) \(.+\)$/.exec(name);
+    return family && SEMANTIC_SLOTS[family[1]] || null;
+  }
+
   /**
    * Resolve only source-authored Mass-form identities. The legacy flat Proper
    * list is retained for old consumers, but it is never a selection mechanism:
@@ -100,7 +107,7 @@
       if (hasOwn(request, 'form')) {
         throw new Error('explicit form is unsupported by this Mass');
       }
-      return { id: null, rows: normalized, choice: null, forms: [] };
+      return { id: null, rows: normalized, choice: null, forms: [], form: null };
     }
 
     const ids = [];
@@ -141,6 +148,7 @@
         id: null,
         rows: [],
         forms: forms,
+        form: null,
         choice: Contract.unresolvedChoice(
           choiceId,
           'this Mass carries several source-appointed forms and none is a default',
@@ -156,14 +164,20 @@
       };
     }
     const selected = wanted === null ? forms[0].id : wanted;
-    return { id: selected, rows: rowsById.get(selected), choice: null, forms: forms };
+    return {
+      id: selected, rows: rowsById.get(selected), choice: null, forms: forms,
+      form: forms.find(function (form) { return form.id === selected; })
+    };
   }
 
-  function ordinaryFrame(mass) {
-    if (!mass || !Object.prototype.hasOwnProperty.call(mass, 'ordinary_frame')) {
+  function ordinaryFrame(mass, selectedForm) {
+    const owner = selectedForm &&
+      Object.prototype.hasOwnProperty.call(selectedForm, 'ordinary_frame')
+      ? selectedForm : mass;
+    if (!owner || !Object.prototype.hasOwnProperty.call(owner, 'ordinary_frame')) {
       return { applicability: 'full' };
     }
-    const frame = mass.ordinary_frame;
+    const frame = owner.ordinary_frame;
     if (!frame || typeof frame !== 'object' || Array.isArray(frame)) {
       throw new Error('Mass Ordinary frame must be an exact mapping');
     }
@@ -202,9 +216,12 @@
       const row = rows[key] || {};
       return Boolean(
         (row.citations || []).length || row.text ||
+        (row.translations || []).some(function (translation) {
+          return translation && translation.text;
+        }) ||
         (row.unavailable_translations || []).length ||
         (row.untranslated || []).length ||
-        (row.latin && row.latin.withheld)
+        (row.latin && row.latin.withheld) || row.text_status
       );
     });
   }
@@ -259,8 +276,43 @@
       proper[selection.family][selection.key] || proper || {};
   }
 
+  function exactPublicTextStatus(value, owner) {
+    if (value === null || value === undefined) return null;
+    if (!value || typeof value !== 'object' || Array.isArray(value) ||
+        !sameJson(Object.keys(value).sort(), ['scope', 'state'])) {
+      throw new Error(owner + ' text_status must use the exact public state/scope shape');
+    }
+    return value;
+  }
+
+  function properBodyStatus(owner) {
+    const status = exactPublicTextStatus(owner && owner.text_status, 'Proper');
+    if (!status) return null;
+    if (status.state !== 'unavailable' || status.scope !== 'proper-body') {
+      throw new Error('Proper text_status must be unavailable/proper-body');
+    }
+    if (typeof owner.text === 'string' && owner.text.length) {
+      throw new Error('proper-body text_status may not coexist with Proper text');
+    }
+    return status;
+  }
+
+  function massTextStatus(mass) {
+    const status = exactPublicTextStatus(mass && mass.text_status, 'Mass');
+    if (!status) return null;
+    const identity = status.state + '/' + status.scope;
+    if (['partial/missal-formulary', 'unavailable/missal-formulary',
+         'unavailable/proper-collect'].indexOf(identity) < 0) {
+      throw new Error('Mass text_status uses an unsupported public state/scope pair');
+    }
+    return status;
+  }
+
   function typedUnavailableFor(proper, wanted, selection) {
     const owner = selectedOwner(proper, selection);
+    const ownerBodyStatus = properBodyStatus(owner);
+    const properBodyFallback = owner === proper ? null : properBodyStatus(proper);
+    const bodyStatus = ownerBodyStatus || properBodyFallback;
     const latinOwner = owner.latin ? owner : proper;
     const latin = latinOwner.latin || {};
     if (wanted === 'la' && latin.withheld) {
@@ -275,6 +327,14 @@
         reason: 'latin-withheld',
         unavailableState: ['rights-restricted', 'unavailable'].indexOf(latin.state) >= 0
           ? latin.state : 'unavailable'
+      };
+    }
+    if (wanted === 'la' && bodyStatus) {
+      return {
+        kind: 'composed', language: 'la', sourceId: null, source: null,
+        rights: null, missing: true, text: null, availability: 'unavailable',
+        held: false, reason: 'proper-body-unavailable',
+        unavailableState: 'unavailable'
       };
     }
 
@@ -363,7 +423,11 @@
       };
     }
     const wanted = request.languages && request.languages.orations || 'la';
+    const witness = request.languages && request.languages.translationWitness || null;
     if (wanted === 'la') {
+      if (witness) {
+        throw new Error('a translation witness cannot select the Latin source language');
+      }
       const withheldLatin = typedUnavailableFor(proper, wanted, selection);
       if (withheldLatin) return Object.assign(withheldLatin, {
         cycle: withheldLatin.cycle || cycle,
@@ -383,13 +447,6 @@
         };
       }
       const owner = selectedOwner(proper, selection);
-      const typed = typedUnavailableFor(proper, wanted, selection);
-      if (typed) return Object.assign(typed, {
-        cycle: typed.cycle || cycle,
-        cycles: cycleRows,
-        weekdayCycles: weekdayCycleRows,
-        cycleDimension: selection ? selection.dimension : null
-      });
       const ownerTranslations = (owner.translations || []).filter(function (one) {
         return one && one.lang === wanted && one.text;
       });
@@ -398,7 +455,18 @@
       });
       const translations = owner !== proper && (cycleText || ownerTranslations.length)
         ? ownerTranslations : parentTranslations;
-      const witness = request.languages && request.languages.translationWitness || null;
+      if (witness && translations.length && !translations.some(function (one) {
+        return (one.source_id || one.source || null) === witness;
+      })) {
+        throw new Error('explicit translation witness is not held for an appointed Proper');
+      }
+      const typed = typedUnavailableFor(proper, wanted, selection);
+      if (typed) return Object.assign(typed, {
+        cycle: typed.cycle || cycle,
+        cycles: cycleRows,
+        weekdayCycles: weekdayCycleRows,
+        cycleDimension: selection ? selection.dimension : null
+      });
       const translation = witness
         ? translations.find(function (one) {
             return (one.source_id || one.source || null) === witness;
@@ -424,7 +492,7 @@
             weekdayCycles: weekdayCycleRows,
             cycleDimension: selection ? selection.dimension : null,
             sourceId: null, rights: null, missing: true, availability: 'unavailable',
-            reason: 'translation-witness-identity-missing'
+            held: false, text: null, reason: 'translation-witness-identity-missing'
           };
         }
         return {
@@ -440,7 +508,7 @@
         weekdayCycles: weekdayCycleRows,
         cycleDimension: selection ? selection.dimension : null,
         sourceId: null, rights: null, missing: true, availability: 'unavailable',
-        reason: 'translation-missing'
+        held: false, text: null, reason: 'translation-missing'
       };
     }
     const typed = typedUnavailableFor(proper, wanted, selection);
@@ -515,7 +583,9 @@
     return hooks;
   }
 
-  function projectProper(proper, index, mass, request, structure, cycleMode, seat) {
+  function projectProper(
+    proper, index, mass, request, structure, cycleMode, seat, semanticSlotOverride
+  ) {
     const selected = selectedMaterial(proper, request, structure, cycleMode);
     if (selected.kind === 'cycle-alternatives') {
       selected.alternatives.forEach(function (alternative) {
@@ -530,7 +600,7 @@
     return {
       id: properEventId(request.edition.id, mass.key, index),
       kind: 'proper',
-      semanticSlot: semanticSlot(proper),
+      semanticSlot: semanticSlotOverride || semanticSlot(proper),
       editionSlotLabel: proper.name || null,
       form: proper.form || null,
       sourceKind: proper.source || null,
@@ -547,12 +617,17 @@
     const found = witness ? candidates.find(function (one) {
       return (one.source_id || one.source || null) === witness;
     }) : (candidates.length === 1 ? candidates[0] : null);
+    if (witness && candidates.length && !found) {
+      throw new Error('explicit Ordinary witness is not held for an appointed element');
+    }
     if (found) {
       return {
         kind: 'ordinary-text',
         language: language,
-        sourceId: found.source_id || null,
+        sourceId: found.source_id || found.source || null,
         rights: found.rights || null,
+        relation: found.relation || null,
+        collation: found.collation || null,
         absenceKey: null,
         availability: 'held',
         text: found.text
@@ -571,41 +646,220 @@
       }
     }
     const row = (ordinary.languages || []).find(function (one) { return one.lang === language; });
+    const absenceKey = row && element.absent && element.absent[row.absent] ||
+      'language-not-held';
+    const typedAbsence = (ordinary.language_absences || []).find(function (one) {
+      return one && one.lang === language && one.key === absenceKey;
+    }) || (ordinary.absences || []).find(function (one) {
+      return one && one.key === absenceKey;
+    }) || null;
+    const unavailableState = typedAbsence && typedAbsence.state || 'unavailable';
     return {
       kind: 'ordinary-text', language: language,
       sourceId: null,
       rights: null,
-      absenceKey: row && element.absent && element.absent[row.absent] || 'language-not-held',
+      held: false,
+      reason: unavailableState,
+      unavailableState: unavailableState,
+      absenceKey: absenceKey,
       availability: 'unavailable',
       text: null
     };
   }
 
-  function seatedEvents(mass, properRows, request, structure, ordinary, cycleMode) {
-    if (!ordinary) {
-      return properRows.filter(function (row) {
-        return row.proper.name !== 'Placeholder';
-      }).map(function (row) {
-        return projectProper(
-          row.proper, row.sourceIndex, mass, request, structure, cycleMode, null
-        );
+  function ordinarySelections(ordinary, request) {
+    const wanted = request.options && request.options.legitimate || {};
+    const groups = Seating.variantGroupsOf(ordinary);
+    const byId = new Map(groups.map(function (group) { return [group.group, group]; }));
+    Object.keys(wanted).forEach(function (groupId) {
+      const group = byId.get(groupId);
+      if (!group || !(group.options || []).some(function (one) {
+        return one.id === wanted[groupId];
+      })) {
+        throw new Error('explicit Ordinary option is not held by this edition');
+      }
+    });
+    return Seating.selectionMap(ordinary, wanted);
+  }
+
+  function ordinaryElements(ordinary, request, propers, predicateFacts) {
+    const predicates = Object.assign({}, predicateFacts || {});
+    if ((propers || []).some(function (proper) {
+      return proper && proper.name === 'Second Reading';
+    })) predicates['second-reading-appointed'] = true;
+    const resolution = Seating.resolveElements(
+      ordinary, ordinarySelections(ordinary, request), predicates
+    );
+    return {
+      shown: resolution.shown,
+      unresolved: resolution.unresolved.map(function (row) {
+        return {
+          kind: 'ordinary-unresolved', state: 'unresolved',
+          section: row.section, element: row.element,
+          condition: Object.assign({}, row.condition)
+        };
+      })
+    };
+  }
+
+  function assertSeatingComplete(placed) {
+    const rows = (placed.before || []).concat(placed.after || []);
+    for (const bucket of placed.buckets.values()) {
+      rows.push.apply(rows, bucket);
+    }
+    const conserved = rows.reduce(function (count, row) {
+      return count + (row && row.kind === 'proper_choice'
+        ? (row.options || []).reduce(function (held, option) {
+            return held + (option.rows || []).length;
+          }, 0) : 1);
+    }, 0);
+    const unusable = rows.some(function (row) {
+      if (!row || !row.seat) return true;
+      if (row.seat.placement !== 'unseated') return !row.seat.key;
+      return !row.seat.key || !row.seat.group || !row.seat.basis ||
+        ['before-frame', 'after-frame'].indexOf(row.seat.region) < 0;
+    });
+    if (placed.broke || unusable || conserved !== placed.sourceCount) {
+      throw new Error('appointed Proper has no usable semantic Ordinary seat');
+    }
+  }
+
+  function projectedSeat(seat, placement, mass, request) {
+    if (!seat) return null;
+    if (seat.placement === 'unseated') {
+      return {
+        id: 'unplaced/' + request.edition.id + '/' + mass.key + '/' +
+          seat.formId + '/' + seat.group,
+        placement: 'unseated', region: seat.region, basis: seat.basis
+      };
+    }
+    if (!seat.key || placement !== 'seated') {
+      throw new Error('appointed Proper has no usable semantic Ordinary seat');
+    }
+    return {
+      id: seat.key, anchor: seat.anchor, where: seat.where,
+      locus: seat.locus, placement: 'seated'
+    };
+  }
+
+  function uniqueSourceHooks(events) {
+    const seen = new Set();
+    const hooks = [];
+    (events || []).forEach(function (event) {
+      (event.sourceHooks || []).forEach(function (hook) {
+        const key = hook.kind + '\u0000' + hook.id;
+        if (seen.has(key)) return;
+        seen.add(key);
+        hooks.push(hook);
       });
+    });
+    return hooks;
+  }
+
+  function sharedChoiceSemanticSlot(event) {
+    const ids = new Set();
+    (event.options || []).forEach(function (option) {
+      (option.rows || []).forEach(function (row) {
+        const id = qualifiedSemanticId(row.proper);
+        if (id) ids.add(id);
+      });
+    });
+    if (ids.size > 1) {
+      throw new Error('alternative Proper group has no unique cross-edition semantic slot');
     }
-    const variant = request.options && request.options.legitimate || {};
-    const group = Seating.variantGroupOf(ordinary);
-    const wanted = group && variant[group.group] || null;
-    if (wanted && !(group.options || []).some(function (one) { return one.id === wanted; })) {
-      throw new Error('explicit Ordinary option is not held by this edition');
+    if (ids.size === 0) {
+      return {
+        state: 'edition-local-unmapped',
+        reason: 'source choice has no cross-edition semantic slot identity'
+      };
     }
-    const shown = Seating.shownElements(ordinary, wanted);
+    return { state: 'mapped', identity: { id: Array.from(ids)[0] } };
+  }
+
+  function projectProperChoice(event, mass, request, projectMember) {
+    const id = 'proper-choice/' + request.edition.id + '/' + mass.key + '/' +
+      event.formId + '/' + event.group;
+    const seat = projectedSeat(event.seat, event.placement, mass, request);
+    const semantic = sharedChoiceSemanticSlot(event);
+    const options = (event.options || []).map(function (option) {
+      const events = (option.rows || []).map(function (row) {
+        return projectMember(row, seat, semantic);
+      });
+      if (!events.length || new Set(events.map(function (one) { return one.id; })).size !== events.length) {
+        throw new Error('alternative Proper option must conserve distinct source events');
+      }
+      return { id: option.id, events: events };
+    });
+    if (options.length < 2 || new Set(options.map(function (one) { return one.id; })).size !== options.length) {
+      throw new Error('alternative Proper choice must carry distinct options');
+    }
+    const memberEvents = options.reduce(function (all, option) {
+      return all.concat(option.events);
+    }, []);
+    return {
+      id: id, kind: 'proper-choice', group: event.group,
+      selection: { state: 'required', option: null },
+      seat: seat, options: options, sourceHooks: uniqueSourceHooks(memberEvents),
+      choiceBasis: event.basis
+    };
+  }
+
+  function projectSeatingEvents(events, mass, request, projectMember, projectOrdinary) {
+    return (events || []).map(function (event) {
+      if (event.kind === 'proper_choice') {
+        return projectProperChoice(event, mass, request, projectMember);
+      }
+      if (event.kind === 'proper') {
+        return projectMember(
+          event,
+          projectedSeat(event.seat, event.placement, mass, request),
+          null
+        );
+      }
+      return projectOrdinary(event);
+    });
+  }
+
+  function seatedEvents(
+    mass, properRows, request, structure, ordinary, cycleMode, predicateFacts
+  ) {
+    if (!ordinary) {
+      const unframed = Seating.unframedEvents(
+        properRows, function (proper) { return proper && proper.name === 'Placeholder'; }
+      );
+      return {
+        events: projectSeatingEvents(
+          unframed, mass, request,
+          function (row, seat, semantic) {
+            return projectProper(
+              row.proper, row.sourceIndex, mass, request, structure, cycleMode,
+              seat, semantic
+            );
+          },
+          function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
+        ),
+        ordinaryUnresolved: []
+      };
+    }
+    const resolution = ordinaryElements(
+      ordinary, request, properRows.map(function (row) { return row.proper; }),
+      predicateFacts
+    );
     const placed = Seating.seatPropers(
-      properRows.map(function (row) { return row.proper; }), Seating.seats(ordinary, shown),
+      properRows,
+      Seating.seats(ordinary, resolution.shown),
       function (proper) { return proper && proper.name === 'Placeholder'; }
     );
-    const indexes = new Map(properRows.map(function (row) {
-      return [row.proper, row.sourceIndex];
-    }));
-    return Seating.massEvents(shown, placed).map(function (event) {
+    assertSeatingComplete(placed);
+    const events = projectSeatingEvents(
+      Seating.massEvents(resolution.shown, placed), mass, request,
+      function (row, seat, semantic) {
+        return projectProper(
+          row.proper, row.sourceIndex, mass, request, structure, cycleMode,
+          seat, semantic
+        );
+      },
+      function (event) {
       if (event.kind === 'begin_section') {
         return {
           id: 'ordinary-section/' + event.section.key,
@@ -634,22 +888,9 @@
           }].concat(selected.sourceId ? [{ kind: 'translation', id: selected.sourceId }] : [])
         };
       }
-      return projectProper(
-        event.proper,
-        indexes.get(event.proper),
-        mass,
-        request,
-        structure,
-        cycleMode,
-        event.seat ? {
-          id: event.seat.key,
-          anchor: event.seat.anchor,
-          where: event.seat.where,
-          locus: event.seat.locus,
-          placement: event.placement
-        } : null
-      );
+      throw new Error('Ordinary seating emitted an unsupported semantic event');
     });
+    return { events: events, ordinaryUnresolved: resolution.unresolved };
   }
 
   function partialRecensionReason(structure, mass) {
@@ -684,11 +925,392 @@
     };
   }
 
-  function coverageFor(structure, mass, propers, request, ordinary, events) {
+  function ordinaryRelationRows(ordinary, language) {
+    if (Object.prototype.hasOwnProperty.call(ordinary, 'relation_coverage')) {
+      if (!Array.isArray(ordinary.relation_coverage)) {
+        throw new Error('Ordinary relation coverage must be an array');
+      }
+      return ordinary.relation_coverage.filter(function (row) {
+        return row && row.lang === language;
+      }).map(function (row) {
+        if (['own', 'antecedent'].indexOf(row.relation) < 0 ||
+            ['not-applicable', 'collated', 'uncollated'].indexOf(row.collation) < 0 ||
+            !Number.isInteger(row.count) || row.count < 1 ||
+            (row.relation === 'own') !== (row.collation === 'not-applicable')) {
+          throw new Error('Ordinary relation coverage carries an invalid grade');
+        }
+        return {
+          lang: row.lang, relation: row.relation,
+          collation: row.collation, count: row.count
+        };
+      });
+    }
+    const grouped = new Map();
+    for (const section of ordinary.sections || []) {
+      for (const element of section.elements || []) {
+        for (const translation of element.translations || []) {
+          if (!translation || translation.lang !== language || !translation.text) continue;
+          const relation = translation.relation || 'antecedent';
+          const collation = translation.collation ||
+            (relation === 'own' ? 'not-applicable' : 'uncollated');
+          const key = relation + '|' + collation;
+          grouped.set(key, (grouped.get(key) || 0) + 1);
+        }
+      }
+    }
+    return Array.from(grouped.entries()).map(function (entry) {
+      const parts = entry[0].split('|');
+      return {
+        lang: language, relation: parts[0], collation: parts[1], count: entry[1]
+      };
+    });
+  }
+
+  function ordinaryAbsenceReasons(ordinary, languageDeclaration, language) {
+    const counts = new Map();
+    for (const section of ordinary.sections || []) {
+      for (const element of section.elements || []) {
+        const key = element && element.absent && element.absent[languageDeclaration.absent];
+        if (key) counts.set(key, (counts.get(key) || 0) + 1);
+      }
+    }
+    if (Object.prototype.hasOwnProperty.call(ordinary, 'language_absences')) {
+      if (!Array.isArray(ordinary.language_absences)) {
+        throw new Error('Ordinary language absences must be an array');
+      }
+      return ordinary.language_absences.filter(function (row) {
+        return row && row.lang === language;
+      }).map(function (row) {
+        if (typeof row.key !== 'string' || !row.key ||
+            !Number.isInteger(row.count) || row.count < 1 ||
+            ['rights-restricted', 'unresolved', 'unavailable'].indexOf(row.state) < 0 ||
+            counts.get(row.key) !== row.count) {
+          throw new Error('Ordinary typed language absence contradicts element coverage');
+        }
+        return {
+          kind: row.state === 'rights-restricted' ? 'text-withheld' : 'text-not-held',
+          absenceKey: row.key,
+          sourceState: row.state,
+          sourceKind: row.kind || null,
+          count: row.count
+        };
+      });
+    }
+    const definitions = new Map((ordinary.absences || []).filter(Boolean).map(function (row) {
+      return [row.key, row];
+    }));
+    return Array.from(counts.entries()).map(function (entry) {
+      const definition = definitions.get(entry[0]) || {};
+      const state = definition.state || 'unavailable';
+      return {
+        kind: state === 'rights-restricted' ? 'text-withheld' : 'text-not-held',
+        absenceKey: entry[0],
+        sourceState: state,
+        sourceKind: definition.kind || null,
+        count: entry[1]
+      };
+    });
+  }
+
+  function ordinaryLanguageCoverage(ordinary, request, ordinaryUnresolved) {
+    const language = request.languages && request.languages.ordinary;
+    const languageDeclaration = (ordinary.languages || []).find(function (one) {
+      return one && one.lang === language;
+    });
+    if (Object.prototype.hasOwnProperty.call(ordinary, 'language_coverage') &&
+        !Array.isArray(ordinary.language_coverage)) {
+      throw new Error('Ordinary language coverage must be an array');
+    }
+    const canonicalCoverage = ordinary.language_coverage &&
+      ordinary.language_coverage.find(function (one) { return one && one.lang === language; });
+    if (ordinary.language_coverage && languageDeclaration && !canonicalCoverage) {
+      throw new Error('Ordinary canonical language coverage omits a declared language');
+    }
+    const declared = canonicalCoverage || languageDeclaration;
+    const scope = 'ordinary:' + request.edition.id + ':' + language;
+    if (!declared || !languageDeclaration) {
+      return Contract.coverage(
+        'unavailable', scope, null,
+        [{ kind: 'language-missing', absenceKey: 'language-not-held' }]
+      );
+    }
+    if (!Number.isInteger(declared.held) || declared.held < 0 ||
+        !Number.isInteger(declared.elements) || declared.elements < declared.held) {
+      throw new Error('Ordinary language coverage carries invalid held counts');
+    }
+    const missing = declared.elements - declared.held;
+    if (Object.prototype.hasOwnProperty.call(declared, 'missing') &&
+        declared.missing !== missing) {
+      throw new Error('Ordinary language missing count contradicts held coverage');
+    }
+    if (canonicalCoverage && canonicalCoverage.absent !== missing) {
+      throw new Error('Ordinary language absent count contradicts missing coverage');
+    }
+    const relations = ordinaryRelationRows(ordinary, language);
+    const relationCount = relations.reduce(function (count, row) { return count + row.count; }, 0);
+    if (relationCount !== declared.held) {
+      throw new Error('Ordinary relation grades contradict held language coverage');
+    }
+    const absenceReasons = ordinaryAbsenceReasons(ordinary, languageDeclaration, language);
+    const absenceCount = absenceReasons.reduce(function (count, reason) {
+      return count + reason.count;
+    }, 0);
+    if (absenceCount !== missing) {
+      throw new Error('Ordinary typed absences contradict missing language coverage');
+    }
+    if (declared.held === 0) {
+      const unavailableReasons = absenceReasons.length ? absenceReasons.slice() : [{
+        kind: 'language-missing',
+        absenceKey: languageDeclaration.absent || 'language-not-held'
+      }];
+      if ((ordinaryUnresolved || []).length) {
+        unavailableReasons.push({
+          kind: 'text-not-held', sourceState: 'unresolved',
+          sourceKind: 'applicability-unresolved',
+          count: ordinaryUnresolved.length,
+          elements: ordinaryUnresolved.map(function (row) { return row.element; })
+        });
+      }
+      return Contract.coverage(
+        'unavailable', scope, null, unavailableReasons,
+        { relationCoverage: relations }
+      );
+    }
+    const antecedents = relations.filter(function (row) { return row.relation !== 'own'; });
+    const reasons = absenceReasons.slice();
+    antecedents.forEach(function (row) {
+      reasons.push({
+        kind: 'partial-recension', domain: 'ordinary', language: language,
+        relation: row.relation, collation: row.collation, count: row.count
+      });
+    });
+    if ((ordinaryUnresolved || []).length) {
+      reasons.push({
+        kind: 'text-not-held', sourceState: 'unresolved',
+        sourceKind: 'applicability-unresolved',
+        count: ordinaryUnresolved.length,
+        elements: ordinaryUnresolved.map(function (row) { return row.element; })
+      });
+    }
+    const incomplete = missing > 0 || antecedents.length > 0 ||
+      (ordinaryUnresolved || []).length > 0;
+    return Contract.coverage(
+      'supported', scope, incomplete ? 'partial' : 'complete', reasons,
+      {
+        relationCoverage: relations,
+        exclusions: (ordinary.exclusions || []).map(function (row) {
+          const rawSources = row && row.sources;
+          const legacyEvidence = Array.isArray(rawSources)
+            ? rawSources.filter(function (source) {
+                return source && typeof source === 'object' && !Array.isArray(source);
+              }) : [];
+          const evidence = row && Array.isArray(row.evidence) ? row.evidence : legacyEvidence;
+          function carriesText(value) {
+            if (!value || typeof value !== 'object') return false;
+            return Object.keys(value).some(function (key) {
+              return key === 'text' || carriesText(value[key]);
+            });
+          }
+          const sources = Array.isArray(rawSources) ? rawSources.map(function (source) {
+            return typeof source === 'string' ? source : source && source.source_id;
+          }) : [];
+          if (!row || typeof row.key !== 'string' || !row.key ||
+              row.state !== 'not-in-target-recension' ||
+              typeof row.basis !== 'string' || !row.basis.trim() ||
+              !sources.length || sources.some(function (source) {
+                return typeof source !== 'string' || !source;
+              }) || evidence.some(carriesText)) {
+            throw new Error('Ordinary exclusion lacks exact target-recension evidence');
+          }
+          return {
+            key: row.key, state: row.state, basis: row.basis,
+            sources: Array.from(new Set(sources)),
+            evidence: JSON.parse(JSON.stringify(evidence))
+          };
+        })
+      }
+    );
+  }
+
+  function activeProperBodyClaims(propers, request) {
+    const claims = [];
+    (propers || []).forEach(function (proper, properIndex) {
+      const selections = cycleSelections(proper);
+      let activeSelections = selections;
+      let includeProper = true;
+      if (request.entrance === 'day') {
+        const selected = dayCycle(proper, request.lectionary);
+        activeSelections = selected ? [selected] : [];
+      } else if (hasOwn(request, 'cycle') && request.cycle !== null) {
+        const selected = explicitCycleSelection(proper, request.cycle);
+        if (selections.length && !selected) includeProper = false;
+        activeSelections = selected ? [selected] : [];
+      }
+
+      const topStatus = properBodyStatus(proper);
+      if (topStatus && includeProper) {
+        claims.push({
+          proper: proper.name || null,
+          cycle: null,
+          properIndex: properIndex,
+          latinWithheld: Boolean(proper.latin && proper.latin.withheld)
+        });
+      }
+      selections.forEach(function (selection) {
+        const owner = selectedOwner(proper, selection);
+        // Validate every projected branch even when the current reader request
+        // selects a different cycle. A malformed absence may never become an
+        // implicit fallback merely because it is temporarily out of view.
+        properBodyStatus(owner);
+      });
+      if (!includeProper) return;
+      activeSelections.forEach(function (selection) {
+        const owner = selectedOwner(proper, selection);
+        if (!properBodyStatus(owner)) return;
+        const latinOwner = owner.latin ? owner : proper;
+        claims.push({
+          proper: proper.name || null,
+          cycle: selection.key,
+          properIndex: properIndex,
+          latinWithheld: Boolean(latinOwner.latin && latinOwner.latin.withheld)
+        });
+      });
+    });
+    return claims;
+  }
+
+  function commonSetDispositions(structure, mass) {
+    const reference = mass && mass.takes_from;
+    const selections = reference && reference.common_sets;
+    if (selections === null || selections === undefined) return [];
+    if (!selections || typeof selections !== 'object' || Array.isArray(selections) ||
+        !Object.keys(selections).length) {
+      throw new Error('takes_from.common_sets must be a nonempty mapping');
+    }
+    if (!reference || typeof reference.mass !== 'string' || !reference.mass) {
+      throw new Error('takes_from.common_sets requires a stable target Common');
+    }
+    const target = ((structure && structure.masses) || []).find(function (candidate) {
+      return candidate.key === reference.mass;
+    });
+    const definitions = target && target.common_sets;
+    if (!definitions || typeof definitions !== 'object' || Array.isArray(definitions)) {
+      throw new Error('takes_from.common_sets targets no projected Common-set definitions');
+    }
+    const selectedGroups = Object.keys(selections).sort();
+    const definedGroups = Object.keys(definitions).sort();
+    if (!sameJson(selectedGroups, definedGroups)) {
+      throw new Error('takes_from.common_sets must disposition every target Common set');
+    }
+
+    return selectedGroups.map(function (group) {
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(group)) {
+        throw new Error('takes_from.common_sets group has no stable lowercase id');
+      }
+      const disposition = selections[group];
+      const definition = definitions[group];
+      const options = definition && definition.options;
+      if (!disposition || typeof disposition !== 'object' || Array.isArray(disposition) ||
+          !options || typeof options !== 'object' || Array.isArray(options)) {
+        throw new Error('takes_from.common_sets carries a malformed disposition or definition');
+      }
+      if (disposition.state === 'selected') {
+        if (!sameJson(Object.keys(disposition).sort(), ['option', 'state']) ||
+            typeof disposition.option !== 'string' || !disposition.option ||
+            !hasOwn(options, disposition.option)) {
+          throw new Error('selected Common set must name exactly one held option');
+        }
+        return {
+          group: group, state: 'selected', candidates: [disposition.option],
+          target: reference.mass, citation: reference.citation || null
+        };
+      }
+      if (disposition.state !== 'unresolved' ||
+          !sameJson(Object.keys(disposition).sort(), ['candidates', 'state']) ||
+          !Array.isArray(disposition.candidates) || disposition.candidates.length < 2 ||
+          disposition.candidates.some(function (candidate) {
+            return typeof candidate !== 'string' || !candidate || !hasOwn(options, candidate);
+          }) || new Set(disposition.candidates).size !== disposition.candidates.length) {
+        throw new Error('unresolved Common set must name at least two unique held candidates');
+      }
+      return {
+        group: group, state: 'unresolved', candidates: disposition.candidates.slice(),
+        target: reference.mass, citation: reference.citation || null
+      };
+    });
+  }
+
+  function unresolvedCommonSetChoices(structure, mass, request) {
+    return commonSetDispositions(structure, mass).filter(function (row) {
+      return row.state === 'unresolved';
+    }).map(function (row) {
+      const claim = request.edition.id + '/' + mass.key + '/' + row.group;
+      return Contract.unresolvedChoice(
+        'common-set:' + claim,
+        'the source leaves this inherited Common set unresolved',
+        row.candidates.map(function (candidate) {
+          const identity = row.target + '/' + row.group + '/' + candidate;
+          return {
+            id: candidate,
+            identity: { id: identity },
+            sourceHooks: [{ kind: 'common-set-option', id: identity }]
+          };
+        }),
+        [{ kind: 'common-set-disposition', id: claim }]
+      );
+    });
+  }
+
+  function claimLocalCollectAbsences(mass, request, selectedForm) {
+    const status = massTextStatus(mass);
+    if (!status || status.scope !== 'proper-collect') return [];
+    const formId = selectedForm && selectedForm.id || 'main';
+    return [{
+      kind: 'explicit-semantic-absence',
+      scope: 'proper:' + request.edition.id + '/' + mass.key + '/' + formId + '/collect',
+      repositoryTerm: 'proper-collect',
+      value: 'Collect',
+      claimOwner: mass.key,
+      formId: formId,
+      proper: 'Collect'
+    }];
+  }
+
+  function coverageFor(
+    structure, mass, propers, request, ordinary, events, ordinaryUnresolved, selectedForm
+  ) {
     const rows = [];
+    const effectiveFrame = ordinaryFrame(mass, selectedForm);
     const placeholders = propers.filter(function (one) { return one.name === 'Placeholder'; });
-    const textStatus = mass && mass.text_status;
+    const textStatus = massTextStatus(mass);
+    const properBodyClaims = activeProperBodyClaims(propers, request);
+    const unresolvedCommonSets = commonSetDispositions(structure, mass).filter(function (row) {
+      return row.state === 'unresolved';
+    });
     const partialRecension = partialRecensionReason(structure, mass);
+    const claimReasons = [];
+    if (properBodyClaims.length) {
+      claimReasons.push({
+        kind: 'text-not-held', count: properBodyClaims.length,
+        repositoryTerm: 'proper-body',
+        claims: properBodyClaims.map(function (claim) {
+          return { proper: claim.proper, cycle: claim.cycle };
+        })
+      });
+    }
+    if (textStatus && textStatus.scope === 'proper-collect') {
+      claimReasons.push({
+        kind: 'text-not-held', count: 1, repositoryTerm: 'proper-collect',
+        claimOwner: mass.key, proper: 'Collect'
+      });
+    }
+    if (unresolvedCommonSets.length) {
+      claimReasons.push({
+        kind: 'unresolved-choice', count: unresolvedCommonSets.length,
+        repositoryTerm: 'takes_from.common_sets',
+        groups: unresolvedCommonSets.map(function (row) { return row.group; })
+      });
+    }
     if (textStatus && textStatus.state === 'partial' &&
         textStatus.scope === 'missal-formulary') {
       const reasons = (textStatus.reasons && textStatus.reasons.length
@@ -700,6 +1322,7 @@
         };
       });
       if (partialRecension) reasons.push(partialRecension);
+      reasons.push.apply(reasons, claimReasons);
       rows.push(Contract.coverage(
         'supported', 'formulary:' + mass.key, 'partial',
         reasons
@@ -715,13 +1338,19 @@
         { kind: 'text-not-held', count: placeholders.length, repositoryTerm: 'Placeholder' }
       ];
       if (partialRecension) reasons.push(partialRecension);
+      reasons.push.apply(reasons, claimReasons);
       rows.push(Contract.coverage(
         'supported', 'formulary:' + mass.key, 'partial',
         reasons
       ));
     } else if (partialRecension) {
+      const reasons = [partialRecension].concat(claimReasons);
       rows.push(Contract.coverage(
-        'supported', 'formulary:' + mass.key, 'partial', [partialRecension]
+        'supported', 'formulary:' + mass.key, 'partial', reasons
+      ));
+    } else if (claimReasons.length) {
+      rows.push(Contract.coverage(
+        'supported', 'formulary:' + mass.key, 'partial', claimReasons
       ));
     } else {
       rows.push(Contract.coverage('supported', 'formulary:' + mass.key, 'complete', []));
@@ -731,14 +1360,33 @@
       return row.selected.missing && row.selected.language === 'la' &&
         row.selected.reason === 'latin-withheld';
     });
-    if (unavailableOriginals.length) {
+    const unheldOriginals = selections.filter(function (row) {
+      return row.selected.missing && row.selected.language === 'la' &&
+        row.selected.reason === 'proper-body-unavailable';
+    });
+    const withheldOriginalCount = Math.max(
+      unavailableOriginals.length,
+      properBodyClaims.filter(function (claim) { return claim.latinWithheld; }).length
+    );
+    const unheldOriginalCount = Math.max(
+      unheldOriginals.length,
+      properBodyClaims.filter(function (claim) { return !claim.latinWithheld; }).length
+    );
+    if (withheldOriginalCount || unheldOriginalCount) {
+      const reasons = [];
+      if (withheldOriginalCount) {
+        reasons.push({ kind: 'text-withheld', count: withheldOriginalCount });
+      }
+      if (unheldOriginalCount) {
+        reasons.push({ kind: 'text-not-held', count: unheldOriginalCount });
+      }
       rows.push(Contract.coverage(
         'unavailable', 'proper-original:la', null,
-        [{ kind: 'text-withheld', count: unavailableOriginals.length }]
+        reasons
       ));
     }
     const restrictedTranslations = selections.filter(function (row) {
-      return row.selected.missing &&
+      return row.selected.missing && row.selected.language !== 'la' &&
         row.selected.reason !== 'latin-withheld' &&
         (row.selected.reason === 'rights-restricted' ||
          row.selected.unavailableState === 'rights-restricted');
@@ -750,7 +1398,7 @@
       ));
     }
     const missingTranslations = selections.filter(function (row) {
-      return row.selected.missing &&
+      return row.selected.missing && row.selected.language !== 'la' &&
         row.selected.reason !== 'latin-withheld' &&
         row.selected.reason !== 'rights-restricted' &&
         row.selected.unavailableState !== 'rights-restricted';
@@ -770,8 +1418,43 @@
         [{ kind: 'unresolved-citation', count: unresolvedCitations.length }]
       ));
     }
+    if (textStatus && textStatus.scope === 'proper-collect') {
+      const formId = selectedForm && selectedForm.id || 'main';
+      rows.push(Contract.coverage(
+        'unavailable',
+        'proper-body:' + request.edition.id + '/' + mass.key + '/' + formId + '/collect',
+        null,
+        [{
+          kind: 'text-not-held', repositoryTerm: 'proper-collect',
+          claimOwner: mass.key, proper: 'Collect'
+        }]
+      ));
+    }
+    const unplaced = [];
+    const unseatedChoices = [];
+    (events || []).forEach(function (event) {
+      if (event && event.kind === 'proper' && event.seat &&
+          event.seat.placement === 'unseated') {
+        unplaced.push({ id: event.seat.id, region: event.seat.region });
+      } else if (event && event.kind === 'proper-choice' && event.seat === null) {
+        unseatedChoices.push(event.id);
+      }
+    });
+    if (unplaced.length || (request.options && request.options.ordinary &&
+        effectiveFrame.applicability !== 'full')) {
+      rows.push(Contract.coverage(
+        'unsupported', 'ordinary-placement:' + request.edition.id, null,
+        [{
+          kind: 'ordinary-placement-unavailable',
+          applicability: effectiveFrame.applicability,
+          basis: effectiveFrame.basis || null,
+          unplaced: unplaced,
+          choices: unseatedChoices
+        }]
+      ));
+    }
     if (request.options && request.options.ordinary) {
-      const frame = ordinaryFrame(mass);
+      const frame = effectiveFrame;
       if (frame.applicability === 'none') {
         rows.push(Contract.coverage(
           'absent', 'ordinary-frame:' + request.edition.id, null,
@@ -796,21 +1479,7 @@
           [{ kind: 'ordinary-missing' }]
         ));
       } else {
-        const language = request.languages && request.languages.ordinary || 'en';
-        const declared = (ordinary.languages || []).find(function (one) { return one.lang === language; });
-        if (!declared || declared.held === 0) {
-          rows.push(Contract.coverage(
-            'unavailable', 'ordinary:' + request.edition.id + ':' + language, null,
-            [{ kind: 'language-missing', absenceKey: declared && declared.absent || 'language-not-held' }]
-          ));
-        } else {
-          const incomplete = declared.held < declared.elements;
-          rows.push(Contract.coverage(
-            'supported', 'ordinary:' + request.edition.id + ':' + language,
-            incomplete ? 'partial' : 'complete',
-            incomplete ? [{ kind: 'language-missing', absenceKey: declared.absent }] : []
-          ));
-        }
+        rows.push(ordinaryLanguageCoverage(ordinary, request, ordinaryUnresolved));
       }
     }
     return rows;
@@ -915,8 +1584,39 @@
     return out;
   }
 
+  function selectedTextRows(events) {
+    const rows = selectedRows(events);
+    (events || []).forEach(function (event) {
+      if (event.kind !== 'ordinary-element' || !event.selected) return;
+      rows.push({
+        event: event, selected: event.selected, cycle: null,
+        sourceHooks: event.sourceHooks || []
+      });
+    });
+    return rows;
+  }
+
+  function alternativeChoices(events) {
+    return (events || []).filter(function (event) {
+      return event && event.kind === 'proper-choice';
+    }).map(function (event) {
+      return Contract.unresolvedChoice(
+        event.id,
+        event.choiceBasis,
+        (event.options || []).map(function (option) {
+          return {
+            id: option.id,
+            identity: { id: event.id + '/' + option.id },
+            sourceHooks: uniqueSourceHooks(option.events || [])
+          };
+        }),
+        event.sourceHooks || []
+      );
+    });
+  }
+
   function translationChoices(events) {
-    return selectedRows(events).filter(function (row) {
+    return selectedTextRows(events).filter(function (row) {
       return row.selected.availability === 'choice-required' &&
         (row.selected.unresolvedWitnesses || []).length > 1;
     }).map(function (row) {
@@ -936,9 +1636,36 @@
     });
   }
 
+  function assertExplicitWitnesses(events, request) {
+    const languages = request.languages || {};
+    if (languages.translationWitness) {
+      const held = selectedRows(events).some(function (row) {
+        return row.selected.sourceId === languages.translationWitness;
+      });
+      if (!held) throw new Error('explicit translation witness selected no appointed text');
+    }
+    if (languages.ordinaryWitness) {
+      const held = (events || []).some(function (event) {
+        return event.kind === 'ordinary-element' && event.selected &&
+          event.selected.sourceId === languages.ordinaryWitness;
+      });
+      if (!held) throw new Error('explicit Ordinary witness selected no appointed text');
+    }
+  }
+
   function selectedRows(events) {
     const rows = [];
+    const properEvents = [];
     (events || []).forEach(function (event) {
+      if (event && event.kind === 'proper-choice') {
+        (event.options || []).forEach(function (option) {
+          properEvents.push.apply(properEvents, option.events || []);
+        });
+      } else {
+        properEvents.push(event);
+      }
+    });
+    properEvents.forEach(function (event) {
       if (event.kind !== 'proper' || !event.selected) return;
       if (event.selected.kind !== 'cycle-alternatives') {
         rows.push({
@@ -987,7 +1714,8 @@
         'absent', 'resolved-formulary', null,
         [{ kind: 'semantic-absence', repositoryTerm: 'unresolved' }]
       )],
-      unresolvedChoices: choices
+      unresolvedChoices: choices,
+      ordinaryUnresolved: []
     };
   }
 
@@ -995,6 +1723,12 @@
     const request = input.request;
     const checked = Contract.validateReaderState(request);
     if (!checked.ok || request.entrance !== 'day') throw new Error('invalid Day reader state');
+    if (!input.structure || input.structure.calendar !== request.edition.id) {
+      throw new Error('Day structure does not match requested edition');
+    }
+    if (input.ordinary && input.ordinary.calendar !== request.edition.id) {
+      throw new Error('Day Ordinary does not match requested edition');
+    }
     const derived = input.derived;
     if (!derived || derived.date !== request.civilDate || derived.calendar !== request.calendar.id) {
       throw new Error('Day adapter requires the matching existing MassAssembly result');
@@ -1020,6 +1754,10 @@
     if (!mass) throw new Error('resolved Day formulary is absent from the selected edition structure');
     const formSelection = properFormSelection(mass, request);
     if (formSelection.choice) {
+      if (request.languages && (request.languages.translationWitness ||
+          request.languages.ordinaryWitness)) {
+        throw new Error('an explicit witness requires an exact selected Mass form');
+      }
       const unresolved = choices.concat([formSelection.choice]);
       const result = unresolvedDayResult(
         request, derived.calendar, derived.date, branch, unresolved
@@ -1031,12 +1769,18 @@
     }
     const lectionary = derived.liturgicalYear && derived.liturgicalYear.lectionary || null;
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
-    const frame = ordinaryFrame(mass);
+    const frame = ordinaryFrame(mass, formSelection.form);
     const ordinary = request.options && request.options.ordinary && frame.applicability === 'full'
       ? (input.ordinary || null) : null;
-    const events = seatedEvents(
-      mass, formSelection.rows, adaptedRequest, input.structure, ordinary, 'day'
+    const seated = seatedEvents(
+      mass, formSelection.rows, adaptedRequest, input.structure, ordinary, 'day',
+      Seating.predicateFacts({
+        settled: branch.settled, weekday: derived.weekday,
+        season: derived.season, nature: branch.winner && branch.winner.nature
+      })
     );
+    const events = seated.events;
+    assertExplicitWitnesses(events, adaptedRequest);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
     };
@@ -1059,10 +1803,16 @@
       events: events,
       coverage: coverageFor(
         input.structure, mass, formSelection.rows.map(function (row) { return row.proper; }),
-        request, ordinary, events
+        adaptedRequest, ordinary, events, seated.ordinaryUnresolved, formSelection.form
       ),
-      explicitAbsences: explicitAbsencesFor(branch, lectionary),
-      unresolvedChoices: choices.concat(translationChoices(events))
+      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
+        claimLocalCollectAbsences(mass, request, formSelection.form)
+      ),
+      unresolvedChoices: choices.concat(
+        unresolvedCommonSetChoices(input.structure, mass, request),
+        alternativeChoices(events), translationChoices(events)
+      ),
+      ordinaryUnresolved: seated.ordinaryUnresolved
     };
   }
 
@@ -1070,7 +1820,7 @@
     const request = input.request;
     const checked = Contract.validateReaderState(request);
     if (!checked.ok || request.entrance !== 'propers') throw new Error('invalid Propers reader state');
-    if (input.structure.calendar !== request.edition.id) {
+    if (!input.structure || input.structure.calendar !== request.edition.id) {
       throw new Error('Propers structure does not match requested edition');
     }
     const mass = (input.structure.masses || []).find(function (one) {
@@ -1085,6 +1835,9 @@
     }
     const formSelection = properFormSelection(mass, request);
     if (formSelection.choice) {
+      if (request.languages && request.languages.translationWitness) {
+        throw new Error('an explicit witness requires an exact selected Mass form');
+      }
       return {
         entrance: 'propers', request: request, calendarResult: null,
         resolved: { edition: request.edition.id, formulary: mass.key, type: mass.kind || null },
@@ -1099,7 +1852,8 @@
           repositoryTerm: 'semantic-absence',
           reason: 'propers-entrance-is-date-independent'
         }],
-        unresolvedChoices: (request.unresolvedChoices || []).concat([formSelection.choice])
+        unresolvedChoices: (request.unresolvedChoices || []).concat([formSelection.choice]),
+        ordinaryUnresolved: []
       };
     }
     const heldCycles = new Set();
@@ -1110,9 +1864,11 @@
     if (hasOwn(request, 'cycle') && request.cycle !== null && !heldCycles.has(request.cycle)) {
       throw new Error('explicit cycle is not held by this Propers formulary');
     }
-    const events = seatedEvents(
+    const seated = seatedEvents(
       mass, formSelection.rows, request, input.structure, null, 'propers'
     );
+    const events = seated.events;
+    assertExplicitWitnesses(events, request);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
     };
@@ -1125,15 +1881,19 @@
       events: events,
       coverage: coverageFor(
         input.structure, mass, formSelection.rows.map(function (row) { return row.proper; }),
-        request, null, events
+        request, null, events, seated.ordinaryUnresolved, formSelection.form
       ),
       explicitAbsences: [{
         kind: 'explicit-semantic-absence',
         scope: 'civil-date-and-calendar-result',
         repositoryTerm: 'semantic-absence',
         reason: 'propers-entrance-is-date-independent'
-      }],
-      unresolvedChoices: (request.unresolvedChoices || []).concat(translationChoices(events))
+      }].concat(claimLocalCollectAbsences(mass, request, formSelection.form)),
+      unresolvedChoices: (request.unresolvedChoices || []).concat(
+        unresolvedCommonSetChoices(input.structure, mass, request),
+        alternativeChoices(events), translationChoices(events)
+      ),
+      ordinaryUnresolved: seated.ordinaryUnresolved
     };
   }
 
@@ -1284,6 +2044,9 @@
     const request = input.request;
     const checked = Contract.validateReaderState(request);
     if (!checked.ok || request.entrance !== 'day') throw new Error('invalid Day reader state');
+    if (!input.structure || input.structure.calendar !== request.edition.id) {
+      throw new Error('CLI Proper structure does not match requested edition');
+    }
     if (!input.derived || input.derived.date !== request.civilDate ||
         input.derived.calendar !== request.calendar.id) {
       throw new Error('CLI adapter requires the matching existing MassAssembly result');
@@ -1296,6 +2059,9 @@
       return one.calendar === request.calendar.id;
     });
     if (!day) throw new Error('mass-today payload does not carry the requested calendar');
+    if (day.ordinary && day.ordinary.calendar !== request.edition.id) {
+      throw new Error('mass-today Ordinary does not match requested edition');
+    }
     if (!payload.scripture || payload.scripture.id !== (request.bible && request.bible.id)) {
       throw new Error('mass-today payload Bible does not match the requested Day state');
     }
@@ -1338,12 +2104,12 @@
       return one.key === mass.key;
     });
     if (!generatedMass) throw new Error('mass-today parity requires the matching generated formulary');
-    const frame = ordinaryFrame(generatedMass);
-    if (!sameJson(ordinaryFrame(mass), frame)) {
-      throw new Error('mass-today Ordinary-frame applicability disagrees with generated structure');
-    }
     const formSelection = properFormSelection(generatedMass, request);
     if (formSelection.choice) {
+      if (request.languages && (request.languages.translationWitness ||
+          request.languages.ordinaryWitness)) {
+        throw new Error('an explicit witness requires an exact selected Mass form');
+      }
       if (mass.form_choice_required !== true || hasOwn(mass, 'selected_form') ||
           (mass.propers || []).length || (day.ordinary && !day.ordinary.refused)) {
         throw new Error('mass-today must expose an unseated form choice without fallback');
@@ -1356,6 +2122,10 @@
         edition: request.edition.id, formulary: mass.key, standing: mass.standing
       };
       return result;
+    }
+    const frame = ordinaryFrame(generatedMass, formSelection.form);
+    if (!sameJson(ordinaryFrame(mass), frame)) {
+      throw new Error('mass-today Ordinary-frame applicability disagrees with generated structure');
     }
     if (formSelection.id === null) {
       if (mass.selected_form !== 'main') {
@@ -1378,15 +2148,26 @@
       throw new Error('mass-today lectionary result disagrees with calendar assembly');
     }
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
-    function cliProper(proper, cliIndex, seat) {
-      const generatedRow = generatedRows[cliIndex] || {};
-      const generatedProper = generatedRow.proper || null;
-      const sourceIndex = generatedRow.sourceIndex;
+    const payloadBySourceIndex = new Map();
+    generatedRows.forEach(function (generatedRow, cliIndex) {
+      payloadBySourceIndex.set(generatedRow.sourceIndex, {
+        proper: (mass.propers || [])[cliIndex], generated: generatedRow.proper
+      });
+    });
+    function cliProper(row, seat, semanticSlotOverride) {
+      const sourceIndex = row.sourceIndex;
+      const held = payloadBySourceIndex.get(sourceIndex) || {};
+      const proper = held.proper;
+      const generatedProper = row.proper;
       if (!generatedProper || generatedProper.name !== proper.name ||
           (generatedProper.form || null) !== (proper.form || null) ||
           generatedProper.form_id !== proper.form_id ||
           (generatedProper.source || null) !== (proper.source || null) ||
-          !sameJson(generatedProper.taken_from || null, proper.taken_from || null)) {
+          !sameJson(generatedProper.taken_from || null, proper.taken_from || null) ||
+          !sameJson(
+            generatedProper.ordinary_disposition || null,
+            proper.ordinary_disposition || null
+          )) {
         throw new Error('mass-today Proper order disagrees with generated structure');
       }
       for (const family of ['cycles', 'weekday_cycles']) {
@@ -1400,7 +2181,7 @@
       return {
         id: properEventId(request.edition.id, mass.key, sourceIndex),
         kind: 'proper',
-        semanticSlot: semanticSlot(generatedProper),
+        semanticSlot: semanticSlotOverride || semanticSlot(generatedProper),
         editionSlotLabel: proper.name || null,
         form: proper.form || null,
         sourceKind: proper.source || null,
@@ -1412,18 +2193,30 @@
       };
     }
     let events;
+    let ordinaryUnresolved = [];
     if (request.options && request.options.ordinary && frame.applicability === 'full' &&
         day.ordinary && !day.ordinary.refused) {
       const ordinary = day.ordinary;
-      const group = Seating.variantGroupOf(ordinary);
-      const variants = request.options.legitimate || {};
-      const wantedVariant = group && variants[group.group] || null;
-      const shown = Seating.shownElements(ordinary, wantedVariant);
-      const placed = Seating.seatPropers(mass.propers || [], Seating.seats(ordinary, shown));
-      const indexes = new Map((mass.propers || []).map(function (proper, index) {
-        return [proper, index];
-      }));
-      events = Seating.massEvents(shown, placed).map(function (event) {
+      const resolution = ordinaryElements(
+        ordinary, adaptedRequest,
+        generatedRows.map(function (row) { return row.proper; }),
+        Seating.predicateFacts({
+          settled: branch.settled, weekday: input.derived.weekday,
+          season: input.derived.season,
+          nature: branch.winner && branch.winner.nature
+        })
+      );
+      ordinaryUnresolved = resolution.unresolved;
+      const placed = Seating.seatPropers(
+        generatedRows, Seating.seats(ordinary, resolution.shown)
+      );
+      assertSeatingComplete(placed);
+      events = projectSeatingEvents(
+        Seating.massEvents(resolution.shown, placed), generatedMass, adaptedRequest,
+        function (row, seat, semantic) {
+          return cliProper(row, seat, semantic);
+        },
+        function (event) {
         if (event.kind === 'begin_section') {
           return {
             id: 'ordinary-section/' + event.section.key,
@@ -1451,19 +2244,18 @@
             }].concat(selected.sourceId ? [{ kind: 'translation', id: selected.sourceId }] : [])
           };
         }
-        return cliProper(event.proper, indexes.get(event.proper), event.seat ? {
-          id: event.seat.key,
-          anchor: event.seat.anchor,
-          where: event.seat.where,
-          locus: event.seat.locus,
-          placement: event.placement
-        } : null);
+        throw new Error('Ordinary seating emitted an unsupported semantic event');
       });
     } else {
-      events = (mass.propers || []).map(function (proper, index) {
-        return cliProper(proper, index, null);
-      });
+      events = projectSeatingEvents(
+        Seating.unframedEvents(generatedRows), generatedMass, adaptedRequest,
+        function (row, seat, semantic) {
+          return cliProper(row, seat, semantic);
+        },
+        function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
+      );
     }
+    assertExplicitWitnesses(events, adaptedRequest);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
     };
@@ -1482,14 +2274,20 @@
       events: events,
       coverage: coverageFor(
         input.structure, generatedMass,
-        formSelection.rows.map(function (row) { return row.proper; }), request,
+        formSelection.rows.map(function (row) { return row.proper; }), adaptedRequest,
         request.options && request.options.ordinary && frame.applicability === 'full' &&
           day.ordinary && !day.ordinary.refused
           ? day.ordinary : null,
-        events
+        events, ordinaryUnresolved, formSelection.form
       ),
-      explicitAbsences: explicitAbsencesFor(branch, lectionary),
-      unresolvedChoices: choices.concat(translationChoices(events))
+      explicitAbsences: explicitAbsencesFor(branch, lectionary).concat(
+        claimLocalCollectAbsences(generatedMass, request, formSelection.form)
+      ),
+      unresolvedChoices: choices.concat(
+        unresolvedCommonSetChoices(input.structure, generatedMass, request),
+        alternativeChoices(events), translationChoices(events)
+      ),
+      ordinaryUnresolved: ordinaryUnresolved
     };
   }
 

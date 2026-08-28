@@ -130,6 +130,17 @@ class RealCatalogTests(unittest.TestCase):
         problems = self.problems_after(change)
         self.assertTrue(any("is unavailable but collation is 'mixed'" in row for row in problems))
 
+    def test_unavailable_capability_cannot_claim_publishable_data(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][1]["capabilities"]["propers"][
+                "publication_availability"
+            ] = "available"
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "has no data but publication is 'available'" in row for row in problems
+        ))
+
     def test_unavailable_capability_needs_an_activation_requirement(self) -> None:
         def change(document: dict) -> None:
             row = document["recensions"][3]
@@ -172,12 +183,12 @@ class RealCatalogTests(unittest.TestCase):
 
         problems = self.problems_after(change)
         self.assertTrue(
-            any("coverage_ref is required when target data is available or partial" in row for row in problems)
+            any("coverage_ref is required for capabilities with target data" in row for row in problems)
         )
 
     def test_coverage_reference_must_identify_its_calendar_and_recension(self) -> None:
         def change(document: dict) -> None:
-            document["recensions"][2]["coverage_ref"] = (
+            document["recensions"][2]["coverage_ref"]["propers"] = (
                 "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml"
             )
 
@@ -191,10 +202,79 @@ class RealCatalogTests(unittest.TestCase):
 
     def test_coverage_reference_must_resolve_to_a_supported_schema(self) -> None:
         def change(document: dict) -> None:
-            document["recensions"][2]["coverage_ref"] = "tmt.json"
+            document["recensions"][2]["coverage_ref"]["propers"] = "tmt.json"
 
         problems = self.problems_after(change)
         self.assertTrue(any("unsupported coverage schema" in row for row in problems))
+
+    def test_coverage_reference_must_account_for_its_capability(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][7]["coverage_ref"]["ordinary"] = (
+                "src/sources/calendars/postconciliar/propers.yaml"
+            )
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "does not account for capability 'ordinary'" in row for row in problems
+        ))
+
+    def test_catalog_availability_may_not_exceed_coverage(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][2]["capabilities"]["propers"][
+                "data_availability"
+            ] = "available"
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "supports at most 'partial' data for capability 'propers'" in row
+            and "below catalog claim 'available'" in row
+            for row in problems
+        ))
+
+    def test_direct_finding_aid_source_cannot_imply_complete_ordinary(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][7]["capabilities"]["ordinary"][
+                "data_availability"
+            ] = "available"
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "supports at most 'partial' data for capability 'ordinary'" in row
+            and "below catalog claim 'available'" in row
+            for row in problems
+        ))
+
+    def test_language_availability_may_not_exceed_coverage(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][2]["language_capabilities"][0][
+                "data_availability"
+            ] = "available"
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "supports at most 'partial' language data" in row
+            and "below catalog claim 'available'" in row
+            for row in problems
+        ))
+
+    def test_catalog_label_must_match_the_calendar_source_edition(self) -> None:
+        source = CALENDARS / "roman-1962" / "propers.yaml"
+        original = _recensions._document
+
+        def changed(path: Path):
+            document = original(path)
+            if path == source:
+                document = copy.deepcopy(document)
+                document["edition"] = "A different book"
+            return document
+
+        with mock.patch.object(_recensions, "_document", side_effect=changed):
+            problems = _recensions.catalog_problems(
+                CALENDARS, repository=ROOT, required=True
+            )
+        self.assertTrue(any(
+            "declares edition 'A different book'" in row for row in problems
+        ))
 
     def test_language_coverage_reference_must_identify_the_language(self) -> None:
         def change(document: dict) -> None:

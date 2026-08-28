@@ -469,7 +469,10 @@ class DeepLinkedPassageTests(unittest.TestCase):
         # The point of the fix is that no second wording was written: both the
         # edition+passage link and the passage-alone link reach one function.
         script = source("sources/sources.js")
-        self.assertEqual(script.count("can be opened here"), 1)
+        passage_refusal = script.split(
+            "function reportPassageNotHere(", 1
+        )[1].split("function reportEditionNotHere(", 1)[0]
+        self.assertEqual(passage_refusal.count("can be opened here"), 1)
         self.assertEqual(script.count("reportPassageNotHere("), 3)
         self.assertNotIn("Math.max(0, (payload.passages", script)
 

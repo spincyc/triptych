@@ -478,7 +478,7 @@ The *Agnus Dei* accompanies the fraction, is customarily sung by choir or cantor
 
 ### Invitation and the priest’s preparation (nn. 131–132)
 
-The priest prepares himself by one of two quiet prayers — *Domine Iesu Christe, Fili Dei vivi* or *Perceptio Corporis et Sanguinis tui* — both retained from the older Roman Order, where all three of the pre-Communion prayers were said. He then genuflects, takes the Host, holds it slightly raised over the paten or chalice, and, facing the people, says *Ecce Agnus Dei, ecce qui tollit peccata mundi. Beati qui ad cenam Agni vocati sunt*; and together with the people he says once *Domine, non sum dignus, ut intres sub tectum meum, sed tantum dic verbo, et sanabitur anima mea*.[^75]
+The priest prepares himself by one of two quiet prayers — *Domine Iesu Christe, Fili Dei vivi* or *Perceptio Corporis et Sanguinis tui* — both retained from the older Roman Order as inherited prayers, not as findings of word identity. The second target title adds *et Sanguinis* to the older *Perceptio Corporis tui*; the body of the first alternative is not quoted or collated here. In the older Order all three of the pre-Communion prayers were said. He then genuflects, takes the Host, holds it slightly raised over the paten or chalice, and, facing the people, says *Ecce Agnus Dei, ecce qui tollit peccata mundi. Beati qui ad cenam Agni vocati sunt*; and together with the people he says once *Domine, non sum dignus, ut intres sub tectum meum, sed tantum dic verbo, et sanabitur anima mea*.[^75]
 
 The Instruction summarises: the priest prepares himself by a private prayer to receive the Body and Blood of Christ fruitfully, and the faithful do the same by praying in silence; then he shows them the eucharistic bread and invites them to the banquet of Christ, and together with them makes an act of humility using the prescribed words of the Gospel.[^76]
 
@@ -607,6 +607,8 @@ Three structural judgements follow from having read the whole in order.
 It is worth stating the balance in the only way that can be checked — by counting what the 2008 Order of Mass shares with the 1962 Order and what it does not.
 
 Retained with little or no change of wording: the sign of the cross; *Dominus vobiscum* and its answer; the *Confiteor* in substance; the *Kyrie* in Greek; the *Gloria*; the Nicene Creed; the mingling formula in substance; *In spiritu humilitatis*; *Orate, fratres* and *Suscipiat*; the whole preface dialogue; the *Sanctus*; the Roman Canon from *Te igitur* to *Per ipsum* apart from the dominical words; the *Pater noster* with its introduction and the embolism; *Pax Domini*; the commingling formula; the *Agnus Dei*; the priest’s two preparation prayers; *Domine, non sum dignus*; *Quod ore sumpsimus*; *Ite, missa est* and *Deo gratias*.
+
+This is a historical continuity classification, not a word-level collation. In particular, the checked target quotation of the prayer for peace ends at *digneris*, so its conclusion is untested rather than established absent; and the second priestly preparation is titled *Perceptio Corporis et Sanguinis tui*, whereas the checked older antecedents read *Perceptio Corporis tui*. No item in this list licenses an older text to stand as the target where a named divergence or an untested extent remains.
 
 Substantially changed or newly composed: the offertory prayers; the words of consecration (three specific alterations); the acclamation after the consecration, which is wholly new; the doxology after the embolism, which is imported; the invitation *Ecce Agnus Dei* in its present form; three of the four Eucharistic Prayers; and, in 2008, three dismissal formulas.
 
@@ -925,7 +927,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 [^70]: *IGMR* 81: “…ita ut sancta revera sanctis dentur,” echoing the ancient *Sancta sanctis*. The same number requires that the invitation, the prayer, the embolism, and the people’s doxology be sung or said aloud.
 
-[^71]: *Ordo Missae* 126–128. The prayer is retained from the older Roman Order. The invitation at n. 128 is expressly conditional — *pro opportunitate* — so the exchange is not an invariable element of the Order of Mass.
+[^71]: *Ordo Missae* 126–128. The prayer is retained from the older Roman Order as an inherited prayer, not as a finding of word identity. The target quotation in this paragraph stops at *digneris* inside the running sentence; this study has not tested whether n. 126 carries the older prayer’s *qui vivis* conclusion, and no omission of that conclusion is established here. The invitation at n. 128 is expressly conditional — *pro opportunitate* — so the exchange is not an invariable element of the Order of Mass.
 
 [^72]: *IGMR* 82: “Convenit tamen ut unusquisque solummodo sibi propinquioribus sobrie pacem significet.” The three restrictions — soberly, only, nearest — are in the Latin.
 

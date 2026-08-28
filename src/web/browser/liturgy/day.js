@@ -904,10 +904,17 @@
    */
   function departureRow(lead, row) {
     return T.el('p', 'row-meta',
-      lead + ': ' + row.kind + (row.basis ? ' — ' + row.basis : ''));
+      lead + ': ' + row.kind + (row.act ? ' · Act-history station: ' + row.act : '') +
+      (row.basis ? ' — ' + row.basis : ''));
   }
 
-  function recensionRows(head, mass) {
+  function recensionRows(head, mass, structure) {
+    const boundaries = structure && Array.isArray(structure.stands_before)
+      ? structure.stands_before.filter(Boolean) : [];
+    if (boundaries.length) {
+      head.appendChild(T.el('p', 'row-meta',
+        'Historical boundary — stands before: ' + boundaries.join('; ')));
+    }
     const held = mass && mass.recension;
     if (!held) return;
     if (held.text_from) {
@@ -951,7 +958,7 @@
     if (taken && taken.key && taken.key !== (branch.winner && branch.winner.key)) {
       head.appendChild(T.el('p', 'row-meta', 'Mass: ' + (taken.name || taken.key)));
     }
-    recensionRows(head, mass);
+    recensionRows(head, mass, structure);
     // One control for everything the date carries, grouped by standing; the
     // reasoning goes to the margin with every other rubrical decision. The
     // control itself belongs in Settings, not in the ordered Mass.
@@ -1080,6 +1087,7 @@
    * rather than in its stead.
    * --------------------------------------------------------------------- */
 
+  const variantGroupsOf = Seating.variantGroupsOf;
   const variantGroupOf = Seating.variantGroupOf;
 
   /** The option chosen in each group, defaulting to the one the source marks. */
@@ -1095,10 +1103,7 @@
    * control a choice between prayers rather than a filter over a list of them.
    */
   function elementShows(element, file) {
-    const group = variantGroupOf(file);
-    return Seating.elementShows(
-      element, file, group && state.variants[group.group]
-    );
+    return Seating.elementShows(element, file, state.variants);
   }
 
   /** A witness's acknowledgement, printed where its words are, never in a footer. */
@@ -1138,9 +1143,11 @@
    * it covers; here the element names it and no more. Printing the reason in
    * full at every element put a 700-character paragraph on the page 39 times
    * over the postconciliar frame, and would have put a 400-character one there
-   * 195 times the moment a reader asked the 1962 Ordinary for its Latin. The
-   * key is the handle this whole project withholds under — `absent: icel` —
-   * and it is the thing a reader can carry back to the account above.
+   * 195 times the moment a reader asked the 1962 Ordinary for its Latin. Each
+   * key names the typed blocker for this element and language — for example,
+   * `approved-english-publication-restriction` or
+   * `official-exemplar-not-carried` — and is the handle a reader can carry
+   * back to the account above.
    */
   function absenceWord(file, key) {
     if (!key) {
@@ -1502,11 +1509,12 @@
       body.appendChild(line);
     }
 
-    const group = variantGroupOf(file);
-    const chosen = group && chosenOption(file, group);
-    if (group && chosen) {
-      body.appendChild(T.el('p', 'row-meta',
-        group.name + ': ' + chosen.name + '. ' + group.what));
+    for (const group of variantGroupsOf(file)) {
+      const chosen = chosenOption(file, group);
+      if (chosen) {
+        body.appendChild(T.el('p', 'row-meta',
+          group.name + ': ' + chosen.name + '. ' + group.what));
+      }
     }
 
     const wrapper = T.el('section', 'ordinary-preamble');
@@ -1533,8 +1541,7 @@
    * is why a seat is resolved against this list and not against the file.
    */
   function shownElements(file) {
-    const group = variantGroupOf(file);
-    return Seating.shownElements(file, group && state.variants[group.group]);
+    return Seating.shownElements(file, state.variants);
   }
 
   /**
@@ -1708,7 +1715,8 @@
    * something invisible is a control that does nothing.
    */
   function fillVariantSelect(file) {
-    const group = file && variantGroupOf(file);
+    const groups = file ? variantGroupsOf(file) : [];
+    const group = groups.length === 1 ? groups[0] : null;
     if (!state.ordinary || !group) {
       variantField.hidden = true;
       return;
@@ -2079,7 +2087,9 @@
     // The select's own options came from this missal's groups, so the group is
     // read back from the file rather than assumed from the control's id.
     Promise.resolve(held).then((resolved) => {
-      const group = resolved && resolved.ok && variantGroupOf(resolved.value);
+      const groups = resolved && resolved.ok
+        ? variantGroupsOf(resolved.value) : [];
+      const group = groups.length === 1 ? groups[0] : null;
       if (!group) return;
       state.variants[group.group] = variantSelect.value;
       select(null, null, { moveFocus: false });

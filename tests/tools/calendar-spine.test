@@ -47,6 +47,31 @@ if ! cmp -s first.json second.json; then
 	exit 1
 fi
 
+# Asking for a held recension is an intentional input refusal, not an internal
+# defect.  Its machine form stays a parseable envelope on stderr.
+refusal_status=0
+run_tool derive --calendar roman-pre-1955 --json \
+	>refusal.stdout 2>refusal.json || refusal_status=$?
+if [ "$refusal_status" -ne 2 ]; then
+	echo "held-recension refusal should exit 2, got $refusal_status" >&2
+	exit 1
+fi
+if [ -s refusal.stdout ]; then
+	echo "held-recension refusal wrote to stdout" >&2
+	exit 1
+fi
+/usr/bin/python3 - refusal.json <<'PY'
+import json
+import sys
+
+with open(sys.argv[1], encoding="utf-8") as stream:
+    payload = json.load(stream)
+assert payload["code"] == "input", payload
+assert payload["status"] == "error", payload
+assert payload["v"] == 1, payload
+assert "recension of roman-1962" in payload["error"], payload
+PY
+
 # Keys and registries are unique within each calendar.
 for calendar in roman-1962 postconciliar; do
 	run_tool --calendar "$calendar" 2>/dev/null | cut -f6 >keys.txt

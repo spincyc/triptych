@@ -33,6 +33,12 @@ TPT = ROOT / "tools" / "tpt"
 
 FIRST_DATE = dt.date(2026, 8, 26)
 LAST_DATE = dt.date(2027, 8, 25)
+# The audit's first date is an intentionally unsettled postconciliar feria: the
+# held source offers several oration owners without selecting one.  Its terse
+# English and Latin projections are therefore correctly identical.  Use a
+# source-settled Sunday when checking that the human renderer actually projects
+# the requested language rather than treating ``--lang`` as a silent no-op.
+TEXT_LANGUAGE_SENTINEL_DATE = dt.date(2026, 11, 29)
 CALENDARS = ("postconciliar", "roman-1962", "roman-pre-1955")
 LANGUAGES = ("en", "la")
 EXPECTED_DAYS = 365
@@ -501,6 +507,7 @@ class CompleteMissalYearContractTests(unittest.TestCase):
         dates = audit_dates()
         self.assertEqual(len(dates), EXPECTED_DAYS)
         self.assertEqual((dates[0], dates[-1]), (FIRST_DATE, LAST_DATE))
+        self.assertIn(TEXT_LANGUAGE_SENTINEL_DATE, dates)
         self.assertTrue(all(right - left == dt.timedelta(days=1)
                             for left, right in zip(dates, dates[1:])))
 
@@ -556,8 +563,9 @@ class CompleteMissalYearContractTests(unittest.TestCase):
         )
 
     def test_representative_text_dumps_honor_each_language(self) -> None:
+        sentinel = TEXT_LANGUAGE_SENTINEL_DATE
         cases = [
-            DumpCase(FIRST_DATE, calendar, language)
+            DumpCase(sentinel, calendar, language)
             for calendar in CALENDARS
             for language in LANGUAGES
         ]
@@ -569,8 +577,8 @@ class CompleteMissalYearContractTests(unittest.TestCase):
                 self.fail(error)
             self.assertGreater(size, 0, f"{case.label}: empty text dump")
         for calendar in CALENDARS:
-            english = results[DumpCase(FIRST_DATE, calendar, "en")][2]
-            latin = results[DumpCase(FIRST_DATE, calendar, "la")][2]
+            english = results[DumpCase(sentinel, calendar, "en")][2]
+            latin = results[DumpCase(sentinel, calendar, "la")][2]
             self.assertTrue(
                 english != latin,
                 f"{calendar}: en and la text dumps are byte-identical",

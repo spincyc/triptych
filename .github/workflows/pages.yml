@@ -33,8 +33,14 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install site dependency
-        run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt
+      - name: Install PDF text extraction dependency
+        run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+
+      # The source gate runs the PyYAML-backed Missal generators before the
+      # public renderer runs. Keep both exact locks here: setup-python provides
+      # an interpreter, not the repository's third-party modules.
+      - name: Install site and deployment-check dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
       - name: Verify deployable sources and inventories
         run: make check-deployment-sources

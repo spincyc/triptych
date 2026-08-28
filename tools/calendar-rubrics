@@ -68,9 +68,9 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
-                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 4 questions le... [+7 chars]",
-                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 5 questions left open",
+                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 5 question... [+11 chars]",
+                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
+                "roman-pre-1955: 459 masses classified over 33 bases and 25 rows, 9 implied-day rules, 6 questions left open",
                 "solved cases: 39 of 39 verified against the browser's model",
                 "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
@@ -124,9 +124,9 @@ EXAMPLES = {
         Example(
             "tools/calendar-rubrics check --out build/example-web",
             (
-                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 3 question... [+11 chars]",
-                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 4 questions le... [+7 chars]",
-                "roman-pre-1955: 461 masses classified over 33 bases and 25 rows, 9 implied-day rules, 5 questions left open",
+                "postconciliar: 612 masses classified over 13 bases and 13 rows, 11 implied-day rules, 5 question... [+11 chars]",
+                "roman-1962: 461 masses classified over 28 bases and 28 rows, 9 implied-day rules, 5 questions le... [+7 chars]",
+                "roman-pre-1955: 459 masses classified over 33 bases and 25 rows, 9 implied-day rules, 6 questions left open",
                 "solved cases: 39 of 39 verified against the browser's model",
                 "  asserting 6 of 20 fields the model returns; no case asserts absent, candidates, ceilings, choice, choiceRequired, conditions, extras, folded, option, remarks, season, sungDiffers, unsettled, winnerRule",
             ),
@@ -272,9 +272,9 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
 
     THE `effective=True` IS LOAD-BEARING AND WAS NOT ALWAYS HERE. A recension's
     `propers.yaml` states only its DEPARTURES, so a raw parse of it returns the
-    five rows of `roman-pre-1955` rather than the 491 masses that recension
-    actually serves. Rubrics read that way would classify five days and be
-    silent about four hundred and eighty-six, while the browser served all of
+    eight rows of `roman-pre-1955` rather than the 489 masses that recension
+    actually serves. Rubrics read that way would classify only the departure
+    rows and be silent about four hundred and eighty-four unstated masses, while the browser served all of
     them --- a second way to resolve a day, disagreeing with the first, in the
     layer that decides which day wins. A calendar that declares no `text_from`
     is returned exactly as it sits on disk, so the two non-recension calendars

@@ -101,6 +101,8 @@ function selectedProjection(selected) {
     extent: selected.extent || null,
     held: selected.held === true,
     absenceKey: selected.absenceKey || null,
+    relation: selected.relation || null,
+    collation: selected.collation || null,
     unresolvedWitnesses: selected.unresolvedWitnesses || [],
     text: Object.prototype.hasOwnProperty.call(selected, 'text') ? selected.text : null,
     alternatives: (selected.alternatives || []).map((alternative) => ({
@@ -137,7 +139,8 @@ function resultProjection(result) {
     events: (result.events || []).map(eventProjection),
     coverage: result.coverage || [],
     explicitAbsences: result.explicitAbsences || [],
-    unresolvedChoices: result.unresolvedChoices || []
+    unresolvedChoices: result.unresolvedChoices || [],
+    ordinaryUnresolved: result.ordinaryUnresolved || []
   };
 }
 
@@ -296,7 +299,7 @@ if (input.op === 'fixture-validate') {
     schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
     edition: {id: 'synthetic-cycle-edition'},
     formulary: {id: 'synthetic-cycle-formulary', type: 'contract'},
-    languages: {orations: 'la'}, requestedMode: 'read',
+    languages: {orations: input.translationOnly ? 'en' : 'la'}, requestedMode: 'read',
     options: {ordinary: false, legitimate: {}}, coverage: [],
     unresolvedChoices: [], sourceHooks: []
   };
@@ -304,7 +307,10 @@ if (input.op === 'fixture-validate') {
   const order = input.reverseCycles ? ['C', 'B', 'A'] : ['A', 'B', 'C'];
   const cycles = {};
   for (const cycle of order) {
-    cycles[cycle] = {citations: [], text: 'contract-material-' + cycle};
+    cycles[cycle] = input.translationOnly
+      ? {citations: [], translations: [{lang: 'en', source_id: 'witness-cycle-' + cycle,
+          rights: 'public-domain', text: 'translated-cycle-' + cycle}]}
+      : {citations: [], text: 'contract-material-' + cycle};
   }
   output = resultProjection(A.adaptPropers({
     request,
@@ -587,6 +593,9 @@ if (input.op === 'fixture-validate') {
     options: {ordinary: false, legitimate: {}}, coverage: [],
     unresolvedChoices: [], sourceHooks: []
   };
+  if (input.translationWitness) {
+    request.languages.translationWitness = input.translationWitness;
+  }
   const translations = input.rightsRestricted ? [] :
     (input.translationOrder || ['witness-a', 'witness-b']).map((id) => ({
       lang: 'en', source_id: id, rights: 'public-domain', text: 'contract-only'
@@ -625,7 +634,7 @@ if (input.op === 'fixture-validate') {
     schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
     edition: {id: 'synthetic-frame-edition'}, calendar: {id: 'synthetic-frame-edition'},
     selectedReadableFormulary: {id: 'exceptional-rite'},
-    languages: {orations: 'la', ordinary: 'la'}, requestedMode: 'read',
+    languages: {orations: 'la', ordinary: 'la'}, requestedMode: 'study',
     options: {ordinary: true, legitimate: {}}, coverage: [],
     unresolvedChoices: [], sourceHooks: []
   };
@@ -657,12 +666,130 @@ if (input.op === 'fixture-validate') {
       calendar: request.edition.id, translations: [],
       masses: [mass]
     },
-    ordinary: {languages: [], sections: [], slots: [], variants: []}
+    ordinary: {
+      calendar: request.edition.id, languages: [], sections: [], slots: [], variants: []
+    }
   }));
   if (input.captureError) {
     try { output = adaptFrame(); }
     catch (error) { output = {error: String(error && error.message || error)}; }
   } else output = adaptFrame();
+} else if (input.op === 'cross-recension') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'requested-edition'}, calendar: {id: 'requested-edition'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const derived = {
+    date: request.civilDate, calendar: request.calendar.id,
+    options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+      readable: [{key: 'synthetic-mass', state: 'said'}]}]
+  };
+  const structure = {
+    calendar: 'requested-edition', translations: [],
+    masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]
+  };
+  const payload = {
+    date: request.civilDate, scripture: {id: request.bible.id},
+    days: [{calendar: request.calendar.id, ordinary: {calendar: 'foreign-edition'},
+      masses: []}]
+  };
+  const message = (call) => {
+    try { call(); return null; }
+    catch (error) { return String(error && error.message || error); }
+  };
+  output = {
+    dayStructure: message(() => A.adaptDay({
+      request, derived, structure: Object.assign({}, structure, {calendar: 'foreign-edition'})
+    })),
+    dayOrdinary: message(() => A.adaptDay({
+      request, derived, structure, ordinary: {calendar: 'foreign-edition'}
+    })),
+    cliStructure: message(() => A.adaptCli({
+      request, derived, payload,
+      structure: Object.assign({}, structure, {calendar: 'foreign-edition'})
+    })),
+    cliOrdinary: message(() => A.adaptCli({request, derived, payload, structure}))
+  };
+} else if (input.op === 'synthetic-ordinary-condition') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'synthetic-condition'}, calendar: {id: 'synthetic-condition'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const ordinary = {
+    calendar: 'synthetic-condition',
+    languages: [{lang: 'en', absent: 'english', elements: 1, held: 1}],
+    language_coverage: [{lang: 'en', elements: 1, held: 1, missing: 0, absent: 0}],
+    relation_coverage: [{lang: 'en', relation: 'own', collation: 'not-applicable', count: 1}],
+    language_absences: [], absences: [], exclusions: [], variants: [], slots: [],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary'}],
+    sections: [{key: 'conditional', elements: [{
+      key: 'conditional/element', kind: 'prayer', speaker: 'priest',
+      absent: {english: null},
+      conditions: [{kind: 'include-when-any', predicates: ['source-fact'], basis: 'source basis'}],
+      translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary',
+        rights: 'public-domain', relation: 'own', collation: 'not-applicable', text: 'Held.'}]
+    }]}]
+  };
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {date: request.civilDate, calendar: request.calendar.id,
+      options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+        readable: [{key: 'synthetic-mass', state: 'said'}]}]},
+    structure: {calendar: request.edition.id, translations: [],
+      masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]},
+    ordinary
+  }));
+} else if (input.op === 'synthetic-ordinary-variants') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'synthetic-variants'}, calendar: {id: 'synthetic-variants'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {first: 'b', second: 'y'}},
+    coverage: [], unresolvedChoices: [], sourceHooks: []
+  };
+  const combinations = [['a', 'x'], ['a', 'y'], ['b', 'x'], ['b', 'y']];
+  const elements = combinations.map(([first, second]) => ({
+    key: 'variants/' + first + second, kind: 'prayer', speaker: 'priest',
+    absent: {english: null}, conditions: [],
+    alternatives: [{group: 'first', option: first}, {group: 'second', option: second}],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary',
+      rights: 'public-domain', relation: 'own', collation: 'not-applicable',
+      text: first + second}]
+  }));
+  const ordinary = {
+    calendar: request.edition.id,
+    languages: [{lang: 'en', absent: 'english', elements: 4, held: 4}],
+    language_coverage: [{lang: 'en', elements: 4, held: 4, missing: 0, absent: 0}],
+    relation_coverage: [{lang: 'en', relation: 'own', collation: 'not-applicable', count: 4}],
+    language_absences: [], absences: [], exclusions: [], slots: [],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary'}],
+    variants: [
+      {group: 'first', mode: 'one-of', options: [{id: 'a', default: true}, {id: 'b'}]},
+      {group: 'second', mode: 'one-of', options: [{id: 'x', default: true}, {id: 'y'}]}
+    ],
+    sections: [{key: 'variants', elements}]
+  };
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {date: request.civilDate, calendar: request.calendar.id,
+      options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+        readable: [{key: 'synthetic-mass', state: 'said'}]}]},
+    structure: {calendar: request.edition.id, translations: [],
+      masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]},
+    ordinary
+  }));
 } else if (input.op === 'browser-oration') {
   global.window = {location: {search: ''}};
   require('./src/web/browser/shared/browser-core.js');
@@ -692,6 +819,42 @@ if (input.op === 'fixture-validate') {
     structure: read(base + 'propers/' + id + '.json'),
     ordinary: read(base + 'ordinary/' + id + '.json')
   }));
+} else if (input.op === 'source-ordinary-frame') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: input.date,
+    edition: {id: input.id}, calendar: {id: input.id},
+    selectedReadableFormulary: {id: input.mass},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  if (input.form) request.form = input.form;
+  output = resultProjection(A.adaptDay({
+    request, derived: derive(input.id, input.date),
+    structure: read(base + 'propers/' + input.id + '.json'),
+    ordinary: read(base + 'ordinary/' + input.id + '.json')
+  }));
+} else if (input.op === 'source-claim-coverage') {
+  const structure = read(base + 'propers/' + input.id + '.json');
+  const mass = structure.masses.find((one) => one.key === input.mass);
+  if (input.malformed === 'mass-status') mass.text_status.extra = true;
+  if (input.malformed === 'proper-status') {
+    mass.propers.find((proper) => proper.text_status).text_status.scope = 'whole-proper';
+  }
+  if (input.malformed === 'common-set') {
+    mass.takes_from.common_sets.orations.candidates = ['c3'];
+  }
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
+    edition: {id: input.id},
+    formulary: {id: input.mass, type: mass.kind},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: input.language || 'la'}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  output = resultProjection(A.adaptPropers({request, structure}));
 } else {
   throw new Error('unknown operation');
 }
@@ -828,6 +991,9 @@ class ContractTests(unittest.TestCase):
             state = copy.deepcopy(day)
             state[field] = value
             invalid.append(state)
+        state = copy.deepcopy(day)
+        state["form"] = "night"
+        invalid.append(state)
         for field, value in (
             ("calendar", {"id": "roman-1962"}),
             ("selectedReadableFormulary", {"id": "advent-1"}),
@@ -836,6 +1002,10 @@ class ContractTests(unittest.TestCase):
             state[field] = value
             invalid.append(state)
         state = copy.deepcopy(propers)
+        state["browse"] = {"kind": "browse-entry"}
+        invalid.append(state)
+        state = copy.deepcopy(propers)
+        state["form"] = "night"
         state["browse"] = {"kind": "browse-entry"}
         invalid.append(state)
         comparison = fixture_named("compare-day-2026-08-02")["requested"]["comparison"]
@@ -914,6 +1084,26 @@ class FixtureTests(unittest.TestCase):
                 fixture["expected"]["url"] = {"legacy": "not-a-hash", "canonical": "#ok=1"}
             mutations.append(fixture)
         results = node_call({"op": "fixture-validate", "fixtures": mutations})
+        self.assertTrue(all(not result["ok"] for result in results))
+
+        unavailable = fixture_named("propers-roman-1962-advent-1")
+        unavailable_mutations = []
+        for mutation in (
+            {"held": True},
+            {"missing": False},
+            {"text": "protected text must not escape"},
+            {"sourceId": "private-source"},
+            {"source": "private-source"},
+        ):
+            fixture = copy.deepcopy(unavailable)
+            fixture["expected"]["events"][1]["selected"].update(mutation)
+            unavailable_mutations.append(fixture)
+        fixture = copy.deepcopy(unavailable)
+        fixture["expected"]["events"][1]["selected"].pop("reason")
+        unavailable_mutations.append(fixture)
+        results = node_call({
+            "op": "fixture-validate", "fixtures": unavailable_mutations,
+        })
         self.assertTrue(all(not result["ok"] for result in results))
 
     def test_fixture_validator_rejects_malformed_cycle_alternatives(self) -> None:
@@ -998,7 +1188,8 @@ class UrlContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.day_context = node_call({
-            "op": "context", "entrance": "day", "id": "roman-1962", "date": "2026-08-02"
+            "op": "context", "entrance": "day", "id": "roman-1962",
+            "date": "2026-08-02", "includeOrdinary": True,
         })
         cls.post_context = node_call({
             "op": "context", "entrance": "day", "id": "postconciliar", "date": "2026-11-29",
@@ -1057,7 +1248,8 @@ class UrlContractTests(unittest.TestCase):
             "context": self.day_context,
             "defaults": {"date": "2026-08-02", "missal": "roman-1962",
                          "bible": "douay-rheims", "orations": "la",
-                         "why": "0", "ordinary": "0", "rubrics": "1"},
+                         "why": "0", "ordinary": "0", "ordinary-lang": "en",
+                         "rubrics": "1"},
         })
         self.assertTrue(legacy["normalized"]["ok"], legacy["normalized"]["errors"])
         state = legacy["normalized"]["state"]
@@ -1068,6 +1260,7 @@ class UrlContractTests(unittest.TestCase):
             {"eventId": "proper/roman-1962/advent-1/001"},
         )
         self.assertIn("mode=missal", legacy["serialized"])
+        self.assertIn("ordinary-lang=en", legacy["serialized"])
         self.assertIn("location=proper%2Froman-1962%2Fadvent-1%2F001", legacy["serialized"])
         self.assertNotIn("ordinary=", legacy["serialized"])
         self.assertEqual(legacy["renormalized"]["state"], state)
@@ -1269,6 +1462,24 @@ class UrlContractTests(unittest.TestCase):
         self.assertTrue(storage_defaults["normalized"]["ok"])
         self.assertEqual(storage_defaults["normalized"]["legacy"]["sources"]["missal"],
                          "repository-default")
+
+        selected_without_language = node_call({
+            "op": "url", "entrance": "day",
+            "hash": (
+                "#date=2026-08-02&missal=roman-1962&bible=douay-rheims&"
+                "ordinary=1"
+            ),
+            "context": self.day_context,
+            "defaults": {
+                key: value for key, value in defaults.items()
+                if key != "ordinary-lang"
+            },
+        })
+        self.assertFalse(selected_without_language["normalized"]["ok"])
+        self.assertIn(
+            "required-url-value",
+            {error["code"] for error in selected_without_language["normalized"]["errors"]},
+        )
 
     @staticmethod
     def probe_storage_free() -> dict:
@@ -1475,6 +1686,209 @@ class ParityTests(unittest.TestCase):
         self.assertIsNone(direct["text"])
         self.assertIsNone(direct["source"])
 
+        explicit = node_call({
+            "op": "synthetic-propers", "language": "en",
+            "translationWitness": "witness-a",
+        })
+        selected = next(
+            one for one in explicit["events"] if one["editionSlotLabel"] == "Collect"
+        )["selected"]
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["sourceId"], "witness-a")
+        with self.assertRaisesRegex(AssertionError, "translation witness"):
+            node_call({
+                "op": "synthetic-propers", "language": "en",
+                "translationWitness": "not-held",
+            })
+        with self.assertRaisesRegex(AssertionError, "Latin source language"):
+            node_call({
+                "op": "synthetic-propers", "language": "la",
+                "translationWitness": "witness-a",
+            })
+
+    def test_explicit_ordinary_witness_must_be_held_by_selected_elements(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-roman-1962-2026-08-02")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        ordinary = json.loads(
+            (DATA / "structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+        )
+        witness = ordinary["translations"][0]["source_id"]
+        request["languages"]["ordinaryWitness"] = witness
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        ordinary_events = [
+            event for event in result["events"] if event["kind"] == "ordinary-element"
+        ]
+        self.assertTrue(ordinary_events)
+        self.assertTrue(any(event["selected"]["sourceId"] == witness
+                            for event in ordinary_events))
+
+        request["languages"]["ordinaryWitness"] = "not-held"
+        with self.assertRaisesRegex(AssertionError, "Ordinary witness"):
+            node_call({"op": "ordinary-coverage", "request": request})
+
+    def test_ordinary_antecedent_witness_is_never_reported_complete(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-roman-1962-2026-08-02")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        coverage = next(
+            row for row in result["coverage"]
+            if row["scope"] == "ordinary:roman-1962:en"
+        )
+        self.assertEqual(coverage["state"], "supported")
+        self.assertEqual(coverage["completeness"], "partial")
+        relation = next(
+            reason for reason in coverage["reasons"]
+            if reason["kind"] == "partial-recension" and
+            reason.get("domain") == "ordinary"
+        )
+        self.assertEqual(relation["relation"], "antecedent")
+        self.assertEqual(relation["collation"], "uncollated")
+        self.assertTrue(coverage["exclusions"])
+        for exclusion in coverage["exclusions"]:
+            self.assertEqual(exclusion["state"], "not-in-target-recension")
+            self.assertTrue(exclusion["basis"])
+            self.assertTrue(exclusion["sources"])
+            self.assertTrue(all(isinstance(source, str) and source
+                                for source in exclusion["sources"]))
+            self.assertTrue(exclusion["evidence"])
+            self.assertNotIn('"text"', json.dumps(exclusion["evidence"]))
+        event = next(
+            event for event in result["events"]
+            if event["kind"] == "ordinary-element" and
+            event["selected"]["availability"] == "held"
+        )
+        self.assertEqual(event["selected"]["relation"], "antecedent")
+        self.assertEqual(event["selected"]["collation"], "uncollated")
+
+    def test_ordinary_unavailable_language_preserves_typed_absence_states(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-postconciliar-2026-11-29")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        coverage = next(
+            row for row in result["coverage"]
+            if row["scope"] == "ordinary:postconciliar:en"
+        )
+        self.assertEqual(coverage["state"], "unavailable")
+        self.assertNotIn("language-missing", {
+            reason["kind"] for reason in coverage["reasons"]
+        })
+        restricted = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceState") == "rights-restricted"
+        )
+        self.assertEqual(restricted["kind"], "text-withheld")
+        self.assertEqual(restricted["sourceKind"], "rights-withheld")
+        self.assertGreater(restricted["count"], 0)
+        unavailable = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceState") == "unavailable"
+        )
+        self.assertEqual(unavailable["kind"], "text-not-held")
+        applicability = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceKind") == "applicability-unresolved"
+        )
+        self.assertEqual(applicability["sourceState"], "unresolved")
+        self.assertEqual(
+            [row["element"] for row in result["ordinaryUnresolved"]],
+            ["ritus-initiales/gloria-in-excelsis"],
+        )
+        self.assertIn(
+            "ordinary-element/symbolum/symbolum-nicaenum",
+            {event["id"] for event in result["events"]},
+        )
+
+        event = next(
+            event for event in result["events"]
+            if event["kind"] == "ordinary-element" and
+            event["selected"]["absenceKey"] ==
+            "approved-english-publication-restriction"
+        )
+        selected = event["selected"]
+        self.assertEqual(selected["availability"], "unavailable")
+        self.assertFalse(selected["held"])
+        self.assertEqual(selected["reason"], "rights-restricted")
+        self.assertEqual(selected["unavailableState"], "rights-restricted")
+        self.assertIsNone(selected["sourceId"])
+        self.assertIsNone(selected["text"])
+
+    def test_unmodelled_preface_and_local_solemnity_facts_stay_unresolved(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-postconciliar-2026-11-29")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["options"]["legitimate"]["eucharistic-prayer"] = "ep-iv"
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        unresolved = {
+            row["element"]: row["condition"]
+            for row in result["ordinaryUnresolved"]
+        }
+        self.assertIn("ritus-initiales/gloria-in-excelsis", unresolved)
+        self.assertIn("particular-celebration-of-more-solemn-character",
+                      unresolved["ritus-initiales/gloria-in-excelsis"]["predicates"])
+        self.assertEqual(
+            unresolved["prex-eucharistica/prex-eucharistica-iv"]["predicates"],
+            ["mass-has-no-proper-preface"],
+        )
+        event_ids = {event["id"] for event in result["events"]}
+        self.assertNotIn(
+            "ordinary-element/prex-eucharistica/prex-eucharistica-iv",
+            event_ids,
+        )
+
+    def test_day_and_cli_reject_cross_recension_structure_and_ordinary(self) -> None:
+        result = node_call({"op": "cross-recension"})
+        self.assertRegex(result["dayStructure"], r"structure.*requested edition")
+        self.assertRegex(result["dayOrdinary"], r"Ordinary.*requested edition")
+        self.assertRegex(result["cliStructure"], r"structure.*requested edition")
+        self.assertRegex(result["cliOrdinary"], r"Ordinary.*requested edition")
+
+    def test_unknown_ordinary_applicability_is_suppressed_and_typed(self) -> None:
+        result = node_call({"op": "synthetic-ordinary-condition"})
+        self.assertEqual(result["events"], [])
+        self.assertEqual(len(result["ordinaryUnresolved"]), 1)
+        unresolved = result["ordinaryUnresolved"][0]
+        self.assertEqual(unresolved["kind"], "ordinary-unresolved")
+        self.assertEqual(unresolved["state"], "unresolved")
+        self.assertEqual(unresolved["element"], "conditional/element")
+        self.assertEqual(unresolved["condition"]["kind"], "include-when-any")
+        coverage = next(
+            row for row in result["coverage"] if row["scope"].startswith("ordinary:")
+        )
+        self.assertEqual(coverage["state"], "supported")
+        self.assertEqual(coverage["completeness"], "partial")
+        reason = next(
+            row for row in coverage["reasons"]
+            if row.get("sourceKind") == "applicability-unresolved"
+        )
+        self.assertEqual(reason["sourceState"], "unresolved")
+        self.assertEqual(reason["elements"], ["conditional/element"])
+
+    def test_all_ordinary_variant_groups_are_selected_without_concatenation(self) -> None:
+        result = node_call({"op": "synthetic-ordinary-variants"})
+        elements = [
+            event for event in result["events"] if event["kind"] == "ordinary-element"
+        ]
+        self.assertEqual([event["id"] for event in elements], [
+            "ordinary-element/variants/by",
+        ])
+        self.assertEqual(elements[0]["selected"]["text"], "by")
+        self.assertEqual(result["ordinaryUnresolved"], [])
+
     def test_rights_restricted_translation_is_typed_and_never_leaks(self) -> None:
         result = node_call({
             "op": "synthetic-propers", "language": "en", "rightsRestricted": True,
@@ -1573,6 +1987,7 @@ class ParityTests(unittest.TestCase):
 
     def test_missing_ordinary_language_is_explicitly_unavailable(self) -> None:
         request = copy.deepcopy(fixture_named("day-roman-1962-2026-08-02")["requested"])
+        request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
         request["languages"]["ordinary"] = "zz-contract-unheld"
         result = node_call({"op": "ordinary-coverage", "request": request})
@@ -1683,17 +2098,13 @@ class ParityTests(unittest.TestCase):
                     "applicability": applicability,
                 }])
 
-        full = node_call({
-            "op": "synthetic-ordinary-frame", "applicability": "full",
-            "properName": "Collect",
-        })
-        proper = next(one for one in full["events"] if one["kind"] == "proper")
-        self.assertIsNone(proper["seat"])
+        with self.assertRaisesRegex(AssertionError, "no usable semantic Ordinary seat"):
+            node_call({
+                "op": "synthetic-ordinary-frame", "applicability": "full",
+                "properName": "Collect",
+            })
 
         accepted = (
-            {"omitFrame": True},
-            {"frame": {"applicability": "full"}},
-            {"frame": {"applicability": "full", "basis": "source basis"}},
             {"frame": {"applicability": "none", "basis": "source basis"}},
             {"frame": {"applicability": "unavailable", "basis": "source basis"}},
         )
@@ -1771,6 +2182,15 @@ class ParityTests(unittest.TestCase):
                 "domainState": "none",
                 "sourceCalendar": "roman-1962",
                 "inheritanceStatus": "uncollated",
+            }, {
+                "kind": "text-not-held",
+                "count": 3,
+                "repositoryTerm": "proper-body",
+                "claims": [
+                    {"proper": "Collect", "cycle": None},
+                    {"proper": "Secret", "cycle": None},
+                    {"proper": "Postcommunion", "cycle": None},
+                ],
             }],
         })
         self.assertFalse(any(
@@ -1836,6 +2256,14 @@ class ParityTests(unittest.TestCase):
         )
         explicit = node_call({"op": "synthetic-composed-cycles", "cycle": "B"})
         self.assertEqual(explicit["events"][0]["selected"]["text"], "contract-material-B")
+
+        translated = node_call({
+            "op": "synthetic-composed-cycles", "translationOnly": True, "cycle": "B",
+        })
+        selected = translated["events"][0]["selected"]
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["sourceId"], "witness-cycle-B")
+        self.assertEqual(selected["text"], "translated-cycle-B")
 
     def test_day_cycle_families_are_independent_order_free_and_mixed_fails_closed(self) -> None:
         for family, lectionary, cycle, dimension, references in (
@@ -2072,14 +2500,12 @@ class ParityTests(unittest.TestCase):
 
     def test_real_multiform_subsequences_keep_exact_seating_and_event_ids(self) -> None:
         cases = (
-            ("2026-12-25", "nativitate-domini-octave", "night", 7),
-            ("2026-12-25", "nativitate-domini-octave", "dawn", 7),
-            ("2026-12-25", "nativitate-domini-octave", "day", 6),
+            ("2026-12-25", "nativitate-domini-octave", "night", 10),
+            ("2026-12-25", "nativitate-domini-octave", "dawn", 10),
+            ("2026-12-25", "nativitate-domini-octave", "day", 9),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "first", 11),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "second", 11),
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "third", 11),
-            ("2026-12-19", "advent-ember-saturday", "longer", 16),
-            ("2026-12-19", "advent-ember-saturday", "shorter", 8),
         )
         template = fixture_named("day-roman-1962-2026-08-02")["requested"]
         for date, mass, form, proper_count in cases:
@@ -2088,6 +2514,7 @@ class ParityTests(unittest.TestCase):
                 request["civilDate"] = date
                 request["selectedReadableFormulary"] = {"id": mass}
                 request["form"] = form
+                request["requestedMode"] = "missal"
                 request["options"]["ordinary"] = True
                 parity = node_call({
                     "op": "full-parity", "request": request,
@@ -2108,10 +2535,52 @@ class ParityTests(unittest.TestCase):
                     len({event["id"] for event in parity["day"]["events"]}),
                     len(parity["day"]["events"]),
                 )
-                self.assertTrue(any(event["seat"] for event in proper_events))
-                for event in proper_events:
-                    if event["seat"] and event["seat"]["placement"] == "seated":
-                        self.assertIsNotNone(event["seat"]["id"], event)
+                self.assertTrue(all(
+                    event["seat"] and event["seat"]["placement"] == "seated" and
+                    event["seat"]["id"]
+                    for event in proper_events
+                ))
+
+        for form, proper_count, first_index in (
+            ("longer", 19, 1),
+            ("shorter", 11, 20),
+        ):
+            with self.subTest(date="2026-12-19", mass="advent-ember-saturday", form=form):
+                result = node_call({
+                    "op": "source-ordinary-frame", "id": "roman-1962",
+                    "date": "2026-12-19", "mass": "advent-ember-saturday",
+                    "form": form,
+                })
+                self.assertEqual(result["resolved"]["form"], form)
+                self.assertEqual(len(result["events"]), proper_count)
+                self.assertEqual(
+                    [event["id"] for event in result["events"]],
+                    [
+                        f"proper/roman-1962/advent-ember-saturday/{index:03d}"
+                        for index in range(first_index, first_index + proper_count)
+                    ],
+                )
+                self.assertTrue(all(
+                    event["kind"] == "proper" and event["seat"] is None
+                    for event in result["events"]
+                ))
+                placement = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-placement:roman-1962"
+                )
+                frame = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-frame:roman-1962"
+                )
+                self.assertEqual(placement["state"], "unsupported")
+                self.assertEqual(
+                    placement["reasons"][0]["kind"],
+                    "ordinary-placement-unavailable",
+                )
+                self.assertEqual(frame["state"], "unavailable")
+                self.assertEqual(
+                    frame["reasons"][0]["applicability"], "unavailable"
+                )
 
     def test_real_exceptional_rites_never_borrow_the_ordinary(self) -> None:
         cases = (
@@ -2127,6 +2596,7 @@ class ParityTests(unittest.TestCase):
                 request["edition"] = {"id": "roman-pre-1955"}
                 request["calendar"] = {"id": "roman-pre-1955"}
                 request["selectedReadableFormulary"] = {"id": mass}
+                request["requestedMode"] = "missal"
                 request["options"]["ordinary"] = True
                 parity = node_call({
                     "op": "full-parity", "request": request,
@@ -2148,10 +2618,91 @@ class ParityTests(unittest.TestCase):
                 )
                 self.assertTrue(frame["reasons"][0]["basis"])
 
+    def test_source_owned_postconciliar_exceptional_frames_reach_adapter(self) -> None:
+        cases = (
+            ("2027-03-26", "good-friday", "none", "absent", "semantic-absence"),
+            ("2027-03-27", "easter-vigil", "unavailable", "unavailable", "text-not-held"),
+        )
+        for date, mass, applicability, state, reason in cases:
+            with self.subTest(date=date, mass=mass):
+                result = node_call({
+                    "op": "source-ordinary-frame", "id": "postconciliar",
+                    "date": date, "mass": mass,
+                })
+                self.assertFalse(any(
+                    event["kind"].startswith("ordinary-") for event in result["events"]
+                ))
+                frame = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-frame:postconciliar"
+                )
+                self.assertEqual(frame["state"], state)
+                self.assertEqual(frame["reasons"][0]["kind"], reason)
+                self.assertEqual(frame["reasons"][0]["applicability"], applicability)
+                self.assertTrue(frame["reasons"][0]["basis"])
+
+    def test_source_claim_absences_and_common_sets_block_complete_coverage(self) -> None:
+        fatima = node_call({
+            "op": "source-claim-coverage", "id": "postconciliar",
+            "mass": "our-lady-fatima",
+        })
+        self.assertEqual(fatima["events"], [])
+        self.assertEqual(fatima["coverage"][0]["state"], "unavailable")
+        self.assertNotEqual(fatima["coverage"][0].get("completeness"), "complete")
+
+        lawrence_key = "s-laurentii-brundusio-confessoris-ecclesiae-doctoris"
+        lawrence = node_call({
+            "op": "source-claim-coverage", "id": "roman-1962",
+            "mass": lawrence_key,
+        })
+        formulary = next(row for row in lawrence["coverage"]
+                         if row["scope"] == f"formulary:{lawrence_key}")
+        self.assertEqual((formulary["state"], formulary["completeness"]),
+                         ("supported", "partial"))
+        self.assertTrue(any(
+            row["scope"].endswith("/main/collect")
+            and row["repositoryTerm"] == "proper-collect"
+            for row in lawrence["explicitAbsences"]
+        ))
+        self.assertFalse(any(
+            event.get("editionSlotLabel") == "Collect"
+            for event in lawrence["events"]
+        ))
+
+        stanislaus = node_call({
+            "op": "source-claim-coverage", "id": "roman-1962",
+            "mass": "s-stanislai-episcopi-martyris",
+        })
+        common_choice = next(
+            row for row in stanislaus["unresolvedChoices"]
+            if row["id"].startswith("common-set:")
+        )
+        self.assertEqual([option["id"] for option in common_choice["options"]],
+                         ["c3", "c4"])
+        self.assertEqual(stanislaus["coverage"][0]["completeness"], "partial")
+        self.assertIn("unresolved-choice", {
+            reason["kind"] for reason in stanislaus["coverage"][0]["reasons"]
+        })
+
+    def test_source_claim_statuses_and_common_set_dispositions_fail_closed(self) -> None:
+        malformed = (
+            ("postconciliar", "our-lady-fatima", "mass-status"),
+            ("roman-1962", "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+             "proper-status"),
+            ("roman-1962", "s-stanislai-episcopi-martyris", "common-set"),
+        )
+        for edition, mass, mutation in malformed:
+            with self.subTest(mutation=mutation), self.assertRaises(AssertionError):
+                node_call({
+                    "op": "source-claim-coverage", "id": edition,
+                    "mass": mass, "malformed": mutation,
+                })
+
     def test_mass_today_expanded_matches_day_identity_order_seats_and_sources(self) -> None:
         for name in ("day-roman-1962-2026-08-02", "day-postconciliar-2026-11-29"):
             fixture = fixture_named(name)
             request = copy.deepcopy(fixture["requested"])
+            request["requestedMode"] = "missal"
             request["options"]["ordinary"] = True
             run = subprocess.run(
                 [str(MASS_TODAY), "show", "--date", request["civilDate"],
@@ -2170,6 +2721,8 @@ class ParityTests(unittest.TestCase):
                              parity["cli"]["explicitAbsences"], name)
             self.assertEqual(parity["day"]["unresolvedChoices"],
                              parity["cli"]["unresolvedChoices"], name)
+            self.assertEqual(parity["day"]["ordinaryUnresolved"],
+                             parity["cli"]["ordinaryUnresolved"], name)
             proper_events = [one for one in parity["day"]["events"] if one["kind"] == "proper"]
             self.assertEqual(len(proper_events), 10)
             self.assertTrue(all(one["seat"]["placement"] == "seated" for one in proper_events))
@@ -2191,7 +2744,18 @@ class ParityTests(unittest.TestCase):
             self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
             payload = json.loads(run.stdout)
             day = payload["days"][0]
-            mass = next(one for one in day["masses"] if one["standing"] == "said")
+            said = [one for one in day["masses"] if one["standing"] == "said"]
+            if said:
+                self.assertEqual(len(said), 1)
+                mass = said[0]
+            else:
+                # Ordinary-Time weekdays hold a deterministic ferial reading
+                # course but no source-selected oration owner.  Select that
+                # sole readable formulary explicitly without upgrading its
+                # fail-closed standing to "said".
+                self.assertEqual(len(day["masses"]), 1)
+                mass = day["masses"][0]
+                self.assertEqual(mass["standing"], "unresolved")
             request = copy.deepcopy(template)
             request["civilDate"] = date
             request["selectedReadableFormulary"] = {"id": mass["key"]}
@@ -2229,6 +2793,7 @@ class ParityTests(unittest.TestCase):
     def test_cli_parity_rejects_bible_lectionary_reference_and_text_drift(self) -> None:
         fixture = fixture_named("day-roman-1962-2026-08-02")
         request = copy.deepcopy(fixture["requested"])
+        request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
         run = subprocess.run(
             [str(MASS_TODAY), "show", "--date", request["civilDate"],

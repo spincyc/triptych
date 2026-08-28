@@ -71,6 +71,7 @@ SEGMENT_EDITION = "edition.catholic-encyclopedia.volume-4.new-york-1908"
 SEGMENT_EDITION_FILE = SOURCES / (
     "editions/catholic-encyclopedia/volume-4/1908-new-york-1908.json"
 )
+JOSEPHUS = "work.josephus.antiquitates-judaicae"
 
 BROWSERS = ("/usr/bin/chromium", "/usr/bin/chromium-browser",
             "/usr/bin/google-chrome-stable", "/usr/bin/google-chrome")
@@ -358,6 +359,7 @@ class WithheldPassageTests(unittest.TestCase):
         # these two neighbours being what they are the race is not provoked.
         assert cls.readable["readable"] and cls.readable["words"] > 100
         assert not cls.withheld["readable"] and cls.withheld.get("reason")
+        assert "context" not in cls.withheld and "notes" not in cls.withheld
         cls.seen = drive({
             # 2.5 seconds is not a measurement of anything; it is long enough
             # that the switch certainly happens while the fetch is open.
@@ -392,13 +394,13 @@ class WithheldPassageTests(unittest.TestCase):
         )
         self.assertNotIn("passage-text", settled["classes"])
 
-    def test_the_withheld_passage_keeps_its_own_notes(self) -> None:
-        # The stale render did not only add: it removed. `removeChild` took the
-        # last child of the body, which was this passage's editorial note.
-        settled = json.loads(self.seen["settled"])
-        if self.withheld.get("notes"):
-            self.assertIn("passage-notes", settled["classes"])
-        self.assertEqual(settled["classes"].count("passage-source"), 1)
+    def test_the_withheld_passage_exposes_no_prose_bearing_metadata(self) -> None:
+        for moment in ("at_once", "settled"):
+            state = json.loads(self.seen[moment])
+            with self.subTest(moment=moment):
+                self.assertNotIn("passage-context", state["classes"])
+                self.assertNotIn("passage-notes", state["classes"])
+                self.assertEqual(state["classes"].count("passage-source"), 1)
 
 
 SOURCE_READER_STATE = """JSON.stringify({
@@ -469,7 +471,17 @@ class SourceReaderInteractionTests(unittest.TestCase):
                  "label": "the multi-passage source reader"},
                 {"do": "eval", "name": "opened_many", "expression": """JSON.stringify({
                   hash: location.hash,
-                  controller: document.querySelector('.source-identifier').textContent
+                  controller: document.querySelector('.source-identifier').textContent,
+                  currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+                    .dataset.artifactId,
+                  artifactIds: Array.from(document.querySelectorAll('.artifact-id'))
+                    .map((node) => node.textContent),
+                  targetSizes: Array.from(document.querySelectorAll(
+                    '#reader .back, #passage-select, .passage-nav .step'))
+                    .map((node) => {
+                      const box = node.getBoundingClientRect();
+                      return [Math.round(box.width), Math.round(box.height)];
+                    })
                 })"""},
                 {"do": "eval", "name": "selected", "expression": """(() => {
                   const nav = document.querySelector('.passage-nav');
@@ -489,7 +501,11 @@ class SourceReaderInteractionTests(unittest.TestCase):
                  "document.querySelector('.source-identifier').textContent === " + controller_one,
                  "label": "the selected passage provenance"},
                 {"do": "eval", "name": "selected_source", "expression":
-                 "document.querySelector('.source-identifier').textContent"},
+                 """JSON.stringify({
+                   controller: document.querySelector('.source-identifier').textContent,
+                   currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+                     .dataset.artifactId
+                 })"""},
                 {"do": "eval", "name": "stepped", "expression": """(() => {
                   const nav = document.querySelector('.passage-nav');
                   const next = nav.querySelector('[data-passage-step="1"]');
@@ -500,6 +516,85 @@ class SourceReaderInteractionTests(unittest.TestCase):
                     value: document.getElementById('passage-select').value,
                     focused: document.activeElement === next,
                     connected: next.isConnected,
+                    sameNavigation: document.querySelector('.passage-nav') === nav
+                  });
+                })()"""},
+                {"do": "wait", "until":
+                 "document.querySelector('.source-identifier') && "
+                 "document.querySelector('.source-identifier').textContent === " +
+                 json.dumps(cls.passages[2]["artifact_id"]),
+                 "label": "the stepped passage provenance"},
+                {"do": "eval", "name": "stepped_source", "expression":
+                 "document.querySelector('.source-identifier').textContent"},
+                {"do": "eval", "expression": """(() => {
+                  window.__sourceHashChanges = 0;
+                  window.addEventListener('hashchange', () => {
+                    window.__sourceHashChanges += 1;
+                  });
+                  history.back();
+                  return true;
+                })()"""},
+                {"do": "wait", "until":
+                 "window.__sourceHashChanges >= 1 && location.hash === " +
+                 json.dumps("#edition=" + IRENAEUS + "&passage=" + cls.passages[1]["id"]) +
+                 " && document.querySelector('.source-identifier') && "
+                 "document.querySelector('.source-identifier').textContent === " +
+                 json.dumps(cls.passages[1]["artifact_id"]),
+                 "label": "browser history back to the selected passage"},
+                {"do": "eval", "name": "history_back", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   changes: window.__sourceHashChanges,
+                   controller: document.querySelector('.source-identifier').textContent,
+                   currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+                     .dataset.artifactId
+                 })"""},
+                {"do": "eval", "expression": "history.forward(); true"},
+                {"do": "wait", "until":
+                 "window.__sourceHashChanges >= 2 && location.hash === " +
+                 json.dumps("#edition=" + IRENAEUS + "&passage=" + cls.passages[2]["id"]) +
+                 " && document.querySelector('.source-identifier') && "
+                 "document.querySelector('.source-identifier').textContent === " +
+                 json.dumps(cls.passages[2]["artifact_id"]),
+                 "label": "browser history forward to the stepped passage"},
+                {"do": "eval", "name": "history_forward", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   changes: window.__sourceHashChanges,
+                   controller: document.querySelector('.source-identifier').textContent,
+                   currentArtifact: document.querySelector('.artifact[aria-current="true"]')
+                     .dataset.artifactId
+                 })"""},
+                {"do": "eval", "expression": SELECT_PASSAGE % (len(cls.passages) - 2)},
+                {"do": "eval", "name": "last_boundary", "expression": """(() => {
+                  const nav = document.querySelector('.passage-nav');
+                  const next = nav.querySelector('[data-passage-step="1"]');
+                  next.focus();
+                  next.click();
+                  return JSON.stringify({
+                    hash: location.hash,
+                    value: document.getElementById('passage-select').value,
+                    focus: document.activeElement.id,
+                    nextDisabled: next.disabled,
+                    previousDisabled:
+                      nav.querySelector('[data-passage-step="-1"]').disabled,
+                    connected: next.isConnected,
+                    sameNavigation: document.querySelector('.passage-nav') === nav
+                  });
+                })()"""},
+                {"do": "eval", "expression": SELECT_PASSAGE % 1},
+                {"do": "eval", "name": "first_boundary", "expression": """(() => {
+                  const nav = document.querySelector('.passage-nav');
+                  const previous = nav.querySelector('[data-passage-step="-1"]');
+                  previous.focus();
+                  previous.click();
+                  return JSON.stringify({
+                    hash: location.hash,
+                    value: document.getElementById('passage-select').value,
+                    focus: document.activeElement.id,
+                    previousDisabled: previous.disabled,
+                    nextDisabled: nav.querySelector('[data-passage-step="1"]').disabled,
+                    connected: previous.isConnected,
                     sameNavigation: document.querySelector('.passage-nav') === nav
                   });
                 })()"""},
@@ -557,6 +652,11 @@ class SourceReaderInteractionTests(unittest.TestCase):
             state["hash"], "#edition=" + IRENAEUS + "&passage=" + first["id"]
         )
         self.assertEqual(state["controller"], first["artifact_id"])
+        self.assertEqual(state["currentArtifact"], first["artifact_id"])
+        self.assertIn(first["artifact_id"], state["artifactIds"])
+        self.assertTrue(state["targetSizes"])
+        self.assertTrue(all(width >= 44 and height >= 44
+                            for width, height in state["targetSizes"]))
 
     def test_selecting_preserves_focus_navigation_and_exact_controller(self) -> None:
         state = self.state("selected")
@@ -565,7 +665,9 @@ class SourceReaderInteractionTests(unittest.TestCase):
         self.assertTrue(state["focused"])
         self.assertTrue(state["connected"])
         self.assertTrue(state["sameNavigation"])
-        self.assertEqual(self.seen["selected_source"], selected["artifact_id"])
+        source = self.state("selected_source")
+        self.assertEqual(source["controller"], selected["artifact_id"])
+        self.assertEqual(source["currentArtifact"], selected["artifact_id"])
         self.assertEqual(
             state["hash"], "#edition=" + IRENAEUS + "&passage=" + selected["id"]
         )
@@ -577,6 +679,7 @@ class SourceReaderInteractionTests(unittest.TestCase):
         self.assertTrue(state["focused"])
         self.assertTrue(state["connected"])
         self.assertTrue(state["sameNavigation"])
+        self.assertEqual(self.seen["stepped_source"], selected["artifact_id"])
         self.assertEqual(
             state["hash"], "#edition=" + IRENAEUS + "&passage=" + selected["id"]
         )
@@ -590,11 +693,192 @@ class SourceReaderInteractionTests(unittest.TestCase):
         self.assertIn(self.segment_passage["segment_id"], state["segment"])
         self.assertIn("does not replace its controller", state["segment"])
 
+    def test_browser_back_and_forward_restore_exact_provenance(self) -> None:
+        for name, passage in (
+            ("history_back", self.passages[1]),
+            ("history_forward", self.passages[2]),
+        ):
+            state = self.state(name)
+            with self.subTest(direction=name):
+                self.assertEqual(
+                    state["hash"],
+                    "#edition=" + IRENAEUS + "&passage=" + passage["id"],
+                )
+                self.assertEqual(state["controller"], passage["artifact_id"])
+                self.assertEqual(state["currentArtifact"], passage["artifact_id"])
+        self.assertGreaterEqual(self.state("history_back")["changes"], 1)
+        self.assertGreaterEqual(self.state("history_forward")["changes"], 2)
+
+    def test_boundary_steps_move_focus_to_the_stable_passage_selector(self) -> None:
+        last = self.state("last_boundary")
+        self.assertEqual(last["value"], str(len(self.passages) - 1))
+        self.assertEqual(last["focus"], "passage-select")
+        self.assertTrue(last["nextDisabled"])
+        self.assertFalse(last["previousDisabled"])
+        self.assertTrue(last["connected"])
+        self.assertTrue(last["sameNavigation"])
+
+        first = self.state("first_boundary")
+        self.assertEqual(first["value"], "0")
+        self.assertEqual(first["focus"], "passage-select")
+        self.assertTrue(first["previousDisabled"])
+        self.assertFalse(first["nextDisabled"])
+        self.assertTrue(first["connected"])
+        self.assertTrue(first["sameNavigation"])
+
     def test_the_page_makes_no_false_claim_about_a_majority(self) -> None:
-        markup = (ROOT / "src/web/browser/sources/index.html").read_text(
-            encoding="utf-8"
+        prose = "\n".join(
+            path.read_text(encoding="utf-8")
+            for path in (
+                ROOT / "tools/source-reader",
+                ROOT / "src/web/browser/sources/index.html",
+                ROOT / "src/web/browser/sources/sources.js",
+            )
         )
-        self.assertNotIn("Most of this corpus fails", markup)
+        self.assertNotIn("large majority", prose)
+        self.assertNotIn("roughly nine passages in ten", prose)
+        self.assertNotIn("Most readable here", prose)
+
+
+class SourceReaderAddressTests(unittest.TestCase):
+    """Arrived addresses are either exact reader state or canonical finder state."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        index = json.loads((SOURCES / "index.json").read_text(encoding="utf-8"))
+        latin = next(one for one in index["facets"]["languages"] if one["id"] == "la")
+        cls.latin_editions = latin["editions"]
+        cls.josephus = next(one for one in index["works"] if one["id"] == JOSEPHUS)
+        cls.josephus_titles = [one["title"] for one in cls.josephus["editions"]]
+        assert len(cls.josephus_titles) == len(set(cls.josephus_titles)) == 4
+
+        invalid = (
+            "#edition=edition.does-not-exist&author=Nobody&category=unknown"
+            "&language=la&period=9999&rights=imaginary&readable=2&sort=bogus"
+        )
+        rights_hash = "#rights=public-domain&find=" + IRENAEUS
+        josephus_hash = "#find=" + JOSEPHUS
+        cls.seen = drive({
+            "delays": [],
+            "acts": [
+                {"do": "navigate", "url": page("sources")},
+                {"do": "wait", "until": "!document.getElementById('find-input').disabled",
+                 "label": "the source finder"},
+                {"do": "eval", "name": "invalid_history", "expression":
+                 "location.hash = " + json.dumps(invalid) + "; history.length"},
+                {"do": "wait", "until": "document.querySelector('#reader .error')",
+                 "label": "the invalid edition refusal"},
+                {"do": "eval", "name": "invalid_edition", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   history: history.length,
+                   text: document.querySelector('#reader .error').textContent,
+                   finderHidden: document.getElementById('finder').hidden
+                 })"""},
+                {"do": "eval", "name": "facet_history", "expression":
+                 """(() => {
+                   location.hash = '#author=Nobody&category=unknown&language=la' +
+                     '&period=9999&rights=imaginary&readable=2&sort=bogus&extra=value';
+                   return history.length;
+                 })()"""},
+                {"do": "wait", "until":
+                 "location.hash === '#language=la' && "
+                 "document.querySelectorAll('.edition-open').length === " +
+                 str(cls.latin_editions),
+                 "label": "canonical valid finder state"},
+                {"do": "eval", "name": "valid_facet_only", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   history: history.length,
+                   values: [
+                     document.getElementById('author-select').value,
+                     document.getElementById('category-select').value,
+                     document.getElementById('language-select').value,
+                     document.getElementById('period-select').value,
+                     document.getElementById('rights-select').value,
+                     document.getElementById('sort-select').value
+                   ],
+                   readable: document.getElementById('readable-input').checked,
+                   editions: document.querySelectorAll('.edition-open').length
+                 })"""},
+                {"do": "eval", "expression":
+                 "location.hash = " + json.dumps(rights_hash) + "; true"},
+                {"do": "wait", "until":
+                 "location.hash === " + json.dumps(rights_hash) +
+                 " && document.querySelectorAll('.edition-open').length === 1",
+                 "label": "the Segment-controller rights result"},
+                {"do": "eval", "name": "controller_rights", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   works: document.querySelectorAll('.work').length,
+                   editions: document.querySelectorAll('.edition-open').length,
+                   title: document.querySelector('.work-title').textContent
+                 })"""},
+                {"do": "eval", "expression":
+                 "location.hash = " + json.dumps(josephus_hash) + "; true"},
+                {"do": "wait", "until":
+                 "document.querySelectorAll('.edition-open').length === 4",
+                 "label": "the Josephus editions"},
+                {"do": "eval", "name": "edition_labels", "expression":
+                 """JSON.stringify(Array.from(document.querySelectorAll('.edition-open'))
+                   .map((node) => node.textContent))"""},
+                {"do": "navigate", "url": page(
+                    "sources", query="fresh=1", fragment="#edition=" + ONE_PASSAGE
+                )},
+                {"do": "wait", "until": "document.querySelector('.source-identifier')",
+                 "label": "the directly addressed one-passage edition"},
+                {"do": "eval", "expression":
+                 "document.querySelector('#reader .back').click(); true"},
+                {"do": "wait", "until":
+                 "location.hash === '' && !document.getElementById('finder').hidden",
+                 "label": "the unfiltered finder after Back"},
+                {"do": "eval", "name": "reader_back", "expression":
+                 """JSON.stringify({
+                   hash: location.hash,
+                   controlsHidden: document.getElementById('controls').hidden,
+                   finderHidden: document.getElementById('finder').hidden
+                 })"""},
+            ],
+        })
+
+    def state(self, name: str) -> dict:
+        return json.loads(self.seen[name])
+
+    def test_unknown_edition_is_refused_without_rewriting_its_citation(self) -> None:
+        state = self.state("invalid_edition")
+        self.assertIn("edition.does-not-exist", state["hash"])
+        self.assertIn("No edition with the id", state["text"])
+        self.assertTrue(state["finderHidden"])
+        self.assertEqual(state["history"], self.seen["invalid_history"])
+
+    def test_invalid_finder_values_are_dropped_without_losing_valid_state(self) -> None:
+        state = self.state("valid_facet_only")
+        self.assertEqual(state["hash"], "#language=la")
+        self.assertEqual(state["values"], ["", "", "la", "", "", "author"])
+        self.assertFalse(state["readable"])
+        self.assertEqual(state["editions"], self.latin_editions)
+        self.assertEqual(state["history"], self.seen["facet_history"])
+
+    def test_rights_filter_includes_segment_controlled_editions(self) -> None:
+        state = self.state("controller_rights")
+        self.assertEqual(state["hash"], "#rights=public-domain&find=" + IRENAEUS)
+        self.assertEqual(state["works"], 1)
+        self.assertEqual(state["editions"], 1)
+        self.assertEqual(state["title"], "Adversus haereses")
+
+    def test_same_fact_editions_have_distinct_recorded_labels(self) -> None:
+        labels = self.state("edition_labels")
+        self.assertEqual(len(labels), 4)
+        self.assertEqual(len(set(labels)), 4)
+        for title in self.josephus_titles:
+            with self.subTest(title=title):
+                self.assertTrue(any(label.startswith(title + " · ") for label in labels))
+
+    def test_back_from_a_direct_reader_address_returns_to_default_finder(self) -> None:
+        state = self.state("reader_back")
+        self.assertEqual(state["hash"], "")
+        self.assertFalse(state["controlsHidden"])
+        self.assertFalse(state["finderHidden"])
 
 
 LOOK_UP = """(() => {

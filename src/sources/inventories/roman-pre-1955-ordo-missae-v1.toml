@@ -141,6 +141,26 @@ relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
+[[sections.turn_partitions]]
+element = "confiteor-sacerdotis"
+lang = "en"
+parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest" }]
+
+[[sections.turn_partitions]]
+element = "confiteor-sacerdotis"
+lang = "la"
+parts = [{ key = "confiteor-sacerdotis", seq = [12], speaker = "priest" }]
+
+[[sections.turn_partitions]]
+element = "confiteor-ministrorum"
+lang = "en"
+parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server" }]
+
+[[sections.turn_partitions]]
+element = "confiteor-ministrorum"
+lang = "la"
+parts = [{ key = "confiteor-ministrorum", seq = [14], speaker = "server" }]
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
@@ -158,6 +178,26 @@ note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous transl
 relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
+
+[[sections.turn_partitions]]
+element = "laus-tibi-christe"
+lang = "en"
+parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server" }]
+
+[[sections.turn_partitions]]
+element = "laus-tibi-christe"
+lang = "la"
+parts = [{ key = "laus-tibi-christe", seq = [11], speaker = "server" }]
+
+[[sections.turn_partitions]]
+element = "suscipiat-dominus"
+lang = "en"
+parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server" }]
+
+[[sections.turn_partitions]]
+element = "suscipiat-dominus"
+lang = "la"
+parts = [{ key = "suscipiat-dominus", seq = [53], speaker = "server" }]
 
 [[sections]]
 key = "praefatio"
@@ -231,6 +271,16 @@ relation = "antecedent"
 collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1920 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
+[[sections.turn_partitions]]
+element = "deo-gratias"
+lang = "en"
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server" }]
+
+[[sections.turn_partitions]]
+element = "deo-gratias"
+lang = "la"
+parts = [{ key = "deo-gratias", seq = [23], speaker = "server" }]
+
 # ---------------------------------------------------------------- slots
 #
 # A slot is a seat in this frame for a proper of the day. It names one element
@@ -288,6 +338,7 @@ key = "evangelium"
 after = "oblatio/rubrica-evangelium-proprium"
 propers = [
   "Gospel",
+  "Gospel (vel)",
   "Passion according to Matthew",
   "Passion according to Mark",
   "Passion according to Luke",

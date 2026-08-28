@@ -56,17 +56,38 @@ recorded in `scope.md` and `source-audit.md`.
 
 | Stable ID | Language | State | Scope | Reason |
 |---|---|---|---|---|
+| W.I.2; W.I.3; W.I.5; W.I.7; W.I.9; W.I.10; W.I.11; W.I.13; W.I.14; W.I.15; W.I.16; W.I.24; W.I.26; W.I.30; W.I.31; W.I.32; W.I.35; W.I.42; W.I.46; W.I.47; W.I.48; W.I.49; W.I.52; W.I.54; W.I.55 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
 | W.I.20 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
 | W.I.21 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
 | W.I.27 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
 | W.I.53 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| W.II.1; W.II.5; W.II.7; W.II.17; W.II.27; W.II.43; W.II.45; W.II.53; W.II.55; W.II.56; W.II.57 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
 | W.II.61 | English | unavailable | English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| I.2.1; I.4.1; I.5.1; I.7.1; I.8.1; I.10.1; I.12.1; I.13.1; I.14.1; I.15.1; I.19.1; I.24.1; I.28.1; I.29.1; I.32.1; I.34.1; I.38.1; I.41.1; I.44.1; I.45.1; I.45.3; I.46.3; I.46.4; I.47.3; I.48.1 | English | unavailable | exercise-bank English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| II.1.1; II.6.1; II.7.1; II.17.1; II.26.1; II.39.1; II.42.1; II.50.1; II.51.1 | English | unavailable | exercise-bank English rendering only | `authorship-and-redistribution-basis-unestablished` |
+| I.1/item-5; I.2/item-5; I.13/item-5; I.28/item-1; I.12/controlled-composition; II.43/item-6; R/ordinary-dialogue | English | unavailable | exercise or reader English rendering only | `authorship-and-redistribution-basis-unestablished` |
 
 The received Latin, exercise identity, and grammatical analysis remain in
 place. These dispositions govern every exercise-bank reuse of the affected
 English segments, including the corresponding Volume II compression exercise.
 They establish no restriction on the Latin and make no claim about the creator
 of the removed English wording.
+
+### Location-scoped collision dispositions
+
+The rights gate records the remaining normalized collisions only by digest,
+word count, exact source locator, and exact installed-PDF locator. Generic or
+incidental collisions are permitted only at those recorded locations and do
+not create a corpus-wide exception. The two retained biblical occurrences
+with digest `b31a151612c569996c9ce0729574d6ee594a83a05200ae1be6e87e585281a436`
+are the independently prepared project renderings for W.I.56 and I.46.2 of
+Clementine Vulgate Io. 1:2--3a. Their passage-specific basis does not authorize
+the same digest in a Creed or other liturgical rendering. The retained temporal
+exercise occurrences with digest
+`1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7`
+are ordinary project-created number-and-time examples, likewise confined to
+their recorded locations. The machine-readable allowlist supplies the typed
+basis and review record without storing protected wording.
 
 ## Verified connected-reader register
 

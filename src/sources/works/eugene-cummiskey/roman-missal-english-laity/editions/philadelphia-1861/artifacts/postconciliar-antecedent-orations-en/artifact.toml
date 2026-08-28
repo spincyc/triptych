@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 27 rows reproduce only historical English printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup, or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Human page-image transcription of 27 exact antecedent-oration bodies from the registered Cummiskey 1861 facsimile. The early temporal rows were re-read at their recorded page loci; the feast and sanctoral rows preserve the exact page readings recovered in the pc-antecedent-english scratch lane. Only each complete English oration body was copied: headings, facing Latin, unrelated rubrics, page furniture, and Google matter were omitted; words split only by a printed line break were joined. Printed spelling, capitalization, punctuation, and abbreviated conclusions were retained, apart from the explicitly recorded repair of visibly damaged type in the source entry's verified_note. No light, truncated, overbroad, or substantively divergent candidate is present."
+retrieved = "2026-08-27"
+sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
+byte_size = 7724
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/postconciliar-antecedent-orations-en/postconciliar-antecedent-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and 27 historical-English rows. Columns are entry_key, mass, form_id, cycle, occurrence, proper, and english. Every row records form_id main, cycle all, and occurrence 1 so its complete publication identity is checked against the overlay target. Each row is controlled by one exact one-line publication passage and a separate page-image verification passage. The entry_key records the recovered overlay index only as a stable audit locator; the calendar mass and proper remain the semantic identity."

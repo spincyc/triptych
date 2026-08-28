@@ -418,7 +418,6 @@ state = "complete"
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -510,8 +509,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
-    "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/HANDOFF.md",
-    "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/MANIFEST.sha256",
   ]
 
   [[deliverables.requirements]]
@@ -521,11 +518,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-public-cutover-final-acceptance.md",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/HANDOFF.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/DEPLOYMENT.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/LIVE-VERIFICATION.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/CACHE-WINDOW.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/MANIFEST.sha256",
   ]
 
 [[deliverables]]
@@ -541,7 +533,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -582,7 +573,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -591,7 +581,6 @@ state = "complete"
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/REVIEW_REQUEST.md",
   ]
 
   [[deliverables.requirements]]
@@ -599,9 +588,6 @@ state = "complete"
   criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP were tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
   status = "pass"
   evidence = [
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/MANIFEST.sha256",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/REVIEW-ROUND-1-ACCEPTANCE.md",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/test_liturgical_rights_surfaces.py",
   ]
@@ -651,12 +637,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/BEFORE-AFTER.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/MEASUREMENTS.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/baseline-corrected-measurements.json",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/browser-results.json",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/round1-shell-regression-matrix.png",
     "tools/tests/test_liturgical_rights_surfaces.py",
   ]
 
@@ -667,8 +647,6 @@ state = "complete"
   evidence = [
     "tools/tests/test_liturgy_reader_visual_reset.py",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/checks.txt",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/PRODUCTION-ISOLATION.md",
   ]
 
   [[deliverables.requirements]]
@@ -678,7 +656,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
   ]
 
 [[deliverables]]
@@ -1546,7 +1523,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "structured-dialogue-and-missal-presentation"
   criterion = "Ordinary dialogue uses source-owned ordered turn semantics where held, exposes complete accessible speaker identity, renders honest role or versicle/response cues without prose matching or role substitution, preserves opaque text where boundaries are unknown, and passes the required Chromium, Firefox, mobile, reflow, forced-colors, reduced-motion, accessibility, interaction, full-Mass, and print review."
-  status = "pass"
+  status = "open"
   evidence = [
     "src/web/browser/liturgy/day.js",
     "src/web/browser/liturgy/reader-instrument.css",

@@ -19,6 +19,7 @@ failure in a new place.
 
 from __future__ import annotations
 
+import ast
 import re
 import sys
 import unittest
@@ -166,6 +167,12 @@ class ComparisonTests(unittest.TestCase):
         )
         self.assertTrue(replay.compare(one, ["pdf-review: something else entirely"]))
 
+    def test_the_harvest_dry_run_date_is_volatile_but_iso_shaped(self) -> None:
+        command = "tools/harvest ask --passage 'Psalms 24' --runs 1 --top 5 --dry-run"
+        one = capture(command, ("audited_on: 2026-08-27",))
+        self.assertEqual(replay.compare(one, ["audited_on: 2026-08-28"]), [])
+        self.assertTrue(replay.compare(one, ["audited_on: today"]))
+
 
 class MachineryTests(unittest.TestCase):
     """One real invocation, so the replay is not merely well-declared."""
@@ -232,7 +239,7 @@ class GateTests(unittest.TestCase):
     def test_deployment_source_gate_checks_every_generated_missal_layer(self) -> None:
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         recipe = re.search(
-            r"\ncheck-deployment-sources:\n((?:\t.*\n)+)",
+            r"\ncheck-deployment-sources:[^\n]*\n((?:\t.*\n)+)",
             text,
         )
         self.assertIsNotNone(recipe, "check-deployment-sources has no recipe")
@@ -252,6 +259,120 @@ class GateTests(unittest.TestCase):
                 self.assertIn(command, body)
                 positions.append(body.index(command))
         self.assertEqual(sorted(positions), positions)
+
+    def test_pages_installs_every_deployment_gate_python_dependency(self) -> None:
+        """Trace the workflow's Python tool closure back to its exact locks.
+
+        setup-python supplies an interpreter, not third-party modules. Merely
+        asserting that a particular requirements filename appears would repeat
+        the 2026-08-27 defect under a new name: the Pages gate grew PyYAML-backed
+        commands while its install step still named only the renderer lock.
+        Derive the invoked tools from the workflow and Make recipes, walk their
+        local imports, and require every external import to be owned by a lock
+        that the workflow actually installs.
+        """
+        workflow = (ROOT / ".github/workflows/pages.yml").read_text(
+            encoding="utf-8"
+        )
+        makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+        installed_locks = set(
+            re.findall(r"-r\s+(requirements-[a-z0-9-]+\.txt)", workflow)
+        )
+        self.assertTrue(installed_locks, "Pages installs no requirement lock")
+
+        distribution_imports = {
+            "markdown": {"markdown"},
+            "pyyaml": {"yaml"},
+        }
+        installed_imports: set[str] = set()
+        for relative in sorted(installed_locks):
+            path = ROOT / relative
+            self.assertTrue(path.is_file(), f"Pages names missing lock {relative}")
+            for line in path.read_text(encoding="utf-8").splitlines():
+                line = line.partition("#")[0].strip()
+                if not line:
+                    continue
+                pinned = re.fullmatch(r"([A-Za-z0-9_.-]+)==[^\s]+", line)
+                self.assertIsNotNone(
+                    pinned,
+                    f"{relative} has an unpinned entry: {line}",
+                )
+                distribution = re.sub(r"[-_.]+", "-", pinned.group(1)).lower()
+                self.assertIn(
+                    distribution,
+                    distribution_imports,
+                    f"declare the import name supplied by {pinned.group(1)}",
+                )
+                installed_imports.update(distribution_imports[distribution])
+
+        make_targets = set(
+            re.findall(r"\brun:\s+make\s+([a-z][a-z0-9-]*)", workflow)
+        )
+        self.assertEqual(
+            {"check-deployment-sources", "public-site"} - make_targets,
+            set(),
+        )
+        tool_variables = dict(
+            re.findall(
+                r"^([A-Z_]+_TOOL)\s*:=\s*tools/tpt\s+([a-z][a-z0-9-]*)",
+                makefile,
+                flags=re.MULTILINE,
+            )
+        )
+        tool_ids = set(
+            re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", workflow)
+        )
+        for target in make_targets:
+            recipe = re.search(
+                rf"^{re.escape(target)}:[^\n]*\n((?:\t.*\n)+)",
+                makefile,
+                flags=re.MULTILINE,
+            )
+            self.assertIsNotNone(recipe, f"workflow invokes missing target {target}")
+            body = recipe.group(1)
+            tool_ids.update(re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", body))
+            for variable in re.findall(r"\$\(([A-Z_]+_TOOL)\)", body):
+                self.assertIn(variable, tool_variables)
+                tool_ids.add(tool_variables[variable])
+
+        pending = [ROOT / "tools/tpt"] + [
+            ROOT / "tools" / tool_id for tool_id in sorted(tool_ids)
+        ]
+        seen: set[Path] = set()
+        external_imports: set[str] = set()
+        while pending:
+            path = pending.pop()
+            if path in seen:
+                continue
+            seen.add(path)
+            self.assertTrue(path.is_file(), f"deployment tool is missing: {path}")
+            tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+            imported = set()
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    imported.update(
+                        alias.name.partition(".")[0] for alias in node.names
+                    )
+                elif (
+                    isinstance(node, ast.ImportFrom)
+                    and node.level == 0
+                    and node.module
+                ):
+                    imported.add(node.module.partition(".")[0])
+            for module in imported:
+                if module == "__future__" or module in sys.stdlib_module_names:
+                    continue
+                local = ROOT / "scripts" / f"{module}.py"
+                if local.is_file():
+                    pending.append(local)
+                else:
+                    external_imports.add(module)
+
+        self.assertEqual(
+            external_imports,
+            installed_imports,
+            "Pages deployment imports and explicitly installed locks disagree",
+        )
 
     def test_the_replay_target_exists_and_invokes_the_script(self) -> None:
         text = (ROOT / "Makefile").read_text(encoding="utf-8")

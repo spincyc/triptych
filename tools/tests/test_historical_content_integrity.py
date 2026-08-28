@@ -31,6 +31,43 @@ PRE_1955_EXCEPTIONAL_ORDINARY_FRAMES = {
     "palm-sunday": "unavailable",
     "easter-vigil": "unavailable",
 }
+PRE_1955_GENERATED_NONFULL_ORDINARY_FRAMES = {
+    "advent-ember-wednesday": "unavailable",
+    "advent-ember-saturday": "unavailable",
+    "lent-1-ember-wednesday": "unavailable",
+    "lent-1-ember-saturday": "unavailable",
+    "lent-4-wednesday": "unavailable",
+    "holy-wednesday": "unavailable",
+    "mass-of-the-lords-supper": "unavailable",
+    "pentecost-ember-wednesday": "unavailable",
+    "pentecost-ember-saturday": "unavailable",
+    "september-ember-wednesday": "unavailable",
+    "september-ember-saturday": "unavailable",
+    **PRE_1955_EXCEPTIONAL_ORDINARY_FRAMES,
+}
+POSTCONCILIAR_EXCEPTIONAL_ORDINARY_FRAMES = {
+    "palm-sunday": "unavailable",
+    "mass-of-the-lords-supper": "unavailable",
+    "good-friday": "none",
+    "easter-vigil": "unavailable",
+    "easter-sunday": "unavailable",
+    "corpus-christi": "unavailable",
+}
+ROMAN_1962_EXCEPTIONAL_ORDINARY_FRAMES = {
+    "advent-ember-wednesday": "unavailable",
+    "advent-ember-saturday": "unavailable",
+    "lent-1-ember-wednesday": "unavailable",
+    "lent-1-ember-saturday": "unavailable",
+    "lent-4-wednesday": "unavailable",
+    "holy-wednesday": "unavailable",
+    "mass-of-the-lords-supper": "unavailable",
+    "good-friday": "none",
+    "easter-vigil": "unavailable",
+    "pentecost-ember-wednesday": "unavailable",
+    "pentecost-ember-saturday": "unavailable",
+    "september-ember-wednesday": "unavailable",
+    "september-ember-saturday": "unavailable",
+}
 PLACEHOLDER_PROSE_PREFIX = "This entry is a placeholder"
 PRE_1955_TYPED_GAPS = {
     "palm-sunday",
@@ -157,6 +194,11 @@ class HistoricalProperIntegrityTest(unittest.TestCase):
         )
         self.assertEqual(generated["recension_coverage"], raw["recension_coverage"])
         self.assertEqual(generated["advisory"], raw["advisory"])
+        self.assertEqual(generated["stands_before"], raw["stands_before"])
+        self.assertEqual(
+            generated["stands_before"],
+            ["de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"],
+        )
         self.assertTrue(generated["advisory"].strip())
         generated_masses = {str(mass["key"]): mass for mass in generated["masses"]}
         self.assertEqual(set(generated_masses), set(source_masses))
@@ -209,6 +251,7 @@ class HistoricalProperIntegrityTest(unittest.TestCase):
                 )
                 self.assertNotIn("recension_coverage", payload)
                 self.assertNotIn("advisory", payload)
+                self.assertNotIn("stands_before", payload)
 
     def test_generated_historical_propers_do_not_emit_placeholder_prose(self):
         """Repository status prose is never emitted as appointed liturgical text."""
@@ -289,12 +332,16 @@ class Pre1955OrdinaryFrameIntegrityTest(unittest.TestCase):
                 self.assertTrue(
                     all(isinstance(frame, dict) for frame in emitted.values())
                 )
-                if calendar == "roman-pre-1955":
-                    self.assertEqual(
-                        set(emitted), set(PRE_1955_EXCEPTIONAL_ORDINARY_FRAMES)
-                    )
-                else:
-                    self.assertEqual(emitted, {})
+                expected_applicability = {
+                    "postconciliar": POSTCONCILIAR_EXCEPTIONAL_ORDINARY_FRAMES,
+                    "roman-1962": ROMAN_1962_EXCEPTIONAL_ORDINARY_FRAMES,
+                    "roman-pre-1955": PRE_1955_GENERATED_NONFULL_ORDINARY_FRAMES,
+                }[calendar]
+                emitted_applicability = {
+                    key: frame["applicability"] for key, frame in emitted.items()
+                }
+                self.assertEqual(emitted_applicability, expected_applicability)
+                self.assertNotIn("full", emitted_applicability.values())
 
 
 class HistoricalOrdinaryIntegrityTest(unittest.TestCase):

@@ -2,6 +2,7 @@
 """Focused contract tests for the composed complete-Missal report."""
 from __future__ import annotations
 
+import copy
 import contextlib
 import importlib.machinery
 import importlib.util
@@ -37,7 +38,13 @@ def fixture_reports() -> tuple[dict, dict, dict]:
     ):
         calendars[calendar] = {
             "masses": raw_masses,
-            "ranks": [{"rank": "demo", "celebrations": celebrations}],
+            "ranks": [
+                {
+                    "rank": "demo",
+                    "entries": raw_masses,
+                    "celebrations": celebrations,
+                }
+            ],
         }
         finding.append(
             {
@@ -68,19 +75,83 @@ def fixture_reports() -> tuple[dict, dict, dict]:
                 "calendar": calendar,
                 "masses": effective_masses,
                 "masses_never_placed": [
-                    {"declared": index == 0, "key": f"unplaced-{index}"}
+                    {
+                        "declared": index == 0,
+                        "key": f"unplaced-{index}",
+                        "name": f"Unplaced {index}",
+                        "section": "common",
+                        "why": "no rule fixes a date",
+                    }
                 ],
+                "span": {"first": 2020, "last": 2120},
             }
         )
         ordinary.append(
             {
-                "absent": [{"count": 1, "key": "witness-gap"}],
+                "absent": [
+                    {
+                        "count": 3,
+                        "key": "witness-gap",
+                        "kind": "witness-gap",
+                        "state": "unavailable",
+                    }
+                ],
                 "calendar": calendar,
                 "elements": 3,
-                "witnesses": [
-                    {"held": 2, "lang": "en"},
-                    {"held": 1, "lang": "la"},
+                "exclusions": [],
+                "language_absences": [
+                    {
+                        "count": 1,
+                        "key": "witness-gap",
+                        "kind": "witness-gap",
+                        "lang": "en",
+                        "state": "unavailable",
+                    },
+                    {
+                        "count": 2,
+                        "key": "witness-gap",
+                        "kind": "witness-gap",
+                        "lang": "la",
+                        "state": "unavailable",
+                    },
                 ],
+                "language_coverage": [
+                    {
+                        "absent": 1,
+                        "elements": 3,
+                        "held": 2,
+                        "lang": "en",
+                        "missing": 1,
+                    },
+                    {
+                        "absent": 2,
+                        "elements": 3,
+                        "held": 1,
+                        "lang": "la",
+                        "missing": 2,
+                    },
+                ],
+                "relation_coverage": [
+                    {
+                        "collation": "not-applicable",
+                        "count": 1,
+                        "lang": "en",
+                        "relation": "own",
+                    },
+                    {
+                        "collation": "collated",
+                        "count": 1,
+                        "lang": "en",
+                        "relation": "antecedent",
+                    },
+                    {
+                        "collation": "uncollated",
+                        "count": 1,
+                        "lang": "la",
+                        "relation": "antecedent",
+                    },
+                ],
+                "witnesses": [],
             }
         )
     propers = {
@@ -150,7 +221,36 @@ class CompleteMissalReportTests(unittest.TestCase):
         report = REPORT.build_report(*fixture_reports())
         rows = {row["calendar"]: row for row in report["families"]}
         postconciliar = rows["postconciliar"]["textual"]
-        self.assertEqual(postconciliar["filled_text_slots"]["lower_bound"], 5)
+        self.assertEqual(postconciliar["filled_text_slots"]["lower_bound"], 4)
+        self.assertEqual(
+            postconciliar["filled_text_slots"][
+                "ordinary_target_edition_held_by_language"
+            ],
+            {"en": 1, "la": 0},
+        )
+        self.assertEqual(
+            postconciliar["filled_text_slots"]["ordinary_relation_coverage"],
+            [
+                {
+                    "collation": "collated",
+                    "count": 1,
+                    "lang": "en",
+                    "relation": "antecedent",
+                },
+                {
+                    "collation": "not-applicable",
+                    "count": 1,
+                    "lang": "en",
+                    "relation": "own",
+                },
+                {
+                    "collation": "uncollated",
+                    "count": 1,
+                    "lang": "la",
+                    "relation": "antecedent",
+                },
+            ],
+        )
         self.assertIsNone(postconciliar["filled_text_slots"]["count"])
         self.assertEqual(postconciliar["inherited_reference_slots"]["count"], 2)
         self.assertEqual(postconciliar["malformed_slots"]["lower_bound"], 1)
@@ -181,6 +281,384 @@ class CompleteMissalReportTests(unittest.TestCase):
         reports[0]["english_coverage"][0]["slots"] = 99
         with self.assertRaisesRegex(REPORT.Refused, "does not partition"):
             REPORT.build_report(*reports)
+
+    def test_malformed_census_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "family row",
+                lambda reports: reports[0]["calendars"].__setitem__(
+                    "roman-1962", []
+                ),
+                "roman-1962 must be an object",
+            ),
+            (
+                "rank row",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ].append("not-an-object"),
+                "ranks\\[1\\] must be an object",
+            ),
+            (
+                "rank label",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ][0].__setitem__("rank", []),
+                "rank must be a non-empty string",
+            ),
+            (
+                "rank fields",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ][0].__setitem__("legacy", 1),
+                "fields are not exact",
+            ),
+            (
+                "rank entries",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ][0].__setitem__("entries", "two"),
+                "entries must be a non-negative integer",
+            ),
+            (
+                "duplicate rank",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ].append(
+                    dict(reports[0]["calendars"]["roman-1962"]["ranks"][0])
+                ),
+                "rank repeats",
+            ),
+            (
+                "rank partition",
+                lambda reports: reports[0]["calendars"]["roman-1962"][
+                    "ranks"
+                ][0].__setitem__("entries", 1),
+                "does not partition its masses",
+            ),
+            (
+                "resolution error row",
+                lambda reports: reports[0]["finding_aid_coverage"][2][
+                    "resolution_errors"
+                ].append("not-an-object"),
+                r"resolution_errors\[1\] must be an object",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports)
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_malformed_ordinary_language_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "legacy alias",
+                lambda row: row.__setitem__(
+                    "languages", row.pop("language_coverage")
+                ),
+                "fields are not exact",
+            ),
+            (
+                "witness array",
+                lambda row: row.__setitem__("witnesses", {}),
+                "witnesses must be an array",
+            ),
+            (
+                "row",
+                lambda row: row["language_coverage"].__setitem__(0, []),
+                r"language_coverage\[0\] must be an object",
+            ),
+            (
+                "fields",
+                lambda row: row["language_coverage"][0].__setitem__("legacy", 1),
+                "fields are not exact",
+            ),
+            (
+                "lang",
+                lambda row: row["language_coverage"][0].__setitem__("lang", None),
+                "lang must be a non-empty string",
+            ),
+            (
+                "duplicate",
+                lambda row: row["language_coverage"][1].__setitem__("lang", "en"),
+                "lang repeats",
+            ),
+            (
+                "universe",
+                lambda row: row["language_coverage"][0].__setitem__("elements", 4),
+                "does not match its target-recension universe",
+            ),
+            (
+                "partition",
+                lambda row: row["language_coverage"][0].__setitem__("held", 1),
+                "does not partition elements",
+            ),
+            (
+                "absent",
+                lambda row: row["language_coverage"][0].__setitem__("absent", 0),
+                "absent does not equal missing",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[2]["coverage"][1])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_malformed_ordinary_relation_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "row",
+                lambda row: row["relation_coverage"].__setitem__(0, []),
+                r"relation_coverage\[0\] must be an object",
+            ),
+            (
+                "relation",
+                lambda row: row["relation_coverage"][0].__setitem__(
+                    "relation", "borrowed"
+                ),
+                "relation must be own or antecedent",
+            ),
+            (
+                "own collation",
+                lambda row: row["relation_coverage"][0].__setitem__(
+                    "collation", "collated"
+                ),
+                "own text must use not-applicable collation",
+            ),
+            (
+                "antecedent collation",
+                lambda row: row["relation_coverage"][1].__setitem__(
+                    "collation", []
+                ),
+                "antecedent text must be collated or uncollated",
+            ),
+            (
+                "unknown language",
+                lambda row: row["relation_coverage"][0].__setitem__("lang", "fr"),
+                "lang must name a covered language",
+            ),
+            (
+                "duplicate",
+                lambda row: row["relation_coverage"].append(
+                    dict(row["relation_coverage"][0])
+                ),
+                "repeats relation bucket",
+            ),
+            (
+                "zero count",
+                lambda row: row["relation_coverage"][0].__setitem__("count", 0),
+                "count must be positive",
+            ),
+            (
+                "partition",
+                lambda row: row["relation_coverage"][0].__setitem__("count", 2),
+                "relation buckets do not partition held elements",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[2]["coverage"][1])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_malformed_ordinary_absence_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "typed state",
+                lambda row: row["absent"][0].__setitem__(
+                    "state", "rights-restricted"
+                ),
+                "state is inconsistent with kind",
+            ),
+            (
+                "language row",
+                lambda row: row["language_absences"].__setitem__(0, []),
+                r"language_absences\[0\] must be an object",
+            ),
+            (
+                "language type",
+                lambda row: row["language_absences"][0].__setitem__(
+                    "kind", "no-exemplar"
+                ),
+                "does not retain its absence type",
+            ),
+            (
+                "duplicate language row",
+                lambda row: row["language_absences"].append(
+                    dict(row["language_absences"][0])
+                ),
+                "repeats language absence",
+            ),
+            (
+                "absence partition",
+                lambda row: row["absent"][0].__setitem__("count", 4),
+                "language counts do not partition its count",
+            ),
+            (
+                "zero language count",
+                lambda row: row["language_absences"][0].__setitem__("count", 0),
+                "count must be positive",
+            ),
+            (
+                "language partition",
+                lambda row: (
+                    row["language_absences"][0].__setitem__("count", 2),
+                    row["language_absences"][1].__setitem__("count", 1),
+                ),
+                "absence counts do not partition missing elements",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[2]["coverage"][1])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_typed_ordinary_unresolved_absence_is_preserved(self) -> None:
+        reports = copy.deepcopy(fixture_reports())
+        ordinary = reports[2]["coverage"][2]
+        ordinary["absent"][0]["kind"] = "rights-unresolved"
+        ordinary["absent"][0]["state"] = "unresolved"
+        for row in ordinary["language_absences"]:
+            row["kind"] = "rights-unresolved"
+            row["state"] = "unresolved"
+        family = REPORT.build_report(*reports)["families"][2]
+        self.assertEqual(
+            family["provenance"]["rights_pending_texts"]["ordinary_absences"],
+            [
+                {
+                    "count": 3,
+                    "key": "witness-gap",
+                    "kind": "rights-unresolved",
+                    "state": "unresolved",
+                }
+            ],
+        )
+
+    def test_malformed_ordinary_exclusion_rows_are_refused(self) -> None:
+        valid = {
+            "basis": "the row is outside the target recension",
+            "evidence": [
+                {
+                    "artifact_id": "artifact.example",
+                    "element": "older-only-row",
+                    "lang": "en",
+                    "relation": "own",
+                    "source_id": "edition.example",
+                }
+            ],
+            "key": "section/older-only-row",
+            "sources": ["edition.example"],
+            "state": "not-in-target-recension",
+        }
+        reports = copy.deepcopy(fixture_reports())
+        reports[2]["coverage"][0]["exclusions"].append(copy.deepcopy(valid))
+        report = REPORT.build_report(*reports)
+        self.assertEqual(
+            report["families"][0]["textual"]["expected_text_slots"][
+                "ordinary_exclusions"
+            ],
+            [valid],
+        )
+
+        cases = (
+            (
+                "row",
+                lambda rows: rows.__setitem__(0, []),
+                r"exclusions\[0\] must be an object",
+            ),
+            (
+                "state",
+                lambda rows: rows[0].__setitem__("state", "unavailable"),
+                "state must be not-in-target-recension",
+            ),
+            (
+                "sources",
+                lambda rows: rows[0].__setitem__("sources", []),
+                "sources must be a non-empty sorted unique string array",
+            ),
+            (
+                "evidence row",
+                lambda rows: rows[0]["evidence"].__setitem__(0, []),
+                r"evidence\[0\] must be an object",
+            ),
+            (
+                "own extras",
+                lambda rows: rows[0]["evidence"][0].__setitem__(
+                    "collation", "not-applicable"
+                ),
+                "own relation has inapplicable fields",
+            ),
+            (
+                "source identity mismatch",
+                lambda rows: rows[0].__setitem__("sources", ["edition.other"]),
+                "do not exactly name the evidence source_id values",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                rows = reports[2]["coverage"][0]["exclusions"]
+                rows.append(copy.deepcopy(valid))
+                mutate(rows)
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_malformed_placement_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "row",
+                lambda rows: rows.append("not-an-object"),
+                "masses_never_placed\\[1\\] must be an object",
+            ),
+            (
+                "key",
+                lambda rows: rows[0].__setitem__("key", []),
+                "key must be a non-empty string",
+            ),
+            (
+                "fields",
+                lambda rows: rows[0].pop("why"),
+                "fields are not exact",
+            ),
+            (
+                "name",
+                lambda rows: rows[0].__setitem__("name", []),
+                "name must be a non-empty string",
+            ),
+            (
+                "declared",
+                lambda rows: rows[0].__setitem__("declared", "false"),
+                "declared must be a boolean",
+            ),
+            (
+                "duplicate",
+                lambda rows: rows.append(dict(rows[0])),
+                "key repeats",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[1]["coverage"][1]["masses_never_placed"])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+        for span, message in (
+            ([], "span must be an object"),
+            ({"first": 2020, "last": 2120, "extra": 1}, "fields are not exact"),
+            ({"first": 2021, "last": 2120}, "expected 2020-2120"),
+        ):
+            with self.subTest(span=span):
+                reports = copy.deepcopy(fixture_reports())
+                reports[1]["coverage"][1]["span"] = span
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
 
     def test_untyped_unknown_is_refused(self) -> None:
         report = REPORT.build_report(*fixture_reports())

@@ -242,7 +242,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-family-screening \
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
-	check-pdf-review check-curriculum-sources \
+	check-pdf-review check-curriculum-rights check-curriculum-sources \
 	check-curriculum-structure check-source-reader source-projection \
 	check-document-catalogue document-catalogue \
 	public-site public-preview \
@@ -368,10 +368,18 @@ install-dependencies-arch:
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_pdf_review.py' -v
 
-check-deployment-sources:
+check-curriculum-rights:
+	@$(PYTHON) -m unittest tools.tests.test_curriculum_liturgical_rights
+
+# Pages runs this target under setup-python before it builds anything. Its
+# workflow must install both requirements-public-alpha.txt and
+# requirements-tools.txt; the latter owns the PyYAML used by these checkers.
+check-deployment-sources: check-curriculum-rights
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
 	@$(PYTHON) $(SOURCE_READER_TOOL) check
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
+	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
+	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
 	@$(PYTHON) tools/tpt calendar-days check
 	@$(PYTHON) tools/tpt check-calendar-masses
 	@$(PYTHON) tools/tpt mass-propers structure --check
@@ -584,22 +592,22 @@ check-web-editions-current:
 		[ "$$status" -eq 0 ] || exit 1; \
 		echo 'Tracked web editions match current sources.'
 
-check-public-alpha:
+check-public-alpha: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
 
-prepare-public-alpha:
+prepare-public-alpha: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
-public-preview:
+public-preview: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
 
-public-site:
+public-site: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
-verify-public-preview:
+verify-public-preview: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview
 
-verify-public-site:
+verify-public-site: check-curriculum-rights
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
 # Release bookkeeping; approval text is the operator's act, never invented.

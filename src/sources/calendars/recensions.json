@@ -19,7 +19,12 @@
       "evidence_refs": [
         "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1920-typica"
       ],
-      "coverage_ref": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+      "coverage_ref": {
+        "calendar": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+        "propers": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+        "rubrics": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+        "ordinary": "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage"
+      },
       "capabilities": {
         "calendar": {
           "data_availability": "partial",
@@ -28,7 +33,7 @@
         },
         "propers": {
           "data_availability": "unavailable",
-          "publication_availability": "partial",
+          "publication_availability": "unavailable",
           "collation": "unestablished"
         },
         "rubrics": {
@@ -198,7 +203,12 @@
       "evidence_refs": [
         "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1962-typica"
       ],
-      "coverage_ref": "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml",
+      "coverage_ref": {
+        "calendar": "src/sources/calendars/roman-1962/propers.yaml",
+        "propers": "src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml",
+        "rubrics": "src/sources/calendars/roman-1962/rubrics.yaml",
+        "ordinary": "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+      },
       "capabilities": {
         "calendar": {
           "data_availability": "available",
@@ -206,7 +216,7 @@
           "collation": "mixed"
         },
         "propers": {
-          "data_availability": "available",
+          "data_availability": "partial",
           "publication_availability": "partial",
           "collation": "finding-aid"
         },
@@ -431,7 +441,12 @@
       "evidence_refs": [
         "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio"
       ],
-      "coverage_ref": "src/sources/calendars/postconciliar/propers.yaml",
+      "coverage_ref": {
+        "calendar": "src/sources/calendars/postconciliar/propers.yaml",
+        "propers": "src/sources/calendars/postconciliar/propers.yaml",
+        "rubrics": "src/sources/calendars/postconciliar/rubrics.yaml",
+        "ordinary": "src/sources/inventories/postconciliar-ordo-missae-v1.toml"
+      },
       "capabilities": {
         "calendar": {"data_availability": "partial", "publication_availability": "available", "collation": "mixed"},
         "propers": {"data_availability": "partial", "publication_availability": "partial", "collation": "mixed"},
@@ -492,7 +507,9 @@
       "evidence_refs": [
         "src/sources/inventories/missal-acquisition-audit-v1.toml#id=roman-missal-english-2011"
       ],
-      "coverage_ref": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml",
+      "coverage_ref": {
+        "propers": "src/sources/inventories/postconciliar-english-2011-recension-coverage-v1.toml"
+      },
       "capabilities": {
         "propers": {
           "data_availability": "partial",
@@ -500,9 +517,9 @@
           "collation": "mixed"
         },
         "ordinary": {
-          "data_availability": "partial",
+          "data_availability": "unavailable",
           "publication_availability": "unavailable",
-          "collation": "mixed"
+          "collation": "unestablished"
         }
       },
       "activation_requirements": [

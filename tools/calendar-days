@@ -116,7 +116,7 @@ EXAMPLES = {
             (
                 "roman-1962: 2026-2026",
                 "  dates 365: 316 resolve to a mass, 49 to nothing, 124 carry unranked candidates",
-                "  ferial formulary on 238 dates; 0 dates reach no mass at all",
+                "  ferial formulary on 239 dates; 0 dates reach no mass at all",
                 "  masses 491: 456 reachable, 8 never placed",
                 "    never placed: epiphany-4 (seasonal) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
                 "    never placed: missa-de-s-maria-in-sabbato-1 (common) - no rule in guidance/liturgy/calendar-computation.md fixes a date for this mass",
@@ -281,6 +281,11 @@ FERIAL_SEASONS_1962 = (
 
 FERIAL_RULE = "RGMR 299: the Mass of the preceding Sunday, "
 
+CHRISTMASTIDE_FERIAL_RULE = (
+    "RGMR 299 provided otherwise: the 1962 Missal's rubric at printed p. 34 "
+    "gives the Mass of 1 January to the ferias falling from 2 to 5 January"
+)
+
 FERIAL_NOTE = (
     "`ferial_formulary` answers a different question from `days`, for the same "
     "dates. `days` says which masses a date carries as celebrations. This says "
@@ -302,6 +307,17 @@ FERIAL_NOTE = (
     "Sunday and a Mass is all of it. A calendar whose rubric lends less than a "
     "whole Mass may not use this block unscoped; see `scope` in the block "
     "below, which nothing emits yet."
+)
+
+FERIAL_NOTE_1962 = FERIAL_NOTE.replace(
+    "A date is absent where the season gives the feria a Mass of its own, or "
+    "where the immediately preceding Sunday carries no Mass of the Sunday in "
+    "this index, which fails closed rather than borrowing from a feast that "
+    "occupied the Sunday.",
+    "A date is absent where the season gives the feria a Mass of its own or no "
+    "rubric in this calendar appoints a formulary the index carries. A rubric "
+    "that explicitly provides otherwise may name a different formulary than "
+    "the preceding Sunday's.",
 )
 
 # ---------------------------------------------------------------------------
@@ -696,8 +712,12 @@ class Year:
         return held
 
 
-def build_1962(ending: int, known: set[str]) -> Year:
-    year = Year("roman-1962", ending, known)
+def build_1962(
+    ending: int,
+    known: set[str],
+    target_calendar: str = "roman-1962",
+) -> Year:
+    year = Year(target_calendar, ending, known)
     a = year.anchors
     easter = a.easter
 
@@ -978,13 +998,26 @@ def build_1962(ending: int, known: set[str]) -> Year:
         if holy_name.weekday() == 6
         else "general rubric 17 a: no Sunday falls 2-5 January this year, so 2 January",
     )
-    # Where that Sunday is reached, it is the last Sunday before the Epiphany,
-    # and a feria after it has no preceding Sunday whose Mass this index
-    # carries: the Holy Name has taken the day, and the Mass of the dominica it
-    # displaced is not printed. `resolve_ferial` therefore emits nothing for
-    # those ferias, and the refusal is declared here rather than left as a
-    # silent hole in `ferial_formulary`.
-    if holy_name.weekday() == 6 and holy_name < date(ending, 1, 5):
+    # The Missal provides otherwise for every feria from 2 to 5 January. Its
+    # date-keyed rubric at printed p. 34 appoints the Mass of 1 January, so the
+    # result does not depend on which of those dates the Holy Name occupies or
+    # on whether a Sunday fell within the Christmas octave. This source is the
+    # 1962 typical edition alone: the structural pre-1955 projection inherits
+    # this builder for otherwise-unmodelled arithmetic, but it may not inherit
+    # an edition-specific borrowing its own target witness has not established.
+    if target_calendar == "roman-1962":
+        for day_of_month in range(2, 6):
+            when = date(ending, 1, day_of_month)
+            if when.weekday() != 6:
+                year.borrows(
+                    when,
+                    "octava-nativitatis-domini",
+                    CHRISTMASTIDE_FERIAL_RULE,
+                )
+    elif holy_name.weekday() == 6 and holy_name < date(ending, 1, 5):
+        # Preserve the projection's existing fail-closed result. The pre-1955
+        # target calendar remains uncollated here, and the 1962 page reading
+        # above is not evidence for it.
         refusal_from = holy_name + timedelta(days=1)
         refusal_to = date(ending, 1, 5)
         year.refuse(
@@ -1170,6 +1203,8 @@ def build_postconciliar(ending: int, known: set[str]) -> Year:
             year.refuse(
                 "the weekday position of 30 December",
                 THIRTIETH_OF_DECEMBER_FAILS_CLOSED,
+                from_date=when,
+                to_date=when,
             )
             continue
         year.put(
@@ -1535,6 +1570,26 @@ CYCLED = {"roman-1962": False, "postconciliar": True}
 # --------------------------------------------------------------- calendar I/O
 
 
+def fixed_date_parts(calendar: str, key: str, stamp: object) -> tuple[int, int]:
+    """Validate one annually recurring month-day, with leap day permitted."""
+    try:
+        if (
+            not isinstance(stamp, str)
+            or len(stamp) != 5
+            or stamp[2] != "-"
+            or not (stamp[:2] + stamp[3:]).isdigit()
+        ):
+            raise ValueError
+        month, day = (int(part) for part in stamp.split("-"))
+        # A leap year admits every civil month-day that can recur.  Validating
+        # against an arbitrary common year would reject 29 February, while the
+        # old independent range checks admitted dates such as 30 February.
+        date(2000, month, day)
+    except (TypeError, ValueError):
+        raise ValueError(f"{calendar}: {key} carries an impossible date {stamp!r}") from None
+    return month, day
+
+
 def temporal_base(root: Path, name: str) -> str:
     """The calendar whose temporal cycle computes this one's placements.
 
@@ -1571,12 +1626,15 @@ def load_calendar(root: Path, name: str) -> dict:
         for mass in (body or {}).get("masses") or []:
             if not isinstance(mass, dict) or not mass.get("key"):
                 continue
-            masses[str(mass["key"])] = {
-                "key": str(mass["key"]),
+            key = str(mass["key"])
+            stamp = mass.get("date")
+            masses[key] = {
+                "key": key,
                 "name": mass.get("name"),
                 "section": section,
                 "rank": mass.get("rank"),
-                "date": mass.get("date"),
+                "date": stamp,
+                "date_parts": fixed_date_parts(name, key, stamp) if "date" in mass else None,
                 # Every mass this one points at, its own `takes_from` and each
                 # of its propers'. A Common is never pinned to a date and is
                 # reached only along these edges; without them the coverage
@@ -1640,15 +1698,16 @@ def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
     """Every mass the calendar pins to a civil date, placed in `civil_year`."""
     out: dict[date, list[dict]] = {}
     for mass in index["masses"].values():
-        stamp = mass.get("date")
-        if not stamp:
+        parts = mass.get("date_parts")
+        if not parts:
             continue
+        month, day = parts
         try:
-            month, day = (int(part) for part in str(stamp).split("-"))
             when = date(civil_year, month, day)
         except ValueError:
             # 29 February in a common year: the day does not exist, so nothing
-            # is placed and nothing is invented.
+            # is placed and nothing is invented. Every other month-day was
+            # rejected when the calendar source was loaded.
             continue
         # One rule for the whole fixed-date layer, because the rule is the date
         # the entry is filed under and repeating it per mass would put the
@@ -1666,6 +1725,11 @@ def fixed_dates(index: dict, civil_year: int) -> dict[date, list[dict]]:
 
 def build_years(index: dict, endings: list[int]) -> dict[int, Year]:
     builder = BUILDERS[index["builder"]]
+    if builder is build_1962:
+        return {
+            ending: builder(ending, index["keys"], index["directory"])
+            for ending in endings
+        }
     return {ending: builder(ending, index["keys"]) for ending in endings}
 
 
@@ -1785,7 +1849,9 @@ def year_document(index: dict, civil_year: int, built: dict[int, Year]) -> dict:
     # those 72 dates safely.
     if ferial:
         document["ferial_formulary"] = ferial
-        document["ferial_formulary_note"] = FERIAL_NOTE
+        document["ferial_formulary_note"] = (
+            FERIAL_NOTE_1962 if name == "roman-1962" else FERIAL_NOTE
+        )
     return document
 
 
@@ -2462,12 +2528,6 @@ def run_check(arguments: argparse.Namespace) -> dict:
                 for key in sorted(suppressed)
             ],
         }
-        for key, mass in index["masses"].items():
-            if not mass.get("date"):
-                continue
-            month, day = (int(part) for part in str(mass["date"]).split("-"))
-            if not 1 <= month <= 12 or not 1 <= day <= 31:
-                problems.append(f"{name}: {key} carries an impossible date {mass['date']!r}")
     if problems:
         head = "; ".join(problems[:4])
         raise ValueError(head + (f" (and {len(problems) - 4} more)" if len(problems) > 4 else ""))
@@ -2609,8 +2669,11 @@ def run_structure(arguments: argparse.Namespace) -> dict:
 
 def run_coverage(arguments: argparse.Namespace) -> dict:
     root = Path(arguments.root)
+    first, last = arguments.first, arguments.last
+    if last < first:
+        raise ValueError(f"--last {last} precedes --first {first}")
     report = [
-        coverage_of(load_calendar(root, name), arguments.first, arguments.last)
+        coverage_of(load_calendar(root, name), first, last)
         for name in calendars(root, arguments.calendar)
     ]
     return {"coverage": report, "status": "ok"}

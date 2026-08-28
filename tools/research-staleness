@@ -62,10 +62,10 @@ EXAMPLES = {
         Example(
             "tools/research-staleness explain gpt articles/faith/last-supper-calvary-and-the-mass",
             (
+                "changed input src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-bindings.toml",
                 "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.19.toml",
                 "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.6.toml",
-                "new input src/sources/works/augustine/de-civitate-dei/editions/dods-1871/passages/11.7.toml",
-                "... 179 more lines",
+                "... 217 more lines",
             ),
         ),
     ),

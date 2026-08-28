@@ -30,10 +30,13 @@ actual `propers.yaml` indexes.
 Capability `data_availability` describes target-attested repository data, not
 mechanical fallback from a neighboring recension. `publication_availability`
 is a separate rights/surface claim; held or partially collated data can remain
-unavailable for publication. `collation` distinguishes direct collation,
+unavailable for publication, but absent target data cannot claim a publishable
+surface. `collation` distinguishes direct collation,
 mixed evidence, a finding aid, and an unestablished claim. Detailed and
-derivable coverage stays in each row's `coverage_ref`; counts are not copied
-into the catalog. An `interval-gap` has no `calendar`, and every unavailable
+derivable coverage stays in each row's capability-keyed `coverage_ref`; every
+available or partial capability names a record whose schema covers that domain,
+and its availability claim cannot exceed the record. Counts are not copied into
+the catalog. An `interval-gap` has no `calendar`, and every unavailable
 capability must be named by an activation requirement.
 
 ## What an index is
@@ -118,6 +121,32 @@ Until a calendar's translations can move into its propers they are recorded in
 `src/sources/inventories/<calendar>-proper-translations-v1.toml`, and
 `check-calendar-masses` holds that sidecar to every rule above.
 
+An unavailable translation may still have an exact official witness. Record it
+without its wording: `witness_artifact_id` and `witness_passage_id` identify the
+registered artifact and verified passage, while `verified_on_page`,
+`verified_artifact_page`, `verified_printed_page`, `verified_heading`, and
+`verified_url` retain the locator. The checker requires the passage to be
+inspected, verified, dated, controlled by the named artifact, to cover the
+recorded artifact page, and to pin the artifact hash. These audit fields never
+enter the public propers structure; its unavailable projection is limited to
+the canonical target, language, and state.
+
+Use `no-exemplar` only when no exact exemplar is known. If an exact body is
+known but cannot be published on the named surfaces, use `rights-withheld` and
+name the registered source that establishes the restriction. Do not assign a
+single `rights` basis to a mixed-rightsholder body. The Palm Sunday Simple
+Entrance Antiphon is the live case: the official artifact interleaves ICEL text
+with a Revised Grail Psalm span, so ICEL's permission cannot describe the whole
+proper.
+
+A rejected detector is not an exemplar. The six typed Gospel Acclamation gaps
+at Nativity Vigil and Day, Pentecost Vigil and Day, Easter 3 Year C, and
+Ordinary Time 15 Year A record the liturgies.net candidates only by detector ID
+and quarantine hash. The ICEL Antiphonary contains no Gospel Acclamations, and
+the likely Lectionary/CCD ownership plus a USCCB comparison supplies neither an
+exact redistributable witness nor permission. They remain `no-exemplar`, with
+no ICEL rights or witness metadata.
+
 ## Latin provenance and publication
 
 The Latin `text` in this index is a transcription lead. Its presence does not
@@ -130,19 +159,30 @@ src/sources/inventories/<calendar>-proper-latin-provenance-v1.toml
 
 Each direct text node is keyed by `mass`, `form`, `proper`, reading `course`
 and `cycle`, plus a one-based `occurrence`. The occurrence is load-bearing:
-repeated names are legitimate, including the six separately worded Procession
-Antiphons on Palm Sunday. Each row carries the SHA-256 of the exact Unicode
+repeated names are legitimate. Palm Sunday, for example, has seven target
+occurrences named Procession Antiphon: six direct source-owned bodies and one
+Scripture-owned occurrence. The Latin-provenance ledger therefore has six
+direct-body rows, while the translation overlay counts all seven targets; their
+occurrence ordinals must not be copied across those two ledgers. Each Latin row carries the SHA-256 of the exact Unicode
 string, so a changed text cannot keep an earlier decision by name alone.
-When a rights review removes a body from the current YAML, its row instead
-retains that former hash and whatever evidence was actually established, if
-any, with `body_status = "removed"`. Unresolved provenance stays unresolved;
-quarantine never upgrades a search lead into a transcription source. The
-matching proper carries no `text`; it carries `text_status` with state
-`unavailable`, scope `proper-body`, and a registered `rights-withheld` reason.
-That reason's `source_id` identifies rights/search context only. It does not
-assert that the removed bytes were read from, or are exact to, that source.
-That pairing is checked bidirectionally. The hash remains an audit identity,
-not a store from which a consumer may recover or reconstruct the wording.
+A source-appointed composed proper whose wording was never held also carries
+no `text`. It carries `text_status` with state `unavailable`, scope
+`proper-body`, and either a registered `witness-gap` reason or a
+`no-exemplar` reason with no `source_id`. This is a structural appointment, not
+a former text body: it owns no Latin provenance row or hash. Creating either
+would fabricate an identity for wording the repository never possessed.
+
+When a rights review removes a body from the current YAML, the state is
+different. Its row retains that former hash and whatever evidence was actually
+established, if any, with `body_status = "removed"`. Unresolved provenance
+stays unresolved; quarantine never upgrades a search lead into a transcription
+source. The matching proper carries no `text`; it carries the same unavailable
+`proper-body` status but with a registered `rights-withheld` reason. That
+reason's `source_id` identifies rights/search context only. It does not assert
+that the removed bytes were read from, or are exact to, that source. This
+rights-withheld pairing is checked bidirectionally. The hash remains an audit
+identity, not a store from which a consumer may recover or reconstruct the
+wording.
 
 `provenance_status` identifies the transcription witness, source date,
 locator, relationship, transformations, verification witness, evidence,
@@ -199,6 +239,40 @@ liturgical-year order.
       Excita, quaesumus, Domine, potentiam tuam, et veni...
 ```
 
+### Recension departure shape
+
+A recension index stores only its departures from `text_from`; it does not copy
+the inherited calendar. Its `stands_before` header is a nonempty, unique list
+of act ids, and every id must resolve through the Latin Missal acts inventory.
+The list states the explicit historical boundaries of the whole recension, not the source
+of its inherited text.
+
+Every departure has a required `departure` and `basis`. The primary claim and
+each mapping under `also` may carry an optional `act`, also resolved against the
+acts inventory:
+
+```yaml
+text_from: roman-1962
+stands_before:
+- de-rubricis-simpliciorem-1955
+- maxima-redemptionis-1955
+
+- key: example
+  departure: replaced
+  act: maxima-redemptionis-1955
+  basis: The source record establishes this difference at that station.
+  also:
+  - departure: unrecorded
+    act: editio-typica-1962
+    basis: The later station inventories the difference but no causal act was found.
+```
+
+`act` names the act-history station or attribution record. It is not always a
+causal claim: an `unrecorded` row may be inventoried at the first later witness
+while explicitly stating that no promulgating act was found. Leaving `act`
+unset is required when no honest station has been established; consumers must
+not infer one from the base calendar or from `stands_before`.
+
 ## Citations are machine-primary
 
 A passage is structured data, not a string to re-parse. `book` is the canonical
@@ -236,11 +310,11 @@ citation it cannot encode without guessing rather than writing a wrong range.
 - A celebration with several Mass formularies — the Nativity's four Masses, the
   Vigil and Day Masses of Epiphany, Ascension, and Pentecost — replaces
   `propers` with `forms`, each form carrying its own `id`, `name`, and
-  `propers`. The source-authored `id` is a nonempty lowercase kebab-case string
-  and is unique within the mass. It is stable identity for sidecars and
-  consumers; the printed `name` remains the display label. `main` is reserved
-  for the implicit sole formulary of a mass without `forms`, so it cannot be an
-  `id` when a mass has multiple forms.
+  `propers`, and optionally its own `ordinary_frame`. The source-authored `id`
+  is a nonempty lowercase kebab-case string and is unique within the mass. It is
+  stable identity for sidecars and consumers; the printed `name` remains the
+  display label. `main` is reserved for the implicit sole formulary of a mass
+  without `forms`, so it cannot be an `id` when a mass has multiple forms.
 - A proper whose text varies by Lectionary cycle carries a `cycles` mapping
   keyed `A`, `B`, `C`. Where the cycles differ in kind, `source` moves inside
   each cycle; otherwise it stays on the proper.
@@ -272,13 +346,47 @@ citation it cannot encode without guessing rather than writing a wrong range.
   Time; a `I`/`II` numeral outside it is a category error, not a fact.
 
   Known limitation, stated here so no later wave discovers it by landing on it:
-  the translation overlay is keyed `(mass, form, proper name)` and cannot see
+  the translation overlay is keyed `(mass, form_id, proper name, cycle,
+  occurrence)` and cannot see
   inside `weekday_cycles` any more than it can inside `cycles`. That is harmless
   while these propers are pure scripture, whose English is a bible's; the moment
   an English text is recorded for a cycle-varying slot, one row would answer
   both cycles and attach one year's words to the other's reading.
 - `notes` records a structural fact — a conditional element, an appointed
   alternative, a long and short form — in one short sentence.
+- `ordinary_disposition` records the exact source row's non-cumulative
+  relationship to the normal Ordinary frame. It has one of two closed shapes:
+
+  ```yaml
+  ordinary_disposition:
+    kind: alternative
+    group: gospel-form
+    option: shorter-form
+    basis: The source prints this as the shorter alternative to the principal Gospel.
+  ```
+
+  ```yaml
+  ordinary_disposition:
+    kind: unplaced
+    group: blessing-before-mass
+    region: before-frame
+    basis: The source prints this blessing before the Mass begins.
+  ```
+
+  `group` and, for an alternative, `option` are stable lowercase kebab-case
+  identifiers. `basis` is always a nonempty source-grounded statement.
+  `region` is exactly `before-frame` or `after-frame`; it does not license an
+  unknown row in the middle of the Mass. Every member of an alternative,
+  including its principal member, carries the field. Each effective formulary
+  must retain at least two distinct options for the group and every member must
+  carry the same basis. One option may intentionally cover several consecutive
+  rows as a bundle only when those rows belong to the same semantic Ordinary
+  seat. Each group and each multi-row option is one contiguous source-order
+  run. Source order selects nothing, and names do not cause rows to be inferred
+  into a group. The union of `before-frame` rows is an exact prefix of the
+  formulary and the union of `after-frame` rows is an exact suffix. Resolution
+  validates the groups again, so removing an option or leaving an orphan
+  annotation fails instead of silently changing the appointment.
 - `takes_from` says where a text is printed instead of printing it again. See
   the next section.
 
@@ -331,10 +439,12 @@ cycles and are refused.
   the inherited Collect and retains every other borrowed proper with its
   provenance. Such a mass carries neither `forms` nor a local Collect; other
   `text_status` scopes cannot accompany `takes_from`.
-- A proper carrying `takes_from` carries nothing else — no `source`, `text`,
-  `verses`, `cycles`, `weekday_cycles`, `incipit` or `translations`. All of
-  those come from the resolved proper, and a second copy here is the restatement
-  the key removes.
+- A proper carrying `takes_from` carries no wording of its own — no `source`,
+  `text`, `verses`, `cycles`, `weekday_cycles`, `incipit` or `translations`.
+  All of those come from the resolved proper, and a second copy here is the
+  restatement the key removes. It may carry `ordinary_disposition`, because
+  that is structure of this appointment rather than a copy of the target's
+  wording; the resolver preserves it on the resolved row.
 - References may chain. A cycle, a mass-level self-reference, a same-form proper
   self-reference, a missing mass and a missing proper are each refused by
   `check-calendar-masses`; the explicit different-sibling exception above is the
@@ -352,15 +462,15 @@ cycles and are refused.
 
 ## A Common direction is not resolved text
 
-`common_from` records a Missal heading whose Common formulary is not held as
-resolvable text. It is deliberately separate from `takes_from`: the latter
-borrows an existing formulary, while the former preserves only a witnessed
-structural appointment. Consumers must expose the direction and must not turn
-it into words.
+`common_from` records a source-witnessed Common direction for exactly the named
+Missal slots when the Common formulary is not held as resolvable text. It is
+deliberately separate from `takes_from`: the latter borrows an existing
+formulary, while the former preserves only a witnessed structural appointment.
+Consumers must expose the direction and must not turn it into words.
 
 ```yaml
 common_from:
-  scope: missal-propers-except-collect
+  scope: missal-antiphons
   source_id: artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf
   locus: artifact page 112, printed page 104
   options:
@@ -368,7 +478,7 @@ common_from:
     selection: "<printed Common subheading>"
 text_status:
   state: unavailable
-  scope: proper-collect
+  scope: missal-formulary
   reasons:
   - kind: no-exemplar
 ```
@@ -378,25 +488,35 @@ nothing. Each `mass` must exist in this file's `kind: common` section.
 `selection`, when present, records the printed subdivision label but does not
 claim that the subdivision has been modeled as a form. `source_id` and `locus`
 identify the registered structural witness. A mass carrying `common_from`
-carries neither local `propers` nor `forms`: its scope already accounts for
-every Missal proper except the separately unavailable proper Collect.
+never carries `forms`. The currently admitted `missal-antiphons` scope is exact:
+the registered ICEL Antiphonary can attest the Common direction for the Entrance
+and Communion Antiphons, but carries no orations and resolves none of the words.
+It therefore cannot account for the Collect, Prayer over the Offerings, or Prayer
+after Communion.
 
 `text_status` keeps the missing words separate from the verified direction.
 Its `state`, `scope`, reason keys, and source ids are closed and checked.
-`proper-collect` accompanies either a dated `common_from` whose scope excludes
-the Collect or the exact `takes_from` case above, where it suppresses only the
-borrowed Collect. `missal-formulary` accounts for the whole Missal formulary
-when target wording is unavailable. It is required on a text-free Common
-destination and is equally valid on a dated or seasonal non-Common Mass; it does
-not include Lectionary options. With `state: unavailable` it stands alone and
-the Mass carries no `propers`, `forms`, `takes_from`, or `common_from`. A
-non-Common Mass may instead use `state: partial` beside exactly one of real
-`propers` or `forms`, never beside a reference, so held source content remains
-distinct from the typed remainder. The reason kinds reuse the Ordinary
+`proper-collect` belongs only to the exact `takes_from` case above, where it
+suppresses the borrowed Common's Collect. `missal-formulary` accounts for the
+whole Missal formulary when target wording is unavailable; it does not include
+Lectionary options. It is required on a text-free Common destination and on a
+text-free dated `common_from` mass. With `state: unavailable` it otherwise stands
+alone. A non-Common Mass may instead use `state: partial` beside exactly one of
+real `propers` or `forms`; `common_from` may accompany the flat `propers` case
+because its narrow antiphon direction resolves no text, while `takes_from` may
+not. The independent status, not the Antiphonary pointer, accounts for every
+missing word. The reason kinds reuse the Ordinary
 inventory's `witness-gap`, `rights-withheld`, and `no-exemplar` vocabulary.
 `witness-gap` and `rights-withheld` name the registered source that establishes
 the gap; `no-exemplar` names the absence of an exact copy and therefore omits
 `source_id`.
+
+At proper level, `scope: proper-body` preserves an exact source-owned composed
+slot while recording why its body is unavailable. A `witness-gap` or
+`no-exemplar` proper-body was never held and therefore has no Latin provenance
+row. A `rights-withheld` proper-body is a quarantine owner and must have the
+matching `body_status = "removed"` row with the former body's exact hash. The
+reason, not the shared unavailable state, distinguishes those two cases.
 
 ```yaml
 - key: target-formulary-not-held
@@ -414,6 +534,29 @@ the gap; `no-exemplar` names the absence of an exact copy and therefore omits
 A proper named `Placeholder` is never an alternate representation of this
 state. It invents a composed slot the Missal does not own and is rejected by
 `check-calendar-masses`; use the mass-level typed absence instead.
+
+## An exceptional rite may not take the normal Ordinary frame
+
+Omitting `ordinary_frame` means that the normal full Ordinary applies. The
+field may live on the mass or on an individual member of `forms`; a selected
+form's explicit frame overrides the mass-level frame, and otherwise the mass
+field (or the implicit full default) applies. Record it only where the source
+establishes an exception:
+
+```yaml
+ordinary_frame:
+  applicability: none
+  basis: The source identifies this service as a liturgical action, not a Mass.
+```
+
+`applicability: none` means there is no Mass frame to borrow, as on Good
+Friday. `applicability: unavailable` means the rite includes a Mass but the
+repository has not modeled a frame that can seat it honestly, as when a Vigil,
+its specialized Mass boundary, and a following Hour remain one bundled entry.
+Both explicit states require a nonempty source-grounded `basis`; consumers fail
+closed and suppress the generic Ordinary. Do not mark a Mass `none` merely
+because blessings, processions, extra lessons, or another exceptional Proper
+structure surround or enter it.
 
 ## A rubric may appoint one text across a span of days
 
@@ -569,20 +712,24 @@ owns the canon. Both run inside `make check` and need PyYAML
 | Calendar | Section | Masses | Propers | Masses holding only placeholders |
 | --- | --- | ---: | ---: | ---: |
 | roman-pre-1955 | seasonal | 6 | 0 | 0 |
-| roman-1962 | seasonal | 128 | 1154 | 0 |
-| roman-1962 | christological | 8 | 66 | 0 |
-| roman-1962 | marian | 18 | 88 | 0 |
-| roman-1962 | sanctoral | 307 | 1107 | 0 |
+| roman-pre-1955 | marian | 1 | 0 | 0 |
+| roman-pre-1955 | sanctoral | 1 | 0 | 0 |
+| roman-1962 | seasonal | 128 | 1352 | 0 |
+| roman-1962 | christological | 8 | 96 | 0 |
+| roman-1962 | marian | 18 | 124 | 0 |
+| roman-1962 | sanctoral | 307 | 1509 | 0 |
 | roman-1962 | common | 30 | 358 | 0 |
-| postconciliar | seasonal | 390 | 2108 | 0 |
-| postconciliar | christological | 7 | 67 | 0 |
+| postconciliar | seasonal | 390 | 2116 | 0 |
+| postconciliar | christological | 7 | 69 | 0 |
 | postconciliar | marian | 14 | 52 | 0 |
-| postconciliar | sanctoral | 201 | 714 | 0 |
+| postconciliar | sanctoral | 201 | 760 | 0 |
 | postconciliar | common | 7 | 0 | 0 |
 
 | Calendar | Rank | Entries | Celebrations |
 | --- | --- | ---: | ---: |
 | roman-pre-1955 | (no rank) | 6 | 6 |
+| roman-pre-1955 | I | 1 | 1 |
+| roman-pre-1955 | II | 1 | 1 |
 | roman-1962 | (no rank) | 93 | 93 |
 | roman-1962 | Comm. | 104 | 104 |
 | roman-1962 | I | 37 | 37 |
@@ -597,18 +744,18 @@ owns the canon. Both run inside `make check` and need PyYAML
 
 | Measure | roman-pre-1955 | roman-1962 | postconciliar |
 | --- | ---: | ---: | ---: |
-| Masses | 6 | 491 | 619 |
-| Propers | 0 | 2773 | 2941 |
+| Masses | 8 | 491 | 619 |
+| Propers | 0 | 3439 | 2997 |
 | — named `Placeholder` | 0 | 0 | 0 |
-| — inside a `forms` block | 0 | 149 | 184 |
+| — inside a `forms` block | 0 | 182 | 188 |
 | — carrying a `cycles` mapping | 0 | 0 | 258 |
 | — carrying a `weekday_cycles` mapping | 0 | 0 | 409 |
 | Masses holding only placeholders | 0 | 0 | 0 |
 | Masses taking a formulary from another entry | 0 | 164 | 0 |
-| Propers taking their text from another entry | 0 | 70 | 41 |
-| Propers that are not placeholders | 0 | 2773 | 2941 |
-| — of those, scripture-bearing | 0 | 2192 | 2587 |
-| Encoded passages | 0 | 2598 | 3542 |
+| Propers taking their text from another entry | 0 | 70 | 49 |
+| Propers that are not placeholders | 0 | 3439 | 2997 |
+| — of those, scripture-bearing | 0 | 2192 | 2635 |
+| Encoded passages | 0 | 2598 | 3590 |
 | Distinct books cited | 0 | 57 | 73 |
 | Distinct slot names | 0 | 120 | 92 |
 

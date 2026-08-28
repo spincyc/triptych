@@ -19,6 +19,21 @@ RECORD = (
     / "day-reader-participation-aid-review-v1.toml"
 )
 POLICY = ROOT / "guidance" / "liturgical-text-publication-policy.md"
+GUIDELINES_ROOT = (
+    ROOT
+    / "src"
+    / "sources"
+    / "works"
+    / "united-states-conference-of-catholic-bishops"
+    / "guidelines-publication-liturgical-books"
+)
+GUIDELINES_EDITION = GUIDELINES_ROOT / "editions" / "2025-first-printing"
+GUIDELINES_ARTIFACT = (
+    GUIDELINES_EDITION / "artifacts" / "usccb-pdf-daab2999" / "artifact.toml"
+)
+GUIDELINES_SHA256 = (
+    "daab29993c7764b9f5a8972629a9ee87e45a6fa0b62c9fe0318e85eca8ee4512"
+)
 
 
 class DayReaderParticipationAidReview(unittest.TestCase):
@@ -85,6 +100,50 @@ class DayReaderParticipationAidReview(unittest.TestCase):
         self.assertIn("15 November", policy)
         self.assertIn("29 November 2026", policy)
         self.assertIn("gate stays\nclosed", policy)
+
+    def test_pdf_evidence_is_bound_to_exact_restricted_source_records(self) -> None:
+        evidence = next(
+            item
+            for item in self.record["evidence"]
+            if item.get("sha256") == GUIDELINES_SHA256
+        )
+        self.assertEqual(
+            evidence["work_id"],
+            "work.united-states-conference-of-catholic-bishops."
+            "guidelines-publication-liturgical-books",
+        )
+        self.assertEqual(
+            evidence["edition_id"],
+            "edition.united-states-conference-of-catholic-bishops."
+            "guidelines-publication-liturgical-books.2025-first-printing",
+        )
+
+        artifact = tomllib.loads(GUIDELINES_ARTIFACT.read_text(encoding="utf-8"))
+        self.assertEqual(evidence["artifact_id"], artifact["id"])
+        self.assertEqual(artifact["sha256"], GUIDELINES_SHA256)
+        self.assertEqual(artifact["storage"], "restricted")
+        self.assertEqual(artifact["rights_status"], "restricted")
+        self.assertEqual(artifact["page_count"], 51)
+        self.assertNotIn("path", artifact)
+        self.assertEqual(
+            [path.name for path in GUIDELINES_ARTIFACT.parent.iterdir()],
+            ["artifact.toml"],
+        )
+
+        passages = {}
+        for path in sorted((GUIDELINES_EDITION / "passages").glob("*.toml")):
+            passage = tomllib.loads(path.read_text(encoding="utf-8"))
+            passages[passage["id"]] = passage
+        self.assertEqual(set(evidence["passage_ids"]), set(passages))
+        for passage_id in evidence["passage_ids"]:
+            passage = passages[passage_id]
+            self.assertEqual(passage["artifact_id"], artifact["id"])
+            self.assertEqual(passage["artifact_sha256"], GUIDELINES_SHA256)
+            self.assertEqual(
+                passage["states"],
+                ["cataloged", "acquired", "inspected", "verified"],
+            )
+            self.assertEqual(passage["verified_on"], "2026-08-26")
 
 
 if __name__ == "__main__":

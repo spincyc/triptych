@@ -453,6 +453,7 @@ def main(argv: list[str] | None = None) -> int:
         prefix="calendar-spine",
         argv=argv,
         default_verb="derive",
+        mapped_errors={ValueError: ("input", 2)},
     )
 
 

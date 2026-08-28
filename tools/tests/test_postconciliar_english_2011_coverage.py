@@ -19,6 +19,11 @@ COVERAGE = (
     / "postconciliar-english-2011-recension-coverage-v1.toml"
 )
 RECENSIONS = ROOT / "src" / "sources" / "calendars" / "recensions.json"
+ICEL_EXCERPT_ACKNOWLEDGEMENT = (
+    "Excerpts from the English translation of The Roman Missal © 2010, "
+    "International Commission on English in the Liturgy Corporation. "
+    "All rights reserved."
+)
 
 
 def load_tool(name: str):
@@ -49,7 +54,6 @@ def live_slot_sets() -> tuple[
         tuple[str, str, str, str, int],
         tuple[dict, dict, tuple[str, str, str]],
     ] = {}
-    legacy_slots: set[tuple[str, str, str]] = set()
     for _, mass in propers.masses_of(document):
         for form, proper, taken_from in propers.appointed_propers(document, mass):
             if proper.get("name") == propers.PLACEHOLDER:
@@ -59,8 +63,6 @@ def live_slot_sets() -> tuple[
                 document, mass, form, proper, taken_from
             )
             units = propers.coverage_slot_units(proper, source_identity)
-            if units:
-                legacy_slots.add(key)
             for identity, owner in units:
                 if propers.slot_family(proper.get("name")) in families:
                     slots[identity] = (proper, owner, key)
@@ -109,7 +111,7 @@ def live_slot_sets() -> tuple[
         for record in records
         for public in [propers.public_untranslated_record(record)]
     }
-    unmatched_positive = {("positive", *key) for key in set(overlay) - legacy_slots}
+    unmatched_positive = {("positive", *key) for key in set(overlay) - set(slots)}
     unmatched_absence = {
         ("unavailable", *identity) for identity in all_absences - matched_absences
     }
@@ -122,6 +124,25 @@ class PostconciliarEnglish2011CoverageTests(unittest.TestCase):
         cls.record = tomllib.loads(COVERAGE.read_text(encoding="utf-8"))
         cls.overlay_path = ROOT / cls.record["overlay_ref"]
         cls.overlay = tomllib.loads(cls.overlay_path.read_text(encoding="utf-8"))
+        cls.rights = tomllib.loads(
+            (ROOT / cls.record["rights_ref"]).read_text(encoding="utf-8")
+        )
+
+    def test_icel_notice_is_the_exact_current_excerpt_form(self) -> None:
+        notice = self.rights["the_acknowledgment"]
+        self.assertEqual(
+            notice["canonical_excerpt_acknowledgement"],
+            ICEL_EXCERPT_ACKNOWLEDGEMENT,
+        )
+        self.assertIn("selected Roman Missal", notice["answer"])
+        self.assertIn(
+            "does not follow the source file",
+            notice["reasoning"].casefold(),
+        )
+        self.assertNotIn(
+            "in the form the file the text was read from carries",
+            notice["answer"],
+        )
 
     def test_record_is_an_incomplete_nonpublishing_finding_aid(self) -> None:
         self.assertEqual(
@@ -161,12 +182,17 @@ class PostconciliarEnglish2011CoverageTests(unittest.TestCase):
         )
         self.assertEqual(expression["language"], self.record["language"])
         self.assertEqual(
-            expression["coverage_ref"], str(COVERAGE.relative_to(ROOT))
+            expression["coverage_ref"]["propers"], str(COVERAGE.relative_to(ROOT))
         )
         proper = expression["capabilities"]["propers"]
         self.assertEqual(proper["data_availability"], "partial")
         self.assertEqual(proper["publication_availability"], "unavailable")
         self.assertEqual(proper["collation"], "mixed")
+        self.assertEqual(expression["capabilities"]["ordinary"], {
+            "data_availability": "unavailable",
+            "publication_availability": "unavailable",
+            "collation": "unestablished",
+        })
 
     def test_finding_aid_contains_no_liturgical_text_fields(self) -> None:
         forbidden = {"text", "translation", "translations", "incipit", "words"}
@@ -248,7 +274,10 @@ class PostconciliarEnglish2011CoverageTests(unittest.TestCase):
                 self.assertFalse(row["currently_servable"])
                 source = source_rows[row["source_record_id"]]
                 self.assertEqual(source["rights"], "permission")
-                self.assertTrue(source.get("acknowledgement"))
+                self.assertEqual(
+                    source.get("acknowledgement"),
+                    ICEL_EXCERPT_ACKNOWLEDGEMENT,
+                )
             else:
                 self.assertNotEqual(row["identity_relation"], "approved-icel-2011")
         historical_or_project = {"", "cummiskey-1861", "caswall-1849"}

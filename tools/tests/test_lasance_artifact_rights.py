@@ -16,6 +16,8 @@ ARTIFACT_DIR = (
 )
 MANIFEST = ARTIFACT_DIR / "artifact.toml"
 PAYLOAD = ARTIFACT_DIR / "new-roman-missal-text.txt"
+THIRD_PARTY = ROOT / "THIRD_PARTY.md"
+MISSAL_GUIDANCE = ROOT / "guidance" / "missals.md"
 
 
 class LasanceTrackedArtifactRightsTests(unittest.TestCase):
@@ -55,6 +57,30 @@ class LasanceTrackedArtifactRightsTests(unittest.TestCase):
         superseded = ARTIFACT_DIR.with_name("new-roman-missal-text-deb5d167")
         self.assertFalse((superseded / "artifact.toml").exists())
         self.assertFalse((superseded / "new-roman-missal-text.txt").exists())
+
+    def test_repository_discloses_both_exclusions_and_residual_history(
+        self,
+    ) -> None:
+        third_party = THIRD_PARTY.read_text(encoding="utf-8")
+        guidance = MISSAL_GUIDANCE.read_text(encoding="utf-8")
+
+        for pages in ("1298a--1298n", "1302a--1302d"):
+            self.assertIn(pages, third_party)
+        self.assertIn("Two exclusions and one trap", guidance)
+        self.assertIn("pages 1302a–1302d", guidance)
+        self.assertIn("thirty-two oration entries", third_party)
+        self.assertIn("only the Collect on ordinary printed p.", guidance)
+        self.assertIn("1302 is positive", guidance)
+        self.assertIn("the five readings whose generic loci", guidance)
+        self.assertIn("the witness translates `beatum`", guidance)
+        self.assertIn(
+            "6 admissible + 1 withdrawn + 14 excluded + 4 open",
+            guidance,
+        )
+        for document in (third_party, guidance):
+            self.assertIn("maintainer", document)
+            self.assertIn("counsel", document)
+            self.assertIn("history", document)
 
 
 if __name__ == "__main__":

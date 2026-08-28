@@ -19,6 +19,8 @@ against the real generated files, for the reason `calendar-rubrics check` runs
 page.
 """
 
+from collections import Counter
+
 import hashlib
 import importlib.machinery
 import importlib.util
@@ -50,6 +52,9 @@ DAY_MISSAL_CSS = ROOT / "src" / "web" / "browser" / "liturgy" / "day-missal.css"
 TOOL = ROOT / "tools" / "mass-ordinary"
 POST_INVENTORY = (
     ROOT / "src" / "sources" / "inventories" / "postconciliar-ordo-missae-v1.toml"
+)
+ROMAN_1962_INVENTORY = (
+    ROOT / "src" / "sources" / "inventories" / "roman-1962-ordo-missae-v1.toml"
 )
 
 ICEL_SOURCE_ID = (
@@ -153,25 +158,27 @@ class OrdinaryStructure(unittest.TestCase):
                 (
                     "edition.eugene-cummiskey.roman-missal-english-laity."
                     "philadelphia-1861",
-                    10,
+                    20,
                 ),
             ],
         )
         expected_absences = {
-            "antecedent-held-not-carried": (3, "unavailable", "witness-gap"),
-            "approved-english-publication-restriction": (
-                24, "rights-restricted", "rights-withheld"
+            "antecedent-diverges-at-named-words": (
+                3, "rights-restricted", "rights-withheld"
             ),
-            "canon-not-split": (1, "unavailable", "model-gap"),
+            "antecedent-held-not-carried": (1, "unavailable", "witness-gap"),
+            "approved-english-publication-restriction": (
+                25, "rights-restricted", "rights-withheld"
+            ),
             "editio-typica-new-matter": (
-                12, "rights-restricted", "rights-withheld"
+                13, "rights-restricted", "rights-withheld"
             ),
             "element-spans-mixed-availability": (3, "unavailable", "model-gap"),
             "element-spans-mixed-matter": (7, "unavailable", "model-gap"),
-            "no-antecedent-witness": (2, "unavailable", "witness-gap"),
+            "no-antecedent-witness": (3, "unavailable", "witness-gap"),
             "no-fixed-text": (3, "unavailable", "not-applicable"),
             "not-a-text": (12, "unavailable", "not-applicable"),
-            "official-exemplar-not-carried": (5, "unavailable", "witness-gap"),
+            "official-exemplar-not-carried": (16, "unavailable", "witness-gap"),
             "priest-prayer-said-quietly": (6, "unavailable", "no-exemplar"),
             "proper-text-outside-ordinary": (6, "unavailable", "outside-layer"),
         }
@@ -195,7 +202,7 @@ class OrdinaryStructure(unittest.TestCase):
             if element["absent"]["english"]
             == "approved-english-publication-restriction"
         ]
-        self.assertEqual(len(affected), 24)
+        self.assertEqual(len(affected), 25)
         for element in affected:
             self.assertFalse(
                 any(row["lang"] == "en" for row in (element["translations"] or [])),
@@ -204,14 +211,14 @@ class OrdinaryStructure(unittest.TestCase):
 
         languages = {one["lang"]: one for one in file["languages"]}
         self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
-                         (0, 47))
+                         (0, 59))
         self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
-                         (10, 47))
-        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 47)
-        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 37)
+                         (20, 59))
+        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 59)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 39)
         held_elements = [one for one in elements(file) if one["translations"]]
         wholly_absent = [one for one in elements(file) if not one["translations"]]
-        self.assertEqual((len(held_elements), len(wholly_absent)), (10, 37))
+        self.assertEqual((len(held_elements), len(wholly_absent)), (20, 39))
 
         self.assertEqual(len(source["witnesses"]), 1)
         self.assertEqual(source["witnesses"][0]["lang"], "la")
@@ -262,22 +269,38 @@ class OrdinaryStructure(unittest.TestCase):
                             self.assertIsNone(turn["speaker"])
                             self.assertIsNone(turn["dialogue_role"])
 
-        self.assertEqual(
-            [(calendar, key, lang) for calendar, key, lang, _turns in found],
-            [("postconciliar", "praeparatio-donorum/orate-fratres", "la")],
+        reached = {(calendar, key, lang) for calendar, key, lang, _turns in found}
+        roman_elements = {
+            "praeparatio/confiteor-sacerdotis": "priest",
+            "praeparatio/confiteor-ministrorum": "server",
+            "oblatio/laus-tibi-christe": "server",
+            "oblatio/suscipiat-dominus": "server",
+            "conclusio/deo-gratias": "server",
+        }
+        expected = {
+            (calendar, key, lang)
+            for calendar in ("roman-1962", "roman-pre-1955")
+            for key in roman_elements
+            for lang in ("en", "la")
+        } | {("postconciliar", "praeparatio-donorum/orate-fratres", "la")}
+        self.assertEqual(reached, expected)
+        post_turns = next(
+            turns for calendar, key, lang, turns in found
+            if (calendar, key, lang)
+            == ("postconciliar", "praeparatio-donorum/orate-fratres", "la")
         )
-        turns = found[0][3]
         self.assertEqual(
-            [
-                (turn["key"], turn["speaker"], turn["dialogue_role"], turn["action"])
-                for turn in turns
-            ],
-            [
-                ("priest-summons", "priest", "versicle", None),
-                ("people-response", "all", "response", None),
-            ],
+            [(turn["key"], turn["speaker"], turn["dialogue_role"], turn["action"])
+             for turn in post_turns],
+            [("priest-summons", "priest", "versicle", None),
+             ("people-response", "all", "response", None)],
         )
-        self.assertTrue(turns[1]["text"].startswith("R. Suscipiat"))
+        self.assertTrue(post_turns[1]["text"].startswith("R. Suscipiat"))
+        for calendar, key, lang, turns in found:
+            if calendar.startswith("roman-"):
+                self.assertEqual(len(turns), 1, (calendar, key, lang))
+                self.assertEqual(turns[0]["speaker"], roman_elements[key])
+                self.assertIsNone(turns[0]["dialogue_role"])
 
         # Quarantined English has neither text nor turns. Metadata on Latin
         # never leaks across to English, and no Roman source is heuristically
@@ -290,10 +313,12 @@ class OrdinaryStructure(unittest.TestCase):
             for row in (post_by_key[key]["translations"] or [])
         ), key)
         for calendar in ("roman-1962", "roman-pre-1955"):
-            for element in elements(self.files[calendar]):
-                for translation in element["translations"] or []:
-                    self.assertNotIn("turns", translation,
-                                     f"{calendar}: {element['key']}")
+            opaque = next(
+                element for element in elements(self.files[calendar])
+                if element["key"] == "praeparatio/introibo-ad-altare-dei"
+            )
+            for translation in opaque["translations"] or []:
+                self.assertNotIn("turns", translation, f"{calendar}: opaque {translation['lang']}")
 
     def test_postconciliar_n_130_is_the_single_received_agnus_dei(self) -> None:
         """One received text at n. 130 must not acquire an invented alternative."""
@@ -313,30 +338,141 @@ class OrdinaryStructure(unittest.TestCase):
             keys = [element["key"] for element in elements(file)]
             self.assertEqual(len(keys), len(set(keys)), name)
 
-    def test_only_the_postconciliar_missal_offers_a_choice_of_prayer(self) -> None:
+    def test_roman_1962_absence_split_is_target_local_and_exhaustive(self) -> None:
+        """One witness's 1962 classifications do not rewrite its older frame."""
+        roman = self.files["roman-1962"]
+        self.assertEqual(
+            {row["key"]: row["count"] for row in roman["absences"]},
+            {
+                "no-facing-latin": 8,
+                "not-in-the-1962-ordo": 2,
+                "witness-own-english": 67,
+            },
+        )
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 77)
+        by_key = {element["key"]: element for element in elements(roman)}
+        self.assertEqual(
+            by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
+            "no-facing-latin",
+        )
+        self.assertEqual(
+            by_key["conclusio/postcommunio-mundet"]["absent"]["latin"],
+            "not-in-the-1962-ordo",
+        )
+        self.assertEqual(
+            by_key["praefatio/rubrica-nota-asterisci"]["absent"]["latin"],
+            "witness-own-english",
+        )
+
+        pre = self.files["roman-pre-1955"]
+        self.assertEqual(
+            {row["key"]: row["count"] for row in pre["absences"]},
+            {"no-facing-latin": 83},
+        )
+
+    def test_only_the_postconciliar_missal_offers_bounded_choices(self) -> None:
         """The 1962 Missal has one Canon, so it must offer nothing to choose."""
         self.assertEqual(self.files["roman-1962"]["variants"], [])
         groups = self.files["postconciliar"]["variants"]
-        self.assertEqual([one["group"] for one in groups], ["eucharistic-prayer"])
-        options = groups[0]["options"]
-        self.assertEqual([one["id"] for one in options if one["default"]], ["ep-i"],
-                         "the default is the first prayer the Missal itself prints")
+        self.assertEqual(
+            [one["group"] for one in groups],
+            ["penitential-act", "creed", "eucharistic-prayer"],
+        )
+        self.assertTrue(all(one["mode"] == "one-of" for one in groups))
+        defaults = {
+            one["group"]: [option["id"] for option in one["options"] if option["default"]]
+            for one in groups
+        }
+        self.assertEqual(
+            defaults,
+            {
+                "penitential-act": ["pa-i"],
+                "creed": ["creed-nicene"],
+                "eucharistic-prayer": ["ep-i"],
+            },
+        )
+
+    def test_choice_memberships_and_conditions_are_structural(self) -> None:
+        post = {one["key"]: one for one in elements(self.files["postconciliar"])}
+        expected = {
+            "ritus-initiales/actus-paenitentialis-i":
+                [{"group": "penitential-act", "option": "pa-i"}],
+            "ritus-initiales/actus-paenitentialis-ii":
+                [{"group": "penitential-act", "option": "pa-ii"}],
+            "ritus-initiales/actus-paenitentialis-iii":
+                [{"group": "penitential-act", "option": "pa-iii"}],
+            "symbolum/symbolum-nicaenum":
+                [{"group": "creed", "option": "creed-nicene"}],
+            "symbolum/symbolum-apostolicum":
+                [{"group": "creed", "option": "creed-apostles"}],
+        }
+        for key, alternatives in expected.items():
+            self.assertEqual(post[key]["alternatives"], alternatives, key)
+        conditioned = {
+            key: condition
+            for key, element in post.items()
+            for condition in element["conditions"]
+        }
+        self.assertEqual(
+            conditioned["ritus-initiales/kyrie"]["kind"], "omit-when-option"
+        )
+        self.assertEqual(
+            conditioned["liturgia-verbi/lectio-secunda"]["predicates"],
+            ["second-reading-appointed"],
+        )
+        self.assertEqual(
+            conditioned["prex-eucharistica/prex-eucharistica-iv"]["predicates"],
+            ["mass-has-no-proper-preface"],
+        )
+        self.assertTrue(
+            all(condition["unknown"] == "unresolved" for condition in conditioned.values())
+        )
 
     def test_prayer_one_is_not_the_1861_canon(self) -> None:
         """The divergence that makes this the worst possible substitution.
 
-        The postconciliar Prayer I must carry no text at all, and must say in
-        terms that the Canon this site serves under the 1962 Missal is a
-        different prayer. Reproducing the 1861 English here would be silent,
-        plausible, and wrong at both consecratory forms.
+        Prayer I is split only at bounded source children. Its nine safe
+        antecedents remain language-local and plainly antecedent; three unsafe
+        children carry no Latin, and no child carries quarantined English.
         """
-        found = [one for one in elements(self.files["postconciliar"])
-                 if one["variant"] == "ep-i"]
-        self.assertEqual(len(found), 1)
-        prayer = found[0]
-        self.assertIsNone(prayer["translations"], "Prayer I must carry no English")
-        self.assertTrue(prayer["absent"]["english"])
-        self.assertIn("NOT THE CANON OF THE 1962 MISSAL", (prayer["note"] or "").upper())
+        found = [
+            one for one in elements(self.files["postconciliar"])
+            if {"group": "eucharistic-prayer", "option": "ep-i"}
+            in one["alternatives"]
+        ]
+        self.assertEqual(len(found), 12)
+        for prayer in found:
+            self.assertFalse(
+                any(row["lang"] == "en" for row in (prayer["translations"] or [])),
+                prayer["key"],
+            )
+            self.assertEqual(
+                prayer["absent"]["english"], "official-exemplar-not-carried"
+            )
+        latin = {
+            prayer["key"]: next(
+                (row for row in (prayer["translations"] or []) if row["lang"] == "la"),
+                None,
+            )
+            for prayer in found
+        }
+        self.assertEqual(sum(row is not None for row in latin.values()), 9)
+        self.assertEqual(
+            [key for key, row in latin.items()
+             if row is not None and row["collation"] == "collated"],
+            ["prex-eucharistica/quam-oblationem"],
+        )
+        self.assertEqual(
+            {
+                prayer["key"]: prayer["absent"]["latin"]
+                for prayer in found if latin[prayer["key"]] is None
+            },
+            {
+                "prex-eucharistica/communicantes": "element-spans-mixed-matter",
+                "prex-eucharistica/qui-pridie": "editio-typica-new-matter",
+                "prex-eucharistica/supplices": "element-spans-mixed-matter",
+            },
+        )
 
     def test_every_language_names_the_side_that_records_its_absence(self) -> None:
         """A language on offer must be able to say why it is empty.
@@ -394,8 +530,8 @@ class OrdinarySlots(unittest.TestCase):
             keys = {element["key"]: element for element in elements(file)}
             for slot in file["slots"]:
                 self.assertIn(slot["anchor"], keys, f"{name}: seat {slot['key']}")
-                self.assertIsNone(
-                    keys[slot["anchor"]]["variant"],
+                self.assertFalse(
+                    keys[slot["anchor"]]["alternatives"],
                     f"{name}: seat {slot['key']} would vanish with a choice of prayer",
                 )
                 self.assertIn(slot["where"], ("before", "after"), f"{name}: {slot['key']}")
@@ -479,12 +615,275 @@ class OrdinaryTool(unittest.TestCase):
             ["python3", str(TOOL), "check", "--json"],
             capture_output=True, text=True, cwd=ROOT, check=False)
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
-        self.assertEqual(json.loads(run.stdout)["stale"], [],
+        payload = json.loads(run.stdout)
+        self.assertEqual(payload["stale"], [],
                          "regenerate with `tools/tpt mass-ordinary structure`")
+        self.assertEqual(payload["seating"]["failures"], 0)
+        self.assertGreater(payload["seating"]["full_forms"], 0)
+        self.assertGreater(payload["seating"]["nonfull_forms"], 0)
+        self.assertEqual(
+            payload["seating"]["full_forms"],
+            sum(row["full_forms"] for row in payload["seating"]["calendars"]),
+        )
+        self.assertEqual(
+            payload["seating"]["nonfull_forms"],
+            sum(row["nonfull_forms"] for row in payload["seating"]["calendars"]),
+        )
+
+    def test_cross_layer_seating_refuses_unknown_backward_and_stale_rows(self) -> None:
+        tool = self.tool_module
+        ordinary = {
+            "calendar": "synthetic",
+            "slots": [
+                {"key": "first", "propers": ["First"], "qualified": False},
+                {"key": "second", "propers": ["Second"], "qualified": False},
+            ],
+        }
+        with self.assertRaisesRegex(tool.SourceError, "has no Ordinary seat"):
+            tool.check_form_seating(
+                ordinary, [{"name": "Unknown"}], "synthetic/mass/main", full=True
+            )
+        with self.assertRaisesRegex(tool.SourceError, "runs backward"):
+            tool.check_form_seating(
+                ordinary,
+                [{"name": "Second"}, {"name": "First"}],
+                "synthetic/mass/main",
+                full=True,
+            )
+        with self.assertRaisesRegex(tool.SourceError, "stale because"):
+            tool.check_form_seating(
+                ordinary,
+                [{
+                    "name": "First",
+                    "ordinary_disposition": {
+                        "kind": "unplaced", "group": "outside-rite",
+                        "region": "before-frame", "basis": "Synthetic locus.",
+                    },
+                }],
+                "synthetic/mass/main",
+                full=True,
+            )
+
+    def test_cross_layer_seating_refuses_singleton_and_mixed_seat_choices(self) -> None:
+        tool = self.tool_module
+        ordinary = {
+            "calendar": "synthetic",
+            "slots": [
+                {"key": "first", "propers": ["First"], "qualified": False},
+                {"key": "second", "propers": ["Second"], "qualified": False},
+            ],
+        }
+
+        def choice(name: str, option: str) -> dict:
+            return {
+                "name": name,
+                "ordinary_disposition": {
+                    "kind": "alternative", "group": "reading-choice",
+                    "option": option, "basis": "Synthetic source choice.",
+                },
+            }
+
+        with self.assertRaisesRegex(tool.SourceError, "at least two distinct options"):
+            tool.check_form_seating(
+                ordinary, [choice("First", "long")],
+                "synthetic/mass/main", full=True,
+            )
+        with self.assertRaisesRegex(tool.SourceError, "spans Ordinary slots"):
+            tool.check_form_seating(
+                ordinary, [choice("First", "long"), choice("Second", "short")],
+                "synthetic/mass/main", full=True,
+            )
+
+    def test_cross_layer_seating_refuses_stale_generated_propers_shape(self) -> None:
+        tool = self.tool_module
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            target = out / "structure" / "propers" / "synthetic.json"
+            target.parent.mkdir(parents=True)
+            target.write_text(
+                json.dumps({
+                    "schema": "triptych-propers-structure/retired",
+                    "calendar": "synthetic", "masses": [],
+                }),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(tool.SourceError, "stale generated Propers"):
+                tool.read_propers_structure(out, "synthetic")
+
+    def test_roman_1962_source_absences_partition_all_english_only_rows(self) -> None:
+        """The six target exclusions do not erase their source classifications."""
+        tool = self.tool_module
+        source = tool.read_toml(ROMAN_1962_INVENTORY)
+        library = tool.artifact_records(ROOT / "src" / "sources")
+        counts = Counter()
+        for section in source["sections"]:
+            english = {
+                row["element_key"] for row in tool.payload_rows(library[section["artifact"]])
+            }
+            latin = {
+                row["element_key"]
+                for row in tool.payload_rows(library[section["artifact_latin"]])
+            }
+            missing = english - latin
+            overrides = section.get("absent_latin_by_element", {})
+            self.assertLessEqual(set(overrides), missing, section["key"])
+            counts.update(overrides.get(key, section["absent_latin"]) for key in missing)
+        self.assertEqual(
+            counts,
+            Counter({
+                "no-facing-latin": 8,
+                "not-in-the-1962-ordo": 4,
+                "witness-own-english": 71,
+            }),
+        )
+
+    def test_artifact_latin_absence_overrides_are_closed(self) -> None:
+        tool = self.tool_module
+        section = {
+            "key": "synthetic",
+            "absent_latin_by_element": {"english-only": "specific-gap"},
+        }
+        absences = {"default-gap": {}, "specific-gap": {}}
+        self.assertEqual(
+            tool.artifact_latin_absence_overrides(
+                section, {"english-only", "held"}, {"held"}, absences,
+                "synthetic.toml",
+            ),
+            {"english-only": "specific-gap"},
+        )
+        invalid = (
+            ({}, "empty or malformed"),
+            ([], "empty or malformed"),
+            ({"missing": "specific-gap"}, "does not hold"),
+            ({"held": "specific-gap"}, "already holds text"),
+            ({"english-only": "undeclared"}, "does not state"),
+            ({"english-only": "   "}, "has no reason"),
+        )
+        for declared, message in invalid:
+            with self.subTest(declared=declared):
+                with self.assertRaisesRegex(tool.SourceError, message):
+                    tool.artifact_latin_absence_overrides(
+                        section | {"absent_latin_by_element": declared},
+                        {"english-only", "held"}, {"held"}, absences,
+                        "synthetic.toml",
+                    )
+
+    def test_coverage_is_language_relation_absence_and_exclusion_aware(self) -> None:
+        run = subprocess.run(
+            ["python3", str(TOOL), "coverage", "--json"],
+            capture_output=True, text=True, cwd=ROOT, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        rows = {row["calendar"]: row for row in json.loads(run.stdout)["coverage"]}
+        required = {
+            "calendar", "elements", "witnesses", "language_coverage",
+            "relation_coverage", "absent", "language_absences", "exclusions",
+        }
+        for calendar, row in rows.items():
+            self.assertEqual(set(row), required, calendar)
+            for language in row["language_coverage"]:
+                self.assertEqual(
+                    language["held"] + language["missing"], row["elements"], calendar
+                )
+                self.assertEqual(language["absent"], language["missing"], calendar)
+                self.assertEqual(
+                    sum(
+                        relation["count"] for relation in row["relation_coverage"]
+                        if relation["lang"] == language["lang"]
+                    ),
+                    language["held"],
+                    calendar,
+                )
+                self.assertEqual(
+                    sum(
+                        absence["count"] for absence in row["language_absences"]
+                        if absence["lang"] == language["lang"]
+                    ),
+                    language["missing"],
+                    calendar,
+                )
+            for absence in row["language_absences"]:
+                self.assertGreater(absence["count"], 0, calendar)
+                self.assertEqual(
+                    set(absence), {"key", "lang", "count", "state", "kind"}
+                )
+            for absence in row["absent"]:
+                self.assertEqual(
+                    absence["count"],
+                    sum(
+                        part["count"] for part in row["language_absences"]
+                        if part["key"] == absence["key"]
+                    ),
+                    f"{calendar}: {absence['key']}",
+                )
+
+        roman = rows["roman-1962"]
+        self.assertEqual(
+            [(one["lang"], one["held"], one["missing"])
+             for one in roman["language_coverage"]],
+            [("en", 189, 0), ("la", 112, 77)],
+        )
+        self.assertEqual(
+            [one["key"] for one in roman["exclusions"]],
+            [
+                "oblatio/a-cunctis",
+                "oblatio/nota-incarnationis",
+                "oblatio/rubrica-collecta-concede",
+                "oblatio/rubrica-secreta",
+                "oblatio/rubrica-secreta-concede",
+                "oblatio/secreta-ii",
+            ],
+        )
+        for exclusion in roman["exclusions"]:
+            self.assertEqual(exclusion["state"], "not-in-target-recension")
+            self.assertFalse(
+                any("text" in evidence for evidence in exclusion["evidence"]),
+                exclusion["key"],
+            )
+            self.assertEqual(exclusion["sources"], sorted(set(exclusion["sources"])))
+
+    def test_show_selects_one_option_and_surfaces_unknown_applicability(self) -> None:
+        def show(*options: str) -> subprocess.CompletedProcess:
+            command = [
+                "python3", str(TOOL), "show", "--calendar", "postconciliar",
+                "--no-rubrics",
+            ]
+            for option in options:
+                command.extend(("--variant", option))
+            return subprocess.run(
+                command, capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+
+        default = show()
+        self.assertEqual(default.returncode, 0, default.stdout + default.stderr)
+        self.assertIn("\n  Penitential Act, form I (all)\n", default.stdout)
+        self.assertNotIn("\n  Penitential Act, form II (all)\n", default.stdout)
+        self.assertNotIn("\n  Penitential Act, form III (all)\n", default.stdout)
+        self.assertIn("Eucharistic Prayer I — Te igitur", default.stdout)
+        self.assertNotIn("Eucharistic Prayer IV (priest)", default.stdout)
+        self.assertIn("applicability unresolved: second-reading-appointed", default.stdout)
+
+        selected = show("pa-iii", "ep-iv")
+        self.assertEqual(selected.returncode, 0, selected.stdout + selected.stderr)
+        self.assertIn("\n  Penitential Act, form III (all)\n", selected.stdout)
+        self.assertNotIn("\n  Penitential Act, form I (all)\n", selected.stdout)
+        self.assertNotIn("Kyrie eleison", selected.stdout)
+        self.assertNotIn("\n  Eucharistic Prayer IV (priest)\n", selected.stdout)
+        self.assertNotIn("Eucharistic Prayer I —", selected.stdout)
+        self.assertIn(
+            "Eucharistic Prayer IV: applicability unresolved: "
+            "mass-has-no-proper-preface",
+            selected.stdout,
+        )
+
+        unknown = show("not-an-option")
+        self.assertEqual(unknown.returncode, 2, unknown.stdout + unknown.stderr)
+        self.assertIn("no variant option", unknown.stderr)
 
     def test_check_distinguishes_stale_and_current_output_in_both_tiers(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
+            shutil.copytree(PROPERS, out / "structure" / "propers")
             stale = subprocess.run(
                 ["python3", str(TOOL), "check", "--out", str(out), "--json"],
                 capture_output=True, text=True, cwd=ROOT, check=False,
@@ -513,6 +912,7 @@ class OrdinaryTool(unittest.TestCase):
     def test_unscoped_writer_prunes_only_owned_orphan_json(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
+            shutil.copytree(PROPERS, out / "structure" / "propers")
             written = subprocess.run(
                 ["python3", str(TOOL), "structure", "--out", str(out), "--json"],
                 capture_output=True, text=True, cwd=ROOT, check=False,
@@ -635,9 +1035,10 @@ class OrdinaryTool(unittest.TestCase):
                 },
             }
 
-            built = tool.from_artifact(
+            built, exclusions = tool.from_artifact(
                 section, witnesses, {}, {}, library, "synthetic.toml"
             )
+            self.assertEqual(exclusions, [])
             translations = {
                 row["lang"]: row for row in built[0]["translations"]
             }
@@ -718,13 +1119,204 @@ class OrdinaryTool(unittest.TestCase):
                 )
 
             section["absent_latin"] = "no-facing-latin"
-            built = tool.from_artifact(
+            built, exclusions = tool.from_artifact(
                 section, witnesses, {},
                 {"no-facing-latin": {"kind": "witness-gap"}},
                 library, "synthetic.toml",
             )
+            self.assertEqual(exclusions, [])
             self.assertEqual(built[0]["absent"]["latin"], "no-facing-latin")
             self.assertEqual(built[0]["translations"][0]["relation"], "own")
+
+    def test_artifact_exclusions_consume_rows_without_publishing_text(self) -> None:
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        english_id = "artifact.synthetic.exclusion-en"
+        latin_id = "artifact.synthetic.exclusion-la"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "english.tsv").write_text(
+                "element_key\tseq\tkind\tenglish\tlatin_incipit\tprinted_page\tspeaker\tnotes\n"
+                "kept\t10\tprayer\tKept English.\tServata\t1\tpriest\t\n"
+                "removed\t20\tprayer\tSecret excluded words.\tRemota\t2\tpriest\t\n",
+                encoding="utf-8",
+            )
+            (root / "latin.tsv").write_text(
+                "element_key\tseq\tlatin\n"
+                "kept\t10\tServata Latina.\n"
+                "removed\t20\tVerba remota secreta.\n",
+                encoding="utf-8",
+            )
+            library = {
+                english_id: {"id": english_id, "path": "english.tsv", "_source_root": root},
+                latin_id: {"id": latin_id, "path": "latin.tsv", "_source_root": root},
+            }
+            witnesses = {
+                (witness_id, "en"): {
+                    "lang": "en", "rights": "public-domain", "artifacts": [english_id],
+                },
+                (witness_id, "la"): {
+                    "lang": "la", "rights": "public-domain", "artifacts": [latin_id],
+                },
+            }
+            section = {
+                "key": "synthetic", "artifact": english_id, "witness": witness_id,
+                "artifact_latin": latin_id,
+                "english": {"relation": "own"}, "latin": {"relation": "own"},
+                "exclusions": [{"element": "removed", "basis": "Target edition, locus 1."}],
+            }
+            built, exclusions = tool.from_artifact(
+                section, witnesses, {}, {}, library, "synthetic.toml"
+            )
+            self.assertEqual([one["key"] for one in built], ["synthetic/kept"])
+            self.assertEqual([one["key"] for one in exclusions], ["synthetic/removed"])
+            self.assertEqual(exclusions[0]["state"], "not-in-target-recension")
+            self.assertEqual(exclusions[0]["sources"], [witness_id])
+            self.assertEqual(
+                [one["lang"] for one in exclusions[0]["evidence"]], ["en", "la"]
+            )
+            serialized = json.dumps(exclusions, ensure_ascii=False)
+            self.assertNotIn("Secret excluded words", serialized)
+            self.assertNotIn("Verba remota secreta", serialized)
+
+            invalid = (
+                ([{"element": "missing", "basis": "Citation."}], "does not hold"),
+                ([{"element": "removed", "basis": ""}], "has no basis"),
+                ([{"element": "removed", "basis": "A."},
+                  {"element": "removed", "basis": "B."}], "excludes removed twice"),
+                ([{"element": "removed", "basis": "A.", "note": "free prose"}],
+                 "unknown fields note"),
+            )
+            for declarations, message in invalid:
+                with self.subTest(message=message):
+                    with self.assertRaisesRegex(tool.SourceError, message):
+                        tool.from_artifact(
+                            section | {"exclusions": declarations}, witnesses, {}, {},
+                            library, "synthetic.toml",
+                        )
+
+    def test_artifact_section_turns_partition_source_rows_not_prose(self) -> None:
+        tool = self.tool_module
+        witness_id = "edition.synthetic.witness"
+        english_id = "artifact.synthetic.turn-en"
+        latin_id = "artifact.synthetic.turn-la"
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "english.tsv").write_text(
+                "element_key\tseq\tkind\tenglish\tprinted_page\tspeaker\n"
+                "dialogue\t10\tdialogue\tPriest calls.\t1\tpriest\n"
+                "dialogue\t20\tdialogue\tPeople answer.\t1\tall\n"
+                "opaque\t30\tdialogue\tP. Embedded call. R. Embedded answer.\t2\tall\n",
+                encoding="utf-8",
+            )
+            (root / "latin.tsv").write_text(
+                "element_key\tseq\tlatin\n"
+                "dialogue\t10\tSacerdos vocat.\n"
+                "dialogue\t20\tPopulus respondet.\n"
+                "opaque\t30\tP. Vocatio inclusa. R. Responsum inclusum.\n",
+                encoding="utf-8",
+            )
+            library = {
+                english_id: {"id": english_id, "path": "english.tsv", "_source_root": root},
+                latin_id: {"id": latin_id, "path": "latin.tsv", "_source_root": root},
+            }
+            witnesses = {
+                (witness_id, "en"): {
+                    "lang": "en", "rights": "project-created", "artifacts": [english_id],
+                },
+                (witness_id, "la"): {
+                    "lang": "la", "rights": "project-created", "artifacts": [latin_id],
+                },
+            }
+            parts = [
+                {"key": "priest-call", "seq": [10], "speaker": "priest",
+                 "dialogue_role": "versicle"},
+                {"key": "people-answer", "seq": [20], "speaker": "all",
+                 "dialogue_role": "response"},
+            ]
+            section = {
+                "key": "synthetic", "artifact": english_id, "witness": witness_id,
+                "artifact_latin": latin_id,
+                "english": {"relation": "own"}, "latin": {"relation": "own"},
+                "turn_partitions": [
+                    {"element": "dialogue", "lang": "en", "parts": parts},
+                    {"element": "dialogue", "lang": "la", "parts": parts},
+                ],
+            }
+            built, exclusions = tool.from_artifact(
+                section, witnesses, {}, {}, library, "synthetic.toml"
+            )
+            self.assertEqual(exclusions, [])
+            self.assertEqual(len(built), 2)
+            for translation in built[0]["translations"]:
+                self.assertEqual(
+                    "\n".join(turn["text"] for turn in translation["turns"]),
+                    translation["text"],
+                )
+            for translation in built[1]["translations"]:
+                self.assertNotIn("turns", translation)
+            bad = dict(section)
+            bad["turn_partitions"] = [
+                {"element": "dialogue", "lang": "en", "parts": [
+                    {"key": "invented-first", "seq": [10]},
+                    {"key": "invented-second", "seq": [10]},
+                ]},
+                section["turn_partitions"][1],
+            ]
+            with self.assertRaisesRegex(tool.SourceError, "does not exactly partition"):
+                tool.from_artifact(bad, witnesses, {}, {}, library, "synthetic.toml")
+
+    def test_alternatives_conditions_and_unresolved_rights_are_closed(self) -> None:
+        tool = self.tool_module
+        source = {
+            "variants": [{
+                "group": "forms", "name": "Forms", "what": "One received form.",
+                "options": [
+                    {"id": "form-a", "name": "A", "default": True},
+                    {"id": "form-b", "name": "B", "default": False},
+                ],
+            }]
+        }
+        groups, options = tool.variant_table(source, "synthetic")
+        self.assertEqual(groups[0]["mode"], "one-of")
+        legacy, alternatives = tool.element_alternatives(
+            {"alternatives": [{"group": "forms", "option": "form-b"}]},
+            options, "element", "synthetic",
+        )
+        self.assertIsNone(legacy)
+        self.assertEqual(alternatives, [{"group": "forms", "option": "form-b"}])
+        conditions = tool.element_conditions(
+            {"conditions": [
+                {"kind": "include-when-any", "predicates": ["second-reading-appointed"],
+                 "basis": "Rubric 1."},
+                {"kind": "omit-when-option", "group": "forms", "options": ["form-b"],
+                 "basis": "Rubric 2."},
+            ]},
+            options, "element", "synthetic",
+        )
+        self.assertTrue(all(one["unknown"] == "unresolved" for one in conditions))
+        with self.assertRaisesRegex(tool.SourceError, "more than once"):
+            tool.element_alternatives(
+                {"alternatives": [
+                    {"group": "forms", "option": "form-a"},
+                    {"group": "forms", "option": "form-b"},
+                ]}, options, "element", "synthetic",
+            )
+        with self.assertRaisesRegex(tool.SourceError, "closed predicate table"):
+            tool.element_conditions(
+                {"conditions": [{"kind": "include-when-any",
+                                  "predicates": ["prose-is-true"], "basis": "X"}]},
+                options, "element", "synthetic",
+            )
+        unresolved = tool.absence_table(
+            {"absences": [{"key": "rights-open", "kind": "rights-unresolved",
+                            "what": "Authorization has not been established."}]},
+            "synthetic",
+        )
+        self.assertEqual(unresolved["rights-open"]["kind"], "rights-unresolved")
+        self.assertEqual(tool.absence_state("rights-unresolved"), "unresolved")
+        self.assertEqual(tool.absence_state("rights-withheld"), "rights-restricted")
+        self.assertEqual(tool.absence_state("witness-gap"), "unavailable")
 
     def test_duplicate_absence_keys_fail_closed_before_public_projection(self) -> None:
         tool = self.tool_module
@@ -938,6 +1530,73 @@ class OrdinaryPage(unittest.TestCase):
             page.index('<script src="day.js"></script>'),
         )
 
+    def test_definite_omission_dominates_unknown_conditions(self) -> None:
+        script = r"""
+const S = require('./src/web/browser/liturgy/ordinary-seating.js');
+const file = {
+  variants: [{group: 'choice', options: [
+    {id: 'a', default: true}, {id: 'b', default: false}
+  ]}],
+  sections: [{key: 'section', elements: [{
+    key: 'element', alternatives: [], conditions: [
+      {kind: 'include-when-any', predicates: ['unknown-fact']},
+      {kind: 'omit-when-option', group: 'choice', options: ['b']}
+    ]
+  }]}]
+};
+const definite = S.resolveElements(file, {choice: 'b'}, {});
+const unresolved = S.resolveElements(file, {choice: 'a'}, {});
+file.sections[0].elements[0].conditions.push(
+  {kind: 'include-when-any', predicates: ['known-false']});
+const laterFalse = S.resolveElements(
+  file, {choice: 'a'}, {'known-false': false});
+let conflict = null;
+try { S.selectionMap(file, ['a', 'b']); }
+catch (error) { conflict = String(error && error.message || error); }
+process.stdout.write(JSON.stringify({
+  definite, unresolved, laterFalse, conflict,
+  adventSunday: S.predicateFacts({
+    settled: true, weekday: 'sunday', season: 'advent',
+    nature: 'solemnity-or-sunday'
+  }),
+  feast: S.predicateFacts({
+    settled: true, weekday: 'thursday', season: 'ordinary-time', nature: 'feast'
+  }),
+  unsettled: S.predicateFacts({
+    settled: false, weekday: 'sunday', season: 'ordinary-time', nature: 'sunday'
+  })
+}));
+"""
+        run = subprocess.run(
+            ["node", "-e", script], capture_output=True, text=True,
+            cwd=ROOT, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        report = json.loads(run.stdout)
+        self.assertEqual(report["definite"]["shown"], [])
+        self.assertEqual(report["definite"]["unresolved"], [])
+        self.assertEqual(report["unresolved"]["shown"], [])
+        self.assertEqual(len(report["unresolved"]["unresolved"]), 1)
+        self.assertEqual(report["laterFalse"]["shown"], [])
+        self.assertEqual(report["laterFalse"]["unresolved"], [])
+        self.assertIn("conflicting Ordinary options", report["conflict"])
+        self.assertEqual(
+            report["adventSunday"],
+            {
+                "sunday-outside-advent-and-lent": False,
+                "sunday-or-solemnity": True,
+            },
+        )
+        self.assertEqual(
+            report["feast"],
+            {
+                "sunday-outside-advent-and-lent": False,
+                "solemnity-or-feast": True,
+                "sunday-or-solemnity": False,
+            },
+        )
+        self.assertEqual(report["unsettled"], {})
+
     def test_reading_first_hierarchy_and_event_sequence(self) -> None:
         """The Instrument keeps identity, reading, and actions in authored order."""
         page = DAY_HTML.read_text(encoding="utf-8")
@@ -988,20 +1647,20 @@ class OrdinaryPage(unittest.TestCase):
         digest = hashlib.sha256(
             json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         ).hexdigest()
-        self.assertEqual(len(sequence), 211)
+        self.assertEqual(len(sequence), 205)
         self.assertEqual(
             digest,
-            "c1fe93220057c722c753d3af29c9fb111c162a2572304780c018a6fed2591c08",
+            "e43b1727e55428383661223497fcdc5e492026df58c00be90f16df023411cf8d",
         )
 
         sequence = report["ot_18_sequence"]
         digest = hashlib.sha256(
             json.dumps(sequence, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         ).hexdigest()
-        self.assertEqual(len(sequence), 62)
+        self.assertEqual(len(sequence), 67)
         self.assertEqual(
             digest,
-            "53ff991c14c9283ec3376355f19325e2514ce8bfa8ead51e204f6892b73ddd7a",
+            "ea501e6d426d345d30e217f61395d54801d69f339f2fa1c24927cf6ef1325abd",
         )
 
     def test_ordered_mass_text_contract_for_both_missals(self) -> None:
@@ -1015,12 +1674,12 @@ class OrdinaryPage(unittest.TestCase):
         report = self.run_harness()
         expected = {
             "pentecost_10_text": (
-                211,
-                "24f393967887da2611bb432d3fda3f6342fd2129873ca864ed8d8570d1a74e35",
+                205,
+                "37053a4e0de66568700c5320d433217ccfb65c601f3bd0d1f1b4c9106e4802dc",
             ),
             "ot_18_text": (
-                62,
-                "42281a2c23766d6a96010a23f19f84fb6918d869a2da461d31ba47bcf5bec478",
+                67,
+                "b49c8f64f4bf81dbb01f373d9d90ea9ba55bf60ec3f0f0faffd188a127161368",
             ),
         }
         for key, (count, wanted_digest) in expected.items():
@@ -1031,18 +1690,13 @@ class OrdinaryPage(unittest.TestCase):
             self.assertEqual(len(rows), count, key)
             self.assertEqual(digest, wanted_digest, key)
 
-    def test_the_page_shows_one_prayer_and_states_what_it_withholds(self) -> None:
+    def test_the_page_states_what_it_withholds(self) -> None:
         report = self.run_harness()
-        self.assertEqual(report["shown_by_default"], ["ep-i"])
-        self.assertEqual(report["shown_when_third_chosen"], ["ep-iii"])
         self.assertNotIn("Lord, have mercy.", report["kyrie"])
         self.assertIn("Not shown: its English.", report["kyrie"])
         self.assertIn("approved-english-publication-restriction", report["kyrie"])
         self.assertNotIn(ICEL_SOURCE_ID, report["kyrie"])
         self.assertNotIn(ICEL_ACKNOWLEDGEMENT, report["kyrie"])
-        self.assertIn("Not shown: its English.", report["prayer_one"])
-        self.assertIn("Not shown: its Latin.", report["prayer_one"])
-        self.assertIn("Te igitur, clementissime Pater", report["prayer_one"])
         self.assertIn("WE therefore, humbly pray", report["te_igitur_1861"])
         self.assertNotIn("used by permission", report["te_igitur_1861"])
 
@@ -1080,19 +1734,27 @@ class OrdinaryPage(unittest.TestCase):
             report["event_kinds"], ["begin_section", "ordinary_element", "proper"]
         )
 
-    def test_a_day_the_frame_does_not_fit_is_said_so_and_not_rearranged(self) -> None:
-        """Christmas carries four Masses; one Ordinary cannot hold them.
+    def test_stable_forms_are_seated_without_combining_their_propers(self) -> None:
+        """Christmas's four authored forms remain four distinct Masses.
 
-        The failure this guards is the attractive one: pouring all four into the
-        frame would put four Collects under one Collect and read as a Mass that
-        was never said. What must happen instead is that the frame takes the
-        first, the rest follow it whole, and the page says why.
+        Form identity supersedes the historical flattened projection: the
+        seating engine receives exactly one form and must neither manufacture
+        a composite frame nor discard a source row from that form.
         """
         report = self.run_harness()
-        self.assertTrue(report["nativity_broke"])
-        self.assertEqual(report["nativity_seated"], 10)
-        self.assertEqual(report["nativity_after"], 31)
-        self.assertEqual(report["nativity_total"], 41, "nothing is dropped")
+        self.assertEqual(
+            report["nativity_forms"],
+            [
+                {"id": "vigil", "broke": False, "seated": 11,
+                 "before": 0, "after": 0, "total": 11},
+                {"id": "night", "broke": False, "seated": 11,
+                 "before": 0, "after": 0, "total": 11},
+                {"id": "dawn", "broke": False, "seated": 10,
+                 "before": 0, "after": 0, "total": 10},
+                {"id": "day", "broke": False, "seated": 11,
+                 "before": 0, "after": 0, "total": 11},
+            ],
+        )
 
     def test_an_outside_layer_element_still_holds_the_place_of_its_proper(self) -> None:
         """Absence does not forfeit a seat.
@@ -1121,12 +1783,12 @@ class OrdinaryPage(unittest.TestCase):
         Latin column has since been transcribed and is carried, so 112 of that
         file's 195 elements now hold their Latin and the Te igitur — the example
         this test used for the absent case — is one of them. What remains absent
-        there is absent for a different reason, `no-facing-latin`: the book sets
-        those blocks across the full measure in English and prints no Latin at
-        all, which is the witness's own silence and not a gap in anyone's work.
-        So the absent case is now taken on an element that really is absent, and
-        the held case is asserted beside it, because a control that offers a
-        language must be tested on both.
+        there is absent for one of three source-specific reasons: eight blocks
+        contain a 1962 prayer or form without facing Latin, four belong to the
+        abolished second-oration regime, and seventy-one are the witness's own
+        English apparatus. So the absent case is now taken on an element that
+        really is absent, and the held case is asserted beside it, because a
+        control that offers a language must be tested on both.
 
         The postconciliar file now carries partial English and partial
         antecedent Latin. It must neither describe the Latin as wholly absent
@@ -1136,14 +1798,14 @@ class OrdinaryPage(unittest.TestCase):
         self.assertEqual(
             [one["lang"] for one in report["languages"]["postconciliar"]], ["en", "la"])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["postconciliar"]], [0, 10])
+            [one["held"] for one in report["languages"]["postconciliar"]], [0, 20])
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [195, 112])
+            [one["held"] for one in report["languages"]["roman-1962"]], [189, 112])
         # The Latin the 1962 file does not hold is exactly the elements the
-        # preamble's one reason covers; the next test asserts that count from
-        # the other side.
+        # preamble's three reasons partition; the next test asserts those counts
+        # from the other side.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        self.assertEqual(elements - 112, 83)
+        self.assertEqual(elements - 112, 77)
 
         pater = report["kyrie_in_each"]
         self.assertNotIn("Our Father, who art in heaven", pater["en"])
@@ -1168,9 +1830,9 @@ class OrdinaryPage(unittest.TestCase):
         self.assertNotIn("Not shown: its Latin.", canon["la"])
         self.assertNotIn("no-facing-latin", canon["la"])
 
-        # Absent: this offertory prayer is one of the 83 the book sets to the
-        # full measure in English, so the Latin side names its reason and only
-        # its reason.
+        # Absent: this offertory prayer is one of the eight 1962 prayers/forms
+        # the book sets to the full measure in English, so the Latin side names
+        # its narrow reason and only that reason.
         accendat = report["accendat_in_each"]
         self.assertIn("May the Lord enkindle", accendat["en"])
         self.assertNotIn("May the Lord enkindle", accendat["la"])
@@ -1186,18 +1848,22 @@ class OrdinaryPage(unittest.TestCase):
         asked for the Latin. It is stated in the preamble, with how far it
         reaches, and the elements name it.
 
-        The reach is what moved on 2026-08-20, not the rule: the reason used to
-        be `latin-not-transcribed` over all 195 elements, and now the facing
-        column is carried, so it is `no-facing-latin` over the 83 blocks the
-        book prints in English alone. The preamble must still state it once and
-        say how far it goes, the covered elements must still refer to it without
-        repeating it, and — new with the transcription — an element that holds
-        its Latin must not carry the reason at all.
+        The reach is what moved, not the rule: one blanket reason is now three
+        exact source classifications. In the 1962 target frame their emitted
+        counts are 8, 2, and 67 after six explicit exclusions; source-wide they
+        account for 8, 4, and 71 rows. The preamble must state every emitted
+        reason once and say how far it goes, covered elements must refer to it
+        without repeating it, and an element that holds Latin must not carry a
+        reason at all.
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
         self.assertIn("no-facing-latin", preamble)
-        self.assertIn("83 of 195 elements", preamble)
+        self.assertIn("8 of 189 elements", preamble)
+        self.assertIn("not-in-the-1962-ordo", preamble)
+        self.assertIn("2 of 189 elements", preamble)
+        self.assertIn("witness-own-english", preamble)
+        self.assertIn("67 of 189 elements", preamble)
         self.assertNotIn("undefined", preamble)
         self.assertIn("no-facing-latin", report["accendat_in_each"]["la"])
         self.assertNotIn("no-facing-latin", report["te_igitur_in_each"]["la"])
@@ -1243,8 +1909,6 @@ class OrdinaryPage(unittest.TestCase):
         # The leading mark repeats the element's own speaker and is dropped;
         # what follows it is the words, not another tag.
         self.assertNotIn("Priest Priest", held)
-        self.assertIn("B. V. M.", report["virgin_1861"])
-        self.assertNotIn("℣", report["virgin_1861"])
 
         raw = report["raw_vr"]
         self.assertEqual(raw["received"], "V. Literal call. R. Literal response.")
@@ -1804,29 +2468,31 @@ function dialogueReport(rendered) {
     received: row.receivedText()
   }));
 }
-const eps = all(pc).filter((e) => e.variant);
-const shown = () => eps.filter((e) => P.elementShows(e, pc)).map((e) => e.variant);
-const byDefault = shown();
-P.state.variants['eucharistic-prayer'] = 'ep-iii';
-const whenThird = shown();
-P.state.variants = {};
-
 /* The frame with a real formulary poured into it, as one flat sequence: a
    proper by its name, an element by its key. This is what the page renders, in
    the order it renders it. */
-function pour(file, calendar, key) {
+function pour(file, calendar, key, formId) {
   const mass = read('src/web/data/structure/propers/' + calendar + '.json')
     .masses.find((m) => m.key === key);
+  const form = formId && (mass.forms || []).find((one) => one.id === formId);
+  if (formId && !form) throw new Error('missing stable form ' + key + '/' + formId);
+  const propers = form ? form.propers : mass.propers;
   const frame = P.shownElements(file);
-  const placed = P.seatPropers(mass.propers || [], P.seats(file, frame));
+  const placed = P.seatPropers(propers || [], P.seats(file, frame));
   const events = P.massEvents(frame, placed);
   const out = [];
   for (const event of events) {
     if (event.kind === 'proper') out.push(event.proper.name);
+    if (event.kind === 'proper_choice') {
+      out.push('Choice: ' + event.group);
+    }
     if (event.kind === 'ordinary_element') out.push(event.element.key);
   }
-  const count = (placement) => events.filter(
-    (event) => event.kind === 'proper' && event.placement === placement).length;
+  const properCount = (event) => event.kind === 'proper_choice'
+    ? event.options.reduce((total, option) => total + option.rows.length, 0)
+    : event.kind === 'proper' ? 1 : 0;
+  const count = (placement) => events.reduce((total, event) =>
+    total + (event.placement === placement ? properCount(event) : 0), 0);
   const sequence = events.map((event) => {
     if (event.kind === 'begin_section') {
       return 'begin_section:' + event.section.key;
@@ -1834,12 +2500,32 @@ function pour(file, calendar, key) {
     if (event.kind === 'ordinary_element') {
       return 'ordinary_element:' + event.element.key;
     }
+    if (event.kind === 'proper_choice') {
+      return 'proper_choice:' + event.placement + ':' + event.group + ':' +
+        event.options.map((option) => option.id + '=' + option.rows.map(
+          (row) => row.proper.name).join('+')).join('|');
+    }
     return 'proper:' + event.placement + ':' + event.proper.name;
   });
   const text = events.map((event) => {
     if (event.kind === 'begin_section') return event.section.name;
     if (event.kind === 'ordinary_element') {
       return P.renderElement(event.element, file).receivedText();
+    }
+    if (event.kind === 'proper_choice') {
+      return JSON.stringify({
+        group: event.group, basis: event.basis,
+        options: event.options.map((option) => ({
+          id: option.id,
+          propers: option.rows.map((row) => ({
+            name: row.proper.name, form: row.proper.form,
+            incipit: row.proper.incipit, text: row.proper.text,
+            translations: row.proper.translations,
+            untranslated: row.proper.untranslated,
+            citations: row.proper.citations
+          }))
+        }))
+      });
     }
     const proper = event.proper;
     return JSON.stringify({
@@ -1864,7 +2550,9 @@ const MARKS = new Set(['praeparatio/kyrie-eleison', 'praeparatio/gloria-in-excel
 const easter = pour(tlm, 'roman-1962', 'easter-sunday');
 const pentecost10 = pour(tlm, 'roman-1962', 'pentecost-10');
 const ot18 = pour(pc, 'postconciliar', 'ot-18');
-const nativity = pour(pc, 'postconciliar', 'nativity');
+const nativity = ['vigil', 'night', 'dawn', 'day'].map((id) => ({
+  id: id, result: pour(pc, 'postconciliar', 'nativity', id)
+}));
 const collect = pour(pc, 'postconciliar', 'easter-sunday').order;
 const seat = collect.indexOf('ritus-initiales/collecta');
 
@@ -1948,8 +2636,6 @@ const orateRendered = P.renderElement(orateElement, pc);
 P.state.ordinaryLang = null;
 
 process.stdout.write(JSON.stringify({
-  shown_by_default: byDefault,
-  shown_when_third_chosen: whenThird,
   languages: { postconciliar: pc.languages, 'roman-1962': tlm.languages },
   kyrie_in_each: inEach(pc, 'ritus-communionis/pater-noster'),
   te_igitur_in_each: inEach(tlm, 'canon/te-igitur'),
@@ -1958,16 +2644,15 @@ process.stdout.write(JSON.stringify({
   preamble_1962: P.ordinaryPreamble(tlm).text(),
   versicles_1861: P.renderElement(
     all(tlm).find((e) => e.key === 'praeparatio/dominus-vobiscum'), tlm).text(),
-  virgin_1861: P.renderElement(
-    all(tlm).find((e) => e.key === 'oblatio/rubrica-collecta-concede'), tlm).text(),
   kyrie: P.renderElement(all(pc).find((e) => e.key.endsWith('/kyrie')), pc).text(),
-  prayer_one: P.renderElement(eps.find((e) => e.variant === 'ep-i'), pc).text(),
   te_igitur_1861: P.renderElement(all(tlm).find((e) => e.key === 'canon/te-igitur'), tlm).text(),
   easter_1962: easter.order.filter((one) => MARKS.has(one) || one.indexOf('/') < 0),
-  nativity_broke: nativity.broke,
-  nativity_seated: nativity.seated,
-  nativity_after: nativity.after,
-  nativity_total: nativity.seated + nativity.before + nativity.after,
+  nativity_forms: nativity.map((one) => ({
+    id: one.id, broke: one.result.broke,
+    seated: one.result.seated, before: one.result.before,
+    after: one.result.after,
+    total: one.result.seated + one.result.before + one.result.after
+  })),
   postconciliar_collect: collect.slice(seat, seat + 2),
   event_kinds: easter.kinds,
   pentecost_10_sequence: pentecost10.sequence,

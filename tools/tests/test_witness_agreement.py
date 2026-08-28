@@ -44,6 +44,7 @@ def load_tool(name: str):
 
 
 checker = load_tool("check-calendar-masses")
+propers = load_tool("mass-propers")
 
 EDITION = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 ARTIFACT = (
@@ -51,6 +52,65 @@ ARTIFACT = (
     ".temporal-orations-en"
 )
 SIDECAR = ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+PRE_1955_SIDECAR = (
+    ROOT / "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+)
+CUMMISKEY_TEMPORAL = ROOT / (
+    "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/"
+    "philadelphia-1861/artifacts/temporal-orations-en/temporal-orations-en.tsv"
+)
+
+LASANCE_SAFE_19 = {
+    ("holy-family", "main", "Collect", "all", 1),
+    ("holy-family", "main", "Secret", "all", 1),
+    ("holy-family", "main", "Postcommunion", "all", 1),
+    ("commune-doctorum-pontificis", "main", "Secret", "all", 1),
+    ("commune-doctorum-non-pontificis", "main", "Secret", "all", 1),
+    ("commune-doctorum-pontificis", "main", "Postcommunion", "all", 1),
+    ("comm-s-canuti-regis-martyris", "main", "Collect", "all", 1),
+    ("comm-s-canuti-regis-martyris", "main", "Secret", "all", 1),
+    ("comm-s-canuti-regis-martyris", "main", "Postcommunion", "all", 1),
+    ("commune-summorum-pontificum", "main", "Collect", "all", 1),
+    (
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Collect (In ipso die Dedicationis)",
+        "all",
+        1,
+    ),
+    (
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Secret (Extra ecclesiam ipsam dedicatam)",
+        "all",
+        1,
+    ),
+    (
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Secret (In ipso die Dedicationis)",
+        "all",
+        1,
+    ),
+    (
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Postcommunion (In ipso die Dedicationis)",
+        "all",
+        1,
+    ),
+    ("ss-perpetuae-felicitatis-martyrum", "main", "Postcommunion", "all", 1),
+    (
+        "s-bedae-venerabilis-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1,
+    ),
+    ("comm-s-romani-martyris", "main", "Postcommunion", "all", 1),
+    ("s-gregorii-vii-papae-confessoris", "main", "Collect", "all", 1),
+    ("s-angelae-mericiae-virginis", "main", "Collect", "all", 1),
+}
 
 
 def reading(source_id: str, text: str) -> dict:
@@ -212,6 +272,7 @@ class PageImageProvenanceGate(unittest.TestCase):
         import tomllib
 
         document = tomllib.loads(SIDECAR.read_text(encoding="utf-8"))
+        self.document = document
         self.witnesses = {row["id"]: row for row in document["sources"]}
         self.bound = [
             row
@@ -222,13 +283,94 @@ class PageImageProvenanceGate(unittest.TestCase):
         ]
 
     def test_all_lasance_page_collations_resolve_exactly(self):
-        self.assertEqual(len(self.bound), 13)
+        self.assertEqual(len(self.bound), 32)
         for row in self.bound:
             where = f"{row['mass']}/{row['proper']}"
             self.assertEqual(
                 checker.overlay_entry_source_problems(where, row, self.witnesses),
                 [],
             )
+
+    def test_recovered_tranche_is_exactly_the_safe_nineteen(self):
+        recovered = {
+            (
+                row["mass"],
+                row["form_id"],
+                row["proper"],
+                row["cycle"],
+                row["occurrence"],
+            )
+            for row in self.bound
+            if "reverified 2026-08-27" in row.get("collated", "")
+        }
+        self.assertEqual(recovered, LASANCE_SAFE_19)
+        recovered_rows = [
+            row
+            for row in self.bound
+            if "reverified 2026-08-27" in row.get("collated", "")
+        ]
+        self.assertEqual(len({row["passage_id"] for row in recovered_rows}), 18)
+        shared = [
+            row
+            for row in recovered_rows
+            if row["passage_id"].endswith(".common-doctor-secret")
+        ]
+        self.assertEqual(len(shared), 2)
+
+    def test_supreme_pontiff_insert_and_vianney_remain_refused(self):
+        supreme = [
+            row
+            for row in self.bound
+            if row["mass"] == "commune-summorum-pontificum"
+        ]
+        self.assertEqual(
+            [(row["proper"], row["printed_page"]) for row in supreme],
+            [("Collect", "1302")],
+        )
+        unavailable = {
+            (
+                row["mass"],
+                row["proper"],
+                row["reason"]["kind"],
+            )
+            for row in self.document["untranslated"]
+        }
+        for proper in (
+            "Collect (Altera oratio)",
+            "Secret",
+            "Secret (Altera secreta)",
+            "Postcommunion",
+            "Postcommunion (Altera postcommunio)",
+        ):
+            self.assertIn(
+                ("commune-summorum-pontificum", proper, "rights-withheld"),
+                unavailable,
+            )
+        self.assertIn(
+            ("s-ioannis-mariae-vianney-confessoris", "Collect", "witness-gap"),
+            unavailable,
+        )
+
+    def test_safe_nineteen_inherit_into_pre_1955_without_suppression(self):
+        import tomllib
+
+        child = tomllib.loads(PRE_1955_SIDECAR.read_text(encoding="utf-8"))
+        suppressed = {
+            (
+                row["mass"],
+                row["form_id"],
+                row["proper"],
+                row["cycle"],
+                row["occurrence"],
+            )
+            for row in child["inherited_inapplicable"]
+        }
+        self.assertTrue(LASANCE_SAFE_19.isdisjoint(suppressed))
+        overlay, _untranslated, stale, _witnesses = propers.translation_overlay(
+            "roman-pre-1955"
+        )
+        self.assertEqual(stale, [])
+        self.assertTrue(LASANCE_SAFE_19.issubset(set(overlay)))
 
     def test_a_starting_leaf_cannot_hide_a_missing_second_leaf(self):
         row = copy.deepcopy(
@@ -256,6 +398,19 @@ class PageImageProvenanceGate(unittest.TestCase):
 
 class TheCorpusItself(unittest.TestCase):
     """The rules above, against the file they were written for."""
+
+    def test_leaf_n114_uses_its_visible_printed_page(self):
+        import csv
+
+        with CUMMISKEY_TEMPORAL.open(encoding="utf-8") as handle:
+            rows = [
+                row
+                for row in csv.DictReader(handle, delimiter="\t")
+                if row["ia_leaf"] == "114"
+            ]
+
+        self.assertEqual(len(rows), 3)
+        self.assertEqual({row["printed_page"] for row in rows}, {"101"})
 
     def test_the_sidecar_is_read_twice_and_reports_both_halves(self):
         """Agreement is a finding, not the absence of one.
@@ -338,7 +493,7 @@ class TheCorpusItself(unittest.TestCase):
             if row.get("reason", {}).get("source_id") == EDITION
             and row.get("reason", {}).get("kind") == "rights-withheld"
         ]
-        self.assertEqual(len(unavailable), 406)
+        self.assertEqual(len(unavailable), 348)
         self.assertTrue(all("text" not in row for row in unavailable))
 
     def test_holy_week_is_outside_the_second_witness(self):

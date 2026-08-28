@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-08-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:639b3e374c71b131bc7f5add42cfed59225bce2238e9329e5a8c27b65aa18eef"
+inventory_snapshot = "sha256:e8f2ee47f60adc2f460650fbe33950489ca39c14992e548cf41c2cd91c2a8e72"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
-canonical_catalog_snapshot = "sha256:0367e20d71c0fda44f491b322b08e705a30e8f3769ed1d09afdaf112e43d8de3"
+canonical_catalog_snapshot = "sha256:1d90107fb9f30bc123f980ad8dbbb28460d17ecc7b2d6ec4709770d5f70385a4"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:4cf7067167122043173aca61e914b6d1b4a79806f5a8e98f606cf44de6a9daa2"
+snapshot = "sha256:911706a9eea8c9e85b5a3feec64a9d6b08838262eea13688d482bc183b6a98da"
 families = []
 
 [[review_units]]
@@ -73,7 +73,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/last-supper-calvary-and-the-mass"
-surface_snapshot = "sha256:ef76d89f440116997f85c0b494d15d81277fb153e4955efb5ae2a5b1d6a02c52"
+surface_snapshot = "sha256:2b7ebb442642c906d7526587bc0f2e27467fc63c9914ce80eea55d01b5896f1c"
 review_state = "pending"
 
 [[review_units]]
@@ -363,7 +363,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:fa7c24244f61d981e1c95f9d4b766e1624a0e349f2022aa4cc314504aff4d6cf"
+surface_snapshot = "sha256:f3152171f3686bc88ea92d05e998c1e8754d35d8ce32e3eacf20e4b4ba3b7154"
 review_state = "pending"
 
 [[review_units]]
@@ -448,27 +448,27 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
-surface_snapshot = "sha256:118c13fbc73efd17a0d619a4795cd8ddad9c932b85610f153a99a4c244980413"
+surface_snapshot = "sha256:5cec4879d0fce1b4b1c68ce58328c6b84c96ec7c9f52728521196f8fafe7e514"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
-surface_snapshot = "sha256:c47d01c9afe33244f843c05dadeec75f36c6d48fb4b6024a19de6b8301291462"
+surface_snapshot = "sha256:3797d23d896cad7eeafdb73321b1ad64c67bfd08b61b2c3849b5346dc2e6b1f7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"
-surface_snapshot = "sha256:6aafc753a09676d400736a706c50ff9ca76a9220cf7351209534f181647c2819"
+surface_snapshot = "sha256:84ba9d518e8c1f46e44415f6fefb017eca28f57d246016fc16df002a913d9b9a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-surface_snapshot = "sha256:88ab9dcd4404984d3d2576b19ed821cf2402641936aac9216cc60498c5bdc93b"
+surface_snapshot = "sha256:a7d23bf14aa9024c72d44a77f9ec58131e833593facc51e88dd740806d045561"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
-surface_snapshot = "sha256:9ceeb632a99e70bc40f76ad424d41c922c35914b46b961634c38917526980adf"
+surface_snapshot = "sha256:1117b8c72b5a9c7096b0a6e8a020655695f8e1629ea075aa545faa46646334bf"
 review_state = "pending"
 
 [[review_units]]
@@ -618,7 +618,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-surface_snapshot = "sha256:9d3249d3c8f8e5a861540e11f740fec50ce5baade0e6433db61d962747663d85"
+surface_snapshot = "sha256:d87dfdd7d31c398dd2588b101c3d2e8418dc877523869edbace21447e04efe7c"
 review_state = "pending"
 
 [[review_units]]
@@ -628,7 +628,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:49c33aa4a4c96c000af2b6a8be07478352096d96de0b206c7d6912abd4df2fb7"
+surface_snapshot = "sha256:82ef39483b12bbe66cd04cf8ed9a60ff748a9d81322db7c590280f95976c48a7"
 review_state = "pending"
 
 [[review_units]]

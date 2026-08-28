@@ -93,6 +93,7 @@ DEFAULT_OUT = ROOT / "build/act-history/roman-holy-week"
 # one pass and regenerating it is cheaper than reviewing a diff of it.
 DEFAULT_PLATE = ROOT / "build/act-history/plate"
 DEFAULT_DATA = ROOT / "src" / "web" / "data"
+SOURCE_ARTIFACTS = ROOT / "src" / "sources" / "works"
 SCHEMA_KEY = "acts_schema"
 SCHEMA_VERSION = 1
 
@@ -163,6 +164,13 @@ PAPAL_ACTS = (
 # guidance/sources.md separates availability from review. This file's ceiling is
 # `inspected` and the values below say which of the two ways a reading was got.
 READINGS = ("page-image", "ocr-only", "not-read")
+
+# An act-history witness may identify exact source-library bytes while using
+# them for less than textual verification.  Keep the use ceiling independent
+# of the artifact's availability and rights so a searchable OCR layer cannot
+# become an exact edition witness merely because its hash is known.
+ARTIFACT_WITNESS_EVIDENCE_SCOPES = ("structural-search-only", "textual-witness")
+TARGET_EDITION_CORRESPONDENCE = ("verified", "unverified")
 
 # Whether the act's own instrument was found. A station whose instrument nobody
 # has read is a weaker claim than one whose text is quoted, and the difference
@@ -539,6 +547,37 @@ def load(source: Path) -> dict:
     writing -- it cannot quietly replace.
     """
     return _load(source, seen=[])
+
+
+_SOURCE_ARTIFACT_RECORDS: dict[str, dict] | None = None
+
+
+def source_artifact_records() -> dict[str, dict]:
+    """Return canonical source-library artifact manifests by exact id.
+
+    An act-history witness is a local description of a physical source.  When
+    it names the canonical artifact behind that description, `check` must join
+    the two rather than trusting a second rights or identity assertion.  Walk
+    the manifests instead of reconstructing a path from the id: source-library
+    identities deliberately do not encode storage layout.
+    """
+    global _SOURCE_ARTIFACT_RECORDS
+    if _SOURCE_ARTIFACT_RECORDS is not None:
+        return _SOURCE_ARTIFACT_RECORDS
+    records: dict[str, dict] = {}
+    for path in SOURCE_ARTIFACTS.rglob("artifact.toml"):
+        try:
+            record = tomllib.loads(path.read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as error:
+            raise Problem(f"cannot read canonical source artifact {path}: {error}") from error
+        identifier = record.get("id")
+        if not isinstance(identifier, str) or not identifier:
+            continue
+        if identifier in records:
+            raise Problem(f"canonical source artifact id {identifier!r} is duplicated")
+        records[identifier] = record
+    _SOURCE_ARTIFACT_RECORDS = records
+    return records
 
 
 def _load(source: Path, seen: list[Path]) -> dict:
@@ -1553,6 +1592,15 @@ def render_witness(witness: dict) -> str:
     ]
     if witness.get("ocr_artifact"):
         lines.append(f"artifact:   {witness['ocr_artifact']}")
+    if witness.get("artifact_id"):
+        lines.append(f"source id:  {witness['artifact_id']}")
+        lines.append(f"sha256:     {witness.get('artifact_sha256') or 'unstated'}")
+        lines.append(f"storage:    {witness.get('artifact_storage') or 'unstated'}")
+        lines.append(f"evidence:   {witness.get('evidence_scope') or 'unstated'}")
+        lines.append(
+            "target correspondence: "
+            f"{witness.get('target_edition_correspondence') or 'unstated'}"
+        )
     for field, label in (("attests_basis", "why it attests that act"),
                          ("not_a_station", "why it is not a station"),
                          ("rights_basis", "rights basis"),
@@ -2107,6 +2155,60 @@ def check(data: dict) -> dict:
         attests = witness.get("attests")
         if attests not in acts and attests != "unestablished":
             problems.append(f"witness {witness_id}: attests {attests!r}, which is not an act")
+        artifact_id = witness.get("artifact_id")
+        artifact_sha256 = witness.get("artifact_sha256")
+        if bool(artifact_id) != bool(artifact_sha256):
+            problems.append(
+                f"witness {witness_id}: artifact_id and artifact_sha256 must be stated together"
+            )
+        if artifact_id:
+            evidence_scope = witness.get("evidence_scope")
+            correspondence = witness.get("target_edition_correspondence")
+            if witness.get("artifact_storage") not in ("tracked", "remote", "restricted", "unavailable"):
+                problems.append(
+                    f"witness {witness_id}: artifact_storage must be one of "
+                    "('tracked', 'remote', 'restricted', 'unavailable')"
+                )
+            if evidence_scope not in ARTIFACT_WITNESS_EVIDENCE_SCOPES:
+                problems.append(
+                    f"witness {witness_id}: evidence_scope must be one of "
+                    f"{ARTIFACT_WITNESS_EVIDENCE_SCOPES}"
+                )
+            if correspondence not in TARGET_EDITION_CORRESPONDENCE:
+                problems.append(
+                    f"witness {witness_id}: target_edition_correspondence must be one of "
+                    f"{TARGET_EDITION_CORRESPONDENCE}"
+                )
+            if evidence_scope == "structural-search-only" and correspondence != "unverified":
+                problems.append(
+                    f"witness {witness_id}: structural-search-only evidence cannot claim verified "
+                    "target-edition correspondence"
+                )
+            artifact = source_artifact_records().get(str(artifact_id))
+            if artifact is None:
+                problems.append(
+                    f"witness {witness_id}: artifact_id {artifact_id!r} is not a canonical source artifact"
+                )
+            else:
+                canonical_sha256 = artifact.get("sha256")
+                if artifact_sha256 != canonical_sha256:
+                    problems.append(
+                        f"witness {witness_id}: artifact_sha256 {artifact_sha256!r} does not match "
+                        f"canonical source artifact {artifact_id} sha256 {canonical_sha256!r}"
+                    )
+                canonical_rights = artifact.get("rights_status")
+                if witness.get("rights") != canonical_rights:
+                    problems.append(
+                        f"witness {witness_id}: rights {witness.get('rights')!r} does not match "
+                        f"canonical source artifact {artifact_id} rights_status {canonical_rights!r}"
+                    )
+                canonical_storage = artifact.get("storage")
+                if witness.get("artifact_storage") != canonical_storage:
+                    problems.append(
+                        f"witness {witness_id}: artifact_storage "
+                        f"{witness.get('artifact_storage')!r} does not match canonical source "
+                        f"artifact {artifact_id} storage {canonical_storage!r}"
+                    )
 
     masses = indexed(data.get("masses", []), "id", vocab.group_table)
     for mass_id, mass in sorted(masses.items()):

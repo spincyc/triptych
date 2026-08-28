@@ -5,7 +5,7 @@ edition_id = "edition.catholic-church.missale-romanum.2011-english-cbcew-excerpt
 artifact_type = "publisher-issued-pdf"
 media_type = "application/pdf"
 storage = "remote"
-rights_status = "permission"
+rights_status = "restricted"
 rights_basis = """
 Two layers, and they are different properties.
 
@@ -21,8 +21,10 @@ the Text page, a grant to reproduce the leaflets "for local parish use" -- a
 bounded permission that does not reach a permanent website -- and condition (4)
 of ICEL's clause independently grants no licence to publish in any other form.
 So these exact bytes are identified and hashed and no payload is retained:
-storage = remote. That disposes of the file and withholds nothing of the ICEL
-text, which is publishable under the clause.
+storage = remote and rights_status = restricted. Those fields answer only
+whether the exact CBCEW PDF may be redistributed. They neither withdraw nor
+extend the separately recorded ICEL text permission for a future qualifying
+non-bundled live-site display.
 
 TERRITORY. This is the England-and-Wales publishing state. It witnesses the
 universal ICEL text where the text is universal and it is NOT a witness to a

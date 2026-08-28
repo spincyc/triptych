@@ -13,7 +13,10 @@ import process from 'node:process';
 const ROOT = resolve(process.env.TRIPTYCH_REVIEW_ROOT || resolve(import.meta.dirname, '../..'));
 const CANDIDATE = '/src/web/browser/liturgy/propers-reader.html';
 const CURRENT = '/src/web/browser/liturgy/index.html';
-const DATA = '/build/public-alpha/preview/browse';
+const SOURCE_ONLY = process.env.TRIPTYCH_SOURCE_ONLY === '1';
+const DATA = SOURCE_ONLY ? '/src/web/data' : '/build/public-alpha/preview/browse';
+const SOURCE_PROPERS = (process.env.TRIPTYCH_SOURCE_PROPERS ||
+  '.scratch/propers-source-structure/structure/propers').replace(/^\/+|\/+$/g, '');
 const CYCLE_UNTRANSLATED_DATA = DATA + '-cycle-untranslated';
 const NO_WITNESS_DATA = DATA + '-no-witness';
 const captureAt = process.argv.indexOf('--capture-dir');
@@ -81,15 +84,26 @@ function server() {
           response.end('{'); return;
         }
       }
-      const cycleUntranslated = relative.startsWith(
-        'build/public-alpha/preview/browse-cycle-untranslated/'
-      );
+      const cycleUntranslated = relative.startsWith(SOURCE_ONLY
+        ? 'src/web/data-cycle-untranslated/'
+        : 'build/public-alpha/preview/browse-cycle-untranslated/');
       if (cycleUntranslated) {
-        relative = relative.replace('/browse-cycle-untranslated/', '/browse/');
+        relative = SOURCE_ONLY
+          ? relative.replace('/data-cycle-untranslated/', '/data/')
+          : relative.replace('/browse-cycle-untranslated/', '/browse/');
       }
-      const noWitness = relative.startsWith('build/public-alpha/preview/browse-no-witness/');
+      const noWitness = relative.startsWith(SOURCE_ONLY
+        ? 'src/web/data-no-witness/' : 'build/public-alpha/preview/browse-no-witness/');
       if (noWitness) {
-        relative = relative.replace('/browse-no-witness/', '/browse/');
+        relative = SOURCE_ONLY
+          ? relative.replace('/data-no-witness/', '/data/')
+          : relative.replace('/browse-no-witness/', '/browse/');
+      }
+      if (SOURCE_ONLY && /^src\/web\/data\/[^/]+\/chapters\//.test(relative)) {
+        relative = relative.replace(/^src\/web\/data\//, 'src/sources/bibles/');
+      }
+      if (SOURCE_ONLY && /^src\/web\/data\/structure\/propers\/[^/]+\.json$/.test(relative)) {
+        relative = relative.replace('src/web/data/structure/propers', SOURCE_PROPERS);
       }
       const file = resolve(ROOT, relative || 'README.md');
       if (file !== ROOT && !file.startsWith(ROOT + sep)) throw new Error('outside root');
@@ -119,6 +133,17 @@ function server() {
           A: {
             citations: [], text: 'A Latin sibling sentinel',
             unavailable_translations: [absence('A', 'rights-restricted')]
+          },
+          B: {
+            citations: [], text: null,
+            latin: {
+              target: absence('B', 'unavailable').target,
+              state: 'unavailable', held: false, available: false, withheld: false
+            },
+            translations: [{
+              lang: 'en', text: 'B held English without a Latin body',
+              source_id: 'synthetic.cycle-b-held-english', rights: 'Public Domain'
+            }]
           },
           C: {
             citations: [], text: 'C Latin safe sibling',
@@ -238,6 +263,8 @@ async function waitFor(cdp, expression, label, attempts = 180) {
 }
 
 function hash(values) { return '#' + new URLSearchParams(values).toString(); }
+const MULTIPLE_TRANSLATION_WITNESS =
+  'edition.edward-caswall.lyra-catholica.london-1849';
 const STATES = Object.freeze({
   roman: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   post: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
@@ -254,13 +281,14 @@ const STATES = Object.freeze({
   invalid: hash({ missal: 'not-a-missal', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   invalidMass: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'not-a-mass', bible: 'douay-rheims', orations: 'la' }),
   fast: hash({ missal: 'postconciliar', type: 'marian', mass: 'visitation-blessed-virgin-mary', bible: 'douay-rheims', orations: 'la' }),
-  romanEnglishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en' }),
-  romanEnglishWitness: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'en', 'translation-witness': 'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861' }),
-  romanEnglishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-unius-martyris-1', bible: 'douay-rheims', orations: 'en' }),
-  romanEnglishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
+  englishMultiple: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'easter-sunday', bible: 'douay-rheims', orations: 'en' }),
+  englishWitness: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'easter-sunday', bible: 'douay-rheims', orations: 'en', 'translation-witness': MULTIPLE_TRANSLATION_WITNESS }),
+  englishOne: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
+  englishNone: hash({ missal: 'roman-1962', type: 'sanctoral', mass: 's-hilarii-episcopi-confessoris-ecclesiae-doctoris', bible: 'douay-rheims', orations: 'en' }),
   romanChristmasForms: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la' }),
   romanChristmasNight: hash({ missal: 'roman-1962', type: 'christological', mass: 'nativitate-domini-octave', bible: 'douay-rheims', orations: 'la', form: 'night' }),
-  romanEnglishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
+  postPentecostDay: hash({ missal: 'postconciliar', type: 'seasonal', mass: 'pentecost', bible: 'douay-rheims', orations: 'la', form: 'day' }),
+  englishWithoutLatinBody: hash({ missal: 'roman-1962', type: 'common', mass: 'commune-virginum-4', bible: 'douay-rheims', orations: 'en' }),
   pre1955Advent: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la' }),
   pre1955Palm: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'palm-sunday', bible: 'douay-rheims', orations: 'la' }),
   pre1955Supper: hash({ missal: 'roman-pre-1955', type: 'seasonal', mass: 'mass-of-the-lords-supper', bible: 'douay-rheims', orations: 'la' }),
@@ -268,6 +296,7 @@ const STATES = Object.freeze({
   invalidLocation: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la', location: 'proper/roman-1962/advent-1/999' }),
   validLocation: hash({ missal: 'roman-1962', type: 'seasonal', mass: 'advent-1', bible: 'douay-rheims', orations: 'la', location: 'proper/roman-1962/advent-1/003' }),
   cycleAUntranslated: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'en', cycle: 'A' }),
+  cycleBHeldEnglish: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'en', cycle: 'B' }),
   cycleCUntranslated: hash({ missal: 'postconciliar', type: 'christological', mass: 'transfiguration-lord', bible: 'douay-rheims', orations: 'en', cycle: 'C' })
 });
 
@@ -503,6 +532,21 @@ async function assertions(cdp, base) {
     assert.match(await evaluate(cdp, `document.querySelector('#formulary-meta').textContent`),
       /Form: Ad primam Missam in nocte/);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    await click(cdp, '[data-reader-action="browse"]');
+    const alternateBible = await evaluate(cdp, `(() => {
+      const select = document.querySelector('#reader-bible');
+      return [...select.options].find(row => row.value && row.value !== select.value)?.value || '';
+    })()`);
+    assert.ok(alternateBible, 'Browse has no alternate Bible with which to test form retention');
+    await select(cdp, '#reader-bible', alternateBible);
+    await click(cdp, '#browse-form .surface-apply');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.form === 'night' && ` +
+      `propersReaderDebug.state.bible.id === ${JSON.stringify(alternateBible)}`,
+      'form retention after Bible change');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('form')`), 'night');
+    assert.match((await snapshot(cdp)).meta, /Form: Ad primam Missam in nocte/);
   });
 
   await check('pre-1955 coverage, inheritance, and departures remain visible and print-safe', async () => {
@@ -517,7 +561,8 @@ async function assertions(cdp, base) {
     await candidate(cdp, base, STATES.pre1955Palm);
     value = await snapshot(cdp);
     assert.match(value.source, /Departure: Replaced/);
-    assert.match(value.source, /Also: Renamed, Reslotted/);
+    assert.match(value.source, /Also: Renamed/);
+    assert.match(value.source, /Reslotted/);
 
     await candidate(cdp, base, STATES.pre1955Supper);
     value = await snapshot(cdp);
@@ -571,7 +616,7 @@ async function assertions(cdp, base) {
       { eventId: wanted });
   });
 
-  await check('A and C use only their own typed untranslated state', async () => {
+  await check('cycle branches keep typed absences isolated and held translations reachable', async () => {
     const cases = [
       [STATES.cycleAUntranslated, 'rights-restricted', /rights restricted/i,
         'A Latin sibling sentinel', 'C Latin safe sibling'],
@@ -595,13 +640,29 @@ async function assertions(cdp, base) {
       else assert.doesNotMatch(row.text, new RegExp(present));
       assert.doesNotMatch(row.text, new RegExp(absent));
     }
+
+    await candidate(cdp, base, STATES.cycleBHeldEnglish, CYCLE_UNTRANSLATED_DATA);
+    const held = await evaluate(cdp, `(() => {
+      const event = propersReaderDebug.semantic.events.find(one => one.editionSlotLabel === 'Collect');
+      const node = event && document.querySelector('[data-semantic-event-id="' + event.id + '"]');
+      const composed = node && node.querySelector('.composed');
+      return {
+        outcome: propersReaderDebug.outcome,
+        text: composed && composed.textContent.replace(/\\s+/g, ' ').trim(),
+        lang: composed && composed.lang
+      };
+    })()`);
+    assert.equal(held.outcome, 'ready');
+    assert.match(held.text, /B held English without a Latin body/);
+    assert.equal(held.lang, 'en');
   });
 
   await check('held English remains readable when the corresponding Latin body is unavailable', async () => {
-    await candidate(cdp, base, STATES.romanEnglishWithoutLatinBody);
+    await candidate(cdp, base, STATES.englishWithoutLatinBody);
     const value = await snapshot(cdp);
     assert.equal(value.outcome, 'ready', JSON.stringify(value));
-    assert.match(value.source, /Translation witness: The Roman Missal translated into the English language/);
+    assert.match(value.source,
+      /Translation witness: (?:Antecedent English \(not the Missale Romanum 2002's text\): )?The Roman Missal translated into the English language/);
     assert.match(value.source, /Rights: Public Domain/);
     const row = await evaluate(cdp, `(() => {
       const event = propersReaderDebug.semantic.events.find(one =>
@@ -618,6 +679,78 @@ async function assertions(cdp, base) {
     assert.match(row.composed, /This is a wise virgin, and one of the number of the prudent/);
     assert.equal(row.lang, 'en');
     assert.doesNotMatch(row.text, /Latin text unavailable|No English body is held/i);
+  });
+
+  await check('source alternatives remain one atomic form-exact choice in source order', async () => {
+    await candidate(cdp, base, STATES.postPentecostDay);
+    const value = await evaluate(cdp, `(() => {
+      const semantic = propersReaderDebug.semantic;
+      const events = semantic.events;
+      const choice = events.find(row => row.kind === 'proper-choice');
+      const semanticIds = events.map(row => row.id);
+      return {
+        outcome: propersReaderDebug.outcome,
+        formulary: semantic.resolved.formulary,
+        form: semantic.resolved.form,
+        semanticIds,
+        domIds: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId),
+        choice: choice && {
+          id: choice.id, group: choice.group, selection: choice.selection,
+          options: choice.options.map(option => ({
+            id: option.id, events: option.events.map(row => row.id)
+          }))
+        },
+        unresolved: semantic.unresolvedChoices.map(row => ({
+          id: row.id, options: row.options.map(option => option.id)
+        })),
+        domChoice: {
+          group: document.querySelector('.proper-choice')?.dataset.properChoice || null,
+          state: document.querySelector('.proper-choice')?.dataset.choiceState || null,
+          options: [...document.querySelectorAll('.proper-choice-option')]
+            .map(row => [row.dataset.properChoiceOption, row.dataset.choiceStatus]),
+          members: [...document.querySelectorAll('.proper-choice-member')]
+            .map(row => row.dataset.properChoiceMemberEvent),
+          note: document.querySelector('.proper-choice-note')?.textContent || ''
+        }
+      };
+    })()`);
+    const expectedIds = [
+      'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
+      ...Array.from({ length: 10 }, (_row, index) =>
+        'proper/postconciliar/pentecost/' + String(index + 17).padStart(3, '0'))
+    ];
+    assert.equal(value.outcome, 'ready');
+    assert.equal(value.formulary, 'pentecost');
+    assert.equal(value.form, 'day');
+    assert.deepEqual(value.semanticIds, expectedIds);
+    assert.deepEqual(value.domIds, expectedIds);
+    assert.deepEqual(value.choice, {
+      id: 'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
+      group: 'entrance-antiphon',
+      selection: { state: 'required', option: null },
+      options: [
+        { id: 'spiritus-domini', events: ['proper/postconciliar/pentecost/015'] },
+        { id: 'caritas-dei', events: ['proper/postconciliar/pentecost/016'] }
+      ]
+    });
+    assert.deepEqual(value.unresolved, [{
+      id: value.choice.id, options: ['spiritus-domini', 'caritas-dei']
+    }]);
+    assert.deepEqual(value.domChoice, {
+      group: 'entrance-antiphon', state: 'required',
+      options: [['spiritus-domini', 'available'], ['caritas-dei', 'available']],
+      members: ['proper/postconciliar/pentecost/015', 'proper/postconciliar/pentecost/016'],
+      note: 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'
+    });
+    assert.ok(value.semanticIds.indexOf('proper/postconciliar/pentecost/020') <
+      value.semanticIds.indexOf('proper/postconciliar/pentecost/021'));
+    assert.ok(value.semanticIds.indexOf('proper/postconciliar/pentecost/021') <
+      value.semanticIds.indexOf('proper/postconciliar/pentecost/022'));
+
+    const candidateProjection = await evaluate(cdp, 'propersReaderDebug.semantic');
+    await current(cdp, base, STATES.postPentecostDay);
+    assert.deepEqual(await evaluate(cdp, 'propersReaderDebug.semantic'), candidateProjection);
   });
   if (process.env.TRIPTYCH_P0_ONLY === '1') return;
 
@@ -640,7 +773,9 @@ async function assertions(cdp, base) {
     assert.deepEqual(wanted.texts, held);
     await candidate(cdp, base, STATES.alternative);
     const alternative = await snapshot(cdp);
-    assert.ok(alternative.semantic.events.some(row => row.editionSlotLabel === 'First Reading (alternative)'));
+    assert.ok(alternative.semantic.events.some(row => row.kind === 'proper-choice' &&
+      row.options.some(option => option.events.some(event =>
+        event.editionSlotLabel === 'First Reading (alternative)'))));
     await current(cdp, base, STATES.alternative);
     assert.deepEqual(alternative.texts, await evaluate(cdp, `[...document.querySelectorAll('#reader-document .proper')].map(row => row.textContent.replace(/\\s+/g, ' ').trim())`));
   });
@@ -668,6 +803,20 @@ async function assertions(cdp, base) {
     assert.equal(exact.state.cycle, 'A');
     assert.equal(await evaluate(cdp, `document.querySelectorAll('.cycle-choice').length`), 0);
     assert.equal(exact.semantic.events.find(row => row.editionSlotLabel === 'Gospel').selected.cycle, 'A');
+    await click(cdp, '[data-reader-action="browse"]');
+    await select(cdp, '#reader-orations', 'en');
+    const form = await browseSnapshot(cdp);
+    if (!form.witnessHidden) {
+      assert.ok(form.witnesses[1], 'English cycle selection exposes no held witness');
+      await select(cdp, '#reader-witness', form.witnesses[1]);
+    }
+    await click(cdp, '#browse-form .surface-apply');
+    await waitFor(cdp,
+      `propersReaderDebug.ready && propersReaderDebug.state.cycle === 'A' && ` +
+      `propersReaderDebug.state.languages.orations === 'en'`,
+      'cycle retention after language change');
+    assert.equal(await evaluate(cdp,
+      `new URLSearchParams(location.hash.slice(1)).get('cycle')`), 'A');
     await candidate(cdp, base, STATES.cycleBad);
     assert.equal((await snapshot(cdp)).outcome, 'invalid');
   });
@@ -689,25 +838,24 @@ async function assertions(cdp, base) {
     assert.equal(await evaluate(cdp,
       `new URLSearchParams(location.hash.slice(1)).has('_candidate-cycle')`), false);
 
-    await candidate(cdp, base, STATES.romanEnglishWitness);
+    await candidate(cdp, base, STATES.englishWitness);
     assert.equal((await snapshot(cdp)).outcome, 'ready');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.state.languages.translationWitness'),
-      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+      MULTIPLE_TRANSLATION_WITNESS);
 
-    const legacyWitness = STATES.romanEnglishMultiple +
-      '&_candidate-translation-witness=' + encodeURIComponent(
-        'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+    const legacyWitness = STATES.englishMultiple +
+      '&_candidate-translation-witness=' + encodeURIComponent(MULTIPLE_TRANSLATION_WITNESS);
     await candidate(cdp, base, legacyWitness);
     assert.equal((await snapshot(cdp)).outcome, 'ready');
     assert.equal(await evaluate(cdp, 'propersReaderDebug.state.languages.translationWitness'),
-      'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
+      MULTIPLE_TRANSLATION_WITNESS);
 
     for (const state of [
       STATES.cycleMixed,
       STATES.cycleA + '&cycle=A',
       STATES.cycles + '&cycle=',
-      STATES.romanEnglishWitness + '&_candidate-translation-witness=' + encodeURIComponent(
-        'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861'),
+      STATES.englishWitness + '&_candidate-translation-witness=' + encodeURIComponent(
+        MULTIPLE_TRANSLATION_WITNESS),
       STATES.alternativeUnsupported
     ]) {
       await candidate(cdp, base, state);
@@ -749,7 +897,7 @@ async function assertions(cdp, base) {
   });
 
   await check('one formulary-relevant witness resolves deterministically without a control', async () => {
-    await candidate(cdp, base, STATES.romanEnglishOne);
+    await candidate(cdp, base, STATES.englishOne);
     const state = await evaluate(cdp, 'propersReaderDebug.state');
     assert.equal(state.languages.translationWitness,
       'edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861');
@@ -761,7 +909,7 @@ async function assertions(cdp, base) {
   });
 
   await check('multiple relevant witnesses require an explicit formulary-specific choice', async () => {
-    await candidate(cdp, base, STATES.romanEnglishMultiple);
+    await candidate(cdp, base, STATES.englishMultiple);
     assert.ok((await snapshot(cdp)).semantic.unresolvedChoices.some(row =>
       row.id.startsWith('translation-witness:')));
     await click(cdp, '[data-reader-action="browse"]');
@@ -782,10 +930,12 @@ async function assertions(cdp, base) {
   });
 
   await check('no held witness remains an explicit unavailable or partial result', async () => {
-    await candidate(cdp, base, STATES.romanEnglishNone, NO_WITNESS_DATA);
+    await candidate(cdp, base, STATES.englishNone, NO_WITNESS_DATA);
     const value = await snapshot(cdp);
     assert.equal(value.outcome, 'ready', JSON.stringify(value.error)); assert.equal(value.noticeHidden, false);
-    assert.match(value.notice, /not held|not yet transcribed|unavailable|coverage/i);
+    assert.ok(value.semantic.coverage.some(row =>
+      row.state === 'unavailable' && row.scope === 'proper-translation:en'));
+    assert.ok(value.texts.some(row => /No English (?:body is held|translation is recorded)/i.test(row)));
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
@@ -793,7 +943,7 @@ async function assertions(cdp, base) {
   });
 
   await check('switching a chosen translation witness to Latin removes private witness state', async () => {
-    await candidate(cdp, base, STATES.romanEnglishMultiple);
+    await candidate(cdp, base, STATES.englishMultiple);
     await click(cdp, '[data-reader-action="browse"]');
     const witness = await evaluate(cdp,
       `document.querySelector('#reader-witness').options[1].value`);
@@ -812,12 +962,12 @@ async function assertions(cdp, base) {
   });
 
   await check('edition witnesses irrelevant to the formulary are neither required nor accepted', async () => {
-    await candidate(cdp, base, STATES.romanEnglishOne);
+    await candidate(cdp, base, STATES.englishOne);
     await click(cdp, '[data-reader-action="browse"]');
     const form = await browseSnapshot(cdp);
     assert.equal(form.witnessHidden, true); assert.equal(form.witnessDisplay, 'none');
     await escape(cdp);
-    const invalidWitness = STATES.romanEnglishOne +
+    const invalidWitness = STATES.englishOne +
       '&translation-witness=' + encodeURIComponent(
         'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en');
     await candidate(cdp, base, invalidWitness);
@@ -1028,14 +1178,14 @@ async function assertions(cdp, base) {
   });
 
   await check('translation witness survives direct load, reload, Back, and Forward', async () => {
-    await candidate(cdp, base, STATES.romanEnglishMultiple);
-    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.romanEnglishWitness.slice(1))}`);
+    await candidate(cdp, base, STATES.englishMultiple);
+    await evaluate(cdp, `location.hash=${JSON.stringify(STATES.englishWitness.slice(1))}`);
     await waitFor(cdp,
       `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ` +
-      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      `${JSON.stringify(MULTIPLE_TRANSLATION_WITNESS)}`,
       'translation witness navigation');
     const source = await evaluate(cdp, `document.querySelector('#formulary-source').textContent`);
-    assert.match(source, /Translation witness: The Roman Missal translated into the English language/);
+    assert.match(source, /Translation witness: Lyra Catholica/);
     assert.match(source, /Rights: Public Domain/);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'print' });
     assert.notEqual(await evaluate(cdp,
@@ -1046,7 +1196,7 @@ async function assertions(cdp, base) {
       `performance.getEntriesByType('navigation')[0]?.type === 'reload' && window.propersReaderDebug && ` +
       `window.propersReaderDebug && propersReaderDebug.ready && ` +
       `propersReaderDebug.state.languages.translationWitness === ` +
-      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      `${JSON.stringify(MULTIPLE_TRANSLATION_WITNESS)}`,
       'translation witness reload');
     await evaluate(cdp, 'history.back()');
     await waitFor(cdp,
@@ -1055,7 +1205,7 @@ async function assertions(cdp, base) {
     await evaluate(cdp, 'history.forward()');
     await waitFor(cdp,
       `propersReaderDebug.ready && propersReaderDebug.state.languages.translationWitness === ` +
-      `${JSON.stringify('edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861')}`,
+      `${JSON.stringify(MULTIPLE_TRANSLATION_WITNESS)}`,
       'translation witness history forward');
   });
 
@@ -1202,15 +1352,15 @@ async function captures(cdp, base) {
   }
   await candidate(cdp, base, STATES.cycleA);
   await shot(cdp, resolve(captureDir, 'propers-reader-public-cycle-a-393x852.png'));
-  await candidate(cdp, base, STATES.romanEnglishWitness);
+  await candidate(cdp, base, STATES.englishWitness);
   await shot(cdp, resolve(captureDir, 'propers-reader-public-translation-witness-393x852.png'));
   await candidate(cdp, base, STATES.roman); await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-roman-1962-latin-browse-393x852.png')); await escape(cdp);
   await candidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-postconciliar-latin-browse-393x852.png')); await escape(cdp);
-  await candidate(cdp, base, STATES.romanEnglishMultiple); await click(cdp, '[data-reader-action="browse"]');
+  await candidate(cdp, base, STATES.englishMultiple); await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-translation-multiple-witness-393x852.png')); await escape(cdp);
-  await candidate(cdp, base, STATES.romanEnglishNone); await click(cdp, '[data-reader-action="browse"]');
+  await candidate(cdp, base, STATES.englishNone); await click(cdp, '[data-reader-action="browse"]');
   await shot(cdp, resolve(captureDir, 'propers-reader-translation-no-witness-393x852.png')); await escape(cdp);
   await freshCandidate(cdp, base, STATES.post); await click(cdp, '[data-reader-action="browse"]');
   const raceGate = armGate((path) => path.endsWith('/structure/propers/roman-1962.json'));

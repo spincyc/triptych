@@ -5,6 +5,7 @@ import json
 import subprocess
 import sys
 import tempfile
+import tomllib
 import unittest
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
@@ -22,6 +23,7 @@ from _proper_latin import (  # noqa: E402
     SCHEMA,
     SIDECAR_SUFFIX,
     STRUCTURE_SURFACES,
+    SURFACES,
     LatinKey,
     body_owners,
     decision_for,
@@ -91,6 +93,28 @@ occurrence = 1
 '''
 
 
+def permitted_nonexact_fields() -> list[str]:
+    return [
+        'provenance_status = "collated"',
+        'source_id = "artifact.target.unresolved"',
+        'source_date = "1962"',
+        'locator = "p. 1"',
+        'relationship = "collated-non-exact"',
+        'verification_source_id = "artifact.historical.public-domain"',
+        'verification_locator = "p. 1"',
+        "transformations = []",
+        'provenance_evidence = "Per-text comparison"',
+        'provenance_authority = "Human page-image collation"',
+        'provenance_confidence = "high"',
+        'publication_status = "permitted"',
+        'publication_basis = "non-exact-historical-witness"',
+        'surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]',
+        'publication_source_ids = ["artifact.target.unresolved"]',
+        'publication_locator = "artifact rights record"',
+        'publication_evidence = "Synthetic non-exact claim"',
+    ]
+
+
 class ProductionLedgerTests(unittest.TestCase):
     def test_ledgers_cover_every_direct_text_without_name_collapse(self) -> None:
         paths = [
@@ -113,7 +137,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 529}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 519}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -127,7 +151,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(count, len(records))
 
-    def test_initial_ledgers_make_no_blanket_public_domain_or_vatican_claim(self) -> None:
+    def test_production_ledgers_publish_only_the_ten_exact_lasance_recoveries(self) -> None:
         permitted = []
         nonpermitted = []
         for calendar in ("postconciliar", "roman-1962", "roman-pre-1955"):
@@ -136,10 +160,56 @@ class ProductionLedgerTests(unittest.TestCase):
                 (permitted if row["publication_status"] == "permitted" else nonpermitted).append(
                     (calendar, key, row)
                 )
-        # The ledgers record provenance and rights state, not publishable
-        # liturgical wording or placeholder availability notices.
-        self.assertEqual([], permitted)
-        self.assertEqual(858, len(nonpermitted))
+        expected_permitted = {
+            LatinKey(
+                "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
+                "",
+                proper,
+                occurrence=1,
+            )
+            for proper in ("Collect", "Secret", "Postcommunion")
+        } | {
+            LatinKey(mass, "", "Collect", occurrence=1)
+            for mass in (
+                "s-petri-canisii-confessoris-ecclesiae-doctoris",
+                "s-ephraem-syri-diaconi-confessoris-ecclesiae",
+                "s-ioannis-eudes-confessoris",
+                "s-damasi-i-papae-confessoris",
+            )
+        } | {
+            LatinKey("s-silvestri-abbatis", "", proper, occurrence=1)
+            for proper in ("Collect", "Secret", "Postcommunion")
+        }
+        self.assertEqual(
+            expected_permitted,
+            {key for calendar, key, _ in permitted if calendar == "roman-1962"},
+        )
+        self.assertEqual(10, len(permitted))
+        publication_artifact = (
+            "artifact.francis-xavier-lasance.the-new-roman-missal."
+            "benziger-revised-1945.roman-1962-collated-latin-propers-0bf4adcc"
+        )
+        self.assertTrue(
+            all(
+                calendar == "roman-1962"
+                and row.get("body_status") is None
+                and row["provenance_status"] == "collated"
+                and row["relationship"] == "collated-exact"
+                and row["publication_basis"] == "public-domain"
+                and set(row["surfaces"]) == set(SURFACES)
+                and row["publication_source_ids"] == [publication_artifact]
+                and row["source_id"].startswith(
+                    "passage.francis-xavier-lasance.the-new-roman-missal."
+                    "benziger-revised-1945.roman-1962-collated-"
+                )
+                and row["verification_source_id"].startswith(
+                    "passage.catholic-church.missale-romanum."
+                    "vatican-typica-1962.sanctoral-"
+                )
+                for calendar, _, row in permitted
+            )
+        )
+        self.assertEqual(848, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -206,7 +276,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(837, len(unresolved))
+        self.assertEqual(827, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
@@ -224,6 +294,147 @@ class ProductionLedgerTests(unittest.TestCase):
 
 
 class ModelTests(unittest.TestCase):
+    def test_nonexact_historical_witness_cannot_be_made_publishable(self) -> None:
+        body = "Oratio non exacte collata."
+        all_surfaces = [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git",
+        ]
+        entry = "\n".join(
+            [f'text_sha256 = "{text_sha256(body)}"', *permitted_nonexact_fields()]
+        )
+        invalid = tomllib.loads(toml_ledger(entry))["entries"][0]
+        with tempfile.TemporaryDirectory() as room:
+            sources = Path(room) / "sources"
+            calendars = sources / "calendars"
+            inventories = sources / "inventories"
+            (calendars / "demo").mkdir(parents=True)
+            inventories.mkdir()
+            (calendars / "demo/propers.yaml").write_text(
+                yaml.safe_dump(
+                    demo_document(
+                        {"name": "Collect", "source": "composed", "text": body}
+                    ),
+                    sort_keys=False,
+                ),
+                encoding="utf-8",
+            )
+            path = inventories / f"demo{SIDECAR_SUFFIX}"
+            path.write_text(toml_ledger(entry), encoding="utf-8")
+            records, problems = read_sidecar(path)
+            loaded, loader_problems = publication_records(
+                calendars,
+                "demo",
+                inventories,
+                registered_sources={
+                    "artifact.target.unresolved": {
+                        "record_type": "artifact",
+                        "rights_status": "unresolved",
+                    },
+                    "artifact.historical.public-domain": {
+                        "record_type": "artifact",
+                        "rights_status": "public-domain",
+                    },
+                },
+            )
+        self.assertEqual({}, records)
+        self.assertTrue(
+            any("intrinsically nonpublishable" in problem for problem in problems),
+            problems,
+        )
+        self.assertEqual({}, loaded)
+        self.assertTrue(
+            any(
+                "intrinsically nonpublishable" in problem
+                for problem in loader_problems
+            ),
+            loader_problems,
+        )
+
+        # Projection remains fail-closed even if an unvalidated caller hands the
+        # decision layer this row directly.  Neither the browser/download/print
+        # structure nor the CLI may become an alternate publication path.
+        key = LatinKey("day", "", "Collect", occurrence=1)
+        decision = decision_for(key, body, {key: invalid})
+        self.assertFalse(decision.permits(all_surfaces))
+        self.assertIn(
+            "non-exact-historical-witness",
+            decision.projection(all_surfaces)["reason"],
+        )
+        mass = demo_document(
+            {"name": "Collect", "source": "composed", "text": body}
+        )["sections"]["01"]["masses"][0]
+        for surfaces in (STRUCTURE_SURFACES, CLI_SURFACES):
+            with self.subTest(surfaces=sorted(surfaces)):
+                proper = sanitize_mass(mass, {key: invalid}, surfaces)["propers"][0]
+                self.assertIsNone(proper["text"])
+                self.assertTrue(proper["latin"]["withheld"])
+                self.assertIn(
+                    "non-exact-historical-witness", proper["latin"]["reason"]
+                )
+
+    def test_never_held_body_is_not_a_removed_body_or_latin_ledger_owner(self) -> None:
+        source_id = "artifact.public-domain.example"
+        for reason in (
+            {"kind": "witness-gap", "source_id": source_id},
+            {"kind": "no-exemplar"},
+        ):
+            with self.subTest(reason=reason["kind"]), tempfile.TemporaryDirectory() as room:
+                status = {
+                    "state": "unavailable",
+                    "scope": "proper-body",
+                    "reasons": [reason],
+                }
+                document = demo_document(
+                    {
+                        "name": "Collect",
+                        "source": "composed",
+                        "text_status": status,
+                    }
+                )
+                self.assertEqual([], list(body_owners(document)))
+
+                sources = Path(room) / "sources"
+                calendar_dir = sources / "calendars/demo"
+                inventory_dir = sources / "inventories"
+                calendar_dir.mkdir(parents=True)
+                inventory_dir.mkdir()
+                calendar = calendar_dir / "propers.yaml"
+                calendar.write_text(
+                    yaml.safe_dump(document, sort_keys=False), encoding="utf-8"
+                )
+                sidecar = inventory_dir / f"demo{SIDECAR_SUFFIX}"
+                empty_ledger = render_unresolved_sidecar("demo", document).replace(
+                    "\n[defaults]\n", "\nentries = []\n\n[defaults]\n", 1
+                )
+                sidecar.write_text(
+                    empty_ledger, encoding="utf-8"
+                )
+
+                records, ledger_problems = read_sidecar(sidecar)
+                self.assertEqual({}, records)
+                self.assertEqual([], ledger_problems)
+                self.assertEqual(
+                    [],
+                    sidecar_problems(
+                        [calendar],
+                        inventory_root=inventory_dir,
+                        required=True,
+                        registered_source_ids={source_id},
+                    ),
+                )
+                projected = sanitize_mass(
+                    document["sections"]["01"]["masses"][0],
+                    records,
+                    STRUCTURE_SURFACES,
+                )["propers"][0]
+                self.assertEqual(status, projected["text_status"])
+                self.assertNotIn("latin", projected)
+
     def test_removed_body_retains_hash_without_fabricating_provenance(self) -> None:
         former = "Corpus quarantined."
         source_id = "artifact.public-domain.example"
@@ -677,7 +888,22 @@ class ProjectionTests(unittest.TestCase):
             yaml.safe_dump(self.document, sort_keys=False, allow_unicode=True), encoding="utf-8"
         )
         (self.inventories / f"demo{SIDECAR_SUFFIX}").write_text(
-            render_unresolved_sidecar("demo", self.document), encoding="utf-8"
+            "\n".join(
+                line
+                for source_line in render_unresolved_sidecar(
+                    "demo", self.document
+                ).splitlines()
+                for line in (
+                    [source_line]
+                    if not source_line.startswith("text_sha256 = ")
+                    else [
+                        source_line,
+                        *permitted_nonexact_fields(),
+                    ]
+                )
+            )
+            + "\n",
+            encoding="utf-8",
         )
 
     def tearDown(self) -> None:

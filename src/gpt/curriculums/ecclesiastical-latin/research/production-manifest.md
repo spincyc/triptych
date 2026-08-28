@@ -119,46 +119,62 @@ the byte-identical installed mirror at
 | `05-stage-assessments/03-missal-reading.pdf` | 29 | 522380 | `f6970be5d5429a0cfd7bd70cb64eea9d65262c43e068c7e94918f0af0b1bccef` |
 | `05-stage-assessments/04-advanced.pdf` | 28 | 546367 | `12356f017239052318402684a903e826b511cc66d63659d595cf7eb1fa3577a1` |
 
-## Rights-quarantine repair — 27 August 2026
+## Current-tree rights remediation — 27 August 2026
 
 The exact table above remains the historical 23 July snapshot that its release
-exception names. A later repair removed English Sanctus and Benedictus wording
-whose authorship and redistribution basis were not established. The typed
-text-free dispositions in `passage-inventory.md` cover W.I.20, W.I.21, W.I.27,
-W.I.53, W.II.61, and every exercise-bank reuse of those English segments. The
+exception names. The current-tree remediation removes additional distinctive
+English segments matching the restricted ICEL-derived comparison corpus where
+authorship and redistribution were not established. The typed, text-free
+dispositions in `passage-inventory.md` enumerate the affected worked examples,
+exercise-bank readings, ordinary-reader dialogue, and composition item. The
 Latin, stable exercise identities, and grammatical analysis remain.
 
-Four publications consume the changed selections. Their current build and
+Eleven publications consume the changed selections. Their current build and
 installed files are byte-identical, and a forced second build from the same
 inputs reproduced every hash:
 
 | Publication | Pages | Bytes | SHA-256 |
 | --- | ---: | ---: | --- |
-| `01-foundations/03-nouns-and-adjectives.pdf` | 39 | 570311 | `ad57f90931c3d21bf08519f864ab78b41b6587dd494b560198f181778f31c24d` |
-| `01-foundations/04-being-and-present-action.pdf` | 38 | 603446 | `47da03459c26c5eba2d9206db78cb46caa99429fede5a303086b73946749b935` |
-| `01-foundations/06-pronouns-prepositions-and-reading.pdf` | 47 | 630647 | `22e6585a54bde5218e68f96eaeb8cafe7c48d4701a3a53b23821716f1ceffb37` |
-| `02-core-grammar/12-adverbial-cases-order-compression.pdf` | 41 | 563776 | `7f31b71adfbeaeb64ed1d5a9e2731271c367e1a24985c4f5279479d86b718922` |
-| **Total** | **165** | **2368180** | — |
+| `01-foundations/01-form-case-and-agreement.pdf` | 38 | 549377 | `20b3b8bb254e5e9d0366afc4418144a1f10d0355922a58779806c73c55c2edb3` |
+| `01-foundations/02-noun-systems.pdf` | 37 | 540395 | `b985b219caeeeaf2c21548c0a0e44e9f464330ec3e982986798e26884587ac14` |
+| `01-foundations/03-nouns-and-adjectives.pdf` | 39 | 570245 | `e35d070c907a4dcf7d6c69013bfc82566c62695fc9c17249a86d031dc006c2a0` |
+| `01-foundations/04-being-and-present-action.pdf` | 38 | 603115 | `6af6fb553436fc4f27016b358f8a14877b03bfd12059c1ceade9a452f9621368` |
+| `01-foundations/05-perfect-passive-and-deponents.pdf` | 38 | 582300 | `7aeb74cd1de7cac67371a78f34510db01bfc4f5e87814771546e7429e7e1ff9d` |
+| `01-foundations/06-pronouns-prepositions-and-reading.pdf` | 47 | 629748 | `6457a4b2ef7d6215a2b7802aea91f253e4e1c6f270a0ce89f041233c58c1873f` |
+| `02-core-grammar/07-reference-comparison-and-number.pdf` | 42 | 533830 | `0cf7f49936a3c5295d54bb0067a544aeea0fbadb6d757d5cc7b632a548f00a17` |
+| `02-core-grammar/09-subjunctive-system-purpose-result.pdf` | 53 | 564481 | `27f0e99e7113b424bf8281f165722714f65228301433e4abf119dbbba9c20ed9` |
+| `02-core-grammar/10-circumstance-conditions-characteristic.pdf` | 50 | 590318 | `b30959437d4b5958d773fdd60816b08aa84b792fdb4c68b3686651aa08bf8b07` |
+| `02-core-grammar/11-commands-wishes-verbal-nouns.pdf` | 41 | 509123 | `42c8054d5fb1cb7a6821d6a665fa1000c42425fb7986c5be8042ee594391ec22` |
+| `02-core-grammar/12-adverbial-cases-order-compression.pdf` | 41 | 563492 | `dbcd05ebbe250f35a93a60b5315413bcea6c60c3326f85bef8d549615571e9ea` |
+| **Total** | **464** | **6236424** | — |
 
-The current review package records those exact four hashes and all 165 page
-rasters. Comparison against the previously reviewed 23 July rasters found 142
-pixel-identical pages. The other 23 full-size pages were inspected: M03 pages
-3, 7, 21, 22, 34, 35, and 39; M04 pages 3, 5, and 38; M06 pages 3, 8, 9, 22,
-28, 40, 44, and 47; and M12 pages 3, 7, 23, 37, and 41. No clipping, overlap,
-spill, harmful break, or illegible content was found. Each final TeX log retains
-one underfull-box diagnostic in the generated terminal metadata block; the
-affected final pages were inspected full-size and the diagnostic has no visible
-layout consequence. No overflow, fatal error, undefined reference, or unsettled
-cross-reference remains.
+`build/pdf-review-curriculum-rights-complete/review-run.json` records those
+exact eleven hashes and all 464 page rasters. Reviewers inspected every contact
+sheet, all pages carrying the new text-free disposition at full resolution,
+and all sparse or suspicious boundary pages. No clipping, overlap, spill,
+unintended blank page, corrupt glyph, broken rule or table, or illegible notice
+was found. The review also re-observed an existing M11 answer-section divider
+at the bottom of physical page 28 before its reader chapter begins on page 29,
+an M04 one-word paragraph carry to physical page 5, and a missing left running
+label on M12 physical page 7. These are recorded as pre-existing pagination or
+furniture polish items, not content loss or rights-remediation blockers.
 
-The curriculum rights regression scans the complete tracked curriculum text
-tree and every installed curriculum PDF for independently fingerprinted
-protected segments. The rights tests, generation-metadata validation, complete
-discovered-publication curriculum-structure audit, and exact build/install
-mirror checks passed for this repair. The repository-wide source graph itself
+The curriculum rights gate now uses a hash-only registry of all ordered
+four-word windows in the 17 restricted derivatives. It scans every Git-tracked
+UTF-8 file below the curriculum root in raw and TeX-control-word-stripped
+projections, plus every one of the 37 installed curriculum PDFs with retained
+page boundaries. Every surviving generic, incidental, or independently
+prepared passage collision must match an exact source-line or PDF-page
+allowance with a typed basis; moved, duplicated, new-surface, and stale
+allowances fail. The registry and diagnostics contain no protected wording.
+
+The rights tests, generation-metadata validation, complete
+discovered-publication curriculum-structure audit, deterministic rebuild, and
+exact build/install mirror checks passed for this repair. The current installed
+set is 2,067 pages and 20,844,281 bytes. The repository-wide source graph itself
 remains governed by its separate current validation state.
 
-The four independent publication records remain `alpha` under
+The eleven independent publication records remain `alpha` under
 `perpetual-public-repository-2026`. Consistent with the repository release
 contract, ordinary publication work does not rewrite the historical shared
 rights-table hash inventory: current PDF hashes and aggregate checksums are

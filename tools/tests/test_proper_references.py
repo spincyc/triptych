@@ -27,7 +27,9 @@ takes it, in one edit, with nothing retyped beside it to fall out of step.
 
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
@@ -50,6 +52,7 @@ def load_tool(name: str):
 
 
 checker = load_tool("check-calendar-masses")
+propers_tool = load_tool("mass-propers")
 
 
 def composed(name: str, text: str) -> dict:
@@ -73,7 +76,7 @@ MISSAL_SOURCE = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2
 
 def common_from(target: str = "commune-martyrum") -> dict:
     return {
-        "scope": "missal-propers-except-collect",
+        "scope": "missal-antiphons",
         "source_id": COMMON_SOURCE,
         "locus": "artifact page 112, printed page 104",
         "options": [{"mass": target, "selection": "For Several Martyrs"}],
@@ -393,6 +396,10 @@ class ResolveProper(unittest.TestCase):
                 )
                 expected_proper = dict(target)
                 expected_proper["name"] = wrapper["name"]
+                if _calendars.ORDINARY_DISPOSITION in wrapper:
+                    expected_proper[_calendars.ORDINARY_DISPOSITION] = wrapper[
+                        _calendars.ORDINARY_DISPOSITION
+                    ]
                 self.assertEqual(proper, expected_proper, edge)
                 if mass_key == "commune-virginum-4":
                     # These qualified alternatives are structural aliases to
@@ -660,6 +667,459 @@ class ResolveProper(unittest.TestCase):
         self.assertEqual(entries[0][2]["proper"], "Sequence")
 
 
+class ResolveAppointedPassages(unittest.TestCase):
+    def test_borrowed_scripture_uses_the_source_propers_numbering_and_cycles(self):
+        common = {
+            "key": "commune",
+            "propers": [
+                {
+                    "name": "Introit",
+                    "source": "scripture",
+                    "psalm_numbering": "vulgate",
+                    "verses": [
+                        {
+                            "book": "Psalms",
+                            "ranges": [
+                                {
+                                    "begin": {"chapter": 24, "verse": 1},
+                                    "end": {"chapter": 24, "verse": 3},
+                                }
+                            ],
+                            "ref": "Psalm 24:1-3",
+                        }
+                    ],
+                },
+                {
+                    "name": "First Reading",
+                    "source": "scripture",
+                    "cycles": {
+                        "A": {
+                            "psalm_numbering": "hebrew",
+                            "verses": [
+                                {
+                                    "book": "Psalms",
+                                    "ranges": [
+                                        {
+                                            "begin": {"chapter": 25, "verse": 1},
+                                            "end": {"chapter": 25, "verse": 3},
+                                        }
+                                    ],
+                                    "ref": "Psalm 25:1-3",
+                                }
+                            ]
+                        }
+                    },
+                },
+            ],
+        }
+        borrower = {"key": "saint", "takes_from": {"mass": "commune"}}
+        source = document([common, borrower])
+        appointed = propers_tool.appointed_propers(source, borrower)
+        bible = {
+            "numbering": "vulgate",
+            "passages": {
+                "Psalm 24:1-3": "Psalm text",
+            },
+        }
+
+        resolved = propers_tool.resolve_passages(
+            {"psalm_numbering": "hebrew", "mass": borrower},
+            bible,
+            appointed,
+        )
+
+        self.assertEqual(resolved["Psalm 24:1-3"]["text"], "Psalm text")
+        self.assertEqual(resolved["Psalm 24:1-3"]["note"], "")
+        self.assertEqual(resolved["Psalm 25:1-3"]["text"], "Psalm text")
+        self.assertTrue(
+            resolved["Psalm 25:1-3"]["note"].startswith(
+                "vulgate: Psalm 24:1-3"
+            )
+        )
+
+    def test_real_borrower_passages_match_the_browser_projection(self):
+        calendar = "roman-1962"
+        mass_key = "s-ioannis-eudes-confessoris"
+        root = ROOT / "src/sources/calendars"
+        source = propers_tool.load_calendar(root, calendar)
+        mass = _calendars.mass_index(source)[mass_key]
+        appointed = propers_tool.appointed_propers(source, mass)
+        bible = propers_tool.load_bible(
+            "douay-rheims", ROOT / "src/sources/bibles"
+        )
+        resolved = propers_tool.resolve_passages(
+            {"psalm_numbering": source["psalm_numbering"], "mass": mass},
+            bible,
+            appointed,
+        )
+        appointed_refs = {
+            str(entry["ref"])
+            for _, proper, _ in appointed
+            for entry, _ in propers_tool.numbered_proper_entries(
+                proper, source["psalm_numbering"]
+            )
+        }
+
+        browser = json.loads(
+            (ROOT / "src/web/data/structure/propers/roman-1962.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        projected = next(row for row in browser["masses"] if row["key"] == mass_key)
+        browser_refs = {
+            str(citation["ref"])
+            for proper in projected["propers"]
+            for owner in [
+                proper,
+                *[
+                    cycle_owner
+                    for course in propers_tool.CYCLE_KEYS
+                    for cycle_owner in (proper.get(course) or {}).values()
+                    if isinstance(cycle_owner, dict)
+                ],
+            ]
+            for citation in owner.get("citations") or []
+        }
+
+        self.assertTrue(
+            all(
+                taken_from
+                for _, proper, taken_from in appointed
+                if list(
+                    propers_tool.numbered_proper_entries(
+                        proper, source["psalm_numbering"]
+                    )
+                )
+            )
+        )
+        self.assertEqual(set(resolved), appointed_refs)
+        self.assertEqual(browser_refs, appointed_refs)
+        self.assertTrue(all(row["text"] for row in resolved.values()))
+
+
+class ResolveCommonSets(unittest.TestCase):
+    def common(self) -> dict:
+        return {
+            "key": "commune",
+            "common_sets": {
+                "orations": {
+                    "families": ["Collect", "Secret", "Postcommunion"],
+                    "options": {
+                        "c1": ["Collect", "Secret", "Postcommunion"],
+                        "c2": [
+                            "Collect (Altera oratio)",
+                            "Secret (Altera secreta)",
+                            "Postcommunion (Altera postcommunio)",
+                        ],
+                    },
+                }
+            },
+            "propers": [
+                composed("Introit", "Gaudeamus"),
+                composed("Collect", "Prima collecta"),
+                composed("Collect (Altera oratio)", "Altera collecta"),
+                composed("Secret", "Prima secreta"),
+                composed("Secret (Altera secreta)", "Altera secreta"),
+                composed("Postcommunion", "Prima postcommunio"),
+                composed("Postcommunion (Altera postcommunio)", "Altera postcommunio"),
+            ],
+        }
+
+    def test_selected_set_emits_one_member_per_family(self):
+        common = self.common()
+        saint = {
+            "key": "saint",
+            "takes_from": {
+                "mass": "commune",
+                "common_sets": {
+                    "orations": {"state": "selected", "option": "c2"}
+                },
+            },
+        }
+        entries, problems = _calendars.resolve_propers(
+            document([common, saint]), saint
+        )
+        self.assertEqual(problems, [])
+        self.assertEqual(
+            names(entries),
+            [
+                "Introit",
+                "Collect (Altera oratio)",
+                "Secret (Altera secreta)",
+                "Postcommunion (Altera postcommunio)",
+            ],
+        )
+
+    def test_local_unqualified_oration_replaces_the_selected_family_member(self):
+        common = self.common()
+        local = composed("Postcommunion", "Propria postcommunio")
+        saint = {
+            "key": "saint",
+            "takes_from": {
+                "mass": "commune",
+                "common_sets": {
+                    "orations": {"state": "selected", "option": "c2"}
+                },
+            },
+            "propers": [local],
+        }
+        entries, problems = _calendars.resolve_propers(
+            document([common, saint]), saint
+        )
+        self.assertEqual(problems, [])
+        self.assertEqual(names(entries)[-1], "Postcommunion")
+        self.assertIs(entries[-1][1], local)
+        self.assertIsNone(entries[-1][2])
+        self.assertNotIn("Postcommunion (Altera postcommunio)", names(entries))
+
+    def test_unresolved_set_omits_every_inherited_member_but_keeps_local_slots(self):
+        common = self.common()
+        local = composed("Collect", "Propria collecta")
+        saint = {
+            "key": "saint",
+            "takes_from": {
+                "mass": "commune",
+                "common_sets": {
+                    "orations": {
+                        "state": "unresolved",
+                        "candidates": ["c1", "c2"],
+                    }
+                },
+            },
+            "propers": [local],
+        }
+        entries, problems = _calendars.resolve_propers(
+            document([common, saint]), saint
+        )
+        self.assertEqual(problems, [])
+        self.assertEqual(names(entries), ["Introit", "Collect"])
+        self.assertIs(entries[1][1], local)
+        self.assertIsNone(entries[1][2])
+
+    def test_missing_disposition_fails_closed_instead_of_emitting_all_options(self):
+        common = self.common()
+        saint = {"key": "saint", "takes_from": {"mass": "commune"}}
+        entries, problems = _calendars.resolve_propers(
+            document([common, saint]), saint
+        )
+        self.assertEqual(names(entries), ["Introit"])
+        self.assertTrue(any("disposition" in problem for problem in problems))
+
+    def test_projection_preserves_the_choice_and_finding_aid_counts_unresolved(self):
+        common = self.common()
+        saint = {
+            "key": "saint",
+            "takes_from": {
+                "mass": "commune",
+                "common_sets": {
+                    "orations": {
+                        "state": "unresolved",
+                        "candidates": ["c1", "c2"],
+                    }
+                },
+            },
+        }
+        self.assertEqual(
+            propers_tool.public_reference(saint["takes_from"])["common_sets"],
+            saint["takes_from"]["common_sets"],
+        )
+        row = propers_tool.finding_aid_coverage(document([common, saint]))
+        self.assertEqual(
+            row["unresolved_common_set_selections"],
+            [
+                {
+                    "mass": "saint",
+                    "target": "commune",
+                    "group": "orations",
+                    "candidates": ["c1", "c2"],
+                }
+            ],
+        )
+
+    def test_real_common_selections_emit_only_the_appointed_or_local_families(self):
+        calendar = _calendars.load_document(
+            ROOT / "src/sources/calendars", "roman-1962"
+        )
+        index = _calendars.mass_index(calendar)
+        expected = {
+            "ss-soteris-caii-paparum-martyrum": [
+                "Collect (in plurali)", "Secret", "Postcommunion"
+            ],
+            "ss-perpetuae-felicitatis-martyrum": [
+                "Collect (Pro pluribus Martyribus quae non sint Virgines)",
+                "Secret (Pro pluribus Martyribus quae non sint Virgines)",
+                "Postcommunion",
+            ],
+            "s-fidelis-sigmaringa-martyris": [
+                "Collect", "Secret (Pro Martyre tantum)",
+                "Postcommunion (Pro Martyre tantum)",
+            ],
+        }
+        for key, appointed in expected.items():
+            with self.subTest(mass=key):
+                entries, problems = _calendars.resolve_propers(calendar, index[key])
+                self.assertEqual(problems, [])
+                self.assertEqual(
+                    [
+                        name for name in names(entries)
+                        if _calendars.proper_family(name)
+                        in {"Collect", "Secret", "Postcommunion"}
+                    ],
+                    appointed,
+                )
+
+    def test_real_dedication_choices_fail_closed_and_supreme_refs_are_complete(self):
+        calendar = _calendars.load_document(
+            ROOT / "src/sources/calendars", "roman-1962"
+        )
+        index = _calendars.mass_index(calendar)
+        for key in (
+            "dedicatione-archibasilicae-mi-salvatoris",
+            "dedicatione-basilicarum-ss-petri-pauli-apostolorum",
+        ):
+            entries, problems = _calendars.resolve_propers(calendar, index[key])
+            self.assertEqual(problems, [], key)
+            self.assertFalse(
+                any(
+                    _calendars.proper_family(name)
+                    in {"Collect", "Secret", "Postcommunion"}
+                    for name in names(entries)
+                ),
+                key,
+            )
+        supreme = [
+            mass
+            for mass in index.values()
+            if (_calendars.reference_of(mass) or {}).get("mass")
+            == "commune-summorum-pontificum"
+        ]
+        self.assertEqual(len(supreme), 29)
+        options = [
+            mass["takes_from"]["common_sets"]["orations"]["option"]
+            for mass in supreme
+        ]
+        self.assertEqual(options.count("c1-singular"), 27)
+        self.assertEqual(options.count("c1-plural"), 2)
+
+
+class ValidateCommonSets(unittest.TestCase):
+    def common(self) -> dict:
+        return {
+            "key": "commune",
+            "name": "Commune",
+            "registry": "C-test",
+            "common_sets": {
+                "orations": {
+                    "families": ["Collect", "Secret", "Postcommunion"],
+                    "options": {
+                        "c1": ["Collect", "Secret", "Postcommunion"],
+                        "c2": [
+                            "Collect (altera)",
+                            "Secret (altera)",
+                            "Postcommunion (altera)",
+                        ],
+                    },
+                }
+            },
+            "propers": [
+                composed("Introit", "Gaudeamus"),
+                composed("Collect", "A"),
+                composed("Collect (altera)", "B"),
+                composed("Secret", "C"),
+                composed("Secret (altera)", "D"),
+                composed("Postcommunion", "E"),
+                composed("Postcommunion (altera)", "F"),
+            ],
+        }
+
+    def saint(self) -> dict:
+        return {
+            "key": "saint",
+            "name": "Saint",
+            "registry": "01-01",
+            "date": "01-01",
+            "kind": "sanctoral",
+            "rank": "III",
+            "takes_from": {
+                "mass": "commune",
+                "common_sets": {
+                    "orations": {"state": "selected", "option": "c2"}
+                },
+            },
+        }
+
+    def test_definition_and_selected_reference_are_valid_as_one_join(self):
+        common, saint = self.common(), self.saint()
+        problems: list[str] = []
+        checker.check_entry(common, 0, problems, section_kind=checker.COMMON_KIND)
+        checker.check_entry(saint, 1, problems, section_kind="sanctoral")
+        problems.extend(
+            checker.common_reference_problems(
+                [(checker.COMMON_KIND, common), ("sanctoral", saint)]
+            )
+        )
+        self.assertEqual(problems, [])
+
+    def test_incomplete_options_and_unknown_selected_options_are_refused(self):
+        common, saint = self.common(), self.saint()
+        common["common_sets"]["orations"]["options"]["c2"] = [
+            "Collect (altera)", "Secret (altera)"
+        ]
+        problems: list[str] = []
+        checker.check_entry(common, 0, problems, section_kind=checker.COMMON_KIND)
+        self.assertTrue(any("exactly one member of each family" in p for p in problems))
+        saint["takes_from"]["common_sets"]["orations"]["option"] = "c9"
+        problems = checker.common_reference_problems(
+            [(checker.COMMON_KIND, common), ("sanctoral", saint)]
+        )
+        self.assertTrue(any("unknown option 'c9'" in p for p in problems))
+
+    def test_unresolved_is_a_closed_union_with_multiple_valid_candidates(self):
+        saint = self.saint()
+        disposition = saint["takes_from"]["common_sets"]["orations"]
+        disposition.clear()
+        disposition.update(state="unresolved", candidates=["c1", "c2"])
+        problems: list[str] = []
+        checker.check_entry(saint, 0, problems, section_kind="sanctoral")
+        self.assertEqual(problems, [])
+        disposition["option"] = "c1"
+        problems = []
+        checker.check_entry(saint, 0, problems, section_kind="sanctoral")
+        self.assertTrue(any("unresolved state must omit option" in p for p in problems))
+
+    def test_selector_is_forbidden_on_a_single_proper_reference(self):
+        mass = {
+            "key": "saint",
+            "name": "Saint",
+            "registry": "01-01",
+            "season": "test",
+            "propers": [
+                {
+                    "name": "Collect",
+                    "takes_from": {
+                        "mass": "commune",
+                        "common_sets": {
+                            "orations": {"state": "selected", "option": "c1"}
+                        },
+                    },
+                }
+            ],
+        }
+        problems: list[str] = []
+        checker.check_entry(mass, 0, problems, section_kind="seasonal")
+        self.assertTrue(
+            any("forbidden on a single-proper reference" in p for p in problems)
+        )
+
+    def test_grouped_target_requires_every_inbound_mass_to_disposition_it(self):
+        common, saint = self.common(), self.saint()
+        del saint["takes_from"]["common_sets"]
+        problems = checker.common_reference_problems(
+            [(checker.COMMON_KIND, common), ("sanctoral", saint)]
+        )
+        self.assertTrue(any("must disposition every" in p for p in problems))
+
+
 class RefuseProper(unittest.TestCase):
     def test_a_missing_target_is_reported(self):
         mass = {"key": "saint", "takes_from": {"mass": "commune-nowhere"}}
@@ -818,12 +1278,40 @@ class ValidateProper(unittest.TestCase):
         branch = mass["propers"][0]["cycles"]["A"]
         branch["text"] = "Removed Latin must not return."
         self.assertTrue(
-            any("removed body and must not coexist with text" in p for p in self.check(mass))
+            any(
+                "unavailable wording and must not coexist with text" in p
+                for p in self.check(mass)
+            )
         )
         mass = self.partial_entry()
         del mass["propers"]
         mass["forms"] = self.forms_entry(["vigil", "day"])["forms"]
         self.assertEqual(self.check(mass), [])
+
+    def test_text_free_composed_proper_accepts_never_held_body_reasons(self):
+        for reason in (
+            {"kind": "witness-gap", "source_id": MISSAL_SOURCE},
+            {"kind": "no-exemplar"},
+        ):
+            with self.subTest(reason=reason["kind"]):
+                mass = {
+                    "key": "unheld-body",
+                    "name": "Unheld Body",
+                    "registry": "x",
+                    "season": "advent",
+                    "propers": [
+                        {
+                            "name": "Collect",
+                            "source": "composed",
+                            "text_status": {
+                                "state": "unavailable",
+                                "scope": "proper-body",
+                                "reasons": [reason],
+                            },
+                        }
+                    ],
+                }
+                self.assertEqual(self.check(mass), [])
 
     def test_a_partial_formulary_requires_exactly_one_local_text_container(self):
         mass = self.partial_entry()
@@ -847,18 +1335,13 @@ class ValidateProper(unittest.TestCase):
                 for problem in self.check(mass))
         )
 
-    def test_a_partial_formulary_refuses_references_and_other_scopes(self):
-        for pointer, value in (
-            ("takes_from", {"mass": "christmas-day"}),
-            ("common_from", common_from()),
-        ):
-            with self.subTest(pointer=pointer):
-                mass = self.partial_entry()
-                mass[pointer] = value
-                self.assertTrue(
-                    any("cannot coexist with takes_from or common_from" in problem
-                        for problem in self.check(mass))
-                )
+    def test_a_partial_formulary_refuses_resolving_references_and_other_scopes(self):
+        mass = self.partial_entry()
+        mass["takes_from"] = {"mass": "christmas-day"}
+        self.assertTrue(
+            any("cannot coexist with takes_from" in problem
+                for problem in self.check(mass))
+        )
         mass = self.partial_entry()
         mass["text_status"]["scope"] = "proper-collect"
         self.assertTrue(
@@ -912,11 +1395,11 @@ class ValidateProper(unittest.TestCase):
             any("cannot coexist with common_from" in problem for problem in self.check(mass))
         )
 
-    def test_a_proper_collect_status_needs_one_formulary_pointer(self):
+    def test_a_proper_collect_status_needs_a_resolving_formulary_pointer(self):
         mass = self.historical_collect_gap()
         del mass["takes_from"]
         self.assertTrue(
-            any("must accompany exactly one of common_from" in problem for problem in self.check(mass))
+            any("must accompany takes_from" in problem for problem in self.check(mass))
         )
 
     def test_forms_require_stable_source_authored_ids(self):
@@ -954,6 +1437,67 @@ class ValidateProper(unittest.TestCase):
         self.assertTrue(
             any("form carries unknown field(s) label" in p for p in self.check(mass))
         )
+
+    def test_mass_identity_and_shape_are_closed(self):
+        mass = self.partial_entry()
+        mass["text_sttaus"] = mass.pop("text_status")
+        mass["key"] = 7
+        mass["name"] = False
+        mass["registry"] = ""
+        problems = self.check(mass)
+        self.assertTrue(any("mass carries unknown field(s) text_sttaus" in p for p in problems))
+        self.assertTrue(any("key must be a nonempty string" in p for p in problems))
+        self.assertTrue(any("name must be a nonempty string" in p for p in problems))
+        self.assertTrue(any("registry must be a nonempty quoted string" in p for p in problems))
+
+    def test_composed_bodies_and_cycle_owner_fields_are_closed(self):
+        for body in ("", "   ", 7, False):
+            with self.subTest(body=body):
+                mass = {
+                    "key": "body",
+                    "name": "Body",
+                    "registry": "x",
+                    "season": "advent",
+                    "propers": [
+                        {"name": "Collect", "source": "composed", "text": body}
+                    ],
+                }
+                self.assertTrue(
+                    any("text must be a nonempty string" in p for p in self.check(mass))
+                )
+
+        mass = {
+            "key": "cycles",
+            "name": "Cycles",
+            "registry": "x",
+            "season": "ordinary-time",
+            "propers": [
+                {
+                    "name": "Gospel Acclamation",
+                    "cycles": {
+                        "A": {
+                            "source": "composed",
+                            "text": "Alleluia.",
+                            "label": "ignored typo",
+                        }
+                    },
+                    "translations": [
+                        {
+                            "lang": "en",
+                            "rights": "project-created",
+                            "text": "Alleluia.",
+                        }
+                    ],
+                }
+            ],
+        }
+        problems = self.check(mass)
+        self.assertTrue(any("cycle carries unknown field(s) 'label'" in p for p in problems))
+        self.assertTrue(any("translations belong to the exact cycle owner" in p for p in problems))
+
+    def test_main_form_id_is_reserved_even_for_one_named_form(self):
+        problems = self.check(self.forms_entry(["main"]))
+        self.assertTrue(any("cannot identify a named form" in p for p in problems))
 
     def test_a_mass_with_a_reference_may_not_carry_forms(self):
         problems = self.check(
@@ -1054,6 +1598,81 @@ class ValidateProper(unittest.TestCase):
         )
 
 
+class ProductionShapeRegression(unittest.TestCase):
+    def test_pre_1955_departures_inherit_the_section_label_and_keep_typed_also_rows(self):
+        path = ROOT / "src/sources/calendars/roman-pre-1955/propers.yaml"
+        problems: list[str] = []
+        self.assertEqual(
+            checker.check_file(path, problems), {"masses": 8, "propers": 0}
+        )
+        self.assertEqual(problems, [])
+
+    def test_malformed_parent_aggregates_report_without_tracebacks(self):
+        import yaml
+
+        header = {
+            "schema": checker.SCHEMA,
+            "edition": "Test",
+            "calendar": "test",
+            "series": "Test",
+            "ordering": "Test",
+            "registry": "Test",
+            "psalm_numbering": "vulgate",
+            "citation_convention": "Test",
+            "orthography": "Test",
+            "verification": "Test",
+        }
+        cases = (
+            {**header, "sections": 7},
+            {
+                **header,
+                "sections": {
+                    "seasonal": {
+                        "kind": "seasonal",
+                        "label": "Seasonal",
+                        "masses": [
+                            {
+                                "key": "bad-forms",
+                                "name": "Bad Forms",
+                                "registry": "x",
+                                "season": "test",
+                                "forms": 7,
+                            }
+                        ],
+                    }
+                },
+            },
+            {
+                **header,
+                "sections": {
+                    1: {
+                        "kind": "seasonal",
+                        "label": "Seasonal",
+                        "masses": [
+                            {
+                                "key": "bad-propers",
+                                "name": "Bad Propers",
+                                "registry": "x",
+                                "season": "test",
+                                "propers": 7,
+                            }
+                        ],
+                    }
+                },
+            },
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "propers.yaml"
+            for index, payload in enumerate(cases):
+                with self.subTest(case=index):
+                    path.write_text(
+                        yaml.safe_dump(payload, sort_keys=False), encoding="utf-8"
+                    )
+                    problems: list[str] = []
+                    checker.check_file(path, problems)
+                    self.assertTrue(problems)
+
+
 class ValidateCommonDirection(unittest.TestCase):
     def check(self, entry: dict, section_kind: str = "") -> list[str]:
         problems: list[str] = []
@@ -1077,7 +1696,7 @@ class ValidateCommonDirection(unittest.TestCase):
             "kind": "sanctoral",
             "rank": "Optional memorial",
             "common_from": common_from(),
-            "text_status": text_status("proper-collect"),
+            "text_status": text_status("missal-formulary"),
         }
 
     def test_an_unavailable_common_is_an_explicit_text_free_mass(self):
@@ -1099,7 +1718,7 @@ class ValidateCommonDirection(unittest.TestCase):
                 for problem in self.check(common, checker.COMMON_KIND))
         )
 
-    def test_a_common_direction_with_a_collect_status_needs_no_fake_proper(self):
+    def test_a_common_direction_with_a_whole_formulary_status_needs_no_fake_proper(self):
         self.assertEqual(self.check(self.saint()), [])
 
     def test_a_common_direction_does_not_resolve_absent_target_text(self):
@@ -1121,11 +1740,51 @@ class ValidateCommonDirection(unittest.TestCase):
             any("requires text_status" in problem for problem in self.check(saint))
         )
 
-    def test_a_common_direction_must_not_carry_local_propers(self):
+    def test_an_unavailable_common_direction_must_not_carry_local_propers(self):
         saint = self.saint()
         saint["propers"] = [composed("Prayer over the Offerings", "Suscipe")]
         problems = self.check(saint)
-        self.assertTrue(any("must not also carry local propers" in p for p in problems))
+        self.assertTrue(any("local propers require partial" in p for p in problems))
+
+    def test_an_antiphon_direction_can_accompany_independently_partial_orations(self):
+        saint = self.saint()
+        saint["text_status"] = partial_text_status()
+        saint["propers"] = [
+            composed("Collect", "Deus"),
+            composed("Prayer over the Offerings", "Suscipe"),
+            composed("Prayer after Communion", "Praesta"),
+        ]
+        self.assertEqual(self.check(saint), [])
+
+    def test_a_legacy_scope_that_overclaims_orations_is_refused(self):
+        saint = self.saint()
+        saint["common_from"]["scope"] = "missal-propers-except-collect"
+        problems = self.check(saint)
+        self.assertTrue(any("must be one of ['missal-antiphons']" in p for p in problems))
+
+    def test_a_common_direction_cannot_use_a_collect_only_status(self):
+        saint = self.saint()
+        saint["text_status"] = text_status("proper-collect")
+        problems = self.check(saint)
+        self.assertTrue(any("common_from records antiphons only" in p for p in problems))
+
+    def test_public_common_direction_projection_is_scope_exact_and_text_free(self):
+        self.assertEqual(
+            propers_tool.public_common_from(common_from()),
+            {
+                "scope": "missal-antiphons",
+                "options": [
+                    {
+                        "mass": "commune-martyrum",
+                        "selection": "For Several Martyrs",
+                    }
+                ],
+            },
+        )
+        legacy = common_from()
+        legacy["scope"] = "missal-propers-except-collect"
+        with self.assertRaisesRegex(ValueError, "establishes no oration"):
+            propers_tool.public_common_from(legacy)
 
     def test_unknown_common_direction_and_status_fields_are_refused(self):
         saint = self.saint()

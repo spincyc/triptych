@@ -1,0 +1,21 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-vatican-web-2026-08-26.operative-occurrence-rule"
+loci = ["operative-occurrence-rule"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's independently dated 2026-08-26 verification read the operative paragraph in the exact official Holy See Latin HTML delivery. It controls the occurrence-only rule that the movable obligatory memorial of the Immaculate Heart and a coinciding obligatory memorial are both retained as optional for that year. The binding does not retroactively claim that the original July research reached the act, and it does not attribute the resulting choice among the two memorials and the weekday to this notification."
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:1beb50bfb600d739441bbfa4298d95add28e7aa6b9d9ff9a5d25606c507cddc0"
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393.operative-occurrence-rule"
+loci = ["operative-occurrence-rule"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's independently dated 2026-08-26 verification also read the operative paragraph in the rendered image of the official Notitiae periodical witness at artifact p. 63, printed p. 157. It corroborates the occurrence-only reduction established by the official web delivery without expanding the notification to choose a memorial or supply the weekday option."
+verified_on = "2026-08-26"
+source_fingerprint = "sha256:bba54c32d06e80b828aed8d704823a24f4082e29ab72ab27fd75ed32abf037d9"

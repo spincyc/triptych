@@ -140,10 +140,12 @@ replaced it is sourced line by line. See `[[corrections]]` entry
   and is never treated here as a grant. See `[[corrections]]`
   `cmaa-facsimile-licence`, where that abstraction is made concrete.
 
-`rights` takes one of: `public-domain-us-pre-1931`, `holy-see-post-1929`,
+`rights` takes one of: `public-domain-us-pre-1931`,
+`public-domain-us-not-renewed`, `holy-see-post-1929`,
 `third-party-copyright`, `unresolved`, `mixed`.
-`may_publish_text` is the operative field and is `yes`, `no`, `mixed`, or
-`unresolved`. A row may be freely readable and still `may_publish_text = "no"`.
+`may_publish_text` is the operative field and is `yes`, `yes, subject to the
+title-page confirmation named in rights_basis`, `no`, `mixed`, or `unresolved`.
+A row may be freely readable and still `may_publish_text = "no"`.
 
 The value `holy-see-post-1929` is RETAINED AS A LABEL for continuity with the
 brief and with sibling records, but it now means `a modern liturgical book of
@@ -151,11 +153,9 @@ the Holy See, protected in the United States by URAA restoration and by the
 Holy See's own asserted rights`. The year in the label is not the reason. A
 later pass may rename it; renaming it here would break the one cross-reference
 it has without improving what it means.
-
-`rights` takes one of: `public-domain-us-pre-1931`, `holy-see-post-1929`,
-`third-party-copyright`, `unresolved`.
-`may_publish_text` is the operative field and is `yes`, `no`, or `unresolved`.
-A row may be freely readable and still `may_publish_text = "no"`.
+The controlling operational analysis is now
+`postconciliar-latin-rights-v1.toml`; the retained label is not itself a legal
+conclusion.
 """
 
 extent = """
@@ -504,7 +504,9 @@ diocesan use alike. This is why the `latin-uses` group note had to be corrected.
 #   "whole"       the entire document is fetchable by the recorded route
 #   "bounded"     only part is fetchable; `bound_reached` says exactly what
 #   "restricted"  located, identified, not fetchable at the host found
-#   "not-located" no digitisation found under the aliases tried
+#   "not-located" no digitisation found in every named repository under the
+#                 recorded aliases and queries
+#   "unresolved"  no sufficiently bounded availability search is recorded
 
 # ===== Group: pre-Tridentine background =====================================
 # The project takes no position on what precedes Quo primum. These rows are here
@@ -563,6 +565,7 @@ rights_basis = "No artifact identified, so no artifact rights to record. The twe
 may_publish_text = "unresolved"
 digitisation = "unrecorded"
 retrievable = "not-located"
+repositories_searched = ["Internet Archive advanced-search API"]
 retrievable_basis = "The Internet Archive advanced-search API returns zero items for title:(missale) AND (curiae OR curie) [verified]. This is a manuscript family rather than a printed book, and a search keyed on printed-book titles is the wrong instrument for it; the negative bounds that search and nothing more."
 priority = 5
 priority_basis = "Lowest. A manuscript family is not an acquisition target for a project that stores printed states, and the right route to it is a catalogue such as Usuarium rather than a scan repository."
@@ -592,9 +595,10 @@ rights_basis = "1570 printing."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED as the Rome printing. See retrievable_basis."
 retrievable = "not-located"
+repositories_searched = ["Internet Archive"]
 retrievable_basis = """
-No scan verified here is the Rome first printing. Two 1570-dated candidates were
-examined and neither is it:
+No scan verified here is the Rome first printing. The bounded search covered
+the Internet Archive; two 1570-dated candidates were examined and neither is it:
 
 - `bub_gb_adC-aRGza70C` proved to be a VENICE printing when its own colophon was
   read. See the separate row `missale-romanum-1570-venice`.
@@ -707,6 +711,7 @@ rights_basis = "1634 printing, if one is found."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED"
 retrievable = "not-located"
+repositories_searched = ["Internet Archive advanced-search API"]
 retrievable_basis = """
 The Internet Archive advanced-search API returns zero items for
 title:(missale AND romanum) AND year:[1630 TO 1645] [verified]. Later printings
@@ -829,6 +834,7 @@ rights_basis = "1900 printing, if one is found."
 may_publish_text = "yes"
 digitisation = "NOT LOCATED"
 retrievable = "not-located"
+repositories_searched = ["Internet Archive advanced-search API"]
 retrievable_basis = """
 The Internet Archive advanced-search API returns no 1900 typical edition under
 title:(missale AND romanum) AND year:[1900 TO 1930] or under
@@ -853,21 +859,52 @@ label = "Missale Romanum, editio typica Vaticana, 1920"
 attests_act = "editio-typica-1920"
 attests_kind = "decree-printed-in-book"
 aliases_tried = ["Missale Romanum 1920", "Missale Romanum Benedictus XV", "Missale Romanum Benedetto XV"]
-aliases_that_hit = ["Missale Romanum Benedetto XV"]
+aliases_that_hit = []
 rights = "public-domain-us-pre-1931"
 rights_basis = """
-1920 printing, before the 1931 line. WEAKER THAN THE OTHER PRE-1931 ROWS and
-the weakness is on the record: the Internet Archive item carries NO licence
-field and no copyright-status field [verified], so the basis is the printing
-date alone. The existing act-history witness row already flags this [recorded].
+The 1920 typical edition itself was published before the 1931 line. No exact
+1920 Vatican impression has been authenticated in the source library, so this
+answer is about the edition text and not a claim over any later scan.
 """
 may_publish_text = "yes"
-digitisation = "https://archive.org/details/MissaleRomanumBenedettoXV -- PDF 16,830,025 bytes, OCR text layer 2,918,085 bytes [verified]"
-retrievable = "whole"
-retrievable_basis = "Whole OCR text layer fetched here (2,918,085 bytes) and read from its first page: the decree of approbation stands at the head."
-already_in_use = "This is the project's existing 1920 witness; the text layer size matches the act-history record exactly [verified]."
+digitisation = "NO AUTHENTICATED 1920 VATICAN IMPRESSION IS REGISTERED. Internet Archive item MissaleRomanumBenedettoXV was formerly recorded here, but its body contains 1951-1954 matter and its appendix contains a post-1970 Society of Saint Pius X rubric; the canonical artifact record now classifies it as a later composite, remote and rights-unresolved [recorded]."
+retrievable = "unresolved"
+retrievable_basis = "The former hit did not identify the claimed impression. A licensed Tours printing conformed to this edition is separately registered below and witnesses its historical content, but it is not the Vatican typical impression and cannot close this row by substitution. No bounded external repository search for a replacement exact Vatican impression is recorded, so this is not a `not-located` verdict."
+bound_reached = "One formerly accepted Internet Archive candidate was disqualified on identity and one exact conformed 1922 printing was registered. Availability of the 1920 Vatican impression beyond those two objects is unestablished."
+already_in_use = "The project registers the abstract typical-edition identity at edition.catholic-church.missale-romanum.vatican-typica-1920, but its only associated artifact is the later composite described above."
 priority = 2
-priority_basis = "High. It is the last typical edition clear of the 1929 line, it carries its own promulgating decree in the book, and its text is publishable. It is the natural base for any pre-reform recension."
+priority_basis = "High. It is the last typical edition clear of the pre-1931 line. The 1922 Mame conformed printing supplies an honest early witness, but an authenticated typical impression would still close the edition-identity gap."
+evidence = "recorded"
+
+[[books]]
+id = "missale-romanum-1922-mame"
+group = "roman-line"
+station = false
+is_typical_edition = false
+kind = "conformed-printing"
+label = "Missale Romanum, editio quarta juxta typicam Vaticanam, Tours: Alfred Mame, 1922"
+attests_act = "editio-typica-1920"
+attests_kind = "conformity-declaration"
+aliases_tried = [
+  "Missale Romanum Mame 1922",
+  "missaleromanum0000unse",
+  "Missale Romanum editio quarta juxta typicam Vaticanam",
+]
+aliases_that_hit = ["missaleromanum0000unse"]
+rights = "public-domain-us-pre-1931"
+rights_basis = """
+First published at Tours in 1922, before the pre-1931 United States line, with
+no remaining term for URAA restoration. The Internet Archive PDF is a faithful
+mechanical scan and adds no human authorship. The decision does not rely on the
+host's availability or licence label; see the registered artifact's full basis.
+"""
+may_publish_text = "yes"
+digitisation = "https://archive.org/details/missaleromanum0000unse -- exact whole PDF 51,720,493 bytes, SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005, 1,162 PDF pages [verified]"
+retrievable = "whole"
+retrievable_basis = "The whole PDF was fetched and hashed on 2026-08-27. Its title, local approval, universal-sanctoral May sequence, Bede formulary, and Rita appendix formulary were read directly in page images."
+already_in_use = "Registered as artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a. No prayer body has been copied into the calendar."
+priority = 3
+priority_basis = "Acquired and registered. It is an independently identifiable, public-domain early witness to the 1920 typical edition, including Bede in the universal sanctoral and Rita in Missae pro aliquibus locis. Exact comparison with the postconciliar target edition remains a separate editorial task."
 evidence = "verified"
 
 [[books]]
@@ -1033,7 +1070,7 @@ aliases_tried = [
 ]
 aliases_that_hit = ["Missale Romanum Pauli PP VI", "missale romanum 1965..1985"]
 rights = "holy-see-post-1929"
-rights_basis = "1970 typical edition of the Holy See. The 2002 edition's copyright leaf, read here, names the Administration of the Patrimony of the Apostolic See as the holder for the series."
+rights_basis = "Operationally withheld under `src/sources/inventories/postconciliar-latin-rights-v1.toml`: registered evidence records the Holy See's ownership claim and permission requirement for Latin typical editions, while this repository has no affirmative distribution basis. The 2002 edition's notice corroborates the later book's claim; it is not treated as proof of one holder for every state."
 may_publish_text = "no"
 digitisation = "https://archive.org/details/missale-romanum-pauli-pp-vi-1970-concilii-vaticno-ii -- PDF 21,886,942 bytes, OCR text layer 1,130,868 bytes [verified]"
 retrievable = "whole"
@@ -1072,12 +1109,16 @@ is_typical_edition = false
 kind = "emended-reprint"
 label = "Missale Romanum, reimpressio emendata, 1971"
 attests_act = "celebrationis-eucharisticae-1970"
-aliases_tried = ["Missale Romanum 1971", "reimpressio emendata 1971"]
+aliases_tried = []
+aliases_considered = ["Missale Romanum 1971", "reimpressio emendata 1971"]
 aliases_that_hit = []
 rights = "holy-see-post-1929"
+rights_basis = "Operationally withheld under `src/sources/inventories/postconciliar-latin-rights-v1.toml`: registered evidence records the Holy See's ownership claim and permission requirement for Latin typical and subsequent amended editions, while this repository has no affirmative distribution basis. This does not adjudicate civil-law subsistence in a particular text."
 may_publish_text = "no"
-digitisation = "NOT LOCATED"
-retrievable = "not-located"
+digitisation = "UNESTABLISHED. No external digitisation search is recorded."
+retrievable = "unresolved"
+retrievable_basis = "This edition identity was discovered on the 2002 book's printing-history leaf, not by an availability search. No bounded external repository search is recorded, so `not-located` would overstate the evidence."
+bound_reached = "The edition's existence and sequence are verified from the 2002 printing-history leaf. No catalogue or repository search for the 1971 reimpressio's own bytes is recorded."
 discovery_note = """
 FOUND BY READING, NOT BY SEARCHING, and it is not in the brief. The 2002 typical
 edition's printing history leaf lists four states, read here at the bytes
@@ -1111,6 +1152,7 @@ aliases_tried = [
 ]
 aliases_that_hit = ["Missale Romanum 1975"]
 rights = "holy-see-post-1929"
+rights_basis = "Operationally withheld under `src/sources/inventories/postconciliar-latin-rights-v1.toml`: registered evidence records the Holy See's ownership claim and permission requirement for Latin typical editions, while this repository has no affirmative distribution basis. This does not adjudicate civil-law subsistence in a particular text."
 may_publish_text = "no"
 digitisation = "https://archive.org/details/MissaleRomanum1975OrdoMissae -- PDF 166,093 bytes, OCR text layer 21,768 bytes [verified]"
 retrievable = "bounded"
@@ -1147,7 +1189,9 @@ Administrationem Patrimonii Sedis Apostolicae in Civitate Vaticana / Venditio
 operis fit cura Librariae Editricis Vaticanae (Libreria Editrice Vaticana,
 Citta del Vaticano)` [verified]. This is the strongest rights evidence in the
 whole audit, because it is the book's own claim rather than an inference about
-the Holy See's practice.
+the Holy See's practice. The operational release gate and its unresolved
+civil-law limits are recorded centrally in
+`src/sources/inventories/postconciliar-latin-rights-v1.toml`.
 """
 may_publish_text = "no"
 digitisation = "https://media.musicasacra.com/books/latin_missal2002.pdf -- 828 pages, 3,333,382 bytes, SHA-256 0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7 [verified here]"
@@ -1182,6 +1226,7 @@ attests_act = "de-editione-typica-tertia-2000"
 aliases_tried = ["Missale Romanum 2008", "reimpressio emendata", "Variationes et additiones"]
 aliases_that_hit = ["Variationes et additiones"]
 rights = "holy-see-post-1929"
+rights_basis = "Operationally withheld under `src/sources/inventories/postconciliar-latin-rights-v1.toml`: registered evidence applies the Holy See's ownership claim to subsequent amended editions and records a permission requirement, while this repository has no affirmative distribution basis. This does not adjudicate civil-law subsistence in a particular text."
 may_publish_text = "no"
 digitisation = "The ALTAR BOOK is not located. The official change list is: Notitiae 44 (2008) nos. 503-504, pp. 367-387, registered as work.holy-see.variationes-et-additiones-missalis-romani-2008 and work.holy-see.reimpressio-emendata-missalis-romani-notice-2008 [recorded]."
 retrievable = "bounded"
@@ -1208,16 +1253,19 @@ of The Roman Missal © 2010, International Commission on English in the Liturgy
 Corporation. All rights reserved.` [sourced:
 https://icelweb.org/copyright.htm]. The notice is a condition of an applicable
 permission, not permission by itself. This repository treats postconciliar
-English as unpublishable and marks it `absent: icel`.
+English as third-party text whose disposition must be decided per rightsholder,
+exact exemplar, territory or version, and publication surface.
 
-THE POSITION IS A CONFLICT, NOT A FLAT PROHIBITION, and the row says so because
-the reason attached to an absence has to be true. ICEL publishes a standing
-conditional permission for non-commercial internet reproduction of approved
-texts without prior permission; the USCCB states that `no permission will be
-given for the publication of liturgical texts on the Internet at this time`.
-See `[[corrections]]` entry `icel-internet-clause` for both quotations and their
-sources. The operational answer is unchanged -- do not publish -- but it rests
-on the disagreement rather than on a prohibition nobody issued.
+The historical conflict recorded below has been resolved for ICEL-owned text:
+a generic policy from another body does not silently rescind the actual
+rightsholder's express conditional web permission. That permission does not
+clear this whole mixed-rightsholder book or this repository's tracked corpus,
+public Git, downloadable data, or PDFs. Those surfaces remain refused, and the
+current Ordinary distinguishes `approved-english-publication-restriction` from
+`official-exemplar-not-carried` and its other typed gaps instead of applying one
+blanket ICEL reason. [recorded: guidance/liturgical-text-publication-policy.md
+sections 2, 3.4, 6, and 15.2; src/sources/inventories/
+icel-web-permission-rights-v1.toml].
 """
 may_publish_text = "no"
 digitisation = "https://archive.org/details/Roman-Missal-Third-Edition -- PDF 56,408,992 bytes, OCR text layer 1,992,477 bytes [verified]"
@@ -2145,6 +2193,8 @@ severity = "medium"
 target = "this project's standing treatment of postconciliar English as simply unpublishable, recorded as `absent: icel`"
 target_says = "guidance/the-shape.md section 4 gives `absent: icel` as its example of an absence with a reason: `a postconciliar text nobody may publish`."
 finding = """
+HISTORICAL FINDING, RECORDED ON 2026-08-01:
+
 `NOBODY MAY PUBLISH` IS TOO STRONG AS STATED, AND THE REAL POSITION IS A
 CONFLICT BETWEEN TWO BODIES rather than a single prohibition.
 
@@ -2172,24 +2222,31 @@ So one body publishes a conditional standing permission and the other says
 permission will not be given. This audit does not resolve which governs a given
 text in a given territory, and it must not: that is a rights judgement for the
 maintainer, not a finding.
+
+RESOLUTION, APPLIED ON THE MAINTAINER'S DIRECTION:
+
+The maintainer answered that reserved judgement in the governing publication
+policy adopted on 2026-08-20. For ICEL-owned text, the actual rightsholder's
+specific express permission governs unless rescinded or superseded; the
+USCCB's generic electronic-publication policy does not itself establish that
+rescission. The resolution is deliberately narrower than publication: ICEL's
+grant is conditional and surface-specific, supplies no exact text, reaches no
+other rightsholder, and does not authorize the tracked corpus, public Git,
+downloadable data, or PDFs. [recorded:
+guidance/liturgical-text-publication-policy.md sections 2, 3.4, 6, and 15.2].
 """
 consequences = """
-None applied, and deliberately so. `absent: icel` remains the right operational
-default -- a conditional permission with five conditions and a termination
-clause is not a basis for a library to print from, and the USCCB position
-directly contradicts it.
-
-What changes is the REASON RECORDED. `nobody may publish` is not what the
-sources say; `the two bodies that would have to agree do not` is. An absence
-must carry a true reason, and this one carried a slightly false one.
-
-NOTE, AND CHECK BEFORE ACTING: another lane appears to be working this exact
-ground concurrently -- uncommitted records for ICEL publication policies and for
-WIPO Berne contracting parties were present in the tree on 2026-08-01. That
-lane's file is not cited here because it was not committed and this audit does
-not adopt another lane's uncommitted work. Reconcile before either is relied on.
+Applied without opening a refused surface or adding payload. Current records
+preserve ICEL's conditional permission and classify each silence by its actual
+blocker: `approved-english-publication-restriction` where this distribution
+surface is outside the grant, `official-exemplar-not-carried` where no eligible
+exact payload is held, and separate typed reasons for another rightsholder,
+territory or version, or model boundary. The whole 2011 book remains
+`may_publish_text = "no"` because it is a mixed-rightsholder artifact and the
+recorded distribution surfaces remain ineligible, not because ICEL issued a
+blanket prohibition.
 """
-status = "recorded, not applied"
+status = "applied on 2026-08-27"
 
 [[corrections]]
 id = "not-located-verdicts"
@@ -2301,10 +2358,12 @@ translation as copyrighted` [sourced: POST_1962_SOURCES.md, PROVENANCE.md].
 finding = """
 THAT ASSUMPTION IS NOT THIS PROJECT'S AND MUST NOT TRAVEL WITH THE BYTES.
 
-This repository's position is the opposite: postconciliar English is marked
-`absent: icel` and is not printed, and the 2002 Latin artifact is registered
-`storage = restricted`. The two projects reach opposite conclusions about the
-same files.
+This repository does not inherit that public-domain claim. Postconciliar
+English payload is quarantined from the tracked corpus, public Git,
+downloadable data, and PDFs, with each current silence assigned its exact typed
+rights, witness, territory or version, or model reason; the 2002 Latin artifact
+is registered `storage = restricted`. The two projects therefore still reach
+opposite conclusions about whether those same files may be reused.
 
 The hazard is specific rather than theoretical. The act history already reads
 seven OCR text layers from that corpus, so the door between the two is open, and
@@ -2313,6 +2372,33 @@ along with it without anything reporting the change.
 """
 consequences = "None applied here. Recorded so that any future reuse of lt-hist material re-derives rights rather than inheriting them, and so the divergence is discoverable before it is relied on."
 status = "recorded"
+
+[[corrections]]
+id = "1920-witness-identity"
+severity = "high"
+target = "[[books]] missale-romanum-1920-typica, as recorded on 2026-08-01"
+target_says = """
+Internet Archive item MissaleRomanumBenedettoXV was a whole 1920 printing and
+the project's existing 1920 witness.
+"""
+finding = """
+THE ITEM IS NOT A 1920 PRINTING. Its canonical edition and artifact records now
+document a 1951-1954 body bound with a post-1970 appendix, including a proper
+rubric for the Society of Saint Pius X. It cannot authenticate the 1920 Vatican
+impression and its composite bytes cannot inherit a whole-artifact public-domain
+verdict from the 1920 edition.
+
+An exact, separately identified early witness is now held: Internet Archive item
+missaleromanum0000unse, whose title page reads editio quarta juxta typicam
+Vaticanam, Tours, Alfred Mame, 1922, and whose approval leaf declares conformity
+with the Vatican edition. The whole 51,720,493-byte PDF was fetched, hashed and
+read on 2026-08-27. It is a licensed conformed printing, not the typical edition,
+so it receives its own book row and source-library edition rather than being
+used to relabel the old item or close the still-unauthenticated typical
+impression.
+"""
+consequences = "The typical-edition row is now unresolved because no bounded replacement search followed disqualification of the former candidate; the Mame conformed printing has its own verified whole/public-domain row and exact registered artifact; derived counts and guidance are updated."
+status = "applied on 2026-08-27"
 
 # --- Counts -----------------------------------------------------------------
 #
@@ -2334,29 +2420,32 @@ status = "recorded"
 
 [counts]
 acts_recorded = 14
-books_recorded = 31
+books_recorded = 32
 books_that_are_stations = 0
 books_group_latin_uses = 10
 books_group_pre_tridentine = 2
-books_group_roman_line = 19
+books_group_roman_line = 20
 typical_editions = 19
-witnesses_not_typical = 12
+witnesses_not_typical = 13
 retrievable_whole = 23
 retrievable_bounded = 2
 retrievable_restricted = 1
-retrievable_not_located = 5
-may_publish_yes = 14
+retrievable_not_located = 4
+retrievable_unresolved = 2
+may_publish_yes = 15
+may_publish_conditional = 1
 may_publish_no = 9
 may_publish_mixed = 6
-may_publish_unresolved = 2
-rights_public_domain_us_pre_1931 = 14
+may_publish_unresolved = 1
+rights_public_domain_us_pre_1931 = 15
+rights_public_domain_us_not_renewed = 1
 rights_holy_see_post_1929 = 7
 rights_mixed = 6
-rights_unresolved = 3
+rights_unresolved = 2
 rights_third_party_copyright = 1
 priority_1 = 6
 priority_2 = 8
-priority_3 = 8
+priority_3 = 9
 priority_4 = 3
 priority_5 = 6
 
@@ -2366,19 +2455,27 @@ model's central rule -- the station is the act, never the book -- expressed as a
 number that must stay at zero. If a later edit sets `station = true` on any book
 row, this count moves and the rule has been broken visibly rather than quietly.
 
-`retrievable_whole = 23` of 31 is the audit's most encouraging figure and its
-most misleading one, so read it with `may_publish_yes = 14`. Nearly three
-quarters of these books can be READ in full today; fewer than half may be
-PUBLISHED from. The gap is almost entirely the twentieth century.
+`retrievable_whole = 23` of 32 is the audit's most encouraging figure and its
+most misleading one, so read it with `may_publish_yes = 15` and
+`may_publish_conditional = 1`. Nearly three quarters of these books can be READ
+in full today; sixteen may be PUBLISHED from, one only after the title-page
+confirmation its row names. The newly registered Mame printing is one of the
+unconditional fifteen, but its public-domain historical text is not by itself
+evidence that a postconciliar target-edition prayer is identical.
 
-`retrievable_not_located` FELL FROM 6 TO 5 DURING THE AUDIT, AND NOT BECAUSE
-ANYTHING NEW WAS PUBLISHED. Two rows had been written `not-located` on the
-strength of an Internet Archive search alone, and the books were at the
-Bibliotheque nationale de France the whole time. The count moved because the
-audit was corrected, not because the world changed, and `[[corrections]]`
-`not-located-verdicts` records what that cost. Treat every remaining
-`not-located` as provisional on the same ground: each one now names the
-catalogue searched, and none of them names every catalogue there is.
+`retrievable_not_located` first fell from 6 to 4 during the audit. Two rows had
+been written
+`not-located` on the strength of an Internet Archive search alone, and the books
+were at the Bibliotheque nationale de France the whole time. Later, the object
+formerly treated as the whole 1920 typical edition was proved to be a later
+composite. That disqualification did not itself search for a replacement, so
+the exact 1920 impression is `unresolved`, as is the 1971 reimpressio that was
+discovered by reading rather than searching. The separate 1922 Mame conformed
+printing became a new `whole` row, and the whole count therefore stays 23.
+`[[corrections]]` `not-located-verdicts` and `1920-witness-identity` record the
+movements. Treat every remaining `not-located` as provisional on the same
+ground: each one now names the repository searched, and none of them names every
+repository there is.
 """
 
 # --- Recommended acquisition order ------------------------------------------

@@ -41,14 +41,17 @@ may be presented as that book's text.
 question = "Does translating the Latin editio typica afresh avoid the encumbrance?"
 answer = "No, not by itself."
 reasoning = """
-The Holy See claims copyright in the Latin books in terms. Liturgiam
-authenticam n. 111 reads: "As regards the liturgical books of the Roman Rite
-promulgated in an editio typica either before or after the Second Vatican
-Council by decree of the Congregations competent at the time, the Apostolic See,
-through the Administratio Patrimonii or, in its name and by its mandate, through
-the Libreria Editrice Vaticana, possesses and reserves to itself the right of
-ownership commonly known as 'copyright'." n. 110 lists the books in view and
-names the Missale Romanum first.
+The Holy See claims copyright in the Latin books in terms. The current
+instrument is the Congregation's decree *Postquam Summus Pontifex* of 22 October
+2021: n. 2 says the Apostolic See holds copyright in the Roman Rite's Latin
+typical editions and applies the same principle to subsequent editions; n. 3
+requires a licence for the liturgical-use printing or reprinting of those books
+and says similar permissions are required to distribute liturgical books or
+parts of them via the internet. Footnote 8 separately routes non-liturgical
+study editions and worship aids to CIC canon 826 §3 without turning that
+canonical norm into a copyright licence. *Liturgiam authenticam* nn. 110-111
+are the 2001 predecessor and remain useful corroboration, not the current
+instrument.
 
 That claim is enforceable in the United States on ordinary principles. The Holy
 See is a party to the Berne Convention -- WIPO's contracting-party table gives
@@ -74,6 +77,8 @@ the law of the forum, and this project has not tested the claim and does not
 propose to.
 """
 source_ids = [
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.2",
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.3",
   "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.111",
   "artifact.world-intellectual-property-organization.wipo-lex-berne-contracting-parties.web-2026-08-01.contracting-parties-html",
 ]
@@ -85,12 +90,11 @@ reasoning = """
 The English of the Roman Missal, third edition, is the work of the International
 Commission on English in the Liturgy, a mixed commission of eleven bishops'
 conferences set up at Rome in 1963 and erected as a mixed commission under
-Liturgiam authenticam on 15 September 2003. Liturgiam authenticam n. 117 directs
-that "the rights of publication and the copyright for all translations of
-liturgical books ... remain with the Conferences of Bishops or their national
-liturgical Commissions", and n. 118 provides for a licensing agreement where the
-copyright is common to several conferences, which is exactly the case of the
-English.
+*Liturgiam authenticam* on 15 September 2003. The current decree *Postquam
+Summus Pontifex* n. 40 states that a Bishops' Conference holds the copyright of
+vernacular liturgical books and texts and requires conferences sharing texts to
+establish their rights in writing. *Liturgiam authenticam* nn. 117-118 provide
+the predecessor formulation and the mixed-commission licensing context.
 
 ICEL's own published terms say the rest. Its current acknowledgement for
 excerpts is "Excerpts from the English translation of The Roman Missal © 2010,
@@ -128,6 +132,7 @@ This has been the repository's position since before this record and nothing
 found here disturbs it.
 """
 source_ids = [
+  "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.40",
   "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties",
   "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks",
   "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.what-is-icel-html",
@@ -271,23 +276,33 @@ free grant. Nothing here was found.
 
 [seeking_a_licence]
 question = "What would it take to carry the approved English?"
-answer = "A written grant from ICEL, and a second decision this repository cannot presently execute."
+answer = "For a qualifying no-fee, noncommercial Internet-site display, ICEL's standing permission is the grant; other publication forms still require their own authorization and machinery."
 what_would_be_involved = """
-The route is not secret and not hostile. ICEL states it: requests go to the ICEL
-Secretariat, 1100 Connecticut Avenue NW, Suite 710, Washington DC 20036, and to
-permission@eliturgy.org, and texts are made available to publishers "without
-distinction, on a non-exclusive basis". A request would have to state the extent
-sought (the orations of the temporale, or the whole Missal), the medium (a
-freely readable website), whether anything is sold (nothing is), and the
-acknowledgement carried. A royalty or flat fee may be assessed even for material
-not used during celebration. The position of a member conference would have to
-be settled beside it, since ICEL provides content to the conferences and the
-conferences authorise publishers.
+The earlier answer here relied on ICEL's summary copyright page and is
+superseded by the registered Publication Policies booklet. Its Global Computer
+Networks clause conditionally permits exact approved, recognised and
+promulgated ICEL material on a no-fee, noncommercial Internet site without a
+separate written or oral request. Using that route is a compliance decision: the
+site must satisfy the clause's conditions, carry the current acknowledgement,
+and recheck that the standing permission remains in force.
+
+That permission is surface-specific. It does not authorize a public Git corpus,
+bundled static JSON, command-line export, PDF, API, or general download. For a
+form outside the standing grant, requests still go to the ICEL Secretariat and
+must identify the material, medium, commercial terms, and acknowledgement; a
+royalty or flat fee may apply. A particular territory may also require a
+separate conference decision. The current repository therefore keeps the ICEL
+payload quarantined even though a future non-bundled qualifying site route is
+not barred for want of an ICEL web grant.
 
 Only the project owner can ask, and only the project owner should: a licence
 request is a representation about who is asking and what they will do, and no
 agent may make one.
 """
+source_ids = [
+  "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks",
+  "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties",
+]
 the_machinery_is_not_ready = """
 This has to be said plainly, because a licence obtained tomorrow could not
 safely be used. A licence to reproduce is not a licence to publish, and the two

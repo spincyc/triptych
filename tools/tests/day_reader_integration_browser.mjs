@@ -273,14 +273,16 @@ const STATES = Object.freeze({
   postconciliar: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1' }),
   postReadLatent: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', 'ordinary-lang': 'en', rubrics: '0', why: '0', 'eucharistic-prayer': 'ep-ii' }),
   postMissal: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0', 'eucharistic-prayer': 'ep-ii' }),
+  postPentecostDayMissal: hash({ date: '2026-05-24', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'pentecost', form: 'day', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
+  romanEmberLongerMissal: hash({ date: '2026-12-19', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'advent-ember-saturday', form: 'longer', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '0' }),
   multiple: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'comm-s-hygini-papae-martyris' }),
   partial: hash({ date: '2026-01-01', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'octava-nativitatis-domini', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
-  missingSeat: hash({ date: '2026-02-18', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'ash-wednesday', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
-  why: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', why: '1' }),
+  ashBeforeFrame: hash({ date: '2026-02-18', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'ash-wednesday', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1' }),
+  why: hash({ date: '2026-08-02', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', mass: 'pentecost-10', ordinary: '1', 'ordinary-lang': 'en', why: '1' }),
   whyTransferred: hash({ date: '2024-03-25', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   whyLatin: hash({ date: '2020-01-04', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   whyCommemoration: hash({ date: '2026-01-11', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
-  whyNoOrationSlot: hash({ date: '2026-01-15', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
+  whyCompleteOrationSlots: hash({ date: '2026-01-15', missal: 'roman-1962', bible: 'douay-rheims', orations: 'la', why: '1' }),
   postWhy: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '1', 'ordinary-lang': 'en', rubrics: '1', why: '1', 'eucharistic-prayer': 'ep-ii' }),
   invalid: hash({ date: '2026-08-02', missal: 'not-a-missal', bible: 'douay-rheims', orations: 'la' }),
   currentStyleLatent: hash({ date: '2026-11-29', missal: 'postconciliar', bible: 'douay-rheims', orations: 'la', mass: 'advent-1', ordinary: '0', 'ordinary-lang': 'en', rubrics: '0', 'eucharistic-prayer': 'ep-ii' }),
@@ -1001,7 +1003,7 @@ async function runAssertions(cdp, base) {
       completeness: dayReaderDebug.semantic.coverage.map(row => row.completeness)
     })`);
     assert.equal(value.hidden, false);
-    assert.match(value.notice, /not held|not yet transcribed/i);
+    assert.match(value.notice, /unavailable in the selected edition or language/i);
     assert.ok(value.completeness.includes('partial'));
   });
 
@@ -1056,7 +1058,7 @@ async function runAssertions(cdp, base) {
       `document.querySelectorAll('details.day-reasoning').length`), 1);
   });
 
-  await test('Why preserves transferred dates, Latin source text, and Proper oration apparatus', async () => {
+  await test('Why preserves transferred dates, Latin source text, and complete Proper oration apparatus', async () => {
     await navigateCandidate(cdp, base, STATES.whyTransferred);
     assert.match(await evaluate(cdp,
       `document.querySelector('details.day-reasoning').textContent`),
@@ -1074,15 +1076,16 @@ async function runAssertions(cdp, base) {
     assert.match(proper, /What follows the collect/i);
     assert.match(proper, /RG|RGMR/);
 
-    await navigateCandidate(cdp, base, STATES.whyNoOrationSlot);
-    const noSlot = await evaluate(cdp,
+    await navigateCandidate(cdp, base, STATES.whyCompleteOrationSlots);
+    const completeSlots = await evaluate(cdp,
       `document.querySelector('details.day-reasoning').textContent`);
-    assert.match(noSlot, /carries no oration slot/i);
-    assert.equal((noSlot.match(/carries no oration slot/gi) || []).length, 1);
-    assert.doesNotMatch(noSlot, /What follows the /i);
-    const noSlotLatin = await evaluate(cdp, `[...document.querySelectorAll(
+    assert.doesNotMatch(completeSlots, /carries no oration slot/i);
+    assert.match(completeSlots, /What follows the collect/i);
+    assert.match(completeSlots, /What follows the secret/i);
+    assert.match(completeSlots, /What follows the postcommunion/i);
+    const slotLatin = await evaluate(cdp, `[...document.querySelectorAll(
       'details.day-reasoning .reasoning-latin[lang="la"]')].map(row => row.textContent.trim())`);
-    assert.ok(noSlotLatin.some(row => /Intercessio nos, quaesumus/.test(row)), JSON.stringify(noSlotLatin));
+    assert.ok(slotLatin.some(row => /Intercessio nos, quaesumus/.test(row)), JSON.stringify(slotLatin));
 
     await navigateCandidate(cdp, base, STATES.postWhy);
     const ordinaryNotes = await evaluate(cdp, `[...document.querySelectorAll(
@@ -1094,9 +1097,9 @@ async function runAssertions(cdp, base) {
   await test('fresh and transitioned outcomes commit identical deterministic mode chrome', async () => {
     const cases = [
       ['invalid Eucharistic Prayer', STATES.invalidPrayer, 'missal', 'invalid', 'invalid', /explicit state rejected/i],
-      ['missing semantic seat', STATES.missingSeat, 'missal', 'unrenderable', 'unrenderable', /valid selection unrenderable/i],
+      ['typed before-frame rite', STATES.ashBeforeFrame, 'missal', 'ready', 'ready', /1962/],
       ['Why apparatus', STATES.why, 'missal', 'ready', 'ready', /1962/],
-      ['territorial branches', STATES.territorialCorpus, 'read', 'ready', 'ready', /territorial results/i],
+      ['territorial branches', STATES.territorialCorpus, 'read', 'unresolved', 'unresolved', /territorial results/i],
       ['invalid Ordinary value', STATES.invalidOrdinary, null, 'invalid', 'invalid', /Mode unavailable.*explicit state rejected/i],
       ['ready Read', STATES.roman, 'read', 'ready', 'ready', /1962/],
       ['ready Missal', STATES.romanMissal, 'missal', 'ready', 'ready', /1962/]
@@ -1211,7 +1214,11 @@ async function runAssertions(cdp, base) {
   await test('Missal, rubrics, and Why are active together without changing the semantic stream', async () => {
     for (const state of [STATES.romanMissal, STATES.postMissal]) {
       await navigateCandidate(cdp, base, state);
-      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+      assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'),
+        state === STATES.postMissal ? 'unresolved' : 'ready');
+      assert.deepEqual(await evaluate(cdp,
+        'dayReaderDebug.semantic.ordinaryUnresolved.map(row => row.element)'),
+      state === STATES.postMissal ? ['ritus-initiales/gloria-in-excelsis'] : []);
       assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
       assert.ok((await evaluate(cdp, 'dayReaderDebug.semantic.events.length')) > 10);
       assert.deepEqual(await evaluate(cdp, 'dayReaderDebug.deferred'), []);
@@ -1243,8 +1250,8 @@ async function runAssertions(cdp, base) {
 
   await test('both editions preserve production event order and seat every appointed Proper once', async () => {
     const cases = [
-      [STATES.romanMissal, 211, 6, 195, 10, 'proper/roman-1962/pentecost-10/010'],
-      [STATES.postMissal, 61, 7, 44, 10, 'proper/postconciliar/advent-1/010']
+      [STATES.romanMissal, 205, 6, 189, 10, 'proper/roman-1962/pentecost-10/010'],
+      [STATES.postMissal, 58, 7, 41, 10, 'proper/postconciliar/advent-1/010']
     ];
     for (const [state, total, sections, ordinary, propers, lastProper] of cases) {
       await navigateCandidate(cdp, base, state);
@@ -1262,7 +1269,8 @@ async function runAssertions(cdp, base) {
           seats: properEvents.map(row => row.seat),
           dom,
           option: dayReaderDebug.state.options.legitimate['eucharistic-prayer'] || null,
-          checked: document.querySelector('.ordinary-choice input:checked')?.value || null
+          checked: document.querySelector(
+            '[data-option-group="eucharistic-prayer"] input:checked')?.value || null
         };
       })()`);
       assert.equal(value.total, total);
@@ -1297,20 +1305,185 @@ async function runAssertions(cdp, base) {
     }
   });
 
-  await test('valid unavailable language, partial coverage, and missing seats remain honest', async () => {
+  await test('source-choice and non-full forms render in exact source order without borrowing an Ordinary', async () => {
+    await navigateCandidate(cdp, base, STATES.postPentecostDayMissal);
+    const pentecost = await evaluate(cdp, `(() => {
+      const semantic = dayReaderDebug.semantic;
+      const events = semantic.events;
+      const choice = events.find(row => row.kind === 'proper-choice');
+      return {
+        outcome: dayReaderDebug.outcome,
+        mode: dayReaderDebug.state.requestedMode,
+        formulary: semantic.resolved.formulary,
+        form: semantic.resolved.form,
+        eventIds: events.map(row => row.id),
+        eventKinds: events.map(row => row.kind),
+        seats: events.filter(row => row.kind === 'proper' || row.kind === 'proper-choice')
+          .map(row => row.seat),
+        ordinaryEvents: events.filter(row => row.kind.startsWith('ordinary-')).length,
+        domIds: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId),
+        ordinaryDom: document.querySelectorAll(
+          '#reader-document .ordinary-element, #reader-document .ordinary-division').length,
+        frameLimitation: document.querySelector('.missal-frame-limitation')?.textContent
+          .replace(/\\s+/g, ' ').trim() || '',
+        frame: semantic.coverage.find(row =>
+          row.scope === 'ordinary-frame:postconciliar') || null,
+        choice: choice && {
+          id: choice.id, group: choice.group, selection: choice.selection,
+          options: choice.options.map(option => ({
+            id: option.id, events: option.events.map(row => row.id)
+          }))
+        },
+        unresolved: semantic.unresolvedChoices.map(row => ({
+          id: row.id, options: row.options.map(option => option.id)
+        })),
+        domChoice: {
+          group: document.querySelector('.proper-choice')?.dataset.properChoice || null,
+          state: document.querySelector('.proper-choice')?.dataset.choiceState || null,
+          options: [...document.querySelectorAll('.proper-choice-option')]
+            .map(row => [row.dataset.properChoiceOption, row.dataset.choiceStatus]),
+          members: [...document.querySelectorAll('.proper-choice-member')]
+            .map(row => row.dataset.properChoiceMemberEvent),
+          note: document.querySelector('.proper-choice-note')?.textContent || ''
+        }
+      };
+    })()`);
+    const pentecostIds = [
+      'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
+      ...Array.from({ length: 10 }, (_row, index) =>
+        'proper/postconciliar/pentecost/' + String(index + 17).padStart(3, '0'))
+    ];
+    assert.equal(pentecost.outcome, 'unresolved');
+    assert.equal(pentecost.mode, 'missal');
+    assert.equal(pentecost.formulary, 'pentecost');
+    assert.equal(pentecost.form, 'day');
+    assert.deepEqual(pentecost.eventIds, pentecostIds);
+    assert.deepEqual(pentecost.domIds, pentecostIds);
+    assert.deepEqual(pentecost.eventKinds,
+      ['proper-choice', ...Array.from({ length: 10 }, () => 'proper')]);
+    assert.ok(pentecost.seats.every(row => row === null));
+    assert.equal(pentecost.ordinaryEvents, 0);
+    assert.equal(pentecost.ordinaryDom, 0);
+    assert.match(pentecost.frameLimitation, /Ordinary frame is unavailable/i);
+    assert.match(pentecost.frameLimitation, /source order.*not invented/is);
+    assert.equal(pentecost.frame.state, 'unavailable');
+    assert.equal(pentecost.frame.scope, 'ordinary-frame:postconciliar');
+    assert.deepEqual(pentecost.frame.reasons.map(row => [row.kind, row.applicability]),
+      [['text-not-held', 'unavailable']]);
+    assert.ok(pentecost.frame.reasons[0].basis.trim().length > 0);
+    assert.deepEqual(pentecost.choice, {
+      id: 'proper-choice/postconciliar/pentecost/day/entrance-antiphon',
+      group: 'entrance-antiphon',
+      selection: { state: 'required', option: null },
+      options: [
+        { id: 'spiritus-domini', events: ['proper/postconciliar/pentecost/015'] },
+        { id: 'caritas-dei', events: ['proper/postconciliar/pentecost/016'] }
+      ]
+    });
+    assert.deepEqual(pentecost.unresolved, [{
+      id: pentecost.choice.id, options: ['spiritus-domini', 'caritas-dei']
+    }]);
+    assert.deepEqual(pentecost.domChoice, {
+      group: 'entrance-antiphon', state: 'required',
+      options: [['spiritus-domini', 'available'], ['caritas-dei', 'available']],
+      members: ['proper/postconciliar/pentecost/015', 'proper/postconciliar/pentecost/016'],
+      note: 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'
+    });
+    assert.ok(pentecost.eventIds.indexOf('proper/postconciliar/pentecost/020') <
+      pentecost.eventIds.indexOf('proper/postconciliar/pentecost/021'));
+    assert.ok(pentecost.eventIds.indexOf('proper/postconciliar/pentecost/021') <
+      pentecost.eventIds.indexOf('proper/postconciliar/pentecost/022'));
+
+    await navigateCandidate(cdp, base, STATES.romanEmberLongerMissal);
+    const ember = await evaluate(cdp, `(() => {
+      const semantic = dayReaderDebug.semantic;
+      const events = semantic.events;
+      return {
+        outcome: dayReaderDebug.outcome,
+        mode: dayReaderDebug.state.requestedMode,
+        formulary: semantic.resolved.formulary,
+        form: semantic.resolved.form,
+        eventIds: events.map(row => row.id),
+        seats: events.filter(row => row.kind === 'proper').map(row => row.seat),
+        ordinaryEvents: events.filter(row => row.kind.startsWith('ordinary-')).length,
+        domIds: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId),
+        frame: semantic.coverage.find(row =>
+          row.scope === 'ordinary-frame:roman-1962') || null,
+        frameLimitation: document.querySelector('.missal-frame-limitation')?.textContent
+          .replace(/\\s+/g, ' ').trim() || '',
+        visibleNames: [...document.querySelectorAll('#reader-document .proper-name')]
+          .map(row => [...row.childNodes].find(node => node.nodeType === Node.TEXT_NODE)
+            ?.textContent.trim() || '')
+      };
+    })()`);
+    const emberIds = Array.from({ length: 19 }, (_row, index) =>
+      'proper/roman-1962/advent-ember-saturday/' + String(index + 1).padStart(3, '0'));
+    assert.equal(ember.outcome, 'ready');
+    assert.equal(ember.mode, 'missal');
+    assert.equal(ember.formulary, 'advent-ember-saturday');
+    assert.equal(ember.form, 'longer');
+    assert.deepEqual(ember.eventIds, emberIds);
+    assert.deepEqual(ember.domIds, emberIds);
+    assert.ok(ember.seats.every(row => row === null));
+    assert.equal(ember.ordinaryEvents, 0);
+    assert.match(ember.frameLimitation, /Ordinary frame is unavailable/i);
+    assert.match(ember.frameLimitation, /source order.*not invented/is);
+    assert.equal(ember.frame.state, 'unavailable');
+    assert.equal(ember.frame.scope, 'ordinary-frame:roman-1962');
+    assert.deepEqual(ember.frame.reasons.map(row => [row.kind, row.applicability]),
+      [['text-not-held', 'unavailable']]);
+    assert.ok(ember.frame.reasons[0].basis.trim().length > 0);
+    assert.deepEqual(ember.visibleNames.slice(2, 15), [
+      'First Lesson', 'First Gradual', 'Second Lesson', 'Second Gradual',
+      'Third Lesson', 'Third Gradual', 'Fourth Lesson', 'Fourth Gradual',
+      'Fifth Lesson', 'Hymn (Benedictus es)', 'Epistle', 'Tract', 'Gospel'
+    ]);
+  });
+
+  await test('valid unavailable language, partial coverage, and typed before-frame rites remain honest', async () => {
     await navigateCandidate(cdp, base, STATES.romanLatinMissal);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.languages.ordinary'), 'la');
-    assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'),
-      /Withheld under “no-facing-latin”/);
+    const unavailableLatin = await evaluate(cdp,
+      'document.querySelector("#reader-document").innerText');
+    assert.match(unavailableLatin, /Withheld under “no-facing-latin”/);
+    assert.match(unavailableLatin, /Withheld under “not-in-the-1962-ordo”/);
+    assert.match(unavailableLatin, /Withheld under “witness-own-english”/);
     assert.equal(await evaluate(cdp, 'document.querySelector("#coverage-notice").hidden'), false);
     await navigateCandidate(cdp, base, STATES.partial);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
-    assert.match(await evaluate(cdp, 'document.querySelector("#coverage-notice").textContent'), /not held|not yet transcribed/i);
-    await navigateCandidate(cdp, base, STATES.missingSeat);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unrenderable');
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.semantic'), null);
-    assert.match(await evaluate(cdp, 'document.querySelector("#reader-document").innerText'),
-      /no usable semantic seat/i);
+    assert.match(await evaluate(cdp,
+      'document.querySelector("#coverage-notice").textContent'),
+      /unavailable in the selected edition or language/i);
+    await navigateCandidate(cdp, base, STATES.ashBeforeFrame);
+    const ash = await evaluate(cdp, `(() => {
+      const events = dayReaderDebug.semantic.events;
+      const prefix = events.slice(0, 5);
+      return {
+        outcome: dayReaderDebug.outcome,
+        ids: prefix.map(row => row.id),
+        seats: prefix.map(row => row.seat),
+        notes: [...document.querySelectorAll(
+          '.proper-unplaced-before-frame .proper-unplaced-note')].map(row =>
+            row.textContent.replace(/\\s+/g, ' ').trim()),
+        ordinary: events.filter(row => row.kind.startsWith('ordinary-')).length,
+        domIds: [...document.querySelectorAll('#reader-document [data-semantic-event-id]')]
+          .map(row => row.dataset.semanticEventId)
+      };
+    })()`);
+    assert.equal(ash.outcome, 'ready');
+    assert.deepEqual(ash.ids, Array.from({ length: 5 }, (_row, index) =>
+      'proper/roman-1962/ash-wednesday/' + String(index + 1).padStart(3, '0')));
+    assert.ok(ash.seats.every(row => row && row.placement === 'unseated' &&
+      row.region === 'before-frame' && row.id ===
+        'unplaced/roman-1962/ash-wednesday/main/blessing-and-imposition-of-ashes' &&
+      row.basis.trim().length > 0));
+    assert.equal(ash.notes.length, 5);
+    assert.ok(ash.notes.every(row => /before the ordinary Mass frame.*no Ordinary seat is invented/i.test(row)));
+    assert.ok(ash.ordinary > 0);
+    assert.deepEqual(ash.domIds,
+      await evaluate(cdp, 'dayReaderDebug.semantic.events.map(row => row.id)'));
   });
 
   await test('current-style latent URL matches live Read text, citations, and weekday', async () => {
@@ -1394,7 +1567,7 @@ async function runAssertions(cdp, base) {
         ['ascension-thursday', 'Seventh Sunday of Easter', false],
         ['ascension-transferred-to-sunday', 'The Ascension of the Lord', true]
       ]],
-      [STATES.territorialCorpus, 'ready', [
+      [STATES.territorialCorpus, 'unresolved', [
         ['corpus-christi-thursday', 'Tenth Sunday in Ordinary Time', false],
         ['corpus-christi-transferred-to-sunday', 'The Most Holy Body and Blood of Christ', false]
       ]]
@@ -1471,7 +1644,7 @@ async function runAssertions(cdp, base) {
     const active = STATES.postMissal;
     await navigateCandidate(cdp, base, STATES.currentStyleLatent);
     await transitionHash(cdp, active);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unresolved');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
     await historyMove(cdp, 'back', STATES.currentStyleLatent);
     assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
@@ -1479,7 +1652,7 @@ async function runAssertions(cdp, base) {
     assert.equal(await evaluate(cdp,
       `dayReaderDebug.state.options.legitimate['eucharistic-prayer']`), 'ep-ii');
     await historyMove(cdp, 'forward', active);
-    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'ready');
+    assert.equal(await evaluate(cdp, 'dayReaderDebug.outcome'), 'unresolved');
     assert.equal(await evaluate(cdp, 'dayReaderDebug.state.requestedMode'), 'missal');
   });
 
@@ -1549,12 +1722,12 @@ async function runAssertions(cdp, base) {
     try {
       await transitionHash(cdp, STATES.postMissal);
       const before = await candidateOutcomeSnapshot(cdp);
-      assert.equal(before.outcome, 'ready');
+      assert.equal(before.outcome, 'unresolved');
       assert.equal(before.title, 'First Sunday of Advent');
       assert.equal(before.state.edition.id, 'postconciliar');
       assert.equal(before.state.requestedMode, 'missal');
       assert.equal(before.semantic.resolved.formulary, 'advent-1');
-      assert.equal(before.semantic.events.length, 61);
+      assert.equal(before.semantic.events.length, 58);
       await settleResponseGate(cdp, gate);
       const after = await candidateOutcomeSnapshot(cdp);
       assert.deepEqual(after, before);
@@ -1809,6 +1982,8 @@ async function runAssertions(cdp, base) {
     assert.match(missalDetails, /Mode\s+Missal/i);
     assert.match(missalDetails, /Ordinary language\s+English/i);
     assert.match(missalDetails, /Eucharistic Prayer: II/);
+    assert.match(missalDetails, /Ordinary elements have unresolved applicability/i);
+    assert.doesNotMatch(missalDetails, /territorial results|branch-local formulary choice/i);
     assert.doesNotMatch(missalDetails, /proper\/|ordinary-element\/|sourceHooks|ordinal|\{.*\}/i);
   });
 
@@ -1953,8 +2128,9 @@ async function runAssertions(cdp, base) {
   await test('keyboard Eucharistic Prayer changes restore the selected inline radio and location', async () => {
     await viewport(cdp, 393, 852);
     await navigateCandidate(cdp, base, STATES.postMissal);
-    const semanticId = (option) => 'ordinary-element/prex-eucharistica/prex-eucharistica-' +
-      option.replace(/^ep-/, '');
+    const semanticId = (option) => option === 'ep-i'
+      ? 'ordinary-element/prex-eucharistica/te-igitur'
+      : 'ordinary-element/prex-eucharistica/prex-eucharistica-' + option.replace(/^ep-/, '');
     const focusOf = (option) => ({
       group: 'eucharistic-prayer', option, legend: 'Eucharistic Prayer'
     });
@@ -1962,7 +2138,8 @@ async function runAssertions(cdp, base) {
     await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${semanticId(currentOption)}"]').scrollIntoView({block: 'start'})`);
     await waitForVisualSettlement(cdp, { semanticEventId: semanticId(currentOption) });
     await evaluate(cdp, `(() => {
-      const radio = document.querySelector('.ordinary-choice input:checked');
+      const radio = document.querySelector(
+        '[data-option-group="eucharistic-prayer"] input:checked');
       radio.focus({preventScroll: true});
       radio.closest('[data-option-group]').scrollIntoView({block: 'start', behavior: 'auto'});
     })()`);
@@ -1974,22 +2151,30 @@ async function runAssertions(cdp, base) {
     assert.equal(settled.activeElementIntersectsViewport, true);
     let currentHash = canonicalDayHash(STATES.postMissal);
     for (const option of ['ep-i', 'ep-iii', 'ep-iv', 'ep-ii']) {
+      const previousOption = currentOption;
+      const targetId = option === 'ep-iv'
+        ? 'ordinary-section/prex-eucharistica' : semanticId(option);
       const before = await evaluate(cdp, 'dayReaderDebug.renders');
       const presentationsBefore = await evaluate(cdp, 'dayReaderDebug.ordinaryPresentations');
       const beforeTop = settled.targetRect.top;
       await evaluate(cdp,
-        `document.querySelector('.ordinary-choice input[value="${option}"]').focus({preventScroll: true})`);
+        `document.querySelector('[data-option-group="eucharistic-prayer"] input[value="${option}"]').focus({preventScroll: true})`);
       await pressSpace(cdp);
       currentHash = updatedHash(currentHash, 'eucharistic-prayer', option);
-      currentHash = updatedHash(currentHash, 'location', semanticId(option));
+      currentHash = updatedHash(currentHash, 'location', targetId);
       settled = await waitForCommittedRender(cdp, before, currentHash, 'keyboard EP ' + option, {
-        semanticEventId: semanticId(option), focus: focusOf(option)
+        semanticEventId: targetId, focus: focusOf(option)
       });
       const restored = await evaluate(cdp, `(() => {
         const active = document.activeElement;
         const fieldset = active.closest('fieldset');
         const ids = [...document.querySelectorAll('[data-semantic-event-id]')]
           .map(row => row.dataset.semanticEventId);
+        const epOneKeys = new Set([
+          'te-igitur', 'memento-domine', 'communicantes', 'hanc-igitur',
+          'quam-oblationem', 'qui-pridie', 'unde-et-memores', 'supra-quae',
+          'supplices', 'memento-etiam', 'nobis-quoque', 'per-quem'
+        ]);
         return {
           activeType: active.type,
           activeValue: active.value,
@@ -1997,11 +2182,18 @@ async function runAssertions(cdp, base) {
           legend: fieldset && fieldset.querySelector('legend').textContent,
           group: fieldset && fieldset.dataset.optionGroup,
           hash: location.hash,
-          semanticTop: document.querySelector('[data-semantic-event-id="${semanticId(option)}"]').getBoundingClientRect().top,
+          semanticTop: document.querySelector('[data-semantic-event-id="${targetId}"]').getBoundingClientRect().top,
           pending: dayReaderDebug.pendingNavigation,
           presentations: dayReaderDebug.ordinaryPresentations,
           uniqueEvents: new Set(ids).size === ids.length,
-          epEvents: ids.filter(id => /prex-eucharistica-(i|ii|iii|iv)$/.test(id))
+          epEvents: ids.filter(id => /prex-eucharistica-(i|ii|iii|iv)$/.test(id) ||
+            epOneKeys.has(id.split('/').at(-1))),
+          canonEvents: ids.filter(id => {
+            if (!id.startsWith('ordinary-element/prex-eucharistica/')) return false;
+            const key = id.split('/').at(-1);
+            return epOneKeys.has(key) || key === 'mysterium-fidei' || key === 'doxologia' ||
+              /prex-eucharistica-(i|ii|iii|iv)$/.test(key);
+          })
         };
       })()`);
       assert.equal(restored.activeType, 'radio');
@@ -2013,12 +2205,38 @@ async function runAssertions(cdp, base) {
       assert.equal(settled.targetIntersectsViewport, true);
       assert.equal(settled.activeElementIntersectsViewport, true);
       assert.ok(settled.stableFramesObserved >= 5);
-      assert.ok(Math.abs(restored.semanticTop - beforeTop) <= 4,
+      if (option !== 'ep-iv' && previousOption !== 'ep-iv') assert.ok(
+        Math.abs(restored.semanticTop - beforeTop) <= 4,
         `${option} semantic delta: ${restored.semanticTop - beforeTop}`);
       assert.equal(restored.pending, null);
       assert.equal(restored.presentations, presentationsBefore + 1);
       assert.equal(restored.uniqueEvents, true);
-      assert.equal(restored.epEvents.length, 1);
+      assert.equal(restored.epEvents.length, option === 'ep-i' ? 12 : option === 'ep-iv' ? 0 : 1);
+      if (option === 'ep-i') assert.deepEqual(restored.canonEvents, [
+        'ordinary-element/prex-eucharistica/te-igitur',
+        'ordinary-element/prex-eucharistica/memento-domine',
+        'ordinary-element/prex-eucharistica/communicantes',
+        'ordinary-element/prex-eucharistica/hanc-igitur',
+        'ordinary-element/prex-eucharistica/quam-oblationem',
+        'ordinary-element/prex-eucharistica/qui-pridie',
+        'ordinary-element/prex-eucharistica/mysterium-fidei',
+        'ordinary-element/prex-eucharistica/unde-et-memores',
+        'ordinary-element/prex-eucharistica/supra-quae',
+        'ordinary-element/prex-eucharistica/supplices',
+        'ordinary-element/prex-eucharistica/memento-etiam',
+        'ordinary-element/prex-eucharistica/nobis-quoque',
+        'ordinary-element/prex-eucharistica/per-quem',
+        'ordinary-element/prex-eucharistica/doxologia'
+      ]);
+      else if (option === 'ep-iv') assert.deepEqual(restored.canonEvents, [
+        'ordinary-element/prex-eucharistica/mysterium-fidei',
+        'ordinary-element/prex-eucharistica/doxologia'
+      ]);
+      else assert.deepEqual(restored.canonEvents, [
+        semanticId(option),
+        'ordinary-element/prex-eucharistica/mysterium-fidei',
+        'ordinary-element/prex-eucharistica/doxologia'
+      ]);
       currentOption = option;
     }
 
@@ -2028,7 +2246,7 @@ async function runAssertions(cdp, base) {
     const reducedBeforeTop = settled.targetRect.top;
     const reducedGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
     await evaluate(cdp,
-      `document.querySelector('.ordinary-choice input[value="ep-iii"]').focus({preventScroll: true})`);
+      `document.querySelector('[data-option-group="eucharistic-prayer"] input[value="ep-iii"]').focus({preventScroll: true})`);
     await pressSpace(cdp);
     let reducedHash = updatedHash(currentHash, 'eucharistic-prayer', 'ep-iii');
     reducedHash = updatedHash(reducedHash, 'location', semanticId('ep-iii'));
@@ -2255,7 +2473,7 @@ async function runAssertions(cdp, base) {
       actions: getComputedStyle(document.querySelector('.reader-actions')).display
     })`);
     assert.match(missal.option, /Eucharistic Prayer: II/);
-    assert.equal(missal.ordinary, 44);
+    assert.equal(missal.ordinary, 41);
     assert.equal(missal.propers, 10);
     assert.equal(missal.choice, 'none');
     assert.equal(missal.actions, 'none');
@@ -2308,7 +2526,7 @@ async function captureMatrix(cdp, base, directory) {
     ['postconciliar-read', STATES.postconciliar, 'top'],
     ['postconciliar-missal-ep-ii', STATES.postMissal, 'top'],
     ['invalid-eucharistic-prayer', STATES.invalidPrayer, 'top'],
-    ['partial-coverage', STATES.partial, 'top'], ['missing-seat', STATES.missingSeat, 'top'],
+    ['partial-coverage', STATES.partial, 'top'], ['ash-before-frame', STATES.ashBeforeFrame, 'top'],
     ['why-apparatus', STATES.why, 'top'],
     ['territorial-epiphany', STATES.territorialEpiphany, 'top'],
     ['invalid-ordinary', STATES.invalidOrdinary, 'top']
@@ -2415,7 +2633,7 @@ async function captureMatrix(cdp, base, directory) {
     { expectedSemanticEventId: switchSemanticId, settlement: switchSettlement }));
 
   const correctionStates = [
-    ['invalid-ep', STATES.invalidPrayer], ['missing-seat', STATES.missingSeat],
+    ['invalid-ep', STATES.invalidPrayer], ['ash-before-frame', STATES.ashBeforeFrame],
     ['why-apparatus', STATES.why], ['territorial', STATES.territorialEpiphany],
     ['invalid-ordinary', STATES.invalidOrdinary]
   ];
@@ -2458,7 +2676,8 @@ async function captureMatrix(cdp, base, directory) {
   await evaluate(cdp, `document.querySelector('[data-semantic-event-id="${initialEpId}"]').scrollIntoView({block: 'start'})`);
   await waitForVisualSettlement(cdp, { semanticEventId: initialEpId });
   await evaluate(cdp, `(() => {
-    const radio = document.querySelector('.ordinary-choice input:checked');
+    const radio = document.querySelector(
+      '[data-option-group="eucharistic-prayer"] input:checked');
     radio.focus({preventScroll: true});
     radio.closest('[data-option-group]').scrollIntoView({block: 'start', behavior: 'auto'});
   })()`);
@@ -2472,10 +2691,11 @@ async function captureMatrix(cdp, base, directory) {
     expectedSemanticEventId: initialEpId, settlement: epSettlement
   }));
   const epGeneration = await evaluate(cdp, 'dayReaderDebug.renders');
-  await evaluate(cdp, `document.querySelector('.ordinary-choice input[value="ep-iii"]').focus({preventScroll: true})`);
+  await evaluate(cdp, `document.querySelector('[data-option-group="eucharistic-prayer"] input[value="ep-iii"]').focus({preventScroll: true})`);
   await pressSpace(cdp);
-  const epHash = updatedHash(STATES.postMissal, 'eucharistic-prayer', 'ep-iii');
   const epAfterId = 'ordinary-element/prex-eucharistica/prex-eucharistica-iii';
+  let epHash = updatedHash(STATES.postMissal, 'eucharistic-prayer', 'ep-iii');
+  epHash = updatedHash(epHash, 'location', epAfterId);
   epSettlement = await waitForCommittedRender(cdp, epGeneration, epHash,
     'captured EP III focus restoration', {
       semanticEventId: epAfterId,

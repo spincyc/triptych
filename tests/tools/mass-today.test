@@ -42,6 +42,47 @@ for want in "roman-1962" "First Sunday of Advent" "Introit" "Epistle — Romans 
 	esac
 done
 
+# Daily projection preserves the same source-owned recension warning and stamp
+# that mass-propers exposes; composing the tools must not erase provenance.
+pre1955="$(run_tool show --date 2026-11-29 --calendar roman-pre-1955 --lang en)"
+for want in "Historical boundary" \
+	"de-rubricis-simpliciorem-1955; maxima-redemptionis-1955" \
+	"Recension coverage: structural-only" \
+	"Proper text source: roman-1962 (inherited, uncollated)" \
+	"Structural-only pre-1955 projection, not a complete 1920 Missal corpus"; do
+	case "$pre1955" in
+	*"$want"*) ;;
+	*) echo "pre-1955 day view is missing provenance: $want" >&2; exit 1 ;;
+	esac
+done
+run_tool show --date 2026-11-29 --calendar roman-pre-1955 --lang en \
+	--format json >"$sandbox/pre1955-day-provenance.json"
+python3 - "$sandbox/pre1955-day-provenance.json" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+selected = next(
+    mass
+    for day in document["days"]
+    for mass in day["masses"]
+    if mass["key"] == day["selected_mass"]
+)
+assert selected["advisory"].startswith("Structural-only pre-1955 projection")
+assert selected["stands_before"] == [
+    "de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"
+]
+assert selected["recension_coverage"]["status"] == "structural-only"
+assert selected["recension_coverage"]["inheritance"]["source_calendar"] == "roman-1962"
+assert selected["recension"]["calendar"] == "roman-1962"
+assert selected["recension"]["text_from"] == "roman-1962"
+assert selected["recension"]["stated"] is False
+PY
+palm1955="$(run_tool show --date 2026-03-29 --calendar roman-pre-1955 --expanded --plain)"
+case "$palm1955" in
+*"Departure act: maxima-redemptionis-1955"*"Additional departure act (reslotted): maxima-redemptionis-1955"*) ;;
+*) echo "pre-1955 departure act stations are missing from the daily reading view" >&2; exit 1 ;;
+esac
+
 # A citation-backed postconciliar antiphon may carry a short Latin incipit as
 # identifying apparatus while carrying no English Missal rendering.  The
 # compact English view must not print that Latin as though it answered the
@@ -105,6 +146,24 @@ assert "ordinary_suppressed" not in day, day
 assert day["ordinary"]["calendar"] == "roman-1962", day["ordinary"]
 PY
 
+# Loading the translation ledger for an unrelated settled date must continue
+# to succeed when another mass has occurrence-aware publication TSV bindings.
+run_tool show --date 2026-08-19 --calendar roman-1962 --lang en \
+	--bible douay-rheims --json \
+	>"$sandbox/unrelated-occurrence-binding.json"
+/usr/bin/python3 - "$sandbox/unrelated-occurrence-binding.json" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+assert payload["status"] == "ok", payload
+assert payload["date"] == "2026-08-19", payload
+mass = payload["days"][0]["branches"][0]["masses"][0]
+assert mass["key"] == "s-ioannis-eudes-confessoris", mass
+verses = [verse for proper in mass["propers"] for verse in proper.get("verses", [])]
+assert len(verses) == 11, verses
+assert all(verse.get("text") for verse in verses), verses
+PY
+
 # A settled implied feria can lack a held formulary.  That is neither an
 # unsettled day nor a Mass choice: the typed suppression says exactly which
 # source boundary prevents an Ordinary from being assembled.
@@ -156,6 +215,8 @@ for want in \
 	"First Reading -- Isaiah 63:16b-17, 19b; 64:2-7" \
 	"Second Reading -- 1 Corinthians 1:3-9" \
 	"Gospel -- Mark 13:33-37" \
+	"The Nicene Creed (all)" \
+	"ordinary applicability unresolved at ritus-initiales/gloria-in-excelsis" \
 	"Take ye heed, watch and pray"; do
 	case "$cycled" in
 	*"$want"*) ;;
@@ -252,14 +313,20 @@ case "$weekday_expanded" in
 esac
 
 # With no Ordinary variant named, the CLI keeps the same default the browser
-# reads from the file: Eucharistic Prayer I, the Roman Canon.
-case "$cycled" in
-*"Eucharistic Prayer I, the Roman Canon (priest)"*) ;;
-*)
-	echo "postconciliar default Ordinary lost Eucharistic Prayer I" >&2
-	exit 1
-	;;
-esac
+# reads from the file: Eucharistic Prayer I. Its source-owned internal
+# elements must all remain in that branch rather than collapsing back to one
+# aggregate label.
+for want in \
+	"Eucharistic Prayer I -- Te igitur (priest)" \
+	"Eucharistic Prayer I -- Per quem haec omnia (priest)"; do
+	case "$cycled" in
+	*"$want"*) ;;
+	*)
+		echo "postconciliar default Ordinary lost Eucharistic Prayer I: $want" >&2
+		exit 1
+		;;
+	esac
+done
 
 # The browser can select a non-default option from the Ordinary's declared
 # variant group. The terminal must select the same one, and only that one.
@@ -277,11 +344,66 @@ for want in \
 	esac
 done
 case "$third" in
-*"Eucharistic Prayer I, the Roman Canon (priest)"*|*"Eucharistic Prayer II (priest)"*|*"Eucharistic Prayer IV (priest)"*)
+*"Eucharistic Prayer I --"*|*"Eucharistic Prayer II (priest)"*|*"Eucharistic Prayer IV (priest)"*)
 	echo "postconciliar ep-iii output includes another Eucharistic Prayer" >&2
 	exit 1
 	;;
 esac
+
+# Independent Ordinary choices compose as a map, not as one global option.
+# Form III already contains the Kyrie acclamations, so the following Kyrie is
+# omitted while the independently selected Eucharistic Prayer remains III.
+multi_variant="$(run_tool show --date 2026-11-29 --calendar postconciliar \
+	--bible douay-rheims --expanded --plain \
+	--ordinary-variant pa-iii --ordinary-variant ep-iii)"
+for want in "Penitential Act, form III (all)" "Eucharistic Prayer III (priest)" \
+	"The Second Reading" "Second Reading -- 1 Corinthians 1:3-9"; do
+	case "$multi_variant" in
+	*"$want"*) ;;
+	*) echo "independent Ordinary choices lost: $want" >&2; exit 1 ;;
+	esac
+done
+case "$multi_variant" in
+*"Penitential Act, form I (all)"*|*"Penitential Act, form II (all)"*|*"Kyrie eleison"*)
+	echo "Penitential Act III output includes a mutually exclusive branch" >&2
+	exit 1
+	;;
+esac
+
+# This corpus does not model proper Prefaces, so it cannot positively establish
+# when Prayer IV is permitted. An explicit selection remains selected but is
+# suppressed with an unresolved applicability result; Prayer I is not used as
+# a silent fallback.
+ep_four="$(run_tool show --date 2026-11-29 --calendar postconciliar \
+	--expanded --plain --ordinary-variant ep-iv)"
+case "$ep_four" in
+*"ordinary applicability unresolved at prex-eucharistica/prex-eucharistica-iv"*) ;;
+*) echo "Prayer IV did not expose its unresolved Preface condition" >&2; exit 1 ;;
+esac
+case "$ep_four" in
+*"Eucharistic Prayer IV (priest)"*|*"Eucharistic Prayer I --"*)
+	echo "unresolved Prayer IV printed text or silently fell back to Prayer I" >&2
+	exit 1
+	;;
+esac
+
+if run_tool show --date 2026-11-29 --calendar postconciliar --expanded \
+	--ordinary-variant not-an-ordinary-option >/dev/null 2>&1; then
+	echo "an unknown Ordinary option was accepted" >&2
+	exit 1
+fi
+
+# Machine output does not contain a selected/rendered Ordinary. It must refuse
+# a selection flag instead of accepting and silently ignoring either a valid
+# or invalid option id.
+for machine_variant in ep-iii not-an-ordinary-option; do
+	if run_tool show --date 2026-11-29 --calendar postconciliar \
+		--format json --ordinary-variant "$machine_variant" \
+		>/dev/null 2>&1; then
+		echo "machine output silently ignored Ordinary option: $machine_variant" >&2
+		exit 1
+	fi
+done
 
 # The Ordinary is INTERLEAVED, not appended: each proper stands where the
 # missal's own slot declaration puts it. Checked by order rather than by
@@ -353,20 +475,37 @@ done
 
 # ---- The days that break the frame ----------------------------------------
 #
-# A day carrying more than one formulary, or a rite that departs from the
-# frame, must break out of the Ordinary and say so — the same break the page
-# makes, from the same declarations. Nothing is dropped and nothing is
-# reordered.
-for date in 2026-04-03 2026-04-04; do
-	broke="$(run_tool show --date "$date" --calendar roman-1962 --expanded)"
-	case "$broke" in
-	*"no longer run forward through the"*) ;;
-	*)
-		echo "$date did not break out of the frame, or did not say so" >&2
-		exit 1
-		;;
-	esac
-done
+# The Good Friday service has no Mass frame. The Easter Vigil includes a Mass,
+# but its Kyrie continues the divided Litany and the source bundles that Mass
+# with the preceding Vigil and following Lauds, so the generic frame remains
+# unavailable. Assert the typed distinction rather than presentation prose.
+run_tool show --date 2026-04-03 --calendar roman-1962 --ordinary --json \
+	>"$sandbox/roman-good-friday.json"
+run_tool show --date 2026-04-04 --calendar roman-1962 --ordinary --json \
+	>"$sandbox/roman-easter-vigil.json"
+python3 - "$sandbox/roman-good-friday.json" \
+	"$sandbox/roman-easter-vigil.json" <<'PY'
+import json
+import sys
+
+cases = zip(
+    sys.argv[1:],
+    ("good-friday", "easter-vigil"),
+    ("none", "unavailable"),
+)
+for path, key, applicability in cases:
+    day = json.load(open(path, encoding="utf-8"))["days"][0]
+    assert day["selected_mass"] == key, day
+    frame = day["ordinary_frame"]
+    assert frame["applicability"] == applicability, frame
+    assert isinstance(frame["basis"], str) and frame["basis"].strip(), frame
+    assert day["ordinary_suppressed"] == {
+        "kind": "ordinary-frame",
+        "applicability": applicability,
+        "basis": frame["basis"],
+    }, day
+    assert "ordinary" not in day, day
+PY
 
 # Ember Saturday has two source-authored forms and no default.  The unselected
 # view is a typed choice with no flat Proper sequence or Ordinary; each stable
@@ -390,9 +529,9 @@ assert "selected_form" not in mass
 assert mass["propers"] == []
 assert "ordinary" not in unselected["days"][0]
 assert [(form["id"], len(form["propers"])) for form in mass["forms"]] == [
-    ("longer", 16), ("shorter", 8),
+    ("longer", 19), ("shorter", 11),
 ]
-for payload, wanted, count in ((longer, "longer", 16), (shorter, "shorter", 8)):
+for payload, wanted, count in ((longer, "longer", 19), (shorter, "shorter", 11)):
     selected = payload["days"][0]["masses"][0]
     assert selected["selected_form"] == wanted
     assert selected["form_choice_required"] is False
@@ -400,16 +539,37 @@ for payload, wanted, count in ((longer, "longer", 16), (shorter, "shorter", 8)):
     assert {proper["form_id"] for proper in selected["propers"]} == {wanted}
 PY
 
-# Good Friday and the Vigil open with propers the Ordinary appoints no place
-# for, and those are shown first rather than seated somewhere plausible.
-good_friday="$(run_tool show --date 2026-04-03 --calendar roman-1962 --expanded)"
-case "$good_friday" in
-*"appoints no place for"*) ;;
-*)
-	echo "Good Friday's unplaced propers were not declared unplaced" >&2
-	exit 1
-	;;
-esac
+# The postconciliar Good Friday service has no Mass frame; the Easter Vigil has
+# a Eucharist, but its branch-sensitive composite order cannot be represented
+# by the current full-frame contract. Both must suppress rather than borrow the
+# normal Ordinary, and the two different absence meanings must survive JSON.
+run_tool show --date 2027-03-26 --calendar postconciliar --ordinary --json \
+	>"$sandbox/postconciliar-good-friday.json"
+run_tool show --date 2027-03-27 --calendar postconciliar --ordinary --json \
+	>"$sandbox/postconciliar-easter-vigil.json"
+python3 - "$sandbox/postconciliar-good-friday.json" \
+	"$sandbox/postconciliar-easter-vigil.json" <<'PY'
+import json
+import sys
+
+cases = zip(
+    sys.argv[1:],
+    ("good-friday", "easter-vigil"),
+    ("none", "unavailable"),
+)
+for path, key, applicability in cases:
+    day = json.load(open(path, encoding="utf-8"))["days"][0]
+    assert day["selected_mass"] == key, day
+    frame = day["ordinary_frame"]
+    assert frame["applicability"] == applicability, frame
+    assert isinstance(frame["basis"], str) and frame["basis"].strip(), frame
+    assert day["ordinary_suppressed"] == {
+        "kind": "ordinary-frame",
+        "applicability": applicability,
+        "basis": frame["basis"],
+    }, day
+    assert "ordinary" not in day, day
+PY
 
 # ---- Absence, placeholders and provenance ---------------------------------
 #

@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+from html.parser import HTMLParser
 import io
 import json
 import re
@@ -57,6 +58,280 @@ FDLC_INVENTORY = (
     / "inventories"
     / "postconciliar-proper-translations-v1.toml"
 )
+PALM_SIMPLE_TARGET = {
+    "mass": "palm-sunday",
+    "form_id": "main",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+}
+PALM_SIMPLE_ARTIFACT_ID = (
+    "artifact.catholic-church.missale-romanum."
+    "2010-english-icel-antiphonary.antiphonary-pdf"
+)
+PALM_SIMPLE_PASSAGE_ID = (
+    "passage.catholic-church.missale-romanum."
+    "2010-english-icel-antiphonary.palm-sunday-simple-entrance-antiphon"
+)
+PALM_SIMPLE_QUARANTINE_SHA256 = (
+    "97c5d65a965496e7ebfba0a648fccc74ca1186ef749f9fd187a2eb67bb9a2f39"
+)
+PALM_SIMPLE_NORMALIZED_SHA256 = (
+    "b4e46f9f34f83ab1b03896286121a8dc9e1216b2971342e85bc18f5ab17a97d6"
+)
+PALM_PROCESSION_PASSAGE = (
+    WORKS_ROOT
+    / "catholic-church"
+    / "missale-romanum"
+    / "editions"
+    / "2010-english-icel-antiphonary"
+    / "passages"
+    / "palm-sunday-procession-antiphons.toml"
+)
+PALM_PROCESSION_PASSAGE_ID = (
+    "passage.catholic-church.missale-romanum."
+    "2010-english-icel-antiphonary.palm-sunday-procession-antiphons"
+)
+FALSE_ICEL_ACCLAMATION_CANDIDATES = (
+    (
+        {
+            "mass": "nativity",
+            "form_id": "vigil",
+            "proper": "Gospel Acclamation",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-22",
+        "b28bd6ca37e6237891bc4c8ee03e3f68795f003045668063236ed9c19c77841c",
+        "f687f09cd2d051e7a7575aa9e9cd8a9ea1f4ba3307a2b1fdf7bcb26fe3be1dc5",
+    ),
+    (
+        {
+            "mass": "nativity",
+            "form_id": "day",
+            "proper": "Gospel Acclamation",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-22",
+        "04de0ebcfcf1d4b68067929a01fd20e3f2c1d4dc1640f67fae4f3db4228c5c44",
+        "6296347f30892dde8f444d8fa29c8a41bd8c78c5f5632b51c8adf8dfeea97d82",
+    ),
+    (
+        {
+            "mass": "pentecost",
+            "form_id": "vigil",
+            "proper": "Gospel Acclamation",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-23",
+        "19670034a81d3299012feb659a2fd9cef2997d185e5852ce10164c6e61b066a9",
+        "7822423cea525979f816d5eb6c2b80797a8d59e1af8c052ae6cb15188b700bcc",
+    ),
+    (
+        {
+            "mass": "pentecost",
+            "form_id": "day",
+            "proper": "Gospel Acclamation",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-23",
+        "19670034a81d3299012feb659a2fd9cef2997d185e5852ce10164c6e61b066a9",
+        "7822423cea525979f816d5eb6c2b80797a8d59e1af8c052ae6cb15188b700bcc",
+    ),
+    (
+        {
+            "mass": "easter-3",
+            "form_id": "main",
+            "proper": "Gospel Acclamation",
+            "cycle": "C",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-22",
+        "763779437d55a920bde233ec984b228862f77015c32c944475935555139c0e43",
+        "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12",
+    ),
+    (
+        {
+            "mass": "ot-15",
+            "form_id": "main",
+            "proper": "Gospel Acclamation",
+            "cycle": "A",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+        },
+        "liturgies-net-2026-08-23",
+        "d240fe86bbe050283938f40d3a438f6172827fcb54ce882a7de32b77ca03ac6f",
+        "f476f52b0daaf15d1a73f2f722c4cab51e5a84f23e5ff2a2bcf6b46d56928e01",
+    ),
+)
+FALSE_ICEL_ACCLAMATION_SHA256 = frozenset(
+    normalized_digest
+    for _, _, _, normalized_digest in FALSE_ICEL_ACCLAMATION_CANDIDATES
+)
+POSTCONC_QUARANTINE_SHA256 = FALSE_ICEL_ACCLAMATION_SHA256 | {
+    PALM_SIMPLE_NORMALIZED_SHA256
+}
+POSTCONC_QUARANTINE_BASELINE_ROWS = 172
+FDLC_TARGET_FIELDS = (
+    "mass",
+    "form_id",
+    "proper",
+    "cycle",
+    "occurrence",
+    "lang",
+    "extent",
+)
+FDLC_QUARANTINE_FIELDS = frozenset(FDLC_TARGET_FIELDS) | {
+    "antecedent_calendar",
+    "antecedent_mass",
+    "antecedent_proper",
+    "availability",
+    "reason",
+    "rights",
+    "witness",
+    "source_id",
+    "witness_artifact_id",
+    "verified_on_page",
+    "verified_artifact_page",
+    "verified_printed_page",
+    "verified_heading",
+    "verified_url",
+    "quarantined_text_sha256",
+    "relation",
+    "note",
+}
+FDLC_BODY_FIELDS = {
+    "body",
+    "content",
+    "english",
+    "lines",
+    "text",
+    "texts",
+    "translation",
+    "translations",
+}
+FDLC_ARTIFACT_PREFIX = (
+    "artifact.federation-of-diocesan-liturgical-commissions."
+    "mystagogical-reflections"
+)
+FDLC_ARTIFACTS = {
+    "2012-advent": (
+        f"{FDLC_ARTIFACT_PREFIX}.2012-2013-collects.collect-mystogogy-advent"
+    ),
+    "2012-christmas": (
+        f"{FDLC_ARTIFACT_PREFIX}.2012-2013-collects.collect-mystogogy-christmas"
+    ),
+    "2012-easter": (
+        f"{FDLC_ARTIFACT_PREFIX}.2012-2013-collects.collect-mystogogy-easter"
+    ),
+    "2012-lent": (
+        f"{FDLC_ARTIFACT_PREFIX}.2012-2013-collects.collect-mystogogy-lent"
+    ),
+    "2016-78b": (
+        f"{FDLC_ARTIFACT_PREFIX}.2016-collect-and-prayer-after-communion."
+        "combo-col-pac-78b-ordinary-trinity-13"
+    ),
+    "2016-78c": (
+        f"{FDLC_ARTIFACT_PREFIX}.2016-collect-and-prayer-after-communion."
+        "combo-col-pac-78c-ordinary-14-23"
+    ),
+    "2016-78d": (
+        f"{FDLC_ARTIFACT_PREFIX}.2016-collect-and-prayer-after-communion."
+        "combo-col-pac-78d-ordinary-24-30"
+    ),
+    "2016-78e": (
+        f"{FDLC_ARTIFACT_PREFIX}.2016-collect-and-prayer-after-communion."
+        "combo-col-pac-78e-ordinary-31-christ-the-king"
+    ),
+}
+FDLC_QUARANTINE_NOTE = (
+    "An exact approved-English exemplar and locator were recorded, but the "
+    "applicable permission is limited to a free non-commercial Internet display. "
+    "It does not authorize retention of the wording in this tracked corpus or "
+    "its generated and downloadable artifacts. The wording was quarantined and "
+    "is represented only by the SHA-256 fingerprint above."
+)
+# Exact text-free evidence retained when the 40 protected strings were removed.
+# Each row is target identity, artifact alias, artifact page, and SHA-256 of the
+# exact removed UTF-8 TOML string.  Keeping this fixture independent from the
+# inventory makes digest substitution, locator drift, and target loss visible.
+FDLC_QUARANTINE_EVIDENCE = {
+    (mass, form_id, proper, cycle, int(occurrence), lang, extent): (
+        FDLC_ARTIFACTS[artifact],
+        int(page),
+        digest,
+    )
+    for line in """
+advent-2|main|Collect|all|1|en|body|2012-advent|4|3a3cc9a31c3a563602aba53d3c3dc2dea7a3521c53eca7ee0d8829185680b598
+advent-3|main|Collect|all|1|en|body|2012-advent|6|82bc12a767d8ef332f00a2b5726d8812165e0b95342e0e074e8be23e8a7a3d9f
+baptism-of-the-lord|main|Collect|all|2|en|body|2012-christmas|6|1d54e88bbd8ec4b9c2e51e0fa087d9dbcce0f263dbe199c93dd9e6935caa3dc7
+christ-the-king|main|Collect|all|1|en|body|2016-78e|12|c76f8c27a3f744a22e1388ecf9a275004d41547205613a9864217b5182592274
+christ-the-king|main|Prayer after Communion|all|1|en|body|2016-78e|13|0c30639011bc33d7107195911fbf8cafdd03992e96fd0336c305ce06bbe9b4b9
+easter-2|main|Collect|all|1|en|body|2012-easter|3|529e4ac3a24ce1000c2d9aaa8b0e707ac46f22a587d7b70863d5831d1368b835
+easter-3|main|Collect|all|1|en|body|2012-easter|4|2d8cd9c27de53ab2ee6b8a8168de31f7319821aaeec7163b4fb1ffffd597213e
+easter-5|main|Collect|all|1|en|body|2012-easter|6|c6d47f6d8a72ef14b2e849a893fb1d08a2bfa2bd0690285018224d4bf4cea9d3
+easter-6|main|Collect|all|1|en|body|2012-easter|7|bc0ab3ec2e22f43137ea3a824b32b5ce6d4971cafb1bde602d9415547b9e3967
+easter-sunday|main|Collect|all|1|en|body|2012-easter|2|f20bb14e67f4659fa61c963f9cfe3dc61c8ab0e56201ea487ace1e35bee2cdd9
+holy-family|main|Collect|all|1|en|body|2012-christmas|3|5a3c8d5d8d3a29a8b84520f1b44c2f007223acc4a02514f1a355d98e8eea6089
+lent-1|main|Collect|all|1|en|body|2012-lent|2|aaaa6738dff4e55f737c78401f2f7ddaf4cb2939658111519f7b43b5e7f54088
+lent-2|main|Collect|all|1|en|body|2012-lent|3|e076d945b949ae6671a9b7b35dca973fd36bf915d3a0f4f38e11ee2a83ddd108
+lent-3|main|Collect|all|1|en|body|2012-lent|4|e0c6d5e95ba2713da3a0ba016edb792fa4a4c6453957f6e9b4613c69a420f7fd
+lent-4|main|Collect|all|1|en|body|2012-lent|5|32126106cc7e3da15c95c22b92faeda61b547c5957eda45e47b36ec4d515f84a
+lent-5|main|Collect|all|1|en|body|2012-lent|6|cb61a5efab9b95b1c0f4484e7987b7c2f55ffcfc99e98fce8325623077c2216b
+most-holy-trinity|main|Collect|all|1|en|body|2016-78b|4|3fdf6b96f0eb7769b83f8970a55b4477300e35caf1188437ff1ae451a5092f1f
+ot-11|main|Collect|all|1|en|body|2016-78b|14|bad1c573fbc23a6c76bf922a79fff554bcaa184e2834d70c6a516e72e825c131
+ot-11|main|Prayer after Communion|all|1|en|body|2016-78b|15|6a80adab4158f81ac915d34128e3a062621c446282afb7eefe66582f970dd705
+ot-12|main|Prayer after Communion|all|1|en|body|2016-78b|17|20f2af0f053a80c16ea101f9c1b04c116a44487bbcd866dcbbc333b05cc43830
+ot-13|main|Collect|all|1|en|body|2016-78b|18|707a2630b39c1b42401d50b77e54a54760008223a47d54ad37401ff37b62f56f
+ot-13|main|Prayer after Communion|all|1|en|body|2016-78b|19|c2ad7df085071dcfd683dafe4bb0637297018ba040152fdd1e16cd05e45d1b1f
+ot-14|main|Collect|all|1|en|body|2016-78c|4|22315106ecc252fd0bc1f0ff3e07419baf114d6059413cf14199d1d00bb8d22a
+ot-16|main|Collect|all|1|en|body|2016-78c|8|1ac52fe553e54761dcbf2758edff43fcec92bc41ce7505278eb7b1dc6e384138
+ot-16|main|Prayer after Communion|all|1|en|body|2016-78c|9|ff9214719447dc36a927cb614b0619054224fca77ee65b247987a9ba6e608585
+ot-17|main|Collect|all|1|en|body|2016-78c|10|842d78bb905ef6fea4f0fc84d824a7c196879466ce301c6eff3e9d6d6bf44fae
+ot-17|main|Prayer after Communion|all|1|en|body|2016-78c|11|2527e9bfd8912d78b41387c2b5b7c44e86b6fcb884abd75db04f3e0b94a337f7
+ot-18|main|Collect|all|1|en|body|2016-78c|12|1ae2963cc52aa19f60de1301b787738e75dc94470444fffa9907aa011337469e
+ot-20|main|Prayer after Communion|all|1|en|body|2016-78c|17|174fe06198912fac7c6425cfbf7212fda9b47fbf2b73bbb84e60a179cb830179
+ot-21|main|Prayer after Communion|all|1|en|body|2016-78c|23|f65c1d4207469fc2f12208efcaab32373cbb2233147be2f70fe59ef51a3ac3de
+ot-22|main|Prayer after Communion|all|1|en|body|2016-78c|25|495944fa6ea659fd24b81b21f5311ea4835e1974776e815cdaf3a5844d73b08b
+ot-23|main|Collect|all|1|en|body|2016-78c|26|910facf09768ce256dc1edf52fa0a69742d62649e441b698244bb7abdeccf158
+ot-23|main|Prayer after Communion|all|1|en|body|2016-78c|27|122991459f3f992e0192c121b9a237d45d275b36ca65ecf0ce13a6e54ef26c9f
+ot-25|main|Collect|all|1|en|body|2016-78d|6|dd326076826bef5923f93fd821361dc3914109227628db1060465d2842cefef7
+ot-25|main|Prayer after Communion|all|1|en|body|2016-78d|7|9ff20d4c276242b1a77d071c3cab70134ccbb6836cf7fe3a9c61ef854a72ad59
+ot-26|main|Prayer after Communion|all|1|en|body|2016-78d|11|2b90ced1b5d3f1205f88f59e4db459aa1470da740922e2bea7efd71c6d79ddcf
+ot-27|main|Prayer after Communion|all|1|en|body|2016-78d|13|223a2aa477e78da568560fd666ea3c904946e85bceeac7b23c1d44aa08bcc3de
+ot-29|main|Prayer after Communion|all|1|en|body|2016-78d|17|76601c2320ed81ae5e1268a9b5499235d90948babeb0db03fc514b39d947e7ae
+ot-32|main|Prayer after Communion|all|1|en|body|2016-78e|9|540dbf0da72757ffa1a275dffb175be7b448ce2b18971044cbef07860ccbe45c
+ot-33|main|Prayer after Communion|all|1|en|body|2016-78e|11|b68de0168fceab5c8257953008be17c40e20b442ec7c9619b6672250765250e1
+""".strip().splitlines()
+    for (
+        mass,
+        form_id,
+        proper,
+        cycle,
+        occurrence,
+        lang,
+        extent,
+        artifact,
+        page,
+        digest,
+    ) in (line.split("|"),)
+}
 ELLC_EDITION_ID = (
     "edition.english-language-liturgical-consultation.praying-together.1998"
 )
@@ -216,6 +491,7 @@ IDENTITY_FIELDS = {
     "source_id",
     "witness",
     "witness_artifact_id",
+    "witness_passage_id",
 }
 RESTRICTED_TRANSLATION_METADATA = IDENTITY_FIELDS | {
     "acknowledgement",
@@ -253,8 +529,10 @@ SAFE_PROPER_TARGET_FIELDS = {
     "extent",
 }
 SAFE_ORDINARY_ABSENCE_FIELDS = {"key", "count", "state", "kind"}
+SAFE_ORDINARY_LANGUAGE_ABSENCE_FIELDS = SAFE_ORDINARY_ABSENCE_FIELDS | {"lang"}
 SAFE_COMMON_FROM_FIELDS = {"scope", "options"}
 SAFE_COMMON_OPTION_FIELDS = {"mass", "form_id", "selection"}
+SAFE_COMMON_FROM_SCOPES = {"missal-antiphons"}
 LATIN_CAPABILITY_BODY_FIELDS = {
     "body",
     "content",
@@ -286,6 +564,7 @@ ORDINARY_ABSENCE_KINDS = {
     "no-exemplar",
     "not-applicable",
     "outside-layer",
+    "rights-unresolved",
     "rights-withheld",
     "witness-gap",
 }
@@ -298,6 +577,7 @@ NON_NEUTRAL_ABSENCE_KEY_PARTS = (
     "source",
 )
 SOURCE_INVENTORIES = ROOT / "src" / "sources" / "inventories"
+LITURGICAL_ENGLISH_RIGHTS = SOURCE_INVENTORIES / "liturgical-english-rights-v1.toml"
 PUBLIC_SOURCE_TEXT = STRUCTURE_ROOT / "sources" / "text"
 PUBLIC_LITURGY_ROOTS = (
     STRUCTURE_ROOT / "ordinary",
@@ -334,6 +614,21 @@ DOWNLOAD_ROOTS = (
     ROOT / "downloads",
     *PUBLIC_LITURGY_ROOTS,
 )
+HANDOFF_OPAQUE_SUFFIXES = frozenset(
+    {
+        ".avif",
+        ".gif",
+        ".jpeg",
+        ".jpg",
+        ".pdf",
+        ".png",
+        ".tif",
+        ".tiff",
+        ".webp",
+    }
+)
+
+
 def files_under(*roots: Path) -> list[Path]:
     """Every current payload, including an untracked file a build might copy."""
     return sorted(
@@ -546,18 +841,85 @@ def normalized_words(value: str) -> str:
     return unicodedata.normalize("NFC", " ".join(value.split()))
 
 
+class ExtractedHTMLText(HTMLParser):
+    """Collect text nodes without treating tags as fingerprint content."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.units: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.units.append(data)
+
+
 def text_units(value: str, path: Path | None = None) -> list[str]:
-    """Physical lines plus decoded JSON string leaves for exact fingerprints."""
+    """Logical text leaves from rendered and machine-readable public surfaces."""
     units = list(value.splitlines())
-    if path is not None and path.suffix.casefold() == ".json":
+    units.extend(line.strip() for line in value.splitlines())
+    paragraphs = re.split(r"\n\s*\n", value)
+    units.extend(paragraphs)
+    units.extend(textwrap.dedent(paragraph).strip() for paragraph in paragraphs)
+    suffix = path.suffix.casefold() if path is not None else ""
+    if suffix in {".json", ".yaml", ".yml"}:
         try:
-            document = json.loads(value)
-        except json.JSONDecodeError:
-            return units
-        for _, string in walk_strings(document):
-            units.append(string)
-            units.extend(string.splitlines())
-    return units
+            document = json.loads(value) if suffix == ".json" else yaml.safe_load(value)
+        except (json.JSONDecodeError, yaml.YAMLError):
+            document = None
+        if document is not None:
+            for _, string in walk_strings(document):
+                units.append(string)
+                units.extend(string.splitlines())
+    elif suffix in {".csv", ".tsv"}:
+        dialect = "excel-tab" if suffix == ".tsv" else "excel"
+        units.extend(cell for row in csv.reader(io.StringIO(value), dialect) for cell in row)
+    elif suffix in {".htm", ".html"}:
+        parser = ExtractedHTMLText()
+        parser.feed(value)
+        units.extend(parser.units)
+    return list(dict.fromkeys(units))
+
+
+def postconciliar_quarantine_hash_values(
+    inventory: Path = FDLC_INVENTORY,
+) -> tuple[str, ...]:
+    """Derive every exact English quarantine hash from the current ledger."""
+    document = tomllib.loads(inventory.read_text(encoding="utf-8"))
+    values: list[str] = []
+    for index, row in enumerate(document.get("untranslated") or []):
+        if not isinstance(row, dict):
+            raise ValueError(f"postconciliar untranslated row {index} is not a table")
+        raw = row.get("quarantined_text_sha256")
+        if raw is None:
+            continue
+        if row.get("lang") != "en" or row.get("extent") != "body":
+            raise ValueError(
+                f"postconciliar untranslated row {index} hashes a non-English body"
+            )
+        if (
+            not isinstance(raw, list)
+            or not raw
+            or any(
+                not isinstance(digest, str)
+                or re.fullmatch(r"[0-9a-f]{64}", digest) is None
+                for digest in raw
+            )
+        ):
+            raise ValueError(
+                f"postconciliar untranslated row {index} has malformed quarantine hashes"
+            )
+        values.extend(raw)
+    if len(values) < POSTCONC_QUARANTINE_BASELINE_ROWS:
+        raise ValueError(
+            "postconciliar English quarantine lost baseline hashes: "
+            f"expected at least {POSTCONC_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
+        )
+    return tuple(values)
+
+
+def postconciliar_quarantine_hashes(
+    inventory: Path = FDLC_INVENTORY,
+) -> frozenset[str]:
+    return frozenset(postconciliar_quarantine_hash_values(inventory))
 
 
 def unresolved_latin_body_hashes(
@@ -668,7 +1030,19 @@ def archive_protected_findings(
         for identity in binary_identities:
             findings.append(f"{label}: protected witness identity {identity}")
 
-        if Path(member_name).suffix.casefold() == ".pdf" and pdftotext:
+        suffix = Path(member_name).suffix.casefold()
+        if suffix in HANDOFF_OPAQUE_SUFFIXES:
+            findings.append(
+                f"{label}: opaque binary handoff member {suffix or '<none>'} "
+                "is not permitted in a tracked archive"
+            )
+            if suffix != ".pdf":
+                return
+            if not pdftotext:
+                findings.append(
+                    f"{label}: pdftotext is unavailable for the PDF archive member"
+                )
+                return
             run = subprocess.run(
                 [pdftotext, "-", "-"],
                 input=data,
@@ -690,10 +1064,12 @@ def archive_protected_findings(
             return
 
         if b"\0" in data:
+            findings.append(f"{label}: undecodable binary handoff member")
             return
         try:
             value = data.decode("utf-8")
         except UnicodeDecodeError:
+            findings.append(f"{label}: non-UTF-8 binary handoff member")
             return
         findings.extend(
             protected_text_findings(
@@ -771,7 +1147,7 @@ def restricted_liturgy_row(row: dict) -> bool:
         or row.get("rights_status") in UNSAFE_LITURGY_RIGHTS
         or ICEL_MARKER in str(row.get("source_id") or "")
         or row.get("state") == "rights-restricted"
-        or kind == "rights-restricted"
+        or kind == "rights-withheld"
     )
 
 
@@ -831,8 +1207,15 @@ def source_inventory_findings(
 def restricted_projection_findings(row: dict, label: str) -> list[str]:
     """The public absence is a target and state, never a provenance record."""
     findings = []
-    if ".absences[" in label:
-        unexpected = sorted(set(row) ^ SAFE_ORDINARY_ABSENCE_FIELDS)
+    ordinary_absence = ".absences[" in label
+    language_absence = ".language_absences[" in label
+    if ordinary_absence or language_absence:
+        safe_fields = (
+            SAFE_ORDINARY_LANGUAGE_ABSENCE_FIELDS
+            if language_absence
+            else SAFE_ORDINARY_ABSENCE_FIELDS
+        )
+        unexpected = sorted(set(row) ^ safe_fields)
         if unexpected:
             findings.append(
                 f"{label}: Ordinary absence does not have exact safe fields; "
@@ -840,9 +1223,10 @@ def restricted_projection_findings(row: dict, label: str) -> list[str]:
             )
             return findings
         kind = str(row.get("kind") or "")
-        expected_state = (
-            "rights-restricted" if kind == "rights-withheld" else "unavailable"
-        )
+        expected_state = {
+            "rights-unresolved": "unresolved",
+            "rights-withheld": "rights-restricted",
+        }.get(kind, "unavailable")
         if row.get("state") != expected_state:
             findings.append(
                 f"{label}: Ordinary absence state must be {expected_state} for {kind}"
@@ -861,6 +1245,12 @@ def restricted_projection_findings(row: dict, label: str) -> list[str]:
             findings.append(f"{label}: Ordinary absence count is not nonnegative")
         if kind not in ORDINARY_ABSENCE_KINDS:
             findings.append(f"{label}: Ordinary absence kind is outside safe taxonomy")
+        if language_absence and (
+            not isinstance(row.get("lang"), str) or not row["lang"].strip()
+        ):
+            findings.append(
+                f"{label}: Ordinary language absence has no nonempty language"
+            )
         return findings
     if row.get("state") == "rights-restricted":
         unexpected = sorted(set(row) ^ SAFE_RESTRICTED_PROJECTION_FIELDS)
@@ -911,8 +1301,12 @@ def common_from_findings(value: object, label: str) -> list[str]:
         findings.append(
             f"{label}: public common_from fields differ by {', '.join(unexpected)}"
         )
-    if not isinstance(value.get("scope"), str) or not value["scope"]:
-        findings.append(f"{label}: public common_from has no scope")
+    scope = value.get("scope")
+    if scope not in SAFE_COMMON_FROM_SCOPES:
+        findings.append(
+            f"{label}: public common_from scope must be one of "
+            f"{sorted(SAFE_COMMON_FROM_SCOPES)}, got {scope!r}"
+        )
     options = value.get("options")
     if not isinstance(options, list) or not options:
         findings.append(f"{label}: public common_from has no options")
@@ -969,9 +1363,23 @@ def public_liturgy_findings(
     source_study_bodies: dict[str, str] | None = None,
     *,
     strict_absences: bool = True,
+    quarantined_text_fingerprints: frozenset[str] | None = None,
 ) -> list[str]:
     """One machine-readable boundary shared by browser, CLI and downloads."""
     findings = []
+    fingerprints = (
+        postconciliar_quarantine_hashes()
+        if quarantined_text_fingerprints is None
+        else quarantined_text_fingerprints
+    )
+    seen_hashes: set[str] = set()
+    for address, string in walk_strings(document):
+        digest = hashlib.sha256(string.encode("utf-8")).hexdigest()
+        if digest in fingerprints and digest not in seen_hashes:
+            seen_hashes.add(digest)
+            findings.append(
+                f"{label} {address}: quarantined English body sha256 {digest}"
+            )
     for identity in identities_in(document, protected_identities | ellc_ids):
         findings.append(f"{label}: protected witness identity {identity}")
     for address, row in walk_json(document):
@@ -1070,10 +1478,21 @@ def protected_digests(records: list[tuple[Path, dict]]) -> dict[str, str]:
 
 
 def download_findings(
-    paths: list[Path], digests: dict[str, str], identities: set[str]
+    paths: list[Path],
+    digests: dict[str, str],
+    identities: set[str],
+    *,
+    text_fingerprints: frozenset[str] = frozenset(),
+    exact_text_fingerprints: frozenset[str] | None = None,
+    pdftotext: str | None = None,
 ) -> list[str]:
     findings = []
     text_suffixes = {".csv", ".html", ".json", ".tsv", ".txt", ".yaml", ".yml"}
+    exact_fingerprints = (
+        postconciliar_quarantine_hashes()
+        if exact_text_fingerprints is None
+        else exact_text_fingerprints
+    )
     for path in paths:
         if not path.is_file():
             continue
@@ -1086,6 +1505,36 @@ def download_findings(
             for identity in sorted(identities):
                 if identity in decoded:
                     findings.append(f"{path}: exposes protected identity {identity}")
+            findings.extend(
+                protected_text_findings(
+                    decoded,
+                    set(),
+                    str(path),
+                    path=path,
+                    text_fingerprints=text_fingerprints,
+                    exact_text_fingerprints=exact_fingerprints,
+                )
+            )
+        elif path.suffix.lower() == ".pdf" and pdftotext:
+            run = subprocess.run(
+                [pdftotext, str(path), "-"],
+                capture_output=True,
+                check=False,
+            )
+            if run.returncode:
+                findings.append(f"{path}: pdftotext failed; PDF content was not scanned")
+                continue
+            extracted = run.stdout.decode("utf-8", errors="replace")
+            findings.extend(
+                protected_text_findings(
+                    extracted,
+                    set(),
+                    str(path),
+                    path=Path(f"{path}.txt"),
+                    text_fingerprints=text_fingerprints,
+                    exact_text_fingerprints=exact_fingerprints,
+                )
+            )
     return findings
 
 
@@ -1180,6 +1629,21 @@ def ellc_output_findings(
 
 
 class TrackedSourceBoundary(unittest.TestCase):
+    def test_english_rights_record_does_not_seek_a_redundant_web_grant(self) -> None:
+        document = tomllib.loads(LITURGICAL_ENGLISH_RIGHTS.read_text(encoding="utf-8"))
+        section = document.get("seeking_a_licence") or {}
+        self.assertIn("standing permission is the grant", section.get("answer", ""))
+        self.assertNotIn("A written grant from ICEL", section.get("answer", ""))
+        self.assertIn(
+            "global-computer-networks",
+            " ".join(section.get("source_ids") or []),
+        )
+
+    def test_postconciliar_quarantine_hashes_are_derived_fail_closed(self) -> None:
+        values = postconciliar_quarantine_hash_values()
+        self.assertGreaterEqual(len(values), POSTCONC_QUARANTINE_BASELINE_ROWS)
+        self.assertEqual(postconciliar_quarantine_hashes(), frozenset(values))
+
     def test_manifest_protected_sources_track_metadata_not_payloads(self) -> None:
         """Every non-distributable manifest is remote/text-free, including FDLC."""
         protected = protected_artifact_manifests()
@@ -1211,6 +1675,144 @@ class TrackedSourceBoundary(unittest.TestCase):
             self,
             failures,
             "a source overlay cannot retain words barred from public Git",
+        )
+
+    def test_palm_simple_entrance_has_exact_mixed_rights_witness_metadata(self) -> None:
+        """The official exemplar closes no-exemplar without clearing its body."""
+        document = tomllib.loads(FDLC_INVENTORY.read_text(encoding="utf-8"))
+        rows = [
+            row
+            for row in document.get("untranslated") or []
+            if all(row.get(field) == value for field, value in PALM_SIMPLE_TARGET.items())
+        ]
+        self.assertEqual(len(rows), 1, "Palm Simple Entrance disposition is not unique")
+        row = rows[0]
+        self.assertFalse(
+            set(row) & FDLC_BODY_FIELDS,
+            "Palm Simple Entrance witness metadata must remain text-free",
+        )
+        self.assertNotIn(
+            "rights", row, "one rights token would overstate the interleaved body"
+        )
+        self.assertNotIn(
+            "source_id", row, "the row must not assign one owner to the whole body"
+        )
+        self.assertEqual(row.get("availability"), "unavailable")
+        self.assertEqual(
+            row.get("reason"),
+            {
+                "kind": "rights-withheld",
+                "source_id": PALM_SIMPLE_PASSAGE_ID,
+                "surfaces": [
+                    "site-display",
+                    "corpus-data",
+                    "public-git",
+                    "command-line",
+                    "download",
+                ],
+            },
+        )
+        self.assertEqual(row.get("witness_artifact_id"), PALM_SIMPLE_ARTIFACT_ID)
+        self.assertEqual(row.get("witness_passage_id"), PALM_SIMPLE_PASSAGE_ID)
+        self.assertEqual(row.get("verified_on_page"), "2026-08-21")
+        self.assertEqual(row.get("verified_artifact_page"), 44)
+        self.assertEqual(row.get("verified_printed_page"), "36")
+        self.assertEqual(
+            row.get("quarantined_text_sha256"), [PALM_SIMPLE_QUARANTINE_SHA256]
+        )
+        note = str(row.get("note") or "")
+        for marker in (
+            "Third Form: The Simple Entrance",
+            "Psalm 23:9-10",
+            "Revised Grail",
+            "GIA Publications",
+            "No wording is retained",
+        ):
+            self.assertIn(marker, note)
+
+    def test_false_icel_gospel_acclamations_are_typed_text_free_candidates(self) -> None:
+        """Lectionary candidates cannot inherit the Antiphonary's permission."""
+        document = tomllib.loads(FDLC_INVENTORY.read_text(encoding="utf-8"))
+        unavailable = document.get("untranslated") or []
+        positive = document.get("entries") or []
+        for (
+            target,
+            detector,
+            quarantine_digest,
+            _,
+        ) in FALSE_ICEL_ACCLAMATION_CANDIDATES:
+            label = tuple(target.values())
+            rows = [
+                row
+                for row in unavailable
+                if all(row.get(field) == value for field, value in target.items())
+            ]
+            self.assertEqual(len(rows), 1, label)
+            row = rows[0]
+            self.assertEqual(row.get("reason"), {"kind": "no-exemplar"}, label)
+            self.assertEqual(row.get("rejected_detectors"), [detector], label)
+            self.assertEqual(
+                row.get("quarantined_text_sha256"), [quarantine_digest], label
+            )
+            self.assertFalse(set(row) & FDLC_BODY_FIELDS, label)
+            for field in (
+                "rights",
+                "source_id",
+                "witness",
+                "witness_artifact_id",
+                "witness_passage_id",
+            ):
+                self.assertNotIn(field, row, (label, field))
+            note = str(row.get("note") or "")
+            for marker in (
+                "ICEL Antiphonary contains no Gospel Acclamations",
+                "rejected source candidate",
+                "Lectionary / Confraternity of Christian Doctrine",
+                "authoritative redistributable",
+                "No English wording is retained",
+            ):
+                self.assertIn(marker, note, (label, marker))
+            self.assertFalse(
+                any(
+                    entry.get("mass") == target["mass"]
+                    and entry.get("proper") == target["proper"]
+                    and any(
+                        translation.get("lang") == "en"
+                        for translation in entry.get("translations") or []
+                    )
+                    for entry in positive
+                ),
+                f"{label}: a false-ICEL positive remains",
+            )
+
+    def test_palm_procession_metadata_preserves_verified_corrections(self) -> None:
+        """Line count and spelling emendation remain explicit, text-free facts."""
+        passage = tomllib.loads(PALM_PROCESSION_PASSAGE.read_text(encoding="utf-8"))
+        context = normalized_words(str(passage.get("context") or ""))
+        self.assertIn(
+            "Antiphon 1, artifact page 41, is an ICEL antiphon of the Missal, "
+            "three sense lines",
+            context,
+        )
+        self.assertIn("blesssed -> blessed", context)
+
+        document = tomllib.loads(FDLC_INVENTORY.read_text(encoding="utf-8"))
+        by_proper = {
+            row.get("proper"): row
+            for row in document.get("untranslated") or []
+            if row.get("mass") == "palm-sunday"
+            and row.get("form_id") == "main"
+            and row.get("proper") in {"Procession Antiphon 1", "Procession Antiphon 2"}
+        }
+        self.assertEqual(
+            set(by_proper), {"Procession Antiphon 1", "Procession Antiphon 2"}
+        )
+        for proper, row in by_proper.items():
+            self.assertEqual(row.get("witness_passage_id"), PALM_PROCESSION_PASSAGE_ID)
+            self.assertIn("three sense lines", str(row.get("note") or ""), proper)
+        self.assertIn(
+            "blesssed -> blessed",
+            str(by_proper["Procession Antiphon 2"].get("note") or ""),
         )
 
     def test_fdlc_container_metadata_is_fail_closed_and_text_free(self) -> None:
@@ -1406,21 +2008,158 @@ class TrackedSourceBoundary(unittest.TestCase):
             if str(row.get("witness") or "").startswith("fdlc-mystagogy-")
         ]
         self.assertEqual(len(held), 40, "FDLC hash-only quarantine count drifted")
+        self.assertEqual(
+            len(FDLC_QUARANTINE_EVIDENCE),
+            40,
+            "the independent FDLC evidence fixture is incomplete",
+        )
+        actual_evidence = {}
+        actual_antecedents = {}
         for index, row in enumerate(held):
+            label = f"FDLC held row {index}"
+            unknown = sorted(set(row) - FDLC_QUARANTINE_FIELDS)
+            if unknown:
+                failures.append(f"{label}: unreviewed fields {', '.join(unknown)}")
+            body_fields = sorted(set(row) & FDLC_BODY_FIELDS)
+            if body_fields:
+                failures.append(
+                    f"{label}: prose-bearing fields {', '.join(body_fields)}"
+                )
             if row.get("availability") != "unavailable":
-                failures.append(f"FDLC held row {index}: availability is not unavailable")
+                failures.append(f"{label}: availability is not unavailable")
+            if row.get("rights") != "permission":
+                failures.append(f"{label}: translation rights basis is not permission")
             reason = row.get("reason") or {}
+            if not isinstance(reason, dict):
+                failures.append(f"{label}: reason is not an object")
+                reason = {}
+            if set(reason) != {"kind", "source_id", "surfaces"}:
+                failures.append(f"{label}: reason fields are not fail-closed")
             if reason.get("kind") != "rights-withheld":
-                failures.append(f"FDLC held row {index}: reason is not rights-withheld")
-            if row.get("text"):
-                failures.append(f"FDLC held row {index}: retains liturgical wording")
+                failures.append(f"{label}: reason is not rights-withheld")
+            if reason.get("source_id") != row.get("source_id"):
+                failures.append(f"{label}: reason and row source ids differ")
+            if reason.get("surfaces") != [
+                "corpus-data",
+                "public-git",
+                "command-line",
+                "download",
+            ]:
+                failures.append(f"{label}: withheld surfaces drifted")
+            if row.get("verified_on_page") != "2026-08-26":
+                failures.append(f"{label}: exact-artifact verification date drifted")
+            if row.get("note") != FDLC_QUARANTINE_NOTE:
+                failures.append(f"{label}: quarantine note is unreviewed prose")
+
+            target = tuple(row.get(field) for field in FDLC_TARGET_FIELDS)
+            if not all(isinstance(value, str) for value in target[:4] + target[5:]):
+                failures.append(f"{label}: target string fields are malformed")
+            if type(target[4]) is not int or target[4] < 1:
+                failures.append(f"{label}: target occurrence is not a positive integer")
             digests = row.get("quarantined_text_sha256") or []
             if not (
                 isinstance(digests, list)
                 and len(digests) == 1
                 and re.fullmatch(r"[0-9a-f]{64}", str(digests[0]))
             ):
-                failures.append(f"FDLC held row {index}: quarantine hash is invalid")
+                failures.append(f"{label}: quarantine hash is invalid")
+                continue
+            evidence = (
+                row.get("witness_artifact_id"),
+                row.get("verified_artifact_page"),
+                digests[0],
+            )
+            artifact_id = str(evidence[0] or "")
+            expected_source = (
+                "edition." + artifact_id.removeprefix("artifact.").rsplit(".", 1)[0]
+            )
+            expected_witness = (
+                "fdlc-mystagogy-2012"
+                if ".2012-2013-collects." in artifact_id
+                else "fdlc-mystagogy-2016"
+            )
+            if row.get("source_id") != expected_source:
+                failures.append(f"{label}: artifact and source edition differ")
+            if row.get("witness") != expected_witness:
+                failures.append(f"{label}: artifact and witness class differ")
+            if target in actual_evidence:
+                failures.append(f"{label}: duplicate target {target!r}")
+            actual_evidence[target] = evidence
+            antecedent_fields = {
+                field: row[field]
+                for field in (
+                    "antecedent_calendar",
+                    "antecedent_mass",
+                    "antecedent_proper",
+                    "relation",
+                )
+                if field in row
+            }
+            if antecedent_fields:
+                actual_antecedents[target] = antecedent_fields
+
+        expected_antecedents = {
+            ("ot-32", "main", "Prayer after Communion", "all", 1, "en", "body"): {
+                "antecedent_calendar": "roman-1962",
+                "antecedent_mass": "pentecost-18",
+                "antecedent_proper": "Postcommunion",
+                "relation": "revised",
+            },
+            ("ot-33", "main", "Prayer after Communion", "all", 1, "en", "body"): {
+                "antecedent_calendar": "roman-1962",
+                "antecedent_mass": "pentecost-22",
+                "antecedent_proper": "Postcommunion",
+                "relation": "revised",
+            },
+        }
+        if actual_antecedents != expected_antecedents:
+            failures.append(
+                "FDLC text-free revised antecedents drifted: "
+                f"{actual_antecedents!r}"
+            )
+        roman = yaml.safe_load(
+            (
+                ROOT
+                / "src"
+                / "sources"
+                / "calendars"
+                / "roman-1962"
+                / "propers.yaml"
+            ).read_text(encoding="utf-8")
+        )
+        roman_masses = {
+            mass.get("key"): mass
+            for section in (roman.get("sections") or {}).values()
+            if isinstance(section, dict)
+            for mass in section.get("masses") or []
+            if isinstance(mass, dict)
+        }
+        for target, antecedent in expected_antecedents.items():
+            source_mass = roman_masses.get(antecedent["antecedent_mass"]) or {}
+            source_propers = [
+                proper
+                for proper in source_mass.get("propers") or []
+                if isinstance(proper, dict)
+                and proper.get("name") == antecedent["antecedent_proper"]
+            ]
+            if len(source_propers) != 1:
+                failures.append(
+                    f"FDLC antecedent target {target!r} resolves to "
+                    f"{len(source_propers)} Roman-1962 propers"
+                )
+
+        missing = sorted(set(FDLC_QUARANTINE_EVIDENCE) - set(actual_evidence))
+        unexpected = sorted(set(actual_evidence) - set(FDLC_QUARANTINE_EVIDENCE))
+        if missing:
+            failures.append(f"FDLC evidence fixture targets missing: {missing!r}")
+        if unexpected:
+            failures.append(f"FDLC evidence targets unreviewed: {unexpected!r}")
+        for target in sorted(set(actual_evidence) & set(FDLC_QUARANTINE_EVIDENCE)):
+            if actual_evidence[target] != FDLC_QUARANTINE_EVIDENCE[target]:
+                failures.append(
+                    f"FDLC evidence drifted for {target!r}: "
+                    f"{actual_evidence[target]!r}"
+                )
 
         assert_no_findings(
             self,
@@ -1478,6 +2217,72 @@ class TrackedSourceBoundary(unittest.TestCase):
 
 
 class PublicDataBoundary(unittest.TestCase):
+    def test_palm_simple_entrance_projects_only_a_restricted_state(self) -> None:
+        """Its exact witness remains private audit metadata, never browser payload."""
+        path = STRUCTURE_ROOT / "propers" / "postconciliar.json"
+        document = json.loads(path.read_text(encoding="utf-8"))
+        public_target = {
+            field: value
+            for field, value in PALM_SIMPLE_TARGET.items()
+            if field != "lang"
+        }
+        rows = [
+            row
+            for _, row in walk_json(document)
+            if row.get("target") == public_target
+            and row.get("lang") == PALM_SIMPLE_TARGET["lang"]
+        ]
+        self.assertTrue(rows, "Palm Simple Entrance restricted state is not projected")
+        for row in rows:
+            self.assertEqual(set(row), {"target", "lang", "state"})
+            self.assertEqual(row.get("state"), "rights-restricted")
+        encoded = path.read_text(encoding="utf-8")
+        self.assertNotIn(PALM_SIMPLE_ARTIFACT_ID, encoded)
+        self.assertNotIn(PALM_SIMPLE_PASSAGE_ID, encoded)
+        assert_no_findings(
+            self,
+            protected_text_findings(
+                encoded,
+                set(),
+                str(path.relative_to(ROOT)),
+                path=path,
+                text_fingerprints=frozenset({PALM_SIMPLE_NORMALIZED_SHA256}),
+            ),
+            "the mixed-rights Palm body reached browser data",
+        )
+
+    def test_false_icel_acclamations_project_only_unavailable_states(self) -> None:
+        """Rejected Lectionary candidates expose neither bodies nor audit data."""
+        path = STRUCTURE_ROOT / "propers" / "postconciliar.json"
+        encoded = path.read_text(encoding="utf-8")
+        document = json.loads(encoded)
+        for target, _, _, _ in FALSE_ICEL_ACCLAMATION_CANDIDATES:
+            public_target = {
+                field: value for field, value in target.items() if field != "lang"
+            }
+            rows = [
+                row
+                for _, row in walk_json(document)
+                if row.get("target") == public_target
+                and row.get("lang") == target["lang"]
+            ]
+            self.assertTrue(rows, tuple(target.values()))
+            for row in rows:
+                self.assertEqual(set(row), {"target", "lang", "state"})
+                self.assertEqual(row.get("state"), "unavailable")
+        findings = protected_text_findings(
+            encoded,
+            set(),
+            str(path.relative_to(ROOT)),
+            path=path,
+            text_fingerprints=FALSE_ICEL_ACCLAMATION_SHA256,
+        )
+        assert_no_findings(
+            self,
+            findings,
+            "a rejected false-ICEL Gospel Acclamation reached browser data",
+        )
+
     def test_tracked_agent_handoffs_have_no_protected_text_payload(self) -> None:
         """Review bundles are tracked downloads, not a bypass around source policy."""
         paths = tracked_files("build/agent-handoffs")
@@ -1494,7 +2299,8 @@ class PublicDataBoundary(unittest.TestCase):
         archives = 0
         pdftotext = shutil.which("pdftotext")
         for path in paths:
-            if path.suffix.casefold() == ".zip":
+            suffix = path.suffix.casefold()
+            if suffix == ".zip":
                 archives += 1
                 failures.extend(
                     archive_protected_findings(
@@ -1505,8 +2311,17 @@ class PublicDataBoundary(unittest.TestCase):
                     )
                 )
                 continue
+            if suffix in HANDOFF_OPAQUE_SUFFIXES:
+                failures.append(
+                    f"{path.relative_to(ROOT)}: opaque binary handoff payload "
+                    f"{suffix or '<none>'} must remain in ignored review output"
+                )
+                continue
             value = decoded_text(path)
             if value is None:
+                failures.append(
+                    f"{path.relative_to(ROOT)}: unclassified binary handoff payload"
+                )
                 continue
             textual += 1
             failures.extend(
@@ -1707,10 +2522,16 @@ class PublicDataBoundary(unittest.TestCase):
         ellc = ellc_manifests()
         identities = protected_artifact_identities(protected) | ellc_identities(ellc)
         paths = files_under(*DOWNLOAD_ROOTS)
+        pdftotext = shutil.which("pdftotext")
+        self.assertIsNotNone(pdftotext, "pdftotext is required to scan public PDFs")
         assert_no_findings(
             self,
             download_findings(
-                paths, protected_digests([*protected, *ellc]), identities
+                paths,
+                protected_digests([*protected, *ellc]),
+                identities,
+                text_fingerprints=POSTCONC_QUARANTINE_SHA256,
+                pdftotext=pdftotext,
             ),
             "a protected artifact reached a download",
         )
@@ -1719,9 +2540,12 @@ class PublicDataBoundary(unittest.TestCase):
 class CliBoundary(unittest.TestCase):
     MARKER = "PROJECT-CREATED-RESTRICTED-CLI-PROBE"
     UNRESOLVED_MARKER = "PROJECT-CREATED-UNRESOLVED-CLI-PROBE"
-    SOURCE_ID = f"edition.{ICEL_MARKER}.synthetic-rights-probe"
+    SOURCE_ID = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
     UNRESOLVED_SOURCE_ID = "edition.synthetic.unresolved-rights-probe"
-    ARTIFACT_ID = "artifact.synthetic.private-cli-probe"
+    ARTIFACT_ID = (
+        "artifact.catholic-church.missale-romanum."
+        "2010-english-icel-antiphonary.antiphonary-pdf"
+    )
     QUARANTINE_HASH = "f" * 64
 
     def run_tool(self, *arguments: str) -> subprocess.CompletedProcess[str]:
@@ -1732,6 +2556,43 @@ class CliBoundary(unittest.TestCase):
             text=True,
             check=False,
         )
+
+    def test_postconciliar_quarantines_do_not_reach_cli(self) -> None:
+        """Exact rejected bodies remain absent from every affected CLI mass."""
+        masses = sorted(
+            {
+                target["mass"]
+                for target, _, _, _ in FALSE_ICEL_ACCLAMATION_CANDIDATES
+            }
+            | {PALM_SIMPLE_TARGET["mass"]}
+        )
+        for mass in masses:
+            with self.subTest(mass=mass):
+                run = self.run_tool(
+                    "mass-propers",
+                    "show",
+                    "--calendar",
+                    "postconciliar",
+                    "--mass",
+                    mass,
+                    "--lang",
+                    "en",
+                    "--format",
+                    "json",
+                )
+                self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+                assert_no_findings(
+                    self,
+                    protected_text_findings(
+                        run.stdout,
+                        set(),
+                        f"mass-propers {mass} JSON",
+                        path=Path("mass-propers.json"),
+                        text_fingerprints=POSTCONC_QUARANTINE_SHA256,
+                        exact_text_fingerprints=postconciliar_quarantine_hashes(),
+                    ),
+                    f"mass-propers {mass} returned a quarantined body",
+                )
 
     def assert_withheld_latin_capabilities(
         self,
@@ -1835,10 +2696,12 @@ class CliBoundary(unittest.TestCase):
                     lang = "en"
                     extent = "body"
                     availability = "unavailable"
-                    reason = {{ kind = "rights-withheld" }}
+                    reason = {{ kind = "rights-withheld", source_id = "{self.SOURCE_ID}", surfaces = ["command-line"] }}
                     note = "Synthetic rights-withheld regression fixture."
+                    rights = "permission"
+                    witness = "icel-antiphonary-2010"
                     source_id = "{self.SOURCE_ID}"
-                    artifact_id = "{self.ARTIFACT_ID}"
+                    witness_artifact_id = "{self.ARTIFACT_ID}"
                     verified_printed_page = 7
                     quarantined_text_sha256 = ["{self.QUARANTINE_HASH}"]
                     """
@@ -1872,6 +2735,25 @@ class CliBoundary(unittest.TestCase):
                 self.assertNotIn("rights: permission", run.stdout, output_format)
                 self.assertNotIn("rights: unresolved", run.stdout, output_format)
                 outputs[output_format] = run.stdout
+
+        synthetic_hashes = frozenset(
+            hashlib.sha256(marker.encode("utf-8")).hexdigest()
+            for marker in (self.MARKER, self.UNRESOLVED_MARKER)
+        )
+        for output_format, output in outputs.items():
+            suffix = "yml" if output_format == "yaml" else output_format
+            assert_no_findings(
+                self,
+                protected_text_findings(
+                    output,
+                    set(),
+                    f"mass-propers synthetic {output_format}",
+                    path=Path(f"mass-propers.{suffix}"),
+                    text_fingerprints=frozenset(),
+                    exact_text_fingerprints=synthetic_hashes,
+                ),
+                f"mass-propers {output_format} reintroduced a quarantined value",
+            )
 
         self.assertIn("rights restricted", outputs["text"].lower())
         for output_format in ("yaml", "json"):
@@ -2154,6 +3036,11 @@ class EllcAssemblyBoundary(unittest.TestCase):
         self.assertIsNotNone(executable, "pdftotext is required for the PDF rights gate")
         protected = protected_artifact_manifests()
         identities = protected_artifact_identities(protected) | ellc_identities()
+        unresolved_body_hashes = unresolved_latin_body_hashes()
+        self.assertTrue(
+            unresolved_body_hashes,
+            "the Roman publication inventory yielded no fail-closed body hashes",
+        )
         failures: list[str] = []
         for path in pdfs:
             run = subprocess.run(
@@ -2169,6 +3056,7 @@ class EllcAssemblyBoundary(unittest.TestCase):
                     run.stdout,
                     identities,
                     str(path.relative_to(ROOT)),
+                    exact_text_fingerprints=unresolved_body_hashes,
                 )
             )
         assert_no_findings(
@@ -2221,6 +3109,97 @@ class RightsMutationBoundary(unittest.TestCase):
         self.assertTrue(
             any("protected unresolved body sha256" in one for one in exact_failures),
             exact_failures,
+        )
+
+    def test_metadata_free_exact_body_mutation_fails_every_text_boundary(self) -> None:
+        marker = "PROJECT-CREATED EXACT QUARANTINE VALUE MUTATION"
+        digest = hashlib.sha256(marker.encode("utf-8")).hexdigest()
+        fingerprints = frozenset({digest})
+        document = {"translations": [{"lang": "en", "text": marker}]}
+        public_failures = public_liturgy_findings(
+            document,
+            set(),
+            set(),
+            "synthetic metadata-free JSON",
+            quarantined_text_fingerprints=fingerprints,
+        )
+        self.assertTrue(
+            any(digest in finding for finding in public_failures), public_failures
+        )
+
+        with self.scratch_directory() as temporary:
+            root = Path(temporary)
+            paths = []
+            for name, value in (
+                ("surface.json", json.dumps(document)),
+                ("surface.txt", marker + "\n"),
+                ("surface.html", f"<p>{marker}</p>"),
+            ):
+                path = root / name
+                path.write_text(value, encoding="utf-8")
+                paths.append(path)
+            download_failures = download_findings(
+                paths,
+                {},
+                set(),
+                exact_text_fingerprints=fingerprints,
+            )
+        for name in ("surface.json", "surface.txt", "surface.html"):
+            self.assertTrue(
+                any(name in finding and digest in finding for finding in download_failures),
+                (name, download_failures),
+            )
+
+    def test_nested_rights_withheld_reason_triggers_restricted_metadata_gate(
+        self,
+    ) -> None:
+        identity = "artifact.synthetic.nested-withheld-reason"
+        document = {
+            "translations": [
+                {
+                    "target": "Collect",
+                    "lang": "en",
+                    "reason": {"kind": "rights-withheld"},
+                    "source_id": identity,
+                }
+            ]
+        }
+        failures = public_liturgy_findings(
+            document, {identity}, set(), "synthetic nested withheld reason"
+        )
+        self.assertTrue(
+            any("restricted metadata source_id" in finding for finding in failures),
+            failures,
+        )
+
+    def test_handoff_archive_mutation_rejects_every_opaque_member(self) -> None:
+        with self.scratch_directory() as directory:
+            archive_path = Path(directory) / "synthetic-handoff.zip"
+            with zipfile.ZipFile(archive_path, "w") as archive:
+                archive.writestr("evidence/synthetic.png", b"\x89PNG\x00synthetic")
+                archive.writestr("evidence/synthetic.pdf", b"%PDF-synthetic")
+            findings = archive_protected_findings(
+                archive_path,
+                set(),
+                pdftotext=None,
+            )
+        self.assertTrue(
+            any(
+                "synthetic.png" in one and "not permitted" in one
+                for one in findings
+            ),
+            findings,
+        )
+        self.assertTrue(
+            any(
+                "synthetic.pdf" in one and "not permitted" in one
+                for one in findings
+            ),
+            findings,
+        )
+        self.assertTrue(
+            any("pdftotext is unavailable" in one for one in findings),
+            findings,
         )
 
     def test_latin_capability_mutation_rejects_body_and_audit_evidence(self) -> None:
@@ -2555,7 +3534,7 @@ class RightsMutationBoundary(unittest.TestCase):
                 {
                     "key": "synthetic-common",
                     "common_from": {
-                        "scope": "missal-propers-except-collect",
+                        "scope": "missal-antiphons",
                         "source_id": "edition.synthetic.protected-common",
                         "artifact_id": "artifact.synthetic.protected-common",
                         "locus": "PROJECT-CREATED-PRIVATE-LOCATOR",
@@ -2581,7 +3560,7 @@ class RightsMutationBoundary(unittest.TestCase):
                 {
                     "key": "synthetic-common",
                     "common_from": {
-                        "scope": "missal-propers-except-collect",
+                        "scope": "missal-antiphons",
                         "options": [
                             {
                                 "mass": "commune-demo",
@@ -2601,6 +3580,18 @@ class RightsMutationBoundary(unittest.TestCase):
                 "synthetic safe Common",
             ),
             [],
+        )
+        legacy = json.loads(json.dumps(safe))
+        legacy["masses"][0]["common_from"]["scope"] = (
+            "missal-propers-except-collect"
+        )
+        legacy_failures = public_liturgy_findings(
+            legacy, set(), set(), "synthetic legacy Common scope"
+        )
+        self.assertTrue(
+            any("public common_from scope must be one of" in one
+                for one in legacy_failures),
+            legacy_failures,
         )
 
     def test_ordinary_absence_mutation_enforces_neutral_exact_state(self) -> None:

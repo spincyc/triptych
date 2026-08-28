@@ -31,6 +31,7 @@ import _calendars
 SCHEMA = "triptych-proper-latin-provenance/v1"
 SIDECAR_SUFFIX = "-proper-latin-provenance-v1.toml"
 POLICY = "guidance/liturgical-text-publication-policy.md"
+TRUSTED_REPOSITORY = Path(__file__).resolve().parents[1]
 
 PROVENANCE_STATES = frozenset({"unresolved", "identified", "collated"})
 PUBLICATION_STATES = frozenset({"unresolved", "withheld", "permitted"})
@@ -44,6 +45,9 @@ PUBLICATION_BASES = frozenset(
         "restricted",
         "non-exact-historical-witness",
     }
+)
+AFFIRMATIVE_PUBLICATION_BASES = frozenset(
+    {"public-domain", "project-created", "permission", "licensed"}
 )
 SURFACES = frozenset(
     {"web", "download", "print", "cli", "corpus-data", "public-git"}
@@ -156,7 +160,7 @@ class LatinDecision:
         return (
             not self.reason
             and self.publication_status == "permitted"
-            and self.publication_basis not in {"unresolved", "restricted"}
+            and self.publication_basis in AFFIRMATIVE_PUBLICATION_BASES
             and set(wanted).issubset(self.surfaces)
         )
 
@@ -168,7 +172,7 @@ class LatinDecision:
             missing = sorted(required - self.surfaces)
             if self.publication_status != "permitted":
                 reason = f"publication status is {self.publication_status}"
-            elif self.publication_basis in {"unresolved", "restricted"}:
+            elif self.publication_basis not in AFFIRMATIVE_PUBLICATION_BASES:
                 reason = f"publication basis is {self.publication_basis}"
             elif missing:
                 reason = "permission does not cover " + ", ".join(missing)
@@ -539,8 +543,11 @@ def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
     if publication == "permitted":
         if provenance not in {"identified", "collated"}:
             problems.append(f"{where}: permitted publication requires identified provenance")
-        if basis in {"unresolved", "restricted"}:
-            problems.append(f"{where}: permitted publication needs an affirmative basis")
+        if basis not in AFFIRMATIVE_PUBLICATION_BASES:
+            problems.append(
+                f"{where}: permitted publication needs an affirmative basis; "
+                f"{basis!r} is intrinsically nonpublishable"
+            )
         if not surfaces:
             problems.append(f"{where}: permitted publication must name its output surfaces")
         elif not TRACKED_SURFACES.issubset(surfaces):
@@ -707,8 +714,16 @@ def _source_library_records(
     if cached is not None:
         records, problems = cached
         return records, list(problems)
-    tool = root / "tools/source-library"
     try:
+        # ``calendar_root`` is a data location selected by ``mass-propers
+        # --root``.  It must never become an executable-code search path: an
+        # otherwise ordinary fixture shaped like ``<root>/src/sources/calendars``
+        # could place arbitrary Python at ``<root>/tools/source-library``.
+        # Execute the source-library implementation from this module's own
+        # checkout and pass the selected root only as data to ``load_library``.
+        tool = (TRUSTED_REPOSITORY / "tools/source-library").resolve()
+        if not tool.is_relative_to(TRUSTED_REPOSITORY) or not tool.is_file():
+            raise ValueError("trusted source-library tool is unavailable")
         module_name = (
             "_proper_latin_source_library_"
             + sha256(str(tool).encode("utf-8")).hexdigest()[:12]

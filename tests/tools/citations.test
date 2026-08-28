@@ -35,6 +35,163 @@ if len(excepted) != 1 or not any(
     raise SystemExit(f"partial stale exception was not rejected: {kept}, {excepted}")
 PY
 
+# Traversal is deliberately narrower than the calendar schema validator, but a
+# malformed parent aggregate must still be inert here rather than turning the
+# delegated citation pass into a traceback. Repeated names, on the other hand,
+# are citation identity: qualify them in source order so an exception can name
+# exactly one occurrence.
+python3 - "$repo/tools/citations" <<'PY'
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+
+loader = SourceFileLoader("citations_strict_shapes", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+sys.modules[spec.name] = module
+loader.exec_module(module)
+
+malformed = (
+    {"sections": 7},
+    {"sections": {"seasonal": {"masses": 7}}},
+    {"sections": {"seasonal": {"masses": [{"key": "mass", "forms": 7}]}}},
+    {
+        "sections": {
+            "seasonal": {"masses": [{"key": "mass", "propers": 7}]}
+        }
+    },
+)
+for document in malformed:
+    if list(module.each_proper(document)):
+        raise SystemExit(f"malformed aggregates yielded a Proper: {document!r}")
+
+document = {
+    "sections": {
+        "seasonal": {
+            "masses": [
+                {
+                    "key": "mass",
+                    "propers": [
+                        {"name": "Responsorial Psalm", "verses": []},
+                        {"name": "Responsorial Psalm", "verses": []},
+                    ],
+                }
+            ]
+        }
+    }
+}
+labels = [label for label, _ in module.each_proper(document)]
+if labels != ["mass/Responsorial Psalm#1", "mass/Responsorial Psalm#2"]:
+    raise SystemExit(f"repeated Proper names lack exact occurrences: {labels!r}")
+kept, excepted = module.apply_psalm_exceptions(
+    [
+        "mass/Responsorial Psalm#1/end: Psalm 150:6 exceeds hebrew Psalm 150",
+        "mass/Responsorial Psalm#2/end: Psalm 150:6 exceeds hebrew Psalm 150",
+    ],
+    {"Psalm 150:6": ("mass/Responsorial Psalm#2",)},
+)
+if (
+    len(kept) != 1
+    or "#1/end" not in kept[0]
+    or len(excepted) != 1
+    or "#2/end" not in excepted[0]
+):
+    raise SystemExit(f"occurrence-qualified exception was not exact: {kept}, {excepted}")
+
+# A parenthetical may be part of the Proper's real name or an audit incipit.
+# Resolve it against live owner paths before taking the legacy incipit away.
+qualified = {"mass/Entrance Antiphon (alternative)"}
+if module.exception_owners(
+    "mass/Entrance Antiphon (alternative)", qualified
+) != ("mass/Entrance Antiphon (alternative)",):
+    raise SystemExit("a real parenthetical Proper qualifier was stripped")
+if module.exception_owners(
+    "mass/Entrance Antiphon (alternative) (Ecce)", qualified
+) != ("mass/Entrance Antiphon (alternative)",):
+    raise SystemExit("a legacy display incipit was not stripped")
+
+# Presence, not truthiness, chooses an owner's numbering declaration. Otherwise
+# an explicit malformed override quietly inherits a valid enclosing default.
+proper = {"psalm_numbering": "", "verses": []}
+if module.numbered_verse_lists(proper, "hebrew")[0][3] != "":
+    raise SystemExit("a falsey proper numbering override inherited the default")
+cycled = {
+    "weekday_cycles": {"I": {"psalm_numbering": False, "verses": []}}
+}
+if module.numbered_verse_lists(cycled, "hebrew")[0][3] is not False:
+    raise SystemExit("a falsey cycle numbering override inherited the default")
+
+# Passage, range and exception tables are closed, and YAML booleans are not
+# positive integers merely because Python's bool subclasses int.
+problems = []
+module.check_passage(
+    "mass/Introit",
+    {
+        "book": "Psalms",
+        "ranges": [
+            {
+                "begin": {"chapter": True, "verse": 1},
+                "end": {"chapter": 1, "verse": False},
+                "surprise": "range",
+            }
+        ],
+        "surprise": "passage",
+    },
+    problems,
+    "hebrew",
+)
+for wanted in (
+    "passage has unknown keys ['surprise']",
+    "range has unknown keys ['surprise']",
+    "chapter must be a positive integer",
+    "verse must be a positive integer",
+):
+    if not any(wanted in problem for problem in problems):
+        raise SystemExit(f"closed passage validation missed {wanted!r}: {problems}")
+
+problems = []
+module.check_passage(
+    "mass/Introit",
+    {
+        "book": [],
+        "ranges": [
+            {"begin": {"chapter": 1, "verse": 1}, "end": {"chapter": 1, "verse": 1}}
+        ],
+        "ref": "Psalm 1:1",
+    },
+    problems,
+    "hebrew",
+)
+if not any("book is not a canonical name" in problem for problem in problems):
+    raise SystemExit(f"an unhashable malformed book was not controlled: {problems}")
+
+problems = []
+module.psalm_exceptions(
+    {
+        "psalm_numbering_exceptions": [
+            {
+                "psalm": True,
+                "divergence": "test",
+                "loci": {"Psalm 1:999": "mass/Introit"},
+                "surprise": "exception",
+            }
+        ]
+    },
+    problems,
+)
+if not any("entry has unknown keys ['surprise']" in problem for problem in problems):
+    raise SystemExit(f"exception entry schema remained open: {problems}")
+if not any("psalm must be the cited psalm's number" in problem for problem in problems):
+    raise SystemExit(f"a boolean psalm number passed: {problems}")
+
+try:
+    module.parse_citation(7)
+except module.CitationError:
+    pass
+else:
+    raise SystemExit("a non-string citation did not raise CitationError")
+PY
+
 expect() {
 	want="$1"
 	shift
@@ -106,6 +263,50 @@ sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 cd "$sandbox"
 mkdir -p calendars/test
+
+# `verses` is the content aggregate this tool owns. A bad scalar is reported in
+# the normal payload; it must not explode while the calendar checker delegates.
+cat >calendars/test/sundays.yaml <<'YAML'
+schema: triptych-calendar-masses/v1
+psalm_numbering: vulgate
+sections:
+ seasonal:
+  masses:
+  - key: test-sunday
+    propers:
+    - name: Introit
+      verses: 7
+YAML
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to reject a scalar verses aggregate" >&2
+	exit 1
+fi
+case "$out" in
+*"verses must be a nonempty list"*) ;;
+*) echo "expected a controlled verses-shape problem, got: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*"Traceback"*) echo "malformed verses must not crash citations: $out" >&2; exit 1 ;;
+*) ;;
+esac
+
+cat >calendars/test/sundays.yaml <<'YAML'
+schema: triptych-calendar-masses/v1
+sections: [
+YAML
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to reject malformed YAML" >&2
+	exit 1
+fi
+case "$out" in
+*"unreadable"*) ;;
+*) echo "expected a controlled YAML parse problem, got: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*"Traceback"*) echo "malformed YAML must not crash citations: $out" >&2; exit 1 ;;
+*) ;;
+esac
+
 cat >calendars/test/sundays.yaml <<'YAML'
 schema: triptych-calendar-masses/v1
 edition: test edition

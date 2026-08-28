@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.edward-caswall.lyra-catholica.london-1849.postconciliar-antecedent-sequences-en"
+edition_id = "edition.edward-caswall.lyra-catholica.london-1849"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1849 London printing is in the public domain in the United States on the pre-1931 line as derived for calendar year 2026, and no 17 U.S.C. 104A restoration is available for a translator who died in 1878; the sibling ia-djvu-ocr record argues the case in full. This file contains only Caswall's English wording and project-supplied target keys. Its three `english_json` cells are lossless JSON string literals of the public-domain bodies: decoding them introduces the verse and stanza LF bytes without changing a word, mark, or space. A faithful transcription and mechanical re-expression of a public-domain text originate no new copyright."
+rights_jurisdiction = "United States"
+derived_from = "artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf"
+transformation = "Lossless publication projection of three Sequences read from the registered page images. The already page-verified physical verse lines in the sibling missal-sequences-en artifact were grouped by hymn; one LF separates successive printed verse lines and a second LF separates successive stanza numbers. Each complete result was JSON-encoded into one physical TSV data line so the publication passage can bind one atomic body while preserving the source's exact lineation. The target columns add only the postconciliar mass, form, Proper, cycle, and occurrence identity; they do not alter the English."
+retrieved = "2026-08-27"
+sha256 = "d24b323f57140f377d3c826704623362542a062eb369485f49e60e82c133ce22"
+byte_size = 4479
+path = "src/sources/works/edward-caswall/lyra-catholica/editions/london-1849/artifacts/postconciliar-antecedent-sequences-en/postconciliar-antecedent-sequences-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header line and three data lines. Columns: entry_key, mass, form_id, proper, cycle, occurrence, english_json. `english_json` contains exactly one valid JSON string literal; decoding it yields the complete multiline English body, without a terminal LF. Coverage is limited to the three Caswall Sequences used as antecedents in the postconciliar translation overlay: Victimae Paschali laudes, Veni Sancte Spiritus, and Lauda Sion Salvatorem. The existing missal-sequences-en artifact remains the line-level transcription and page locator for all five historical Sequences; this smaller artifact exists only to give each publishable overlay body one atomic, hash-pinned row."
