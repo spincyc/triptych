@@ -1261,7 +1261,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "mutable-prototype-payload-closed"
   criterion = "The finalized record is built from own data alone. Every field is taken by own descriptor through `ownData`, so nothing inherited is visible and no own accessor is invoked, closing the V15 defect in which a shallow-frozen raw file with a mutable prototype was read at render time by ordinary prototype-sensitive lookup and a frozen empty object could turn from unreadable to readable between one reader and the next by prototype mutation alone, or by a getter answering differently on a second read."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena-model.js"]
 
   [[deliverables.requirements]]
@@ -1291,14 +1291,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "write-failure-no-applied-record"
   criterion = "A write that fails leaves no applied-body record at all. The write runs inside a `try`, so a throwing write appends nothing and resets the retry flag truthfully; a write that silently does not take is caught by the read-back comparison and likewise appends nothing. An append-only body journal that cannot say a body reached the page stays silent about it rather than recording a body that was never written."
-  status = "pass"
+  status = "open"
   evidence = ["src/web/browser/catena/catena.js"]
 
   [[deliverables.requirements]]
   id = "provenance-identity-assertion"
   criterion = "The committed equality matrix carries a provenance-specific `===` assertion. The V15 review confirmed by source inspection and independent replay that provenance already consumes the authoritative projection object, and recorded that the committed matrix nonetheless lacked the assertion that proves it; the assertion is added so the roster proves the identity rather than resting on inspection."
-  status = "open"
-  evidence = ["tools/tests/test_catena_wave_1.py"]
+  status = "pass"
+  evidence = ["tools/tests/test_catena_wave_1.py", "PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
 
   [[deliverables.requirements]]
   id = "corrected-observation-accounting"
@@ -1393,8 +1393,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "fresh-independent-review"
   criterion = "A fresh independent review of the exact V16 head and its immutable handoff records a durable disposition, scoped to publication atomicity, finalized owner-independent cache values, completion-envelope ownership through the body sink, post-write journal truthfulness, preservation of every V15 and V14 closure the V15 review passed, and exact reproducible evidence and provenance. This lane does not review its own work, records no acceptance of V16, marks no separately owned prerequisite complete, and claims no acceptance of E1."
-  status = "open"
-  evidence = ["guidance/corpus-browser-roadmap.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "guidance/corpus-browser-roadmap.md"]
+
 [[deliverables]]
 id = "corpus-browser-catena-e1-corrections-v15-2026-08-26"
 owner = "src/web/browser/catena"

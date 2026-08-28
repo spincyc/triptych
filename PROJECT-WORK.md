@@ -1139,6 +1139,246 @@ Status: **awaiting fresh independent review.** This lane records no acceptance
 of its own work, marks no separately owned prerequisite complete, and does not
 review itself.
 
+### E1 Catena V16 independent final publication / evidence review
+
+Independent review branch:
+`review/catena-wave-1-e1-corrections-v16-independent`.
+
+Reviewed implementation head:
+`cc1f2fb8625f044558c26edd358b99cd7dcc7646` on
+`impl/catena-wave-1-e1-corrections-v16`; exact V15 parent
+and comparison endpoint `b9202882badbbbc364f1dd3d9057d2710ee47552`;
+V16's literal Git first parent is
+`251900b14a168b356297299d68b947c686c91768`. V15 independent review
+`67247ecc39a6e5f6224c64ca3ab1af163ee023b1`. Evidence branch
+`evidence/catena-e1-corrections-v16-handoff` resolves to
+`bfa913466c559ad410f252f4192fb3af953dd10b`. The reviewed archive is
+`20260827T230425Z-catena-e1-corrections-v16.zip`: 2,172,189 bytes, 76
+members, SHA-256
+`bb473e7afbfa619182248a02fdc4db28b645792cba054e8be3cf660ff845d4fb`;
+its authority attempt is `package-20260827T230425Z-3238tjpk`. Current
+`origin/main` at review was
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 is not integrated with it.
+
+Semantic sub-disposition: **SEMANTIC CHANGES REQUIRED**.
+
+Evidence/provenance sub-disposition: **EVIDENCE CHANGES REQUIRED**.
+
+Overall V16 disposition: **CHANGES REQUIRED**.
+
+**The promised V15 corrections that pass.** Publication by path is atomic:
+pending work is held only in the owner-keyed `asking` weak map, and
+`fragmentTexts` is absent through request, parse and finalization. Its sole
+success value is the finished frozen null-prototype scalar record with exactly
+`present`, `unreadable`, `text`, `basis`, `date_basis`, `acknowledgement` and
+`acknowledgement_broken`; it carries no row, projection, owner, response or raw
+JSON. Reentrant probes observe pending request, parse, normalization,
+immediately before publication and immediately after it. Actual synchronous
+second-owner reentry is exercised during normalization and immediately after
+publication; the latter consumes only the finished value. The exact V15 test
+replay fails as intended while V16 passes. The evidence should not overstate
+the other three observation points as second-owner reentries: they are
+ordering observations.
+
+The completion envelope also passes. One stable frozen `rowTransport` owner
+holds the actual row, actual projection and path. Pending work remains scoped
+to that owner; a model-sealed completion retains it by object identity;
+`bodyAsked` refuses literals, forged envelopes, arbitrary content and another
+owner's completion. A later B caller may reuse A's finalized content only by
+wrapping it in B's own completion, so A's owner never crosses. Actual
+row/projection identity is preserved at all twelve consumers: readability,
+unfetched, tally, rows, voices, blocked, leads, refusal, request, transport,
+body and provenance. The committed provenance assertion is a real `===`
+identity assertion, not an ID comparison.
+
+Body recording is ordered validate owner, write, read back success, then
+append. Successful rows bind owner, row, projection, path, content identity
+and `wrote = true`. A throwing or silently ineffective write produces no
+false applied-body row. The promise ledger criterion saying a throwing write
+also resets retry is false: production and the narrative records deliberately
+do not reset it, so that criterion remains open even though journal truth is
+sound. Same-path A-held/B-independent behavior passes exactly: B renders
+`PLANTED BODY B`, never A's body; late A changes only A's release transition
+and none of B's pinned 36-field terminal vector. A may fail or 404 while B
+succeeds on the same path without poisoning B. The fragment-text-specific
+inherited body, getter, mutable prototype, nested mutation and post-publication
+mutation cases also pass once `M.textPayload` has received its argument.
+
+**Decisive semantic observation defect.** The broader requirement that no
+hostile inherited or accessor value becomes semantic authority is false before
+those passing boundaries. `normalizeChapter` plain-reads
+`record.fragments`, `record.sources`, `record.refusals`, `record.unfetched`,
+`record.blocked` and `record.leads`. A direct exact-head probe of
+`chapterProjection(Object.create({fragments: [hostile]}))` produced a readable
+authoritative hostile row; an own `fragments` getter was invoked once and
+produced the same row. Nested refusal, lead and blocked fields and raw array
+members also retain ordinary prototype/accessor-sensitive reads. The narrow
+source/text counter vectors are accurate — value gets, getter invocations,
+descriptor reads, enumeration, prototype observations and membership are
+distinguished — but they do not instrument or close this raw-root boundary.
+
+There is a second independent path. The fragment-text fixture admits two
+`Get(value, "then")` observations but calls them non-semantic. An inherited
+`then` getter returning `undefined` on its first observation and a resolver for
+forged text on its second can cross `response.json()` and the async
+`loadJSON()` return boundary before `M.textPayload` runs. The exact-head probe
+observed two getter calls and finalized `HOSTILE SECOND-THEN BODY`, not the
+object's recorded own text. Therefore own-descriptor finalization is sound
+only after a hostile value has already been allowed to substitute the raw
+document. Section 17 is controlling even though these raw-root issues predate
+V16, so semantic closure cannot be accepted.
+
+**Regression and parent discrimination.** Focused replay is 615 tests at the
+parent and 660 at V16, all green. Running the V16 file against the parent gives
+604 methods: 565 pass, 39 distinct methods fail, 288 failure rows, zero
+errors. The written 30 semantic / 6 mechanism-absent / 2 source-text / 1 hash
+pin split sums to 39, but it is prose rather than a machine claim inventory.
+The package's “ten semantic closures” are more truthfully eight runtime
+semantic groups plus the provenance proof gap and observation-record
+correction; the latter two tests pass at the parent and the package elsewhere
+calls all eleven new pass-at-both-endpoint methods controls rather than
+closures. The preserved `unfetched`, raw-reread, member/tally, carried-path,
+spine-prefix, DOM/prototype, wrapper/transport and prewarm regressions pass.
+
+**Validation and budgets.** Full discovery is 1,966 parent / 2,011 head with
+14 failures, 13 errors and 11 skips at both, comprising 27 result rows over 22
+distinct identical identities; none is Catena. The sealed browser gate is
+2,290 assertion rows = 1,836 pass / 226 fail / 228 skip, with whole normalized
+parent/head reports equal under the declared volatile exclusions; 17 is its
+diagnostic-name vocabulary, not the row universe. `make -k check` has the same
+four inherited red targets at both endpoints: web editions, release bindings,
+examples and tool registry. Promise ledger is 40/19 parent and 41/19 head;
+Catena is 1,351 fragments / one book / 73 canon entries; four release bindings
+remain stale and unsigned. Ceilings are unraised: `catena.js` 12,958/7,724 to
+12,965/7,835 against 13,000/8,800; byte-identical `catena.css` at 7,629/2,676;
+uncapped `catena-model.js` 41,077/9,536 to 44,247/10,344. The stale
+12,966/7,836 prose figure is not the executable result.
+
+**Reconciliation.** The authoritative cold attempts 15 and 16 each have 30
+divergent rows, 28 distinct divergent command strings and two separately
+declared volatile lines; their endpoints are equal. Historical V15 warm has
+28 divergent rows, 27 distinct strings and two declared volatile lines. The
+only V16-minus-V15 command is
+`tools/mass-ordinary check --out build/example-ordinary`; the reverse set is
+empty. The directions call 32 and 30 “total differing rows” by adding the
+volatile declarations. Durable and sealed records simultaneously say volatile
+lines are never summed and then define those same totals as the sum. The
+measured divergent sets remain usable; the artificial total has contradictory
+authority and is not defect arithmetic.
+
+**Attempt history.** Final local ledgers mechanically hold 32 terminal
+attempts with zero unresolved or reused ordinals. The in-package history has
+31; the shipped P8 slice has 25. Final dispositions are 2 failed, 3 abandoned,
+6 complete, 3 authoritative evidence and 2 set aside; the separate package
+execution vocabulary decomposes as 2 failed + 6 complete + 3 abandoned + 11
+sealed + 10 discarded = 32. Completed-but-declined attempts retain execution
+`complete` beside evidence `set-aside`/`superseded`, and abandoned attempts are
+terminal and unevidenced. Ordinal 32 being sealed/unevidenced at P5 and later
+authoritative at P9/P12 is a coherent temporal transition.
+
+The temporal claims are nevertheless not closed. `attempt-history.json` is an
+exact pre-ordinal-32 prefix with no capture/as-of/phase field but is called the
+full history. `PROVENANCE.md` also presents an undocumented 23-attempt view as
+if derived from that current 31-attempt member. The 25-attempt sibling is a
+filtered ordinal 8–32 slice, not the complete lane. The V15 predecessor totals
+are factually reproducible only by opening two unsanitized unshipped ledgers;
+their digests identify bytes but do not ship independently reviewable content.
+The promised “one ledger identity” also conflicts with the disclosed two-ledger
+topology, and one predecessor criterion says four battery attempts while the
+next and the derivation say five.
+
+**Archive, P8 and final-state defects.** Archive basename, size, 76-member
+count and SHA-256 match. Every member streams, there are no duplicate or unsafe
+paths, and the committed manifest and staged bytes agree. P8 reports PASS,
+zero problems, 13 checks performed, zero skipped and unchanged pre/post
+archive hash; it is read-only toward the ZIP.
+
+The authority record's
+`ledger_sha256 = d14ce84c523c9d2ea6908acb5ca6fabf3ef5d7419954005f706e5573e50289a2`
+is exactly the first 401 lines / 241,094 bytes of the shipped ledger. The full
+402 lines / 241,758 bytes hash to
+`e80d6508b88fdec0f005aa7f4a69679f0ac67dfb8cba0849290146eb2f8be184`.
+No prefix semantics are disclosed. P12 hashes rows 1–401 into authority, then
+appends the authority-binding row 402 and runs no final coherence gate. A
+finished-mode reviewer rerun exits 1 on that exact mismatch. The recorded
+authority-coherence PASS is truthful only for its P10 `--bindings-pending`
+check set, not the final authority/ledger bytes.
+
+Completeness still reruns COMPLETE under its sibling-presence/naming scope,
+but the claimed final outer CLEAN does not. P11 scans before P12; rows 401 and
+402 are appended afterward. A read-only scan of the final textual siblings
+finds one would-change file, four substitutions and two local-offset tokens in
+those two ledger rows. Thus final bytes did not exist for the recorded clean
+scan, and final-state completeness/cleanliness is open.
+
+**Replay, commands and tools.** Reviewer-style fresh clones replayed the
+focused head command successfully at 660 tests and the parent command at its
+recorded expected failure with 604 methods / 288 failure rows; each restored
+cleanly. The browser command initially returned 3 because a fresh clone lacks
+the built site. After the omitted `make public-site` prerequisite it reproduced
+the recorded exit 1 and 2,290/1,836/226/228 counts. Its normalized result was
+not byte-equal to the sealed report after declared volatile exclusions: 27
+day-route title details changed with the unpinned current date. These successful
+or explained reviewer runs do not cure the package's omission of the required
+authoritative fresh-clone replay transcript.
+
+All 24 shipped structured command rows rederive EXECUTABLE, their displayed
+texts equal their structured renderings, and the exact V15 prefix-prose,
+format-like, iframe, makefile, node_modules and slash/equal cases are refused.
+The broader claim is false: syntactically valid structured rows such as
+`python3 checks the repository after the change` and `make completed
+successfully` pass, and a legacy raw `ELIDED` row can satisfy the handoff
+checker when labelled literal. Seventeen of 39 broader adversarial prefix-prose
+forms escaped. Runnability must be bound to the structured execution record,
+not inferred from a finite English connector list or a precomputed label.
+
+P10 arithmetic is 23 referenced tools, 15 executed identities, 30 recorded
+invocations, 21 shipped tools and 8 trusted-not-executed. Both `assemble.sh`
+and `battery.sh` executed, but the sidecar's two structurally tagged
+`driver_invocations` are both battery runs: semantically there are two unique
+driver tools and three driver run rows. Trusted and shipped bytes match for all
+21 tools; only 13 shipped tools actually executed and have a real three-way
+executed/trusted/shipped match. The remaining eight prove trusted/shipped only,
+despite an `executed_sha256` field copied from the roster for unexecuted rows.
+
+**Privacy, scanner and ownership.** The ZIP itself passes privacy, but retained
+raw ledgers are dirty and the package's complete V15-history claim depends on
+two local-only unsanitized ledgers. Digest citation alone cannot support their
+content. The final named ledger also contradicts the sibling-clean claim after
+P12. The authority-language scanner allows aggregate and denial lines and
+rejects an isolated unsupported named assertion, as intended, but its
+whole-line exceptions let the assertion hide after an aggregate or denial;
+declaring the ID foreign also bypasses it. Those three adversarial cases must
+fail.
+
+The exact V15-to-V16 diff has seven regular-file changes: two production files
+(`catena-model.js`, `catena.js`), the focused test and four durable records.
+There are no data, release, common-gate, shared-shell, Liturgy, PDF, CLI, CSS,
+HTML or ceiling changes. Published ZIP privacy and ownership boundaries pass.
+
+**Broader blockers.** Still open and separately owned: orphan/source-only and
+translator semantics; malformed absence/refusal/selection typing; unreadable
+roots and `bibles.json`; broader terminal/oracle proof; CLI/web duplication;
+model/combined-payload budget governance; the historical `src/web/data/`
+contract; stale release bindings; common gate and B0/shared shell; real
+device/AT evidence; protected Liturgy; PDFs; and final integration. This review
+does not fail V16 merely for those inherited blockers and accepts none of E1.
+
+**Exact next action.** Produce one bounded V17 from exact V16 head. Snapshot
+every raw chapter authority collection, member and semantic field from own data
+descriptors without invoking accessors, reject inherited/accessor contamination
+conservatively, and ensure Catena finalizes parsed text synchronously before a
+raw object can cross a thenable-assimilating async boundary. Add exact
+V16-parent-failing regressions for inherited and own-getter chapter roots,
+nested/index accessors and alternating inherited `then`. Preserve the accepted
+atomic publication, owner-envelope, cache-rebinding and post-write journal
+semantics. Then rebuild evidence with truthful phase-labelled attempt views, a
+closed immutable full ledger before hashing, final authority/coherence/privacy
+verification after the last mutation, hardened command and authority-language
+classifiers, reconciled durable records and representative fresh-clone replay.
+Return the exact head and package for fresh independent review. Do not
+integrate E1, merge, re-sign, deploy or broaden into unrelated work.
+
 ### E1 Catena publication and completion-envelope ownership lane, V16
 
 <!-- promised-deliverable: corpus-browser-catena-e1-corrections-v16-2026-08-27 -->
