@@ -1705,3 +1705,68 @@ GPT Reader routes returned the revised timestamps, and all six live PDF routes
 matched the reviewed SHA-256 hashes exactly. The unrelated local
 `directions.md` and `-.png` remained untracked and outside the commits and
 deployment.
+
+## E1 Catena integration candidate
+
+The convergence review (branch `review/catena-e1-convergence`, commit
+`f1a5bbad763b847ded8799748223898de6ad4de9`) classified the remaining Catena E1
+state with zero `MERGE_BLOCKER` and zero `INTEGRATION_BLOCKER` findings,
+cancelled the V17 semantic lane as `CANCEL_V17_SEMANTIC`, left the inherited
+chapter-root getter, hostile-thenable, and body-write retry findings as
+`HARDENING_BACKLOG`, left the eight package/history/replay/scanner defects as
+`EVIDENCE_TOOLING_BACKLOG`, left twenty release, shell, data, validation,
+Liturgy, PDF, and final-integration concerns `SEPARATELY_OWNED`, and
+dispositioned the line **`READY_FOR_INTEGRATION_BRANCH`**.
+
+Acting on that disposition and its exact bring-across manifest,
+`integration/catena-e1` was created from the exact authorized main base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` (origin `main` had not moved past
+it), with the reviewed V16 implementation `cc1f2fb8625f044558c26edd358b99cd7dcc7646`
+used as final implementation truth rather than merged. The candidate integrates
+exactly:
+
+- the final production Catena route, model, page, and stylesheet
+  (`src/web/browser/catena/catena-model.js`, `catena.js`, `catena.css`,
+  `index.html`), which main had not independently changed since the reviewed
+  fork point, so no current-main work was displaced;
+- the `scripts/_catena.py` voice-authority change and its deterministic
+  regeneration of `src/web/data/structure/catena/index.json`, which now
+  publishes the held voice set `original`, `translation:en`,
+  `translation:la`, plus the Isaiah 8 chapter file `27-is/008.json`
+  regenerated from main's own source records and byte-identical to the
+  reviewed V16 generated output;
+- the 78-line fail-closed generator-contract expansion of
+  `tools/tests/test_catena.py` (56 tests total); and
+- `tools/tests/test_catena_production.py`, 419 production-policy regressions
+  curated verbatim from the V16 wave-1 suite for publication atomicity,
+  owner/completion identity, same-path/late isolation, exact voices with
+  `translation:grc` refused, refusal/absence/provenance truthfulness, path
+  namespace closure, cache completion isolation, malformed canonical data,
+  and the governed budget assertions.
+
+The 17,315-line synthetic wave-1 harness, the hostile
+prototype/getter/thenable classes, evidence tooling, attempt history,
+packages, correction-lane bookkeeping, and V16-side release or shared-shell
+changes were not brought across. The three hardening findings and eight
+evidence-tooling findings remain backlog; the twenty separately owned concerns
+were not touched; the four Catena release bindings were not refreshed (they
+belong to the release owner after accepted integration bytes).
+
+Fresh validation on the integrated tree: the generator contract reports
+1,351 fragments / 1 book / 73 canon entries; the focused Catena suites pass
+56/56 and 419/419 under node; static browser checks pass 5/5; real-Chromium
+route-only runs over `/catena/index.html` produce the same 121 assertion
+identities with the same 95 pass / 14 inherited shared-shell fail / 12 skip
+statuses at the exact base and at the candidate, with zero status changes;
+full discovery runs 1,736 tests at the base (46 failures, 13 errors, 11 skips)
+and 2,159 tests at the candidate with identical failure and error identities,
+zero new integration-caused failure identities, and zero Catena failures; the
+governed gzip-9 budgets measure CSS 7,629/8,000 whole and JS 12,965/13,000
+whole with the suite's stripped-ceiling assertions (2,700 and 8,800) passing
+and `catena-model.js` uncapped.
+
+Status: **awaiting independent integration review** under the fixed loop of
+one independent Codex integration review, at most one bounded correction pass,
+one confirmation review, then merge. E1 is not accepted and not integrated; no
+merge to `main`, deployment, or release signing has occurred. The candidate
+head is the commit carrying this record.

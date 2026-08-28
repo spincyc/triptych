@@ -1489,3 +1489,51 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-candidate-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Build the clean E1 Catena integration candidate from the exact convergence-authorized main base with the review's bring-across manifest only, validate the integrated result against that base, and stop awaiting independent integration review without merging, releasing, deploying, or continuing synthetic hardening."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "exact-base-and-manifest"
+  criterion = "The candidate branches from 2778285849f2973ea89d1cfd5b2751ed4ae58e54 and carries only the manifest: the final Catena route/model/HTML/CSS, the voice-authority generator change with its deterministic generated data, the generator-contract test expansion, and curated production regressions, with no evidence tooling, synthetic hostile fixtures, V16-side records, shared-shell, Liturgy, PDF, or release-binding changes."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "src/web/browser/catena/index.html",
+    "scripts/_catena.py",
+    "src/web/data/structure/catena/index.json",
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "focused-and-structure-validation"
+  criterion = "The generator contract reports 1,351 fragments, 1 book, and 73 canon entries; the focused Catena suites pass in full, preserving exact voices (original, translation:en, translation:la), refusal/absence distinction, provenance truthfulness, path namespace closure, and same-path/late/cache isolation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "base-and-candidate-comparison"
+  criterion = "Real-Chromium route-only runs produce identical 121 assertion identities with identical statuses at the exact base and the candidate, and full discovery produces zero new integration-caused failure identities with zero Catena failures; governed CSS/JS budgets pass without raised ceilings."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "backlogs-and-stop-line"
+  criterion = "Hardening findings and evidence tooling remain backlog, separately owned concerns are untouched, release bindings are unrefreshed, and the record states awaiting independent integration review without marking E1 accepted or integrated, merging, deploying, or release signing."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]

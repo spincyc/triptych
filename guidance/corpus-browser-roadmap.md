@@ -225,6 +225,53 @@ their distinct downstream classifications:
 - the stale Fortescue Artifact note remains with its proper source-data
   authority owner and is not corrected by this disposition.
 
+## E1 Catena integration candidate — 2026-08-28
+
+The convergence review branch `review/catena-e1-convergence` (commit
+`f1a5bbad763b847ded8799748223898de6ad4de9`) recorded
+**`READY_FOR_INTEGRATION_BRANCH`** with zero `MERGE_BLOCKER` and zero
+`INTEGRATION_BLOCKER` findings, **`CANCEL_V17_SEMANTIC`**, three
+`HARDENING_BACKLOG` findings, eight `EVIDENCE_TOOLING_BACKLOG` findings, and
+twenty `SEPARATELY_OWNED` concerns. Acting on that disposition,
+`integration/catena-e1` was built from the exact authorized main base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` (origin `main` had not moved past
+it) with the reviewed V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`
+used as final implementation truth, not as a patch queue. The candidate
+carries the manifest only: the final route-owned
+`src/web/browser/catena/catena-model.js`, `catena.js`, `catena.css`, and
+`index.html` (main had made no independent change to them since the reviewed
+fork); the `scripts/_catena.py` voice-authority change with its deterministic
+regeneration of `src/web/data/structure/catena/index.json` (adding the held
+`voices` key `original`, `translation:en`, `translation:la`) and the Isaiah 8
+chapter file `27-is/008.json`, byte-identical to the reviewed V16 generated
+output; the 78-line generator-contract expansion of `tools/tests/test_catena.py`;
+and `tools/tests/test_catena_production.py`, 419 production-policy regressions
+curated verbatim from the V16 wave-1 suite (publication atomicity,
+owner/completion identity, same-path/late isolation, exact voices with
+`translation:grc` refusal, refusal/absence/provenance truthfulness, path
+namespace closure, cache completion isolation, malformed canonical data, and
+the governed budget assertions). The 17,315-line synthetic harness, the
+hostile prototype/getter/thenable classes, evidence tooling, and V16-side
+records were excluded; the three hardening findings and eight evidence-tooling
+findings remain backlog, and the twenty separately owned concerns were not
+touched. Release bindings were not refreshed; no merge, deploy, or release
+signing occurred.
+
+Fresh validation on the candidate: `scripts/_catena.py check` reports
+1,351 fragments / 1 book / 73 canon entries; `test_catena.py` 56/56 and the
+curated suite 419/419 under node; static browser checks 5/5; real-Chromium
+route-only runs over `/catena/index.html` produced the same 121 assertion
+identities with the same 95 pass / 14 inherited shared-shell fail / 12 skip
+statuses at the exact base and at the candidate, zero status changes; full
+discovery ran 1,736 tests at the base (46 failures, 13 errors, 11 skips) and
+2,159 tests at the candidate with the identical failure and error identities
+and zero Catena failures; governed gzip-9 budgets measure CSS 7,629/8,000
+whole, JS 12,965/13,000 whole, with the suite's stripped-ceiling assertions
+passing (2,700 and 8,800) and `catena-model.js` uncapped. Status: **awaiting
+independent integration review**, per the fixed loop (one independent review,
+at most one bounded correction pass, one confirmation review, merge). E1 is
+not accepted and not integrated.
+
 ## Structured-data limits and blocked follow-ups
 
 Safe current relationship categories are explicit containment,
@@ -284,6 +331,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-08 | Review-fix dispatch | Authorized `ux/corpus-wave-1-review-fixes` from exact reviewed head for bounded F0, shell, evidence, and authority corrections only. | F0 and shell remain changes required pending a fresh independent disposition; no production/main/deploy authority. |
 | 2026-08-09 | Review-fix implementation and test checkpoint | Completed the bounded F0 and shared-shell prototype corrections without reopening C0, C1, D0, or E0. The full capture run covered 85 real-route cases and 2,296 assertions with zero gating failures. Its 64 disclosed non-gating findings comprise 52 inherited nested-`main` findings, eight before-state useful-content findings, two before-only narrow-overflow findings, and two inherited Reader no-JavaScript overlay limitations. Protected Liturgy production and canonical PDF paths have zero reviewed-base-to-head changes. | Authority reconciliation `3bfb9df10e1bd4b8d4d2b56aeb430c897f67700a`; design/test head `c66c143643ff75a6cd54afdbe1fcd6eac0aca1b6`. F0 and shell remain changes required until independent acceptance. The earlier correction package `20260809T014145Z-corpus-wave-1-review-fixes` is superseded for protocol defects; a fresh immutable package follows this tracking repair. |
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
+| 2026-08-28 | E1 Catena integration candidate | Built `integration/catena-e1` from the exact convergence-authorized main base per the review's bring-across manifest: final Catena route/model/HTML/CSS, the generator voice-authority change with its deterministic generated data, the generator-contract test expansion, and 419 curated production regressions. Fresh validation passed structure (1,351/1/73), focused Catena (56 and 419), static checks 5/5, identical 121-identity Chromium route runs at base and candidate (95/14/12, zero changes), governed CSS/JS budgets, and full discovery with zero new failure identities and zero Catena failures. Status **awaiting independent integration review**; not accepted, not integrated, no merge/deploy/release binding. | Convergence review `f1a5bbad763b847ded8799748223898de6ad4de9`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; branch `integration/catena-e1`; candidate head is the commit carrying this row. |
 
 ## Next Codex tasks
 
