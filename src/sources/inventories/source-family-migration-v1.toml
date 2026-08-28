@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-08-26"
+audited_on = "2026-08-28"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:6287718f1d0e18c2a36076d09b682f052f214ea0d860d4d15165e254436fab90"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
-canonical_catalog_snapshot = "sha256:ddbc6111f0627148a053644ac89f2ea73a5adc8be18991d4028b8cc0caf5854c"
+canonical_catalog_snapshot = "sha256:919e6a7b67e3b7830fcaf718db785753c50e022ae56364340c95035b23d034fb"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:f944306c7258178c3e605350bca075be183d87ff1dd7107461a36354171f7dce"
+snapshot = "sha256:b2d48f582a44045347f11d909566173cf9ec387ef0af4f075757592e1d7596d5"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -2762,6 +2762,27 @@ membership_snapshot = "sha256:8f8713bb2e70ea0475d0ceebfd4f9b40a2b5ddbb68d02ebafa
 notes = "Edmundo O'Gorman's monograph on the origin of the image and cult of Guadalupe at Tepeyac, published in the Serie Historia Novohispana of the Instituto de Investigaciones Historicas of the Universidad Nacional Autonoma de Mexico, owns its catalog-level work and the UNAM-IIH open-access digital edition of the second edition published online on 17 June 2019, cited by part, chapter, and numbered appendix. It is a modern scholarly monograph by a named author with its own thesis, argued against the apparition tradition, and is used as such; it therefore stays per-work rather than joining any Guadalupe cluster with the 1649 Nahuatl imprint, the 1883 archiepiscopal report, and the 1999 apostolic exhortation, which share only a subject and the use one publication makes of them. Family membership records source identity rather than a consumer's reading list, and none of the four manifests records a relation to another, which is the test the ledger's corpus-plan rows such as family.holy-see.masonic-membership-acts and family.roman-missal.older-use-discipline-acts satisfy and these do not. The publisher authorizes non-commercial reproduction of the PDFs with attribution; no exact artifact is registered, so evidence stops at edition and chapter loci."
 
 [[families]]
+id = "family.edward-caswall.lyra-catholica"
+label = "Caswall, Lyra Catholica (London: James Burns, 1849)"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.edward-caswall.lyra-catholica.london-1849.ia-djvu-ocr", "artifact.edward-caswall.lyra-catholica.london-1849.ia-scan-pdf", "artifact.edward-caswall.lyra-catholica.london-1849.missal-sequences-en", "edition.edward-caswall.lyra-catholica.london-1849", "work.edward-caswall.lyra-catholica"]
+trace_patterns = ["Caswall", "Lyra Catholica", "edward-caswall\\.lyra-catholica"]
+reviewed_on = "2026-08-28"
+membership_snapshot = "sha256:9020db5f2655508dc5d02fd50a41c1f2f1a22cc465298c45d6d54c67a4266959"
+notes = "A new family entered on 2026-08-28, one of three registered after the family records were destroyed at d7fe32ba2 and therefore never screened. It is its own work family on the norm the sibling hand-missal and hymn families already state: an independently authored book whose only common object is the Latin the Missal and Breviary print. It is NOT filed with the Hymns Ancient and Modern family merely because both are nineteenth-century English hymn collections registered in the same week: Caswall is a Catholic translator's devotional collection and that book is an Anglican compilation, they share no imprint, proprietor, recension or rights case, and the ledger's convention is one family per work (380 of the 426 restored families are family.<creator>.<work-slug> holding the matching work). Categorised historical-primary and prayer-devotional and deliberately NOT liturgical: the work record states that nothing in it was ever approved for use at the altar and that a reading taken from it attests what Caswall wrote, not what any Missal or Breviary printed. Owns the 1849 London printing, its two remote Internet Archive artifacts (the ABBYY text layer, which the artifact record marks a lead and not a source, and the 354-image facsimile the English was actually read from) and the project's own tracked transcription of the five sequences the 1962 Missal appoints. Fixed: an 1849 imprint does not move. Rights are affirmative and complete on every artifact -- pre-1931 United States publication as derived for calendar year 2026, with 17 U.S.C. 104A restoration unavailable because United Kingdom protection for a translator who died in 1878 ended in 1948 -- which is what admits the tracked storage plan. bind-existing: the registered records are complete for the purpose the book is carried for."
+
+[[families]]
 id = "family.eliran-wong.lxx-rahlfs-1935-dataset"
 label = "LXX-Rahlfs-1935 Electronic Dataset"
 kind = "work"
@@ -2907,6 +2928,27 @@ trace_patterns = ["(?:Act of Consecration.{0,60}Immaculate Heart|act-consecratio
 reviewed_on = "2026-07-31"
 membership_snapshot = "sha256:2fb3776a8ae3df61aec0c0151dcc79a4124f75bc2a3f3545b55f5a0d94abe15e"
 notes = "This corpus-plan owns the ecclesial judgment and reception thread on one object, the 1917 apparitions at the Cova da Iria: the Bishop of Leiria's pastoral letter of 13 October 1930 declaring the visions worthy of belief and permitting the cult (its registered edition is the critical printing in the 2013 DCF Selecao, Doc. 133, whose container stays owned by family.santuario-de-fatima.dcf-selecao-1917-1930), the CDF's documentary publication The Message of Fatima of 26 June 2000 with the third part of the secret and Ratzinger's commentary, the Press Office communique of 21 May 2016 confirming the publication complete, Francis's canonization homily for Francisco and Jacinta Marto of 13 May 2017, and his Act of Consecration to the Immaculate Heart of 25 March 2022. The acts form one family rather than per-work families because they are a single judgment-and-reception thread about one apparition event, each later act interpreting, confirming, or answering the earlier ones, matching the family.roman-missal.older-use-discipline-acts and family.vatican-ii.papal-acts precedent for a bounded corpus of coordinated acts. Every member is registered at work and dated edition level only: the known Vatican web deliveries and the restricted DCF printing are complete candidates, but no exact artifact bytes are registered, so evidence stops at edition loci; the 2000 dossier's English web state carries a double-encoding defect and a 1981 date slip recorded on its manifest, and Portuguese and Italian originals and translator identities remain unregistered. The general 2024 apparition norms are not a Fatima act and keep their own family. The wave-eleven review adds Benedict XVI's in-flight interview of 11 May 2010 on the way to Portugal in its dated 2026-07-25 Vatican English web state, and widens the label accordingly: the interview is not an act but ordinary papal teaching given to journalists and published by the Holy See among his speeches. It belongs here rather than in a family of its own because its third answer is a direct authoritative gloss on a member already in this family, the CDF's Message of Fatima of 26 June 2000: it restates the anthropology of apparition as a supernatural impulse expressed according to the capacities of the subject and refuses to confine the third part's vision to the attack of 13 May 1981, saying that an indication is given of realities involving the future of the Church. That is reception of the same object by the same authority, which is what this family records, and the per-work alternative would isolate a text whose whole significance is its bearing on the 2000 dossier. Like the other members it is registered at work and dated edition level only, with no exact artifact, so the family's edition-locus ceiling is unchanged; the Italian original, the printed Insegnamenti text, and the translators remain unregistered."
+
+[[families]]
+id = "family.federation-of-diocesan-liturgical-commissions.mystagogical-reflections"
+label = "FDLC, Mystagogical Reflections on Texts of the Roman Missal"
+kind = "work"
+source_categories = ["institutional-current", "liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "serial"
+freshness_rule = "Treat each published leaflet series as fixed and identify the exact series behind any oration. The reprint is of the 2010 English and predates the May 2020 correction of the collect conclusions, so recheck the wording in force before any present-tense claim about the Missal. No bytes are retained and the PDFs stand on a permission ICEL expressly reserves the right to terminate or modify, so re-retrieve and re-read the remote state before relying on it again."
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects", "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion", "work.federation-of-diocesan-liturgical-commissions.mystagogical-reflections"]
+trace_patterns = ["FDLC", "Federation of Diocesan Liturgical Commissions", "Mystagogical Reflections", "federation-of-diocesan-liturgical-commissions\\.mystagogical-reflections"]
+reviewed_on = "2026-08-28"
+membership_snapshot = "sha256:db1baf78b3dd716ba518b3e4abb9a1e9c8dd511993b233feaef131d0b3c5377b"
+notes = "A new family entered on 2026-08-28, registered after d7fe32ba2 destroyed the family records and therefore never screened. IT IS FILED APART FROM THE TWO HYMN COLLECTIONS DELIBERATELY, AND THE REASON IS RIGHTS, NOT SUBJECT. Caswall and Hymns Ancient and Modern are nineteenth-century public-domain books whose English this project may transcribe and track at will. This is a living United States liturgical-conference publication that reprints ICEL's in-copyright approved English of the Roman Missal; the FDLC is the reprinter and not the rightsholder, every leaflet carries the acknowledgment naming ICEL and the USCCB Committee on Divine Worship, and this repository holds it only because the maintainer accepted the reprint as a second-tier exemplar of a text whose higher-tier witness is the rightsholder's own chant library. Nothing here may become tracked payload, which is why storage_plan is remote alone. The permission it stands on is the Use of ICEL Materials on Global Computer Networks clause registered under family.international-commission-on-english-in-the-liturgy.publication-policies, and that clause is expressly revocable. rights_review is partially-reviewed and not all-known-artifacts-reviewed: NO artifact record exists under either edition, so there are no artifact rights bases to have reviewed and the claim would be vacuously true -- identity_gaps records the same fact as artifact. candidate-complete with an edition-locus ceiling and disposition canonicalize, which is what all 54 restored candidate-complete families do, and p2, which all 54 also are. Serial rather than fixed because the work is a continuing programme of dated leaflet series and two are registered so far, the 2012-2013 Collects and the 2016 Collects and Prayers after Communion."
 
 [[families]]
 id = "family.flavius-philostratus.life-of-apollonius-of-tyana"
@@ -4127,6 +4169,27 @@ membership_snapshot = "sha256:a4ea7b451adb33ead1071fecb551ad48788d4390892f3ef399
 notes = "This family owns Honorius's medieval liturgical commentary, its PL 172 expression, the exact restricted Migne facsimile, the lawful tracked checked Latin for book IV chapters 65 and 68, and the two verified passages. The restricted scan remains unretained. Honorius's numbered allegorical exposition is evidence for a medieval reception history, not a 1962 rubric or a timeless description of Jewish worship; consumers must preserve that historical and sometimes polemical frame."
 
 [[families]]
+id = "family.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern"
+label = "Hymns Ancient and Modern, Complete Edition (London, catalogued 1890)"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["date", "expression"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p2"
+canonical_ids = ["artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.dies-irae-irons-en", "artifact.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890.ia-djvu-ocr", "edition.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern.london-complete-edition-1890", "work.hymns-ancient-and-modern-proprietors.hymns-ancient-and-modern"]
+trace_patterns = ["Hymns Ancient and Modern", "Irons", "hymns-ancient-and-modern-proprietors\\.hymns-ancient-and-modern"]
+reviewed_on = "2026-08-28"
+membership_snapshot = "sha256:e2a758e34bba107ca7375957e362b6f6eef24011899b615a061a3d69d02142b2"
+notes = "A new family entered on 2026-08-28, registered after d7fe32ba2 destroyed the family records and therefore never screened. Its own work family, and expressly NOT the Caswall family: this is an Anglican compilation that is no witness to any Roman book, its Latin is printed in a Sarum recension where it is printed at all, and it shares neither rightsholder nor recension nor purpose with Caswall's Catholic devotional collection. Categorised historical-primary and prayer-devotional, not liturgical, for the same reason. Carried for ONE text: hymn 398, W. J. Irons's English of the Dies irae, which the Roman missal witnesses this library holds do not supply. p2 rather than p1 on that narrowness. TWO IDENTITY GAPS ARE RECORDED RATHER THAN SMOOTHED OVER. date: the title leaf carries no date at all, and 1890 is the Internet Archive item's and the holding library's attribution, corroborated only by Steggall's presence on the title leaf and by the 1889 Historical Companion; nothing in the rights case turns on the exact year, since what is out of copyright is the text, first published in the 1850s. expression: the artifact record states plainly that this is Hymns Ancient and Modern's text of Irons and not necessarily Irons's own, that the compilers of that book are widely said to have altered what they received, that no instance of alteration was established here, and that no collation against a printing of Irons's own has been run. Owns the work, the printing, one remote Scribe OCR text layer and the project's tracked transcription of hymn 398 entire; rights reviewed and affirmative on both artifacts (Irons died 1883, so no 104A restoration), and the proprietors' 1890 copyright notice is quoted in the edition record and is long spent."
+
+[[families]]
 id = "family.i-roubaud.verite-sur-le-secret-de-melanie"
 label = "I. Roubaud, La verite sur le secret de Melanie (Louvain 1882)"
 kind = "work"
@@ -4248,9 +4311,9 @@ disposition = "bind-existing"
 priority = "p2"
 canonical_ids = ["artifact.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.publication-policies-pdf", "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.copyright-policy-html", "artifact.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.what-is-icel-html", "edition.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet", "edition.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01", "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.copyright-acknowledgment", "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks", "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.icet-ellc-texts", "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.permissions-copyright-royalties", "passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.sense-lines", "passage.international-commission-on-english-in-the-liturgy.publication-policies.web-2026-08-01.permissions-and-royalties", "work.international-commission-on-english-in-the-liturgy.publication-policies"]
 trace_patterns = ["International Commission on English in the Liturgy", "\\bICEL\\b", "icelweb\\.org", "international-commission-on-english-in-the-liturgy\\."]
-reviewed_on = "2026-08-21"
-membership_snapshot = "sha256:2c85a7908048e606e4b0d59d674b136bf19ff5582d35477091c1dbedf98fda3f"
-notes = "A new family entered on 2026-08-01. It holds the rightsholder's own published terms, not any ICEL liturgical text: no ICEL translation is registered, retained or reproduced anywhere in this repository, and this family must never become the place where one arrives. Its purpose is evidentiary. This repository declines to publish the approved English of the Roman Missal, and a refusal resting only on the project's own prose is an assertion; resting on the Commission's own statement of terms it is evidence. Two remote artifacts, hashed on the day read, and one passage recording what the copyright page states about acknowledgement, permissions, royalties, and the single narrow royalty-free class that a freely published web corpus does not fall inside. Officially mutable with a dated-state freshness rule: these are living web pages, and a rights position taken on them must be re-read before it is relied on again."
+reviewed_on = "2026-08-28"
+membership_snapshot = "sha256:90217ce949d61c361b35b369bad7ab0e6ba1a85e95a8fedf009e82ad8d5a10a6"
+notes = "A new family entered on 2026-08-01. It holds the rightsholder's own published terms, not any ICEL liturgical text: no ICEL translation is registered, retained or reproduced anywhere in this repository, and this family must never become the place where one arrives. Its purpose is evidentiary. This repository declines to publish the approved English of the Roman Missal, and a refusal resting only on the project's own prose is an assertion; resting on the Commission's own statement of terms it is evidence. Two remote artifacts, hashed on the day read, and one passage recording what the copyright page states about acknowledgement, permissions, royalties, and the single narrow royalty-free class that a freely published web corpus does not fall inside. Officially mutable with a dated-state freshness rule: these are living web pages, and a rights position taken on them must be re-read before it is relied on again. RE-PINNED ON 2026-08-28 AFTER ESTABLISHING WHAT HAD DRIFTED IN. Between the review of 2026-08-21 and this one the family grew from the 5 canonical IDs its membership_snapshot pinned to 12, at 10c2a5594, without the fingerprint being recomputed; the snapshot was therefore stale for a day before d7fe32ba2 destroyed the ledger's families altogether. The 7 additions were identified before re-pinning rather than accepted because they were there, and they are one thing: the whole of the 2013-amended-booklet edition -- its publisher-issued PDF artifact, the edition record, and five passages (copyright-acknowledgment, global-computer-networks, icet-ellc-texts, permissions-copyright-royalties, sense-lines). That is the Commission's own 26-page publication-policies booklet, effective December 1995 and amended 2008, 2010 and 2013: the fuller printing of the very document this family already held in its web-2026-08-01 state, which had recorded the booklet as linked but not retrieved. IT IS THE SAME RIGHTS CLASS AS THE FIVE ALREADY PINNED, WHICH IS THE POINT OF CHECKING. No ICEL liturgical text is registered by these 7: they are the rightsholder's own statement of terms, the purpose this family was created for, and the boundary in the original note holds unbroken. Storage stays remote for all three artifacts in the family and no payload is retained; rights_status is unresolved on the new PDF exactly as it already was on both web artifacts, so rights_review remains all-known-artifacts-reviewed in its established sense that every known artifact has a reasoned rights basis, not that every artifact is clear. The booklet's own basis states expressly that the Global Computer Networks clause does not reach these bytes. Why it was worth admitting: the appendix at printed page 25 carries that clause, the express permission this project's publication of ICEL text rests on, which the summary web page does not print and which guidance/liturgical-text-publication-policy.md could not previously cite from any repository record."
 
 [[families]]
 id = "family.irenaeus.adversus-haereses-anf1-1887"
