@@ -7,8 +7,10 @@ import importlib.machinery
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
 import re
+import shutil
 import sys
 import tempfile
 import unittest
@@ -1890,6 +1892,698 @@ class PublicAlphaTest(unittest.TestCase):
 
         verify_output.assert_not_called()
         self.assertTrue((output / "SHA256SUMS").is_file())
+
+    def test_build_refuses_symlinked_output_root_without_deleting_external_target(
+        self,
+    ) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            external_site = external / "site"
+            external_site.mkdir()
+            sentinel = external_site / "must-survive.txt"
+            sentinel.write_text("outside the build root\n", encoding="utf-8")
+            (self.root / "build").mkdir()
+            self.tool.OUTPUT_ROOT.symlink_to(external, target_is_directory=True)
+
+            with self.assertRaises(self.tool.ReleaseError) as failure:
+                self.tool.build_site(self.manifest, publications, preview=False)
+
+            self.assertIn("refusing unsafe output path", str(failure.exception))
+            self.assertTrue(sentinel.is_file())
+            self.assertEqual(
+                sentinel.read_text(encoding="utf-8"),
+                "outside the build root\n",
+            )
+
+    def test_build_rejects_symlinked_or_non_directory_parent_components(self) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            sentinel = external / "must-survive.txt"
+            sentinel.write_text("external\n", encoding="utf-8")
+            (self.root / "build").symlink_to(external, target_is_directory=True)
+
+            with self.assertRaises(self.tool.ReleaseError) as failure:
+                self.tool.build_site(self.manifest, publications, preview=False)
+
+            self.assertIn("is a symlink", str(failure.exception))
+            self.assertEqual("external\n", sentinel.read_text(encoding="utf-8"))
+
+        shutil_target = self.root / "build"
+        shutil_target.unlink()
+        shutil_target.write_text("not a directory\n", encoding="utf-8")
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.build_site(self.manifest, publications, preview=False)
+        self.assertIn("not a directory", str(failure.exception))
+
+    def test_verify_rejects_an_external_path_and_a_symlinked_artifact(self) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            with self.assertRaises(self.tool.ReleaseError) as failure:
+                self.tool.verify_output(
+                    self.manifest, publications, external, preview=False
+                )
+            self.assertIn("refusing unsafe verification path", str(failure.exception))
+
+            (self.root / "build/public-alpha").mkdir(parents=True)
+            (self.tool.OUTPUT_ROOT / "site").symlink_to(
+                external, target_is_directory=True
+            )
+            with self.assertRaises(self.tool.ReleaseError) as failure:
+                self.tool.verify_output(
+                    self.manifest,
+                    publications,
+                    self.tool.OUTPUT_ROOT / "site",
+                    preview=False,
+                )
+            self.assertIn("is a symlink", str(failure.exception))
+
+    def test_verify_never_reads_a_nested_symlink_target(self) -> None:
+        publications, output = self.build_verified_artifact()
+        artifact = output / "PUBLICATION-MANIFEST.json"
+
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory) / "sensitive.json"
+            external.write_text('{"must": "not be read"}\n', encoding="utf-8")
+            artifact.unlink()
+            artifact.symlink_to(external)
+            opened_symlinks: list[Path] = []
+            original_open = Path.open
+
+            def reject_symlink_open(path: Path, *args, **kwargs):
+                if path.is_symlink():
+                    opened_symlinks.append(path)
+                    raise AssertionError(f"verifier followed artifact symlink: {path}")
+                return original_open(path, *args, **kwargs)
+
+            with mock.patch.object(Path, "open", new=reject_symlink_open):
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.verify_output(
+                        self.manifest,
+                        publications,
+                        output,
+                        preview=False,
+                    )
+
+            self.assertIn(
+                "artifact contains a symlink: PUBLICATION-MANIFEST.json",
+                str(failure.exception),
+            )
+            self.assertEqual([], opened_symlinks)
+            self.assertEqual(
+                '{"must": "not be read"}\n',
+                external.read_text(encoding="utf-8"),
+            )
+
+    def test_verify_rejects_file_swapped_to_symlink_after_topology_scan(self) -> None:
+        publications, output = self.build_verified_artifact()
+        artifact = output / "PUBLICATION-MANIFEST.json"
+        held = output / ".PUBLICATION-MANIFEST.held"
+        original_read = self.tool._read_artifact_regular_file
+        original_open = os.open
+        original_os_read = os.read
+        swapped = False
+        symlink_open_flags: list[int] = []
+        external_reads: list[int] = []
+
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory) / "sensitive.json"
+            external.write_text('{"must": "not be read"}\n', encoding="utf-8")
+            external_identity = external.stat()
+
+            def swap_at_read_boundary(
+                root_fd: int,
+                relative: str,
+                expected,
+                topology,
+            ) -> bytes:
+                nonlocal swapped
+                if relative == "PUBLICATION-MANIFEST.json" and not swapped:
+                    artifact.rename(held)
+                    artifact.symlink_to(external)
+                    swapped = True
+                return original_read(root_fd, relative, expected, topology)
+
+            def guarded_open(path, flags: int, *args, **kwargs):
+                dir_fd = kwargs.get("dir_fd")
+                if path == artifact.name and dir_fd is not None:
+                    candidate = Path(f"/proc/self/fd/{dir_fd}") / artifact.name
+                    if candidate.is_symlink():
+                        symlink_open_flags.append(flags)
+                        if not flags & getattr(os, "O_NOFOLLOW", 0):
+                            raise AssertionError(
+                                "verifier attempted to follow the swapped artifact symlink"
+                            )
+                return original_open(path, flags, *args, **kwargs)
+
+            def guarded_read(descriptor: int, size: int) -> bytes:
+                if self.tool._same_inode(os.fstat(descriptor), external_identity):
+                    external_reads.append(descriptor)
+                    raise AssertionError("verifier read the external symlink target")
+                return original_os_read(descriptor, size)
+
+            try:
+                with mock.patch.object(
+                    self.tool,
+                    "_read_artifact_regular_file",
+                    side_effect=swap_at_read_boundary,
+                ), mock.patch.object(os, "open", side_effect=guarded_open), mock.patch.object(
+                    os, "read", side_effect=guarded_read
+                ):
+                    with self.assertRaises(self.tool.ReleaseError) as failure:
+                        self.tool.verify_output(
+                            self.manifest,
+                            publications,
+                            output,
+                            preview=False,
+                        )
+
+                self.assertTrue(swapped)
+                self.assertTrue(symlink_open_flags)
+                self.assertTrue(
+                    all(
+                        flags & getattr(os, "O_NOFOLLOW", 0)
+                        for flags in symlink_open_flags
+                    )
+                )
+                self.assertEqual([], external_reads)
+                self.assertIn(
+                    "artifact path changed during verification: PUBLICATION-MANIFEST.json",
+                    str(failure.exception),
+                )
+                self.assertEqual(
+                    '{"must": "not be read"}\n',
+                    external.read_text(encoding="utf-8"),
+                )
+            finally:
+                if artifact.is_symlink():
+                    artifact.unlink()
+                if held.exists():
+                    held.rename(artifact)
+
+    def test_cleanup_swap_cannot_redirect_build_deletion_outside_output_root(
+        self,
+    ) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            sentinel = external / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+            original_remove = self.tool._remove_directory_entry
+
+            swapped_entries: list[tuple[str, str]] = []
+
+            def swap_before_cleanup(
+                parent_fd: int,
+                name: str,
+                expected_fd: int,
+                expected_topology: dict,
+            ) -> None:
+                if "-retired-" not in name:
+                    original_remove(
+                        parent_fd, name, expected_fd, expected_topology
+                    )
+                    return
+                held = f"{name}.held"
+                os.rename(name, held, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+                os.symlink(
+                    external,
+                    name,
+                    target_is_directory=True,
+                    dir_fd=parent_fd,
+                )
+                swapped_entries.append((name, held))
+                original_remove(parent_fd, name, expected_fd, expected_topology)
+
+            try:
+                with mock.patch.object(
+                    self.tool,
+                    "_remove_directory_entry",
+                    side_effect=swap_before_cleanup,
+                ), mock.patch.object(
+                    self.tool,
+                    "render_source_page",
+                    return_value="<!doctype html><title>test</title>\n",
+                ):
+                    with self.assertRaises(self.tool.ReleaseError):
+                        self.tool.build_site(
+                            self.manifest, publications, preview=False
+                        )
+            finally:
+                for name, held in swapped_entries:
+                    replacement = self.tool.OUTPUT_ROOT / name
+                    if replacement.is_symlink():
+                        replacement.unlink()
+                    held_path = self.tool.OUTPUT_ROOT / held
+                    if held_path.exists():
+                        shutil.rmtree(held_path)
+
+            self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+            self.assertTrue(output.is_dir())
+            self.assertFalse(output.is_symlink())
+            self.assertTrue((output / "PUBLICATION-MANIFEST.json").is_file())
+            self.assertEqual(
+                self.tool.expected_checksum_text(output),
+                (output / "SHA256SUMS").read_text(encoding="utf-8"),
+            )
+
+    def test_retired_real_directory_swap_preserves_external_and_canonical_trees(
+        self,
+    ) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        original_remove = self.tool._remove_directory_entry
+        swapped_entries: list[tuple[str, str]] = []
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            substitute = external / "substitute"
+            substitute.mkdir()
+            sentinel = substitute / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+
+            def swap_before_cleanup(
+                parent_fd: int,
+                name: str,
+                expected_fd: int,
+                expected_topology: dict,
+            ) -> None:
+                if "-retired-" not in name:
+                    original_remove(
+                        parent_fd, name, expected_fd, expected_topology
+                    )
+                    return
+                held = f"{name}.held"
+                os.rename(name, held, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+                os.rename(
+                    substitute,
+                    name,
+                    src_dir_fd=None,
+                    dst_dir_fd=parent_fd,
+                )
+                swapped_entries.append((name, held))
+                original_remove(parent_fd, name, expected_fd, expected_topology)
+
+            try:
+                with mock.patch.object(
+                    self.tool,
+                    "_remove_directory_entry",
+                    side_effect=swap_before_cleanup,
+                ), mock.patch.object(
+                    self.tool,
+                    "render_source_page",
+                    return_value="<!doctype html><title>test</title>\n",
+                ):
+                    with self.assertRaises(self.tool.ReleaseError):
+                        self.tool.build_site(
+                            self.manifest, publications, preview=False
+                        )
+
+                self.assertTrue(output.is_dir())
+                self.assertFalse(output.is_symlink())
+                self.assertTrue((output / "PUBLICATION-MANIFEST.json").is_file())
+                self.assertEqual(
+                    self.tool.expected_checksum_text(output),
+                    (output / "SHA256SUMS").read_text(encoding="utf-8"),
+                )
+                replacement = self.tool.OUTPUT_ROOT / swapped_entries[0][0]
+                self.assertEqual(
+                    ["must-survive.txt"],
+                    sorted(path.name for path in replacement.iterdir()),
+                )
+            finally:
+                for name, held in swapped_entries:
+                    replacement = self.tool.OUTPUT_ROOT / name
+                    if replacement.exists():
+                        replacement.rename(substitute)
+                    held_path = self.tool.OUTPUT_ROOT / held
+                    if held_path.exists():
+                        shutil.rmtree(held_path)
+
+            self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+
+    def test_staging_swap_cannot_redirect_build_writes_or_install_a_symlink(
+        self,
+    ) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            sentinel = external / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+            original_build = self.tool._build_site_contents
+            saved: list[Path] = []
+
+            def swap_at_write_boundary(
+                manifest: dict,
+                mapped: dict,
+                preview: bool,
+                writer,
+            ) -> None:
+                lexical = self.tool._descriptor_path(writer.root_fd).resolve()
+                held = lexical.with_name(lexical.name + ".held")
+                lexical.rename(held)
+                lexical.symlink_to(external, target_is_directory=True)
+                saved.append(held)
+                original_build(manifest, mapped, preview, writer)
+
+            with mock.patch.object(
+                self.tool,
+                "_build_site_contents",
+                side_effect=swap_at_write_boundary,
+            ), mock.patch.object(
+                self.tool,
+                "render_source_page",
+                return_value="<!doctype html><title>test</title>\n",
+            ):
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.build_site(
+                        self.manifest, publications, preview=False
+                    )
+
+            self.assertIn("changed during cleanup", str(failure.exception))
+            self.assertEqual(["must-survive.txt"], sorted(path.name for path in external.iterdir()))
+            self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+            self.assertTrue(output.is_dir())
+            self.assertFalse(output.is_symlink())
+            self.assertTrue(saved and saved[0].is_dir())
+            for held in saved:
+                lexical = held.with_name(held.name.removesuffix(".held"))
+                if lexical.is_symlink():
+                    lexical.unlink()
+                shutil.rmtree(held)
+
+    def test_nested_staging_symlink_swap_cannot_redirect_a_write(self) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        original_directory = self.tool.StagingWriter._directory
+        swapped: list[tuple[Path, Path]] = []
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            sentinel = external / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+
+            def swap_after_mkdir(writer, path):
+                descriptor = original_directory(writer, path)
+                if path.as_posix() == "assets" and not swapped:
+                    stage = self.tool._descriptor_path(writer.root_fd).resolve()
+                    nested = stage / "assets"
+                    held = stage / "assets.held"
+                    nested.rename(held)
+                    nested.symlink_to(external, target_is_directory=True)
+                    swapped.append((stage, held))
+                return descriptor
+
+            try:
+                with mock.patch.object(
+                    self.tool.StagingWriter,
+                    "_directory",
+                    new=swap_after_mkdir,
+                ), mock.patch.object(
+                    self.tool,
+                    "render_source_page",
+                    return_value="<!doctype html><title>test</title>\n",
+                ):
+                    with self.assertRaises(self.tool.ReleaseError):
+                        self.tool.build_site(
+                            self.manifest, publications, preview=False
+                        )
+
+                self.assertEqual(
+                    ["must-survive.txt"],
+                    sorted(path.name for path in external.iterdir()),
+                )
+                self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+                self.assertTrue(output.is_dir())
+                self.assertFalse(output.is_symlink())
+            finally:
+                for stage, held in swapped:
+                    nested = stage / "assets"
+                    if nested.is_symlink():
+                        nested.unlink()
+                    if held.exists():
+                        shutil.rmtree(held)
+                    if stage.exists():
+                        stage.rmdir()
+
+    def test_staging_real_directory_swap_is_not_written_or_deleted(self) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        original_build = self.tool._build_site_contents
+        swapped: list[tuple[Path, Path]] = []
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            substitute = external / "substitute"
+            substitute.mkdir()
+            sentinel = substitute / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+
+            def swap_before_build(manifest, mapped, preview, writer) -> None:
+                stage = self.tool._descriptor_path(writer.root_fd).resolve()
+                held = stage.with_name(stage.name + ".held")
+                stage.rename(held)
+                substitute.rename(stage)
+                swapped.append((stage, held))
+                original_build(manifest, mapped, preview, writer)
+
+            try:
+                with mock.patch.object(
+                    self.tool,
+                    "_build_site_contents",
+                    side_effect=swap_before_build,
+                ), mock.patch.object(
+                    self.tool,
+                    "render_source_page",
+                    return_value="<!doctype html><title>test</title>\n",
+                ):
+                    with self.assertRaises(self.tool.ReleaseError):
+                        self.tool.build_site(
+                            self.manifest, publications, preview=False
+                        )
+
+                self.assertTrue(swapped)
+                self.assertEqual(
+                    ["must-survive.txt"],
+                    sorted(path.name for path in swapped[0][0].iterdir()),
+                )
+                self.assertTrue(output.is_dir())
+                self.assertFalse(output.is_symlink())
+            finally:
+                for stage, held in swapped:
+                    if stage.exists():
+                        stage.rename(substitute)
+                    if held.exists():
+                        shutil.rmtree(held)
+
+            self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+
+    def test_nested_staging_real_directory_swap_is_not_written_or_deleted(
+        self,
+    ) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        with mock.patch.object(
+            self.tool,
+            "render_source_page",
+            return_value="<!doctype html><title>test</title>\n",
+        ):
+            output = self.tool.build_site(
+                self.manifest, publications, preview=False
+            )
+
+        original_directory = self.tool.StagingWriter._directory
+        swapped: list[tuple[Path, Path, Path]] = []
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            substitute = external / "substitute"
+            substitute.mkdir()
+            sentinel = substitute / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+
+            def swap_after_mkdir(writer, path):
+                descriptor = original_directory(writer, path)
+                if path.as_posix() == "assets" and not swapped:
+                    stage = self.tool._descriptor_path(writer.root_fd).resolve()
+                    nested = stage / "assets"
+                    held = stage / "assets.held"
+                    nested.rename(held)
+                    substitute.rename(nested)
+                    swapped.append((stage, held, nested))
+                return descriptor
+
+            try:
+                with mock.patch.object(
+                    self.tool.StagingWriter,
+                    "_directory",
+                    new=swap_after_mkdir,
+                ), mock.patch.object(
+                    self.tool,
+                    "render_source_page",
+                    return_value="<!doctype html><title>test</title>\n",
+                ):
+                    with self.assertRaises(self.tool.ReleaseError):
+                        self.tool.build_site(
+                            self.manifest, publications, preview=False
+                        )
+
+                self.assertTrue(swapped)
+                self.assertEqual("outside\n", (swapped[0][2] / sentinel.name).read_text(encoding="utf-8"))
+                self.assertEqual(
+                    ["must-survive.txt"],
+                    sorted(path.name for path in swapped[0][2].iterdir()),
+                )
+                self.assertTrue(output.is_dir())
+                self.assertFalse(output.is_symlink())
+            finally:
+                for stage, held, nested in swapped:
+                    if nested.exists():
+                        nested.rename(substitute)
+                    if held.exists():
+                        shutil.rmtree(held)
+                    if stage.exists():
+                        stage.rmdir()
+
+            self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+
+    def test_staging_writer_file_descriptors_are_bounded_by_depth(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "staging"
+            root.mkdir()
+            root_fd = os.open(root, self.tool.DIRECTORY_OPEN_FLAGS)
+            try:
+                with self.tool.StagingWriter(root_fd) as writer:
+                    baseline = len(os.listdir("/proc/self/fd"))
+                    peak = baseline
+                    for index in range(1100):
+                        writer.text(f"wide/d-{index}/value.txt", f"{index}\n")
+                        peak = max(peak, len(os.listdir("/proc/self/fd")))
+                    writer.checksums()
+                    writer.finish()
+
+                    self.assertGreater(len(writer.directories), 1024)
+                    self.assertLessEqual(peak - baseline, 8)
+            finally:
+                os.close(root_fd)
+
+    def test_verify_rejects_target_replaced_after_held_tree_was_checked(self) -> None:
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        original_verify = self.tool._verify_output_contents
+
+        with tempfile.TemporaryDirectory() as external_directory:
+            external = Path(external_directory)
+            sentinel = external / "must-survive.txt"
+            sentinel.write_text("outside\n", encoding="utf-8")
+            held = output.with_name("site.held-for-verify")
+
+            def swap_after_open(*arguments) -> None:
+                output.rename(held)
+                output.symlink_to(external, target_is_directory=True)
+                original_verify(*arguments)
+
+            try:
+                with mock.patch.object(
+                    self.tool,
+                    "_verify_output_contents",
+                    side_effect=swap_after_open,
+                ):
+                    with self.assertRaises(self.tool.ReleaseError) as failure:
+                        self.tool.verify_output(
+                            self.manifest,
+                            publications,
+                            output,
+                            preview=False,
+                        )
+                self.assertIn("changed during operation", str(failure.exception))
+                self.assertEqual("outside\n", sentinel.read_text(encoding="utf-8"))
+            finally:
+                if output.is_symlink():
+                    output.unlink()
+                if held.exists():
+                    held.rename(output)
+
+    def test_build_rejects_success_if_held_output_parent_was_detached(self) -> None:
+        publications = self.tool.publication_map(self.manifest)
+        original_build = self.tool._build_site_contents
+        moved: list[tuple[Path, Path]] = []
+
+        def detach_parent(
+            manifest: dict,
+            mapped: dict,
+            preview: bool,
+            writer,
+        ) -> None:
+            lexical = self.tool._descriptor_path(writer.root_fd).resolve()
+            parent = lexical.parent
+            held = parent.with_name(parent.name + ".held")
+            parent.rename(held)
+            parent.mkdir()
+            moved.append((parent, held))
+            original_build(manifest, mapped, preview, writer)
+
+        try:
+            with mock.patch.object(
+                self.tool,
+                "_build_site_contents",
+                side_effect=detach_parent,
+            ), mock.patch.object(
+                self.tool,
+                "render_source_page",
+                return_value="<!doctype html><title>test</title>\n",
+            ):
+                with self.assertRaises(self.tool.ReleaseError) as failure:
+                    self.tool.build_site(
+                        self.manifest, publications, preview=False
+                    )
+            self.assertIn("changed during operation", str(failure.exception))
+        finally:
+            for parent, held in moved:
+                if parent.is_dir():
+                    parent.rmdir()
+                if held.exists():
+                    held.rename(parent)
 
     def test_build_and_verify_are_explicit_separate_commands(self) -> None:
         publications = self.tool.publication_map(self.manifest)

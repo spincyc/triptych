@@ -40,6 +40,10 @@ from _proper_latin import (  # noqa: E402
 
 CALENDARS = ROOT / "src/sources/calendars"
 INVENTORIES = ROOT / "src/sources/inventories"
+EDITORIAL_PROJECTION = (
+    ROOT
+    / "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection"
+)
 
 
 def load_tool(name: str):
@@ -185,22 +189,29 @@ class ProductionLedgerTests(unittest.TestCase):
             {key for calendar, key, _ in permitted if calendar == "roman-1962"},
         )
         self.assertEqual(10, len(permitted))
-        publication_artifact = (
+        projection_artifact = (
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection."
+            "editorial-projection-2026-08-27.normalized-latin-propers-0bf4adcc"
+        )
+        public_domain_artifact = (
             "artifact.francis-xavier-lasance.the-new-roman-missal."
-            "benziger-revised-1945.roman-1962-collated-latin-propers-0bf4adcc"
+            "benziger-revised-1945.new-roman-missal-text-80b34759"
         )
         self.assertTrue(
             all(
                 calendar == "roman-1962"
                 and row.get("body_status") is None
                 and row["provenance_status"] == "collated"
-                and row["relationship"] == "collated-exact"
+                and row["relationship"]
+                == "editorial-projection-exact-to-target"
+                and bool(row["transformations"])
                 and row["publication_basis"] == "public-domain"
                 and set(row["surfaces"]) == set(SURFACES)
-                and row["publication_source_ids"] == [publication_artifact]
+                and row["publication_source_ids"]
+                == [projection_artifact, public_domain_artifact]
                 and row["source_id"].startswith(
-                    "passage.francis-xavier-lasance.the-new-roman-missal."
-                    "benziger-revised-1945.roman-1962-collated-"
+                    "passage.triptych.roman-1962-latin-proper-editorial-projection."
+                    "editorial-projection-2026-08-27."
                 )
                 and row["verification_source_id"].startswith(
                     "passage.catholic-church.missale-romanum."
@@ -209,6 +220,44 @@ class ProductionLedgerTests(unittest.TestCase):
                 for calendar, _, row in permitted
             )
         )
+
+        work = tomllib.loads((EDITORIAL_PROJECTION / "work.toml").read_text())
+        artifact = tomllib.loads(
+            (
+                EDITORIAL_PROJECTION
+                / "editions/2026-08-27-editorial-projection/artifacts/"
+                "normalized-latin-propers-0bf4adcc/artifact.toml"
+            ).read_text()
+        )
+        self.assertEqual("Triptych contributors", work["responsible"])
+        self.assertEqual("project-created", artifact["rights_status"])
+        self.assertTrue(artifact["transformation"].strip())
+        self.assertEqual(
+            {
+                "artifact.francis-xavier-lasance.the-new-roman-missal."
+                "benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+                "artifact.catholic-church.missale-romanum."
+                "vatican-typica-1962.cmaa-facsimile-pdf",
+            },
+            set(artifact["projected_from"]),
+        )
+        payload = (ROOT / artifact["path"]).read_text().splitlines(keepends=True)
+        passages = {
+            row["id"]: row
+            for path in (
+                EDITORIAL_PROJECTION
+                / "editions/2026-08-27-editorial-projection/passages"
+            ).glob("*.toml")
+            for row in [tomllib.loads(path.read_text())]
+        }
+        for _, _, row in permitted:
+            passage = passages[row["source_id"]]
+            projected_body = "".join(
+                line
+                for start, end in passage["physical_line_ranges"]
+                for line in payload[start - 1 : end]
+            )
+            self.assertEqual(row["text_sha256"], text_sha256(projected_body))
         self.assertEqual(848, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"

@@ -12,7 +12,7 @@
         "source-library"
       ],
       "stage": "draft",
-      "usage": "act-history {check,graph,structure,plate,commonality,emit} [--source PATH] [--out DIR] [--json]"
+      "usage": "act-history {check,graph,structure,plate,commonality,emit} [--source PATH] [--out DIR] [--check] [--json]"
     },
     "artwork-library": {
       "idempotent": true,

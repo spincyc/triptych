@@ -29,11 +29,14 @@ def fixture_reports() -> tuple[dict, dict, dict]:
     placement = []
     ordinary = []
     rows = {
-        "roman-pre-1955": (1, 1, 2),
-        "roman-1962": (2, 2, 2),
-        "postconciliar": (3, 4, 3),
+        "roman-pre-1955": (1, 1, 2, 3),
+        "roman-1962": (2, 2, 2, 2),
+        "postconciliar": (3, 4, 3, 4),
     }
-    for index, (calendar, (raw_masses, celebrations, effective_masses)) in enumerate(
+    for index, (
+        calendar,
+        (raw_masses, celebrations, effective_masses, effective_celebrations),
+    ) in enumerate(
         rows.items()
     ):
         calendars[calendar] = {
@@ -50,11 +53,24 @@ def fixture_reports() -> tuple[dict, dict, dict]:
             {
                 "calendar": calendar,
                 "direct_resolved_occurrences": 3,
+                "effective_celebrations": effective_celebrations,
                 "masses_resolving_no_propers": 1,
                 "placeholder_proper_records": 1,
                 "referenced_resolved_occurrences": 2,
                 "resolution_errors": ([{"mass": "broken"}] if index == 2 else []),
                 "resolved_proper_occurrences": 5,
+                "unresolved_common_set_selections": (
+                    [
+                        {
+                            "candidates": ["c1", "c2"],
+                            "group": "orations",
+                            "mass": f"unresolved-{index}",
+                            "target": "common-demo",
+                        }
+                    ]
+                    if index < 2
+                    else []
+                ),
             }
         )
         english.append(
@@ -65,6 +81,13 @@ def fixture_reports() -> tuple[dict, dict, dict]:
                 "rights_restricted": 0,
                 "slots": 4,
                 "stale_translation_records": 0,
+                "translation_ledger_calendar": calendar,
+                "translation_ledger_calendars": (
+                    ["roman-1962", "roman-pre-1955"]
+                    if calendar == "roman-pre-1955"
+                    else [calendar]
+                ),
+                "translation_ledger_inherited": calendar == "roman-pre-1955",
                 "unaccounted": 1,
                 "unmatched_records": 1,
                 "with_english": 2,
@@ -205,7 +228,8 @@ class CompleteMissalReportTests(unittest.TestCase):
         self.assertEqual(represented["scope"], "recension-delta")
         self.assertEqual(represented["effective_mass_rows"], 2)
         self.assertIsNone(expected["count"])
-        self.assertEqual(expected["lower_bound"], 2)
+        self.assertEqual(expected["lower_bound"], 3)
+        self.assertEqual(expected["effective_celebrations"], 3)
         self.assertEqual(expected["reason"]["kind"], "expectation-model-gap")
         self.assertIsNone(missing["count"])
 
@@ -259,6 +283,41 @@ class CompleteMissalReportTests(unittest.TestCase):
         self.assertEqual(
             postconciliar["unreachable_texts"]["known_unplaced_masses"],
             {"declared": 0, "undeclared": 1},
+        )
+
+        pre_1955 = rows["roman-pre-1955"]["textual"]
+        self.assertEqual(
+            pre_1955["filled_text_slots"]["english"][
+                "translation_ledger_calendars"
+            ],
+            ["roman-1962", "roman-pre-1955"],
+        )
+        self.assertTrue(
+            pre_1955["filled_text_slots"]["english"][
+                "translation_ledger_inherited"
+            ]
+        )
+
+    def test_unresolved_common_choices_remain_typed_unknown_rows(self) -> None:
+        report = REPORT.build_report(*fixture_reports())
+        family = {row["calendar"]: row for row in report["families"]}[
+            "roman-pre-1955"
+        ]
+        unknown = family["textual"]["unknown_slots"]
+        self.assertEqual(unknown["lower_bound"], 1)
+        self.assertEqual(
+            unknown["known_counts"]["unresolved_common_set_selections"], 1
+        )
+        self.assertEqual(
+            unknown["unresolved_common_set_selections"],
+            [
+                {
+                    "candidates": ["c1", "c2"],
+                    "group": "orations",
+                    "mass": "unresolved-0",
+                    "target": "common-demo",
+                }
+            ],
         )
 
     def test_the_full_year_runtime_gate_is_linked_but_not_counted(self) -> None:
@@ -349,6 +408,172 @@ class CompleteMissalReportTests(unittest.TestCase):
                 mutate(reports)
                 with self.assertRaisesRegex(REPORT.Refused, message):
                     REPORT.build_report(*reports)
+
+    def test_missing_or_malformed_effective_celebration_count_is_refused(self) -> None:
+        cases = (
+            (
+                "missing",
+                lambda reports: reports[0]["finding_aid_coverage"][0].pop(
+                    "effective_celebrations"
+                ),
+                "effective_celebrations must be a non-negative integer",
+            ),
+            (
+                "not an integer",
+                lambda reports: reports[0]["finding_aid_coverage"][0].__setitem__(
+                    "effective_celebrations", "three"
+                ),
+                "effective_celebrations must be a non-negative integer",
+            ),
+            (
+                "fewer than effective masses",
+                lambda reports: reports[0]["finding_aid_coverage"][0].__setitem__(
+                    "effective_celebrations", 1
+                ),
+                "cannot be less than effective mass rows",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports)
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_missing_or_malformed_common_selection_rows_are_refused(self) -> None:
+        cases = (
+            (
+                "missing array",
+                lambda row: row.pop("unresolved_common_set_selections"),
+                "unresolved_common_set_selections must be an array",
+            ),
+            (
+                "row",
+                lambda row: row["unresolved_common_set_selections"].__setitem__(
+                    0, "not-an-object"
+                ),
+                r"unresolved_common_set_selections\[0\] must be an object",
+            ),
+            (
+                "exact fields",
+                lambda row: row["unresolved_common_set_selections"][0].__setitem__(
+                    "state", "unresolved"
+                ),
+                "fields are not exact",
+            ),
+            (
+                "identity",
+                lambda row: row["unresolved_common_set_selections"][0].__setitem__(
+                    "mass", ""
+                ),
+                "mass must be a non-empty string",
+            ),
+            (
+                "candidate array",
+                lambda row: row["unresolved_common_set_selections"][0].__setitem__(
+                    "candidates", []
+                ),
+                "candidates must contain at least two unique non-empty strings",
+            ),
+            (
+                "duplicate candidate",
+                lambda row: row["unresolved_common_set_selections"][0].__setitem__(
+                    "candidates", ["c1", "c1"]
+                ),
+                "candidates must contain at least two unique non-empty strings",
+            ),
+            (
+                "duplicate selection",
+                lambda row: row["unresolved_common_set_selections"].append(
+                    copy.deepcopy(row["unresolved_common_set_selections"][0])
+                ),
+                "repeats Common selection",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[0]["finding_aid_coverage"][0])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_missing_or_malformed_translation_ledger_provenance_is_refused(
+        self,
+    ) -> None:
+        cases = (
+            (
+                "missing owner",
+                lambda row: row.pop("translation_ledger_calendar"),
+                "translation_ledger_calendar must be a non-empty string",
+            ),
+            (
+                "owner chain",
+                lambda row: row.__setitem__("translation_ledger_calendars", {}),
+                "translation_ledger_calendars must be a non-empty unique string array",
+            ),
+            (
+                "duplicate owner",
+                lambda row: row.__setitem__(
+                    "translation_ledger_calendars",
+                    ["roman-1962", "roman-1962"],
+                ),
+                "translation_ledger_calendars must be a non-empty unique string array",
+            ),
+            (
+                "nearest owner",
+                lambda row: row.__setitem__(
+                    "translation_ledger_calendar", "roman-1962"
+                ),
+                "must name the last ledger",
+            ),
+            (
+                "inherited type",
+                lambda row: row.__setitem__("translation_ledger_inherited", "true"),
+                "translation_ledger_inherited must be a boolean",
+            ),
+            (
+                "inherited consistency",
+                lambda row: row.__setitem__("translation_ledger_inherited", False),
+                "translation_ledger_inherited is inconsistent",
+            ),
+        )
+        for label, mutate, message in cases:
+            with self.subTest(case=label):
+                reports = copy.deepcopy(fixture_reports())
+                mutate(reports[0]["english_coverage"][0])
+                with self.assertRaisesRegex(REPORT.Refused, message):
+                    REPORT.build_report(*reports)
+
+    def test_real_corpus_preserves_effective_common_and_ledger_evidence(self) -> None:
+        report = REPORT.build_report(*REPORT.owning_reports())
+        families = {row["calendar"]: row for row in report["families"]}
+
+        pre_1955 = families["roman-pre-1955"]
+        expected = pre_1955["structural"]["expected_celebrations"]
+        self.assertEqual(expected["effective_celebrations"], 490)
+        self.assertEqual(expected["effective_mass_rows"], 489)
+        self.assertEqual(expected["lower_bound"], 490)
+
+        pre_unknown = pre_1955["textual"]["unknown_slots"]
+        roman_unknown = families["roman-1962"]["textual"]["unknown_slots"]
+        post_unknown = families["postconciliar"]["textual"]["unknown_slots"]
+        self.assertEqual(pre_unknown["lower_bound"], 7)
+        self.assertEqual(roman_unknown["lower_bound"], 7)
+        self.assertEqual(post_unknown["lower_bound"], 0)
+        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 7)
+        for row in pre_unknown["unresolved_common_set_selections"]:
+            self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
+
+        english = pre_1955["textual"]["filled_text_slots"]["english"]
+        self.assertEqual(english["with_english"], 85)
+        self.assertEqual(
+            english["translation_ledger_calendars"],
+            ["roman-1962", "roman-pre-1955"],
+        )
+        self.assertEqual(
+            english["translation_ledger_calendar"], "roman-pre-1955"
+        )
+        self.assertTrue(english["translation_ledger_inherited"])
 
     def test_malformed_ordinary_language_rows_are_refused(self) -> None:
         cases = (

@@ -168,6 +168,7 @@ with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as l
         # build-graph test exercises their ordering and arguments, not their
         # domain implementations, so deterministic no-op stubs are sufficient.
         for tool_name in (
+            "act-history",
             "document-library",
             "calendar-days",
             "check-calendar-masses",

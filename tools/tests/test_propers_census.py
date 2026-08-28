@@ -1112,6 +1112,7 @@ class FindingAidCoverageTests(unittest.TestCase):
         self.assertEqual(row["resolved_proper_occurrences"], 5)
         self.assertEqual(row["direct_resolved_occurrences"], 2)
         self.assertEqual(row["referenced_resolved_occurrences"], 3)
+        self.assertEqual(row["effective_celebrations"], 4)
         self.assertEqual(row["masses_resolving_no_propers"], 1)
         self.assertEqual(row["resolution_errors"], [])
 
@@ -1139,6 +1140,9 @@ class FindingAidCoverageTests(unittest.TestCase):
             )
         }
         recension = rows["roman-pre-1955"]
+        self.assertEqual(recension["effective_celebrations"], 490)
+        self.assertEqual(rows["roman-1962"]["effective_celebrations"], 492)
+        self.assertEqual(rows["postconciliar"]["effective_celebrations"], 619)
         self.assertLess(
             recension["represented_proper_records"],
             recension["resolved_proper_occurrences"],

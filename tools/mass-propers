@@ -3640,6 +3640,9 @@ def finding_aid_coverage(
     """
 
     effective = effective_document or document
+    effective_celebrations = sum(
+        row["celebrations"] for row in rank_census(effective)
+    )
     represented_masses = [mass for _, mass in masses_of(document)]
     represented_propers = [
         proper for mass in represented_masses for _, proper in propers_of(mass)
@@ -3705,6 +3708,7 @@ def finding_aid_coverage(
         "resolved_proper_occurrences": resolved,
         "direct_resolved_occurrences": direct,
         "referenced_resolved_occurrences": referenced,
+        "effective_celebrations": effective_celebrations,
         "masses_resolving_no_propers": empty,
         "resolution_errors": errors,
         "unresolved_common_set_selections": unresolved_common_sets,

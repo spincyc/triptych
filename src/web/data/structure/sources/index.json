@@ -2,10 +2,10 @@
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
   "artifacts": 1837,
-  "editions": 721,
+  "editions": 722,
   "passages": 3295,
   "readable": 1645,
-  "works": 536
+  "works": 537
  },
  "facets": {
   "authors": [
@@ -1146,6 +1146,10 @@
     "works": 1
    },
    {
+    "id": "Triptych contributors",
+    "works": 1
+   },
+   {
     "id": "United Grand Lodge of England",
     "works": 1
    },
@@ -1776,6 +1780,10 @@
     "works": 1
    },
    {
+    "id": "editorial-source-projection",
+    "works": 1
+   },
+   {
     "id": "encyclical-letter",
     "works": 1
    },
@@ -2302,7 +2310,7 @@
     "id": "en"
    },
    {
-    "editions": 230,
+    "editions": 231,
     "id": "la"
    },
    {
@@ -2434,14 +2442,14 @@
     "label": "20th century"
    },
    {
-    "editions": 385,
+    "editions": 386,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1030,
+    "artifacts": 1029,
     "editions": 187,
     "id": "public-domain"
    },
@@ -2461,8 +2469,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 18,
-    "editions": 8,
+    "artifacts": 19,
+    "editions": 9,
     "id": "project-created"
    }
   ]
@@ -8944,8 +8952,8 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 42,
-     "readable": 10,
+     "passages": 32,
+     "readable": 0,
      "rights": [
       "public-domain",
       "unresolved"
@@ -19137,6 +19145,32 @@
     "fr"
    ],
    "title": "Véritable relation des justes procédures observées au fait de la possession des Ursulines de Loudun et au procès de Grandier"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Triptych contributors",
+   "category": "editorial-source-projection",
+   "directory": "editions/triptych/roman-1962-latin-proper-editorial-projection/",
+   "editions": [
+    {
+     "date": "2026-08-27",
+     "file": "2026-2026-08-27-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-27",
+     "language": "la",
+     "passages": 10,
+     "readable": 10,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 27 August 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+   "languages": [
+    "la"
+   ],
+   "title": "Roman 1962 Latin Proper Editorial Projection"
   },
   {
    "alternate_titles": [

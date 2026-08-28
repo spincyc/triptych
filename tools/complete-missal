@@ -515,7 +515,7 @@ def ordinary_exclusions(row: dict, calendar: str) -> list[dict]:
     return sorted(normalized, key=lambda item: item["key"])
 
 
-def english_counts(row: dict, calendar: str) -> dict[str, int] | dict[str, str]:
+def english_counts(row: dict, calendar: str) -> dict[str, object]:
     if "error" in row:
         exact_fields(row, {"calendar", "error"}, f"mass-propers.english_coverage.{calendar}")
         error = row.get("error")
@@ -550,7 +550,83 @@ def english_counts(row: dict, calendar: str) -> dict[str, int] | dict[str, str]:
             f"{calendar} English coverage does not partition its slots: "
             f"{partition} != {counted['slots']}"
         )
-    return counted
+    where = f"mass-propers.english_coverage.{calendar}"
+    ledger_calendar = row.get("translation_ledger_calendar")
+    if not isinstance(ledger_calendar, str) or not ledger_calendar:
+        raise Refused(f"{where}.translation_ledger_calendar must be a non-empty string")
+    ledger_calendars = row.get("translation_ledger_calendars")
+    if (
+        not isinstance(ledger_calendars, list)
+        or not ledger_calendars
+        or any(not isinstance(owner, str) or not owner for owner in ledger_calendars)
+        or len(ledger_calendars) != len(set(ledger_calendars))
+    ):
+        raise Refused(
+            f"{where}.translation_ledger_calendars must be a non-empty unique "
+            "string array"
+        )
+    if ledger_calendar != ledger_calendars[-1]:
+        raise Refused(
+            f"{where}.translation_ledger_calendar must name the last ledger "
+            "in translation_ledger_calendars"
+        )
+    inherited = row.get("translation_ledger_inherited")
+    if not isinstance(inherited, bool):
+        raise Refused(f"{where}.translation_ledger_inherited must be a boolean")
+    expected_inherited = any(owner != calendar for owner in ledger_calendars)
+    if inherited != expected_inherited:
+        raise Refused(
+            f"{where}.translation_ledger_inherited is inconsistent with "
+            "translation_ledger_calendars"
+        )
+    return counted | {
+        "translation_ledger_calendar": ledger_calendar,
+        "translation_ledger_calendars": list(ledger_calendars),
+        "translation_ledger_inherited": inherited,
+    }
+
+
+def unresolved_common_set_selections(finding: dict, calendar: str) -> list[dict]:
+    """Validate and preserve the owner's typed unresolved Common choices."""
+
+    rows = finding.get("unresolved_common_set_selections")
+    if not isinstance(rows, list):
+        raise Refused(
+            f"mass-propers.finding_aid_coverage.{calendar}."
+            "unresolved_common_set_selections must be an array"
+        )
+    normalized = []
+    seen: set[tuple[str, str, str]] = set()
+    for index, row in enumerate(rows):
+        where = (
+            f"mass-propers.finding_aid_coverage.{calendar}."
+            f"unresolved_common_set_selections[{index}]"
+        )
+        if not isinstance(row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(row, {"mass", "target", "group", "candidates"}, where)
+        for field in ("mass", "target", "group"):
+            if not isinstance(row.get(field), str) or not row[field]:
+                raise Refused(f"{where}.{field} must be a non-empty string")
+        candidates = row.get("candidates")
+        if (
+            not isinstance(candidates, list)
+            or len(candidates) < 2
+            or any(not isinstance(candidate, str) or not candidate for candidate in candidates)
+            or len(candidates) != len(set(candidates))
+        ):
+            raise Refused(
+                f"{where}.candidates must contain at least two unique non-empty strings"
+            )
+        identity = (row["mass"], row["target"], row["group"])
+        if identity in seen:
+            raise Refused(f"{where} repeats Common selection {identity!r}")
+        seen.add(identity)
+        normalized.append(dict(row) | {"candidates": list(candidates)})
+    return sorted(
+        normalized,
+        key=lambda row: (row["mass"], row["target"], row["group"]),
+    )
 
 
 def one_family(
@@ -565,6 +641,16 @@ def one_family(
     raw_mass_rows = integer(census.get("masses"), f"{calendar}.census.masses")
     effective_mass_rows = integer(placement.get("masses"), f"{calendar}.placement.masses")
     represented = represented_celebrations(census, calendar, raw_mass_rows)
+    effective_celebrations = integer(
+        finding.get("effective_celebrations"),
+        f"mass-propers.finding_aid_coverage.{calendar}.effective_celebrations",
+    )
+    if effective_celebrations < effective_mass_rows:
+        raise Refused(
+            f"mass-propers.finding_aid_coverage.{calendar}.effective_celebrations "
+            f"cannot be less than effective mass rows: "
+            f"{effective_celebrations} < {effective_mass_rows}"
+        )
     representation_scope = (
         "family-index" if raw_mass_rows == effective_mass_rows else "recension-delta"
     )
@@ -632,6 +718,7 @@ def one_family(
     for index, resolution_error in enumerate(resolution_errors):
         if not isinstance(resolution_error, dict):
             raise Refused(f"{calendar}.resolution_errors[{index}] must be an object")
+    unresolved_common_sets = unresolved_common_set_selections(finding, calendar)
 
     span = placement.get("span")
     if not isinstance(span, dict):
@@ -693,13 +780,15 @@ def one_family(
         "expected_celebrations": unresolved(
             "expectation-model-gap",
             "No target-edition inventory defines every expected celebration.",
-            lower_bound=max(represented, effective_mass_rows),
+            lower_bound=max(represented, effective_celebrations),
+            effective_celebrations=effective_celebrations,
             represented_source_rows=represented,
             effective_mass_rows=effective_mass_rows,
         ),
         "represented_celebrations": measured(
             represented,
             "Sum of the source index's rank-parsed celebration counts.",
+            effective_celebrations=effective_celebrations,
             effective_mass_rows=effective_mass_rows,
             raw_mass_rows=raw_mass_rows,
             scope=representation_scope,
@@ -758,6 +847,7 @@ def one_family(
         "unknown_slots": unresolved(
             "unknown-universe-gap",
             "Known gap counters do not cover the unmodeled target-edition slot universe.",
+            lower_bound=len(unresolved_common_sets),
             known_counts={
                 "english_unaccounted": (
                     english_known.get("unaccounted", 0)
@@ -766,7 +856,9 @@ def one_family(
                 ),
                 "masses_resolving_no_propers": empty_masses,
                 "placeholder_proper_records": placeholder_records,
+                "unresolved_common_set_selections": len(unresolved_common_sets),
             },
+            unresolved_common_set_selections=unresolved_common_sets,
         ),
         "orphan_texts": unresolved(
             "orphan-count-partial",

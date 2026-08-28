@@ -574,7 +574,11 @@ def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
         if basis == "public-domain":
             if provenance != "collated":
                 problems.append(f"{where}: public-domain publication requires per-text collation")
-            if relationship not in {"exact-transcription", "collated-exact"}:
+            if relationship not in {
+                "exact-transcription",
+                "collated-exact",
+                "editorial-projection-exact-to-target",
+            }:
                 problems.append(
                     f"{where}: public-domain publication requires an exact witness relationship"
                 )

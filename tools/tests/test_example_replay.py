@@ -238,6 +238,13 @@ class GateTests(unittest.TestCase):
 
     def test_deployment_source_gate_checks_every_generated_missal_layer(self) -> None:
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
+        heading = re.search(r"\ncheck-deployment-sources:([^\n]*)\n", text)
+        self.assertIsNotNone(heading, "check-deployment-sources has no target")
+        self.assertIn("check-act-history", heading.group(1))
+        self.assertRegex(
+            text,
+            r"\ncheck-act-history:\n\t@\$\(PYTHON\) tools/tpt act-history structure --check\n",
+        )
         recipe = re.search(
             r"\ncheck-deployment-sources:[^\n]*\n((?:\t.*\n)+)",
             text,

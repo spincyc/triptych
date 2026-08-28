@@ -231,7 +231,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
-	check-calendar-masses \
+	check-calendar-masses check-act-history \
 	check-propers-census \
 	check-metadata check-web-editions \
 	check-proper-components \
@@ -374,7 +374,10 @@ check-curriculum-rights:
 # Pages runs this target under setup-python before it builds anything. Its
 # workflow must install both requirements-public-alpha.txt and
 # requirements-tools.txt; the latter owns the PyYAML used by these checkers.
-check-deployment-sources: check-curriculum-rights
+check-act-history:
+	@$(PYTHON) tools/tpt act-history structure --check
+
+check-deployment-sources: check-curriculum-rights check-act-history
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
 	@$(PYTHON) $(SOURCE_READER_TOOL) check
 	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
