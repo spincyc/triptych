@@ -267,28 +267,123 @@ class RetryLoopTests(RetryCase):
                          "passing clears the retry budget")
 
     def test_the_retries_are_bounded_and_fail_closed(self):
-        """Test 11 and 12."""
+        """Test 11 and 12, against the budget that charges repetition.
+
+        The same unmet request, three times. The first spends one of three
+        because it has nothing to repeat; the second and third re-raise an id
+        the stage already had standing, and the third exhausts the budget.
+        """
         run_id = self.drive_to_synthesis()
         for attempt in range(RETRIES_GRANTED):
             with self.subTest(attempt=attempt):
                 out = self.engine.advance(run_id, result_path=self.synthesis(
                     run_id, CHANGES_REQUIRED,
-                    [deficiency(f"SYN-{attempt:03d}", "scripture-context")]))
+                    [deficiency("SYN-001", "scripture-context")]))
                 self.assertEqual(out["stage"], RESEARCH)
-                self.assertEqual(
-                    self.engine.load_state(run_id)["stage_failures"][SYNTHESIS],
-                    attempt + 1)
+                state = self.engine.load_state(run_id)
+                self.assertEqual(state["stage_failures"][SYNTHESIS],
+                                 attempt + 1)
+                self.assertEqual(state["stage_repeats"][SYNTHESIS],
+                                 attempt + 1)
                 self.engine.advance(
                     run_id, lane_results=self.lane_submissions(run_id))
 
         out = self.engine.advance(run_id, result_path=self.synthesis(
             run_id, CHANGES_REQUIRED,
-            [deficiency("SYN-LAST", "scripture-context")]))
+            [deficiency("SYN-001", "scripture-context")]))
         self.assertEqual(out["disposition"], BLOCKED)
         self.assertIn("iteration limit exceeded", out["message"])
         self.assertIn(SYNTHESIS, out["message"])
+        self.assertIn("SYN-001", out["message"],
+                      "the block names the finding that was never repaired")
         self.assertEqual(self.engine.load_state(run_id)["current_stage"],
                          BLOCKED)
+
+    def test_a_request_naming_new_work_does_not_spend_the_repeat_budget(self):
+        """Different ids are different work, and work is not a loop.
+
+        The rule this replaces could not tell the two apart. Run
+        b68cca80edb75854 repaired what it was told, raised different findings
+        against a substantially rewritten document, and was blocked for it.
+        """
+        run_id = self.drive_to_synthesis()
+        for attempt in range(RETRIES_GRANTED + 2):
+            with self.subTest(attempt=attempt):
+                out = self.engine.advance(run_id, result_path=self.synthesis(
+                    run_id, CHANGES_REQUIRED,
+                    [deficiency(f"SYN-{attempt:03d}", "scripture-context")]))
+                self.assertEqual(
+                    out["stage"], RESEARCH,
+                    "a request naming work never asked for before is progress")
+                state = self.engine.load_state(run_id)
+                self.assertEqual(state["stage_failures"][SYNTHESIS],
+                                 attempt + 1)
+                self.assertEqual(
+                    state["stage_repeats"][SYNTHESIS], 1,
+                    "only the first failure of the streak was charged")
+                self.engine.advance(
+                    run_id, lane_results=self.lane_submissions(run_id))
+        self.assertIsNone(self.engine.load_state(run_id)["disposition"])
+
+    def test_one_repeat_among_new_work_still_spends_one(self):
+        """Progress and a loop in the same result: the loop is charged."""
+        run_id = self.drive_to_synthesis()
+        for attempt, findings in enumerate((
+            [deficiency("SYN-A", "scripture-context")],
+            [deficiency("SYN-B", "scripture-context")],
+            [deficiency("SYN-B", "scripture-context"),
+             deficiency("SYN-C", "precedent-search")],
+        )):
+            self.engine.advance(run_id, result_path=self.synthesis(
+                run_id, CHANGES_REQUIRED, findings))
+            self.engine.advance(
+                run_id, lane_results=self.lane_submissions(run_id))
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_failures"][SYNTHESIS], 3)
+        self.assertEqual(
+            state["stage_repeats"][SYNTHESIS], 2,
+            "the first failure, and the one re-raising SYN-B; the round that "
+            "moved from SYN-A to SYN-B cost nothing")
+        self.assertIsNone(state["disposition"])
+
+    def test_the_absolute_ceiling_stops_a_stage_that_never_repeats(self):
+        """New work forever is still not a run that may go on forever.
+
+        `max_total_iterations` defaults to twice `max_iterations`, so six
+        consecutive failures end the stage however novel each one is.
+        """
+        ceiling = 2 * RETRY_LIMIT
+        run_id = self.drive_to_synthesis()
+        for attempt in range(ceiling - 1):
+            out = self.engine.advance(run_id, result_path=self.synthesis(
+                run_id, CHANGES_REQUIRED,
+                [deficiency(f"SYN-{attempt:03d}", "scripture-context")]))
+            self.assertEqual(out["stage"], RESEARCH, f"at attempt {attempt}")
+            self.engine.advance(
+                run_id, lane_results=self.lane_submissions(run_id))
+        out = self.engine.advance(run_id, result_path=self.synthesis(
+            run_id, CHANGES_REQUIRED,
+            [deficiency("SYN-FINAL", "scripture-context")]))
+        self.assertEqual(out["disposition"], BLOCKED)
+        self.assertIn(f"{ceiling}/{ceiling} consecutive failures",
+                      out["message"])
+        self.assertIn("never ran out", out["message"],
+                      "the message says which budget stopped the run")
+
+    def test_a_pass_clears_the_repeat_counter_and_the_standing_ids(self):
+        """After a pass, the same id is new work against a new document."""
+        run_id = self.drive_to_synthesis()
+        self.engine.advance(run_id, result_path=self.synthesis(
+            run_id, CHANGES_REQUIRED,
+            [deficiency("SYN-001", "scripture-context")]))
+        self.engine.advance(
+            run_id, lane_results=self.lane_submissions(run_id))
+        self.engine.advance(run_id, result_path=self.synthesis(run_id, PASS))
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_repeats"][SYNTHESIS], 0)
+        self.assertNotIn(SYNTHESIS, state["stage_blocking_ids"],
+                         "a pass forgets what was standing, so the same id "
+                         "later is not a repeat of anything")
 
     def test_the_budget_is_the_stages_own_and_counts_consecutively(self):
         """A pass between two requests clears the count."""

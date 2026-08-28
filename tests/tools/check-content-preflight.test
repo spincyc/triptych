@@ -36,7 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 4 ] || fail "--list named $listed checks, expected 4"
+[ "$listed" = 5 ] || fail "--list named $listed checks, expected 5"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -67,14 +67,56 @@ done <"$sandbox/first.txt"
 # --- A synthetic leaf, so each refusal can be produced one at a time -------
 
 tree="$sandbox/tree"
-mkdir -p "$tree/src/claude/probe" \
+mkdir -p "$tree/src/claude/probe/research" \
 	"$tree/src/sources/works/catholic-church/missale-romanum" \
+	"$tree/src/sources/works/probe-rights" \
 	"$tree/src/sources/corpora"
 
 cat >"$tree/src/sources/works/catholic-church/missale-romanum/work.toml" <<'TOML'
 id = "work.catholic-church.missale-romanum"
 record_type = "work"
 TOML
+
+# One public-domain artifact and one restricted one, the restricted one
+# reached the way a real binding reaches it: through the passage that names it.
+public_artifact="artifact.english-college-of-douay.douay-rheims-bible.challoner-1749.verse-text"
+restricted_passage="passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.usccb-web.galatians"
+restricted_artifact="artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.usccb-web.galatians"
+
+cat >"$tree/src/sources/works/probe-rights/douay.toml" <<TOML
+record_type = "artifact"
+id = "$public_artifact"
+storage = "tracked"
+rights_status = "public-domain"
+TOML
+
+cat >"$tree/src/sources/works/probe-rights/nabre-artifact.toml" <<TOML
+record_type = "artifact"
+id = "$restricted_artifact"
+storage = "restricted"
+rights_status = "restricted"
+TOML
+
+cat >"$tree/src/sources/works/probe-rights/nabre-passage.toml" <<TOML
+record_type = "passage"
+id = "$restricted_passage"
+artifact_id = "$restricted_artifact"
+TOML
+
+write_bindings() {
+	cat >"$tree/src/claude/probe/research/source-bindings.toml" <<TOML
+schema = 1
+record_type = "bindings"
+
+[[bindings]]
+source_id = "$public_artifact"
+role = "translation-control"
+
+[[bindings]]
+source_id = "$restricted_passage"
+role = "${1:-context}"
+TOML
+}
 
 write_leaf() {
 	cat >"$tree/src/claude/probe/main.tex" <<TEX
@@ -133,6 +175,7 @@ reject_probe() {
 # The whole preflight, green, so every refusal below is one thing changing.
 write_leaf "$good_translation" "$good_id"
 write_manifest "$good_relation"
+write_bindings
 probe >/dev/null || fail "the synthetic leaf does not pass as written"
 
 # references-used: an entry nothing in the body names.
@@ -174,6 +217,36 @@ write_leaf "English: Guéranger, \\work{The Liturgical Year}, p.~224" "$good_id"
 reject_probe --check unquoted-not-quoted
 probe --check references-used >/dev/null ||
 	fail "a contradicted quotation broke a check that is not about quotation"
+
+# restricted-not-reproduced: the leaf declares the reproduction, by making a
+# restricted artifact the control for its published English.
+write_leaf "$good_translation" "$good_id"
+write_bindings translation-control
+reject_probe --check restricted-not-reproduced
+probe --check references-used >/dev/null ||
+	fail "a rights defect broke a check that is not about rights"
+write_bindings
+
+# restricted-not-reproduced: the leaf prints it, whatever the binding claims.
+# The binding still says the source is only context.
+write_leaf "New American Bible, Revised Edition, Gal. 5:16--24" "$good_id"
+reject_probe --check restricted-not-reproduced
+write_leaf "$good_translation" "$good_id"
+probe --check restricted-not-reproduced >/dev/null ||
+	fail "the public-domain translation control was refused"
+
+# A leaf-local alias of the printed-passage environment is still a printed
+# passage. Six of the twenty published propers use one.
+cat >"$tree/src/claude/probe/format.tex" <<'TEX'
+\newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+TEX
+sed -e 's/namedtranslation/fulltextenglish/g' \
+	-e "s/$good_translation/New American Bible, Revised Edition/" \
+	"$tree/src/claude/probe/main.tex" >"$sandbox/aliased.tex"
+cp "$sandbox/aliased.tex" "$tree/src/claude/probe/main.tex"
+reject_probe --check restricted-not-reproduced
+rm "$tree/src/claude/probe/format.tex"
+write_leaf "$good_translation" "$good_id"
 
 # A leaf with no manifest at all cannot have its relations checked, and says
 # so rather than passing over nothing.

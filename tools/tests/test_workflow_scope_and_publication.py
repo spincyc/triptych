@@ -614,7 +614,14 @@ class PreservedGuaranteeTests(unittest.TestCase):
                          "the production plan is a maintainer record with one "
                          "owning stage")
 
-    def test_the_seed_is_still_byte_idempotent_at_version_10(self):
+    def test_the_seed_is_still_byte_idempotent_at_the_current_version(self):
+        """Version-agnostic on purpose.
+
+        Which version is current is pinned once, by
+        `test_the_workflow_version_matches_the_operator_manual` against
+        OPERATOR.md. Pinning it a second time here only meant that every bump
+        edited a test about byte idempotency, which is not what this is about.
+        """
         name = self.id().rsplit(".", 1)[-1]
         runs = ROOT / "build" / f"tpt-runs-scope-{os.getpid()}-{name}"
         shutil.rmtree(runs, ignore_errors=True)
@@ -632,7 +639,8 @@ class PreservedGuaranteeTests(unittest.TestCase):
         after = {path.relative_to(run_dir).as_posix(): path.read_bytes()
                  for path in sorted(run_dir.rglob("*")) if path.is_file()}
         self.assertEqual(before, after)
-        self.assertEqual(json.loads(first)["workflow_version"], 10)
+        self.assertEqual(json.loads(first)["workflow_version"],
+                         workflow_json()["version"])
         self.assertEqual(json.loads(first)["stage"], "seed")
 
     def test_every_new_fragment_exists_and_is_declared(self):

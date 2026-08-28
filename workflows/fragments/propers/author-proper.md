@@ -6,6 +6,16 @@ Author or revise the canonical proper leaf. The canonical leaf owns the
 prose, research, and audit records. The synthesis artifact is mechanically
 derived from it.
 
+Where the packet's CARRIED_FINDINGS header is not empty, read it before you
+begin. It holds blocking findings a content evaluation raised against the leaf
+— `repair_target: "authoring"` — that no authoring stage has yet seen, because
+the run went first to whichever owner the routing put ahead of you: the brief
+you are about to work from was corrected, and these were not. They describe
+the document you are re-authoring and they are still true of it. Address each
+one and say in your summary what you did with it. This is not optional
+context; before it existed the author re-authored blind and the next
+evaluation spent five lanes finding the same defects again.
+
 Work from the research brief the `research-synthesis` stage wrote to
 `research/scope.md`, and not from any prose a controller composed for you.
 `research/scope.md` is immutable input owned by `research-synthesis`. Read

@@ -18,6 +18,19 @@ Read the leaf's structure and its source records against the profile in
 Judge the source structure only. The mechanical gates measure the rendered
 pages; do not rediscover what they check.
 
+This lane reads the profile more closely than any other, so it is the lane
+most likely to find that the profile itself is at fault rather than the leaf.
+It has happened: the profile states its macro-order twice and the two
+statements cannot both be satisfied, and a leaf that takes the only jointly
+satisfiable reading is right while the document governing it is wrong. When
+the leaf conforms as well as anything could to a profile that contradicts
+itself, that is not a leaf defect and it is not a note either. Raise it with
+`severity: "escalation"` and `escalated_to` naming the guidance file and the
+lines that disagree, exactly as the shared fragment above describes. Say in
+`required_result` which readings could reconcile it, and leave the leaf alone.
+Your lane still returns `PASS`: the leaf met your criteria, and the escalation
+rides alongside that pass.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when neither criterion is

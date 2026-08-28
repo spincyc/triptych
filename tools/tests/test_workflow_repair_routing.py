@@ -282,7 +282,7 @@ class RepairOwnershipTests(RoutingCase):
         miscased = dict(missing, severity="Blocking", repair_target=RESEARCH)
         with self.assertRaises(WorkflowError) as caught:
             self.engine.advance(run_id, lane_results=submit(miscased))
-        self.assertIn("expected one of: blocking, advisory",
+        self.assertIn("expected one of: blocking, escalation, advisory",
                       str(caught.exception))
 
         # CHANGES_REQUIRED naming no owner would send a reviser work it
@@ -672,13 +672,27 @@ class DeclarationOrderTests(unittest.TestCase):
                          admitted: list | None = None,
                          stage_id: str = "eval-stage") -> Path:
         workflow = copy.deepcopy(WORKFLOW)
+        declared = routes if routes is not None else [
+            {REPAIR_TARGET: AUTHORING, "transition": "revise-stage"},
+            {REPAIR_TARGET: RESEARCH, "transition": "stage-a"},
+        ]
         for stage in workflow["stages"]:
             if stage["id"] == stage_id:
                 stage["result_schema"] = self.ROUTED_SCHEMA
-                stage[REPAIR_ROUTES] = routes if routes is not None else [
-                    {REPAIR_TARGET: AUTHORING, "transition": "revise-stage"},
-                    {REPAIR_TARGET: RESEARCH, "transition": "stage-a"},
-                ]
+                stage[REPAIR_ROUTES] = declared
+        # A route must point at a stage that admits to owning the target, or
+        # the loader refuses the pipeline: a finding held for its owner needs
+        # an owner to be held for.
+        owns: dict[str, list[str]] = {}
+        for route in declared:
+            if not isinstance(route, dict) or "transition" not in route \
+                    or REPAIR_TARGET not in route:
+                continue  # a malformed route is the case under test
+            owns.setdefault(route["transition"], []).append(
+                route[REPAIR_TARGET])
+        for stage in workflow["stages"]:
+            if stage["id"] in owns:
+                stage["repairs"] = owns[stage["id"]]
         repo = make_repo(workflow)
         self.addCleanup(shutil.rmtree, repo, ignore_errors=True)
         values = [AUTHORING, RESEARCH] if admitted is None else admitted

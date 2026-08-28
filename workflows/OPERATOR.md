@@ -789,7 +789,62 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 10. Version 10 changed two things about the
+The `proper` workflow is at version 11. Version 11 is what two production runs
+driven to completion asked for, and it changes the content loop in five places.
+
+`content-evaluation`'s iteration budget now charges repetition rather than
+failure. `max_iterations` bounds the number of failures that re-raise a
+blocking finding the stage already had standing; the first failure of a streak
+is charged too, because it has nothing to repeat and because exempting it would
+loosen every declared limit by one. An evaluation that raises different ids has
+found different work and costs nothing against that budget. A second bound,
+`max_total_iterations`, defaults to twice `max_iterations` and caps consecutive
+failures however novel they are, so a stage that finds something new forever
+still terminates: for `content-evaluation` that is six. Run
+`b68cca80edb75854` blocked at three under the old rule with four of five lanes
+passing and one finding standing, which the lane that raised it recorded as its
+own miss at the earlier iterations rather than a regression.
+
+A blocking finding now reaches its owner even when a different owner wins the
+route. Each repairing stage declares the targets it owns in a `repairs` list —
+`research` for `research`, `research-synthesis` for `brief`, and both
+`author-proper` and `content-revision` for `authoring`, because either may be
+the next to write the leaf — and a finding whose owner did not win the route is
+carried in a new `CARRIED_FINDINGS` packet header to whichever owner runs next.
+Routing itself is unchanged. Before this, one `brief` finding sent the run to
+`research-synthesis` and seven `authoring` findings raised in the same
+evaluation reached nobody; the author re-authored from an empty packet and the
+next evaluation rediscovered them.
+
+Findings carry a third severity, `escalation`, for a defect in an artifact no
+stage of the workflow may write — repository guidance, the source library, the
+tools. It takes no `repair_target`, and the engine refuses one that claims
+both: having no owner is what makes it an escalation. It does not block, does
+not spend the budget, and does not stop acceptance; it is recorded in a run
+escalation ledger keyed by finding id, and reported in `status` and in the
+terminal message. `profile-conformance` found a genuine contradiction in the
+propers profile's macro-order and could only file it advisory, where it was
+restated every iteration and acted on in none.
+
+`content-preflight` gained a fifth check, `restricted-not-reproduced`, the
+first in the pipeline that reads `src/sources/` rights at all. It refuses a
+leaf that binds a `storage = "restricted"` artifact as its `translation-control`
+and a leaf that attributes a set passage to a bound source whose bytes are
+restricted. `unquoted-not-quoted` is a self-consistency check and always was:
+an earlier production reproduced a restricted NABRE verbatim at ten loci and
+passed every gate. The same change taught both checks to read a leaf's own
+aliases of the printed-passage environments; six of the twenty published
+propers wrap `sourcecard` in a local name, and `unquoted-not-quoted` had been
+seeing no printed passages at all in those six.
+
+And `research-synthesis` must now carry a prior production's standing findings
+into the brief, under a `Prior-production carry-forward` heading, or state that
+there was no prior production. Re-seeding starts a run with an empty history —
+the run id is derived from workflow version, commit and arguments — and one
+re-seed dropped fourteen standing findings, five recovered by hand and one
+surviving verbatim into the next production because nobody carried it.
+
+Version 10 changed two things about the
 content loop. `content-evaluation` gained a third repair owner, `brief`, which
 routes to `research-synthesis`: a defect the brief already holds the evidence
 for is one sentence of `research/scope.md`, and sending it to `research`
