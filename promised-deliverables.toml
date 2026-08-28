@@ -1478,7 +1478,7 @@ state = "complete"
 id = "complete-missal-remediation-2026-08-26"
 owner = "PROJECT-WORK.md"
 promise = "Audit and source-honestly remediate the postconciliar, Roman 1962, and Roman pre-1955 Missal data and reader across English and Latin for a complete year; close actionable Proper, Common, Ordinary, calendar, recension, tooling, dialogue, visual, rights, provenance, generated-data, and publication-boundary defects; validate and push coherent feature work; obtain a cold review; then reconcile and fast-forward the accepted result to origin/main with verified deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "complete-year-audit-baseline"
@@ -1557,7 +1557,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "feature-cold-review-main-and-deployment"
   criterion = "The coherent result is committed and pushed to feature/complete-missal; an independent cold review examines the exact feature snapshot and every blocking finding is resolved; the accepted snapshot is reconciled cleanly with current origin/main; origin/main is advanced by genuine fast-forward without force or history rewrite only after make check-deployment-sources, make public-site, and public-alpha verify --deployment-target github-pages pass; and the exact resulting Pages workflow and affected live routes are verified."
-  status = "open"
+  status = "pass"
   evidence = [
     "PROJECT-WORK.md",
     ".github/workflows/pages.yml",

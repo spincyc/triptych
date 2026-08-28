@@ -1710,8 +1710,9 @@ deployment.
 
 <!-- promised-deliverable: complete-missal-remediation-2026-08-26 -->
 
-**In progress on `feature/complete-missal`, from synchronized base
-`2778285849f2973ea89d1cfd5b2751ed4ae58e54`.** The maintainer requested one
+**Completed and deployed on 2026-08-28.** Work began on
+`feature/complete-missal` from synchronized base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`. The maintainer requested one
 source-honest program that audits and remediates the postconciliar, Roman 1962,
 and Roman pre-1955 Missal data in English and Latin; corrects calendar,
 recension, Common, Proper, Ordinary, dialogue, presentation, provenance, and
@@ -1754,13 +1755,16 @@ may not split opaque prose by string matching or equate Priest/Server with
 versicle/response.
 
 **Exact successor snapshot internally accepted for deployment on independent
-AI cold-review evidence; production integration remains open.** Feature commit
+AI cold-review evidence; production integration is verified below.** Feature
+commit
 `a1a7ab774a7318cb0b66d74462090856347d5915` (tree
-`b70bdf637387ba552d66d6f7e38704a5ed116f19`) is pushed exactly to
-`origin/feature/complete-missal`, descends without a rewrite from the current
-`origin/main` base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and has a
-clean tracked worktree and index at its exact Firefox capture and handoff
-assembly. Independent semantic, source-identity,
+`b70bdf637387ba552d66d6f7e38704a5ed116f19`) was pushed exactly to
+`origin/feature/complete-missal` at that stage before the later
+deployment-record and workflow commits, descends without a rewrite from the
+then-current `origin/main` base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and its tracked worktree and index
+were clean at the exact Firefox capture and handoff assembly. Independent
+semantic, source-identity,
 rights, generated-freshness, path-integrity, deployment-artifact, commit-scope,
 and exact-handoff reviews found no successor blocker.
 
@@ -1769,9 +1773,9 @@ The accepted source tree carries 619 postconciliar Mass identities, 491 Roman
 pre-1955 departure records. The source library validates at 537 works, 722
 editions, 1,837 artifacts, 3,295 passages, 72 segments, and 2,167 bindings.
 The registered `complete-missal` audit measures all fifteen completion
-dimensions over 2020--2120 and reports 39 typed unresolved audit cells instead
-of inventing text or silently borrowing a recension: 8/492/619 represented
-celebrations and at least 5,158/5,247/3,056 modeled text slots for
+dimensions over 2020--2120 and reports 39 typed unresolved audit-dimension
+cells instead of inventing text or silently borrowing a recension: 8/492/619
+represented celebrations and at least 5,158/5,247/3,056 modeled text slots for
 pre-1955/Roman 1962/postconciliar respectively. Its source-honest `--check`
 passes; its stricter `--require-resolved` mode intentionally refuses while
 those explicit cells remain. They are completion-dimension findings, not a
@@ -1839,21 +1843,45 @@ AI-assisted and automated review evidence, not human, priestly, specialist,
 intended-reader, physical-use, ecclesiastical, or new exact-snapshot human
 approval.
 
-Production deployment remains open. `origin/main` advanced by genuine
-fast-forward from `2778285849f2973ea89d1cfd5b2751ed4ae58e54` to
+**Production integration and live verification complete.** `origin/main` first
+advanced by genuine fast-forward from
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` to
 `de7c78334d2f7418c20c7a595e6aae9ce45f39c9` after all three local deployment
-gates passed on that exact clean tree. Exact Pages run `33196238024` then
-reached artifact verification only after checkout, dependency installation,
-source verification, and the public build had passed; GitHub cancelled the job
-at its configured 15-minute ceiling before verification, upload, or deployment
-could complete. That is infrastructure timeout evidence, not a successful or
-failed content gate, and no production deployment is claimed from it. The
-workflow ceiling is raised to 30 minutes so the unchanged gate sequence can
-finish on a cold runner.
+gates passed on that exact clean tree. Exact Pages run
+[`33196238024`](https://github.com/spincyc/triptych/actions/runs/33196238024)
+then reached artifact verification only after checkout, dependency
+installation, source verification, and the public build had passed; GitHub
+cancelled the job at its configured 15-minute ceiling before verification,
+upload, or deployment could complete. That is infrastructure-timeout evidence,
+not a successful or failed content gate, and no production deployment is
+claimed from it.
 
-Before this program is complete, the timeout correction must advance both
-feature and `main` by genuine fast-forward; the exact resulting Pages run must
-succeed; its deployment record must bind that exact commit; and the deployed
-checksum inventory plus every added or changed live route must match the local
-artifact. A commit, feature push, exact review handoff, local deployment
-artifact, or release-binding match alone does not complete the program.
+The narrowly scoped timeout correction raised the workflow ceiling to 30
+minutes without changing the gate sequence. `origin/feature/complete-missal`
+first advanced by genuine fast-forward to exact commit
+`0817b42b500a35002ceb892ade89832093b93522`; the three local deployment gates
+then passed on that exact clean correction tree; and `origin/main` then
+advanced by genuine fast-forward to the same commit. Pages run
+[`33197920174`](https://github.com/spincyc/triptych/actions/runs/33197920174)
+and its sole deploy job
+[`98939717180`](https://github.com/spincyc/triptych/actions/runs/33197920174/job/98939717180)
+completed successfully for that exact `main` head; all source verification,
+public build, artifact verification, configuration, upload, and deployment
+steps passed. GitHub deployment `6146198392`, final status `17472596177`, binds
+that exact commit and `main` ref to the `github-pages` environment and
+<https://mystago.gy/>.
+
+A fresh production verification parsed the served checksum inventory and
+proved it byte-identical to the local 20,548-entry `SHA256SUMS` artifact, whose
+SHA-256 is
+`f192be2f12357e141c83f6b2338a9b2ead9e6f221848c26567d8332f25e59bf2`.
+All 20,548 inventoried local files were independently authenticated against
+that target inventory. Against the captured pre-integration inventory the
+verifier identified 16 added, 1,249 modified, and zero deleted paths, then
+fetched and matched all 1,265 affected live routes byte for byte with no HTTP,
+redirect, truncation, or checksum failure. This closes the promised production
+requirement for the deployed content while retaining every audit-dimension,
+broad-browser, review-authority, and reachable-history qualification above; it
+is not a global legal clearance or human,
+specialist, priestly, intended-reader, physical-use, or ecclesiastical
+approval.
