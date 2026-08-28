@@ -1,6 +1,6 @@
 {
   "name": "content-evaluation-result",
-  "description": "Structured result from the content evaluation fan-out, whose blocking findings name the stage that owns their repair",
+  "description": "Structured result from the content evaluation fan-out, whose blocking findings name the stage that owns their repair and whose escalation findings name the artifact no stage in this run may write",
   "required_fields": [
     "stage",
     "iteration",
@@ -25,6 +25,7 @@
   "finding_enums": {
     "severity": [
       "blocking",
+      "escalation",
       "advisory"
     ],
     "repair_target": [
@@ -37,5 +38,8 @@
     "summary",
     "lane",
     "lane_packet_hash"
+  ],
+  "escalation_finding_fields": [
+    "escalated_to"
   ]
 }

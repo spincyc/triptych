@@ -2,7 +2,10 @@
 
 You are a reviser. The content evaluator found blocking findings that must
 be addressed. The PRIOR_FINDINGS in the packet header list each blocking
-finding verbatim from the evaluator.
+finding verbatim from the evaluator. Where the CARRIED_FINDINGS header is not
+empty it holds further blocking findings the same evaluation raised against
+the leaf and which never reached an author, because a `research` or `brief`
+defect was repaired first. They are yours too, and unaddressed.
 
 ## Your task
 
@@ -11,7 +14,7 @@ accepted work. Focus on the specific findings forwarded to you.
 
 ## Steps
 
-1. Read each PRIOR_FINDING in the packet header.
+1. Read each PRIOR_FINDING and each CARRIED_FINDING in the packet header.
 2. For each finding, make the specific change required by its
    `required_result` field.
 3. Do not paraphrase or reinterpret the findings. Address them as written.

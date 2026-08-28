@@ -95,10 +95,17 @@ that owner travel the route:
 You do not choose the route and the controller does not choose the route: the
 field decides it.
 
-Because the earlier owner is corrected first and everything downstream of it is
-regenerated, a later owner's defect reported alongside it is simply
-rediscovered by the fresh evaluation. That is intended, not a loss, so report
-each defect against its own owner and let the routing follow.
+The route decides where the run goes next. It no longer decides who hears: a
+finding whose owner did not win the route is carried to that owner in the
+packet of whichever stage that owns it runs next, under `CARRIED_FINDINGS`. So
+report each defect against its own owner and let the routing follow — naming
+the true owner is now the only way the true owner is told.
+
+This used to be false, and the difference is the reason to be exact. When only
+the winning route's findings travelled, a single `brief` defect sent the run to
+`research-synthesis`, the seven `authoring` findings raised in the same
+evaluation reached nobody, and the author re-authored from an empty packet. The
+next evaluation spent five lanes rediscovering what the run already knew.
 
 Where ownership is genuinely ambiguous, name the earliest owner whose
 correction is actually necessary. That ordering is not a licence to round
@@ -107,6 +114,47 @@ upward: a defect the brief can repair out of evidence it already holds is
 is not there to repair it from. There is no fourth value; the engine rejects
 anything else. Advisory findings do not need the field.
 
+## When no stage owns the repair
+
+Some real defects are in neither the research, the brief, nor the leaf. The
+profile in `guidance/liturgy/roman-1962-propers.md` states its macro-order
+twice and incompatibly; a source record can be wrong; a check in this pipeline
+can be. No stage of this workflow may write any of those files, so no
+`repair_target` is true of them, and both of the answers left were wrong.
+Blocking would end a run whose document is correct. Advisory is where such a
+defect actually went, and it was restated in every iteration of a real run and
+acted on in none, because nothing outlived the run to act on it.
+
+Use the third severity:
+
+```json
+"severity": "escalation",
+"escalated_to": "guidance/liturgy/roman-1962-propers.md lines 117 and 193-204"
+```
+
+An escalation carries **no** `repair_target` — having no owner in this run is
+what makes it one, and the engine refuses a finding that claims both. It does
+not block the run, does not spend the iteration budget, and does not stop
+acceptance. It is written into the run's escalation ledger under its finding
+id, restated into the same slot if you raise it again, and reported in the
+terminal message and in `tpt proper status`, so it survives the run and reaches
+the maintainer.
+
+An escalation does not change your lane's disposition. Your criteria are met —
+the leaf conforms as well as anything could — so the lane returns `PASS` and
+files the escalation alongside. An evaluation carrying nothing but escalations
+is a `PASS` and the run continues to `build-artifacts`, which is the point: the
+document is finished and the defect is somewhere else. Returning
+`CHANGES_REQUIRED` with only an escalation names no owner and the engine
+refuses it.
+
+The test is ownership, not gravity. Escalation is for a defect in an artifact
+**no stage of this workflow may write**: repository guidance, `src/sources/`,
+`tools/`, `workflows/`. If the leaf is wrong, or the brief is, or the research
+is, one of the three repair targets is true and you must use it. Do not reach
+for an escalation to avoid naming an owner, and say in `required_result` what
+the maintainer is being asked to decide.
+
 ## Result
 
 Return an evaluator result:
@@ -114,4 +162,11 @@ Return an evaluator result:
 - `CHANGES_REQUIRED` with blocking findings if any criterion fails.
 - `BLOCKED` if a finding cannot be resolved by revision.
 
-Finding IDs must use the `CON-` prefix and be stable across iterations.
+Finding IDs must use the `CON-` prefix and be stable across iterations. This
+is now load-bearing and not only tidy. The iteration budget charges a repeat:
+an evaluation that raises a blocking id this stage already had standing has not
+moved, and the run is that much closer to blocking. An evaluation that raises
+different ids has found different work and costs the run nothing but its place
+against the absolute ceiling. So reuse an id for the same unrepaired defect,
+never for a different one, and never mint a new id for a defect you are
+restating.

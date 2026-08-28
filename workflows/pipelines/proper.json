@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 10,
+  "version": 11,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -162,6 +162,9 @@
         "common/result-format.md",
         "propers/research.md"
       ],
+      "repairs": [
+        "research"
+      ],
       "result_schema": "research-result.json",
       "next": "research-synthesis"
     },
@@ -175,6 +178,9 @@
         "common/agent-brief.md",
         "common/result-format.md",
         "propers/research-synthesis.md"
+      ],
+      "repairs": [
+        "brief"
       ],
       "result_schema": "research-synthesis-result.json",
       "pass_transition": "author-proper",
@@ -191,6 +197,9 @@
         "common/agent-brief.md",
         "common/result-format.md",
         "propers/author-proper.md"
+      ],
+      "repairs": [
+        "authoring"
       ],
       "result_schema": "worker-result.json",
       "next": "content-preflight"
@@ -211,6 +220,11 @@
           "id": "identifiers-resolve",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check identifiers-resolve",
           "required_result": "every source identifier the leaf prints must name a record the source library registers; an identifier that resolves to nothing reads exactly like one that resolves"
+        },
+        {
+          "id": "restricted-not-reproduced",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check restricted-not-reproduced",
+          "required_result": "no artifact the leaf's research bound as restricted may have its bytes reproduced in the leaf, whether the leaf declares the reproduction by binding it as the translation control or prints it by attributing a set passage to it; the leaf's own self-consistency cannot see this, because the rights live in src/sources and nowhere in the document"
         },
         {
           "id": "relation-coverage",
@@ -303,6 +317,9 @@
         "common/result-format.md",
         "propers/content-revision.md",
         "propers/author-proper.md"
+      ],
+      "repairs": [
+        "authoring"
       ],
       "result_schema": "worker-result.json",
       "next": "content-preflight"

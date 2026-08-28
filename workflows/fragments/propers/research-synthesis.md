@@ -9,6 +9,14 @@ If you asked for changes on an earlier iteration, your own findings went back
 through the lanes and the lanes ran again: what you have now is a fresh
 seven-lane join, not a diff against the last one. Integrate it whole.
 
+A separate header, CARRIED_FINDINGS, may also be present. Those are not lane
+findings. They are blocking findings a content evaluation raised against the
+brief — `repair_target: "brief"` — which reached no owner at the time because
+another owner won the route. They are addressed to you and they still stand.
+Repair each one in `research/scope.md` and say in your summary which you
+repaired. If one is not in fact a brief defect, say so and why rather than
+silently leaving it.
+
 ## You do no original research
 
 This stage performs no original evidence-gathering at all. You must not:
@@ -87,11 +95,47 @@ Integrate the joined research into one research brief that the
    brief, so a section whose evidence position goes unstated is found only
    when the author needs the evidence and blocks, and the run has then spent
    a stage discovering what one line here would have said.
-11. Write into `research/scope.md`: the passage-by-passage reception matrix,
+11. Carry forward what an earlier production of this same target already
+   found. Re-seeding produces a new run with an empty history — the run id is
+   derived from the workflow version, the commit and the arguments, so a bump
+   in any of them starts a run that knows nothing — and one real re-seed
+   dropped fourteen standing evaluation findings on the floor, of which five
+   were recovered only because a person carried them by hand and one survived
+   into the next production verbatim because nobody did. You are the first
+   stage of a production that writes anything durable, and the only one
+   positioned to carry them.
+
+   Look for prior runs against this same document before you write:
+
+   ```sh
+   grep -l '"proper": "{proper}"' build/tpt-runs/*/state.json
+   ```
+
+   For each such run that is not this one, read its `state.json` and, for
+   every `content-evaluation` and `research-synthesis` entry in
+   `result_hashes`, read the result file it names. Take the blocking findings
+   of each stage's **last** result — earlier iterations were superseded — and
+   its `escalations`, if it recorded any.
+
+   Record in the brief, under a `Prior-production carry-forward` heading:
+   every such finding's id, the run it came from, what it required, and
+   whether the current research resolves it. A finding the current seven-lane
+   join has answered is recorded as answered, with the lane finding that
+   answers it. A finding still unresolved is recorded as unresolved, and that
+   is a legitimate `PASS` — it is a bound the guide must carry, not a bar. A
+   finding you judge no longer to apply is recorded with the reason it does
+   not. What is not permitted is not looking, or looking and not saying: the
+   whole cost of the earlier production's evaluation is otherwise spent twice.
+
+   Where there is no prior run for this target, say so in one line under that
+   heading. An absent statement and an empty history are not distinguishable
+   afterwards, and the next stage must be able to tell them apart.
+12. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
    `Notable-and-quotable audit`, the `Interpretive-proposal audit`, the
-   section-by-section evidence coverage statement, and the organized brief.
+   section-by-section evidence coverage statement, the
+   `Prior-production carry-forward`, and the organized brief.
    This stage is the sole writer of `research/scope.md` in the workflow:
    the research lanes were forbidden to touch it, and no later stage may add
    to it or amend it. Leave it complete enough to author
@@ -130,6 +174,10 @@ that lane must come back with. Use the `SYN-` prefix, stable across
 iterations. `tpt` hands the findings to all seven lanes verbatim; nothing
 summarizes them on the way.
 
+Do not pass before the `Prior-production carry-forward` heading is in the
+brief, either accounting for every standing finding of an earlier production
+of this target or stating in one line that there was none.
+
 `BLOCKED` — genuinely unrecoverable within this workflow: another pass
 through the same lanes cannot reasonably solve it. A required source is
 unavailable under current repository or source policy; identity or formulary
@@ -140,9 +188,16 @@ disposition is terminal: the run ends.
 
 Do not block merely because the first sweep was incomplete — that is what
 `CHANGES_REQUIRED` is for. And do not use `CHANGES_REQUIRED` to ask for what
-no lane can supply; that is what `BLOCKED` is for. The retry is bounded: two
-consecutive requests are granted and the third is refused, and the count
-resets whenever you pass. So name what is actually missing and who owes it
-rather than gesturing at thinness. Never research
+no lane can supply; that is what `BLOCKED` is for. The retry is bounded twice
+over, and what it charges for is repeating yourself. Your first request of a
+streak spends one of three. Every later one that re-raises a `SYN-` id still
+standing spends another, so asking three times for something the lanes have
+not delivered ends the run. A request that names work you have not asked for
+before spends nothing against that budget — the lanes made progress and were
+found to owe something else, which is not a loop — but the stage may not fail
+more than six times consecutively whatever it names. Both counts reset the
+moment you pass. So name what is actually missing and who owes it rather than
+gesturing at thinness, and reuse an id only for a request the lanes have still
+not met. Never research
 around a deficiency, never quietly fill a gap, and never pass a brief you
 know to be insufficient: the stage that reads it next cannot repair it.

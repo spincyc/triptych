@@ -32,10 +32,24 @@ EXAMPLES = {
                 "references-used: 32 entries, every one used in the body",
                 "relation-coverage: 4 relations, every element key claimed "
                 "by the unit that carries its evidence",
+                "restricted-not-reproduced: 18 bound sources, 3 of them "
+                "restricted, none reproduced",
                 "unquoted-not-quoted: 2 sources declared unquoted, none "
                 "attributed a quotation",
             ),
             "the whole preflight over a published leaf; exits 0",
+        ),
+        Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "53-thirteenth-after-pentecost --check restricted-not-reproduced",
+            (
+                "restricted-not-reproduced: 98 bound sources, 45 of them "
+                "restricted, none reproduced",
+            ),
+            "the rights of every bound artifact, read against the leaf's own "
+            "text; forty-five restricted sources are lawfully cited here and "
+            "none of them reproduced",
         ),
         Example(
             "tools/check-content-preflight --provider gpt --document "
@@ -66,6 +80,7 @@ EXAMPLES = {
                 "identifiers-resolve",
                 "references-used",
                 "relation-coverage",
+                "restricted-not-reproduced",
                 "unquoted-not-quoted",
             ),
             "prints every check id, one a line",
@@ -376,9 +391,39 @@ def attributed_author(item: str) -> str | None:
 # the same paragraph routinely quotes an original whose only translation is
 # the one being declared unquoted, and testing for it refuses four published
 # leaves that are correct.
-ATTRIBUTED = re.compile(
-    r"\\begin\{(?:namedtranslation|sourcecard)\}\{"
-    r"((?:[^{}]|\{[^{}]*\})*)\}")
+BASE_ATTRIBUTED = ("namedtranslation", "sourcecard")
+
+# ...but a leaf may rename them. `format.tex` is per-leaf, and six of the
+# twenty published propers wrap the base environment in one of their own —
+# `\fulltextenglish`, `\witnesscard` — passing the attribution straight
+# through as `#1`. A check that matched only the base names saw *zero*
+# attributed passages in those six, `54-fourteenth-after-pentecost` among them,
+# which is the leaf both production runs were producing. It was not passing
+# them; it was not reading them.
+WRAPPER = re.compile(
+    r"\\newenvironment\{([A-Za-z]+)\}(?:\[\d+\])?"
+    r"\{[^\n]*?\\begin\{(?:" + "|".join(BASE_ATTRIBUTED) + r")\}")
+
+
+def attributed_blocks(leaf: Path) -> list[str]:
+    """The attribution argument of every printed passage the leaf sets.
+
+    Reads `format.tex` for the leaf's own aliases of the base environments
+    before scanning the body, so a renamed environment is still a printed
+    passage. `format.tex` is read here and nowhere else: it defines the
+    aliases and carries no prose of its own.
+    """
+    names = set(BASE_ATTRIBUTED)
+    format_tex = leaf / "format.tex"
+    if format_tex.is_file():
+        names.update(WRAPPER.findall(format_tex.read_text(encoding="utf-8")))
+    pattern = re.compile(
+        r"\\begin\{(?:" + "|".join(sorted(names)) + r")\}"
+        r"\{((?:[^{}]|\{[^{}]*\})*)\}")
+    found = []
+    for path in leaf_tex(leaf):
+        found.extend(pattern.findall(path.read_text(encoding="utf-8")))
+    return found
 
 
 def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
@@ -388,7 +433,7 @@ def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
     hand, and then prints that witness's words as quoted text, contradicts
     itself in a way neither statement shows on its own.
     """
-    references, body = split_leaf(leaf)
+    references, _ = split_leaf(leaf)
     if not references:
         return (["the leaf prints no References section"], "")
     declared = []
@@ -402,8 +447,8 @@ def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
         if author:
             declared.append((author, flat[:80]))
     problems = []
-    for match in ATTRIBUTED.finditer(body):
-        credited = fold(prose(match.group(1)))
+    for attribution in attributed_blocks(leaf):
+        credited = fold(prose(attribution))
         for author, entry in declared:
             if re.search(r"\b" + re.escape(author), credited):
                 problems.append(
@@ -414,10 +459,236 @@ def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
         f"quotation")
 
 
+# --- Rights ----------------------------------------------------------------
+
+# The source library is 5,977 TOML files. Every field this needs is a scalar
+# on its own line, so the records are read by line rather than parsed: a full
+# TOML parse of the library costs seconds on every gate run and answers no
+# question this one does not.
+RECORD_FIELD = re.compile(
+    r'^(id|record_type|artifact_id|segment_id|edition_id|work_id|storage'
+    r'|rights_status) = "([^"]*)"$')
+
+RESTRICTED = "restricted"
+
+
+def source_records(root: Path) -> dict[str, dict[str, str]]:
+    """Every source record the library registers, keyed by its own id.
+
+    Keyed by the recorded `id` and not by path, for the same reason
+    `registered_ids` is: 185 of the ids do not match the directory their
+    record lives in. `inventories/` is left out, as there: its `id =` lines
+    are audit rows and register nothing.
+    """
+    records: dict[str, dict[str, str]] = {}
+    for directory in ("works", "corpora"):
+        library = root / "src" / "sources" / directory
+        for path in sorted(library.rglob("*.toml")):
+            fields: dict[str, str] = {}
+            for line in path.read_text(encoding="utf-8").splitlines():
+                match = RECORD_FIELD.match(line)
+                if match:
+                    fields.setdefault(match.group(1), match.group(2))
+            if "id" in fields:
+                records[fields["id"]] = fields
+    return records
+
+
+def artifact_is_restricted(records: dict[str, dict[str, str]],
+                           artifact_id: str) -> bool:
+    """Whether an artifact's own record forbids republishing its bytes.
+
+    Either field is enough. `storage` says where the bytes may live and
+    `rights_status` says what may be done with them, and a record that says
+    `restricted` in one and something laxer in the other is not a licence
+    found in the other field; it is a record to be read at its strictest.
+    """
+    record = records.get(artifact_id) or {}
+    return RESTRICTED in (record.get("storage"), record.get("rights_status"))
+
+
+def controlling_artifacts(records: dict[str, dict[str, str]],
+                          source_id: str) -> list[str]:
+    """The artifacts whose bytes a bound source id would be reproduced from.
+
+    Rights are recorded per artifact, never per abstract work, so every other
+    kind of record has to be walked down to the artifacts under it. A passage
+    reaches its artifact directly or, under schema 2, through the segment that
+    bounds it; an edition or a work reaches all of theirs.
+    """
+    record = records.get(source_id)
+    if record is None:
+        return []
+    kind = record.get("record_type")
+    if kind == "artifact":
+        return [source_id]
+    if kind in ("passage", "segment"):
+        if record.get("artifact_id"):
+            return [record["artifact_id"]]
+        segment = records.get(record.get("segment_id", "")) or {}
+        return [segment["artifact_id"]] if segment.get("artifact_id") else []
+    if kind in ("edition", "work"):
+        editions = (
+            [source_id] if kind == "edition"
+            else [rid for rid, other in records.items()
+                  if other.get("record_type") == "edition"
+                  and other.get("work_id") == source_id]
+        )
+        return sorted(
+            rid for rid, other in records.items()
+            if other.get("record_type") == "artifact"
+            and other.get("edition_id") in set(editions)
+        )
+    if kind == "corpus":
+        # A corpus record lists its members in an array this line reader does
+        # not see. Its members are artifacts, and each is bound in its own
+        # right where it is reproduced from, so nothing is decided here.
+        return []
+    return []
+
+
+def source_is_restricted(records: dict[str, dict[str, str]],
+                         source_id: str) -> bool | None:
+    """Whether reproducing this source means reproducing restricted bytes.
+
+    `None` where the library cannot say: an id it does not register, or a
+    record with no artifact under it. Unknown is not innocent and it is not
+    guilty either — `identifiers-resolve` is the check that an id resolves at
+    all, and this one does not duplicate its refusal in a rights message.
+
+    An edition or a work counts as restricted only when every artifact under
+    it is, because one unrestricted artifact is a lawful thing to have
+    reproduced from and this check cannot tell which was used.
+    """
+    artifacts = controlling_artifacts(records, source_id)
+    if not artifacts:
+        return None
+    return all(artifact_is_restricted(records, a) for a in artifacts)
+
+
+BINDINGS = "research/source-bindings.toml"
+
+# The one role that says, of the source it is given to, that the published
+# English *is* that source's words. The propers profile leaves no other
+# reading: "English is never composed, translated, adapted, or paraphrased by
+# the guide. It is quoted from a registered public-domain witness." So a
+# translation control that resolves to restricted bytes is a contradiction
+# between two files, and neither shows it alone.
+#
+# Deliberately just the one. `textual-control`, `official-control` and
+# `direct-witness` say a source governs or attests a claim, not that its words
+# were set in type: twenty-nine bindings in the fifteen documents this gate
+# runs on carry one of those roles against a restricted artifact, and every one
+# of them is a published leaf that is right. A check that refused them would be
+# refusing correctness.
+REPRODUCING_ROLE = "translation-control"
+
+
+def bound_sources(leaf: Path) -> list[tuple[str, str]]:
+    """Every `(source_id, role)` the leaf's research bound, in file order."""
+    path = leaf / BINDINGS
+    if not path.is_file():
+        return []
+    data = tomllib.loads(path.read_text(encoding="utf-8"))
+    return [(b.get("source_id", ""), b.get("role", ""))
+            for b in data.get("bindings", [])
+            if b.get("source_id")]
+
+
+def source_anchors(records: dict[str, dict[str, str]],
+                   source_id: str) -> set[str]:
+    """The distinctive words by which a printed attribution could name a source.
+
+    A leaf attributes a printed passage in prose — "Douay--Rheims/Challoner",
+    "New American Bible, Revised Edition" — and never by id. So identity here
+    is the same kind of thing `anchors` builds for a References entry: the
+    distinctive words of the work, taken from the id's own work and edition
+    slugs. Nothing is read from the artifact record, because the words a reader
+    is given name the work, not the file it was fetched as.
+    """
+    parts = source_id.split(".")
+    words = " ".join(parts[1:4]).replace("-", " ")
+    return {token for token in re.findall(r"[a-z0-9]+", fold(words))
+            if len(token) >= 5 and token not in COMMON}
+
+
+def check_restricted_not_reproduced(
+    leaf: Path, root: Path
+) -> tuple[list[str], str]:
+    """Nothing the leaf prints is reproduced from an artifact it may not copy.
+
+    Until now no check in this file read `src/sources/` for rights at all.
+    `unquoted-not-quoted` compares the leaf against itself, so a guide could be
+    perfectly self-consistent about a text it had no right to publish, and one
+    was: an earlier production of this collection reproduced a
+    `storage = "restricted"` NABRE verbatim at ten loci and passed every gate,
+    because no gate connected an artifact's rights record to the leaf's text.
+
+    Two independent ways the connection can be made mechanically, and a defect
+    only has to show in one:
+
+    - the leaf *declares* the reproduction, by binding a restricted source as
+      its `translation-control` — the role that means the published English is
+      this witness's words; or
+    - the leaf *prints* it, attributing a set passage to a bound source whose
+      bytes are restricted.
+
+    The second reads only attributions that discriminate: a word shared by two
+    of the leaf's own bound sources cannot say which was meant, so it is not
+    used. That leaves nothing to say about a source the leaf never bound, which
+    is a real hole and the honest one to leave — the rights of an artifact
+    nobody recorded cannot be read from a record that does not exist.
+    """
+    bound = bound_sources(leaf)
+    if not bound:
+        return (["the leaf records no research/source-bindings.toml"], "")
+    records = source_records(root)
+
+    problems = []
+    restricted = []
+    for source_id, role in bound:
+        if source_is_restricted(records, source_id) is not True:
+            continue
+        restricted.append(source_id)
+        if role == REPRODUCING_ROLE:
+            problems.append(
+                f"{source_id} is bound as {REPRODUCING_ROLE}, so the guide's "
+                f"published English is its words, but its artifact is "
+                f"registered {RESTRICTED}: those bytes may not be reproduced "
+                f"here at all")
+
+    anchors_by_source = {sid: source_anchors(records, sid)
+                         for sid, _ in bound}
+    times_used: dict[str, int] = {}
+    for words in anchors_by_source.values():
+        for token in words:
+            times_used[token] = times_used.get(token, 0) + 1
+
+    for attribution in attributed_blocks(leaf):
+        credited = fold(prose(attribution))
+        for source_id in restricted:
+            naming = sorted(
+                token for token in anchors_by_source[source_id]
+                if times_used[token] == 1
+                and re.search(r"\b" + re.escape(token), credited)
+            )
+            if naming:
+                problems.append(
+                    f"a set passage is attributed to {source_id}, whose "
+                    f"artifact is registered {RESTRICTED} and may not be "
+                    f"reproduced: "
+                    f"{' '.join(prose(attribution).split())[:90]}")
+
+    return sorted(set(problems)), (
+        f"{len(bound)} bound sources, {len(restricted)} of them restricted, "
+        f"none reproduced")
+
+
 CHECKS = {
     "identifiers-resolve": check_identifiers_resolve,
     "references-used": check_references_used,
     "relation-coverage": check_relation_coverage,
+    "restricted-not-reproduced": check_restricted_not_reproduced,
     "unquoted-not-quoted": check_unquoted_not_quoted,
 }
 

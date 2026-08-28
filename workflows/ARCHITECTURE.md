@@ -224,16 +224,99 @@ result contracts, and the parts of an execution policy no single packet
 carries — a fan-out stage's declared join, and the fragments of every lane
 but the one a given lane packet quotes.
 
+That last clause was, until the `DIGEST_RECIPE = 2` bump, a claim the code did
+not keep. The digest walked `stage["fragments"]` and never
+`execution.lanes[*].fragments`, so the pipeline JSON covered the lane
+fragments' *names* while nothing covered their *bytes*: sixteen files, holding
+the most substantive instructions in the propers pipeline, could be rewritten
+under a live run without the digest moving. Confirmed by perturbation before
+the fix and after. The recipe number is what makes the change legible — the
+digest is now computed over different material, not over the same material
+that happens to have changed, and every recorded digest is invalidated
+deliberately rather than as a side effect.
+
 A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 10: version 9 put the authorization gate and
-the whole publication phase around the production phase, and version 10 gave
-`content-evaluation` a third repair owner and inserted the `content-preflight`
-gate between `author-proper` and `content-evaluation`. A run seeded against
-version 9 or earlier fails closed and is seeded again. `workflows/OPERATOR.md`
-carries the version history in full.
+`proper` workflow is at version 11: version 10 gave `content-evaluation` a
+third repair owner and inserted the `content-preflight` gate between
+`author-proper` and `content-evaluation`, and version 11 made the iteration
+budget charge repetition rather than failure, carried a blocking finding to its
+owner when another owner wins the route, added the `escalation` severity for a
+defect no stage may repair, and gave `content-preflight` a rights check. A run
+seeded against version 10 or earlier fails closed and is seeded again.
+`workflows/OPERATOR.md` carries the version history in full.
+
+### Iteration budgets
+
+A looping stage carries two bounds, and they answer different questions.
+
+`max_iterations` bounds **repetition**. A failure charges it when it carries a
+blocking finding whose id the stage already had standing from its previous
+failure, and when it is the first failure of a streak — that one has no
+predecessor to repeat, and exempting it would silently loosen every declared
+limit by one iteration. A failure raising only ids the stage has not raised
+before charges nothing: the previous repair worked and different work was
+found, which is progress and not a loop.
+
+`max_total_iterations` bounds **consecutive failures** whatever they name, and
+defaults to twice `max_iterations`. It exists only for a stage that keeps
+finding genuinely new blocking work, which the repeat budget cannot stop.
+Twice is the choice: the repeat budget already terminates anything that stops
+converging, so this ceiling grants a stage that is demonstrably still working
+as many iterations again as the operator declared, and no more.
+
+Both counters, and the standing finding ids the repeat test reads, reset when
+the stage passes. All three live in the run state (`stage_failures`,
+`stage_repeats`, `stage_blocking_ids`) and the run audit replays them through
+the engine's own function rather than recomputing them, because two
+implementations of one rule are two rules.
+
+### Repair ownership and carried findings
+
+`repair_routes`, declared on an evaluator, says where a run goes next when a
+blocking finding names an owner. `repairs`, declared on the stage that does the
+work, says which targets that stage owns. They are the two halves of one fact,
+and the loader refuses a route pointing at a stage that does not declare the
+target it is pointed at for.
+
+A target may have more owners than the routes name. `authoring` is owned by
+`content-revision`, which the route points at, and also by `author-proper`,
+because both write the leaf and either may be the next to run.
+
+Routing selects one owner. Everything else a `CHANGES_REQUIRED` evaluation
+raised used to stop there: `_extract_prior_findings` keeps only the findings
+whose target won the route, so with three owners a `brief` finding sent the run
+to `research-synthesis` and the `authoring` findings raised alongside reached
+nobody. The engine now derives, for each stage about to run, the blocking
+findings it owns that no owner of that target has yet seen, and emits them in a
+`CARRIED_FINDINGS` packet header beside `PRIOR_FINDINGS`. Two headers, because
+they are two different things: one came from the transition that produced this
+packet, the other was raised earlier and never delivered.
+
+The carried list is derived from the recorded run and never consumed. Nothing
+marks a finding delivered; what stops it being outstanding is an owner of its
+target producing a result, which is already in the record. A store that emptied
+as packets were compiled would make every packet that read it unreplayable.
+
+### Escalation
+
+A finding's severity is `blocking`, `escalation`, or `advisory`.
+
+`escalation` is for a defect in an artifact no stage of the workflow may write:
+repository guidance, the source library, the tools, the workflow itself.
+Blocking is untrue of it, because the document under production is not at fault
+and no revision of it could help; advisory is untrue of it, because something is
+wrong and someone must fix it. An escalation takes no `repair_target` and the
+engine refuses one that carries both, since having no owner in this run is what
+makes it an escalation.
+
+It does not block, does not spend an iteration budget, and does not stop
+acceptance. It is written to `state["escalations"]`, keyed by stage and finding
+id so a lane restating it every iteration occupies one slot, and reported in
+`status` and in the terminal message of an accepted or blocked run. The run is
+what ends; the escalation is what leaves.
 
 ### Hashing boundary
 

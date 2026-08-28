@@ -57,10 +57,27 @@ HOST_MAX = "host-max"
 REPAIR_ROUTES = "repair_routes"
 REPAIR_TARGET = "repair_target"
 
+# The reciprocal of a repair route, declared on the stage that does the repair:
+# the repair targets this stage is an owner of. A route says where a run goes
+# next; this says who a finding is *for*, which is not the same question once
+# more than one owner exists. A finding whose owner did not win the route is
+# held until that owner next runs, rather than discarded because someone else
+# was earlier in declaration order.
+REPAIRS = "repairs"
+
 # The only join a fan-out stage may request. Every declared lane is required,
 # lane findings are preserved verbatim under their lane identity in the
 # declared lane order, and the disposition is the worst any lane returned.
 STRICT_UNION = "strict-union"
+
+
+# The severity of a finding whose defect lies in an artifact no stage of the
+# run may write — repository guidance, the source library, the workflow itself.
+# It is not blocking, because the document under production is not at fault and
+# no revision of it could help; it is not advisory, because something really is
+# wrong and someone really must fix it. It leaves the run as a durable
+# escalation record instead of dying inside it as a note nobody reads.
+ESCALATION = "escalation"
 
 
 # Dispositions
@@ -80,8 +97,12 @@ SCHEMA_GATE = "gate-result.json"
 PROTOCOL_VERSION = 1
 
 # Bumping this invalidates every recorded workflow digest, because it changes
-# what the digest is computed over rather than what the guidance says.
-DIGEST_RECIPE = 1
+# what the digest is computed over rather than what the guidance says. Recipe 2
+# added the bytes of every lane fragment: recipe 1 read only `stage.fragments`,
+# so a fan-out stage's lane guidance — sixteen files, and the most substantive
+# instructions the propers pipeline has — could be rewritten under a live run
+# without the digest moving, while ARCHITECTURE.md said it could not.
+DIGEST_RECIPE = 2
 
 # Separator for packet assembly. Fixed bytes, never varies.
 _PACKET_SEP = "\n--- FRAGMENT: "
@@ -182,6 +203,41 @@ class WorkflowEngine:
                     f"{', '.join(sorted(declared))} but {schema_name} admits "
                     f"{', '.join(sorted(admitted))}; every value a finding "
                     f"may carry needs a route, and every route needs a value"
+                )
+            self._validate_repair_ownership(workflow, stage, routes, path)
+
+    @staticmethod
+    def _validate_repair_ownership(
+        workflow: dict[str, Any], stage: dict[str, Any],
+        routes: list[dict[str, Any]], path: Path,
+    ) -> None:
+        """Every repair target has at least one stage that admits to owning it.
+
+        A route says where the run goes; `repairs` says whose the finding is.
+        They are two halves of one fact and nothing else keeps them agreed, so
+        the stage a route points at must declare the target it is pointed at
+        for. A target may have more owners than that — `authoring` is owned by
+        `author-proper` as well as by `content-revision`, because both write
+        the leaf and either may be the next to run — but it may not have fewer
+        than the routes claim, or a finding would be held for a stage that
+        never admits to being able to repair it.
+        """
+        owns: dict[str, set[str]] = {}
+        for other in workflow["stages"]:
+            for target in other.get(REPAIRS) or []:
+                owns.setdefault(target, set()).add(other["id"])
+        for route in routes:
+            target = route[REPAIR_TARGET]
+            destination = route["transition"]
+            if destination in (ACCEPTED, BLOCKED):
+                continue
+            if destination not in owns.get(target, set()):
+                raise WorkflowError(
+                    f"{path}: {stage['id']} routes {REPAIR_TARGET} "
+                    f"{target!r} to {destination}, which does not declare "
+                    f"'{REPAIRS}': [\"{target}\"]. The stage a repair is sent "
+                    f"to must say it owns that repair, or a finding held for "
+                    f"its owner has no owner to be held for."
                 )
 
     # --- Document discovery ---
@@ -291,6 +347,10 @@ class WorkflowEngine:
         the definition that decide what happens next: transitions, iteration
         limits, gate commands, schemas. A run is bound to this digest so that
         changing any of them mid-run is detected rather than silently obeyed.
+
+        "Every fragment" means every lane fragment too. No single packet
+        carries them all — a lane packet quotes its own lane's and no other's —
+        which is precisely why the digest has to.
         """
         material = [
             f"recipe:{DIGEST_RECIPE}",
@@ -302,6 +362,12 @@ class WorkflowEngine:
         schemas: set[str] = set()
         for stage in workflow["stages"]:
             fragments.update(stage.get("fragments", []))
+            # A lane's own fragments are guidance a run is driven by exactly as
+            # much as the stage's are, and for a fan-out stage they are most of
+            # it. The pipeline JSON above covers their *names*; only this covers
+            # their bytes.
+            for lane in _stage_lanes(stage):
+                fragments.update(lane.get("fragments", []))
             schemas.add(self.schema_name_for(stage))
         for name in sorted(fragments):
             material.append(f"fragment:{name}:{_lf(self.load_fragment(name))}")
@@ -550,6 +616,9 @@ class WorkflowEngine:
             "iteration": 0,
             "stage_iterations": {},
             "stage_failures": {},
+            "stage_repeats": {},
+            "stage_blocking_ids": {},
+            "escalations": [],
             "packet_hashes": [],
             "result_hashes": [],
             "transitions": [],
@@ -578,7 +647,7 @@ class WorkflowEngine:
             )
             stage = self._get_stage(workflow, first_stage)
             packet = self._compile_stage_packets(
-                workflow, stage, state, run_dir, []
+                workflow, stage, state, run_dir, [], []
             )
             # Digesting and compilation read the same sources through separate
             # paths. Refuse a source edit that overlaps initial compilation.
@@ -997,7 +1066,13 @@ class WorkflowEngine:
                     f"run {run_id}: stage failure counts are inconsistent"
                 )
 
-        expected_failures: dict[str, int] = {}
+        # The budget is replayed through the engine's own function rather than
+        # recomputed here. Two implementations of one rule are two rules, and
+        # this one only has to agree with the other forever.
+        audit_state: dict[str, Any] = {
+            "stage_failures": {}, "stage_repeats": {},
+            "stage_blocking_ids": {}, "escalations": [],
+        }
         for index, (result, transition) in enumerate(zip(results, transitions)):
             packet = packets[index]
             if not isinstance(result, dict) or not isinstance(transition, dict) \
@@ -1042,6 +1117,9 @@ class WorkflowEngine:
                 body, self.load_schema(self.schema_name_for(stage)),
                 stage["type"],
             )
+            self._record_escalations(
+                audit_state, stage, body, packet["iteration"]
+            )
             disposition = body.get("disposition")
             if body.get("stage") != packet["stage"] \
                     or body.get("iteration") != packet["iteration"] \
@@ -1057,14 +1135,13 @@ class WorkflowEngine:
                 )
             elif stage["type"] == EVALUATOR:
                 if disposition == PASS:
-                    expected_failures[stage["id"]] = 0
+                    self._clear_failures(audit_state, stage)
                     expected_target = stage["pass_transition"]
                 elif disposition == CHANGES_REQUIRED:
-                    count = expected_failures.get(stage["id"], 0) + 1
-                    expected_failures[stage["id"]] = count
                     route = _repair_route(stage, body)
                     expected_target = (
-                        BLOCKED if count >= stage.get("max_iterations", 3)
+                        BLOCKED
+                        if self._failure_budget_spent(audit_state, stage, body)
                         else (route["transition"] if route is not None
                               else stage["fail_transition"])
                     )
@@ -1072,13 +1149,12 @@ class WorkflowEngine:
                     expected_target = BLOCKED
             else:
                 if disposition == PASS:
-                    expected_failures[stage["id"]] = 0
+                    self._clear_failures(audit_state, stage)
                     expected_target = stage["pass_transition"]
                 else:
-                    count = expected_failures.get(stage["id"], 0) + 1
-                    expected_failures[stage["id"]] = count
                     expected_target = (
-                        BLOCKED if count >= stage.get("max_iterations", 3)
+                        BLOCKED
+                        if self._failure_budget_spent(audit_state, stage, body)
                         else stage["fail_transition"]
                     )
             target = transition["to"]
@@ -1097,9 +1173,20 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"run {run_id}: terminal transition is not last"
                 )
-        if stage_failures != expected_failures:
+        if stage_failures != audit_state["stage_failures"]:
             raise WorkflowError(
                 f"run {run_id}: stage failure counts disagree with results"
+            )
+        if state.get("stage_repeats", {}) != audit_state["stage_repeats"]:
+            raise WorkflowError(
+                f"run {run_id}: stage repeat counts disagree with results"
+            )
+        # An escalation is the one thing a run produces that outlives it, so
+        # the ledger has to be what the results actually said rather than
+        # whatever the state file now holds.
+        if state.get("escalations", []) != audit_state["escalations"]:
+            raise WorkflowError(
+                f"run {run_id}: the escalation ledger disagrees with results"
             )
 
         first_stage = workflow["stages"][0]["id"]
@@ -1234,7 +1321,9 @@ class WorkflowEngine:
                     "run_id": run_id,
                     "disposition": ACCEPTED,
                     "stage": ACCEPTED,
-                    "message": "Workflow complete. All stages passed.",
+                    "escalations": pending.get("escalations", []),
+                    "message": "Workflow complete. All stages passed."
+                    + _escalation_note(pending),
                 }
             self._emit_event(run_id, {
                 "event": "blocked",
@@ -1245,8 +1334,10 @@ class WorkflowEngine:
                 "run_id": run_id,
                 "disposition": BLOCKED,
                 "stage": BLOCKED,
-                "message": block_reason or
-                "Workflow blocked. Evaluator returned BLOCKED.",
+                "escalations": pending.get("escalations", []),
+                "message": (block_reason or
+                            "Workflow blocked. Evaluator returned BLOCKED.")
+                + _escalation_note(pending),
             }
 
         # Transition to the next stage: compile its packet first, so a run is
@@ -1259,8 +1350,12 @@ class WorkflowEngine:
             "disposition": result["disposition"],
         })
         prior_findings = self._extract_prior_findings(result, stage)
+        carried_findings = self._carried_findings(
+            run_id, workflow, pending, next_stage, prior_findings, fresh=result
+        )
         packet = self._compile_stage_packets(
-            workflow, next_stage, pending, self.run_dir(run_id), prior_findings
+            workflow, next_stage, pending, self.run_dir(run_id),
+            prior_findings, carried_findings,
         )
         self._stage_packet(pending, packet)
         # The packet is written before the result that produced it, so that a
@@ -1317,6 +1412,8 @@ class WorkflowEngine:
             "iteration": state["iteration"],
             "stage_iterations": state["stage_iterations"],
             "stage_failures": state["stage_failures"],
+            "stage_repeats": state.get("stage_repeats", {}),
+            "escalations": state.get("escalations", []),
             "packets_emitted": len(state["packet_hashes"]),
             "results_received": len(state["result_hashes"]),
             "transitions": state["transitions"],
@@ -1352,9 +1449,8 @@ class WorkflowEngine:
             return report
         workflow = self.load_bound_workflow(state)
         stage = self._get_stage(workflow, state["current_stage"])
-        prior_findings = self._load_prior_findings_for_current(
-            run_id, state, workflow
-        )
+        prior_findings, carried_findings = \
+            self._load_prior_findings_for_current(run_id, state, workflow)
         # stage_iterations was incremented after the last packet was compiled,
         # so recompile at the iteration that packet used.
         iteration = (
@@ -1364,7 +1460,7 @@ class WorkflowEngine:
         )
         packet = self._compile_stage_packets(
             workflow, stage, state, self.run_dir(run_id), prior_findings,
-            iteration=iteration,
+            carried_findings, iteration=iteration,
         )
         deterministic = (
             packet["hash"] == last_pkt["hash"] if last_pkt else True
@@ -1574,6 +1670,7 @@ class WorkflowEngine:
         state: dict[str, Any],
         run_dir: Path,
         prior_findings: list[dict[str, Any]],
+        carried_findings: list[dict[str, Any]] | None = None,
         iteration: int | None = None,
         lane: dict[str, Any] | None = None,
         lane_index: int | None = None,
@@ -1640,6 +1737,19 @@ class WorkflowEngine:
         else:
             header_lines.append("PRIOR_FINDINGS: []")
 
+        # Two fields, because they are two different things and a worker acts
+        # on them differently. PRIOR_FINDINGS came from the transition that
+        # produced this packet. CARRIED_FINDINGS were raised earlier against
+        # work this stage owns and never reached it, because another owner won
+        # the route; they stand until this stage's own output is evaluated
+        # again. Merging them into one list would tell a worker that everything
+        # it is reading was just said, and that is not true.
+        header_lines.append(
+            "CARRIED_FINDINGS: " + json.dumps(
+                carried_findings or [], sort_keys=True, separators=(",", ":")
+            )
+        )
+
         header = _FIELD_SEP.join(header_lines)
 
         # Load fragments in declared order. Argument placeholders are
@@ -1695,6 +1805,7 @@ class WorkflowEngine:
         state: dict[str, Any],
         run_dir: Path,
         prior_findings: list[dict[str, Any]],
+        carried_findings: list[dict[str, Any]] | None = None,
         iteration: int | None = None,
     ) -> dict[str, Any]:
         """Compile a stage's packet and, for a fan-out stage, its lane packets.
@@ -1706,11 +1817,13 @@ class WorkflowEngine:
         hashes are all fixed before any agent is launched.
         """
         packet = self._compile_packet(
-            workflow, stage, state, run_dir, prior_findings, iteration=iteration
+            workflow, stage, state, run_dir, prior_findings, carried_findings,
+            iteration=iteration,
         )
         packet["lanes"] = [
             self._compile_packet(
                 workflow, stage, state, run_dir, prior_findings,
+                carried_findings,
                 iteration=packet["iteration"], lane=lane, lane_index=index,
             )
             for index, lane in enumerate(_stage_lanes(stage))
@@ -2022,7 +2135,47 @@ class WorkflowEngine:
             "path": str(dest.relative_to(self.repo_root)),
             "disposition": result.get("disposition", ""),
         })
+        self._record_escalations(state, stage, result, stage_iter)
         return dest, payload
+
+    @staticmethod
+    def _record_escalations(
+        state: dict[str, Any], stage: dict[str, Any],
+        result: dict[str, Any], stage_iter: int,
+    ) -> None:
+        """Carry an unrepairable defect out of the run instead of losing it.
+
+        An evaluator that finds a contradiction in repository guidance has
+        nowhere to send it: no stage of this workflow may write `guidance/`,
+        and neither blocking nor advisory is true of it. Blocking would end a
+        run whose document is correct; advisory is where it went, and it was
+        restated in every iteration of one real run and acted on in none,
+        because nothing outlives the run to act on.
+
+        So the run keeps a ledger. Escalations are held by `(stage, id)`, the
+        latest restatement of each replacing the one before it — a lane that
+        re-reports the same defect every iteration has not found a new one —
+        and sorted, so the ledger is a function of what was found and not of
+        when. It survives into `status`, into the terminal message, and into
+        the state file an operator reads afterwards.
+        """
+        raised = [finding for finding in result.get("findings", []) or []
+                  if finding.get("severity") == ESCALATION]
+        if not raised:
+            return
+        ledger = {
+            (entry["stage"], entry["finding"]["id"]): entry
+            for entry in state.setdefault("escalations", [])
+        }
+        for finding in raised:
+            key = (stage["id"], str(finding.get("id", "(unidentified)")))
+            ledger[key] = {
+                "stage": stage["id"],
+                "iteration": stage_iter,
+                "escalated_to": finding.get("escalated_to", ""),
+                "finding": finding,
+            }
+        state["escalations"] = [ledger[key] for key in sorted(ledger)]
 
     # --- Internal: transitions ---
 
@@ -2091,7 +2244,7 @@ class WorkflowEngine:
                         f"dispatching a worker with nothing to read, and on a "
                         f"stage that routes by owner it names no owner either"
                     )
-                spent = self._failure_budget_spent(state, stage)
+                spent = self._failure_budget_spent(state, stage, result)
                 if spent:
                     return BLOCKED, spent
                 route = _repair_route(stage, result)
@@ -2110,7 +2263,7 @@ class WorkflowEngine:
                 self._clear_failures(state, stage)
                 return stage["pass_transition"], None
             if disposition == FAIL:
-                spent = self._failure_budget_spent(state, stage)
+                spent = self._failure_budget_spent(state, stage, result)
                 if spent:
                     return BLOCKED, spent
                 return stage["fail_transition"], None
@@ -2233,31 +2386,95 @@ class WorkflowEngine:
 
     @staticmethod
     def _clear_failures(state: dict[str, Any], stage: dict[str, Any]) -> None:
-        """A stage that passes starts its next revision loop from zero."""
+        """A stage that passes starts its next revision loop from zero.
+
+        All three counters reset together. The standing finding ids go with
+        them: after a pass, a finding raised again is new work against a
+        document that satisfied this stage in between, not a repeat.
+        """
         state.setdefault("stage_failures", {})[stage["id"]] = 0
+        state.setdefault("stage_repeats", {})[stage["id"]] = 0
+        state.setdefault("stage_blocking_ids", {}).pop(stage["id"], None)
 
     @staticmethod
     def _failure_budget_spent(
-        state: dict[str, Any], stage: dict[str, Any]
+        state: dict[str, Any], stage: dict[str, Any],
+        result: dict[str, Any],
     ) -> str | None:
-        """Count consecutive failures, not visits, against max_iterations.
+        """Charge `max_iterations` for repetition, not for failing.
 
-        Returns the block reason once the budget is spent, otherwise None.
+        Returns the block reason once a budget is spent, otherwise None.
 
         Counting visits let a stage that keeps passing spend its own revision
         budget: a run that re-entered a gate three times on its way through an
         unrelated revision loop was blocked by that gate's first real failure,
-        with no revision attempted.
+        with no revision attempted. Counting failures fixed that and left a
+        second confusion in place: it could not tell a loop from progress. A
+        real run repaired nine of ten findings, raised different ones against a
+        substantially rewritten document, and was scored exactly as if it had
+        raised the same ten again. It blocked with four of five lanes passing
+        and one finding standing, which the lane that raised it said in as many
+        words was its own miss at the earlier iterations.
+
+        So two counters, both consecutive and both cleared by a pass:
+
+        `stage_repeats` is what `max_iterations` bounds. An iteration charges
+        it only when it carries a blocking finding this stage already had
+        standing — the same id, unrepaired. Different ids are different work
+        and cost nothing. The first failure of a streak is charged, because it
+        has no predecessor to repeat and because leaving it free would quietly
+        loosen every `max_iterations` in every workflow by one iteration; a
+        stage that never converges therefore still blocks on exactly the
+        failure it always did.
+
+        `stage_failures` counts every consecutive failure and is bounded by
+        `max_total_iterations`, default twice `max_iterations`. Without it a
+        stage that invents new findings forever never terminates. Twice is
+        chosen because the repeat budget already ends any stage that stops
+        converging, so this ceiling is reached only by a stage doing genuine
+        new work every time; doubling grants that stage as many iterations
+        again as the operator already declared, and no more. For
+        `content-evaluation` at three that is six — around nine hours and some
+        fifteen million subagent tokens for one document, which is a real
+        bound; three was demonstrably too few and unbounded is not a bound.
         """
+        stage_id = stage["id"]
+        standing = state.setdefault("stage_blocking_ids", {})
+        previous = standing.get(stage_id)
+        current = _blocking_ids(result)
+        standing[stage_id] = current
+
         failures = state.setdefault("stage_failures", {})
-        count = failures.get(stage["id"], 0) + 1
-        failures[stage["id"]] = count
+        count = failures.get(stage_id, 0) + 1
+        failures[stage_id] = count
+
+        repeated = sorted(set(current) & set(previous or []))
+        repeats = state.setdefault("stage_repeats", {})
+        spent = repeats.get(stage_id, 0)
+        if previous is None or repeated:
+            spent += 1
+        repeats[stage_id] = spent
+
         max_iter = stage.get("max_iterations", 3)
-        if count >= max_iter:
-            label = "gate " if stage["type"] == GATE else ""
+        ceiling = stage.get("max_total_iterations", 2 * max_iter)
+        label = "gate " if stage["type"] == GATE else ""
+        if spent >= max_iter:
+            unrepaired = (
+                f" still unrepaired: {', '.join(repeated)}" if repeated
+                else " with nothing repaired between them"
+            )
             return (
-                f"iteration limit exceeded for {label}{stage['id']}: "
-                f"{count}/{max_iter} consecutive failures"
+                f"iteration limit exceeded for {label}{stage_id}: "
+                f"{spent}/{max_iter} failures repeating a finding this stage "
+                f"had already raised{unrepaired}"
+            )
+        if count >= ceiling:
+            return (
+                f"iteration limit exceeded for {label}{stage_id}: "
+                f"{count}/{ceiling} consecutive failures. Each raised work "
+                f"the one before it did not, so the repeat budget "
+                f"({spent}/{max_iter}) never ran out; the absolute ceiling "
+                f"stops a stage that finds something new forever"
             )
         return None
 
@@ -2307,34 +2524,141 @@ class WorkflowEngine:
             return list(result.get("findings", []) or [])
         return []
 
+    def _carried_findings(
+        self,
+        run_id: str,
+        workflow: dict[str, Any],
+        state: dict[str, Any],
+        stage: dict[str, Any],
+        forwarded: list[dict[str, Any]],
+        fresh: dict[str, Any] | None = None,
+    ) -> list[dict[str, Any]]:
+        """Blocking findings this stage owns that no run of it has yet seen.
+
+        Routing decides where a run goes next. It also, before this, decided
+        who never heard about the defect at all: `_extract_prior_findings`
+        keeps only the findings whose target won the route, so with three
+        owners a `brief` finding sent the run to `research-synthesis` and the
+        seven `authoring` findings raised in the same breath reached nobody.
+        The author then re-authored with an empty packet and the next
+        evaluation rediscovered them, which is a five-lane evaluation and a
+        third of a failure budget spent learning what the run already knew.
+        That happened, in run b68cca80edb75854, at its first evaluation.
+
+        The old defence — the downstream regenerates, so it is rediscovered,
+        intended and not a loss — is true of `research`, which re-runs seven
+        lanes and writes a new brief. It was never true of `brief`, where the
+        only intervening stage corrects a sentence and hands the same document
+        back to the same author.
+
+        So a finding waits for its owner instead of dying at the route. This
+        computes, from the recorded run alone, which findings are still
+        waiting for the stage about to run:
+
+        - only from each routed evaluator's *most recent* result, because a
+          later evaluation of the same document supersedes an earlier one
+          entirely;
+        - only findings whose `repair_target` this stage declares in
+          `repairs`;
+        - never a finding the transition is already forwarding, which would
+          list it twice;
+        - and only while no owner of that target has run since. Delivery is
+          once, to whichever owner reaches it first: `author-proper` and
+          `content-revision` both write the leaf, and a finding delivered to
+          the one is not owed to the other.
+
+        Routing is untouched. This changes who hears, not where the run goes.
+        """
+        targets = set(stage.get(REPAIRS) or [])
+        if not targets:
+            return []
+        results = state.get("result_hashes") or []
+        if not results:
+            return []
+        owners: dict[str, set[str]] = {}
+        for other in workflow["stages"]:
+            for target in other.get(REPAIRS) or []:
+                owners.setdefault(target, set()).add(other["id"])
+
+        seen = {str(finding.get("id")) for finding in forwarded}
+        carried: list[dict[str, Any]] = []
+        for evaluator in workflow["stages"]:
+            if not evaluator.get(REPAIR_ROUTES):
+                continue
+            index = None
+            for position, entry in enumerate(results):
+                if entry["stage"] == evaluator["id"]:
+                    index = position
+            if index is None:
+                continue
+            if results[index]["disposition"] != CHANGES_REQUIRED:
+                continue
+            body = (
+                fresh if fresh is not None and index == len(results) - 1
+                else self._read_recorded_result(
+                    run_id, results[index], stage["id"]
+                )
+            )
+            for finding in body.get("findings", []) or []:
+                if finding.get("severity") != "blocking":
+                    continue
+                target = finding.get(REPAIR_TARGET)
+                if target not in targets:
+                    continue
+                finding_id = str(finding.get("id"))
+                if finding_id in seen:
+                    continue
+                answered = any(
+                    entry["stage"] in owners.get(target, set())
+                    for entry in results[index + 1:]
+                )
+                if answered:
+                    continue
+                seen.add(finding_id)
+                carried.append(finding)
+        return carried
+
     def _load_prior_findings_for_current(
         self, run_id: str, state: dict[str, Any], workflow: dict[str, Any]
-    ) -> list[dict[str, Any]]:
-        """Rebuild the prior findings the current packet was compiled with.
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        """Rebuild both finding lists the current packet was compiled with.
 
-        Whatever `_extract_prior_findings` put in the packet has to be
-        reconstructible from the record alone, or a replay of that packet would
-        recompile different bytes than the run emitted. So this asks that same
-        function the same question, about the transition that produced the
-        current stage: one rule decides what is forwarded, and one rule
-        reproduces it. Two rules that had to agree did not stay agreed.
+        Whatever `_extract_prior_findings` and `_carried_findings` put in the
+        packet has to be reconstructible from the record alone, or a replay of
+        that packet would recompile different bytes than the run emitted. So
+        this asks those same functions the same questions, about the transition
+        that produced the current stage: one rule decides what is forwarded,
+        and one rule reproduces it. Two rules that had to agree did not stay
+        agreed.
+
+        The carried list is derived, never consumed. Delivering a finding does
+        not mark it delivered anywhere; what makes it stop being outstanding is
+        its owner producing a result, which is already in the record. A store
+        that emptied as packets were compiled would make every packet that read
+        it unreplayable.
         """
         current = state["current_stage"]
+        stage = self._get_stage(workflow, current)
         transitions = state.get("transitions") or []
         results = state.get("result_hashes") or []
         if not transitions or not results \
                 or transitions[-1].get("to") != current:
-            return []
+            return [], []
         source = self._get_stage(workflow, transitions[-1]["from"])
         # Whether anything can be forwarded at all is decided by the stage and
         # its disposition, before the recorded result is opened. Otherwise a
         # replay of a stage that forwards nothing fails on a file it would
         # never have read, and `replay` is the tool an operator reaches for
         # when a run is already in trouble.
-        if not _may_forward(source, transitions[-1].get("disposition")):
-            return []
-        result = self._read_recorded_result(run_id, results[-1], current)
-        return self._extract_prior_findings(result, source)
+        if _may_forward(source, transitions[-1].get("disposition")):
+            result = self._read_recorded_result(run_id, results[-1], current)
+            prior = self._extract_prior_findings(result, source)
+        else:
+            result, prior = None, []
+        carried = self._carried_findings(
+            run_id, workflow, state, stage, prior, fresh=result
+        )
+        return prior, carried
 
     def _read_recorded_result(
         self, run_id: str, entry: dict[str, Any], current: str
@@ -2663,6 +2987,8 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
 
         _validate_execution(path, sid, stype, stage)
         _validate_repair_routes(path, sid, stype, stage)
+        _validate_repairs(path, sid, stage)
+        _validate_iteration_bounds(path, sid, stage)
 
     # Validate transitions point to valid stages or terminal states
     accepting = []
@@ -2699,6 +3025,59 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
         raise WorkflowError(
             f"{path}: no stage transitions to {ACCEPTED}; the workflow has no "
             f"way to succeed"
+        )
+
+
+def _validate_repairs(
+    path: Path, sid: str, stage: dict[str, Any]
+) -> None:
+    """A stage's declared repair ownership is a list of distinct targets."""
+    if REPAIRS not in stage:
+        return
+    repairs = stage[REPAIRS]
+    if not isinstance(repairs, list) or not repairs:
+        raise WorkflowError(
+            f"{path}: {sid}: '{REPAIRS}' must be a nonempty list of repair "
+            f"targets this stage owns"
+        )
+    seen: set[str] = set()
+    for index, target in enumerate(repairs):
+        if not isinstance(target, str) or not target:
+            raise WorkflowError(
+                f"{path}: {sid}: {REPAIRS}[{index}] must be a nonempty string"
+            )
+        if target in seen:
+            raise WorkflowError(
+                f"{path}: {sid}: duplicate repair ownership: {target}"
+            )
+        seen.add(target)
+
+
+def _validate_iteration_bounds(
+    path: Path, sid: str, stage: dict[str, Any]
+) -> None:
+    """The two budgets a looping stage is bounded by, if it declares them.
+
+    `max_iterations` bounds repetition; `max_total_iterations` is the absolute
+    ceiling on consecutive failures and defaults to twice it. A ceiling below
+    the repeat budget could never be reached by anything the repeat budget did
+    not stop first, so declaring one is a mistake worth refusing at load.
+    """
+    if "max_iterations" not in stage and "max_total_iterations" not in stage:
+        return
+    max_iter = stage.get("max_iterations", 3)
+    if type(max_iter) is not int or max_iter < 1:
+        raise WorkflowError(
+            f"{path}: {sid}: 'max_iterations' must be a positive integer"
+        )
+    if "max_total_iterations" not in stage:
+        return
+    ceiling = stage["max_total_iterations"]
+    if type(ceiling) is not int or ceiling < max_iter:
+        raise WorkflowError(
+            f"{path}: {sid}: 'max_total_iterations' must be an integer of at "
+            f"least 'max_iterations' ({max_iter}); a lower ceiling can never "
+            f"be reached, because the repeat budget stops the stage first"
         )
 
 
@@ -2850,6 +3229,40 @@ def _may_forward(stage: dict[str, Any], disposition: Any) -> bool:
     )
 
 
+def _escalation_note(state: dict[str, Any]) -> str:
+    """The one line a terminal message owes the escalation ledger.
+
+    A run that ends without saying it found something only a maintainer can
+    fix has lost the finding as surely as discarding it would have.
+    """
+    escalations = state.get("escalations") or []
+    if not escalations:
+        return ""
+    named = ", ".join(
+        f"{entry['finding'].get('id', '(unidentified)')} "
+        f"-> {entry.get('escalated_to') or '(unnamed artifact)'}"
+        for entry in escalations
+    )
+    return (
+        f" {len(escalations)} escalation"
+        f"{'' if len(escalations) == 1 else 's'} stand for a maintainer, in "
+        f"no artifact this run may write: {named}."
+    )
+
+
+def _blocking_ids(result: dict[str, Any]) -> list[str]:
+    """Every blocking finding id in a result, sorted and unique.
+
+    Sorted because the set is compared and reported, never read in the order
+    lanes happened to finish in.
+    """
+    return sorted({
+        str(finding.get("id", "(unidentified)"))
+        for finding in result.get("findings", []) or []
+        if finding.get("severity") == "blocking"
+    })
+
+
 def _repair_route(
     stage: dict[str, Any], result: dict[str, Any]
 ) -> dict[str, Any] | None:
@@ -2980,6 +3393,7 @@ def _validate_result(
         # accepting a blocking finding without it would leave the engine to
         # guess at the one thing it must not guess at.
         blocking_fields = schema.get("blocking_finding_fields", [])
+        escalation_fields = schema.get("escalation_finding_fields", [])
         finding_enums = schema.get("finding_enums", {})
         for i, finding in enumerate(findings):
             if not isinstance(finding, dict):
@@ -2995,6 +3409,24 @@ def _validate_result(
                         raise WorkflowError(
                             f"findings[{i}] is blocking and missing required "
                             f"field: {field}"
+                        )
+            elif finding.get("severity") == ESCALATION:
+                for field in escalation_fields:
+                    if field not in finding:
+                        raise WorkflowError(
+                            f"findings[{i}] is an escalation and missing "
+                            f"required field: {field}"
+                        )
+                # An escalation is precisely a defect no stage in this run may
+                # repair. Naming a repair owner would make it a blocking
+                # finding wearing a severity that exempts it from the audit.
+                for field in blocking_fields:
+                    if field in finding:
+                        raise WorkflowError(
+                            f"findings[{i}] is an escalation and carries "
+                            f"'{field}'; an escalation has no repair owner in "
+                            f"this run, which is what makes it an escalation. "
+                            f"Name one and it is blocking."
                         )
             for field in sorted(finding_enums):
                 if field in finding \

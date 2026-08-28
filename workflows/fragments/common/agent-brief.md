@@ -14,6 +14,11 @@ all of that.
 3. Do not paraphrase, summarize, or reinterpret the packet. Execute it.
 4. If you are a reviser, the packet contains PRIOR_FINDINGS from the
    evaluator. Address each blocking finding. Do not relitigate accepted work.
+   A CARRIED_FINDINGS header, where it is not empty, holds blocking findings
+   raised in an earlier evaluation against work this stage owns, which reached
+   no owner then because a different owner was repaired first. They still
+   stand and they are addressed to you. Treat them exactly as PRIOR_FINDINGS,
+   and say in your summary what you did with each.
 5. If you are an evaluator, return structured findings with stable IDs. Do
    not rediscover what mechanical gates already checked.
 6. Your prose, layout, and scholarly choices may vary. The guidance sequence

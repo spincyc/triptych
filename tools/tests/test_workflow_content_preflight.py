@@ -49,7 +49,8 @@ from test_workflow_repair_routing import (  # noqa: E402
 
 STAGE = "content-preflight"
 TOOL = "check-content-preflight"
-CHECKS = ("references-used", "identifiers-resolve", "relation-coverage",
+CHECKS = ("references-used", "identifiers-resolve",
+          "restricted-not-reproduced", "relation-coverage",
           "unquoted-not-quoted")
 # A leaf the whole evaluation loop has already accepted, in the provider the
 # rest of the workflow suite drives runs against.
@@ -113,7 +114,7 @@ class TopologyTests(unittest.TestCase):
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
         self.assertEqual(list(commands), list(CHECKS),
-                         "the four checks the design names, in order")
+                         "the five checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -180,8 +181,51 @@ class CheckBehaviourTests(unittest.TestCase):
         library.mkdir(parents=True)
         (library / "work.toml").write_text(
             'id = "work.catholic-church.missale-romanum"\n', encoding="utf-8")
+        self.write_library()
         self.write_leaf()
         self.write_manifest(['"introit"', '"collect"'])
+        self.write_bindings()
+
+    # One public-domain witness and one restricted one, each reached the way
+    # a real binding reaches it: the public-domain artifact directly, the
+    # restricted one through the passage record that names its artifact.
+    PUBLIC_ARTIFACT = ("artifact.english-college-of-douay.douay-rheims-bible."
+                       "challoner-1749.verse-text")
+    RESTRICTED_PASSAGE = (
+        "passage.united-states-conference-of-catholic-bishops."
+        "new-american-bible-revised-edition.usccb-web-2026-08-21.galatians")
+    RESTRICTED_ARTIFACT = (
+        "artifact.united-states-conference-of-catholic-bishops."
+        "new-american-bible-revised-edition.usccb-web-2026-08-21.galatians")
+
+    def write_library(self):
+        library = self.tree / "src" / "sources" / "works" / "probe"
+        (library / "douay.toml").write_text(
+            'record_type = "artifact"\n'
+            f'id = "{self.PUBLIC_ARTIFACT}"\n'
+            'storage = "tracked"\n'
+            'rights_status = "public-domain"\n', encoding="utf-8")
+        (library / "nabre-artifact.toml").write_text(
+            'record_type = "artifact"\n'
+            f'id = "{self.RESTRICTED_ARTIFACT}"\n'
+            'storage = "restricted"\n'
+            'rights_status = "restricted"\n', encoding="utf-8")
+        (library / "nabre-passage.toml").write_text(
+            'record_type = "passage"\n'
+            f'id = "{self.RESTRICTED_PASSAGE}"\n'
+            f'artifact_id = "{self.RESTRICTED_ARTIFACT}"\n', encoding="utf-8")
+
+    def write_bindings(self, restricted_role="context"):
+        research = self.leaf / "research"
+        research.mkdir(exist_ok=True)
+        (research / "source-bindings.toml").write_text(
+            'schema = 1\nrecord_type = "bindings"\n\n'
+            '[[bindings]]\n'
+            f'source_id = "{self.PUBLIC_ARTIFACT}"\n'
+            'role = "translation-control"\n\n'
+            '[[bindings]]\n'
+            f'source_id = "{self.RESTRICTED_PASSAGE}"\n'
+            f'role = "{restricted_role}"\n', encoding="utf-8")
 
     GOOD_TRANSLATION = "English: Douay--Rheims (Challoner), Ps. 8:2"
     GOOD_ID = "work.catholic-church.missale-romanum"
@@ -283,6 +327,98 @@ evidence = ["source-grounded-synthesis"]
             with self.subTest(check=other):
                 self.assertEqual(self.probe(other).returncode, 0,
                                  "one defect refused one check")
+
+    # --- restricted-not-reproduced --------------------------------------
+
+    def test_restricted_refuses_a_restricted_translation_control(self):
+        """The leaf declares the reproduction, in its own binding record.
+
+        `translation-control` is the role that says the published English is
+        this witness's words. Against an artifact registered `restricted` it
+        is a contradiction between two files, and neither file shows it.
+        """
+        self.write_bindings(restricted_role="translation-control")
+        result = self.probe("restricted-not-reproduced")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("bound as translation-control", result.stderr)
+        self.assertIn("registered restricted", result.stderr)
+        self.assertIn(self.RESTRICTED_PASSAGE, result.stderr,
+                      "the refusal names the source it refused")
+
+    def test_restricted_refuses_a_set_passage_credited_to_restricted_bytes(self):
+        """The leaf prints it, whatever role the binding claims.
+
+        The binding still says `context` — summarised, not reproduced — and
+        the leaf prints a passage over the witness's name anyway. This is the
+        shape the earlier production's rights violation actually had.
+        """
+        self.write_leaf(translation="New American Bible, Revised Edition, "
+                                    "Gal. 5:16--24")
+        result = self.probe("restricted-not-reproduced")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("a set passage is attributed to", result.stderr)
+        self.assertIn("may not be reproduced", result.stderr)
+
+    def test_restricted_reads_the_rights_through_the_passage_record(self):
+        """The rights are on the artifact; the leaf never names the artifact.
+
+        The binding names a passage, and only the passage's `artifact_id`
+        reaches the record that carries `storage`. A check that stopped at the
+        bound id would find no rights at all and pass everything.
+        """
+        library = self.tree / "src" / "sources" / "works" / "probe"
+        (library / "nabre-artifact.toml").write_text(
+            'record_type = "artifact"\n'
+            f'id = "{self.RESTRICTED_ARTIFACT}"\n'
+            'storage = "tracked"\n'
+            'rights_status = "public-domain"\n', encoding="utf-8")
+        self.write_bindings(restricted_role="translation-control")
+        self.assertEqual(
+            self.probe("restricted-not-reproduced").returncode, 0,
+            "with the artifact unrestricted the same binding is lawful")
+
+    def test_restricted_passes_a_public_domain_translation_control(self):
+        """The Douay is bound as the translation control and printed. Fine."""
+        result = self.probe("restricted-not-reproduced")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("2 bound sources, 1 of them restricted, none reproduced",
+                      result.stdout)
+
+    def test_restricted_ignores_a_word_two_bound_sources_share(self):
+        """An attribution that cannot say which source it means says nothing.
+
+        Both bound sources become "bible" here. A word that does not
+        discriminate between the leaf's own bindings cannot be evidence that
+        the restricted one was the one reproduced.
+        """
+        self.write_leaf(translation="Bible, Ps. 8:2")
+        self.assertEqual(
+            self.probe("restricted-not-reproduced").returncode, 0,
+            "a shared word must not convict either source")
+
+    def test_a_leaf_local_alias_of_a_printed_passage_is_still_read(self):
+        """`format.tex` renames the environment; the passage is still printed.
+
+        Six of the twenty published propers wrap `sourcecard` in a name of
+        their own, `54-fourteenth-after-pentecost` — the leaf both production
+        runs were producing — among them. A check matching only the base names
+        saw zero printed passages in those six. It was not passing them; it
+        was not reading them.
+        """
+        (self.leaf / "format.tex").write_text(
+            "\\newenvironment{fulltextenglish}[1]"
+            "{\\begin{sourcecard}{#1}\\small}{\\end{sourcecard}}\n",
+            encoding="utf-8")
+        (self.leaf / "main.tex").write_text(
+            (self.leaf / "main.tex").read_text(encoding="utf-8")
+            .replace("namedtranslation", "fulltextenglish")
+            .replace(self.GOOD_TRANSLATION,
+                     "New American Bible, Revised Edition, Gal. 5:16--24"),
+            encoding="utf-8")
+        result = self.probe("restricted-not-reproduced")
+        self.assertEqual(result.returncode, 1,
+                         "the alias must not hide the printed passage")
+        self.assertIn("a set passage is attributed to", result.stderr)
 
     def test_identifiers_resolve_refuses_an_unregistered_identifier(self):
         self.write_leaf(identifier="edition.no-such-house.no-such-book.1861")
