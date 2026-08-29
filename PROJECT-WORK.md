@@ -1912,3 +1912,227 @@ Status: **awaiting one confirmation Codex review**, scoped to these four
 corrections and a regression check. E1 is not accepted and not integrated; no
 merge to `main`, deployment, release signing, or self-acceptance has occurred,
 and no new hardening lane was opened.
+
+## E1 Catena integration confirmation review
+
+<!-- promised-deliverable: corpus-browser-catena-e1-integration-confirmation-2026-08-29 -->
+
+The single confirmation review of the one authorized bounded correction pass,
+run in a fresh separate clone at the exact corrected head and reviewing only the
+bounded delta. Disposition: **CONFIRMED — CATENA E1 INTEGRATION READY TO
+MERGE**, with zero confirmation blockers.
+
+Exact identities resolved at review start: pre-correction reviewed head
+`9810a29c38f6138069d11cb7c735d8bb8b190326`; corrected candidate head
+`b832cdc5bc01391cea67c01437318d25e0c7c315` (`origin/integration/catena-e1`
+resolves to it); original authorized integration base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`; independent integration review
+`review/catena-e1-integration` at `c3698563e3b45e35a672db37616e39ef27eb3d08`
+(**CHANGES REQUIRED**); convergence review
+`f1a5bbad763b847ded8799748223898de6ad4de9`; V16 source
+`cc1f2fb8625f044558c26edd358b99cd7dcc7646`; current `origin/main`
+`004615faf506eb4083d484d41b18ee1c61f0aa7f`. The candidate was not rebased,
+not modified, and not merged.
+
+### Bounded delta
+
+Two commits, `fb1c05af8` and `b832cdc5b`, over seven paths: `PROJECT-WORK.md`,
+`guidance/corpus-browser-roadmap.md`, `promised-deliverables.toml`,
+`src/web/browser/catena/catena.css`, `src/web/browser/catena/catena.js`,
+`tools/tests/catena_recovery_focus_gate.mjs` (new),
+`tools/tests/test_catena_production.py`. Every changed line belongs to one of
+the four authorized corrections; no unrelated semantic or backlog work entered.
+Against the integration base the candidate carries thirteen paths — the twelve
+recorded manifest paths plus the one authorized new gate file — and no other
+new path.
+
+### Merge blocker 1 — translation-absence delimiter: closed
+
+The delimiter is a DOM text node, `if (row.author && row.work)
+item.appendChild(textNode(' — '));`, not a CSS gap. Verified in real Chromium
+151 over the BUILT artifact on the production route
+`/catena/index.html#book=Gen&chapter=1&bible=douay-rheims&voice=translation:en`:
+all eight recorded absence rows flatten apart, the first reading
+`Ambrose of Milan — Hexameron`; no row's flattened text contains
+`author + work`; `innerText` also carries the delimiter, so the separation is
+accessibility-relevant text and not decoration; the child-node sequence is
+`absence-author`, `#text`, `absence-work`; there is no duplicate separator and
+no dangling one, because the node is written only where both halves exist. The
+disclosure still opens on arrival with the same summary, eight reasons and two
+partial offers; provenance and refusal semantics are unchanged; Genesis rows are
+stable and the corpus check is unchanged. The adjacent-identity controls are
+real further rows — `Jerome — Liber quaestionum hebraicarum in Genesim` and
+`Remigius of Auxerre — Commentarius in Genesim` — so the correction is not a
+one-row hardcode.
+
+### Merge blocker 2 — visible keyboard recovery focus: closed
+
+Verified in the built output, from computed values rather than stylesheet text.
+On the success path and on the reviewed failure/recovery path, the element
+Chromium reports as active is `MAIN#reading`, it matches `:focus-visible`, and
+its computed ring is `outline-style: solid`, `outline-width: 3px`,
+`outline-color: rgb(62, 43, 107)`, `outline-offset: 2px`, against a resting
+`outline-style: none` — so the indicator is a difference and not a permanent
+decoration. Measured WCAG contrast is **10.95:1** against the resolved surface
+`rgb(248, 245, 239)`, independently reproduced. A mouse press on the region
+leaves `:focus-visible` false and `outline-style: none`, and the next keyboard
+stop after that press draws a ring, so the keyboard-only heuristic is read
+rather than suppressed. The one added rule asks for the shared role's own
+`3px solid var(--focus)` and `outline-offset` still comes from the universal
+rule, so the route invents no colour or width of its own and the 2026-08-11
+finding is not reintroduced; the current visual language is preserved. The
+shared shell is untouched, and focus ownership is unchanged.
+
+### Real-Chromium focus gate and falsifiability
+
+`tools/tests/catena_recovery_focus_gate.mjs` drives real Chromium over CDP
+against the built site, imports only `node:` builtins, and makes exactly the 12
+named assertions `RecoveryFocusVisibilityTest` (6 tests) requires across
+absenceRows, successPath, mousePath and failurePath. All 12 passed at the
+corrected head. Its honesty was verified rather than assumed: with no browser
+or no built site it exits 3 and the Python test skips naming the enabling
+variable, so it cannot report a pass it did not observe. Falsifiability was
+reproduced independently, in a disposable copy of the build with the two
+product edits reverted and the reviewed candidate untouched: exactly three
+assertions failed — `absence-rows-read-apart-when-flattened`
+(`flattened together: Ambrose of MilanHexameron…`),
+`recovery-focus-is-visible-in-real-chromium` and
+`failed-recovery-focus-is-visible-in-real-chromium` (both
+`outline-style is none — this is the reviewed defect`) — and nothing else moved.
+
+### Bounded correction 1 — curated suite: correct
+
+The forbidden `MODEL_SHA256` pin and `test_the_model_is_byte_identical` are
+gone and nothing replaces them; the only 40/64-hex string left in the file is
+the V16 provenance reference in its docstring, so no test fails merely because
+a future legitimate commit changes. No hostile or evidence-only machinery
+remains: no `Proxy` walkers, planted prototypes, inherited accessors, hostile
+thenables, realm pollution, evidence-package or attempt-history proof, or
+correction-lane bookkeeping. The prototype and freeze reads that remain belong
+to `V16CompletionEnvelopeTest`, a retained production class asserting the
+shipped immutability contract. `GenuinelyLateStaleWorkTest` remains present and
+ratified, and its `GUARDED` roster is still consumed by three retained classes.
+The over-wide 2026-08-11 print pin is narrowed to
+`test_the_only_focus_rule_defers_to_the_shared_role`, which pins exactly one
+focus rule, its selector and body, the absence of any bare `:focus`, and its
+absence from the print block.
+
+The inventory was recounted independently by AST, the same way for both files —
+a class is runnable if it defines at least one `test_` method:
+
+| | runnable classes | tests | dependency-only bases |
+| --- | --- | --- | --- |
+| corrected candidate suite | 71 | 394 | 3 |
+| V16 wave-1 source | 105 | 604 | 3 |
+| omitted | 36 | 221 | 0 |
+| added by the correction | 2 | 13 | 0 |
+
+The arithmetic closes exactly: 604 − 221 = 383 retained, less the two tests
+`FrozenContractTest` and `V15TransportOwnershipTest` each lost, plus 13 added,
+is 394. The disproved `8 hostile + 40 non-manifest` split is retired and not
+restated. All nine required production coverage categories remain represented —
+exact voices, refusal/absence/provenance, namespace/request closure,
+projection/transport ownership, same-path/late isolation, cache behaviour,
+malformed production data, governed budgets (`PayloadTest`), and the generator
+contract (`V7SharedFieldDriftTest` with `tools/tests/test_catena.py`) — and no
+production category was lost.
+
+### Bounded correction 2 — record integrity: correct
+
+`PROJECT-WORK.md` now carries exactly one work-register marker for the ledger ID
+`corpus-browser-catena-e1-integration-candidate-2026-08-28`, which the
+pre-correction head did not have at all.
+`test_promised_deliverables` passes 4/4 including
+`test_repository_ledger_is_valid`, and `tools/check-promised-deliverables`
+reports the ledger valid at 31 tracked / 22 complete. The recorded generator
+command is the executable `python3 scripts/_catena.py check`; the bare form is
+genuinely not executable (`scripts/_catena.py` is mode 644 and a bare
+invocation returns `Permission denied`) and now appears only as the prose
+explaining why it is not the command.
+
+### Fresh validation at the exact corrected head
+
+| Check | Independent result |
+| --- | --- |
+| `python3 scripts/_catena.py check` | pass: fragments 1,351 / books 1 / canon 73 |
+| `python3 scripts/_catena.py structure` + `paragraphs` | regenerated with zero changed tracked paths |
+| `python3 -m unittest tools.tests.test_catena` | 56/56, zero skips |
+| curated production suite | 394/394, zero skips, live Chromium gate included |
+| `tools/tests/catena_recovery_focus_gate.mjs` | 12/12 assertions, zero console problems, Chrome/151.0.7922.173 |
+| focus-gate falsifiability | exactly 3 expected failures, nothing else |
+| static browser checks | 5/5 |
+| `test_promised_deliverables` | 4/4 |
+| governed gzip-9 budgets | CSS 7,921/8,000 whole and 2,698/2,700 stripped; JS 12,992/13,000 whole and 7,843/8,800 stripped; `catena-model.js` uncapped at 44,247; no ceiling raised, no overage |
+
+### Regression comparison against the exact base
+
+Real-Chromium route-only runs over `/catena/index.html` at the exact base and
+at the corrected head each produce **121 assertion identities, 95 pass / 14 fail
+/ 12 skip**, with zero identities added or removed and zero status changes. The
+14 inherited failures are 9 `single-main-element` and 5
+`primary-controls-meet-target-size`, the shared-shell baseline.
+
+Full discovery over `tools/tests` at both endpoints, each with the public site
+built first and the same browser available: **base 1,736 tests / 46 failures /
+13 errors / 11 skips**, **corrected head 2,134 tests / 46 failures / 13 errors /
+11 skips**. The 398-test growth is exact: four added generator-contract tests
+plus the 394-test curated module. The failure and error identity sets are
+identical at both endpoints — 46 raw failure identities collapsing to the
+recorded **24 distinct failing test methods**, and **13 error identities** —
+with zero added and zero removed, and **zero Catena failures or errors**. The
+two identities the previous review found at the pre-correction head, the ledger
+failure and its tool-registry smoke subtest, are closed.
+
+### Ownership boundaries and backlogs
+
+The bounded correction introduced no change to release bindings, the shared
+shell, Liturgy, PDFs, unrelated CLI, unrelated data, the common browser gate
+(`tools/tests/corpus_browser_gate.mjs` is byte-identical to the base),
+`tmt.json`, the examples/tool registry, or deployment config. The records do
+not falsely close anything: the hardening backlog (four findings, including the
+no-JavaScript `h2`), the eight evidence-tooling findings and the twenty
+separately owned concerns all remain explicitly open, and the four Catena
+release bindings remain unrefreshed for their release owner.
+
+### Current-main movement and merge-time conflicts
+
+Current `origin/main` is `004615faf506eb4083d484d41b18ee1c61f0aa7f`; the merge
+base with the integration branch is still
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and main has advanced by eight
+commits over 3,570 paths of Complete Missal remediation and deployment work.
+Read-only `git merge-tree` reports exactly two conflicted paths, both
+append-only durable records, and the path overlap between the two sides is
+exactly those two files:
+
+- `PROJECT-WORK.md` — one tail hunk where both sides append a new section;
+- `promised-deliverables.toml` — one tail hunk where both sides append a new
+  `[[deliverables]]` entry.
+
+No production, source, test, data, or configuration path conflicts. This is
+merge-time reconciliation, not candidate failure. A local rehearsal, discarded
+and never pushed, confirmed the resolution is mechanical and small, and
+recorded one non-obvious detail for the merging agent: in
+`promised-deliverables.toml` the shared `[[deliverables]]` header sits above the
+hunk and the shared `  ]` array terminator below it, so keeping both entries
+requires closing the first entry's `evidence` array and giving the second entry
+its own `[[deliverables]]` header — blind concatenation produces invalid TOML.
+With that resolution the merged tree gave ledger 4/4 and
+`tools/check-promised-deliverables` valid at 32 tracked / 23 complete, corpus
+check 1,351/1/73, `test_catena` 56/56, the curated suite 394/394 under real
+Chromium, static browser checks green, and the Catena route unchanged at
+121 identities / 95 pass / 14 fail / 12 skip.
+
+### Disposition
+
+**CONFIRMED — CATENA E1 INTEGRATION READY TO MERGE.** Both product blockers are
+closed on real production paths, the curated-suite cleanup and the record
+integrity correction are correct, no regression exists between the base or the
+pre-correction head and the corrected head, budgets pass, ownership boundaries
+hold, and the current-main conflicts are record-only and mechanically
+resolvable. Merge-blocker count: **zero**.
+
+Exact next action: **merge `integration/catena-e1` into current `main`,
+resolving only the two known current-main record conflicts above, then run a
+minimal post-merge Catena/ledger/browser smoke check and push `main`.** This
+review did not merge, deploy, re-sign release-owned records, modify the
+integration candidate, or reopen hardening.

@@ -340,6 +340,69 @@ Catena failures. Status:
 a regression check. E1 remains unaccepted and unintegrated; no merge, deploy,
 release signing, or self-acceptance occurred.
 
+The single confirmation review (branch
+`review/catena-e1-integration-confirmation`) then ran in a fresh separate clone
+at the exact corrected head `b832cdc5bc01391cea67c01437318d25e0c7c315`, over
+the bounded delta alone, against current `origin/main`
+`004615faf506eb4083d484d41b18ee1c61f0aa7f`. Disposition: **CONFIRMED — CATENA
+E1 INTEGRATION READY TO MERGE**, zero merge blockers. What it independently
+observed rather than accepted:
+
+- **Translation-absence delimiter closed.** The delimiter is a DOM text node,
+  not a CSS gap. In real Chromium over the built artifact all eight recorded
+  rows flatten apart — the first reads `Ambrose of Milan — Hexameron` — no row
+  contains `author + work`, `innerText` carries the delimiter too, the child
+  sequence is `absence-author`, `#text`, `absence-work`, and there is neither a
+  duplicate nor a dangling separator. The disclosure still opens on arrival
+  with the same summary, eight reasons and two partial offers; provenance and
+  refusal semantics are unchanged. The adjacent-identity controls are real
+  further rows (`Jerome — Liber quaestionum hebraicarum in Genesim`,
+  `Remigius of Auxerre — Commentarius in Genesim`), so the fix is not a one-row
+  hardcode.
+- **Keyboard recovery focus closed.** On the success path and the reviewed
+  failure/recovery path the active element is `MAIN#reading`, it matches
+  `:focus-visible`, and the computed ring is `solid` / `3px` /
+  `rgb(62, 43, 107)` / offset `2px` against a resting `outline-style: none`;
+  measured contrast **10.95:1** against the resolved `rgb(248, 245, 239)`. A
+  mouse press draws nothing and the next keyboard stop draws a ring. The rule
+  asks for the shared role's own `3px solid var(--focus)`, so the route invents
+  no appearance of its own and the shared shell is untouched.
+- **Focus gate and falsifiability.** The gate uses real Chromium over CDP
+  against the built site, imports only `node:` builtins, and made all 12 named
+  assertions; with no browser or no build it exits 3 and its Python test skips
+  naming the enabling variable. Reverting the two product edits in a disposable
+  copy of the build failed exactly three assertions with exactly the reported
+  messages and moved nothing else.
+- **Curated suite.** No SHA or version pin remains; no hostile, `Proxy`,
+  prototype, thenable, realm or evidence-only machinery remains;
+  `GenuinelyLateStaleWorkTest` is retained as ratified with its `GUARDED`
+  roster still consumed by three retained classes; the print pin is narrowed to
+  the one focus rule. The inventory recounted independently by AST is exactly
+  71 classes / 394 tests / 3 bases against 105 / 604 / 3, so 36 classes and 221
+  tests omitted and 2 classes / 13 tests added, and the arithmetic closes. All
+  nine production coverage categories remain represented.
+- **Record integrity.** Exactly one work-register marker; ledger 4/4 and the
+  checker valid at 31 tracked / 22 complete; the recorded command
+  `python3 scripts/_catena.py check` executes and the bare mode-644 form does
+  not.
+- **No regression.** Base and corrected head each give 121 Catena route
+  identities at 95 pass / 14 fail / 12 skip with zero identity and zero status
+  change; full discovery gives 1,736 and 2,134 tests, both 46 failures / 13
+  errors / 11 skips over identical identity sets (24 distinct failing methods,
+  13 errors), zero added, zero removed, zero Catena failures. Budgets pass with
+  no ceiling raised. Ownership boundaries hold and no backlog is falsely closed.
+- **Current-main conflicts are record-only.** `git merge-tree` reports exactly
+  two conflicted paths, `PROJECT-WORK.md` and `promised-deliverables.toml`,
+  each one tail hunk where both sides append; the path overlap between the
+  sides is exactly those two files. Resolving the TOML needs the second entry's
+  own `[[deliverables]]` header and the first entry's array terminator, not
+  blind concatenation.
+
+Exact next action: **merge `integration/catena-e1` into current `main`,
+resolving only those two record conflicts, then run a minimal post-merge
+Catena/ledger/browser smoke check and push `main`.** The confirmation review did
+not merge, deploy, re-sign release-owned records, or modify the candidate.
+
 ## Structured-data limits and blocked follow-ups
 
 Safe current relationship categories are explicit containment,
@@ -401,6 +464,7 @@ comparison, text, or metadata in the UI.
 | 2026-08-09 | Final F0 and shared-shell design review | Independent review recorded **F0 Source Library — ACCEPT** and **Shared non-Liturgy shell — ACCEPT**, preserving C0/C1/D0/E0 and protected Liturgy/PDF/routes/hashes while carrying the disclosed production and data obligations forward. | Reviewed and packaged head `ecbd93a0575c4b890cc814af7cd20d01f5af7beb`; package `20260809T021953Z-corpus-wave-1-review-fixes.zip`; SHA-256 `d5fde51b14f143db05f762178896284d7768c0b2a11fc222fc2b32da63e22062`. |
 | 2026-08-28 | E1 Catena integration candidate | Built `integration/catena-e1` from the exact convergence-authorized main base per the review's bring-across manifest: final Catena route/model/HTML/CSS, the generator voice-authority change with its deterministic generated data, the generator-contract test expansion, and 419 curated production regressions. Fresh validation passed structure (1,351/1/73), focused Catena (56 and 419), static checks 5/5, identical 121-identity Chromium route runs at base and candidate (95/14/12, zero changes), governed CSS/JS budgets, and full discovery with zero new failure identities and zero Catena failures. Status **awaiting independent integration review**; not accepted, not integrated, no merge/deploy/release binding. | Convergence review `f1a5bbad763b847ded8799748223898de6ad4de9`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; V16 source `cc1f2fb8625f044558c26edd358b99cd7dcc7646`; branch `integration/catena-e1`; candidate head is the commit carrying this row. |
 | 2026-08-28 | E1 Catena bounded integration correction | Independent integration review `c3698563e3b45e35a672db37616e39ef27eb3d08` returned **CHANGES REQUIRED** (2 `MERGE_BLOCKER`, 2 `BOUNDED_INTEGRATION_CORRECTION`, `GenuinelyLateStaleWorkTest` ratified, one new `HARDENING_BACKLOG`). The one authorized bounded pass fixed exactly those four: a semantic DOM delimiter between the absence author and work (`Ambrose of MilanHexameron` no longer flattens into one word), a keyboard-only visible focus ring for recovery on `#reading` proved in real Chromium on the success and failure paths, curated-suite cleanup with the SHA pin and hostile machinery removed, lost ordinary coverage restored and a measured 71-class/394-test inventory replacing the disproved `8 + 40` split, and record integrity (work-register marker, executable `python3 scripts/_catena.py check`, discovery rerun at exact base and head). Zero new integration-caused failure identities; zero Chromium route identity or status changes; no ceiling raised. Status **awaiting one confirmation Codex review**; not accepted, not integrated, no merge/deploy/release binding. | Integration review `c3698563e3b45e35a672db37616e39ef27eb3d08`; reviewed candidate head `9810a29c38f6138069d11cb7c735d8bb8b190326`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; branch `integration/catena-e1`; corrected head is the commit carrying this row. |
+| 2026-08-29 | E1 Catena integration confirmation review | The single confirmation review of the one authorized bounded correction pass, run in a fresh separate clone over the bounded delta alone: **CONFIRMED — CATENA E1 INTEGRATION READY TO MERGE**, zero merge blockers. Independently observed rather than accepted: eight real absence rows flatten apart in Chromium 151 over the built artifact with a DOM text-node delimiter and two further real adjacent-identity controls; the recovery ring is computed `solid`/`3px`/`rgb(62, 43, 107)`/offset `2px` on both the success and failure paths against a resting `none`, at measured 10.95:1, with the mouse case undecorated; all 12 gate assertions pass and reverting the two product edits in a disposable build copy fails exactly the three expected assertions; the curated suite carries no SHA or hostile machinery, retains ratified `GenuinelyLateStaleWorkTest`, and recounts by AST to exactly 71/394/3 against 105/604/3 with all nine coverage categories present; ledger 4/4 and the executable generator command; budgets 7,921/8,000, 2,698/2,700, 12,992/13,000, 7,843/8,800 with no ceiling raised; identical 121-identity Chromium route runs (95/14/12) and identical full-discovery identity sets at 1,736 and 2,134 tests (46/13/11, 24 distinct failing methods, zero new, zero Catena). Current-main conflicts are the two append-only record files only. Not merged, not deployed, candidate unmodified. | Confirmation review branch `review/catena-e1-integration-confirmation`; corrected candidate head `b832cdc5bc01391cea67c01437318d25e0c7c315`; pre-correction head `9810a29c38f6138069d11cb7c735d8bb8b190326`; integration base `2778285849f2973ea89d1cfd5b2751ed4ae58e54`; integration review `c3698563e3b45e35a672db37616e39ef27eb3d08`; current `origin/main` `004615faf506eb4083d484d41b18ee1c61f0aa7f`; review commit is the commit carrying this row. |
 
 ## Next Codex tasks
 

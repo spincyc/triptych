@@ -1577,3 +1577,88 @@ state = "candidate"
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
   ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-confirmation-2026-08-29"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Run the single confirmation review of the one authorized bounded correction pass at exact corrected head b832cdc5bc01391cea67c01437318d25e0c7c315 in a fresh separate clone, scoped to the four corrections, their regressions and current-main merge-time conflicts; adjudicate each on observed evidence; publish the confirmation review branch; and stop without modifying the candidate, merging, deploying, re-signing release-owned records, or reopening hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-identities-and-bounded-delta"
+  criterion = "The review resolves the exact pre-correction head, corrected head, integration base, integration review commit, convergence and V16 identities and current origin/main; confirms the integration branch resolves to the corrected head without rebasing it; and audits every changed line of the 9810a29c..b832cdc5 delta as belonging to one of the four authorized corrections over seven paths, with the candidate carrying only the twelve manifest paths plus the one authorized new gate file."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "both-product-blockers-observed-closed"
+  criterion = "Translation-absence closure is observed as a DOM text node on the real production route in real Chromium over the built artifact, with flattened and rendered text separated, correct child-node order, no duplicate or dangling separator, the disclosure contract unchanged, and general adjacent-identity controls; keyboard recovery focus closure is observed from computed style on the element the browser reports as active on both the success and failure/recovery paths, with a visible non-none ring of material width distinguishable from rest, sufficient measured contrast, an undecorated mouse press, a ringed next keyboard stop, the shared shell untouched and the route inventing no appearance of its own."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "tools/tests/catena_recovery_focus_gate.mjs",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gate-honesty-and-falsifiability-reproduced"
+  criterion = "The focus gate is verified to drive real Chromium over CDP against the built artifact, to depend only on node builtins, to make every named assertion the Python test requires, and to exit 3 and skip truthfully without a browser or a build; and its falsifiability is reproduced in a disposable copy rather than assumed, failing exactly the three expected assertions with the reported messages and moving nothing else, without altering the reviewed candidate."
+  status = "pass"
+  evidence = [
+    "tools/tests/catena_recovery_focus_gate.mjs",
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curated-cleanup-and-recounted-inventory"
+  criterion = "The review verifies that no candidate, source, model or version identity pin remains, that no hostile or evidence-only machinery remains while helpers required by retained production tests are kept, that GenuinelyLateStaleWorkTest remains present and ratified with its GUARDED dependency, that the over-wide print pin is narrowed rather than removed, that the inventory recounts independently to 71 runnable classes and 394 tests against 105 and 604 with 36 and 221 omitted and 2 and 13 added and arithmetic that closes, that the disproved 8-plus-40 split is retired, and that all nine production coverage categories remain represented."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "record-integrity-and-fresh-validation"
+  criterion = "The review confirms exactly one work-register marker for the candidate ledger entry with the ledger test and checker passing, confirms the recorded generator command executes from the repository root and reproduces the stated corpus check while the bare form does not, and independently reruns corpus check, byte-identical regeneration, focused Catena, the curated suite including the live Chromium gate, static browser checks and the governed budgets with no ceiling raised and no overage."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "scripts/_catena.py",
+    "promised-deliverables.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "no-regression-against-base-or-pre-correction-head"
+  criterion = "Real-Chromium route-only runs at the exact integration base and the exact corrected head produce identical assertion identities and identical statuses with zero identity and zero status change, and full discovery at both endpoints produces identical failure and error identity sets with zero added, zero removed and zero Catena failures or errors."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "boundaries-backlogs-and-merge-time-analysis"
+  criterion = "The review confirms the correction touched no release binding, shared shell, Liturgy, PDF, unrelated CLI, unrelated data, common browser gate, tool registry or deployment config; confirms the hardening backlog, the evidence-tooling findings and the twenty separately owned concerns are not falsely closed; and resolves current origin/main and read-only merge-tree analysis showing conflicts confined to append-only durable records with the exact files and their mechanical resolution named."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "confirmation-disposition-and-stop-line"
+  criterion = "The review returns exactly one authorized confirmation disposition with its merge-blocker count, records the exact next action as merging into current main with only the known record conflicts resolved followed by a minimal smoke check and push, publishes the durable confirmation review branch, and stops without merging, deploying, re-signing release-owned records, modifying the candidate or authorizing another broad review."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
