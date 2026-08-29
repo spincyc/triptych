@@ -2151,9 +2151,49 @@ Nothing beyond the merge was reopened. The three hardening findings remain
 `HARDENING_BACKLOG`, the eight package/history/replay/scanner defects remain
 `EVIDENCE_TOOLING_BACKLOG`, the twenty release, shell, data, validation,
 Liturgy, PDF, and final-integration concerns remain `SEPARATELY_OWNED` and
-untouched, the V17 semantic lane stays cancelled, and the four Catena release
-bindings stay unrefreshed and belong to the release owner. No release record
-was re-signed and no deployment mechanism was invoked by this work; the push
-that advances `main` authorizes only the repository's automatic GitHub Pages
-attempt that any `main` push triggers, which is not itself evidence of a
-verified live snapshot.
+untouched, and the V17 semantic lane stays cancelled. At the merge commit the
+Catena release bindings were still unrefreshed and no release record had been
+re-signed; the section below records why that could not stand and what was
+authorized instead. The push that advances `main` authorizes only the
+repository's automatic GitHub Pages attempt that any `main` push triggers,
+which is not itself evidence of a verified live snapshot.
+
+## E1 Catena release bindings refreshed so the merged bytes can publish
+
+The merge commit `85f41e4e467d5f4b4331ee71da0666a1c0ebddf9` reached `origin/main`
+with the confirmed Catena bytes and the Catena release bindings deliberately
+left as the integration lane had them. Pages run
+[`33265104292`](https://github.com/spincyc/triptych/actions/runs/33265104292)
+therefore failed at `public-alpha verify --deployment-target github-pages`, the
+gate that refuses when a site source no longer matches its approved SHA-256:
+authorization `perpetual-public-repository-2026` still recorded the
+pre-integration hashes for `catena-model.js`, `catena.css`, `catena.js`,
+`index.html`, and `src/web/data/structure/catena/index.json`, and had no record
+at all for the newly generated `src/web/data/structure/catena/27-is/008.json`.
+The run stopped before Configure Pages, Upload, and Deploy, so nothing was
+published and deployment `6158143411` ended `failure`; the live site continued
+to serve the previous `004615faf` snapshot throughout. This was the predicted
+consequence of landing accepted integration bytes while their approved record
+still described the superseded ones, not a defect in the merge: the merged tree
+carries no content delta from the confirmed candidate.
+
+Refreshing that record is release-owned re-signing, which the merge lane
+explicitly withheld, so it was not done as part of the merge. The maintainer
+then authorized it directly. `make refresh-release-bindings ADOPT=1` was run
+under `ONLY=` naming exactly the six affected paths, so the authorization
+carries only the reviewed Catena bytes forward and could not sign for any other
+entry; it re-recorded the five changed site sources, adopted the one new
+generated file, and updated the rights table and its `rights_record_sha256`,
+which are mechanically derived from those same paths. No hash was hand-edited
+and no approval note was invented. `make check-release-bindings` then reports
+`exact: 0 stale binding(s)`, and every re-recorded value equals the hash of the
+file as merged.
+
+All three gates the Pages workflow itself runs then passed locally on the exact
+refreshed tree: `make check-deployment-sources`, `make public-site`, and
+`python3 tools/tpt public-alpha verify --deployment-target github-pages`, the
+last reporting `verified build/public-alpha/site`. The Catena integration
+validation above was not rerun and is unchanged; this work touched only
+`release/public-alpha.json` and `release/rights/public-alpha-2026-07-15.md`. The
+hardening and evidence-tooling backlogs, the twenty separately owned concerns,
+and the V17 cancellation all remain exactly as the merge left them.

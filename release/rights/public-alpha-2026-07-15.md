@@ -11305,10 +11305,10 @@ release attachment, announcement, or promotion.
 | `src/sources/bibles/world-english-bible-catholic/chapters/Zach/8.json` | `b9bc185de618c92b849d2630069f43144459f8cd2c768ab1d15c6b1959da389e` |
 | `src/sources/bibles/world-english-bible-catholic/chapters/Zach/9.json` | `61552f78bc716e945c08091160da8ae8426181210e29e9faa5b5d8af6abb511d` |
 | `src/sources/inventories/postconciliar-proper-translations-v1.toml` | `525a9594aff649f897f5932297188a5a06a520c768d59aa097528f54da3ebd33` |
-| `src/web/browser/catena/catena-model.js` | `f1ea94f9ec6b54813859c2b526163e90d9de61992b839fe2eb0e349f31ccf57b` |
-| `src/web/browser/catena/catena.css` | `aa564bc23918eeb98a0680df416549d94525444bcf837606293f031c8b0099d6` |
-| `src/web/browser/catena/catena.js` | `51aaa3cf9deb47127da9cce3acefd2740531c69a6ed17e7bf7a702171d6d20d0` |
-| `src/web/browser/catena/index.html` | `45c491abf22351e14fe22648a5a05e47f6abd8185a2565a3cc34a1d19acc440d` |
+| `src/web/browser/catena/catena-model.js` | `64a75834abd8f9efa25ae52c76b904a3437ab96a9508ba82309211215d44c3a3` |
+| `src/web/browser/catena/catena.css` | `f87c4e6a34fa44502cf1537931857d3d433e3d6ad4dc09fdd01d3265378ed358` |
+| `src/web/browser/catena/catena.js` | `fa3b58f9a12cb1223229a0cb6920f7db3cb05aa26848f613c74647e3d2f7ae78` |
+| `src/web/browser/catena/index.html` | `7779d1f19ca175fd315cd7164f5347cc3c08d68b20b3b68a9219429b02bb8fa8` |
 | `src/web/browser/history/history.css` | `7e4af769825e2b315a8743099c132d12afebef389965120978c9c73c81884763` |
 | `src/web/browser/history/history.js` | `3c667da06fb9c6e86b5eb7d4630912317d968fdd8dea4365de07b0cc979ba01d` |
 | `src/web/browser/history/index.html` | `d930cfcd2288781e2b7cb55efd551cd1202203fb960f5da067be6674e81fa382` |
@@ -12437,6 +12437,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/27-is/005.json` | `54c06755520fd707b5004a147860c977fd12e7f66510300670693f756a274da1` |
 | `src/web/data/structure/catena/27-is/006.json` | `cc11099af96d40390da3ca494dced4384423af2993e5f72c4406a58ca2f02258` |
 | `src/web/data/structure/catena/27-is/007.json` | `4020bcf6daf19e36882d0d31490a8ec7689c56c155f3f31222b8e6e62168cfd6` |
+| `src/web/data/structure/catena/27-is/008.json` | `b738bf6745a3fd9d50003e557354f2f3481a5ed549c21be13ea64754792f82d4` |
 | `src/web/data/structure/catena/27-is/009.json` | `699009b608b084fbfc3164701e539c6ab19c76aeaf0ae2fdcca08358ee56c8c6` |
 | `src/web/data/structure/catena/27-is/011.json` | `569874080ec6990bc91bbedf9113ebd445f57614c30079e07e8ec55f8c3ba5cd` |
 | `src/web/data/structure/catena/27-is/012.json` | `2826911a87b8b038ddb732783c606cd0f5cbab0f180ad2e1961f9a4a0e45a232` |
@@ -12729,7 +12730,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/73-apoc/007.json` | `fd09874ea7e3b7eb4a51d272e2e110bd8d5fc65cbec262a930f247740907ef9c` |
 | `src/web/data/structure/catena/73-apoc/021.json` | `69c4237c50991222a833734293b1016f301d9e78d3bd17adc6bfdd65a5a0f621` |
 | `src/web/data/structure/catena/73-apoc/022.json` | `6ae60a391af8a407c49802bc0dceb13fd34ad854231a4124ea0132ddf555de45` |
-| `src/web/data/structure/catena/index.json` | `d6f44b72b563466545367163c4b2d03df00d6da6efd09e91c1ff19c3ff471081` |
+| `src/web/data/structure/catena/index.json` | `926345b9e8df54a201c4a2c133a9e0f29ce1e4f78a16032e13c525af56d1ea9a` |
 | `src/web/data/structure/catena/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `b205abde2d78d5ff193d1fba67618b08a61f31db6aa44715d03af0b40da3d876` |
 | `src/web/data/structure/catena/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `f9a0a49ea935360090da1f5360bc747d8c6dbd1688f6f6229825e5933ff05047` |
 | `src/web/data/structure/catena/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.110.json` | `747b3f21f8314ba224cc2f8f0049c348f01e1e0a4f1319b90d8a1452a8e5003c` |
