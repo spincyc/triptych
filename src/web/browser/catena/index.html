@@ -13,61 +13,71 @@
 <a class="skip-link" href="#reading">Skip to the chapter</a>
 
 <!-- The reference is the fact and it is the whole header. What a catena is,
-     and what this page does not yet hold, are in the footer. -->
+     and what this page does not yet hold, are in the footer. The reference
+     line is empty until script fills it: a static "Loading…" would stand
+     forever, and falsely, for a reader whose scripts do not run. It is a
+     heading — the primary Scripture locus must stand in heading
+     navigation — styled to the line it always was. -->
 <header class="page-header">
-  <!-- The page names itself first, as every other reading page does; the
-       chapter is the second line, where it can change without the reader
-       losing track of which part of the site they are in. -->
   <h1><span class="page-mark" aria-hidden="true">§</span>Catena Omnia</h1>
-  <p class="reference-line">
-    <span id="reference">Loading…</span>
+  <h2 class="reference-line">
+    <span id="reference"></span>
     <span class="reference-book" id="reference-book"></span>
-  </p>
+  </h2>
   <p class="tally" id="tally"></p>
 </header>
 
 <div id="banner" class="banner" role="status" hidden></div>
 
+<!-- The controls live inside a disclosure that is BUILT HERE AND OPEN rather
+     than wrapped around the form by script: a reader with scripts off must
+     be handed the controls where they stand, not a collapsed box with a
+     label on it, and a script that wrapped the form would move it on every
+     load. `catena.js` closes it at startup on a narrow viewport, before its
+     first fetch — one media query read, no observer, nothing re-closes it.
+
+     The selects say "Needs JavaScript" because, as served, that is the
+     truth; the script's first act is to say "Loading…" instead, and then to
+     fill them. Nothing static claims to be loading. -->
+<details id="controls-filter" class="controls-filter" open>
+  <summary>Change chapter and commentary voice</summary>
 <form id="controls" class="controls" aria-labelledby="controls-heading">
   <h2 id="controls-heading" class="visually-hidden">Choose a book, a chapter and a translation</h2>
 
   <div class="field">
     <label for="book-select">Book</label>
     <select id="book-select" name="book" disabled>
-      <option>Loading…</option>
+      <option value="">Needs JavaScript</option>
     </select>
   </div>
 
   <div class="field field-narrow">
     <label for="chapter-select">Chapter</label>
     <select id="chapter-select" name="chapter" disabled>
-      <option>Loading…</option>
+      <option value="">Needs JavaScript</option>
     </select>
   </div>
 
-  <div class="field">
+  <!-- `print-identity`: the two fields that survive into print, as plain
+       lines — paper needs the edition and the voice, not the controls. -->
+  <div class="field print-identity">
     <label for="bible-select">Translation</label>
     <select id="bible-select" name="bible" disabled>
-      <option>Loading…</option>
+      <option value="">Needs JavaScript</option>
     </select>
   </div>
 
-  <!-- Whose words the COMMENTARY is in, which is a different question from the
-       translation of scripture chosen above. A father may be held in his own
-       Greek, in an ancient Latin version of that Greek, and in a public-domain
-       English of it, and each of those is a separate edition of one work rather
-       than one edition with three texts.
-
-       The axis is the author's own language against a translation of it, and
-       not the bare language code, because "Latin" is true of Ambrose writing it
-       and of Eustathius translating Basil into it — one word covering two
-       different claims. The control lists what this chapter actually holds, and
-       when it holds nothing in the chosen voice it says so and names what it
-       does hold, rather than hiding the author. -->
-  <div class="field">
+  <!-- Whose words the COMMENTARY is in, which is a different question from
+       the translation of scripture above. The axis is the author's own
+       language against a translation of it, not the bare language code:
+       "Latin" is true of Ambrose writing it and of Eustathius translating
+       Basil into it — one word covering two claims. The control lists what
+       this chapter actually holds, and when it holds nothing in the chosen
+       voice it says so and names what it does hold. -->
+  <div class="field print-identity">
     <label for="language-select">Commentary in</label>
     <select id="language-select" name="voice" disabled>
-      <option value="">Everything held</option>
+      <option value="">Needs JavaScript</option>
     </select>
   </div>
 
@@ -83,32 +93,62 @@
     </div>
   </div>
 </form>
+</details>
 
-<!-- Not a live region: replacing it would read a whole chapter aloud on every
-     change. The shared script announces a one-line summary instead. -->
-<main id="reading" class="reading" tabindex="-1" aria-busy="true">
-  <p class="placeholder">Loading the chapter…</p>
+<!-- Not a live region: replacing it would read a whole chapter aloud on
+     every change. The shared script announces a one-line summary instead.
+
+     The static content below is TRUE WITHOUT SCRIPTS — what the page is,
+     what it needs, and where its texts can be reached — and the first
+     render replaces it. No static aria-busy, no permanent "Loading…". -->
+<main id="reading" class="reading" tabindex="-1">
+  <section class="static-entry">
+    <h2 class="section-heading">About this page</h2>
+    <p>
+      Catena Omnia sets a chapter of Scripture beside every commentary
+      fragment this project holds on it, oldest voice first — each excerpt
+      carrying its author, work, date, extent, edition and rights, and
+      nothing shown whose rights forbid showing it.
+    </p>
+    <p>
+      The chain is assembled in your browser, from the same tracked records
+      the project's checks replay; no chapter is pre-rendered. This edition
+      of the page therefore needs JavaScript: if scripts do not run here,
+      the chapter and its commentary cannot be shown, and nothing in this
+      section will change.
+    </p>
+    <p>
+      The editions the fragments are cut from are catalogued in the
+      <a href="../sources/">Source Library</a>, and the rest of the site —
+      Scripture, liturgy, history, law — is reachable from the links in the
+      footer below and from <a href="../">the site's own entrance</a>.
+    </p>
+  </section>
 </main>
 
 <footer class="page-footer">
   <p>
     A <em>catena</em> is a chain of excerpted comment running beside the text.
-    This page shows only commentary this project actually holds: a work believed
-    to comment here but not yet acquired is listed separately, under its own
-    heading, and never beside an excerpt. Fragments are stored at the extent
+    This page shows only commentary this project actually holds: the entries
+    its acquisition record merely lists are printed separately, under their
+    own heading, and never beside an excerpt. Fragments are stored at the extent
     their author addressed and the chapter view is derived from that, so a
     fragment reaching across a chapter boundary appears under both chapters at
     its full extent rather than being cut at the seam.
   </p>
-  <p>
-    Everything here is closed until you open it, and that is what it costs to
-    read. A chapter fetches a list of who comments on it — never their words —
+  <!-- The two paragraphs below are for a reader AT the page — how opening
+       works, where the links go — so print drops them by these classes;
+       the paragraph above states what the page holds and is kept. -->
+  <p class="footer-interaction">
+    Once the page renders, the chapter and the first commentator stand open;
+    every other fragment is closed until you open it, and opening is what it
+    costs to read. A chapter fetches a list of who comments on it — never their words —
     so a chapter with nothing held fetches nothing at all; a fragment's text
     arrives when you open that fragment, which is why its length is printed
     beside its name. The consequence is worth knowing: your browser's own
     find-in-page reaches only what you have opened.
   </p>
-  <p>
+  <p class="footer-entrances">
     <a href="../scripture/">The Story of Salvation</a> ·
     <a href="../liturgy/">The propers of the Mass</a> ·
     <a href="../history/">How the Missal Changed</a> ·

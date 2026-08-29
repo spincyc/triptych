@@ -1563,3 +1563,99 @@ state = "complete"
     ".github/workflows/pages.yml",
     "tools/public-alpha",
   ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-candidate-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Build the clean E1 Catena integration candidate from the exact convergence-authorized main base with the review's bring-across manifest only, validate the integrated result against that base, and stop awaiting independent integration review without merging, releasing, deploying, or continuing synthetic hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-base-and-manifest"
+  criterion = "The candidate branches from 2778285849f2973ea89d1cfd5b2751ed4ae58e54 and carries only the manifest: the final Catena route/model/HTML/CSS, the voice-authority generator change with its deterministic generated data, the generator-contract test expansion, and curated production regressions, with no evidence tooling, synthetic hostile fixtures, V16-side records, shared-shell, Liturgy, PDF, or release-binding changes."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "src/web/browser/catena/index.html",
+    "scripts/_catena.py",
+    "src/web/data/structure/catena/index.json",
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "focused-and-structure-validation"
+  criterion = "The generator contract reports 1,351 fragments, 1 book, and 73 canon entries; the focused Catena suites pass in full, preserving exact voices (original, translation:en, translation:la), refusal/absence distinction, provenance truthfulness, path namespace closure, and same-path/late/cache isolation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "base-and-candidate-comparison"
+  criterion = "Real-Chromium route-only runs produce identical 121 assertion identities with identical statuses at the exact base and the candidate, and full discovery produces zero new integration-caused failure identities with zero Catena failures; governed CSS/JS budgets pass without raised ceilings."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "backlogs-and-stop-line"
+  criterion = "Hardening findings and evidence tooling remain backlog, separately owned concerns are untouched, release bindings are unrefreshed, and the record states awaiting independent integration review without marking E1 accepted or integrated, merging, deploying, or release signing."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reviewed-merge-blockers-corrected"
+  criterion = "The two MERGE_BLOCKER findings of integration review c3698563e3b45e35a672db37616e39ef27eb3d08 are corrected: translation-absence rows carry a semantic DOM delimiter so a row's flattened text never reads the author and the work as one word, and keyboard recovery onto the reading region draws a visible keyboard-only focus indicator of sufficient contrast in real Chromium on both the success and the failure/recovery path, without changing the shared shell, removing the focus-management behaviour, or raising a governed budget ceiling."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "tools/tests/test_catena_production.py",
+    "tools/tests/catena_recovery_focus_gate.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curated-suite-cleanup-and-measured-inventory"
+  criterion = "The curated suite carries no candidate or source SHA pin and no synthetic hostile or evidence-only machinery, retains GenuinelyLateStaleWorkTest with its GUARDED dependency, restores the ordinary coverage the first curation lost, keeps all nine required production coverage categories represented, and records an inventory counted the same way for both files rather than the disproved 8-hostile-plus-40-non-manifest split."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "record-integrity-at-the-exact-corrected-head"
+  criterion = "The ledger entry carries exactly one work-register marker in PROJECT-WORK.md, the recorded generator command is executable as written, and full discovery is rerun at the exact integration base and the exact corrected head with zero new integration-caused failure or error identities."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "scripts/_catena.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "correction-stays-bounded"
+  criterion = "The pass changes only the four authorized corrections: no V17 semantic lane, no broadened merge bar, no hardening or evidence-tooling backlog work, no separately owned concern touched, no release binding refreshed, and no merge, deployment, release signing, or self-acceptance."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+  [[deliverables.requirements]]
+  id = "confirmation-review-and-merge-to-main"
+  criterion = "Confirmation review 7dfd944494a8d9355264579156214f16d3722a9f dispositioned candidate b832cdc5bc01391cea67c01437318d25e0c7c315 as CONFIRMED - CATENA E1 INTEGRATION READY TO MERGE, and that exact candidate is merged into main with only the PROJECT-WORK.md and promised-deliverables.toml record conflicts reconciled, the minimal post-merge smoke passing, and the hardening backlog, evidence-tooling backlog, and separately owned concerns left open and untouched."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
