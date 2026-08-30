@@ -251,7 +251,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-mass-ordinary \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
-	check-browser-static check-browser-gate check-browser-harnesses \
+	check-browser-static check-browser-models \
+	check-browser-gate check-browser-harnesses \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
@@ -505,6 +506,7 @@ help:
 		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
+		'make check-browser-models  Run the browser model and foundation-contract suites `check` reaches' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
 		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
@@ -759,7 +761,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components check-document-catalogue check-source-reader \
 	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
 	check-public-alpha check-release-bindings check-tool-registry \
-	check-browser-static \
+	check-browser-static check-browser-models \
 	check-calendar-days check-calendar-masses check-calendar-rubrics \
 	check-propers-census \
 	check-mass-ordinary check-bible-indexes check-catena \
@@ -774,6 +776,45 @@ check: check-metadata check-web-editions check-web-editions-current \
 # needs no browser.
 check-browser-static:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_browser_static.py'
+
+# The browser models `check` reaches by other routes are four:
+# `assembly-model.js` through check-calendar-rubrics, `catena-model.js` through
+# check-catena, `reader-model.js` through check-source-reader, and
+# `catalogue-model.js` through check-document-catalogue. Every other model and
+# every reader-integration contract lived behind `check-tests`, which `check`
+# does not run and which nothing outside the Makefile mentions, so a change to
+# `code-model.js`, `reader-state.js`, `day.js` or `ordinary-seating.js` reached
+# the deploy gates without one assertion having been made about it. These two
+# groups close that, and only that: the first is the model and
+# reader-integration set named by guidance/corpus-browser-implementation.md
+# §11's third step, and the second is the corpus foundation's own recorded
+# evidence — the URL/hash contracts pinned before any router cleanup, the
+# selector and plumbing collisions, and the two truthfulness suites — which
+# were themselves reachable only by opting in.
+#
+# It is NOT the whole suite. `check-tests` stays opt-in, because 2,707 tests and
+# a red tool-registry baseline is a separate decision and not this gate's to
+# make. The price of what is here is about 150 seconds, nearly all of it
+# test_liturgy_reader_state; the point of naming the modules rather than
+# globbing them is that the list can only grow deliberately.
+BROWSER_MODEL_TESTS := \
+	test_law_page \
+	test_liturgy_reader_state \
+	test_mass_ordinary \
+	test_day_reader_integration \
+	test_liturgy_reader_shell \
+	test_day_missal_integration \
+	test_day_missal_switch \
+	test_mass_form_reader \
+	test_browser_collisions \
+	test_browser_url_contract \
+	test_browser_citation_truth \
+	test_browser_truthfulness
+
+check-browser-models:
+	@set -e; for module in $(BROWSER_MODEL_TESTS); do \
+		$(PYTHON) -m unittest discover -s tools/tests -p "$$module.py"; \
+	done
 
 # Real Chromium over the built artifact, which is the only place the publish
 # step's own defects exist: the four harnesses beside it all load the
