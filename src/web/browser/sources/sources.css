@@ -371,12 +371,29 @@
   opacity: 0.82;
 }
 
-/* This stylesheet is served only on the Sources route. Its own cross-section
-   footer is navigation rather than prose, and the published shell's brand is
-   a route control; keep both at the same handset target floor as the reader. */
-.brand a,
-.page-footer a,
-.site-footer a {
+/* Its own cross-section footer is navigation rather than prose, and the
+   published shell's brand is a route control; keep both at the same handset
+   target floor as the reader.
+
+   "Served only on the Sources route" was the whole of this rule's scoping, and
+   that is the same correctness-by-load-order `.field` and `.detail` had:
+   `.brand` and `.site-footer` belong to `release/public-alpha/layout.html`, so
+   the moment a shared bundle carries this file the rule restyles the masthead
+   and footer of every page on the site. Scoping it is not straightforward,
+   because the published body carries no page class — `browser_page_parts`
+   appends the page's classes to `<main>` — so the scope is read off the
+   landmark instead.
+
+   The two selectors are scoped differently because their subjects live in
+   different places. `.brand` and `.site-footer` are the layout's, exist only in
+   the built artifact, and sit outside `<main>`: hence the `:has()` on `<body>`.
+   `.page-footer` is this page's own and is inside the content, where the class
+   sits on `<main>` in the artifact and on `<body>` off disk: a descendant
+   selector reaches it either way. Same rendered result on the one route that
+   loads this sheet, and nothing outside it. */
+body:has(> .sources-page) .brand a,
+.sources-page .page-footer a,
+body:has(> .sources-page) .site-footer a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;

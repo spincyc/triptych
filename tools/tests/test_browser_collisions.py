@@ -30,6 +30,19 @@ than an incident.
    carry that value, and each rendered `Instrument read: none-claimed — ` with a
    dangling em dash where the corpus has a sentence to say.
 
+4. AN INSTRUMENT RESTYLING THE SITE'S OWN CHROME, UNSCOPED. The fourth hazard of
+   the same family, and the one the promised deliverable still holds open. A
+   class the published layout owns — `.site-header`, `.site-footer`, `.brand`,
+   `.skip-link`, `.triptych-mark` — restyled from an instrument stylesheet with
+   no page scope is a rule that reaches every page on the site as soon as a
+   shared bundle carries the file. `day-missal.css` does it to `body >
+   .site-header` in twelve selectors, and cannot be corrected from a corpus lane
+   because it belongs to a protected in-progress Liturgy deliverable;
+   `sources.css` did it to `.brand a` and `.site-footer a` and is corrected.
+   SITE_CHROME_UNSCOPED records the protected remainder rather than permitting
+   the class, so a new one cannot arrive unnoticed while the recorded one waits
+   for its owner.
+
 These tests are source-level. They read the files rather than a rendered page,
 except where a model can be replayed under node, which the landmark test does.
 """
@@ -49,7 +62,26 @@ BROWSER = ROOT / "src/web/browser"
 CORE_CSS = BROWSER / "shared/browser-core.css"
 CORE_JS = BROWSER / "shared/browser-core.js"
 ACT_HISTORY = ROOT / "src/web/data/structure/act-history"
+LAYOUT = ROOT / "release/public-alpha/layout.html"
 NODE = shutil.which("node")
+
+# The one stylesheet still restyling the site's chrome from outside a page scope,
+# with the count of selectors that do it and why it is not corrected here.
+#
+# `day-missal.css` is loaded by four published Liturgy pages and belongs to the
+# `liturgy-reader-live-ritual-flow-2026-08-07` deliverable's protected reader
+# family, which promised-deliverables.toml records as `in_progress`. Master-plan
+# decisions D2 and D18 keep that family closed until its owner releases or
+# carves out the seam, so scoping these selectors is that deliverable's change
+# and not a corpus lane's. `shared-shell-blocking-collisions-resolved` stays
+# unmet for exactly this reason.
+#
+# The count is here so that the exception cannot quietly grow inside the one
+# file that holds it: adding a thirteenth unscoped selector fails this test even
+# though the file is exempt.
+SITE_CHROME_UNSCOPED = {
+  "liturgy/day-missal.css": 12,
+}
 
 # Five instrument rules keep a shared name. Each re-tunes the SAME component for
 # its own page — a size, a colour — rather than declaring a second component
@@ -118,6 +150,46 @@ def instrument_stylesheets() -> list[Path]:
     p for p in BROWSER.rglob("*.css")
     if p != CORE_CSS and "prototypes" not in p.relative_to(BROWSER).parts
   )
+
+
+def layout_owned_classes() -> set[str]:
+  """Classes the published layout puts on the page around `<main>`.
+
+  Read off `layout.html` rather than listed, so a masthead or footer element the
+  layout gains is governed without anyone remembering to add it here. The
+  release banner is added by hand because the layout carries it as a `{{…}}`
+  marker and `wrap_in_layout` substitutes the element.
+  """
+  found = {"release-banner"}
+  for value in re.findall(r'class="([^"{}]*)"', LAYOUT.read_text()):
+    found |= set(value.split())
+  return found
+
+
+def site_chrome_selectors(path: Path) -> list[str]:
+  """Selectors in one stylesheet that reach the layout's chrome with no page scope.
+
+  A selector qualifies as scoped when it names any class the layout does not own:
+  `body:has(.reader-instrument) > .site-header` is a rule about one kind of page,
+  and `body:has(> .sources-page) .site-footer a` is a rule about one route. A
+  selector whose only classes are the layout's — `body > .site-header` — is a
+  rule about every page on the site, wherever the file is loaded from, and that
+  is the hazard.
+  """
+  owned = layout_owned_classes()
+  found: list[str] = []
+  for block in re.finditer(r"([^{}]+)\{", without_comments(path.read_text())):
+    selector = block.group(1).strip()
+    if not selector or selector.startswith("@"):
+      continue
+    for one in selector.split(","):
+      one = one.strip()
+      if not one:
+        continue
+      classes = set(re.findall(r"\.([A-Za-z0-9_-]+)", one))
+      if classes & owned and not classes - owned:
+        found.append(one)
+  return found
 
 
 def citation_words(path: Path) -> dict[str, str]:
@@ -206,6 +278,63 @@ class SharedNamespaceTest(unittest.TestCase):
       with self.subTest(path=path.name):
         offending = {c for c in emitted_classes(path) if c == "detail" or c.startswith("detail-")}
         self.assertEqual(offending, set(), f"{path.name} emits {sorted(offending)}")
+
+
+class SiteChromeScopeTest(unittest.TestCase):
+  """The fourth hazard: an instrument stylesheet restyling the site's own chrome.
+
+  `browser_page_parts` appends a browser page's own body classes to `<main>`, not
+  to `<body>`, so in the published artifact the page has no class outside the
+  landmark. A rule written as `body > .site-header` therefore matches on every
+  route the file reaches, and the only thing keeping it off the other twelve is
+  which pages happen to link the stylesheet. That is the same
+  correctness-by-load-order the `.field` and `.detail` renames removed.
+  """
+
+  def test_the_layout_owns_the_chrome_these_tests_are_about(self):
+    """If the masthead loses its class the rest of this class proves nothing."""
+    owned = layout_owned_classes()
+    for expected in ("site-header", "site-footer", "brand", "skip-link", "release-banner"):
+      with self.subTest(**{"class": expected}):
+        self.assertIn(expected, owned)
+
+  def test_no_unrecorded_instrument_stylesheet_restyles_the_site_chrome(self):
+    for sheet in instrument_stylesheets():
+      name = sheet.relative_to(BROWSER).as_posix()
+      with self.subTest(stylesheet=name):
+        found = site_chrome_selectors(sheet)
+        if name in SITE_CHROME_UNSCOPED:
+          continue
+        self.assertEqual(
+          found, [],
+          f"{name} restyles the published layout's own chrome with no page "
+          f"scope: {found}. Pulled into a shared bundle the rule reaches every "
+          "page on the site. Scope it by a class the layout does not own, or "
+          "record it in SITE_CHROME_UNSCOPED with the authority that owns it",
+        )
+
+  def test_the_recorded_exception_neither_grows_nor_outlives_its_file(self):
+    """The protected file may keep its selectors; it may not acquire more."""
+    for name, expected in sorted(SITE_CHROME_UNSCOPED.items()):
+      with self.subTest(stylesheet=name):
+        sheet = BROWSER / name
+        self.assertTrue(sheet.is_file(), f"{name} no longer exists; drop its entry")
+        found = site_chrome_selectors(sheet)
+        self.assertEqual(
+          len(found), expected,
+          f"{name} now has {len(found)} unscoped site-chrome selectors rather "
+          f"than the recorded {expected}: {found}. If the protected owner scoped "
+          "them, lower the count or delete the entry; if a new one was added, it "
+          "widened a hazard the ledger already holds open",
+        )
+
+  def test_the_shared_stylesheet_is_the_one_place_the_chrome_is_owned(self):
+    """browser-core.css is exempt because owning the shared furniture is its job."""
+    self.assertTrue(
+      site_chrome_selectors(CORE_CSS),
+      "shared/browser-core.css no longer styles the site chrome at all, which "
+      "would mean the furniture moved and this test is measuring the wrong file",
+    )
 
 
 class DocumentLandmarkTest(unittest.TestCase):
