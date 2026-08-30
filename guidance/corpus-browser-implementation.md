@@ -1661,6 +1661,87 @@ path's approved SHA-256. Link verification, which §9 notes runs nowhere else,
 and the structural checks around it pass. `make public-preview` and
 `make public-site` both build.
 
+## 11.2 Independent cold disposition, measured 2026-08-30
+
+The exact fetched review head was
+`407dfad76061460e1b3f5e3ad65ea41c73c5f746`, six commits ahead of dispatch base
+`09437907472581df4a8969010bd494249a3539a5`. The B0/B1 execution itself created
+three commits (`8ff111516`, `a39f4bce0`, `3d323f088`); the earlier continuation
+record `d5538acac` made four commits in that ancestry at the execution endpoint,
+and the later Catena Omnia documents and cold-review instructions
+(`4ef5062ca`, `407dfad76`) make six at the reviewed head.
+
+**Independent disposition: `CHANGES_REQUIRED`.** The Sources scoping change is
+render-neutral in the measured artifact, but two acceptance claims made above
+are not fail-closed:
+
+1. `check-browser-models` is inside `make check`, but
+   `tools/tests/test_browser_model_gate.py` is not in `BROWSER_MODEL_TESTS` and
+   no other `check` prerequisite runs it. Its future-suite coverage assertion
+   runs only through the separately opt-in full discovery. The twelve currently
+   named modules are reached; the claim that `make check` will refuse a future
+   unlisted JavaScript-driving suite is not enforced.
+2. `site_chrome_selectors()` recognizes only selectors that explicitly contain
+   a layout-owned class and treats any other class anywhere in the selector as
+   page scope. Synthetic probes detect `.site-header`, but miss both bare `a`
+   and `.site-header:not(.route-only)`; the latter is broad precisely when the
+   non-layout class is absent. `src/web/browser/scripture/scripture.css` already
+   contains bare `a` and `a:hover` rules. The protected exception check also
+   compares only the number twelve, so replacing one recorded selector with a
+   different unscoped selector would pass. The suite therefore proves neither
+   the claimed selector class nor the exact protected remainder.
+
+All seven current `UNGATED_WITH_REASON` entries remain factually true at this
+head, and the gate remains narrow rather than becoming full discovery. The
+twelve named modules contain **362 tests**, not 358. A complete non-fail-fast
+run took 166 seconds and had one failure, the deliberately stale
+release-binding oracle; the actual fail-fast `make check-browser-models` target
+stopped at that same identity after 149 seconds.
+
+Fresh full discovery on this host resolves the candidate's 24-versus-25
+discrepancy by identity rather than by copying either environment-dependent raw
+count:
+
+- exact base: 2,707 tests in 1,707 seconds, 23 failures, 0 errors, 10 skipped;
+- exact head: 2,719 tests in 1,698 seconds, 24 failures, 0 errors, 10 skipped;
+- the one and only new identity is
+  `test_day_reader_integration.DayReaderIntegrationTests.`
+  `test_accepted_shell_and_visual_oracle_hashes_are_current`.
+
+The 23 shared identities are the worked-example failures. The
+`pdf-review.test` shell-smoke failure in the earlier 24/25 report did not
+reproduce on this host. Thus the earlier candidate sentence claiming no new
+identity is false, while the final handoff's substantive statement that the
+head adds exactly the stale-binding oracle is true.
+
+Both exact commits build with `make public-site`. Their Chromium artifact
+reports are identical as structured data: 2,290 assertion rows, 1,850 pass, 212
+fail, 228 skip, with identical route/state/summary data and the same inherited
+failure identities (108 `single-main-element`, 77
+`primary-controls-meet-target-size`, 27
+`skip-link-targets-existing-element`). Focused checks pass for the eight
+model-gate tests, fifteen collision tests, six static browser tests, six browser
+harness tests, Catena generation (1,351 fragments / 1 book / 73 canon), 56
+Catena model tests, and 394 Catena production tests. The passing collision tests
+do not cure the detector defects above.
+
+The reviewed range changes no protected Liturgy source, shared production shell
+source, release-binding record, Catena production source, Catena generated data,
+or Catena generator. `day-missal.css` remains unchanged with the twelve recorded
+selectors, and `liturgy-reader-live-ritual-flow-2026-08-07` remains
+`in_progress` with all six requirements open. Its blocker remains
+`BLOCKED_BY_PROTECTED_OWNER`; no carve-out was present and no protected file was
+edited.
+
+The exact stale set remains one path,
+`src/web/browser/sources/sources.css`: recorded SHA-256
+`a78f8cf835ab9c4486c8664745900fc910474941260faedad0d9d6e1bb8a3ee4`, actual
+`b039d50e613b9f185acbe8bbc4310b9e05b1913b157e16f4257aaa1fe0b9fa66`.
+No binding was refreshed or hand-edited. `make -k check` consequently fails the
+release-binding check and the same oracle in `check-browser-models`, and also
+reports sixteen example-transcript divergences. This review authorizes no
+signing, merge, deployment, Liturgy edit, or next feature lane.
+
 ## 12. Risks
 
 **R1. Editing files owned by an in-progress deliverable.** Evidence:

@@ -2277,3 +2277,55 @@ form and no hash was hand-edited. `make check-release-bindings` therefore
 reports one stale path on this branch, which is the expected state and not a
 build or source failure. Nothing was merged, deployed, released, or
 self-accepted, and no subsequent lane was begun.
+
+### Independent cold disposition, 2026-08-30
+
+The independent review used fresh full-checkout base
+`09437907472581df4a8969010bd494249a3539a5` and exact fetched candidate
+`407dfad76061460e1b3f5e3ad65ea41c73c5f746`.
+
+**B0/B1: CHANGES_REQUIRED.** The current named browser-model modules are under
+`make check`, but the meta-test that discovers a future omitted
+JavaScript-driving suite is not; it runs only through opt-in full discovery.
+The collision detector also misses broad element selectors and negative
+pseudo-class scope, and records the protected exception by count rather than
+exact identity. It therefore does not prove the stated selector class or that
+`day-missal.css` is the only remaining site-chrome-reaching instrument rule.
+
+The branch is six commits ahead of main at the reviewed head. Three were created
+by the B0/B1 execution (`8ff111516`, `a39f4bce0`, `3d323f088`); with its earlier
+continuation record the execution endpoint had four ancestry commits, and the
+later Catena Omnia and cold-review records make six.
+
+Fresh host evidence is 2,707 tests / 23 failures / 0 errors / 10 skips at base
+and 2,719 / 24 / 0 / 10 at head. Exactly one identity is new:
+`test_accepted_shell_and_visual_oracle_hashes_are_current`, reporting the one
+deliberately stale `src/web/browser/sources/sources.css` release binding. The
+earlier `pdf-review.test` smoke failure did not reproduce on this host. The
+twelve named model modules contain 362 tests, not 358, and took 166 seconds in a
+complete non-fail-fast run. Base and head Chromium reports remain identical at
+2,290 rows (1,850 pass / 212 fail / 228 skip), including every identity and
+detail.
+
+The Sources CSS correction is render-neutral by that evidence. No protected
+Liturgy source, shared production shell source, release record, Catena
+production/generated source, or Catena generator changed. The twelve
+`day-missal.css` selectors remain untouched and blocked by
+`liturgy-reader-live-ritual-flow-2026-08-07`, still `in_progress` with all six
+requirements open.
+
+**Catena Omnia vision: ACCEPT_WITH_CORRECTIONS.** The narrow-order statement now
+preserves accepted E1's projection refusal before affected Scripture while
+retaining Scripture as canonical anchor. The whole-corpus horizon, exact
+commentary/source binding, L1/L2/L3 distinction, protected-Liturgy boundary, and
+separate optional AI synthesis are otherwise sound.
+
+**Catena Omnia roadmap: ACCEPT.** It requires a scale benchmark before transport
+redesign, advances bounded corpus acquisition alongside foundation work, puts
+typed source-owned edges before advanced navigation, preserves Search as
+J0/J1/J2, and keeps review, signing, deployment, and protected-surface authority
+separate.
+
+No release binding was refreshed. No implementation or protected-Liturgy
+correction, merge, deployment, signing, self-acceptance, or next Catena feature
+lane was performed.

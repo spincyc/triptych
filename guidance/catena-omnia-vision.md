@@ -338,10 +338,14 @@ commentary does not visually overpower Scripture near the split threshold.
 
 ### Narrow composition
 
-Below the content-driven split, Catena has one reading order. Scripture comes
-first; commentary follows; leads, blocked material, refusals, and extended
-apparatus remain later or under deliberate disclosure. There is no side-by-side
-mobile mode, horizontal card rail, or squeezed miniature Scripture column.
+Below the content-driven split, Catena has one reading order. The Scripture
+locus and its projection truth form the first reading unit: when the selected
+projection carries a boundary refusal, that refusal precedes the affected
+Scripture, as the accepted E1 behavior already renders it; otherwise Scripture
+text comes first. Commentary follows. Acquisition leads, blocked material, and
+extended apparatus remain later or under deliberate disclosure. There is no
+side-by-side mobile mode, horizontal card rail, or squeezed miniature Scripture
+column.
 
 ### Typography
 
@@ -856,6 +860,28 @@ Scripture/chain relationship, invent a framework, propose a webfont, redesign
 protected Liturgy, merge Search into Catena, or turn the page into a general
 research dashboard. Those would be new product decisions, not completion of
 this vision.
+
+## Independent cold disposition, 2026-08-30
+
+An independent review at exact branch head
+`407dfad76061460e1b3f5e3ad65ea41c73c5f746` returns
+**ACCEPT_WITH_CORRECTIONS** for this vision. The correction is the narrow-order
+sentence above: the accepted E1 renderer places a projection-boundary refusal
+before the affected Scripture, so a blanket promise that every refusal followed
+Scripture contradicted the closed product behavior this document says it
+preserves. This is a guidance correction only; no Catena production source,
+generated data, release record, or accepted E0/E1 behavior changed.
+
+With that correction, the vision:
+
+- treats Omnia as a whole-corpus horizon over held, publishable, exactly anchored
+  commentary rather than as a completeness claim;
+- keeps canonical Scripture identity, natural commentary extent, exact edition,
+  rights, voice, chronology, and L1/L2/L3 state distinct;
+- permits only typed, repository-owned relationships and keeps the protected
+  Liturgy surface behind its own owner and seam;
+- makes any AI synthesis a late, optional, separately labelled derived treatment
+  over cited fragments, never another voice in the historical chain.
 
 ## Final north star
 

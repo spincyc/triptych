@@ -978,3 +978,36 @@ new vision/roadmap documents, reproduce the B0/B1 evidence from a clean checkout
 resolve the validation-record inconsistency, and issue an independent
 disposition. Only after that disposition should an authorized continuation lane
 select the next packet from the dependency map.
+
+# Independent cold disposition, 2026-08-30
+
+The required independent review was performed from a fresh full checkout at
+exact fetched head `407dfad76061460e1b3f5e3ad65ea41c73c5f746`.
+
+**Roadmap disposition: ACCEPT.** The roadmap sequences a measured whole-canon
+scale benchmark before transport redesign, advances bounded acquisition breadth
+and depth alongside foundation work, keeps source/rights/voice review in the
+acquisition path, requires typed relationships before advanced navigation,
+preserves Search as J0/J1/J2, and keeps review, release signing, deployment, and
+protected-Liturgy authority separate. It does not require years of shell work
+before adding corpus value and does not select a premature framework.
+
+**CO-00 B0/B1 disposition: CHANGES_REQUIRED.** Two claimed fail-closed
+properties are not enforced at the reviewed head:
+
+1. `test_browser_model_gate.py` contains the coverage assertion that discovers a
+   future JavaScript-driving suite, but `make check` runs only the modules named
+   by `BROWSER_MODEL_TESTS`; it does not run that meta-test. The new suite can
+   therefore remain absent from the gate and pass `make check`.
+2. `SiteChromeScopeTest` does not prove the stated selector class. It misses a
+   broad element selector such as `a`, treats a non-layout class inside
+   `:not(...)` as positive page scope, and freezes the protected exception only
+   by selector count rather than exact selector identity. Existing
+   `scripture/scripture.css` `a` and `a:hover` rules demonstrate that
+   `day-missal.css` is not proved to be the only remaining rule that would reach
+   site chrome if instrument stylesheets were bundled.
+
+The earlier “Exact next action” is now fulfilled and superseded. No Catena
+feature lane is authorized by this review. A later bounded correction lane may
+repair the two gates and request confirmation; the protected
+`day-missal.css` blocker remains separately owned and untouched.
