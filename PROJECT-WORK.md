@@ -2197,3 +2197,83 @@ validation above was not rerun and is unchanged; this work touched only
 `release/public-alpha.json` and `release/rights/public-alpha-2026-07-15.md`. The
 hardening and evidence-tooling backlogs, the twenty separately owned concerns,
 and the V17 cancellation all remain exactly as the merge left them.
+
+## B0/B1 shared-foundation convergence against current main
+
+The corpus-browser program's B0/B1 lane was dispatched again from
+`origin/main` `09437907472581df4a8969010bd494249a3539a5`, the Catena E1
+post-merge release-binding refresh, onto `impl/corpus-foundation-b0-b1`. The
+task was reconciliation rather than implementation: most of what
+`guidance/corpus-browser-implementation.md` §11 proposed had arrived on the
+mainline by routes the document could not see, because it was written from
+`impl/foundation-hardening`, which was never a descendant of `main`. The
+step-by-step disposition, its evidence, and the one remaining blocker are
+recorded in that document's new §11.1, which owns them; they are not restated
+here.
+
+Three facts are worth having in the operational record.
+
+**The historical red baseline is not today's.** `python3 -m unittest discover -s
+tools/tests` at the dispatch base is 2,707 tests, 24 failures, 0 errors, 11
+skipped, and every failure is `test_tool_registry` — 23 worked-example subtests
+and one `pdf-review.test` shell smoke test. Nothing browser-related is red.
+§11's recorded "14 failures and 13 errors" belonged to `c27d69153`. The lane's
+problem on current main was coverage `make check` does not reach, not failures it
+does not fix, and step 3 — the narrow browser-model gate — was the one item of
+steps 1-4 and 9 still missing. It is now `check-browser-models`: twelve modules,
+358 tests, about 162 seconds, inside `make check`, with
+`tools/tests/test_browser_model_gate.py` refusing a future suite that drives
+browser JavaScript and is neither gated nor recorded as ungated with a reason.
+
+**A fifth selector hazard of the recorded class was found in an unprotected
+file.** `sources.css` set a 44-pixel target floor on `.brand a` and
+`.site-footer a` — classes `release/public-alpha/layout.html` owns — with no page
+scope, on the argument that the stylesheet is served only on one route. That is
+the `.field` and `.detail` mistake with `<link>` presence standing in for
+`<link>` order: in a shared bundle the rule restyles the masthead and footer of
+every page on the site. It is scoped, and the class rather than the incident is
+now held by `test_browser_collisions.SiteChromeScopeTest`, which reads the
+layout's own classes out of `layout.html` and requires any remaining exception to
+be recorded with the authority that owns it.
+
+**`shared-shell-blocking-collisions-resolved` moves from `open` to `blocked`, and
+not to `pass`.** The distinction is the point: `day-missal.css` still restyles
+`body > .site-header` in twelve selectors, and that file is inside the protected
+reader family which master-plan decisions D2 and D18 and boundary 4 close until
+`liturgy-reader-live-ritual-flow-2026-08-07` releases or carves out the seam.
+That deliverable remains `in_progress` with all six requirements `open`, so no
+corpus lane may make the change. §11.1 states the twelve selectors, the four
+routes that load them, why they block a shared shell, the smallest mechanical
+scoping change, and the exact one-sentence carve-out required. Both `open` and
+`blocked` are unmet states and neither may be waived without a `waiver_reason`
+and a `waiver_authority`; `blocked` is the truthful one, because the work is not
+merely undone.
+
+Steps 6, 7, and 8 were deliberately not executed. Step 6, promoting
+`reader-shell.js` and `reader-shell.css` to `shared/`, is **withdrawn** by D2 and
+D18 rather than deferred, so it is not a carve-out anyone should ask for. Steps 7
+and 8 are written as depending on it; step 7 would centralise a commonality no
+current pair of production surfaces has demonstrated, and step 8's neutrality
+could only be proved against surfaces this lane may not touch. Master-plan
+steps 10 and 11 — generated site navigation and the nested `<main>` — remain
+outside B0/B1 and are recorded as downstream blockers.
+
+Validation was measured against the exact dispatch base rather than against an
+exit code. Real Chromium over the built artifact at 19 routes by the nine-state
+governing matrix returns identical reports at base and candidate: 2,290
+assertions, 1,850 passed, 212 failed, 228 skipped, byte-identical rows including
+every detail string. The 212 are three inherited identities that belong to
+others — 108 nested-`main` rows over twelve routes (step 11), 77 target-size rows
+measured against WCAG 2.2 AAA by the gate's own stated choice, and 27 skip-link
+rows caused by the protected propers reader opening a modal on load. The five
+reader harnesses pass their exact all-green contract. Full discovery at the
+candidate head reproduces the base's 24 failures and 0 errors with no new
+identity.
+
+One release binding is deliberately stale:
+`src/web/browser/sources/sources.css`. Re-signing is release-owned and this is an
+implementation candidate, so `make refresh-release-bindings` was not run in any
+form and no hash was hand-edited. `make check-release-bindings` therefore
+reports one stale path on this branch, which is the expected state and not a
+build or source failure. Nothing was merged, deployed, released, or
+self-accepted, and no subsequent lane was begun.

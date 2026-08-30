@@ -436,7 +436,8 @@ shared-shell work that reordered stylesheet loading, or added a `.field` rule
 after `history.css`, would have silently broken every change row on the page.**
 The change row is now `.change-field` (`history.css:238`, with the family at
 `:250-280`), renamed across `history.js`, `history.css` and the markup together,
-and the two components no longer meet. Not on `origin/main`.
+and the two components no longer meet. Not on `origin/main` when this was
+written; **on it now** — verified in the tree at `094379074`. See §11.1.
 
 Two related name collisions sat beside it. `texts.css` deliberately restated
 every declaration of `browser-core.css:556-564` so that the shared `.detail` —
@@ -445,7 +446,7 @@ the history and law record panel — could not reach the texts page, where
 the texts record card is now `.record` (`texts.css:200`, family at `:216-271`),
 the panel keeps its `#detail` id, and the comment at `:187-198` is past tense.
 Introducing a shared component library would have re-collided otherwise. Not on
-`origin/main`. And eight
+`origin/main` when this was written; **on it now** — see §11.1. And eight
 class-name pairs still name one component twice: law's `.panel`/`.panel-title`/
 `.panel-block`/`.block-title`/`.stop`/`.stop-head`/`.stop-kinds`/`.weak` against
 history's `.detail`/`.detail-title`/`.detail-section`/`.detail-section-title`/
@@ -474,7 +475,9 @@ in the tree and the liturgy reader has none; a page without one still shows no
 inline-mode notice, and that remains open. `DOCUMENT_LANDMARKS` is now the
 contract, and `tools/tests/test_browser_collisions.py` fails a published page
 that names its `<main>` anything else. This fix is a prerequisite for a shared
-error component. Not on `origin/main`.
+error component. Not on `origin/main` when this was written; **on it now** — see
+§11.1, which also records the fifth selector of this same class, in
+`sources.css`, that neither this section nor §20 had found.
 
 `T.fail` has a second defect, **still live**, where it *is* used.
 `sources.js:229` calls it when
@@ -503,6 +506,16 @@ defect is live and measured: 117 failures in the run recorded in §17.5. The
 citation `layout.html:29` resolves here and **does not resolve** on
 `impl/shell-plumbing`, whose copy of this section still calls the defect
 outstanding; that branch's record is the wrong one.
+
+**Neither branch's fix reached `main`, and the defect is live there.** At
+`094379074` the citation `layout.html:29` resolves, and the gate reports 108
+`single-main-element` failures over **twelve** routes rather than 117 over
+thirteen: `/sources/index.html` now declares no `<main>` of its own and defers
+the landmark to the layout, which is `6b5742bf2`'s shape arrived at one route at
+a time and pinned by
+`test_browser_static.test_sources_defers_its_document_landmark_to_the_public_layout`.
+The remaining twelve are §11 step 11, which depends on step 10, and both are
+outside the B0/B1 foundation. See §11.1.
 
 One correction, because this document earlier let two separate things be read as
 one. The layout's own skip link **is** present and **does** point at an element
@@ -949,6 +962,12 @@ editions, all 186 PDFs and all 16 library shelves — built with `createElement`
 in `texts.js:128,131,153` — are checked by nothing.
 
 ### Four Chromium harnesses that no target invokes
+
+**This heading is history, and the rest of this subsection is read as the
+diagnosis that produced the fix rather than as current state.** On current main
+`check-browser-harnesses` exists, depends on `public-preview`, and holds five
+harnesses to an exact all-green contract; §11.1 records the run. The seven
+absence failures below were closed by their own owner and are not open.
 
 `tools/tests/*_browser.mjs` — 5,949 lines across four files — spawn real
 Chromium `--headless=new`, serve the repository over an ephemeral `node:http`
@@ -1431,6 +1450,216 @@ harness. M0 requires a full local `make public-site` plus
 `make check` does not build the site and a shell change can pass `check` and
 fail in CI. Note that pushing `main` *is* the deploy authorization, and see
 §13-C4 on who holds it.
+
+## 11.1 Current-main B0/B1 status, measured 2026-08-30
+
+§11 was written from `impl/foundation-hardening`, a branch that was never a
+descendant of `main`. Its per-step annotations therefore say "done on this
+branch" and "not on `origin/main`" about work whose disposition on the mainline
+was, at the time, unknown. Most of it arrived. This section is the reconciled
+answer at `origin/main` `09437907472581df4a8969010bd494249a3539a5` — the
+Catena E1 post-merge release-binding refresh — and it governs where it and §11
+disagree. Every row was read off the tree and the runs recorded below, not off
+§11's prose.
+
+**The baseline is not §11 step 1's baseline.** `python3 -m unittest discover -s
+tools/tests` at that commit is **2,707 tests, 24 failures, 0 errors, 11
+skipped**, and all 24 failures are one module: 23 subtests of
+`test_tool_registry.WorkedExampleTests.test_every_verb_shows_at_least_two_real_invocations`
+and one of `ToolSmokeTests.test_shell_smoke_tests_pass` (`pdf-review.test`).
+Step 1's recorded "14 failures and 13 errors" belonged to `c27d69153` and is
+history. **Nothing browser-related is red at the base**, which is a different
+situation from the one §11 was sequenced for: the foundation's problem on current
+main is coverage that `make check` does not reach, not failures it does not fix.
+
+| Step | Disposition on current main | Evidence |
+| --- | --- | --- |
+| 1 honest baseline | `SUPERSEDED_BY_CURRENT_MAIN` | The counts above. §11's are not today's. |
+| 2 runnable Chromium harness target | `SATISFIED_ON_MAIN` | `check-browser-harnesses: public-preview` (`Makefile`), `tools/tests/test_browser_harnesses.py`. It resolves `TRIPTYCH_CHROME`, skips with a stated reason for a missing browser *and* for a missing preview build, and reads each report from stdout **or stderr**, which is what the propers harness needs. It no longer holds a pass floor: `ASSERTION_COUNTS` is an exact all-green contract over **five** harnesses (8, 43, 18, 26, 40), and `TRIPTYCH_CHROME=/usr/bin/chromium make check-browser-harnesses` passes all six tests in 139 s. The seven absence failures §9 recorded are gone, closed by their own owner. |
+| 3 narrow browser-model gate in `make check` | `MISSING`, **implemented here** | `check-browser-models` and `tools/tests/test_browser_model_gate.py`. See below. |
+| 4 blanket `node --check` and static browser-page lint | `SATISFIED_ON_MAIN` | `tools/tests/test_browser_static.py` parses every `src/web/browser/**/*.js` and every `tools/tests/*.mjs`, and runs the build's own `browser_page_parts` — head whitelist included — over all thirteen published pages; `check-browser-static` is in `check:`. |
+| 5 shared-shell collision and plumbing hazards | `PARTIALLY_SATISFIED` — (a) (b) (c) landed, (d) `BLOCKED_BY_PROTECTED_OWNER`, and a fifth of the same class found and fixed here | Below. |
+| 6 promote `reader-shell.js`/`.css` to `shared/` | `SUPERSEDED_BY_CURRENT_MAIN` — **withdrawn, not blocked** | §14, decisions D2 and D18: the step is "withdrawn, not deferred: reuse its ideas, not the owned file." Recording it as merely blocked would invite a later lane to ask for a carve-out that the coordinator has already refused. |
+| 7 shared primitives | `MISSING`, and not this lane's to add | Step 7 depends on step 6, which is withdrawn, and D17 keeps §11's larger extractions proposals "until a surface lane needs them". A primitive belongs in shared code when two current production surfaces share one semantic contract; the surfaces that would prove it — C2, D1, F1, G1, H1, I1 — are unstarted. Landing it now would centralise a commonality nothing has demonstrated. |
+| 8 shared accessibility blocks | `MISSING`, and not attempted here | Also written as depending on step 6. Its content does not, but its risk does: a `forced-colors` or `print` block added to `browser-core.css` reaches all thirteen published entrances, four of them inside the protected reader family, and `reader-instrument.css` already carries the specific block the shared one would be modelled on. That is a change whose neutrality can only be proved against surfaces this lane may not touch. |
+| 9 design-neutral per-route regression harness (B1) | `SATISFIED_ON_MAIN` | `tools/tests/corpus_browser_gate.mjs`, `tools/tests/test_corpus_browser_gate.py`, `check-browser-gate`. Nineteen routes × the nine-state governing matrix, plus four per-route phases: no-JavaScript static truth, hash deep-link contracts, startup under the `/triptych/` project prefix, and internal link resolution. It covers every item §14's D11 asks of it, asserts no pixel and accepts no screenshot baseline, and exits 3 with a stated reason when no browser or no artifact resolves. Nothing here needed improving. |
+
+### Step 3, as implemented
+
+`make check` reached four browser models — `assembly-model.js` through
+`check-calendar-rubrics`, `catena-model.js` through `check-catena`,
+`reader-model.js` through `check-source-reader`, `catalogue-model.js` through
+`check-document-catalogue`. Everything else was behind `check-tests`, which
+`check` does not run. `check-browser-models` runs twelve modules, 358 tests, in
+about 162 seconds, all green at the base:
+
+- the set §11 step 3 names — `test_law_page`, `test_liturgy_reader_state`,
+  `test_mass_ordinary`, and the reader-integration suites
+  `test_day_reader_integration`, `test_liturgy_reader_shell`,
+  `test_day_missal_integration`, `test_day_missal_switch`,
+  `test_mass_form_reader`; and
+- **beyond that list**, this deliverable's own recorded evidence:
+  `test_browser_url_contract` (the published hash contracts pinned before any
+  router cleanup), `test_browser_collisions` (the selector and plumbing
+  hazards), `test_browser_citation_truth` and `test_browser_truthfulness`. A
+  requirement whose proof is reachable only by opting in is not a fail-closed
+  requirement. The addition is named here so a reviewer who wants the literal
+  step-3 list can remove four lines from one Makefile variable.
+
+`check-tests` remains outside `check`. Wiring 2,707 tests and a red
+tool-registry baseline into it is the maintainer's decision, not this gate's, and
+§11 step 3 says so.
+
+`test_browser_model_gate.py` holds the gate to what it claims: `check` runs it,
+it names its modules rather than globbing them, every named module really does
+drive a file under `src/web/browser`, and — the assertion that matters as the
+tree grows — no suite that drives browser JavaScript under node may be absent
+from both the gate and `UNGATED_WITH_REASON`. The seven recorded exclusions are
+the five already reached by a tool inside `check`, the closed Catena E1
+production suite, and the unlinked prototype.
+
+### Step 5, hazard by hazard
+
+| | Hazard | State on current main |
+| --- | --- | --- |
+| (a) | `T.fail`/`T.showBanner` hard-coding `#reading` and `#banner` | **Landed.** `browser-core.js:288` declares `DOCUMENT_LANDMARKS`, `:291` `documentRegion`, `:357` the rewritten `fail`; `documentLandmarks`/`documentRegion` are exported at `:1731-1732`. `test_browser_collisions.py` replays it under node against a stub document, one landmark at a time, and fails a published page whose `<main>` is named anything else. The `showBanner` residue — one `#banner` host, none in the liturgy reader — is unchanged and still belongs to the liturgy deliverable. |
+| (b) | history's change-row `.field` | **Landed.** `.change-field*` at `history.css:238`, with the collision comment past tense at `:228`. |
+| (c) | texts' record card shadowing shared `.detail` | **Landed.** `.record*` at `texts.css:200`, the panel keeping its `#detail` id. |
+| (d) | `day-missal.css`'s unscoped `body > .site-header` | **Open and `BLOCKED_BY_PROTECTED_OWNER`.** Unchanged. Twelve selectors, recorded below. |
+| (e) | `sources.css` restyling `.brand a` and `.site-footer a`, unscoped | **New finding of the same class, fixed here.** Not in §5, not in the register, and unprotected. |
+
+(e) is worth the ink because it shows the class was never only about `.field`
+and `.detail`. `sources.css` set `display: inline-flex; align-items: center;
+min-height: 44px` on `.brand a`, `.page-footer a` and `.site-footer a`, with a
+comment whose whole scoping argument was "this stylesheet is served only on the
+Sources route" — correctness by which pages happen to link the file, which is
+what load-order correctness looks like when the ordering is `<link>` presence
+rather than `<link>` sequence. `.brand` and `.site-footer` belong to
+`release/public-alpha/layout.html`. Scoping it is not the obvious one-word
+change, because **the published body carries no page class**:
+`browser_page_parts` appends a browser page's own body classes to `<main>`, so
+`<body>` in the artifact has none, and a `body.sources-page` prefix would match
+nothing. The scope has to be read off the landmark. It now is —
+`body:has(> .sources-page)` for the two the layout owns and outside `<main>`,
+and `.sources-page .page-footer a` for the one inside the content, which is
+where the class sits on `<main>` in the artifact and on `<body>` off disk.
+
+Proof that it changed nothing: the gate over `/sources/index.html` at nine
+states returns **121 assertions, 0 failures, byte-identical rows including every
+detail string** before and after, and
+`primary-controls-meet-target-size` still reports "every visible control is at
+least 44x44" at all five 393px states — which is the assertion that would have
+noticed the 44-pixel floor falling off the masthead and footer links. Over the
+whole artifact, 19 routes × 9 states, base and candidate produce **identical
+2,290 assertion rows, 1,850 passed, 212 failed, 228 skipped**.
+
+`test_browser_collisions.SiteChromeScopeTest` now holds the class rather than the
+two incidents: the layout's own classes are read out of `layout.html`, and any
+instrument stylesheet whose selector reaches one of them with no class the layout
+does not own is a failure unless it is recorded in `SITE_CHROME_UNSCOPED` with
+the authority that owns it. One entry stands there, with its count, so the
+exception cannot quietly grow inside the file that holds it.
+
+### (d), stated exactly, because it is the whole remaining blocker
+
+- **File**: `src/web/browser/liturgy/day-missal.css`.
+- **Selectors**, twelve, all reaching a class the published layout owns with no
+  class the layout does not: `body > .site-header` at `:51`, `:604` (inside
+  `@media (max-width: 47.5rem)`) and `:730` (inside `@media print`);
+  `body > .site-header .triptych-mark` `:58`; `… .triptych-mark i` `:64`;
+  `… .triptych-mark i:nth-child(2)` `:65`; `… .brand a` `:66`;
+  `… .brand span` `:67` and `:609`; `… nav` `:68` and `:613`;
+  `… nav a` `:620`.
+- **Routes that load the file**: `/liturgy/day.html`,
+  `/liturgy/day-reader.html`, `/liturgy/reader-visual-reset-day.html`,
+  `/liturgy/reader-visual-reset-propers.html`, plus the unserved prototype
+  `liturgy/prototypes/reader-shell/index.html`.
+- **Why it blocks shared-shell promotion**: the rules are not about the four
+  pages that link the file; they are about `body > .site-header`, which is every
+  page. A shared bundle, a combined stylesheet, or one added `<link>` on a
+  fourteenth route silently re-lays-out the masthead of the whole site — grid
+  columns, gap, min-height, padding, the triptych mark's geometry, both brand
+  font sizes, the nav gap, and at print `display: none`. This is why §5 calls it
+  the most dangerous file in the tree.
+- **Smallest mechanical change**: prefix each of the twelve with a class the
+  layout does not own. All four published pages carry `page-browser` in their
+  body class, which `browser_page_parts` puts on `<main>`, so
+  `body:has(> .page-browser) > .site-header` is a one-token-per-selector edit
+  with an unchanged rendered DOM on all four routes and no reach beyond them.
+  `browser-core.css` already uses `:has()` on `<body>` for the off-disk guard at
+  `:134`, so nothing new is introduced. No declaration changes; no visual
+  decision is taken.
+- **Authority needed**: `day-missal.css` sits in the protected reader family
+  that master-plan decisions D2 and D18 and boundary 4 close until its owning
+  Liturgy work releases or carves out the seam, and
+  `liturgy-reader-live-ritual-flow-2026-08-07` is `in_progress` with all six
+  requirements `open`. The carve-out required is narrow and can be stated in one
+  sentence: *authority to scope the twelve `body > .site-header` selectors in
+  `src/web/browser/liturgy/day-missal.css` under `body:has(> .page-browser)`,
+  changing no declaration, with the four routes' rendered DOM and the reader
+  harnesses' assertion sets proved unchanged, and the release binding for that
+  one path refreshed at the integration step.* Nothing else in the protected
+  family is needed, and the corpus lanes need nothing else from it.
+
+Until that carve-out exists,
+`corpus-browser-foundation-hardening-2026-08-08`'s
+`shared-shell-blocking-collisions-resolved` cannot pass. It is recorded as
+`blocked` rather than `open` so the ledger says *why* it is unmet; both states
+are unmet, and neither may be waived without a `waiver_reason` and a
+`waiver_authority`.
+
+### What the B1 gate reports, and what belongs to whom
+
+`TRIPTYCH_CHROME=/usr/bin/chromium node tools/tests/corpus_browser_gate.mjs`
+over `build/public-alpha/site` at this candidate: **2,290 assertions, 1,850
+passed, 212 failed, 228 skipped**, identical to the dispatch base. Three failure
+identities, none of them this lane's and none of them new:
+
+- `single-main-element`, 108 rows over **12** routes. The nested `<main>`, live.
+  Twelve rather than thirteen: `/sources/index.html` declares no `<main>` of its
+  own and defers the landmark to the layout, which is the shape §11 step 11
+  proposes and `test_browser_static.py` pins for that one route. It is step 11,
+  it depends on step 10, and §15 of the dispatch keeps both out of B0/B1.
+- `primary-controls-meet-target-size`, 77 rows over 18 routes. §20's FP1: the
+  gate measures WCAG 2.2 SC 2.5.5, level AAA, deliberately and says so; nothing
+  fails the AA minimum. A site-wide type and spacing scale is the design lane's
+  contract.
+- `skip-link-targets-existing-element`, 27 rows over 3 routes —
+  `/liturgy/index.html`, `/liturgy/propers-reader.html`,
+  `/liturgy/reader-visual-reset-propers.html`. §20's FP5: a focus trap from
+  `propers-reader.js` opening a modal on load, instrument-owned, inside the
+  protected reader deliverable. No generator change reaches it.
+
+Recording them here is the point of a neutral gate. Turning any of them green
+from this lane would mean either editing a protected file or accepting a visual
+decision nobody has made.
+
+### What is red on this branch, and why it is one cause
+
+`make -k check` at this candidate fails three targets, and all three are the
+same fact: `src/web/browser/sources/sources.css` is a SHA-256-bound site source,
+its bytes changed, and re-signing is release-owned and was deliberately not done
+here. §17.4's scoped refresh belongs immediately before a landing commit, not to
+an implementation candidate awaiting review, and a hash is never hand-edited.
+
+- `check-release-bindings`: `stale: 1 stale binding(s)`, that one path. This is
+  the whole stale set.
+- `check-browser-models`: 358 tests, one failure —
+  `test_day_reader_integration.test_accepted_shell_and_visual_oracle_hashes_are_current`,
+  which shells out to `release-bindings status` and requires exit 0. It is
+  asserting binding currency, not a browser-model fact, so it goes red for any
+  unsigned site-source change anywhere in the tree. Worth knowing before reading
+  the new gate as broken: the gate's own subject matter is green.
+- `check-examples`: 16 diverged, against **12 at the dispatch base**. The four
+  new divergences are the same cause echoed through captured transcripts —
+  three that recorded `exact: 0 stale binding(s)` and one that recorded
+  `verified build/public-alpha/preview`. The other twelve are inherited and
+  predate this branch.
+
+`make verify-public-preview` likewise reports exactly one failure, the same
+path's approved SHA-256. Link verification, which §9 notes runs nowhere else,
+and the structural checks around it pass. `make public-preview` and
+`make public-site` both build.
 
 ## 12. Risks
 

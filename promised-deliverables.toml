@@ -227,12 +227,25 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "shared-shell-blocking-collisions-resolved"
   criterion = "The four selector and plumbing hazards that block a shared shell are resolved with an unchanged rendered DOM: the `#reading`/`#banner` hard-coding, history's `.field`, texts' `.detail`, and `day-missal.css`'s unscoped `body > .site-header`."
-  status = "open"
+  # Three of the four are resolved on main and verified in the tree at
+  # 094379074; a fifth of the same class, sources.css restyling the layout's
+  # `.brand` and `.site-footer`, was found and resolved with the gate proving an
+  # unchanged rendered result. The fourth is `blocked` rather than `open`
+  # because it is not merely undone: `day-missal.css` sits in the protected
+  # reader family that master-plan decisions D2 and D18 close until
+  # liturgy-reader-live-ritual-flow-2026-08-07 releases or carves out the seam.
+  # guidance/corpus-browser-implementation.md §11.1 states the twelve
+  # selectors, the four routes, the smallest mechanical scoping change, and the
+  # exact one-sentence carve-out required. Both states are unmet; neither may be
+  # waived without a waiver_reason and a waiver_authority.
+  status = "blocked"
   evidence = [
     "src/web/browser/shared/browser-core.js",
     "src/web/browser/history/history.css",
     "src/web/browser/texts/texts.css",
+    "src/web/browser/sources/sources.css",
     "tools/tests/test_browser_collisions.py",
+    "guidance/corpus-browser-implementation.md",
   ]
 
   [[deliverables.requirements]]
