@@ -230,7 +230,10 @@ state = "in_progress"
   # Three of the four are resolved on main and verified in the tree at
   # 094379074; a fifth of the same class, sources.css restyling the layout's
   # `.brand` and `.site-footer`, was found and resolved with the gate proving an
-  # unchanged rendered result. The fourth is `blocked` rather than `open`
+  # unchanged rendered result. A sixth, scripture.css's bare `a` and `a:hover`,
+  # was found by the independent cold review and is resolved here by scoping the
+  # two rules through `:where(.plan-page, .track-page)`.
+  # The fourth is `blocked` rather than `open`
   # because it is not merely undone: `day-missal.css` sits in the protected
   # reader family that master-plan decisions D2 and D18 close until
   # liturgy-reader-live-ritual-flow-2026-08-07 releases or carves out the seam.
@@ -238,12 +241,26 @@ state = "in_progress"
   # selectors, the four routes, the smallest mechanical scoping change, and the
   # exact one-sentence carve-out required. Both states are unmet; neither may be
   # waived without a waiver_reason and a waiver_authority.
+  #
+  # The blocked remainder is larger than that one file and is now recorded
+  # exactly rather than by count. The strengthened detector described in §11.3
+  # derives the site's chrome from the build's own layout wrapper instead of
+  # reading class names out of selector text, and it finds three further
+  # unscoped hazards of the same class inside the same protected reader family:
+  # reader-shell.css (`:root`, `html`, `html`), reader-instrument.css (`:root`
+  # twice), and reader-visual-reset.css (`:root`, `a:focus-visible`, `:root`).
+  # All three are `BLOCKED_BY_PROTECTED_OWNER` for the same reason (d) is, and
+  # all four inventories are frozen selector by selector in
+  # tools/tests/test_browser_collisions.py, so neither growing nor silently
+  # correcting one passes. This makes the blocked state more precise; it does
+  # not move it toward met.
   status = "blocked"
   evidence = [
     "src/web/browser/shared/browser-core.js",
     "src/web/browser/history/history.css",
     "src/web/browser/texts/texts.css",
     "src/web/browser/sources/sources.css",
+    "src/web/browser/scripture/scripture.css",
     "tools/tests/test_browser_collisions.py",
     "guidance/corpus-browser-implementation.md",
   ]
@@ -251,9 +268,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "no-visual-or-product-decision"
   criterion = "The lane changes no visual contract, accepts no screenshot baseline as an oracle, and makes no production change to a protected liturgy asset."
+  # Disclosed, because it is a rendering change and a reviewer should judge it
+  # rather than find it: releasing scripture.css's bare `a` rules moves the
+  # footer links on /scripture/ and /scripture/track.html from rgb(69, 63, 56)
+  # to rgb(143, 53, 64), measured in real Chromium. That is the site's own
+  # footer-link colour, which /texts/, /law/, /history/ and /sources/ already
+  # render, so the change removes an unintended page-stylesheet override of a
+  # contract assets/site.css owns rather than deciding a new appearance. Every
+  # in-content link on both routes keeps its colour, the masthead, navigation
+  # and skip links are unchanged, no screenshot was accepted as an oracle, and
+  # no protected liturgy asset was edited. §11.3 states the measurements.
   status = "pass"
   evidence = [
     "guidance/corpus-browser-implementation.md",
+    "src/web/browser/scripture/scripture.css",
   ]
 
 [[deliverables]]

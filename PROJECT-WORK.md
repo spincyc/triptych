@@ -2329,3 +2329,78 @@ separate.
 No release binding was refreshed. No implementation or protected-Liturgy
 correction, merge, deployment, signing, self-acceptance, or next Catena feature
 lane was performed.
+
+### Remediation of the two blockers, 2026-08-30
+
+Dispatched from `e135e65bbea80877eb75a39945b750fc7566642f` on the same branch,
+scoped to the two `CHANGES_REQUIRED` findings and nothing else. The step matrix,
+the strengthened contract, the exact protected inventories, and the measurements
+are owned by `guidance/corpus-browser-implementation.md` §11.3 and are not
+restated here. Four operational facts belong in this record.
+
+**The coverage meta-test is now a `check` prerequisite, and the fix is a topology
+change rather than a list change.** Adding `test_browser_model_gate` to
+`BROWSER_MODEL_TESTS` would have run it and simultaneously falsified that
+variable's own invariant, since the gate asserts that every module it names
+drives browser JavaScript and the meta-test drives none. A separate
+`BROWSER_MODEL_GATE_TESTS` variable and a `check-browser-model-coverage` target,
+made a prerequisite of `check-browser-models`, close the hole with one edge and
+run the meta-test before the 150-second model loop instead of after it. The
+module grew from 8 tests to 22, and the new ones do not trust the edge they
+depend on: they walk the prerequisite graph from `check`, require the recipe to
+read the variable that names the module, and replay `make -n check` to confirm
+the printed recipe really runs it. A synthetic unnamed browser-driving suite makes
+both the coverage target and `check-browser-models` exit 2, and removing it
+returns both to 0 — the exact scenario the review said was unenforced.
+
+**The collision detector stopped reading selector text for names.** It now
+imports `tools/public-alpha`'s own `wrap_in_layout`, renders both the published
+and the preview shell, parses them into an element model that keeps `<main>` but
+discards its subtree, and asks of every instrument selector whether any arm can
+match any chrome element — with `:not()` and `:root` evaluated, positive-only
+scope, `:is()`/`:where()` scoped only when every alternative is, and anything it
+cannot classify raising rather than passing. That closes all three defects the
+review named, and it found three unrecorded hazards of the same class while doing
+it, all inside the protected reader family: `reader-shell.css`,
+`reader-instrument.css`, and `reader-visual-reset.css`. They are recorded with
+their authority rather than corrected, for the same reason `day-missal.css` is.
+The exception record is now four files and exact selectors in order, so
+substituting one unscoped selector for another fails where the old count of
+twelve passed. That suite grew from 15 tests to 32.
+
+**One production stylesheet changed, and it changes what two routes render.**
+`scripture.css`'s bare `a` and `a:hover` are now scoped through
+`:where(.plan-page, .track-page)` — `:where()` so the rules keep their
+specificity and the file's own `.eyebrow a` override still wins, and the page
+classes rather than a `body` prefix because `browser_page_parts` projects a
+browser page's body classes onto `<main>`, leaving the published `<body>` with
+none. Measured in real Chromium, every in-content link on both routes keeps its
+colour and the footer links move from `rgb(69, 63, 56)` to `rgb(143, 53, 64)`.
+That is the fix rather than a regression: the old value was the neutral
+`--section-ink` fallback resolving outside `<main>`, and `/texts/`, `/law/`,
+`/history/` and `/sources/` already render those footer links at
+`rgb(143, 53, 64)`. Scripture was the one route where a page stylesheet
+overrode chrome the site's own stylesheet owns. It is disclosed on
+`no-visual-or-product-decision` in the ledger so a reviewer judges it rather
+than discovers it.
+
+**The stale binding set is now two paths, and that is the whole reason `make
+check` is red.** `src/web/browser/scripture/scripture.css` joins
+`src/web/browser/sources/sources.css`; both are deliberate, neither was
+refreshed or hand-edited, and re-signing is release-owned. `make -k check` fails
+`check-release-bindings`, the same oracle inside `check-browser-models` that
+shells out to it, and `check-examples` with 16 divergences of 212 captured
+examples, unchanged from the reviewed head. Everything else is green:
+`check-browser-models` is 401 tests over 13 modules where it was 362 over 12,
+the five reader harnesses hold their all-green contract, Catena is untouched and
+still 1,351/1/73 with 56 and 394 tests passing, and the Chromium artifact gate
+returns byte-identical 2,290-row reports at base and candidate. Full discovery
+was run on both trees on this host: 2,719 tests / 24 failures / 0 errors / 10
+skips at the base, 2,750 / 24 / 0 / 10 at the candidate, whose 31 extra tests are
+exactly the 14 and 17 added to the two suites. The failure identities are the
+same on both sides and no new one appears.
+
+`shared-shell-blocking-collisions-resolved` remains `blocked`. Nothing was
+merged, deployed, signed, self-accepted, refreshed, or begun as a next lane, no
+protected Liturgy or Catena source was touched, and the candidate stops here for
+independent cold rereview.

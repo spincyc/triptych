@@ -1510,13 +1510,18 @@ about 162 seconds, all green at the base:
 tool-registry baseline into it is the maintainer's decision, not this gate's, and
 §11 step 3 says so.
 
-`test_browser_model_gate.py` holds the gate to what it claims: `check` runs it,
-it names its modules rather than globbing them, every named module really does
-drive a file under `src/web/browser`, and — the assertion that matters as the
-tree grows — no suite that drives browser JavaScript under node may be absent
-from both the gate and `UNGATED_WITH_REASON`. The seven recorded exclusions are
-the five already reached by a tool inside `check`, the closed Catena E1
-production suite, and the unlinked prototype.
+`test_browser_model_gate.py` holds the gate to what it claims: it names its
+modules rather than globbing them, every named module really does drive a file
+under `src/web/browser`, and — the assertion that matters as the tree grows — no
+suite that drives browser JavaScript under node may be absent from both the gate
+and `UNGATED_WITH_REASON`. The seven recorded exclusions are the five already
+reached by a tool inside `check`, the closed Catena E1 production suite, and the
+unlinked prototype.
+
+The sentence that stood here also claimed `check` runs that module. It did not,
+as §11.2 found: the module was in no `check` prerequisite, so its future-suite
+assertion was reachable only by opting into full discovery. §11.3 makes the claim
+true through `check-browser-model-coverage` and owns the correction.
 
 ### Step 5, hazard by hazard
 
@@ -1557,8 +1562,13 @@ whole artifact, 19 routes × 9 states, base and candidate produce **identical
 two incidents: the layout's own classes are read out of `layout.html`, and any
 instrument stylesheet whose selector reaches one of them with no class the layout
 does not own is a failure unless it is recorded in `SITE_CHROME_UNSCOPED` with
-the authority that owns it. One entry stands there, with its count, so the
-exception cannot quietly grow inside the file that holds it.
+the authority that owns it.
+
+That detector was too weak for the class it claimed, in the three ways §11.2
+found, and the single counted exception recorded here was one of the weaknesses.
+§11.3 replaces both the detector and the exception record and owns them; the
+inventory is now four files and exact selectors, not one file and the number
+twelve.
 
 ### (d), stated exactly, because it is the whole remaining blocker
 
@@ -1741,6 +1751,224 @@ No binding was refreshed or hand-edited. `make -k check` consequently fails the
 release-binding check and the same oracle in `check-browser-models`, and also
 reports sixteen example-transcript divergences. This review authorizes no
 signing, merge, deployment, Liturgy edit, or next feature lane.
+
+## 11.3 Remediation of the two `CHANGES_REQUIRED` findings, measured 2026-08-30
+
+Dispatched from `e135e65bbea80877eb75a39945b750fc7566642f` on
+`impl/corpus-foundation-b0-b1`, whose merge base with `origin/main`
+`09437907472581df4a8969010bd494249a3539a5` is that base itself. Scope was the two
+findings §11.2 states and nothing else: no protected Liturgy edit, no Catena
+edit, no binding refresh, no signing, no merge, no deployment, no self-acceptance,
+no next lane. Three source paths changed — `Makefile`,
+`tools/tests/test_browser_model_gate.py`, `tools/tests/test_browser_collisions.py`
+— plus one production stylesheet the second finding named,
+`src/web/browser/scripture/scripture.css`.
+
+### Finding 1: the coverage meta-test is now a `check` prerequisite
+
+The repair is a topology change, not a list change. Adding
+`test_browser_model_gate` to `BROWSER_MODEL_TESTS` would have run it, and would
+have made that variable's own invariant false, because the gate asserts every
+module it names drives browser JavaScript and the meta-test drives none. So:
+
+```make
+BROWSER_MODEL_GATE_TESTS := test_browser_model_gate
+
+check-browser-model-coverage:
+	@$(PY) -m unittest discover -s tools/tests -p "$(BROWSER_MODEL_GATE_TESTS).py" -v
+
+check-browser-models: check-browser-model-coverage
+```
+
+`check` already required `check-browser-models`, so one edge closes the hole, and
+the meta-test now runs **before** the 150-second model loop rather than after it.
+`make -k check` shows it between `check-browser-static`'s six tests and the loop:
+`Ran 22 tests in 1.032s`, `OK`.
+
+The module grew from 8 tests to 22. The nine new assertions do not trust that
+edge; they prove it. `CoverageIsGatedTest` reads the `Makefile` for the
+prerequisite, walks the whole prerequisite graph from `check` to show the target
+is reachable, requires the recipe to actually name `BROWSER_MODEL_GATE_TESTS` and
+that variable to name this module, and replays `make -n check-browser-models` and
+`make -n check` to confirm the printed recipes really run it — a variable renamed
+to something the recipe does not read would pass a text search and fail this.
+`FutureSuiteOmissionTest` writes a synthetic browser-driving suite into a
+temporary tree and requires the detector to name it, then removes the module from
+a copy of the `Makefile`'s variable and requires the assertion to fail.
+`UNGATED_WITH_REASON` is no longer a comment-annotated set but seven
+`Ungated(reason, target, runs_this_module)` records, each of which must name a
+target that `check` still reaches and whose recipe really names the module, and
+each excused suite must still be one that drives browser JavaScript.
+
+Adversarially: a synthetic `tools/tests/test_zz_adversarial_future_suite.py` that
+drives `web/browser` JavaScript under node and is named nowhere makes
+`make check-browser-model-coverage` exit 2 and `make check-browser-models` exit 2
+at its first prerequisite; deleting the file returns both to 0. That is the
+scenario §11.2 said was unenforced, run against the real `Makefile`.
+
+### Finding 2: the detector no longer reads selector text for names
+
+`site_chrome_selectors()` decided scope by looking for a layout-owned class in the
+selector string and treating any other class as page scope. Three defects follow
+from that one mistake, and all three are now closed by asking a different
+question: *can this selector match an element the site's own layout emits?*
+
+The chrome is no longer a class list. `tools/public-alpha`'s own
+`wrap_in_layout` is imported and called for both shells — published and preview —
+and the result is parsed into an element model that keeps `<main>` itself but
+discards its subtree, recording each element's tag, classes, id, attributes,
+parent and earlier siblings. Selectors are then split at top-level commas,
+split into compounds at combinators, and each compound is parsed into tag, id,
+classes, attribute tests and pseudo-classes. A selector reaches site chrome when
+some arm can match some chrome element under descendant, `>`, `+` and `~`
+semantics, with `:not()` and `:root` evaluated for real. What that buys, in the
+cases §11.2 named:
+
+- bare `a` matches the masthead brand link, so `a` and `a:hover` are reported;
+- `.site-header:not(.route-only)` is reported, because the layout's
+  `.site-header` carries no `route-only` class and therefore satisfies the
+  negation — the selector is broad *precisely* when its class is absent;
+- `:root` and bare `html` are reported, which is what exposed three protected
+  hazards nobody had recorded;
+- a selector is scoped only by a **positive** condition that no chrome element
+  can satisfy, so `.sources-page a` and `body:has(> .sources-page) .brand a` pass
+  while `body:not(.liturgy) .site-header` does not;
+- `:is()` and `:where()` count as scope only when *every* alternative is scoped,
+  and `:has()` counts as a positive condition;
+- any pseudo-class the analyzer does not model is treated as satisfiable, and a
+  selector it cannot parse raises `UnclassifiableSelector` and fails the suite.
+  The detector fails closed; it never reports "scoped" because it did not
+  understand something.
+
+The limits are worth stating, because a future reviewer should not read more into
+this than it proves. The analyzer is a bounded static model of the two layout
+shells as they exist in `layout.html` today, not a CSS engine: it does not
+compute specificity or cascade order, it does not evaluate `@media` or
+`@supports` conditions, and a selector scoped only by a runtime class the layout
+does not emit will read as reaching chrome. All three are deliberate — a rule
+that *can* match site chrome is the hazard, whether or not it wins.
+
+The exception record is now exact. `SITE_CHROME_UNSCOPED` maps four protected
+files to `ProtectedChrome(authority, reason, selectors)`, and the suite requires
+the detected inventory to equal the recorded one **selector by selector, in
+order, with duplicates**, so substituting a different unscoped selector for a
+recorded one now fails. `day-missal.css` holds the twelve of §11.1(d) unchanged.
+The three others were found by this remediation, are of the same class, and are
+inside the same protected family, so they are recorded rather than corrected:
+
+| Protected file | Recorded selectors | What they reach |
+| --- | --- | --- |
+| `liturgy/reader-shell.css` | `:root`, `html`, `html` (narrow) | the document root of every page loading the file; `reader-instrument.css` already writes the scoped form `html:has(.reader-instrument)`, so the correction is known and is that family's |
+| `liturgy/reader-instrument.css` | `:root`, `:root` (narrow) | two custom-property blocks at the document root, where every other rule in the file is scoped through `:has(.reader-instrument)` |
+| `liturgy/reader-visual-reset.css` | `:root`, `a:focus-visible`, `:root` (narrow) | `a:focus-visible` restyles the focus ring of every masthead, navigation and footer link on the two published visual-reset routes |
+
+They are not this lane's to fix, for exactly the reason (d) is not: D2, D18 and
+boundary 4 close the reader family until
+`liturgy-reader-live-ritual-flow-2026-08-07` releases or carves out the seam.
+Recording them with their authority is the honest state, and it is now enforced —
+scoping any of them without updating the record fails the suite just as adding a
+new one does.
+
+`test_browser_collisions.py` grew from 15 tests to 32. Nineteen selectors must be
+reported and thirteen must not; the grouped-arm, negative-scope, `:has`/`:is`/
+`:where` and fail-closed cases are named individually; one test scans the whole
+stylesheet tree; two more prove the record is not decorative by substituting and
+by removing a recorded selector in a temporary tree. One test names
+`scripture.css` and requires it to be clean. And because a suite cannot prove its
+own gating, `BrowserModelGateReachabilityTest` lives here, in a gated module, and
+asserts the Finding 1 edge from outside the file it protects.
+
+### The Scripture rules the review named
+
+`src/web/browser/scripture/scripture.css` had bare `a` and `a:hover` rules
+setting the section ink and underline treatment. Published, that restyled the
+masthead, navigation and footer links of any page loading the file. The
+correction is the smallest mechanical one:
+
+```css
+:where(.plan-page, .track-page) a { … }
+:where(.plan-page, .track-page) a:hover { … }
+```
+
+`:where()` because the rules must not gain specificity — `.eyebrow a` and the
+other in-content overrides in the same file still have to win — and the two page
+classes because `browser_page_parts` appends a browser page's body classes to
+`<main>`, so the published `<body>` carries none and a `body.plan-page` prefix
+would match nothing. Both routes were probed in real Chromium at 1440×900 to
+confirm the projection: `<main>` carries `page-shell page-browser section-toned
+section-gold plan-page` (and `track-page` on the other), `<body>` carries the
+empty string.
+
+The measured effect is exactly the intended one, and it is a rendering change on
+two routes, which is why it is stated rather than summarised. Content links are
+untouched: 14 links on `/scripture/` and 29 on `/scripture/track.html` compute
+the same colours before and after, `rgb(126, 88, 2)` for the section ink and
+`rgb(119, 112, 103)` for the muted track links. Of the seven chrome links, six
+are unchanged at `rgb(29, 27, 23)` — the brand link, the navigation links and the
+skip link were always won by the layout's own more specific rules — and the
+footer links move from `rgb(69, 63, 56)` to `rgb(143, 53, 64)`. That is the
+finding, not a regression: `rgb(69, 63, 56)` was the neutral `--section-ink`
+fallback resolving outside `<main>`, and `/texts/`, `/law/`, `/history/` and
+`/sources/` all already render those same footer links at `rgb(143, 53, 64)`.
+Scripture was the one route where a page stylesheet was overriding the site's own
+chrome, and releasing it restores the site-owned value the other routes have.
+Neither route has horizontal overflow, before or after, and skip-link focus
+behaviour is unchanged.
+
+### Validation, measured rather than inferred
+
+| Check | Result |
+| --- | --- |
+| `test_browser_model_gate` | 22 tests, OK (was 8) |
+| `test_browser_collisions` | 32 tests, OK (was 15) |
+| coverage target inside `make check` | runs before the model loop; `Ran 22 tests`, `OK` |
+| adversarial unnamed driving suite | `check-browser-model-coverage` exit 2, `check-browser-models` exit 2; removed, both 0 |
+| `check-browser-models`, complete non-fail-fast | 13 modules, **401 tests**, 175 s, one failure (was 12 modules, 362 tests, 166 s) |
+| `make check-browser-models` as `check` runs it | exit 2 at 158 s on the stale-binding oracle |
+| `make public-site` | exit 0 at base and candidate; built-site diff is `scripture/scripture.css` and `SHA256SUMS`, nothing else |
+| Chromium artifact gate, 19 routes × 9 states | base and candidate both 2,290 assertions / 1,850 pass / 212 fail / 228 skip, all 2,290 rows byte-identical including every detail string; identities unchanged at 108 `single-main-element`, 77 `primary-controls-meet-target-size`, 27 `skip-link-targets-existing-element` |
+| `check-browser-static` | 6 tests, OK |
+| `check-browser-harnesses` | 5 + 6 tests, OK, 3 m 39 s |
+| Catena | generator valid (1,351 fragments / 1 book / 73 canon), 56 model tests OK, 394 production tests OK |
+| Full discovery, both trees on this host | base `e135e65b` 2,719 tests / 24 failures / 0 errors / 10 skips in 1,771 s; candidate 2,750 / 24 / 0 / 10 in 1,712 s |
+| `make -k check` | exit 2 in 14 m 9 s; three failing targets, one cause |
+
+Discovery is compared by identity, not by count, because the count legitimately
+moves: the candidate's 31 extra tests are exactly the 14 added to the gate module
+and the 17 added to the collision module. The failure identities are the same two
+on both sides — 23 `test_every_verb_shows_at_least_two_real_invocations`
+worked-example subtests and one
+`test_accepted_shell_and_visual_oracle_hashes_are_current` — with 0 errors and 10
+skips each. §11.2's exact head measured 2,719 / 24 / 10 as well, which is what
+`e135e65b` should measure, since it adds one instruction document to that head.
+
+The three failing `check` targets are the one stale-binding cause and the
+inherited example divergences: `check-release-bindings` reports two stale paths,
+`check-browser-models` fails the same
+`test_accepted_shell_and_visual_oracle_hashes_are_current` oracle that shells out
+to it, and `check-examples` reports 16 divergences of 212 captured examples,
+unchanged from §11.2's head.
+
+The stale set is exactly two paths, both deliberate and neither refreshed nor
+hand-edited:
+
+- `src/web/browser/scripture/scripture.css`, recorded
+  `c2f974b78d773417736de86980c1caddea88b2c6d3da41b2fbe2435ded1e314b`, actual
+  `e10a02f664099c3681721a346897481384d37f7a7faed97b6133e412430b7075`;
+- `src/web/browser/sources/sources.css`, recorded
+  `a78f8cf835ab9c4486c8664745900fc910474941260faedad0d9d6e1bb8a3ee4`, actual
+  `b039d50e613b9f185acbe8bbc4310b9e05b1913b157e16f4257aaa1fe0b9fa66`.
+
+Re-signing is release-owned and this is an implementation candidate, so
+`make refresh-release-bindings` was not run in any form.
+
+No protected Liturgy production source changed. No Catena production source,
+generated datum, or generator changed. `day-missal.css` and its twelve selectors
+are untouched, `liturgy-reader-live-ritual-flow-2026-08-07` remains
+`in_progress` with all six requirements open, and
+`shared-shell-blocking-collisions-resolved` stays `blocked` — its four-file
+exception is now stated exactly, which makes the blocked state more precise, not
+met.
 
 ## 12. Risks
 

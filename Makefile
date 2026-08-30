@@ -252,6 +252,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
 	check-browser-static check-browser-models \
+	check-browser-model-coverage \
 	check-browser-gate check-browser-harnesses \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
@@ -507,6 +508,7 @@ help:
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
 		'make check-browser-models  Run the browser model and foundation-contract suites `check` reaches' \
+		'make check-browser-model-coverage  Prove no browser-model suite is missing from that gate' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
 		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
@@ -811,8 +813,29 @@ BROWSER_MODEL_TESTS := \
 	test_browser_citation_truth \
 	test_browser_truthfulness
 
-check-browser-models:
+# The gate's own coverage guarantee, and until 2026-08-30 the one thing the gate
+# did not run. `test_browser_model_gate.py` is what asserts that no suite
+# driving browser JavaScript is missing from the list above without a recorded
+# reason — and it was in neither the list nor any other `check` prerequisite, so
+# a future unlisted suite could arrive while `make check` stayed green. That is
+# the defect an independent cold review returned as CHANGES_REQUIRED.
+#
+# It is a SEPARATE variable rather than a thirteenth entry above, because
+# BROWSER_MODEL_TESTS carries the invariant that every module in it really does
+# drive a file under src/web/browser, and this one drives no browser at all: it
+# reads this Makefile. It is a PREREQUISITE rather than another line in the
+# recipe below, so that the guarantee runs whenever the gate runs, including for
+# someone invoking `make check-browser-models` directly.
+BROWSER_MODEL_GATE_TESTS := \
+	test_browser_model_gate
+
+check-browser-models: check-browser-model-coverage
 	@set -e; for module in $(BROWSER_MODEL_TESTS); do \
+		$(PYTHON) -m unittest discover -s tools/tests -p "$$module.py"; \
+	done
+
+check-browser-model-coverage:
+	@set -e; for module in $(BROWSER_MODEL_GATE_TESTS); do \
 		$(PYTHON) -m unittest discover -s tools/tests -p "$$module.py"; \
 	done
 

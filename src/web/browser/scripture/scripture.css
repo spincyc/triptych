@@ -25,15 +25,24 @@
  * the verse it sits beside.
  * ======================================================================== */
 
-/* ---- Links ---- */
+/* ---- Links ----
+ *
+ * Scoped to the two pages that load this file, and scoped through `:where()` so
+ * that they keep the specificity a bare `a` had. Published, `browser_page_parts`
+ * appends a page's own body classes to `<main>`, so `.plan-page`/`.track-page`
+ * match the reading area and no longer the site's masthead, navigation or footer
+ * links — which a bare `a` did reach, colouring the layout's own chrome in the
+ * section's ink on both Scripture routes. Off disk the class is on `<body>` and
+ * the matched set is what it always was. `:where()` contributes no specificity,
+ * so `.eyebrow a` below still wins where it did and nothing in the cascade moves. */
 
-a {
+:where(.plan-page, .track-page) a {
   color: var(--section-ink);
   text-underline-offset: 0.15em;
   text-decoration-thickness: from-font;
 }
 
-a:hover { text-decoration-thickness: 2px; }
+:where(.plan-page, .track-page) a:hover { text-decoration-thickness: 2px; }
 
 /* ---- Header ---- */
 
