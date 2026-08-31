@@ -1848,6 +1848,20 @@ compute specificity or cascade order, it does not evaluate `@media` or
 does not emit will read as reaching chrome. All three are deliberate — a rule
 that *can* match site chrome is the hazard, whether or not it wins.
 
+**[Corrected 2026-08-31, see §11.4.]** The paragraph above is the one the third
+independent cold review refuted. The fail-closed sentence is true only of forms
+the analyzer could not PARSE. For valid CSS it could parse, it was unsound in
+two ways — an unmodelled pseudo-class treated as satisfiable is backwards inside
+`:not()`, so `a:not(:hover)` and `.site-header:not(:focus-within)` were read as
+unable to reach chrome, and scope inferred from selector text read
+`a[href$=".html"]` as scoped by `.html` and a `:is()` tautology as scoped at
+all. The claim "it never reports scoped because it did not understand something"
+is therefore withdrawn: it reported SCOPED precisely where it did not
+understand. The selector verdict is now Chromium's, and fail-closed now means
+"the browser refused to answer." §11.4 owns the replacement and its measured
+limits; the text above is retained as the record of what was believed at
+`de0bbc1aa`.
+
 The exception record is now exact. `SITE_CHROME_UNSCOPED` maps four protected
 files to `ProtectedChrome(authority, reason, selectors)`, and the suite requires
 the detected inventory to equal the recorded one **selector by selector, in
@@ -1969,6 +1983,124 @@ are untouched, `liturgy-reader-live-ritual-flow-2026-08-07` remains
 `shared-shell-blocking-collisions-resolved` stays `blocked` — its four-file
 exception is now stated exactly, which makes the blocked state more precise, not
 met.
+
+## 11.4 The selector verdict moves to the browser, measured 2026-08-31
+
+Dispatched from `2440e3e84929c81bc42631bcd3622c592f71da39` on
+`impl/corpus-foundation-b0-b1`, whose remote head carried the third cold
+review's instruction document. That review returned **B0/B1 —
+CHANGES_REQUIRED** with Blocker A closed, and its one remaining substantive
+blocker was the subject of this pass: the Python selector analyzer in
+`tools/tests/test_browser_collisions.py` produces false negatives for VALID
+CSS, in two independently reproduced classes. Finding 1: an unmodelled
+pseudo-class was treated as satisfiable, which is conservative in a positive
+position and exactly backwards inside `:not()` — `a:not(:hover)` and
+`.site-header:not(:focus-within)` match site chrome in ordinary states and were
+read as unable to, and `[class~="SITE-HEADER" i]` was missed. Finding 2: route
+scope was inferred from raw selector text, so `a[href$=".html"]` was read as
+scoped by `.html` (a value suffix, not a route class),
+`body:has(.plan-page, .site-header) .site-footer a` as scoped while its
+`.site-header` alternative makes it global, and `:is(:not(.plan-page),
+.plan-page) a` — a tautology — as scoped at all. The prior claim that the
+analyzer "fails closed" is corrected in place in §11.3; it failed closed only on
+forms it could not parse, and reported scoped precisely where it did not
+understand.
+
+### What replaced the Python semantics, exactly
+
+The verdict is no longer computed in Python at all.
+`tools/tests/site_chrome_selector_oracle.mjs` drives one real Chromium (the
+repository's dependency-free CDP conventions, no new dependency) and answers,
+per selector arm and per shell state, one question: **does this arm select an
+element the published layout owns?** Chromium's own engine evaluates `:not()`,
+`:is()`, `:where()`, `:has()`, attributes with their flags, escapes, nested
+functional pseudos, combinators and selector lists, because Chromium is the
+engine that will run the stylesheet. Python keeps only what §6 of the
+instruction permits: locating rules in tracked files, splitting selector lists
+at top-level commas (quotes, brackets and parentheses respected), normalizing
+identities, orchestrating the protocol, and comparing verdicts to the recorded
+inventories. The hand-written matching machinery — compound parser, attribute
+matcher, combinator walker, negation stripper, scope inferencer, and the
+chrome element model that duplicated `layout.html` in memory — is deleted.
+
+The shells are the build's own. Each state is rendered by `wrap_in_layout`
+from `tools/public-alpha`, not by a second copy of the layout: the neutral
+shell (the page's identity absent from `<main>`, both public and preview, so
+the release banner is judged where it exists), all thirteen published browser
+pages rendered exactly as the build renders them (same wrapper, same head
+extras, same projection of page classes onto `<main>`), and four site pages
+outside the browser tree. Thirty-six states in total.
+
+The verdict is a differential, not a name scan. An arm is UNSAFE when it can
+reach site chrome in the neutral shell — the state in which the route's own
+identity is absent — regardless of what route-looking text it carries. An arm
+that reaches chrome only where a class the layout does not own is genuinely
+projected is positively scoped, which is how this repository already writes
+route scope. Chromium decides reach; the neutral shell is what makes a
+route-looking name unable to buy scope by mere mention.
+
+Fail-closed is now a stated refusal, never silence. An arm Chromium rejects in
+the version that ships the gate is reported as refused and treated as unsafe;
+`:visited` is refused too, because its truth is withheld from script by design.
+Pseudo-element arms cannot be asked of `querySelectorAll` — Chromium silently
+matches NOTHING for `*::before`, the most dangerous answer available — so a
+pseudo-element arm is judged by the element it belongs to, which
+over-approximates in the safe direction, and a sentinel observation (a
+non-inherited declaration read back through `getComputedStyle` on the
+pseudo-element) independently proves the direction of that approximation.
+
+### The state matrix, and its bound
+
+Ordinary page state is one sub-state of a bounded walk: the pointer over every
+chrome leaf, a press held there, keyboard focus on every focusable chrome
+element after one real Tab (so `:focus-visible` holds), and the document's
+fragment target. The walk runs on the two neutral shells plus one published
+preview page — the state carrying the chrome element (the release banner) the
+neutral shells lack. Every state gets the quiescent pass, where static reach is
+recorded. The bound is stated in the report rather than left implicit: form and
+element states the walk does not force (`:disabled`, `:checked`, `:open`) cannot
+become true for any chrome element because the layout emits no form control,
+`<details>` or `<dialog>`, and the harness measures that rather than assuming
+it.
+
+### What was measured
+
+| Check | Result |
+| --- | --- |
+| `test_browser_collisions` | 34 tests, OK, 9.1 s, one Chromium session, one full-tree batch |
+| Full production tree scan | 1,193 arms, 2.6 s, 72 navigations, 431 evaluations, zero refusals |
+| Per-file unsafe inventory | browser-core 10 (its job), day-missal 12, reader-instrument 2, reader-shell 3, reader-visual-reset 3, every other file 0 |
+| Cold-review counterexamples | all six reported reaching chrome in the neutral shell, with the witness sub-state recorded |
+| Adversarial set | escaped identifier, nested functional pseudo, comma-bearing attribute value, grouped rule with one unsafe arm, all four combinators, `:hover`/`:focus-visible`/`:focus`/`:target`/`:active` each reached only through their dynamic sub-state |
+| Refusal policy | `..dot`, `:not()`, unterminated attribute, `%bad`, `a:visited` all refused and treated as unsafe |
+| Independent observation | walk verdicts agree with `querySelectorAll` and with the style-engine sentinel on every verified arm; the `::before` sentinel confirms the pseudo-element origin over-approximates |
+| Protected-inventory mutations | substitution (count kept, identity changed) and removal both fail; a substitution carrying commas inside a functional pseudo fails too |
+| Blocker A regression | `test_browser_model_gate` 22 tests, OK; topology unchanged |
+
+No additional real hazard was found in the production tree: the browser verdict
+reproduces the four protected inventories exactly, and every other instrument
+stylesheet is clean. Scripture's accepted scoping is classified safe by the
+same verdict, and no production byte changed in this pass — the changed paths
+are `tools/tests/test_browser_collisions.py` and the new
+`tools/tests/site_chrome_selector_oracle.mjs` — so the stale release-binding
+set remains exactly `src/web/browser/scripture/scripture.css` and
+`src/web/browser/sources/sources.css`.
+
+What this gate does NOT prove is stated with it. It proves selector REACH under
+the supported browser version and the fixture/state matrix above; it does not
+compute specificity or cascade order, does not evaluate `@media` or
+`@supports` conditions, does not claim complete CSS semantics beyond what
+Chromium itself implements, and treats scope keyed on any non-layout class —
+including one every page carries, such as `page-shell` — as positive scope,
+exactly as the accepted remediation established. Where no Chromium can be
+driven, the selector tests skip with a stated reason rather than pass on a
+weaker answer.
+
+Blocker A remains closed and untouched: no browser-model topology changed, and
+its focused tests are green. No protected Liturgy file, no Catena production,
+generated or generator file, no release binding, and no Search/acquisition work
+was touched. This is a remediation candidate awaiting independent cold
+rereview; B0/B1 is not self-accepted.
 
 ## 12. Risks
 

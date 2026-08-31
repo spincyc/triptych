@@ -2384,13 +2384,24 @@ overrode chrome the site's own stylesheet owns. It is disclosed on
 `no-visual-or-product-decision` in the ledger so a reviewer judges it rather
 than discovers it.
 
-**The stale binding set is now two paths, and that is the whole reason `make
-check` is red.** `src/web/browser/scripture/scripture.css` joins
-`src/web/browser/sources/sources.css`; both are deliberate, neither was
-refreshed or hand-edited, and re-signing is release-owned. `make -k check` fails
-`check-release-bindings`, the same oracle inside `check-browser-models` that
-shells out to it, and `check-examples` with 16 divergences of 212 captured
-examples, unchanged from the reviewed head. Everything else is green:
+**The stale binding set is now two paths, but the stale bindings are not the
+whole reason `make check` is red — a prior version of this paragraph claimed
+they were, and that claim was too strong.** `src/web/browser/scripture/scripture.css`
+joins `src/web/browser/sources/sources.css`; both are deliberate, neither was
+refreshed or hand-edited, and re-signing is release-owned. `make -k check`
+fails `check-release-bindings`, the same oracle inside `check-browser-models`
+that shells out to it, and `check-examples` with 16 divergences of 212
+captured examples. Of those 16, twelve are inherited — they diverge at the
+remediation base `e135e65b` too, predating the stale bindings — and four are
+the stale-binding cause echoed through captured transcripts that recorded
+`exact: 0 stale binding(s)` or a verified preview build. Red identities that
+exist at the base independently of the stale bindings: the 12 inherited
+`check-examples` divergences, and — in full test discovery rather than in
+`make check`, where `tmt` is absent and `check-tool-registry` skips — the 23
+worked-example failures of `test_tool_registry`. What the branch ADDED to the
+red set is exactly: the two stale bindings, the release-binding oracle identity
+inside `check-browser-models`, and the four echoed example divergences. Everything
+else is green:
 `check-browser-models` is 401 tests over 13 modules where it was 362 over 12,
 the five reader harnesses hold their all-green contract, Catena is untouched and
 still 1,351/1/73 with 56 and 394 tests passing, and the Chromium artifact gate
@@ -2404,3 +2415,63 @@ same on both sides and no new one appears.
 merged, deployed, signed, self-accepted, refreshed, or begun as a next lane, no
 protected Liturgy or Catena source was touched, and the candidate stops here for
 independent cold rereview.
+
+### Selector-oracle remediation, 2026-08-31
+
+Dispatched from `2440e3e84929c81bc42631bcd3622c592f71da39` on the same branch,
+scoped to the one remaining substantive blocker of the third independent cold
+review and nothing else. That review returned **B0/B1 — CHANGES_REQUIRED** with
+Blocker A closed, and reproduced two classes of false negative for VALID CSS in
+the Python selector analyzer: an unmodelled pseudo-class treated as
+satisfiable, which reverses conservative reasoning inside `:not()` (so
+`a:not(:hover)`, `.site-header:not(:focus-within)` and the case-insensitive
+`[class~="SITE-HEADER" i]` were read as unable to reach chrome they really
+match), and route scope inferred from raw selector text (so `a[href$=".html"]`
+was scoped by `.html`, a `:has()` list with a global alternative was scoped,
+and a `:is()` tautology was scoped). The claim that the analyzer "fails closed"
+is corrected in place: it failed closed only on forms it could not parse, and
+reported scoped precisely where it did not understand.
+
+**Whether a selector can reach the site's chrome is now decided by Chromium,
+not by Python.** `tools/tests/site_chrome_selector_oracle.mjs` drives one real
+Chromium — the repository's dependency-free CDP conventions, no new
+dependency — over 36 shells rendered by the build's own `wrap_in_layout`: the
+neutral shell with the page's identity absent from `<main>` (public and
+preview), all thirteen published browser pages exactly as the build renders
+them, and four site pages outside the browser tree. Python keeps only
+extraction, identity normalization, orchestration and inventory comparison; the
+compound parser, attribute matcher, combinator walker, negation stripper,
+scope inferencer and the in-memory chrome element model are deleted. The
+verdict is a differential rather than a name scan: an arm is unsafe when it can
+reach site chrome in the neutral shell, whatever route-looking text it
+carries, and positively scoped when reaching chrome genuinely depends on a
+state the page projects. Fail-closed is now a stated refusal: an arm Chromium
+rejects, or one naming `:visited` — whose truth Chromium withholds from
+script — is reported and treated as unsafe, never silently permitted. A
+pseudo-element arm is judged by the element it belongs to (Chromium's
+`querySelectorAll('*::before')` matches nothing, the most dangerous answer
+available), with the over-approximation's direction proved by reading a
+non-inherited declaration back through the style engine. A bounded user-state
+walk — pointer over every chrome leaf, a held press, keyboard focus after one
+real Tab, the fragment target — runs on the two neutral shells plus one
+preview page, because a quiescent document would call `a:hover` and every
+state-keyed selector safe.
+
+Measured: all six cold-review counterexamples are caught with recorded
+witnesses; the browser reproduces the four protected Liturgy inventories
+exactly (12/3/2/3) and finds zero new hazards across 1,193 production arms in
+2.6 s, one session, one batched request; adversarial escaped, nested,
+comma-bearing-attribute, grouped and all-combinator cases classify correctly;
+`test_browser_collisions` is 34 tests in 9.1 s where the modeled version could
+not answer these at all; `test_browser_model_gate` stays 22 tests OK; and the
+protected-inventory mutations (substitution, removal, and a substitution whose
+commas sit inside a functional pseudo) all fail. No production byte changed in
+this pass — the changed paths are `tools/tests/test_browser_collisions.py` and
+the new `tools/tests/site_chrome_selector_oracle.mjs` — so the stale
+release-binding set remains exactly `src/web/browser/scripture/scripture.css`
+and `src/web/browser/sources/sources.css`, unrefreshed.
+
+`shared-shell-blocking-collisions-resolved` remains `blocked`. No merge,
+deployment, signing, binding refresh, protected-Liturgy edit, Catena edit,
+Search, acquisition, or next lane was performed. The candidate awaits
+independent cold rereview, and B0/B1 is not self-accepted.

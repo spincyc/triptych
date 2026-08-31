@@ -243,17 +243,22 @@ state = "in_progress"
   # waived without a waiver_reason and a waiver_authority.
   #
   # The blocked remainder is larger than that one file and is now recorded
-  # exactly rather than by count. The strengthened detector described in §11.3
-  # derives the site's chrome from the build's own layout wrapper instead of
-  # reading class names out of selector text, and it finds three further
-  # unscoped hazards of the same class inside the same protected reader family:
-  # reader-shell.css (`:root`, `html`, `html`), reader-instrument.css (`:root`
-  # twice), and reader-visual-reset.css (`:root`, `a:focus-visible`, `:root`).
-  # All three are `BLOCKED_BY_PROTECTED_OWNER` for the same reason (d) is, and
-  # all four inventories are frozen selector by selector in
-  # tools/tests/test_browser_collisions.py, so neither growing nor silently
-  # correcting one passes. This makes the blocked state more precise; it does
-  # not move it toward met.
+  # exactly rather than by count. The detector described in §11.3 found three
+  # further unscoped hazards of the same class inside the same protected reader
+  # family: reader-shell.css (`:root`, `html`, `html`), reader-instrument.css
+  # (`:root` twice), and reader-visual-reset.css (`:root`, `a:focus-visible`,
+  # `:root`). As corrected by §11.4, the selector verdict is no longer modeled
+  # in Python at all: tools/tests/site_chrome_selector_oracle.mjs drives one
+  # real Chromium over shells rendered by the build's own wrap_in_layout and
+  # answers, per selector arm and per shell state under a bounded user-state
+  # walk, whether the arm selects an element the layout owns; an arm the
+  # browser refuses is reported and unsafe, and unsafe means reaching chrome in
+  # the neutral shell, whatever route-looking text an arm carries. The prior
+  # Python matcher and scope inferencer are deleted. All four inventories are
+  # frozen selector by selector in tools/tests/test_browser_collisions.py, the
+  # browser verdict reproduces them exactly, and neither growing, shrinking,
+  # nor silently substituting one passes. This makes the blocked state more
+  # precise; it does not move it toward met.
   status = "blocked"
   evidence = [
     "src/web/browser/shared/browser-core.js",

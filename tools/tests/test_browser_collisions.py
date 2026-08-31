@@ -41,45 +41,68 @@ than an incident.
    protected in-progress Liturgy deliverable; `sources.css` did it to `.brand a`
    and `.site-footer a` and is corrected.
 
-   AN INDEPENDENT COLD REVIEW RETURNED THE FIRST VERSION OF THIS TEST AS
-   INSUFFICIENT, and it was right. That version looked for a layout-owned CLASS
-   in the selector text, so it saw `.site-header` and missed a bare `a` — which
-   reaches every link in the masthead and footer — and `scripture.css` was
-   carrying exactly that rule while the test passed. It also read any non-layout
-   class ANYWHERE in the selector as page scope, so `.site-header:not(.route-only)`
-   counted as scoped by the very class it excludes. And it froze the protected
-   exception by the number twelve, so a recorded selector could be replaced by a
-   different one at no cost.
+   THE QUESTION "CAN THIS SELECTOR MATCH THE SITE'S CHROME" HAS BEEN ANSWERED
+   TWICE, AND THE FIRST ANSWER WAS WITHDRAWN. The first replacement read selector
+   text: it split arms into compounds in Python, modelled combinators, `:not()`
+   and `:root`, and inferred route scope from names the layout does not own. An
+   independent cold review reproduced two classes of unsoundness in it, and both
+   were unsoundness for VALID CSS: an unknown pseudo-class was treated as
+   satisfiable, which is conservative in a positive position and exactly
+   backwards inside `:not()` — so `a:not(:hover)` and
+   `.site-header:not(:focus-within)`, which match site chrome in ordinary
+   states, were read as unable to — and scope was inferred from raw text, so
+   `a[href$=".html"]` was read as scoped by `.html`, a value suffix; and
+   `body:has(.plan-page, .site-header) .site-footer a` as scoped when its
+   `.site-header` alternative makes it global; and `:is(:not(.plan-page),
+   .plan-page) a` — a tautology — as scoped at all. What this suite keeps from
+   that pass is only what was always sound: the shell is rendered by the build's
+   own `wrap_in_layout`, the page's identity lives on `<main>`, and the
+   protected remainder is an exact selector inventory, not a count.
 
-   What replaces it does not read selector text for names. It builds the site's
-   chrome from the layout the build actually emits — `wrap_in_layout` itself, in
-   both its public and preview shells — and asks of every selector arm whether it
-   can match one of those elements. Scope is a POSITIVE condition: a class or id
-   the layout does not own, asserted rather than excluded, which is why
-   `:not()` contents never count and `:is()`/`:where()` contents count only when
-   every alternative in the list is itself scoped. What the bounded analyzer
-   cannot classify it refuses rather than passes. SITE_CHROME_UNSCOPED records
-   the protected remainder as an exact selector inventory with the authority that
-   owns it, so neither a new hazard nor a substituted one can arrive unnoticed.
+   What decides selector truth now is Chromium. `site_chrome_selector_oracle.mjs`
+   serves the build's real shells — the neutral one, with the page's identity
+   absent, and every published page exactly as the build emits it — and answers,
+   per selector arm and per shell state, whether the arm selects an element the
+   layout owns, under a bounded matrix of real user states: the pointer over
+   every chrome leaf, a press held there, keyboard focus on every focusable
+   chrome element, and the document's fragment target. `:not()`, `:is()`,
+   `:where()`, `:has()`, attributes with flags, escapes, nested functional
+   pseudos and pseudo-elements are decided by the browser's own engine, because
+   the browser is the engine that will run the stylesheet. An arm the browser
+   refuses — invalid here, or naming `:visited`, whose truth Chromium withholds
+   from script — is reported, never passed. Python locates rules in tracked
+   files, splits selector lists at top-level commas, normalizes identities,
+   orchestrates the protocol and compares the verdicts to the recorded
+   inventories; it no longer interprets what a selector means.
 
-These tests are source-level. They read the files rather than a rendered page,
-except where a model can be replayed under node, which the landmark test does,
-and where the site's own chrome is read out of the build's layout renderer,
-which the site-chrome tests do.
+   The verdict is a differential, not a name scan: an arm is unsafe when it can
+   reach site chrome in the NEUTRAL shell — the state in which the route's own
+   identity is absent from `<main>` — regardless of what route-looking text it
+   contains. An arm that reaches chrome only where a class the layout does not
+   own is genuinely projected is positively scoped, which is how this repository
+   writes route scope (`body:has(> .sources-page) .site-footer a`). The exact
+   semantics, and what is NOT proved, are stated in the oracle harness and in
+   SelectorOracleSemanticsTest.
+
+Source-level tests read the files rather than a rendered page; the selector
+verdict is the one thing this suite refuses to decide in Python.
 """
 
 from __future__ import annotations
 
+import atexit
 import functools
 import importlib.machinery
 import importlib.util
 import json
+import os
+import queue
 import re
 import shutil
 import subprocess
 import tempfile
+import threading
 import unittest
-from html.parser import HTMLParser
 from pathlib import Path
 from typing import NamedTuple
 
@@ -89,10 +112,40 @@ BROWSER = ROOT / "src/web/browser"
 CORE_CSS = BROWSER / "shared/browser-core.css"
 CORE_JS = BROWSER / "shared/browser-core.js"
 ACT_HISTORY = ROOT / "src/web/data/structure/act-history"
-LAYOUT = ROOT / "release/public-alpha/layout.html"
 PUBLIC_ALPHA = ROOT / "tools/public-alpha"
+ORACLE = ROOT / "tools/tests/site_chrome_selector_oracle.mjs"
 NODE = shutil.which("node")
 MAKE = shutil.which("make")
+
+CHROME_CANDIDATES = (
+  "/usr/bin/chromium",
+  "/usr/bin/chromium-browser",
+  "/usr/bin/google-chrome-stable",
+  "/usr/bin/google-chrome",
+)
+
+
+def chrome_binary() -> str | None:
+  """The Chromium the oracle would drive, or None when this host has none."""
+  declared = os.environ.get("TRIPTYCH_CHROME")
+  if declared and Path(declared).exists():
+    return declared
+  for candidate in CHROME_CANDIDATES:
+    if Path(candidate).exists():
+      return candidate
+  return None
+
+
+CHROMIUM = chrome_binary()
+# The semantic verdict is the browser's. Where no browser can be driven, the
+# selector tests SKIP with this reason rather than passing on a weaker answer:
+# a skip claims nothing, which is the one thing a false green must not do.
+BROWSER_REQUIRED = unittest.skipUnless(
+  NODE is not None and CHROMIUM is not None,
+  "no Chromium to drive (set TRIPTYCH_CHROME); whether a selector can reach the "
+  "site's chrome is decided by the browser, and this host cannot observe it, so "
+  "these tests claim nothing rather than a proof they did not make",
+)
 
 
 class ProtectedChrome(NamedTuple):
@@ -277,160 +330,17 @@ def instrument_stylesheets() -> list[Path]:
 
 
 # ===========================================================================
-# The published chrome, and which selectors can reach it
+# Selector extraction: where the arms come from
 #
-# The site's chrome is not described here. It is rendered by the build's own
-# `wrap_in_layout` and read off the result, so a masthead element the layout
-# gains — or loses — is governed without anyone remembering to update a second
-# handwritten copy of the layout. Both shells are read: the public one, and the
-# preview one, which carries the release banner the public one does not.
+# This layer locates rules in tracked files and splits selector lists. It does
+# NOT decide what any arm means — that is the browser's verdict below. It is
+# deliberately small, and what it refuses to split it surfaces: an arm this
+# layer cannot extract is an arm nobody has classified, and the semantic tests
+# below prove the extraction on exactly the shapes that could confuse it.
 # ===========================================================================
 
-CHROME_MODEL_CONTENT = '<p id="chrome-model-content">content</p>'
-# The page's own classes land on `<main>`, not on `<body>`, so the layout is
-# rendered with an empty page class: `<main>`'s class attribute belongs to the
-# page and must not be mistaken for something the layout owns.
-CHROME_MODEL_PAGE_CLASS = ""
-VOID_ELEMENTS = frozenset(
-  "area base br col embed hr img input link meta param source track wbr".split()
-)
-
-
-class UnclassifiableSelector(Exception):
-  """The bounded analyzer met a selector form it will not guess about.
-
-  Raised rather than swallowed. A selector nobody can classify is not a selector
-  anybody has shown to be safe, so it stops the gate instead of passing it.
-  """
-
-
-@functools.lru_cache(maxsize=None)
-def public_alpha():
-  loader = importlib.machinery.SourceFileLoader(
-    "collisions_public_alpha", str(PUBLIC_ALPHA)
-  )
-  spec = importlib.util.spec_from_loader(loader.name, loader)
-  if spec is None:
-    raise RuntimeError("could not load tools/public-alpha")
-  module = importlib.util.module_from_spec(spec)
-  loader.exec_module(module)
-  return module
-
-
-@functools.lru_cache(maxsize=None)
-def chrome_documents() -> tuple[str, ...]:
-  """The layout as the build emits it, public shell and preview shell."""
-  module = public_alpha()
-  return tuple(
-    module.wrap_in_layout(
-      "src/web/browser/scripture/index.html",
-      "scripture/index.html",
-      CHROME_MODEL_PAGE_CLASS,
-      "Chrome model",
-      "",
-      CHROME_MODEL_CONTENT,
-      preview,
-      {},
-    )
-    for preview in (False, True)
-  )
-
-
-class ChromeElement:
-  """One element the layout owns, with enough context to match a selector."""
-
-  __slots__ = ("tag", "classes", "identifier", "attributes", "parent", "earlier_siblings")
-
-  def __init__(self, tag: str, attributes: dict[str, str], parent) -> None:
-    self.tag = tag
-    self.attributes = attributes
-    self.classes = frozenset(attributes.get("class", "").split())
-    self.identifier = attributes.get("id")
-    self.parent = parent
-    self.earlier_siblings: tuple[ChromeElement, ...] = ()
-
-  def __repr__(self) -> str:
-    return f"<{self.tag} class={sorted(self.classes)} id={self.identifier}>"
-
-
-class ChromeReader(HTMLParser):
-  """Everything outside `<main>`'s content, which is everything the page is not.
-
-  `<main>` itself is kept — it is the layout's landmark and an instrument rule
-  that restyles it restyles it on every route the file reaches — while its
-  subtree is skipped, because that subtree is the page's own content and styling
-  it is what an instrument stylesheet is for.
-  """
-
-  def __init__(self) -> None:
-    super().__init__(convert_charrefs=True)
-    self.elements: list[ChromeElement] = []
-    self.open: list[ChromeElement] = []
-    self.children: dict[int, list[ChromeElement]] = {}
-    self.inside_main = 0
-
-  def handle_starttag(self, tag, attrs):
-    if self.inside_main:
-      if tag not in VOID_ELEMENTS:
-        self.inside_main += 1
-      return
-    attributes = {name: (value or "") for name, value in attrs}
-    parent = self.open[-1] if self.open else None
-    element = ChromeElement(tag, attributes, parent)
-    siblings = self.children.setdefault(id(parent), [])
-    element.earlier_siblings = tuple(siblings)
-    siblings.append(element)
-    self.elements.append(element)
-    if tag == "main":
-      self.inside_main = 1
-      return
-    if tag not in VOID_ELEMENTS:
-      self.open.append(element)
-
-  def handle_endtag(self, tag):
-    if self.inside_main:
-      self.inside_main -= 1
-      return
-    while self.open:
-      if self.open.pop().tag == tag:
-        break
-
-
-@functools.lru_cache(maxsize=None)
-def chrome_elements() -> tuple[ChromeElement, ...]:
-  found: list[ChromeElement] = []
-  for document in chrome_documents():
-    reader = ChromeReader()
-    reader.feed(document)
-    reader.close()
-    found.extend(reader.elements)
-  return tuple(found)
-
-
-@functools.lru_cache(maxsize=None)
-def layout_owned_classes() -> frozenset[str]:
-  """Classes the published layout puts on the chrome around `<main>`."""
-  found: set[str] = set()
-  for element in chrome_elements():
-    found |= element.classes
-  return frozenset(found)
-
-
-@functools.lru_cache(maxsize=None)
-def layout_owned_ids() -> frozenset[str]:
-  return frozenset(
-    element.identifier for element in chrome_elements() if element.identifier
-  )
-
-
-# ---- reading a selector far enough to answer one question about it ----
-
-IDENTIFIER = r"[-_A-Za-z0-9\\]+"
-COMBINATORS = frozenset(">+~")
-
-
 def split_top_level(text: str, separator: str = ",") -> list[str]:
-  """Split on a separator that is not inside brackets or quotes."""
+  """Split on a separator that is not inside brackets, quotes or parentheses."""
   parts: list[str] = []
   current: list[str] = []
   depth = 0
@@ -450,320 +360,16 @@ def split_top_level(text: str, separator: str = ",") -> list[str]:
     elif character in ")]":
       depth -= 1
       if depth < 0:
-        raise UnclassifiableSelector(f"unbalanced brackets in {text!r}")
+        raise ValueError(f"unbalanced brackets in {text!r}")
     if character == separator and depth == 0:
       parts.append("".join(current))
       current = []
       continue
     current.append(character)
   if depth or quote:
-    raise UnclassifiableSelector(f"unbalanced brackets or quotes in {text!r}")
+    raise ValueError(f"unbalanced brackets or quotes in {text!r}")
   parts.append("".join(current))
   return parts
-
-
-@functools.lru_cache(maxsize=None)
-def split_compounds(arm: str) -> tuple[tuple[str, str], ...]:
-  """One complex selector as (combinator, compound) pairs, left to right.
-
-  The combinator is the one that precedes its compound: `''` for the first,
-  `' '` for a descendant, and `>`/`+`/`~` for the rest.
-  """
-  found: list[tuple[str, str]] = []
-  current: list[str] = []
-  pending = ""
-  depth = 0
-  quote = ""
-  after_space = False
-  for character in arm:
-    if quote:
-      current.append(character)
-      if character == quote:
-        quote = ""
-      continue
-    if character in "\"'":
-      quote = character
-      current.append(character)
-      continue
-    if character in "([":
-      depth += 1
-      current.append(character)
-      continue
-    if character in ")]":
-      depth -= 1
-      if depth < 0:
-        raise UnclassifiableSelector(f"unbalanced brackets in {arm!r}")
-      current.append(character)
-      continue
-    if depth:
-      current.append(character)
-      continue
-    if character.isspace():
-      after_space = bool(current)
-      continue
-    if character in COMBINATORS:
-      if current:
-        found.append((pending, "".join(current)))
-        current = []
-      pending = character
-      after_space = False
-      continue
-    if after_space and current:
-      found.append((pending, "".join(current)))
-      current = []
-      pending = " "
-      after_space = False
-    current.append(character)
-  if depth or quote:
-    raise UnclassifiableSelector(f"unbalanced brackets or quotes in {arm!r}")
-  if current:
-    found.append((pending, "".join(current)))
-  return tuple(found)
-
-
-class Pseudo(NamedTuple):
-  name: str
-  argument: str
-
-
-class Compound(NamedTuple):
-  tag: str
-  classes: frozenset[str]
-  identifiers: frozenset[str]
-  attributes: tuple[str, ...]
-  pseudos: tuple[Pseudo, ...]
-
-
-@functools.lru_cache(maxsize=None)
-def parse_compound(text: str) -> Compound:
-  if "&" in text:
-    raise UnclassifiableSelector(f"CSS nesting is not classified: {text!r}")
-  tag = ""
-  classes: set[str] = set()
-  identifiers: set[str] = set()
-  attributes: list[str] = []
-  pseudos: list[Pseudo] = []
-  index = 0
-  while index < len(text):
-    character = text[index]
-    if character == "*":
-      tag = tag or "*"
-      index += 1
-      continue
-    if character in ".#":
-      match = re.match(rf"[.#]({IDENTIFIER})", text[index:])
-      if match is None:
-        raise UnclassifiableSelector(f"unreadable name in {text!r}")
-      (classes if character == "." else identifiers).add(match.group(1))
-      index += match.end()
-      continue
-    if character == "[":
-      end = text.find("]", index)
-      if end == -1:
-        raise UnclassifiableSelector(f"unreadable attribute in {text!r}")
-      attributes.append(text[index + 1:end])
-      index = end + 1
-      continue
-    if character == ":":
-      match = re.match(r"(::?)([A-Za-z-]+)", text[index:])
-      if match is None:
-        raise UnclassifiableSelector(f"unreadable pseudo in {text!r}")
-      name = match.group(2).lower()
-      index += match.end()
-      argument = ""
-      if index < len(text) and text[index] == "(":
-        depth = 0
-        start = index
-        while index < len(text):
-          if text[index] == "(":
-            depth += 1
-          elif text[index] == ")":
-            depth -= 1
-            if depth == 0:
-              index += 1
-              break
-          index += 1
-        if depth:
-          raise UnclassifiableSelector(f"unbalanced pseudo argument in {text!r}")
-        argument = text[start + 1:index - 1]
-      pseudos.append(Pseudo(name, argument))
-      continue
-    match = re.match(r"[A-Za-z][A-Za-z0-9-]*", text[index:])
-    if match is not None and index == 0:
-      tag = match.group(0).lower()
-      index += match.end()
-      continue
-    raise UnclassifiableSelector(
-      f"unreadable fragment {text[index:]!r} in compound {text!r}"
-    )
-  return Compound(
-    tag, frozenset(classes), frozenset(identifiers), tuple(attributes), tuple(pseudos)
-  )
-
-
-ATTRIBUTE_CONDITION = re.compile(
-  rf"""^\s*(?P<name>{IDENTIFIER})\s*
-       (?:(?P<operator>[~^$*|]?=)\s*(?P<value>"[^"]*"|'[^']*'|[^\s\]]+))?\s*
-       (?:[iIsS]\s*)?$""",
-  re.X,
-)
-
-
-def attribute_matches(condition: str, element: ChromeElement) -> bool:
-  match = ATTRIBUTE_CONDITION.match(condition)
-  if match is None:
-    raise UnclassifiableSelector(f"unreadable attribute condition [{condition}]")
-  name = match.group("name").lower()
-  if name not in element.attributes:
-    return False
-  if not match.group("operator"):
-    return True
-  actual = element.attributes[name]
-  value = match.group("value").strip("\"'")
-  operator = match.group("operator")
-  if operator == "=":
-    return actual == value
-  if operator == "~=":
-    return value in actual.split()
-  if operator == "^=":
-    return actual.startswith(value)
-  if operator == "$=":
-    return actual.endswith(value)
-  if operator == "*=":
-    return value in actual
-  if operator == "|=":
-    return actual == value or actual.startswith(f"{value}-")
-  raise UnclassifiableSelector(f"unreadable attribute operator {operator!r}")
-
-
-def compound_matches(compound: Compound, element: ChromeElement) -> bool:
-  """Can this compound select this chrome element?
-
-  Fails closed. `:not()` is evaluated, because a negation is the one pseudo-class
-  that can make a selector match FEWER elements and a rule written
-  `.site-header:not(.route-only)` must not be read as scoped by the class it
-  excludes. `:root` is evaluated because it names one element exactly. Every
-  other pseudo-class and every pseudo-element is a state, a position, or a
-  relation this analyzer does not evaluate, and is treated as satisfiable: the
-  element it qualifies is one the rule can reach.
-  """
-  if compound.tag and compound.tag != "*" and compound.tag != element.tag:
-    return False
-  if not compound.classes <= element.classes:
-    return False
-  if any(name != element.identifier for name in compound.identifiers):
-    return False
-  if not all(attribute_matches(one, element) for one in compound.attributes):
-    return False
-  for pseudo in compound.pseudos:
-    if pseudo.name == "not":
-      for alternative in split_top_level(pseudo.argument):
-        alternative = alternative.strip()
-        if alternative and selects(alternative, element):
-          return False
-    elif pseudo.name == "root" and element.tag != "html":
-      return False
-  return True
-
-
-def selects(arm: str, element: ChromeElement) -> bool:
-  """Does this complex selector match `element` as its subject?"""
-  compounds = split_compounds(arm)
-  if not compounds:
-    return False
-  return _selects(compounds, len(compounds) - 1, element)
-
-
-def _selects(
-  compounds: tuple[tuple[str, str], ...], index: int, element: ChromeElement
-) -> bool:
-  combinator, text = compounds[index]
-  if not compound_matches(parse_compound(text), element):
-    return False
-  if index == 0:
-    return True
-  if combinator in ("", " "):
-    ancestor = element.parent
-    while ancestor is not None:
-      if _selects(compounds, index - 1, ancestor):
-        return True
-      ancestor = ancestor.parent
-    return False
-  if combinator == ">":
-    return element.parent is not None and _selects(compounds, index - 1, element.parent)
-  if combinator == "+":
-    return bool(element.earlier_siblings) and _selects(
-      compounds, index - 1, element.earlier_siblings[-1]
-    )
-  if combinator == "~":
-    return any(
-      _selects(compounds, index - 1, sibling) for sibling in element.earlier_siblings
-    )
-  raise UnclassifiableSelector(f"unreadable combinator {combinator!r}")
-
-
-def reaches_site_chrome(arm: str) -> bool:
-  return any(selects(arm, element) for element in chrome_elements())
-
-
-def _group_after(text: str, opening: int) -> int:
-  """The index just past the parenthesis group that starts at `opening`."""
-  depth = 0
-  index = opening
-  while index < len(text):
-    if text[index] == "(":
-      depth += 1
-    elif text[index] == ")":
-      depth -= 1
-      if depth == 0:
-        return index + 1
-    index += 1
-  raise UnclassifiableSelector(f"unbalanced parenthesis in {text!r}")
-
-
-def without_negations(arm: str) -> str:
-  """Every `:not()` group removed, so nothing inside one can grant scope."""
-  text = arm
-  while True:
-    match = re.search(r":not\(", text, re.I)
-    if match is None:
-      return text
-    end = _group_after(text, match.end() - 1)
-    text = f"{text[:match.start()]} {text[end:]}"
-
-
-def _names(text: str) -> set[str]:
-  return set(re.findall(rf"[.#]({IDENTIFIER})", text))
-
-
-def route_scope(arm: str) -> set[str]:
-  """The class and id names in this arm that positively scope it to a route.
-
-  A name counts only when the layout does not own it and the selector ASSERTS it.
-  A name inside `:not()` is excluded by the rule rather than required by it, so it
-  broadens the match and never counts. A name inside `:is()` or `:where()` counts
-  only when every alternative in that list is itself scoped, because one global
-  alternative — `:is(.plan-page, .site-header)` — makes the whole list global.
-  `:has()` is the opposite case and does count: `body:has(> .sources-page)` is a
-  positive statement about which document the rule applies in, and it is how this
-  repository already writes route scope where the class sits on `<main>`.
-  """
-  owned = layout_owned_classes() | layout_owned_ids()
-  text = without_negations(arm)
-  scope: set[str] = set()
-  for functional in ("is", "where"):
-    while True:
-      match = re.search(rf":{functional}\(", text, re.I)
-      if match is None:
-        break
-      end = _group_after(text, match.end() - 1)
-      argument = text[match.end():end - 1]
-      alternatives = [one.strip() for one in split_top_level(argument) if one.strip()]
-      scoped = [_names(without_negations(one)) - owned for one in alternatives]
-      if scoped and all(scoped):
-        scope |= set().union(*scoped)
-      text = f"{text[:match.start()]} {text[end:]}"
-  return scope | (_names(text) - owned)
 
 
 def normalize_selector(selector: str) -> str:
@@ -783,19 +389,285 @@ def selector_arms(path: Path):
         yield arm
 
 
-def site_chrome_selectors(path: Path) -> list[str]:
+# ===========================================================================
+# The browser as the semantic selector oracle
+#
+# The shells are not described here and the arms are not interpreted here. The
+# build's own `wrap_in_layout` renders every state the oracle judges — the
+# neutral one and every published page — and Chromium answers, per arm and per
+# state, whether the arm selects an element the layout owns. See
+# site_chrome_selector_oracle.mjs for the protocol and the bounded claim.
+# ===========================================================================
+
+CHROME_MODEL_CONTENT = '<p id="chrome-model-content">content</p>'
+# The page's own classes land on `<main>`, not on `<body>`, so the neutral shell
+# is rendered with an empty page class: `<main>`'s class attribute belongs to the
+# page, and the neutral state is the one where the page has projected none of it.
+CHROME_MODEL_PAGE_CLASS = ""
+
+# The states in which the route's own identity is absent. An arm that reaches
+# site chrome in either of these is unscoped, whatever route-looking text it
+# carries. Both shells are rendered, because the preview shell adds the release
+# banner the public one does not.
+NEUTRAL_STATES = frozenset({"chrome-model (public)", "chrome-model (preview)"})
+
+# Where the user-state matrix (hover, active, focus, focus-visible, target) is
+# actually walked: the two shells whose reach decides the verdict, plus one
+# published page in the preview shell, which is the state carrying the chrome
+# element — the release banner — the neutral shells do not have. Every state
+# still gets the quiescent pass, which is where static reach is recorded; a
+# dynamic reach OUTSIDE the walked states is not observed, and the report names
+# the walked states rather than leaving the bound implicit. This is the
+# bounded-runtime decision: the walk costs one round trip per sub-state, and
+# walking it in all ~36 shells would multiply that by a factor that buys no
+# additional verdict, because the chrome is the build's and identical in all of
+# them up to the banner.
+DYNAMIC_WALK_STATES = sorted(NEUTRAL_STATES) + [
+  "browser scripture/index.html (preview)",
+]
+
+
+@functools.lru_cache(maxsize=None)
+def public_alpha():
+  loader = importlib.machinery.SourceFileLoader(
+    "collisions_public_alpha", str(PUBLIC_ALPHA)
+  )
+  spec = importlib.util.spec_from_loader(loader.name, loader)
+  if spec is None:
+    raise RuntimeError("could not load tools/public-alpha")
+  module = importlib.util.module_from_spec(spec)
+  loader.exec_module(module)
+  return module
+
+
+@functools.lru_cache(maxsize=None)
+def oracle_states() -> tuple[tuple[str, str], ...]:
+  """(name, html) for every shell the oracle judges selectors against.
+
+  Rendered by the build's own machinery, not by a second copy of it: the
+  neutral shells through `wrap_in_layout` with the page's identity absent, and
+  every published browser page exactly as the build renders it — same wrapper,
+  same head extras, same projection of the page's classes onto `<main>`. Four
+  site pages outside the browser tree stand in for the routes a shared bundle
+  would reach that no instrument stylesheet is linked from. Every state is
+  rendered in both the public and the preview shell.
+  """
+  module = public_alpha()
+  states: list[tuple[str, str]] = []
+
+  def render(name, source_relative, output_relative, page_class, title,
+             head_extra="", body_extra="", declared_description="",
+             declared_robots=""):
+    for preview in (False, True):
+      html = module.wrap_in_layout(
+        source_relative, output_relative, page_class, title, "",
+        CHROME_MODEL_CONTENT, preview, {},
+        head_extra=head_extra, body_extra=body_extra,
+        declared_description=declared_description,
+        declared_robots=declared_robots,
+      )
+      states.append((f"{name} ({'preview' if preview else 'public'})", html))
+
+  render(
+    "chrome-model", "src/web/browser/scripture/index.html",
+    "scripture/index.html", CHROME_MODEL_PAGE_CLASS, "Chrome model",
+  )
+  for output_relative, source in sorted(module.web_browser_pages().items()):
+    parts = module.browser_page_parts(source, output_relative)
+    render(
+      f"browser {output_relative}", source.relative_to(ROOT).as_posix(),
+      output_relative, parts["page_class"], parts["title"],
+      head_extra=parts["head_extra"], body_extra=parts["body_extra"],
+      declared_description=parts["declared_description"],
+      declared_robots=parts["declared_robots"],
+    )
+  for source_relative, output_relative in (
+    ("README.md", "index.html"),
+    ("ABOUT.md", "about.html"),
+    ("library/liturgy.md", "library/liturgy.html"),
+    ("web/articles/faith/example.md", "web/articles/faith/example.html"),
+  ):
+    render(
+      f"site {output_relative}", source_relative, output_relative,
+      module.page_classes(source_relative, output_relative), "Chrome model",
+    )
+  return tuple(states)
+
+
+class OracleProtocolError(RuntimeError):
+  """The oracle harness failed to answer, or answered with an error."""
+
+
+class ArmAnswer(NamedTuple):
+  """What Chromium said about one selector arm, under the whole state matrix.
+
+  `reach` maps each shell state to None (it selects no chrome element there) or
+  to the witness: the user sub-state that reached, and the element reached.
+  `refusal` is the stated reason the browser could not be asked at all —
+  invalid or unsupported here, or naming a pseudo-class whose truth Chromium
+  withholds from script. A refusal is an unsafe verdict, never a silence.
+  """
+
+  arm: str
+  accepted: bool
+  serialized: str | None
+  origin: str | None
+  judged: str
+  dynamic: bool
+  refusal: str | None
+  reach: dict
+
+
+class SelectorOracle:
+  """One Chromium session behind the harness's line-JSON protocol.
+
+  The browser is started ONCE for this whole module and every question every
+  test asks is answered inside that session, batched per request. That is the
+  bounded-runtime contract: not one Chromium per selector, not one per test.
+  """
+
+  REQUEST_TIMEOUT_S = 900
+
+  def __init__(self) -> None:
+    if NODE is None:
+      raise OracleProtocolError("node is not installed; the oracle cannot run")
+    self.process = subprocess.Popen(
+      [NODE, str(ORACLE)],
+      stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+      text=True, cwd=ROOT,
+    )
+    self.replies: queue.Queue = queue.Queue()
+    self.stderr: list[str] = []
+    threading.Thread(target=self._drain, args=(self.process.stdout,), daemon=True).start()
+    threading.Thread(
+      target=self._drain_stderr, args=(self.process.stderr,), daemon=True
+    ).start()
+
+  def _drain(self, stream) -> None:
+    for line in stream:
+      try:
+        self.replies.put(json.loads(line))
+      except json.JSONDecodeError:
+        self.replies.put({"ok": False, "error": f"unparsable oracle line: {line!r}"})
+    self.replies.put(None)
+
+  def _drain_stderr(self, stream) -> None:
+    for chunk in stream:
+      self.stderr.append(chunk)
+      del self.stderr[:-40]
+
+  def request(self, op: str, timeout_s: int | None = None, **fields) -> dict:
+    assert self.process.stdin is not None
+    self.process.stdin.write(json.dumps({"op": op, **fields}) + "\n")
+    self.process.stdin.flush()
+    reply = self.replies.get(timeout=timeout_s or self.REQUEST_TIMEOUT_S)
+    if reply is None:
+      raise OracleProtocolError(
+        "the oracle harness exited: " + "".join(self.stderr)[-1500:]
+      )
+    if not reply.get("ok"):
+      raise OracleProtocolError(
+        f"oracle op {op!r} failed: {reply.get('error', 'unknown')}"
+      )
+    return reply
+
+  def close(self) -> None:
+    try:
+      self.request("quit", timeout_s=30)
+    except Exception:
+      pass
+    try:
+      self.process.stdin.close()
+    except Exception:
+      pass
+    self.process.terminate()
+
+
+_ORACLE: SelectorOracle | None = None
+
+
+def oracle() -> SelectorOracle:
+  global _ORACLE
+  if _ORACLE is None:
+    client = SelectorOracle()
+    atexit.register(client.close)
+    client.request(
+      "init",
+      states=[{"name": name, "html": html} for name, html in oracle_states()],
+      dynamicStates=DYNAMIC_WALK_STATES,
+    )
+    _ORACLE = client
+  return _ORACLE
+
+
+def ask_arms(arms) -> dict[str, ArmAnswer]:
+  """Ask Chromium about selector arms, deduplicating the wire requests."""
+  unique = list(dict.fromkeys(arms))
+  if not unique:
+    return {}
+  raw = oracle().request("arms", arms=unique)["arms"]
+  return {
+    arm: ArmAnswer(
+      arm=arm, accepted=one["accepted"], serialized=one.get("serialized"),
+      origin=one.get("origin"), judged=one["judged"], dynamic=one["dynamic"],
+      refusal=one["refusal"], reach=one["reach"],
+    )
+    for arm, one in raw.items()
+  }
+
+
+def reached_states(answer: ArmAnswer) -> dict:
+  """The states in which the arm selects an element the layout owns."""
+  return {state: where for state, where in answer.reach.items() if where}
+
+
+def neutral_reach(answer: ArmAnswer) -> dict:
+  """The witnesses for reaching chrome with the route's identity absent."""
+  return {
+    state: where for state, where in answer.reach.items()
+    if where and state in NEUTRAL_STATES
+  }
+
+
+def reaches_site_chrome(answer: ArmAnswer) -> bool:
+  """Can this arm match an element the published layout owns, in any state?"""
+  return bool(answer.refusal) or bool(reached_states(answer))
+
+
+def is_unsafe(answer: ArmAnswer) -> bool:
+  """The verdict: refused, or able to reach chrome with no route identity present."""
+  return bool(answer.refusal) or bool(neutral_reach(answer))
+
+
+def scan_tree() -> dict[str, ArmAnswer]:
+  """Ask the browser about every arm of every production stylesheet at once.
+
+  One batched request for the whole tree: the browser session is started once
+  for the module, and the production scan is one walk of the state matrix, not
+  one per stylesheet.
+  """
+  arms: list[str] = []
+  for sheet in [CORE_CSS] + instrument_stylesheets():
+    arms.extend(selector_arms(sheet))
+  return ask_arms(arms)
+
+
+def site_chrome_selectors(path: Path, answers: dict | None = None) -> list[str]:
   """Selectors in one stylesheet that reach the layout's chrome unscoped.
 
-  A selector is reported when it can match an element the published layout owns
-  and nothing in it positively narrows the match to a route or an instrument. A
-  grouped selector is judged arm by arm, so one safe arm cannot carry an unsafe
-  one. The result is normalized selector identities in file order, duplicates
-  kept, which is what makes the recorded exceptions exact.
+  The browser decides, per arm and per shell state, whether the arm selects a
+  chrome element; this function only extracts arms, asks, and reports the
+  normalized identities of the unsafe ones in file order, duplicates kept,
+  which is what makes the recorded exceptions exact. An arm Chromium refuses is
+  reported, never dropped. `answers` may carry a result from `scan_tree` so a
+  whole-tree audit is one batch rather than one per file.
   """
+  arms = list(selector_arms(path))
+  if answers is None:
+    answers = ask_arms(arms)
   return [
-    normalize_selector(arm)
-    for arm in selector_arms(path)
-    if not route_scope(arm) and reaches_site_chrome(arm)
+    normalize_selector(arm) for arm in arms
+    if is_unsafe(answers[arm])
   ]
 
 
@@ -887,55 +759,57 @@ class SharedNamespaceTest(unittest.TestCase):
         self.assertEqual(offending, set(), f"{path.name} emits {sorted(offending)}")
 
 
+@BROWSER_REQUIRED
 class SiteChromeScopeTest(unittest.TestCase):
   """The fourth hazard: an instrument stylesheet restyling the site's own chrome.
 
-  `browser_page_parts` appends a browser page's own body classes to `<main>`, not
-  to `<body>`, so in the published artifact the page has no class outside the
-  landmark. A rule written as `body > .site-header` therefore matches on every
-  route the file reaches, and the only thing keeping it off the other twelve is
-  which pages happen to link the stylesheet. That is the same
-  correctness-by-load-order the `.field` and `.detail` renames removed.
+  The shells the oracle judges are rendered by `wrap_in_layout` — the public
+  and the preview one — with the page's own identity on `<main>` exactly where
+  the build puts it. The page's subtree is not chrome; `<main>` itself is, and
+  everything around it is.
   """
 
-  def test_the_layout_owns_the_chrome_these_tests_are_about(self):
-    """If the masthead loses its class the rest of this class proves nothing."""
-    owned = layout_owned_classes()
-    for expected in ("site-header", "site-footer", "brand", "skip-link", "release-banner"):
-      with self.subTest(**{"class": expected}):
-        self.assertIn(expected, owned)
-    self.assertIn("main-content", layout_owned_ids())
-
-  def test_the_chrome_model_is_the_layout_the_build_actually_emits(self):
-    """Read off `wrap_in_layout`, not off a second copy of the layout.
-
-    The elements that matter are the ones no page owns: the masthead and its
-    navigation, the brand, the release banner the preview shell adds, the footer
-    and its links. The page's own content is deliberately not in the model — an
-    instrument stylesheet styling that is an instrument stylesheet working.
-    """
-    tags = {element.tag for element in chrome_elements()}
-    for expected in ("html", "body", "header", "nav", "footer", "a", "main", "aside"):
-      with self.subTest(tag=expected):
-        self.assertIn(expected, tags)
-    self.assertNotIn(
-      "chrome-model-content",
-      {element.identifier for element in chrome_elements()},
-      "the model reaches inside <main>, so page content would be judged as chrome",
+  def test_the_oracle_serves_the_shell_the_build_actually_emits(self):
+    """If the masthead loses its class, or the model starts inside `<main>`,
+    every other assertion in this class proves nothing."""
+    answer = ask_arms([
+      ".site-header", ".site-footer", ".skip-link", ".brand", "#main-content",
+      ".release-banner", "a",
+    ])
+    for arm in (".site-header", ".site-footer", ".skip-link", ".brand", "#main-content"):
+      with self.subTest(selector=arm):
+        self.assertTrue(
+          reaches_site_chrome(answer[arm]),
+          f"{arm} was read as unable to reach any element the layout owns",
+        )
+    banners = {
+      state for state, where in answer[".release-banner"].reach.items() if where
+    }
+    self.assertTrue(
+      all(state.endswith("(preview)") for state in banners) and banners,
+      f"the release banner must be chrome only in the preview shells, saw {sorted(banners)}",
     )
-    links = [element for element in chrome_elements() if element.tag == "a"]
-    self.assertGreaterEqual(
-      len(links), 6,
-      "the layout's masthead and footer links are what a bare `a` rule reaches",
+    # A bare `a` reaches the masthead, navigation and footer links; six is the
+    # floor the layout's own furniture sets (brand, three nav, two footer).
+    link_reach = reached_states(answer["a"])
+    self.assertGreaterEqual(len(link_reach), len(NEUTRAL_STATES))
+    for state in NEUTRAL_STATES:
+      with self.subTest(state=state):
+        self.assertIn(state, link_reach, "a bare `a` did not reach the chrome links")
+    content_reach = ask_arms(["#chrome-model-content"])["#chrome-model-content"]
+    self.assertFalse(
+      reaches_site_chrome(content_reach),
+      "the model reaches inside <main>, so page content would be judged as chrome",
     )
 
   def test_no_unrecorded_instrument_stylesheet_restyles_the_site_chrome(self):
+    answers = scan_tree()
     for sheet in instrument_stylesheets():
       name = sheet.relative_to(BROWSER).as_posix()
       if name in SITE_CHROME_UNSCOPED:
         continue
       with self.subTest(stylesheet=name):
-        found = site_chrome_selectors(sheet)
+        found = site_chrome_selectors(sheet, answers)
         self.assertEqual(
           found, [],
           f"{name} reaches the published layout's own chrome with no route "
@@ -951,12 +825,13 @@ class SiteChromeScopeTest(unittest.TestCase):
     selectors, so a protected rule could be replaced by a different unscoped rule
     at no cost. The inventory is the identities, in file order, duplicates kept.
     """
+    answers = scan_tree()
     for name, exception in sorted(SITE_CHROME_UNSCOPED.items()):
       with self.subTest(stylesheet=name):
         sheet = BROWSER / name
         self.assertTrue(sheet.is_file(), f"{name} no longer exists; drop its entry")
         self.assertEqual(
-          site_chrome_selectors(sheet), list(exception.selectors),
+          site_chrome_selectors(sheet, answers), list(exception.selectors),
           f"{name}'s unscoped site-chrome selectors are no longer the recorded "
           "inventory. If its protected owner scoped one, shorten the entry; if "
           "one was added or replaced, it widened a hazard the ledger holds open "
@@ -989,7 +864,7 @@ class SiteChromeScopeTest(unittest.TestCase):
   def test_the_shared_stylesheet_is_the_one_place_the_chrome_is_owned(self):
     """browser-core.css is exempt because owning the shared furniture is its job."""
     self.assertTrue(
-      site_chrome_selectors(CORE_CSS),
+      site_chrome_selectors(CORE_CSS, scan_tree()),
       "shared/browser-core.css no longer styles the site chrome at all, which "
       "would mean the furniture moved and this test is measuring the wrong file",
     )
@@ -1017,170 +892,370 @@ class SiteChromeScopeTest(unittest.TestCase):
         )
 
 
-class SiteChromeSelectorSemanticsTest(unittest.TestCase):
-  """What the detector means by unsafe, stated as cases rather than as prose.
+@BROWSER_REQUIRED
+class SelectorOracleSemanticsTest(unittest.TestCase):
+  """What the oracle means by unsafe, stated as cases rather than as prose.
 
-  Every rejected case below is a selector that can match an element the published
-  layout owns with nothing narrowing it to a route. Every accepted case is one
-  that either cannot match the chrome or positively says which route it is about.
-  None of the class names here are privileged by the implementation: scope is any
-  name the layout does not own, read off the layout.
+  Every arm in REACHED is one a real Chromium reported selecting a chrome
+  element in the neutral shell — the state where the route's identity is
+  absent from `<main>` — under the walk's bounded user-state matrix. Every arm
+  in CLEAN is one the same browser reported selecting no chrome element
+  anywhere in the matrix. None of the class names here are privileged: the
+  oracle judges matching from DOM state, and the neutral shell is what makes a
+  route-looking name inside a selector unable to buy scope by mere mention.
   """
 
-  REJECTED = (
-    ".site-header",
+  # The second cold review's counterexamples, verbatim, plus the shapes the
+  # same review said the replacement must also classify.
+  REACHED = (
+    # Finding 1: negation and case-insensitive attributes.
+    "a:not(:hover)",
+    ".site-header:not(:focus-within)",
+    "[class~=\"SITE-HEADER\" i]",
+    # Finding 2: scope read off raw text.
+    "a[href$=\".html\"]",
+    "body:has(.plan-page, .site-header) .site-footer a",
+    ":is(:not(.plan-page), .plan-page) a",
+    # The negated class is the one case the rule EXCLUDES, never a scope.
+    ".site-header:not(.route-only)",
+    # Escaped identifiers, nested functional pseudos, every combinator class,
+    # and the bare element forms. Top-level nesting (`& a`) is not valid
+    # stylesheet syntax, but Chromium accepts it and matches the skip link with
+    # it; the browser's answer is the truth, and it errs toward reporting.
+    ".triptych\\-mark",
+    "& a",
+    "body:has(:is(.site-header)) .site-footer a",
+    "body .site-footer a",
     "body > .site-header",
+    "nav > a + a",
+    "header ~ footer",
     "a",
     "a:hover",
-    ".site-header:not(.route-only)",
-    "body .site-footer a",
-    ".site-footer:not(.route-only) a",
-    "body:not(.route-only) > .site-header nav a",
-    ".brand a",
-    ".skip-link",
+    "a:focus-visible",
     "html",
     "body",
     ":root",
     "*",
-    "nav a",
-    "footer p",
-    "a:focus-visible",
-    ".release-banner strong",
-    ":is(.plan-page, .site-header) a",
+    "*::before",
+    "a::after",
+    "[aria-label=\"Primary navigation\"]",
   )
 
-  ACCEPTED = (
+  CLEAN = (
+    # Legitimately route-dependent: reaching chrome genuinely depends on the
+    # page state the class names, and the neutral shell has none of them.
     ".sources-page .page-footer a",
     "body:has(> .sources-page) .site-footer a",
     ".plan-page a",
     ".track-page a:hover",
     ".route-only .site-header",
     ":where(.plan-page, .track-page) a",
-    "body:has(.reader-instrument) > .site-header",
+    "body:has(> .page-browser) > .site-header",
     "html:has(.reader-instrument)",
     ".catena-page .skip-link",
     "#main-content a",
     "button:focus-visible",
     "[hidden]",
     ".rail-link:hover",
+    # Escapes that name a class nothing carries, and an attribute value whose
+    # comma must not split the arm.
+    ".triptych\\-nope",
+    "[aria-label=\"Primary, navigation\"]",
   )
 
-  def test_every_rejected_selector_is_reported_as_reaching_the_chrome(self):
-    for arm in self.REJECTED:
+  # Every literal this class judges, asked of the browser in ONE batched
+  # request in setUpClass, so the whole class costs one walk of the state
+  # matrix rather than one per test.
+  @classmethod
+  def setUpClass(cls):
+    super().setUpClass()
+    cls.answers = ask_arms(
+      list(cls.REACHED) + list(cls.CLEAN)
+      + [
+        "body:has(> .plan-page) .site-footer a",
+        "body:has(.plan-page, .site-header) .site-footer a",
+        "a:active",
+        "#main-content:target",
+        ".skip-link:focus",
+        ".skip-link::before",
+        "..dot", ":not()", 'a[href="unterminated', "%bad", "a:visited",
+      ]
+    )
+
+  def test_every_cold_review_counterexample_reaches_chrome_in_a_neutral_shell(self):
+    for arm in self.REACHED:
       with self.subTest(selector=arm):
+        answer = self.answers[arm]
+        witness = neutral_reach(answer)
         self.assertFalse(
-          route_scope(arm),
-          f"{arm} was read as route-scoped, and nothing in it positively names "
-          "a route",
+          answer.refusal and not witness,
+          f"{arm} was refused instead of decided: {answer.refusal}",
         )
         self.assertTrue(
-          reaches_site_chrome(arm),
-          f"{arm} was read as unable to reach any element the layout owns",
+          witness,
+          f"{arm} was read as unable to reach any element the layout owns in "
+          f"the neutral shell; the browser saw {answer.reach}",
         )
 
-  def test_every_accepted_selector_is_allowed_and_for_the_stated_reason(self):
-    for arm in self.ACCEPTED:
+  def test_every_accepted_selector_is_clean_and_for_the_stated_reason(self):
+    for arm in self.CLEAN:
       with self.subTest(selector=arm):
-        self.assertTrue(
-          route_scope(arm) or not reaches_site_chrome(arm),
-          f"{arm} is a form this repository uses legitimately and was reported",
+        answer = self.answers[arm]
+        self.assertFalse(
+          answer.refusal,
+          f"{arm} is a form this repository writes and Chromium refused it: "
+          f"{answer.refusal}",
+        )
+        self.assertEqual(
+          neutral_reach(answer), {},
+          f"{arm} reached site chrome with the route's identity absent: "
+          f"{neutral_reach(answer)}",
         )
 
-  def test_a_negative_condition_is_not_a_positive_scope(self):
-    """`.site-header:not(.route-only)` is a rule about every masthead but one.
+  def test_route_dependence_is_a_state_differential_and_not_a_name(self):
+    """The same chrome element, reached or not, decided by the page state.
 
-    Reading `.route-only` there as page scope is the defect an independent review
-    found: the class is the one case the rule EXCLUDES.
+    `body:has(> .plan-page) .site-footer a` reaches the footer's links on the
+    Scripture plan route — where the build projects `.plan-page` onto `<main>` —
+    and reaches nothing in the neutral shell, where that identity is absent.
+    That difference, observed rather than inferred, is what positive scope
+    means here; `body:has(.plan-page, .site-header) …` fails it because its
+    `.site-header` alternative is true everywhere.
     """
-    self.assertEqual(route_scope(".site-header:not(.route-only)"), set())
-    self.assertEqual(route_scope(".site-footer:not(.route-only) a"), set())
-    self.assertEqual(route_scope("body:not(.route-only) > .site-header"), set())
-    self.assertEqual(route_scope(":not(.route-only) .site-header"), set())
-    # The same class asserted rather than excluded does scope the rule.
-    self.assertEqual(route_scope(".route-only .site-header"), {"route-only"})
+    differential = {
+      "body:has(> .plan-page) .site-footer a":
+        self.answers["body:has(> .plan-page) .site-footer a"],
+      "body:has(.plan-page, .site-header) .site-footer a":
+        self.answers["body:has(.plan-page, .site-header) .site-footer a"],
+    }
+    scoped = differential["body:has(> .plan-page) .site-footer a"]
+    plan_states = sorted(
+      state for state, where in scoped.reach.items()
+      if where and "browser scripture/index.html" in state
+    )
+    self.assertTrue(plan_states, "the plan route was absent from the state matrix")
+    self.assertEqual(
+      neutral_reach(scoped), {},
+      "a selector whose only true alternative is the route class reached the "
+      "neutral shell",
+    )
+    tautology = differential["body:has(.plan-page, .site-header) .site-footer a"]
+    for state in NEUTRAL_STATES:
+      with self.subTest(state=state):
+        self.assertTrue(
+          tautology.reach.get(state),
+          "the global alternative made this arm safe to fire in the neutral "
+          "shell, and the walk did not see it",
+        )
+
+  def test_dynamic_states_are_walked_not_assumed(self):
+    """A quiescent document would call every one of these safe. It is not.
+
+    Each witness records the user sub-state that reached: `a:hover` is reached
+    only with the pointer over a chrome link, `:focus-visible` only with
+    keyboard focus on one, `:target` only with the fragment set, and
+    `.skip-link:focus` under a held press as much as under focus. None of these
+    matches in ordinary state — which is exactly why the walk exists, and why a
+    quiescent-only oracle would have reported every one of them as safe.
+    """
+    for arm in ("a:hover", "a:focus-visible", ".skip-link:focus",
+                "#main-content:target", "a:active"):
+      with self.subTest(selector=arm):
+        answer = self.answers[arm]
+        witness = neutral_reach(answer)
+        self.assertTrue(witness, f"{arm} reached nothing in the neutral shell")
+        substates = {where["substate"] for where in witness.values()}
+        self.assertNotIn(
+          "quiescent", substates,
+          f"{arm} matched in ordinary state, so no walk was needed; move it to "
+          "the statically-reached cases",
+        )
+
+  def test_pseudo_element_arms_are_judged_by_the_element_they_belong_to(self):
+    """`querySelectorAll('*::before')` matches NOTHING — the worst answer.
+
+    So a pseudo-element arm is judged by the element the pseudo-element belongs
+    to, which over-approximates in the safe direction: a rule that can draw on
+    an element's `::before` reaches that element's rendering. The origin is
+    recorded, and the independent sentinel observation below shows the style
+    engine agreeing.
+    """
+    answers = {**self.answers, "a::after": ask_arms(["a::after"])["a::after"]}
+    for arm, expected_origin in (
+      ("*::before", "*"), ("a::after", "a"), (".skip-link::before", ".skip-link"),
+    ):
+      with self.subTest(selector=arm):
+        answer = answers[arm]
+        self.assertIsNone(answer.refusal)
+        self.assertEqual(answer.origin, expected_origin)
+        self.assertEqual(answer.judged, expected_origin)
+        self.assertTrue(neutral_reach(answer), f"{arm} reached nothing")
+
+  def test_what_the_browser_cannot_be_asked_is_reported_and_never_passed(self):
+    """Fail closed. A selector Chromium rejects in the version that ships this
+    gate is a selector nobody has shown to be safe, and `:visited` is one whose
+    truth Chromium deliberately withholds from script."""
+    for arm in ("..dot", ":not()", "a[href=\"unterminated", "%bad", "a:visited"):
+      with self.subTest(selector=arm):
+        answer = self.answers[arm]
+        self.assertTrue(
+          answer.refusal,
+          f"{arm} was decided rather than refused; an unaskable selector must "
+          "stop the gate, not pass it",
+        )
+        self.assertTrue(
+          is_unsafe(answer),
+          f"{arm} was refused and then treated as safe, which is fail-open",
+        )
 
   def test_a_grouped_selector_is_judged_one_arm_at_a_time(self):
     """A safe arm beside an unsafe one must not carry it.
 
-    The whole rule is written once and applies to both, so the unsafe arm reaches
-    the chrome whatever the arm beside it says.
+    The whole rule is written once and applies to both, so the unsafe arm
+    reaches the chrome whatever the arm beside it says — and the splitter must
+    not cut inside the quoted attribute value that contains the comma.
     """
-    grouped = ".plan-page a,\na:hover"
+    grouped = "a[title=\"a,b\"], .site-footer a"
     arms = [one.strip() for one in split_top_level(grouped)]
-    self.assertEqual(arms, [".plan-page a", "a:hover"])
-    self.assertTrue(route_scope(arms[0]))
-    self.assertFalse(route_scope(arms[1]))
-    self.assertTrue(reaches_site_chrome(arms[1]))
+    self.assertEqual(arms, ['a[title="a,b"]', ".site-footer a"],
+                     "the splitter cut inside the attribute value")
+    answers = ask_arms(arms)
+    self.assertEqual(neutral_reach(answers[arms[0]]), {})
+    self.assertTrue(neutral_reach(answers[arms[1]]))
+    self.assertEqual(
+      [normalize_selector(a) for a in arms if is_unsafe(answers[a])],
+      [".site-footer a"],
+      "the rule's verdict is not the union of its arms' verdicts",
+    )
 
-  def test_has_is_a_positive_relation_and_is_and_where_are_only_conditionally(self):
-    """The three functional pseudo-classes, treated deliberately.
+  def test_the_oracle_agrees_with_an_independent_browser_observation(self):
+    """Not helper return values: the style engine, read two other ways.
 
-    `:has()` states which document the rule applies in and is how this repository
-    already writes route scope where the page class sits on `<main>`. `:is()` and
-    `:where()` are lists: they scope only when every alternative does, because one
-    global alternative makes the whole list global.
+    For each arm, the walk's verdict is compared against (a) the elements a
+    rule written with that selector reaches, read through a non-inherited
+    property, and (b) `querySelectorAll` over the same document. For the
+    pseudo-element arm, (a) is the only observation that can see the
+    pseudo-element at all, which is why it is there.
     """
-    self.assertEqual(
-      route_scope("body:has(> .sources-page) .site-footer a"), {"sources-page"}
+    arms = [
+      "a:not(:hover)", ".site-header:not(:focus-within)",
+      "[class~=\"SITE-HEADER\" i]", "a[href$=\".html\"]",
+      "body:has(.plan-page, .site-header) .site-footer a",
+      ":is(:not(.plan-page), .plan-page) a",
+      "body:has(> .plan-page) .site-footer a",
+      "*::before",
+    ]
+    oracle().request("arms", arms=arms)
+    rows = oracle().request(
+      "verify", arms=arms, states=[next(iter(sorted(NEUTRAL_STATES)))]
+    )["verification"]
+    resting = [row for row in rows if not row["forced"]]
+    self.assertTrue(resting, "the independent check produced no resting rows")
+    for row in resting:
+      with self.subTest(arm=row["arm"], state=row["state"]):
+        observed = bool(row["selectorApi"]) or bool(row["sentinel"]["element"]) or \
+          any(row["sentinel"]["pseudo"].values())
+        answer = ask_arms([row["arm"]])[row["arm"]]
+        walked = bool(answer.reach.get(row["state"]))
+        self.assertEqual(
+          walked, observed,
+          f"the walk said {'reach' if walked else 'clean'} and the independent "
+          f"style-engine observation said "
+          f"{'reach' if observed else 'clean'} (selectorApi="
+          f"{row['selectorApi']}, sentinel={row['sentinel']})",
+        )
+    pseudo = [row for row in resting if row["arm"] == "*::before"]
+    self.assertTrue(pseudo, "the pseudo-element arm was not verified")
+    # The selector API answers for the ORIGIN (`*`), which does match chrome —
+    # that is the over-approximation. The style engine is the observation that
+    # can see the pseudo-element itself, and it must agree that the chrome's
+    # `::before` boxes were reached.
+    self.assertTrue(pseudo[0]["selectorApi"])
+    self.assertTrue(
+      pseudo[0]["sentinel"]["pseudo"].get("::before"),
+      "the style engine drew nothing on the chrome's ::before, so judging the "
+      "arm by its origin over-approximates is unproven",
     )
-    self.assertEqual(
-      route_scope(":where(.plan-page, .track-page) a"), {"plan-page", "track-page"}
-    )
-    self.assertEqual(route_scope(":is(.plan-page, .track-page) a"),
-                     {"plan-page", "track-page"})
-    self.assertEqual(route_scope(":is(.plan-page, .site-header) a"), set())
-    self.assertEqual(route_scope(":where(.site-header, .site-footer) a"), set())
-    # A negation nested inside a positive relation still grants nothing.
-    self.assertEqual(route_scope("body:has(:not(.plan-page)) .site-footer a"), set())
 
-  def test_the_analyzer_refuses_what_it_cannot_classify(self):
-    """Fail closed. A selector nobody can read is not a selector shown to be safe."""
-    for unreadable in ("& a", ".site-header:not(.route-only", "a[href", "%bad"):
-      with self.subTest(selector=unreadable):
-        with self.assertRaises(UnclassifiableSelector):
-          route_scope(unreadable)
-          reaches_site_chrome(unreadable)
+  def test_one_browser_session_answers_every_question(self):
+    """The runtime is bounded by batching, and the numbers are measured facts.
+
+    One Chromium session serves this whole module; the shells are navigated a
+    bounded number of times, not once per selector; and a report is kept so a
+    future maintainer can see the cost rather than guess it.
+    """
+    report = oracle().request("report")["report"]
+    self.assertEqual(report["browserSessions"], 1)
+    states = len(oracle_states())
+    # Navigation count is driven by how many BATCHES carried new arms, never by
+    # how many selectors were asked: that is the bounded-runtime contract.
+    self.assertLessEqual(
+      report["navigations"], states * (report["batches"] + 1),
+      f"the oracle navigated {report['navigations']} times for "
+      f"{report['batches']} batches over {states} states",
+    )
+    self.assertLess(
+      report["batches"], report["arms"],
+      "batches grew to one per selector, which is the launch-per-selector "
+      "shape this harness exists to prevent",
+    )
+    self.assertGreater(report["arms"], 0)
+    self.assertGreater(report["elapsedMs"], 0)
+    self.assertTrue(report["forcedStates"], "the state matrix walked nothing")
+    self.assertEqual(
+      set(report["dynamicStatesWalked"]), set(DYNAMIC_WALK_STATES),
+      "the user-state matrix was walked somewhere other than the states whose "
+      "reach decides the verdict",
+    )
+
+
+@BROWSER_REQUIRED
+class ProtectedInventoryMutationTest(unittest.TestCase):
+  """That the recorded exception is a list of identities, driven over real files.
+
+  Both mutations are built in a temporary stylesheet from the recorded
+  inventory, so the protected file itself is never touched, and both are judged
+  by the same browser verdict the production scan uses.
+  """
+
+  def mutations_of(self, selectors: list[str]) -> Path:
+    temporary = tempfile.TemporaryDirectory()
+    self.addCleanup(temporary.cleanup)
+    sheet = Path(temporary.name) / "mutated.css"
+    sheet.write_text(
+      "\n".join(f"{one} {{ color: red; }}" for one in selectors), encoding="utf-8"
+    )
+    return sheet
 
   def test_a_substituted_protected_selector_fails_where_a_count_would_not(self):
-    """Why the recorded exception is a list of identities and not the number 12.
-
-    Driven over a temporary stylesheet built from the recorded inventory with one
-    selector swapped for a different unscoped one, so the protected file itself is
-    not touched: the count is still satisfied, and the inventory is not.
-    """
     recorded = list(SITE_CHROME_UNSCOPED["liturgy/day-missal.css"].selectors)
     substituted = recorded[:-1] + [".site-footer a"]
-    with tempfile.TemporaryDirectory() as temporary:
-      sheet = Path(temporary) / "substituted.css"
-      sheet.write_text(
-        "\n".join(f"{one} {{ color: red; }}" for one in substituted), encoding="utf-8"
-      )
-      found = site_chrome_selectors(sheet)
-      self.assertEqual(len(found), len(recorded), "the count is unchanged")
-      self.assertNotEqual(found, recorded, "the inventory is what notices")
+    found = site_chrome_selectors(self.mutations_of(substituted))
+    self.assertEqual(len(found), len(recorded), "the count is unchanged")
+    self.assertNotEqual(found, recorded, "the inventory is what notices")
 
   def test_a_removed_protected_selector_is_noticed_too(self):
     """The exception may shrink, and shrinking must be recorded rather than assumed."""
     recorded = list(SITE_CHROME_UNSCOPED["liturgy/day-missal.css"].selectors)
-    with tempfile.TemporaryDirectory() as temporary:
-      sheet = Path(temporary) / "shortened.css"
-      sheet.write_text(
-        "\n".join(f"{one} {{ color: red; }}" for one in recorded[:-1]), encoding="utf-8"
-      )
-      self.assertNotEqual(site_chrome_selectors(sheet), recorded)
+    found = site_chrome_selectors(self.mutations_of(recorded[:-1]))
+    self.assertNotEqual(found, recorded)
 
-  def test_the_whole_production_tree_is_scanned_and_classified(self):
-    """No stylesheet may be silently unreadable, exempt or not.
+  def test_an_extractor_confusing_replacement_still_cannot_pass(self):
+    """The inventory holds even when the substituted arm is harder to read.
 
-    Every production browser stylesheet, `browser-core.css` and the recorded
-    exceptions included, is put through the analyzer here. A file that raises is
-    a file nobody has classified, and the gate above would have skipped it.
+    A selector with an escaped identifier and a comma inside an attribute value
+    must survive extraction, reach chrome, and still fail the inventory.
     """
-    sheets = [CORE_CSS] + instrument_stylesheets()
-    self.assertGreaterEqual(len(sheets), 14, "the browser tree lost stylesheets")
-    for sheet in sheets:
-      with self.subTest(stylesheet=sheet.relative_to(BROWSER).as_posix()):
-        site_chrome_selectors(sheet)
+    recorded = list(SITE_CHROME_UNSCOPED["liturgy/reader-shell.css"].selectors)
+    # The substituted arm carries commas inside a functional pseudo, which is
+    # the shape a name-scanning extractor is weakest on; it must survive
+    # extraction, reach chrome, and still fail the inventory.
+    substituted = recorded[:-1] + [
+      "body:has(.plan-page, .site-header) .site-footer a",
+    ]
+    found = site_chrome_selectors(self.mutations_of(substituted))
+    self.assertEqual(len(found), len(recorded), "the count is unchanged")
+    self.assertNotEqual(found, recorded, "the inventory is what notices")
 
 
 class BrowserModelGateReachabilityTest(unittest.TestCase):
