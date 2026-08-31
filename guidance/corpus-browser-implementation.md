@@ -2102,6 +2102,108 @@ generated or generator file, no release binding, and no Search/acquisition work
 was touched. This is a remediation candidate awaiting independent cold
 rereview; B0/B1 is not self-accepted.
 
+## 11.5 Independent cold rereview of the selector oracle, measured 2026-08-31
+
+An independent cold reviewer fetched candidate
+`73363fcbce22fc551528047c7e69f33275d54b58` into its own uncontaminated clone,
+detached at that commit, drove the same Chromium the gate drives
+(`Chrome/151.0.7922.173`), and returned **B0/B1 — ACCEPT_WITH_CORRECTIONS**.
+Every mutation it made to disprove a claim was reverted immediately after the
+run it was made for, and its clone finished clean.
+
+### The nine claims it confirmed
+
+1. **Chromium, not Python, decides selector truth.** The deleted set is the
+   whole matching machinery — `chrome_documents`, the `ChromeElement` HTML
+   model, `split_compounds`, `parse_compound`, `attribute_matches`,
+   `compound_matches`, `selects`, `_group_after`, `without_negations`,
+   `route_scope` and the `layout.html` constant — and the surviving Python is
+   extraction, orchestration and `is_unsafe = refusal or neutral_reach`. Proved
+   by sabotage: editing the harness's `reach()` to answer unconditionally safe
+   turned the suite red with 55 failures.
+2. **All six cold-review counterexamples are unsafe**, reproduced with the
+   reviewer's own CDP script over the dumped neutral shell rather than through
+   any harness helper: `a:not(:hover)` → 6 anchors including `a.skip-link`,
+   `.site-header:not(:focus-within)` → `header.site-header`,
+   `[class~="SITE-HEADER" i]` → `header.site-header`, `a[href$=".html"]` → 6
+   anchors, `body:has(.plan-page, .site-header) .site-footer a` → 2 footer
+   anchors, `:is(:not(.plan-page), .plan-page) a` → 7 anchors.
+3. **Legitimately route-dependent forms are still permitted**, with independent
+   `querySelectorAll` returning nothing in the neutral shell for
+   `.sources-page .page-footer a`, `body:has(> .sources-page) .site-footer a`,
+   `.plan-page a`, `.route-only .site-header` and
+   `:where(.plan-page, .track-page) a`.
+4. **Fail-closed is real.** A mutation that dropped the refusal turned four
+   assertions red, and the reviewer's own probes were refused and unsafe: `> a`,
+   `:-moz-any(.site-header)`, `a::before:hover`, `.site-header::after:hover`,
+   `::before:hover`, `a:has(:visited)`, `a:not(:visited)`,
+   `.site-header:visited`. Extraction fails closed on CSS nesting too: an
+   appended nested rule failed the tree scan as an unparsable arm.
+5. **The four protected inventories are exactly 12/3/2/3 and mutation-sensitive**,
+   re-derived independently from the browser's verdicts: `day-missal.css` 12,
+   `reader-shell.css` 3, `reader-instrument.css` 2, `reader-visual-reset.css` 3.
+   Substitution with the count unchanged, removal, a comma-inside-functional-pseudo
+   substitution, and an unsafe rule added to unprotected `texts.css` each fail.
+6. **Zero new hazards across the production tree**: 15 sheets, 1,721 arm
+   occurrences, **1,193 unique arms, zero refusals**; unsafe counts
+   `browser-core.css` 10 (its job), the four Liturgy files 12/3/2/3, and 0 for
+   every other file, Scripture included.
+7. **One browser session, batched**: `browserSessions: 1`, `batches: 1`,
+   `navigations: 72`, `arms: 52`, `startupMs: 665`, and 34 tests in 9.154 s.
+8. **Blocker A stays closed**: `test_browser_model_gate`, 22 tests, OK.
+9. **No protected Liturgy, Catena or release-binding change**: the candidate's
+   diff against `2440e3e84` is exactly six paths — `PROJECT-WORK.md`, this file,
+   `guidance/corpus-browser-roadmap.md`, `promised-deliverables.toml`,
+   `tools/tests/site_chrome_selector_oracle.mjs` and
+   `tools/tests/test_browser_collisions.py`.
+
+It probed **52 adversarial arms** beyond the candidate's own list — positional
+and `nth-child(… of …)` forms, `:has()` with global alternatives, double
+negation, escaped and case-insensitive attribute forms, `:any-link`, `:link`,
+`:lang()`, `:dir()`, top-level nesting, and pseudo-element tails — and found
+each of them classified the way the harness claims. It also recorded that
+Chromium 151 rejects a pseudo-element followed by a user-action pseudo-class, so
+the "pseudo-element not at the tail" hole it hypothesised does not exist here.
+
+### The one latent fail-open it found
+
+The walk forces one user state at a time, so an arm whose reach needs **two
+simultaneous user states on two different chrome elements** was reported safe.
+Driving real Chromium into that state — a real Tab to the skip link, then a real
+pointer move onto a footer link — the reviewer watched
+`a:focus ~ .site-footer:hover` match `footer.site-footer` and
+`.skip-link:focus ~ .site-footer:hover a` match two footer anchors while the
+harness reported `reach={}` for both. No production selector has that shape
+today: a grep for two state pseudo-classes in one arm across
+`src/web/browser --include=*.css` returns nothing. So it was a latent fail-open
+rather than a live hazard, and the disposition is ACCEPT_WITH_CORRECTIONS rather
+than CHANGES_REQUIRED: it does not touch the six counterexamples, the four exact
+inventories, the production scan, or Blocker A.
+
+### The four corrections it required
+
+1. Disclose the one-state-at-a-time bound in §11.4, naming
+   `a:focus ~ .site-footer:hover` as the witness, because the record claimed a
+   bound narrower than the implementation's.
+2. Make that class fail closed in the harness rather than reporting safe.
+3. Assert the harness's `interactive` measurement or withdraw the claim that a
+   caller can fail on it, because `grep -n interactive` found no reader.
+4. Reword "the changed paths are …" in §11.4 and `PROJECT-WORK.md`, because six
+   paths changed and the no-production-byte meaning is carried by the clause
+   before it.
+
+### What the rereview did NOT re-run
+
+It relied on the previously measured baseline for all of these and spent its time
+on adversarial disproof instead: full unit discovery on either side; `make -k
+check` or any aggregate; `check-browser-static`; `check-browser-harnesses`; the
+real-Chromium artifact gate; `check-examples`; release-binding verification and
+the exact stale set (derived only from the changed-path inventory); the Catena
+focused and production suites and Catena route evidence; the public and preview
+site builds; and the Scripture visual, accessibility and 320 px route proof.
+`.track-page a:hover` and `#main-content:target ~ .site-footer:hover` were not
+separately confirmed by hand-driven browser observation either.
+
 ## 12. Risks
 
 **R1. Editing files owned by an in-progress deliverable.** Evidence:

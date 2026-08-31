@@ -2475,3 +2475,46 @@ and `src/web/browser/sources/sources.css`, unrefreshed.
 deployment, signing, binding refresh, protected-Liturgy edit, Catena edit,
 Search, acquisition, or next lane was performed. The candidate awaits
 independent cold rereview, and B0/B1 is not self-accepted.
+
+### Independent cold rereview of the selector oracle, 2026-08-31
+
+An independent reviewer fetched `73363fcbce22fc551528047c7e69f33275d54b58` into
+its own clone, detached at that commit, drove the same Chromium the gate drives
+(`Chrome/151.0.7922.173`), and returned **B0/B1 —
+ACCEPT_WITH_CORRECTIONS**. It confirmed nine claims — that Chromium and not
+Python decides selector truth (sabotaging the harness's `reach()` to answer
+safe turns the suite red with 55 failures, and the whole matching machinery is
+gone); that all six counterexamples reach chrome, reproduced with the
+reviewer's own CDP script rather than through any harness helper; that the
+route-dependent forms are still permitted; that fail-closed is real, with
+eight of its own probes refused and CSS nesting failing closed in extraction;
+that the four protected inventories are exactly 12/3/2/3, independently
+re-derived and mutation-sensitive; that the production tree holds 1,193 unique
+arms over 15 sheets with **zero refusals** and no new hazard; that the run is
+one browser session, 1 batch, 72 navigations, 52 arms, 665 ms startup, 34 tests
+in 9.154 s; that Blocker A stays closed at 22/OK; and that the candidate diff is
+exactly six paths, none of them protected Liturgy, Catena or a release binding.
+It probed 52 adversarial arms beyond the candidate's own list and found each one
+classified as claimed.
+
+It found **one latent fail-open, and the record overstating its own bound.** The
+user-state walk forces one state at a time — plus whatever a press carries, which
+is why `.site-header:hover a:focus` was caught by accident — so an arm needing
+two simultaneous user states on two different chrome elements was reported safe.
+After a real Tab and a real pointer move, real Chromium matches
+`a:focus ~ .site-footer:hover` against `footer.site-footer` and
+`.skip-link:focus ~ .site-footer:hover a` against two footer anchors, where the
+harness reported `reach={}`. No production selector has that shape today, so it
+was latent rather than live, which is why the disposition is
+ACCEPT_WITH_CORRECTIONS: the six counterexamples, the four inventories, the
+production scan and Blocker A all stand. Its four required corrections are the
+bound's disclosure, failing closed for that shape, wiring up the harness's unread
+`interactive` measurement, and one changed-path overstatement.
+
+The rereview deliberately did NOT re-run full discovery on either side, `make -k
+check` or any aggregate, `check-browser-static`, `check-browser-harnesses`, the
+real-Chromium artifact gate, `check-examples`, release-binding verification, the
+Catena suites and route evidence, the public or preview site build, or the
+Scripture visual/accessibility/320 px route proof. It relied on the previously
+measured baseline for all of those and spent the time on adversarial disproof
+instead, so nothing here re-measures them.
