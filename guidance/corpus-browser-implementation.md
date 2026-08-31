@@ -2060,8 +2060,33 @@ neutral shells lack. Every state gets the quiescent pass, where static reach is
 recorded. The bound is stated in the report rather than left implicit: form and
 element states the walk does not force (`:disabled`, `:checked`, `:open`) cannot
 become true for any chrome element because the layout emits no form control,
-`<details>` or `<dialog>`, and the harness measures that rather than assuming
-it.
+`<details>` or `<dialog>`, and the harness measures that per state rather than
+assuming it — `test_the_states_the_walk_does_not_force_cannot_become_true`
+asserts the measurement empty for all thirty-six shells, so the layout gaining
+one fails the gate instead of quietly ending the reasoning.
+
+**The walk forces ONE user state at a time, and an arm needing two at once is
+refused rather than reported safe.** [Corrected 2026-08-31 after the independent
+rereview of §11.5; the sentence above once stated a bound narrower than the
+implementation's.] Each sub-state is entered on its own, with the pointer reset
+between passes, so the only two-state combinations the walk visits are the ones a
+press carries with it — a press on a link focuses it, which is why
+`.site-header:hover a:focus` was caught by accident. It never holds keyboard
+focus on one chrome element while the pointer rests on a different one, and a
+reader reaches that state with a Tab and a mouse move: the rereview drove real
+Chromium into it and watched `a:focus ~ .site-footer:hover` match
+`footer.site-footer`, and `.skip-link:focus ~ .site-footer:hover a` match two
+footer anchors, while the harness reported `reach={}` for both. An arm of that
+shape is therefore **not** established safe here, and is now REFUSED — with the
+reason stated, which is already an unsafe verdict — rather than reported safe.
+The rule is lexical and conservative, so no selector semantics return to our
+code: Chromium's own serialization of the arm is split into compounds at
+top-level whitespace and combinators only, and two or more compounds naming a
+forced user state is a refusal. Two states in the same compound (`a:hover:focus`)
+are not refused, because the walk does establish that one. No production arm in
+the tree is refused by this rule — the tree scan still reports zero refusals
+across 1,193 arms — and widening the walk to co-force states on distinct
+elements is a larger change that was not made.
 
 ### What was measured
 
@@ -2080,8 +2105,8 @@ it.
 No additional real hazard was found in the production tree: the browser verdict
 reproduces the four protected inventories exactly, and every other instrument
 stylesheet is clean. Scripture's accepted scoping is classified safe by the
-same verdict, and no production byte changed in this pass — the changed paths
-are `tools/tests/test_browser_collisions.py` and the new
+same verdict, and no production byte changed in this pass — the only changed
+non-record paths are `tools/tests/test_browser_collisions.py` and the new
 `tools/tests/site_chrome_selector_oracle.mjs` — so the stale release-binding
 set remains exactly `src/web/browser/scripture/scripture.css` and
 `src/web/browser/sources/sources.css`.
@@ -2203,6 +2228,62 @@ focused and production suites and Catena route evidence; the public and preview
 site builds; and the Scripture visual, accessibility and 320 px route proof.
 `.track-page a:hover` and `#main-content:target ~ .site-footer:hover` were not
 separately confirmed by hand-driven browser observation either.
+
+### The corrections, applied 2026-08-31
+
+Exactly the four the rereview required, and nothing else. No production CSS or
+JS, no protected Liturgy file, no Catena anything, no release binding, no
+Makefile change, and no binding refresh.
+
+**1. The class fails closed.** `site_chrome_selector_oracle.mjs` splits
+Chromium's own serialization of an arm into compounds at top-level whitespace and
+combinators — a combinator inside `:has(…)` or `:is(…)` belongs to its compound
+rather than standing beside it — and refuses the arm, with the reason stated,
+when two or more compounds name one of `FORCED_STATES`. The test is the same
+lexical `DYNAMIC` regex the walk already uses to decide which arms need the walk
+at all, applied per compound, so no selector semantics return to our code; an
+escape that hides a separator can only split one compound into two, which is the
+direction that refuses. Two states in one compound (`a:hover:focus`) are not
+refused, because the walk establishes that one. A refusal was already an unsafe
+verdict, so this needed no new verdict path. The stated reason for both witnesses
+reads: *it forces a user state in 2 distinct compounds (`a:focus`,
+`.site-footer:hover`), and this walk holds one user state at a time.*
+
+**2. The regression is permanent.**
+`test_two_simultaneous_user_states_are_refused_rather_than_called_safe` holds
+`a:focus ~ .site-footer:hover` and `.skip-link:focus ~ .site-footer:hover a`
+refused and unsafe with the reason quoted, and holds `.track-page a:hover` and
+`a:hover` — one state in one compound — unrefused and classified exactly as
+before.
+
+**3. The `interactive` measurement is now read.** It was measured per shell and
+returned by the `init` op, and the harness's comment claimed a caller could fail
+on it, but `grep -n interactive` in the suite found no reader. The client keeps
+the `init` reply and
+`test_the_states_the_walk_does_not_force_cannot_become_true` asserts that every
+one of the thirty-six shells reports chrome and reports no interactive element,
+so the bound stated in §11.4 fails the gate if the layout ever gains a
+`<button>`, a `<details>` or a `<dialog>` outside `<main>`.
+
+**4. The changed-path overstatement is reworded** in §11.4 and
+`PROJECT-WORK.md`: the only changed *non-record* paths were the two test paths;
+six paths changed in all.
+
+Re-measured after the corrections, on this host, driving
+`Chrome/151.0.7922.173`:
+
+| Check | Result |
+| --- | --- |
+| `test_browser_collisions` | **36** tests, OK, 9.0 s, one Chromium session (34 before; the two new tests are the refusal regression and the `interactive` assertion) |
+| `test_browser_model_gate` | 22 tests, OK — Blocker A untouched |
+| `check-browser-static` | 6 tests, OK |
+| Full production tree scan | **1,193 unique arms, zero refusals**, unchanged; per-file unsafe counts `browser-core.css` 10, `day-missal.css` 12, `reader-shell.css` 3, `reader-instrument.css` 2, `reader-visual-reset.css` 3, every other file 0 |
+| Protected inventories | 12/3/2/3, each still exactly the recorded ordered inventory |
+| The new refusal, fired | `a:focus ~ .site-footer:hover`, `.skip-link:focus ~ .site-footer:hover a` and `#main-content:target ~ .site-footer:hover` all refused and unsafe; `.site-header:hover a:focus`, which the walk used to catch by press-carried focus, is now refused and still unsafe |
+
+No production arm became newly refused. Nothing was merged, deployed, signed,
+refreshed or self-accepted, and B0/B1 remains awaiting the coordinator's
+disposition of this correction pass.
 
 ## 12. Risks
 

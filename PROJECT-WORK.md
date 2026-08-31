@@ -2466,7 +2466,8 @@ comma-bearing-attribute, grouped and all-combinator cases classify correctly;
 not answer these at all; `test_browser_model_gate` stays 22 tests OK; and the
 protected-inventory mutations (substitution, removal, and a substitution whose
 commas sit inside a functional pseudo) all fail. No production byte changed in
-this pass — the changed paths are `tools/tests/test_browser_collisions.py` and
+this pass — the only changed non-record paths are
+`tools/tests/test_browser_collisions.py` and
 the new `tools/tests/site_chrome_selector_oracle.mjs` — so the stale
 release-binding set remains exactly `src/web/browser/scripture/scripture.css`
 and `src/web/browser/sources/sources.css`, unrefreshed.
@@ -2518,3 +2519,46 @@ Catena suites and route evidence, the public or preview site build, or the
 Scripture visual/accessibility/320 px route proof. It relied on the previously
 measured baseline for all of those and spent the time on adversarial disproof
 instead, so nothing here re-measures them.
+
+### The rereview's four corrections, 2026-08-31
+
+Exactly the four required, and nothing else: no production CSS or JS, no
+protected Liturgy file, no Catena anything, no release binding, no `Makefile`
+change, and no binding refresh.
+
+**The two-state class now fails closed.** The oracle splits Chromium's own
+serialization of an arm into compounds — at top-level whitespace and combinators
+only, so a combinator inside `:has(…)` belongs to its compound — and refuses the
+arm, with the reason stated, when two or more compounds name a forced user state.
+It is the same lexical regex the walk already uses to decide which arms need the
+walk, applied per compound, so no selector semantics returned to our code, and an
+escape that hides a separator can only split a compound in two, which is the
+direction that refuses. Two states in one compound (`a:hover:focus`) are not
+refused, because the walk establishes that one. A refusal was already an unsafe
+verdict, so nothing needed a new verdict path.
+`test_two_simultaneous_user_states_are_refused_rather_than_called_safe` holds
+both witnesses refused-and-unsafe permanently and holds `.track-page a:hover`
+classified as before. **The harness's `interactive` measurement is now read**
+rather than returned to nobody: the client keeps the `init` reply and asserts no
+chrome element in any of the thirty-six shells can carry a form or element state
+the walk does not force, so the layout gaining a `<button>`, `<details>` or
+`<dialog>` outside `<main>` fails the gate. And §11.4's bound now discloses the
+one-state-at-a-time walk with `a:focus ~ .site-footer:hover` named as the
+witness, while the changed-path sentence says "the only changed non-record
+paths", six paths having changed in all.
+
+Re-measured on this host under `Chrome/151.0.7922.173`:
+`test_browser_collisions` is **36 tests OK in 9.0 s** where it was 34, the two
+new tests being the refusal regression and the `interactive` assertion;
+`test_browser_model_gate` stays 22 tests OK; `check-browser-static` is 6 tests
+OK; and the full production scan is unchanged at **1,193 unique arms with zero
+refusals**, the same per-file unsafe counts, and the same exact 12/3/2/3
+protected inventories. **No production arm became newly refused.** The three
+witness arms are refused and unsafe, and `.site-header:hover a:focus` — which the
+walk previously caught only because a press carries its own focus — is now
+refused and still unsafe.
+
+`shared-shell-blocking-collisions-resolved` remains `blocked`. Nothing was
+merged, deployed, signed, refreshed or self-accepted, and the stale
+release-binding set is still exactly `src/web/browser/scripture/scripture.css`
+and `src/web/browser/sources/sources.css`.

@@ -53,8 +53,9 @@
  *   - `refusal`: a stated reason the browser could not be asked — the selector
  *     is invalid or unsupported HERE, in the version that ships this gate; or it
  *     names `:visited`, whose truth Chromium deliberately withholds from script
- *     and which therefore cannot be established either way. A refusal is
- *     reported to the caller as unsafe. It is never silence.
+ *     and which therefore cannot be established either way; or it forces a user
+ *     state in more than one compound, which the walk below does not establish.
+ *     A refusal is reported to the caller as unsafe. It is never silence.
  *   - `origin`: a pseudo-element arm's originating element selector.
  *     `document.querySelectorAll('*::before')` does not throw in Chromium — it
  *     returns NOTHING, which is the most dangerous answer available, so a
@@ -75,13 +76,27 @@
  * sub-state can only ADD reach, never withdraw it, which is why the quiescent
  * pass alone already reports `a:not(:hover)`.
  *
+ * The walk forces ONE user state at a time, plus whatever a press carries with
+ * it — a press on a link focuses it, so `.site-header:hover a:focus` is reached
+ * by accident. It never holds focus on one chrome element while the pointer
+ * rests on a different one, and a real reader reaches that state with a Tab and
+ * a mouse move: an independent rereview observed real Chromium matching
+ * `a:focus ~ .site-footer:hover` and `.skip-link:focus ~ .site-footer:hover a`
+ * against layout-owned elements while this walk reported no reach at all. So an
+ * arm whose Chromium serialization names a forced user state in two or more
+ * DISTINCT compounds is REFUSED, with the reason stated, rather than reported
+ * safe. That is the fail-closed answer for a shape the walk cannot establish;
+ * widening the walk to co-force states is a larger change and is not what this
+ * does.
+ *
  * What the matrix does not force is written down rather than assumed.
  * `:disabled`, `:checked`, `:open`, `:placeholder-shown` and the rest of the
  * form and element states cannot become true for any element in the layout's
  * chrome, because the layout emits no form control, no `<details>`, no
  * `<dialog>` and nothing editable. That is not asserted here — it is MEASURED
- * per state and returned as `interactive`, so the caller can fail if the layout
- * ever gains one and this reasoning stops holding.
+ * per state and returned as `interactive` by the `init` op, and the caller
+ * asserts it empty for every state, so the layout gaining one fails the gate
+ * instead of quietly ending the reasoning.
  */
 
 import { spawn } from 'node:child_process';
@@ -114,7 +129,9 @@ const VIEWPORT = { width: 1280, height: 900 };
 
 /* The user states the matrix forces, by the mechanism that forces each. Written
  * here because the list IS the bound: an arm whose safety depends on a state
- * outside it is not a safe arm this harness has established. */
+ * outside it is not a safe arm this harness has established, and an arm needing
+ * two of them at once, on two different chrome elements, is refused rather than
+ * reported safe. */
 const FORCED_STATES = ['hover', 'active', 'focus', 'focus-visible', 'focus-within', 'target'];
 
 /* Pseudo-classes whose truth Chromium will not report to script. `:visited` is
@@ -130,6 +147,48 @@ const UNESTABLISHABLE = /:visited\b/i;
  * test is `contains` rather than anything cleverer — an escaped `\:hover` inside
  * a class name is matched too, and that is the harmless direction. */
 const DYNAMIC = /:(hover|active|focus|focus-visible|focus-within|target)\b/i;
+
+/* The compounds of a selector, split at TOP-LEVEL whitespace and combinators
+ * only: a combinator inside `:has(…)` or `:is(…)` belongs to that compound
+ * rather than standing beside it. Lexical, like `DYNAMIC`, and applied to
+ * Chromium's serialization rather than to the authored text. An escape that
+ * hides a separator can only split one compound into two, which is the direction
+ * that refuses rather than the direction that passes. */
+function topLevelCompounds(selector) {
+  const compounds = [];
+  let current = '';
+  let depth = 0;
+  let quote = '';
+  for (const character of selector) {
+    if (quote) {
+      current += character;
+      if (character === quote) quote = '';
+      continue;
+    }
+    if (character === '"' || character === "'") {
+      quote = character;
+      current += character;
+      continue;
+    }
+    if (character === '(' || character === '[') depth += 1;
+    else if (character === ')' || character === ']') depth -= 1;
+    if (depth <= 0 && /[\s>+~,]/.test(character)) {
+      if (current) compounds.push(current);
+      current = '';
+      continue;
+    }
+    current += character;
+  }
+  if (current) compounds.push(current);
+  return compounds;
+}
+
+/* The compounds of one arm that force a user state. Two or more of them is the
+ * shape the walk cannot establish, because the walk holds one user state at a
+ * time; see the header comment for the observed witness. */
+function statefulCompounds(selector) {
+  return topLevelCompounds(selector).filter((compound) => DYNAMIC.test(compound));
+}
 
 /* A trailing pseudo-element, on the browser's own serialization of the selector.
  * `::part(name)` and `::slotted(sel)` take an argument, hence the optional
@@ -438,6 +497,14 @@ class Oracle {
         record.refusal =
           'it names a pseudo-class whose truth Chromium withholds from script, so ' +
           'neither reach nor safety can be established here';
+      } else if (statefulCompounds(serialized).length > 1) {
+        const stateful = statefulCompounds(serialized);
+        record.refusal =
+          `it forces a user state in ${stateful.length} distinct compounds ` +
+          `(${stateful.join(', ')}), and this walk holds one user state at a time — ` +
+          'a reader who tabs to one chrome element and then moves the pointer onto ' +
+          'another is in a state the walk never visits, so the arm can be neither ' +
+          'reached nor established safe here';
       } else {
         const tail = serialized.match(PSEUDO_ELEMENT_TAIL);
         if (tail) {

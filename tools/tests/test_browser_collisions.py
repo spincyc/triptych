@@ -70,10 +70,12 @@ than an incident.
    pseudos and pseudo-elements are decided by the browser's own engine, because
    the browser is the engine that will run the stylesheet. An arm the browser
    refuses — invalid here, or naming `:visited`, whose truth Chromium withholds
-   from script — is reported, never passed. Python locates rules in tracked
-   files, splits selector lists at top-level commas, normalizes identities,
-   orchestrates the protocol and compares the verdicts to the recorded
-   inventories; it no longer interprets what a selector means.
+   from script, or forcing a user state in two distinct compounds, which the
+   walk holds one at a time and therefore cannot establish — is reported, never
+   passed. Python locates rules in tracked files, splits selector lists at
+   top-level commas, normalizes identities, orchestrates the protocol and
+   compares the verdicts to the recorded inventories; it no longer interprets
+   what a selector means.
 
    The verdict is a differential, not a name scan: an arm is unsafe when it can
    reach site chrome in the NEUTRAL shell — the state in which the route's own
@@ -504,8 +506,10 @@ class ArmAnswer(NamedTuple):
   `reach` maps each shell state to None (it selects no chrome element there) or
   to the witness: the user sub-state that reached, and the element reached.
   `refusal` is the stated reason the browser could not be asked at all —
-  invalid or unsupported here, or naming a pseudo-class whose truth Chromium
-  withholds from script. A refusal is an unsafe verdict, never a silence.
+  invalid or unsupported here, naming a pseudo-class whose truth Chromium
+  withholds from script, or forcing a user state in two distinct compounds,
+  which the walk holds one at a time and so cannot establish. A refusal is an
+  unsafe verdict, never a silence.
   """
 
   arm: str
@@ -531,6 +535,12 @@ class SelectorOracle:
   def __init__(self) -> None:
     if NODE is None:
       raise OracleProtocolError("node is not installed; the oracle cannot run")
+    # What the harness MEASURED about each shell when it installed itself: the
+    # chrome descriptors, the hover targets, the focus stops, the fragment
+    # identifiers, and the interactive elements. The last of these is the bound
+    # on the form and element states the walk does not force, and it is asserted
+    # rather than left as an unread number.
+    self.shells: dict = {}
     self.process = subprocess.Popen(
       [NODE, str(ORACLE)],
       stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -591,11 +601,11 @@ def oracle() -> SelectorOracle:
   if _ORACLE is None:
     client = SelectorOracle()
     atexit.register(client.close)
-    client.request(
+    client.shells = client.request(
       "init",
       states=[{"name": name, "html": html} for name, html in oracle_states()],
       dynamicStates=DYNAMIC_WALK_STATES,
-    )
+    )["states"]
     _ORACLE = client
   return _ORACLE
 
@@ -900,9 +910,11 @@ class SelectorOracleSemanticsTest(unittest.TestCase):
   element in the neutral shell — the state where the route's identity is
   absent from `<main>` — under the walk's bounded user-state matrix. Every arm
   in CLEAN is one the same browser reported selecting no chrome element
-  anywhere in the matrix. None of the class names here are privileged: the
-  oracle judges matching from DOM state, and the neutral shell is what makes a
-  route-looking name inside a selector unable to buy scope by mere mention.
+  anywhere in the matrix. Every arm in REFUSED_STATE_PAIRS is one the walk
+  cannot establish either way and therefore refuses. None of the class names
+  here are privileged: the oracle judges matching from DOM state, and the
+  neutral shell is what makes a route-looking name inside a selector unable to
+  buy scope by mere mention.
   """
 
   # The second cold review's counterexamples, verbatim, plus the shapes the
@@ -963,6 +975,18 @@ class SelectorOracleSemanticsTest(unittest.TestCase):
     "[aria-label=\"Primary, navigation\"]",
   )
 
+  # Two user states held at once, on two DIFFERENT chrome elements. The walk
+  # holds one at a time — a press carries its own focus, which is why
+  # `.site-header:hover a:focus` is reached by accident — so this shape is one
+  # the walk cannot establish, and an independent rereview drove real Chromium
+  # into the state (a real Tab, then a real pointer move) and saw both of these
+  # match layout-owned elements while the walk reported no reach at all. They
+  # are refused, and therefore unsafe, rather than reported safe.
+  REFUSED_STATE_PAIRS = (
+    "a:focus ~ .site-footer:hover",
+    ".skip-link:focus ~ .site-footer:hover a",
+  )
+
   # Every literal this class judges, asked of the browser in ONE batched
   # request in setUpClass, so the whole class costs one walk of the state
   # matrix rather than one per test.
@@ -970,7 +994,7 @@ class SelectorOracleSemanticsTest(unittest.TestCase):
   def setUpClass(cls):
     super().setUpClass()
     cls.answers = ask_arms(
-      list(cls.REACHED) + list(cls.CLEAN)
+      list(cls.REACHED) + list(cls.CLEAN) + list(cls.REFUSED_STATE_PAIRS)
       + [
         "body:has(> .plan-page) .site-footer a",
         "body:has(.plan-page, .site-header) .site-footer a",
@@ -1106,6 +1130,69 @@ class SelectorOracleSemanticsTest(unittest.TestCase):
         self.assertTrue(
           is_unsafe(answer),
           f"{arm} was refused and then treated as safe, which is fail-open",
+        )
+
+  def test_two_simultaneous_user_states_are_refused_rather_than_called_safe(self):
+    """The walk holds one user state at a time, so this shape is undecided here.
+
+    A reader who tabs to the skip link and then moves the pointer onto the
+    footer is in a state the walk never visits, and an independent rereview
+    drove real Chromium into exactly that state and watched
+    `a:focus ~ .site-footer:hover` match `footer.site-footer` while this harness
+    reported no reach at all. Reporting safe there is fail-open, so an arm whose
+    serialization forces a user state in two distinct compounds is refused with
+    the reason stated. One state in one compound is what the walk does
+    establish, and `.track-page a:hover` still classifies as it did.
+    """
+    for arm in self.REFUSED_STATE_PAIRS:
+      with self.subTest(selector=arm):
+        answer = self.answers[arm]
+        self.assertTrue(
+          answer.refusal,
+          f"{arm} was decided rather than refused, and the walk cannot hold two "
+          "user states on two chrome elements at once, so deciding it is "
+          "fail-open",
+        )
+        self.assertIn("one user state at a time", answer.refusal)
+        self.assertTrue(
+          is_unsafe(answer),
+          f"{arm} was refused and then treated as safe, which is fail-open",
+        )
+    for arm, expected_reach in ((".track-page a:hover", False), ("a:hover", True)):
+      with self.subTest(selector=arm):
+        answer = self.answers[arm]
+        self.assertIsNone(
+          answer.refusal,
+          f"{arm} forces one user state in one compound, which the walk does "
+          f"establish, and it was refused: {answer.refusal}",
+        )
+        self.assertEqual(bool(neutral_reach(answer)), expected_reach)
+
+  def test_the_states_the_walk_does_not_force_cannot_become_true(self):
+    """The bound the harness measures is read here, so it can fail.
+
+    `:disabled`, `:checked`, `:open` and the rest of the form and element states
+    are outside the walk, and the reason they cannot become true for a chrome
+    element is that the layout emits nothing that carries them. The harness
+    measures that in every shell as it installs itself; asserting the
+    measurement is what makes the layout gaining a `<button>`, a `<details>` or
+    a `<dialog>` outside `<main>` fail the gate rather than quietly end the
+    reasoning.
+    """
+    shells = oracle().shells
+    self.assertEqual(
+      sorted(shells), sorted(name for name, _ in oracle_states()),
+      "the harness did not measure every shell whose selectors it judges",
+    )
+    for name, measured in sorted(shells.items()):
+      with self.subTest(state=name):
+        self.assertTrue(measured["descriptors"], "the shell reported no chrome")
+        self.assertEqual(
+          measured["interactive"], [],
+          f"{name}'s chrome carries {measured['interactive']}, which can hold a "
+          "form or element state the walk does not force, so the bound stated in "
+          "the harness and in guidance/corpus-browser-implementation.md §11.4 "
+          "has stopped holding",
         )
 
   def test_a_grouped_selector_is_judged_one_arm_at_a_time(self):
