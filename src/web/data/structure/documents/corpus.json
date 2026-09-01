@@ -1,8 +1,8 @@
 {
- "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name.",
+ "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 187,
-  "issues": 202,
+  "documents": 188,
+  "issues": 204,
   "pages": 5979,
   "titles_unrecorded": 0,
   "works": 138
@@ -17,17 +17,17 @@
    "id": "gpt-5.6-sol"
   },
   {
-   "documents": 27,
-   "id": "claude-fable-5"
+   "documents": 28,
+   "id": "claude-opus-5[1m]"
   },
   {
    "documents": 27,
-   "id": "claude-opus-5[1m]"
+   "id": "claude-fable-5"
   }
  ],
  "providers": [
   {
-   "documents": 49,
+   "documents": 50,
    "id": "claude",
    "label": "Claude"
   },
@@ -68,6 +68,12 @@
    "works": 16
   }
  ],
+ "workflows": [
+  {
+   "id": "proper",
+   "version": "14"
+  }
+ ],
  "works": [
   {
    "catalog": "library/law-and-church-discipline.md",
@@ -88,6 +94,9 @@
      ],
      "pages": 43,
      "pdf": "pdf/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T20:12:38Z",
@@ -122,6 +131,9 @@
      ],
      "pages": 31,
      "pdf": "pdf/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The appendix on the twenty-four churches sui iuris is a full landscape comparative matrix; a web edition needs a linearized or separately scrollable equivalent before it can carry that appendix.",
      "reviewed": "2026-07-25",
@@ -154,6 +166,9 @@
      ],
      "pages": 33,
      "pdf": "pdf/claude/articles/canon-law/natural-positive-divine-human-law.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T09:42:30Z",
@@ -178,6 +193,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/gpt/articles/canon-law/natural-positive-divine-human-law.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T03:44:17Z",
@@ -210,6 +228,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/claude/articles/faith/against-the-instrumentalists.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T10:37:00Z",
@@ -239,6 +260,9 @@
      ],
      "pages": 9,
      "pdf": "pdf/gpt/articles/faith/against-the-instrumentalists.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T13:23:48Z",
@@ -271,6 +295,9 @@
      ],
      "pages": 16,
      "pdf": "pdf/claude/articles/faith/at-the-end-of-every-why.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T04:57:20Z",
@@ -330,6 +357,9 @@
      ],
      "pages": 14,
      "pdf": "pdf/gpt/articles/faith/at-the-end-of-every-why.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T13:29:33Z",
@@ -362,6 +392,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T19:56:24Z",
@@ -394,6 +427,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/claude/articles/faith/council-missal-and-crisis.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T06:12:30Z",
@@ -438,6 +474,9 @@
      ],
      "pages": 51,
      "pdf": "pdf/gpt/articles/faith/council-missal-and-crisis.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable.",
      "reviewed": "2026-07-25",
@@ -470,6 +509,9 @@
      ],
      "pages": 36,
      "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:53:16Z",
@@ -494,6 +536,9 @@
      ],
      "pages": 6,
      "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T20:52:18Z",
@@ -526,6 +571,9 @@
      ],
      "pages": 37,
      "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T10:02:00Z",
@@ -550,6 +598,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T20:52:18Z",
@@ -582,6 +633,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:17:43Z",
@@ -606,6 +660,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T20:52:18Z",
@@ -638,6 +695,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:28:39Z",
@@ -662,6 +722,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T20:52:18Z",
@@ -694,6 +757,9 @@
      ],
      "pages": 15,
      "pdf": "pdf/claude/articles/faith/freemasonry-and-the-catholic-church.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T07:03:39Z",
@@ -734,6 +800,9 @@
      ],
      "pages": 46,
      "pdf": "pdf/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Two TikZ figures carry the documentary corpus and the timeline claim audit, and the reference list is set in multicols; the figures state relations the prose does not restate.",
      "reviewed": "2026-07-25",
@@ -777,6 +846,9 @@
      ],
      "pages": 56,
      "pdf": "pdf/claude/articles/faith/in-defense-of-the-particular.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T03:15:03Z",
@@ -811,6 +883,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/articles/faith/in-defense-of-the-particular.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T03:15:03Z",
@@ -843,6 +918,9 @@
      ],
      "pages": 10,
      "pdf": "pdf/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-27",
      "revised": "2026-07-27T13:27:22Z",
@@ -875,6 +953,9 @@
      ],
      "pages": 31,
      "pdf": "pdf/claude/articles/faith/ontological-vertigo.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -929,6 +1010,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/articles/faith/ontological-vertigo.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T13:29:33Z",
@@ -961,6 +1045,9 @@
      ],
      "pages": 16,
      "pdf": "pdf/claude/articles/faith/the-due-return.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T23:55:51Z",
@@ -1020,6 +1107,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/gpt/articles/faith/the-due-return.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T21:12:55Z",
@@ -1052,6 +1142,9 @@
      ],
      "pages": 33,
      "pdf": "pdf/claude/articles/faith/trustful-surrender-to-divine-providence.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T12:10:35Z",
@@ -1096,6 +1189,9 @@
      ],
      "pages": 25,
      "pdf": "pdf/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Three TikZ figures carry the causal-order, providence, and Augustinian-love arguments; the figures state relations the prose does not restate.",
      "reviewed": "2026-07-25",
@@ -1128,6 +1224,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/claude/articles/scripture/abraham-and-the-daylight-stars.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:46:52Z",
@@ -1157,6 +1256,9 @@
      ],
      "pages": 8,
      "pdf": "pdf/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-27",
      "revised": "2026-07-29T19:14:52Z",
@@ -1189,6 +1291,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/articles/scripture/john-6-bread-from-heaven.pdf",
+     "produced": {
+      "install_commit": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-27",
      "revised": "2026-07-29T14:49:37Z",
@@ -1221,6 +1326,9 @@
      ],
      "pages": 35,
      "pdf": "pdf/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:45:54Z",
@@ -1255,6 +1363,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+     "produced": {
+      "install_commit": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-27",
      "revised": "2026-07-29T15:32:00Z",
@@ -1287,6 +1398,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/claude/biographies/origen.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T23:21:06Z",
@@ -1311,6 +1425,9 @@
      ],
      "pages": 28,
      "pdf": "pdf/gpt/biographies/origen.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T14:44:03Z",
@@ -1343,6 +1460,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/claude/biographies/saint-augustine-of-hippo.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T05:13:00Z",
@@ -1367,6 +1487,9 @@
      ],
      "pages": 19,
      "pdf": "pdf/gpt/biographies/saint-augustine-of-hippo.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T03:44:17Z",
@@ -1399,6 +1522,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/claude/biographies/saint-jerome.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T04:01:43Z",
@@ -1428,6 +1554,9 @@
      ],
      "pages": 21,
      "pdf": "pdf/gpt/biographies/saint-jerome.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -1460,6 +1589,9 @@
      ],
      "pages": 28,
      "pdf": "pdf/claude/biographies/saint-paul.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T09:23:26Z",
@@ -1489,6 +1621,9 @@
      ],
      "pages": 27,
      "pdf": "pdf/gpt/biographies/saint-paul.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -1521,6 +1656,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/claude/biographies/saint-peter.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -1550,6 +1688,9 @@
      ],
      "pages": 21,
      "pdf": "pdf/gpt/biographies/saint-peter.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -1582,6 +1723,9 @@
      ],
      "pages": 29,
      "pdf": "pdf/claude/biographies/saint-robert-bellarmine.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T10:52:00Z",
@@ -1611,6 +1755,9 @@
      ],
      "pages": 23,
      "pdf": "pdf/gpt/biographies/saint-robert-bellarmine.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -1643,6 +1790,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/claude/biographies/saint-thomas-aquinas.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T06:00:28Z",
@@ -1678,6 +1828,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/biographies/saint-thomas-aquinas.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T14:32:07Z",
@@ -1710,6 +1863,9 @@
      ],
      "pages": 28,
      "pdf": "pdf/claude/biographies/tertullian.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T10:44:25Z",
@@ -1734,6 +1890,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/gpt/biographies/tertullian.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T15:18:32Z",
@@ -1790,6 +1949,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-course-guide.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Part II is a set of write-in handwriting and practice forms built from rule lines; a web edition needs real form fields or an explicit printable fallback.",
      "reviewed": "2026-07-25",
@@ -1827,6 +1989,9 @@
      ],
      "pages": 757,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The workbook is 758 pages of clearpage-delimited retrieval sheets whose blank rules and one-sheet-per-event pagination are the instrument itself.",
      "reviewed": "2026-07-25",
@@ -1883,6 +2048,9 @@
      ],
      "pages": 57,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The mildest curriculum case: paradigm, syntax, and lexicon tables only, but it loads the course's write-in retrieval renderers and is designed to be consulted after an unaided hypothesis.",
      "reviewed": "2026-07-25",
@@ -1920,6 +2088,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -1958,6 +2129,9 @@
      ],
      "pages": 37,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -1996,6 +2170,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2034,6 +2211,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2072,6 +2252,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2110,6 +2293,9 @@
      ],
      "pages": 47,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2148,6 +2334,9 @@
      ],
      "pages": 42,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2186,6 +2375,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2224,6 +2416,9 @@
      ],
      "pages": 53,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2262,6 +2457,9 @@
      ],
      "pages": 50,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2300,6 +2498,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2338,6 +2539,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2376,6 +2580,9 @@
      ],
      "pages": 40,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2414,6 +2621,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2452,6 +2662,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2490,6 +2703,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2528,6 +2744,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2566,6 +2785,9 @@
      ],
      "pages": 55,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2604,6 +2826,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2642,6 +2867,9 @@
      ],
      "pages": 41,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2680,6 +2908,9 @@
      ],
      "pages": 43,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2718,6 +2949,9 @@
      ],
      "pages": 47,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2756,6 +2990,9 @@
      ],
      "pages": 24,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2794,6 +3031,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2832,6 +3072,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2870,6 +3113,9 @@
      ],
      "pages": 23,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2908,6 +3154,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2946,6 +3195,9 @@
      ],
      "pages": 23,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -2984,6 +3236,9 @@
      ],
      "pages": 24,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3022,6 +3277,9 @@
      ],
      "pages": 25,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3080,6 +3338,9 @@
      ],
      "pages": 20,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3138,6 +3399,9 @@
      ],
      "pages": 20,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3196,6 +3460,9 @@
      ],
      "pages": 29,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3254,6 +3521,9 @@
      ],
      "pages": 28,
      "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering.",
      "reviewed": "2026-07-25",
@@ -3303,6 +3573,9 @@
      ],
      "pages": 27,
      "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Every received prayer is set as paired Latin and English minipages by \\bilingualprayer, and the reference list is set in multicols; a web edition must stack the pair responsively without separating a text from its facing translation.",
      "reviewed": "2026-07-25",
@@ -3334,6 +3607,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf",
+     "produced": {
+      "install_commit": "657ff02570e6d58844738ce44e90b209c0768bdc"
+     },
      "provider": "gpt",
      "rationale": "Every received prayer is set as paired Latin and English minipages by \\bilingualprayer; a web edition must stack the pair responsively without separating a text from its facing translation.",
      "reviewed": "2026-07-25",
@@ -3382,6 +3658,9 @@
      ],
      "pages": 29,
      "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Every received prayer is set as paired Latin and English minipages by \\bilingualprayer, and the reference list is set in multicols; a web edition must stack the pair responsively without separating a text from its facing translation.",
      "reviewed": "2026-07-25",
@@ -3413,6 +3692,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf",
+     "produced": {
+      "install_commit": "657ff02570e6d58844738ce44e90b209c0768bdc"
+     },
      "provider": "gpt",
      "rationale": "Every received prayer is set as paired Latin and English minipages by \\bilingualprayer; a web edition must stack the pair responsively without separating a text from its facing translation.",
      "reviewed": "2026-07-25",
@@ -3445,6 +3727,9 @@
      ],
      "pages": 17,
      "pdf": "pdf/claude/history/biblical-translations/01-septuagint.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T23:18:11Z",
@@ -3473,6 +3758,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/history/biblical-translations/01-septuagint.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable.",
      "reviewed": "2026-07-25",
@@ -3505,6 +3793,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/claude/history/biblical-translations/02-vulgate.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T04:15:59Z",
@@ -3529,6 +3820,9 @@
      ],
      "pages": 24,
      "pdf": "pdf/gpt/history/biblical-translations/02-vulgate.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T03:44:17Z",
@@ -3711,6 +4005,9 @@
      ],
      "pages": 120,
      "pdf": "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-29",
      "revised": "2026-07-29T19:14:52Z",
@@ -3748,6 +4045,9 @@
      ],
      "pages": 33,
      "pdf": "pdf/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T21:18:49Z",
@@ -3780,6 +4080,9 @@
      ],
      "pages": 28,
      "pdf": "pdf/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T21:06:19Z",
@@ -3812,6 +4115,9 @@
      ],
      "pages": 36,
      "pdf": "pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -3840,6 +4146,9 @@
      ],
      "pages": 22,
      "pdf": "pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable.",
      "reviewed": "2026-07-25",
@@ -3872,6 +4181,9 @@
      ],
      "pages": 47,
      "pdf": "pdf/claude/history/traditional-priestly-institutes/02-fssp.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T00:41:32Z",
@@ -3896,6 +4208,9 @@
      ],
      "pages": 25,
      "pdf": "pdf/gpt/history/traditional-priestly-institutes/02-fssp.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T03:44:17Z",
@@ -3928,6 +4243,9 @@
      ],
      "pages": 26,
      "pdf": "pdf/gpt/history/traditional-priestly-institutes/03-icksp.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T03:44:17Z",
@@ -3965,6 +4283,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-27",
      "revised": "2026-07-27T15:22:42Z",
@@ -4015,6 +4336,9 @@
      ],
      "pages": 42,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-29T13:56:12Z",
@@ -4082,6 +4406,9 @@
      ],
      "pages": 16,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4154,6 +4481,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4221,6 +4551,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4269,6 +4602,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:21:47Z",
@@ -4337,6 +4673,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T17:00:22Z",
@@ -4394,6 +4733,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4451,6 +4793,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4518,6 +4863,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4555,6 +4903,9 @@
      ],
      "pages": 25,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-08-02T05:22:00Z",
@@ -4624,6 +4975,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -4687,6 +5041,9 @@
      ],
      "pages": 32,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-08-02T05:22:00Z",
@@ -4766,6 +5123,9 @@
      ],
      "pages": 15,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T20:01:14Z",
@@ -4828,6 +5188,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "bee1d32dca8250883f27851a1589b6d4418df9d6"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-28",
      "revised": "2026-07-29T20:21:55Z",
@@ -4875,6 +5238,9 @@
      ],
      "pages": 34,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
+     },
      "provider": "claude",
      "reviewed": "2026-08-19",
      "revised": "2026-08-20T09:27:01Z",
@@ -4908,6 +5274,9 @@
      ],
      "pages": 19,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
+     },
      "provider": "gpt",
      "reviewed": "2026-08-20",
      "revised": "2026-08-21T10:49:37Z",
@@ -4955,6 +5324,9 @@
      ],
      "pages": 36,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
+     },
      "provider": "claude",
      "reviewed": "2026-08-20",
      "revised": "2026-08-20T09:36:28Z",
@@ -4993,6 +5365,9 @@
      ],
      "pages": 20,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
+     },
      "provider": "gpt",
      "reviewed": "2026-08-21",
      "revised": "2026-08-21T11:18:32Z",
@@ -5040,6 +5415,9 @@
      ],
      "pages": 43,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
+     },
      "provider": "claude",
      "reviewed": "2026-08-20",
      "revised": "2026-08-20T09:54:07Z",
@@ -5073,6 +5451,9 @@
      ],
      "pages": 23,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
+     },
      "provider": "gpt",
      "reviewed": "2026-08-20",
      "revised": "2026-08-21T15:14:44Z",
@@ -5087,9 +5468,62 @@
    "section": "liturgy"
   },
   {
-   "catalog": "library/traditional-latin-mass.md",
-   "catalog_page": "library/traditional-latin-mass.html",
+   "catalog": null,
+   "catalog_page": null,
    "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
+       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
+       "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": null,
+     "contributions": [
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (authoring of the canonical leaf from the research-synthesis brief: the propers map and four senses, the page-2 dossier sheet with its composition and event research, the complete appointed-text component against the collated source record, the two-page thematic movement, the element-by-element detailed commentary with its reception dossiers and evidence states, the source-grounded synthesis, the integrated synthesis commentary, the notable-and-quotable gallery, the interpretive proposals, the terminal scope appendix and references, the component manifest and leaf-local format, and the correction of the psalm-numbering glosses and rubrical attributions in the leaf's source records); Claude Code CLI 2.1.246; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the rebuilt research brief: rebuilding the page-2 dossier sheet on held and registered evidence, removing the verbatim and unregistered restricted-translation attributions and the citations to encyclopedia volumes this repository does not hold, re-sourcing the Offertory and Gospel chronologies, restating the Gradual's date as a bounded negative, adding the preserved disagreements at the Introit, Alleluia, Epistle, Gradual and Offertory, restoring and expanding the Sunday-number transmission finding with its evidence-state floor, correcting the Gelasian section number and the Augustine provenance sentence, rebuilding the notable-and-quotable gallery on the audited entries at their true evidence state, replacing one interpretive proposal with the two audited ones it displaced, removing the project-composed English renderings and the inserted bracket in a quoted Douay verse, rewriting the terminal scope appendix and references, and creating the leaf's source-bindings record); Claude Code CLI 2.1.246; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the rewritten research brief of workflow proper v10, which integrates seven research lanes and replaces the brief the earlier production worked from: rebuilding the page-2 dossier so that every row prints the bounded negative the brief records --- Papias, Eusebius Historia ecclesiastica Book III and Jerome on Galatians as held in no form, Theodoret on Psalms 83 and 94 and Irenaeus as held bytes with no registered passage locus, Jerome De viris illustribus registered at the wrong chapter, Haydock as summarise-only on unresolved rights, the Psalm 33 acrostic as unassertable, and no modern critical horizon for any row --- and distinguishing summary by choice from summary compelled by rights; correcting the saint-adapted Postcommunion locus to Gelasianum Book II sect. LXVIII with the running-head hazard recorded; restating the Collect-and-Secret displacement as eleven consecutive Masses covering two of the formulary's ten elements, with Gerbert's Gregorian lean and the non-independence of Pamelius; removing every claim resting on witnesses the brief does not carry (Theodoret at Psalms 83, 94 and Galatians, Cassiodorus, Ambrosiaster, Cassian, Jerome on Galatians, Chrysostom on Psalm 117, Gregory, Schuster) and rebuilding the detailed commentary on the witnesses it does; barring any Greek witness from commenting on homicidia or castitas; rewriting the two-page thematic movement, the source-grounded synthesis and the synthesis companion's integrated commentary on the brief's five cross-proper claims; replacing the notable-and-quotable gallery with exactly the five audited afterlives at their true inspected state; replacing the six interpretive proposals with exactly the five the precedent audit covers, and dropping the fruit-count relation from the manifest; and rewriting the terminal scope appendix and references, excluding from references the three witnesses this repository does not hold); Claude Code CLI 2.1.246; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (gating revision of the canonical leaf: restating the source-grounded synthesis's five cross-proper claims on the rebuilt research brief of workflow proper v10; rebuilding the detailed commentary's treatment of the flesh and the body on Chrysostom read in Greek, Aquinas's three members and Jerome's philology of the missal's own word; closing the Communion's third rotation leg and bounding the Communion against a Eucharistic reading of its own wording; adding the two Communion negatives; restating the Alleluia joint as left open; running the full gate suite --- zero LaTeX errors, zero overfull boxes, proper-component manifest valid, pagination profile verified at pages 1, 2, 3--4 and 5; and recording the session timestamp); Claude Code CLI 2.1.246; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5[1m]"
+     ],
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
+     "produced": {
+      "workflow_id": "proper",
+      "workflow_version": "10"
+     },
+     "provider": "claude",
+     "reviewed": "2026-08-27",
+     "revised": "2026-08-31T21:32:48Z",
+     "status": null,
+     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+     "title": "Fourteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/main.tex"
+    },
     {
      "also": [
       {
@@ -5124,6 +5558,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
+     "produced": {
+      "install_commit": "2778285849f2973ea89d1cfd5b2751ed4ae58e54"
+     },
      "provider": "gpt",
      "reviewed": "2026-08-26",
      "revised": "2026-08-26T19:06:19Z",
@@ -5212,6 +5649,9 @@
      ],
      "pages": 26,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The guide is a page-matched course that instructs the server to use one page at a time, and carries multi-lane minipage dialogue rigs and TikZ sanctuary diagrams; its pagination is the instructional design.",
      "reviewed": "2026-07-25",
@@ -5246,6 +5686,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The publication is an absolutely positioned eight-up card sheet drawn with zero-margin geometry and overlay TikZ, with backs mirrored for long-edge duplex printing; the layout is the content.",
      "reviewed": "2026-07-25",
@@ -5334,6 +5777,9 @@
      ],
      "pages": 26,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The guide is a page-matched course that instructs the server to use one page at a time, and carries multi-lane minipage dialogue rigs and TikZ sanctuary diagrams; its pagination is the instructional design.",
      "reviewed": "2026-07-25",
@@ -5411,6 +5857,9 @@
      ],
      "pages": 34,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The guide is a page-matched course that instructs the server to use one page at a time and carries multi-lane minipage dialogue rigs; its pagination is the instructional design.",
      "reviewed": "2026-07-25",
@@ -5443,6 +5892,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The publication is a sheet of fixed-height cut-out cards whose backs are mirrored within each row for long-edge duplex printing; the layout is the content and does not survive reflow.",
      "reviewed": "2026-07-25",
@@ -5505,6 +5957,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The guide is a page-matched course that instructs the server to use one page at a time and carries multi-lane minipage dialogue rigs and per-role sheets; its pagination is the instructional design.",
      "reviewed": "2026-07-25",
@@ -5537,6 +5992,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The publication is a sheet of fixed-height cut-out cards whose backs are mirrored within each row for long-edge duplex printing; the layout is the content and does not survive reflow.",
      "reviewed": "2026-07-25",
@@ -5569,6 +6027,9 @@
      ],
      "pages": 40,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-27T23:02:25Z",
@@ -5599,6 +6060,9 @@
      ],
      "pages": 40,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-27T23:02:25Z",
@@ -5631,6 +6095,9 @@
      ],
      "pages": 45,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-27T23:02:25Z",
@@ -5660,6 +6127,9 @@
      ],
      "pages": 19,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-27T23:02:25Z",
@@ -5873,6 +6343,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF is a checked bounded 44-record alpha. A web edition remains ineligible until the same bounded content and handling hierarchy have a reviewed web rendering; completeness or external review is not asserted as a prerequisite.",
      "reviewed": "2026-07-29",
@@ -6080,6 +6553,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering.",
      "reviewed": "2026-07-28",
@@ -6287,6 +6763,9 @@
      ],
      "pages": 11,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering.",
      "reviewed": "2026-07-28",
@@ -6494,6 +6973,9 @@
      ],
      "pages": 10,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering.",
      "reviewed": "2026-07-28",
@@ -6701,6 +7183,9 @@
      ],
      "pages": 16,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering.",
      "reviewed": "2026-07-28",
@@ -6913,6 +7398,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+     "produced": {
+      "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
+     },
      "provider": "gpt",
      "rationale": "The PDF alpha is bounded to admitted records. A web edition remains ineligible until the same content has a mechanically valid, visually checked web rendering.",
      "reviewed": "2026-07-28",
@@ -6945,6 +7433,9 @@
      ],
      "pages": 36,
      "pdf": "pdf/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T10:12:58Z",
@@ -6989,6 +7480,9 @@
      ],
      "pages": 46,
      "pdf": "pdf/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable.",
      "reviewed": "2026-07-25",
@@ -7021,6 +7515,9 @@
      ],
      "pages": 38,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T03:14:06Z",
@@ -7070,6 +7567,9 @@
      ],
      "pages": 77,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T00:26:52Z",
@@ -7141,6 +7641,9 @@
      ],
      "pages": 14,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -7212,6 +7715,9 @@
      ],
      "pages": 14,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The guide's reading path is carried by a TikZ flow diagram whose nodes and ordering are argument, not decoration; a web edition needs an accessible equivalent before the diagram may be dropped or replaced.",
      "reviewed": "2026-07-25",
@@ -7279,6 +7785,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7346,6 +7855,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7413,6 +7925,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7480,6 +7995,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7547,6 +8065,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7579,6 +8100,9 @@
      ],
      "pages": 21,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -7638,6 +8162,9 @@
      ],
      "pages": 12,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -7685,6 +8212,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-27T12:03:33Z",
@@ -7759,6 +8289,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-27T12:03:33Z",
@@ -7805,6 +8338,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+     "produced": {
+      "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-28",
      "revised": "2026-07-29T18:04:07Z",
@@ -7851,6 +8387,9 @@
      ],
      "pages": 16,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+     "produced": {
+      "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-28",
      "revised": "2026-07-29T18:04:07Z",
@@ -7897,6 +8436,9 @@
      ],
      "pages": 13,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+     "produced": {
+      "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-28",
      "revised": "2026-07-29T18:04:07Z",
@@ -7934,6 +8476,9 @@
      ],
      "pages": 39,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T09:45:30Z",
@@ -7963,6 +8508,9 @@
      ],
      "pages": 18,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-19T12:50:42Z",
@@ -8011,6 +8559,9 @@
      ],
      "pages": 81,
      "pdf": "pdf/gpt/theology/heresies/heresies-in-catholic-history.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-24T13:15:10Z",
@@ -8043,6 +8594,9 @@
      ],
      "pages": 8,
      "pdf": "pdf/gpt/theology/mariology/angelus.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T17:41:34Z",
@@ -8086,6 +8640,9 @@
      ],
      "pages": 44,
      "pdf": "pdf/gpt/theology/mariology/apparitions.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T23:13:05Z",
@@ -8122,6 +8679,9 @@
      ],
      "pages": 65,
      "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+     "produced": {
+      "install_commit": "2b9233978bcd8e798467bffaccf699b96031d97a"
+     },
      "provider": "claude",
      "rationale": "Seven hand-drawn TikZ figures carry the ark's anatomy, the tabernacle and temple plans, the journey map, the Visitation overlay, and the fulfilment arc; the prose stands alone, but a web edition that silently dropped the drawings would misrepresent the print publication, so the leaf waits on a figure-rendering path.",
      "reviewed": "2026-08-16",
@@ -8146,6 +8706,9 @@
      ],
      "pages": 46,
      "pdf": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+     "produced": {
+      "install_commit": "2b9233978bcd8e798467bffaccf699b96031d97a"
+     },
      "provider": "gpt",
      "reviewed": "2026-08-16",
      "revised": "2026-08-16T15:38:51Z",
@@ -8178,6 +8741,9 @@
      ],
      "pages": 32,
      "pdf": "pdf/claude/theology/mariology/champion.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -8207,6 +8773,9 @@
      ],
      "pages": 33,
      "pdf": "pdf/gpt/theology/mariology/champion.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -8239,6 +8808,9 @@
      ],
      "pages": 7,
      "pdf": "pdf/gpt/theology/mariology/doctrinal-authority.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-26",
      "revised": "2026-07-26T00:00:00Z",
@@ -8271,6 +8843,9 @@
      ],
      "pages": 37,
      "pdf": "pdf/claude/theology/mariology/fatima.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -8306,6 +8881,9 @@
      ],
      "pages": 32,
      "pdf": "pdf/gpt/theology/mariology/fatima.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-28T00:38:03Z",
@@ -8338,6 +8916,9 @@
      ],
      "pages": 40,
      "pdf": "pdf/claude/theology/mariology/guadalupe.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T19:55:58Z",
@@ -8373,6 +8954,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/gpt/theology/mariology/guadalupe.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-28T00:46:54Z",
@@ -8405,6 +8989,9 @@
      ],
      "pages": 54,
      "pdf": "pdf/claude/theology/mariology/la-salette.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-26T02:03:00Z",
@@ -8435,6 +9022,9 @@
      ],
      "pages": 33,
      "pdf": "pdf/gpt/theology/mariology/la-salette.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-28T00:57:41Z",
@@ -8467,6 +9057,9 @@
      ],
      "pages": 30,
      "pdf": "pdf/claude/theology/mariology/lourdes.pdf",
+     "produced": {
+      "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T09:39:08Z",
@@ -8502,6 +9095,9 @@
      ],
      "pages": 31,
      "pdf": "pdf/gpt/theology/mariology/lourdes.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-28T01:38:56Z",
@@ -8534,6 +9130,9 @@
      ],
      "pages": 36,
      "pdf": "pdf/claude/theology/mariology/marian-dogmas.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T12:06:47Z",
@@ -8564,6 +9163,9 @@
      ],
      "pages": 35,
      "pdf": "pdf/gpt/theology/mariology/marian-dogmas.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T15:25:48Z",
@@ -8596,6 +9198,9 @@
      ],
      "pages": 8,
      "pdf": "pdf/gpt/theology/mariology/regina-coeli.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-21T17:37:01Z",
@@ -8628,6 +9233,9 @@
      ],
      "pages": 32,
      "pdf": "pdf/claude/theology/mariology/rosary.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "claude",
      "reviewed": "2026-07-25",
      "revised": "2026-07-25T19:22:50Z",
@@ -8663,6 +9271,9 @@
      ],
      "pages": 27,
      "pdf": "pdf/gpt/theology/mariology/rosary.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "reviewed": "2026-07-25",
      "revised": "2026-07-23T21:12:55Z",
@@ -8715,6 +9326,9 @@
      ],
      "pages": 71,
      "pdf": "pdf/gpt/theology/sacraments.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "Three landscape blocks carry the seven-sacrament comparative matrix, the metaphysical lexicon, and the churches-and-initiation table, the first a nine-column tabularx set at six points; a web edition needs linearized equivalents.",
      "reviewed": "2026-07-25",
@@ -8746,6 +9360,9 @@
      ],
      "pages": 10,
      "pdf": "pdf/gpt/theology/sacraments-at-a-glance.pdf",
+     "produced": {
+      "install_commit": "55ed511c34c8984e70e910d8e256fa111ecc026b"
+     },
      "provider": "gpt",
      "rationale": "The companion is nothing but the landscape matrices, lexicon, and per-sacrament summary tables of its canonical source; with the matrices linearized there is no document left.",
      "reviewed": "2026-07-25",
@@ -8782,6 +9399,9 @@
      ],
      "pages": 49,
      "pdf": "pdf/gpt/theology/virtues.pdf",
+     "produced": {
+      "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
+     },
      "provider": "gpt",
      "rationale": "The terminal synoptic table of the virtues is a full landscape matrix; a web edition needs a linearized or separately scrollable equivalent before it can carry that appendix.",
      "reviewed": "2026-07-25",

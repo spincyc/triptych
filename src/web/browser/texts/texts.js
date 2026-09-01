@@ -89,6 +89,31 @@
     return T.el('span', 'pill' + (className ? ' ' + className : ''), text);
   }
 
+  /* The one advisory mark on the card, beside the revision it qualifies.
+   *
+   * It says only what the record and the pipeline definition between them say,
+   * and it appears only when they disagree. A document that records no origin
+   * gets nothing here, because there is nothing to compare and a mark reading
+   * "current" over an unknown origin would be the invented reassurance this
+   * page exists to avoid. The claim is carried in the words, so it survives a
+   * restyle, a stylesheet that never loads, and a copy-paste; `data-state`
+   * carries it into the DOM as well, so it survives losing the text too. It
+   * gates nothing: no check, no build and no release reads it. */
+  function driftPill(edition) {
+    const drift = M.driftOf(edition, catalogue.workflows || []);
+    if (!drift || !drift.behind) return null;
+    const node = pill(
+      'produced under ' + drift.workflow + ' v' + drift.recorded +
+      ', now v' + drift.current
+    );
+    node.setAttribute('data-state', 'produced-under-an-earlier-workflow');
+    node.title =
+      'Advisory only. The workflow that produced this document has been ' +
+      'revised since. It is not a statement that the document is wrong, and ' +
+      'nothing in the project gates on it.';
+    return node;
+  }
+
   function editionRow(work, edition) {
     const row = T.el('div', 'edition');
     row.setAttribute('data-key', work.leaf + '|' + edition.provider);
@@ -117,6 +142,8 @@
     const measure = extent(edition);
     meta.appendChild(pill(measure || 'extent unrecorded', measure ? '' : 'pill-absent'));
     if (edition.revised) meta.appendChild(pill('revised ' + day(edition.revised)));
+    const drifted = driftPill(edition);
+    if (drifted) meta.appendChild(drifted);
     for (const model of edition.models || []) meta.appendChild(pill(model, 'pill-model'));
     if (!(edition.models || []).length) {
       meta.appendChild(pill('authorship not stated', 'pill-absent'));
@@ -171,6 +198,46 @@
     return node;
   }
 
+  /* The production record in full, field by field, in the panel rather than on
+   * the card: a digest and two commit ids are apparatus, and apparatus may be
+   * deferred to a disclosure. What may not be deferred is the absence itself,
+   * so a field the document could not recover prints the words saying so and
+   * is never omitted, blanked, or filled with a plausible-looking value. */
+  const PRODUCTION_FIELDS = [
+    ['Workflow', 'workflow_id'],
+    ['Workflow version', 'workflow_version'],
+    ['Workflow digest', 'workflow_digest'],
+    ['Run', 'run_id'],
+    ['Seed commit', 'seed_commit'],
+    ['Install commit', 'install_commit']
+  ];
+
+  function productionSection(edition) {
+    /* A fragment and not a wrapper element: this section introduces no new
+       class, so it cannot collide with a shared stylesheet's names. */
+    const wrap = document.createDocumentFragment();
+    const produced = edition.produced || {};
+    const known = PRODUCTION_FIELDS.filter(function (pair) {
+      return produced[pair[1]];
+    });
+    if (!known.length) {
+      const none = line(
+        'Production record',
+        'nothing recorded, and no origin was invented for it'
+      );
+      none.setAttribute('data-state', 'not-recorded');
+      wrap.appendChild(none);
+      return wrap;
+    }
+    for (const pair of PRODUCTION_FIELDS) {
+      const value = produced[pair[1]];
+      const row = line(pair[0], value || 'not recorded');
+      row.setAttribute('data-state', value ? 'recorded' : 'not-recorded');
+      wrap.appendChild(row);
+    }
+    return wrap;
+  }
+
   function open(work, edition, button) {
     const key = work.leaf + '|' + edition.provider;
     if (opened === key) {
@@ -214,6 +281,9 @@
     detail.appendChild(line('Last revised', edition.revised || 'not recorded'));
     detail.appendChild(line('Section', work.section));
     if (work.catalog) detail.appendChild(line('Catalogued in', work.catalog));
+
+    detail.appendChild(T.el('h3', 'record-heading', 'What produced it'));
+    detail.appendChild(productionSection(edition));
 
     detail.appendChild(T.el('h3', 'record-heading', 'In the browser'));
     if (edition.web) {

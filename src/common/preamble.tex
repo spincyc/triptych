@@ -90,6 +90,39 @@
 \makeatother
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 
+% What produced this document, and what the project state was at that point.
+%
+%   \AIGenerationProvenance
+%     {workflow-id}{workflow-version}{workflow-digest}
+%     {run-id}{seed-commit}{install-commit}
+%
+% Each field is either a value or the literal `unknown'.  `unknown' is a record
+% and not a placeholder: it states that the fact was not recoverable, and no
+% consumer of this record may guess past it.  A digest or a run id is never
+% written unless it was read from the run that produced the document.
+%
+%   workflow-id       the pipeline that produced it, as workflows/pipelines
+%                     names it, or `unknown'.
+%   workflow-version  that pipeline's declared version at production.
+%   workflow-digest   the run's recorded digest over the pipeline, its fragments
+%                     and its schemas.  It does not cover this preamble.
+%   run-id            the run directory beneath the ignored build/tpt-runs/.
+%   seed-commit       the commit the run was pinned to WHEN IT WAS SEEDED.  The
+%                     engine never rechecks it against HEAD, so it states the
+%                     repository the run was bound to and not the repository the
+%                     document was built from --- which is why the next field
+%                     exists rather than being inferred from this one.
+%   install-commit    the commit at which the produced artifact entered the tree.
+%
+% This command RENDERS NOTHING, and that is deliberate rather than provisional.
+% Every installed PDF was reviewed and accepted byte for byte, and a record that
+% printed would rewrite all of them; a record that records is the whole of what
+% was asked for.  It follows \AIInheritedGenerationMetadata in being metadata the
+% reader is not shown, and \AIDocumentRevisionTimestamp in being tracked source
+% rather than build-clock state.  \ignorespaces keeps the declaration's own line
+% break from reaching the page in any mode the metadata file is read in.
+\newcommand{\AIGenerationProvenance}[6]{\ignorespaces}
+
 % Every detached publication carries the repository's content-license boundary
 % as a compact final-page colophon.  It must remain subordinate to the work's
 % terminal content and must not create a rights-only page.  The license covers

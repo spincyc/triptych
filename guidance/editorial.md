@@ -269,7 +269,28 @@ Every text offered for vocal prayer or ritual recitation must reproduce an ident
 
 Keep enough tracked evidence to reproduce editorial judgments without publishing private reasoning or a search diary. The applicable profile defines filenames; collectively the records identify the question and material exclusions, governing editions, source roles and loci, substitutions, disagreements, consequential negative results, material unresolved leads, jurisdiction/currentness, rights, completed review, and outstanding review. Never record credentials, private reasoning, host or user identity, machine paths, network data, or session identifiers.
 
-Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` declarations. The declarations are the complete tracked audit record. Their rendered form displays only the revision timestamp; model identity, qualifiers, effort, client/runtime, and contribution history are not reader-facing publication content. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
+Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, its second is one `\AIGenerationProvenance{workflow-id}{workflow-version}{workflow-digest}{run-id}{seed-commit}{install-commit}`, and those are followed by one or more `\AIModelContribution` declarations. The declarations are the complete tracked audit record. Their rendered form displays only the revision timestamp; model identity, qualifiers, effort, client/runtime, and contribution history are not reader-facing publication content. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
+
+The generation-provenance record states what produced the document and what the
+project state was at that point. Each of its six fields is either a value or the
+literal `unknown`, and `unknown` is a record rather than a placeholder: it says
+the fact was not recoverable. Never write a digest, a run id, or a commit that
+was not read from the run or from the repository's own history, and never carry
+a digest, run id, or seed commit without the workflow it belongs to. A run id
+here is the engine's deterministic hash of workflow, version, seed commit and
+normalized arguments; it identifies a run and never a session, a host, a user,
+or a machine path, and nothing that does may enter the record. The seed commit
+is the commit a run was pinned to when it was seeded and is never rechecked
+against HEAD, so it states the repository the run was bound to; the install
+commit states where the produced artifact entered the tree. The two are
+different facts and neither is inferred from the other. The record renders
+nothing, so adding it to a document leaves that document's PDF byte-identical.
+Comparing what a document records against what the project declares now is
+advisory display only: it never blocks a build, a check, or a release, it grants
+no authority to rebuild, reinstall, or re-review, and it is not the research
+staleness ledger, which asks a different question of different inputs under
+`guidance/staleness.md`. A document that records no origin makes no such
+comparison and is shown none.
 
 The timestamp is the whole-second UTC time when the publishable render source was finalized. Update every affected consumer when render-relevant source or an imported fragment changes. Never derive it from Git, file metadata, build time, environment, or a content hash. Preserve every exposed model qualifier and client/runtime fact verbatim in the tracked declarations; name unavailable components specifically and never guess them. Every provider's model disclosures meet the same standard: exact model identifiers, exposed qualifiers reproduced verbatim, and specific naming of unexposed components. Separate tracked contributions when model, qualifiers, or material runtime differ, keep contributions using the same model and qualifiers adjacent, and never repeat an exact contribution declaration.
 
@@ -282,7 +303,7 @@ a chronological agent/runtime ledger in a PDF or web edition. Keep audit
 detail that is safe and necessary for reproducibility in the tracked
 declarations or owning research and production records.
 
-The metadata gate rejects missing, duplicate, noninitial, malformed, or non-UTC timestamps; exact duplicate contribution declarations; generic family-only model labels; missing exposed qualifiers in the tracked record; invalid inheritance; handwritten display substitutes; missing PDF title/subject; PDF dates inconsistent with the tracked revision; automatic creation dates or trailer IDs; a missing or duplicated visible revision timestamp; and reader-visible model, qualifier, effort, or runtime metadata.
+The metadata gate rejects missing, duplicate, noninitial, malformed, or non-UTC timestamps; a missing, duplicated, misplaced, or malformed generation-provenance record; a provenance field carried without the workflow it belongs to; exact duplicate contribution declarations; generic family-only model labels; missing exposed qualifiers in the tracked record; invalid inheritance; handwritten display substitutes; missing PDF title/subject; PDF dates inconsistent with the tracked revision; automatic creation dates or trailer IDs; a missing or duplicated visible revision timestamp; reader-visible model, qualifier, effort, or runtime metadata; and any generation-provenance value reaching the rendered page.
 
 ## Alpha publication gate
 

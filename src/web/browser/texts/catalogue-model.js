@@ -12,7 +12,7 @@
  * there is one derivation and a check that would fail if a second were written
  * beside it.
  *
- * Two rules in here are the record rather than presentation:
+ * Three rules in here are the record rather than presentation:
  *
  *   A WORK HAS NO SINGLE TITLE. Forty-five works are issued in both editions,
  *   and the two title them differently far more often than not — "The Debt of
@@ -26,6 +26,11 @@
  *   and the generator's stated reason, flagged, and never composes a name out
  *   of the path. A composed name is indistinguishable from a real one at a
  *   glance, which is the whole failure this catalogue sits inside.
+ *
+ *   AN UNKNOWN ORIGIN MAKES NO CLAIM. `driftOf` compares the state a document
+ *   records as having produced it against the state declared now, and returns
+ *   null the moment either side is missing. It is advisory and nothing gates
+ *   on it.
  *
  * It loads both as a browser global and as a node module, because the harness
  * needs the second and the page needs the first.
@@ -55,6 +60,42 @@
 
   function pagesOf(edition) {
     return typeof edition.pages === 'number' ? edition.pages : null;
+  }
+
+  /**
+   * How far the state that produced a document sits behind the state now.
+   *
+   * ADVISORY, AND ONLY ADVISORY. Nothing gates on this. It is a finding aid,
+   * the catalogue says so in its own advisory, and it grants no authority to
+   * rebuild, reinstall or re-review anything. It is also NOT the research
+   * staleness ledger, which asks a different question of different inputs and
+   * lives in its own file under its own tool; none of that vocabulary is
+   * borrowed here.
+   *
+   * DRIFT CANNOT BE COMPUTED FROM AN UNKNOWN ORIGIN. A document whose record
+   * does not name the workflow and version that produced it returns null and
+   * the page says nothing about it — not "current", not "unknown drift", not a
+   * neutral mark that a reader would read as no news. There are two ways to
+   * have no origin and they are the same claim, so they answer the same way:
+   * the six fields were never recorded, or they were recorded as unrecoverable.
+   * A workflow the repository no longer declares also returns null, because
+   * the comparison has no right-hand side and inventing one would be a claim.
+   */
+  function driftOf(edition, workflows) {
+    const produced = edition.produced;
+    if (!produced || !produced.workflow_id || !produced.workflow_version) return null;
+    let current = null;
+    for (const workflow of workflows || []) {
+      if (workflow.id === produced.workflow_id) current = String(workflow.version);
+    }
+    if (current === null) return null;
+    const recorded = String(produced.workflow_version);
+    return {
+      workflow: produced.workflow_id,
+      recorded: recorded,
+      current: current,
+      behind: recorded !== current
+    };
   }
 
   /** Everything a reader can see of one document, for the Find box to match. */
@@ -166,6 +207,7 @@
     DOWNLOAD: DOWNLOAD,
     nameOf: nameOf,
     pagesOf: pagesOf,
+    driftOf: driftOf,
     matches: matches,
     narrow: narrow,
     order: order,

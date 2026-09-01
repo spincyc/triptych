@@ -104,6 +104,27 @@ for work in works:
         for model in edition["models"]:
             assert model in offered, (work["leaf"], model)
 
+# What produced each edition, carried from its own record and never invented.
+# A field the document could not recover is absent, so anything present is a
+# fact somebody read; and the workflows a drift claim is measured against
+# travel in the same file as the claims, or the comparison is guesswork.
+fields = {"workflow_id", "workflow_version", "workflow_digest",
+          "run_id", "seed_commit", "install_commit"}
+assert isinstance(document["workflows"], list)
+for row in document["workflows"]:
+    assert row["id"] and row["version"], row
+for work in works:
+    for edition in work["editions"]:
+        produced = edition.get("produced", {})
+        assert set(produced) <= fields, (work["leaf"], sorted(set(produced) - fields))
+        for name, value in produced.items():
+            assert isinstance(value, str) and value.strip(), (work["leaf"], name)
+            assert value != "unknown", (work["leaf"], name)
+        for issue in edition.get("also", ()):
+            # A synthesis companion is a cut of the document beside it and has
+            # no production of its own to record.
+            assert "produced" not in issue, work["leaf"]
+
 # The counted summary is what the rows amount to.
 counted = document["counted"]
 assert counted["works"] == len(works)

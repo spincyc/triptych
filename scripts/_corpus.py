@@ -91,9 +91,9 @@ class CorpusError(RuntimeError):
 
 # --- Provenance ------------------------------------------------------------
 #
-# These four are the shape `check-generation-metadata` enforces, and they are
-# declared here so that the gate and this reader cannot disagree about what a
-# contribution record looks like. That tool imports them.
+# These declarations are the shape `check-generation-metadata` enforces, and
+# they are declared here so that the gate and this reader cannot disagree about
+# what a provenance record looks like. That tool imports them.
 
 REVISION_RE = re.compile(r"^\\AIDocumentRevisionTimestamp\{([^{}]+)\}\s*$", re.MULTILINE)
 CONTRIBUTION_RE = re.compile(
@@ -101,6 +101,27 @@ CONTRIBUTION_RE = re.compile(
 )
 INHERITANCE_RE = re.compile(
     r"^\\AIInheritedGenerationMetadata\{([^{}]+)\}\s*$", re.MULTILINE
+)
+PRODUCTION_RE = re.compile(
+    r"^\\AIGenerationProvenance"
+    r"\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}\{([^{}]*)\}\s*$",
+    re.MULTILINE,
+)
+
+# The one field value that is a record rather than a value. Every consumer maps
+# it to absence and none of them may guess past it.
+UNKNOWN = "unknown"
+
+# The six groups of that declaration, in the order it writes them. Named here,
+# once, so the gate that enforces the record and the catalogue that publishes it
+# cannot come to disagree about what its fields are called.
+PRODUCTION_FIELDS = (
+    "workflow_id",
+    "workflow_version",
+    "workflow_digest",
+    "run_id",
+    "seed_commit",
+    "install_commit",
 )
 
 
@@ -125,6 +146,44 @@ class Contribution:
 
 
 @dataclass(frozen=True)
+class Production:
+    """What produced a document, and what the project state was at that point.
+
+    The six groups of `\\AIGenerationProvenance`, each either a value or None.
+    None is the record the source wrote as `unknown`: the fact was not
+    recoverable. It is not a default and nothing downstream may fill it in.
+
+    ``seed_commit`` and ``install_commit`` are two different facts and neither
+    substitutes for the other. A run's commit is pinned when the run is seeded
+    and the engine never rechecks it against HEAD, so it states the repository
+    the run was bound to. ``install_commit`` states where the produced artifact
+    actually entered the tree, which for a run of any length is a later commit.
+    """
+
+    workflow_id: str | None
+    workflow_version: str | None
+    workflow_digest: str | None
+    run_id: str | None
+    seed_commit: str | None
+    install_commit: str | None
+
+    @property
+    def recorded(self) -> bool:
+        """Whether anything at all about this document's production is known."""
+        return any(
+            field is not None
+            for field in (
+                self.workflow_id,
+                self.workflow_version,
+                self.workflow_digest,
+                self.run_id,
+                self.seed_commit,
+                self.install_commit,
+            )
+        )
+
+
+@dataclass(frozen=True)
 class Provenance:
     """When a document was last revised, and by which models in which roles.
 
@@ -140,6 +199,21 @@ class Provenance:
     revised: str
     contributions: tuple[Contribution, ...]
     inherits: str | None
+    produced: Production | None
+
+
+def read_production(text: str, path: Path) -> Production | None:
+    """Read the one production record, or None where a document states none."""
+    found = PRODUCTION_RE.findall(text)
+    if not found:
+        return None
+    if len(found) > 1:
+        raise CorpusError(
+            f"{path.relative_to(ROOT)}: expected one generation-provenance "
+            f"record, found {len(found)}"
+        )
+    fields = [None if value.strip() == UNKNOWN else value.strip() for value in found[0]]
+    return Production(*fields)
 
 
 def read_provenance(path: Path) -> Provenance:
@@ -157,7 +231,44 @@ def read_provenance(path: Path) -> Provenance:
             Contribution(*parts) for parts in CONTRIBUTION_RE.findall(text)
         ),
         inherits=inherits[0] if inherits else None,
+        produced=read_production(text, path),
     )
+
+
+# --- The workflows now declared --------------------------------------------
+#
+# Drift is a comparison, and this is its right-hand side: what the pipelines
+# say today. It is read from the tracked pipeline definitions and from nothing
+# else — not from a run, and not from HEAD — because the catalogue it lands in
+# must be byte-reproducible from the tree, and a commit-derived value would
+# make `document-library structure --check` fail on every commit that followed.
+
+PIPELINE_ROOT = ROOT / "workflows" / "pipelines"
+
+
+@dataclass(frozen=True)
+class Workflow:
+    identifier: str
+    version: str
+
+
+def declared_workflows(root: Path | None = None) -> tuple[Workflow, ...]:
+    """Every pipeline this repository currently declares, with its version."""
+    where = PIPELINE_ROOT if root is None else root
+    if not where.is_dir():
+        return ()
+    found: list[Workflow] = []
+    for path in sorted(where.glob("*.json")):
+        try:
+            definition = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise CorpusError(f"cannot read {path}: {error}") from error
+        identifier = definition.get("id")
+        version = definition.get("version")
+        if identifier is None or version is None:
+            continue
+        found.append(Workflow(identifier=str(identifier), version=str(version)))
+    return tuple(found)
 
 
 # --- The title, evaluated --------------------------------------------------

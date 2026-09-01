@@ -13,6 +13,7 @@ trusted.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -178,7 +179,11 @@ class TrackedCatalogueTests(unittest.TestCase):
                             if field in issue:
                                 self.assertNotEqual(issue[field], edition[field])
                         self.assertNotEqual(issue.get("title"), edition["title"])
-        self.assertEqual(seen, 8)
+        # The catalogue grows, so the tripwire is that the loop ran at all.
+        # The exact companion count is asserted, derived from the sources
+        # rather than written down here, by
+        # test_a_synthesis_companion_is_given_no_origin_of_its_own.
+        self.assertGreater(seen, 0)
 
     def test_every_offered_choice_selects_something(self) -> None:
         """A control that offers an empty answer is a control that lies."""
@@ -220,11 +225,244 @@ class BrowserModelTests(unittest.TestCase):
         loader.exec_module(tool)
 
         built = json.loads(TRACKED.read_text(encoding="utf-8"))
-        self.assertEqual(tool.replay_browser_model(built), ([], ""))
+        problems, skipped, _ = tool.replay_browser_model(built)
+        self.assertEqual((problems, skipped), ([], ""))
         built["counted"]["documents"] += 1
-        problems, _ = tool.replay_browser_model(built)
+        problems, _, _ = tool.replay_browser_model(built)
         self.assertTrue(problems)
         self.assertIn("documents", problems[0])
+
+
+
+def _load_tool():
+    import importlib.machinery
+    import importlib.util
+
+    loader = importlib.machinery.SourceFileLoader("document_library", str(TOOL))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+class ProductionProvenanceTests(unittest.TestCase):
+    """What produced each document, carried from its own record into the page.
+
+    The catalogue is where a provenance record stops being a line in a `.tex`
+    file nobody reads and becomes something a reader is shown. Every assertion
+    here stands for a way that carry could succeed and be wrong: a field that
+    arrived as an empty string and reads as a fact, an absence filled in on the
+    way through, a synthesis companion given an origin it does not have.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
+        cls.documents = _corpus.documents(extents=False)
+
+    def test_the_record_round_trips_from_the_source_into_the_catalogue(self) -> None:
+        """Read each leaf's own file again and hold the catalogue to it."""
+        editions = {
+            (edition["provider"], work["leaf"]): edition.get("produced", {})
+            for work in self.catalogue["works"]
+            for edition in work["editions"]
+        }
+        self.assertEqual(len(editions), len(self.documents))
+        for document in self.documents:
+            produced = document.provenance.produced
+            carried = editions[(document.provider, document.leaf)]
+            with self.subTest(document=f"{document.provider}/{document.leaf}"):
+                self.assertIsNotNone(produced)
+                for field in _corpus.PRODUCTION_FIELDS:
+                    stated = getattr(produced, field)
+                    if stated is None:
+                        self.assertNotIn(field, carried)
+                    else:
+                        self.assertEqual(carried[field], stated)
+
+    def test_an_absent_fact_is_omitted_and_never_filled_in(self) -> None:
+        """No empty string, no zero, no plausible substitute for an unread fact."""
+        for work in self.catalogue["works"]:
+            for edition in work["editions"]:
+                for field, value in edition.get("produced", {}).items():
+                    with self.subTest(leaf=work["leaf"], field=field):
+                        self.assertIn(field, _corpus.PRODUCTION_FIELDS)
+                        self.assertIsInstance(value, str)
+                        self.assertTrue(value.strip())
+                        self.assertNotEqual(value, _corpus.UNKNOWN)
+
+    def test_a_synthesis_companion_is_given_no_origin_of_its_own(self) -> None:
+        """It is a cut of the document beside it, not a second production."""
+        seen = 0
+        for work in self.catalogue["works"]:
+            for edition in work["editions"]:
+                for issue in edition.get("also", ()):
+                    seen += 1
+                    self.assertNotIn("produced", issue)
+        companions = sum(
+            1
+            for document in self.documents
+            for issue in document.issues
+            if issue.kind != _corpus.FULL
+        )
+        self.assertEqual(seen, companions)
+        self.assertGreater(seen, 0)
+
+    def test_the_catalogue_states_what_a_claim_is_measured_against(self) -> None:
+        """The right-hand side travels with the left, or the comparison is guesswork."""
+        declared = self.catalogue["workflows"]
+        self.assertTrue(declared)
+        for row in declared:
+            with self.subTest(workflow=row["id"]):
+                definition = json.loads(
+                    (_corpus.PIPELINE_ROOT / f"{row['id']}.json").read_text("utf-8")
+                )
+                self.assertEqual(row["version"], str(definition["version"]))
+
+    def test_the_catalogue_carries_the_caution_that_belongs_with_it(self) -> None:
+        self.assertIn("never an authority", self.catalogue["advisory"])
+        self.assertIn("nothing in this repository gates on it", self.catalogue["advisory"])
+
+
+class DriftVerdictTests(unittest.TestCase):
+    """The one derivation of drift, asked directly, in the browser that runs it."""
+
+    HARNESS = """
+const fs = require('fs');
+const holder = { exports: {} };
+new Function('module', 'exports', fs.readFileSync(process.argv[1], 'utf8'))(
+  holder, holder.exports
+);
+const input = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+process.stdout.write(JSON.stringify(
+  input.editions.map(function (edition) {
+    return holder.exports.driftOf(edition, input.workflows);
+  })
+));
+"""
+
+    def setUp(self) -> None:
+        if not MODEL.is_file():
+            self.skipTest("the browser model is absent")
+        try:
+            subprocess.run(["node", "--version"], capture_output=True, check=True)
+        except (FileNotFoundError, subprocess.CalledProcessError):
+            self.skipTest("node is not installed")
+
+    def verdicts(self, editions: list, workflows: list) -> list:
+        with tempfile.TemporaryDirectory() as scratch:
+            payload = Path(scratch) / "input.json"
+            payload.write_text(
+                json.dumps({"editions": editions, "workflows": workflows}), "utf-8"
+            )
+            result = subprocess.run(
+                ["node", "-e", self.HARNESS, str(MODEL), str(payload)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return json.loads(result.stdout)
+
+    def test_an_unknown_origin_makes_no_claim(self) -> None:
+        """Three ways to have no comparison, and all three stay silent.
+
+        Not "current", not "unknown drift", not a neutral mark a reader would
+        take for no news: nothing at all, because there is nothing to say.
+        """
+        workflows = [{"id": "proper", "version": "14"}]
+        editions = [
+            {},
+            {"produced": {}},
+            {"produced": {"install_commit": "c" * 40}},
+            {"produced": {"workflow_id": "proper"}},
+            {"produced": {"workflow_version": "10"}},
+            {"produced": {"workflow_id": "retired", "workflow_version": "3"}},
+        ]
+        self.assertEqual(self.verdicts(editions, workflows), [None] * len(editions))
+        self.assertEqual(self.verdicts(editions[:1], []), [None])
+
+    def test_a_recorded_origin_names_both_sides_of_the_comparison(self) -> None:
+        workflows = [{"id": "proper", "version": "14"}]
+        behind, level = self.verdicts(
+            [
+                {"produced": {"workflow_id": "proper", "workflow_version": "10"}},
+                {"produced": {"workflow_id": "proper", "workflow_version": "14"}},
+            ],
+            workflows,
+        )
+        self.assertEqual(
+            behind,
+            {"workflow": "proper", "recorded": "10", "current": "14", "behind": True},
+        )
+        self.assertEqual(
+            level,
+            {"workflow": "proper", "recorded": "14", "current": "14", "behind": False},
+        )
+
+    def test_the_real_catalogue_claims_nothing_it_cannot_support(self) -> None:
+        catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
+        editions = [
+            edition
+            for work in catalogue["works"]
+            for edition in work["editions"]
+        ]
+        declared = {row["id"]: row["version"] for row in catalogue["workflows"]}
+        for edition, verdict in zip(
+            editions, self.verdicts(editions, catalogue["workflows"])
+        ):
+            produced = edition.get("produced", {})
+            comparable = (
+                produced.get("workflow_id") in declared
+                and produced.get("workflow_version") is not None
+            )
+            with self.subTest(edition=edition.get("title")):
+                self.assertEqual(verdict is not None, comparable)
+
+
+class DriftIsAdvisoryTests(unittest.TestCase):
+    """Nothing gates on drift, and this is what would notice if something did."""
+
+    def test_a_corpus_entirely_behind_still_passes_the_catalogue_check(self) -> None:
+        """Put every document behind its workflow and the gate must not care."""
+        tool = _load_tool()
+        built = json.loads(TRACKED.read_text(encoding="utf-8"))
+        built["workflows"] = [{"id": "proper", "version": "9999"}]
+        for work in built["works"]:
+            for edition in work["editions"]:
+                edition.setdefault("produced", {})
+                edition["produced"]["workflow_id"] = "proper"
+                edition["produced"]["workflow_version"] = "1"
+        problems, _, drift = tool.replay_browser_model(built)
+        self.assertEqual(problems, [])
+        self.assertEqual(drift["behind"], drift["editions"])
+        self.assertEqual(drift["silent"], 0)
+
+    def test_no_gate_command_and_no_make_recipe_reads_the_verdict(self) -> None:
+        """The comparison exists in one file and is consumed by one page."""
+        watched = ("driftOf", "produced_under_a_superseded_workflow")
+        pipelines = sorted(_corpus.PIPELINE_ROOT.glob("*.json"))
+        self.assertTrue(pipelines)
+        for path in pipelines + [ROOT / "Makefile"]:
+            text = path.read_text(encoding="utf-8")
+            for needle in watched:
+                with self.subTest(path=path.name, needle=needle):
+                    self.assertNotIn(needle, text)
+
+    def test_the_verdict_borrows_no_vocabulary_from_the_staleness_ledger(self) -> None:
+        """A different question of different inputs keeps its own words.
+
+        `guidance/staleness.md` owns "stale", "staleness" and "rebaseline", and
+        one of them means a review happened. This comparison means nothing of
+        the kind and must not be read as though it did.
+        """
+        page = (ROOT / "src/web/browser/texts/texts.js").read_text(encoding="utf-8")
+        shown = re.findall(r"'([^'\\]{4,})'", page) + re.findall(r'"([^"\\]{4,})"', page)
+        self.assertTrue(shown)
+        for literal in shown:
+            for word in ("stale", "rebaseline"):
+                with self.subTest(literal=literal[:40], word=word):
+                    self.assertNotIn(word, literal.lower())
 
 
 if __name__ == "__main__":

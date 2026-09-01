@@ -38,9 +38,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from _corpus import (  # noqa: E402
     FULL,
+    PRODUCTION_FIELDS,
     PROVIDERS,
     CorpusError,
     Document,
+    Production,
+    declared_workflows,
     documents,
     read_pdf,
 )
@@ -169,7 +172,11 @@ ADVISORY = (
     "Derived from each document's own sources and from the PDF it builds. "
     "Titles are evaluated out of the preamble and confirmed against the built "
     "PDF; a document whose sources state no title is carried with the reason "
-    "in place of one and is never given an invented name."
+    "in place of one and is never given an invented name. Production "
+    "provenance is what each document records about itself, field by field, "
+    "omitting any field its record says was not recoverable; comparing "
+    "it against the workflows declared below is a finding aid and never an "
+    "authority, and nothing in this repository gates on it."
 )
 
 SORTS = ("leaf", "title", "pages", "revised")
@@ -180,6 +187,27 @@ def _title_of(document: Document) -> str | None:
         if issue.kind == FULL:
             return issue.title.text
     return None
+
+
+def production_record(production: Production | None) -> dict:
+    """One document's production record, field by field, absence kept as null.
+
+    A field the document could not recover is omitted, in the way the rest of
+    this record omits what it cannot say, and the page prints the words for
+    every one it does not find. That is one absence and not two: a leaf that
+    states nothing about its production and a leaf that states six unknowns are
+    making the same claim — neither knows — so they are written the same way
+    rather than being told apart by a distinction nobody could act on. What
+    must never appear is a zero, an empty string, or a plausible substitute
+    standing in for a fact nobody read.
+    """
+    if production is None:
+        return {}
+    return {
+        field: getattr(production, field)
+        for field in PRODUCTION_FIELDS
+        if getattr(production, field) is not None
+    }
 
 
 def _sort_key(sort: str):
@@ -289,7 +317,7 @@ def run_check(arguments: argparse.Namespace) -> dict:
     if unconfirmed:
         raise CorpusError("; ".join(unconfirmed[:3]) + _and_more(unconfirmed, 3))
 
-    replayed, skipped = replay_browser_model(catalogue(rows, by_key))
+    replayed, skipped, drift = replay_browser_model(catalogue(rows, by_key))
     if replayed:
         raise CorpusError("; ".join(replayed[:3]) + _and_more(replayed, 3))
     return {
@@ -298,6 +326,9 @@ def run_check(arguments: argparse.Namespace) -> dict:
         "unrecorded": unrecorded,
         "unbuilt": unbuilt,
         "replayed": skipped or BROWSER_MODEL.as_posix(),
+        # Counted by the page's own model, never a second time here.
+        "production_unrecorded": drift.get("silent"),
+        "produced_under_a_superseded_workflow": drift.get("behind"),
         "status": "ok",
     }
 
@@ -357,15 +388,57 @@ for (const sort of ['section', 'title', 'revised', 'pages']) {
   const ordered = model.order(everything.slice(), sort);
   answer.orders[sort] = ordered.map(function (row) { return row.work.leaf; }).sort();
 }
+
+// The drift verdict is derived once, in the model above, and this asks it of
+// every edition. What is checked here is not a count -- a count re-derived in
+// Python would be the second derivation this file exists to avoid -- but the
+// two properties the verdict must have: it never speaks from an origin the
+// catalogue does not carry, and it never stays silent about one it does.
+const workflows = catalogue.workflows || [];
+const declared = {};
+for (const workflow of workflows) declared[workflow.id] = String(workflow.version);
+answer.drift = { editions: 0, silent: 0, behind: 0, current: 0, wrong: [] };
+for (const work of works) {
+  for (const edition of work.editions || []) {
+    answer.drift.editions += 1;
+    const produced = edition.produced || {};
+    const comparable = Boolean(
+      produced.workflow_id &&
+      produced.workflow_version &&
+      Object.prototype.hasOwnProperty.call(declared, produced.workflow_id)
+    );
+    const verdict = model.driftOf(edition, workflows);
+    const where = edition.provider + ' ' + work.leaf;
+    if (verdict === null) {
+      answer.drift.silent += 1;
+      if (comparable) {
+        answer.drift.wrong.push(where + ': both sides are recorded yet no verdict was given');
+      }
+      continue;
+    }
+    if (!comparable) {
+      answer.drift.wrong.push(where + ': a drift verdict was given from an origin the catalogue does not carry');
+      continue;
+    }
+    if (verdict.current !== declared[verdict.workflow]) {
+      answer.drift.wrong.push(where + ': the verdict names a version no pipeline declares');
+    }
+    if (verdict.behind !== (String(produced.workflow_version) !== declared[produced.workflow_id])) {
+      answer.drift.wrong.push(where + ': the verdict disagrees with the two versions it compared');
+    }
+    if (verdict.behind) answer.drift.behind += 1;
+    else answer.drift.current += 1;
+  }
+}
 process.stdout.write(JSON.stringify(answer));
 """
 
 
-def replay_browser_model(built: dict) -> tuple[list[str], str]:
+def replay_browser_model(built: dict) -> tuple[list[str], str, dict]:
     """Run the page's model over the catalogue and hold it to the summaries."""
     model = ROOT / BROWSER_MODEL
     if not model.is_file():
-        return ([f"{BROWSER_MODEL.as_posix()}: not found"], "")
+        return ([f"{BROWSER_MODEL.as_posix()}: not found"], "", {})
     scratch = ROOT / "build" / "document-library-replay.json"
     scratch.parent.mkdir(parents=True, exist_ok=True)
     scratch.write_text(_serialise(built), encoding="utf-8")
@@ -377,11 +450,11 @@ def replay_browser_model(built: dict) -> tuple[list[str], str]:
             check=False,
         )
     except FileNotFoundError:
-        return ([], "node is not installed; the page's own derivation was not replayed")
+        return ([], "node is not installed; the page's own derivation was not replayed", {})
     finally:
         scratch.unlink(missing_ok=True)
     if completed.returncode != 0:
-        return ([f"the page's derivation failed: {completed.stderr.strip()}"], "")
+        return ([f"the page's derivation failed: {completed.stderr.strip()}"], "", {})
 
     answer = json.loads(completed.stdout)
     problems: list[str] = []
@@ -412,7 +485,17 @@ def replay_browser_model(built: dict) -> tuple[list[str], str]:
     for sort, leaves in answer["orders"].items():
         if leaves != whole:
             problems.append(f"ordering by {sort} does not return every work exactly once")
-    return (problems, "")
+    drift = answer["drift"]
+    problems.extend(drift["wrong"])
+    editions = sum(len(work["editions"]) for work in built["works"])
+    if drift["editions"] != editions:
+        problems.append(
+            f"the page saw {drift['editions']} editions where the catalogue "
+            f"carries {editions}"
+        )
+    if drift["silent"] + drift["behind"] + drift["current"] != editions:
+        problems.append("the page's drift verdicts do not account for every edition")
+    return (problems, "", drift)
 
 
 # --- list and show ---------------------------------------------------------
@@ -461,6 +544,7 @@ def _full_record(document: Document, by_key: dict[tuple[str, str], Document]) ->
         "rationale": document.rationale,
         "blocking_constructs": list(document.blocking_constructs),
         "web": document.web_page,
+        "produced": production_record(document.provenance.produced),
         "inherits": document.provenance.inherits,
         "contributions": [
             {
@@ -552,6 +636,14 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         record["rationale"] = document.rationale
     if document.blocking_constructs:
         record["blocking_constructs"] = list(document.blocking_constructs)
+    # What produced this edition. It hangs off the edition and not the work,
+    # because two providers' editions of one leaf are independent works that
+    # were produced separately. A `-synthesis` companion is a cut of this
+    # document and not a second one, so it carries no record of its own and
+    # appears under `also` without one.
+    produced = production_record(document.provenance.produced)
+    if produced:
+        record["produced"] = produced
     if document.provenance.inherits:
         record["inherits"] = document.provenance.inherits
     else:
@@ -619,6 +711,15 @@ def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document
         "schema": SCHEMA,
         "advisory": ADVISORY,
         "counted": counted,
+        # The right-hand side of every drift comparison: what the pipelines
+        # declare today. Read from the tracked pipeline definitions and from
+        # nothing that moves on its own — a HEAD or a build clock in here would
+        # make `structure --check` fail on the next commit that touched neither
+        # a document nor a workflow.
+        "workflows": [
+            {"id": workflow.identifier, "version": workflow.version}
+            for workflow in declared_workflows()
+        ],
         "providers": [
             {"id": name, "label": PROVIDER_LABELS.get(name, name), "documents": count}
             for name, count in sorted(providers.items())
@@ -698,6 +799,15 @@ def _print_full(record: dict) -> None:
         print(f"             basis {record['basis']}: {record['rationale']}")
     if record["blocking_constructs"]:
         print(f"             blocked by {', '.join(record['blocking_constructs'])}")
+    produced = record["produced"]
+    stated = [field for field in PRODUCTION_FIELDS if produced.get(field)]
+    if stated:
+        print(f"  produced   {', '.join(f'{f} {produced[f]}' for f in stated)}")
+        missing = [field for field in PRODUCTION_FIELDS if not produced.get(field)]
+        if missing:
+            print(f"             not recoverable: {', '.join(missing)}")
+    else:
+        print("  produced   nothing recorded; no origin was invented for it")
     for issue in record["issues"]:
         extent = f"{issue['pages']}pp" if issue["pages"] is not None else "--"
         print(f"  {issue['kind']:<10}{extent:>5}  {issue['status']}  {issue['authorization']}")
@@ -764,6 +874,16 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         for line in payload["unbuilt"]:
             print(f"    {line}")
         print(f"  the page's own derivation, replayed: {payload['replayed']}")
+        if payload.get("production_unrecorded") is not None:
+            print(
+                "  editions whose production record makes no comparable claim: "
+                f"{payload['production_unrecorded']}"
+            )
+            print(
+                "  editions produced under a workflow version since superseded: "
+                f"{payload['produced_under_a_superseded_workflow']} (advisory; "
+                "nothing gates on it)"
+            )
     if payload.get("written"):
         print(f"  -> {payload['written']}")
     if payload.get("current"):

@@ -22,9 +22,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from _corpus import (  # noqa: E402
     CONTRIBUTION_RE,
     INHERITANCE_RE,
+    PRODUCTION_FIELDS,
+    PRODUCTION_RE,
     REVISION_RE,
+    UNKNOWN,
     Contribution,
+    Production,
     active_tex,
+    read_production,
 )
 from _tooling import Example, with_examples  # noqa: E402
 
@@ -108,6 +113,7 @@ class Record:
     revision_timestamp: str
     contributions: tuple[Contribution, ...]
     inheritance: str | None
+    production: Production
 
 
 def parse_record(path: Path) -> Record:
@@ -115,7 +121,9 @@ def parse_record(path: Path) -> Record:
     revisions = REVISION_RE.findall(text)
     contributions = tuple(Contribution(*parts) for parts in CONTRIBUTION_RE.findall(text))
     inheritances = INHERITANCE_RE.findall(text)
+    productions = PRODUCTION_RE.findall(text)
     residue = REVISION_RE.sub("", text)
+    residue = PRODUCTION_RE.sub("", residue)
     residue = CONTRIBUTION_RE.sub("", residue)
     residue = INHERITANCE_RE.sub("", residue)
 
@@ -124,6 +132,15 @@ def parse_record(path: Path) -> Record:
     first_declaration = text.lstrip()
     if REVISION_RE.match(first_declaration) is None:
         raise ValueError("document revision timestamp must be the first declaration")
+    if len(productions) != 1:
+        raise ValueError(
+            "requires exactly one generation-provenance record; a document that "
+            "cannot say what produced it records six unknowns and says that"
+        )
+    if PRODUCTION_RE.match(REVISION_RE.sub("", text, count=1).lstrip()) is None:
+        raise ValueError(
+            "generation provenance must follow the document revision timestamp"
+        )
     if len(inheritances) > 1:
         raise ValueError("contains more than one inheritance declaration")
     if inheritances and contributions:
@@ -147,6 +164,7 @@ def parse_record(path: Path) -> Record:
         revision_timestamp=revisions[0],
         contributions=contributions,
         inheritance=inheritances[0] if inheritances else None,
+        production=read_production(text, path),
     )
 
 
@@ -209,6 +227,51 @@ def validate_contribution(contribution: Contribution) -> None:
         if not pattern.search(runtime):
             raise ValueError(
                 f"model {model!r} requires runtime component matching {pattern.pattern!r}"
+            )
+
+
+# One pattern per field of PRODUCTION_FIELDS, in its order. The run id is the
+# engine's own deterministic hash of workflow, version, seed commit and
+# normalized arguments, so it names a run and never a session, a host, a user,
+# or a path; nothing that would is admitted by any of these.
+PRODUCTION_FIELD_PATTERNS = tuple(
+    zip(
+        PRODUCTION_FIELDS,
+        (
+            re.compile(r"[a-z][a-z0-9-]*"),
+            re.compile(r"[0-9]+"),
+            re.compile(r"[0-9a-f]{64}"),
+            re.compile(r"[0-9a-f]{16}"),
+            re.compile(r"[0-9a-f]{40}"),
+            re.compile(r"[0-9a-f]{40}"),
+        ),
+        strict=True,
+    )
+)
+
+
+def validate_production(production: Production) -> None:
+    """Hold the production record to its own shape, and to its own honesty.
+
+    The shape rules are ordinary. The dependency rules below are the point: a
+    digest, a run id or a seed commit is a fact about a workflow run, and a
+    record that carried one while professing not to know which workflow ran
+    would be asserting a provenance nobody could check. Recording `unknown` is
+    always available and is what a document with no run must say.
+    """
+    for field, pattern in PRODUCTION_FIELD_PATTERNS:
+        value = getattr(production, field)
+        if value is None:
+            continue
+        if not value or not pattern.fullmatch(value):
+            raise ValueError(
+                f"generation provenance {field} must match "
+                f"/{pattern.pattern}/ or be {UNKNOWN!r}: {value!r}"
+            )
+    for field in ("workflow_version", "workflow_digest", "run_id", "seed_commit"):
+        if getattr(production, field) is not None and production.workflow_id is None:
+            raise ValueError(
+                f"generation provenance states {field} but no workflow it belongs to"
             )
 
 
@@ -301,6 +364,18 @@ def validate_rendered_record(
                     f"rendered PDF contains a tracked {kind} {normalized_value!r}"
                 )
 
+    # The production record is tracked and never printed. Backfilling it into
+    # 188 leaves had to leave every accepted PDF byte-identical, and the macro
+    # that carries it renders nothing precisely so that it does; this is the
+    # check that would notice if that ever stopped being true.
+    for field, _ in PRODUCTION_FIELD_PATTERNS:
+        value = getattr(record.production, field, None)
+        if value and normalize(value) in rendered:
+            raise ValueError(
+                f"rendered PDF contains the tracked generation-provenance "
+                f"{field} {value!r}"
+            )
+
     if record.inheritance:
         return
 
@@ -356,6 +431,7 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
             validate_contribution(contribution)
 
     validate_revision_timestamp(record.revision_timestamp)
+    validate_production(record.production)
 
     if pdf is not None:
         if not pdf.is_file():

@@ -149,6 +149,10 @@
 % The tracked timestamp remains reader-visible. Model identity, configuration,
 % contribution, and runtime history remain only in the tracked metadata file.
 \newcommand{\AIDocumentRevisionTimestamp}[1]{\par\textbf{Last revised (UTC):} #1\par}
+% What produced the document is tracked and not reader-facing, in the web
+% edition exactly as in the PDF: the shared preamble renders it nowhere, and a
+% shim that rendered it here would put in one edition what the other withholds.
+\newcommand{\AIGenerationProvenance}[6]{}
 \newcommand{\AIDisplayDocumentRevisionTimestamp}{}
 \newcommand{\AIModelContribution}[3]{}
 \newcommand{\AIModelContributionRepeat}[3]{}
