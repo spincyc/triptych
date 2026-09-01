@@ -31,6 +31,11 @@ as leads only.
 Carry in each finding what the later `Notable-and-quotable audit` will
 need: both texts and loci, relationship strength, wording check, context,
 translation and rights status, cultural payoff, and limiting qualification.
+That list is the audit's, and the audit is not the gallery. A published entry
+gives the phrase, the later user or work, the exact locus, and the turn in
+meaning; the relationship strength, the rights status, and the limiting
+qualification are recorded for the audit and do not become a rights-and-limit
+block printed under each entry.
 A phrase swept with nothing qualifying is itself a finding: record that
 material negative result in `notes`, bounded and correctable.
 
