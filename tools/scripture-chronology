@@ -83,7 +83,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"answerability\":{\"by_basis\":{\"unreviewed\":457},\"by_state\":{\"answerable\":457,\"preserved\":0},\"candidate_claims\"... [+962 chars]",
+                "{\"answerability\":{\"by_basis\":{\"derived\":2,\"patristic\":4,\"profane-harmonisation\":6,\"refusal-to-date\":1,\"reporte... [+1139 chars]",
             ),
         ),
     ),
@@ -115,7 +115,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
             (
-                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+2929 chars]",
+                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+2938 chars]",
             ),
         ),
     ),
@@ -123,9 +123,9 @@ EXAMPLES = {
         Example("tools/scripture-chronology coverage",
             (
                 "verses\t35809",
-                "runs\t1880",
-                "status\tcomposition-only\t16504",
-                "status\tdated\t12541",
+                "runs\t1882",
+                "status\tcomposition-only\t16505",
+                "status\tdated\t12540",
                 "status\tnot-alignable\t0",
                 "status\tresearch-pending\t0",
                 "status\ttextually-distinct\t0",
@@ -135,7 +135,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology coverage --json",
             (
-                "{\"by_relation\":{\"composition\":22129,\"historical-setting\":2934,\"narrated-event\":8020,\"prophecy-given\":1612,\"pro... [+1764 chars]",
+                "{\"by_relation\":{\"composition\":22129,\"historical-setting\":2934,\"narrated-event\":8019,\"prophecy-given\":1612,\"pro... [+1764 chars]",
             ),
         ),
     ),
@@ -143,7 +143,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run",
             (
-                "dry-run\tsrc/sources/chronology/coverage.tsv\t1880 rows\tunchanged",
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1882 rows\tunchanged",
             ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
@@ -154,7 +154,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run --json",
             (
-                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1880,\"status\":\"dry-run\",\"v\":1}",
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1882,\"status\":\"dry-run\",\"v\":1}",
             ),
             note="the same, as the machine contract",
         ),
@@ -162,12 +162,12 @@ EXAMPLES = {
     "check": (
         Example("tools/scripture-chronology check",
             (
-                "chronology coverage table current: 1880 rows",
+                "chronology coverage table current: 1882 rows",
             ),
         ),
         Example("tools/scripture-chronology check --json",
             (
-                "{\"problems\":[],\"rows\":1880,\"status\":\"ok\",\"v\":1}",
+                "{\"problems\":[],\"rows\":1882,\"status\":\"ok\",\"v\":1}",
             ),
         ),
     ),

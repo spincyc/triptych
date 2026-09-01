@@ -346,12 +346,16 @@ Three consequences, each of which the corpus has actually been got wrong by:
   this is literal — `_candidates` gates every claim before `sort_key` orders
   anything, and ordering is the whole of what rank does.
 
-`unreviewed` is the transitional class and is admissible. It is what every
-claim authored before this contract carries, and it is admissible because the
-rule those claims were authored under was that only ranked traditional sources
-may be cited — **not** because anything has found their basis admissible. It is
-a debt, `tools/tpt scripture-chronology validate --json` counts it under
-`answerability.by_basis`, and the correction lanes exist to empty it.
+`unreviewed` is the transitional class and is admissible. It is what a claim
+authored before this contract carries, and it is admissible because the rule
+those claims were authored under was that only ranked traditional sources may
+be cited — **not** because anything has found their basis admissible. It is a
+debt, `tools/tpt scripture-chronology validate --json` counts it under
+`answerability.by_basis`, and the correction lanes exist to empty it. The lane
+of 2026-09-01 emptied it down to **five** claims, each of which is named in
+`src/sources/chronology/profile-contract-corrections.tsv` row PCC-08 with the
+reason it was not ruled; a claim carrying `unreviewed` is now an open case and
+not a backlog, so authoring a new one needs a reason stated in the same place.
 
 #### 4.5.1 The Ussher reporting exception is narrow, and named
 

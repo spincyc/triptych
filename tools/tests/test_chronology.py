@@ -2330,5 +2330,297 @@ class TransitiveAnswerabilityTests(unittest.TestCase):
         )
 
 
+class CorrectedBlockerTests(unittest.TestCase):
+    """The five cases the final cold acceptance audit refused to accept.
+
+    Every one of them was a wrong answer a consumer could reach with a single
+    query, and every one was disclosed somewhere the consumer never reads: in a
+    claim note, in a binding note, in a subject note. These tests ask the
+    question the way a consumer asks it -- through `chronology()`, at a verse --
+    because that is the only surface where the defect was visible and the only
+    one where the repair can be proved.
+
+    They assert SHAPE and, where the audit named a figure, the absence of that
+    figure. They do not assert which admissible year wins, so that authoring a
+    new sourced claim does not break them.
+    """
+
+    def ask(self, locus: str, *, evidence: bool = False):
+        answer = _chronology.chronology(locus, evidence=evidence)
+        self.assertIsInstance(answer, _chronology.Answer, locus)
+        return answer
+
+    def labels(self, locus: str, *, evidence: bool = False) -> list[str]:
+        return [item.claim.date.label for item in self.ask(locus, evidence=evidence).assertions]
+
+    # --- creation#1 / Gen.1.1 -- a refusal to date, returned as a date -------
+
+    def test_the_encyclopedia_s_refusal_to_date_the_creation_is_not_an_answer(self) -> None:
+        """MF-2. `query Gen.1.1` returned an interval whose own note said it
+        "must never be displayed as one". The note was the only control, and
+        the default query displayed it anyway."""
+        self.assertNotIn(
+            "varying from 3483 to 6934 years B.C.", self.labels("Gen.1.1")
+        )
+        for item in self.ask("Gen.1.1").assertions:
+            self.assertNotEqual(item.claim.basis_class, "refusal-to-date")
+
+    def test_that_refusal_is_still_readable_as_evidence(self) -> None:
+        # Excluded is not deleted: the spread Howlett rejects is what shows
+        # that the tradition refuses this date, which is worth keeping.
+        preserved = [
+            item for item in self.ask("Gen.1.1", evidence=True).assertions
+            if item.claim.answerability == "preserved"
+        ]
+        self.assertEqual(
+            [item.claim.date.label for item in preserved],
+            ["varying from 3483 to 6934 years B.C."],
+        )
+        self.assertEqual(preserved[0].claim.basis_class, "refusal-to-date")
+
+    def test_creation_keeps_an_independent_admissible_claim(self) -> None:
+        # §12(5): withdrawing the refusal must not empty the subject.
+        self.assertTrue(self.ask("Gen.1.1").assertions)
+
+    # --- fall of Samaria -- rank 1 suppressed by a declared non-authority ----
+
+    def test_the_fall_of_samaria_carries_its_rank_1_scriptural_relation(self) -> None:
+        """MF-1. 4 Kings 18:10 states the year and the anchor exists, and the
+        corpus authored nothing from it because Sloet -- a chronology this
+        profile excludes -- judged the synchronism unhistorical."""
+        claims = _chronology.load().events[
+            "israel.divided-kingdom.fall-of-samaria"
+        ].claims
+        scriptural = [c for c in claims if c.basis_class == "scripture"]
+        self.assertEqual(len(scriptural), 1)
+        claim = scriptural[0]
+        self.assertEqual(claim.disposition, "preferred")
+        self.assertEqual(claim.date.precision, "relative")
+        self.assertEqual(
+            claim.date.anchor, "israel.divided-kingdom.ezechias-accession"
+        )
+        self.assertTrue(
+            any(source.startswith("bible:") for source in claim.sources)
+        )
+
+    def test_lower_ranked_evidence_cannot_erase_a_scriptural_relation(self) -> None:
+        """The general rule the Samaria case is an instance of.
+
+        Stated as the prohibition it is, because the positive form is not
+        true: a subject may hold a Scriptural statement that dates nothing on
+        its own -- Galatians 2:1's "after fourteen years", whose identification
+        with the Council of Jerusalem is a rank-6 article's -- and there the
+        corpus rightly prefers nothing at all. What may never happen is the
+        Samaria shape: a subject where an answerable Scriptural claim stands
+        and something lower-ranked is what the profile displays first."""
+        corpus = _chronology.load()
+        checked = 0
+        for holder in (*corpus.events.values(), *corpus.units.values()):
+            answerable = [c for c in holder.claims if corpus.answers_with(c)]
+            if not any(c.basis_class == "scripture" for c in answerable):
+                continue
+            checked += 1
+            for claim in answerable:
+                if claim.disposition == "preferred":
+                    self.assertEqual(
+                        claim.basis_class, "scripture",
+                        f"{holder.id}: {claim.basis_class} is displayed first "
+                        f"over an answerable rank-1 Scriptural claim",
+                    )
+        self.assertGreater(checked, 20)
+
+    def test_samaria_answers_with_no_excluded_reconstruction(self) -> None:
+        # Sloet's own table, whose method his article declares.
+        self.assertNotIn("B.C. 722-1", self.labels("4Kings.18.10"))
+        self.assertIn("B.C. 722-1", self.labels("4Kings.18.10", evidence=True))
+
+    # --- Matthew 27:53 -- a verse answered with a later event's date --------
+
+    def test_matthew_27_53_is_not_dated_by_the_crucifixion(self) -> None:
+        """MF-4. "And coming out of the tombs AFTER HIS RESURRECTION" returned
+        seven Crucifixion assertions, every one marked `direct`."""
+        answer = self.ask("Matt.27.53")
+        self.assertEqual(
+            [item.relation for item in answer.assertions],
+            ["composition"] * len(answer.assertions),
+        )
+        self.assertNotIn(
+            "life-of-christ.crucifixion",
+            {item.subject for item in answer.assertions},
+        )
+        self.assertEqual(answer.status, "composition-only")
+
+    def test_matthew_27_53_still_resolves_to_chronology_metadata(self) -> None:
+        # THE HARD INVARIANT, at the one verse this lane moved: cutting a verse
+        # out of a binding must not leave it answering nothing at all.
+        answer = self.ask("Matt.27.53")
+        self.assertTrue(answer.status)
+        self.assertTrue(answer.assertions or (answer.note or "").strip())
+
+    def test_the_verses_on_either_side_keep_the_crucifixion(self) -> None:
+        # 27:52 -- the graves opening -- is narrated among the signs at the
+        # death; 27:54 is the centurion. Only the one verse whose own words
+        # date it later comes out.
+        for locus in ("Matt.27.52", "Matt.27.54"):
+            self.assertIn(
+                "life-of-christ.crucifixion",
+                {item.subject for item in self.ask(locus).assertions},
+                locus,
+            )
+
+    # --- the 536 case -------------------------------------------------------
+
+    def test_the_536_is_not_a_candidate_answer(self) -> None:
+        """MF-140. Held as a live alternate whose own note called it "the look
+        of a printing error", listed indistinguishably beside 586, 587 and 588
+        with the note nowhere in the default view."""
+        for locus in ("4Kings.25.9", "4Kings.25.10"):
+            self.assertNotIn(
+                "the destruction of Jerusalem 536 B.C.", self.labels(locus), locus
+            )
+
+    def test_the_536_remains_inspectable_as_documentary_evidence(self) -> None:
+        # §15(7): preserved documentary evidence stays readable without
+        # becoming a candidate answer. The corpus does not silently repair a
+        # source, and it does not answer with what it cannot ground either.
+        preserved = [
+            item for item in self.ask("4Kings.25.9", evidence=True).assertions
+            if item.claim.date.label == "the destruction of Jerusalem 536 B.C."
+        ]
+        self.assertEqual(len(preserved), 1)
+        self.assertEqual(preserved[0].claim.answerability, "preserved")
+        self.assertEqual(preserved[0].claim.basis_class, "unresolved")
+
+    def test_the_admissible_figures_for_that_year_are_untouched(self) -> None:
+        labels = self.labels("4Kings.25.9")
+        self.assertTrue({"586 B.C.", "B.C. 588"} <= set(labels), labels)
+
+    # --- Sloet and Howlett, ruled consistently by basis ---------------------
+
+    SLOET = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"
+    HOWLETT = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"
+
+    def claims_citing(self, record: str):
+        corpus = _chronology.load()
+        return [
+            (holder.id, claim)
+            for holder in (*corpus.events.values(), *corpus.units.values())
+            for claim in holder.claims
+            if record in claim.sources
+        ]
+
+    def test_every_sloet_claim_is_ruled_and_none_is_unreviewed(self) -> None:
+        """Criterion 6. One article, two tables, two bases: Petavius's, which
+        this profile answers with, and Sloet's own, which his article says is
+        drawn up "in conjunction with the data of profane history"."""
+        ruled = self.claims_citing(self.SLOET)
+        self.assertGreater(len(ruled), 10)
+        for identifier, claim in ruled:
+            self.assertNotEqual(
+                claim.basis_class, "unreviewed",
+                f"{identifier}: a Sloet claim is still unruled",
+            )
+
+    def test_the_sloet_own_table_claims_are_ruled_alike(self) -> None:
+        harmonised = [
+            (identifier, claim) for identifier, claim in self.claims_citing(self.SLOET)
+            if claim.basis_class == "profane-harmonisation"
+        ]
+        self.assertEqual(len(harmonised), 6)
+        for identifier, claim in harmonised:
+            self.assertEqual(claim.answerability, "preserved", identifier)
+
+    def test_the_petavius_claims_in_the_same_article_are_untouched(self) -> None:
+        # The line the audit drew and told the correction lane not to cross:
+        # a table reproduced from a seventeenth-century Jesuit chronologist is
+        # a different basis from the article author's own reconstruction, and
+        # the two share nothing but a page.
+        petavius = [
+            (identifier, claim) for identifier, claim in self.claims_citing(self.SLOET)
+            if claim.basis_class != "profane-harmonisation"
+        ]
+        self.assertEqual(len(petavius), 10)
+        for identifier, claim in petavius:
+            self.assertEqual(claim.answerability, "answerable", identifier)
+            self.assertEqual(claim.basis_class, "reported-traditional", identifier)
+
+    def test_every_howlett_claim_is_ruled_and_none_is_unreviewed(self) -> None:
+        """Criterion 7. The whole artifact, not a sample: the audit's charge
+        was that one sentence of one section was split, half withdrawn and half
+        kept, with no stated rule that could reproduce the split."""
+        ruled = self.claims_citing(self.HOWLETT)
+        self.assertGreater(len(ruled), 40)
+        for identifier, claim in ruled:
+            self.assertNotEqual(
+                claim.basis_class, "unreviewed",
+                f"{identifier}: a Howlett claim is still unruled",
+            )
+
+    def test_the_ussher_exception_covers_only_claims_that_report_ussher(self) -> None:
+        """Criterion 9. The exception is narrow because every claim that names
+        it says Ussher in its own basis prose, and because nothing else in the
+        corpus is answerable on an excluded basis at all."""
+        corpus = _chronology.load()
+        lifted, excluded = [], []
+        for holder in (*corpus.events.values(), *corpus.units.values()):
+            for claim in holder.claims:
+                if claim.reporting_exception:
+                    lifted.append((holder.id, claim))
+                if claim.basis_class in ("modern-critical", "profane-harmonisation",
+                                         "rejected-by-source", "refusal-to-date",
+                                         "comparison-only", "superseded", "unresolved"):
+                    excluded.append((holder.id, claim))
+        self.assertTrue(lifted)
+        for identifier, claim in lifted:
+            self.assertEqual(
+                claim.reporting_exception,
+                "ussher-reported-by-a-ranked-catholic-source", identifier,
+            )
+            self.assertEqual(claim.basis_class, "reported-excluded", identifier)
+            self.assertRegex(claim.basis, r"\bUss?her\b", identifier)
+        # and it lifts nothing else: no other excluded basis is answered with.
+        for identifier, claim in excluded:
+            self.assertEqual(claim.answerability, "preserved", identifier)
+
+    # --- the standing debt, and the invariant -------------------------------
+
+    def test_the_unreviewed_debt_is_bounded_and_named(self) -> None:
+        """`unreviewed` is admissible, so it cannot be left to drift: it is the
+        one basis class that says nothing has judged the basis. This pins the
+        remaining five so that a lane which adds a sixth has to say so."""
+        state = _chronology.answerability()
+        self.assertEqual(state["by_basis"].get("unreviewed", 0), 5)
+        self.assertEqual(
+            state["claims"], sum(state["by_basis"].values())
+        )
+
+    def test_every_verse_still_resolves_to_non_empty_chronology(self) -> None:
+        """THE HARD INVARIANT, swept through the consumer seam.
+
+        Withdrawing a claim from the candidate set is the one edit that can
+        empty a locus, because composition-unit scope is chosen before
+        answerability is consulted: a narrow unit whose last answerable claim
+        goes preserved keeps winning the scope contest and then answers
+        nothing. Every verse of the Vulgate must still come back with a status
+        and with either an assertion or a note behind it."""
+        counts = _chronology.verse_counts()
+        corpus = _chronology.load()
+        empty, swept = [], 0
+        for token, chapters in corpus.books.items():
+            for chapter in range(1, chapters + 1):
+                for verse in range(1, counts[(token, chapter)] + 1):
+                    swept += 1
+                    locus = f"{token}.{chapter}.{verse}"
+                    answer = _chronology.chronology(locus)
+                    if not isinstance(answer, _chronology.Answer):
+                        empty.append((locus, "unresolved"))
+                    elif not answer.status:
+                        empty.append((locus, "no status"))
+                    elif not answer.assertions and not (answer.note or "").strip():
+                        empty.append((locus, answer.status))
+        self.assertEqual(swept, 35809)
+        self.assertEqual(empty[:20], [])
+
+
 if __name__ == "__main__":
     unittest.main()
