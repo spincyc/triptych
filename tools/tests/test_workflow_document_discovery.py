@@ -210,6 +210,29 @@ class ShorthandTests(unittest.TestCase):
         self.assertEqual(seeded["normalized_args"]["proper"], new)
         self.assertEqual(seeded["stage"], "seed")
 
+    def test_an_unregistered_id_is_refused_before_a_run_exists(self):
+        """The scope ledger is written by the stage after seed.
+
+        So an identity no registry knows has to be refused here. Refusing it
+        two stages later, at the scope gate, would already have let a worker
+        record an authorization for a proper that does not exist.
+        """
+        runs = ROOT / "build" / "tpt-runs-unregistered-test"
+        shutil.rmtree(runs, ignore_errors=True)
+        self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
+        engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        engine.runs_dir = runs
+        bogus = ("liturgy/roman-rite/1962/propers/temporal/"
+                 "99-nonexistent-sunday")
+        with self.assertRaises(WorkflowError) as caught:
+            engine.seed_bytes("proper",
+                              {"proper": bogus, "provider": "claude"})
+        self.assertIn("not a document this workflow may run",
+                      str(caught.exception))
+        self.assertFalse(
+            runs.exists() and any(runs.iterdir()),
+            "a refused identity must leave no run behind")
+
     def test_a_path_is_passed_through_untouched(self):
         """Strictly additive: what worked before still works."""
         for token in ("liturgy/roman-rite/1962/propers/temporal/99-invented",
@@ -308,10 +331,32 @@ class DeclarationTests(unittest.TestCase):
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         discovery = engine.load_workflow("proper")["document_discovery"]
         self.assertEqual(set(discovery),
-                         {"search", "marker", "id_drops_leading"})
+                         {"search", "marker", "id_drops_leading",
+                          "validator"})
         self.assertEqual(discovery["marker"], "main.tex")
         self.assertEqual(discovery["id_drops_leading"], 2,
                          "an id is the path under src/<provider>/")
+        self.assertIn("check-proper-identity", discovery["validator"],
+                      "the calendar registry decides which identities "
+                      "exist; the workflow does not keep its own list")
+        self.assertIn("{proper}", discovery["validator"],
+                      "the validator is asked about the requested id")
+
+    def test_a_malformed_validator_fails_closed(self):
+        """A validator that is not a command is a defect, not a default."""
+        import copy
+        for name, value in (("empty", ""), ("not-a-string", ["x"])):
+            with self.subTest(case=name):
+                workflow = copy.deepcopy(WORKFLOW)
+                workflow["document_discovery"] = {
+                    "search": "src/*", "id_drops_leading": 1,
+                    "validator": value,
+                }
+                repo = make_repo(workflow)
+                self.addCleanup(shutil.rmtree, repo, ignore_errors=True)
+                with self.assertRaises(WorkflowError) as caught:
+                    engine_for(repo).load_workflow("adv-wf")
+                self.assertIn("document_discovery", str(caught.exception))
 
     def test_a_malformed_declaration_fails_closed(self):
         import copy

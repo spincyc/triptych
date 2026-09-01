@@ -239,7 +239,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 13: version 10 gave `content-evaluation` a
+`proper` workflow is at version 14: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -249,8 +249,10 @@ version 12 put the house voice into the authoring, revision, evaluation and
 lane fragments a worker is handed, and version 13 gave `publication-gates` nine
 further checks so that the terminal gate verifies the publication rather than
 its shape, taking the installed-PDF byte comparison and the four site checks
-back from the workers that had been attesting to them. A run seeded against
-version 12 or earlier fails closed and is seeded again.
+back from the workers that had been attesting to them, and version 14 gave
+`document_discovery` a `validator` so an unregistered identity is refused at
+`seed`, before the stage that writes the scope ledger can run. A run seeded
+against version 13 or earlier fails closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets

@@ -489,6 +489,41 @@ class WorkflowEngine:
         )
         return response
 
+    def _validate_document_argument(
+        self, workflow: dict[str, Any], args: dict[str, str],
+    ) -> None:
+        """Refuse a document the workflow's own registry does not know.
+
+        Discovery answers which documents exist as authored leaves; a workflow
+        that can start a document not yet authored needs a separate authority
+        for whether the identity is real. `document_discovery.validator` names
+        it, and a non-zero exit fails the seed closed.
+        """
+        discovery = workflow.get("document_discovery") or {}
+        template = discovery.get("validator")
+        doc_arg = workflow.get("document_argument")
+        if not template or not doc_arg or doc_arg not in args:
+            return
+        # Shell-quoted for the same reason a gate command is: the document id
+        # is data, never a place to continue the command from.
+        command = _substitute_args(template, args, quote=True)
+        try:
+            proc = subprocess.run(
+                command, shell=True, capture_output=True, text=True,
+                cwd=self.repo_root, timeout=300,
+            )
+        except subprocess.TimeoutExpired:
+            raise WorkflowError(
+                f"document validator timed out: {command}"
+            ) from None
+        if proc.returncode != 0:
+            detail = (proc.stderr or proc.stdout or "").strip()
+            raise WorkflowError(
+                f"{workflow['id']}: {args[doc_arg]!r} is not a document this "
+                f"workflow may run"
+                + (f": {detail}" if detail else "")
+            )
+
     def seed_bytes(self, workflow_id: str,
                    raw_args: dict[str, str]) -> bytes:
         """Create a run or replay its verified canonical bootstrap bytes."""
@@ -521,6 +556,13 @@ class WorkflowEngine:
         )
         if existing is not None:
             return existing
+
+        # A new run is where an identity is refused. The scope ledger is
+        # written by the stage after this one, so an identity that no registry
+        # knows has to fail before a run exists to write it: refusing at the
+        # gate two stages later would already have let a worker record an
+        # authorization for a proper that does not exist.
+        self._validate_document_argument(workflow, args)
 
         # An atomic per-run creation lock makes simultaneous identical seeds
         # converge on one creator. Established runs never take this lock: their
@@ -2933,14 +2975,19 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
     discovery = data.get("document_discovery")
     if discovery is not None:
         if not isinstance(discovery, dict) \
-                or set(discovery) - {"search", "marker", "id_drops_leading"} \
+                or set(discovery) - {"search", "marker", "id_drops_leading",
+                                     "validator"} \
                 or not isinstance(discovery.get("search"), str) \
                 or not discovery.get("search") \
                 or type(discovery.get("id_drops_leading")) is not int \
-                or discovery["id_drops_leading"] < 0:
+                or discovery["id_drops_leading"] < 0 \
+                or ("validator" in discovery
+                    and not (isinstance(discovery["validator"], str)
+                             and discovery["validator"])):
             raise WorkflowError(
                 f"{path}: 'document_discovery' declares a 'search' glob, an "
-                f"integer 'id_drops_leading', and optionally a 'marker' file"
+                f"integer 'id_drops_leading', and optionally a 'marker' file "
+                f"and a 'validator' command"
             )
 
     stage_ids = set()

@@ -789,7 +789,18 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 13. Version 13 made `publication-gates`
+The `proper` workflow is at version 14. Version 14 made `seed` refuse an
+identity the 1962 calendar does not register, by giving `document_discovery` a
+`validator` the engine runs before a run exists. Discovery answers which
+documents are authored; it cannot answer whether an unauthored identity is
+real, and `authorize-target` — the stage that writes the scope ledger — runs
+before the `scope-gate` that used to be the first deterministic refusal. So a
+mistyped or invented id could get a worker as far as recording an
+authorization for a proper that does not exist. The registry decides, the
+workflow keeps no list of its own, and a registered but unauthored identity
+still seeds exactly as before.
+
+The `proper` workflow was at version 13. Version 13 made `publication-gates`
 verify the publication rather than its shape. The gate had twelve checks and
 every one of them asked whether a file was in place; nine more now ask whether
 what is in place is right. `installed-pdf-matches-accepted` compares each
