@@ -1930,8 +1930,9 @@ units:
     scope: {book: Nah, chapter: 2, through: 3}
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
-        basis_class: unreviewed
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
         basis: >-
           Souvay's "Nahum" in the Catholic Encyclopedia bounds the oracle on Ninive at
           both ends: "Thebes was captured and destroyed by Assurbanipal in 664-663 B.C.",
@@ -1953,6 +1954,21 @@ units:
           of Jerusalem, "therefore about 583-581". The article opens the same section
           noting that "Until a recent date, both the unity and authenticity of the Book
           of Nahum were undisputed."
+          RULED 2026-09-01, on the article's own account of its method and not on any
+          inference about it. Souvay names the warrant for the lower limit in the same
+          breath as the limit: the fall of Ninive is what "a well-known inscription of
+          Nabonidus permits us to fix at 607 or 606 B.C.", and the upper limit is the
+          Assurbanipal capture of Thebes. Both endpoints of this interval are therefore
+          fixed by Assyriological inscription evidence, which the profile's
+          `modern-critical` basis excludes "whoever prints it"; and the article uses
+          that same evidence to discard Josephus and Nicephorus "as impossible", which
+          is the profile boundary in the plainest form the corpus holds - an excluded
+          method overturning a traditional one. The figures are kept, because refusing
+          a basis is not an instruction to delete what a source printed, but they are
+          preserved and are not answered with. Chapters 2-3 therefore carry no
+          answerable date, and gaps.yaml records that as an inspected silence rather
+          than letting the locus fall to the research-pending default, which would say
+          no ranked source had been read for it and would be false.
         date:
           precision: interval
           from: {year: 664, era: bc}
@@ -2482,8 +2498,9 @@ units:
       at the vulgate Ps.73 that scripts/_psalms.py reaches from Hebrew 74.
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
-        basis_class: unreviewed
+        disposition: alternate
+        answerability: preserved
+        basis_class: reported-excluded
         basis: >-
           Drum's "Psalms" in the Catholic Encyclopedia (vol. 12, 1911), treating
           the Asaph psalms, states: "Ps. lxxiv (lxxiii) was probably written, as
@@ -2500,6 +2517,16 @@ units:
           endpoint. 586 B.C. is one of three figures this corpus already holds
           for the destruction of Jerusalem, which is why the anchor is that
           event and not a bare year.
+          RULED 2026-09-01 on the source's own attribution, which the basis prose
+          already carried: the value is not Drum's own reckoning but Briggs's, adopted
+          in the words "as Briggs surmises" - Briggs's "Psalms" (New York, 1906) being
+          the modern critical commentary the same article cites by page, "p. lxvii",
+          in its treatment of the next Asaph psalm. A ranked Catholic work adopting a chronology this profile
+          excludes is `reported-excluded`, and the only lift the profile grants is
+          named for Ussher and says in terms that it does not extend to anyone else.
+          The figure is preserved, not deleted. Ps.73 therefore falls to the
+          book-scoped Psalter row in gaps.yaml, which states in its own reason that
+          the two psalm dates the article prints are held here and not answered with.
         date:
           precision: relative
           relative:
@@ -2520,7 +2547,7 @@ units:
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
-        basis_class: unreviewed
+        basis_class: traditional-catholic
         basis: >-
           Drum's "Psalms" in the Catholic Encyclopedia (vol. 12, 1911) states:
           "Ps. lxxxiii (lxxxii), although assigned by Briggs ("Psalms", New
@@ -2536,6 +2563,22 @@ units:
           Persian period" is the opinion the article is rejecting, not a second
           traditional date, so it is reported here and not authored as an
           alternate.
+          RULED 2026-09-01 `traditional-catholic`, and the reason is worth stating
+          because the neighbouring psalm went the other way. Here the ranked work is
+          not adopting anyone: it names Briggs's dating and REJECTS it, and asserts its
+          own reading of what the psalm describes. It states no method for the year,
+          and 737 B.C. is the year it prints for the Assyrian invasion rather than for
+          the act of writing, which this note already said. The profile's own_voice
+          rule bites where a value is EXPLICITLY derived from, harmonised to or adopted
+          from an excluded methodology; nothing in this sentence is. Calling it
+          Assyriological would be an inference about a method the source does not
+          state, and it would not survive contact with the rest of the corpus, which
+          answers with the same shape elsewhere on the same terms - Van Hoonacker
+          dating Micheas 1-3 "shortly before the destruction of the Kingdom of Samaria
+          by the Assyrians (722 B.C.)" is ruled traditional-catholic, and a ranked
+          Catholic work's bare year for an Assyrian event is not the same thing as a
+          work naming an inscription as its warrant, which is what Souvay does at Nahum
+          2-3 and why that claim is preserved and this one is not.
         date:
           precision: approximate-year
           from: {year: 737, era: bc}

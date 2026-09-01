@@ -2441,8 +2441,9 @@ events:
     parent: israel.patriarchs.call-of-abram
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
-        basis_class: unreviewed
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
         basis: >-
           The Catholic Encyclopedia's "Israelites" dates the patriarchal
           arrival: "the first of whom appears to have reached Chanaan about
@@ -2459,6 +2460,20 @@ events:
           Exodus of about 1277 B.C. and a four-hundred-and-thirty-year sojourn.
           It is kept as what a ranked Catholic reference work prints, not as a
           correction of any traditional figure.
+          RULED 2026-09-01, and the ground was already written above rather than
+          inferred here: the method is stated, by the same encyclopedia, in another of
+          its own articles, and it is Sayce's Babylonian synchronism held on the
+          condition "if the chronology of the native Babylonian historians is correct".
+          The profile excludes Assyriological and archaeological chronology "whoever
+          prints it", and its one narrow lift is named for Ussher and says by name that
+          it does not extend to Sayce. The corpus has already ruled the other end of
+          the same chain the same way: Howlett's Exodus "about 1277", which rests on
+          Sayce and Driver, was withdrawn from the answers as inadmissible, and
+          answering with 2300 B.C. while refusing 1277 B.C. would be applying two rules
+          to one method. The figure is preserved and stays legible under --evidence.
+          Genesis 12:6-9, the four verses this event alone reached, therefore fall to
+          the book-scoped Genesis row in gaps.yaml, whose reason now names them and
+          says why.
         date:
           precision: approximate-year
           from: {year: 2300, era: bc}
@@ -7399,7 +7414,7 @@ events:
     dates:
       - profile: catholic-traditional-v1
         disposition: preferred
-        basis_class: unreviewed
+        basis_class: traditional-catholic
         basis: >-
           The Catholic Encyclopedia's "Israelites" attaches both episodes to the
           arrival in Chanaan in one clause: "the first of whom appears to have
@@ -7418,6 +7433,19 @@ events:
           came Chodorlahomor" - but it counts from the beginning of a servitude
           that no source inspected for this corpus dates, so it is reported here
           and not authored as a claim.
+          RULED 2026-09-01 `traditional-catholic`, while the arrival it is measured
+          from was ruled inadmissible on the same sentence, and the difference is the
+          whole of what this claim carries. The excluded thing in that sentence is one
+          number, "about 2300 B.C.", and this claim deliberately does not carry it: it
+          carries the article's placing of the two episodes AT the arrival, and it
+          carries that as a relative position with no era, no year and no endpoint. The
+          ground of that placing is Scripture's own sequence, which the article cites in
+          the clause itself - Genesis 12 for Egypt, Genesis 14 for Elam - and Genesis
+          puts both after the coming into Chanaan. So the value this claim asserts is a
+          ranked Catholic work's relational statement resting on Scripture, and it
+          survives the withdrawal of the year intact. The anchor event now carries no
+          answerable date, which is the honest state: this claim says when relative to
+          the arrival, and the corpus declines to say when the arrival was.
         date:
           precision: relative
           relative:

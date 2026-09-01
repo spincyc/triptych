@@ -174,6 +174,7 @@ def main(argv=None) -> int:
     claims = review.diff_claims(old, new, fields)
     answerability = review.diff_answerability(old, new, fields)
     bindings = review.diff_bindings(old, new, full=True)
+    gaps = review.diff_gaps(old, new)
     profiles = review.diff_profiles(old, new)
 
     surface = Surface()
@@ -199,6 +200,19 @@ def main(argv=None) -> int:
         surface.add(
             "binding", row["id"], changed_in_lane="yes", change=row["why"],
             why_in_review="the binding's scope, note or sources changed in this lane",
+        )
+    # 3b. every gap row added, withdrawn or reworded. A gap row is what a verse
+    #     ANSWERS WITH once the last answerable claim over it is preserved, so a
+    #     lane that rules a claim inadmissible and a lane that writes the row the
+    #     verse then falls to are doing one thing, and a review surface that
+    #     carried only the first half would show a claim withdrawn and never show
+    #     the sentence the consumer reads in its place.
+    for row in gaps:
+        surface.add(
+            "gap", row["id"], changed_in_lane="yes",
+            change=row["why"] + (f" ({row['detail']})" if row["detail"] else ""),
+            why_in_review="the gap row a verse now answers with was added, "
+                          "withdrawn or reworded in this lane",
         )
     for _row in profiles:
         surface.add(
@@ -322,7 +336,9 @@ HEADER = """\
 # queries over the head corpus (every claim citing Howlett, every claim citing
 # Sloet, every claim naming a reporting exception, every preserved claim, and
 # every claim still carrying basis_class `unreviewed`), and with the five
-# blockers by id and the contract and gate files by path.
+# blockers by id and the contract and gate files by path, and with every gap
+# row added, withdrawn or reworded, which is what a verse answers with once the
+# last answerable claim standing over it has been preserved.
 #
 # Deduplicated on case_type + ':' + case_id. `why_in_review` keeps EVERY
 # reason that reached a row, so a case that four clauses of the brief reach

@@ -351,11 +351,15 @@ authored before this contract carries, and it is admissible because the rule
 those claims were authored under was that only ranked traditional sources may
 be cited — **not** because anything has found their basis admissible. It is a
 debt, `tools/tpt scripture-chronology validate --json` counts it under
-`answerability.by_basis`, and the correction lanes exist to empty it. The lane
-of 2026-09-01 emptied it down to **five** claims, each of which is named in
-`src/sources/chronology/profile-contract-corrections.tsv` row PCC-08 with the
-reason it was not ruled; a claim carrying `unreviewed` is now an open case and
-not a backlog, so authoring a new one needs a reason stated in the same place.
+`answerability.by_basis`, and the correction lanes exist to empty it. **The
+debt is empty.** The basis-ruling lane of 2026-09-01 emptied it down to five
+claims and named them rather than guessing at them; the completion lane of the
+same day ruled all five, and
+`src/sources/chronology/profile-contract-corrections.tsv` row PCC-08 records
+what each was ruled and on which sentence of its source. A claim carrying
+`unreviewed` is therefore an open case and not a backlog item: it is a claim
+that arrived after the corpus had none, and authoring one needs a reason
+stated in the same place.
 
 #### 4.5.1 The Ussher reporting exception is narrow, and named
 

@@ -2584,12 +2584,14 @@ class CorrectedBlockerTests(unittest.TestCase):
 
     # --- the standing debt, and the invariant -------------------------------
 
-    def test_the_unreviewed_debt_is_bounded_and_named(self) -> None:
+    def test_the_unreviewed_debt_is_empty(self) -> None:
         """`unreviewed` is admissible, so it cannot be left to drift: it is the
-        one basis class that says nothing has judged the basis. This pins the
-        remaining five so that a lane which adds a sixth has to say so."""
+        one basis class that says nothing has judged the basis. The debt was
+        five on 2026-09-01 and the same day's second lane ruled all five, so
+        the count is now zero and a claim arriving on this class is an unruled
+        claim rather than a backlog item."""
         state = _chronology.answerability()
-        self.assertEqual(state["by_basis"].get("unreviewed", 0), 5)
+        self.assertEqual(state["by_basis"].get("unreviewed", 0), 0)
         self.assertEqual(
             state["claims"], sum(state["by_basis"].values())
         )
@@ -2620,6 +2622,149 @@ class CorrectedBlockerTests(unittest.TestCase):
                         empty.append((locus, answer.status))
         self.assertEqual(swept, 35809)
         self.assertEqual(empty[:20], [])
+
+
+class LastUnreviewedClaimsTests(unittest.TestCase):
+    """PCC-08: the five claims the basis-ruling lane could not rule, and the
+    truthfulness of what the corpus says at the loci they used to answer.
+
+    The hazard these pin is specific and was measured before it was fixed.
+    Composition-unit scope is chosen BEFORE answerability, so preserving a
+    narrow unit's last answerable claim leaves that unit winning the scope
+    contest and then answering nothing, and the verse falls through to
+    `research-pending`, whose note says no ranked source has been inspected for
+    the locus. At Nahum 2-3 that sentence would have been false: Souvay's
+    "Nahum" was inspected, in full, and the ruling is that its bounding
+    argument rests on a basis this profile excludes -- which is the opposite of
+    a silence, and a different fact from one.
+    """
+
+    RULED = {
+        "composition.book-of-nahum.chapters-2-3": ("modern-critical", "preserved"),
+        "composition.psalm-73": ("reported-excluded", "preserved"),
+        "composition.psalm-82": ("traditional-catholic", "answerable"),
+        "israel.patriarchs.abram-enters-chanaan": ("modern-critical", "preserved"),
+        "israel.patriarchs.abram-contact-with-egypt-and-elam": (
+            "traditional-catholic", "answerable",
+        ),
+    }
+
+    def ask(self, locus: str, *, evidence: bool = False):
+        answer = _chronology.chronology(locus, evidence=evidence)
+        self.assertIsInstance(answer, _chronology.Answer, locus)
+        return answer
+
+    def test_all_five_are_ruled_and_none_is_still_unreviewed(self) -> None:
+        corpus = _chronology.load()
+        holders = {**corpus.events, **corpus.units}
+        for identifier, (basis_class, state) in self.RULED.items():
+            claim = holders[identifier].claims[0]
+            self.assertEqual(claim.basis_class, basis_class, identifier)
+            self.assertEqual(claim.answerability, state, identifier)
+
+    def test_no_claim_anywhere_in_the_corpus_is_unreviewed(self) -> None:
+        corpus = _chronology.load()
+        unruled = [
+            holder.id
+            for holder in (*corpus.events.values(), *corpus.units.values())
+            for claim in holder.claims
+            if claim.basis_class == "unreviewed"
+        ]
+        self.assertEqual(unruled, [])
+
+    # --- the false note this lane existed to prevent ------------------------
+
+    FALSE_NOTE = "no ranked source has been inspected"
+
+    def test_the_nahum_note_does_not_say_no_source_was_inspected(self) -> None:
+        """THE REGRESSION. Souvay was read; saying otherwise at these verses
+        would be the corpus asserting something it knows to be untrue."""
+        for locus in ("Nah.2.1", "Nah.2.2", "Nah.3.19"):
+            answer = self.ask(locus)
+            self.assertEqual(answer.status, "undated-in-tradition", locus)
+            self.assertNotIn(self.FALSE_NOTE, answer.note, locus)
+            self.assertIn("Souvay", answer.note, locus)
+            self.assertIn("inspected", answer.note, locus)
+
+    def test_no_verse_of_the_vulgate_answers_research_pending(self) -> None:
+        """The maintainer's directive was that the research phase be carried to
+        completion, so the honest default is now reached nowhere: every locus
+        either carries an assertion or is covered by an authored gap row that
+        says what was read and why it does not date the locus."""
+        counts = _chronology.verse_counts()
+        corpus = _chronology.load()
+        pending = []
+        for token, chapters in corpus.books.items():
+            for chapter in range(1, chapters + 1):
+                for verse in range(1, counts[(token, chapter)] + 1):
+                    answer = _chronology.chronology(f"{token}.{chapter}.{verse}")
+                    if getattr(answer, "status", None) == "research-pending":
+                        pending.append(f"{token}.{chapter}.{verse}")
+        self.assertEqual(pending[:20], [])
+
+    def test_no_answered_note_claims_nothing_was_inspected_where_something_was(
+        self,
+    ) -> None:
+        """Every gap row the corpus can actually reach names what was read for
+        it. A row that reached a verse while saying nothing about a source
+        would be the same defect in a different file."""
+        corpus = _chronology.load()
+        for gap in corpus.gaps:
+            self.assertNotIn(self.FALSE_NOTE, gap.reason, gap.status)
+            self.assertTrue(gap.reason.strip(), gap.status)
+
+    # --- what each ruling did to the verses it reached ----------------------
+
+    def test_the_nahum_envelope_is_preserved_and_not_deleted(self) -> None:
+        preserved = [
+            item for item in self.ask("Nah.2.1", evidence=True).assertions
+            if item.claim.answerability == "preserved"
+        ]
+        self.assertEqual(len(preserved), 1)
+        self.assertIn("607 or 606 B.C.", preserved[0].claim.date.label)
+        self.assertEqual(self.ask("Nah.2.1").assertions, ())
+
+    def test_psalm_73_falls_to_the_psalter_row_and_psalm_82_does_not(self) -> None:
+        seventy_three = self.ask("Ps.73.1")
+        self.assertEqual(seventy_three.status, "undated-in-tradition")
+        self.assertIn("Briggs", seventy_three.note)
+        eighty_two = self.ask("Ps.82.1")
+        self.assertEqual(eighty_two.status, "composition-only")
+        self.assertEqual(
+            [item.subject for item in eighty_two.assertions], ["composition.psalm-82"]
+        )
+
+    def test_the_abram_year_stops_answering_and_the_position_survives(self) -> None:
+        """The two Abram claims are ruled apart because they carry different
+        things. The arrival carries "about 2300 B.C.", which the same
+        encyclopedia attributes to Sayce's Babylonian synchronism; the contact
+        carries no year at all, only where the two episodes stand relative to
+        the arrival, which the article grounds in Genesis 12 and 14."""
+        for locus in ("Gen.12.6", "Gen.12.9"):
+            answer = self.ask(locus)
+            self.assertEqual(answer.status, "undated-in-tradition", locus)
+            self.assertNotIn(self.FALSE_NOTE, answer.note, locus)
+            self.assertIn("12:6-9", answer.note, locus)
+        self.assertNotIn(
+            "about 2300 B.C.",
+            [item.claim.date.label for item in self.ask("Gen.12.6").assertions],
+        )
+        self.assertIn(
+            "about 2300 B.C.",
+            [
+                item.claim.date.label
+                for item in self.ask("Gen.12.6", evidence=True).assertions
+            ],
+        )
+        self.assertEqual(self.ask("Gen.12.5").status, "dated")
+        for locus in ("Gen.12.10", "Gen.14.1"):
+            answer = self.ask(locus)
+            self.assertEqual(answer.status, "dated", locus)
+            self.assertEqual(
+                [item.subject for item in answer.assertions],
+                ["israel.patriarchs.abram-contact-with-egypt-and-elam"],
+                locus,
+            )
 
 
 if __name__ == "__main__":

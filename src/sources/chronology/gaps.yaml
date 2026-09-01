@@ -310,11 +310,14 @@ gaps:
       date this corpus may carry.
       This row is book-scoped and therefore reaches every verse of Genesis, but
       an assertion always beats it: what it actually catches is the verses where
-      this corpus carries no assertion at all, which after this lane's work are
-      Genesis 3:1-24, 4:1-24, 6:1-2, 6:4-12, 9:1-27, 11:1-9, 11:28-30, 13, 15:1-12,
+      this corpus answers with no assertion at all, which after the 2026-09-01 lane's
+      work are
+      Genesis 3:1-24, 4:1-24, 6:1-2, 6:4-12, 9:1-27, 11:1-9, 11:28-30, 12:6-9, 13,
+      15:1-12,
       15:17-21, 19:30-38, 20, 21:9-34, 22, 25:27-34, 26:1-33, 27, 28, 32, 33, 34,
       35:1-26, 36, 38 and 39 - the Fall, Cain and Abel, the wickedness before the
       Flood, the covenant with Noe and the cursing of Chanaan, the tower of Babel,
+      Abram's journey through the land to Bethel and the Negeb,
       the parting of Abram and Lot, the covenant sacrifice, Lot and his daughters
       in the cave and the begetting of Moab and Ammon, Abimelech at Gerara, the
       casting out of Agar, the sacrifice of Isaac, the pottage of lentils, Isaac
@@ -326,7 +329,7 @@ gaps:
       none at any of the places listed above; the Catholic Encyclopedia's
       "Biblical Chronology", "Israelites", "Abraham", "Isaac", "Jacob",
       "Joseph", "Deluge" and "Noah" were read for them and date none of them
-      either. Its "Adam", "Cain", "Sodom and Gomorrha" and "Sara" were fetched,
+      either, WITH ONE EXCEPTION, taken up at the end of this row. Its "Adam", "Cain", "Sodom and Gomorrha" and "Sara" were fetched,
       registered and read in full for the same purpose, and add nothing: "Cain"
       and "Sodom and Gomorrha" print no figure of any kind. "Adam" prints only
       figures Genesis 5 states and this corpus already carries from it, quoting
@@ -349,6 +352,22 @@ gaps:
       the Anno Mundi figures the encyclopedia prints for the Deluge are totals
       of a genealogy that differs by text-family, and they must not be borrowed
       to fill this.
+      THE ONE EXCEPTION IS 12:6-9, and it is the reason that range joined the list
+      above on 2026-09-01. Those four verses are not a place no ranked source has
+      spoken about. "Israelites" does print a figure that reaches them: it says
+      Abraham "appears to have reached Chanaan about 2300 B.C." That figure is not a
+      silence and this row does not pretend it is one. It is held on
+      israel.patriarchs.abram-enters-chanaan in events.yaml, preserved rather than
+      deleted and legible under --evidence, and it is not answered with, because the
+      same encyclopedia's "Biblical Chronology" states where it comes from - Professor
+      Sayce's reckoning, on the condition "if the chronology of the native Babylonian
+      historians is correct" - and this profile does not consult Babylonian or
+      Assyriological chronology whoever prints it. What this row therefore says at
+      12:6-9 is that the tradition it answers under states no time for them, not that
+      nobody looked. Genesis 12:5 is unaffected and still answers from the call of
+      Abram, which Genesis 12:4 dates by his own years; and Genesis 12:10-20 and 14 are
+      unaffected too, because what the article says of those chapters is where they
+      stand relative to the arrival, and a position is not the excluded year.
     sources:
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
       - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
@@ -448,7 +467,20 @@ gaps:
       Drum's "Psalms" in the Catholic Encyclopedia was read in full for this
       corpus and dates the writing of no psalm except three cases authored
       separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering,
-      and the psalms of the sons of Korah as a group. Everywhere else it settles
+      and the psalms of the sons of Korah as a group. Of those three, two are still
+      answered with and one is not, so this row now reaches Ps.73 as well and the
+      reader is owed the reason. Ps.73 is the one the article does not date on its own
+      authority: it gives the date "as Briggs surmises", adopting the surmise of the
+      modern critical commentary it cites by page in the same treatment of the Asaph
+      psalms - Briggs's "Psalms", New York, 1906 - and this profile
+      admits no such adoption - its one narrow lift is named for Ussher and says in
+      terms that it extends to no one else. That figure is therefore held in
+      composition.yaml as preserved evidence, legible under --evidence, and is not a
+      candidate answer; a reader who reaches this row at Ps.73 is being told that the
+      tradition this profile answers under dates the psalm nowhere, not that nobody
+      looked at it. Ps.82 is different and is untouched: there the article names
+      Briggs's dating and rejects it, asserting its own reading, so that claim stands
+      and this row never reaches Ps.82 at all. Everywhere else it settles
       authorship and refuses date. Of David, its strongest sentence is the
       Biblical Commission's of 1 May 1910, that "It cannot be prudently denied
       that David is the chief author of the songs of the Psalter" - an author,
@@ -526,10 +558,44 @@ gaps:
       Marti, Lohr, Van Hoonacker - are cited on the text, not on its date, and
       several are outside this profile in any case. This row stops at the end of
       chapter 1 although the article's own first part runs one verse further
-      (Douay 2:2), because that verse is covered by the composition unit for
-      chapters 2-3 and a gap may not be laid over a verse that carries an
-      assertion. No other source inspected for this corpus dates the chapter.
+      (Douay 2:2), because that verse belongs to the composition unit for chapters
+      2-3, which still holds the article's bounding argument as preserved evidence;
+      the row below carries chapters 2-3 and states why the argument is held rather
+      than answered with. Keeping the two rows apart keeps two different facts apart:
+      chapter 1 is a locus the article prints no date for at all, and chapters 2-3 are
+      a locus it dates on a basis this profile excludes. No other source inspected for
+      this corpus dates the chapter.
     sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-83d20cfa]
+  - status: undated-in-tradition
+    scope: [{book: Nah, chapter: 2, through: 3}]
+    reason: >-
+      A ranked source WAS inspected for these chapters, and this row exists so that
+      the corpus does not say otherwise. Souvay's "Nahum" in the Catholic
+      Encyclopedia was read for this corpus and it does bound the second part of the
+      book -
+      "Thebes was captured and destroyed by Assurbanipal in 664-663 B.C." above, and
+      below "the fall of Ninive, which a well-known inscription of Nabonidus permits
+      us to fix at 607 or 606 B.C." - but it names the warrant for those limits in the
+      same breath as the limits, and the warrant is an Assyriological inscription.
+      This profile does not consult Assyriological chronology whoever prints it, so
+      neither endpoint of that envelope is a date this corpus may answer with; the
+      envelope itself is kept, in composition.yaml, preserved rather than deleted, and
+      is reachable under --evidence. Nothing admissible is left standing behind it.
+      The article assigns no year of writing in any case - "The date of this second
+      part cannot be determined to the year", and it offers only "a sufficiently
+      accurate approximation" - and the older traditions that would have supplied one
+      are the very things it discards on the same Assyriological ground: Josephus's
+      placing of the prophecy "115 years before the fall of Ninive (about 721 B.C.)"
+      and Nicephorus's making Nahum a contemporary of Phacee "ought to be discarded as
+      impossible", and Eutychius's dating five years after the fall of Jerusalem,
+      "therefore about 583-581", is excluded with them. So the tradition this profile
+      answers under dates these chapters nowhere: what stood in its place has been
+      discarded by the one ranked work that treats the question, on a method this
+      profile excludes. No other source inspected for this corpus dates them. This row
+      says that, and it must not be read as saying that nobody looked.
+    sources:
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-2f9e032c
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-83d20cfa
   - status: undated-in-tradition
     scope: [{book: Jdt}]
     reason: >-
