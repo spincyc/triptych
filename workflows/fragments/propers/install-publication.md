@@ -23,12 +23,6 @@ Create the destination directory first if it does not exist. Install exactly
 the file the evaluator read; do not regenerate it here, because the reviewed
 edition and the installed edition must be the same bytes.
 
-Then confirm the tracked artifact matches what current sources produce:
-
-```
-make check-web-editions-current
-```
-
 Do not create `web/{provider}/{proper}-synthesis.md`. The synthesis is a
 derived companion of the canonical leaf and has no web edition.
 
@@ -82,22 +76,24 @@ hashes and the site source list must be brought up to date:
 
 ```
 make refresh-release-bindings ADOPT=1
-make check-release-bindings
-make check-public-alpha
-make check-document-catalogue
 ```
 
-`ADOPT=1` is what admits the newly tracked web edition as a site source. Read
-each check's output; a failure here is a wiring defect for the publication
-gates to catch and for `publication-revision` to repair.
+`ADOPT=1` is what admits the newly tracked web edition as a site source.
+
+Do not run the site checks yourself and report that they passed. Since
+version 13 the publication gates run `check-release-bindings`,
+`check-public-alpha`, `check-document-catalogue` and
+`check-web-editions-current` as gate checks of their own, judged by exit
+code. A stale binding or an unrecorded source is a wiring defect for those
+gates to catch and for `publication-revision` to repair, and a worker's
+account of a check it ran is not the evidence acceptance rests on.
 
 ## Result
 
 Return a worker result with `disposition: "PASS"`, `artifact_path` set to
 `web/{provider}/{proper}.md`, and a summary naming: the installed web
 edition, both release records and whether each was created or already
-present, the catalog row and cell you filled, the marker you added, and the
-result of each check you ran.
+present, the catalog row and cell you filled, and the marker you added.
 
 Return `disposition: "BLOCKED"` when the publication cannot be wired from
 here: no catalog row for this identity is the standing case, because writing

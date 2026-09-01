@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 12,
+  "version": 13,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -570,6 +570,11 @@
           "required_result": "the synthesis PDF must be installed at pdf/{provider}/{proper}-synthesis.pdf"
         },
         {
+          "id": "installed-pdf-matches-accepted",
+          "command": "cmp -s build/{provider}/{proper}.pdf pdf/{provider}/{proper}.pdf && cmp -s build/{provider}/{proper}-synthesis.pdf pdf/{provider}/{proper}-synthesis.pdf",
+          "required_result": "each installed PDF must be byte-identical to the build artifact `final-acceptance` accepted; a file at the publication path proves only that something was installed, and the artifact the visual and mechanical gates passed is the one the reader must get"
+        },
+        {
           "id": "proper-components",
           "command": "tools/tpt check-proper-components --provider {provider} --document {proper} --aux build/{provider}/{proper}-synthesis.aux",
           "required_result": "the component manifest must still be consistent with the built artifacts, and the brief synthesis must still occupy exactly two pages"
@@ -610,9 +615,49 @@
           "required_result": "a per-publication release record must exist for the synthesis publication; the companion is published in its own right"
         },
         {
+          "id": "release-record-valid",
+          "command": "awk -v d={proper} 'function v(s) { sub(/^[ \\t]*\"[^\"]*\"[ \\t]*:[ \\t]*/, \"\", s); sub(/,[ \\t]*$/, \"\", s); gsub(/^\"|\"$/, \"\", s); return s } { seen[FILENAME] = 1; if ($0 ~ /\"schema_version\"/) ver[FILENAME] = v($0); else if ($0 ~ /\"id\"/) id[FILENAME] = v($0); else if ($0 ~ /\"catalog\"/) cat[FILENAME] = v($0); else if ($0 ~ /\"status\"/) st[FILENAME] = v($0); else if ($0 ~ /\"authorization\"/) au[FILENAME] = v($0) } END { n = 0; for (f in seen) { n++; want = (f ~ /-synthesis\\.json$/) ? d \"-synthesis\" : d; if (ver[f] != \"1\" || id[f] != want || cat[f] != \"library/traditional-latin-mass.md\" || st[f] != \"alpha\" || au[f] == \"\" || au[f] == \"null\") exit 1 } exit !(n == 2) }' release/publications/{provider}/{proper}.json release/publications/{provider}/{proper}-synthesis.json",
+          "required_result": "both release records must say what they are: schema version 1, an id naming this leaf and its synthesis companion, this catalog, status `alpha`, and a standing authorization rather than the null a held record carries. Existence proves a file was written; this proves it describes this publication"
+        },
+        {
           "id": "catalog-links",
           "command": "awk -v p={provider} -v d={proper} 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\")   > 0 { full = 1 } index($0, \"](../pdf/\" p \"/\" d \"-synthesis.pdf)\") > 0 { syn = 1 } index($0, \"](../web/\" p \"/\" d \".html)\") > 0 { web = 1 } END { exit !(full && syn && web) }' library/traditional-latin-mass.md",
           "required_result": "this provider's catalog cell must link all three published artifacts: the full PDF, the synthesis PDF, and the web edition"
+        },
+        {
+          "id": "catalog-read-link-resolves",
+          "command": "awk -v p={provider} -v d={proper} 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\") > 0 && index($0, \"](../web/\" p \"/\" d \".html)\") > 0 { found = 1 } END { exit !found }' library/traditional-latin-mass.md && git ls-files --error-unmatch web/{provider}/{proper}.md >/dev/null 2>&1 && test ! -e web/{provider}/{proper}.html",
+          "required_result": "the catalog's `Read` link must name this provider's own web edition in the same row as this provider's PDF link, and the tracked Markdown the site renders that `.html` from must exist; the `.html` itself is generated at site build time from web/{provider}/{proper}.md and is never tracked, so a tracked `.html` beside it would be a second, hand-made page the build does not produce"
+        },
+        {
+          "id": "other-provider-cell-unchanged",
+          "command": "awk -v p={provider} -v d={proper} -F'|' 'index($0, \"](../pdf/\" p \"/\" d \".pdf)\") > 0 { rows++; mine = 0; if (NF < 5) bad = 1; for (i = 4; i < NF; i++) { cell = $i; gsub(/^[ \\t]+|[ \\t]+$/, \"\", cell); if (index(cell, \"/\" p \"/\") > 0) { mine++; continue } if (cell != \"Planned\" && index(cell, \"](../\") == 0) bad = 1 } if (mine != 1) bad = 1 } END { exit !(rows == 1 && !bad) }' library/traditional-latin-mass.md",
+          "required_result": "publishing one provider wires one cell: this identity must own exactly one catalog row, exactly one cell in it may name this provider's artifacts, and every other provider's cell in that row must still hold its own well-formed state -- the bare word `Planned` or links of its own. A gate runs mid-run and has no earlier commit to diff against, so the property is stated as one this provider's wiring cannot satisfy by overwriting a neighbour"
+        },
+        {
+          "id": "publication-marker",
+          "command": "awk -v p={provider} -v d={proper} 'FNR == NR { if (primary == \"\" && match($0, /\"provider\"[ \\t]*:[ \\t]*\"[a-z0-9-]+\"/)) { primary = substr($0, RSTART, RLENGTH); sub(/^.*: *\"/, \"\", primary); sub(/\"$/, \"\", primary) } next } { line = $0; gsub(/^[ \\t]+|[ \\t]+$/, \"\", line); if (line == \"<!-- triptych-publication-id: \" (p == primary ? d : p \":\" d) \" -->\") found++ } END { exit !(primary != \"\" && found == 1) }' release/public-alpha.json library/traditional-latin-mass.md",
+          "required_result": "the catalog must carry this publication's stable marker in the form the release tooling reads: the bare leaf id for the manifest's primary provider and the `{provider}:` prefixed form for any other. The marker, not the link text, is what binds the row to the release record, so a wired cell without one is a publication the site cannot account for. Exactly one marker, too: a second copy is a wiring step that ran twice"
+        },
+        {
+          "id": "site-release-bindings",
+          "command": "make check-release-bindings && grep -qF -- web/{provider}/{proper}.md release/public-alpha.json",
+          "required_result": "every recorded site source must still hash to what is on disk, and this publication's tracked web edition must be one of them; `ADOPT=1` is what records a newly tracked edition, and an unrecorded source is a page the site authorization does not cover"
+        },
+        {
+          "id": "site-public-alpha",
+          "command": "make check-public-alpha && test -f release/publications/{provider}/{proper}.json && test -f release/publications/{provider}/{proper}-synthesis.json",
+          "required_result": "the release policy must hold across every publication record, catalog occurrence and marker in the repository, and this publication's two records must be among the ones it just validated; the repository-wide schema and coverage rules are that tool's, and the gate asks it rather than restating them"
+        },
+        {
+          "id": "site-document-catalogue",
+          "command": "make check-document-catalogue && awk -v p={provider} -v d={proper} 'index($0, \"\\\"pdf/\" p \"/\" d \".pdf\\\"\") > 0 { full = 1 } index($0, \"\\\"pdf/\" p \"/\" d \"-synthesis.pdf\\\"\") > 0 { syn = 1 } index($0, \"\\\"web/\" p \"/\" d \".html\\\"\") > 0 { web = 1 } END { exit !(full && syn && web) }' src/web/data/structure/documents/corpus.json",
+          "required_result": "each document's title must still match the PDF it names and the tracked corpus catalogue must be what the sources produce now, and that catalogue must carry this publication's three artifacts: both PDFs and the rendered page the catalog's `Read` link points at. This is where the `.html` is proved to be a page the site derives, since the corpus is regenerated from the sources and checked against them"
+        },
+        {
+          "id": "site-web-editions-current",
+          "command": "make check-web-editions-current && test -f web/{provider}/{proper}.md",
+          "required_result": "every tracked web edition must be exactly what current sources produce, this one included; the installed edition is the reviewed one only while the source it was converted from has not moved under it"
         }
       ],
       "pass_transition": "ACCEPTED",

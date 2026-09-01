@@ -374,8 +374,13 @@ class PublicationAcceptanceTests(unittest.TestCase):
                   for check in self.stages["publication-gates"]["checks"]}
         self.assertEqual(sorted(checks), [
             "authorized-scope", "canonical-pdf-installed",
-            "canonical-release-record", "catalog-links", "generation-metadata",
-            "no-synthesis-web-edition", "proper-components",
+            "canonical-release-record", "catalog-links",
+            "catalog-read-link-resolves", "generation-metadata",
+            "installed-pdf-matches-accepted", "no-synthesis-web-edition",
+            "other-provider-cell-unchanged", "proper-components",
+            "publication-marker", "release-record-valid",
+            "site-document-catalogue", "site-public-alpha",
+            "site-release-bindings", "site-web-editions-current",
             "synthesis-pdf-installed", "synthesis-release-record",
             "web-edition-declared", "web-edition-tracked", "web-edition-valid",
         ])
@@ -541,6 +546,512 @@ class PublicationAcceptanceTests(unittest.TestCase):
             self.assertNotIn(foreign, text,
                              f"web evaluation names {foreign}, another "
                              f"stage's finding space")
+
+
+
+# ---------------------------------------------------------------------------
+# What the gate proves about the publication it is looking at
+# ---------------------------------------------------------------------------
+
+CATALOG = "library/traditional-latin-mass.md"
+MANIFEST = "release/public-alpha.json"
+RECORDS = "release/publications"
+
+
+def cell(provider: str, proper: str) -> str:
+    """This provider's wired cell, in the form `guidance/repository.md` fixes."""
+    return (f"[Full PDF](../pdf/{provider}/{proper}.pdf)"
+            f" \u00b7 [Synthesis PDF](../pdf/{provider}/{proper}-synthesis.pdf)"
+            f" \u00b7 [Read](../web/{provider}/{proper}.html)")
+
+
+def marker(provider: str, proper: str, primary: str) -> str:
+    """The stable marker: bare for the primary provider, prefixed otherwise."""
+    label = proper if provider == primary else f"{provider}:{proper}"
+    return f"<!-- triptych-publication-id: {label} -->"
+
+
+def release_record(proper: str, **overrides) -> str:
+    """One publication record, in the bytes `release-bindings` writes."""
+    entry = {"schema_version": 1, "id": proper, "catalog": CATALOG,
+             "status": "alpha",
+             "authorization": "perpetual-public-repository-2026"}
+    entry.update(overrides)
+    return json.dumps(entry, indent=2) + "\n"
+
+
+class PublicationTree(unittest.TestCase):
+    """A throwaway tree holding only what the check under test reads.
+
+    The real catalog, manifest and release records describe publications a
+    maintainer decided on, so no test here writes to them; each check is run
+    from a directory that carries a fixture of exactly the files it opens.
+    """
+
+    PRIMARY = "gpt"
+    PROVIDER = "claude"
+    OTHER = "gpt"
+
+    def setUp(self):
+        self.tree = Path(tempfile.mkdtemp(prefix="tpt-publication-"))
+        self.addCleanup(shutil.rmtree, self.tree, ignore_errors=True)
+        self.write(MANIFEST, json.dumps(
+            {"schema_version": 1, "release_id": "fixture",
+             "provider": self.PRIMARY, "providers": ["gpt", "claude"]},
+            indent=2) + "\n")
+
+    def write(self, relative: str, text: str) -> Path:
+        path = self.tree / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def write_bytes(self, relative: str, data: bytes) -> Path:
+        path = self.tree / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
+        return path
+
+    def write_catalog(self, markers, rows) -> None:
+        body = ["# Traditional Latin Mass", "", *markers, "",
+                "| ID | Sunday | ChatGPT | Claude |",
+                "| ---: | --- | --- | --- |"]
+        body += [f"| {number} | **{name}** | {gpt} | {claude} |"
+                 for number, name, gpt, claude in rows]
+        self.write(CATALOG, "\n".join(body) + "\n")
+
+    def wire(self, proper: str = DOC, provider: str | None = None,
+             other: str | None = None, times: int = 1) -> None:
+        """The catalog as `install-publication` leaves it.
+
+        `times` repeats the whole wiring — marker and row — which is what an
+        install that ran twice without reading what it had already written
+        would produce.
+        """
+        provider = provider or self.PROVIDER
+        mine = cell(provider, proper)
+        other = "Planned" if other is None else other
+        gpt, claude = (mine, other) if provider == "gpt" else (other, mine)
+        markers, rows = [], []
+        for _ in range(times):
+            markers.append(marker(provider, proper, self.PRIMARY))
+            rows.append(("54", "Fourteenth Sunday after Pentecost",
+                         gpt, claude))
+        self.write_catalog(markers, rows)
+
+    def check(self, check_id: str, proper: str = DOC,
+              provider: str | None = None) -> int:
+        return run_check(gate_check("publication-gates", check_id), proper,
+                         provider or self.PROVIDER, self.tree).returncode
+
+
+class InstalledArtifactTests(PublicationTree):
+    """Test 18: what is installed is the artifact that was accepted."""
+
+    def install(self, canonical: bytes, synthesis: bytes,
+                built: bytes | None = None,
+                built_synthesis: bytes | None = None,
+                proper: str = DOC) -> None:
+        provider = self.PROVIDER
+        if built is not None:
+            self.write_bytes(f"build/{provider}/{proper}.pdf", built)
+        if built_synthesis is not None:
+            self.write_bytes(f"build/{provider}/{proper}-synthesis.pdf",
+                             built_synthesis)
+        self.write_bytes(f"pdf/{provider}/{proper}.pdf", canonical)
+        self.write_bytes(f"pdf/{provider}/{proper}-synthesis.pdf", synthesis)
+
+    def test_the_installed_pdfs_are_the_accepted_builds(self):
+        self.install(b"%PDF canonical", b"%PDF synthesis",
+                     built=b"%PDF canonical", built_synthesis=b"%PDF synthesis")
+        self.assertEqual(self.check("installed-pdf-matches-accepted"), 0)
+
+    def test_an_installed_canonical_pdf_that_is_not_the_accepted_one_fails(self):
+        self.install(b"%PDF rebuilt after acceptance", b"%PDF synthesis",
+                     built=b"%PDF canonical", built_synthesis=b"%PDF synthesis")
+        self.assertNotEqual(
+            self.check("installed-pdf-matches-accepted"), 0,
+            "a file at the publication path is not the accepted artifact")
+
+    def test_an_installed_synthesis_pdf_from_another_build_fails(self):
+        self.install(b"%PDF canonical", b"%PDF stale synthesis",
+                     built=b"%PDF canonical", built_synthesis=b"%PDF synthesis")
+        self.assertNotEqual(self.check("installed-pdf-matches-accepted"), 0)
+
+    def test_an_install_with_no_accepted_build_to_compare_against_fails(self):
+        """The comparison is the proof, so it cannot be skipped when absent.
+
+        The gate already reads `build/{provider}/{proper}-synthesis.aux` for
+        `proper-components`, so the accepted build tree is present when this
+        gate runs; a run that has lost it has lost the evidence, and the
+        publication is unproven rather than proven.
+        """
+        self.install(b"%PDF canonical", b"%PDF synthesis")
+        self.assertNotEqual(self.check("installed-pdf-matches-accepted"), 0)
+
+    def test_the_check_compares_the_build_tree_against_the_publication_tree(self):
+        command = gate_check("publication-gates",
+                             "installed-pdf-matches-accepted")
+        self.assertIn("cmp -s build/{provider}/{proper}.pdf "
+                      "pdf/{provider}/{proper}.pdf", command)
+        self.assertIn("build/{provider}/{proper}-synthesis.pdf", command)
+
+
+class ReleaseRecordContentTests(PublicationTree):
+    """Test 22: the record is validated, not merely counted."""
+
+    def records(self, canonical: str | None = None,
+                synthesis: str | None = None, proper: str = DOC) -> None:
+        root = f"{RECORDS}/{self.PROVIDER}"
+        if canonical is not None:
+            self.write(f"{root}/{proper}.json", canonical)
+        if synthesis is not None:
+            self.write(f"{root}/{proper}-synthesis.json", synthesis)
+
+    def test_a_pair_of_records_describing_this_publication_passes(self):
+        self.records(release_record(DOC),
+                     release_record(f"{DOC}-synthesis"))
+        self.assertEqual(self.check("release-record-valid"), 0)
+
+    def test_a_record_naming_another_leaf_fails(self):
+        self.records(release_record(NEIGHBOUR),
+                     release_record(f"{DOC}-synthesis"))
+        self.assertNotEqual(self.check("release-record-valid"), 0)
+
+    def test_the_synthesis_record_must_name_the_synthesis(self):
+        self.records(release_record(DOC), release_record(DOC))
+        self.assertNotEqual(
+            self.check("release-record-valid"), 0,
+            "a companion record naming the canonical leaf is the canonical "
+            "record written twice")
+
+    def test_a_record_pointing_at_another_catalog_fails(self):
+        self.records(release_record(DOC, catalog="library/liturgy.md"),
+                     release_record(f"{DOC}-synthesis"))
+        self.assertNotEqual(self.check("release-record-valid"), 0)
+
+    def test_a_held_record_is_not_a_published_one(self):
+        self.records(release_record(DOC, status="hold", authorization=None),
+                     release_record(f"{DOC}-synthesis"))
+        self.assertNotEqual(
+            self.check("release-record-valid"), 0,
+            "`hold` carries a null authorization and publishes nothing")
+
+    def test_a_record_at_an_unknown_schema_version_fails(self):
+        self.records(release_record(DOC, schema_version=2),
+                     release_record(f"{DOC}-synthesis"))
+        self.assertNotEqual(self.check("release-record-valid"), 0)
+
+    def test_a_missing_companion_record_fails(self):
+        self.records(release_record(DOC))
+        self.assertNotEqual(self.check("release-record-valid"), 0)
+
+
+class CatalogWiringTests(PublicationTree):
+    """Tests 24 and 26: one cell is wired, and the row says whose it is."""
+
+    def test_a_wired_cell_beside_a_planned_one_passes(self):
+        self.wire()
+        self.assertEqual(self.check("other-provider-cell-unchanged"), 0)
+
+    def test_a_wired_cell_beside_the_other_provider_own_links_passes(self):
+        self.wire(other=cell(self.OTHER, DOC))
+        self.assertEqual(
+            self.check("other-provider-cell-unchanged"), 0,
+            "the other provider publishing the same identity is the normal "
+            "state of a row both providers have produced")
+
+    def test_this_provider_links_in_the_other_provider_cell_fail(self):
+        """Test 24. Publishing one provider wires one cell."""
+        self.wire(other=cell(self.PROVIDER, DOC))
+        self.assertNotEqual(
+            self.check("other-provider-cell-unchanged"), 0,
+            "the same provider cannot own both cells of one row")
+
+    def test_a_blanked_other_provider_cell_fails(self):
+        self.wire(other="")
+        self.assertNotEqual(
+            self.check("other-provider-cell-unchanged"), 0,
+            "a cell emptied by this publication is a cell this publication "
+            "changed; `Planned` is the closed state, not blank")
+
+    def test_the_other_provider_cell_keeps_its_own_word(self):
+        self.wire(other="Coming soon")
+        self.assertNotEqual(
+            self.check("other-provider-cell-unchanged"), 0,
+            "the closed state is the bare word `Planned`")
+
+    def test_the_marker_for_a_secondary_provider_is_prefixed(self):
+        """Test 26."""
+        self.wire()
+        self.assertEqual(self.check("publication-marker"), 0)
+
+    def test_a_bare_marker_does_not_stand_for_a_secondary_provider(self):
+        """Test 26. The bare id is the primary provider's publication."""
+        self.wire()
+        catalog = (self.tree / CATALOG).read_text(encoding="utf-8")
+        self.write(CATALOG, catalog.replace(
+            marker(self.PROVIDER, DOC, self.PRIMARY),
+            marker(self.PRIMARY, DOC, self.PRIMARY)))
+        self.assertNotEqual(
+            self.check("publication-marker"), 0,
+            "a marker naming the primary provider says nothing about this one")
+
+    def test_the_primary_provider_marker_is_bare(self):
+        self.wire(provider=self.PRIMARY, other="Planned")
+        self.assertEqual(
+            self.check("publication-marker", provider=self.PRIMARY), 0)
+
+    def test_a_row_with_no_marker_at_all_fails(self):
+        self.wire()
+        catalog = (self.tree / CATALOG).read_text(encoding="utf-8")
+        self.write(CATALOG, catalog.replace(
+            marker(self.PROVIDER, DOC, self.PRIMARY) + "\n", ""))
+        self.assertNotEqual(self.check("publication-marker"), 0)
+
+    def test_the_read_link_must_sit_in_this_provider_own_row(self):
+        """The catalog half of `catalog-read-link-resolves`.
+
+        `catalog-links` sets its three flags anywhere in the file, so three
+        different rows satisfy it. This one requires the `Read` link and the
+        PDF link on one line.
+        """
+        command = gate_check("publication-gates", "catalog-read-link-resolves")
+        self.wire()
+        catalog = self.tree / CATALOG
+        text = catalog.read_text(encoding="utf-8")
+        rendered = _substitute_args(command, {"proper": DOC,
+                                              "provider": self.PROVIDER},
+                                    quote=True)
+        awk = rendered.split(" && git ls-files")[0]
+        self.assertEqual(subprocess.run(awk, shell=True, cwd=self.tree,
+                                        capture_output=True).returncode, 0)
+        catalog.write_text(
+            text.replace(f" \u00b7 [Read](../web/{self.PROVIDER}/{DOC}.html)", ""),
+            encoding="utf-8")
+        self.assertNotEqual(
+            subprocess.run(awk, shell=True, cwd=self.tree,
+                           capture_output=True).returncode, 0)
+
+    def test_the_read_link_is_bound_to_the_tracked_markdown_source(self):
+        """The site renders the `.html`; the `.md` is what can be tracked.
+
+        `release/public-alpha.json`'s page map turns
+        `web/<provider>/<leaf>.md` into `web/<provider>/<leaf>.html` at site
+        build time, and no `.html` under `web/` is tracked. So the check
+        proves the source the catalog's link is rendered from, and refuses a
+        hand-made `.html` sitting beside it.
+        """
+        command = gate_check("publication-gates", "catalog-read-link-resolves")
+        self.assertIn("git ls-files --error-unmatch web/{provider}/{proper}.md",
+                      command)
+        self.assertIn("test ! -e web/{provider}/{proper}.html", command)
+        self.assertEqual(
+            len(list((ROOT / "web").rglob("*.html"))), 0,
+            "the tracked web tree holds Markdown; the HTML is the build's")
+
+    def test_the_wired_catalog_passes_every_catalog_check_together(self):
+        self.wire()
+        for check_id in ("catalog-links", "other-provider-cell-unchanged",
+                         "publication-marker"):
+            with self.subTest(check=check_id):
+                self.assertEqual(self.check(check_id), 0)
+
+
+class PublicationIdempotencyTests(PublicationTree):
+    """Test 27: installing and wiring twice converges on one state."""
+
+    def test_wiring_the_same_publication_twice_writes_the_same_catalog(self):
+        self.wire()
+        once = (self.tree / CATALOG).read_bytes()
+        self.wire()
+        self.assertEqual((self.tree / CATALOG).read_bytes(), once)
+        for check_id in ("catalog-links", "other-provider-cell-unchanged",
+                         "publication-marker"):
+            with self.subTest(check=check_id):
+                self.assertEqual(self.check(check_id), 0)
+
+    def test_a_duplicated_row_is_refused(self):
+        self.wire(times=2)
+        self.assertNotEqual(
+            self.check("other-provider-cell-unchanged"), 0,
+            "an identity owns one catalog row; a second is a wiring step "
+            "that ran twice without reading what it had written")
+
+    def test_a_duplicated_marker_is_refused(self):
+        self.wire()
+        catalog = (self.tree / CATALOG).read_text(encoding="utf-8")
+        line = marker(self.PROVIDER, DOC, self.PRIMARY)
+        self.write(CATALOG, catalog.replace(line, line + "\n" + line, 1))
+        self.assertNotEqual(
+            self.check("publication-marker"), 0,
+            "one publication, one marker")
+
+    def test_reinstalling_the_same_pdfs_still_matches_the_accepted_build(self):
+        provider = self.PROVIDER
+        for _ in range(2):
+            self.write_bytes(f"build/{provider}/{DOC}.pdf", b"%PDF canonical")
+            self.write_bytes(f"build/{provider}/{DOC}-synthesis.pdf",
+                             b"%PDF synthesis")
+            self.write_bytes(f"pdf/{provider}/{DOC}.pdf", b"%PDF canonical")
+            self.write_bytes(f"pdf/{provider}/{DOC}-synthesis.pdf",
+                             b"%PDF synthesis")
+            self.assertEqual(self.check("installed-pdf-matches-accepted"), 0)
+
+
+class SiteValidationTests(unittest.TestCase):
+    """Part XII's broader site validation, run by the gate and not a worker."""
+
+    SITE_CHECKS = {
+        "site-release-bindings": "check-release-bindings",
+        "site-public-alpha": "check-public-alpha",
+        "site-document-catalogue": "check-document-catalogue",
+        "site-web-editions-current": "check-web-editions-current",
+    }
+
+    def test_the_gate_runs_the_site_checks_itself(self):
+        """The Makefile half is asserted as text, not run.
+
+        These four read the entire tracked corpus — every publication record,
+        every catalogue row, every web edition — so there is no fixture tree
+        to run them against, and running them here would only restate what
+        `make check` already runs. What is asserted is that the gate names a
+        target the Makefile really declares, so the gate cannot pass by
+        invoking nothing.
+        """
+        makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+        for check_id, target in self.SITE_CHECKS.items():
+            with self.subTest(check=check_id):
+                command = gate_check("publication-gates", check_id)
+                self.assertTrue(command.startswith(f"make {target} && "),
+                                command)
+                self.assertRegex(makefile, rf"(?m)^{re.escape(target)}:")
+
+    def test_each_site_check_is_bound_to_this_publication(self):
+        """A whole-repository check can pass while knowing nothing of a target.
+
+        `tools/tests/test_workflow_engine.py` requires every gate check to
+        name one of the run's arguments, and the reason is this one: a
+        constant command passes or fails alike for every target. So each site
+        check carries a second clause naming the surface that check validated
+        and requiring this publication to be inside it — a recorded site
+        source, two validated release records, three catalogued artifacts, one
+        compared web edition.
+        """
+        for check_id in self.SITE_CHECKS:
+            with self.subTest(check=check_id):
+                command = gate_check("publication-gates", check_id)
+                clause = command.split(" && ", 1)[1]
+                self.assertTrue(
+                    "{proper}" in clause and "{provider}" in clause,
+                    f"{check_id}'s second clause names no target")
+
+    def test_the_binding_clauses_name_the_surface_each_check_validated(self):
+        checks = {check_id: gate_check("publication-gates", check_id)
+                  for check_id in self.SITE_CHECKS}
+        self.assertIn("web/{provider}/{proper}.md release/public-alpha.json",
+                      checks["site-release-bindings"])
+        self.assertIn("release/publications/{provider}/{proper}.json",
+                      checks["site-public-alpha"])
+        self.assertIn("release/publications/{provider}/{proper}-synthesis.json",
+                      checks["site-public-alpha"])
+        corpus = "src/web/data/structure/documents/corpus.json"
+        self.assertIn(corpus, checks["site-document-catalogue"])
+        self.assertTrue((ROOT / corpus).is_file())
+        self.assertIn("web/{provider}/{proper}.md",
+                      checks["site-web-editions-current"])
+
+    def test_the_corpus_clause_finds_a_published_proper_and_not_an_unwired_one(self):
+        """Run the clause the document catalogue check carries, alone.
+
+        The `make` half is the slow, whole-repository one; the clause is what
+        binds it to this publication, and it is run here against the real
+        tracked corpus for a published identity and for the unpublished
+        neighbour of one.
+        """
+        command = gate_check("publication-gates", "site-document-catalogue")
+        clause = command.split(" && ", 1)[1]
+        corpus = json.loads(
+            (ROOT / "src/web/data/structure/documents/corpus.json").read_text(
+                encoding="utf-8"))
+        published = None
+        for work in corpus.get("works", []):
+            leaf = work.get("leaf", "")
+            if "/propers/temporal/" not in leaf:
+                continue
+            for edition in work.get("editions", []):
+                web = edition.get("web") or ""
+                pdf = edition.get("pdf") or ""
+                companions = [also.get("pdf") or ""
+                              for also in edition.get("also", [])]
+                if (web.endswith(f"{leaf}.html") and pdf.endswith(f"{leaf}.pdf")
+                        and any(also.endswith(f"{leaf}-synthesis.pdf")
+                                for also in companions)):
+                    published = (web.split("/")[1], leaf)
+                    break
+            if published:
+                break
+        if published is None:
+            self.skipTest("no catalogued proper edition in this tree")
+        provider, proper = published
+        self.assertEqual(
+            run_check(clause, proper, provider, ROOT).returncode, 0)
+        self.assertNotEqual(
+            run_check(clause, UNREGISTERED, provider, ROOT).returncode, 0,
+            "an identity the corpus does not carry is not catalogued")
+
+    def test_the_installer_no_longer_attests_to_them(self):
+        """The authority is the gate's, and it is not held in two places."""
+        fragment = (FRAGMENTS / "propers" / "install-publication.md").read_text(
+            encoding="utf-8")
+        for target in self.SITE_CHECKS.values():
+            with self.subTest(target=target):
+                self.assertNotIn(
+                    f"make {target}", fragment,
+                    f"{target} is a gate check; the fragment must not ask a "
+                    f"worker to run it and report that it passed")
+        self.assertIn("make refresh-release-bindings ADOPT=1", fragment,
+                      "the one step that writes stays with the installer")
+        publish = (FRAGMENTS / "propers" / "publish-artifacts.md").read_text(
+            encoding="utf-8")
+        self.assertNotIn(
+            "cmp build/", publish,
+            "the byte comparison is `installed-pdf-matches-accepted`, not "
+            "prose a worker confirms")
+
+
+class IdentityOwnershipTests(unittest.TestCase):
+    """Test 4: the workflow keeps no identity list of its own."""
+
+    def test_the_pipeline_carries_no_hand_maintained_list_of_propers(self):
+        text = (ROOT / "workflows" / "pipelines" / "proper.json").read_text(
+            encoding="utf-8")
+        found = re.findall(
+            r"liturgy/roman-rite/1962/propers/[a-z]+/[0-9]{2}-[a-z-]+", text)
+        self.assertLessEqual(
+            len(set(found)), 1,
+            f"the pipeline names {sorted(set(found))}; a second identity is "
+            f"the beginning of a duplicate registry")
+
+    def test_the_pipeline_names_an_identity_only_as_an_example(self):
+        workflow = workflow_json()
+        description = workflow["argument_schema"]["proper"]["description"]
+        self.assertIn("e.g.", description,
+                      "the one id the pipeline states is an example of the "
+                      "argument's shape, not a member of a permitted set")
+        for stage in workflow["stages"]:
+            for check in stage.get("checks", []):
+                with self.subTest(check=check["id"]):
+                    self.assertNotIn(
+                        "propers/temporal/", check["command"],
+                        "no gate may decide identity from a literal written "
+                        "into the pipeline")
+
+    def test_identity_is_decided_by_the_registry_tool(self):
+        command = gate_check("scope-gate", "registered-identity")
+        self.assertIn("check-proper-identity", command)
+        self.assertIn("{proper}", command)
+        self.assertTrue((ROOT / "tools" / "check-proper-identity").is_file())
 
 
 # ---------------------------------------------------------------------------

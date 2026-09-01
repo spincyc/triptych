@@ -789,6 +789,34 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
+The `proper` workflow is at version 13. Version 13 made `publication-gates`
+verify the publication rather than its shape. The gate had twelve checks and
+every one of them asked whether a file was in place; nine more now ask whether
+what is in place is right. `installed-pdf-matches-accepted` compares each
+installed PDF byte for byte against the build artifact `final-acceptance`
+accepted, which `publish-artifacts` used to ask a worker to confirm.
+`release-record-valid` reads both release records and holds their
+`schema_version`, `id`, `catalog`, `status` and `authorization` against this
+publication instead of testing that the files exist.
+`catalog-read-link-resolves` binds the catalog's `Read` link to the tracked
+Markdown the site renders it from — `web/<provider>/<proper>.html` is generated
+at site-build time from `web/<provider>/<proper>.md` and is never tracked, so
+the source is what can be proved — and requires the link to sit in the same row
+as this provider's PDF link. `other-provider-cell-unchanged` requires this
+identity to own exactly one catalog row, exactly one cell in it to name this
+provider, and every other provider's cell in that row to hold its own
+well-formed state: the bare word `Planned` or links of its own.
+`publication-marker` requires the row's stable marker in the form the release
+tooling reads, the bare leaf id for the manifest's primary provider and the
+`<provider>:` prefixed form for any other. And four site checks —
+`check-release-bindings`, `check-public-alpha`, `check-document-catalogue` and
+`check-web-editions-current` — are now gate checks judged by exit code rather
+than steps `install-publication` asked a worker to run and report on. The
+fragment keeps the one thing in that step that writes,
+`make refresh-release-bindings ADOPT=1`. No stage, lane or transition changed;
+what changed is that no worker's account of a check now stands between a run
+and `ACCEPTED`.
+
 The `proper` workflow is at version 12. Version 12 put the house voice into
 the fragments a worker is handed: `author-proper` now carries the declarative
 and tradition-inhabiting rules that `guidance/editorial.md` owns,
@@ -905,20 +933,21 @@ commit. Version 6 added the
 returned, and gave `content-evaluation` a result schema of its own and the
 repair routes that let a `CHANGES_REQUIRED` evaluation re-enter `research`. The
 content and visual evaluation lanes, the gates, and every other `single` stage
-are as they were at version 5. A run seeded against version 11 or any earlier
+are as they were at version 5. A run seeded against version 12 or any earlier
 version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
 `content-preflight` is a gate like any other: advance it with
-`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its four checks is
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its five checks is
 one invocation of `tools/tpt check-content-preflight --check <name>`, judged by
 exit code, and the tool prints what it counted on a pass and names the entry,
-identifier, relation or quotation it refused on a failure. It exists so the
-five-lane evaluation behind it spends its budget on judgment rather than on
-things grep can settle; it does not replace any of that judgment. A failed
-check sends the run to `content-revision` with the check's own output as
-findings, and that loop is bounded at three consecutive failures like every
-other.
+identifier, relation, quotation or restricted reproduction it refused on a
+failure. It was four until version 11 added `restricted-not-reproduced`. It
+exists so the five-lane evaluation behind it spends its budget on judgment
+rather than on things grep can settle; it does not replace any of that
+judgment. A failed check sends the run to `content-revision` with the check's
+own output as findings, and that loop is bounded at three consecutive failures
+like every other.
 
 Artifact acceptance is a gate, not a stage any agent is asked about. Advance
 it with `tpt proper <id> advance <run-id> --run-gate <doc>` like any other
@@ -949,7 +978,22 @@ that no separate `-synthesis` web leaf exists, because the synthesis is a
 derived companion and not a second prose authority; that a per-publication
 release record exists for the canonical publication **and** for the
 synthesis; and that this provider's catalog cell links all three published
-artifacts. A failed check sends the run to `publication-revision`, which
+artifacts.
+
+Since version 13 it also verifies that each installed PDF is byte-identical to
+the accepted build artifact; that both release records name this leaf, this
+catalog, status `alpha` and a standing authorization; that the catalog's `Read`
+link sits in this provider's own row and the tracked Markdown the site renders
+it from exists; that this identity owns exactly one row, that exactly one cell
+in it names this provider, and that every other provider's cell in that row
+still holds `Planned` or links of its own; that the row carries this
+publication's stable marker; and that `check-release-bindings`,
+`check-public-alpha`, `check-document-catalogue` and
+`check-web-editions-current` all pass. Those four are whole-repository checks,
+so the terminal gate refuses a publication that is wired correctly into a site
+that is not.
+
+A failed check sends the run to `publication-revision`, which
 repairs the wiring at `install-publication` and re-gates, and that loop is
 bounded at three refusals as well.
 

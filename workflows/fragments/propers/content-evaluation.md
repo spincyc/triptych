@@ -183,9 +183,9 @@ engine rejects anything else. Advisory findings do not need the field.
 
 ## When no stage owns the repair
 
-Some real defects are in neither the research, the brief, nor the leaf. The
-profile in `guidance/liturgy/roman-1962-propers.md` states its macro-order
-twice and incompatibly; a source record can be wrong; a check in this pipeline
+Some real defects are in neither the research, the brief, nor the leaf. A rule
+in `guidance/liturgy/roman-1962-propers.md` can contradict another rule, or the
+profile's own checklist; a source record can be wrong; a check in this pipeline
 can be. No stage of this workflow may write any of those files, so no
 `repair_target` is true of them, and both of the answers left were wrong.
 Blocking would end a run whose document is correct. Advisory is where such a
@@ -196,8 +196,15 @@ Use the third severity:
 
 ```json
 "severity": "escalation",
-"escalated_to": "guidance/liturgy/roman-1962-propers.md lines 117 and 193-204"
+"escalated_to": "guidance/liturgy/roman-1962-propers.md, the rules you name"
 ```
+
+Name the file and the lines, and state the contradiction. The defect this
+severity was added for had exactly that shape: the profile stated its
+macro-order twice and incompatibly, and `profile-conformance` could only file
+it advisory. The reader-order rewrite has since settled that one — sequence is
+stated once, and every passage that needs it links there — which is what an
+escalation reaching the maintainer is for.
 
 An escalation carries **no** `repair_target` — having no owner in this run is
 what makes it one, and the engine refuses a finding that claims both. It does
