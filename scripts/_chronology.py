@@ -182,6 +182,22 @@ RELATION_ORDER = {relation: index for index, relation in enumerate(RELATIONS)}
 
 DISPOSITIONS = ("preferred", "alternate", "disputed")
 
+# ANSWERABILITY, which is neither a disposition nor a rank.
+#
+# A disposition is a position WITHIN the candidate set: `alternate` and
+# `disputed` both leave a claim answerable, which is why neither could ever be
+# the way to exclude one. Answerability says whether the claim is in that set at
+# all. The corpus holds evidence it must not answer with — a figure the citing
+# source rejects, a figure printed only for comparison, a source's refusal to
+# assign a date — and until this axis existed the only place to put such a
+# figure was beside the answers with a note asking not to be believed. Every
+# default consumer read the answer, and none read the note.
+#
+# The two states are closed vocabulary. WHICH state a claim may hold is decided
+# by its profile, from the basis of that particular value; see `Policy` and the
+# `admissibility` block of `profiles.yaml`.
+ANSWERABILITY = ("answerable", "preserved")
+
 # How a date's endpoints are to be read. Separate from `basis` on purpose:
 # "approximate" says the date is approximate, not that its source is weak.
 #
@@ -639,6 +655,13 @@ class Claim(NamedTuple):
     basis: str
     sources: tuple[str, ...]
     note: str
+    # RESOLVED AT LOAD, from what the claim states and what its profile says an
+    # unstated one means. Both are recorded rather than one derived flag,
+    # because a reviewer asking why a figure is not answered needs the class
+    # that excluded it, not the fact of exclusion.
+    answerability: str = "answerable"
+    basis_class: str = "unreviewed"
+    reporting_exception: str | None = None
 
     @property
     def derived(self) -> bool:
@@ -912,8 +935,83 @@ def _sources(raw: dict[str, Any], where: str, required: bool) -> tuple[str, ...]
     return tuple(value)
 
 
+def _answerability(
+    entry: dict[str, Any], spot: str, policy: Policy | None
+) -> tuple[str, str, str | None]:
+    """The state, the basis class and the exception one claim actually carries.
+
+    THE CONTRADICTIONS ARE REFUSED HERE, at the only moment both the claim and
+    its profile are in hand. A claim that says it is answerable on a basis its
+    profile excludes is not a claim with a bad note; it is two statements that
+    cannot both be true, and admitting it would put the whole contract back
+    where it was — in prose, beside a value the query returned anyway.
+    """
+    state = entry.get("answerability")
+    if state is None:
+        state = policy.unstated_answerability if policy else "answerable"
+    if state not in ANSWERABILITY:
+        raise ChronologyError(
+            f"{spot}: answerability {state!r} is not one of {list(ANSWERABILITY)}"
+        )
+    basis_class = entry.get("basis_class")
+    if basis_class is None:
+        basis_class = policy.unstated_basis if policy else "unreviewed"
+    elif policy and basis_class not in policy.classes:
+        raise ChronologyError(
+            f"{spot}: basis_class {basis_class!r} is not a basis class "
+            f"{policy.profile} declares; it declares {sorted(policy.classes)}"
+        )
+    lift = entry.get("reporting_exception")
+    if lift is not None and not isinstance(lift, str):
+        raise ChronologyError(f"{spot}: reporting_exception must name one exception")
+    if lift and policy:
+        declared = policy.exceptions.get(lift)
+        if declared is None:
+            raise ChronologyError(
+                f"{spot}: reporting_exception {lift!r} is not declared by "
+                f"{policy.profile}; the exceptions it declares are "
+                f"{sorted(policy.exceptions)}"
+            )
+        if declared.get("basis") != basis_class:
+            # THE EXCEPTION DOES NOT GENERALISE, and this is where that is true
+            # rather than merely written down. Ussher's exception lifts
+            # `reported-excluded` and nothing else; a claim reaching for it from
+            # `modern-critical` is refused by name.
+            raise ChronologyError(
+                f"{spot}: reporting_exception {lift!r} lifts basis class "
+                f"{declared.get('basis')!r}, and this claim's basis class is "
+                f"{basis_class!r}; a named exception admits one excluded basis "
+                f"and does not extend by analogy to another"
+            )
+        if state != "answerable":
+            raise ChronologyError(
+                f"{spot}: reporting_exception {lift!r} is named on a "
+                f"{state!r} claim; an exception exists to make a value "
+                f"answerable and says nothing about preserved evidence"
+            )
+    if policy and state == "answerable" and basis_class not in policy.admissible:
+        if not (lift and policy.exceptions.get(lift, {}).get("basis") == basis_class):
+            raise ChronologyError(
+                f"{spot}: basis_class {basis_class!r} is not admissible under "
+                f"{policy.profile}, so this claim may not be 'answerable'. A "
+                f"chronology value is a candidate answer only when both the "
+                f"source AND the basis for that value are admissible; preserve "
+                f"it with answerability: preserved instead"
+            )
+    if state == "preserved" and entry.get("disposition", "preferred") == "preferred":
+        raise ChronologyError(
+            f"{spot}: a 'preserved' claim may not be 'preferred'; preferred "
+            f"means the claim this profile displays first, and preserved "
+            f"evidence is never displayed as an answer"
+        )
+    return state, str(basis_class), (lift or None)
+
+
 def _claims(
-    raw: dict[str, Any], where: str, profiles: set[str], required: bool = True
+    raw: dict[str, Any],
+    where: str,
+    policies: dict[str, Policy],
+    required: bool = True,
 ) -> tuple[Claim, ...]:
     listed = raw.get("dates")
     if listed is None and not required:
@@ -941,11 +1039,14 @@ def _claims(
             raise ChronologyError(f"{spot}: expected a mapping")
         _keys(
             entry,
-            {"profile", "disposition", "date", "basis", "sources", "note"},
+            {
+                "profile", "disposition", "date", "basis", "sources", "note",
+                "answerability", "basis_class", "reporting_exception",
+            },
             spot,
         )
         profile = entry.get("profile")
-        if profile not in profiles:
+        if profile not in policies:
             raise ChronologyError(
                 f"{spot}: profile {profile!r} is not declared in profiles.yaml"
             )
@@ -956,6 +1057,7 @@ def _claims(
                 f"{list(DISPOSITIONS)}"
             )
         date = parse_date(entry.get("date"), spot)
+        state, basis_class, lift = _answerability(entry, spot, policies.get(profile))
         claims.append(
             Claim(
                 profile=profile,
@@ -964,12 +1066,25 @@ def _claims(
                 basis=_text(entry, "basis", spot, required=True),
                 sources=_sources(entry, spot, required=not date.derived),
                 note=_text(entry, "note", spot),
+                answerability=state,
+                basis_class=basis_class,
+                reporting_exception=lift,
             )
         )
     # The conflict policy, enforced rather than described: one preferred claim
     # per profile, and none at all while any claim on the subject is disputed.
-    for profile in profiles:
-        mine = [claim for claim in claims if claim.profile == profile]
+    #
+    # OVER THE CANDIDATE SET ONLY. `preferred`, `alternate` and `disputed` say
+    # which admissible claim this profile displays first; preserved evidence is
+    # displayed as no answer at all, so counting it here would make withdrawing
+    # a figure from the answers into a conflict-policy error, and would leave a
+    # subject whose every answerable claim was withdrawn asserting that one of
+    # its preserved figures is preferred.
+    for profile in policies:
+        mine = [
+            claim for claim in claims
+            if claim.profile == profile and claim.answerability == "answerable"
+        ]
         preferred = [claim for claim in mine if claim.disposition == "preferred"]
         disputed = [claim for claim in mine if claim.disposition == "disputed"]
         if len(preferred) > 1:
@@ -1080,6 +1195,50 @@ def _scope(raw: object, where: str, books: dict[str, int]) -> tuple[Span, ...]:
     return tuple(spans)
 
 
+class Policy(NamedTuple):
+    """One profile's admissibility contract, normalised out of its YAML.
+
+    THE GOVERNING RULE, in the smallest machine form that can enforce it: a
+    chronology value is a candidate answer under a profile only when BOTH the
+    source AND the basis for that particular value are admissible under it.
+
+    The source half is `authority`/`non_authorities` and is checked when a claim
+    is authored — provenance names a record this repository holds, and `audit()`
+    says so when it does not. The basis half is this: every claim carries the
+    class of the method its value came from, and the profile says which classes
+    it answers with. Neither half can be satisfied by the other, which is the
+    whole point. A Catholic author's own voice satisfies the first and settles
+    nothing about the second.
+
+    `admissible` is deliberately a set of class names and NOT a rank threshold.
+    Rank orders admissible evidence; there is no rank at which an excluded
+    method becomes admissible, so admissibility cannot be expressed as a
+    position in the hierarchy and must not be stored as one.
+    """
+
+    profile: str
+    admissible: frozenset[str]      # basis classes this profile answers with
+    classes: frozenset[str]         # every class it declares; others are typos
+    unstated_basis: str             # the class a claim that names none carries
+    unstated_answerability: str     # the state a claim that names none carries
+    exceptions: dict[str, dict[str, Any]]  # narrow, named reporting lifts
+
+    def answers_with(self, claim: "Claim") -> bool:
+        """Is this claim in the default candidate set? The one place it is asked.
+
+        Admissibility of the BASIS is decided here and nowhere else, and it is
+        decided before rank: nothing in this function consults the authority
+        hierarchy, the disposition, or the order assertions are returned in.
+        Rank sorts what survives this; it never rescues what does not.
+        """
+        if claim.answerability != "answerable":
+            return False
+        if claim.basis_class in self.admissible:
+            return True
+        lifted = self.exceptions.get(claim.reporting_exception or "")
+        return bool(lifted and lifted.get("basis") == claim.basis_class)
+
+
 class Corpus(NamedTuple):
     """Everything authored, validated, and keyed the way a query asks for it."""
 
@@ -1089,6 +1248,18 @@ class Corpus(NamedTuple):
     bindings: tuple[Binding, ...]
     gaps: tuple[Gap, ...]
     books: dict[str, int]
+    policies: dict[str, Policy]
+
+    def answers_with(self, claim: Claim) -> bool:
+        """Whether the profile the claim was authored under answers with it.
+
+        A claim whose profile declares no policy is answerable, and that is not
+        a loophole: `_load_profiles` refuses a profile with no `admissibility`
+        block, so a corpus that reaches here without one has none because it was
+        built by hand in a test.
+        """
+        policy = self.policies.get(claim.profile)
+        return policy.answers_with(claim) if policy else True
 
 
 def _canon_books() -> dict[str, int]:
@@ -1108,29 +1279,151 @@ def _canon_books() -> dict[str, int]:
     return {book["token"]: int(book["chapters"]) for book in _canon.books()}
 
 
-def _load_profiles(root: Path) -> dict[str, dict[str, Any]]:
+def _policy(entry: dict[str, Any], where: str) -> Policy:
+    """Read one profile's admissibility contract, refusing anything ambiguous.
+
+    Every refusal here is a state that would otherwise have to be caught by a
+    reader noticing prose. An unrecognised basis class, a profile whose unstated
+    default names nothing, a reporting exception that lifts a class already
+    admissible: each of them means the policy says something other than what it
+    looks like it says, and a policy nobody can read is not a control.
+    """
+    raw = entry.get("admissibility")
+    if not isinstance(raw, dict):
+        raise ChronologyError(
+            f"{where}: admissibility must be a mapping stating this profile's "
+            f"basis classes; a profile that does not say which METHODS it "
+            f"answers with cannot tell a traditional figure from a modern one "
+            f"reprinted in a traditional book"
+        )
+    for required in ("rule", "own_voice", "before_rank", "preservation", "bases"):
+        if not raw.get(required):
+            raise ChronologyError(f"{where}: admissibility states no {required}")
+    listed = raw.get("bases")
+    if not isinstance(listed, list) or not listed:
+        raise ChronologyError(f"{where}: admissibility needs a non-empty 'bases' list")
+    classes: dict[str, bool] = {}
+    for index, base in enumerate(listed, start=1):
+        spot = f"{where} basis {index}"
+        if not isinstance(base, dict):
+            raise ChronologyError(f"{spot}: a basis class must be a mapping")
+        _keys(base, {"id", "admissible", "what"}, spot)
+        identifier = check_id(base.get("id"), "basis class", spot)
+        if identifier in classes:
+            raise ChronologyError(f"{spot}: duplicate basis class {identifier!r}")
+        admissible = base.get("admissible")
+        if not isinstance(admissible, bool):
+            raise ChronologyError(
+                f"{spot}: basis class {identifier!r} must say admissible: true "
+                f"or false; a class that does not say is a class a reader will "
+                f"assume about"
+            )
+        if not _text(base, "what", spot, required=True):
+            raise ChronologyError(f"{spot}: basis class {identifier!r} states no 'what'")
+        classes[identifier] = admissible
+    unstated = raw.get("unstated")
+    if unstated not in classes:
+        raise ChronologyError(
+            f"{where}: admissibility 'unstated' is {unstated!r}, which is not "
+            f"one of this profile's basis classes {sorted(classes)}; a claim "
+            f"that names no basis class has to land somewhere stated"
+        )
+    exceptions: dict[str, dict[str, Any]] = {}
+    for index, lift in enumerate(raw.get("reporting_exceptions") or [], start=1):
+        spot = f"{where} reporting exception {index}"
+        if not isinstance(lift, dict):
+            raise ChronologyError(f"{spot}: a reporting exception must be a mapping")
+        _keys(
+            lift,
+            {"id", "named", "basis", "requires", "display", "does_not_generalise"},
+            spot,
+        )
+        identifier = check_id(lift.get("id"), "reporting exception", spot)
+        if identifier in exceptions:
+            raise ChronologyError(f"{spot}: duplicate reporting exception {identifier!r}")
+        for required in ("named", "requires", "display", "does_not_generalise"):
+            if not _text(lift, required, spot):
+                raise ChronologyError(
+                    f"{spot}: reporting exception {identifier!r} states no "
+                    f"{required}; an exception whose scope is not written down "
+                    f"is the general licence it was written not to be"
+                )
+        basis = lift.get("basis")
+        if basis not in classes:
+            raise ChronologyError(
+                f"{spot}: reporting exception {identifier!r} lifts basis class "
+                f"{basis!r}, which this profile does not declare"
+            )
+        if classes[basis]:
+            # NARROWNESS, ENFORCED. An exception over an admissible class lifts
+            # nothing and reads as though it lifted everything, which is exactly
+            # how a named exception becomes a general licence.
+            raise ChronologyError(
+                f"{spot}: reporting exception {identifier!r} lifts basis class "
+                f"{basis!r}, which is already admissible; an exception exists to "
+                f"admit one excluded basis and nothing else"
+            )
+        exceptions[identifier] = dict(lift)
+    states = entry.get("answerability")
+    if not isinstance(states, dict):
+        raise ChronologyError(
+            f"{where}: answerability must be a mapping saying what this profile "
+            f"answers with and what it merely preserves"
+        )
+    for required in ("states", "query", "refusal", "dispositions"):
+        if not states.get(required):
+            raise ChronologyError(f"{where}: answerability states no {required}")
+    declared = states.get("states")
+    if not isinstance(declared, dict) or set(declared) != set(ANSWERABILITY):
+        raise ChronologyError(
+            f"{where}: answerability must define exactly {list(ANSWERABILITY)}"
+        )
+    default_state = states.get("unstated")
+    if default_state not in ANSWERABILITY:
+        raise ChronologyError(
+            f"{where}: answerability 'unstated' is {default_state!r}, not one of "
+            f"{list(ANSWERABILITY)}"
+        )
+    return Policy(
+        profile=str(entry.get("id")),
+        admissible=frozenset(name for name, ok in classes.items() if ok),
+        classes=frozenset(classes),
+        unstated_basis=str(unstated),
+        unstated_answerability=str(default_state),
+        exceptions=exceptions,
+    )
+
+
+def _load_profiles(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, Policy]]:
     document = _document("profiles", root)
     listed = document.get("profiles")
     if not isinstance(listed, list) or not listed:
         raise ChronologyError(f"{root}/profiles.yaml: needs a non-empty 'profiles' list")
     profiles: dict[str, dict[str, Any]] = {}
+    policies: dict[str, Policy] = {}
     for entry in listed:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/profiles.yaml: a profile must be a mapping")
         identifier = check_id(entry.get("id"), "profile", f"{root}/profiles.yaml")
         if identifier in profiles:
             raise ChronologyError(f"{root}/profiles.yaml: duplicate profile {identifier}")
-        for required in ("title", "intent", "authority", "conflict", "non_goals"):
+        for required in (
+            "title", "intent", "authority", "admissibility", "answerability",
+            "conflict", "non_goals",
+        ):
             if not entry.get(required):
                 raise ChronologyError(
                     f"{root}/profiles.yaml: profile {identifier} states no {required}; "
                     f"a profile that does not say what wins is not a policy"
                 )
         profiles[identifier] = entry
-    return profiles
+        policies[identifier] = _policy(
+            entry, f"{root}/profiles.yaml profile {identifier!r}"
+        )
+    return profiles, policies
 
 
-def _load_events(root: Path, profiles: set[str]) -> dict[str, Event]:
+def _load_events(root: Path, policies: dict[str, Policy]) -> dict[str, Event]:
     document = _document("events", root)
     events: dict[str, Event] = {}
     for entry in document.get("events") or []:
@@ -1145,7 +1438,7 @@ def _load_events(root: Path, profiles: set[str]) -> dict[str, Event]:
             id=identifier,
             title=_text(entry, "title", where, required=True),
             parent=check_id(entry["parent"], "event", where) if entry.get("parent") else None,
-            claims=_claims(entry, where, profiles, required=False),
+            claims=_claims(entry, where, policies, required=False),
             note=_text(entry, "note", where),
         )
     for event in events.values():
@@ -1168,7 +1461,9 @@ def _load_events(root: Path, profiles: set[str]) -> dict[str, Event]:
     return events
 
 
-def _load_units(root: Path, profiles: set[str], books: dict[str, int]) -> dict[str, Unit]:
+def _load_units(
+    root: Path, policies: dict[str, Policy], books: dict[str, int]
+) -> dict[str, Unit]:
     document = _document("composition", root)
     units: dict[str, Unit] = {}
     for entry in document.get("units") or []:
@@ -1183,7 +1478,7 @@ def _load_units(root: Path, profiles: set[str], books: dict[str, int]) -> dict[s
             id=identifier,
             title=_text(entry, "title", where, required=True),
             scope=_scope(entry.get("scope"), where, books),
-            claims=_claims(entry, where, profiles),
+            claims=_claims(entry, where, policies),
             note=_text(entry, "note", where),
         )
     _refuse_ambiguous_inheritance(units, root)
@@ -1313,14 +1608,14 @@ def load(root: Path | None = None) -> Corpus:
     """Read and validate the whole corpus, or refuse with the reason."""
     where = Path(root) if root is not None else CORPUS_ROOT
     books = _canon_books()
-    profiles = _load_profiles(where)
-    events = _load_events(where, set(profiles))
-    units = _load_units(where, set(profiles), books)
+    profiles, policies = _load_profiles(where)
+    events = _load_events(where, policies)
+    units = _load_units(where, policies, books)
     bindings = _load_bindings(where, events, books)
     gaps = _load_gaps(where, books)
     _refuse_dangling_anchors(events, units, where)
     _refuse_duplicated_native_scopes(units, bindings, gaps, where)
-    return Corpus(profiles, events, units, bindings, gaps, books)
+    return Corpus(profiles, events, units, bindings, gaps, books, policies)
 
 
 def _refuse_duplicated_native_scopes(
@@ -1704,8 +1999,43 @@ def _status_of(assertions: Iterable[Assertion]) -> str:
     return "composition-only"
 
 
+def _candidates(
+    corpus: Corpus,
+    claims: Iterable[Claim],
+    profile: str | None,
+    evidence: bool,
+) -> Iterable[Claim]:
+    """The claims a query may return, gated BEFORE anything is ordered.
+
+    THE STRUCTURAL EXCLUSION. `guidance/scripture-chronology.md` §4.5: a
+    chronology value is a candidate answer only where both the source and the
+    basis of that value are admissible under the profile, and the profile
+    decides it — here, in code, at the one point where a stored claim becomes a
+    returned assertion. Every gathering loop in this module goes through this
+    function, so there is no second path by which a preserved figure reaches a
+    default consumer.
+
+    It runs BEFORE RANK. Nothing above has consulted the authority hierarchy or
+    the disposition yet; `sort_key` orders what comes out of here, and ordering
+    is the only thing rank does. An inadmissible basis therefore cannot be
+    rescued by the rank of the work that printed it, at any rank.
+
+    `evidence` opens the provenance/audit surface, which is a DIFFERENT
+    QUESTION from what the corpus answers with: what did this source print, and
+    what did this corpus decide about it. A caller has to ask for it, which is
+    the difference between preserved evidence and a note asking not to be
+    believed.
+    """
+    for claim in claims:
+        if profile and claim.profile != profile:
+            continue
+        if not evidence and not corpus.answers_with(claim):
+            continue
+        yield claim
+
+
 def _native_assertions(
-    corpus: Corpus, locus: Locus, profile: str | None
+    corpus: Corpus, locus: Locus, profile: str | None, evidence: bool = False
 ) -> tuple[Assertion, ...]:
     """What was authored in the asked locus's OWN system, at its own locus.
 
@@ -1724,9 +2054,7 @@ def _native_assertions(
         )
         if span is None:
             continue
-        for claim in unit.claims:
-            if profile and claim.profile != profile:
-                continue
+        for claim in _candidates(corpus, unit.claims, profile, evidence):
             found.append(
                 Assertion(
                     relation="composition",
@@ -1747,9 +2075,7 @@ def _native_assertions(
         if span is None:
             continue
         event = corpus.events[binding.event]
-        for claim in event.claims:
-            if profile and claim.profile != profile:
-                continue
+        for claim in _candidates(corpus, event.claims, profile, evidence):
             found.append(
                 Assertion(
                     relation=binding.relation,
@@ -1769,13 +2095,21 @@ def chronology(
     *,
     profile: str | None = None,
     root: Path | None = None,
+    evidence: bool = False,
 ) -> Answer | Unresolved:
-    """Everything the corpus says about one verse, in a stable order.
+    """Everything the corpus ANSWERS WITH about one verse, in a stable order.
 
-    Returns EVERY applicable assertion. It never picks one when alternatives
-    exist: `guidance/the-shape.md` §5 is that a tool which always answers lies
-    when it does not know, and choosing silently between two traditional dates
-    is the same lie with better manners.
+    Returns EVERY applicable candidate assertion. It never picks one when
+    alternatives exist: `guidance/the-shape.md` §5 is that a tool which always
+    answers lies when it does not know, and choosing silently between two
+    traditional dates is the same lie with better manners.
+
+    "Every applicable" is not "everything stored". A claim reaches this set only
+    where the profile it was authored under answers with it -- both the source
+    and the basis of that particular value admissible under the profile -- and
+    `_candidates` is the single gate. `evidence=True` opens the provenance and
+    audit surface and returns preserved evidence beside the answers, which is
+    the only way to see it and is never what a default consumer gets.
     """
     corpus = load(root)
     if isinstance(locus, str):
@@ -1807,7 +2141,7 @@ def chronology(
         # can or cannot carry, so it is gathered before the mapping is even
         # attempted. The old code asked the concordance first and returned its
         # refusal, which threw away chronology that was sitting right there.
-        native = _native_assertions(corpus, locus, profile)
+        native = _native_assertions(corpus, locus, profile, evidence)
 
         converted = to_canonical(locus.system, locus.token, locus.chapter, locus.verse)
         if isinstance(converted, Unresolved):
@@ -1874,6 +2208,15 @@ def chronology(
 
     # Composition, by inheritance: the narrowest unit covering the verse wins,
     # and equal widths were refused at load time rather than broken here.
+    #
+    # THE SCOPE RULE IS NOT THE ANSWERABILITY RULE, and it is applied first on
+    # purpose. A narrower unit exists because that text has its own composition
+    # history, so if its claims are all preserved the verse gets no composition
+    # date rather than the containing book's: falling back would assert the
+    # book's date over a text the corpus has said is not dated by it, which is a
+    # date resolving successfully and wrongly. An author withdrawing a unit's
+    # last answerable claim is saying the unit's own chronology is unsettled,
+    # and `research-pending` is the honest answer to that.
     best: Unit | None = None
     best_span: Span | None = None
     for unit in units:
@@ -1892,9 +2235,7 @@ def chronology(
         if best is None or unit.width() > best.width():
             best, best_span = unit, span
     if best is not None and best_span is not None:
-        for claim in best.claims:
-            if profile and claim.profile != profile:
-                continue
+        for claim in _candidates(corpus, best.claims, profile, evidence):
             assertions.append(
                 Assertion(
                     relation="composition",
@@ -1918,9 +2259,7 @@ def chronology(
         if span is None:
             continue
         event = corpus.events[binding.event]
-        for claim in event.claims:
-            if profile and claim.profile != profile:
-                continue
+        for claim in _candidates(corpus, event.claims, profile, evidence):
             assertions.append(
                 Assertion(
                     relation=binding.relation,
@@ -2294,16 +2633,61 @@ def _provenance_verses(
 
 
 def _alternate_verses(table: list[Run], root: Path | None, profile: str | None) -> int:
-    """Verses whose answer preserves more than one traditional claim."""
+    """Verses whose ANSWER preserves more than one traditional claim.
+
+    Counted over the candidate set, not over what the subject stores. A subject
+    carrying one answerable figure beside a preserved one is not a subject the
+    profile holds two traditional claims about; it is one answer and one piece
+    of evidence, and counting it here would report the disagreements this corpus
+    keeps as larger than they are by exactly the number of figures it withdrew.
+    """
     corpus = load(root)
     contested = {
-        subject
+        holder.id
         for holder in (*corpus.events.values(), *corpus.units.values())
-        for subject in ((holder.id,) if len(holder.claims) > 1 else ())
+        if len([
+            claim for claim in holder.claims
+            if corpus.answers_with(claim)
+            and (not profile or claim.profile == profile)
+        ]) > 1
     }
     return sum(
         run.verses for run in table if contested.intersection(run.subjects)
     )
+
+
+def answerability(root: Path | None = None) -> dict[str, Any]:
+    """What the corpus answers with, what it preserves, and on what basis.
+
+    Reported rather than asserted. A profile change moves claims between these
+    counts WITHOUT any claim file changing, which is the whole reason profile
+    policy is production semantic state: the numbers here are the observable
+    surface of a policy edit, and the review diff enumerates which claims moved.
+
+    `by_basis` is also the standing debt. Every claim still standing on the
+    profile's unstated basis class is one nobody has yet classified under the
+    contract, and a corpus that reported only "answerable: N" would be reporting
+    that as a finding.
+    """
+    corpus = load(root)
+    counts = {state: 0 for state in ANSWERABILITY}
+    by_basis: dict[str, int] = {}
+    answered = 0
+    for holder in (*corpus.events.values(), *corpus.units.values()):
+        for claim in holder.claims:
+            counts[claim.answerability] = counts.get(claim.answerability, 0) + 1
+            by_basis[claim.basis_class] = by_basis.get(claim.basis_class, 0) + 1
+            if corpus.answers_with(claim):
+                answered += 1
+    return {
+        "claims": sum(counts.values()),
+        "candidate_claims": answered,
+        "by_state": dict(sorted(counts.items())),
+        "by_basis": dict(sorted(by_basis.items())),
+        "unstated_basis": {
+            name: policy.unstated_basis for name, policy in sorted(corpus.policies.items())
+        },
+    }
 
 
 # --- Audit ------------------------------------------------------------------

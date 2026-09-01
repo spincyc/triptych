@@ -87,6 +87,210 @@ profiles:
         rule: >-
           Never an authority at any rank. A date nobody read is research-pending,
           which is a status this corpus can hold.
+    admissibility:
+      # ADMISSIBILITY IS NOT RANK, AND IT IS DECIDED FIRST.
+      #
+      # `authority` above orders evidence. It says which testimony wins when two
+      # admissible sources disagree. It cannot say whether a particular printed
+      # number belongs in this profile's answers at all, and reading it as
+      # though it could is the defect this block exists to close: a work sits at
+      # a rank, so everything it prints was treated as ranked testimony, and a
+      # modern-critical figure reprinted in a Catholic reference work arrived as
+      # traditional chronology because of the shelf it was standing on.
+      #
+      # Two questions, asked in this order:
+      #
+      #     1. is the SOURCE admissible?              `authority` / `non_authorities`
+      #     2. is the BASIS OF THIS VALUE admissible? here
+      #
+      # and only then, over what survives both, 3. which rank wins?
+      rule: >-
+        A chronology value may be returned as a candidate answer under this
+        profile only when BOTH the source AND the basis — the method by which
+        that particular value was arrived at — are admissible under this
+        profile. Either one failing is enough to make the value non-answerable.
+      own_voice: >-
+        A Catholic author's own grammatical voice is not sufficient. Where the
+        value is explicitly derived from, harmonised to, or adopted from a
+        chronology methodology this profile excludes, the value is not
+        answerable — whatever the rank of the work that prints it, whatever
+        voice it is printed in, and however Catholic the publication context.
+        Publication context is not a basis.
+      before_rank: >-
+        Admissibility is determined BEFORE source rank. Rank orders admissible
+        evidence; rank never makes an inadmissible methodology admissible, and
+        there is no rank at which an excluded basis becomes answerable. The rule
+        reads identically at rank 1 and at rank 6: there is no rank-6 exception,
+        and no rank-6-only rule.
+      preservation: >-
+        A figure may be worth preserving as documentary evidence without being
+        an answerable chronology assertion. Refusing a basis is not an
+        instruction to delete what a source printed.
+      # The basis classes this profile knows, and whether each is admissible.
+      # A claim names one in `basis_class`. An unlisted name is a load error:
+      # a vocabulary that admits what it does not recognise cannot tell a typo
+      # from a policy.
+      unstated: unreviewed
+      bases:
+        - id: scripture
+          admissible: true
+          what: >-
+            The sacred text's own chronological or relational statement, read
+            at a locus in a tracked edition. Rank 1, and the basis nothing
+            lower-ranked may suppress.
+        - id: liturgical
+          admissible: true
+          what: >-
+            A chronological claim the Roman books themselves assert. Not the
+            day a feast is kept, which asserts nothing chronological.
+        - id: patristic
+          admissible: true
+          what: >-
+            A Father or early ecclesiastical writer's own chronological
+            testimony.
+        - id: traditional-catholic
+          admissible: true
+          what: >-
+            A ranked traditional Catholic authority stating or computing the
+            value on traditional grounds — Scripture, the Fathers, the received
+            apparatus, or its own traditional reckoning.
+        - id: reported-traditional
+          admissible: true
+          what: >-
+            A ranked work reporting another admissible traditional chronology.
+            The reporting is the reporting work's testimony and is recorded as
+            such; the basis is still traditional, so the value stays answerable.
+        - id: derived
+          admissible: true
+          what: >-
+            This project's derivation from admissible ranked claims by a named
+            rule, with every input identified. Rank 7. A derivation whose inputs
+            are not answerable is not answerable either.
+        - id: unreviewed
+          admissible: true
+          what: >-
+            The basis is stated in the claim's own `basis` prose and has not yet
+            been classified under this contract. This is the state every claim
+            authored before the contract carries, and it is admissible because
+            the standing rule those claims were authored under was that only
+            ranked traditional sources may be cited — NOT because anything has
+            found the basis admissible. It is a debt, it is counted by
+            `tools/tpt scripture-chronology validate --json`, and the correction
+            lanes exist to empty it.
+        - id: modern-critical
+          admissible: false
+          what: >-
+            Modern critical, archaeological, Egyptological or Assyriological
+            chronology. Excluded by `non_authorities` whoever prints it. A
+            Catholic work printing it is a Catholic work reporting a chronology
+            this profile does not hold.
+        - id: profane-harmonisation
+          admissible: false
+          what: >-
+            A value arrived at by harmonising Scripture with secular or profane
+            history — the source's own account of its method, not an inference
+            about it. A source that says its table works "in conjunction with
+            the data of profane history" has stated this basis for the values
+            that table carries.
+        - id: reported-excluded
+          admissible: false
+          what: >-
+            A ranked work reporting or adopting a chronology this profile
+            excludes. Preservation is permitted; a default answer is not. The
+            only lift is a `reporting_exception` declared below, by name.
+        - id: rejected-by-source
+          admissible: false
+          what: >-
+            A figure the citing source itself rejects. Recording what a source
+            refused is provenance; returning it as that source's chronology
+            would invert the source.
+        - id: refusal-to-date
+          admissible: false
+          what: >-
+            A source's statement that it will not assign a date. This is not a
+            date assertion at all: it is negative evidence, methodological
+            testimony, and a reason a locus may be undated. It may never be
+            returned as a date candidate, and a claim carrying it must be
+            `preserved`.
+        - id: comparison-only
+          admissible: false
+          what: >-
+            A figure printed for comparison with the profile's own chronology
+            rather than asserted as it.
+        - id: superseded
+          admissible: false
+          what: >-
+            A figure this corpus once carried and has withdrawn, kept so an
+            audit can trace what changed and why.
+        - id: unresolved
+          admissible: false
+          what: >-
+            The basis is mixed or unclear and the source has not settled it.
+            Not answerable while it stays unresolved: an unknown basis is not a
+            traditional one, and guessing which it is would be the fluent wrong
+            answer this apparatus exists to catch.
+      # NARROW, NAMED, AND NOT A PRECEDENT. Each exception lifts exactly one
+      # basis class for exactly one named non-authority, and lifts it nowhere
+      # else. It is not a general licence for chronology printed in a Catholic
+      # work, and it does not extend by analogy to any other name.
+      reporting_exceptions:
+        - id: ussher-reported-by-a-ranked-catholic-source
+          named: Ussher
+          basis: reported-excluded
+          requires: >-
+            The claim's source of record is the ranked Catholic work that
+            printed the figure — Haydock prints Usher's Anno Mundi figures — and
+            the claim records the printing as that work's testimony. Ussher is
+            never the source of record and no assertion may name him alone.
+          display: >-
+            Answerable, at the rank of the reporting work and never higher,
+            carrying the reporting work's provenance and its own note saying
+            whose computation is being reported.
+          does_not_generalise: >-
+            This exception names Ussher and no one else. It does not extend to
+            Sayce, Driver, Wellhausen, Sloet, or any other excluded authority,
+            and it does not make `modern-critical`, `profane-harmonisation` or
+            any other inadmissible basis answerable. A claim naming this
+            exception whose basis class is anything but `reported-excluded` is
+            a load error, which is what stops the analogy being drawn.
+    answerability:
+      # ANSWERABLE CHRONOLOGY IS NOT THE SAME THING AS PRESERVED EVIDENCE, and
+      # the corpus holds both. A claim states which it is; the query layer reads
+      # this profile to decide, and a claim whose basis this profile excludes
+      # cannot be authored as answerable at all.
+      unstated: answerable
+      states:
+        answerable: >-
+          May be returned by a normal chronology query as candidate chronology.
+          Explicit Scriptural chronology, admissible traditional Catholic
+          chronology, and admissible traditional alternatives and disagreements.
+        preserved: >-
+          Retained for provenance, history, comparison, methodology, rejection
+          or audit traceability, and excluded from the default candidate set.
+          Modern-critical chronology printed by a Catholic source, secular
+          harmonisation this profile excludes, chronology the source itself
+          rejects, a source's refusal to assign a date, comparison-only figures,
+          and superseded figures kept so the record can be traced.
+      query: >-
+        The default candidate set is every answerable claim and nothing else.
+        Preserved evidence is reachable only through the provenance, detail and
+        audit surfaces, which a caller opens deliberately. The exclusion is
+        STRUCTURAL: it is decided here, by this profile, in the query layer,
+        before anything is ordered or preferred. A note that says "do not
+        display" is not a control, and a claim whose only protection was such a
+        note was returned by every default consumer that ever asked.
+      refusal: >-
+        A source statement refusing to assign a date is not a chronology date
+        assertion. It may support a methodological note, source-specific
+        negative evidence, an undated state where this corpus permits one, and
+        provenance. It may not be returned as a date candidate.
+      dispositions: >-
+        Answerability is a separate axis from `disposition`. `alternate` and
+        `disputed` are positions WITHIN the candidate set and leave a claim
+        answerable; they are not a way to half-exclude one. A preserved claim
+        may not be `preferred`, and preserved claims take no part in the
+        one-preferred-per-subject arithmetic, because that arithmetic is about
+        what this profile answers with.
     conflict:
       # What happens when ranked sources actually disagree.
       rule: >-

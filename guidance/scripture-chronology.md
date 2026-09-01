@@ -280,7 +280,8 @@ Three, named because they are the ones that would otherwise arrive silently.
 - **Ussher.** May be cited as comparison, and may be *reported* where a ranked
   Catholic source itself prints his figures — Haydock does, and that printing
   is Haydock's testimony, recorded as such. Ussher is never the source of
-  record, and **no assertion may name him alone**.
+  record, and **no assertion may name him alone**. The reporting is a single
+  named exception with a written scope, and it does not generalise: §4.5.1.
 - **Modern critical chronology.** Not consulted, not used to adjust a
   traditional date, not treated as a correction. See §4.1.
 - **Any model's unsourced recollection.** Never an authority at any rank. A
@@ -306,6 +307,153 @@ later reads as a decision nobody made.
 
 Forbidden: numeric confidence, model scores, and harmonising two claims into a
 third nobody asserted.
+
+### 4.5 Admissibility, which is not rank, and is decided before it
+
+The hierarchy above answers **which admissible testimony wins**. It cannot
+answer **whether a particular printed number belongs in this profile's answers
+at all**, and reading it as though it could is how a modern-critical figure
+reprinted in a Catholic reference work arrived as traditional chronology: the
+work sits at a rank, so everything it printed was treated as ranked testimony.
+
+The governing rule, held in machine form in `profiles.yaml` under
+`admissibility` and enforced by `scripts/_chronology.py`:
+
+> A chronology value may be returned as a candidate answer under
+> `catholic-traditional-v1` only when **both the source and the basis — the
+> method by which that particular value was arrived at — are admissible under
+> the profile**.
+
+Three consequences, each of which the corpus has actually been got wrong by:
+
+- **Method/basis matters.** Every claim carries a `basis_class` naming the kind
+  of method its value came from, and the profile says which classes it answers
+  with. `scripture`, `liturgical`, `patristic`, `traditional-catholic`,
+  `reported-traditional` and `derived` are admissible. `modern-critical`,
+  `profane-harmonisation`, `reported-excluded`, `rejected-by-source`,
+  `refusal-to-date`, `comparison-only`, `superseded` and `unresolved` are not.
+  A class the profile does not declare is a load error, not something to
+  interpret.
+- **A Catholic author's own voice is not a basis.** Where the value is
+  explicitly derived from, harmonised to, or adopted from a chronology this
+  profile excludes, it is not answerable — whatever the rank of the work that
+  prints it, and whatever voice it is printed in. **Catholic publication
+  context does not make a modern or secular chronology traditional.**
+- **Admissibility is determined before rank.** Rank orders admissible evidence;
+  rank never makes an inadmissible methodology admissible. There is no rank at
+  which an excluded basis becomes answerable, no rank-6 exception, and no
+  rank-6-only rule: the rule reads identically at rank 1 and at rank 6. In code
+  this is literal — `_candidates` gates every claim before `sort_key` orders
+  anything, and ordering is the whole of what rank does.
+
+`unreviewed` is the transitional class and is admissible. It is what every
+claim authored before this contract carries, and it is admissible because the
+rule those claims were authored under was that only ranked traditional sources
+may be cited — **not** because anything has found their basis admissible. It is
+a debt, `tools/tpt scripture-chronology validate --json` counts it under
+`answerability.by_basis`, and the correction lanes exist to empty it.
+
+#### 4.5.1 The Ussher reporting exception is narrow, and named
+
+Haydock prints Usher's Anno Mundi figures. That printing is Haydock's
+testimony, and it is recorded as such — so the basis is `reported-excluded`,
+which is inadmissible, and one **named** exception lifts it:
+`ussher-reported-by-a-ranked-catholic-source`, declared in `profiles.yaml`.
+
+Its scope is written down there and is exactly this: the source of record is
+the ranked Catholic work that printed the figure, the claim records the
+printing as that work's testimony, Ussher is never the source of record, no
+assertion may name him alone, and the claim is answerable **at the reporting
+work's rank and never higher**.
+
+**This is not a general licence for any chronology printed in a Catholic
+work.** It names Ussher and no one else, and does not extend by analogy to
+Sayce, Driver, Wellhausen, Sloet, or anyone else. The loader enforces the
+narrowness rather than asking a reader to observe it: a claim naming this
+exception whose basis class is anything but `reported-excluded` is a load
+error, and an exception declared over a class that is *already* admissible is a
+load error too, because an exception that lifts nothing reads as though it
+lifted everything.
+
+### 4.6 Answerable chronology is not the same thing as preserved evidence
+
+The corpus holds figures it must not answer with. Until this axis existed the
+only place to put one was beside the answers with a note asking not to be
+believed, and **every default consumer read the answer and none read the note**.
+
+| `answerability` | What it means |
+| --- | --- |
+| `answerable` | may be returned by a normal query as candidate chronology: explicit Scriptural chronology, admissible traditional Catholic chronology, and admissible traditional alternatives and disagreements |
+| `preserved` | retained for provenance, history, comparison, methodology, rejection or audit traceability, and **excluded from the default candidate set** |
+
+Preserved is the state for a modern-critical figure printed by a Catholic
+source, secular harmonisation this profile excludes, chronology the source
+itself rejects, a source's refusal to assign a date, a comparison-only figure,
+and a superseded figure kept so the record can be traced.
+
+This is **a separate axis from `disposition`**. `alternate` and `disputed` are
+positions *within* the candidate set and leave a claim answerable; neither was
+ever a way to half-exclude one. A preserved claim may not be `preferred`, and
+preserved claims take no part in the one-preferred-per-subject arithmetic of
+§4.4, because that arithmetic is about what the profile answers with.
+
+The two states cannot contradict the profile. A claim asserting that it is
+answerable on a basis its profile excludes is **a load error**, not a claim
+with a bad note — it is two statements that cannot both be true.
+
+#### 4.6.1 A refusal to date is not a date
+
+A source statement refusing to assign a date is not a chronology date
+assertion. It may support a methodological note, source-specific negative
+evidence, an undated state where this corpus permits one, and provenance. It
+may **not** be returned as a date candidate, and a locus whose only claim is a
+refusal is not dated.
+
+#### 4.6.2 The exclusion is structural, not a note
+
+**A note that says "do not display" is not a control.** If a figure is not
+answerable, the query layer excludes it, decided by the profile, in code:
+`_chronology._candidates` is the single gate every gathering loop passes
+through, so there is no second path by which preserved evidence reaches a
+default consumer.
+
+```text
+answerable claims
+    → returned in the default chronology candidate set
+
+preserved non-answerable evidence
+    → inspectable through the provenance/detail/audit surface
+      (`chronology(..., evidence=True)`,
+       `tools/tpt scripture-chronology query <locus> --evidence`)
+    → excluded from the default candidate set
+```
+
+**Default consumers receive only answerable chronology.** Comparison and
+provenance views may expose preserved non-answerable evidence, and have to ask
+for it.
+
+### 4.7 Profile policy is production semantic state
+
+A profile edit can change the meaning of hundreds of claims whose files nobody
+touched, because it decides which stored claims are candidate answers. So
+`profiles.yaml` is **production semantic state and participates in the semantic
+diff**, not configuration standing beside the corpus.
+
+`scripts/chronology_review_diff.py` carries two sections for it:
+
+- `profiles` — every leaf of every profile, keyed by path, with prose
+  whitespace collapsed so a reflowed block scalar compares equal and a changed
+  rule does not. Each row names the facet that moved: `authority-hierarchy`,
+  `admissibility`, `reporting-exceptions`, `answerability`, `conflict-policy`,
+  `display-rules`.
+- `answerability` — every claim whose candidate eligibility changed, including
+  the ones that changed **only because the profile changed**. Those rows are
+  marked `profile-only`, and they are the semantic impact surface a reviewer
+  cannot get from a file diff.
+
+Both are computed by the diff tool from the dumped structure rather than by
+either revision's loader, for the reason that tool's docstring already gives:
+a base revision that predates the axis has no code to ask.
 
 ---
 
@@ -788,9 +936,15 @@ An **`Answer`** — the resolved locus, an ordered tuple of assertions, a status
 and a note — or an **`Unresolved`**, which is returned, never raised, so a
 caller can print the reason.
 
+What comes back is the **candidate set**, not everything stored: a claim
+reaches it only where the profile it was authored under answers with it (§4.5),
+and `chronology(..., evidence=True)` is the separate ask that returns preserved
+non-answerable evidence beside the answers (§4.6.2).
+
 Each assertion carries its relation, the event or unit it belongs to, that
-subject's title, the claim (date, disposition, sources, note), whether it was
-`inherited`, and the authored scope it reached the locus from.
+subject's title, the claim (date, disposition, `answerability`, `basis_class`,
+sources, note), whether it was `inherited`, and the authored scope it reached
+the locus from.
 
 Ordering is stable and defined: relation in the order of §5, then disposition
 (`preferred`, `alternate`, `disputed`), then subject id, then the date's
@@ -827,6 +981,11 @@ to `build/` and is never tracked.
 **A publication or proper that needs biblical chronology MUST read this corpus.
 It MUST NOT independently infer, research, harmonize, or assign a replacement
 biblical date.**
+
+A default consumer receives **only answerable chronology** (§4.6). Preserved
+non-answerable evidence is not part of what the corpus asserts about a locus,
+and a consumer that reaches for it through `evidence=True` is asking a
+different question — what a source printed — and must present it as that.
 
 If the corpus returns no substantive assertion, or a typed unresolved state,
 the consumer **preserves that state or omits the date** according to its own
@@ -957,13 +1116,20 @@ source. Check for them by name.
 | Command | Question |
 | --- | --- |
 | `tools/tpt scripture-chronology validate` | is the authored corpus well-formed and internally consistent? |
-| `tools/tpt scripture-chronology query <locus>` | what does the corpus say about this verse? |
+| `tools/tpt scripture-chronology query <locus>` | what does the corpus answer with about this verse? |
+| `tools/tpt scripture-chronology query <locus> --evidence` | …and what does it preserve about it without answering with it? (§4.6.2) |
 | `tools/tpt scripture-chronology coverage` | what is covered, by category? |
 | `tools/tpt scripture-chronology build` | rewrite the generated view |
 | `tools/tpt scripture-chronology check` | is the generated view current? |
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of
 `make check`. The focused tests are `tools/tests/test_chronology.py`.
+
+`validate --json` reports `answerability` beside its counts: how many claims
+the profiles answer with, how many are preserved, and how many still stand on
+the transitional `unreviewed` basis class (§4.5). `python3
+scripts/chronology_review_diff.py BASE HEAD` compares two revisions as objects,
+including the `profiles` and `answerability` sections §4.7 describes.
 
 The loader refuses a mapping key stated twice, at any depth, before it reads
 anything in the file as a fact, and names the file, the line and the key.

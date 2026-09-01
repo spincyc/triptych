@@ -36,6 +36,13 @@ What it compares
 ----------------
 claims     one row per authored claim (`event:<id>#n` / `unit:<id>#n`), over
            the field set named by --fields
+profiles   `profiles.yaml` as NORMALISED SEMANTICS -- every leaf of every
+           profile, keyed by its path, with whitespace collapsed so a reflowed
+           block scalar compares equal and a changed policy does not
+answerability
+           which claims the profile answers with, computed on both sides by the
+           same function here, so a claim whose eligibility moved because the
+           POLICY moved is enumerated even though its own YAML is untouched
 bindings   grouped by (relation, event) -- the identity a manifest row names --
            comparing the union of authored scopes, and, under `full`, the
            notes and the sources
@@ -43,6 +50,23 @@ gaps       keyed by (status, scope), comparing reason and sources
 sources    the work/edition/artifact/passage TOML registry, field by field
 contracts  `guidance/` files, which state contracts
 code       `scripts/`, `tools/`, `tests/`, which state behaviour
+
+Why `profiles` and `answerability` are here
+-------------------------------------------
+`profiles.yaml` is PRODUCTION SEMANTIC STATE, not configuration. It decides
+which stored claims are candidate answers, so a one-line policy edit can change
+the meaning of hundreds of claims whose files nobody touched. Until 2026-09-01
+this tool compared claims, bindings, gaps, sources, guidance and code, and
+`profiles.yaml` fell in no bucket at all: the final cold audit changed the
+conflict rule from "preserve the disagreement" to "harmonise freely" and the
+diff reported nothing. A review artifact that cannot see that is not evidence.
+
+The `answerability` section is the transitive half. A profile edit produces a
+handful of `profile` rows and, potentially, a great many claims that stopped or
+started being answerable. The reviewer needs the second list, and it cannot come
+from either loader -- the older one has no notion of answerability -- so it is
+computed here from the dumped structure, identically for both sides, exactly as
+`_date_text` and `_span_text` already are.
 
 Usage
 -----
@@ -129,14 +153,25 @@ def date(d):
             "derivation": d.derivation, "duration": d.duration}
 
 def claim(c):
+    # `getattr` because the loader AT THE BASE REVISION may predate the
+    # answerability axis entirely, and a review artifact pinned to two shas has
+    # to stay derivable across the revision that introduced it. A claim from
+    # before the axis existed was answerable, which is what the fallback says.
     return {"profile": c.profile, "disposition": c.disposition, "date": date(c.date),
-            "basis": c.basis, "sources": list(c.sources), "note": c.note}
+            "basis": c.basis, "sources": list(c.sources), "note": c.note,
+            "answerability": getattr(c, "answerability", "answerable"),
+            "basis_class": getattr(c, "basis_class", ""),
+            "reporting_exception": getattr(c, "reporting_exception", None)}
 
 def span(s):
     return [s.system, s.token, s.chapter, s.first, s.last]
 
 corpus = C.load(Path(sys.argv[1]))
-out = {"claims": {}, "bindings": [], "gaps": []}
+out = {"claims": {}, "bindings": [], "gaps": [], "profiles": {}}
+# The profile mapping AS AUTHORED. Normalisation happens on the other side of
+# the boundary, so both revisions are normalised by one function.
+for pid, entry in corpus.profiles.items():
+    out["profiles"][pid] = entry
 for event in corpus.events.values():
     for i, c in enumerate(event.claims):
         out["claims"]["event:%s#%d" % (event.id, i)] = claim(c)
@@ -242,12 +277,18 @@ def _j(value) -> str:
     return json.dumps(value, sort_keys=True, default=str)
 
 
-# The eight fields the re-review manifest compares, in the order its `why`
-# column prints them. `anchor` and `within` are the two the first generator was
+# The fields the re-review manifest compares, in the order its `why` column
+# prints them. `anchor` and `within` are the two the first generator was
 # missing: `str(date)` renders a relative date's STATEMENT, so an anchor moved
 # without a restated statement compared equal and printed as `changed:note`.
+# `answerability` and `basis_class` are the two the second was: a claim that
+# stopped being a candidate answer is the most consequential thing a correction
+# lane can do to one, and it moves no date and no source.
 FIELDS_MANIFEST = (
     ("disposition", lambda c: c["disposition"]),
+    ("answerability", lambda c: c.get("answerability", "answerable")),
+    ("basis_class", lambda c: c.get("basis_class", "")),
+    ("reporting_exception", lambda c: c.get("reporting_exception")),
     ("date", lambda c: _date_text(c["date"])),
     ("anchor", _anchor),
     ("within", _within),
@@ -430,6 +471,173 @@ def diff_sources(repo: Path, base: str, head: str) -> list[dict]:
     return rows
 
 
+# --- the profile, which is policy and therefore production state ----------
+
+# Which part of the policy moved, for a reviewer scanning the section. The
+# facets are the ones a profile edit can change the meaning of the corpus
+# through: who wins, what is admissible, what the profile answers with, what it
+# does when sources disagree, and what it merely preserves.
+FACETS = {
+    "authority": "authority-hierarchy",
+    "non_authorities": "authority-hierarchy",
+    "admissibility": "admissibility",
+    "answerability": "answerability",
+    "conflict": "conflict-policy",
+    "display": "display-rules",
+    "non_goals": "scope",
+    "versioning": "scope",
+}
+
+
+def _facet(path: str) -> str:
+    head = path.split(".", 1)[0].split("[", 1)[0]
+    if path.startswith("admissibility.reporting_exceptions"):
+        return "reporting-exceptions"
+    if path.startswith("admissibility.bases"):
+        return "admissibility"
+    return FACETS.get(head, head)
+
+
+def _normalised(profile: dict) -> dict[str, str]:
+    """One profile as leaf paths to values, with prose whitespace collapsed.
+
+    FORMATTING IS NOT POLICY. A YAML block scalar re-wrapped at a different
+    column is the same rule, and a diff that reported it would train a reviewer
+    to skim this section -- which is how the section stops being read at all.
+    Collapsing runs of whitespace is the whole of the normalisation: nothing
+    else about the text is touched, so a changed WORD is still a changed rule.
+    """
+    return {
+        key: " ".join(value.split())
+        for key, value in _flatten(profile).items()
+    }
+
+
+def _clip(text: str, width: int = 200) -> str:
+    return text if len(text) <= width else text[: width - 1] + "\u2026"
+
+
+def diff_profiles(old: dict, new: dict) -> list[dict]:
+    """Every profile-policy leaf that moved, added, or went away.
+
+    `profiles.yaml` used to fall in no section of this tool at all, so a policy
+    edit produced an empty diff while changing what hundreds of untouched claims
+    mean. That is the defect this section closes, and it closes it by comparing
+    the whole normalised mapping rather than by watching named phrases: a rule
+    this tool had to be taught to look for is a rule the next edit renames.
+    """
+    before, after = old.get("profiles", {}), new.get("profiles", {})
+    rows: list[dict] = []
+    for pid in sorted(set(before) | set(after)):
+        if pid not in after:
+            rows.append({"kind": "profile", "id": pid, "why": "withdrawn",
+                         "locus": "profile", "detail": "present at base, absent now"})
+            continue
+        if pid not in before:
+            rows.append({"kind": "profile", "id": pid, "why": "added",
+                         "locus": "profile", "detail": "absent at base"})
+            continue
+        a, b = _normalised(before[pid]), _normalised(after[pid])
+        for path in sorted(set(a) | set(b)):
+            if a.get(path) == b.get(path):
+                continue
+            if path not in b:
+                why, detail = "removed", f"was: {_clip(a[path])}"
+            elif path not in a:
+                why, detail = "added", f"now: {_clip(b[path])}"
+            else:
+                why = "changed"
+                detail = f"was: {_clip(a[path])} | now: {_clip(b[path])}"
+            rows.append({"kind": "profile", "id": f"{pid}:{path}", "why": why,
+                         "locus": _facet(path), "detail": detail})
+    return rows
+
+
+# --- answerability, including the claims only the profile moved -----------
+
+def policy_of(profile: dict | None) -> dict | None:
+    """A profile's admissibility contract, as this tool needs to apply it.
+
+    Returns None for a profile that declares none, which is what every revision
+    before 2026-09-01 holds. That is not "admit nothing": before the contract
+    existed every stored claim was a candidate, and a diff that read the older
+    side as excluding everything would report the whole corpus as newly
+    answerable on the day the field appeared.
+    """
+    if not isinstance(profile, dict):
+        return None
+    raw = profile.get("admissibility")
+    if not isinstance(raw, dict):
+        return None
+    bases = {
+        base.get("id"): bool(base.get("admissible"))
+        for base in raw.get("bases") or []
+        if isinstance(base, dict)
+    }
+    states = profile.get("answerability")
+    return {
+        "admissible": {name for name, ok in bases.items() if ok},
+        "unstated_basis": raw.get("unstated") or "",
+        "unstated_state": (states or {}).get("unstated") or "answerable",
+        "exceptions": {
+            lift.get("id"): lift.get("basis")
+            for lift in raw.get("reporting_exceptions") or []
+            if isinstance(lift, dict)
+        },
+    }
+
+
+def answerable(claim: dict, policy: dict | None) -> bool:
+    """THE SAME RULE ON BOTH SIDES, and computed by neither loader.
+
+    `scripts/_chronology.Policy.answers_with` is the production copy. This one
+    exists for the same reason `_date_text` does: a comparison that asked each
+    revision's own code would report a change in the code as a change in the
+    corpus, and a base revision that has no such code could not be asked at all.
+    """
+    if claim.get("answerability", "answerable") != "answerable":
+        return False
+    if policy is None:
+        return True
+    basis = claim.get("basis_class") or policy["unstated_basis"]
+    if basis in policy["admissible"]:
+        return True
+    lift = claim.get("reporting_exception")
+    return bool(lift and policy["exceptions"].get(lift) == basis)
+
+
+def diff_answerability(old: dict, new: dict, fields=None) -> list[dict]:
+    """Every claim whose candidate eligibility moved, and why it moved.
+
+    The `profile-only` rows are the ones no other section can produce: the claim
+    is byte-identical and means something different, because the policy it is
+    read under changed. Enumerating them is the difference between a review
+    surface and a file diff.
+    """
+    fields = fields or FIELDS_FULL
+    before, after = old["claims"], new["claims"]
+    policies_before = {pid: policy_of(entry)
+                       for pid, entry in old.get("profiles", {}).items()}
+    policies_after = {pid: policy_of(entry)
+                      for pid, entry in new.get("profiles", {}).items()}
+    rows = []
+    for key in sorted(set(before) & set(after)):
+        was = answerable(before[key], policies_before.get(before[key]["profile"]))
+        now = answerable(after[key], policies_after.get(after[key]["profile"]))
+        if was == now:
+            continue
+        moved = [name for name, get in fields if get(before[key]) != get(after[key])]
+        rows.append({
+            "kind": "answerability",
+            "id": key,
+            "why": ("answerable->preserved" if was else "preserved->answerable"),
+            "locus": "profile-only" if not moved else "claim-changed",
+            "detail": ("the claim did not change; the profile did"
+                       if not moved else "+".join(moved)),
+        })
+    return rows
+
+
 # --- contracts and behaviour ----------------------------------------------
 
 def diff_paths(repo: Path, base: str, head: str, pathspec: str, kind: str) -> list[dict]:
@@ -444,18 +652,25 @@ def diff_paths(repo: Path, base: str, head: str, pathspec: str, kind: str) -> li
 
 # --- CLI -------------------------------------------------------------------
 
-SECTIONS = ("claims", "bindings", "gaps", "sources", "contracts", "code")
+SECTIONS = ("claims", "profiles", "answerability", "bindings", "gaps",
+            "sources", "contracts", "code")
 
 
 def build(repo: Path, base: str, head: str, sections, fieldset: str) -> dict:
     result: dict[str, list[dict]] = {}
-    if {"claims", "bindings", "gaps"} & set(sections):
+    if {"claims", "profiles", "answerability", "bindings", "gaps"} & set(sections):
         with tempfile.TemporaryDirectory(prefix="chronology-review-") as tmp:
             work = Path(tmp)
             old = load_revision(repo, base, work)
             new = load_revision(repo, head, work)
         if "claims" in sections:
             result["claims"] = diff_claims(old, new, FIELD_SETS[fieldset])
+        if "profiles" in sections:
+            result["profiles"] = diff_profiles(old, new)
+        if "answerability" in sections:
+            result["answerability"] = diff_answerability(
+                old, new, FIELD_SETS[fieldset]
+            )
         if "bindings" in sections:
             result["bindings"] = diff_bindings(old, new, full=(fieldset == "full"))
         if "gaps" in sections:

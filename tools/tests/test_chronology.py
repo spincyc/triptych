@@ -26,6 +26,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPOSITORY_ROOT / "scripts"))
 
 import _chronology  # noqa: E402
+import chronology_review_diff as review_diff  # noqa: E402
 import _projection  # noqa: E402
 import _psalms  # noqa: E402
 
@@ -44,7 +45,57 @@ tool = load_tool("scripture-chronology")
 
 PROFILE = "catholic-traditional-v1"
 
-PROFILES = """\
+# The smallest profile the loader accepts, which is deliberately not very
+# small. A profile that does not say which METHODS it answers with cannot tell
+# a traditional figure from a modern one reprinted in a traditional book, so
+# the loader refuses one, and a fixture that could skip the block would be a
+# fixture testing a corpus this repository cannot hold. The classes here are a
+# working subset of the tracked profile's.
+ADMISSIBILITY = """\
+    admissibility:
+      rule: Source and basis must both be admissible.
+      own_voice: A Catholic author's own voice is not a basis.
+      before_rank: Admissibility is decided before rank.
+      preservation: A preserved figure is evidence, not an answer.
+      unstated: unreviewed
+      bases:
+        - id: scripture
+          admissible: true
+          what: What the sacred text itself states.
+        - id: traditional-catholic
+          admissible: true
+          what: A ranked traditional authority on traditional grounds.
+        - id: unreviewed
+          admissible: true
+          what: Not yet classified under this contract.
+        - id: modern-critical
+          admissible: false
+          what: Modern critical chronology, whoever prints it.
+        - id: reported-excluded
+          admissible: false
+          what: A ranked work reporting a chronology this profile excludes.
+        - id: refusal-to-date
+          admissible: false
+          what: A source's statement that it will not assign a date.
+      reporting_exceptions:
+        - id: ussher-reported-by-a-ranked-catholic-source
+          named: Ussher
+          basis: reported-excluded
+          requires: The source of record is the ranked work that printed it.
+          display: At the reporting work's rank and never higher.
+          does_not_generalise: Ussher and no one else.
+    answerability:
+      unstated: answerable
+      states:
+        answerable: Returned as candidate chronology.
+        preserved: Kept as evidence, never returned as a candidate.
+      query: The candidate set is the answerable claims and nothing else.
+      refusal: A refusal to date is not a date.
+      dispositions: Answerability is a separate axis from disposition.
+"""
+
+PROFILES = (
+    """\
 schema: triptych-chronology-profiles/v1
 profiles:
   - id: catholic-traditional-v1
@@ -53,11 +104,15 @@ profiles:
     authority:
       - rank: 1
         name: Scripture
+"""
+    + ADMISSIBILITY
+    + """\
     conflict:
       rule: Preserve the disagreement.
     non_goals:
       - Being real.
 """
+)
 
 HEAD = {
     "events": "schema: triptych-chronology-events/v1\n",
@@ -96,9 +151,11 @@ class Corpus:
         # written and never read refuses nothing.
         _chronology.load(self.root)
 
-    def ask(self, locus: str, system: str = "vulgate"):
+    def ask(self, locus: str, system: str = "vulgate", evidence: bool = False):
         return _chronology.chronology(
-            _chronology.parse_locus(locus, "test", system), root=self.root
+            _chronology.parse_locus(locus, "test", system),
+            root=self.root,
+            evidence=evidence,
         )
 
 
@@ -1672,6 +1729,605 @@ class TrackedHardCaseTests(unittest.TestCase):
 
     def test_a_gap_and_an_assertion_never_stand_over_one_verse(self) -> None:
         self.assertEqual(_chronology.audit(), [])
+
+
+# --- Admissibility, answerability, and the candidate set --------------------
+
+
+def profile_with(old: str, new: str) -> str:
+    """The fixture profile with one line rewritten, and nothing else touched.
+
+    A profile edit is the thing under test in this section, so it has to be a
+    real edit to a real profile rather than a flag passed to the loader.
+    """
+    assert PROFILES.count(old) == 1, old
+    return PROFILES.replace(old, new)
+
+
+class AdmissibilityTests(unittest.TestCase):
+    """A profile that cannot say which METHODS it answers with is not a policy.
+
+    `guidance/scripture-chronology.md` §4.5. Every refusal here is a state that
+    would otherwise have to be caught by somebody noticing prose: a basis class
+    nothing declares, a claim answerable on a basis its profile excludes, an
+    exception reaching for a class it was not written for. Each of them means
+    the profile says something other than what it looks like it says.
+    """
+
+    NAKED = """\
+schema: triptych-chronology-profiles/v1
+profiles:
+  - id: catholic-traditional-v1
+    title: A profile with no admissibility contract
+    intent: To be refused.
+    authority:
+      - rank: 1
+        name: Scripture
+    conflict:
+      rule: Preserve the disagreement.
+    non_goals:
+      - Being loadable.
+"""
+
+    def claim(self, **extra: str) -> str:
+        lines = "".join(f"        {key}: {value}\n" for key, value in extra.items())
+        return (
+            "events:\n"
+            "  - id: e.one\n"
+            "    title: Something dated\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        basis: A source printed it.\n"
+            "        sources: [bible.douay-rheims]\n"
+            "        date: {precision: year, from: {year: 33, era: ad}}\n"
+            + lines
+        )
+
+    def test_a_profile_that_names_no_basis_classes_is_not_a_policy(self) -> None:
+        refuses(self, "admissibility", profiles=self.NAKED)
+
+    def test_a_basis_class_the_profile_does_not_declare_is_a_typo_not_a_fact(self) -> None:
+        refuses(
+            self,
+            "is not a basis class",
+            events=self.claim(basis_class="egyptological"),
+        )
+
+    def test_an_answerability_state_outside_the_vocabulary_is_refused(self) -> None:
+        refuses(self, "is not one of", events=self.claim(answerability="maybe"))
+
+    def test_a_claim_may_not_be_answerable_on_a_basis_the_profile_excludes(self) -> None:
+        # THE GOVERNING RULE, as a load refusal. Both the source and the basis
+        # of the particular value have to be admissible, and a claim asserting
+        # otherwise is not a claim with a bad note: it is two statements that
+        # cannot both be true.
+        refuses(
+            self,
+            "is not admissible under",
+            events=self.claim(basis_class="modern-critical", answerability="answerable"),
+        )
+
+    def test_the_same_value_is_preservable_on_the_same_excluded_basis(self) -> None:
+        # The other half, and the reason the first half is not just deletion:
+        # a figure may be worth preserving as documentary evidence without
+        # being an answerable chronology assertion.
+        kept = corpus(
+            self,
+            events=self.claim(basis_class="modern-critical", answerability="preserved",
+                              disposition="alternate"),
+        )
+        claim = _chronology.load(kept.root).events["e.one"].claims[0]
+        self.assertEqual(claim.answerability, "preserved")
+        self.assertFalse(_chronology.load(kept.root).answers_with(claim))
+
+    def test_a_preserved_claim_may_not_be_the_one_the_profile_prefers(self) -> None:
+        refuses(
+            self,
+            "may not be 'preferred'",
+            events=self.claim(basis_class="modern-critical", answerability="preserved"),
+        )
+
+    def test_a_reporting_exception_must_be_one_the_profile_declares(self) -> None:
+        refuses(
+            self,
+            "is not declared by",
+            events=self.claim(basis_class="reported-excluded",
+                              reporting_exception="sayce-reported-by-anybody"),
+        )
+
+    def test_the_ussher_exception_does_not_extend_to_another_excluded_basis(self) -> None:
+        # §10 and §4.5.1: the exception names Ussher and no one else, and the
+        # place that is TRUE rather than merely written down is here. A claim
+        # reaching for it from `modern-critical` is refused by name, so the
+        # analogy to Sayce, Driver, Wellhausen or Sloet cannot be drawn.
+        refuses(
+            self,
+            "does not extend by analogy",
+            events=self.claim(
+                basis_class="modern-critical",
+                reporting_exception="ussher-reported-by-a-ranked-catholic-source",
+            ),
+        )
+
+    def test_the_ussher_exception_admits_the_case_it_was_written_for(self) -> None:
+        held = corpus(
+            self,
+            events=self.claim(
+                basis_class="reported-excluded",
+                reporting_exception="ussher-reported-by-a-ranked-catholic-source",
+            ),
+        )
+        loaded = _chronology.load(held.root)
+        self.assertTrue(loaded.answers_with(loaded.events["e.one"].claims[0]))
+
+    def test_an_exception_over_an_already_admissible_basis_is_refused(self) -> None:
+        # An exception that lifts nothing reads as though it lifted everything,
+        # which is exactly how a named exception becomes a general licence.
+        refuses(
+            self,
+            "already admissible",
+            profiles=profile_with("basis: reported-excluded", "basis: scripture"),
+        )
+
+    def test_a_preserved_claim_takes_no_part_in_the_conflict_arithmetic(self) -> None:
+        # `preferred`/`alternate`/`disputed` say which ADMISSIBLE claim the
+        # profile displays first. Counting preserved evidence there would make
+        # withdrawing a figure from the answers into a conflict-policy error.
+        both = corpus(
+            self,
+            events="""\
+events:
+  - id: e.mixed
+    title: One answer and one preserved figure
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis: A ranked traditional authority states it.
+        basis_class: traditional-catholic
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 33, era: ad}}
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: A modern reconstruction the same volume prints.
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 30, era: ad}}
+""",
+        )
+        self.assertEqual(len(_chronology.load(both.root).events["e.mixed"].claims), 2)
+
+
+class CandidateSetTests(unittest.TestCase):
+    """What a default consumer receives, and what it takes a second ask to see.
+
+    §22: a note saying "do not display" is not a control if the default query
+    still displays the value. These tests are about the structural half.
+    """
+
+    EVENTS = """\
+events:
+  - id: e.answered
+    title: A figure this profile answers with
+    dates:
+      - profile: catholic-traditional-v1
+        basis: A ranked traditional authority computes it on traditional grounds.
+        basis_class: traditional-catholic
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 33, era: ad}}
+  - id: e.preserved
+    title: A figure this profile preserves and does not answer with
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: A modern critical reconstruction the source prints for comparison.
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 30, era: ad}}
+  - id: e.refused
+    title: A source that will not assign a date
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: refusal-to-date
+        basis: The source states that it declines to fix the year.
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 4004, era: bc}}
+"""
+    BINDINGS = """\
+bindings:
+  - relation: narrated-event
+    event: e.answered
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+  - relation: narrated-event
+    event: e.preserved
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+  - relation: narrated-event
+    event: e.refused
+    scope: {book: Jude, chapter: 1, first: 2, last: 2}
+"""
+
+    def bound(self):
+        return corpus(self, events=self.EVENTS, bindings=self.BINDINGS)
+
+    def test_preserved_evidence_is_absent_from_the_default_candidate_set(self) -> None:
+        answer = self.bound().ask("Jude.1.1")
+        self.assertEqual([a.subject for a in answer.assertions], ["e.answered"])
+
+    def test_the_same_preserved_evidence_is_present_in_the_provenance_view(self) -> None:
+        # Excluded is not deleted. The figure is inspectable, and it takes an
+        # explicit ask, which is the difference between preserved evidence and
+        # a note asking a consumer not to believe what it was just handed.
+        answer = self.bound().ask("Jude.1.1", evidence=True)
+        self.assertEqual(
+            sorted(a.subject for a in answer.assertions), ["e.answered", "e.preserved"]
+        )
+        preserved = [a for a in answer.assertions if a.subject == "e.preserved"][0]
+        self.assertEqual(preserved.claim.answerability, "preserved")
+        self.assertEqual(preserved.claim.basis_class, "modern-critical")
+
+    def test_a_source_refusing_to_date_is_not_returned_as_a_date(self) -> None:
+        # §8. A refusal is negative evidence about method; it is not a date
+        # assertion, and a locus whose only claim is one is not dated.
+        answer = self.bound().ask("Jude.1.2")
+        self.assertEqual(answer.assertions, ())
+        self.assertEqual(answer.status, "research-pending")
+        self.assertEqual(
+            [a.subject for a in self.bound().ask("Jude.1.2", evidence=True).assertions],
+            ["e.refused"],
+        )
+
+    def test_own_voice_on_an_excluded_basis_is_not_answerable(self) -> None:
+        # §9. The source is admissible and speaks in its own voice; the BASIS of
+        # this particular value is not. Publication context is not a basis, and
+        # the rule reads the same at every rank.
+        own = corpus(
+            self,
+            events="""\
+events:
+  - id: e.own-voice
+    title: A traditional work stating a figure it took from elsewhere
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: reported-excluded
+        basis: The article states the figure in its own voice, having adopted it
+          from the critical chronology it names two sentences earlier.
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 722, era: bc}}
+""",
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: e.own-voice
+    scope: {book: Jude, chapter: 1, first: 3, last: 3}
+""",
+        )
+        self.assertEqual(own.ask("Jude.1.3").assertions, ())
+        self.assertEqual(len(own.ask("Jude.1.3", evidence=True).assertions), 1)
+
+    def test_own_voice_on_an_admissible_basis_is_still_answerable(self) -> None:
+        # The other side of the same rule, and the reason it is not a blanket
+        # exclusion of the works that print excluded figures elsewhere.
+        answer = self.bound().ask("Jude.1.1")
+        self.assertEqual(len(answer.assertions), 1)
+        self.assertEqual(answer.assertions[0].claim.basis_class, "traditional-catholic")
+        self.assertEqual(answer.status, "dated")
+
+    def test_an_excluded_basis_is_excluded_at_every_rank(self) -> None:
+        # §9 again: there is no rank-6-only rule. Two claims on one excluded
+        # basis, one from the rank this repository's Scripture sits at and one
+        # from a later reference work, and neither is answered with.
+        ranks = corpus(
+            self,
+            events="""\
+events:
+  - id: e.high
+    title: An excluded basis printed by a high-ranked source
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: A modern reconstruction, printed in a high-ranked work.
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 722, era: bc}}
+  - id: e.low
+    title: An excluded basis printed by a later reference work
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: The same reconstruction, printed in a later reference work.
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 721, era: bc}}
+""",
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: e.high
+    scope: {book: Jude, chapter: 1, first: 4, last: 4}
+  - relation: narrated-event
+    event: e.low
+    scope: {book: Jude, chapter: 1, first: 5, last: 5}
+""",
+        )
+        self.assertEqual(ranks.ask("Jude.1.4").assertions, ())
+        self.assertEqual(ranks.ask("Jude.1.5").assertions, ())
+
+    def test_a_profile_change_alone_changes_what_the_query_answers_with(self) -> None:
+        # §16: `profiles.yaml` is production semantic state. The claim YAML is
+        # byte-identical in both corpora; only the policy differs, and the
+        # answer moves. Nothing else in this repository can make that happen.
+        events = """\
+events:
+  - id: e.subject
+    title: A figure whose eligibility the profile decides
+    dates:
+      - profile: catholic-traditional-v1
+        basis: A ranked traditional authority computes it on traditional grounds.
+        basis_class: traditional-catholic
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 33, era: ad}}
+"""
+        bindings = """\
+bindings:
+  - relation: narrated-event
+    event: e.subject
+    scope: {book: Jude, chapter: 1, first: 6, last: 6}
+"""
+        before = corpus(self, events=events, bindings=bindings)
+        self.assertEqual(len(before.ask("Jude.1.6").assertions), 1)
+
+        narrowed = profile_with(
+            "- id: traditional-catholic\n          admissible: true",
+            "- id: traditional-catholic\n          admissible: false",
+        )
+        # The claim can no longer be authored as answerable at all, which is the
+        # load-time half of the same rule: the policy does not merely hide the
+        # value, it refuses the assertion that the profile answers with it.
+        refuses(
+            self,
+            "is not admissible under",
+            profiles=narrowed,
+            events=events,
+            bindings=bindings,
+        )
+
+
+# --- The profile in the semantic diff ---------------------------------------
+
+
+
+def dumped(profile: dict, **claims: dict) -> dict:
+    """One side of a diff, in the shape the review worker dumps.
+
+    Built here rather than by running the loader, because what is under test is
+    the COMPARISON: the tool's own docstring settles that neither revision's
+    loader may be the thing that renders what is compared, and a fixture that
+    went through a loader would be testing the loader twice and the comparison
+    once.
+    """
+    return {
+        "profiles": {"catholic-traditional-v1": profile},
+        "claims": claims,
+        "bindings": [],
+        "gaps": [],
+    }
+
+
+def dumped_claim(**overrides) -> dict:
+    claim = {
+        "profile": "catholic-traditional-v1",
+        "disposition": "preferred",
+        "date": {"precision": "year", "begin": [33, "ad", None, None, None],
+                 "end": [33, "ad", None, None, None], "relative": None,
+                 "label": "", "derivation": None, "duration": None},
+        "basis": "A ranked traditional authority states it.",
+        "sources": ["bible.douay-rheims"],
+        "note": "",
+        "answerability": "answerable",
+        "basis_class": "traditional-catholic",
+        "reporting_exception": None,
+    }
+    claim.update(overrides)
+    return claim
+
+
+BASE_PROFILE = {
+    "id": "catholic-traditional-v1",
+    "conflict": {"rule": "Preserve the disagreement. Every sourced claim is\nkept with its own provenance."},
+    "admissibility": {
+        "rule": "Source and basis must both be admissible.",
+        "unstated": "unreviewed",
+        "bases": [
+            {"id": "traditional-catholic", "admissible": True, "what": "Traditional grounds."},
+            {"id": "unreviewed", "admissible": True, "what": "Not yet classified."},
+            {"id": "modern-critical", "admissible": False, "what": "Modern critical chronology."},
+        ],
+        "reporting_exceptions": [
+            {"id": "ussher-reported-by-a-ranked-catholic-source",
+             "named": "Ussher", "basis": "reported-excluded"},
+        ],
+    },
+    "answerability": {"unstated": "answerable"},
+}
+
+
+def edited(path: list, value) -> dict:
+    """A deep copy of BASE_PROFILE with one leaf replaced."""
+    import copy
+
+    profile = copy.deepcopy(BASE_PROFILE)
+    cell = profile
+    for step in path[:-1]:
+        cell = cell[step]
+    cell[path[-1]] = value
+    return profile
+
+
+class ProfileSemanticDiffTests(unittest.TestCase):
+    """`profiles.yaml` is production semantic state, and the diff must see it.
+
+    The final cold acceptance audit changed the conflict rule from "preserve
+    the disagreement" to "harmonise freely" and the semantic differ reported
+    nothing at all, because `profiles.yaml` fell in no section of it: not a
+    claim, not a binding, not a gap, not a source record, not `guidance/`, not
+    `scripts/`. A review artifact that cannot see a policy change is not
+    evidence about a corpus whose meaning the policy decides.
+    """
+
+    def rows(self, old: dict, new: dict) -> list[dict]:
+        return review_diff.diff_profiles(old, new)
+
+    def test_a_policy_change_is_detected(self) -> None:
+        moved = self.rows(
+            dumped(BASE_PROFILE),
+            dumped(edited(["conflict", "rule"], "Harmonise freely.")),
+        )
+        self.assertEqual(len(moved), 1)
+        self.assertEqual(moved[0]["kind"], "profile")
+        self.assertEqual(moved[0]["id"], "catholic-traditional-v1:conflict.rule")
+        self.assertEqual(moved[0]["locus"], "conflict-policy")
+        self.assertIn("Harmonise freely", moved[0]["detail"])
+
+    def test_a_reflowed_rule_is_not_a_policy_change(self) -> None:
+        # §17.2. A block scalar re-wrapped at a different column is the same
+        # rule, and a section that reported it would train a reviewer to skim
+        # the section -- which is how it stops being read at all.
+        rewrapped = edited(
+            ["conflict", "rule"],
+            "Preserve the disagreement.   Every sourced claim\n  is kept with its\nown provenance.",
+        )
+        self.assertEqual(self.rows(dumped(BASE_PROFILE), dumped(rewrapped)), [])
+
+    def test_every_facet_a_policy_edit_can_move_is_named(self) -> None:
+        # §17.3: admissibility, the authority hierarchy, conflict policy,
+        # reporting exceptions and answerability each have to be visible AS
+        # WHAT THEY ARE, so a reviewer scanning the section can tell a renamed
+        # rank from a withdrawn exception.
+        cases = {
+            ("admissibility", "rule"): "admissibility",
+            ("answerability", "unstated"): "answerability",
+        }
+        for path, facet in cases.items():
+            moved = self.rows(dumped(BASE_PROFILE), dumped(edited(list(path), "other")))
+            self.assertEqual([row["locus"] for row in moved], [facet], path)
+        flipped = edited(["admissibility", "bases"], [
+            {"id": "traditional-catholic", "admissible": False, "what": "Traditional grounds."},
+            {"id": "unreviewed", "admissible": True, "what": "Not yet classified."},
+            {"id": "modern-critical", "admissible": False, "what": "Modern critical chronology."},
+        ])
+        moved = self.rows(dumped(BASE_PROFILE), dumped(flipped))
+        self.assertEqual([row["locus"] for row in moved], ["admissibility"])
+        dropped = edited(["admissibility", "reporting_exceptions"], [])
+        moved = self.rows(dumped(BASE_PROFILE), dumped(dropped))
+        self.assertTrue(moved)
+        self.assertEqual({row["locus"] for row in moved}, {"reporting-exceptions"})
+
+    def test_the_worker_dumps_the_profile_through_the_loader_boundary(self) -> None:
+        # The comparison above is only worth what its input is worth. This is
+        # the one place the real subprocess boundary is crossed: the loader AT A
+        # REVISION reads the corpus AT THAT REVISION, and the profile has to
+        # come back through it or the whole section compares two empty mappings.
+        import subprocess
+
+        head = subprocess.run(
+            ["git", "-C", str(REPOSITORY_ROOT), "rev-parse", "HEAD"],
+            capture_output=True, text=True,
+        )
+        if head.returncode:
+            self.skipTest("not a git checkout")
+        with tempfile.TemporaryDirectory() as tmp:
+            side = review_diff.load_revision(
+                REPOSITORY_ROOT, head.stdout.strip(), Path(tmp)
+            )
+        self.assertIn(PROFILE, side["profiles"])
+        self.assertTrue(side["profiles"][PROFILE].get("authority"))
+
+
+class TransitiveAnswerabilityTests(unittest.TestCase):
+    """The claims a policy edit moved, which no file diff can enumerate.
+
+    §18: changing profile policy alters query eligibility without changing
+    claim YAML, so the next reviewer needs the semantic impact surface and not
+    just a list of files. A row whose `locus` is `profile-only` is a claim that
+    is byte-identical on both sides and means something different.
+    """
+
+    def test_a_profile_change_enumerates_the_claims_it_moved(self) -> None:
+        claims = {
+            "event:e.one#0": dumped_claim(),
+            "event:e.two#0": dumped_claim(basis_class="unreviewed"),
+        }
+        narrowed = edited(["admissibility", "bases"], [
+            {"id": "traditional-catholic", "admissible": False, "what": "Traditional grounds."},
+            {"id": "unreviewed", "admissible": True, "what": "Not yet classified."},
+            {"id": "modern-critical", "admissible": False, "what": "Modern critical chronology."},
+        ])
+        moved = review_diff.diff_answerability(
+            dumped(BASE_PROFILE, **claims), dumped(narrowed, **claims)
+        )
+        self.assertEqual([row["id"] for row in moved], ["event:e.one#0"])
+        self.assertEqual(moved[0]["why"], "answerable->preserved")
+        self.assertEqual(moved[0]["locus"], "profile-only")
+
+    def test_a_claim_that_changed_itself_says_so(self) -> None:
+        moved = review_diff.diff_answerability(
+            dumped(BASE_PROFILE, **{"event:e.one#0": dumped_claim()}),
+            dumped(BASE_PROFILE, **{"event:e.one#0": dumped_claim(
+                answerability="preserved", disposition="alternate",
+                basis_class="modern-critical")}),
+        )
+        self.assertEqual(moved[0]["locus"], "claim-changed")
+        self.assertIn("basis_class", moved[0]["detail"])
+
+    def test_a_revision_predating_the_axis_is_not_read_as_excluding_everything(self) -> None:
+        # A base revision from before the contract has no `admissibility` block
+        # and its claims carry no basis class. Reading that as "nothing was
+        # admissible" would report the entire corpus as newly answerable on the
+        # day the field appeared, which is a diff nobody could review.
+        naked = {"id": "catholic-traditional-v1", "conflict": {"rule": "Preserve."}}
+        old_claim = dumped_claim(answerability="answerable", basis_class="")
+        moved = review_diff.diff_answerability(
+            dumped(naked, **{"event:e.one#0": old_claim}),
+            dumped(BASE_PROFILE, **{"event:e.one#0": dumped_claim()}),
+        )
+        self.assertEqual(moved, [])
+        self.assertIsNone(review_diff.policy_of(naked))
+
+    def test_the_two_sections_are_part_of_the_production_diff(self) -> None:
+        # A section nothing routes to is a section no review artifact carries.
+        self.assertIn("profiles", review_diff.SECTIONS)
+        self.assertIn("answerability", review_diff.SECTIONS)
+        sides = iter((
+            dumped(BASE_PROFILE, **{"event:e.one#0": dumped_claim()}),
+            dumped(
+                edited(["admissibility", "bases"], [
+                    {"id": "traditional-catholic", "admissible": False, "what": "x"},
+                    {"id": "unreviewed", "admissible": True, "what": "y"},
+                ]),
+                **{"event:e.one#0": dumped_claim()},
+            ),
+        ))
+        original = review_diff.load_revision
+        review_diff.load_revision = lambda repo, rev, work: next(sides)
+        try:
+            built = review_diff.build(
+                REPOSITORY_ROOT, "base", "head",
+                ("claims", "profiles", "answerability"), "full",
+            )
+        finally:
+            review_diff.load_revision = original
+        self.assertEqual(built["claims"], [])
+        self.assertTrue(built["profiles"])
+        self.assertEqual(
+            [row["locus"] for row in built["answerability"]], ["profile-only"]
+        )
 
 
 if __name__ == "__main__":

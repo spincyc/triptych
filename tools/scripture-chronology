@@ -83,7 +83,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"counts\":{\"bindings\":375,\"books\":73,\"composition_units\":62,\"events\":279,\"gaps\":21,\"profiles\":1},\"problems\":[]... [+776 chars]",
+                "{\"answerability\":{\"by_basis\":{\"unreviewed\":457},\"by_state\":{\"answerable\":457,\"preserved\":0},\"candidate_claims\"... [+962 chars]",
             ),
         ),
     ),
@@ -115,7 +115,7 @@ EXAMPLES = {
         ),
         Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
             (
-                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of the last two deutero-canonical... [+2763 chars]",
+                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+2929 chars]",
             ),
         ),
     ),
@@ -261,6 +261,12 @@ def validate(arguments: argparse.Namespace) -> dict[str, object]:
         "status": "error" if problems else "ok",
         "problems": problems,
         "counts": counts,
+        # WHAT THE PROFILE ANSWERS WITH, reported beside the counts rather than
+        # inside them. A profile-policy edit moves claims between these numbers
+        # without any claim file changing, and `by_basis` carries the standing
+        # debt: every claim still on the profile's unstated basis class is one
+        # nobody has classified under the admissibility contract yet.
+        "answerability": _chronology.answerability(root),
         "unbound_events": unbound,
     }
 
@@ -274,6 +280,7 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
         ),
         profile=arguments.profile,
         root=root,
+        evidence=getattr(arguments, "evidence", False),
     )
     if isinstance(answer, _chronology.Unresolved):
         return {
@@ -316,6 +323,13 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
                 "precision": item.claim.date.precision,
                 "label": item.claim.date.label,
                 "disposition": item.claim.disposition,
+                # WHAT THIS IS TO A CONSUMER, and the field that stops a
+                # consumer having to read a note to find out. `answerability`
+                # says whether the profile answers with this claim;
+                # `basis_class` says on what method, which is what decided it.
+                "answerability": item.claim.answerability,
+                "basis_class": item.claim.basis_class,
+                "reporting_exception": item.claim.reporting_exception,
                 "profile": item.claim.profile,
                 "basis": item.claim.basis,
                 "derived": item.claim.derived,
@@ -503,6 +517,15 @@ def main(argv: list[str] | None = None) -> int:
         help=(
             "the numbering the locus is given in; the corpus is authored in "
             "vulgate and converts through the concordance or refuses"
+        ),
+    )
+    ask.add_argument(
+        "--evidence",
+        action="store_true",
+        help=(
+            "also return preserved non-answerable evidence, which the default "
+            "candidate set excludes: what a source printed and this profile "
+            "does not answer with"
         ),
     )
     with_examples(ask, EXAMPLES["query"])
