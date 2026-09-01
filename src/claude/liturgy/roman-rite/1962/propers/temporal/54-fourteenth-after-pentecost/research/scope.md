@@ -10,6 +10,20 @@ research lanes (203 findings: 34 `scripture-context`, 74
 11 `source-citation-coverage`, 16 `cultural-afterlife`, 18
 `precedent-search`). `CARRIED_FINDINGS` was empty on this iteration.
 
+**Amended in place by the same stage at workflow `proper v11`, run
+`e5b24f405bde9691`, iteration 0 (2026-08-31)**, which integrates a fresh
+seven-lane join of 69 findings (25 `scripture-context`, 4
+`patristic-reception`, 4 `liturgical-history`, 13 `theological-synthesis`,
+8 `source-citation-coverage`, 4 `cultural-afterlife`, 11 `precedent-search`),
+run against the leaf as re-authored at commit `7c2aaafce` from this brief.
+`CARRIED_FINDINGS` was empty on that iteration also. **The amendment is an
+amendment, not a replacement**: the 203 findings of the first integration
+remain this brief's evidentiary base, the fresh lanes cite this file's
+sections throughout as their evidence of record, and nothing below has been
+rewritten except where the fresh join corrects it. The two joins share the id
+space and are not continuous; fresh finding ids are cited as `[fresh:ID]`
+and bare ids keep their first-join meaning.
+
 **This brief replaces the file of the same name written by the `proper v10`
 production, run `b68cca80edb75854`, entirely.** That file's finding ids belong
 to a different run and are not continuous with the ids used here; where this
@@ -332,6 +346,142 @@ disposition for the same reasons and adds only the Pustet corroboration of the
 adjacency [PRE-015]. It joins no two appointed elements by a mechanism of its
 own, and published as a proposal it would restate a neighbouring guide's
 sourced finding.
+
+### 0.4 The fresh join of run `e5b24f405bde9691`, and what it changes
+
+The seven lanes ran again against the re-authored leaf and returned 69
+findings. The sweep is **re-verificatory in character**: the scripture,
+patristic and liturgical-history lanes re-ran the first join's mechanical
+comparisons and retrievals from scratch rather than restating them, and every
+leg they re-ran held. What the fresh join adds falls into five classes, and
+this section is the settlement of all five.
+
+**(a) One correction to a settled claim: the C6 imperative distribution.**
+The first join's C6 carried a third distribution — every imperative addressed
+to God is `aspice`, `respice`, `Custodi` and the orations' subjunctives, and
+the only imperative addressed to the assembly is `Quaerite`/`Primum quaerite`
+[THE-036]. **A fresh mechanical probe of the appointed Latin contradicts both
+halves**: the Secret opens with a fourth God-directed imperative, `Concéde`
+(verified at `propers/verified.md` element 8, line 413, working tree), and the
+scriptural elements carry at least seven further assembly-directed imperatives
+besides `Quaerite` — `ambulate` (Ep.), `Venite` (All.), `Respícite`,
+`Considerate`, `Nolite … esse` (Gosp.), `gustate`, `videte` (Off.)
+[fresh:THE-107]. The correction is applied at §7.6 below; **the published
+sentence in `sections/20-themes.tex` lines 126–128 states the withdrawn
+three-item list and must be corrected by the author.**
+
+**(b) Fresh candidate movements for the cross-proper layer.** The
+theological-synthesis lane re-derived its stem distributions from the appointed
+text and returned thirteen findings. Their dispositions:
+
+| Fresh id | Subject | Disposition |
+|---|---|---|
+| fresh:THE-101 | `servi-` in exactly two elements (Epistle's `idolorum servitus`, Gospel's `servire` twice) | **Confirms and sharpens** the brief's §2.2/§9.7 material; the constructional asymmetry (noun-phrase genitive against finite-verb complement) and the Anthony-numbering defeater travel with any use |
+| fresh:THE-102 | `concupi-` in exactly two elements with opposite objects | **Confirms** §9.6/P6 from the appointed text; both recorded bounds travel (the `caro` clause lies past the Introit's cut; ordinary-verb senses; no compiler intent) |
+| fresh:THE-103 | Comparative a fortiori as the formulary's argument form, with the Gospel's `Ideo` hinge | **Confirms** §9.1/P1's corrected mechanism; the Hebrew-idiom defeater and the no-softening rule travel unchanged |
+| fresh:THE-104 | `regnum Dei` as the only three-element substantive content word | **Confirms** C1 (§7.1); the fresh lane verified the `regn-` leg and the divine-name spot-checks directly and leaves the exact-form pairwise map a floor, not a ceiling |
+| fresh:THE-105 | The flesh crucified is not the body fed (`caro`/`corp-` disjoint) | **Confirms** C2 (§7.2); the class-1 lexical disjointness and the class-3 three-way resolution both re-verified |
+| fresh:THE-106 | Propitiation and salvation saturate the unsung prayers, Alleluia the single tie | **Confirms** P3 (§9.3); the `propiti-` family's eleven-of-fifteen figure remains carried from the prior run and NOT re-verified, so the claim stays about the substantive |
+| fresh:THE-107 | **The C6 imperative distribution is contradicted by the appointed text** | **Correction** — applied at §7.6; see (a) above |
+| fresh:THE-108 | Fear and trust as paired dispositions across Gradual and Offertory | **Recorded as an unresolved lead, NOT retained as a proposal**: no precedent or conjunction search has reached it (the lane's own bound), so the profile's precedent rule forbids publishing it; both defeaters travel (stock psalm vocabulary; two contested patristic divisions) |
+| fresh:THE-109 | `adic-` confined to Gospel and Communion; Aquinas half is documented reception | **Confirms** P2 (§9.2) in its reduced form; the forced reductions at §9.2 travel unchanged |
+| fresh:THE-110 | Petition against promise as the formulary's central tension, resolved by the objects differing | **Confirms** C6's substance; integrates fresh:THE-107's correction into its third distribution |
+| fresh:THE-111 | The two temporal horizons (Introit's one day; Postcommunion's perpetual effect) | **Confirms** the brief's anagogical material; Cassiodorus's dependence caveat and Theodoret's contrary reading travel |
+| fresh:THE-112 | **Bounded negative**: no theological stem joins two or more elements beyond the recorded exceptions (`concupi-`, `servi-`, `christ-`) | **New bound for §7/§9**: the Epistle's law-inclusio and its fourfold `adversus` remain single-element readings and may not be published as cross-proper claims under the two-element floor |
+| fresh:THE-113 | The Communion's recasting gives the Gospel's last verse to the communicant as address, with Aquinas's three-member exposition the nearest thing to Doctoral commentary on it | **Confirms** C5 (§7.5); the C5/C3 data-sharing rule and the not-crossing line at §7.5 travel whole |
+
+**(c) Fresh precedent classifications, and two registry discoveries.** The
+precedent lane re-ran its conjunction sweep against the widened corpus and
+returned eleven classifications, all recorded with their anchors, search
+boundaries and controlling limits at new §9.10. Two discoveries are material
+beyond the classifications. **First, chants this Mass presents as single-use
+are not**: the tracked 1962 registry appoints this Sunday's Gradual verses
+(Ps. 117:8–9, `Bonum est confidere`) a second time on Friday of the Fourth
+Week of Lent, and the Introit's psalm text (Ps. 83:10, 9) three further times
+as Gradual or Second Gradual — Monday of the First Week of Lent and the Lent
+and September Ember Saturdays [fresh:PRE-005]. **The leaf nowhere records
+these, and the author must not present the chants as single-use.** Secondly,
+**a second 1962 Mass hears this Sunday's Gospel**: the registry gives
+Mt. 6:24–33 also to the S. Caietani Confessoris formulary (registry
+1962-08-07), and a bounded negative search confirms the leaf nowhere mentions
+it [fresh:PRE-006] — relevant to any claim about the Gospel–formulary bond and
+to C4's Sunday-number material at §7.4.
+
+**(d) Fresh cultural-afterlife candidates.** The lane re-ran its sweep and
+returned four findings: two are fresh re-establishments of entries this brief
+already carries at §8.2 and §8.3 (the two-masters rule and `Adversus
+huiusmodi non est lex`, each now read continuously from the CAP
+transcriptions with the corrections of §0.3(e) confirmed) [fresh:CUL-001,
+fresh:CUL-002], and two carry a **new family** — the lily clause "they toil
+not, neither do they spin" (Mt. 6:28) inverted into the standing judicial
+description of swindlers and idlers, with *State v. Tracy* (Mo. 1922) read
+whole as a second attestation independent of *State v. Whiteaker*
+[fresh:CUL-003, fresh:CUL-004]. That family was already this brief's strongest
+unselected candidate (§8.6, CUL-020); the fresh sweep upgrades its evidence
+state and is recorded at new §8.7. **The gallery's published selection of five
+is unchanged** — the cap of five and the mechanism overlap with §8.5 still
+govern — and the fresh material is left to the author as the strongest
+documented substitute.
+
+**(e) Fresh coverage findings against the re-authored leaf.** The
+source-citation-coverage lane audited the leaf as re-authored and returned
+eight findings, recorded with their evidence at new §10.1. In summary:
+`sections/99-references.tex` was not re-authored with the rest of the leaf and
+now affirmatively contradicts the body (it names Augustine's *Expositio ad
+Galatas* among instruments not retrieved while the same commit's commentary
+uses it extensively) [fresh:COV-012]; `research/source-bindings.toml` is stale
+in the same direction, its header declaring six witnesses NOT REACHED that the
+body uses [fresh:COV-013]; the Enarrationes entry asserts a restricted New
+Advent registration that exists at none of the four appointed psalms
+[fresh:COV-014]; every patristic witness the re-authoring added has no
+source-library record at the loci used, so the guide's new citations rest on
+transcriptions held nowhere in the repository [fresh:COV-015]; the primary
+witnesses that would replace the derivative citations (PL 37 complete, the
+complete Theodoret PG 80 facsimile, Schuster vol. 3) are registered, hashed
+and remote [fresh:COV-016]; the NABRE bounded negative re-checked clean
+[fresh:COV-017]; the rights risks are enumerated [fresh:COV-018]; and the
+References exclusion list's holdings statements for Papias, Eusebius HE III,
+Irenaeus III.1.1 and Jerome's Comm. in Gal. were re-verified and check out
+[fresh:COV-019]. **All four repairs are authoring-stage work**; none is
+research this workflow owes, and none blocks authoring, but §10.1 states
+where each must land.
+
+**(f) Re-verification confirmations, recorded rather than restated.** The
+scripture lane re-ran the whole mechanical comparison of the appointed blocks
+against the tracked Clementine and reproduced the first join's opcode counts
+exactly, including the exhaustive negative: apart from the Communion's
+recasting, every departure is exhausted by orthography, pointing, the
+capitalisation rows, the supplied incipits and the three clean cuts
+[fresh:SCR-002, fresh:SCR-024, confirming §1.2]. It re-counted the formulary's
+loci and lexical map [fresh:SCR-001, fresh:SCR-007, fresh:SCR-023,
+confirming §1.1, §1.3 and §1.4], re-established the `beatus … qui sperat` two-verse
+coincidence over the whole Vulgate [fresh:SCR-008, confirming §0.3(g) and
+§9.4], and re-ran the stem probes behind §2 and §9's lexical ties
+[fresh:SCR-012–SCR-019, fresh:SCR-025]. The patristic lane re-fetched
+Cassiodorus complete from Corpus Corporum and reproduced **exactly the route
+and digest this brief records at §3.2** (`idno=21404`, sha256 `c23aef1a…a153`),
+then re-read his direct commentary at all four appointed psalms with the same
+substantive results [fresh:PAT-001–fresh:PAT-004, confirming §2.1, §2.3,
+§2.4, §2.6]. The liturgical-history lane re-fetched the Wilson 1915 Hadrianum
+OCR from its registered source, reproduced the registered SHA-256, byte size
+and line count exactly, and re-confirmed the first join's LIT-023 finding —
+the Hadrianum carrying all three orations of this Mass as one Sunday Mass —
+from freshly refetched bytes of the same witness, which is corroboration in
+the same evidence state and not an independent witness [fresh:LIT-101,
+fresh:LIT-102, confirming §6.1 and §2.8].
+
+**(g) Two bounds the fresh join leaves open, named so that silence cannot
+restate them.** First, the liturgical-history lane's evidence for
+fresh:LIT-103 (the N+1 Gregorian offset, corroborated over five consecutive
+sections) declares a cross-check against the tracked 1962 registry
+`in progress as part of this sweep; to be recorded at its own finding`, and
+**the join carries no finding recording that cross-check's completion**. The
+identifications therefore stand at the level of OCR read against the tracked
+registry — a repository derivative — with the printed missal controlling
+where they disagree, exactly as §6.1 already bounds. Second,
+fresh:THE-108's fear-and-trust conjunction was reached by no precedent
+search: it is a lead under §9.7's discipline, and it may not be published as
+a proposal unless a later authorised sweep reaches its conjunction.
 
 ---
 
@@ -2836,11 +2986,27 @@ operiemur?` and `Scit enim Pater vester, quia his omnibus indigetis` — and the
 promises `et haec omnia adicientur vobis`; the Communion repeats the promise
 alone. **Food, drink and clothing, which no prayer of the day asks for.**
 
-**A third distribution completes it** [THE-036]. Every imperative addressed to
-God in the formulary is `aspice`, `respice`, `Custodi` and the orations'
-subjunctives; **the only imperative addressed to the assembly is
-`Quaerite`/`Primum quaerite`.** So the Mass tells God what to guard and tells
-the assembly what to seek, **and the two vocabularies do not touch.**
+**A third distribution, corrected by the fresh join and no longer publishable
+as it first stood** [THE-036; fresh:THE-107]. The first statement of this
+distribution — every imperative addressed to God in the formulary is `aspice`,
+`respice`, `Custodi` and the orations' subjunctives, and the only imperative
+addressed to the assembly is `Quaerite`/`Primum quaerite` — **is contradicted
+by the appointed Latin and is withdrawn.** The Secret opens with a fourth
+God-directed imperative, `Concéde nobis, Dómine, quǽsumus`, which is
+imperative mood and not subjunctive (collated at `propers/verified.md`
+element 8); and the scriptural elements carry at least seven further
+assembly-directed imperatives besides `Quaerite` — `ambulate` (Ep.),
+`Venite` (All.), `Respícite`, `Considerate`, `Nolite … esse` (Gosp.),
+`gustate`, `videte` (Off.) [fresh:THE-107, whose mechanical imperative-form
+probe found the 2pl forms and the four 2sg imperatives and no 2pl imperative
+in Postcommunion, Gradual, Collect or Secret]. **The narrower contrast
+survives and is the one to publish**: the three orations never command the
+assembly and ask for no temporal good (above); their material addressed to God
+is otherwise subjunctival; and the command the Mass repeats at reception is
+the promise's own `Quaerite`. **The published sentence in
+`sections/20-themes.tex` lines 126–128 states the withdrawn three-item list
+and must be corrected by the author; this paragraph is the authority for the
+correction.**
 
 **Why this is a claim and not a curiosity.** It is the resolution of the tension
 the formulary most obviously raises — a Gospel that forbids anxiety about food
@@ -3015,6 +3181,62 @@ selected**, and the cap of five is the reason for the first four.
 | **CUL-022**, "O ye of little faith" as an IRS manager's e-mail tease, reproduced in *United States v. Greve*, 490 F.3d 566 (7th Cir. 2007) | **Rejected on the rule, and the lane says so itself.** **Echo, and it must be described as an echo**: the five words are exact KJV and Mt. 6:30 is their first occurrence, **but the same English tag renders Mt. 8:26, 14:31 and 16:8**, the phrase is a dead idiom in modern English, the e-mail attributes nothing, and **dependence on Matthew rather than on general usage is not documented.** Under the gallery rule an idiom used with no sign the speaker knew it was scriptural sits close to the excluded category of "an independently similar phrase". **It is the weakest of the ten and was returned for breadth, not for publication** |
 | **Carlyle's "Gospel of Mammonism"**; ***Sacred Heart Academy v. Karsch***; the three Psalm 146 cases; six of the nine "fowls of the air" cases; *Wagner v. Sanders* | **Refused before selection**, on strength, on the rule, or on identity. See §5 |
 
+### 8.7 Fresh cultural-afterlife findings, run `e5b24f405bde9691` (2026-08-31)
+
+The fresh lane re-ran its sweep and returned four findings, recorded here
+under the same rules as §8 — this stage selects, it does not go looking
+[fresh:CUL-001–fresh:CUL-004].
+
+**Two are fresh re-establishments of entries already carried above.**
+fresh:CUL-001 re-establishes §8.2 from scratch: it re-reads *Everhart v.
+Searle* and *United States v. Mississippi Valley Generating Co.* as continuous
+CAP transcriptions of the printed reporters, reproduces the §0.3(e)
+corrections exactly (the "authoritative declaration" phrasing is the Court of
+Claims' in *Michigan Steel Box Co.*, quoted in a footnote; the "remedial of
+actual wrong" sentence is the court's quotation of Hare and Wallace's Notes),
+adds the corpus measurement (CourtListener exact-phrase count 331, earliest
+dated hit *Carter v. Harris*, Va. 1826, **not opened and not relied on**), and
+confirms that every legal use located stops before `Non potestis Deo servire,
+et mammonae`, with Warren C.J. re-supplying the second master in secular
+dress. fresh:CUL-002 re-establishes §8.3 the same way: *Johnston v. The
+Commonwealth* (1853) and *Sullens v. State* (1941) read whole, the
+exact-phrase query returning exactly 2 opinions, the pun on "law" and the
+unattributed-borrowing description all confirmed. **Both entries' evidence
+states are unchanged** — retrieved and read in a digital surrogate, not
+verified — and §8.2/§8.3 stand as corrected.
+
+**Two carry the lily-clause inversion family, and the fresh sweep upgrades
+its evidence state.** fresh:CUL-003 records *State v. W. Harrison Whiteaker*
+(Or. 1926, the "J. Rufus Wallingford" sentence), *State ex rel. Garrett v.
+McPeters* (Ala. 1951, citing "Matthew 6: 28" explicitly, the jackals passage),
+and *Sperry & Hutchinson Co. v. Hudson* (Or. 1951, quoting Whiteaker), each
+read whole from CAP transcriptions, with the corpus measurement (8 hits with
+Matthew's internal comma, 13 without, 1922–1982). fresh:CUL-004 records
+*State v. Tracy*, 294 Mo. 372 (Mo. 1922) read whole — a prosecutor's opening
+argument quoting the clause as a jibe about a professional burglar — **as a
+second attestation of the inversion that does not descend from Whiteaker**,
+which the first join's CUL-020 could not establish (its five later citations
+were seen in match windows only). The turn is unchanged from §8.6's record:
+in Matthew not toiling is the point in the lilies' favour; in the case law it
+is the indictment, a complete reversal of valuation. **Limits, all carried
+from the fresh findings**: only four of the thirteen corpus hits were read;
+the other nine are named from search metadata and asserted for nothing; the
+comma-less and comma-free variants were not swept, so the population is larger
+than thirteen and no exhaustiveness may be claimed; the Wallingford
+identification as a pulp-fiction confidence man was not verified in a primary
+source and must be checked or dropped before publication; CAP and
+CourtListener disagree on the Whiteaker date (1926-07-20 against 1926-07-02)
+and the official reporter should settle it.
+
+**Selection outcome, stated so the author cannot mistake it**: the published
+gallery stays at the five of §8.1–§8.5 — the cap of five governs, and this
+family's "wrong noun appended" mechanism is the move §8.5 already carries —
+**and this family remains the strongest documented substitute for any Gospel
+entry, now with two whole-text attestations of the inversion's independence
+where the first join had match-window citations only.** If the author
+substitutes it, the Tracy independence datum and the four limits above travel
+with it.
+
 ---
 
 ## 9. Interpretive-proposal audit
@@ -3173,6 +3395,40 @@ the Pustet's.** The profile does not mandate the form, and this brief records
 its boundaries in prose at §3.5 and per proposal above instead. **Whether the
 target adopts it is an authoring decision.**
 
+### 9.10 Fresh precedent classifications, run `e5b24f405bde9691` (2026-08-31)
+
+The fresh precedent lane re-ran its conjunction sweep against the widened
+corpus and returned eleven classifications [fresh:PRE-001–fresh:PRE-011].
+**They are recorded here with the anchors, mechanism, nearest located
+precedent or analogue, search boundary and controlling limit each finding
+carries, and each classification is carried through unchanged.** The first
+join's classifications at §9.1–§9.6 are not superseded: every fresh
+classification that reaches a retained proposal corroborates it, and the two
+that add substance are flagged.
+
+| Fresh id | Conjunction | Classification | Disposition in this brief |
+|---|---|---|---|
+| fresh:PRE-001 | The same-identity precedent field | — | The sibling GPT leaf for this Sunday carries five proposals over the same elements, four near analogue and one not located; read in full at its interpretive section only. Confirms §9.1–§9.6's precedent map |
+| fresh:PRE-002 | One choice in two grammatical registers (comparative chants, exclusive readings) | **NEAR ANALOGUE LOCATED** | Same family as P1's register claim. Nearest: a postconciliar sibling's Collect means–end relay (`sic transeamus per bona temporalia`) and GPT 41's ordered-goods proposal; **no checked witness makes the two-register join**. Bounds: sermon literature generally not reached, including Anthony of Padua's sermon for this very Sunday; no lexical concordance over chant incipits. Available to the author inside P1, not as a separate proposal |
+| fresh:PRE-003 | What man cannot add | **NOT LOCATED IN THE CHECKED CORPUS** | **Confirms P2's classification** with a bounded search (both providers' 1962 interpretive files; the appointed-text and commentary occurrences inside the two 54 leaves are expected and not counterexamples). Not reached: sermon literature including Anthony's Sunday XIV sermon, and any patristic homily series on Mt 6 |
+| fresh:PRE-004 | Propitiation and salvation saturating the unsung orations plus the Alleluia | **NEAR ANALOGUE LOCATED** | **Confirms P3's classification**; the substantive `propitiatio` appears in no interpretive proposal of either provider's 1962 collection outside this leaf. Nearest: leaf 53's shared-noun oration bracket. Not reached: a lexical concordance over the whole Missal's orations |
+| fresh:PRE-005 | The hope-formula past the cut, handed on at another Mass | **PRECEDENT LOCATED** | **Confirms P4's classification and adds registry evidence the leaf nowhere records**: the tracked 1962 registry gives this Sunday's Gradual verses a second appointment (Friday of the Fourth Week of Lent, Gradual `Bonum est confidere in Domino`, after lesson 1 Kings 17:17–24) and the Introit's psalm text three further second uses as Gradual/Second Gradual (Monday of the First Week of Lent, lines 3158/3558; the Lent and September Ember Saturdays), while corroborating the two known Ps. 33:8–9 second uses and the Eighth-Sunday control. **The author must not present any of these chants as single-use; §7.4 and the chant commentary must carry the multiple appointments.** Bounded: the sweep covers the tracked 1962 registry only, not the pre-1955 or 1570 artifacts |
+| fresh:PRE-006 | The Sunday number is not the Mass's own | **PRECEDENT LOCATED** | Confirms the C4 routing (§7.4). **Adds a new witness: the registry gives the S. Caietani Confessoris formulary (1962-08-07) the same Gospel, Mt. 6:24–33** — a second 1962 Mass hearing this Gospel, relevant to any claim about the Gospel–formulary bond; the leaf nowhere mentions it (bounded negative over the leaf's tracked files). Anthony of Padua's Dominica XIV sermon, taking the Thirteenth Sunday's Gospel under this number, remains the historical control for the displaced numbering |
+| fresh:PRE-007 | The Fathers divided at both chants, and the formulary resolves neither | **NEAR ANALOGUE LOCATED** | **Confirms P5's classification**: the precedent for presenting a documented division as itself the cross-element unit is leaf 51; the two-chant-pair form is attested only in the sibling GPT leaf, which joins the chants through the Gospel's master-saying, not through two divisions. The Gradual half's ablative/accusative variant still needs PL 37 checked (§9.5's boundary; not re-verified, the lane did not open PL) |
+| fresh:PRE-008 | The chant or psalm supplies the referent the Gospel leaves unnamed (Mt 6:26 birds, 6:28 lilies) | **NEAR ANALOGUE LOCATED; CONJUNCTION OPEN** | **A reached conjunction this brief does not retain as a proposal**: the nearest precedent is postconciliar pc-s42 proposal 6, the same shape for another Gospel, and a two-provider search for the birds/lilies wording returns no leaf making the join for this Sunday. **It is available to the author within the profile's four-to-six range only by substituting for an existing proposal**, and it carries the pc-s42 limit pattern (an unchecked witness may already read the birds doctrinally) and the profile's rejection of generic applications. Recorded so the conjunction's precedent search is not lost |
+| fresh:PRE-009 | The Communion repeats the day's Gospel | **PRECEDENT LOCATED (against the proposal)** | **Negative control, unchanged**: repository precedent treats Gospel-sourced Communion antiphons as ordinary practice, so no proposal may rest on the repetition as such; C5's recasting, not the reuse, is the substantive |
+| fresh:PRE-010 | The two consecutive Sundays' Galatians lessons and the two Collects' shared sine-te incapacity grammar | **NOT LOCATED IN THE CHECKED CORPUS** | Reached and not retained: the leaf records the adjacent-Sunday material only as historical orientation, the Fifteenth Sunday's Collect (`quia sine te non potest salva consistere`) and its Gal. 5:25–6:10 continuation are registry facts, and **no interpretive join exists in the checked corpus**. Not reached: sacramentary scholarship on whether the two Collects share a compositional family. Remains a lead under §9.7's discipline |
+| fresh:PRE-011 | The proposal-schema structure itself | — | The target's newer schema (explicit Precedent / Search boundary / Controlling limit fields) remains the working structural precedent; the leaf's relation keys match the six conjunctions the fresh sweep covered. No action for this stage |
+
+**Net effect on §9.1–§9.6**: every retained proposal's classification is
+reproduced by the fresh sweep, P2's and P3's and P4's and P5's with fresh
+corroboration and P4 with the fresh registry additions of fresh:PRE-005
+recorded above. **No proposal's conjunction is left unreached by some
+precedent search of this workflow**: P1's register claim is covered by
+fresh:PRE-002, P6's by the first join's [PRE-011 in the first join's
+numbering, at §9.6], re-verified textually this run by fresh:THE-102 and
+fresh:SCR-014.
+
 ---
 
 ## 10. Section-by-section evidence coverage
@@ -3216,6 +3472,79 @@ supplied, and its six remaining unsupplied items are named individually above
 with the corpora, loci and limits behind each; one of the prior brief's seven,
 the acrostic, is relieved this run and is now available as documented
 reception.** **No position's evidence position is left unstated.**
+
+### 10.1 Coverage statement updated by the fresh join, run `e5b24f405bde9691` (2026-08-31)
+
+The fresh source-citation-coverage lane audited the leaf as re-authored and
+returned eight findings. **They change the state of two positions and leave
+the other ten as stated above.**
+
+- **Position 11, `References` — SUPPLIED, WITH NAMED DEFECTS THE AUTHOR MUST
+  REPAIR.** The subsection was not re-authored with the rest of the leaf: it
+  omits every witness the re-authoring commit's commentary newly uses, and it
+  still names Augustine's *Expositio ad Galatas* among four instruments "not
+  retrieved" while the same commit's commentary uses that work extensively —
+  the apparatus contradicting the body, which is the defect the profile's
+  References rule exists to prevent [fresh:COV-012, whose evidence names the
+  commit's 2-line References change against 717 changed commentary lines].
+  The Enarrationes entry asserts a restricted New Advent registration that
+  exists at none of the four appointed psalms — the registered artifacts are
+  at psalms 17, 25, 51, 55, 65, 69, 77, 90 and 144 only — so the sentence
+  must either name the registered loci it is true at or drop the registration
+  claim [fresh:COV-014, which re-establishes against the current working tree
+  the defect the first join carried as COV-004/Correction 2].
+- **Position 12, `Generation Metadata` and the research apparatus — one
+  further named staleness.** `research/source-bindings.toml` is stale against
+  the re-authored leaf: its header declares Cassiodorus, Jerome's Comm. in
+  Gal., Chrysostom's Expositio in Ps. CXVII, Theodoret on Pss. 83 and 94,
+  Gregory on Ezekiel and Schuster vol. 3 "NOT REACHED", while the body uses
+  each as a read source; its 24 bindings name no record for any of the new
+  patristic layer. The file's schema-2 text-control and translation-control
+  bindings remain valid [fresh:COV-013].
+- **The evidence ceiling for the new patristic layer, now stated as a bound
+  that governs every section carrying it.** Every witness the re-authoring
+  added — Hilary's Commentarius in Matthaeum, Jerome's Comm. in Gal.,
+  Augustine's Expositio ad Galatas, Chrysostom's Comm. in Gal., Cassiodorus
+  at the four appointed psalms, Theodoret at Pss. 83, 94 and 117 — has no
+  source-library record of any kind at the loci used, so none of these
+  citations can acquire a fingerprint, a passage record or a rights
+  disposition from the library as it stands, and the References cannot supply
+  edition identity beyond what the prose states [fresh:COV-015]. **This is
+  the bound the guide carries in place of a stronger claim; the gap is
+  diagnostic and registering these witnesses is later-stage work, not this
+  workflow's.**
+- **The cheapest upgrades, recorded so nobody has to re-derive them.** The
+  repository already holds, hashed and remote: PL 37 complete (Augustine's
+  Enarrationes for Pss. 80–150, 481 pages, public domain, with a
+  verified-segment precedent at Ps. 88 — reaching Pss. 83, 94 and 117 but not
+  Ps. 33), the complete Theodoret PG 80 facsimile (1068 pages), and Schuster's
+  Liber Sacramentorum vol. 3 (462 pages, public domain, with registered
+  passages at pp. 123 and 132–134) [fresh:COV-016]. Using them requires
+  re-retrieval, which no lane of this run was authorised to do.
+- **Positions re-checked clean.** The page-2 NABRE bounded negative stands
+  exactly as printed: the registered NABRE stratum holds no artifact for
+  Matthew or for NABRE Pss. 34, 84, 95 and 118, the only locus reaching an
+  appointed passage being the Galatians introduction [fresh:COV-017,
+  re-running the enumeration]. The References exclusion list's holdings
+  statements for Papias, Eusebius HE Book III, Irenaeus III.1.1 and Jerome's
+  Comm. in Gal. all check out against the working tree, and the page-2
+  bounded negatives for them are correctly bounded — **a positive
+  verification, recorded because an audit that only reports defects cannot
+  establish that the negatives it leaves alone are sound** [fresh:COV-019,
+  which also confirms Irenaeus III.1.1 is reachable in searchable bytes
+  without a passage record, exactly as the leaf states].
+- **Rights posture, unchanged in substance and restated with the fresh
+  enumeration.** All 70 registered New Advent artifacts have ceased to
+  reproduce (deltas of −1 to −3 bytes plus one 404), so their digests stand
+  only as historical attestations and registration claims about that stratum
+  must be locus-specific [fresh:COV-018, resting on the repository's own
+  2026-08-28 drift review]; the Adriaen CCSL 98 Cassiodorus and the Centro
+  Studi Anthony apparatus remain rights-restricted (summarise-only); the
+  Haydock 2014 Loreto printing's rights remain recorded unresolved.
+
+**The twelve positions of the reader order remain stated as at §10 above;
+this subsection adds defects and bounds to positions 2, 11 and 12 and to the
+patristic-layer evidence state that several positions share.**
 
 ---
 
@@ -3498,6 +3827,47 @@ dependence caveat is renewed and strengthened by [PAT-207] (§2.1); and
 **#12.2's CON-EVI-008**, because the translation-naming rule it enforces now
 applies to sixteen newly retrieved witnesses (§11.2).
 
+### 12.5 Updated at run `e5b24f405bde9691` (2026-08-31): the v11 predecessor run, and the fresh join's re-checks
+
+**A third prior run now exists and is accounted for.** Run
+`6b83fad5ae2ed53e` — `proper v11` at commit `f4534e4cd`, this target, this
+provider — is the run whose research-synthesis wrote the first 3,526 lines of
+this file; at this stage's iteration it is a prior production. Its **last
+`research-synthesis` result is a `PASS` carrying no blocking finding** (its
+artifact is the file this brief amends), and its **last `content-evaluation`
+result is a `BLOCKED` with an empty `findings` array**: all five evaluation
+lanes (`evidence-discipline`, `reception-sweep`, `synthesis-argument`,
+`citation-integrity`, `profile-conformance`) returned BLOCKED with no
+findings, and no escalation was recorded at the run level or in any result.
+**It therefore contributes no standing finding** — there is nothing in it to
+answer, resolve, or declare inapplicable — and its terminal state is recorded
+here so that a later reader does not mistake an empty blocked evaluation for
+a silent one.
+
+**The fifteen findings above were string-checked by the first v11 integration
+against the leaf as it then stood; the fresh join re-checked the load-bearing
+ones against the leaf as re-authored at `7c2aaafce`, and the checks held in
+both directions:**
+
+- **fresh:COV-019 re-verifies finding #13's factual base positively**: Papias
+  has no record of any kind, Eusebius is held only at Books VI–X in Greek and
+  Book VI in English, and Irenaeus III.1.1 is reachable in searchable bytes
+  with no passage record — exactly what #13's bounded negatives state.
+- **fresh:COV-014 re-establishes, against the current working tree, the
+  New Advent Enarrationes registration defect** behind the first join's
+  COV-004/Correction 2: the re-authored References still asserts a restricted
+  New Advent registration of the Enarrationes that exists at none of the four
+  appointed psalms. **This is a live defect of the same species as finding
+  #9's second half, newly located in the re-authored text, and it is recorded
+  with its repair at §10.1.**
+- **fresh:COV-012 and fresh:COV-013 add two new same-species defects** — the
+  References subsection contradicting the re-authored body, and the stale
+  source-bindings header — also recorded with their repairs at §10.1.
+
+**No standing finding of either prior production is reopened by the fresh
+join, and none is left unresolved.** The count for this target now stands at
+fifteen blocking findings across three prior runs, all accounted for above.
+
 ---
 
 ## 13. Lane finding concordance
@@ -3518,9 +3888,26 @@ discarded as wrong.**
 
 **Total: 203, and every one is accounted for.**
 
+**Fresh join, run `e5b24f405bde9691` (2026-08-31) — 69 findings, every one
+accounted for:**
+
+| Lane | Findings | Count | Principally at |
+|---|---|---|---|
+| `scripture-context` | fresh:SCR-001 – fresh:SCR-025 | 25 | §0.4(f), §1.1–§1.4 (re-confirmed), §2 (re-confirmed), §7.1 (fresh:SCR-007), §9.4 (fresh:SCR-008), §9.6 (fresh:SCR-014) |
+| `patristic-reception` | fresh:PAT-001 – fresh:PAT-004 | 4 | §0.4(f), §3.2 (route and digest re-confirmed), §2.1, §2.3, §2.4, §2.6 (re-confirmed) |
+| `liturgical-history` | fresh:LIT-101 – fresh:LIT-104 | 4 | §0.4(f), §0.4(g), §6.1 (re-confirmed), §2.8 (re-confirmed) |
+| `theological-synthesis` | fresh:THE-101 – fresh:THE-113 | 13 | §0.4(a)(b)(g), §7.6 (corrected), §7.1–§7.5 (re-confirmed), §9.1–§9.3, §9.6 (re-confirmed), §9.7 (fresh:THE-108 recorded as a lead) |
+| `source-citation-coverage` | fresh:COV-012 – fresh:COV-019 | 8 | §10.1, §12.5 |
+| `cultural-afterlife` | fresh:CUL-001 – fresh:CUL-004 | 4 | §0.4(d), §8.2, §8.3 (re-confirmed), §8.7 (new) |
+| `precedent-search` | fresh:PRE-001 – fresh:PRE-011 | 11 | §0.4(c), §9.10 (all), §7.4 (fresh:PRE-006), §9.4 (fresh:PRE-005) |
+
+**Total across both joins: 272, and every one is accounted for.**
+
 ---
 
 **End of brief.** Written by one stage, which is the only stage that may write
-it. **It replaces the `proper v10` brief of the same name in its entirety.
-No later stage may add to this brief or amend it**, and every gap it leaves is
-named as a gap rather than left for the author to discover.
+it. **It replaced the `proper v10` brief of the same name in its entirety and
+was then amended in place once, by the same stage at run
+`e5b24f405bde9691`; no later stage may add to this brief or amend it**, and
+every gap it leaves is named as a gap rather than left for the author to
+discover.

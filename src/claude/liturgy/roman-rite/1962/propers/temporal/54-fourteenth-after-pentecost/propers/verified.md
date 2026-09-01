@@ -111,6 +111,53 @@ omits the appointed-text component.
   digest above. It is the source library's record fingerprint, reproduced
   exactly by `tools/tpt source-library fingerprint` for that artifact ID, and
   all twenty-four bindings in that file reproduce their recorded fingerprints.
+- **Second independent re-confirmation, 2026-08-31, by the source-audit stage,
+  and what it added.** The controlling witness was re-authenticated before any
+  reading: the retained copy hashed to `648fdb8f…` at 82,815,941 bytes, matching
+  both this record and the artifact manifest, and `pdfimages -list` reports
+  PDF pp. 475–477 as 1-bit CCITT images at 500 ppi (2,583 × 3,814;
+  2,570 × 3,806; 2,577 × 3,811). The three pages were extracted as their own
+  embedded images and read as images, not through any text layer: all ten
+  elements, their headings and references, the printed heading and `II classis`,
+  the `Credo` and Preface rubrics, both boundaries, and the whole marginal series
+  1571–1582 stand as recorded. Re-read at native resolution and confirmed a
+  second time: the unaccented `veneficia`; `adícere` with a single `i`; the
+  absence of a comma after `gustáte`; the Secret's short `Per Dóminum.` against
+  the Postcommunion's long `Per Dóminum nostrum.`; the absence of a repetition
+  cue after `℣. Glória Patri.`; and the damaged Gospel marginal number, `157`
+  firm with the fourth digit surviving as two disconnected fragments.
+  **Three things this run added.** (1) The colour inference is now read off the
+  facsimile's own page image rather than reported: RG 127 b stands on printed
+  p. XX, PDF p. 18, worded exactly as quoted above, under the heading
+  `D) De colore viridi` within title `XVIII - De coloribus paramentorum`, whose
+  general rule at RG 117 it particularises. (2) The account of why no second or
+  third oration stands in this formulary is likewise read off a page image:
+  RG 434 b (`in dominicis II classis, nulla alia admittitur oratio, praeter
+  commemorationem festi II classis, quae tamen omittitur si commemoratio
+  privilegiata facienda sit`) with RG 435, on printed matter at PDF p. 29.
+  (3) Two divergences from the Bible text that this record did not carry were
+  found and are rows 19 and 20 below.
+  **Three limits, declared rather than papered over.** The Benziger comparison
+  was not lifted off the OCR layer for the whole formulary: the exact bytes of
+  the registered page-image artifact (`…benziger-iuxta-typicam-1962.ia-djvu`,
+  hashed this run to `c66aaa37…` at 24,084,354 bytes, matching its manifest) are
+  present in this session's cache, but no DjVu decoder exists in this
+  environment, so no page of that registered artifact was opened. Two cached
+  JPEG page images of unregistered provenance, carrying a third-party watermark
+  and matched to nothing this repository records, show Benziger printed pp. 390
+  and 391; read as **corroboration of uncertain provenance and not as a
+  collation**, p. 390 agrees with the OCR layer at the Alleluia, the Gospel
+  heading, the doubled `-ii-`, the run-on `Credo.`, the comma in `gustáte, et
+  vidéte`, the Secret's long conclusion, the Postcommunion's short one and the
+  Fifteenth Sunday's all-capital heading, and it fixes IA leaf `n466` at printed
+  p. 390 and `n467` at p. 391 — from which `n465` is p. 389 by adjacency, as this
+  record had inferred. And one apparatus tension between this record and
+  `retrieved.txt` is **unresolved**: this record puts the bracketing page-number
+  marks at OCR lines 59,325 and 59,445, while `retrieved.txt` states its extract
+  runs 59,360–59,545 and opens on Benziger printed p. 388. The artifact is
+  `storage = "remote"` with no payload in the tree and nothing was refetched, so
+  the line arithmetic could not be settled here. Nothing in the appointed text
+  depends on it.
 - **Formulary boundary.** The formulary begins immediately after the
   Postcommunion of the Thirteenth Sunday after Pentecost (marginal no. 1571,
   `Sumptis, Dómine, cæléstibus sacraméntis…`) and ends immediately before the
@@ -478,15 +525,36 @@ is **not** asserted here, no *Psalterium Romanum* witness having been collated.
 | 16 | Gosp., Mt. 6:30 | `Deus sic vestit: quanto magis` | `Deus sic vestit, quanto magis` — colon for comma |
 | 17 | Gosp., Mt. 6:32 | `Hæc enim ómnia gentes inquírunt.` as its own sentence | `hæc enim omnia gentes inquirunt` runs on from v. 31 in lowercase |
 | 18 | Comm., Mt. 6:33 | `Primum quǽrite regnum Dei, et ómnia adiciéntur vobis, dicit Dóminus.` | `Quærite ergo primum regnum Dei, et justitiam ejus: et hæc omnia adjicientur vobis` — `ergo` dropped, `Primum` promoted, `et iustítiam eius` omitted, `hæc` dropped, and `dicit Dóminus` added from nowhere in the text |
+| 19 | Ep., Gal. 5:18 | `Quod si spíritu ducímini` | `Quod si Spiritu ducimini` — the tracked Clementine capitalises the noun here and the missal does not. **Added 2026-08-31 by the source-audit stage**, out of element order so that the references to rows 8–11 and 13–17 above and elsewhere keep their meaning |
+| 20 | Gosp., Mt. 6:30 | `fænum agri` | `fœnum agri` — æ for œ. **Added 2026-08-31 by the source-audit stage**, same reason |
 
-**Three negative results belong with the table.** The Gradual (Ps. 117:8–9) is
+**Three negative results belong with the table, and their exception classes are
+wider than this record first stated.** The Gradual (Ps. 117:8–9) is
 the Clementine's own wording exactly, both verses, with no addition, omission
 or transposition; the Epistle after its incipit (Gal. 5:16b–24) matches the
-Clementine word for word apart from the i/j and æ orthography and the pointing
+Clementine word for word apart from the i/j orthography, the one capital at
+row 19, and the pointing
 recorded in rows 8–11; and the Gospel after its incipit (Mt. 6:24–33) likewise
-matches word for word apart from the orthography and pointing in rows 13–17.
+matches word for word apart from the i/j orthography, the æ/œ orthography at
+row 20, the one capital at row 17, and the pointing in rows 13–17.
 The only appointed element of this formulary that departs from its Bible text
 substantively is the Communion.
+
+**Corrected 2026-08-31 by the source-audit stage: the capitalisation count is
+three, not two.** This record listed two capital-for-lowercase divergences
+(rows 1 and 5) and the research brief built a sentence on their being exactly
+two and falling exactly on the words that carry typological weight. A third
+exists and falls nowhere near them: `spíritu` for the tracked Clementine's
+`Spiritu` at Gal. 5:18, row 19. It was found by an exhaustive comparison of all
+eight appointed biblical blocks against the tracked Clementine that preserved
+case and punctuation and normalised nothing but accents — 5 difference-runs in
+the Epistle, 8 in the Gospel, 0 in the Gradual, and every one of the rest
+already in the table above. **Nothing in the appointed Latin changes**: rows 19
+and 20 are divergences of this formulary from its Bible text that this record
+had not recorded, not corrections to what the missal prints. The caveat at row
+1's kind governs row 19 as well: capitalisation in a modern electronic
+Clementine is that e-text's convention and capitalisation in the 1962 missal is
+that book's, and neither is evidence of what the Latin intends.
 
 ## Rights
 
@@ -557,6 +625,25 @@ Missals this repository tracks as public-domain text:
   degraded; an apparent reading in it is evidence about the text layer, not a
   collated reading of the 1570 book.
 
+**Re-executed 2026-08-31 by the source-audit stage, against the tracked bytes,
+and it holds.** Both payloads were reopened at the stated ranges — Pustet at
+lines 50147–50322, Venice at 53170–53351 — and every substantive reading above
+is in the bytes: the Pustet's `Secunda Oratio. A cunctis nos`, `Alia Secrcta.
+Kxaudi nos Deus` and `Alia Postcommunio. Mundet et mtiniat`, each with its
+`Tcrtia ad libitum`; the Venice heading `iommica xiiij. poft Pente⸗coſten`, its
+Collect's `queſumus domi⸗ne` transposition, its `Manifeſta autem fünt opcra
+cariij`, its fruit order `longa:nimitas,bonita; bcniamnitas`, its Gospel's
+`patcr vc»fcr celeſtis`, its Secret's `Per dominum noſtrum Jeſum Chꝛiſtuʒ filinm
+tuũ, qui.`, and both books' Communion carrying `dicit Dominus` with `et justitiam
+ejus` absent. **One presentational bound is added at the same time.** The strings
+set in backticks above are lightly normalised renderings of degraded optical
+layers — dropped ornamental initials supplied, digit-for-accent and
+consonant-collapse noise cleaned — and not literal bytes: the Pustet's Introit
+begins `Rottctor noster dspice` in the file and the Venice's `Rotectoꝛ noſter`.
+Read them as this audit's transcriptions of what the layer shows, which is what
+the surrounding sentences already say they are, and not as quotations. Nothing
+is quoted from either witness into the guide.
+
 **Bounds of this check.** It was made at the level of element, printed
 reference and incipit against uncorrected OCR text layers, and it is not a
 word-level collation. Both witnesses print the older orthography and element
@@ -626,6 +713,27 @@ two registered public-domain witnesses, named at the point of use:
   `ia_leaf` and no `collated` field at all: it has never been seen on a page.
   **The Collect's English is the soft spot of the three, not the Secret's**, and
   the guide says so at the Collect and in its terminal appendix.
+
+  **Re-verified 2026-08-31 by the source-audit stage, at the byte level.** The
+  Cummiskey transcription was rehashed and matched `13c2ad6d…`; the passage
+  record's `physical_line_ranges = [[152, 154]]` are exactly this formulary's
+  Collect, Secret and Postcommunion in liturgical order; the `latin_incipit`
+  column holds `Custodi`, empty, `Purificent`, and is empty at the Secret of the
+  Thirteenth and Fifteenth Sundays too, which is the systematic gap this record
+  claims; the passage's own `context` names the heading `XIV. SUNDAY AFTER
+  PENTECOST` at printed pp. 425–427; and the three ledger entries carry the
+  fields as stated above, the Collect with no `collated` field. Every English
+  word the guide prints for the three orations is byte-identical to that
+  transcription. So is every scriptural English word: each of Ps. 33:8–9,
+  83:2–3, 83:10–11, 94:1, 117:8–9, Gal. 5:17–24 and Mt. 6:24–33 was matched
+  whole against the tracked Douay chapters, with one intended exception — the
+  guide drops the Douay's `I say then:` at Gal. 5:16 because the missal's
+  `Fratres:` displaces it, which the guide declares at the element. The tracked
+  edition records `rights: public-domain` and `publishable: true`. The
+  Vulgate-to-English psalm numbers printed on page 2 were re-read off the
+  tracked concordance rather than computed: Pss. 33 and 83 at
+  `english_offset = 1` with the inscription mapped to English `title`, Pss. 94
+  and 117 at `0`, all four `english_offset_uniform = yes`.
 
 **Declared places where the registered English does not answer the Latin
 above.** They are declared in the guide and are not filled in by the project.
