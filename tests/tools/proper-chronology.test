@@ -37,21 +37,43 @@ run_tool record --help >/dev/null
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
-# Every published leaf both providers hold must resolve to loci. A proper the
-# calendar appoints Scripture for and this tool cannot address is a proper the
-# contract cannot be enforced on.
+# Every published leaf both providers hold must resolve. A proper this tool
+# cannot address is a proper the contract cannot be enforced on. EVERY leaf
+# directory is asked, not only the ones carrying a manifest: skipping on
+# `proper-components.toml` dropped ritual/m01-nuptial-mass, the one leaf that
+# could not be answered for at all, and a skipped leaf looks exactly like a
+# passing one.
 leaves=0
+ritual=0
 for provider in gpt claude; do
 	for leaf in "$repo/src/$provider/$collection"/*/*/; do
-		[ -f "$leaf/proper-components.toml" ] || continue
+		[ -d "$leaf" ] || continue
 		slug="${leaf#"$repo/src/$provider/"}"
 		slug="${slug%/}"
+		[ -f "$leaf/main.tex" ] || fail "leaf with no main.tex: src/$provider/$slug"
 		run_tool loci --provider "$provider" --document "$slug" >/dev/null ||
 			fail "published leaf refused: src/$provider/$slug"
 		leaves=$((leaves + 1))
+		case "$slug" in
+		*/ritual/*) ritual=$((ritual + 1)) ;;
+		esac
 	done
 done
 [ "$leaves" -gt 0 ] || fail "found no published leaves: the regression checked nothing"
+[ "$ritual" -gt 0 ] || fail "no ritual leaf was reached: the old glob skipped them"
+
+# A ritual identity is answered, not refused: the calendar registers no `M`
+# because a nuptial Mass is appointed by a rite and not by a day, and the
+# record must be able to say so rather than being impossible to write.
+run_tool record --provider gpt \
+	--document "$collection/ritual/m01-nuptial-mass" >"$sandbox/ritual.toml"
+grep -q '^formulary = "no-calendar-formulary"$' "$sandbox/ritual.toml" ||
+	fail "the ritual record does not state why it lists no element"
+if grep -q '^\[\[elements\]\]$' "$sandbox/ritual.toml"; then
+	fail "the ritual record invented elements the calendar does not appoint"
+fi
+grep -q '^formulary_reason = ".*ritual Mass' "$sandbox/ritual.toml" ||
+	fail "the ritual record does not say why it lists no element"
 
 # The loci are the corpus's own spelling, taken from the canonical book index
 # and never from a table written here. Psalm 83 is the Vulgate number the
@@ -89,6 +111,10 @@ grep -q '^subject = "israel.monarchy.david-at-geth"$' "$sandbox/record.toml" ||
 	fail "the record does not carry the event id the corpus answered with"
 grep -q '^generated_by = ' "$sandbox/record.toml" ||
 	fail "the record does not say what generated it"
+# ...and a formulary the calendar does appoint says so, so the two states are
+# distinguishable in the record itself and not only by counting elements.
+grep -q '^formulary = "appointed"$' "$sandbox/record.toml" ||
+	fail "the record does not state that the calendar appoints this formulary"
 
 run_tool record --document "$fourteenth" >"$sandbox/record-again.toml"
 cmp -s "$sandbox/record.toml" "$sandbox/record-again.toml" ||
@@ -122,6 +148,12 @@ reject record --root "$copy" --provider claude --document "$fourteenth" --check
 # An identity no mass entry registers names no appointed Scripture, and this
 # tool says so rather than returning an empty dossier that reads as "no dates".
 reject loci --document "$collection/temporal/99-invented-sunday"
+# ...and it may not send the reader to `check-proper-identity`, which
+# deliberately ACCEPTS an `m` identity on its grammar and says why.
+if run_tool loci --document "$collection/temporal/99-invented-sunday" 2>&1 |
+	grep -q 'check-proper-identity'; then
+	fail "the refusal claims an interlock check-proper-identity does not have"
+fi
 # A slug with no catalog identity in it names no formulary. The full leaf-id
 # grammar is `check-proper-identity`'s, and the scope gate has already run it
 # by the time anything here does; this only refuses what it cannot look up.

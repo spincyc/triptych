@@ -431,6 +431,38 @@ reject_bound --check chronology-claims-supported
 write_dossier '' '\\chronology{israel.monarchy.david-at-geth}{superscription-setting}{A.~M.~2944, A.~C.~1060}'
 reject_bound --check chronology-claims-supported
 
+# A cell naming several elements prints ONE date for all of them, so the claim
+# in it must be one the corpus makes at every element the cell names. Held
+# against the union instead, naming an extra element both widened what the cell
+# could print and satisfied the coverage rule.
+write_dossier
+sed 's|.*chronodate{gradual}.*|\\chronodate{gradual,epistle}{\\chronology{composition.epistle-to-the-galatians}{composition}{A.D.~49-50}}|' \
+	"$dossier" >"$sandbox/shared.tex"
+if cmp -s "$sandbox/shared.tex" "$dossier"; then
+	fail "the sed edit changed nothing, so the refusal below proves nothing"
+fi
+cp "$sandbox/shared.tex" "$dossier"
+reject_bound --check chronology-claims-supported
+
+# The widest shape of the same defect: one cell for the whole formulary,
+# carrying one year for every appointed text at once.
+cat >"$dossier" <<'TEX'
+\section*{Scriptural Date and Location}
+\chronodate{introit,epistle,gradual,alleluia,gospel,offertory,communion}{\chronology{composition.epistle-to-the-galatians}{composition}{A.D.~49-50}}
+TEX
+reject_bound --check chronology-claims-supported
+
+# Two cells for one appointed text are two dates and nothing saying which.
+write_dossier
+printf '%s\n' '\\chronodate{gradual}{No year is held for this psalm.}' >>"$dossier"
+reject_bound --check chronology-claims-supported
+
+# A figure typeset by \texttt is a figure the reader sees. The digit scan runs
+# over the cell as written, because `prose()` drops \texttt whole and so let
+# the same date through with five characters around it.
+write_dossier '' 'David reigned \texttt{1055--1015 B.C.}'
+reject_bound --check chronology-claims-supported
+
 # A claim standing outside any date cell is held to the same rule.
 write_dossier
 printf '%s\n' '\\chronology{composition.gospel-of-matthew}{composition}{about the year 51}' >>"$dossier"

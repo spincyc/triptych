@@ -143,6 +143,10 @@ def loci(arguments: argparse.Namespace) -> dict[str, object]:
         "document": found.document,
         "mass": found.mass,
         "system": found.system,
+        # Not `status`: that key is the CLI envelope's. `formulary` is the
+        # calendar's answer to whether this identity is appointed one at all.
+        "formulary": found.state,
+        "formulary_reason": found.reason,
         "elements": [
             {
                 "key": element.key,
@@ -164,6 +168,8 @@ def record(arguments: argparse.Namespace) -> dict[str, object]:
         "status": "ok",
         "document": found.document,
         "mass": found.mass,
+        "formulary": found.state,
+        "formulary_reason": found.reason,
         "path": _wiring.RECORD,
         "elements": [
             {
@@ -211,6 +217,13 @@ STATUS_WIDTH = 21
 
 
 def _render_elements(payload: dict, counts: bool) -> int:
+    if not payload["elements"]:
+        # An empty list is the one output a reader would misread as "nothing
+        # was found", so the reason is printed in its place rather than left
+        # to the JSON.
+        print(payload.get("formulary_reason")
+              or "no element resolved for this formulary")
+        return 0
     for element in payload["elements"]:
         status = element["status"] or ("-" if counts else "(no scripture)")
         if counts:

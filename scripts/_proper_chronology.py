@@ -111,13 +111,21 @@ class Element(NamedTuple):
 
 
 class Dossier(NamedTuple):
-    """Everything the corpus answers about one proper's appointed Scripture."""
+    """Everything the corpus answers about one proper's appointed Scripture.
+
+    `state` says whether the calendar appoints this identity a formulary at
+    all, so that "no dates" and "no formulary to date" are two answers rather
+    than one silence, and `reason` carries the corpus-facing explanation of a
+    negative state in the same way an element's `reason` carries the corpus's.
+    """
 
     document: str
     calendar: str
     mass: str
     system: str
     profile: str
+    state: str
+    reason: str
     elements: tuple[Element, ...]
 
     def element(self, key: str) -> Element | None:
@@ -134,6 +142,50 @@ class Dossier(NamedTuple):
 # time anything here runs; this only needs the prefix in order to look the mass
 # up, so it matches the prefix and nothing else about the slug.
 PREFIX = re.compile(r"\A([0-9]{2}|[fm][0-9]{2})-")
+
+# A ritual identity, which the calendar transcribed here appoints no mass entry
+# for. See `formulary_state`.
+RITUAL = re.compile(r"\Am[0-9]{2}\Z")
+
+# The two answers to "does the calendar appoint this identity a formulary".
+APPOINTED = "appointed"
+NO_CALENDAR_FORMULARY = "no-calendar-formulary"
+
+
+def formulary_state(document: str) -> tuple[str, str]:
+    """`(state, reason)`: does the calendar appoint this identity a formulary?
+
+    A ritual identity — `m01`, in `ritual/m01-nuptial-mass` — is appointed by
+    a rite and not by a day, and the 1962 calendar transcribed in
+    `src/sources/calendars` carries the book's temporal and sanctoral cycles.
+    No mass entry there holds an `M` registry value, so there is no formulary
+    for this wiring to resolve. `tools/check-proper-identity` meets the same
+    gap from the other side and accepts an `m` prefix on its grammar alone;
+    the comment "Why ritual identities stop at the grammar" in that tool is
+    the full statement of why, and this is the same fact answered in this
+    module's own terms.
+
+    It is an ANSWER and not an error, because the two are not the same fact.
+    An unregistered numeric identity is a leaf claiming to be a day the
+    calendar does not have, and is refused. A ritual leaf is a real published
+    document whose Scripture this repository's calendar sources do not
+    encode: the honest record says exactly that, so a bound run can carry one
+    instead of having no compliant path at all. What the record must not do
+    is imply the rite appoints no Scripture — it appoints a great deal — so
+    the reason travels with the state wherever the state is printed.
+    """
+    prefix = identity_prefix(document)
+    if RITUAL.match(prefix):
+        return NO_CALENDAR_FORMULARY, (
+            f"identity {prefix!r} is a ritual Mass, appointed by a rite and "
+            f"not by a day, and no mass entry in the {CALENDAR} calendar "
+            f"carries an M registry value; this wiring reaches Scripture "
+            f"through the calendar, so it can resolve no appointed loci here. "
+            f"That is a limit of the calendar sources, not a statement that "
+            f"the rite appoints no Scripture, and no date may be supplied "
+            f"from anywhere else to fill it"
+        )
+    return APPOINTED, ""
 
 
 def identity_prefix(document: str) -> str:
@@ -166,8 +218,7 @@ def mass_of(document: str, root: Path = ROOT) -> tuple[str, dict]:
         raise ChronologyWiringError(
             f"identity {prefix!r} is registered by no mass entry in the "
             f"{CALENDAR} calendar, so nothing here can name its appointed "
-            f"Scripture; `tools/tpt check-proper-identity` is the check that "
-            f"refuses this at the scope gate"
+            f"Scripture"
         )
     if len(found) > 1:
         raise ChronologyWiringError(
@@ -252,6 +303,8 @@ def appointed(document: str, root: Path = ROOT) -> list[tuple[str, str, tuple[st
     scriptural elements would leave a reader unable to tell an element with no
     Scripture from one this pass forgot.
     """
+    if formulary_state(document)[0] != APPOINTED:
+        return []
     calendar = _calendar_document(root)
     numbering = str(calendar.get("psalm_numbering") or "")
     if numbering != REQUIRED_NUMBERING:
@@ -335,6 +388,23 @@ def dossier(
     corpus_root: Path | None = None,
 ) -> Dossier:
     """Everything the corpus answers about a proper's appointed Scripture."""
+    state, reason = formulary_state(document)
+    if state != APPOINTED:
+        # Empty, and valid: the record exists, says which identity it is for,
+        # and says in the corpus's absence why it lists nothing. A gate can
+        # regenerate and compare it like any other, and a leaf carrying it
+        # still may not print a chronology claim, because there is no element
+        # for one to be true of.
+        return Dossier(
+            document=document,
+            calendar=CALENDAR,
+            mass="",
+            system=REQUIRED_NUMBERING,
+            profile=profile or "",
+            state=state,
+            reason=reason,
+            elements=(),
+        )
     mass_key, _mass = mass_of(document, root)
     elements = []
     for key, name, refs, loci in appointed(document, root):
@@ -369,6 +439,8 @@ def dossier(
         mass=mass_key,
         system=REQUIRED_NUMBERING,
         profile=profile or "",
+        state=state,
+        reason=reason,
         elements=tuple(elements),
     )
 
@@ -383,6 +455,12 @@ HEADER = """\
 # against the corpus by `check-content-preflight`. Every field
 # here is the corpus's, carried so that the guide's prose can be regenerated
 # without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
 #
 # `label` is the source's own words and the only field a guide may display.
 # `date` is the normalized form, for comparison and never for the page. An
@@ -437,6 +515,8 @@ def render(found: Dossier) -> str:
     lines.append(_field("mass", found.mass))
     lines.append(_field("system", found.system))
     lines.append(_field("profile", found.profile))
+    lines.append(_field("formulary", found.state))
+    lines.append(_field("formulary_reason", found.reason))
     lines.append(_field("generated_by", GENERATOR))
     for element in found.elements:
         lines.append("")
