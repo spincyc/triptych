@@ -421,6 +421,45 @@ or rights constraints justify the contribution and distribution cost. A remote
 artifact that is necessary to reproduce a consequential claim must have an
 honest access limitation; a hash proves identity, not continuing availability.
 
+**Retain the bytes locally. This is the project-wide default, and it is not
+confined to any one body of research.** Every source any part of this project
+relies on is kept in this repository wherever it lawfully can be. The test is
+concrete: a reader with no network, holding nothing but a checkout, must be able
+to reopen what a claim cites and read the words the claim quotes. `remote` is
+not a default, not a convenience, and not a disposition a lane may arrive at by
+omission. It has to be earned, one artifact at a time, by a reason written into
+that artifact's own record.
+
+"Wherever possible" excludes three things, and nothing else excuses a source
+from being retained:
+
+- **Material the project may read but not republish.** Where lawful access does
+  not extend to redistribution, the bytes stay out and the record says so. This
+  is a statement about the exact artifact, never about the work printed inside
+  it. Where a host's presentation is the whole of the encumbrance, the
+  underlying text is still retained — as a separate derivative artifact, under
+  its own affirmative rights basis, linked to the exact artifact it came from.
+- **Genuinely restricted material** — behind a licence, a subscription, an
+  institutional credential, or a permission this project does not hold.
+- **Demonstrated size**, measured in the record in bytes. A 250 MB facsimile is
+  a size argument. A 27 KB article is not, and no lane may decline to retain one
+  on an unmeasured guess that its whole class is too large.
+
+Nothing else will do. Not that the source is reachable online; not that a
+retrieval once succeeded; not that a hash was recorded, which proves identity
+and never continuing availability; not that the host would rather have the
+traffic; not that a retained copy would duplicate a public route, because a
+public route is precisely what fails the reader who has no network. Where the
+whole of an exact artifact cannot be retained but the part carrying the evidence
+can, retain that part as a derivative of the exact artifact, and record what the
+derivative leaves out.
+
+An artifact left `remote` or `restricted` while a consequential claim depends on
+it must carry its access limitation in its own record, in plain words: what is
+not retained, why that particular thing is not retained, and what a reader
+without the network can open instead. "Remote bytes are not retained" states the
+fact and gives no reason; it is not the limitation this rule asks for.
+
 Record rights per artifact, not merely per abstract work. Distinguish the
 underlying public-domain text from a host's markup, annotations, typography,
 database, or newly created transcription. Record the known public-domain

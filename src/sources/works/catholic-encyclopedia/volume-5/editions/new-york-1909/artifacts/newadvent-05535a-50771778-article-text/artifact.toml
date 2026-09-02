@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778-article-text"
+edition_id = "edition.catholic-encyclopedia.volume-5.new-york-1909"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Catholic Encyclopedia article is in the public domain in the United States by date of publication (New York: Robert Appleton Company, volumes 1-15, 1907-1912; the longest term available under 17 U.S.C. 304 expired at the end of 2007 at the latest). This file carries the article text alone: New Advent's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus are excluded, and a faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml."
+rights_jurisdiction = "United States"
+source_url = "https://www.newadvent.org/cathen/05535a.htm"
+provenance = "Extracted by script on 2026-09-02 from a local copy of the exact parent delivery whose SHA-256 and byte size were re-checked against the values the parent record already carried, and matched. No source text passed through a language model."
+retrieved = "2026-08-26"
+sha256 = "c3ef52e78a2ffc77fd4d9bf5f2a9d08ffc835b66593e81f3476f46063e411959"
+byte_size = 21158
+path = "src/sources/works/catholic-encyclopedia/volume-5/editions/new-york-1909/artifacts/newadvent-05535a-50771778-article-text/newadvent-05535a-50771778-article-text.txt"
+derived_from = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778"
+transformation = "Mechanical extraction of the encyclopedia article from the exact parent delivery, performed by script over the parent bytes with no source text passing through a language model. Take the region beginning at the article's own H1 heading and ending at New Advent's \"About this page\" block, or at the site footer where the delivery carries no such block; drop script and style elements and the support-solicitation paragraph; convert block-level element boundaries to line breaks; discard all remaining markup; decode HTML entities; collapse runs of horizontal whitespace and consecutive blank lines; emit LF-terminated UTF-8. This is a normalization and not a facsimile: the printed page's hyphenation, line breaks and typography are not recoverable from it."
+encoding = "utf-8"
+indexable = true
+notes = "Souvay, Charles. \"Esdras.\" The Catholic Encyclopedia. Vol. 5. New York: Robert Appleton Company, 1909. &lt;https://www.newadvent.org/cathen/05535a.htm&gt;. Article text only, extracted from the exact hashed New Advent delivery named in derived_from. A dated reference work of 1907-1912, not a magisterial or current one."

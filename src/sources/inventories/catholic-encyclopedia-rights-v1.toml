@@ -1,0 +1,340 @@
+# The rights position on the Catholic Encyclopedia (New York, 1907-1912) and on
+# the New Advent web delivery through which this project reads most of it.
+#
+# This file exists because the repository had been holding two answers to one
+# question at the same time. The Internet Archive facsimiles of volumes 4 and 8
+# were recorded as `rights_status = "public-domain"`, jurisdiction United
+# States. The 122 New Advent deliveries of the very same articles were recorded
+# as `rights_status = "restricted"`, with the reason given only in prose, and
+# with the note "Remote bytes are not retained." on every one of them. The
+# encyclopedia cannot be both. Calling a public-domain text restricted because
+# the page it was read on carries somebody's footer is the error this record
+# exists to stop, and it had already cost the project the ability to reopen
+# roughly two hundred rank-6 quotations without a network.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. Where it states a proposition of law it states the
+# jurisdiction, and the jurisdiction throughout is the United States.
+
+rights_schema = 1
+record_type = "catholic-encyclopedia-rights"
+recorded_on = "2026-09-02"
+jurisdiction = "United States"
+
+holding = """
+The text of The Catholic Encyclopedia (New York: Robert Appleton Company,
+volumes 1-15, 1907-1912) is in the public domain in the United States. Nothing
+about the website a reader happens to meet it on changes that. The project may
+therefore retain, republish, quote and index the encyclopedia's own words, and
+must do so rather than leaving a reader dependent on a third party's uptime.
+
+What the project does not redistribute is the exact newadvent.org response: that
+file is mostly not the encyclopedia. It carries the site's navigation, styling,
+advertising slots, a solicitation, and an "About this page" apparatus that New
+Advent wrote — its APA and MLA citation forms, its transcriber credit and
+dedication, and its editor's contact details — under a footer reading
+"Copyright (c) 2026 by New Advent LLC." Those are New Advent's, no permission to
+republish them was sought or granted, and they are not needed for anything.
+
+So the two components part company, and the record says so per artifact. The
+exact HTML delivery stays `remote`, hashed, with its access limitation written
+out. The encyclopedia article inside it is extracted mechanically, retained as a
+tracked derivative under `rights_status = "public-domain"`, and is what every
+consuming claim can be reopened against offline.
+"""
+
+[the_underlying_text]
+question = "Is the encyclopedia's own text in copyright in the United States?"
+answer = "No. Its longest possible term expired at the end of 2007."
+reasoning = """
+The Catholic Encyclopedia was published in New York by the Robert Appleton
+Company in sixteen volumes. The fifteen volumes of articles carry imprint years
+from 1907 to 1912, and the index volume 1914. Those years are not assumed here:
+each New Advent article prints its own volume and year in the citation block
+this project retains, and the two Internet Archive facsimiles registered in this
+library reproduce the printed volumes themselves — volume 4 dated 1908, volume 8
+dated 1910. Across the 118 articles retained on 2026-09-02, the printed years
+read: volumes 1-2, 1907; 3-4, 1908; 5-6, 1909; 7-9, 1910; 10-12, 1911; 13-15,
+1912. The latest year on any of them is 1912.
+
+A work published in the United States in 1912 secured its copyright on
+publication with notice under the Copyright Act of 1909, for a first term of 28
+years renewable once. 17 U.S.C. Sec. 304, as amended by the Sonny Bono Copyright
+Term Extension Act of 1998, gives a copyright subsisting in its renewal term a
+total of 95 years from the date copyright was originally secured, and 17 U.S.C.
+Sec. 305 runs every term to the end of its calendar year. 1912 plus 95 is 2007.
+So even on the most generous assumption available to a claimant — that every
+volume carried notice, that every one was renewed, and that the renewal
+subsisted into 1998 — protection in the last of these volumes ended on 31
+December 2007, and in the earliest on 31 December 2002.
+
+The general rule reaches the same place with nothing to compute: as of 1 January
+2026, everything published in the United States before 1 January 1931 is in the
+public domain. 1912 is nineteen years the safe side of that line, and no
+plausible correction to the imprint dates would move it across.
+"""
+limits = """
+This is a statement about United States law only. Terms elsewhere run from an
+author's death rather than from publication, so a contributor who died after
+1955 could still be in copyright in a life-plus-70 jurisdiction. The
+encyclopedia's contributors are numerous, signed by surname, and mostly
+undated here, and the project has not traced them. Anyone republishing outside
+the United States must do that work themselves; this record does not do it for
+them.
+"""
+source_ids = [
+  "artifact.catholic-encyclopedia.volume-4.new-york-1908.ia-facsimile-pdf-d1b059b1",
+  "artifact.catholic-encyclopedia.volume-8.new-york-1910.ia-facsimile-pdf-ac62a7ca",
+]
+
+[the_host_delivery]
+question = "Does New Advent hold anything in the pages this project reads?"
+answer = "Yes, and it is worth separating carefully, because it is not the article."
+reasoning = """
+A newadvent.org cathen page is an HTML document of which the encyclopedia
+article is one part. Around it the site supplies a navigation bar and a search
+box; a stylesheet and scripts; several advertising containers; a paragraph
+soliciting support with a link to a paid download; and, after the article, a
+block New Advent titles "About this page", holding an APA citation form, an MLA
+citation form, a transcription credit naming the volunteer who typed the
+article and often a dedication, the printed volume's Nihil Obstat and
+Imprimatur, and the editor's own contact paragraph. The page closes with
+"Copyright (c) 2026 by New Advent LLC."
+
+The selection, arrangement, wording and design of that apparatus are New
+Advent's own work and this project treats them as protected. Nothing in this
+record disputes the footer's application to them, and nothing here redistributes
+them: the extraction described in `what_is_retained` cuts the page at the
+article's own heading and stops at the "About this page" block, and the retained
+files were checked to contain none of that apparatus.
+
+What the footer does not do is make the article copyrighted. A notice on a page
+is a claim about the page, and a claim is not a determination; the encyclopedia
+text under it entered the public domain decades before New Advent existed, and
+17 U.S.C. Sec. 103(b) is explicit that copyright in a compilation or derivative
+work "extends only to the material contributed by the author of such work" and
+"does not imply any exclusive right in the preexisting material". Reading a
+blanket site notice as reaching the pre-existing text is the error this record
+was written to stop.
+"""
+the_transcription = """
+The remaining question is New Advent's transcription itself: someone typed the
+1907-1912 pages into HTML, and this project's earlier records treated that act
+as possibly originating a right, in the words "New Advent's exact transcription,
+revisions, markup, and presentation ... are not assumed redistributable".
+
+Markup and presentation, yes, and they are excluded. The transcription, no. In
+the United States copyright requires originality, and originality means
+independent creation plus "at least some minimal degree of creativity" (Feist
+Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991)).
+A faithful retyping of an existing text is the paradigm of the labour that Feist
+held insufficient: the effort is real and the result is not original, because
+its whole aim is to reproduce someone else's expression exactly. A district
+court applied the same reasoning to exact photographic reproductions of
+public-domain paintings in Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d
+191 (S.D.N.Y. 1999), which is persuasive rather than binding and is cited here
+as reasoning, not as authority.
+
+Where a transcriber does add something of their own — a new introduction,
+editorial notes, a fresh translation, corrections and conjectures that are the
+transcriber's judgement rather than the printed page's words — that addition is
+theirs, and this record does not reach it. New Advent's pages carry no such
+additions inside the article body: they carry the article, hyperlinked. The
+project's position is that the article text on a New Advent cathen page is the
+public-domain article and nothing more.
+
+Recorded as a judgement, because it is one. If it is wrong, it is wrong in one
+direction only: the extracted files would contain a transcription New Advent
+could claim, and the remedy would be to replace them with extractions from the
+Internet Archive facsimiles, which are of the printed volumes and raise no such
+question. `what_would_change_this` says what that would take.
+"""
+source_ids = [
+  "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04",
+]
+
+[what_is_retained]
+question = "What actually enters the repository, and under what disposition?"
+answer = "The article text, as a tracked derivative; never the exact page."
+reasoning = """
+For every New Advent Catholic Encyclopedia delivery whose exact acquired bytes
+this project still holds and can authenticate against the hash its record
+already carried, two artifacts now exist.
+
+The exact HTML response keeps its identity and stays `remote`: hash, byte size,
+retrieval date, source URL, and an access limitation saying in plain words that
+the site's own apparatus is what is withheld and naming the retained derivative
+a reader should open instead. Its `rights_status` is corrected from
+`restricted` to `public-domain`, because that field states the standing of the
+work the artifact carries, and the encyclopedia is public domain; the reason the
+bytes are not republished is a fact about New Advent's apparatus and belongs in
+`rights_basis`, where it now is.
+
+The article text is a second artifact, `artifact_type = "normalized-text"`,
+`storage = "tracked"`, `rights_status = "public-domain"`, jurisdiction United
+States, `derived_from` the exact HTML artifact and pinned to its hash, with the
+extraction rule recorded in `transformation`. It is `indexable`, so the source
+library's own search reaches it, and it is the artifact a cold reviewer with no
+network opens.
+
+The extraction is mechanical and was performed by a script over the exact bytes.
+No source text passed through a language model, as guidance/sources.md requires.
+The rule: take the region of the delivery beginning at the article's own H1
+heading and ending at New Advent's "About this page" block, or at the site
+footer where no such block is present; drop script and style elements and the
+support-solicitation paragraph; convert block-level element boundaries to line
+breaks; discard all remaining markup; decode HTML entities; collapse runs of
+horizontal whitespace and blank lines; and emit LF-terminated UTF-8.
+
+Two consequences are stated because they bound what the derivative can prove.
+It is a normalization, not a facsimile: hyphenation, line breaks and typography
+of the printed page are not recoverable from it, and any claim about the printed
+setting must go to the Internet Archive facsimile instead. And it is a
+derivative of a web transcription, so it inherits whatever that transcription
+got wrong; it witnesses what New Advent published, which is the same thing every
+consuming claim in this repository was already resting on.
+"""
+
+[what_was_not_retained]
+question = "After the retention pass of 2026-09-02, what is still not held here, and why?"
+answer = "Four deliveries, for a reason of evidence rather than of rights."
+reasoning = """
+118 of the 122 New Advent Catholic Encyclopedia deliveries registered in this
+library now have their article text retained: 114 as their own tracked
+derivative, and 4 more whose extracted text proved byte-identical to a sibling
+delivery of the same article and is therefore held once rather than twice. Every
+one of the 114 deliveries the Scripture chronology corpus cites is among them,
+where before this pass none was.
+
+Four are not:
+
+  artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-credence-html
+  artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-manuterge-html
+  artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-sacristy-html
+  artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-sedilia-html
+
+Nothing about their rights is different; the encyclopedia articles they carry
+are public domain on exactly the basis stated above. The obstacle is that their
+exact acquired bytes are no longer held anywhere this lane could reach, and a
+fresh retrieval on 2026-09-02 did not reproduce them: each fetched page differed
+from its recorded artifact by three bytes and by hash. A fresh fetch that does
+not authenticate is a different artifact, and registering its text as an
+extraction of the recorded one would be a false provenance, so it was not done.
+The six chronology-cited articles that were in the same state were re-fetched
+first and DID authenticate, hash and byte size, against the values their records
+already carried; those six are retained.
+
+These four records were also left otherwise untouched, including their
+now-superseded `rights_status = "restricted"`, because three of them are pinned
+by reviewed source bindings in
+src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/research/source-bindings.toml
+whose recorded fingerprints would go stale on any edit. Re-pinning a reviewed
+binding without re-reviewing it defeats what the pin is for. Correcting these
+four is a small, bounded follow-up for whoever re-reviews those bindings: refetch
+until a delivery authenticates or register the fresh delivery as its own
+artifact, extract its text, and bring the record into line with this file.
+"""
+
+[routes_examined]
+question = "What else was considered for getting these bytes into the repository?"
+answer = "Five routes. One works, one is held in reserve, three were refused."
+examined = """
+RETAIN THE EXACT HTML AS TRACKED. Refused. It would redistribute New Advent's
+navigation, styling, advertising markup, solicitation and "About this page"
+apparatus, which are theirs and for which no permission exists. It would also
+put 4.6 MB of site chrome into the repository to carry 2.7 MB of text. The
+project's rule is that `tracked` needs an affirmative distribution basis, and
+there is none for the apparatus.
+
+EXTRACT THE ARTICLE AND TRACK THAT. Adopted. It is the route
+`guidance/sources.md` already prescribes in terms — "Distinguish the underlying
+public-domain text from a host's markup, annotations, typography, database, or
+newly created transcription" and "Put normalization, corrected OCR, extracted
+text ... in separate artifacts linked to their inputs" — and it had a working
+precedent in this library before this record was written, at
+artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews-checked-text-f0f92de5,
+where a New Advent page's public-domain text is tracked and the delivery is not.
+
+TRACK THE INTERNET ARCHIVE FACSIMILES INSTEAD. Held in reserve, not adopted
+now, on measured size. The two volumes already registered are 112,731,583 and
+135,877,116 bytes; sixteen volumes at that scale is roughly 2 GB, against a
+repository that presently holds 775 tracked artifacts in total. This is the one
+place in this record where a genuine size argument exists, and it is recorded
+with the measurement rather than asserted. Extracting per-article text from the
+facsimiles' OCR layer would be a way to keep the evidence without the bulk; it
+was not attempted here because the New Advent extraction already answers the
+question, and OCR text would need its own accuracy record.
+
+WIKISOURCE AND OTHER MIRRORS. Examined and not pursued. Other hosts carry the
+1913 encyclopedia, and their text would raise exactly the same two-component
+question this record answers, with the added defect that the project's 463
+chronology claims were read against New Advent's pages and not against a
+mirror's. Substituting a different host's transcription would change what the
+claims are evidence of. If the New Advent extraction ever has to be abandoned,
+the replacement should be the printed volumes, not another website.
+
+ASK NEW ADVENT FOR PERMISSION. Not done, and not for an agent to do. The site
+publishes no terms-of-use or permissions page; its footer notice and a contact
+address are the whole of its stated position, and its contact page says the
+editor cannot answer most mail. A permission request is a representation about
+who is asking and what they will do, so only the project owner may make one. It
+is in any case unnecessary for the article text, which needs no permission, and
+would only be needed to republish the apparatus, which the project does not
+want.
+"""
+
+[what_would_change_this]
+question = "What would move the position, and in which direction?"
+answer = "Four things, and the record should be edited rather than argued around."
+reasoning = """
+A STATED TERM FROM NEW ADVENT. If the site publishes terms of use, or writes to
+the project, saying something specific about reuse of the article text, that
+statement goes here in its own words and the position is re-read against it. A
+grant would widen what may be retained; a refusal would not narrow it, because
+the article text is not New Advent's to withhold, but it would be recorded and
+the extraction would be re-derived from the facsimiles rather than from the
+site, to keep the project's dealings straight.
+
+AN AUTHORITY HOLDING THAT A FAITHFUL TRANSCRIPTION IS ORIGINAL. The
+transcription judgement in `the_host_delivery` is the load-bearing one and the
+one a reasonable person could dispute. A controlling decision the other way
+would mean replacing the 114 extracted files with extractions from the Internet
+Archive facsimiles of the printed volumes, which no transcription question
+touches. That is work, not a crisis, and it is why the facsimiles stay
+registered.
+
+AN ARTICLE THAT IS NOT FROM THE 1907-1912 IMPRINT. New Advent's cathen tree is
+the original encyclopedia, but if any page ever proves to carry a later
+revision, a supplement, or an editorial addition rather than the printed
+article, that page falls outside this record entirely and needs its own basis.
+The check is the page's own printed volume and year, which the retained bytes
+carry.
+
+A JURISDICTION OTHER THAN THE UNITED STATES. Stated in `limits` above and
+repeated because it is the likeliest way for this record to be misused: it
+settles nothing for a life-plus-70 country, and a reader who needs that answer
+must trace the individual contributors.
+"""
+
+[what_this_does_not_establish]
+reasoning = """
+It does not make the encyclopedia an authority. It is a dated reference work of
+1907-1912, not a magisterial or current one, and every consuming record in this
+repository says so at the point of use. A rights record says what may be
+republished; it says nothing about what may be believed.
+
+It does not reach anything else on newadvent.org. The site also carries the
+Summa, the Fathers, and the Bible, each a different underlying work with a
+different date and a different translator. The two-component analysis here —
+public-domain text inside a host's presentation — applies to them by the same
+reasoning, and the disposition of the New Advent apparatus is the same. But each
+of those corpora needs its own recorded public-domain basis for its own
+underlying text and its own translator, and this record does not supply one.
+As of 2026-09-02 they remain unretained; see `guidance/sources.md` on what that
+now obliges.
+
+It does not originate any right in this project. The extracted files are the
+1907-1912 encyclopedia's words. Triptych claims no exclusive right in them,
+adds none by extracting them, and the derivative artifacts carry no licence of
+the project's own.
+"""
