@@ -2663,3 +2663,68 @@ covers the pipeline JSON, every fragment, and the schemas, but not
 `scripts/_workflow.py`, so amending the policy text moves no recorded digest
 and invalidates no run in flight, whereas amending the fragment would
 invalidate every one.
+
+## Run state is called durable and is not, 2026-09-02
+
+`workflows/OPERATOR.md` opens its run-state section with "Each run has a
+durable state directory" and then names `build/tpt-runs/<run-id>/`. Nothing
+about that path is durable. `.gitignore` line 1 is `/build/`, so no run state
+has ever been tracked; `make clean` is `rm -rf build`; and in a `wt` agent
+workspace `wt tidy` deletes everything the clone ignores, without asking. The
+word is load-bearing and it is wrong.
+
+It is load-bearing because step 11 of
+`workflows/fragments/propers/research-synthesis.md` makes that directory the
+carry-forward mechanism. The integrator is told to find earlier productions of
+the same target with
+
+    grep -l '"proper": "{proper}"' build/tpt-runs/*/state.json
+
+and to read every `content-evaluation` and `research-synthesis` result those
+runs recorded, so that the blocking findings of an earlier production are
+carried into the brief rather than spent twice. The fragment knows the hazard
+it is guarding: it records that re-seeding starts a run with an empty history,
+and that one real re-seed dropped fourteen standing evaluation findings, of
+which five were recovered only because a person carried them by hand and one
+survived into the next production verbatim because nobody did.
+
+In run `ca03f1b357e7ec25` that lookup returned only the run performing it.
+`build/tpt-runs/` held exactly one directory. The leaf's own
+`research/scope.md` names seven run ids; six of them are prior productions
+whose directories are gone. The carry-forward nonetheless mostly held, because
+each integration had copied the previous findings into the tracked brief — but
+that is a convention observed by successive workers, not a mechanism. A
+`research-synthesis` result reaches a tracked file because writing the brief is
+the stage's job. A `content-evaluation` result reaches nothing tracked at all.
+
+So it has already broken once, in the direction the design leaves open. §12.5
+of the brief records run `e5b24f405bde9691` as unrecoverable: this run could
+not read its `content-evaluation` results or its escalations, and therefore
+cannot say whether a content evaluation ran against the leaf after it and
+raised anything. The brief states the hole instead of papering over it, which
+is the right disposition and not a repair.
+
+This is the same defect as the fan-out scratch collision recorded above, in its
+larger form: state a later stage is required to read, kept only where nothing
+preserves it, failing silently and leaving an artifact that looks complete.
+§1 of `guidance/the-shape.md` again, and again in the apparatus.
+
+Owed to this repository, and not yet done:
+
+- Correct `workflows/OPERATOR.md`. Either the directory stops being described
+  as durable, or it becomes durable; describing an ignored, `rm -rf`-able path
+  as durable is the part that misleads a reader deciding whether to preserve
+  anything.
+- Give a run's blocking findings and escalations a tracked home, so
+  carry-forward reads a committed record rather than an ignored directory. The
+  brief already serves that purpose for `research-synthesis`; the gap is
+  `content-evaluation`, whose findings are the ones step 11 most wants and the
+  ones nothing preserves.
+- Have step 11 say what an empty lookup means. An absent run directory and an
+  absent prior production are indistinguishable through that `grep`, and the
+  fragment asks the integrator to tell them apart using the very directory
+  pruning empties.
+
+Unlike the fan-out policy text, `research-synthesis.md` is a fragment, and
+`workflow_source_digest` covers every fragment's bytes. Amending step 11
+invalidates every run in flight, so it is done between runs, never during one.
